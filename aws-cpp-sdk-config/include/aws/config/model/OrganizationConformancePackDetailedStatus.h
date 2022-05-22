@@ -132,8 +132,8 @@ namespace Model
      * second time, conformance pack status is updated in the member account.
      * Conformance pack status is deleted when the master account deletes
      * <code>OrganizationConformancePack</code> and disables service access for
-     * <code>config-multiaccountsetup.amazonaws.com</code>. </p> <p> AWS Config sets
-     * the state of the conformance pack to:</p> <ul> <li> <p>
+     * <code>config-multiaccountsetup.amazonaws.com</code>. </p> <p> Config sets the
+     * state of the conformance pack to:</p> <ul> <li> <p>
      * <code>CREATE_SUCCESSFUL</code> when conformance pack has been created in the
      * member account. </p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> when
      * conformance pack is being created in the member account.</p> </li> <li> <p>
@@ -159,8 +159,8 @@ namespace Model
      * second time, conformance pack status is updated in the member account.
      * Conformance pack status is deleted when the master account deletes
      * <code>OrganizationConformancePack</code> and disables service access for
-     * <code>config-multiaccountsetup.amazonaws.com</code>. </p> <p> AWS Config sets
-     * the state of the conformance pack to:</p> <ul> <li> <p>
+     * <code>config-multiaccountsetup.amazonaws.com</code>. </p> <p> Config sets the
+     * state of the conformance pack to:</p> <ul> <li> <p>
      * <code>CREATE_SUCCESSFUL</code> when conformance pack has been created in the
      * member account. </p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> when
      * conformance pack is being created in the member account.</p> </li> <li> <p>
@@ -186,8 +186,8 @@ namespace Model
      * second time, conformance pack status is updated in the member account.
      * Conformance pack status is deleted when the master account deletes
      * <code>OrganizationConformancePack</code> and disables service access for
-     * <code>config-multiaccountsetup.amazonaws.com</code>. </p> <p> AWS Config sets
-     * the state of the conformance pack to:</p> <ul> <li> <p>
+     * <code>config-multiaccountsetup.amazonaws.com</code>. </p> <p> Config sets the
+     * state of the conformance pack to:</p> <ul> <li> <p>
      * <code>CREATE_SUCCESSFUL</code> when conformance pack has been created in the
      * member account. </p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> when
      * conformance pack is being created in the member account.</p> </li> <li> <p>
@@ -213,8 +213,8 @@ namespace Model
      * second time, conformance pack status is updated in the member account.
      * Conformance pack status is deleted when the master account deletes
      * <code>OrganizationConformancePack</code> and disables service access for
-     * <code>config-multiaccountsetup.amazonaws.com</code>. </p> <p> AWS Config sets
-     * the state of the conformance pack to:</p> <ul> <li> <p>
+     * <code>config-multiaccountsetup.amazonaws.com</code>. </p> <p> Config sets the
+     * state of the conformance pack to:</p> <ul> <li> <p>
      * <code>CREATE_SUCCESSFUL</code> when conformance pack has been created in the
      * member account. </p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> when
      * conformance pack is being created in the member account.</p> </li> <li> <p>
@@ -240,8 +240,8 @@ namespace Model
      * second time, conformance pack status is updated in the member account.
      * Conformance pack status is deleted when the master account deletes
      * <code>OrganizationConformancePack</code> and disables service access for
-     * <code>config-multiaccountsetup.amazonaws.com</code>. </p> <p> AWS Config sets
-     * the state of the conformance pack to:</p> <ul> <li> <p>
+     * <code>config-multiaccountsetup.amazonaws.com</code>. </p> <p> Config sets the
+     * state of the conformance pack to:</p> <ul> <li> <p>
      * <code>CREATE_SUCCESSFUL</code> when conformance pack has been created in the
      * member account. </p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> when
      * conformance pack is being created in the member account.</p> </li> <li> <p>
@@ -267,8 +267,8 @@ namespace Model
      * second time, conformance pack status is updated in the member account.
      * Conformance pack status is deleted when the master account deletes
      * <code>OrganizationConformancePack</code> and disables service access for
-     * <code>config-multiaccountsetup.amazonaws.com</code>. </p> <p> AWS Config sets
-     * the state of the conformance pack to:</p> <ul> <li> <p>
+     * <code>config-multiaccountsetup.amazonaws.com</code>. </p> <p> Config sets the
+     * state of the conformance pack to:</p> <ul> <li> <p>
      * <code>CREATE_SUCCESSFUL</code> when conformance pack has been created in the
      * member account. </p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> when
      * conformance pack is being created in the member account.</p> </li> <li> <p>

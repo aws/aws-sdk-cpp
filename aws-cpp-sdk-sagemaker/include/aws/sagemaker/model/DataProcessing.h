@@ -51,10 +51,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
      * expression used to select a portion of the input data to pass to the algorithm.
      * Use the <code>InputFilter</code> parameter to exclude fields, such as an ID
-     * column, from the input. If you want Amazon SageMaker to pass the entire input
-     * dataset to the algorithm, accept the default value <code>$</code>.</p>
-     * <p>Examples: <code>"$"</code>, <code>"$[1:]"</code>, <code>"$.features"</code>
-     * </p>
+     * column, from the input. If you want SageMaker to pass the entire input dataset
+     * to the algorithm, accept the default value <code>$</code>.</p> <p>Examples:
+     * <code>"$"</code>, <code>"$[1:]"</code>, <code>"$.features"</code> </p>
      */
     inline const Aws::String& GetInputFilter() const{ return m_inputFilter; }
 
@@ -63,10 +62,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
      * expression used to select a portion of the input data to pass to the algorithm.
      * Use the <code>InputFilter</code> parameter to exclude fields, such as an ID
-     * column, from the input. If you want Amazon SageMaker to pass the entire input
-     * dataset to the algorithm, accept the default value <code>$</code>.</p>
-     * <p>Examples: <code>"$"</code>, <code>"$[1:]"</code>, <code>"$.features"</code>
-     * </p>
+     * column, from the input. If you want SageMaker to pass the entire input dataset
+     * to the algorithm, accept the default value <code>$</code>.</p> <p>Examples:
+     * <code>"$"</code>, <code>"$[1:]"</code>, <code>"$.features"</code> </p>
      */
     inline bool InputFilterHasBeenSet() const { return m_inputFilterHasBeenSet; }
 
@@ -75,10 +73,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
      * expression used to select a portion of the input data to pass to the algorithm.
      * Use the <code>InputFilter</code> parameter to exclude fields, such as an ID
-     * column, from the input. If you want Amazon SageMaker to pass the entire input
-     * dataset to the algorithm, accept the default value <code>$</code>.</p>
-     * <p>Examples: <code>"$"</code>, <code>"$[1:]"</code>, <code>"$.features"</code>
-     * </p>
+     * column, from the input. If you want SageMaker to pass the entire input dataset
+     * to the algorithm, accept the default value <code>$</code>.</p> <p>Examples:
+     * <code>"$"</code>, <code>"$[1:]"</code>, <code>"$.features"</code> </p>
      */
     inline void SetInputFilter(const Aws::String& value) { m_inputFilterHasBeenSet = true; m_inputFilter = value; }
 
@@ -87,10 +84,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
      * expression used to select a portion of the input data to pass to the algorithm.
      * Use the <code>InputFilter</code> parameter to exclude fields, such as an ID
-     * column, from the input. If you want Amazon SageMaker to pass the entire input
-     * dataset to the algorithm, accept the default value <code>$</code>.</p>
-     * <p>Examples: <code>"$"</code>, <code>"$[1:]"</code>, <code>"$.features"</code>
-     * </p>
+     * column, from the input. If you want SageMaker to pass the entire input dataset
+     * to the algorithm, accept the default value <code>$</code>.</p> <p>Examples:
+     * <code>"$"</code>, <code>"$[1:]"</code>, <code>"$.features"</code> </p>
      */
     inline void SetInputFilter(Aws::String&& value) { m_inputFilterHasBeenSet = true; m_inputFilter = std::move(value); }
 
@@ -99,10 +95,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
      * expression used to select a portion of the input data to pass to the algorithm.
      * Use the <code>InputFilter</code> parameter to exclude fields, such as an ID
-     * column, from the input. If you want Amazon SageMaker to pass the entire input
-     * dataset to the algorithm, accept the default value <code>$</code>.</p>
-     * <p>Examples: <code>"$"</code>, <code>"$[1:]"</code>, <code>"$.features"</code>
-     * </p>
+     * column, from the input. If you want SageMaker to pass the entire input dataset
+     * to the algorithm, accept the default value <code>$</code>.</p> <p>Examples:
+     * <code>"$"</code>, <code>"$[1:]"</code>, <code>"$.features"</code> </p>
      */
     inline void SetInputFilter(const char* value) { m_inputFilterHasBeenSet = true; m_inputFilter.assign(value); }
 
@@ -111,10 +106,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
      * expression used to select a portion of the input data to pass to the algorithm.
      * Use the <code>InputFilter</code> parameter to exclude fields, such as an ID
-     * column, from the input. If you want Amazon SageMaker to pass the entire input
-     * dataset to the algorithm, accept the default value <code>$</code>.</p>
-     * <p>Examples: <code>"$"</code>, <code>"$[1:]"</code>, <code>"$.features"</code>
-     * </p>
+     * column, from the input. If you want SageMaker to pass the entire input dataset
+     * to the algorithm, accept the default value <code>$</code>.</p> <p>Examples:
+     * <code>"$"</code>, <code>"$[1:]"</code>, <code>"$.features"</code> </p>
      */
     inline DataProcessing& WithInputFilter(const Aws::String& value) { SetInputFilter(value); return *this;}
 
@@ -123,10 +117,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
      * expression used to select a portion of the input data to pass to the algorithm.
      * Use the <code>InputFilter</code> parameter to exclude fields, such as an ID
-     * column, from the input. If you want Amazon SageMaker to pass the entire input
-     * dataset to the algorithm, accept the default value <code>$</code>.</p>
-     * <p>Examples: <code>"$"</code>, <code>"$[1:]"</code>, <code>"$.features"</code>
-     * </p>
+     * column, from the input. If you want SageMaker to pass the entire input dataset
+     * to the algorithm, accept the default value <code>$</code>.</p> <p>Examples:
+     * <code>"$"</code>, <code>"$[1:]"</code>, <code>"$.features"</code> </p>
      */
     inline DataProcessing& WithInputFilter(Aws::String&& value) { SetInputFilter(std::move(value)); return *this;}
 
@@ -135,10 +128,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
      * expression used to select a portion of the input data to pass to the algorithm.
      * Use the <code>InputFilter</code> parameter to exclude fields, such as an ID
-     * column, from the input. If you want Amazon SageMaker to pass the entire input
-     * dataset to the algorithm, accept the default value <code>$</code>.</p>
-     * <p>Examples: <code>"$"</code>, <code>"$[1:]"</code>, <code>"$.features"</code>
-     * </p>
+     * column, from the input. If you want SageMaker to pass the entire input dataset
+     * to the algorithm, accept the default value <code>$</code>.</p> <p>Examples:
+     * <code>"$"</code>, <code>"$[1:]"</code>, <code>"$.features"</code> </p>
      */
     inline DataProcessing& WithInputFilter(const char* value) { SetInputFilter(value); return *this;}
 
@@ -147,10 +139,10 @@ namespace Model
      * <p>A <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
      * expression used to select a portion of the joined dataset to save in the output
-     * file for a batch transform job. If you want Amazon SageMaker to store the entire
-     * input dataset in the output file, leave the default value, <code>$</code>. If
-     * you specify indexes that aren't within the dimension size of the joined dataset,
-     * you get an error.</p> <p>Examples: <code>"$"</code>, <code>"$[0,5:]"</code>,
+     * file for a batch transform job. If you want SageMaker to store the entire input
+     * dataset in the output file, leave the default value, <code>$</code>. If you
+     * specify indexes that aren't within the dimension size of the joined dataset, you
+     * get an error.</p> <p>Examples: <code>"$"</code>, <code>"$[0,5:]"</code>,
      * <code>"$['id','SageMakerOutput']"</code> </p>
      */
     inline const Aws::String& GetOutputFilter() const{ return m_outputFilter; }
@@ -159,10 +151,10 @@ namespace Model
      * <p>A <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
      * expression used to select a portion of the joined dataset to save in the output
-     * file for a batch transform job. If you want Amazon SageMaker to store the entire
-     * input dataset in the output file, leave the default value, <code>$</code>. If
-     * you specify indexes that aren't within the dimension size of the joined dataset,
-     * you get an error.</p> <p>Examples: <code>"$"</code>, <code>"$[0,5:]"</code>,
+     * file for a batch transform job. If you want SageMaker to store the entire input
+     * dataset in the output file, leave the default value, <code>$</code>. If you
+     * specify indexes that aren't within the dimension size of the joined dataset, you
+     * get an error.</p> <p>Examples: <code>"$"</code>, <code>"$[0,5:]"</code>,
      * <code>"$['id','SageMakerOutput']"</code> </p>
      */
     inline bool OutputFilterHasBeenSet() const { return m_outputFilterHasBeenSet; }
@@ -171,10 +163,10 @@ namespace Model
      * <p>A <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
      * expression used to select a portion of the joined dataset to save in the output
-     * file for a batch transform job. If you want Amazon SageMaker to store the entire
-     * input dataset in the output file, leave the default value, <code>$</code>. If
-     * you specify indexes that aren't within the dimension size of the joined dataset,
-     * you get an error.</p> <p>Examples: <code>"$"</code>, <code>"$[0,5:]"</code>,
+     * file for a batch transform job. If you want SageMaker to store the entire input
+     * dataset in the output file, leave the default value, <code>$</code>. If you
+     * specify indexes that aren't within the dimension size of the joined dataset, you
+     * get an error.</p> <p>Examples: <code>"$"</code>, <code>"$[0,5:]"</code>,
      * <code>"$['id','SageMakerOutput']"</code> </p>
      */
     inline void SetOutputFilter(const Aws::String& value) { m_outputFilterHasBeenSet = true; m_outputFilter = value; }
@@ -183,10 +175,10 @@ namespace Model
      * <p>A <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
      * expression used to select a portion of the joined dataset to save in the output
-     * file for a batch transform job. If you want Amazon SageMaker to store the entire
-     * input dataset in the output file, leave the default value, <code>$</code>. If
-     * you specify indexes that aren't within the dimension size of the joined dataset,
-     * you get an error.</p> <p>Examples: <code>"$"</code>, <code>"$[0,5:]"</code>,
+     * file for a batch transform job. If you want SageMaker to store the entire input
+     * dataset in the output file, leave the default value, <code>$</code>. If you
+     * specify indexes that aren't within the dimension size of the joined dataset, you
+     * get an error.</p> <p>Examples: <code>"$"</code>, <code>"$[0,5:]"</code>,
      * <code>"$['id','SageMakerOutput']"</code> </p>
      */
     inline void SetOutputFilter(Aws::String&& value) { m_outputFilterHasBeenSet = true; m_outputFilter = std::move(value); }
@@ -195,10 +187,10 @@ namespace Model
      * <p>A <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
      * expression used to select a portion of the joined dataset to save in the output
-     * file for a batch transform job. If you want Amazon SageMaker to store the entire
-     * input dataset in the output file, leave the default value, <code>$</code>. If
-     * you specify indexes that aren't within the dimension size of the joined dataset,
-     * you get an error.</p> <p>Examples: <code>"$"</code>, <code>"$[0,5:]"</code>,
+     * file for a batch transform job. If you want SageMaker to store the entire input
+     * dataset in the output file, leave the default value, <code>$</code>. If you
+     * specify indexes that aren't within the dimension size of the joined dataset, you
+     * get an error.</p> <p>Examples: <code>"$"</code>, <code>"$[0,5:]"</code>,
      * <code>"$['id','SageMakerOutput']"</code> </p>
      */
     inline void SetOutputFilter(const char* value) { m_outputFilterHasBeenSet = true; m_outputFilter.assign(value); }
@@ -207,10 +199,10 @@ namespace Model
      * <p>A <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
      * expression used to select a portion of the joined dataset to save in the output
-     * file for a batch transform job. If you want Amazon SageMaker to store the entire
-     * input dataset in the output file, leave the default value, <code>$</code>. If
-     * you specify indexes that aren't within the dimension size of the joined dataset,
-     * you get an error.</p> <p>Examples: <code>"$"</code>, <code>"$[0,5:]"</code>,
+     * file for a batch transform job. If you want SageMaker to store the entire input
+     * dataset in the output file, leave the default value, <code>$</code>. If you
+     * specify indexes that aren't within the dimension size of the joined dataset, you
+     * get an error.</p> <p>Examples: <code>"$"</code>, <code>"$[0,5:]"</code>,
      * <code>"$['id','SageMakerOutput']"</code> </p>
      */
     inline DataProcessing& WithOutputFilter(const Aws::String& value) { SetOutputFilter(value); return *this;}
@@ -219,10 +211,10 @@ namespace Model
      * <p>A <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
      * expression used to select a portion of the joined dataset to save in the output
-     * file for a batch transform job. If you want Amazon SageMaker to store the entire
-     * input dataset in the output file, leave the default value, <code>$</code>. If
-     * you specify indexes that aren't within the dimension size of the joined dataset,
-     * you get an error.</p> <p>Examples: <code>"$"</code>, <code>"$[0,5:]"</code>,
+     * file for a batch transform job. If you want SageMaker to store the entire input
+     * dataset in the output file, leave the default value, <code>$</code>. If you
+     * specify indexes that aren't within the dimension size of the joined dataset, you
+     * get an error.</p> <p>Examples: <code>"$"</code>, <code>"$[0,5:]"</code>,
      * <code>"$['id','SageMakerOutput']"</code> </p>
      */
     inline DataProcessing& WithOutputFilter(Aws::String&& value) { SetOutputFilter(std::move(value)); return *this;}
@@ -231,10 +223,10 @@ namespace Model
      * <p>A <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
      * expression used to select a portion of the joined dataset to save in the output
-     * file for a batch transform job. If you want Amazon SageMaker to store the entire
-     * input dataset in the output file, leave the default value, <code>$</code>. If
-     * you specify indexes that aren't within the dimension size of the joined dataset,
-     * you get an error.</p> <p>Examples: <code>"$"</code>, <code>"$[0,5:]"</code>,
+     * file for a batch transform job. If you want SageMaker to store the entire input
+     * dataset in the output file, leave the default value, <code>$</code>. If you
+     * specify indexes that aren't within the dimension size of the joined dataset, you
+     * get an error.</p> <p>Examples: <code>"$"</code>, <code>"$[0,5:]"</code>,
      * <code>"$['id','SageMakerOutput']"</code> </p>
      */
     inline DataProcessing& WithOutputFilter(const char* value) { SetOutputFilter(value); return *this;}
@@ -245,17 +237,21 @@ namespace Model
      * values are <code>None</code> and <code>Input</code>. The default value is
      * <code>None</code>, which specifies not to join the input with the transformed
      * data. If you want the batch transform job to join the original input data with
-     * the transformed data, set <code>JoinSource</code> to <code>Input</code>. </p>
-     * <p>For JSON or JSONLines objects, such as a JSON array, Amazon SageMaker adds
-     * the transformed data to the input JSON object in an attribute called
-     * <code>SageMakerOutput</code>. The joined result for JSON must be a key-value
-     * pair object. If the input is not a key-value pair object, Amazon SageMaker
-     * creates a new JSON file. In the new JSON file, and the input data is stored
-     * under the <code>SageMakerInput</code> key and the results are stored in
-     * <code>SageMakerOutput</code>.</p> <p>For CSV files, Amazon SageMaker combines
-     * the transformed data with the input data at the end of the input data and stores
-     * it in the output file. The joined data has the joined input data followed by the
-     * transformed data and the output is a CSV file. </p>
+     * the transformed data, set <code>JoinSource</code> to <code>Input</code>. You can
+     * specify <code>OutputFilter</code> as an additional filter to select a portion of
+     * the joined dataset and store it in the output file.</p> <p>For JSON or JSONLines
+     * objects, such as a JSON array, SageMaker adds the transformed data to the input
+     * JSON object in an attribute called <code>SageMakerOutput</code>. The joined
+     * result for JSON must be a key-value pair object. If the input is not a key-value
+     * pair object, SageMaker creates a new JSON file. In the new JSON file, and the
+     * input data is stored under the <code>SageMakerInput</code> key and the results
+     * are stored in <code>SageMakerOutput</code>.</p> <p>For CSV data, SageMaker takes
+     * each row as a JSON array and joins the transformed data with the input by
+     * appending each transformed row to the end of the input. The joined data has the
+     * original input data followed by the transformed data and the output is a CSV
+     * file.</p> <p>For information on how joining in applied, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#batch-transform-data-processing-workflow">Workflow
+     * for Associating Inferences with Input Records</a>.</p>
      */
     inline const JoinSource& GetJoinSource() const{ return m_joinSource; }
 
@@ -264,17 +260,21 @@ namespace Model
      * values are <code>None</code> and <code>Input</code>. The default value is
      * <code>None</code>, which specifies not to join the input with the transformed
      * data. If you want the batch transform job to join the original input data with
-     * the transformed data, set <code>JoinSource</code> to <code>Input</code>. </p>
-     * <p>For JSON or JSONLines objects, such as a JSON array, Amazon SageMaker adds
-     * the transformed data to the input JSON object in an attribute called
-     * <code>SageMakerOutput</code>. The joined result for JSON must be a key-value
-     * pair object. If the input is not a key-value pair object, Amazon SageMaker
-     * creates a new JSON file. In the new JSON file, and the input data is stored
-     * under the <code>SageMakerInput</code> key and the results are stored in
-     * <code>SageMakerOutput</code>.</p> <p>For CSV files, Amazon SageMaker combines
-     * the transformed data with the input data at the end of the input data and stores
-     * it in the output file. The joined data has the joined input data followed by the
-     * transformed data and the output is a CSV file. </p>
+     * the transformed data, set <code>JoinSource</code> to <code>Input</code>. You can
+     * specify <code>OutputFilter</code> as an additional filter to select a portion of
+     * the joined dataset and store it in the output file.</p> <p>For JSON or JSONLines
+     * objects, such as a JSON array, SageMaker adds the transformed data to the input
+     * JSON object in an attribute called <code>SageMakerOutput</code>. The joined
+     * result for JSON must be a key-value pair object. If the input is not a key-value
+     * pair object, SageMaker creates a new JSON file. In the new JSON file, and the
+     * input data is stored under the <code>SageMakerInput</code> key and the results
+     * are stored in <code>SageMakerOutput</code>.</p> <p>For CSV data, SageMaker takes
+     * each row as a JSON array and joins the transformed data with the input by
+     * appending each transformed row to the end of the input. The joined data has the
+     * original input data followed by the transformed data and the output is a CSV
+     * file.</p> <p>For information on how joining in applied, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#batch-transform-data-processing-workflow">Workflow
+     * for Associating Inferences with Input Records</a>.</p>
      */
     inline bool JoinSourceHasBeenSet() const { return m_joinSourceHasBeenSet; }
 
@@ -283,17 +283,21 @@ namespace Model
      * values are <code>None</code> and <code>Input</code>. The default value is
      * <code>None</code>, which specifies not to join the input with the transformed
      * data. If you want the batch transform job to join the original input data with
-     * the transformed data, set <code>JoinSource</code> to <code>Input</code>. </p>
-     * <p>For JSON or JSONLines objects, such as a JSON array, Amazon SageMaker adds
-     * the transformed data to the input JSON object in an attribute called
-     * <code>SageMakerOutput</code>. The joined result for JSON must be a key-value
-     * pair object. If the input is not a key-value pair object, Amazon SageMaker
-     * creates a new JSON file. In the new JSON file, and the input data is stored
-     * under the <code>SageMakerInput</code> key and the results are stored in
-     * <code>SageMakerOutput</code>.</p> <p>For CSV files, Amazon SageMaker combines
-     * the transformed data with the input data at the end of the input data and stores
-     * it in the output file. The joined data has the joined input data followed by the
-     * transformed data and the output is a CSV file. </p>
+     * the transformed data, set <code>JoinSource</code> to <code>Input</code>. You can
+     * specify <code>OutputFilter</code> as an additional filter to select a portion of
+     * the joined dataset and store it in the output file.</p> <p>For JSON or JSONLines
+     * objects, such as a JSON array, SageMaker adds the transformed data to the input
+     * JSON object in an attribute called <code>SageMakerOutput</code>. The joined
+     * result for JSON must be a key-value pair object. If the input is not a key-value
+     * pair object, SageMaker creates a new JSON file. In the new JSON file, and the
+     * input data is stored under the <code>SageMakerInput</code> key and the results
+     * are stored in <code>SageMakerOutput</code>.</p> <p>For CSV data, SageMaker takes
+     * each row as a JSON array and joins the transformed data with the input by
+     * appending each transformed row to the end of the input. The joined data has the
+     * original input data followed by the transformed data and the output is a CSV
+     * file.</p> <p>For information on how joining in applied, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#batch-transform-data-processing-workflow">Workflow
+     * for Associating Inferences with Input Records</a>.</p>
      */
     inline void SetJoinSource(const JoinSource& value) { m_joinSourceHasBeenSet = true; m_joinSource = value; }
 
@@ -302,17 +306,21 @@ namespace Model
      * values are <code>None</code> and <code>Input</code>. The default value is
      * <code>None</code>, which specifies not to join the input with the transformed
      * data. If you want the batch transform job to join the original input data with
-     * the transformed data, set <code>JoinSource</code> to <code>Input</code>. </p>
-     * <p>For JSON or JSONLines objects, such as a JSON array, Amazon SageMaker adds
-     * the transformed data to the input JSON object in an attribute called
-     * <code>SageMakerOutput</code>. The joined result for JSON must be a key-value
-     * pair object. If the input is not a key-value pair object, Amazon SageMaker
-     * creates a new JSON file. In the new JSON file, and the input data is stored
-     * under the <code>SageMakerInput</code> key and the results are stored in
-     * <code>SageMakerOutput</code>.</p> <p>For CSV files, Amazon SageMaker combines
-     * the transformed data with the input data at the end of the input data and stores
-     * it in the output file. The joined data has the joined input data followed by the
-     * transformed data and the output is a CSV file. </p>
+     * the transformed data, set <code>JoinSource</code> to <code>Input</code>. You can
+     * specify <code>OutputFilter</code> as an additional filter to select a portion of
+     * the joined dataset and store it in the output file.</p> <p>For JSON or JSONLines
+     * objects, such as a JSON array, SageMaker adds the transformed data to the input
+     * JSON object in an attribute called <code>SageMakerOutput</code>. The joined
+     * result for JSON must be a key-value pair object. If the input is not a key-value
+     * pair object, SageMaker creates a new JSON file. In the new JSON file, and the
+     * input data is stored under the <code>SageMakerInput</code> key and the results
+     * are stored in <code>SageMakerOutput</code>.</p> <p>For CSV data, SageMaker takes
+     * each row as a JSON array and joins the transformed data with the input by
+     * appending each transformed row to the end of the input. The joined data has the
+     * original input data followed by the transformed data and the output is a CSV
+     * file.</p> <p>For information on how joining in applied, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#batch-transform-data-processing-workflow">Workflow
+     * for Associating Inferences with Input Records</a>.</p>
      */
     inline void SetJoinSource(JoinSource&& value) { m_joinSourceHasBeenSet = true; m_joinSource = std::move(value); }
 
@@ -321,17 +329,21 @@ namespace Model
      * values are <code>None</code> and <code>Input</code>. The default value is
      * <code>None</code>, which specifies not to join the input with the transformed
      * data. If you want the batch transform job to join the original input data with
-     * the transformed data, set <code>JoinSource</code> to <code>Input</code>. </p>
-     * <p>For JSON or JSONLines objects, such as a JSON array, Amazon SageMaker adds
-     * the transformed data to the input JSON object in an attribute called
-     * <code>SageMakerOutput</code>. The joined result for JSON must be a key-value
-     * pair object. If the input is not a key-value pair object, Amazon SageMaker
-     * creates a new JSON file. In the new JSON file, and the input data is stored
-     * under the <code>SageMakerInput</code> key and the results are stored in
-     * <code>SageMakerOutput</code>.</p> <p>For CSV files, Amazon SageMaker combines
-     * the transformed data with the input data at the end of the input data and stores
-     * it in the output file. The joined data has the joined input data followed by the
-     * transformed data and the output is a CSV file. </p>
+     * the transformed data, set <code>JoinSource</code> to <code>Input</code>. You can
+     * specify <code>OutputFilter</code> as an additional filter to select a portion of
+     * the joined dataset and store it in the output file.</p> <p>For JSON or JSONLines
+     * objects, such as a JSON array, SageMaker adds the transformed data to the input
+     * JSON object in an attribute called <code>SageMakerOutput</code>. The joined
+     * result for JSON must be a key-value pair object. If the input is not a key-value
+     * pair object, SageMaker creates a new JSON file. In the new JSON file, and the
+     * input data is stored under the <code>SageMakerInput</code> key and the results
+     * are stored in <code>SageMakerOutput</code>.</p> <p>For CSV data, SageMaker takes
+     * each row as a JSON array and joins the transformed data with the input by
+     * appending each transformed row to the end of the input. The joined data has the
+     * original input data followed by the transformed data and the output is a CSV
+     * file.</p> <p>For information on how joining in applied, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#batch-transform-data-processing-workflow">Workflow
+     * for Associating Inferences with Input Records</a>.</p>
      */
     inline DataProcessing& WithJoinSource(const JoinSource& value) { SetJoinSource(value); return *this;}
 
@@ -340,17 +352,21 @@ namespace Model
      * values are <code>None</code> and <code>Input</code>. The default value is
      * <code>None</code>, which specifies not to join the input with the transformed
      * data. If you want the batch transform job to join the original input data with
-     * the transformed data, set <code>JoinSource</code> to <code>Input</code>. </p>
-     * <p>For JSON or JSONLines objects, such as a JSON array, Amazon SageMaker adds
-     * the transformed data to the input JSON object in an attribute called
-     * <code>SageMakerOutput</code>. The joined result for JSON must be a key-value
-     * pair object. If the input is not a key-value pair object, Amazon SageMaker
-     * creates a new JSON file. In the new JSON file, and the input data is stored
-     * under the <code>SageMakerInput</code> key and the results are stored in
-     * <code>SageMakerOutput</code>.</p> <p>For CSV files, Amazon SageMaker combines
-     * the transformed data with the input data at the end of the input data and stores
-     * it in the output file. The joined data has the joined input data followed by the
-     * transformed data and the output is a CSV file. </p>
+     * the transformed data, set <code>JoinSource</code> to <code>Input</code>. You can
+     * specify <code>OutputFilter</code> as an additional filter to select a portion of
+     * the joined dataset and store it in the output file.</p> <p>For JSON or JSONLines
+     * objects, such as a JSON array, SageMaker adds the transformed data to the input
+     * JSON object in an attribute called <code>SageMakerOutput</code>. The joined
+     * result for JSON must be a key-value pair object. If the input is not a key-value
+     * pair object, SageMaker creates a new JSON file. In the new JSON file, and the
+     * input data is stored under the <code>SageMakerInput</code> key and the results
+     * are stored in <code>SageMakerOutput</code>.</p> <p>For CSV data, SageMaker takes
+     * each row as a JSON array and joins the transformed data with the input by
+     * appending each transformed row to the end of the input. The joined data has the
+     * original input data followed by the transformed data and the output is a CSV
+     * file.</p> <p>For information on how joining in applied, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#batch-transform-data-processing-workflow">Workflow
+     * for Associating Inferences with Input Records</a>.</p>
      */
     inline DataProcessing& WithJoinSource(JoinSource&& value) { SetJoinSource(std::move(value)); return *this;}
 

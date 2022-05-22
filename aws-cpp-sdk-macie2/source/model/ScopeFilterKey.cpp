@@ -20,21 +20,16 @@ namespace Aws
       namespace ScopeFilterKeyMapper
       {
 
-        static const int BUCKET_CREATION_DATE_HASH = HashingUtils::HashString("BUCKET_CREATION_DATE");
         static const int OBJECT_EXTENSION_HASH = HashingUtils::HashString("OBJECT_EXTENSION");
         static const int OBJECT_LAST_MODIFIED_DATE_HASH = HashingUtils::HashString("OBJECT_LAST_MODIFIED_DATE");
         static const int OBJECT_SIZE_HASH = HashingUtils::HashString("OBJECT_SIZE");
-        static const int TAG_HASH = HashingUtils::HashString("TAG");
+        static const int OBJECT_KEY_HASH = HashingUtils::HashString("OBJECT_KEY");
 
 
         ScopeFilterKey GetScopeFilterKeyForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == BUCKET_CREATION_DATE_HASH)
-          {
-            return ScopeFilterKey::BUCKET_CREATION_DATE;
-          }
-          else if (hashCode == OBJECT_EXTENSION_HASH)
+          if (hashCode == OBJECT_EXTENSION_HASH)
           {
             return ScopeFilterKey::OBJECT_EXTENSION;
           }
@@ -46,9 +41,9 @@ namespace Aws
           {
             return ScopeFilterKey::OBJECT_SIZE;
           }
-          else if (hashCode == TAG_HASH)
+          else if (hashCode == OBJECT_KEY_HASH)
           {
-            return ScopeFilterKey::TAG;
+            return ScopeFilterKey::OBJECT_KEY;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -64,16 +59,14 @@ namespace Aws
         {
           switch(enumValue)
           {
-          case ScopeFilterKey::BUCKET_CREATION_DATE:
-            return "BUCKET_CREATION_DATE";
           case ScopeFilterKey::OBJECT_EXTENSION:
             return "OBJECT_EXTENSION";
           case ScopeFilterKey::OBJECT_LAST_MODIFIED_DATE:
             return "OBJECT_LAST_MODIFIED_DATE";
           case ScopeFilterKey::OBJECT_SIZE:
             return "OBJECT_SIZE";
-          case ScopeFilterKey::TAG:
-            return "TAG";
+          case ScopeFilterKey::OBJECT_KEY:
+            return "OBJECT_KEY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -140,6 +140,31 @@ namespace Model
      */
     inline ListIntegrationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
+
+    /**
+     * <p>Boolean to indicate if hidden integration should be returned. Defaults to
+     * <code>False</code>.</p>
+     */
+    inline bool GetIncludeHidden() const{ return m_includeHidden; }
+
+    /**
+     * <p>Boolean to indicate if hidden integration should be returned. Defaults to
+     * <code>False</code>.</p>
+     */
+    inline bool IncludeHiddenHasBeenSet() const { return m_includeHiddenHasBeenSet; }
+
+    /**
+     * <p>Boolean to indicate if hidden integration should be returned. Defaults to
+     * <code>False</code>.</p>
+     */
+    inline void SetIncludeHidden(bool value) { m_includeHiddenHasBeenSet = true; m_includeHidden = value; }
+
+    /**
+     * <p>Boolean to indicate if hidden integration should be returned. Defaults to
+     * <code>False</code>.</p>
+     */
+    inline ListIntegrationsRequest& WithIncludeHidden(bool value) { SetIncludeHidden(value); return *this;}
+
   private:
 
     Aws::String m_domainName;
@@ -150,6 +175,9 @@ namespace Model
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
+    bool m_includeHidden;
+    bool m_includeHiddenHasBeenSet;
   };
 
 } // namespace Model

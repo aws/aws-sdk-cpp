@@ -378,57 +378,65 @@ namespace Model
 
     /**
      * <p>The lease identifier filter value. Specify this parameter to show only the
-     * reservation that matches the specified lease ID.</p>  <p>AWS Support might
-     * request the lease ID for an issue related to a reserved DB instance.</p> 
+     * reservation that matches the specified lease ID.</p>  <p>Amazon Web
+     * Services Support might request the lease ID for an issue related to a reserved
+     * DB instance.</p> 
      */
     inline const Aws::String& GetLeaseId() const{ return m_leaseId; }
 
     /**
      * <p>The lease identifier filter value. Specify this parameter to show only the
-     * reservation that matches the specified lease ID.</p>  <p>AWS Support might
-     * request the lease ID for an issue related to a reserved DB instance.</p> 
+     * reservation that matches the specified lease ID.</p>  <p>Amazon Web
+     * Services Support might request the lease ID for an issue related to a reserved
+     * DB instance.</p> 
      */
     inline bool LeaseIdHasBeenSet() const { return m_leaseIdHasBeenSet; }
 
     /**
      * <p>The lease identifier filter value. Specify this parameter to show only the
-     * reservation that matches the specified lease ID.</p>  <p>AWS Support might
-     * request the lease ID for an issue related to a reserved DB instance.</p> 
+     * reservation that matches the specified lease ID.</p>  <p>Amazon Web
+     * Services Support might request the lease ID for an issue related to a reserved
+     * DB instance.</p> 
      */
     inline void SetLeaseId(const Aws::String& value) { m_leaseIdHasBeenSet = true; m_leaseId = value; }
 
     /**
      * <p>The lease identifier filter value. Specify this parameter to show only the
-     * reservation that matches the specified lease ID.</p>  <p>AWS Support might
-     * request the lease ID for an issue related to a reserved DB instance.</p> 
+     * reservation that matches the specified lease ID.</p>  <p>Amazon Web
+     * Services Support might request the lease ID for an issue related to a reserved
+     * DB instance.</p> 
      */
     inline void SetLeaseId(Aws::String&& value) { m_leaseIdHasBeenSet = true; m_leaseId = std::move(value); }
 
     /**
      * <p>The lease identifier filter value. Specify this parameter to show only the
-     * reservation that matches the specified lease ID.</p>  <p>AWS Support might
-     * request the lease ID for an issue related to a reserved DB instance.</p> 
+     * reservation that matches the specified lease ID.</p>  <p>Amazon Web
+     * Services Support might request the lease ID for an issue related to a reserved
+     * DB instance.</p> 
      */
     inline void SetLeaseId(const char* value) { m_leaseIdHasBeenSet = true; m_leaseId.assign(value); }
 
     /**
      * <p>The lease identifier filter value. Specify this parameter to show only the
-     * reservation that matches the specified lease ID.</p>  <p>AWS Support might
-     * request the lease ID for an issue related to a reserved DB instance.</p> 
+     * reservation that matches the specified lease ID.</p>  <p>Amazon Web
+     * Services Support might request the lease ID for an issue related to a reserved
+     * DB instance.</p> 
      */
     inline DescribeReservedDBInstancesRequest& WithLeaseId(const Aws::String& value) { SetLeaseId(value); return *this;}
 
     /**
      * <p>The lease identifier filter value. Specify this parameter to show only the
-     * reservation that matches the specified lease ID.</p>  <p>AWS Support might
-     * request the lease ID for an issue related to a reserved DB instance.</p> 
+     * reservation that matches the specified lease ID.</p>  <p>Amazon Web
+     * Services Support might request the lease ID for an issue related to a reserved
+     * DB instance.</p> 
      */
     inline DescribeReservedDBInstancesRequest& WithLeaseId(Aws::String&& value) { SetLeaseId(std::move(value)); return *this;}
 
     /**
      * <p>The lease identifier filter value. Specify this parameter to show only the
-     * reservation that matches the specified lease ID.</p>  <p>AWS Support might
-     * request the lease ID for an issue related to a reserved DB instance.</p> 
+     * reservation that matches the specified lease ID.</p>  <p>Amazon Web
+     * Services Support might request the lease ID for an issue related to a reserved
+     * DB instance.</p> 
      */
     inline DescribeReservedDBInstancesRequest& WithLeaseId(const char* value) { SetLeaseId(value); return *this;}
 
@@ -475,91 +483,91 @@ namespace Model
 
 
     /**
-     * <p> The maximum number of records to include in the response. If more than the
+     * <p>The maximum number of records to include in the response. If more than the
      * <code>MaxRecords</code> value is available, a pagination token called a marker
-     * is included in the response so you can retrieve the remaining results. </p>
+     * is included in the response so you can retrieve the remaining results.</p>
      * <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline int GetMaxRecords() const{ return m_maxRecords; }
 
     /**
-     * <p> The maximum number of records to include in the response. If more than the
+     * <p>The maximum number of records to include in the response. If more than the
      * <code>MaxRecords</code> value is available, a pagination token called a marker
-     * is included in the response so you can retrieve the remaining results. </p>
+     * is included in the response so you can retrieve the remaining results.</p>
      * <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
 
     /**
-     * <p> The maximum number of records to include in the response. If more than the
+     * <p>The maximum number of records to include in the response. If more than the
      * <code>MaxRecords</code> value is available, a pagination token called a marker
-     * is included in the response so you can retrieve the remaining results. </p>
+     * is included in the response so you can retrieve the remaining results.</p>
      * <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
     /**
-     * <p> The maximum number of records to include in the response. If more than the
+     * <p>The maximum number of records to include in the response. If more than the
      * <code>MaxRecords</code> value is available, a pagination token called a marker
-     * is included in the response so you can retrieve the remaining results. </p>
+     * is included in the response so you can retrieve the remaining results.</p>
      * <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline DescribeReservedDBInstancesRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
 
 
     /**
-     * <p> An optional pagination token provided by a previous request. If this
+     * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>. </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
-     * <p> An optional pagination token provided by a previous request. If this
+     * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>. </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
-     * <p> An optional pagination token provided by a previous request. If this
+     * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>. </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
-     * <p> An optional pagination token provided by a previous request. If this
+     * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>. </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
-     * <p> An optional pagination token provided by a previous request. If this
+     * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>. </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
 
     /**
-     * <p> An optional pagination token provided by a previous request. If this
+     * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>. </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline DescribeReservedDBInstancesRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
-     * <p> An optional pagination token provided by a previous request. If this
+     * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>. </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline DescribeReservedDBInstancesRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
-     * <p> An optional pagination token provided by a previous request. If this
+     * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>. </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline DescribeReservedDBInstancesRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 

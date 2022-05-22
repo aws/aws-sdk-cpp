@@ -33,37 +33,37 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the app instance.</p>
+     * <p>The Amazon Resource Number (ARN) of the <code>AppInstance</code>.</p>
      */
     inline const Aws::String& GetAppInstanceArn() const{ return m_appInstanceArn; }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the app instance.</p>
+     * <p>The Amazon Resource Number (ARN) of the <code>AppInstance</code>.</p>
      */
     inline void SetAppInstanceArn(const Aws::String& value) { m_appInstanceArn = value; }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the app instance.</p>
+     * <p>The Amazon Resource Number (ARN) of the <code>AppInstance</code>.</p>
      */
     inline void SetAppInstanceArn(Aws::String&& value) { m_appInstanceArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the app instance.</p>
+     * <p>The Amazon Resource Number (ARN) of the <code>AppInstance</code>.</p>
      */
     inline void SetAppInstanceArn(const char* value) { m_appInstanceArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the app instance.</p>
+     * <p>The Amazon Resource Number (ARN) of the <code>AppInstance</code>.</p>
      */
     inline CreateAppInstanceResult& WithAppInstanceArn(const Aws::String& value) { SetAppInstanceArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the app instance.</p>
+     * <p>The Amazon Resource Number (ARN) of the <code>AppInstance</code>.</p>
      */
     inline CreateAppInstanceResult& WithAppInstanceArn(Aws::String&& value) { SetAppInstanceArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the app instance.</p>
+     * <p>The Amazon Resource Number (ARN) of the <code>AppInstance</code>.</p>
      */
     inline CreateAppInstanceResult& WithAppInstanceArn(const char* value) { SetAppInstanceArn(value); return *this;}
 

@@ -42,7 +42,13 @@ ModelPackage::ModelPackage() :
     m_lastModifiedTimeHasBeenSet(false),
     m_lastModifiedByHasBeenSet(false),
     m_approvalDescriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_domainHasBeenSet(false),
+    m_taskHasBeenSet(false),
+    m_samplePayloadUrlHasBeenSet(false),
+    m_additionalInferenceSpecificationsHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_customerMetadataPropertiesHasBeenSet(false),
+    m_driftCheckBaselinesHasBeenSet(false)
 {
 }
 
@@ -70,7 +76,13 @@ ModelPackage::ModelPackage(JsonView jsonValue) :
     m_lastModifiedTimeHasBeenSet(false),
     m_lastModifiedByHasBeenSet(false),
     m_approvalDescriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_domainHasBeenSet(false),
+    m_taskHasBeenSet(false),
+    m_samplePayloadUrlHasBeenSet(false),
+    m_additionalInferenceSpecificationsHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_customerMetadataPropertiesHasBeenSet(false),
+    m_driftCheckBaselinesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -210,6 +222,37 @@ ModelPackage& ModelPackage::operator =(JsonView jsonValue)
     m_approvalDescriptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Domain"))
+  {
+    m_domain = jsonValue.GetString("Domain");
+
+    m_domainHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Task"))
+  {
+    m_task = jsonValue.GetString("Task");
+
+    m_taskHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SamplePayloadUrl"))
+  {
+    m_samplePayloadUrl = jsonValue.GetString("SamplePayloadUrl");
+
+    m_samplePayloadUrlHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AdditionalInferenceSpecifications"))
+  {
+    Array<JsonView> additionalInferenceSpecificationsJsonList = jsonValue.GetArray("AdditionalInferenceSpecifications");
+    for(unsigned additionalInferenceSpecificationsIndex = 0; additionalInferenceSpecificationsIndex < additionalInferenceSpecificationsJsonList.GetLength(); ++additionalInferenceSpecificationsIndex)
+    {
+      m_additionalInferenceSpecifications.push_back(additionalInferenceSpecificationsJsonList[additionalInferenceSpecificationsIndex].AsObject());
+    }
+    m_additionalInferenceSpecificationsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Tags"))
   {
     Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -218,6 +261,23 @@ ModelPackage& ModelPackage::operator =(JsonView jsonValue)
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
     }
     m_tagsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CustomerMetadataProperties"))
+  {
+    Aws::Map<Aws::String, JsonView> customerMetadataPropertiesJsonMap = jsonValue.GetObject("CustomerMetadataProperties").GetAllObjects();
+    for(auto& customerMetadataPropertiesItem : customerMetadataPropertiesJsonMap)
+    {
+      m_customerMetadataProperties[customerMetadataPropertiesItem.first] = customerMetadataPropertiesItem.second.AsString();
+    }
+    m_customerMetadataPropertiesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DriftCheckBaselines"))
+  {
+    m_driftCheckBaselines = jsonValue.GetObject("DriftCheckBaselines");
+
+    m_driftCheckBaselinesHasBeenSet = true;
   }
 
   return *this;
@@ -337,6 +397,35 @@ JsonValue ModelPackage::Jsonize() const
 
   }
 
+  if(m_domainHasBeenSet)
+  {
+   payload.WithString("Domain", m_domain);
+
+  }
+
+  if(m_taskHasBeenSet)
+  {
+   payload.WithString("Task", m_task);
+
+  }
+
+  if(m_samplePayloadUrlHasBeenSet)
+  {
+   payload.WithString("SamplePayloadUrl", m_samplePayloadUrl);
+
+  }
+
+  if(m_additionalInferenceSpecificationsHasBeenSet)
+  {
+   Array<JsonValue> additionalInferenceSpecificationsJsonList(m_additionalInferenceSpecifications.size());
+   for(unsigned additionalInferenceSpecificationsIndex = 0; additionalInferenceSpecificationsIndex < additionalInferenceSpecificationsJsonList.GetLength(); ++additionalInferenceSpecificationsIndex)
+   {
+     additionalInferenceSpecificationsJsonList[additionalInferenceSpecificationsIndex].AsObject(m_additionalInferenceSpecifications[additionalInferenceSpecificationsIndex].Jsonize());
+   }
+   payload.WithArray("AdditionalInferenceSpecifications", std::move(additionalInferenceSpecificationsJsonList));
+
+  }
+
   if(m_tagsHasBeenSet)
   {
    Array<JsonValue> tagsJsonList(m_tags.size());
@@ -345,6 +434,23 @@ JsonValue ModelPackage::Jsonize() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_customerMetadataPropertiesHasBeenSet)
+  {
+   JsonValue customerMetadataPropertiesJsonMap;
+   for(auto& customerMetadataPropertiesItem : m_customerMetadataProperties)
+   {
+     customerMetadataPropertiesJsonMap.WithString(customerMetadataPropertiesItem.first, customerMetadataPropertiesItem.second);
+   }
+   payload.WithObject("CustomerMetadataProperties", std::move(customerMetadataPropertiesJsonMap));
+
+  }
+
+  if(m_driftCheckBaselinesHasBeenSet)
+  {
+   payload.WithObject("DriftCheckBaselines", m_driftCheckBaselines.Jsonize());
 
   }
 

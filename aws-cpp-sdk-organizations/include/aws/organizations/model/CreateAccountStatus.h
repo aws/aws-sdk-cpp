@@ -28,8 +28,9 @@ namespace Model
 
   /**
    * <p>Contains the status about a <a>CreateAccount</a> or
-   * <a>CreateGovCloudAccount</a> request to create an AWS account or an AWS GovCloud
-   * (US) account in an organization.</p><p><h3>See Also:</h3>   <a
+   * <a>CreateGovCloudAccount</a> request to create an Amazon Web Services account or
+   * an Amazon Web Services GovCloud (US) account in an organization.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CreateAccountStatus">AWS
    * API Reference</a></p>
    */
@@ -157,32 +158,38 @@ namespace Model
 
 
     /**
-     * <p>The status of the request.</p>
+     * <p>The status of the asynchronous request to create an Amazon Web Services
+     * account.</p>
      */
     inline const CreateAccountState& GetState() const{ return m_state; }
 
     /**
-     * <p>The status of the request.</p>
+     * <p>The status of the asynchronous request to create an Amazon Web Services
+     * account.</p>
      */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
-     * <p>The status of the request.</p>
+     * <p>The status of the asynchronous request to create an Amazon Web Services
+     * account.</p>
      */
     inline void SetState(const CreateAccountState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>The status of the request.</p>
+     * <p>The status of the asynchronous request to create an Amazon Web Services
+     * account.</p>
      */
     inline void SetState(CreateAccountState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
-     * <p>The status of the request.</p>
+     * <p>The status of the asynchronous request to create an Amazon Web Services
+     * account.</p>
      */
     inline CreateAccountStatus& WithState(const CreateAccountState& value) { SetState(value); return *this;}
 
     /**
-     * <p>The status of the request.</p>
+     * <p>The status of the asynchronous request to create an Amazon Web Services
+     * account.</p>
      */
     inline CreateAccountStatus& WithState(CreateAccountState&& value) { SetState(std::move(value)); return *this;}
 
@@ -308,182 +315,278 @@ namespace Model
 
     /**
      * <p>If the account was created successfully, the unique identifier (ID) of the
-     * new account in the AWS GovCloud (US) Region.</p>
+     * new account in the Amazon Web Services GovCloud (US) Region.</p>
      */
     inline const Aws::String& GetGovCloudAccountId() const{ return m_govCloudAccountId; }
 
     /**
      * <p>If the account was created successfully, the unique identifier (ID) of the
-     * new account in the AWS GovCloud (US) Region.</p>
+     * new account in the Amazon Web Services GovCloud (US) Region.</p>
      */
     inline bool GovCloudAccountIdHasBeenSet() const { return m_govCloudAccountIdHasBeenSet; }
 
     /**
      * <p>If the account was created successfully, the unique identifier (ID) of the
-     * new account in the AWS GovCloud (US) Region.</p>
+     * new account in the Amazon Web Services GovCloud (US) Region.</p>
      */
     inline void SetGovCloudAccountId(const Aws::String& value) { m_govCloudAccountIdHasBeenSet = true; m_govCloudAccountId = value; }
 
     /**
      * <p>If the account was created successfully, the unique identifier (ID) of the
-     * new account in the AWS GovCloud (US) Region.</p>
+     * new account in the Amazon Web Services GovCloud (US) Region.</p>
      */
     inline void SetGovCloudAccountId(Aws::String&& value) { m_govCloudAccountIdHasBeenSet = true; m_govCloudAccountId = std::move(value); }
 
     /**
      * <p>If the account was created successfully, the unique identifier (ID) of the
-     * new account in the AWS GovCloud (US) Region.</p>
+     * new account in the Amazon Web Services GovCloud (US) Region.</p>
      */
     inline void SetGovCloudAccountId(const char* value) { m_govCloudAccountIdHasBeenSet = true; m_govCloudAccountId.assign(value); }
 
     /**
      * <p>If the account was created successfully, the unique identifier (ID) of the
-     * new account in the AWS GovCloud (US) Region.</p>
+     * new account in the Amazon Web Services GovCloud (US) Region.</p>
      */
     inline CreateAccountStatus& WithGovCloudAccountId(const Aws::String& value) { SetGovCloudAccountId(value); return *this;}
 
     /**
      * <p>If the account was created successfully, the unique identifier (ID) of the
-     * new account in the AWS GovCloud (US) Region.</p>
+     * new account in the Amazon Web Services GovCloud (US) Region.</p>
      */
     inline CreateAccountStatus& WithGovCloudAccountId(Aws::String&& value) { SetGovCloudAccountId(std::move(value)); return *this;}
 
     /**
      * <p>If the account was created successfully, the unique identifier (ID) of the
-     * new account in the AWS GovCloud (US) Region.</p>
+     * new account in the Amazon Web Services GovCloud (US) Region.</p>
      */
     inline CreateAccountStatus& WithGovCloudAccountId(const char* value) { SetGovCloudAccountId(value); return *this;}
 
 
     /**
      * <p>If the request failed, a description of the reason for the failure.</p> <ul>
-     * <li> <p>ACCOUNT_LIMIT_EXCEEDED: The account could not be created because you
-     * have reached the limit on the number of accounts in your organization.</p> </li>
-     * <li> <p>CONCURRENT_ACCOUNT_MODIFICATION: You already submitted a request with
-     * the same information.</p> </li> <li> <p>EMAIL_ALREADY_EXISTS: The account could
-     * not be created because another AWS account with that email address already
-     * exists.</p> </li> <li> <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the
-     * AWS GovCloud (US) Region could not be created because this Region already
-     * includes an account with that email address.</p> </li> <li> <p>INVALID_ADDRESS:
-     * The account could not be created because the address you provided is not
-     * valid.</p> </li> <li> <p>INVALID_EMAIL: The account could not be created because
-     * the email address you provided is not valid.</p> </li> <li> <p>INTERNAL_FAILURE:
-     * The account could not be created because of an internal failure. Try again
-     * later. If the problem persists, contact Customer Support.</p> </li> <li>
-     * <p>MISSING_BUSINESS_VALIDATION: The AWS account that owns your organization has
-     * not received Business Validation.</p> </li> <li> <p> MISSING_PAYMENT_INSTRUMENT:
-     * You must configure the management account with a valid payment method, such as a
-     * credit card.</p> </li> </ul>
+     * <li> <p>ACCOUNT_LIMIT_EXCEEDED: The account couldn't be created because you
+     * reached the limit on the number of accounts in your organization.</p> </li> <li>
+     * <p>CONCURRENT_ACCOUNT_MODIFICATION: You already submitted a request with the
+     * same information.</p> </li> <li> <p>EMAIL_ALREADY_EXISTS: The account could not
+     * be created because another Amazon Web Services account with that email address
+     * already exists.</p> </li> <li> <p>FAILED_BUSINESS_VALIDATION: The Amazon Web
+     * Services account that owns your organization failed to receive business license
+     * validation.</p> </li> <li> <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in
+     * the Amazon Web Services GovCloud (US) Region could not be created because this
+     * Region already includes an account with that email address.</p> </li> <li>
+     * <p>IDENTITY_INVALID_BUSINESS_VALIDATION: The Amazon Web Services account that
+     * owns your organization can't complete business license validation because it
+     * doesn't have valid identity data.</p> </li> <li> <p>INVALID_ADDRESS: The account
+     * could not be created because the address you provided is not valid.</p> </li>
+     * <li> <p>INVALID_EMAIL: The account could not be created because the email
+     * address you provided is not valid.</p> </li> <li> <p>INVALID_PAYMENT_INSTRUMENT:
+     * The Amazon Web Services account that owns your organization does not have a
+     * supported payment method associated with the account. Amazon Web Services does
+     * not support cards issued by financial institutions in Russia or Belarus. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-general.html">Managing
+     * your Amazon Web Services payments</a>.</p> </li> <li> <p>INTERNAL_FAILURE: The
+     * account could not be created because of an internal failure. Try again later. If
+     * the problem persists, contact Amazon Web Services Customer Support.</p> </li>
+     * <li> <p>MISSING_BUSINESS_VALIDATION: The Amazon Web Services account that owns
+     * your organization has not received Business Validation.</p> </li> <li> <p>
+     * MISSING_PAYMENT_INSTRUMENT: You must configure the management account with a
+     * valid payment method, such as a credit card.</p> </li> <li>
+     * <p>PENDING_BUSINESS_VALIDATION: The Amazon Web Services account that owns your
+     * organization is still in the process of completing business license
+     * validation.</p> </li> <li> <p>UNKNOWN_BUSINESS_VALIDATION: The Amazon Web
+     * Services account that owns your organization has an unknown issue with business
+     * license validation.</p> </li> </ul>
      */
     inline const CreateAccountFailureReason& GetFailureReason() const{ return m_failureReason; }
 
     /**
      * <p>If the request failed, a description of the reason for the failure.</p> <ul>
-     * <li> <p>ACCOUNT_LIMIT_EXCEEDED: The account could not be created because you
-     * have reached the limit on the number of accounts in your organization.</p> </li>
-     * <li> <p>CONCURRENT_ACCOUNT_MODIFICATION: You already submitted a request with
-     * the same information.</p> </li> <li> <p>EMAIL_ALREADY_EXISTS: The account could
-     * not be created because another AWS account with that email address already
-     * exists.</p> </li> <li> <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the
-     * AWS GovCloud (US) Region could not be created because this Region already
-     * includes an account with that email address.</p> </li> <li> <p>INVALID_ADDRESS:
-     * The account could not be created because the address you provided is not
-     * valid.</p> </li> <li> <p>INVALID_EMAIL: The account could not be created because
-     * the email address you provided is not valid.</p> </li> <li> <p>INTERNAL_FAILURE:
-     * The account could not be created because of an internal failure. Try again
-     * later. If the problem persists, contact Customer Support.</p> </li> <li>
-     * <p>MISSING_BUSINESS_VALIDATION: The AWS account that owns your organization has
-     * not received Business Validation.</p> </li> <li> <p> MISSING_PAYMENT_INSTRUMENT:
-     * You must configure the management account with a valid payment method, such as a
-     * credit card.</p> </li> </ul>
+     * <li> <p>ACCOUNT_LIMIT_EXCEEDED: The account couldn't be created because you
+     * reached the limit on the number of accounts in your organization.</p> </li> <li>
+     * <p>CONCURRENT_ACCOUNT_MODIFICATION: You already submitted a request with the
+     * same information.</p> </li> <li> <p>EMAIL_ALREADY_EXISTS: The account could not
+     * be created because another Amazon Web Services account with that email address
+     * already exists.</p> </li> <li> <p>FAILED_BUSINESS_VALIDATION: The Amazon Web
+     * Services account that owns your organization failed to receive business license
+     * validation.</p> </li> <li> <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in
+     * the Amazon Web Services GovCloud (US) Region could not be created because this
+     * Region already includes an account with that email address.</p> </li> <li>
+     * <p>IDENTITY_INVALID_BUSINESS_VALIDATION: The Amazon Web Services account that
+     * owns your organization can't complete business license validation because it
+     * doesn't have valid identity data.</p> </li> <li> <p>INVALID_ADDRESS: The account
+     * could not be created because the address you provided is not valid.</p> </li>
+     * <li> <p>INVALID_EMAIL: The account could not be created because the email
+     * address you provided is not valid.</p> </li> <li> <p>INVALID_PAYMENT_INSTRUMENT:
+     * The Amazon Web Services account that owns your organization does not have a
+     * supported payment method associated with the account. Amazon Web Services does
+     * not support cards issued by financial institutions in Russia or Belarus. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-general.html">Managing
+     * your Amazon Web Services payments</a>.</p> </li> <li> <p>INTERNAL_FAILURE: The
+     * account could not be created because of an internal failure. Try again later. If
+     * the problem persists, contact Amazon Web Services Customer Support.</p> </li>
+     * <li> <p>MISSING_BUSINESS_VALIDATION: The Amazon Web Services account that owns
+     * your organization has not received Business Validation.</p> </li> <li> <p>
+     * MISSING_PAYMENT_INSTRUMENT: You must configure the management account with a
+     * valid payment method, such as a credit card.</p> </li> <li>
+     * <p>PENDING_BUSINESS_VALIDATION: The Amazon Web Services account that owns your
+     * organization is still in the process of completing business license
+     * validation.</p> </li> <li> <p>UNKNOWN_BUSINESS_VALIDATION: The Amazon Web
+     * Services account that owns your organization has an unknown issue with business
+     * license validation.</p> </li> </ul>
      */
     inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
 
     /**
      * <p>If the request failed, a description of the reason for the failure.</p> <ul>
-     * <li> <p>ACCOUNT_LIMIT_EXCEEDED: The account could not be created because you
-     * have reached the limit on the number of accounts in your organization.</p> </li>
-     * <li> <p>CONCURRENT_ACCOUNT_MODIFICATION: You already submitted a request with
-     * the same information.</p> </li> <li> <p>EMAIL_ALREADY_EXISTS: The account could
-     * not be created because another AWS account with that email address already
-     * exists.</p> </li> <li> <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the
-     * AWS GovCloud (US) Region could not be created because this Region already
-     * includes an account with that email address.</p> </li> <li> <p>INVALID_ADDRESS:
-     * The account could not be created because the address you provided is not
-     * valid.</p> </li> <li> <p>INVALID_EMAIL: The account could not be created because
-     * the email address you provided is not valid.</p> </li> <li> <p>INTERNAL_FAILURE:
-     * The account could not be created because of an internal failure. Try again
-     * later. If the problem persists, contact Customer Support.</p> </li> <li>
-     * <p>MISSING_BUSINESS_VALIDATION: The AWS account that owns your organization has
-     * not received Business Validation.</p> </li> <li> <p> MISSING_PAYMENT_INSTRUMENT:
-     * You must configure the management account with a valid payment method, such as a
-     * credit card.</p> </li> </ul>
+     * <li> <p>ACCOUNT_LIMIT_EXCEEDED: The account couldn't be created because you
+     * reached the limit on the number of accounts in your organization.</p> </li> <li>
+     * <p>CONCURRENT_ACCOUNT_MODIFICATION: You already submitted a request with the
+     * same information.</p> </li> <li> <p>EMAIL_ALREADY_EXISTS: The account could not
+     * be created because another Amazon Web Services account with that email address
+     * already exists.</p> </li> <li> <p>FAILED_BUSINESS_VALIDATION: The Amazon Web
+     * Services account that owns your organization failed to receive business license
+     * validation.</p> </li> <li> <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in
+     * the Amazon Web Services GovCloud (US) Region could not be created because this
+     * Region already includes an account with that email address.</p> </li> <li>
+     * <p>IDENTITY_INVALID_BUSINESS_VALIDATION: The Amazon Web Services account that
+     * owns your organization can't complete business license validation because it
+     * doesn't have valid identity data.</p> </li> <li> <p>INVALID_ADDRESS: The account
+     * could not be created because the address you provided is not valid.</p> </li>
+     * <li> <p>INVALID_EMAIL: The account could not be created because the email
+     * address you provided is not valid.</p> </li> <li> <p>INVALID_PAYMENT_INSTRUMENT:
+     * The Amazon Web Services account that owns your organization does not have a
+     * supported payment method associated with the account. Amazon Web Services does
+     * not support cards issued by financial institutions in Russia or Belarus. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-general.html">Managing
+     * your Amazon Web Services payments</a>.</p> </li> <li> <p>INTERNAL_FAILURE: The
+     * account could not be created because of an internal failure. Try again later. If
+     * the problem persists, contact Amazon Web Services Customer Support.</p> </li>
+     * <li> <p>MISSING_BUSINESS_VALIDATION: The Amazon Web Services account that owns
+     * your organization has not received Business Validation.</p> </li> <li> <p>
+     * MISSING_PAYMENT_INSTRUMENT: You must configure the management account with a
+     * valid payment method, such as a credit card.</p> </li> <li>
+     * <p>PENDING_BUSINESS_VALIDATION: The Amazon Web Services account that owns your
+     * organization is still in the process of completing business license
+     * validation.</p> </li> <li> <p>UNKNOWN_BUSINESS_VALIDATION: The Amazon Web
+     * Services account that owns your organization has an unknown issue with business
+     * license validation.</p> </li> </ul>
      */
     inline void SetFailureReason(const CreateAccountFailureReason& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
 
     /**
      * <p>If the request failed, a description of the reason for the failure.</p> <ul>
-     * <li> <p>ACCOUNT_LIMIT_EXCEEDED: The account could not be created because you
-     * have reached the limit on the number of accounts in your organization.</p> </li>
-     * <li> <p>CONCURRENT_ACCOUNT_MODIFICATION: You already submitted a request with
-     * the same information.</p> </li> <li> <p>EMAIL_ALREADY_EXISTS: The account could
-     * not be created because another AWS account with that email address already
-     * exists.</p> </li> <li> <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the
-     * AWS GovCloud (US) Region could not be created because this Region already
-     * includes an account with that email address.</p> </li> <li> <p>INVALID_ADDRESS:
-     * The account could not be created because the address you provided is not
-     * valid.</p> </li> <li> <p>INVALID_EMAIL: The account could not be created because
-     * the email address you provided is not valid.</p> </li> <li> <p>INTERNAL_FAILURE:
-     * The account could not be created because of an internal failure. Try again
-     * later. If the problem persists, contact Customer Support.</p> </li> <li>
-     * <p>MISSING_BUSINESS_VALIDATION: The AWS account that owns your organization has
-     * not received Business Validation.</p> </li> <li> <p> MISSING_PAYMENT_INSTRUMENT:
-     * You must configure the management account with a valid payment method, such as a
-     * credit card.</p> </li> </ul>
+     * <li> <p>ACCOUNT_LIMIT_EXCEEDED: The account couldn't be created because you
+     * reached the limit on the number of accounts in your organization.</p> </li> <li>
+     * <p>CONCURRENT_ACCOUNT_MODIFICATION: You already submitted a request with the
+     * same information.</p> </li> <li> <p>EMAIL_ALREADY_EXISTS: The account could not
+     * be created because another Amazon Web Services account with that email address
+     * already exists.</p> </li> <li> <p>FAILED_BUSINESS_VALIDATION: The Amazon Web
+     * Services account that owns your organization failed to receive business license
+     * validation.</p> </li> <li> <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in
+     * the Amazon Web Services GovCloud (US) Region could not be created because this
+     * Region already includes an account with that email address.</p> </li> <li>
+     * <p>IDENTITY_INVALID_BUSINESS_VALIDATION: The Amazon Web Services account that
+     * owns your organization can't complete business license validation because it
+     * doesn't have valid identity data.</p> </li> <li> <p>INVALID_ADDRESS: The account
+     * could not be created because the address you provided is not valid.</p> </li>
+     * <li> <p>INVALID_EMAIL: The account could not be created because the email
+     * address you provided is not valid.</p> </li> <li> <p>INVALID_PAYMENT_INSTRUMENT:
+     * The Amazon Web Services account that owns your organization does not have a
+     * supported payment method associated with the account. Amazon Web Services does
+     * not support cards issued by financial institutions in Russia or Belarus. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-general.html">Managing
+     * your Amazon Web Services payments</a>.</p> </li> <li> <p>INTERNAL_FAILURE: The
+     * account could not be created because of an internal failure. Try again later. If
+     * the problem persists, contact Amazon Web Services Customer Support.</p> </li>
+     * <li> <p>MISSING_BUSINESS_VALIDATION: The Amazon Web Services account that owns
+     * your organization has not received Business Validation.</p> </li> <li> <p>
+     * MISSING_PAYMENT_INSTRUMENT: You must configure the management account with a
+     * valid payment method, such as a credit card.</p> </li> <li>
+     * <p>PENDING_BUSINESS_VALIDATION: The Amazon Web Services account that owns your
+     * organization is still in the process of completing business license
+     * validation.</p> </li> <li> <p>UNKNOWN_BUSINESS_VALIDATION: The Amazon Web
+     * Services account that owns your organization has an unknown issue with business
+     * license validation.</p> </li> </ul>
      */
     inline void SetFailureReason(CreateAccountFailureReason&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
 
     /**
      * <p>If the request failed, a description of the reason for the failure.</p> <ul>
-     * <li> <p>ACCOUNT_LIMIT_EXCEEDED: The account could not be created because you
-     * have reached the limit on the number of accounts in your organization.</p> </li>
-     * <li> <p>CONCURRENT_ACCOUNT_MODIFICATION: You already submitted a request with
-     * the same information.</p> </li> <li> <p>EMAIL_ALREADY_EXISTS: The account could
-     * not be created because another AWS account with that email address already
-     * exists.</p> </li> <li> <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the
-     * AWS GovCloud (US) Region could not be created because this Region already
-     * includes an account with that email address.</p> </li> <li> <p>INVALID_ADDRESS:
-     * The account could not be created because the address you provided is not
-     * valid.</p> </li> <li> <p>INVALID_EMAIL: The account could not be created because
-     * the email address you provided is not valid.</p> </li> <li> <p>INTERNAL_FAILURE:
-     * The account could not be created because of an internal failure. Try again
-     * later. If the problem persists, contact Customer Support.</p> </li> <li>
-     * <p>MISSING_BUSINESS_VALIDATION: The AWS account that owns your organization has
-     * not received Business Validation.</p> </li> <li> <p> MISSING_PAYMENT_INSTRUMENT:
-     * You must configure the management account with a valid payment method, such as a
-     * credit card.</p> </li> </ul>
+     * <li> <p>ACCOUNT_LIMIT_EXCEEDED: The account couldn't be created because you
+     * reached the limit on the number of accounts in your organization.</p> </li> <li>
+     * <p>CONCURRENT_ACCOUNT_MODIFICATION: You already submitted a request with the
+     * same information.</p> </li> <li> <p>EMAIL_ALREADY_EXISTS: The account could not
+     * be created because another Amazon Web Services account with that email address
+     * already exists.</p> </li> <li> <p>FAILED_BUSINESS_VALIDATION: The Amazon Web
+     * Services account that owns your organization failed to receive business license
+     * validation.</p> </li> <li> <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in
+     * the Amazon Web Services GovCloud (US) Region could not be created because this
+     * Region already includes an account with that email address.</p> </li> <li>
+     * <p>IDENTITY_INVALID_BUSINESS_VALIDATION: The Amazon Web Services account that
+     * owns your organization can't complete business license validation because it
+     * doesn't have valid identity data.</p> </li> <li> <p>INVALID_ADDRESS: The account
+     * could not be created because the address you provided is not valid.</p> </li>
+     * <li> <p>INVALID_EMAIL: The account could not be created because the email
+     * address you provided is not valid.</p> </li> <li> <p>INVALID_PAYMENT_INSTRUMENT:
+     * The Amazon Web Services account that owns your organization does not have a
+     * supported payment method associated with the account. Amazon Web Services does
+     * not support cards issued by financial institutions in Russia or Belarus. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-general.html">Managing
+     * your Amazon Web Services payments</a>.</p> </li> <li> <p>INTERNAL_FAILURE: The
+     * account could not be created because of an internal failure. Try again later. If
+     * the problem persists, contact Amazon Web Services Customer Support.</p> </li>
+     * <li> <p>MISSING_BUSINESS_VALIDATION: The Amazon Web Services account that owns
+     * your organization has not received Business Validation.</p> </li> <li> <p>
+     * MISSING_PAYMENT_INSTRUMENT: You must configure the management account with a
+     * valid payment method, such as a credit card.</p> </li> <li>
+     * <p>PENDING_BUSINESS_VALIDATION: The Amazon Web Services account that owns your
+     * organization is still in the process of completing business license
+     * validation.</p> </li> <li> <p>UNKNOWN_BUSINESS_VALIDATION: The Amazon Web
+     * Services account that owns your organization has an unknown issue with business
+     * license validation.</p> </li> </ul>
      */
     inline CreateAccountStatus& WithFailureReason(const CreateAccountFailureReason& value) { SetFailureReason(value); return *this;}
 
     /**
      * <p>If the request failed, a description of the reason for the failure.</p> <ul>
-     * <li> <p>ACCOUNT_LIMIT_EXCEEDED: The account could not be created because you
-     * have reached the limit on the number of accounts in your organization.</p> </li>
-     * <li> <p>CONCURRENT_ACCOUNT_MODIFICATION: You already submitted a request with
-     * the same information.</p> </li> <li> <p>EMAIL_ALREADY_EXISTS: The account could
-     * not be created because another AWS account with that email address already
-     * exists.</p> </li> <li> <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the
-     * AWS GovCloud (US) Region could not be created because this Region already
-     * includes an account with that email address.</p> </li> <li> <p>INVALID_ADDRESS:
-     * The account could not be created because the address you provided is not
-     * valid.</p> </li> <li> <p>INVALID_EMAIL: The account could not be created because
-     * the email address you provided is not valid.</p> </li> <li> <p>INTERNAL_FAILURE:
-     * The account could not be created because of an internal failure. Try again
-     * later. If the problem persists, contact Customer Support.</p> </li> <li>
-     * <p>MISSING_BUSINESS_VALIDATION: The AWS account that owns your organization has
-     * not received Business Validation.</p> </li> <li> <p> MISSING_PAYMENT_INSTRUMENT:
-     * You must configure the management account with a valid payment method, such as a
-     * credit card.</p> </li> </ul>
+     * <li> <p>ACCOUNT_LIMIT_EXCEEDED: The account couldn't be created because you
+     * reached the limit on the number of accounts in your organization.</p> </li> <li>
+     * <p>CONCURRENT_ACCOUNT_MODIFICATION: You already submitted a request with the
+     * same information.</p> </li> <li> <p>EMAIL_ALREADY_EXISTS: The account could not
+     * be created because another Amazon Web Services account with that email address
+     * already exists.</p> </li> <li> <p>FAILED_BUSINESS_VALIDATION: The Amazon Web
+     * Services account that owns your organization failed to receive business license
+     * validation.</p> </li> <li> <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in
+     * the Amazon Web Services GovCloud (US) Region could not be created because this
+     * Region already includes an account with that email address.</p> </li> <li>
+     * <p>IDENTITY_INVALID_BUSINESS_VALIDATION: The Amazon Web Services account that
+     * owns your organization can't complete business license validation because it
+     * doesn't have valid identity data.</p> </li> <li> <p>INVALID_ADDRESS: The account
+     * could not be created because the address you provided is not valid.</p> </li>
+     * <li> <p>INVALID_EMAIL: The account could not be created because the email
+     * address you provided is not valid.</p> </li> <li> <p>INVALID_PAYMENT_INSTRUMENT:
+     * The Amazon Web Services account that owns your organization does not have a
+     * supported payment method associated with the account. Amazon Web Services does
+     * not support cards issued by financial institutions in Russia or Belarus. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-general.html">Managing
+     * your Amazon Web Services payments</a>.</p> </li> <li> <p>INTERNAL_FAILURE: The
+     * account could not be created because of an internal failure. Try again later. If
+     * the problem persists, contact Amazon Web Services Customer Support.</p> </li>
+     * <li> <p>MISSING_BUSINESS_VALIDATION: The Amazon Web Services account that owns
+     * your organization has not received Business Validation.</p> </li> <li> <p>
+     * MISSING_PAYMENT_INSTRUMENT: You must configure the management account with a
+     * valid payment method, such as a credit card.</p> </li> <li>
+     * <p>PENDING_BUSINESS_VALIDATION: The Amazon Web Services account that owns your
+     * organization is still in the process of completing business license
+     * validation.</p> </li> <li> <p>UNKNOWN_BUSINESS_VALIDATION: The Amazon Web
+     * Services account that owns your organization has an unknown issue with business
+     * license validation.</p> </li> </ul>
      */
     inline CreateAccountStatus& WithFailureReason(CreateAccountFailureReason&& value) { SetFailureReason(std::move(value)); return *this;}
 

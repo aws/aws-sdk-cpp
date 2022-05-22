@@ -17,12 +17,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 UpdateMaintenanceWindowTaskResult::UpdateMaintenanceWindowTaskResult() : 
-    m_priority(0)
+    m_priority(0),
+    m_cutoffBehavior(MaintenanceWindowTaskCutoffBehavior::NOT_SET)
 {
 }
 
 UpdateMaintenanceWindowTaskResult::UpdateMaintenanceWindowTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_priority(0)
+    m_priority(0),
+    m_cutoffBehavior(MaintenanceWindowTaskCutoffBehavior::NOT_SET)
 {
   *this = result;
 }
@@ -111,6 +113,12 @@ UpdateMaintenanceWindowTaskResult& UpdateMaintenanceWindowTaskResult::operator =
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
+
+  }
+
+  if(jsonValue.ValueExists("CutoffBehavior"))
+  {
+    m_cutoffBehavior = MaintenanceWindowTaskCutoffBehaviorMapper::GetMaintenanceWindowTaskCutoffBehaviorForName(jsonValue.GetString("CutoffBehavior"));
 
   }
 

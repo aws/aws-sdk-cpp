@@ -20,7 +20,9 @@ namespace Model
     DIRECTION,
     SYSTEM_ORGAN_SITE,
     QUALITY,
-    QUANTITY
+    QUANTITY,
+    TIME_TO_DX_NAME,
+    TIME_EXPRESSION
   };
 
 namespace ICD10CMAttributeTypeMapper

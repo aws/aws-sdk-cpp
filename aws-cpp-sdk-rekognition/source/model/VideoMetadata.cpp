@@ -28,7 +28,9 @@ VideoMetadata::VideoMetadata() :
     m_frameHeight(0),
     m_frameHeightHasBeenSet(false),
     m_frameWidth(0),
-    m_frameWidthHasBeenSet(false)
+    m_frameWidthHasBeenSet(false),
+    m_colorRange(VideoColorRange::NOT_SET),
+    m_colorRangeHasBeenSet(false)
 {
 }
 
@@ -42,7 +44,9 @@ VideoMetadata::VideoMetadata(JsonView jsonValue) :
     m_frameHeight(0),
     m_frameHeightHasBeenSet(false),
     m_frameWidth(0),
-    m_frameWidthHasBeenSet(false)
+    m_frameWidthHasBeenSet(false),
+    m_colorRange(VideoColorRange::NOT_SET),
+    m_colorRangeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -91,6 +95,13 @@ VideoMetadata& VideoMetadata::operator =(JsonView jsonValue)
     m_frameWidthHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ColorRange"))
+  {
+    m_colorRange = VideoColorRangeMapper::GetVideoColorRangeForName(jsonValue.GetString("ColorRange"));
+
+    m_colorRangeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -132,6 +143,11 @@ JsonValue VideoMetadata::Jsonize() const
   {
    payload.WithInt64("FrameWidth", m_frameWidth);
 
+  }
+
+  if(m_colorRangeHasBeenSet)
+  {
+   payload.WithString("ColorRange", VideoColorRangeMapper::GetNameForVideoColorRange(m_colorRange));
   }
 
   return payload;

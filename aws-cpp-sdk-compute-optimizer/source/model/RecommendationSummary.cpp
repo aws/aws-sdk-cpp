@@ -22,7 +22,9 @@ RecommendationSummary::RecommendationSummary() :
     m_summariesHasBeenSet(false),
     m_recommendationResourceType(RecommendationSourceType::NOT_SET),
     m_recommendationResourceTypeHasBeenSet(false),
-    m_accountIdHasBeenSet(false)
+    m_accountIdHasBeenSet(false),
+    m_savingsOpportunityHasBeenSet(false),
+    m_currentPerformanceRiskRatingsHasBeenSet(false)
 {
 }
 
@@ -30,7 +32,9 @@ RecommendationSummary::RecommendationSummary(JsonView jsonValue) :
     m_summariesHasBeenSet(false),
     m_recommendationResourceType(RecommendationSourceType::NOT_SET),
     m_recommendationResourceTypeHasBeenSet(false),
-    m_accountIdHasBeenSet(false)
+    m_accountIdHasBeenSet(false),
+    m_savingsOpportunityHasBeenSet(false),
+    m_currentPerformanceRiskRatingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -61,6 +65,20 @@ RecommendationSummary& RecommendationSummary::operator =(JsonView jsonValue)
     m_accountIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("savingsOpportunity"))
+  {
+    m_savingsOpportunity = jsonValue.GetObject("savingsOpportunity");
+
+    m_savingsOpportunityHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("currentPerformanceRiskRatings"))
+  {
+    m_currentPerformanceRiskRatings = jsonValue.GetObject("currentPerformanceRiskRatings");
+
+    m_currentPerformanceRiskRatingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -87,6 +105,18 @@ JsonValue RecommendationSummary::Jsonize() const
   if(m_accountIdHasBeenSet)
   {
    payload.WithString("accountId", m_accountId);
+
+  }
+
+  if(m_savingsOpportunityHasBeenSet)
+  {
+   payload.WithObject("savingsOpportunity", m_savingsOpportunity.Jsonize());
+
+  }
+
+  if(m_currentPerformanceRiskRatingsHasBeenSet)
+  {
+   payload.WithObject("currentPerformanceRiskRatings", m_currentPerformanceRiskRatings.Jsonize());
 
   }
 

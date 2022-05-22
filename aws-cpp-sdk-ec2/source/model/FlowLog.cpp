@@ -37,7 +37,8 @@ FlowLog::FlowLog() :
     m_logFormatHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_maxAggregationInterval(0),
-    m_maxAggregationIntervalHasBeenSet(false)
+    m_maxAggregationIntervalHasBeenSet(false),
+    m_destinationOptionsHasBeenSet(false)
 {
 }
 
@@ -58,7 +59,8 @@ FlowLog::FlowLog(const XmlNode& xmlNode) :
     m_logFormatHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_maxAggregationInterval(0),
-    m_maxAggregationIntervalHasBeenSet(false)
+    m_maxAggregationIntervalHasBeenSet(false),
+    m_destinationOptionsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -159,6 +161,12 @@ FlowLog& FlowLog::operator =(const XmlNode& xmlNode)
       m_maxAggregationInterval = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxAggregationIntervalNode.GetText()).c_str()).c_str());
       m_maxAggregationIntervalHasBeenSet = true;
     }
+    XmlNode destinationOptionsNode = resultNode.FirstChild("destinationOptions");
+    if(!destinationOptionsNode.IsNull())
+    {
+      m_destinationOptions = destinationOptionsNode;
+      m_destinationOptionsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -242,6 +250,13 @@ void FlowLog::OutputToStream(Aws::OStream& oStream, const char* location, unsign
       oStream << location << index << locationValue << ".MaxAggregationInterval=" << m_maxAggregationInterval << "&";
   }
 
+  if(m_destinationOptionsHasBeenSet)
+  {
+      Aws::StringStream destinationOptionsLocationAndMemberSs;
+      destinationOptionsLocationAndMemberSs << location << index << locationValue << ".DestinationOptions";
+      m_destinationOptions.OutputToStream(oStream, destinationOptionsLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void FlowLog::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -307,6 +322,12 @@ void FlowLog::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_maxAggregationIntervalHasBeenSet)
   {
       oStream << location << ".MaxAggregationInterval=" << m_maxAggregationInterval << "&";
+  }
+  if(m_destinationOptionsHasBeenSet)
+  {
+      Aws::String destinationOptionsLocationAndMember(location);
+      destinationOptionsLocationAndMember += ".DestinationOptions";
+      m_destinationOptions.OutputToStream(oStream, destinationOptionsLocationAndMember.c_str());
   }
 }
 

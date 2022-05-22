@@ -84,6 +84,52 @@ namespace Model
 
 
     /**
+     * <p>One or more IPv6 prefixes to unassign from the network interface.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetIpv6Prefixes() const{ return m_ipv6Prefixes; }
+
+    /**
+     * <p>One or more IPv6 prefixes to unassign from the network interface.</p>
+     */
+    inline bool Ipv6PrefixesHasBeenSet() const { return m_ipv6PrefixesHasBeenSet; }
+
+    /**
+     * <p>One or more IPv6 prefixes to unassign from the network interface.</p>
+     */
+    inline void SetIpv6Prefixes(const Aws::Vector<Aws::String>& value) { m_ipv6PrefixesHasBeenSet = true; m_ipv6Prefixes = value; }
+
+    /**
+     * <p>One or more IPv6 prefixes to unassign from the network interface.</p>
+     */
+    inline void SetIpv6Prefixes(Aws::Vector<Aws::String>&& value) { m_ipv6PrefixesHasBeenSet = true; m_ipv6Prefixes = std::move(value); }
+
+    /**
+     * <p>One or more IPv6 prefixes to unassign from the network interface.</p>
+     */
+    inline UnassignIpv6AddressesRequest& WithIpv6Prefixes(const Aws::Vector<Aws::String>& value) { SetIpv6Prefixes(value); return *this;}
+
+    /**
+     * <p>One or more IPv6 prefixes to unassign from the network interface.</p>
+     */
+    inline UnassignIpv6AddressesRequest& WithIpv6Prefixes(Aws::Vector<Aws::String>&& value) { SetIpv6Prefixes(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more IPv6 prefixes to unassign from the network interface.</p>
+     */
+    inline UnassignIpv6AddressesRequest& AddIpv6Prefixes(const Aws::String& value) { m_ipv6PrefixesHasBeenSet = true; m_ipv6Prefixes.push_back(value); return *this; }
+
+    /**
+     * <p>One or more IPv6 prefixes to unassign from the network interface.</p>
+     */
+    inline UnassignIpv6AddressesRequest& AddIpv6Prefixes(Aws::String&& value) { m_ipv6PrefixesHasBeenSet = true; m_ipv6Prefixes.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>One or more IPv6 prefixes to unassign from the network interface.</p>
+     */
+    inline UnassignIpv6AddressesRequest& AddIpv6Prefixes(const char* value) { m_ipv6PrefixesHasBeenSet = true; m_ipv6Prefixes.push_back(value); return *this; }
+
+
+    /**
      * <p>The ID of the network interface.</p>
      */
     inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
@@ -127,6 +173,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_ipv6Addresses;
     bool m_ipv6AddressesHasBeenSet;
+
+    Aws::Vector<Aws::String> m_ipv6Prefixes;
+    bool m_ipv6PrefixesHasBeenSet;
 
     Aws::String m_networkInterfaceId;
     bool m_networkInterfaceIdHasBeenSet;

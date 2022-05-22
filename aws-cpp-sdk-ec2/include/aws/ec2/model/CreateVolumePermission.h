@@ -73,42 +73,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID to be added or removed.</p>
+     * <p>The ID of the Amazon Web Services account to be added or removed.</p>
      */
     inline const Aws::String& GetUserId() const{ return m_userId; }
 
     /**
-     * <p>The AWS account ID to be added or removed.</p>
+     * <p>The ID of the Amazon Web Services account to be added or removed.</p>
      */
     inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID to be added or removed.</p>
+     * <p>The ID of the Amazon Web Services account to be added or removed.</p>
      */
     inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
 
     /**
-     * <p>The AWS account ID to be added or removed.</p>
+     * <p>The ID of the Amazon Web Services account to be added or removed.</p>
      */
     inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
 
     /**
-     * <p>The AWS account ID to be added or removed.</p>
+     * <p>The ID of the Amazon Web Services account to be added or removed.</p>
      */
     inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
 
     /**
-     * <p>The AWS account ID to be added or removed.</p>
+     * <p>The ID of the Amazon Web Services account to be added or removed.</p>
      */
     inline CreateVolumePermission& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
 
     /**
-     * <p>The AWS account ID to be added or removed.</p>
+     * <p>The ID of the Amazon Web Services account to be added or removed.</p>
      */
     inline CreateVolumePermission& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID to be added or removed.</p>
+     * <p>The ID of the Amazon Web Services account to be added or removed.</p>
      */
     inline CreateVolumePermission& WithUserId(const char* value) { SetUserId(value); return *this;}
 

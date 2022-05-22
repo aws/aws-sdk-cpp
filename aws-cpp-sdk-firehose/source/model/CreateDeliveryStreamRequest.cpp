@@ -21,6 +21,7 @@ CreateDeliveryStreamRequest::CreateDeliveryStreamRequest() :
     m_extendedS3DestinationConfigurationHasBeenSet(false),
     m_redshiftDestinationConfigurationHasBeenSet(false),
     m_elasticsearchDestinationConfigurationHasBeenSet(false),
+    m_amazonopensearchserviceDestinationConfigurationHasBeenSet(false),
     m_splunkDestinationConfigurationHasBeenSet(false),
     m_httpEndpointDestinationConfigurationHasBeenSet(false),
     m_tagsHasBeenSet(false)
@@ -69,6 +70,12 @@ Aws::String CreateDeliveryStreamRequest::SerializePayload() const
   if(m_elasticsearchDestinationConfigurationHasBeenSet)
   {
    payload.WithObject("ElasticsearchDestinationConfiguration", m_elasticsearchDestinationConfiguration.Jsonize());
+
+  }
+
+  if(m_amazonopensearchserviceDestinationConfigurationHasBeenSet)
+  {
+   payload.WithObject("AmazonopensearchserviceDestinationConfiguration", m_amazonopensearchserviceDestinationConfiguration.Jsonize());
 
   }
 

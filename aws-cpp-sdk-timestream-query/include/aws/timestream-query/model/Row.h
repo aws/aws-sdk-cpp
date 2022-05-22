@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/timestream-query/TimestreamQuery_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/timestream-query/model/Datum.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -23,6 +23,7 @@ namespace TimestreamQuery
 {
 namespace Model
 {
+  class Datum;
 
   /**
    * <p>Represents a single row in the query results.</p><p><h3>See Also:</h3>   <a

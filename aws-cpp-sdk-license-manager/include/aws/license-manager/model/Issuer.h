@@ -79,50 +79,58 @@ namespace Model
 
 
     /**
-     * <p>Asymmetric CMK from AWS Key Management Service. The CMK must have a key usage
-     * of sign and verify, and support the RSASSA-PSS SHA-256 signing algorithm.</p>
+     * <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key
+     * usage of sign and verify, and support the RSASSA-PSS SHA-256 signing
+     * algorithm.</p>
      */
     inline const Aws::String& GetSignKey() const{ return m_signKey; }
 
     /**
-     * <p>Asymmetric CMK from AWS Key Management Service. The CMK must have a key usage
-     * of sign and verify, and support the RSASSA-PSS SHA-256 signing algorithm.</p>
+     * <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key
+     * usage of sign and verify, and support the RSASSA-PSS SHA-256 signing
+     * algorithm.</p>
      */
     inline bool SignKeyHasBeenSet() const { return m_signKeyHasBeenSet; }
 
     /**
-     * <p>Asymmetric CMK from AWS Key Management Service. The CMK must have a key usage
-     * of sign and verify, and support the RSASSA-PSS SHA-256 signing algorithm.</p>
+     * <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key
+     * usage of sign and verify, and support the RSASSA-PSS SHA-256 signing
+     * algorithm.</p>
      */
     inline void SetSignKey(const Aws::String& value) { m_signKeyHasBeenSet = true; m_signKey = value; }
 
     /**
-     * <p>Asymmetric CMK from AWS Key Management Service. The CMK must have a key usage
-     * of sign and verify, and support the RSASSA-PSS SHA-256 signing algorithm.</p>
+     * <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key
+     * usage of sign and verify, and support the RSASSA-PSS SHA-256 signing
+     * algorithm.</p>
      */
     inline void SetSignKey(Aws::String&& value) { m_signKeyHasBeenSet = true; m_signKey = std::move(value); }
 
     /**
-     * <p>Asymmetric CMK from AWS Key Management Service. The CMK must have a key usage
-     * of sign and verify, and support the RSASSA-PSS SHA-256 signing algorithm.</p>
+     * <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key
+     * usage of sign and verify, and support the RSASSA-PSS SHA-256 signing
+     * algorithm.</p>
      */
     inline void SetSignKey(const char* value) { m_signKeyHasBeenSet = true; m_signKey.assign(value); }
 
     /**
-     * <p>Asymmetric CMK from AWS Key Management Service. The CMK must have a key usage
-     * of sign and verify, and support the RSASSA-PSS SHA-256 signing algorithm.</p>
+     * <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key
+     * usage of sign and verify, and support the RSASSA-PSS SHA-256 signing
+     * algorithm.</p>
      */
     inline Issuer& WithSignKey(const Aws::String& value) { SetSignKey(value); return *this;}
 
     /**
-     * <p>Asymmetric CMK from AWS Key Management Service. The CMK must have a key usage
-     * of sign and verify, and support the RSASSA-PSS SHA-256 signing algorithm.</p>
+     * <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key
+     * usage of sign and verify, and support the RSASSA-PSS SHA-256 signing
+     * algorithm.</p>
      */
     inline Issuer& WithSignKey(Aws::String&& value) { SetSignKey(std::move(value)); return *this;}
 
     /**
-     * <p>Asymmetric CMK from AWS Key Management Service. The CMK must have a key usage
-     * of sign and verify, and support the RSASSA-PSS SHA-256 signing algorithm.</p>
+     * <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key
+     * usage of sign and verify, and support the RSASSA-PSS SHA-256 signing
+     * algorithm.</p>
      */
     inline Issuer& WithSignKey(const char* value) { SetSignKey(value); return *this;}
 

@@ -35,51 +35,51 @@ namespace Model
 
 
     /**
-     * <p>A string that indicates that the response contains more data than can be
-     * returned in a single response. To receive additional data, specify this string
-     * for the <code>PaginationToken</code> value in a subsequent request.</p>
+     * <p>A string that indicates that there is more data available than this response
+     * contains. To receive the next part of the response, specify this response value
+     * as the <code>PaginationToken</code> value in the request for the next page.</p>
      */
     inline const Aws::String& GetPaginationToken() const{ return m_paginationToken; }
 
     /**
-     * <p>A string that indicates that the response contains more data than can be
-     * returned in a single response. To receive additional data, specify this string
-     * for the <code>PaginationToken</code> value in a subsequent request.</p>
+     * <p>A string that indicates that there is more data available than this response
+     * contains. To receive the next part of the response, specify this response value
+     * as the <code>PaginationToken</code> value in the request for the next page.</p>
      */
     inline void SetPaginationToken(const Aws::String& value) { m_paginationToken = value; }
 
     /**
-     * <p>A string that indicates that the response contains more data than can be
-     * returned in a single response. To receive additional data, specify this string
-     * for the <code>PaginationToken</code> value in a subsequent request.</p>
+     * <p>A string that indicates that there is more data available than this response
+     * contains. To receive the next part of the response, specify this response value
+     * as the <code>PaginationToken</code> value in the request for the next page.</p>
      */
     inline void SetPaginationToken(Aws::String&& value) { m_paginationToken = std::move(value); }
 
     /**
-     * <p>A string that indicates that the response contains more data than can be
-     * returned in a single response. To receive additional data, specify this string
-     * for the <code>PaginationToken</code> value in a subsequent request.</p>
+     * <p>A string that indicates that there is more data available than this response
+     * contains. To receive the next part of the response, specify this response value
+     * as the <code>PaginationToken</code> value in the request for the next page.</p>
      */
     inline void SetPaginationToken(const char* value) { m_paginationToken.assign(value); }
 
     /**
-     * <p>A string that indicates that the response contains more data than can be
-     * returned in a single response. To receive additional data, specify this string
-     * for the <code>PaginationToken</code> value in a subsequent request.</p>
+     * <p>A string that indicates that there is more data available than this response
+     * contains. To receive the next part of the response, specify this response value
+     * as the <code>PaginationToken</code> value in the request for the next page.</p>
      */
     inline GetResourcesResult& WithPaginationToken(const Aws::String& value) { SetPaginationToken(value); return *this;}
 
     /**
-     * <p>A string that indicates that the response contains more data than can be
-     * returned in a single response. To receive additional data, specify this string
-     * for the <code>PaginationToken</code> value in a subsequent request.</p>
+     * <p>A string that indicates that there is more data available than this response
+     * contains. To receive the next part of the response, specify this response value
+     * as the <code>PaginationToken</code> value in the request for the next page.</p>
      */
     inline GetResourcesResult& WithPaginationToken(Aws::String&& value) { SetPaginationToken(std::move(value)); return *this;}
 
     /**
-     * <p>A string that indicates that the response contains more data than can be
-     * returned in a single response. To receive additional data, specify this string
-     * for the <code>PaginationToken</code> value in a subsequent request.</p>
+     * <p>A string that indicates that there is more data available than this response
+     * contains. To receive the next part of the response, specify this response value
+     * as the <code>PaginationToken</code> value in the request for the next page.</p>
      */
     inline GetResourcesResult& WithPaginationToken(const char* value) { SetPaginationToken(value); return *this;}
 

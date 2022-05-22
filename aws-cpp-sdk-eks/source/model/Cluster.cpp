@@ -35,7 +35,8 @@ Cluster::Cluster() :
     m_clientRequestTokenHasBeenSet(false),
     m_platformVersionHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_encryptionConfigHasBeenSet(false)
+    m_encryptionConfigHasBeenSet(false),
+    m_connectorConfigHasBeenSet(false)
 {
 }
 
@@ -56,7 +57,8 @@ Cluster::Cluster(JsonView jsonValue) :
     m_clientRequestTokenHasBeenSet(false),
     m_platformVersionHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_encryptionConfigHasBeenSet(false)
+    m_encryptionConfigHasBeenSet(false),
+    m_connectorConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -181,6 +183,13 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     m_encryptionConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("connectorConfig"))
+  {
+    m_connectorConfig = jsonValue.GetObject("connectorConfig");
+
+    m_connectorConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -289,6 +298,12 @@ JsonValue Cluster::Jsonize() const
      encryptionConfigJsonList[encryptionConfigIndex].AsObject(m_encryptionConfig[encryptionConfigIndex].Jsonize());
    }
    payload.WithArray("encryptionConfig", std::move(encryptionConfigJsonList));
+
+  }
+
+  if(m_connectorConfigHasBeenSet)
+  {
+   payload.WithObject("connectorConfig", m_connectorConfig.Jsonize());
 
   }
 

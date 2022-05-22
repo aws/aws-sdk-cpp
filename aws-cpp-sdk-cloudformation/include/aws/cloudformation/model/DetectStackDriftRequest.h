@@ -38,42 +38,42 @@ namespace Model
   public:
 
     /**
-     * <p>The name of the stack for which you want to detect drift. </p>
+     * <p>The name of the stack for which you want to detect drift.</p>
      */
     inline const Aws::String& GetStackName() const{ return m_stackName; }
 
     /**
-     * <p>The name of the stack for which you want to detect drift. </p>
+     * <p>The name of the stack for which you want to detect drift.</p>
      */
     inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
 
     /**
-     * <p>The name of the stack for which you want to detect drift. </p>
+     * <p>The name of the stack for which you want to detect drift.</p>
      */
     inline void SetStackName(const Aws::String& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
 
     /**
-     * <p>The name of the stack for which you want to detect drift. </p>
+     * <p>The name of the stack for which you want to detect drift.</p>
      */
     inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = std::move(value); }
 
     /**
-     * <p>The name of the stack for which you want to detect drift. </p>
+     * <p>The name of the stack for which you want to detect drift.</p>
      */
     inline void SetStackName(const char* value) { m_stackNameHasBeenSet = true; m_stackName.assign(value); }
 
     /**
-     * <p>The name of the stack for which you want to detect drift. </p>
+     * <p>The name of the stack for which you want to detect drift.</p>
      */
     inline DetectStackDriftRequest& WithStackName(const Aws::String& value) { SetStackName(value); return *this;}
 
     /**
-     * <p>The name of the stack for which you want to detect drift. </p>
+     * <p>The name of the stack for which you want to detect drift.</p>
      */
     inline DetectStackDriftRequest& WithStackName(Aws::String&& value) { SetStackName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the stack for which you want to detect drift. </p>
+     * <p>The name of the stack for which you want to detect drift.</p>
      */
     inline DetectStackDriftRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
 

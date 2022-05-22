@@ -40,9 +40,9 @@ namespace Model
      * <p>The duration, in seconds, that the credentials should remain valid.
      * Acceptable durations for IAM user sessions range from 900 seconds (15 minutes)
      * to 129,600 seconds (36 hours), with 43,200 seconds (12 hours) as the default.
-     * Sessions for AWS account owners are restricted to a maximum of 3,600 seconds
-     * (one hour). If the duration is longer than one hour, the session for AWS account
-     * owners defaults to one hour.</p>
+     * Sessions for Amazon Web Services account owners are restricted to a maximum of
+     * 3,600 seconds (one hour). If the duration is longer than one hour, the session
+     * for Amazon Web Services account owners defaults to one hour.</p>
      */
     inline int GetDurationSeconds() const{ return m_durationSeconds; }
 
@@ -50,9 +50,9 @@ namespace Model
      * <p>The duration, in seconds, that the credentials should remain valid.
      * Acceptable durations for IAM user sessions range from 900 seconds (15 minutes)
      * to 129,600 seconds (36 hours), with 43,200 seconds (12 hours) as the default.
-     * Sessions for AWS account owners are restricted to a maximum of 3,600 seconds
-     * (one hour). If the duration is longer than one hour, the session for AWS account
-     * owners defaults to one hour.</p>
+     * Sessions for Amazon Web Services account owners are restricted to a maximum of
+     * 3,600 seconds (one hour). If the duration is longer than one hour, the session
+     * for Amazon Web Services account owners defaults to one hour.</p>
      */
     inline bool DurationSecondsHasBeenSet() const { return m_durationSecondsHasBeenSet; }
 
@@ -60,9 +60,9 @@ namespace Model
      * <p>The duration, in seconds, that the credentials should remain valid.
      * Acceptable durations for IAM user sessions range from 900 seconds (15 minutes)
      * to 129,600 seconds (36 hours), with 43,200 seconds (12 hours) as the default.
-     * Sessions for AWS account owners are restricted to a maximum of 3,600 seconds
-     * (one hour). If the duration is longer than one hour, the session for AWS account
-     * owners defaults to one hour.</p>
+     * Sessions for Amazon Web Services account owners are restricted to a maximum of
+     * 3,600 seconds (one hour). If the duration is longer than one hour, the session
+     * for Amazon Web Services account owners defaults to one hour.</p>
      */
     inline void SetDurationSeconds(int value) { m_durationSecondsHasBeenSet = true; m_durationSeconds = value; }
 
@@ -70,9 +70,9 @@ namespace Model
      * <p>The duration, in seconds, that the credentials should remain valid.
      * Acceptable durations for IAM user sessions range from 900 seconds (15 minutes)
      * to 129,600 seconds (36 hours), with 43,200 seconds (12 hours) as the default.
-     * Sessions for AWS account owners are restricted to a maximum of 3,600 seconds
-     * (one hour). If the duration is longer than one hour, the session for AWS account
-     * owners defaults to one hour.</p>
+     * Sessions for Amazon Web Services account owners are restricted to a maximum of
+     * 3,600 seconds (one hour). If the duration is longer than one hour, the session
+     * for Amazon Web Services account owners defaults to one hour.</p>
      */
     inline GetSessionTokenRequest& WithDurationSeconds(int value) { SetDurationSeconds(value); return *this;}
 
@@ -84,11 +84,11 @@ namespace Model
      * the serial number for a hardware device (such as <code>GAHT12345678</code>) or
      * an Amazon Resource Name (ARN) for a virtual device (such as
      * <code>arn:aws:iam::123456789012:mfa/user</code>). You can find the device for an
-     * IAM user by going to the AWS Management Console and viewing the user's security
-     * credentials. </p> <p>The regex used to validate this parameter is a string of
-     * characters consisting of upper- and lower-case alphanumeric characters with no
-     * spaces. You can also include underscores or any of the following characters:
-     * =,.@:/-</p>
+     * IAM user by going to the Amazon Web Services Management Console and viewing the
+     * user's security credentials. </p> <p>The regex used to validate this parameter
+     * is a string of characters consisting of upper- and lower-case alphanumeric
+     * characters with no spaces. You can also include underscores or any of the
+     * following characters: =,.@:/-</p>
      */
     inline const Aws::String& GetSerialNumber() const{ return m_serialNumber; }
 
@@ -99,11 +99,11 @@ namespace Model
      * the serial number for a hardware device (such as <code>GAHT12345678</code>) or
      * an Amazon Resource Name (ARN) for a virtual device (such as
      * <code>arn:aws:iam::123456789012:mfa/user</code>). You can find the device for an
-     * IAM user by going to the AWS Management Console and viewing the user's security
-     * credentials. </p> <p>The regex used to validate this parameter is a string of
-     * characters consisting of upper- and lower-case alphanumeric characters with no
-     * spaces. You can also include underscores or any of the following characters:
-     * =,.@:/-</p>
+     * IAM user by going to the Amazon Web Services Management Console and viewing the
+     * user's security credentials. </p> <p>The regex used to validate this parameter
+     * is a string of characters consisting of upper- and lower-case alphanumeric
+     * characters with no spaces. You can also include underscores or any of the
+     * following characters: =,.@:/-</p>
      */
     inline bool SerialNumberHasBeenSet() const { return m_serialNumberHasBeenSet; }
 
@@ -114,11 +114,11 @@ namespace Model
      * the serial number for a hardware device (such as <code>GAHT12345678</code>) or
      * an Amazon Resource Name (ARN) for a virtual device (such as
      * <code>arn:aws:iam::123456789012:mfa/user</code>). You can find the device for an
-     * IAM user by going to the AWS Management Console and viewing the user's security
-     * credentials. </p> <p>The regex used to validate this parameter is a string of
-     * characters consisting of upper- and lower-case alphanumeric characters with no
-     * spaces. You can also include underscores or any of the following characters:
-     * =,.@:/-</p>
+     * IAM user by going to the Amazon Web Services Management Console and viewing the
+     * user's security credentials. </p> <p>The regex used to validate this parameter
+     * is a string of characters consisting of upper- and lower-case alphanumeric
+     * characters with no spaces. You can also include underscores or any of the
+     * following characters: =,.@:/-</p>
      */
     inline void SetSerialNumber(const Aws::String& value) { m_serialNumberHasBeenSet = true; m_serialNumber = value; }
 
@@ -129,11 +129,11 @@ namespace Model
      * the serial number for a hardware device (such as <code>GAHT12345678</code>) or
      * an Amazon Resource Name (ARN) for a virtual device (such as
      * <code>arn:aws:iam::123456789012:mfa/user</code>). You can find the device for an
-     * IAM user by going to the AWS Management Console and viewing the user's security
-     * credentials. </p> <p>The regex used to validate this parameter is a string of
-     * characters consisting of upper- and lower-case alphanumeric characters with no
-     * spaces. You can also include underscores or any of the following characters:
-     * =,.@:/-</p>
+     * IAM user by going to the Amazon Web Services Management Console and viewing the
+     * user's security credentials. </p> <p>The regex used to validate this parameter
+     * is a string of characters consisting of upper- and lower-case alphanumeric
+     * characters with no spaces. You can also include underscores or any of the
+     * following characters: =,.@:/-</p>
      */
     inline void SetSerialNumber(Aws::String&& value) { m_serialNumberHasBeenSet = true; m_serialNumber = std::move(value); }
 
@@ -144,11 +144,11 @@ namespace Model
      * the serial number for a hardware device (such as <code>GAHT12345678</code>) or
      * an Amazon Resource Name (ARN) for a virtual device (such as
      * <code>arn:aws:iam::123456789012:mfa/user</code>). You can find the device for an
-     * IAM user by going to the AWS Management Console and viewing the user's security
-     * credentials. </p> <p>The regex used to validate this parameter is a string of
-     * characters consisting of upper- and lower-case alphanumeric characters with no
-     * spaces. You can also include underscores or any of the following characters:
-     * =,.@:/-</p>
+     * IAM user by going to the Amazon Web Services Management Console and viewing the
+     * user's security credentials. </p> <p>The regex used to validate this parameter
+     * is a string of characters consisting of upper- and lower-case alphanumeric
+     * characters with no spaces. You can also include underscores or any of the
+     * following characters: =,.@:/-</p>
      */
     inline void SetSerialNumber(const char* value) { m_serialNumberHasBeenSet = true; m_serialNumber.assign(value); }
 
@@ -159,11 +159,11 @@ namespace Model
      * the serial number for a hardware device (such as <code>GAHT12345678</code>) or
      * an Amazon Resource Name (ARN) for a virtual device (such as
      * <code>arn:aws:iam::123456789012:mfa/user</code>). You can find the device for an
-     * IAM user by going to the AWS Management Console and viewing the user's security
-     * credentials. </p> <p>The regex used to validate this parameter is a string of
-     * characters consisting of upper- and lower-case alphanumeric characters with no
-     * spaces. You can also include underscores or any of the following characters:
-     * =,.@:/-</p>
+     * IAM user by going to the Amazon Web Services Management Console and viewing the
+     * user's security credentials. </p> <p>The regex used to validate this parameter
+     * is a string of characters consisting of upper- and lower-case alphanumeric
+     * characters with no spaces. You can also include underscores or any of the
+     * following characters: =,.@:/-</p>
      */
     inline GetSessionTokenRequest& WithSerialNumber(const Aws::String& value) { SetSerialNumber(value); return *this;}
 
@@ -174,11 +174,11 @@ namespace Model
      * the serial number for a hardware device (such as <code>GAHT12345678</code>) or
      * an Amazon Resource Name (ARN) for a virtual device (such as
      * <code>arn:aws:iam::123456789012:mfa/user</code>). You can find the device for an
-     * IAM user by going to the AWS Management Console and viewing the user's security
-     * credentials. </p> <p>The regex used to validate this parameter is a string of
-     * characters consisting of upper- and lower-case alphanumeric characters with no
-     * spaces. You can also include underscores or any of the following characters:
-     * =,.@:/-</p>
+     * IAM user by going to the Amazon Web Services Management Console and viewing the
+     * user's security credentials. </p> <p>The regex used to validate this parameter
+     * is a string of characters consisting of upper- and lower-case alphanumeric
+     * characters with no spaces. You can also include underscores or any of the
+     * following characters: =,.@:/-</p>
      */
     inline GetSessionTokenRequest& WithSerialNumber(Aws::String&& value) { SetSerialNumber(std::move(value)); return *this;}
 
@@ -189,11 +189,11 @@ namespace Model
      * the serial number for a hardware device (such as <code>GAHT12345678</code>) or
      * an Amazon Resource Name (ARN) for a virtual device (such as
      * <code>arn:aws:iam::123456789012:mfa/user</code>). You can find the device for an
-     * IAM user by going to the AWS Management Console and viewing the user's security
-     * credentials. </p> <p>The regex used to validate this parameter is a string of
-     * characters consisting of upper- and lower-case alphanumeric characters with no
-     * spaces. You can also include underscores or any of the following characters:
-     * =,.@:/-</p>
+     * IAM user by going to the Amazon Web Services Management Console and viewing the
+     * user's security credentials. </p> <p>The regex used to validate this parameter
+     * is a string of characters consisting of upper- and lower-case alphanumeric
+     * characters with no spaces. You can also include underscores or any of the
+     * following characters: =,.@:/-</p>
      */
     inline GetSessionTokenRequest& WithSerialNumber(const char* value) { SetSerialNumber(value); return *this;}
 

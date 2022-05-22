@@ -37,42 +37,42 @@ namespace Model
   public:
 
     /**
-     * <p>The name of the Global Datastore</p>
+     * <p>The name of the Global datastore</p>
      */
     inline const Aws::String& GetGlobalReplicationGroupId() const{ return m_globalReplicationGroupId; }
 
     /**
-     * <p>The name of the Global Datastore</p>
+     * <p>The name of the Global datastore</p>
      */
     inline bool GlobalReplicationGroupIdHasBeenSet() const { return m_globalReplicationGroupIdHasBeenSet; }
 
     /**
-     * <p>The name of the Global Datastore</p>
+     * <p>The name of the Global datastore</p>
      */
     inline void SetGlobalReplicationGroupId(const Aws::String& value) { m_globalReplicationGroupIdHasBeenSet = true; m_globalReplicationGroupId = value; }
 
     /**
-     * <p>The name of the Global Datastore</p>
+     * <p>The name of the Global datastore</p>
      */
     inline void SetGlobalReplicationGroupId(Aws::String&& value) { m_globalReplicationGroupIdHasBeenSet = true; m_globalReplicationGroupId = std::move(value); }
 
     /**
-     * <p>The name of the Global Datastore</p>
+     * <p>The name of the Global datastore</p>
      */
     inline void SetGlobalReplicationGroupId(const char* value) { m_globalReplicationGroupIdHasBeenSet = true; m_globalReplicationGroupId.assign(value); }
 
     /**
-     * <p>The name of the Global Datastore</p>
+     * <p>The name of the Global datastore</p>
      */
     inline DescribeGlobalReplicationGroupsRequest& WithGlobalReplicationGroupId(const Aws::String& value) { SetGlobalReplicationGroupId(value); return *this;}
 
     /**
-     * <p>The name of the Global Datastore</p>
+     * <p>The name of the Global datastore</p>
      */
     inline DescribeGlobalReplicationGroupsRequest& WithGlobalReplicationGroupId(Aws::String&& value) { SetGlobalReplicationGroupId(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Global Datastore</p>
+     * <p>The name of the Global datastore</p>
      */
     inline DescribeGlobalReplicationGroupsRequest& WithGlobalReplicationGroupId(const char* value) { SetGlobalReplicationGroupId(value); return *this;}
 
@@ -172,22 +172,22 @@ namespace Model
 
 
     /**
-     * <p>Returns the list of members that comprise the Global Datastore.</p>
+     * <p>Returns the list of members that comprise the Global datastore.</p>
      */
     inline bool GetShowMemberInfo() const{ return m_showMemberInfo; }
 
     /**
-     * <p>Returns the list of members that comprise the Global Datastore.</p>
+     * <p>Returns the list of members that comprise the Global datastore.</p>
      */
     inline bool ShowMemberInfoHasBeenSet() const { return m_showMemberInfoHasBeenSet; }
 
     /**
-     * <p>Returns the list of members that comprise the Global Datastore.</p>
+     * <p>Returns the list of members that comprise the Global datastore.</p>
      */
     inline void SetShowMemberInfo(bool value) { m_showMemberInfoHasBeenSet = true; m_showMemberInfo = value; }
 
     /**
-     * <p>Returns the list of members that comprise the Global Datastore.</p>
+     * <p>Returns the list of members that comprise the Global datastore.</p>
      */
     inline DescribeGlobalReplicationGroupsRequest& WithShowMemberInfo(bool value) { SetShowMemberInfo(value); return *this;}
 

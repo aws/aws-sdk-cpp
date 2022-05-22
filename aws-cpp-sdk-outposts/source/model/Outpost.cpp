@@ -28,7 +28,10 @@ Outpost::Outpost() :
     m_lifeCycleStatusHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
     m_availabilityZoneIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_siteArnHasBeenSet(false),
+    m_supportedHardwareType(SupportedHardwareType::NOT_SET),
+    m_supportedHardwareTypeHasBeenSet(false)
 {
 }
 
@@ -42,7 +45,10 @@ Outpost::Outpost(JsonView jsonValue) :
     m_lifeCycleStatusHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
     m_availabilityZoneIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_siteArnHasBeenSet(false),
+    m_supportedHardwareType(SupportedHardwareType::NOT_SET),
+    m_supportedHardwareTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -122,6 +128,20 @@ Outpost& Outpost::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SiteArn"))
+  {
+    m_siteArn = jsonValue.GetString("SiteArn");
+
+    m_siteArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SupportedHardwareType"))
+  {
+    m_supportedHardwareType = SupportedHardwareTypeMapper::GetSupportedHardwareTypeForName(jsonValue.GetString("SupportedHardwareType"));
+
+    m_supportedHardwareTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -192,6 +212,17 @@ JsonValue Outpost::Jsonize() const
    }
    payload.WithObject("Tags", std::move(tagsJsonMap));
 
+  }
+
+  if(m_siteArnHasBeenSet)
+  {
+   payload.WithString("SiteArn", m_siteArn);
+
+  }
+
+  if(m_supportedHardwareTypeHasBeenSet)
+  {
+   payload.WithString("SupportedHardwareType", SupportedHardwareTypeMapper::GetNameForSupportedHardwareType(m_supportedHardwareType));
   }
 
   return payload;

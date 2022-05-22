@@ -23,18 +23,21 @@ PlaybackConfiguration::PlaybackConfiguration() :
     m_availSuppressionHasBeenSet(false),
     m_bumperHasBeenSet(false),
     m_cdnConfigurationHasBeenSet(false),
+    m_configurationAliasesHasBeenSet(false),
     m_dashConfigurationHasBeenSet(false),
     m_hlsConfigurationHasBeenSet(false),
+    m_livePreRollConfigurationHasBeenSet(false),
+    m_logConfigurationHasBeenSet(false),
     m_manifestProcessingRulesHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_personalizationThresholdSeconds(0),
+    m_personalizationThresholdSecondsHasBeenSet(false),
     m_playbackConfigurationArnHasBeenSet(false),
     m_playbackEndpointPrefixHasBeenSet(false),
     m_sessionInitializationEndpointPrefixHasBeenSet(false),
     m_slateAdUrlHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_transcodeProfileNameHasBeenSet(false),
-    m_personalizationThresholdSeconds(0),
-    m_personalizationThresholdSecondsHasBeenSet(false),
     m_videoContentSourceUrlHasBeenSet(false)
 {
 }
@@ -44,18 +47,21 @@ PlaybackConfiguration::PlaybackConfiguration(JsonView jsonValue) :
     m_availSuppressionHasBeenSet(false),
     m_bumperHasBeenSet(false),
     m_cdnConfigurationHasBeenSet(false),
+    m_configurationAliasesHasBeenSet(false),
     m_dashConfigurationHasBeenSet(false),
     m_hlsConfigurationHasBeenSet(false),
+    m_livePreRollConfigurationHasBeenSet(false),
+    m_logConfigurationHasBeenSet(false),
     m_manifestProcessingRulesHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_personalizationThresholdSeconds(0),
+    m_personalizationThresholdSecondsHasBeenSet(false),
     m_playbackConfigurationArnHasBeenSet(false),
     m_playbackEndpointPrefixHasBeenSet(false),
     m_sessionInitializationEndpointPrefixHasBeenSet(false),
     m_slateAdUrlHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_transcodeProfileNameHasBeenSet(false),
-    m_personalizationThresholdSeconds(0),
-    m_personalizationThresholdSecondsHasBeenSet(false),
     m_videoContentSourceUrlHasBeenSet(false)
 {
   *this = jsonValue;
@@ -91,6 +97,22 @@ PlaybackConfiguration& PlaybackConfiguration::operator =(JsonView jsonValue)
     m_cdnConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ConfigurationAliases"))
+  {
+    Aws::Map<Aws::String, JsonView> configurationAliasesJsonMap = jsonValue.GetObject("ConfigurationAliases").GetAllObjects();
+    for(auto& configurationAliasesItem : configurationAliasesJsonMap)
+    {
+      Aws::Map<Aws::String, JsonView> __mapOf__stringJsonMap = configurationAliasesItem.second.GetAllObjects();
+      Aws::Map<Aws::String, Aws::String> __mapOf__stringMap;
+      for(auto& __mapOf__stringItem : __mapOf__stringJsonMap)
+      {
+        __mapOf__stringMap[__mapOf__stringItem.first] = __mapOf__stringItem.second.AsString();
+      }
+      m_configurationAliases[configurationAliasesItem.first] = std::move(__mapOf__stringMap);
+    }
+    m_configurationAliasesHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("DashConfiguration"))
   {
     m_dashConfiguration = jsonValue.GetObject("DashConfiguration");
@@ -105,6 +127,20 @@ PlaybackConfiguration& PlaybackConfiguration::operator =(JsonView jsonValue)
     m_hlsConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LivePreRollConfiguration"))
+  {
+    m_livePreRollConfiguration = jsonValue.GetObject("LivePreRollConfiguration");
+
+    m_livePreRollConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LogConfiguration"))
+  {
+    m_logConfiguration = jsonValue.GetObject("LogConfiguration");
+
+    m_logConfigurationHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("ManifestProcessingRules"))
   {
     m_manifestProcessingRules = jsonValue.GetObject("ManifestProcessingRules");
@@ -117,6 +153,13 @@ PlaybackConfiguration& PlaybackConfiguration::operator =(JsonView jsonValue)
     m_name = jsonValue.GetString("Name");
 
     m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PersonalizationThresholdSeconds"))
+  {
+    m_personalizationThresholdSeconds = jsonValue.GetInteger("PersonalizationThresholdSeconds");
+
+    m_personalizationThresholdSecondsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("PlaybackConfigurationArn"))
@@ -164,13 +207,6 @@ PlaybackConfiguration& PlaybackConfiguration::operator =(JsonView jsonValue)
     m_transcodeProfileNameHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("PersonalizationThresholdSeconds"))
-  {
-    m_personalizationThresholdSeconds = jsonValue.GetInteger("PersonalizationThresholdSeconds");
-
-    m_personalizationThresholdSecondsHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("VideoContentSourceUrl"))
   {
     m_videoContentSourceUrl = jsonValue.GetString("VideoContentSourceUrl");
@@ -209,6 +245,22 @@ JsonValue PlaybackConfiguration::Jsonize() const
 
   }
 
+  if(m_configurationAliasesHasBeenSet)
+  {
+   JsonValue configurationAliasesJsonMap;
+   for(auto& configurationAliasesItem : m_configurationAliases)
+   {
+     JsonValue __mapOf__stringJsonMap;
+     for(auto& __mapOf__stringItem : configurationAliasesItem.second)
+     {
+       __mapOf__stringJsonMap.WithString(__mapOf__stringItem.first, __mapOf__stringItem.second);
+     }
+     configurationAliasesJsonMap.WithObject(configurationAliasesItem.first, std::move(__mapOf__stringJsonMap));
+   }
+   payload.WithObject("ConfigurationAliases", std::move(configurationAliasesJsonMap));
+
+  }
+
   if(m_dashConfigurationHasBeenSet)
   {
    payload.WithObject("DashConfiguration", m_dashConfiguration.Jsonize());
@@ -221,6 +273,18 @@ JsonValue PlaybackConfiguration::Jsonize() const
 
   }
 
+  if(m_livePreRollConfigurationHasBeenSet)
+  {
+   payload.WithObject("LivePreRollConfiguration", m_livePreRollConfiguration.Jsonize());
+
+  }
+
+  if(m_logConfigurationHasBeenSet)
+  {
+   payload.WithObject("LogConfiguration", m_logConfiguration.Jsonize());
+
+  }
+
   if(m_manifestProcessingRulesHasBeenSet)
   {
    payload.WithObject("ManifestProcessingRules", m_manifestProcessingRules.Jsonize());
@@ -230,6 +294,12 @@ JsonValue PlaybackConfiguration::Jsonize() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_personalizationThresholdSecondsHasBeenSet)
+  {
+   payload.WithInteger("PersonalizationThresholdSeconds", m_personalizationThresholdSeconds);
 
   }
 
@@ -271,12 +341,6 @@ JsonValue PlaybackConfiguration::Jsonize() const
   if(m_transcodeProfileNameHasBeenSet)
   {
    payload.WithString("TranscodeProfileName", m_transcodeProfileName);
-
-  }
-
-  if(m_personalizationThresholdSecondsHasBeenSet)
-  {
-   payload.WithInteger("PersonalizationThresholdSeconds", m_personalizationThresholdSeconds);
 
   }
 

@@ -34,63 +34,63 @@ namespace Model
 
 
     /**
-     * <p> An <code>ReactiveAnomaly</code> object that represents the requested
+     * <p> A <code>ProactiveAnomaly</code> object that represents the requested
      * anomaly. </p>
      */
     inline const ProactiveAnomaly& GetProactiveAnomaly() const{ return m_proactiveAnomaly; }
 
     /**
-     * <p> An <code>ReactiveAnomaly</code> object that represents the requested
+     * <p> A <code>ProactiveAnomaly</code> object that represents the requested
      * anomaly. </p>
      */
     inline void SetProactiveAnomaly(const ProactiveAnomaly& value) { m_proactiveAnomaly = value; }
 
     /**
-     * <p> An <code>ReactiveAnomaly</code> object that represents the requested
+     * <p> A <code>ProactiveAnomaly</code> object that represents the requested
      * anomaly. </p>
      */
     inline void SetProactiveAnomaly(ProactiveAnomaly&& value) { m_proactiveAnomaly = std::move(value); }
 
     /**
-     * <p> An <code>ReactiveAnomaly</code> object that represents the requested
+     * <p> A <code>ProactiveAnomaly</code> object that represents the requested
      * anomaly. </p>
      */
     inline DescribeAnomalyResult& WithProactiveAnomaly(const ProactiveAnomaly& value) { SetProactiveAnomaly(value); return *this;}
 
     /**
-     * <p> An <code>ReactiveAnomaly</code> object that represents the requested
+     * <p> A <code>ProactiveAnomaly</code> object that represents the requested
      * anomaly. </p>
      */
     inline DescribeAnomalyResult& WithProactiveAnomaly(ProactiveAnomaly&& value) { SetProactiveAnomaly(std::move(value)); return *this;}
 
 
     /**
-     * <p> An <code>ProactiveAnomaly</code> object that represents the requested
-     * anomaly. </p>
+     * <p> A <code>ReactiveAnomaly</code> object that represents the requested anomaly.
+     * </p>
      */
     inline const ReactiveAnomaly& GetReactiveAnomaly() const{ return m_reactiveAnomaly; }
 
     /**
-     * <p> An <code>ProactiveAnomaly</code> object that represents the requested
-     * anomaly. </p>
+     * <p> A <code>ReactiveAnomaly</code> object that represents the requested anomaly.
+     * </p>
      */
     inline void SetReactiveAnomaly(const ReactiveAnomaly& value) { m_reactiveAnomaly = value; }
 
     /**
-     * <p> An <code>ProactiveAnomaly</code> object that represents the requested
-     * anomaly. </p>
+     * <p> A <code>ReactiveAnomaly</code> object that represents the requested anomaly.
+     * </p>
      */
     inline void SetReactiveAnomaly(ReactiveAnomaly&& value) { m_reactiveAnomaly = std::move(value); }
 
     /**
-     * <p> An <code>ProactiveAnomaly</code> object that represents the requested
-     * anomaly. </p>
+     * <p> A <code>ReactiveAnomaly</code> object that represents the requested anomaly.
+     * </p>
      */
     inline DescribeAnomalyResult& WithReactiveAnomaly(const ReactiveAnomaly& value) { SetReactiveAnomaly(value); return *this;}
 
     /**
-     * <p> An <code>ProactiveAnomaly</code> object that represents the requested
-     * anomaly. </p>
+     * <p> A <code>ReactiveAnomaly</code> object that represents the requested anomaly.
+     * </p>
      */
     inline DescribeAnomalyResult& WithReactiveAnomaly(ReactiveAnomaly&& value) { SetReactiveAnomaly(std::move(value)); return *this;}
 

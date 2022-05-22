@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/shield/model/ProactiveEngagementStatus.h>
 #include <aws/shield/model/SubscriptionLimits.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/shield/model/Limit.h>
 #include <utility>
 
@@ -29,7 +30,7 @@ namespace Model
 {
 
   /**
-   * <p>Information about the AWS Shield Advanced subscription for an
+   * <p>Information about the Shield Advanced subscription for an
    * account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/Subscription">AWS
    * API Reference</a></p>
@@ -44,44 +45,32 @@ namespace Model
 
 
     /**
-     * <p>The start time of the subscription, in Unix time in seconds. For more
-     * information see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+     * <p>The start time of the subscription, in Unix time in seconds. </p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
-     * <p>The start time of the subscription, in Unix time in seconds. For more
-     * information see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+     * <p>The start time of the subscription, in Unix time in seconds. </p>
      */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
     /**
-     * <p>The start time of the subscription, in Unix time in seconds. For more
-     * information see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+     * <p>The start time of the subscription, in Unix time in seconds. </p>
      */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
-     * <p>The start time of the subscription, in Unix time in seconds. For more
-     * information see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+     * <p>The start time of the subscription, in Unix time in seconds. </p>
      */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
-     * <p>The start time of the subscription, in Unix time in seconds. For more
-     * information see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+     * <p>The start time of the subscription, in Unix time in seconds. </p>
      */
     inline Subscription& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
 
     /**
-     * <p>The start time of the subscription, in Unix time in seconds. For more
-     * information see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+     * <p>The start time of the subscription, in Unix time in seconds. </p>
      */
     inline Subscription& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
@@ -118,25 +107,25 @@ namespace Model
 
 
     /**
-     * <p>The length, in seconds, of the AWS Shield Advanced subscription for the
+     * <p>The length, in seconds, of the Shield Advanced subscription for the
      * account.</p>
      */
     inline long long GetTimeCommitmentInSeconds() const{ return m_timeCommitmentInSeconds; }
 
     /**
-     * <p>The length, in seconds, of the AWS Shield Advanced subscription for the
+     * <p>The length, in seconds, of the Shield Advanced subscription for the
      * account.</p>
      */
     inline bool TimeCommitmentInSecondsHasBeenSet() const { return m_timeCommitmentInSecondsHasBeenSet; }
 
     /**
-     * <p>The length, in seconds, of the AWS Shield Advanced subscription for the
+     * <p>The length, in seconds, of the Shield Advanced subscription for the
      * account.</p>
      */
     inline void SetTimeCommitmentInSeconds(long long value) { m_timeCommitmentInSecondsHasBeenSet = true; m_timeCommitmentInSeconds = value; }
 
     /**
-     * <p>The length, in seconds, of the AWS Shield Advanced subscription for the
+     * <p>The length, in seconds, of the Shield Advanced subscription for the
      * account.</p>
      */
     inline Subscription& WithTimeCommitmentInSeconds(long long value) { SetTimeCommitmentInSeconds(value); return *this;}
@@ -251,67 +240,67 @@ namespace Model
 
 
     /**
-     * <p>If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and
-     * phone to notify contacts about escalations to the DRT and to initiate proactive
+     * <p>If <code>ENABLED</code>, the Shield Response Team (SRT) will use email and
+     * phone to notify contacts about escalations to the SRT and to initiate proactive
      * customer support.</p> <p>If <code>PENDING</code>, you have requested proactive
      * engagement and the request is pending. The status changes to
      * <code>ENABLED</code> when your request is fully processed.</p> <p>If
-     * <code>DISABLED</code>, the DRT will not proactively notify contacts about
+     * <code>DISABLED</code>, the SRT will not proactively notify contacts about
      * escalations or to initiate proactive customer support. </p>
      */
     inline const ProactiveEngagementStatus& GetProactiveEngagementStatus() const{ return m_proactiveEngagementStatus; }
 
     /**
-     * <p>If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and
-     * phone to notify contacts about escalations to the DRT and to initiate proactive
+     * <p>If <code>ENABLED</code>, the Shield Response Team (SRT) will use email and
+     * phone to notify contacts about escalations to the SRT and to initiate proactive
      * customer support.</p> <p>If <code>PENDING</code>, you have requested proactive
      * engagement and the request is pending. The status changes to
      * <code>ENABLED</code> when your request is fully processed.</p> <p>If
-     * <code>DISABLED</code>, the DRT will not proactively notify contacts about
+     * <code>DISABLED</code>, the SRT will not proactively notify contacts about
      * escalations or to initiate proactive customer support. </p>
      */
     inline bool ProactiveEngagementStatusHasBeenSet() const { return m_proactiveEngagementStatusHasBeenSet; }
 
     /**
-     * <p>If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and
-     * phone to notify contacts about escalations to the DRT and to initiate proactive
+     * <p>If <code>ENABLED</code>, the Shield Response Team (SRT) will use email and
+     * phone to notify contacts about escalations to the SRT and to initiate proactive
      * customer support.</p> <p>If <code>PENDING</code>, you have requested proactive
      * engagement and the request is pending. The status changes to
      * <code>ENABLED</code> when your request is fully processed.</p> <p>If
-     * <code>DISABLED</code>, the DRT will not proactively notify contacts about
+     * <code>DISABLED</code>, the SRT will not proactively notify contacts about
      * escalations or to initiate proactive customer support. </p>
      */
     inline void SetProactiveEngagementStatus(const ProactiveEngagementStatus& value) { m_proactiveEngagementStatusHasBeenSet = true; m_proactiveEngagementStatus = value; }
 
     /**
-     * <p>If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and
-     * phone to notify contacts about escalations to the DRT and to initiate proactive
+     * <p>If <code>ENABLED</code>, the Shield Response Team (SRT) will use email and
+     * phone to notify contacts about escalations to the SRT and to initiate proactive
      * customer support.</p> <p>If <code>PENDING</code>, you have requested proactive
      * engagement and the request is pending. The status changes to
      * <code>ENABLED</code> when your request is fully processed.</p> <p>If
-     * <code>DISABLED</code>, the DRT will not proactively notify contacts about
+     * <code>DISABLED</code>, the SRT will not proactively notify contacts about
      * escalations or to initiate proactive customer support. </p>
      */
     inline void SetProactiveEngagementStatus(ProactiveEngagementStatus&& value) { m_proactiveEngagementStatusHasBeenSet = true; m_proactiveEngagementStatus = std::move(value); }
 
     /**
-     * <p>If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and
-     * phone to notify contacts about escalations to the DRT and to initiate proactive
+     * <p>If <code>ENABLED</code>, the Shield Response Team (SRT) will use email and
+     * phone to notify contacts about escalations to the SRT and to initiate proactive
      * customer support.</p> <p>If <code>PENDING</code>, you have requested proactive
      * engagement and the request is pending. The status changes to
      * <code>ENABLED</code> when your request is fully processed.</p> <p>If
-     * <code>DISABLED</code>, the DRT will not proactively notify contacts about
+     * <code>DISABLED</code>, the SRT will not proactively notify contacts about
      * escalations or to initiate proactive customer support. </p>
      */
     inline Subscription& WithProactiveEngagementStatus(const ProactiveEngagementStatus& value) { SetProactiveEngagementStatus(value); return *this;}
 
     /**
-     * <p>If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and
-     * phone to notify contacts about escalations to the DRT and to initiate proactive
+     * <p>If <code>ENABLED</code>, the Shield Response Team (SRT) will use email and
+     * phone to notify contacts about escalations to the SRT and to initiate proactive
      * customer support.</p> <p>If <code>PENDING</code>, you have requested proactive
      * engagement and the request is pending. The status changes to
      * <code>ENABLED</code> when your request is fully processed.</p> <p>If
-     * <code>DISABLED</code>, the DRT will not proactively notify contacts about
+     * <code>DISABLED</code>, the SRT will not proactively notify contacts about
      * escalations or to initiate proactive customer support. </p>
      */
     inline Subscription& WithProactiveEngagementStatus(ProactiveEngagementStatus&& value) { SetProactiveEngagementStatus(std::move(value)); return *this;}
@@ -347,6 +336,47 @@ namespace Model
      */
     inline Subscription& WithSubscriptionLimits(SubscriptionLimits&& value) { SetSubscriptionLimits(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the subscription.</p>
+     */
+    inline const Aws::String& GetSubscriptionArn() const{ return m_subscriptionArn; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the subscription.</p>
+     */
+    inline bool SubscriptionArnHasBeenSet() const { return m_subscriptionArnHasBeenSet; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the subscription.</p>
+     */
+    inline void SetSubscriptionArn(const Aws::String& value) { m_subscriptionArnHasBeenSet = true; m_subscriptionArn = value; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the subscription.</p>
+     */
+    inline void SetSubscriptionArn(Aws::String&& value) { m_subscriptionArnHasBeenSet = true; m_subscriptionArn = std::move(value); }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the subscription.</p>
+     */
+    inline void SetSubscriptionArn(const char* value) { m_subscriptionArnHasBeenSet = true; m_subscriptionArn.assign(value); }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the subscription.</p>
+     */
+    inline Subscription& WithSubscriptionArn(const Aws::String& value) { SetSubscriptionArn(value); return *this;}
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the subscription.</p>
+     */
+    inline Subscription& WithSubscriptionArn(Aws::String&& value) { SetSubscriptionArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the subscription.</p>
+     */
+    inline Subscription& WithSubscriptionArn(const char* value) { SetSubscriptionArn(value); return *this;}
+
   private:
 
     Aws::Utils::DateTime m_startTime;
@@ -369,6 +399,9 @@ namespace Model
 
     SubscriptionLimits m_subscriptionLimits;
     bool m_subscriptionLimitsHasBeenSet;
+
+    Aws::String m_subscriptionArn;
+    bool m_subscriptionArnHasBeenSet;
   };
 
 } // namespace Model

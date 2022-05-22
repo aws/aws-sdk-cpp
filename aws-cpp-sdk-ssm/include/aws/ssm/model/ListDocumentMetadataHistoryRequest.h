@@ -36,83 +36,83 @@ namespace Model
 
 
     /**
-     * <p>The name of the document.</p>
+     * <p>The name of the change template.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the document.</p>
+     * <p>The name of the change template.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the document.</p>
+     * <p>The name of the change template.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the document.</p>
+     * <p>The name of the change template.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the document.</p>
+     * <p>The name of the change template.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the document.</p>
+     * <p>The name of the change template.</p>
      */
     inline ListDocumentMetadataHistoryRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the document.</p>
+     * <p>The name of the change template.</p>
      */
     inline ListDocumentMetadataHistoryRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the document.</p>
+     * <p>The name of the change template.</p>
      */
     inline ListDocumentMetadataHistoryRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>The version of the document.</p>
+     * <p>The version of the change template.</p>
      */
     inline const Aws::String& GetDocumentVersion() const{ return m_documentVersion; }
 
     /**
-     * <p>The version of the document.</p>
+     * <p>The version of the change template.</p>
      */
     inline bool DocumentVersionHasBeenSet() const { return m_documentVersionHasBeenSet; }
 
     /**
-     * <p>The version of the document.</p>
+     * <p>The version of the change template.</p>
      */
     inline void SetDocumentVersion(const Aws::String& value) { m_documentVersionHasBeenSet = true; m_documentVersion = value; }
 
     /**
-     * <p>The version of the document.</p>
+     * <p>The version of the change template.</p>
      */
     inline void SetDocumentVersion(Aws::String&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = std::move(value); }
 
     /**
-     * <p>The version of the document.</p>
+     * <p>The version of the change template.</p>
      */
     inline void SetDocumentVersion(const char* value) { m_documentVersionHasBeenSet = true; m_documentVersion.assign(value); }
 
     /**
-     * <p>The version of the document.</p>
+     * <p>The version of the change template.</p>
      */
     inline ListDocumentMetadataHistoryRequest& WithDocumentVersion(const Aws::String& value) { SetDocumentVersion(value); return *this;}
 
     /**
-     * <p>The version of the document.</p>
+     * <p>The version of the change template.</p>
      */
     inline ListDocumentMetadataHistoryRequest& WithDocumentVersion(Aws::String&& value) { SetDocumentVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The version of the document.</p>
+     * <p>The version of the change template.</p>
      */
     inline ListDocumentMetadataHistoryRequest& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
 

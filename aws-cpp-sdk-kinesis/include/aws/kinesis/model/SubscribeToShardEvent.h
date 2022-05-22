@@ -189,28 +189,52 @@ namespace Model
     inline SubscribeToShardEvent& WithMillisBehindLatest(long long value) { SetMillisBehindLatest(value); return *this;}
 
 
-    
+    /**
+     * <p>The list of the child shards of the current shard, returned only at the end
+     * of the current shard.</p>
+     */
     inline const Aws::Vector<ChildShard>& GetChildShards() const{ return m_childShards; }
 
-    
+    /**
+     * <p>The list of the child shards of the current shard, returned only at the end
+     * of the current shard.</p>
+     */
     inline bool ChildShardsHasBeenSet() const { return m_childShardsHasBeenSet; }
 
-    
+    /**
+     * <p>The list of the child shards of the current shard, returned only at the end
+     * of the current shard.</p>
+     */
     inline void SetChildShards(const Aws::Vector<ChildShard>& value) { m_childShardsHasBeenSet = true; m_childShards = value; }
 
-    
+    /**
+     * <p>The list of the child shards of the current shard, returned only at the end
+     * of the current shard.</p>
+     */
     inline void SetChildShards(Aws::Vector<ChildShard>&& value) { m_childShardsHasBeenSet = true; m_childShards = std::move(value); }
 
-    
+    /**
+     * <p>The list of the child shards of the current shard, returned only at the end
+     * of the current shard.</p>
+     */
     inline SubscribeToShardEvent& WithChildShards(const Aws::Vector<ChildShard>& value) { SetChildShards(value); return *this;}
 
-    
+    /**
+     * <p>The list of the child shards of the current shard, returned only at the end
+     * of the current shard.</p>
+     */
     inline SubscribeToShardEvent& WithChildShards(Aws::Vector<ChildShard>&& value) { SetChildShards(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The list of the child shards of the current shard, returned only at the end
+     * of the current shard.</p>
+     */
     inline SubscribeToShardEvent& AddChildShards(const ChildShard& value) { m_childShardsHasBeenSet = true; m_childShards.push_back(value); return *this; }
 
-    
+    /**
+     * <p>The list of the child shards of the current shard, returned only at the end
+     * of the current shard.</p>
+     */
     inline SubscribeToShardEvent& AddChildShards(ChildShard&& value) { m_childShardsHasBeenSet = true; m_childShards.push_back(std::move(value)); return *this; }
 
   private:

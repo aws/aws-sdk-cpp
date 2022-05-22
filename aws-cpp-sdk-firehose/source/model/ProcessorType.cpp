@@ -20,15 +20,30 @@ namespace Aws
       namespace ProcessorTypeMapper
       {
 
+        static const int RecordDeAggregation_HASH = HashingUtils::HashString("RecordDeAggregation");
         static const int Lambda_HASH = HashingUtils::HashString("Lambda");
+        static const int MetadataExtraction_HASH = HashingUtils::HashString("MetadataExtraction");
+        static const int AppendDelimiterToRecord_HASH = HashingUtils::HashString("AppendDelimiterToRecord");
 
 
         ProcessorType GetProcessorTypeForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == Lambda_HASH)
+          if (hashCode == RecordDeAggregation_HASH)
+          {
+            return ProcessorType::RecordDeAggregation;
+          }
+          else if (hashCode == Lambda_HASH)
           {
             return ProcessorType::Lambda;
+          }
+          else if (hashCode == MetadataExtraction_HASH)
+          {
+            return ProcessorType::MetadataExtraction;
+          }
+          else if (hashCode == AppendDelimiterToRecord_HASH)
+          {
+            return ProcessorType::AppendDelimiterToRecord;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -44,8 +59,14 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProcessorType::RecordDeAggregation:
+            return "RecordDeAggregation";
           case ProcessorType::Lambda:
             return "Lambda";
+          case ProcessorType::MetadataExtraction:
+            return "MetadataExtraction";
+          case ProcessorType::AppendDelimiterToRecord:
+            return "AppendDelimiterToRecord";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

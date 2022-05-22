@@ -22,7 +22,8 @@ namespace Model
 
   /**
    * <p>Represents a request to list the email templates present in your Amazon SES
-   * account in the current AWS Region. For more information, see the <a
+   * account in the current Amazon Web Services Region. For more information, see the
+   * <a
    * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon
    * SES Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListEmailTemplatesRequest">AWS

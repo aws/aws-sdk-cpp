@@ -115,7 +115,7 @@ namespace Model
 
 
     /**
-     * <p>The time from creation time after which the API key expires. The date is
+     * <p>From the creation time, the time after which the API key expires. The date is
      * represented as seconds since the epoch, rounded down to the nearest hour. The
      * default value for this parameter is 7 days from creation time. For more
      * information, see .</p>
@@ -123,7 +123,7 @@ namespace Model
     inline long long GetExpires() const{ return m_expires; }
 
     /**
-     * <p>The time from creation time after which the API key expires. The date is
+     * <p>From the creation time, the time after which the API key expires. The date is
      * represented as seconds since the epoch, rounded down to the nearest hour. The
      * default value for this parameter is 7 days from creation time. For more
      * information, see .</p>
@@ -131,7 +131,7 @@ namespace Model
     inline bool ExpiresHasBeenSet() const { return m_expiresHasBeenSet; }
 
     /**
-     * <p>The time from creation time after which the API key expires. The date is
+     * <p>From the creation time, the time after which the API key expires. The date is
      * represented as seconds since the epoch, rounded down to the nearest hour. The
      * default value for this parameter is 7 days from creation time. For more
      * information, see .</p>
@@ -139,7 +139,7 @@ namespace Model
     inline void SetExpires(long long value) { m_expiresHasBeenSet = true; m_expires = value; }
 
     /**
-     * <p>The time from creation time after which the API key expires. The date is
+     * <p>From the creation time, the time after which the API key expires. The date is
      * represented as seconds since the epoch, rounded down to the nearest hour. The
      * default value for this parameter is 7 days from creation time. For more
      * information, see .</p>

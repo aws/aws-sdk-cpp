@@ -138,42 +138,50 @@ namespace Model
 
 
     /**
-     * <p>Matches the ARN of the AWS resource on which the service runs.</p>
+     * <p>Matches the ARN of the Amazon Web Services resource on which the service
+     * runs.</p>
      */
     inline const Aws::String& GetResourceARN() const{ return m_resourceARN; }
 
     /**
-     * <p>Matches the ARN of the AWS resource on which the service runs.</p>
+     * <p>Matches the ARN of the Amazon Web Services resource on which the service
+     * runs.</p>
      */
     inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
 
     /**
-     * <p>Matches the ARN of the AWS resource on which the service runs.</p>
+     * <p>Matches the ARN of the Amazon Web Services resource on which the service
+     * runs.</p>
      */
     inline void SetResourceARN(const Aws::String& value) { m_resourceARNHasBeenSet = true; m_resourceARN = value; }
 
     /**
-     * <p>Matches the ARN of the AWS resource on which the service runs.</p>
+     * <p>Matches the ARN of the Amazon Web Services resource on which the service
+     * runs.</p>
      */
     inline void SetResourceARN(Aws::String&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = std::move(value); }
 
     /**
-     * <p>Matches the ARN of the AWS resource on which the service runs.</p>
+     * <p>Matches the ARN of the Amazon Web Services resource on which the service
+     * runs.</p>
      */
     inline void SetResourceARN(const char* value) { m_resourceARNHasBeenSet = true; m_resourceARN.assign(value); }
 
     /**
-     * <p>Matches the ARN of the AWS resource on which the service runs.</p>
+     * <p>Matches the ARN of the Amazon Web Services resource on which the service
+     * runs.</p>
      */
     inline SamplingRuleUpdate& WithResourceARN(const Aws::String& value) { SetResourceARN(value); return *this;}
 
     /**
-     * <p>Matches the ARN of the AWS resource on which the service runs.</p>
+     * <p>Matches the ARN of the Amazon Web Services resource on which the service
+     * runs.</p>
      */
     inline SamplingRuleUpdate& WithResourceARN(Aws::String&& value) { SetResourceARN(std::move(value)); return *this;}
 
     /**
-     * <p>Matches the ARN of the AWS resource on which the service runs.</p>
+     * <p>Matches the ARN of the Amazon Web Services resource on which the service
+     * runs.</p>
      */
     inline SamplingRuleUpdate& WithResourceARN(const char* value) { SetResourceARN(value); return *this;}
 

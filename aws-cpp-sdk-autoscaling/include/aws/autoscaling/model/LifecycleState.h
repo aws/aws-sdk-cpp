@@ -28,7 +28,17 @@ namespace Model
     Detaching,
     Detached,
     EnteringStandby,
-    Standby
+    Standby,
+    Warmed_Pending,
+    Warmed_Pending_Wait,
+    Warmed_Pending_Proceed,
+    Warmed_Terminating,
+    Warmed_Terminating_Wait,
+    Warmed_Terminating_Proceed,
+    Warmed_Terminated,
+    Warmed_Stopped,
+    Warmed_Running,
+    Warmed_Hibernated
   };
 
 namespace LifecycleStateMapper

@@ -43,6 +43,17 @@ UploadServerCertificateResult& UploadServerCertificateResult::operator =(const A
     {
       m_serverCertificateMetadata = serverCertificateMetadataNode;
     }
+    XmlNode tagsNode = resultNode.FirstChild("Tags");
+    if(!tagsNode.IsNull())
+    {
+      XmlNode tagsMember = tagsNode.FirstChild("member");
+      while(!tagsMember.IsNull())
+      {
+        m_tags.push_back(tagsMember);
+        tagsMember = tagsMember.NextNode("member");
+      }
+
+    }
   }
 
   if (!rootNode.IsNull()) {

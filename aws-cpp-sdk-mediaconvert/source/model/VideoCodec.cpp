@@ -30,6 +30,7 @@ namespace Aws
         static const int VC3_HASH = HashingUtils::HashString("VC3");
         static const int VP8_HASH = HashingUtils::HashString("VP8");
         static const int VP9_HASH = HashingUtils::HashString("VP9");
+        static const int XAVC_HASH = HashingUtils::HashString("XAVC");
 
 
         VideoCodec GetVideoCodecForName(const Aws::String& name)
@@ -75,6 +76,10 @@ namespace Aws
           {
             return VideoCodec::VP9;
           }
+          else if (hashCode == XAVC_HASH)
+          {
+            return VideoCodec::XAVC;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -109,6 +114,8 @@ namespace Aws
             return "VP8";
           case VideoCodec::VP9:
             return "VP9";
+          case VideoCodec::XAVC:
+            return "XAVC";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

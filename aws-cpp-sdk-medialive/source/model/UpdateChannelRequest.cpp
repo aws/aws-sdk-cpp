@@ -21,6 +21,7 @@ UpdateChannelRequest::UpdateChannelRequest() :
     m_inputSpecificationHasBeenSet(false),
     m_logLevel(LogLevel::NOT_SET),
     m_logLevelHasBeenSet(false),
+    m_maintenanceHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_roleArnHasBeenSet(false)
 {
@@ -73,6 +74,12 @@ Aws::String UpdateChannelRequest::SerializePayload() const
   if(m_logLevelHasBeenSet)
   {
    payload.WithString("logLevel", LogLevelMapper::GetNameForLogLevel(m_logLevel));
+  }
+
+  if(m_maintenanceHasBeenSet)
+  {
+   payload.WithObject("maintenance", m_maintenance.Jsonize());
+
   }
 
   if(m_nameHasBeenSet)

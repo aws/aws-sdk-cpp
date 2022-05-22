@@ -13,7 +13,8 @@ using namespace Aws::Utils;
 CreateUserGroupRequest::CreateUserGroupRequest() : 
     m_userGroupIdHasBeenSet(false),
     m_engineHasBeenSet(false),
-    m_userIdsHasBeenSet(false)
+    m_userIdsHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -39,6 +40,16 @@ Aws::String CreateUserGroupRequest::SerializePayload() const
       ss << "UserIds.member." << userIdsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       userIdsCount++;
+    }
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+    unsigned tagsCount = 1;
+    for(auto& item : m_tags)
+    {
+      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
+      tagsCount++;
     }
   }
 

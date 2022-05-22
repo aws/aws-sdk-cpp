@@ -1,6 +1,11 @@
 #foreach($operation in $serviceModel.operations)
+#if(!$operation.s3CrtSpecific)
 #if($arnEndpointSupported)
+#if($multiRegionAccessPointSupported)
+#set($signerName = ", computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/")
+#else
 #set($signerName = ", Aws::Auth::SIGV4_SIGNER")
+#end
 #set($signerRegionOverride = ", computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/")
 #set($signerServiceNameOverride = ", computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/")
 #else
@@ -18,59 +23,9 @@
 #if($operation.request)
 ${operation.name}Outcome ${className}::${operation.name}(${constText}${operation.request.shape.name}& request) const
 {
-#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientOperationRequestRequiredMemberValidate.vm")
-#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientOperationEndpointPrepareCommonBody.vm")
-  Aws::StringStream ss;
-#set($uriParts = $operation.http.requestUriParts)
-#set($uriVars = $operation.http.requestParameters)
-#set($partIndex = 1)
-#set($queryStart = false)
-#if($uriParts.size() > $startIndex)
-#set($uriPartString = ${uriParts.get($startIndex)})
-#if($uriPartString.contains("?"))
-#set($queryStart = true)
-#set($pathAndQuery = $operation.http.splitUriPartIntoPathAndQuery($uriPartString))
-#if(!$pathAndQuery.get(0).isEmpty())
-  ss << "${pathAndQuery.get(0)}";
-  uri.SetPath(uri.GetPath() + ss.str());
-#end
-  ss.str("${pathAndQuery.get(1)}");
-#else
-  ss << "$uriPartString";
-#end
-#foreach($var in $uriVars)
-#set($varIndex = $partIndex - 1)
-#if(!$skipFirst)
-#set($partShapeMember = $operation.request.shape.getMemberByLocationName($uriVars.get($varIndex)))
-#if($partShapeMember.shape.enum)
-  ss << ${partShapeMember.shape.name}Mapper::GetNameFor${partShapeMember.shape.name}(request.Get${CppViewHelper.convertToUpperCamel($operation.request.shape.getMemberNameByLocationName($uriVars.get($varIndex)))}());
-#else
-  ss << request.Get${CppViewHelper.convertToUpperCamel($operation.request.shape.getMemberNameByLocationName($uriVars.get($varIndex)))}();
-#end
-#if($uriParts.size() > $partIndex)
-#set($uriPartString = "${uriParts.get($partIndex)}")
-#if(!$queryStart && $uriPartString.contains("?"))
-#set($queryStart = true)
-#set($pathAndQuery = $operation.http.splitUriPartIntoPathAndQuery($uriPartString))
-#if(!$pathAndQuery.get(0).isEmpty())
-  ss << "${pathAndQuery.get(0)}";
-#end
-  uri.SetPath(uri.GetPath() + ss.str());
-  ss.str("${pathAndQuery.get(1)}");
-#else
-  ss << "$uriPartString";
-#end
-#end
-#end
-#set($partIndex = $partIndex + 1)
-#set($skipFirst = false)
-#end
-#end
-#if(!$queryStart)
-  uri.SetPath(uri.GetPath() + ss.str());
-#else
-  uri.SetQueryString(ss.str());
-#end
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientOperationRequestRequiredMemberValidate.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientOperationEndpointPrepareCommonBody.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/UriRequestQueryParams.vm")
 #if($operation.hasPreSignedUrl)
 #set($requestText = "newRequest")
 #else
@@ -145,5 +100,6 @@ void ${className}::${operation.name}AsyncHelper(${constText}${operation.name}Res
   handler(this, ${operation.name}(), context);
 }
 
+#end
 #end
 #end

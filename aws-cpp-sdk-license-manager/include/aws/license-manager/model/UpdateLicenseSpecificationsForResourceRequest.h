@@ -37,42 +37,42 @@ namespace Model
 
 
     /**
-     * <p>Amazon Resource Name (ARN) of the AWS resource.</p>
+     * <p>Amazon Resource Name (ARN) of the Amazon Web Services resource.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
 
     /**
-     * <p>Amazon Resource Name (ARN) of the AWS resource.</p>
+     * <p>Amazon Resource Name (ARN) of the Amazon Web Services resource.</p>
      */
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
 
     /**
-     * <p>Amazon Resource Name (ARN) of the AWS resource.</p>
+     * <p>Amazon Resource Name (ARN) of the Amazon Web Services resource.</p>
      */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
-     * <p>Amazon Resource Name (ARN) of the AWS resource.</p>
+     * <p>Amazon Resource Name (ARN) of the Amazon Web Services resource.</p>
      */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
 
     /**
-     * <p>Amazon Resource Name (ARN) of the AWS resource.</p>
+     * <p>Amazon Resource Name (ARN) of the Amazon Web Services resource.</p>
      */
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
 
     /**
-     * <p>Amazon Resource Name (ARN) of the AWS resource.</p>
+     * <p>Amazon Resource Name (ARN) of the Amazon Web Services resource.</p>
      */
     inline UpdateLicenseSpecificationsForResourceRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
 
     /**
-     * <p>Amazon Resource Name (ARN) of the AWS resource.</p>
+     * <p>Amazon Resource Name (ARN) of the Amazon Web Services resource.</p>
      */
     inline UpdateLicenseSpecificationsForResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
 
     /**
-     * <p>Amazon Resource Name (ARN) of the AWS resource.</p>
+     * <p>Amazon Resource Name (ARN) of the Amazon Web Services resource.</p>
      */
     inline UpdateLicenseSpecificationsForResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 

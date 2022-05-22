@@ -40,8 +40,8 @@ namespace Model
     /**
      * <p>This is a legacy method. We recommend that you don't use this method.
      * Instead, use the <code>Filters</code> data type. <code>Filters</code> enables
-     * you to return instance information by filtering based on tags applied to managed
-     * instances.</p>  <p>Attempting to use
+     * you to return node information by filtering based on tags applied to managed
+     * nodes.</p>  <p>Attempting to use
      * <code>InstanceInformationFilterList</code> and <code>Filters</code> leads to an
      * exception error. </p> 
      */
@@ -50,8 +50,8 @@ namespace Model
     /**
      * <p>This is a legacy method. We recommend that you don't use this method.
      * Instead, use the <code>Filters</code> data type. <code>Filters</code> enables
-     * you to return instance information by filtering based on tags applied to managed
-     * instances.</p>  <p>Attempting to use
+     * you to return node information by filtering based on tags applied to managed
+     * nodes.</p>  <p>Attempting to use
      * <code>InstanceInformationFilterList</code> and <code>Filters</code> leads to an
      * exception error. </p> 
      */
@@ -60,8 +60,8 @@ namespace Model
     /**
      * <p>This is a legacy method. We recommend that you don't use this method.
      * Instead, use the <code>Filters</code> data type. <code>Filters</code> enables
-     * you to return instance information by filtering based on tags applied to managed
-     * instances.</p>  <p>Attempting to use
+     * you to return node information by filtering based on tags applied to managed
+     * nodes.</p>  <p>Attempting to use
      * <code>InstanceInformationFilterList</code> and <code>Filters</code> leads to an
      * exception error. </p> 
      */
@@ -70,8 +70,8 @@ namespace Model
     /**
      * <p>This is a legacy method. We recommend that you don't use this method.
      * Instead, use the <code>Filters</code> data type. <code>Filters</code> enables
-     * you to return instance information by filtering based on tags applied to managed
-     * instances.</p>  <p>Attempting to use
+     * you to return node information by filtering based on tags applied to managed
+     * nodes.</p>  <p>Attempting to use
      * <code>InstanceInformationFilterList</code> and <code>Filters</code> leads to an
      * exception error. </p> 
      */
@@ -80,8 +80,8 @@ namespace Model
     /**
      * <p>This is a legacy method. We recommend that you don't use this method.
      * Instead, use the <code>Filters</code> data type. <code>Filters</code> enables
-     * you to return instance information by filtering based on tags applied to managed
-     * instances.</p>  <p>Attempting to use
+     * you to return node information by filtering based on tags applied to managed
+     * nodes.</p>  <p>Attempting to use
      * <code>InstanceInformationFilterList</code> and <code>Filters</code> leads to an
      * exception error. </p> 
      */
@@ -90,8 +90,8 @@ namespace Model
     /**
      * <p>This is a legacy method. We recommend that you don't use this method.
      * Instead, use the <code>Filters</code> data type. <code>Filters</code> enables
-     * you to return instance information by filtering based on tags applied to managed
-     * instances.</p>  <p>Attempting to use
+     * you to return node information by filtering based on tags applied to managed
+     * nodes.</p>  <p>Attempting to use
      * <code>InstanceInformationFilterList</code> and <code>Filters</code> leads to an
      * exception error. </p> 
      */
@@ -100,8 +100,8 @@ namespace Model
     /**
      * <p>This is a legacy method. We recommend that you don't use this method.
      * Instead, use the <code>Filters</code> data type. <code>Filters</code> enables
-     * you to return instance information by filtering based on tags applied to managed
-     * instances.</p>  <p>Attempting to use
+     * you to return node information by filtering based on tags applied to managed
+     * nodes.</p>  <p>Attempting to use
      * <code>InstanceInformationFilterList</code> and <code>Filters</code> leads to an
      * exception error. </p> 
      */
@@ -110,8 +110,8 @@ namespace Model
     /**
      * <p>This is a legacy method. We recommend that you don't use this method.
      * Instead, use the <code>Filters</code> data type. <code>Filters</code> enables
-     * you to return instance information by filtering based on tags applied to managed
-     * instances.</p>  <p>Attempting to use
+     * you to return node information by filtering based on tags applied to managed
+     * nodes.</p>  <p>Attempting to use
      * <code>InstanceInformationFilterList</code> and <code>Filters</code> leads to an
      * exception error. </p> 
      */
@@ -119,64 +119,64 @@ namespace Model
 
 
     /**
-     * <p>One or more filters. Use a filter to return a more specific list of
-     * instances. You can filter based on tags applied to EC2 instances. Use this
+     * <p>One or more filters. Use a filter to return a more specific list of managed
+     * nodes. You can filter based on tags applied to EC2 instances. Use this
      * <code>Filters</code> data type instead of
      * <code>InstanceInformationFilterList</code>, which is deprecated.</p>
      */
     inline const Aws::Vector<InstanceInformationStringFilter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>One or more filters. Use a filter to return a more specific list of
-     * instances. You can filter based on tags applied to EC2 instances. Use this
+     * <p>One or more filters. Use a filter to return a more specific list of managed
+     * nodes. You can filter based on tags applied to EC2 instances. Use this
      * <code>Filters</code> data type instead of
      * <code>InstanceInformationFilterList</code>, which is deprecated.</p>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>One or more filters. Use a filter to return a more specific list of
-     * instances. You can filter based on tags applied to EC2 instances. Use this
+     * <p>One or more filters. Use a filter to return a more specific list of managed
+     * nodes. You can filter based on tags applied to EC2 instances. Use this
      * <code>Filters</code> data type instead of
      * <code>InstanceInformationFilterList</code>, which is deprecated.</p>
      */
     inline void SetFilters(const Aws::Vector<InstanceInformationStringFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters. Use a filter to return a more specific list of
-     * instances. You can filter based on tags applied to EC2 instances. Use this
+     * <p>One or more filters. Use a filter to return a more specific list of managed
+     * nodes. You can filter based on tags applied to EC2 instances. Use this
      * <code>Filters</code> data type instead of
      * <code>InstanceInformationFilterList</code>, which is deprecated.</p>
      */
     inline void SetFilters(Aws::Vector<InstanceInformationStringFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>One or more filters. Use a filter to return a more specific list of
-     * instances. You can filter based on tags applied to EC2 instances. Use this
+     * <p>One or more filters. Use a filter to return a more specific list of managed
+     * nodes. You can filter based on tags applied to EC2 instances. Use this
      * <code>Filters</code> data type instead of
      * <code>InstanceInformationFilterList</code>, which is deprecated.</p>
      */
     inline DescribeInstanceInformationRequest& WithFilters(const Aws::Vector<InstanceInformationStringFilter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters. Use a filter to return a more specific list of
-     * instances. You can filter based on tags applied to EC2 instances. Use this
+     * <p>One or more filters. Use a filter to return a more specific list of managed
+     * nodes. You can filter based on tags applied to EC2 instances. Use this
      * <code>Filters</code> data type instead of
      * <code>InstanceInformationFilterList</code>, which is deprecated.</p>
      */
     inline DescribeInstanceInformationRequest& WithFilters(Aws::Vector<InstanceInformationStringFilter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>One or more filters. Use a filter to return a more specific list of
-     * instances. You can filter based on tags applied to EC2 instances. Use this
+     * <p>One or more filters. Use a filter to return a more specific list of managed
+     * nodes. You can filter based on tags applied to EC2 instances. Use this
      * <code>Filters</code> data type instead of
      * <code>InstanceInformationFilterList</code>, which is deprecated.</p>
      */
     inline DescribeInstanceInformationRequest& AddFilters(const InstanceInformationStringFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters. Use a filter to return a more specific list of
-     * instances. You can filter based on tags applied to EC2 instances. Use this
+     * <p>One or more filters. Use a filter to return a more specific list of managed
+     * nodes. You can filter based on tags applied to EC2 instances. Use this
      * <code>Filters</code> data type instead of
      * <code>InstanceInformationFilterList</code>, which is deprecated.</p>
      */

@@ -7,6 +7,7 @@
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/mediaconvert/model/M3u8AudioDuration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/mediaconvert/model/M3u8DataPtsControl.h>
 #include <aws/mediaconvert/model/M3u8NielsenId3.h>
 #include <aws/mediaconvert/model/M3u8PcrControl.h>
 #include <aws/mediaconvert/model/M3u8Scte35Source.h>
@@ -29,7 +30,8 @@ namespace Model
 {
 
   /**
-   * Settings for TS segments in HLS<p><h3>See Also:</h3>   <a
+   * These settings relate to the MPEG-2 transport stream (MPEG2-TS) container for
+   * the MPEG2-TS segments in your HLS outputs.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/M3u8Settings">AWS
    * API Reference</a></p>
    */
@@ -214,6 +216,80 @@ namespace Model
      * comma separation.
      */
     inline M3u8Settings& AddAudioPids(int value) { m_audioPidsHasBeenSet = true; m_audioPids.push_back(value); return *this; }
+
+
+    /**
+     * If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with
+     * Presentation Timestamp (PTS) values greater than or equal to the first video
+     * packet PTS (MediaConvert drops captions and data packets with lesser PTS
+     * values). Keep the default value (AUTO) to allow all PTS values.
+     */
+    inline const M3u8DataPtsControl& GetDataPTSControl() const{ return m_dataPTSControl; }
+
+    /**
+     * If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with
+     * Presentation Timestamp (PTS) values greater than or equal to the first video
+     * packet PTS (MediaConvert drops captions and data packets with lesser PTS
+     * values). Keep the default value (AUTO) to allow all PTS values.
+     */
+    inline bool DataPTSControlHasBeenSet() const { return m_dataPTSControlHasBeenSet; }
+
+    /**
+     * If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with
+     * Presentation Timestamp (PTS) values greater than or equal to the first video
+     * packet PTS (MediaConvert drops captions and data packets with lesser PTS
+     * values). Keep the default value (AUTO) to allow all PTS values.
+     */
+    inline void SetDataPTSControl(const M3u8DataPtsControl& value) { m_dataPTSControlHasBeenSet = true; m_dataPTSControl = value; }
+
+    /**
+     * If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with
+     * Presentation Timestamp (PTS) values greater than or equal to the first video
+     * packet PTS (MediaConvert drops captions and data packets with lesser PTS
+     * values). Keep the default value (AUTO) to allow all PTS values.
+     */
+    inline void SetDataPTSControl(M3u8DataPtsControl&& value) { m_dataPTSControlHasBeenSet = true; m_dataPTSControl = std::move(value); }
+
+    /**
+     * If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with
+     * Presentation Timestamp (PTS) values greater than or equal to the first video
+     * packet PTS (MediaConvert drops captions and data packets with lesser PTS
+     * values). Keep the default value (AUTO) to allow all PTS values.
+     */
+    inline M3u8Settings& WithDataPTSControl(const M3u8DataPtsControl& value) { SetDataPTSControl(value); return *this;}
+
+    /**
+     * If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with
+     * Presentation Timestamp (PTS) values greater than or equal to the first video
+     * packet PTS (MediaConvert drops captions and data packets with lesser PTS
+     * values). Keep the default value (AUTO) to allow all PTS values.
+     */
+    inline M3u8Settings& WithDataPTSControl(M3u8DataPtsControl&& value) { SetDataPTSControl(std::move(value)); return *this;}
+
+
+    /**
+     * Specify the maximum time, in milliseconds, between Program Clock References
+     * (PCRs) inserted into the transport stream.
+     */
+    inline int GetMaxPcrInterval() const{ return m_maxPcrInterval; }
+
+    /**
+     * Specify the maximum time, in milliseconds, between Program Clock References
+     * (PCRs) inserted into the transport stream.
+     */
+    inline bool MaxPcrIntervalHasBeenSet() const { return m_maxPcrIntervalHasBeenSet; }
+
+    /**
+     * Specify the maximum time, in milliseconds, between Program Clock References
+     * (PCRs) inserted into the transport stream.
+     */
+    inline void SetMaxPcrInterval(int value) { m_maxPcrIntervalHasBeenSet = true; m_maxPcrInterval = value; }
+
+    /**
+     * Specify the maximum time, in milliseconds, between Program Clock References
+     * (PCRs) inserted into the transport stream.
+     */
+    inline M3u8Settings& WithMaxPcrInterval(int value) { SetMaxPcrInterval(value); return *this;}
 
 
     /**
@@ -533,59 +609,77 @@ namespace Model
 
 
     /**
-     * Applies only to HLS outputs. Use this setting to specify whether the service
-     * inserts the ID3 timed metadata from the input in this output.
+     * Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH) to include ID3
+     * metadata in this output. This includes ID3 metadata from the following features:
+     * ID3 timestamp period (timedMetadataId3Period), and Custom ID3 metadata inserter
+     * (timedMetadataInsertion). To exclude this ID3 metadata in this output: set ID3
+     * metadata to None (NONE) or leave blank.
      */
     inline const TimedMetadata& GetTimedMetadata() const{ return m_timedMetadata; }
 
     /**
-     * Applies only to HLS outputs. Use this setting to specify whether the service
-     * inserts the ID3 timed metadata from the input in this output.
+     * Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH) to include ID3
+     * metadata in this output. This includes ID3 metadata from the following features:
+     * ID3 timestamp period (timedMetadataId3Period), and Custom ID3 metadata inserter
+     * (timedMetadataInsertion). To exclude this ID3 metadata in this output: set ID3
+     * metadata to None (NONE) or leave blank.
      */
     inline bool TimedMetadataHasBeenSet() const { return m_timedMetadataHasBeenSet; }
 
     /**
-     * Applies only to HLS outputs. Use this setting to specify whether the service
-     * inserts the ID3 timed metadata from the input in this output.
+     * Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH) to include ID3
+     * metadata in this output. This includes ID3 metadata from the following features:
+     * ID3 timestamp period (timedMetadataId3Period), and Custom ID3 metadata inserter
+     * (timedMetadataInsertion). To exclude this ID3 metadata in this output: set ID3
+     * metadata to None (NONE) or leave blank.
      */
     inline void SetTimedMetadata(const TimedMetadata& value) { m_timedMetadataHasBeenSet = true; m_timedMetadata = value; }
 
     /**
-     * Applies only to HLS outputs. Use this setting to specify whether the service
-     * inserts the ID3 timed metadata from the input in this output.
+     * Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH) to include ID3
+     * metadata in this output. This includes ID3 metadata from the following features:
+     * ID3 timestamp period (timedMetadataId3Period), and Custom ID3 metadata inserter
+     * (timedMetadataInsertion). To exclude this ID3 metadata in this output: set ID3
+     * metadata to None (NONE) or leave blank.
      */
     inline void SetTimedMetadata(TimedMetadata&& value) { m_timedMetadataHasBeenSet = true; m_timedMetadata = std::move(value); }
 
     /**
-     * Applies only to HLS outputs. Use this setting to specify whether the service
-     * inserts the ID3 timed metadata from the input in this output.
+     * Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH) to include ID3
+     * metadata in this output. This includes ID3 metadata from the following features:
+     * ID3 timestamp period (timedMetadataId3Period), and Custom ID3 metadata inserter
+     * (timedMetadataInsertion). To exclude this ID3 metadata in this output: set ID3
+     * metadata to None (NONE) or leave blank.
      */
     inline M3u8Settings& WithTimedMetadata(const TimedMetadata& value) { SetTimedMetadata(value); return *this;}
 
     /**
-     * Applies only to HLS outputs. Use this setting to specify whether the service
-     * inserts the ID3 timed metadata from the input in this output.
+     * Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH) to include ID3
+     * metadata in this output. This includes ID3 metadata from the following features:
+     * ID3 timestamp period (timedMetadataId3Period), and Custom ID3 metadata inserter
+     * (timedMetadataInsertion). To exclude this ID3 metadata in this output: set ID3
+     * metadata to None (NONE) or leave blank.
      */
     inline M3u8Settings& WithTimedMetadata(TimedMetadata&& value) { SetTimedMetadata(std::move(value)); return *this;}
 
 
     /**
-     * Packet Identifier (PID) of the timed metadata stream in the transport stream.
+     * Packet Identifier (PID) of the ID3 metadata stream in the transport stream.
      */
     inline int GetTimedMetadataPid() const{ return m_timedMetadataPid; }
 
     /**
-     * Packet Identifier (PID) of the timed metadata stream in the transport stream.
+     * Packet Identifier (PID) of the ID3 metadata stream in the transport stream.
      */
     inline bool TimedMetadataPidHasBeenSet() const { return m_timedMetadataPidHasBeenSet; }
 
     /**
-     * Packet Identifier (PID) of the timed metadata stream in the transport stream.
+     * Packet Identifier (PID) of the ID3 metadata stream in the transport stream.
      */
     inline void SetTimedMetadataPid(int value) { m_timedMetadataPidHasBeenSet = true; m_timedMetadataPid = value; }
 
     /**
-     * Packet Identifier (PID) of the timed metadata stream in the transport stream.
+     * Packet Identifier (PID) of the ID3 metadata stream in the transport stream.
      */
     inline M3u8Settings& WithTimedMetadataPid(int value) { SetTimedMetadataPid(value); return *this;}
 
@@ -641,6 +735,12 @@ namespace Model
 
     Aws::Vector<int> m_audioPids;
     bool m_audioPidsHasBeenSet;
+
+    M3u8DataPtsControl m_dataPTSControl;
+    bool m_dataPTSControlHasBeenSet;
+
+    int m_maxPcrInterval;
+    bool m_maxPcrIntervalHasBeenSet;
 
     M3u8NielsenId3 m_nielsenId3;
     bool m_nielsenId3HasBeenSet;

@@ -258,34 +258,65 @@ namespace Model
 
 
     /**
-     * <p>The deployment configuration for the endpoint to be updated.</p>
+     * <p>The deployment configuration for an endpoint, which contains the desired
+     * deployment strategy and rollback configurations.</p>
      */
     inline const DeploymentConfig& GetDeploymentConfig() const{ return m_deploymentConfig; }
 
     /**
-     * <p>The deployment configuration for the endpoint to be updated.</p>
+     * <p>The deployment configuration for an endpoint, which contains the desired
+     * deployment strategy and rollback configurations.</p>
      */
     inline bool DeploymentConfigHasBeenSet() const { return m_deploymentConfigHasBeenSet; }
 
     /**
-     * <p>The deployment configuration for the endpoint to be updated.</p>
+     * <p>The deployment configuration for an endpoint, which contains the desired
+     * deployment strategy and rollback configurations.</p>
      */
     inline void SetDeploymentConfig(const DeploymentConfig& value) { m_deploymentConfigHasBeenSet = true; m_deploymentConfig = value; }
 
     /**
-     * <p>The deployment configuration for the endpoint to be updated.</p>
+     * <p>The deployment configuration for an endpoint, which contains the desired
+     * deployment strategy and rollback configurations.</p>
      */
     inline void SetDeploymentConfig(DeploymentConfig&& value) { m_deploymentConfigHasBeenSet = true; m_deploymentConfig = std::move(value); }
 
     /**
-     * <p>The deployment configuration for the endpoint to be updated.</p>
+     * <p>The deployment configuration for an endpoint, which contains the desired
+     * deployment strategy and rollback configurations.</p>
      */
     inline UpdateEndpointRequest& WithDeploymentConfig(const DeploymentConfig& value) { SetDeploymentConfig(value); return *this;}
 
     /**
-     * <p>The deployment configuration for the endpoint to be updated.</p>
+     * <p>The deployment configuration for an endpoint, which contains the desired
+     * deployment strategy and rollback configurations.</p>
      */
     inline UpdateEndpointRequest& WithDeploymentConfig(DeploymentConfig&& value) { SetDeploymentConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies whether to reuse the last deployment configuration. The default
+     * value is false (the configuration is not reused).</p>
+     */
+    inline bool GetRetainDeploymentConfig() const{ return m_retainDeploymentConfig; }
+
+    /**
+     * <p>Specifies whether to reuse the last deployment configuration. The default
+     * value is false (the configuration is not reused).</p>
+     */
+    inline bool RetainDeploymentConfigHasBeenSet() const { return m_retainDeploymentConfigHasBeenSet; }
+
+    /**
+     * <p>Specifies whether to reuse the last deployment configuration. The default
+     * value is false (the configuration is not reused).</p>
+     */
+    inline void SetRetainDeploymentConfig(bool value) { m_retainDeploymentConfigHasBeenSet = true; m_retainDeploymentConfig = value; }
+
+    /**
+     * <p>Specifies whether to reuse the last deployment configuration. The default
+     * value is false (the configuration is not reused).</p>
+     */
+    inline UpdateEndpointRequest& WithRetainDeploymentConfig(bool value) { SetRetainDeploymentConfig(value); return *this;}
 
   private:
 
@@ -303,6 +334,9 @@ namespace Model
 
     DeploymentConfig m_deploymentConfig;
     bool m_deploymentConfigHasBeenSet;
+
+    bool m_retainDeploymentConfig;
+    bool m_retainDeploymentConfigHasBeenSet;
   };
 
 } // namespace Model

@@ -23,6 +23,10 @@ ThingIndexingConfiguration::ThingIndexingConfiguration() :
     m_thingIndexingModeHasBeenSet(false),
     m_thingConnectivityIndexingMode(ThingConnectivityIndexingMode::NOT_SET),
     m_thingConnectivityIndexingModeHasBeenSet(false),
+    m_deviceDefenderIndexingMode(DeviceDefenderIndexingMode::NOT_SET),
+    m_deviceDefenderIndexingModeHasBeenSet(false),
+    m_namedShadowIndexingMode(NamedShadowIndexingMode::NOT_SET),
+    m_namedShadowIndexingModeHasBeenSet(false),
     m_managedFieldsHasBeenSet(false),
     m_customFieldsHasBeenSet(false)
 {
@@ -33,6 +37,10 @@ ThingIndexingConfiguration::ThingIndexingConfiguration(JsonView jsonValue) :
     m_thingIndexingModeHasBeenSet(false),
     m_thingConnectivityIndexingMode(ThingConnectivityIndexingMode::NOT_SET),
     m_thingConnectivityIndexingModeHasBeenSet(false),
+    m_deviceDefenderIndexingMode(DeviceDefenderIndexingMode::NOT_SET),
+    m_deviceDefenderIndexingModeHasBeenSet(false),
+    m_namedShadowIndexingMode(NamedShadowIndexingMode::NOT_SET),
+    m_namedShadowIndexingModeHasBeenSet(false),
     m_managedFieldsHasBeenSet(false),
     m_customFieldsHasBeenSet(false)
 {
@@ -53,6 +61,20 @@ ThingIndexingConfiguration& ThingIndexingConfiguration::operator =(JsonView json
     m_thingConnectivityIndexingMode = ThingConnectivityIndexingModeMapper::GetThingConnectivityIndexingModeForName(jsonValue.GetString("thingConnectivityIndexingMode"));
 
     m_thingConnectivityIndexingModeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("deviceDefenderIndexingMode"))
+  {
+    m_deviceDefenderIndexingMode = DeviceDefenderIndexingModeMapper::GetDeviceDefenderIndexingModeForName(jsonValue.GetString("deviceDefenderIndexingMode"));
+
+    m_deviceDefenderIndexingModeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("namedShadowIndexingMode"))
+  {
+    m_namedShadowIndexingMode = NamedShadowIndexingModeMapper::GetNamedShadowIndexingModeForName(jsonValue.GetString("namedShadowIndexingMode"));
+
+    m_namedShadowIndexingModeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("managedFields"))
@@ -90,6 +112,16 @@ JsonValue ThingIndexingConfiguration::Jsonize() const
   if(m_thingConnectivityIndexingModeHasBeenSet)
   {
    payload.WithString("thingConnectivityIndexingMode", ThingConnectivityIndexingModeMapper::GetNameForThingConnectivityIndexingMode(m_thingConnectivityIndexingMode));
+  }
+
+  if(m_deviceDefenderIndexingModeHasBeenSet)
+  {
+   payload.WithString("deviceDefenderIndexingMode", DeviceDefenderIndexingModeMapper::GetNameForDeviceDefenderIndexingMode(m_deviceDefenderIndexingMode));
+  }
+
+  if(m_namedShadowIndexingModeHasBeenSet)
+  {
+   payload.WithString("namedShadowIndexingMode", NamedShadowIndexingModeMapper::GetNameForNamedShadowIndexingMode(m_namedShadowIndexingMode));
   }
 
   if(m_managedFieldsHasBeenSet)

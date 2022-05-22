@@ -220,7 +220,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p> <p>Constraints: Maximum 64 ASCII characters</p>
+     * idempotency</a>.</p> <p>Constraints: Maximum 64 ASCII characters</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
@@ -228,7 +228,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p> <p>Constraints: Maximum 64 ASCII characters</p>
+     * idempotency</a>.</p> <p>Constraints: Maximum 64 ASCII characters</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
@@ -236,7 +236,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p> <p>Constraints: Maximum 64 ASCII characters</p>
+     * idempotency</a>.</p> <p>Constraints: Maximum 64 ASCII characters</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
@@ -244,7 +244,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p> <p>Constraints: Maximum 64 ASCII characters</p>
+     * idempotency</a>.</p> <p>Constraints: Maximum 64 ASCII characters</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
@@ -252,7 +252,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p> <p>Constraints: Maximum 64 ASCII characters</p>
+     * idempotency</a>.</p> <p>Constraints: Maximum 64 ASCII characters</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
@@ -260,7 +260,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p> <p>Constraints: Maximum 64 ASCII characters</p>
+     * idempotency</a>.</p> <p>Constraints: Maximum 64 ASCII characters</p>
      */
     inline FleetData& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
@@ -268,7 +268,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p> <p>Constraints: Maximum 64 ASCII characters</p>
+     * idempotency</a>.</p> <p>Constraints: Maximum 64 ASCII characters</p>
      */
     inline FleetData& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
@@ -276,7 +276,7 @@ namespace Model
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.</p> <p>Constraints: Maximum 64 ASCII characters</p>
+     * idempotency</a>.</p> <p>Constraints: Maximum 64 ASCII characters</p>
      */
     inline FleetData& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
@@ -667,22 +667,38 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether EC2 Fleet should replace unhealthy instances.</p>
+     * <p>Indicates whether EC2 Fleet should replace unhealthy Spot Instances.
+     * Supported only for fleets of type <code>maintain</code>. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#ec2-fleet-health-checks">EC2
+     * Fleet health checks</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline bool GetReplaceUnhealthyInstances() const{ return m_replaceUnhealthyInstances; }
 
     /**
-     * <p>Indicates whether EC2 Fleet should replace unhealthy instances.</p>
+     * <p>Indicates whether EC2 Fleet should replace unhealthy Spot Instances.
+     * Supported only for fleets of type <code>maintain</code>. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#ec2-fleet-health-checks">EC2
+     * Fleet health checks</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline bool ReplaceUnhealthyInstancesHasBeenSet() const { return m_replaceUnhealthyInstancesHasBeenSet; }
 
     /**
-     * <p>Indicates whether EC2 Fleet should replace unhealthy instances.</p>
+     * <p>Indicates whether EC2 Fleet should replace unhealthy Spot Instances.
+     * Supported only for fleets of type <code>maintain</code>. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#ec2-fleet-health-checks">EC2
+     * Fleet health checks</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetReplaceUnhealthyInstances(bool value) { m_replaceUnhealthyInstancesHasBeenSet = true; m_replaceUnhealthyInstances = value; }
 
     /**
-     * <p>Indicates whether EC2 Fleet should replace unhealthy instances.</p>
+     * <p>Indicates whether EC2 Fleet should replace unhealthy Spot Instances.
+     * Supported only for fleets of type <code>maintain</code>. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#ec2-fleet-health-checks">EC2
+     * Fleet health checks</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline FleetData& WithReplaceUnhealthyInstances(bool value) { SetReplaceUnhealthyInstances(value); return *this;}
 
@@ -887,6 +903,47 @@ namespace Model
      */
     inline FleetData& AddInstances(DescribeFleetsInstances&& value) { m_instancesHasBeenSet = true; m_instances.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline const Aws::String& GetContext() const{ return m_context; }
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline bool ContextHasBeenSet() const { return m_contextHasBeenSet; }
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline void SetContext(const Aws::String& value) { m_contextHasBeenSet = true; m_context = value; }
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline void SetContext(Aws::String&& value) { m_contextHasBeenSet = true; m_context = std::move(value); }
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline void SetContext(const char* value) { m_contextHasBeenSet = true; m_context.assign(value); }
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline FleetData& WithContext(const Aws::String& value) { SetContext(value); return *this;}
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline FleetData& WithContext(Aws::String&& value) { SetContext(std::move(value)); return *this;}
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline FleetData& WithContext(const char* value) { SetContext(value); return *this;}
+
   private:
 
     FleetActivityStatus m_activityStatus;
@@ -948,6 +1005,9 @@ namespace Model
 
     Aws::Vector<DescribeFleetsInstances> m_instances;
     bool m_instancesHasBeenSet;
+
+    Aws::String m_context;
+    bool m_contextHasBeenSet;
   };
 
 } // namespace Model

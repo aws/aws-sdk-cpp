@@ -7,6 +7,8 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/IAMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/iam/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -104,122 +106,138 @@ namespace Model
     /**
      * <p>The path for the policy.</p> <p>For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
+     * identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/).</p> <p>This parameter allows
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of either a forward slash (/) by itself or a
      * string that must begin and end with forward slashes. In addition, it can contain
      * any ASCII character from the ! (<code>\u0021</code>) through the DEL character
      * (<code>\u007F</code>), including most punctuation characters, digits, and upper
-     * and lowercased letters.</p>
+     * and lowercased letters.</p>  <p>You cannot use an asterisk (*) in the path
+     * name.</p> 
      */
     inline const Aws::String& GetPath() const{ return m_path; }
 
     /**
      * <p>The path for the policy.</p> <p>For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
+     * identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/).</p> <p>This parameter allows
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of either a forward slash (/) by itself or a
      * string that must begin and end with forward slashes. In addition, it can contain
      * any ASCII character from the ! (<code>\u0021</code>) through the DEL character
      * (<code>\u007F</code>), including most punctuation characters, digits, and upper
-     * and lowercased letters.</p>
+     * and lowercased letters.</p>  <p>You cannot use an asterisk (*) in the path
+     * name.</p> 
      */
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
 
     /**
      * <p>The path for the policy.</p> <p>For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
+     * identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/).</p> <p>This parameter allows
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of either a forward slash (/) by itself or a
      * string that must begin and end with forward slashes. In addition, it can contain
      * any ASCII character from the ! (<code>\u0021</code>) through the DEL character
      * (<code>\u007F</code>), including most punctuation characters, digits, and upper
-     * and lowercased letters.</p>
+     * and lowercased letters.</p>  <p>You cannot use an asterisk (*) in the path
+     * name.</p> 
      */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
 
     /**
      * <p>The path for the policy.</p> <p>For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
+     * identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/).</p> <p>This parameter allows
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of either a forward slash (/) by itself or a
      * string that must begin and end with forward slashes. In addition, it can contain
      * any ASCII character from the ! (<code>\u0021</code>) through the DEL character
      * (<code>\u007F</code>), including most punctuation characters, digits, and upper
-     * and lowercased letters.</p>
+     * and lowercased letters.</p>  <p>You cannot use an asterisk (*) in the path
+     * name.</p> 
      */
     inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
 
     /**
      * <p>The path for the policy.</p> <p>For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
+     * identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/).</p> <p>This parameter allows
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of either a forward slash (/) by itself or a
      * string that must begin and end with forward slashes. In addition, it can contain
      * any ASCII character from the ! (<code>\u0021</code>) through the DEL character
      * (<code>\u007F</code>), including most punctuation characters, digits, and upper
-     * and lowercased letters.</p>
+     * and lowercased letters.</p>  <p>You cannot use an asterisk (*) in the path
+     * name.</p> 
      */
     inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
 
     /**
      * <p>The path for the policy.</p> <p>For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
+     * identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/).</p> <p>This parameter allows
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of either a forward slash (/) by itself or a
      * string that must begin and end with forward slashes. In addition, it can contain
      * any ASCII character from the ! (<code>\u0021</code>) through the DEL character
      * (<code>\u007F</code>), including most punctuation characters, digits, and upper
-     * and lowercased letters.</p>
+     * and lowercased letters.</p>  <p>You cannot use an asterisk (*) in the path
+     * name.</p> 
      */
     inline CreatePolicyRequest& WithPath(const Aws::String& value) { SetPath(value); return *this;}
 
     /**
      * <p>The path for the policy.</p> <p>For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
+     * identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/).</p> <p>This parameter allows
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of either a forward slash (/) by itself or a
      * string that must begin and end with forward slashes. In addition, it can contain
      * any ASCII character from the ! (<code>\u0021</code>) through the DEL character
      * (<code>\u007F</code>), including most punctuation characters, digits, and upper
-     * and lowercased letters.</p>
+     * and lowercased letters.</p>  <p>You cannot use an asterisk (*) in the path
+     * name.</p> 
      */
     inline CreatePolicyRequest& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
 
     /**
      * <p>The path for the policy.</p> <p>For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
+     * identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/).</p> <p>This parameter allows
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of either a forward slash (/) by itself or a
      * string that must begin and end with forward slashes. In addition, it can contain
      * any ASCII character from the ! (<code>\u0021</code>) through the DEL character
      * (<code>\u007F</code>), including most punctuation characters, digits, and upper
-     * and lowercased letters.</p>
+     * and lowercased letters.</p>  <p>You cannot use an asterisk (*) in the path
+     * name.</p> 
      */
     inline CreatePolicyRequest& WithPath(const char* value) { SetPath(value); return *this;}
 
 
     /**
      * <p>The JSON policy document that you want to use as the content for the new
-     * policy.</p> <p>You must provide policies in JSON format in IAM. However, for AWS
+     * policy.</p> <p>You must provide policies in JSON format in IAM. However, for
      * CloudFormation templates formatted in YAML, you can provide the policy in JSON
-     * or YAML format. AWS CloudFormation always converts a YAML policy to JSON format
-     * before submitting it to IAM.</p> <p>The <a
+     * or YAML format. CloudFormation always converts a YAML policy to JSON format
+     * before submitting it to IAM.</p> <p>The maximum length of the policy document
+     * that you can pass in this operation, including whitespace, is listed below. To
+     * view the maximum character counts of a managed policy with no whitespaces, see
+     * <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM
+     * and STS character quotas</a>.</p> <p>To learn more about JSON policy grammar,
+     * see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_grammar.html">Grammar
+     * of the IAM JSON policy language</a> in the <i>IAM User Guide</i>. </p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
      * parameter is a string of characters consisting of the following:</p> <ul> <li>
      * <p>Any printable ASCII character ranging from the space character
@@ -233,10 +251,18 @@ namespace Model
 
     /**
      * <p>The JSON policy document that you want to use as the content for the new
-     * policy.</p> <p>You must provide policies in JSON format in IAM. However, for AWS
+     * policy.</p> <p>You must provide policies in JSON format in IAM. However, for
      * CloudFormation templates formatted in YAML, you can provide the policy in JSON
-     * or YAML format. AWS CloudFormation always converts a YAML policy to JSON format
-     * before submitting it to IAM.</p> <p>The <a
+     * or YAML format. CloudFormation always converts a YAML policy to JSON format
+     * before submitting it to IAM.</p> <p>The maximum length of the policy document
+     * that you can pass in this operation, including whitespace, is listed below. To
+     * view the maximum character counts of a managed policy with no whitespaces, see
+     * <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM
+     * and STS character quotas</a>.</p> <p>To learn more about JSON policy grammar,
+     * see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_grammar.html">Grammar
+     * of the IAM JSON policy language</a> in the <i>IAM User Guide</i>. </p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
      * parameter is a string of characters consisting of the following:</p> <ul> <li>
      * <p>Any printable ASCII character ranging from the space character
@@ -250,10 +276,18 @@ namespace Model
 
     /**
      * <p>The JSON policy document that you want to use as the content for the new
-     * policy.</p> <p>You must provide policies in JSON format in IAM. However, for AWS
+     * policy.</p> <p>You must provide policies in JSON format in IAM. However, for
      * CloudFormation templates formatted in YAML, you can provide the policy in JSON
-     * or YAML format. AWS CloudFormation always converts a YAML policy to JSON format
-     * before submitting it to IAM.</p> <p>The <a
+     * or YAML format. CloudFormation always converts a YAML policy to JSON format
+     * before submitting it to IAM.</p> <p>The maximum length of the policy document
+     * that you can pass in this operation, including whitespace, is listed below. To
+     * view the maximum character counts of a managed policy with no whitespaces, see
+     * <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM
+     * and STS character quotas</a>.</p> <p>To learn more about JSON policy grammar,
+     * see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_grammar.html">Grammar
+     * of the IAM JSON policy language</a> in the <i>IAM User Guide</i>. </p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
      * parameter is a string of characters consisting of the following:</p> <ul> <li>
      * <p>Any printable ASCII character ranging from the space character
@@ -267,10 +301,18 @@ namespace Model
 
     /**
      * <p>The JSON policy document that you want to use as the content for the new
-     * policy.</p> <p>You must provide policies in JSON format in IAM. However, for AWS
+     * policy.</p> <p>You must provide policies in JSON format in IAM. However, for
      * CloudFormation templates formatted in YAML, you can provide the policy in JSON
-     * or YAML format. AWS CloudFormation always converts a YAML policy to JSON format
-     * before submitting it to IAM.</p> <p>The <a
+     * or YAML format. CloudFormation always converts a YAML policy to JSON format
+     * before submitting it to IAM.</p> <p>The maximum length of the policy document
+     * that you can pass in this operation, including whitespace, is listed below. To
+     * view the maximum character counts of a managed policy with no whitespaces, see
+     * <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM
+     * and STS character quotas</a>.</p> <p>To learn more about JSON policy grammar,
+     * see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_grammar.html">Grammar
+     * of the IAM JSON policy language</a> in the <i>IAM User Guide</i>. </p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
      * parameter is a string of characters consisting of the following:</p> <ul> <li>
      * <p>Any printable ASCII character ranging from the space character
@@ -284,10 +326,18 @@ namespace Model
 
     /**
      * <p>The JSON policy document that you want to use as the content for the new
-     * policy.</p> <p>You must provide policies in JSON format in IAM. However, for AWS
+     * policy.</p> <p>You must provide policies in JSON format in IAM. However, for
      * CloudFormation templates formatted in YAML, you can provide the policy in JSON
-     * or YAML format. AWS CloudFormation always converts a YAML policy to JSON format
-     * before submitting it to IAM.</p> <p>The <a
+     * or YAML format. CloudFormation always converts a YAML policy to JSON format
+     * before submitting it to IAM.</p> <p>The maximum length of the policy document
+     * that you can pass in this operation, including whitespace, is listed below. To
+     * view the maximum character counts of a managed policy with no whitespaces, see
+     * <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM
+     * and STS character quotas</a>.</p> <p>To learn more about JSON policy grammar,
+     * see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_grammar.html">Grammar
+     * of the IAM JSON policy language</a> in the <i>IAM User Guide</i>. </p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
      * parameter is a string of characters consisting of the following:</p> <ul> <li>
      * <p>Any printable ASCII character ranging from the space character
@@ -301,10 +351,18 @@ namespace Model
 
     /**
      * <p>The JSON policy document that you want to use as the content for the new
-     * policy.</p> <p>You must provide policies in JSON format in IAM. However, for AWS
+     * policy.</p> <p>You must provide policies in JSON format in IAM. However, for
      * CloudFormation templates formatted in YAML, you can provide the policy in JSON
-     * or YAML format. AWS CloudFormation always converts a YAML policy to JSON format
-     * before submitting it to IAM.</p> <p>The <a
+     * or YAML format. CloudFormation always converts a YAML policy to JSON format
+     * before submitting it to IAM.</p> <p>The maximum length of the policy document
+     * that you can pass in this operation, including whitespace, is listed below. To
+     * view the maximum character counts of a managed policy with no whitespaces, see
+     * <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM
+     * and STS character quotas</a>.</p> <p>To learn more about JSON policy grammar,
+     * see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_grammar.html">Grammar
+     * of the IAM JSON policy language</a> in the <i>IAM User Guide</i>. </p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
      * parameter is a string of characters consisting of the following:</p> <ul> <li>
      * <p>Any printable ASCII character ranging from the space character
@@ -318,10 +376,18 @@ namespace Model
 
     /**
      * <p>The JSON policy document that you want to use as the content for the new
-     * policy.</p> <p>You must provide policies in JSON format in IAM. However, for AWS
+     * policy.</p> <p>You must provide policies in JSON format in IAM. However, for
      * CloudFormation templates formatted in YAML, you can provide the policy in JSON
-     * or YAML format. AWS CloudFormation always converts a YAML policy to JSON format
-     * before submitting it to IAM.</p> <p>The <a
+     * or YAML format. CloudFormation always converts a YAML policy to JSON format
+     * before submitting it to IAM.</p> <p>The maximum length of the policy document
+     * that you can pass in this operation, including whitespace, is listed below. To
+     * view the maximum character counts of a managed policy with no whitespaces, see
+     * <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM
+     * and STS character quotas</a>.</p> <p>To learn more about JSON policy grammar,
+     * see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_grammar.html">Grammar
+     * of the IAM JSON policy language</a> in the <i>IAM User Guide</i>. </p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
      * parameter is a string of characters consisting of the following:</p> <ul> <li>
      * <p>Any printable ASCII character ranging from the space character
@@ -335,10 +401,18 @@ namespace Model
 
     /**
      * <p>The JSON policy document that you want to use as the content for the new
-     * policy.</p> <p>You must provide policies in JSON format in IAM. However, for AWS
+     * policy.</p> <p>You must provide policies in JSON format in IAM. However, for
      * CloudFormation templates formatted in YAML, you can provide the policy in JSON
-     * or YAML format. AWS CloudFormation always converts a YAML policy to JSON format
-     * before submitting it to IAM.</p> <p>The <a
+     * or YAML format. CloudFormation always converts a YAML policy to JSON format
+     * before submitting it to IAM.</p> <p>The maximum length of the policy document
+     * that you can pass in this operation, including whitespace, is listed below. To
+     * view the maximum character counts of a managed policy with no whitespaces, see
+     * <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM
+     * and STS character quotas</a>.</p> <p>To learn more about JSON policy grammar,
+     * see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_grammar.html">Grammar
+     * of the IAM JSON policy language</a> in the <i>IAM User Guide</i>. </p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
      * parameter is a string of characters consisting of the following:</p> <ul> <li>
      * <p>Any printable ASCII character ranging from the space character
@@ -415,6 +489,95 @@ namespace Model
      */
     inline CreatePolicyRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
+    /**
+     * <p>A list of tags that you want to attach to the new IAM customer managed
+     * policy. Each tag consists of a key name and an associated value. For more
+     * information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>  <p>If any one of the tags
+     * is invalid or if you exceed the allowed maximum number of tags, then the entire
+     * request fails and the resource is not created.</p> 
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of tags that you want to attach to the new IAM customer managed
+     * policy. Each tag consists of a key name and an associated value. For more
+     * information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>  <p>If any one of the tags
+     * is invalid or if you exceed the allowed maximum number of tags, then the entire
+     * request fails and the resource is not created.</p> 
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>A list of tags that you want to attach to the new IAM customer managed
+     * policy. Each tag consists of a key name and an associated value. For more
+     * information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>  <p>If any one of the tags
+     * is invalid or if you exceed the allowed maximum number of tags, then the entire
+     * request fails and the resource is not created.</p> 
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>A list of tags that you want to attach to the new IAM customer managed
+     * policy. Each tag consists of a key name and an associated value. For more
+     * information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>  <p>If any one of the tags
+     * is invalid or if you exceed the allowed maximum number of tags, then the entire
+     * request fails and the resource is not created.</p> 
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>A list of tags that you want to attach to the new IAM customer managed
+     * policy. Each tag consists of a key name and an associated value. For more
+     * information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>  <p>If any one of the tags
+     * is invalid or if you exceed the allowed maximum number of tags, then the entire
+     * request fails and the resource is not created.</p> 
+     */
+    inline CreatePolicyRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A list of tags that you want to attach to the new IAM customer managed
+     * policy. Each tag consists of a key name and an associated value. For more
+     * information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>  <p>If any one of the tags
+     * is invalid or if you exceed the allowed maximum number of tags, then the entire
+     * request fails and the resource is not created.</p> 
+     */
+    inline CreatePolicyRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of tags that you want to attach to the new IAM customer managed
+     * policy. Each tag consists of a key name and an associated value. For more
+     * information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>  <p>If any one of the tags
+     * is invalid or if you exceed the allowed maximum number of tags, then the entire
+     * request fails and the resource is not created.</p> 
+     */
+    inline CreatePolicyRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>A list of tags that you want to attach to the new IAM customer managed
+     * policy. Each tag consists of a key name and an associated value. For more
+     * information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>  <p>If any one of the tags
+     * is invalid or if you exceed the allowed maximum number of tags, then the entire
+     * request fails and the resource is not created.</p> 
+     */
+    inline CreatePolicyRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_policyName;
@@ -428,6 +591,9 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

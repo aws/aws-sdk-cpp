@@ -35,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>The instance information list.</p>
+     * <p>The managed node information list.</p>
      */
     inline const Aws::Vector<InstanceInformation>& GetInstanceInformationList() const{ return m_instanceInformationList; }
 
     /**
-     * <p>The instance information list.</p>
+     * <p>The managed node information list.</p>
      */
     inline void SetInstanceInformationList(const Aws::Vector<InstanceInformation>& value) { m_instanceInformationList = value; }
 
     /**
-     * <p>The instance information list.</p>
+     * <p>The managed node information list.</p>
      */
     inline void SetInstanceInformationList(Aws::Vector<InstanceInformation>&& value) { m_instanceInformationList = std::move(value); }
 
     /**
-     * <p>The instance information list.</p>
+     * <p>The managed node information list.</p>
      */
     inline DescribeInstanceInformationResult& WithInstanceInformationList(const Aws::Vector<InstanceInformation>& value) { SetInstanceInformationList(value); return *this;}
 
     /**
-     * <p>The instance information list.</p>
+     * <p>The managed node information list.</p>
      */
     inline DescribeInstanceInformationResult& WithInstanceInformationList(Aws::Vector<InstanceInformation>&& value) { SetInstanceInformationList(std::move(value)); return *this;}
 
     /**
-     * <p>The instance information list.</p>
+     * <p>The managed node information list.</p>
      */
     inline DescribeInstanceInformationResult& AddInstanceInformationList(const InstanceInformation& value) { m_instanceInformationList.push_back(value); return *this; }
 
     /**
-     * <p>The instance information list.</p>
+     * <p>The managed node information list.</p>
      */
     inline DescribeInstanceInformationResult& AddInstanceInformationList(InstanceInformation&& value) { m_instanceInformationList.push_back(std::move(value)); return *this; }
 

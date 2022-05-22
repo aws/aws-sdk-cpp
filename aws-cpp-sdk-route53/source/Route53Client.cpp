@@ -133,7 +133,7 @@ Route53Client::~Route53Client()
 {
 }
 
-void Route53Client::init(const ClientConfiguration& config)
+void Route53Client::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Route 53");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -172,13 +172,10 @@ ActivateKeySigningKeyOutcome Route53Client::ActivateKeySigningKey(const Activate
     return ActivateKeySigningKeyOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/keysigningkey/";
-  ss << request.GetHostedZoneId();
-  ss << "/";
-  ss << request.GetName();
-  ss << "/activate";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/keysigningkey/");
+  uri.AddPathSegment(request.GetHostedZoneId());
+  uri.AddPathSegment(request.GetName());
+  uri.AddPathSegments("/activate");
   return ActivateKeySigningKeyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -208,11 +205,9 @@ AssociateVPCWithHostedZoneOutcome Route53Client::AssociateVPCWithHostedZone(cons
     return AssociateVPCWithHostedZoneOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HostedZoneId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/hostedzone/";
-  ss << request.GetHostedZoneId();
-  ss << "/associatevpc";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/hostedzone/");
+  uri.AddPathSegment(request.GetHostedZoneId());
+  uri.AddPathSegments("/associatevpc");
   return AssociateVPCWithHostedZoneOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -242,11 +237,9 @@ ChangeResourceRecordSetsOutcome Route53Client::ChangeResourceRecordSets(const Ch
     return ChangeResourceRecordSetsOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HostedZoneId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/hostedzone/";
-  ss << request.GetHostedZoneId();
-  ss << "/rrset/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/hostedzone/");
+  uri.AddPathSegment(request.GetHostedZoneId());
+  uri.AddPathSegments("/rrset/");
   return ChangeResourceRecordSetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -281,12 +274,9 @@ ChangeTagsForResourceOutcome Route53Client::ChangeTagsForResource(const ChangeTa
     return ChangeTagsForResourceOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/tags/";
-  ss << TagResourceTypeMapper::GetNameForTagResourceType(request.GetResourceType());
-  ss << "/";
-  ss << request.GetResourceId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/tags/");
+  uri.AddPathSegment(TagResourceTypeMapper::GetNameForTagResourceType(request.GetResourceType()));
+  uri.AddPathSegment(request.GetResourceId());
   return ChangeTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -311,9 +301,7 @@ void Route53Client::ChangeTagsForResourceAsyncHelper(const ChangeTagsForResource
 CreateHealthCheckOutcome Route53Client::CreateHealthCheck(const CreateHealthCheckRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/healthcheck";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/healthcheck");
   return CreateHealthCheckOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -338,9 +326,7 @@ void Route53Client::CreateHealthCheckAsyncHelper(const CreateHealthCheckRequest&
 CreateHostedZoneOutcome Route53Client::CreateHostedZone(const CreateHostedZoneRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/hostedzone";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/hostedzone");
   return CreateHostedZoneOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -365,9 +351,7 @@ void Route53Client::CreateHostedZoneAsyncHelper(const CreateHostedZoneRequest& r
 CreateKeySigningKeyOutcome Route53Client::CreateKeySigningKey(const CreateKeySigningKeyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/keysigningkey";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/keysigningkey");
   return CreateKeySigningKeyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -392,9 +376,7 @@ void Route53Client::CreateKeySigningKeyAsyncHelper(const CreateKeySigningKeyRequ
 CreateQueryLoggingConfigOutcome Route53Client::CreateQueryLoggingConfig(const CreateQueryLoggingConfigRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/queryloggingconfig";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/queryloggingconfig");
   return CreateQueryLoggingConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -419,9 +401,7 @@ void Route53Client::CreateQueryLoggingConfigAsyncHelper(const CreateQueryLogging
 CreateReusableDelegationSetOutcome Route53Client::CreateReusableDelegationSet(const CreateReusableDelegationSetRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/delegationset";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/delegationset");
   return CreateReusableDelegationSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -446,9 +426,7 @@ void Route53Client::CreateReusableDelegationSetAsyncHelper(const CreateReusableD
 CreateTrafficPolicyOutcome Route53Client::CreateTrafficPolicy(const CreateTrafficPolicyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/trafficpolicy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/trafficpolicy");
   return CreateTrafficPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -473,9 +451,7 @@ void Route53Client::CreateTrafficPolicyAsyncHelper(const CreateTrafficPolicyRequ
 CreateTrafficPolicyInstanceOutcome Route53Client::CreateTrafficPolicyInstance(const CreateTrafficPolicyInstanceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/trafficpolicyinstance";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/trafficpolicyinstance");
   return CreateTrafficPolicyInstanceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -505,10 +481,8 @@ CreateTrafficPolicyVersionOutcome Route53Client::CreateTrafficPolicyVersion(cons
     return CreateTrafficPolicyVersionOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/trafficpolicy/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/trafficpolicy/");
+  uri.AddPathSegment(request.GetId());
   return CreateTrafficPolicyVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -538,11 +512,9 @@ CreateVPCAssociationAuthorizationOutcome Route53Client::CreateVPCAssociationAuth
     return CreateVPCAssociationAuthorizationOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HostedZoneId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/hostedzone/";
-  ss << request.GetHostedZoneId();
-  ss << "/authorizevpcassociation";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/hostedzone/");
+  uri.AddPathSegment(request.GetHostedZoneId());
+  uri.AddPathSegments("/authorizevpcassociation");
   return CreateVPCAssociationAuthorizationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -577,13 +549,10 @@ DeactivateKeySigningKeyOutcome Route53Client::DeactivateKeySigningKey(const Deac
     return DeactivateKeySigningKeyOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/keysigningkey/";
-  ss << request.GetHostedZoneId();
-  ss << "/";
-  ss << request.GetName();
-  ss << "/deactivate";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/keysigningkey/");
+  uri.AddPathSegment(request.GetHostedZoneId());
+  uri.AddPathSegment(request.GetName());
+  uri.AddPathSegments("/deactivate");
   return DeactivateKeySigningKeyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -613,10 +582,8 @@ DeleteHealthCheckOutcome Route53Client::DeleteHealthCheck(const DeleteHealthChec
     return DeleteHealthCheckOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HealthCheckId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/healthcheck/";
-  ss << request.GetHealthCheckId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/healthcheck/");
+  uri.AddPathSegment(request.GetHealthCheckId());
   return DeleteHealthCheckOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE));
 }
 
@@ -646,10 +613,8 @@ DeleteHostedZoneOutcome Route53Client::DeleteHostedZone(const DeleteHostedZoneRe
     return DeleteHostedZoneOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/hostedzone/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/hostedzone/");
+  uri.AddPathSegment(request.GetId());
   return DeleteHostedZoneOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE));
 }
 
@@ -684,12 +649,9 @@ DeleteKeySigningKeyOutcome Route53Client::DeleteKeySigningKey(const DeleteKeySig
     return DeleteKeySigningKeyOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/keysigningkey/";
-  ss << request.GetHostedZoneId();
-  ss << "/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/keysigningkey/");
+  uri.AddPathSegment(request.GetHostedZoneId());
+  uri.AddPathSegment(request.GetName());
   return DeleteKeySigningKeyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE));
 }
 
@@ -719,10 +681,8 @@ DeleteQueryLoggingConfigOutcome Route53Client::DeleteQueryLoggingConfig(const De
     return DeleteQueryLoggingConfigOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/queryloggingconfig/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/queryloggingconfig/");
+  uri.AddPathSegment(request.GetId());
   return DeleteQueryLoggingConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE));
 }
 
@@ -752,10 +712,8 @@ DeleteReusableDelegationSetOutcome Route53Client::DeleteReusableDelegationSet(co
     return DeleteReusableDelegationSetOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/delegationset/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/delegationset/");
+  uri.AddPathSegment(request.GetId());
   return DeleteReusableDelegationSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE));
 }
 
@@ -790,12 +748,9 @@ DeleteTrafficPolicyOutcome Route53Client::DeleteTrafficPolicy(const DeleteTraffi
     return DeleteTrafficPolicyOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Version]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/trafficpolicy/";
-  ss << request.GetId();
-  ss << "/";
-  ss << request.GetVersion();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/trafficpolicy/");
+  uri.AddPathSegment(request.GetId());
+  uri.AddPathSegment(request.GetVersion());
   return DeleteTrafficPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE));
 }
 
@@ -825,10 +780,8 @@ DeleteTrafficPolicyInstanceOutcome Route53Client::DeleteTrafficPolicyInstance(co
     return DeleteTrafficPolicyInstanceOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/trafficpolicyinstance/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/trafficpolicyinstance/");
+  uri.AddPathSegment(request.GetId());
   return DeleteTrafficPolicyInstanceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE));
 }
 
@@ -858,11 +811,9 @@ DeleteVPCAssociationAuthorizationOutcome Route53Client::DeleteVPCAssociationAuth
     return DeleteVPCAssociationAuthorizationOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HostedZoneId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/hostedzone/";
-  ss << request.GetHostedZoneId();
-  ss << "/deauthorizevpcassociation";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/hostedzone/");
+  uri.AddPathSegment(request.GetHostedZoneId());
+  uri.AddPathSegments("/deauthorizevpcassociation");
   return DeleteVPCAssociationAuthorizationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -892,11 +843,9 @@ DisableHostedZoneDNSSECOutcome Route53Client::DisableHostedZoneDNSSEC(const Disa
     return DisableHostedZoneDNSSECOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HostedZoneId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/hostedzone/";
-  ss << request.GetHostedZoneId();
-  ss << "/disable-dnssec";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/hostedzone/");
+  uri.AddPathSegment(request.GetHostedZoneId());
+  uri.AddPathSegments("/disable-dnssec");
   return DisableHostedZoneDNSSECOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -926,11 +875,9 @@ DisassociateVPCFromHostedZoneOutcome Route53Client::DisassociateVPCFromHostedZon
     return DisassociateVPCFromHostedZoneOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HostedZoneId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/hostedzone/";
-  ss << request.GetHostedZoneId();
-  ss << "/disassociatevpc";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/hostedzone/");
+  uri.AddPathSegment(request.GetHostedZoneId());
+  uri.AddPathSegments("/disassociatevpc");
   return DisassociateVPCFromHostedZoneOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -960,11 +907,9 @@ EnableHostedZoneDNSSECOutcome Route53Client::EnableHostedZoneDNSSEC(const Enable
     return EnableHostedZoneDNSSECOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HostedZoneId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/hostedzone/";
-  ss << request.GetHostedZoneId();
-  ss << "/enable-dnssec";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/hostedzone/");
+  uri.AddPathSegment(request.GetHostedZoneId());
+  uri.AddPathSegments("/enable-dnssec");
   return EnableHostedZoneDNSSECOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -994,10 +939,8 @@ GetAccountLimitOutcome Route53Client::GetAccountLimit(const GetAccountLimitReque
     return GetAccountLimitOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Type]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/accountlimit/";
-  ss << AccountLimitTypeMapper::GetNameForAccountLimitType(request.GetType());
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/accountlimit/");
+  uri.AddPathSegment(AccountLimitTypeMapper::GetNameForAccountLimitType(request.GetType()));
   return GetAccountLimitOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1027,10 +970,8 @@ GetChangeOutcome Route53Client::GetChange(const GetChangeRequest& request) const
     return GetChangeOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/change/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/change/");
+  uri.AddPathSegment(request.GetId());
   return GetChangeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1055,9 +996,7 @@ void Route53Client::GetChangeAsyncHelper(const GetChangeRequest& request, const 
 GetCheckerIpRangesOutcome Route53Client::GetCheckerIpRanges(const GetCheckerIpRangesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/checkeripranges";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/checkeripranges");
   return GetCheckerIpRangesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1087,11 +1026,9 @@ GetDNSSECOutcome Route53Client::GetDNSSEC(const GetDNSSECRequest& request) const
     return GetDNSSECOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HostedZoneId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/hostedzone/";
-  ss << request.GetHostedZoneId();
-  ss << "/dnssec";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/hostedzone/");
+  uri.AddPathSegment(request.GetHostedZoneId());
+  uri.AddPathSegments("/dnssec");
   return GetDNSSECOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1116,9 +1053,7 @@ void Route53Client::GetDNSSECAsyncHelper(const GetDNSSECRequest& request, const 
 GetGeoLocationOutcome Route53Client::GetGeoLocation(const GetGeoLocationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/geolocation";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/geolocation");
   return GetGeoLocationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1148,10 +1083,8 @@ GetHealthCheckOutcome Route53Client::GetHealthCheck(const GetHealthCheckRequest&
     return GetHealthCheckOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HealthCheckId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/healthcheck/";
-  ss << request.GetHealthCheckId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/healthcheck/");
+  uri.AddPathSegment(request.GetHealthCheckId());
   return GetHealthCheckOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1176,9 +1109,7 @@ void Route53Client::GetHealthCheckAsyncHelper(const GetHealthCheckRequest& reque
 GetHealthCheckCountOutcome Route53Client::GetHealthCheckCount(const GetHealthCheckCountRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/healthcheckcount";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/healthcheckcount");
   return GetHealthCheckCountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1208,11 +1139,9 @@ GetHealthCheckLastFailureReasonOutcome Route53Client::GetHealthCheckLastFailureR
     return GetHealthCheckLastFailureReasonOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HealthCheckId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/healthcheck/";
-  ss << request.GetHealthCheckId();
-  ss << "/lastfailurereason";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/healthcheck/");
+  uri.AddPathSegment(request.GetHealthCheckId());
+  uri.AddPathSegments("/lastfailurereason");
   return GetHealthCheckLastFailureReasonOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1242,11 +1171,9 @@ GetHealthCheckStatusOutcome Route53Client::GetHealthCheckStatus(const GetHealthC
     return GetHealthCheckStatusOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HealthCheckId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/healthcheck/";
-  ss << request.GetHealthCheckId();
-  ss << "/status";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/healthcheck/");
+  uri.AddPathSegment(request.GetHealthCheckId());
+  uri.AddPathSegments("/status");
   return GetHealthCheckStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1276,10 +1203,8 @@ GetHostedZoneOutcome Route53Client::GetHostedZone(const GetHostedZoneRequest& re
     return GetHostedZoneOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/hostedzone/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/hostedzone/");
+  uri.AddPathSegment(request.GetId());
   return GetHostedZoneOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1304,9 +1229,7 @@ void Route53Client::GetHostedZoneAsyncHelper(const GetHostedZoneRequest& request
 GetHostedZoneCountOutcome Route53Client::GetHostedZoneCount(const GetHostedZoneCountRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/hostedzonecount";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/hostedzonecount");
   return GetHostedZoneCountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1341,12 +1264,9 @@ GetHostedZoneLimitOutcome Route53Client::GetHostedZoneLimit(const GetHostedZoneL
     return GetHostedZoneLimitOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HostedZoneId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/hostedzonelimit/";
-  ss << request.GetHostedZoneId();
-  ss << "/";
-  ss << HostedZoneLimitTypeMapper::GetNameForHostedZoneLimitType(request.GetType());
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/hostedzonelimit/");
+  uri.AddPathSegment(request.GetHostedZoneId());
+  uri.AddPathSegment(HostedZoneLimitTypeMapper::GetNameForHostedZoneLimitType(request.GetType()));
   return GetHostedZoneLimitOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1376,10 +1296,8 @@ GetQueryLoggingConfigOutcome Route53Client::GetQueryLoggingConfig(const GetQuery
     return GetQueryLoggingConfigOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/queryloggingconfig/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/queryloggingconfig/");
+  uri.AddPathSegment(request.GetId());
   return GetQueryLoggingConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1409,10 +1327,8 @@ GetReusableDelegationSetOutcome Route53Client::GetReusableDelegationSet(const Ge
     return GetReusableDelegationSetOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/delegationset/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/delegationset/");
+  uri.AddPathSegment(request.GetId());
   return GetReusableDelegationSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1447,12 +1363,9 @@ GetReusableDelegationSetLimitOutcome Route53Client::GetReusableDelegationSetLimi
     return GetReusableDelegationSetLimitOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DelegationSetId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/reusabledelegationsetlimit/";
-  ss << request.GetDelegationSetId();
-  ss << "/";
-  ss << ReusableDelegationSetLimitTypeMapper::GetNameForReusableDelegationSetLimitType(request.GetType());
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/reusabledelegationsetlimit/");
+  uri.AddPathSegment(request.GetDelegationSetId());
+  uri.AddPathSegment(ReusableDelegationSetLimitTypeMapper::GetNameForReusableDelegationSetLimitType(request.GetType()));
   return GetReusableDelegationSetLimitOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1487,12 +1400,9 @@ GetTrafficPolicyOutcome Route53Client::GetTrafficPolicy(const GetTrafficPolicyRe
     return GetTrafficPolicyOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Version]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/trafficpolicy/";
-  ss << request.GetId();
-  ss << "/";
-  ss << request.GetVersion();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/trafficpolicy/");
+  uri.AddPathSegment(request.GetId());
+  uri.AddPathSegment(request.GetVersion());
   return GetTrafficPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1522,10 +1432,8 @@ GetTrafficPolicyInstanceOutcome Route53Client::GetTrafficPolicyInstance(const Ge
     return GetTrafficPolicyInstanceOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/trafficpolicyinstance/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/trafficpolicyinstance/");
+  uri.AddPathSegment(request.GetId());
   return GetTrafficPolicyInstanceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1550,9 +1458,7 @@ void Route53Client::GetTrafficPolicyInstanceAsyncHelper(const GetTrafficPolicyIn
 GetTrafficPolicyInstanceCountOutcome Route53Client::GetTrafficPolicyInstanceCount(const GetTrafficPolicyInstanceCountRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/trafficpolicyinstancecount";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/trafficpolicyinstancecount");
   return GetTrafficPolicyInstanceCountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1577,9 +1483,7 @@ void Route53Client::GetTrafficPolicyInstanceCountAsyncHelper(const GetTrafficPol
 ListGeoLocationsOutcome Route53Client::ListGeoLocations(const ListGeoLocationsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/geolocations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/geolocations");
   return ListGeoLocationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1604,9 +1508,7 @@ void Route53Client::ListGeoLocationsAsyncHelper(const ListGeoLocationsRequest& r
 ListHealthChecksOutcome Route53Client::ListHealthChecks(const ListHealthChecksRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/healthcheck";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/healthcheck");
   return ListHealthChecksOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1631,9 +1533,7 @@ void Route53Client::ListHealthChecksAsyncHelper(const ListHealthChecksRequest& r
 ListHostedZonesOutcome Route53Client::ListHostedZones(const ListHostedZonesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/hostedzone";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/hostedzone");
   return ListHostedZonesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1658,9 +1558,7 @@ void Route53Client::ListHostedZonesAsyncHelper(const ListHostedZonesRequest& req
 ListHostedZonesByNameOutcome Route53Client::ListHostedZonesByName(const ListHostedZonesByNameRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/hostedzonesbyname";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/hostedzonesbyname");
   return ListHostedZonesByNameOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1695,9 +1593,7 @@ ListHostedZonesByVPCOutcome Route53Client::ListHostedZonesByVPC(const ListHosted
     return ListHostedZonesByVPCOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VPCRegion]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/hostedzonesbyvpc";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/hostedzonesbyvpc");
   return ListHostedZonesByVPCOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1722,9 +1618,7 @@ void Route53Client::ListHostedZonesByVPCAsyncHelper(const ListHostedZonesByVPCRe
 ListQueryLoggingConfigsOutcome Route53Client::ListQueryLoggingConfigs(const ListQueryLoggingConfigsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/queryloggingconfig";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/queryloggingconfig");
   return ListQueryLoggingConfigsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1754,11 +1648,9 @@ ListResourceRecordSetsOutcome Route53Client::ListResourceRecordSets(const ListRe
     return ListResourceRecordSetsOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HostedZoneId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/hostedzone/";
-  ss << request.GetHostedZoneId();
-  ss << "/rrset";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/hostedzone/");
+  uri.AddPathSegment(request.GetHostedZoneId());
+  uri.AddPathSegments("/rrset");
   return ListResourceRecordSetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1783,9 +1675,7 @@ void Route53Client::ListResourceRecordSetsAsyncHelper(const ListResourceRecordSe
 ListReusableDelegationSetsOutcome Route53Client::ListReusableDelegationSets(const ListReusableDelegationSetsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/delegationset";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/delegationset");
   return ListReusableDelegationSetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1820,12 +1710,9 @@ ListTagsForResourceOutcome Route53Client::ListTagsForResource(const ListTagsForR
     return ListTagsForResourceOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/tags/";
-  ss << TagResourceTypeMapper::GetNameForTagResourceType(request.GetResourceType());
-  ss << "/";
-  ss << request.GetResourceId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/tags/");
+  uri.AddPathSegment(TagResourceTypeMapper::GetNameForTagResourceType(request.GetResourceType()));
+  uri.AddPathSegment(request.GetResourceId());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1855,10 +1742,8 @@ ListTagsForResourcesOutcome Route53Client::ListTagsForResources(const ListTagsFo
     return ListTagsForResourcesOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceType]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/tags/";
-  ss << TagResourceTypeMapper::GetNameForTagResourceType(request.GetResourceType());
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/tags/");
+  uri.AddPathSegment(TagResourceTypeMapper::GetNameForTagResourceType(request.GetResourceType()));
   return ListTagsForResourcesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -1883,9 +1768,7 @@ void Route53Client::ListTagsForResourcesAsyncHelper(const ListTagsForResourcesRe
 ListTrafficPoliciesOutcome Route53Client::ListTrafficPolicies(const ListTrafficPoliciesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/trafficpolicies";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/trafficpolicies");
   return ListTrafficPoliciesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1910,9 +1793,7 @@ void Route53Client::ListTrafficPoliciesAsyncHelper(const ListTrafficPoliciesRequ
 ListTrafficPolicyInstancesOutcome Route53Client::ListTrafficPolicyInstances(const ListTrafficPolicyInstancesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/trafficpolicyinstances";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/trafficpolicyinstances");
   return ListTrafficPolicyInstancesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1942,9 +1823,7 @@ ListTrafficPolicyInstancesByHostedZoneOutcome Route53Client::ListTrafficPolicyIn
     return ListTrafficPolicyInstancesByHostedZoneOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HostedZoneId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/trafficpolicyinstances/hostedzone";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/trafficpolicyinstances/hostedzone");
   return ListTrafficPolicyInstancesByHostedZoneOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1979,9 +1858,7 @@ ListTrafficPolicyInstancesByPolicyOutcome Route53Client::ListTrafficPolicyInstan
     return ListTrafficPolicyInstancesByPolicyOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TrafficPolicyVersion]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/trafficpolicyinstances/trafficpolicy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/trafficpolicyinstances/trafficpolicy");
   return ListTrafficPolicyInstancesByPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -2011,11 +1888,9 @@ ListTrafficPolicyVersionsOutcome Route53Client::ListTrafficPolicyVersions(const 
     return ListTrafficPolicyVersionsOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/trafficpolicies/";
-  ss << request.GetId();
-  ss << "/versions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/trafficpolicies/");
+  uri.AddPathSegment(request.GetId());
+  uri.AddPathSegments("/versions");
   return ListTrafficPolicyVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -2045,11 +1920,9 @@ ListVPCAssociationAuthorizationsOutcome Route53Client::ListVPCAssociationAuthori
     return ListVPCAssociationAuthorizationsOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HostedZoneId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/hostedzone/";
-  ss << request.GetHostedZoneId();
-  ss << "/authorizevpcassociation";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/hostedzone/");
+  uri.AddPathSegment(request.GetHostedZoneId());
+  uri.AddPathSegments("/authorizevpcassociation");
   return ListVPCAssociationAuthorizationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -2089,9 +1962,7 @@ TestDNSAnswerOutcome Route53Client::TestDNSAnswer(const TestDNSAnswerRequest& re
     return TestDNSAnswerOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RecordType]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/testdnsanswer";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/testdnsanswer");
   return TestDNSAnswerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -2121,10 +1992,8 @@ UpdateHealthCheckOutcome Route53Client::UpdateHealthCheck(const UpdateHealthChec
     return UpdateHealthCheckOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HealthCheckId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/healthcheck/";
-  ss << request.GetHealthCheckId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/healthcheck/");
+  uri.AddPathSegment(request.GetHealthCheckId());
   return UpdateHealthCheckOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -2154,10 +2023,8 @@ UpdateHostedZoneCommentOutcome Route53Client::UpdateHostedZoneComment(const Upda
     return UpdateHostedZoneCommentOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/hostedzone/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/hostedzone/");
+  uri.AddPathSegment(request.GetId());
   return UpdateHostedZoneCommentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -2192,12 +2059,9 @@ UpdateTrafficPolicyCommentOutcome Route53Client::UpdateTrafficPolicyComment(cons
     return UpdateTrafficPolicyCommentOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Version]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/trafficpolicy/";
-  ss << request.GetId();
-  ss << "/";
-  ss << request.GetVersion();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/trafficpolicy/");
+  uri.AddPathSegment(request.GetId());
+  uri.AddPathSegment(request.GetVersion());
   return UpdateTrafficPolicyCommentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -2227,10 +2091,8 @@ UpdateTrafficPolicyInstanceOutcome Route53Client::UpdateTrafficPolicyInstance(co
     return UpdateTrafficPolicyInstanceOutcome(Aws::Client::AWSError<Route53Errors>(Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2013-04-01/trafficpolicyinstance/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-04-01/trafficpolicyinstance/");
+  uri.AddPathSegment(request.GetId());
   return UpdateTrafficPolicyInstanceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -2251,6 +2113,4 @@ void Route53Client::UpdateTrafficPolicyInstanceAsyncHelper(const UpdateTrafficPo
 {
   handler(this, request, UpdateTrafficPolicyInstance(request), context);
 }
-
-
 

@@ -36,7 +36,8 @@ ClusterMetadata::ClusterMetadata() :
     m_shippingOptionHasBeenSet(false),
     m_notificationHasBeenSet(false),
     m_forwardingAddressIdHasBeenSet(false),
-    m_taxDocumentsHasBeenSet(false)
+    m_taxDocumentsHasBeenSet(false),
+    m_onDeviceServiceConfigurationHasBeenSet(false)
 {
 }
 
@@ -58,7 +59,8 @@ ClusterMetadata::ClusterMetadata(JsonView jsonValue) :
     m_shippingOptionHasBeenSet(false),
     m_notificationHasBeenSet(false),
     m_forwardingAddressIdHasBeenSet(false),
-    m_taxDocumentsHasBeenSet(false)
+    m_taxDocumentsHasBeenSet(false),
+    m_onDeviceServiceConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -163,6 +165,13 @@ ClusterMetadata& ClusterMetadata::operator =(JsonView jsonValue)
     m_taxDocumentsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("OnDeviceServiceConfiguration"))
+  {
+    m_onDeviceServiceConfiguration = jsonValue.GetObject("OnDeviceServiceConfiguration");
+
+    m_onDeviceServiceConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -246,6 +255,12 @@ JsonValue ClusterMetadata::Jsonize() const
   if(m_taxDocumentsHasBeenSet)
   {
    payload.WithObject("TaxDocuments", m_taxDocuments.Jsonize());
+
+  }
+
+  if(m_onDeviceServiceConfigurationHasBeenSet)
+  {
+   payload.WithObject("OnDeviceServiceConfiguration", m_onDeviceServiceConfiguration.Jsonize());
 
   }
 

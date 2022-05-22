@@ -129,49 +129,49 @@ namespace Model
 
 
     /**
-     * <p>String that contains the key identifier of the CMK associated with the
+     * <p>String that contains the key identifier of the KMS key associated with the
      * alias.</p>
      */
     inline const Aws::String& GetTargetKeyId() const{ return m_targetKeyId; }
 
     /**
-     * <p>String that contains the key identifier of the CMK associated with the
+     * <p>String that contains the key identifier of the KMS key associated with the
      * alias.</p>
      */
     inline bool TargetKeyIdHasBeenSet() const { return m_targetKeyIdHasBeenSet; }
 
     /**
-     * <p>String that contains the key identifier of the CMK associated with the
+     * <p>String that contains the key identifier of the KMS key associated with the
      * alias.</p>
      */
     inline void SetTargetKeyId(const Aws::String& value) { m_targetKeyIdHasBeenSet = true; m_targetKeyId = value; }
 
     /**
-     * <p>String that contains the key identifier of the CMK associated with the
+     * <p>String that contains the key identifier of the KMS key associated with the
      * alias.</p>
      */
     inline void SetTargetKeyId(Aws::String&& value) { m_targetKeyIdHasBeenSet = true; m_targetKeyId = std::move(value); }
 
     /**
-     * <p>String that contains the key identifier of the CMK associated with the
+     * <p>String that contains the key identifier of the KMS key associated with the
      * alias.</p>
      */
     inline void SetTargetKeyId(const char* value) { m_targetKeyIdHasBeenSet = true; m_targetKeyId.assign(value); }
 
     /**
-     * <p>String that contains the key identifier of the CMK associated with the
+     * <p>String that contains the key identifier of the KMS key associated with the
      * alias.</p>
      */
     inline AliasListEntry& WithTargetKeyId(const Aws::String& value) { SetTargetKeyId(value); return *this;}
 
     /**
-     * <p>String that contains the key identifier of the CMK associated with the
+     * <p>String that contains the key identifier of the KMS key associated with the
      * alias.</p>
      */
     inline AliasListEntry& WithTargetKeyId(Aws::String&& value) { SetTargetKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>String that contains the key identifier of the CMK associated with the
+     * <p>String that contains the key identifier of the KMS key associated with the
      * alias.</p>
      */
     inline AliasListEntry& WithTargetKeyId(const char* value) { SetTargetKeyId(value); return *this;}
@@ -215,38 +215,38 @@ namespace Model
 
 
     /**
-     * <p>Date and time that the alias was most recently associated with a CMK in the
-     * account and Region. Formatted as Unix time.</p>
+     * <p>Date and time that the alias was most recently associated with a KMS key in
+     * the account and Region. Formatted as Unix time.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedDate() const{ return m_lastUpdatedDate; }
 
     /**
-     * <p>Date and time that the alias was most recently associated with a CMK in the
-     * account and Region. Formatted as Unix time.</p>
+     * <p>Date and time that the alias was most recently associated with a KMS key in
+     * the account and Region. Formatted as Unix time.</p>
      */
     inline bool LastUpdatedDateHasBeenSet() const { return m_lastUpdatedDateHasBeenSet; }
 
     /**
-     * <p>Date and time that the alias was most recently associated with a CMK in the
-     * account and Region. Formatted as Unix time.</p>
+     * <p>Date and time that the alias was most recently associated with a KMS key in
+     * the account and Region. Formatted as Unix time.</p>
      */
     inline void SetLastUpdatedDate(const Aws::Utils::DateTime& value) { m_lastUpdatedDateHasBeenSet = true; m_lastUpdatedDate = value; }
 
     /**
-     * <p>Date and time that the alias was most recently associated with a CMK in the
-     * account and Region. Formatted as Unix time.</p>
+     * <p>Date and time that the alias was most recently associated with a KMS key in
+     * the account and Region. Formatted as Unix time.</p>
      */
     inline void SetLastUpdatedDate(Aws::Utils::DateTime&& value) { m_lastUpdatedDateHasBeenSet = true; m_lastUpdatedDate = std::move(value); }
 
     /**
-     * <p>Date and time that the alias was most recently associated with a CMK in the
-     * account and Region. Formatted as Unix time.</p>
+     * <p>Date and time that the alias was most recently associated with a KMS key in
+     * the account and Region. Formatted as Unix time.</p>
      */
     inline AliasListEntry& WithLastUpdatedDate(const Aws::Utils::DateTime& value) { SetLastUpdatedDate(value); return *this;}
 
     /**
-     * <p>Date and time that the alias was most recently associated with a CMK in the
-     * account and Region. Formatted as Unix time.</p>
+     * <p>Date and time that the alias was most recently associated with a KMS key in
+     * the account and Region. Formatted as Unix time.</p>
      */
     inline AliasListEntry& WithLastUpdatedDate(Aws::Utils::DateTime&& value) { SetLastUpdatedDate(std::move(value)); return *this;}
 

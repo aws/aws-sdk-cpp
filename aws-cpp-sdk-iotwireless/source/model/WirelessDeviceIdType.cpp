@@ -23,6 +23,7 @@ namespace Aws
         static const int WirelessDeviceId_HASH = HashingUtils::HashString("WirelessDeviceId");
         static const int DevEui_HASH = HashingUtils::HashString("DevEui");
         static const int ThingName_HASH = HashingUtils::HashString("ThingName");
+        static const int SidewalkManufacturingSn_HASH = HashingUtils::HashString("SidewalkManufacturingSn");
 
 
         WirelessDeviceIdType GetWirelessDeviceIdTypeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == ThingName_HASH)
           {
             return WirelessDeviceIdType::ThingName;
+          }
+          else if (hashCode == SidewalkManufacturingSn_HASH)
+          {
+            return WirelessDeviceIdType::SidewalkManufacturingSn;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "DevEui";
           case WirelessDeviceIdType::ThingName:
             return "ThingName";
+          case WirelessDeviceIdType::SidewalkManufacturingSn:
+            return "SidewalkManufacturingSn";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

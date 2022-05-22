@@ -20,20 +20,25 @@ namespace Aws
       namespace EndpointStatusMapper
       {
 
-        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
-        static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
+        static const int Pending_HASH = HashingUtils::HashString("Pending");
+        static const int Available_HASH = HashingUtils::HashString("Available");
+        static const int Deleting_HASH = HashingUtils::HashString("Deleting");
 
 
         EndpointStatus GetEndpointStatusForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == PENDING_HASH)
+          if (hashCode == Pending_HASH)
           {
-            return EndpointStatus::PENDING;
+            return EndpointStatus::Pending;
           }
-          else if (hashCode == AVAILABLE_HASH)
+          else if (hashCode == Available_HASH)
           {
-            return EndpointStatus::AVAILABLE;
+            return EndpointStatus::Available;
+          }
+          else if (hashCode == Deleting_HASH)
+          {
+            return EndpointStatus::Deleting;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -49,10 +54,12 @@ namespace Aws
         {
           switch(enumValue)
           {
-          case EndpointStatus::PENDING:
-            return "PENDING";
-          case EndpointStatus::AVAILABLE:
-            return "AVAILABLE";
+          case EndpointStatus::Pending:
+            return "Pending";
+          case EndpointStatus::Available:
+            return "Available";
+          case EndpointStatus::Deleting:
+            return "Deleting";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

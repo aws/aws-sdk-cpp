@@ -79,7 +79,7 @@ MWAAClient::~MWAAClient()
 {
 }
 
-void MWAAClient::init(const ClientConfiguration& config)
+void MWAAClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("MWAA");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -131,10 +131,8 @@ CreateCliTokenOutcome MWAAClient::CreateCliToken(const CreateCliTokenRequest& re
       return CreateCliTokenOutcome(Aws::Client::AWSError<MWAAErrors>(MWAAErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/clitoken/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/clitoken/");
+  uri.AddPathSegment(request.GetName());
   return CreateCliTokenOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -173,10 +171,8 @@ CreateEnvironmentOutcome MWAAClient::CreateEnvironment(const CreateEnvironmentRe
       return CreateEnvironmentOutcome(Aws::Client::AWSError<MWAAErrors>(MWAAErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/environments/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/environments/");
+  uri.AddPathSegment(request.GetName());
   return CreateEnvironmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -215,10 +211,8 @@ CreateWebLoginTokenOutcome MWAAClient::CreateWebLoginToken(const CreateWebLoginT
       return CreateWebLoginTokenOutcome(Aws::Client::AWSError<MWAAErrors>(MWAAErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/webtoken/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/webtoken/");
+  uri.AddPathSegment(request.GetName());
   return CreateWebLoginTokenOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -257,10 +251,8 @@ DeleteEnvironmentOutcome MWAAClient::DeleteEnvironment(const DeleteEnvironmentRe
       return DeleteEnvironmentOutcome(Aws::Client::AWSError<MWAAErrors>(MWAAErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/environments/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/environments/");
+  uri.AddPathSegment(request.GetName());
   return DeleteEnvironmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -299,10 +291,8 @@ GetEnvironmentOutcome MWAAClient::GetEnvironment(const GetEnvironmentRequest& re
       return GetEnvironmentOutcome(Aws::Client::AWSError<MWAAErrors>(MWAAErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/environments/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/environments/");
+  uri.AddPathSegment(request.GetName());
   return GetEnvironmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -336,9 +326,7 @@ ListEnvironmentsOutcome MWAAClient::ListEnvironments(const ListEnvironmentsReque
       return ListEnvironmentsOutcome(Aws::Client::AWSError<MWAAErrors>(MWAAErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/environments";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/environments");
   return ListEnvironmentsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -377,10 +365,8 @@ ListTagsForResourceOutcome MWAAClient::ListTagsForResource(const ListTagsForReso
       return ListTagsForResourceOutcome(Aws::Client::AWSError<MWAAErrors>(MWAAErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -419,10 +405,8 @@ PublishMetricsOutcome MWAAClient::PublishMetrics(const PublishMetricsRequest& re
       return PublishMetricsOutcome(Aws::Client::AWSError<MWAAErrors>(MWAAErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/metrics/environments/";
-  ss << request.GetEnvironmentName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/metrics/environments/");
+  uri.AddPathSegment(request.GetEnvironmentName());
   return PublishMetricsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -461,10 +445,8 @@ TagResourceOutcome MWAAClient::TagResource(const TagResourceRequest& request) co
       return TagResourceOutcome(Aws::Client::AWSError<MWAAErrors>(MWAAErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -508,10 +490,8 @@ UntagResourceOutcome MWAAClient::UntagResource(const UntagResourceRequest& reque
       return UntagResourceOutcome(Aws::Client::AWSError<MWAAErrors>(MWAAErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -550,10 +530,8 @@ UpdateEnvironmentOutcome MWAAClient::UpdateEnvironment(const UpdateEnvironmentRe
       return UpdateEnvironmentOutcome(Aws::Client::AWSError<MWAAErrors>(MWAAErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/environments/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/environments/");
+  uri.AddPathSegment(request.GetName());
   return UpdateEnvironmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 

@@ -40,25 +40,25 @@ namespace Model
 
 
     /**
-     * <p>TTL in seconds for cache entries.</p> <p>Valid values are between 1 and 3600
+     * <p>TTL in seconds for cache entries.</p> <p>Valid values are 1–3,600
      * seconds.</p>
      */
     inline long long GetTtl() const{ return m_ttl; }
 
     /**
-     * <p>TTL in seconds for cache entries.</p> <p>Valid values are between 1 and 3600
+     * <p>TTL in seconds for cache entries.</p> <p>Valid values are 1–3,600
      * seconds.</p>
      */
     inline bool TtlHasBeenSet() const { return m_ttlHasBeenSet; }
 
     /**
-     * <p>TTL in seconds for cache entries.</p> <p>Valid values are between 1 and 3600
+     * <p>TTL in seconds for cache entries.</p> <p>Valid values are 1–3,600
      * seconds.</p>
      */
     inline void SetTtl(long long value) { m_ttlHasBeenSet = true; m_ttl = value; }
 
     /**
-     * <p>TTL in seconds for cache entries.</p> <p>Valid values are between 1 and 3600
+     * <p>TTL in seconds for cache entries.</p> <p>Valid values are 1–3,600
      * seconds.</p>
      */
     inline ApiCache& WithTtl(long long value) { SetTtl(value); return *this;}
@@ -108,50 +108,50 @@ namespace Model
 
 
     /**
-     * <p>Transit encryption flag when connecting to cache. This setting cannot be
-     * updated after creation.</p>
+     * <p>Transit encryption flag when connecting to cache. You cannot update this
+     * setting after creation.</p>
      */
     inline bool GetTransitEncryptionEnabled() const{ return m_transitEncryptionEnabled; }
 
     /**
-     * <p>Transit encryption flag when connecting to cache. This setting cannot be
-     * updated after creation.</p>
+     * <p>Transit encryption flag when connecting to cache. You cannot update this
+     * setting after creation.</p>
      */
     inline bool TransitEncryptionEnabledHasBeenSet() const { return m_transitEncryptionEnabledHasBeenSet; }
 
     /**
-     * <p>Transit encryption flag when connecting to cache. This setting cannot be
-     * updated after creation.</p>
+     * <p>Transit encryption flag when connecting to cache. You cannot update this
+     * setting after creation.</p>
      */
     inline void SetTransitEncryptionEnabled(bool value) { m_transitEncryptionEnabledHasBeenSet = true; m_transitEncryptionEnabled = value; }
 
     /**
-     * <p>Transit encryption flag when connecting to cache. This setting cannot be
-     * updated after creation.</p>
+     * <p>Transit encryption flag when connecting to cache. You cannot update this
+     * setting after creation.</p>
      */
     inline ApiCache& WithTransitEncryptionEnabled(bool value) { SetTransitEncryptionEnabled(value); return *this;}
 
 
     /**
-     * <p>At rest encryption flag for cache. This setting cannot be updated after
+     * <p>At-rest encryption flag for cache. You cannot update this setting after
      * creation.</p>
      */
     inline bool GetAtRestEncryptionEnabled() const{ return m_atRestEncryptionEnabled; }
 
     /**
-     * <p>At rest encryption flag for cache. This setting cannot be updated after
+     * <p>At-rest encryption flag for cache. You cannot update this setting after
      * creation.</p>
      */
     inline bool AtRestEncryptionEnabledHasBeenSet() const { return m_atRestEncryptionEnabledHasBeenSet; }
 
     /**
-     * <p>At rest encryption flag for cache. This setting cannot be updated after
+     * <p>At-rest encryption flag for cache. You cannot update this setting after
      * creation.</p>
      */
     inline void SetAtRestEncryptionEnabled(bool value) { m_atRestEncryptionEnabledHasBeenSet = true; m_atRestEncryptionEnabled = value; }
 
     /**
-     * <p>At rest encryption flag for cache. This setting cannot be updated after
+     * <p>At-rest encryption flag for cache. You cannot update this setting after
      * creation.</p>
      */
     inline ApiCache& WithAtRestEncryptionEnabled(bool value) { SetAtRestEncryptionEnabled(value); return *this;}

@@ -38,26 +38,26 @@ namespace Model
 
 
     /**
-     * <p>The amount of time that was taken for the command to finish processing,
-     * measured in milliseconds.</p>
+     * <p>The amount of time that QLDB spent on processing the command, measured in
+     * milliseconds.</p>
      */
     inline long long GetProcessingTimeMilliseconds() const{ return m_processingTimeMilliseconds; }
 
     /**
-     * <p>The amount of time that was taken for the command to finish processing,
-     * measured in milliseconds.</p>
+     * <p>The amount of time that QLDB spent on processing the command, measured in
+     * milliseconds.</p>
      */
     inline bool ProcessingTimeMillisecondsHasBeenSet() const { return m_processingTimeMillisecondsHasBeenSet; }
 
     /**
-     * <p>The amount of time that was taken for the command to finish processing,
-     * measured in milliseconds.</p>
+     * <p>The amount of time that QLDB spent on processing the command, measured in
+     * milliseconds.</p>
      */
     inline void SetProcessingTimeMilliseconds(long long value) { m_processingTimeMillisecondsHasBeenSet = true; m_processingTimeMilliseconds = value; }
 
     /**
-     * <p>The amount of time that was taken for the command to finish processing,
-     * measured in milliseconds.</p>
+     * <p>The amount of time that QLDB spent on processing the command, measured in
+     * milliseconds.</p>
      */
     inline TimingInformation& WithProcessingTimeMilliseconds(long long value) { SetProcessingTimeMilliseconds(value); return *this;}
 

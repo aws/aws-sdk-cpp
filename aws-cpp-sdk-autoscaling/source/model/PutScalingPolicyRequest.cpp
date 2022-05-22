@@ -29,7 +29,8 @@ PutScalingPolicyRequest::PutScalingPolicyRequest() :
     m_estimatedInstanceWarmupHasBeenSet(false),
     m_targetTrackingConfigurationHasBeenSet(false),
     m_enabled(false),
-    m_enabledHasBeenSet(false)
+    m_enabledHasBeenSet(false),
+    m_predictiveScalingConfigurationHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,11 @@ Aws::String PutScalingPolicyRequest::SerializePayload() const
   if(m_enabledHasBeenSet)
   {
     ss << "Enabled=" << std::boolalpha << m_enabled << "&";
+  }
+
+  if(m_predictiveScalingConfigurationHasBeenSet)
+  {
+    m_predictiveScalingConfiguration.OutputToStream(ss, "PredictiveScalingConfiguration");
   }
 
   ss << "Version=2011-01-01";

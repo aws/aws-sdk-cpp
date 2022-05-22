@@ -28,22 +28,23 @@ namespace Model
    * <p>The dependencies defined for container startup and shutdown. A container can
    * contain multiple dependencies. When a dependency is defined for container
    * startup, for container shutdown it is reversed.</p> <p>Your Amazon ECS container
-   * instances require at least version 1.26.0 of the container agent to enable
+   * instances require at least version 1.26.0 of the container agent to use
    * container dependencies. However, we recommend using the latest container agent
    * version. For information about checking your agent version and updating to the
    * latest version, see <a
    * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
    * the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service
-   * Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your
+   * Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your
    * instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package.
    * If your container instances are launched from version <code>20190301</code> or
    * later, then they contain the required versions of the container agent and
    * <code>ecs-init</code>. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
    * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
-   * Guide</i>.</p>  <p>For tasks using the Fargate launch type, this parameter
-   * requires that the task or service uses platform version 1.3.0 or later.</p>
-   * <p><h3>See Also:</h3>   <a
+   * Guide</i>.</p>  <p>For tasks that use the Fargate launch type, the task or
+   * service requires the following platforms:</p> <ul> <li> <p>Linux platform
+   * version <code>1.3.0</code> or later.</p> </li> <li> <p>Windows platform version
+   * <code>1.0.0</code> or later.</p> </li> </ul> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ContainerDependency">AWS
    * API Reference</a></p>
    */
@@ -105,10 +106,10 @@ namespace Model
      * </li> <li> <p> <code>COMPLETE</code> - This condition validates that a dependent
      * container runs to completion (exits) before permitting other containers to
      * start. This can be useful for nonessential containers that run a script and then
-     * exit. This condition cannot be set on an essential container.</p> </li> <li> <p>
+     * exit. This condition can't be set on an essential container.</p> </li> <li> <p>
      * <code>SUCCESS</code> - This condition is the same as <code>COMPLETE</code>, but
      * it also requires that the container exits with a <code>zero</code> status. This
-     * condition cannot be set on an essential container.</p> </li> <li> <p>
+     * condition can't be set on an essential container.</p> </li> <li> <p>
      * <code>HEALTHY</code> - This condition validates that the dependent container
      * passes its Docker health check before permitting other containers to start. This
      * requires that the dependent container has health checks configured. This
@@ -124,10 +125,10 @@ namespace Model
      * </li> <li> <p> <code>COMPLETE</code> - This condition validates that a dependent
      * container runs to completion (exits) before permitting other containers to
      * start. This can be useful for nonessential containers that run a script and then
-     * exit. This condition cannot be set on an essential container.</p> </li> <li> <p>
+     * exit. This condition can't be set on an essential container.</p> </li> <li> <p>
      * <code>SUCCESS</code> - This condition is the same as <code>COMPLETE</code>, but
      * it also requires that the container exits with a <code>zero</code> status. This
-     * condition cannot be set on an essential container.</p> </li> <li> <p>
+     * condition can't be set on an essential container.</p> </li> <li> <p>
      * <code>HEALTHY</code> - This condition validates that the dependent container
      * passes its Docker health check before permitting other containers to start. This
      * requires that the dependent container has health checks configured. This
@@ -143,10 +144,10 @@ namespace Model
      * </li> <li> <p> <code>COMPLETE</code> - This condition validates that a dependent
      * container runs to completion (exits) before permitting other containers to
      * start. This can be useful for nonessential containers that run a script and then
-     * exit. This condition cannot be set on an essential container.</p> </li> <li> <p>
+     * exit. This condition can't be set on an essential container.</p> </li> <li> <p>
      * <code>SUCCESS</code> - This condition is the same as <code>COMPLETE</code>, but
      * it also requires that the container exits with a <code>zero</code> status. This
-     * condition cannot be set on an essential container.</p> </li> <li> <p>
+     * condition can't be set on an essential container.</p> </li> <li> <p>
      * <code>HEALTHY</code> - This condition validates that the dependent container
      * passes its Docker health check before permitting other containers to start. This
      * requires that the dependent container has health checks configured. This
@@ -162,10 +163,10 @@ namespace Model
      * </li> <li> <p> <code>COMPLETE</code> - This condition validates that a dependent
      * container runs to completion (exits) before permitting other containers to
      * start. This can be useful for nonessential containers that run a script and then
-     * exit. This condition cannot be set on an essential container.</p> </li> <li> <p>
+     * exit. This condition can't be set on an essential container.</p> </li> <li> <p>
      * <code>SUCCESS</code> - This condition is the same as <code>COMPLETE</code>, but
      * it also requires that the container exits with a <code>zero</code> status. This
-     * condition cannot be set on an essential container.</p> </li> <li> <p>
+     * condition can't be set on an essential container.</p> </li> <li> <p>
      * <code>HEALTHY</code> - This condition validates that the dependent container
      * passes its Docker health check before permitting other containers to start. This
      * requires that the dependent container has health checks configured. This
@@ -181,10 +182,10 @@ namespace Model
      * </li> <li> <p> <code>COMPLETE</code> - This condition validates that a dependent
      * container runs to completion (exits) before permitting other containers to
      * start. This can be useful for nonessential containers that run a script and then
-     * exit. This condition cannot be set on an essential container.</p> </li> <li> <p>
+     * exit. This condition can't be set on an essential container.</p> </li> <li> <p>
      * <code>SUCCESS</code> - This condition is the same as <code>COMPLETE</code>, but
      * it also requires that the container exits with a <code>zero</code> status. This
-     * condition cannot be set on an essential container.</p> </li> <li> <p>
+     * condition can't be set on an essential container.</p> </li> <li> <p>
      * <code>HEALTHY</code> - This condition validates that the dependent container
      * passes its Docker health check before permitting other containers to start. This
      * requires that the dependent container has health checks configured. This
@@ -200,10 +201,10 @@ namespace Model
      * </li> <li> <p> <code>COMPLETE</code> - This condition validates that a dependent
      * container runs to completion (exits) before permitting other containers to
      * start. This can be useful for nonessential containers that run a script and then
-     * exit. This condition cannot be set on an essential container.</p> </li> <li> <p>
+     * exit. This condition can't be set on an essential container.</p> </li> <li> <p>
      * <code>SUCCESS</code> - This condition is the same as <code>COMPLETE</code>, but
      * it also requires that the container exits with a <code>zero</code> status. This
-     * condition cannot be set on an essential container.</p> </li> <li> <p>
+     * condition can't be set on an essential container.</p> </li> <li> <p>
      * <code>HEALTHY</code> - This condition validates that the dependent container
      * passes its Docker health check before permitting other containers to start. This
      * requires that the dependent container has health checks configured. This

@@ -35,49 +35,49 @@ namespace Model
     /**
      * <p>The unique Amazon Resource Name (ARN) that represents the custom tape pool.
      * Use the <a>ListTapePools</a> operation to return a list of tape pools for your
-     * account and AWS Region.</p>
+     * account and Amazon Web Services Region.</p>
      */
     inline const Aws::String& GetPoolARN() const{ return m_poolARN; }
 
     /**
      * <p>The unique Amazon Resource Name (ARN) that represents the custom tape pool.
      * Use the <a>ListTapePools</a> operation to return a list of tape pools for your
-     * account and AWS Region.</p>
+     * account and Amazon Web Services Region.</p>
      */
     inline void SetPoolARN(const Aws::String& value) { m_poolARN = value; }
 
     /**
      * <p>The unique Amazon Resource Name (ARN) that represents the custom tape pool.
      * Use the <a>ListTapePools</a> operation to return a list of tape pools for your
-     * account and AWS Region.</p>
+     * account and Amazon Web Services Region.</p>
      */
     inline void SetPoolARN(Aws::String&& value) { m_poolARN = std::move(value); }
 
     /**
      * <p>The unique Amazon Resource Name (ARN) that represents the custom tape pool.
      * Use the <a>ListTapePools</a> operation to return a list of tape pools for your
-     * account and AWS Region.</p>
+     * account and Amazon Web Services Region.</p>
      */
     inline void SetPoolARN(const char* value) { m_poolARN.assign(value); }
 
     /**
      * <p>The unique Amazon Resource Name (ARN) that represents the custom tape pool.
      * Use the <a>ListTapePools</a> operation to return a list of tape pools for your
-     * account and AWS Region.</p>
+     * account and Amazon Web Services Region.</p>
      */
     inline CreateTapePoolResult& WithPoolARN(const Aws::String& value) { SetPoolARN(value); return *this;}
 
     /**
      * <p>The unique Amazon Resource Name (ARN) that represents the custom tape pool.
      * Use the <a>ListTapePools</a> operation to return a list of tape pools for your
-     * account and AWS Region.</p>
+     * account and Amazon Web Services Region.</p>
      */
     inline CreateTapePoolResult& WithPoolARN(Aws::String&& value) { SetPoolARN(std::move(value)); return *this;}
 
     /**
      * <p>The unique Amazon Resource Name (ARN) that represents the custom tape pool.
      * Use the <a>ListTapePools</a> operation to return a list of tape pools for your
-     * account and AWS Region.</p>
+     * account and Amazon Web Services Region.</p>
      */
     inline CreateTapePoolResult& WithPoolARN(const char* value) { SetPoolARN(value); return *this;}
 

@@ -130,73 +130,73 @@ namespace Model
 
     /**
      * <p>For an audit check, specifies which mitigation actions to apply. Those
-     * actions must be defined in your AWS account.</p>
+     * actions must be defined in your Amazon Web Services accounts.</p>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetAuditCheckToActionsMapping() const{ return m_auditCheckToActionsMapping; }
 
     /**
      * <p>For an audit check, specifies which mitigation actions to apply. Those
-     * actions must be defined in your AWS account.</p>
+     * actions must be defined in your Amazon Web Services accounts.</p>
      */
     inline bool AuditCheckToActionsMappingHasBeenSet() const { return m_auditCheckToActionsMappingHasBeenSet; }
 
     /**
      * <p>For an audit check, specifies which mitigation actions to apply. Those
-     * actions must be defined in your AWS account.</p>
+     * actions must be defined in your Amazon Web Services accounts.</p>
      */
     inline void SetAuditCheckToActionsMapping(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_auditCheckToActionsMappingHasBeenSet = true; m_auditCheckToActionsMapping = value; }
 
     /**
      * <p>For an audit check, specifies which mitigation actions to apply. Those
-     * actions must be defined in your AWS account.</p>
+     * actions must be defined in your Amazon Web Services accounts.</p>
      */
     inline void SetAuditCheckToActionsMapping(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_auditCheckToActionsMappingHasBeenSet = true; m_auditCheckToActionsMapping = std::move(value); }
 
     /**
      * <p>For an audit check, specifies which mitigation actions to apply. Those
-     * actions must be defined in your AWS account.</p>
+     * actions must be defined in your Amazon Web Services accounts.</p>
      */
     inline StartAuditMitigationActionsTaskRequest& WithAuditCheckToActionsMapping(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetAuditCheckToActionsMapping(value); return *this;}
 
     /**
      * <p>For an audit check, specifies which mitigation actions to apply. Those
-     * actions must be defined in your AWS account.</p>
+     * actions must be defined in your Amazon Web Services accounts.</p>
      */
     inline StartAuditMitigationActionsTaskRequest& WithAuditCheckToActionsMapping(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetAuditCheckToActionsMapping(std::move(value)); return *this;}
 
     /**
      * <p>For an audit check, specifies which mitigation actions to apply. Those
-     * actions must be defined in your AWS account.</p>
+     * actions must be defined in your Amazon Web Services accounts.</p>
      */
     inline StartAuditMitigationActionsTaskRequest& AddAuditCheckToActionsMapping(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_auditCheckToActionsMappingHasBeenSet = true; m_auditCheckToActionsMapping.emplace(key, value); return *this; }
 
     /**
      * <p>For an audit check, specifies which mitigation actions to apply. Those
-     * actions must be defined in your AWS account.</p>
+     * actions must be defined in your Amazon Web Services accounts.</p>
      */
     inline StartAuditMitigationActionsTaskRequest& AddAuditCheckToActionsMapping(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_auditCheckToActionsMappingHasBeenSet = true; m_auditCheckToActionsMapping.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>For an audit check, specifies which mitigation actions to apply. Those
-     * actions must be defined in your AWS account.</p>
+     * actions must be defined in your Amazon Web Services accounts.</p>
      */
     inline StartAuditMitigationActionsTaskRequest& AddAuditCheckToActionsMapping(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_auditCheckToActionsMappingHasBeenSet = true; m_auditCheckToActionsMapping.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>For an audit check, specifies which mitigation actions to apply. Those
-     * actions must be defined in your AWS account.</p>
+     * actions must be defined in your Amazon Web Services accounts.</p>
      */
     inline StartAuditMitigationActionsTaskRequest& AddAuditCheckToActionsMapping(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_auditCheckToActionsMappingHasBeenSet = true; m_auditCheckToActionsMapping.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>For an audit check, specifies which mitigation actions to apply. Those
-     * actions must be defined in your AWS account.</p>
+     * actions must be defined in your Amazon Web Services accounts.</p>
      */
     inline StartAuditMitigationActionsTaskRequest& AddAuditCheckToActionsMapping(const char* key, Aws::Vector<Aws::String>&& value) { m_auditCheckToActionsMappingHasBeenSet = true; m_auditCheckToActionsMapping.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>For an audit check, specifies which mitigation actions to apply. Those
-     * actions must be defined in your AWS account.</p>
+     * actions must be defined in your Amazon Web Services accounts.</p>
      */
     inline StartAuditMitigationActionsTaskRequest& AddAuditCheckToActionsMapping(const char* key, const Aws::Vector<Aws::String>& value) { m_auditCheckToActionsMappingHasBeenSet = true; m_auditCheckToActionsMapping.emplace(key, value); return *this; }
 

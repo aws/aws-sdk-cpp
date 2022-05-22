@@ -25,7 +25,10 @@ DescribePatchGroupStateResult::DescribePatchGroupStateResult() :
     m_instancesWithMissingPatches(0),
     m_instancesWithFailedPatches(0),
     m_instancesWithNotApplicablePatches(0),
-    m_instancesWithUnreportedNotApplicablePatches(0)
+    m_instancesWithUnreportedNotApplicablePatches(0),
+    m_instancesWithCriticalNonCompliantPatches(0),
+    m_instancesWithSecurityNonCompliantPatches(0),
+    m_instancesWithOtherNonCompliantPatches(0)
 {
 }
 
@@ -38,7 +41,10 @@ DescribePatchGroupStateResult::DescribePatchGroupStateResult(const Aws::AmazonWe
     m_instancesWithMissingPatches(0),
     m_instancesWithFailedPatches(0),
     m_instancesWithNotApplicablePatches(0),
-    m_instancesWithUnreportedNotApplicablePatches(0)
+    m_instancesWithUnreportedNotApplicablePatches(0),
+    m_instancesWithCriticalNonCompliantPatches(0),
+    m_instancesWithSecurityNonCompliantPatches(0),
+    m_instancesWithOtherNonCompliantPatches(0)
 {
   *this = result;
 }
@@ -97,6 +103,24 @@ DescribePatchGroupStateResult& DescribePatchGroupStateResult::operator =(const A
   if(jsonValue.ValueExists("InstancesWithUnreportedNotApplicablePatches"))
   {
     m_instancesWithUnreportedNotApplicablePatches = jsonValue.GetInteger("InstancesWithUnreportedNotApplicablePatches");
+
+  }
+
+  if(jsonValue.ValueExists("InstancesWithCriticalNonCompliantPatches"))
+  {
+    m_instancesWithCriticalNonCompliantPatches = jsonValue.GetInteger("InstancesWithCriticalNonCompliantPatches");
+
+  }
+
+  if(jsonValue.ValueExists("InstancesWithSecurityNonCompliantPatches"))
+  {
+    m_instancesWithSecurityNonCompliantPatches = jsonValue.GetInteger("InstancesWithSecurityNonCompliantPatches");
+
+  }
+
+  if(jsonValue.ValueExists("InstancesWithOtherNonCompliantPatches"))
+  {
+    m_instancesWithOtherNonCompliantPatches = jsonValue.GetInteger("InstancesWithOtherNonCompliantPatches");
 
   }
 

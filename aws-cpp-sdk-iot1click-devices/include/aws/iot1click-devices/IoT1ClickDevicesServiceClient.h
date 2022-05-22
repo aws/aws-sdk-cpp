@@ -165,24 +165,12 @@ namespace Model
         virtual Model::ClaimDevicesByClaimCodeOutcome ClaimDevicesByClaimCode(const Model::ClaimDevicesByClaimCodeRequest& request) const;
 
         /**
-         * <p>Adds device(s) to your account (i.e., claim one or more devices) if and only
-         * if you
- received a claim code with the device(s).</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/ClaimDevicesByClaimCode">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ClaimDevicesByClaimCode that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ClaimDevicesByClaimCodeOutcomeCallable ClaimDevicesByClaimCodeCallable(const Model::ClaimDevicesByClaimCodeRequest& request) const;
 
         /**
-         * <p>Adds device(s) to your account (i.e., claim one or more devices) if and only
-         * if you
- received a claim code with the device(s).</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/ClaimDevicesByClaimCode">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ClaimDevicesByClaimCode that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ClaimDevicesByClaimCodeAsync(const Model::ClaimDevicesByClaimCodeRequest& request, const ClaimDevicesByClaimCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -196,24 +184,12 @@ namespace Model
         virtual Model::DescribeDeviceOutcome DescribeDevice(const Model::DescribeDeviceRequest& request) const;
 
         /**
-         * <p>Given a device ID, returns a DescribeDeviceResponse object describing the
-
-         * details of the device.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/DescribeDevice">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeDevice that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeDeviceOutcomeCallable DescribeDeviceCallable(const Model::DescribeDeviceRequest& request) const;
 
         /**
-         * <p>Given a device ID, returns a DescribeDeviceResponse object describing the
-
-         * details of the device.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/DescribeDevice">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeDevice that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeDeviceAsync(const Model::DescribeDeviceRequest& request, const DescribeDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -233,36 +209,12 @@ namespace Model
         virtual Model::FinalizeDeviceClaimOutcome FinalizeDeviceClaim(const Model::FinalizeDeviceClaimRequest& request) const;
 
         /**
-         * <p>Given a device ID, finalizes the claim request for the associated
-         * device.</p>
- <p>Claiming a device consists of initiating a claim, then
-         * publishing a device event,
- and finalizing the claim. For a device of type
-         * button, a device event can
- be published by simply clicking the device.</p>
-
-         * <p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/FinalizeDeviceClaim">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for FinalizeDeviceClaim that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::FinalizeDeviceClaimOutcomeCallable FinalizeDeviceClaimCallable(const Model::FinalizeDeviceClaimRequest& request) const;
 
         /**
-         * <p>Given a device ID, finalizes the claim request for the associated
-         * device.</p>
- <p>Claiming a device consists of initiating a claim, then
-         * publishing a device event,
- and finalizing the claim. For a device of type
-         * button, a device event can
- be published by simply clicking the device.</p>
-
-         * <p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/FinalizeDeviceClaim">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for FinalizeDeviceClaim that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void FinalizeDeviceClaimAsync(const Model::FinalizeDeviceClaimRequest& request, const FinalizeDeviceClaimResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -275,22 +227,12 @@ namespace Model
         virtual Model::GetDeviceMethodsOutcome GetDeviceMethods(const Model::GetDeviceMethodsRequest& request) const;
 
         /**
-         * <p>Given a device ID, returns the invokable methods associated with the
-         * device.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/GetDeviceMethods">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetDeviceMethods that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetDeviceMethodsOutcomeCallable GetDeviceMethodsCallable(const Model::GetDeviceMethodsRequest& request) const;
 
         /**
-         * <p>Given a device ID, returns the invokable methods associated with the
-         * device.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/GetDeviceMethods">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetDeviceMethods that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetDeviceMethodsAsync(const Model::GetDeviceMethodsRequest& request, const GetDeviceMethodsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -310,36 +252,12 @@ namespace Model
         virtual Model::InitiateDeviceClaimOutcome InitiateDeviceClaim(const Model::InitiateDeviceClaimRequest& request) const;
 
         /**
-         * <p>Given a device ID, initiates a claim request for the associated
-         * device.</p>
- <p>Claiming a device consists of initiating a claim, then
-         * publishing a device event,
- and finalizing the claim. For a device of type
-         * button, a device event can
- be published by simply clicking the device.</p>
-
-         * <p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/InitiateDeviceClaim">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for InitiateDeviceClaim that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::InitiateDeviceClaimOutcomeCallable InitiateDeviceClaimCallable(const Model::InitiateDeviceClaimRequest& request) const;
 
         /**
-         * <p>Given a device ID, initiates a claim request for the associated
-         * device.</p>
- <p>Claiming a device consists of initiating a claim, then
-         * publishing a device event,
- and finalizing the claim. For a device of type
-         * button, a device event can
- be published by simply clicking the device.</p>
-
-         * <p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/InitiateDeviceClaim">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for InitiateDeviceClaim that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void InitiateDeviceClaimAsync(const Model::InitiateDeviceClaimRequest& request, const InitiateDeviceClaimResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -354,26 +272,12 @@ namespace Model
         virtual Model::InvokeDeviceMethodOutcome InvokeDeviceMethod(const Model::InvokeDeviceMethodRequest& request) const;
 
         /**
-         * <p>Given a device ID, issues a request to invoke a named device method (with
-         * possible
- parameters). See the "Example POST" code snippet below.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/InvokeDeviceMethod">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for InvokeDeviceMethod that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::InvokeDeviceMethodOutcomeCallable InvokeDeviceMethodCallable(const Model::InvokeDeviceMethodRequest& request) const;
 
         /**
-         * <p>Given a device ID, issues a request to invoke a named device method (with
-         * possible
- parameters). See the "Example POST" code snippet below.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/InvokeDeviceMethod">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for InvokeDeviceMethod that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void InvokeDeviceMethodAsync(const Model::InvokeDeviceMethodRequest& request, const InvokeDeviceMethodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -387,24 +291,12 @@ namespace Model
         virtual Model::ListDeviceEventsOutcome ListDeviceEvents(const Model::ListDeviceEventsRequest& request) const;
 
         /**
-         * <p>Using a device ID, returns a DeviceEventsResponse object containing an
- array
-         * of events for the device.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/ListDeviceEvents">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListDeviceEvents that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListDeviceEventsOutcomeCallable ListDeviceEventsCallable(const Model::ListDeviceEventsRequest& request) const;
 
         /**
-         * <p>Using a device ID, returns a DeviceEventsResponse object containing an
- array
-         * of events for the device.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/ListDeviceEvents">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListDeviceEvents that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListDeviceEventsAsync(const Model::ListDeviceEventsRequest& request, const ListDeviceEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -417,22 +309,12 @@ namespace Model
         virtual Model::ListDevicesOutcome ListDevices(const Model::ListDevicesRequest& request) const;
 
         /**
-         * <p>Lists the 1-Click compatible devices associated with your AWS
-         * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/ListDevices">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListDevices that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListDevicesOutcomeCallable ListDevicesCallable(const Model::ListDevicesRequest& request) const;
 
         /**
-         * <p>Lists the 1-Click compatible devices associated with your AWS
-         * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/ListDevices">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListDevices that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListDevicesAsync(const Model::ListDevicesRequest& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -445,22 +327,12 @@ namespace Model
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Lists the tags associated with the specified resource ARN.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/ListTagsForResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Lists the tags associated with the specified resource ARN.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/ListTagsForResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -476,28 +348,12 @@ namespace Model
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Adds or updates the tags associated with the resource ARN. See <a
-         * href="https://docs.aws.amazon.com/iot-1-click/latest/developerguide/1click-appendix.html#1click-limits">AWS
-         * IoT 1-Click Service Limits</a> for the maximum number of tags allowed per
-
-         * resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/TagResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Adds or updates the tags associated with the resource ARN. See <a
-         * href="https://docs.aws.amazon.com/iot-1-click/latest/developerguide/1click-appendix.html#1click-limits">AWS
-         * IoT 1-Click Service Limits</a> for the maximum number of tags allowed per
-
-         * resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/TagResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -510,22 +366,12 @@ namespace Model
         virtual Model::UnclaimDeviceOutcome UnclaimDevice(const Model::UnclaimDeviceRequest& request) const;
 
         /**
-         * <p>Disassociates a device from your AWS account using its device
-         * ID.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/UnclaimDevice">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UnclaimDevice that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UnclaimDeviceOutcomeCallable UnclaimDeviceCallable(const Model::UnclaimDeviceRequest& request) const;
 
         /**
-         * <p>Disassociates a device from your AWS account using its device
-         * ID.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/UnclaimDevice">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UnclaimDevice that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UnclaimDeviceAsync(const Model::UnclaimDeviceRequest& request, const UnclaimDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -539,24 +385,12 @@ namespace Model
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Using tag keys, deletes the tags (key/value pairs) associated with the
-         * specified
- resource ARN.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/UntagResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Using tag keys, deletes the tags (key/value pairs) associated with the
-         * specified
- resource ARN.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/UntagResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -570,24 +404,12 @@ namespace Model
         virtual Model::UpdateDeviceStateOutcome UpdateDeviceState(const Model::UpdateDeviceStateRequest& request) const;
 
         /**
-         * <p>Using a Boolean value (true or false), this operation
- enables or disables
-         * the device given a device ID.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/UpdateDeviceState">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateDeviceState that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateDeviceStateOutcomeCallable UpdateDeviceStateCallable(const Model::UpdateDeviceStateRequest& request) const;
 
         /**
-         * <p>Using a Boolean value (true or false), this operation
- enables or disables
-         * the device given a device ID.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/devices-2018-05-14/UpdateDeviceState">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateDeviceState that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateDeviceStateAsync(const Model::UpdateDeviceStateRequest& request, const UpdateDeviceStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 

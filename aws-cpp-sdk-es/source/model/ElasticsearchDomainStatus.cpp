@@ -45,7 +45,9 @@ ElasticsearchDomainStatus::ElasticsearchDomainStatus() :
     m_logPublishingOptionsHasBeenSet(false),
     m_serviceSoftwareOptionsHasBeenSet(false),
     m_domainEndpointOptionsHasBeenSet(false),
-    m_advancedSecurityOptionsHasBeenSet(false)
+    m_advancedSecurityOptionsHasBeenSet(false),
+    m_autoTuneOptionsHasBeenSet(false),
+    m_changeProgressDetailsHasBeenSet(false)
 {
 }
 
@@ -76,7 +78,9 @@ ElasticsearchDomainStatus::ElasticsearchDomainStatus(JsonView jsonValue) :
     m_logPublishingOptionsHasBeenSet(false),
     m_serviceSoftwareOptionsHasBeenSet(false),
     m_domainEndpointOptionsHasBeenSet(false),
-    m_advancedSecurityOptionsHasBeenSet(false)
+    m_advancedSecurityOptionsHasBeenSet(false),
+    m_autoTuneOptionsHasBeenSet(false),
+    m_changeProgressDetailsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -253,6 +257,20 @@ ElasticsearchDomainStatus& ElasticsearchDomainStatus::operator =(JsonView jsonVa
     m_advancedSecurityOptionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AutoTuneOptions"))
+  {
+    m_autoTuneOptions = jsonValue.GetObject("AutoTuneOptions");
+
+    m_autoTuneOptionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ChangeProgressDetails"))
+  {
+    m_changeProgressDetails = jsonValue.GetObject("ChangeProgressDetails");
+
+    m_changeProgressDetailsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -410,6 +428,18 @@ JsonValue ElasticsearchDomainStatus::Jsonize() const
   if(m_advancedSecurityOptionsHasBeenSet)
   {
    payload.WithObject("AdvancedSecurityOptions", m_advancedSecurityOptions.Jsonize());
+
+  }
+
+  if(m_autoTuneOptionsHasBeenSet)
+  {
+   payload.WithObject("AutoTuneOptions", m_autoTuneOptions.Jsonize());
+
+  }
+
+  if(m_changeProgressDetailsHasBeenSet)
+  {
+   payload.WithObject("ChangeProgressDetails", m_changeProgressDetails.Jsonize());
 
   }
 

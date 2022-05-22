@@ -8,6 +8,7 @@
 #include <aws/elasticache/ElastiCacheRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/elasticache/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -164,6 +165,55 @@ namespace Model
      */
     inline CreateUserGroupRequest& AddUserIds(const char* value) { m_userIdsHasBeenSet = true; m_userIds.push_back(value); return *this; }
 
+
+    /**
+     * <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag
+     * key must be accompanied by a tag value, although null is accepted.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag
+     * key must be accompanied by a tag value, although null is accepted.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag
+     * key must be accompanied by a tag value, although null is accepted.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag
+     * key must be accompanied by a tag value, although null is accepted.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag
+     * key must be accompanied by a tag value, although null is accepted.</p>
+     */
+    inline CreateUserGroupRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag
+     * key must be accompanied by a tag value, although null is accepted.</p>
+     */
+    inline CreateUserGroupRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag
+     * key must be accompanied by a tag value, although null is accepted.</p>
+     */
+    inline CreateUserGroupRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag
+     * key must be accompanied by a tag value, although null is accepted.</p>
+     */
+    inline CreateUserGroupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_userGroupId;
@@ -174,6 +224,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_userIds;
     bool m_userIdsHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

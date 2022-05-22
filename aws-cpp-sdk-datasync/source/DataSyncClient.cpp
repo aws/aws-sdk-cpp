@@ -23,7 +23,10 @@
 #include <aws/datasync/model/CancelTaskExecutionRequest.h>
 #include <aws/datasync/model/CreateAgentRequest.h>
 #include <aws/datasync/model/CreateLocationEfsRequest.h>
+#include <aws/datasync/model/CreateLocationFsxLustreRequest.h>
+#include <aws/datasync/model/CreateLocationFsxOpenZfsRequest.h>
 #include <aws/datasync/model/CreateLocationFsxWindowsRequest.h>
+#include <aws/datasync/model/CreateLocationHdfsRequest.h>
 #include <aws/datasync/model/CreateLocationNfsRequest.h>
 #include <aws/datasync/model/CreateLocationObjectStorageRequest.h>
 #include <aws/datasync/model/CreateLocationS3Request.h>
@@ -34,7 +37,10 @@
 #include <aws/datasync/model/DeleteTaskRequest.h>
 #include <aws/datasync/model/DescribeAgentRequest.h>
 #include <aws/datasync/model/DescribeLocationEfsRequest.h>
+#include <aws/datasync/model/DescribeLocationFsxLustreRequest.h>
+#include <aws/datasync/model/DescribeLocationFsxOpenZfsRequest.h>
 #include <aws/datasync/model/DescribeLocationFsxWindowsRequest.h>
+#include <aws/datasync/model/DescribeLocationHdfsRequest.h>
 #include <aws/datasync/model/DescribeLocationNfsRequest.h>
 #include <aws/datasync/model/DescribeLocationObjectStorageRequest.h>
 #include <aws/datasync/model/DescribeLocationS3Request.h>
@@ -50,6 +56,10 @@
 #include <aws/datasync/model/TagResourceRequest.h>
 #include <aws/datasync/model/UntagResourceRequest.h>
 #include <aws/datasync/model/UpdateAgentRequest.h>
+#include <aws/datasync/model/UpdateLocationHdfsRequest.h>
+#include <aws/datasync/model/UpdateLocationNfsRequest.h>
+#include <aws/datasync/model/UpdateLocationObjectStorageRequest.h>
+#include <aws/datasync/model/UpdateLocationSmbRequest.h>
 #include <aws/datasync/model/UpdateTaskRequest.h>
 #include <aws/datasync/model/UpdateTaskExecutionRequest.h>
 
@@ -100,7 +110,7 @@ DataSyncClient::~DataSyncClient()
 {
 }
 
-void DataSyncClient::init(const ClientConfiguration& config)
+void DataSyncClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("DataSync");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -129,9 +139,6 @@ void DataSyncClient::OverrideEndpoint(const Aws::String& endpoint)
 CancelTaskExecutionOutcome DataSyncClient::CancelTaskExecution(const CancelTaskExecutionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CancelTaskExecutionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -156,9 +163,6 @@ void DataSyncClient::CancelTaskExecutionAsyncHelper(const CancelTaskExecutionReq
 CreateAgentOutcome DataSyncClient::CreateAgent(const CreateAgentRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateAgentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -183,9 +187,6 @@ void DataSyncClient::CreateAgentAsyncHelper(const CreateAgentRequest& request, c
 CreateLocationEfsOutcome DataSyncClient::CreateLocationEfs(const CreateLocationEfsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateLocationEfsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -207,12 +208,57 @@ void DataSyncClient::CreateLocationEfsAsyncHelper(const CreateLocationEfsRequest
   handler(this, request, CreateLocationEfs(request), context);
 }
 
+CreateLocationFsxLustreOutcome DataSyncClient::CreateLocationFsxLustre(const CreateLocationFsxLustreRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateLocationFsxLustreOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateLocationFsxLustreOutcomeCallable DataSyncClient::CreateLocationFsxLustreCallable(const CreateLocationFsxLustreRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateLocationFsxLustreOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLocationFsxLustre(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DataSyncClient::CreateLocationFsxLustreAsync(const CreateLocationFsxLustreRequest& request, const CreateLocationFsxLustreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateLocationFsxLustreAsyncHelper( request, handler, context ); } );
+}
+
+void DataSyncClient::CreateLocationFsxLustreAsyncHelper(const CreateLocationFsxLustreRequest& request, const CreateLocationFsxLustreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateLocationFsxLustre(request), context);
+}
+
+CreateLocationFsxOpenZfsOutcome DataSyncClient::CreateLocationFsxOpenZfs(const CreateLocationFsxOpenZfsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateLocationFsxOpenZfsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateLocationFsxOpenZfsOutcomeCallable DataSyncClient::CreateLocationFsxOpenZfsCallable(const CreateLocationFsxOpenZfsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateLocationFsxOpenZfsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLocationFsxOpenZfs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DataSyncClient::CreateLocationFsxOpenZfsAsync(const CreateLocationFsxOpenZfsRequest& request, const CreateLocationFsxOpenZfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateLocationFsxOpenZfsAsyncHelper( request, handler, context ); } );
+}
+
+void DataSyncClient::CreateLocationFsxOpenZfsAsyncHelper(const CreateLocationFsxOpenZfsRequest& request, const CreateLocationFsxOpenZfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateLocationFsxOpenZfs(request), context);
+}
+
 CreateLocationFsxWindowsOutcome DataSyncClient::CreateLocationFsxWindows(const CreateLocationFsxWindowsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateLocationFsxWindowsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -234,12 +280,33 @@ void DataSyncClient::CreateLocationFsxWindowsAsyncHelper(const CreateLocationFsx
   handler(this, request, CreateLocationFsxWindows(request), context);
 }
 
+CreateLocationHdfsOutcome DataSyncClient::CreateLocationHdfs(const CreateLocationHdfsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateLocationHdfsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateLocationHdfsOutcomeCallable DataSyncClient::CreateLocationHdfsCallable(const CreateLocationHdfsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateLocationHdfsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLocationHdfs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DataSyncClient::CreateLocationHdfsAsync(const CreateLocationHdfsRequest& request, const CreateLocationHdfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateLocationHdfsAsyncHelper( request, handler, context ); } );
+}
+
+void DataSyncClient::CreateLocationHdfsAsyncHelper(const CreateLocationHdfsRequest& request, const CreateLocationHdfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateLocationHdfs(request), context);
+}
+
 CreateLocationNfsOutcome DataSyncClient::CreateLocationNfs(const CreateLocationNfsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateLocationNfsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -264,9 +331,6 @@ void DataSyncClient::CreateLocationNfsAsyncHelper(const CreateLocationNfsRequest
 CreateLocationObjectStorageOutcome DataSyncClient::CreateLocationObjectStorage(const CreateLocationObjectStorageRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateLocationObjectStorageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -291,9 +355,6 @@ void DataSyncClient::CreateLocationObjectStorageAsyncHelper(const CreateLocation
 CreateLocationS3Outcome DataSyncClient::CreateLocationS3(const CreateLocationS3Request& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateLocationS3Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -318,9 +379,6 @@ void DataSyncClient::CreateLocationS3AsyncHelper(const CreateLocationS3Request& 
 CreateLocationSmbOutcome DataSyncClient::CreateLocationSmb(const CreateLocationSmbRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateLocationSmbOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -345,9 +403,6 @@ void DataSyncClient::CreateLocationSmbAsyncHelper(const CreateLocationSmbRequest
 CreateTaskOutcome DataSyncClient::CreateTask(const CreateTaskRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateTaskOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -372,9 +427,6 @@ void DataSyncClient::CreateTaskAsyncHelper(const CreateTaskRequest& request, con
 DeleteAgentOutcome DataSyncClient::DeleteAgent(const DeleteAgentRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteAgentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -399,9 +451,6 @@ void DataSyncClient::DeleteAgentAsyncHelper(const DeleteAgentRequest& request, c
 DeleteLocationOutcome DataSyncClient::DeleteLocation(const DeleteLocationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteLocationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -426,9 +475,6 @@ void DataSyncClient::DeleteLocationAsyncHelper(const DeleteLocationRequest& requ
 DeleteTaskOutcome DataSyncClient::DeleteTask(const DeleteTaskRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteTaskOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -453,9 +499,6 @@ void DataSyncClient::DeleteTaskAsyncHelper(const DeleteTaskRequest& request, con
 DescribeAgentOutcome DataSyncClient::DescribeAgent(const DescribeAgentRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeAgentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -480,9 +523,6 @@ void DataSyncClient::DescribeAgentAsyncHelper(const DescribeAgentRequest& reques
 DescribeLocationEfsOutcome DataSyncClient::DescribeLocationEfs(const DescribeLocationEfsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeLocationEfsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -504,12 +544,57 @@ void DataSyncClient::DescribeLocationEfsAsyncHelper(const DescribeLocationEfsReq
   handler(this, request, DescribeLocationEfs(request), context);
 }
 
+DescribeLocationFsxLustreOutcome DataSyncClient::DescribeLocationFsxLustre(const DescribeLocationFsxLustreRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeLocationFsxLustreOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeLocationFsxLustreOutcomeCallable DataSyncClient::DescribeLocationFsxLustreCallable(const DescribeLocationFsxLustreRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeLocationFsxLustreOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeLocationFsxLustre(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DataSyncClient::DescribeLocationFsxLustreAsync(const DescribeLocationFsxLustreRequest& request, const DescribeLocationFsxLustreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeLocationFsxLustreAsyncHelper( request, handler, context ); } );
+}
+
+void DataSyncClient::DescribeLocationFsxLustreAsyncHelper(const DescribeLocationFsxLustreRequest& request, const DescribeLocationFsxLustreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeLocationFsxLustre(request), context);
+}
+
+DescribeLocationFsxOpenZfsOutcome DataSyncClient::DescribeLocationFsxOpenZfs(const DescribeLocationFsxOpenZfsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeLocationFsxOpenZfsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeLocationFsxOpenZfsOutcomeCallable DataSyncClient::DescribeLocationFsxOpenZfsCallable(const DescribeLocationFsxOpenZfsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeLocationFsxOpenZfsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeLocationFsxOpenZfs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DataSyncClient::DescribeLocationFsxOpenZfsAsync(const DescribeLocationFsxOpenZfsRequest& request, const DescribeLocationFsxOpenZfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeLocationFsxOpenZfsAsyncHelper( request, handler, context ); } );
+}
+
+void DataSyncClient::DescribeLocationFsxOpenZfsAsyncHelper(const DescribeLocationFsxOpenZfsRequest& request, const DescribeLocationFsxOpenZfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeLocationFsxOpenZfs(request), context);
+}
+
 DescribeLocationFsxWindowsOutcome DataSyncClient::DescribeLocationFsxWindows(const DescribeLocationFsxWindowsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeLocationFsxWindowsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -531,12 +616,33 @@ void DataSyncClient::DescribeLocationFsxWindowsAsyncHelper(const DescribeLocatio
   handler(this, request, DescribeLocationFsxWindows(request), context);
 }
 
+DescribeLocationHdfsOutcome DataSyncClient::DescribeLocationHdfs(const DescribeLocationHdfsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeLocationHdfsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeLocationHdfsOutcomeCallable DataSyncClient::DescribeLocationHdfsCallable(const DescribeLocationHdfsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeLocationHdfsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeLocationHdfs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DataSyncClient::DescribeLocationHdfsAsync(const DescribeLocationHdfsRequest& request, const DescribeLocationHdfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeLocationHdfsAsyncHelper( request, handler, context ); } );
+}
+
+void DataSyncClient::DescribeLocationHdfsAsyncHelper(const DescribeLocationHdfsRequest& request, const DescribeLocationHdfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeLocationHdfs(request), context);
+}
+
 DescribeLocationNfsOutcome DataSyncClient::DescribeLocationNfs(const DescribeLocationNfsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeLocationNfsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -561,9 +667,6 @@ void DataSyncClient::DescribeLocationNfsAsyncHelper(const DescribeLocationNfsReq
 DescribeLocationObjectStorageOutcome DataSyncClient::DescribeLocationObjectStorage(const DescribeLocationObjectStorageRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeLocationObjectStorageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -588,9 +691,6 @@ void DataSyncClient::DescribeLocationObjectStorageAsyncHelper(const DescribeLoca
 DescribeLocationS3Outcome DataSyncClient::DescribeLocationS3(const DescribeLocationS3Request& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeLocationS3Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -615,9 +715,6 @@ void DataSyncClient::DescribeLocationS3AsyncHelper(const DescribeLocationS3Reque
 DescribeLocationSmbOutcome DataSyncClient::DescribeLocationSmb(const DescribeLocationSmbRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeLocationSmbOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -642,9 +739,6 @@ void DataSyncClient::DescribeLocationSmbAsyncHelper(const DescribeLocationSmbReq
 DescribeTaskOutcome DataSyncClient::DescribeTask(const DescribeTaskRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeTaskOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -669,9 +763,6 @@ void DataSyncClient::DescribeTaskAsyncHelper(const DescribeTaskRequest& request,
 DescribeTaskExecutionOutcome DataSyncClient::DescribeTaskExecution(const DescribeTaskExecutionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeTaskExecutionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -696,9 +787,6 @@ void DataSyncClient::DescribeTaskExecutionAsyncHelper(const DescribeTaskExecutio
 ListAgentsOutcome DataSyncClient::ListAgents(const ListAgentsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListAgentsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -723,9 +811,6 @@ void DataSyncClient::ListAgentsAsyncHelper(const ListAgentsRequest& request, con
 ListLocationsOutcome DataSyncClient::ListLocations(const ListLocationsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListLocationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -750,9 +835,6 @@ void DataSyncClient::ListLocationsAsyncHelper(const ListLocationsRequest& reques
 ListTagsForResourceOutcome DataSyncClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -777,9 +859,6 @@ void DataSyncClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceReq
 ListTaskExecutionsOutcome DataSyncClient::ListTaskExecutions(const ListTaskExecutionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListTaskExecutionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -804,9 +883,6 @@ void DataSyncClient::ListTaskExecutionsAsyncHelper(const ListTaskExecutionsReque
 ListTasksOutcome DataSyncClient::ListTasks(const ListTasksRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListTasksOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -831,9 +907,6 @@ void DataSyncClient::ListTasksAsyncHelper(const ListTasksRequest& request, const
 StartTaskExecutionOutcome DataSyncClient::StartTaskExecution(const StartTaskExecutionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return StartTaskExecutionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -858,9 +931,6 @@ void DataSyncClient::StartTaskExecutionAsyncHelper(const StartTaskExecutionReque
 TagResourceOutcome DataSyncClient::TagResource(const TagResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -885,9 +955,6 @@ void DataSyncClient::TagResourceAsyncHelper(const TagResourceRequest& request, c
 UntagResourceOutcome DataSyncClient::UntagResource(const UntagResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -912,9 +979,6 @@ void DataSyncClient::UntagResourceAsyncHelper(const UntagResourceRequest& reques
 UpdateAgentOutcome DataSyncClient::UpdateAgent(const UpdateAgentRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return UpdateAgentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -936,12 +1000,105 @@ void DataSyncClient::UpdateAgentAsyncHelper(const UpdateAgentRequest& request, c
   handler(this, request, UpdateAgent(request), context);
 }
 
+UpdateLocationHdfsOutcome DataSyncClient::UpdateLocationHdfs(const UpdateLocationHdfsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateLocationHdfsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateLocationHdfsOutcomeCallable DataSyncClient::UpdateLocationHdfsCallable(const UpdateLocationHdfsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateLocationHdfsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateLocationHdfs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DataSyncClient::UpdateLocationHdfsAsync(const UpdateLocationHdfsRequest& request, const UpdateLocationHdfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateLocationHdfsAsyncHelper( request, handler, context ); } );
+}
+
+void DataSyncClient::UpdateLocationHdfsAsyncHelper(const UpdateLocationHdfsRequest& request, const UpdateLocationHdfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateLocationHdfs(request), context);
+}
+
+UpdateLocationNfsOutcome DataSyncClient::UpdateLocationNfs(const UpdateLocationNfsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateLocationNfsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateLocationNfsOutcomeCallable DataSyncClient::UpdateLocationNfsCallable(const UpdateLocationNfsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateLocationNfsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateLocationNfs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DataSyncClient::UpdateLocationNfsAsync(const UpdateLocationNfsRequest& request, const UpdateLocationNfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateLocationNfsAsyncHelper( request, handler, context ); } );
+}
+
+void DataSyncClient::UpdateLocationNfsAsyncHelper(const UpdateLocationNfsRequest& request, const UpdateLocationNfsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateLocationNfs(request), context);
+}
+
+UpdateLocationObjectStorageOutcome DataSyncClient::UpdateLocationObjectStorage(const UpdateLocationObjectStorageRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateLocationObjectStorageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateLocationObjectStorageOutcomeCallable DataSyncClient::UpdateLocationObjectStorageCallable(const UpdateLocationObjectStorageRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateLocationObjectStorageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateLocationObjectStorage(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DataSyncClient::UpdateLocationObjectStorageAsync(const UpdateLocationObjectStorageRequest& request, const UpdateLocationObjectStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateLocationObjectStorageAsyncHelper( request, handler, context ); } );
+}
+
+void DataSyncClient::UpdateLocationObjectStorageAsyncHelper(const UpdateLocationObjectStorageRequest& request, const UpdateLocationObjectStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateLocationObjectStorage(request), context);
+}
+
+UpdateLocationSmbOutcome DataSyncClient::UpdateLocationSmb(const UpdateLocationSmbRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateLocationSmbOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateLocationSmbOutcomeCallable DataSyncClient::UpdateLocationSmbCallable(const UpdateLocationSmbRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateLocationSmbOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateLocationSmb(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DataSyncClient::UpdateLocationSmbAsync(const UpdateLocationSmbRequest& request, const UpdateLocationSmbResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateLocationSmbAsyncHelper( request, handler, context ); } );
+}
+
+void DataSyncClient::UpdateLocationSmbAsyncHelper(const UpdateLocationSmbRequest& request, const UpdateLocationSmbResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateLocationSmb(request), context);
+}
+
 UpdateTaskOutcome DataSyncClient::UpdateTask(const UpdateTaskRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return UpdateTaskOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -966,9 +1123,6 @@ void DataSyncClient::UpdateTaskAsyncHelper(const UpdateTaskRequest& request, con
 UpdateTaskExecutionOutcome DataSyncClient::UpdateTaskExecution(const UpdateTaskExecutionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return UpdateTaskExecutionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

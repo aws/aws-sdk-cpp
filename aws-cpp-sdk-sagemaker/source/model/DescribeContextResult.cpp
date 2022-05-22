@@ -91,6 +91,12 @@ DescribeContextResult& DescribeContextResult::operator =(const Aws::AmazonWebSer
 
   }
 
+  if(jsonValue.ValueExists("LineageGroupArn"))
+  {
+    m_lineageGroupArn = jsonValue.GetString("LineageGroupArn");
+
+  }
+
 
 
   return *this;

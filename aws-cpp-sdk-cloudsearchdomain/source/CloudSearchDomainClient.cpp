@@ -71,7 +71,7 @@ CloudSearchDomainClient::~CloudSearchDomainClient()
 {
 }
 
-void CloudSearchDomainClient::init(const ClientConfiguration& config)
+void CloudSearchDomainClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("cloudsearchdomain");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -106,8 +106,7 @@ SearchOutcome CloudSearchDomainClient::Search(const SearchRequest& request) cons
   }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/2013-01-01/search";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-01-01/search");
   ss.str("?format=sdk&pretty=true");
   uri.SetQueryString(ss.str());
   return SearchOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
@@ -145,8 +144,7 @@ SuggestOutcome CloudSearchDomainClient::Suggest(const SuggestRequest& request) c
   }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/2013-01-01/suggest";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-01-01/suggest");
   ss.str("?format=sdk&pretty=true");
   uri.SetQueryString(ss.str());
   return SuggestOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
@@ -174,8 +172,7 @@ UploadDocumentsOutcome CloudSearchDomainClient::UploadDocuments(const UploadDocu
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/2013-01-01/documents/batch";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2013-01-01/documents/batch");
   ss.str("?format=sdk");
   uri.SetQueryString(ss.str());
   return UploadDocumentsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));

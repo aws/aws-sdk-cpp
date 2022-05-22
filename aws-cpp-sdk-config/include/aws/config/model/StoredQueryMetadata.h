@@ -80,49 +80,49 @@ namespace Model
 
     /**
      * <p>Amazon Resource Name (ARN) of the query. For example,
-     * arn:partition:service:region:account-id:resource-type/resource-id.</p>
+     * arn:partition:service:region:account-id:resource-type/resource-name/resource-id.</p>
      */
     inline const Aws::String& GetQueryArn() const{ return m_queryArn; }
 
     /**
      * <p>Amazon Resource Name (ARN) of the query. For example,
-     * arn:partition:service:region:account-id:resource-type/resource-id.</p>
+     * arn:partition:service:region:account-id:resource-type/resource-name/resource-id.</p>
      */
     inline bool QueryArnHasBeenSet() const { return m_queryArnHasBeenSet; }
 
     /**
      * <p>Amazon Resource Name (ARN) of the query. For example,
-     * arn:partition:service:region:account-id:resource-type/resource-id.</p>
+     * arn:partition:service:region:account-id:resource-type/resource-name/resource-id.</p>
      */
     inline void SetQueryArn(const Aws::String& value) { m_queryArnHasBeenSet = true; m_queryArn = value; }
 
     /**
      * <p>Amazon Resource Name (ARN) of the query. For example,
-     * arn:partition:service:region:account-id:resource-type/resource-id.</p>
+     * arn:partition:service:region:account-id:resource-type/resource-name/resource-id.</p>
      */
     inline void SetQueryArn(Aws::String&& value) { m_queryArnHasBeenSet = true; m_queryArn = std::move(value); }
 
     /**
      * <p>Amazon Resource Name (ARN) of the query. For example,
-     * arn:partition:service:region:account-id:resource-type/resource-id.</p>
+     * arn:partition:service:region:account-id:resource-type/resource-name/resource-id.</p>
      */
     inline void SetQueryArn(const char* value) { m_queryArnHasBeenSet = true; m_queryArn.assign(value); }
 
     /**
      * <p>Amazon Resource Name (ARN) of the query. For example,
-     * arn:partition:service:region:account-id:resource-type/resource-id.</p>
+     * arn:partition:service:region:account-id:resource-type/resource-name/resource-id.</p>
      */
     inline StoredQueryMetadata& WithQueryArn(const Aws::String& value) { SetQueryArn(value); return *this;}
 
     /**
      * <p>Amazon Resource Name (ARN) of the query. For example,
-     * arn:partition:service:region:account-id:resource-type/resource-id.</p>
+     * arn:partition:service:region:account-id:resource-type/resource-name/resource-id.</p>
      */
     inline StoredQueryMetadata& WithQueryArn(Aws::String&& value) { SetQueryArn(std::move(value)); return *this;}
 
     /**
      * <p>Amazon Resource Name (ARN) of the query. For example,
-     * arn:partition:service:region:account-id:resource-type/resource-id.</p>
+     * arn:partition:service:region:account-id:resource-type/resource-name/resource-id.</p>
      */
     inline StoredQueryMetadata& WithQueryArn(const char* value) { SetQueryArn(value); return *this;}
 

@@ -9,6 +9,7 @@
 #include <aws/guardduty/model/DNSLogsConfigurationResult.h>
 #include <aws/guardduty/model/FlowLogsConfigurationResult.h>
 #include <aws/guardduty/model/S3LogsConfigurationResult.h>
+#include <aws/guardduty/model/KubernetesConfigurationResult.h>
 #include <utility>
 
 namespace Aws
@@ -188,6 +189,43 @@ namespace Model
      */
     inline DataSourceConfigurationsResult& WithS3Logs(S3LogsConfigurationResult&& value) { SetS3Logs(std::move(value)); return *this;}
 
+
+    /**
+     * <p>An object that contains information on the status of all Kubernetes data
+     * sources.</p>
+     */
+    inline const KubernetesConfigurationResult& GetKubernetes() const{ return m_kubernetes; }
+
+    /**
+     * <p>An object that contains information on the status of all Kubernetes data
+     * sources.</p>
+     */
+    inline bool KubernetesHasBeenSet() const { return m_kubernetesHasBeenSet; }
+
+    /**
+     * <p>An object that contains information on the status of all Kubernetes data
+     * sources.</p>
+     */
+    inline void SetKubernetes(const KubernetesConfigurationResult& value) { m_kubernetesHasBeenSet = true; m_kubernetes = value; }
+
+    /**
+     * <p>An object that contains information on the status of all Kubernetes data
+     * sources.</p>
+     */
+    inline void SetKubernetes(KubernetesConfigurationResult&& value) { m_kubernetesHasBeenSet = true; m_kubernetes = std::move(value); }
+
+    /**
+     * <p>An object that contains information on the status of all Kubernetes data
+     * sources.</p>
+     */
+    inline DataSourceConfigurationsResult& WithKubernetes(const KubernetesConfigurationResult& value) { SetKubernetes(value); return *this;}
+
+    /**
+     * <p>An object that contains information on the status of all Kubernetes data
+     * sources.</p>
+     */
+    inline DataSourceConfigurationsResult& WithKubernetes(KubernetesConfigurationResult&& value) { SetKubernetes(std::move(value)); return *this;}
+
   private:
 
     CloudTrailConfigurationResult m_cloudTrail;
@@ -201,6 +239,9 @@ namespace Model
 
     S3LogsConfigurationResult m_s3Logs;
     bool m_s3LogsHasBeenSet;
+
+    KubernetesConfigurationResult m_kubernetes;
+    bool m_kubernetesHasBeenSet;
   };
 
 } // namespace Model

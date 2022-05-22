@@ -35,42 +35,42 @@ namespace Model
 
 
     /**
-     * <p> The identifier for the specified framework. </p>
+     * <p> The unique identifier for the framework. </p>
      */
     inline const Aws::String& GetFrameworkId() const{ return m_frameworkId; }
 
     /**
-     * <p> The identifier for the specified framework. </p>
+     * <p> The unique identifier for the framework. </p>
      */
     inline bool FrameworkIdHasBeenSet() const { return m_frameworkIdHasBeenSet; }
 
     /**
-     * <p> The identifier for the specified framework. </p>
+     * <p> The unique identifier for the framework. </p>
      */
     inline void SetFrameworkId(const Aws::String& value) { m_frameworkIdHasBeenSet = true; m_frameworkId = value; }
 
     /**
-     * <p> The identifier for the specified framework. </p>
+     * <p> The unique identifier for the framework. </p>
      */
     inline void SetFrameworkId(Aws::String&& value) { m_frameworkIdHasBeenSet = true; m_frameworkId = std::move(value); }
 
     /**
-     * <p> The identifier for the specified framework. </p>
+     * <p> The unique identifier for the framework. </p>
      */
     inline void SetFrameworkId(const char* value) { m_frameworkIdHasBeenSet = true; m_frameworkId.assign(value); }
 
     /**
-     * <p> The identifier for the specified framework. </p>
+     * <p> The unique identifier for the framework. </p>
      */
     inline UpdateAssessmentFrameworkRequest& WithFrameworkId(const Aws::String& value) { SetFrameworkId(value); return *this;}
 
     /**
-     * <p> The identifier for the specified framework. </p>
+     * <p> The unique identifier for the framework. </p>
      */
     inline UpdateAssessmentFrameworkRequest& WithFrameworkId(Aws::String&& value) { SetFrameworkId(std::move(value)); return *this;}
 
     /**
-     * <p> The identifier for the specified framework. </p>
+     * <p> The unique identifier for the framework. </p>
      */
     inline UpdateAssessmentFrameworkRequest& WithFrameworkId(const char* value) { SetFrameworkId(value); return *this;}
 
@@ -117,42 +117,42 @@ namespace Model
 
 
     /**
-     * <p> The description of the framework that is to be updated. </p>
+     * <p> The description of the updated framework. </p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p> The description of the framework that is to be updated. </p>
+     * <p> The description of the updated framework. </p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p> The description of the framework that is to be updated. </p>
+     * <p> The description of the updated framework. </p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p> The description of the framework that is to be updated. </p>
+     * <p> The description of the updated framework. </p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p> The description of the framework that is to be updated. </p>
+     * <p> The description of the updated framework. </p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p> The description of the framework that is to be updated. </p>
+     * <p> The description of the updated framework. </p>
      */
     inline UpdateAssessmentFrameworkRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p> The description of the framework that is to be updated. </p>
+     * <p> The description of the updated framework. </p>
      */
     inline UpdateAssessmentFrameworkRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p> The description of the framework that is to be updated. </p>
+     * <p> The description of the updated framework. </p>
      */
     inline UpdateAssessmentFrameworkRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
@@ -207,42 +207,42 @@ namespace Model
 
 
     /**
-     * <p> The control sets associated with the framework. </p>
+     * <p> The control sets that are associated with the framework. </p>
      */
     inline const Aws::Vector<UpdateAssessmentFrameworkControlSet>& GetControlSets() const{ return m_controlSets; }
 
     /**
-     * <p> The control sets associated with the framework. </p>
+     * <p> The control sets that are associated with the framework. </p>
      */
     inline bool ControlSetsHasBeenSet() const { return m_controlSetsHasBeenSet; }
 
     /**
-     * <p> The control sets associated with the framework. </p>
+     * <p> The control sets that are associated with the framework. </p>
      */
     inline void SetControlSets(const Aws::Vector<UpdateAssessmentFrameworkControlSet>& value) { m_controlSetsHasBeenSet = true; m_controlSets = value; }
 
     /**
-     * <p> The control sets associated with the framework. </p>
+     * <p> The control sets that are associated with the framework. </p>
      */
     inline void SetControlSets(Aws::Vector<UpdateAssessmentFrameworkControlSet>&& value) { m_controlSetsHasBeenSet = true; m_controlSets = std::move(value); }
 
     /**
-     * <p> The control sets associated with the framework. </p>
+     * <p> The control sets that are associated with the framework. </p>
      */
     inline UpdateAssessmentFrameworkRequest& WithControlSets(const Aws::Vector<UpdateAssessmentFrameworkControlSet>& value) { SetControlSets(value); return *this;}
 
     /**
-     * <p> The control sets associated with the framework. </p>
+     * <p> The control sets that are associated with the framework. </p>
      */
     inline UpdateAssessmentFrameworkRequest& WithControlSets(Aws::Vector<UpdateAssessmentFrameworkControlSet>&& value) { SetControlSets(std::move(value)); return *this;}
 
     /**
-     * <p> The control sets associated with the framework. </p>
+     * <p> The control sets that are associated with the framework. </p>
      */
     inline UpdateAssessmentFrameworkRequest& AddControlSets(const UpdateAssessmentFrameworkControlSet& value) { m_controlSetsHasBeenSet = true; m_controlSets.push_back(value); return *this; }
 
     /**
-     * <p> The control sets associated with the framework. </p>
+     * <p> The control sets that are associated with the framework. </p>
      */
     inline UpdateAssessmentFrameworkRequest& AddControlSets(UpdateAssessmentFrameworkControlSet&& value) { m_controlSetsHasBeenSet = true; m_controlSets.push_back(std::move(value)); return *this; }
 

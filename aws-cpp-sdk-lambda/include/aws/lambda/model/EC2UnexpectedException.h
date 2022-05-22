@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>AWS Lambda received an unexpected EC2 client exception while setting up for
-   * the Lambda function.</p><p><h3>See Also:</h3>   <a
+   * <p>Lambda received an unexpected EC2 client exception while setting up for the
+   * Lambda function.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/EC2UnexpectedException">AWS
    * API Reference</a></p>
    */

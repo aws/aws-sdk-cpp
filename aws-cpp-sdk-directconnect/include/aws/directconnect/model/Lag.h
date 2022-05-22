@@ -11,6 +11,7 @@
 #include <aws/directconnect/model/HasLogicalRedundancy.h>
 #include <aws/directconnect/model/Connection.h>
 #include <aws/directconnect/model/Tag.h>
+#include <aws/directconnect/model/MacSecKey.h>
 #include <utility>
 
 namespace Aws
@@ -159,42 +160,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS account that owns the LAG.</p>
+     * <p>The ID of the Amazon Web Services account that owns the LAG.</p>
      */
     inline const Aws::String& GetOwnerAccount() const{ return m_ownerAccount; }
 
     /**
-     * <p>The ID of the AWS account that owns the LAG.</p>
+     * <p>The ID of the Amazon Web Services account that owns the LAG.</p>
      */
     inline bool OwnerAccountHasBeenSet() const { return m_ownerAccountHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS account that owns the LAG.</p>
+     * <p>The ID of the Amazon Web Services account that owns the LAG.</p>
      */
     inline void SetOwnerAccount(const Aws::String& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = value; }
 
     /**
-     * <p>The ID of the AWS account that owns the LAG.</p>
+     * <p>The ID of the Amazon Web Services account that owns the LAG.</p>
      */
     inline void SetOwnerAccount(Aws::String&& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = std::move(value); }
 
     /**
-     * <p>The ID of the AWS account that owns the LAG.</p>
+     * <p>The ID of the Amazon Web Services account that owns the LAG.</p>
      */
     inline void SetOwnerAccount(const char* value) { m_ownerAccountHasBeenSet = true; m_ownerAccount.assign(value); }
 
     /**
-     * <p>The ID of the AWS account that owns the LAG.</p>
+     * <p>The ID of the Amazon Web Services account that owns the LAG.</p>
      */
     inline Lag& WithOwnerAccount(const Aws::String& value) { SetOwnerAccount(value); return *this;}
 
     /**
-     * <p>The ID of the AWS account that owns the LAG.</p>
+     * <p>The ID of the Amazon Web Services account that owns the LAG.</p>
      */
     inline Lag& WithOwnerAccount(Aws::String&& value) { SetOwnerAccount(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS account that owns the LAG.</p>
+     * <p>The ID of the Amazon Web Services account that owns the LAG.</p>
      */
     inline Lag& WithOwnerAccount(const char* value) { SetOwnerAccount(value); return *this;}
 
@@ -367,42 +368,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS Region where the connection is located.</p>
+     * <p>The Amazon Web Services Region where the connection is located.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
 
     /**
-     * <p>The AWS Region where the connection is located.</p>
+     * <p>The Amazon Web Services Region where the connection is located.</p>
      */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
     /**
-     * <p>The AWS Region where the connection is located.</p>
+     * <p>The Amazon Web Services Region where the connection is located.</p>
      */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
-     * <p>The AWS Region where the connection is located.</p>
+     * <p>The Amazon Web Services Region where the connection is located.</p>
      */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
     /**
-     * <p>The AWS Region where the connection is located.</p>
+     * <p>The Amazon Web Services Region where the connection is located.</p>
      */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
 
     /**
-     * <p>The AWS Region where the connection is located.</p>
+     * <p>The Amazon Web Services Region where the connection is located.</p>
      */
     inline Lag& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
 
     /**
-     * <p>The AWS Region where the connection is located.</p>
+     * <p>The Amazon Web Services Region where the connection is located.</p>
      */
     inline Lag& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Region where the connection is located.</p>
+     * <p>The Amazon Web Services Region where the connection is located.</p>
      */
     inline Lag& WithRegion(const char* value) { SetRegion(value); return *this;}
 
@@ -433,85 +434,142 @@ namespace Model
 
 
     /**
-     * <p>The AWS Direct Connect endpoint that hosts the LAG.</p>
+     * <p>The Direct Connect endpoint that hosts the LAG.</p>
      */
     inline const Aws::String& GetAwsDevice() const{ return m_awsDevice; }
 
     /**
-     * <p>The AWS Direct Connect endpoint that hosts the LAG.</p>
+     * <p>The Direct Connect endpoint that hosts the LAG.</p>
      */
     inline bool AwsDeviceHasBeenSet() const { return m_awsDeviceHasBeenSet; }
 
     /**
-     * <p>The AWS Direct Connect endpoint that hosts the LAG.</p>
+     * <p>The Direct Connect endpoint that hosts the LAG.</p>
      */
     inline void SetAwsDevice(const Aws::String& value) { m_awsDeviceHasBeenSet = true; m_awsDevice = value; }
 
     /**
-     * <p>The AWS Direct Connect endpoint that hosts the LAG.</p>
+     * <p>The Direct Connect endpoint that hosts the LAG.</p>
      */
     inline void SetAwsDevice(Aws::String&& value) { m_awsDeviceHasBeenSet = true; m_awsDevice = std::move(value); }
 
     /**
-     * <p>The AWS Direct Connect endpoint that hosts the LAG.</p>
+     * <p>The Direct Connect endpoint that hosts the LAG.</p>
      */
     inline void SetAwsDevice(const char* value) { m_awsDeviceHasBeenSet = true; m_awsDevice.assign(value); }
 
     /**
-     * <p>The AWS Direct Connect endpoint that hosts the LAG.</p>
+     * <p>The Direct Connect endpoint that hosts the LAG.</p>
      */
     inline Lag& WithAwsDevice(const Aws::String& value) { SetAwsDevice(value); return *this;}
 
     /**
-     * <p>The AWS Direct Connect endpoint that hosts the LAG.</p>
+     * <p>The Direct Connect endpoint that hosts the LAG.</p>
      */
     inline Lag& WithAwsDevice(Aws::String&& value) { SetAwsDevice(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Direct Connect endpoint that hosts the LAG.</p>
+     * <p>The Direct Connect endpoint that hosts the LAG.</p>
      */
     inline Lag& WithAwsDevice(const char* value) { SetAwsDevice(value); return *this;}
 
 
     /**
-     * <p>The AWS Direct Connect endpoint that hosts the LAG.</p>
+     * <p>The Direct Connect endpoint that hosts the LAG.</p>
      */
     inline const Aws::String& GetAwsDeviceV2() const{ return m_awsDeviceV2; }
 
     /**
-     * <p>The AWS Direct Connect endpoint that hosts the LAG.</p>
+     * <p>The Direct Connect endpoint that hosts the LAG.</p>
      */
     inline bool AwsDeviceV2HasBeenSet() const { return m_awsDeviceV2HasBeenSet; }
 
     /**
-     * <p>The AWS Direct Connect endpoint that hosts the LAG.</p>
+     * <p>The Direct Connect endpoint that hosts the LAG.</p>
      */
     inline void SetAwsDeviceV2(const Aws::String& value) { m_awsDeviceV2HasBeenSet = true; m_awsDeviceV2 = value; }
 
     /**
-     * <p>The AWS Direct Connect endpoint that hosts the LAG.</p>
+     * <p>The Direct Connect endpoint that hosts the LAG.</p>
      */
     inline void SetAwsDeviceV2(Aws::String&& value) { m_awsDeviceV2HasBeenSet = true; m_awsDeviceV2 = std::move(value); }
 
     /**
-     * <p>The AWS Direct Connect endpoint that hosts the LAG.</p>
+     * <p>The Direct Connect endpoint that hosts the LAG.</p>
      */
     inline void SetAwsDeviceV2(const char* value) { m_awsDeviceV2HasBeenSet = true; m_awsDeviceV2.assign(value); }
 
     /**
-     * <p>The AWS Direct Connect endpoint that hosts the LAG.</p>
+     * <p>The Direct Connect endpoint that hosts the LAG.</p>
      */
     inline Lag& WithAwsDeviceV2(const Aws::String& value) { SetAwsDeviceV2(value); return *this;}
 
     /**
-     * <p>The AWS Direct Connect endpoint that hosts the LAG.</p>
+     * <p>The Direct Connect endpoint that hosts the LAG.</p>
      */
     inline Lag& WithAwsDeviceV2(Aws::String&& value) { SetAwsDeviceV2(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Direct Connect endpoint that hosts the LAG.</p>
+     * <p>The Direct Connect endpoint that hosts the LAG.</p>
      */
     inline Lag& WithAwsDeviceV2(const char* value) { SetAwsDeviceV2(value); return *this;}
+
+
+    /**
+     * <p>The Direct Connect endpoint that terminates the logical connection. This
+     * device might be different than the device that terminates the physical
+     * connection.</p>
+     */
+    inline const Aws::String& GetAwsLogicalDeviceId() const{ return m_awsLogicalDeviceId; }
+
+    /**
+     * <p>The Direct Connect endpoint that terminates the logical connection. This
+     * device might be different than the device that terminates the physical
+     * connection.</p>
+     */
+    inline bool AwsLogicalDeviceIdHasBeenSet() const { return m_awsLogicalDeviceIdHasBeenSet; }
+
+    /**
+     * <p>The Direct Connect endpoint that terminates the logical connection. This
+     * device might be different than the device that terminates the physical
+     * connection.</p>
+     */
+    inline void SetAwsLogicalDeviceId(const Aws::String& value) { m_awsLogicalDeviceIdHasBeenSet = true; m_awsLogicalDeviceId = value; }
+
+    /**
+     * <p>The Direct Connect endpoint that terminates the logical connection. This
+     * device might be different than the device that terminates the physical
+     * connection.</p>
+     */
+    inline void SetAwsLogicalDeviceId(Aws::String&& value) { m_awsLogicalDeviceIdHasBeenSet = true; m_awsLogicalDeviceId = std::move(value); }
+
+    /**
+     * <p>The Direct Connect endpoint that terminates the logical connection. This
+     * device might be different than the device that terminates the physical
+     * connection.</p>
+     */
+    inline void SetAwsLogicalDeviceId(const char* value) { m_awsLogicalDeviceIdHasBeenSet = true; m_awsLogicalDeviceId.assign(value); }
+
+    /**
+     * <p>The Direct Connect endpoint that terminates the logical connection. This
+     * device might be different than the device that terminates the physical
+     * connection.</p>
+     */
+    inline Lag& WithAwsLogicalDeviceId(const Aws::String& value) { SetAwsLogicalDeviceId(value); return *this;}
+
+    /**
+     * <p>The Direct Connect endpoint that terminates the logical connection. This
+     * device might be different than the device that terminates the physical
+     * connection.</p>
+     */
+    inline Lag& WithAwsLogicalDeviceId(Aws::String&& value) { SetAwsLogicalDeviceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The Direct Connect endpoint that terminates the logical connection. This
+     * device might be different than the device that terminates the physical
+     * connection.</p>
+     */
+    inline Lag& WithAwsLogicalDeviceId(const char* value) { SetAwsLogicalDeviceId(value); return *this;}
 
 
     /**
@@ -715,6 +773,125 @@ namespace Model
      */
     inline Lag& WithProviderName(const char* value) { SetProviderName(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether the LAG supports MAC Security (MACsec).</p>
+     */
+    inline bool GetMacSecCapable() const{ return m_macSecCapable; }
+
+    /**
+     * <p>Indicates whether the LAG supports MAC Security (MACsec).</p>
+     */
+    inline bool MacSecCapableHasBeenSet() const { return m_macSecCapableHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the LAG supports MAC Security (MACsec).</p>
+     */
+    inline void SetMacSecCapable(bool value) { m_macSecCapableHasBeenSet = true; m_macSecCapable = value; }
+
+    /**
+     * <p>Indicates whether the LAG supports MAC Security (MACsec).</p>
+     */
+    inline Lag& WithMacSecCapable(bool value) { SetMacSecCapable(value); return *this;}
+
+
+    /**
+     * <p>The LAG MAC Security (MACsec) encryption mode.</p> <p>The valid values are
+     * <code>no_encrypt</code>, <code>should_encrypt</code>, and
+     * <code>must_encrypt</code>.</p>
+     */
+    inline const Aws::String& GetEncryptionMode() const{ return m_encryptionMode; }
+
+    /**
+     * <p>The LAG MAC Security (MACsec) encryption mode.</p> <p>The valid values are
+     * <code>no_encrypt</code>, <code>should_encrypt</code>, and
+     * <code>must_encrypt</code>.</p>
+     */
+    inline bool EncryptionModeHasBeenSet() const { return m_encryptionModeHasBeenSet; }
+
+    /**
+     * <p>The LAG MAC Security (MACsec) encryption mode.</p> <p>The valid values are
+     * <code>no_encrypt</code>, <code>should_encrypt</code>, and
+     * <code>must_encrypt</code>.</p>
+     */
+    inline void SetEncryptionMode(const Aws::String& value) { m_encryptionModeHasBeenSet = true; m_encryptionMode = value; }
+
+    /**
+     * <p>The LAG MAC Security (MACsec) encryption mode.</p> <p>The valid values are
+     * <code>no_encrypt</code>, <code>should_encrypt</code>, and
+     * <code>must_encrypt</code>.</p>
+     */
+    inline void SetEncryptionMode(Aws::String&& value) { m_encryptionModeHasBeenSet = true; m_encryptionMode = std::move(value); }
+
+    /**
+     * <p>The LAG MAC Security (MACsec) encryption mode.</p> <p>The valid values are
+     * <code>no_encrypt</code>, <code>should_encrypt</code>, and
+     * <code>must_encrypt</code>.</p>
+     */
+    inline void SetEncryptionMode(const char* value) { m_encryptionModeHasBeenSet = true; m_encryptionMode.assign(value); }
+
+    /**
+     * <p>The LAG MAC Security (MACsec) encryption mode.</p> <p>The valid values are
+     * <code>no_encrypt</code>, <code>should_encrypt</code>, and
+     * <code>must_encrypt</code>.</p>
+     */
+    inline Lag& WithEncryptionMode(const Aws::String& value) { SetEncryptionMode(value); return *this;}
+
+    /**
+     * <p>The LAG MAC Security (MACsec) encryption mode.</p> <p>The valid values are
+     * <code>no_encrypt</code>, <code>should_encrypt</code>, and
+     * <code>must_encrypt</code>.</p>
+     */
+    inline Lag& WithEncryptionMode(Aws::String&& value) { SetEncryptionMode(std::move(value)); return *this;}
+
+    /**
+     * <p>The LAG MAC Security (MACsec) encryption mode.</p> <p>The valid values are
+     * <code>no_encrypt</code>, <code>should_encrypt</code>, and
+     * <code>must_encrypt</code>.</p>
+     */
+    inline Lag& WithEncryptionMode(const char* value) { SetEncryptionMode(value); return *this;}
+
+
+    /**
+     * <p>The MAC Security (MACsec) security keys associated with the LAG.</p>
+     */
+    inline const Aws::Vector<MacSecKey>& GetMacSecKeys() const{ return m_macSecKeys; }
+
+    /**
+     * <p>The MAC Security (MACsec) security keys associated with the LAG.</p>
+     */
+    inline bool MacSecKeysHasBeenSet() const { return m_macSecKeysHasBeenSet; }
+
+    /**
+     * <p>The MAC Security (MACsec) security keys associated with the LAG.</p>
+     */
+    inline void SetMacSecKeys(const Aws::Vector<MacSecKey>& value) { m_macSecKeysHasBeenSet = true; m_macSecKeys = value; }
+
+    /**
+     * <p>The MAC Security (MACsec) security keys associated with the LAG.</p>
+     */
+    inline void SetMacSecKeys(Aws::Vector<MacSecKey>&& value) { m_macSecKeysHasBeenSet = true; m_macSecKeys = std::move(value); }
+
+    /**
+     * <p>The MAC Security (MACsec) security keys associated with the LAG.</p>
+     */
+    inline Lag& WithMacSecKeys(const Aws::Vector<MacSecKey>& value) { SetMacSecKeys(value); return *this;}
+
+    /**
+     * <p>The MAC Security (MACsec) security keys associated with the LAG.</p>
+     */
+    inline Lag& WithMacSecKeys(Aws::Vector<MacSecKey>&& value) { SetMacSecKeys(std::move(value)); return *this;}
+
+    /**
+     * <p>The MAC Security (MACsec) security keys associated with the LAG.</p>
+     */
+    inline Lag& AddMacSecKeys(const MacSecKey& value) { m_macSecKeysHasBeenSet = true; m_macSecKeys.push_back(value); return *this; }
+
+    /**
+     * <p>The MAC Security (MACsec) security keys associated with the LAG.</p>
+     */
+    inline Lag& AddMacSecKeys(MacSecKey&& value) { m_macSecKeysHasBeenSet = true; m_macSecKeys.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_connectionsBandwidth;
@@ -750,6 +927,9 @@ namespace Model
     Aws::String m_awsDeviceV2;
     bool m_awsDeviceV2HasBeenSet;
 
+    Aws::String m_awsLogicalDeviceId;
+    bool m_awsLogicalDeviceIdHasBeenSet;
+
     Aws::Vector<Connection> m_connections;
     bool m_connectionsHasBeenSet;
 
@@ -767,6 +947,15 @@ namespace Model
 
     Aws::String m_providerName;
     bool m_providerNameHasBeenSet;
+
+    bool m_macSecCapable;
+    bool m_macSecCapableHasBeenSet;
+
+    Aws::String m_encryptionMode;
+    bool m_encryptionModeHasBeenSet;
+
+    Aws::Vector<MacSecKey> m_macSecKeys;
+    bool m_macSecKeysHasBeenSet;
   };
 
 } // namespace Model

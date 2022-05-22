@@ -45,6 +45,7 @@ namespace Aws
         static const int us_gov_west_1_HASH = HashingUtils::HashString("us-gov-west-1");
         static const int us_west_1_HASH = HashingUtils::HashString("us-west-1");
         static const int us_west_2_HASH = HashingUtils::HashString("us-west-2");
+        static const int us_iso_west_1_HASH = HashingUtils::HashString("us-iso-west-1");
         static const int us_east_1_HASH = HashingUtils::HashString("us-east-1");
 
 
@@ -151,6 +152,10 @@ namespace Aws
           {
             return BucketLocationConstraint::us_west_2;
           }
+          else if (hashCode == us_iso_west_1_HASH)
+          {
+            return BucketLocationConstraint::us_iso_west_1;
+          }
           else if (hashCode == us_east_1_HASH)
           {
             return BucketLocationConstraint::us_east_1;
@@ -219,6 +224,8 @@ namespace Aws
             return "us-west-1";
           case BucketLocationConstraint::us_west_2:
             return "us-west-2";
+          case BucketLocationConstraint::us_iso_west_1:
+            return "us-iso-west-1";
           case BucketLocationConstraint::us_east_1:
             return "us-east-1";
           default:

@@ -11,6 +11,7 @@
 #include <aws/iotanalytics/model/RetentionPeriod.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/iotanalytics/model/FileFormatConfiguration.h>
+#include <aws/iotanalytics/model/DatastorePartitions.h>
 #include <aws/iotanalytics/model/Tag.h>
 #include <utility>
 
@@ -79,50 +80,56 @@ namespace Model
 
 
     /**
-     * <p>Where data store data is stored. You can choose one of
-     * <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not
-     * specified, the default is <code>serviceManagedS3</code>. You cannot change this
-     * storage option after the data store is created.</p>
+     * <p>Where data in a data store is stored.. You can choose
+     * <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage,
+     * or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is
+     * <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage
+     * after your data store is created. </p>
      */
     inline const DatastoreStorage& GetDatastoreStorage() const{ return m_datastoreStorage; }
 
     /**
-     * <p>Where data store data is stored. You can choose one of
-     * <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not
-     * specified, the default is <code>serviceManagedS3</code>. You cannot change this
-     * storage option after the data store is created.</p>
+     * <p>Where data in a data store is stored.. You can choose
+     * <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage,
+     * or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is
+     * <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage
+     * after your data store is created. </p>
      */
     inline bool DatastoreStorageHasBeenSet() const { return m_datastoreStorageHasBeenSet; }
 
     /**
-     * <p>Where data store data is stored. You can choose one of
-     * <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not
-     * specified, the default is <code>serviceManagedS3</code>. You cannot change this
-     * storage option after the data store is created.</p>
+     * <p>Where data in a data store is stored.. You can choose
+     * <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage,
+     * or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is
+     * <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage
+     * after your data store is created. </p>
      */
     inline void SetDatastoreStorage(const DatastoreStorage& value) { m_datastoreStorageHasBeenSet = true; m_datastoreStorage = value; }
 
     /**
-     * <p>Where data store data is stored. You can choose one of
-     * <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not
-     * specified, the default is <code>serviceManagedS3</code>. You cannot change this
-     * storage option after the data store is created.</p>
+     * <p>Where data in a data store is stored.. You can choose
+     * <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage,
+     * or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is
+     * <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage
+     * after your data store is created. </p>
      */
     inline void SetDatastoreStorage(DatastoreStorage&& value) { m_datastoreStorageHasBeenSet = true; m_datastoreStorage = std::move(value); }
 
     /**
-     * <p>Where data store data is stored. You can choose one of
-     * <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not
-     * specified, the default is <code>serviceManagedS3</code>. You cannot change this
-     * storage option after the data store is created.</p>
+     * <p>Where data in a data store is stored.. You can choose
+     * <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage,
+     * or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is
+     * <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage
+     * after your data store is created. </p>
      */
     inline CreateDatastoreRequest& WithDatastoreStorage(const DatastoreStorage& value) { SetDatastoreStorage(value); return *this;}
 
     /**
-     * <p>Where data store data is stored. You can choose one of
-     * <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not
-     * specified, the default is <code>serviceManagedS3</code>. You cannot change this
-     * storage option after the data store is created.</p>
+     * <p>Where data in a data store is stored.. You can choose
+     * <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage,
+     * or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is
+     * <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage
+     * after your data store is created. </p>
      */
     inline CreateDatastoreRequest& WithDatastoreStorage(DatastoreStorage&& value) { SetDatastoreStorage(std::move(value)); return *this;}
 
@@ -212,58 +219,83 @@ namespace Model
 
 
     /**
-     * <p>Contains the configuration information of file formats. AWS IoT Analytics
-     * data stores support JSON and <a
-     * href="https://parquet.apache.org/">Parquet</a>.</p> <p>The default file format
-     * is JSON. You can specify only one format.</p> <p>You can't change the file
-     * format after you create the data store.</p>
+     * <p>Contains the configuration information of file formats. IoT Analytics data
+     * stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
+     * <p>The default file format is JSON. You can specify only one format.</p> <p>You
+     * can't change the file format after you create the data store.</p>
      */
     inline const FileFormatConfiguration& GetFileFormatConfiguration() const{ return m_fileFormatConfiguration; }
 
     /**
-     * <p>Contains the configuration information of file formats. AWS IoT Analytics
-     * data stores support JSON and <a
-     * href="https://parquet.apache.org/">Parquet</a>.</p> <p>The default file format
-     * is JSON. You can specify only one format.</p> <p>You can't change the file
-     * format after you create the data store.</p>
+     * <p>Contains the configuration information of file formats. IoT Analytics data
+     * stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
+     * <p>The default file format is JSON. You can specify only one format.</p> <p>You
+     * can't change the file format after you create the data store.</p>
      */
     inline bool FileFormatConfigurationHasBeenSet() const { return m_fileFormatConfigurationHasBeenSet; }
 
     /**
-     * <p>Contains the configuration information of file formats. AWS IoT Analytics
-     * data stores support JSON and <a
-     * href="https://parquet.apache.org/">Parquet</a>.</p> <p>The default file format
-     * is JSON. You can specify only one format.</p> <p>You can't change the file
-     * format after you create the data store.</p>
+     * <p>Contains the configuration information of file formats. IoT Analytics data
+     * stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
+     * <p>The default file format is JSON. You can specify only one format.</p> <p>You
+     * can't change the file format after you create the data store.</p>
      */
     inline void SetFileFormatConfiguration(const FileFormatConfiguration& value) { m_fileFormatConfigurationHasBeenSet = true; m_fileFormatConfiguration = value; }
 
     /**
-     * <p>Contains the configuration information of file formats. AWS IoT Analytics
-     * data stores support JSON and <a
-     * href="https://parquet.apache.org/">Parquet</a>.</p> <p>The default file format
-     * is JSON. You can specify only one format.</p> <p>You can't change the file
-     * format after you create the data store.</p>
+     * <p>Contains the configuration information of file formats. IoT Analytics data
+     * stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
+     * <p>The default file format is JSON. You can specify only one format.</p> <p>You
+     * can't change the file format after you create the data store.</p>
      */
     inline void SetFileFormatConfiguration(FileFormatConfiguration&& value) { m_fileFormatConfigurationHasBeenSet = true; m_fileFormatConfiguration = std::move(value); }
 
     /**
-     * <p>Contains the configuration information of file formats. AWS IoT Analytics
-     * data stores support JSON and <a
-     * href="https://parquet.apache.org/">Parquet</a>.</p> <p>The default file format
-     * is JSON. You can specify only one format.</p> <p>You can't change the file
-     * format after you create the data store.</p>
+     * <p>Contains the configuration information of file formats. IoT Analytics data
+     * stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
+     * <p>The default file format is JSON. You can specify only one format.</p> <p>You
+     * can't change the file format after you create the data store.</p>
      */
     inline CreateDatastoreRequest& WithFileFormatConfiguration(const FileFormatConfiguration& value) { SetFileFormatConfiguration(value); return *this;}
 
     /**
-     * <p>Contains the configuration information of file formats. AWS IoT Analytics
-     * data stores support JSON and <a
-     * href="https://parquet.apache.org/">Parquet</a>.</p> <p>The default file format
-     * is JSON. You can specify only one format.</p> <p>You can't change the file
-     * format after you create the data store.</p>
+     * <p>Contains the configuration information of file formats. IoT Analytics data
+     * stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
+     * <p>The default file format is JSON. You can specify only one format.</p> <p>You
+     * can't change the file format after you create the data store.</p>
      */
     inline CreateDatastoreRequest& WithFileFormatConfiguration(FileFormatConfiguration&& value) { SetFileFormatConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p> Contains information about the partition dimensions in a data store. </p>
+     */
+    inline const DatastorePartitions& GetDatastorePartitions() const{ return m_datastorePartitions; }
+
+    /**
+     * <p> Contains information about the partition dimensions in a data store. </p>
+     */
+    inline bool DatastorePartitionsHasBeenSet() const { return m_datastorePartitionsHasBeenSet; }
+
+    /**
+     * <p> Contains information about the partition dimensions in a data store. </p>
+     */
+    inline void SetDatastorePartitions(const DatastorePartitions& value) { m_datastorePartitionsHasBeenSet = true; m_datastorePartitions = value; }
+
+    /**
+     * <p> Contains information about the partition dimensions in a data store. </p>
+     */
+    inline void SetDatastorePartitions(DatastorePartitions&& value) { m_datastorePartitionsHasBeenSet = true; m_datastorePartitions = std::move(value); }
+
+    /**
+     * <p> Contains information about the partition dimensions in a data store. </p>
+     */
+    inline CreateDatastoreRequest& WithDatastorePartitions(const DatastorePartitions& value) { SetDatastorePartitions(value); return *this;}
+
+    /**
+     * <p> Contains information about the partition dimensions in a data store. </p>
+     */
+    inline CreateDatastoreRequest& WithDatastorePartitions(DatastorePartitions&& value) { SetDatastorePartitions(std::move(value)); return *this;}
 
   private:
 
@@ -281,6 +313,9 @@ namespace Model
 
     FileFormatConfiguration m_fileFormatConfiguration;
     bool m_fileFormatConfigurationHasBeenSet;
+
+    DatastorePartitions m_datastorePartitions;
+    bool m_datastorePartitionsHasBeenSet;
   };
 
 } // namespace Model

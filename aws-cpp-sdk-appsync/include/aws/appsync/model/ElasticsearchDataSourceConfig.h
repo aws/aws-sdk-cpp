@@ -24,8 +24,11 @@ namespace Model
 {
 
   /**
-   * <p>Describes an Elasticsearch data source configuration.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Describes an OpenSearch data source configuration.</p> <p>As of September
+   * 2021, Amazon Elasticsearch service is Amazon OpenSearch Service. This
+   * configuration is deprecated. For new data sources, use
+   * <a>OpenSearchServiceDataSourceConfig</a> to specify an OpenSearch data
+   * source.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ElasticsearchDataSourceConfig">AWS
    * API Reference</a></p>
    */
@@ -80,42 +83,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS Region.</p>
+     * <p>The Amazon Web Services Region.</p>
      */
     inline const Aws::String& GetAwsRegion() const{ return m_awsRegion; }
 
     /**
-     * <p>The AWS Region.</p>
+     * <p>The Amazon Web Services Region.</p>
      */
     inline bool AwsRegionHasBeenSet() const { return m_awsRegionHasBeenSet; }
 
     /**
-     * <p>The AWS Region.</p>
+     * <p>The Amazon Web Services Region.</p>
      */
     inline void SetAwsRegion(const Aws::String& value) { m_awsRegionHasBeenSet = true; m_awsRegion = value; }
 
     /**
-     * <p>The AWS Region.</p>
+     * <p>The Amazon Web Services Region.</p>
      */
     inline void SetAwsRegion(Aws::String&& value) { m_awsRegionHasBeenSet = true; m_awsRegion = std::move(value); }
 
     /**
-     * <p>The AWS Region.</p>
+     * <p>The Amazon Web Services Region.</p>
      */
     inline void SetAwsRegion(const char* value) { m_awsRegionHasBeenSet = true; m_awsRegion.assign(value); }
 
     /**
-     * <p>The AWS Region.</p>
+     * <p>The Amazon Web Services Region.</p>
      */
     inline ElasticsearchDataSourceConfig& WithAwsRegion(const Aws::String& value) { SetAwsRegion(value); return *this;}
 
     /**
-     * <p>The AWS Region.</p>
+     * <p>The Amazon Web Services Region.</p>
      */
     inline ElasticsearchDataSourceConfig& WithAwsRegion(Aws::String&& value) { SetAwsRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Region.</p>
+     * <p>The Amazon Web Services Region.</p>
      */
     inline ElasticsearchDataSourceConfig& WithAwsRegion(const char* value) { SetAwsRegion(value); return *this;}
 

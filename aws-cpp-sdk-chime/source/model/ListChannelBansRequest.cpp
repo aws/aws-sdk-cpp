@@ -19,13 +19,29 @@ ListChannelBansRequest::ListChannelBansRequest() :
     m_channelArnHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_chimeBearerHasBeenSet(false)
 {
 }
 
 Aws::String ListChannelBansRequest::SerializePayload() const
 {
   return {};
+}
+
+Aws::Http::HeaderValueCollection ListChannelBansRequest::GetRequestSpecificHeaders() const
+{
+  Aws::Http::HeaderValueCollection headers;
+  Aws::StringStream ss;
+  if(m_chimeBearerHasBeenSet)
+  {
+    ss << m_chimeBearer;
+    headers.emplace("x-amz-chime-bearer",  ss.str());
+    ss.str("");
+  }
+
+  return headers;
+
 }
 
 void ListChannelBansRequest::AddQueryStringParameters(URI& uri) const

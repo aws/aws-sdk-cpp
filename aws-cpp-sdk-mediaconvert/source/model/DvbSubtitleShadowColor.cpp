@@ -23,6 +23,7 @@ namespace Aws
         static const int NONE_HASH = HashingUtils::HashString("NONE");
         static const int BLACK_HASH = HashingUtils::HashString("BLACK");
         static const int WHITE_HASH = HashingUtils::HashString("WHITE");
+        static const int AUTO_HASH = HashingUtils::HashString("AUTO");
 
 
         DvbSubtitleShadowColor GetDvbSubtitleShadowColorForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == WHITE_HASH)
           {
             return DvbSubtitleShadowColor::WHITE;
+          }
+          else if (hashCode == AUTO_HASH)
+          {
+            return DvbSubtitleShadowColor::AUTO;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "BLACK";
           case DvbSubtitleShadowColor::WHITE:
             return "WHITE";
+          case DvbSubtitleShadowColor::AUTO:
+            return "AUTO";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

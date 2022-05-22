@@ -13,6 +13,7 @@
 #include <aws/elasticmapreduce/model/RepoUpgradeOnBoot.h>
 #include <aws/elasticmapreduce/model/KerberosAttributes.h>
 #include <aws/elasticmapreduce/model/ManagedScalingPolicy.h>
+#include <aws/elasticmapreduce/model/AutoTerminationPolicy.h>
 #include <aws/elasticmapreduce/model/StepConfig.h>
 #include <aws/elasticmapreduce/model/BootstrapActionConfig.h>
 #include <aws/elasticmapreduce/model/SupportedProductConfig.h>
@@ -141,66 +142,58 @@ namespace Model
 
 
     /**
-     * <p>The AWS KMS customer master key (CMK) used for encrypting log files. If a
-     * value is not provided, the logs remain encrypted by AES-256. This attribute is
-     * only available with Amazon EMR version 5.30.0 and later, excluding Amazon EMR
-     * 6.0.0.</p>
+     * <p>The KMS key used for encrypting log files. If a value is not provided, the
+     * logs remain encrypted by AES-256. This attribute is only available with Amazon
+     * EMR version 5.30.0 and later, excluding Amazon EMR 6.0.0.</p>
      */
     inline const Aws::String& GetLogEncryptionKmsKeyId() const{ return m_logEncryptionKmsKeyId; }
 
     /**
-     * <p>The AWS KMS customer master key (CMK) used for encrypting log files. If a
-     * value is not provided, the logs remain encrypted by AES-256. This attribute is
-     * only available with Amazon EMR version 5.30.0 and later, excluding Amazon EMR
-     * 6.0.0.</p>
+     * <p>The KMS key used for encrypting log files. If a value is not provided, the
+     * logs remain encrypted by AES-256. This attribute is only available with Amazon
+     * EMR version 5.30.0 and later, excluding Amazon EMR 6.0.0.</p>
      */
     inline bool LogEncryptionKmsKeyIdHasBeenSet() const { return m_logEncryptionKmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The AWS KMS customer master key (CMK) used for encrypting log files. If a
-     * value is not provided, the logs remain encrypted by AES-256. This attribute is
-     * only available with Amazon EMR version 5.30.0 and later, excluding Amazon EMR
-     * 6.0.0.</p>
+     * <p>The KMS key used for encrypting log files. If a value is not provided, the
+     * logs remain encrypted by AES-256. This attribute is only available with Amazon
+     * EMR version 5.30.0 and later, excluding Amazon EMR 6.0.0.</p>
      */
     inline void SetLogEncryptionKmsKeyId(const Aws::String& value) { m_logEncryptionKmsKeyIdHasBeenSet = true; m_logEncryptionKmsKeyId = value; }
 
     /**
-     * <p>The AWS KMS customer master key (CMK) used for encrypting log files. If a
-     * value is not provided, the logs remain encrypted by AES-256. This attribute is
-     * only available with Amazon EMR version 5.30.0 and later, excluding Amazon EMR
-     * 6.0.0.</p>
+     * <p>The KMS key used for encrypting log files. If a value is not provided, the
+     * logs remain encrypted by AES-256. This attribute is only available with Amazon
+     * EMR version 5.30.0 and later, excluding Amazon EMR 6.0.0.</p>
      */
     inline void SetLogEncryptionKmsKeyId(Aws::String&& value) { m_logEncryptionKmsKeyIdHasBeenSet = true; m_logEncryptionKmsKeyId = std::move(value); }
 
     /**
-     * <p>The AWS KMS customer master key (CMK) used for encrypting log files. If a
-     * value is not provided, the logs remain encrypted by AES-256. This attribute is
-     * only available with Amazon EMR version 5.30.0 and later, excluding Amazon EMR
-     * 6.0.0.</p>
+     * <p>The KMS key used for encrypting log files. If a value is not provided, the
+     * logs remain encrypted by AES-256. This attribute is only available with Amazon
+     * EMR version 5.30.0 and later, excluding Amazon EMR 6.0.0.</p>
      */
     inline void SetLogEncryptionKmsKeyId(const char* value) { m_logEncryptionKmsKeyIdHasBeenSet = true; m_logEncryptionKmsKeyId.assign(value); }
 
     /**
-     * <p>The AWS KMS customer master key (CMK) used for encrypting log files. If a
-     * value is not provided, the logs remain encrypted by AES-256. This attribute is
-     * only available with Amazon EMR version 5.30.0 and later, excluding Amazon EMR
-     * 6.0.0.</p>
+     * <p>The KMS key used for encrypting log files. If a value is not provided, the
+     * logs remain encrypted by AES-256. This attribute is only available with Amazon
+     * EMR version 5.30.0 and later, excluding Amazon EMR 6.0.0.</p>
      */
     inline RunJobFlowRequest& WithLogEncryptionKmsKeyId(const Aws::String& value) { SetLogEncryptionKmsKeyId(value); return *this;}
 
     /**
-     * <p>The AWS KMS customer master key (CMK) used for encrypting log files. If a
-     * value is not provided, the logs remain encrypted by AES-256. This attribute is
-     * only available with Amazon EMR version 5.30.0 and later, excluding Amazon EMR
-     * 6.0.0.</p>
+     * <p>The KMS key used for encrypting log files. If a value is not provided, the
+     * logs remain encrypted by AES-256. This attribute is only available with Amazon
+     * EMR version 5.30.0 and later, excluding Amazon EMR 6.0.0.</p>
      */
     inline RunJobFlowRequest& WithLogEncryptionKmsKeyId(Aws::String&& value) { SetLogEncryptionKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS KMS customer master key (CMK) used for encrypting log files. If a
-     * value is not provided, the logs remain encrypted by AES-256. This attribute is
-     * only available with Amazon EMR version 5.30.0 and later, excluding Amazon EMR
-     * 6.0.0.</p>
+     * <p>The KMS key used for encrypting log files. If a value is not provided, the
+     * logs remain encrypted by AES-256. This attribute is only available with Amazon
+     * EMR version 5.30.0 and later, excluding Amazon EMR 6.0.0.</p>
      */
     inline RunJobFlowRequest& WithLogEncryptionKmsKeyId(const char* value) { SetLogEncryptionKmsKeyId(value); return *this;}
 
@@ -635,7 +628,7 @@ namespace Model
      * arguments specifying "--edition,m3" or "--edition,m5" - launch the job flow
      * using MapR M3 or M5 Edition respectively.</p> </li> <li> <p>"mapr-m7" - launch
      * the cluster using MapR M7 Edition.</p> </li> <li> <p>"hunk" - launch the cluster
-     * with the Hunk Big Data Analtics Platform.</p> </li> <li> <p>"hue"- launch the
+     * with the Hunk Big Data Analytics Platform.</p> </li> <li> <p>"hue"- launch the
      * cluster with Hue installed.</p> </li> <li> <p>"spark" - launch the cluster with
      * Apache Spark installed.</p> </li> <li> <p>"ganglia" - launch the cluster with
      * the Ganglia Monitoring System installed.</p> </li> </ul>
@@ -656,7 +649,7 @@ namespace Model
      * arguments specifying "--edition,m3" or "--edition,m5" - launch the job flow
      * using MapR M3 or M5 Edition respectively.</p> </li> <li> <p>"mapr-m7" - launch
      * the cluster using MapR M7 Edition.</p> </li> <li> <p>"hunk" - launch the cluster
-     * with the Hunk Big Data Analtics Platform.</p> </li> <li> <p>"hue"- launch the
+     * with the Hunk Big Data Analytics Platform.</p> </li> <li> <p>"hue"- launch the
      * cluster with Hue installed.</p> </li> <li> <p>"spark" - launch the cluster with
      * Apache Spark installed.</p> </li> <li> <p>"ganglia" - launch the cluster with
      * the Ganglia Monitoring System installed.</p> </li> </ul>
@@ -677,7 +670,7 @@ namespace Model
      * arguments specifying "--edition,m3" or "--edition,m5" - launch the job flow
      * using MapR M3 or M5 Edition respectively.</p> </li> <li> <p>"mapr-m7" - launch
      * the cluster using MapR M7 Edition.</p> </li> <li> <p>"hunk" - launch the cluster
-     * with the Hunk Big Data Analtics Platform.</p> </li> <li> <p>"hue"- launch the
+     * with the Hunk Big Data Analytics Platform.</p> </li> <li> <p>"hue"- launch the
      * cluster with Hue installed.</p> </li> <li> <p>"spark" - launch the cluster with
      * Apache Spark installed.</p> </li> <li> <p>"ganglia" - launch the cluster with
      * the Ganglia Monitoring System installed.</p> </li> </ul>
@@ -698,7 +691,7 @@ namespace Model
      * arguments specifying "--edition,m3" or "--edition,m5" - launch the job flow
      * using MapR M3 or M5 Edition respectively.</p> </li> <li> <p>"mapr-m7" - launch
      * the cluster using MapR M7 Edition.</p> </li> <li> <p>"hunk" - launch the cluster
-     * with the Hunk Big Data Analtics Platform.</p> </li> <li> <p>"hue"- launch the
+     * with the Hunk Big Data Analytics Platform.</p> </li> <li> <p>"hue"- launch the
      * cluster with Hue installed.</p> </li> <li> <p>"spark" - launch the cluster with
      * Apache Spark installed.</p> </li> <li> <p>"ganglia" - launch the cluster with
      * the Ganglia Monitoring System installed.</p> </li> </ul>
@@ -719,7 +712,7 @@ namespace Model
      * arguments specifying "--edition,m3" or "--edition,m5" - launch the job flow
      * using MapR M3 or M5 Edition respectively.</p> </li> <li> <p>"mapr-m7" - launch
      * the cluster using MapR M7 Edition.</p> </li> <li> <p>"hunk" - launch the cluster
-     * with the Hunk Big Data Analtics Platform.</p> </li> <li> <p>"hue"- launch the
+     * with the Hunk Big Data Analytics Platform.</p> </li> <li> <p>"hue"- launch the
      * cluster with Hue installed.</p> </li> <li> <p>"spark" - launch the cluster with
      * Apache Spark installed.</p> </li> <li> <p>"ganglia" - launch the cluster with
      * the Ganglia Monitoring System installed.</p> </li> </ul>
@@ -740,7 +733,7 @@ namespace Model
      * arguments specifying "--edition,m3" or "--edition,m5" - launch the job flow
      * using MapR M3 or M5 Edition respectively.</p> </li> <li> <p>"mapr-m7" - launch
      * the cluster using MapR M7 Edition.</p> </li> <li> <p>"hunk" - launch the cluster
-     * with the Hunk Big Data Analtics Platform.</p> </li> <li> <p>"hue"- launch the
+     * with the Hunk Big Data Analytics Platform.</p> </li> <li> <p>"hue"- launch the
      * cluster with Hue installed.</p> </li> <li> <p>"spark" - launch the cluster with
      * Apache Spark installed.</p> </li> <li> <p>"ganglia" - launch the cluster with
      * the Ganglia Monitoring System installed.</p> </li> </ul>
@@ -761,7 +754,7 @@ namespace Model
      * arguments specifying "--edition,m3" or "--edition,m5" - launch the job flow
      * using MapR M3 or M5 Edition respectively.</p> </li> <li> <p>"mapr-m7" - launch
      * the cluster using MapR M7 Edition.</p> </li> <li> <p>"hunk" - launch the cluster
-     * with the Hunk Big Data Analtics Platform.</p> </li> <li> <p>"hue"- launch the
+     * with the Hunk Big Data Analytics Platform.</p> </li> <li> <p>"hue"- launch the
      * cluster with Hue installed.</p> </li> <li> <p>"spark" - launch the cluster with
      * Apache Spark installed.</p> </li> <li> <p>"ganglia" - launch the cluster with
      * the Ganglia Monitoring System installed.</p> </li> </ul>
@@ -782,7 +775,7 @@ namespace Model
      * arguments specifying "--edition,m3" or "--edition,m5" - launch the job flow
      * using MapR M3 or M5 Edition respectively.</p> </li> <li> <p>"mapr-m7" - launch
      * the cluster using MapR M7 Edition.</p> </li> <li> <p>"hunk" - launch the cluster
-     * with the Hunk Big Data Analtics Platform.</p> </li> <li> <p>"hue"- launch the
+     * with the Hunk Big Data Analytics Platform.</p> </li> <li> <p>"hue"- launch the
      * cluster with Hue installed.</p> </li> <li> <p>"spark" - launch the cluster with
      * Apache Spark installed.</p> </li> <li> <p>"ganglia" - launch the cluster with
      * the Ganglia Monitoring System installed.</p> </li> </ul>
@@ -794,8 +787,8 @@ namespace Model
      * <p>Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of
      * applications for Amazon EMR to install and configure when launching the cluster.
      * For a list of applications available for each Amazon EMR release version, see
-     * the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon EMR
-     * Release Guide</a>.</p>
+     * the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon
+     * EMRRelease Guide</a>.</p>
      */
     inline const Aws::Vector<Application>& GetApplications() const{ return m_applications; }
 
@@ -803,8 +796,8 @@ namespace Model
      * <p>Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of
      * applications for Amazon EMR to install and configure when launching the cluster.
      * For a list of applications available for each Amazon EMR release version, see
-     * the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon EMR
-     * Release Guide</a>.</p>
+     * the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon
+     * EMRRelease Guide</a>.</p>
      */
     inline bool ApplicationsHasBeenSet() const { return m_applicationsHasBeenSet; }
 
@@ -812,8 +805,8 @@ namespace Model
      * <p>Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of
      * applications for Amazon EMR to install and configure when launching the cluster.
      * For a list of applications available for each Amazon EMR release version, see
-     * the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon EMR
-     * Release Guide</a>.</p>
+     * the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon
+     * EMRRelease Guide</a>.</p>
      */
     inline void SetApplications(const Aws::Vector<Application>& value) { m_applicationsHasBeenSet = true; m_applications = value; }
 
@@ -821,8 +814,8 @@ namespace Model
      * <p>Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of
      * applications for Amazon EMR to install and configure when launching the cluster.
      * For a list of applications available for each Amazon EMR release version, see
-     * the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon EMR
-     * Release Guide</a>.</p>
+     * the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon
+     * EMRRelease Guide</a>.</p>
      */
     inline void SetApplications(Aws::Vector<Application>&& value) { m_applicationsHasBeenSet = true; m_applications = std::move(value); }
 
@@ -830,8 +823,8 @@ namespace Model
      * <p>Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of
      * applications for Amazon EMR to install and configure when launching the cluster.
      * For a list of applications available for each Amazon EMR release version, see
-     * the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon EMR
-     * Release Guide</a>.</p>
+     * the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon
+     * EMRRelease Guide</a>.</p>
      */
     inline RunJobFlowRequest& WithApplications(const Aws::Vector<Application>& value) { SetApplications(value); return *this;}
 
@@ -839,8 +832,8 @@ namespace Model
      * <p>Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of
      * applications for Amazon EMR to install and configure when launching the cluster.
      * For a list of applications available for each Amazon EMR release version, see
-     * the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon EMR
-     * Release Guide</a>.</p>
+     * the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon
+     * EMRRelease Guide</a>.</p>
      */
     inline RunJobFlowRequest& WithApplications(Aws::Vector<Application>&& value) { SetApplications(std::move(value)); return *this;}
 
@@ -848,8 +841,8 @@ namespace Model
      * <p>Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of
      * applications for Amazon EMR to install and configure when launching the cluster.
      * For a list of applications available for each Amazon EMR release version, see
-     * the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon EMR
-     * Release Guide</a>.</p>
+     * the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon
+     * EMRRelease Guide</a>.</p>
      */
     inline RunJobFlowRequest& AddApplications(const Application& value) { m_applicationsHasBeenSet = true; m_applications.push_back(value); return *this; }
 
@@ -857,8 +850,8 @@ namespace Model
      * <p>Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of
      * applications for Amazon EMR to install and configure when launching the cluster.
      * For a list of applications available for each Amazon EMR release version, see
-     * the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon EMR
-     * Release Guide</a>.</p>
+     * the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon
+     * EMRRelease Guide</a>.</p>
      */
     inline RunJobFlowRequest& AddApplications(Application&& value) { m_applicationsHasBeenSet = true; m_applications.push_back(std::move(value)); return *this; }
 
@@ -913,34 +906,78 @@ namespace Model
 
 
     /**
-     * <p>A value of <code>true</code> indicates that all IAM users in the AWS account
-     * can perform cluster actions if they have the proper IAM policy permissions. This
-     * is the default. A value of <code>false</code> indicates that only the IAM user
-     * who created the cluster can perform actions.</p>
+     *  <p>The VisibleToAllUsers parameter is no longer supported. By
+     * default, the value is set to <code>true</code>. Setting it to <code>false</code>
+     * now has no effect.</p>  <p>Set this value to <code>true</code> so
+     * that IAM principals in the Amazon Web Services account associated with the
+     * cluster can perform EMR actions on the cluster that their IAM policies allow.
+     * This value defaults to <code>true</code> for clusters created using the EMR API
+     * or the CLI <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a>
+     * command.</p> <p>When set to <code>false</code>, only the IAM principal that
+     * created the cluster and the Amazon Web Services account root user can perform
+     * EMR actions for the cluster, regardless of the IAM permissions policies attached
+     * to other IAM principals. For more information, see <a
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding
+     * the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement
+     * Guide</i>.</p>
      */
     inline bool GetVisibleToAllUsers() const{ return m_visibleToAllUsers; }
 
     /**
-     * <p>A value of <code>true</code> indicates that all IAM users in the AWS account
-     * can perform cluster actions if they have the proper IAM policy permissions. This
-     * is the default. A value of <code>false</code> indicates that only the IAM user
-     * who created the cluster can perform actions.</p>
+     *  <p>The VisibleToAllUsers parameter is no longer supported. By
+     * default, the value is set to <code>true</code>. Setting it to <code>false</code>
+     * now has no effect.</p>  <p>Set this value to <code>true</code> so
+     * that IAM principals in the Amazon Web Services account associated with the
+     * cluster can perform EMR actions on the cluster that their IAM policies allow.
+     * This value defaults to <code>true</code> for clusters created using the EMR API
+     * or the CLI <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a>
+     * command.</p> <p>When set to <code>false</code>, only the IAM principal that
+     * created the cluster and the Amazon Web Services account root user can perform
+     * EMR actions for the cluster, regardless of the IAM permissions policies attached
+     * to other IAM principals. For more information, see <a
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding
+     * the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement
+     * Guide</i>.</p>
      */
     inline bool VisibleToAllUsersHasBeenSet() const { return m_visibleToAllUsersHasBeenSet; }
 
     /**
-     * <p>A value of <code>true</code> indicates that all IAM users in the AWS account
-     * can perform cluster actions if they have the proper IAM policy permissions. This
-     * is the default. A value of <code>false</code> indicates that only the IAM user
-     * who created the cluster can perform actions.</p>
+     *  <p>The VisibleToAllUsers parameter is no longer supported. By
+     * default, the value is set to <code>true</code>. Setting it to <code>false</code>
+     * now has no effect.</p>  <p>Set this value to <code>true</code> so
+     * that IAM principals in the Amazon Web Services account associated with the
+     * cluster can perform EMR actions on the cluster that their IAM policies allow.
+     * This value defaults to <code>true</code> for clusters created using the EMR API
+     * or the CLI <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a>
+     * command.</p> <p>When set to <code>false</code>, only the IAM principal that
+     * created the cluster and the Amazon Web Services account root user can perform
+     * EMR actions for the cluster, regardless of the IAM permissions policies attached
+     * to other IAM principals. For more information, see <a
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding
+     * the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement
+     * Guide</i>.</p>
      */
     inline void SetVisibleToAllUsers(bool value) { m_visibleToAllUsersHasBeenSet = true; m_visibleToAllUsers = value; }
 
     /**
-     * <p>A value of <code>true</code> indicates that all IAM users in the AWS account
-     * can perform cluster actions if they have the proper IAM policy permissions. This
-     * is the default. A value of <code>false</code> indicates that only the IAM user
-     * who created the cluster can perform actions.</p>
+     *  <p>The VisibleToAllUsers parameter is no longer supported. By
+     * default, the value is set to <code>true</code>. Setting it to <code>false</code>
+     * now has no effect.</p>  <p>Set this value to <code>true</code> so
+     * that IAM principals in the Amazon Web Services account associated with the
+     * cluster can perform EMR actions on the cluster that their IAM policies allow.
+     * This value defaults to <code>true</code> for clusters created using the EMR API
+     * or the CLI <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a>
+     * command.</p> <p>When set to <code>false</code>, only the IAM principal that
+     * created the cluster and the Amazon Web Services account root user can perform
+     * EMR actions for the cluster, regardless of the IAM permissions policies attached
+     * to other IAM principals. For more information, see <a
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding
+     * the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement
+     * Guide</i>.</p>
      */
     inline RunJobFlowRequest& WithVisibleToAllUsers(bool value) { SetVisibleToAllUsers(value); return *this;}
 
@@ -1011,49 +1048,49 @@ namespace Model
 
 
     /**
-     * <p>The IAM role that will be assumed by the Amazon EMR service to access AWS
+     * <p>The IAM role that Amazon EMR assumes in order to access Amazon Web Services
      * resources on your behalf.</p>
      */
     inline const Aws::String& GetServiceRole() const{ return m_serviceRole; }
 
     /**
-     * <p>The IAM role that will be assumed by the Amazon EMR service to access AWS
+     * <p>The IAM role that Amazon EMR assumes in order to access Amazon Web Services
      * resources on your behalf.</p>
      */
     inline bool ServiceRoleHasBeenSet() const { return m_serviceRoleHasBeenSet; }
 
     /**
-     * <p>The IAM role that will be assumed by the Amazon EMR service to access AWS
+     * <p>The IAM role that Amazon EMR assumes in order to access Amazon Web Services
      * resources on your behalf.</p>
      */
     inline void SetServiceRole(const Aws::String& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = value; }
 
     /**
-     * <p>The IAM role that will be assumed by the Amazon EMR service to access AWS
+     * <p>The IAM role that Amazon EMR assumes in order to access Amazon Web Services
      * resources on your behalf.</p>
      */
     inline void SetServiceRole(Aws::String&& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = std::move(value); }
 
     /**
-     * <p>The IAM role that will be assumed by the Amazon EMR service to access AWS
+     * <p>The IAM role that Amazon EMR assumes in order to access Amazon Web Services
      * resources on your behalf.</p>
      */
     inline void SetServiceRole(const char* value) { m_serviceRoleHasBeenSet = true; m_serviceRole.assign(value); }
 
     /**
-     * <p>The IAM role that will be assumed by the Amazon EMR service to access AWS
+     * <p>The IAM role that Amazon EMR assumes in order to access Amazon Web Services
      * resources on your behalf.</p>
      */
     inline RunJobFlowRequest& WithServiceRole(const Aws::String& value) { SetServiceRole(value); return *this;}
 
     /**
-     * <p>The IAM role that will be assumed by the Amazon EMR service to access AWS
+     * <p>The IAM role that Amazon EMR assumes in order to access Amazon Web Services
      * resources on your behalf.</p>
      */
     inline RunJobFlowRequest& WithServiceRole(Aws::String&& value) { SetServiceRole(std::move(value)); return *this;}
 
     /**
-     * <p>The IAM role that will be assumed by the Amazon EMR service to access AWS
+     * <p>The IAM role that Amazon EMR assumes in order to access Amazon Web Services
      * resources on your behalf.</p>
      */
     inline RunJobFlowRequest& WithServiceRole(const char* value) { SetServiceRole(value); return *this;}
@@ -1691,6 +1728,82 @@ namespace Model
      */
     inline RunJobFlowRequest& AddPlacementGroupConfigs(PlacementGroupConfig&& value) { m_placementGroupConfigsHasBeenSet = true; m_placementGroupConfigs.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const AutoTerminationPolicy& GetAutoTerminationPolicy() const{ return m_autoTerminationPolicy; }
+
+    
+    inline bool AutoTerminationPolicyHasBeenSet() const { return m_autoTerminationPolicyHasBeenSet; }
+
+    
+    inline void SetAutoTerminationPolicy(const AutoTerminationPolicy& value) { m_autoTerminationPolicyHasBeenSet = true; m_autoTerminationPolicy = value; }
+
+    
+    inline void SetAutoTerminationPolicy(AutoTerminationPolicy&& value) { m_autoTerminationPolicyHasBeenSet = true; m_autoTerminationPolicy = std::move(value); }
+
+    
+    inline RunJobFlowRequest& WithAutoTerminationPolicy(const AutoTerminationPolicy& value) { SetAutoTerminationPolicy(value); return *this;}
+
+    
+    inline RunJobFlowRequest& WithAutoTerminationPolicy(AutoTerminationPolicy&& value) { SetAutoTerminationPolicy(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies a particular Amazon Linux release for all nodes in a cluster launch
+     * RunJobFlow request. If a release is not specified, Amazon EMR uses the latest
+     * validated Amazon Linux release for cluster launch.</p>
+     */
+    inline const Aws::String& GetOSReleaseLabel() const{ return m_oSReleaseLabel; }
+
+    /**
+     * <p>Specifies a particular Amazon Linux release for all nodes in a cluster launch
+     * RunJobFlow request. If a release is not specified, Amazon EMR uses the latest
+     * validated Amazon Linux release for cluster launch.</p>
+     */
+    inline bool OSReleaseLabelHasBeenSet() const { return m_oSReleaseLabelHasBeenSet; }
+
+    /**
+     * <p>Specifies a particular Amazon Linux release for all nodes in a cluster launch
+     * RunJobFlow request. If a release is not specified, Amazon EMR uses the latest
+     * validated Amazon Linux release for cluster launch.</p>
+     */
+    inline void SetOSReleaseLabel(const Aws::String& value) { m_oSReleaseLabelHasBeenSet = true; m_oSReleaseLabel = value; }
+
+    /**
+     * <p>Specifies a particular Amazon Linux release for all nodes in a cluster launch
+     * RunJobFlow request. If a release is not specified, Amazon EMR uses the latest
+     * validated Amazon Linux release for cluster launch.</p>
+     */
+    inline void SetOSReleaseLabel(Aws::String&& value) { m_oSReleaseLabelHasBeenSet = true; m_oSReleaseLabel = std::move(value); }
+
+    /**
+     * <p>Specifies a particular Amazon Linux release for all nodes in a cluster launch
+     * RunJobFlow request. If a release is not specified, Amazon EMR uses the latest
+     * validated Amazon Linux release for cluster launch.</p>
+     */
+    inline void SetOSReleaseLabel(const char* value) { m_oSReleaseLabelHasBeenSet = true; m_oSReleaseLabel.assign(value); }
+
+    /**
+     * <p>Specifies a particular Amazon Linux release for all nodes in a cluster launch
+     * RunJobFlow request. If a release is not specified, Amazon EMR uses the latest
+     * validated Amazon Linux release for cluster launch.</p>
+     */
+    inline RunJobFlowRequest& WithOSReleaseLabel(const Aws::String& value) { SetOSReleaseLabel(value); return *this;}
+
+    /**
+     * <p>Specifies a particular Amazon Linux release for all nodes in a cluster launch
+     * RunJobFlow request. If a release is not specified, Amazon EMR uses the latest
+     * validated Amazon Linux release for cluster launch.</p>
+     */
+    inline RunJobFlowRequest& WithOSReleaseLabel(Aws::String&& value) { SetOSReleaseLabel(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies a particular Amazon Linux release for all nodes in a cluster launch
+     * RunJobFlow request. If a release is not specified, Amazon EMR uses the latest
+     * validated Amazon Linux release for cluster launch.</p>
+     */
+    inline RunJobFlowRequest& WithOSReleaseLabel(const char* value) { SetOSReleaseLabel(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -1773,6 +1886,12 @@ namespace Model
 
     Aws::Vector<PlacementGroupConfig> m_placementGroupConfigs;
     bool m_placementGroupConfigsHasBeenSet;
+
+    AutoTerminationPolicy m_autoTerminationPolicy;
+    bool m_autoTerminationPolicyHasBeenSet;
+
+    Aws::String m_oSReleaseLabel;
+    bool m_oSReleaseLabelHasBeenSet;
   };
 
 } // namespace Model

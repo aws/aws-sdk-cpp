@@ -30,6 +30,8 @@ M2tsSettings::M2tsSettings() :
     m_bitrateHasBeenSet(false),
     m_bufferModel(M2tsBufferModel::NOT_SET),
     m_bufferModelHasBeenSet(false),
+    m_dataPTSControl(M2tsDataPtsControl::NOT_SET),
+    m_dataPTSControlHasBeenSet(false),
     m_dvbNitSettingsHasBeenSet(false),
     m_dvbSdtSettingsHasBeenSet(false),
     m_dvbSubPidsHasBeenSet(false),
@@ -46,6 +48,8 @@ M2tsSettings::M2tsSettings() :
     m_forceTsVideoEbpOrderHasBeenSet(false),
     m_fragmentTime(0.0),
     m_fragmentTimeHasBeenSet(false),
+    m_klvMetadata(M2tsKlvMetadata::NOT_SET),
+    m_klvMetadataHasBeenSet(false),
     m_maxPcrInterval(0),
     m_maxPcrIntervalHasBeenSet(false),
     m_minEbpInterval(0),
@@ -102,6 +106,8 @@ M2tsSettings::M2tsSettings(JsonView jsonValue) :
     m_bitrateHasBeenSet(false),
     m_bufferModel(M2tsBufferModel::NOT_SET),
     m_bufferModelHasBeenSet(false),
+    m_dataPTSControl(M2tsDataPtsControl::NOT_SET),
+    m_dataPTSControlHasBeenSet(false),
     m_dvbNitSettingsHasBeenSet(false),
     m_dvbSdtSettingsHasBeenSet(false),
     m_dvbSubPidsHasBeenSet(false),
@@ -118,6 +124,8 @@ M2tsSettings::M2tsSettings(JsonView jsonValue) :
     m_forceTsVideoEbpOrderHasBeenSet(false),
     m_fragmentTime(0.0),
     m_fragmentTimeHasBeenSet(false),
+    m_klvMetadata(M2tsKlvMetadata::NOT_SET),
+    m_klvMetadataHasBeenSet(false),
     m_maxPcrInterval(0),
     m_maxPcrIntervalHasBeenSet(false),
     m_minEbpInterval(0),
@@ -210,6 +218,13 @@ M2tsSettings& M2tsSettings::operator =(JsonView jsonValue)
     m_bufferModelHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("dataPTSControl"))
+  {
+    m_dataPTSControl = M2tsDataPtsControlMapper::GetM2tsDataPtsControlForName(jsonValue.GetString("dataPTSControl"));
+
+    m_dataPTSControlHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("dvbNitSettings"))
   {
     m_dvbNitSettings = jsonValue.GetObject("dvbNitSettings");
@@ -281,6 +296,13 @@ M2tsSettings& M2tsSettings::operator =(JsonView jsonValue)
     m_fragmentTime = jsonValue.GetDouble("fragmentTime");
 
     m_fragmentTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("klvMetadata"))
+  {
+    m_klvMetadata = M2tsKlvMetadataMapper::GetM2tsKlvMetadataForName(jsonValue.GetString("klvMetadata"));
+
+    m_klvMetadataHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("maxPcrInterval"))
@@ -475,6 +497,11 @@ JsonValue M2tsSettings::Jsonize() const
    payload.WithString("bufferModel", M2tsBufferModelMapper::GetNameForM2tsBufferModel(m_bufferModel));
   }
 
+  if(m_dataPTSControlHasBeenSet)
+  {
+   payload.WithString("dataPTSControl", M2tsDataPtsControlMapper::GetNameForM2tsDataPtsControl(m_dataPTSControl));
+  }
+
   if(m_dvbNitSettingsHasBeenSet)
   {
    payload.WithObject("dvbNitSettings", m_dvbNitSettings.Jsonize());
@@ -534,6 +561,11 @@ JsonValue M2tsSettings::Jsonize() const
   {
    payload.WithDouble("fragmentTime", m_fragmentTime);
 
+  }
+
+  if(m_klvMetadataHasBeenSet)
+  {
+   payload.WithString("klvMetadata", M2tsKlvMetadataMapper::GetNameForM2tsKlvMetadata(m_klvMetadata));
   }
 
   if(m_maxPcrIntervalHasBeenSet)

@@ -22,6 +22,7 @@ DimensionKeyDescription::DimensionKeyDescription() :
     m_dimensionsHasBeenSet(false),
     m_total(0.0),
     m_totalHasBeenSet(false),
+    m_additionalMetricsHasBeenSet(false),
     m_partitionsHasBeenSet(false)
 {
 }
@@ -30,6 +31,7 @@ DimensionKeyDescription::DimensionKeyDescription(JsonView jsonValue) :
     m_dimensionsHasBeenSet(false),
     m_total(0.0),
     m_totalHasBeenSet(false),
+    m_additionalMetricsHasBeenSet(false),
     m_partitionsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -52,6 +54,16 @@ DimensionKeyDescription& DimensionKeyDescription::operator =(JsonView jsonValue)
     m_total = jsonValue.GetDouble("Total");
 
     m_totalHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AdditionalMetrics"))
+  {
+    Aws::Map<Aws::String, JsonView> additionalMetricsJsonMap = jsonValue.GetObject("AdditionalMetrics").GetAllObjects();
+    for(auto& additionalMetricsItem : additionalMetricsJsonMap)
+    {
+      m_additionalMetrics[additionalMetricsItem.first] = additionalMetricsItem.second.AsDouble();
+    }
+    m_additionalMetricsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Partitions"))
@@ -85,6 +97,17 @@ JsonValue DimensionKeyDescription::Jsonize() const
   if(m_totalHasBeenSet)
   {
    payload.WithDouble("Total", m_total);
+
+  }
+
+  if(m_additionalMetricsHasBeenSet)
+  {
+   JsonValue additionalMetricsJsonMap;
+   for(auto& additionalMetricsItem : m_additionalMetrics)
+   {
+     additionalMetricsJsonMap.WithDouble(additionalMetricsItem.first, additionalMetricsItem.second);
+   }
+   payload.WithObject("AdditionalMetrics", std::move(additionalMetricsJsonMap));
 
   }
 

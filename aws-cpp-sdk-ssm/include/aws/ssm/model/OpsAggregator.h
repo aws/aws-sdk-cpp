@@ -9,7 +9,6 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ssm/model/OpsFilter.h>
-#include <aws/ssm/model/OpsAggregator.h>
 #include <utility>
 
 namespace Aws
@@ -28,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>One or more aggregators for viewing counts of OpsItems using different
+   * <p>One or more aggregators for viewing counts of OpsData using different
    * dimensions such as <code>Source</code>, <code>CreatedTime</code>, or
    * <code>Source and CreatedTime</code>, to name a few.</p><p><h3>See Also:</h3>  
    * <a
@@ -45,124 +44,132 @@ namespace Model
 
 
     /**
-     * <p>Either a Range or Count aggregator for limiting an OpsItem summary.</p>
+     * <p>Either a <code>Range</code> or <code>Count</code> aggregator for limiting an
+     * OpsData summary.</p>
      */
     inline const Aws::String& GetAggregatorType() const{ return m_aggregatorType; }
 
     /**
-     * <p>Either a Range or Count aggregator for limiting an OpsItem summary.</p>
+     * <p>Either a <code>Range</code> or <code>Count</code> aggregator for limiting an
+     * OpsData summary.</p>
      */
     inline bool AggregatorTypeHasBeenSet() const { return m_aggregatorTypeHasBeenSet; }
 
     /**
-     * <p>Either a Range or Count aggregator for limiting an OpsItem summary.</p>
+     * <p>Either a <code>Range</code> or <code>Count</code> aggregator for limiting an
+     * OpsData summary.</p>
      */
     inline void SetAggregatorType(const Aws::String& value) { m_aggregatorTypeHasBeenSet = true; m_aggregatorType = value; }
 
     /**
-     * <p>Either a Range or Count aggregator for limiting an OpsItem summary.</p>
+     * <p>Either a <code>Range</code> or <code>Count</code> aggregator for limiting an
+     * OpsData summary.</p>
      */
     inline void SetAggregatorType(Aws::String&& value) { m_aggregatorTypeHasBeenSet = true; m_aggregatorType = std::move(value); }
 
     /**
-     * <p>Either a Range or Count aggregator for limiting an OpsItem summary.</p>
+     * <p>Either a <code>Range</code> or <code>Count</code> aggregator for limiting an
+     * OpsData summary.</p>
      */
     inline void SetAggregatorType(const char* value) { m_aggregatorTypeHasBeenSet = true; m_aggregatorType.assign(value); }
 
     /**
-     * <p>Either a Range or Count aggregator for limiting an OpsItem summary.</p>
+     * <p>Either a <code>Range</code> or <code>Count</code> aggregator for limiting an
+     * OpsData summary.</p>
      */
     inline OpsAggregator& WithAggregatorType(const Aws::String& value) { SetAggregatorType(value); return *this;}
 
     /**
-     * <p>Either a Range or Count aggregator for limiting an OpsItem summary.</p>
+     * <p>Either a <code>Range</code> or <code>Count</code> aggregator for limiting an
+     * OpsData summary.</p>
      */
     inline OpsAggregator& WithAggregatorType(Aws::String&& value) { SetAggregatorType(std::move(value)); return *this;}
 
     /**
-     * <p>Either a Range or Count aggregator for limiting an OpsItem summary.</p>
+     * <p>Either a <code>Range</code> or <code>Count</code> aggregator for limiting an
+     * OpsData summary.</p>
      */
     inline OpsAggregator& WithAggregatorType(const char* value) { SetAggregatorType(value); return *this;}
 
 
     /**
-     * <p>The data type name to use for viewing counts of OpsItems.</p>
+     * <p>The data type name to use for viewing counts of OpsData.</p>
      */
     inline const Aws::String& GetTypeName() const{ return m_typeName; }
 
     /**
-     * <p>The data type name to use for viewing counts of OpsItems.</p>
+     * <p>The data type name to use for viewing counts of OpsData.</p>
      */
     inline bool TypeNameHasBeenSet() const { return m_typeNameHasBeenSet; }
 
     /**
-     * <p>The data type name to use for viewing counts of OpsItems.</p>
+     * <p>The data type name to use for viewing counts of OpsData.</p>
      */
     inline void SetTypeName(const Aws::String& value) { m_typeNameHasBeenSet = true; m_typeName = value; }
 
     /**
-     * <p>The data type name to use for viewing counts of OpsItems.</p>
+     * <p>The data type name to use for viewing counts of OpsData.</p>
      */
     inline void SetTypeName(Aws::String&& value) { m_typeNameHasBeenSet = true; m_typeName = std::move(value); }
 
     /**
-     * <p>The data type name to use for viewing counts of OpsItems.</p>
+     * <p>The data type name to use for viewing counts of OpsData.</p>
      */
     inline void SetTypeName(const char* value) { m_typeNameHasBeenSet = true; m_typeName.assign(value); }
 
     /**
-     * <p>The data type name to use for viewing counts of OpsItems.</p>
+     * <p>The data type name to use for viewing counts of OpsData.</p>
      */
     inline OpsAggregator& WithTypeName(const Aws::String& value) { SetTypeName(value); return *this;}
 
     /**
-     * <p>The data type name to use for viewing counts of OpsItems.</p>
+     * <p>The data type name to use for viewing counts of OpsData.</p>
      */
     inline OpsAggregator& WithTypeName(Aws::String&& value) { SetTypeName(std::move(value)); return *this;}
 
     /**
-     * <p>The data type name to use for viewing counts of OpsItems.</p>
+     * <p>The data type name to use for viewing counts of OpsData.</p>
      */
     inline OpsAggregator& WithTypeName(const char* value) { SetTypeName(value); return *this;}
 
 
     /**
-     * <p>The name of an OpsItem attribute on which to limit the count of OpsItems.</p>
+     * <p>The name of an OpsData attribute on which to limit the count of OpsData.</p>
      */
     inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
 
     /**
-     * <p>The name of an OpsItem attribute on which to limit the count of OpsItems.</p>
+     * <p>The name of an OpsData attribute on which to limit the count of OpsData.</p>
      */
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
 
     /**
-     * <p>The name of an OpsItem attribute on which to limit the count of OpsItems.</p>
+     * <p>The name of an OpsData attribute on which to limit the count of OpsData.</p>
      */
     inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
 
     /**
-     * <p>The name of an OpsItem attribute on which to limit the count of OpsItems.</p>
+     * <p>The name of an OpsData attribute on which to limit the count of OpsData.</p>
      */
     inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
 
     /**
-     * <p>The name of an OpsItem attribute on which to limit the count of OpsItems.</p>
+     * <p>The name of an OpsData attribute on which to limit the count of OpsData.</p>
      */
     inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
 
     /**
-     * <p>The name of an OpsItem attribute on which to limit the count of OpsItems.</p>
+     * <p>The name of an OpsData attribute on which to limit the count of OpsData.</p>
      */
     inline OpsAggregator& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
 
     /**
-     * <p>The name of an OpsItem attribute on which to limit the count of OpsItems.</p>
+     * <p>The name of an OpsData attribute on which to limit the count of OpsData.</p>
      */
     inline OpsAggregator& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of an OpsItem attribute on which to limit the count of OpsItems.</p>
+     * <p>The name of an OpsData attribute on which to limit the count of OpsData.</p>
      */
     inline OpsAggregator& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
 
@@ -275,42 +282,42 @@ namespace Model
 
 
     /**
-     * <p>A nested aggregator for viewing counts of OpsItems.</p>
+     * <p>A nested aggregator for viewing counts of OpsData.</p>
      */
     inline const Aws::Vector<OpsAggregator>& GetAggregators() const{ return m_aggregators; }
 
     /**
-     * <p>A nested aggregator for viewing counts of OpsItems.</p>
+     * <p>A nested aggregator for viewing counts of OpsData.</p>
      */
     inline bool AggregatorsHasBeenSet() const { return m_aggregatorsHasBeenSet; }
 
     /**
-     * <p>A nested aggregator for viewing counts of OpsItems.</p>
+     * <p>A nested aggregator for viewing counts of OpsData.</p>
      */
     inline void SetAggregators(const Aws::Vector<OpsAggregator>& value) { m_aggregatorsHasBeenSet = true; m_aggregators = value; }
 
     /**
-     * <p>A nested aggregator for viewing counts of OpsItems.</p>
+     * <p>A nested aggregator for viewing counts of OpsData.</p>
      */
     inline void SetAggregators(Aws::Vector<OpsAggregator>&& value) { m_aggregatorsHasBeenSet = true; m_aggregators = std::move(value); }
 
     /**
-     * <p>A nested aggregator for viewing counts of OpsItems.</p>
+     * <p>A nested aggregator for viewing counts of OpsData.</p>
      */
     inline OpsAggregator& WithAggregators(const Aws::Vector<OpsAggregator>& value) { SetAggregators(value); return *this;}
 
     /**
-     * <p>A nested aggregator for viewing counts of OpsItems.</p>
+     * <p>A nested aggregator for viewing counts of OpsData.</p>
      */
     inline OpsAggregator& WithAggregators(Aws::Vector<OpsAggregator>&& value) { SetAggregators(std::move(value)); return *this;}
 
     /**
-     * <p>A nested aggregator for viewing counts of OpsItems.</p>
+     * <p>A nested aggregator for viewing counts of OpsData.</p>
      */
     inline OpsAggregator& AddAggregators(const OpsAggregator& value) { m_aggregatorsHasBeenSet = true; m_aggregators.push_back(value); return *this; }
 
     /**
-     * <p>A nested aggregator for viewing counts of OpsItems.</p>
+     * <p>A nested aggregator for viewing counts of OpsData.</p>
      */
     inline OpsAggregator& AddAggregators(OpsAggregator&& value) { m_aggregatorsHasBeenSet = true; m_aggregators.push_back(std::move(value)); return *this; }
 

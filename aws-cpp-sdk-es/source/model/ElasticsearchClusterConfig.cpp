@@ -37,7 +37,8 @@ ElasticsearchClusterConfig::ElasticsearchClusterConfig() :
     m_warmType(ESWarmPartitionInstanceType::NOT_SET),
     m_warmTypeHasBeenSet(false),
     m_warmCount(0),
-    m_warmCountHasBeenSet(false)
+    m_warmCountHasBeenSet(false),
+    m_coldStorageOptionsHasBeenSet(false)
 {
 }
 
@@ -60,7 +61,8 @@ ElasticsearchClusterConfig::ElasticsearchClusterConfig(JsonView jsonValue) :
     m_warmType(ESWarmPartitionInstanceType::NOT_SET),
     m_warmTypeHasBeenSet(false),
     m_warmCount(0),
-    m_warmCountHasBeenSet(false)
+    m_warmCountHasBeenSet(false),
+    m_coldStorageOptionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -137,6 +139,13 @@ ElasticsearchClusterConfig& ElasticsearchClusterConfig::operator =(JsonView json
     m_warmCountHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ColdStorageOptions"))
+  {
+    m_coldStorageOptions = jsonValue.GetObject("ColdStorageOptions");
+
+    m_coldStorageOptionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -198,6 +207,12 @@ JsonValue ElasticsearchClusterConfig::Jsonize() const
   if(m_warmCountHasBeenSet)
   {
    payload.WithInteger("WarmCount", m_warmCount);
+
+  }
+
+  if(m_coldStorageOptionsHasBeenSet)
+  {
+   payload.WithObject("ColdStorageOptions", m_coldStorageOptions.Jsonize());
 
   }
 

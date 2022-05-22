@@ -20,7 +20,8 @@ ListJobsRequest::ListJobsRequest() :
     m_jobStatusHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -60,6 +61,17 @@ Aws::String ListJobsRequest::SerializePayload() const
   if(m_nextTokenHasBeenSet)
   {
    payload.WithString("nextToken", m_nextToken);
+
+  }
+
+  if(m_filtersHasBeenSet)
+  {
+   Array<JsonValue> filtersJsonList(m_filters.size());
+   for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
+   {
+     filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());
+   }
+   payload.WithArray("filters", std::move(filtersJsonList));
 
   }
 

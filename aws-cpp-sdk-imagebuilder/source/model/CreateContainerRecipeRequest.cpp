@@ -19,6 +19,7 @@ CreateContainerRecipeRequest::CreateContainerRecipeRequest() :
     m_descriptionHasBeenSet(false),
     m_semanticVersionHasBeenSet(false),
     m_componentsHasBeenSet(false),
+    m_instanceConfigurationHasBeenSet(false),
     m_dockerfileTemplateDataHasBeenSet(false),
     m_dockerfileTemplateUriHasBeenSet(false),
     m_platformOverride(Platform::NOT_SET),
@@ -69,6 +70,12 @@ Aws::String CreateContainerRecipeRequest::SerializePayload() const
      componentsJsonList[componentsIndex].AsObject(m_components[componentsIndex].Jsonize());
    }
    payload.WithArray("components", std::move(componentsJsonList));
+
+  }
+
+  if(m_instanceConfigurationHasBeenSet)
+  {
+   payload.WithObject("instanceConfiguration", m_instanceConfiguration.Jsonize());
 
   }
 

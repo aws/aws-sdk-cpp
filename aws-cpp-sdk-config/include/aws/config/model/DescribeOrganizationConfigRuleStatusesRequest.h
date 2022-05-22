@@ -36,94 +36,94 @@ namespace Model
 
 
     /**
-     * <p>The names of organization config rules for which you want status details. If
-     * you do not specify any names, AWS Config returns details for all your
-     * organization AWS Confg rules.</p>
+     * <p>The names of organization Config rules for which you want status details. If
+     * you do not specify any names, Config returns details for all your organization
+     * Config rules.</p>
      */
     inline const Aws::Vector<Aws::String>& GetOrganizationConfigRuleNames() const{ return m_organizationConfigRuleNames; }
 
     /**
-     * <p>The names of organization config rules for which you want status details. If
-     * you do not specify any names, AWS Config returns details for all your
-     * organization AWS Confg rules.</p>
+     * <p>The names of organization Config rules for which you want status details. If
+     * you do not specify any names, Config returns details for all your organization
+     * Config rules.</p>
      */
     inline bool OrganizationConfigRuleNamesHasBeenSet() const { return m_organizationConfigRuleNamesHasBeenSet; }
 
     /**
-     * <p>The names of organization config rules for which you want status details. If
-     * you do not specify any names, AWS Config returns details for all your
-     * organization AWS Confg rules.</p>
+     * <p>The names of organization Config rules for which you want status details. If
+     * you do not specify any names, Config returns details for all your organization
+     * Config rules.</p>
      */
     inline void SetOrganizationConfigRuleNames(const Aws::Vector<Aws::String>& value) { m_organizationConfigRuleNamesHasBeenSet = true; m_organizationConfigRuleNames = value; }
 
     /**
-     * <p>The names of organization config rules for which you want status details. If
-     * you do not specify any names, AWS Config returns details for all your
-     * organization AWS Confg rules.</p>
+     * <p>The names of organization Config rules for which you want status details. If
+     * you do not specify any names, Config returns details for all your organization
+     * Config rules.</p>
      */
     inline void SetOrganizationConfigRuleNames(Aws::Vector<Aws::String>&& value) { m_organizationConfigRuleNamesHasBeenSet = true; m_organizationConfigRuleNames = std::move(value); }
 
     /**
-     * <p>The names of organization config rules for which you want status details. If
-     * you do not specify any names, AWS Config returns details for all your
-     * organization AWS Confg rules.</p>
+     * <p>The names of organization Config rules for which you want status details. If
+     * you do not specify any names, Config returns details for all your organization
+     * Config rules.</p>
      */
     inline DescribeOrganizationConfigRuleStatusesRequest& WithOrganizationConfigRuleNames(const Aws::Vector<Aws::String>& value) { SetOrganizationConfigRuleNames(value); return *this;}
 
     /**
-     * <p>The names of organization config rules for which you want status details. If
-     * you do not specify any names, AWS Config returns details for all your
-     * organization AWS Confg rules.</p>
+     * <p>The names of organization Config rules for which you want status details. If
+     * you do not specify any names, Config returns details for all your organization
+     * Config rules.</p>
      */
     inline DescribeOrganizationConfigRuleStatusesRequest& WithOrganizationConfigRuleNames(Aws::Vector<Aws::String>&& value) { SetOrganizationConfigRuleNames(std::move(value)); return *this;}
 
     /**
-     * <p>The names of organization config rules for which you want status details. If
-     * you do not specify any names, AWS Config returns details for all your
-     * organization AWS Confg rules.</p>
+     * <p>The names of organization Config rules for which you want status details. If
+     * you do not specify any names, Config returns details for all your organization
+     * Config rules.</p>
      */
     inline DescribeOrganizationConfigRuleStatusesRequest& AddOrganizationConfigRuleNames(const Aws::String& value) { m_organizationConfigRuleNamesHasBeenSet = true; m_organizationConfigRuleNames.push_back(value); return *this; }
 
     /**
-     * <p>The names of organization config rules for which you want status details. If
-     * you do not specify any names, AWS Config returns details for all your
-     * organization AWS Confg rules.</p>
+     * <p>The names of organization Config rules for which you want status details. If
+     * you do not specify any names, Config returns details for all your organization
+     * Config rules.</p>
      */
     inline DescribeOrganizationConfigRuleStatusesRequest& AddOrganizationConfigRuleNames(Aws::String&& value) { m_organizationConfigRuleNamesHasBeenSet = true; m_organizationConfigRuleNames.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The names of organization config rules for which you want status details. If
-     * you do not specify any names, AWS Config returns details for all your
-     * organization AWS Confg rules.</p>
+     * <p>The names of organization Config rules for which you want status details. If
+     * you do not specify any names, Config returns details for all your organization
+     * Config rules.</p>
      */
     inline DescribeOrganizationConfigRuleStatusesRequest& AddOrganizationConfigRuleNames(const char* value) { m_organizationConfigRuleNamesHasBeenSet = true; m_organizationConfigRuleNames.push_back(value); return *this; }
 
 
     /**
      * <p>The maximum number of <code>OrganizationConfigRuleStatuses</code> returned on
-     * each page. If you do no specify a number, AWS Config uses the default. The
-     * default is 100.</p>
+     * each page. If you do no specify a number, Config uses the default. The default
+     * is 100.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
      * <p>The maximum number of <code>OrganizationConfigRuleStatuses</code> returned on
-     * each page. If you do no specify a number, AWS Config uses the default. The
-     * default is 100.</p>
+     * each page. If you do no specify a number, Config uses the default. The default
+     * is 100.</p>
      */
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
      * <p>The maximum number of <code>OrganizationConfigRuleStatuses</code> returned on
-     * each page. If you do no specify a number, AWS Config uses the default. The
-     * default is 100.</p>
+     * each page. If you do no specify a number, Config uses the default. The default
+     * is 100.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
      * <p>The maximum number of <code>OrganizationConfigRuleStatuses</code> returned on
-     * each page. If you do no specify a number, AWS Config uses the default. The
-     * default is 100.</p>
+     * each page. If you do no specify a number, Config uses the default. The default
+     * is 100.</p>
      */
     inline DescribeOrganizationConfigRuleStatusesRequest& WithLimit(int value) { SetLimit(value); return *this;}
 

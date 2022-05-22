@@ -29,7 +29,7 @@ namespace Model
 
   /**
    * <p>The values to use to filter results from the <a
-   * href="https://docs.aws.amazon.com/health/latest/APIReference/API_EntityFilter.html">EntityFilter</a>
+   * href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedEntities.html">DescribeAffectedEntities</a>
    * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/EntityFilter">AWS
    * API Reference</a></p>

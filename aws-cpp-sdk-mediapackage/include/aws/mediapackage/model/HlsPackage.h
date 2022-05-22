@@ -240,6 +240,31 @@ that is greater
 
 
     /**
+     * When enabled, MediaPackage passes through digital video broadcasting (DVB)
+     * subtitles into the output.
+     */
+    inline bool GetIncludeDvbSubtitles() const{ return m_includeDvbSubtitles; }
+
+    /**
+     * When enabled, MediaPackage passes through digital video broadcasting (DVB)
+     * subtitles into the output.
+     */
+    inline bool IncludeDvbSubtitlesHasBeenSet() const { return m_includeDvbSubtitlesHasBeenSet; }
+
+    /**
+     * When enabled, MediaPackage passes through digital video broadcasting (DVB)
+     * subtitles into the output.
+     */
+    inline void SetIncludeDvbSubtitles(bool value) { m_includeDvbSubtitlesHasBeenSet = true; m_includeDvbSubtitles = value; }
+
+    /**
+     * When enabled, MediaPackage passes through digital video broadcasting (DVB)
+     * subtitles into the output.
+     */
+    inline HlsPackage& WithIncludeDvbSubtitles(bool value) { SetIncludeDvbSubtitles(value); return *this;}
+
+
+    /**
      * When enabled, an I-Frame only stream will be included in the output.
      */
     inline bool GetIncludeIframeOnlyStream() const{ return m_includeIframeOnlyStream; }
@@ -512,6 +537,9 @@ rounded to the
 
     HlsEncryption m_encryption;
     bool m_encryptionHasBeenSet;
+
+    bool m_includeDvbSubtitles;
+    bool m_includeDvbSubtitlesHasBeenSet;
 
     bool m_includeIframeOnlyStream;
     bool m_includeIframeOnlyStreamHasBeenSet;

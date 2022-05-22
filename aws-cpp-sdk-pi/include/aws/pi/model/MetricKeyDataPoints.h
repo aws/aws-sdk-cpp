@@ -41,32 +41,32 @@ namespace Model
 
 
     /**
-     * <p>The dimension(s) to which the data points apply.</p>
+     * <p>The dimensions to which the data points apply.</p>
      */
     inline const ResponseResourceMetricKey& GetKey() const{ return m_key; }
 
     /**
-     * <p>The dimension(s) to which the data points apply.</p>
+     * <p>The dimensions to which the data points apply.</p>
      */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
-     * <p>The dimension(s) to which the data points apply.</p>
+     * <p>The dimensions to which the data points apply.</p>
      */
     inline void SetKey(const ResponseResourceMetricKey& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
-     * <p>The dimension(s) to which the data points apply.</p>
+     * <p>The dimensions to which the data points apply.</p>
      */
     inline void SetKey(ResponseResourceMetricKey&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
-     * <p>The dimension(s) to which the data points apply.</p>
+     * <p>The dimensions to which the data points apply.</p>
      */
     inline MetricKeyDataPoints& WithKey(const ResponseResourceMetricKey& value) { SetKey(value); return *this;}
 
     /**
-     * <p>The dimension(s) to which the data points apply.</p>
+     * <p>The dimensions to which the data points apply.</p>
      */
     inline MetricKeyDataPoints& WithKey(ResponseResourceMetricKey&& value) { SetKey(std::move(value)); return *this;}
 

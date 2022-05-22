@@ -36,26 +36,26 @@ namespace Model
 
 
     /**
-     * <p>The size of the volume, in GiB. The maximum size is <code>16384</code> GiB
-     * (16 TiB).</p>
+     * <p>The size of the volume, in GiB. The maximum size is <code>65536</code> GiB
+     * (64 TiB).</p>
      */
     inline long long GetVolumeSize() const{ return m_volumeSize; }
 
     /**
-     * <p>The size of the volume, in GiB. The maximum size is <code>16384</code> GiB
-     * (16 TiB).</p>
+     * <p>The size of the volume, in GiB. The maximum size is <code>65536</code> GiB
+     * (64 TiB).</p>
      */
     inline bool VolumeSizeHasBeenSet() const { return m_volumeSizeHasBeenSet; }
 
     /**
-     * <p>The size of the volume, in GiB. The maximum size is <code>16384</code> GiB
-     * (16 TiB).</p>
+     * <p>The size of the volume, in GiB. The maximum size is <code>65536</code> GiB
+     * (64 TiB).</p>
      */
     inline void SetVolumeSize(long long value) { m_volumeSizeHasBeenSet = true; m_volumeSize = value; }
 
     /**
-     * <p>The size of the volume, in GiB. The maximum size is <code>16384</code> GiB
-     * (16 TiB).</p>
+     * <p>The size of the volume, in GiB. The maximum size is <code>65536</code> GiB
+     * (64 TiB).</p>
      */
     inline StartSnapshotRequest& WithVolumeSize(long long value) { SetVolumeSize(value); return *this;}
 
@@ -63,80 +63,176 @@ namespace Model
     /**
      * <p>The ID of the parent snapshot. If there is no parent snapshot, or if you are
      * creating the first snapshot for an on-premises volume, omit this parameter.</p>
-     * <p>If your account is enabled for encryption by default, you cannot use an
-     * unencrypted snapshot as a parent snapshot. You must first create an encrypted
-     * copy of the parent snapshot using <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopySnapshot.html">CopySnapshot</a>.</p>
+     * <p>You can't specify <b>ParentSnapshotId</b> and <b>Encrypted</b> in the same
+     * request. If you specify both parameters, the request fails with
+     * <code>ValidationException</code>.</p> <p>The encryption status of the snapshot
+     * depends on the values that you specify for <b>Encrypted</b>, <b>KmsKeyArn</b>,
+     * and <b>ParentSnapshotId</b>, and whether your Amazon Web Services account is
+     * enabled for <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">
+     * encryption by default</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html">
+     * Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *  <p>If you specify an encrypted parent snapshot, you must have
+     * permission to use the KMS key that was used to encrypt the parent snapshot. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapi-permissions.html#ebsapi-kms-permissions">
+     * Permissions to use Key Management Service keys</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.</p> 
      */
     inline const Aws::String& GetParentSnapshotId() const{ return m_parentSnapshotId; }
 
     /**
      * <p>The ID of the parent snapshot. If there is no parent snapshot, or if you are
      * creating the first snapshot for an on-premises volume, omit this parameter.</p>
-     * <p>If your account is enabled for encryption by default, you cannot use an
-     * unencrypted snapshot as a parent snapshot. You must first create an encrypted
-     * copy of the parent snapshot using <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopySnapshot.html">CopySnapshot</a>.</p>
+     * <p>You can't specify <b>ParentSnapshotId</b> and <b>Encrypted</b> in the same
+     * request. If you specify both parameters, the request fails with
+     * <code>ValidationException</code>.</p> <p>The encryption status of the snapshot
+     * depends on the values that you specify for <b>Encrypted</b>, <b>KmsKeyArn</b>,
+     * and <b>ParentSnapshotId</b>, and whether your Amazon Web Services account is
+     * enabled for <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">
+     * encryption by default</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html">
+     * Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *  <p>If you specify an encrypted parent snapshot, you must have
+     * permission to use the KMS key that was used to encrypt the parent snapshot. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapi-permissions.html#ebsapi-kms-permissions">
+     * Permissions to use Key Management Service keys</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.</p> 
      */
     inline bool ParentSnapshotIdHasBeenSet() const { return m_parentSnapshotIdHasBeenSet; }
 
     /**
      * <p>The ID of the parent snapshot. If there is no parent snapshot, or if you are
      * creating the first snapshot for an on-premises volume, omit this parameter.</p>
-     * <p>If your account is enabled for encryption by default, you cannot use an
-     * unencrypted snapshot as a parent snapshot. You must first create an encrypted
-     * copy of the parent snapshot using <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopySnapshot.html">CopySnapshot</a>.</p>
+     * <p>You can't specify <b>ParentSnapshotId</b> and <b>Encrypted</b> in the same
+     * request. If you specify both parameters, the request fails with
+     * <code>ValidationException</code>.</p> <p>The encryption status of the snapshot
+     * depends on the values that you specify for <b>Encrypted</b>, <b>KmsKeyArn</b>,
+     * and <b>ParentSnapshotId</b>, and whether your Amazon Web Services account is
+     * enabled for <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">
+     * encryption by default</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html">
+     * Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *  <p>If you specify an encrypted parent snapshot, you must have
+     * permission to use the KMS key that was used to encrypt the parent snapshot. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapi-permissions.html#ebsapi-kms-permissions">
+     * Permissions to use Key Management Service keys</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.</p> 
      */
     inline void SetParentSnapshotId(const Aws::String& value) { m_parentSnapshotIdHasBeenSet = true; m_parentSnapshotId = value; }
 
     /**
      * <p>The ID of the parent snapshot. If there is no parent snapshot, or if you are
      * creating the first snapshot for an on-premises volume, omit this parameter.</p>
-     * <p>If your account is enabled for encryption by default, you cannot use an
-     * unencrypted snapshot as a parent snapshot. You must first create an encrypted
-     * copy of the parent snapshot using <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopySnapshot.html">CopySnapshot</a>.</p>
+     * <p>You can't specify <b>ParentSnapshotId</b> and <b>Encrypted</b> in the same
+     * request. If you specify both parameters, the request fails with
+     * <code>ValidationException</code>.</p> <p>The encryption status of the snapshot
+     * depends on the values that you specify for <b>Encrypted</b>, <b>KmsKeyArn</b>,
+     * and <b>ParentSnapshotId</b>, and whether your Amazon Web Services account is
+     * enabled for <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">
+     * encryption by default</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html">
+     * Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *  <p>If you specify an encrypted parent snapshot, you must have
+     * permission to use the KMS key that was used to encrypt the parent snapshot. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapi-permissions.html#ebsapi-kms-permissions">
+     * Permissions to use Key Management Service keys</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.</p> 
      */
     inline void SetParentSnapshotId(Aws::String&& value) { m_parentSnapshotIdHasBeenSet = true; m_parentSnapshotId = std::move(value); }
 
     /**
      * <p>The ID of the parent snapshot. If there is no parent snapshot, or if you are
      * creating the first snapshot for an on-premises volume, omit this parameter.</p>
-     * <p>If your account is enabled for encryption by default, you cannot use an
-     * unencrypted snapshot as a parent snapshot. You must first create an encrypted
-     * copy of the parent snapshot using <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopySnapshot.html">CopySnapshot</a>.</p>
+     * <p>You can't specify <b>ParentSnapshotId</b> and <b>Encrypted</b> in the same
+     * request. If you specify both parameters, the request fails with
+     * <code>ValidationException</code>.</p> <p>The encryption status of the snapshot
+     * depends on the values that you specify for <b>Encrypted</b>, <b>KmsKeyArn</b>,
+     * and <b>ParentSnapshotId</b>, and whether your Amazon Web Services account is
+     * enabled for <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">
+     * encryption by default</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html">
+     * Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *  <p>If you specify an encrypted parent snapshot, you must have
+     * permission to use the KMS key that was used to encrypt the parent snapshot. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapi-permissions.html#ebsapi-kms-permissions">
+     * Permissions to use Key Management Service keys</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.</p> 
      */
     inline void SetParentSnapshotId(const char* value) { m_parentSnapshotIdHasBeenSet = true; m_parentSnapshotId.assign(value); }
 
     /**
      * <p>The ID of the parent snapshot. If there is no parent snapshot, or if you are
      * creating the first snapshot for an on-premises volume, omit this parameter.</p>
-     * <p>If your account is enabled for encryption by default, you cannot use an
-     * unencrypted snapshot as a parent snapshot. You must first create an encrypted
-     * copy of the parent snapshot using <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopySnapshot.html">CopySnapshot</a>.</p>
+     * <p>You can't specify <b>ParentSnapshotId</b> and <b>Encrypted</b> in the same
+     * request. If you specify both parameters, the request fails with
+     * <code>ValidationException</code>.</p> <p>The encryption status of the snapshot
+     * depends on the values that you specify for <b>Encrypted</b>, <b>KmsKeyArn</b>,
+     * and <b>ParentSnapshotId</b>, and whether your Amazon Web Services account is
+     * enabled for <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">
+     * encryption by default</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html">
+     * Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *  <p>If you specify an encrypted parent snapshot, you must have
+     * permission to use the KMS key that was used to encrypt the parent snapshot. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapi-permissions.html#ebsapi-kms-permissions">
+     * Permissions to use Key Management Service keys</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.</p> 
      */
     inline StartSnapshotRequest& WithParentSnapshotId(const Aws::String& value) { SetParentSnapshotId(value); return *this;}
 
     /**
      * <p>The ID of the parent snapshot. If there is no parent snapshot, or if you are
      * creating the first snapshot for an on-premises volume, omit this parameter.</p>
-     * <p>If your account is enabled for encryption by default, you cannot use an
-     * unencrypted snapshot as a parent snapshot. You must first create an encrypted
-     * copy of the parent snapshot using <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopySnapshot.html">CopySnapshot</a>.</p>
+     * <p>You can't specify <b>ParentSnapshotId</b> and <b>Encrypted</b> in the same
+     * request. If you specify both parameters, the request fails with
+     * <code>ValidationException</code>.</p> <p>The encryption status of the snapshot
+     * depends on the values that you specify for <b>Encrypted</b>, <b>KmsKeyArn</b>,
+     * and <b>ParentSnapshotId</b>, and whether your Amazon Web Services account is
+     * enabled for <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">
+     * encryption by default</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html">
+     * Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *  <p>If you specify an encrypted parent snapshot, you must have
+     * permission to use the KMS key that was used to encrypt the parent snapshot. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapi-permissions.html#ebsapi-kms-permissions">
+     * Permissions to use Key Management Service keys</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.</p> 
      */
     inline StartSnapshotRequest& WithParentSnapshotId(Aws::String&& value) { SetParentSnapshotId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the parent snapshot. If there is no parent snapshot, or if you are
      * creating the first snapshot for an on-premises volume, omit this parameter.</p>
-     * <p>If your account is enabled for encryption by default, you cannot use an
-     * unencrypted snapshot as a parent snapshot. You must first create an encrypted
-     * copy of the parent snapshot using <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopySnapshot.html">CopySnapshot</a>.</p>
+     * <p>You can't specify <b>ParentSnapshotId</b> and <b>Encrypted</b> in the same
+     * request. If you specify both parameters, the request fails with
+     * <code>ValidationException</code>.</p> <p>The encryption status of the snapshot
+     * depends on the values that you specify for <b>Encrypted</b>, <b>KmsKeyArn</b>,
+     * and <b>ParentSnapshotId</b>, and whether your Amazon Web Services account is
+     * enabled for <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">
+     * encryption by default</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html">
+     * Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *  <p>If you specify an encrypted parent snapshot, you must have
+     * permission to use the KMS key that was used to encrypt the parent snapshot. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapi-permissions.html#ebsapi-kms-permissions">
+     * Permissions to use Key Management Service keys</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.</p> 
      */
     inline StartSnapshotRequest& WithParentSnapshotId(const char* value) { SetParentSnapshotId(value); return *this;}
 
@@ -230,7 +326,7 @@ namespace Model
      * successfully. The subsequent retries with the same client token return the
      * result from the original successful request and they have no additional
      * effect.</p> <p>If you do not specify a client token, one is automatically
-     * generated by the AWS SDK.</p> <p>For more information, see <a
+     * generated by the Amazon Web Services SDK.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-direct-api-idempotency.html">
      * Idempotency for StartSnapshot API</a> in the <i>Amazon Elastic Compute Cloud
      * User Guide</i>.</p>
@@ -244,7 +340,7 @@ namespace Model
      * successfully. The subsequent retries with the same client token return the
      * result from the original successful request and they have no additional
      * effect.</p> <p>If you do not specify a client token, one is automatically
-     * generated by the AWS SDK.</p> <p>For more information, see <a
+     * generated by the Amazon Web Services SDK.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-direct-api-idempotency.html">
      * Idempotency for StartSnapshot API</a> in the <i>Amazon Elastic Compute Cloud
      * User Guide</i>.</p>
@@ -258,7 +354,7 @@ namespace Model
      * successfully. The subsequent retries with the same client token return the
      * result from the original successful request and they have no additional
      * effect.</p> <p>If you do not specify a client token, one is automatically
-     * generated by the AWS SDK.</p> <p>For more information, see <a
+     * generated by the Amazon Web Services SDK.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-direct-api-idempotency.html">
      * Idempotency for StartSnapshot API</a> in the <i>Amazon Elastic Compute Cloud
      * User Guide</i>.</p>
@@ -272,7 +368,7 @@ namespace Model
      * successfully. The subsequent retries with the same client token return the
      * result from the original successful request and they have no additional
      * effect.</p> <p>If you do not specify a client token, one is automatically
-     * generated by the AWS SDK.</p> <p>For more information, see <a
+     * generated by the Amazon Web Services SDK.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-direct-api-idempotency.html">
      * Idempotency for StartSnapshot API</a> in the <i>Amazon Elastic Compute Cloud
      * User Guide</i>.</p>
@@ -286,7 +382,7 @@ namespace Model
      * successfully. The subsequent retries with the same client token return the
      * result from the original successful request and they have no additional
      * effect.</p> <p>If you do not specify a client token, one is automatically
-     * generated by the AWS SDK.</p> <p>For more information, see <a
+     * generated by the Amazon Web Services SDK.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-direct-api-idempotency.html">
      * Idempotency for StartSnapshot API</a> in the <i>Amazon Elastic Compute Cloud
      * User Guide</i>.</p>
@@ -300,7 +396,7 @@ namespace Model
      * successfully. The subsequent retries with the same client token return the
      * result from the original successful request and they have no additional
      * effect.</p> <p>If you do not specify a client token, one is automatically
-     * generated by the AWS SDK.</p> <p>For more information, see <a
+     * generated by the Amazon Web Services SDK.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-direct-api-idempotency.html">
      * Idempotency for StartSnapshot API</a> in the <i>Amazon Elastic Compute Cloud
      * User Guide</i>.</p>
@@ -314,7 +410,7 @@ namespace Model
      * successfully. The subsequent retries with the same client token return the
      * result from the original successful request and they have no additional
      * effect.</p> <p>If you do not specify a client token, one is automatically
-     * generated by the AWS SDK.</p> <p>For more information, see <a
+     * generated by the Amazon Web Services SDK.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-direct-api-idempotency.html">
      * Idempotency for StartSnapshot API</a> in the <i>Amazon Elastic Compute Cloud
      * User Guide</i>.</p>
@@ -328,7 +424,7 @@ namespace Model
      * successfully. The subsequent retries with the same client token return the
      * result from the original successful request and they have no additional
      * effect.</p> <p>If you do not specify a client token, one is automatically
-     * generated by the AWS SDK.</p> <p>For more information, see <a
+     * generated by the Amazon Web Services SDK.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-direct-api-idempotency.html">
      * Idempotency for StartSnapshot API</a> in the <i>Amazon Elastic Compute Cloud
      * User Guide</i>.</p>
@@ -337,155 +433,227 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether to encrypt the snapshot. To create an encrypted snapshot,
-     * specify <code>true</code>. To create an unencrypted snapshot, omit this
-     * parameter.</p> <p>If you specify a value for <b>ParentSnapshotId</b>, omit this
-     * parameter.</p> <p>If you specify <code>true</code>, the snapshot is encrypted
-     * using the CMK specified using the <b>KmsKeyArn</b> parameter. If no value is
-     * specified for <b>KmsKeyArn</b>, the default CMK for your account is used. If no
-     * default CMK has been specified for your account, the AWS managed CMK is used. To
-     * set a default CMK for your account, use <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyEbsDefaultKmsKeyId.html">
-     * ModifyEbsDefaultKmsKeyId</a>.</p> <p>If your account is enabled for encryption
-     * by default, you cannot set this parameter to <code>false</code>. In this case,
-     * you can omit this parameter.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-accessing-snapshot.html#ebsapis-using-encryption">
+     * <p>Indicates whether to encrypt the snapshot.</p> <p>You can't specify
+     * <b>Encrypted</b> and <b> ParentSnapshotId</b> in the same request. If you
+     * specify both parameters, the request fails with
+     * <code>ValidationException</code>.</p> <p>The encryption status of the snapshot
+     * depends on the values that you specify for <b>Encrypted</b>, <b>KmsKeyArn</b>,
+     * and <b>ParentSnapshotId</b>, and whether your Amazon Web Services account is
+     * enabled for <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">
+     * encryption by default</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html">
      * Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *  <p>To create an encrypted snapshot, you must have permission to use
+     * the KMS key. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapi-permissions.html#ebsapi-kms-permissions">
+     * Permissions to use Key Management Service keys</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.</p> 
      */
     inline bool GetEncrypted() const{ return m_encrypted; }
 
     /**
-     * <p>Indicates whether to encrypt the snapshot. To create an encrypted snapshot,
-     * specify <code>true</code>. To create an unencrypted snapshot, omit this
-     * parameter.</p> <p>If you specify a value for <b>ParentSnapshotId</b>, omit this
-     * parameter.</p> <p>If you specify <code>true</code>, the snapshot is encrypted
-     * using the CMK specified using the <b>KmsKeyArn</b> parameter. If no value is
-     * specified for <b>KmsKeyArn</b>, the default CMK for your account is used. If no
-     * default CMK has been specified for your account, the AWS managed CMK is used. To
-     * set a default CMK for your account, use <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyEbsDefaultKmsKeyId.html">
-     * ModifyEbsDefaultKmsKeyId</a>.</p> <p>If your account is enabled for encryption
-     * by default, you cannot set this parameter to <code>false</code>. In this case,
-     * you can omit this parameter.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-accessing-snapshot.html#ebsapis-using-encryption">
+     * <p>Indicates whether to encrypt the snapshot.</p> <p>You can't specify
+     * <b>Encrypted</b> and <b> ParentSnapshotId</b> in the same request. If you
+     * specify both parameters, the request fails with
+     * <code>ValidationException</code>.</p> <p>The encryption status of the snapshot
+     * depends on the values that you specify for <b>Encrypted</b>, <b>KmsKeyArn</b>,
+     * and <b>ParentSnapshotId</b>, and whether your Amazon Web Services account is
+     * enabled for <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">
+     * encryption by default</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html">
      * Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *  <p>To create an encrypted snapshot, you must have permission to use
+     * the KMS key. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapi-permissions.html#ebsapi-kms-permissions">
+     * Permissions to use Key Management Service keys</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.</p> 
      */
     inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
 
     /**
-     * <p>Indicates whether to encrypt the snapshot. To create an encrypted snapshot,
-     * specify <code>true</code>. To create an unencrypted snapshot, omit this
-     * parameter.</p> <p>If you specify a value for <b>ParentSnapshotId</b>, omit this
-     * parameter.</p> <p>If you specify <code>true</code>, the snapshot is encrypted
-     * using the CMK specified using the <b>KmsKeyArn</b> parameter. If no value is
-     * specified for <b>KmsKeyArn</b>, the default CMK for your account is used. If no
-     * default CMK has been specified for your account, the AWS managed CMK is used. To
-     * set a default CMK for your account, use <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyEbsDefaultKmsKeyId.html">
-     * ModifyEbsDefaultKmsKeyId</a>.</p> <p>If your account is enabled for encryption
-     * by default, you cannot set this parameter to <code>false</code>. In this case,
-     * you can omit this parameter.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-accessing-snapshot.html#ebsapis-using-encryption">
+     * <p>Indicates whether to encrypt the snapshot.</p> <p>You can't specify
+     * <b>Encrypted</b> and <b> ParentSnapshotId</b> in the same request. If you
+     * specify both parameters, the request fails with
+     * <code>ValidationException</code>.</p> <p>The encryption status of the snapshot
+     * depends on the values that you specify for <b>Encrypted</b>, <b>KmsKeyArn</b>,
+     * and <b>ParentSnapshotId</b>, and whether your Amazon Web Services account is
+     * enabled for <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">
+     * encryption by default</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html">
      * Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *  <p>To create an encrypted snapshot, you must have permission to use
+     * the KMS key. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapi-permissions.html#ebsapi-kms-permissions">
+     * Permissions to use Key Management Service keys</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.</p> 
      */
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
 
     /**
-     * <p>Indicates whether to encrypt the snapshot. To create an encrypted snapshot,
-     * specify <code>true</code>. To create an unencrypted snapshot, omit this
-     * parameter.</p> <p>If you specify a value for <b>ParentSnapshotId</b>, omit this
-     * parameter.</p> <p>If you specify <code>true</code>, the snapshot is encrypted
-     * using the CMK specified using the <b>KmsKeyArn</b> parameter. If no value is
-     * specified for <b>KmsKeyArn</b>, the default CMK for your account is used. If no
-     * default CMK has been specified for your account, the AWS managed CMK is used. To
-     * set a default CMK for your account, use <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyEbsDefaultKmsKeyId.html">
-     * ModifyEbsDefaultKmsKeyId</a>.</p> <p>If your account is enabled for encryption
-     * by default, you cannot set this parameter to <code>false</code>. In this case,
-     * you can omit this parameter.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-accessing-snapshot.html#ebsapis-using-encryption">
+     * <p>Indicates whether to encrypt the snapshot.</p> <p>You can't specify
+     * <b>Encrypted</b> and <b> ParentSnapshotId</b> in the same request. If you
+     * specify both parameters, the request fails with
+     * <code>ValidationException</code>.</p> <p>The encryption status of the snapshot
+     * depends on the values that you specify for <b>Encrypted</b>, <b>KmsKeyArn</b>,
+     * and <b>ParentSnapshotId</b>, and whether your Amazon Web Services account is
+     * enabled for <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">
+     * encryption by default</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html">
      * Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *  <p>To create an encrypted snapshot, you must have permission to use
+     * the KMS key. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapi-permissions.html#ebsapi-kms-permissions">
+     * Permissions to use Key Management Service keys</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.</p> 
      */
     inline StartSnapshotRequest& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) to be used to encrypt the snapshot. If you do not
-     * specify a CMK, the default AWS managed CMK is used.</p> <p>If you specify a
-     * <b>ParentSnapshotId</b>, omit this parameter; the snapshot will be encrypted
-     * using the same CMK that was used to encrypt the parent snapshot.</p> <p>If
-     * <b>Encrypted</b> is set to <code>true</code>, you must specify a CMK ARN. </p>
+     * <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key to be
+     * used to encrypt the snapshot.</p> <p>The encryption status of the snapshot
+     * depends on the values that you specify for <b>Encrypted</b>, <b>KmsKeyArn</b>,
+     * and <b>ParentSnapshotId</b>, and whether your Amazon Web Services account is
+     * enabled for <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">
+     * encryption by default</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html">
+     * Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *  <p>To create an encrypted snapshot, you must have permission to use
+     * the KMS key. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapi-permissions.html#ebsapi-kms-permissions">
+     * Permissions to use Key Management Service keys</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.</p> 
      */
     inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) to be used to encrypt the snapshot. If you do not
-     * specify a CMK, the default AWS managed CMK is used.</p> <p>If you specify a
-     * <b>ParentSnapshotId</b>, omit this parameter; the snapshot will be encrypted
-     * using the same CMK that was used to encrypt the parent snapshot.</p> <p>If
-     * <b>Encrypted</b> is set to <code>true</code>, you must specify a CMK ARN. </p>
+     * <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key to be
+     * used to encrypt the snapshot.</p> <p>The encryption status of the snapshot
+     * depends on the values that you specify for <b>Encrypted</b>, <b>KmsKeyArn</b>,
+     * and <b>ParentSnapshotId</b>, and whether your Amazon Web Services account is
+     * enabled for <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">
+     * encryption by default</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html">
+     * Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *  <p>To create an encrypted snapshot, you must have permission to use
+     * the KMS key. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapi-permissions.html#ebsapi-kms-permissions">
+     * Permissions to use Key Management Service keys</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.</p> 
      */
     inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) to be used to encrypt the snapshot. If you do not
-     * specify a CMK, the default AWS managed CMK is used.</p> <p>If you specify a
-     * <b>ParentSnapshotId</b>, omit this parameter; the snapshot will be encrypted
-     * using the same CMK that was used to encrypt the parent snapshot.</p> <p>If
-     * <b>Encrypted</b> is set to <code>true</code>, you must specify a CMK ARN. </p>
+     * <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key to be
+     * used to encrypt the snapshot.</p> <p>The encryption status of the snapshot
+     * depends on the values that you specify for <b>Encrypted</b>, <b>KmsKeyArn</b>,
+     * and <b>ParentSnapshotId</b>, and whether your Amazon Web Services account is
+     * enabled for <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">
+     * encryption by default</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html">
+     * Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *  <p>To create an encrypted snapshot, you must have permission to use
+     * the KMS key. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapi-permissions.html#ebsapi-kms-permissions">
+     * Permissions to use Key Management Service keys</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.</p> 
      */
     inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) to be used to encrypt the snapshot. If you do not
-     * specify a CMK, the default AWS managed CMK is used.</p> <p>If you specify a
-     * <b>ParentSnapshotId</b>, omit this parameter; the snapshot will be encrypted
-     * using the same CMK that was used to encrypt the parent snapshot.</p> <p>If
-     * <b>Encrypted</b> is set to <code>true</code>, you must specify a CMK ARN. </p>
+     * <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key to be
+     * used to encrypt the snapshot.</p> <p>The encryption status of the snapshot
+     * depends on the values that you specify for <b>Encrypted</b>, <b>KmsKeyArn</b>,
+     * and <b>ParentSnapshotId</b>, and whether your Amazon Web Services account is
+     * enabled for <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">
+     * encryption by default</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html">
+     * Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *  <p>To create an encrypted snapshot, you must have permission to use
+     * the KMS key. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapi-permissions.html#ebsapi-kms-permissions">
+     * Permissions to use Key Management Service keys</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.</p> 
      */
     inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) to be used to encrypt the snapshot. If you do not
-     * specify a CMK, the default AWS managed CMK is used.</p> <p>If you specify a
-     * <b>ParentSnapshotId</b>, omit this parameter; the snapshot will be encrypted
-     * using the same CMK that was used to encrypt the parent snapshot.</p> <p>If
-     * <b>Encrypted</b> is set to <code>true</code>, you must specify a CMK ARN. </p>
+     * <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key to be
+     * used to encrypt the snapshot.</p> <p>The encryption status of the snapshot
+     * depends on the values that you specify for <b>Encrypted</b>, <b>KmsKeyArn</b>,
+     * and <b>ParentSnapshotId</b>, and whether your Amazon Web Services account is
+     * enabled for <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">
+     * encryption by default</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html">
+     * Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *  <p>To create an encrypted snapshot, you must have permission to use
+     * the KMS key. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapi-permissions.html#ebsapi-kms-permissions">
+     * Permissions to use Key Management Service keys</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.</p> 
      */
     inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) to be used to encrypt the snapshot. If you do not
-     * specify a CMK, the default AWS managed CMK is used.</p> <p>If you specify a
-     * <b>ParentSnapshotId</b>, omit this parameter; the snapshot will be encrypted
-     * using the same CMK that was used to encrypt the parent snapshot.</p> <p>If
-     * <b>Encrypted</b> is set to <code>true</code>, you must specify a CMK ARN. </p>
+     * <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key to be
+     * used to encrypt the snapshot.</p> <p>The encryption status of the snapshot
+     * depends on the values that you specify for <b>Encrypted</b>, <b>KmsKeyArn</b>,
+     * and <b>ParentSnapshotId</b>, and whether your Amazon Web Services account is
+     * enabled for <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">
+     * encryption by default</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html">
+     * Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *  <p>To create an encrypted snapshot, you must have permission to use
+     * the KMS key. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapi-permissions.html#ebsapi-kms-permissions">
+     * Permissions to use Key Management Service keys</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.</p> 
      */
     inline StartSnapshotRequest& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) to be used to encrypt the snapshot. If you do not
-     * specify a CMK, the default AWS managed CMK is used.</p> <p>If you specify a
-     * <b>ParentSnapshotId</b>, omit this parameter; the snapshot will be encrypted
-     * using the same CMK that was used to encrypt the parent snapshot.</p> <p>If
-     * <b>Encrypted</b> is set to <code>true</code>, you must specify a CMK ARN. </p>
+     * <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key to be
+     * used to encrypt the snapshot.</p> <p>The encryption status of the snapshot
+     * depends on the values that you specify for <b>Encrypted</b>, <b>KmsKeyArn</b>,
+     * and <b>ParentSnapshotId</b>, and whether your Amazon Web Services account is
+     * enabled for <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">
+     * encryption by default</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html">
+     * Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *  <p>To create an encrypted snapshot, you must have permission to use
+     * the KMS key. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapi-permissions.html#ebsapi-kms-permissions">
+     * Permissions to use Key Management Service keys</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.</p> 
      */
     inline StartSnapshotRequest& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) to be used to encrypt the snapshot. If you do not
-     * specify a CMK, the default AWS managed CMK is used.</p> <p>If you specify a
-     * <b>ParentSnapshotId</b>, omit this parameter; the snapshot will be encrypted
-     * using the same CMK that was used to encrypt the parent snapshot.</p> <p>If
-     * <b>Encrypted</b> is set to <code>true</code>, you must specify a CMK ARN. </p>
+     * <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key to be
+     * used to encrypt the snapshot.</p> <p>The encryption status of the snapshot
+     * depends on the values that you specify for <b>Encrypted</b>, <b>KmsKeyArn</b>,
+     * and <b>ParentSnapshotId</b>, and whether your Amazon Web Services account is
+     * enabled for <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">
+     * encryption by default</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html">
+     * Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *  <p>To create an encrypted snapshot, you must have permission to use
+     * the KMS key. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapi-permissions.html#ebsapi-kms-permissions">
+     * Permissions to use Key Management Service keys</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.</p> 
      */
     inline StartSnapshotRequest& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
 

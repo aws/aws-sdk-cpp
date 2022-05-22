@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>A word or phrase transcribed from the input audio.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>A word, phrase, or punctuation mark that is transcribed from the input
+   * audio.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-streaming-2017-10-26/Item">AWS
    * API Reference</a></p>
    */
@@ -175,28 +175,28 @@ namespace Model
 
     /**
      * <p>Indicates whether a word in the item matches a word in the vocabulary filter
-     * you've chosen for your real-time stream. If <code>true</code> then a word in the
+     * you've chosen for your media stream. If <code>true</code> then a word in the
      * item matches your vocabulary filter.</p>
      */
     inline bool GetVocabularyFilterMatch() const{ return m_vocabularyFilterMatch; }
 
     /**
      * <p>Indicates whether a word in the item matches a word in the vocabulary filter
-     * you've chosen for your real-time stream. If <code>true</code> then a word in the
+     * you've chosen for your media stream. If <code>true</code> then a word in the
      * item matches your vocabulary filter.</p>
      */
     inline bool VocabularyFilterMatchHasBeenSet() const { return m_vocabularyFilterMatchHasBeenSet; }
 
     /**
      * <p>Indicates whether a word in the item matches a word in the vocabulary filter
-     * you've chosen for your real-time stream. If <code>true</code> then a word in the
+     * you've chosen for your media stream. If <code>true</code> then a word in the
      * item matches your vocabulary filter.</p>
      */
     inline void SetVocabularyFilterMatch(bool value) { m_vocabularyFilterMatchHasBeenSet = true; m_vocabularyFilterMatch = value; }
 
     /**
      * <p>Indicates whether a word in the item matches a word in the vocabulary filter
-     * you've chosen for your real-time stream. If <code>true</code> then a word in the
+     * you've chosen for your media stream. If <code>true</code> then a word in the
      * item matches your vocabulary filter.</p>
      */
     inline Item& WithVocabularyFilterMatch(bool value) { SetVocabularyFilterMatch(value); return *this;}
@@ -204,51 +204,105 @@ namespace Model
 
     /**
      * <p>If speaker identification is enabled, shows the speakers identified in the
-     * real-time stream.</p>
+     * media stream.</p>
      */
     inline const Aws::String& GetSpeaker() const{ return m_speaker; }
 
     /**
      * <p>If speaker identification is enabled, shows the speakers identified in the
-     * real-time stream.</p>
+     * media stream.</p>
      */
     inline bool SpeakerHasBeenSet() const { return m_speakerHasBeenSet; }
 
     /**
      * <p>If speaker identification is enabled, shows the speakers identified in the
-     * real-time stream.</p>
+     * media stream.</p>
      */
     inline void SetSpeaker(const Aws::String& value) { m_speakerHasBeenSet = true; m_speaker = value; }
 
     /**
      * <p>If speaker identification is enabled, shows the speakers identified in the
-     * real-time stream.</p>
+     * media stream.</p>
      */
     inline void SetSpeaker(Aws::String&& value) { m_speakerHasBeenSet = true; m_speaker = std::move(value); }
 
     /**
      * <p>If speaker identification is enabled, shows the speakers identified in the
-     * real-time stream.</p>
+     * media stream.</p>
      */
     inline void SetSpeaker(const char* value) { m_speakerHasBeenSet = true; m_speaker.assign(value); }
 
     /**
      * <p>If speaker identification is enabled, shows the speakers identified in the
-     * real-time stream.</p>
+     * media stream.</p>
      */
     inline Item& WithSpeaker(const Aws::String& value) { SetSpeaker(value); return *this;}
 
     /**
      * <p>If speaker identification is enabled, shows the speakers identified in the
-     * real-time stream.</p>
+     * media stream.</p>
      */
     inline Item& WithSpeaker(Aws::String&& value) { SetSpeaker(std::move(value)); return *this;}
 
     /**
      * <p>If speaker identification is enabled, shows the speakers identified in the
-     * real-time stream.</p>
+     * media stream.</p>
      */
     inline Item& WithSpeaker(const char* value) { SetSpeaker(value); return *this;}
+
+
+    /**
+     * <p>A value between zero and one for an item that is a confidence score that
+     * Amazon Transcribe assigns to each word or phrase that it transcribes.</p>
+     */
+    inline double GetConfidence() const{ return m_confidence; }
+
+    /**
+     * <p>A value between zero and one for an item that is a confidence score that
+     * Amazon Transcribe assigns to each word or phrase that it transcribes.</p>
+     */
+    inline bool ConfidenceHasBeenSet() const { return m_confidenceHasBeenSet; }
+
+    /**
+     * <p>A value between zero and one for an item that is a confidence score that
+     * Amazon Transcribe assigns to each word or phrase that it transcribes.</p>
+     */
+    inline void SetConfidence(double value) { m_confidenceHasBeenSet = true; m_confidence = value; }
+
+    /**
+     * <p>A value between zero and one for an item that is a confidence score that
+     * Amazon Transcribe assigns to each word or phrase that it transcribes.</p>
+     */
+    inline Item& WithConfidence(double value) { SetConfidence(value); return *this;}
+
+
+    /**
+     * <p>If partial result stabilization has been enabled, indicates whether the word
+     * or phrase in the item is stable. If <code>Stable</code> is <code>true</code>,
+     * the result is stable.</p>
+     */
+    inline bool GetStable() const{ return m_stable; }
+
+    /**
+     * <p>If partial result stabilization has been enabled, indicates whether the word
+     * or phrase in the item is stable. If <code>Stable</code> is <code>true</code>,
+     * the result is stable.</p>
+     */
+    inline bool StableHasBeenSet() const { return m_stableHasBeenSet; }
+
+    /**
+     * <p>If partial result stabilization has been enabled, indicates whether the word
+     * or phrase in the item is stable. If <code>Stable</code> is <code>true</code>,
+     * the result is stable.</p>
+     */
+    inline void SetStable(bool value) { m_stableHasBeenSet = true; m_stable = value; }
+
+    /**
+     * <p>If partial result stabilization has been enabled, indicates whether the word
+     * or phrase in the item is stable. If <code>Stable</code> is <code>true</code>,
+     * the result is stable.</p>
+     */
+    inline Item& WithStable(bool value) { SetStable(value); return *this;}
 
   private:
 
@@ -269,6 +323,12 @@ namespace Model
 
     Aws::String m_speaker;
     bool m_speakerHasBeenSet;
+
+    double m_confidence;
+    bool m_confidenceHasBeenSet;
+
+    bool m_stable;
+    bool m_stableHasBeenSet;
   };
 
 } // namespace Model

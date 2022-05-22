@@ -37,42 +37,50 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline GetCurrentMetricDataRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline GetCurrentMetricDataRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline GetCurrentMetricDataRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
@@ -243,11 +251,12 @@ namespace Model
      * in real-time metrics report: <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#scheduled-real-time">Scheduled</a>
      * </p> </dd> <dt>OLDEST_CONTACT_AGE</dt> <dd> <p>Unit: SECONDS</p> <p>When you use
-     * groupings, Unit says SECONDS but the Value is returned in MILLISECONDS. For
-     * example, if you get a response like this:</p> <p> <code>{ "Metric": { "Name":
-     * "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0 </code>}</p> <p>The
-     * actual OLDEST_CONTACT_AGE is 24 seconds.</p> <p>Name in real-time metrics
-     * report: <a
+     * groupings, Unit says SECONDS and the Value is returned in SECONDS. </p> <p>When
+     * you do not use groupings, Unit says SECONDS but the Value is returned in
+     * MILLISECONDS. For example, if you get a response like this:</p> <p> <code>{
+     * "Metric": { "Name": "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0
+     * </code>}</p> <p>The actual OLDEST_CONTACT_AGE is 24 seconds.</p> <p>Name in
+     * real-time metrics report: <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#oldest-real-time">Oldest</a>
      * </p> </dd> <dt>SLOTS_ACTIVE</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time
      * metrics report: <a
@@ -295,11 +304,12 @@ namespace Model
      * in real-time metrics report: <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#scheduled-real-time">Scheduled</a>
      * </p> </dd> <dt>OLDEST_CONTACT_AGE</dt> <dd> <p>Unit: SECONDS</p> <p>When you use
-     * groupings, Unit says SECONDS but the Value is returned in MILLISECONDS. For
-     * example, if you get a response like this:</p> <p> <code>{ "Metric": { "Name":
-     * "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0 </code>}</p> <p>The
-     * actual OLDEST_CONTACT_AGE is 24 seconds.</p> <p>Name in real-time metrics
-     * report: <a
+     * groupings, Unit says SECONDS and the Value is returned in SECONDS. </p> <p>When
+     * you do not use groupings, Unit says SECONDS but the Value is returned in
+     * MILLISECONDS. For example, if you get a response like this:</p> <p> <code>{
+     * "Metric": { "Name": "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0
+     * </code>}</p> <p>The actual OLDEST_CONTACT_AGE is 24 seconds.</p> <p>Name in
+     * real-time metrics report: <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#oldest-real-time">Oldest</a>
      * </p> </dd> <dt>SLOTS_ACTIVE</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time
      * metrics report: <a
@@ -347,11 +357,12 @@ namespace Model
      * in real-time metrics report: <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#scheduled-real-time">Scheduled</a>
      * </p> </dd> <dt>OLDEST_CONTACT_AGE</dt> <dd> <p>Unit: SECONDS</p> <p>When you use
-     * groupings, Unit says SECONDS but the Value is returned in MILLISECONDS. For
-     * example, if you get a response like this:</p> <p> <code>{ "Metric": { "Name":
-     * "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0 </code>}</p> <p>The
-     * actual OLDEST_CONTACT_AGE is 24 seconds.</p> <p>Name in real-time metrics
-     * report: <a
+     * groupings, Unit says SECONDS and the Value is returned in SECONDS. </p> <p>When
+     * you do not use groupings, Unit says SECONDS but the Value is returned in
+     * MILLISECONDS. For example, if you get a response like this:</p> <p> <code>{
+     * "Metric": { "Name": "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0
+     * </code>}</p> <p>The actual OLDEST_CONTACT_AGE is 24 seconds.</p> <p>Name in
+     * real-time metrics report: <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#oldest-real-time">Oldest</a>
      * </p> </dd> <dt>SLOTS_ACTIVE</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time
      * metrics report: <a
@@ -399,11 +410,12 @@ namespace Model
      * in real-time metrics report: <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#scheduled-real-time">Scheduled</a>
      * </p> </dd> <dt>OLDEST_CONTACT_AGE</dt> <dd> <p>Unit: SECONDS</p> <p>When you use
-     * groupings, Unit says SECONDS but the Value is returned in MILLISECONDS. For
-     * example, if you get a response like this:</p> <p> <code>{ "Metric": { "Name":
-     * "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0 </code>}</p> <p>The
-     * actual OLDEST_CONTACT_AGE is 24 seconds.</p> <p>Name in real-time metrics
-     * report: <a
+     * groupings, Unit says SECONDS and the Value is returned in SECONDS. </p> <p>When
+     * you do not use groupings, Unit says SECONDS but the Value is returned in
+     * MILLISECONDS. For example, if you get a response like this:</p> <p> <code>{
+     * "Metric": { "Name": "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0
+     * </code>}</p> <p>The actual OLDEST_CONTACT_AGE is 24 seconds.</p> <p>Name in
+     * real-time metrics report: <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#oldest-real-time">Oldest</a>
      * </p> </dd> <dt>SLOTS_ACTIVE</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time
      * metrics report: <a
@@ -451,11 +463,12 @@ namespace Model
      * in real-time metrics report: <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#scheduled-real-time">Scheduled</a>
      * </p> </dd> <dt>OLDEST_CONTACT_AGE</dt> <dd> <p>Unit: SECONDS</p> <p>When you use
-     * groupings, Unit says SECONDS but the Value is returned in MILLISECONDS. For
-     * example, if you get a response like this:</p> <p> <code>{ "Metric": { "Name":
-     * "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0 </code>}</p> <p>The
-     * actual OLDEST_CONTACT_AGE is 24 seconds.</p> <p>Name in real-time metrics
-     * report: <a
+     * groupings, Unit says SECONDS and the Value is returned in SECONDS. </p> <p>When
+     * you do not use groupings, Unit says SECONDS but the Value is returned in
+     * MILLISECONDS. For example, if you get a response like this:</p> <p> <code>{
+     * "Metric": { "Name": "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0
+     * </code>}</p> <p>The actual OLDEST_CONTACT_AGE is 24 seconds.</p> <p>Name in
+     * real-time metrics report: <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#oldest-real-time">Oldest</a>
      * </p> </dd> <dt>SLOTS_ACTIVE</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time
      * metrics report: <a
@@ -503,11 +516,12 @@ namespace Model
      * in real-time metrics report: <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#scheduled-real-time">Scheduled</a>
      * </p> </dd> <dt>OLDEST_CONTACT_AGE</dt> <dd> <p>Unit: SECONDS</p> <p>When you use
-     * groupings, Unit says SECONDS but the Value is returned in MILLISECONDS. For
-     * example, if you get a response like this:</p> <p> <code>{ "Metric": { "Name":
-     * "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0 </code>}</p> <p>The
-     * actual OLDEST_CONTACT_AGE is 24 seconds.</p> <p>Name in real-time metrics
-     * report: <a
+     * groupings, Unit says SECONDS and the Value is returned in SECONDS. </p> <p>When
+     * you do not use groupings, Unit says SECONDS but the Value is returned in
+     * MILLISECONDS. For example, if you get a response like this:</p> <p> <code>{
+     * "Metric": { "Name": "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0
+     * </code>}</p> <p>The actual OLDEST_CONTACT_AGE is 24 seconds.</p> <p>Name in
+     * real-time metrics report: <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#oldest-real-time">Oldest</a>
      * </p> </dd> <dt>SLOTS_ACTIVE</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time
      * metrics report: <a
@@ -555,11 +569,12 @@ namespace Model
      * in real-time metrics report: <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#scheduled-real-time">Scheduled</a>
      * </p> </dd> <dt>OLDEST_CONTACT_AGE</dt> <dd> <p>Unit: SECONDS</p> <p>When you use
-     * groupings, Unit says SECONDS but the Value is returned in MILLISECONDS. For
-     * example, if you get a response like this:</p> <p> <code>{ "Metric": { "Name":
-     * "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0 </code>}</p> <p>The
-     * actual OLDEST_CONTACT_AGE is 24 seconds.</p> <p>Name in real-time metrics
-     * report: <a
+     * groupings, Unit says SECONDS and the Value is returned in SECONDS. </p> <p>When
+     * you do not use groupings, Unit says SECONDS but the Value is returned in
+     * MILLISECONDS. For example, if you get a response like this:</p> <p> <code>{
+     * "Metric": { "Name": "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0
+     * </code>}</p> <p>The actual OLDEST_CONTACT_AGE is 24 seconds.</p> <p>Name in
+     * real-time metrics report: <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#oldest-real-time">Oldest</a>
      * </p> </dd> <dt>SLOTS_ACTIVE</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time
      * metrics report: <a
@@ -607,11 +622,12 @@ namespace Model
      * in real-time metrics report: <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#scheduled-real-time">Scheduled</a>
      * </p> </dd> <dt>OLDEST_CONTACT_AGE</dt> <dd> <p>Unit: SECONDS</p> <p>When you use
-     * groupings, Unit says SECONDS but the Value is returned in MILLISECONDS. For
-     * example, if you get a response like this:</p> <p> <code>{ "Metric": { "Name":
-     * "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0 </code>}</p> <p>The
-     * actual OLDEST_CONTACT_AGE is 24 seconds.</p> <p>Name in real-time metrics
-     * report: <a
+     * groupings, Unit says SECONDS and the Value is returned in SECONDS. </p> <p>When
+     * you do not use groupings, Unit says SECONDS but the Value is returned in
+     * MILLISECONDS. For example, if you get a response like this:</p> <p> <code>{
+     * "Metric": { "Name": "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0
+     * </code>}</p> <p>The actual OLDEST_CONTACT_AGE is 24 seconds.</p> <p>Name in
+     * real-time metrics report: <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#oldest-real-time">Oldest</a>
      * </p> </dd> <dt>SLOTS_ACTIVE</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time
      * metrics report: <a
@@ -698,22 +714,22 @@ namespace Model
 
 
     /**
-     * <p>The maximimum number of results to return per page.</p>
+     * <p>The maximum number of results to return per page.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximimum number of results to return per page.</p>
+     * <p>The maximum number of results to return per page.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximimum number of results to return per page.</p>
+     * <p>The maximum number of results to return per page.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximimum number of results to return per page.</p>
+     * <p>The maximum number of results to return per page.</p>
      */
     inline GetCurrentMetricDataRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

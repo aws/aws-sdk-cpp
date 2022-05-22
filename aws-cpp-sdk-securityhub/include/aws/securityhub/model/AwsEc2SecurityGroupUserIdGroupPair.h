@@ -162,74 +162,74 @@ namespace Model
 
 
     /**
-     * <p>The ID of an AWS account.</p> <p>For a referenced security group in another
-     * VPC, the account ID of the referenced security group is returned in the
-     * response. If the referenced security group is deleted, this value is not
-     * returned.</p> <p>[EC2-Classic] Required when adding or removing rules that
-     * reference a security group in another AWS. </p>
+     * <p>The ID of an Amazon Web Services account.</p> <p>For a referenced security
+     * group in another VPC, the account ID of the referenced security group is
+     * returned in the response. If the referenced security group is deleted, this
+     * value is not returned.</p> <p>[EC2-Classic] Required when adding or removing
+     * rules that reference a security group in another VPC. </p>
      */
     inline const Aws::String& GetUserId() const{ return m_userId; }
 
     /**
-     * <p>The ID of an AWS account.</p> <p>For a referenced security group in another
-     * VPC, the account ID of the referenced security group is returned in the
-     * response. If the referenced security group is deleted, this value is not
-     * returned.</p> <p>[EC2-Classic] Required when adding or removing rules that
-     * reference a security group in another AWS. </p>
+     * <p>The ID of an Amazon Web Services account.</p> <p>For a referenced security
+     * group in another VPC, the account ID of the referenced security group is
+     * returned in the response. If the referenced security group is deleted, this
+     * value is not returned.</p> <p>[EC2-Classic] Required when adding or removing
+     * rules that reference a security group in another VPC. </p>
      */
     inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
 
     /**
-     * <p>The ID of an AWS account.</p> <p>For a referenced security group in another
-     * VPC, the account ID of the referenced security group is returned in the
-     * response. If the referenced security group is deleted, this value is not
-     * returned.</p> <p>[EC2-Classic] Required when adding or removing rules that
-     * reference a security group in another AWS. </p>
+     * <p>The ID of an Amazon Web Services account.</p> <p>For a referenced security
+     * group in another VPC, the account ID of the referenced security group is
+     * returned in the response. If the referenced security group is deleted, this
+     * value is not returned.</p> <p>[EC2-Classic] Required when adding or removing
+     * rules that reference a security group in another VPC. </p>
      */
     inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
 
     /**
-     * <p>The ID of an AWS account.</p> <p>For a referenced security group in another
-     * VPC, the account ID of the referenced security group is returned in the
-     * response. If the referenced security group is deleted, this value is not
-     * returned.</p> <p>[EC2-Classic] Required when adding or removing rules that
-     * reference a security group in another AWS. </p>
+     * <p>The ID of an Amazon Web Services account.</p> <p>For a referenced security
+     * group in another VPC, the account ID of the referenced security group is
+     * returned in the response. If the referenced security group is deleted, this
+     * value is not returned.</p> <p>[EC2-Classic] Required when adding or removing
+     * rules that reference a security group in another VPC. </p>
      */
     inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
 
     /**
-     * <p>The ID of an AWS account.</p> <p>For a referenced security group in another
-     * VPC, the account ID of the referenced security group is returned in the
-     * response. If the referenced security group is deleted, this value is not
-     * returned.</p> <p>[EC2-Classic] Required when adding or removing rules that
-     * reference a security group in another AWS. </p>
+     * <p>The ID of an Amazon Web Services account.</p> <p>For a referenced security
+     * group in another VPC, the account ID of the referenced security group is
+     * returned in the response. If the referenced security group is deleted, this
+     * value is not returned.</p> <p>[EC2-Classic] Required when adding or removing
+     * rules that reference a security group in another VPC. </p>
      */
     inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
 
     /**
-     * <p>The ID of an AWS account.</p> <p>For a referenced security group in another
-     * VPC, the account ID of the referenced security group is returned in the
-     * response. If the referenced security group is deleted, this value is not
-     * returned.</p> <p>[EC2-Classic] Required when adding or removing rules that
-     * reference a security group in another AWS. </p>
+     * <p>The ID of an Amazon Web Services account.</p> <p>For a referenced security
+     * group in another VPC, the account ID of the referenced security group is
+     * returned in the response. If the referenced security group is deleted, this
+     * value is not returned.</p> <p>[EC2-Classic] Required when adding or removing
+     * rules that reference a security group in another VPC. </p>
      */
     inline AwsEc2SecurityGroupUserIdGroupPair& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
 
     /**
-     * <p>The ID of an AWS account.</p> <p>For a referenced security group in another
-     * VPC, the account ID of the referenced security group is returned in the
-     * response. If the referenced security group is deleted, this value is not
-     * returned.</p> <p>[EC2-Classic] Required when adding or removing rules that
-     * reference a security group in another AWS. </p>
+     * <p>The ID of an Amazon Web Services account.</p> <p>For a referenced security
+     * group in another VPC, the account ID of the referenced security group is
+     * returned in the response. If the referenced security group is deleted, this
+     * value is not returned.</p> <p>[EC2-Classic] Required when adding or removing
+     * rules that reference a security group in another VPC. </p>
      */
     inline AwsEc2SecurityGroupUserIdGroupPair& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of an AWS account.</p> <p>For a referenced security group in another
-     * VPC, the account ID of the referenced security group is returned in the
-     * response. If the referenced security group is deleted, this value is not
-     * returned.</p> <p>[EC2-Classic] Required when adding or removing rules that
-     * reference a security group in another AWS. </p>
+     * <p>The ID of an Amazon Web Services account.</p> <p>For a referenced security
+     * group in another VPC, the account ID of the referenced security group is
+     * returned in the response. If the referenced security group is deleted, this
+     * value is not returned.</p> <p>[EC2-Classic] Required when adding or removing
+     * rules that reference a security group in another VPC. </p>
      */
     inline AwsEc2SecurityGroupUserIdGroupPair& WithUserId(const char* value) { SetUserId(value); return *this;}
 

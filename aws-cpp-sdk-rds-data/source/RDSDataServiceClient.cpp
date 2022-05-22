@@ -73,7 +73,7 @@ RDSDataServiceClient::~RDSDataServiceClient()
 {
 }
 
-void RDSDataServiceClient::init(const ClientConfiguration& config)
+void RDSDataServiceClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("RDS Data");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -102,9 +102,7 @@ void RDSDataServiceClient::OverrideEndpoint(const Aws::String& endpoint)
 BatchExecuteStatementOutcome RDSDataServiceClient::BatchExecuteStatement(const BatchExecuteStatementRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/BatchExecute";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/BatchExecute");
   return BatchExecuteStatementOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -129,9 +127,7 @@ void RDSDataServiceClient::BatchExecuteStatementAsyncHelper(const BatchExecuteSt
 BeginTransactionOutcome RDSDataServiceClient::BeginTransaction(const BeginTransactionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/BeginTransaction";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/BeginTransaction");
   return BeginTransactionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -156,9 +152,7 @@ void RDSDataServiceClient::BeginTransactionAsyncHelper(const BeginTransactionReq
 CommitTransactionOutcome RDSDataServiceClient::CommitTransaction(const CommitTransactionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/CommitTransaction";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/CommitTransaction");
   return CommitTransactionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -183,9 +177,7 @@ void RDSDataServiceClient::CommitTransactionAsyncHelper(const CommitTransactionR
 ExecuteStatementOutcome RDSDataServiceClient::ExecuteStatement(const ExecuteStatementRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/Execute";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/Execute");
   return ExecuteStatementOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -210,9 +202,7 @@ void RDSDataServiceClient::ExecuteStatementAsyncHelper(const ExecuteStatementReq
 RollbackTransactionOutcome RDSDataServiceClient::RollbackTransaction(const RollbackTransactionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/RollbackTransaction";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/RollbackTransaction");
   return RollbackTransactionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

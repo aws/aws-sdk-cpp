@@ -14,6 +14,7 @@ using namespace Aws::Utils;
 
 GetMediaForFragmentListRequest::GetMediaForFragmentListRequest() : 
     m_streamNameHasBeenSet(false),
+    m_streamARNHasBeenSet(false),
     m_fragmentsHasBeenSet(false)
 {
 }
@@ -25,6 +26,12 @@ Aws::String GetMediaForFragmentListRequest::SerializePayload() const
   if(m_streamNameHasBeenSet)
   {
    payload.WithString("StreamName", m_streamName);
+
+  }
+
+  if(m_streamARNHasBeenSet)
+  {
+   payload.WithString("StreamARN", m_streamARN);
 
   }
 

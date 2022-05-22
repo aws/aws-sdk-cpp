@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     Compute,
-    EC2Instance
+    EC2Instance,
+    SageMaker
   };
 
 namespace SavingsPlanTypeMapper

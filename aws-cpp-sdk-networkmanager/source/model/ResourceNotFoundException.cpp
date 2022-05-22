@@ -21,14 +21,16 @@ namespace Model
 ResourceNotFoundException::ResourceNotFoundException() : 
     m_messageHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false)
+    m_resourceTypeHasBeenSet(false),
+    m_contextHasBeenSet(false)
 {
 }
 
 ResourceNotFoundException::ResourceNotFoundException(JsonView jsonValue) : 
     m_messageHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false)
+    m_resourceTypeHasBeenSet(false),
+    m_contextHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +58,16 @@ ResourceNotFoundException& ResourceNotFoundException::operator =(JsonView jsonVa
     m_resourceTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Context"))
+  {
+    Aws::Map<Aws::String, JsonView> contextJsonMap = jsonValue.GetObject("Context").GetAllObjects();
+    for(auto& contextItem : contextJsonMap)
+    {
+      m_context[contextItem.first] = contextItem.second.AsString();
+    }
+    m_contextHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +90,17 @@ JsonValue ResourceNotFoundException::Jsonize() const
   if(m_resourceTypeHasBeenSet)
   {
    payload.WithString("ResourceType", m_resourceType);
+
+  }
+
+  if(m_contextHasBeenSet)
+  {
+   JsonValue contextJsonMap;
+   for(auto& contextItem : m_context)
+   {
+     contextJsonMap.WithString(contextItem.first, contextItem.second);
+   }
+   payload.WithObject("Context", std::move(contextJsonMap));
 
   }
 

@@ -19,23 +19,23 @@ namespace Model
 {
 
 OutputDataConfig::OutputDataConfig() : 
-    m_s3UriHasBeenSet(false)
+    m_s3ConfigurationHasBeenSet(false)
 {
 }
 
 OutputDataConfig::OutputDataConfig(JsonView jsonValue) : 
-    m_s3UriHasBeenSet(false)
+    m_s3ConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 OutputDataConfig& OutputDataConfig::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("S3Uri"))
+  if(jsonValue.ValueExists("S3Configuration"))
   {
-    m_s3Uri = jsonValue.GetString("S3Uri");
+    m_s3Configuration = jsonValue.GetObject("S3Configuration");
 
-    m_s3UriHasBeenSet = true;
+    m_s3ConfigurationHasBeenSet = true;
   }
 
   return *this;
@@ -45,9 +45,9 @@ JsonValue OutputDataConfig::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_s3UriHasBeenSet)
+  if(m_s3ConfigurationHasBeenSet)
   {
-   payload.WithString("S3Uri", m_s3Uri);
+   payload.WithObject("S3Configuration", m_s3Configuration.Jsonize());
 
   }
 

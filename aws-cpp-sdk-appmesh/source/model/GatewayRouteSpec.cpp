@@ -21,14 +21,18 @@ namespace Model
 GatewayRouteSpec::GatewayRouteSpec() : 
     m_grpcRouteHasBeenSet(false),
     m_http2RouteHasBeenSet(false),
-    m_httpRouteHasBeenSet(false)
+    m_httpRouteHasBeenSet(false),
+    m_priority(0),
+    m_priorityHasBeenSet(false)
 {
 }
 
 GatewayRouteSpec::GatewayRouteSpec(JsonView jsonValue) : 
     m_grpcRouteHasBeenSet(false),
     m_http2RouteHasBeenSet(false),
-    m_httpRouteHasBeenSet(false)
+    m_httpRouteHasBeenSet(false),
+    m_priority(0),
+    m_priorityHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +60,13 @@ GatewayRouteSpec& GatewayRouteSpec::operator =(JsonView jsonValue)
     m_httpRouteHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("priority"))
+  {
+    m_priority = jsonValue.GetInteger("priority");
+
+    m_priorityHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +89,12 @@ JsonValue GatewayRouteSpec::Jsonize() const
   if(m_httpRouteHasBeenSet)
   {
    payload.WithObject("httpRoute", m_httpRoute.Jsonize());
+
+  }
+
+  if(m_priorityHasBeenSet)
+  {
+   payload.WithInteger("priority", m_priority);
 
   }
 

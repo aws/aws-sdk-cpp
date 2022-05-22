@@ -12,6 +12,7 @@ using namespace Aws::Utils;
 
 CreateSnapshotRequest::CreateSnapshotRequest() : 
     m_descriptionHasBeenSet(false),
+    m_outpostArnHasBeenSet(false),
     m_volumeIdHasBeenSet(false),
     m_tagSpecificationsHasBeenSet(false),
     m_dryRun(false),
@@ -26,6 +27,11 @@ Aws::String CreateSnapshotRequest::SerializePayload() const
   if(m_descriptionHasBeenSet)
   {
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  }
+
+  if(m_outpostArnHasBeenSet)
+  {
+    ss << "OutpostArn=" << StringUtils::URLEncode(m_outpostArn.c_str()) << "&";
   }
 
   if(m_volumeIdHasBeenSet)

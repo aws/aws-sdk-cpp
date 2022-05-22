@@ -43,47 +43,56 @@ namespace Model
 
 
     /**
-     * <p>An array of Amazon Resource Names (ARNs) for QuickSight users or groups.</p>
+     * <p>An array of Amazon Resource Names (ARNs) for Amazon QuickSight users or
+     * groups.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPrincipals() const{ return m_principals; }
 
     /**
-     * <p>An array of Amazon Resource Names (ARNs) for QuickSight users or groups.</p>
+     * <p>An array of Amazon Resource Names (ARNs) for Amazon QuickSight users or
+     * groups.</p>
      */
     inline bool PrincipalsHasBeenSet() const { return m_principalsHasBeenSet; }
 
     /**
-     * <p>An array of Amazon Resource Names (ARNs) for QuickSight users or groups.</p>
+     * <p>An array of Amazon Resource Names (ARNs) for Amazon QuickSight users or
+     * groups.</p>
      */
     inline void SetPrincipals(const Aws::Vector<Aws::String>& value) { m_principalsHasBeenSet = true; m_principals = value; }
 
     /**
-     * <p>An array of Amazon Resource Names (ARNs) for QuickSight users or groups.</p>
+     * <p>An array of Amazon Resource Names (ARNs) for Amazon QuickSight users or
+     * groups.</p>
      */
     inline void SetPrincipals(Aws::Vector<Aws::String>&& value) { m_principalsHasBeenSet = true; m_principals = std::move(value); }
 
     /**
-     * <p>An array of Amazon Resource Names (ARNs) for QuickSight users or groups.</p>
+     * <p>An array of Amazon Resource Names (ARNs) for Amazon QuickSight users or
+     * groups.</p>
      */
     inline ColumnLevelPermissionRule& WithPrincipals(const Aws::Vector<Aws::String>& value) { SetPrincipals(value); return *this;}
 
     /**
-     * <p>An array of Amazon Resource Names (ARNs) for QuickSight users or groups.</p>
+     * <p>An array of Amazon Resource Names (ARNs) for Amazon QuickSight users or
+     * groups.</p>
      */
     inline ColumnLevelPermissionRule& WithPrincipals(Aws::Vector<Aws::String>&& value) { SetPrincipals(std::move(value)); return *this;}
 
     /**
-     * <p>An array of Amazon Resource Names (ARNs) for QuickSight users or groups.</p>
+     * <p>An array of Amazon Resource Names (ARNs) for Amazon QuickSight users or
+     * groups.</p>
      */
     inline ColumnLevelPermissionRule& AddPrincipals(const Aws::String& value) { m_principalsHasBeenSet = true; m_principals.push_back(value); return *this; }
 
     /**
-     * <p>An array of Amazon Resource Names (ARNs) for QuickSight users or groups.</p>
+     * <p>An array of Amazon Resource Names (ARNs) for Amazon QuickSight users or
+     * groups.</p>
      */
     inline ColumnLevelPermissionRule& AddPrincipals(Aws::String&& value) { m_principalsHasBeenSet = true; m_principals.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>An array of Amazon Resource Names (ARNs) for QuickSight users or groups.</p>
+     * <p>An array of Amazon Resource Names (ARNs) for Amazon QuickSight users or
+     * groups.</p>
      */
     inline ColumnLevelPermissionRule& AddPrincipals(const char* value) { m_principalsHasBeenSet = true; m_principals.push_back(value); return *this; }
 

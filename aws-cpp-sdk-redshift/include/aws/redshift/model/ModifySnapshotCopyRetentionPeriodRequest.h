@@ -42,75 +42,76 @@ namespace Model
     /**
      * <p>The unique identifier of the cluster for which you want to change the
      * retention period for either automated or manual snapshots that are copied to a
-     * destination AWS Region.</p> <p>Constraints: Must be the valid name of an
-     * existing cluster that has cross-region snapshot copy enabled.</p>
+     * destination Amazon Web Services Region.</p> <p>Constraints: Must be the valid
+     * name of an existing cluster that has cross-region snapshot copy enabled.</p>
      */
     inline const Aws::String& GetClusterIdentifier() const{ return m_clusterIdentifier; }
 
     /**
      * <p>The unique identifier of the cluster for which you want to change the
      * retention period for either automated or manual snapshots that are copied to a
-     * destination AWS Region.</p> <p>Constraints: Must be the valid name of an
-     * existing cluster that has cross-region snapshot copy enabled.</p>
+     * destination Amazon Web Services Region.</p> <p>Constraints: Must be the valid
+     * name of an existing cluster that has cross-region snapshot copy enabled.</p>
      */
     inline bool ClusterIdentifierHasBeenSet() const { return m_clusterIdentifierHasBeenSet; }
 
     /**
      * <p>The unique identifier of the cluster for which you want to change the
      * retention period for either automated or manual snapshots that are copied to a
-     * destination AWS Region.</p> <p>Constraints: Must be the valid name of an
-     * existing cluster that has cross-region snapshot copy enabled.</p>
+     * destination Amazon Web Services Region.</p> <p>Constraints: Must be the valid
+     * name of an existing cluster that has cross-region snapshot copy enabled.</p>
      */
     inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
 
     /**
      * <p>The unique identifier of the cluster for which you want to change the
      * retention period for either automated or manual snapshots that are copied to a
-     * destination AWS Region.</p> <p>Constraints: Must be the valid name of an
-     * existing cluster that has cross-region snapshot copy enabled.</p>
+     * destination Amazon Web Services Region.</p> <p>Constraints: Must be the valid
+     * name of an existing cluster that has cross-region snapshot copy enabled.</p>
      */
     inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::move(value); }
 
     /**
      * <p>The unique identifier of the cluster for which you want to change the
      * retention period for either automated or manual snapshots that are copied to a
-     * destination AWS Region.</p> <p>Constraints: Must be the valid name of an
-     * existing cluster that has cross-region snapshot copy enabled.</p>
+     * destination Amazon Web Services Region.</p> <p>Constraints: Must be the valid
+     * name of an existing cluster that has cross-region snapshot copy enabled.</p>
      */
     inline void SetClusterIdentifier(const char* value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier.assign(value); }
 
     /**
      * <p>The unique identifier of the cluster for which you want to change the
      * retention period for either automated or manual snapshots that are copied to a
-     * destination AWS Region.</p> <p>Constraints: Must be the valid name of an
-     * existing cluster that has cross-region snapshot copy enabled.</p>
+     * destination Amazon Web Services Region.</p> <p>Constraints: Must be the valid
+     * name of an existing cluster that has cross-region snapshot copy enabled.</p>
      */
     inline ModifySnapshotCopyRetentionPeriodRequest& WithClusterIdentifier(const Aws::String& value) { SetClusterIdentifier(value); return *this;}
 
     /**
      * <p>The unique identifier of the cluster for which you want to change the
      * retention period for either automated or manual snapshots that are copied to a
-     * destination AWS Region.</p> <p>Constraints: Must be the valid name of an
-     * existing cluster that has cross-region snapshot copy enabled.</p>
+     * destination Amazon Web Services Region.</p> <p>Constraints: Must be the valid
+     * name of an existing cluster that has cross-region snapshot copy enabled.</p>
      */
     inline ModifySnapshotCopyRetentionPeriodRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier of the cluster for which you want to change the
      * retention period for either automated or manual snapshots that are copied to a
-     * destination AWS Region.</p> <p>Constraints: Must be the valid name of an
-     * existing cluster that has cross-region snapshot copy enabled.</p>
+     * destination Amazon Web Services Region.</p> <p>Constraints: Must be the valid
+     * name of an existing cluster that has cross-region snapshot copy enabled.</p>
      */
     inline ModifySnapshotCopyRetentionPeriodRequest& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
 
 
     /**
-     * <p>The number of days to retain automated snapshots in the destination AWS
-     * Region after they are copied from the source AWS Region.</p> <p>By default, this
-     * only changes the retention period of copied automated snapshots. </p> <p>If you
-     * decrease the retention period for automated snapshots that are copied to a
-     * destination AWS Region, Amazon Redshift deletes any existing automated snapshots
-     * that were copied to the destination AWS Region and that fall outside of the new
+     * <p>The number of days to retain automated snapshots in the destination Amazon
+     * Web Services Region after they are copied from the source Amazon Web Services
+     * Region.</p> <p>By default, this only changes the retention period of copied
+     * automated snapshots. </p> <p>If you decrease the retention period for automated
+     * snapshots that are copied to a destination Amazon Web Services Region, Amazon
+     * Redshift deletes any existing automated snapshots that were copied to the
+     * destination Amazon Web Services Region and that fall outside of the new
      * retention period.</p> <p>Constraints: Must be at least 1 and no more than 35 for
      * automated snapshots. </p> <p>If you specify the <code>manual</code> option, only
      * newly copied manual snapshots will have the new retention period. </p> <p>If you
@@ -121,12 +122,13 @@ namespace Model
     inline int GetRetentionPeriod() const{ return m_retentionPeriod; }
 
     /**
-     * <p>The number of days to retain automated snapshots in the destination AWS
-     * Region after they are copied from the source AWS Region.</p> <p>By default, this
-     * only changes the retention period of copied automated snapshots. </p> <p>If you
-     * decrease the retention period for automated snapshots that are copied to a
-     * destination AWS Region, Amazon Redshift deletes any existing automated snapshots
-     * that were copied to the destination AWS Region and that fall outside of the new
+     * <p>The number of days to retain automated snapshots in the destination Amazon
+     * Web Services Region after they are copied from the source Amazon Web Services
+     * Region.</p> <p>By default, this only changes the retention period of copied
+     * automated snapshots. </p> <p>If you decrease the retention period for automated
+     * snapshots that are copied to a destination Amazon Web Services Region, Amazon
+     * Redshift deletes any existing automated snapshots that were copied to the
+     * destination Amazon Web Services Region and that fall outside of the new
      * retention period.</p> <p>Constraints: Must be at least 1 and no more than 35 for
      * automated snapshots. </p> <p>If you specify the <code>manual</code> option, only
      * newly copied manual snapshots will have the new retention period. </p> <p>If you
@@ -137,12 +139,13 @@ namespace Model
     inline bool RetentionPeriodHasBeenSet() const { return m_retentionPeriodHasBeenSet; }
 
     /**
-     * <p>The number of days to retain automated snapshots in the destination AWS
-     * Region after they are copied from the source AWS Region.</p> <p>By default, this
-     * only changes the retention period of copied automated snapshots. </p> <p>If you
-     * decrease the retention period for automated snapshots that are copied to a
-     * destination AWS Region, Amazon Redshift deletes any existing automated snapshots
-     * that were copied to the destination AWS Region and that fall outside of the new
+     * <p>The number of days to retain automated snapshots in the destination Amazon
+     * Web Services Region after they are copied from the source Amazon Web Services
+     * Region.</p> <p>By default, this only changes the retention period of copied
+     * automated snapshots. </p> <p>If you decrease the retention period for automated
+     * snapshots that are copied to a destination Amazon Web Services Region, Amazon
+     * Redshift deletes any existing automated snapshots that were copied to the
+     * destination Amazon Web Services Region and that fall outside of the new
      * retention period.</p> <p>Constraints: Must be at least 1 and no more than 35 for
      * automated snapshots. </p> <p>If you specify the <code>manual</code> option, only
      * newly copied manual snapshots will have the new retention period. </p> <p>If you
@@ -153,12 +156,13 @@ namespace Model
     inline void SetRetentionPeriod(int value) { m_retentionPeriodHasBeenSet = true; m_retentionPeriod = value; }
 
     /**
-     * <p>The number of days to retain automated snapshots in the destination AWS
-     * Region after they are copied from the source AWS Region.</p> <p>By default, this
-     * only changes the retention period of copied automated snapshots. </p> <p>If you
-     * decrease the retention period for automated snapshots that are copied to a
-     * destination AWS Region, Amazon Redshift deletes any existing automated snapshots
-     * that were copied to the destination AWS Region and that fall outside of the new
+     * <p>The number of days to retain automated snapshots in the destination Amazon
+     * Web Services Region after they are copied from the source Amazon Web Services
+     * Region.</p> <p>By default, this only changes the retention period of copied
+     * automated snapshots. </p> <p>If you decrease the retention period for automated
+     * snapshots that are copied to a destination Amazon Web Services Region, Amazon
+     * Redshift deletes any existing automated snapshots that were copied to the
+     * destination Amazon Web Services Region and that fall outside of the new
      * retention period.</p> <p>Constraints: Must be at least 1 and no more than 35 for
      * automated snapshots. </p> <p>If you specify the <code>manual</code> option, only
      * newly copied manual snapshots will have the new retention period. </p> <p>If you

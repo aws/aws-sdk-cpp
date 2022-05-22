@@ -21,14 +21,22 @@ namespace Model
 S3Target::S3Target() : 
     m_pathHasBeenSet(false),
     m_exclusionsHasBeenSet(false),
-    m_connectionNameHasBeenSet(false)
+    m_connectionNameHasBeenSet(false),
+    m_sampleSize(0),
+    m_sampleSizeHasBeenSet(false),
+    m_eventQueueArnHasBeenSet(false),
+    m_dlqEventQueueArnHasBeenSet(false)
 {
 }
 
 S3Target::S3Target(JsonView jsonValue) : 
     m_pathHasBeenSet(false),
     m_exclusionsHasBeenSet(false),
-    m_connectionNameHasBeenSet(false)
+    m_connectionNameHasBeenSet(false),
+    m_sampleSize(0),
+    m_sampleSizeHasBeenSet(false),
+    m_eventQueueArnHasBeenSet(false),
+    m_dlqEventQueueArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -59,6 +67,27 @@ S3Target& S3Target::operator =(JsonView jsonValue)
     m_connectionNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SampleSize"))
+  {
+    m_sampleSize = jsonValue.GetInteger("SampleSize");
+
+    m_sampleSizeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EventQueueArn"))
+  {
+    m_eventQueueArn = jsonValue.GetString("EventQueueArn");
+
+    m_eventQueueArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DlqEventQueueArn"))
+  {
+    m_dlqEventQueueArn = jsonValue.GetString("DlqEventQueueArn");
+
+    m_dlqEventQueueArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -86,6 +115,24 @@ JsonValue S3Target::Jsonize() const
   if(m_connectionNameHasBeenSet)
   {
    payload.WithString("ConnectionName", m_connectionName);
+
+  }
+
+  if(m_sampleSizeHasBeenSet)
+  {
+   payload.WithInteger("SampleSize", m_sampleSize);
+
+  }
+
+  if(m_eventQueueArnHasBeenSet)
+  {
+   payload.WithString("EventQueueArn", m_eventQueueArn);
+
+  }
+
+  if(m_dlqEventQueueArnHasBeenSet)
+  {
+   payload.WithString("DlqEventQueueArn", m_dlqEventQueueArn);
 
   }
 

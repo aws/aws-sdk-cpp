@@ -61,6 +61,7 @@ template<> AWS_ROUTE53RESOLVER_API ResourceUnavailableException Route53ResolverE
 namespace Route53ResolverErrorMapper
 {
 
+static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int RESOURCE_EXISTS_HASH = HashingUtils::HashString("ResourceExistsException");
 static const int INVALID_POLICY_DOCUMENT_HASH = HashingUtils::HashString("InvalidPolicyDocument");
 static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
@@ -78,7 +79,11 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == RESOURCE_EXISTS_HASH)
+  if (hashCode == CONFLICT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53ResolverErrors::CONFLICT), false);
+  }
+  else if (hashCode == RESOURCE_EXISTS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53ResolverErrors::RESOURCE_EXISTS), false);
   }

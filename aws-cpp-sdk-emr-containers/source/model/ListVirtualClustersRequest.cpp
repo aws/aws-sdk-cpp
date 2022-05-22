@@ -52,14 +52,14 @@ void ListVirtualClustersRequest::AddQueryStringParameters(URI& uri) const
 
     if(m_createdAfterHasBeenSet)
     {
-      ss << m_createdAfter.ToGmtString(DateFormat::RFC822);
+      ss << m_createdAfter.ToGmtString(DateFormat::ISO_8601);
       uri.AddQueryStringParameter("createdAfter", ss.str());
       ss.str("");
     }
 
     if(m_createdBeforeHasBeenSet)
     {
-      ss << m_createdBefore.ToGmtString(DateFormat::RFC822);
+      ss << m_createdBefore.ToGmtString(DateFormat::ISO_8601);
       uri.AddQueryStringParameter("createdBefore", ss.str());
       ss.str("");
     }

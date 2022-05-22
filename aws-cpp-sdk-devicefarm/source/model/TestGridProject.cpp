@@ -22,6 +22,7 @@ TestGridProject::TestGridProject() :
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_vpcConfigHasBeenSet(false),
     m_createdHasBeenSet(false)
 {
 }
@@ -30,6 +31,7 @@ TestGridProject::TestGridProject(JsonView jsonValue) :
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_vpcConfigHasBeenSet(false),
     m_createdHasBeenSet(false)
 {
   *this = jsonValue;
@@ -56,6 +58,13 @@ TestGridProject& TestGridProject::operator =(JsonView jsonValue)
     m_description = jsonValue.GetString("description");
 
     m_descriptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("vpcConfig"))
+  {
+    m_vpcConfig = jsonValue.GetObject("vpcConfig");
+
+    m_vpcConfigHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("created"))
@@ -87,6 +96,12 @@ JsonValue TestGridProject::Jsonize() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
+
+  }
+
+  if(m_vpcConfigHasBeenSet)
+  {
+   payload.WithObject("vpcConfig", m_vpcConfig.Jsonize());
 
   }
 

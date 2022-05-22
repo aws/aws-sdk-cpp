@@ -20,13 +20,17 @@ namespace Model
 
 ResultConfiguration::ResultConfiguration() : 
     m_outputLocationHasBeenSet(false),
-    m_encryptionConfigurationHasBeenSet(false)
+    m_encryptionConfigurationHasBeenSet(false),
+    m_expectedBucketOwnerHasBeenSet(false),
+    m_aclConfigurationHasBeenSet(false)
 {
 }
 
 ResultConfiguration::ResultConfiguration(JsonView jsonValue) : 
     m_outputLocationHasBeenSet(false),
-    m_encryptionConfigurationHasBeenSet(false)
+    m_encryptionConfigurationHasBeenSet(false),
+    m_expectedBucketOwnerHasBeenSet(false),
+    m_aclConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +51,20 @@ ResultConfiguration& ResultConfiguration::operator =(JsonView jsonValue)
     m_encryptionConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ExpectedBucketOwner"))
+  {
+    m_expectedBucketOwner = jsonValue.GetString("ExpectedBucketOwner");
+
+    m_expectedBucketOwnerHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AclConfiguration"))
+  {
+    m_aclConfiguration = jsonValue.GetObject("AclConfiguration");
+
+    m_aclConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +81,18 @@ JsonValue ResultConfiguration::Jsonize() const
   if(m_encryptionConfigurationHasBeenSet)
   {
    payload.WithObject("EncryptionConfiguration", m_encryptionConfiguration.Jsonize());
+
+  }
+
+  if(m_expectedBucketOwnerHasBeenSet)
+  {
+   payload.WithString("ExpectedBucketOwner", m_expectedBucketOwner);
+
+  }
+
+  if(m_aclConfigurationHasBeenSet)
+  {
+   payload.WithObject("AclConfiguration", m_aclConfiguration.Jsonize());
 
   }
 

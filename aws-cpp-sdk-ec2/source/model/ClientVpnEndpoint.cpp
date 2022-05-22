@@ -44,7 +44,10 @@ ClientVpnEndpoint::ClientVpnEndpoint() :
     m_securityGroupIdsHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_selfServicePortalUrlHasBeenSet(false),
-    m_clientConnectOptionsHasBeenSet(false)
+    m_clientConnectOptionsHasBeenSet(false),
+    m_sessionTimeoutHours(0),
+    m_sessionTimeoutHoursHasBeenSet(false),
+    m_clientLoginBannerOptionsHasBeenSet(false)
 {
 }
 
@@ -72,7 +75,10 @@ ClientVpnEndpoint::ClientVpnEndpoint(const XmlNode& xmlNode) :
     m_securityGroupIdsHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_selfServicePortalUrlHasBeenSet(false),
-    m_clientConnectOptionsHasBeenSet(false)
+    m_clientConnectOptionsHasBeenSet(false),
+    m_sessionTimeoutHours(0),
+    m_sessionTimeoutHoursHasBeenSet(false),
+    m_clientLoginBannerOptionsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -227,6 +233,18 @@ ClientVpnEndpoint& ClientVpnEndpoint::operator =(const XmlNode& xmlNode)
       m_clientConnectOptions = clientConnectOptionsNode;
       m_clientConnectOptionsHasBeenSet = true;
     }
+    XmlNode sessionTimeoutHoursNode = resultNode.FirstChild("sessionTimeoutHours");
+    if(!sessionTimeoutHoursNode.IsNull())
+    {
+      m_sessionTimeoutHours = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sessionTimeoutHoursNode.GetText()).c_str()).c_str());
+      m_sessionTimeoutHoursHasBeenSet = true;
+    }
+    XmlNode clientLoginBannerOptionsNode = resultNode.FirstChild("clientLoginBannerOptions");
+    if(!clientLoginBannerOptionsNode.IsNull())
+    {
+      m_clientLoginBannerOptions = clientLoginBannerOptionsNode;
+      m_clientLoginBannerOptionsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -360,6 +378,18 @@ void ClientVpnEndpoint::OutputToStream(Aws::OStream& oStream, const char* locati
       m_clientConnectOptions.OutputToStream(oStream, clientConnectOptionsLocationAndMemberSs.str().c_str());
   }
 
+  if(m_sessionTimeoutHoursHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SessionTimeoutHours=" << m_sessionTimeoutHours << "&";
+  }
+
+  if(m_clientLoginBannerOptionsHasBeenSet)
+  {
+      Aws::StringStream clientLoginBannerOptionsLocationAndMemberSs;
+      clientLoginBannerOptionsLocationAndMemberSs << location << index << locationValue << ".ClientLoginBannerOptions";
+      m_clientLoginBannerOptions.OutputToStream(oStream, clientLoginBannerOptionsLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void ClientVpnEndpoint::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -469,6 +499,16 @@ void ClientVpnEndpoint::OutputToStream(Aws::OStream& oStream, const char* locati
       Aws::String clientConnectOptionsLocationAndMember(location);
       clientConnectOptionsLocationAndMember += ".ClientConnectOptions";
       m_clientConnectOptions.OutputToStream(oStream, clientConnectOptionsLocationAndMember.c_str());
+  }
+  if(m_sessionTimeoutHoursHasBeenSet)
+  {
+      oStream << location << ".SessionTimeoutHours=" << m_sessionTimeoutHours << "&";
+  }
+  if(m_clientLoginBannerOptionsHasBeenSet)
+  {
+      Aws::String clientLoginBannerOptionsLocationAndMember(location);
+      clientLoginBannerOptionsLocationAndMember += ".ClientLoginBannerOptions";
+      m_clientLoginBannerOptions.OutputToStream(oStream, clientLoginBannerOptionsLocationAndMember.c_str());
   }
 }
 

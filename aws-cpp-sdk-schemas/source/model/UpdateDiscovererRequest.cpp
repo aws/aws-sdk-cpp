@@ -14,7 +14,9 @@ using namespace Aws::Utils;
 
 UpdateDiscovererRequest::UpdateDiscovererRequest() : 
     m_descriptionHasBeenSet(false),
-    m_discovererIdHasBeenSet(false)
+    m_discovererIdHasBeenSet(false),
+    m_crossAccount(false),
+    m_crossAccountHasBeenSet(false)
 {
 }
 
@@ -25,6 +27,12 @@ Aws::String UpdateDiscovererRequest::SerializePayload() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("Description", m_description);
+
+  }
+
+  if(m_crossAccountHasBeenSet)
+  {
+   payload.WithBool("CrossAccount", m_crossAccount);
 
   }
 

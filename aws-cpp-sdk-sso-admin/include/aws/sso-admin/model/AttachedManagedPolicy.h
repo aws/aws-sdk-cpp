@@ -82,56 +82,64 @@ namespace Model
     /**
      * <p>The ARN of the IAM managed policy. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
+     * Services General Reference</i>.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
      * <p>The ARN of the IAM managed policy. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
+     * Services General Reference</i>.</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
      * <p>The ARN of the IAM managed policy. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
+     * Services General Reference</i>.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
      * <p>The ARN of the IAM managed policy. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
+     * Services General Reference</i>.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
      * <p>The ARN of the IAM managed policy. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
+     * Services General Reference</i>.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
      * <p>The ARN of the IAM managed policy. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
+     * Services General Reference</i>.</p>
      */
     inline AttachedManagedPolicy& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
      * <p>The ARN of the IAM managed policy. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
+     * Services General Reference</i>.</p>
      */
     inline AttachedManagedPolicy& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the IAM managed policy. For more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
+     * Services General Reference</i>.</p>
      */
     inline AttachedManagedPolicy& WithArn(const char* value) { SetArn(value); return *this;}
 

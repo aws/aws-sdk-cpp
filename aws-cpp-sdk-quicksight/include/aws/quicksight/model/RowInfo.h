@@ -77,6 +77,27 @@ namespace Model
      */
     inline RowInfo& WithRowsDropped(long long value) { SetRowsDropped(value); return *this;}
 
+
+    /**
+     * <p>The total number of rows in the dataset.</p>
+     */
+    inline long long GetTotalRowsInDataset() const{ return m_totalRowsInDataset; }
+
+    /**
+     * <p>The total number of rows in the dataset.</p>
+     */
+    inline bool TotalRowsInDatasetHasBeenSet() const { return m_totalRowsInDatasetHasBeenSet; }
+
+    /**
+     * <p>The total number of rows in the dataset.</p>
+     */
+    inline void SetTotalRowsInDataset(long long value) { m_totalRowsInDatasetHasBeenSet = true; m_totalRowsInDataset = value; }
+
+    /**
+     * <p>The total number of rows in the dataset.</p>
+     */
+    inline RowInfo& WithTotalRowsInDataset(long long value) { SetTotalRowsInDataset(value); return *this;}
+
   private:
 
     long long m_rowsIngested;
@@ -84,6 +105,9 @@ namespace Model
 
     long long m_rowsDropped;
     bool m_rowsDroppedHasBeenSet;
+
+    long long m_totalRowsInDataset;
+    bool m_totalRowsInDatasetHasBeenSet;
   };
 
 } // namespace Model

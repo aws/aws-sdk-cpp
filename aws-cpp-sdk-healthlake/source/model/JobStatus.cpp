@@ -22,6 +22,7 @@ namespace Aws
 
         static const int SUBMITTED_HASH = HashingUtils::HashString("SUBMITTED");
         static const int IN_PROGRESS_HASH = HashingUtils::HashString("IN_PROGRESS");
+        static const int COMPLETED_WITH_ERRORS_HASH = HashingUtils::HashString("COMPLETED_WITH_ERRORS");
         static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
 
@@ -36,6 +37,10 @@ namespace Aws
           else if (hashCode == IN_PROGRESS_HASH)
           {
             return JobStatus::IN_PROGRESS;
+          }
+          else if (hashCode == COMPLETED_WITH_ERRORS_HASH)
+          {
+            return JobStatus::COMPLETED_WITH_ERRORS;
           }
           else if (hashCode == COMPLETED_HASH)
           {
@@ -63,6 +68,8 @@ namespace Aws
             return "SUBMITTED";
           case JobStatus::IN_PROGRESS:
             return "IN_PROGRESS";
+          case JobStatus::COMPLETED_WITH_ERRORS:
+            return "COMPLETED_WITH_ERRORS";
           case JobStatus::COMPLETED:
             return "COMPLETED";
           case JobStatus::FAILED:

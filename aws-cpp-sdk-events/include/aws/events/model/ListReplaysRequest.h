@@ -116,42 +116,42 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the event source associated with the replay.</p>
+     * <p>The ARN of the archive from which the events are replayed.</p>
      */
     inline const Aws::String& GetEventSourceArn() const{ return m_eventSourceArn; }
 
     /**
-     * <p>The ARN of the event source associated with the replay.</p>
+     * <p>The ARN of the archive from which the events are replayed.</p>
      */
     inline bool EventSourceArnHasBeenSet() const { return m_eventSourceArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the event source associated with the replay.</p>
+     * <p>The ARN of the archive from which the events are replayed.</p>
      */
     inline void SetEventSourceArn(const Aws::String& value) { m_eventSourceArnHasBeenSet = true; m_eventSourceArn = value; }
 
     /**
-     * <p>The ARN of the event source associated with the replay.</p>
+     * <p>The ARN of the archive from which the events are replayed.</p>
      */
     inline void SetEventSourceArn(Aws::String&& value) { m_eventSourceArnHasBeenSet = true; m_eventSourceArn = std::move(value); }
 
     /**
-     * <p>The ARN of the event source associated with the replay.</p>
+     * <p>The ARN of the archive from which the events are replayed.</p>
      */
     inline void SetEventSourceArn(const char* value) { m_eventSourceArnHasBeenSet = true; m_eventSourceArn.assign(value); }
 
     /**
-     * <p>The ARN of the event source associated with the replay.</p>
+     * <p>The ARN of the archive from which the events are replayed.</p>
      */
     inline ListReplaysRequest& WithEventSourceArn(const Aws::String& value) { SetEventSourceArn(value); return *this;}
 
     /**
-     * <p>The ARN of the event source associated with the replay.</p>
+     * <p>The ARN of the archive from which the events are replayed.</p>
      */
     inline ListReplaysRequest& WithEventSourceArn(Aws::String&& value) { SetEventSourceArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the event source associated with the replay.</p>
+     * <p>The ARN of the archive from which the events are replayed.</p>
      */
     inline ListReplaysRequest& WithEventSourceArn(const char* value) { SetEventSourceArn(value); return *this;}
 

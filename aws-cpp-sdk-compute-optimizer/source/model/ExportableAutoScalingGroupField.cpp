@@ -30,6 +30,14 @@ namespace Aws
         static const int UtilizationMetricsEbsWriteOpsPerSecondMaximum_HASH = HashingUtils::HashString("UtilizationMetricsEbsWriteOpsPerSecondMaximum");
         static const int UtilizationMetricsEbsReadBytesPerSecondMaximum_HASH = HashingUtils::HashString("UtilizationMetricsEbsReadBytesPerSecondMaximum");
         static const int UtilizationMetricsEbsWriteBytesPerSecondMaximum_HASH = HashingUtils::HashString("UtilizationMetricsEbsWriteBytesPerSecondMaximum");
+        static const int UtilizationMetricsDiskReadOpsPerSecondMaximum_HASH = HashingUtils::HashString("UtilizationMetricsDiskReadOpsPerSecondMaximum");
+        static const int UtilizationMetricsDiskWriteOpsPerSecondMaximum_HASH = HashingUtils::HashString("UtilizationMetricsDiskWriteOpsPerSecondMaximum");
+        static const int UtilizationMetricsDiskReadBytesPerSecondMaximum_HASH = HashingUtils::HashString("UtilizationMetricsDiskReadBytesPerSecondMaximum");
+        static const int UtilizationMetricsDiskWriteBytesPerSecondMaximum_HASH = HashingUtils::HashString("UtilizationMetricsDiskWriteBytesPerSecondMaximum");
+        static const int UtilizationMetricsNetworkInBytesPerSecondMaximum_HASH = HashingUtils::HashString("UtilizationMetricsNetworkInBytesPerSecondMaximum");
+        static const int UtilizationMetricsNetworkOutBytesPerSecondMaximum_HASH = HashingUtils::HashString("UtilizationMetricsNetworkOutBytesPerSecondMaximum");
+        static const int UtilizationMetricsNetworkPacketsInPerSecondMaximum_HASH = HashingUtils::HashString("UtilizationMetricsNetworkPacketsInPerSecondMaximum");
+        static const int UtilizationMetricsNetworkPacketsOutPerSecondMaximum_HASH = HashingUtils::HashString("UtilizationMetricsNetworkPacketsOutPerSecondMaximum");
         static const int LookbackPeriodInDays_HASH = HashingUtils::HashString("LookbackPeriodInDays");
         static const int CurrentConfigurationInstanceType_HASH = HashingUtils::HashString("CurrentConfigurationInstanceType");
         static const int CurrentConfigurationDesiredCapacity_HASH = HashingUtils::HashString("CurrentConfigurationDesiredCapacity");
@@ -57,6 +65,15 @@ namespace Aws
         static const int RecommendationOptionsStorage_HASH = HashingUtils::HashString("RecommendationOptionsStorage");
         static const int RecommendationOptionsNetwork_HASH = HashingUtils::HashString("RecommendationOptionsNetwork");
         static const int LastRefreshTimestamp_HASH = HashingUtils::HashString("LastRefreshTimestamp");
+        static const int CurrentPerformanceRisk_HASH = HashingUtils::HashString("CurrentPerformanceRisk");
+        static const int RecommendationOptionsSavingsOpportunityPercentage_HASH = HashingUtils::HashString("RecommendationOptionsSavingsOpportunityPercentage");
+        static const int RecommendationOptionsEstimatedMonthlySavingsCurrency_HASH = HashingUtils::HashString("RecommendationOptionsEstimatedMonthlySavingsCurrency");
+        static const int RecommendationOptionsEstimatedMonthlySavingsValue_HASH = HashingUtils::HashString("RecommendationOptionsEstimatedMonthlySavingsValue");
+        static const int EffectiveRecommendationPreferencesCpuVendorArchitectures_HASH = HashingUtils::HashString("EffectiveRecommendationPreferencesCpuVendorArchitectures");
+        static const int EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics_HASH = HashingUtils::HashString("EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics");
+        static const int EffectiveRecommendationPreferencesInferredWorkloadTypes_HASH = HashingUtils::HashString("EffectiveRecommendationPreferencesInferredWorkloadTypes");
+        static const int InferredWorkloadTypes_HASH = HashingUtils::HashString("InferredWorkloadTypes");
+        static const int RecommendationOptionsMigrationEffort_HASH = HashingUtils::HashString("RecommendationOptionsMigrationEffort");
 
 
         ExportableAutoScalingGroupField GetExportableAutoScalingGroupFieldForName(const Aws::String& name)
@@ -101,6 +118,38 @@ namespace Aws
           else if (hashCode == UtilizationMetricsEbsWriteBytesPerSecondMaximum_HASH)
           {
             return ExportableAutoScalingGroupField::UtilizationMetricsEbsWriteBytesPerSecondMaximum;
+          }
+          else if (hashCode == UtilizationMetricsDiskReadOpsPerSecondMaximum_HASH)
+          {
+            return ExportableAutoScalingGroupField::UtilizationMetricsDiskReadOpsPerSecondMaximum;
+          }
+          else if (hashCode == UtilizationMetricsDiskWriteOpsPerSecondMaximum_HASH)
+          {
+            return ExportableAutoScalingGroupField::UtilizationMetricsDiskWriteOpsPerSecondMaximum;
+          }
+          else if (hashCode == UtilizationMetricsDiskReadBytesPerSecondMaximum_HASH)
+          {
+            return ExportableAutoScalingGroupField::UtilizationMetricsDiskReadBytesPerSecondMaximum;
+          }
+          else if (hashCode == UtilizationMetricsDiskWriteBytesPerSecondMaximum_HASH)
+          {
+            return ExportableAutoScalingGroupField::UtilizationMetricsDiskWriteBytesPerSecondMaximum;
+          }
+          else if (hashCode == UtilizationMetricsNetworkInBytesPerSecondMaximum_HASH)
+          {
+            return ExportableAutoScalingGroupField::UtilizationMetricsNetworkInBytesPerSecondMaximum;
+          }
+          else if (hashCode == UtilizationMetricsNetworkOutBytesPerSecondMaximum_HASH)
+          {
+            return ExportableAutoScalingGroupField::UtilizationMetricsNetworkOutBytesPerSecondMaximum;
+          }
+          else if (hashCode == UtilizationMetricsNetworkPacketsInPerSecondMaximum_HASH)
+          {
+            return ExportableAutoScalingGroupField::UtilizationMetricsNetworkPacketsInPerSecondMaximum;
+          }
+          else if (hashCode == UtilizationMetricsNetworkPacketsOutPerSecondMaximum_HASH)
+          {
+            return ExportableAutoScalingGroupField::UtilizationMetricsNetworkPacketsOutPerSecondMaximum;
           }
           else if (hashCode == LookbackPeriodInDays_HASH)
           {
@@ -210,6 +259,42 @@ namespace Aws
           {
             return ExportableAutoScalingGroupField::LastRefreshTimestamp;
           }
+          else if (hashCode == CurrentPerformanceRisk_HASH)
+          {
+            return ExportableAutoScalingGroupField::CurrentPerformanceRisk;
+          }
+          else if (hashCode == RecommendationOptionsSavingsOpportunityPercentage_HASH)
+          {
+            return ExportableAutoScalingGroupField::RecommendationOptionsSavingsOpportunityPercentage;
+          }
+          else if (hashCode == RecommendationOptionsEstimatedMonthlySavingsCurrency_HASH)
+          {
+            return ExportableAutoScalingGroupField::RecommendationOptionsEstimatedMonthlySavingsCurrency;
+          }
+          else if (hashCode == RecommendationOptionsEstimatedMonthlySavingsValue_HASH)
+          {
+            return ExportableAutoScalingGroupField::RecommendationOptionsEstimatedMonthlySavingsValue;
+          }
+          else if (hashCode == EffectiveRecommendationPreferencesCpuVendorArchitectures_HASH)
+          {
+            return ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesCpuVendorArchitectures;
+          }
+          else if (hashCode == EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics_HASH)
+          {
+            return ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics;
+          }
+          else if (hashCode == EffectiveRecommendationPreferencesInferredWorkloadTypes_HASH)
+          {
+            return ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesInferredWorkloadTypes;
+          }
+          else if (hashCode == InferredWorkloadTypes_HASH)
+          {
+            return ExportableAutoScalingGroupField::InferredWorkloadTypes;
+          }
+          else if (hashCode == RecommendationOptionsMigrationEffort_HASH)
+          {
+            return ExportableAutoScalingGroupField::RecommendationOptionsMigrationEffort;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -244,6 +329,22 @@ namespace Aws
             return "UtilizationMetricsEbsReadBytesPerSecondMaximum";
           case ExportableAutoScalingGroupField::UtilizationMetricsEbsWriteBytesPerSecondMaximum:
             return "UtilizationMetricsEbsWriteBytesPerSecondMaximum";
+          case ExportableAutoScalingGroupField::UtilizationMetricsDiskReadOpsPerSecondMaximum:
+            return "UtilizationMetricsDiskReadOpsPerSecondMaximum";
+          case ExportableAutoScalingGroupField::UtilizationMetricsDiskWriteOpsPerSecondMaximum:
+            return "UtilizationMetricsDiskWriteOpsPerSecondMaximum";
+          case ExportableAutoScalingGroupField::UtilizationMetricsDiskReadBytesPerSecondMaximum:
+            return "UtilizationMetricsDiskReadBytesPerSecondMaximum";
+          case ExportableAutoScalingGroupField::UtilizationMetricsDiskWriteBytesPerSecondMaximum:
+            return "UtilizationMetricsDiskWriteBytesPerSecondMaximum";
+          case ExportableAutoScalingGroupField::UtilizationMetricsNetworkInBytesPerSecondMaximum:
+            return "UtilizationMetricsNetworkInBytesPerSecondMaximum";
+          case ExportableAutoScalingGroupField::UtilizationMetricsNetworkOutBytesPerSecondMaximum:
+            return "UtilizationMetricsNetworkOutBytesPerSecondMaximum";
+          case ExportableAutoScalingGroupField::UtilizationMetricsNetworkPacketsInPerSecondMaximum:
+            return "UtilizationMetricsNetworkPacketsInPerSecondMaximum";
+          case ExportableAutoScalingGroupField::UtilizationMetricsNetworkPacketsOutPerSecondMaximum:
+            return "UtilizationMetricsNetworkPacketsOutPerSecondMaximum";
           case ExportableAutoScalingGroupField::LookbackPeriodInDays:
             return "LookbackPeriodInDays";
           case ExportableAutoScalingGroupField::CurrentConfigurationInstanceType:
@@ -298,6 +399,24 @@ namespace Aws
             return "RecommendationOptionsNetwork";
           case ExportableAutoScalingGroupField::LastRefreshTimestamp:
             return "LastRefreshTimestamp";
+          case ExportableAutoScalingGroupField::CurrentPerformanceRisk:
+            return "CurrentPerformanceRisk";
+          case ExportableAutoScalingGroupField::RecommendationOptionsSavingsOpportunityPercentage:
+            return "RecommendationOptionsSavingsOpportunityPercentage";
+          case ExportableAutoScalingGroupField::RecommendationOptionsEstimatedMonthlySavingsCurrency:
+            return "RecommendationOptionsEstimatedMonthlySavingsCurrency";
+          case ExportableAutoScalingGroupField::RecommendationOptionsEstimatedMonthlySavingsValue:
+            return "RecommendationOptionsEstimatedMonthlySavingsValue";
+          case ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesCpuVendorArchitectures:
+            return "EffectiveRecommendationPreferencesCpuVendorArchitectures";
+          case ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics:
+            return "EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics";
+          case ExportableAutoScalingGroupField::EffectiveRecommendationPreferencesInferredWorkloadTypes:
+            return "EffectiveRecommendationPreferencesInferredWorkloadTypes";
+          case ExportableAutoScalingGroupField::InferredWorkloadTypes:
+            return "InferredWorkloadTypes";
+          case ExportableAutoScalingGroupField::RecommendationOptionsMigrationEffort:
+            return "RecommendationOptionsMigrationEffort";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

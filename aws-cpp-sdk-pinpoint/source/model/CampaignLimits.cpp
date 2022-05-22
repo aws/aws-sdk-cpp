@@ -26,7 +26,9 @@ CampaignLimits::CampaignLimits() :
     m_messagesPerSecond(0),
     m_messagesPerSecondHasBeenSet(false),
     m_total(0),
-    m_totalHasBeenSet(false)
+    m_totalHasBeenSet(false),
+    m_session(0),
+    m_sessionHasBeenSet(false)
 {
 }
 
@@ -38,7 +40,9 @@ CampaignLimits::CampaignLimits(JsonView jsonValue) :
     m_messagesPerSecond(0),
     m_messagesPerSecondHasBeenSet(false),
     m_total(0),
-    m_totalHasBeenSet(false)
+    m_totalHasBeenSet(false),
+    m_session(0),
+    m_sessionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -73,6 +77,13 @@ CampaignLimits& CampaignLimits::operator =(JsonView jsonValue)
     m_totalHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Session"))
+  {
+    m_session = jsonValue.GetInteger("Session");
+
+    m_sessionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -101,6 +112,12 @@ JsonValue CampaignLimits::Jsonize() const
   if(m_totalHasBeenSet)
   {
    payload.WithInteger("Total", m_total);
+
+  }
+
+  if(m_sessionHasBeenSet)
+  {
+   payload.WithInteger("Session", m_session);
 
   }
 

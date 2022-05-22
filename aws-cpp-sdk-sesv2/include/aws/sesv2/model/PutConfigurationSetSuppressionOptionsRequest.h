@@ -39,50 +39,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the configuration set that you want to change the suppression
-     * list preferences for.</p>
+     * <p>The name of the configuration set to change the suppression list preferences
+     * for.</p>
      */
     inline const Aws::String& GetConfigurationSetName() const{ return m_configurationSetName; }
 
     /**
-     * <p>The name of the configuration set that you want to change the suppression
-     * list preferences for.</p>
+     * <p>The name of the configuration set to change the suppression list preferences
+     * for.</p>
      */
     inline bool ConfigurationSetNameHasBeenSet() const { return m_configurationSetNameHasBeenSet; }
 
     /**
-     * <p>The name of the configuration set that you want to change the suppression
-     * list preferences for.</p>
+     * <p>The name of the configuration set to change the suppression list preferences
+     * for.</p>
      */
     inline void SetConfigurationSetName(const Aws::String& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = value; }
 
     /**
-     * <p>The name of the configuration set that you want to change the suppression
-     * list preferences for.</p>
+     * <p>The name of the configuration set to change the suppression list preferences
+     * for.</p>
      */
     inline void SetConfigurationSetName(Aws::String&& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = std::move(value); }
 
     /**
-     * <p>The name of the configuration set that you want to change the suppression
-     * list preferences for.</p>
+     * <p>The name of the configuration set to change the suppression list preferences
+     * for.</p>
      */
     inline void SetConfigurationSetName(const char* value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName.assign(value); }
 
     /**
-     * <p>The name of the configuration set that you want to change the suppression
-     * list preferences for.</p>
+     * <p>The name of the configuration set to change the suppression list preferences
+     * for.</p>
      */
     inline PutConfigurationSetSuppressionOptionsRequest& WithConfigurationSetName(const Aws::String& value) { SetConfigurationSetName(value); return *this;}
 
     /**
-     * <p>The name of the configuration set that you want to change the suppression
-     * list preferences for.</p>
+     * <p>The name of the configuration set to change the suppression list preferences
+     * for.</p>
      */
     inline PutConfigurationSetSuppressionOptionsRequest& WithConfigurationSetName(Aws::String&& value) { SetConfigurationSetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the configuration set that you want to change the suppression
-     * list preferences for.</p>
+     * <p>The name of the configuration set to change the suppression list preferences
+     * for.</p>
      */
     inline PutConfigurationSetSuppressionOptionsRequest& WithConfigurationSetName(const char* value) { SetConfigurationSetName(value); return *this;}
 

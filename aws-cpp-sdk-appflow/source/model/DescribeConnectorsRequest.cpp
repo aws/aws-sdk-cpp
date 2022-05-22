@@ -14,6 +14,8 @@ using namespace Aws::Utils;
 
 DescribeConnectorsRequest::DescribeConnectorsRequest() : 
     m_connectorTypesHasBeenSet(false),
+    m_maxResults(0),
+    m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false)
 {
 }
@@ -30,6 +32,12 @@ Aws::String DescribeConnectorsRequest::SerializePayload() const
      connectorTypesJsonList[connectorTypesIndex].AsString(ConnectorTypeMapper::GetNameForConnectorType(m_connectorTypes[connectorTypesIndex]));
    }
    payload.WithArray("connectorTypes", std::move(connectorTypesJsonList));
+
+  }
+
+  if(m_maxResultsHasBeenSet)
+  {
+   payload.WithInteger("maxResults", m_maxResults);
 
   }
 

@@ -16,6 +16,8 @@ ListStatementsRequest::ListStatementsRequest() :
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
+    m_roleLevel(false),
+    m_roleLevelHasBeenSet(false),
     m_statementNameHasBeenSet(false),
     m_status(StatusString::NOT_SET),
     m_statusHasBeenSet(false)
@@ -35,6 +37,12 @@ Aws::String ListStatementsRequest::SerializePayload() const
   if(m_nextTokenHasBeenSet)
   {
    payload.WithString("NextToken", m_nextToken);
+
+  }
+
+  if(m_roleLevelHasBeenSet)
+  {
+   payload.WithBool("RoleLevel", m_roleLevel);
 
   }
 

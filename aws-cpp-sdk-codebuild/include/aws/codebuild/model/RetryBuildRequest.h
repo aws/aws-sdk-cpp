@@ -79,7 +79,7 @@ namespace Model
      * <p>A unique, case sensitive identifier you provide to ensure the idempotency of
      * the <code>RetryBuild</code> request. The token is included in the
      * <code>RetryBuild</code> request and is valid for five minutes. If you repeat the
-     * <code>RetryBuild</code> request with the same token, but change a parameter, AWS
+     * <code>RetryBuild</code> request with the same token, but change a parameter,
      * CodeBuild returns a parameter mismatch error.</p>
      */
     inline const Aws::String& GetIdempotencyToken() const{ return m_idempotencyToken; }
@@ -88,7 +88,7 @@ namespace Model
      * <p>A unique, case sensitive identifier you provide to ensure the idempotency of
      * the <code>RetryBuild</code> request. The token is included in the
      * <code>RetryBuild</code> request and is valid for five minutes. If you repeat the
-     * <code>RetryBuild</code> request with the same token, but change a parameter, AWS
+     * <code>RetryBuild</code> request with the same token, but change a parameter,
      * CodeBuild returns a parameter mismatch error.</p>
      */
     inline bool IdempotencyTokenHasBeenSet() const { return m_idempotencyTokenHasBeenSet; }
@@ -97,7 +97,7 @@ namespace Model
      * <p>A unique, case sensitive identifier you provide to ensure the idempotency of
      * the <code>RetryBuild</code> request. The token is included in the
      * <code>RetryBuild</code> request and is valid for five minutes. If you repeat the
-     * <code>RetryBuild</code> request with the same token, but change a parameter, AWS
+     * <code>RetryBuild</code> request with the same token, but change a parameter,
      * CodeBuild returns a parameter mismatch error.</p>
      */
     inline void SetIdempotencyToken(const Aws::String& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = value; }
@@ -106,7 +106,7 @@ namespace Model
      * <p>A unique, case sensitive identifier you provide to ensure the idempotency of
      * the <code>RetryBuild</code> request. The token is included in the
      * <code>RetryBuild</code> request and is valid for five minutes. If you repeat the
-     * <code>RetryBuild</code> request with the same token, but change a parameter, AWS
+     * <code>RetryBuild</code> request with the same token, but change a parameter,
      * CodeBuild returns a parameter mismatch error.</p>
      */
     inline void SetIdempotencyToken(Aws::String&& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = std::move(value); }
@@ -115,7 +115,7 @@ namespace Model
      * <p>A unique, case sensitive identifier you provide to ensure the idempotency of
      * the <code>RetryBuild</code> request. The token is included in the
      * <code>RetryBuild</code> request and is valid for five minutes. If you repeat the
-     * <code>RetryBuild</code> request with the same token, but change a parameter, AWS
+     * <code>RetryBuild</code> request with the same token, but change a parameter,
      * CodeBuild returns a parameter mismatch error.</p>
      */
     inline void SetIdempotencyToken(const char* value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken.assign(value); }
@@ -124,7 +124,7 @@ namespace Model
      * <p>A unique, case sensitive identifier you provide to ensure the idempotency of
      * the <code>RetryBuild</code> request. The token is included in the
      * <code>RetryBuild</code> request and is valid for five minutes. If you repeat the
-     * <code>RetryBuild</code> request with the same token, but change a parameter, AWS
+     * <code>RetryBuild</code> request with the same token, but change a parameter,
      * CodeBuild returns a parameter mismatch error.</p>
      */
     inline RetryBuildRequest& WithIdempotencyToken(const Aws::String& value) { SetIdempotencyToken(value); return *this;}
@@ -133,7 +133,7 @@ namespace Model
      * <p>A unique, case sensitive identifier you provide to ensure the idempotency of
      * the <code>RetryBuild</code> request. The token is included in the
      * <code>RetryBuild</code> request and is valid for five minutes. If you repeat the
-     * <code>RetryBuild</code> request with the same token, but change a parameter, AWS
+     * <code>RetryBuild</code> request with the same token, but change a parameter,
      * CodeBuild returns a parameter mismatch error.</p>
      */
     inline RetryBuildRequest& WithIdempotencyToken(Aws::String&& value) { SetIdempotencyToken(std::move(value)); return *this;}
@@ -142,7 +142,7 @@ namespace Model
      * <p>A unique, case sensitive identifier you provide to ensure the idempotency of
      * the <code>RetryBuild</code> request. The token is included in the
      * <code>RetryBuild</code> request and is valid for five minutes. If you repeat the
-     * <code>RetryBuild</code> request with the same token, but change a parameter, AWS
+     * <code>RetryBuild</code> request with the same token, but change a parameter,
      * CodeBuild returns a parameter mismatch error.</p>
      */
     inline RetryBuildRequest& WithIdempotencyToken(const char* value) { SetIdempotencyToken(value); return *this;}

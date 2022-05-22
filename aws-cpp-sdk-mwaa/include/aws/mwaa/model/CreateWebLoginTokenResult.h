@@ -33,80 +33,73 @@ namespace Model
 
 
     /**
-     * <p>Create an Airflow Web UI login token response for the provided webserver
-     * hostname.</p>
+     * <p>The Airflow web server hostname for the environment.</p>
      */
     inline const Aws::String& GetWebServerHostname() const{ return m_webServerHostname; }
 
     /**
-     * <p>Create an Airflow Web UI login token response for the provided webserver
-     * hostname.</p>
+     * <p>The Airflow web server hostname for the environment.</p>
      */
     inline void SetWebServerHostname(const Aws::String& value) { m_webServerHostname = value; }
 
     /**
-     * <p>Create an Airflow Web UI login token response for the provided webserver
-     * hostname.</p>
+     * <p>The Airflow web server hostname for the environment.</p>
      */
     inline void SetWebServerHostname(Aws::String&& value) { m_webServerHostname = std::move(value); }
 
     /**
-     * <p>Create an Airflow Web UI login token response for the provided webserver
-     * hostname.</p>
+     * <p>The Airflow web server hostname for the environment.</p>
      */
     inline void SetWebServerHostname(const char* value) { m_webServerHostname.assign(value); }
 
     /**
-     * <p>Create an Airflow Web UI login token response for the provided webserver
-     * hostname.</p>
+     * <p>The Airflow web server hostname for the environment.</p>
      */
     inline CreateWebLoginTokenResult& WithWebServerHostname(const Aws::String& value) { SetWebServerHostname(value); return *this;}
 
     /**
-     * <p>Create an Airflow Web UI login token response for the provided webserver
-     * hostname.</p>
+     * <p>The Airflow web server hostname for the environment.</p>
      */
     inline CreateWebLoginTokenResult& WithWebServerHostname(Aws::String&& value) { SetWebServerHostname(std::move(value)); return *this;}
 
     /**
-     * <p>Create an Airflow Web UI login token response for the provided webserver
-     * hostname.</p>
+     * <p>The Airflow web server hostname for the environment.</p>
      */
     inline CreateWebLoginTokenResult& WithWebServerHostname(const char* value) { SetWebServerHostname(value); return *this;}
 
 
     /**
-     * <p>Create an Airflow Web UI login token response for the provided JWT token.</p>
+     * <p>An Airflow web server login token.</p>
      */
     inline const Aws::String& GetWebToken() const{ return m_webToken; }
 
     /**
-     * <p>Create an Airflow Web UI login token response for the provided JWT token.</p>
+     * <p>An Airflow web server login token.</p>
      */
     inline void SetWebToken(const Aws::String& value) { m_webToken = value; }
 
     /**
-     * <p>Create an Airflow Web UI login token response for the provided JWT token.</p>
+     * <p>An Airflow web server login token.</p>
      */
     inline void SetWebToken(Aws::String&& value) { m_webToken = std::move(value); }
 
     /**
-     * <p>Create an Airflow Web UI login token response for the provided JWT token.</p>
+     * <p>An Airflow web server login token.</p>
      */
     inline void SetWebToken(const char* value) { m_webToken.assign(value); }
 
     /**
-     * <p>Create an Airflow Web UI login token response for the provided JWT token.</p>
+     * <p>An Airflow web server login token.</p>
      */
     inline CreateWebLoginTokenResult& WithWebToken(const Aws::String& value) { SetWebToken(value); return *this;}
 
     /**
-     * <p>Create an Airflow Web UI login token response for the provided JWT token.</p>
+     * <p>An Airflow web server login token.</p>
      */
     inline CreateWebLoginTokenResult& WithWebToken(Aws::String&& value) { SetWebToken(std::move(value)); return *this;}
 
     /**
-     * <p>Create an Airflow Web UI login token response for the provided JWT token.</p>
+     * <p>An Airflow web server login token.</p>
      */
     inline CreateWebLoginTokenResult& WithWebToken(const char* value) { SetWebToken(value); return *this;}
 

@@ -24,7 +24,10 @@ ScheduledTriggerProperties::ScheduledTriggerProperties() :
     m_dataPullModeHasBeenSet(false),
     m_scheduleStartTimeHasBeenSet(false),
     m_scheduleEndTimeHasBeenSet(false),
-    m_timezoneHasBeenSet(false)
+    m_timezoneHasBeenSet(false),
+    m_scheduleOffset(0),
+    m_scheduleOffsetHasBeenSet(false),
+    m_firstExecutionFromHasBeenSet(false)
 {
 }
 
@@ -34,7 +37,10 @@ ScheduledTriggerProperties::ScheduledTriggerProperties(JsonView jsonValue) :
     m_dataPullModeHasBeenSet(false),
     m_scheduleStartTimeHasBeenSet(false),
     m_scheduleEndTimeHasBeenSet(false),
-    m_timezoneHasBeenSet(false)
+    m_timezoneHasBeenSet(false),
+    m_scheduleOffset(0),
+    m_scheduleOffsetHasBeenSet(false),
+    m_firstExecutionFromHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -76,6 +82,20 @@ ScheduledTriggerProperties& ScheduledTriggerProperties::operator =(JsonView json
     m_timezoneHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("scheduleOffset"))
+  {
+    m_scheduleOffset = jsonValue.GetInt64("scheduleOffset");
+
+    m_scheduleOffsetHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("firstExecutionFrom"))
+  {
+    m_firstExecutionFrom = jsonValue.GetDouble("firstExecutionFrom");
+
+    m_firstExecutionFromHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -108,6 +128,17 @@ JsonValue ScheduledTriggerProperties::Jsonize() const
   {
    payload.WithString("timezone", m_timezone);
 
+  }
+
+  if(m_scheduleOffsetHasBeenSet)
+  {
+   payload.WithInt64("scheduleOffset", m_scheduleOffset);
+
+  }
+
+  if(m_firstExecutionFromHasBeenSet)
+  {
+   payload.WithDouble("firstExecutionFrom", m_firstExecutionFrom.SecondsWithMSPrecision());
   }
 
   return payload;

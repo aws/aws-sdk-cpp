@@ -24,10 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Exception that indicates that the operation would exceed a limit.</p> <p>
-   * <code>Type</code> is the type of limit that would be exceeded.</p> <p>
-   * <code>Limit</code> is the threshold that would be exceeded.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Exception that indicates that the operation would exceed a
+   * limit.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/LimitsExceededException">AWS
    * API Reference</a></p>
    */
@@ -65,41 +63,65 @@ namespace Model
     inline LimitsExceededException& WithMessage(const char* value) { SetMessage(value); return *this;}
 
 
-    
+    /**
+     * <p>The type of limit that would be exceeded.</p>
+     */
     inline const Aws::String& GetType() const{ return m_type; }
 
-    
+    /**
+     * <p>The type of limit that would be exceeded.</p>
+     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
-    
+    /**
+     * <p>The type of limit that would be exceeded.</p>
+     */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
-    
+    /**
+     * <p>The type of limit that would be exceeded.</p>
+     */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
-    
+    /**
+     * <p>The type of limit that would be exceeded.</p>
+     */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
-    
+    /**
+     * <p>The type of limit that would be exceeded.</p>
+     */
     inline LimitsExceededException& WithType(const Aws::String& value) { SetType(value); return *this;}
 
-    
+    /**
+     * <p>The type of limit that would be exceeded.</p>
+     */
     inline LimitsExceededException& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The type of limit that would be exceeded.</p>
+     */
     inline LimitsExceededException& WithType(const char* value) { SetType(value); return *this;}
 
 
-    
+    /**
+     * <p>The threshold that would be exceeded.</p>
+     */
     inline long long GetLimit() const{ return m_limit; }
 
-    
+    /**
+     * <p>The threshold that would be exceeded.</p>
+     */
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
-    
+    /**
+     * <p>The threshold that would be exceeded.</p>
+     */
     inline void SetLimit(long long value) { m_limitHasBeenSet = true; m_limit = value; }
 
-    
+    /**
+     * <p>The threshold that would be exceeded.</p>
+     */
     inline LimitsExceededException& WithLimit(long long value) { SetLimit(value); return *this;}
 
   private:

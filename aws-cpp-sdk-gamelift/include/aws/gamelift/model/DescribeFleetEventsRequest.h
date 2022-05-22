@@ -39,105 +39,105 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier for a fleet to get event logs for. You can use either the
-     * fleet ID or ARN value.</p>
+     * <p>A unique identifier for the fleet to get event logs for. You can use either
+     * the fleet ID or ARN value.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
 
     /**
-     * <p>A unique identifier for a fleet to get event logs for. You can use either the
-     * fleet ID or ARN value.</p>
+     * <p>A unique identifier for the fleet to get event logs for. You can use either
+     * the fleet ID or ARN value.</p>
      */
     inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
 
     /**
-     * <p>A unique identifier for a fleet to get event logs for. You can use either the
-     * fleet ID or ARN value.</p>
+     * <p>A unique identifier for the fleet to get event logs for. You can use either
+     * the fleet ID or ARN value.</p>
      */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
-     * <p>A unique identifier for a fleet to get event logs for. You can use either the
-     * fleet ID or ARN value.</p>
+     * <p>A unique identifier for the fleet to get event logs for. You can use either
+     * the fleet ID or ARN value.</p>
      */
     inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
 
     /**
-     * <p>A unique identifier for a fleet to get event logs for. You can use either the
-     * fleet ID or ARN value.</p>
+     * <p>A unique identifier for the fleet to get event logs for. You can use either
+     * the fleet ID or ARN value.</p>
      */
     inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
 
     /**
-     * <p>A unique identifier for a fleet to get event logs for. You can use either the
-     * fleet ID or ARN value.</p>
+     * <p>A unique identifier for the fleet to get event logs for. You can use either
+     * the fleet ID or ARN value.</p>
      */
     inline DescribeFleetEventsRequest& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>A unique identifier for a fleet to get event logs for. You can use either the
-     * fleet ID or ARN value.</p>
+     * <p>A unique identifier for the fleet to get event logs for. You can use either
+     * the fleet ID or ARN value.</p>
      */
     inline DescribeFleetEventsRequest& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for a fleet to get event logs for. You can use either the
-     * fleet ID or ARN value.</p>
+     * <p>A unique identifier for the fleet to get event logs for. You can use either
+     * the fleet ID or ARN value.</p>
      */
     inline DescribeFleetEventsRequest& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 
 
     /**
-     * <p>Earliest date to retrieve event logs for. If no start time is specified, this
-     * call returns entries starting from when the fleet was created to the specified
-     * end time. Format is a number expressed in Unix time as milliseconds (ex:
-     * "1469498468.057").</p>
+     * <p>The earliest date to retrieve event logs for. If no start time is specified,
+     * this call returns entries starting from when the fleet was created to the
+     * specified end time. Format is a number expressed in Unix time as milliseconds
+     * (ex: "1469498468.057").</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
-     * <p>Earliest date to retrieve event logs for. If no start time is specified, this
-     * call returns entries starting from when the fleet was created to the specified
-     * end time. Format is a number expressed in Unix time as milliseconds (ex:
-     * "1469498468.057").</p>
+     * <p>The earliest date to retrieve event logs for. If no start time is specified,
+     * this call returns entries starting from when the fleet was created to the
+     * specified end time. Format is a number expressed in Unix time as milliseconds
+     * (ex: "1469498468.057").</p>
      */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
     /**
-     * <p>Earliest date to retrieve event logs for. If no start time is specified, this
-     * call returns entries starting from when the fleet was created to the specified
-     * end time. Format is a number expressed in Unix time as milliseconds (ex:
-     * "1469498468.057").</p>
+     * <p>The earliest date to retrieve event logs for. If no start time is specified,
+     * this call returns entries starting from when the fleet was created to the
+     * specified end time. Format is a number expressed in Unix time as milliseconds
+     * (ex: "1469498468.057").</p>
      */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
-     * <p>Earliest date to retrieve event logs for. If no start time is specified, this
-     * call returns entries starting from when the fleet was created to the specified
-     * end time. Format is a number expressed in Unix time as milliseconds (ex:
-     * "1469498468.057").</p>
+     * <p>The earliest date to retrieve event logs for. If no start time is specified,
+     * this call returns entries starting from when the fleet was created to the
+     * specified end time. Format is a number expressed in Unix time as milliseconds
+     * (ex: "1469498468.057").</p>
      */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
-     * <p>Earliest date to retrieve event logs for. If no start time is specified, this
-     * call returns entries starting from when the fleet was created to the specified
-     * end time. Format is a number expressed in Unix time as milliseconds (ex:
-     * "1469498468.057").</p>
+     * <p>The earliest date to retrieve event logs for. If no start time is specified,
+     * this call returns entries starting from when the fleet was created to the
+     * specified end time. Format is a number expressed in Unix time as milliseconds
+     * (ex: "1469498468.057").</p>
      */
     inline DescribeFleetEventsRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
 
     /**
-     * <p>Earliest date to retrieve event logs for. If no start time is specified, this
-     * call returns entries starting from when the fleet was created to the specified
-     * end time. Format is a number expressed in Unix time as milliseconds (ex:
-     * "1469498468.057").</p>
+     * <p>The earliest date to retrieve event logs for. If no start time is specified,
+     * this call returns entries starting from when the fleet was created to the
+     * specified end time. Format is a number expressed in Unix time as milliseconds
+     * (ex: "1469498468.057").</p>
      */
     inline DescribeFleetEventsRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>Most recent date to retrieve event logs for. If no end time is specified,
+     * <p>The most recent date to retrieve event logs for. If no end time is specified,
      * this call returns entries from the specified start time up to the present.
      * Format is a number expressed in Unix time as milliseconds (ex:
      * "1469498468.057").</p>
@@ -145,7 +145,7 @@ namespace Model
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
-     * <p>Most recent date to retrieve event logs for. If no end time is specified,
+     * <p>The most recent date to retrieve event logs for. If no end time is specified,
      * this call returns entries from the specified start time up to the present.
      * Format is a number expressed in Unix time as milliseconds (ex:
      * "1469498468.057").</p>
@@ -153,7 +153,7 @@ namespace Model
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
 
     /**
-     * <p>Most recent date to retrieve event logs for. If no end time is specified,
+     * <p>The most recent date to retrieve event logs for. If no end time is specified,
      * this call returns entries from the specified start time up to the present.
      * Format is a number expressed in Unix time as milliseconds (ex:
      * "1469498468.057").</p>
@@ -161,7 +161,7 @@ namespace Model
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
-     * <p>Most recent date to retrieve event logs for. If no end time is specified,
+     * <p>The most recent date to retrieve event logs for. If no end time is specified,
      * this call returns entries from the specified start time up to the present.
      * Format is a number expressed in Unix time as milliseconds (ex:
      * "1469498468.057").</p>
@@ -169,7 +169,7 @@ namespace Model
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
-     * <p>Most recent date to retrieve event logs for. If no end time is specified,
+     * <p>The most recent date to retrieve event logs for. If no end time is specified,
      * this call returns entries from the specified start time up to the present.
      * Format is a number expressed in Unix time as milliseconds (ex:
      * "1469498468.057").</p>
@@ -177,7 +177,7 @@ namespace Model
     inline DescribeFleetEventsRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
 
     /**
-     * <p>Most recent date to retrieve event logs for. If no end time is specified,
+     * <p>The most recent date to retrieve event logs for. If no end time is specified,
      * this call returns entries from the specified start time up to the present.
      * Format is a number expressed in Unix time as milliseconds (ex:
      * "1469498468.057").</p>
@@ -211,56 +211,56 @@ namespace Model
 
 
     /**
-     * <p>Token that indicates the start of the next sequential page of results. Use
+     * <p>A token that indicates the start of the next sequential page of results. Use
      * the token that is returned with a previous call to this operation. To start at
      * the beginning of the result set, do not specify a value.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>Token that indicates the start of the next sequential page of results. Use
+     * <p>A token that indicates the start of the next sequential page of results. Use
      * the token that is returned with a previous call to this operation. To start at
      * the beginning of the result set, do not specify a value.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>Token that indicates the start of the next sequential page of results. Use
+     * <p>A token that indicates the start of the next sequential page of results. Use
      * the token that is returned with a previous call to this operation. To start at
      * the beginning of the result set, do not specify a value.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>Token that indicates the start of the next sequential page of results. Use
+     * <p>A token that indicates the start of the next sequential page of results. Use
      * the token that is returned with a previous call to this operation. To start at
      * the beginning of the result set, do not specify a value.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>Token that indicates the start of the next sequential page of results. Use
+     * <p>A token that indicates the start of the next sequential page of results. Use
      * the token that is returned with a previous call to this operation. To start at
      * the beginning of the result set, do not specify a value.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>Token that indicates the start of the next sequential page of results. Use
+     * <p>A token that indicates the start of the next sequential page of results. Use
      * the token that is returned with a previous call to this operation. To start at
      * the beginning of the result set, do not specify a value.</p>
      */
     inline DescribeFleetEventsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Token that indicates the start of the next sequential page of results. Use
+     * <p>A token that indicates the start of the next sequential page of results. Use
      * the token that is returned with a previous call to this operation. To start at
      * the beginning of the result set, do not specify a value.</p>
      */
     inline DescribeFleetEventsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>Token that indicates the start of the next sequential page of results. Use
+     * <p>A token that indicates the start of the next sequential page of results. Use
      * the token that is returned with a previous call to this operation. To start at
      * the beginning of the result set, do not specify a value.</p>
      */

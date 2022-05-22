@@ -179,18 +179,17 @@ namespace Model
      * fragment limit in the <code>ON_DEMAND</code> mode. </p> </li> <li> <p> <b>
      * <code>ON_DEMAND</code> </b>: For sessions of this type, the MPEG-DASH manifest
      * contains all the fragments for the session, up to the number that is specified
-     * in <code>MaxMediaPlaylistFragmentResults</code>. The manifest must be retrieved
-     * only once for each session. When this type of session is played in a media
-     * player, the user interface typically displays a scrubber control for choosing
-     * the position in the playback window to display.</p> </li> </ul> <p>In all
-     * playback modes, if <code>FragmentSelectorType</code> is
-     * <code>PRODUCER_TIMESTAMP</code>, and if there are multiple fragments with the
-     * same start timestamp, the fragment that has the larger fragment number (that is,
-     * the newer fragment) is included in the MPEG-DASH manifest. The other fragments
-     * are not included. Fragments that have different timestamps but have overlapping
-     * durations are still included in the MPEG-DASH manifest. This can lead to
-     * unexpected behavior in the media player.</p> <p>The default is
-     * <code>LIVE</code>.</p>
+     * in <code>MaxManifestFragmentResults</code>. The manifest must be retrieved only
+     * once for each session. When this type of session is played in a media player,
+     * the user interface typically displays a scrubber control for choosing the
+     * position in the playback window to display.</p> </li> </ul> <p>In all playback
+     * modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>,
+     * and if there are multiple fragments with the same start timestamp, the fragment
+     * that has the larger fragment number (that is, the newer fragment) is included in
+     * the MPEG-DASH manifest. The other fragments are not included. Fragments that
+     * have different timestamps but have overlapping durations are still included in
+     * the MPEG-DASH manifest. This can lead to unexpected behavior in the media
+     * player.</p> <p>The default is <code>LIVE</code>.</p>
      */
     inline const DASHPlaybackMode& GetPlaybackMode() const{ return m_playbackMode; }
 
@@ -223,18 +222,17 @@ namespace Model
      * fragment limit in the <code>ON_DEMAND</code> mode. </p> </li> <li> <p> <b>
      * <code>ON_DEMAND</code> </b>: For sessions of this type, the MPEG-DASH manifest
      * contains all the fragments for the session, up to the number that is specified
-     * in <code>MaxMediaPlaylistFragmentResults</code>. The manifest must be retrieved
-     * only once for each session. When this type of session is played in a media
-     * player, the user interface typically displays a scrubber control for choosing
-     * the position in the playback window to display.</p> </li> </ul> <p>In all
-     * playback modes, if <code>FragmentSelectorType</code> is
-     * <code>PRODUCER_TIMESTAMP</code>, and if there are multiple fragments with the
-     * same start timestamp, the fragment that has the larger fragment number (that is,
-     * the newer fragment) is included in the MPEG-DASH manifest. The other fragments
-     * are not included. Fragments that have different timestamps but have overlapping
-     * durations are still included in the MPEG-DASH manifest. This can lead to
-     * unexpected behavior in the media player.</p> <p>The default is
-     * <code>LIVE</code>.</p>
+     * in <code>MaxManifestFragmentResults</code>. The manifest must be retrieved only
+     * once for each session. When this type of session is played in a media player,
+     * the user interface typically displays a scrubber control for choosing the
+     * position in the playback window to display.</p> </li> </ul> <p>In all playback
+     * modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>,
+     * and if there are multiple fragments with the same start timestamp, the fragment
+     * that has the larger fragment number (that is, the newer fragment) is included in
+     * the MPEG-DASH manifest. The other fragments are not included. Fragments that
+     * have different timestamps but have overlapping durations are still included in
+     * the MPEG-DASH manifest. This can lead to unexpected behavior in the media
+     * player.</p> <p>The default is <code>LIVE</code>.</p>
      */
     inline bool PlaybackModeHasBeenSet() const { return m_playbackModeHasBeenSet; }
 
@@ -267,18 +265,17 @@ namespace Model
      * fragment limit in the <code>ON_DEMAND</code> mode. </p> </li> <li> <p> <b>
      * <code>ON_DEMAND</code> </b>: For sessions of this type, the MPEG-DASH manifest
      * contains all the fragments for the session, up to the number that is specified
-     * in <code>MaxMediaPlaylistFragmentResults</code>. The manifest must be retrieved
-     * only once for each session. When this type of session is played in a media
-     * player, the user interface typically displays a scrubber control for choosing
-     * the position in the playback window to display.</p> </li> </ul> <p>In all
-     * playback modes, if <code>FragmentSelectorType</code> is
-     * <code>PRODUCER_TIMESTAMP</code>, and if there are multiple fragments with the
-     * same start timestamp, the fragment that has the larger fragment number (that is,
-     * the newer fragment) is included in the MPEG-DASH manifest. The other fragments
-     * are not included. Fragments that have different timestamps but have overlapping
-     * durations are still included in the MPEG-DASH manifest. This can lead to
-     * unexpected behavior in the media player.</p> <p>The default is
-     * <code>LIVE</code>.</p>
+     * in <code>MaxManifestFragmentResults</code>. The manifest must be retrieved only
+     * once for each session. When this type of session is played in a media player,
+     * the user interface typically displays a scrubber control for choosing the
+     * position in the playback window to display.</p> </li> </ul> <p>In all playback
+     * modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>,
+     * and if there are multiple fragments with the same start timestamp, the fragment
+     * that has the larger fragment number (that is, the newer fragment) is included in
+     * the MPEG-DASH manifest. The other fragments are not included. Fragments that
+     * have different timestamps but have overlapping durations are still included in
+     * the MPEG-DASH manifest. This can lead to unexpected behavior in the media
+     * player.</p> <p>The default is <code>LIVE</code>.</p>
      */
     inline void SetPlaybackMode(const DASHPlaybackMode& value) { m_playbackModeHasBeenSet = true; m_playbackMode = value; }
 
@@ -311,18 +308,17 @@ namespace Model
      * fragment limit in the <code>ON_DEMAND</code> mode. </p> </li> <li> <p> <b>
      * <code>ON_DEMAND</code> </b>: For sessions of this type, the MPEG-DASH manifest
      * contains all the fragments for the session, up to the number that is specified
-     * in <code>MaxMediaPlaylistFragmentResults</code>. The manifest must be retrieved
-     * only once for each session. When this type of session is played in a media
-     * player, the user interface typically displays a scrubber control for choosing
-     * the position in the playback window to display.</p> </li> </ul> <p>In all
-     * playback modes, if <code>FragmentSelectorType</code> is
-     * <code>PRODUCER_TIMESTAMP</code>, and if there are multiple fragments with the
-     * same start timestamp, the fragment that has the larger fragment number (that is,
-     * the newer fragment) is included in the MPEG-DASH manifest. The other fragments
-     * are not included. Fragments that have different timestamps but have overlapping
-     * durations are still included in the MPEG-DASH manifest. This can lead to
-     * unexpected behavior in the media player.</p> <p>The default is
-     * <code>LIVE</code>.</p>
+     * in <code>MaxManifestFragmentResults</code>. The manifest must be retrieved only
+     * once for each session. When this type of session is played in a media player,
+     * the user interface typically displays a scrubber control for choosing the
+     * position in the playback window to display.</p> </li> </ul> <p>In all playback
+     * modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>,
+     * and if there are multiple fragments with the same start timestamp, the fragment
+     * that has the larger fragment number (that is, the newer fragment) is included in
+     * the MPEG-DASH manifest. The other fragments are not included. Fragments that
+     * have different timestamps but have overlapping durations are still included in
+     * the MPEG-DASH manifest. This can lead to unexpected behavior in the media
+     * player.</p> <p>The default is <code>LIVE</code>.</p>
      */
     inline void SetPlaybackMode(DASHPlaybackMode&& value) { m_playbackModeHasBeenSet = true; m_playbackMode = std::move(value); }
 
@@ -355,18 +351,17 @@ namespace Model
      * fragment limit in the <code>ON_DEMAND</code> mode. </p> </li> <li> <p> <b>
      * <code>ON_DEMAND</code> </b>: For sessions of this type, the MPEG-DASH manifest
      * contains all the fragments for the session, up to the number that is specified
-     * in <code>MaxMediaPlaylistFragmentResults</code>. The manifest must be retrieved
-     * only once for each session. When this type of session is played in a media
-     * player, the user interface typically displays a scrubber control for choosing
-     * the position in the playback window to display.</p> </li> </ul> <p>In all
-     * playback modes, if <code>FragmentSelectorType</code> is
-     * <code>PRODUCER_TIMESTAMP</code>, and if there are multiple fragments with the
-     * same start timestamp, the fragment that has the larger fragment number (that is,
-     * the newer fragment) is included in the MPEG-DASH manifest. The other fragments
-     * are not included. Fragments that have different timestamps but have overlapping
-     * durations are still included in the MPEG-DASH manifest. This can lead to
-     * unexpected behavior in the media player.</p> <p>The default is
-     * <code>LIVE</code>.</p>
+     * in <code>MaxManifestFragmentResults</code>. The manifest must be retrieved only
+     * once for each session. When this type of session is played in a media player,
+     * the user interface typically displays a scrubber control for choosing the
+     * position in the playback window to display.</p> </li> </ul> <p>In all playback
+     * modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>,
+     * and if there are multiple fragments with the same start timestamp, the fragment
+     * that has the larger fragment number (that is, the newer fragment) is included in
+     * the MPEG-DASH manifest. The other fragments are not included. Fragments that
+     * have different timestamps but have overlapping durations are still included in
+     * the MPEG-DASH manifest. This can lead to unexpected behavior in the media
+     * player.</p> <p>The default is <code>LIVE</code>.</p>
      */
     inline GetDASHStreamingSessionURLRequest& WithPlaybackMode(const DASHPlaybackMode& value) { SetPlaybackMode(value); return *this;}
 
@@ -399,18 +394,17 @@ namespace Model
      * fragment limit in the <code>ON_DEMAND</code> mode. </p> </li> <li> <p> <b>
      * <code>ON_DEMAND</code> </b>: For sessions of this type, the MPEG-DASH manifest
      * contains all the fragments for the session, up to the number that is specified
-     * in <code>MaxMediaPlaylistFragmentResults</code>. The manifest must be retrieved
-     * only once for each session. When this type of session is played in a media
-     * player, the user interface typically displays a scrubber control for choosing
-     * the position in the playback window to display.</p> </li> </ul> <p>In all
-     * playback modes, if <code>FragmentSelectorType</code> is
-     * <code>PRODUCER_TIMESTAMP</code>, and if there are multiple fragments with the
-     * same start timestamp, the fragment that has the larger fragment number (that is,
-     * the newer fragment) is included in the MPEG-DASH manifest. The other fragments
-     * are not included. Fragments that have different timestamps but have overlapping
-     * durations are still included in the MPEG-DASH manifest. This can lead to
-     * unexpected behavior in the media player.</p> <p>The default is
-     * <code>LIVE</code>.</p>
+     * in <code>MaxManifestFragmentResults</code>. The manifest must be retrieved only
+     * once for each session. When this type of session is played in a media player,
+     * the user interface typically displays a scrubber control for choosing the
+     * position in the playback window to display.</p> </li> </ul> <p>In all playback
+     * modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>,
+     * and if there are multiple fragments with the same start timestamp, the fragment
+     * that has the larger fragment number (that is, the newer fragment) is included in
+     * the MPEG-DASH manifest. The other fragments are not included. Fragments that
+     * have different timestamps but have overlapping durations are still included in
+     * the MPEG-DASH manifest. This can lead to unexpected behavior in the media
+     * player.</p> <p>The default is <code>LIVE</code>.</p>
      */
     inline GetDASHStreamingSessionURLRequest& WithPlaybackMode(DASHPlaybackMode&& value) { SetPlaybackMode(std::move(value)); return *this;}
 

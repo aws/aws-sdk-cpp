@@ -27,7 +27,9 @@ ResourceSharePermissionDetail::ResourceSharePermissionDetail() :
     m_resourceTypeHasBeenSet(false),
     m_permissionHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
+    m_lastUpdatedTimeHasBeenSet(false),
+    m_isResourceTypeDefault(false),
+    m_isResourceTypeDefaultHasBeenSet(false)
 {
 }
 
@@ -40,7 +42,9 @@ ResourceSharePermissionDetail::ResourceSharePermissionDetail(JsonView jsonValue)
     m_resourceTypeHasBeenSet(false),
     m_permissionHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
+    m_lastUpdatedTimeHasBeenSet(false),
+    m_isResourceTypeDefault(false),
+    m_isResourceTypeDefaultHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -103,6 +107,13 @@ ResourceSharePermissionDetail& ResourceSharePermissionDetail::operator =(JsonVie
     m_lastUpdatedTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("isResourceTypeDefault"))
+  {
+    m_isResourceTypeDefault = jsonValue.GetBool("isResourceTypeDefault");
+
+    m_isResourceTypeDefaultHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -154,6 +165,12 @@ JsonValue ResourceSharePermissionDetail::Jsonize() const
   if(m_lastUpdatedTimeHasBeenSet)
   {
    payload.WithDouble("lastUpdatedTime", m_lastUpdatedTime.SecondsWithMSPrecision());
+  }
+
+  if(m_isResourceTypeDefaultHasBeenSet)
+  {
+   payload.WithBool("isResourceTypeDefault", m_isResourceTypeDefault);
+
   }
 
   return payload;

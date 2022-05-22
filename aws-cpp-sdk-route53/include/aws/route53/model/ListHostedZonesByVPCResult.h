@@ -135,43 +135,43 @@ namespace Model
 
 
     /**
-     * <p>The value that you specified for <code>NextToken</code> in the most recent
+     * <p>The value that you will use for <code>NextToken</code> in the next
      * <code>ListHostedZonesByVPC</code> request.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The value that you specified for <code>NextToken</code> in the most recent
+     * <p>The value that you will use for <code>NextToken</code> in the next
      * <code>ListHostedZonesByVPC</code> request.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>The value that you specified for <code>NextToken</code> in the most recent
+     * <p>The value that you will use for <code>NextToken</code> in the next
      * <code>ListHostedZonesByVPC</code> request.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>The value that you specified for <code>NextToken</code> in the most recent
+     * <p>The value that you will use for <code>NextToken</code> in the next
      * <code>ListHostedZonesByVPC</code> request.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>The value that you specified for <code>NextToken</code> in the most recent
+     * <p>The value that you will use for <code>NextToken</code> in the next
      * <code>ListHostedZonesByVPC</code> request.</p>
      */
     inline ListHostedZonesByVPCResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The value that you specified for <code>NextToken</code> in the most recent
+     * <p>The value that you will use for <code>NextToken</code> in the next
      * <code>ListHostedZonesByVPC</code> request.</p>
      */
     inline ListHostedZonesByVPCResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The value that you specified for <code>NextToken</code> in the most recent
+     * <p>The value that you will use for <code>NextToken</code> in the next
      * <code>ListHostedZonesByVPC</code> request.</p>
      */
     inline ListHostedZonesByVPCResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}

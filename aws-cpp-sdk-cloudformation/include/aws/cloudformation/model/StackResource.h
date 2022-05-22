@@ -168,106 +168,106 @@ namespace Model
 
     /**
      * <p>The name or unique identifier that corresponds to a physical instance ID of a
-     * resource supported by AWS CloudFormation.</p>
+     * resource supported by CloudFormation.</p>
      */
     inline const Aws::String& GetPhysicalResourceId() const{ return m_physicalResourceId; }
 
     /**
      * <p>The name or unique identifier that corresponds to a physical instance ID of a
-     * resource supported by AWS CloudFormation.</p>
+     * resource supported by CloudFormation.</p>
      */
     inline bool PhysicalResourceIdHasBeenSet() const { return m_physicalResourceIdHasBeenSet; }
 
     /**
      * <p>The name or unique identifier that corresponds to a physical instance ID of a
-     * resource supported by AWS CloudFormation.</p>
+     * resource supported by CloudFormation.</p>
      */
     inline void SetPhysicalResourceId(const Aws::String& value) { m_physicalResourceIdHasBeenSet = true; m_physicalResourceId = value; }
 
     /**
      * <p>The name or unique identifier that corresponds to a physical instance ID of a
-     * resource supported by AWS CloudFormation.</p>
+     * resource supported by CloudFormation.</p>
      */
     inline void SetPhysicalResourceId(Aws::String&& value) { m_physicalResourceIdHasBeenSet = true; m_physicalResourceId = std::move(value); }
 
     /**
      * <p>The name or unique identifier that corresponds to a physical instance ID of a
-     * resource supported by AWS CloudFormation.</p>
+     * resource supported by CloudFormation.</p>
      */
     inline void SetPhysicalResourceId(const char* value) { m_physicalResourceIdHasBeenSet = true; m_physicalResourceId.assign(value); }
 
     /**
      * <p>The name or unique identifier that corresponds to a physical instance ID of a
-     * resource supported by AWS CloudFormation.</p>
+     * resource supported by CloudFormation.</p>
      */
     inline StackResource& WithPhysicalResourceId(const Aws::String& value) { SetPhysicalResourceId(value); return *this;}
 
     /**
      * <p>The name or unique identifier that corresponds to a physical instance ID of a
-     * resource supported by AWS CloudFormation.</p>
+     * resource supported by CloudFormation.</p>
      */
     inline StackResource& WithPhysicalResourceId(Aws::String&& value) { SetPhysicalResourceId(std::move(value)); return *this;}
 
     /**
      * <p>The name or unique identifier that corresponds to a physical instance ID of a
-     * resource supported by AWS CloudFormation.</p>
+     * resource supported by CloudFormation.</p>
      */
     inline StackResource& WithPhysicalResourceId(const char* value) { SetPhysicalResourceId(value); return *this;}
 
 
     /**
-     * <p>Type of resource. (For more information, go to <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">
-     * AWS Resource Types Reference</a> in the AWS CloudFormation User Guide.)</p>
+     * <p>Type of resource. For more information, go to <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a> in the CloudFormation User Guide.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>Type of resource. (For more information, go to <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">
-     * AWS Resource Types Reference</a> in the AWS CloudFormation User Guide.)</p>
+     * <p>Type of resource. For more information, go to <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a> in the CloudFormation User Guide.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>Type of resource. (For more information, go to <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">
-     * AWS Resource Types Reference</a> in the AWS CloudFormation User Guide.)</p>
+     * <p>Type of resource. For more information, go to <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a> in the CloudFormation User Guide.</p>
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>Type of resource. (For more information, go to <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">
-     * AWS Resource Types Reference</a> in the AWS CloudFormation User Guide.)</p>
+     * <p>Type of resource. For more information, go to <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a> in the CloudFormation User Guide.</p>
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>Type of resource. (For more information, go to <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">
-     * AWS Resource Types Reference</a> in the AWS CloudFormation User Guide.)</p>
+     * <p>Type of resource. For more information, go to <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a> in the CloudFormation User Guide.</p>
      */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
 
     /**
-     * <p>Type of resource. (For more information, go to <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">
-     * AWS Resource Types Reference</a> in the AWS CloudFormation User Guide.)</p>
+     * <p>Type of resource. For more information, go to <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a> in the CloudFormation User Guide.</p>
      */
     inline StackResource& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>Type of resource. (For more information, go to <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">
-     * AWS Resource Types Reference</a> in the AWS CloudFormation User Guide.)</p>
+     * <p>Type of resource. For more information, go to <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a> in the CloudFormation User Guide.</p>
      */
     inline StackResource& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
-     * <p>Type of resource. (For more information, go to <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">
-     * AWS Resource Types Reference</a> in the AWS CloudFormation User Guide.)</p>
+     * <p>Type of resource. For more information, go to <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+     * Web Services Resource Types Reference</a> in the CloudFormation User Guide.</p>
      */
     inline StackResource& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 

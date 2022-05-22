@@ -109,22 +109,12 @@ namespace Model
         virtual Model::ListRealtimeContactAnalysisSegmentsOutcome ListRealtimeContactAnalysisSegments(const Model::ListRealtimeContactAnalysisSegmentsRequest& request) const;
 
         /**
-         * <p>Provides a list of analysis segments for a real-time analysis
-         * session.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-contact-lens-2020-08-21/ListRealtimeContactAnalysisSegments">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListRealtimeContactAnalysisSegments that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListRealtimeContactAnalysisSegmentsOutcomeCallable ListRealtimeContactAnalysisSegmentsCallable(const Model::ListRealtimeContactAnalysisSegmentsRequest& request) const;
 
         /**
-         * <p>Provides a list of analysis segments for a real-time analysis
-         * session.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-contact-lens-2020-08-21/ListRealtimeContactAnalysisSegments">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListRealtimeContactAnalysisSegments that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListRealtimeContactAnalysisSegmentsAsync(const Model::ListRealtimeContactAnalysisSegmentsRequest& request, const ListRealtimeContactAnalysisSegmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 

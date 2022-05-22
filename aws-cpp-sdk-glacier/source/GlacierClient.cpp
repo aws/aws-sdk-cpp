@@ -101,7 +101,7 @@ GlacierClient::~GlacierClient()
 {
 }
 
-void GlacierClient::init(const ClientConfiguration& config)
+void GlacierClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Glacier");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -145,14 +145,11 @@ AbortMultipartUploadOutcome GlacierClient::AbortMultipartUpload(const AbortMulti
     return AbortMultipartUploadOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UploadId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  ss << request.GetAccountId();
-  ss << "/vaults/";
-  ss << request.GetVaultName();
-  ss << "/multipart-uploads/";
-  ss << request.GetUploadId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/vaults/");
+  uri.AddPathSegment(request.GetVaultName());
+  uri.AddPathSegments("/multipart-uploads/");
+  uri.AddPathSegment(request.GetUploadId());
   return AbortMultipartUploadOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -187,13 +184,10 @@ AbortVaultLockOutcome GlacierClient::AbortVaultLock(const AbortVaultLockRequest&
     return AbortVaultLockOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  ss << request.GetAccountId();
-  ss << "/vaults/";
-  ss << request.GetVaultName();
-  ss << "/lock-policy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/vaults/");
+  uri.AddPathSegment(request.GetVaultName());
+  uri.AddPathSegments("/lock-policy");
   return AbortVaultLockOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -229,12 +223,10 @@ AddTagsToVaultOutcome GlacierClient::AddTagsToVault(const AddTagsToVaultRequest&
   }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/";
-  ss << request.GetAccountId();
-  ss << "/vaults/";
-  ss << request.GetVaultName();
-  ss << "/tags";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/vaults/");
+  uri.AddPathSegment(request.GetVaultName());
+  uri.AddPathSegments("/tags");
   ss.str("?operation=add");
   uri.SetQueryString(ss.str());
   return AddTagsToVaultOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
@@ -276,14 +268,11 @@ CompleteMultipartUploadOutcome GlacierClient::CompleteMultipartUpload(const Comp
     return CompleteMultipartUploadOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UploadId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  ss << request.GetAccountId();
-  ss << "/vaults/";
-  ss << request.GetVaultName();
-  ss << "/multipart-uploads/";
-  ss << request.GetUploadId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/vaults/");
+  uri.AddPathSegment(request.GetVaultName());
+  uri.AddPathSegments("/multipart-uploads/");
+  uri.AddPathSegment(request.GetUploadId());
   return CompleteMultipartUploadOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -323,14 +312,11 @@ CompleteVaultLockOutcome GlacierClient::CompleteVaultLock(const CompleteVaultLoc
     return CompleteVaultLockOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LockId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  ss << request.GetAccountId();
-  ss << "/vaults/";
-  ss << request.GetVaultName();
-  ss << "/lock-policy/";
-  ss << request.GetLockId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/vaults/");
+  uri.AddPathSegment(request.GetVaultName());
+  uri.AddPathSegments("/lock-policy/");
+  uri.AddPathSegment(request.GetLockId());
   return CompleteVaultLockOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -365,12 +351,9 @@ CreateVaultOutcome GlacierClient::CreateVault(const CreateVaultRequest& request)
     return CreateVaultOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  ss << request.GetAccountId();
-  ss << "/vaults/";
-  ss << request.GetVaultName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/vaults/");
+  uri.AddPathSegment(request.GetVaultName());
   return CreateVaultOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -410,14 +393,11 @@ DeleteArchiveOutcome GlacierClient::DeleteArchive(const DeleteArchiveRequest& re
     return DeleteArchiveOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ArchiveId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  ss << request.GetAccountId();
-  ss << "/vaults/";
-  ss << request.GetVaultName();
-  ss << "/archives/";
-  ss << request.GetArchiveId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/vaults/");
+  uri.AddPathSegment(request.GetVaultName());
+  uri.AddPathSegments("/archives/");
+  uri.AddPathSegment(request.GetArchiveId());
   return DeleteArchiveOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -452,12 +432,9 @@ DeleteVaultOutcome GlacierClient::DeleteVault(const DeleteVaultRequest& request)
     return DeleteVaultOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  ss << request.GetAccountId();
-  ss << "/vaults/";
-  ss << request.GetVaultName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/vaults/");
+  uri.AddPathSegment(request.GetVaultName());
   return DeleteVaultOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -492,13 +469,10 @@ DeleteVaultAccessPolicyOutcome GlacierClient::DeleteVaultAccessPolicy(const Dele
     return DeleteVaultAccessPolicyOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  ss << request.GetAccountId();
-  ss << "/vaults/";
-  ss << request.GetVaultName();
-  ss << "/access-policy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/vaults/");
+  uri.AddPathSegment(request.GetVaultName());
+  uri.AddPathSegments("/access-policy");
   return DeleteVaultAccessPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -533,13 +507,10 @@ DeleteVaultNotificationsOutcome GlacierClient::DeleteVaultNotifications(const De
     return DeleteVaultNotificationsOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  ss << request.GetAccountId();
-  ss << "/vaults/";
-  ss << request.GetVaultName();
-  ss << "/notification-configuration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/vaults/");
+  uri.AddPathSegment(request.GetVaultName());
+  uri.AddPathSegments("/notification-configuration");
   return DeleteVaultNotificationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -579,14 +550,11 @@ DescribeJobOutcome GlacierClient::DescribeJob(const DescribeJobRequest& request)
     return DescribeJobOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  ss << request.GetAccountId();
-  ss << "/vaults/";
-  ss << request.GetVaultName();
-  ss << "/jobs/";
-  ss << request.GetJobId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/vaults/");
+  uri.AddPathSegment(request.GetVaultName());
+  uri.AddPathSegments("/jobs/");
+  uri.AddPathSegment(request.GetJobId());
   return DescribeJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -621,12 +589,9 @@ DescribeVaultOutcome GlacierClient::DescribeVault(const DescribeVaultRequest& re
     return DescribeVaultOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  ss << request.GetAccountId();
-  ss << "/vaults/";
-  ss << request.GetVaultName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/vaults/");
+  uri.AddPathSegment(request.GetVaultName());
   return DescribeVaultOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -656,11 +621,8 @@ GetDataRetrievalPolicyOutcome GlacierClient::GetDataRetrievalPolicy(const GetDat
     return GetDataRetrievalPolicyOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  ss << request.GetAccountId();
-  ss << "/policies/data-retrieval";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/policies/data-retrieval");
   return GetDataRetrievalPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -700,15 +662,12 @@ GetJobOutputOutcome GlacierClient::GetJobOutput(const GetJobOutputRequest& reque
     return GetJobOutputOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  ss << request.GetAccountId();
-  ss << "/vaults/";
-  ss << request.GetVaultName();
-  ss << "/jobs/";
-  ss << request.GetJobId();
-  ss << "/output";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/vaults/");
+  uri.AddPathSegment(request.GetVaultName());
+  uri.AddPathSegments("/jobs/");
+  uri.AddPathSegment(request.GetJobId());
+  uri.AddPathSegments("/output");
   return GetJobOutputOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -743,13 +702,10 @@ GetVaultAccessPolicyOutcome GlacierClient::GetVaultAccessPolicy(const GetVaultAc
     return GetVaultAccessPolicyOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  ss << request.GetAccountId();
-  ss << "/vaults/";
-  ss << request.GetVaultName();
-  ss << "/access-policy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/vaults/");
+  uri.AddPathSegment(request.GetVaultName());
+  uri.AddPathSegments("/access-policy");
   return GetVaultAccessPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -784,13 +740,10 @@ GetVaultLockOutcome GlacierClient::GetVaultLock(const GetVaultLockRequest& reque
     return GetVaultLockOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  ss << request.GetAccountId();
-  ss << "/vaults/";
-  ss << request.GetVaultName();
-  ss << "/lock-policy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/vaults/");
+  uri.AddPathSegment(request.GetVaultName());
+  uri.AddPathSegments("/lock-policy");
   return GetVaultLockOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -825,13 +778,10 @@ GetVaultNotificationsOutcome GlacierClient::GetVaultNotifications(const GetVault
     return GetVaultNotificationsOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  ss << request.GetAccountId();
-  ss << "/vaults/";
-  ss << request.GetVaultName();
-  ss << "/notification-configuration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/vaults/");
+  uri.AddPathSegment(request.GetVaultName());
+  uri.AddPathSegments("/notification-configuration");
   return GetVaultNotificationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -866,13 +816,10 @@ InitiateJobOutcome GlacierClient::InitiateJob(const InitiateJobRequest& request)
     return InitiateJobOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  ss << request.GetAccountId();
-  ss << "/vaults/";
-  ss << request.GetVaultName();
-  ss << "/jobs";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/vaults/");
+  uri.AddPathSegment(request.GetVaultName());
+  uri.AddPathSegments("/jobs");
   return InitiateJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -907,13 +854,10 @@ InitiateMultipartUploadOutcome GlacierClient::InitiateMultipartUpload(const Init
     return InitiateMultipartUploadOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  ss << request.GetAccountId();
-  ss << "/vaults/";
-  ss << request.GetVaultName();
-  ss << "/multipart-uploads";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/vaults/");
+  uri.AddPathSegment(request.GetVaultName());
+  uri.AddPathSegments("/multipart-uploads");
   return InitiateMultipartUploadOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -948,13 +892,10 @@ InitiateVaultLockOutcome GlacierClient::InitiateVaultLock(const InitiateVaultLoc
     return InitiateVaultLockOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  ss << request.GetAccountId();
-  ss << "/vaults/";
-  ss << request.GetVaultName();
-  ss << "/lock-policy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/vaults/");
+  uri.AddPathSegment(request.GetVaultName());
+  uri.AddPathSegments("/lock-policy");
   return InitiateVaultLockOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -989,13 +930,10 @@ ListJobsOutcome GlacierClient::ListJobs(const ListJobsRequest& request) const
     return ListJobsOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  ss << request.GetAccountId();
-  ss << "/vaults/";
-  ss << request.GetVaultName();
-  ss << "/jobs";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/vaults/");
+  uri.AddPathSegment(request.GetVaultName());
+  uri.AddPathSegments("/jobs");
   return ListJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1030,13 +968,10 @@ ListMultipartUploadsOutcome GlacierClient::ListMultipartUploads(const ListMultip
     return ListMultipartUploadsOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  ss << request.GetAccountId();
-  ss << "/vaults/";
-  ss << request.GetVaultName();
-  ss << "/multipart-uploads";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/vaults/");
+  uri.AddPathSegment(request.GetVaultName());
+  uri.AddPathSegments("/multipart-uploads");
   return ListMultipartUploadsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1076,14 +1011,11 @@ ListPartsOutcome GlacierClient::ListParts(const ListPartsRequest& request) const
     return ListPartsOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UploadId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  ss << request.GetAccountId();
-  ss << "/vaults/";
-  ss << request.GetVaultName();
-  ss << "/multipart-uploads/";
-  ss << request.GetUploadId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/vaults/");
+  uri.AddPathSegment(request.GetVaultName());
+  uri.AddPathSegments("/multipart-uploads/");
+  uri.AddPathSegment(request.GetUploadId());
   return ListPartsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1113,11 +1045,8 @@ ListProvisionedCapacityOutcome GlacierClient::ListProvisionedCapacity(const List
     return ListProvisionedCapacityOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  ss << request.GetAccountId();
-  ss << "/provisioned-capacity";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/provisioned-capacity");
   return ListProvisionedCapacityOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1152,13 +1081,10 @@ ListTagsForVaultOutcome GlacierClient::ListTagsForVault(const ListTagsForVaultRe
     return ListTagsForVaultOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  ss << request.GetAccountId();
-  ss << "/vaults/";
-  ss << request.GetVaultName();
-  ss << "/tags";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/vaults/");
+  uri.AddPathSegment(request.GetVaultName());
+  uri.AddPathSegments("/tags");
   return ListTagsForVaultOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1188,11 +1114,8 @@ ListVaultsOutcome GlacierClient::ListVaults(const ListVaultsRequest& request) co
     return ListVaultsOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  ss << request.GetAccountId();
-  ss << "/vaults";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/vaults");
   return ListVaultsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1222,11 +1145,8 @@ PurchaseProvisionedCapacityOutcome GlacierClient::PurchaseProvisionedCapacity(co
     return PurchaseProvisionedCapacityOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  ss << request.GetAccountId();
-  ss << "/provisioned-capacity";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/provisioned-capacity");
   return PurchaseProvisionedCapacityOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1262,12 +1182,10 @@ RemoveTagsFromVaultOutcome GlacierClient::RemoveTagsFromVault(const RemoveTagsFr
   }
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/";
-  ss << request.GetAccountId();
-  ss << "/vaults/";
-  ss << request.GetVaultName();
-  ss << "/tags";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/vaults/");
+  uri.AddPathSegment(request.GetVaultName());
+  uri.AddPathSegments("/tags");
   ss.str("?operation=remove");
   uri.SetQueryString(ss.str());
   return RemoveTagsFromVaultOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
@@ -1299,11 +1217,8 @@ SetDataRetrievalPolicyOutcome GlacierClient::SetDataRetrievalPolicy(const SetDat
     return SetDataRetrievalPolicyOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  ss << request.GetAccountId();
-  ss << "/policies/data-retrieval";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/policies/data-retrieval");
   return SetDataRetrievalPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1338,13 +1253,10 @@ SetVaultAccessPolicyOutcome GlacierClient::SetVaultAccessPolicy(const SetVaultAc
     return SetVaultAccessPolicyOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  ss << request.GetAccountId();
-  ss << "/vaults/";
-  ss << request.GetVaultName();
-  ss << "/access-policy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/vaults/");
+  uri.AddPathSegment(request.GetVaultName());
+  uri.AddPathSegments("/access-policy");
   return SetVaultAccessPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1379,13 +1291,10 @@ SetVaultNotificationsOutcome GlacierClient::SetVaultNotifications(const SetVault
     return SetVaultNotificationsOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  ss << request.GetAccountId();
-  ss << "/vaults/";
-  ss << request.GetVaultName();
-  ss << "/notification-configuration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/vaults/");
+  uri.AddPathSegment(request.GetVaultName());
+  uri.AddPathSegments("/notification-configuration");
   return SetVaultNotificationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1420,13 +1329,10 @@ UploadArchiveOutcome GlacierClient::UploadArchive(const UploadArchiveRequest& re
     return UploadArchiveOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  ss << request.GetAccountId();
-  ss << "/vaults/";
-  ss << request.GetVaultName();
-  ss << "/archives";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/vaults/");
+  uri.AddPathSegment(request.GetVaultName());
+  uri.AddPathSegments("/archives");
   return UploadArchiveOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1466,14 +1372,11 @@ UploadMultipartPartOutcome GlacierClient::UploadMultipartPart(const UploadMultip
     return UploadMultipartPartOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UploadId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  ss << request.GetAccountId();
-  ss << "/vaults/";
-  ss << request.GetVaultName();
-  ss << "/multipart-uploads/";
-  ss << request.GetUploadId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/vaults/");
+  uri.AddPathSegment(request.GetVaultName());
+  uri.AddPathSegments("/multipart-uploads/");
+  uri.AddPathSegment(request.GetUploadId());
   return UploadMultipartPartOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 

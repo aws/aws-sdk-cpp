@@ -66,15 +66,21 @@ namespace Model
 
     /**
      * <p> The reason why a record was not successfully inserted into Timestream.
-     * Possible causes of failure include: </p> <ul> <li> <p> Records with duplicate
+     * Possible causes of failure include: </p> <ul> <li> <p>Records with duplicate
      * data where there are multiple records with the same dimensions, timestamps, and
-     * measure names but different measure values. </p> </li> <li> <p> Records with
-     * timestamps that lie outside the retention duration of the memory store </p>
-     *  <p>When the retention window is updated, you will receive a
-     * <code>RejectedRecords</code> exception if you immediately try to ingest data
-     * within the new window. To avoid a <code>RejectedRecords</code> exception, wait
-     * until the duration of the new window to ingest new data. For further
-     * information, see <a
+     * measure names but: </p> <ul> <li> <p>Measure values are different</p> </li> <li>
+     * <p>Version is not present in the request <i>or</i> the value of version in the
+     * new record is equal to or lower than the existing value</p> </li> </ul> <p> If
+     * Timestream rejects data for this case, the <code>ExistingVersion</code> field in
+     * the <code>RejectedRecords</code> response will indicate the current record’s
+     * version. To force an update, you can resend the request with a version for the
+     * record set to a value greater than the <code>ExistingVersion</code>.</p> </li>
+     * <li> <p> Records with timestamps that lie outside the retention duration of the
+     * memory store </p>  <p>When the retention window is updated, you will
+     * receive a <code>RejectedRecords</code> exception if you immediately try to
+     * ingest data within the new window. To avoid a <code>RejectedRecords</code>
+     * exception, wait until the duration of the new window to ingest new data. For
+     * further information, see <a
      * href="https://docs.aws.amazon.com/timestream/latest/developerguide/best-practices.html#configuration">
      * Best Practices for Configuring Timestream</a> and <a
      * href="https://docs.aws.amazon.com/timestream/latest/developerguide/storage.html">the
@@ -88,15 +94,21 @@ namespace Model
 
     /**
      * <p> The reason why a record was not successfully inserted into Timestream.
-     * Possible causes of failure include: </p> <ul> <li> <p> Records with duplicate
+     * Possible causes of failure include: </p> <ul> <li> <p>Records with duplicate
      * data where there are multiple records with the same dimensions, timestamps, and
-     * measure names but different measure values. </p> </li> <li> <p> Records with
-     * timestamps that lie outside the retention duration of the memory store </p>
-     *  <p>When the retention window is updated, you will receive a
-     * <code>RejectedRecords</code> exception if you immediately try to ingest data
-     * within the new window. To avoid a <code>RejectedRecords</code> exception, wait
-     * until the duration of the new window to ingest new data. For further
-     * information, see <a
+     * measure names but: </p> <ul> <li> <p>Measure values are different</p> </li> <li>
+     * <p>Version is not present in the request <i>or</i> the value of version in the
+     * new record is equal to or lower than the existing value</p> </li> </ul> <p> If
+     * Timestream rejects data for this case, the <code>ExistingVersion</code> field in
+     * the <code>RejectedRecords</code> response will indicate the current record’s
+     * version. To force an update, you can resend the request with a version for the
+     * record set to a value greater than the <code>ExistingVersion</code>.</p> </li>
+     * <li> <p> Records with timestamps that lie outside the retention duration of the
+     * memory store </p>  <p>When the retention window is updated, you will
+     * receive a <code>RejectedRecords</code> exception if you immediately try to
+     * ingest data within the new window. To avoid a <code>RejectedRecords</code>
+     * exception, wait until the duration of the new window to ingest new data. For
+     * further information, see <a
      * href="https://docs.aws.amazon.com/timestream/latest/developerguide/best-practices.html#configuration">
      * Best Practices for Configuring Timestream</a> and <a
      * href="https://docs.aws.amazon.com/timestream/latest/developerguide/storage.html">the
@@ -110,15 +122,21 @@ namespace Model
 
     /**
      * <p> The reason why a record was not successfully inserted into Timestream.
-     * Possible causes of failure include: </p> <ul> <li> <p> Records with duplicate
+     * Possible causes of failure include: </p> <ul> <li> <p>Records with duplicate
      * data where there are multiple records with the same dimensions, timestamps, and
-     * measure names but different measure values. </p> </li> <li> <p> Records with
-     * timestamps that lie outside the retention duration of the memory store </p>
-     *  <p>When the retention window is updated, you will receive a
-     * <code>RejectedRecords</code> exception if you immediately try to ingest data
-     * within the new window. To avoid a <code>RejectedRecords</code> exception, wait
-     * until the duration of the new window to ingest new data. For further
-     * information, see <a
+     * measure names but: </p> <ul> <li> <p>Measure values are different</p> </li> <li>
+     * <p>Version is not present in the request <i>or</i> the value of version in the
+     * new record is equal to or lower than the existing value</p> </li> </ul> <p> If
+     * Timestream rejects data for this case, the <code>ExistingVersion</code> field in
+     * the <code>RejectedRecords</code> response will indicate the current record’s
+     * version. To force an update, you can resend the request with a version for the
+     * record set to a value greater than the <code>ExistingVersion</code>.</p> </li>
+     * <li> <p> Records with timestamps that lie outside the retention duration of the
+     * memory store </p>  <p>When the retention window is updated, you will
+     * receive a <code>RejectedRecords</code> exception if you immediately try to
+     * ingest data within the new window. To avoid a <code>RejectedRecords</code>
+     * exception, wait until the duration of the new window to ingest new data. For
+     * further information, see <a
      * href="https://docs.aws.amazon.com/timestream/latest/developerguide/best-practices.html#configuration">
      * Best Practices for Configuring Timestream</a> and <a
      * href="https://docs.aws.amazon.com/timestream/latest/developerguide/storage.html">the
@@ -132,15 +150,21 @@ namespace Model
 
     /**
      * <p> The reason why a record was not successfully inserted into Timestream.
-     * Possible causes of failure include: </p> <ul> <li> <p> Records with duplicate
+     * Possible causes of failure include: </p> <ul> <li> <p>Records with duplicate
      * data where there are multiple records with the same dimensions, timestamps, and
-     * measure names but different measure values. </p> </li> <li> <p> Records with
-     * timestamps that lie outside the retention duration of the memory store </p>
-     *  <p>When the retention window is updated, you will receive a
-     * <code>RejectedRecords</code> exception if you immediately try to ingest data
-     * within the new window. To avoid a <code>RejectedRecords</code> exception, wait
-     * until the duration of the new window to ingest new data. For further
-     * information, see <a
+     * measure names but: </p> <ul> <li> <p>Measure values are different</p> </li> <li>
+     * <p>Version is not present in the request <i>or</i> the value of version in the
+     * new record is equal to or lower than the existing value</p> </li> </ul> <p> If
+     * Timestream rejects data for this case, the <code>ExistingVersion</code> field in
+     * the <code>RejectedRecords</code> response will indicate the current record’s
+     * version. To force an update, you can resend the request with a version for the
+     * record set to a value greater than the <code>ExistingVersion</code>.</p> </li>
+     * <li> <p> Records with timestamps that lie outside the retention duration of the
+     * memory store </p>  <p>When the retention window is updated, you will
+     * receive a <code>RejectedRecords</code> exception if you immediately try to
+     * ingest data within the new window. To avoid a <code>RejectedRecords</code>
+     * exception, wait until the duration of the new window to ingest new data. For
+     * further information, see <a
      * href="https://docs.aws.amazon.com/timestream/latest/developerguide/best-practices.html#configuration">
      * Best Practices for Configuring Timestream</a> and <a
      * href="https://docs.aws.amazon.com/timestream/latest/developerguide/storage.html">the
@@ -154,15 +178,21 @@ namespace Model
 
     /**
      * <p> The reason why a record was not successfully inserted into Timestream.
-     * Possible causes of failure include: </p> <ul> <li> <p> Records with duplicate
+     * Possible causes of failure include: </p> <ul> <li> <p>Records with duplicate
      * data where there are multiple records with the same dimensions, timestamps, and
-     * measure names but different measure values. </p> </li> <li> <p> Records with
-     * timestamps that lie outside the retention duration of the memory store </p>
-     *  <p>When the retention window is updated, you will receive a
-     * <code>RejectedRecords</code> exception if you immediately try to ingest data
-     * within the new window. To avoid a <code>RejectedRecords</code> exception, wait
-     * until the duration of the new window to ingest new data. For further
-     * information, see <a
+     * measure names but: </p> <ul> <li> <p>Measure values are different</p> </li> <li>
+     * <p>Version is not present in the request <i>or</i> the value of version in the
+     * new record is equal to or lower than the existing value</p> </li> </ul> <p> If
+     * Timestream rejects data for this case, the <code>ExistingVersion</code> field in
+     * the <code>RejectedRecords</code> response will indicate the current record’s
+     * version. To force an update, you can resend the request with a version for the
+     * record set to a value greater than the <code>ExistingVersion</code>.</p> </li>
+     * <li> <p> Records with timestamps that lie outside the retention duration of the
+     * memory store </p>  <p>When the retention window is updated, you will
+     * receive a <code>RejectedRecords</code> exception if you immediately try to
+     * ingest data within the new window. To avoid a <code>RejectedRecords</code>
+     * exception, wait until the duration of the new window to ingest new data. For
+     * further information, see <a
      * href="https://docs.aws.amazon.com/timestream/latest/developerguide/best-practices.html#configuration">
      * Best Practices for Configuring Timestream</a> and <a
      * href="https://docs.aws.amazon.com/timestream/latest/developerguide/storage.html">the
@@ -176,15 +206,21 @@ namespace Model
 
     /**
      * <p> The reason why a record was not successfully inserted into Timestream.
-     * Possible causes of failure include: </p> <ul> <li> <p> Records with duplicate
+     * Possible causes of failure include: </p> <ul> <li> <p>Records with duplicate
      * data where there are multiple records with the same dimensions, timestamps, and
-     * measure names but different measure values. </p> </li> <li> <p> Records with
-     * timestamps that lie outside the retention duration of the memory store </p>
-     *  <p>When the retention window is updated, you will receive a
-     * <code>RejectedRecords</code> exception if you immediately try to ingest data
-     * within the new window. To avoid a <code>RejectedRecords</code> exception, wait
-     * until the duration of the new window to ingest new data. For further
-     * information, see <a
+     * measure names but: </p> <ul> <li> <p>Measure values are different</p> </li> <li>
+     * <p>Version is not present in the request <i>or</i> the value of version in the
+     * new record is equal to or lower than the existing value</p> </li> </ul> <p> If
+     * Timestream rejects data for this case, the <code>ExistingVersion</code> field in
+     * the <code>RejectedRecords</code> response will indicate the current record’s
+     * version. To force an update, you can resend the request with a version for the
+     * record set to a value greater than the <code>ExistingVersion</code>.</p> </li>
+     * <li> <p> Records with timestamps that lie outside the retention duration of the
+     * memory store </p>  <p>When the retention window is updated, you will
+     * receive a <code>RejectedRecords</code> exception if you immediately try to
+     * ingest data within the new window. To avoid a <code>RejectedRecords</code>
+     * exception, wait until the duration of the new window to ingest new data. For
+     * further information, see <a
      * href="https://docs.aws.amazon.com/timestream/latest/developerguide/best-practices.html#configuration">
      * Best Practices for Configuring Timestream</a> and <a
      * href="https://docs.aws.amazon.com/timestream/latest/developerguide/storage.html">the
@@ -198,15 +234,21 @@ namespace Model
 
     /**
      * <p> The reason why a record was not successfully inserted into Timestream.
-     * Possible causes of failure include: </p> <ul> <li> <p> Records with duplicate
+     * Possible causes of failure include: </p> <ul> <li> <p>Records with duplicate
      * data where there are multiple records with the same dimensions, timestamps, and
-     * measure names but different measure values. </p> </li> <li> <p> Records with
-     * timestamps that lie outside the retention duration of the memory store </p>
-     *  <p>When the retention window is updated, you will receive a
-     * <code>RejectedRecords</code> exception if you immediately try to ingest data
-     * within the new window. To avoid a <code>RejectedRecords</code> exception, wait
-     * until the duration of the new window to ingest new data. For further
-     * information, see <a
+     * measure names but: </p> <ul> <li> <p>Measure values are different</p> </li> <li>
+     * <p>Version is not present in the request <i>or</i> the value of version in the
+     * new record is equal to or lower than the existing value</p> </li> </ul> <p> If
+     * Timestream rejects data for this case, the <code>ExistingVersion</code> field in
+     * the <code>RejectedRecords</code> response will indicate the current record’s
+     * version. To force an update, you can resend the request with a version for the
+     * record set to a value greater than the <code>ExistingVersion</code>.</p> </li>
+     * <li> <p> Records with timestamps that lie outside the retention duration of the
+     * memory store </p>  <p>When the retention window is updated, you will
+     * receive a <code>RejectedRecords</code> exception if you immediately try to
+     * ingest data within the new window. To avoid a <code>RejectedRecords</code>
+     * exception, wait until the duration of the new window to ingest new data. For
+     * further information, see <a
      * href="https://docs.aws.amazon.com/timestream/latest/developerguide/best-practices.html#configuration">
      * Best Practices for Configuring Timestream</a> and <a
      * href="https://docs.aws.amazon.com/timestream/latest/developerguide/storage.html">the
@@ -220,15 +262,21 @@ namespace Model
 
     /**
      * <p> The reason why a record was not successfully inserted into Timestream.
-     * Possible causes of failure include: </p> <ul> <li> <p> Records with duplicate
+     * Possible causes of failure include: </p> <ul> <li> <p>Records with duplicate
      * data where there are multiple records with the same dimensions, timestamps, and
-     * measure names but different measure values. </p> </li> <li> <p> Records with
-     * timestamps that lie outside the retention duration of the memory store </p>
-     *  <p>When the retention window is updated, you will receive a
-     * <code>RejectedRecords</code> exception if you immediately try to ingest data
-     * within the new window. To avoid a <code>RejectedRecords</code> exception, wait
-     * until the duration of the new window to ingest new data. For further
-     * information, see <a
+     * measure names but: </p> <ul> <li> <p>Measure values are different</p> </li> <li>
+     * <p>Version is not present in the request <i>or</i> the value of version in the
+     * new record is equal to or lower than the existing value</p> </li> </ul> <p> If
+     * Timestream rejects data for this case, the <code>ExistingVersion</code> field in
+     * the <code>RejectedRecords</code> response will indicate the current record’s
+     * version. To force an update, you can resend the request with a version for the
+     * record set to a value greater than the <code>ExistingVersion</code>.</p> </li>
+     * <li> <p> Records with timestamps that lie outside the retention duration of the
+     * memory store </p>  <p>When the retention window is updated, you will
+     * receive a <code>RejectedRecords</code> exception if you immediately try to
+     * ingest data within the new window. To avoid a <code>RejectedRecords</code>
+     * exception, wait until the duration of the new window to ingest new data. For
+     * further information, see <a
      * href="https://docs.aws.amazon.com/timestream/latest/developerguide/best-practices.html#configuration">
      * Best Practices for Configuring Timestream</a> and <a
      * href="https://docs.aws.amazon.com/timestream/latest/developerguide/storage.html">the

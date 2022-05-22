@@ -37,7 +37,7 @@ namespace Model
 
     /**
      * <p>The registry path of the container image to use as the starting point for
-     * this version. The path is an Amazon Container Registry (ECR) URI in the
+     * this version. The path is an Amazon Elastic Container Registry (ECR) URI in the
      * following format:</p> <p>
      * <code>&lt;acct-id&gt;.dkr.ecr.&lt;region&gt;.amazonaws.com/&lt;repo-name[:tag]
      * or [@digest]&gt;</code> </p>
@@ -46,7 +46,7 @@ namespace Model
 
     /**
      * <p>The registry path of the container image to use as the starting point for
-     * this version. The path is an Amazon Container Registry (ECR) URI in the
+     * this version. The path is an Amazon Elastic Container Registry (ECR) URI in the
      * following format:</p> <p>
      * <code>&lt;acct-id&gt;.dkr.ecr.&lt;region&gt;.amazonaws.com/&lt;repo-name[:tag]
      * or [@digest]&gt;</code> </p>
@@ -55,7 +55,7 @@ namespace Model
 
     /**
      * <p>The registry path of the container image to use as the starting point for
-     * this version. The path is an Amazon Container Registry (ECR) URI in the
+     * this version. The path is an Amazon Elastic Container Registry (ECR) URI in the
      * following format:</p> <p>
      * <code>&lt;acct-id&gt;.dkr.ecr.&lt;region&gt;.amazonaws.com/&lt;repo-name[:tag]
      * or [@digest]&gt;</code> </p>
@@ -64,7 +64,7 @@ namespace Model
 
     /**
      * <p>The registry path of the container image to use as the starting point for
-     * this version. The path is an Amazon Container Registry (ECR) URI in the
+     * this version. The path is an Amazon Elastic Container Registry (ECR) URI in the
      * following format:</p> <p>
      * <code>&lt;acct-id&gt;.dkr.ecr.&lt;region&gt;.amazonaws.com/&lt;repo-name[:tag]
      * or [@digest]&gt;</code> </p>
@@ -73,7 +73,7 @@ namespace Model
 
     /**
      * <p>The registry path of the container image to use as the starting point for
-     * this version. The path is an Amazon Container Registry (ECR) URI in the
+     * this version. The path is an Amazon Elastic Container Registry (ECR) URI in the
      * following format:</p> <p>
      * <code>&lt;acct-id&gt;.dkr.ecr.&lt;region&gt;.amazonaws.com/&lt;repo-name[:tag]
      * or [@digest]&gt;</code> </p>
@@ -82,7 +82,7 @@ namespace Model
 
     /**
      * <p>The registry path of the container image to use as the starting point for
-     * this version. The path is an Amazon Container Registry (ECR) URI in the
+     * this version. The path is an Amazon Elastic Container Registry (ECR) URI in the
      * following format:</p> <p>
      * <code>&lt;acct-id&gt;.dkr.ecr.&lt;region&gt;.amazonaws.com/&lt;repo-name[:tag]
      * or [@digest]&gt;</code> </p>
@@ -91,7 +91,7 @@ namespace Model
 
     /**
      * <p>The registry path of the container image to use as the starting point for
-     * this version. The path is an Amazon Container Registry (ECR) URI in the
+     * this version. The path is an Amazon Elastic Container Registry (ECR) URI in the
      * following format:</p> <p>
      * <code>&lt;acct-id&gt;.dkr.ecr.&lt;region&gt;.amazonaws.com/&lt;repo-name[:tag]
      * or [@digest]&gt;</code> </p>
@@ -100,7 +100,7 @@ namespace Model
 
     /**
      * <p>The registry path of the container image to use as the starting point for
-     * this version. The path is an Amazon Container Registry (ECR) URI in the
+     * this version. The path is an Amazon Elastic Container Registry (ECR) URI in the
      * following format:</p> <p>
      * <code>&lt;acct-id&gt;.dkr.ecr.&lt;region&gt;.amazonaws.com/&lt;repo-name[:tag]
      * or [@digest]&gt;</code> </p>
@@ -109,50 +109,58 @@ namespace Model
 
 
     /**
-     * <p>A unique ID. If not specified, the AWS CLI and AWS SDKs, such as the SDK for
-     * Python (Boto3), add a unique value to the call.</p>
+     * <p>A unique ID. If not specified, the Amazon Web Services CLI and Amazon Web
+     * Services SDKs, such as the SDK for Python (Boto3), add a unique value to the
+     * call.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>A unique ID. If not specified, the AWS CLI and AWS SDKs, such as the SDK for
-     * Python (Boto3), add a unique value to the call.</p>
+     * <p>A unique ID. If not specified, the Amazon Web Services CLI and Amazon Web
+     * Services SDKs, such as the SDK for Python (Boto3), add a unique value to the
+     * call.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
-     * <p>A unique ID. If not specified, the AWS CLI and AWS SDKs, such as the SDK for
-     * Python (Boto3), add a unique value to the call.</p>
+     * <p>A unique ID. If not specified, the Amazon Web Services CLI and Amazon Web
+     * Services SDKs, such as the SDK for Python (Boto3), add a unique value to the
+     * call.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>A unique ID. If not specified, the AWS CLI and AWS SDKs, such as the SDK for
-     * Python (Boto3), add a unique value to the call.</p>
+     * <p>A unique ID. If not specified, the Amazon Web Services CLI and Amazon Web
+     * Services SDKs, such as the SDK for Python (Boto3), add a unique value to the
+     * call.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>A unique ID. If not specified, the AWS CLI and AWS SDKs, such as the SDK for
-     * Python (Boto3), add a unique value to the call.</p>
+     * <p>A unique ID. If not specified, the Amazon Web Services CLI and Amazon Web
+     * Services SDKs, such as the SDK for Python (Boto3), add a unique value to the
+     * call.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>A unique ID. If not specified, the AWS CLI and AWS SDKs, such as the SDK for
-     * Python (Boto3), add a unique value to the call.</p>
+     * <p>A unique ID. If not specified, the Amazon Web Services CLI and Amazon Web
+     * Services SDKs, such as the SDK for Python (Boto3), add a unique value to the
+     * call.</p>
      */
     inline CreateImageVersionRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>A unique ID. If not specified, the AWS CLI and AWS SDKs, such as the SDK for
-     * Python (Boto3), add a unique value to the call.</p>
+     * <p>A unique ID. If not specified, the Amazon Web Services CLI and Amazon Web
+     * Services SDKs, such as the SDK for Python (Boto3), add a unique value to the
+     * call.</p>
      */
     inline CreateImageVersionRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>A unique ID. If not specified, the AWS CLI and AWS SDKs, such as the SDK for
-     * Python (Boto3), add a unique value to the call.</p>
+     * <p>A unique ID. If not specified, the Amazon Web Services CLI and Amazon Web
+     * Services SDKs, such as the SDK for Python (Boto3), add a unique value to the
+     * call.</p>
      */
     inline CreateImageVersionRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 

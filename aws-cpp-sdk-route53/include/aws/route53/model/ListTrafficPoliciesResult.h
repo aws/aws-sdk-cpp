@@ -42,43 +42,43 @@ namespace Model
 
     /**
      * <p>A list that contains one <code>TrafficPolicySummary</code> element for each
-     * traffic policy that was created by the current AWS account.</p>
+     * traffic policy that was created by the current Amazon Web Services account.</p>
      */
     inline const Aws::Vector<TrafficPolicySummary>& GetTrafficPolicySummaries() const{ return m_trafficPolicySummaries; }
 
     /**
      * <p>A list that contains one <code>TrafficPolicySummary</code> element for each
-     * traffic policy that was created by the current AWS account.</p>
+     * traffic policy that was created by the current Amazon Web Services account.</p>
      */
     inline void SetTrafficPolicySummaries(const Aws::Vector<TrafficPolicySummary>& value) { m_trafficPolicySummaries = value; }
 
     /**
      * <p>A list that contains one <code>TrafficPolicySummary</code> element for each
-     * traffic policy that was created by the current AWS account.</p>
+     * traffic policy that was created by the current Amazon Web Services account.</p>
      */
     inline void SetTrafficPolicySummaries(Aws::Vector<TrafficPolicySummary>&& value) { m_trafficPolicySummaries = std::move(value); }
 
     /**
      * <p>A list that contains one <code>TrafficPolicySummary</code> element for each
-     * traffic policy that was created by the current AWS account.</p>
+     * traffic policy that was created by the current Amazon Web Services account.</p>
      */
     inline ListTrafficPoliciesResult& WithTrafficPolicySummaries(const Aws::Vector<TrafficPolicySummary>& value) { SetTrafficPolicySummaries(value); return *this;}
 
     /**
      * <p>A list that contains one <code>TrafficPolicySummary</code> element for each
-     * traffic policy that was created by the current AWS account.</p>
+     * traffic policy that was created by the current Amazon Web Services account.</p>
      */
     inline ListTrafficPoliciesResult& WithTrafficPolicySummaries(Aws::Vector<TrafficPolicySummary>&& value) { SetTrafficPolicySummaries(std::move(value)); return *this;}
 
     /**
      * <p>A list that contains one <code>TrafficPolicySummary</code> element for each
-     * traffic policy that was created by the current AWS account.</p>
+     * traffic policy that was created by the current Amazon Web Services account.</p>
      */
     inline ListTrafficPoliciesResult& AddTrafficPolicySummaries(const TrafficPolicySummary& value) { m_trafficPolicySummaries.push_back(value); return *this; }
 
     /**
      * <p>A list that contains one <code>TrafficPolicySummary</code> element for each
-     * traffic policy that was created by the current AWS account.</p>
+     * traffic policy that was created by the current Amazon Web Services account.</p>
      */
     inline ListTrafficPoliciesResult& AddTrafficPolicySummaries(TrafficPolicySummary&& value) { m_trafficPolicySummaries.push_back(std::move(value)); return *this; }
 

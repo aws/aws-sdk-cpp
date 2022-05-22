@@ -40,44 +40,44 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the specified AWS resource complies with all of the AWS
-     * Config rules that evaluate it.</p>
+     * <p>Indicates whether the specified Amazon Web Services resource complies with
+     * all of the Config rules that evaluate it.</p>
      */
     inline const Aws::Vector<ComplianceByResource>& GetComplianceByResources() const{ return m_complianceByResources; }
 
     /**
-     * <p>Indicates whether the specified AWS resource complies with all of the AWS
-     * Config rules that evaluate it.</p>
+     * <p>Indicates whether the specified Amazon Web Services resource complies with
+     * all of the Config rules that evaluate it.</p>
      */
     inline void SetComplianceByResources(const Aws::Vector<ComplianceByResource>& value) { m_complianceByResources = value; }
 
     /**
-     * <p>Indicates whether the specified AWS resource complies with all of the AWS
-     * Config rules that evaluate it.</p>
+     * <p>Indicates whether the specified Amazon Web Services resource complies with
+     * all of the Config rules that evaluate it.</p>
      */
     inline void SetComplianceByResources(Aws::Vector<ComplianceByResource>&& value) { m_complianceByResources = std::move(value); }
 
     /**
-     * <p>Indicates whether the specified AWS resource complies with all of the AWS
-     * Config rules that evaluate it.</p>
+     * <p>Indicates whether the specified Amazon Web Services resource complies with
+     * all of the Config rules that evaluate it.</p>
      */
     inline DescribeComplianceByResourceResult& WithComplianceByResources(const Aws::Vector<ComplianceByResource>& value) { SetComplianceByResources(value); return *this;}
 
     /**
-     * <p>Indicates whether the specified AWS resource complies with all of the AWS
-     * Config rules that evaluate it.</p>
+     * <p>Indicates whether the specified Amazon Web Services resource complies with
+     * all of the Config rules that evaluate it.</p>
      */
     inline DescribeComplianceByResourceResult& WithComplianceByResources(Aws::Vector<ComplianceByResource>&& value) { SetComplianceByResources(std::move(value)); return *this;}
 
     /**
-     * <p>Indicates whether the specified AWS resource complies with all of the AWS
-     * Config rules that evaluate it.</p>
+     * <p>Indicates whether the specified Amazon Web Services resource complies with
+     * all of the Config rules that evaluate it.</p>
      */
     inline DescribeComplianceByResourceResult& AddComplianceByResources(const ComplianceByResource& value) { m_complianceByResources.push_back(value); return *this; }
 
     /**
-     * <p>Indicates whether the specified AWS resource complies with all of the AWS
-     * Config rules that evaluate it.</p>
+     * <p>Indicates whether the specified Amazon Web Services resource complies with
+     * all of the Config rules that evaluate it.</p>
      */
     inline DescribeComplianceByResourceResult& AddComplianceByResources(ComplianceByResource&& value) { m_complianceByResources.push_back(std::move(value)); return *this; }
 

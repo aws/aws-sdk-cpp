@@ -81,32 +81,80 @@ namespace Model
 
 
     /**
-     * <p>A type of replication task.</p>
+     * <p>The type of replication task to start.</p> <p>When the migration type is
+     * <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value
+     * for the first run of the task is <code>start-replication</code>. You use
+     * <code>reload-target</code> to restart the task and
+     * <code>resume-processing</code> to resume the task.</p> <p>When the migration
+     * type is <code>cdc</code>, you use <code>start-replication</code> to start or
+     * restart the task, and <code>resume-processing</code> to resume the task.
+     * <code>reload-target</code> is not a valid value for a task with migration type
+     * of <code>cdc</code>.</p>
      */
     inline const StartReplicationTaskTypeValue& GetStartReplicationTaskType() const{ return m_startReplicationTaskType; }
 
     /**
-     * <p>A type of replication task.</p>
+     * <p>The type of replication task to start.</p> <p>When the migration type is
+     * <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value
+     * for the first run of the task is <code>start-replication</code>. You use
+     * <code>reload-target</code> to restart the task and
+     * <code>resume-processing</code> to resume the task.</p> <p>When the migration
+     * type is <code>cdc</code>, you use <code>start-replication</code> to start or
+     * restart the task, and <code>resume-processing</code> to resume the task.
+     * <code>reload-target</code> is not a valid value for a task with migration type
+     * of <code>cdc</code>.</p>
      */
     inline bool StartReplicationTaskTypeHasBeenSet() const { return m_startReplicationTaskTypeHasBeenSet; }
 
     /**
-     * <p>A type of replication task.</p>
+     * <p>The type of replication task to start.</p> <p>When the migration type is
+     * <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value
+     * for the first run of the task is <code>start-replication</code>. You use
+     * <code>reload-target</code> to restart the task and
+     * <code>resume-processing</code> to resume the task.</p> <p>When the migration
+     * type is <code>cdc</code>, you use <code>start-replication</code> to start or
+     * restart the task, and <code>resume-processing</code> to resume the task.
+     * <code>reload-target</code> is not a valid value for a task with migration type
+     * of <code>cdc</code>.</p>
      */
     inline void SetStartReplicationTaskType(const StartReplicationTaskTypeValue& value) { m_startReplicationTaskTypeHasBeenSet = true; m_startReplicationTaskType = value; }
 
     /**
-     * <p>A type of replication task.</p>
+     * <p>The type of replication task to start.</p> <p>When the migration type is
+     * <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value
+     * for the first run of the task is <code>start-replication</code>. You use
+     * <code>reload-target</code> to restart the task and
+     * <code>resume-processing</code> to resume the task.</p> <p>When the migration
+     * type is <code>cdc</code>, you use <code>start-replication</code> to start or
+     * restart the task, and <code>resume-processing</code> to resume the task.
+     * <code>reload-target</code> is not a valid value for a task with migration type
+     * of <code>cdc</code>.</p>
      */
     inline void SetStartReplicationTaskType(StartReplicationTaskTypeValue&& value) { m_startReplicationTaskTypeHasBeenSet = true; m_startReplicationTaskType = std::move(value); }
 
     /**
-     * <p>A type of replication task.</p>
+     * <p>The type of replication task to start.</p> <p>When the migration type is
+     * <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value
+     * for the first run of the task is <code>start-replication</code>. You use
+     * <code>reload-target</code> to restart the task and
+     * <code>resume-processing</code> to resume the task.</p> <p>When the migration
+     * type is <code>cdc</code>, you use <code>start-replication</code> to start or
+     * restart the task, and <code>resume-processing</code> to resume the task.
+     * <code>reload-target</code> is not a valid value for a task with migration type
+     * of <code>cdc</code>.</p>
      */
     inline StartReplicationTaskRequest& WithStartReplicationTaskType(const StartReplicationTaskTypeValue& value) { SetStartReplicationTaskType(value); return *this;}
 
     /**
-     * <p>A type of replication task.</p>
+     * <p>The type of replication task to start.</p> <p>When the migration type is
+     * <code>full-load</code> or <code>full-load-and-cdc</code>, the only valid value
+     * for the first run of the task is <code>start-replication</code>. You use
+     * <code>reload-target</code> to restart the task and
+     * <code>resume-processing</code> to resume the task.</p> <p>When the migration
+     * type is <code>cdc</code>, you use <code>start-replication</code> to start or
+     * restart the task, and <code>resume-processing</code> to resume the task.
+     * <code>reload-target</code> is not a valid value for a task with migration type
+     * of <code>cdc</code>.</p>
      */
     inline StartReplicationTaskRequest& WithStartReplicationTaskType(StartReplicationTaskTypeValue&& value) { SetStartReplicationTaskType(std::move(value)); return *this;}
 
@@ -175,8 +223,7 @@ namespace Model
      * connection attribute to the name of this logical replication slot. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
-     * Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.</p>
-     * 
+     * Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p> 
      */
     inline const Aws::String& GetCdcStartPosition() const{ return m_cdcStartPosition; }
 
@@ -195,8 +242,7 @@ namespace Model
      * connection attribute to the name of this logical replication slot. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
-     * Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.</p>
-     * 
+     * Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p> 
      */
     inline bool CdcStartPositionHasBeenSet() const { return m_cdcStartPositionHasBeenSet; }
 
@@ -215,8 +261,7 @@ namespace Model
      * connection attribute to the name of this logical replication slot. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
-     * Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.</p>
-     * 
+     * Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p> 
      */
     inline void SetCdcStartPosition(const Aws::String& value) { m_cdcStartPositionHasBeenSet = true; m_cdcStartPosition = value; }
 
@@ -235,8 +280,7 @@ namespace Model
      * connection attribute to the name of this logical replication slot. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
-     * Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.</p>
-     * 
+     * Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p> 
      */
     inline void SetCdcStartPosition(Aws::String&& value) { m_cdcStartPositionHasBeenSet = true; m_cdcStartPosition = std::move(value); }
 
@@ -255,8 +299,7 @@ namespace Model
      * connection attribute to the name of this logical replication slot. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
-     * Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.</p>
-     * 
+     * Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p> 
      */
     inline void SetCdcStartPosition(const char* value) { m_cdcStartPositionHasBeenSet = true; m_cdcStartPosition.assign(value); }
 
@@ -275,8 +318,7 @@ namespace Model
      * connection attribute to the name of this logical replication slot. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
-     * Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.</p>
-     * 
+     * Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p> 
      */
     inline StartReplicationTaskRequest& WithCdcStartPosition(const Aws::String& value) { SetCdcStartPosition(value); return *this;}
 
@@ -295,8 +337,7 @@ namespace Model
      * connection attribute to the name of this logical replication slot. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
-     * Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.</p>
-     * 
+     * Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p> 
      */
     inline StartReplicationTaskRequest& WithCdcStartPosition(Aws::String&& value) { SetCdcStartPosition(std::move(value)); return *this;}
 
@@ -315,8 +356,7 @@ namespace Model
      * connection attribute to the name of this logical replication slot. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
-     * Connection Attributes When Using PostgreSQL as a Source for AWS DMS</a>.</p>
-     * 
+     * Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p> 
      */
     inline StartReplicationTaskRequest& WithCdcStartPosition(const char* value) { SetCdcStartPosition(value); return *this;}
 

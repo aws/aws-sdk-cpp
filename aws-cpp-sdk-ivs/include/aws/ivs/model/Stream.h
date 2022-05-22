@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/ivs/IVS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ivs/model/StreamHealth.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/ivs/model/StreamState.h>
-#include <aws/ivs/model/StreamHealth.h>
 #include <utility>
 
 namespace Aws
@@ -83,81 +83,118 @@ namespace Model
 
 
     /**
-     * <p>URL of the video master manifest, required by the video player to play the
-     * HLS stream.</p>
+     * <p>The stream’s health.</p>
+     */
+    inline const StreamHealth& GetHealth() const{ return m_health; }
+
+    /**
+     * <p>The stream’s health.</p>
+     */
+    inline bool HealthHasBeenSet() const { return m_healthHasBeenSet; }
+
+    /**
+     * <p>The stream’s health.</p>
+     */
+    inline void SetHealth(const StreamHealth& value) { m_healthHasBeenSet = true; m_health = value; }
+
+    /**
+     * <p>The stream’s health.</p>
+     */
+    inline void SetHealth(StreamHealth&& value) { m_healthHasBeenSet = true; m_health = std::move(value); }
+
+    /**
+     * <p>The stream’s health.</p>
+     */
+    inline Stream& WithHealth(const StreamHealth& value) { SetHealth(value); return *this;}
+
+    /**
+     * <p>The stream’s health.</p>
+     */
+    inline Stream& WithHealth(StreamHealth&& value) { SetHealth(std::move(value)); return *this;}
+
+
+    /**
+     * <p>URL of the master playlist, required by the video player to play the HLS
+     * stream.</p>
      */
     inline const Aws::String& GetPlaybackUrl() const{ return m_playbackUrl; }
 
     /**
-     * <p>URL of the video master manifest, required by the video player to play the
-     * HLS stream.</p>
+     * <p>URL of the master playlist, required by the video player to play the HLS
+     * stream.</p>
      */
     inline bool PlaybackUrlHasBeenSet() const { return m_playbackUrlHasBeenSet; }
 
     /**
-     * <p>URL of the video master manifest, required by the video player to play the
-     * HLS stream.</p>
+     * <p>URL of the master playlist, required by the video player to play the HLS
+     * stream.</p>
      */
     inline void SetPlaybackUrl(const Aws::String& value) { m_playbackUrlHasBeenSet = true; m_playbackUrl = value; }
 
     /**
-     * <p>URL of the video master manifest, required by the video player to play the
-     * HLS stream.</p>
+     * <p>URL of the master playlist, required by the video player to play the HLS
+     * stream.</p>
      */
     inline void SetPlaybackUrl(Aws::String&& value) { m_playbackUrlHasBeenSet = true; m_playbackUrl = std::move(value); }
 
     /**
-     * <p>URL of the video master manifest, required by the video player to play the
-     * HLS stream.</p>
+     * <p>URL of the master playlist, required by the video player to play the HLS
+     * stream.</p>
      */
     inline void SetPlaybackUrl(const char* value) { m_playbackUrlHasBeenSet = true; m_playbackUrl.assign(value); }
 
     /**
-     * <p>URL of the video master manifest, required by the video player to play the
-     * HLS stream.</p>
+     * <p>URL of the master playlist, required by the video player to play the HLS
+     * stream.</p>
      */
     inline Stream& WithPlaybackUrl(const Aws::String& value) { SetPlaybackUrl(value); return *this;}
 
     /**
-     * <p>URL of the video master manifest, required by the video player to play the
-     * HLS stream.</p>
+     * <p>URL of the master playlist, required by the video player to play the HLS
+     * stream.</p>
      */
     inline Stream& WithPlaybackUrl(Aws::String&& value) { SetPlaybackUrl(std::move(value)); return *this;}
 
     /**
-     * <p>URL of the video master manifest, required by the video player to play the
-     * HLS stream.</p>
+     * <p>URL of the master playlist, required by the video player to play the HLS
+     * stream.</p>
      */
     inline Stream& WithPlaybackUrl(const char* value) { SetPlaybackUrl(value); return *this;}
 
 
     /**
-     * <p>ISO-8601 formatted timestamp of the stream’s start.</p>
+     * <p>Time of the stream’s start. This is an ISO 8601 timestamp returned as a
+     * string.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
-     * <p>ISO-8601 formatted timestamp of the stream’s start.</p>
+     * <p>Time of the stream’s start. This is an ISO 8601 timestamp returned as a
+     * string.</p>
      */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
     /**
-     * <p>ISO-8601 formatted timestamp of the stream’s start.</p>
+     * <p>Time of the stream’s start. This is an ISO 8601 timestamp returned as a
+     * string.</p>
      */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
-     * <p>ISO-8601 formatted timestamp of the stream’s start.</p>
+     * <p>Time of the stream’s start. This is an ISO 8601 timestamp returned as a
+     * string.</p>
      */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
-     * <p>ISO-8601 formatted timestamp of the stream’s start.</p>
+     * <p>Time of the stream’s start. This is an ISO 8601 timestamp returned as a
+     * string.</p>
      */
     inline Stream& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
 
     /**
-     * <p>ISO-8601 formatted timestamp of the stream’s start.</p>
+     * <p>Time of the stream’s start. This is an ISO 8601 timestamp returned as a
+     * string.</p>
      */
     inline Stream& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
@@ -194,53 +231,87 @@ namespace Model
 
 
     /**
-     * <p>The stream’s health.</p>
+     * <p>Unique identifier for a live or previously live stream in the specified
+     * channel.</p>
      */
-    inline const StreamHealth& GetHealth() const{ return m_health; }
+    inline const Aws::String& GetStreamId() const{ return m_streamId; }
 
     /**
-     * <p>The stream’s health.</p>
+     * <p>Unique identifier for a live or previously live stream in the specified
+     * channel.</p>
      */
-    inline bool HealthHasBeenSet() const { return m_healthHasBeenSet; }
+    inline bool StreamIdHasBeenSet() const { return m_streamIdHasBeenSet; }
 
     /**
-     * <p>The stream’s health.</p>
+     * <p>Unique identifier for a live or previously live stream in the specified
+     * channel.</p>
      */
-    inline void SetHealth(const StreamHealth& value) { m_healthHasBeenSet = true; m_health = value; }
+    inline void SetStreamId(const Aws::String& value) { m_streamIdHasBeenSet = true; m_streamId = value; }
 
     /**
-     * <p>The stream’s health.</p>
+     * <p>Unique identifier for a live or previously live stream in the specified
+     * channel.</p>
      */
-    inline void SetHealth(StreamHealth&& value) { m_healthHasBeenSet = true; m_health = std::move(value); }
+    inline void SetStreamId(Aws::String&& value) { m_streamIdHasBeenSet = true; m_streamId = std::move(value); }
 
     /**
-     * <p>The stream’s health.</p>
+     * <p>Unique identifier for a live or previously live stream in the specified
+     * channel.</p>
      */
-    inline Stream& WithHealth(const StreamHealth& value) { SetHealth(value); return *this;}
+    inline void SetStreamId(const char* value) { m_streamIdHasBeenSet = true; m_streamId.assign(value); }
 
     /**
-     * <p>The stream’s health.</p>
+     * <p>Unique identifier for a live or previously live stream in the specified
+     * channel.</p>
      */
-    inline Stream& WithHealth(StreamHealth&& value) { SetHealth(std::move(value)); return *this;}
+    inline Stream& WithStreamId(const Aws::String& value) { SetStreamId(value); return *this;}
+
+    /**
+     * <p>Unique identifier for a live or previously live stream in the specified
+     * channel.</p>
+     */
+    inline Stream& WithStreamId(Aws::String&& value) { SetStreamId(std::move(value)); return *this;}
+
+    /**
+     * <p>Unique identifier for a live or previously live stream in the specified
+     * channel.</p>
+     */
+    inline Stream& WithStreamId(const char* value) { SetStreamId(value); return *this;}
 
 
     /**
-     * <p>Number of current viewers of the stream.</p>
+     * <p>A count of concurrent views of the stream. Typically, a new view appears in
+     * <code>viewerCount</code> within 15 seconds of when video playback starts and a
+     * view is removed from <code>viewerCount</code> within 1 minute of when video
+     * playback ends. A value of -1 indicates that the request timed out; in this case,
+     * retry.</p>
      */
     inline long long GetViewerCount() const{ return m_viewerCount; }
 
     /**
-     * <p>Number of current viewers of the stream.</p>
+     * <p>A count of concurrent views of the stream. Typically, a new view appears in
+     * <code>viewerCount</code> within 15 seconds of when video playback starts and a
+     * view is removed from <code>viewerCount</code> within 1 minute of when video
+     * playback ends. A value of -1 indicates that the request timed out; in this case,
+     * retry.</p>
      */
     inline bool ViewerCountHasBeenSet() const { return m_viewerCountHasBeenSet; }
 
     /**
-     * <p>Number of current viewers of the stream.</p>
+     * <p>A count of concurrent views of the stream. Typically, a new view appears in
+     * <code>viewerCount</code> within 15 seconds of when video playback starts and a
+     * view is removed from <code>viewerCount</code> within 1 minute of when video
+     * playback ends. A value of -1 indicates that the request timed out; in this case,
+     * retry.</p>
      */
     inline void SetViewerCount(long long value) { m_viewerCountHasBeenSet = true; m_viewerCount = value; }
 
     /**
-     * <p>Number of current viewers of the stream.</p>
+     * <p>A count of concurrent views of the stream. Typically, a new view appears in
+     * <code>viewerCount</code> within 15 seconds of when video playback starts and a
+     * view is removed from <code>viewerCount</code> within 1 minute of when video
+     * playback ends. A value of -1 indicates that the request timed out; in this case,
+     * retry.</p>
      */
     inline Stream& WithViewerCount(long long value) { SetViewerCount(value); return *this;}
 
@@ -248,6 +319,9 @@ namespace Model
 
     Aws::String m_channelArn;
     bool m_channelArnHasBeenSet;
+
+    StreamHealth m_health;
+    bool m_healthHasBeenSet;
 
     Aws::String m_playbackUrl;
     bool m_playbackUrlHasBeenSet;
@@ -258,8 +332,8 @@ namespace Model
     StreamState m_state;
     bool m_stateHasBeenSet;
 
-    StreamHealth m_health;
-    bool m_healthHasBeenSet;
+    Aws::String m_streamId;
+    bool m_streamIdHasBeenSet;
 
     long long m_viewerCount;
     bool m_viewerCountHasBeenSet;

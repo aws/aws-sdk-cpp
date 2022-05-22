@@ -467,73 +467,73 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID that owns the resource.</p>
+     * <p>The Amazon Web Services account ID that owns the resource.</p>
      */
     inline const Aws::String& GetResourceOwnerAccount() const{ return m_resourceOwnerAccount; }
 
     /**
-     * <p>The AWS account ID that owns the resource.</p>
+     * <p>The Amazon Web Services account ID that owns the resource.</p>
      */
     inline bool ResourceOwnerAccountHasBeenSet() const { return m_resourceOwnerAccountHasBeenSet; }
 
     /**
-     * <p>The AWS account ID that owns the resource.</p>
+     * <p>The Amazon Web Services account ID that owns the resource.</p>
      */
     inline void SetResourceOwnerAccount(const Aws::String& value) { m_resourceOwnerAccountHasBeenSet = true; m_resourceOwnerAccount = value; }
 
     /**
-     * <p>The AWS account ID that owns the resource.</p>
+     * <p>The Amazon Web Services account ID that owns the resource.</p>
      */
     inline void SetResourceOwnerAccount(Aws::String&& value) { m_resourceOwnerAccountHasBeenSet = true; m_resourceOwnerAccount = std::move(value); }
 
     /**
-     * <p>The AWS account ID that owns the resource.</p>
+     * <p>The Amazon Web Services account ID that owns the resource.</p>
      */
     inline void SetResourceOwnerAccount(const char* value) { m_resourceOwnerAccountHasBeenSet = true; m_resourceOwnerAccount.assign(value); }
 
     /**
-     * <p>The AWS account ID that owns the resource.</p>
+     * <p>The Amazon Web Services account ID that owns the resource.</p>
      */
     inline Finding& WithResourceOwnerAccount(const Aws::String& value) { SetResourceOwnerAccount(value); return *this;}
 
     /**
-     * <p>The AWS account ID that owns the resource.</p>
+     * <p>The Amazon Web Services account ID that owns the resource.</p>
      */
     inline Finding& WithResourceOwnerAccount(Aws::String&& value) { SetResourceOwnerAccount(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID that owns the resource.</p>
+     * <p>The Amazon Web Services account ID that owns the resource.</p>
      */
     inline Finding& WithResourceOwnerAccount(const char* value) { SetResourceOwnerAccount(value); return *this;}
 
 
     /**
-     * <p>The type of the resource reported in the finding.</p>
+     * <p>The type of the resource identified in the finding.</p>
      */
     inline const ResourceType& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The type of the resource reported in the finding.</p>
+     * <p>The type of the resource identified in the finding.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>The type of the resource reported in the finding.</p>
+     * <p>The type of the resource identified in the finding.</p>
      */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The type of the resource reported in the finding.</p>
+     * <p>The type of the resource identified in the finding.</p>
      */
     inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The type of the resource reported in the finding.</p>
+     * <p>The type of the resource identified in the finding.</p>
      */
     inline Finding& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The type of the resource reported in the finding.</p>
+     * <p>The type of the resource identified in the finding.</p>
      */
     inline Finding& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 

@@ -73,9 +73,9 @@ namespace Model
      * <code>AdminCreateUser</code> again, specifying <code>"RESEND"</code> for the
      * <code>MessageAction</code> parameter. The default value for this parameter is 7.
      * </p>  <p>If you set a value for <code>TemporaryPasswordValidityDays</code>
-     * in <code>PasswordPolicy</code>, that value will be used and
-     * <code>UnusedAccountValidityDays</code> will be deprecated for that user pool.
-     * </p> 
+     * in <code>PasswordPolicy</code>, that value will be used, and
+     * <code>UnusedAccountValidityDays</code> will be no longer be an available
+     * parameter for that user pool.</p> 
      */
     inline int GetUnusedAccountValidityDays() const{ return m_unusedAccountValidityDays; }
 
@@ -85,9 +85,9 @@ namespace Model
      * <code>AdminCreateUser</code> again, specifying <code>"RESEND"</code> for the
      * <code>MessageAction</code> parameter. The default value for this parameter is 7.
      * </p>  <p>If you set a value for <code>TemporaryPasswordValidityDays</code>
-     * in <code>PasswordPolicy</code>, that value will be used and
-     * <code>UnusedAccountValidityDays</code> will be deprecated for that user pool.
-     * </p> 
+     * in <code>PasswordPolicy</code>, that value will be used, and
+     * <code>UnusedAccountValidityDays</code> will be no longer be an available
+     * parameter for that user pool.</p> 
      */
     inline bool UnusedAccountValidityDaysHasBeenSet() const { return m_unusedAccountValidityDaysHasBeenSet; }
 
@@ -97,9 +97,9 @@ namespace Model
      * <code>AdminCreateUser</code> again, specifying <code>"RESEND"</code> for the
      * <code>MessageAction</code> parameter. The default value for this parameter is 7.
      * </p>  <p>If you set a value for <code>TemporaryPasswordValidityDays</code>
-     * in <code>PasswordPolicy</code>, that value will be used and
-     * <code>UnusedAccountValidityDays</code> will be deprecated for that user pool.
-     * </p> 
+     * in <code>PasswordPolicy</code>, that value will be used, and
+     * <code>UnusedAccountValidityDays</code> will be no longer be an available
+     * parameter for that user pool.</p> 
      */
     inline void SetUnusedAccountValidityDays(int value) { m_unusedAccountValidityDaysHasBeenSet = true; m_unusedAccountValidityDays = value; }
 
@@ -109,9 +109,9 @@ namespace Model
      * <code>AdminCreateUser</code> again, specifying <code>"RESEND"</code> for the
      * <code>MessageAction</code> parameter. The default value for this parameter is 7.
      * </p>  <p>If you set a value for <code>TemporaryPasswordValidityDays</code>
-     * in <code>PasswordPolicy</code>, that value will be used and
-     * <code>UnusedAccountValidityDays</code> will be deprecated for that user pool.
-     * </p> 
+     * in <code>PasswordPolicy</code>, that value will be used, and
+     * <code>UnusedAccountValidityDays</code> will be no longer be an available
+     * parameter for that user pool.</p> 
      */
     inline AdminCreateUserConfigType& WithUnusedAccountValidityDays(int value) { SetUnusedAccountValidityDays(value); return *this;}
 

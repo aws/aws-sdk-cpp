@@ -41,42 +41,50 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWSSignerJob which was created to sign the file.</p>
+     * <p>The ID of the <code>AWSSignerJob</code> which was created to sign the
+     * file.</p>
      */
     inline const Aws::String& GetAwsSignerJobId() const{ return m_awsSignerJobId; }
 
     /**
-     * <p>The ID of the AWSSignerJob which was created to sign the file.</p>
+     * <p>The ID of the <code>AWSSignerJob</code> which was created to sign the
+     * file.</p>
      */
     inline bool AwsSignerJobIdHasBeenSet() const { return m_awsSignerJobIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWSSignerJob which was created to sign the file.</p>
+     * <p>The ID of the <code>AWSSignerJob</code> which was created to sign the
+     * file.</p>
      */
     inline void SetAwsSignerJobId(const Aws::String& value) { m_awsSignerJobIdHasBeenSet = true; m_awsSignerJobId = value; }
 
     /**
-     * <p>The ID of the AWSSignerJob which was created to sign the file.</p>
+     * <p>The ID of the <code>AWSSignerJob</code> which was created to sign the
+     * file.</p>
      */
     inline void SetAwsSignerJobId(Aws::String&& value) { m_awsSignerJobIdHasBeenSet = true; m_awsSignerJobId = std::move(value); }
 
     /**
-     * <p>The ID of the AWSSignerJob which was created to sign the file.</p>
+     * <p>The ID of the <code>AWSSignerJob</code> which was created to sign the
+     * file.</p>
      */
     inline void SetAwsSignerJobId(const char* value) { m_awsSignerJobIdHasBeenSet = true; m_awsSignerJobId.assign(value); }
 
     /**
-     * <p>The ID of the AWSSignerJob which was created to sign the file.</p>
+     * <p>The ID of the <code>AWSSignerJob</code> which was created to sign the
+     * file.</p>
      */
     inline CodeSigning& WithAwsSignerJobId(const Aws::String& value) { SetAwsSignerJobId(value); return *this;}
 
     /**
-     * <p>The ID of the AWSSignerJob which was created to sign the file.</p>
+     * <p>The ID of the <code>AWSSignerJob</code> which was created to sign the
+     * file.</p>
      */
     inline CodeSigning& WithAwsSignerJobId(Aws::String&& value) { SetAwsSignerJobId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWSSignerJob which was created to sign the file.</p>
+     * <p>The ID of the <code>AWSSignerJob</code> which was created to sign the
+     * file.</p>
      */
     inline CodeSigning& WithAwsSignerJobId(const char* value) { SetAwsSignerJobId(value); return *this;}
 

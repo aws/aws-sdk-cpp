@@ -26,9 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>A communication associated with an AWS Support case. The communication
-   * consists of the case ID, the message body, attachment information, the submitter
-   * of the communication, and the date and time of the communication.</p><p><h3>See
+   * <p>A communication associated with a support case. The communication consists of
+   * the case ID, the message body, attachment information, the submitter of the
+   * communication, and the date and time of the communication.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/Communication">AWS
    * API Reference</a></p>
@@ -43,56 +43,56 @@ namespace Model
 
 
     /**
-     * <p>The AWS Support case ID requested or returned in the call. The case ID is an
+     * <p>The support case ID requested or returned in the call. The case ID is an
      * alphanumeric string formatted as shown in this example:
      * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
     inline const Aws::String& GetCaseId() const{ return m_caseId; }
 
     /**
-     * <p>The AWS Support case ID requested or returned in the call. The case ID is an
+     * <p>The support case ID requested or returned in the call. The case ID is an
      * alphanumeric string formatted as shown in this example:
      * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
     inline bool CaseIdHasBeenSet() const { return m_caseIdHasBeenSet; }
 
     /**
-     * <p>The AWS Support case ID requested or returned in the call. The case ID is an
+     * <p>The support case ID requested or returned in the call. The case ID is an
      * alphanumeric string formatted as shown in this example:
      * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
     inline void SetCaseId(const Aws::String& value) { m_caseIdHasBeenSet = true; m_caseId = value; }
 
     /**
-     * <p>The AWS Support case ID requested or returned in the call. The case ID is an
+     * <p>The support case ID requested or returned in the call. The case ID is an
      * alphanumeric string formatted as shown in this example:
      * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
     inline void SetCaseId(Aws::String&& value) { m_caseIdHasBeenSet = true; m_caseId = std::move(value); }
 
     /**
-     * <p>The AWS Support case ID requested or returned in the call. The case ID is an
+     * <p>The support case ID requested or returned in the call. The case ID is an
      * alphanumeric string formatted as shown in this example:
      * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
     inline void SetCaseId(const char* value) { m_caseIdHasBeenSet = true; m_caseId.assign(value); }
 
     /**
-     * <p>The AWS Support case ID requested or returned in the call. The case ID is an
+     * <p>The support case ID requested or returned in the call. The case ID is an
      * alphanumeric string formatted as shown in this example:
      * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
     inline Communication& WithCaseId(const Aws::String& value) { SetCaseId(value); return *this;}
 
     /**
-     * <p>The AWS Support case ID requested or returned in the call. The case ID is an
+     * <p>The support case ID requested or returned in the call. The case ID is an
      * alphanumeric string formatted as shown in this example:
      * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
     inline Communication& WithCaseId(Aws::String&& value) { SetCaseId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Support case ID requested or returned in the call. The case ID is an
+     * <p>The support case ID requested or returned in the call. The case ID is an
      * alphanumeric string formatted as shown in this example:
      * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
@@ -100,42 +100,50 @@ namespace Model
 
 
     /**
-     * <p>The text of the communication between the customer and AWS Support.</p>
+     * <p>The text of the communication between the customer and Amazon Web Services
+     * Support.</p>
      */
     inline const Aws::String& GetBody() const{ return m_body; }
 
     /**
-     * <p>The text of the communication between the customer and AWS Support.</p>
+     * <p>The text of the communication between the customer and Amazon Web Services
+     * Support.</p>
      */
     inline bool BodyHasBeenSet() const { return m_bodyHasBeenSet; }
 
     /**
-     * <p>The text of the communication between the customer and AWS Support.</p>
+     * <p>The text of the communication between the customer and Amazon Web Services
+     * Support.</p>
      */
     inline void SetBody(const Aws::String& value) { m_bodyHasBeenSet = true; m_body = value; }
 
     /**
-     * <p>The text of the communication between the customer and AWS Support.</p>
+     * <p>The text of the communication between the customer and Amazon Web Services
+     * Support.</p>
      */
     inline void SetBody(Aws::String&& value) { m_bodyHasBeenSet = true; m_body = std::move(value); }
 
     /**
-     * <p>The text of the communication between the customer and AWS Support.</p>
+     * <p>The text of the communication between the customer and Amazon Web Services
+     * Support.</p>
      */
     inline void SetBody(const char* value) { m_bodyHasBeenSet = true; m_body.assign(value); }
 
     /**
-     * <p>The text of the communication between the customer and AWS Support.</p>
+     * <p>The text of the communication between the customer and Amazon Web Services
+     * Support.</p>
      */
     inline Communication& WithBody(const Aws::String& value) { SetBody(value); return *this;}
 
     /**
-     * <p>The text of the communication between the customer and AWS Support.</p>
+     * <p>The text of the communication between the customer and Amazon Web Services
+     * Support.</p>
      */
     inline Communication& WithBody(Aws::String&& value) { SetBody(std::move(value)); return *this;}
 
     /**
-     * <p>The text of the communication between the customer and AWS Support.</p>
+     * <p>The text of the communication between the customer and Amazon Web Services
+     * Support.</p>
      */
     inline Communication& WithBody(const char* value) { SetBody(value); return *this;}
 
@@ -143,72 +151,72 @@ namespace Model
     /**
      * <p>The identity of the account that submitted, or responded to, the support
      * case. Customer entries include the role or IAM user as well as the email
-     * address. For example, "AdminRole (Role) &lt;someone@example.com&gt;. Entries
-     * from the AWS Support team display "Amazon Web Services," and do not show an
-     * email address. </p>
+     * address. For example, "AdminRole (Role) &lt;janedoe@example.com&gt;. Entries
+     * from the Amazon Web Services Support team display "Amazon Web Services," and
+     * don't show an email address. </p>
      */
     inline const Aws::String& GetSubmittedBy() const{ return m_submittedBy; }
 
     /**
      * <p>The identity of the account that submitted, or responded to, the support
      * case. Customer entries include the role or IAM user as well as the email
-     * address. For example, "AdminRole (Role) &lt;someone@example.com&gt;. Entries
-     * from the AWS Support team display "Amazon Web Services," and do not show an
-     * email address. </p>
+     * address. For example, "AdminRole (Role) &lt;janedoe@example.com&gt;. Entries
+     * from the Amazon Web Services Support team display "Amazon Web Services," and
+     * don't show an email address. </p>
      */
     inline bool SubmittedByHasBeenSet() const { return m_submittedByHasBeenSet; }
 
     /**
      * <p>The identity of the account that submitted, or responded to, the support
      * case. Customer entries include the role or IAM user as well as the email
-     * address. For example, "AdminRole (Role) &lt;someone@example.com&gt;. Entries
-     * from the AWS Support team display "Amazon Web Services," and do not show an
-     * email address. </p>
+     * address. For example, "AdminRole (Role) &lt;janedoe@example.com&gt;. Entries
+     * from the Amazon Web Services Support team display "Amazon Web Services," and
+     * don't show an email address. </p>
      */
     inline void SetSubmittedBy(const Aws::String& value) { m_submittedByHasBeenSet = true; m_submittedBy = value; }
 
     /**
      * <p>The identity of the account that submitted, or responded to, the support
      * case. Customer entries include the role or IAM user as well as the email
-     * address. For example, "AdminRole (Role) &lt;someone@example.com&gt;. Entries
-     * from the AWS Support team display "Amazon Web Services," and do not show an
-     * email address. </p>
+     * address. For example, "AdminRole (Role) &lt;janedoe@example.com&gt;. Entries
+     * from the Amazon Web Services Support team display "Amazon Web Services," and
+     * don't show an email address. </p>
      */
     inline void SetSubmittedBy(Aws::String&& value) { m_submittedByHasBeenSet = true; m_submittedBy = std::move(value); }
 
     /**
      * <p>The identity of the account that submitted, or responded to, the support
      * case. Customer entries include the role or IAM user as well as the email
-     * address. For example, "AdminRole (Role) &lt;someone@example.com&gt;. Entries
-     * from the AWS Support team display "Amazon Web Services," and do not show an
-     * email address. </p>
+     * address. For example, "AdminRole (Role) &lt;janedoe@example.com&gt;. Entries
+     * from the Amazon Web Services Support team display "Amazon Web Services," and
+     * don't show an email address. </p>
      */
     inline void SetSubmittedBy(const char* value) { m_submittedByHasBeenSet = true; m_submittedBy.assign(value); }
 
     /**
      * <p>The identity of the account that submitted, or responded to, the support
      * case. Customer entries include the role or IAM user as well as the email
-     * address. For example, "AdminRole (Role) &lt;someone@example.com&gt;. Entries
-     * from the AWS Support team display "Amazon Web Services," and do not show an
-     * email address. </p>
+     * address. For example, "AdminRole (Role) &lt;janedoe@example.com&gt;. Entries
+     * from the Amazon Web Services Support team display "Amazon Web Services," and
+     * don't show an email address. </p>
      */
     inline Communication& WithSubmittedBy(const Aws::String& value) { SetSubmittedBy(value); return *this;}
 
     /**
      * <p>The identity of the account that submitted, or responded to, the support
      * case. Customer entries include the role or IAM user as well as the email
-     * address. For example, "AdminRole (Role) &lt;someone@example.com&gt;. Entries
-     * from the AWS Support team display "Amazon Web Services," and do not show an
-     * email address. </p>
+     * address. For example, "AdminRole (Role) &lt;janedoe@example.com&gt;. Entries
+     * from the Amazon Web Services Support team display "Amazon Web Services," and
+     * don't show an email address. </p>
      */
     inline Communication& WithSubmittedBy(Aws::String&& value) { SetSubmittedBy(std::move(value)); return *this;}
 
     /**
      * <p>The identity of the account that submitted, or responded to, the support
      * case. Customer entries include the role or IAM user as well as the email
-     * address. For example, "AdminRole (Role) &lt;someone@example.com&gt;. Entries
-     * from the AWS Support team display "Amazon Web Services," and do not show an
-     * email address. </p>
+     * address. For example, "AdminRole (Role) &lt;janedoe@example.com&gt;. Entries
+     * from the Amazon Web Services Support team display "Amazon Web Services," and
+     * don't show an email address. </p>
      */
     inline Communication& WithSubmittedBy(const char* value) { SetSubmittedBy(value); return *this;}
 

@@ -14,34 +14,95 @@
 #include <future>
 #include <chrono>
 
+#if defined(ENABLE_CURL_CLIENT) && ! defined(__ANDROID__)
+#include <curl/curl.h>
+#endif
+
 using namespace Aws::Http;
 using namespace Aws::Utils;
 using namespace Aws::Client;
 
 #ifndef NO_HTTP_CLIENT
-static void makeRandomHttpRequest(std::shared_ptr<HttpClient> httpClient)
+static const char randomUri[] = "http://some.unknown1234xxx.test.aws";
+static const char randomDomain[] = "some.unknown1234xxx.test.aws";
+
+static void makeRandomHttpRequest(std::shared_ptr<HttpClient> httpClient, bool expectProxyError)
 {
-    auto request = CreateHttpRequest(Aws::String("http://some.unknown1234xxx.test.aws"),
-                                     HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+    auto request = CreateHttpRequest(Aws::String(randomUri),HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
     auto response = httpClient->MakeRequest(request);
     ASSERT_NE(nullptr, response);
     //Modified the tests so that we catch an edge case where ISP's would try to get a response to the weird url
     //by doing a search instead of failing, we've had 2 issues where they get forbidden instead: #1305 & #1051
-    if (response->HasClientError())
+    if(expectProxyError)
     {
+        ASSERT_TRUE(response->HasClientError());
         ASSERT_EQ(CoreErrors::NETWORK_CONNECTION, response->GetClientErrorType());
         ASSERT_EQ(Aws::Http::HttpResponseCode::REQUEST_NOT_MADE, response->GetResponseCode());
     }
     else
     {
-        ASSERT_EQ(HttpResponseCode::FORBIDDEN, response->GetResponseCode());
+        if (response->HasClientError()) {
+            ASSERT_EQ(CoreErrors::NETWORK_CONNECTION, response->GetClientErrorType());
+            ASSERT_EQ(Aws::Http::HttpResponseCode::REQUEST_NOT_MADE, response->GetResponseCode());
+        }
+        else
+        {
+            ASSERT_EQ(HttpResponseCode::FORBIDDEN, response->GetResponseCode());
+        }
     }
 }
 
-TEST(HttpClientTest, TestRandomURL)
+static ClientConfiguration makeClientConfigurationWithProxy()
+{
+    ClientConfiguration configuration = Aws::Client::ClientConfiguration();
+    configuration.proxyHost = "192.168.1.1";
+    configuration.proxyPort = HTTPS_DEFAULT_PORT;
+    configuration.proxyScheme = Aws::Http::Scheme::HTTPS;
+    configuration.proxyUserName = "Anonymous";
+    configuration.proxyPassword = "Test";
+    return configuration;
+}
+
+TEST(HttpClientTest, TestRandomURLWithNoProxy)
 {
     auto httpClient = CreateHttpClient(Aws::Client::ClientConfiguration());
-    makeRandomHttpRequest(httpClient);
+    makeRandomHttpRequest(httpClient, false);
+}
+
+TEST(HttpClientTest, TestRandomURLWithProxy)
+{
+    ClientConfiguration configuration = makeClientConfigurationWithProxy();
+    auto httpClient = CreateHttpClient(configuration);
+    makeRandomHttpRequest(httpClient, true); // we expect it to try to use proxy that is invalid
+}
+
+TEST(HttpClientTest, TestRandomURLWithProxyAndDeclaredAsNonProxyHost)
+{
+    ClientConfiguration configuration = makeClientConfigurationWithProxy();
+    configuration.nonProxyHosts = Aws::Utils::Array<Aws::String>(2);
+    configuration.nonProxyHosts[0] = "test.aws";
+    configuration.nonProxyHosts[1] = "test.non.filtered.aws";
+    auto httpClient = CreateHttpClient(configuration);
+    makeRandomHttpRequest(httpClient, false);
+}
+
+TEST(HttpClientTest, TestRandomURLWithProxyAndDeclaredParentDomainAsNonProxyHost)
+{
+    ClientConfiguration configuration = makeClientConfigurationWithProxy();
+    configuration.nonProxyHosts = Aws::Utils::Array<Aws::String>(2);
+    configuration.nonProxyHosts[0] = randomDomain;
+    configuration.nonProxyHosts[1] = "test.non.filtered.aws";
+    auto httpClient = CreateHttpClient(configuration);
+    makeRandomHttpRequest(httpClient, false);
+}
+
+TEST(HttpClientTest, TestRandomURLWithProxyAndOtherDeclaredAsNonProxyHost)
+{
+    ClientConfiguration configuration = makeClientConfigurationWithProxy();
+    configuration.nonProxyHosts = Aws::Utils::Array<Aws::String>(1);
+    configuration.nonProxyHosts[0] = "http://test.non.filtered.aws";
+    auto httpClient = CreateHttpClient(configuration);
+    makeRandomHttpRequest(httpClient, true);
 }
 
 // TODO: Pending Fix on Windows.
@@ -54,7 +115,7 @@ TEST(HttpClientTest, TestRandomURLMultiThreaded)
     std::vector<std::future<void>> futures;
     for (int thread = 0; thread < threadCount; ++thread)
     {
-        futures.push_back(std::async(std::launch::async, &makeRandomHttpRequest, httpClient));
+        futures.push_back(std::async(std::launch::async, &makeRandomHttpRequest, httpClient, false));
     }
 
     auto start = std::chrono::system_clock::now();

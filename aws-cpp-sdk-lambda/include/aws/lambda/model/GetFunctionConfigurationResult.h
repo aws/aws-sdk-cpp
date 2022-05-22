@@ -18,8 +18,10 @@
 #include <aws/lambda/model/LastUpdateStatusReasonCode.h>
 #include <aws/lambda/model/PackageType.h>
 #include <aws/lambda/model/ImageConfigResponse.h>
+#include <aws/lambda/model/EphemeralStorage.h>
 #include <aws/lambda/model/Layer.h>
 #include <aws/lambda/model/FileSystemConfig.h>
+#include <aws/lambda/model/Architecture.h>
 #include <utility>
 
 namespace Aws
@@ -483,132 +485,142 @@ namespace Model
 
 
     /**
-     * <p>The function's environment variables.</p>
+     * <p>The function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment
+     * variables</a>.</p>
      */
     inline const EnvironmentResponse& GetEnvironment() const{ return m_environment; }
 
     /**
-     * <p>The function's environment variables.</p>
+     * <p>The function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment
+     * variables</a>.</p>
      */
     inline void SetEnvironment(const EnvironmentResponse& value) { m_environment = value; }
 
     /**
-     * <p>The function's environment variables.</p>
+     * <p>The function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment
+     * variables</a>.</p>
      */
     inline void SetEnvironment(EnvironmentResponse&& value) { m_environment = std::move(value); }
 
     /**
-     * <p>The function's environment variables.</p>
+     * <p>The function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment
+     * variables</a>.</p>
      */
     inline GetFunctionConfigurationResult& WithEnvironment(const EnvironmentResponse& value) { SetEnvironment(value); return *this;}
 
     /**
-     * <p>The function's environment variables.</p>
+     * <p>The function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment
+     * variables</a>.</p>
      */
     inline GetFunctionConfigurationResult& WithEnvironment(EnvironmentResponse&& value) { SetEnvironment(std::move(value)); return *this;}
 
 
     /**
      * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is only returned if you've configured a customer managed CMK.</p>
+     * key is only returned if you've configured a customer managed key.</p>
      */
     inline const Aws::String& GetKMSKeyArn() const{ return m_kMSKeyArn; }
 
     /**
      * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is only returned if you've configured a customer managed CMK.</p>
+     * key is only returned if you've configured a customer managed key.</p>
      */
     inline void SetKMSKeyArn(const Aws::String& value) { m_kMSKeyArn = value; }
 
     /**
      * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is only returned if you've configured a customer managed CMK.</p>
+     * key is only returned if you've configured a customer managed key.</p>
      */
     inline void SetKMSKeyArn(Aws::String&& value) { m_kMSKeyArn = std::move(value); }
 
     /**
      * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is only returned if you've configured a customer managed CMK.</p>
+     * key is only returned if you've configured a customer managed key.</p>
      */
     inline void SetKMSKeyArn(const char* value) { m_kMSKeyArn.assign(value); }
 
     /**
      * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is only returned if you've configured a customer managed CMK.</p>
+     * key is only returned if you've configured a customer managed key.</p>
      */
     inline GetFunctionConfigurationResult& WithKMSKeyArn(const Aws::String& value) { SetKMSKeyArn(value); return *this;}
 
     /**
      * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is only returned if you've configured a customer managed CMK.</p>
+     * key is only returned if you've configured a customer managed key.</p>
      */
     inline GetFunctionConfigurationResult& WithKMSKeyArn(Aws::String&& value) { SetKMSKeyArn(std::move(value)); return *this;}
 
     /**
      * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is only returned if you've configured a customer managed CMK.</p>
+     * key is only returned if you've configured a customer managed key.</p>
      */
     inline GetFunctionConfigurationResult& WithKMSKeyArn(const char* value) { SetKMSKeyArn(value); return *this;}
 
 
     /**
-     * <p>The function's AWS X-Ray tracing configuration.</p>
+     * <p>The function's X-Ray tracing configuration.</p>
      */
     inline const TracingConfigResponse& GetTracingConfig() const{ return m_tracingConfig; }
 
     /**
-     * <p>The function's AWS X-Ray tracing configuration.</p>
+     * <p>The function's X-Ray tracing configuration.</p>
      */
     inline void SetTracingConfig(const TracingConfigResponse& value) { m_tracingConfig = value; }
 
     /**
-     * <p>The function's AWS X-Ray tracing configuration.</p>
+     * <p>The function's X-Ray tracing configuration.</p>
      */
     inline void SetTracingConfig(TracingConfigResponse&& value) { m_tracingConfig = std::move(value); }
 
     /**
-     * <p>The function's AWS X-Ray tracing configuration.</p>
+     * <p>The function's X-Ray tracing configuration.</p>
      */
     inline GetFunctionConfigurationResult& WithTracingConfig(const TracingConfigResponse& value) { SetTracingConfig(value); return *this;}
 
     /**
-     * <p>The function's AWS X-Ray tracing configuration.</p>
+     * <p>The function's X-Ray tracing configuration.</p>
      */
     inline GetFunctionConfigurationResult& WithTracingConfig(TracingConfigResponse&& value) { SetTracingConfig(std::move(value)); return *this;}
 
 
     /**
-     * <p>For Lambda@Edge functions, the ARN of the master function.</p>
+     * <p>For Lambda@Edge functions, the ARN of the main function.</p>
      */
     inline const Aws::String& GetMasterArn() const{ return m_masterArn; }
 
     /**
-     * <p>For Lambda@Edge functions, the ARN of the master function.</p>
+     * <p>For Lambda@Edge functions, the ARN of the main function.</p>
      */
     inline void SetMasterArn(const Aws::String& value) { m_masterArn = value; }
 
     /**
-     * <p>For Lambda@Edge functions, the ARN of the master function.</p>
+     * <p>For Lambda@Edge functions, the ARN of the main function.</p>
      */
     inline void SetMasterArn(Aws::String&& value) { m_masterArn = std::move(value); }
 
     /**
-     * <p>For Lambda@Edge functions, the ARN of the master function.</p>
+     * <p>For Lambda@Edge functions, the ARN of the main function.</p>
      */
     inline void SetMasterArn(const char* value) { m_masterArn.assign(value); }
 
     /**
-     * <p>For Lambda@Edge functions, the ARN of the master function.</p>
+     * <p>For Lambda@Edge functions, the ARN of the main function.</p>
      */
     inline GetFunctionConfigurationResult& WithMasterArn(const Aws::String& value) { SetMasterArn(value); return *this;}
 
     /**
-     * <p>For Lambda@Edge functions, the ARN of the master function.</p>
+     * <p>For Lambda@Edge functions, the ARN of the main function.</p>
      */
     inline GetFunctionConfigurationResult& WithMasterArn(Aws::String&& value) { SetMasterArn(std::move(value)); return *this;}
 
     /**
-     * <p>For Lambda@Edge functions, the ARN of the master function.</p>
+     * <p>For Lambda@Edge functions, the ARN of the main function.</p>
      */
     inline GetFunctionConfigurationResult& WithMasterArn(const char* value) { SetMasterArn(value); return *this;}
 
@@ -891,37 +903,51 @@ namespace Model
 
 
     /**
-     * <p>Connection settings for an Amazon EFS file system.</p>
+     * <p>Connection settings for an <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon
+     * EFS file system</a>.</p>
      */
     inline const Aws::Vector<FileSystemConfig>& GetFileSystemConfigs() const{ return m_fileSystemConfigs; }
 
     /**
-     * <p>Connection settings for an Amazon EFS file system.</p>
+     * <p>Connection settings for an <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon
+     * EFS file system</a>.</p>
      */
     inline void SetFileSystemConfigs(const Aws::Vector<FileSystemConfig>& value) { m_fileSystemConfigs = value; }
 
     /**
-     * <p>Connection settings for an Amazon EFS file system.</p>
+     * <p>Connection settings for an <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon
+     * EFS file system</a>.</p>
      */
     inline void SetFileSystemConfigs(Aws::Vector<FileSystemConfig>&& value) { m_fileSystemConfigs = std::move(value); }
 
     /**
-     * <p>Connection settings for an Amazon EFS file system.</p>
+     * <p>Connection settings for an <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon
+     * EFS file system</a>.</p>
      */
     inline GetFunctionConfigurationResult& WithFileSystemConfigs(const Aws::Vector<FileSystemConfig>& value) { SetFileSystemConfigs(value); return *this;}
 
     /**
-     * <p>Connection settings for an Amazon EFS file system.</p>
+     * <p>Connection settings for an <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon
+     * EFS file system</a>.</p>
      */
     inline GetFunctionConfigurationResult& WithFileSystemConfigs(Aws::Vector<FileSystemConfig>&& value) { SetFileSystemConfigs(std::move(value)); return *this;}
 
     /**
-     * <p>Connection settings for an Amazon EFS file system.</p>
+     * <p>Connection settings for an <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon
+     * EFS file system</a>.</p>
      */
     inline GetFunctionConfigurationResult& AddFileSystemConfigs(const FileSystemConfig& value) { m_fileSystemConfigs.push_back(value); return *this; }
 
     /**
-     * <p>Connection settings for an Amazon EFS file system.</p>
+     * <p>Connection settings for an <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon
+     * EFS file system</a>.</p>
      */
     inline GetFunctionConfigurationResult& AddFileSystemConfigs(FileSystemConfig&& value) { m_fileSystemConfigs.push_back(std::move(value)); return *this; }
 
@@ -1054,6 +1080,87 @@ namespace Model
      */
     inline GetFunctionConfigurationResult& WithSigningJobArn(const char* value) { SetSigningJobArn(value); return *this;}
 
+
+    /**
+     * <p>The instruction set architecture that the function supports. Architecture is
+     * a string array with one of the valid values. The default architecture value is
+     * <code>x86_64</code>.</p>
+     */
+    inline const Aws::Vector<Architecture>& GetArchitectures() const{ return m_architectures; }
+
+    /**
+     * <p>The instruction set architecture that the function supports. Architecture is
+     * a string array with one of the valid values. The default architecture value is
+     * <code>x86_64</code>.</p>
+     */
+    inline void SetArchitectures(const Aws::Vector<Architecture>& value) { m_architectures = value; }
+
+    /**
+     * <p>The instruction set architecture that the function supports. Architecture is
+     * a string array with one of the valid values. The default architecture value is
+     * <code>x86_64</code>.</p>
+     */
+    inline void SetArchitectures(Aws::Vector<Architecture>&& value) { m_architectures = std::move(value); }
+
+    /**
+     * <p>The instruction set architecture that the function supports. Architecture is
+     * a string array with one of the valid values. The default architecture value is
+     * <code>x86_64</code>.</p>
+     */
+    inline GetFunctionConfigurationResult& WithArchitectures(const Aws::Vector<Architecture>& value) { SetArchitectures(value); return *this;}
+
+    /**
+     * <p>The instruction set architecture that the function supports. Architecture is
+     * a string array with one of the valid values. The default architecture value is
+     * <code>x86_64</code>.</p>
+     */
+    inline GetFunctionConfigurationResult& WithArchitectures(Aws::Vector<Architecture>&& value) { SetArchitectures(std::move(value)); return *this;}
+
+    /**
+     * <p>The instruction set architecture that the function supports. Architecture is
+     * a string array with one of the valid values. The default architecture value is
+     * <code>x86_64</code>.</p>
+     */
+    inline GetFunctionConfigurationResult& AddArchitectures(const Architecture& value) { m_architectures.push_back(value); return *this; }
+
+    /**
+     * <p>The instruction set architecture that the function supports. Architecture is
+     * a string array with one of the valid values. The default architecture value is
+     * <code>x86_64</code>.</p>
+     */
+    inline GetFunctionConfigurationResult& AddArchitectures(Architecture&& value) { m_architectures.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The size of the function’s /tmp directory in MB. The default value is 512,
+     * but can be any whole number between 512 and 10240 MB.</p>
+     */
+    inline const EphemeralStorage& GetEphemeralStorage() const{ return m_ephemeralStorage; }
+
+    /**
+     * <p>The size of the function’s /tmp directory in MB. The default value is 512,
+     * but can be any whole number between 512 and 10240 MB.</p>
+     */
+    inline void SetEphemeralStorage(const EphemeralStorage& value) { m_ephemeralStorage = value; }
+
+    /**
+     * <p>The size of the function’s /tmp directory in MB. The default value is 512,
+     * but can be any whole number between 512 and 10240 MB.</p>
+     */
+    inline void SetEphemeralStorage(EphemeralStorage&& value) { m_ephemeralStorage = std::move(value); }
+
+    /**
+     * <p>The size of the function’s /tmp directory in MB. The default value is 512,
+     * but can be any whole number between 512 and 10240 MB.</p>
+     */
+    inline GetFunctionConfigurationResult& WithEphemeralStorage(const EphemeralStorage& value) { SetEphemeralStorage(value); return *this;}
+
+    /**
+     * <p>The size of the function’s /tmp directory in MB. The default value is 512,
+     * but can be any whole number between 512 and 10240 MB.</p>
+     */
+    inline GetFunctionConfigurationResult& WithEphemeralStorage(EphemeralStorage&& value) { SetEphemeralStorage(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_functionName;
@@ -1117,6 +1224,10 @@ namespace Model
     Aws::String m_signingProfileVersionArn;
 
     Aws::String m_signingJobArn;
+
+    Aws::Vector<Architecture> m_architectures;
+
+    EphemeralStorage m_ephemeralStorage;
   };
 
 } // namespace Model

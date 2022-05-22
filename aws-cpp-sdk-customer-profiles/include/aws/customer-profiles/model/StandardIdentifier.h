@@ -17,10 +17,13 @@ namespace Model
   {
     NOT_SET,
     PROFILE,
+    ASSET,
+    CASE,
     UNIQUE,
     SECONDARY,
     LOOKUP_ONLY,
-    NEW_ONLY
+    NEW_ONLY,
+    ORDER
   };
 
 namespace StandardIdentifierMapper

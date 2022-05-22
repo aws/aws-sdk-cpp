@@ -20,12 +20,12 @@ CreateKeyGroup2020_05_31Result::CreateKeyGroup2020_05_31Result()
 {
 }
 
-CreateKeyGroup2020_05_31Result::CreateKeyGroup2020_05_31Result(const AmazonWebServiceResult<XmlDocument>& result)
+CreateKeyGroup2020_05_31Result::CreateKeyGroup2020_05_31Result(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-CreateKeyGroup2020_05_31Result& CreateKeyGroup2020_05_31Result::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+CreateKeyGroup2020_05_31Result& CreateKeyGroup2020_05_31Result::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

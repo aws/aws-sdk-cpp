@@ -20,13 +20,15 @@ namespace Model
 
 ActiveDirectoryBackupAttributes::ActiveDirectoryBackupAttributes() : 
     m_domainNameHasBeenSet(false),
-    m_activeDirectoryIdHasBeenSet(false)
+    m_activeDirectoryIdHasBeenSet(false),
+    m_resourceARNHasBeenSet(false)
 {
 }
 
 ActiveDirectoryBackupAttributes::ActiveDirectoryBackupAttributes(JsonView jsonValue) : 
     m_domainNameHasBeenSet(false),
-    m_activeDirectoryIdHasBeenSet(false)
+    m_activeDirectoryIdHasBeenSet(false),
+    m_resourceARNHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,13 @@ ActiveDirectoryBackupAttributes& ActiveDirectoryBackupAttributes::operator =(Jso
     m_activeDirectoryIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ResourceARN"))
+  {
+    m_resourceARN = jsonValue.GetString("ResourceARN");
+
+    m_resourceARNHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,12 @@ JsonValue ActiveDirectoryBackupAttributes::Jsonize() const
   if(m_activeDirectoryIdHasBeenSet)
   {
    payload.WithString("ActiveDirectoryId", m_activeDirectoryId);
+
+  }
+
+  if(m_resourceARNHasBeenSet)
+  {
+   payload.WithString("ResourceARN", m_resourceARN);
 
   }
 

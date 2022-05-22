@@ -24,6 +24,10 @@ namespace Aws
         static const int DATABASE_HASH = HashingUtils::HashString("DATABASE");
         static const int TABLE_HASH = HashingUtils::HashString("TABLE");
         static const int DATA_LOCATION_HASH = HashingUtils::HashString("DATA_LOCATION");
+        static const int LF_TAG_HASH = HashingUtils::HashString("LF_TAG");
+        static const int LF_TAG_POLICY_HASH = HashingUtils::HashString("LF_TAG_POLICY");
+        static const int LF_TAG_POLICY_DATABASE_HASH = HashingUtils::HashString("LF_TAG_POLICY_DATABASE");
+        static const int LF_TAG_POLICY_TABLE_HASH = HashingUtils::HashString("LF_TAG_POLICY_TABLE");
 
 
         DataLakeResourceType GetDataLakeResourceTypeForName(const Aws::String& name)
@@ -44,6 +48,22 @@ namespace Aws
           else if (hashCode == DATA_LOCATION_HASH)
           {
             return DataLakeResourceType::DATA_LOCATION;
+          }
+          else if (hashCode == LF_TAG_HASH)
+          {
+            return DataLakeResourceType::LF_TAG;
+          }
+          else if (hashCode == LF_TAG_POLICY_HASH)
+          {
+            return DataLakeResourceType::LF_TAG_POLICY;
+          }
+          else if (hashCode == LF_TAG_POLICY_DATABASE_HASH)
+          {
+            return DataLakeResourceType::LF_TAG_POLICY_DATABASE;
+          }
+          else if (hashCode == LF_TAG_POLICY_TABLE_HASH)
+          {
+            return DataLakeResourceType::LF_TAG_POLICY_TABLE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -67,6 +87,14 @@ namespace Aws
             return "TABLE";
           case DataLakeResourceType::DATA_LOCATION:
             return "DATA_LOCATION";
+          case DataLakeResourceType::LF_TAG:
+            return "LF_TAG";
+          case DataLakeResourceType::LF_TAG_POLICY:
+            return "LF_TAG_POLICY";
+          case DataLakeResourceType::LF_TAG_POLICY_DATABASE:
+            return "LF_TAG_POLICY_DATABASE";
+          case DataLakeResourceType::LF_TAG_POLICY_TABLE:
+            return "LF_TAG_POLICY_TABLE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -294,12 +294,19 @@ namespace Model
      * compiler options are <code>TargetPlatform</code> specific. It is required for
      * NVIDIA accelerators and highly recommended for CPU compilations. For any other
      * cases, it is optional to specify <code>CompilerOptions.</code> </p> <ul> <li>
-     * <p> <code>CPU</code>: Compilation for CPU supports the following compiler
-     * options.</p> <ul> <li> <p> <code>mcpu</code>: CPU micro-architecture. For
-     * example, <code>{'mcpu': 'skylake-avx512'}</code> </p> </li> <li> <p>
-     * <code>mattr</code>: CPU flags. For example, <code>{'mattr': ['+neon',
-     * '+vfpv4']}</code> </p> </li> </ul> </li> <li> <p> <code>ARM</code>: Details of
-     * ARM CPU compilations.</p> <ul> <li> <p> <code>NEON</code>: NEON is an
+     * <p> <code>DTYPE</code>: Specifies the data type for the input. When compiling
+     * for <code>ml_*</code> (except for <code>ml_inf</code>) instances using PyTorch
+     * framework, provide the data type (dtype) of the model's input.
+     * <code>"float32"</code> is used if <code>"DTYPE"</code> is not specified. Options
+     * for data type are:</p> <ul> <li> <p>float32: Use either <code>"float"</code> or
+     * <code>"float32"</code>.</p> </li> <li> <p>int64: Use either <code>"int64"</code>
+     * or <code>"long"</code>.</p> </li> </ul> <p> For example, <code>{"dtype" :
+     * "float32"}</code>.</p> </li> <li> <p> <code>CPU</code>: Compilation for CPU
+     * supports the following compiler options.</p> <ul> <li> <p> <code>mcpu</code>:
+     * CPU micro-architecture. For example, <code>{'mcpu': 'skylake-avx512'}</code>
+     * </p> </li> <li> <p> <code>mattr</code>: CPU flags. For example, <code>{'mattr':
+     * ['+neon', '+vfpv4']}</code> </p> </li> </ul> </li> <li> <p> <code>ARM</code>:
+     * Details of ARM CPU compilations.</p> <ul> <li> <p> <code>NEON</code>: NEON is an
      * implementation of the Advanced SIMD extension used in ARMv7 processors.</p>
      * <p>For example, add <code>{'mattr': ['+neon']}</code> to the compiler options if
      * compiling for ARM 32-bit platform with the NEON support.</p> </li> </ul> </li>
@@ -325,7 +332,18 @@ namespace Model
      * options:</p> <ul> <li> <p> <code>class_labels</code>: Specifies the
      * classification labels file name inside input tar.gz file. For example,
      * <code>{"class_labels": "imagenet_labels_1000.txt"}</code>. Labels inside the txt
-     * file should be separated by newlines.</p> </li> </ul> </li> </ul>
+     * file should be separated by newlines.</p> </li> </ul> </li> <li> <p>
+     * <code>EIA</code>: Compilation for the Elastic Inference Accelerator supports the
+     * following compiler options:</p> <ul> <li> <p> <code>precision_mode</code>:
+     * Specifies the precision of compiled artifacts. Supported values are
+     * <code>"FP16"</code> and <code>"FP32"</code>. Default is <code>"FP32"</code>.</p>
+     * </li> <li> <p> <code>signature_def_key</code>: Specifies the signature to use
+     * for models in SavedModel format. Defaults is TensorFlow's default signature def
+     * key.</p> </li> <li> <p> <code>output_names</code>: Specifies a list of output
+     * tensor names for models in FrozenGraph format. Set at most one API field,
+     * either: <code>signature_def_key</code> or <code>output_names</code>.</p> </li>
+     * </ul> <p>For example: <code>{"precision_mode": "FP32", "output_names":
+     * ["output:0"]}</code> </p> </li> </ul>
      */
     inline const Aws::String& GetCompilerOptions() const{ return m_compilerOptions; }
 
@@ -334,12 +352,19 @@ namespace Model
      * compiler options are <code>TargetPlatform</code> specific. It is required for
      * NVIDIA accelerators and highly recommended for CPU compilations. For any other
      * cases, it is optional to specify <code>CompilerOptions.</code> </p> <ul> <li>
-     * <p> <code>CPU</code>: Compilation for CPU supports the following compiler
-     * options.</p> <ul> <li> <p> <code>mcpu</code>: CPU micro-architecture. For
-     * example, <code>{'mcpu': 'skylake-avx512'}</code> </p> </li> <li> <p>
-     * <code>mattr</code>: CPU flags. For example, <code>{'mattr': ['+neon',
-     * '+vfpv4']}</code> </p> </li> </ul> </li> <li> <p> <code>ARM</code>: Details of
-     * ARM CPU compilations.</p> <ul> <li> <p> <code>NEON</code>: NEON is an
+     * <p> <code>DTYPE</code>: Specifies the data type for the input. When compiling
+     * for <code>ml_*</code> (except for <code>ml_inf</code>) instances using PyTorch
+     * framework, provide the data type (dtype) of the model's input.
+     * <code>"float32"</code> is used if <code>"DTYPE"</code> is not specified. Options
+     * for data type are:</p> <ul> <li> <p>float32: Use either <code>"float"</code> or
+     * <code>"float32"</code>.</p> </li> <li> <p>int64: Use either <code>"int64"</code>
+     * or <code>"long"</code>.</p> </li> </ul> <p> For example, <code>{"dtype" :
+     * "float32"}</code>.</p> </li> <li> <p> <code>CPU</code>: Compilation for CPU
+     * supports the following compiler options.</p> <ul> <li> <p> <code>mcpu</code>:
+     * CPU micro-architecture. For example, <code>{'mcpu': 'skylake-avx512'}</code>
+     * </p> </li> <li> <p> <code>mattr</code>: CPU flags. For example, <code>{'mattr':
+     * ['+neon', '+vfpv4']}</code> </p> </li> </ul> </li> <li> <p> <code>ARM</code>:
+     * Details of ARM CPU compilations.</p> <ul> <li> <p> <code>NEON</code>: NEON is an
      * implementation of the Advanced SIMD extension used in ARMv7 processors.</p>
      * <p>For example, add <code>{'mattr': ['+neon']}</code> to the compiler options if
      * compiling for ARM 32-bit platform with the NEON support.</p> </li> </ul> </li>
@@ -365,7 +390,18 @@ namespace Model
      * options:</p> <ul> <li> <p> <code>class_labels</code>: Specifies the
      * classification labels file name inside input tar.gz file. For example,
      * <code>{"class_labels": "imagenet_labels_1000.txt"}</code>. Labels inside the txt
-     * file should be separated by newlines.</p> </li> </ul> </li> </ul>
+     * file should be separated by newlines.</p> </li> </ul> </li> <li> <p>
+     * <code>EIA</code>: Compilation for the Elastic Inference Accelerator supports the
+     * following compiler options:</p> <ul> <li> <p> <code>precision_mode</code>:
+     * Specifies the precision of compiled artifacts. Supported values are
+     * <code>"FP16"</code> and <code>"FP32"</code>. Default is <code>"FP32"</code>.</p>
+     * </li> <li> <p> <code>signature_def_key</code>: Specifies the signature to use
+     * for models in SavedModel format. Defaults is TensorFlow's default signature def
+     * key.</p> </li> <li> <p> <code>output_names</code>: Specifies a list of output
+     * tensor names for models in FrozenGraph format. Set at most one API field,
+     * either: <code>signature_def_key</code> or <code>output_names</code>.</p> </li>
+     * </ul> <p>For example: <code>{"precision_mode": "FP32", "output_names":
+     * ["output:0"]}</code> </p> </li> </ul>
      */
     inline bool CompilerOptionsHasBeenSet() const { return m_compilerOptionsHasBeenSet; }
 
@@ -374,12 +410,19 @@ namespace Model
      * compiler options are <code>TargetPlatform</code> specific. It is required for
      * NVIDIA accelerators and highly recommended for CPU compilations. For any other
      * cases, it is optional to specify <code>CompilerOptions.</code> </p> <ul> <li>
-     * <p> <code>CPU</code>: Compilation for CPU supports the following compiler
-     * options.</p> <ul> <li> <p> <code>mcpu</code>: CPU micro-architecture. For
-     * example, <code>{'mcpu': 'skylake-avx512'}</code> </p> </li> <li> <p>
-     * <code>mattr</code>: CPU flags. For example, <code>{'mattr': ['+neon',
-     * '+vfpv4']}</code> </p> </li> </ul> </li> <li> <p> <code>ARM</code>: Details of
-     * ARM CPU compilations.</p> <ul> <li> <p> <code>NEON</code>: NEON is an
+     * <p> <code>DTYPE</code>: Specifies the data type for the input. When compiling
+     * for <code>ml_*</code> (except for <code>ml_inf</code>) instances using PyTorch
+     * framework, provide the data type (dtype) of the model's input.
+     * <code>"float32"</code> is used if <code>"DTYPE"</code> is not specified. Options
+     * for data type are:</p> <ul> <li> <p>float32: Use either <code>"float"</code> or
+     * <code>"float32"</code>.</p> </li> <li> <p>int64: Use either <code>"int64"</code>
+     * or <code>"long"</code>.</p> </li> </ul> <p> For example, <code>{"dtype" :
+     * "float32"}</code>.</p> </li> <li> <p> <code>CPU</code>: Compilation for CPU
+     * supports the following compiler options.</p> <ul> <li> <p> <code>mcpu</code>:
+     * CPU micro-architecture. For example, <code>{'mcpu': 'skylake-avx512'}</code>
+     * </p> </li> <li> <p> <code>mattr</code>: CPU flags. For example, <code>{'mattr':
+     * ['+neon', '+vfpv4']}</code> </p> </li> </ul> </li> <li> <p> <code>ARM</code>:
+     * Details of ARM CPU compilations.</p> <ul> <li> <p> <code>NEON</code>: NEON is an
      * implementation of the Advanced SIMD extension used in ARMv7 processors.</p>
      * <p>For example, add <code>{'mattr': ['+neon']}</code> to the compiler options if
      * compiling for ARM 32-bit platform with the NEON support.</p> </li> </ul> </li>
@@ -405,7 +448,18 @@ namespace Model
      * options:</p> <ul> <li> <p> <code>class_labels</code>: Specifies the
      * classification labels file name inside input tar.gz file. For example,
      * <code>{"class_labels": "imagenet_labels_1000.txt"}</code>. Labels inside the txt
-     * file should be separated by newlines.</p> </li> </ul> </li> </ul>
+     * file should be separated by newlines.</p> </li> </ul> </li> <li> <p>
+     * <code>EIA</code>: Compilation for the Elastic Inference Accelerator supports the
+     * following compiler options:</p> <ul> <li> <p> <code>precision_mode</code>:
+     * Specifies the precision of compiled artifacts. Supported values are
+     * <code>"FP16"</code> and <code>"FP32"</code>. Default is <code>"FP32"</code>.</p>
+     * </li> <li> <p> <code>signature_def_key</code>: Specifies the signature to use
+     * for models in SavedModel format. Defaults is TensorFlow's default signature def
+     * key.</p> </li> <li> <p> <code>output_names</code>: Specifies a list of output
+     * tensor names for models in FrozenGraph format. Set at most one API field,
+     * either: <code>signature_def_key</code> or <code>output_names</code>.</p> </li>
+     * </ul> <p>For example: <code>{"precision_mode": "FP32", "output_names":
+     * ["output:0"]}</code> </p> </li> </ul>
      */
     inline void SetCompilerOptions(const Aws::String& value) { m_compilerOptionsHasBeenSet = true; m_compilerOptions = value; }
 
@@ -414,12 +468,19 @@ namespace Model
      * compiler options are <code>TargetPlatform</code> specific. It is required for
      * NVIDIA accelerators and highly recommended for CPU compilations. For any other
      * cases, it is optional to specify <code>CompilerOptions.</code> </p> <ul> <li>
-     * <p> <code>CPU</code>: Compilation for CPU supports the following compiler
-     * options.</p> <ul> <li> <p> <code>mcpu</code>: CPU micro-architecture. For
-     * example, <code>{'mcpu': 'skylake-avx512'}</code> </p> </li> <li> <p>
-     * <code>mattr</code>: CPU flags. For example, <code>{'mattr': ['+neon',
-     * '+vfpv4']}</code> </p> </li> </ul> </li> <li> <p> <code>ARM</code>: Details of
-     * ARM CPU compilations.</p> <ul> <li> <p> <code>NEON</code>: NEON is an
+     * <p> <code>DTYPE</code>: Specifies the data type for the input. When compiling
+     * for <code>ml_*</code> (except for <code>ml_inf</code>) instances using PyTorch
+     * framework, provide the data type (dtype) of the model's input.
+     * <code>"float32"</code> is used if <code>"DTYPE"</code> is not specified. Options
+     * for data type are:</p> <ul> <li> <p>float32: Use either <code>"float"</code> or
+     * <code>"float32"</code>.</p> </li> <li> <p>int64: Use either <code>"int64"</code>
+     * or <code>"long"</code>.</p> </li> </ul> <p> For example, <code>{"dtype" :
+     * "float32"}</code>.</p> </li> <li> <p> <code>CPU</code>: Compilation for CPU
+     * supports the following compiler options.</p> <ul> <li> <p> <code>mcpu</code>:
+     * CPU micro-architecture. For example, <code>{'mcpu': 'skylake-avx512'}</code>
+     * </p> </li> <li> <p> <code>mattr</code>: CPU flags. For example, <code>{'mattr':
+     * ['+neon', '+vfpv4']}</code> </p> </li> </ul> </li> <li> <p> <code>ARM</code>:
+     * Details of ARM CPU compilations.</p> <ul> <li> <p> <code>NEON</code>: NEON is an
      * implementation of the Advanced SIMD extension used in ARMv7 processors.</p>
      * <p>For example, add <code>{'mattr': ['+neon']}</code> to the compiler options if
      * compiling for ARM 32-bit platform with the NEON support.</p> </li> </ul> </li>
@@ -445,7 +506,18 @@ namespace Model
      * options:</p> <ul> <li> <p> <code>class_labels</code>: Specifies the
      * classification labels file name inside input tar.gz file. For example,
      * <code>{"class_labels": "imagenet_labels_1000.txt"}</code>. Labels inside the txt
-     * file should be separated by newlines.</p> </li> </ul> </li> </ul>
+     * file should be separated by newlines.</p> </li> </ul> </li> <li> <p>
+     * <code>EIA</code>: Compilation for the Elastic Inference Accelerator supports the
+     * following compiler options:</p> <ul> <li> <p> <code>precision_mode</code>:
+     * Specifies the precision of compiled artifacts. Supported values are
+     * <code>"FP16"</code> and <code>"FP32"</code>. Default is <code>"FP32"</code>.</p>
+     * </li> <li> <p> <code>signature_def_key</code>: Specifies the signature to use
+     * for models in SavedModel format. Defaults is TensorFlow's default signature def
+     * key.</p> </li> <li> <p> <code>output_names</code>: Specifies a list of output
+     * tensor names for models in FrozenGraph format. Set at most one API field,
+     * either: <code>signature_def_key</code> or <code>output_names</code>.</p> </li>
+     * </ul> <p>For example: <code>{"precision_mode": "FP32", "output_names":
+     * ["output:0"]}</code> </p> </li> </ul>
      */
     inline void SetCompilerOptions(Aws::String&& value) { m_compilerOptionsHasBeenSet = true; m_compilerOptions = std::move(value); }
 
@@ -454,12 +526,19 @@ namespace Model
      * compiler options are <code>TargetPlatform</code> specific. It is required for
      * NVIDIA accelerators and highly recommended for CPU compilations. For any other
      * cases, it is optional to specify <code>CompilerOptions.</code> </p> <ul> <li>
-     * <p> <code>CPU</code>: Compilation for CPU supports the following compiler
-     * options.</p> <ul> <li> <p> <code>mcpu</code>: CPU micro-architecture. For
-     * example, <code>{'mcpu': 'skylake-avx512'}</code> </p> </li> <li> <p>
-     * <code>mattr</code>: CPU flags. For example, <code>{'mattr': ['+neon',
-     * '+vfpv4']}</code> </p> </li> </ul> </li> <li> <p> <code>ARM</code>: Details of
-     * ARM CPU compilations.</p> <ul> <li> <p> <code>NEON</code>: NEON is an
+     * <p> <code>DTYPE</code>: Specifies the data type for the input. When compiling
+     * for <code>ml_*</code> (except for <code>ml_inf</code>) instances using PyTorch
+     * framework, provide the data type (dtype) of the model's input.
+     * <code>"float32"</code> is used if <code>"DTYPE"</code> is not specified. Options
+     * for data type are:</p> <ul> <li> <p>float32: Use either <code>"float"</code> or
+     * <code>"float32"</code>.</p> </li> <li> <p>int64: Use either <code>"int64"</code>
+     * or <code>"long"</code>.</p> </li> </ul> <p> For example, <code>{"dtype" :
+     * "float32"}</code>.</p> </li> <li> <p> <code>CPU</code>: Compilation for CPU
+     * supports the following compiler options.</p> <ul> <li> <p> <code>mcpu</code>:
+     * CPU micro-architecture. For example, <code>{'mcpu': 'skylake-avx512'}</code>
+     * </p> </li> <li> <p> <code>mattr</code>: CPU flags. For example, <code>{'mattr':
+     * ['+neon', '+vfpv4']}</code> </p> </li> </ul> </li> <li> <p> <code>ARM</code>:
+     * Details of ARM CPU compilations.</p> <ul> <li> <p> <code>NEON</code>: NEON is an
      * implementation of the Advanced SIMD extension used in ARMv7 processors.</p>
      * <p>For example, add <code>{'mattr': ['+neon']}</code> to the compiler options if
      * compiling for ARM 32-bit platform with the NEON support.</p> </li> </ul> </li>
@@ -485,7 +564,18 @@ namespace Model
      * options:</p> <ul> <li> <p> <code>class_labels</code>: Specifies the
      * classification labels file name inside input tar.gz file. For example,
      * <code>{"class_labels": "imagenet_labels_1000.txt"}</code>. Labels inside the txt
-     * file should be separated by newlines.</p> </li> </ul> </li> </ul>
+     * file should be separated by newlines.</p> </li> </ul> </li> <li> <p>
+     * <code>EIA</code>: Compilation for the Elastic Inference Accelerator supports the
+     * following compiler options:</p> <ul> <li> <p> <code>precision_mode</code>:
+     * Specifies the precision of compiled artifacts. Supported values are
+     * <code>"FP16"</code> and <code>"FP32"</code>. Default is <code>"FP32"</code>.</p>
+     * </li> <li> <p> <code>signature_def_key</code>: Specifies the signature to use
+     * for models in SavedModel format. Defaults is TensorFlow's default signature def
+     * key.</p> </li> <li> <p> <code>output_names</code>: Specifies a list of output
+     * tensor names for models in FrozenGraph format. Set at most one API field,
+     * either: <code>signature_def_key</code> or <code>output_names</code>.</p> </li>
+     * </ul> <p>For example: <code>{"precision_mode": "FP32", "output_names":
+     * ["output:0"]}</code> </p> </li> </ul>
      */
     inline void SetCompilerOptions(const char* value) { m_compilerOptionsHasBeenSet = true; m_compilerOptions.assign(value); }
 
@@ -494,12 +584,19 @@ namespace Model
      * compiler options are <code>TargetPlatform</code> specific. It is required for
      * NVIDIA accelerators and highly recommended for CPU compilations. For any other
      * cases, it is optional to specify <code>CompilerOptions.</code> </p> <ul> <li>
-     * <p> <code>CPU</code>: Compilation for CPU supports the following compiler
-     * options.</p> <ul> <li> <p> <code>mcpu</code>: CPU micro-architecture. For
-     * example, <code>{'mcpu': 'skylake-avx512'}</code> </p> </li> <li> <p>
-     * <code>mattr</code>: CPU flags. For example, <code>{'mattr': ['+neon',
-     * '+vfpv4']}</code> </p> </li> </ul> </li> <li> <p> <code>ARM</code>: Details of
-     * ARM CPU compilations.</p> <ul> <li> <p> <code>NEON</code>: NEON is an
+     * <p> <code>DTYPE</code>: Specifies the data type for the input. When compiling
+     * for <code>ml_*</code> (except for <code>ml_inf</code>) instances using PyTorch
+     * framework, provide the data type (dtype) of the model's input.
+     * <code>"float32"</code> is used if <code>"DTYPE"</code> is not specified. Options
+     * for data type are:</p> <ul> <li> <p>float32: Use either <code>"float"</code> or
+     * <code>"float32"</code>.</p> </li> <li> <p>int64: Use either <code>"int64"</code>
+     * or <code>"long"</code>.</p> </li> </ul> <p> For example, <code>{"dtype" :
+     * "float32"}</code>.</p> </li> <li> <p> <code>CPU</code>: Compilation for CPU
+     * supports the following compiler options.</p> <ul> <li> <p> <code>mcpu</code>:
+     * CPU micro-architecture. For example, <code>{'mcpu': 'skylake-avx512'}</code>
+     * </p> </li> <li> <p> <code>mattr</code>: CPU flags. For example, <code>{'mattr':
+     * ['+neon', '+vfpv4']}</code> </p> </li> </ul> </li> <li> <p> <code>ARM</code>:
+     * Details of ARM CPU compilations.</p> <ul> <li> <p> <code>NEON</code>: NEON is an
      * implementation of the Advanced SIMD extension used in ARMv7 processors.</p>
      * <p>For example, add <code>{'mattr': ['+neon']}</code> to the compiler options if
      * compiling for ARM 32-bit platform with the NEON support.</p> </li> </ul> </li>
@@ -525,7 +622,18 @@ namespace Model
      * options:</p> <ul> <li> <p> <code>class_labels</code>: Specifies the
      * classification labels file name inside input tar.gz file. For example,
      * <code>{"class_labels": "imagenet_labels_1000.txt"}</code>. Labels inside the txt
-     * file should be separated by newlines.</p> </li> </ul> </li> </ul>
+     * file should be separated by newlines.</p> </li> </ul> </li> <li> <p>
+     * <code>EIA</code>: Compilation for the Elastic Inference Accelerator supports the
+     * following compiler options:</p> <ul> <li> <p> <code>precision_mode</code>:
+     * Specifies the precision of compiled artifacts. Supported values are
+     * <code>"FP16"</code> and <code>"FP32"</code>. Default is <code>"FP32"</code>.</p>
+     * </li> <li> <p> <code>signature_def_key</code>: Specifies the signature to use
+     * for models in SavedModel format. Defaults is TensorFlow's default signature def
+     * key.</p> </li> <li> <p> <code>output_names</code>: Specifies a list of output
+     * tensor names for models in FrozenGraph format. Set at most one API field,
+     * either: <code>signature_def_key</code> or <code>output_names</code>.</p> </li>
+     * </ul> <p>For example: <code>{"precision_mode": "FP32", "output_names":
+     * ["output:0"]}</code> </p> </li> </ul>
      */
     inline OutputConfig& WithCompilerOptions(const Aws::String& value) { SetCompilerOptions(value); return *this;}
 
@@ -534,12 +642,19 @@ namespace Model
      * compiler options are <code>TargetPlatform</code> specific. It is required for
      * NVIDIA accelerators and highly recommended for CPU compilations. For any other
      * cases, it is optional to specify <code>CompilerOptions.</code> </p> <ul> <li>
-     * <p> <code>CPU</code>: Compilation for CPU supports the following compiler
-     * options.</p> <ul> <li> <p> <code>mcpu</code>: CPU micro-architecture. For
-     * example, <code>{'mcpu': 'skylake-avx512'}</code> </p> </li> <li> <p>
-     * <code>mattr</code>: CPU flags. For example, <code>{'mattr': ['+neon',
-     * '+vfpv4']}</code> </p> </li> </ul> </li> <li> <p> <code>ARM</code>: Details of
-     * ARM CPU compilations.</p> <ul> <li> <p> <code>NEON</code>: NEON is an
+     * <p> <code>DTYPE</code>: Specifies the data type for the input. When compiling
+     * for <code>ml_*</code> (except for <code>ml_inf</code>) instances using PyTorch
+     * framework, provide the data type (dtype) of the model's input.
+     * <code>"float32"</code> is used if <code>"DTYPE"</code> is not specified. Options
+     * for data type are:</p> <ul> <li> <p>float32: Use either <code>"float"</code> or
+     * <code>"float32"</code>.</p> </li> <li> <p>int64: Use either <code>"int64"</code>
+     * or <code>"long"</code>.</p> </li> </ul> <p> For example, <code>{"dtype" :
+     * "float32"}</code>.</p> </li> <li> <p> <code>CPU</code>: Compilation for CPU
+     * supports the following compiler options.</p> <ul> <li> <p> <code>mcpu</code>:
+     * CPU micro-architecture. For example, <code>{'mcpu': 'skylake-avx512'}</code>
+     * </p> </li> <li> <p> <code>mattr</code>: CPU flags. For example, <code>{'mattr':
+     * ['+neon', '+vfpv4']}</code> </p> </li> </ul> </li> <li> <p> <code>ARM</code>:
+     * Details of ARM CPU compilations.</p> <ul> <li> <p> <code>NEON</code>: NEON is an
      * implementation of the Advanced SIMD extension used in ARMv7 processors.</p>
      * <p>For example, add <code>{'mattr': ['+neon']}</code> to the compiler options if
      * compiling for ARM 32-bit platform with the NEON support.</p> </li> </ul> </li>
@@ -565,7 +680,18 @@ namespace Model
      * options:</p> <ul> <li> <p> <code>class_labels</code>: Specifies the
      * classification labels file name inside input tar.gz file. For example,
      * <code>{"class_labels": "imagenet_labels_1000.txt"}</code>. Labels inside the txt
-     * file should be separated by newlines.</p> </li> </ul> </li> </ul>
+     * file should be separated by newlines.</p> </li> </ul> </li> <li> <p>
+     * <code>EIA</code>: Compilation for the Elastic Inference Accelerator supports the
+     * following compiler options:</p> <ul> <li> <p> <code>precision_mode</code>:
+     * Specifies the precision of compiled artifacts. Supported values are
+     * <code>"FP16"</code> and <code>"FP32"</code>. Default is <code>"FP32"</code>.</p>
+     * </li> <li> <p> <code>signature_def_key</code>: Specifies the signature to use
+     * for models in SavedModel format. Defaults is TensorFlow's default signature def
+     * key.</p> </li> <li> <p> <code>output_names</code>: Specifies a list of output
+     * tensor names for models in FrozenGraph format. Set at most one API field,
+     * either: <code>signature_def_key</code> or <code>output_names</code>.</p> </li>
+     * </ul> <p>For example: <code>{"precision_mode": "FP32", "output_names":
+     * ["output:0"]}</code> </p> </li> </ul>
      */
     inline OutputConfig& WithCompilerOptions(Aws::String&& value) { SetCompilerOptions(std::move(value)); return *this;}
 
@@ -574,12 +700,19 @@ namespace Model
      * compiler options are <code>TargetPlatform</code> specific. It is required for
      * NVIDIA accelerators and highly recommended for CPU compilations. For any other
      * cases, it is optional to specify <code>CompilerOptions.</code> </p> <ul> <li>
-     * <p> <code>CPU</code>: Compilation for CPU supports the following compiler
-     * options.</p> <ul> <li> <p> <code>mcpu</code>: CPU micro-architecture. For
-     * example, <code>{'mcpu': 'skylake-avx512'}</code> </p> </li> <li> <p>
-     * <code>mattr</code>: CPU flags. For example, <code>{'mattr': ['+neon',
-     * '+vfpv4']}</code> </p> </li> </ul> </li> <li> <p> <code>ARM</code>: Details of
-     * ARM CPU compilations.</p> <ul> <li> <p> <code>NEON</code>: NEON is an
+     * <p> <code>DTYPE</code>: Specifies the data type for the input. When compiling
+     * for <code>ml_*</code> (except for <code>ml_inf</code>) instances using PyTorch
+     * framework, provide the data type (dtype) of the model's input.
+     * <code>"float32"</code> is used if <code>"DTYPE"</code> is not specified. Options
+     * for data type are:</p> <ul> <li> <p>float32: Use either <code>"float"</code> or
+     * <code>"float32"</code>.</p> </li> <li> <p>int64: Use either <code>"int64"</code>
+     * or <code>"long"</code>.</p> </li> </ul> <p> For example, <code>{"dtype" :
+     * "float32"}</code>.</p> </li> <li> <p> <code>CPU</code>: Compilation for CPU
+     * supports the following compiler options.</p> <ul> <li> <p> <code>mcpu</code>:
+     * CPU micro-architecture. For example, <code>{'mcpu': 'skylake-avx512'}</code>
+     * </p> </li> <li> <p> <code>mattr</code>: CPU flags. For example, <code>{'mattr':
+     * ['+neon', '+vfpv4']}</code> </p> </li> </ul> </li> <li> <p> <code>ARM</code>:
+     * Details of ARM CPU compilations.</p> <ul> <li> <p> <code>NEON</code>: NEON is an
      * implementation of the Advanced SIMD extension used in ARMv7 processors.</p>
      * <p>For example, add <code>{'mattr': ['+neon']}</code> to the compiler options if
      * compiling for ARM 32-bit platform with the NEON support.</p> </li> </ul> </li>
@@ -605,18 +738,33 @@ namespace Model
      * options:</p> <ul> <li> <p> <code>class_labels</code>: Specifies the
      * classification labels file name inside input tar.gz file. For example,
      * <code>{"class_labels": "imagenet_labels_1000.txt"}</code>. Labels inside the txt
-     * file should be separated by newlines.</p> </li> </ul> </li> </ul>
+     * file should be separated by newlines.</p> </li> </ul> </li> <li> <p>
+     * <code>EIA</code>: Compilation for the Elastic Inference Accelerator supports the
+     * following compiler options:</p> <ul> <li> <p> <code>precision_mode</code>:
+     * Specifies the precision of compiled artifacts. Supported values are
+     * <code>"FP16"</code> and <code>"FP32"</code>. Default is <code>"FP32"</code>.</p>
+     * </li> <li> <p> <code>signature_def_key</code>: Specifies the signature to use
+     * for models in SavedModel format. Defaults is TensorFlow's default signature def
+     * key.</p> </li> <li> <p> <code>output_names</code>: Specifies a list of output
+     * tensor names for models in FrozenGraph format. Set at most one API field,
+     * either: <code>signature_def_key</code> or <code>output_names</code>.</p> </li>
+     * </ul> <p>For example: <code>{"precision_mode": "FP32", "output_names":
+     * ["output:0"]}</code> </p> </li> </ul>
      */
     inline OutputConfig& WithCompilerOptions(const char* value) { SetCompilerOptions(value); return *this;}
 
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt data on the storage volume after compilation job. If you don't provide a
-     * KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your
-     * role's account</p> <p>The KmsKeyId can be any of the following formats: </p>
-     * <ul> <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p>
-     * </li> <li> <p>Key ARN:
+     * <p>The Amazon Web Services Key Management Service key (Amazon Web Services KMS)
+     * that Amazon SageMaker uses to encrypt your output models with Amazon S3
+     * server-side encryption after compilation job. If you don't provide a KMS key ID,
+     * Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed
+     * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
+     * </p> <p>The KmsKeyId can be any of the following formats: </p> <ul> <li> <p>Key
+     * ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key
+     * ARN:
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
      * <p>Alias name ARN:
@@ -626,12 +774,16 @@ namespace Model
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt data on the storage volume after compilation job. If you don't provide a
-     * KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your
-     * role's account</p> <p>The KmsKeyId can be any of the following formats: </p>
-     * <ul> <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p>
-     * </li> <li> <p>Key ARN:
+     * <p>The Amazon Web Services Key Management Service key (Amazon Web Services KMS)
+     * that Amazon SageMaker uses to encrypt your output models with Amazon S3
+     * server-side encryption after compilation job. If you don't provide a KMS key ID,
+     * Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed
+     * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
+     * </p> <p>The KmsKeyId can be any of the following formats: </p> <ul> <li> <p>Key
+     * ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key
+     * ARN:
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
      * <p>Alias name ARN:
@@ -641,12 +793,16 @@ namespace Model
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt data on the storage volume after compilation job. If you don't provide a
-     * KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your
-     * role's account</p> <p>The KmsKeyId can be any of the following formats: </p>
-     * <ul> <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p>
-     * </li> <li> <p>Key ARN:
+     * <p>The Amazon Web Services Key Management Service key (Amazon Web Services KMS)
+     * that Amazon SageMaker uses to encrypt your output models with Amazon S3
+     * server-side encryption after compilation job. If you don't provide a KMS key ID,
+     * Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed
+     * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
+     * </p> <p>The KmsKeyId can be any of the following formats: </p> <ul> <li> <p>Key
+     * ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key
+     * ARN:
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
      * <p>Alias name ARN:
@@ -656,12 +812,16 @@ namespace Model
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt data on the storage volume after compilation job. If you don't provide a
-     * KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your
-     * role's account</p> <p>The KmsKeyId can be any of the following formats: </p>
-     * <ul> <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p>
-     * </li> <li> <p>Key ARN:
+     * <p>The Amazon Web Services Key Management Service key (Amazon Web Services KMS)
+     * that Amazon SageMaker uses to encrypt your output models with Amazon S3
+     * server-side encryption after compilation job. If you don't provide a KMS key ID,
+     * Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed
+     * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
+     * </p> <p>The KmsKeyId can be any of the following formats: </p> <ul> <li> <p>Key
+     * ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key
+     * ARN:
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
      * <p>Alias name ARN:
@@ -671,12 +831,16 @@ namespace Model
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt data on the storage volume after compilation job. If you don't provide a
-     * KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your
-     * role's account</p> <p>The KmsKeyId can be any of the following formats: </p>
-     * <ul> <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p>
-     * </li> <li> <p>Key ARN:
+     * <p>The Amazon Web Services Key Management Service key (Amazon Web Services KMS)
+     * that Amazon SageMaker uses to encrypt your output models with Amazon S3
+     * server-side encryption after compilation job. If you don't provide a KMS key ID,
+     * Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed
+     * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
+     * </p> <p>The KmsKeyId can be any of the following formats: </p> <ul> <li> <p>Key
+     * ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key
+     * ARN:
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
      * <p>Alias name ARN:
@@ -686,12 +850,16 @@ namespace Model
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt data on the storage volume after compilation job. If you don't provide a
-     * KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your
-     * role's account</p> <p>The KmsKeyId can be any of the following formats: </p>
-     * <ul> <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p>
-     * </li> <li> <p>Key ARN:
+     * <p>The Amazon Web Services Key Management Service key (Amazon Web Services KMS)
+     * that Amazon SageMaker uses to encrypt your output models with Amazon S3
+     * server-side encryption after compilation job. If you don't provide a KMS key ID,
+     * Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed
+     * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
+     * </p> <p>The KmsKeyId can be any of the following formats: </p> <ul> <li> <p>Key
+     * ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key
+     * ARN:
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
      * <p>Alias name ARN:
@@ -701,12 +869,16 @@ namespace Model
     inline OutputConfig& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt data on the storage volume after compilation job. If you don't provide a
-     * KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your
-     * role's account</p> <p>The KmsKeyId can be any of the following formats: </p>
-     * <ul> <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p>
-     * </li> <li> <p>Key ARN:
+     * <p>The Amazon Web Services Key Management Service key (Amazon Web Services KMS)
+     * that Amazon SageMaker uses to encrypt your output models with Amazon S3
+     * server-side encryption after compilation job. If you don't provide a KMS key ID,
+     * Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed
+     * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
+     * </p> <p>The KmsKeyId can be any of the following formats: </p> <ul> <li> <p>Key
+     * ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key
+     * ARN:
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
      * <p>Alias name ARN:
@@ -716,12 +888,16 @@ namespace Model
     inline OutputConfig& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt data on the storage volume after compilation job. If you don't provide a
-     * KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your
-     * role's account</p> <p>The KmsKeyId can be any of the following formats: </p>
-     * <ul> <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p>
-     * </li> <li> <p>Key ARN:
+     * <p>The Amazon Web Services Key Management Service key (Amazon Web Services KMS)
+     * that Amazon SageMaker uses to encrypt your output models with Amazon S3
+     * server-side encryption after compilation job. If you don't provide a KMS key ID,
+     * Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed
+     * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
+     * </p> <p>The KmsKeyId can be any of the following formats: </p> <ul> <li> <p>Key
+     * ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key
+     * ARN:
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
      * <p>Alias name ARN:

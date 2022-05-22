@@ -53,7 +53,9 @@ Snapshot::Snapshot() :
     m_automaticFailoverHasBeenSet(false),
     m_nodeSnapshotsHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
-    m_aRNHasBeenSet(false)
+    m_aRNHasBeenSet(false),
+    m_dataTiering(DataTieringStatus::NOT_SET),
+    m_dataTieringHasBeenSet(false)
 {
 }
 
@@ -90,7 +92,9 @@ Snapshot::Snapshot(const XmlNode& xmlNode) :
     m_automaticFailoverHasBeenSet(false),
     m_nodeSnapshotsHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
-    m_aRNHasBeenSet(false)
+    m_aRNHasBeenSet(false),
+    m_dataTiering(DataTieringStatus::NOT_SET),
+    m_dataTieringHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -269,6 +273,12 @@ Snapshot& Snapshot::operator =(const XmlNode& xmlNode)
       m_aRN = Aws::Utils::Xml::DecodeEscapedXmlText(aRNNode.GetText());
       m_aRNHasBeenSet = true;
     }
+    XmlNode dataTieringNode = resultNode.FirstChild("DataTiering");
+    if(!dataTieringNode.IsNull())
+    {
+      m_dataTiering = DataTieringStatusMapper::GetDataTieringStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dataTieringNode.GetText()).c_str()).c_str());
+      m_dataTieringHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -417,6 +427,11 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location, unsig
       oStream << location << index << locationValue << ".ARN=" << StringUtils::URLEncode(m_aRN.c_str()) << "&";
   }
 
+  if(m_dataTieringHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DataTiering=" << DataTieringStatusMapper::GetNameForDataTieringStatus(m_dataTiering) << "&";
+  }
+
 }
 
 void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -534,6 +549,10 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_aRNHasBeenSet)
   {
       oStream << location << ".ARN=" << StringUtils::URLEncode(m_aRN.c_str()) << "&";
+  }
+  if(m_dataTieringHasBeenSet)
+  {
+      oStream << location << ".DataTiering=" << DataTieringStatusMapper::GetNameForDataTieringStatus(m_dataTiering) << "&";
   }
 }
 

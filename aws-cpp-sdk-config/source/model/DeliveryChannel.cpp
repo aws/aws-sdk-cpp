@@ -22,6 +22,7 @@ DeliveryChannel::DeliveryChannel() :
     m_nameHasBeenSet(false),
     m_s3BucketNameHasBeenSet(false),
     m_s3KeyPrefixHasBeenSet(false),
+    m_s3KmsKeyArnHasBeenSet(false),
     m_snsTopicARNHasBeenSet(false),
     m_configSnapshotDeliveryPropertiesHasBeenSet(false)
 {
@@ -31,6 +32,7 @@ DeliveryChannel::DeliveryChannel(JsonView jsonValue) :
     m_nameHasBeenSet(false),
     m_s3BucketNameHasBeenSet(false),
     m_s3KeyPrefixHasBeenSet(false),
+    m_s3KmsKeyArnHasBeenSet(false),
     m_snsTopicARNHasBeenSet(false),
     m_configSnapshotDeliveryPropertiesHasBeenSet(false)
 {
@@ -58,6 +60,13 @@ DeliveryChannel& DeliveryChannel::operator =(JsonView jsonValue)
     m_s3KeyPrefix = jsonValue.GetString("s3KeyPrefix");
 
     m_s3KeyPrefixHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("s3KmsKeyArn"))
+  {
+    m_s3KmsKeyArn = jsonValue.GetString("s3KmsKeyArn");
+
+    m_s3KmsKeyArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("snsTopicARN"))
@@ -96,6 +105,12 @@ JsonValue DeliveryChannel::Jsonize() const
   if(m_s3KeyPrefixHasBeenSet)
   {
    payload.WithString("s3KeyPrefix", m_s3KeyPrefix);
+
+  }
+
+  if(m_s3KmsKeyArnHasBeenSet)
+  {
+   payload.WithString("s3KmsKeyArn", m_s3KmsKeyArn);
 
   }
 

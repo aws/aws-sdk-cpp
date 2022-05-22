@@ -18,11 +18,12 @@ namespace ACM
 namespace ACMErrorMapper
 {
 
+static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int INVALID_ARGS_HASH = HashingUtils::HashString("InvalidArgsException");
 static const int INVALID_DOMAIN_VALIDATION_OPTIONS_HASH = HashingUtils::HashString("InvalidDomainValidationOptionsException");
+static const int REQUEST_IN_PROGRESS_HASH = HashingUtils::HashString("RequestInProgressException");
 static const int INVALID_ARN_HASH = HashingUtils::HashString("InvalidArnException");
 static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
-static const int REQUEST_IN_PROGRESS_HASH = HashingUtils::HashString("RequestInProgressException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
 static const int INVALID_TAG_HASH = HashingUtils::HashString("InvalidTagException");
@@ -35,13 +36,21 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == INVALID_ARGS_HASH)
+  if (hashCode == CONFLICT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::CONFLICT), false);
+  }
+  else if (hashCode == INVALID_ARGS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::INVALID_ARGS), false);
   }
   else if (hashCode == INVALID_DOMAIN_VALIDATION_OPTIONS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::INVALID_DOMAIN_VALIDATION_OPTIONS), false);
+  }
+  else if (hashCode == REQUEST_IN_PROGRESS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::REQUEST_IN_PROGRESS), false);
   }
   else if (hashCode == INVALID_ARN_HASH)
   {
@@ -50,10 +59,6 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_PARAMETER_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::INVALID_PARAMETER), false);
-  }
-  else if (hashCode == REQUEST_IN_PROGRESS_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::REQUEST_IN_PROGRESS), false);
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {

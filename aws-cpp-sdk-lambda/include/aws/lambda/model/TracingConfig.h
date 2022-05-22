@@ -24,9 +24,10 @@ namespace Model
 {
 
   /**
-   * <p>The function's AWS X-Ray tracing configuration. To sample and record incoming
-   * requests, set <code>Mode</code> to <code>Active</code>.</p><p><h3>See Also:</h3>
-   * <a
+   * <p>The function's <a
+   * href="https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html">X-Ray</a>
+   * tracing configuration. To sample and record incoming requests, set
+   * <code>Mode</code> to <code>Active</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/TracingConfig">AWS
    * API Reference</a></p>
    */

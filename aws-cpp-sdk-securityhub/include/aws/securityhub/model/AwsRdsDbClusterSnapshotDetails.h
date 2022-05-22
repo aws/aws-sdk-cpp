@@ -168,42 +168,50 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The name of the database engine that you want to use for this DB
+     * instance.</p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
-     * <p/>
+     * <p>The name of the database engine that you want to use for this DB
+     * instance.</p>
      */
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The name of the database engine that you want to use for this DB
+     * instance.</p>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
-     * <p/>
+     * <p>The name of the database engine that you want to use for this DB
+     * instance.</p>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The name of the database engine that you want to use for this DB
+     * instance.</p>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
-     * <p/>
+     * <p>The name of the database engine that you want to use for this DB
+     * instance.</p>
      */
     inline AwsRdsDbClusterSnapshotDetails& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The name of the database engine that you want to use for this DB
+     * instance.</p>
      */
     inline AwsRdsDbClusterSnapshotDetails& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The name of the database engine that you want to use for this DB
+     * instance.</p>
      */
     inline AwsRdsDbClusterSnapshotDetails& WithEngine(const char* value) { SetEngine(value); return *this;}
 
@@ -616,50 +624,50 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the AWS KMS master key that is used to encrypt the database
-     * instances in the DB cluster.</p>
+     * <p>The ARN of the KMS master key that is used to encrypt the database instances
+     * in the DB cluster.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The ARN of the AWS KMS master key that is used to encrypt the database
-     * instances in the DB cluster.</p>
+     * <p>The ARN of the KMS master key that is used to encrypt the database instances
+     * in the DB cluster.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The ARN of the AWS KMS master key that is used to encrypt the database
-     * instances in the DB cluster.</p>
+     * <p>The ARN of the KMS master key that is used to encrypt the database instances
+     * in the DB cluster.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The ARN of the AWS KMS master key that is used to encrypt the database
-     * instances in the DB cluster.</p>
+     * <p>The ARN of the KMS master key that is used to encrypt the database instances
+     * in the DB cluster.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The ARN of the AWS KMS master key that is used to encrypt the database
-     * instances in the DB cluster.</p>
+     * <p>The ARN of the KMS master key that is used to encrypt the database instances
+     * in the DB cluster.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The ARN of the AWS KMS master key that is used to encrypt the database
-     * instances in the DB cluster.</p>
+     * <p>The ARN of the KMS master key that is used to encrypt the database instances
+     * in the DB cluster.</p>
      */
     inline AwsRdsDbClusterSnapshotDetails& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The ARN of the AWS KMS master key that is used to encrypt the database
-     * instances in the DB cluster.</p>
+     * <p>The ARN of the KMS master key that is used to encrypt the database instances
+     * in the DB cluster.</p>
      */
     inline AwsRdsDbClusterSnapshotDetails& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the AWS KMS master key that is used to encrypt the database
-     * instances in the DB cluster.</p>
+     * <p>The ARN of the KMS master key that is used to encrypt the database instances
+     * in the DB cluster.</p>
      */
     inline AwsRdsDbClusterSnapshotDetails& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

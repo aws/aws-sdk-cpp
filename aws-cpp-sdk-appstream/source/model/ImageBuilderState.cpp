@@ -29,6 +29,8 @@ namespace Aws
         static const int SNAPSHOTTING_HASH = HashingUtils::HashString("SNAPSHOTTING");
         static const int DELETING_HASH = HashingUtils::HashString("DELETING");
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
+        static const int PENDING_QUALIFICATION_HASH = HashingUtils::HashString("PENDING_QUALIFICATION");
 
 
         ImageBuilderState GetImageBuilderStateForName(const Aws::String& name)
@@ -70,6 +72,14 @@ namespace Aws
           {
             return ImageBuilderState::FAILED;
           }
+          else if (hashCode == UPDATING_HASH)
+          {
+            return ImageBuilderState::UPDATING;
+          }
+          else if (hashCode == PENDING_QUALIFICATION_HASH)
+          {
+            return ImageBuilderState::PENDING_QUALIFICATION;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -102,6 +112,10 @@ namespace Aws
             return "DELETING";
           case ImageBuilderState::FAILED:
             return "FAILED";
+          case ImageBuilderState::UPDATING:
+            return "UPDATING";
+          case ImageBuilderState::PENDING_QUALIFICATION:
+            return "PENDING_QUALIFICATION";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

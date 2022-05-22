@@ -51,7 +51,11 @@ namespace Model
     ta_IN,
     te_IN,
     tr_TR,
-    zh_CN
+    zh_CN,
+    zh_TW,
+    th_TH,
+    en_ZA,
+    en_NZ
   };
 
 namespace LanguageCodeMapper

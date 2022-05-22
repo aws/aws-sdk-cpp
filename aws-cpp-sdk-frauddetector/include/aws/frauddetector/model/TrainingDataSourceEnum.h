@@ -16,7 +16,8 @@ namespace Model
   enum class TrainingDataSourceEnum
   {
     NOT_SET,
-    EXTERNAL_EVENTS
+    EXTERNAL_EVENTS,
+    INGESTED_EVENTS
   };
 
 namespace TrainingDataSourceEnumMapper

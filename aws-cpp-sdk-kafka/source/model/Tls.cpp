@@ -19,12 +19,16 @@ namespace Model
 {
 
 Tls::Tls() : 
-    m_certificateAuthorityArnListHasBeenSet(false)
+    m_certificateAuthorityArnListHasBeenSet(false),
+    m_enabled(false),
+    m_enabledHasBeenSet(false)
 {
 }
 
 Tls::Tls(JsonView jsonValue) : 
-    m_certificateAuthorityArnListHasBeenSet(false)
+    m_certificateAuthorityArnListHasBeenSet(false),
+    m_enabled(false),
+    m_enabledHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -39,6 +43,13 @@ Tls& Tls::operator =(JsonView jsonValue)
       m_certificateAuthorityArnList.push_back(certificateAuthorityArnListJsonList[certificateAuthorityArnListIndex].AsString());
     }
     m_certificateAuthorityArnListHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("enabled"))
+  {
+    m_enabled = jsonValue.GetBool("enabled");
+
+    m_enabledHasBeenSet = true;
   }
 
   return *this;
@@ -56,6 +67,12 @@ JsonValue Tls::Jsonize() const
      certificateAuthorityArnListJsonList[certificateAuthorityArnListIndex].AsString(m_certificateAuthorityArnList[certificateAuthorityArnListIndex]);
    }
    payload.WithArray("certificateAuthorityArnList", std::move(certificateAuthorityArnListJsonList));
+
+  }
+
+  if(m_enabledHasBeenSet)
+  {
+   payload.WithBool("enabled", m_enabled);
 
   }
 

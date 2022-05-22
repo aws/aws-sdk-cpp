@@ -13,7 +13,10 @@ using namespace Aws::Utils;
 EnableLoggingRequest::EnableLoggingRequest() : 
     m_clusterIdentifierHasBeenSet(false),
     m_bucketNameHasBeenSet(false),
-    m_s3KeyPrefixHasBeenSet(false)
+    m_s3KeyPrefixHasBeenSet(false),
+    m_logDestinationType(LogDestinationType::NOT_SET),
+    m_logDestinationTypeHasBeenSet(false),
+    m_logExportsHasBeenSet(false)
 {
 }
 
@@ -34,6 +37,22 @@ Aws::String EnableLoggingRequest::SerializePayload() const
   if(m_s3KeyPrefixHasBeenSet)
   {
     ss << "S3KeyPrefix=" << StringUtils::URLEncode(m_s3KeyPrefix.c_str()) << "&";
+  }
+
+  if(m_logDestinationTypeHasBeenSet)
+  {
+    ss << "LogDestinationType=" << LogDestinationTypeMapper::GetNameForLogDestinationType(m_logDestinationType) << "&";
+  }
+
+  if(m_logExportsHasBeenSet)
+  {
+    unsigned logExportsCount = 1;
+    for(auto& item : m_logExports)
+    {
+      ss << "LogExports.member." << logExportsCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      logExportsCount++;
+    }
   }
 
   ss << "Version=2012-12-01";

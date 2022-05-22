@@ -201,10 +201,10 @@ namespace Model
 
     /**
      * <p/> <p>Specify RecordIO as the value when input data is in raw format but the
-     * training algorithm requires the RecordIO format. In this case, Amazon SageMaker
-     * wraps each individual S3 object in a RecordIO record. If the input data is
-     * already in RecordIO format, you don't need to set this attribute. For more
-     * information, see <a
+     * training algorithm requires the RecordIO format. In this case, SageMaker wraps
+     * each individual S3 object in a RecordIO record. If the input data is already in
+     * RecordIO format, you don't need to set this attribute. For more information, see
+     * <a
      * href="https://mxnet.apache.org/api/architecture/note_data_loading#data-format">Create
      * a Dataset Using RecordIO</a>. </p> <p>In File mode, leave this field unset or
      * set it to None.</p>
@@ -213,10 +213,10 @@ namespace Model
 
     /**
      * <p/> <p>Specify RecordIO as the value when input data is in raw format but the
-     * training algorithm requires the RecordIO format. In this case, Amazon SageMaker
-     * wraps each individual S3 object in a RecordIO record. If the input data is
-     * already in RecordIO format, you don't need to set this attribute. For more
-     * information, see <a
+     * training algorithm requires the RecordIO format. In this case, SageMaker wraps
+     * each individual S3 object in a RecordIO record. If the input data is already in
+     * RecordIO format, you don't need to set this attribute. For more information, see
+     * <a
      * href="https://mxnet.apache.org/api/architecture/note_data_loading#data-format">Create
      * a Dataset Using RecordIO</a>. </p> <p>In File mode, leave this field unset or
      * set it to None.</p>
@@ -225,10 +225,10 @@ namespace Model
 
     /**
      * <p/> <p>Specify RecordIO as the value when input data is in raw format but the
-     * training algorithm requires the RecordIO format. In this case, Amazon SageMaker
-     * wraps each individual S3 object in a RecordIO record. If the input data is
-     * already in RecordIO format, you don't need to set this attribute. For more
-     * information, see <a
+     * training algorithm requires the RecordIO format. In this case, SageMaker wraps
+     * each individual S3 object in a RecordIO record. If the input data is already in
+     * RecordIO format, you don't need to set this attribute. For more information, see
+     * <a
      * href="https://mxnet.apache.org/api/architecture/note_data_loading#data-format">Create
      * a Dataset Using RecordIO</a>. </p> <p>In File mode, leave this field unset or
      * set it to None.</p>
@@ -237,10 +237,10 @@ namespace Model
 
     /**
      * <p/> <p>Specify RecordIO as the value when input data is in raw format but the
-     * training algorithm requires the RecordIO format. In this case, Amazon SageMaker
-     * wraps each individual S3 object in a RecordIO record. If the input data is
-     * already in RecordIO format, you don't need to set this attribute. For more
-     * information, see <a
+     * training algorithm requires the RecordIO format. In this case, SageMaker wraps
+     * each individual S3 object in a RecordIO record. If the input data is already in
+     * RecordIO format, you don't need to set this attribute. For more information, see
+     * <a
      * href="https://mxnet.apache.org/api/architecture/note_data_loading#data-format">Create
      * a Dataset Using RecordIO</a>. </p> <p>In File mode, leave this field unset or
      * set it to None.</p>
@@ -249,10 +249,10 @@ namespace Model
 
     /**
      * <p/> <p>Specify RecordIO as the value when input data is in raw format but the
-     * training algorithm requires the RecordIO format. In this case, Amazon SageMaker
-     * wraps each individual S3 object in a RecordIO record. If the input data is
-     * already in RecordIO format, you don't need to set this attribute. For more
-     * information, see <a
+     * training algorithm requires the RecordIO format. In this case, SageMaker wraps
+     * each individual S3 object in a RecordIO record. If the input data is already in
+     * RecordIO format, you don't need to set this attribute. For more information, see
+     * <a
      * href="https://mxnet.apache.org/api/architecture/note_data_loading#data-format">Create
      * a Dataset Using RecordIO</a>. </p> <p>In File mode, leave this field unset or
      * set it to None.</p>
@@ -261,10 +261,10 @@ namespace Model
 
     /**
      * <p/> <p>Specify RecordIO as the value when input data is in raw format but the
-     * training algorithm requires the RecordIO format. In this case, Amazon SageMaker
-     * wraps each individual S3 object in a RecordIO record. If the input data is
-     * already in RecordIO format, you don't need to set this attribute. For more
-     * information, see <a
+     * training algorithm requires the RecordIO format. In this case, SageMaker wraps
+     * each individual S3 object in a RecordIO record. If the input data is already in
+     * RecordIO format, you don't need to set this attribute. For more information, see
+     * <a
      * href="https://mxnet.apache.org/api/architecture/note_data_loading#data-format">Create
      * a Dataset Using RecordIO</a>. </p> <p>In File mode, leave this field unset or
      * set it to None.</p>
@@ -274,8 +274,8 @@ namespace Model
 
     /**
      * <p>(Optional) The input mode to use for the data channel in a training job. If
-     * you don't set a value for <code>InputMode</code>, Amazon SageMaker uses the
-     * value set for <code>TrainingInputMode</code>. Use this parameter to override the
+     * you don't set a value for <code>InputMode</code>, SageMaker uses the value set
+     * for <code>TrainingInputMode</code>. Use this parameter to override the
      * <code>TrainingInputMode</code> setting in a <a>AlgorithmSpecification</a>
      * request when you have a channel that needs a different input mode from the
      * training job's general setting. To download the data from Amazon Simple Storage
@@ -289,8 +289,8 @@ namespace Model
 
     /**
      * <p>(Optional) The input mode to use for the data channel in a training job. If
-     * you don't set a value for <code>InputMode</code>, Amazon SageMaker uses the
-     * value set for <code>TrainingInputMode</code>. Use this parameter to override the
+     * you don't set a value for <code>InputMode</code>, SageMaker uses the value set
+     * for <code>TrainingInputMode</code>. Use this parameter to override the
      * <code>TrainingInputMode</code> setting in a <a>AlgorithmSpecification</a>
      * request when you have a channel that needs a different input mode from the
      * training job's general setting. To download the data from Amazon Simple Storage
@@ -304,8 +304,8 @@ namespace Model
 
     /**
      * <p>(Optional) The input mode to use for the data channel in a training job. If
-     * you don't set a value for <code>InputMode</code>, Amazon SageMaker uses the
-     * value set for <code>TrainingInputMode</code>. Use this parameter to override the
+     * you don't set a value for <code>InputMode</code>, SageMaker uses the value set
+     * for <code>TrainingInputMode</code>. Use this parameter to override the
      * <code>TrainingInputMode</code> setting in a <a>AlgorithmSpecification</a>
      * request when you have a channel that needs a different input mode from the
      * training job's general setting. To download the data from Amazon Simple Storage
@@ -319,8 +319,8 @@ namespace Model
 
     /**
      * <p>(Optional) The input mode to use for the data channel in a training job. If
-     * you don't set a value for <code>InputMode</code>, Amazon SageMaker uses the
-     * value set for <code>TrainingInputMode</code>. Use this parameter to override the
+     * you don't set a value for <code>InputMode</code>, SageMaker uses the value set
+     * for <code>TrainingInputMode</code>. Use this parameter to override the
      * <code>TrainingInputMode</code> setting in a <a>AlgorithmSpecification</a>
      * request when you have a channel that needs a different input mode from the
      * training job's general setting. To download the data from Amazon Simple Storage
@@ -334,8 +334,8 @@ namespace Model
 
     /**
      * <p>(Optional) The input mode to use for the data channel in a training job. If
-     * you don't set a value for <code>InputMode</code>, Amazon SageMaker uses the
-     * value set for <code>TrainingInputMode</code>. Use this parameter to override the
+     * you don't set a value for <code>InputMode</code>, SageMaker uses the value set
+     * for <code>TrainingInputMode</code>. Use this parameter to override the
      * <code>TrainingInputMode</code> setting in a <a>AlgorithmSpecification</a>
      * request when you have a channel that needs a different input mode from the
      * training job's general setting. To download the data from Amazon Simple Storage
@@ -349,8 +349,8 @@ namespace Model
 
     /**
      * <p>(Optional) The input mode to use for the data channel in a training job. If
-     * you don't set a value for <code>InputMode</code>, Amazon SageMaker uses the
-     * value set for <code>TrainingInputMode</code>. Use this parameter to override the
+     * you don't set a value for <code>InputMode</code>, SageMaker uses the value set
+     * for <code>TrainingInputMode</code>. Use this parameter to override the
      * <code>TrainingInputMode</code> setting in a <a>AlgorithmSpecification</a>
      * request when you have a channel that needs a different input mode from the
      * training job's general setting. To download the data from Amazon Simple Storage

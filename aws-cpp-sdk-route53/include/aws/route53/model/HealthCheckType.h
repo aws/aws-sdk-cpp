@@ -22,7 +22,8 @@ namespace Model
     HTTPS_STR_MATCH,
     TCP,
     CALCULATED,
-    CLOUDWATCH_METRIC
+    CLOUDWATCH_METRIC,
+    RECOVERY_CONTROL
   };
 
 namespace HealthCheckTypeMapper

@@ -191,51 +191,113 @@ namespace Model
 
     /**
      * <p> Specifies the time zone used when referring to the date and time of a
-     * scheduled-triggered flow. </p>
+     * scheduled-triggered flow, such as <code>America/New_York</code>. </p>
      */
     inline const Aws::String& GetTimezone() const{ return m_timezone; }
 
     /**
      * <p> Specifies the time zone used when referring to the date and time of a
-     * scheduled-triggered flow. </p>
+     * scheduled-triggered flow, such as <code>America/New_York</code>. </p>
      */
     inline bool TimezoneHasBeenSet() const { return m_timezoneHasBeenSet; }
 
     /**
      * <p> Specifies the time zone used when referring to the date and time of a
-     * scheduled-triggered flow. </p>
+     * scheduled-triggered flow, such as <code>America/New_York</code>. </p>
      */
     inline void SetTimezone(const Aws::String& value) { m_timezoneHasBeenSet = true; m_timezone = value; }
 
     /**
      * <p> Specifies the time zone used when referring to the date and time of a
-     * scheduled-triggered flow. </p>
+     * scheduled-triggered flow, such as <code>America/New_York</code>. </p>
      */
     inline void SetTimezone(Aws::String&& value) { m_timezoneHasBeenSet = true; m_timezone = std::move(value); }
 
     /**
      * <p> Specifies the time zone used when referring to the date and time of a
-     * scheduled-triggered flow. </p>
+     * scheduled-triggered flow, such as <code>America/New_York</code>. </p>
      */
     inline void SetTimezone(const char* value) { m_timezoneHasBeenSet = true; m_timezone.assign(value); }
 
     /**
      * <p> Specifies the time zone used when referring to the date and time of a
-     * scheduled-triggered flow. </p>
+     * scheduled-triggered flow, such as <code>America/New_York</code>. </p>
      */
     inline ScheduledTriggerProperties& WithTimezone(const Aws::String& value) { SetTimezone(value); return *this;}
 
     /**
      * <p> Specifies the time zone used when referring to the date and time of a
-     * scheduled-triggered flow. </p>
+     * scheduled-triggered flow, such as <code>America/New_York</code>. </p>
      */
     inline ScheduledTriggerProperties& WithTimezone(Aws::String&& value) { SetTimezone(std::move(value)); return *this;}
 
     /**
      * <p> Specifies the time zone used when referring to the date and time of a
-     * scheduled-triggered flow. </p>
+     * scheduled-triggered flow, such as <code>America/New_York</code>. </p>
      */
     inline ScheduledTriggerProperties& WithTimezone(const char* value) { SetTimezone(value); return *this;}
+
+
+    /**
+     * <p> Specifies the optional offset that is added to the time interval for a
+     * schedule-triggered flow. </p>
+     */
+    inline long long GetScheduleOffset() const{ return m_scheduleOffset; }
+
+    /**
+     * <p> Specifies the optional offset that is added to the time interval for a
+     * schedule-triggered flow. </p>
+     */
+    inline bool ScheduleOffsetHasBeenSet() const { return m_scheduleOffsetHasBeenSet; }
+
+    /**
+     * <p> Specifies the optional offset that is added to the time interval for a
+     * schedule-triggered flow. </p>
+     */
+    inline void SetScheduleOffset(long long value) { m_scheduleOffsetHasBeenSet = true; m_scheduleOffset = value; }
+
+    /**
+     * <p> Specifies the optional offset that is added to the time interval for a
+     * schedule-triggered flow. </p>
+     */
+    inline ScheduledTriggerProperties& WithScheduleOffset(long long value) { SetScheduleOffset(value); return *this;}
+
+
+    /**
+     * <p> Specifies the date range for the records to import from the connector in the
+     * first flow run. </p>
+     */
+    inline const Aws::Utils::DateTime& GetFirstExecutionFrom() const{ return m_firstExecutionFrom; }
+
+    /**
+     * <p> Specifies the date range for the records to import from the connector in the
+     * first flow run. </p>
+     */
+    inline bool FirstExecutionFromHasBeenSet() const { return m_firstExecutionFromHasBeenSet; }
+
+    /**
+     * <p> Specifies the date range for the records to import from the connector in the
+     * first flow run. </p>
+     */
+    inline void SetFirstExecutionFrom(const Aws::Utils::DateTime& value) { m_firstExecutionFromHasBeenSet = true; m_firstExecutionFrom = value; }
+
+    /**
+     * <p> Specifies the date range for the records to import from the connector in the
+     * first flow run. </p>
+     */
+    inline void SetFirstExecutionFrom(Aws::Utils::DateTime&& value) { m_firstExecutionFromHasBeenSet = true; m_firstExecutionFrom = std::move(value); }
+
+    /**
+     * <p> Specifies the date range for the records to import from the connector in the
+     * first flow run. </p>
+     */
+    inline ScheduledTriggerProperties& WithFirstExecutionFrom(const Aws::Utils::DateTime& value) { SetFirstExecutionFrom(value); return *this;}
+
+    /**
+     * <p> Specifies the date range for the records to import from the connector in the
+     * first flow run. </p>
+     */
+    inline ScheduledTriggerProperties& WithFirstExecutionFrom(Aws::Utils::DateTime&& value) { SetFirstExecutionFrom(std::move(value)); return *this;}
 
   private:
 
@@ -253,6 +315,12 @@ namespace Model
 
     Aws::String m_timezone;
     bool m_timezoneHasBeenSet;
+
+    long long m_scheduleOffset;
+    bool m_scheduleOffsetHasBeenSet;
+
+    Aws::Utils::DateTime m_firstExecutionFrom;
+    bool m_firstExecutionFromHasBeenSet;
   };
 
 } // namespace Model

@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>The resources produced by this image. </p><p><h3>See Also:</h3>   <a
+   * <p>The resources produced by this image.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/OutputResources">AWS
    * API Reference</a></p>
    */
@@ -40,42 +40,42 @@ namespace Model
 
 
     /**
-     * <p>The EC2 AMIs created by this image. </p>
+     * <p>The Amazon EC2 AMIs created by this image.</p>
      */
     inline const Aws::Vector<Ami>& GetAmis() const{ return m_amis; }
 
     /**
-     * <p>The EC2 AMIs created by this image. </p>
+     * <p>The Amazon EC2 AMIs created by this image.</p>
      */
     inline bool AmisHasBeenSet() const { return m_amisHasBeenSet; }
 
     /**
-     * <p>The EC2 AMIs created by this image. </p>
+     * <p>The Amazon EC2 AMIs created by this image.</p>
      */
     inline void SetAmis(const Aws::Vector<Ami>& value) { m_amisHasBeenSet = true; m_amis = value; }
 
     /**
-     * <p>The EC2 AMIs created by this image. </p>
+     * <p>The Amazon EC2 AMIs created by this image.</p>
      */
     inline void SetAmis(Aws::Vector<Ami>&& value) { m_amisHasBeenSet = true; m_amis = std::move(value); }
 
     /**
-     * <p>The EC2 AMIs created by this image. </p>
+     * <p>The Amazon EC2 AMIs created by this image.</p>
      */
     inline OutputResources& WithAmis(const Aws::Vector<Ami>& value) { SetAmis(value); return *this;}
 
     /**
-     * <p>The EC2 AMIs created by this image. </p>
+     * <p>The Amazon EC2 AMIs created by this image.</p>
      */
     inline OutputResources& WithAmis(Aws::Vector<Ami>&& value) { SetAmis(std::move(value)); return *this;}
 
     /**
-     * <p>The EC2 AMIs created by this image. </p>
+     * <p>The Amazon EC2 AMIs created by this image.</p>
      */
     inline OutputResources& AddAmis(const Ami& value) { m_amisHasBeenSet = true; m_amis.push_back(value); return *this; }
 
     /**
-     * <p>The EC2 AMIs created by this image. </p>
+     * <p>The Amazon EC2 AMIs created by this image.</p>
      */
     inline OutputResources& AddAmis(Ami&& value) { m_amisHasBeenSet = true; m_amis.push_back(std::move(value)); return *this; }
 

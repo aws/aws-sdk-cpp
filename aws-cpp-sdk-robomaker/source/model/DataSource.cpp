@@ -21,14 +21,20 @@ namespace Model
 DataSource::DataSource() : 
     m_nameHasBeenSet(false),
     m_s3BucketHasBeenSet(false),
-    m_s3KeysHasBeenSet(false)
+    m_s3KeysHasBeenSet(false),
+    m_type(DataSourceType::NOT_SET),
+    m_typeHasBeenSet(false),
+    m_destinationHasBeenSet(false)
 {
 }
 
 DataSource::DataSource(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_s3BucketHasBeenSet(false),
-    m_s3KeysHasBeenSet(false)
+    m_s3KeysHasBeenSet(false),
+    m_type(DataSourceType::NOT_SET),
+    m_typeHasBeenSet(false),
+    m_destinationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -59,6 +65,20 @@ DataSource& DataSource::operator =(JsonView jsonValue)
     m_s3KeysHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("type"))
+  {
+    m_type = DataSourceTypeMapper::GetDataSourceTypeForName(jsonValue.GetString("type"));
+
+    m_typeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("destination"))
+  {
+    m_destination = jsonValue.GetString("destination");
+
+    m_destinationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -86,6 +106,17 @@ JsonValue DataSource::Jsonize() const
      s3KeysJsonList[s3KeysIndex].AsObject(m_s3Keys[s3KeysIndex].Jsonize());
    }
    payload.WithArray("s3Keys", std::move(s3KeysJsonList));
+
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", DataSourceTypeMapper::GetNameForDataSourceType(m_type));
+  }
+
+  if(m_destinationHasBeenSet)
+  {
+   payload.WithString("destination", m_destination);
 
   }
 

@@ -37,7 +37,9 @@ Cluster::Cluster() :
     m_securityGroupsHasBeenSet(false),
     m_iamRoleArnHasBeenSet(false),
     m_parameterGroupHasBeenSet(false),
-    m_sSEDescriptionHasBeenSet(false)
+    m_sSEDescriptionHasBeenSet(false),
+    m_clusterEndpointEncryptionType(ClusterEndpointEncryptionType::NOT_SET),
+    m_clusterEndpointEncryptionTypeHasBeenSet(false)
 {
 }
 
@@ -60,7 +62,9 @@ Cluster::Cluster(JsonView jsonValue) :
     m_securityGroupsHasBeenSet(false),
     m_iamRoleArnHasBeenSet(false),
     m_parameterGroupHasBeenSet(false),
-    m_sSEDescriptionHasBeenSet(false)
+    m_sSEDescriptionHasBeenSet(false),
+    m_clusterEndpointEncryptionType(ClusterEndpointEncryptionType::NOT_SET),
+    m_clusterEndpointEncryptionTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -195,6 +199,13 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     m_sSEDescriptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ClusterEndpointEncryptionType"))
+  {
+    m_clusterEndpointEncryptionType = ClusterEndpointEncryptionTypeMapper::GetClusterEndpointEncryptionTypeForName(jsonValue.GetString("ClusterEndpointEncryptionType"));
+
+    m_clusterEndpointEncryptionTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -317,6 +328,11 @@ JsonValue Cluster::Jsonize() const
   {
    payload.WithObject("SSEDescription", m_sSEDescription.Jsonize());
 
+  }
+
+  if(m_clusterEndpointEncryptionTypeHasBeenSet)
+  {
+   payload.WithString("ClusterEndpointEncryptionType", ClusterEndpointEncryptionTypeMapper::GetNameForClusterEndpointEncryptionType(m_clusterEndpointEncryptionType));
   }
 
   return payload;

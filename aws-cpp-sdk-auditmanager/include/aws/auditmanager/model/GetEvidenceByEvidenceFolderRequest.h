@@ -39,42 +39,42 @@ namespace Model
 
 
     /**
-     * <p> The identifier for the specified assessment. </p>
+     * <p> The identifier for the assessment. </p>
      */
     inline const Aws::String& GetAssessmentId() const{ return m_assessmentId; }
 
     /**
-     * <p> The identifier for the specified assessment. </p>
+     * <p> The identifier for the assessment. </p>
      */
     inline bool AssessmentIdHasBeenSet() const { return m_assessmentIdHasBeenSet; }
 
     /**
-     * <p> The identifier for the specified assessment. </p>
+     * <p> The identifier for the assessment. </p>
      */
     inline void SetAssessmentId(const Aws::String& value) { m_assessmentIdHasBeenSet = true; m_assessmentId = value; }
 
     /**
-     * <p> The identifier for the specified assessment. </p>
+     * <p> The identifier for the assessment. </p>
      */
     inline void SetAssessmentId(Aws::String&& value) { m_assessmentIdHasBeenSet = true; m_assessmentId = std::move(value); }
 
     /**
-     * <p> The identifier for the specified assessment. </p>
+     * <p> The identifier for the assessment. </p>
      */
     inline void SetAssessmentId(const char* value) { m_assessmentIdHasBeenSet = true; m_assessmentId.assign(value); }
 
     /**
-     * <p> The identifier for the specified assessment. </p>
+     * <p> The identifier for the assessment. </p>
      */
     inline GetEvidenceByEvidenceFolderRequest& WithAssessmentId(const Aws::String& value) { SetAssessmentId(value); return *this;}
 
     /**
-     * <p> The identifier for the specified assessment. </p>
+     * <p> The identifier for the assessment. </p>
      */
     inline GetEvidenceByEvidenceFolderRequest& WithAssessmentId(Aws::String&& value) { SetAssessmentId(std::move(value)); return *this;}
 
     /**
-     * <p> The identifier for the specified assessment. </p>
+     * <p> The identifier for the assessment. </p>
      */
     inline GetEvidenceByEvidenceFolderRequest& WithAssessmentId(const char* value) { SetAssessmentId(value); return *this;}
 
@@ -121,108 +121,108 @@ namespace Model
 
 
     /**
-     * <p> The unique identifier for the folder in which the evidence is stored. </p>
+     * <p> The unique identifier for the folder that the evidence is stored in. </p>
      */
     inline const Aws::String& GetEvidenceFolderId() const{ return m_evidenceFolderId; }
 
     /**
-     * <p> The unique identifier for the folder in which the evidence is stored. </p>
+     * <p> The unique identifier for the folder that the evidence is stored in. </p>
      */
     inline bool EvidenceFolderIdHasBeenSet() const { return m_evidenceFolderIdHasBeenSet; }
 
     /**
-     * <p> The unique identifier for the folder in which the evidence is stored. </p>
+     * <p> The unique identifier for the folder that the evidence is stored in. </p>
      */
     inline void SetEvidenceFolderId(const Aws::String& value) { m_evidenceFolderIdHasBeenSet = true; m_evidenceFolderId = value; }
 
     /**
-     * <p> The unique identifier for the folder in which the evidence is stored. </p>
+     * <p> The unique identifier for the folder that the evidence is stored in. </p>
      */
     inline void SetEvidenceFolderId(Aws::String&& value) { m_evidenceFolderIdHasBeenSet = true; m_evidenceFolderId = std::move(value); }
 
     /**
-     * <p> The unique identifier for the folder in which the evidence is stored. </p>
+     * <p> The unique identifier for the folder that the evidence is stored in. </p>
      */
     inline void SetEvidenceFolderId(const char* value) { m_evidenceFolderIdHasBeenSet = true; m_evidenceFolderId.assign(value); }
 
     /**
-     * <p> The unique identifier for the folder in which the evidence is stored. </p>
+     * <p> The unique identifier for the folder that the evidence is stored in. </p>
      */
     inline GetEvidenceByEvidenceFolderRequest& WithEvidenceFolderId(const Aws::String& value) { SetEvidenceFolderId(value); return *this;}
 
     /**
-     * <p> The unique identifier for the folder in which the evidence is stored. </p>
+     * <p> The unique identifier for the folder that the evidence is stored in. </p>
      */
     inline GetEvidenceByEvidenceFolderRequest& WithEvidenceFolderId(Aws::String&& value) { SetEvidenceFolderId(std::move(value)); return *this;}
 
     /**
-     * <p> The unique identifier for the folder in which the evidence is stored. </p>
+     * <p> The unique identifier for the folder that the evidence is stored in. </p>
      */
     inline GetEvidenceByEvidenceFolderRequest& WithEvidenceFolderId(const char* value) { SetEvidenceFolderId(value); return *this;}
 
 
     /**
-     * <p> The pagination token used to fetch the next set of results. </p>
+     * <p> The pagination token that's used to fetch the next set of results. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p> The pagination token used to fetch the next set of results. </p>
+     * <p> The pagination token that's used to fetch the next set of results. </p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p> The pagination token used to fetch the next set of results. </p>
+     * <p> The pagination token that's used to fetch the next set of results. </p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p> The pagination token used to fetch the next set of results. </p>
+     * <p> The pagination token that's used to fetch the next set of results. </p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p> The pagination token used to fetch the next set of results. </p>
+     * <p> The pagination token that's used to fetch the next set of results. </p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p> The pagination token used to fetch the next set of results. </p>
+     * <p> The pagination token that's used to fetch the next set of results. </p>
      */
     inline GetEvidenceByEvidenceFolderRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p> The pagination token used to fetch the next set of results. </p>
+     * <p> The pagination token that's used to fetch the next set of results. </p>
      */
     inline GetEvidenceByEvidenceFolderRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p> The pagination token used to fetch the next set of results. </p>
+     * <p> The pagination token that's used to fetch the next set of results. </p>
      */
     inline GetEvidenceByEvidenceFolderRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
     /**
-     * <p> Represents the maximum number of results per page, or per API request call.
-     * </p>
+     * <p> Represents the maximum number of results on a page or for an API request
+     * call. </p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p> Represents the maximum number of results per page, or per API request call.
-     * </p>
+     * <p> Represents the maximum number of results on a page or for an API request
+     * call. </p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p> Represents the maximum number of results per page, or per API request call.
-     * </p>
+     * <p> Represents the maximum number of results on a page or for an API request
+     * call. </p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p> Represents the maximum number of results per page, or per API request call.
-     * </p>
+     * <p> Represents the maximum number of results on a page or for an API request
+     * call. </p>
      */
     inline GetEvidenceByEvidenceFolderRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

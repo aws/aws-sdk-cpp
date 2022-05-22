@@ -44,6 +44,7 @@
 #include <aws/cognito-identity/CognitoIdentityClient.h>
 #include <aws/testing/TestingEnvironment.h>
 #include <aws/core/utils/UUID.h>
+#include <aws/core/platform/Environment.h>
 
 using namespace Aws::Auth;
 using namespace Aws::Http;
@@ -63,6 +64,7 @@ static const char BASE_SIMPLE_FUNCTION[] = "TestSimple";
 static const char BASE_UNHANDLED_ERROR_FUNCTION[] = "TestUnhandledError";
 static const char SIMPLE_FUNCTION_CODE[] = RESOURCES_DIR "/succeed.zip";
 static const char UNHANDLED_ERROR_FUNCTION_CODE[] = RESOURCES_DIR "/unhandled.zip";
+static const char TEST_LAMBDA_CODE_PATH[] = "TEST_LAMBDA_CODE_PATH";
 static const char ALLOCATION_TAG[] = "FunctionTest";
 static const char BASE_IAM_ROLE_NAME[] = "AWSNativeSDKLambdaIntegrationTestRole";
 
@@ -96,7 +98,8 @@ protected:
     void SetUp()
     {
         m_UUID = Aws::Utils::UUID::RandomUUID();
-        CreateFunction(BuildResourceName(BASE_SIMPLE_FUNCTION), SIMPLE_FUNCTION_CODE);
+        CreateFunction(BuildResourceName(BASE_SIMPLE_FUNCTION),
+                       getLambdaCodePathFromEnvIfExists(SIMPLE_FUNCTION_CODE, "/succeed.zip"));
     }
 
     void TearDown()
@@ -128,7 +131,17 @@ protected:
         m_iamClient = Aws::MakeShared<Aws::IAM::IAMClient>(ALLOCATION_TAG, clientConfig);
         auto cognitoClient = Aws::MakeShared<CognitoIdentityClient>(ALLOCATION_TAG);
         m_accessManagementClient = Aws::MakeShared<Aws::AccessManagement::AccessManagementClient>(ALLOCATION_TAG, m_iamClient, cognitoClient);
-        m_accessManagementClient->GetRole(BASE_IAM_ROLE_NAME, *m_role);
+        static const size_t GET_ROLE_MAX_ATTEMPTS = 3;
+        Aws::AccessManagement::QueryResult getRoleResult = Aws::AccessManagement::QueryResult::FAILURE;
+        for(size_t i = 0; i < GET_ROLE_MAX_ATTEMPTS; ++i)
+        {
+            getRoleResult = m_accessManagementClient->GetRole(BASE_IAM_ROLE_NAME, *m_role);
+            if(Aws::AccessManagement::QueryResult::YES == getRoleResult)
+                break;
+            std::this_thread::sleep_for(std::chrono::seconds(1));
+        }
+        ASSERT_EQ(Aws::AccessManagement::QueryResult::YES, getRoleResult);
+        EXPECT_TRUE(!m_role->GetArn().empty());
     }
 
     static void TearDownTestCase()
@@ -150,41 +163,33 @@ protected:
         NOT_FOUND
     };
 
-    static void WaitForFunctionStatus(Aws::String functionName, ResourceStatusType status)
+    static void WaitForFunctionStatus(const Aws::String& functionName, const Aws::Lambda::Model::State targetStatus)
     {
-        bool done = false;
-        while(!done)
+        Aws::Lambda::Model::State currentState = Aws::Lambda::Model::State::NOT_SET;
+        GetFunctionRequest getFunctionRequest;
+        getFunctionRequest.SetFunctionName(functionName);
+
+        static const size_t MAX_WAIT_CYCLES = 3600;
+        for(size_t i = 0; i < MAX_WAIT_CYCLES; ++i)
         {
-            ListFunctionsRequest listFunctionsRequest;
-            ListFunctionsOutcome listFunctionsOutcome = m_client->ListFunctions(listFunctionsRequest);
-
-            EXPECT_TRUE(listFunctionsOutcome.IsSuccess());
-
-            auto functions = listFunctionsOutcome.GetResult().GetFunctions();
-
-            auto iter = std::find_if(functions.cbegin(),
-                                     functions.cend(),
-                                     [=](const FunctionConfiguration& function){ return function.GetFunctionName() == functionName; });
-
-            switch(status)
+            const Aws::Lambda::Model::GetFunctionOutcome& getFunctionOutcome = m_client->GetFunction(getFunctionRequest);
+            if(getFunctionOutcome.IsSuccess())
             {
-            case ResourceStatusType::READY:
-                if(iter != functions.cend())
-                {
+                const Aws::Lambda::Model::FunctionConfiguration& funcConfig = getFunctionOutcome.GetResult().GetConfiguration();
+                currentState = funcConfig.GetState();
+                if(targetStatus == currentState)
                     return;
-                }
-                break;
-
-            case ResourceStatusType::NOT_FOUND:
-                if(iter == functions.cend())
-                {
-                    return;
-                }
-                break;
             }
-
+            else
+            {
+                ASSERT_EQ(Aws::Http::HttpResponseCode::NOT_FOUND, getFunctionOutcome.GetError().GetResponseCode());
+            }
             std::this_thread::sleep_for(std::chrono::seconds(1));
         }
+
+        FAIL() << "Lambda function " << functionName << " didn't went into status " <<
+            Aws::Lambda::Model::StateMapper::GetNameForState(targetStatus) << ". Last known status " <<
+            Aws::Lambda::Model::StateMapper::GetNameForState(currentState);
     }
 
     static void DeleteFunction(Aws::String functionName)
@@ -215,7 +220,7 @@ protected:
                         break;
                     default:
                         //Something bad happened, and we can't commit to this being successful.
-                        FAIL();
+                        FAIL() << deleteFunctionOutcome.GetError().GetMessage();
                         break;
                 }
             }
@@ -244,14 +249,24 @@ protected:
         createFunctionRequest.SetRuntime(Aws::Lambda::Model::Runtime::nodejs12_x);
 
         CreateFunctionOutcome createFunctionOutcome = m_client->CreateFunction(createFunctionRequest);
-        ASSERT_TRUE(createFunctionOutcome.IsSuccess());
+        ASSERT_TRUE(createFunctionOutcome.IsSuccess()) << createFunctionOutcome.GetError().GetMessage();
         ASSERT_EQ(functionName,createFunctionOutcome.GetResult().GetFunctionName());
         ASSERT_EQ("test.handler",createFunctionOutcome.GetResult().GetHandler());
         ASSERT_EQ(roleARN,createFunctionOutcome.GetResult().GetRole());
         ASSERT_EQ(Aws::Lambda::Model::Runtime::nodejs12_x, createFunctionOutcome.GetResult().GetRuntime());
         functionArnMapping[functionName] = createFunctionOutcome.GetResult().GetFunctionArn();
 
-        WaitForFunctionStatus(functionName, ResourceStatusType::READY);
+        WaitForFunctionStatus(functionName, Aws::Lambda::Model::State::Active);
+    }
+
+    static Aws::String getLambdaCodePathFromEnvIfExists(const Aws::String& cmakePath, const Aws::String& filePath) {
+        Aws::String functionCodePath(Aws::Environment::GetEnv(TEST_LAMBDA_CODE_PATH));
+        if(functionCodePath.empty()) {
+            functionCodePath = cmakePath;
+        } else {
+            functionCodePath.append(filePath);
+        }
+        return functionCodePath;
     }
 };
 
@@ -266,18 +281,27 @@ std::map<Aws::String, Aws::String> FunctionTest::functionArnMapping;
 TEST_F(FunctionTest, TestListFunction)
 {
     ListFunctionsRequest listFunctionsRequest;
-    ListFunctionsOutcome listFunctionsOutcome = m_client->ListFunctions(listFunctionsRequest);
+    ListFunctionsOutcome listFunctionsOutcome;
 
-    EXPECT_TRUE(listFunctionsOutcome.IsSuccess());
     //We are just going to make sure the simple function above is in the list
     Aws::Vector <FunctionConfiguration> filteredFunctionConfigurations;
-    auto functions = listFunctionsOutcome.GetResult().GetFunctions();
-    Aws::String simpleFunctionName = BuildResourceName(BASE_SIMPLE_FUNCTION);
-    std::copy_if(functions.cbegin(), functions.cend(),
-        std::back_inserter(filteredFunctionConfigurations),
-        [=](const FunctionConfiguration& function) { return function.GetFunctionName().find(simpleFunctionName) == 0;});
+    // That's a paginated API, repeat the request as long as a next marker present.
+    do
+    {
+        if(!listFunctionsOutcome.GetResult().GetNextMarker().empty())
+            listFunctionsRequest.SetMarker(listFunctionsOutcome.GetResult().GetNextMarker());
+        listFunctionsOutcome = m_client->ListFunctions(listFunctionsRequest);
+        EXPECT_TRUE(listFunctionsOutcome.IsSuccess()) << listFunctionsOutcome.GetError().GetMessage();
+
+        auto functions = listFunctionsOutcome.GetResult().GetFunctions();
+        Aws::String simpleFunctionName = BuildResourceName(BASE_SIMPLE_FUNCTION);
+        std::copy_if(functions.cbegin(), functions.cend(),
+                     std::back_inserter(filteredFunctionConfigurations),
+                     [=](const FunctionConfiguration& function) { return function.GetFunctionName().find(simpleFunctionName) == 0;});
+    } while (listFunctionsOutcome.IsSuccess() && !listFunctionsOutcome.GetResult().GetNextMarker().empty());
 
     ASSERT_EQ(1uL, filteredFunctionConfigurations.size());
+    const Aws::String& simpleFunctionName = BuildResourceName(BASE_SIMPLE_FUNCTION);
     EXPECT_EQ(simpleFunctionName, filteredFunctionConfigurations[0].GetFunctionName());
 }
 
@@ -288,7 +312,7 @@ TEST_F(FunctionTest, TestGetFunction)
     GetFunctionRequest getFunctionRequest;
     getFunctionRequest.SetFunctionName(simpleFunctionName);
     GetFunctionOutcome getFunctionOutcome = m_client->GetFunction(getFunctionRequest);
-    EXPECT_TRUE(getFunctionOutcome.IsSuccess());
+    EXPECT_TRUE(getFunctionOutcome.IsSuccess()) << getFunctionOutcome.GetError().GetMessage();
 
     GetFunctionResult getFunctionResult = getFunctionOutcome.GetResult();
     EXPECT_EQ(Runtime::nodejs12_x, getFunctionResult.GetConfiguration().GetRuntime());
@@ -306,7 +330,7 @@ TEST_F(FunctionTest, TestGetFunctionConfiguration)
     GetFunctionConfigurationRequest getFunctionConfigurationRequest;
     getFunctionConfigurationRequest.SetFunctionName(simpleFunctionName);
     GetFunctionConfigurationOutcome getFunctionConfigurationOutcome = m_client->GetFunctionConfiguration(getFunctionConfigurationRequest);
-    EXPECT_TRUE(getFunctionConfigurationOutcome.IsSuccess());
+    EXPECT_TRUE(getFunctionConfigurationOutcome.IsSuccess()) << getFunctionConfigurationOutcome.GetError().GetMessage();
 
     GetFunctionConfigurationResult getFunctionConfigurationResult = getFunctionConfigurationOutcome.GetResult();
     EXPECT_EQ(Runtime::nodejs12_x, getFunctionConfigurationResult.GetRuntime());
@@ -324,7 +348,7 @@ TEST_F(FunctionTest, TestInvokeEvent)
     invokeRequest.SetInvocationType(InvocationType::Event);
 
     InvokeOutcome invokeOutcome = m_client->Invoke(invokeRequest);
-    EXPECT_TRUE(invokeOutcome.IsSuccess());
+    EXPECT_TRUE(invokeOutcome.IsSuccess()) << invokeOutcome.GetError().GetMessage();
     EXPECT_EQ(202,invokeOutcome.GetResult().GetStatusCode());
 }
 
@@ -337,7 +361,7 @@ TEST_F(FunctionTest, TestInvokeEventFromARN)
     invokeRequest.SetInvocationType(InvocationType::Event);
 
     InvokeOutcome invokeOutcome = m_client->Invoke(invokeRequest);
-    EXPECT_TRUE(invokeOutcome.IsSuccess());
+    EXPECT_TRUE(invokeOutcome.IsSuccess()) << invokeOutcome.GetError().GetMessage();
     EXPECT_EQ(202,invokeOutcome.GetResult().GetStatusCode());
 }
 
@@ -349,7 +373,7 @@ TEST_F(FunctionTest, TestInvokeDryRun)
     invokeRequest.SetInvocationType(InvocationType::DryRun);
 
     InvokeOutcome invokeOutcome = m_client->Invoke(invokeRequest);
-    EXPECT_TRUE(invokeOutcome.IsSuccess());
+    EXPECT_TRUE(invokeOutcome.IsSuccess()) << invokeOutcome.GetError().GetMessage();
     EXPECT_EQ(204,invokeOutcome.GetResult().GetStatusCode());
 }
 
@@ -368,7 +392,7 @@ TEST_F(FunctionTest, TestInvokeSync)
 
 
     InvokeOutcome invokeOutcome = m_client->Invoke(invokeRequest);
-    EXPECT_TRUE(invokeOutcome.IsSuccess());
+    EXPECT_TRUE(invokeOutcome.IsSuccess()) << invokeOutcome.GetError().GetMessage();
     auto &result = invokeOutcome.GetResult();
     EXPECT_EQ(200,result.GetStatusCode());
 
@@ -395,7 +419,8 @@ TEST_F(FunctionTest, TestInvokeSync)
 
 TEST_F(FunctionTest, TestInvokeSyncUnhandledFunctionError)
 {
-    CreateFunction(BuildResourceName(BASE_UNHANDLED_ERROR_FUNCTION), UNHANDLED_ERROR_FUNCTION_CODE);
+    CreateFunction(BuildResourceName(BASE_UNHANDLED_ERROR_FUNCTION),
+                   getLambdaCodePathFromEnvIfExists(UNHANDLED_ERROR_FUNCTION_CODE, "/unhandled.zip"));
 
     InvokeRequest invokeRequest;
     invokeRequest.SetFunctionName(BuildResourceName(BASE_UNHANDLED_ERROR_FUNCTION));
@@ -410,7 +435,7 @@ TEST_F(FunctionTest, TestInvokeSyncUnhandledFunctionError)
 
 
     InvokeOutcome invokeOutcome = m_client->Invoke(invokeRequest);
-    EXPECT_TRUE(invokeOutcome.IsSuccess());
+    EXPECT_TRUE(invokeOutcome.IsSuccess()) << invokeOutcome.GetError().GetMessage();
     const auto& result = invokeOutcome.GetResult();
     EXPECT_EQ(200,result.GetStatusCode());
 
@@ -455,7 +480,7 @@ TEST_F(FunctionTest, TestPermissions)
     removePermissionRequest.SetFunctionName(simpleFunctionName);
     removePermissionRequest.SetStatementId("12345");
     auto removePermissionOutcome = m_client->RemovePermission(removePermissionRequest);
-    EXPECT_TRUE(removePermissionOutcome.IsSuccess());
+    EXPECT_TRUE(removePermissionOutcome.IsSuccess()) << removePermissionOutcome.GetError().GetMessage();
 
 
     auto getRemovedPolicyOutcome = m_client->GetPolicy(getPolicyRequest);
@@ -542,7 +567,7 @@ TEST_F(FunctionTest, TestEventSources)
     GetEventSourceMappingRequest getRequest;
     getRequest.SetUUID(createdMappingUUID);
     GetEventSourceMappingOutcome getEventSourceMappingOutcome = m_client->GetEventSourceMapping(getRequest);
-    EXPECT_TRUE(getEventSourceMappingOutcome.IsSuccess());
+    EXPECT_TRUE(getEventSourceMappingOutcome.IsSuccess()) << getEventSourceMappingOutcome.GetError().GetMessage();
     GetEventSourceMappingResult getResult = getEventSourceMappingOutcome.GetResult();
     EXPECT_EQ(99, getResult.GetBatchSize());
     EXPECT_NE(std::string::npos, getResult.GetFunctionArn().find(simpleFunctionName));
@@ -552,14 +577,14 @@ TEST_F(FunctionTest, TestEventSources)
     updateRequest.SetUUID(createdMappingUUID);
     updateRequest.SetEnabled(false);
     UpdateEventSourceMappingOutcome updateOutcome = m_client->UpdateEventSourceMapping(updateRequest);
-    EXPECT_TRUE(updateOutcome.IsSuccess());
+    EXPECT_TRUE(updateOutcome.IsSuccess()) << updateOutcome.GetError().GetMessage();
     UpdateEventSourceMappingResult updateResult = updateOutcome.GetResult();
     EXPECT_NE("Disabled",updateResult.GetState());//This may be 'Updating' or 'Disabling'
 
     DeleteEventSourceMappingRequest deleteRequest;
     deleteRequest.SetUUID(createdMappingUUID);
     DeleteEventSourceMappingOutcome deleteOutcome = m_client->DeleteEventSourceMapping(deleteRequest);
-    EXPECT_TRUE(deleteOutcome.IsSuccess());
+    EXPECT_TRUE(deleteOutcome.IsSuccess()) << deleteOutcome.GetError().GetMessage();
 }
 
 } // anonymous namespace

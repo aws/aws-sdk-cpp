@@ -68,6 +68,16 @@ namespace Aws
             static ByteBuffer CalculateSHA256TreeHash(Aws::IOStream& stream);
 
             /**
+            * Calculates a SHA1 Hash digest (not hex encoded)
+            */
+            static ByteBuffer CalculateSHA1(const Aws::String& str);
+
+            /**
+            * Calculates a SHA1 Hash digest on a stream (the entire stream is read, not hex encoded.)
+            */
+            static ByteBuffer CalculateSHA1(Aws::IOStream& stream);
+
+            /**
             * Calculates a MD5 Hash value
             */
             static ByteBuffer CalculateMD5(const Aws::String& str);
@@ -76,6 +86,26 @@ namespace Aws
             * Calculates a MD5 Hash value
             */
             static ByteBuffer CalculateMD5(Aws::IOStream& stream);
+
+            /**
+             * Calculates a CRC32 Hash value
+             */
+            static ByteBuffer CalculateCRC32(const Aws::String& str);
+
+            /**
+             * Calculates a CRC32 Hash value
+             */
+            static ByteBuffer CalculateCRC32(Aws::IOStream& stream);
+
+            /**
+             * Calculates a CRC32C Hash value
+             */
+            static ByteBuffer CalculateCRC32C(const Aws::String& str);
+
+            /**
+             * Calculates a CRC32C Hash value
+             */
+            static ByteBuffer CalculateCRC32C(Aws::IOStream& stream);
 
             static int HashString(const char* strToHash);
 

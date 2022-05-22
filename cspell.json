@@ -1,19 +1,19 @@
 {
     "version": "0.1",
-    "language": "en-US",
+    "language": "en-US,en-GB",
     "words": [
         // C++ STL
         "smatch",
         // General
-        "SDK's", "sdks", "awssdk", "executables", "debuggable",
+        "SDK's", "sdks", "awssdk", "executables", "debuggable", "sdkutils",
         // AWS general
-        "Arns", "AMZN", "amzn",
+        "Arns", "AMZN", "amzn", "Paulo", "Ningxia", "ISOB", "isob",
         // AWS Signature
         "SIGV", "AUTHV",
         // CMake
         "cmake", "DCMAKE", "AUTORUN", "DEPS", "STREQUAL", "RPATH", "STREQUAL", "DTARGET", "TOOLCHAIN", "DANDROID", "DBUILD", "DGIT", "SYSROOT", "DSTATIC", "BINDIR", "LIBDIR", "INCLUDEDIR", "DHAS",
         // Compiler and linker
-        "Wpedantic", "Wextra", "Werror", "xldscope", "Wtype", "Wunused", "RTTI", "ffunction", "fdata", "fsanitize", "pathconf", "unistd", "umask",
+        "Wpedantic", "Wextra", "Werror", "xldscope", "Wtype", "Wunused", "RTTI", "ffunction", "fdata", "fsanitize", "pathconf", "unistd", "umask", "GNUCXX", "libasan",
         // Android NDK
         "JNIEXPORT", "jint", "JNICALL", "jobject", "jclass", "jmethod", "Ljava",
         // XML parser
@@ -25,7 +25,7 @@
         // MSVC
         "msvc", "MSFT", "LPDWORD", "DATAW", "mkgmtime", "vscprintf", "wtoi", "msxml", "runtimeobject", "winhttp", "Wininet",
         // Crypto
-        "decryptor", "encryptor", "NTSTATUS", "PBYTE", "PUCHAR", "noconf", "HAMC", "PBCRYPT", "BCRYPT",
+        "decryptor", "encryptor", "NTSTATUS", "PBYTE", "PUCHAR", "noconf", "HAMC", "PBCRYPT", "BCRYPT", "libcrypto", "AWSLC",
         // EC2
         "IMDS",
         // Cognito
@@ -33,7 +33,9 @@
         // License and Notice
         "SPDX", "grinninglizard", "Thomason", "Lepilleur", "Sidebotham", "Rublee", "Andrey", "Kamaev",
         // Dependencies
-        "openssl"
+        "openssl", "libcurl",
+        // Aws common runtime libraries
+        "mqtt"
     ],
     "ignoreWords": [
         // variables defined in ConcurrentStreamBuf

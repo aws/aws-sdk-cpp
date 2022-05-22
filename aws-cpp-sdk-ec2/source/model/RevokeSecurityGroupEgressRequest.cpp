@@ -15,6 +15,7 @@ RevokeSecurityGroupEgressRequest::RevokeSecurityGroupEgressRequest() :
     m_dryRunHasBeenSet(false),
     m_groupIdHasBeenSet(false),
     m_ipPermissionsHasBeenSet(false),
+    m_securityGroupRuleIdsHasBeenSet(false),
     m_cidrIpHasBeenSet(false),
     m_fromPort(0),
     m_fromPortHasBeenSet(false),
@@ -47,6 +48,17 @@ Aws::String RevokeSecurityGroupEgressRequest::SerializePayload() const
     {
       item.OutputToStream(ss, "IpPermissions.", ipPermissionsCount, "");
       ipPermissionsCount++;
+    }
+  }
+
+  if(m_securityGroupRuleIdsHasBeenSet)
+  {
+    unsigned securityGroupRuleIdsCount = 1;
+    for(auto& item : m_securityGroupRuleIds)
+    {
+      ss << "SecurityGroupRuleId." << securityGroupRuleIdsCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      securityGroupRuleIdsCount++;
     }
   }
 

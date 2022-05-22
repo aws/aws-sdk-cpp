@@ -20,7 +20,9 @@ UpdateApplicationRequest::UpdateApplicationRequest() :
     m_cWEMonitorEnabledHasBeenSet(false),
     m_opsItemSNSTopicArnHasBeenSet(false),
     m_removeSNSTopic(false),
-    m_removeSNSTopicHasBeenSet(false)
+    m_removeSNSTopicHasBeenSet(false),
+    m_autoConfigEnabled(false),
+    m_autoConfigEnabledHasBeenSet(false)
 {
 }
 
@@ -55,6 +57,12 @@ Aws::String UpdateApplicationRequest::SerializePayload() const
   if(m_removeSNSTopicHasBeenSet)
   {
    payload.WithBool("RemoveSNSTopic", m_removeSNSTopic);
+
+  }
+
+  if(m_autoConfigEnabledHasBeenSet)
+  {
+   payload.WithBool("AutoConfigEnabled", m_autoConfigEnabled);
 
   }
 

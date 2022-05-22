@@ -93,6 +93,42 @@ namespace Model
     inline ListAnswersResult& WithLensAlias(const char* value) { SetLensAlias(value); return *this;}
 
 
+    /**
+     * <p>The ARN for the lens.</p>
+     */
+    inline const Aws::String& GetLensArn() const{ return m_lensArn; }
+
+    /**
+     * <p>The ARN for the lens.</p>
+     */
+    inline void SetLensArn(const Aws::String& value) { m_lensArn = value; }
+
+    /**
+     * <p>The ARN for the lens.</p>
+     */
+    inline void SetLensArn(Aws::String&& value) { m_lensArn = std::move(value); }
+
+    /**
+     * <p>The ARN for the lens.</p>
+     */
+    inline void SetLensArn(const char* value) { m_lensArn.assign(value); }
+
+    /**
+     * <p>The ARN for the lens.</p>
+     */
+    inline ListAnswersResult& WithLensArn(const Aws::String& value) { SetLensArn(value); return *this;}
+
+    /**
+     * <p>The ARN for the lens.</p>
+     */
+    inline ListAnswersResult& WithLensArn(Aws::String&& value) { SetLensArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN for the lens.</p>
+     */
+    inline ListAnswersResult& WithLensArn(const char* value) { SetLensArn(value); return *this;}
+
+
     
     inline const Aws::Vector<AnswerSummary>& GetAnswerSummaries() const{ return m_answerSummaries; }
 
@@ -143,6 +179,8 @@ namespace Model
     int m_milestoneNumber;
 
     Aws::String m_lensAlias;
+
+    Aws::String m_lensArn;
 
     Aws::Vector<AnswerSummary> m_answerSummaries;
 

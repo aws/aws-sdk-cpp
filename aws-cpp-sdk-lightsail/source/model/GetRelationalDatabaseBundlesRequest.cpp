@@ -13,7 +13,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 GetRelationalDatabaseBundlesRequest::GetRelationalDatabaseBundlesRequest() : 
-    m_pageTokenHasBeenSet(false)
+    m_pageTokenHasBeenSet(false),
+    m_includeInactive(false),
+    m_includeInactiveHasBeenSet(false)
 {
 }
 
@@ -24,6 +26,12 @@ Aws::String GetRelationalDatabaseBundlesRequest::SerializePayload() const
   if(m_pageTokenHasBeenSet)
   {
    payload.WithString("pageToken", m_pageToken);
+
+  }
+
+  if(m_includeInactiveHasBeenSet)
+  {
+   payload.WithBool("includeInactive", m_includeInactive);
 
   }
 

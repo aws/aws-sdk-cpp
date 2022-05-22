@@ -44,8 +44,8 @@ namespace Model
      * <p>Status of the last attempted delivery.</p> <p> <b>Note</b> Providing an SNS
      * topic on a <a
      * href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeliveryChannel.html">DeliveryChannel</a>
-     * for AWS Config is optional. If the SNS delivery is turned off, the last status
-     * will be <b>Not_Applicable</b>.</p>
+     * for Config is optional. If the SNS delivery is turned off, the last status will
+     * be <b>Not_Applicable</b>.</p>
      */
     inline const DeliveryStatus& GetLastStatus() const{ return m_lastStatus; }
 
@@ -53,8 +53,8 @@ namespace Model
      * <p>Status of the last attempted delivery.</p> <p> <b>Note</b> Providing an SNS
      * topic on a <a
      * href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeliveryChannel.html">DeliveryChannel</a>
-     * for AWS Config is optional. If the SNS delivery is turned off, the last status
-     * will be <b>Not_Applicable</b>.</p>
+     * for Config is optional. If the SNS delivery is turned off, the last status will
+     * be <b>Not_Applicable</b>.</p>
      */
     inline bool LastStatusHasBeenSet() const { return m_lastStatusHasBeenSet; }
 
@@ -62,8 +62,8 @@ namespace Model
      * <p>Status of the last attempted delivery.</p> <p> <b>Note</b> Providing an SNS
      * topic on a <a
      * href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeliveryChannel.html">DeliveryChannel</a>
-     * for AWS Config is optional. If the SNS delivery is turned off, the last status
-     * will be <b>Not_Applicable</b>.</p>
+     * for Config is optional. If the SNS delivery is turned off, the last status will
+     * be <b>Not_Applicable</b>.</p>
      */
     inline void SetLastStatus(const DeliveryStatus& value) { m_lastStatusHasBeenSet = true; m_lastStatus = value; }
 
@@ -71,8 +71,8 @@ namespace Model
      * <p>Status of the last attempted delivery.</p> <p> <b>Note</b> Providing an SNS
      * topic on a <a
      * href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeliveryChannel.html">DeliveryChannel</a>
-     * for AWS Config is optional. If the SNS delivery is turned off, the last status
-     * will be <b>Not_Applicable</b>.</p>
+     * for Config is optional. If the SNS delivery is turned off, the last status will
+     * be <b>Not_Applicable</b>.</p>
      */
     inline void SetLastStatus(DeliveryStatus&& value) { m_lastStatusHasBeenSet = true; m_lastStatus = std::move(value); }
 
@@ -80,8 +80,8 @@ namespace Model
      * <p>Status of the last attempted delivery.</p> <p> <b>Note</b> Providing an SNS
      * topic on a <a
      * href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeliveryChannel.html">DeliveryChannel</a>
-     * for AWS Config is optional. If the SNS delivery is turned off, the last status
-     * will be <b>Not_Applicable</b>.</p>
+     * for Config is optional. If the SNS delivery is turned off, the last status will
+     * be <b>Not_Applicable</b>.</p>
      */
     inline ConfigStreamDeliveryInfo& WithLastStatus(const DeliveryStatus& value) { SetLastStatus(value); return *this;}
 
@@ -89,8 +89,8 @@ namespace Model
      * <p>Status of the last attempted delivery.</p> <p> <b>Note</b> Providing an SNS
      * topic on a <a
      * href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeliveryChannel.html">DeliveryChannel</a>
-     * for AWS Config is optional. If the SNS delivery is turned off, the last status
-     * will be <b>Not_Applicable</b>.</p>
+     * for Config is optional. If the SNS delivery is turned off, the last status will
+     * be <b>Not_Applicable</b>.</p>
      */
     inline ConfigStreamDeliveryInfo& WithLastStatus(DeliveryStatus&& value) { SetLastStatus(std::move(value)); return *this;}
 

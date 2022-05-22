@@ -20,18 +20,32 @@
 #include <aws/route53resolver/Route53ResolverClient.h>
 #include <aws/route53resolver/Route53ResolverEndpoint.h>
 #include <aws/route53resolver/Route53ResolverErrorMarshaller.h>
+#include <aws/route53resolver/model/AssociateFirewallRuleGroupRequest.h>
 #include <aws/route53resolver/model/AssociateResolverEndpointIpAddressRequest.h>
 #include <aws/route53resolver/model/AssociateResolverQueryLogConfigRequest.h>
 #include <aws/route53resolver/model/AssociateResolverRuleRequest.h>
+#include <aws/route53resolver/model/CreateFirewallDomainListRequest.h>
+#include <aws/route53resolver/model/CreateFirewallRuleRequest.h>
+#include <aws/route53resolver/model/CreateFirewallRuleGroupRequest.h>
 #include <aws/route53resolver/model/CreateResolverEndpointRequest.h>
 #include <aws/route53resolver/model/CreateResolverQueryLogConfigRequest.h>
 #include <aws/route53resolver/model/CreateResolverRuleRequest.h>
+#include <aws/route53resolver/model/DeleteFirewallDomainListRequest.h>
+#include <aws/route53resolver/model/DeleteFirewallRuleRequest.h>
+#include <aws/route53resolver/model/DeleteFirewallRuleGroupRequest.h>
 #include <aws/route53resolver/model/DeleteResolverEndpointRequest.h>
 #include <aws/route53resolver/model/DeleteResolverQueryLogConfigRequest.h>
 #include <aws/route53resolver/model/DeleteResolverRuleRequest.h>
+#include <aws/route53resolver/model/DisassociateFirewallRuleGroupRequest.h>
 #include <aws/route53resolver/model/DisassociateResolverEndpointIpAddressRequest.h>
 #include <aws/route53resolver/model/DisassociateResolverQueryLogConfigRequest.h>
 #include <aws/route53resolver/model/DisassociateResolverRuleRequest.h>
+#include <aws/route53resolver/model/GetFirewallConfigRequest.h>
+#include <aws/route53resolver/model/GetFirewallDomainListRequest.h>
+#include <aws/route53resolver/model/GetFirewallRuleGroupRequest.h>
+#include <aws/route53resolver/model/GetFirewallRuleGroupAssociationRequest.h>
+#include <aws/route53resolver/model/GetFirewallRuleGroupPolicyRequest.h>
+#include <aws/route53resolver/model/GetResolverConfigRequest.h>
 #include <aws/route53resolver/model/GetResolverDnssecConfigRequest.h>
 #include <aws/route53resolver/model/GetResolverEndpointRequest.h>
 #include <aws/route53resolver/model/GetResolverQueryLogConfigRequest.h>
@@ -40,6 +54,14 @@
 #include <aws/route53resolver/model/GetResolverRuleRequest.h>
 #include <aws/route53resolver/model/GetResolverRuleAssociationRequest.h>
 #include <aws/route53resolver/model/GetResolverRulePolicyRequest.h>
+#include <aws/route53resolver/model/ImportFirewallDomainsRequest.h>
+#include <aws/route53resolver/model/ListFirewallConfigsRequest.h>
+#include <aws/route53resolver/model/ListFirewallDomainListsRequest.h>
+#include <aws/route53resolver/model/ListFirewallDomainsRequest.h>
+#include <aws/route53resolver/model/ListFirewallRuleGroupAssociationsRequest.h>
+#include <aws/route53resolver/model/ListFirewallRuleGroupsRequest.h>
+#include <aws/route53resolver/model/ListFirewallRulesRequest.h>
+#include <aws/route53resolver/model/ListResolverConfigsRequest.h>
 #include <aws/route53resolver/model/ListResolverDnssecConfigsRequest.h>
 #include <aws/route53resolver/model/ListResolverEndpointIpAddressesRequest.h>
 #include <aws/route53resolver/model/ListResolverEndpointsRequest.h>
@@ -48,10 +70,16 @@
 #include <aws/route53resolver/model/ListResolverRuleAssociationsRequest.h>
 #include <aws/route53resolver/model/ListResolverRulesRequest.h>
 #include <aws/route53resolver/model/ListTagsForResourceRequest.h>
+#include <aws/route53resolver/model/PutFirewallRuleGroupPolicyRequest.h>
 #include <aws/route53resolver/model/PutResolverQueryLogConfigPolicyRequest.h>
 #include <aws/route53resolver/model/PutResolverRulePolicyRequest.h>
 #include <aws/route53resolver/model/TagResourceRequest.h>
 #include <aws/route53resolver/model/UntagResourceRequest.h>
+#include <aws/route53resolver/model/UpdateFirewallConfigRequest.h>
+#include <aws/route53resolver/model/UpdateFirewallDomainsRequest.h>
+#include <aws/route53resolver/model/UpdateFirewallRuleRequest.h>
+#include <aws/route53resolver/model/UpdateFirewallRuleGroupAssociationRequest.h>
+#include <aws/route53resolver/model/UpdateResolverConfigRequest.h>
 #include <aws/route53resolver/model/UpdateResolverDnssecConfigRequest.h>
 #include <aws/route53resolver/model/UpdateResolverEndpointRequest.h>
 #include <aws/route53resolver/model/UpdateResolverRuleRequest.h>
@@ -103,7 +131,7 @@ Route53ResolverClient::~Route53ResolverClient()
 {
 }
 
-void Route53ResolverClient::init(const ClientConfiguration& config)
+void Route53ResolverClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Route53Resolver");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -129,12 +157,33 @@ void Route53ResolverClient::OverrideEndpoint(const Aws::String& endpoint)
   }
 }
 
+AssociateFirewallRuleGroupOutcome Route53ResolverClient::AssociateFirewallRuleGroup(const AssociateFirewallRuleGroupRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return AssociateFirewallRuleGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+AssociateFirewallRuleGroupOutcomeCallable Route53ResolverClient::AssociateFirewallRuleGroupCallable(const AssociateFirewallRuleGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociateFirewallRuleGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateFirewallRuleGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53ResolverClient::AssociateFirewallRuleGroupAsync(const AssociateFirewallRuleGroupRequest& request, const AssociateFirewallRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AssociateFirewallRuleGroupAsyncHelper( request, handler, context ); } );
+}
+
+void Route53ResolverClient::AssociateFirewallRuleGroupAsyncHelper(const AssociateFirewallRuleGroupRequest& request, const AssociateFirewallRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AssociateFirewallRuleGroup(request), context);
+}
+
 AssociateResolverEndpointIpAddressOutcome Route53ResolverClient::AssociateResolverEndpointIpAddress(const AssociateResolverEndpointIpAddressRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return AssociateResolverEndpointIpAddressOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -159,9 +208,6 @@ void Route53ResolverClient::AssociateResolverEndpointIpAddressAsyncHelper(const 
 AssociateResolverQueryLogConfigOutcome Route53ResolverClient::AssociateResolverQueryLogConfig(const AssociateResolverQueryLogConfigRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return AssociateResolverQueryLogConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -186,9 +232,6 @@ void Route53ResolverClient::AssociateResolverQueryLogConfigAsyncHelper(const Ass
 AssociateResolverRuleOutcome Route53ResolverClient::AssociateResolverRule(const AssociateResolverRuleRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return AssociateResolverRuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -210,12 +253,81 @@ void Route53ResolverClient::AssociateResolverRuleAsyncHelper(const AssociateReso
   handler(this, request, AssociateResolverRule(request), context);
 }
 
+CreateFirewallDomainListOutcome Route53ResolverClient::CreateFirewallDomainList(const CreateFirewallDomainListRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateFirewallDomainListOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateFirewallDomainListOutcomeCallable Route53ResolverClient::CreateFirewallDomainListCallable(const CreateFirewallDomainListRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateFirewallDomainListOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateFirewallDomainList(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53ResolverClient::CreateFirewallDomainListAsync(const CreateFirewallDomainListRequest& request, const CreateFirewallDomainListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateFirewallDomainListAsyncHelper( request, handler, context ); } );
+}
+
+void Route53ResolverClient::CreateFirewallDomainListAsyncHelper(const CreateFirewallDomainListRequest& request, const CreateFirewallDomainListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateFirewallDomainList(request), context);
+}
+
+CreateFirewallRuleOutcome Route53ResolverClient::CreateFirewallRule(const CreateFirewallRuleRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateFirewallRuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateFirewallRuleOutcomeCallable Route53ResolverClient::CreateFirewallRuleCallable(const CreateFirewallRuleRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateFirewallRuleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateFirewallRule(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53ResolverClient::CreateFirewallRuleAsync(const CreateFirewallRuleRequest& request, const CreateFirewallRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateFirewallRuleAsyncHelper( request, handler, context ); } );
+}
+
+void Route53ResolverClient::CreateFirewallRuleAsyncHelper(const CreateFirewallRuleRequest& request, const CreateFirewallRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateFirewallRule(request), context);
+}
+
+CreateFirewallRuleGroupOutcome Route53ResolverClient::CreateFirewallRuleGroup(const CreateFirewallRuleGroupRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateFirewallRuleGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateFirewallRuleGroupOutcomeCallable Route53ResolverClient::CreateFirewallRuleGroupCallable(const CreateFirewallRuleGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateFirewallRuleGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateFirewallRuleGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53ResolverClient::CreateFirewallRuleGroupAsync(const CreateFirewallRuleGroupRequest& request, const CreateFirewallRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateFirewallRuleGroupAsyncHelper( request, handler, context ); } );
+}
+
+void Route53ResolverClient::CreateFirewallRuleGroupAsyncHelper(const CreateFirewallRuleGroupRequest& request, const CreateFirewallRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateFirewallRuleGroup(request), context);
+}
+
 CreateResolverEndpointOutcome Route53ResolverClient::CreateResolverEndpoint(const CreateResolverEndpointRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateResolverEndpointOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -240,9 +352,6 @@ void Route53ResolverClient::CreateResolverEndpointAsyncHelper(const CreateResolv
 CreateResolverQueryLogConfigOutcome Route53ResolverClient::CreateResolverQueryLogConfig(const CreateResolverQueryLogConfigRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateResolverQueryLogConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -267,9 +376,6 @@ void Route53ResolverClient::CreateResolverQueryLogConfigAsyncHelper(const Create
 CreateResolverRuleOutcome Route53ResolverClient::CreateResolverRule(const CreateResolverRuleRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateResolverRuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -291,12 +397,81 @@ void Route53ResolverClient::CreateResolverRuleAsyncHelper(const CreateResolverRu
   handler(this, request, CreateResolverRule(request), context);
 }
 
+DeleteFirewallDomainListOutcome Route53ResolverClient::DeleteFirewallDomainList(const DeleteFirewallDomainListRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteFirewallDomainListOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteFirewallDomainListOutcomeCallable Route53ResolverClient::DeleteFirewallDomainListCallable(const DeleteFirewallDomainListRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteFirewallDomainListOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteFirewallDomainList(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53ResolverClient::DeleteFirewallDomainListAsync(const DeleteFirewallDomainListRequest& request, const DeleteFirewallDomainListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteFirewallDomainListAsyncHelper( request, handler, context ); } );
+}
+
+void Route53ResolverClient::DeleteFirewallDomainListAsyncHelper(const DeleteFirewallDomainListRequest& request, const DeleteFirewallDomainListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteFirewallDomainList(request), context);
+}
+
+DeleteFirewallRuleOutcome Route53ResolverClient::DeleteFirewallRule(const DeleteFirewallRuleRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteFirewallRuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteFirewallRuleOutcomeCallable Route53ResolverClient::DeleteFirewallRuleCallable(const DeleteFirewallRuleRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteFirewallRuleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteFirewallRule(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53ResolverClient::DeleteFirewallRuleAsync(const DeleteFirewallRuleRequest& request, const DeleteFirewallRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteFirewallRuleAsyncHelper( request, handler, context ); } );
+}
+
+void Route53ResolverClient::DeleteFirewallRuleAsyncHelper(const DeleteFirewallRuleRequest& request, const DeleteFirewallRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteFirewallRule(request), context);
+}
+
+DeleteFirewallRuleGroupOutcome Route53ResolverClient::DeleteFirewallRuleGroup(const DeleteFirewallRuleGroupRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteFirewallRuleGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteFirewallRuleGroupOutcomeCallable Route53ResolverClient::DeleteFirewallRuleGroupCallable(const DeleteFirewallRuleGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteFirewallRuleGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteFirewallRuleGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53ResolverClient::DeleteFirewallRuleGroupAsync(const DeleteFirewallRuleGroupRequest& request, const DeleteFirewallRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteFirewallRuleGroupAsyncHelper( request, handler, context ); } );
+}
+
+void Route53ResolverClient::DeleteFirewallRuleGroupAsyncHelper(const DeleteFirewallRuleGroupRequest& request, const DeleteFirewallRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteFirewallRuleGroup(request), context);
+}
+
 DeleteResolverEndpointOutcome Route53ResolverClient::DeleteResolverEndpoint(const DeleteResolverEndpointRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteResolverEndpointOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -321,9 +496,6 @@ void Route53ResolverClient::DeleteResolverEndpointAsyncHelper(const DeleteResolv
 DeleteResolverQueryLogConfigOutcome Route53ResolverClient::DeleteResolverQueryLogConfig(const DeleteResolverQueryLogConfigRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteResolverQueryLogConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -348,9 +520,6 @@ void Route53ResolverClient::DeleteResolverQueryLogConfigAsyncHelper(const Delete
 DeleteResolverRuleOutcome Route53ResolverClient::DeleteResolverRule(const DeleteResolverRuleRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteResolverRuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -372,12 +541,33 @@ void Route53ResolverClient::DeleteResolverRuleAsyncHelper(const DeleteResolverRu
   handler(this, request, DeleteResolverRule(request), context);
 }
 
+DisassociateFirewallRuleGroupOutcome Route53ResolverClient::DisassociateFirewallRuleGroup(const DisassociateFirewallRuleGroupRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DisassociateFirewallRuleGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DisassociateFirewallRuleGroupOutcomeCallable Route53ResolverClient::DisassociateFirewallRuleGroupCallable(const DisassociateFirewallRuleGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateFirewallRuleGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateFirewallRuleGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53ResolverClient::DisassociateFirewallRuleGroupAsync(const DisassociateFirewallRuleGroupRequest& request, const DisassociateFirewallRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisassociateFirewallRuleGroupAsyncHelper( request, handler, context ); } );
+}
+
+void Route53ResolverClient::DisassociateFirewallRuleGroupAsyncHelper(const DisassociateFirewallRuleGroupRequest& request, const DisassociateFirewallRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisassociateFirewallRuleGroup(request), context);
+}
+
 DisassociateResolverEndpointIpAddressOutcome Route53ResolverClient::DisassociateResolverEndpointIpAddress(const DisassociateResolverEndpointIpAddressRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DisassociateResolverEndpointIpAddressOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -402,9 +592,6 @@ void Route53ResolverClient::DisassociateResolverEndpointIpAddressAsyncHelper(con
 DisassociateResolverQueryLogConfigOutcome Route53ResolverClient::DisassociateResolverQueryLogConfig(const DisassociateResolverQueryLogConfigRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DisassociateResolverQueryLogConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -429,9 +616,6 @@ void Route53ResolverClient::DisassociateResolverQueryLogConfigAsyncHelper(const 
 DisassociateResolverRuleOutcome Route53ResolverClient::DisassociateResolverRule(const DisassociateResolverRuleRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DisassociateResolverRuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -453,12 +637,153 @@ void Route53ResolverClient::DisassociateResolverRuleAsyncHelper(const Disassocia
   handler(this, request, DisassociateResolverRule(request), context);
 }
 
+GetFirewallConfigOutcome Route53ResolverClient::GetFirewallConfig(const GetFirewallConfigRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetFirewallConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetFirewallConfigOutcomeCallable Route53ResolverClient::GetFirewallConfigCallable(const GetFirewallConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetFirewallConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetFirewallConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53ResolverClient::GetFirewallConfigAsync(const GetFirewallConfigRequest& request, const GetFirewallConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetFirewallConfigAsyncHelper( request, handler, context ); } );
+}
+
+void Route53ResolverClient::GetFirewallConfigAsyncHelper(const GetFirewallConfigRequest& request, const GetFirewallConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetFirewallConfig(request), context);
+}
+
+GetFirewallDomainListOutcome Route53ResolverClient::GetFirewallDomainList(const GetFirewallDomainListRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetFirewallDomainListOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetFirewallDomainListOutcomeCallable Route53ResolverClient::GetFirewallDomainListCallable(const GetFirewallDomainListRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetFirewallDomainListOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetFirewallDomainList(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53ResolverClient::GetFirewallDomainListAsync(const GetFirewallDomainListRequest& request, const GetFirewallDomainListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetFirewallDomainListAsyncHelper( request, handler, context ); } );
+}
+
+void Route53ResolverClient::GetFirewallDomainListAsyncHelper(const GetFirewallDomainListRequest& request, const GetFirewallDomainListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetFirewallDomainList(request), context);
+}
+
+GetFirewallRuleGroupOutcome Route53ResolverClient::GetFirewallRuleGroup(const GetFirewallRuleGroupRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetFirewallRuleGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetFirewallRuleGroupOutcomeCallable Route53ResolverClient::GetFirewallRuleGroupCallable(const GetFirewallRuleGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetFirewallRuleGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetFirewallRuleGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53ResolverClient::GetFirewallRuleGroupAsync(const GetFirewallRuleGroupRequest& request, const GetFirewallRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetFirewallRuleGroupAsyncHelper( request, handler, context ); } );
+}
+
+void Route53ResolverClient::GetFirewallRuleGroupAsyncHelper(const GetFirewallRuleGroupRequest& request, const GetFirewallRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetFirewallRuleGroup(request), context);
+}
+
+GetFirewallRuleGroupAssociationOutcome Route53ResolverClient::GetFirewallRuleGroupAssociation(const GetFirewallRuleGroupAssociationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetFirewallRuleGroupAssociationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetFirewallRuleGroupAssociationOutcomeCallable Route53ResolverClient::GetFirewallRuleGroupAssociationCallable(const GetFirewallRuleGroupAssociationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetFirewallRuleGroupAssociationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetFirewallRuleGroupAssociation(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53ResolverClient::GetFirewallRuleGroupAssociationAsync(const GetFirewallRuleGroupAssociationRequest& request, const GetFirewallRuleGroupAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetFirewallRuleGroupAssociationAsyncHelper( request, handler, context ); } );
+}
+
+void Route53ResolverClient::GetFirewallRuleGroupAssociationAsyncHelper(const GetFirewallRuleGroupAssociationRequest& request, const GetFirewallRuleGroupAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetFirewallRuleGroupAssociation(request), context);
+}
+
+GetFirewallRuleGroupPolicyOutcome Route53ResolverClient::GetFirewallRuleGroupPolicy(const GetFirewallRuleGroupPolicyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetFirewallRuleGroupPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetFirewallRuleGroupPolicyOutcomeCallable Route53ResolverClient::GetFirewallRuleGroupPolicyCallable(const GetFirewallRuleGroupPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetFirewallRuleGroupPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetFirewallRuleGroupPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53ResolverClient::GetFirewallRuleGroupPolicyAsync(const GetFirewallRuleGroupPolicyRequest& request, const GetFirewallRuleGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetFirewallRuleGroupPolicyAsyncHelper( request, handler, context ); } );
+}
+
+void Route53ResolverClient::GetFirewallRuleGroupPolicyAsyncHelper(const GetFirewallRuleGroupPolicyRequest& request, const GetFirewallRuleGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetFirewallRuleGroupPolicy(request), context);
+}
+
+GetResolverConfigOutcome Route53ResolverClient::GetResolverConfig(const GetResolverConfigRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetResolverConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetResolverConfigOutcomeCallable Route53ResolverClient::GetResolverConfigCallable(const GetResolverConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetResolverConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetResolverConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53ResolverClient::GetResolverConfigAsync(const GetResolverConfigRequest& request, const GetResolverConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetResolverConfigAsyncHelper( request, handler, context ); } );
+}
+
+void Route53ResolverClient::GetResolverConfigAsyncHelper(const GetResolverConfigRequest& request, const GetResolverConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetResolverConfig(request), context);
+}
+
 GetResolverDnssecConfigOutcome Route53ResolverClient::GetResolverDnssecConfig(const GetResolverDnssecConfigRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetResolverDnssecConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -483,9 +808,6 @@ void Route53ResolverClient::GetResolverDnssecConfigAsyncHelper(const GetResolver
 GetResolverEndpointOutcome Route53ResolverClient::GetResolverEndpoint(const GetResolverEndpointRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetResolverEndpointOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -510,9 +832,6 @@ void Route53ResolverClient::GetResolverEndpointAsyncHelper(const GetResolverEndp
 GetResolverQueryLogConfigOutcome Route53ResolverClient::GetResolverQueryLogConfig(const GetResolverQueryLogConfigRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetResolverQueryLogConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -537,9 +856,6 @@ void Route53ResolverClient::GetResolverQueryLogConfigAsyncHelper(const GetResolv
 GetResolverQueryLogConfigAssociationOutcome Route53ResolverClient::GetResolverQueryLogConfigAssociation(const GetResolverQueryLogConfigAssociationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetResolverQueryLogConfigAssociationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -564,9 +880,6 @@ void Route53ResolverClient::GetResolverQueryLogConfigAssociationAsyncHelper(cons
 GetResolverQueryLogConfigPolicyOutcome Route53ResolverClient::GetResolverQueryLogConfigPolicy(const GetResolverQueryLogConfigPolicyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetResolverQueryLogConfigPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -591,9 +904,6 @@ void Route53ResolverClient::GetResolverQueryLogConfigPolicyAsyncHelper(const Get
 GetResolverRuleOutcome Route53ResolverClient::GetResolverRule(const GetResolverRuleRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetResolverRuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -618,9 +928,6 @@ void Route53ResolverClient::GetResolverRuleAsyncHelper(const GetResolverRuleRequ
 GetResolverRuleAssociationOutcome Route53ResolverClient::GetResolverRuleAssociation(const GetResolverRuleAssociationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetResolverRuleAssociationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -645,9 +952,6 @@ void Route53ResolverClient::GetResolverRuleAssociationAsyncHelper(const GetResol
 GetResolverRulePolicyOutcome Route53ResolverClient::GetResolverRulePolicy(const GetResolverRulePolicyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetResolverRulePolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -669,12 +973,201 @@ void Route53ResolverClient::GetResolverRulePolicyAsyncHelper(const GetResolverRu
   handler(this, request, GetResolverRulePolicy(request), context);
 }
 
+ImportFirewallDomainsOutcome Route53ResolverClient::ImportFirewallDomains(const ImportFirewallDomainsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ImportFirewallDomainsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ImportFirewallDomainsOutcomeCallable Route53ResolverClient::ImportFirewallDomainsCallable(const ImportFirewallDomainsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ImportFirewallDomainsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ImportFirewallDomains(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53ResolverClient::ImportFirewallDomainsAsync(const ImportFirewallDomainsRequest& request, const ImportFirewallDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ImportFirewallDomainsAsyncHelper( request, handler, context ); } );
+}
+
+void Route53ResolverClient::ImportFirewallDomainsAsyncHelper(const ImportFirewallDomainsRequest& request, const ImportFirewallDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ImportFirewallDomains(request), context);
+}
+
+ListFirewallConfigsOutcome Route53ResolverClient::ListFirewallConfigs(const ListFirewallConfigsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListFirewallConfigsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListFirewallConfigsOutcomeCallable Route53ResolverClient::ListFirewallConfigsCallable(const ListFirewallConfigsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListFirewallConfigsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListFirewallConfigs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53ResolverClient::ListFirewallConfigsAsync(const ListFirewallConfigsRequest& request, const ListFirewallConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListFirewallConfigsAsyncHelper( request, handler, context ); } );
+}
+
+void Route53ResolverClient::ListFirewallConfigsAsyncHelper(const ListFirewallConfigsRequest& request, const ListFirewallConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListFirewallConfigs(request), context);
+}
+
+ListFirewallDomainListsOutcome Route53ResolverClient::ListFirewallDomainLists(const ListFirewallDomainListsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListFirewallDomainListsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListFirewallDomainListsOutcomeCallable Route53ResolverClient::ListFirewallDomainListsCallable(const ListFirewallDomainListsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListFirewallDomainListsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListFirewallDomainLists(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53ResolverClient::ListFirewallDomainListsAsync(const ListFirewallDomainListsRequest& request, const ListFirewallDomainListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListFirewallDomainListsAsyncHelper( request, handler, context ); } );
+}
+
+void Route53ResolverClient::ListFirewallDomainListsAsyncHelper(const ListFirewallDomainListsRequest& request, const ListFirewallDomainListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListFirewallDomainLists(request), context);
+}
+
+ListFirewallDomainsOutcome Route53ResolverClient::ListFirewallDomains(const ListFirewallDomainsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListFirewallDomainsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListFirewallDomainsOutcomeCallable Route53ResolverClient::ListFirewallDomainsCallable(const ListFirewallDomainsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListFirewallDomainsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListFirewallDomains(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53ResolverClient::ListFirewallDomainsAsync(const ListFirewallDomainsRequest& request, const ListFirewallDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListFirewallDomainsAsyncHelper( request, handler, context ); } );
+}
+
+void Route53ResolverClient::ListFirewallDomainsAsyncHelper(const ListFirewallDomainsRequest& request, const ListFirewallDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListFirewallDomains(request), context);
+}
+
+ListFirewallRuleGroupAssociationsOutcome Route53ResolverClient::ListFirewallRuleGroupAssociations(const ListFirewallRuleGroupAssociationsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListFirewallRuleGroupAssociationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListFirewallRuleGroupAssociationsOutcomeCallable Route53ResolverClient::ListFirewallRuleGroupAssociationsCallable(const ListFirewallRuleGroupAssociationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListFirewallRuleGroupAssociationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListFirewallRuleGroupAssociations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53ResolverClient::ListFirewallRuleGroupAssociationsAsync(const ListFirewallRuleGroupAssociationsRequest& request, const ListFirewallRuleGroupAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListFirewallRuleGroupAssociationsAsyncHelper( request, handler, context ); } );
+}
+
+void Route53ResolverClient::ListFirewallRuleGroupAssociationsAsyncHelper(const ListFirewallRuleGroupAssociationsRequest& request, const ListFirewallRuleGroupAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListFirewallRuleGroupAssociations(request), context);
+}
+
+ListFirewallRuleGroupsOutcome Route53ResolverClient::ListFirewallRuleGroups(const ListFirewallRuleGroupsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListFirewallRuleGroupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListFirewallRuleGroupsOutcomeCallable Route53ResolverClient::ListFirewallRuleGroupsCallable(const ListFirewallRuleGroupsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListFirewallRuleGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListFirewallRuleGroups(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53ResolverClient::ListFirewallRuleGroupsAsync(const ListFirewallRuleGroupsRequest& request, const ListFirewallRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListFirewallRuleGroupsAsyncHelper( request, handler, context ); } );
+}
+
+void Route53ResolverClient::ListFirewallRuleGroupsAsyncHelper(const ListFirewallRuleGroupsRequest& request, const ListFirewallRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListFirewallRuleGroups(request), context);
+}
+
+ListFirewallRulesOutcome Route53ResolverClient::ListFirewallRules(const ListFirewallRulesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListFirewallRulesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListFirewallRulesOutcomeCallable Route53ResolverClient::ListFirewallRulesCallable(const ListFirewallRulesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListFirewallRulesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListFirewallRules(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53ResolverClient::ListFirewallRulesAsync(const ListFirewallRulesRequest& request, const ListFirewallRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListFirewallRulesAsyncHelper( request, handler, context ); } );
+}
+
+void Route53ResolverClient::ListFirewallRulesAsyncHelper(const ListFirewallRulesRequest& request, const ListFirewallRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListFirewallRules(request), context);
+}
+
+ListResolverConfigsOutcome Route53ResolverClient::ListResolverConfigs(const ListResolverConfigsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListResolverConfigsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListResolverConfigsOutcomeCallable Route53ResolverClient::ListResolverConfigsCallable(const ListResolverConfigsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListResolverConfigsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListResolverConfigs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53ResolverClient::ListResolverConfigsAsync(const ListResolverConfigsRequest& request, const ListResolverConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListResolverConfigsAsyncHelper( request, handler, context ); } );
+}
+
+void Route53ResolverClient::ListResolverConfigsAsyncHelper(const ListResolverConfigsRequest& request, const ListResolverConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListResolverConfigs(request), context);
+}
+
 ListResolverDnssecConfigsOutcome Route53ResolverClient::ListResolverDnssecConfigs(const ListResolverDnssecConfigsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListResolverDnssecConfigsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -699,9 +1192,6 @@ void Route53ResolverClient::ListResolverDnssecConfigsAsyncHelper(const ListResol
 ListResolverEndpointIpAddressesOutcome Route53ResolverClient::ListResolverEndpointIpAddresses(const ListResolverEndpointIpAddressesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListResolverEndpointIpAddressesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -726,9 +1216,6 @@ void Route53ResolverClient::ListResolverEndpointIpAddressesAsyncHelper(const Lis
 ListResolverEndpointsOutcome Route53ResolverClient::ListResolverEndpoints(const ListResolverEndpointsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListResolverEndpointsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -753,9 +1240,6 @@ void Route53ResolverClient::ListResolverEndpointsAsyncHelper(const ListResolverE
 ListResolverQueryLogConfigAssociationsOutcome Route53ResolverClient::ListResolverQueryLogConfigAssociations(const ListResolverQueryLogConfigAssociationsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListResolverQueryLogConfigAssociationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -780,9 +1264,6 @@ void Route53ResolverClient::ListResolverQueryLogConfigAssociationsAsyncHelper(co
 ListResolverQueryLogConfigsOutcome Route53ResolverClient::ListResolverQueryLogConfigs(const ListResolverQueryLogConfigsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListResolverQueryLogConfigsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -807,9 +1288,6 @@ void Route53ResolverClient::ListResolverQueryLogConfigsAsyncHelper(const ListRes
 ListResolverRuleAssociationsOutcome Route53ResolverClient::ListResolverRuleAssociations(const ListResolverRuleAssociationsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListResolverRuleAssociationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -834,9 +1312,6 @@ void Route53ResolverClient::ListResolverRuleAssociationsAsyncHelper(const ListRe
 ListResolverRulesOutcome Route53ResolverClient::ListResolverRules(const ListResolverRulesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListResolverRulesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -861,9 +1336,6 @@ void Route53ResolverClient::ListResolverRulesAsyncHelper(const ListResolverRules
 ListTagsForResourceOutcome Route53ResolverClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -885,12 +1357,33 @@ void Route53ResolverClient::ListTagsForResourceAsyncHelper(const ListTagsForReso
   handler(this, request, ListTagsForResource(request), context);
 }
 
+PutFirewallRuleGroupPolicyOutcome Route53ResolverClient::PutFirewallRuleGroupPolicy(const PutFirewallRuleGroupPolicyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return PutFirewallRuleGroupPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutFirewallRuleGroupPolicyOutcomeCallable Route53ResolverClient::PutFirewallRuleGroupPolicyCallable(const PutFirewallRuleGroupPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutFirewallRuleGroupPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutFirewallRuleGroupPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53ResolverClient::PutFirewallRuleGroupPolicyAsync(const PutFirewallRuleGroupPolicyRequest& request, const PutFirewallRuleGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutFirewallRuleGroupPolicyAsyncHelper( request, handler, context ); } );
+}
+
+void Route53ResolverClient::PutFirewallRuleGroupPolicyAsyncHelper(const PutFirewallRuleGroupPolicyRequest& request, const PutFirewallRuleGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutFirewallRuleGroupPolicy(request), context);
+}
+
 PutResolverQueryLogConfigPolicyOutcome Route53ResolverClient::PutResolverQueryLogConfigPolicy(const PutResolverQueryLogConfigPolicyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return PutResolverQueryLogConfigPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -915,9 +1408,6 @@ void Route53ResolverClient::PutResolverQueryLogConfigPolicyAsyncHelper(const Put
 PutResolverRulePolicyOutcome Route53ResolverClient::PutResolverRulePolicy(const PutResolverRulePolicyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return PutResolverRulePolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -942,9 +1432,6 @@ void Route53ResolverClient::PutResolverRulePolicyAsyncHelper(const PutResolverRu
 TagResourceOutcome Route53ResolverClient::TagResource(const TagResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -969,9 +1456,6 @@ void Route53ResolverClient::TagResourceAsyncHelper(const TagResourceRequest& req
 UntagResourceOutcome Route53ResolverClient::UntagResource(const UntagResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -993,12 +1477,129 @@ void Route53ResolverClient::UntagResourceAsyncHelper(const UntagResourceRequest&
   handler(this, request, UntagResource(request), context);
 }
 
+UpdateFirewallConfigOutcome Route53ResolverClient::UpdateFirewallConfig(const UpdateFirewallConfigRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateFirewallConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateFirewallConfigOutcomeCallable Route53ResolverClient::UpdateFirewallConfigCallable(const UpdateFirewallConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateFirewallConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateFirewallConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53ResolverClient::UpdateFirewallConfigAsync(const UpdateFirewallConfigRequest& request, const UpdateFirewallConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateFirewallConfigAsyncHelper( request, handler, context ); } );
+}
+
+void Route53ResolverClient::UpdateFirewallConfigAsyncHelper(const UpdateFirewallConfigRequest& request, const UpdateFirewallConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateFirewallConfig(request), context);
+}
+
+UpdateFirewallDomainsOutcome Route53ResolverClient::UpdateFirewallDomains(const UpdateFirewallDomainsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateFirewallDomainsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateFirewallDomainsOutcomeCallable Route53ResolverClient::UpdateFirewallDomainsCallable(const UpdateFirewallDomainsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateFirewallDomainsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateFirewallDomains(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53ResolverClient::UpdateFirewallDomainsAsync(const UpdateFirewallDomainsRequest& request, const UpdateFirewallDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateFirewallDomainsAsyncHelper( request, handler, context ); } );
+}
+
+void Route53ResolverClient::UpdateFirewallDomainsAsyncHelper(const UpdateFirewallDomainsRequest& request, const UpdateFirewallDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateFirewallDomains(request), context);
+}
+
+UpdateFirewallRuleOutcome Route53ResolverClient::UpdateFirewallRule(const UpdateFirewallRuleRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateFirewallRuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateFirewallRuleOutcomeCallable Route53ResolverClient::UpdateFirewallRuleCallable(const UpdateFirewallRuleRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateFirewallRuleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateFirewallRule(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53ResolverClient::UpdateFirewallRuleAsync(const UpdateFirewallRuleRequest& request, const UpdateFirewallRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateFirewallRuleAsyncHelper( request, handler, context ); } );
+}
+
+void Route53ResolverClient::UpdateFirewallRuleAsyncHelper(const UpdateFirewallRuleRequest& request, const UpdateFirewallRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateFirewallRule(request), context);
+}
+
+UpdateFirewallRuleGroupAssociationOutcome Route53ResolverClient::UpdateFirewallRuleGroupAssociation(const UpdateFirewallRuleGroupAssociationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateFirewallRuleGroupAssociationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateFirewallRuleGroupAssociationOutcomeCallable Route53ResolverClient::UpdateFirewallRuleGroupAssociationCallable(const UpdateFirewallRuleGroupAssociationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateFirewallRuleGroupAssociationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateFirewallRuleGroupAssociation(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53ResolverClient::UpdateFirewallRuleGroupAssociationAsync(const UpdateFirewallRuleGroupAssociationRequest& request, const UpdateFirewallRuleGroupAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateFirewallRuleGroupAssociationAsyncHelper( request, handler, context ); } );
+}
+
+void Route53ResolverClient::UpdateFirewallRuleGroupAssociationAsyncHelper(const UpdateFirewallRuleGroupAssociationRequest& request, const UpdateFirewallRuleGroupAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateFirewallRuleGroupAssociation(request), context);
+}
+
+UpdateResolverConfigOutcome Route53ResolverClient::UpdateResolverConfig(const UpdateResolverConfigRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateResolverConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateResolverConfigOutcomeCallable Route53ResolverClient::UpdateResolverConfigCallable(const UpdateResolverConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateResolverConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateResolverConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53ResolverClient::UpdateResolverConfigAsync(const UpdateResolverConfigRequest& request, const UpdateResolverConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateResolverConfigAsyncHelper( request, handler, context ); } );
+}
+
+void Route53ResolverClient::UpdateResolverConfigAsyncHelper(const UpdateResolverConfigRequest& request, const UpdateResolverConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateResolverConfig(request), context);
+}
+
 UpdateResolverDnssecConfigOutcome Route53ResolverClient::UpdateResolverDnssecConfig(const UpdateResolverDnssecConfigRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return UpdateResolverDnssecConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1023,9 +1624,6 @@ void Route53ResolverClient::UpdateResolverDnssecConfigAsyncHelper(const UpdateRe
 UpdateResolverEndpointOutcome Route53ResolverClient::UpdateResolverEndpoint(const UpdateResolverEndpointRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return UpdateResolverEndpointOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1050,9 +1648,6 @@ void Route53ResolverClient::UpdateResolverEndpointAsyncHelper(const UpdateResolv
 UpdateResolverRuleOutcome Route53ResolverClient::UpdateResolverRule(const UpdateResolverRuleRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return UpdateResolverRuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

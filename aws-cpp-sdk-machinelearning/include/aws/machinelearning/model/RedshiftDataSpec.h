@@ -217,40 +217,40 @@ namespace Model
      * be applied to a <code>DataSource</code>. If the <code>DataRearrangement</code>
      * parameter is not provided, all of the input data is used to create the
      * <code>Datasource</code>.</p> <p>There are multiple parameters that control what
-     * data is used to create a datasource:</p> <ul>
-     * <li><p><b><code>percentBegin</code></b></p> <p>Use <code>percentBegin</code> to
-     * indicate the beginning of the range of the data used to create the Datasource.
-     * If you do not include <code>percentBegin</code> and <code>percentEnd</code>,
-     * Amazon ML includes all of the data when creating the datasource.</p></li>
-     * <li><p><b><code>percentEnd</code></b></p> <p>Use <code>percentEnd</code> to
-     * indicate the end of the range of the data used to create the Datasource. If you
-     * do not include <code>percentBegin</code> and <code>percentEnd</code>, Amazon ML
-     * includes all of the data when creating the datasource.</p></li>
-     * <li><p><b><code>complement</code></b></p> <p>The <code>complement</code>
-     * parameter instructs Amazon ML to use the data that is not included in the range
-     * of <code>percentBegin</code> to <code>percentEnd</code> to create a datasource.
-     * The <code>complement</code> parameter is useful if you need to create
-     * complementary datasources for training and evaluation. To create a complementary
-     * datasource, use the same values for <code>percentBegin</code> and
-     * <code>percentEnd</code>, along with the <code>complement</code> parameter.</p>
-     * <p>For example, the following two datasources do not share any data, and can be
-     * used to train and evaluate a model. The first datasource has 25 percent of the
-     * data, and the second one has 75 percent of the data.</p> <p>Datasource for
-     * evaluation: <code>{"splitting":{"percentBegin":0, "percentEnd":25}}</code></p>
+     * data is used to create a datasource:</p> <ul> <li> <p> <b>
+     * <code>percentBegin</code> </b> </p> <p>Use <code>percentBegin</code> to indicate
+     * the beginning of the range of the data used to create the Datasource. If you do
+     * not include <code>percentBegin</code> and <code>percentEnd</code>, Amazon ML
+     * includes all of the data when creating the datasource.</p> </li> <li> <p> <b>
+     * <code>percentEnd</code> </b> </p> <p>Use <code>percentEnd</code> to indicate the
+     * end of the range of the data used to create the Datasource. If you do not
+     * include <code>percentBegin</code> and <code>percentEnd</code>, Amazon ML
+     * includes all of the data when creating the datasource.</p> </li> <li> <p> <b>
+     * <code>complement</code> </b> </p> <p>The <code>complement</code> parameter
+     * instructs Amazon ML to use the data that is not included in the range of
+     * <code>percentBegin</code> to <code>percentEnd</code> to create a datasource. The
+     * <code>complement</code> parameter is useful if you need to create complementary
+     * datasources for training and evaluation. To create a complementary datasource,
+     * use the same values for <code>percentBegin</code> and <code>percentEnd</code>,
+     * along with the <code>complement</code> parameter.</p> <p>For example, the
+     * following two datasources do not share any data, and can be used to train and
+     * evaluate a model. The first datasource has 25 percent of the data, and the
+     * second one has 75 percent of the data.</p> <p>Datasource for evaluation:
+     * <code>{"splitting":{"percentBegin":0, "percentEnd":25}}</code> </p>
      * <p>Datasource for training: <code>{"splitting":{"percentBegin":0,
-     * "percentEnd":25, "complement":"true"}}</code></p> </li>
-     * <li><p><b><code>strategy</code></b></p> <p>To change how Amazon ML splits the
-     * data for a datasource, use the <code>strategy</code> parameter.</p> <p>The
-     * default value for the <code>strategy</code> parameter is
-     * <code>sequential</code>, meaning that Amazon ML takes all of the data records
-     * between the <code>percentBegin</code> and <code>percentEnd</code> parameters for
-     * the datasource, in the order that the records appear in the input data.</p>
-     * <p>The following two <code>DataRearrangement</code> lines are examples of
-     * sequentially ordered training and evaluation datasources:</p> <p>Datasource for
-     * evaluation: <code>{"splitting":{"percentBegin":70, "percentEnd":100,
-     * "strategy":"sequential"}}</code></p> <p>Datasource for training:
+     * "percentEnd":25, "complement":"true"}}</code> </p> </li> <li> <p> <b>
+     * <code>strategy</code> </b> </p> <p>To change how Amazon ML splits the data for a
+     * datasource, use the <code>strategy</code> parameter.</p> <p>The default value
+     * for the <code>strategy</code> parameter is <code>sequential</code>, meaning that
+     * Amazon ML takes all of the data records between the <code>percentBegin</code>
+     * and <code>percentEnd</code> parameters for the datasource, in the order that the
+     * records appear in the input data.</p> <p>The following two
+     * <code>DataRearrangement</code> lines are examples of sequentially ordered
+     * training and evaluation datasources:</p> <p>Datasource for evaluation:
      * <code>{"splitting":{"percentBegin":70, "percentEnd":100,
-     * "strategy":"sequential", "complement":"true"}}</code></p> <p>To randomly split
+     * "strategy":"sequential"}}</code> </p> <p>Datasource for training:
+     * <code>{"splitting":{"percentBegin":70, "percentEnd":100,
+     * "strategy":"sequential", "complement":"true"}}</code> </p> <p>To randomly split
      * the input data into the proportions indicated by the percentBegin and percentEnd
      * parameters, set the <code>strategy</code> parameter to <code>random</code> and
      * provide a string that is used as the seed value for the random data splitting
@@ -268,10 +268,10 @@ namespace Model
      * <code>DataRearrangement</code> lines are examples of non-sequentially ordered
      * training and evaluation datasources:</p> <p>Datasource for evaluation:
      * <code>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"random",
-     * "randomSeed"="s3://my_s3_path/bucket/file.csv"}}</code></p> <p>Datasource for
+     * "randomSeed"="s3://my_s3_path/bucket/file.csv"}}</code> </p> <p>Datasource for
      * training: <code>{"splitting":{"percentBegin":70, "percentEnd":100,
      * "strategy":"random", "randomSeed"="s3://my_s3_path/bucket/file.csv",
-     * "complement":"true"}}</code></p> </li> </ul>
+     * "complement":"true"}}</code> </p> </li> </ul>
      */
     inline const Aws::String& GetDataRearrangement() const{ return m_dataRearrangement; }
 
@@ -280,40 +280,40 @@ namespace Model
      * be applied to a <code>DataSource</code>. If the <code>DataRearrangement</code>
      * parameter is not provided, all of the input data is used to create the
      * <code>Datasource</code>.</p> <p>There are multiple parameters that control what
-     * data is used to create a datasource:</p> <ul>
-     * <li><p><b><code>percentBegin</code></b></p> <p>Use <code>percentBegin</code> to
-     * indicate the beginning of the range of the data used to create the Datasource.
-     * If you do not include <code>percentBegin</code> and <code>percentEnd</code>,
-     * Amazon ML includes all of the data when creating the datasource.</p></li>
-     * <li><p><b><code>percentEnd</code></b></p> <p>Use <code>percentEnd</code> to
-     * indicate the end of the range of the data used to create the Datasource. If you
-     * do not include <code>percentBegin</code> and <code>percentEnd</code>, Amazon ML
-     * includes all of the data when creating the datasource.</p></li>
-     * <li><p><b><code>complement</code></b></p> <p>The <code>complement</code>
-     * parameter instructs Amazon ML to use the data that is not included in the range
-     * of <code>percentBegin</code> to <code>percentEnd</code> to create a datasource.
-     * The <code>complement</code> parameter is useful if you need to create
-     * complementary datasources for training and evaluation. To create a complementary
-     * datasource, use the same values for <code>percentBegin</code> and
-     * <code>percentEnd</code>, along with the <code>complement</code> parameter.</p>
-     * <p>For example, the following two datasources do not share any data, and can be
-     * used to train and evaluate a model. The first datasource has 25 percent of the
-     * data, and the second one has 75 percent of the data.</p> <p>Datasource for
-     * evaluation: <code>{"splitting":{"percentBegin":0, "percentEnd":25}}</code></p>
+     * data is used to create a datasource:</p> <ul> <li> <p> <b>
+     * <code>percentBegin</code> </b> </p> <p>Use <code>percentBegin</code> to indicate
+     * the beginning of the range of the data used to create the Datasource. If you do
+     * not include <code>percentBegin</code> and <code>percentEnd</code>, Amazon ML
+     * includes all of the data when creating the datasource.</p> </li> <li> <p> <b>
+     * <code>percentEnd</code> </b> </p> <p>Use <code>percentEnd</code> to indicate the
+     * end of the range of the data used to create the Datasource. If you do not
+     * include <code>percentBegin</code> and <code>percentEnd</code>, Amazon ML
+     * includes all of the data when creating the datasource.</p> </li> <li> <p> <b>
+     * <code>complement</code> </b> </p> <p>The <code>complement</code> parameter
+     * instructs Amazon ML to use the data that is not included in the range of
+     * <code>percentBegin</code> to <code>percentEnd</code> to create a datasource. The
+     * <code>complement</code> parameter is useful if you need to create complementary
+     * datasources for training and evaluation. To create a complementary datasource,
+     * use the same values for <code>percentBegin</code> and <code>percentEnd</code>,
+     * along with the <code>complement</code> parameter.</p> <p>For example, the
+     * following two datasources do not share any data, and can be used to train and
+     * evaluate a model. The first datasource has 25 percent of the data, and the
+     * second one has 75 percent of the data.</p> <p>Datasource for evaluation:
+     * <code>{"splitting":{"percentBegin":0, "percentEnd":25}}</code> </p>
      * <p>Datasource for training: <code>{"splitting":{"percentBegin":0,
-     * "percentEnd":25, "complement":"true"}}</code></p> </li>
-     * <li><p><b><code>strategy</code></b></p> <p>To change how Amazon ML splits the
-     * data for a datasource, use the <code>strategy</code> parameter.</p> <p>The
-     * default value for the <code>strategy</code> parameter is
-     * <code>sequential</code>, meaning that Amazon ML takes all of the data records
-     * between the <code>percentBegin</code> and <code>percentEnd</code> parameters for
-     * the datasource, in the order that the records appear in the input data.</p>
-     * <p>The following two <code>DataRearrangement</code> lines are examples of
-     * sequentially ordered training and evaluation datasources:</p> <p>Datasource for
-     * evaluation: <code>{"splitting":{"percentBegin":70, "percentEnd":100,
-     * "strategy":"sequential"}}</code></p> <p>Datasource for training:
+     * "percentEnd":25, "complement":"true"}}</code> </p> </li> <li> <p> <b>
+     * <code>strategy</code> </b> </p> <p>To change how Amazon ML splits the data for a
+     * datasource, use the <code>strategy</code> parameter.</p> <p>The default value
+     * for the <code>strategy</code> parameter is <code>sequential</code>, meaning that
+     * Amazon ML takes all of the data records between the <code>percentBegin</code>
+     * and <code>percentEnd</code> parameters for the datasource, in the order that the
+     * records appear in the input data.</p> <p>The following two
+     * <code>DataRearrangement</code> lines are examples of sequentially ordered
+     * training and evaluation datasources:</p> <p>Datasource for evaluation:
      * <code>{"splitting":{"percentBegin":70, "percentEnd":100,
-     * "strategy":"sequential", "complement":"true"}}</code></p> <p>To randomly split
+     * "strategy":"sequential"}}</code> </p> <p>Datasource for training:
+     * <code>{"splitting":{"percentBegin":70, "percentEnd":100,
+     * "strategy":"sequential", "complement":"true"}}</code> </p> <p>To randomly split
      * the input data into the proportions indicated by the percentBegin and percentEnd
      * parameters, set the <code>strategy</code> parameter to <code>random</code> and
      * provide a string that is used as the seed value for the random data splitting
@@ -331,10 +331,10 @@ namespace Model
      * <code>DataRearrangement</code> lines are examples of non-sequentially ordered
      * training and evaluation datasources:</p> <p>Datasource for evaluation:
      * <code>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"random",
-     * "randomSeed"="s3://my_s3_path/bucket/file.csv"}}</code></p> <p>Datasource for
+     * "randomSeed"="s3://my_s3_path/bucket/file.csv"}}</code> </p> <p>Datasource for
      * training: <code>{"splitting":{"percentBegin":70, "percentEnd":100,
      * "strategy":"random", "randomSeed"="s3://my_s3_path/bucket/file.csv",
-     * "complement":"true"}}</code></p> </li> </ul>
+     * "complement":"true"}}</code> </p> </li> </ul>
      */
     inline bool DataRearrangementHasBeenSet() const { return m_dataRearrangementHasBeenSet; }
 
@@ -343,40 +343,40 @@ namespace Model
      * be applied to a <code>DataSource</code>. If the <code>DataRearrangement</code>
      * parameter is not provided, all of the input data is used to create the
      * <code>Datasource</code>.</p> <p>There are multiple parameters that control what
-     * data is used to create a datasource:</p> <ul>
-     * <li><p><b><code>percentBegin</code></b></p> <p>Use <code>percentBegin</code> to
-     * indicate the beginning of the range of the data used to create the Datasource.
-     * If you do not include <code>percentBegin</code> and <code>percentEnd</code>,
-     * Amazon ML includes all of the data when creating the datasource.</p></li>
-     * <li><p><b><code>percentEnd</code></b></p> <p>Use <code>percentEnd</code> to
-     * indicate the end of the range of the data used to create the Datasource. If you
-     * do not include <code>percentBegin</code> and <code>percentEnd</code>, Amazon ML
-     * includes all of the data when creating the datasource.</p></li>
-     * <li><p><b><code>complement</code></b></p> <p>The <code>complement</code>
-     * parameter instructs Amazon ML to use the data that is not included in the range
-     * of <code>percentBegin</code> to <code>percentEnd</code> to create a datasource.
-     * The <code>complement</code> parameter is useful if you need to create
-     * complementary datasources for training and evaluation. To create a complementary
-     * datasource, use the same values for <code>percentBegin</code> and
-     * <code>percentEnd</code>, along with the <code>complement</code> parameter.</p>
-     * <p>For example, the following two datasources do not share any data, and can be
-     * used to train and evaluate a model. The first datasource has 25 percent of the
-     * data, and the second one has 75 percent of the data.</p> <p>Datasource for
-     * evaluation: <code>{"splitting":{"percentBegin":0, "percentEnd":25}}</code></p>
+     * data is used to create a datasource:</p> <ul> <li> <p> <b>
+     * <code>percentBegin</code> </b> </p> <p>Use <code>percentBegin</code> to indicate
+     * the beginning of the range of the data used to create the Datasource. If you do
+     * not include <code>percentBegin</code> and <code>percentEnd</code>, Amazon ML
+     * includes all of the data when creating the datasource.</p> </li> <li> <p> <b>
+     * <code>percentEnd</code> </b> </p> <p>Use <code>percentEnd</code> to indicate the
+     * end of the range of the data used to create the Datasource. If you do not
+     * include <code>percentBegin</code> and <code>percentEnd</code>, Amazon ML
+     * includes all of the data when creating the datasource.</p> </li> <li> <p> <b>
+     * <code>complement</code> </b> </p> <p>The <code>complement</code> parameter
+     * instructs Amazon ML to use the data that is not included in the range of
+     * <code>percentBegin</code> to <code>percentEnd</code> to create a datasource. The
+     * <code>complement</code> parameter is useful if you need to create complementary
+     * datasources for training and evaluation. To create a complementary datasource,
+     * use the same values for <code>percentBegin</code> and <code>percentEnd</code>,
+     * along with the <code>complement</code> parameter.</p> <p>For example, the
+     * following two datasources do not share any data, and can be used to train and
+     * evaluate a model. The first datasource has 25 percent of the data, and the
+     * second one has 75 percent of the data.</p> <p>Datasource for evaluation:
+     * <code>{"splitting":{"percentBegin":0, "percentEnd":25}}</code> </p>
      * <p>Datasource for training: <code>{"splitting":{"percentBegin":0,
-     * "percentEnd":25, "complement":"true"}}</code></p> </li>
-     * <li><p><b><code>strategy</code></b></p> <p>To change how Amazon ML splits the
-     * data for a datasource, use the <code>strategy</code> parameter.</p> <p>The
-     * default value for the <code>strategy</code> parameter is
-     * <code>sequential</code>, meaning that Amazon ML takes all of the data records
-     * between the <code>percentBegin</code> and <code>percentEnd</code> parameters for
-     * the datasource, in the order that the records appear in the input data.</p>
-     * <p>The following two <code>DataRearrangement</code> lines are examples of
-     * sequentially ordered training and evaluation datasources:</p> <p>Datasource for
-     * evaluation: <code>{"splitting":{"percentBegin":70, "percentEnd":100,
-     * "strategy":"sequential"}}</code></p> <p>Datasource for training:
+     * "percentEnd":25, "complement":"true"}}</code> </p> </li> <li> <p> <b>
+     * <code>strategy</code> </b> </p> <p>To change how Amazon ML splits the data for a
+     * datasource, use the <code>strategy</code> parameter.</p> <p>The default value
+     * for the <code>strategy</code> parameter is <code>sequential</code>, meaning that
+     * Amazon ML takes all of the data records between the <code>percentBegin</code>
+     * and <code>percentEnd</code> parameters for the datasource, in the order that the
+     * records appear in the input data.</p> <p>The following two
+     * <code>DataRearrangement</code> lines are examples of sequentially ordered
+     * training and evaluation datasources:</p> <p>Datasource for evaluation:
      * <code>{"splitting":{"percentBegin":70, "percentEnd":100,
-     * "strategy":"sequential", "complement":"true"}}</code></p> <p>To randomly split
+     * "strategy":"sequential"}}</code> </p> <p>Datasource for training:
+     * <code>{"splitting":{"percentBegin":70, "percentEnd":100,
+     * "strategy":"sequential", "complement":"true"}}</code> </p> <p>To randomly split
      * the input data into the proportions indicated by the percentBegin and percentEnd
      * parameters, set the <code>strategy</code> parameter to <code>random</code> and
      * provide a string that is used as the seed value for the random data splitting
@@ -394,10 +394,10 @@ namespace Model
      * <code>DataRearrangement</code> lines are examples of non-sequentially ordered
      * training and evaluation datasources:</p> <p>Datasource for evaluation:
      * <code>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"random",
-     * "randomSeed"="s3://my_s3_path/bucket/file.csv"}}</code></p> <p>Datasource for
+     * "randomSeed"="s3://my_s3_path/bucket/file.csv"}}</code> </p> <p>Datasource for
      * training: <code>{"splitting":{"percentBegin":70, "percentEnd":100,
      * "strategy":"random", "randomSeed"="s3://my_s3_path/bucket/file.csv",
-     * "complement":"true"}}</code></p> </li> </ul>
+     * "complement":"true"}}</code> </p> </li> </ul>
      */
     inline void SetDataRearrangement(const Aws::String& value) { m_dataRearrangementHasBeenSet = true; m_dataRearrangement = value; }
 
@@ -406,40 +406,40 @@ namespace Model
      * be applied to a <code>DataSource</code>. If the <code>DataRearrangement</code>
      * parameter is not provided, all of the input data is used to create the
      * <code>Datasource</code>.</p> <p>There are multiple parameters that control what
-     * data is used to create a datasource:</p> <ul>
-     * <li><p><b><code>percentBegin</code></b></p> <p>Use <code>percentBegin</code> to
-     * indicate the beginning of the range of the data used to create the Datasource.
-     * If you do not include <code>percentBegin</code> and <code>percentEnd</code>,
-     * Amazon ML includes all of the data when creating the datasource.</p></li>
-     * <li><p><b><code>percentEnd</code></b></p> <p>Use <code>percentEnd</code> to
-     * indicate the end of the range of the data used to create the Datasource. If you
-     * do not include <code>percentBegin</code> and <code>percentEnd</code>, Amazon ML
-     * includes all of the data when creating the datasource.</p></li>
-     * <li><p><b><code>complement</code></b></p> <p>The <code>complement</code>
-     * parameter instructs Amazon ML to use the data that is not included in the range
-     * of <code>percentBegin</code> to <code>percentEnd</code> to create a datasource.
-     * The <code>complement</code> parameter is useful if you need to create
-     * complementary datasources for training and evaluation. To create a complementary
-     * datasource, use the same values for <code>percentBegin</code> and
-     * <code>percentEnd</code>, along with the <code>complement</code> parameter.</p>
-     * <p>For example, the following two datasources do not share any data, and can be
-     * used to train and evaluate a model. The first datasource has 25 percent of the
-     * data, and the second one has 75 percent of the data.</p> <p>Datasource for
-     * evaluation: <code>{"splitting":{"percentBegin":0, "percentEnd":25}}</code></p>
+     * data is used to create a datasource:</p> <ul> <li> <p> <b>
+     * <code>percentBegin</code> </b> </p> <p>Use <code>percentBegin</code> to indicate
+     * the beginning of the range of the data used to create the Datasource. If you do
+     * not include <code>percentBegin</code> and <code>percentEnd</code>, Amazon ML
+     * includes all of the data when creating the datasource.</p> </li> <li> <p> <b>
+     * <code>percentEnd</code> </b> </p> <p>Use <code>percentEnd</code> to indicate the
+     * end of the range of the data used to create the Datasource. If you do not
+     * include <code>percentBegin</code> and <code>percentEnd</code>, Amazon ML
+     * includes all of the data when creating the datasource.</p> </li> <li> <p> <b>
+     * <code>complement</code> </b> </p> <p>The <code>complement</code> parameter
+     * instructs Amazon ML to use the data that is not included in the range of
+     * <code>percentBegin</code> to <code>percentEnd</code> to create a datasource. The
+     * <code>complement</code> parameter is useful if you need to create complementary
+     * datasources for training and evaluation. To create a complementary datasource,
+     * use the same values for <code>percentBegin</code> and <code>percentEnd</code>,
+     * along with the <code>complement</code> parameter.</p> <p>For example, the
+     * following two datasources do not share any data, and can be used to train and
+     * evaluate a model. The first datasource has 25 percent of the data, and the
+     * second one has 75 percent of the data.</p> <p>Datasource for evaluation:
+     * <code>{"splitting":{"percentBegin":0, "percentEnd":25}}</code> </p>
      * <p>Datasource for training: <code>{"splitting":{"percentBegin":0,
-     * "percentEnd":25, "complement":"true"}}</code></p> </li>
-     * <li><p><b><code>strategy</code></b></p> <p>To change how Amazon ML splits the
-     * data for a datasource, use the <code>strategy</code> parameter.</p> <p>The
-     * default value for the <code>strategy</code> parameter is
-     * <code>sequential</code>, meaning that Amazon ML takes all of the data records
-     * between the <code>percentBegin</code> and <code>percentEnd</code> parameters for
-     * the datasource, in the order that the records appear in the input data.</p>
-     * <p>The following two <code>DataRearrangement</code> lines are examples of
-     * sequentially ordered training and evaluation datasources:</p> <p>Datasource for
-     * evaluation: <code>{"splitting":{"percentBegin":70, "percentEnd":100,
-     * "strategy":"sequential"}}</code></p> <p>Datasource for training:
+     * "percentEnd":25, "complement":"true"}}</code> </p> </li> <li> <p> <b>
+     * <code>strategy</code> </b> </p> <p>To change how Amazon ML splits the data for a
+     * datasource, use the <code>strategy</code> parameter.</p> <p>The default value
+     * for the <code>strategy</code> parameter is <code>sequential</code>, meaning that
+     * Amazon ML takes all of the data records between the <code>percentBegin</code>
+     * and <code>percentEnd</code> parameters for the datasource, in the order that the
+     * records appear in the input data.</p> <p>The following two
+     * <code>DataRearrangement</code> lines are examples of sequentially ordered
+     * training and evaluation datasources:</p> <p>Datasource for evaluation:
      * <code>{"splitting":{"percentBegin":70, "percentEnd":100,
-     * "strategy":"sequential", "complement":"true"}}</code></p> <p>To randomly split
+     * "strategy":"sequential"}}</code> </p> <p>Datasource for training:
+     * <code>{"splitting":{"percentBegin":70, "percentEnd":100,
+     * "strategy":"sequential", "complement":"true"}}</code> </p> <p>To randomly split
      * the input data into the proportions indicated by the percentBegin and percentEnd
      * parameters, set the <code>strategy</code> parameter to <code>random</code> and
      * provide a string that is used as the seed value for the random data splitting
@@ -457,10 +457,10 @@ namespace Model
      * <code>DataRearrangement</code> lines are examples of non-sequentially ordered
      * training and evaluation datasources:</p> <p>Datasource for evaluation:
      * <code>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"random",
-     * "randomSeed"="s3://my_s3_path/bucket/file.csv"}}</code></p> <p>Datasource for
+     * "randomSeed"="s3://my_s3_path/bucket/file.csv"}}</code> </p> <p>Datasource for
      * training: <code>{"splitting":{"percentBegin":70, "percentEnd":100,
      * "strategy":"random", "randomSeed"="s3://my_s3_path/bucket/file.csv",
-     * "complement":"true"}}</code></p> </li> </ul>
+     * "complement":"true"}}</code> </p> </li> </ul>
      */
     inline void SetDataRearrangement(Aws::String&& value) { m_dataRearrangementHasBeenSet = true; m_dataRearrangement = std::move(value); }
 
@@ -469,40 +469,40 @@ namespace Model
      * be applied to a <code>DataSource</code>. If the <code>DataRearrangement</code>
      * parameter is not provided, all of the input data is used to create the
      * <code>Datasource</code>.</p> <p>There are multiple parameters that control what
-     * data is used to create a datasource:</p> <ul>
-     * <li><p><b><code>percentBegin</code></b></p> <p>Use <code>percentBegin</code> to
-     * indicate the beginning of the range of the data used to create the Datasource.
-     * If you do not include <code>percentBegin</code> and <code>percentEnd</code>,
-     * Amazon ML includes all of the data when creating the datasource.</p></li>
-     * <li><p><b><code>percentEnd</code></b></p> <p>Use <code>percentEnd</code> to
-     * indicate the end of the range of the data used to create the Datasource. If you
-     * do not include <code>percentBegin</code> and <code>percentEnd</code>, Amazon ML
-     * includes all of the data when creating the datasource.</p></li>
-     * <li><p><b><code>complement</code></b></p> <p>The <code>complement</code>
-     * parameter instructs Amazon ML to use the data that is not included in the range
-     * of <code>percentBegin</code> to <code>percentEnd</code> to create a datasource.
-     * The <code>complement</code> parameter is useful if you need to create
-     * complementary datasources for training and evaluation. To create a complementary
-     * datasource, use the same values for <code>percentBegin</code> and
-     * <code>percentEnd</code>, along with the <code>complement</code> parameter.</p>
-     * <p>For example, the following two datasources do not share any data, and can be
-     * used to train and evaluate a model. The first datasource has 25 percent of the
-     * data, and the second one has 75 percent of the data.</p> <p>Datasource for
-     * evaluation: <code>{"splitting":{"percentBegin":0, "percentEnd":25}}</code></p>
+     * data is used to create a datasource:</p> <ul> <li> <p> <b>
+     * <code>percentBegin</code> </b> </p> <p>Use <code>percentBegin</code> to indicate
+     * the beginning of the range of the data used to create the Datasource. If you do
+     * not include <code>percentBegin</code> and <code>percentEnd</code>, Amazon ML
+     * includes all of the data when creating the datasource.</p> </li> <li> <p> <b>
+     * <code>percentEnd</code> </b> </p> <p>Use <code>percentEnd</code> to indicate the
+     * end of the range of the data used to create the Datasource. If you do not
+     * include <code>percentBegin</code> and <code>percentEnd</code>, Amazon ML
+     * includes all of the data when creating the datasource.</p> </li> <li> <p> <b>
+     * <code>complement</code> </b> </p> <p>The <code>complement</code> parameter
+     * instructs Amazon ML to use the data that is not included in the range of
+     * <code>percentBegin</code> to <code>percentEnd</code> to create a datasource. The
+     * <code>complement</code> parameter is useful if you need to create complementary
+     * datasources for training and evaluation. To create a complementary datasource,
+     * use the same values for <code>percentBegin</code> and <code>percentEnd</code>,
+     * along with the <code>complement</code> parameter.</p> <p>For example, the
+     * following two datasources do not share any data, and can be used to train and
+     * evaluate a model. The first datasource has 25 percent of the data, and the
+     * second one has 75 percent of the data.</p> <p>Datasource for evaluation:
+     * <code>{"splitting":{"percentBegin":0, "percentEnd":25}}</code> </p>
      * <p>Datasource for training: <code>{"splitting":{"percentBegin":0,
-     * "percentEnd":25, "complement":"true"}}</code></p> </li>
-     * <li><p><b><code>strategy</code></b></p> <p>To change how Amazon ML splits the
-     * data for a datasource, use the <code>strategy</code> parameter.</p> <p>The
-     * default value for the <code>strategy</code> parameter is
-     * <code>sequential</code>, meaning that Amazon ML takes all of the data records
-     * between the <code>percentBegin</code> and <code>percentEnd</code> parameters for
-     * the datasource, in the order that the records appear in the input data.</p>
-     * <p>The following two <code>DataRearrangement</code> lines are examples of
-     * sequentially ordered training and evaluation datasources:</p> <p>Datasource for
-     * evaluation: <code>{"splitting":{"percentBegin":70, "percentEnd":100,
-     * "strategy":"sequential"}}</code></p> <p>Datasource for training:
+     * "percentEnd":25, "complement":"true"}}</code> </p> </li> <li> <p> <b>
+     * <code>strategy</code> </b> </p> <p>To change how Amazon ML splits the data for a
+     * datasource, use the <code>strategy</code> parameter.</p> <p>The default value
+     * for the <code>strategy</code> parameter is <code>sequential</code>, meaning that
+     * Amazon ML takes all of the data records between the <code>percentBegin</code>
+     * and <code>percentEnd</code> parameters for the datasource, in the order that the
+     * records appear in the input data.</p> <p>The following two
+     * <code>DataRearrangement</code> lines are examples of sequentially ordered
+     * training and evaluation datasources:</p> <p>Datasource for evaluation:
      * <code>{"splitting":{"percentBegin":70, "percentEnd":100,
-     * "strategy":"sequential", "complement":"true"}}</code></p> <p>To randomly split
+     * "strategy":"sequential"}}</code> </p> <p>Datasource for training:
+     * <code>{"splitting":{"percentBegin":70, "percentEnd":100,
+     * "strategy":"sequential", "complement":"true"}}</code> </p> <p>To randomly split
      * the input data into the proportions indicated by the percentBegin and percentEnd
      * parameters, set the <code>strategy</code> parameter to <code>random</code> and
      * provide a string that is used as the seed value for the random data splitting
@@ -520,10 +520,10 @@ namespace Model
      * <code>DataRearrangement</code> lines are examples of non-sequentially ordered
      * training and evaluation datasources:</p> <p>Datasource for evaluation:
      * <code>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"random",
-     * "randomSeed"="s3://my_s3_path/bucket/file.csv"}}</code></p> <p>Datasource for
+     * "randomSeed"="s3://my_s3_path/bucket/file.csv"}}</code> </p> <p>Datasource for
      * training: <code>{"splitting":{"percentBegin":70, "percentEnd":100,
      * "strategy":"random", "randomSeed"="s3://my_s3_path/bucket/file.csv",
-     * "complement":"true"}}</code></p> </li> </ul>
+     * "complement":"true"}}</code> </p> </li> </ul>
      */
     inline void SetDataRearrangement(const char* value) { m_dataRearrangementHasBeenSet = true; m_dataRearrangement.assign(value); }
 
@@ -532,40 +532,40 @@ namespace Model
      * be applied to a <code>DataSource</code>. If the <code>DataRearrangement</code>
      * parameter is not provided, all of the input data is used to create the
      * <code>Datasource</code>.</p> <p>There are multiple parameters that control what
-     * data is used to create a datasource:</p> <ul>
-     * <li><p><b><code>percentBegin</code></b></p> <p>Use <code>percentBegin</code> to
-     * indicate the beginning of the range of the data used to create the Datasource.
-     * If you do not include <code>percentBegin</code> and <code>percentEnd</code>,
-     * Amazon ML includes all of the data when creating the datasource.</p></li>
-     * <li><p><b><code>percentEnd</code></b></p> <p>Use <code>percentEnd</code> to
-     * indicate the end of the range of the data used to create the Datasource. If you
-     * do not include <code>percentBegin</code> and <code>percentEnd</code>, Amazon ML
-     * includes all of the data when creating the datasource.</p></li>
-     * <li><p><b><code>complement</code></b></p> <p>The <code>complement</code>
-     * parameter instructs Amazon ML to use the data that is not included in the range
-     * of <code>percentBegin</code> to <code>percentEnd</code> to create a datasource.
-     * The <code>complement</code> parameter is useful if you need to create
-     * complementary datasources for training and evaluation. To create a complementary
-     * datasource, use the same values for <code>percentBegin</code> and
-     * <code>percentEnd</code>, along with the <code>complement</code> parameter.</p>
-     * <p>For example, the following two datasources do not share any data, and can be
-     * used to train and evaluate a model. The first datasource has 25 percent of the
-     * data, and the second one has 75 percent of the data.</p> <p>Datasource for
-     * evaluation: <code>{"splitting":{"percentBegin":0, "percentEnd":25}}</code></p>
+     * data is used to create a datasource:</p> <ul> <li> <p> <b>
+     * <code>percentBegin</code> </b> </p> <p>Use <code>percentBegin</code> to indicate
+     * the beginning of the range of the data used to create the Datasource. If you do
+     * not include <code>percentBegin</code> and <code>percentEnd</code>, Amazon ML
+     * includes all of the data when creating the datasource.</p> </li> <li> <p> <b>
+     * <code>percentEnd</code> </b> </p> <p>Use <code>percentEnd</code> to indicate the
+     * end of the range of the data used to create the Datasource. If you do not
+     * include <code>percentBegin</code> and <code>percentEnd</code>, Amazon ML
+     * includes all of the data when creating the datasource.</p> </li> <li> <p> <b>
+     * <code>complement</code> </b> </p> <p>The <code>complement</code> parameter
+     * instructs Amazon ML to use the data that is not included in the range of
+     * <code>percentBegin</code> to <code>percentEnd</code> to create a datasource. The
+     * <code>complement</code> parameter is useful if you need to create complementary
+     * datasources for training and evaluation. To create a complementary datasource,
+     * use the same values for <code>percentBegin</code> and <code>percentEnd</code>,
+     * along with the <code>complement</code> parameter.</p> <p>For example, the
+     * following two datasources do not share any data, and can be used to train and
+     * evaluate a model. The first datasource has 25 percent of the data, and the
+     * second one has 75 percent of the data.</p> <p>Datasource for evaluation:
+     * <code>{"splitting":{"percentBegin":0, "percentEnd":25}}</code> </p>
      * <p>Datasource for training: <code>{"splitting":{"percentBegin":0,
-     * "percentEnd":25, "complement":"true"}}</code></p> </li>
-     * <li><p><b><code>strategy</code></b></p> <p>To change how Amazon ML splits the
-     * data for a datasource, use the <code>strategy</code> parameter.</p> <p>The
-     * default value for the <code>strategy</code> parameter is
-     * <code>sequential</code>, meaning that Amazon ML takes all of the data records
-     * between the <code>percentBegin</code> and <code>percentEnd</code> parameters for
-     * the datasource, in the order that the records appear in the input data.</p>
-     * <p>The following two <code>DataRearrangement</code> lines are examples of
-     * sequentially ordered training and evaluation datasources:</p> <p>Datasource for
-     * evaluation: <code>{"splitting":{"percentBegin":70, "percentEnd":100,
-     * "strategy":"sequential"}}</code></p> <p>Datasource for training:
+     * "percentEnd":25, "complement":"true"}}</code> </p> </li> <li> <p> <b>
+     * <code>strategy</code> </b> </p> <p>To change how Amazon ML splits the data for a
+     * datasource, use the <code>strategy</code> parameter.</p> <p>The default value
+     * for the <code>strategy</code> parameter is <code>sequential</code>, meaning that
+     * Amazon ML takes all of the data records between the <code>percentBegin</code>
+     * and <code>percentEnd</code> parameters for the datasource, in the order that the
+     * records appear in the input data.</p> <p>The following two
+     * <code>DataRearrangement</code> lines are examples of sequentially ordered
+     * training and evaluation datasources:</p> <p>Datasource for evaluation:
      * <code>{"splitting":{"percentBegin":70, "percentEnd":100,
-     * "strategy":"sequential", "complement":"true"}}</code></p> <p>To randomly split
+     * "strategy":"sequential"}}</code> </p> <p>Datasource for training:
+     * <code>{"splitting":{"percentBegin":70, "percentEnd":100,
+     * "strategy":"sequential", "complement":"true"}}</code> </p> <p>To randomly split
      * the input data into the proportions indicated by the percentBegin and percentEnd
      * parameters, set the <code>strategy</code> parameter to <code>random</code> and
      * provide a string that is used as the seed value for the random data splitting
@@ -583,10 +583,10 @@ namespace Model
      * <code>DataRearrangement</code> lines are examples of non-sequentially ordered
      * training and evaluation datasources:</p> <p>Datasource for evaluation:
      * <code>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"random",
-     * "randomSeed"="s3://my_s3_path/bucket/file.csv"}}</code></p> <p>Datasource for
+     * "randomSeed"="s3://my_s3_path/bucket/file.csv"}}</code> </p> <p>Datasource for
      * training: <code>{"splitting":{"percentBegin":70, "percentEnd":100,
      * "strategy":"random", "randomSeed"="s3://my_s3_path/bucket/file.csv",
-     * "complement":"true"}}</code></p> </li> </ul>
+     * "complement":"true"}}</code> </p> </li> </ul>
      */
     inline RedshiftDataSpec& WithDataRearrangement(const Aws::String& value) { SetDataRearrangement(value); return *this;}
 
@@ -595,40 +595,40 @@ namespace Model
      * be applied to a <code>DataSource</code>. If the <code>DataRearrangement</code>
      * parameter is not provided, all of the input data is used to create the
      * <code>Datasource</code>.</p> <p>There are multiple parameters that control what
-     * data is used to create a datasource:</p> <ul>
-     * <li><p><b><code>percentBegin</code></b></p> <p>Use <code>percentBegin</code> to
-     * indicate the beginning of the range of the data used to create the Datasource.
-     * If you do not include <code>percentBegin</code> and <code>percentEnd</code>,
-     * Amazon ML includes all of the data when creating the datasource.</p></li>
-     * <li><p><b><code>percentEnd</code></b></p> <p>Use <code>percentEnd</code> to
-     * indicate the end of the range of the data used to create the Datasource. If you
-     * do not include <code>percentBegin</code> and <code>percentEnd</code>, Amazon ML
-     * includes all of the data when creating the datasource.</p></li>
-     * <li><p><b><code>complement</code></b></p> <p>The <code>complement</code>
-     * parameter instructs Amazon ML to use the data that is not included in the range
-     * of <code>percentBegin</code> to <code>percentEnd</code> to create a datasource.
-     * The <code>complement</code> parameter is useful if you need to create
-     * complementary datasources for training and evaluation. To create a complementary
-     * datasource, use the same values for <code>percentBegin</code> and
-     * <code>percentEnd</code>, along with the <code>complement</code> parameter.</p>
-     * <p>For example, the following two datasources do not share any data, and can be
-     * used to train and evaluate a model. The first datasource has 25 percent of the
-     * data, and the second one has 75 percent of the data.</p> <p>Datasource for
-     * evaluation: <code>{"splitting":{"percentBegin":0, "percentEnd":25}}</code></p>
+     * data is used to create a datasource:</p> <ul> <li> <p> <b>
+     * <code>percentBegin</code> </b> </p> <p>Use <code>percentBegin</code> to indicate
+     * the beginning of the range of the data used to create the Datasource. If you do
+     * not include <code>percentBegin</code> and <code>percentEnd</code>, Amazon ML
+     * includes all of the data when creating the datasource.</p> </li> <li> <p> <b>
+     * <code>percentEnd</code> </b> </p> <p>Use <code>percentEnd</code> to indicate the
+     * end of the range of the data used to create the Datasource. If you do not
+     * include <code>percentBegin</code> and <code>percentEnd</code>, Amazon ML
+     * includes all of the data when creating the datasource.</p> </li> <li> <p> <b>
+     * <code>complement</code> </b> </p> <p>The <code>complement</code> parameter
+     * instructs Amazon ML to use the data that is not included in the range of
+     * <code>percentBegin</code> to <code>percentEnd</code> to create a datasource. The
+     * <code>complement</code> parameter is useful if you need to create complementary
+     * datasources for training and evaluation. To create a complementary datasource,
+     * use the same values for <code>percentBegin</code> and <code>percentEnd</code>,
+     * along with the <code>complement</code> parameter.</p> <p>For example, the
+     * following two datasources do not share any data, and can be used to train and
+     * evaluate a model. The first datasource has 25 percent of the data, and the
+     * second one has 75 percent of the data.</p> <p>Datasource for evaluation:
+     * <code>{"splitting":{"percentBegin":0, "percentEnd":25}}</code> </p>
      * <p>Datasource for training: <code>{"splitting":{"percentBegin":0,
-     * "percentEnd":25, "complement":"true"}}</code></p> </li>
-     * <li><p><b><code>strategy</code></b></p> <p>To change how Amazon ML splits the
-     * data for a datasource, use the <code>strategy</code> parameter.</p> <p>The
-     * default value for the <code>strategy</code> parameter is
-     * <code>sequential</code>, meaning that Amazon ML takes all of the data records
-     * between the <code>percentBegin</code> and <code>percentEnd</code> parameters for
-     * the datasource, in the order that the records appear in the input data.</p>
-     * <p>The following two <code>DataRearrangement</code> lines are examples of
-     * sequentially ordered training and evaluation datasources:</p> <p>Datasource for
-     * evaluation: <code>{"splitting":{"percentBegin":70, "percentEnd":100,
-     * "strategy":"sequential"}}</code></p> <p>Datasource for training:
+     * "percentEnd":25, "complement":"true"}}</code> </p> </li> <li> <p> <b>
+     * <code>strategy</code> </b> </p> <p>To change how Amazon ML splits the data for a
+     * datasource, use the <code>strategy</code> parameter.</p> <p>The default value
+     * for the <code>strategy</code> parameter is <code>sequential</code>, meaning that
+     * Amazon ML takes all of the data records between the <code>percentBegin</code>
+     * and <code>percentEnd</code> parameters for the datasource, in the order that the
+     * records appear in the input data.</p> <p>The following two
+     * <code>DataRearrangement</code> lines are examples of sequentially ordered
+     * training and evaluation datasources:</p> <p>Datasource for evaluation:
      * <code>{"splitting":{"percentBegin":70, "percentEnd":100,
-     * "strategy":"sequential", "complement":"true"}}</code></p> <p>To randomly split
+     * "strategy":"sequential"}}</code> </p> <p>Datasource for training:
+     * <code>{"splitting":{"percentBegin":70, "percentEnd":100,
+     * "strategy":"sequential", "complement":"true"}}</code> </p> <p>To randomly split
      * the input data into the proportions indicated by the percentBegin and percentEnd
      * parameters, set the <code>strategy</code> parameter to <code>random</code> and
      * provide a string that is used as the seed value for the random data splitting
@@ -646,10 +646,10 @@ namespace Model
      * <code>DataRearrangement</code> lines are examples of non-sequentially ordered
      * training and evaluation datasources:</p> <p>Datasource for evaluation:
      * <code>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"random",
-     * "randomSeed"="s3://my_s3_path/bucket/file.csv"}}</code></p> <p>Datasource for
+     * "randomSeed"="s3://my_s3_path/bucket/file.csv"}}</code> </p> <p>Datasource for
      * training: <code>{"splitting":{"percentBegin":70, "percentEnd":100,
      * "strategy":"random", "randomSeed"="s3://my_s3_path/bucket/file.csv",
-     * "complement":"true"}}</code></p> </li> </ul>
+     * "complement":"true"}}</code> </p> </li> </ul>
      */
     inline RedshiftDataSpec& WithDataRearrangement(Aws::String&& value) { SetDataRearrangement(std::move(value)); return *this;}
 
@@ -658,40 +658,40 @@ namespace Model
      * be applied to a <code>DataSource</code>. If the <code>DataRearrangement</code>
      * parameter is not provided, all of the input data is used to create the
      * <code>Datasource</code>.</p> <p>There are multiple parameters that control what
-     * data is used to create a datasource:</p> <ul>
-     * <li><p><b><code>percentBegin</code></b></p> <p>Use <code>percentBegin</code> to
-     * indicate the beginning of the range of the data used to create the Datasource.
-     * If you do not include <code>percentBegin</code> and <code>percentEnd</code>,
-     * Amazon ML includes all of the data when creating the datasource.</p></li>
-     * <li><p><b><code>percentEnd</code></b></p> <p>Use <code>percentEnd</code> to
-     * indicate the end of the range of the data used to create the Datasource. If you
-     * do not include <code>percentBegin</code> and <code>percentEnd</code>, Amazon ML
-     * includes all of the data when creating the datasource.</p></li>
-     * <li><p><b><code>complement</code></b></p> <p>The <code>complement</code>
-     * parameter instructs Amazon ML to use the data that is not included in the range
-     * of <code>percentBegin</code> to <code>percentEnd</code> to create a datasource.
-     * The <code>complement</code> parameter is useful if you need to create
-     * complementary datasources for training and evaluation. To create a complementary
-     * datasource, use the same values for <code>percentBegin</code> and
-     * <code>percentEnd</code>, along with the <code>complement</code> parameter.</p>
-     * <p>For example, the following two datasources do not share any data, and can be
-     * used to train and evaluate a model. The first datasource has 25 percent of the
-     * data, and the second one has 75 percent of the data.</p> <p>Datasource for
-     * evaluation: <code>{"splitting":{"percentBegin":0, "percentEnd":25}}</code></p>
+     * data is used to create a datasource:</p> <ul> <li> <p> <b>
+     * <code>percentBegin</code> </b> </p> <p>Use <code>percentBegin</code> to indicate
+     * the beginning of the range of the data used to create the Datasource. If you do
+     * not include <code>percentBegin</code> and <code>percentEnd</code>, Amazon ML
+     * includes all of the data when creating the datasource.</p> </li> <li> <p> <b>
+     * <code>percentEnd</code> </b> </p> <p>Use <code>percentEnd</code> to indicate the
+     * end of the range of the data used to create the Datasource. If you do not
+     * include <code>percentBegin</code> and <code>percentEnd</code>, Amazon ML
+     * includes all of the data when creating the datasource.</p> </li> <li> <p> <b>
+     * <code>complement</code> </b> </p> <p>The <code>complement</code> parameter
+     * instructs Amazon ML to use the data that is not included in the range of
+     * <code>percentBegin</code> to <code>percentEnd</code> to create a datasource. The
+     * <code>complement</code> parameter is useful if you need to create complementary
+     * datasources for training and evaluation. To create a complementary datasource,
+     * use the same values for <code>percentBegin</code> and <code>percentEnd</code>,
+     * along with the <code>complement</code> parameter.</p> <p>For example, the
+     * following two datasources do not share any data, and can be used to train and
+     * evaluate a model. The first datasource has 25 percent of the data, and the
+     * second one has 75 percent of the data.</p> <p>Datasource for evaluation:
+     * <code>{"splitting":{"percentBegin":0, "percentEnd":25}}</code> </p>
      * <p>Datasource for training: <code>{"splitting":{"percentBegin":0,
-     * "percentEnd":25, "complement":"true"}}</code></p> </li>
-     * <li><p><b><code>strategy</code></b></p> <p>To change how Amazon ML splits the
-     * data for a datasource, use the <code>strategy</code> parameter.</p> <p>The
-     * default value for the <code>strategy</code> parameter is
-     * <code>sequential</code>, meaning that Amazon ML takes all of the data records
-     * between the <code>percentBegin</code> and <code>percentEnd</code> parameters for
-     * the datasource, in the order that the records appear in the input data.</p>
-     * <p>The following two <code>DataRearrangement</code> lines are examples of
-     * sequentially ordered training and evaluation datasources:</p> <p>Datasource for
-     * evaluation: <code>{"splitting":{"percentBegin":70, "percentEnd":100,
-     * "strategy":"sequential"}}</code></p> <p>Datasource for training:
+     * "percentEnd":25, "complement":"true"}}</code> </p> </li> <li> <p> <b>
+     * <code>strategy</code> </b> </p> <p>To change how Amazon ML splits the data for a
+     * datasource, use the <code>strategy</code> parameter.</p> <p>The default value
+     * for the <code>strategy</code> parameter is <code>sequential</code>, meaning that
+     * Amazon ML takes all of the data records between the <code>percentBegin</code>
+     * and <code>percentEnd</code> parameters for the datasource, in the order that the
+     * records appear in the input data.</p> <p>The following two
+     * <code>DataRearrangement</code> lines are examples of sequentially ordered
+     * training and evaluation datasources:</p> <p>Datasource for evaluation:
      * <code>{"splitting":{"percentBegin":70, "percentEnd":100,
-     * "strategy":"sequential", "complement":"true"}}</code></p> <p>To randomly split
+     * "strategy":"sequential"}}</code> </p> <p>Datasource for training:
+     * <code>{"splitting":{"percentBegin":70, "percentEnd":100,
+     * "strategy":"sequential", "complement":"true"}}</code> </p> <p>To randomly split
      * the input data into the proportions indicated by the percentBegin and percentEnd
      * parameters, set the <code>strategy</code> parameter to <code>random</code> and
      * provide a string that is used as the seed value for the random data splitting
@@ -709,10 +709,10 @@ namespace Model
      * <code>DataRearrangement</code> lines are examples of non-sequentially ordered
      * training and evaluation datasources:</p> <p>Datasource for evaluation:
      * <code>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"random",
-     * "randomSeed"="s3://my_s3_path/bucket/file.csv"}}</code></p> <p>Datasource for
+     * "randomSeed"="s3://my_s3_path/bucket/file.csv"}}</code> </p> <p>Datasource for
      * training: <code>{"splitting":{"percentBegin":70, "percentEnd":100,
      * "strategy":"random", "randomSeed"="s3://my_s3_path/bucket/file.csv",
-     * "complement":"true"}}</code></p> </li> </ul>
+     * "complement":"true"}}</code> </p> </li> </ul>
      */
     inline RedshiftDataSpec& WithDataRearrangement(const char* value) { SetDataRearrangement(value); return *this;}
 
@@ -726,16 +726,16 @@ namespace Model
      * as a series of key-value pairs. <code>attributes</code> and
      * <code>excludedVariableNames</code> have an array of key-value pairs for their
      * value. Use the following format to define your <code>DataSchema</code>.</p> <p>{
-     * "version": "1.0",</p> <p> "recordAnnotationFieldName": "F1",</p> <p>
-     * "recordWeightFieldName": "F2",</p> <p> "targetFieldName": "F3",</p> <p>
-     * "dataFormat": "CSV",</p> <p> "dataFileContainsHeader": true,</p> <p>
-     * "attributes": [</p> <p> { "fieldName": "F1", "fieldType": "TEXT" }, {
+     * "version": "1.0",</p> <p>"recordAnnotationFieldName": "F1",</p>
+     * <p>"recordWeightFieldName": "F2",</p> <p>"targetFieldName": "F3",</p>
+     * <p>"dataFormat": "CSV",</p> <p>"dataFileContainsHeader": true,</p>
+     * <p>"attributes": [</p> <p>{ "fieldName": "F1", "fieldType": "TEXT" }, {
      * "fieldName": "F2", "fieldType": "NUMERIC" }, { "fieldName": "F3", "fieldType":
      * "CATEGORICAL" }, { "fieldName": "F4", "fieldType": "NUMERIC" }, { "fieldName":
      * "F5", "fieldType": "CATEGORICAL" }, { "fieldName": "F6", "fieldType": "TEXT" },
      * { "fieldName": "F7", "fieldType": "WEIGHTED_INT_SEQUENCE" }, { "fieldName":
-     * "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ],</p> <p>
-     * "excludedVariableNames": [ "F6" ] } </p>
+     * "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ],</p>
+     * <p>"excludedVariableNames": [ "F6" ] }</p>
      */
     inline const Aws::String& GetDataSchema() const{ return m_dataSchema; }
 
@@ -748,16 +748,16 @@ namespace Model
      * as a series of key-value pairs. <code>attributes</code> and
      * <code>excludedVariableNames</code> have an array of key-value pairs for their
      * value. Use the following format to define your <code>DataSchema</code>.</p> <p>{
-     * "version": "1.0",</p> <p> "recordAnnotationFieldName": "F1",</p> <p>
-     * "recordWeightFieldName": "F2",</p> <p> "targetFieldName": "F3",</p> <p>
-     * "dataFormat": "CSV",</p> <p> "dataFileContainsHeader": true,</p> <p>
-     * "attributes": [</p> <p> { "fieldName": "F1", "fieldType": "TEXT" }, {
+     * "version": "1.0",</p> <p>"recordAnnotationFieldName": "F1",</p>
+     * <p>"recordWeightFieldName": "F2",</p> <p>"targetFieldName": "F3",</p>
+     * <p>"dataFormat": "CSV",</p> <p>"dataFileContainsHeader": true,</p>
+     * <p>"attributes": [</p> <p>{ "fieldName": "F1", "fieldType": "TEXT" }, {
      * "fieldName": "F2", "fieldType": "NUMERIC" }, { "fieldName": "F3", "fieldType":
      * "CATEGORICAL" }, { "fieldName": "F4", "fieldType": "NUMERIC" }, { "fieldName":
      * "F5", "fieldType": "CATEGORICAL" }, { "fieldName": "F6", "fieldType": "TEXT" },
      * { "fieldName": "F7", "fieldType": "WEIGHTED_INT_SEQUENCE" }, { "fieldName":
-     * "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ],</p> <p>
-     * "excludedVariableNames": [ "F6" ] } </p>
+     * "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ],</p>
+     * <p>"excludedVariableNames": [ "F6" ] }</p>
      */
     inline bool DataSchemaHasBeenSet() const { return m_dataSchemaHasBeenSet; }
 
@@ -770,16 +770,16 @@ namespace Model
      * as a series of key-value pairs. <code>attributes</code> and
      * <code>excludedVariableNames</code> have an array of key-value pairs for their
      * value. Use the following format to define your <code>DataSchema</code>.</p> <p>{
-     * "version": "1.0",</p> <p> "recordAnnotationFieldName": "F1",</p> <p>
-     * "recordWeightFieldName": "F2",</p> <p> "targetFieldName": "F3",</p> <p>
-     * "dataFormat": "CSV",</p> <p> "dataFileContainsHeader": true,</p> <p>
-     * "attributes": [</p> <p> { "fieldName": "F1", "fieldType": "TEXT" }, {
+     * "version": "1.0",</p> <p>"recordAnnotationFieldName": "F1",</p>
+     * <p>"recordWeightFieldName": "F2",</p> <p>"targetFieldName": "F3",</p>
+     * <p>"dataFormat": "CSV",</p> <p>"dataFileContainsHeader": true,</p>
+     * <p>"attributes": [</p> <p>{ "fieldName": "F1", "fieldType": "TEXT" }, {
      * "fieldName": "F2", "fieldType": "NUMERIC" }, { "fieldName": "F3", "fieldType":
      * "CATEGORICAL" }, { "fieldName": "F4", "fieldType": "NUMERIC" }, { "fieldName":
      * "F5", "fieldType": "CATEGORICAL" }, { "fieldName": "F6", "fieldType": "TEXT" },
      * { "fieldName": "F7", "fieldType": "WEIGHTED_INT_SEQUENCE" }, { "fieldName":
-     * "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ],</p> <p>
-     * "excludedVariableNames": [ "F6" ] } </p>
+     * "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ],</p>
+     * <p>"excludedVariableNames": [ "F6" ] }</p>
      */
     inline void SetDataSchema(const Aws::String& value) { m_dataSchemaHasBeenSet = true; m_dataSchema = value; }
 
@@ -792,16 +792,16 @@ namespace Model
      * as a series of key-value pairs. <code>attributes</code> and
      * <code>excludedVariableNames</code> have an array of key-value pairs for their
      * value. Use the following format to define your <code>DataSchema</code>.</p> <p>{
-     * "version": "1.0",</p> <p> "recordAnnotationFieldName": "F1",</p> <p>
-     * "recordWeightFieldName": "F2",</p> <p> "targetFieldName": "F3",</p> <p>
-     * "dataFormat": "CSV",</p> <p> "dataFileContainsHeader": true,</p> <p>
-     * "attributes": [</p> <p> { "fieldName": "F1", "fieldType": "TEXT" }, {
+     * "version": "1.0",</p> <p>"recordAnnotationFieldName": "F1",</p>
+     * <p>"recordWeightFieldName": "F2",</p> <p>"targetFieldName": "F3",</p>
+     * <p>"dataFormat": "CSV",</p> <p>"dataFileContainsHeader": true,</p>
+     * <p>"attributes": [</p> <p>{ "fieldName": "F1", "fieldType": "TEXT" }, {
      * "fieldName": "F2", "fieldType": "NUMERIC" }, { "fieldName": "F3", "fieldType":
      * "CATEGORICAL" }, { "fieldName": "F4", "fieldType": "NUMERIC" }, { "fieldName":
      * "F5", "fieldType": "CATEGORICAL" }, { "fieldName": "F6", "fieldType": "TEXT" },
      * { "fieldName": "F7", "fieldType": "WEIGHTED_INT_SEQUENCE" }, { "fieldName":
-     * "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ],</p> <p>
-     * "excludedVariableNames": [ "F6" ] } </p>
+     * "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ],</p>
+     * <p>"excludedVariableNames": [ "F6" ] }</p>
      */
     inline void SetDataSchema(Aws::String&& value) { m_dataSchemaHasBeenSet = true; m_dataSchema = std::move(value); }
 
@@ -814,16 +814,16 @@ namespace Model
      * as a series of key-value pairs. <code>attributes</code> and
      * <code>excludedVariableNames</code> have an array of key-value pairs for their
      * value. Use the following format to define your <code>DataSchema</code>.</p> <p>{
-     * "version": "1.0",</p> <p> "recordAnnotationFieldName": "F1",</p> <p>
-     * "recordWeightFieldName": "F2",</p> <p> "targetFieldName": "F3",</p> <p>
-     * "dataFormat": "CSV",</p> <p> "dataFileContainsHeader": true,</p> <p>
-     * "attributes": [</p> <p> { "fieldName": "F1", "fieldType": "TEXT" }, {
+     * "version": "1.0",</p> <p>"recordAnnotationFieldName": "F1",</p>
+     * <p>"recordWeightFieldName": "F2",</p> <p>"targetFieldName": "F3",</p>
+     * <p>"dataFormat": "CSV",</p> <p>"dataFileContainsHeader": true,</p>
+     * <p>"attributes": [</p> <p>{ "fieldName": "F1", "fieldType": "TEXT" }, {
      * "fieldName": "F2", "fieldType": "NUMERIC" }, { "fieldName": "F3", "fieldType":
      * "CATEGORICAL" }, { "fieldName": "F4", "fieldType": "NUMERIC" }, { "fieldName":
      * "F5", "fieldType": "CATEGORICAL" }, { "fieldName": "F6", "fieldType": "TEXT" },
      * { "fieldName": "F7", "fieldType": "WEIGHTED_INT_SEQUENCE" }, { "fieldName":
-     * "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ],</p> <p>
-     * "excludedVariableNames": [ "F6" ] } </p>
+     * "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ],</p>
+     * <p>"excludedVariableNames": [ "F6" ] }</p>
      */
     inline void SetDataSchema(const char* value) { m_dataSchemaHasBeenSet = true; m_dataSchema.assign(value); }
 
@@ -836,16 +836,16 @@ namespace Model
      * as a series of key-value pairs. <code>attributes</code> and
      * <code>excludedVariableNames</code> have an array of key-value pairs for their
      * value. Use the following format to define your <code>DataSchema</code>.</p> <p>{
-     * "version": "1.0",</p> <p> "recordAnnotationFieldName": "F1",</p> <p>
-     * "recordWeightFieldName": "F2",</p> <p> "targetFieldName": "F3",</p> <p>
-     * "dataFormat": "CSV",</p> <p> "dataFileContainsHeader": true,</p> <p>
-     * "attributes": [</p> <p> { "fieldName": "F1", "fieldType": "TEXT" }, {
+     * "version": "1.0",</p> <p>"recordAnnotationFieldName": "F1",</p>
+     * <p>"recordWeightFieldName": "F2",</p> <p>"targetFieldName": "F3",</p>
+     * <p>"dataFormat": "CSV",</p> <p>"dataFileContainsHeader": true,</p>
+     * <p>"attributes": [</p> <p>{ "fieldName": "F1", "fieldType": "TEXT" }, {
      * "fieldName": "F2", "fieldType": "NUMERIC" }, { "fieldName": "F3", "fieldType":
      * "CATEGORICAL" }, { "fieldName": "F4", "fieldType": "NUMERIC" }, { "fieldName":
      * "F5", "fieldType": "CATEGORICAL" }, { "fieldName": "F6", "fieldType": "TEXT" },
      * { "fieldName": "F7", "fieldType": "WEIGHTED_INT_SEQUENCE" }, { "fieldName":
-     * "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ],</p> <p>
-     * "excludedVariableNames": [ "F6" ] } </p>
+     * "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ],</p>
+     * <p>"excludedVariableNames": [ "F6" ] }</p>
      */
     inline RedshiftDataSpec& WithDataSchema(const Aws::String& value) { SetDataSchema(value); return *this;}
 
@@ -858,16 +858,16 @@ namespace Model
      * as a series of key-value pairs. <code>attributes</code> and
      * <code>excludedVariableNames</code> have an array of key-value pairs for their
      * value. Use the following format to define your <code>DataSchema</code>.</p> <p>{
-     * "version": "1.0",</p> <p> "recordAnnotationFieldName": "F1",</p> <p>
-     * "recordWeightFieldName": "F2",</p> <p> "targetFieldName": "F3",</p> <p>
-     * "dataFormat": "CSV",</p> <p> "dataFileContainsHeader": true,</p> <p>
-     * "attributes": [</p> <p> { "fieldName": "F1", "fieldType": "TEXT" }, {
+     * "version": "1.0",</p> <p>"recordAnnotationFieldName": "F1",</p>
+     * <p>"recordWeightFieldName": "F2",</p> <p>"targetFieldName": "F3",</p>
+     * <p>"dataFormat": "CSV",</p> <p>"dataFileContainsHeader": true,</p>
+     * <p>"attributes": [</p> <p>{ "fieldName": "F1", "fieldType": "TEXT" }, {
      * "fieldName": "F2", "fieldType": "NUMERIC" }, { "fieldName": "F3", "fieldType":
      * "CATEGORICAL" }, { "fieldName": "F4", "fieldType": "NUMERIC" }, { "fieldName":
      * "F5", "fieldType": "CATEGORICAL" }, { "fieldName": "F6", "fieldType": "TEXT" },
      * { "fieldName": "F7", "fieldType": "WEIGHTED_INT_SEQUENCE" }, { "fieldName":
-     * "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ],</p> <p>
-     * "excludedVariableNames": [ "F6" ] } </p>
+     * "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ],</p>
+     * <p>"excludedVariableNames": [ "F6" ] }</p>
      */
     inline RedshiftDataSpec& WithDataSchema(Aws::String&& value) { SetDataSchema(std::move(value)); return *this;}
 
@@ -880,16 +880,16 @@ namespace Model
      * as a series of key-value pairs. <code>attributes</code> and
      * <code>excludedVariableNames</code> have an array of key-value pairs for their
      * value. Use the following format to define your <code>DataSchema</code>.</p> <p>{
-     * "version": "1.0",</p> <p> "recordAnnotationFieldName": "F1",</p> <p>
-     * "recordWeightFieldName": "F2",</p> <p> "targetFieldName": "F3",</p> <p>
-     * "dataFormat": "CSV",</p> <p> "dataFileContainsHeader": true,</p> <p>
-     * "attributes": [</p> <p> { "fieldName": "F1", "fieldType": "TEXT" }, {
+     * "version": "1.0",</p> <p>"recordAnnotationFieldName": "F1",</p>
+     * <p>"recordWeightFieldName": "F2",</p> <p>"targetFieldName": "F3",</p>
+     * <p>"dataFormat": "CSV",</p> <p>"dataFileContainsHeader": true,</p>
+     * <p>"attributes": [</p> <p>{ "fieldName": "F1", "fieldType": "TEXT" }, {
      * "fieldName": "F2", "fieldType": "NUMERIC" }, { "fieldName": "F3", "fieldType":
      * "CATEGORICAL" }, { "fieldName": "F4", "fieldType": "NUMERIC" }, { "fieldName":
      * "F5", "fieldType": "CATEGORICAL" }, { "fieldName": "F6", "fieldType": "TEXT" },
      * { "fieldName": "F7", "fieldType": "WEIGHTED_INT_SEQUENCE" }, { "fieldName":
-     * "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ],</p> <p>
-     * "excludedVariableNames": [ "F6" ] } </p>
+     * "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ],</p>
+     * <p>"excludedVariableNames": [ "F6" ] }</p>
      */
     inline RedshiftDataSpec& WithDataSchema(const char* value) { SetDataSchema(value); return *this;}
 

@@ -35,7 +35,9 @@ Canary::Canary() :
     m_engineArnHasBeenSet(false),
     m_runtimeVersionHasBeenSet(false),
     m_vpcConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_visualReferenceHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_artifactConfigHasBeenSet(false)
 {
 }
 
@@ -56,7 +58,9 @@ Canary::Canary(JsonView jsonValue) :
     m_engineArnHasBeenSet(false),
     m_runtimeVersionHasBeenSet(false),
     m_vpcConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_visualReferenceHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_artifactConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -161,6 +165,13 @@ Canary& Canary::operator =(JsonView jsonValue)
     m_vpcConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("VisualReference"))
+  {
+    m_visualReference = jsonValue.GetObject("VisualReference");
+
+    m_visualReferenceHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -169,6 +180,13 @@ Canary& Canary::operator =(JsonView jsonValue)
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ArtifactConfig"))
+  {
+    m_artifactConfig = jsonValue.GetObject("ArtifactConfig");
+
+    m_artifactConfigHasBeenSet = true;
   }
 
   return *this;
@@ -262,6 +280,12 @@ JsonValue Canary::Jsonize() const
 
   }
 
+  if(m_visualReferenceHasBeenSet)
+  {
+   payload.WithObject("VisualReference", m_visualReference.Jsonize());
+
+  }
+
   if(m_tagsHasBeenSet)
   {
    JsonValue tagsJsonMap;
@@ -270,6 +294,12 @@ JsonValue Canary::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("Tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_artifactConfigHasBeenSet)
+  {
+   payload.WithObject("ArtifactConfig", m_artifactConfig.Jsonize());
 
   }
 

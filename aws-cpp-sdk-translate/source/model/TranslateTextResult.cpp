@@ -55,6 +55,12 @@ TranslateTextResult& TranslateTextResult::operator =(const Aws::AmazonWebService
     }
   }
 
+  if(jsonValue.ValueExists("AppliedSettings"))
+  {
+    m_appliedSettings = jsonValue.GetObject("AppliedSettings");
+
+  }
+
 
 
   return *this;

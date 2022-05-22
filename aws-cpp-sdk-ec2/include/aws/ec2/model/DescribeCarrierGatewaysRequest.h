@@ -89,11 +89,11 @@ namespace Model
      * ID of the carrier gateway.</p> </li> <li> <p> <code>state</code> - The state of
      * the carrier gateway (<code>pending</code> | <code>failed</code> |
      * <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p>
-     * </li> <li> <p> <code>owner-id</code> - The AWS account ID of the owner of the
-     * carrier gateway.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value
-     * combination of a tag assigned to the resource. Use the tag key in the filter
-     * name and the tag value as the filter value. For example, to find all resources
-     * that have a tag with the key <code>Owner</code> and the value
+     * </li> <li> <p> <code>owner-id</code> - The Amazon Web Services account ID of the
+     * owner of the carrier gateway.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; -
+     * The key/value combination of a tag assigned to the resource. Use the tag key in
+     * the filter name and the tag value as the filter value. For example, to find all
+     * resources that have a tag with the key <code>Owner</code> and the value
      * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
      * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
      * - The key of a tag assigned to the resource. Use this filter to find all
@@ -108,11 +108,11 @@ namespace Model
      * ID of the carrier gateway.</p> </li> <li> <p> <code>state</code> - The state of
      * the carrier gateway (<code>pending</code> | <code>failed</code> |
      * <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p>
-     * </li> <li> <p> <code>owner-id</code> - The AWS account ID of the owner of the
-     * carrier gateway.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value
-     * combination of a tag assigned to the resource. Use the tag key in the filter
-     * name and the tag value as the filter value. For example, to find all resources
-     * that have a tag with the key <code>Owner</code> and the value
+     * </li> <li> <p> <code>owner-id</code> - The Amazon Web Services account ID of the
+     * owner of the carrier gateway.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; -
+     * The key/value combination of a tag assigned to the resource. Use the tag key in
+     * the filter name and the tag value as the filter value. For example, to find all
+     * resources that have a tag with the key <code>Owner</code> and the value
      * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
      * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
      * - The key of a tag assigned to the resource. Use this filter to find all
@@ -127,11 +127,11 @@ namespace Model
      * ID of the carrier gateway.</p> </li> <li> <p> <code>state</code> - The state of
      * the carrier gateway (<code>pending</code> | <code>failed</code> |
      * <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p>
-     * </li> <li> <p> <code>owner-id</code> - The AWS account ID of the owner of the
-     * carrier gateway.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value
-     * combination of a tag assigned to the resource. Use the tag key in the filter
-     * name and the tag value as the filter value. For example, to find all resources
-     * that have a tag with the key <code>Owner</code> and the value
+     * </li> <li> <p> <code>owner-id</code> - The Amazon Web Services account ID of the
+     * owner of the carrier gateway.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; -
+     * The key/value combination of a tag assigned to the resource. Use the tag key in
+     * the filter name and the tag value as the filter value. For example, to find all
+     * resources that have a tag with the key <code>Owner</code> and the value
      * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
      * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
      * - The key of a tag assigned to the resource. Use this filter to find all
@@ -146,11 +146,11 @@ namespace Model
      * ID of the carrier gateway.</p> </li> <li> <p> <code>state</code> - The state of
      * the carrier gateway (<code>pending</code> | <code>failed</code> |
      * <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p>
-     * </li> <li> <p> <code>owner-id</code> - The AWS account ID of the owner of the
-     * carrier gateway.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value
-     * combination of a tag assigned to the resource. Use the tag key in the filter
-     * name and the tag value as the filter value. For example, to find all resources
-     * that have a tag with the key <code>Owner</code> and the value
+     * </li> <li> <p> <code>owner-id</code> - The Amazon Web Services account ID of the
+     * owner of the carrier gateway.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; -
+     * The key/value combination of a tag assigned to the resource. Use the tag key in
+     * the filter name and the tag value as the filter value. For example, to find all
+     * resources that have a tag with the key <code>Owner</code> and the value
      * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
      * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
      * - The key of a tag assigned to the resource. Use this filter to find all
@@ -165,11 +165,11 @@ namespace Model
      * ID of the carrier gateway.</p> </li> <li> <p> <code>state</code> - The state of
      * the carrier gateway (<code>pending</code> | <code>failed</code> |
      * <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p>
-     * </li> <li> <p> <code>owner-id</code> - The AWS account ID of the owner of the
-     * carrier gateway.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value
-     * combination of a tag assigned to the resource. Use the tag key in the filter
-     * name and the tag value as the filter value. For example, to find all resources
-     * that have a tag with the key <code>Owner</code> and the value
+     * </li> <li> <p> <code>owner-id</code> - The Amazon Web Services account ID of the
+     * owner of the carrier gateway.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; -
+     * The key/value combination of a tag assigned to the resource. Use the tag key in
+     * the filter name and the tag value as the filter value. For example, to find all
+     * resources that have a tag with the key <code>Owner</code> and the value
      * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
      * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
      * - The key of a tag assigned to the resource. Use this filter to find all
@@ -184,11 +184,11 @@ namespace Model
      * ID of the carrier gateway.</p> </li> <li> <p> <code>state</code> - The state of
      * the carrier gateway (<code>pending</code> | <code>failed</code> |
      * <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p>
-     * </li> <li> <p> <code>owner-id</code> - The AWS account ID of the owner of the
-     * carrier gateway.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value
-     * combination of a tag assigned to the resource. Use the tag key in the filter
-     * name and the tag value as the filter value. For example, to find all resources
-     * that have a tag with the key <code>Owner</code> and the value
+     * </li> <li> <p> <code>owner-id</code> - The Amazon Web Services account ID of the
+     * owner of the carrier gateway.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; -
+     * The key/value combination of a tag assigned to the resource. Use the tag key in
+     * the filter name and the tag value as the filter value. For example, to find all
+     * resources that have a tag with the key <code>Owner</code> and the value
      * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
      * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
      * - The key of a tag assigned to the resource. Use this filter to find all
@@ -203,11 +203,11 @@ namespace Model
      * ID of the carrier gateway.</p> </li> <li> <p> <code>state</code> - The state of
      * the carrier gateway (<code>pending</code> | <code>failed</code> |
      * <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p>
-     * </li> <li> <p> <code>owner-id</code> - The AWS account ID of the owner of the
-     * carrier gateway.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value
-     * combination of a tag assigned to the resource. Use the tag key in the filter
-     * name and the tag value as the filter value. For example, to find all resources
-     * that have a tag with the key <code>Owner</code> and the value
+     * </li> <li> <p> <code>owner-id</code> - The Amazon Web Services account ID of the
+     * owner of the carrier gateway.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; -
+     * The key/value combination of a tag assigned to the resource. Use the tag key in
+     * the filter name and the tag value as the filter value. For example, to find all
+     * resources that have a tag with the key <code>Owner</code> and the value
      * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
      * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
      * - The key of a tag assigned to the resource. Use this filter to find all
@@ -222,11 +222,11 @@ namespace Model
      * ID of the carrier gateway.</p> </li> <li> <p> <code>state</code> - The state of
      * the carrier gateway (<code>pending</code> | <code>failed</code> |
      * <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p>
-     * </li> <li> <p> <code>owner-id</code> - The AWS account ID of the owner of the
-     * carrier gateway.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value
-     * combination of a tag assigned to the resource. Use the tag key in the filter
-     * name and the tag value as the filter value. For example, to find all resources
-     * that have a tag with the key <code>Owner</code> and the value
+     * </li> <li> <p> <code>owner-id</code> - The Amazon Web Services account ID of the
+     * owner of the carrier gateway.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; -
+     * The key/value combination of a tag assigned to the resource. Use the tag key in
+     * the filter name and the tag value as the filter value. For example, to find all
+     * resources that have a tag with the key <code>Owner</code> and the value
      * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
      * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
      * - The key of a tag assigned to the resource. Use this filter to find all

@@ -26,12 +26,12 @@ namespace Model
 {
 
   /**
-   * <p>Describes a filter for a specific list of instances. You can filter instances
+   * <p>Describes a filter for a specific list of managed nodes. You can filter node
    * information by using tags. You specify tags by using a key-value mapping.</p>
-   * <p>Use this action instead of the
+   * <p>Use this operation instead of the
    * <a>DescribeInstanceInformationRequest$InstanceInformationFilterList</a> method.
    * The <code>InstanceInformationFilterList</code> method is a legacy method and
-   * does not support tags. </p><p><h3>See Also:</h3>   <a
+   * doesn't support tags. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/InstanceInformationFilter">AWS
    * API Reference</a></p>
    */

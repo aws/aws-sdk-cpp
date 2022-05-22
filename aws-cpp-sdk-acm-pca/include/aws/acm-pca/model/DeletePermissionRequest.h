@@ -116,99 +116,99 @@ namespace Model
 
 
     /**
-     * <p>The AWS service or identity that will have its CA permissions revoked. At
-     * this time, the only valid service principal is <code>acm.amazonaws.com</code>
-     * </p>
+     * <p>The Amazon Web Services service or identity that will have its CA permissions
+     * revoked. At this time, the only valid service principal is
+     * <code>acm.amazonaws.com</code> </p>
      */
     inline const Aws::String& GetPrincipal() const{ return m_principal; }
 
     /**
-     * <p>The AWS service or identity that will have its CA permissions revoked. At
-     * this time, the only valid service principal is <code>acm.amazonaws.com</code>
-     * </p>
+     * <p>The Amazon Web Services service or identity that will have its CA permissions
+     * revoked. At this time, the only valid service principal is
+     * <code>acm.amazonaws.com</code> </p>
      */
     inline bool PrincipalHasBeenSet() const { return m_principalHasBeenSet; }
 
     /**
-     * <p>The AWS service or identity that will have its CA permissions revoked. At
-     * this time, the only valid service principal is <code>acm.amazonaws.com</code>
-     * </p>
+     * <p>The Amazon Web Services service or identity that will have its CA permissions
+     * revoked. At this time, the only valid service principal is
+     * <code>acm.amazonaws.com</code> </p>
      */
     inline void SetPrincipal(const Aws::String& value) { m_principalHasBeenSet = true; m_principal = value; }
 
     /**
-     * <p>The AWS service or identity that will have its CA permissions revoked. At
-     * this time, the only valid service principal is <code>acm.amazonaws.com</code>
-     * </p>
+     * <p>The Amazon Web Services service or identity that will have its CA permissions
+     * revoked. At this time, the only valid service principal is
+     * <code>acm.amazonaws.com</code> </p>
      */
     inline void SetPrincipal(Aws::String&& value) { m_principalHasBeenSet = true; m_principal = std::move(value); }
 
     /**
-     * <p>The AWS service or identity that will have its CA permissions revoked. At
-     * this time, the only valid service principal is <code>acm.amazonaws.com</code>
-     * </p>
+     * <p>The Amazon Web Services service or identity that will have its CA permissions
+     * revoked. At this time, the only valid service principal is
+     * <code>acm.amazonaws.com</code> </p>
      */
     inline void SetPrincipal(const char* value) { m_principalHasBeenSet = true; m_principal.assign(value); }
 
     /**
-     * <p>The AWS service or identity that will have its CA permissions revoked. At
-     * this time, the only valid service principal is <code>acm.amazonaws.com</code>
-     * </p>
+     * <p>The Amazon Web Services service or identity that will have its CA permissions
+     * revoked. At this time, the only valid service principal is
+     * <code>acm.amazonaws.com</code> </p>
      */
     inline DeletePermissionRequest& WithPrincipal(const Aws::String& value) { SetPrincipal(value); return *this;}
 
     /**
-     * <p>The AWS service or identity that will have its CA permissions revoked. At
-     * this time, the only valid service principal is <code>acm.amazonaws.com</code>
-     * </p>
+     * <p>The Amazon Web Services service or identity that will have its CA permissions
+     * revoked. At this time, the only valid service principal is
+     * <code>acm.amazonaws.com</code> </p>
      */
     inline DeletePermissionRequest& WithPrincipal(Aws::String&& value) { SetPrincipal(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS service or identity that will have its CA permissions revoked. At
-     * this time, the only valid service principal is <code>acm.amazonaws.com</code>
-     * </p>
+     * <p>The Amazon Web Services service or identity that will have its CA permissions
+     * revoked. At this time, the only valid service principal is
+     * <code>acm.amazonaws.com</code> </p>
      */
     inline DeletePermissionRequest& WithPrincipal(const char* value) { SetPrincipal(value); return *this;}
 
 
     /**
-     * <p>The AWS account that calls this action.</p>
+     * <p>The Amazon Web Services account that calls this action.</p>
      */
     inline const Aws::String& GetSourceAccount() const{ return m_sourceAccount; }
 
     /**
-     * <p>The AWS account that calls this action.</p>
+     * <p>The Amazon Web Services account that calls this action.</p>
      */
     inline bool SourceAccountHasBeenSet() const { return m_sourceAccountHasBeenSet; }
 
     /**
-     * <p>The AWS account that calls this action.</p>
+     * <p>The Amazon Web Services account that calls this action.</p>
      */
     inline void SetSourceAccount(const Aws::String& value) { m_sourceAccountHasBeenSet = true; m_sourceAccount = value; }
 
     /**
-     * <p>The AWS account that calls this action.</p>
+     * <p>The Amazon Web Services account that calls this action.</p>
      */
     inline void SetSourceAccount(Aws::String&& value) { m_sourceAccountHasBeenSet = true; m_sourceAccount = std::move(value); }
 
     /**
-     * <p>The AWS account that calls this action.</p>
+     * <p>The Amazon Web Services account that calls this action.</p>
      */
     inline void SetSourceAccount(const char* value) { m_sourceAccountHasBeenSet = true; m_sourceAccount.assign(value); }
 
     /**
-     * <p>The AWS account that calls this action.</p>
+     * <p>The Amazon Web Services account that calls this action.</p>
      */
     inline DeletePermissionRequest& WithSourceAccount(const Aws::String& value) { SetSourceAccount(value); return *this;}
 
     /**
-     * <p>The AWS account that calls this action.</p>
+     * <p>The Amazon Web Services account that calls this action.</p>
      */
     inline DeletePermissionRequest& WithSourceAccount(Aws::String&& value) { SetSourceAccount(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account that calls this action.</p>
+     * <p>The Amazon Web Services account that calls this action.</p>
      */
     inline DeletePermissionRequest& WithSourceAccount(const char* value) { SetSourceAccount(value); return *this;}
 

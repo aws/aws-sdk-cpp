@@ -39,25 +39,25 @@ namespace Model
 
 
     /**
-     * <p>The total number of items to delete. This count does not change during the
+     * <p>The total number of items to delete. This count doesn't change during the
      * delete operation.</p>
      */
     inline int GetTotalCount() const{ return m_totalCount; }
 
     /**
-     * <p>The total number of items to delete. This count does not change during the
+     * <p>The total number of items to delete. This count doesn't change during the
      * delete operation.</p>
      */
     inline bool TotalCountHasBeenSet() const { return m_totalCountHasBeenSet; }
 
     /**
-     * <p>The total number of items to delete. This count does not change during the
+     * <p>The total number of items to delete. This count doesn't change during the
      * delete operation.</p>
      */
     inline void SetTotalCount(int value) { m_totalCountHasBeenSet = true; m_totalCount = value; }
 
     /**
-     * <p>The total number of items to delete. This count does not change during the
+     * <p>The total number of items to delete. This count doesn't change during the
      * delete operation.</p>
      */
     inline InventoryDeletionSummary& WithTotalCount(int value) { SetTotalCount(value); return *this;}

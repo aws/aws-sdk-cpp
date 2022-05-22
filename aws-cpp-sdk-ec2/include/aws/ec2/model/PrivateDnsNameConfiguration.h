@@ -25,11 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Information about the private DNS name for the service endpoint. For more
-   * information about these parameters, see <a
-   * href="https://docs.aws.amazon.com/vpc/latest/userguide/ndpoint-services-dns-validation.html">VPC
-   * Endpoint Service Private DNS Name Verification</a> in the <i>Amazon Virtual
-   * Private Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about the private DNS name for the service
+   * endpoint.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PrivateDnsNameConfiguration">AWS
    * API Reference</a></p>
    */

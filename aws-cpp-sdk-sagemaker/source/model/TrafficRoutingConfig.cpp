@@ -23,7 +23,8 @@ TrafficRoutingConfig::TrafficRoutingConfig() :
     m_typeHasBeenSet(false),
     m_waitIntervalInSeconds(0),
     m_waitIntervalInSecondsHasBeenSet(false),
-    m_canarySizeHasBeenSet(false)
+    m_canarySizeHasBeenSet(false),
+    m_linearStepSizeHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ TrafficRoutingConfig::TrafficRoutingConfig(JsonView jsonValue) :
     m_typeHasBeenSet(false),
     m_waitIntervalInSeconds(0),
     m_waitIntervalInSecondsHasBeenSet(false),
-    m_canarySizeHasBeenSet(false)
+    m_canarySizeHasBeenSet(false),
+    m_linearStepSizeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -60,6 +62,13 @@ TrafficRoutingConfig& TrafficRoutingConfig::operator =(JsonView jsonValue)
     m_canarySizeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LinearStepSize"))
+  {
+    m_linearStepSize = jsonValue.GetObject("LinearStepSize");
+
+    m_linearStepSizeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -81,6 +90,12 @@ JsonValue TrafficRoutingConfig::Jsonize() const
   if(m_canarySizeHasBeenSet)
   {
    payload.WithObject("CanarySize", m_canarySize.Jsonize());
+
+  }
+
+  if(m_linearStepSizeHasBeenSet)
+  {
+   payload.WithObject("LinearStepSize", m_linearStepSize.Jsonize());
 
   }
 

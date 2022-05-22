@@ -70,37 +70,37 @@ namespace Model
 
 
     /**
-     * <p>The AWS IoT job ID associated with the OTA update.</p>
+     * <p>The IoT job ID associated with the OTA update.</p>
      */
     inline const Aws::String& GetAwsIotJobId() const{ return m_awsIotJobId; }
 
     /**
-     * <p>The AWS IoT job ID associated with the OTA update.</p>
+     * <p>The IoT job ID associated with the OTA update.</p>
      */
     inline void SetAwsIotJobId(const Aws::String& value) { m_awsIotJobId = value; }
 
     /**
-     * <p>The AWS IoT job ID associated with the OTA update.</p>
+     * <p>The IoT job ID associated with the OTA update.</p>
      */
     inline void SetAwsIotJobId(Aws::String&& value) { m_awsIotJobId = std::move(value); }
 
     /**
-     * <p>The AWS IoT job ID associated with the OTA update.</p>
+     * <p>The IoT job ID associated with the OTA update.</p>
      */
     inline void SetAwsIotJobId(const char* value) { m_awsIotJobId.assign(value); }
 
     /**
-     * <p>The AWS IoT job ID associated with the OTA update.</p>
+     * <p>The IoT job ID associated with the OTA update.</p>
      */
     inline CreateOTAUpdateResult& WithAwsIotJobId(const Aws::String& value) { SetAwsIotJobId(value); return *this;}
 
     /**
-     * <p>The AWS IoT job ID associated with the OTA update.</p>
+     * <p>The IoT job ID associated with the OTA update.</p>
      */
     inline CreateOTAUpdateResult& WithAwsIotJobId(Aws::String&& value) { SetAwsIotJobId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS IoT job ID associated with the OTA update.</p>
+     * <p>The IoT job ID associated with the OTA update.</p>
      */
     inline CreateOTAUpdateResult& WithAwsIotJobId(const char* value) { SetAwsIotJobId(value); return *this;}
 
@@ -142,37 +142,37 @@ namespace Model
 
 
     /**
-     * <p>The AWS IoT job ARN associated with the OTA update.</p>
+     * <p>The IoT job ARN associated with the OTA update.</p>
      */
     inline const Aws::String& GetAwsIotJobArn() const{ return m_awsIotJobArn; }
 
     /**
-     * <p>The AWS IoT job ARN associated with the OTA update.</p>
+     * <p>The IoT job ARN associated with the OTA update.</p>
      */
     inline void SetAwsIotJobArn(const Aws::String& value) { m_awsIotJobArn = value; }
 
     /**
-     * <p>The AWS IoT job ARN associated with the OTA update.</p>
+     * <p>The IoT job ARN associated with the OTA update.</p>
      */
     inline void SetAwsIotJobArn(Aws::String&& value) { m_awsIotJobArn = std::move(value); }
 
     /**
-     * <p>The AWS IoT job ARN associated with the OTA update.</p>
+     * <p>The IoT job ARN associated with the OTA update.</p>
      */
     inline void SetAwsIotJobArn(const char* value) { m_awsIotJobArn.assign(value); }
 
     /**
-     * <p>The AWS IoT job ARN associated with the OTA update.</p>
+     * <p>The IoT job ARN associated with the OTA update.</p>
      */
     inline CreateOTAUpdateResult& WithAwsIotJobArn(const Aws::String& value) { SetAwsIotJobArn(value); return *this;}
 
     /**
-     * <p>The AWS IoT job ARN associated with the OTA update.</p>
+     * <p>The IoT job ARN associated with the OTA update.</p>
      */
     inline CreateOTAUpdateResult& WithAwsIotJobArn(Aws::String&& value) { SetAwsIotJobArn(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS IoT job ARN associated with the OTA update.</p>
+     * <p>The IoT job ARN associated with the OTA update.</p>
      */
     inline CreateOTAUpdateResult& WithAwsIotJobArn(const char* value) { SetAwsIotJobArn(value); return *this;}
 

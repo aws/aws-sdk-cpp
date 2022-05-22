@@ -48,7 +48,8 @@ RestoreDBClusterFromS3Request::RestoreDBClusterFromS3Request() :
     m_copyTagsToSnapshot(false),
     m_copyTagsToSnapshotHasBeenSet(false),
     m_domainHasBeenSet(false),
-    m_domainIAMRoleNameHasBeenSet(false)
+    m_domainIAMRoleNameHasBeenSet(false),
+    m_serverlessV2ScalingConfigurationHasBeenSet(false)
 {
 }
 
@@ -232,6 +233,11 @@ Aws::String RestoreDBClusterFromS3Request::SerializePayload() const
   if(m_domainIAMRoleNameHasBeenSet)
   {
     ss << "DomainIAMRoleName=" << StringUtils::URLEncode(m_domainIAMRoleName.c_str()) << "&";
+  }
+
+  if(m_serverlessV2ScalingConfigurationHasBeenSet)
+  {
+    m_serverlessV2ScalingConfiguration.OutputToStream(ss, "ServerlessV2ScalingConfiguration");
   }
 
   ss << "Version=2014-10-31";

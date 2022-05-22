@@ -34,27 +34,27 @@ namespace Model
 
 
     /**
-     * <p>The retention settings for the app instance.</p>
+     * <p>The retention settings for the <code>AppInstance</code>.</p>
      */
     inline const AppInstanceRetentionSettings& GetAppInstanceRetentionSettings() const{ return m_appInstanceRetentionSettings; }
 
     /**
-     * <p>The retention settings for the app instance.</p>
+     * <p>The retention settings for the <code>AppInstance</code>.</p>
      */
     inline void SetAppInstanceRetentionSettings(const AppInstanceRetentionSettings& value) { m_appInstanceRetentionSettings = value; }
 
     /**
-     * <p>The retention settings for the app instance.</p>
+     * <p>The retention settings for the <code>AppInstance</code>.</p>
      */
     inline void SetAppInstanceRetentionSettings(AppInstanceRetentionSettings&& value) { m_appInstanceRetentionSettings = std::move(value); }
 
     /**
-     * <p>The retention settings for the app instance.</p>
+     * <p>The retention settings for the <code>AppInstance</code>.</p>
      */
     inline GetAppInstanceRetentionSettingsResult& WithAppInstanceRetentionSettings(const AppInstanceRetentionSettings& value) { SetAppInstanceRetentionSettings(value); return *this;}
 
     /**
-     * <p>The retention settings for the app instance.</p>
+     * <p>The retention settings for the <code>AppInstance</code>.</p>
      */
     inline GetAppInstanceRetentionSettingsResult& WithAppInstanceRetentionSettings(AppInstanceRetentionSettings&& value) { SetAppInstanceRetentionSettings(std::move(value)); return *this;}
 

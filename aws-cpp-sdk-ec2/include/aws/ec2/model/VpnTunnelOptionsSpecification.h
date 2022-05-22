@@ -346,8 +346,8 @@ namespace Model
 
     /**
      * <p>The margin time, in seconds, before the phase 2 lifetime expires, during
-     * which the AWS side of the VPN connection performs an IKE rekey. The exact time
-     * of the rekey is randomly selected based on the value for
+     * which the Amazon Web Services side of the VPN connection performs an IKE rekey.
+     * The exact time of the rekey is randomly selected based on the value for
      * <code>RekeyFuzzPercentage</code>.</p> <p>Constraints: A value between 60 and
      * half of <code>Phase2LifetimeSeconds</code>.</p> <p>Default: <code>540</code>
      * </p>
@@ -356,8 +356,8 @@ namespace Model
 
     /**
      * <p>The margin time, in seconds, before the phase 2 lifetime expires, during
-     * which the AWS side of the VPN connection performs an IKE rekey. The exact time
-     * of the rekey is randomly selected based on the value for
+     * which the Amazon Web Services side of the VPN connection performs an IKE rekey.
+     * The exact time of the rekey is randomly selected based on the value for
      * <code>RekeyFuzzPercentage</code>.</p> <p>Constraints: A value between 60 and
      * half of <code>Phase2LifetimeSeconds</code>.</p> <p>Default: <code>540</code>
      * </p>
@@ -366,8 +366,8 @@ namespace Model
 
     /**
      * <p>The margin time, in seconds, before the phase 2 lifetime expires, during
-     * which the AWS side of the VPN connection performs an IKE rekey. The exact time
-     * of the rekey is randomly selected based on the value for
+     * which the Amazon Web Services side of the VPN connection performs an IKE rekey.
+     * The exact time of the rekey is randomly selected based on the value for
      * <code>RekeyFuzzPercentage</code>.</p> <p>Constraints: A value between 60 and
      * half of <code>Phase2LifetimeSeconds</code>.</p> <p>Default: <code>540</code>
      * </p>
@@ -376,8 +376,8 @@ namespace Model
 
     /**
      * <p>The margin time, in seconds, before the phase 2 lifetime expires, during
-     * which the AWS side of the VPN connection performs an IKE rekey. The exact time
-     * of the rekey is randomly selected based on the value for
+     * which the Amazon Web Services side of the VPN connection performs an IKE rekey.
+     * The exact time of the rekey is randomly selected based on the value for
      * <code>RekeyFuzzPercentage</code>.</p> <p>Constraints: A value between 60 and
      * half of <code>Phase2LifetimeSeconds</code>.</p> <p>Default: <code>540</code>
      * </p>
@@ -445,25 +445,25 @@ namespace Model
 
     /**
      * <p>The number of seconds after which a DPD timeout occurs.</p> <p>Constraints: A
-     * value between 0 and 30.</p> <p>Default: <code>30</code> </p>
+     * value greater than or equal to 30.</p> <p>Default: <code>30</code> </p>
      */
     inline int GetDPDTimeoutSeconds() const{ return m_dPDTimeoutSeconds; }
 
     /**
      * <p>The number of seconds after which a DPD timeout occurs.</p> <p>Constraints: A
-     * value between 0 and 30.</p> <p>Default: <code>30</code> </p>
+     * value greater than or equal to 30.</p> <p>Default: <code>30</code> </p>
      */
     inline bool DPDTimeoutSecondsHasBeenSet() const { return m_dPDTimeoutSecondsHasBeenSet; }
 
     /**
      * <p>The number of seconds after which a DPD timeout occurs.</p> <p>Constraints: A
-     * value between 0 and 30.</p> <p>Default: <code>30</code> </p>
+     * value greater than or equal to 30.</p> <p>Default: <code>30</code> </p>
      */
     inline void SetDPDTimeoutSeconds(int value) { m_dPDTimeoutSecondsHasBeenSet = true; m_dPDTimeoutSeconds = value; }
 
     /**
      * <p>The number of seconds after which a DPD timeout occurs.</p> <p>Constraints: A
-     * value between 0 and 30.</p> <p>Default: <code>30</code> </p>
+     * value greater than or equal to 30.</p> <p>Default: <code>30</code> </p>
      */
     inline VpnTunnelOptionsSpecification& WithDPDTimeoutSeconds(int value) { SetDPDTimeoutSeconds(value); return *this;}
 
@@ -975,72 +975,72 @@ namespace Model
     /**
      * <p>The action to take when the establishing the tunnel for the VPN connection.
      * By default, your customer gateway device must initiate the IKE negotiation and
-     * bring up the tunnel. Specify <code>start</code> for AWS to initiate the IKE
-     * negotiation.</p> <p>Valid Values: <code>add</code> | <code>start</code> </p>
-     * <p>Default: <code>add</code> </p>
+     * bring up the tunnel. Specify <code>start</code> for Amazon Web Services to
+     * initiate the IKE negotiation.</p> <p>Valid Values: <code>add</code> |
+     * <code>start</code> </p> <p>Default: <code>add</code> </p>
      */
     inline const Aws::String& GetStartupAction() const{ return m_startupAction; }
 
     /**
      * <p>The action to take when the establishing the tunnel for the VPN connection.
      * By default, your customer gateway device must initiate the IKE negotiation and
-     * bring up the tunnel. Specify <code>start</code> for AWS to initiate the IKE
-     * negotiation.</p> <p>Valid Values: <code>add</code> | <code>start</code> </p>
-     * <p>Default: <code>add</code> </p>
+     * bring up the tunnel. Specify <code>start</code> for Amazon Web Services to
+     * initiate the IKE negotiation.</p> <p>Valid Values: <code>add</code> |
+     * <code>start</code> </p> <p>Default: <code>add</code> </p>
      */
     inline bool StartupActionHasBeenSet() const { return m_startupActionHasBeenSet; }
 
     /**
      * <p>The action to take when the establishing the tunnel for the VPN connection.
      * By default, your customer gateway device must initiate the IKE negotiation and
-     * bring up the tunnel. Specify <code>start</code> for AWS to initiate the IKE
-     * negotiation.</p> <p>Valid Values: <code>add</code> | <code>start</code> </p>
-     * <p>Default: <code>add</code> </p>
+     * bring up the tunnel. Specify <code>start</code> for Amazon Web Services to
+     * initiate the IKE negotiation.</p> <p>Valid Values: <code>add</code> |
+     * <code>start</code> </p> <p>Default: <code>add</code> </p>
      */
     inline void SetStartupAction(const Aws::String& value) { m_startupActionHasBeenSet = true; m_startupAction = value; }
 
     /**
      * <p>The action to take when the establishing the tunnel for the VPN connection.
      * By default, your customer gateway device must initiate the IKE negotiation and
-     * bring up the tunnel. Specify <code>start</code> for AWS to initiate the IKE
-     * negotiation.</p> <p>Valid Values: <code>add</code> | <code>start</code> </p>
-     * <p>Default: <code>add</code> </p>
+     * bring up the tunnel. Specify <code>start</code> for Amazon Web Services to
+     * initiate the IKE negotiation.</p> <p>Valid Values: <code>add</code> |
+     * <code>start</code> </p> <p>Default: <code>add</code> </p>
      */
     inline void SetStartupAction(Aws::String&& value) { m_startupActionHasBeenSet = true; m_startupAction = std::move(value); }
 
     /**
      * <p>The action to take when the establishing the tunnel for the VPN connection.
      * By default, your customer gateway device must initiate the IKE negotiation and
-     * bring up the tunnel. Specify <code>start</code> for AWS to initiate the IKE
-     * negotiation.</p> <p>Valid Values: <code>add</code> | <code>start</code> </p>
-     * <p>Default: <code>add</code> </p>
+     * bring up the tunnel. Specify <code>start</code> for Amazon Web Services to
+     * initiate the IKE negotiation.</p> <p>Valid Values: <code>add</code> |
+     * <code>start</code> </p> <p>Default: <code>add</code> </p>
      */
     inline void SetStartupAction(const char* value) { m_startupActionHasBeenSet = true; m_startupAction.assign(value); }
 
     /**
      * <p>The action to take when the establishing the tunnel for the VPN connection.
      * By default, your customer gateway device must initiate the IKE negotiation and
-     * bring up the tunnel. Specify <code>start</code> for AWS to initiate the IKE
-     * negotiation.</p> <p>Valid Values: <code>add</code> | <code>start</code> </p>
-     * <p>Default: <code>add</code> </p>
+     * bring up the tunnel. Specify <code>start</code> for Amazon Web Services to
+     * initiate the IKE negotiation.</p> <p>Valid Values: <code>add</code> |
+     * <code>start</code> </p> <p>Default: <code>add</code> </p>
      */
     inline VpnTunnelOptionsSpecification& WithStartupAction(const Aws::String& value) { SetStartupAction(value); return *this;}
 
     /**
      * <p>The action to take when the establishing the tunnel for the VPN connection.
      * By default, your customer gateway device must initiate the IKE negotiation and
-     * bring up the tunnel. Specify <code>start</code> for AWS to initiate the IKE
-     * negotiation.</p> <p>Valid Values: <code>add</code> | <code>start</code> </p>
-     * <p>Default: <code>add</code> </p>
+     * bring up the tunnel. Specify <code>start</code> for Amazon Web Services to
+     * initiate the IKE negotiation.</p> <p>Valid Values: <code>add</code> |
+     * <code>start</code> </p> <p>Default: <code>add</code> </p>
      */
     inline VpnTunnelOptionsSpecification& WithStartupAction(Aws::String&& value) { SetStartupAction(std::move(value)); return *this;}
 
     /**
      * <p>The action to take when the establishing the tunnel for the VPN connection.
      * By default, your customer gateway device must initiate the IKE negotiation and
-     * bring up the tunnel. Specify <code>start</code> for AWS to initiate the IKE
-     * negotiation.</p> <p>Valid Values: <code>add</code> | <code>start</code> </p>
-     * <p>Default: <code>add</code> </p>
+     * bring up the tunnel. Specify <code>start</code> for Amazon Web Services to
+     * initiate the IKE negotiation.</p> <p>Valid Values: <code>add</code> |
+     * <code>start</code> </p> <p>Default: <code>add</code> </p>
      */
     inline VpnTunnelOptionsSpecification& WithStartupAction(const char* value) { SetStartupAction(value); return *this;}
 

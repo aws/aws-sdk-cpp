@@ -23,7 +23,9 @@ AccountSettings::AccountSettings() :
     m_edition(Edition::NOT_SET),
     m_editionHasBeenSet(false),
     m_defaultNamespaceHasBeenSet(false),
-    m_notificationEmailHasBeenSet(false)
+    m_notificationEmailHasBeenSet(false),
+    m_publicSharingEnabled(false),
+    m_publicSharingEnabledHasBeenSet(false)
 {
 }
 
@@ -32,7 +34,9 @@ AccountSettings::AccountSettings(JsonView jsonValue) :
     m_edition(Edition::NOT_SET),
     m_editionHasBeenSet(false),
     m_defaultNamespaceHasBeenSet(false),
-    m_notificationEmailHasBeenSet(false)
+    m_notificationEmailHasBeenSet(false),
+    m_publicSharingEnabled(false),
+    m_publicSharingEnabledHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -67,6 +71,13 @@ AccountSettings& AccountSettings::operator =(JsonView jsonValue)
     m_notificationEmailHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PublicSharingEnabled"))
+  {
+    m_publicSharingEnabled = jsonValue.GetBool("PublicSharingEnabled");
+
+    m_publicSharingEnabledHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -94,6 +105,12 @@ JsonValue AccountSettings::Jsonize() const
   if(m_notificationEmailHasBeenSet)
   {
    payload.WithString("NotificationEmail", m_notificationEmail);
+
+  }
+
+  if(m_publicSharingEnabledHasBeenSet)
+  {
+   payload.WithBool("PublicSharingEnabled", m_publicSharingEnabled);
 
   }
 

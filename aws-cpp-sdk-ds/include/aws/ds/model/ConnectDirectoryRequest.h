@@ -43,132 +43,140 @@ namespace Model
 
 
     /**
-     * <p>The fully qualified name of the on-premises directory, such as
+     * <p>The fully qualified name of your self-managed directory, such as
      * <code>corp.example.com</code>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The fully qualified name of the on-premises directory, such as
+     * <p>The fully qualified name of your self-managed directory, such as
      * <code>corp.example.com</code>.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The fully qualified name of the on-premises directory, such as
+     * <p>The fully qualified name of your self-managed directory, such as
      * <code>corp.example.com</code>.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The fully qualified name of the on-premises directory, such as
+     * <p>The fully qualified name of your self-managed directory, such as
      * <code>corp.example.com</code>.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The fully qualified name of the on-premises directory, such as
+     * <p>The fully qualified name of your self-managed directory, such as
      * <code>corp.example.com</code>.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The fully qualified name of the on-premises directory, such as
+     * <p>The fully qualified name of your self-managed directory, such as
      * <code>corp.example.com</code>.</p>
      */
     inline ConnectDirectoryRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The fully qualified name of the on-premises directory, such as
+     * <p>The fully qualified name of your self-managed directory, such as
      * <code>corp.example.com</code>.</p>
      */
     inline ConnectDirectoryRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The fully qualified name of the on-premises directory, such as
+     * <p>The fully qualified name of your self-managed directory, such as
      * <code>corp.example.com</code>.</p>
      */
     inline ConnectDirectoryRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>The NetBIOS name of the on-premises directory, such as <code>CORP</code>.</p>
+     * <p>The NetBIOS name of your self-managed directory, such as
+     * <code>CORP</code>.</p>
      */
     inline const Aws::String& GetShortName() const{ return m_shortName; }
 
     /**
-     * <p>The NetBIOS name of the on-premises directory, such as <code>CORP</code>.</p>
+     * <p>The NetBIOS name of your self-managed directory, such as
+     * <code>CORP</code>.</p>
      */
     inline bool ShortNameHasBeenSet() const { return m_shortNameHasBeenSet; }
 
     /**
-     * <p>The NetBIOS name of the on-premises directory, such as <code>CORP</code>.</p>
+     * <p>The NetBIOS name of your self-managed directory, such as
+     * <code>CORP</code>.</p>
      */
     inline void SetShortName(const Aws::String& value) { m_shortNameHasBeenSet = true; m_shortName = value; }
 
     /**
-     * <p>The NetBIOS name of the on-premises directory, such as <code>CORP</code>.</p>
+     * <p>The NetBIOS name of your self-managed directory, such as
+     * <code>CORP</code>.</p>
      */
     inline void SetShortName(Aws::String&& value) { m_shortNameHasBeenSet = true; m_shortName = std::move(value); }
 
     /**
-     * <p>The NetBIOS name of the on-premises directory, such as <code>CORP</code>.</p>
+     * <p>The NetBIOS name of your self-managed directory, such as
+     * <code>CORP</code>.</p>
      */
     inline void SetShortName(const char* value) { m_shortNameHasBeenSet = true; m_shortName.assign(value); }
 
     /**
-     * <p>The NetBIOS name of the on-premises directory, such as <code>CORP</code>.</p>
+     * <p>The NetBIOS name of your self-managed directory, such as
+     * <code>CORP</code>.</p>
      */
     inline ConnectDirectoryRequest& WithShortName(const Aws::String& value) { SetShortName(value); return *this;}
 
     /**
-     * <p>The NetBIOS name of the on-premises directory, such as <code>CORP</code>.</p>
+     * <p>The NetBIOS name of your self-managed directory, such as
+     * <code>CORP</code>.</p>
      */
     inline ConnectDirectoryRequest& WithShortName(Aws::String&& value) { SetShortName(std::move(value)); return *this;}
 
     /**
-     * <p>The NetBIOS name of the on-premises directory, such as <code>CORP</code>.</p>
+     * <p>The NetBIOS name of your self-managed directory, such as
+     * <code>CORP</code>.</p>
      */
     inline ConnectDirectoryRequest& WithShortName(const char* value) { SetShortName(value); return *this;}
 
 
     /**
-     * <p>The password for the on-premises user account.</p>
+     * <p>The password for your self-managed user account.</p>
      */
     inline const Aws::String& GetPassword() const{ return m_password; }
 
     /**
-     * <p>The password for the on-premises user account.</p>
+     * <p>The password for your self-managed user account.</p>
      */
     inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
 
     /**
-     * <p>The password for the on-premises user account.</p>
+     * <p>The password for your self-managed user account.</p>
      */
     inline void SetPassword(const Aws::String& value) { m_passwordHasBeenSet = true; m_password = value; }
 
     /**
-     * <p>The password for the on-premises user account.</p>
+     * <p>The password for your self-managed user account.</p>
      */
     inline void SetPassword(Aws::String&& value) { m_passwordHasBeenSet = true; m_password = std::move(value); }
 
     /**
-     * <p>The password for the on-premises user account.</p>
+     * <p>The password for your self-managed user account.</p>
      */
     inline void SetPassword(const char* value) { m_passwordHasBeenSet = true; m_password.assign(value); }
 
     /**
-     * <p>The password for the on-premises user account.</p>
+     * <p>The password for your self-managed user account.</p>
      */
     inline ConnectDirectoryRequest& WithPassword(const Aws::String& value) { SetPassword(value); return *this;}
 
     /**
-     * <p>The password for the on-premises user account.</p>
+     * <p>The password for your self-managed user account.</p>
      */
     inline ConnectDirectoryRequest& WithPassword(Aws::String&& value) { SetPassword(std::move(value)); return *this;}
 
     /**
-     * <p>The password for the on-premises user account.</p>
+     * <p>The password for your self-managed user account.</p>
      */
     inline ConnectDirectoryRequest& WithPassword(const char* value) { SetPassword(value); return *this;}
 

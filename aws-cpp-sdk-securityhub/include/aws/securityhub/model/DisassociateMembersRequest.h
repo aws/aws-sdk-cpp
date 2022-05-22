@@ -34,55 +34,55 @@ namespace Model
 
 
     /**
-     * <p>The account IDs of the member accounts to disassociate from the master
+     * <p>The account IDs of the member accounts to disassociate from the administrator
      * account.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAccountIds() const{ return m_accountIds; }
 
     /**
-     * <p>The account IDs of the member accounts to disassociate from the master
+     * <p>The account IDs of the member accounts to disassociate from the administrator
      * account.</p>
      */
     inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }
 
     /**
-     * <p>The account IDs of the member accounts to disassociate from the master
+     * <p>The account IDs of the member accounts to disassociate from the administrator
      * account.</p>
      */
     inline void SetAccountIds(const Aws::Vector<Aws::String>& value) { m_accountIdsHasBeenSet = true; m_accountIds = value; }
 
     /**
-     * <p>The account IDs of the member accounts to disassociate from the master
+     * <p>The account IDs of the member accounts to disassociate from the administrator
      * account.</p>
      */
     inline void SetAccountIds(Aws::Vector<Aws::String>&& value) { m_accountIdsHasBeenSet = true; m_accountIds = std::move(value); }
 
     /**
-     * <p>The account IDs of the member accounts to disassociate from the master
+     * <p>The account IDs of the member accounts to disassociate from the administrator
      * account.</p>
      */
     inline DisassociateMembersRequest& WithAccountIds(const Aws::Vector<Aws::String>& value) { SetAccountIds(value); return *this;}
 
     /**
-     * <p>The account IDs of the member accounts to disassociate from the master
+     * <p>The account IDs of the member accounts to disassociate from the administrator
      * account.</p>
      */
     inline DisassociateMembersRequest& WithAccountIds(Aws::Vector<Aws::String>&& value) { SetAccountIds(std::move(value)); return *this;}
 
     /**
-     * <p>The account IDs of the member accounts to disassociate from the master
+     * <p>The account IDs of the member accounts to disassociate from the administrator
      * account.</p>
      */
     inline DisassociateMembersRequest& AddAccountIds(const Aws::String& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
 
     /**
-     * <p>The account IDs of the member accounts to disassociate from the master
+     * <p>The account IDs of the member accounts to disassociate from the administrator
      * account.</p>
      */
     inline DisassociateMembersRequest& AddAccountIds(Aws::String&& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The account IDs of the member accounts to disassociate from the master
+     * <p>The account IDs of the member accounts to disassociate from the administrator
      * account.</p>
      */
     inline DisassociateMembersRequest& AddAccountIds(const char* value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }

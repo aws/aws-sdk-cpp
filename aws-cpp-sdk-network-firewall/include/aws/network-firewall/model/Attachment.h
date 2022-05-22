@@ -26,7 +26,7 @@ namespace Model
 
   /**
    * <p>The configuration and status for a single subnet that you've specified for
-   * use by the AWS Network Firewall firewall. This is part of the
+   * use by the Network Firewall firewall. This is part of the
    * <a>FirewallStatus</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/Attachment">AWS
    * API Reference</a></p>

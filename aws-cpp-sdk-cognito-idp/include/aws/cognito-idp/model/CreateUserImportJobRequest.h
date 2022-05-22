@@ -129,49 +129,49 @@ namespace Model
 
 
     /**
-     * <p>The role ARN for the Amazon CloudWatch Logging role for the user import
+     * <p>The role ARN for the Amazon CloudWatch Logs Logging role for the user import
      * job.</p>
      */
     inline const Aws::String& GetCloudWatchLogsRoleArn() const{ return m_cloudWatchLogsRoleArn; }
 
     /**
-     * <p>The role ARN for the Amazon CloudWatch Logging role for the user import
+     * <p>The role ARN for the Amazon CloudWatch Logs Logging role for the user import
      * job.</p>
      */
     inline bool CloudWatchLogsRoleArnHasBeenSet() const { return m_cloudWatchLogsRoleArnHasBeenSet; }
 
     /**
-     * <p>The role ARN for the Amazon CloudWatch Logging role for the user import
+     * <p>The role ARN for the Amazon CloudWatch Logs Logging role for the user import
      * job.</p>
      */
     inline void SetCloudWatchLogsRoleArn(const Aws::String& value) { m_cloudWatchLogsRoleArnHasBeenSet = true; m_cloudWatchLogsRoleArn = value; }
 
     /**
-     * <p>The role ARN for the Amazon CloudWatch Logging role for the user import
+     * <p>The role ARN for the Amazon CloudWatch Logs Logging role for the user import
      * job.</p>
      */
     inline void SetCloudWatchLogsRoleArn(Aws::String&& value) { m_cloudWatchLogsRoleArnHasBeenSet = true; m_cloudWatchLogsRoleArn = std::move(value); }
 
     /**
-     * <p>The role ARN for the Amazon CloudWatch Logging role for the user import
+     * <p>The role ARN for the Amazon CloudWatch Logs Logging role for the user import
      * job.</p>
      */
     inline void SetCloudWatchLogsRoleArn(const char* value) { m_cloudWatchLogsRoleArnHasBeenSet = true; m_cloudWatchLogsRoleArn.assign(value); }
 
     /**
-     * <p>The role ARN for the Amazon CloudWatch Logging role for the user import
+     * <p>The role ARN for the Amazon CloudWatch Logs Logging role for the user import
      * job.</p>
      */
     inline CreateUserImportJobRequest& WithCloudWatchLogsRoleArn(const Aws::String& value) { SetCloudWatchLogsRoleArn(value); return *this;}
 
     /**
-     * <p>The role ARN for the Amazon CloudWatch Logging role for the user import
+     * <p>The role ARN for the Amazon CloudWatch Logs Logging role for the user import
      * job.</p>
      */
     inline CreateUserImportJobRequest& WithCloudWatchLogsRoleArn(Aws::String&& value) { SetCloudWatchLogsRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The role ARN for the Amazon CloudWatch Logging role for the user import
+     * <p>The role ARN for the Amazon CloudWatch Logs Logging role for the user import
      * job.</p>
      */
     inline CreateUserImportJobRequest& WithCloudWatchLogsRoleArn(const char* value) { SetCloudWatchLogsRoleArn(value); return *this;}

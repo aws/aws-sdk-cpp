@@ -31,10 +31,10 @@ namespace Model
    * additional details about a status that the training job has transitioned
    * through. A training job can be in one of several states, for example, starting,
    * downloading, training, or uploading. Within each state, there are a number of
-   * intermediate states. For example, within the starting state, Amazon SageMaker
-   * could be starting the training job or launching the ML instances. These
-   * transitional states are referred to as the job's secondary status. </p>
-   * <p/><p><h3>See Also:</h3>   <a
+   * intermediate states. For example, within the starting state, SageMaker could be
+   * starting the training job or launching the ML instances. These transitional
+   * states are referred to as the job's secondary status. </p> <p/><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/SecondaryStatusTransition">AWS
    * API Reference</a></p>
    */
@@ -280,9 +280,9 @@ namespace Model
 
     /**
      * <p>A detailed description of the progress within a secondary status. </p>
-     * <p>Amazon SageMaker provides secondary statuses and status messages that apply
-     * to each of them:</p> <dl> <dt>Starting</dt> <dd> <ul> <li> <p>Starting the
-     * training job.</p> </li> <li> <p>Launching requested ML instances.</p> </li> <li>
+     * <p>SageMaker provides secondary statuses and status messages that apply to each
+     * of them:</p> <dl> <dt>Starting</dt> <dd> <ul> <li> <p>Starting the training
+     * job.</p> </li> <li> <p>Launching requested ML instances.</p> </li> <li>
      * <p>Insufficient capacity error from EC2 while launching instances, retrying!</p>
      * </li> <li> <p>Launched instance was unhealthy, replacing it!</p> </li> <li>
      * <p>Preparing the instances for training.</p> </li> </ul> </dd> <dt>Training</dt>
@@ -303,9 +303,9 @@ namespace Model
 
     /**
      * <p>A detailed description of the progress within a secondary status. </p>
-     * <p>Amazon SageMaker provides secondary statuses and status messages that apply
-     * to each of them:</p> <dl> <dt>Starting</dt> <dd> <ul> <li> <p>Starting the
-     * training job.</p> </li> <li> <p>Launching requested ML instances.</p> </li> <li>
+     * <p>SageMaker provides secondary statuses and status messages that apply to each
+     * of them:</p> <dl> <dt>Starting</dt> <dd> <ul> <li> <p>Starting the training
+     * job.</p> </li> <li> <p>Launching requested ML instances.</p> </li> <li>
      * <p>Insufficient capacity error from EC2 while launching instances, retrying!</p>
      * </li> <li> <p>Launched instance was unhealthy, replacing it!</p> </li> <li>
      * <p>Preparing the instances for training.</p> </li> </ul> </dd> <dt>Training</dt>
@@ -326,9 +326,9 @@ namespace Model
 
     /**
      * <p>A detailed description of the progress within a secondary status. </p>
-     * <p>Amazon SageMaker provides secondary statuses and status messages that apply
-     * to each of them:</p> <dl> <dt>Starting</dt> <dd> <ul> <li> <p>Starting the
-     * training job.</p> </li> <li> <p>Launching requested ML instances.</p> </li> <li>
+     * <p>SageMaker provides secondary statuses and status messages that apply to each
+     * of them:</p> <dl> <dt>Starting</dt> <dd> <ul> <li> <p>Starting the training
+     * job.</p> </li> <li> <p>Launching requested ML instances.</p> </li> <li>
      * <p>Insufficient capacity error from EC2 while launching instances, retrying!</p>
      * </li> <li> <p>Launched instance was unhealthy, replacing it!</p> </li> <li>
      * <p>Preparing the instances for training.</p> </li> </ul> </dd> <dt>Training</dt>
@@ -349,9 +349,9 @@ namespace Model
 
     /**
      * <p>A detailed description of the progress within a secondary status. </p>
-     * <p>Amazon SageMaker provides secondary statuses and status messages that apply
-     * to each of them:</p> <dl> <dt>Starting</dt> <dd> <ul> <li> <p>Starting the
-     * training job.</p> </li> <li> <p>Launching requested ML instances.</p> </li> <li>
+     * <p>SageMaker provides secondary statuses and status messages that apply to each
+     * of them:</p> <dl> <dt>Starting</dt> <dd> <ul> <li> <p>Starting the training
+     * job.</p> </li> <li> <p>Launching requested ML instances.</p> </li> <li>
      * <p>Insufficient capacity error from EC2 while launching instances, retrying!</p>
      * </li> <li> <p>Launched instance was unhealthy, replacing it!</p> </li> <li>
      * <p>Preparing the instances for training.</p> </li> </ul> </dd> <dt>Training</dt>
@@ -372,9 +372,9 @@ namespace Model
 
     /**
      * <p>A detailed description of the progress within a secondary status. </p>
-     * <p>Amazon SageMaker provides secondary statuses and status messages that apply
-     * to each of them:</p> <dl> <dt>Starting</dt> <dd> <ul> <li> <p>Starting the
-     * training job.</p> </li> <li> <p>Launching requested ML instances.</p> </li> <li>
+     * <p>SageMaker provides secondary statuses and status messages that apply to each
+     * of them:</p> <dl> <dt>Starting</dt> <dd> <ul> <li> <p>Starting the training
+     * job.</p> </li> <li> <p>Launching requested ML instances.</p> </li> <li>
      * <p>Insufficient capacity error from EC2 while launching instances, retrying!</p>
      * </li> <li> <p>Launched instance was unhealthy, replacing it!</p> </li> <li>
      * <p>Preparing the instances for training.</p> </li> </ul> </dd> <dt>Training</dt>
@@ -395,9 +395,9 @@ namespace Model
 
     /**
      * <p>A detailed description of the progress within a secondary status. </p>
-     * <p>Amazon SageMaker provides secondary statuses and status messages that apply
-     * to each of them:</p> <dl> <dt>Starting</dt> <dd> <ul> <li> <p>Starting the
-     * training job.</p> </li> <li> <p>Launching requested ML instances.</p> </li> <li>
+     * <p>SageMaker provides secondary statuses and status messages that apply to each
+     * of them:</p> <dl> <dt>Starting</dt> <dd> <ul> <li> <p>Starting the training
+     * job.</p> </li> <li> <p>Launching requested ML instances.</p> </li> <li>
      * <p>Insufficient capacity error from EC2 while launching instances, retrying!</p>
      * </li> <li> <p>Launched instance was unhealthy, replacing it!</p> </li> <li>
      * <p>Preparing the instances for training.</p> </li> </ul> </dd> <dt>Training</dt>
@@ -418,9 +418,9 @@ namespace Model
 
     /**
      * <p>A detailed description of the progress within a secondary status. </p>
-     * <p>Amazon SageMaker provides secondary statuses and status messages that apply
-     * to each of them:</p> <dl> <dt>Starting</dt> <dd> <ul> <li> <p>Starting the
-     * training job.</p> </li> <li> <p>Launching requested ML instances.</p> </li> <li>
+     * <p>SageMaker provides secondary statuses and status messages that apply to each
+     * of them:</p> <dl> <dt>Starting</dt> <dd> <ul> <li> <p>Starting the training
+     * job.</p> </li> <li> <p>Launching requested ML instances.</p> </li> <li>
      * <p>Insufficient capacity error from EC2 while launching instances, retrying!</p>
      * </li> <li> <p>Launched instance was unhealthy, replacing it!</p> </li> <li>
      * <p>Preparing the instances for training.</p> </li> </ul> </dd> <dt>Training</dt>
@@ -441,9 +441,9 @@ namespace Model
 
     /**
      * <p>A detailed description of the progress within a secondary status. </p>
-     * <p>Amazon SageMaker provides secondary statuses and status messages that apply
-     * to each of them:</p> <dl> <dt>Starting</dt> <dd> <ul> <li> <p>Starting the
-     * training job.</p> </li> <li> <p>Launching requested ML instances.</p> </li> <li>
+     * <p>SageMaker provides secondary statuses and status messages that apply to each
+     * of them:</p> <dl> <dt>Starting</dt> <dd> <ul> <li> <p>Starting the training
+     * job.</p> </li> <li> <p>Launching requested ML instances.</p> </li> <li>
      * <p>Insufficient capacity error from EC2 while launching instances, retrying!</p>
      * </li> <li> <p>Launched instance was unhealthy, replacing it!</p> </li> <li>
      * <p>Preparing the instances for training.</p> </li> </ul> </dd> <dt>Training</dt>

@@ -26,6 +26,7 @@ Input::Input() :
     m_inputClass(InputClass::NOT_SET),
     m_inputClassHasBeenSet(false),
     m_inputDevicesHasBeenSet(false),
+    m_inputPartnerIdsHasBeenSet(false),
     m_inputSourceType(InputSourceType::NOT_SET),
     m_inputSourceTypeHasBeenSet(false),
     m_mediaConnectFlowsHasBeenSet(false),
@@ -49,6 +50,7 @@ Input::Input(JsonView jsonValue) :
     m_inputClass(InputClass::NOT_SET),
     m_inputClassHasBeenSet(false),
     m_inputDevicesHasBeenSet(false),
+    m_inputPartnerIdsHasBeenSet(false),
     m_inputSourceType(InputSourceType::NOT_SET),
     m_inputSourceTypeHasBeenSet(false),
     m_mediaConnectFlowsHasBeenSet(false),
@@ -116,6 +118,16 @@ Input& Input::operator =(JsonView jsonValue)
       m_inputDevices.push_back(inputDevicesJsonList[inputDevicesIndex].AsObject());
     }
     m_inputDevicesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("inputPartnerIds"))
+  {
+    Array<JsonView> inputPartnerIdsJsonList = jsonValue.GetArray("inputPartnerIds");
+    for(unsigned inputPartnerIdsIndex = 0; inputPartnerIdsIndex < inputPartnerIdsJsonList.GetLength(); ++inputPartnerIdsIndex)
+    {
+      m_inputPartnerIds.push_back(inputPartnerIdsJsonList[inputPartnerIdsIndex].AsString());
+    }
+    m_inputPartnerIdsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("inputSourceType"))
@@ -247,6 +259,17 @@ JsonValue Input::Jsonize() const
      inputDevicesJsonList[inputDevicesIndex].AsObject(m_inputDevices[inputDevicesIndex].Jsonize());
    }
    payload.WithArray("inputDevices", std::move(inputDevicesJsonList));
+
+  }
+
+  if(m_inputPartnerIdsHasBeenSet)
+  {
+   Array<JsonValue> inputPartnerIdsJsonList(m_inputPartnerIds.size());
+   for(unsigned inputPartnerIdsIndex = 0; inputPartnerIdsIndex < inputPartnerIdsJsonList.GetLength(); ++inputPartnerIdsIndex)
+   {
+     inputPartnerIdsJsonList[inputPartnerIdsIndex].AsString(m_inputPartnerIds[inputPartnerIdsIndex]);
+   }
+   payload.WithArray("inputPartnerIds", std::move(inputPartnerIdsJsonList));
 
   }
 

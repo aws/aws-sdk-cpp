@@ -87,43 +87,43 @@ namespace Model
 
 
     /**
-     * <p>The value that is defined in the <code>Description</code> property of the
+     * <p>The value that's defined in the <code>Description</code> property of the
      * template.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The value that is defined in the <code>Description</code> property of the
+     * <p>The value that's defined in the <code>Description</code> property of the
      * template.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_description = value; }
 
     /**
-     * <p>The value that is defined in the <code>Description</code> property of the
+     * <p>The value that's defined in the <code>Description</code> property of the
      * template.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
 
     /**
-     * <p>The value that is defined in the <code>Description</code> property of the
+     * <p>The value that's defined in the <code>Description</code> property of the
      * template.</p>
      */
     inline void SetDescription(const char* value) { m_description.assign(value); }
 
     /**
-     * <p>The value that is defined in the <code>Description</code> property of the
+     * <p>The value that's defined in the <code>Description</code> property of the
      * template.</p>
      */
     inline GetTemplateSummaryResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The value that is defined in the <code>Description</code> property of the
+     * <p>The value that's defined in the <code>Description</code> property of the
      * template.</p>
      */
     inline GetTemplateSummaryResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The value that is defined in the <code>Description</code> property of the
+     * <p>The value that's defined in the <code>Description</code> property of the
      * template.</p>
      */
     inline GetTemplateSummaryResult& WithDescription(const char* value) { SetDescription(value); return *this;}
@@ -131,78 +131,85 @@ namespace Model
 
     /**
      * <p>The capabilities found within the template. If your template contains IAM
-     * resources, you must specify the CAPABILITY_IAM or CAPABILITY_NAMED_IAM value for
-     * this parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a> actions
-     * with your template; otherwise, those actions return an InsufficientCapabilities
-     * error.</p> <p>For more information, see <a
+     * resources, you must specify the <code>CAPABILITY_IAM</code> or
+     * <code>CAPABILITY_NAMED_IAM</code> value for this parameter when you use the
+     * <a>CreateStack</a> or <a>UpdateStack</a> actions with your template; otherwise,
+     * those actions return an <code>InsufficientCapabilities</code> error.</p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
-     * IAM Resources in AWS CloudFormation Templates</a>.</p>
+     * IAM Resources in CloudFormation Templates</a>.</p>
      */
     inline const Aws::Vector<Capability>& GetCapabilities() const{ return m_capabilities; }
 
     /**
      * <p>The capabilities found within the template. If your template contains IAM
-     * resources, you must specify the CAPABILITY_IAM or CAPABILITY_NAMED_IAM value for
-     * this parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a> actions
-     * with your template; otherwise, those actions return an InsufficientCapabilities
-     * error.</p> <p>For more information, see <a
+     * resources, you must specify the <code>CAPABILITY_IAM</code> or
+     * <code>CAPABILITY_NAMED_IAM</code> value for this parameter when you use the
+     * <a>CreateStack</a> or <a>UpdateStack</a> actions with your template; otherwise,
+     * those actions return an <code>InsufficientCapabilities</code> error.</p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
-     * IAM Resources in AWS CloudFormation Templates</a>.</p>
+     * IAM Resources in CloudFormation Templates</a>.</p>
      */
     inline void SetCapabilities(const Aws::Vector<Capability>& value) { m_capabilities = value; }
 
     /**
      * <p>The capabilities found within the template. If your template contains IAM
-     * resources, you must specify the CAPABILITY_IAM or CAPABILITY_NAMED_IAM value for
-     * this parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a> actions
-     * with your template; otherwise, those actions return an InsufficientCapabilities
-     * error.</p> <p>For more information, see <a
+     * resources, you must specify the <code>CAPABILITY_IAM</code> or
+     * <code>CAPABILITY_NAMED_IAM</code> value for this parameter when you use the
+     * <a>CreateStack</a> or <a>UpdateStack</a> actions with your template; otherwise,
+     * those actions return an <code>InsufficientCapabilities</code> error.</p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
-     * IAM Resources in AWS CloudFormation Templates</a>.</p>
+     * IAM Resources in CloudFormation Templates</a>.</p>
      */
     inline void SetCapabilities(Aws::Vector<Capability>&& value) { m_capabilities = std::move(value); }
 
     /**
      * <p>The capabilities found within the template. If your template contains IAM
-     * resources, you must specify the CAPABILITY_IAM or CAPABILITY_NAMED_IAM value for
-     * this parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a> actions
-     * with your template; otherwise, those actions return an InsufficientCapabilities
-     * error.</p> <p>For more information, see <a
+     * resources, you must specify the <code>CAPABILITY_IAM</code> or
+     * <code>CAPABILITY_NAMED_IAM</code> value for this parameter when you use the
+     * <a>CreateStack</a> or <a>UpdateStack</a> actions with your template; otherwise,
+     * those actions return an <code>InsufficientCapabilities</code> error.</p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
-     * IAM Resources in AWS CloudFormation Templates</a>.</p>
+     * IAM Resources in CloudFormation Templates</a>.</p>
      */
     inline GetTemplateSummaryResult& WithCapabilities(const Aws::Vector<Capability>& value) { SetCapabilities(value); return *this;}
 
     /**
      * <p>The capabilities found within the template. If your template contains IAM
-     * resources, you must specify the CAPABILITY_IAM or CAPABILITY_NAMED_IAM value for
-     * this parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a> actions
-     * with your template; otherwise, those actions return an InsufficientCapabilities
-     * error.</p> <p>For more information, see <a
+     * resources, you must specify the <code>CAPABILITY_IAM</code> or
+     * <code>CAPABILITY_NAMED_IAM</code> value for this parameter when you use the
+     * <a>CreateStack</a> or <a>UpdateStack</a> actions with your template; otherwise,
+     * those actions return an <code>InsufficientCapabilities</code> error.</p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
-     * IAM Resources in AWS CloudFormation Templates</a>.</p>
+     * IAM Resources in CloudFormation Templates</a>.</p>
      */
     inline GetTemplateSummaryResult& WithCapabilities(Aws::Vector<Capability>&& value) { SetCapabilities(std::move(value)); return *this;}
 
     /**
      * <p>The capabilities found within the template. If your template contains IAM
-     * resources, you must specify the CAPABILITY_IAM or CAPABILITY_NAMED_IAM value for
-     * this parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a> actions
-     * with your template; otherwise, those actions return an InsufficientCapabilities
-     * error.</p> <p>For more information, see <a
+     * resources, you must specify the <code>CAPABILITY_IAM</code> or
+     * <code>CAPABILITY_NAMED_IAM</code> value for this parameter when you use the
+     * <a>CreateStack</a> or <a>UpdateStack</a> actions with your template; otherwise,
+     * those actions return an <code>InsufficientCapabilities</code> error.</p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
-     * IAM Resources in AWS CloudFormation Templates</a>.</p>
+     * IAM Resources in CloudFormation Templates</a>.</p>
      */
     inline GetTemplateSummaryResult& AddCapabilities(const Capability& value) { m_capabilities.push_back(value); return *this; }
 
     /**
      * <p>The capabilities found within the template. If your template contains IAM
-     * resources, you must specify the CAPABILITY_IAM or CAPABILITY_NAMED_IAM value for
-     * this parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a> actions
-     * with your template; otherwise, those actions return an InsufficientCapabilities
-     * error.</p> <p>For more information, see <a
+     * resources, you must specify the <code>CAPABILITY_IAM</code> or
+     * <code>CAPABILITY_NAMED_IAM</code> value for this parameter when you use the
+     * <a>CreateStack</a> or <a>UpdateStack</a> actions with your template; otherwise,
+     * those actions return an <code>InsufficientCapabilities</code> error.</p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
-     * IAM Resources in AWS CloudFormation Templates</a>.</p>
+     * IAM Resources in CloudFormation Templates</a>.</p>
      */
     inline GetTemplateSummaryResult& AddCapabilities(Capability&& value) { m_capabilities.push_back(std::move(value)); return *this; }
 
@@ -308,86 +315,86 @@ namespace Model
 
 
     /**
-     * <p>The AWS template format version, which identifies the capabilities of the
-     * template.</p>
+     * <p>The Amazon Web Services template format version, which identifies the
+     * capabilities of the template.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
-     * <p>The AWS template format version, which identifies the capabilities of the
-     * template.</p>
+     * <p>The Amazon Web Services template format version, which identifies the
+     * capabilities of the template.</p>
      */
     inline void SetVersion(const Aws::String& value) { m_version = value; }
 
     /**
-     * <p>The AWS template format version, which identifies the capabilities of the
-     * template.</p>
+     * <p>The Amazon Web Services template format version, which identifies the
+     * capabilities of the template.</p>
      */
     inline void SetVersion(Aws::String&& value) { m_version = std::move(value); }
 
     /**
-     * <p>The AWS template format version, which identifies the capabilities of the
-     * template.</p>
+     * <p>The Amazon Web Services template format version, which identifies the
+     * capabilities of the template.</p>
      */
     inline void SetVersion(const char* value) { m_version.assign(value); }
 
     /**
-     * <p>The AWS template format version, which identifies the capabilities of the
-     * template.</p>
+     * <p>The Amazon Web Services template format version, which identifies the
+     * capabilities of the template.</p>
      */
     inline GetTemplateSummaryResult& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
-     * <p>The AWS template format version, which identifies the capabilities of the
-     * template.</p>
+     * <p>The Amazon Web Services template format version, which identifies the
+     * capabilities of the template.</p>
      */
     inline GetTemplateSummaryResult& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS template format version, which identifies the capabilities of the
-     * template.</p>
+     * <p>The Amazon Web Services template format version, which identifies the
+     * capabilities of the template.</p>
      */
     inline GetTemplateSummaryResult& WithVersion(const char* value) { SetVersion(value); return *this;}
 
 
     /**
-     * <p>The value that is defined for the <code>Metadata</code> property of the
+     * <p>The value that's defined for the <code>Metadata</code> property of the
      * template.</p>
      */
     inline const Aws::String& GetMetadata() const{ return m_metadata; }
 
     /**
-     * <p>The value that is defined for the <code>Metadata</code> property of the
+     * <p>The value that's defined for the <code>Metadata</code> property of the
      * template.</p>
      */
     inline void SetMetadata(const Aws::String& value) { m_metadata = value; }
 
     /**
-     * <p>The value that is defined for the <code>Metadata</code> property of the
+     * <p>The value that's defined for the <code>Metadata</code> property of the
      * template.</p>
      */
     inline void SetMetadata(Aws::String&& value) { m_metadata = std::move(value); }
 
     /**
-     * <p>The value that is defined for the <code>Metadata</code> property of the
+     * <p>The value that's defined for the <code>Metadata</code> property of the
      * template.</p>
      */
     inline void SetMetadata(const char* value) { m_metadata.assign(value); }
 
     /**
-     * <p>The value that is defined for the <code>Metadata</code> property of the
+     * <p>The value that's defined for the <code>Metadata</code> property of the
      * template.</p>
      */
     inline GetTemplateSummaryResult& WithMetadata(const Aws::String& value) { SetMetadata(value); return *this;}
 
     /**
-     * <p>The value that is defined for the <code>Metadata</code> property of the
+     * <p>The value that's defined for the <code>Metadata</code> property of the
      * template.</p>
      */
     inline GetTemplateSummaryResult& WithMetadata(Aws::String&& value) { SetMetadata(std::move(value)); return *this;}
 
     /**
-     * <p>The value that is defined for the <code>Metadata</code> property of the
+     * <p>The value that's defined for the <code>Metadata</code> property of the
      * template.</p>
      */
     inline GetTemplateSummaryResult& WithMetadata(const char* value) { SetMetadata(value); return *this;}
@@ -438,7 +445,7 @@ namespace Model
      * <p>A list of resource identifier summaries that describe the target resources of
      * an import operation and the properties you can provide during the import to
      * identify the target resources. For example, <code>BucketName</code> is a
-     * possible identifier property for an <code>AWS::S3::Bucket</code> resource. </p>
+     * possible identifier property for an <code>AWS::S3::Bucket</code> resource.</p>
      */
     inline const Aws::Vector<ResourceIdentifierSummary>& GetResourceIdentifierSummaries() const{ return m_resourceIdentifierSummaries; }
 
@@ -446,7 +453,7 @@ namespace Model
      * <p>A list of resource identifier summaries that describe the target resources of
      * an import operation and the properties you can provide during the import to
      * identify the target resources. For example, <code>BucketName</code> is a
-     * possible identifier property for an <code>AWS::S3::Bucket</code> resource. </p>
+     * possible identifier property for an <code>AWS::S3::Bucket</code> resource.</p>
      */
     inline void SetResourceIdentifierSummaries(const Aws::Vector<ResourceIdentifierSummary>& value) { m_resourceIdentifierSummaries = value; }
 
@@ -454,7 +461,7 @@ namespace Model
      * <p>A list of resource identifier summaries that describe the target resources of
      * an import operation and the properties you can provide during the import to
      * identify the target resources. For example, <code>BucketName</code> is a
-     * possible identifier property for an <code>AWS::S3::Bucket</code> resource. </p>
+     * possible identifier property for an <code>AWS::S3::Bucket</code> resource.</p>
      */
     inline void SetResourceIdentifierSummaries(Aws::Vector<ResourceIdentifierSummary>&& value) { m_resourceIdentifierSummaries = std::move(value); }
 
@@ -462,7 +469,7 @@ namespace Model
      * <p>A list of resource identifier summaries that describe the target resources of
      * an import operation and the properties you can provide during the import to
      * identify the target resources. For example, <code>BucketName</code> is a
-     * possible identifier property for an <code>AWS::S3::Bucket</code> resource. </p>
+     * possible identifier property for an <code>AWS::S3::Bucket</code> resource.</p>
      */
     inline GetTemplateSummaryResult& WithResourceIdentifierSummaries(const Aws::Vector<ResourceIdentifierSummary>& value) { SetResourceIdentifierSummaries(value); return *this;}
 
@@ -470,7 +477,7 @@ namespace Model
      * <p>A list of resource identifier summaries that describe the target resources of
      * an import operation and the properties you can provide during the import to
      * identify the target resources. For example, <code>BucketName</code> is a
-     * possible identifier property for an <code>AWS::S3::Bucket</code> resource. </p>
+     * possible identifier property for an <code>AWS::S3::Bucket</code> resource.</p>
      */
     inline GetTemplateSummaryResult& WithResourceIdentifierSummaries(Aws::Vector<ResourceIdentifierSummary>&& value) { SetResourceIdentifierSummaries(std::move(value)); return *this;}
 
@@ -478,7 +485,7 @@ namespace Model
      * <p>A list of resource identifier summaries that describe the target resources of
      * an import operation and the properties you can provide during the import to
      * identify the target resources. For example, <code>BucketName</code> is a
-     * possible identifier property for an <code>AWS::S3::Bucket</code> resource. </p>
+     * possible identifier property for an <code>AWS::S3::Bucket</code> resource.</p>
      */
     inline GetTemplateSummaryResult& AddResourceIdentifierSummaries(const ResourceIdentifierSummary& value) { m_resourceIdentifierSummaries.push_back(value); return *this; }
 
@@ -486,7 +493,7 @@ namespace Model
      * <p>A list of resource identifier summaries that describe the target resources of
      * an import operation and the properties you can provide during the import to
      * identify the target resources. For example, <code>BucketName</code> is a
-     * possible identifier property for an <code>AWS::S3::Bucket</code> resource. </p>
+     * possible identifier property for an <code>AWS::S3::Bucket</code> resource.</p>
      */
     inline GetTemplateSummaryResult& AddResourceIdentifierSummaries(ResourceIdentifierSummary&& value) { m_resourceIdentifierSummaries.push_back(std::move(value)); return *this; }
 

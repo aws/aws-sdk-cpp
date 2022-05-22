@@ -33,92 +33,92 @@ namespace Model
 
 
     /**
-     * <p>A unique generated shared secret code that is used in the TOTP algorithm to
-     * generate a one time code.</p>
+     * <p>A unique generated shared secret code that is used in the time-based one-time
+     * password (TOTP) algorithm to generate a one-time code.</p>
      */
     inline const Aws::String& GetSecretCode() const{ return m_secretCode; }
 
     /**
-     * <p>A unique generated shared secret code that is used in the TOTP algorithm to
-     * generate a one time code.</p>
+     * <p>A unique generated shared secret code that is used in the time-based one-time
+     * password (TOTP) algorithm to generate a one-time code.</p>
      */
     inline void SetSecretCode(const Aws::String& value) { m_secretCode = value; }
 
     /**
-     * <p>A unique generated shared secret code that is used in the TOTP algorithm to
-     * generate a one time code.</p>
+     * <p>A unique generated shared secret code that is used in the time-based one-time
+     * password (TOTP) algorithm to generate a one-time code.</p>
      */
     inline void SetSecretCode(Aws::String&& value) { m_secretCode = std::move(value); }
 
     /**
-     * <p>A unique generated shared secret code that is used in the TOTP algorithm to
-     * generate a one time code.</p>
+     * <p>A unique generated shared secret code that is used in the time-based one-time
+     * password (TOTP) algorithm to generate a one-time code.</p>
      */
     inline void SetSecretCode(const char* value) { m_secretCode.assign(value); }
 
     /**
-     * <p>A unique generated shared secret code that is used in the TOTP algorithm to
-     * generate a one time code.</p>
+     * <p>A unique generated shared secret code that is used in the time-based one-time
+     * password (TOTP) algorithm to generate a one-time code.</p>
      */
     inline AssociateSoftwareTokenResult& WithSecretCode(const Aws::String& value) { SetSecretCode(value); return *this;}
 
     /**
-     * <p>A unique generated shared secret code that is used in the TOTP algorithm to
-     * generate a one time code.</p>
+     * <p>A unique generated shared secret code that is used in the time-based one-time
+     * password (TOTP) algorithm to generate a one-time code.</p>
      */
     inline AssociateSoftwareTokenResult& WithSecretCode(Aws::String&& value) { SetSecretCode(std::move(value)); return *this;}
 
     /**
-     * <p>A unique generated shared secret code that is used in the TOTP algorithm to
-     * generate a one time code.</p>
+     * <p>A unique generated shared secret code that is used in the time-based one-time
+     * password (TOTP) algorithm to generate a one-time code.</p>
      */
     inline AssociateSoftwareTokenResult& WithSecretCode(const char* value) { SetSecretCode(value); return *this;}
 
 
     /**
-     * <p>The session which should be passed both ways in challenge-response calls to
+     * <p>The session that should be passed both ways in challenge-response calls to
      * the service. This allows authentication of the user as part of the MFA setup
      * process.</p>
      */
     inline const Aws::String& GetSession() const{ return m_session; }
 
     /**
-     * <p>The session which should be passed both ways in challenge-response calls to
+     * <p>The session that should be passed both ways in challenge-response calls to
      * the service. This allows authentication of the user as part of the MFA setup
      * process.</p>
      */
     inline void SetSession(const Aws::String& value) { m_session = value; }
 
     /**
-     * <p>The session which should be passed both ways in challenge-response calls to
+     * <p>The session that should be passed both ways in challenge-response calls to
      * the service. This allows authentication of the user as part of the MFA setup
      * process.</p>
      */
     inline void SetSession(Aws::String&& value) { m_session = std::move(value); }
 
     /**
-     * <p>The session which should be passed both ways in challenge-response calls to
+     * <p>The session that should be passed both ways in challenge-response calls to
      * the service. This allows authentication of the user as part of the MFA setup
      * process.</p>
      */
     inline void SetSession(const char* value) { m_session.assign(value); }
 
     /**
-     * <p>The session which should be passed both ways in challenge-response calls to
+     * <p>The session that should be passed both ways in challenge-response calls to
      * the service. This allows authentication of the user as part of the MFA setup
      * process.</p>
      */
     inline AssociateSoftwareTokenResult& WithSession(const Aws::String& value) { SetSession(value); return *this;}
 
     /**
-     * <p>The session which should be passed both ways in challenge-response calls to
+     * <p>The session that should be passed both ways in challenge-response calls to
      * the service. This allows authentication of the user as part of the MFA setup
      * process.</p>
      */
     inline AssociateSoftwareTokenResult& WithSession(Aws::String&& value) { SetSession(std::move(value)); return *this;}
 
     /**
-     * <p>The session which should be passed both ways in challenge-response calls to
+     * <p>The session that should be passed both ways in challenge-response calls to
      * the service. This allows authentication of the user as part of the MFA setup
      * process.</p>
      */

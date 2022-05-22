@@ -51,7 +51,9 @@ enum class PersonalizeErrors
   INVALID_NEXT_TOKEN,
   LIMIT_EXCEEDED,
   RESOURCE_ALREADY_EXISTS,
-  RESOURCE_IN_USE
+  RESOURCE_IN_USE,
+  TOO_MANY_TAGS,
+  TOO_MANY_TAG_KEYS
 };
 
 class AWS_PERSONALIZE_API PersonalizeError : public Aws::Client::AWSError<PersonalizeErrors>

@@ -29,7 +29,8 @@ Trigger::Trigger() :
     m_descriptionHasBeenSet(false),
     m_scheduleHasBeenSet(false),
     m_actionsHasBeenSet(false),
-    m_predicateHasBeenSet(false)
+    m_predicateHasBeenSet(false),
+    m_eventBatchingConditionHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ Trigger::Trigger(JsonView jsonValue) :
     m_descriptionHasBeenSet(false),
     m_scheduleHasBeenSet(false),
     m_actionsHasBeenSet(false),
-    m_predicateHasBeenSet(false)
+    m_predicateHasBeenSet(false),
+    m_eventBatchingConditionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -117,6 +119,13 @@ Trigger& Trigger::operator =(JsonView jsonValue)
     m_predicateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EventBatchingCondition"))
+  {
+    m_eventBatchingCondition = jsonValue.GetObject("EventBatchingCondition");
+
+    m_eventBatchingConditionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -178,6 +187,12 @@ JsonValue Trigger::Jsonize() const
   if(m_predicateHasBeenSet)
   {
    payload.WithObject("Predicate", m_predicate.Jsonize());
+
+  }
+
+  if(m_eventBatchingConditionHasBeenSet)
+  {
+   payload.WithObject("EventBatchingCondition", m_eventBatchingCondition.Jsonize());
 
   }
 

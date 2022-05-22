@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     spectrum,
-    concurrency_scaling
+    concurrency_scaling,
+    cross_region_datasharing
   };
 
 namespace UsageLimitFeatureTypeMapper

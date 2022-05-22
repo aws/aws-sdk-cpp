@@ -78,42 +78,42 @@ namespace Model
 
 
     /**
-     * <p>(Optional) The command execution details for a specific instance ID.</p>
+     * <p>(Optional) The command execution details for a specific managed node ID.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
-     * <p>(Optional) The command execution details for a specific instance ID.</p>
+     * <p>(Optional) The command execution details for a specific managed node ID.</p>
      */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
-     * <p>(Optional) The command execution details for a specific instance ID.</p>
+     * <p>(Optional) The command execution details for a specific managed node ID.</p>
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * <p>(Optional) The command execution details for a specific instance ID.</p>
+     * <p>(Optional) The command execution details for a specific managed node ID.</p>
      */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
-     * <p>(Optional) The command execution details for a specific instance ID.</p>
+     * <p>(Optional) The command execution details for a specific managed node ID.</p>
      */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /**
-     * <p>(Optional) The command execution details for a specific instance ID.</p>
+     * <p>(Optional) The command execution details for a specific managed node ID.</p>
      */
     inline ListCommandInvocationsRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>(Optional) The command execution details for a specific instance ID.</p>
+     * <p>(Optional) The command execution details for a specific managed node ID.</p>
      */
     inline ListCommandInvocationsRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
-     * <p>(Optional) The command execution details for a specific instance ID.</p>
+     * <p>(Optional) The command execution details for a specific managed node ID.</p>
      */
     inline ListCommandInvocationsRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
@@ -247,25 +247,25 @@ namespace Model
 
     /**
      * <p>(Optional) If set this returns the response of the command executions and any
-     * command output. By default this is set to False. </p>
+     * command output. The default value is <code>false</code>. </p>
      */
     inline bool GetDetails() const{ return m_details; }
 
     /**
      * <p>(Optional) If set this returns the response of the command executions and any
-     * command output. By default this is set to False. </p>
+     * command output. The default value is <code>false</code>. </p>
      */
     inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
 
     /**
      * <p>(Optional) If set this returns the response of the command executions and any
-     * command output. By default this is set to False. </p>
+     * command output. The default value is <code>false</code>. </p>
      */
     inline void SetDetails(bool value) { m_detailsHasBeenSet = true; m_details = value; }
 
     /**
      * <p>(Optional) If set this returns the response of the command executions and any
-     * command output. By default this is set to False. </p>
+     * command output. The default value is <code>false</code>. </p>
      */
     inline ListCommandInvocationsRequest& WithDetails(bool value) { SetDetails(value); return *this;}
 

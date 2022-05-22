@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p> A uniform resource locator, used as a unique identifier to locate a resource
-   * on the internet. </p><p><h3>See Also:</h3>   <a
+   * <p> Short for uniform resource locator. A URL is used as a unique identifier to
+   * locate a resource on the internet. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/URL">AWS
    * API Reference</a></p>
    */
@@ -39,42 +39,42 @@ namespace Model
 
 
     /**
-     * <p> The name or word used as a hyperlink to the URL. </p>
+     * <p> The name or word that's used as a hyperlink to the URL. </p>
      */
     inline const Aws::String& GetHyperlinkName() const{ return m_hyperlinkName; }
 
     /**
-     * <p> The name or word used as a hyperlink to the URL. </p>
+     * <p> The name or word that's used as a hyperlink to the URL. </p>
      */
     inline bool HyperlinkNameHasBeenSet() const { return m_hyperlinkNameHasBeenSet; }
 
     /**
-     * <p> The name or word used as a hyperlink to the URL. </p>
+     * <p> The name or word that's used as a hyperlink to the URL. </p>
      */
     inline void SetHyperlinkName(const Aws::String& value) { m_hyperlinkNameHasBeenSet = true; m_hyperlinkName = value; }
 
     /**
-     * <p> The name or word used as a hyperlink to the URL. </p>
+     * <p> The name or word that's used as a hyperlink to the URL. </p>
      */
     inline void SetHyperlinkName(Aws::String&& value) { m_hyperlinkNameHasBeenSet = true; m_hyperlinkName = std::move(value); }
 
     /**
-     * <p> The name or word used as a hyperlink to the URL. </p>
+     * <p> The name or word that's used as a hyperlink to the URL. </p>
      */
     inline void SetHyperlinkName(const char* value) { m_hyperlinkNameHasBeenSet = true; m_hyperlinkName.assign(value); }
 
     /**
-     * <p> The name or word used as a hyperlink to the URL. </p>
+     * <p> The name or word that's used as a hyperlink to the URL. </p>
      */
     inline URL& WithHyperlinkName(const Aws::String& value) { SetHyperlinkName(value); return *this;}
 
     /**
-     * <p> The name or word used as a hyperlink to the URL. </p>
+     * <p> The name or word that's used as a hyperlink to the URL. </p>
      */
     inline URL& WithHyperlinkName(Aws::String&& value) { SetHyperlinkName(std::move(value)); return *this;}
 
     /**
-     * <p> The name or word used as a hyperlink to the URL. </p>
+     * <p> The name or word that's used as a hyperlink to the URL. </p>
      */
     inline URL& WithHyperlinkName(const char* value) { SetHyperlinkName(value); return *this;}
 

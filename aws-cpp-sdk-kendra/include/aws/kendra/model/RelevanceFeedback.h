@@ -26,7 +26,7 @@ namespace Model
 
   /**
    * <p>Provides feedback on how relevant a document is to a search. Your application
-   * uses the <a>SubmitFeedback</a> operation to provide relevance
+   * uses the <code>SubmitFeedback</code> API to provide relevance
    * information.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/RelevanceFeedback">AWS
    * API Reference</a></p>

@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>The minimum and maximum value of an attribute that is of the number data
+   * <p>The minimum and maximum values of an attribute that is of the number data
    * type.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/NumberAttributeConstraintsType">AWS
    * API Reference</a></p>

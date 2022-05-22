@@ -22,6 +22,7 @@ CreateCustomDataIdentifierRequest::CreateCustomDataIdentifierRequest() :
     m_maximumMatchDistanceHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_regexHasBeenSet(false),
+    m_severityLevelsHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -79,6 +80,17 @@ Aws::String CreateCustomDataIdentifierRequest::SerializePayload() const
   if(m_regexHasBeenSet)
   {
    payload.WithString("regex", m_regex);
+
+  }
+
+  if(m_severityLevelsHasBeenSet)
+  {
+   Array<JsonValue> severityLevelsJsonList(m_severityLevels.size());
+   for(unsigned severityLevelsIndex = 0; severityLevelsIndex < severityLevelsJsonList.GetLength(); ++severityLevelsIndex)
+   {
+     severityLevelsJsonList[severityLevelsIndex].AsObject(m_severityLevels[severityLevelsIndex].Jsonize());
+   }
+   payload.WithArray("severityLevels", std::move(severityLevelsJsonList));
 
   }
 

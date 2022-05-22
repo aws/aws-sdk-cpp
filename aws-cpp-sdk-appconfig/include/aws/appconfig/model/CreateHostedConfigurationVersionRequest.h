@@ -160,7 +160,8 @@ namespace Model
      * <p>An optional locking token used to prevent race conditions from overwriting
      * configuration updates when creating a new version. To ensure your data is not
      * overwritten when creating multiple hosted configuration versions in rapid
-     * succession, specify the version of the latest hosted configuration version.</p>
+     * succession, specify the version number of the latest hosted configuration
+     * version.</p>
      */
     inline int GetLatestVersionNumber() const{ return m_latestVersionNumber; }
 
@@ -168,7 +169,8 @@ namespace Model
      * <p>An optional locking token used to prevent race conditions from overwriting
      * configuration updates when creating a new version. To ensure your data is not
      * overwritten when creating multiple hosted configuration versions in rapid
-     * succession, specify the version of the latest hosted configuration version.</p>
+     * succession, specify the version number of the latest hosted configuration
+     * version.</p>
      */
     inline bool LatestVersionNumberHasBeenSet() const { return m_latestVersionNumberHasBeenSet; }
 
@@ -176,7 +178,8 @@ namespace Model
      * <p>An optional locking token used to prevent race conditions from overwriting
      * configuration updates when creating a new version. To ensure your data is not
      * overwritten when creating multiple hosted configuration versions in rapid
-     * succession, specify the version of the latest hosted configuration version.</p>
+     * succession, specify the version number of the latest hosted configuration
+     * version.</p>
      */
     inline void SetLatestVersionNumber(int value) { m_latestVersionNumberHasBeenSet = true; m_latestVersionNumber = value; }
 
@@ -184,7 +187,8 @@ namespace Model
      * <p>An optional locking token used to prevent race conditions from overwriting
      * configuration updates when creating a new version. To ensure your data is not
      * overwritten when creating multiple hosted configuration versions in rapid
-     * succession, specify the version of the latest hosted configuration version.</p>
+     * succession, specify the version number of the latest hosted configuration
+     * version.</p>
      */
     inline CreateHostedConfigurationVersionRequest& WithLatestVersionNumber(int value) { SetLatestVersionNumber(value); return *this;}
 

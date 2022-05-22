@@ -27,6 +27,8 @@ namespace SageMakerRuntimeErrorMapper
 {
 
 static const int MODEL_HASH = HashingUtils::HashString("ModelError");
+static const int INTERNAL_DEPENDENCY_HASH = HashingUtils::HashString("InternalDependencyException");
+static const int MODEL_NOT_READY_HASH = HashingUtils::HashString("ModelNotReadyException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
@@ -36,6 +38,14 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   if (hashCode == MODEL_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SageMakerRuntimeErrors::MODEL), false);
+  }
+  else if (hashCode == INTERNAL_DEPENDENCY_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SageMakerRuntimeErrors::INTERNAL_DEPENDENCY), false);
+  }
+  else if (hashCode == MODEL_NOT_READY_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SageMakerRuntimeErrors::MODEL_NOT_READY), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

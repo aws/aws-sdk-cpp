@@ -29,8 +29,8 @@ namespace Model
 {
 
   /**
-   * <p>Provides the information necessary to connect a database to an index.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p>Provides the configuration information to connect to a index. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DatabaseConfiguration">AWS
    * API Reference</a></p>
    */
@@ -75,32 +75,32 @@ namespace Model
 
 
     /**
-     * <p>The information necessary to connect to a database.</p>
+     * <p>Configuration information that's required to connect to a database.</p>
      */
     inline const ConnectionConfiguration& GetConnectionConfiguration() const{ return m_connectionConfiguration; }
 
     /**
-     * <p>The information necessary to connect to a database.</p>
+     * <p>Configuration information that's required to connect to a database.</p>
      */
     inline bool ConnectionConfigurationHasBeenSet() const { return m_connectionConfigurationHasBeenSet; }
 
     /**
-     * <p>The information necessary to connect to a database.</p>
+     * <p>Configuration information that's required to connect to a database.</p>
      */
     inline void SetConnectionConfiguration(const ConnectionConfiguration& value) { m_connectionConfigurationHasBeenSet = true; m_connectionConfiguration = value; }
 
     /**
-     * <p>The information necessary to connect to a database.</p>
+     * <p>Configuration information that's required to connect to a database.</p>
      */
     inline void SetConnectionConfiguration(ConnectionConfiguration&& value) { m_connectionConfigurationHasBeenSet = true; m_connectionConfiguration = std::move(value); }
 
     /**
-     * <p>The information necessary to connect to a database.</p>
+     * <p>Configuration information that's required to connect to a database.</p>
      */
     inline DatabaseConfiguration& WithConnectionConfiguration(const ConnectionConfiguration& value) { SetConnectionConfiguration(value); return *this;}
 
     /**
-     * <p>The information necessary to connect to a database.</p>
+     * <p>Configuration information that's required to connect to a database.</p>
      */
     inline DatabaseConfiguration& WithConnectionConfiguration(ConnectionConfiguration&& value) { SetConnectionConfiguration(std::move(value)); return *this;}
 

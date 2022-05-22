@@ -54,6 +54,21 @@ PutPlaybackConfigurationResult& PutPlaybackConfigurationResult::operator =(const
 
   }
 
+  if(jsonValue.ValueExists("ConfigurationAliases"))
+  {
+    Aws::Map<Aws::String, JsonView> configurationAliasesJsonMap = jsonValue.GetObject("ConfigurationAliases").GetAllObjects();
+    for(auto& configurationAliasesItem : configurationAliasesJsonMap)
+    {
+      Aws::Map<Aws::String, JsonView> __mapOf__stringJsonMap = configurationAliasesItem.second.GetAllObjects();
+      Aws::Map<Aws::String, Aws::String> __mapOf__stringMap;
+      for(auto& __mapOf__stringItem : __mapOf__stringJsonMap)
+      {
+        __mapOf__stringMap[__mapOf__stringItem.first] = __mapOf__stringItem.second.AsString();
+      }
+      m_configurationAliases[configurationAliasesItem.first] = std::move(__mapOf__stringMap);
+    }
+  }
+
   if(jsonValue.ValueExists("DashConfiguration"))
   {
     m_dashConfiguration = jsonValue.GetObject("DashConfiguration");
@@ -69,6 +84,12 @@ PutPlaybackConfigurationResult& PutPlaybackConfigurationResult::operator =(const
   if(jsonValue.ValueExists("LivePreRollConfiguration"))
   {
     m_livePreRollConfiguration = jsonValue.GetObject("LivePreRollConfiguration");
+
+  }
+
+  if(jsonValue.ValueExists("LogConfiguration"))
+  {
+    m_logConfiguration = jsonValue.GetObject("LogConfiguration");
 
   }
 

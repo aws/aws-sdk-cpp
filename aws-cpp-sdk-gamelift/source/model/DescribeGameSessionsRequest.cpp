@@ -16,6 +16,7 @@ DescribeGameSessionsRequest::DescribeGameSessionsRequest() :
     m_fleetIdHasBeenSet(false),
     m_gameSessionIdHasBeenSet(false),
     m_aliasIdHasBeenSet(false),
+    m_locationHasBeenSet(false),
     m_statusFilterHasBeenSet(false),
     m_limit(0),
     m_limitHasBeenSet(false),
@@ -42,6 +43,12 @@ Aws::String DescribeGameSessionsRequest::SerializePayload() const
   if(m_aliasIdHasBeenSet)
   {
    payload.WithString("AliasId", m_aliasId);
+
+  }
+
+  if(m_locationHasBeenSet)
+  {
+   payload.WithString("Location", m_location);
 
   }
 

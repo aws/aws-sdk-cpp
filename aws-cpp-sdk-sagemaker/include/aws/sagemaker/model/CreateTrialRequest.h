@@ -38,50 +38,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the trial. The name must be unique in your AWS account and is not
-     * case-sensitive.</p>
+     * <p>The name of the trial. The name must be unique in your Amazon Web Services
+     * account and is not case-sensitive.</p>
      */
     inline const Aws::String& GetTrialName() const{ return m_trialName; }
 
     /**
-     * <p>The name of the trial. The name must be unique in your AWS account and is not
-     * case-sensitive.</p>
+     * <p>The name of the trial. The name must be unique in your Amazon Web Services
+     * account and is not case-sensitive.</p>
      */
     inline bool TrialNameHasBeenSet() const { return m_trialNameHasBeenSet; }
 
     /**
-     * <p>The name of the trial. The name must be unique in your AWS account and is not
-     * case-sensitive.</p>
+     * <p>The name of the trial. The name must be unique in your Amazon Web Services
+     * account and is not case-sensitive.</p>
      */
     inline void SetTrialName(const Aws::String& value) { m_trialNameHasBeenSet = true; m_trialName = value; }
 
     /**
-     * <p>The name of the trial. The name must be unique in your AWS account and is not
-     * case-sensitive.</p>
+     * <p>The name of the trial. The name must be unique in your Amazon Web Services
+     * account and is not case-sensitive.</p>
      */
     inline void SetTrialName(Aws::String&& value) { m_trialNameHasBeenSet = true; m_trialName = std::move(value); }
 
     /**
-     * <p>The name of the trial. The name must be unique in your AWS account and is not
-     * case-sensitive.</p>
+     * <p>The name of the trial. The name must be unique in your Amazon Web Services
+     * account and is not case-sensitive.</p>
      */
     inline void SetTrialName(const char* value) { m_trialNameHasBeenSet = true; m_trialName.assign(value); }
 
     /**
-     * <p>The name of the trial. The name must be unique in your AWS account and is not
-     * case-sensitive.</p>
+     * <p>The name of the trial. The name must be unique in your Amazon Web Services
+     * account and is not case-sensitive.</p>
      */
     inline CreateTrialRequest& WithTrialName(const Aws::String& value) { SetTrialName(value); return *this;}
 
     /**
-     * <p>The name of the trial. The name must be unique in your AWS account and is not
-     * case-sensitive.</p>
+     * <p>The name of the trial. The name must be unique in your Amazon Web Services
+     * account and is not case-sensitive.</p>
      */
     inline CreateTrialRequest& WithTrialName(Aws::String&& value) { SetTrialName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the trial. The name must be unique in your AWS account and is not
-     * case-sensitive.</p>
+     * <p>The name of the trial. The name must be unique in your Amazon Web Services
+     * account and is not case-sensitive.</p>
      */
     inline CreateTrialRequest& WithTrialName(const char* value) { SetTrialName(value); return *this;}
 

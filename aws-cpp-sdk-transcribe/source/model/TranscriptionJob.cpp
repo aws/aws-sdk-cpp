@@ -42,7 +42,10 @@ TranscriptionJob::TranscriptionJob() :
     m_identifyLanguageHasBeenSet(false),
     m_languageOptionsHasBeenSet(false),
     m_identifiedLanguageScore(0.0),
-    m_identifiedLanguageScoreHasBeenSet(false)
+    m_identifiedLanguageScoreHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_subtitlesHasBeenSet(false),
+    m_languageIdSettingsHasBeenSet(false)
 {
 }
 
@@ -70,7 +73,10 @@ TranscriptionJob::TranscriptionJob(JsonView jsonValue) :
     m_identifyLanguageHasBeenSet(false),
     m_languageOptionsHasBeenSet(false),
     m_identifiedLanguageScore(0.0),
-    m_identifiedLanguageScoreHasBeenSet(false)
+    m_identifiedLanguageScoreHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_subtitlesHasBeenSet(false),
+    m_languageIdSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -206,6 +212,33 @@ TranscriptionJob& TranscriptionJob::operator =(JsonView jsonValue)
     m_identifiedLanguageScoreHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Tags"))
+  {
+    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
+    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+    {
+      m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
+    }
+    m_tagsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Subtitles"))
+  {
+    m_subtitles = jsonValue.GetObject("Subtitles");
+
+    m_subtitlesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LanguageIdSettings"))
+  {
+    Aws::Map<Aws::String, JsonView> languageIdSettingsJsonMap = jsonValue.GetObject("LanguageIdSettings").GetAllObjects();
+    for(auto& languageIdSettingsItem : languageIdSettingsJsonMap)
+    {
+      m_languageIdSettings[LanguageCodeMapper::GetLanguageCodeForName(languageIdSettingsItem.first)] = languageIdSettingsItem.second.AsObject();
+    }
+    m_languageIdSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -317,6 +350,34 @@ JsonValue TranscriptionJob::Jsonize() const
   if(m_identifiedLanguageScoreHasBeenSet)
   {
    payload.WithDouble("IdentifiedLanguageScore", m_identifiedLanguageScore);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_subtitlesHasBeenSet)
+  {
+   payload.WithObject("Subtitles", m_subtitles.Jsonize());
+
+  }
+
+  if(m_languageIdSettingsHasBeenSet)
+  {
+   JsonValue languageIdSettingsJsonMap;
+   for(auto& languageIdSettingsItem : m_languageIdSettings)
+   {
+     languageIdSettingsJsonMap.WithObject(LanguageCodeMapper::GetNameForLanguageCode(languageIdSettingsItem.first), languageIdSettingsItem.second.Jsonize());
+   }
+   payload.WithObject("LanguageIdSettings", std::move(languageIdSettingsJsonMap));
 
   }
 

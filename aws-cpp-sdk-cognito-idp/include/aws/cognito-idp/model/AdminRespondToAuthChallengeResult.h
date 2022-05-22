@@ -73,58 +73,58 @@ namespace Model
 
 
     /**
-     * <p>The session which should be passed both ways in challenge-response calls to
-     * the service. If the caller needs to go through another challenge, they return a
-     * session with other challenge parameters. This session should be passed as it is
-     * to the next <code>RespondToAuthChallenge</code> API call.</p>
+     * <p>The session that should be passed both ways in challenge-response calls to
+     * the service. If the caller must pass another challenge, they return a session
+     * with other challenge parameters. This session should be passed as it is to the
+     * next <code>RespondToAuthChallenge</code> API call.</p>
      */
     inline const Aws::String& GetSession() const{ return m_session; }
 
     /**
-     * <p>The session which should be passed both ways in challenge-response calls to
-     * the service. If the caller needs to go through another challenge, they return a
-     * session with other challenge parameters. This session should be passed as it is
-     * to the next <code>RespondToAuthChallenge</code> API call.</p>
+     * <p>The session that should be passed both ways in challenge-response calls to
+     * the service. If the caller must pass another challenge, they return a session
+     * with other challenge parameters. This session should be passed as it is to the
+     * next <code>RespondToAuthChallenge</code> API call.</p>
      */
     inline void SetSession(const Aws::String& value) { m_session = value; }
 
     /**
-     * <p>The session which should be passed both ways in challenge-response calls to
-     * the service. If the caller needs to go through another challenge, they return a
-     * session with other challenge parameters. This session should be passed as it is
-     * to the next <code>RespondToAuthChallenge</code> API call.</p>
+     * <p>The session that should be passed both ways in challenge-response calls to
+     * the service. If the caller must pass another challenge, they return a session
+     * with other challenge parameters. This session should be passed as it is to the
+     * next <code>RespondToAuthChallenge</code> API call.</p>
      */
     inline void SetSession(Aws::String&& value) { m_session = std::move(value); }
 
     /**
-     * <p>The session which should be passed both ways in challenge-response calls to
-     * the service. If the caller needs to go through another challenge, they return a
-     * session with other challenge parameters. This session should be passed as it is
-     * to the next <code>RespondToAuthChallenge</code> API call.</p>
+     * <p>The session that should be passed both ways in challenge-response calls to
+     * the service. If the caller must pass another challenge, they return a session
+     * with other challenge parameters. This session should be passed as it is to the
+     * next <code>RespondToAuthChallenge</code> API call.</p>
      */
     inline void SetSession(const char* value) { m_session.assign(value); }
 
     /**
-     * <p>The session which should be passed both ways in challenge-response calls to
-     * the service. If the caller needs to go through another challenge, they return a
-     * session with other challenge parameters. This session should be passed as it is
-     * to the next <code>RespondToAuthChallenge</code> API call.</p>
+     * <p>The session that should be passed both ways in challenge-response calls to
+     * the service. If the caller must pass another challenge, they return a session
+     * with other challenge parameters. This session should be passed as it is to the
+     * next <code>RespondToAuthChallenge</code> API call.</p>
      */
     inline AdminRespondToAuthChallengeResult& WithSession(const Aws::String& value) { SetSession(value); return *this;}
 
     /**
-     * <p>The session which should be passed both ways in challenge-response calls to
-     * the service. If the caller needs to go through another challenge, they return a
-     * session with other challenge parameters. This session should be passed as it is
-     * to the next <code>RespondToAuthChallenge</code> API call.</p>
+     * <p>The session that should be passed both ways in challenge-response calls to
+     * the service. If the caller must pass another challenge, they return a session
+     * with other challenge parameters. This session should be passed as it is to the
+     * next <code>RespondToAuthChallenge</code> API call.</p>
      */
     inline AdminRespondToAuthChallengeResult& WithSession(Aws::String&& value) { SetSession(std::move(value)); return *this;}
 
     /**
-     * <p>The session which should be passed both ways in challenge-response calls to
-     * the service. If the caller needs to go through another challenge, they return a
-     * session with other challenge parameters. This session should be passed as it is
-     * to the next <code>RespondToAuthChallenge</code> API call.</p>
+     * <p>The session that should be passed both ways in challenge-response calls to
+     * the service. If the caller must pass another challenge, they return a session
+     * with other challenge parameters. This session should be passed as it is to the
+     * next <code>RespondToAuthChallenge</code> API call.</p>
      */
     inline AdminRespondToAuthChallengeResult& WithSession(const char* value) { SetSession(value); return *this;}
 

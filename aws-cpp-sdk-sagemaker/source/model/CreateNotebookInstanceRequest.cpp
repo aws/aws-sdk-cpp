@@ -30,7 +30,8 @@ CreateNotebookInstanceRequest::CreateNotebookInstanceRequest() :
     m_defaultCodeRepositoryHasBeenSet(false),
     m_additionalCodeRepositoriesHasBeenSet(false),
     m_rootAccess(RootAccess::NOT_SET),
-    m_rootAccessHasBeenSet(false)
+    m_rootAccessHasBeenSet(false),
+    m_platformIdentifierHasBeenSet(false)
 {
 }
 
@@ -137,6 +138,12 @@ Aws::String CreateNotebookInstanceRequest::SerializePayload() const
   if(m_rootAccessHasBeenSet)
   {
    payload.WithString("RootAccess", RootAccessMapper::GetNameForRootAccess(m_rootAccess));
+  }
+
+  if(m_platformIdentifierHasBeenSet)
+  {
+   payload.WithString("PlatformIdentifier", m_platformIdentifier);
+
   }
 
   return payload.View().WriteReadable();

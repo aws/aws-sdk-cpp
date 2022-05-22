@@ -24,8 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>Sampling statistics from a call to <a>GetSamplingTargets</a> that X-Ray could
-   * not process.</p><p><h3>See Also:</h3>   <a
+   * <p>Sampling statistics from a call to <a
+   * href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingTargets.html">GetSamplingTargets</a>
+   * that X-Ray could not process.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UnprocessedStatistics">AWS
    * API Reference</a></p>
    */

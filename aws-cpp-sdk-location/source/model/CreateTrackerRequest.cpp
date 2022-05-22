@@ -14,8 +14,10 @@ using namespace Aws::Utils;
 
 CreateTrackerRequest::CreateTrackerRequest() : 
     m_descriptionHasBeenSet(false),
-    m_pricingPlan(PricingPlan::NOT_SET),
-    m_pricingPlanHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false),
+    m_positionFiltering(PositionFiltering::NOT_SET),
+    m_positionFilteringHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_trackerNameHasBeenSet(false)
 {
 }
@@ -30,9 +32,26 @@ Aws::String CreateTrackerRequest::SerializePayload() const
 
   }
 
-  if(m_pricingPlanHasBeenSet)
+  if(m_kmsKeyIdHasBeenSet)
   {
-   payload.WithString("PricingPlan", PricingPlanMapper::GetNameForPricingPlan(m_pricingPlan));
+   payload.WithString("KmsKeyId", m_kmsKeyId);
+
+  }
+
+  if(m_positionFilteringHasBeenSet)
+  {
+   payload.WithString("PositionFiltering", PositionFilteringMapper::GetNameForPositionFiltering(m_positionFiltering));
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("Tags", std::move(tagsJsonMap));
+
   }
 
   if(m_trackerNameHasBeenSet)

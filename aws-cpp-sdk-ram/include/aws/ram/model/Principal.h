@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes a principal for use with AWS Resource Access Manager.</p><p><h3>See
+   * <p>Describes a principal for use with Resource Access Manager.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/Principal">AWS API
    * Reference</a></p>
@@ -81,129 +81,155 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource share.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resoure Name (ARN)</a> of a resource share the principal is associated with.</p>
      */
     inline const Aws::String& GetResourceShareArn() const{ return m_resourceShareArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource share.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resoure Name (ARN)</a> of a resource share the principal is associated with.</p>
      */
     inline bool ResourceShareArnHasBeenSet() const { return m_resourceShareArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource share.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resoure Name (ARN)</a> of a resource share the principal is associated with.</p>
      */
     inline void SetResourceShareArn(const Aws::String& value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource share.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resoure Name (ARN)</a> of a resource share the principal is associated with.</p>
      */
     inline void SetResourceShareArn(Aws::String&& value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource share.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resoure Name (ARN)</a> of a resource share the principal is associated with.</p>
      */
     inline void SetResourceShareArn(const char* value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource share.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resoure Name (ARN)</a> of a resource share the principal is associated with.</p>
      */
     inline Principal& WithResourceShareArn(const Aws::String& value) { SetResourceShareArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource share.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resoure Name (ARN)</a> of a resource share the principal is associated with.</p>
      */
     inline Principal& WithResourceShareArn(Aws::String&& value) { SetResourceShareArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource share.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resoure Name (ARN)</a> of a resource share the principal is associated with.</p>
      */
     inline Principal& WithResourceShareArn(const char* value) { SetResourceShareArn(value); return *this;}
 
 
     /**
-     * <p>The time when the principal was associated with the resource share.</p>
+     * <p>The date and time when the principal was associated with the resource
+     * share.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
 
     /**
-     * <p>The time when the principal was associated with the resource share.</p>
+     * <p>The date and time when the principal was associated with the resource
+     * share.</p>
      */
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
-     * <p>The time when the principal was associated with the resource share.</p>
+     * <p>The date and time when the principal was associated with the resource
+     * share.</p>
      */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
-     * <p>The time when the principal was associated with the resource share.</p>
+     * <p>The date and time when the principal was associated with the resource
+     * share.</p>
      */
     inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
 
     /**
-     * <p>The time when the principal was associated with the resource share.</p>
+     * <p>The date and time when the principal was associated with the resource
+     * share.</p>
      */
     inline Principal& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
 
     /**
-     * <p>The time when the principal was associated with the resource share.</p>
+     * <p>The date and time when the principal was associated with the resource
+     * share.</p>
      */
     inline Principal& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The time when the association was last updated.</p>
+     * <p>The date and time when the association was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
 
     /**
-     * <p>The time when the association was last updated.</p>
+     * <p>The date and time when the association was last updated.</p>
      */
     inline bool LastUpdatedTimeHasBeenSet() const { return m_lastUpdatedTimeHasBeenSet; }
 
     /**
-     * <p>The time when the association was last updated.</p>
+     * <p>The date and time when the association was last updated.</p>
      */
     inline void SetLastUpdatedTime(const Aws::Utils::DateTime& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
 
     /**
-     * <p>The time when the association was last updated.</p>
+     * <p>The date and time when the association was last updated.</p>
      */
     inline void SetLastUpdatedTime(Aws::Utils::DateTime&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::move(value); }
 
     /**
-     * <p>The time when the association was last updated.</p>
+     * <p>The date and time when the association was last updated.</p>
      */
     inline Principal& WithLastUpdatedTime(const Aws::Utils::DateTime& value) { SetLastUpdatedTime(value); return *this;}
 
     /**
-     * <p>The time when the association was last updated.</p>
+     * <p>The date and time when the association was last updated.</p>
      */
     inline Principal& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>Indicates whether the principal belongs to the same AWS organization as the
-     * AWS account that owns the resource share.</p>
+     * <p>Indicates whether the principal belongs to the same organization in
+     * Organizations as the Amazon Web Services account that owns the resource
+     * share.</p>
      */
     inline bool GetExternal() const{ return m_external; }
 
     /**
-     * <p>Indicates whether the principal belongs to the same AWS organization as the
-     * AWS account that owns the resource share.</p>
+     * <p>Indicates whether the principal belongs to the same organization in
+     * Organizations as the Amazon Web Services account that owns the resource
+     * share.</p>
      */
     inline bool ExternalHasBeenSet() const { return m_externalHasBeenSet; }
 
     /**
-     * <p>Indicates whether the principal belongs to the same AWS organization as the
-     * AWS account that owns the resource share.</p>
+     * <p>Indicates whether the principal belongs to the same organization in
+     * Organizations as the Amazon Web Services account that owns the resource
+     * share.</p>
      */
     inline void SetExternal(bool value) { m_externalHasBeenSet = true; m_external = value; }
 
     /**
-     * <p>Indicates whether the principal belongs to the same AWS organization as the
-     * AWS account that owns the resource share.</p>
+     * <p>Indicates whether the principal belongs to the same organization in
+     * Organizations as the Amazon Web Services account that owns the resource
+     * share.</p>
      */
     inline Principal& WithExternal(bool value) { SetExternal(value); return *this;}
 

@@ -17,7 +17,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents the request to disable any user as an administrator.</p><p><h3>See
+   * <p>Represents the request to disable the user as an administrator.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDisableUserRequest">AWS
    * API Reference</a></p>
@@ -80,42 +80,42 @@ namespace Model
 
 
     /**
-     * <p>The user name of the user you wish to disable.</p>
+     * <p>The user name of the user you want to disable.</p>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
 
     /**
-     * <p>The user name of the user you wish to disable.</p>
+     * <p>The user name of the user you want to disable.</p>
      */
     inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
 
     /**
-     * <p>The user name of the user you wish to disable.</p>
+     * <p>The user name of the user you want to disable.</p>
      */
     inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
 
     /**
-     * <p>The user name of the user you wish to disable.</p>
+     * <p>The user name of the user you want to disable.</p>
      */
     inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
 
     /**
-     * <p>The user name of the user you wish to disable.</p>
+     * <p>The user name of the user you want to disable.</p>
      */
     inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
 
     /**
-     * <p>The user name of the user you wish to disable.</p>
+     * <p>The user name of the user you want to disable.</p>
      */
     inline AdminDisableUserRequest& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
 
     /**
-     * <p>The user name of the user you wish to disable.</p>
+     * <p>The user name of the user you want to disable.</p>
      */
     inline AdminDisableUserRequest& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
 
     /**
-     * <p>The user name of the user you wish to disable.</p>
+     * <p>The user name of the user you want to disable.</p>
      */
     inline AdminDisableUserRequest& WithUsername(const char* value) { SetUsername(value); return *this;}
 

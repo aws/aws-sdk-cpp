@@ -186,6 +186,25 @@ namespace Model
      * "default_shape": [1,3,224,224], "type": "Image", "bias": [-1,-1,-1], "scale":
      * 0.007843137255}]</code> </p> </li> <li> <p> <code>"CompilerOptions":
      * {"class_labels": "imagenet_labels_1000.txt"}</code> </p> </li> </ul> </li> </ul>
+     * <p>Depending on the model format, <code>DataInputConfig</code> requires the
+     * following parameters for <code>ml_eia2</code> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-TargetDevice">OutputConfig:TargetDevice</a>.</p>
+     * <ul> <li> <p>For TensorFlow models saved in the SavedModel format, specify the
+     * input names from <code>signature_def_key</code> and the input model shapes for
+     * <code>DataInputConfig</code>. Specify the <code>signature_def_key</code> in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-CompilerOptions">
+     * <code>OutputConfig:CompilerOptions</code> </a> if the model does not use
+     * TensorFlow's default signature def key. For example:</p> <ul> <li> <p>
+     * <code>"DataInputConfig": {"inputs": [1, 224, 224, 3]}</code> </p> </li> <li> <p>
+     * <code>"CompilerOptions": {"signature_def_key": "serving_custom"}</code> </p>
+     * </li> </ul> </li> <li> <p>For TensorFlow models saved as a frozen graph, specify
+     * the input tensor names and shapes in <code>DataInputConfig</code> and the output
+     * tensor names for <code>output_names</code> in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-CompilerOptions">
+     * <code>OutputConfig:CompilerOptions</code> </a>. For example:</p> <ul> <li> <p>
+     * <code>"DataInputConfig": {"input_tensor:0": [1, 224, 224, 3]}</code> </p> </li>
+     * <li> <p> <code>"CompilerOptions": {"output_names": ["output_tensor:0"]}</code>
+     * </p> </li> </ul> </li> </ul>
      */
     inline const Aws::String& GetDataInputConfig() const{ return m_dataInputConfig; }
 
@@ -278,6 +297,25 @@ namespace Model
      * "default_shape": [1,3,224,224], "type": "Image", "bias": [-1,-1,-1], "scale":
      * 0.007843137255}]</code> </p> </li> <li> <p> <code>"CompilerOptions":
      * {"class_labels": "imagenet_labels_1000.txt"}</code> </p> </li> </ul> </li> </ul>
+     * <p>Depending on the model format, <code>DataInputConfig</code> requires the
+     * following parameters for <code>ml_eia2</code> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-TargetDevice">OutputConfig:TargetDevice</a>.</p>
+     * <ul> <li> <p>For TensorFlow models saved in the SavedModel format, specify the
+     * input names from <code>signature_def_key</code> and the input model shapes for
+     * <code>DataInputConfig</code>. Specify the <code>signature_def_key</code> in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-CompilerOptions">
+     * <code>OutputConfig:CompilerOptions</code> </a> if the model does not use
+     * TensorFlow's default signature def key. For example:</p> <ul> <li> <p>
+     * <code>"DataInputConfig": {"inputs": [1, 224, 224, 3]}</code> </p> </li> <li> <p>
+     * <code>"CompilerOptions": {"signature_def_key": "serving_custom"}</code> </p>
+     * </li> </ul> </li> <li> <p>For TensorFlow models saved as a frozen graph, specify
+     * the input tensor names and shapes in <code>DataInputConfig</code> and the output
+     * tensor names for <code>output_names</code> in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-CompilerOptions">
+     * <code>OutputConfig:CompilerOptions</code> </a>. For example:</p> <ul> <li> <p>
+     * <code>"DataInputConfig": {"input_tensor:0": [1, 224, 224, 3]}</code> </p> </li>
+     * <li> <p> <code>"CompilerOptions": {"output_names": ["output_tensor:0"]}</code>
+     * </p> </li> </ul> </li> </ul>
      */
     inline bool DataInputConfigHasBeenSet() const { return m_dataInputConfigHasBeenSet; }
 
@@ -370,6 +408,25 @@ namespace Model
      * "default_shape": [1,3,224,224], "type": "Image", "bias": [-1,-1,-1], "scale":
      * 0.007843137255}]</code> </p> </li> <li> <p> <code>"CompilerOptions":
      * {"class_labels": "imagenet_labels_1000.txt"}</code> </p> </li> </ul> </li> </ul>
+     * <p>Depending on the model format, <code>DataInputConfig</code> requires the
+     * following parameters for <code>ml_eia2</code> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-TargetDevice">OutputConfig:TargetDevice</a>.</p>
+     * <ul> <li> <p>For TensorFlow models saved in the SavedModel format, specify the
+     * input names from <code>signature_def_key</code> and the input model shapes for
+     * <code>DataInputConfig</code>. Specify the <code>signature_def_key</code> in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-CompilerOptions">
+     * <code>OutputConfig:CompilerOptions</code> </a> if the model does not use
+     * TensorFlow's default signature def key. For example:</p> <ul> <li> <p>
+     * <code>"DataInputConfig": {"inputs": [1, 224, 224, 3]}</code> </p> </li> <li> <p>
+     * <code>"CompilerOptions": {"signature_def_key": "serving_custom"}</code> </p>
+     * </li> </ul> </li> <li> <p>For TensorFlow models saved as a frozen graph, specify
+     * the input tensor names and shapes in <code>DataInputConfig</code> and the output
+     * tensor names for <code>output_names</code> in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-CompilerOptions">
+     * <code>OutputConfig:CompilerOptions</code> </a>. For example:</p> <ul> <li> <p>
+     * <code>"DataInputConfig": {"input_tensor:0": [1, 224, 224, 3]}</code> </p> </li>
+     * <li> <p> <code>"CompilerOptions": {"output_names": ["output_tensor:0"]}</code>
+     * </p> </li> </ul> </li> </ul>
      */
     inline void SetDataInputConfig(const Aws::String& value) { m_dataInputConfigHasBeenSet = true; m_dataInputConfig = value; }
 
@@ -462,6 +519,25 @@ namespace Model
      * "default_shape": [1,3,224,224], "type": "Image", "bias": [-1,-1,-1], "scale":
      * 0.007843137255}]</code> </p> </li> <li> <p> <code>"CompilerOptions":
      * {"class_labels": "imagenet_labels_1000.txt"}</code> </p> </li> </ul> </li> </ul>
+     * <p>Depending on the model format, <code>DataInputConfig</code> requires the
+     * following parameters for <code>ml_eia2</code> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-TargetDevice">OutputConfig:TargetDevice</a>.</p>
+     * <ul> <li> <p>For TensorFlow models saved in the SavedModel format, specify the
+     * input names from <code>signature_def_key</code> and the input model shapes for
+     * <code>DataInputConfig</code>. Specify the <code>signature_def_key</code> in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-CompilerOptions">
+     * <code>OutputConfig:CompilerOptions</code> </a> if the model does not use
+     * TensorFlow's default signature def key. For example:</p> <ul> <li> <p>
+     * <code>"DataInputConfig": {"inputs": [1, 224, 224, 3]}</code> </p> </li> <li> <p>
+     * <code>"CompilerOptions": {"signature_def_key": "serving_custom"}</code> </p>
+     * </li> </ul> </li> <li> <p>For TensorFlow models saved as a frozen graph, specify
+     * the input tensor names and shapes in <code>DataInputConfig</code> and the output
+     * tensor names for <code>output_names</code> in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-CompilerOptions">
+     * <code>OutputConfig:CompilerOptions</code> </a>. For example:</p> <ul> <li> <p>
+     * <code>"DataInputConfig": {"input_tensor:0": [1, 224, 224, 3]}</code> </p> </li>
+     * <li> <p> <code>"CompilerOptions": {"output_names": ["output_tensor:0"]}</code>
+     * </p> </li> </ul> </li> </ul>
      */
     inline void SetDataInputConfig(Aws::String&& value) { m_dataInputConfigHasBeenSet = true; m_dataInputConfig = std::move(value); }
 
@@ -554,6 +630,25 @@ namespace Model
      * "default_shape": [1,3,224,224], "type": "Image", "bias": [-1,-1,-1], "scale":
      * 0.007843137255}]</code> </p> </li> <li> <p> <code>"CompilerOptions":
      * {"class_labels": "imagenet_labels_1000.txt"}</code> </p> </li> </ul> </li> </ul>
+     * <p>Depending on the model format, <code>DataInputConfig</code> requires the
+     * following parameters for <code>ml_eia2</code> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-TargetDevice">OutputConfig:TargetDevice</a>.</p>
+     * <ul> <li> <p>For TensorFlow models saved in the SavedModel format, specify the
+     * input names from <code>signature_def_key</code> and the input model shapes for
+     * <code>DataInputConfig</code>. Specify the <code>signature_def_key</code> in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-CompilerOptions">
+     * <code>OutputConfig:CompilerOptions</code> </a> if the model does not use
+     * TensorFlow's default signature def key. For example:</p> <ul> <li> <p>
+     * <code>"DataInputConfig": {"inputs": [1, 224, 224, 3]}</code> </p> </li> <li> <p>
+     * <code>"CompilerOptions": {"signature_def_key": "serving_custom"}</code> </p>
+     * </li> </ul> </li> <li> <p>For TensorFlow models saved as a frozen graph, specify
+     * the input tensor names and shapes in <code>DataInputConfig</code> and the output
+     * tensor names for <code>output_names</code> in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-CompilerOptions">
+     * <code>OutputConfig:CompilerOptions</code> </a>. For example:</p> <ul> <li> <p>
+     * <code>"DataInputConfig": {"input_tensor:0": [1, 224, 224, 3]}</code> </p> </li>
+     * <li> <p> <code>"CompilerOptions": {"output_names": ["output_tensor:0"]}</code>
+     * </p> </li> </ul> </li> </ul>
      */
     inline void SetDataInputConfig(const char* value) { m_dataInputConfigHasBeenSet = true; m_dataInputConfig.assign(value); }
 
@@ -646,6 +741,25 @@ namespace Model
      * "default_shape": [1,3,224,224], "type": "Image", "bias": [-1,-1,-1], "scale":
      * 0.007843137255}]</code> </p> </li> <li> <p> <code>"CompilerOptions":
      * {"class_labels": "imagenet_labels_1000.txt"}</code> </p> </li> </ul> </li> </ul>
+     * <p>Depending on the model format, <code>DataInputConfig</code> requires the
+     * following parameters for <code>ml_eia2</code> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-TargetDevice">OutputConfig:TargetDevice</a>.</p>
+     * <ul> <li> <p>For TensorFlow models saved in the SavedModel format, specify the
+     * input names from <code>signature_def_key</code> and the input model shapes for
+     * <code>DataInputConfig</code>. Specify the <code>signature_def_key</code> in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-CompilerOptions">
+     * <code>OutputConfig:CompilerOptions</code> </a> if the model does not use
+     * TensorFlow's default signature def key. For example:</p> <ul> <li> <p>
+     * <code>"DataInputConfig": {"inputs": [1, 224, 224, 3]}</code> </p> </li> <li> <p>
+     * <code>"CompilerOptions": {"signature_def_key": "serving_custom"}</code> </p>
+     * </li> </ul> </li> <li> <p>For TensorFlow models saved as a frozen graph, specify
+     * the input tensor names and shapes in <code>DataInputConfig</code> and the output
+     * tensor names for <code>output_names</code> in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-CompilerOptions">
+     * <code>OutputConfig:CompilerOptions</code> </a>. For example:</p> <ul> <li> <p>
+     * <code>"DataInputConfig": {"input_tensor:0": [1, 224, 224, 3]}</code> </p> </li>
+     * <li> <p> <code>"CompilerOptions": {"output_names": ["output_tensor:0"]}</code>
+     * </p> </li> </ul> </li> </ul>
      */
     inline InputConfig& WithDataInputConfig(const Aws::String& value) { SetDataInputConfig(value); return *this;}
 
@@ -738,6 +852,25 @@ namespace Model
      * "default_shape": [1,3,224,224], "type": "Image", "bias": [-1,-1,-1], "scale":
      * 0.007843137255}]</code> </p> </li> <li> <p> <code>"CompilerOptions":
      * {"class_labels": "imagenet_labels_1000.txt"}</code> </p> </li> </ul> </li> </ul>
+     * <p>Depending on the model format, <code>DataInputConfig</code> requires the
+     * following parameters for <code>ml_eia2</code> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-TargetDevice">OutputConfig:TargetDevice</a>.</p>
+     * <ul> <li> <p>For TensorFlow models saved in the SavedModel format, specify the
+     * input names from <code>signature_def_key</code> and the input model shapes for
+     * <code>DataInputConfig</code>. Specify the <code>signature_def_key</code> in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-CompilerOptions">
+     * <code>OutputConfig:CompilerOptions</code> </a> if the model does not use
+     * TensorFlow's default signature def key. For example:</p> <ul> <li> <p>
+     * <code>"DataInputConfig": {"inputs": [1, 224, 224, 3]}</code> </p> </li> <li> <p>
+     * <code>"CompilerOptions": {"signature_def_key": "serving_custom"}</code> </p>
+     * </li> </ul> </li> <li> <p>For TensorFlow models saved as a frozen graph, specify
+     * the input tensor names and shapes in <code>DataInputConfig</code> and the output
+     * tensor names for <code>output_names</code> in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-CompilerOptions">
+     * <code>OutputConfig:CompilerOptions</code> </a>. For example:</p> <ul> <li> <p>
+     * <code>"DataInputConfig": {"input_tensor:0": [1, 224, 224, 3]}</code> </p> </li>
+     * <li> <p> <code>"CompilerOptions": {"output_names": ["output_tensor:0"]}</code>
+     * </p> </li> </ul> </li> </ul>
      */
     inline InputConfig& WithDataInputConfig(Aws::String&& value) { SetDataInputConfig(std::move(value)); return *this;}
 
@@ -830,6 +963,25 @@ namespace Model
      * "default_shape": [1,3,224,224], "type": "Image", "bias": [-1,-1,-1], "scale":
      * 0.007843137255}]</code> </p> </li> <li> <p> <code>"CompilerOptions":
      * {"class_labels": "imagenet_labels_1000.txt"}</code> </p> </li> </ul> </li> </ul>
+     * <p>Depending on the model format, <code>DataInputConfig</code> requires the
+     * following parameters for <code>ml_eia2</code> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-TargetDevice">OutputConfig:TargetDevice</a>.</p>
+     * <ul> <li> <p>For TensorFlow models saved in the SavedModel format, specify the
+     * input names from <code>signature_def_key</code> and the input model shapes for
+     * <code>DataInputConfig</code>. Specify the <code>signature_def_key</code> in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-CompilerOptions">
+     * <code>OutputConfig:CompilerOptions</code> </a> if the model does not use
+     * TensorFlow's default signature def key. For example:</p> <ul> <li> <p>
+     * <code>"DataInputConfig": {"inputs": [1, 224, 224, 3]}</code> </p> </li> <li> <p>
+     * <code>"CompilerOptions": {"signature_def_key": "serving_custom"}</code> </p>
+     * </li> </ul> </li> <li> <p>For TensorFlow models saved as a frozen graph, specify
+     * the input tensor names and shapes in <code>DataInputConfig</code> and the output
+     * tensor names for <code>output_names</code> in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-CompilerOptions">
+     * <code>OutputConfig:CompilerOptions</code> </a>. For example:</p> <ul> <li> <p>
+     * <code>"DataInputConfig": {"input_tensor:0": [1, 224, 224, 3]}</code> </p> </li>
+     * <li> <p> <code>"CompilerOptions": {"output_names": ["output_tensor:0"]}</code>
+     * </p> </li> </ul> </li> </ul>
      */
     inline InputConfig& WithDataInputConfig(const char* value) { SetDataInputConfig(value); return *this;}
 
@@ -870,6 +1022,95 @@ namespace Model
      */
     inline InputConfig& WithFramework(Framework&& value) { SetFramework(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies the framework version to use. This API field is only supported for
+     * the PyTorch and TensorFlow frameworks.</p> <p>For information about framework
+     * versions supported for cloud targets and edge devices, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-cloud.html">Cloud
+     * Supported Instance Types and Frameworks</a> and <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-devices-edge-frameworks.html">Edge
+     * Supported Frameworks</a>.</p>
+     */
+    inline const Aws::String& GetFrameworkVersion() const{ return m_frameworkVersion; }
+
+    /**
+     * <p>Specifies the framework version to use. This API field is only supported for
+     * the PyTorch and TensorFlow frameworks.</p> <p>For information about framework
+     * versions supported for cloud targets and edge devices, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-cloud.html">Cloud
+     * Supported Instance Types and Frameworks</a> and <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-devices-edge-frameworks.html">Edge
+     * Supported Frameworks</a>.</p>
+     */
+    inline bool FrameworkVersionHasBeenSet() const { return m_frameworkVersionHasBeenSet; }
+
+    /**
+     * <p>Specifies the framework version to use. This API field is only supported for
+     * the PyTorch and TensorFlow frameworks.</p> <p>For information about framework
+     * versions supported for cloud targets and edge devices, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-cloud.html">Cloud
+     * Supported Instance Types and Frameworks</a> and <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-devices-edge-frameworks.html">Edge
+     * Supported Frameworks</a>.</p>
+     */
+    inline void SetFrameworkVersion(const Aws::String& value) { m_frameworkVersionHasBeenSet = true; m_frameworkVersion = value; }
+
+    /**
+     * <p>Specifies the framework version to use. This API field is only supported for
+     * the PyTorch and TensorFlow frameworks.</p> <p>For information about framework
+     * versions supported for cloud targets and edge devices, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-cloud.html">Cloud
+     * Supported Instance Types and Frameworks</a> and <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-devices-edge-frameworks.html">Edge
+     * Supported Frameworks</a>.</p>
+     */
+    inline void SetFrameworkVersion(Aws::String&& value) { m_frameworkVersionHasBeenSet = true; m_frameworkVersion = std::move(value); }
+
+    /**
+     * <p>Specifies the framework version to use. This API field is only supported for
+     * the PyTorch and TensorFlow frameworks.</p> <p>For information about framework
+     * versions supported for cloud targets and edge devices, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-cloud.html">Cloud
+     * Supported Instance Types and Frameworks</a> and <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-devices-edge-frameworks.html">Edge
+     * Supported Frameworks</a>.</p>
+     */
+    inline void SetFrameworkVersion(const char* value) { m_frameworkVersionHasBeenSet = true; m_frameworkVersion.assign(value); }
+
+    /**
+     * <p>Specifies the framework version to use. This API field is only supported for
+     * the PyTorch and TensorFlow frameworks.</p> <p>For information about framework
+     * versions supported for cloud targets and edge devices, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-cloud.html">Cloud
+     * Supported Instance Types and Frameworks</a> and <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-devices-edge-frameworks.html">Edge
+     * Supported Frameworks</a>.</p>
+     */
+    inline InputConfig& WithFrameworkVersion(const Aws::String& value) { SetFrameworkVersion(value); return *this;}
+
+    /**
+     * <p>Specifies the framework version to use. This API field is only supported for
+     * the PyTorch and TensorFlow frameworks.</p> <p>For information about framework
+     * versions supported for cloud targets and edge devices, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-cloud.html">Cloud
+     * Supported Instance Types and Frameworks</a> and <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-devices-edge-frameworks.html">Edge
+     * Supported Frameworks</a>.</p>
+     */
+    inline InputConfig& WithFrameworkVersion(Aws::String&& value) { SetFrameworkVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the framework version to use. This API field is only supported for
+     * the PyTorch and TensorFlow frameworks.</p> <p>For information about framework
+     * versions supported for cloud targets and edge devices, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-cloud.html">Cloud
+     * Supported Instance Types and Frameworks</a> and <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-supported-devices-edge-frameworks.html">Edge
+     * Supported Frameworks</a>.</p>
+     */
+    inline InputConfig& WithFrameworkVersion(const char* value) { SetFrameworkVersion(value); return *this;}
+
   private:
 
     Aws::String m_s3Uri;
@@ -880,6 +1121,9 @@ namespace Model
 
     Framework m_framework;
     bool m_frameworkHasBeenSet;
+
+    Aws::String m_frameworkVersion;
+    bool m_frameworkVersionHasBeenSet;
   };
 
 } // namespace Model

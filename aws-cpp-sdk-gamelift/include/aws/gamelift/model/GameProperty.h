@@ -31,7 +31,7 @@ namespace Model
    * server process when initiating a new game session. For more information, see the
    * <a
    * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#gamelift-sdk-client-api-create">
-   * Amazon GameLift Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
+   * GameLift Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameProperty">AWS
    * API Reference</a></p>
    */

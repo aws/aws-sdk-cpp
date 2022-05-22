@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about an AWS Identity and Access Management (IAM)
+   * <p>Contains information about an Identity and Access Management
    * user.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/IAMUserIdentity">AWS
    * API Reference</a></p>

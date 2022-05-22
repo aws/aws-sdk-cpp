@@ -24,8 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>AWS Lambda could not unzip the deployment package.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Lambda could not unzip the deployment package.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/InvalidZipFileException">AWS
    * API Reference</a></p>
    */

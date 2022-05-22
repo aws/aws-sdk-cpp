@@ -23,7 +23,8 @@ CrawlerTargets::CrawlerTargets() :
     m_jdbcTargetsHasBeenSet(false),
     m_mongoDBTargetsHasBeenSet(false),
     m_dynamoDBTargetsHasBeenSet(false),
-    m_catalogTargetsHasBeenSet(false)
+    m_catalogTargetsHasBeenSet(false),
+    m_deltaTargetsHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ CrawlerTargets::CrawlerTargets(JsonView jsonValue) :
     m_jdbcTargetsHasBeenSet(false),
     m_mongoDBTargetsHasBeenSet(false),
     m_dynamoDBTargetsHasBeenSet(false),
-    m_catalogTargetsHasBeenSet(false)
+    m_catalogTargetsHasBeenSet(false),
+    m_deltaTargetsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -87,6 +89,16 @@ CrawlerTargets& CrawlerTargets::operator =(JsonView jsonValue)
       m_catalogTargets.push_back(catalogTargetsJsonList[catalogTargetsIndex].AsObject());
     }
     m_catalogTargetsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DeltaTargets"))
+  {
+    Array<JsonView> deltaTargetsJsonList = jsonValue.GetArray("DeltaTargets");
+    for(unsigned deltaTargetsIndex = 0; deltaTargetsIndex < deltaTargetsJsonList.GetLength(); ++deltaTargetsIndex)
+    {
+      m_deltaTargets.push_back(deltaTargetsJsonList[deltaTargetsIndex].AsObject());
+    }
+    m_deltaTargetsHasBeenSet = true;
   }
 
   return *this;
@@ -148,6 +160,17 @@ JsonValue CrawlerTargets::Jsonize() const
      catalogTargetsJsonList[catalogTargetsIndex].AsObject(m_catalogTargets[catalogTargetsIndex].Jsonize());
    }
    payload.WithArray("CatalogTargets", std::move(catalogTargetsJsonList));
+
+  }
+
+  if(m_deltaTargetsHasBeenSet)
+  {
+   Array<JsonValue> deltaTargetsJsonList(m_deltaTargets.size());
+   for(unsigned deltaTargetsIndex = 0; deltaTargetsIndex < deltaTargetsJsonList.GetLength(); ++deltaTargetsIndex)
+   {
+     deltaTargetsJsonList[deltaTargetsIndex].AsObject(m_deltaTargets[deltaTargetsIndex].Jsonize());
+   }
+   payload.WithArray("DeltaTargets", std::move(deltaTargetsJsonList));
 
   }
 

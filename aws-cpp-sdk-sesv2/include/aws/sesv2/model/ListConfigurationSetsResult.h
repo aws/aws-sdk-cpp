@@ -26,8 +26,8 @@ namespace SESV2
 namespace Model
 {
   /**
-   * <p>A list of configuration sets in your Amazon SES account in the current AWS
-   * Region.</p><p><h3>See Also:</h3>   <a
+   * <p>A list of configuration sets in your Amazon SES account in the current Amazon
+   * Web Services Region.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListConfigurationSetsResponse">AWS
    * API Reference</a></p>
    */
@@ -41,49 +41,49 @@ namespace Model
 
     /**
      * <p>An array that contains all of the configuration sets in your Amazon SES
-     * account in the current AWS Region.</p>
+     * account in the current Amazon Web Services Region.</p>
      */
     inline const Aws::Vector<Aws::String>& GetConfigurationSets() const{ return m_configurationSets; }
 
     /**
      * <p>An array that contains all of the configuration sets in your Amazon SES
-     * account in the current AWS Region.</p>
+     * account in the current Amazon Web Services Region.</p>
      */
     inline void SetConfigurationSets(const Aws::Vector<Aws::String>& value) { m_configurationSets = value; }
 
     /**
      * <p>An array that contains all of the configuration sets in your Amazon SES
-     * account in the current AWS Region.</p>
+     * account in the current Amazon Web Services Region.</p>
      */
     inline void SetConfigurationSets(Aws::Vector<Aws::String>&& value) { m_configurationSets = std::move(value); }
 
     /**
      * <p>An array that contains all of the configuration sets in your Amazon SES
-     * account in the current AWS Region.</p>
+     * account in the current Amazon Web Services Region.</p>
      */
     inline ListConfigurationSetsResult& WithConfigurationSets(const Aws::Vector<Aws::String>& value) { SetConfigurationSets(value); return *this;}
 
     /**
      * <p>An array that contains all of the configuration sets in your Amazon SES
-     * account in the current AWS Region.</p>
+     * account in the current Amazon Web Services Region.</p>
      */
     inline ListConfigurationSetsResult& WithConfigurationSets(Aws::Vector<Aws::String>&& value) { SetConfigurationSets(std::move(value)); return *this;}
 
     /**
      * <p>An array that contains all of the configuration sets in your Amazon SES
-     * account in the current AWS Region.</p>
+     * account in the current Amazon Web Services Region.</p>
      */
     inline ListConfigurationSetsResult& AddConfigurationSets(const Aws::String& value) { m_configurationSets.push_back(value); return *this; }
 
     /**
      * <p>An array that contains all of the configuration sets in your Amazon SES
-     * account in the current AWS Region.</p>
+     * account in the current Amazon Web Services Region.</p>
      */
     inline ListConfigurationSetsResult& AddConfigurationSets(Aws::String&& value) { m_configurationSets.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An array that contains all of the configuration sets in your Amazon SES
-     * account in the current AWS Region.</p>
+     * account in the current Amazon Web Services Region.</p>
      */
     inline ListConfigurationSetsResult& AddConfigurationSets(const char* value) { m_configurationSets.push_back(value); return *this; }
 

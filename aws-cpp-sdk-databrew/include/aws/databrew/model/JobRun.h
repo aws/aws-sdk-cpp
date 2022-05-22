@@ -11,7 +11,11 @@
 #include <aws/databrew/model/LogSubscription.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/databrew/model/RecipeReference.h>
+#include <aws/databrew/model/JobSample.h>
 #include <aws/databrew/model/Output.h>
+#include <aws/databrew/model/DataCatalogOutput.h>
+#include <aws/databrew/model/DatabaseOutput.h>
+#include <aws/databrew/model/ValidationConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -30,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents one run of an AWS Glue DataBrew job.</p><p><h3>See Also:</h3>   <a
+   * <p>Represents one run of a DataBrew job.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/JobRun">AWS API
    * Reference</a></p>
    */
@@ -445,6 +449,104 @@ namespace Model
 
 
     /**
+     * <p>One or more artifacts that represent the Glue Data Catalog output from
+     * running the job.</p>
+     */
+    inline const Aws::Vector<DataCatalogOutput>& GetDataCatalogOutputs() const{ return m_dataCatalogOutputs; }
+
+    /**
+     * <p>One or more artifacts that represent the Glue Data Catalog output from
+     * running the job.</p>
+     */
+    inline bool DataCatalogOutputsHasBeenSet() const { return m_dataCatalogOutputsHasBeenSet; }
+
+    /**
+     * <p>One or more artifacts that represent the Glue Data Catalog output from
+     * running the job.</p>
+     */
+    inline void SetDataCatalogOutputs(const Aws::Vector<DataCatalogOutput>& value) { m_dataCatalogOutputsHasBeenSet = true; m_dataCatalogOutputs = value; }
+
+    /**
+     * <p>One or more artifacts that represent the Glue Data Catalog output from
+     * running the job.</p>
+     */
+    inline void SetDataCatalogOutputs(Aws::Vector<DataCatalogOutput>&& value) { m_dataCatalogOutputsHasBeenSet = true; m_dataCatalogOutputs = std::move(value); }
+
+    /**
+     * <p>One or more artifacts that represent the Glue Data Catalog output from
+     * running the job.</p>
+     */
+    inline JobRun& WithDataCatalogOutputs(const Aws::Vector<DataCatalogOutput>& value) { SetDataCatalogOutputs(value); return *this;}
+
+    /**
+     * <p>One or more artifacts that represent the Glue Data Catalog output from
+     * running the job.</p>
+     */
+    inline JobRun& WithDataCatalogOutputs(Aws::Vector<DataCatalogOutput>&& value) { SetDataCatalogOutputs(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more artifacts that represent the Glue Data Catalog output from
+     * running the job.</p>
+     */
+    inline JobRun& AddDataCatalogOutputs(const DataCatalogOutput& value) { m_dataCatalogOutputsHasBeenSet = true; m_dataCatalogOutputs.push_back(value); return *this; }
+
+    /**
+     * <p>One or more artifacts that represent the Glue Data Catalog output from
+     * running the job.</p>
+     */
+    inline JobRun& AddDataCatalogOutputs(DataCatalogOutput&& value) { m_dataCatalogOutputsHasBeenSet = true; m_dataCatalogOutputs.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Represents a list of JDBC database output objects which defines the output
+     * destination for a DataBrew recipe job to write into.</p>
+     */
+    inline const Aws::Vector<DatabaseOutput>& GetDatabaseOutputs() const{ return m_databaseOutputs; }
+
+    /**
+     * <p>Represents a list of JDBC database output objects which defines the output
+     * destination for a DataBrew recipe job to write into.</p>
+     */
+    inline bool DatabaseOutputsHasBeenSet() const { return m_databaseOutputsHasBeenSet; }
+
+    /**
+     * <p>Represents a list of JDBC database output objects which defines the output
+     * destination for a DataBrew recipe job to write into.</p>
+     */
+    inline void SetDatabaseOutputs(const Aws::Vector<DatabaseOutput>& value) { m_databaseOutputsHasBeenSet = true; m_databaseOutputs = value; }
+
+    /**
+     * <p>Represents a list of JDBC database output objects which defines the output
+     * destination for a DataBrew recipe job to write into.</p>
+     */
+    inline void SetDatabaseOutputs(Aws::Vector<DatabaseOutput>&& value) { m_databaseOutputsHasBeenSet = true; m_databaseOutputs = std::move(value); }
+
+    /**
+     * <p>Represents a list of JDBC database output objects which defines the output
+     * destination for a DataBrew recipe job to write into.</p>
+     */
+    inline JobRun& WithDatabaseOutputs(const Aws::Vector<DatabaseOutput>& value) { SetDatabaseOutputs(value); return *this;}
+
+    /**
+     * <p>Represents a list of JDBC database output objects which defines the output
+     * destination for a DataBrew recipe job to write into.</p>
+     */
+    inline JobRun& WithDatabaseOutputs(Aws::Vector<DatabaseOutput>&& value) { SetDatabaseOutputs(std::move(value)); return *this;}
+
+    /**
+     * <p>Represents a list of JDBC database output objects which defines the output
+     * destination for a DataBrew recipe job to write into.</p>
+     */
+    inline JobRun& AddDatabaseOutputs(const DatabaseOutput& value) { m_databaseOutputsHasBeenSet = true; m_databaseOutputs.push_back(value); return *this; }
+
+    /**
+     * <p>Represents a list of JDBC database output objects which defines the output
+     * destination for a DataBrew recipe job to write into.</p>
+     */
+    inline JobRun& AddDatabaseOutputs(DatabaseOutput&& value) { m_databaseOutputsHasBeenSet = true; m_databaseOutputs.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The set of steps processed by the job.</p>
      */
     inline const RecipeReference& GetRecipeReference() const{ return m_recipeReference; }
@@ -476,42 +578,42 @@ namespace Model
 
 
     /**
-     * <p>The identifier (the user name) of the user who initiated the job run. </p>
+     * <p>The Amazon Resource Name (ARN) of the user who initiated the job run. </p>
      */
     inline const Aws::String& GetStartedBy() const{ return m_startedBy; }
 
     /**
-     * <p>The identifier (the user name) of the user who initiated the job run. </p>
+     * <p>The Amazon Resource Name (ARN) of the user who initiated the job run. </p>
      */
     inline bool StartedByHasBeenSet() const { return m_startedByHasBeenSet; }
 
     /**
-     * <p>The identifier (the user name) of the user who initiated the job run. </p>
+     * <p>The Amazon Resource Name (ARN) of the user who initiated the job run. </p>
      */
     inline void SetStartedBy(const Aws::String& value) { m_startedByHasBeenSet = true; m_startedBy = value; }
 
     /**
-     * <p>The identifier (the user name) of the user who initiated the job run. </p>
+     * <p>The Amazon Resource Name (ARN) of the user who initiated the job run. </p>
      */
     inline void SetStartedBy(Aws::String&& value) { m_startedByHasBeenSet = true; m_startedBy = std::move(value); }
 
     /**
-     * <p>The identifier (the user name) of the user who initiated the job run. </p>
+     * <p>The Amazon Resource Name (ARN) of the user who initiated the job run. </p>
      */
     inline void SetStartedBy(const char* value) { m_startedByHasBeenSet = true; m_startedBy.assign(value); }
 
     /**
-     * <p>The identifier (the user name) of the user who initiated the job run. </p>
+     * <p>The Amazon Resource Name (ARN) of the user who initiated the job run. </p>
      */
     inline JobRun& WithStartedBy(const Aws::String& value) { SetStartedBy(value); return *this;}
 
     /**
-     * <p>The identifier (the user name) of the user who initiated the job run. </p>
+     * <p>The Amazon Resource Name (ARN) of the user who initiated the job run. </p>
      */
     inline JobRun& WithStartedBy(Aws::String&& value) { SetStartedBy(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier (the user name) of the user who initiated the job run. </p>
+     * <p>The Amazon Resource Name (ARN) of the user who initiated the job run. </p>
      */
     inline JobRun& WithStartedBy(const char* value) { SetStartedBy(value); return *this;}
 
@@ -545,6 +647,104 @@ namespace Model
      * <p>The date and time when the job run began. </p>
      */
     inline JobRun& WithStartedOn(Aws::Utils::DateTime&& value) { SetStartedOn(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A sample configuration for profile jobs only, which determines the number of
+     * rows on which the profile job is run. If a <code>JobSample</code> value isn't
+     * provided, the default is used. The default value is CUSTOM_ROWS for the mode
+     * parameter and 20,000 for the size parameter.</p>
+     */
+    inline const JobSample& GetJobSample() const{ return m_jobSample; }
+
+    /**
+     * <p>A sample configuration for profile jobs only, which determines the number of
+     * rows on which the profile job is run. If a <code>JobSample</code> value isn't
+     * provided, the default is used. The default value is CUSTOM_ROWS for the mode
+     * parameter and 20,000 for the size parameter.</p>
+     */
+    inline bool JobSampleHasBeenSet() const { return m_jobSampleHasBeenSet; }
+
+    /**
+     * <p>A sample configuration for profile jobs only, which determines the number of
+     * rows on which the profile job is run. If a <code>JobSample</code> value isn't
+     * provided, the default is used. The default value is CUSTOM_ROWS for the mode
+     * parameter and 20,000 for the size parameter.</p>
+     */
+    inline void SetJobSample(const JobSample& value) { m_jobSampleHasBeenSet = true; m_jobSample = value; }
+
+    /**
+     * <p>A sample configuration for profile jobs only, which determines the number of
+     * rows on which the profile job is run. If a <code>JobSample</code> value isn't
+     * provided, the default is used. The default value is CUSTOM_ROWS for the mode
+     * parameter and 20,000 for the size parameter.</p>
+     */
+    inline void SetJobSample(JobSample&& value) { m_jobSampleHasBeenSet = true; m_jobSample = std::move(value); }
+
+    /**
+     * <p>A sample configuration for profile jobs only, which determines the number of
+     * rows on which the profile job is run. If a <code>JobSample</code> value isn't
+     * provided, the default is used. The default value is CUSTOM_ROWS for the mode
+     * parameter and 20,000 for the size parameter.</p>
+     */
+    inline JobRun& WithJobSample(const JobSample& value) { SetJobSample(value); return *this;}
+
+    /**
+     * <p>A sample configuration for profile jobs only, which determines the number of
+     * rows on which the profile job is run. If a <code>JobSample</code> value isn't
+     * provided, the default is used. The default value is CUSTOM_ROWS for the mode
+     * parameter and 20,000 for the size parameter.</p>
+     */
+    inline JobRun& WithJobSample(JobSample&& value) { SetJobSample(std::move(value)); return *this;}
+
+
+    /**
+     * <p>List of validation configurations that are applied to the profile job
+     * run.</p>
+     */
+    inline const Aws::Vector<ValidationConfiguration>& GetValidationConfigurations() const{ return m_validationConfigurations; }
+
+    /**
+     * <p>List of validation configurations that are applied to the profile job
+     * run.</p>
+     */
+    inline bool ValidationConfigurationsHasBeenSet() const { return m_validationConfigurationsHasBeenSet; }
+
+    /**
+     * <p>List of validation configurations that are applied to the profile job
+     * run.</p>
+     */
+    inline void SetValidationConfigurations(const Aws::Vector<ValidationConfiguration>& value) { m_validationConfigurationsHasBeenSet = true; m_validationConfigurations = value; }
+
+    /**
+     * <p>List of validation configurations that are applied to the profile job
+     * run.</p>
+     */
+    inline void SetValidationConfigurations(Aws::Vector<ValidationConfiguration>&& value) { m_validationConfigurationsHasBeenSet = true; m_validationConfigurations = std::move(value); }
+
+    /**
+     * <p>List of validation configurations that are applied to the profile job
+     * run.</p>
+     */
+    inline JobRun& WithValidationConfigurations(const Aws::Vector<ValidationConfiguration>& value) { SetValidationConfigurations(value); return *this;}
+
+    /**
+     * <p>List of validation configurations that are applied to the profile job
+     * run.</p>
+     */
+    inline JobRun& WithValidationConfigurations(Aws::Vector<ValidationConfiguration>&& value) { SetValidationConfigurations(std::move(value)); return *this;}
+
+    /**
+     * <p>List of validation configurations that are applied to the profile job
+     * run.</p>
+     */
+    inline JobRun& AddValidationConfigurations(const ValidationConfiguration& value) { m_validationConfigurationsHasBeenSet = true; m_validationConfigurations.push_back(value); return *this; }
+
+    /**
+     * <p>List of validation configurations that are applied to the profile job
+     * run.</p>
+     */
+    inline JobRun& AddValidationConfigurations(ValidationConfiguration&& value) { m_validationConfigurationsHasBeenSet = true; m_validationConfigurations.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -581,6 +781,12 @@ namespace Model
     Aws::Vector<Output> m_outputs;
     bool m_outputsHasBeenSet;
 
+    Aws::Vector<DataCatalogOutput> m_dataCatalogOutputs;
+    bool m_dataCatalogOutputsHasBeenSet;
+
+    Aws::Vector<DatabaseOutput> m_databaseOutputs;
+    bool m_databaseOutputsHasBeenSet;
+
     RecipeReference m_recipeReference;
     bool m_recipeReferenceHasBeenSet;
 
@@ -589,6 +795,12 @@ namespace Model
 
     Aws::Utils::DateTime m_startedOn;
     bool m_startedOnHasBeenSet;
+
+    JobSample m_jobSample;
+    bool m_jobSampleHasBeenSet;
+
+    Aws::Vector<ValidationConfiguration> m_validationConfigurations;
+    bool m_validationConfigurationsHasBeenSet;
   };
 
 } // namespace Model

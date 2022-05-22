@@ -335,10 +335,8 @@ namespace Model
     /**
      * <p>The map of arguments to add the map of arguments used to configure the
      * <code>DevEndpoint</code>.</p> <p>Valid arguments are:</p> <ul> <li> <p>
-     * <code>"--enable-glue-datacatalog": ""</code> </p> </li> <li> <p>
-     * <code>"GLUE_PYTHON_VERSION": "3"</code> </p> </li> <li> <p>
-     * <code>"GLUE_PYTHON_VERSION": "2"</code> </p> </li> </ul> <p>You can specify a
-     * version of Python support for development endpoints by using the
+     * <code>"--enable-glue-datacatalog": ""</code> </p> </li> </ul> <p>You can specify
+     * a version of Python support for development endpoints by using the
      * <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or
      * <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version
      * defaults to Python 2.</p>
@@ -348,10 +346,8 @@ namespace Model
     /**
      * <p>The map of arguments to add the map of arguments used to configure the
      * <code>DevEndpoint</code>.</p> <p>Valid arguments are:</p> <ul> <li> <p>
-     * <code>"--enable-glue-datacatalog": ""</code> </p> </li> <li> <p>
-     * <code>"GLUE_PYTHON_VERSION": "3"</code> </p> </li> <li> <p>
-     * <code>"GLUE_PYTHON_VERSION": "2"</code> </p> </li> </ul> <p>You can specify a
-     * version of Python support for development endpoints by using the
+     * <code>"--enable-glue-datacatalog": ""</code> </p> </li> </ul> <p>You can specify
+     * a version of Python support for development endpoints by using the
      * <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or
      * <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version
      * defaults to Python 2.</p>
@@ -361,10 +357,8 @@ namespace Model
     /**
      * <p>The map of arguments to add the map of arguments used to configure the
      * <code>DevEndpoint</code>.</p> <p>Valid arguments are:</p> <ul> <li> <p>
-     * <code>"--enable-glue-datacatalog": ""</code> </p> </li> <li> <p>
-     * <code>"GLUE_PYTHON_VERSION": "3"</code> </p> </li> <li> <p>
-     * <code>"GLUE_PYTHON_VERSION": "2"</code> </p> </li> </ul> <p>You can specify a
-     * version of Python support for development endpoints by using the
+     * <code>"--enable-glue-datacatalog": ""</code> </p> </li> </ul> <p>You can specify
+     * a version of Python support for development endpoints by using the
      * <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or
      * <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version
      * defaults to Python 2.</p>
@@ -374,10 +368,8 @@ namespace Model
     /**
      * <p>The map of arguments to add the map of arguments used to configure the
      * <code>DevEndpoint</code>.</p> <p>Valid arguments are:</p> <ul> <li> <p>
-     * <code>"--enable-glue-datacatalog": ""</code> </p> </li> <li> <p>
-     * <code>"GLUE_PYTHON_VERSION": "3"</code> </p> </li> <li> <p>
-     * <code>"GLUE_PYTHON_VERSION": "2"</code> </p> </li> </ul> <p>You can specify a
-     * version of Python support for development endpoints by using the
+     * <code>"--enable-glue-datacatalog": ""</code> </p> </li> </ul> <p>You can specify
+     * a version of Python support for development endpoints by using the
      * <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or
      * <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version
      * defaults to Python 2.</p>
@@ -387,10 +379,8 @@ namespace Model
     /**
      * <p>The map of arguments to add the map of arguments used to configure the
      * <code>DevEndpoint</code>.</p> <p>Valid arguments are:</p> <ul> <li> <p>
-     * <code>"--enable-glue-datacatalog": ""</code> </p> </li> <li> <p>
-     * <code>"GLUE_PYTHON_VERSION": "3"</code> </p> </li> <li> <p>
-     * <code>"GLUE_PYTHON_VERSION": "2"</code> </p> </li> </ul> <p>You can specify a
-     * version of Python support for development endpoints by using the
+     * <code>"--enable-glue-datacatalog": ""</code> </p> </li> </ul> <p>You can specify
+     * a version of Python support for development endpoints by using the
      * <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or
      * <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version
      * defaults to Python 2.</p>
@@ -400,10 +390,8 @@ namespace Model
     /**
      * <p>The map of arguments to add the map of arguments used to configure the
      * <code>DevEndpoint</code>.</p> <p>Valid arguments are:</p> <ul> <li> <p>
-     * <code>"--enable-glue-datacatalog": ""</code> </p> </li> <li> <p>
-     * <code>"GLUE_PYTHON_VERSION": "3"</code> </p> </li> <li> <p>
-     * <code>"GLUE_PYTHON_VERSION": "2"</code> </p> </li> </ul> <p>You can specify a
-     * version of Python support for development endpoints by using the
+     * <code>"--enable-glue-datacatalog": ""</code> </p> </li> </ul> <p>You can specify
+     * a version of Python support for development endpoints by using the
      * <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or
      * <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version
      * defaults to Python 2.</p>
@@ -413,10 +401,8 @@ namespace Model
     /**
      * <p>The map of arguments to add the map of arguments used to configure the
      * <code>DevEndpoint</code>.</p> <p>Valid arguments are:</p> <ul> <li> <p>
-     * <code>"--enable-glue-datacatalog": ""</code> </p> </li> <li> <p>
-     * <code>"GLUE_PYTHON_VERSION": "3"</code> </p> </li> <li> <p>
-     * <code>"GLUE_PYTHON_VERSION": "2"</code> </p> </li> </ul> <p>You can specify a
-     * version of Python support for development endpoints by using the
+     * <code>"--enable-glue-datacatalog": ""</code> </p> </li> </ul> <p>You can specify
+     * a version of Python support for development endpoints by using the
      * <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or
      * <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version
      * defaults to Python 2.</p>
@@ -426,10 +412,8 @@ namespace Model
     /**
      * <p>The map of arguments to add the map of arguments used to configure the
      * <code>DevEndpoint</code>.</p> <p>Valid arguments are:</p> <ul> <li> <p>
-     * <code>"--enable-glue-datacatalog": ""</code> </p> </li> <li> <p>
-     * <code>"GLUE_PYTHON_VERSION": "3"</code> </p> </li> <li> <p>
-     * <code>"GLUE_PYTHON_VERSION": "2"</code> </p> </li> </ul> <p>You can specify a
-     * version of Python support for development endpoints by using the
+     * <code>"--enable-glue-datacatalog": ""</code> </p> </li> </ul> <p>You can specify
+     * a version of Python support for development endpoints by using the
      * <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or
      * <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version
      * defaults to Python 2.</p>
@@ -439,10 +423,8 @@ namespace Model
     /**
      * <p>The map of arguments to add the map of arguments used to configure the
      * <code>DevEndpoint</code>.</p> <p>Valid arguments are:</p> <ul> <li> <p>
-     * <code>"--enable-glue-datacatalog": ""</code> </p> </li> <li> <p>
-     * <code>"GLUE_PYTHON_VERSION": "3"</code> </p> </li> <li> <p>
-     * <code>"GLUE_PYTHON_VERSION": "2"</code> </p> </li> </ul> <p>You can specify a
-     * version of Python support for development endpoints by using the
+     * <code>"--enable-glue-datacatalog": ""</code> </p> </li> </ul> <p>You can specify
+     * a version of Python support for development endpoints by using the
      * <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or
      * <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version
      * defaults to Python 2.</p>
@@ -452,10 +434,8 @@ namespace Model
     /**
      * <p>The map of arguments to add the map of arguments used to configure the
      * <code>DevEndpoint</code>.</p> <p>Valid arguments are:</p> <ul> <li> <p>
-     * <code>"--enable-glue-datacatalog": ""</code> </p> </li> <li> <p>
-     * <code>"GLUE_PYTHON_VERSION": "3"</code> </p> </li> <li> <p>
-     * <code>"GLUE_PYTHON_VERSION": "2"</code> </p> </li> </ul> <p>You can specify a
-     * version of Python support for development endpoints by using the
+     * <code>"--enable-glue-datacatalog": ""</code> </p> </li> </ul> <p>You can specify
+     * a version of Python support for development endpoints by using the
      * <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or
      * <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version
      * defaults to Python 2.</p>
@@ -465,10 +445,8 @@ namespace Model
     /**
      * <p>The map of arguments to add the map of arguments used to configure the
      * <code>DevEndpoint</code>.</p> <p>Valid arguments are:</p> <ul> <li> <p>
-     * <code>"--enable-glue-datacatalog": ""</code> </p> </li> <li> <p>
-     * <code>"GLUE_PYTHON_VERSION": "3"</code> </p> </li> <li> <p>
-     * <code>"GLUE_PYTHON_VERSION": "2"</code> </p> </li> </ul> <p>You can specify a
-     * version of Python support for development endpoints by using the
+     * <code>"--enable-glue-datacatalog": ""</code> </p> </li> </ul> <p>You can specify
+     * a version of Python support for development endpoints by using the
      * <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or
      * <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version
      * defaults to Python 2.</p>
@@ -478,10 +456,8 @@ namespace Model
     /**
      * <p>The map of arguments to add the map of arguments used to configure the
      * <code>DevEndpoint</code>.</p> <p>Valid arguments are:</p> <ul> <li> <p>
-     * <code>"--enable-glue-datacatalog": ""</code> </p> </li> <li> <p>
-     * <code>"GLUE_PYTHON_VERSION": "3"</code> </p> </li> <li> <p>
-     * <code>"GLUE_PYTHON_VERSION": "2"</code> </p> </li> </ul> <p>You can specify a
-     * version of Python support for development endpoints by using the
+     * <code>"--enable-glue-datacatalog": ""</code> </p> </li> </ul> <p>You can specify
+     * a version of Python support for development endpoints by using the
      * <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or
      * <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version
      * defaults to Python 2.</p>
@@ -491,10 +467,8 @@ namespace Model
     /**
      * <p>The map of arguments to add the map of arguments used to configure the
      * <code>DevEndpoint</code>.</p> <p>Valid arguments are:</p> <ul> <li> <p>
-     * <code>"--enable-glue-datacatalog": ""</code> </p> </li> <li> <p>
-     * <code>"GLUE_PYTHON_VERSION": "3"</code> </p> </li> <li> <p>
-     * <code>"GLUE_PYTHON_VERSION": "2"</code> </p> </li> </ul> <p>You can specify a
-     * version of Python support for development endpoints by using the
+     * <code>"--enable-glue-datacatalog": ""</code> </p> </li> </ul> <p>You can specify
+     * a version of Python support for development endpoints by using the
      * <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or
      * <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version
      * defaults to Python 2.</p>

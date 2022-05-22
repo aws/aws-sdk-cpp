@@ -170,50 +170,50 @@ namespace Model
 
 
     /**
-     * <p>An IAM policy document that governs which AWS accounts can create
-     * subscription filters against this destination.</p>
+     * <p>An IAM policy document that governs which Amazon Web Services accounts can
+     * create subscription filters against this destination.</p>
      */
     inline const Aws::String& GetAccessPolicy() const{ return m_accessPolicy; }
 
     /**
-     * <p>An IAM policy document that governs which AWS accounts can create
-     * subscription filters against this destination.</p>
+     * <p>An IAM policy document that governs which Amazon Web Services accounts can
+     * create subscription filters against this destination.</p>
      */
     inline bool AccessPolicyHasBeenSet() const { return m_accessPolicyHasBeenSet; }
 
     /**
-     * <p>An IAM policy document that governs which AWS accounts can create
-     * subscription filters against this destination.</p>
+     * <p>An IAM policy document that governs which Amazon Web Services accounts can
+     * create subscription filters against this destination.</p>
      */
     inline void SetAccessPolicy(const Aws::String& value) { m_accessPolicyHasBeenSet = true; m_accessPolicy = value; }
 
     /**
-     * <p>An IAM policy document that governs which AWS accounts can create
-     * subscription filters against this destination.</p>
+     * <p>An IAM policy document that governs which Amazon Web Services accounts can
+     * create subscription filters against this destination.</p>
      */
     inline void SetAccessPolicy(Aws::String&& value) { m_accessPolicyHasBeenSet = true; m_accessPolicy = std::move(value); }
 
     /**
-     * <p>An IAM policy document that governs which AWS accounts can create
-     * subscription filters against this destination.</p>
+     * <p>An IAM policy document that governs which Amazon Web Services accounts can
+     * create subscription filters against this destination.</p>
      */
     inline void SetAccessPolicy(const char* value) { m_accessPolicyHasBeenSet = true; m_accessPolicy.assign(value); }
 
     /**
-     * <p>An IAM policy document that governs which AWS accounts can create
-     * subscription filters against this destination.</p>
+     * <p>An IAM policy document that governs which Amazon Web Services accounts can
+     * create subscription filters against this destination.</p>
      */
     inline Destination& WithAccessPolicy(const Aws::String& value) { SetAccessPolicy(value); return *this;}
 
     /**
-     * <p>An IAM policy document that governs which AWS accounts can create
-     * subscription filters against this destination.</p>
+     * <p>An IAM policy document that governs which Amazon Web Services accounts can
+     * create subscription filters against this destination.</p>
      */
     inline Destination& WithAccessPolicy(Aws::String&& value) { SetAccessPolicy(std::move(value)); return *this;}
 
     /**
-     * <p>An IAM policy document that governs which AWS accounts can create
-     * subscription filters against this destination.</p>
+     * <p>An IAM policy document that governs which Amazon Web Services accounts can
+     * create subscription filters against this destination.</p>
      */
     inline Destination& WithAccessPolicy(const char* value) { SetAccessPolicy(value); return *this;}
 

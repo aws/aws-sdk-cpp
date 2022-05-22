@@ -36,30 +36,4 @@ public class ShapeTest {
         assertTrue(shape1.isMutuallyReferencedWith(shape2));
         assertTrue(shape2.isMutuallyReferencedWith(shape1));
     }
-
-    public void testIsListMemberAndMutuallyReferencedWith() {
-        Shape structValueShape = new Shape();
-        structValueShape.setType("structure");
-        structValueShape.setName("StructValue");
-        structValueShape.setMembers(new HashMap<>());
-        Shape valueListShape = new Shape();
-        valueListShape.setType("list");
-        valueListShape.setName("ValueList");
-        Shape valueShape = new Shape();
-        valueShape.setType("structure");
-        valueShape.setName("Value");
-        valueShape.setMembers(new HashMap<>());
-
-        ShapeMember structValueShapeMember = new ShapeMember();
-        structValueShapeMember.setShape(valueListShape);
-        structValueShape.getMembers().put("valueList", structValueShapeMember);
-        ShapeMember valueListShapeMember = new ShapeMember();
-        valueListShapeMember.setShape(valueShape);
-        valueListShape.setListMember(valueListShapeMember);
-        ShapeMember valueShapeMember = new ShapeMember();
-        valueShapeMember.setShape(structValueShape);
-        valueShape.getMembers().put("structValue", valueShapeMember);
-
-        assertTrue(valueShape.isListMemberAndMutuallyReferencedWith(structValueShape));
-    }
 }

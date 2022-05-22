@@ -10,6 +10,7 @@
 #include <aws/firehose/model/ExtendedS3DestinationUpdate.h>
 #include <aws/firehose/model/RedshiftDestinationUpdate.h>
 #include <aws/firehose/model/ElasticsearchDestinationUpdate.h>
+#include <aws/firehose/model/AmazonopensearchserviceDestinationUpdate.h>
 #include <aws/firehose/model/SplunkDestinationUpdate.h>
 #include <aws/firehose/model/HttpEndpointDestinationUpdate.h>
 #include <utility>
@@ -295,6 +296,25 @@ namespace Model
     inline UpdateDestinationRequest& WithElasticsearchDestinationUpdate(ElasticsearchDestinationUpdate&& value) { SetElasticsearchDestinationUpdate(std::move(value)); return *this;}
 
 
+    
+    inline const AmazonopensearchserviceDestinationUpdate& GetAmazonopensearchserviceDestinationUpdate() const{ return m_amazonopensearchserviceDestinationUpdate; }
+
+    
+    inline bool AmazonopensearchserviceDestinationUpdateHasBeenSet() const { return m_amazonopensearchserviceDestinationUpdateHasBeenSet; }
+
+    
+    inline void SetAmazonopensearchserviceDestinationUpdate(const AmazonopensearchserviceDestinationUpdate& value) { m_amazonopensearchserviceDestinationUpdateHasBeenSet = true; m_amazonopensearchserviceDestinationUpdate = value; }
+
+    
+    inline void SetAmazonopensearchserviceDestinationUpdate(AmazonopensearchserviceDestinationUpdate&& value) { m_amazonopensearchserviceDestinationUpdateHasBeenSet = true; m_amazonopensearchserviceDestinationUpdate = std::move(value); }
+
+    
+    inline UpdateDestinationRequest& WithAmazonopensearchserviceDestinationUpdate(const AmazonopensearchserviceDestinationUpdate& value) { SetAmazonopensearchserviceDestinationUpdate(value); return *this;}
+
+    
+    inline UpdateDestinationRequest& WithAmazonopensearchserviceDestinationUpdate(AmazonopensearchserviceDestinationUpdate&& value) { SetAmazonopensearchserviceDestinationUpdate(std::move(value)); return *this;}
+
+
     /**
      * <p>Describes an update for a destination in Splunk.</p>
      */
@@ -375,6 +395,9 @@ namespace Model
 
     ElasticsearchDestinationUpdate m_elasticsearchDestinationUpdate;
     bool m_elasticsearchDestinationUpdateHasBeenSet;
+
+    AmazonopensearchserviceDestinationUpdate m_amazonopensearchserviceDestinationUpdate;
+    bool m_amazonopensearchserviceDestinationUpdateHasBeenSet;
 
     SplunkDestinationUpdate m_splunkDestinationUpdate;
     bool m_splunkDestinationUpdateHasBeenSet;

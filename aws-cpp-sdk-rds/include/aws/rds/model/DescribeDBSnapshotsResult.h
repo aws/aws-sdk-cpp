@@ -28,8 +28,8 @@ namespace RDS
 namespace Model
 {
   /**
-   * <p> Contains the result of a successful invocation of the
-   * <code>DescribeDBSnapshots</code> action. </p><p><h3>See Also:</h3>   <a
+   * <p>Contains the result of a successful invocation of the
+   * <code>DescribeDBSnapshots</code> action.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBSnapshotMessage">AWS
    * API Reference</a></p>
    */
@@ -42,87 +42,87 @@ namespace Model
 
 
     /**
-     * <p> An optional pagination token provided by a previous request. If this
+     * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>. </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
-     * <p> An optional pagination token provided by a previous request. If this
+     * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>. </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
 
     /**
-     * <p> An optional pagination token provided by a previous request. If this
+     * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>. </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
     /**
-     * <p> An optional pagination token provided by a previous request. If this
+     * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>. </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline void SetMarker(const char* value) { m_marker.assign(value); }
 
     /**
-     * <p> An optional pagination token provided by a previous request. If this
+     * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>. </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline DescribeDBSnapshotsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
-     * <p> An optional pagination token provided by a previous request. If this
+     * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>. </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline DescribeDBSnapshotsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
-     * <p> An optional pagination token provided by a previous request. If this
+     * <p>An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>. </p>
+     * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline DescribeDBSnapshotsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
 
     /**
-     * <p> A list of <code>DBSnapshot</code> instances. </p>
+     * <p>A list of <code>DBSnapshot</code> instances.</p>
      */
     inline const Aws::Vector<DBSnapshot>& GetDBSnapshots() const{ return m_dBSnapshots; }
 
     /**
-     * <p> A list of <code>DBSnapshot</code> instances. </p>
+     * <p>A list of <code>DBSnapshot</code> instances.</p>
      */
     inline void SetDBSnapshots(const Aws::Vector<DBSnapshot>& value) { m_dBSnapshots = value; }
 
     /**
-     * <p> A list of <code>DBSnapshot</code> instances. </p>
+     * <p>A list of <code>DBSnapshot</code> instances.</p>
      */
     inline void SetDBSnapshots(Aws::Vector<DBSnapshot>&& value) { m_dBSnapshots = std::move(value); }
 
     /**
-     * <p> A list of <code>DBSnapshot</code> instances. </p>
+     * <p>A list of <code>DBSnapshot</code> instances.</p>
      */
     inline DescribeDBSnapshotsResult& WithDBSnapshots(const Aws::Vector<DBSnapshot>& value) { SetDBSnapshots(value); return *this;}
 
     /**
-     * <p> A list of <code>DBSnapshot</code> instances. </p>
+     * <p>A list of <code>DBSnapshot</code> instances.</p>
      */
     inline DescribeDBSnapshotsResult& WithDBSnapshots(Aws::Vector<DBSnapshot>&& value) { SetDBSnapshots(std::move(value)); return *this;}
 
     /**
-     * <p> A list of <code>DBSnapshot</code> instances. </p>
+     * <p>A list of <code>DBSnapshot</code> instances.</p>
      */
     inline DescribeDBSnapshotsResult& AddDBSnapshots(const DBSnapshot& value) { m_dBSnapshots.push_back(value); return *this; }
 
     /**
-     * <p> A list of <code>DBSnapshot</code> instances. </p>
+     * <p>A list of <code>DBSnapshot</code> instances.</p>
      */
     inline DescribeDBSnapshotsResult& AddDBSnapshots(DBSnapshot&& value) { m_dBSnapshots.push_back(std::move(value)); return *this; }
 

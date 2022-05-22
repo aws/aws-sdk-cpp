@@ -11,10 +11,10 @@
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-const Aws::String simpleValue = "{\"testStringKey\":\"testStringValue\"}";
 
 TEST(JsonSerializerTest, TestParseSimpleJsonString)
 {
+    const Aws::String simpleValue = R"({"testStringKey":"testStringValue"})";
     JsonValue value(simpleValue);
     if (value.WasParseSuccessful())
     {
@@ -28,10 +28,10 @@ TEST(JsonSerializerTest, TestParseSimpleJsonString)
     }
 }
 
-const Aws::String simpleValue2 = "{\"testIntKey\":10}";
 
 TEST(JsonSerializerTest, TestParseSimpleJsonString2)
 {
+    const Aws::String simpleValue2 = R"({"testIntKey":10})";
     JsonValue value(simpleValue2);
     if (value.WasParseSuccessful())
     {
@@ -46,10 +46,10 @@ TEST(JsonSerializerTest, TestParseSimpleJsonString2)
 }
 
 
-const Aws::String simpleValue3 = "{\"testInt64Key\":8765432109876543210}";
 
 TEST(JsonSerializerTest, TestParseSimpleJsonString3)
 {
+    const Aws::String simpleValue3 = R"({"testInt64Key":8765432109876543210})";
     JsonValue value(simpleValue3);
     if (value.WasParseSuccessful())
     {
@@ -63,10 +63,10 @@ TEST(JsonSerializerTest, TestParseSimpleJsonString3)
     }
 }
 
-const Aws::String simpleValue4 = "{\"testBoolKey\":false}";
 
 TEST(JsonSerializerTest, TestParseSimpleJsonString4)
 {
+    const Aws::String simpleValue4 = R"({"testBoolKey":false})";
     JsonValue value(simpleValue4);
     if (value.WasParseSuccessful())
     {
@@ -80,11 +80,10 @@ TEST(JsonSerializerTest, TestParseSimpleJsonString4)
     }
 }
 
-const Aws::String jsonArrayValue =
-    "{\"array\": [\"stringArrayEntry1\", \"stringArrayEntry2\"]}";
 
 TEST(JsonSerializerTest, TestParseJsonArrayString)
 {
+    const Aws::String jsonArrayValue = R"({"array": ["stringArrayEntry1", "stringArrayEntry2"]})";
     JsonValue value(jsonArrayValue);
     if (value.WasParseSuccessful())
     {
@@ -99,14 +98,18 @@ TEST(JsonSerializerTest, TestParseJsonArrayString)
     }
 }
 
-const Aws::String jsonValue =
-    "{\"testStringKey\":\"testStringValue\", \"testIntKey\":10, \"testInt64Key\":8765432109876543210, "
-    "\"testBoolKey\":false, \"array\": [\"stringArrayEntry1\", \"stringArrayEntry2\"], "
-    "\"object\": {\"testObjectStringKey\":\"testObjectStringValue\"}}";
+const std::string jsonValue = R"({
+    "testStringKey":"testStringValue",
+    "testIntKey":10,
+    "testInt64Key":8765432109876543210,
+    "testBoolKey":false,
+    "array": ["stringArrayEntry1", "stringArrayEntry2"],
+    "object": {"testObjectStringKey":"testObjectStringValue"}
+})";
 
 TEST(JsonSerializerTest, TestParseJsonString)
 {
-    JsonValue value(jsonValue);
+    JsonValue value(Aws::String(jsonValue.c_str()));
     if (value.WasParseSuccessful())
     {
         auto view = value.View();
@@ -128,7 +131,7 @@ TEST(JsonSerializerTest, TestParseJsonString)
 
 TEST(JsonSerializerTest, TestParseJsonStream)
 {
-    Aws::StringStream inputAsStream(jsonValue);
+    Aws::StringStream inputAsStream(Aws::String(jsonValue.c_str()));
     JsonValue value(inputAsStream);
 
     if (value.WasParseSuccessful())
@@ -290,7 +293,7 @@ TEST(JsonSerializerTest, TestJsonObjectValue)
 
 TEST(JsonSerializerTest, TestJsonCompactSerializeObject)
 {
-    JsonValue value(jsonValue);
+    JsonValue value(Aws::String(jsonValue.c_str()));
     Aws::String outputString = value.View().WriteCompact();
     JsonValue reparsedValue(outputString);
     if (reparsedValue.WasParseSuccessful())
@@ -312,7 +315,7 @@ TEST(JsonSerializerTest, TestJsonCompactSerializeObject)
 
 TEST(JsonSerializerTest, TestJsonStyledSerializeObject)
 {
-    JsonValue value(jsonValue);
+    JsonValue value(Aws::String(jsonValue.c_str()));
 
     Aws::String outputString = value.View().WriteReadable();
 

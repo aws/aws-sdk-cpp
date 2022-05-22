@@ -55,7 +55,12 @@ Image::Image() :
     m_stateReasonHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_virtualizationType(VirtualizationType::NOT_SET),
-    m_virtualizationTypeHasBeenSet(false)
+    m_virtualizationTypeHasBeenSet(false),
+    m_bootMode(BootModeValues::NOT_SET),
+    m_bootModeHasBeenSet(false),
+    m_tpmSupport(TpmSupportValues::NOT_SET),
+    m_tpmSupportHasBeenSet(false),
+    m_deprecationTimeHasBeenSet(false)
 {
 }
 
@@ -94,7 +99,12 @@ Image::Image(const XmlNode& xmlNode) :
     m_stateReasonHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_virtualizationType(VirtualizationType::NOT_SET),
-    m_virtualizationTypeHasBeenSet(false)
+    m_virtualizationTypeHasBeenSet(false),
+    m_bootMode(BootModeValues::NOT_SET),
+    m_bootModeHasBeenSet(false),
+    m_tpmSupport(TpmSupportValues::NOT_SET),
+    m_tpmSupportHasBeenSet(false),
+    m_deprecationTimeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -279,6 +289,24 @@ Image& Image::operator =(const XmlNode& xmlNode)
       m_virtualizationType = VirtualizationTypeMapper::GetVirtualizationTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(virtualizationTypeNode.GetText()).c_str()).c_str());
       m_virtualizationTypeHasBeenSet = true;
     }
+    XmlNode bootModeNode = resultNode.FirstChild("bootMode");
+    if(!bootModeNode.IsNull())
+    {
+      m_bootMode = BootModeValuesMapper::GetBootModeValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(bootModeNode.GetText()).c_str()).c_str());
+      m_bootModeHasBeenSet = true;
+    }
+    XmlNode tpmSupportNode = resultNode.FirstChild("tpmSupport");
+    if(!tpmSupportNode.IsNull())
+    {
+      m_tpmSupport = TpmSupportValuesMapper::GetTpmSupportValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(tpmSupportNode.GetText()).c_str()).c_str());
+      m_tpmSupportHasBeenSet = true;
+    }
+    XmlNode deprecationTimeNode = resultNode.FirstChild("deprecationTime");
+    if(!deprecationTimeNode.IsNull())
+    {
+      m_deprecationTime = Aws::Utils::Xml::DecodeEscapedXmlText(deprecationTimeNode.GetText());
+      m_deprecationTimeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -436,6 +464,21 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
       oStream << location << index << locationValue << ".VirtualizationType=" << VirtualizationTypeMapper::GetNameForVirtualizationType(m_virtualizationType) << "&";
   }
 
+  if(m_bootModeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".BootMode=" << BootModeValuesMapper::GetNameForBootModeValues(m_bootMode) << "&";
+  }
+
+  if(m_tpmSupportHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".TpmSupport=" << TpmSupportValuesMapper::GetNameForTpmSupportValues(m_tpmSupport) << "&";
+  }
+
+  if(m_deprecationTimeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DeprecationTime=" << StringUtils::URLEncode(m_deprecationTime.c_str()) << "&";
+  }
+
 }
 
 void Image::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -563,6 +606,18 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_virtualizationTypeHasBeenSet)
   {
       oStream << location << ".VirtualizationType=" << VirtualizationTypeMapper::GetNameForVirtualizationType(m_virtualizationType) << "&";
+  }
+  if(m_bootModeHasBeenSet)
+  {
+      oStream << location << ".BootMode=" << BootModeValuesMapper::GetNameForBootModeValues(m_bootMode) << "&";
+  }
+  if(m_tpmSupportHasBeenSet)
+  {
+      oStream << location << ".TpmSupport=" << TpmSupportValuesMapper::GetNameForTpmSupportValues(m_tpmSupport) << "&";
+  }
+  if(m_deprecationTimeHasBeenSet)
+  {
+      oStream << location << ".DeprecationTime=" << StringUtils::URLEncode(m_deprecationTime.c_str()) << "&";
   }
 }
 

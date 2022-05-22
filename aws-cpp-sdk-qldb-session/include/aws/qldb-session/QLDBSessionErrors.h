@@ -48,6 +48,7 @@ enum class QLDBSessionErrors
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   BAD_REQUEST= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CAPACITY_EXCEEDED,
   INVALID_SESSION,
   LIMIT_EXCEEDED,
   OCC_CONFLICT,

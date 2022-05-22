@@ -40,75 +40,63 @@ namespace Model
 
 
     /**
-     * <p>An array of objects, one for each S3 bucket that the finding applies to. Each
-     * object provides a set of metadata about an affected S3 bucket.</p>
+     * <p>The details of the S3 bucket that the finding applies to.</p>
      */
     inline const S3Bucket& GetS3Bucket() const{ return m_s3Bucket; }
 
     /**
-     * <p>An array of objects, one for each S3 bucket that the finding applies to. Each
-     * object provides a set of metadata about an affected S3 bucket.</p>
+     * <p>The details of the S3 bucket that the finding applies to.</p>
      */
     inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
 
     /**
-     * <p>An array of objects, one for each S3 bucket that the finding applies to. Each
-     * object provides a set of metadata about an affected S3 bucket.</p>
+     * <p>The details of the S3 bucket that the finding applies to.</p>
      */
     inline void SetS3Bucket(const S3Bucket& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
 
     /**
-     * <p>An array of objects, one for each S3 bucket that the finding applies to. Each
-     * object provides a set of metadata about an affected S3 bucket.</p>
+     * <p>The details of the S3 bucket that the finding applies to.</p>
      */
     inline void SetS3Bucket(S3Bucket&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::move(value); }
 
     /**
-     * <p>An array of objects, one for each S3 bucket that the finding applies to. Each
-     * object provides a set of metadata about an affected S3 bucket.</p>
+     * <p>The details of the S3 bucket that the finding applies to.</p>
      */
     inline ResourcesAffected& WithS3Bucket(const S3Bucket& value) { SetS3Bucket(value); return *this;}
 
     /**
-     * <p>An array of objects, one for each S3 bucket that the finding applies to. Each
-     * object provides a set of metadata about an affected S3 bucket.</p>
+     * <p>The details of the S3 bucket that the finding applies to.</p>
      */
     inline ResourcesAffected& WithS3Bucket(S3Bucket&& value) { SetS3Bucket(std::move(value)); return *this;}
 
 
     /**
-     * <p>An array of objects, one for each S3 object that the finding applies to. Each
-     * object provides a set of metadata about an affected S3 object.</p>
+     * <p>The details of the S3 object that the finding applies to.</p>
      */
     inline const S3Object& GetS3Object() const{ return m_s3Object; }
 
     /**
-     * <p>An array of objects, one for each S3 object that the finding applies to. Each
-     * object provides a set of metadata about an affected S3 object.</p>
+     * <p>The details of the S3 object that the finding applies to.</p>
      */
     inline bool S3ObjectHasBeenSet() const { return m_s3ObjectHasBeenSet; }
 
     /**
-     * <p>An array of objects, one for each S3 object that the finding applies to. Each
-     * object provides a set of metadata about an affected S3 object.</p>
+     * <p>The details of the S3 object that the finding applies to.</p>
      */
     inline void SetS3Object(const S3Object& value) { m_s3ObjectHasBeenSet = true; m_s3Object = value; }
 
     /**
-     * <p>An array of objects, one for each S3 object that the finding applies to. Each
-     * object provides a set of metadata about an affected S3 object.</p>
+     * <p>The details of the S3 object that the finding applies to.</p>
      */
     inline void SetS3Object(S3Object&& value) { m_s3ObjectHasBeenSet = true; m_s3Object = std::move(value); }
 
     /**
-     * <p>An array of objects, one for each S3 object that the finding applies to. Each
-     * object provides a set of metadata about an affected S3 object.</p>
+     * <p>The details of the S3 object that the finding applies to.</p>
      */
     inline ResourcesAffected& WithS3Object(const S3Object& value) { SetS3Object(value); return *this;}
 
     /**
-     * <p>An array of objects, one for each S3 object that the finding applies to. Each
-     * object provides a set of metadata about an affected S3 object.</p>
+     * <p>The details of the S3 object that the finding applies to.</p>
      */
     inline ResourcesAffected& WithS3Object(S3Object&& value) { SetS3Object(std::move(value)); return *this;}
 

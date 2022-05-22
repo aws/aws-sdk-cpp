@@ -41,7 +41,9 @@ namespace Model
      * a repository. If set to <code>true</code>, images will be scanned after being
      * pushed. If this parameter is not specified, it will default to
      * <code>false</code> and images will not be scanned unless a scan is manually
-     * started with the <a>StartImageScan</a> API.</p>
+     * started with the <a
+     * href="https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_StartImageScan.html">API_StartImageScan</a>
+     * API.</p>
      */
     inline bool GetScanOnPush() const{ return m_scanOnPush; }
 
@@ -50,7 +52,9 @@ namespace Model
      * a repository. If set to <code>true</code>, images will be scanned after being
      * pushed. If this parameter is not specified, it will default to
      * <code>false</code> and images will not be scanned unless a scan is manually
-     * started with the <a>StartImageScan</a> API.</p>
+     * started with the <a
+     * href="https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_StartImageScan.html">API_StartImageScan</a>
+     * API.</p>
      */
     inline bool ScanOnPushHasBeenSet() const { return m_scanOnPushHasBeenSet; }
 
@@ -59,7 +63,9 @@ namespace Model
      * a repository. If set to <code>true</code>, images will be scanned after being
      * pushed. If this parameter is not specified, it will default to
      * <code>false</code> and images will not be scanned unless a scan is manually
-     * started with the <a>StartImageScan</a> API.</p>
+     * started with the <a
+     * href="https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_StartImageScan.html">API_StartImageScan</a>
+     * API.</p>
      */
     inline void SetScanOnPush(bool value) { m_scanOnPushHasBeenSet = true; m_scanOnPush = value; }
 
@@ -68,7 +74,9 @@ namespace Model
      * a repository. If set to <code>true</code>, images will be scanned after being
      * pushed. If this parameter is not specified, it will default to
      * <code>false</code> and images will not be scanned unless a scan is manually
-     * started with the <a>StartImageScan</a> API.</p>
+     * started with the <a
+     * href="https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_StartImageScan.html">API_StartImageScan</a>
+     * API.</p>
      */
     inline ImageScanningConfiguration& WithScanOnPush(bool value) { SetScanOnPush(value); return *this;}
 

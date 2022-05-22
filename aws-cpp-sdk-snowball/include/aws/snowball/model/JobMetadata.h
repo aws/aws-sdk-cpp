@@ -18,6 +18,8 @@
 #include <aws/snowball/model/JobLogs.h>
 #include <aws/snowball/model/TaxDocuments.h>
 #include <aws/snowball/model/DeviceConfiguration.h>
+#include <aws/snowball/model/RemoteManagement.h>
+#include <aws/snowball/model/OnDeviceServiceConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -310,66 +312,66 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the AWS Key Management Service (AWS KMS)
-     * key associated with this job. This ARN was created using the <a
+     * <p>The Amazon Resource Name (ARN) for the Key Management Service (KMS) key
+     * associated with this job. This ARN was created using the <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
-     * API action in AWS KMS.</p>
+     * API action in KMS.</p>
      */
     inline const Aws::String& GetKmsKeyARN() const{ return m_kmsKeyARN; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the AWS Key Management Service (AWS KMS)
-     * key associated with this job. This ARN was created using the <a
+     * <p>The Amazon Resource Name (ARN) for the Key Management Service (KMS) key
+     * associated with this job. This ARN was created using the <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
-     * API action in AWS KMS.</p>
+     * API action in KMS.</p>
      */
     inline bool KmsKeyARNHasBeenSet() const { return m_kmsKeyARNHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the AWS Key Management Service (AWS KMS)
-     * key associated with this job. This ARN was created using the <a
+     * <p>The Amazon Resource Name (ARN) for the Key Management Service (KMS) key
+     * associated with this job. This ARN was created using the <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
-     * API action in AWS KMS.</p>
+     * API action in KMS.</p>
      */
     inline void SetKmsKeyARN(const Aws::String& value) { m_kmsKeyARNHasBeenSet = true; m_kmsKeyARN = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the AWS Key Management Service (AWS KMS)
-     * key associated with this job. This ARN was created using the <a
+     * <p>The Amazon Resource Name (ARN) for the Key Management Service (KMS) key
+     * associated with this job. This ARN was created using the <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
-     * API action in AWS KMS.</p>
+     * API action in KMS.</p>
      */
     inline void SetKmsKeyARN(Aws::String&& value) { m_kmsKeyARNHasBeenSet = true; m_kmsKeyARN = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the AWS Key Management Service (AWS KMS)
-     * key associated with this job. This ARN was created using the <a
+     * <p>The Amazon Resource Name (ARN) for the Key Management Service (KMS) key
+     * associated with this job. This ARN was created using the <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
-     * API action in AWS KMS.</p>
+     * API action in KMS.</p>
      */
     inline void SetKmsKeyARN(const char* value) { m_kmsKeyARNHasBeenSet = true; m_kmsKeyARN.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the AWS Key Management Service (AWS KMS)
-     * key associated with this job. This ARN was created using the <a
+     * <p>The Amazon Resource Name (ARN) for the Key Management Service (KMS) key
+     * associated with this job. This ARN was created using the <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
-     * API action in AWS KMS.</p>
+     * API action in KMS.</p>
      */
     inline JobMetadata& WithKmsKeyARN(const Aws::String& value) { SetKmsKeyARN(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the AWS Key Management Service (AWS KMS)
-     * key associated with this job. This ARN was created using the <a
+     * <p>The Amazon Resource Name (ARN) for the Key Management Service (KMS) key
+     * associated with this job. This ARN was created using the <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
-     * API action in AWS KMS.</p>
+     * API action in KMS.</p>
      */
     inline JobMetadata& WithKmsKeyARN(Aws::String&& value) { SetKmsKeyARN(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the AWS Key Management Service (AWS KMS)
-     * key associated with this job. This ARN was created using the <a
+     * <p>The Amazon Resource Name (ARN) for the Key Management Service (KMS) key
+     * associated with this job. This ARN was created using the <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
-     * API action in AWS KMS.</p>
+     * API action in KMS.</p>
      */
     inline JobMetadata& WithKmsKeyARN(const char* value) { SetKmsKeyARN(value); return *this;}
 
@@ -377,56 +379,56 @@ namespace Model
     /**
      * <p>The role ARN associated with this job. This ARN was created using the <a
      * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-     * API action in AWS Identity and Access Management (IAM).</p>
+     * API action in Identity and Access Management.</p>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
 
     /**
      * <p>The role ARN associated with this job. This ARN was created using the <a
      * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-     * API action in AWS Identity and Access Management (IAM).</p>
+     * API action in Identity and Access Management.</p>
      */
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
 
     /**
      * <p>The role ARN associated with this job. This ARN was created using the <a
      * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-     * API action in AWS Identity and Access Management (IAM).</p>
+     * API action in Identity and Access Management.</p>
      */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
     /**
      * <p>The role ARN associated with this job. This ARN was created using the <a
      * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-     * API action in AWS Identity and Access Management (IAM).</p>
+     * API action in Identity and Access Management.</p>
      */
     inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
     /**
      * <p>The role ARN associated with this job. This ARN was created using the <a
      * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-     * API action in AWS Identity and Access Management (IAM).</p>
+     * API action in Identity and Access Management.</p>
      */
     inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
 
     /**
      * <p>The role ARN associated with this job. This ARN was created using the <a
      * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-     * API action in AWS Identity and Access Management (IAM).</p>
+     * API action in Identity and Access Management.</p>
      */
     inline JobMetadata& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
 
     /**
      * <p>The role ARN associated with this job. This ARN was created using the <a
      * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-     * API action in AWS Identity and Access Management (IAM).</p>
+     * API action in Identity and Access Management.</p>
      */
     inline JobMetadata& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
     /**
      * <p>The role ARN associated with this job. This ARN was created using the <a
      * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-     * API action in AWS Identity and Access Management (IAM).</p>
+     * API action in Identity and Access Management.</p>
      */
     inline JobMetadata& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 
@@ -512,42 +514,66 @@ namespace Model
     /**
      * <p>The Snow device capacity preference for this job, specified at job creation.
      * In US regions, you can choose between 50 TB and 80 TB Snowballs. All other
-     * regions use 80 TB capacity Snowballs.</p>
+     * regions use 80 TB capacity Snowballs.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline const SnowballCapacity& GetSnowballCapacityPreference() const{ return m_snowballCapacityPreference; }
 
     /**
      * <p>The Snow device capacity preference for this job, specified at job creation.
      * In US regions, you can choose between 50 TB and 80 TB Snowballs. All other
-     * regions use 80 TB capacity Snowballs.</p>
+     * regions use 80 TB capacity Snowballs.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline bool SnowballCapacityPreferenceHasBeenSet() const { return m_snowballCapacityPreferenceHasBeenSet; }
 
     /**
      * <p>The Snow device capacity preference for this job, specified at job creation.
      * In US regions, you can choose between 50 TB and 80 TB Snowballs. All other
-     * regions use 80 TB capacity Snowballs.</p>
+     * regions use 80 TB capacity Snowballs.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline void SetSnowballCapacityPreference(const SnowballCapacity& value) { m_snowballCapacityPreferenceHasBeenSet = true; m_snowballCapacityPreference = value; }
 
     /**
      * <p>The Snow device capacity preference for this job, specified at job creation.
      * In US regions, you can choose between 50 TB and 80 TB Snowballs. All other
-     * regions use 80 TB capacity Snowballs.</p>
+     * regions use 80 TB capacity Snowballs.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline void SetSnowballCapacityPreference(SnowballCapacity&& value) { m_snowballCapacityPreferenceHasBeenSet = true; m_snowballCapacityPreference = std::move(value); }
 
     /**
      * <p>The Snow device capacity preference for this job, specified at job creation.
      * In US regions, you can choose between 50 TB and 80 TB Snowballs. All other
-     * regions use 80 TB capacity Snowballs.</p>
+     * regions use 80 TB capacity Snowballs.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline JobMetadata& WithSnowballCapacityPreference(const SnowballCapacity& value) { SetSnowballCapacityPreference(value); return *this;}
 
     /**
      * <p>The Snow device capacity preference for this job, specified at job creation.
      * In US regions, you can choose between 50 TB and 80 TB Snowballs. All other
-     * regions use 80 TB capacity Snowballs.</p>
+     * regions use 80 TB capacity Snowballs.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline JobMetadata& WithSnowballCapacityPreference(SnowballCapacity&& value) { SetSnowballCapacityPreference(std::move(value)); return *this;}
 
@@ -603,49 +629,49 @@ namespace Model
 
     /**
      * <p>A value that defines the real-time status of a Snow device's data transfer
-     * while the device is at AWS. This data is only available while a job has a
-     * <code>JobState</code> value of <code>InProgress</code>, for both import and
-     * export jobs.</p>
+     * while the device is at Amazon Web Services. This data is only available while a
+     * job has a <code>JobState</code> value of <code>InProgress</code>, for both
+     * import and export jobs.</p>
      */
     inline const DataTransfer& GetDataTransferProgress() const{ return m_dataTransferProgress; }
 
     /**
      * <p>A value that defines the real-time status of a Snow device's data transfer
-     * while the device is at AWS. This data is only available while a job has a
-     * <code>JobState</code> value of <code>InProgress</code>, for both import and
-     * export jobs.</p>
+     * while the device is at Amazon Web Services. This data is only available while a
+     * job has a <code>JobState</code> value of <code>InProgress</code>, for both
+     * import and export jobs.</p>
      */
     inline bool DataTransferProgressHasBeenSet() const { return m_dataTransferProgressHasBeenSet; }
 
     /**
      * <p>A value that defines the real-time status of a Snow device's data transfer
-     * while the device is at AWS. This data is only available while a job has a
-     * <code>JobState</code> value of <code>InProgress</code>, for both import and
-     * export jobs.</p>
+     * while the device is at Amazon Web Services. This data is only available while a
+     * job has a <code>JobState</code> value of <code>InProgress</code>, for both
+     * import and export jobs.</p>
      */
     inline void SetDataTransferProgress(const DataTransfer& value) { m_dataTransferProgressHasBeenSet = true; m_dataTransferProgress = value; }
 
     /**
      * <p>A value that defines the real-time status of a Snow device's data transfer
-     * while the device is at AWS. This data is only available while a job has a
-     * <code>JobState</code> value of <code>InProgress</code>, for both import and
-     * export jobs.</p>
+     * while the device is at Amazon Web Services. This data is only available while a
+     * job has a <code>JobState</code> value of <code>InProgress</code>, for both
+     * import and export jobs.</p>
      */
     inline void SetDataTransferProgress(DataTransfer&& value) { m_dataTransferProgressHasBeenSet = true; m_dataTransferProgress = std::move(value); }
 
     /**
      * <p>A value that defines the real-time status of a Snow device's data transfer
-     * while the device is at AWS. This data is only available while a job has a
-     * <code>JobState</code> value of <code>InProgress</code>, for both import and
-     * export jobs.</p>
+     * while the device is at Amazon Web Services. This data is only available while a
+     * job has a <code>JobState</code> value of <code>InProgress</code>, for both
+     * import and export jobs.</p>
      */
     inline JobMetadata& WithDataTransferProgress(const DataTransfer& value) { SetDataTransferProgress(value); return *this;}
 
     /**
      * <p>A value that defines the real-time status of a Snow device's data transfer
-     * while the device is at AWS. This data is only available while a job has a
-     * <code>JobState</code> value of <code>InProgress</code>, for both import and
-     * export jobs.</p>
+     * while the device is at Amazon Web Services. This data is only available while a
+     * job has a <code>JobState</code> value of <code>InProgress</code>, for both
+     * import and export jobs.</p>
      */
     inline JobMetadata& WithDataTransferProgress(DataTransfer&& value) { SetDataTransferProgress(std::move(value)); return *this;}
 
@@ -798,38 +824,38 @@ namespace Model
 
 
     /**
-     * <p>The metadata associated with the tax documents required in your AWS
-     * Region.</p>
+     * <p>The metadata associated with the tax documents required in your Amazon Web
+     * Services Region.</p>
      */
     inline const TaxDocuments& GetTaxDocuments() const{ return m_taxDocuments; }
 
     /**
-     * <p>The metadata associated with the tax documents required in your AWS
-     * Region.</p>
+     * <p>The metadata associated with the tax documents required in your Amazon Web
+     * Services Region.</p>
      */
     inline bool TaxDocumentsHasBeenSet() const { return m_taxDocumentsHasBeenSet; }
 
     /**
-     * <p>The metadata associated with the tax documents required in your AWS
-     * Region.</p>
+     * <p>The metadata associated with the tax documents required in your Amazon Web
+     * Services Region.</p>
      */
     inline void SetTaxDocuments(const TaxDocuments& value) { m_taxDocumentsHasBeenSet = true; m_taxDocuments = value; }
 
     /**
-     * <p>The metadata associated with the tax documents required in your AWS
-     * Region.</p>
+     * <p>The metadata associated with the tax documents required in your Amazon Web
+     * Services Region.</p>
      */
     inline void SetTaxDocuments(TaxDocuments&& value) { m_taxDocumentsHasBeenSet = true; m_taxDocuments = std::move(value); }
 
     /**
-     * <p>The metadata associated with the tax documents required in your AWS
-     * Region.</p>
+     * <p>The metadata associated with the tax documents required in your Amazon Web
+     * Services Region.</p>
      */
     inline JobMetadata& WithTaxDocuments(const TaxDocuments& value) { SetTaxDocuments(value); return *this;}
 
     /**
-     * <p>The metadata associated with the tax documents required in your AWS
-     * Region.</p>
+     * <p>The metadata associated with the tax documents required in your Amazon Web
+     * Services Region.</p>
      */
     inline JobMetadata& WithTaxDocuments(TaxDocuments&& value) { SetTaxDocuments(std::move(value)); return *this;}
 
@@ -851,6 +877,139 @@ namespace Model
 
     
     inline JobMetadata& WithDeviceConfiguration(DeviceConfiguration&& value) { SetDeviceConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Allows you to securely operate and manage Snowcone devices remotely from
+     * outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>,
+     * remote management will automatically be available when the device arrives at
+     * your location. Otherwise, you need to use the Snowball Client to manage the
+     * device.</p>
+     */
+    inline const RemoteManagement& GetRemoteManagement() const{ return m_remoteManagement; }
+
+    /**
+     * <p>Allows you to securely operate and manage Snowcone devices remotely from
+     * outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>,
+     * remote management will automatically be available when the device arrives at
+     * your location. Otherwise, you need to use the Snowball Client to manage the
+     * device.</p>
+     */
+    inline bool RemoteManagementHasBeenSet() const { return m_remoteManagementHasBeenSet; }
+
+    /**
+     * <p>Allows you to securely operate and manage Snowcone devices remotely from
+     * outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>,
+     * remote management will automatically be available when the device arrives at
+     * your location. Otherwise, you need to use the Snowball Client to manage the
+     * device.</p>
+     */
+    inline void SetRemoteManagement(const RemoteManagement& value) { m_remoteManagementHasBeenSet = true; m_remoteManagement = value; }
+
+    /**
+     * <p>Allows you to securely operate and manage Snowcone devices remotely from
+     * outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>,
+     * remote management will automatically be available when the device arrives at
+     * your location. Otherwise, you need to use the Snowball Client to manage the
+     * device.</p>
+     */
+    inline void SetRemoteManagement(RemoteManagement&& value) { m_remoteManagementHasBeenSet = true; m_remoteManagement = std::move(value); }
+
+    /**
+     * <p>Allows you to securely operate and manage Snowcone devices remotely from
+     * outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>,
+     * remote management will automatically be available when the device arrives at
+     * your location. Otherwise, you need to use the Snowball Client to manage the
+     * device.</p>
+     */
+    inline JobMetadata& WithRemoteManagement(const RemoteManagement& value) { SetRemoteManagement(value); return *this;}
+
+    /**
+     * <p>Allows you to securely operate and manage Snowcone devices remotely from
+     * outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>,
+     * remote management will automatically be available when the device arrives at
+     * your location. Otherwise, you need to use the Snowball Client to manage the
+     * device.</p>
+     */
+    inline JobMetadata& WithRemoteManagement(RemoteManagement&& value) { SetRemoteManagement(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The ID of the long-term pricing type for the device.</p>
+     */
+    inline const Aws::String& GetLongTermPricingId() const{ return m_longTermPricingId; }
+
+    /**
+     * <p>The ID of the long-term pricing type for the device.</p>
+     */
+    inline bool LongTermPricingIdHasBeenSet() const { return m_longTermPricingIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the long-term pricing type for the device.</p>
+     */
+    inline void SetLongTermPricingId(const Aws::String& value) { m_longTermPricingIdHasBeenSet = true; m_longTermPricingId = value; }
+
+    /**
+     * <p>The ID of the long-term pricing type for the device.</p>
+     */
+    inline void SetLongTermPricingId(Aws::String&& value) { m_longTermPricingIdHasBeenSet = true; m_longTermPricingId = std::move(value); }
+
+    /**
+     * <p>The ID of the long-term pricing type for the device.</p>
+     */
+    inline void SetLongTermPricingId(const char* value) { m_longTermPricingIdHasBeenSet = true; m_longTermPricingId.assign(value); }
+
+    /**
+     * <p>The ID of the long-term pricing type for the device.</p>
+     */
+    inline JobMetadata& WithLongTermPricingId(const Aws::String& value) { SetLongTermPricingId(value); return *this;}
+
+    /**
+     * <p>The ID of the long-term pricing type for the device.</p>
+     */
+    inline JobMetadata& WithLongTermPricingId(Aws::String&& value) { SetLongTermPricingId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the long-term pricing type for the device.</p>
+     */
+    inline JobMetadata& WithLongTermPricingId(const char* value) { SetLongTermPricingId(value); return *this;}
+
+
+    /**
+     * <p>Represents metadata and configuration settings for services on an Amazon Web
+     * Services Snow Family device.</p>
+     */
+    inline const OnDeviceServiceConfiguration& GetOnDeviceServiceConfiguration() const{ return m_onDeviceServiceConfiguration; }
+
+    /**
+     * <p>Represents metadata and configuration settings for services on an Amazon Web
+     * Services Snow Family device.</p>
+     */
+    inline bool OnDeviceServiceConfigurationHasBeenSet() const { return m_onDeviceServiceConfigurationHasBeenSet; }
+
+    /**
+     * <p>Represents metadata and configuration settings for services on an Amazon Web
+     * Services Snow Family device.</p>
+     */
+    inline void SetOnDeviceServiceConfiguration(const OnDeviceServiceConfiguration& value) { m_onDeviceServiceConfigurationHasBeenSet = true; m_onDeviceServiceConfiguration = value; }
+
+    /**
+     * <p>Represents metadata and configuration settings for services on an Amazon Web
+     * Services Snow Family device.</p>
+     */
+    inline void SetOnDeviceServiceConfiguration(OnDeviceServiceConfiguration&& value) { m_onDeviceServiceConfigurationHasBeenSet = true; m_onDeviceServiceConfiguration = std::move(value); }
+
+    /**
+     * <p>Represents metadata and configuration settings for services on an Amazon Web
+     * Services Snow Family device.</p>
+     */
+    inline JobMetadata& WithOnDeviceServiceConfiguration(const OnDeviceServiceConfiguration& value) { SetOnDeviceServiceConfiguration(value); return *this;}
+
+    /**
+     * <p>Represents metadata and configuration settings for services on an Amazon Web
+     * Services Snow Family device.</p>
+     */
+    inline JobMetadata& WithOnDeviceServiceConfiguration(OnDeviceServiceConfiguration&& value) { SetOnDeviceServiceConfiguration(std::move(value)); return *this;}
 
   private:
 
@@ -910,6 +1069,15 @@ namespace Model
 
     DeviceConfiguration m_deviceConfiguration;
     bool m_deviceConfigurationHasBeenSet;
+
+    RemoteManagement m_remoteManagement;
+    bool m_remoteManagementHasBeenSet;
+
+    Aws::String m_longTermPricingId;
+    bool m_longTermPricingIdHasBeenSet;
+
+    OnDeviceServiceConfiguration m_onDeviceServiceConfiguration;
+    bool m_onDeviceServiceConfigurationHasBeenSet;
   };
 
 } // namespace Model

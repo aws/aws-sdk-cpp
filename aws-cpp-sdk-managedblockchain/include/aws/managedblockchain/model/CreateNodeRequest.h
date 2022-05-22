@@ -8,6 +8,7 @@
 #include <aws/managedblockchain/ManagedBlockchainRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/managedblockchain/model/NodeConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -259,6 +260,189 @@ namespace Model
      */
     inline CreateNodeRequest& WithNodeConfiguration(NodeConfiguration&& value) { SetNodeConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Tags to assign to the node. Each tag consists of a key and optional
+     * value.</p> <p>When specifying tags during creation, you can specify multiple
+     * key-value pairs in a single request, with an overall maximum of 50 tags added to
+     * each resource.</p> <p>For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
+     * or <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+     * Guide</i>.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Tags to assign to the node. Each tag consists of a key and optional
+     * value.</p> <p>When specifying tags during creation, you can specify multiple
+     * key-value pairs in a single request, with an overall maximum of 50 tags added to
+     * each resource.</p> <p>For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
+     * or <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+     * Guide</i>.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>Tags to assign to the node. Each tag consists of a key and optional
+     * value.</p> <p>When specifying tags during creation, you can specify multiple
+     * key-value pairs in a single request, with an overall maximum of 50 tags added to
+     * each resource.</p> <p>For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
+     * or <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+     * Guide</i>.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>Tags to assign to the node. Each tag consists of a key and optional
+     * value.</p> <p>When specifying tags during creation, you can specify multiple
+     * key-value pairs in a single request, with an overall maximum of 50 tags added to
+     * each resource.</p> <p>For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
+     * or <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+     * Guide</i>.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>Tags to assign to the node. Each tag consists of a key and optional
+     * value.</p> <p>When specifying tags during creation, you can specify multiple
+     * key-value pairs in a single request, with an overall maximum of 50 tags added to
+     * each resource.</p> <p>For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
+     * or <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+     * Guide</i>.</p>
+     */
+    inline CreateNodeRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Tags to assign to the node. Each tag consists of a key and optional
+     * value.</p> <p>When specifying tags during creation, you can specify multiple
+     * key-value pairs in a single request, with an overall maximum of 50 tags added to
+     * each resource.</p> <p>For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
+     * or <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+     * Guide</i>.</p>
+     */
+    inline CreateNodeRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Tags to assign to the node. Each tag consists of a key and optional
+     * value.</p> <p>When specifying tags during creation, you can specify multiple
+     * key-value pairs in a single request, with an overall maximum of 50 tags added to
+     * each resource.</p> <p>For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
+     * or <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+     * Guide</i>.</p>
+     */
+    inline CreateNodeRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>Tags to assign to the node. Each tag consists of a key and optional
+     * value.</p> <p>When specifying tags during creation, you can specify multiple
+     * key-value pairs in a single request, with an overall maximum of 50 tags added to
+     * each resource.</p> <p>For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
+     * or <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+     * Guide</i>.</p>
+     */
+    inline CreateNodeRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Tags to assign to the node. Each tag consists of a key and optional
+     * value.</p> <p>When specifying tags during creation, you can specify multiple
+     * key-value pairs in a single request, with an overall maximum of 50 tags added to
+     * each resource.</p> <p>For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
+     * or <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+     * Guide</i>.</p>
+     */
+    inline CreateNodeRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Tags to assign to the node. Each tag consists of a key and optional
+     * value.</p> <p>When specifying tags during creation, you can specify multiple
+     * key-value pairs in a single request, with an overall maximum of 50 tags added to
+     * each resource.</p> <p>For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
+     * or <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+     * Guide</i>.</p>
+     */
+    inline CreateNodeRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>Tags to assign to the node. Each tag consists of a key and optional
+     * value.</p> <p>When specifying tags during creation, you can specify multiple
+     * key-value pairs in a single request, with an overall maximum of 50 tags added to
+     * each resource.</p> <p>For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
+     * or <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+     * Guide</i>.</p>
+     */
+    inline CreateNodeRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Tags to assign to the node. Each tag consists of a key and optional
+     * value.</p> <p>When specifying tags during creation, you can specify multiple
+     * key-value pairs in a single request, with an overall maximum of 50 tags added to
+     * each resource.</p> <p>For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
+     * or <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+     * Guide</i>.</p>
+     */
+    inline CreateNodeRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Tags to assign to the node. Each tag consists of a key and optional
+     * value.</p> <p>When specifying tags during creation, you can specify multiple
+     * key-value pairs in a single request, with an overall maximum of 50 tags added to
+     * each resource.</p> <p>For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
+     * or <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+     * Guide</i>.</p>
+     */
+    inline CreateNodeRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_clientRequestToken;
@@ -272,6 +456,9 @@ namespace Model
 
     NodeConfiguration m_nodeConfiguration;
     bool m_nodeConfigurationHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

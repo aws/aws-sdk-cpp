@@ -39,42 +39,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID of the member account.</p>
+     * <p>The Amazon Web Services account ID of the member account.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The AWS account ID of the member account.</p>
+     * <p>The Amazon Web Services account ID of the member account.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID of the member account.</p>
+     * <p>The Amazon Web Services account ID of the member account.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The AWS account ID of the member account.</p>
+     * <p>The Amazon Web Services account ID of the member account.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The AWS account ID of the member account.</p>
+     * <p>The Amazon Web Services account ID of the member account.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The AWS account ID of the member account.</p>
+     * <p>The Amazon Web Services account ID of the member account.</p>
      */
     inline Member& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The AWS account ID of the member account.</p>
+     * <p>The Amazon Web Services account ID of the member account.</p>
      */
     inline Member& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID of the member account.</p>
+     * <p>The Amazon Web Services account ID of the member account.</p>
      */
     inline Member& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
@@ -121,187 +121,227 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID of the Security Hub master account associated with this
-     * member account.</p>
+     * <p>The Amazon Web Services account ID of the Security Hub administrator account
+     * associated with this member account.</p>
      */
-    inline const Aws::String& GetMasterId() const{ return m_masterId; }
+    inline const Aws::String& GetAdministratorId() const{ return m_administratorId; }
 
     /**
-     * <p>The AWS account ID of the Security Hub master account associated with this
-     * member account.</p>
+     * <p>The Amazon Web Services account ID of the Security Hub administrator account
+     * associated with this member account.</p>
      */
-    inline bool MasterIdHasBeenSet() const { return m_masterIdHasBeenSet; }
+    inline bool AdministratorIdHasBeenSet() const { return m_administratorIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID of the Security Hub master account associated with this
-     * member account.</p>
+     * <p>The Amazon Web Services account ID of the Security Hub administrator account
+     * associated with this member account.</p>
      */
-    inline void SetMasterId(const Aws::String& value) { m_masterIdHasBeenSet = true; m_masterId = value; }
+    inline void SetAdministratorId(const Aws::String& value) { m_administratorIdHasBeenSet = true; m_administratorId = value; }
 
     /**
-     * <p>The AWS account ID of the Security Hub master account associated with this
-     * member account.</p>
+     * <p>The Amazon Web Services account ID of the Security Hub administrator account
+     * associated with this member account.</p>
      */
-    inline void SetMasterId(Aws::String&& value) { m_masterIdHasBeenSet = true; m_masterId = std::move(value); }
+    inline void SetAdministratorId(Aws::String&& value) { m_administratorIdHasBeenSet = true; m_administratorId = std::move(value); }
 
     /**
-     * <p>The AWS account ID of the Security Hub master account associated with this
-     * member account.</p>
+     * <p>The Amazon Web Services account ID of the Security Hub administrator account
+     * associated with this member account.</p>
      */
-    inline void SetMasterId(const char* value) { m_masterIdHasBeenSet = true; m_masterId.assign(value); }
+    inline void SetAdministratorId(const char* value) { m_administratorIdHasBeenSet = true; m_administratorId.assign(value); }
 
     /**
-     * <p>The AWS account ID of the Security Hub master account associated with this
-     * member account.</p>
+     * <p>The Amazon Web Services account ID of the Security Hub administrator account
+     * associated with this member account.</p>
      */
-    inline Member& WithMasterId(const Aws::String& value) { SetMasterId(value); return *this;}
+    inline Member& WithAdministratorId(const Aws::String& value) { SetAdministratorId(value); return *this;}
 
     /**
-     * <p>The AWS account ID of the Security Hub master account associated with this
-     * member account.</p>
+     * <p>The Amazon Web Services account ID of the Security Hub administrator account
+     * associated with this member account.</p>
      */
-    inline Member& WithMasterId(Aws::String&& value) { SetMasterId(std::move(value)); return *this;}
+    inline Member& WithAdministratorId(Aws::String&& value) { SetAdministratorId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID of the Security Hub master account associated with this
-     * member account.</p>
+     * <p>The Amazon Web Services account ID of the Security Hub administrator account
+     * associated with this member account.</p>
      */
-    inline Member& WithMasterId(const char* value) { SetMasterId(value); return *this;}
+    inline Member& WithAdministratorId(const char* value) { SetAdministratorId(value); return *this;}
 
 
     /**
-     * <p>The status of the relationship between the member account and its master
-     * account. </p> <p>The status can have one of the following values:</p> <ul> <li>
-     * <p> <code>CREATED</code> - Indicates that the master account added the member
-     * account, but has not yet invited the member account.</p> </li> <li> <p>
-     * <code>INVITED</code> - Indicates that the master account invited the member
-     * account. The member account has not yet responded to the invitation.</p> </li>
-     * <li> <p> <code>ENABLED</code> - Indicates that the member account is currently
-     * active. For manually invited member accounts, indicates that the member account
-     * accepted the invitation.</p> </li> <li> <p> <code>REMOVED</code> - Indicates
-     * that the master account disassociated the member account.</p> </li> <li> <p>
-     * <code>RESIGNED</code> - Indicates that the member account disassociated
-     * themselves from the master account.</p> </li> <li> <p> <code>DELETED</code> -
-     * Indicates that the master account deleted the member account.</p> </li> </ul>
+     * <p>The status of the relationship between the member account and its
+     * administrator account. </p> <p>The status can have one of the following
+     * values:</p> <ul> <li> <p> <code>CREATED</code> - Indicates that the
+     * administrator account added the member account, but has not yet invited the
+     * member account.</p> </li> <li> <p> <code>INVITED</code> - Indicates that the
+     * administrator account invited the member account. The member account has not yet
+     * responded to the invitation.</p> </li> <li> <p> <code>ENABLED</code> - Indicates
+     * that the member account is currently active. For manually invited member
+     * accounts, indicates that the member account accepted the invitation.</p> </li>
+     * <li> <p> <code>REMOVED</code> - Indicates that the administrator account
+     * disassociated the member account.</p> </li> <li> <p> <code>RESIGNED</code> -
+     * Indicates that the member account disassociated themselves from the
+     * administrator account.</p> </li> <li> <p> <code>DELETED</code> - Indicates that
+     * the administrator account deleted the member account.</p> </li> <li> <p>
+     * <code>ACCOUNT_SUSPENDED</code> - Indicates that an organization account was
+     * suspended from Amazon Web Services at the same time that the administrator
+     * account tried to enable the organization account as a member account.</p> </li>
+     * </ul>
      */
     inline const Aws::String& GetMemberStatus() const{ return m_memberStatus; }
 
     /**
-     * <p>The status of the relationship between the member account and its master
-     * account. </p> <p>The status can have one of the following values:</p> <ul> <li>
-     * <p> <code>CREATED</code> - Indicates that the master account added the member
-     * account, but has not yet invited the member account.</p> </li> <li> <p>
-     * <code>INVITED</code> - Indicates that the master account invited the member
-     * account. The member account has not yet responded to the invitation.</p> </li>
-     * <li> <p> <code>ENABLED</code> - Indicates that the member account is currently
-     * active. For manually invited member accounts, indicates that the member account
-     * accepted the invitation.</p> </li> <li> <p> <code>REMOVED</code> - Indicates
-     * that the master account disassociated the member account.</p> </li> <li> <p>
-     * <code>RESIGNED</code> - Indicates that the member account disassociated
-     * themselves from the master account.</p> </li> <li> <p> <code>DELETED</code> -
-     * Indicates that the master account deleted the member account.</p> </li> </ul>
+     * <p>The status of the relationship between the member account and its
+     * administrator account. </p> <p>The status can have one of the following
+     * values:</p> <ul> <li> <p> <code>CREATED</code> - Indicates that the
+     * administrator account added the member account, but has not yet invited the
+     * member account.</p> </li> <li> <p> <code>INVITED</code> - Indicates that the
+     * administrator account invited the member account. The member account has not yet
+     * responded to the invitation.</p> </li> <li> <p> <code>ENABLED</code> - Indicates
+     * that the member account is currently active. For manually invited member
+     * accounts, indicates that the member account accepted the invitation.</p> </li>
+     * <li> <p> <code>REMOVED</code> - Indicates that the administrator account
+     * disassociated the member account.</p> </li> <li> <p> <code>RESIGNED</code> -
+     * Indicates that the member account disassociated themselves from the
+     * administrator account.</p> </li> <li> <p> <code>DELETED</code> - Indicates that
+     * the administrator account deleted the member account.</p> </li> <li> <p>
+     * <code>ACCOUNT_SUSPENDED</code> - Indicates that an organization account was
+     * suspended from Amazon Web Services at the same time that the administrator
+     * account tried to enable the organization account as a member account.</p> </li>
+     * </ul>
      */
     inline bool MemberStatusHasBeenSet() const { return m_memberStatusHasBeenSet; }
 
     /**
-     * <p>The status of the relationship between the member account and its master
-     * account. </p> <p>The status can have one of the following values:</p> <ul> <li>
-     * <p> <code>CREATED</code> - Indicates that the master account added the member
-     * account, but has not yet invited the member account.</p> </li> <li> <p>
-     * <code>INVITED</code> - Indicates that the master account invited the member
-     * account. The member account has not yet responded to the invitation.</p> </li>
-     * <li> <p> <code>ENABLED</code> - Indicates that the member account is currently
-     * active. For manually invited member accounts, indicates that the member account
-     * accepted the invitation.</p> </li> <li> <p> <code>REMOVED</code> - Indicates
-     * that the master account disassociated the member account.</p> </li> <li> <p>
-     * <code>RESIGNED</code> - Indicates that the member account disassociated
-     * themselves from the master account.</p> </li> <li> <p> <code>DELETED</code> -
-     * Indicates that the master account deleted the member account.</p> </li> </ul>
+     * <p>The status of the relationship between the member account and its
+     * administrator account. </p> <p>The status can have one of the following
+     * values:</p> <ul> <li> <p> <code>CREATED</code> - Indicates that the
+     * administrator account added the member account, but has not yet invited the
+     * member account.</p> </li> <li> <p> <code>INVITED</code> - Indicates that the
+     * administrator account invited the member account. The member account has not yet
+     * responded to the invitation.</p> </li> <li> <p> <code>ENABLED</code> - Indicates
+     * that the member account is currently active. For manually invited member
+     * accounts, indicates that the member account accepted the invitation.</p> </li>
+     * <li> <p> <code>REMOVED</code> - Indicates that the administrator account
+     * disassociated the member account.</p> </li> <li> <p> <code>RESIGNED</code> -
+     * Indicates that the member account disassociated themselves from the
+     * administrator account.</p> </li> <li> <p> <code>DELETED</code> - Indicates that
+     * the administrator account deleted the member account.</p> </li> <li> <p>
+     * <code>ACCOUNT_SUSPENDED</code> - Indicates that an organization account was
+     * suspended from Amazon Web Services at the same time that the administrator
+     * account tried to enable the organization account as a member account.</p> </li>
+     * </ul>
      */
     inline void SetMemberStatus(const Aws::String& value) { m_memberStatusHasBeenSet = true; m_memberStatus = value; }
 
     /**
-     * <p>The status of the relationship between the member account and its master
-     * account. </p> <p>The status can have one of the following values:</p> <ul> <li>
-     * <p> <code>CREATED</code> - Indicates that the master account added the member
-     * account, but has not yet invited the member account.</p> </li> <li> <p>
-     * <code>INVITED</code> - Indicates that the master account invited the member
-     * account. The member account has not yet responded to the invitation.</p> </li>
-     * <li> <p> <code>ENABLED</code> - Indicates that the member account is currently
-     * active. For manually invited member accounts, indicates that the member account
-     * accepted the invitation.</p> </li> <li> <p> <code>REMOVED</code> - Indicates
-     * that the master account disassociated the member account.</p> </li> <li> <p>
-     * <code>RESIGNED</code> - Indicates that the member account disassociated
-     * themselves from the master account.</p> </li> <li> <p> <code>DELETED</code> -
-     * Indicates that the master account deleted the member account.</p> </li> </ul>
+     * <p>The status of the relationship between the member account and its
+     * administrator account. </p> <p>The status can have one of the following
+     * values:</p> <ul> <li> <p> <code>CREATED</code> - Indicates that the
+     * administrator account added the member account, but has not yet invited the
+     * member account.</p> </li> <li> <p> <code>INVITED</code> - Indicates that the
+     * administrator account invited the member account. The member account has not yet
+     * responded to the invitation.</p> </li> <li> <p> <code>ENABLED</code> - Indicates
+     * that the member account is currently active. For manually invited member
+     * accounts, indicates that the member account accepted the invitation.</p> </li>
+     * <li> <p> <code>REMOVED</code> - Indicates that the administrator account
+     * disassociated the member account.</p> </li> <li> <p> <code>RESIGNED</code> -
+     * Indicates that the member account disassociated themselves from the
+     * administrator account.</p> </li> <li> <p> <code>DELETED</code> - Indicates that
+     * the administrator account deleted the member account.</p> </li> <li> <p>
+     * <code>ACCOUNT_SUSPENDED</code> - Indicates that an organization account was
+     * suspended from Amazon Web Services at the same time that the administrator
+     * account tried to enable the organization account as a member account.</p> </li>
+     * </ul>
      */
     inline void SetMemberStatus(Aws::String&& value) { m_memberStatusHasBeenSet = true; m_memberStatus = std::move(value); }
 
     /**
-     * <p>The status of the relationship between the member account and its master
-     * account. </p> <p>The status can have one of the following values:</p> <ul> <li>
-     * <p> <code>CREATED</code> - Indicates that the master account added the member
-     * account, but has not yet invited the member account.</p> </li> <li> <p>
-     * <code>INVITED</code> - Indicates that the master account invited the member
-     * account. The member account has not yet responded to the invitation.</p> </li>
-     * <li> <p> <code>ENABLED</code> - Indicates that the member account is currently
-     * active. For manually invited member accounts, indicates that the member account
-     * accepted the invitation.</p> </li> <li> <p> <code>REMOVED</code> - Indicates
-     * that the master account disassociated the member account.</p> </li> <li> <p>
-     * <code>RESIGNED</code> - Indicates that the member account disassociated
-     * themselves from the master account.</p> </li> <li> <p> <code>DELETED</code> -
-     * Indicates that the master account deleted the member account.</p> </li> </ul>
+     * <p>The status of the relationship between the member account and its
+     * administrator account. </p> <p>The status can have one of the following
+     * values:</p> <ul> <li> <p> <code>CREATED</code> - Indicates that the
+     * administrator account added the member account, but has not yet invited the
+     * member account.</p> </li> <li> <p> <code>INVITED</code> - Indicates that the
+     * administrator account invited the member account. The member account has not yet
+     * responded to the invitation.</p> </li> <li> <p> <code>ENABLED</code> - Indicates
+     * that the member account is currently active. For manually invited member
+     * accounts, indicates that the member account accepted the invitation.</p> </li>
+     * <li> <p> <code>REMOVED</code> - Indicates that the administrator account
+     * disassociated the member account.</p> </li> <li> <p> <code>RESIGNED</code> -
+     * Indicates that the member account disassociated themselves from the
+     * administrator account.</p> </li> <li> <p> <code>DELETED</code> - Indicates that
+     * the administrator account deleted the member account.</p> </li> <li> <p>
+     * <code>ACCOUNT_SUSPENDED</code> - Indicates that an organization account was
+     * suspended from Amazon Web Services at the same time that the administrator
+     * account tried to enable the organization account as a member account.</p> </li>
+     * </ul>
      */
     inline void SetMemberStatus(const char* value) { m_memberStatusHasBeenSet = true; m_memberStatus.assign(value); }
 
     /**
-     * <p>The status of the relationship between the member account and its master
-     * account. </p> <p>The status can have one of the following values:</p> <ul> <li>
-     * <p> <code>CREATED</code> - Indicates that the master account added the member
-     * account, but has not yet invited the member account.</p> </li> <li> <p>
-     * <code>INVITED</code> - Indicates that the master account invited the member
-     * account. The member account has not yet responded to the invitation.</p> </li>
-     * <li> <p> <code>ENABLED</code> - Indicates that the member account is currently
-     * active. For manually invited member accounts, indicates that the member account
-     * accepted the invitation.</p> </li> <li> <p> <code>REMOVED</code> - Indicates
-     * that the master account disassociated the member account.</p> </li> <li> <p>
-     * <code>RESIGNED</code> - Indicates that the member account disassociated
-     * themselves from the master account.</p> </li> <li> <p> <code>DELETED</code> -
-     * Indicates that the master account deleted the member account.</p> </li> </ul>
+     * <p>The status of the relationship between the member account and its
+     * administrator account. </p> <p>The status can have one of the following
+     * values:</p> <ul> <li> <p> <code>CREATED</code> - Indicates that the
+     * administrator account added the member account, but has not yet invited the
+     * member account.</p> </li> <li> <p> <code>INVITED</code> - Indicates that the
+     * administrator account invited the member account. The member account has not yet
+     * responded to the invitation.</p> </li> <li> <p> <code>ENABLED</code> - Indicates
+     * that the member account is currently active. For manually invited member
+     * accounts, indicates that the member account accepted the invitation.</p> </li>
+     * <li> <p> <code>REMOVED</code> - Indicates that the administrator account
+     * disassociated the member account.</p> </li> <li> <p> <code>RESIGNED</code> -
+     * Indicates that the member account disassociated themselves from the
+     * administrator account.</p> </li> <li> <p> <code>DELETED</code> - Indicates that
+     * the administrator account deleted the member account.</p> </li> <li> <p>
+     * <code>ACCOUNT_SUSPENDED</code> - Indicates that an organization account was
+     * suspended from Amazon Web Services at the same time that the administrator
+     * account tried to enable the organization account as a member account.</p> </li>
+     * </ul>
      */
     inline Member& WithMemberStatus(const Aws::String& value) { SetMemberStatus(value); return *this;}
 
     /**
-     * <p>The status of the relationship between the member account and its master
-     * account. </p> <p>The status can have one of the following values:</p> <ul> <li>
-     * <p> <code>CREATED</code> - Indicates that the master account added the member
-     * account, but has not yet invited the member account.</p> </li> <li> <p>
-     * <code>INVITED</code> - Indicates that the master account invited the member
-     * account. The member account has not yet responded to the invitation.</p> </li>
-     * <li> <p> <code>ENABLED</code> - Indicates that the member account is currently
-     * active. For manually invited member accounts, indicates that the member account
-     * accepted the invitation.</p> </li> <li> <p> <code>REMOVED</code> - Indicates
-     * that the master account disassociated the member account.</p> </li> <li> <p>
-     * <code>RESIGNED</code> - Indicates that the member account disassociated
-     * themselves from the master account.</p> </li> <li> <p> <code>DELETED</code> -
-     * Indicates that the master account deleted the member account.</p> </li> </ul>
+     * <p>The status of the relationship between the member account and its
+     * administrator account. </p> <p>The status can have one of the following
+     * values:</p> <ul> <li> <p> <code>CREATED</code> - Indicates that the
+     * administrator account added the member account, but has not yet invited the
+     * member account.</p> </li> <li> <p> <code>INVITED</code> - Indicates that the
+     * administrator account invited the member account. The member account has not yet
+     * responded to the invitation.</p> </li> <li> <p> <code>ENABLED</code> - Indicates
+     * that the member account is currently active. For manually invited member
+     * accounts, indicates that the member account accepted the invitation.</p> </li>
+     * <li> <p> <code>REMOVED</code> - Indicates that the administrator account
+     * disassociated the member account.</p> </li> <li> <p> <code>RESIGNED</code> -
+     * Indicates that the member account disassociated themselves from the
+     * administrator account.</p> </li> <li> <p> <code>DELETED</code> - Indicates that
+     * the administrator account deleted the member account.</p> </li> <li> <p>
+     * <code>ACCOUNT_SUSPENDED</code> - Indicates that an organization account was
+     * suspended from Amazon Web Services at the same time that the administrator
+     * account tried to enable the organization account as a member account.</p> </li>
+     * </ul>
      */
     inline Member& WithMemberStatus(Aws::String&& value) { SetMemberStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The status of the relationship between the member account and its master
-     * account. </p> <p>The status can have one of the following values:</p> <ul> <li>
-     * <p> <code>CREATED</code> - Indicates that the master account added the member
-     * account, but has not yet invited the member account.</p> </li> <li> <p>
-     * <code>INVITED</code> - Indicates that the master account invited the member
-     * account. The member account has not yet responded to the invitation.</p> </li>
-     * <li> <p> <code>ENABLED</code> - Indicates that the member account is currently
-     * active. For manually invited member accounts, indicates that the member account
-     * accepted the invitation.</p> </li> <li> <p> <code>REMOVED</code> - Indicates
-     * that the master account disassociated the member account.</p> </li> <li> <p>
-     * <code>RESIGNED</code> - Indicates that the member account disassociated
-     * themselves from the master account.</p> </li> <li> <p> <code>DELETED</code> -
-     * Indicates that the master account deleted the member account.</p> </li> </ul>
+     * <p>The status of the relationship between the member account and its
+     * administrator account. </p> <p>The status can have one of the following
+     * values:</p> <ul> <li> <p> <code>CREATED</code> - Indicates that the
+     * administrator account added the member account, but has not yet invited the
+     * member account.</p> </li> <li> <p> <code>INVITED</code> - Indicates that the
+     * administrator account invited the member account. The member account has not yet
+     * responded to the invitation.</p> </li> <li> <p> <code>ENABLED</code> - Indicates
+     * that the member account is currently active. For manually invited member
+     * accounts, indicates that the member account accepted the invitation.</p> </li>
+     * <li> <p> <code>REMOVED</code> - Indicates that the administrator account
+     * disassociated the member account.</p> </li> <li> <p> <code>RESIGNED</code> -
+     * Indicates that the member account disassociated themselves from the
+     * administrator account.</p> </li> <li> <p> <code>DELETED</code> - Indicates that
+     * the administrator account deleted the member account.</p> </li> <li> <p>
+     * <code>ACCOUNT_SUSPENDED</code> - Indicates that an organization account was
+     * suspended from Amazon Web Services at the same time that the administrator
+     * account tried to enable the organization account as a member account.</p> </li>
+     * </ul>
      */
     inline Member& WithMemberStatus(const char* value) { SetMemberStatus(value); return *this;}
 
@@ -381,8 +421,8 @@ namespace Model
     Aws::String m_email;
     bool m_emailHasBeenSet;
 
-    Aws::String m_masterId;
-    bool m_masterIdHasBeenSet;
+    Aws::String m_administratorId;
+    bool m_administratorIdHasBeenSet;
 
     Aws::String m_memberStatus;
     bool m_memberStatusHasBeenSet;

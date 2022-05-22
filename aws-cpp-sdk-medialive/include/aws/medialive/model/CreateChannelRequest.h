@@ -12,8 +12,10 @@
 #include <aws/medialive/model/EncoderSettings.h>
 #include <aws/medialive/model/InputSpecification.h>
 #include <aws/medialive/model/LogLevel.h>
+#include <aws/medialive/model/MaintenanceCreateSettings.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/medialive/model/VpcOutputSettings.h>
 #include <aws/medialive/model/OutputDestination.h>
 #include <aws/medialive/model/InputAttachment.h>
 #include <utility>
@@ -261,6 +263,37 @@ namespace Model
 
 
     /**
+     * Maintenance settings for this channel.
+     */
+    inline const MaintenanceCreateSettings& GetMaintenance() const{ return m_maintenance; }
+
+    /**
+     * Maintenance settings for this channel.
+     */
+    inline bool MaintenanceHasBeenSet() const { return m_maintenanceHasBeenSet; }
+
+    /**
+     * Maintenance settings for this channel.
+     */
+    inline void SetMaintenance(const MaintenanceCreateSettings& value) { m_maintenanceHasBeenSet = true; m_maintenance = value; }
+
+    /**
+     * Maintenance settings for this channel.
+     */
+    inline void SetMaintenance(MaintenanceCreateSettings&& value) { m_maintenanceHasBeenSet = true; m_maintenance = std::move(value); }
+
+    /**
+     * Maintenance settings for this channel.
+     */
+    inline CreateChannelRequest& WithMaintenance(const MaintenanceCreateSettings& value) { SetMaintenance(value); return *this;}
+
+    /**
+     * Maintenance settings for this channel.
+     */
+    inline CreateChannelRequest& WithMaintenance(MaintenanceCreateSettings&& value) { SetMaintenance(std::move(value)); return *this;}
+
+
+    /**
      * Name of channel.
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -480,6 +513,37 @@ creating multiple resources.
      */
     inline CreateChannelRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * Settings for the VPC outputs
+     */
+    inline const VpcOutputSettings& GetVpc() const{ return m_vpc; }
+
+    /**
+     * Settings for the VPC outputs
+     */
+    inline bool VpcHasBeenSet() const { return m_vpcHasBeenSet; }
+
+    /**
+     * Settings for the VPC outputs
+     */
+    inline void SetVpc(const VpcOutputSettings& value) { m_vpcHasBeenSet = true; m_vpc = value; }
+
+    /**
+     * Settings for the VPC outputs
+     */
+    inline void SetVpc(VpcOutputSettings&& value) { m_vpcHasBeenSet = true; m_vpc = std::move(value); }
+
+    /**
+     * Settings for the VPC outputs
+     */
+    inline CreateChannelRequest& WithVpc(const VpcOutputSettings& value) { SetVpc(value); return *this;}
+
+    /**
+     * Settings for the VPC outputs
+     */
+    inline CreateChannelRequest& WithVpc(VpcOutputSettings&& value) { SetVpc(std::move(value)); return *this;}
+
   private:
 
     CdiInputSpecification m_cdiInputSpecification;
@@ -503,6 +567,9 @@ creating multiple resources.
     LogLevel m_logLevel;
     bool m_logLevelHasBeenSet;
 
+    MaintenanceCreateSettings m_maintenance;
+    bool m_maintenanceHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
 
@@ -514,6 +581,9 @@ creating multiple resources.
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
+
+    VpcOutputSettings m_vpc;
+    bool m_vpcHasBeenSet;
   };
 
 } // namespace Model

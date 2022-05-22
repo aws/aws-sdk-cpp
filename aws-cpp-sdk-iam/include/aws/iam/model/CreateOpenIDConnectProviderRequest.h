@@ -8,6 +8,7 @@
 #include <aws/iam/IAMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/iam/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -43,10 +44,11 @@ namespace Model
      * provider's OpenID Connect ID tokens. Per the OIDC standard, path components are
      * allowed but query parameters are not. Typically the URL consists of only a
      * hostname, like <code>https://server.example.org</code> or
-     * <code>https://example.com</code>.</p> <p>You cannot register the same provider
-     * multiple times in a single AWS account. If you try to submit a URL that has
-     * already been used for an OpenID Connect provider in the AWS account, you will
-     * get an error.</p>
+     * <code>https://example.com</code>. The URL should not contain a port number. </p>
+     * <p>You cannot register the same provider multiple times in a single Amazon Web
+     * Services account. If you try to submit a URL that has already been used for an
+     * OpenID Connect provider in the Amazon Web Services account, you will get an
+     * error.</p>
      */
     inline const Aws::String& GetUrl() const{ return m_url; }
 
@@ -56,10 +58,11 @@ namespace Model
      * provider's OpenID Connect ID tokens. Per the OIDC standard, path components are
      * allowed but query parameters are not. Typically the URL consists of only a
      * hostname, like <code>https://server.example.org</code> or
-     * <code>https://example.com</code>.</p> <p>You cannot register the same provider
-     * multiple times in a single AWS account. If you try to submit a URL that has
-     * already been used for an OpenID Connect provider in the AWS account, you will
-     * get an error.</p>
+     * <code>https://example.com</code>. The URL should not contain a port number. </p>
+     * <p>You cannot register the same provider multiple times in a single Amazon Web
+     * Services account. If you try to submit a URL that has already been used for an
+     * OpenID Connect provider in the Amazon Web Services account, you will get an
+     * error.</p>
      */
     inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
 
@@ -69,10 +72,11 @@ namespace Model
      * provider's OpenID Connect ID tokens. Per the OIDC standard, path components are
      * allowed but query parameters are not. Typically the URL consists of only a
      * hostname, like <code>https://server.example.org</code> or
-     * <code>https://example.com</code>.</p> <p>You cannot register the same provider
-     * multiple times in a single AWS account. If you try to submit a URL that has
-     * already been used for an OpenID Connect provider in the AWS account, you will
-     * get an error.</p>
+     * <code>https://example.com</code>. The URL should not contain a port number. </p>
+     * <p>You cannot register the same provider multiple times in a single Amazon Web
+     * Services account. If you try to submit a URL that has already been used for an
+     * OpenID Connect provider in the Amazon Web Services account, you will get an
+     * error.</p>
      */
     inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
 
@@ -82,10 +86,11 @@ namespace Model
      * provider's OpenID Connect ID tokens. Per the OIDC standard, path components are
      * allowed but query parameters are not. Typically the URL consists of only a
      * hostname, like <code>https://server.example.org</code> or
-     * <code>https://example.com</code>.</p> <p>You cannot register the same provider
-     * multiple times in a single AWS account. If you try to submit a URL that has
-     * already been used for an OpenID Connect provider in the AWS account, you will
-     * get an error.</p>
+     * <code>https://example.com</code>. The URL should not contain a port number. </p>
+     * <p>You cannot register the same provider multiple times in a single Amazon Web
+     * Services account. If you try to submit a URL that has already been used for an
+     * OpenID Connect provider in the Amazon Web Services account, you will get an
+     * error.</p>
      */
     inline void SetUrl(Aws::String&& value) { m_urlHasBeenSet = true; m_url = std::move(value); }
 
@@ -95,10 +100,11 @@ namespace Model
      * provider's OpenID Connect ID tokens. Per the OIDC standard, path components are
      * allowed but query parameters are not. Typically the URL consists of only a
      * hostname, like <code>https://server.example.org</code> or
-     * <code>https://example.com</code>.</p> <p>You cannot register the same provider
-     * multiple times in a single AWS account. If you try to submit a URL that has
-     * already been used for an OpenID Connect provider in the AWS account, you will
-     * get an error.</p>
+     * <code>https://example.com</code>. The URL should not contain a port number. </p>
+     * <p>You cannot register the same provider multiple times in a single Amazon Web
+     * Services account. If you try to submit a URL that has already been used for an
+     * OpenID Connect provider in the Amazon Web Services account, you will get an
+     * error.</p>
      */
     inline void SetUrl(const char* value) { m_urlHasBeenSet = true; m_url.assign(value); }
 
@@ -108,10 +114,11 @@ namespace Model
      * provider's OpenID Connect ID tokens. Per the OIDC standard, path components are
      * allowed but query parameters are not. Typically the URL consists of only a
      * hostname, like <code>https://server.example.org</code> or
-     * <code>https://example.com</code>.</p> <p>You cannot register the same provider
-     * multiple times in a single AWS account. If you try to submit a URL that has
-     * already been used for an OpenID Connect provider in the AWS account, you will
-     * get an error.</p>
+     * <code>https://example.com</code>. The URL should not contain a port number. </p>
+     * <p>You cannot register the same provider multiple times in a single Amazon Web
+     * Services account. If you try to submit a URL that has already been used for an
+     * OpenID Connect provider in the Amazon Web Services account, you will get an
+     * error.</p>
      */
     inline CreateOpenIDConnectProviderRequest& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
 
@@ -121,10 +128,11 @@ namespace Model
      * provider's OpenID Connect ID tokens. Per the OIDC standard, path components are
      * allowed but query parameters are not. Typically the URL consists of only a
      * hostname, like <code>https://server.example.org</code> or
-     * <code>https://example.com</code>.</p> <p>You cannot register the same provider
-     * multiple times in a single AWS account. If you try to submit a URL that has
-     * already been used for an OpenID Connect provider in the AWS account, you will
-     * get an error.</p>
+     * <code>https://example.com</code>. The URL should not contain a port number. </p>
+     * <p>You cannot register the same provider multiple times in a single Amazon Web
+     * Services account. If you try to submit a URL that has already been used for an
+     * OpenID Connect provider in the Amazon Web Services account, you will get an
+     * error.</p>
      */
     inline CreateOpenIDConnectProviderRequest& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
 
@@ -134,19 +142,20 @@ namespace Model
      * provider's OpenID Connect ID tokens. Per the OIDC standard, path components are
      * allowed but query parameters are not. Typically the URL consists of only a
      * hostname, like <code>https://server.example.org</code> or
-     * <code>https://example.com</code>.</p> <p>You cannot register the same provider
-     * multiple times in a single AWS account. If you try to submit a URL that has
-     * already been used for an OpenID Connect provider in the AWS account, you will
-     * get an error.</p>
+     * <code>https://example.com</code>. The URL should not contain a port number. </p>
+     * <p>You cannot register the same provider multiple times in a single Amazon Web
+     * Services account. If you try to submit a URL that has already been used for an
+     * OpenID Connect provider in the Amazon Web Services account, you will get an
+     * error.</p>
      */
     inline CreateOpenIDConnectProviderRequest& WithUrl(const char* value) { SetUrl(value); return *this;}
 
 
     /**
-     * <p>A list of client IDs (also known as audiences). When a mobile or web app
-     * registers with an OpenID Connect provider, they establish a value that
-     * identifies the application. (This is the value that's sent as the
-     * <code>client_id</code> parameter on OAuth requests.)</p> <p>You can register
+     * <p>Provides a list of client IDs, also known as audiences. When a mobile or web
+     * app registers with an OpenID Connect provider, they establish a value that
+     * identifies the application. This is the value that's sent as the
+     * <code>client_id</code> parameter on OAuth requests.</p> <p>You can register
      * multiple client IDs with the same provider. For example, you might have multiple
      * applications that use the same OIDC provider. You cannot register more than 100
      * client IDs with a single IAM OIDC provider.</p> <p>There is no defined format
@@ -156,10 +165,10 @@ namespace Model
     inline const Aws::Vector<Aws::String>& GetClientIDList() const{ return m_clientIDList; }
 
     /**
-     * <p>A list of client IDs (also known as audiences). When a mobile or web app
-     * registers with an OpenID Connect provider, they establish a value that
-     * identifies the application. (This is the value that's sent as the
-     * <code>client_id</code> parameter on OAuth requests.)</p> <p>You can register
+     * <p>Provides a list of client IDs, also known as audiences. When a mobile or web
+     * app registers with an OpenID Connect provider, they establish a value that
+     * identifies the application. This is the value that's sent as the
+     * <code>client_id</code> parameter on OAuth requests.</p> <p>You can register
      * multiple client IDs with the same provider. For example, you might have multiple
      * applications that use the same OIDC provider. You cannot register more than 100
      * client IDs with a single IAM OIDC provider.</p> <p>There is no defined format
@@ -169,10 +178,10 @@ namespace Model
     inline bool ClientIDListHasBeenSet() const { return m_clientIDListHasBeenSet; }
 
     /**
-     * <p>A list of client IDs (also known as audiences). When a mobile or web app
-     * registers with an OpenID Connect provider, they establish a value that
-     * identifies the application. (This is the value that's sent as the
-     * <code>client_id</code> parameter on OAuth requests.)</p> <p>You can register
+     * <p>Provides a list of client IDs, also known as audiences. When a mobile or web
+     * app registers with an OpenID Connect provider, they establish a value that
+     * identifies the application. This is the value that's sent as the
+     * <code>client_id</code> parameter on OAuth requests.</p> <p>You can register
      * multiple client IDs with the same provider. For example, you might have multiple
      * applications that use the same OIDC provider. You cannot register more than 100
      * client IDs with a single IAM OIDC provider.</p> <p>There is no defined format
@@ -182,10 +191,10 @@ namespace Model
     inline void SetClientIDList(const Aws::Vector<Aws::String>& value) { m_clientIDListHasBeenSet = true; m_clientIDList = value; }
 
     /**
-     * <p>A list of client IDs (also known as audiences). When a mobile or web app
-     * registers with an OpenID Connect provider, they establish a value that
-     * identifies the application. (This is the value that's sent as the
-     * <code>client_id</code> parameter on OAuth requests.)</p> <p>You can register
+     * <p>Provides a list of client IDs, also known as audiences. When a mobile or web
+     * app registers with an OpenID Connect provider, they establish a value that
+     * identifies the application. This is the value that's sent as the
+     * <code>client_id</code> parameter on OAuth requests.</p> <p>You can register
      * multiple client IDs with the same provider. For example, you might have multiple
      * applications that use the same OIDC provider. You cannot register more than 100
      * client IDs with a single IAM OIDC provider.</p> <p>There is no defined format
@@ -195,10 +204,10 @@ namespace Model
     inline void SetClientIDList(Aws::Vector<Aws::String>&& value) { m_clientIDListHasBeenSet = true; m_clientIDList = std::move(value); }
 
     /**
-     * <p>A list of client IDs (also known as audiences). When a mobile or web app
-     * registers with an OpenID Connect provider, they establish a value that
-     * identifies the application. (This is the value that's sent as the
-     * <code>client_id</code> parameter on OAuth requests.)</p> <p>You can register
+     * <p>Provides a list of client IDs, also known as audiences. When a mobile or web
+     * app registers with an OpenID Connect provider, they establish a value that
+     * identifies the application. This is the value that's sent as the
+     * <code>client_id</code> parameter on OAuth requests.</p> <p>You can register
      * multiple client IDs with the same provider. For example, you might have multiple
      * applications that use the same OIDC provider. You cannot register more than 100
      * client IDs with a single IAM OIDC provider.</p> <p>There is no defined format
@@ -208,10 +217,10 @@ namespace Model
     inline CreateOpenIDConnectProviderRequest& WithClientIDList(const Aws::Vector<Aws::String>& value) { SetClientIDList(value); return *this;}
 
     /**
-     * <p>A list of client IDs (also known as audiences). When a mobile or web app
-     * registers with an OpenID Connect provider, they establish a value that
-     * identifies the application. (This is the value that's sent as the
-     * <code>client_id</code> parameter on OAuth requests.)</p> <p>You can register
+     * <p>Provides a list of client IDs, also known as audiences. When a mobile or web
+     * app registers with an OpenID Connect provider, they establish a value that
+     * identifies the application. This is the value that's sent as the
+     * <code>client_id</code> parameter on OAuth requests.</p> <p>You can register
      * multiple client IDs with the same provider. For example, you might have multiple
      * applications that use the same OIDC provider. You cannot register more than 100
      * client IDs with a single IAM OIDC provider.</p> <p>There is no defined format
@@ -221,10 +230,10 @@ namespace Model
     inline CreateOpenIDConnectProviderRequest& WithClientIDList(Aws::Vector<Aws::String>&& value) { SetClientIDList(std::move(value)); return *this;}
 
     /**
-     * <p>A list of client IDs (also known as audiences). When a mobile or web app
-     * registers with an OpenID Connect provider, they establish a value that
-     * identifies the application. (This is the value that's sent as the
-     * <code>client_id</code> parameter on OAuth requests.)</p> <p>You can register
+     * <p>Provides a list of client IDs, also known as audiences. When a mobile or web
+     * app registers with an OpenID Connect provider, they establish a value that
+     * identifies the application. This is the value that's sent as the
+     * <code>client_id</code> parameter on OAuth requests.</p> <p>You can register
      * multiple client IDs with the same provider. For example, you might have multiple
      * applications that use the same OIDC provider. You cannot register more than 100
      * client IDs with a single IAM OIDC provider.</p> <p>There is no defined format
@@ -234,10 +243,10 @@ namespace Model
     inline CreateOpenIDConnectProviderRequest& AddClientIDList(const Aws::String& value) { m_clientIDListHasBeenSet = true; m_clientIDList.push_back(value); return *this; }
 
     /**
-     * <p>A list of client IDs (also known as audiences). When a mobile or web app
-     * registers with an OpenID Connect provider, they establish a value that
-     * identifies the application. (This is the value that's sent as the
-     * <code>client_id</code> parameter on OAuth requests.)</p> <p>You can register
+     * <p>Provides a list of client IDs, also known as audiences. When a mobile or web
+     * app registers with an OpenID Connect provider, they establish a value that
+     * identifies the application. This is the value that's sent as the
+     * <code>client_id</code> parameter on OAuth requests.</p> <p>You can register
      * multiple client IDs with the same provider. For example, you might have multiple
      * applications that use the same OIDC provider. You cannot register more than 100
      * client IDs with a single IAM OIDC provider.</p> <p>There is no defined format
@@ -247,10 +256,10 @@ namespace Model
     inline CreateOpenIDConnectProviderRequest& AddClientIDList(Aws::String&& value) { m_clientIDListHasBeenSet = true; m_clientIDList.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of client IDs (also known as audiences). When a mobile or web app
-     * registers with an OpenID Connect provider, they establish a value that
-     * identifies the application. (This is the value that's sent as the
-     * <code>client_id</code> parameter on OAuth requests.)</p> <p>You can register
+     * <p>Provides a list of client IDs, also known as audiences. When a mobile or web
+     * app registers with an OpenID Connect provider, they establish a value that
+     * identifies the application. This is the value that's sent as the
+     * <code>client_id</code> parameter on OAuth requests.</p> <p>You can register
      * multiple client IDs with the same provider. For example, you might have multiple
      * applications that use the same OIDC provider. You cannot register more than 100
      * client IDs with a single IAM OIDC provider.</p> <p>There is no defined format
@@ -273,10 +282,10 @@ namespace Model
      * and the provider stores its keys at
      * https://keys.server.example.com/openid-connect. In that case, the thumbprint
      * string would be the hex-encoded SHA-1 hash value of the certificate used by
-     * https://keys.server.example.com.</p> <p>For more information about obtaining the
-     * OIDC provider's thumbprint, see <a
+     * <code>https://keys.server.example.com.</code> </p> <p>For more information about
+     * obtaining the OIDC provider thumbprint, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining
-     * the Thumbprint for an OpenID Connect Provider</a> in the <i>IAM User
+     * the thumbprint for an OpenID Connect provider</a> in the <i>IAM User
      * Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetThumbprintList() const{ return m_thumbprintList; }
@@ -294,10 +303,10 @@ namespace Model
      * and the provider stores its keys at
      * https://keys.server.example.com/openid-connect. In that case, the thumbprint
      * string would be the hex-encoded SHA-1 hash value of the certificate used by
-     * https://keys.server.example.com.</p> <p>For more information about obtaining the
-     * OIDC provider's thumbprint, see <a
+     * <code>https://keys.server.example.com.</code> </p> <p>For more information about
+     * obtaining the OIDC provider thumbprint, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining
-     * the Thumbprint for an OpenID Connect Provider</a> in the <i>IAM User
+     * the thumbprint for an OpenID Connect provider</a> in the <i>IAM User
      * Guide</i>.</p>
      */
     inline bool ThumbprintListHasBeenSet() const { return m_thumbprintListHasBeenSet; }
@@ -315,10 +324,10 @@ namespace Model
      * and the provider stores its keys at
      * https://keys.server.example.com/openid-connect. In that case, the thumbprint
      * string would be the hex-encoded SHA-1 hash value of the certificate used by
-     * https://keys.server.example.com.</p> <p>For more information about obtaining the
-     * OIDC provider's thumbprint, see <a
+     * <code>https://keys.server.example.com.</code> </p> <p>For more information about
+     * obtaining the OIDC provider thumbprint, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining
-     * the Thumbprint for an OpenID Connect Provider</a> in the <i>IAM User
+     * the thumbprint for an OpenID Connect provider</a> in the <i>IAM User
      * Guide</i>.</p>
      */
     inline void SetThumbprintList(const Aws::Vector<Aws::String>& value) { m_thumbprintListHasBeenSet = true; m_thumbprintList = value; }
@@ -336,10 +345,10 @@ namespace Model
      * and the provider stores its keys at
      * https://keys.server.example.com/openid-connect. In that case, the thumbprint
      * string would be the hex-encoded SHA-1 hash value of the certificate used by
-     * https://keys.server.example.com.</p> <p>For more information about obtaining the
-     * OIDC provider's thumbprint, see <a
+     * <code>https://keys.server.example.com.</code> </p> <p>For more information about
+     * obtaining the OIDC provider thumbprint, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining
-     * the Thumbprint for an OpenID Connect Provider</a> in the <i>IAM User
+     * the thumbprint for an OpenID Connect provider</a> in the <i>IAM User
      * Guide</i>.</p>
      */
     inline void SetThumbprintList(Aws::Vector<Aws::String>&& value) { m_thumbprintListHasBeenSet = true; m_thumbprintList = std::move(value); }
@@ -357,10 +366,10 @@ namespace Model
      * and the provider stores its keys at
      * https://keys.server.example.com/openid-connect. In that case, the thumbprint
      * string would be the hex-encoded SHA-1 hash value of the certificate used by
-     * https://keys.server.example.com.</p> <p>For more information about obtaining the
-     * OIDC provider's thumbprint, see <a
+     * <code>https://keys.server.example.com.</code> </p> <p>For more information about
+     * obtaining the OIDC provider thumbprint, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining
-     * the Thumbprint for an OpenID Connect Provider</a> in the <i>IAM User
+     * the thumbprint for an OpenID Connect provider</a> in the <i>IAM User
      * Guide</i>.</p>
      */
     inline CreateOpenIDConnectProviderRequest& WithThumbprintList(const Aws::Vector<Aws::String>& value) { SetThumbprintList(value); return *this;}
@@ -378,10 +387,10 @@ namespace Model
      * and the provider stores its keys at
      * https://keys.server.example.com/openid-connect. In that case, the thumbprint
      * string would be the hex-encoded SHA-1 hash value of the certificate used by
-     * https://keys.server.example.com.</p> <p>For more information about obtaining the
-     * OIDC provider's thumbprint, see <a
+     * <code>https://keys.server.example.com.</code> </p> <p>For more information about
+     * obtaining the OIDC provider thumbprint, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining
-     * the Thumbprint for an OpenID Connect Provider</a> in the <i>IAM User
+     * the thumbprint for an OpenID Connect provider</a> in the <i>IAM User
      * Guide</i>.</p>
      */
     inline CreateOpenIDConnectProviderRequest& WithThumbprintList(Aws::Vector<Aws::String>&& value) { SetThumbprintList(std::move(value)); return *this;}
@@ -399,10 +408,10 @@ namespace Model
      * and the provider stores its keys at
      * https://keys.server.example.com/openid-connect. In that case, the thumbprint
      * string would be the hex-encoded SHA-1 hash value of the certificate used by
-     * https://keys.server.example.com.</p> <p>For more information about obtaining the
-     * OIDC provider's thumbprint, see <a
+     * <code>https://keys.server.example.com.</code> </p> <p>For more information about
+     * obtaining the OIDC provider thumbprint, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining
-     * the Thumbprint for an OpenID Connect Provider</a> in the <i>IAM User
+     * the thumbprint for an OpenID Connect provider</a> in the <i>IAM User
      * Guide</i>.</p>
      */
     inline CreateOpenIDConnectProviderRequest& AddThumbprintList(const Aws::String& value) { m_thumbprintListHasBeenSet = true; m_thumbprintList.push_back(value); return *this; }
@@ -420,10 +429,10 @@ namespace Model
      * and the provider stores its keys at
      * https://keys.server.example.com/openid-connect. In that case, the thumbprint
      * string would be the hex-encoded SHA-1 hash value of the certificate used by
-     * https://keys.server.example.com.</p> <p>For more information about obtaining the
-     * OIDC provider's thumbprint, see <a
+     * <code>https://keys.server.example.com.</code> </p> <p>For more information about
+     * obtaining the OIDC provider thumbprint, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining
-     * the Thumbprint for an OpenID Connect Provider</a> in the <i>IAM User
+     * the thumbprint for an OpenID Connect provider</a> in the <i>IAM User
      * Guide</i>.</p>
      */
     inline CreateOpenIDConnectProviderRequest& AddThumbprintList(Aws::String&& value) { m_thumbprintListHasBeenSet = true; m_thumbprintList.push_back(std::move(value)); return *this; }
@@ -441,13 +450,102 @@ namespace Model
      * and the provider stores its keys at
      * https://keys.server.example.com/openid-connect. In that case, the thumbprint
      * string would be the hex-encoded SHA-1 hash value of the certificate used by
-     * https://keys.server.example.com.</p> <p>For more information about obtaining the
-     * OIDC provider's thumbprint, see <a
+     * <code>https://keys.server.example.com.</code> </p> <p>For more information about
+     * obtaining the OIDC provider thumbprint, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining
-     * the Thumbprint for an OpenID Connect Provider</a> in the <i>IAM User
+     * the thumbprint for an OpenID Connect provider</a> in the <i>IAM User
      * Guide</i>.</p>
      */
     inline CreateOpenIDConnectProviderRequest& AddThumbprintList(const char* value) { m_thumbprintListHasBeenSet = true; m_thumbprintList.push_back(value); return *this; }
+
+
+    /**
+     * <p>A list of tags that you want to attach to the new IAM OpenID Connect (OIDC)
+     * provider. Each tag consists of a key name and an associated value. For more
+     * information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>  <p>If any one of the tags
+     * is invalid or if you exceed the allowed maximum number of tags, then the entire
+     * request fails and the resource is not created.</p> 
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of tags that you want to attach to the new IAM OpenID Connect (OIDC)
+     * provider. Each tag consists of a key name and an associated value. For more
+     * information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>  <p>If any one of the tags
+     * is invalid or if you exceed the allowed maximum number of tags, then the entire
+     * request fails and the resource is not created.</p> 
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>A list of tags that you want to attach to the new IAM OpenID Connect (OIDC)
+     * provider. Each tag consists of a key name and an associated value. For more
+     * information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>  <p>If any one of the tags
+     * is invalid or if you exceed the allowed maximum number of tags, then the entire
+     * request fails and the resource is not created.</p> 
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>A list of tags that you want to attach to the new IAM OpenID Connect (OIDC)
+     * provider. Each tag consists of a key name and an associated value. For more
+     * information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>  <p>If any one of the tags
+     * is invalid or if you exceed the allowed maximum number of tags, then the entire
+     * request fails and the resource is not created.</p> 
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>A list of tags that you want to attach to the new IAM OpenID Connect (OIDC)
+     * provider. Each tag consists of a key name and an associated value. For more
+     * information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>  <p>If any one of the tags
+     * is invalid or if you exceed the allowed maximum number of tags, then the entire
+     * request fails and the resource is not created.</p> 
+     */
+    inline CreateOpenIDConnectProviderRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A list of tags that you want to attach to the new IAM OpenID Connect (OIDC)
+     * provider. Each tag consists of a key name and an associated value. For more
+     * information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>  <p>If any one of the tags
+     * is invalid or if you exceed the allowed maximum number of tags, then the entire
+     * request fails and the resource is not created.</p> 
+     */
+    inline CreateOpenIDConnectProviderRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of tags that you want to attach to the new IAM OpenID Connect (OIDC)
+     * provider. Each tag consists of a key name and an associated value. For more
+     * information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>  <p>If any one of the tags
+     * is invalid or if you exceed the allowed maximum number of tags, then the entire
+     * request fails and the resource is not created.</p> 
+     */
+    inline CreateOpenIDConnectProviderRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>A list of tags that you want to attach to the new IAM OpenID Connect (OIDC)
+     * provider. Each tag consists of a key name and an associated value. For more
+     * information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>  <p>If any one of the tags
+     * is invalid or if you exceed the allowed maximum number of tags, then the entire
+     * request fails and the resource is not created.</p> 
+     */
+    inline CreateOpenIDConnectProviderRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -459,6 +557,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_thumbprintList;
     bool m_thumbprintListHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

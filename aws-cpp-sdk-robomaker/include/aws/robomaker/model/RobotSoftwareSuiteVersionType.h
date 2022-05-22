@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     Kinetic,
     Melodic,
-    Dashing
+    Dashing,
+    Foxy
   };
 
 namespace RobotSoftwareSuiteVersionTypeMapper

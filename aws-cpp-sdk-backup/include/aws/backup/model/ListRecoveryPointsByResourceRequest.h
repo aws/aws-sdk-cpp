@@ -153,22 +153,26 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of items to be returned.</p>
+     * <p>The maximum number of items to be returned.</p>  <p>Amazon RDS requires
+     * a value of at least 20.</p> 
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of items to be returned.</p>
+     * <p>The maximum number of items to be returned.</p>  <p>Amazon RDS requires
+     * a value of at least 20.</p> 
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of items to be returned.</p>
+     * <p>The maximum number of items to be returned.</p>  <p>Amazon RDS requires
+     * a value of at least 20.</p> 
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of items to be returned.</p>
+     * <p>The maximum number of items to be returned.</p>  <p>Amazon RDS requires
+     * a value of at least 20.</p> 
      */
     inline ListRecoveryPointsByResourceRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

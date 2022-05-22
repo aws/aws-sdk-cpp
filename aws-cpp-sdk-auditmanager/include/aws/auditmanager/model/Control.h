@@ -29,7 +29,7 @@ namespace Model
 {
 
   /**
-   * <p> A control in AWS Audit Manager. </p><p><h3>See Also:</h3>   <a
+   * <p> A control in Audit Manager. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/Control">AWS
    * API Reference</a></p>
    */
@@ -43,42 +43,42 @@ namespace Model
 
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the specified control. </p>
+     * <p> The Amazon Resource Name (ARN) of the control. </p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the specified control. </p>
+     * <p> The Amazon Resource Name (ARN) of the control. </p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the specified control. </p>
+     * <p> The Amazon Resource Name (ARN) of the control. </p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the specified control. </p>
+     * <p> The Amazon Resource Name (ARN) of the control. </p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the specified control. </p>
+     * <p> The Amazon Resource Name (ARN) of the control. </p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the specified control. </p>
+     * <p> The Amazon Resource Name (ARN) of the control. </p>
      */
     inline Control& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the specified control. </p>
+     * <p> The Amazon Resource Name (ARN) of the control. </p>
      */
     inline Control& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the specified control. </p>
+     * <p> The Amazon Resource Name (ARN) of the control. </p>
      */
     inline Control& WithArn(const char* value) { SetArn(value); return *this;}
 
@@ -125,155 +125,163 @@ namespace Model
 
 
     /**
-     * <p> The type of control, such as custom or standard. </p>
+     * <p> The type of control, such as a custom control or a standard control. </p>
      */
     inline const ControlType& GetType() const{ return m_type; }
 
     /**
-     * <p> The type of control, such as custom or standard. </p>
+     * <p> The type of control, such as a custom control or a standard control. </p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p> The type of control, such as custom or standard. </p>
+     * <p> The type of control, such as a custom control or a standard control. </p>
      */
     inline void SetType(const ControlType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p> The type of control, such as custom or standard. </p>
+     * <p> The type of control, such as a custom control or a standard control. </p>
      */
     inline void SetType(ControlType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p> The type of control, such as custom or standard. </p>
+     * <p> The type of control, such as a custom control or a standard control. </p>
      */
     inline Control& WithType(const ControlType& value) { SetType(value); return *this;}
 
     /**
-     * <p> The type of control, such as custom or standard. </p>
+     * <p> The type of control, such as a custom control or a standard control. </p>
      */
     inline Control& WithType(ControlType&& value) { SetType(std::move(value)); return *this;}
 
 
     /**
-     * <p> The name of the specified control. </p>
+     * <p> The name of the control. </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p> The name of the specified control. </p>
+     * <p> The name of the control. </p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p> The name of the specified control. </p>
+     * <p> The name of the control. </p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p> The name of the specified control. </p>
+     * <p> The name of the control. </p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p> The name of the specified control. </p>
+     * <p> The name of the control. </p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p> The name of the specified control. </p>
+     * <p> The name of the control. </p>
      */
     inline Control& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p> The name of the specified control. </p>
+     * <p> The name of the control. </p>
      */
     inline Control& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p> The name of the specified control. </p>
+     * <p> The name of the control. </p>
      */
     inline Control& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p> The description of the specified control. </p>
+     * <p> The description of the control. </p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p> The description of the specified control. </p>
+     * <p> The description of the control. </p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p> The description of the specified control. </p>
+     * <p> The description of the control. </p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p> The description of the specified control. </p>
+     * <p> The description of the control. </p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p> The description of the specified control. </p>
+     * <p> The description of the control. </p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p> The description of the specified control. </p>
+     * <p> The description of the control. </p>
      */
     inline Control& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p> The description of the specified control. </p>
+     * <p> The description of the control. </p>
      */
     inline Control& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p> The description of the specified control. </p>
+     * <p> The description of the control. </p>
      */
     inline Control& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * <p> The steps to follow to determine if the control has been satisfied. </p>
+     * <p> The steps that you should follow to determine if the control has been
+     * satisfied. </p>
      */
     inline const Aws::String& GetTestingInformation() const{ return m_testingInformation; }
 
     /**
-     * <p> The steps to follow to determine if the control has been satisfied. </p>
+     * <p> The steps that you should follow to determine if the control has been
+     * satisfied. </p>
      */
     inline bool TestingInformationHasBeenSet() const { return m_testingInformationHasBeenSet; }
 
     /**
-     * <p> The steps to follow to determine if the control has been satisfied. </p>
+     * <p> The steps that you should follow to determine if the control has been
+     * satisfied. </p>
      */
     inline void SetTestingInformation(const Aws::String& value) { m_testingInformationHasBeenSet = true; m_testingInformation = value; }
 
     /**
-     * <p> The steps to follow to determine if the control has been satisfied. </p>
+     * <p> The steps that you should follow to determine if the control has been
+     * satisfied. </p>
      */
     inline void SetTestingInformation(Aws::String&& value) { m_testingInformationHasBeenSet = true; m_testingInformation = std::move(value); }
 
     /**
-     * <p> The steps to follow to determine if the control has been satisfied. </p>
+     * <p> The steps that you should follow to determine if the control has been
+     * satisfied. </p>
      */
     inline void SetTestingInformation(const char* value) { m_testingInformationHasBeenSet = true; m_testingInformation.assign(value); }
 
     /**
-     * <p> The steps to follow to determine if the control has been satisfied. </p>
+     * <p> The steps that you should follow to determine if the control has been
+     * satisfied. </p>
      */
     inline Control& WithTestingInformation(const Aws::String& value) { SetTestingInformation(value); return *this;}
 
     /**
-     * <p> The steps to follow to determine if the control has been satisfied. </p>
+     * <p> The steps that you should follow to determine if the control has been
+     * satisfied. </p>
      */
     inline Control& WithTestingInformation(Aws::String&& value) { SetTestingInformation(std::move(value)); return *this;}
 
     /**
-     * <p> The steps to follow to determine if the control has been satisfied. </p>
+     * <p> The steps that you should follow to determine if the control has been
+     * satisfied. </p>
      */
     inline Control& WithTestingInformation(const char* value) { SetTestingInformation(value); return *this;}
 
@@ -320,124 +328,132 @@ namespace Model
 
 
     /**
-     * <p> The recommended actions to carry out if the control is not fulfilled. </p>
+     * <p> The recommended actions to carry out if the control isn't fulfilled. </p>
      */
     inline const Aws::String& GetActionPlanInstructions() const{ return m_actionPlanInstructions; }
 
     /**
-     * <p> The recommended actions to carry out if the control is not fulfilled. </p>
+     * <p> The recommended actions to carry out if the control isn't fulfilled. </p>
      */
     inline bool ActionPlanInstructionsHasBeenSet() const { return m_actionPlanInstructionsHasBeenSet; }
 
     /**
-     * <p> The recommended actions to carry out if the control is not fulfilled. </p>
+     * <p> The recommended actions to carry out if the control isn't fulfilled. </p>
      */
     inline void SetActionPlanInstructions(const Aws::String& value) { m_actionPlanInstructionsHasBeenSet = true; m_actionPlanInstructions = value; }
 
     /**
-     * <p> The recommended actions to carry out if the control is not fulfilled. </p>
+     * <p> The recommended actions to carry out if the control isn't fulfilled. </p>
      */
     inline void SetActionPlanInstructions(Aws::String&& value) { m_actionPlanInstructionsHasBeenSet = true; m_actionPlanInstructions = std::move(value); }
 
     /**
-     * <p> The recommended actions to carry out if the control is not fulfilled. </p>
+     * <p> The recommended actions to carry out if the control isn't fulfilled. </p>
      */
     inline void SetActionPlanInstructions(const char* value) { m_actionPlanInstructionsHasBeenSet = true; m_actionPlanInstructions.assign(value); }
 
     /**
-     * <p> The recommended actions to carry out if the control is not fulfilled. </p>
+     * <p> The recommended actions to carry out if the control isn't fulfilled. </p>
      */
     inline Control& WithActionPlanInstructions(const Aws::String& value) { SetActionPlanInstructions(value); return *this;}
 
     /**
-     * <p> The recommended actions to carry out if the control is not fulfilled. </p>
+     * <p> The recommended actions to carry out if the control isn't fulfilled. </p>
      */
     inline Control& WithActionPlanInstructions(Aws::String&& value) { SetActionPlanInstructions(std::move(value)); return *this;}
 
     /**
-     * <p> The recommended actions to carry out if the control is not fulfilled. </p>
+     * <p> The recommended actions to carry out if the control isn't fulfilled. </p>
      */
     inline Control& WithActionPlanInstructions(const char* value) { SetActionPlanInstructions(value); return *this;}
 
 
     /**
-     * <p> The data mapping sources for the specified control. </p>
+     * <p> The data source that determines where Audit Manager collects evidence from
+     * for the control. </p>
      */
     inline const Aws::String& GetControlSources() const{ return m_controlSources; }
 
     /**
-     * <p> The data mapping sources for the specified control. </p>
+     * <p> The data source that determines where Audit Manager collects evidence from
+     * for the control. </p>
      */
     inline bool ControlSourcesHasBeenSet() const { return m_controlSourcesHasBeenSet; }
 
     /**
-     * <p> The data mapping sources for the specified control. </p>
+     * <p> The data source that determines where Audit Manager collects evidence from
+     * for the control. </p>
      */
     inline void SetControlSources(const Aws::String& value) { m_controlSourcesHasBeenSet = true; m_controlSources = value; }
 
     /**
-     * <p> The data mapping sources for the specified control. </p>
+     * <p> The data source that determines where Audit Manager collects evidence from
+     * for the control. </p>
      */
     inline void SetControlSources(Aws::String&& value) { m_controlSourcesHasBeenSet = true; m_controlSources = std::move(value); }
 
     /**
-     * <p> The data mapping sources for the specified control. </p>
+     * <p> The data source that determines where Audit Manager collects evidence from
+     * for the control. </p>
      */
     inline void SetControlSources(const char* value) { m_controlSourcesHasBeenSet = true; m_controlSources.assign(value); }
 
     /**
-     * <p> The data mapping sources for the specified control. </p>
+     * <p> The data source that determines where Audit Manager collects evidence from
+     * for the control. </p>
      */
     inline Control& WithControlSources(const Aws::String& value) { SetControlSources(value); return *this;}
 
     /**
-     * <p> The data mapping sources for the specified control. </p>
+     * <p> The data source that determines where Audit Manager collects evidence from
+     * for the control. </p>
      */
     inline Control& WithControlSources(Aws::String&& value) { SetControlSources(std::move(value)); return *this;}
 
     /**
-     * <p> The data mapping sources for the specified control. </p>
+     * <p> The data source that determines where Audit Manager collects evidence from
+     * for the control. </p>
      */
     inline Control& WithControlSources(const char* value) { SetControlSources(value); return *this;}
 
 
     /**
-     * <p> The data mapping sources for the specified control. </p>
+     * <p> The data mapping sources for the control. </p>
      */
     inline const Aws::Vector<ControlMappingSource>& GetControlMappingSources() const{ return m_controlMappingSources; }
 
     /**
-     * <p> The data mapping sources for the specified control. </p>
+     * <p> The data mapping sources for the control. </p>
      */
     inline bool ControlMappingSourcesHasBeenSet() const { return m_controlMappingSourcesHasBeenSet; }
 
     /**
-     * <p> The data mapping sources for the specified control. </p>
+     * <p> The data mapping sources for the control. </p>
      */
     inline void SetControlMappingSources(const Aws::Vector<ControlMappingSource>& value) { m_controlMappingSourcesHasBeenSet = true; m_controlMappingSources = value; }
 
     /**
-     * <p> The data mapping sources for the specified control. </p>
+     * <p> The data mapping sources for the control. </p>
      */
     inline void SetControlMappingSources(Aws::Vector<ControlMappingSource>&& value) { m_controlMappingSourcesHasBeenSet = true; m_controlMappingSources = std::move(value); }
 
     /**
-     * <p> The data mapping sources for the specified control. </p>
+     * <p> The data mapping sources for the control. </p>
      */
     inline Control& WithControlMappingSources(const Aws::Vector<ControlMappingSource>& value) { SetControlMappingSources(value); return *this;}
 
     /**
-     * <p> The data mapping sources for the specified control. </p>
+     * <p> The data mapping sources for the control. </p>
      */
     inline Control& WithControlMappingSources(Aws::Vector<ControlMappingSource>&& value) { SetControlMappingSources(std::move(value)); return *this;}
 
     /**
-     * <p> The data mapping sources for the specified control. </p>
+     * <p> The data mapping sources for the control. </p>
      */
     inline Control& AddControlMappingSources(const ControlMappingSource& value) { m_controlMappingSourcesHasBeenSet = true; m_controlMappingSources.push_back(value); return *this; }
 
     /**
-     * <p> The data mapping sources for the specified control. </p>
+     * <p> The data mapping sources for the control. </p>
      */
     inline Control& AddControlMappingSources(ControlMappingSource&& value) { m_controlMappingSourcesHasBeenSet = true; m_controlMappingSources.push_back(std::move(value)); return *this; }
 

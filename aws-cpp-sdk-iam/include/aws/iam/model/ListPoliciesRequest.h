@@ -39,56 +39,62 @@ namespace Model
   public:
 
     /**
-     * <p>The scope to use for filtering the results.</p> <p>To list only AWS managed
-     * policies, set <code>Scope</code> to <code>AWS</code>. To list only the customer
-     * managed policies in your AWS account, set <code>Scope</code> to
-     * <code>Local</code>.</p> <p>This parameter is optional. If it is not included, or
-     * if it is set to <code>All</code>, all policies are returned.</p>
+     * <p>The scope to use for filtering the results.</p> <p>To list only Amazon Web
+     * Services managed policies, set <code>Scope</code> to <code>AWS</code>. To list
+     * only the customer managed policies in your Amazon Web Services account, set
+     * <code>Scope</code> to <code>Local</code>.</p> <p>This parameter is optional. If
+     * it is not included, or if it is set to <code>All</code>, all policies are
+     * returned.</p>
      */
     inline const PolicyScopeType& GetScope() const{ return m_scope; }
 
     /**
-     * <p>The scope to use for filtering the results.</p> <p>To list only AWS managed
-     * policies, set <code>Scope</code> to <code>AWS</code>. To list only the customer
-     * managed policies in your AWS account, set <code>Scope</code> to
-     * <code>Local</code>.</p> <p>This parameter is optional. If it is not included, or
-     * if it is set to <code>All</code>, all policies are returned.</p>
+     * <p>The scope to use for filtering the results.</p> <p>To list only Amazon Web
+     * Services managed policies, set <code>Scope</code> to <code>AWS</code>. To list
+     * only the customer managed policies in your Amazon Web Services account, set
+     * <code>Scope</code> to <code>Local</code>.</p> <p>This parameter is optional. If
+     * it is not included, or if it is set to <code>All</code>, all policies are
+     * returned.</p>
      */
     inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
 
     /**
-     * <p>The scope to use for filtering the results.</p> <p>To list only AWS managed
-     * policies, set <code>Scope</code> to <code>AWS</code>. To list only the customer
-     * managed policies in your AWS account, set <code>Scope</code> to
-     * <code>Local</code>.</p> <p>This parameter is optional. If it is not included, or
-     * if it is set to <code>All</code>, all policies are returned.</p>
+     * <p>The scope to use for filtering the results.</p> <p>To list only Amazon Web
+     * Services managed policies, set <code>Scope</code> to <code>AWS</code>. To list
+     * only the customer managed policies in your Amazon Web Services account, set
+     * <code>Scope</code> to <code>Local</code>.</p> <p>This parameter is optional. If
+     * it is not included, or if it is set to <code>All</code>, all policies are
+     * returned.</p>
      */
     inline void SetScope(const PolicyScopeType& value) { m_scopeHasBeenSet = true; m_scope = value; }
 
     /**
-     * <p>The scope to use for filtering the results.</p> <p>To list only AWS managed
-     * policies, set <code>Scope</code> to <code>AWS</code>. To list only the customer
-     * managed policies in your AWS account, set <code>Scope</code> to
-     * <code>Local</code>.</p> <p>This parameter is optional. If it is not included, or
-     * if it is set to <code>All</code>, all policies are returned.</p>
+     * <p>The scope to use for filtering the results.</p> <p>To list only Amazon Web
+     * Services managed policies, set <code>Scope</code> to <code>AWS</code>. To list
+     * only the customer managed policies in your Amazon Web Services account, set
+     * <code>Scope</code> to <code>Local</code>.</p> <p>This parameter is optional. If
+     * it is not included, or if it is set to <code>All</code>, all policies are
+     * returned.</p>
      */
     inline void SetScope(PolicyScopeType&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
 
     /**
-     * <p>The scope to use for filtering the results.</p> <p>To list only AWS managed
-     * policies, set <code>Scope</code> to <code>AWS</code>. To list only the customer
-     * managed policies in your AWS account, set <code>Scope</code> to
-     * <code>Local</code>.</p> <p>This parameter is optional. If it is not included, or
-     * if it is set to <code>All</code>, all policies are returned.</p>
+     * <p>The scope to use for filtering the results.</p> <p>To list only Amazon Web
+     * Services managed policies, set <code>Scope</code> to <code>AWS</code>. To list
+     * only the customer managed policies in your Amazon Web Services account, set
+     * <code>Scope</code> to <code>Local</code>.</p> <p>This parameter is optional. If
+     * it is not included, or if it is set to <code>All</code>, all policies are
+     * returned.</p>
      */
     inline ListPoliciesRequest& WithScope(const PolicyScopeType& value) { SetScope(value); return *this;}
 
     /**
-     * <p>The scope to use for filtering the results.</p> <p>To list only AWS managed
-     * policies, set <code>Scope</code> to <code>AWS</code>. To list only the customer
-     * managed policies in your AWS account, set <code>Scope</code> to
-     * <code>Local</code>.</p> <p>This parameter is optional. If it is not included, or
-     * if it is set to <code>All</code>, all policies are returned.</p>
+     * <p>The scope to use for filtering the results.</p> <p>To list only Amazon Web
+     * Services managed policies, set <code>Scope</code> to <code>AWS</code>. To list
+     * only the customer managed policies in your Amazon Web Services account, set
+     * <code>Scope</code> to <code>Local</code>.</p> <p>This parameter is optional. If
+     * it is not included, or if it is set to <code>All</code>, all policies are
+     * returned.</p>
      */
     inline ListPoliciesRequest& WithScope(PolicyScopeType&& value) { SetScope(std::move(value)); return *this;}
 

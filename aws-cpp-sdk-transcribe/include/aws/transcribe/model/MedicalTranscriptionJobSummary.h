@@ -11,6 +11,7 @@
 #include <aws/transcribe/model/TranscriptionJobStatus.h>
 #include <aws/transcribe/model/OutputLocationType.h>
 #include <aws/transcribe/model/Specialty.h>
+#include <aws/transcribe/model/MedicalContentIdentificationType.h>
 #include <aws/transcribe/model/Type.h>
 #include <utility>
 
@@ -290,83 +291,138 @@ namespace Model
 
 
     /**
-     * <p>Indicates the location of the transcription job's output.</p> <p>The
-     * <code>CUSTOMER_BUCKET</code> is the S3 location provided in the
-     * <code>OutputBucketName</code> field when the </p>
+     * <p>Indicates the location of the transcription job's output. This field must be
+     * the path of an S3 bucket; if you don't already have an S3 bucket, one is created
+     * based on the path you add.</p>
      */
     inline const OutputLocationType& GetOutputLocationType() const{ return m_outputLocationType; }
 
     /**
-     * <p>Indicates the location of the transcription job's output.</p> <p>The
-     * <code>CUSTOMER_BUCKET</code> is the S3 location provided in the
-     * <code>OutputBucketName</code> field when the </p>
+     * <p>Indicates the location of the transcription job's output. This field must be
+     * the path of an S3 bucket; if you don't already have an S3 bucket, one is created
+     * based on the path you add.</p>
      */
     inline bool OutputLocationTypeHasBeenSet() const { return m_outputLocationTypeHasBeenSet; }
 
     /**
-     * <p>Indicates the location of the transcription job's output.</p> <p>The
-     * <code>CUSTOMER_BUCKET</code> is the S3 location provided in the
-     * <code>OutputBucketName</code> field when the </p>
+     * <p>Indicates the location of the transcription job's output. This field must be
+     * the path of an S3 bucket; if you don't already have an S3 bucket, one is created
+     * based on the path you add.</p>
      */
     inline void SetOutputLocationType(const OutputLocationType& value) { m_outputLocationTypeHasBeenSet = true; m_outputLocationType = value; }
 
     /**
-     * <p>Indicates the location of the transcription job's output.</p> <p>The
-     * <code>CUSTOMER_BUCKET</code> is the S3 location provided in the
-     * <code>OutputBucketName</code> field when the </p>
+     * <p>Indicates the location of the transcription job's output. This field must be
+     * the path of an S3 bucket; if you don't already have an S3 bucket, one is created
+     * based on the path you add.</p>
      */
     inline void SetOutputLocationType(OutputLocationType&& value) { m_outputLocationTypeHasBeenSet = true; m_outputLocationType = std::move(value); }
 
     /**
-     * <p>Indicates the location of the transcription job's output.</p> <p>The
-     * <code>CUSTOMER_BUCKET</code> is the S3 location provided in the
-     * <code>OutputBucketName</code> field when the </p>
+     * <p>Indicates the location of the transcription job's output. This field must be
+     * the path of an S3 bucket; if you don't already have an S3 bucket, one is created
+     * based on the path you add.</p>
      */
     inline MedicalTranscriptionJobSummary& WithOutputLocationType(const OutputLocationType& value) { SetOutputLocationType(value); return *this;}
 
     /**
-     * <p>Indicates the location of the transcription job's output.</p> <p>The
-     * <code>CUSTOMER_BUCKET</code> is the S3 location provided in the
-     * <code>OutputBucketName</code> field when the </p>
+     * <p>Indicates the location of the transcription job's output. This field must be
+     * the path of an S3 bucket; if you don't already have an S3 bucket, one is created
+     * based on the path you add.</p>
      */
     inline MedicalTranscriptionJobSummary& WithOutputLocationType(OutputLocationType&& value) { SetOutputLocationType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The medical specialty of the transcription job. <code>Primary care</code> is
-     * the only valid value.</p>
+     * <p>The medical specialty of the transcription job. Refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-medical-conversation.html">Transcribing
+     * a medical conversation</a>for a list of supported specialties.</p>
      */
     inline const Specialty& GetSpecialty() const{ return m_specialty; }
 
     /**
-     * <p>The medical specialty of the transcription job. <code>Primary care</code> is
-     * the only valid value.</p>
+     * <p>The medical specialty of the transcription job. Refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-medical-conversation.html">Transcribing
+     * a medical conversation</a>for a list of supported specialties.</p>
      */
     inline bool SpecialtyHasBeenSet() const { return m_specialtyHasBeenSet; }
 
     /**
-     * <p>The medical specialty of the transcription job. <code>Primary care</code> is
-     * the only valid value.</p>
+     * <p>The medical specialty of the transcription job. Refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-medical-conversation.html">Transcribing
+     * a medical conversation</a>for a list of supported specialties.</p>
      */
     inline void SetSpecialty(const Specialty& value) { m_specialtyHasBeenSet = true; m_specialty = value; }
 
     /**
-     * <p>The medical specialty of the transcription job. <code>Primary care</code> is
-     * the only valid value.</p>
+     * <p>The medical specialty of the transcription job. Refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-medical-conversation.html">Transcribing
+     * a medical conversation</a>for a list of supported specialties.</p>
      */
     inline void SetSpecialty(Specialty&& value) { m_specialtyHasBeenSet = true; m_specialty = std::move(value); }
 
     /**
-     * <p>The medical specialty of the transcription job. <code>Primary care</code> is
-     * the only valid value.</p>
+     * <p>The medical specialty of the transcription job. Refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-medical-conversation.html">Transcribing
+     * a medical conversation</a>for a list of supported specialties.</p>
      */
     inline MedicalTranscriptionJobSummary& WithSpecialty(const Specialty& value) { SetSpecialty(value); return *this;}
 
     /**
-     * <p>The medical specialty of the transcription job. <code>Primary care</code> is
-     * the only valid value.</p>
+     * <p>The medical specialty of the transcription job. Refer to <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-medical-conversation.html">Transcribing
+     * a medical conversation</a>for a list of supported specialties.</p>
      */
     inline MedicalTranscriptionJobSummary& WithSpecialty(Specialty&& value) { SetSpecialty(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Shows the type of information you've configured Amazon Transcribe Medical to
+     * identify in a transcription job. If the value is <code>PHI</code>, you've
+     * configured the transcription job to identify personal health information
+     * (PHI).</p>
+     */
+    inline const MedicalContentIdentificationType& GetContentIdentificationType() const{ return m_contentIdentificationType; }
+
+    /**
+     * <p>Shows the type of information you've configured Amazon Transcribe Medical to
+     * identify in a transcription job. If the value is <code>PHI</code>, you've
+     * configured the transcription job to identify personal health information
+     * (PHI).</p>
+     */
+    inline bool ContentIdentificationTypeHasBeenSet() const { return m_contentIdentificationTypeHasBeenSet; }
+
+    /**
+     * <p>Shows the type of information you've configured Amazon Transcribe Medical to
+     * identify in a transcription job. If the value is <code>PHI</code>, you've
+     * configured the transcription job to identify personal health information
+     * (PHI).</p>
+     */
+    inline void SetContentIdentificationType(const MedicalContentIdentificationType& value) { m_contentIdentificationTypeHasBeenSet = true; m_contentIdentificationType = value; }
+
+    /**
+     * <p>Shows the type of information you've configured Amazon Transcribe Medical to
+     * identify in a transcription job. If the value is <code>PHI</code>, you've
+     * configured the transcription job to identify personal health information
+     * (PHI).</p>
+     */
+    inline void SetContentIdentificationType(MedicalContentIdentificationType&& value) { m_contentIdentificationTypeHasBeenSet = true; m_contentIdentificationType = std::move(value); }
+
+    /**
+     * <p>Shows the type of information you've configured Amazon Transcribe Medical to
+     * identify in a transcription job. If the value is <code>PHI</code>, you've
+     * configured the transcription job to identify personal health information
+     * (PHI).</p>
+     */
+    inline MedicalTranscriptionJobSummary& WithContentIdentificationType(const MedicalContentIdentificationType& value) { SetContentIdentificationType(value); return *this;}
+
+    /**
+     * <p>Shows the type of information you've configured Amazon Transcribe Medical to
+     * identify in a transcription job. If the value is <code>PHI</code>, you've
+     * configured the transcription job to identify personal health information
+     * (PHI).</p>
+     */
+    inline MedicalTranscriptionJobSummary& WithContentIdentificationType(MedicalContentIdentificationType&& value) { SetContentIdentificationType(std::move(value)); return *this;}
 
 
     /**
@@ -427,6 +483,9 @@ namespace Model
 
     Specialty m_specialty;
     bool m_specialtyHasBeenSet;
+
+    MedicalContentIdentificationType m_contentIdentificationType;
+    bool m_contentIdentificationTypeHasBeenSet;
 
     Type m_type;
     bool m_typeHasBeenSet;

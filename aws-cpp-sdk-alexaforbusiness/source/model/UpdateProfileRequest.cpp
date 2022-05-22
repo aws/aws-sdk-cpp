@@ -32,6 +32,8 @@ UpdateProfileRequest::UpdateProfileRequest() :
     m_maxVolumeLimitHasBeenSet(false),
     m_pSTNEnabled(false),
     m_pSTNEnabledHasBeenSet(false),
+    m_dataRetentionOptIn(false),
+    m_dataRetentionOptInHasBeenSet(false),
     m_meetingRoomConfigurationHasBeenSet(false)
 {
 }
@@ -106,6 +108,12 @@ Aws::String UpdateProfileRequest::SerializePayload() const
   if(m_pSTNEnabledHasBeenSet)
   {
    payload.WithBool("PSTNEnabled", m_pSTNEnabled);
+
+  }
+
+  if(m_dataRetentionOptInHasBeenSet)
+  {
+   payload.WithBool("DataRetentionOptIn", m_dataRetentionOptIn);
 
   }
 

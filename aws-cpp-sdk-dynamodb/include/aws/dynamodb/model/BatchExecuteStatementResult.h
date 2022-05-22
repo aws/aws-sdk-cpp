@@ -7,6 +7,7 @@
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/dynamodb/model/BatchStatementResponse.h>
+#include <aws/dynamodb/model/ConsumedCapacity.h>
 #include <utility>
 
 namespace Aws
@@ -34,43 +35,88 @@ namespace Model
 
 
     /**
-     * <p> The response to each PartiQL statement in the batch. </p>
+     * <p>The response to each PartiQL statement in the batch.</p>
      */
     inline const Aws::Vector<BatchStatementResponse>& GetResponses() const{ return m_responses; }
 
     /**
-     * <p> The response to each PartiQL statement in the batch. </p>
+     * <p>The response to each PartiQL statement in the batch.</p>
      */
     inline void SetResponses(const Aws::Vector<BatchStatementResponse>& value) { m_responses = value; }
 
     /**
-     * <p> The response to each PartiQL statement in the batch. </p>
+     * <p>The response to each PartiQL statement in the batch.</p>
      */
     inline void SetResponses(Aws::Vector<BatchStatementResponse>&& value) { m_responses = std::move(value); }
 
     /**
-     * <p> The response to each PartiQL statement in the batch. </p>
+     * <p>The response to each PartiQL statement in the batch.</p>
      */
     inline BatchExecuteStatementResult& WithResponses(const Aws::Vector<BatchStatementResponse>& value) { SetResponses(value); return *this;}
 
     /**
-     * <p> The response to each PartiQL statement in the batch. </p>
+     * <p>The response to each PartiQL statement in the batch.</p>
      */
     inline BatchExecuteStatementResult& WithResponses(Aws::Vector<BatchStatementResponse>&& value) { SetResponses(std::move(value)); return *this;}
 
     /**
-     * <p> The response to each PartiQL statement in the batch. </p>
+     * <p>The response to each PartiQL statement in the batch.</p>
      */
     inline BatchExecuteStatementResult& AddResponses(const BatchStatementResponse& value) { m_responses.push_back(value); return *this; }
 
     /**
-     * <p> The response to each PartiQL statement in the batch. </p>
+     * <p>The response to each PartiQL statement in the batch.</p>
      */
     inline BatchExecuteStatementResult& AddResponses(BatchStatementResponse&& value) { m_responses.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The capacity units consumed by the entire operation. The values of the list
+     * are ordered according to the ordering of the statements.</p>
+     */
+    inline const Aws::Vector<ConsumedCapacity>& GetConsumedCapacity() const{ return m_consumedCapacity; }
+
+    /**
+     * <p>The capacity units consumed by the entire operation. The values of the list
+     * are ordered according to the ordering of the statements.</p>
+     */
+    inline void SetConsumedCapacity(const Aws::Vector<ConsumedCapacity>& value) { m_consumedCapacity = value; }
+
+    /**
+     * <p>The capacity units consumed by the entire operation. The values of the list
+     * are ordered according to the ordering of the statements.</p>
+     */
+    inline void SetConsumedCapacity(Aws::Vector<ConsumedCapacity>&& value) { m_consumedCapacity = std::move(value); }
+
+    /**
+     * <p>The capacity units consumed by the entire operation. The values of the list
+     * are ordered according to the ordering of the statements.</p>
+     */
+    inline BatchExecuteStatementResult& WithConsumedCapacity(const Aws::Vector<ConsumedCapacity>& value) { SetConsumedCapacity(value); return *this;}
+
+    /**
+     * <p>The capacity units consumed by the entire operation. The values of the list
+     * are ordered according to the ordering of the statements.</p>
+     */
+    inline BatchExecuteStatementResult& WithConsumedCapacity(Aws::Vector<ConsumedCapacity>&& value) { SetConsumedCapacity(std::move(value)); return *this;}
+
+    /**
+     * <p>The capacity units consumed by the entire operation. The values of the list
+     * are ordered according to the ordering of the statements.</p>
+     */
+    inline BatchExecuteStatementResult& AddConsumedCapacity(const ConsumedCapacity& value) { m_consumedCapacity.push_back(value); return *this; }
+
+    /**
+     * <p>The capacity units consumed by the entire operation. The values of the list
+     * are ordered according to the ordering of the statements.</p>
+     */
+    inline BatchExecuteStatementResult& AddConsumedCapacity(ConsumedCapacity&& value) { m_consumedCapacity.push_back(std::move(value)); return *this; }
 
   private:
 
     Aws::Vector<BatchStatementResponse> m_responses;
+
+    Aws::Vector<ConsumedCapacity> m_consumedCapacity;
   };
 
 } // namespace Model

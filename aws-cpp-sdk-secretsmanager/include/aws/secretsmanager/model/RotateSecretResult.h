@@ -69,80 +69,73 @@ namespace Model
 
 
     /**
-     * <p>The friendly name of the secret.</p>
+     * <p>The name of the secret.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The friendly name of the secret.</p>
+     * <p>The name of the secret.</p>
      */
     inline void SetName(const Aws::String& value) { m_name = value; }
 
     /**
-     * <p>The friendly name of the secret.</p>
+     * <p>The name of the secret.</p>
      */
     inline void SetName(Aws::String&& value) { m_name = std::move(value); }
 
     /**
-     * <p>The friendly name of the secret.</p>
+     * <p>The name of the secret.</p>
      */
     inline void SetName(const char* value) { m_name.assign(value); }
 
     /**
-     * <p>The friendly name of the secret.</p>
+     * <p>The name of the secret.</p>
      */
     inline RotateSecretResult& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The friendly name of the secret.</p>
+     * <p>The name of the secret.</p>
      */
     inline RotateSecretResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The friendly name of the secret.</p>
+     * <p>The name of the secret.</p>
      */
     inline RotateSecretResult& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>The ID of the new version of the secret created by the rotation started by
-     * this request.</p>
+     * <p>The ID of the new version of the secret.</p>
      */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
 
     /**
-     * <p>The ID of the new version of the secret created by the rotation started by
-     * this request.</p>
+     * <p>The ID of the new version of the secret.</p>
      */
     inline void SetVersionId(const Aws::String& value) { m_versionId = value; }
 
     /**
-     * <p>The ID of the new version of the secret created by the rotation started by
-     * this request.</p>
+     * <p>The ID of the new version of the secret.</p>
      */
     inline void SetVersionId(Aws::String&& value) { m_versionId = std::move(value); }
 
     /**
-     * <p>The ID of the new version of the secret created by the rotation started by
-     * this request.</p>
+     * <p>The ID of the new version of the secret.</p>
      */
     inline void SetVersionId(const char* value) { m_versionId.assign(value); }
 
     /**
-     * <p>The ID of the new version of the secret created by the rotation started by
-     * this request.</p>
+     * <p>The ID of the new version of the secret.</p>
      */
     inline RotateSecretResult& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
 
     /**
-     * <p>The ID of the new version of the secret created by the rotation started by
-     * this request.</p>
+     * <p>The ID of the new version of the secret.</p>
      */
     inline RotateSecretResult& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the new version of the secret created by the rotation started by
-     * this request.</p>
+     * <p>The ID of the new version of the secret.</p>
      */
     inline RotateSecretResult& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 

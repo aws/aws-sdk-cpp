@@ -16,7 +16,9 @@ UpdateGatewayInformationRequest::UpdateGatewayInformationRequest() :
     m_gatewayARNHasBeenSet(false),
     m_gatewayNameHasBeenSet(false),
     m_gatewayTimezoneHasBeenSet(false),
-    m_cloudWatchLogGroupARNHasBeenSet(false)
+    m_cloudWatchLogGroupARNHasBeenSet(false),
+    m_gatewayCapacity(GatewayCapacity::NOT_SET),
+    m_gatewayCapacityHasBeenSet(false)
 {
 }
 
@@ -46,6 +48,11 @@ Aws::String UpdateGatewayInformationRequest::SerializePayload() const
   {
    payload.WithString("CloudWatchLogGroupARN", m_cloudWatchLogGroupARN);
 
+  }
+
+  if(m_gatewayCapacityHasBeenSet)
+  {
+   payload.WithString("GatewayCapacity", GatewayCapacityMapper::GetNameForGatewayCapacity(m_gatewayCapacity));
   }
 
   return payload.View().WriteReadable();

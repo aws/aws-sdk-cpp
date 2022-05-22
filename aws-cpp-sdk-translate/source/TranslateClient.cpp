@@ -82,7 +82,7 @@ TranslateClient::~TranslateClient()
 {
 }
 
-void TranslateClient::init(const ClientConfiguration& config)
+void TranslateClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Translate");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -111,9 +111,6 @@ void TranslateClient::OverrideEndpoint(const Aws::String& endpoint)
 CreateParallelDataOutcome TranslateClient::CreateParallelData(const CreateParallelDataRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateParallelDataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -138,9 +135,6 @@ void TranslateClient::CreateParallelDataAsyncHelper(const CreateParallelDataRequ
 DeleteParallelDataOutcome TranslateClient::DeleteParallelData(const DeleteParallelDataRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteParallelDataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -165,9 +159,6 @@ void TranslateClient::DeleteParallelDataAsyncHelper(const DeleteParallelDataRequ
 DeleteTerminologyOutcome TranslateClient::DeleteTerminology(const DeleteTerminologyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteTerminologyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -192,9 +183,6 @@ void TranslateClient::DeleteTerminologyAsyncHelper(const DeleteTerminologyReques
 DescribeTextTranslationJobOutcome TranslateClient::DescribeTextTranslationJob(const DescribeTextTranslationJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeTextTranslationJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -219,9 +207,6 @@ void TranslateClient::DescribeTextTranslationJobAsyncHelper(const DescribeTextTr
 GetParallelDataOutcome TranslateClient::GetParallelData(const GetParallelDataRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetParallelDataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -246,9 +231,6 @@ void TranslateClient::GetParallelDataAsyncHelper(const GetParallelDataRequest& r
 GetTerminologyOutcome TranslateClient::GetTerminology(const GetTerminologyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetTerminologyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -273,9 +255,6 @@ void TranslateClient::GetTerminologyAsyncHelper(const GetTerminologyRequest& req
 ImportTerminologyOutcome TranslateClient::ImportTerminology(const ImportTerminologyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ImportTerminologyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -300,9 +279,6 @@ void TranslateClient::ImportTerminologyAsyncHelper(const ImportTerminologyReques
 ListParallelDataOutcome TranslateClient::ListParallelData(const ListParallelDataRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListParallelDataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -327,9 +303,6 @@ void TranslateClient::ListParallelDataAsyncHelper(const ListParallelDataRequest&
 ListTerminologiesOutcome TranslateClient::ListTerminologies(const ListTerminologiesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListTerminologiesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -354,9 +327,6 @@ void TranslateClient::ListTerminologiesAsyncHelper(const ListTerminologiesReques
 ListTextTranslationJobsOutcome TranslateClient::ListTextTranslationJobs(const ListTextTranslationJobsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListTextTranslationJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -381,9 +351,6 @@ void TranslateClient::ListTextTranslationJobsAsyncHelper(const ListTextTranslati
 StartTextTranslationJobOutcome TranslateClient::StartTextTranslationJob(const StartTextTranslationJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return StartTextTranslationJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -408,9 +375,6 @@ void TranslateClient::StartTextTranslationJobAsyncHelper(const StartTextTranslat
 StopTextTranslationJobOutcome TranslateClient::StopTextTranslationJob(const StopTextTranslationJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return StopTextTranslationJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -435,9 +399,6 @@ void TranslateClient::StopTextTranslationJobAsyncHelper(const StopTextTranslatio
 TranslateTextOutcome TranslateClient::TranslateText(const TranslateTextRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return TranslateTextOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -462,9 +423,6 @@ void TranslateClient::TranslateTextAsyncHelper(const TranslateTextRequest& reque
 UpdateParallelDataOutcome TranslateClient::UpdateParallelData(const UpdateParallelDataRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return UpdateParallelDataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

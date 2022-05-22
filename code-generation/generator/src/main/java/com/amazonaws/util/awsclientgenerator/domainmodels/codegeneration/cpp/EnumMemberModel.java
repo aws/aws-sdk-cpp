@@ -17,4 +17,5 @@ import lombok.NoArgsConstructor;
 public class EnumMemberModel {
     private String memberName;
     private String memberStringValue;
+    private boolean predefined;
 }

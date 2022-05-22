@@ -18,40 +18,24 @@ namespace ServiceDiscovery
 namespace Model
 {
 
-HealthCheckCustomConfig::HealthCheckCustomConfig() : 
-    m_failureThreshold(0),
-    m_failureThresholdHasBeenSet(false)
+HealthCheckCustomConfig::HealthCheckCustomConfig()
 {
 }
 
-HealthCheckCustomConfig::HealthCheckCustomConfig(JsonView jsonValue) : 
-    m_failureThreshold(0),
-    m_failureThresholdHasBeenSet(false)
+HealthCheckCustomConfig::HealthCheckCustomConfig(JsonView jsonValue)
 {
   *this = jsonValue;
 }
 
 HealthCheckCustomConfig& HealthCheckCustomConfig::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("FailureThreshold"))
-  {
-    m_failureThreshold = jsonValue.GetInteger("FailureThreshold");
-
-    m_failureThresholdHasBeenSet = true;
-  }
-
+  AWS_UNREFERENCED_PARAM(jsonValue);
   return *this;
 }
 
 JsonValue HealthCheckCustomConfig::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_failureThresholdHasBeenSet)
-  {
-   payload.WithInteger("FailureThreshold", m_failureThreshold);
-
-  }
 
   return payload;
 }

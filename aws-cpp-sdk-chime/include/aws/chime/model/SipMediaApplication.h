@@ -27,8 +27,9 @@ namespace Model
 {
 
   /**
-   * <p>The SIP media application details, including name and endpoints. An AWS
-   * account can have multiple SIP media applications.</p><p><h3>See Also:</h3>   <a
+   * <p>The details of the SIP media application, including name and endpoints. An
+   * AWS account can have multiple SIP media applications.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/SipMediaApplication">AWS
    * API Reference</a></p>
    */

@@ -252,6 +252,47 @@ namespace Model
      */
     inline PlacementGroup& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the placement group.</p>
+     */
+    inline const Aws::String& GetGroupArn() const{ return m_groupArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the placement group.</p>
+     */
+    inline bool GroupArnHasBeenSet() const { return m_groupArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the placement group.</p>
+     */
+    inline void SetGroupArn(const Aws::String& value) { m_groupArnHasBeenSet = true; m_groupArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the placement group.</p>
+     */
+    inline void SetGroupArn(Aws::String&& value) { m_groupArnHasBeenSet = true; m_groupArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the placement group.</p>
+     */
+    inline void SetGroupArn(const char* value) { m_groupArnHasBeenSet = true; m_groupArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the placement group.</p>
+     */
+    inline PlacementGroup& WithGroupArn(const Aws::String& value) { SetGroupArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the placement group.</p>
+     */
+    inline PlacementGroup& WithGroupArn(Aws::String&& value) { SetGroupArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the placement group.</p>
+     */
+    inline PlacementGroup& WithGroupArn(const char* value) { SetGroupArn(value); return *this;}
+
   private:
 
     Aws::String m_groupName;
@@ -271,6 +312,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::String m_groupArn;
+    bool m_groupArnHasBeenSet;
   };
 
 } // namespace Model

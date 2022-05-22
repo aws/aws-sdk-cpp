@@ -166,42 +166,50 @@ namespace Model
 
 
     /**
-     * <p> The AWS source that emitted the events you want to filter for. </p>
+     * <p> The Amazon Web Services source that emitted the events you want to filter
+     * for. </p>
      */
     inline const Aws::String& GetEventSource() const{ return m_eventSource; }
 
     /**
-     * <p> The AWS source that emitted the events you want to filter for. </p>
+     * <p> The Amazon Web Services source that emitted the events you want to filter
+     * for. </p>
      */
     inline bool EventSourceHasBeenSet() const { return m_eventSourceHasBeenSet; }
 
     /**
-     * <p> The AWS source that emitted the events you want to filter for. </p>
+     * <p> The Amazon Web Services source that emitted the events you want to filter
+     * for. </p>
      */
     inline void SetEventSource(const Aws::String& value) { m_eventSourceHasBeenSet = true; m_eventSource = value; }
 
     /**
-     * <p> The AWS source that emitted the events you want to filter for. </p>
+     * <p> The Amazon Web Services source that emitted the events you want to filter
+     * for. </p>
      */
     inline void SetEventSource(Aws::String&& value) { m_eventSourceHasBeenSet = true; m_eventSource = std::move(value); }
 
     /**
-     * <p> The AWS source that emitted the events you want to filter for. </p>
+     * <p> The Amazon Web Services source that emitted the events you want to filter
+     * for. </p>
      */
     inline void SetEventSource(const char* value) { m_eventSourceHasBeenSet = true; m_eventSource.assign(value); }
 
     /**
-     * <p> The AWS source that emitted the events you want to filter for. </p>
+     * <p> The Amazon Web Services source that emitted the events you want to filter
+     * for. </p>
      */
     inline ListEventsFilters& WithEventSource(const Aws::String& value) { SetEventSource(value); return *this;}
 
     /**
-     * <p> The AWS source that emitted the events you want to filter for. </p>
+     * <p> The Amazon Web Services source that emitted the events you want to filter
+     * for. </p>
      */
     inline ListEventsFilters& WithEventSource(Aws::String&& value) { SetEventSource(std::move(value)); return *this;}
 
     /**
-     * <p> The AWS source that emitted the events you want to filter for. </p>
+     * <p> The Amazon Web Services source that emitted the events you want to filter
+     * for. </p>
      */
     inline ListEventsFilters& WithEventSource(const char* value) { SetEventSource(value); return *this;}
 

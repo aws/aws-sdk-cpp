@@ -52,7 +52,9 @@ StartBuildBatchRequest::StartBuildBatchRequest() :
     m_registryCredentialOverrideHasBeenSet(false),
     m_imagePullCredentialsTypeOverride(ImagePullCredentialsType::NOT_SET),
     m_imagePullCredentialsTypeOverrideHasBeenSet(false),
-    m_buildBatchConfigOverrideHasBeenSet(false)
+    m_buildBatchConfigOverrideHasBeenSet(false),
+    m_debugSessionEnabled(false),
+    m_debugSessionEnabledHasBeenSet(false)
 {
 }
 
@@ -253,6 +255,12 @@ Aws::String StartBuildBatchRequest::SerializePayload() const
   if(m_buildBatchConfigOverrideHasBeenSet)
   {
    payload.WithObject("buildBatchConfigOverride", m_buildBatchConfigOverride.Jsonize());
+
+  }
+
+  if(m_debugSessionEnabledHasBeenSet)
+  {
+   payload.WithBool("debugSessionEnabled", m_debugSessionEnabled);
 
   }
 

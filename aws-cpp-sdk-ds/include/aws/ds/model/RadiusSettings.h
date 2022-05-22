@@ -106,28 +106,28 @@ namespace Model
 
     /**
      * <p>The port that your RADIUS server is using for communications. Your
-     * on-premises network must allow inbound traffic over this port from the AWS
+     * self-managed network must allow inbound traffic over this port from the
      * Directory Service servers.</p>
      */
     inline int GetRadiusPort() const{ return m_radiusPort; }
 
     /**
      * <p>The port that your RADIUS server is using for communications. Your
-     * on-premises network must allow inbound traffic over this port from the AWS
+     * self-managed network must allow inbound traffic over this port from the
      * Directory Service servers.</p>
      */
     inline bool RadiusPortHasBeenSet() const { return m_radiusPortHasBeenSet; }
 
     /**
      * <p>The port that your RADIUS server is using for communications. Your
-     * on-premises network must allow inbound traffic over this port from the AWS
+     * self-managed network must allow inbound traffic over this port from the
      * Directory Service servers.</p>
      */
     inline void SetRadiusPort(int value) { m_radiusPortHasBeenSet = true; m_radiusPort = value; }
 
     /**
      * <p>The port that your RADIUS server is using for communications. Your
-     * on-premises network must allow inbound traffic over this port from the AWS
+     * self-managed network must allow inbound traffic over this port from the
      * Directory Service servers.</p>
      */
     inline RadiusSettings& WithRadiusPort(int value) { SetRadiusPort(value); return *this;}

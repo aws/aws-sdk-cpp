@@ -39,8 +39,9 @@ namespace Model
      * following values for the repository: </p> <ul> <li> <p>Name</p> </li> <li>
      * <p>Amazon Resource Name (ARN)</p> </li> <li> <p>Creation time</p> </li> <li>
      * <p>Last modified time</p> </li> <li> <p>Configuration information, including the
-     * URL location of the repository and the ARN of the AWS Secrets Manager secret
-     * that contains the credentials used to access the repository.</p> </li> </ul>
+     * URL location of the repository and the ARN of the Amazon Web Services Secrets
+     * Manager secret that contains the credentials used to access the repository.</p>
+     * </li> </ul>
      */
     inline const Aws::Vector<CodeRepositorySummary>& GetCodeRepositorySummaryList() const{ return m_codeRepositorySummaryList; }
 
@@ -49,8 +50,9 @@ namespace Model
      * following values for the repository: </p> <ul> <li> <p>Name</p> </li> <li>
      * <p>Amazon Resource Name (ARN)</p> </li> <li> <p>Creation time</p> </li> <li>
      * <p>Last modified time</p> </li> <li> <p>Configuration information, including the
-     * URL location of the repository and the ARN of the AWS Secrets Manager secret
-     * that contains the credentials used to access the repository.</p> </li> </ul>
+     * URL location of the repository and the ARN of the Amazon Web Services Secrets
+     * Manager secret that contains the credentials used to access the repository.</p>
+     * </li> </ul>
      */
     inline void SetCodeRepositorySummaryList(const Aws::Vector<CodeRepositorySummary>& value) { m_codeRepositorySummaryList = value; }
 
@@ -59,8 +61,9 @@ namespace Model
      * following values for the repository: </p> <ul> <li> <p>Name</p> </li> <li>
      * <p>Amazon Resource Name (ARN)</p> </li> <li> <p>Creation time</p> </li> <li>
      * <p>Last modified time</p> </li> <li> <p>Configuration information, including the
-     * URL location of the repository and the ARN of the AWS Secrets Manager secret
-     * that contains the credentials used to access the repository.</p> </li> </ul>
+     * URL location of the repository and the ARN of the Amazon Web Services Secrets
+     * Manager secret that contains the credentials used to access the repository.</p>
+     * </li> </ul>
      */
     inline void SetCodeRepositorySummaryList(Aws::Vector<CodeRepositorySummary>&& value) { m_codeRepositorySummaryList = std::move(value); }
 
@@ -69,8 +72,9 @@ namespace Model
      * following values for the repository: </p> <ul> <li> <p>Name</p> </li> <li>
      * <p>Amazon Resource Name (ARN)</p> </li> <li> <p>Creation time</p> </li> <li>
      * <p>Last modified time</p> </li> <li> <p>Configuration information, including the
-     * URL location of the repository and the ARN of the AWS Secrets Manager secret
-     * that contains the credentials used to access the repository.</p> </li> </ul>
+     * URL location of the repository and the ARN of the Amazon Web Services Secrets
+     * Manager secret that contains the credentials used to access the repository.</p>
+     * </li> </ul>
      */
     inline ListCodeRepositoriesResult& WithCodeRepositorySummaryList(const Aws::Vector<CodeRepositorySummary>& value) { SetCodeRepositorySummaryList(value); return *this;}
 
@@ -79,8 +83,9 @@ namespace Model
      * following values for the repository: </p> <ul> <li> <p>Name</p> </li> <li>
      * <p>Amazon Resource Name (ARN)</p> </li> <li> <p>Creation time</p> </li> <li>
      * <p>Last modified time</p> </li> <li> <p>Configuration information, including the
-     * URL location of the repository and the ARN of the AWS Secrets Manager secret
-     * that contains the credentials used to access the repository.</p> </li> </ul>
+     * URL location of the repository and the ARN of the Amazon Web Services Secrets
+     * Manager secret that contains the credentials used to access the repository.</p>
+     * </li> </ul>
      */
     inline ListCodeRepositoriesResult& WithCodeRepositorySummaryList(Aws::Vector<CodeRepositorySummary>&& value) { SetCodeRepositorySummaryList(std::move(value)); return *this;}
 
@@ -89,8 +94,9 @@ namespace Model
      * following values for the repository: </p> <ul> <li> <p>Name</p> </li> <li>
      * <p>Amazon Resource Name (ARN)</p> </li> <li> <p>Creation time</p> </li> <li>
      * <p>Last modified time</p> </li> <li> <p>Configuration information, including the
-     * URL location of the repository and the ARN of the AWS Secrets Manager secret
-     * that contains the credentials used to access the repository.</p> </li> </ul>
+     * URL location of the repository and the ARN of the Amazon Web Services Secrets
+     * Manager secret that contains the credentials used to access the repository.</p>
+     * </li> </ul>
      */
     inline ListCodeRepositoriesResult& AddCodeRepositorySummaryList(const CodeRepositorySummary& value) { m_codeRepositorySummaryList.push_back(value); return *this; }
 
@@ -99,8 +105,9 @@ namespace Model
      * following values for the repository: </p> <ul> <li> <p>Name</p> </li> <li>
      * <p>Amazon Resource Name (ARN)</p> </li> <li> <p>Creation time</p> </li> <li>
      * <p>Last modified time</p> </li> <li> <p>Configuration information, including the
-     * URL location of the repository and the ARN of the AWS Secrets Manager secret
-     * that contains the credentials used to access the repository.</p> </li> </ul>
+     * URL location of the repository and the ARN of the Amazon Web Services Secrets
+     * Manager secret that contains the credentials used to access the repository.</p>
+     * </li> </ul>
      */
     inline ListCodeRepositoriesResult& AddCodeRepositorySummaryList(CodeRepositorySummary&& value) { m_codeRepositorySummaryList.push_back(std::move(value)); return *this; }
 

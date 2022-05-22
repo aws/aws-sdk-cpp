@@ -23,7 +23,8 @@ Action::Action() :
     m_awsApiCallActionHasBeenSet(false),
     m_dnsRequestActionHasBeenSet(false),
     m_networkConnectionActionHasBeenSet(false),
-    m_portProbeActionHasBeenSet(false)
+    m_portProbeActionHasBeenSet(false),
+    m_kubernetesApiCallActionHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ Action::Action(JsonView jsonValue) :
     m_awsApiCallActionHasBeenSet(false),
     m_dnsRequestActionHasBeenSet(false),
     m_networkConnectionActionHasBeenSet(false),
-    m_portProbeActionHasBeenSet(false)
+    m_portProbeActionHasBeenSet(false),
+    m_kubernetesApiCallActionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -74,6 +76,13 @@ Action& Action::operator =(JsonView jsonValue)
     m_portProbeActionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("kubernetesApiCallAction"))
+  {
+    m_kubernetesApiCallAction = jsonValue.GetObject("kubernetesApiCallAction");
+
+    m_kubernetesApiCallActionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -108,6 +117,12 @@ JsonValue Action::Jsonize() const
   if(m_portProbeActionHasBeenSet)
   {
    payload.WithObject("portProbeAction", m_portProbeAction.Jsonize());
+
+  }
+
+  if(m_kubernetesApiCallActionHasBeenSet)
+  {
+   payload.WithObject("kubernetesApiCallAction", m_kubernetesApiCallAction.Jsonize());
 
   }
 

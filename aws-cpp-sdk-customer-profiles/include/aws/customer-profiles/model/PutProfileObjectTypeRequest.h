@@ -312,6 +312,55 @@ namespace Model
 
 
     /**
+     * <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was
+     * previously set up. </p>
+     */
+    inline const Aws::String& GetSourceLastUpdatedTimestampFormat() const{ return m_sourceLastUpdatedTimestampFormat; }
+
+    /**
+     * <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was
+     * previously set up. </p>
+     */
+    inline bool SourceLastUpdatedTimestampFormatHasBeenSet() const { return m_sourceLastUpdatedTimestampFormatHasBeenSet; }
+
+    /**
+     * <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was
+     * previously set up. </p>
+     */
+    inline void SetSourceLastUpdatedTimestampFormat(const Aws::String& value) { m_sourceLastUpdatedTimestampFormatHasBeenSet = true; m_sourceLastUpdatedTimestampFormat = value; }
+
+    /**
+     * <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was
+     * previously set up. </p>
+     */
+    inline void SetSourceLastUpdatedTimestampFormat(Aws::String&& value) { m_sourceLastUpdatedTimestampFormatHasBeenSet = true; m_sourceLastUpdatedTimestampFormat = std::move(value); }
+
+    /**
+     * <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was
+     * previously set up. </p>
+     */
+    inline void SetSourceLastUpdatedTimestampFormat(const char* value) { m_sourceLastUpdatedTimestampFormatHasBeenSet = true; m_sourceLastUpdatedTimestampFormat.assign(value); }
+
+    /**
+     * <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was
+     * previously set up. </p>
+     */
+    inline PutProfileObjectTypeRequest& WithSourceLastUpdatedTimestampFormat(const Aws::String& value) { SetSourceLastUpdatedTimestampFormat(value); return *this;}
+
+    /**
+     * <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was
+     * previously set up. </p>
+     */
+    inline PutProfileObjectTypeRequest& WithSourceLastUpdatedTimestampFormat(Aws::String&& value) { SetSourceLastUpdatedTimestampFormat(std::move(value)); return *this;}
+
+    /**
+     * <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was
+     * previously set up. </p>
+     */
+    inline PutProfileObjectTypeRequest& WithSourceLastUpdatedTimestampFormat(const char* value) { SetSourceLastUpdatedTimestampFormat(value); return *this;}
+
+
+    /**
      * <p>A map of the name and ObjectType field.</p>
      */
     inline const Aws::Map<Aws::String, ObjectTypeField>& GetFields() const{ return m_fields; }
@@ -520,6 +569,9 @@ namespace Model
 
     bool m_allowProfileCreation;
     bool m_allowProfileCreationHasBeenSet;
+
+    Aws::String m_sourceLastUpdatedTimestampFormat;
+    bool m_sourceLastUpdatedTimestampFormatHasBeenSet;
 
     Aws::Map<Aws::String, ObjectTypeField> m_fields;
     bool m_fieldsHasBeenSet;

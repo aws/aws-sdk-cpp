@@ -24,11 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The range of timestamps for which to return fragments.</p> <p>The values in
-   * the ClipTimestampRange are <code>inclusive</code>. Fragments that begin before
-   * the start time but continue past it, or fragments that begin before the end time
-   * but continue past it, are included in the session. </p><p><h3>See Also:</h3>  
-   * <a
+   * <p>The range of timestamps for which to return fragments.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-archived-media-2017-09-30/ClipTimestampRange">AWS
    * API Reference</a></p>
    */
@@ -43,63 +40,69 @@ namespace Model
 
     /**
      * <p>The starting timestamp in the range of timestamps for which to return
-     * fragments. </p> <p>This value is inclusive. Fragments that start before the
-     * <code>StartTimestamp</code> and continue past it are included in the session. If
-     * <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>, the
-     * <code>StartTimestamp</code> must be later than the stream head. </p>
+     * fragments. </p> <p>Only fragments that start exactly at or after
+     * <code>StartTimestamp</code> are included in the session. Fragments that start
+     * before <code>StartTimestamp</code> and continue past it aren't included in the
+     * session. If <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>,
+     * the <code>StartTimestamp</code> must be later than the stream head. </p>
      */
     inline const Aws::Utils::DateTime& GetStartTimestamp() const{ return m_startTimestamp; }
 
     /**
      * <p>The starting timestamp in the range of timestamps for which to return
-     * fragments. </p> <p>This value is inclusive. Fragments that start before the
-     * <code>StartTimestamp</code> and continue past it are included in the session. If
-     * <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>, the
-     * <code>StartTimestamp</code> must be later than the stream head. </p>
+     * fragments. </p> <p>Only fragments that start exactly at or after
+     * <code>StartTimestamp</code> are included in the session. Fragments that start
+     * before <code>StartTimestamp</code> and continue past it aren't included in the
+     * session. If <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>,
+     * the <code>StartTimestamp</code> must be later than the stream head. </p>
      */
     inline bool StartTimestampHasBeenSet() const { return m_startTimestampHasBeenSet; }
 
     /**
      * <p>The starting timestamp in the range of timestamps for which to return
-     * fragments. </p> <p>This value is inclusive. Fragments that start before the
-     * <code>StartTimestamp</code> and continue past it are included in the session. If
-     * <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>, the
-     * <code>StartTimestamp</code> must be later than the stream head. </p>
+     * fragments. </p> <p>Only fragments that start exactly at or after
+     * <code>StartTimestamp</code> are included in the session. Fragments that start
+     * before <code>StartTimestamp</code> and continue past it aren't included in the
+     * session. If <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>,
+     * the <code>StartTimestamp</code> must be later than the stream head. </p>
      */
     inline void SetStartTimestamp(const Aws::Utils::DateTime& value) { m_startTimestampHasBeenSet = true; m_startTimestamp = value; }
 
     /**
      * <p>The starting timestamp in the range of timestamps for which to return
-     * fragments. </p> <p>This value is inclusive. Fragments that start before the
-     * <code>StartTimestamp</code> and continue past it are included in the session. If
-     * <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>, the
-     * <code>StartTimestamp</code> must be later than the stream head. </p>
+     * fragments. </p> <p>Only fragments that start exactly at or after
+     * <code>StartTimestamp</code> are included in the session. Fragments that start
+     * before <code>StartTimestamp</code> and continue past it aren't included in the
+     * session. If <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>,
+     * the <code>StartTimestamp</code> must be later than the stream head. </p>
      */
     inline void SetStartTimestamp(Aws::Utils::DateTime&& value) { m_startTimestampHasBeenSet = true; m_startTimestamp = std::move(value); }
 
     /**
      * <p>The starting timestamp in the range of timestamps for which to return
-     * fragments. </p> <p>This value is inclusive. Fragments that start before the
-     * <code>StartTimestamp</code> and continue past it are included in the session. If
-     * <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>, the
-     * <code>StartTimestamp</code> must be later than the stream head. </p>
+     * fragments. </p> <p>Only fragments that start exactly at or after
+     * <code>StartTimestamp</code> are included in the session. Fragments that start
+     * before <code>StartTimestamp</code> and continue past it aren't included in the
+     * session. If <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>,
+     * the <code>StartTimestamp</code> must be later than the stream head. </p>
      */
     inline ClipTimestampRange& WithStartTimestamp(const Aws::Utils::DateTime& value) { SetStartTimestamp(value); return *this;}
 
     /**
      * <p>The starting timestamp in the range of timestamps for which to return
-     * fragments. </p> <p>This value is inclusive. Fragments that start before the
-     * <code>StartTimestamp</code> and continue past it are included in the session. If
-     * <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>, the
-     * <code>StartTimestamp</code> must be later than the stream head. </p>
+     * fragments. </p> <p>Only fragments that start exactly at or after
+     * <code>StartTimestamp</code> are included in the session. Fragments that start
+     * before <code>StartTimestamp</code> and continue past it aren't included in the
+     * session. If <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>,
+     * the <code>StartTimestamp</code> must be later than the stream head. </p>
      */
     inline ClipTimestampRange& WithStartTimestamp(Aws::Utils::DateTime&& value) { SetStartTimestamp(std::move(value)); return *this;}
 
 
     /**
      * <p>The end of the timestamp range for the requested media.</p> <p>This value
-     * must be within 3 hours of the specified <code>StartTimestamp</code>, and it must
-     * be later than the <code>StartTimestamp</code> value. If
+     * must be within 24 hours of the specified <code>StartTimestamp</code>, and it
+     * must be later than the <code>StartTimestamp</code> value. If
      * <code>FragmentSelectorType</code> for the request is
      * <code>SERVER_TIMESTAMP</code>, this value must be in the past. </p> <p>This
      * value is inclusive. The <code>EndTimestamp</code> is compared to the (starting)
@@ -111,8 +114,8 @@ namespace Model
 
     /**
      * <p>The end of the timestamp range for the requested media.</p> <p>This value
-     * must be within 3 hours of the specified <code>StartTimestamp</code>, and it must
-     * be later than the <code>StartTimestamp</code> value. If
+     * must be within 24 hours of the specified <code>StartTimestamp</code>, and it
+     * must be later than the <code>StartTimestamp</code> value. If
      * <code>FragmentSelectorType</code> for the request is
      * <code>SERVER_TIMESTAMP</code>, this value must be in the past. </p> <p>This
      * value is inclusive. The <code>EndTimestamp</code> is compared to the (starting)
@@ -124,8 +127,8 @@ namespace Model
 
     /**
      * <p>The end of the timestamp range for the requested media.</p> <p>This value
-     * must be within 3 hours of the specified <code>StartTimestamp</code>, and it must
-     * be later than the <code>StartTimestamp</code> value. If
+     * must be within 24 hours of the specified <code>StartTimestamp</code>, and it
+     * must be later than the <code>StartTimestamp</code> value. If
      * <code>FragmentSelectorType</code> for the request is
      * <code>SERVER_TIMESTAMP</code>, this value must be in the past. </p> <p>This
      * value is inclusive. The <code>EndTimestamp</code> is compared to the (starting)
@@ -137,8 +140,8 @@ namespace Model
 
     /**
      * <p>The end of the timestamp range for the requested media.</p> <p>This value
-     * must be within 3 hours of the specified <code>StartTimestamp</code>, and it must
-     * be later than the <code>StartTimestamp</code> value. If
+     * must be within 24 hours of the specified <code>StartTimestamp</code>, and it
+     * must be later than the <code>StartTimestamp</code> value. If
      * <code>FragmentSelectorType</code> for the request is
      * <code>SERVER_TIMESTAMP</code>, this value must be in the past. </p> <p>This
      * value is inclusive. The <code>EndTimestamp</code> is compared to the (starting)
@@ -150,8 +153,8 @@ namespace Model
 
     /**
      * <p>The end of the timestamp range for the requested media.</p> <p>This value
-     * must be within 3 hours of the specified <code>StartTimestamp</code>, and it must
-     * be later than the <code>StartTimestamp</code> value. If
+     * must be within 24 hours of the specified <code>StartTimestamp</code>, and it
+     * must be later than the <code>StartTimestamp</code> value. If
      * <code>FragmentSelectorType</code> for the request is
      * <code>SERVER_TIMESTAMP</code>, this value must be in the past. </p> <p>This
      * value is inclusive. The <code>EndTimestamp</code> is compared to the (starting)
@@ -163,8 +166,8 @@ namespace Model
 
     /**
      * <p>The end of the timestamp range for the requested media.</p> <p>This value
-     * must be within 3 hours of the specified <code>StartTimestamp</code>, and it must
-     * be later than the <code>StartTimestamp</code> value. If
+     * must be within 24 hours of the specified <code>StartTimestamp</code>, and it
+     * must be later than the <code>StartTimestamp</code> value. If
      * <code>FragmentSelectorType</code> for the request is
      * <code>SERVER_TIMESTAMP</code>, this value must be in the past. </p> <p>This
      * value is inclusive. The <code>EndTimestamp</code> is compared to the (starting)

@@ -180,6 +180,42 @@ namespace Model
 
 
     /**
+     * <p>The minimum engine version required, which is Redis 6.0</p>
+     */
+    inline const Aws::String& GetMinimumEngineVersion() const{ return m_minimumEngineVersion; }
+
+    /**
+     * <p>The minimum engine version required, which is Redis 6.0</p>
+     */
+    inline void SetMinimumEngineVersion(const Aws::String& value) { m_minimumEngineVersion = value; }
+
+    /**
+     * <p>The minimum engine version required, which is Redis 6.0</p>
+     */
+    inline void SetMinimumEngineVersion(Aws::String&& value) { m_minimumEngineVersion = std::move(value); }
+
+    /**
+     * <p>The minimum engine version required, which is Redis 6.0</p>
+     */
+    inline void SetMinimumEngineVersion(const char* value) { m_minimumEngineVersion.assign(value); }
+
+    /**
+     * <p>The minimum engine version required, which is Redis 6.0</p>
+     */
+    inline DeleteUserResult& WithMinimumEngineVersion(const Aws::String& value) { SetMinimumEngineVersion(value); return *this;}
+
+    /**
+     * <p>The minimum engine version required, which is Redis 6.0</p>
+     */
+    inline DeleteUserResult& WithMinimumEngineVersion(Aws::String&& value) { SetMinimumEngineVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The minimum engine version required, which is Redis 6.0</p>
+     */
+    inline DeleteUserResult& WithMinimumEngineVersion(const char* value) { SetMinimumEngineVersion(value); return *this;}
+
+
+    /**
      * <p>Access permissions string used for this user.</p>
      */
     inline const Aws::String& GetAccessString() const{ return m_accessString; }
@@ -342,6 +378,8 @@ namespace Model
     Aws::String m_status;
 
     Aws::String m_engine;
+
+    Aws::String m_minimumEngineVersion;
 
     Aws::String m_accessString;
 

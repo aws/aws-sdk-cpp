@@ -74,42 +74,58 @@ namespace Model
 
 
     /**
-     * <p>An alphanumeric string used to identify a key signing key (KSK).</p>
+     * <p>A string used to identify a key-signing key (KSK). <code>Name</code> can
+     * include numbers, letters, and underscores (_). <code>Name</code> must be unique
+     * for each key-signing key in the same hosted zone.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>An alphanumeric string used to identify a key signing key (KSK).</p>
+     * <p>A string used to identify a key-signing key (KSK). <code>Name</code> can
+     * include numbers, letters, and underscores (_). <code>Name</code> must be unique
+     * for each key-signing key in the same hosted zone.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>An alphanumeric string used to identify a key signing key (KSK).</p>
+     * <p>A string used to identify a key-signing key (KSK). <code>Name</code> can
+     * include numbers, letters, and underscores (_). <code>Name</code> must be unique
+     * for each key-signing key in the same hosted zone.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>An alphanumeric string used to identify a key signing key (KSK).</p>
+     * <p>A string used to identify a key-signing key (KSK). <code>Name</code> can
+     * include numbers, letters, and underscores (_). <code>Name</code> must be unique
+     * for each key-signing key in the same hosted zone.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>An alphanumeric string used to identify a key signing key (KSK).</p>
+     * <p>A string used to identify a key-signing key (KSK). <code>Name</code> can
+     * include numbers, letters, and underscores (_). <code>Name</code> must be unique
+     * for each key-signing key in the same hosted zone.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>An alphanumeric string used to identify a key signing key (KSK).</p>
+     * <p>A string used to identify a key-signing key (KSK). <code>Name</code> can
+     * include numbers, letters, and underscores (_). <code>Name</code> must be unique
+     * for each key-signing key in the same hosted zone.</p>
      */
     inline ActivateKeySigningKeyRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>An alphanumeric string used to identify a key signing key (KSK).</p>
+     * <p>A string used to identify a key-signing key (KSK). <code>Name</code> can
+     * include numbers, letters, and underscores (_). <code>Name</code> must be unique
+     * for each key-signing key in the same hosted zone.</p>
      */
     inline ActivateKeySigningKeyRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>An alphanumeric string used to identify a key signing key (KSK).</p>
+     * <p>A string used to identify a key-signing key (KSK). <code>Name</code> can
+     * include numbers, letters, and underscores (_). <code>Name</code> must be unique
+     * for each key-signing key in the same hosted zone.</p>
      */
     inline ActivateKeySigningKeyRequest& WithName(const char* value) { SetName(value); return *this;}
 

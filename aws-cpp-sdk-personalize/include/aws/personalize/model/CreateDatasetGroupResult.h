@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/personalize/Personalize_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/personalize/model/Domain.h>
 #include <utility>
 
 namespace Aws
@@ -67,9 +68,37 @@ namespace Model
      */
     inline CreateDatasetGroupResult& WithDatasetGroupArn(const char* value) { SetDatasetGroupArn(value); return *this;}
 
+
+    /**
+     * <p>The domain for the new Domain dataset group.</p>
+     */
+    inline const Domain& GetDomain() const{ return m_domain; }
+
+    /**
+     * <p>The domain for the new Domain dataset group.</p>
+     */
+    inline void SetDomain(const Domain& value) { m_domain = value; }
+
+    /**
+     * <p>The domain for the new Domain dataset group.</p>
+     */
+    inline void SetDomain(Domain&& value) { m_domain = std::move(value); }
+
+    /**
+     * <p>The domain for the new Domain dataset group.</p>
+     */
+    inline CreateDatasetGroupResult& WithDomain(const Domain& value) { SetDomain(value); return *this;}
+
+    /**
+     * <p>The domain for the new Domain dataset group.</p>
+     */
+    inline CreateDatasetGroupResult& WithDomain(Domain&& value) { SetDomain(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_datasetGroupArn;
+
+    Domain m_domain;
   };
 
 } // namespace Model

@@ -5,6 +5,7 @@ add_project(aws-cpp-sdk-s3control-integration-tests
     aws-cpp-sdk-access-management
     aws-cpp-sdk-iam
     aws-cpp-sdk-cognito-identity
+    aws-cpp-sdk-sts
     testing-resources
     aws-cpp-sdk-core)
 

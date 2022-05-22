@@ -23,8 +23,10 @@ namespace Aws
         static const int Arithmetic_HASH = HashingUtils::HashString("Arithmetic");
         static const int Filter_HASH = HashingUtils::HashString("Filter");
         static const int Map_HASH = HashingUtils::HashString("Map");
+        static const int Map_all_HASH = HashingUtils::HashString("Map_all");
         static const int Mask_HASH = HashingUtils::HashString("Mask");
         static const int Merge_HASH = HashingUtils::HashString("Merge");
+        static const int Passthrough_HASH = HashingUtils::HashString("Passthrough");
         static const int Truncate_HASH = HashingUtils::HashString("Truncate");
         static const int Validate_HASH = HashingUtils::HashString("Validate");
 
@@ -44,6 +46,10 @@ namespace Aws
           {
             return TaskType::Map;
           }
+          else if (hashCode == Map_all_HASH)
+          {
+            return TaskType::Map_all;
+          }
           else if (hashCode == Mask_HASH)
           {
             return TaskType::Mask;
@@ -51,6 +57,10 @@ namespace Aws
           else if (hashCode == Merge_HASH)
           {
             return TaskType::Merge;
+          }
+          else if (hashCode == Passthrough_HASH)
+          {
+            return TaskType::Passthrough;
           }
           else if (hashCode == Truncate_HASH)
           {
@@ -80,10 +90,14 @@ namespace Aws
             return "Filter";
           case TaskType::Map:
             return "Map";
+          case TaskType::Map_all:
+            return "Map_all";
           case TaskType::Mask:
             return "Mask";
           case TaskType::Merge:
             return "Merge";
+          case TaskType::Passthrough:
+            return "Passthrough";
           case TaskType::Truncate:
             return "Truncate";
           case TaskType::Validate:

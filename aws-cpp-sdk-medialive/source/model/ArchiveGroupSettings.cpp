@@ -19,6 +19,7 @@ namespace Model
 {
 
 ArchiveGroupSettings::ArchiveGroupSettings() : 
+    m_archiveCdnSettingsHasBeenSet(false),
     m_destinationHasBeenSet(false),
     m_rolloverInterval(0),
     m_rolloverIntervalHasBeenSet(false)
@@ -26,6 +27,7 @@ ArchiveGroupSettings::ArchiveGroupSettings() :
 }
 
 ArchiveGroupSettings::ArchiveGroupSettings(JsonView jsonValue) : 
+    m_archiveCdnSettingsHasBeenSet(false),
     m_destinationHasBeenSet(false),
     m_rolloverInterval(0),
     m_rolloverIntervalHasBeenSet(false)
@@ -35,6 +37,13 @@ ArchiveGroupSettings::ArchiveGroupSettings(JsonView jsonValue) :
 
 ArchiveGroupSettings& ArchiveGroupSettings::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("archiveCdnSettings"))
+  {
+    m_archiveCdnSettings = jsonValue.GetObject("archiveCdnSettings");
+
+    m_archiveCdnSettingsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("destination"))
   {
     m_destination = jsonValue.GetObject("destination");
@@ -55,6 +64,12 @@ ArchiveGroupSettings& ArchiveGroupSettings::operator =(JsonView jsonValue)
 JsonValue ArchiveGroupSettings::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_archiveCdnSettingsHasBeenSet)
+  {
+   payload.WithObject("archiveCdnSettings", m_archiveCdnSettings.Jsonize());
+
+  }
 
   if(m_destinationHasBeenSet)
   {

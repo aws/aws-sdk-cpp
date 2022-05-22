@@ -9,6 +9,8 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kendra/model/QueryResultItem.h>
 #include <aws/kendra/model/FacetResult.h>
+#include <aws/kendra/model/Warning.h>
+#include <aws/kendra/model/SpellCorrectedQuery.h>
 #include <utility>
 
 namespace Aws
@@ -185,6 +187,113 @@ namespace Model
      */
     inline QueryResult& WithTotalNumberOfResults(int value) { SetTotalNumberOfResults(value); return *this;}
 
+
+    /**
+     * <p>A list of warning codes and their messages on problems with your query.</p>
+     * <p>Amazon Kendra currently only supports one type of warning, which is a warning
+     * on invalid syntax used in the query. For examples of invalid query syntax, see
+     * <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/searching-example.html#searching-index-query-syntax">Searching
+     * with advanced query syntax</a>.</p>
+     */
+    inline const Aws::Vector<Warning>& GetWarnings() const{ return m_warnings; }
+
+    /**
+     * <p>A list of warning codes and their messages on problems with your query.</p>
+     * <p>Amazon Kendra currently only supports one type of warning, which is a warning
+     * on invalid syntax used in the query. For examples of invalid query syntax, see
+     * <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/searching-example.html#searching-index-query-syntax">Searching
+     * with advanced query syntax</a>.</p>
+     */
+    inline void SetWarnings(const Aws::Vector<Warning>& value) { m_warnings = value; }
+
+    /**
+     * <p>A list of warning codes and their messages on problems with your query.</p>
+     * <p>Amazon Kendra currently only supports one type of warning, which is a warning
+     * on invalid syntax used in the query. For examples of invalid query syntax, see
+     * <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/searching-example.html#searching-index-query-syntax">Searching
+     * with advanced query syntax</a>.</p>
+     */
+    inline void SetWarnings(Aws::Vector<Warning>&& value) { m_warnings = std::move(value); }
+
+    /**
+     * <p>A list of warning codes and their messages on problems with your query.</p>
+     * <p>Amazon Kendra currently only supports one type of warning, which is a warning
+     * on invalid syntax used in the query. For examples of invalid query syntax, see
+     * <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/searching-example.html#searching-index-query-syntax">Searching
+     * with advanced query syntax</a>.</p>
+     */
+    inline QueryResult& WithWarnings(const Aws::Vector<Warning>& value) { SetWarnings(value); return *this;}
+
+    /**
+     * <p>A list of warning codes and their messages on problems with your query.</p>
+     * <p>Amazon Kendra currently only supports one type of warning, which is a warning
+     * on invalid syntax used in the query. For examples of invalid query syntax, see
+     * <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/searching-example.html#searching-index-query-syntax">Searching
+     * with advanced query syntax</a>.</p>
+     */
+    inline QueryResult& WithWarnings(Aws::Vector<Warning>&& value) { SetWarnings(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of warning codes and their messages on problems with your query.</p>
+     * <p>Amazon Kendra currently only supports one type of warning, which is a warning
+     * on invalid syntax used in the query. For examples of invalid query syntax, see
+     * <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/searching-example.html#searching-index-query-syntax">Searching
+     * with advanced query syntax</a>.</p>
+     */
+    inline QueryResult& AddWarnings(const Warning& value) { m_warnings.push_back(value); return *this; }
+
+    /**
+     * <p>A list of warning codes and their messages on problems with your query.</p>
+     * <p>Amazon Kendra currently only supports one type of warning, which is a warning
+     * on invalid syntax used in the query. For examples of invalid query syntax, see
+     * <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/searching-example.html#searching-index-query-syntax">Searching
+     * with advanced query syntax</a>.</p>
+     */
+    inline QueryResult& AddWarnings(Warning&& value) { m_warnings.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>A list of information related to suggested spell corrections for a query.</p>
+     */
+    inline const Aws::Vector<SpellCorrectedQuery>& GetSpellCorrectedQueries() const{ return m_spellCorrectedQueries; }
+
+    /**
+     * <p>A list of information related to suggested spell corrections for a query.</p>
+     */
+    inline void SetSpellCorrectedQueries(const Aws::Vector<SpellCorrectedQuery>& value) { m_spellCorrectedQueries = value; }
+
+    /**
+     * <p>A list of information related to suggested spell corrections for a query.</p>
+     */
+    inline void SetSpellCorrectedQueries(Aws::Vector<SpellCorrectedQuery>&& value) { m_spellCorrectedQueries = std::move(value); }
+
+    /**
+     * <p>A list of information related to suggested spell corrections for a query.</p>
+     */
+    inline QueryResult& WithSpellCorrectedQueries(const Aws::Vector<SpellCorrectedQuery>& value) { SetSpellCorrectedQueries(value); return *this;}
+
+    /**
+     * <p>A list of information related to suggested spell corrections for a query.</p>
+     */
+    inline QueryResult& WithSpellCorrectedQueries(Aws::Vector<SpellCorrectedQuery>&& value) { SetSpellCorrectedQueries(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of information related to suggested spell corrections for a query.</p>
+     */
+    inline QueryResult& AddSpellCorrectedQueries(const SpellCorrectedQuery& value) { m_spellCorrectedQueries.push_back(value); return *this; }
+
+    /**
+     * <p>A list of information related to suggested spell corrections for a query.</p>
+     */
+    inline QueryResult& AddSpellCorrectedQueries(SpellCorrectedQuery&& value) { m_spellCorrectedQueries.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_queryId;
@@ -194,6 +303,10 @@ namespace Model
     Aws::Vector<FacetResult> m_facetResults;
 
     int m_totalNumberOfResults;
+
+    Aws::Vector<Warning> m_warnings;
+
+    Aws::Vector<SpellCorrectedQuery> m_spellCorrectedQueries;
   };
 
 } // namespace Model

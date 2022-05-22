@@ -35,26 +35,22 @@ namespace Model
 
 
     /**
-     * <p>Returns the result of the recipe step, without applying it. The result isn't
-     * added to the view frame stack.</p>
+     * <p>If true, the result of the recipe step will be returned, but not applied.</p>
      */
     inline bool GetPreview() const{ return m_preview; }
 
     /**
-     * <p>Returns the result of the recipe step, without applying it. The result isn't
-     * added to the view frame stack.</p>
+     * <p>If true, the result of the recipe step will be returned, but not applied.</p>
      */
     inline bool PreviewHasBeenSet() const { return m_previewHasBeenSet; }
 
     /**
-     * <p>Returns the result of the recipe step, without applying it. The result isn't
-     * added to the view frame stack.</p>
+     * <p>If true, the result of the recipe step will be returned, but not applied.</p>
      */
     inline void SetPreview(bool value) { m_previewHasBeenSet = true; m_preview = value; }
 
     /**
-     * <p>Returns the result of the recipe step, without applying it. The result isn't
-     * added to the view frame stack.</p>
+     * <p>If true, the result of the recipe step will be returned, but not applied.</p>
      */
     inline SendProjectSessionActionRequest& WithPreview(bool value) { SetPreview(value); return *this;}
 

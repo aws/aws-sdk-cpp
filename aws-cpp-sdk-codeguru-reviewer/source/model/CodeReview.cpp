@@ -35,7 +35,10 @@ CodeReview::CodeReview() :
     m_pullRequestIdHasBeenSet(false),
     m_sourceCodeTypeHasBeenSet(false),
     m_associationArnHasBeenSet(false),
-    m_metricsHasBeenSet(false)
+    m_metricsHasBeenSet(false),
+    m_analysisTypesHasBeenSet(false),
+    m_configFileState(ConfigFileState::NOT_SET),
+    m_configFileStateHasBeenSet(false)
 {
 }
 
@@ -56,7 +59,10 @@ CodeReview::CodeReview(JsonView jsonValue) :
     m_pullRequestIdHasBeenSet(false),
     m_sourceCodeTypeHasBeenSet(false),
     m_associationArnHasBeenSet(false),
-    m_metricsHasBeenSet(false)
+    m_metricsHasBeenSet(false),
+    m_analysisTypesHasBeenSet(false),
+    m_configFileState(ConfigFileState::NOT_SET),
+    m_configFileStateHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -161,6 +167,23 @@ CodeReview& CodeReview::operator =(JsonView jsonValue)
     m_metricsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AnalysisTypes"))
+  {
+    Array<JsonView> analysisTypesJsonList = jsonValue.GetArray("AnalysisTypes");
+    for(unsigned analysisTypesIndex = 0; analysisTypesIndex < analysisTypesJsonList.GetLength(); ++analysisTypesIndex)
+    {
+      m_analysisTypes.push_back(AnalysisTypeMapper::GetAnalysisTypeForName(analysisTypesJsonList[analysisTypesIndex].AsString()));
+    }
+    m_analysisTypesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ConfigFileState"))
+  {
+    m_configFileState = ConfigFileStateMapper::GetConfigFileStateForName(jsonValue.GetString("ConfigFileState"));
+
+    m_configFileStateHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -245,6 +268,22 @@ JsonValue CodeReview::Jsonize() const
   {
    payload.WithObject("Metrics", m_metrics.Jsonize());
 
+  }
+
+  if(m_analysisTypesHasBeenSet)
+  {
+   Array<JsonValue> analysisTypesJsonList(m_analysisTypes.size());
+   for(unsigned analysisTypesIndex = 0; analysisTypesIndex < analysisTypesJsonList.GetLength(); ++analysisTypesIndex)
+   {
+     analysisTypesJsonList[analysisTypesIndex].AsString(AnalysisTypeMapper::GetNameForAnalysisType(m_analysisTypes[analysisTypesIndex]));
+   }
+   payload.WithArray("AnalysisTypes", std::move(analysisTypesJsonList));
+
+  }
+
+  if(m_configFileStateHasBeenSet)
+  {
+   payload.WithString("ConfigFileState", ConfigFileStateMapper::GetNameForConfigFileState(m_configFileState));
   }
 
   return payload;

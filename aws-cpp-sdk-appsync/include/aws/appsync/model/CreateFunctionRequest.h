@@ -7,6 +7,7 @@
 #include <aws/appsync/AppSync_EXPORTS.h>
 #include <aws/appsync/AppSyncRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/appsync/model/SyncConfig.h>
 #include <utility>
 
 namespace Aws
@@ -254,93 +255,133 @@ namespace Model
 
 
     /**
-     * <p>The <code>Function</code> response mapping template. </p>
+     * <p>The <code>Function</code> response mapping template.</p>
      */
     inline const Aws::String& GetResponseMappingTemplate() const{ return m_responseMappingTemplate; }
 
     /**
-     * <p>The <code>Function</code> response mapping template. </p>
+     * <p>The <code>Function</code> response mapping template.</p>
      */
     inline bool ResponseMappingTemplateHasBeenSet() const { return m_responseMappingTemplateHasBeenSet; }
 
     /**
-     * <p>The <code>Function</code> response mapping template. </p>
+     * <p>The <code>Function</code> response mapping template.</p>
      */
     inline void SetResponseMappingTemplate(const Aws::String& value) { m_responseMappingTemplateHasBeenSet = true; m_responseMappingTemplate = value; }
 
     /**
-     * <p>The <code>Function</code> response mapping template. </p>
+     * <p>The <code>Function</code> response mapping template.</p>
      */
     inline void SetResponseMappingTemplate(Aws::String&& value) { m_responseMappingTemplateHasBeenSet = true; m_responseMappingTemplate = std::move(value); }
 
     /**
-     * <p>The <code>Function</code> response mapping template. </p>
+     * <p>The <code>Function</code> response mapping template.</p>
      */
     inline void SetResponseMappingTemplate(const char* value) { m_responseMappingTemplateHasBeenSet = true; m_responseMappingTemplate.assign(value); }
 
     /**
-     * <p>The <code>Function</code> response mapping template. </p>
+     * <p>The <code>Function</code> response mapping template.</p>
      */
     inline CreateFunctionRequest& WithResponseMappingTemplate(const Aws::String& value) { SetResponseMappingTemplate(value); return *this;}
 
     /**
-     * <p>The <code>Function</code> response mapping template. </p>
+     * <p>The <code>Function</code> response mapping template.</p>
      */
     inline CreateFunctionRequest& WithResponseMappingTemplate(Aws::String&& value) { SetResponseMappingTemplate(std::move(value)); return *this;}
 
     /**
-     * <p>The <code>Function</code> response mapping template. </p>
+     * <p>The <code>Function</code> response mapping template.</p>
      */
     inline CreateFunctionRequest& WithResponseMappingTemplate(const char* value) { SetResponseMappingTemplate(value); return *this;}
 
 
     /**
-     * <p>The <code>version</code> of the request mapping template. Currently the
-     * supported value is 2018-05-29. </p>
+     * <p>The <code>version</code> of the request mapping template. Currently, the
+     * supported value is 2018-05-29.</p>
      */
     inline const Aws::String& GetFunctionVersion() const{ return m_functionVersion; }
 
     /**
-     * <p>The <code>version</code> of the request mapping template. Currently the
-     * supported value is 2018-05-29. </p>
+     * <p>The <code>version</code> of the request mapping template. Currently, the
+     * supported value is 2018-05-29.</p>
      */
     inline bool FunctionVersionHasBeenSet() const { return m_functionVersionHasBeenSet; }
 
     /**
-     * <p>The <code>version</code> of the request mapping template. Currently the
-     * supported value is 2018-05-29. </p>
+     * <p>The <code>version</code> of the request mapping template. Currently, the
+     * supported value is 2018-05-29.</p>
      */
     inline void SetFunctionVersion(const Aws::String& value) { m_functionVersionHasBeenSet = true; m_functionVersion = value; }
 
     /**
-     * <p>The <code>version</code> of the request mapping template. Currently the
-     * supported value is 2018-05-29. </p>
+     * <p>The <code>version</code> of the request mapping template. Currently, the
+     * supported value is 2018-05-29.</p>
      */
     inline void SetFunctionVersion(Aws::String&& value) { m_functionVersionHasBeenSet = true; m_functionVersion = std::move(value); }
 
     /**
-     * <p>The <code>version</code> of the request mapping template. Currently the
-     * supported value is 2018-05-29. </p>
+     * <p>The <code>version</code> of the request mapping template. Currently, the
+     * supported value is 2018-05-29.</p>
      */
     inline void SetFunctionVersion(const char* value) { m_functionVersionHasBeenSet = true; m_functionVersion.assign(value); }
 
     /**
-     * <p>The <code>version</code> of the request mapping template. Currently the
-     * supported value is 2018-05-29. </p>
+     * <p>The <code>version</code> of the request mapping template. Currently, the
+     * supported value is 2018-05-29.</p>
      */
     inline CreateFunctionRequest& WithFunctionVersion(const Aws::String& value) { SetFunctionVersion(value); return *this;}
 
     /**
-     * <p>The <code>version</code> of the request mapping template. Currently the
-     * supported value is 2018-05-29. </p>
+     * <p>The <code>version</code> of the request mapping template. Currently, the
+     * supported value is 2018-05-29.</p>
      */
     inline CreateFunctionRequest& WithFunctionVersion(Aws::String&& value) { SetFunctionVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The <code>version</code> of the request mapping template. Currently the
-     * supported value is 2018-05-29. </p>
+     * <p>The <code>version</code> of the request mapping template. Currently, the
+     * supported value is 2018-05-29.</p>
      */
     inline CreateFunctionRequest& WithFunctionVersion(const char* value) { SetFunctionVersion(value); return *this;}
+
+
+    
+    inline const SyncConfig& GetSyncConfig() const{ return m_syncConfig; }
+
+    
+    inline bool SyncConfigHasBeenSet() const { return m_syncConfigHasBeenSet; }
+
+    
+    inline void SetSyncConfig(const SyncConfig& value) { m_syncConfigHasBeenSet = true; m_syncConfig = value; }
+
+    
+    inline void SetSyncConfig(SyncConfig&& value) { m_syncConfigHasBeenSet = true; m_syncConfig = std::move(value); }
+
+    
+    inline CreateFunctionRequest& WithSyncConfig(const SyncConfig& value) { SetSyncConfig(value); return *this;}
+
+    
+    inline CreateFunctionRequest& WithSyncConfig(SyncConfig&& value) { SetSyncConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The maximum batching size for a resolver.</p>
+     */
+    inline int GetMaxBatchSize() const{ return m_maxBatchSize; }
+
+    /**
+     * <p>The maximum batching size for a resolver.</p>
+     */
+    inline bool MaxBatchSizeHasBeenSet() const { return m_maxBatchSizeHasBeenSet; }
+
+    /**
+     * <p>The maximum batching size for a resolver.</p>
+     */
+    inline void SetMaxBatchSize(int value) { m_maxBatchSizeHasBeenSet = true; m_maxBatchSize = value; }
+
+    /**
+     * <p>The maximum batching size for a resolver.</p>
+     */
+    inline CreateFunctionRequest& WithMaxBatchSize(int value) { SetMaxBatchSize(value); return *this;}
 
   private:
 
@@ -364,6 +405,12 @@ namespace Model
 
     Aws::String m_functionVersion;
     bool m_functionVersionHasBeenSet;
+
+    SyncConfig m_syncConfig;
+    bool m_syncConfigHasBeenSet;
+
+    int m_maxBatchSize;
+    bool m_maxBatchSizeHasBeenSet;
   };
 
 } // namespace Model

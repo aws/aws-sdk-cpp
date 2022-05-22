@@ -14,7 +14,9 @@
 #include <aws/elasticache/model/MultiAZStatus.h>
 #include <aws/elasticache/model/Endpoint.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/elasticache/model/DataTieringStatus.h>
 #include <aws/elasticache/model/NodeGroup.h>
+#include <aws/elasticache/model/LogDeliveryConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -131,38 +133,38 @@ namespace Model
 
 
     /**
-     * <p>The name of the Global Datastore and role of this replication group in the
-     * Global Datastore.</p>
+     * <p>The name of the Global datastore and role of this replication group in the
+     * Global datastore.</p>
      */
     inline const GlobalReplicationGroupInfo& GetGlobalReplicationGroupInfo() const{ return m_globalReplicationGroupInfo; }
 
     /**
-     * <p>The name of the Global Datastore and role of this replication group in the
-     * Global Datastore.</p>
+     * <p>The name of the Global datastore and role of this replication group in the
+     * Global datastore.</p>
      */
     inline bool GlobalReplicationGroupInfoHasBeenSet() const { return m_globalReplicationGroupInfoHasBeenSet; }
 
     /**
-     * <p>The name of the Global Datastore and role of this replication group in the
-     * Global Datastore.</p>
+     * <p>The name of the Global datastore and role of this replication group in the
+     * Global datastore.</p>
      */
     inline void SetGlobalReplicationGroupInfo(const GlobalReplicationGroupInfo& value) { m_globalReplicationGroupInfoHasBeenSet = true; m_globalReplicationGroupInfo = value; }
 
     /**
-     * <p>The name of the Global Datastore and role of this replication group in the
-     * Global Datastore.</p>
+     * <p>The name of the Global datastore and role of this replication group in the
+     * Global datastore.</p>
      */
     inline void SetGlobalReplicationGroupInfo(GlobalReplicationGroupInfo&& value) { m_globalReplicationGroupInfoHasBeenSet = true; m_globalReplicationGroupInfo = std::move(value); }
 
     /**
-     * <p>The name of the Global Datastore and role of this replication group in the
-     * Global Datastore.</p>
+     * <p>The name of the Global datastore and role of this replication group in the
+     * Global datastore.</p>
      */
     inline ReplicationGroup& WithGlobalReplicationGroupInfo(const GlobalReplicationGroupInfo& value) { SetGlobalReplicationGroupInfo(value); return *this;}
 
     /**
-     * <p>The name of the Global Datastore and role of this replication group in the
-     * Global Datastore.</p>
+     * <p>The name of the Global datastore and role of this replication group in the
+     * Global datastore.</p>
      */
     inline ReplicationGroup& WithGlobalReplicationGroupInfo(GlobalReplicationGroupInfo&& value) { SetGlobalReplicationGroupInfo(std::move(value)); return *this;}
 
@@ -1020,49 +1022,176 @@ namespace Model
 
 
     /**
-     * <p>The list of user group IDs that have access to the replication group.</p>
+     * <p>The ID of the user group associated to the replication group.</p>
      */
     inline const Aws::Vector<Aws::String>& GetUserGroupIds() const{ return m_userGroupIds; }
 
     /**
-     * <p>The list of user group IDs that have access to the replication group.</p>
+     * <p>The ID of the user group associated to the replication group.</p>
      */
     inline bool UserGroupIdsHasBeenSet() const { return m_userGroupIdsHasBeenSet; }
 
     /**
-     * <p>The list of user group IDs that have access to the replication group.</p>
+     * <p>The ID of the user group associated to the replication group.</p>
      */
     inline void SetUserGroupIds(const Aws::Vector<Aws::String>& value) { m_userGroupIdsHasBeenSet = true; m_userGroupIds = value; }
 
     /**
-     * <p>The list of user group IDs that have access to the replication group.</p>
+     * <p>The ID of the user group associated to the replication group.</p>
      */
     inline void SetUserGroupIds(Aws::Vector<Aws::String>&& value) { m_userGroupIdsHasBeenSet = true; m_userGroupIds = std::move(value); }
 
     /**
-     * <p>The list of user group IDs that have access to the replication group.</p>
+     * <p>The ID of the user group associated to the replication group.</p>
      */
     inline ReplicationGroup& WithUserGroupIds(const Aws::Vector<Aws::String>& value) { SetUserGroupIds(value); return *this;}
 
     /**
-     * <p>The list of user group IDs that have access to the replication group.</p>
+     * <p>The ID of the user group associated to the replication group.</p>
      */
     inline ReplicationGroup& WithUserGroupIds(Aws::Vector<Aws::String>&& value) { SetUserGroupIds(std::move(value)); return *this;}
 
     /**
-     * <p>The list of user group IDs that have access to the replication group.</p>
+     * <p>The ID of the user group associated to the replication group.</p>
      */
     inline ReplicationGroup& AddUserGroupIds(const Aws::String& value) { m_userGroupIdsHasBeenSet = true; m_userGroupIds.push_back(value); return *this; }
 
     /**
-     * <p>The list of user group IDs that have access to the replication group.</p>
+     * <p>The ID of the user group associated to the replication group.</p>
      */
     inline ReplicationGroup& AddUserGroupIds(Aws::String&& value) { m_userGroupIdsHasBeenSet = true; m_userGroupIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The list of user group IDs that have access to the replication group.</p>
+     * <p>The ID of the user group associated to the replication group.</p>
      */
     inline ReplicationGroup& AddUserGroupIds(const char* value) { m_userGroupIdsHasBeenSet = true; m_userGroupIds.push_back(value); return *this; }
+
+
+    /**
+     * <p>Returns the destination, format and type of the logs. </p>
+     */
+    inline const Aws::Vector<LogDeliveryConfiguration>& GetLogDeliveryConfigurations() const{ return m_logDeliveryConfigurations; }
+
+    /**
+     * <p>Returns the destination, format and type of the logs. </p>
+     */
+    inline bool LogDeliveryConfigurationsHasBeenSet() const { return m_logDeliveryConfigurationsHasBeenSet; }
+
+    /**
+     * <p>Returns the destination, format and type of the logs. </p>
+     */
+    inline void SetLogDeliveryConfigurations(const Aws::Vector<LogDeliveryConfiguration>& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations = value; }
+
+    /**
+     * <p>Returns the destination, format and type of the logs. </p>
+     */
+    inline void SetLogDeliveryConfigurations(Aws::Vector<LogDeliveryConfiguration>&& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations = std::move(value); }
+
+    /**
+     * <p>Returns the destination, format and type of the logs. </p>
+     */
+    inline ReplicationGroup& WithLogDeliveryConfigurations(const Aws::Vector<LogDeliveryConfiguration>& value) { SetLogDeliveryConfigurations(value); return *this;}
+
+    /**
+     * <p>Returns the destination, format and type of the logs. </p>
+     */
+    inline ReplicationGroup& WithLogDeliveryConfigurations(Aws::Vector<LogDeliveryConfiguration>&& value) { SetLogDeliveryConfigurations(std::move(value)); return *this;}
+
+    /**
+     * <p>Returns the destination, format and type of the logs. </p>
+     */
+    inline ReplicationGroup& AddLogDeliveryConfigurations(const LogDeliveryConfiguration& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations.push_back(value); return *this; }
+
+    /**
+     * <p>Returns the destination, format and type of the logs. </p>
+     */
+    inline ReplicationGroup& AddLogDeliveryConfigurations(LogDeliveryConfiguration&& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The date and time when the cluster was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetReplicationGroupCreateTime() const{ return m_replicationGroupCreateTime; }
+
+    /**
+     * <p>The date and time when the cluster was created.</p>
+     */
+    inline bool ReplicationGroupCreateTimeHasBeenSet() const { return m_replicationGroupCreateTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time when the cluster was created.</p>
+     */
+    inline void SetReplicationGroupCreateTime(const Aws::Utils::DateTime& value) { m_replicationGroupCreateTimeHasBeenSet = true; m_replicationGroupCreateTime = value; }
+
+    /**
+     * <p>The date and time when the cluster was created.</p>
+     */
+    inline void SetReplicationGroupCreateTime(Aws::Utils::DateTime&& value) { m_replicationGroupCreateTimeHasBeenSet = true; m_replicationGroupCreateTime = std::move(value); }
+
+    /**
+     * <p>The date and time when the cluster was created.</p>
+     */
+    inline ReplicationGroup& WithReplicationGroupCreateTime(const Aws::Utils::DateTime& value) { SetReplicationGroupCreateTime(value); return *this;}
+
+    /**
+     * <p>The date and time when the cluster was created.</p>
+     */
+    inline ReplicationGroup& WithReplicationGroupCreateTime(Aws::Utils::DateTime&& value) { SetReplicationGroupCreateTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Enables data tiering. Data tiering is only supported for replication groups
+     * using the r6gd node type. This parameter must be set to true when using r6gd
+     * nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data
+     * tiering</a>.</p>
+     */
+    inline const DataTieringStatus& GetDataTiering() const{ return m_dataTiering; }
+
+    /**
+     * <p>Enables data tiering. Data tiering is only supported for replication groups
+     * using the r6gd node type. This parameter must be set to true when using r6gd
+     * nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data
+     * tiering</a>.</p>
+     */
+    inline bool DataTieringHasBeenSet() const { return m_dataTieringHasBeenSet; }
+
+    /**
+     * <p>Enables data tiering. Data tiering is only supported for replication groups
+     * using the r6gd node type. This parameter must be set to true when using r6gd
+     * nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data
+     * tiering</a>.</p>
+     */
+    inline void SetDataTiering(const DataTieringStatus& value) { m_dataTieringHasBeenSet = true; m_dataTiering = value; }
+
+    /**
+     * <p>Enables data tiering. Data tiering is only supported for replication groups
+     * using the r6gd node type. This parameter must be set to true when using r6gd
+     * nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data
+     * tiering</a>.</p>
+     */
+    inline void SetDataTiering(DataTieringStatus&& value) { m_dataTieringHasBeenSet = true; m_dataTiering = std::move(value); }
+
+    /**
+     * <p>Enables data tiering. Data tiering is only supported for replication groups
+     * using the r6gd node type. This parameter must be set to true when using r6gd
+     * nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data
+     * tiering</a>.</p>
+     */
+    inline ReplicationGroup& WithDataTiering(const DataTieringStatus& value) { SetDataTiering(value); return *this;}
+
+    /**
+     * <p>Enables data tiering. Data tiering is only supported for replication groups
+     * using the r6gd node type. This parameter must be set to true when using r6gd
+     * nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data
+     * tiering</a>.</p>
+     */
+    inline ReplicationGroup& WithDataTiering(DataTieringStatus&& value) { SetDataTiering(std::move(value)); return *this;}
 
   private:
 
@@ -1134,6 +1263,15 @@ namespace Model
 
     Aws::Vector<Aws::String> m_userGroupIds;
     bool m_userGroupIdsHasBeenSet;
+
+    Aws::Vector<LogDeliveryConfiguration> m_logDeliveryConfigurations;
+    bool m_logDeliveryConfigurationsHasBeenSet;
+
+    Aws::Utils::DateTime m_replicationGroupCreateTime;
+    bool m_replicationGroupCreateTimeHasBeenSet;
+
+    DataTieringStatus m_dataTiering;
+    bool m_dataTieringHasBeenSet;
   };
 
 } // namespace Model

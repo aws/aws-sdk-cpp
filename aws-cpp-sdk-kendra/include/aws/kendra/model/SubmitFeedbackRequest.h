@@ -80,49 +80,49 @@ namespace Model
 
     /**
      * <p>The identifier of the specific query for which you are submitting feedback.
-     * The query ID is returned in the response to the operation.</p>
+     * The query ID is returned in the response to the <code>Query</code> API.</p>
      */
     inline const Aws::String& GetQueryId() const{ return m_queryId; }
 
     /**
      * <p>The identifier of the specific query for which you are submitting feedback.
-     * The query ID is returned in the response to the operation.</p>
+     * The query ID is returned in the response to the <code>Query</code> API.</p>
      */
     inline bool QueryIdHasBeenSet() const { return m_queryIdHasBeenSet; }
 
     /**
      * <p>The identifier of the specific query for which you are submitting feedback.
-     * The query ID is returned in the response to the operation.</p>
+     * The query ID is returned in the response to the <code>Query</code> API.</p>
      */
     inline void SetQueryId(const Aws::String& value) { m_queryIdHasBeenSet = true; m_queryId = value; }
 
     /**
      * <p>The identifier of the specific query for which you are submitting feedback.
-     * The query ID is returned in the response to the operation.</p>
+     * The query ID is returned in the response to the <code>Query</code> API.</p>
      */
     inline void SetQueryId(Aws::String&& value) { m_queryIdHasBeenSet = true; m_queryId = std::move(value); }
 
     /**
      * <p>The identifier of the specific query for which you are submitting feedback.
-     * The query ID is returned in the response to the operation.</p>
+     * The query ID is returned in the response to the <code>Query</code> API.</p>
      */
     inline void SetQueryId(const char* value) { m_queryIdHasBeenSet = true; m_queryId.assign(value); }
 
     /**
      * <p>The identifier of the specific query for which you are submitting feedback.
-     * The query ID is returned in the response to the operation.</p>
+     * The query ID is returned in the response to the <code>Query</code> API.</p>
      */
     inline SubmitFeedbackRequest& WithQueryId(const Aws::String& value) { SetQueryId(value); return *this;}
 
     /**
      * <p>The identifier of the specific query for which you are submitting feedback.
-     * The query ID is returned in the response to the operation.</p>
+     * The query ID is returned in the response to the <code>Query</code> API.</p>
      */
     inline SubmitFeedbackRequest& WithQueryId(Aws::String&& value) { SetQueryId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the specific query for which you are submitting feedback.
-     * The query ID is returned in the response to the operation.</p>
+     * The query ID is returned in the response to the <code>Query</code> API.</p>
      */
     inline SubmitFeedbackRequest& WithQueryId(const char* value) { SetQueryId(value); return *this;}
 

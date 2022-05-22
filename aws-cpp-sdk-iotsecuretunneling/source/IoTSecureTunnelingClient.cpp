@@ -25,6 +25,7 @@
 #include <aws/iotsecuretunneling/model/ListTagsForResourceRequest.h>
 #include <aws/iotsecuretunneling/model/ListTunnelsRequest.h>
 #include <aws/iotsecuretunneling/model/OpenTunnelRequest.h>
+#include <aws/iotsecuretunneling/model/RotateTunnelAccessTokenRequest.h>
 #include <aws/iotsecuretunneling/model/TagResourceRequest.h>
 #include <aws/iotsecuretunneling/model/UntagResourceRequest.h>
 
@@ -75,7 +76,7 @@ IoTSecureTunnelingClient::~IoTSecureTunnelingClient()
 {
 }
 
-void IoTSecureTunnelingClient::init(const ClientConfiguration& config)
+void IoTSecureTunnelingClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("IoTSecureTunneling");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -104,9 +105,6 @@ void IoTSecureTunnelingClient::OverrideEndpoint(const Aws::String& endpoint)
 CloseTunnelOutcome IoTSecureTunnelingClient::CloseTunnel(const CloseTunnelRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CloseTunnelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -131,9 +129,6 @@ void IoTSecureTunnelingClient::CloseTunnelAsyncHelper(const CloseTunnelRequest& 
 DescribeTunnelOutcome IoTSecureTunnelingClient::DescribeTunnel(const DescribeTunnelRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeTunnelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -158,9 +153,6 @@ void IoTSecureTunnelingClient::DescribeTunnelAsyncHelper(const DescribeTunnelReq
 ListTagsForResourceOutcome IoTSecureTunnelingClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -185,9 +177,6 @@ void IoTSecureTunnelingClient::ListTagsForResourceAsyncHelper(const ListTagsForR
 ListTunnelsOutcome IoTSecureTunnelingClient::ListTunnels(const ListTunnelsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListTunnelsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -212,9 +201,6 @@ void IoTSecureTunnelingClient::ListTunnelsAsyncHelper(const ListTunnelsRequest& 
 OpenTunnelOutcome IoTSecureTunnelingClient::OpenTunnel(const OpenTunnelRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return OpenTunnelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -236,12 +222,33 @@ void IoTSecureTunnelingClient::OpenTunnelAsyncHelper(const OpenTunnelRequest& re
   handler(this, request, OpenTunnel(request), context);
 }
 
+RotateTunnelAccessTokenOutcome IoTSecureTunnelingClient::RotateTunnelAccessToken(const RotateTunnelAccessTokenRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return RotateTunnelAccessTokenOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+RotateTunnelAccessTokenOutcomeCallable IoTSecureTunnelingClient::RotateTunnelAccessTokenCallable(const RotateTunnelAccessTokenRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RotateTunnelAccessTokenOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RotateTunnelAccessToken(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTSecureTunnelingClient::RotateTunnelAccessTokenAsync(const RotateTunnelAccessTokenRequest& request, const RotateTunnelAccessTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RotateTunnelAccessTokenAsyncHelper( request, handler, context ); } );
+}
+
+void IoTSecureTunnelingClient::RotateTunnelAccessTokenAsyncHelper(const RotateTunnelAccessTokenRequest& request, const RotateTunnelAccessTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RotateTunnelAccessToken(request), context);
+}
+
 TagResourceOutcome IoTSecureTunnelingClient::TagResource(const TagResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -266,9 +273,6 @@ void IoTSecureTunnelingClient::TagResourceAsyncHelper(const TagResourceRequest& 
 UntagResourceOutcome IoTSecureTunnelingClient::UntagResource(const UntagResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

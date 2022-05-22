@@ -33,73 +33,73 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the secret with the modified staging label.</p>
+     * <p>The ARN of the secret that was updated.</p>
      */
     inline const Aws::String& GetARN() const{ return m_aRN; }
 
     /**
-     * <p>The ARN of the secret with the modified staging label.</p>
+     * <p>The ARN of the secret that was updated.</p>
      */
     inline void SetARN(const Aws::String& value) { m_aRN = value; }
 
     /**
-     * <p>The ARN of the secret with the modified staging label.</p>
+     * <p>The ARN of the secret that was updated.</p>
      */
     inline void SetARN(Aws::String&& value) { m_aRN = std::move(value); }
 
     /**
-     * <p>The ARN of the secret with the modified staging label.</p>
+     * <p>The ARN of the secret that was updated.</p>
      */
     inline void SetARN(const char* value) { m_aRN.assign(value); }
 
     /**
-     * <p>The ARN of the secret with the modified staging label.</p>
+     * <p>The ARN of the secret that was updated.</p>
      */
     inline UpdateSecretVersionStageResult& WithARN(const Aws::String& value) { SetARN(value); return *this;}
 
     /**
-     * <p>The ARN of the secret with the modified staging label.</p>
+     * <p>The ARN of the secret that was updated.</p>
      */
     inline UpdateSecretVersionStageResult& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the secret with the modified staging label.</p>
+     * <p>The ARN of the secret that was updated.</p>
      */
     inline UpdateSecretVersionStageResult& WithARN(const char* value) { SetARN(value); return *this;}
 
 
     /**
-     * <p>The friendly name of the secret with the modified staging label.</p>
+     * <p>The name of the secret that was updated.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The friendly name of the secret with the modified staging label.</p>
+     * <p>The name of the secret that was updated.</p>
      */
     inline void SetName(const Aws::String& value) { m_name = value; }
 
     /**
-     * <p>The friendly name of the secret with the modified staging label.</p>
+     * <p>The name of the secret that was updated.</p>
      */
     inline void SetName(Aws::String&& value) { m_name = std::move(value); }
 
     /**
-     * <p>The friendly name of the secret with the modified staging label.</p>
+     * <p>The name of the secret that was updated.</p>
      */
     inline void SetName(const char* value) { m_name.assign(value); }
 
     /**
-     * <p>The friendly name of the secret with the modified staging label.</p>
+     * <p>The name of the secret that was updated.</p>
      */
     inline UpdateSecretVersionStageResult& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The friendly name of the secret with the modified staging label.</p>
+     * <p>The name of the secret that was updated.</p>
      */
     inline UpdateSecretVersionStageResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The friendly name of the secret with the modified staging label.</p>
+     * <p>The name of the secret that was updated.</p>
      */
     inline UpdateSecretVersionStageResult& WithName(const char* value) { SetName(value); return *this;}
 

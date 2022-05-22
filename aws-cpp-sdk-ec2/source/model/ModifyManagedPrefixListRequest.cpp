@@ -18,7 +18,9 @@ ModifyManagedPrefixListRequest::ModifyManagedPrefixListRequest() :
     m_currentVersionHasBeenSet(false),
     m_prefixListNameHasBeenSet(false),
     m_addEntriesHasBeenSet(false),
-    m_removeEntriesHasBeenSet(false)
+    m_removeEntriesHasBeenSet(false),
+    m_maxEntries(0),
+    m_maxEntriesHasBeenSet(false)
 {
 }
 
@@ -64,6 +66,11 @@ Aws::String ModifyManagedPrefixListRequest::SerializePayload() const
       item.OutputToStream(ss, "RemoveEntry.", removeEntriesCount, "");
       removeEntriesCount++;
     }
+  }
+
+  if(m_maxEntriesHasBeenSet)
+  {
+    ss << "MaxEntries=" << m_maxEntries << "&";
   }
 
   ss << "Version=2016-11-15";

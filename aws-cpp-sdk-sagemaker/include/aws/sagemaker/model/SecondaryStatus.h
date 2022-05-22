@@ -30,7 +30,8 @@ namespace Model
     Failed,
     Interrupted,
     MaxWaitTimeExceeded,
-    Updating
+    Updating,
+    Restarting
   };
 
 namespace SecondaryStatusMapper

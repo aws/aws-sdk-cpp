@@ -25,6 +25,8 @@ namespace Aws
         static const int SYSTEM_ORGAN_SITE_HASH = HashingUtils::HashString("SYSTEM_ORGAN_SITE");
         static const int QUALITY_HASH = HashingUtils::HashString("QUALITY");
         static const int QUANTITY_HASH = HashingUtils::HashString("QUANTITY");
+        static const int TIME_TO_DX_NAME_HASH = HashingUtils::HashString("TIME_TO_DX_NAME");
+        static const int TIME_EXPRESSION_HASH = HashingUtils::HashString("TIME_EXPRESSION");
 
 
         ICD10CMAttributeType GetICD10CMAttributeTypeForName(const Aws::String& name)
@@ -50,6 +52,14 @@ namespace Aws
           {
             return ICD10CMAttributeType::QUANTITY;
           }
+          else if (hashCode == TIME_TO_DX_NAME_HASH)
+          {
+            return ICD10CMAttributeType::TIME_TO_DX_NAME;
+          }
+          else if (hashCode == TIME_EXPRESSION_HASH)
+          {
+            return ICD10CMAttributeType::TIME_EXPRESSION;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -74,6 +84,10 @@ namespace Aws
             return "QUALITY";
           case ICD10CMAttributeType::QUANTITY:
             return "QUANTITY";
+          case ICD10CMAttributeType::TIME_TO_DX_NAME:
+            return "TIME_TO_DX_NAME";
+          case ICD10CMAttributeType::TIME_EXPRESSION:
+            return "TIME_EXPRESSION";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -22,6 +22,7 @@ namespace Aws
 
         static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
         static const int INACTIVE_HASH = HashingUtils::HashString("INACTIVE");
+        static const int TRAINING_CANCELLED_HASH = HashingUtils::HashString("TRAINING_CANCELLED");
 
 
         ModelVersionStatus GetModelVersionStatusForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == INACTIVE_HASH)
           {
             return ModelVersionStatus::INACTIVE;
+          }
+          else if (hashCode == TRAINING_CANCELLED_HASH)
+          {
+            return ModelVersionStatus::TRAINING_CANCELLED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "ACTIVE";
           case ModelVersionStatus::INACTIVE:
             return "INACTIVE";
+          case ModelVersionStatus::TRAINING_CANCELLED:
+            return "TRAINING_CANCELLED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

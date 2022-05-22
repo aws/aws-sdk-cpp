@@ -33,37 +33,37 @@ namespace Model
 
 
     /**
-     * <p>A string with the generated password.</p>
+     * <p>A string with the password.</p>
      */
     inline const Aws::String& GetRandomPassword() const{ return m_randomPassword; }
 
     /**
-     * <p>A string with the generated password.</p>
+     * <p>A string with the password.</p>
      */
     inline void SetRandomPassword(const Aws::String& value) { m_randomPassword = value; }
 
     /**
-     * <p>A string with the generated password.</p>
+     * <p>A string with the password.</p>
      */
     inline void SetRandomPassword(Aws::String&& value) { m_randomPassword = std::move(value); }
 
     /**
-     * <p>A string with the generated password.</p>
+     * <p>A string with the password.</p>
      */
     inline void SetRandomPassword(const char* value) { m_randomPassword.assign(value); }
 
     /**
-     * <p>A string with the generated password.</p>
+     * <p>A string with the password.</p>
      */
     inline GetRandomPasswordResult& WithRandomPassword(const Aws::String& value) { SetRandomPassword(value); return *this;}
 
     /**
-     * <p>A string with the generated password.</p>
+     * <p>A string with the password.</p>
      */
     inline GetRandomPasswordResult& WithRandomPassword(Aws::String&& value) { SetRandomPassword(std::move(value)); return *this;}
 
     /**
-     * <p>A string with the generated password.</p>
+     * <p>A string with the password.</p>
      */
     inline GetRandomPasswordResult& WithRandomPassword(const char* value) { SetRandomPassword(value); return *this;}
 

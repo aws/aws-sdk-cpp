@@ -38,80 +38,80 @@ namespace Model
 
 
     /**
-     * <p>The total number of objects that are encrypted using a customer-managed key.
-     * The objects use customer-provided server-side (SSE-C) encryption.</p>
+     * <p>The total number of objects that are encrypted with a customer-provided key.
+     * The objects use customer-provided server-side encryption (SSE-C).</p>
      */
     inline long long GetCustomerManaged() const{ return m_customerManaged; }
 
     /**
-     * <p>The total number of objects that are encrypted using a customer-managed key.
-     * The objects use customer-provided server-side (SSE-C) encryption.</p>
+     * <p>The total number of objects that are encrypted with a customer-provided key.
+     * The objects use customer-provided server-side encryption (SSE-C).</p>
      */
     inline bool CustomerManagedHasBeenSet() const { return m_customerManagedHasBeenSet; }
 
     /**
-     * <p>The total number of objects that are encrypted using a customer-managed key.
-     * The objects use customer-provided server-side (SSE-C) encryption.</p>
+     * <p>The total number of objects that are encrypted with a customer-provided key.
+     * The objects use customer-provided server-side encryption (SSE-C).</p>
      */
     inline void SetCustomerManaged(long long value) { m_customerManagedHasBeenSet = true; m_customerManaged = value; }
 
     /**
-     * <p>The total number of objects that are encrypted using a customer-managed key.
-     * The objects use customer-provided server-side (SSE-C) encryption.</p>
+     * <p>The total number of objects that are encrypted with a customer-provided key.
+     * The objects use customer-provided server-side encryption (SSE-C).</p>
      */
     inline ObjectCountByEncryptionType& WithCustomerManaged(long long value) { SetCustomerManaged(value); return *this;}
 
 
     /**
-     * <p>The total number of objects that are encrypted using an AWS Key Management
-     * Service (AWS KMS) customer master key (CMK). The objects use AWS managed AWS KMS
-     * (AWS-KMS) encryption or customer managed AWS KMS (SSE-KMS) encryption.</p>
+     * <p>The total number of objects that are encrypted with an KMS key, either an
+     * Amazon Web Services managed key or a customer managed key. The objects use KMS
+     * encryption (SSE-KMS).</p>
      */
     inline long long GetKmsManaged() const{ return m_kmsManaged; }
 
     /**
-     * <p>The total number of objects that are encrypted using an AWS Key Management
-     * Service (AWS KMS) customer master key (CMK). The objects use AWS managed AWS KMS
-     * (AWS-KMS) encryption or customer managed AWS KMS (SSE-KMS) encryption.</p>
+     * <p>The total number of objects that are encrypted with an KMS key, either an
+     * Amazon Web Services managed key or a customer managed key. The objects use KMS
+     * encryption (SSE-KMS).</p>
      */
     inline bool KmsManagedHasBeenSet() const { return m_kmsManagedHasBeenSet; }
 
     /**
-     * <p>The total number of objects that are encrypted using an AWS Key Management
-     * Service (AWS KMS) customer master key (CMK). The objects use AWS managed AWS KMS
-     * (AWS-KMS) encryption or customer managed AWS KMS (SSE-KMS) encryption.</p>
+     * <p>The total number of objects that are encrypted with an KMS key, either an
+     * Amazon Web Services managed key or a customer managed key. The objects use KMS
+     * encryption (SSE-KMS).</p>
      */
     inline void SetKmsManaged(long long value) { m_kmsManagedHasBeenSet = true; m_kmsManaged = value; }
 
     /**
-     * <p>The total number of objects that are encrypted using an AWS Key Management
-     * Service (AWS KMS) customer master key (CMK). The objects use AWS managed AWS KMS
-     * (AWS-KMS) encryption or customer managed AWS KMS (SSE-KMS) encryption.</p>
+     * <p>The total number of objects that are encrypted with an KMS key, either an
+     * Amazon Web Services managed key or a customer managed key. The objects use KMS
+     * encryption (SSE-KMS).</p>
      */
     inline ObjectCountByEncryptionType& WithKmsManaged(long long value) { SetKmsManaged(value); return *this;}
 
 
     /**
-     * <p>The total number of objects that are encrypted using an Amazon S3 managed
-     * key. The objects use Amazon S3 managed (SSE-S3) encryption.</p>
+     * <p>The total number of objects that are encrypted with an Amazon S3 managed key.
+     * The objects use Amazon S3 managed encryption (SSE-S3).</p>
      */
     inline long long GetS3Managed() const{ return m_s3Managed; }
 
     /**
-     * <p>The total number of objects that are encrypted using an Amazon S3 managed
-     * key. The objects use Amazon S3 managed (SSE-S3) encryption.</p>
+     * <p>The total number of objects that are encrypted with an Amazon S3 managed key.
+     * The objects use Amazon S3 managed encryption (SSE-S3).</p>
      */
     inline bool S3ManagedHasBeenSet() const { return m_s3ManagedHasBeenSet; }
 
     /**
-     * <p>The total number of objects that are encrypted using an Amazon S3 managed
-     * key. The objects use Amazon S3 managed (SSE-S3) encryption.</p>
+     * <p>The total number of objects that are encrypted with an Amazon S3 managed key.
+     * The objects use Amazon S3 managed encryption (SSE-S3).</p>
      */
     inline void SetS3Managed(long long value) { m_s3ManagedHasBeenSet = true; m_s3Managed = value; }
 
     /**
-     * <p>The total number of objects that are encrypted using an Amazon S3 managed
-     * key. The objects use Amazon S3 managed (SSE-S3) encryption.</p>
+     * <p>The total number of objects that are encrypted with an Amazon S3 managed key.
+     * The objects use Amazon S3 managed encryption (SSE-S3).</p>
      */
     inline ObjectCountByEncryptionType& WithS3Managed(long long value) { SetS3Managed(value); return *this;}
 
@@ -140,6 +140,35 @@ namespace Model
      */
     inline ObjectCountByEncryptionType& WithUnencrypted(long long value) { SetUnencrypted(value); return *this;}
 
+
+    /**
+     * <p>The total number of objects that Amazon Macie doesn't have current encryption
+     * metadata for. Macie can't provide current data about the encryption settings for
+     * these objects.</p>
+     */
+    inline long long GetUnknown() const{ return m_unknown; }
+
+    /**
+     * <p>The total number of objects that Amazon Macie doesn't have current encryption
+     * metadata for. Macie can't provide current data about the encryption settings for
+     * these objects.</p>
+     */
+    inline bool UnknownHasBeenSet() const { return m_unknownHasBeenSet; }
+
+    /**
+     * <p>The total number of objects that Amazon Macie doesn't have current encryption
+     * metadata for. Macie can't provide current data about the encryption settings for
+     * these objects.</p>
+     */
+    inline void SetUnknown(long long value) { m_unknownHasBeenSet = true; m_unknown = value; }
+
+    /**
+     * <p>The total number of objects that Amazon Macie doesn't have current encryption
+     * metadata for. Macie can't provide current data about the encryption settings for
+     * these objects.</p>
+     */
+    inline ObjectCountByEncryptionType& WithUnknown(long long value) { SetUnknown(value); return *this;}
+
   private:
 
     long long m_customerManaged;
@@ -153,6 +182,9 @@ namespace Model
 
     long long m_unencrypted;
     bool m_unencryptedHasBeenSet;
+
+    long long m_unknown;
+    bool m_unknownHasBeenSet;
   };
 
 } // namespace Model

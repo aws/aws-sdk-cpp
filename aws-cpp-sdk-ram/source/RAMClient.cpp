@@ -34,6 +34,7 @@
 #include <aws/ram/model/GetResourceShareInvitationsRequest.h>
 #include <aws/ram/model/GetResourceSharesRequest.h>
 #include <aws/ram/model/ListPendingInvitationResourcesRequest.h>
+#include <aws/ram/model/ListPermissionVersionsRequest.h>
 #include <aws/ram/model/ListPermissionsRequest.h>
 #include <aws/ram/model/ListPrincipalsRequest.h>
 #include <aws/ram/model/ListResourceSharePermissionsRequest.h>
@@ -92,7 +93,7 @@ RAMClient::~RAMClient()
 {
 }
 
-void RAMClient::init(const ClientConfiguration& config)
+void RAMClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("RAM");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -121,9 +122,7 @@ void RAMClient::OverrideEndpoint(const Aws::String& endpoint)
 AcceptResourceShareInvitationOutcome RAMClient::AcceptResourceShareInvitation(const AcceptResourceShareInvitationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/acceptresourceshareinvitation";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/acceptresourceshareinvitation");
   return AcceptResourceShareInvitationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -148,9 +147,7 @@ void RAMClient::AcceptResourceShareInvitationAsyncHelper(const AcceptResourceSha
 AssociateResourceShareOutcome RAMClient::AssociateResourceShare(const AssociateResourceShareRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/associateresourceshare";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/associateresourceshare");
   return AssociateResourceShareOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -175,9 +172,7 @@ void RAMClient::AssociateResourceShareAsyncHelper(const AssociateResourceShareRe
 AssociateResourceSharePermissionOutcome RAMClient::AssociateResourceSharePermission(const AssociateResourceSharePermissionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/associateresourcesharepermission";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/associateresourcesharepermission");
   return AssociateResourceSharePermissionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -202,9 +197,7 @@ void RAMClient::AssociateResourceSharePermissionAsyncHelper(const AssociateResou
 CreateResourceShareOutcome RAMClient::CreateResourceShare(const CreateResourceShareRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/createresourceshare";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/createresourceshare");
   return CreateResourceShareOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -234,9 +227,7 @@ DeleteResourceShareOutcome RAMClient::DeleteResourceShare(const DeleteResourceSh
     return DeleteResourceShareOutcome(Aws::Client::AWSError<RAMErrors>(RAMErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceShareArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/deleteresourceshare";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/deleteresourceshare");
   return DeleteResourceShareOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -261,9 +252,7 @@ void RAMClient::DeleteResourceShareAsyncHelper(const DeleteResourceShareRequest&
 DisassociateResourceShareOutcome RAMClient::DisassociateResourceShare(const DisassociateResourceShareRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/disassociateresourceshare";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/disassociateresourceshare");
   return DisassociateResourceShareOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -288,9 +277,7 @@ void RAMClient::DisassociateResourceShareAsyncHelper(const DisassociateResourceS
 DisassociateResourceSharePermissionOutcome RAMClient::DisassociateResourceSharePermission(const DisassociateResourceSharePermissionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/disassociateresourcesharepermission";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/disassociateresourcesharepermission");
   return DisassociateResourceSharePermissionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -315,9 +302,7 @@ void RAMClient::DisassociateResourceSharePermissionAsyncHelper(const Disassociat
 EnableSharingWithAwsOrganizationOutcome RAMClient::EnableSharingWithAwsOrganization(const EnableSharingWithAwsOrganizationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/enablesharingwithawsorganization";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/enablesharingwithawsorganization");
   return EnableSharingWithAwsOrganizationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -342,9 +327,7 @@ void RAMClient::EnableSharingWithAwsOrganizationAsyncHelper(const EnableSharingW
 GetPermissionOutcome RAMClient::GetPermission(const GetPermissionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/getpermission";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/getpermission");
   return GetPermissionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -369,9 +352,7 @@ void RAMClient::GetPermissionAsyncHelper(const GetPermissionRequest& request, co
 GetResourcePoliciesOutcome RAMClient::GetResourcePolicies(const GetResourcePoliciesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/getresourcepolicies";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/getresourcepolicies");
   return GetResourcePoliciesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -396,9 +377,7 @@ void RAMClient::GetResourcePoliciesAsyncHelper(const GetResourcePoliciesRequest&
 GetResourceShareAssociationsOutcome RAMClient::GetResourceShareAssociations(const GetResourceShareAssociationsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/getresourceshareassociations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/getresourceshareassociations");
   return GetResourceShareAssociationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -423,9 +402,7 @@ void RAMClient::GetResourceShareAssociationsAsyncHelper(const GetResourceShareAs
 GetResourceShareInvitationsOutcome RAMClient::GetResourceShareInvitations(const GetResourceShareInvitationsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/getresourceshareinvitations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/getresourceshareinvitations");
   return GetResourceShareInvitationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -450,9 +427,7 @@ void RAMClient::GetResourceShareInvitationsAsyncHelper(const GetResourceShareInv
 GetResourceSharesOutcome RAMClient::GetResourceShares(const GetResourceSharesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/getresourceshares";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/getresourceshares");
   return GetResourceSharesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -477,9 +452,7 @@ void RAMClient::GetResourceSharesAsyncHelper(const GetResourceSharesRequest& req
 ListPendingInvitationResourcesOutcome RAMClient::ListPendingInvitationResources(const ListPendingInvitationResourcesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/listpendinginvitationresources";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/listpendinginvitationresources");
   return ListPendingInvitationResourcesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -501,12 +474,35 @@ void RAMClient::ListPendingInvitationResourcesAsyncHelper(const ListPendingInvit
   handler(this, request, ListPendingInvitationResources(request), context);
 }
 
+ListPermissionVersionsOutcome RAMClient::ListPermissionVersions(const ListPermissionVersionsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/listpermissionversions");
+  return ListPermissionVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListPermissionVersionsOutcomeCallable RAMClient::ListPermissionVersionsCallable(const ListPermissionVersionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListPermissionVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPermissionVersions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RAMClient::ListPermissionVersionsAsync(const ListPermissionVersionsRequest& request, const ListPermissionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListPermissionVersionsAsyncHelper( request, handler, context ); } );
+}
+
+void RAMClient::ListPermissionVersionsAsyncHelper(const ListPermissionVersionsRequest& request, const ListPermissionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListPermissionVersions(request), context);
+}
+
 ListPermissionsOutcome RAMClient::ListPermissions(const ListPermissionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/listpermissions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/listpermissions");
   return ListPermissionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -531,9 +527,7 @@ void RAMClient::ListPermissionsAsyncHelper(const ListPermissionsRequest& request
 ListPrincipalsOutcome RAMClient::ListPrincipals(const ListPrincipalsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/listprincipals";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/listprincipals");
   return ListPrincipalsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -558,9 +552,7 @@ void RAMClient::ListPrincipalsAsyncHelper(const ListPrincipalsRequest& request, 
 ListResourceSharePermissionsOutcome RAMClient::ListResourceSharePermissions(const ListResourceSharePermissionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/listresourcesharepermissions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/listresourcesharepermissions");
   return ListResourceSharePermissionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -585,9 +577,7 @@ void RAMClient::ListResourceSharePermissionsAsyncHelper(const ListResourceShareP
 ListResourceTypesOutcome RAMClient::ListResourceTypes(const ListResourceTypesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/listresourcetypes";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/listresourcetypes");
   return ListResourceTypesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -612,9 +602,7 @@ void RAMClient::ListResourceTypesAsyncHelper(const ListResourceTypesRequest& req
 ListResourcesOutcome RAMClient::ListResources(const ListResourcesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/listresources";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/listresources");
   return ListResourcesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -644,9 +632,7 @@ PromoteResourceShareCreatedFromPolicyOutcome RAMClient::PromoteResourceShareCrea
     return PromoteResourceShareCreatedFromPolicyOutcome(Aws::Client::AWSError<RAMErrors>(RAMErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceShareArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/promoteresourcesharecreatedfrompolicy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/promoteresourcesharecreatedfrompolicy");
   return PromoteResourceShareCreatedFromPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -671,9 +657,7 @@ void RAMClient::PromoteResourceShareCreatedFromPolicyAsyncHelper(const PromoteRe
 RejectResourceShareInvitationOutcome RAMClient::RejectResourceShareInvitation(const RejectResourceShareInvitationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/rejectresourceshareinvitation";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/rejectresourceshareinvitation");
   return RejectResourceShareInvitationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -698,9 +682,7 @@ void RAMClient::RejectResourceShareInvitationAsyncHelper(const RejectResourceSha
 TagResourceOutcome RAMClient::TagResource(const TagResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tagresource";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tagresource");
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -725,9 +707,7 @@ void RAMClient::TagResourceAsyncHelper(const TagResourceRequest& request, const 
 UntagResourceOutcome RAMClient::UntagResource(const UntagResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/untagresource";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/untagresource");
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -752,9 +732,7 @@ void RAMClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, co
 UpdateResourceShareOutcome RAMClient::UpdateResourceShare(const UpdateResourceShareRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/updateresourceshare";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/updateresourceshare");
   return UpdateResourceShareOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

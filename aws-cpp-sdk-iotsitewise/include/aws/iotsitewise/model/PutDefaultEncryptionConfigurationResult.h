@@ -61,43 +61,43 @@ namespace Model
 
 
     /**
-     * <p>The Key ARN of the AWS KMS CMK used for AWS KMS encryption if you use
+     * <p>The Key ARN of the KMS key used for KMS encryption if you use
      * <code>KMS_BASED_ENCRYPTION</code>.</p>
      */
     inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
 
     /**
-     * <p>The Key ARN of the AWS KMS CMK used for AWS KMS encryption if you use
+     * <p>The Key ARN of the KMS key used for KMS encryption if you use
      * <code>KMS_BASED_ENCRYPTION</code>.</p>
      */
     inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArn = value; }
 
     /**
-     * <p>The Key ARN of the AWS KMS CMK used for AWS KMS encryption if you use
+     * <p>The Key ARN of the KMS key used for KMS encryption if you use
      * <code>KMS_BASED_ENCRYPTION</code>.</p>
      */
     inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArn = std::move(value); }
 
     /**
-     * <p>The Key ARN of the AWS KMS CMK used for AWS KMS encryption if you use
+     * <p>The Key ARN of the KMS key used for KMS encryption if you use
      * <code>KMS_BASED_ENCRYPTION</code>.</p>
      */
     inline void SetKmsKeyArn(const char* value) { m_kmsKeyArn.assign(value); }
 
     /**
-     * <p>The Key ARN of the AWS KMS CMK used for AWS KMS encryption if you use
+     * <p>The Key ARN of the KMS key used for KMS encryption if you use
      * <code>KMS_BASED_ENCRYPTION</code>.</p>
      */
     inline PutDefaultEncryptionConfigurationResult& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
 
     /**
-     * <p>The Key ARN of the AWS KMS CMK used for AWS KMS encryption if you use
+     * <p>The Key ARN of the KMS key used for KMS encryption if you use
      * <code>KMS_BASED_ENCRYPTION</code>.</p>
      */
     inline PutDefaultEncryptionConfigurationResult& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Key ARN of the AWS KMS CMK used for AWS KMS encryption if you use
+     * <p>The Key ARN of the KMS key used for KMS encryption if you use
      * <code>KMS_BASED_ENCRYPTION</code>.</p>
      */
     inline PutDefaultEncryptionConfigurationResult& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}

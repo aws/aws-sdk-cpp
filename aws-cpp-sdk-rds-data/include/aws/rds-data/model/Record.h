@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>A record returned by a call.</p><p><h3>See Also:</h3>   <a
+   * <p>A record returned by a call.</p>  <p>This data structure is only
+   * used with the deprecated <code>ExecuteSql</code> operation. Use the
+   * <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> operation
+   * instead.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/Record">AWS API
    * Reference</a></p>
    */

@@ -23,7 +23,8 @@ Cell::Cell() :
     m_format(Format::NOT_SET),
     m_formatHasBeenSet(false),
     m_rawValueHasBeenSet(false),
-    m_formattedValueHasBeenSet(false)
+    m_formattedValueHasBeenSet(false),
+    m_formattedValuesHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ Cell::Cell(JsonView jsonValue) :
     m_format(Format::NOT_SET),
     m_formatHasBeenSet(false),
     m_rawValueHasBeenSet(false),
-    m_formattedValueHasBeenSet(false)
+    m_formattedValueHasBeenSet(false),
+    m_formattedValuesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -67,6 +69,16 @@ Cell& Cell::operator =(JsonView jsonValue)
     m_formattedValueHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("formattedValues"))
+  {
+    Array<JsonView> formattedValuesJsonList = jsonValue.GetArray("formattedValues");
+    for(unsigned formattedValuesIndex = 0; formattedValuesIndex < formattedValuesJsonList.GetLength(); ++formattedValuesIndex)
+    {
+      m_formattedValues.push_back(formattedValuesJsonList[formattedValuesIndex].AsString());
+    }
+    m_formattedValuesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -94,6 +106,17 @@ JsonValue Cell::Jsonize() const
   if(m_formattedValueHasBeenSet)
   {
    payload.WithString("formattedValue", m_formattedValue);
+
+  }
+
+  if(m_formattedValuesHasBeenSet)
+  {
+   Array<JsonValue> formattedValuesJsonList(m_formattedValues.size());
+   for(unsigned formattedValuesIndex = 0; formattedValuesIndex < formattedValuesJsonList.GetLength(); ++formattedValuesIndex)
+   {
+     formattedValuesJsonList[formattedValuesIndex].AsString(m_formattedValues[formattedValuesIndex]);
+   }
+   payload.WithArray("formattedValues", std::move(formattedValuesJsonList));
 
   }
 

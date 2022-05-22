@@ -26,8 +26,10 @@ FlowDefinition::FlowDefinition() :
     m_flowStatusHasBeenSet(false),
     m_sourceConnectorType(ConnectorType::NOT_SET),
     m_sourceConnectorTypeHasBeenSet(false),
+    m_sourceConnectorLabelHasBeenSet(false),
     m_destinationConnectorType(ConnectorType::NOT_SET),
     m_destinationConnectorTypeHasBeenSet(false),
+    m_destinationConnectorLabelHasBeenSet(false),
     m_triggerType(TriggerType::NOT_SET),
     m_triggerTypeHasBeenSet(false),
     m_createdAtHasBeenSet(false),
@@ -47,8 +49,10 @@ FlowDefinition::FlowDefinition(JsonView jsonValue) :
     m_flowStatusHasBeenSet(false),
     m_sourceConnectorType(ConnectorType::NOT_SET),
     m_sourceConnectorTypeHasBeenSet(false),
+    m_sourceConnectorLabelHasBeenSet(false),
     m_destinationConnectorType(ConnectorType::NOT_SET),
     m_destinationConnectorTypeHasBeenSet(false),
+    m_destinationConnectorLabelHasBeenSet(false),
     m_triggerType(TriggerType::NOT_SET),
     m_triggerTypeHasBeenSet(false),
     m_createdAtHasBeenSet(false),
@@ -98,11 +102,25 @@ FlowDefinition& FlowDefinition::operator =(JsonView jsonValue)
     m_sourceConnectorTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("sourceConnectorLabel"))
+  {
+    m_sourceConnectorLabel = jsonValue.GetString("sourceConnectorLabel");
+
+    m_sourceConnectorLabelHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("destinationConnectorType"))
   {
     m_destinationConnectorType = ConnectorTypeMapper::GetConnectorTypeForName(jsonValue.GetString("destinationConnectorType"));
 
     m_destinationConnectorTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("destinationConnectorLabel"))
+  {
+    m_destinationConnectorLabel = jsonValue.GetString("destinationConnectorLabel");
+
+    m_destinationConnectorLabelHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("triggerType"))
@@ -192,9 +210,21 @@ JsonValue FlowDefinition::Jsonize() const
    payload.WithString("sourceConnectorType", ConnectorTypeMapper::GetNameForConnectorType(m_sourceConnectorType));
   }
 
+  if(m_sourceConnectorLabelHasBeenSet)
+  {
+   payload.WithString("sourceConnectorLabel", m_sourceConnectorLabel);
+
+  }
+
   if(m_destinationConnectorTypeHasBeenSet)
   {
    payload.WithString("destinationConnectorType", ConnectorTypeMapper::GetNameForConnectorType(m_destinationConnectorType));
+  }
+
+  if(m_destinationConnectorLabelHasBeenSet)
+  {
+   payload.WithString("destinationConnectorLabel", m_destinationConnectorLabel);
+
   }
 
   if(m_triggerTypeHasBeenSet)

@@ -56,7 +56,7 @@ namespace Aws
         virtual void AddQueryStringParameters(Aws::Http::URI& uri) const { AWS_UNREFERENCED_PARAM(uri); }
 
         /**
-         * Put the request to a url for later presigning. This will push the body to the url and 
+         * Put the request to a url for later presigning. This will push the body to the url and
          * then adds the existing query string parameters as normal.
          */
         virtual void PutToPresignedUrl(Aws::Http::URI& uri) const { DumpBodyToUrl(uri); AddQueryStringParameters(uri); }
@@ -150,11 +150,17 @@ namespace Aws
          */
         inline virtual bool ShouldComputeContentMd5() const { return false; }
 
+        inline virtual bool ShouldValidateResponseChecksum() const { return false; }
+
+        inline virtual Aws::Vector<Aws::String> GetResponseChecksumAlgorithmNames() const { return {}; }
+
+        inline virtual Aws::String GetChecksumAlgorithmName() const { return {}; }
+
         virtual const char* GetServiceRequestName() const = 0;
 
     protected:
         /**
-         * Default does nothing. Override this to convert what would otherwise be the payload of the 
+         * Default does nothing. Override this to convert what would otherwise be the payload of the
          *  request to a query string format.
          */
         virtual void DumpBodyToUrl(Aws::Http::URI& uri) const { AWS_UNREFERENCED_PARAM(uri); }

@@ -36,7 +36,7 @@ namespace Model
 
     /**
      * <p>Use this parameter to specify the maximum number of items to return. When
-     * this value is present, AWS KMS does not return more than the specified number of
+     * this value is present, KMS does not return more than the specified number of
      * items, but it might return fewer.</p> <p>This value is optional. If you include
      * a value, it must be between 1 and 1000, inclusive. If you do not include a
      * value, it defaults to 100.</p>
@@ -45,7 +45,7 @@ namespace Model
 
     /**
      * <p>Use this parameter to specify the maximum number of items to return. When
-     * this value is present, AWS KMS does not return more than the specified number of
+     * this value is present, KMS does not return more than the specified number of
      * items, but it might return fewer.</p> <p>This value is optional. If you include
      * a value, it must be between 1 and 1000, inclusive. If you do not include a
      * value, it defaults to 100.</p>
@@ -54,7 +54,7 @@ namespace Model
 
     /**
      * <p>Use this parameter to specify the maximum number of items to return. When
-     * this value is present, AWS KMS does not return more than the specified number of
+     * this value is present, KMS does not return more than the specified number of
      * items, but it might return fewer.</p> <p>This value is optional. If you include
      * a value, it must be between 1 and 1000, inclusive. If you do not include a
      * value, it defaults to 100.</p>
@@ -63,7 +63,7 @@ namespace Model
 
     /**
      * <p>Use this parameter to specify the maximum number of items to return. When
-     * this value is present, AWS KMS does not return more than the specified number of
+     * this value is present, KMS does not return more than the specified number of
      * items, but it might return fewer.</p> <p>This value is optional. If you include
      * a value, it must be between 1 and 1000, inclusive. If you do not include a
      * value, it defaults to 100.</p>

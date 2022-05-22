@@ -41,56 +41,74 @@ namespace Model
 
 
     /**
-     * <p>The queues to use to filter the metrics. You can specify up to 100 queues per
-     * request.</p>
+     * <p>The queues to use to filter the metrics. You should specify at least one
+     * queue, and can specify up to 100 queues per request. The
+     * <code>GetCurrentMetricsData</code> API in particular requires a queue when you
+     * include a <code>Filter</code> in your request. </p>
      */
     inline const Aws::Vector<Aws::String>& GetQueues() const{ return m_queues; }
 
     /**
-     * <p>The queues to use to filter the metrics. You can specify up to 100 queues per
-     * request.</p>
+     * <p>The queues to use to filter the metrics. You should specify at least one
+     * queue, and can specify up to 100 queues per request. The
+     * <code>GetCurrentMetricsData</code> API in particular requires a queue when you
+     * include a <code>Filter</code> in your request. </p>
      */
     inline bool QueuesHasBeenSet() const { return m_queuesHasBeenSet; }
 
     /**
-     * <p>The queues to use to filter the metrics. You can specify up to 100 queues per
-     * request.</p>
+     * <p>The queues to use to filter the metrics. You should specify at least one
+     * queue, and can specify up to 100 queues per request. The
+     * <code>GetCurrentMetricsData</code> API in particular requires a queue when you
+     * include a <code>Filter</code> in your request. </p>
      */
     inline void SetQueues(const Aws::Vector<Aws::String>& value) { m_queuesHasBeenSet = true; m_queues = value; }
 
     /**
-     * <p>The queues to use to filter the metrics. You can specify up to 100 queues per
-     * request.</p>
+     * <p>The queues to use to filter the metrics. You should specify at least one
+     * queue, and can specify up to 100 queues per request. The
+     * <code>GetCurrentMetricsData</code> API in particular requires a queue when you
+     * include a <code>Filter</code> in your request. </p>
      */
     inline void SetQueues(Aws::Vector<Aws::String>&& value) { m_queuesHasBeenSet = true; m_queues = std::move(value); }
 
     /**
-     * <p>The queues to use to filter the metrics. You can specify up to 100 queues per
-     * request.</p>
+     * <p>The queues to use to filter the metrics. You should specify at least one
+     * queue, and can specify up to 100 queues per request. The
+     * <code>GetCurrentMetricsData</code> API in particular requires a queue when you
+     * include a <code>Filter</code> in your request. </p>
      */
     inline Filters& WithQueues(const Aws::Vector<Aws::String>& value) { SetQueues(value); return *this;}
 
     /**
-     * <p>The queues to use to filter the metrics. You can specify up to 100 queues per
-     * request.</p>
+     * <p>The queues to use to filter the metrics. You should specify at least one
+     * queue, and can specify up to 100 queues per request. The
+     * <code>GetCurrentMetricsData</code> API in particular requires a queue when you
+     * include a <code>Filter</code> in your request. </p>
      */
     inline Filters& WithQueues(Aws::Vector<Aws::String>&& value) { SetQueues(std::move(value)); return *this;}
 
     /**
-     * <p>The queues to use to filter the metrics. You can specify up to 100 queues per
-     * request.</p>
+     * <p>The queues to use to filter the metrics. You should specify at least one
+     * queue, and can specify up to 100 queues per request. The
+     * <code>GetCurrentMetricsData</code> API in particular requires a queue when you
+     * include a <code>Filter</code> in your request. </p>
      */
     inline Filters& AddQueues(const Aws::String& value) { m_queuesHasBeenSet = true; m_queues.push_back(value); return *this; }
 
     /**
-     * <p>The queues to use to filter the metrics. You can specify up to 100 queues per
-     * request.</p>
+     * <p>The queues to use to filter the metrics. You should specify at least one
+     * queue, and can specify up to 100 queues per request. The
+     * <code>GetCurrentMetricsData</code> API in particular requires a queue when you
+     * include a <code>Filter</code> in your request. </p>
      */
     inline Filters& AddQueues(Aws::String&& value) { m_queuesHasBeenSet = true; m_queues.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The queues to use to filter the metrics. You can specify up to 100 queues per
-     * request.</p>
+     * <p>The queues to use to filter the metrics. You should specify at least one
+     * queue, and can specify up to 100 queues per request. The
+     * <code>GetCurrentMetricsData</code> API in particular requires a queue when you
+     * include a <code>Filter</code> in your request. </p>
      */
     inline Filters& AddQueues(const char* value) { m_queuesHasBeenSet = true; m_queues.push_back(value); return *this; }
 

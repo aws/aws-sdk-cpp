@@ -34,37 +34,37 @@ namespace Model
 
 
     /**
-     * <p>Stringified JSON of the DataStore model.</p>
+     * <p>Stringified JSON of the datastore model.</p>
      */
     inline const Aws::String& GetModels() const{ return m_models; }
 
     /**
-     * <p>Stringified JSON of the DataStore model.</p>
+     * <p>Stringified JSON of the datastore model.</p>
      */
     inline void SetModels(const Aws::String& value) { m_models = value; }
 
     /**
-     * <p>Stringified JSON of the DataStore model.</p>
+     * <p>Stringified JSON of the datastore model.</p>
      */
     inline void SetModels(Aws::String&& value) { m_models = std::move(value); }
 
     /**
-     * <p>Stringified JSON of the DataStore model.</p>
+     * <p>Stringified JSON of the datastore model.</p>
      */
     inline void SetModels(const char* value) { m_models.assign(value); }
 
     /**
-     * <p>Stringified JSON of the DataStore model.</p>
+     * <p>Stringified JSON of the datastore model.</p>
      */
     inline GetBackendAPIModelsResult& WithModels(const Aws::String& value) { SetModels(value); return *this;}
 
     /**
-     * <p>Stringified JSON of the DataStore model.</p>
+     * <p>Stringified JSON of the datastore model.</p>
      */
     inline GetBackendAPIModelsResult& WithModels(Aws::String&& value) { SetModels(std::move(value)); return *this;}
 
     /**
-     * <p>Stringified JSON of the DataStore model.</p>
+     * <p>Stringified JSON of the datastore model.</p>
      */
     inline GetBackendAPIModelsResult& WithModels(const char* value) { SetModels(value); return *this;}
 

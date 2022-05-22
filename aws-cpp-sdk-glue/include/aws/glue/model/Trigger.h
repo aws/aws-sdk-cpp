@@ -10,6 +10,7 @@
 #include <aws/glue/model/TriggerState.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/glue/model/Predicate.h>
+#include <aws/glue/model/EventBatchingCondition.h>
 #include <aws/glue/model/Action.h>
 #include <utility>
 
@@ -404,6 +405,43 @@ namespace Model
      */
     inline Trigger& WithPredicate(Predicate&& value) { SetPredicate(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Batch condition that must be met (specified number of events received or
+     * batch time window expired) before EventBridge event trigger fires.</p>
+     */
+    inline const EventBatchingCondition& GetEventBatchingCondition() const{ return m_eventBatchingCondition; }
+
+    /**
+     * <p>Batch condition that must be met (specified number of events received or
+     * batch time window expired) before EventBridge event trigger fires.</p>
+     */
+    inline bool EventBatchingConditionHasBeenSet() const { return m_eventBatchingConditionHasBeenSet; }
+
+    /**
+     * <p>Batch condition that must be met (specified number of events received or
+     * batch time window expired) before EventBridge event trigger fires.</p>
+     */
+    inline void SetEventBatchingCondition(const EventBatchingCondition& value) { m_eventBatchingConditionHasBeenSet = true; m_eventBatchingCondition = value; }
+
+    /**
+     * <p>Batch condition that must be met (specified number of events received or
+     * batch time window expired) before EventBridge event trigger fires.</p>
+     */
+    inline void SetEventBatchingCondition(EventBatchingCondition&& value) { m_eventBatchingConditionHasBeenSet = true; m_eventBatchingCondition = std::move(value); }
+
+    /**
+     * <p>Batch condition that must be met (specified number of events received or
+     * batch time window expired) before EventBridge event trigger fires.</p>
+     */
+    inline Trigger& WithEventBatchingCondition(const EventBatchingCondition& value) { SetEventBatchingCondition(value); return *this;}
+
+    /**
+     * <p>Batch condition that must be met (specified number of events received or
+     * batch time window expired) before EventBridge event trigger fires.</p>
+     */
+    inline Trigger& WithEventBatchingCondition(EventBatchingCondition&& value) { SetEventBatchingCondition(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -432,6 +470,9 @@ namespace Model
 
     Predicate m_predicate;
     bool m_predicateHasBeenSet;
+
+    EventBatchingCondition m_eventBatchingCondition;
+    bool m_eventBatchingConditionHasBeenSet;
   };
 
 } // namespace Model

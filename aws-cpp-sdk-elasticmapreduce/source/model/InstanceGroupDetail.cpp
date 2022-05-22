@@ -37,7 +37,8 @@ InstanceGroupDetail::InstanceGroupDetail() :
     m_creationDateTimeHasBeenSet(false),
     m_startDateTimeHasBeenSet(false),
     m_readyDateTimeHasBeenSet(false),
-    m_endDateTimeHasBeenSet(false)
+    m_endDateTimeHasBeenSet(false),
+    m_customAmiIdHasBeenSet(false)
 {
 }
 
@@ -60,7 +61,8 @@ InstanceGroupDetail::InstanceGroupDetail(JsonView jsonValue) :
     m_creationDateTimeHasBeenSet(false),
     m_startDateTimeHasBeenSet(false),
     m_readyDateTimeHasBeenSet(false),
-    m_endDateTimeHasBeenSet(false)
+    m_endDateTimeHasBeenSet(false),
+    m_customAmiIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -165,6 +167,13 @@ InstanceGroupDetail& InstanceGroupDetail::operator =(JsonView jsonValue)
     m_endDateTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CustomAmiId"))
+  {
+    m_customAmiId = jsonValue.GetString("CustomAmiId");
+
+    m_customAmiIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -247,6 +256,12 @@ JsonValue InstanceGroupDetail::Jsonize() const
   if(m_endDateTimeHasBeenSet)
   {
    payload.WithDouble("EndDateTime", m_endDateTime.SecondsWithMSPrecision());
+  }
+
+  if(m_customAmiIdHasBeenSet)
+  {
+   payload.WithString("CustomAmiId", m_customAmiId);
+
   }
 
   return payload;

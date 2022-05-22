@@ -191,38 +191,38 @@ namespace Model
 
 
     /**
-     * <p>The number of previous days that you want AWS to consider when it calculates
-     * your recommendations.</p>
+     * <p>The number of previous days that you want Amazon Web Services to consider
+     * when it calculates your recommendations.</p>
      */
     inline const LookbackPeriodInDays& GetLookbackPeriodInDays() const{ return m_lookbackPeriodInDays; }
 
     /**
-     * <p>The number of previous days that you want AWS to consider when it calculates
-     * your recommendations.</p>
+     * <p>The number of previous days that you want Amazon Web Services to consider
+     * when it calculates your recommendations.</p>
      */
     inline bool LookbackPeriodInDaysHasBeenSet() const { return m_lookbackPeriodInDaysHasBeenSet; }
 
     /**
-     * <p>The number of previous days that you want AWS to consider when it calculates
-     * your recommendations.</p>
+     * <p>The number of previous days that you want Amazon Web Services to consider
+     * when it calculates your recommendations.</p>
      */
     inline void SetLookbackPeriodInDays(const LookbackPeriodInDays& value) { m_lookbackPeriodInDaysHasBeenSet = true; m_lookbackPeriodInDays = value; }
 
     /**
-     * <p>The number of previous days that you want AWS to consider when it calculates
-     * your recommendations.</p>
+     * <p>The number of previous days that you want Amazon Web Services to consider
+     * when it calculates your recommendations.</p>
      */
     inline void SetLookbackPeriodInDays(LookbackPeriodInDays&& value) { m_lookbackPeriodInDaysHasBeenSet = true; m_lookbackPeriodInDays = std::move(value); }
 
     /**
-     * <p>The number of previous days that you want AWS to consider when it calculates
-     * your recommendations.</p>
+     * <p>The number of previous days that you want Amazon Web Services to consider
+     * when it calculates your recommendations.</p>
      */
     inline GetReservationPurchaseRecommendationRequest& WithLookbackPeriodInDays(const LookbackPeriodInDays& value) { SetLookbackPeriodInDays(value); return *this;}
 
     /**
-     * <p>The number of previous days that you want AWS to consider when it calculates
-     * your recommendations.</p>
+     * <p>The number of previous days that you want Amazon Web Services to consider
+     * when it calculates your recommendations.</p>
      */
     inline GetReservationPurchaseRecommendationRequest& WithLookbackPeriodInDays(LookbackPeriodInDays&& value) { SetLookbackPeriodInDays(std::move(value)); return *this;}
 

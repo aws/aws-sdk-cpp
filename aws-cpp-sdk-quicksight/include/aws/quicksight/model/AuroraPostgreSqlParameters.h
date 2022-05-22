@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Amazon Aurora with PostgreSQL compatibility parameters.</p><p><h3>See
+   * <p>Parameters for Amazon Aurora PostgreSQL-Compatible Edition.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/AuroraPostgreSqlParameters">AWS
    * API Reference</a></p>
@@ -39,104 +39,104 @@ namespace Model
 
 
     /**
-     * <p>Host.</p>
+     * <p>The Amazon Aurora PostgreSQL-Compatible host to connect to.</p>
      */
     inline const Aws::String& GetHost() const{ return m_host; }
 
     /**
-     * <p>Host.</p>
+     * <p>The Amazon Aurora PostgreSQL-Compatible host to connect to.</p>
      */
     inline bool HostHasBeenSet() const { return m_hostHasBeenSet; }
 
     /**
-     * <p>Host.</p>
+     * <p>The Amazon Aurora PostgreSQL-Compatible host to connect to.</p>
      */
     inline void SetHost(const Aws::String& value) { m_hostHasBeenSet = true; m_host = value; }
 
     /**
-     * <p>Host.</p>
+     * <p>The Amazon Aurora PostgreSQL-Compatible host to connect to.</p>
      */
     inline void SetHost(Aws::String&& value) { m_hostHasBeenSet = true; m_host = std::move(value); }
 
     /**
-     * <p>Host.</p>
+     * <p>The Amazon Aurora PostgreSQL-Compatible host to connect to.</p>
      */
     inline void SetHost(const char* value) { m_hostHasBeenSet = true; m_host.assign(value); }
 
     /**
-     * <p>Host.</p>
+     * <p>The Amazon Aurora PostgreSQL-Compatible host to connect to.</p>
      */
     inline AuroraPostgreSqlParameters& WithHost(const Aws::String& value) { SetHost(value); return *this;}
 
     /**
-     * <p>Host.</p>
+     * <p>The Amazon Aurora PostgreSQL-Compatible host to connect to.</p>
      */
     inline AuroraPostgreSqlParameters& WithHost(Aws::String&& value) { SetHost(std::move(value)); return *this;}
 
     /**
-     * <p>Host.</p>
+     * <p>The Amazon Aurora PostgreSQL-Compatible host to connect to.</p>
      */
     inline AuroraPostgreSqlParameters& WithHost(const char* value) { SetHost(value); return *this;}
 
 
     /**
-     * <p>Port.</p>
+     * <p>The port that Amazon Aurora PostgreSQL is listening on.</p>
      */
     inline int GetPort() const{ return m_port; }
 
     /**
-     * <p>Port.</p>
+     * <p>The port that Amazon Aurora PostgreSQL is listening on.</p>
      */
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
 
     /**
-     * <p>Port.</p>
+     * <p>The port that Amazon Aurora PostgreSQL is listening on.</p>
      */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
-     * <p>Port.</p>
+     * <p>The port that Amazon Aurora PostgreSQL is listening on.</p>
      */
     inline AuroraPostgreSqlParameters& WithPort(int value) { SetPort(value); return *this;}
 
 
     /**
-     * <p>Database.</p>
+     * <p>The Amazon Aurora PostgreSQL database to connect to.</p>
      */
     inline const Aws::String& GetDatabase() const{ return m_database; }
 
     /**
-     * <p>Database.</p>
+     * <p>The Amazon Aurora PostgreSQL database to connect to.</p>
      */
     inline bool DatabaseHasBeenSet() const { return m_databaseHasBeenSet; }
 
     /**
-     * <p>Database.</p>
+     * <p>The Amazon Aurora PostgreSQL database to connect to.</p>
      */
     inline void SetDatabase(const Aws::String& value) { m_databaseHasBeenSet = true; m_database = value; }
 
     /**
-     * <p>Database.</p>
+     * <p>The Amazon Aurora PostgreSQL database to connect to.</p>
      */
     inline void SetDatabase(Aws::String&& value) { m_databaseHasBeenSet = true; m_database = std::move(value); }
 
     /**
-     * <p>Database.</p>
+     * <p>The Amazon Aurora PostgreSQL database to connect to.</p>
      */
     inline void SetDatabase(const char* value) { m_databaseHasBeenSet = true; m_database.assign(value); }
 
     /**
-     * <p>Database.</p>
+     * <p>The Amazon Aurora PostgreSQL database to connect to.</p>
      */
     inline AuroraPostgreSqlParameters& WithDatabase(const Aws::String& value) { SetDatabase(value); return *this;}
 
     /**
-     * <p>Database.</p>
+     * <p>The Amazon Aurora PostgreSQL database to connect to.</p>
      */
     inline AuroraPostgreSqlParameters& WithDatabase(Aws::String&& value) { SetDatabase(std::move(value)); return *this;}
 
     /**
-     * <p>Database.</p>
+     * <p>The Amazon Aurora PostgreSQL database to connect to.</p>
      */
     inline AuroraPostgreSqlParameters& WithDatabase(const char* value) { SetDatabase(value); return *this;}
 

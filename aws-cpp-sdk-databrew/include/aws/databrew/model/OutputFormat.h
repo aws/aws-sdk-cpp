@@ -22,7 +22,8 @@ namespace Model
     GLUEPARQUET,
     AVRO,
     ORC,
-    XML
+    XML,
+    TABLEAUHYPER
   };
 
 namespace OutputFormatMapper

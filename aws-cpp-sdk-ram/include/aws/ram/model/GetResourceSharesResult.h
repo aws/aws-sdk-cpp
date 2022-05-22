@@ -35,80 +35,115 @@ namespace Model
 
 
     /**
-     * <p>Information about the resource shares.</p>
+     * <p>An array of objects that contain the information about the resource
+     * shares.</p>
      */
     inline const Aws::Vector<ResourceShare>& GetResourceShares() const{ return m_resourceShares; }
 
     /**
-     * <p>Information about the resource shares.</p>
+     * <p>An array of objects that contain the information about the resource
+     * shares.</p>
      */
     inline void SetResourceShares(const Aws::Vector<ResourceShare>& value) { m_resourceShares = value; }
 
     /**
-     * <p>Information about the resource shares.</p>
+     * <p>An array of objects that contain the information about the resource
+     * shares.</p>
      */
     inline void SetResourceShares(Aws::Vector<ResourceShare>&& value) { m_resourceShares = std::move(value); }
 
     /**
-     * <p>Information about the resource shares.</p>
+     * <p>An array of objects that contain the information about the resource
+     * shares.</p>
      */
     inline GetResourceSharesResult& WithResourceShares(const Aws::Vector<ResourceShare>& value) { SetResourceShares(value); return *this;}
 
     /**
-     * <p>Information about the resource shares.</p>
+     * <p>An array of objects that contain the information about the resource
+     * shares.</p>
      */
     inline GetResourceSharesResult& WithResourceShares(Aws::Vector<ResourceShare>&& value) { SetResourceShares(std::move(value)); return *this;}
 
     /**
-     * <p>Information about the resource shares.</p>
+     * <p>An array of objects that contain the information about the resource
+     * shares.</p>
      */
     inline GetResourceSharesResult& AddResourceShares(const ResourceShare& value) { m_resourceShares.push_back(value); return *this; }
 
     /**
-     * <p>Information about the resource shares.</p>
+     * <p>An array of objects that contain the information about the resource
+     * shares.</p>
      */
     inline GetResourceSharesResult& AddResourceShares(ResourceShare&& value) { m_resourceShares.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The token to use to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
+     * <p>If present, this value indicates that more output is available than is
+     * included in the current response. Use this value in the <code>NextToken</code>
+     * request parameter in a subsequent call to the operation to get the next part of
+     * the output. You should repeat this until the <code>NextToken</code> response
+     * element comes back as <code>null</code>. This indicates that this is the last
+     * page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The token to use to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
+     * <p>If present, this value indicates that more output is available than is
+     * included in the current response. Use this value in the <code>NextToken</code>
+     * request parameter in a subsequent call to the operation to get the next part of
+     * the output. You should repeat this until the <code>NextToken</code> response
+     * element comes back as <code>null</code>. This indicates that this is the last
+     * page of results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>The token to use to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
+     * <p>If present, this value indicates that more output is available than is
+     * included in the current response. Use this value in the <code>NextToken</code>
+     * request parameter in a subsequent call to the operation to get the next part of
+     * the output. You should repeat this until the <code>NextToken</code> response
+     * element comes back as <code>null</code>. This indicates that this is the last
+     * page of results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>The token to use to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
+     * <p>If present, this value indicates that more output is available than is
+     * included in the current response. Use this value in the <code>NextToken</code>
+     * request parameter in a subsequent call to the operation to get the next part of
+     * the output. You should repeat this until the <code>NextToken</code> response
+     * element comes back as <code>null</code>. This indicates that this is the last
+     * page of results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>The token to use to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
+     * <p>If present, this value indicates that more output is available than is
+     * included in the current response. Use this value in the <code>NextToken</code>
+     * request parameter in a subsequent call to the operation to get the next part of
+     * the output. You should repeat this until the <code>NextToken</code> response
+     * element comes back as <code>null</code>. This indicates that this is the last
+     * page of results.</p>
      */
     inline GetResourceSharesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The token to use to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
+     * <p>If present, this value indicates that more output is available than is
+     * included in the current response. Use this value in the <code>NextToken</code>
+     * request parameter in a subsequent call to the operation to get the next part of
+     * the output. You should repeat this until the <code>NextToken</code> response
+     * element comes back as <code>null</code>. This indicates that this is the last
+     * page of results.</p>
      */
     inline GetResourceSharesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The token to use to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
+     * <p>If present, this value indicates that more output is available than is
+     * included in the current response. Use this value in the <code>NextToken</code>
+     * request parameter in a subsequent call to the operation to get the next part of
+     * the output. You should repeat this until the <code>NextToken</code> response
+     * element comes back as <code>null</code>. This indicates that this is the last
+     * page of results.</p>
      */
     inline GetResourceSharesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

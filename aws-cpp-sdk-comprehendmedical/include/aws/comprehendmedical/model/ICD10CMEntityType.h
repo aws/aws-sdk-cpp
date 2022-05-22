@@ -16,7 +16,8 @@ namespace Model
   enum class ICD10CMEntityType
   {
     NOT_SET,
-    DX_NAME
+    DX_NAME,
+    TIME_EXPRESSION
   };
 
 namespace ICD10CMEntityTypeMapper

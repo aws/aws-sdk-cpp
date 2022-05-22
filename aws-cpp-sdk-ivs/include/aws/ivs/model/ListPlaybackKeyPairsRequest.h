@@ -33,6 +33,31 @@ namespace Model
 
 
     /**
+     * <p>The first key pair to retrieve. This is used for pagination; see the
+     * <code>nextToken</code> response field. Default: 50.</p>
+     */
+    inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The first key pair to retrieve. This is used for pagination; see the
+     * <code>nextToken</code> response field. Default: 50.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The first key pair to retrieve. This is used for pagination; see the
+     * <code>nextToken</code> response field. Default: 50.</p>
+     */
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+
+    /**
+     * <p>The first key pair to retrieve. This is used for pagination; see the
+     * <code>nextToken</code> response field. Default: 50.</p>
+     */
+    inline ListPlaybackKeyPairsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
+
+    /**
      * <p>Maximum number of key pairs to return.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
@@ -72,38 +97,13 @@ namespace Model
      */
     inline ListPlaybackKeyPairsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
-
-    /**
-     * <p>The first key pair to retrieve. This is used for pagination; see the
-     * <code>nextToken</code> response field.</p>
-     */
-    inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The first key pair to retrieve. This is used for pagination; see the
-     * <code>nextToken</code> response field.</p>
-     */
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The first key pair to retrieve. This is used for pagination; see the
-     * <code>nextToken</code> response field.</p>
-     */
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The first key pair to retrieve. This is used for pagination; see the
-     * <code>nextToken</code> response field.</p>
-     */
-    inline ListPlaybackKeyPairsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
   private:
-
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet;
   };
 
 } // namespace Model

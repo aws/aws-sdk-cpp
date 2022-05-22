@@ -125,7 +125,8 @@ namespace Model
 
     /**
      * <p>Specify one or more algorithms that can be used to generate key pairs.</p>
-     * <p>Default filtering returns only <code>RSA_2048</code> certificates. To return
+     * <p>Default filtering returns only <code>RSA_1024</code> and
+     * <code>RSA_2048</code> certificates that have at least one domain. To return
      * other certificate types, provide the desired type signatures in a
      * comma-separated list. For example, <code>"keyTypes":
      * ["RSA_2048,RSA_4096"]</code> returns both <code>RSA_2048</code> and
@@ -135,7 +136,8 @@ namespace Model
 
     /**
      * <p>Specify one or more algorithms that can be used to generate key pairs.</p>
-     * <p>Default filtering returns only <code>RSA_2048</code> certificates. To return
+     * <p>Default filtering returns only <code>RSA_1024</code> and
+     * <code>RSA_2048</code> certificates that have at least one domain. To return
      * other certificate types, provide the desired type signatures in a
      * comma-separated list. For example, <code>"keyTypes":
      * ["RSA_2048,RSA_4096"]</code> returns both <code>RSA_2048</code> and
@@ -145,7 +147,8 @@ namespace Model
 
     /**
      * <p>Specify one or more algorithms that can be used to generate key pairs.</p>
-     * <p>Default filtering returns only <code>RSA_2048</code> certificates. To return
+     * <p>Default filtering returns only <code>RSA_1024</code> and
+     * <code>RSA_2048</code> certificates that have at least one domain. To return
      * other certificate types, provide the desired type signatures in a
      * comma-separated list. For example, <code>"keyTypes":
      * ["RSA_2048,RSA_4096"]</code> returns both <code>RSA_2048</code> and
@@ -155,7 +158,8 @@ namespace Model
 
     /**
      * <p>Specify one or more algorithms that can be used to generate key pairs.</p>
-     * <p>Default filtering returns only <code>RSA_2048</code> certificates. To return
+     * <p>Default filtering returns only <code>RSA_1024</code> and
+     * <code>RSA_2048</code> certificates that have at least one domain. To return
      * other certificate types, provide the desired type signatures in a
      * comma-separated list. For example, <code>"keyTypes":
      * ["RSA_2048,RSA_4096"]</code> returns both <code>RSA_2048</code> and
@@ -165,7 +169,8 @@ namespace Model
 
     /**
      * <p>Specify one or more algorithms that can be used to generate key pairs.</p>
-     * <p>Default filtering returns only <code>RSA_2048</code> certificates. To return
+     * <p>Default filtering returns only <code>RSA_1024</code> and
+     * <code>RSA_2048</code> certificates that have at least one domain. To return
      * other certificate types, provide the desired type signatures in a
      * comma-separated list. For example, <code>"keyTypes":
      * ["RSA_2048,RSA_4096"]</code> returns both <code>RSA_2048</code> and
@@ -175,7 +180,8 @@ namespace Model
 
     /**
      * <p>Specify one or more algorithms that can be used to generate key pairs.</p>
-     * <p>Default filtering returns only <code>RSA_2048</code> certificates. To return
+     * <p>Default filtering returns only <code>RSA_1024</code> and
+     * <code>RSA_2048</code> certificates that have at least one domain. To return
      * other certificate types, provide the desired type signatures in a
      * comma-separated list. For example, <code>"keyTypes":
      * ["RSA_2048,RSA_4096"]</code> returns both <code>RSA_2048</code> and
@@ -185,7 +191,8 @@ namespace Model
 
     /**
      * <p>Specify one or more algorithms that can be used to generate key pairs.</p>
-     * <p>Default filtering returns only <code>RSA_2048</code> certificates. To return
+     * <p>Default filtering returns only <code>RSA_1024</code> and
+     * <code>RSA_2048</code> certificates that have at least one domain. To return
      * other certificate types, provide the desired type signatures in a
      * comma-separated list. For example, <code>"keyTypes":
      * ["RSA_2048,RSA_4096"]</code> returns both <code>RSA_2048</code> and
@@ -195,7 +202,8 @@ namespace Model
 
     /**
      * <p>Specify one or more algorithms that can be used to generate key pairs.</p>
-     * <p>Default filtering returns only <code>RSA_2048</code> certificates. To return
+     * <p>Default filtering returns only <code>RSA_1024</code> and
+     * <code>RSA_2048</code> certificates that have at least one domain. To return
      * other certificate types, provide the desired type signatures in a
      * comma-separated list. For example, <code>"keyTypes":
      * ["RSA_2048,RSA_4096"]</code> returns both <code>RSA_2048</code> and

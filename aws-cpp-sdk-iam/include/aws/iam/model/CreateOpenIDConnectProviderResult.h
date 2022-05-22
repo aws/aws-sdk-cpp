@@ -6,7 +6,9 @@
 #pragma once
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/iam/model/ResponseMetadata.h>
+#include <aws/iam/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -82,6 +84,63 @@ namespace Model
     inline CreateOpenIDConnectProviderResult& WithOpenIDConnectProviderArn(const char* value) { SetOpenIDConnectProviderArn(value); return *this;}
 
 
+    /**
+     * <p>A list of tags that are attached to the new IAM OIDC provider. The returned
+     * list of tags is sorted by tag key. For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of tags that are attached to the new IAM OIDC provider. The returned
+     * list of tags is sorted by tag key. For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
+
+    /**
+     * <p>A list of tags that are attached to the new IAM OIDC provider. The returned
+     * list of tags is sorted by tag key. For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
+
+    /**
+     * <p>A list of tags that are attached to the new IAM OIDC provider. The returned
+     * list of tags is sorted by tag key. For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline CreateOpenIDConnectProviderResult& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A list of tags that are attached to the new IAM OIDC provider. The returned
+     * list of tags is sorted by tag key. For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline CreateOpenIDConnectProviderResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of tags that are attached to the new IAM OIDC provider. The returned
+     * list of tags is sorted by tag key. For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline CreateOpenIDConnectProviderResult& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>A list of tags that are attached to the new IAM OIDC provider. The returned
+     * list of tags is sorted by tag key. For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline CreateOpenIDConnectProviderResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -100,6 +159,8 @@ namespace Model
   private:
 
     Aws::String m_openIDConnectProviderArn;
+
+    Aws::Vector<Tag> m_tags;
 
     ResponseMetadata m_responseMetadata;
   };

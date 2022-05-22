@@ -20,7 +20,8 @@ GetRecommendationsRequest::GetRecommendationsRequest() :
     m_numResultsHasBeenSet(false),
     m_contextHasBeenSet(false),
     m_filterArnHasBeenSet(false),
-    m_filterValuesHasBeenSet(false)
+    m_filterValuesHasBeenSet(false),
+    m_recommenderArnHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,12 @@ Aws::String GetRecommendationsRequest::SerializePayload() const
      filterValuesJsonMap.WithString(filterValuesItem.first, filterValuesItem.second);
    }
    payload.WithObject("filterValues", std::move(filterValuesJsonMap));
+
+  }
+
+  if(m_recommenderArnHasBeenSet)
+  {
+   payload.WithString("recommenderArn", m_recommenderArn);
 
   }
 

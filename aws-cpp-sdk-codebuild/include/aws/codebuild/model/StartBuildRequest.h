@@ -50,42 +50,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the AWS CodeBuild build project to start running a build.</p>
+     * <p>The name of the CodeBuild build project to start running a build.</p>
      */
     inline const Aws::String& GetProjectName() const{ return m_projectName; }
 
     /**
-     * <p>The name of the AWS CodeBuild build project to start running a build.</p>
+     * <p>The name of the CodeBuild build project to start running a build.</p>
      */
     inline bool ProjectNameHasBeenSet() const { return m_projectNameHasBeenSet; }
 
     /**
-     * <p>The name of the AWS CodeBuild build project to start running a build.</p>
+     * <p>The name of the CodeBuild build project to start running a build.</p>
      */
     inline void SetProjectName(const Aws::String& value) { m_projectNameHasBeenSet = true; m_projectName = value; }
 
     /**
-     * <p>The name of the AWS CodeBuild build project to start running a build.</p>
+     * <p>The name of the CodeBuild build project to start running a build.</p>
      */
     inline void SetProjectName(Aws::String&& value) { m_projectNameHasBeenSet = true; m_projectName = std::move(value); }
 
     /**
-     * <p>The name of the AWS CodeBuild build project to start running a build.</p>
+     * <p>The name of the CodeBuild build project to start running a build.</p>
      */
     inline void SetProjectName(const char* value) { m_projectNameHasBeenSet = true; m_projectName.assign(value); }
 
     /**
-     * <p>The name of the AWS CodeBuild build project to start running a build.</p>
+     * <p>The name of the CodeBuild build project to start running a build.</p>
      */
     inline StartBuildRequest& WithProjectName(const Aws::String& value) { SetProjectName(value); return *this;}
 
     /**
-     * <p>The name of the AWS CodeBuild build project to start running a build.</p>
+     * <p>The name of the CodeBuild build project to start running a build.</p>
      */
     inline StartBuildRequest& WithProjectName(Aws::String&& value) { SetProjectName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the AWS CodeBuild build project to start running a build.</p>
+     * <p>The name of the CodeBuild build project to start running a build.</p>
      */
     inline StartBuildRequest& WithProjectName(const char* value) { SetProjectName(value); return *this;}
 
@@ -191,8 +191,8 @@ namespace Model
     /**
      * <p>The version of the build input to be built, for this build only. If not
      * specified, the latest version is used. If specified, the contents depends on the
-     * source provider:</p> <dl> <dt>AWS CodeCommit</dt> <dd> <p>The commit ID, branch,
-     * or Git tag to use.</p> </dd> <dt>GitHub</dt> <dd> <p>The commit ID, pull request
+     * source provider:</p> <dl> <dt>CodeCommit</dt> <dd> <p>The commit ID, branch, or
+     * Git tag to use.</p> </dd> <dt>GitHub</dt> <dd> <p>The commit ID, pull request
      * ID, branch name, or tag name that corresponds to the version of the source code
      * you want to build. If a pull request ID is specified, it must use the format
      * <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch
@@ -201,21 +201,21 @@ namespace Model
      * <p>The commit ID, branch name, or tag name that corresponds to the version of
      * the source code you want to build. If a branch name is specified, the branch's
      * HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
-     * used.</p> </dd> <dt>Amazon Simple Storage Service (Amazon S3)</dt> <dd> <p>The
-     * version ID of the object that represents the build input ZIP file to use.</p>
-     * </dd> </dl> <p>If <code>sourceVersion</code> is specified at the project level,
-     * then this <code>sourceVersion</code> (at the build level) takes precedence. </p>
-     * <p>For more information, see <a
+     * used.</p> </dd> <dt>Amazon S3</dt> <dd> <p>The version ID of the object that
+     * represents the build input ZIP file to use.</p> </dd> </dl> <p>If
+     * <code>sourceVersion</code> is specified at the project level, then this
+     * <code>sourceVersion</code> (at the build level) takes precedence. </p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
-     * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
+     * Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
      */
     inline const Aws::String& GetSourceVersion() const{ return m_sourceVersion; }
 
     /**
      * <p>The version of the build input to be built, for this build only. If not
      * specified, the latest version is used. If specified, the contents depends on the
-     * source provider:</p> <dl> <dt>AWS CodeCommit</dt> <dd> <p>The commit ID, branch,
-     * or Git tag to use.</p> </dd> <dt>GitHub</dt> <dd> <p>The commit ID, pull request
+     * source provider:</p> <dl> <dt>CodeCommit</dt> <dd> <p>The commit ID, branch, or
+     * Git tag to use.</p> </dd> <dt>GitHub</dt> <dd> <p>The commit ID, pull request
      * ID, branch name, or tag name that corresponds to the version of the source code
      * you want to build. If a pull request ID is specified, it must use the format
      * <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch
@@ -224,21 +224,21 @@ namespace Model
      * <p>The commit ID, branch name, or tag name that corresponds to the version of
      * the source code you want to build. If a branch name is specified, the branch's
      * HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
-     * used.</p> </dd> <dt>Amazon Simple Storage Service (Amazon S3)</dt> <dd> <p>The
-     * version ID of the object that represents the build input ZIP file to use.</p>
-     * </dd> </dl> <p>If <code>sourceVersion</code> is specified at the project level,
-     * then this <code>sourceVersion</code> (at the build level) takes precedence. </p>
-     * <p>For more information, see <a
+     * used.</p> </dd> <dt>Amazon S3</dt> <dd> <p>The version ID of the object that
+     * represents the build input ZIP file to use.</p> </dd> </dl> <p>If
+     * <code>sourceVersion</code> is specified at the project level, then this
+     * <code>sourceVersion</code> (at the build level) takes precedence. </p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
-     * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
+     * Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
      */
     inline bool SourceVersionHasBeenSet() const { return m_sourceVersionHasBeenSet; }
 
     /**
      * <p>The version of the build input to be built, for this build only. If not
      * specified, the latest version is used. If specified, the contents depends on the
-     * source provider:</p> <dl> <dt>AWS CodeCommit</dt> <dd> <p>The commit ID, branch,
-     * or Git tag to use.</p> </dd> <dt>GitHub</dt> <dd> <p>The commit ID, pull request
+     * source provider:</p> <dl> <dt>CodeCommit</dt> <dd> <p>The commit ID, branch, or
+     * Git tag to use.</p> </dd> <dt>GitHub</dt> <dd> <p>The commit ID, pull request
      * ID, branch name, or tag name that corresponds to the version of the source code
      * you want to build. If a pull request ID is specified, it must use the format
      * <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch
@@ -247,21 +247,21 @@ namespace Model
      * <p>The commit ID, branch name, or tag name that corresponds to the version of
      * the source code you want to build. If a branch name is specified, the branch's
      * HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
-     * used.</p> </dd> <dt>Amazon Simple Storage Service (Amazon S3)</dt> <dd> <p>The
-     * version ID of the object that represents the build input ZIP file to use.</p>
-     * </dd> </dl> <p>If <code>sourceVersion</code> is specified at the project level,
-     * then this <code>sourceVersion</code> (at the build level) takes precedence. </p>
-     * <p>For more information, see <a
+     * used.</p> </dd> <dt>Amazon S3</dt> <dd> <p>The version ID of the object that
+     * represents the build input ZIP file to use.</p> </dd> </dl> <p>If
+     * <code>sourceVersion</code> is specified at the project level, then this
+     * <code>sourceVersion</code> (at the build level) takes precedence. </p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
-     * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
+     * Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
      */
     inline void SetSourceVersion(const Aws::String& value) { m_sourceVersionHasBeenSet = true; m_sourceVersion = value; }
 
     /**
      * <p>The version of the build input to be built, for this build only. If not
      * specified, the latest version is used. If specified, the contents depends on the
-     * source provider:</p> <dl> <dt>AWS CodeCommit</dt> <dd> <p>The commit ID, branch,
-     * or Git tag to use.</p> </dd> <dt>GitHub</dt> <dd> <p>The commit ID, pull request
+     * source provider:</p> <dl> <dt>CodeCommit</dt> <dd> <p>The commit ID, branch, or
+     * Git tag to use.</p> </dd> <dt>GitHub</dt> <dd> <p>The commit ID, pull request
      * ID, branch name, or tag name that corresponds to the version of the source code
      * you want to build. If a pull request ID is specified, it must use the format
      * <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch
@@ -270,21 +270,21 @@ namespace Model
      * <p>The commit ID, branch name, or tag name that corresponds to the version of
      * the source code you want to build. If a branch name is specified, the branch's
      * HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
-     * used.</p> </dd> <dt>Amazon Simple Storage Service (Amazon S3)</dt> <dd> <p>The
-     * version ID of the object that represents the build input ZIP file to use.</p>
-     * </dd> </dl> <p>If <code>sourceVersion</code> is specified at the project level,
-     * then this <code>sourceVersion</code> (at the build level) takes precedence. </p>
-     * <p>For more information, see <a
+     * used.</p> </dd> <dt>Amazon S3</dt> <dd> <p>The version ID of the object that
+     * represents the build input ZIP file to use.</p> </dd> </dl> <p>If
+     * <code>sourceVersion</code> is specified at the project level, then this
+     * <code>sourceVersion</code> (at the build level) takes precedence. </p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
-     * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
+     * Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
      */
     inline void SetSourceVersion(Aws::String&& value) { m_sourceVersionHasBeenSet = true; m_sourceVersion = std::move(value); }
 
     /**
      * <p>The version of the build input to be built, for this build only. If not
      * specified, the latest version is used. If specified, the contents depends on the
-     * source provider:</p> <dl> <dt>AWS CodeCommit</dt> <dd> <p>The commit ID, branch,
-     * or Git tag to use.</p> </dd> <dt>GitHub</dt> <dd> <p>The commit ID, pull request
+     * source provider:</p> <dl> <dt>CodeCommit</dt> <dd> <p>The commit ID, branch, or
+     * Git tag to use.</p> </dd> <dt>GitHub</dt> <dd> <p>The commit ID, pull request
      * ID, branch name, or tag name that corresponds to the version of the source code
      * you want to build. If a pull request ID is specified, it must use the format
      * <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch
@@ -293,21 +293,21 @@ namespace Model
      * <p>The commit ID, branch name, or tag name that corresponds to the version of
      * the source code you want to build. If a branch name is specified, the branch's
      * HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
-     * used.</p> </dd> <dt>Amazon Simple Storage Service (Amazon S3)</dt> <dd> <p>The
-     * version ID of the object that represents the build input ZIP file to use.</p>
-     * </dd> </dl> <p>If <code>sourceVersion</code> is specified at the project level,
-     * then this <code>sourceVersion</code> (at the build level) takes precedence. </p>
-     * <p>For more information, see <a
+     * used.</p> </dd> <dt>Amazon S3</dt> <dd> <p>The version ID of the object that
+     * represents the build input ZIP file to use.</p> </dd> </dl> <p>If
+     * <code>sourceVersion</code> is specified at the project level, then this
+     * <code>sourceVersion</code> (at the build level) takes precedence. </p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
-     * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
+     * Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
      */
     inline void SetSourceVersion(const char* value) { m_sourceVersionHasBeenSet = true; m_sourceVersion.assign(value); }
 
     /**
      * <p>The version of the build input to be built, for this build only. If not
      * specified, the latest version is used. If specified, the contents depends on the
-     * source provider:</p> <dl> <dt>AWS CodeCommit</dt> <dd> <p>The commit ID, branch,
-     * or Git tag to use.</p> </dd> <dt>GitHub</dt> <dd> <p>The commit ID, pull request
+     * source provider:</p> <dl> <dt>CodeCommit</dt> <dd> <p>The commit ID, branch, or
+     * Git tag to use.</p> </dd> <dt>GitHub</dt> <dd> <p>The commit ID, pull request
      * ID, branch name, or tag name that corresponds to the version of the source code
      * you want to build. If a pull request ID is specified, it must use the format
      * <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch
@@ -316,21 +316,21 @@ namespace Model
      * <p>The commit ID, branch name, or tag name that corresponds to the version of
      * the source code you want to build. If a branch name is specified, the branch's
      * HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
-     * used.</p> </dd> <dt>Amazon Simple Storage Service (Amazon S3)</dt> <dd> <p>The
-     * version ID of the object that represents the build input ZIP file to use.</p>
-     * </dd> </dl> <p>If <code>sourceVersion</code> is specified at the project level,
-     * then this <code>sourceVersion</code> (at the build level) takes precedence. </p>
-     * <p>For more information, see <a
+     * used.</p> </dd> <dt>Amazon S3</dt> <dd> <p>The version ID of the object that
+     * represents the build input ZIP file to use.</p> </dd> </dl> <p>If
+     * <code>sourceVersion</code> is specified at the project level, then this
+     * <code>sourceVersion</code> (at the build level) takes precedence. </p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
-     * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
+     * Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
      */
     inline StartBuildRequest& WithSourceVersion(const Aws::String& value) { SetSourceVersion(value); return *this;}
 
     /**
      * <p>The version of the build input to be built, for this build only. If not
      * specified, the latest version is used. If specified, the contents depends on the
-     * source provider:</p> <dl> <dt>AWS CodeCommit</dt> <dd> <p>The commit ID, branch,
-     * or Git tag to use.</p> </dd> <dt>GitHub</dt> <dd> <p>The commit ID, pull request
+     * source provider:</p> <dl> <dt>CodeCommit</dt> <dd> <p>The commit ID, branch, or
+     * Git tag to use.</p> </dd> <dt>GitHub</dt> <dd> <p>The commit ID, pull request
      * ID, branch name, or tag name that corresponds to the version of the source code
      * you want to build. If a pull request ID is specified, it must use the format
      * <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch
@@ -339,21 +339,21 @@ namespace Model
      * <p>The commit ID, branch name, or tag name that corresponds to the version of
      * the source code you want to build. If a branch name is specified, the branch's
      * HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
-     * used.</p> </dd> <dt>Amazon Simple Storage Service (Amazon S3)</dt> <dd> <p>The
-     * version ID of the object that represents the build input ZIP file to use.</p>
-     * </dd> </dl> <p>If <code>sourceVersion</code> is specified at the project level,
-     * then this <code>sourceVersion</code> (at the build level) takes precedence. </p>
-     * <p>For more information, see <a
+     * used.</p> </dd> <dt>Amazon S3</dt> <dd> <p>The version ID of the object that
+     * represents the build input ZIP file to use.</p> </dd> </dl> <p>If
+     * <code>sourceVersion</code> is specified at the project level, then this
+     * <code>sourceVersion</code> (at the build level) takes precedence. </p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
-     * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
+     * Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
      */
     inline StartBuildRequest& WithSourceVersion(Aws::String&& value) { SetSourceVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version of the build input to be built, for this build only. If not
      * specified, the latest version is used. If specified, the contents depends on the
-     * source provider:</p> <dl> <dt>AWS CodeCommit</dt> <dd> <p>The commit ID, branch,
-     * or Git tag to use.</p> </dd> <dt>GitHub</dt> <dd> <p>The commit ID, pull request
+     * source provider:</p> <dl> <dt>CodeCommit</dt> <dd> <p>The commit ID, branch, or
+     * Git tag to use.</p> </dd> <dt>GitHub</dt> <dd> <p>The commit ID, pull request
      * ID, branch name, or tag name that corresponds to the version of the source code
      * you want to build. If a pull request ID is specified, it must use the format
      * <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch
@@ -362,13 +362,13 @@ namespace Model
      * <p>The commit ID, branch name, or tag name that corresponds to the version of
      * the source code you want to build. If a branch name is specified, the branch's
      * HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
-     * used.</p> </dd> <dt>Amazon Simple Storage Service (Amazon S3)</dt> <dd> <p>The
-     * version ID of the object that represents the build input ZIP file to use.</p>
-     * </dd> </dl> <p>If <code>sourceVersion</code> is specified at the project level,
-     * then this <code>sourceVersion</code> (at the build level) takes precedence. </p>
-     * <p>For more information, see <a
+     * used.</p> </dd> <dt>Amazon S3</dt> <dd> <p>The version ID of the object that
+     * represents the build input ZIP file to use.</p> </dd> </dl> <p>If
+     * <code>sourceVersion</code> is specified at the project level, then this
+     * <code>sourceVersion</code> (at the build level) takes precedence. </p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
-     * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
+     * Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
      */
     inline StartBuildRequest& WithSourceVersion(const char* value) { SetSourceVersion(value); return *this;}
 
@@ -659,37 +659,37 @@ namespace Model
 
 
     /**
-     * <p> Information about the Git submodules configuration for this build of an AWS
+     * <p> Information about the Git submodules configuration for this build of an
      * CodeBuild build project. </p>
      */
     inline const GitSubmodulesConfig& GetGitSubmodulesConfigOverride() const{ return m_gitSubmodulesConfigOverride; }
 
     /**
-     * <p> Information about the Git submodules configuration for this build of an AWS
+     * <p> Information about the Git submodules configuration for this build of an
      * CodeBuild build project. </p>
      */
     inline bool GitSubmodulesConfigOverrideHasBeenSet() const { return m_gitSubmodulesConfigOverrideHasBeenSet; }
 
     /**
-     * <p> Information about the Git submodules configuration for this build of an AWS
+     * <p> Information about the Git submodules configuration for this build of an
      * CodeBuild build project. </p>
      */
     inline void SetGitSubmodulesConfigOverride(const GitSubmodulesConfig& value) { m_gitSubmodulesConfigOverrideHasBeenSet = true; m_gitSubmodulesConfigOverride = value; }
 
     /**
-     * <p> Information about the Git submodules configuration for this build of an AWS
+     * <p> Information about the Git submodules configuration for this build of an
      * CodeBuild build project. </p>
      */
     inline void SetGitSubmodulesConfigOverride(GitSubmodulesConfig&& value) { m_gitSubmodulesConfigOverrideHasBeenSet = true; m_gitSubmodulesConfigOverride = std::move(value); }
 
     /**
-     * <p> Information about the Git submodules configuration for this build of an AWS
+     * <p> Information about the Git submodules configuration for this build of an
      * CodeBuild build project. </p>
      */
     inline StartBuildRequest& WithGitSubmodulesConfigOverride(const GitSubmodulesConfig& value) { SetGitSubmodulesConfigOverride(value); return *this;}
 
     /**
-     * <p> Information about the Git submodules configuration for this build of an AWS
+     * <p> Information about the Git submodules configuration for this build of an
      * CodeBuild build project. </p>
      */
     inline StartBuildRequest& WithGitSubmodulesConfigOverride(GitSubmodulesConfig&& value) { SetGitSubmodulesConfigOverride(std::move(value)); return *this;}
@@ -701,10 +701,11 @@ namespace Model
      * be either an inline buildspec definition, the path to an alternate buildspec
      * file relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code>
      * environment variable, or the path to an S3 bucket. The bucket must be in the
-     * same AWS Region as the build project. Specify the buildspec file using its ARN
-     * (for example, <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If
-     * this value is not provided or is set to an empty string, the source code must
-     * contain a buildspec file in its root directory. For more information, see <a
+     * same Amazon Web Services Region as the build project. Specify the buildspec file
+     * using its ARN (for example,
+     * <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is
+     * not provided or is set to an empty string, the source code must contain a
+     * buildspec file in its root directory. For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec
      * File Name and Storage Location</a>. </p>
      */
@@ -716,10 +717,11 @@ namespace Model
      * be either an inline buildspec definition, the path to an alternate buildspec
      * file relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code>
      * environment variable, or the path to an S3 bucket. The bucket must be in the
-     * same AWS Region as the build project. Specify the buildspec file using its ARN
-     * (for example, <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If
-     * this value is not provided or is set to an empty string, the source code must
-     * contain a buildspec file in its root directory. For more information, see <a
+     * same Amazon Web Services Region as the build project. Specify the buildspec file
+     * using its ARN (for example,
+     * <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is
+     * not provided or is set to an empty string, the source code must contain a
+     * buildspec file in its root directory. For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec
      * File Name and Storage Location</a>. </p>
      */
@@ -731,10 +733,11 @@ namespace Model
      * be either an inline buildspec definition, the path to an alternate buildspec
      * file relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code>
      * environment variable, or the path to an S3 bucket. The bucket must be in the
-     * same AWS Region as the build project. Specify the buildspec file using its ARN
-     * (for example, <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If
-     * this value is not provided or is set to an empty string, the source code must
-     * contain a buildspec file in its root directory. For more information, see <a
+     * same Amazon Web Services Region as the build project. Specify the buildspec file
+     * using its ARN (for example,
+     * <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is
+     * not provided or is set to an empty string, the source code must contain a
+     * buildspec file in its root directory. For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec
      * File Name and Storage Location</a>. </p>
      */
@@ -746,10 +749,11 @@ namespace Model
      * be either an inline buildspec definition, the path to an alternate buildspec
      * file relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code>
      * environment variable, or the path to an S3 bucket. The bucket must be in the
-     * same AWS Region as the build project. Specify the buildspec file using its ARN
-     * (for example, <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If
-     * this value is not provided or is set to an empty string, the source code must
-     * contain a buildspec file in its root directory. For more information, see <a
+     * same Amazon Web Services Region as the build project. Specify the buildspec file
+     * using its ARN (for example,
+     * <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is
+     * not provided or is set to an empty string, the source code must contain a
+     * buildspec file in its root directory. For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec
      * File Name and Storage Location</a>. </p>
      */
@@ -761,10 +765,11 @@ namespace Model
      * be either an inline buildspec definition, the path to an alternate buildspec
      * file relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code>
      * environment variable, or the path to an S3 bucket. The bucket must be in the
-     * same AWS Region as the build project. Specify the buildspec file using its ARN
-     * (for example, <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If
-     * this value is not provided or is set to an empty string, the source code must
-     * contain a buildspec file in its root directory. For more information, see <a
+     * same Amazon Web Services Region as the build project. Specify the buildspec file
+     * using its ARN (for example,
+     * <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is
+     * not provided or is set to an empty string, the source code must contain a
+     * buildspec file in its root directory. For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec
      * File Name and Storage Location</a>. </p>
      */
@@ -776,10 +781,11 @@ namespace Model
      * be either an inline buildspec definition, the path to an alternate buildspec
      * file relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code>
      * environment variable, or the path to an S3 bucket. The bucket must be in the
-     * same AWS Region as the build project. Specify the buildspec file using its ARN
-     * (for example, <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If
-     * this value is not provided or is set to an empty string, the source code must
-     * contain a buildspec file in its root directory. For more information, see <a
+     * same Amazon Web Services Region as the build project. Specify the buildspec file
+     * using its ARN (for example,
+     * <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is
+     * not provided or is set to an empty string, the source code must contain a
+     * buildspec file in its root directory. For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec
      * File Name and Storage Location</a>. </p>
      */
@@ -791,10 +797,11 @@ namespace Model
      * be either an inline buildspec definition, the path to an alternate buildspec
      * file relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code>
      * environment variable, or the path to an S3 bucket. The bucket must be in the
-     * same AWS Region as the build project. Specify the buildspec file using its ARN
-     * (for example, <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If
-     * this value is not provided or is set to an empty string, the source code must
-     * contain a buildspec file in its root directory. For more information, see <a
+     * same Amazon Web Services Region as the build project. Specify the buildspec file
+     * using its ARN (for example,
+     * <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is
+     * not provided or is set to an empty string, the source code must contain a
+     * buildspec file in its root directory. For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec
      * File Name and Storage Location</a>. </p>
      */
@@ -806,10 +813,11 @@ namespace Model
      * be either an inline buildspec definition, the path to an alternate buildspec
      * file relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code>
      * environment variable, or the path to an S3 bucket. The bucket must be in the
-     * same AWS Region as the build project. Specify the buildspec file using its ARN
-     * (for example, <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If
-     * this value is not provided or is set to an empty string, the source code must
-     * contain a buildspec file in its root directory. For more information, see <a
+     * same Amazon Web Services Region as the build project. Specify the buildspec file
+     * using its ARN (for example,
+     * <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is
+     * not provided or is set to an empty string, the source code must contain a
+     * buildspec file in its root directory. For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec
      * File Name and Storage Location</a>. </p>
      */
@@ -852,36 +860,60 @@ namespace Model
     /**
      * <p> Set to true to report to your source provider the status of a build's start
      * and completion. If you use this option with a source provider other than GitHub,
-     * GitHub Enterprise, or Bitbucket, an invalidInputException is thrown. </p> 
-     * <p> The status of a build triggered by a webhook is always reported to your
-     * source provider. </p> 
+     * GitHub Enterprise, or Bitbucket, an <code>invalidInputException</code> is
+     * thrown. </p> <p>To be able to report the build status to the source provider,
+     * the user associated with the source provider must have write access to the repo.
+     * If the user does not have write access, the build status cannot be updated. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source
+     * provider access</a> in the <i>CodeBuild User Guide</i>.</p>  <p> The
+     * status of a build triggered by a webhook is always reported to your source
+     * provider. </p> 
      */
     inline bool GetReportBuildStatusOverride() const{ return m_reportBuildStatusOverride; }
 
     /**
      * <p> Set to true to report to your source provider the status of a build's start
      * and completion. If you use this option with a source provider other than GitHub,
-     * GitHub Enterprise, or Bitbucket, an invalidInputException is thrown. </p> 
-     * <p> The status of a build triggered by a webhook is always reported to your
-     * source provider. </p> 
+     * GitHub Enterprise, or Bitbucket, an <code>invalidInputException</code> is
+     * thrown. </p> <p>To be able to report the build status to the source provider,
+     * the user associated with the source provider must have write access to the repo.
+     * If the user does not have write access, the build status cannot be updated. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source
+     * provider access</a> in the <i>CodeBuild User Guide</i>.</p>  <p> The
+     * status of a build triggered by a webhook is always reported to your source
+     * provider. </p> 
      */
     inline bool ReportBuildStatusOverrideHasBeenSet() const { return m_reportBuildStatusOverrideHasBeenSet; }
 
     /**
      * <p> Set to true to report to your source provider the status of a build's start
      * and completion. If you use this option with a source provider other than GitHub,
-     * GitHub Enterprise, or Bitbucket, an invalidInputException is thrown. </p> 
-     * <p> The status of a build triggered by a webhook is always reported to your
-     * source provider. </p> 
+     * GitHub Enterprise, or Bitbucket, an <code>invalidInputException</code> is
+     * thrown. </p> <p>To be able to report the build status to the source provider,
+     * the user associated with the source provider must have write access to the repo.
+     * If the user does not have write access, the build status cannot be updated. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source
+     * provider access</a> in the <i>CodeBuild User Guide</i>.</p>  <p> The
+     * status of a build triggered by a webhook is always reported to your source
+     * provider. </p> 
      */
     inline void SetReportBuildStatusOverride(bool value) { m_reportBuildStatusOverrideHasBeenSet = true; m_reportBuildStatusOverride = value; }
 
     /**
      * <p> Set to true to report to your source provider the status of a build's start
      * and completion. If you use this option with a source provider other than GitHub,
-     * GitHub Enterprise, or Bitbucket, an invalidInputException is thrown. </p> 
-     * <p> The status of a build triggered by a webhook is always reported to your
-     * source provider. </p> 
+     * GitHub Enterprise, or Bitbucket, an <code>invalidInputException</code> is
+     * thrown. </p> <p>To be able to report the build status to the source provider,
+     * the user associated with the source provider must have write access to the repo.
+     * If the user does not have write access, the build status cannot be updated. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source
+     * provider access</a> in the <i>CodeBuild User Guide</i>.</p>  <p> The
+     * status of a build triggered by a webhook is always reported to your source
+     * provider. </p> 
      */
     inline StartBuildRequest& WithReportBuildStatusOverride(bool value) { SetReportBuildStatusOverride(value); return *this;}
 
@@ -1269,10 +1301,10 @@ namespace Model
 
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) that
-     * overrides the one specified in the build project. The CMK key encrypts the build
-     * output artifacts.</p>  <p> You can use a cross-account KMS key to encrypt
-     * the build output artifacts if your service role has permission to that key. </p>
+     * <p>The Key Management Service customer master key (CMK) that overrides the one
+     * specified in the build project. The CMK key encrypts the build output
+     * artifacts.</p>  <p> You can use a cross-account KMS key to encrypt the
+     * build output artifacts if your service role has permission to that key. </p>
      *  <p>You can specify either the Amazon Resource Name (ARN) of the CMK or,
      * if available, the CMK's alias (using the format
      * <code>alias/&lt;alias-name&gt;</code>).</p>
@@ -1280,10 +1312,10 @@ namespace Model
     inline const Aws::String& GetEncryptionKeyOverride() const{ return m_encryptionKeyOverride; }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) that
-     * overrides the one specified in the build project. The CMK key encrypts the build
-     * output artifacts.</p>  <p> You can use a cross-account KMS key to encrypt
-     * the build output artifacts if your service role has permission to that key. </p>
+     * <p>The Key Management Service customer master key (CMK) that overrides the one
+     * specified in the build project. The CMK key encrypts the build output
+     * artifacts.</p>  <p> You can use a cross-account KMS key to encrypt the
+     * build output artifacts if your service role has permission to that key. </p>
      *  <p>You can specify either the Amazon Resource Name (ARN) of the CMK or,
      * if available, the CMK's alias (using the format
      * <code>alias/&lt;alias-name&gt;</code>).</p>
@@ -1291,10 +1323,10 @@ namespace Model
     inline bool EncryptionKeyOverrideHasBeenSet() const { return m_encryptionKeyOverrideHasBeenSet; }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) that
-     * overrides the one specified in the build project. The CMK key encrypts the build
-     * output artifacts.</p>  <p> You can use a cross-account KMS key to encrypt
-     * the build output artifacts if your service role has permission to that key. </p>
+     * <p>The Key Management Service customer master key (CMK) that overrides the one
+     * specified in the build project. The CMK key encrypts the build output
+     * artifacts.</p>  <p> You can use a cross-account KMS key to encrypt the
+     * build output artifacts if your service role has permission to that key. </p>
      *  <p>You can specify either the Amazon Resource Name (ARN) of the CMK or,
      * if available, the CMK's alias (using the format
      * <code>alias/&lt;alias-name&gt;</code>).</p>
@@ -1302,10 +1334,10 @@ namespace Model
     inline void SetEncryptionKeyOverride(const Aws::String& value) { m_encryptionKeyOverrideHasBeenSet = true; m_encryptionKeyOverride = value; }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) that
-     * overrides the one specified in the build project. The CMK key encrypts the build
-     * output artifacts.</p>  <p> You can use a cross-account KMS key to encrypt
-     * the build output artifacts if your service role has permission to that key. </p>
+     * <p>The Key Management Service customer master key (CMK) that overrides the one
+     * specified in the build project. The CMK key encrypts the build output
+     * artifacts.</p>  <p> You can use a cross-account KMS key to encrypt the
+     * build output artifacts if your service role has permission to that key. </p>
      *  <p>You can specify either the Amazon Resource Name (ARN) of the CMK or,
      * if available, the CMK's alias (using the format
      * <code>alias/&lt;alias-name&gt;</code>).</p>
@@ -1313,10 +1345,10 @@ namespace Model
     inline void SetEncryptionKeyOverride(Aws::String&& value) { m_encryptionKeyOverrideHasBeenSet = true; m_encryptionKeyOverride = std::move(value); }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) that
-     * overrides the one specified in the build project. The CMK key encrypts the build
-     * output artifacts.</p>  <p> You can use a cross-account KMS key to encrypt
-     * the build output artifacts if your service role has permission to that key. </p>
+     * <p>The Key Management Service customer master key (CMK) that overrides the one
+     * specified in the build project. The CMK key encrypts the build output
+     * artifacts.</p>  <p> You can use a cross-account KMS key to encrypt the
+     * build output artifacts if your service role has permission to that key. </p>
      *  <p>You can specify either the Amazon Resource Name (ARN) of the CMK or,
      * if available, the CMK's alias (using the format
      * <code>alias/&lt;alias-name&gt;</code>).</p>
@@ -1324,10 +1356,10 @@ namespace Model
     inline void SetEncryptionKeyOverride(const char* value) { m_encryptionKeyOverrideHasBeenSet = true; m_encryptionKeyOverride.assign(value); }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) that
-     * overrides the one specified in the build project. The CMK key encrypts the build
-     * output artifacts.</p>  <p> You can use a cross-account KMS key to encrypt
-     * the build output artifacts if your service role has permission to that key. </p>
+     * <p>The Key Management Service customer master key (CMK) that overrides the one
+     * specified in the build project. The CMK key encrypts the build output
+     * artifacts.</p>  <p> You can use a cross-account KMS key to encrypt the
+     * build output artifacts if your service role has permission to that key. </p>
      *  <p>You can specify either the Amazon Resource Name (ARN) of the CMK or,
      * if available, the CMK's alias (using the format
      * <code>alias/&lt;alias-name&gt;</code>).</p>
@@ -1335,10 +1367,10 @@ namespace Model
     inline StartBuildRequest& WithEncryptionKeyOverride(const Aws::String& value) { SetEncryptionKeyOverride(value); return *this;}
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) that
-     * overrides the one specified in the build project. The CMK key encrypts the build
-     * output artifacts.</p>  <p> You can use a cross-account KMS key to encrypt
-     * the build output artifacts if your service role has permission to that key. </p>
+     * <p>The Key Management Service customer master key (CMK) that overrides the one
+     * specified in the build project. The CMK key encrypts the build output
+     * artifacts.</p>  <p> You can use a cross-account KMS key to encrypt the
+     * build output artifacts if your service role has permission to that key. </p>
      *  <p>You can specify either the Amazon Resource Name (ARN) of the CMK or,
      * if available, the CMK's alias (using the format
      * <code>alias/&lt;alias-name&gt;</code>).</p>
@@ -1346,10 +1378,10 @@ namespace Model
     inline StartBuildRequest& WithEncryptionKeyOverride(Aws::String&& value) { SetEncryptionKeyOverride(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) that
-     * overrides the one specified in the build project. The CMK key encrypts the build
-     * output artifacts.</p>  <p> You can use a cross-account KMS key to encrypt
-     * the build output artifacts if your service role has permission to that key. </p>
+     * <p>The Key Management Service customer master key (CMK) that overrides the one
+     * specified in the build project. The CMK key encrypts the build output
+     * artifacts.</p>  <p> You can use a cross-account KMS key to encrypt the
+     * build output artifacts if your service role has permission to that key. </p>
      *  <p>You can specify either the Amazon Resource Name (ARN) of the CMK or,
      * if available, the CMK's alias (using the format
      * <code>alias/&lt;alias-name&gt;</code>).</p>
@@ -1361,7 +1393,7 @@ namespace Model
      * <p>A unique, case sensitive identifier you provide to ensure the idempotency of
      * the StartBuild request. The token is included in the StartBuild request and is
      * valid for 5 minutes. If you repeat the StartBuild request with the same token,
-     * but change a parameter, AWS CodeBuild returns a parameter mismatch error. </p>
+     * but change a parameter, CodeBuild returns a parameter mismatch error. </p>
      */
     inline const Aws::String& GetIdempotencyToken() const{ return m_idempotencyToken; }
 
@@ -1369,7 +1401,7 @@ namespace Model
      * <p>A unique, case sensitive identifier you provide to ensure the idempotency of
      * the StartBuild request. The token is included in the StartBuild request and is
      * valid for 5 minutes. If you repeat the StartBuild request with the same token,
-     * but change a parameter, AWS CodeBuild returns a parameter mismatch error. </p>
+     * but change a parameter, CodeBuild returns a parameter mismatch error. </p>
      */
     inline bool IdempotencyTokenHasBeenSet() const { return m_idempotencyTokenHasBeenSet; }
 
@@ -1377,7 +1409,7 @@ namespace Model
      * <p>A unique, case sensitive identifier you provide to ensure the idempotency of
      * the StartBuild request. The token is included in the StartBuild request and is
      * valid for 5 minutes. If you repeat the StartBuild request with the same token,
-     * but change a parameter, AWS CodeBuild returns a parameter mismatch error. </p>
+     * but change a parameter, CodeBuild returns a parameter mismatch error. </p>
      */
     inline void SetIdempotencyToken(const Aws::String& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = value; }
 
@@ -1385,7 +1417,7 @@ namespace Model
      * <p>A unique, case sensitive identifier you provide to ensure the idempotency of
      * the StartBuild request. The token is included in the StartBuild request and is
      * valid for 5 minutes. If you repeat the StartBuild request with the same token,
-     * but change a parameter, AWS CodeBuild returns a parameter mismatch error. </p>
+     * but change a parameter, CodeBuild returns a parameter mismatch error. </p>
      */
     inline void SetIdempotencyToken(Aws::String&& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = std::move(value); }
 
@@ -1393,7 +1425,7 @@ namespace Model
      * <p>A unique, case sensitive identifier you provide to ensure the idempotency of
      * the StartBuild request. The token is included in the StartBuild request and is
      * valid for 5 minutes. If you repeat the StartBuild request with the same token,
-     * but change a parameter, AWS CodeBuild returns a parameter mismatch error. </p>
+     * but change a parameter, CodeBuild returns a parameter mismatch error. </p>
      */
     inline void SetIdempotencyToken(const char* value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken.assign(value); }
 
@@ -1401,7 +1433,7 @@ namespace Model
      * <p>A unique, case sensitive identifier you provide to ensure the idempotency of
      * the StartBuild request. The token is included in the StartBuild request and is
      * valid for 5 minutes. If you repeat the StartBuild request with the same token,
-     * but change a parameter, AWS CodeBuild returns a parameter mismatch error. </p>
+     * but change a parameter, CodeBuild returns a parameter mismatch error. </p>
      */
     inline StartBuildRequest& WithIdempotencyToken(const Aws::String& value) { SetIdempotencyToken(value); return *this;}
 
@@ -1409,7 +1441,7 @@ namespace Model
      * <p>A unique, case sensitive identifier you provide to ensure the idempotency of
      * the StartBuild request. The token is included in the StartBuild request and is
      * valid for 5 minutes. If you repeat the StartBuild request with the same token,
-     * but change a parameter, AWS CodeBuild returns a parameter mismatch error. </p>
+     * but change a parameter, CodeBuild returns a parameter mismatch error. </p>
      */
     inline StartBuildRequest& WithIdempotencyToken(Aws::String&& value) { SetIdempotencyToken(std::move(value)); return *this;}
 
@@ -1417,7 +1449,7 @@ namespace Model
      * <p>A unique, case sensitive identifier you provide to ensure the idempotency of
      * the StartBuild request. The token is included in the StartBuild request and is
      * valid for 5 minutes. If you repeat the StartBuild request with the same token,
-     * but change a parameter, AWS CodeBuild returns a parameter mismatch error. </p>
+     * but change a parameter, CodeBuild returns a parameter mismatch error. </p>
      */
     inline StartBuildRequest& WithIdempotencyToken(const char* value) { SetIdempotencyToken(value); return *this;}
 
@@ -1491,80 +1523,74 @@ namespace Model
 
 
     /**
-     * <p>The type of credentials AWS CodeBuild uses to pull images in your build.
-     * There are two valid values: </p> <dl> <dt>CODEBUILD</dt> <dd> <p>Specifies that
-     * AWS CodeBuild uses its own credentials. This requires that you modify your ECR
-     * repository policy to trust AWS CodeBuild's service principal.</p> </dd>
-     * <dt>SERVICE_ROLE</dt> <dd> <p>Specifies that AWS CodeBuild uses your build
-     * project's service role. </p> </dd> </dl> <p>When using a cross-account or
-     * private registry image, you must use <code>SERVICE_ROLE</code> credentials. When
-     * using an AWS CodeBuild curated image, you must use <code>CODEBUILD</code>
-     * credentials. </p>
+     * <p>The type of credentials CodeBuild uses to pull images in your build. There
+     * are two valid values: </p> <dl> <dt>CODEBUILD</dt> <dd> <p>Specifies that
+     * CodeBuild uses its own credentials. This requires that you modify your ECR
+     * repository policy to trust CodeBuild's service principal.</p> </dd>
+     * <dt>SERVICE_ROLE</dt> <dd> <p>Specifies that CodeBuild uses your build project's
+     * service role. </p> </dd> </dl> <p>When using a cross-account or private registry
+     * image, you must use <code>SERVICE_ROLE</code> credentials. When using an
+     * CodeBuild curated image, you must use <code>CODEBUILD</code> credentials. </p>
      */
     inline const ImagePullCredentialsType& GetImagePullCredentialsTypeOverride() const{ return m_imagePullCredentialsTypeOverride; }
 
     /**
-     * <p>The type of credentials AWS CodeBuild uses to pull images in your build.
-     * There are two valid values: </p> <dl> <dt>CODEBUILD</dt> <dd> <p>Specifies that
-     * AWS CodeBuild uses its own credentials. This requires that you modify your ECR
-     * repository policy to trust AWS CodeBuild's service principal.</p> </dd>
-     * <dt>SERVICE_ROLE</dt> <dd> <p>Specifies that AWS CodeBuild uses your build
-     * project's service role. </p> </dd> </dl> <p>When using a cross-account or
-     * private registry image, you must use <code>SERVICE_ROLE</code> credentials. When
-     * using an AWS CodeBuild curated image, you must use <code>CODEBUILD</code>
-     * credentials. </p>
+     * <p>The type of credentials CodeBuild uses to pull images in your build. There
+     * are two valid values: </p> <dl> <dt>CODEBUILD</dt> <dd> <p>Specifies that
+     * CodeBuild uses its own credentials. This requires that you modify your ECR
+     * repository policy to trust CodeBuild's service principal.</p> </dd>
+     * <dt>SERVICE_ROLE</dt> <dd> <p>Specifies that CodeBuild uses your build project's
+     * service role. </p> </dd> </dl> <p>When using a cross-account or private registry
+     * image, you must use <code>SERVICE_ROLE</code> credentials. When using an
+     * CodeBuild curated image, you must use <code>CODEBUILD</code> credentials. </p>
      */
     inline bool ImagePullCredentialsTypeOverrideHasBeenSet() const { return m_imagePullCredentialsTypeOverrideHasBeenSet; }
 
     /**
-     * <p>The type of credentials AWS CodeBuild uses to pull images in your build.
-     * There are two valid values: </p> <dl> <dt>CODEBUILD</dt> <dd> <p>Specifies that
-     * AWS CodeBuild uses its own credentials. This requires that you modify your ECR
-     * repository policy to trust AWS CodeBuild's service principal.</p> </dd>
-     * <dt>SERVICE_ROLE</dt> <dd> <p>Specifies that AWS CodeBuild uses your build
-     * project's service role. </p> </dd> </dl> <p>When using a cross-account or
-     * private registry image, you must use <code>SERVICE_ROLE</code> credentials. When
-     * using an AWS CodeBuild curated image, you must use <code>CODEBUILD</code>
-     * credentials. </p>
+     * <p>The type of credentials CodeBuild uses to pull images in your build. There
+     * are two valid values: </p> <dl> <dt>CODEBUILD</dt> <dd> <p>Specifies that
+     * CodeBuild uses its own credentials. This requires that you modify your ECR
+     * repository policy to trust CodeBuild's service principal.</p> </dd>
+     * <dt>SERVICE_ROLE</dt> <dd> <p>Specifies that CodeBuild uses your build project's
+     * service role. </p> </dd> </dl> <p>When using a cross-account or private registry
+     * image, you must use <code>SERVICE_ROLE</code> credentials. When using an
+     * CodeBuild curated image, you must use <code>CODEBUILD</code> credentials. </p>
      */
     inline void SetImagePullCredentialsTypeOverride(const ImagePullCredentialsType& value) { m_imagePullCredentialsTypeOverrideHasBeenSet = true; m_imagePullCredentialsTypeOverride = value; }
 
     /**
-     * <p>The type of credentials AWS CodeBuild uses to pull images in your build.
-     * There are two valid values: </p> <dl> <dt>CODEBUILD</dt> <dd> <p>Specifies that
-     * AWS CodeBuild uses its own credentials. This requires that you modify your ECR
-     * repository policy to trust AWS CodeBuild's service principal.</p> </dd>
-     * <dt>SERVICE_ROLE</dt> <dd> <p>Specifies that AWS CodeBuild uses your build
-     * project's service role. </p> </dd> </dl> <p>When using a cross-account or
-     * private registry image, you must use <code>SERVICE_ROLE</code> credentials. When
-     * using an AWS CodeBuild curated image, you must use <code>CODEBUILD</code>
-     * credentials. </p>
+     * <p>The type of credentials CodeBuild uses to pull images in your build. There
+     * are two valid values: </p> <dl> <dt>CODEBUILD</dt> <dd> <p>Specifies that
+     * CodeBuild uses its own credentials. This requires that you modify your ECR
+     * repository policy to trust CodeBuild's service principal.</p> </dd>
+     * <dt>SERVICE_ROLE</dt> <dd> <p>Specifies that CodeBuild uses your build project's
+     * service role. </p> </dd> </dl> <p>When using a cross-account or private registry
+     * image, you must use <code>SERVICE_ROLE</code> credentials. When using an
+     * CodeBuild curated image, you must use <code>CODEBUILD</code> credentials. </p>
      */
     inline void SetImagePullCredentialsTypeOverride(ImagePullCredentialsType&& value) { m_imagePullCredentialsTypeOverrideHasBeenSet = true; m_imagePullCredentialsTypeOverride = std::move(value); }
 
     /**
-     * <p>The type of credentials AWS CodeBuild uses to pull images in your build.
-     * There are two valid values: </p> <dl> <dt>CODEBUILD</dt> <dd> <p>Specifies that
-     * AWS CodeBuild uses its own credentials. This requires that you modify your ECR
-     * repository policy to trust AWS CodeBuild's service principal.</p> </dd>
-     * <dt>SERVICE_ROLE</dt> <dd> <p>Specifies that AWS CodeBuild uses your build
-     * project's service role. </p> </dd> </dl> <p>When using a cross-account or
-     * private registry image, you must use <code>SERVICE_ROLE</code> credentials. When
-     * using an AWS CodeBuild curated image, you must use <code>CODEBUILD</code>
-     * credentials. </p>
+     * <p>The type of credentials CodeBuild uses to pull images in your build. There
+     * are two valid values: </p> <dl> <dt>CODEBUILD</dt> <dd> <p>Specifies that
+     * CodeBuild uses its own credentials. This requires that you modify your ECR
+     * repository policy to trust CodeBuild's service principal.</p> </dd>
+     * <dt>SERVICE_ROLE</dt> <dd> <p>Specifies that CodeBuild uses your build project's
+     * service role. </p> </dd> </dl> <p>When using a cross-account or private registry
+     * image, you must use <code>SERVICE_ROLE</code> credentials. When using an
+     * CodeBuild curated image, you must use <code>CODEBUILD</code> credentials. </p>
      */
     inline StartBuildRequest& WithImagePullCredentialsTypeOverride(const ImagePullCredentialsType& value) { SetImagePullCredentialsTypeOverride(value); return *this;}
 
     /**
-     * <p>The type of credentials AWS CodeBuild uses to pull images in your build.
-     * There are two valid values: </p> <dl> <dt>CODEBUILD</dt> <dd> <p>Specifies that
-     * AWS CodeBuild uses its own credentials. This requires that you modify your ECR
-     * repository policy to trust AWS CodeBuild's service principal.</p> </dd>
-     * <dt>SERVICE_ROLE</dt> <dd> <p>Specifies that AWS CodeBuild uses your build
-     * project's service role. </p> </dd> </dl> <p>When using a cross-account or
-     * private registry image, you must use <code>SERVICE_ROLE</code> credentials. When
-     * using an AWS CodeBuild curated image, you must use <code>CODEBUILD</code>
-     * credentials. </p>
+     * <p>The type of credentials CodeBuild uses to pull images in your build. There
+     * are two valid values: </p> <dl> <dt>CODEBUILD</dt> <dd> <p>Specifies that
+     * CodeBuild uses its own credentials. This requires that you modify your ECR
+     * repository policy to trust CodeBuild's service principal.</p> </dd>
+     * <dt>SERVICE_ROLE</dt> <dd> <p>Specifies that CodeBuild uses your build project's
+     * service role. </p> </dd> </dl> <p>When using a cross-account or private registry
+     * image, you must use <code>SERVICE_ROLE</code> credentials. When using an
+     * CodeBuild curated image, you must use <code>CODEBUILD</code> credentials. </p>
      */
     inline StartBuildRequest& WithImagePullCredentialsTypeOverride(ImagePullCredentialsType&& value) { SetImagePullCredentialsTypeOverride(std::move(value)); return *this;}
 

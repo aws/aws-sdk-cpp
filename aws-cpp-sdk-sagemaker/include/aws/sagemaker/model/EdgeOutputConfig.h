@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/model/EdgePresetDeploymentType.h>
 #include <utility>
 
 namespace Aws
@@ -79,68 +80,282 @@ namespace Model
 
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt data on the storage volume after compilation job. If you don't provide a
-     * KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your
-     * role's account.</p>
+     * <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key
+     * that Amazon SageMaker uses to encrypt data on the storage volume after
+     * compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the
+     * default KMS key for Amazon S3 for your role's account.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt data on the storage volume after compilation job. If you don't provide a
-     * KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your
-     * role's account.</p>
+     * <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key
+     * that Amazon SageMaker uses to encrypt data on the storage volume after
+     * compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the
+     * default KMS key for Amazon S3 for your role's account.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt data on the storage volume after compilation job. If you don't provide a
-     * KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your
-     * role's account.</p>
+     * <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key
+     * that Amazon SageMaker uses to encrypt data on the storage volume after
+     * compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the
+     * default KMS key for Amazon S3 for your role's account.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt data on the storage volume after compilation job. If you don't provide a
-     * KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your
-     * role's account.</p>
+     * <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key
+     * that Amazon SageMaker uses to encrypt data on the storage volume after
+     * compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the
+     * default KMS key for Amazon S3 for your role's account.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt data on the storage volume after compilation job. If you don't provide a
-     * KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your
-     * role's account.</p>
+     * <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key
+     * that Amazon SageMaker uses to encrypt data on the storage volume after
+     * compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the
+     * default KMS key for Amazon S3 for your role's account.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt data on the storage volume after compilation job. If you don't provide a
-     * KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your
-     * role's account.</p>
+     * <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key
+     * that Amazon SageMaker uses to encrypt data on the storage volume after
+     * compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the
+     * default KMS key for Amazon S3 for your role's account.</p>
      */
     inline EdgeOutputConfig& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt data on the storage volume after compilation job. If you don't provide a
-     * KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your
-     * role's account.</p>
+     * <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key
+     * that Amazon SageMaker uses to encrypt data on the storage volume after
+     * compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the
+     * default KMS key for Amazon S3 for your role's account.</p>
      */
     inline EdgeOutputConfig& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt data on the storage volume after compilation job. If you don't provide a
-     * KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your
-     * role's account.</p>
+     * <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key
+     * that Amazon SageMaker uses to encrypt data on the storage volume after
+     * compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the
+     * default KMS key for Amazon S3 for your role's account.</p>
      */
     inline EdgeOutputConfig& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+
+
+    /**
+     * <p>The deployment type SageMaker Edge Manager will create. Currently only
+     * supports Amazon Web Services IoT Greengrass Version 2 components.</p>
+     */
+    inline const EdgePresetDeploymentType& GetPresetDeploymentType() const{ return m_presetDeploymentType; }
+
+    /**
+     * <p>The deployment type SageMaker Edge Manager will create. Currently only
+     * supports Amazon Web Services IoT Greengrass Version 2 components.</p>
+     */
+    inline bool PresetDeploymentTypeHasBeenSet() const { return m_presetDeploymentTypeHasBeenSet; }
+
+    /**
+     * <p>The deployment type SageMaker Edge Manager will create. Currently only
+     * supports Amazon Web Services IoT Greengrass Version 2 components.</p>
+     */
+    inline void SetPresetDeploymentType(const EdgePresetDeploymentType& value) { m_presetDeploymentTypeHasBeenSet = true; m_presetDeploymentType = value; }
+
+    /**
+     * <p>The deployment type SageMaker Edge Manager will create. Currently only
+     * supports Amazon Web Services IoT Greengrass Version 2 components.</p>
+     */
+    inline void SetPresetDeploymentType(EdgePresetDeploymentType&& value) { m_presetDeploymentTypeHasBeenSet = true; m_presetDeploymentType = std::move(value); }
+
+    /**
+     * <p>The deployment type SageMaker Edge Manager will create. Currently only
+     * supports Amazon Web Services IoT Greengrass Version 2 components.</p>
+     */
+    inline EdgeOutputConfig& WithPresetDeploymentType(const EdgePresetDeploymentType& value) { SetPresetDeploymentType(value); return *this;}
+
+    /**
+     * <p>The deployment type SageMaker Edge Manager will create. Currently only
+     * supports Amazon Web Services IoT Greengrass Version 2 components.</p>
+     */
+    inline EdgeOutputConfig& WithPresetDeploymentType(EdgePresetDeploymentType&& value) { SetPresetDeploymentType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The configuration used to create deployment artifacts. Specify configuration
+     * options with a JSON string. The available configuration options for each type
+     * are:</p> <ul> <li> <p> <code>ComponentName</code> (optional) - Name of the
+     * GreenGrass V2 component. If not specified, the default name generated consists
+     * of "SagemakerEdgeManager" and the name of your SageMaker Edge Manager packaging
+     * job.</p> </li> <li> <p> <code>ComponentDescription</code> (optional) -
+     * Description of the component.</p> </li> <li> <p> <code>ComponentVersion</code>
+     * (optional) - The version of the component.</p>  <p>Amazon Web Services IoT
+     * Greengrass uses semantic versions for components. Semantic versions follow a<i>
+     * major.minor.patch</i> number system. For example, version 1.0.0 represents the
+     * first major release for a component. For more information, see the <a
+     * href="https://semver.org/">semantic version specification</a>.</p>  </li>
+     * <li> <p> <code>PlatformOS</code> (optional) - The name of the operating system
+     * for the platform. Supported platforms include Windows and Linux.</p> </li> <li>
+     * <p> <code>PlatformArchitecture</code> (optional) - The processor architecture
+     * for the platform. </p> <p>Supported architectures Windows include:
+     * Windows32_x86, Windows64_x64.</p> <p>Supported architectures for Linux include:
+     * Linux x86_64, Linux ARMV8.</p> </li> </ul>
+     */
+    inline const Aws::String& GetPresetDeploymentConfig() const{ return m_presetDeploymentConfig; }
+
+    /**
+     * <p>The configuration used to create deployment artifacts. Specify configuration
+     * options with a JSON string. The available configuration options for each type
+     * are:</p> <ul> <li> <p> <code>ComponentName</code> (optional) - Name of the
+     * GreenGrass V2 component. If not specified, the default name generated consists
+     * of "SagemakerEdgeManager" and the name of your SageMaker Edge Manager packaging
+     * job.</p> </li> <li> <p> <code>ComponentDescription</code> (optional) -
+     * Description of the component.</p> </li> <li> <p> <code>ComponentVersion</code>
+     * (optional) - The version of the component.</p>  <p>Amazon Web Services IoT
+     * Greengrass uses semantic versions for components. Semantic versions follow a<i>
+     * major.minor.patch</i> number system. For example, version 1.0.0 represents the
+     * first major release for a component. For more information, see the <a
+     * href="https://semver.org/">semantic version specification</a>.</p>  </li>
+     * <li> <p> <code>PlatformOS</code> (optional) - The name of the operating system
+     * for the platform. Supported platforms include Windows and Linux.</p> </li> <li>
+     * <p> <code>PlatformArchitecture</code> (optional) - The processor architecture
+     * for the platform. </p> <p>Supported architectures Windows include:
+     * Windows32_x86, Windows64_x64.</p> <p>Supported architectures for Linux include:
+     * Linux x86_64, Linux ARMV8.</p> </li> </ul>
+     */
+    inline bool PresetDeploymentConfigHasBeenSet() const { return m_presetDeploymentConfigHasBeenSet; }
+
+    /**
+     * <p>The configuration used to create deployment artifacts. Specify configuration
+     * options with a JSON string. The available configuration options for each type
+     * are:</p> <ul> <li> <p> <code>ComponentName</code> (optional) - Name of the
+     * GreenGrass V2 component. If not specified, the default name generated consists
+     * of "SagemakerEdgeManager" and the name of your SageMaker Edge Manager packaging
+     * job.</p> </li> <li> <p> <code>ComponentDescription</code> (optional) -
+     * Description of the component.</p> </li> <li> <p> <code>ComponentVersion</code>
+     * (optional) - The version of the component.</p>  <p>Amazon Web Services IoT
+     * Greengrass uses semantic versions for components. Semantic versions follow a<i>
+     * major.minor.patch</i> number system. For example, version 1.0.0 represents the
+     * first major release for a component. For more information, see the <a
+     * href="https://semver.org/">semantic version specification</a>.</p>  </li>
+     * <li> <p> <code>PlatformOS</code> (optional) - The name of the operating system
+     * for the platform. Supported platforms include Windows and Linux.</p> </li> <li>
+     * <p> <code>PlatformArchitecture</code> (optional) - The processor architecture
+     * for the platform. </p> <p>Supported architectures Windows include:
+     * Windows32_x86, Windows64_x64.</p> <p>Supported architectures for Linux include:
+     * Linux x86_64, Linux ARMV8.</p> </li> </ul>
+     */
+    inline void SetPresetDeploymentConfig(const Aws::String& value) { m_presetDeploymentConfigHasBeenSet = true; m_presetDeploymentConfig = value; }
+
+    /**
+     * <p>The configuration used to create deployment artifacts. Specify configuration
+     * options with a JSON string. The available configuration options for each type
+     * are:</p> <ul> <li> <p> <code>ComponentName</code> (optional) - Name of the
+     * GreenGrass V2 component. If not specified, the default name generated consists
+     * of "SagemakerEdgeManager" and the name of your SageMaker Edge Manager packaging
+     * job.</p> </li> <li> <p> <code>ComponentDescription</code> (optional) -
+     * Description of the component.</p> </li> <li> <p> <code>ComponentVersion</code>
+     * (optional) - The version of the component.</p>  <p>Amazon Web Services IoT
+     * Greengrass uses semantic versions for components. Semantic versions follow a<i>
+     * major.minor.patch</i> number system. For example, version 1.0.0 represents the
+     * first major release for a component. For more information, see the <a
+     * href="https://semver.org/">semantic version specification</a>.</p>  </li>
+     * <li> <p> <code>PlatformOS</code> (optional) - The name of the operating system
+     * for the platform. Supported platforms include Windows and Linux.</p> </li> <li>
+     * <p> <code>PlatformArchitecture</code> (optional) - The processor architecture
+     * for the platform. </p> <p>Supported architectures Windows include:
+     * Windows32_x86, Windows64_x64.</p> <p>Supported architectures for Linux include:
+     * Linux x86_64, Linux ARMV8.</p> </li> </ul>
+     */
+    inline void SetPresetDeploymentConfig(Aws::String&& value) { m_presetDeploymentConfigHasBeenSet = true; m_presetDeploymentConfig = std::move(value); }
+
+    /**
+     * <p>The configuration used to create deployment artifacts. Specify configuration
+     * options with a JSON string. The available configuration options for each type
+     * are:</p> <ul> <li> <p> <code>ComponentName</code> (optional) - Name of the
+     * GreenGrass V2 component. If not specified, the default name generated consists
+     * of "SagemakerEdgeManager" and the name of your SageMaker Edge Manager packaging
+     * job.</p> </li> <li> <p> <code>ComponentDescription</code> (optional) -
+     * Description of the component.</p> </li> <li> <p> <code>ComponentVersion</code>
+     * (optional) - The version of the component.</p>  <p>Amazon Web Services IoT
+     * Greengrass uses semantic versions for components. Semantic versions follow a<i>
+     * major.minor.patch</i> number system. For example, version 1.0.0 represents the
+     * first major release for a component. For more information, see the <a
+     * href="https://semver.org/">semantic version specification</a>.</p>  </li>
+     * <li> <p> <code>PlatformOS</code> (optional) - The name of the operating system
+     * for the platform. Supported platforms include Windows and Linux.</p> </li> <li>
+     * <p> <code>PlatformArchitecture</code> (optional) - The processor architecture
+     * for the platform. </p> <p>Supported architectures Windows include:
+     * Windows32_x86, Windows64_x64.</p> <p>Supported architectures for Linux include:
+     * Linux x86_64, Linux ARMV8.</p> </li> </ul>
+     */
+    inline void SetPresetDeploymentConfig(const char* value) { m_presetDeploymentConfigHasBeenSet = true; m_presetDeploymentConfig.assign(value); }
+
+    /**
+     * <p>The configuration used to create deployment artifacts. Specify configuration
+     * options with a JSON string. The available configuration options for each type
+     * are:</p> <ul> <li> <p> <code>ComponentName</code> (optional) - Name of the
+     * GreenGrass V2 component. If not specified, the default name generated consists
+     * of "SagemakerEdgeManager" and the name of your SageMaker Edge Manager packaging
+     * job.</p> </li> <li> <p> <code>ComponentDescription</code> (optional) -
+     * Description of the component.</p> </li> <li> <p> <code>ComponentVersion</code>
+     * (optional) - The version of the component.</p>  <p>Amazon Web Services IoT
+     * Greengrass uses semantic versions for components. Semantic versions follow a<i>
+     * major.minor.patch</i> number system. For example, version 1.0.0 represents the
+     * first major release for a component. For more information, see the <a
+     * href="https://semver.org/">semantic version specification</a>.</p>  </li>
+     * <li> <p> <code>PlatformOS</code> (optional) - The name of the operating system
+     * for the platform. Supported platforms include Windows and Linux.</p> </li> <li>
+     * <p> <code>PlatformArchitecture</code> (optional) - The processor architecture
+     * for the platform. </p> <p>Supported architectures Windows include:
+     * Windows32_x86, Windows64_x64.</p> <p>Supported architectures for Linux include:
+     * Linux x86_64, Linux ARMV8.</p> </li> </ul>
+     */
+    inline EdgeOutputConfig& WithPresetDeploymentConfig(const Aws::String& value) { SetPresetDeploymentConfig(value); return *this;}
+
+    /**
+     * <p>The configuration used to create deployment artifacts. Specify configuration
+     * options with a JSON string. The available configuration options for each type
+     * are:</p> <ul> <li> <p> <code>ComponentName</code> (optional) - Name of the
+     * GreenGrass V2 component. If not specified, the default name generated consists
+     * of "SagemakerEdgeManager" and the name of your SageMaker Edge Manager packaging
+     * job.</p> </li> <li> <p> <code>ComponentDescription</code> (optional) -
+     * Description of the component.</p> </li> <li> <p> <code>ComponentVersion</code>
+     * (optional) - The version of the component.</p>  <p>Amazon Web Services IoT
+     * Greengrass uses semantic versions for components. Semantic versions follow a<i>
+     * major.minor.patch</i> number system. For example, version 1.0.0 represents the
+     * first major release for a component. For more information, see the <a
+     * href="https://semver.org/">semantic version specification</a>.</p>  </li>
+     * <li> <p> <code>PlatformOS</code> (optional) - The name of the operating system
+     * for the platform. Supported platforms include Windows and Linux.</p> </li> <li>
+     * <p> <code>PlatformArchitecture</code> (optional) - The processor architecture
+     * for the platform. </p> <p>Supported architectures Windows include:
+     * Windows32_x86, Windows64_x64.</p> <p>Supported architectures for Linux include:
+     * Linux x86_64, Linux ARMV8.</p> </li> </ul>
+     */
+    inline EdgeOutputConfig& WithPresetDeploymentConfig(Aws::String&& value) { SetPresetDeploymentConfig(std::move(value)); return *this;}
+
+    /**
+     * <p>The configuration used to create deployment artifacts. Specify configuration
+     * options with a JSON string. The available configuration options for each type
+     * are:</p> <ul> <li> <p> <code>ComponentName</code> (optional) - Name of the
+     * GreenGrass V2 component. If not specified, the default name generated consists
+     * of "SagemakerEdgeManager" and the name of your SageMaker Edge Manager packaging
+     * job.</p> </li> <li> <p> <code>ComponentDescription</code> (optional) -
+     * Description of the component.</p> </li> <li> <p> <code>ComponentVersion</code>
+     * (optional) - The version of the component.</p>  <p>Amazon Web Services IoT
+     * Greengrass uses semantic versions for components. Semantic versions follow a<i>
+     * major.minor.patch</i> number system. For example, version 1.0.0 represents the
+     * first major release for a component. For more information, see the <a
+     * href="https://semver.org/">semantic version specification</a>.</p>  </li>
+     * <li> <p> <code>PlatformOS</code> (optional) - The name of the operating system
+     * for the platform. Supported platforms include Windows and Linux.</p> </li> <li>
+     * <p> <code>PlatformArchitecture</code> (optional) - The processor architecture
+     * for the platform. </p> <p>Supported architectures Windows include:
+     * Windows32_x86, Windows64_x64.</p> <p>Supported architectures for Linux include:
+     * Linux x86_64, Linux ARMV8.</p> </li> </ul>
+     */
+    inline EdgeOutputConfig& WithPresetDeploymentConfig(const char* value) { SetPresetDeploymentConfig(value); return *this;}
 
   private:
 
@@ -149,6 +364,12 @@ namespace Model
 
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
+
+    EdgePresetDeploymentType m_presetDeploymentType;
+    bool m_presetDeploymentTypeHasBeenSet;
+
+    Aws::String m_presetDeploymentConfig;
+    bool m_presetDeploymentConfigHasBeenSet;
   };
 
 } // namespace Model

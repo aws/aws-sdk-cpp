@@ -162,58 +162,50 @@ namespace Model
 
 
     /**
-     * <p>An AWS Identity and Access Management (IAM) role that gives Amazon Kendra
-     * permissions to access thesaurus file specified in <code>SourceS3Path</code>.
-     * </p>
+     * <p>An IAM role that gives Amazon Kendra permissions to access thesaurus file
+     * specified in <code>SourceS3Path</code>. </p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>An AWS Identity and Access Management (IAM) role that gives Amazon Kendra
-     * permissions to access thesaurus file specified in <code>SourceS3Path</code>.
-     * </p>
+     * <p>An IAM role that gives Amazon Kendra permissions to access thesaurus file
+     * specified in <code>SourceS3Path</code>. </p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>An AWS Identity and Access Management (IAM) role that gives Amazon Kendra
-     * permissions to access thesaurus file specified in <code>SourceS3Path</code>.
-     * </p>
+     * <p>An IAM role that gives Amazon Kendra permissions to access thesaurus file
+     * specified in <code>SourceS3Path</code>. </p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>An AWS Identity and Access Management (IAM) role that gives Amazon Kendra
-     * permissions to access thesaurus file specified in <code>SourceS3Path</code>.
-     * </p>
+     * <p>An IAM role that gives Amazon Kendra permissions to access thesaurus file
+     * specified in <code>SourceS3Path</code>. </p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>An AWS Identity and Access Management (IAM) role that gives Amazon Kendra
-     * permissions to access thesaurus file specified in <code>SourceS3Path</code>.
-     * </p>
+     * <p>An IAM role that gives Amazon Kendra permissions to access thesaurus file
+     * specified in <code>SourceS3Path</code>. </p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>An AWS Identity and Access Management (IAM) role that gives Amazon Kendra
-     * permissions to access thesaurus file specified in <code>SourceS3Path</code>.
-     * </p>
+     * <p>An IAM role that gives Amazon Kendra permissions to access thesaurus file
+     * specified in <code>SourceS3Path</code>. </p>
      */
     inline CreateThesaurusRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>An AWS Identity and Access Management (IAM) role that gives Amazon Kendra
-     * permissions to access thesaurus file specified in <code>SourceS3Path</code>.
-     * </p>
+     * <p>An IAM role that gives Amazon Kendra permissions to access thesaurus file
+     * specified in <code>SourceS3Path</code>. </p>
      */
     inline CreateThesaurusRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>An AWS Identity and Access Management (IAM) role that gives Amazon Kendra
-     * permissions to access thesaurus file specified in <code>SourceS3Path</code>.
-     * </p>
+     * <p>An IAM role that gives Amazon Kendra permissions to access thesaurus file
+     * specified in <code>SourceS3Path</code>. </p>
      */
     inline CreateThesaurusRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
@@ -300,57 +292,57 @@ namespace Model
 
     /**
      * <p>A token that you provide to identify the request to create a thesaurus.
-     * Multiple calls to the <code>CreateThesaurus</code> operation with the same
-     * client token will create only one index. </p>
+     * Multiple calls to the <code>CreateThesaurus</code> API with the same client
+     * token will create only one thesaurus. </p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
      * <p>A token that you provide to identify the request to create a thesaurus.
-     * Multiple calls to the <code>CreateThesaurus</code> operation with the same
-     * client token will create only one index. </p>
+     * Multiple calls to the <code>CreateThesaurus</code> API with the same client
+     * token will create only one thesaurus. </p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
      * <p>A token that you provide to identify the request to create a thesaurus.
-     * Multiple calls to the <code>CreateThesaurus</code> operation with the same
-     * client token will create only one index. </p>
+     * Multiple calls to the <code>CreateThesaurus</code> API with the same client
+     * token will create only one thesaurus. </p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
      * <p>A token that you provide to identify the request to create a thesaurus.
-     * Multiple calls to the <code>CreateThesaurus</code> operation with the same
-     * client token will create only one index. </p>
+     * Multiple calls to the <code>CreateThesaurus</code> API with the same client
+     * token will create only one thesaurus. </p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
      * <p>A token that you provide to identify the request to create a thesaurus.
-     * Multiple calls to the <code>CreateThesaurus</code> operation with the same
-     * client token will create only one index. </p>
+     * Multiple calls to the <code>CreateThesaurus</code> API with the same client
+     * token will create only one thesaurus. </p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
      * <p>A token that you provide to identify the request to create a thesaurus.
-     * Multiple calls to the <code>CreateThesaurus</code> operation with the same
-     * client token will create only one index. </p>
+     * Multiple calls to the <code>CreateThesaurus</code> API with the same client
+     * token will create only one thesaurus. </p>
      */
     inline CreateThesaurusRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
      * <p>A token that you provide to identify the request to create a thesaurus.
-     * Multiple calls to the <code>CreateThesaurus</code> operation with the same
-     * client token will create only one index. </p>
+     * Multiple calls to the <code>CreateThesaurus</code> API with the same client
+     * token will create only one thesaurus. </p>
      */
     inline CreateThesaurusRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
      * <p>A token that you provide to identify the request to create a thesaurus.
-     * Multiple calls to the <code>CreateThesaurus</code> operation with the same
-     * client token will create only one index. </p>
+     * Multiple calls to the <code>CreateThesaurus</code> API with the same client
+     * token will create only one thesaurus. </p>
      */
     inline CreateThesaurusRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 

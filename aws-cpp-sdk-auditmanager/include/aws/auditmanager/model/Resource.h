@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p> A system asset that is evaluated in an AWS Audit Manager assessment.
+   * <p> A system asset that's evaluated in an Audit Manager assessment.
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/Resource">AWS
    * API Reference</a></p>
@@ -39,83 +39,83 @@ namespace Model
 
 
     /**
-     * <p> The Amazon Resource Name (ARN) for the specified resource. </p>
+     * <p> The Amazon Resource Name (ARN) for the resource. </p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) for the specified resource. </p>
+     * <p> The Amazon Resource Name (ARN) for the resource. </p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) for the specified resource. </p>
+     * <p> The Amazon Resource Name (ARN) for the resource. </p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) for the specified resource. </p>
+     * <p> The Amazon Resource Name (ARN) for the resource. </p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p> The Amazon Resource Name (ARN) for the specified resource. </p>
+     * <p> The Amazon Resource Name (ARN) for the resource. </p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p> The Amazon Resource Name (ARN) for the specified resource. </p>
+     * <p> The Amazon Resource Name (ARN) for the resource. </p>
      */
     inline Resource& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p> The Amazon Resource Name (ARN) for the specified resource. </p>
+     * <p> The Amazon Resource Name (ARN) for the resource. </p>
      */
     inline Resource& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p> The Amazon Resource Name (ARN) for the specified resource. </p>
+     * <p> The Amazon Resource Name (ARN) for the resource. </p>
      */
     inline Resource& WithArn(const char* value) { SetArn(value); return *this;}
 
 
     /**
-     * <p> The value of the specified resource. </p>
+     * <p> The value of the resource. </p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
-     * <p> The value of the specified resource. </p>
+     * <p> The value of the resource. </p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
-     * <p> The value of the specified resource. </p>
+     * <p> The value of the resource. </p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p> The value of the specified resource. </p>
+     * <p> The value of the resource. </p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
-     * <p> The value of the specified resource. </p>
+     * <p> The value of the resource. </p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
-     * <p> The value of the specified resource. </p>
+     * <p> The value of the resource. </p>
      */
     inline Resource& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
-     * <p> The value of the specified resource. </p>
+     * <p> The value of the resource. </p>
      */
     inline Resource& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
-     * <p> The value of the specified resource. </p>
+     * <p> The value of the resource. </p>
      */
     inline Resource& WithValue(const char* value) { SetValue(value); return *this;}
 

@@ -16,7 +16,10 @@ CreateCostCategoryDefinitionRequest::CreateCostCategoryDefinitionRequest() :
     m_nameHasBeenSet(false),
     m_ruleVersion(CostCategoryRuleVersion::NOT_SET),
     m_ruleVersionHasBeenSet(false),
-    m_rulesHasBeenSet(false)
+    m_rulesHasBeenSet(false),
+    m_defaultValueHasBeenSet(false),
+    m_splitChargeRulesHasBeenSet(false),
+    m_resourceTagsHasBeenSet(false)
 {
 }
 
@@ -43,6 +46,34 @@ Aws::String CreateCostCategoryDefinitionRequest::SerializePayload() const
      rulesJsonList[rulesIndex].AsObject(m_rules[rulesIndex].Jsonize());
    }
    payload.WithArray("Rules", std::move(rulesJsonList));
+
+  }
+
+  if(m_defaultValueHasBeenSet)
+  {
+   payload.WithString("DefaultValue", m_defaultValue);
+
+  }
+
+  if(m_splitChargeRulesHasBeenSet)
+  {
+   Array<JsonValue> splitChargeRulesJsonList(m_splitChargeRules.size());
+   for(unsigned splitChargeRulesIndex = 0; splitChargeRulesIndex < splitChargeRulesJsonList.GetLength(); ++splitChargeRulesIndex)
+   {
+     splitChargeRulesJsonList[splitChargeRulesIndex].AsObject(m_splitChargeRules[splitChargeRulesIndex].Jsonize());
+   }
+   payload.WithArray("SplitChargeRules", std::move(splitChargeRulesJsonList));
+
+  }
+
+  if(m_resourceTagsHasBeenSet)
+  {
+   Array<JsonValue> resourceTagsJsonList(m_resourceTags.size());
+   for(unsigned resourceTagsIndex = 0; resourceTagsIndex < resourceTagsJsonList.GetLength(); ++resourceTagsIndex)
+   {
+     resourceTagsJsonList[resourceTagsIndex].AsObject(m_resourceTags[resourceTagsIndex].Jsonize());
+   }
+   payload.WithArray("ResourceTags", std::move(resourceTagsJsonList));
 
   }
 

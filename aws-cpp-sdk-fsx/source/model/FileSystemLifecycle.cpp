@@ -26,6 +26,7 @@ namespace Aws
         static const int DELETING_HASH = HashingUtils::HashString("DELETING");
         static const int MISCONFIGURED_HASH = HashingUtils::HashString("MISCONFIGURED");
         static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
+        static const int MISCONFIGURED_UNAVAILABLE_HASH = HashingUtils::HashString("MISCONFIGURED_UNAVAILABLE");
 
 
         FileSystemLifecycle GetFileSystemLifecycleForName(const Aws::String& name)
@@ -55,6 +56,10 @@ namespace Aws
           {
             return FileSystemLifecycle::UPDATING;
           }
+          else if (hashCode == MISCONFIGURED_UNAVAILABLE_HASH)
+          {
+            return FileSystemLifecycle::MISCONFIGURED_UNAVAILABLE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -81,6 +86,8 @@ namespace Aws
             return "MISCONFIGURED";
           case FileSystemLifecycle::UPDATING:
             return "UPDATING";
+          case FileSystemLifecycle::MISCONFIGURED_UNAVAILABLE:
+            return "MISCONFIGURED_UNAVAILABLE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -24,7 +24,9 @@ namespace Model
     REBOOTING,
     SNAPSHOTTING,
     DELETING,
-    FAILED
+    FAILED,
+    UPDATING,
+    PENDING_QUALIFICATION
   };
 
 namespace ImageBuilderStateMapper

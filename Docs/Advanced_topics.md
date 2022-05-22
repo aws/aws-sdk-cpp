@@ -6,17 +6,18 @@ __This section includes the following topics:__
 * [Error Handling](#Error-Handling)
 * [Provided Utilities](#provided-utilities)
 * [Controlling IOStreams used by the HttpClient and the AWSClient](#Controlling-IOStreams-used-by-the-HttpClient-and-the-AWSClient)
+* [Known Limitations](#Known-Limitations)
 
 
 
 ### Uninstalling:
 To uninstall these libraries:
 ```sh
-sudo make uninstall
+make uninstall
 ```
 You may define a custom uninstall target when you are using SDK as a sub-project, but make sure it comes before the default definition in `CMakeLists.txt`, and you can uninstall SDK related libraries by:
 ```sh
-sudo make uninstall-awssdk
+make uninstall-awssdk
 ```
 
 ### Overriding your Http Client
@@ -121,3 +122,9 @@ getObjectRequest.SetResponseStreamFactory([](){ return Aws::New<Aws::FStream>( A
 
 auto getObjectOutcome = s3Client->GetObject(getObjectRequest);
 ```
+
+### Known Limitations
+
+#### Aws::StringStream max size
+
+[`Aws::StringStream`](https://github.com/aws/aws-sdk-cpp/blob/main/aws-cpp-sdk-core/include/aws/core/utils/memory/stl/AWSStringStream.h) is an alias to [`std::basic_stringstream`](https://en.cppreference.com/w/cpp/io/basic_stringstream) which effectively stores an instance of std::basic_string and performs the input and output operations on it. That being known the max size limitation of a string stream is the maximum size for a string in that toolchain [`std::basic_string::max_size`](https://en.cppreference.com/w/cpp/string/basic_string/max_size).

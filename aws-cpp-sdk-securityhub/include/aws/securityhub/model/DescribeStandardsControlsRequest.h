@@ -41,56 +41,56 @@ namespace Model
     /**
      * <p>The ARN of a resource that represents your subscription to a supported
      * standard. To get the subscription ARNs of the standards you have enabled, use
-     * the <code> <a>GetEnabledStandards</a> </code> operation.</p>
+     * the <code>GetEnabledStandards</code> operation.</p>
      */
     inline const Aws::String& GetStandardsSubscriptionArn() const{ return m_standardsSubscriptionArn; }
 
     /**
      * <p>The ARN of a resource that represents your subscription to a supported
      * standard. To get the subscription ARNs of the standards you have enabled, use
-     * the <code> <a>GetEnabledStandards</a> </code> operation.</p>
+     * the <code>GetEnabledStandards</code> operation.</p>
      */
     inline bool StandardsSubscriptionArnHasBeenSet() const { return m_standardsSubscriptionArnHasBeenSet; }
 
     /**
      * <p>The ARN of a resource that represents your subscription to a supported
      * standard. To get the subscription ARNs of the standards you have enabled, use
-     * the <code> <a>GetEnabledStandards</a> </code> operation.</p>
+     * the <code>GetEnabledStandards</code> operation.</p>
      */
     inline void SetStandardsSubscriptionArn(const Aws::String& value) { m_standardsSubscriptionArnHasBeenSet = true; m_standardsSubscriptionArn = value; }
 
     /**
      * <p>The ARN of a resource that represents your subscription to a supported
      * standard. To get the subscription ARNs of the standards you have enabled, use
-     * the <code> <a>GetEnabledStandards</a> </code> operation.</p>
+     * the <code>GetEnabledStandards</code> operation.</p>
      */
     inline void SetStandardsSubscriptionArn(Aws::String&& value) { m_standardsSubscriptionArnHasBeenSet = true; m_standardsSubscriptionArn = std::move(value); }
 
     /**
      * <p>The ARN of a resource that represents your subscription to a supported
      * standard. To get the subscription ARNs of the standards you have enabled, use
-     * the <code> <a>GetEnabledStandards</a> </code> operation.</p>
+     * the <code>GetEnabledStandards</code> operation.</p>
      */
     inline void SetStandardsSubscriptionArn(const char* value) { m_standardsSubscriptionArnHasBeenSet = true; m_standardsSubscriptionArn.assign(value); }
 
     /**
      * <p>The ARN of a resource that represents your subscription to a supported
      * standard. To get the subscription ARNs of the standards you have enabled, use
-     * the <code> <a>GetEnabledStandards</a> </code> operation.</p>
+     * the <code>GetEnabledStandards</code> operation.</p>
      */
     inline DescribeStandardsControlsRequest& WithStandardsSubscriptionArn(const Aws::String& value) { SetStandardsSubscriptionArn(value); return *this;}
 
     /**
      * <p>The ARN of a resource that represents your subscription to a supported
      * standard. To get the subscription ARNs of the standards you have enabled, use
-     * the <code> <a>GetEnabledStandards</a> </code> operation.</p>
+     * the <code>GetEnabledStandards</code> operation.</p>
      */
     inline DescribeStandardsControlsRequest& WithStandardsSubscriptionArn(Aws::String&& value) { SetStandardsSubscriptionArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of a resource that represents your subscription to a supported
      * standard. To get the subscription ARNs of the standards you have enabled, use
-     * the <code> <a>GetEnabledStandards</a> </code> operation.</p>
+     * the <code>GetEnabledStandards</code> operation.</p>
      */
     inline DescribeStandardsControlsRequest& WithStandardsSubscriptionArn(const char* value) { SetStandardsSubscriptionArn(value); return *this;}
 

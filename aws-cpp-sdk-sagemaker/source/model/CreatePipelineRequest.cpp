@@ -16,11 +16,13 @@ CreatePipelineRequest::CreatePipelineRequest() :
     m_pipelineNameHasBeenSet(false),
     m_pipelineDisplayNameHasBeenSet(false),
     m_pipelineDefinitionHasBeenSet(false),
+    m_pipelineDefinitionS3LocationHasBeenSet(false),
     m_pipelineDescriptionHasBeenSet(false),
     m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_roleArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_parallelismConfigurationHasBeenSet(false)
 {
 }
 
@@ -43,6 +45,12 @@ Aws::String CreatePipelineRequest::SerializePayload() const
   if(m_pipelineDefinitionHasBeenSet)
   {
    payload.WithString("PipelineDefinition", m_pipelineDefinition);
+
+  }
+
+  if(m_pipelineDefinitionS3LocationHasBeenSet)
+  {
+   payload.WithObject("PipelineDefinitionS3Location", m_pipelineDefinitionS3Location.Jsonize());
 
   }
 
@@ -72,6 +80,12 @@ Aws::String CreatePipelineRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_parallelismConfigurationHasBeenSet)
+  {
+   payload.WithObject("ParallelismConfiguration", m_parallelismConfiguration.Jsonize());
 
   }
 

@@ -19,23 +19,45 @@ namespace Model
 {
 
 SearchForTextResult::SearchForTextResult() : 
-    m_placeHasBeenSet(false)
+    m_distance(0.0),
+    m_distanceHasBeenSet(false),
+    m_placeHasBeenSet(false),
+    m_relevance(0.0),
+    m_relevanceHasBeenSet(false)
 {
 }
 
 SearchForTextResult::SearchForTextResult(JsonView jsonValue) : 
-    m_placeHasBeenSet(false)
+    m_distance(0.0),
+    m_distanceHasBeenSet(false),
+    m_placeHasBeenSet(false),
+    m_relevance(0.0),
+    m_relevanceHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 SearchForTextResult& SearchForTextResult::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("Distance"))
+  {
+    m_distance = jsonValue.GetDouble("Distance");
+
+    m_distanceHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Place"))
   {
     m_place = jsonValue.GetObject("Place");
 
     m_placeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Relevance"))
+  {
+    m_relevance = jsonValue.GetDouble("Relevance");
+
+    m_relevanceHasBeenSet = true;
   }
 
   return *this;
@@ -45,9 +67,21 @@ JsonValue SearchForTextResult::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_distanceHasBeenSet)
+  {
+   payload.WithDouble("Distance", m_distance);
+
+  }
+
   if(m_placeHasBeenSet)
   {
    payload.WithObject("Place", m_place.Jsonize());
+
+  }
+
+  if(m_relevanceHasBeenSet)
+  {
+   payload.WithDouble("Relevance", m_relevance);
 
   }
 

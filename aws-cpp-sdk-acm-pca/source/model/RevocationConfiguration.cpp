@@ -19,12 +19,14 @@ namespace Model
 {
 
 RevocationConfiguration::RevocationConfiguration() : 
-    m_crlConfigurationHasBeenSet(false)
+    m_crlConfigurationHasBeenSet(false),
+    m_ocspConfigurationHasBeenSet(false)
 {
 }
 
 RevocationConfiguration::RevocationConfiguration(JsonView jsonValue) : 
-    m_crlConfigurationHasBeenSet(false)
+    m_crlConfigurationHasBeenSet(false),
+    m_ocspConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ RevocationConfiguration& RevocationConfiguration::operator =(JsonView jsonValue)
     m_crlConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("OcspConfiguration"))
+  {
+    m_ocspConfiguration = jsonValue.GetObject("OcspConfiguration");
+
+    m_ocspConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +57,12 @@ JsonValue RevocationConfiguration::Jsonize() const
   if(m_crlConfigurationHasBeenSet)
   {
    payload.WithObject("CrlConfiguration", m_crlConfiguration.Jsonize());
+
+  }
+
+  if(m_ocspConfigurationHasBeenSet)
+  {
+   payload.WithObject("OcspConfiguration", m_ocspConfiguration.Jsonize());
 
   }
 

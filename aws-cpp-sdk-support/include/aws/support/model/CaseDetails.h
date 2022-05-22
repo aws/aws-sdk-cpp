@@ -29,35 +29,37 @@ namespace Model
    * <p>A JSON-formatted object that contains the metadata for a support case. It is
    * contained in the response from a <a>DescribeCases</a> request.
    * <b>CaseDetails</b> contains the following fields:</p> <ul> <li> <p>
-   * <b>caseId.</b> The AWS Support case ID requested or returned in the call. The
-   * case ID is an alphanumeric string formatted as shown in this example:
+   * <b>caseId</b> - The support case ID requested or returned in the call. The case
+   * ID is an alphanumeric string formatted as shown in this example:
    * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>.</p> </li> <li> <p>
-   * <b>categoryCode.</b> The category of problem for the AWS Support case.
-   * Corresponds to the CategoryCode values returned by a call to
-   * <a>DescribeServices</a>.</p> </li> <li> <p> <b>displayId.</b> The identifier for
-   * the case on pages in the AWS Support Center.</p> </li> <li> <p> <b>language.</b>
-   * The ISO 639-1 code for the language in which AWS provides support. AWS Support
-   * currently supports English ("en") and Japanese ("ja"). Language parameters must
-   * be passed explicitly for operations that take them.</p> </li> <li> <p>
-   * <b>nextToken.</b> A resumption point for pagination.</p> </li> <li> <p>
-   * <b>recentCommunications.</b> One or more <a>Communication</a> objects. Fields of
-   * these objects are <code>attachments</code>, <code>body</code>,
+   * <b>categoryCode</b> - The category of problem for the support case. Corresponds
+   * to the <code>CategoryCode</code> values returned by a call to
+   * <a>DescribeServices</a>.</p> </li> <li> <p> <b>displayId</b> - The identifier
+   * for the case on pages in the Amazon Web Services Support Center.</p> </li> <li>
+   * <p> <b>language</b> - The ISO 639-1 code for the language in which Amazon Web
+   * Services provides support. Amazon Web Services Support currently supports
+   * English ("en") and Japanese ("ja"). Language parameters must be passed
+   * explicitly for operations that take them.</p> </li> <li> <p> <b>nextToken</b> -
+   * A resumption point for pagination.</p> </li> <li> <p>
+   * <b>recentCommunications</b> - One or more <a>Communication</a> objects. Fields
+   * of these objects are <code>attachments</code>, <code>body</code>,
    * <code>caseId</code>, <code>submittedBy</code>, and <code>timeCreated</code>.</p>
-   * </li> <li> <p> <b>serviceCode.</b> The identifier for the AWS service that
-   * corresponds to the service code defined in the call to
-   * <a>DescribeServices</a>.</p> </li> <li> <p> <b>severityCode.</b> The severity
+   * </li> <li> <p> <b>serviceCode</b> - The identifier for the Amazon Web Services
+   * service that corresponds to the service code defined in the call to
+   * <a>DescribeServices</a>.</p> </li> <li> <p> <b>severityCode</b> - The severity
    * code assigned to the case. Contains one of the values returned by the call to
    * <a>DescribeSeverityLevels</a>. The possible values are: <code>low</code>,
    * <code>normal</code>, <code>high</code>, <code>urgent</code>, and
-   * <code>critical</code>.</p> </li> <li> <p> <b>status.</b> The status of the case
-   * in the AWS Support Center. Valid values:</p> <ul> <li> <p> <code>opened</code>
-   * </p> </li> <li> <p> <code>pending-customer-action</code> </p> </li> <li> <p>
-   * <code>reopened</code> </p> </li> <li> <p> <code>resolved</code> </p> </li> <li>
-   * <p> <code>unassigned</code> </p> </li> <li> <p> <code>work-in-progress</code>
-   * </p> </li> </ul> </li> <li> <p> <b>subject.</b> The subject line of the
-   * case.</p> </li> <li> <p> <b>submittedBy.</b> The email address of the account
-   * that submitted the case.</p> </li> <li> <p> <b>timeCreated.</b> The time the
-   * case was created, in ISO-8601 format.</p> </li> </ul><p><h3>See Also:</h3>   <a
+   * <code>critical</code>.</p> </li> <li> <p> <b>status</b> - The status of the case
+   * in the Amazon Web Services Support Center. Valid values:</p> <ul> <li> <p>
+   * <code>opened</code> </p> </li> <li> <p> <code>pending-customer-action</code>
+   * </p> </li> <li> <p> <code>reopened</code> </p> </li> <li> <p>
+   * <code>resolved</code> </p> </li> <li> <p> <code>unassigned</code> </p> </li>
+   * <li> <p> <code>work-in-progress</code> </p> </li> </ul> </li> <li> <p>
+   * <b>subject</b> - The subject line of the case.</p> </li> <li> <p>
+   * <b>submittedBy</b> - The email address of the account that submitted the
+   * case.</p> </li> <li> <p> <b>timeCreated</b> - The time the case was created, in
+   * ISO-8601 format.</p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/CaseDetails">AWS
    * API Reference</a></p>
    */
@@ -71,56 +73,56 @@ namespace Model
 
 
     /**
-     * <p>The AWS Support case ID requested or returned in the call. The case ID is an
+     * <p>The support case ID requested or returned in the call. The case ID is an
      * alphanumeric string formatted as shown in this example:
      * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
     inline const Aws::String& GetCaseId() const{ return m_caseId; }
 
     /**
-     * <p>The AWS Support case ID requested or returned in the call. The case ID is an
+     * <p>The support case ID requested or returned in the call. The case ID is an
      * alphanumeric string formatted as shown in this example:
      * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
     inline bool CaseIdHasBeenSet() const { return m_caseIdHasBeenSet; }
 
     /**
-     * <p>The AWS Support case ID requested or returned in the call. The case ID is an
+     * <p>The support case ID requested or returned in the call. The case ID is an
      * alphanumeric string formatted as shown in this example:
      * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
     inline void SetCaseId(const Aws::String& value) { m_caseIdHasBeenSet = true; m_caseId = value; }
 
     /**
-     * <p>The AWS Support case ID requested or returned in the call. The case ID is an
+     * <p>The support case ID requested or returned in the call. The case ID is an
      * alphanumeric string formatted as shown in this example:
      * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
     inline void SetCaseId(Aws::String&& value) { m_caseIdHasBeenSet = true; m_caseId = std::move(value); }
 
     /**
-     * <p>The AWS Support case ID requested or returned in the call. The case ID is an
+     * <p>The support case ID requested or returned in the call. The case ID is an
      * alphanumeric string formatted as shown in this example:
      * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
     inline void SetCaseId(const char* value) { m_caseIdHasBeenSet = true; m_caseId.assign(value); }
 
     /**
-     * <p>The AWS Support case ID requested or returned in the call. The case ID is an
+     * <p>The support case ID requested or returned in the call. The case ID is an
      * alphanumeric string formatted as shown in this example:
      * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
     inline CaseDetails& WithCaseId(const Aws::String& value) { SetCaseId(value); return *this;}
 
     /**
-     * <p>The AWS Support case ID requested or returned in the call. The case ID is an
+     * <p>The support case ID requested or returned in the call. The case ID is an
      * alphanumeric string formatted as shown in this example:
      * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
     inline CaseDetails& WithCaseId(Aws::String&& value) { SetCaseId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Support case ID requested or returned in the call. The case ID is an
+     * <p>The support case ID requested or returned in the call. The case ID is an
      * alphanumeric string formatted as shown in this example:
      * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
@@ -128,91 +130,91 @@ namespace Model
 
 
     /**
-     * <p>The ID displayed for the case in the AWS Support Center. This is a numeric
-     * string.</p>
+     * <p>The ID displayed for the case in the Amazon Web Services Support Center. This
+     * is a numeric string.</p>
      */
     inline const Aws::String& GetDisplayId() const{ return m_displayId; }
 
     /**
-     * <p>The ID displayed for the case in the AWS Support Center. This is a numeric
-     * string.</p>
+     * <p>The ID displayed for the case in the Amazon Web Services Support Center. This
+     * is a numeric string.</p>
      */
     inline bool DisplayIdHasBeenSet() const { return m_displayIdHasBeenSet; }
 
     /**
-     * <p>The ID displayed for the case in the AWS Support Center. This is a numeric
-     * string.</p>
+     * <p>The ID displayed for the case in the Amazon Web Services Support Center. This
+     * is a numeric string.</p>
      */
     inline void SetDisplayId(const Aws::String& value) { m_displayIdHasBeenSet = true; m_displayId = value; }
 
     /**
-     * <p>The ID displayed for the case in the AWS Support Center. This is a numeric
-     * string.</p>
+     * <p>The ID displayed for the case in the Amazon Web Services Support Center. This
+     * is a numeric string.</p>
      */
     inline void SetDisplayId(Aws::String&& value) { m_displayIdHasBeenSet = true; m_displayId = std::move(value); }
 
     /**
-     * <p>The ID displayed for the case in the AWS Support Center. This is a numeric
-     * string.</p>
+     * <p>The ID displayed for the case in the Amazon Web Services Support Center. This
+     * is a numeric string.</p>
      */
     inline void SetDisplayId(const char* value) { m_displayIdHasBeenSet = true; m_displayId.assign(value); }
 
     /**
-     * <p>The ID displayed for the case in the AWS Support Center. This is a numeric
-     * string.</p>
+     * <p>The ID displayed for the case in the Amazon Web Services Support Center. This
+     * is a numeric string.</p>
      */
     inline CaseDetails& WithDisplayId(const Aws::String& value) { SetDisplayId(value); return *this;}
 
     /**
-     * <p>The ID displayed for the case in the AWS Support Center. This is a numeric
-     * string.</p>
+     * <p>The ID displayed for the case in the Amazon Web Services Support Center. This
+     * is a numeric string.</p>
      */
     inline CaseDetails& WithDisplayId(Aws::String&& value) { SetDisplayId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID displayed for the case in the AWS Support Center. This is a numeric
-     * string.</p>
+     * <p>The ID displayed for the case in the Amazon Web Services Support Center. This
+     * is a numeric string.</p>
      */
     inline CaseDetails& WithDisplayId(const char* value) { SetDisplayId(value); return *this;}
 
 
     /**
-     * <p>The subject line for the case in the AWS Support Center.</p>
+     * <p>The subject line for the case in the Amazon Web Services Support Center.</p>
      */
     inline const Aws::String& GetSubject() const{ return m_subject; }
 
     /**
-     * <p>The subject line for the case in the AWS Support Center.</p>
+     * <p>The subject line for the case in the Amazon Web Services Support Center.</p>
      */
     inline bool SubjectHasBeenSet() const { return m_subjectHasBeenSet; }
 
     /**
-     * <p>The subject line for the case in the AWS Support Center.</p>
+     * <p>The subject line for the case in the Amazon Web Services Support Center.</p>
      */
     inline void SetSubject(const Aws::String& value) { m_subjectHasBeenSet = true; m_subject = value; }
 
     /**
-     * <p>The subject line for the case in the AWS Support Center.</p>
+     * <p>The subject line for the case in the Amazon Web Services Support Center.</p>
      */
     inline void SetSubject(Aws::String&& value) { m_subjectHasBeenSet = true; m_subject = std::move(value); }
 
     /**
-     * <p>The subject line for the case in the AWS Support Center.</p>
+     * <p>The subject line for the case in the Amazon Web Services Support Center.</p>
      */
     inline void SetSubject(const char* value) { m_subjectHasBeenSet = true; m_subject.assign(value); }
 
     /**
-     * <p>The subject line for the case in the AWS Support Center.</p>
+     * <p>The subject line for the case in the Amazon Web Services Support Center.</p>
      */
     inline CaseDetails& WithSubject(const Aws::String& value) { SetSubject(value); return *this;}
 
     /**
-     * <p>The subject line for the case in the AWS Support Center.</p>
+     * <p>The subject line for the case in the Amazon Web Services Support Center.</p>
      */
     inline CaseDetails& WithSubject(Aws::String&& value) { SetSubject(std::move(value)); return *this;}
 
     /**
-     * <p>The subject line for the case in the AWS Support Center.</p>
+     * <p>The subject line for the case in the Amazon Web Services Support Center.</p>
      */
     inline CaseDetails& WithSubject(const char* value) { SetSubject(value); return *this;}
 
@@ -291,91 +293,91 @@ namespace Model
 
 
     /**
-     * <p>The code for the AWS service. You can get a list of codes and the
-     * corresponding service names by calling <a>DescribeServices</a>.</p>
+     * <p>The code for the Amazon Web Services service. You can get a list of codes and
+     * the corresponding service names by calling <a>DescribeServices</a>.</p>
      */
     inline const Aws::String& GetServiceCode() const{ return m_serviceCode; }
 
     /**
-     * <p>The code for the AWS service. You can get a list of codes and the
-     * corresponding service names by calling <a>DescribeServices</a>.</p>
+     * <p>The code for the Amazon Web Services service. You can get a list of codes and
+     * the corresponding service names by calling <a>DescribeServices</a>.</p>
      */
     inline bool ServiceCodeHasBeenSet() const { return m_serviceCodeHasBeenSet; }
 
     /**
-     * <p>The code for the AWS service. You can get a list of codes and the
-     * corresponding service names by calling <a>DescribeServices</a>.</p>
+     * <p>The code for the Amazon Web Services service. You can get a list of codes and
+     * the corresponding service names by calling <a>DescribeServices</a>.</p>
      */
     inline void SetServiceCode(const Aws::String& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = value; }
 
     /**
-     * <p>The code for the AWS service. You can get a list of codes and the
-     * corresponding service names by calling <a>DescribeServices</a>.</p>
+     * <p>The code for the Amazon Web Services service. You can get a list of codes and
+     * the corresponding service names by calling <a>DescribeServices</a>.</p>
      */
     inline void SetServiceCode(Aws::String&& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = std::move(value); }
 
     /**
-     * <p>The code for the AWS service. You can get a list of codes and the
-     * corresponding service names by calling <a>DescribeServices</a>.</p>
+     * <p>The code for the Amazon Web Services service. You can get a list of codes and
+     * the corresponding service names by calling <a>DescribeServices</a>.</p>
      */
     inline void SetServiceCode(const char* value) { m_serviceCodeHasBeenSet = true; m_serviceCode.assign(value); }
 
     /**
-     * <p>The code for the AWS service. You can get a list of codes and the
-     * corresponding service names by calling <a>DescribeServices</a>.</p>
+     * <p>The code for the Amazon Web Services service. You can get a list of codes and
+     * the corresponding service names by calling <a>DescribeServices</a>.</p>
      */
     inline CaseDetails& WithServiceCode(const Aws::String& value) { SetServiceCode(value); return *this;}
 
     /**
-     * <p>The code for the AWS service. You can get a list of codes and the
-     * corresponding service names by calling <a>DescribeServices</a>.</p>
+     * <p>The code for the Amazon Web Services service. You can get a list of codes and
+     * the corresponding service names by calling <a>DescribeServices</a>.</p>
      */
     inline CaseDetails& WithServiceCode(Aws::String&& value) { SetServiceCode(std::move(value)); return *this;}
 
     /**
-     * <p>The code for the AWS service. You can get a list of codes and the
-     * corresponding service names by calling <a>DescribeServices</a>.</p>
+     * <p>The code for the Amazon Web Services service. You can get a list of codes and
+     * the corresponding service names by calling <a>DescribeServices</a>.</p>
      */
     inline CaseDetails& WithServiceCode(const char* value) { SetServiceCode(value); return *this;}
 
 
     /**
-     * <p>The category of problem for the AWS Support case.</p>
+     * <p>The category of problem for the support case.</p>
      */
     inline const Aws::String& GetCategoryCode() const{ return m_categoryCode; }
 
     /**
-     * <p>The category of problem for the AWS Support case.</p>
+     * <p>The category of problem for the support case.</p>
      */
     inline bool CategoryCodeHasBeenSet() const { return m_categoryCodeHasBeenSet; }
 
     /**
-     * <p>The category of problem for the AWS Support case.</p>
+     * <p>The category of problem for the support case.</p>
      */
     inline void SetCategoryCode(const Aws::String& value) { m_categoryCodeHasBeenSet = true; m_categoryCode = value; }
 
     /**
-     * <p>The category of problem for the AWS Support case.</p>
+     * <p>The category of problem for the support case.</p>
      */
     inline void SetCategoryCode(Aws::String&& value) { m_categoryCodeHasBeenSet = true; m_categoryCode = std::move(value); }
 
     /**
-     * <p>The category of problem for the AWS Support case.</p>
+     * <p>The category of problem for the support case.</p>
      */
     inline void SetCategoryCode(const char* value) { m_categoryCodeHasBeenSet = true; m_categoryCode.assign(value); }
 
     /**
-     * <p>The category of problem for the AWS Support case.</p>
+     * <p>The category of problem for the support case.</p>
      */
     inline CaseDetails& WithCategoryCode(const Aws::String& value) { SetCategoryCode(value); return *this;}
 
     /**
-     * <p>The category of problem for the AWS Support case.</p>
+     * <p>The category of problem for the support case.</p>
      */
     inline CaseDetails& WithCategoryCode(Aws::String&& value) { SetCategoryCode(std::move(value)); return *this;}
 
     /**
-     * <p>The category of problem for the AWS Support case.</p>
+     * <p>The category of problem for the support case.</p>
      */
     inline CaseDetails& WithCategoryCode(const char* value) { SetCategoryCode(value); return *this;}
 
@@ -471,85 +473,99 @@ namespace Model
 
 
     /**
-     * <p>The time that the case was created in the AWS Support Center.</p>
+     * <p>The time that the case was created in the Amazon Web Services Support
+     * Center.</p>
      */
     inline const Aws::String& GetTimeCreated() const{ return m_timeCreated; }
 
     /**
-     * <p>The time that the case was created in the AWS Support Center.</p>
+     * <p>The time that the case was created in the Amazon Web Services Support
+     * Center.</p>
      */
     inline bool TimeCreatedHasBeenSet() const { return m_timeCreatedHasBeenSet; }
 
     /**
-     * <p>The time that the case was created in the AWS Support Center.</p>
+     * <p>The time that the case was created in the Amazon Web Services Support
+     * Center.</p>
      */
     inline void SetTimeCreated(const Aws::String& value) { m_timeCreatedHasBeenSet = true; m_timeCreated = value; }
 
     /**
-     * <p>The time that the case was created in the AWS Support Center.</p>
+     * <p>The time that the case was created in the Amazon Web Services Support
+     * Center.</p>
      */
     inline void SetTimeCreated(Aws::String&& value) { m_timeCreatedHasBeenSet = true; m_timeCreated = std::move(value); }
 
     /**
-     * <p>The time that the case was created in the AWS Support Center.</p>
+     * <p>The time that the case was created in the Amazon Web Services Support
+     * Center.</p>
      */
     inline void SetTimeCreated(const char* value) { m_timeCreatedHasBeenSet = true; m_timeCreated.assign(value); }
 
     /**
-     * <p>The time that the case was created in the AWS Support Center.</p>
+     * <p>The time that the case was created in the Amazon Web Services Support
+     * Center.</p>
      */
     inline CaseDetails& WithTimeCreated(const Aws::String& value) { SetTimeCreated(value); return *this;}
 
     /**
-     * <p>The time that the case was created in the AWS Support Center.</p>
+     * <p>The time that the case was created in the Amazon Web Services Support
+     * Center.</p>
      */
     inline CaseDetails& WithTimeCreated(Aws::String&& value) { SetTimeCreated(std::move(value)); return *this;}
 
     /**
-     * <p>The time that the case was created in the AWS Support Center.</p>
+     * <p>The time that the case was created in the Amazon Web Services Support
+     * Center.</p>
      */
     inline CaseDetails& WithTimeCreated(const char* value) { SetTimeCreated(value); return *this;}
 
 
     /**
-     * <p>The five most recent communications between you and AWS Support Center,
-     * including the IDs of any attachments to the communications. Also includes a
-     * <code>nextToken</code> that you can use to retrieve earlier communications.</p>
+     * <p>The five most recent communications between you and Amazon Web Services
+     * Support Center, including the IDs of any attachments to the communications. Also
+     * includes a <code>nextToken</code> that you can use to retrieve earlier
+     * communications.</p>
      */
     inline const RecentCaseCommunications& GetRecentCommunications() const{ return m_recentCommunications; }
 
     /**
-     * <p>The five most recent communications between you and AWS Support Center,
-     * including the IDs of any attachments to the communications. Also includes a
-     * <code>nextToken</code> that you can use to retrieve earlier communications.</p>
+     * <p>The five most recent communications between you and Amazon Web Services
+     * Support Center, including the IDs of any attachments to the communications. Also
+     * includes a <code>nextToken</code> that you can use to retrieve earlier
+     * communications.</p>
      */
     inline bool RecentCommunicationsHasBeenSet() const { return m_recentCommunicationsHasBeenSet; }
 
     /**
-     * <p>The five most recent communications between you and AWS Support Center,
-     * including the IDs of any attachments to the communications. Also includes a
-     * <code>nextToken</code> that you can use to retrieve earlier communications.</p>
+     * <p>The five most recent communications between you and Amazon Web Services
+     * Support Center, including the IDs of any attachments to the communications. Also
+     * includes a <code>nextToken</code> that you can use to retrieve earlier
+     * communications.</p>
      */
     inline void SetRecentCommunications(const RecentCaseCommunications& value) { m_recentCommunicationsHasBeenSet = true; m_recentCommunications = value; }
 
     /**
-     * <p>The five most recent communications between you and AWS Support Center,
-     * including the IDs of any attachments to the communications. Also includes a
-     * <code>nextToken</code> that you can use to retrieve earlier communications.</p>
+     * <p>The five most recent communications between you and Amazon Web Services
+     * Support Center, including the IDs of any attachments to the communications. Also
+     * includes a <code>nextToken</code> that you can use to retrieve earlier
+     * communications.</p>
      */
     inline void SetRecentCommunications(RecentCaseCommunications&& value) { m_recentCommunicationsHasBeenSet = true; m_recentCommunications = std::move(value); }
 
     /**
-     * <p>The five most recent communications between you and AWS Support Center,
-     * including the IDs of any attachments to the communications. Also includes a
-     * <code>nextToken</code> that you can use to retrieve earlier communications.</p>
+     * <p>The five most recent communications between you and Amazon Web Services
+     * Support Center, including the IDs of any attachments to the communications. Also
+     * includes a <code>nextToken</code> that you can use to retrieve earlier
+     * communications.</p>
      */
     inline CaseDetails& WithRecentCommunications(const RecentCaseCommunications& value) { SetRecentCommunications(value); return *this;}
 
     /**
-     * <p>The five most recent communications between you and AWS Support Center,
-     * including the IDs of any attachments to the communications. Also includes a
-     * <code>nextToken</code> that you can use to retrieve earlier communications.</p>
+     * <p>The five most recent communications between you and Amazon Web Services
+     * Support Center, including the IDs of any attachments to the communications. Also
+     * includes a <code>nextToken</code> that you can use to retrieve earlier
+     * communications.</p>
      */
     inline CaseDetails& WithRecentCommunications(RecentCaseCommunications&& value) { SetRecentCommunications(std::move(value)); return *this;}
 
@@ -601,58 +617,66 @@ namespace Model
 
 
     /**
-     * <p>The ISO 639-1 code for the language in which AWS provides support. AWS
-     * Support currently supports English ("en") and Japanese ("ja"). Language
-     * parameters must be passed explicitly for operations that take them.</p>
+     * <p>The ISO 639-1 code for the language in which Amazon Web Services provides
+     * support. Amazon Web Services Support currently supports English ("en") and
+     * Japanese ("ja"). Language parameters must be passed explicitly for operations
+     * that take them.</p>
      */
     inline const Aws::String& GetLanguage() const{ return m_language; }
 
     /**
-     * <p>The ISO 639-1 code for the language in which AWS provides support. AWS
-     * Support currently supports English ("en") and Japanese ("ja"). Language
-     * parameters must be passed explicitly for operations that take them.</p>
+     * <p>The ISO 639-1 code for the language in which Amazon Web Services provides
+     * support. Amazon Web Services Support currently supports English ("en") and
+     * Japanese ("ja"). Language parameters must be passed explicitly for operations
+     * that take them.</p>
      */
     inline bool LanguageHasBeenSet() const { return m_languageHasBeenSet; }
 
     /**
-     * <p>The ISO 639-1 code for the language in which AWS provides support. AWS
-     * Support currently supports English ("en") and Japanese ("ja"). Language
-     * parameters must be passed explicitly for operations that take them.</p>
+     * <p>The ISO 639-1 code for the language in which Amazon Web Services provides
+     * support. Amazon Web Services Support currently supports English ("en") and
+     * Japanese ("ja"). Language parameters must be passed explicitly for operations
+     * that take them.</p>
      */
     inline void SetLanguage(const Aws::String& value) { m_languageHasBeenSet = true; m_language = value; }
 
     /**
-     * <p>The ISO 639-1 code for the language in which AWS provides support. AWS
-     * Support currently supports English ("en") and Japanese ("ja"). Language
-     * parameters must be passed explicitly for operations that take them.</p>
+     * <p>The ISO 639-1 code for the language in which Amazon Web Services provides
+     * support. Amazon Web Services Support currently supports English ("en") and
+     * Japanese ("ja"). Language parameters must be passed explicitly for operations
+     * that take them.</p>
      */
     inline void SetLanguage(Aws::String&& value) { m_languageHasBeenSet = true; m_language = std::move(value); }
 
     /**
-     * <p>The ISO 639-1 code for the language in which AWS provides support. AWS
-     * Support currently supports English ("en") and Japanese ("ja"). Language
-     * parameters must be passed explicitly for operations that take them.</p>
+     * <p>The ISO 639-1 code for the language in which Amazon Web Services provides
+     * support. Amazon Web Services Support currently supports English ("en") and
+     * Japanese ("ja"). Language parameters must be passed explicitly for operations
+     * that take them.</p>
      */
     inline void SetLanguage(const char* value) { m_languageHasBeenSet = true; m_language.assign(value); }
 
     /**
-     * <p>The ISO 639-1 code for the language in which AWS provides support. AWS
-     * Support currently supports English ("en") and Japanese ("ja"). Language
-     * parameters must be passed explicitly for operations that take them.</p>
+     * <p>The ISO 639-1 code for the language in which Amazon Web Services provides
+     * support. Amazon Web Services Support currently supports English ("en") and
+     * Japanese ("ja"). Language parameters must be passed explicitly for operations
+     * that take them.</p>
      */
     inline CaseDetails& WithLanguage(const Aws::String& value) { SetLanguage(value); return *this;}
 
     /**
-     * <p>The ISO 639-1 code for the language in which AWS provides support. AWS
-     * Support currently supports English ("en") and Japanese ("ja"). Language
-     * parameters must be passed explicitly for operations that take them.</p>
+     * <p>The ISO 639-1 code for the language in which Amazon Web Services provides
+     * support. Amazon Web Services Support currently supports English ("en") and
+     * Japanese ("ja"). Language parameters must be passed explicitly for operations
+     * that take them.</p>
      */
     inline CaseDetails& WithLanguage(Aws::String&& value) { SetLanguage(std::move(value)); return *this;}
 
     /**
-     * <p>The ISO 639-1 code for the language in which AWS provides support. AWS
-     * Support currently supports English ("en") and Japanese ("ja"). Language
-     * parameters must be passed explicitly for operations that take them.</p>
+     * <p>The ISO 639-1 code for the language in which Amazon Web Services provides
+     * support. Amazon Web Services Support currently supports English ("en") and
+     * Japanese ("ja"). Language parameters must be passed explicitly for operations
+     * that take them.</p>
      */
     inline CaseDetails& WithLanguage(const char* value) { SetLanguage(value); return *this;}
 

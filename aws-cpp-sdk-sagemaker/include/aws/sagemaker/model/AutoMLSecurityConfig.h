@@ -101,32 +101,32 @@ namespace Model
 
 
     /**
-     * <p>VPC configuration.</p>
+     * <p>The VPC configuration.</p>
      */
     inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
 
     /**
-     * <p>VPC configuration.</p>
+     * <p>The VPC configuration.</p>
      */
     inline bool VpcConfigHasBeenSet() const { return m_vpcConfigHasBeenSet; }
 
     /**
-     * <p>VPC configuration.</p>
+     * <p>The VPC configuration.</p>
      */
     inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
 
     /**
-     * <p>VPC configuration.</p>
+     * <p>The VPC configuration.</p>
      */
     inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
 
     /**
-     * <p>VPC configuration.</p>
+     * <p>The VPC configuration.</p>
      */
     inline AutoMLSecurityConfig& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
 
     /**
-     * <p>VPC configuration.</p>
+     * <p>The VPC configuration.</p>
      */
     inline AutoMLSecurityConfig& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
 

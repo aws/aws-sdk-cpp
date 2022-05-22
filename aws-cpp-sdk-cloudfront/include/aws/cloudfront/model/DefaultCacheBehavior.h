@@ -11,6 +11,7 @@
 #include <aws/cloudfront/model/ViewerProtocolPolicy.h>
 #include <aws/cloudfront/model/AllowedMethods.h>
 #include <aws/cloudfront/model/LambdaFunctionAssociations.h>
+#include <aws/cloudfront/model/FunctionAssociations.h>
 #include <utility>
 
 namespace Aws
@@ -96,14 +97,14 @@ namespace Model
 
     /**
      *  <p>We recommend using <code>TrustedKeyGroups</code> instead of
-     * <code>TrustedSigners</code>.</p>  <p>A list of AWS account IDs whose
-     * public keys CloudFront can use to validate signed URLs or signed cookies.</p>
-     * <p>When a cache behavior contains trusted signers, CloudFront requires signed
-     * URLs or signed cookies for all requests that match the cache behavior. The URLs
-     * or cookies must be signed with the private key of a CloudFront key pair in a
-     * trusted signer’s AWS account. The signed URL or cookie contains information
-     * about which public key CloudFront should use to verify the signature. For more
-     * information, see <a
+     * <code>TrustedSigners</code>.</p>  <p>A list of Amazon Web Services
+     * account IDs whose public keys CloudFront can use to validate signed URLs or
+     * signed cookies.</p> <p>When a cache behavior contains trusted signers,
+     * CloudFront requires signed URLs or signed cookies for all requests that match
+     * the cache behavior. The URLs or cookies must be signed with the private key of a
+     * CloudFront key pair in a trusted signer’s Amazon Web Services account. The
+     * signed URL or cookie contains information about which public key CloudFront
+     * should use to verify the signature. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * private content</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
@@ -111,14 +112,14 @@ namespace Model
 
     /**
      *  <p>We recommend using <code>TrustedKeyGroups</code> instead of
-     * <code>TrustedSigners</code>.</p>  <p>A list of AWS account IDs whose
-     * public keys CloudFront can use to validate signed URLs or signed cookies.</p>
-     * <p>When a cache behavior contains trusted signers, CloudFront requires signed
-     * URLs or signed cookies for all requests that match the cache behavior. The URLs
-     * or cookies must be signed with the private key of a CloudFront key pair in a
-     * trusted signer’s AWS account. The signed URL or cookie contains information
-     * about which public key CloudFront should use to verify the signature. For more
-     * information, see <a
+     * <code>TrustedSigners</code>.</p>  <p>A list of Amazon Web Services
+     * account IDs whose public keys CloudFront can use to validate signed URLs or
+     * signed cookies.</p> <p>When a cache behavior contains trusted signers,
+     * CloudFront requires signed URLs or signed cookies for all requests that match
+     * the cache behavior. The URLs or cookies must be signed with the private key of a
+     * CloudFront key pair in a trusted signer’s Amazon Web Services account. The
+     * signed URL or cookie contains information about which public key CloudFront
+     * should use to verify the signature. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * private content</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
@@ -126,14 +127,14 @@ namespace Model
 
     /**
      *  <p>We recommend using <code>TrustedKeyGroups</code> instead of
-     * <code>TrustedSigners</code>.</p>  <p>A list of AWS account IDs whose
-     * public keys CloudFront can use to validate signed URLs or signed cookies.</p>
-     * <p>When a cache behavior contains trusted signers, CloudFront requires signed
-     * URLs or signed cookies for all requests that match the cache behavior. The URLs
-     * or cookies must be signed with the private key of a CloudFront key pair in a
-     * trusted signer’s AWS account. The signed URL or cookie contains information
-     * about which public key CloudFront should use to verify the signature. For more
-     * information, see <a
+     * <code>TrustedSigners</code>.</p>  <p>A list of Amazon Web Services
+     * account IDs whose public keys CloudFront can use to validate signed URLs or
+     * signed cookies.</p> <p>When a cache behavior contains trusted signers,
+     * CloudFront requires signed URLs or signed cookies for all requests that match
+     * the cache behavior. The URLs or cookies must be signed with the private key of a
+     * CloudFront key pair in a trusted signer’s Amazon Web Services account. The
+     * signed URL or cookie contains information about which public key CloudFront
+     * should use to verify the signature. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * private content</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
@@ -141,14 +142,14 @@ namespace Model
 
     /**
      *  <p>We recommend using <code>TrustedKeyGroups</code> instead of
-     * <code>TrustedSigners</code>.</p>  <p>A list of AWS account IDs whose
-     * public keys CloudFront can use to validate signed URLs or signed cookies.</p>
-     * <p>When a cache behavior contains trusted signers, CloudFront requires signed
-     * URLs or signed cookies for all requests that match the cache behavior. The URLs
-     * or cookies must be signed with the private key of a CloudFront key pair in a
-     * trusted signer’s AWS account. The signed URL or cookie contains information
-     * about which public key CloudFront should use to verify the signature. For more
-     * information, see <a
+     * <code>TrustedSigners</code>.</p>  <p>A list of Amazon Web Services
+     * account IDs whose public keys CloudFront can use to validate signed URLs or
+     * signed cookies.</p> <p>When a cache behavior contains trusted signers,
+     * CloudFront requires signed URLs or signed cookies for all requests that match
+     * the cache behavior. The URLs or cookies must be signed with the private key of a
+     * CloudFront key pair in a trusted signer’s Amazon Web Services account. The
+     * signed URL or cookie contains information about which public key CloudFront
+     * should use to verify the signature. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * private content</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
@@ -156,14 +157,14 @@ namespace Model
 
     /**
      *  <p>We recommend using <code>TrustedKeyGroups</code> instead of
-     * <code>TrustedSigners</code>.</p>  <p>A list of AWS account IDs whose
-     * public keys CloudFront can use to validate signed URLs or signed cookies.</p>
-     * <p>When a cache behavior contains trusted signers, CloudFront requires signed
-     * URLs or signed cookies for all requests that match the cache behavior. The URLs
-     * or cookies must be signed with the private key of a CloudFront key pair in a
-     * trusted signer’s AWS account. The signed URL or cookie contains information
-     * about which public key CloudFront should use to verify the signature. For more
-     * information, see <a
+     * <code>TrustedSigners</code>.</p>  <p>A list of Amazon Web Services
+     * account IDs whose public keys CloudFront can use to validate signed URLs or
+     * signed cookies.</p> <p>When a cache behavior contains trusted signers,
+     * CloudFront requires signed URLs or signed cookies for all requests that match
+     * the cache behavior. The URLs or cookies must be signed with the private key of a
+     * CloudFront key pair in a trusted signer’s Amazon Web Services account. The
+     * signed URL or cookie contains information about which public key CloudFront
+     * should use to verify the signature. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * private content</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
@@ -171,14 +172,14 @@ namespace Model
 
     /**
      *  <p>We recommend using <code>TrustedKeyGroups</code> instead of
-     * <code>TrustedSigners</code>.</p>  <p>A list of AWS account IDs whose
-     * public keys CloudFront can use to validate signed URLs or signed cookies.</p>
-     * <p>When a cache behavior contains trusted signers, CloudFront requires signed
-     * URLs or signed cookies for all requests that match the cache behavior. The URLs
-     * or cookies must be signed with the private key of a CloudFront key pair in a
-     * trusted signer’s AWS account. The signed URL or cookie contains information
-     * about which public key CloudFront should use to verify the signature. For more
-     * information, see <a
+     * <code>TrustedSigners</code>.</p>  <p>A list of Amazon Web Services
+     * account IDs whose public keys CloudFront can use to validate signed URLs or
+     * signed cookies.</p> <p>When a cache behavior contains trusted signers,
+     * CloudFront requires signed URLs or signed cookies for all requests that match
+     * the cache behavior. The URLs or cookies must be signed with the private key of a
+     * CloudFront key pair in a trusted signer’s Amazon Web Services account. The
+     * signed URL or cookie contains information about which public key CloudFront
+     * should use to verify the signature. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * private content</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
@@ -519,40 +520,83 @@ namespace Model
 
 
     /**
-     * <p>A complex type that contains zero or more Lambda function associations for a
-     * cache behavior.</p>
+     * <p>A complex type that contains zero or more Lambda@Edge function associations
+     * for a cache behavior.</p>
      */
     inline const LambdaFunctionAssociations& GetLambdaFunctionAssociations() const{ return m_lambdaFunctionAssociations; }
 
     /**
-     * <p>A complex type that contains zero or more Lambda function associations for a
-     * cache behavior.</p>
+     * <p>A complex type that contains zero or more Lambda@Edge function associations
+     * for a cache behavior.</p>
      */
     inline bool LambdaFunctionAssociationsHasBeenSet() const { return m_lambdaFunctionAssociationsHasBeenSet; }
 
     /**
-     * <p>A complex type that contains zero or more Lambda function associations for a
-     * cache behavior.</p>
+     * <p>A complex type that contains zero or more Lambda@Edge function associations
+     * for a cache behavior.</p>
      */
     inline void SetLambdaFunctionAssociations(const LambdaFunctionAssociations& value) { m_lambdaFunctionAssociationsHasBeenSet = true; m_lambdaFunctionAssociations = value; }
 
     /**
-     * <p>A complex type that contains zero or more Lambda function associations for a
-     * cache behavior.</p>
+     * <p>A complex type that contains zero or more Lambda@Edge function associations
+     * for a cache behavior.</p>
      */
     inline void SetLambdaFunctionAssociations(LambdaFunctionAssociations&& value) { m_lambdaFunctionAssociationsHasBeenSet = true; m_lambdaFunctionAssociations = std::move(value); }
 
     /**
-     * <p>A complex type that contains zero or more Lambda function associations for a
-     * cache behavior.</p>
+     * <p>A complex type that contains zero or more Lambda@Edge function associations
+     * for a cache behavior.</p>
      */
     inline DefaultCacheBehavior& WithLambdaFunctionAssociations(const LambdaFunctionAssociations& value) { SetLambdaFunctionAssociations(value); return *this;}
 
     /**
-     * <p>A complex type that contains zero or more Lambda function associations for a
-     * cache behavior.</p>
+     * <p>A complex type that contains zero or more Lambda@Edge function associations
+     * for a cache behavior.</p>
      */
     inline DefaultCacheBehavior& WithLambdaFunctionAssociations(LambdaFunctionAssociations&& value) { SetLambdaFunctionAssociations(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A list of CloudFront functions that are associated with this cache behavior.
+     * CloudFront functions must be published to the <code>LIVE</code> stage to
+     * associate them with a cache behavior.</p>
+     */
+    inline const FunctionAssociations& GetFunctionAssociations() const{ return m_functionAssociations; }
+
+    /**
+     * <p>A list of CloudFront functions that are associated with this cache behavior.
+     * CloudFront functions must be published to the <code>LIVE</code> stage to
+     * associate them with a cache behavior.</p>
+     */
+    inline bool FunctionAssociationsHasBeenSet() const { return m_functionAssociationsHasBeenSet; }
+
+    /**
+     * <p>A list of CloudFront functions that are associated with this cache behavior.
+     * CloudFront functions must be published to the <code>LIVE</code> stage to
+     * associate them with a cache behavior.</p>
+     */
+    inline void SetFunctionAssociations(const FunctionAssociations& value) { m_functionAssociationsHasBeenSet = true; m_functionAssociations = value; }
+
+    /**
+     * <p>A list of CloudFront functions that are associated with this cache behavior.
+     * CloudFront functions must be published to the <code>LIVE</code> stage to
+     * associate them with a cache behavior.</p>
+     */
+    inline void SetFunctionAssociations(FunctionAssociations&& value) { m_functionAssociationsHasBeenSet = true; m_functionAssociations = std::move(value); }
+
+    /**
+     * <p>A list of CloudFront functions that are associated with this cache behavior.
+     * CloudFront functions must be published to the <code>LIVE</code> stage to
+     * associate them with a cache behavior.</p>
+     */
+    inline DefaultCacheBehavior& WithFunctionAssociations(const FunctionAssociations& value) { SetFunctionAssociations(value); return *this;}
+
+    /**
+     * <p>A list of CloudFront functions that are associated with this cache behavior.
+     * CloudFront functions must be published to the <code>LIVE</code> stage to
+     * associate them with a cache behavior.</p>
+     */
+    inline DefaultCacheBehavior& WithFunctionAssociations(FunctionAssociations&& value) { SetFunctionAssociations(std::move(value)); return *this;}
 
 
     /**
@@ -684,7 +728,9 @@ namespace Model
      * cache policies</a> or <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
      * the managed cache policies</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>A <code>DefaultCacheBehavior</code> must include either a
+     * <code>CachePolicyId</code> or <code>ForwardedValues</code>. We recommend that
+     * you use a <code>CachePolicyId</code>.</p>
      */
     inline const Aws::String& GetCachePolicyId() const{ return m_cachePolicyId; }
 
@@ -695,7 +741,9 @@ namespace Model
      * cache policies</a> or <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
      * the managed cache policies</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>A <code>DefaultCacheBehavior</code> must include either a
+     * <code>CachePolicyId</code> or <code>ForwardedValues</code>. We recommend that
+     * you use a <code>CachePolicyId</code>.</p>
      */
     inline bool CachePolicyIdHasBeenSet() const { return m_cachePolicyIdHasBeenSet; }
 
@@ -706,7 +754,9 @@ namespace Model
      * cache policies</a> or <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
      * the managed cache policies</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>A <code>DefaultCacheBehavior</code> must include either a
+     * <code>CachePolicyId</code> or <code>ForwardedValues</code>. We recommend that
+     * you use a <code>CachePolicyId</code>.</p>
      */
     inline void SetCachePolicyId(const Aws::String& value) { m_cachePolicyIdHasBeenSet = true; m_cachePolicyId = value; }
 
@@ -717,7 +767,9 @@ namespace Model
      * cache policies</a> or <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
      * the managed cache policies</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>A <code>DefaultCacheBehavior</code> must include either a
+     * <code>CachePolicyId</code> or <code>ForwardedValues</code>. We recommend that
+     * you use a <code>CachePolicyId</code>.</p>
      */
     inline void SetCachePolicyId(Aws::String&& value) { m_cachePolicyIdHasBeenSet = true; m_cachePolicyId = std::move(value); }
 
@@ -728,7 +780,9 @@ namespace Model
      * cache policies</a> or <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
      * the managed cache policies</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>A <code>DefaultCacheBehavior</code> must include either a
+     * <code>CachePolicyId</code> or <code>ForwardedValues</code>. We recommend that
+     * you use a <code>CachePolicyId</code>.</p>
      */
     inline void SetCachePolicyId(const char* value) { m_cachePolicyIdHasBeenSet = true; m_cachePolicyId.assign(value); }
 
@@ -739,7 +793,9 @@ namespace Model
      * cache policies</a> or <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
      * the managed cache policies</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>A <code>DefaultCacheBehavior</code> must include either a
+     * <code>CachePolicyId</code> or <code>ForwardedValues</code>. We recommend that
+     * you use a <code>CachePolicyId</code>.</p>
      */
     inline DefaultCacheBehavior& WithCachePolicyId(const Aws::String& value) { SetCachePolicyId(value); return *this;}
 
@@ -750,7 +806,9 @@ namespace Model
      * cache policies</a> or <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
      * the managed cache policies</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>A <code>DefaultCacheBehavior</code> must include either a
+     * <code>CachePolicyId</code> or <code>ForwardedValues</code>. We recommend that
+     * you use a <code>CachePolicyId</code>.</p>
      */
     inline DefaultCacheBehavior& WithCachePolicyId(Aws::String&& value) { SetCachePolicyId(std::move(value)); return *this;}
 
@@ -761,7 +819,9 @@ namespace Model
      * cache policies</a> or <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
      * the managed cache policies</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>A <code>DefaultCacheBehavior</code> must include either a
+     * <code>CachePolicyId</code> or <code>ForwardedValues</code>. We recommend that
+     * you use a <code>CachePolicyId</code>.</p>
      */
     inline DefaultCacheBehavior& WithCachePolicyId(const char* value) { SetCachePolicyId(value); return *this;}
 
@@ -854,6 +914,47 @@ namespace Model
      */
     inline DefaultCacheBehavior& WithOriginRequestPolicyId(const char* value) { SetOriginRequestPolicyId(value); return *this;}
 
+
+    /**
+     * <p>The identifier for a response headers policy.</p>
+     */
+    inline const Aws::String& GetResponseHeadersPolicyId() const{ return m_responseHeadersPolicyId; }
+
+    /**
+     * <p>The identifier for a response headers policy.</p>
+     */
+    inline bool ResponseHeadersPolicyIdHasBeenSet() const { return m_responseHeadersPolicyIdHasBeenSet; }
+
+    /**
+     * <p>The identifier for a response headers policy.</p>
+     */
+    inline void SetResponseHeadersPolicyId(const Aws::String& value) { m_responseHeadersPolicyIdHasBeenSet = true; m_responseHeadersPolicyId = value; }
+
+    /**
+     * <p>The identifier for a response headers policy.</p>
+     */
+    inline void SetResponseHeadersPolicyId(Aws::String&& value) { m_responseHeadersPolicyIdHasBeenSet = true; m_responseHeadersPolicyId = std::move(value); }
+
+    /**
+     * <p>The identifier for a response headers policy.</p>
+     */
+    inline void SetResponseHeadersPolicyId(const char* value) { m_responseHeadersPolicyIdHasBeenSet = true; m_responseHeadersPolicyId.assign(value); }
+
+    /**
+     * <p>The identifier for a response headers policy.</p>
+     */
+    inline DefaultCacheBehavior& WithResponseHeadersPolicyId(const Aws::String& value) { SetResponseHeadersPolicyId(value); return *this;}
+
+    /**
+     * <p>The identifier for a response headers policy.</p>
+     */
+    inline DefaultCacheBehavior& WithResponseHeadersPolicyId(Aws::String&& value) { SetResponseHeadersPolicyId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier for a response headers policy.</p>
+     */
+    inline DefaultCacheBehavior& WithResponseHeadersPolicyId(const char* value) { SetResponseHeadersPolicyId(value); return *this;}
+
   private:
 
     Aws::String m_targetOriginId;
@@ -880,6 +981,9 @@ namespace Model
     LambdaFunctionAssociations m_lambdaFunctionAssociations;
     bool m_lambdaFunctionAssociationsHasBeenSet;
 
+    FunctionAssociations m_functionAssociations;
+    bool m_functionAssociationsHasBeenSet;
+
     Aws::String m_fieldLevelEncryptionId;
     bool m_fieldLevelEncryptionIdHasBeenSet;
 
@@ -891,6 +995,9 @@ namespace Model
 
     Aws::String m_originRequestPolicyId;
     bool m_originRequestPolicyIdHasBeenSet;
+
+    Aws::String m_responseHeadersPolicyId;
+    bool m_responseHeadersPolicyIdHasBeenSet;
   };
 
 } // namespace Model

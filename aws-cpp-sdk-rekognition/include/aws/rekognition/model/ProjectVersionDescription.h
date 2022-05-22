@@ -31,7 +31,8 @@ namespace Model
 {
 
   /**
-   * <p>The description of a version of a model.</p><p><h3>See Also:</h3>   <a
+   * <p>A description of a version of an Amazon Rekognition Custom Labels
+   * model.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ProjectVersionDescription">AWS
    * API Reference</a></p>
    */
@@ -214,30 +215,30 @@ namespace Model
 
 
     /**
-     * <p>The duration, in seconds, that the model version has been billed for
-     * training. This value is only returned if the model version has been successfully
-     * trained.</p>
+     * <p>The duration, in seconds, that you were billed for a successful training of
+     * the model version. This value is only returned if the model version has been
+     * successfully trained.</p>
      */
     inline long long GetBillableTrainingTimeInSeconds() const{ return m_billableTrainingTimeInSeconds; }
 
     /**
-     * <p>The duration, in seconds, that the model version has been billed for
-     * training. This value is only returned if the model version has been successfully
-     * trained.</p>
+     * <p>The duration, in seconds, that you were billed for a successful training of
+     * the model version. This value is only returned if the model version has been
+     * successfully trained.</p>
      */
     inline bool BillableTrainingTimeInSecondsHasBeenSet() const { return m_billableTrainingTimeInSecondsHasBeenSet; }
 
     /**
-     * <p>The duration, in seconds, that the model version has been billed for
-     * training. This value is only returned if the model version has been successfully
-     * trained.</p>
+     * <p>The duration, in seconds, that you were billed for a successful training of
+     * the model version. This value is only returned if the model version has been
+     * successfully trained.</p>
      */
     inline void SetBillableTrainingTimeInSeconds(long long value) { m_billableTrainingTimeInSecondsHasBeenSet = true; m_billableTrainingTimeInSeconds = value; }
 
     /**
-     * <p>The duration, in seconds, that the model version has been billed for
-     * training. This value is only returned if the model version has been successfully
-     * trained.</p>
+     * <p>The duration, in seconds, that you were billed for a successful training of
+     * the model version. This value is only returned if the model version has been
+     * successfully trained.</p>
      */
     inline ProjectVersionDescription& WithBillableTrainingTimeInSeconds(long long value) { SetBillableTrainingTimeInSeconds(value); return *this;}
 
@@ -439,6 +440,55 @@ namespace Model
      */
     inline ProjectVersionDescription& WithManifestSummary(GroundTruthManifest&& value) { SetManifestSummary(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The identifer for the AWS Key Management Service key (AWS KMS key) that was
+     * used to encrypt the model during training. </p>
+     */
+    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>The identifer for the AWS Key Management Service key (AWS KMS key) that was
+     * used to encrypt the model during training. </p>
+     */
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
+
+    /**
+     * <p>The identifer for the AWS Key Management Service key (AWS KMS key) that was
+     * used to encrypt the model during training. </p>
+     */
+    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
+
+    /**
+     * <p>The identifer for the AWS Key Management Service key (AWS KMS key) that was
+     * used to encrypt the model during training. </p>
+     */
+    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
+
+    /**
+     * <p>The identifer for the AWS Key Management Service key (AWS KMS key) that was
+     * used to encrypt the model during training. </p>
+     */
+    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
+
+    /**
+     * <p>The identifer for the AWS Key Management Service key (AWS KMS key) that was
+     * used to encrypt the model during training. </p>
+     */
+    inline ProjectVersionDescription& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
+
+    /**
+     * <p>The identifer for the AWS Key Management Service key (AWS KMS key) that was
+     * used to encrypt the model during training. </p>
+     */
+    inline ProjectVersionDescription& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifer for the AWS Key Management Service key (AWS KMS key) that was
+     * used to encrypt the model during training. </p>
+     */
+    inline ProjectVersionDescription& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+
   private:
 
     Aws::String m_projectVersionArn;
@@ -476,6 +526,9 @@ namespace Model
 
     GroundTruthManifest m_manifestSummary;
     bool m_manifestSummaryHasBeenSet;
+
+    Aws::String m_kmsKeyId;
+    bool m_kmsKeyIdHasBeenSet;
   };
 
 } // namespace Model

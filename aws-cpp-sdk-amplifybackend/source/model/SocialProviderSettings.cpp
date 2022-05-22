@@ -21,14 +21,16 @@ namespace Model
 SocialProviderSettings::SocialProviderSettings() : 
     m_facebookHasBeenSet(false),
     m_googleHasBeenSet(false),
-    m_loginWithAmazonHasBeenSet(false)
+    m_loginWithAmazonHasBeenSet(false),
+    m_signInWithAppleHasBeenSet(false)
 {
 }
 
 SocialProviderSettings::SocialProviderSettings(JsonView jsonValue) : 
     m_facebookHasBeenSet(false),
     m_googleHasBeenSet(false),
-    m_loginWithAmazonHasBeenSet(false)
+    m_loginWithAmazonHasBeenSet(false),
+    m_signInWithAppleHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +58,13 @@ SocialProviderSettings& SocialProviderSettings::operator =(JsonView jsonValue)
     m_loginWithAmazonHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SignInWithApple"))
+  {
+    m_signInWithApple = jsonValue.GetObject("SignInWithApple");
+
+    m_signInWithAppleHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +87,12 @@ JsonValue SocialProviderSettings::Jsonize() const
   if(m_loginWithAmazonHasBeenSet)
   {
    payload.WithObject("LoginWithAmazon", m_loginWithAmazon.Jsonize());
+
+  }
+
+  if(m_signInWithAppleHasBeenSet)
+  {
+   payload.WithObject("SignInWithApple", m_signInWithApple.Jsonize());
 
   }
 

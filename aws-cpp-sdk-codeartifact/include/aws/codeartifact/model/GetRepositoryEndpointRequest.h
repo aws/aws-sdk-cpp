@@ -174,7 +174,7 @@ namespace Model
      * <p> Returns which endpoint of a repository to return. A repository has one
      * endpoint for each package format: </p> <ul> <li> <p> <code>npm</code> </p> </li>
      * <li> <p> <code>pypi</code> </p> </li> <li> <p> <code>maven</code> </p> </li>
-     * <li> <p> <code>nuget</code> </p> </li> </ul>
+     * </ul>
      */
     inline const PackageFormat& GetFormat() const{ return m_format; }
 
@@ -182,7 +182,7 @@ namespace Model
      * <p> Returns which endpoint of a repository to return. A repository has one
      * endpoint for each package format: </p> <ul> <li> <p> <code>npm</code> </p> </li>
      * <li> <p> <code>pypi</code> </p> </li> <li> <p> <code>maven</code> </p> </li>
-     * <li> <p> <code>nuget</code> </p> </li> </ul>
+     * </ul>
      */
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
 
@@ -190,7 +190,7 @@ namespace Model
      * <p> Returns which endpoint of a repository to return. A repository has one
      * endpoint for each package format: </p> <ul> <li> <p> <code>npm</code> </p> </li>
      * <li> <p> <code>pypi</code> </p> </li> <li> <p> <code>maven</code> </p> </li>
-     * <li> <p> <code>nuget</code> </p> </li> </ul>
+     * </ul>
      */
     inline void SetFormat(const PackageFormat& value) { m_formatHasBeenSet = true; m_format = value; }
 
@@ -198,7 +198,7 @@ namespace Model
      * <p> Returns which endpoint of a repository to return. A repository has one
      * endpoint for each package format: </p> <ul> <li> <p> <code>npm</code> </p> </li>
      * <li> <p> <code>pypi</code> </p> </li> <li> <p> <code>maven</code> </p> </li>
-     * <li> <p> <code>nuget</code> </p> </li> </ul>
+     * </ul>
      */
     inline void SetFormat(PackageFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
 
@@ -206,7 +206,7 @@ namespace Model
      * <p> Returns which endpoint of a repository to return. A repository has one
      * endpoint for each package format: </p> <ul> <li> <p> <code>npm</code> </p> </li>
      * <li> <p> <code>pypi</code> </p> </li> <li> <p> <code>maven</code> </p> </li>
-     * <li> <p> <code>nuget</code> </p> </li> </ul>
+     * </ul>
      */
     inline GetRepositoryEndpointRequest& WithFormat(const PackageFormat& value) { SetFormat(value); return *this;}
 
@@ -214,7 +214,7 @@ namespace Model
      * <p> Returns which endpoint of a repository to return. A repository has one
      * endpoint for each package format: </p> <ul> <li> <p> <code>npm</code> </p> </li>
      * <li> <p> <code>pypi</code> </p> </li> <li> <p> <code>maven</code> </p> </li>
-     * <li> <p> <code>nuget</code> </p> </li> </ul>
+     * </ul>
      */
     inline GetRepositoryEndpointRequest& WithFormat(PackageFormat&& value) { SetFormat(std::move(value)); return *this;}
 

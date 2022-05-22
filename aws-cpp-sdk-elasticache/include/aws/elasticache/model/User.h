@@ -202,6 +202,47 @@ namespace Model
 
 
     /**
+     * <p>The minimum engine version required, which is Redis 6.0</p>
+     */
+    inline const Aws::String& GetMinimumEngineVersion() const{ return m_minimumEngineVersion; }
+
+    /**
+     * <p>The minimum engine version required, which is Redis 6.0</p>
+     */
+    inline bool MinimumEngineVersionHasBeenSet() const { return m_minimumEngineVersionHasBeenSet; }
+
+    /**
+     * <p>The minimum engine version required, which is Redis 6.0</p>
+     */
+    inline void SetMinimumEngineVersion(const Aws::String& value) { m_minimumEngineVersionHasBeenSet = true; m_minimumEngineVersion = value; }
+
+    /**
+     * <p>The minimum engine version required, which is Redis 6.0</p>
+     */
+    inline void SetMinimumEngineVersion(Aws::String&& value) { m_minimumEngineVersionHasBeenSet = true; m_minimumEngineVersion = std::move(value); }
+
+    /**
+     * <p>The minimum engine version required, which is Redis 6.0</p>
+     */
+    inline void SetMinimumEngineVersion(const char* value) { m_minimumEngineVersionHasBeenSet = true; m_minimumEngineVersion.assign(value); }
+
+    /**
+     * <p>The minimum engine version required, which is Redis 6.0</p>
+     */
+    inline User& WithMinimumEngineVersion(const Aws::String& value) { SetMinimumEngineVersion(value); return *this;}
+
+    /**
+     * <p>The minimum engine version required, which is Redis 6.0</p>
+     */
+    inline User& WithMinimumEngineVersion(Aws::String&& value) { SetMinimumEngineVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The minimum engine version required, which is Redis 6.0</p>
+     */
+    inline User& WithMinimumEngineVersion(const char* value) { SetMinimumEngineVersion(value); return *this;}
+
+
+    /**
      * <p>Access permissions string used for this user.</p>
      */
     inline const Aws::String& GetAccessString() const{ return m_accessString; }
@@ -391,6 +432,9 @@ namespace Model
 
     Aws::String m_engine;
     bool m_engineHasBeenSet;
+
+    Aws::String m_minimumEngineVersion;
+    bool m_minimumEngineVersionHasBeenSet;
 
     Aws::String m_accessString;
     bool m_accessStringHasBeenSet;

@@ -20,6 +20,7 @@ namespace Aws
       namespace CountryCodeMapper
       {
 
+        static const int AC_HASH = HashingUtils::HashString("AC");
         static const int AD_HASH = HashingUtils::HashString("AD");
         static const int AE_HASH = HashingUtils::HashString("AE");
         static const int AF_HASH = HashingUtils::HashString("AF");
@@ -35,6 +36,7 @@ namespace Aws
         static const int AT_HASH = HashingUtils::HashString("AT");
         static const int AU_HASH = HashingUtils::HashString("AU");
         static const int AW_HASH = HashingUtils::HashString("AW");
+        static const int AX_HASH = HashingUtils::HashString("AX");
         static const int AZ_HASH = HashingUtils::HashString("AZ");
         static const int BA_HASH = HashingUtils::HashString("BA");
         static const int BB_HASH = HashingUtils::HashString("BB");
@@ -49,9 +51,11 @@ namespace Aws
         static const int BM_HASH = HashingUtils::HashString("BM");
         static const int BN_HASH = HashingUtils::HashString("BN");
         static const int BO_HASH = HashingUtils::HashString("BO");
+        static const int BQ_HASH = HashingUtils::HashString("BQ");
         static const int BR_HASH = HashingUtils::HashString("BR");
         static const int BS_HASH = HashingUtils::HashString("BS");
         static const int BT_HASH = HashingUtils::HashString("BT");
+        static const int BV_HASH = HashingUtils::HashString("BV");
         static const int BW_HASH = HashingUtils::HashString("BW");
         static const int BY_HASH = HashingUtils::HashString("BY");
         static const int BZ_HASH = HashingUtils::HashString("BZ");
@@ -70,6 +74,7 @@ namespace Aws
         static const int CR_HASH = HashingUtils::HashString("CR");
         static const int CU_HASH = HashingUtils::HashString("CU");
         static const int CV_HASH = HashingUtils::HashString("CV");
+        static const int CW_HASH = HashingUtils::HashString("CW");
         static const int CX_HASH = HashingUtils::HashString("CX");
         static const int CY_HASH = HashingUtils::HashString("CY");
         static const int CZ_HASH = HashingUtils::HashString("CZ");
@@ -82,6 +87,7 @@ namespace Aws
         static const int EC_HASH = HashingUtils::HashString("EC");
         static const int EE_HASH = HashingUtils::HashString("EE");
         static const int EG_HASH = HashingUtils::HashString("EG");
+        static const int EH_HASH = HashingUtils::HashString("EH");
         static const int ER_HASH = HashingUtils::HashString("ER");
         static const int ES_HASH = HashingUtils::HashString("ES");
         static const int ET_HASH = HashingUtils::HashString("ET");
@@ -95,18 +101,23 @@ namespace Aws
         static const int GB_HASH = HashingUtils::HashString("GB");
         static const int GD_HASH = HashingUtils::HashString("GD");
         static const int GE_HASH = HashingUtils::HashString("GE");
+        static const int GF_HASH = HashingUtils::HashString("GF");
+        static const int GG_HASH = HashingUtils::HashString("GG");
         static const int GH_HASH = HashingUtils::HashString("GH");
         static const int GI_HASH = HashingUtils::HashString("GI");
         static const int GL_HASH = HashingUtils::HashString("GL");
         static const int GM_HASH = HashingUtils::HashString("GM");
         static const int GN_HASH = HashingUtils::HashString("GN");
+        static const int GP_HASH = HashingUtils::HashString("GP");
         static const int GQ_HASH = HashingUtils::HashString("GQ");
         static const int GR_HASH = HashingUtils::HashString("GR");
+        static const int GS_HASH = HashingUtils::HashString("GS");
         static const int GT_HASH = HashingUtils::HashString("GT");
         static const int GU_HASH = HashingUtils::HashString("GU");
         static const int GW_HASH = HashingUtils::HashString("GW");
         static const int GY_HASH = HashingUtils::HashString("GY");
         static const int HK_HASH = HashingUtils::HashString("HK");
+        static const int HM_HASH = HashingUtils::HashString("HM");
         static const int HN_HASH = HashingUtils::HashString("HN");
         static const int HR_HASH = HashingUtils::HashString("HR");
         static const int HT_HASH = HashingUtils::HashString("HT");
@@ -116,10 +127,12 @@ namespace Aws
         static const int IL_HASH = HashingUtils::HashString("IL");
         static const int IM_HASH = HashingUtils::HashString("IM");
         static const int IN_HASH = HashingUtils::HashString("IN");
+        static const int IO_HASH = HashingUtils::HashString("IO");
         static const int IQ_HASH = HashingUtils::HashString("IQ");
         static const int IR_HASH = HashingUtils::HashString("IR");
         static const int IS_HASH = HashingUtils::HashString("IS");
         static const int IT_HASH = HashingUtils::HashString("IT");
+        static const int JE_HASH = HashingUtils::HashString("JE");
         static const int JM_HASH = HashingUtils::HashString("JM");
         static const int JO_HASH = HashingUtils::HashString("JO");
         static const int JP_HASH = HashingUtils::HashString("JP");
@@ -158,6 +171,7 @@ namespace Aws
         static const int MN_HASH = HashingUtils::HashString("MN");
         static const int MO_HASH = HashingUtils::HashString("MO");
         static const int MP_HASH = HashingUtils::HashString("MP");
+        static const int MQ_HASH = HashingUtils::HashString("MQ");
         static const int MR_HASH = HashingUtils::HashString("MR");
         static const int MS_HASH = HashingUtils::HashString("MS");
         static const int MT_HASH = HashingUtils::HashString("MT");
@@ -170,6 +184,7 @@ namespace Aws
         static const int NA_HASH = HashingUtils::HashString("NA");
         static const int NC_HASH = HashingUtils::HashString("NC");
         static const int NE_HASH = HashingUtils::HashString("NE");
+        static const int NF_HASH = HashingUtils::HashString("NF");
         static const int NG_HASH = HashingUtils::HashString("NG");
         static const int NI_HASH = HashingUtils::HashString("NI");
         static const int NL_HASH = HashingUtils::HashString("NL");
@@ -189,10 +204,12 @@ namespace Aws
         static const int PM_HASH = HashingUtils::HashString("PM");
         static const int PN_HASH = HashingUtils::HashString("PN");
         static const int PR_HASH = HashingUtils::HashString("PR");
+        static const int PS_HASH = HashingUtils::HashString("PS");
         static const int PT_HASH = HashingUtils::HashString("PT");
         static const int PW_HASH = HashingUtils::HashString("PW");
         static const int PY_HASH = HashingUtils::HashString("PY");
         static const int QA_HASH = HashingUtils::HashString("QA");
+        static const int RE_HASH = HashingUtils::HashString("RE");
         static const int RO_HASH = HashingUtils::HashString("RO");
         static const int RS_HASH = HashingUtils::HashString("RS");
         static const int RU_HASH = HashingUtils::HashString("RU");
@@ -205,18 +222,22 @@ namespace Aws
         static const int SG_HASH = HashingUtils::HashString("SG");
         static const int SH_HASH = HashingUtils::HashString("SH");
         static const int SI_HASH = HashingUtils::HashString("SI");
+        static const int SJ_HASH = HashingUtils::HashString("SJ");
         static const int SK_HASH = HashingUtils::HashString("SK");
         static const int SL_HASH = HashingUtils::HashString("SL");
         static const int SM_HASH = HashingUtils::HashString("SM");
         static const int SN_HASH = HashingUtils::HashString("SN");
         static const int SO_HASH = HashingUtils::HashString("SO");
         static const int SR_HASH = HashingUtils::HashString("SR");
+        static const int SS_HASH = HashingUtils::HashString("SS");
         static const int ST_HASH = HashingUtils::HashString("ST");
         static const int SV_HASH = HashingUtils::HashString("SV");
+        static const int SX_HASH = HashingUtils::HashString("SX");
         static const int SY_HASH = HashingUtils::HashString("SY");
         static const int SZ_HASH = HashingUtils::HashString("SZ");
         static const int TC_HASH = HashingUtils::HashString("TC");
         static const int TD_HASH = HashingUtils::HashString("TD");
+        static const int TF_HASH = HashingUtils::HashString("TF");
         static const int TG_HASH = HashingUtils::HashString("TG");
         static const int TH_HASH = HashingUtils::HashString("TH");
         static const int TJ_HASH = HashingUtils::HashString("TJ");
@@ -225,6 +246,7 @@ namespace Aws
         static const int TM_HASH = HashingUtils::HashString("TM");
         static const int TN_HASH = HashingUtils::HashString("TN");
         static const int TO_HASH = HashingUtils::HashString("TO");
+        static const int TP_HASH = HashingUtils::HashString("TP");
         static const int TR_HASH = HashingUtils::HashString("TR");
         static const int TT_HASH = HashingUtils::HashString("TT");
         static const int TV_HASH = HashingUtils::HashString("TV");
@@ -257,7 +279,12 @@ namespace Aws
         */
         static bool GetEnumForNameHelper0(int hashCode, CountryCode& enumValue)
         {
-          if (hashCode == AD_HASH)
+          if (hashCode == AC_HASH)
+          {
+            enumValue = CountryCode::AC;
+            return true;
+          }
+          else if (hashCode == AD_HASH)
           {
             enumValue = CountryCode::AD;
             return true;
@@ -332,6 +359,11 @@ namespace Aws
             enumValue = CountryCode::AW;
             return true;
           }
+          else if (hashCode == AX_HASH)
+          {
+            enumValue = CountryCode::AX;
+            return true;
+          }
           else if (hashCode == AZ_HASH)
           {
             enumValue = CountryCode::AZ;
@@ -402,6 +434,11 @@ namespace Aws
             enumValue = CountryCode::BO;
             return true;
           }
+          else if (hashCode == BQ_HASH)
+          {
+            enumValue = CountryCode::BQ;
+            return true;
+          }
           else if (hashCode == BR_HASH)
           {
             enumValue = CountryCode::BR;
@@ -415,6 +452,11 @@ namespace Aws
           else if (hashCode == BT_HASH)
           {
             enumValue = CountryCode::BT;
+            return true;
+          }
+          else if (hashCode == BV_HASH)
+          {
+            enumValue = CountryCode::BV;
             return true;
           }
           else if (hashCode == BW_HASH)
@@ -507,6 +549,11 @@ namespace Aws
             enumValue = CountryCode::CV;
             return true;
           }
+          else if (hashCode == CW_HASH)
+          {
+            enumValue = CountryCode::CW;
+            return true;
+          }
           else if (hashCode == CX_HASH)
           {
             enumValue = CountryCode::CX;
@@ -565,6 +612,11 @@ namespace Aws
           else if (hashCode == EG_HASH)
           {
             enumValue = CountryCode::EG;
+            return true;
+          }
+          else if (hashCode == EH_HASH)
+          {
+            enumValue = CountryCode::EH;
             return true;
           }
           else if (hashCode == ER_HASH)
@@ -632,6 +684,16 @@ namespace Aws
             enumValue = CountryCode::GE;
             return true;
           }
+          else if (hashCode == GF_HASH)
+          {
+            enumValue = CountryCode::GF;
+            return true;
+          }
+          else if (hashCode == GG_HASH)
+          {
+            enumValue = CountryCode::GG;
+            return true;
+          }
           else if (hashCode == GH_HASH)
           {
             enumValue = CountryCode::GH;
@@ -657,6 +719,11 @@ namespace Aws
             enumValue = CountryCode::GN;
             return true;
           }
+          else if (hashCode == GP_HASH)
+          {
+            enumValue = CountryCode::GP;
+            return true;
+          }
           else if (hashCode == GQ_HASH)
           {
             enumValue = CountryCode::GQ;
@@ -665,6 +732,11 @@ namespace Aws
           else if (hashCode == GR_HASH)
           {
             enumValue = CountryCode::GR;
+            return true;
+          }
+          else if (hashCode == GS_HASH)
+          {
+            enumValue = CountryCode::GS;
             return true;
           }
           else if (hashCode == GT_HASH)
@@ -690,6 +762,11 @@ namespace Aws
           else if (hashCode == HK_HASH)
           {
             enumValue = CountryCode::HK;
+            return true;
+          }
+          else if (hashCode == HM_HASH)
+          {
+            enumValue = CountryCode::HM;
             return true;
           }
           else if (hashCode == HN_HASH)
@@ -737,6 +814,11 @@ namespace Aws
             enumValue = CountryCode::IN;
             return true;
           }
+          else if (hashCode == IO_HASH)
+          {
+            enumValue = CountryCode::IO;
+            return true;
+          }
           else if (hashCode == IQ_HASH)
           {
             enumValue = CountryCode::IQ;
@@ -755,6 +837,11 @@ namespace Aws
           else if (hashCode == IT_HASH)
           {
             enumValue = CountryCode::IT;
+            return true;
+          }
+          else if (hashCode == JE_HASH)
+          {
+            enumValue = CountryCode::JE;
             return true;
           }
           else if (hashCode == JM_HASH)
@@ -802,7 +889,11 @@ namespace Aws
             enumValue = CountryCode::KN;
             return true;
           }
-          else if (hashCode == KP_HASH)
+          return false;
+        }
+        static bool GetEnumForNameHelper1(int hashCode, CountryCode& enumValue)
+        {
+          if (hashCode == KP_HASH)
           {
             enumValue = CountryCode::KP;
             return true;
@@ -867,11 +958,7 @@ namespace Aws
             enumValue = CountryCode::LT;
             return true;
           }
-          return false;
-        }
-        static bool GetEnumForNameHelper1(int hashCode, CountryCode& enumValue)
-        {
-          if (hashCode == LU_HASH)
+          else if (hashCode == LU_HASH)
           {
             enumValue = CountryCode::LU;
             return true;
@@ -951,6 +1038,11 @@ namespace Aws
             enumValue = CountryCode::MP;
             return true;
           }
+          else if (hashCode == MQ_HASH)
+          {
+            enumValue = CountryCode::MQ;
+            return true;
+          }
           else if (hashCode == MR_HASH)
           {
             enumValue = CountryCode::MR;
@@ -1009,6 +1101,11 @@ namespace Aws
           else if (hashCode == NE_HASH)
           {
             enumValue = CountryCode::NE;
+            return true;
+          }
+          else if (hashCode == NF_HASH)
+          {
+            enumValue = CountryCode::NF;
             return true;
           }
           else if (hashCode == NG_HASH)
@@ -1106,6 +1203,11 @@ namespace Aws
             enumValue = CountryCode::PR;
             return true;
           }
+          else if (hashCode == PS_HASH)
+          {
+            enumValue = CountryCode::PS;
+            return true;
+          }
           else if (hashCode == PT_HASH)
           {
             enumValue = CountryCode::PT;
@@ -1124,6 +1226,11 @@ namespace Aws
           else if (hashCode == QA_HASH)
           {
             enumValue = CountryCode::QA;
+            return true;
+          }
+          else if (hashCode == RE_HASH)
+          {
+            enumValue = CountryCode::RE;
             return true;
           }
           else if (hashCode == RO_HASH)
@@ -1186,6 +1293,11 @@ namespace Aws
             enumValue = CountryCode::SI;
             return true;
           }
+          else if (hashCode == SJ_HASH)
+          {
+            enumValue = CountryCode::SJ;
+            return true;
+          }
           else if (hashCode == SK_HASH)
           {
             enumValue = CountryCode::SK;
@@ -1216,6 +1328,11 @@ namespace Aws
             enumValue = CountryCode::SR;
             return true;
           }
+          else if (hashCode == SS_HASH)
+          {
+            enumValue = CountryCode::SS;
+            return true;
+          }
           else if (hashCode == ST_HASH)
           {
             enumValue = CountryCode::ST;
@@ -1224,6 +1341,11 @@ namespace Aws
           else if (hashCode == SV_HASH)
           {
             enumValue = CountryCode::SV;
+            return true;
+          }
+          else if (hashCode == SX_HASH)
+          {
+            enumValue = CountryCode::SX;
             return true;
           }
           else if (hashCode == SY_HASH)
@@ -1244,6 +1366,11 @@ namespace Aws
           else if (hashCode == TD_HASH)
           {
             enumValue = CountryCode::TD;
+            return true;
+          }
+          else if (hashCode == TF_HASH)
+          {
+            enumValue = CountryCode::TF;
             return true;
           }
           else if (hashCode == TG_HASH)
@@ -1284,6 +1411,11 @@ namespace Aws
           else if (hashCode == TO_HASH)
           {
             enumValue = CountryCode::TO;
+            return true;
+          }
+          else if (hashCode == TP_HASH)
+          {
+            enumValue = CountryCode::TP;
             return true;
           }
           else if (hashCode == TR_HASH)
@@ -1371,7 +1503,11 @@ namespace Aws
             enumValue = CountryCode::VU;
             return true;
           }
-          else if (hashCode == WF_HASH)
+          return false;
+        }
+        static bool GetEnumForNameHelper2(int hashCode, CountryCode& enumValue)
+        {
+          if (hashCode == WF_HASH)
           {
             enumValue = CountryCode::WF;
             return true;
@@ -1413,6 +1549,9 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CountryCode::AC:
+            value = "AC";
+            return true;
           case CountryCode::AD:
             value = "AD";
             return true;
@@ -1458,6 +1597,9 @@ namespace Aws
           case CountryCode::AW:
             value = "AW";
             return true;
+          case CountryCode::AX:
+            value = "AX";
+            return true;
           case CountryCode::AZ:
             value = "AZ";
             return true;
@@ -1500,6 +1642,9 @@ namespace Aws
           case CountryCode::BO:
             value = "BO";
             return true;
+          case CountryCode::BQ:
+            value = "BQ";
+            return true;
           case CountryCode::BR:
             value = "BR";
             return true;
@@ -1508,6 +1653,9 @@ namespace Aws
             return true;
           case CountryCode::BT:
             value = "BT";
+            return true;
+          case CountryCode::BV:
+            value = "BV";
             return true;
           case CountryCode::BW:
             value = "BW";
@@ -1563,6 +1711,9 @@ namespace Aws
           case CountryCode::CV:
             value = "CV";
             return true;
+          case CountryCode::CW:
+            value = "CW";
+            return true;
           case CountryCode::CX:
             value = "CX";
             return true;
@@ -1598,6 +1749,9 @@ namespace Aws
             return true;
           case CountryCode::EG:
             value = "EG";
+            return true;
+          case CountryCode::EH:
+            value = "EH";
             return true;
           case CountryCode::ER:
             value = "ER";
@@ -1638,6 +1792,12 @@ namespace Aws
           case CountryCode::GE:
             value = "GE";
             return true;
+          case CountryCode::GF:
+            value = "GF";
+            return true;
+          case CountryCode::GG:
+            value = "GG";
+            return true;
           case CountryCode::GH:
             value = "GH";
             return true;
@@ -1653,11 +1813,17 @@ namespace Aws
           case CountryCode::GN:
             value = "GN";
             return true;
+          case CountryCode::GP:
+            value = "GP";
+            return true;
           case CountryCode::GQ:
             value = "GQ";
             return true;
           case CountryCode::GR:
             value = "GR";
+            return true;
+          case CountryCode::GS:
+            value = "GS";
             return true;
           case CountryCode::GT:
             value = "GT";
@@ -1673,6 +1839,9 @@ namespace Aws
             return true;
           case CountryCode::HK:
             value = "HK";
+            return true;
+          case CountryCode::HM:
+            value = "HM";
             return true;
           case CountryCode::HN:
             value = "HN";
@@ -1701,6 +1870,9 @@ namespace Aws
           case CountryCode::IN:
             value = "IN";
             return true;
+          case CountryCode::IO:
+            value = "IO";
+            return true;
           case CountryCode::IQ:
             value = "IQ";
             return true;
@@ -1712,6 +1884,9 @@ namespace Aws
             return true;
           case CountryCode::IT:
             value = "IT";
+            return true;
+          case CountryCode::JE:
+            value = "JE";
             return true;
           case CountryCode::JM:
             value = "JM";
@@ -1740,6 +1915,14 @@ namespace Aws
           case CountryCode::KN:
             value = "KN";
             return true;
+          default:
+            return false;
+          }
+        }
+        static bool GetNameForEnumHelper1(CountryCode enumValue, Aws::String& value)
+        {
+          switch(enumValue)
+          {
           case CountryCode::KP:
             value = "KP";
             return true;
@@ -1779,14 +1962,6 @@ namespace Aws
           case CountryCode::LT:
             value = "LT";
             return true;
-          default:
-            return false;
-          }
-        }
-        static bool GetNameForEnumHelper1(CountryCode enumValue, Aws::String& value)
-        {
-          switch(enumValue)
-          {
           case CountryCode::LU:
             value = "LU";
             return true;
@@ -1835,6 +2010,9 @@ namespace Aws
           case CountryCode::MP:
             value = "MP";
             return true;
+          case CountryCode::MQ:
+            value = "MQ";
+            return true;
           case CountryCode::MR:
             value = "MR";
             return true;
@@ -1870,6 +2048,9 @@ namespace Aws
             return true;
           case CountryCode::NE:
             value = "NE";
+            return true;
+          case CountryCode::NF:
+            value = "NF";
             return true;
           case CountryCode::NG:
             value = "NG";
@@ -1928,6 +2109,9 @@ namespace Aws
           case CountryCode::PR:
             value = "PR";
             return true;
+          case CountryCode::PS:
+            value = "PS";
+            return true;
           case CountryCode::PT:
             value = "PT";
             return true;
@@ -1939,6 +2123,9 @@ namespace Aws
             return true;
           case CountryCode::QA:
             value = "QA";
+            return true;
+          case CountryCode::RE:
+            value = "RE";
             return true;
           case CountryCode::RO:
             value = "RO";
@@ -1976,6 +2163,9 @@ namespace Aws
           case CountryCode::SI:
             value = "SI";
             return true;
+          case CountryCode::SJ:
+            value = "SJ";
+            return true;
           case CountryCode::SK:
             value = "SK";
             return true;
@@ -1994,11 +2184,17 @@ namespace Aws
           case CountryCode::SR:
             value = "SR";
             return true;
+          case CountryCode::SS:
+            value = "SS";
+            return true;
           case CountryCode::ST:
             value = "ST";
             return true;
           case CountryCode::SV:
             value = "SV";
+            return true;
+          case CountryCode::SX:
+            value = "SX";
             return true;
           case CountryCode::SY:
             value = "SY";
@@ -2011,6 +2207,9 @@ namespace Aws
             return true;
           case CountryCode::TD:
             value = "TD";
+            return true;
+          case CountryCode::TF:
+            value = "TF";
             return true;
           case CountryCode::TG:
             value = "TG";
@@ -2035,6 +2234,9 @@ namespace Aws
             return true;
           case CountryCode::TO:
             value = "TO";
+            return true;
+          case CountryCode::TP:
+            value = "TP";
             return true;
           case CountryCode::TR:
             value = "TR";
@@ -2087,6 +2289,14 @@ namespace Aws
           case CountryCode::VU:
             value = "VU";
             return true;
+          default:
+            return false;
+          }
+        }
+        static bool GetNameForEnumHelper2(CountryCode enumValue, Aws::String& value)
+        {
+          switch(enumValue)
+          {
           case CountryCode::WF:
             value = "WF";
             return true;
@@ -2125,6 +2335,10 @@ namespace Aws
           {
              return enumValue;
           }
+          else if (GetEnumForNameHelper2(hashCode, enumValue))
+          {
+             return enumValue;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -2143,6 +2357,10 @@ namespace Aws
             return value;
           }
           else if (GetNameForEnumHelper1(enumValue, value))
+          {
+            return value;
+          }
+          else if (GetNameForEnumHelper2(enumValue, value))
           {
             return value;
           }

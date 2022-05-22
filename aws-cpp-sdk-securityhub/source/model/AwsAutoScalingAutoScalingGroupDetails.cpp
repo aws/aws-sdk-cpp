@@ -24,7 +24,12 @@ AwsAutoScalingAutoScalingGroupDetails::AwsAutoScalingAutoScalingGroupDetails() :
     m_healthCheckTypeHasBeenSet(false),
     m_healthCheckGracePeriod(0),
     m_healthCheckGracePeriodHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+    m_createdTimeHasBeenSet(false),
+    m_mixedInstancesPolicyHasBeenSet(false),
+    m_availabilityZonesHasBeenSet(false),
+    m_launchTemplateHasBeenSet(false),
+    m_capacityRebalance(false),
+    m_capacityRebalanceHasBeenSet(false)
 {
 }
 
@@ -34,7 +39,12 @@ AwsAutoScalingAutoScalingGroupDetails::AwsAutoScalingAutoScalingGroupDetails(Jso
     m_healthCheckTypeHasBeenSet(false),
     m_healthCheckGracePeriod(0),
     m_healthCheckGracePeriodHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+    m_createdTimeHasBeenSet(false),
+    m_mixedInstancesPolicyHasBeenSet(false),
+    m_availabilityZonesHasBeenSet(false),
+    m_launchTemplateHasBeenSet(false),
+    m_capacityRebalance(false),
+    m_capacityRebalanceHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -79,6 +89,37 @@ AwsAutoScalingAutoScalingGroupDetails& AwsAutoScalingAutoScalingGroupDetails::op
     m_createdTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MixedInstancesPolicy"))
+  {
+    m_mixedInstancesPolicy = jsonValue.GetObject("MixedInstancesPolicy");
+
+    m_mixedInstancesPolicyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AvailabilityZones"))
+  {
+    Array<JsonView> availabilityZonesJsonList = jsonValue.GetArray("AvailabilityZones");
+    for(unsigned availabilityZonesIndex = 0; availabilityZonesIndex < availabilityZonesJsonList.GetLength(); ++availabilityZonesIndex)
+    {
+      m_availabilityZones.push_back(availabilityZonesJsonList[availabilityZonesIndex].AsObject());
+    }
+    m_availabilityZonesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LaunchTemplate"))
+  {
+    m_launchTemplate = jsonValue.GetObject("LaunchTemplate");
+
+    m_launchTemplateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CapacityRebalance"))
+  {
+    m_capacityRebalance = jsonValue.GetBool("CapacityRebalance");
+
+    m_capacityRebalanceHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -118,6 +159,35 @@ JsonValue AwsAutoScalingAutoScalingGroupDetails::Jsonize() const
   if(m_createdTimeHasBeenSet)
   {
    payload.WithString("CreatedTime", m_createdTime);
+
+  }
+
+  if(m_mixedInstancesPolicyHasBeenSet)
+  {
+   payload.WithObject("MixedInstancesPolicy", m_mixedInstancesPolicy.Jsonize());
+
+  }
+
+  if(m_availabilityZonesHasBeenSet)
+  {
+   Array<JsonValue> availabilityZonesJsonList(m_availabilityZones.size());
+   for(unsigned availabilityZonesIndex = 0; availabilityZonesIndex < availabilityZonesJsonList.GetLength(); ++availabilityZonesIndex)
+   {
+     availabilityZonesJsonList[availabilityZonesIndex].AsObject(m_availabilityZones[availabilityZonesIndex].Jsonize());
+   }
+   payload.WithArray("AvailabilityZones", std::move(availabilityZonesJsonList));
+
+  }
+
+  if(m_launchTemplateHasBeenSet)
+  {
+   payload.WithObject("LaunchTemplate", m_launchTemplate.Jsonize());
+
+  }
+
+  if(m_capacityRebalanceHasBeenSet)
+  {
+   payload.WithBool("CapacityRebalance", m_capacityRebalance);
 
   }
 

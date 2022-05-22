@@ -407,6 +407,104 @@ namespace Model
      */
     inline SMSMessage& AddSubstitutions(const char* key, const Aws::Vector<Aws::String>& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The entity ID or Principal Entity (PE) id received from the regulatory body
+     * for sending SMS in your country.</p>
+     */
+    inline const Aws::String& GetEntityId() const{ return m_entityId; }
+
+    /**
+     * <p>The entity ID or Principal Entity (PE) id received from the regulatory body
+     * for sending SMS in your country.</p>
+     */
+    inline bool EntityIdHasBeenSet() const { return m_entityIdHasBeenSet; }
+
+    /**
+     * <p>The entity ID or Principal Entity (PE) id received from the regulatory body
+     * for sending SMS in your country.</p>
+     */
+    inline void SetEntityId(const Aws::String& value) { m_entityIdHasBeenSet = true; m_entityId = value; }
+
+    /**
+     * <p>The entity ID or Principal Entity (PE) id received from the regulatory body
+     * for sending SMS in your country.</p>
+     */
+    inline void SetEntityId(Aws::String&& value) { m_entityIdHasBeenSet = true; m_entityId = std::move(value); }
+
+    /**
+     * <p>The entity ID or Principal Entity (PE) id received from the regulatory body
+     * for sending SMS in your country.</p>
+     */
+    inline void SetEntityId(const char* value) { m_entityIdHasBeenSet = true; m_entityId.assign(value); }
+
+    /**
+     * <p>The entity ID or Principal Entity (PE) id received from the regulatory body
+     * for sending SMS in your country.</p>
+     */
+    inline SMSMessage& WithEntityId(const Aws::String& value) { SetEntityId(value); return *this;}
+
+    /**
+     * <p>The entity ID or Principal Entity (PE) id received from the regulatory body
+     * for sending SMS in your country.</p>
+     */
+    inline SMSMessage& WithEntityId(Aws::String&& value) { SetEntityId(std::move(value)); return *this;}
+
+    /**
+     * <p>The entity ID or Principal Entity (PE) id received from the regulatory body
+     * for sending SMS in your country.</p>
+     */
+    inline SMSMessage& WithEntityId(const char* value) { SetEntityId(value); return *this;}
+
+
+    /**
+     * <p>The template ID received from the regulatory body for sending SMS in your
+     * country.</p>
+     */
+    inline const Aws::String& GetTemplateId() const{ return m_templateId; }
+
+    /**
+     * <p>The template ID received from the regulatory body for sending SMS in your
+     * country.</p>
+     */
+    inline bool TemplateIdHasBeenSet() const { return m_templateIdHasBeenSet; }
+
+    /**
+     * <p>The template ID received from the regulatory body for sending SMS in your
+     * country.</p>
+     */
+    inline void SetTemplateId(const Aws::String& value) { m_templateIdHasBeenSet = true; m_templateId = value; }
+
+    /**
+     * <p>The template ID received from the regulatory body for sending SMS in your
+     * country.</p>
+     */
+    inline void SetTemplateId(Aws::String&& value) { m_templateIdHasBeenSet = true; m_templateId = std::move(value); }
+
+    /**
+     * <p>The template ID received from the regulatory body for sending SMS in your
+     * country.</p>
+     */
+    inline void SetTemplateId(const char* value) { m_templateIdHasBeenSet = true; m_templateId.assign(value); }
+
+    /**
+     * <p>The template ID received from the regulatory body for sending SMS in your
+     * country.</p>
+     */
+    inline SMSMessage& WithTemplateId(const Aws::String& value) { SetTemplateId(value); return *this;}
+
+    /**
+     * <p>The template ID received from the regulatory body for sending SMS in your
+     * country.</p>
+     */
+    inline SMSMessage& WithTemplateId(Aws::String&& value) { SetTemplateId(std::move(value)); return *this;}
+
+    /**
+     * <p>The template ID received from the regulatory body for sending SMS in your
+     * country.</p>
+     */
+    inline SMSMessage& WithTemplateId(const char* value) { SetTemplateId(value); return *this;}
+
   private:
 
     Aws::String m_body;
@@ -429,6 +527,12 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_substitutions;
     bool m_substitutionsHasBeenSet;
+
+    Aws::String m_entityId;
+    bool m_entityIdHasBeenSet;
+
+    Aws::String m_templateId;
+    bool m_templateIdHasBeenSet;
   };
 
 } // namespace Model

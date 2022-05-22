@@ -36,6 +36,7 @@ Deployment::Deployment() :
     m_launchType(LaunchType::NOT_SET),
     m_launchTypeHasBeenSet(false),
     m_platformVersionHasBeenSet(false),
+    m_platformFamilyHasBeenSet(false),
     m_networkConfigurationHasBeenSet(false),
     m_rolloutState(DeploymentRolloutState::NOT_SET),
     m_rolloutStateHasBeenSet(false),
@@ -61,6 +62,7 @@ Deployment::Deployment(JsonView jsonValue) :
     m_launchType(LaunchType::NOT_SET),
     m_launchTypeHasBeenSet(false),
     m_platformVersionHasBeenSet(false),
+    m_platformFamilyHasBeenSet(false),
     m_networkConfigurationHasBeenSet(false),
     m_rolloutState(DeploymentRolloutState::NOT_SET),
     m_rolloutStateHasBeenSet(false),
@@ -156,6 +158,13 @@ Deployment& Deployment::operator =(JsonView jsonValue)
     m_platformVersion = jsonValue.GetString("platformVersion");
 
     m_platformVersionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("platformFamily"))
+  {
+    m_platformFamily = jsonValue.GetString("platformFamily");
+
+    m_platformFamilyHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("networkConfiguration"))
@@ -257,6 +266,12 @@ JsonValue Deployment::Jsonize() const
   if(m_platformVersionHasBeenSet)
   {
    payload.WithString("platformVersion", m_platformVersion);
+
+  }
+
+  if(m_platformFamilyHasBeenSet)
+  {
+   payload.WithString("platformFamily", m_platformFamily);
 
   }
 

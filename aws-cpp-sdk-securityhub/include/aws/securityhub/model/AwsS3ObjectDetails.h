@@ -291,50 +291,50 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the AWS Key Management Service (AWS KMS) symmetric customer
-     * managed customer master key (CMK) that was used for the object.</p>
+     * <p>The identifier of the KMS symmetric customer managed key that was used for
+     * the object.</p>
      */
     inline const Aws::String& GetSSEKMSKeyId() const{ return m_sSEKMSKeyId; }
 
     /**
-     * <p>The identifier of the AWS Key Management Service (AWS KMS) symmetric customer
-     * managed customer master key (CMK) that was used for the object.</p>
+     * <p>The identifier of the KMS symmetric customer managed key that was used for
+     * the object.</p>
      */
     inline bool SSEKMSKeyIdHasBeenSet() const { return m_sSEKMSKeyIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the AWS Key Management Service (AWS KMS) symmetric customer
-     * managed customer master key (CMK) that was used for the object.</p>
+     * <p>The identifier of the KMS symmetric customer managed key that was used for
+     * the object.</p>
      */
     inline void SetSSEKMSKeyId(const Aws::String& value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId = value; }
 
     /**
-     * <p>The identifier of the AWS Key Management Service (AWS KMS) symmetric customer
-     * managed customer master key (CMK) that was used for the object.</p>
+     * <p>The identifier of the KMS symmetric customer managed key that was used for
+     * the object.</p>
      */
     inline void SetSSEKMSKeyId(Aws::String&& value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId = std::move(value); }
 
     /**
-     * <p>The identifier of the AWS Key Management Service (AWS KMS) symmetric customer
-     * managed customer master key (CMK) that was used for the object.</p>
+     * <p>The identifier of the KMS symmetric customer managed key that was used for
+     * the object.</p>
      */
     inline void SetSSEKMSKeyId(const char* value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId.assign(value); }
 
     /**
-     * <p>The identifier of the AWS Key Management Service (AWS KMS) symmetric customer
-     * managed customer master key (CMK) that was used for the object.</p>
+     * <p>The identifier of the KMS symmetric customer managed key that was used for
+     * the object.</p>
      */
     inline AwsS3ObjectDetails& WithSSEKMSKeyId(const Aws::String& value) { SetSSEKMSKeyId(value); return *this;}
 
     /**
-     * <p>The identifier of the AWS Key Management Service (AWS KMS) symmetric customer
-     * managed customer master key (CMK) that was used for the object.</p>
+     * <p>The identifier of the KMS symmetric customer managed key that was used for
+     * the object.</p>
      */
     inline AwsS3ObjectDetails& WithSSEKMSKeyId(Aws::String&& value) { SetSSEKMSKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the AWS Key Management Service (AWS KMS) symmetric customer
-     * managed customer master key (CMK) that was used for the object.</p>
+     * <p>The identifier of the KMS symmetric customer managed key that was used for
+     * the object.</p>
      */
     inline AwsS3ObjectDetails& WithSSEKMSKeyId(const char* value) { SetSSEKMSKeyId(value); return *this;}
 

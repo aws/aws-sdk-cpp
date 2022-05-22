@@ -17,14 +17,16 @@ CreateKeyRequest::CreateKeyRequest() :
     m_descriptionHasBeenSet(false),
     m_keyUsage(KeyUsageType::NOT_SET),
     m_keyUsageHasBeenSet(false),
-    m_customerMasterKeySpec(CustomerMasterKeySpec::NOT_SET),
-    m_customerMasterKeySpecHasBeenSet(false),
+    m_keySpec(KeySpec::NOT_SET),
+    m_keySpecHasBeenSet(false),
     m_origin(OriginType::NOT_SET),
     m_originHasBeenSet(false),
     m_customKeyStoreIdHasBeenSet(false),
     m_bypassPolicyLockoutSafetyCheck(false),
     m_bypassPolicyLockoutSafetyCheckHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_multiRegion(false),
+    m_multiRegionHasBeenSet(false)
 {
 }
 
@@ -49,9 +51,9 @@ Aws::String CreateKeyRequest::SerializePayload() const
    payload.WithString("KeyUsage", KeyUsageTypeMapper::GetNameForKeyUsageType(m_keyUsage));
   }
 
-  if(m_customerMasterKeySpecHasBeenSet)
+  if(m_keySpecHasBeenSet)
   {
-   payload.WithString("CustomerMasterKeySpec", CustomerMasterKeySpecMapper::GetNameForCustomerMasterKeySpec(m_customerMasterKeySpec));
+   payload.WithString("KeySpec", KeySpecMapper::GetNameForKeySpec(m_keySpec));
   }
 
   if(m_originHasBeenSet)
@@ -79,6 +81,12 @@ Aws::String CreateKeyRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_multiRegionHasBeenSet)
+  {
+   payload.WithBool("MultiRegion", m_multiRegion);
 
   }
 

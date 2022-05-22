@@ -83,6 +83,63 @@ namespace Model
 
 
     /**
+     * <p>The friendly name of the SSM document. This value can differ for each version
+     * of the document. If you want to update this value, see
+     * <a>UpdateDocument</a>.</p>
+     */
+    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+
+    /**
+     * <p>The friendly name of the SSM document. This value can differ for each version
+     * of the document. If you want to update this value, see
+     * <a>UpdateDocument</a>.</p>
+     */
+    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
+
+    /**
+     * <p>The friendly name of the SSM document. This value can differ for each version
+     * of the document. If you want to update this value, see
+     * <a>UpdateDocument</a>.</p>
+     */
+    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
+
+    /**
+     * <p>The friendly name of the SSM document. This value can differ for each version
+     * of the document. If you want to update this value, see
+     * <a>UpdateDocument</a>.</p>
+     */
+    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
+
+    /**
+     * <p>The friendly name of the SSM document. This value can differ for each version
+     * of the document. If you want to update this value, see
+     * <a>UpdateDocument</a>.</p>
+     */
+    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
+
+    /**
+     * <p>The friendly name of the SSM document. This value can differ for each version
+     * of the document. If you want to update this value, see
+     * <a>UpdateDocument</a>.</p>
+     */
+    inline DocumentVersionInfo& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
+
+    /**
+     * <p>The friendly name of the SSM document. This value can differ for each version
+     * of the document. If you want to update this value, see
+     * <a>UpdateDocument</a>.</p>
+     */
+    inline DocumentVersionInfo& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
+
+    /**
+     * <p>The friendly name of the SSM document. This value can differ for each version
+     * of the document. If you want to update this value, see
+     * <a>UpdateDocument</a>.</p>
+     */
+    inline DocumentVersionInfo& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+
+
+    /**
      * <p>The document version.</p>
      */
     inline const Aws::String& GetDocumentVersion() const{ return m_documentVersion; }
@@ -126,56 +183,56 @@ namespace Model
     /**
      * <p>The version of the artifact associated with the document. For example,
      * "Release 12, Update 6". This value is unique across all versions of a document,
-     * and cannot be changed.</p>
+     * and can't be changed.</p>
      */
     inline const Aws::String& GetVersionName() const{ return m_versionName; }
 
     /**
      * <p>The version of the artifact associated with the document. For example,
      * "Release 12, Update 6". This value is unique across all versions of a document,
-     * and cannot be changed.</p>
+     * and can't be changed.</p>
      */
     inline bool VersionNameHasBeenSet() const { return m_versionNameHasBeenSet; }
 
     /**
      * <p>The version of the artifact associated with the document. For example,
      * "Release 12, Update 6". This value is unique across all versions of a document,
-     * and cannot be changed.</p>
+     * and can't be changed.</p>
      */
     inline void SetVersionName(const Aws::String& value) { m_versionNameHasBeenSet = true; m_versionName = value; }
 
     /**
      * <p>The version of the artifact associated with the document. For example,
      * "Release 12, Update 6". This value is unique across all versions of a document,
-     * and cannot be changed.</p>
+     * and can't be changed.</p>
      */
     inline void SetVersionName(Aws::String&& value) { m_versionNameHasBeenSet = true; m_versionName = std::move(value); }
 
     /**
      * <p>The version of the artifact associated with the document. For example,
      * "Release 12, Update 6". This value is unique across all versions of a document,
-     * and cannot be changed.</p>
+     * and can't be changed.</p>
      */
     inline void SetVersionName(const char* value) { m_versionNameHasBeenSet = true; m_versionName.assign(value); }
 
     /**
      * <p>The version of the artifact associated with the document. For example,
      * "Release 12, Update 6". This value is unique across all versions of a document,
-     * and cannot be changed.</p>
+     * and can't be changed.</p>
      */
     inline DocumentVersionInfo& WithVersionName(const Aws::String& value) { SetVersionName(value); return *this;}
 
     /**
      * <p>The version of the artifact associated with the document. For example,
      * "Release 12, Update 6". This value is unique across all versions of a document,
-     * and cannot be changed.</p>
+     * and can't be changed.</p>
      */
     inline DocumentVersionInfo& WithVersionName(Aws::String&& value) { SetVersionName(std::move(value)); return *this;}
 
     /**
      * <p>The version of the artifact associated with the document. For example,
      * "Release 12, Update 6". This value is unique across all versions of a document,
-     * and cannot be changed.</p>
+     * and can't be changed.</p>
      */
     inline DocumentVersionInfo& WithVersionName(const char* value) { SetVersionName(value); return *this;}
 
@@ -264,103 +321,103 @@ namespace Model
 
 
     /**
-     * <p>The status of the Systems Manager document, such as <code>Creating</code>,
+     * <p>The status of the SSM document, such as <code>Creating</code>,
      * <code>Active</code>, <code>Failed</code>, and <code>Deleting</code>.</p>
      */
     inline const DocumentStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the Systems Manager document, such as <code>Creating</code>,
+     * <p>The status of the SSM document, such as <code>Creating</code>,
      * <code>Active</code>, <code>Failed</code>, and <code>Deleting</code>.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The status of the Systems Manager document, such as <code>Creating</code>,
+     * <p>The status of the SSM document, such as <code>Creating</code>,
      * <code>Active</code>, <code>Failed</code>, and <code>Deleting</code>.</p>
      */
     inline void SetStatus(const DocumentStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the Systems Manager document, such as <code>Creating</code>,
+     * <p>The status of the SSM document, such as <code>Creating</code>,
      * <code>Active</code>, <code>Failed</code>, and <code>Deleting</code>.</p>
      */
     inline void SetStatus(DocumentStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the Systems Manager document, such as <code>Creating</code>,
+     * <p>The status of the SSM document, such as <code>Creating</code>,
      * <code>Active</code>, <code>Failed</code>, and <code>Deleting</code>.</p>
      */
     inline DocumentVersionInfo& WithStatus(const DocumentStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the Systems Manager document, such as <code>Creating</code>,
+     * <p>The status of the SSM document, such as <code>Creating</code>,
      * <code>Active</code>, <code>Failed</code>, and <code>Deleting</code>.</p>
      */
     inline DocumentVersionInfo& WithStatus(DocumentStatus&& value) { SetStatus(std::move(value)); return *this;}
 
 
     /**
-     * <p>A message returned by AWS Systems Manager that explains the
+     * <p>A message returned by Amazon Web Services Systems Manager that explains the
      * <code>Status</code> value. For example, a <code>Failed</code> status might be
      * explained by the <code>StatusInformation</code> message, "The specified S3
-     * bucket does not exist. Verify that the URL of the S3 bucket is correct."</p>
+     * bucket doesn't exist. Verify that the URL of the S3 bucket is correct."</p>
      */
     inline const Aws::String& GetStatusInformation() const{ return m_statusInformation; }
 
     /**
-     * <p>A message returned by AWS Systems Manager that explains the
+     * <p>A message returned by Amazon Web Services Systems Manager that explains the
      * <code>Status</code> value. For example, a <code>Failed</code> status might be
      * explained by the <code>StatusInformation</code> message, "The specified S3
-     * bucket does not exist. Verify that the URL of the S3 bucket is correct."</p>
+     * bucket doesn't exist. Verify that the URL of the S3 bucket is correct."</p>
      */
     inline bool StatusInformationHasBeenSet() const { return m_statusInformationHasBeenSet; }
 
     /**
-     * <p>A message returned by AWS Systems Manager that explains the
+     * <p>A message returned by Amazon Web Services Systems Manager that explains the
      * <code>Status</code> value. For example, a <code>Failed</code> status might be
      * explained by the <code>StatusInformation</code> message, "The specified S3
-     * bucket does not exist. Verify that the URL of the S3 bucket is correct."</p>
+     * bucket doesn't exist. Verify that the URL of the S3 bucket is correct."</p>
      */
     inline void SetStatusInformation(const Aws::String& value) { m_statusInformationHasBeenSet = true; m_statusInformation = value; }
 
     /**
-     * <p>A message returned by AWS Systems Manager that explains the
+     * <p>A message returned by Amazon Web Services Systems Manager that explains the
      * <code>Status</code> value. For example, a <code>Failed</code> status might be
      * explained by the <code>StatusInformation</code> message, "The specified S3
-     * bucket does not exist. Verify that the URL of the S3 bucket is correct."</p>
+     * bucket doesn't exist. Verify that the URL of the S3 bucket is correct."</p>
      */
     inline void SetStatusInformation(Aws::String&& value) { m_statusInformationHasBeenSet = true; m_statusInformation = std::move(value); }
 
     /**
-     * <p>A message returned by AWS Systems Manager that explains the
+     * <p>A message returned by Amazon Web Services Systems Manager that explains the
      * <code>Status</code> value. For example, a <code>Failed</code> status might be
      * explained by the <code>StatusInformation</code> message, "The specified S3
-     * bucket does not exist. Verify that the URL of the S3 bucket is correct."</p>
+     * bucket doesn't exist. Verify that the URL of the S3 bucket is correct."</p>
      */
     inline void SetStatusInformation(const char* value) { m_statusInformationHasBeenSet = true; m_statusInformation.assign(value); }
 
     /**
-     * <p>A message returned by AWS Systems Manager that explains the
+     * <p>A message returned by Amazon Web Services Systems Manager that explains the
      * <code>Status</code> value. For example, a <code>Failed</code> status might be
      * explained by the <code>StatusInformation</code> message, "The specified S3
-     * bucket does not exist. Verify that the URL of the S3 bucket is correct."</p>
+     * bucket doesn't exist. Verify that the URL of the S3 bucket is correct."</p>
      */
     inline DocumentVersionInfo& WithStatusInformation(const Aws::String& value) { SetStatusInformation(value); return *this;}
 
     /**
-     * <p>A message returned by AWS Systems Manager that explains the
+     * <p>A message returned by Amazon Web Services Systems Manager that explains the
      * <code>Status</code> value. For example, a <code>Failed</code> status might be
      * explained by the <code>StatusInformation</code> message, "The specified S3
-     * bucket does not exist. Verify that the URL of the S3 bucket is correct."</p>
+     * bucket doesn't exist. Verify that the URL of the S3 bucket is correct."</p>
      */
     inline DocumentVersionInfo& WithStatusInformation(Aws::String&& value) { SetStatusInformation(std::move(value)); return *this;}
 
     /**
-     * <p>A message returned by AWS Systems Manager that explains the
+     * <p>A message returned by Amazon Web Services Systems Manager that explains the
      * <code>Status</code> value. For example, a <code>Failed</code> status might be
      * explained by the <code>StatusInformation</code> message, "The specified S3
-     * bucket does not exist. Verify that the URL of the S3 bucket is correct."</p>
+     * bucket doesn't exist. Verify that the URL of the S3 bucket is correct."</p>
      */
     inline DocumentVersionInfo& WithStatusInformation(const char* value) { SetStatusInformation(value); return *this;}
 
@@ -405,6 +462,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    Aws::String m_displayName;
+    bool m_displayNameHasBeenSet;
 
     Aws::String m_documentVersion;
     bool m_documentVersionHasBeenSet;

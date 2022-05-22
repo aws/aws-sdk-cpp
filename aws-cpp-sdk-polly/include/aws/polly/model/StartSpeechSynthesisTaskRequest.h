@@ -86,9 +86,9 @@ namespace Model
      * <p>Optional language code for the Speech Synthesis request. This is only
      * necessary if using a bilingual voice, such as Aditi, which can be used for
      * either Indian English (en-IN) or Hindi (hi-IN). </p> <p>If a bilingual voice is
-     * used and no language code is specified, Amazon Polly will use the default
-     * language of the bilingual voice. The default language for any voice is the one
-     * returned by the <a
+     * used and no language code is specified, Amazon Polly uses the default language
+     * of the bilingual voice. The default language for any voice is the one returned
+     * by the <a
      * href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a>
      * operation for the <code>LanguageCode</code> parameter. For example, if no
      * language code is specified, Aditi will use Indian English rather than Hindi.</p>
@@ -99,9 +99,9 @@ namespace Model
      * <p>Optional language code for the Speech Synthesis request. This is only
      * necessary if using a bilingual voice, such as Aditi, which can be used for
      * either Indian English (en-IN) or Hindi (hi-IN). </p> <p>If a bilingual voice is
-     * used and no language code is specified, Amazon Polly will use the default
-     * language of the bilingual voice. The default language for any voice is the one
-     * returned by the <a
+     * used and no language code is specified, Amazon Polly uses the default language
+     * of the bilingual voice. The default language for any voice is the one returned
+     * by the <a
      * href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a>
      * operation for the <code>LanguageCode</code> parameter. For example, if no
      * language code is specified, Aditi will use Indian English rather than Hindi.</p>
@@ -112,9 +112,9 @@ namespace Model
      * <p>Optional language code for the Speech Synthesis request. This is only
      * necessary if using a bilingual voice, such as Aditi, which can be used for
      * either Indian English (en-IN) or Hindi (hi-IN). </p> <p>If a bilingual voice is
-     * used and no language code is specified, Amazon Polly will use the default
-     * language of the bilingual voice. The default language for any voice is the one
-     * returned by the <a
+     * used and no language code is specified, Amazon Polly uses the default language
+     * of the bilingual voice. The default language for any voice is the one returned
+     * by the <a
      * href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a>
      * operation for the <code>LanguageCode</code> parameter. For example, if no
      * language code is specified, Aditi will use Indian English rather than Hindi.</p>
@@ -125,9 +125,9 @@ namespace Model
      * <p>Optional language code for the Speech Synthesis request. This is only
      * necessary if using a bilingual voice, such as Aditi, which can be used for
      * either Indian English (en-IN) or Hindi (hi-IN). </p> <p>If a bilingual voice is
-     * used and no language code is specified, Amazon Polly will use the default
-     * language of the bilingual voice. The default language for any voice is the one
-     * returned by the <a
+     * used and no language code is specified, Amazon Polly uses the default language
+     * of the bilingual voice. The default language for any voice is the one returned
+     * by the <a
      * href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a>
      * operation for the <code>LanguageCode</code> parameter. For example, if no
      * language code is specified, Aditi will use Indian English rather than Hindi.</p>
@@ -138,9 +138,9 @@ namespace Model
      * <p>Optional language code for the Speech Synthesis request. This is only
      * necessary if using a bilingual voice, such as Aditi, which can be used for
      * either Indian English (en-IN) or Hindi (hi-IN). </p> <p>If a bilingual voice is
-     * used and no language code is specified, Amazon Polly will use the default
-     * language of the bilingual voice. The default language for any voice is the one
-     * returned by the <a
+     * used and no language code is specified, Amazon Polly uses the default language
+     * of the bilingual voice. The default language for any voice is the one returned
+     * by the <a
      * href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a>
      * operation for the <code>LanguageCode</code> parameter. For example, if no
      * language code is specified, Aditi will use Indian English rather than Hindi.</p>
@@ -151,9 +151,9 @@ namespace Model
      * <p>Optional language code for the Speech Synthesis request. This is only
      * necessary if using a bilingual voice, such as Aditi, which can be used for
      * either Indian English (en-IN) or Hindi (hi-IN). </p> <p>If a bilingual voice is
-     * used and no language code is specified, Amazon Polly will use the default
-     * language of the bilingual voice. The default language for any voice is the one
-     * returned by the <a
+     * used and no language code is specified, Amazon Polly uses the default language
+     * of the bilingual voice. The default language for any voice is the one returned
+     * by the <a
      * href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a>
      * operation for the <code>LanguageCode</code> parameter. For example, if no
      * language code is specified, Aditi will use Indian English rather than Hindi.</p>

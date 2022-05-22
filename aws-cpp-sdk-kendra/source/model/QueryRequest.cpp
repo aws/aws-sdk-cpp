@@ -20,13 +20,15 @@ QueryRequest::QueryRequest() :
     m_requestedDocumentAttributesHasBeenSet(false),
     m_queryResultTypeFilter(QueryResultType::NOT_SET),
     m_queryResultTypeFilterHasBeenSet(false),
+    m_documentRelevanceOverrideConfigurationsHasBeenSet(false),
     m_pageNumber(0),
     m_pageNumberHasBeenSet(false),
     m_pageSize(0),
     m_pageSizeHasBeenSet(false),
     m_sortingConfigurationHasBeenSet(false),
     m_userContextHasBeenSet(false),
-    m_visitorIdHasBeenSet(false)
+    m_visitorIdHasBeenSet(false),
+    m_spellCorrectionConfigurationHasBeenSet(false)
 {
 }
 
@@ -79,6 +81,17 @@ Aws::String QueryRequest::SerializePayload() const
    payload.WithString("QueryResultTypeFilter", QueryResultTypeMapper::GetNameForQueryResultType(m_queryResultTypeFilter));
   }
 
+  if(m_documentRelevanceOverrideConfigurationsHasBeenSet)
+  {
+   Array<JsonValue> documentRelevanceOverrideConfigurationsJsonList(m_documentRelevanceOverrideConfigurations.size());
+   for(unsigned documentRelevanceOverrideConfigurationsIndex = 0; documentRelevanceOverrideConfigurationsIndex < documentRelevanceOverrideConfigurationsJsonList.GetLength(); ++documentRelevanceOverrideConfigurationsIndex)
+   {
+     documentRelevanceOverrideConfigurationsJsonList[documentRelevanceOverrideConfigurationsIndex].AsObject(m_documentRelevanceOverrideConfigurations[documentRelevanceOverrideConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("DocumentRelevanceOverrideConfigurations", std::move(documentRelevanceOverrideConfigurationsJsonList));
+
+  }
+
   if(m_pageNumberHasBeenSet)
   {
    payload.WithInteger("PageNumber", m_pageNumber);
@@ -106,6 +119,12 @@ Aws::String QueryRequest::SerializePayload() const
   if(m_visitorIdHasBeenSet)
   {
    payload.WithString("VisitorId", m_visitorId);
+
+  }
+
+  if(m_spellCorrectionConfigurationHasBeenSet)
+  {
+   payload.WithObject("SpellCorrectionConfiguration", m_spellCorrectionConfiguration.Jsonize());
 
   }
 

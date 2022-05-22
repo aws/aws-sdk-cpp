@@ -71,7 +71,7 @@ ApiGatewayManagementApiClient::~ApiGatewayManagementApiClient()
 {
 }
 
-void ApiGatewayManagementApiClient::init(const ClientConfiguration& config)
+void ApiGatewayManagementApiClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("ApiGatewayManagementApi");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -105,10 +105,8 @@ DeleteConnectionOutcome ApiGatewayManagementApiClient::DeleteConnection(const De
     return DeleteConnectionOutcome(Aws::Client::AWSError<ApiGatewayManagementApiErrors>(ApiGatewayManagementApiErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConnectionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/@connections/";
-  ss << request.GetConnectionId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/@connections/");
+  uri.AddPathSegment(request.GetConnectionId());
   return DeleteConnectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -138,10 +136,8 @@ GetConnectionOutcome ApiGatewayManagementApiClient::GetConnection(const GetConne
     return GetConnectionOutcome(Aws::Client::AWSError<ApiGatewayManagementApiErrors>(ApiGatewayManagementApiErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConnectionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/@connections/";
-  ss << request.GetConnectionId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/@connections/");
+  uri.AddPathSegment(request.GetConnectionId());
   return GetConnectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -171,10 +167,8 @@ PostToConnectionOutcome ApiGatewayManagementApiClient::PostToConnection(const Po
     return PostToConnectionOutcome(Aws::Client::AWSError<ApiGatewayManagementApiErrors>(ApiGatewayManagementApiErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConnectionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/@connections/";
-  ss << request.GetConnectionId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/@connections/");
+  uri.AddPathSegment(request.GetConnectionId());
   return PostToConnectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

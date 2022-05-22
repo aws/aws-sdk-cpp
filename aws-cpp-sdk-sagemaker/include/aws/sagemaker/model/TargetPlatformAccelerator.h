@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     INTEL_GRAPHICS,
     MALI,
-    NVIDIA
+    NVIDIA,
+    NNA
   };
 
 namespace TargetPlatformAcceleratorMapper

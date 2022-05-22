@@ -62,6 +62,12 @@ UpdateLedgerResult& UpdateLedgerResult::operator =(const Aws::AmazonWebServiceRe
 
   }
 
+  if(jsonValue.ValueExists("EncryptionDescription"))
+  {
+    m_encryptionDescription = jsonValue.GetObject("EncryptionDescription");
+
+  }
+
 
 
   return *this;

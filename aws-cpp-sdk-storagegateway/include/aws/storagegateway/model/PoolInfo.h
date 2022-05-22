@@ -43,56 +43,56 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the custom tape pool. Use the
      * <a>ListTapePools</a> operation to return a list of custom tape pools for your
-     * account and AWS Region.</p>
+     * account and Amazon Web Services Region.</p>
      */
     inline const Aws::String& GetPoolARN() const{ return m_poolARN; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the custom tape pool. Use the
      * <a>ListTapePools</a> operation to return a list of custom tape pools for your
-     * account and AWS Region.</p>
+     * account and Amazon Web Services Region.</p>
      */
     inline bool PoolARNHasBeenSet() const { return m_poolARNHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the custom tape pool. Use the
      * <a>ListTapePools</a> operation to return a list of custom tape pools for your
-     * account and AWS Region.</p>
+     * account and Amazon Web Services Region.</p>
      */
     inline void SetPoolARN(const Aws::String& value) { m_poolARNHasBeenSet = true; m_poolARN = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the custom tape pool. Use the
      * <a>ListTapePools</a> operation to return a list of custom tape pools for your
-     * account and AWS Region.</p>
+     * account and Amazon Web Services Region.</p>
      */
     inline void SetPoolARN(Aws::String&& value) { m_poolARNHasBeenSet = true; m_poolARN = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the custom tape pool. Use the
      * <a>ListTapePools</a> operation to return a list of custom tape pools for your
-     * account and AWS Region.</p>
+     * account and Amazon Web Services Region.</p>
      */
     inline void SetPoolARN(const char* value) { m_poolARNHasBeenSet = true; m_poolARN.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the custom tape pool. Use the
      * <a>ListTapePools</a> operation to return a list of custom tape pools for your
-     * account and AWS Region.</p>
+     * account and Amazon Web Services Region.</p>
      */
     inline PoolInfo& WithPoolARN(const Aws::String& value) { SetPoolARN(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the custom tape pool. Use the
      * <a>ListTapePools</a> operation to return a list of custom tape pools for your
-     * account and AWS Region.</p>
+     * account and Amazon Web Services Region.</p>
      */
     inline PoolInfo& WithPoolARN(Aws::String&& value) { SetPoolARN(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the custom tape pool. Use the
      * <a>ListTapePools</a> operation to return a list of custom tape pools for your
-     * account and AWS Region.</p>
+     * account and Amazon Web Services Region.</p>
      */
     inline PoolInfo& WithPoolARN(const char* value) { SetPoolARN(value); return *this;}
 
@@ -197,55 +197,61 @@ namespace Model
 
     /**
      * <p>Tape retention lock type, which can be configured in two modes. When
-     * configured in governance mode, AWS accounts with specific IAM permissions are
-     * authorized to remove the tape retention lock from archived virtual tapes. When
-     * configured in compliance mode, the tape retention lock cannot be removed by any
-     * user, including the root AWS account.</p>
+     * configured in governance mode, Amazon Web Services accounts with specific IAM
+     * permissions are authorized to remove the tape retention lock from archived
+     * virtual tapes. When configured in compliance mode, the tape retention lock
+     * cannot be removed by any user, including the root Amazon Web Services
+     * account.</p>
      */
     inline const RetentionLockType& GetRetentionLockType() const{ return m_retentionLockType; }
 
     /**
      * <p>Tape retention lock type, which can be configured in two modes. When
-     * configured in governance mode, AWS accounts with specific IAM permissions are
-     * authorized to remove the tape retention lock from archived virtual tapes. When
-     * configured in compliance mode, the tape retention lock cannot be removed by any
-     * user, including the root AWS account.</p>
+     * configured in governance mode, Amazon Web Services accounts with specific IAM
+     * permissions are authorized to remove the tape retention lock from archived
+     * virtual tapes. When configured in compliance mode, the tape retention lock
+     * cannot be removed by any user, including the root Amazon Web Services
+     * account.</p>
      */
     inline bool RetentionLockTypeHasBeenSet() const { return m_retentionLockTypeHasBeenSet; }
 
     /**
      * <p>Tape retention lock type, which can be configured in two modes. When
-     * configured in governance mode, AWS accounts with specific IAM permissions are
-     * authorized to remove the tape retention lock from archived virtual tapes. When
-     * configured in compliance mode, the tape retention lock cannot be removed by any
-     * user, including the root AWS account.</p>
+     * configured in governance mode, Amazon Web Services accounts with specific IAM
+     * permissions are authorized to remove the tape retention lock from archived
+     * virtual tapes. When configured in compliance mode, the tape retention lock
+     * cannot be removed by any user, including the root Amazon Web Services
+     * account.</p>
      */
     inline void SetRetentionLockType(const RetentionLockType& value) { m_retentionLockTypeHasBeenSet = true; m_retentionLockType = value; }
 
     /**
      * <p>Tape retention lock type, which can be configured in two modes. When
-     * configured in governance mode, AWS accounts with specific IAM permissions are
-     * authorized to remove the tape retention lock from archived virtual tapes. When
-     * configured in compliance mode, the tape retention lock cannot be removed by any
-     * user, including the root AWS account.</p>
+     * configured in governance mode, Amazon Web Services accounts with specific IAM
+     * permissions are authorized to remove the tape retention lock from archived
+     * virtual tapes. When configured in compliance mode, the tape retention lock
+     * cannot be removed by any user, including the root Amazon Web Services
+     * account.</p>
      */
     inline void SetRetentionLockType(RetentionLockType&& value) { m_retentionLockTypeHasBeenSet = true; m_retentionLockType = std::move(value); }
 
     /**
      * <p>Tape retention lock type, which can be configured in two modes. When
-     * configured in governance mode, AWS accounts with specific IAM permissions are
-     * authorized to remove the tape retention lock from archived virtual tapes. When
-     * configured in compliance mode, the tape retention lock cannot be removed by any
-     * user, including the root AWS account.</p>
+     * configured in governance mode, Amazon Web Services accounts with specific IAM
+     * permissions are authorized to remove the tape retention lock from archived
+     * virtual tapes. When configured in compliance mode, the tape retention lock
+     * cannot be removed by any user, including the root Amazon Web Services
+     * account.</p>
      */
     inline PoolInfo& WithRetentionLockType(const RetentionLockType& value) { SetRetentionLockType(value); return *this;}
 
     /**
      * <p>Tape retention lock type, which can be configured in two modes. When
-     * configured in governance mode, AWS accounts with specific IAM permissions are
-     * authorized to remove the tape retention lock from archived virtual tapes. When
-     * configured in compliance mode, the tape retention lock cannot be removed by any
-     * user, including the root AWS account.</p>
+     * configured in governance mode, Amazon Web Services accounts with specific IAM
+     * permissions are authorized to remove the tape retention lock from archived
+     * virtual tapes. When configured in compliance mode, the tape retention lock
+     * cannot be removed by any user, including the root Amazon Web Services
+     * account.</p>
      */
     inline PoolInfo& WithRetentionLockType(RetentionLockType&& value) { SetRetentionLockType(std::move(value)); return *this;}
 

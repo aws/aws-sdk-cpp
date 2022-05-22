@@ -26,7 +26,8 @@ CostCategoryReference::CostCategoryReference() :
     m_numberOfRules(0),
     m_numberOfRulesHasBeenSet(false),
     m_processingStatusHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+    m_valuesHasBeenSet(false),
+    m_defaultValueHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ CostCategoryReference::CostCategoryReference(JsonView jsonValue) :
     m_numberOfRules(0),
     m_numberOfRulesHasBeenSet(false),
     m_processingStatusHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+    m_valuesHasBeenSet(false),
+    m_defaultValueHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -100,6 +102,13 @@ CostCategoryReference& CostCategoryReference::operator =(JsonView jsonValue)
     m_valuesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DefaultValue"))
+  {
+    m_defaultValue = jsonValue.GetString("DefaultValue");
+
+    m_defaultValueHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -156,6 +165,12 @@ JsonValue CostCategoryReference::Jsonize() const
      valuesJsonList[valuesIndex].AsString(m_values[valuesIndex]);
    }
    payload.WithArray("Values", std::move(valuesJsonList));
+
+  }
+
+  if(m_defaultValueHasBeenSet)
+  {
+   payload.WithString("DefaultValue", m_defaultValue);
 
   }
 

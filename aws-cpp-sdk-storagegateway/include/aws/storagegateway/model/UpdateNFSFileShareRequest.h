@@ -84,28 +84,28 @@ namespace Model
 
     /**
      * <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your
-     * own AWS KMS key, or <code>false</code> to use a key managed by Amazon S3.
+     * own KMS key, or <code>false</code> to use a key managed by Amazon S3.
      * Optional.</p> <p>Valid Values: <code>true</code> | <code>false</code> </p>
      */
     inline bool GetKMSEncrypted() const{ return m_kMSEncrypted; }
 
     /**
      * <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your
-     * own AWS KMS key, or <code>false</code> to use a key managed by Amazon S3.
+     * own KMS key, or <code>false</code> to use a key managed by Amazon S3.
      * Optional.</p> <p>Valid Values: <code>true</code> | <code>false</code> </p>
      */
     inline bool KMSEncryptedHasBeenSet() const { return m_kMSEncryptedHasBeenSet; }
 
     /**
      * <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your
-     * own AWS KMS key, or <code>false</code> to use a key managed by Amazon S3.
+     * own KMS key, or <code>false</code> to use a key managed by Amazon S3.
      * Optional.</p> <p>Valid Values: <code>true</code> | <code>false</code> </p>
      */
     inline void SetKMSEncrypted(bool value) { m_kMSEncryptedHasBeenSet = true; m_kMSEncrypted = value; }
 
     /**
      * <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your
-     * own AWS KMS key, or <code>false</code> to use a key managed by Amazon S3.
+     * own KMS key, or <code>false</code> to use a key managed by Amazon S3.
      * Optional.</p> <p>Valid Values: <code>true</code> | <code>false</code> </p>
      */
     inline UpdateNFSFileShareRequest& WithKMSEncrypted(bool value) { SetKMSEncrypted(value); return *this;}
@@ -208,171 +208,163 @@ namespace Model
 
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
-     * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
-     * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
-     * <code>S3_ONEZONE_IA</code> </p>
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the S3
+     * File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
+     * <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code>
+     * | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
      */
     inline const Aws::String& GetDefaultStorageClass() const{ return m_defaultStorageClass; }
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
-     * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
-     * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
-     * <code>S3_ONEZONE_IA</code> </p>
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the S3
+     * File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
+     * <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code>
+     * | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
      */
     inline bool DefaultStorageClassHasBeenSet() const { return m_defaultStorageClassHasBeenSet; }
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
-     * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
-     * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
-     * <code>S3_ONEZONE_IA</code> </p>
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the S3
+     * File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
+     * <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code>
+     * | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
      */
     inline void SetDefaultStorageClass(const Aws::String& value) { m_defaultStorageClassHasBeenSet = true; m_defaultStorageClass = value; }
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
-     * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
-     * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
-     * <code>S3_ONEZONE_IA</code> </p>
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the S3
+     * File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
+     * <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code>
+     * | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
      */
     inline void SetDefaultStorageClass(Aws::String&& value) { m_defaultStorageClassHasBeenSet = true; m_defaultStorageClass = std::move(value); }
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
-     * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
-     * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
-     * <code>S3_ONEZONE_IA</code> </p>
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the S3
+     * File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
+     * <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code>
+     * | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
      */
     inline void SetDefaultStorageClass(const char* value) { m_defaultStorageClassHasBeenSet = true; m_defaultStorageClass.assign(value); }
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
-     * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
-     * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
-     * <code>S3_ONEZONE_IA</code> </p>
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the S3
+     * File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
+     * <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code>
+     * | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
      */
     inline UpdateNFSFileShareRequest& WithDefaultStorageClass(const Aws::String& value) { SetDefaultStorageClass(value); return *this;}
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
-     * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
-     * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
-     * <code>S3_ONEZONE_IA</code> </p>
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the S3
+     * File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
+     * <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code>
+     * | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
      */
     inline UpdateNFSFileShareRequest& WithDefaultStorageClass(Aws::String&& value) { SetDefaultStorageClass(std::move(value)); return *this;}
 
     /**
-     * <p>The default storage class for objects put into an Amazon S3 bucket by the
-     * file gateway. The default value is <code>S3_INTELLIGENT_TIERING</code>.
-     * Optional.</p> <p>Valid Values: <code>S3_STANDARD</code> |
-     * <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
-     * <code>S3_ONEZONE_IA</code> </p>
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the S3
+     * File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
+     * <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code>
+     * | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
      */
     inline UpdateNFSFileShareRequest& WithDefaultStorageClass(const char* value) { SetDefaultStorageClass(value); return *this;}
 
 
     /**
      * <p>A value that sets the access control list (ACL) permission for objects in the
-     * S3 bucket that a file gateway puts objects into. The default value is
+     * S3 bucket that a S3 File Gateway puts objects into. The default value is
      * <code>private</code>.</p>
      */
     inline const ObjectACL& GetObjectACL() const{ return m_objectACL; }
 
     /**
      * <p>A value that sets the access control list (ACL) permission for objects in the
-     * S3 bucket that a file gateway puts objects into. The default value is
+     * S3 bucket that a S3 File Gateway puts objects into. The default value is
      * <code>private</code>.</p>
      */
     inline bool ObjectACLHasBeenSet() const { return m_objectACLHasBeenSet; }
 
     /**
      * <p>A value that sets the access control list (ACL) permission for objects in the
-     * S3 bucket that a file gateway puts objects into. The default value is
+     * S3 bucket that a S3 File Gateway puts objects into. The default value is
      * <code>private</code>.</p>
      */
     inline void SetObjectACL(const ObjectACL& value) { m_objectACLHasBeenSet = true; m_objectACL = value; }
 
     /**
      * <p>A value that sets the access control list (ACL) permission for objects in the
-     * S3 bucket that a file gateway puts objects into. The default value is
+     * S3 bucket that a S3 File Gateway puts objects into. The default value is
      * <code>private</code>.</p>
      */
     inline void SetObjectACL(ObjectACL&& value) { m_objectACLHasBeenSet = true; m_objectACL = std::move(value); }
 
     /**
      * <p>A value that sets the access control list (ACL) permission for objects in the
-     * S3 bucket that a file gateway puts objects into. The default value is
+     * S3 bucket that a S3 File Gateway puts objects into. The default value is
      * <code>private</code>.</p>
      */
     inline UpdateNFSFileShareRequest& WithObjectACL(const ObjectACL& value) { SetObjectACL(value); return *this;}
 
     /**
      * <p>A value that sets the access control list (ACL) permission for objects in the
-     * S3 bucket that a file gateway puts objects into. The default value is
+     * S3 bucket that a S3 File Gateway puts objects into. The default value is
      * <code>private</code>.</p>
      */
     inline UpdateNFSFileShareRequest& WithObjectACL(ObjectACL&& value) { SetObjectACL(std::move(value)); return *this;}
 
 
     /**
-     * <p>The list of clients that are allowed to access the file gateway. The list
+     * <p>The list of clients that are allowed to access the S3 File Gateway. The list
      * must contain either valid IP addresses or valid CIDR blocks.</p>
      */
     inline const Aws::Vector<Aws::String>& GetClientList() const{ return m_clientList; }
 
     /**
-     * <p>The list of clients that are allowed to access the file gateway. The list
+     * <p>The list of clients that are allowed to access the S3 File Gateway. The list
      * must contain either valid IP addresses or valid CIDR blocks.</p>
      */
     inline bool ClientListHasBeenSet() const { return m_clientListHasBeenSet; }
 
     /**
-     * <p>The list of clients that are allowed to access the file gateway. The list
+     * <p>The list of clients that are allowed to access the S3 File Gateway. The list
      * must contain either valid IP addresses or valid CIDR blocks.</p>
      */
     inline void SetClientList(const Aws::Vector<Aws::String>& value) { m_clientListHasBeenSet = true; m_clientList = value; }
 
     /**
-     * <p>The list of clients that are allowed to access the file gateway. The list
+     * <p>The list of clients that are allowed to access the S3 File Gateway. The list
      * must contain either valid IP addresses or valid CIDR blocks.</p>
      */
     inline void SetClientList(Aws::Vector<Aws::String>&& value) { m_clientListHasBeenSet = true; m_clientList = std::move(value); }
 
     /**
-     * <p>The list of clients that are allowed to access the file gateway. The list
+     * <p>The list of clients that are allowed to access the S3 File Gateway. The list
      * must contain either valid IP addresses or valid CIDR blocks.</p>
      */
     inline UpdateNFSFileShareRequest& WithClientList(const Aws::Vector<Aws::String>& value) { SetClientList(value); return *this;}
 
     /**
-     * <p>The list of clients that are allowed to access the file gateway. The list
+     * <p>The list of clients that are allowed to access the S3 File Gateway. The list
      * must contain either valid IP addresses or valid CIDR blocks.</p>
      */
     inline UpdateNFSFileShareRequest& WithClientList(Aws::Vector<Aws::String>&& value) { SetClientList(std::move(value)); return *this;}
 
     /**
-     * <p>The list of clients that are allowed to access the file gateway. The list
+     * <p>The list of clients that are allowed to access the S3 File Gateway. The list
      * must contain either valid IP addresses or valid CIDR blocks.</p>
      */
     inline UpdateNFSFileShareRequest& AddClientList(const Aws::String& value) { m_clientListHasBeenSet = true; m_clientList.push_back(value); return *this; }
 
     /**
-     * <p>The list of clients that are allowed to access the file gateway. The list
+     * <p>The list of clients that are allowed to access the S3 File Gateway. The list
      * must contain either valid IP addresses or valid CIDR blocks.</p>
      */
     inline UpdateNFSFileShareRequest& AddClientList(Aws::String&& value) { m_clientListHasBeenSet = true; m_clientList.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The list of clients that are allowed to access the file gateway. The list
+     * <p>The list of clients that are allowed to access the S3 File Gateway. The list
      * must contain either valid IP addresses or valid CIDR blocks.</p>
      */
     inline UpdateNFSFileShareRequest& AddClientList(const char* value) { m_clientListHasBeenSet = true; m_clientList.push_back(value); return *this; }
@@ -573,130 +565,267 @@ namespace Model
     /**
      * <p>The name of the file share. Optional.</p>  <p>
      * <code>FileShareName</code> must be set if an S3 prefix name is set in
-     * <code>LocationARN</code>.</p> 
+     * <code>LocationARN</code>, or if an access point or access point alias is
+     * used.</p> 
      */
     inline const Aws::String& GetFileShareName() const{ return m_fileShareName; }
 
     /**
      * <p>The name of the file share. Optional.</p>  <p>
      * <code>FileShareName</code> must be set if an S3 prefix name is set in
-     * <code>LocationARN</code>.</p> 
+     * <code>LocationARN</code>, or if an access point or access point alias is
+     * used.</p> 
      */
     inline bool FileShareNameHasBeenSet() const { return m_fileShareNameHasBeenSet; }
 
     /**
      * <p>The name of the file share. Optional.</p>  <p>
      * <code>FileShareName</code> must be set if an S3 prefix name is set in
-     * <code>LocationARN</code>.</p> 
+     * <code>LocationARN</code>, or if an access point or access point alias is
+     * used.</p> 
      */
     inline void SetFileShareName(const Aws::String& value) { m_fileShareNameHasBeenSet = true; m_fileShareName = value; }
 
     /**
      * <p>The name of the file share. Optional.</p>  <p>
      * <code>FileShareName</code> must be set if an S3 prefix name is set in
-     * <code>LocationARN</code>.</p> 
+     * <code>LocationARN</code>, or if an access point or access point alias is
+     * used.</p> 
      */
     inline void SetFileShareName(Aws::String&& value) { m_fileShareNameHasBeenSet = true; m_fileShareName = std::move(value); }
 
     /**
      * <p>The name of the file share. Optional.</p>  <p>
      * <code>FileShareName</code> must be set if an S3 prefix name is set in
-     * <code>LocationARN</code>.</p> 
+     * <code>LocationARN</code>, or if an access point or access point alias is
+     * used.</p> 
      */
     inline void SetFileShareName(const char* value) { m_fileShareNameHasBeenSet = true; m_fileShareName.assign(value); }
 
     /**
      * <p>The name of the file share. Optional.</p>  <p>
      * <code>FileShareName</code> must be set if an S3 prefix name is set in
-     * <code>LocationARN</code>.</p> 
+     * <code>LocationARN</code>, or if an access point or access point alias is
+     * used.</p> 
      */
     inline UpdateNFSFileShareRequest& WithFileShareName(const Aws::String& value) { SetFileShareName(value); return *this;}
 
     /**
      * <p>The name of the file share. Optional.</p>  <p>
      * <code>FileShareName</code> must be set if an S3 prefix name is set in
-     * <code>LocationARN</code>.</p> 
+     * <code>LocationARN</code>, or if an access point or access point alias is
+     * used.</p> 
      */
     inline UpdateNFSFileShareRequest& WithFileShareName(Aws::String&& value) { SetFileShareName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the file share. Optional.</p>  <p>
      * <code>FileShareName</code> must be set if an S3 prefix name is set in
-     * <code>LocationARN</code>.</p> 
+     * <code>LocationARN</code>, or if an access point or access point alias is
+     * used.</p> 
      */
     inline UpdateNFSFileShareRequest& WithFileShareName(const char* value) { SetFileShareName(value); return *this;}
 
 
     /**
-     * <p>Refresh cache information.</p>
+     * <p>Specifies refresh cache information for the file share.</p>
      */
     inline const CacheAttributes& GetCacheAttributes() const{ return m_cacheAttributes; }
 
     /**
-     * <p>Refresh cache information.</p>
+     * <p>Specifies refresh cache information for the file share.</p>
      */
     inline bool CacheAttributesHasBeenSet() const { return m_cacheAttributesHasBeenSet; }
 
     /**
-     * <p>Refresh cache information.</p>
+     * <p>Specifies refresh cache information for the file share.</p>
      */
     inline void SetCacheAttributes(const CacheAttributes& value) { m_cacheAttributesHasBeenSet = true; m_cacheAttributes = value; }
 
     /**
-     * <p>Refresh cache information.</p>
+     * <p>Specifies refresh cache information for the file share.</p>
      */
     inline void SetCacheAttributes(CacheAttributes&& value) { m_cacheAttributesHasBeenSet = true; m_cacheAttributes = std::move(value); }
 
     /**
-     * <p>Refresh cache information.</p>
+     * <p>Specifies refresh cache information for the file share.</p>
      */
     inline UpdateNFSFileShareRequest& WithCacheAttributes(const CacheAttributes& value) { SetCacheAttributes(value); return *this;}
 
     /**
-     * <p>Refresh cache information.</p>
+     * <p>Specifies refresh cache information for the file share.</p>
      */
     inline UpdateNFSFileShareRequest& WithCacheAttributes(CacheAttributes&& value) { SetCacheAttributes(std::move(value)); return *this;}
 
 
     /**
-     * <p>The notification policy of the file share.</p>
+     * <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code>
+     * controls the number of seconds to wait after the last point in time a client
+     * wrote to a file before generating an <code>ObjectUploaded</code> notification.
+     * Because clients can make many small writes to files, it's best to set this
+     * parameter for as long as possible to avoid generating multiple notifications for
+     * the same file in a small time period.</p>  <p>
+     * <code>SettlingTimeInSeconds</code> has no effect on the timing of the object
+     * uploading to Amazon S3, only the timing of the notification.</p>  <p>The
+     * following example sets <code>NotificationPolicy</code> on with
+     * <code>SettlingTimeInSeconds</code> set to 60.</p> <p> <code>{\"Upload\":
+     * {\"SettlingTimeInSeconds\": 60}}</code> </p> <p>The following example sets
+     * <code>NotificationPolicy</code> off.</p> <p> <code>{}</code> </p>
      */
     inline const Aws::String& GetNotificationPolicy() const{ return m_notificationPolicy; }
 
     /**
-     * <p>The notification policy of the file share.</p>
+     * <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code>
+     * controls the number of seconds to wait after the last point in time a client
+     * wrote to a file before generating an <code>ObjectUploaded</code> notification.
+     * Because clients can make many small writes to files, it's best to set this
+     * parameter for as long as possible to avoid generating multiple notifications for
+     * the same file in a small time period.</p>  <p>
+     * <code>SettlingTimeInSeconds</code> has no effect on the timing of the object
+     * uploading to Amazon S3, only the timing of the notification.</p>  <p>The
+     * following example sets <code>NotificationPolicy</code> on with
+     * <code>SettlingTimeInSeconds</code> set to 60.</p> <p> <code>{\"Upload\":
+     * {\"SettlingTimeInSeconds\": 60}}</code> </p> <p>The following example sets
+     * <code>NotificationPolicy</code> off.</p> <p> <code>{}</code> </p>
      */
     inline bool NotificationPolicyHasBeenSet() const { return m_notificationPolicyHasBeenSet; }
 
     /**
-     * <p>The notification policy of the file share.</p>
+     * <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code>
+     * controls the number of seconds to wait after the last point in time a client
+     * wrote to a file before generating an <code>ObjectUploaded</code> notification.
+     * Because clients can make many small writes to files, it's best to set this
+     * parameter for as long as possible to avoid generating multiple notifications for
+     * the same file in a small time period.</p>  <p>
+     * <code>SettlingTimeInSeconds</code> has no effect on the timing of the object
+     * uploading to Amazon S3, only the timing of the notification.</p>  <p>The
+     * following example sets <code>NotificationPolicy</code> on with
+     * <code>SettlingTimeInSeconds</code> set to 60.</p> <p> <code>{\"Upload\":
+     * {\"SettlingTimeInSeconds\": 60}}</code> </p> <p>The following example sets
+     * <code>NotificationPolicy</code> off.</p> <p> <code>{}</code> </p>
      */
     inline void SetNotificationPolicy(const Aws::String& value) { m_notificationPolicyHasBeenSet = true; m_notificationPolicy = value; }
 
     /**
-     * <p>The notification policy of the file share.</p>
+     * <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code>
+     * controls the number of seconds to wait after the last point in time a client
+     * wrote to a file before generating an <code>ObjectUploaded</code> notification.
+     * Because clients can make many small writes to files, it's best to set this
+     * parameter for as long as possible to avoid generating multiple notifications for
+     * the same file in a small time period.</p>  <p>
+     * <code>SettlingTimeInSeconds</code> has no effect on the timing of the object
+     * uploading to Amazon S3, only the timing of the notification.</p>  <p>The
+     * following example sets <code>NotificationPolicy</code> on with
+     * <code>SettlingTimeInSeconds</code> set to 60.</p> <p> <code>{\"Upload\":
+     * {\"SettlingTimeInSeconds\": 60}}</code> </p> <p>The following example sets
+     * <code>NotificationPolicy</code> off.</p> <p> <code>{}</code> </p>
      */
     inline void SetNotificationPolicy(Aws::String&& value) { m_notificationPolicyHasBeenSet = true; m_notificationPolicy = std::move(value); }
 
     /**
-     * <p>The notification policy of the file share.</p>
+     * <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code>
+     * controls the number of seconds to wait after the last point in time a client
+     * wrote to a file before generating an <code>ObjectUploaded</code> notification.
+     * Because clients can make many small writes to files, it's best to set this
+     * parameter for as long as possible to avoid generating multiple notifications for
+     * the same file in a small time period.</p>  <p>
+     * <code>SettlingTimeInSeconds</code> has no effect on the timing of the object
+     * uploading to Amazon S3, only the timing of the notification.</p>  <p>The
+     * following example sets <code>NotificationPolicy</code> on with
+     * <code>SettlingTimeInSeconds</code> set to 60.</p> <p> <code>{\"Upload\":
+     * {\"SettlingTimeInSeconds\": 60}}</code> </p> <p>The following example sets
+     * <code>NotificationPolicy</code> off.</p> <p> <code>{}</code> </p>
      */
     inline void SetNotificationPolicy(const char* value) { m_notificationPolicyHasBeenSet = true; m_notificationPolicy.assign(value); }
 
     /**
-     * <p>The notification policy of the file share.</p>
+     * <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code>
+     * controls the number of seconds to wait after the last point in time a client
+     * wrote to a file before generating an <code>ObjectUploaded</code> notification.
+     * Because clients can make many small writes to files, it's best to set this
+     * parameter for as long as possible to avoid generating multiple notifications for
+     * the same file in a small time period.</p>  <p>
+     * <code>SettlingTimeInSeconds</code> has no effect on the timing of the object
+     * uploading to Amazon S3, only the timing of the notification.</p>  <p>The
+     * following example sets <code>NotificationPolicy</code> on with
+     * <code>SettlingTimeInSeconds</code> set to 60.</p> <p> <code>{\"Upload\":
+     * {\"SettlingTimeInSeconds\": 60}}</code> </p> <p>The following example sets
+     * <code>NotificationPolicy</code> off.</p> <p> <code>{}</code> </p>
      */
     inline UpdateNFSFileShareRequest& WithNotificationPolicy(const Aws::String& value) { SetNotificationPolicy(value); return *this;}
 
     /**
-     * <p>The notification policy of the file share.</p>
+     * <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code>
+     * controls the number of seconds to wait after the last point in time a client
+     * wrote to a file before generating an <code>ObjectUploaded</code> notification.
+     * Because clients can make many small writes to files, it's best to set this
+     * parameter for as long as possible to avoid generating multiple notifications for
+     * the same file in a small time period.</p>  <p>
+     * <code>SettlingTimeInSeconds</code> has no effect on the timing of the object
+     * uploading to Amazon S3, only the timing of the notification.</p>  <p>The
+     * following example sets <code>NotificationPolicy</code> on with
+     * <code>SettlingTimeInSeconds</code> set to 60.</p> <p> <code>{\"Upload\":
+     * {\"SettlingTimeInSeconds\": 60}}</code> </p> <p>The following example sets
+     * <code>NotificationPolicy</code> off.</p> <p> <code>{}</code> </p>
      */
     inline UpdateNFSFileShareRequest& WithNotificationPolicy(Aws::String&& value) { SetNotificationPolicy(std::move(value)); return *this;}
 
     /**
-     * <p>The notification policy of the file share.</p>
+     * <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code>
+     * controls the number of seconds to wait after the last point in time a client
+     * wrote to a file before generating an <code>ObjectUploaded</code> notification.
+     * Because clients can make many small writes to files, it's best to set this
+     * parameter for as long as possible to avoid generating multiple notifications for
+     * the same file in a small time period.</p>  <p>
+     * <code>SettlingTimeInSeconds</code> has no effect on the timing of the object
+     * uploading to Amazon S3, only the timing of the notification.</p>  <p>The
+     * following example sets <code>NotificationPolicy</code> on with
+     * <code>SettlingTimeInSeconds</code> set to 60.</p> <p> <code>{\"Upload\":
+     * {\"SettlingTimeInSeconds\": 60}}</code> </p> <p>The following example sets
+     * <code>NotificationPolicy</code> off.</p> <p> <code>{}</code> </p>
      */
     inline UpdateNFSFileShareRequest& WithNotificationPolicy(const char* value) { SetNotificationPolicy(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
+     */
+    inline const Aws::String& GetAuditDestinationARN() const{ return m_auditDestinationARN; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
+     */
+    inline bool AuditDestinationARNHasBeenSet() const { return m_auditDestinationARNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
+     */
+    inline void SetAuditDestinationARN(const Aws::String& value) { m_auditDestinationARNHasBeenSet = true; m_auditDestinationARN = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
+     */
+    inline void SetAuditDestinationARN(Aws::String&& value) { m_auditDestinationARNHasBeenSet = true; m_auditDestinationARN = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
+     */
+    inline void SetAuditDestinationARN(const char* value) { m_auditDestinationARNHasBeenSet = true; m_auditDestinationARN.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
+     */
+    inline UpdateNFSFileShareRequest& WithAuditDestinationARN(const Aws::String& value) { SetAuditDestinationARN(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
+     */
+    inline UpdateNFSFileShareRequest& WithAuditDestinationARN(Aws::String&& value) { SetAuditDestinationARN(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
+     */
+    inline UpdateNFSFileShareRequest& WithAuditDestinationARN(const char* value) { SetAuditDestinationARN(value); return *this;}
 
   private:
 
@@ -741,6 +870,9 @@ namespace Model
 
     Aws::String m_notificationPolicy;
     bool m_notificationPolicyHasBeenSet;
+
+    Aws::String m_auditDestinationARN;
+    bool m_auditDestinationARNHasBeenSet;
   };
 
 } // namespace Model

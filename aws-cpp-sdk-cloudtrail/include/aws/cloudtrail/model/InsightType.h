@@ -16,7 +16,8 @@ namespace Model
   enum class InsightType
   {
     NOT_SET,
-    ApiCallRateInsight
+    ApiCallRateInsight,
+    ApiErrorRateInsight
   };
 
 namespace InsightTypeMapper

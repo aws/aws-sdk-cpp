@@ -26,12 +26,15 @@ ProactiveAnomalySummary::ProactiveAnomalySummary() :
     m_statusHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_anomalyTimeRangeHasBeenSet(false),
+    m_anomalyReportedTimeRangeHasBeenSet(false),
     m_predictionTimeRangeHasBeenSet(false),
     m_sourceDetailsHasBeenSet(false),
     m_associatedInsightIdHasBeenSet(false),
     m_resourceCollectionHasBeenSet(false),
     m_limit(0.0),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_sourceMetadataHasBeenSet(false),
+    m_anomalyResourcesHasBeenSet(false)
 {
 }
 
@@ -43,12 +46,15 @@ ProactiveAnomalySummary::ProactiveAnomalySummary(JsonView jsonValue) :
     m_statusHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_anomalyTimeRangeHasBeenSet(false),
+    m_anomalyReportedTimeRangeHasBeenSet(false),
     m_predictionTimeRangeHasBeenSet(false),
     m_sourceDetailsHasBeenSet(false),
     m_associatedInsightIdHasBeenSet(false),
     m_resourceCollectionHasBeenSet(false),
     m_limit(0.0),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_sourceMetadataHasBeenSet(false),
+    m_anomalyResourcesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -90,6 +96,13 @@ ProactiveAnomalySummary& ProactiveAnomalySummary::operator =(JsonView jsonValue)
     m_anomalyTimeRangeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AnomalyReportedTimeRange"))
+  {
+    m_anomalyReportedTimeRange = jsonValue.GetObject("AnomalyReportedTimeRange");
+
+    m_anomalyReportedTimeRangeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("PredictionTimeRange"))
   {
     m_predictionTimeRange = jsonValue.GetObject("PredictionTimeRange");
@@ -123,6 +136,23 @@ ProactiveAnomalySummary& ProactiveAnomalySummary::operator =(JsonView jsonValue)
     m_limit = jsonValue.GetDouble("Limit");
 
     m_limitHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SourceMetadata"))
+  {
+    m_sourceMetadata = jsonValue.GetObject("SourceMetadata");
+
+    m_sourceMetadataHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AnomalyResources"))
+  {
+    Array<JsonView> anomalyResourcesJsonList = jsonValue.GetArray("AnomalyResources");
+    for(unsigned anomalyResourcesIndex = 0; anomalyResourcesIndex < anomalyResourcesJsonList.GetLength(); ++anomalyResourcesIndex)
+    {
+      m_anomalyResources.push_back(anomalyResourcesJsonList[anomalyResourcesIndex].AsObject());
+    }
+    m_anomalyResourcesHasBeenSet = true;
   }
 
   return *this;
@@ -159,6 +189,12 @@ JsonValue ProactiveAnomalySummary::Jsonize() const
 
   }
 
+  if(m_anomalyReportedTimeRangeHasBeenSet)
+  {
+   payload.WithObject("AnomalyReportedTimeRange", m_anomalyReportedTimeRange.Jsonize());
+
+  }
+
   if(m_predictionTimeRangeHasBeenSet)
   {
    payload.WithObject("PredictionTimeRange", m_predictionTimeRange.Jsonize());
@@ -186,6 +222,23 @@ JsonValue ProactiveAnomalySummary::Jsonize() const
   if(m_limitHasBeenSet)
   {
    payload.WithDouble("Limit", m_limit);
+
+  }
+
+  if(m_sourceMetadataHasBeenSet)
+  {
+   payload.WithObject("SourceMetadata", m_sourceMetadata.Jsonize());
+
+  }
+
+  if(m_anomalyResourcesHasBeenSet)
+  {
+   Array<JsonValue> anomalyResourcesJsonList(m_anomalyResources.size());
+   for(unsigned anomalyResourcesIndex = 0; anomalyResourcesIndex < anomalyResourcesJsonList.GetLength(); ++anomalyResourcesIndex)
+   {
+     anomalyResourcesJsonList[anomalyResourcesIndex].AsObject(m_anomalyResources[anomalyResourcesIndex].Jsonize());
+   }
+   payload.WithArray("AnomalyResources", std::move(anomalyResourcesJsonList));
 
   }
 

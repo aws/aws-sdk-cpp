@@ -24,6 +24,9 @@ namespace Aws
         static const int STORAGE_OPTIMIZATION_HASH = HashingUtils::HashString("STORAGE_OPTIMIZATION");
         static const int FILE_SYSTEM_ALIAS_ASSOCIATION_HASH = HashingUtils::HashString("FILE_SYSTEM_ALIAS_ASSOCIATION");
         static const int FILE_SYSTEM_ALIAS_DISASSOCIATION_HASH = HashingUtils::HashString("FILE_SYSTEM_ALIAS_DISASSOCIATION");
+        static const int VOLUME_UPDATE_HASH = HashingUtils::HashString("VOLUME_UPDATE");
+        static const int SNAPSHOT_UPDATE_HASH = HashingUtils::HashString("SNAPSHOT_UPDATE");
+        static const int RELEASE_NFS_V3_LOCKS_HASH = HashingUtils::HashString("RELEASE_NFS_V3_LOCKS");
 
 
         AdministrativeActionType GetAdministrativeActionTypeForName(const Aws::String& name)
@@ -44,6 +47,18 @@ namespace Aws
           else if (hashCode == FILE_SYSTEM_ALIAS_DISASSOCIATION_HASH)
           {
             return AdministrativeActionType::FILE_SYSTEM_ALIAS_DISASSOCIATION;
+          }
+          else if (hashCode == VOLUME_UPDATE_HASH)
+          {
+            return AdministrativeActionType::VOLUME_UPDATE;
+          }
+          else if (hashCode == SNAPSHOT_UPDATE_HASH)
+          {
+            return AdministrativeActionType::SNAPSHOT_UPDATE;
+          }
+          else if (hashCode == RELEASE_NFS_V3_LOCKS_HASH)
+          {
+            return AdministrativeActionType::RELEASE_NFS_V3_LOCKS;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -67,6 +82,12 @@ namespace Aws
             return "FILE_SYSTEM_ALIAS_ASSOCIATION";
           case AdministrativeActionType::FILE_SYSTEM_ALIAS_DISASSOCIATION:
             return "FILE_SYSTEM_ALIAS_DISASSOCIATION";
+          case AdministrativeActionType::VOLUME_UPDATE:
+            return "VOLUME_UPDATE";
+          case AdministrativeActionType::SNAPSHOT_UPDATE:
+            return "SNAPSHOT_UPDATE";
+          case AdministrativeActionType::RELEASE_NFS_V3_LOCKS:
+            return "RELEASE_NFS_V3_LOCKS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

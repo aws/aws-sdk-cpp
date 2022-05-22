@@ -8,6 +8,7 @@
 #include <aws/appconfig/AppConfigErrors.h>
 #include <aws/appconfig/model/ResourceNotFoundException.h>
 #include <aws/appconfig/model/PayloadTooLargeException.h>
+#include <aws/appconfig/model/BadRequestException.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
@@ -28,6 +29,12 @@ template<> AWS_APPCONFIG_API PayloadTooLargeException AppConfigError::GetModeled
 {
   assert(this->GetErrorType() == AppConfigErrors::PAYLOAD_TOO_LARGE);
   return PayloadTooLargeException(this->GetJsonPayload().View());
+}
+
+template<> AWS_APPCONFIG_API BadRequestException AppConfigError::GetModeledError()
+{
+  assert(this->GetErrorType() == AppConfigErrors::BAD_REQUEST);
+  return BadRequestException(this->GetJsonPayload().View());
 }
 
 namespace AppConfigErrorMapper

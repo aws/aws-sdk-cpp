@@ -34,72 +34,72 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) for the geofence collection to be associated
-     * to tracker resource. Used when you need to specify a resource across all AWS.
-     * </p> <ul> <li> <p>Format example:
-     * <code>arn:partition:service:region:account-id:resource-type:resource-id</code>
+     * to tracker resource. Used when you need to specify a resource across all
+     * AWS.</p> <ul> <li> <p>Format example:
+     * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
      * </p> </li> </ul>
      */
     inline const Aws::String& GetConsumerArn() const{ return m_consumerArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the geofence collection to be associated
-     * to tracker resource. Used when you need to specify a resource across all AWS.
-     * </p> <ul> <li> <p>Format example:
-     * <code>arn:partition:service:region:account-id:resource-type:resource-id</code>
+     * to tracker resource. Used when you need to specify a resource across all
+     * AWS.</p> <ul> <li> <p>Format example:
+     * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
      * </p> </li> </ul>
      */
     inline bool ConsumerArnHasBeenSet() const { return m_consumerArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the geofence collection to be associated
-     * to tracker resource. Used when you need to specify a resource across all AWS.
-     * </p> <ul> <li> <p>Format example:
-     * <code>arn:partition:service:region:account-id:resource-type:resource-id</code>
+     * to tracker resource. Used when you need to specify a resource across all
+     * AWS.</p> <ul> <li> <p>Format example:
+     * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
      * </p> </li> </ul>
      */
     inline void SetConsumerArn(const Aws::String& value) { m_consumerArnHasBeenSet = true; m_consumerArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the geofence collection to be associated
-     * to tracker resource. Used when you need to specify a resource across all AWS.
-     * </p> <ul> <li> <p>Format example:
-     * <code>arn:partition:service:region:account-id:resource-type:resource-id</code>
+     * to tracker resource. Used when you need to specify a resource across all
+     * AWS.</p> <ul> <li> <p>Format example:
+     * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
      * </p> </li> </ul>
      */
     inline void SetConsumerArn(Aws::String&& value) { m_consumerArnHasBeenSet = true; m_consumerArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the geofence collection to be associated
-     * to tracker resource. Used when you need to specify a resource across all AWS.
-     * </p> <ul> <li> <p>Format example:
-     * <code>arn:partition:service:region:account-id:resource-type:resource-id</code>
+     * to tracker resource. Used when you need to specify a resource across all
+     * AWS.</p> <ul> <li> <p>Format example:
+     * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
      * </p> </li> </ul>
      */
     inline void SetConsumerArn(const char* value) { m_consumerArnHasBeenSet = true; m_consumerArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the geofence collection to be associated
-     * to tracker resource. Used when you need to specify a resource across all AWS.
-     * </p> <ul> <li> <p>Format example:
-     * <code>arn:partition:service:region:account-id:resource-type:resource-id</code>
+     * to tracker resource. Used when you need to specify a resource across all
+     * AWS.</p> <ul> <li> <p>Format example:
+     * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
      * </p> </li> </ul>
      */
     inline AssociateTrackerConsumerRequest& WithConsumerArn(const Aws::String& value) { SetConsumerArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) for the geofence collection to be associated
-     * to tracker resource. Used when you need to specify a resource across all AWS.
-     * </p> <ul> <li> <p>Format example:
-     * <code>arn:partition:service:region:account-id:resource-type:resource-id</code>
+     * to tracker resource. Used when you need to specify a resource across all
+     * AWS.</p> <ul> <li> <p>Format example:
+     * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
      * </p> </li> </ul>
      */
     inline AssociateTrackerConsumerRequest& WithConsumerArn(Aws::String&& value) { SetConsumerArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) for the geofence collection to be associated
-     * to tracker resource. Used when you need to specify a resource across all AWS.
-     * </p> <ul> <li> <p>Format example:
-     * <code>arn:partition:service:region:account-id:resource-type:resource-id</code>
+     * to tracker resource. Used when you need to specify a resource across all
+     * AWS.</p> <ul> <li> <p>Format example:
+     * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
      * </p> </li> </ul>
      */
     inline AssociateTrackerConsumerRequest& WithConsumerArn(const char* value) { SetConsumerArn(value); return *this;}

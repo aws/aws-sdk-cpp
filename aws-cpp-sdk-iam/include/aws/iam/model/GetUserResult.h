@@ -47,16 +47,17 @@ namespace Model
      * sign-in</a> dates shown in the IAM console and password last used dates in the
      * <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report.html">IAM
-     * credential report</a>, and returned by this GetUser API. If users signed in
-     * during the affected time, the password last used date that is returned is the
-     * date the user last signed in before May 3, 2018. For users that signed in after
-     * May 23, 2018 14:08 PDT, the returned password last used date is accurate.</p>
-     * <p>You can use password last used information to identify unused credentials for
-     * deletion. For example, you might delete users who did not sign in to AWS in the
-     * last 90 days. In cases like this, we recommend that you adjust your evaluation
-     * window to include dates after May 23, 2018. Alternatively, if your users use
-     * access keys to access AWS programmatically you can refer to access key last used
-     * information because it is accurate for all dates. </p> 
+     * credential report</a>, and returned by this operation. If users signed in during
+     * the affected time, the password last used date that is returned is the date the
+     * user last signed in before May 3, 2018. For users that signed in after May 23,
+     * 2018 14:08 PDT, the returned password last used date is accurate.</p> <p>You can
+     * use password last used information to identify unused credentials for deletion.
+     * For example, you might delete users who did not sign in to Amazon Web Services
+     * in the last 90 days. In cases like this, we recommend that you adjust your
+     * evaluation window to include dates after May 23, 2018. Alternatively, if your
+     * users use access keys to access Amazon Web Services programmatically you can
+     * refer to access key last used information because it is accurate for all dates.
+     * </p> 
      */
     inline const User& GetUser() const{ return m_user; }
 
@@ -68,16 +69,17 @@ namespace Model
      * sign-in</a> dates shown in the IAM console and password last used dates in the
      * <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report.html">IAM
-     * credential report</a>, and returned by this GetUser API. If users signed in
-     * during the affected time, the password last used date that is returned is the
-     * date the user last signed in before May 3, 2018. For users that signed in after
-     * May 23, 2018 14:08 PDT, the returned password last used date is accurate.</p>
-     * <p>You can use password last used information to identify unused credentials for
-     * deletion. For example, you might delete users who did not sign in to AWS in the
-     * last 90 days. In cases like this, we recommend that you adjust your evaluation
-     * window to include dates after May 23, 2018. Alternatively, if your users use
-     * access keys to access AWS programmatically you can refer to access key last used
-     * information because it is accurate for all dates. </p> 
+     * credential report</a>, and returned by this operation. If users signed in during
+     * the affected time, the password last used date that is returned is the date the
+     * user last signed in before May 3, 2018. For users that signed in after May 23,
+     * 2018 14:08 PDT, the returned password last used date is accurate.</p> <p>You can
+     * use password last used information to identify unused credentials for deletion.
+     * For example, you might delete users who did not sign in to Amazon Web Services
+     * in the last 90 days. In cases like this, we recommend that you adjust your
+     * evaluation window to include dates after May 23, 2018. Alternatively, if your
+     * users use access keys to access Amazon Web Services programmatically you can
+     * refer to access key last used information because it is accurate for all dates.
+     * </p> 
      */
     inline void SetUser(const User& value) { m_user = value; }
 
@@ -89,16 +91,17 @@ namespace Model
      * sign-in</a> dates shown in the IAM console and password last used dates in the
      * <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report.html">IAM
-     * credential report</a>, and returned by this GetUser API. If users signed in
-     * during the affected time, the password last used date that is returned is the
-     * date the user last signed in before May 3, 2018. For users that signed in after
-     * May 23, 2018 14:08 PDT, the returned password last used date is accurate.</p>
-     * <p>You can use password last used information to identify unused credentials for
-     * deletion. For example, you might delete users who did not sign in to AWS in the
-     * last 90 days. In cases like this, we recommend that you adjust your evaluation
-     * window to include dates after May 23, 2018. Alternatively, if your users use
-     * access keys to access AWS programmatically you can refer to access key last used
-     * information because it is accurate for all dates. </p> 
+     * credential report</a>, and returned by this operation. If users signed in during
+     * the affected time, the password last used date that is returned is the date the
+     * user last signed in before May 3, 2018. For users that signed in after May 23,
+     * 2018 14:08 PDT, the returned password last used date is accurate.</p> <p>You can
+     * use password last used information to identify unused credentials for deletion.
+     * For example, you might delete users who did not sign in to Amazon Web Services
+     * in the last 90 days. In cases like this, we recommend that you adjust your
+     * evaluation window to include dates after May 23, 2018. Alternatively, if your
+     * users use access keys to access Amazon Web Services programmatically you can
+     * refer to access key last used information because it is accurate for all dates.
+     * </p> 
      */
     inline void SetUser(User&& value) { m_user = std::move(value); }
 
@@ -110,16 +113,17 @@ namespace Model
      * sign-in</a> dates shown in the IAM console and password last used dates in the
      * <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report.html">IAM
-     * credential report</a>, and returned by this GetUser API. If users signed in
-     * during the affected time, the password last used date that is returned is the
-     * date the user last signed in before May 3, 2018. For users that signed in after
-     * May 23, 2018 14:08 PDT, the returned password last used date is accurate.</p>
-     * <p>You can use password last used information to identify unused credentials for
-     * deletion. For example, you might delete users who did not sign in to AWS in the
-     * last 90 days. In cases like this, we recommend that you adjust your evaluation
-     * window to include dates after May 23, 2018. Alternatively, if your users use
-     * access keys to access AWS programmatically you can refer to access key last used
-     * information because it is accurate for all dates. </p> 
+     * credential report</a>, and returned by this operation. If users signed in during
+     * the affected time, the password last used date that is returned is the date the
+     * user last signed in before May 3, 2018. For users that signed in after May 23,
+     * 2018 14:08 PDT, the returned password last used date is accurate.</p> <p>You can
+     * use password last used information to identify unused credentials for deletion.
+     * For example, you might delete users who did not sign in to Amazon Web Services
+     * in the last 90 days. In cases like this, we recommend that you adjust your
+     * evaluation window to include dates after May 23, 2018. Alternatively, if your
+     * users use access keys to access Amazon Web Services programmatically you can
+     * refer to access key last used information because it is accurate for all dates.
+     * </p> 
      */
     inline GetUserResult& WithUser(const User& value) { SetUser(value); return *this;}
 
@@ -131,16 +135,17 @@ namespace Model
      * sign-in</a> dates shown in the IAM console and password last used dates in the
      * <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report.html">IAM
-     * credential report</a>, and returned by this GetUser API. If users signed in
-     * during the affected time, the password last used date that is returned is the
-     * date the user last signed in before May 3, 2018. For users that signed in after
-     * May 23, 2018 14:08 PDT, the returned password last used date is accurate.</p>
-     * <p>You can use password last used information to identify unused credentials for
-     * deletion. For example, you might delete users who did not sign in to AWS in the
-     * last 90 days. In cases like this, we recommend that you adjust your evaluation
-     * window to include dates after May 23, 2018. Alternatively, if your users use
-     * access keys to access AWS programmatically you can refer to access key last used
-     * information because it is accurate for all dates. </p> 
+     * credential report</a>, and returned by this operation. If users signed in during
+     * the affected time, the password last used date that is returned is the date the
+     * user last signed in before May 3, 2018. For users that signed in after May 23,
+     * 2018 14:08 PDT, the returned password last used date is accurate.</p> <p>You can
+     * use password last used information to identify unused credentials for deletion.
+     * For example, you might delete users who did not sign in to Amazon Web Services
+     * in the last 90 days. In cases like this, we recommend that you adjust your
+     * evaluation window to include dates after May 23, 2018. Alternatively, if your
+     * users use access keys to access Amazon Web Services programmatically you can
+     * refer to access key last used information because it is accurate for all dates.
+     * </p> 
      */
     inline GetUserResult& WithUser(User&& value) { SetUser(std::move(value)); return *this;}
 

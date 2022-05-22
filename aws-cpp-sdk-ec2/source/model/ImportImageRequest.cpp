@@ -26,7 +26,10 @@ ImportImageRequest::ImportImageRequest() :
     m_platformHasBeenSet(false),
     m_roleNameHasBeenSet(false),
     m_licenseSpecificationsHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false)
+    m_tagSpecificationsHasBeenSet(false),
+    m_usageOperationHasBeenSet(false),
+    m_bootMode(BootModeValues::NOT_SET),
+    m_bootModeHasBeenSet(false)
 {
 }
 
@@ -117,6 +120,16 @@ Aws::String ImportImageRequest::SerializePayload() const
       item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
       tagSpecificationsCount++;
     }
+  }
+
+  if(m_usageOperationHasBeenSet)
+  {
+    ss << "UsageOperation=" << StringUtils::URLEncode(m_usageOperation.c_str()) << "&";
+  }
+
+  if(m_bootModeHasBeenSet)
+  {
+    ss << "BootMode=" << BootModeValuesMapper::GetNameForBootModeValues(m_bootMode) << "&";
   }
 
   ss << "Version=2016-11-15";

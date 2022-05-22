@@ -122,13 +122,15 @@ namespace Model
                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext = nullptr) const;
 
         /**
-         * <p>Starts a bidirectional HTTP2 stream where audio is streamed to Amazon
+         * <p>Starts a bidirectional HTTP/2 stream where audio is streamed to Amazon
          * Transcribe and the transcription results are streamed to your application.</p>
-         * <p>The following are encoded as HTTP2 headers:</p> <ul> <li>
+         * <p>The following are encoded as HTTP/2 headers:</p> <ul> <li>
          * <p>x-amzn-transcribe-language-code</p> </li> <li>
          * <p>x-amzn-transcribe-media-encoding</p> </li> <li>
          * <p>x-amzn-transcribe-sample-rate</p> </li> <li>
-         * <p>x-amzn-transcribe-session-id</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <p>x-amzn-transcribe-session-id</p> </li> </ul> <p>See the <a
+         * href="https://docs.aws.amazon.com/sdk-for-go/api/service/transcribestreamingservice/#TranscribeStreamingService.StartStreamTranscription">
+         * SDK for Go API Reference</a> for more detail.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-streaming-2017-10-26/StartStreamTranscription">AWS
          * API Reference</a></p>
          *

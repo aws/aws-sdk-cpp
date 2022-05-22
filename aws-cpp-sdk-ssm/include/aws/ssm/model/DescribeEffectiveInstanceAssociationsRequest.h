@@ -35,42 +35,42 @@ namespace Model
 
 
     /**
-     * <p>The instance ID for which you want to view all associations.</p>
+     * <p>The managed node ID for which you want to view all associations.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
-     * <p>The instance ID for which you want to view all associations.</p>
+     * <p>The managed node ID for which you want to view all associations.</p>
      */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
-     * <p>The instance ID for which you want to view all associations.</p>
+     * <p>The managed node ID for which you want to view all associations.</p>
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * <p>The instance ID for which you want to view all associations.</p>
+     * <p>The managed node ID for which you want to view all associations.</p>
      */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
-     * <p>The instance ID for which you want to view all associations.</p>
+     * <p>The managed node ID for which you want to view all associations.</p>
      */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /**
-     * <p>The instance ID for which you want to view all associations.</p>
+     * <p>The managed node ID for which you want to view all associations.</p>
      */
     inline DescribeEffectiveInstanceAssociationsRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>The instance ID for which you want to view all associations.</p>
+     * <p>The managed node ID for which you want to view all associations.</p>
      */
     inline DescribeEffectiveInstanceAssociationsRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
-     * <p>The instance ID for which you want to view all associations.</p>
+     * <p>The managed node ID for which you want to view all associations.</p>
      */
     inline DescribeEffectiveInstanceAssociationsRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 

@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>S3 parameters.</p><p><h3>See Also:</h3>   <a
+   * <p>The parameters for S3.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/S3Parameters">AWS
    * API Reference</a></p>
    */
@@ -39,37 +39,37 @@ namespace Model
 
     /**
      * <p>Location of the Amazon S3 manifest file. This is NULL if the manifest file
-     * was uploaded in the console.</p>
+     * was uploaded into Amazon QuickSight.</p>
      */
     inline const ManifestFileLocation& GetManifestFileLocation() const{ return m_manifestFileLocation; }
 
     /**
      * <p>Location of the Amazon S3 manifest file. This is NULL if the manifest file
-     * was uploaded in the console.</p>
+     * was uploaded into Amazon QuickSight.</p>
      */
     inline bool ManifestFileLocationHasBeenSet() const { return m_manifestFileLocationHasBeenSet; }
 
     /**
      * <p>Location of the Amazon S3 manifest file. This is NULL if the manifest file
-     * was uploaded in the console.</p>
+     * was uploaded into Amazon QuickSight.</p>
      */
     inline void SetManifestFileLocation(const ManifestFileLocation& value) { m_manifestFileLocationHasBeenSet = true; m_manifestFileLocation = value; }
 
     /**
      * <p>Location of the Amazon S3 manifest file. This is NULL if the manifest file
-     * was uploaded in the console.</p>
+     * was uploaded into Amazon QuickSight.</p>
      */
     inline void SetManifestFileLocation(ManifestFileLocation&& value) { m_manifestFileLocationHasBeenSet = true; m_manifestFileLocation = std::move(value); }
 
     /**
      * <p>Location of the Amazon S3 manifest file. This is NULL if the manifest file
-     * was uploaded in the console.</p>
+     * was uploaded into Amazon QuickSight.</p>
      */
     inline S3Parameters& WithManifestFileLocation(const ManifestFileLocation& value) { SetManifestFileLocation(value); return *this;}
 
     /**
      * <p>Location of the Amazon S3 manifest file. This is NULL if the manifest file
-     * was uploaded in the console.</p>
+     * was uploaded into Amazon QuickSight.</p>
      */
     inline S3Parameters& WithManifestFileLocation(ManifestFileLocation&& value) { SetManifestFileLocation(std::move(value)); return *this;}
 

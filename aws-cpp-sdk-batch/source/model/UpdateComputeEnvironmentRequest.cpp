@@ -16,8 +16,11 @@ UpdateComputeEnvironmentRequest::UpdateComputeEnvironmentRequest() :
     m_computeEnvironmentHasBeenSet(false),
     m_state(CEState::NOT_SET),
     m_stateHasBeenSet(false),
+    m_unmanagedvCpus(0),
+    m_unmanagedvCpusHasBeenSet(false),
     m_computeResourcesHasBeenSet(false),
-    m_serviceRoleHasBeenSet(false)
+    m_serviceRoleHasBeenSet(false),
+    m_updatePolicyHasBeenSet(false)
 {
 }
 
@@ -36,6 +39,12 @@ Aws::String UpdateComputeEnvironmentRequest::SerializePayload() const
    payload.WithString("state", CEStateMapper::GetNameForCEState(m_state));
   }
 
+  if(m_unmanagedvCpusHasBeenSet)
+  {
+   payload.WithInteger("unmanagedvCpus", m_unmanagedvCpus);
+
+  }
+
   if(m_computeResourcesHasBeenSet)
   {
    payload.WithObject("computeResources", m_computeResources.Jsonize());
@@ -45,6 +54,12 @@ Aws::String UpdateComputeEnvironmentRequest::SerializePayload() const
   if(m_serviceRoleHasBeenSet)
   {
    payload.WithString("serviceRole", m_serviceRole);
+
+  }
+
+  if(m_updatePolicyHasBeenSet)
+  {
+   payload.WithObject("updatePolicy", m_updatePolicy.Jsonize());
 
   }
 

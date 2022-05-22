@@ -23,7 +23,9 @@ ResourceDataSyncSource::ResourceDataSyncSource() :
     m_awsOrganizationsSourceHasBeenSet(false),
     m_sourceRegionsHasBeenSet(false),
     m_includeFutureRegions(false),
-    m_includeFutureRegionsHasBeenSet(false)
+    m_includeFutureRegionsHasBeenSet(false),
+    m_enableAllOpsDataSources(false),
+    m_enableAllOpsDataSourcesHasBeenSet(false)
 {
 }
 
@@ -32,7 +34,9 @@ ResourceDataSyncSource::ResourceDataSyncSource(JsonView jsonValue) :
     m_awsOrganizationsSourceHasBeenSet(false),
     m_sourceRegionsHasBeenSet(false),
     m_includeFutureRegions(false),
-    m_includeFutureRegionsHasBeenSet(false)
+    m_includeFutureRegionsHasBeenSet(false),
+    m_enableAllOpsDataSources(false),
+    m_enableAllOpsDataSourcesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -70,6 +74,13 @@ ResourceDataSyncSource& ResourceDataSyncSource::operator =(JsonView jsonValue)
     m_includeFutureRegionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EnableAllOpsDataSources"))
+  {
+    m_enableAllOpsDataSources = jsonValue.GetBool("EnableAllOpsDataSources");
+
+    m_enableAllOpsDataSourcesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -103,6 +114,12 @@ JsonValue ResourceDataSyncSource::Jsonize() const
   if(m_includeFutureRegionsHasBeenSet)
   {
    payload.WithBool("IncludeFutureRegions", m_includeFutureRegions);
+
+  }
+
+  if(m_enableAllOpsDataSourcesHasBeenSet)
+  {
+   payload.WithBool("EnableAllOpsDataSources", m_enableAllOpsDataSources);
 
   }
 

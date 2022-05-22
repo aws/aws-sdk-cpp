@@ -14,7 +14,8 @@ using namespace Aws::Utils;
 
 UpdateFlowRequest::UpdateFlowRequest() : 
     m_flowArnHasBeenSet(false),
-    m_sourceFailoverConfigHasBeenSet(false)
+    m_sourceFailoverConfigHasBeenSet(false),
+    m_maintenanceHasBeenSet(false)
 {
 }
 
@@ -25,6 +26,12 @@ Aws::String UpdateFlowRequest::SerializePayload() const
   if(m_sourceFailoverConfigHasBeenSet)
   {
    payload.WithObject("sourceFailoverConfig", m_sourceFailoverConfig.Jsonize());
+
+  }
+
+  if(m_maintenanceHasBeenSet)
+  {
+   payload.WithObject("maintenance", m_maintenance.Jsonize());
 
   }
 

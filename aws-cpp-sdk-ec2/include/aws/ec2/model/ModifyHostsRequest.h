@@ -120,7 +120,7 @@ namespace Model
      * <p>Indicates whether to enable or disable host recovery for the Dedicated Host.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html">
-     * Host Recovery</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Host recovery</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline const HostRecovery& GetHostRecovery() const{ return m_hostRecovery; }
 
@@ -128,7 +128,7 @@ namespace Model
      * <p>Indicates whether to enable or disable host recovery for the Dedicated Host.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html">
-     * Host Recovery</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Host recovery</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline bool HostRecoveryHasBeenSet() const { return m_hostRecoveryHasBeenSet; }
 
@@ -136,7 +136,7 @@ namespace Model
      * <p>Indicates whether to enable or disable host recovery for the Dedicated Host.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html">
-     * Host Recovery</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Host recovery</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetHostRecovery(const HostRecovery& value) { m_hostRecoveryHasBeenSet = true; m_hostRecovery = value; }
 
@@ -144,7 +144,7 @@ namespace Model
      * <p>Indicates whether to enable or disable host recovery for the Dedicated Host.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html">
-     * Host Recovery</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Host recovery</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetHostRecovery(HostRecovery&& value) { m_hostRecoveryHasBeenSet = true; m_hostRecovery = std::move(value); }
 
@@ -152,7 +152,7 @@ namespace Model
      * <p>Indicates whether to enable or disable host recovery for the Dedicated Host.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html">
-     * Host Recovery</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Host recovery</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline ModifyHostsRequest& WithHostRecovery(const HostRecovery& value) { SetHostRecovery(value); return *this;}
 
@@ -160,7 +160,7 @@ namespace Model
      * <p>Indicates whether to enable or disable host recovery for the Dedicated Host.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html">
-     * Host Recovery</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Host recovery</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline ModifyHostsRequest& WithHostRecovery(HostRecovery&& value) { SetHostRecovery(std::move(value)); return *this;}
 

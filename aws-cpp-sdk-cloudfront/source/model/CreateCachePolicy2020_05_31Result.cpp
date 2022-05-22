@@ -20,12 +20,12 @@ CreateCachePolicy2020_05_31Result::CreateCachePolicy2020_05_31Result()
 {
 }
 
-CreateCachePolicy2020_05_31Result::CreateCachePolicy2020_05_31Result(const AmazonWebServiceResult<XmlDocument>& result)
+CreateCachePolicy2020_05_31Result::CreateCachePolicy2020_05_31Result(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-CreateCachePolicy2020_05_31Result& CreateCachePolicy2020_05_31Result::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+CreateCachePolicy2020_05_31Result& CreateCachePolicy2020_05_31Result::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

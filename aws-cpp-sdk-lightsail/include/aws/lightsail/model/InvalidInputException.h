@@ -25,9 +25,10 @@ namespace Model
 
   /**
    * <p>Lightsail throws this exception when user input does not conform to the
-   * validation rules of an input field.</p>  <p>Domain-related APIs are only
-   * available in the N. Virginia (us-east-1) Region. Please set your AWS Region
-   * configuration to us-east-1 to create, view, or edit these resources.</p>
+   * validation rules of an input field.</p>  <p>Domain and distribution APIs
+   * are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web
+   * Services Region. Please set your Amazon Web Services Region configuration to
+   * <code>us-east-1</code> to create, view, or edit these resources.</p>
    * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/InvalidInputException">AWS
    * API Reference</a></p>

@@ -27,9 +27,9 @@ namespace Model
 {
 
   /**
-   * <p> This data type is used as a response element in the
+   * <p>This data type is used as a response element in the
    * <code>DescribeReservedDBInstances</code> and
-   * <code>PurchaseReservedDBInstancesOffering</code> actions. </p><p><h3>See
+   * <code>PurchaseReservedDBInstancesOffering</code> actions.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ReservedDBInstance">AWS
    * API Reference</a></p>
@@ -552,57 +552,57 @@ namespace Model
 
     /**
      * <p>The unique identifier for the lease associated with the reserved DB
-     * instance.</p>  <p>AWS Support might request the lease ID for an issue
-     * related to a reserved DB instance.</p> 
+     * instance.</p>  <p>Amazon Web Services Support might request the lease ID
+     * for an issue related to a reserved DB instance.</p> 
      */
     inline const Aws::String& GetLeaseId() const{ return m_leaseId; }
 
     /**
      * <p>The unique identifier for the lease associated with the reserved DB
-     * instance.</p>  <p>AWS Support might request the lease ID for an issue
-     * related to a reserved DB instance.</p> 
+     * instance.</p>  <p>Amazon Web Services Support might request the lease ID
+     * for an issue related to a reserved DB instance.</p> 
      */
     inline bool LeaseIdHasBeenSet() const { return m_leaseIdHasBeenSet; }
 
     /**
      * <p>The unique identifier for the lease associated with the reserved DB
-     * instance.</p>  <p>AWS Support might request the lease ID for an issue
-     * related to a reserved DB instance.</p> 
+     * instance.</p>  <p>Amazon Web Services Support might request the lease ID
+     * for an issue related to a reserved DB instance.</p> 
      */
     inline void SetLeaseId(const Aws::String& value) { m_leaseIdHasBeenSet = true; m_leaseId = value; }
 
     /**
      * <p>The unique identifier for the lease associated with the reserved DB
-     * instance.</p>  <p>AWS Support might request the lease ID for an issue
-     * related to a reserved DB instance.</p> 
+     * instance.</p>  <p>Amazon Web Services Support might request the lease ID
+     * for an issue related to a reserved DB instance.</p> 
      */
     inline void SetLeaseId(Aws::String&& value) { m_leaseIdHasBeenSet = true; m_leaseId = std::move(value); }
 
     /**
      * <p>The unique identifier for the lease associated with the reserved DB
-     * instance.</p>  <p>AWS Support might request the lease ID for an issue
-     * related to a reserved DB instance.</p> 
+     * instance.</p>  <p>Amazon Web Services Support might request the lease ID
+     * for an issue related to a reserved DB instance.</p> 
      */
     inline void SetLeaseId(const char* value) { m_leaseIdHasBeenSet = true; m_leaseId.assign(value); }
 
     /**
      * <p>The unique identifier for the lease associated with the reserved DB
-     * instance.</p>  <p>AWS Support might request the lease ID for an issue
-     * related to a reserved DB instance.</p> 
+     * instance.</p>  <p>Amazon Web Services Support might request the lease ID
+     * for an issue related to a reserved DB instance.</p> 
      */
     inline ReservedDBInstance& WithLeaseId(const Aws::String& value) { SetLeaseId(value); return *this;}
 
     /**
      * <p>The unique identifier for the lease associated with the reserved DB
-     * instance.</p>  <p>AWS Support might request the lease ID for an issue
-     * related to a reserved DB instance.</p> 
+     * instance.</p>  <p>Amazon Web Services Support might request the lease ID
+     * for an issue related to a reserved DB instance.</p> 
      */
     inline ReservedDBInstance& WithLeaseId(Aws::String&& value) { SetLeaseId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier for the lease associated with the reserved DB
-     * instance.</p>  <p>AWS Support might request the lease ID for an issue
-     * related to a reserved DB instance.</p> 
+     * instance.</p>  <p>Amazon Web Services Support might request the lease ID
+     * for an issue related to a reserved DB instance.</p> 
      */
     inline ReservedDBInstance& WithLeaseId(const char* value) { SetLeaseId(value); return *this;}
 

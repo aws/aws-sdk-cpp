@@ -40,7 +40,8 @@ ContainerInstance::ContainerInstance() :
     m_attributesHasBeenSet(false),
     m_registeredAtHasBeenSet(false),
     m_attachmentsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_healthStatusHasBeenSet(false)
 {
 }
 
@@ -66,7 +67,8 @@ ContainerInstance::ContainerInstance(JsonView jsonValue) :
     m_attributesHasBeenSet(false),
     m_registeredAtHasBeenSet(false),
     m_attachmentsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_healthStatusHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -207,6 +209,13 @@ ContainerInstance& ContainerInstance::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("healthStatus"))
+  {
+    m_healthStatus = jsonValue.GetObject("healthStatus");
+
+    m_healthStatusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -336,6 +345,12 @@ JsonValue ContainerInstance::Jsonize() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_healthStatusHasBeenSet)
+  {
+   payload.WithObject("healthStatus", m_healthStatus.Jsonize());
 
   }
 

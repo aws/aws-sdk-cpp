@@ -143,49 +143,49 @@ namespace Model
 
     /**
      * <p>The date and time, in ISO-8601 Extended format, for when the maintenance
-     * window is scheduled to become active. The maintenance window will not run before
+     * window is scheduled to become active. The maintenance window won't run before
      * this specified time.</p>
      */
     inline const Aws::String& GetStartDate() const{ return m_startDate; }
 
     /**
      * <p>The date and time, in ISO-8601 Extended format, for when the maintenance
-     * window is scheduled to become active. The maintenance window will not run before
+     * window is scheduled to become active. The maintenance window won't run before
      * this specified time.</p>
      */
     inline void SetStartDate(const Aws::String& value) { m_startDate = value; }
 
     /**
      * <p>The date and time, in ISO-8601 Extended format, for when the maintenance
-     * window is scheduled to become active. The maintenance window will not run before
+     * window is scheduled to become active. The maintenance window won't run before
      * this specified time.</p>
      */
     inline void SetStartDate(Aws::String&& value) { m_startDate = std::move(value); }
 
     /**
      * <p>The date and time, in ISO-8601 Extended format, for when the maintenance
-     * window is scheduled to become active. The maintenance window will not run before
+     * window is scheduled to become active. The maintenance window won't run before
      * this specified time.</p>
      */
     inline void SetStartDate(const char* value) { m_startDate.assign(value); }
 
     /**
      * <p>The date and time, in ISO-8601 Extended format, for when the maintenance
-     * window is scheduled to become active. The maintenance window will not run before
+     * window is scheduled to become active. The maintenance window won't run before
      * this specified time.</p>
      */
     inline GetMaintenanceWindowResult& WithStartDate(const Aws::String& value) { SetStartDate(value); return *this;}
 
     /**
      * <p>The date and time, in ISO-8601 Extended format, for when the maintenance
-     * window is scheduled to become active. The maintenance window will not run before
+     * window is scheduled to become active. The maintenance window won't run before
      * this specified time.</p>
      */
     inline GetMaintenanceWindowResult& WithStartDate(Aws::String&& value) { SetStartDate(std::move(value)); return *this;}
 
     /**
      * <p>The date and time, in ISO-8601 Extended format, for when the maintenance
-     * window is scheduled to become active. The maintenance window will not run before
+     * window is scheduled to become active. The maintenance window won't run before
      * this specified time.</p>
      */
     inline GetMaintenanceWindowResult& WithStartDate(const char* value) { SetStartDate(value); return *this;}
@@ -193,50 +193,50 @@ namespace Model
 
     /**
      * <p>The date and time, in ISO-8601 Extended format, for when the maintenance
-     * window is scheduled to become inactive. The maintenance window will not run
-     * after this specified time.</p>
+     * window is scheduled to become inactive. The maintenance window won't run after
+     * this specified time.</p>
      */
     inline const Aws::String& GetEndDate() const{ return m_endDate; }
 
     /**
      * <p>The date and time, in ISO-8601 Extended format, for when the maintenance
-     * window is scheduled to become inactive. The maintenance window will not run
-     * after this specified time.</p>
+     * window is scheduled to become inactive. The maintenance window won't run after
+     * this specified time.</p>
      */
     inline void SetEndDate(const Aws::String& value) { m_endDate = value; }
 
     /**
      * <p>The date and time, in ISO-8601 Extended format, for when the maintenance
-     * window is scheduled to become inactive. The maintenance window will not run
-     * after this specified time.</p>
+     * window is scheduled to become inactive. The maintenance window won't run after
+     * this specified time.</p>
      */
     inline void SetEndDate(Aws::String&& value) { m_endDate = std::move(value); }
 
     /**
      * <p>The date and time, in ISO-8601 Extended format, for when the maintenance
-     * window is scheduled to become inactive. The maintenance window will not run
-     * after this specified time.</p>
+     * window is scheduled to become inactive. The maintenance window won't run after
+     * this specified time.</p>
      */
     inline void SetEndDate(const char* value) { m_endDate.assign(value); }
 
     /**
      * <p>The date and time, in ISO-8601 Extended format, for when the maintenance
-     * window is scheduled to become inactive. The maintenance window will not run
-     * after this specified time.</p>
+     * window is scheduled to become inactive. The maintenance window won't run after
+     * this specified time.</p>
      */
     inline GetMaintenanceWindowResult& WithEndDate(const Aws::String& value) { SetEndDate(value); return *this;}
 
     /**
      * <p>The date and time, in ISO-8601 Extended format, for when the maintenance
-     * window is scheduled to become inactive. The maintenance window will not run
-     * after this specified time.</p>
+     * window is scheduled to become inactive. The maintenance window won't run after
+     * this specified time.</p>
      */
     inline GetMaintenanceWindowResult& WithEndDate(Aws::String&& value) { SetEndDate(std::move(value)); return *this;}
 
     /**
      * <p>The date and time, in ISO-8601 Extended format, for when the maintenance
-     * window is scheduled to become inactive. The maintenance window will not run
-     * after this specified time.</p>
+     * window is scheduled to become inactive. The maintenance window won't run after
+     * this specified time.</p>
      */
     inline GetMaintenanceWindowResult& WithEndDate(const char* value) { SetEndDate(value); return *this;}
 
@@ -350,19 +350,19 @@ namespace Model
 
     /**
      * <p>The number of days to wait to run a maintenance window after the scheduled
-     * CRON expression date and time.</p>
+     * cron expression date and time.</p>
      */
     inline int GetScheduleOffset() const{ return m_scheduleOffset; }
 
     /**
      * <p>The number of days to wait to run a maintenance window after the scheduled
-     * CRON expression date and time.</p>
+     * cron expression date and time.</p>
      */
     inline void SetScheduleOffset(int value) { m_scheduleOffset = value; }
 
     /**
      * <p>The number of days to wait to run a maintenance window after the scheduled
-     * CRON expression date and time.</p>
+     * cron expression date and time.</p>
      */
     inline GetMaintenanceWindowResult& WithScheduleOffset(int value) { SetScheduleOffset(value); return *this;}
 
@@ -427,20 +427,20 @@ namespace Model
 
 
     /**
-     * <p>The number of hours before the end of the maintenance window that Systems
-     * Manager stops scheduling new tasks for execution.</p>
+     * <p>The number of hours before the end of the maintenance window that Amazon Web
+     * Services Systems Manager stops scheduling new tasks for execution.</p>
      */
     inline int GetCutoff() const{ return m_cutoff; }
 
     /**
-     * <p>The number of hours before the end of the maintenance window that Systems
-     * Manager stops scheduling new tasks for execution.</p>
+     * <p>The number of hours before the end of the maintenance window that Amazon Web
+     * Services Systems Manager stops scheduling new tasks for execution.</p>
      */
     inline void SetCutoff(int value) { m_cutoff = value; }
 
     /**
-     * <p>The number of hours before the end of the maintenance window that Systems
-     * Manager stops scheduling new tasks for execution.</p>
+     * <p>The number of hours before the end of the maintenance window that Amazon Web
+     * Services Systems Manager stops scheduling new tasks for execution.</p>
      */
     inline GetMaintenanceWindowResult& WithCutoff(int value) { SetCutoff(value); return *this;}
 

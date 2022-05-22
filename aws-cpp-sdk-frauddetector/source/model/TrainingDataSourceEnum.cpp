@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int EXTERNAL_EVENTS_HASH = HashingUtils::HashString("EXTERNAL_EVENTS");
+        static const int INGESTED_EVENTS_HASH = HashingUtils::HashString("INGESTED_EVENTS");
 
 
         TrainingDataSourceEnum GetTrainingDataSourceEnumForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == EXTERNAL_EVENTS_HASH)
           {
             return TrainingDataSourceEnum::EXTERNAL_EVENTS;
+          }
+          else if (hashCode == INGESTED_EVENTS_HASH)
+          {
+            return TrainingDataSourceEnum::INGESTED_EVENTS;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +51,8 @@ namespace Aws
           {
           case TrainingDataSourceEnum::EXTERNAL_EVENTS:
             return "EXTERNAL_EVENTS";
+          case TrainingDataSourceEnum::INGESTED_EVENTS:
+            return "INGESTED_EVENTS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

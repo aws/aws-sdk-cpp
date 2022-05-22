@@ -22,6 +22,7 @@ CreateDataSourceRequest::CreateDataSourceRequest() :
     m_dynamodbConfigHasBeenSet(false),
     m_lambdaConfigHasBeenSet(false),
     m_elasticsearchConfigHasBeenSet(false),
+    m_openSearchServiceConfigHasBeenSet(false),
     m_httpConfigHasBeenSet(false),
     m_relationalDatabaseConfigHasBeenSet(false)
 {
@@ -69,6 +70,12 @@ Aws::String CreateDataSourceRequest::SerializePayload() const
   if(m_elasticsearchConfigHasBeenSet)
   {
    payload.WithObject("elasticsearchConfig", m_elasticsearchConfig.Jsonize());
+
+  }
+
+  if(m_openSearchServiceConfigHasBeenSet)
+  {
+   payload.WithObject("openSearchServiceConfig", m_openSearchServiceConfig.Jsonize());
 
   }
 

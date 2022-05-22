@@ -199,32 +199,32 @@ namespace Model
     /**
      * <p> Collects additional information about the image being created, including the
      * operating system (OS) version and package list. This information is used to
-     * enhance the overall experience of using EC2 Image Builder. Enabled by default.
-     * </p>
+     * enhance the overall experience of using EC2 Image Builder. Enabled by
+     * default.</p>
      */
     inline bool GetEnhancedImageMetadataEnabled() const{ return m_enhancedImageMetadataEnabled; }
 
     /**
      * <p> Collects additional information about the image being created, including the
      * operating system (OS) version and package list. This information is used to
-     * enhance the overall experience of using EC2 Image Builder. Enabled by default.
-     * </p>
+     * enhance the overall experience of using EC2 Image Builder. Enabled by
+     * default.</p>
      */
     inline bool EnhancedImageMetadataEnabledHasBeenSet() const { return m_enhancedImageMetadataEnabledHasBeenSet; }
 
     /**
      * <p> Collects additional information about the image being created, including the
      * operating system (OS) version and package list. This information is used to
-     * enhance the overall experience of using EC2 Image Builder. Enabled by default.
-     * </p>
+     * enhance the overall experience of using EC2 Image Builder. Enabled by
+     * default.</p>
      */
     inline void SetEnhancedImageMetadataEnabled(bool value) { m_enhancedImageMetadataEnabledHasBeenSet = true; m_enhancedImageMetadataEnabled = value; }
 
     /**
      * <p> Collects additional information about the image being created, including the
      * operating system (OS) version and package list. This information is used to
-     * enhance the overall experience of using EC2 Image Builder. Enabled by default.
-     * </p>
+     * enhance the overall experience of using EC2 Image Builder. Enabled by
+     * default.</p>
      */
     inline ImagePipeline& WithEnhancedImageMetadataEnabled(bool value) { SetEnhancedImageMetadataEnabled(value); return *this;}
 

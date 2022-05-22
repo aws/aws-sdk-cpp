@@ -27,7 +27,7 @@ namespace Model
    * <p>Details of a provisioned service catalog product. For information about
    * service catalog, see <a
    * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What
-   * is AWS Service Catalog</a>.</p><p><h3>See Also:</h3>   <a
+   * is Amazon Web Services Service Catalog</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ServiceCatalogProvisionedProductDetails">AWS
    * API Reference</a></p>
    */

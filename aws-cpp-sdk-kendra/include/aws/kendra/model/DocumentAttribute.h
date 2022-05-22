@@ -25,8 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>A custom attribute value assigned to a document. </p><p><h3>See Also:</h3>  
-   * <a
+   * <p>A document attribute or metadata field. To create custom document attributes,
+   * see <a
+   * href="https://docs.aws.amazon.com/kendra/latest/dg/custom-attributes.html">Custom
+   * attributes</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DocumentAttribute">AWS
    * API Reference</a></p>
    */

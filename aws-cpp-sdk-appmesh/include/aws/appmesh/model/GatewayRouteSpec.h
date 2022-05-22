@@ -131,6 +131,27 @@ namespace Model
      */
     inline GatewayRouteSpec& WithHttpRoute(HttpGatewayRoute&& value) { SetHttpRoute(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The ordering of the gateway routes spec.</p>
+     */
+    inline int GetPriority() const{ return m_priority; }
+
+    /**
+     * <p>The ordering of the gateway routes spec.</p>
+     */
+    inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
+
+    /**
+     * <p>The ordering of the gateway routes spec.</p>
+     */
+    inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
+
+    /**
+     * <p>The ordering of the gateway routes spec.</p>
+     */
+    inline GatewayRouteSpec& WithPriority(int value) { SetPriority(value); return *this;}
+
   private:
 
     GrpcGatewayRoute m_grpcRoute;
@@ -141,6 +162,9 @@ namespace Model
 
     HttpGatewayRoute m_httpRoute;
     bool m_httpRouteHasBeenSet;
+
+    int m_priority;
+    bool m_priorityHasBeenSet;
   };
 
 } // namespace Model

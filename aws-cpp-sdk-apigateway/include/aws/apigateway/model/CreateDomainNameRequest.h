@@ -677,6 +677,63 @@ namespace Model
     
     inline CreateDomainNameRequest& WithMutualTlsAuthentication(MutualTlsAuthenticationInput&& value) { SetMutualTlsAuthentication(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The ARN of the public certificate issued by ACM to validate ownership of your
+     * custom domain. Only required when configuring mutual TLS and using an ACM
+     * imported or private CA certificate ARN as the regionalCertificateArn.</p>
+     */
+    inline const Aws::String& GetOwnershipVerificationCertificateArn() const{ return m_ownershipVerificationCertificateArn; }
+
+    /**
+     * <p>The ARN of the public certificate issued by ACM to validate ownership of your
+     * custom domain. Only required when configuring mutual TLS and using an ACM
+     * imported or private CA certificate ARN as the regionalCertificateArn.</p>
+     */
+    inline bool OwnershipVerificationCertificateArnHasBeenSet() const { return m_ownershipVerificationCertificateArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the public certificate issued by ACM to validate ownership of your
+     * custom domain. Only required when configuring mutual TLS and using an ACM
+     * imported or private CA certificate ARN as the regionalCertificateArn.</p>
+     */
+    inline void SetOwnershipVerificationCertificateArn(const Aws::String& value) { m_ownershipVerificationCertificateArnHasBeenSet = true; m_ownershipVerificationCertificateArn = value; }
+
+    /**
+     * <p>The ARN of the public certificate issued by ACM to validate ownership of your
+     * custom domain. Only required when configuring mutual TLS and using an ACM
+     * imported or private CA certificate ARN as the regionalCertificateArn.</p>
+     */
+    inline void SetOwnershipVerificationCertificateArn(Aws::String&& value) { m_ownershipVerificationCertificateArnHasBeenSet = true; m_ownershipVerificationCertificateArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the public certificate issued by ACM to validate ownership of your
+     * custom domain. Only required when configuring mutual TLS and using an ACM
+     * imported or private CA certificate ARN as the regionalCertificateArn.</p>
+     */
+    inline void SetOwnershipVerificationCertificateArn(const char* value) { m_ownershipVerificationCertificateArnHasBeenSet = true; m_ownershipVerificationCertificateArn.assign(value); }
+
+    /**
+     * <p>The ARN of the public certificate issued by ACM to validate ownership of your
+     * custom domain. Only required when configuring mutual TLS and using an ACM
+     * imported or private CA certificate ARN as the regionalCertificateArn.</p>
+     */
+    inline CreateDomainNameRequest& WithOwnershipVerificationCertificateArn(const Aws::String& value) { SetOwnershipVerificationCertificateArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the public certificate issued by ACM to validate ownership of your
+     * custom domain. Only required when configuring mutual TLS and using an ACM
+     * imported or private CA certificate ARN as the regionalCertificateArn.</p>
+     */
+    inline CreateDomainNameRequest& WithOwnershipVerificationCertificateArn(Aws::String&& value) { SetOwnershipVerificationCertificateArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the public certificate issued by ACM to validate ownership of your
+     * custom domain. Only required when configuring mutual TLS and using an ACM
+     * imported or private CA certificate ARN as the regionalCertificateArn.</p>
+     */
+    inline CreateDomainNameRequest& WithOwnershipVerificationCertificateArn(const char* value) { SetOwnershipVerificationCertificateArn(value); return *this;}
+
   private:
 
     Aws::String m_domainName;
@@ -714,6 +771,9 @@ namespace Model
 
     MutualTlsAuthenticationInput m_mutualTlsAuthentication;
     bool m_mutualTlsAuthenticationHasBeenSet;
+
+    Aws::String m_ownershipVerificationCertificateArn;
+    bool m_ownershipVerificationCertificateArnHasBeenSet;
   };
 
 } // namespace Model

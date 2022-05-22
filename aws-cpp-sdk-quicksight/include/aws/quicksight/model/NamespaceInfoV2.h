@@ -123,42 +123,42 @@ namespace Model
 
 
     /**
-     * <p>The namespace AWS Region.</p>
+     * <p>The namespace Amazon Web Services Region.</p>
      */
     inline const Aws::String& GetCapacityRegion() const{ return m_capacityRegion; }
 
     /**
-     * <p>The namespace AWS Region.</p>
+     * <p>The namespace Amazon Web Services Region.</p>
      */
     inline bool CapacityRegionHasBeenSet() const { return m_capacityRegionHasBeenSet; }
 
     /**
-     * <p>The namespace AWS Region.</p>
+     * <p>The namespace Amazon Web Services Region.</p>
      */
     inline void SetCapacityRegion(const Aws::String& value) { m_capacityRegionHasBeenSet = true; m_capacityRegion = value; }
 
     /**
-     * <p>The namespace AWS Region.</p>
+     * <p>The namespace Amazon Web Services Region.</p>
      */
     inline void SetCapacityRegion(Aws::String&& value) { m_capacityRegionHasBeenSet = true; m_capacityRegion = std::move(value); }
 
     /**
-     * <p>The namespace AWS Region.</p>
+     * <p>The namespace Amazon Web Services Region.</p>
      */
     inline void SetCapacityRegion(const char* value) { m_capacityRegionHasBeenSet = true; m_capacityRegion.assign(value); }
 
     /**
-     * <p>The namespace AWS Region.</p>
+     * <p>The namespace Amazon Web Services Region.</p>
      */
     inline NamespaceInfoV2& WithCapacityRegion(const Aws::String& value) { SetCapacityRegion(value); return *this;}
 
     /**
-     * <p>The namespace AWS Region.</p>
+     * <p>The namespace Amazon Web Services Region.</p>
      */
     inline NamespaceInfoV2& WithCapacityRegion(Aws::String&& value) { SetCapacityRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The namespace AWS Region.</p>
+     * <p>The namespace Amazon Web Services Region.</p>
      */
     inline NamespaceInfoV2& WithCapacityRegion(const char* value) { SetCapacityRegion(value); return *this;}
 

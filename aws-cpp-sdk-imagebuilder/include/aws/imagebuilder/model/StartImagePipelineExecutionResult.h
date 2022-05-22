@@ -33,37 +33,37 @@ namespace Model
 
 
     /**
-     * <p>The request ID that uniquely identifies this request. </p>
+     * <p>The request ID that uniquely identifies this request.</p>
      */
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
     /**
-     * <p>The request ID that uniquely identifies this request. </p>
+     * <p>The request ID that uniquely identifies this request.</p>
      */
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
 
     /**
-     * <p>The request ID that uniquely identifies this request. </p>
+     * <p>The request ID that uniquely identifies this request.</p>
      */
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
 
     /**
-     * <p>The request ID that uniquely identifies this request. </p>
+     * <p>The request ID that uniquely identifies this request.</p>
      */
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
 
     /**
-     * <p>The request ID that uniquely identifies this request. </p>
+     * <p>The request ID that uniquely identifies this request.</p>
      */
     inline StartImagePipelineExecutionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
 
     /**
-     * <p>The request ID that uniquely identifies this request. </p>
+     * <p>The request ID that uniquely identifies this request.</p>
      */
     inline StartImagePipelineExecutionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
 
     /**
-     * <p>The request ID that uniquely identifies this request. </p>
+     * <p>The request ID that uniquely identifies this request.</p>
      */
     inline StartImagePipelineExecutionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
 

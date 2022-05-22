@@ -19,12 +19,12 @@ DeleteMonitoringSubscription2020_05_31Result::DeleteMonitoringSubscription2020_0
 {
 }
 
-DeleteMonitoringSubscription2020_05_31Result::DeleteMonitoringSubscription2020_05_31Result(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteMonitoringSubscription2020_05_31Result::DeleteMonitoringSubscription2020_05_31Result(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-DeleteMonitoringSubscription2020_05_31Result& DeleteMonitoringSubscription2020_05_31Result::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+DeleteMonitoringSubscription2020_05_31Result& DeleteMonitoringSubscription2020_05_31Result::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

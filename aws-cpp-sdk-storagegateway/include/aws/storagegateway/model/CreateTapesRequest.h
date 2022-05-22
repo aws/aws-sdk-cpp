@@ -42,56 +42,56 @@ namespace Model
     /**
      * <p>The unique Amazon Resource Name (ARN) that represents the gateway to
      * associate the virtual tapes with. Use the <a>ListGateways</a> operation to
-     * return a list of gateways for your account and AWS Region.</p>
+     * return a list of gateways for your account and Amazon Web Services Region.</p>
      */
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
 
     /**
      * <p>The unique Amazon Resource Name (ARN) that represents the gateway to
      * associate the virtual tapes with. Use the <a>ListGateways</a> operation to
-     * return a list of gateways for your account and AWS Region.</p>
+     * return a list of gateways for your account and Amazon Web Services Region.</p>
      */
     inline bool GatewayARNHasBeenSet() const { return m_gatewayARNHasBeenSet; }
 
     /**
      * <p>The unique Amazon Resource Name (ARN) that represents the gateway to
      * associate the virtual tapes with. Use the <a>ListGateways</a> operation to
-     * return a list of gateways for your account and AWS Region.</p>
+     * return a list of gateways for your account and Amazon Web Services Region.</p>
      */
     inline void SetGatewayARN(const Aws::String& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
 
     /**
      * <p>The unique Amazon Resource Name (ARN) that represents the gateway to
      * associate the virtual tapes with. Use the <a>ListGateways</a> operation to
-     * return a list of gateways for your account and AWS Region.</p>
+     * return a list of gateways for your account and Amazon Web Services Region.</p>
      */
     inline void SetGatewayARN(Aws::String&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::move(value); }
 
     /**
      * <p>The unique Amazon Resource Name (ARN) that represents the gateway to
      * associate the virtual tapes with. Use the <a>ListGateways</a> operation to
-     * return a list of gateways for your account and AWS Region.</p>
+     * return a list of gateways for your account and Amazon Web Services Region.</p>
      */
     inline void SetGatewayARN(const char* value) { m_gatewayARNHasBeenSet = true; m_gatewayARN.assign(value); }
 
     /**
      * <p>The unique Amazon Resource Name (ARN) that represents the gateway to
      * associate the virtual tapes with. Use the <a>ListGateways</a> operation to
-     * return a list of gateways for your account and AWS Region.</p>
+     * return a list of gateways for your account and Amazon Web Services Region.</p>
      */
     inline CreateTapesRequest& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
 
     /**
      * <p>The unique Amazon Resource Name (ARN) that represents the gateway to
      * associate the virtual tapes with. Use the <a>ListGateways</a> operation to
-     * return a list of gateways for your account and AWS Region.</p>
+     * return a list of gateways for your account and Amazon Web Services Region.</p>
      */
     inline CreateTapesRequest& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
 
     /**
      * <p>The unique Amazon Resource Name (ARN) that represents the gateway to
      * associate the virtual tapes with. Use the <a>ListGateways</a> operation to
-     * return a list of gateways for your account and AWS Region.</p>
+     * return a list of gateways for your account and Amazon Web Services Region.</p>
      */
     inline CreateTapesRequest& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
 
@@ -209,7 +209,7 @@ namespace Model
 
     /**
      * <p>A prefix that you append to the barcode of the virtual tape you are creating.
-     * This prefix makes the barcode unique.</p>  <p>The prefix must be 1 to 4
+     * This prefix makes the barcode unique.</p>  <p>The prefix must be 1-4
      * characters in length and must be one of the uppercase letters from A to Z.</p>
      * 
      */
@@ -217,7 +217,7 @@ namespace Model
 
     /**
      * <p>A prefix that you append to the barcode of the virtual tape you are creating.
-     * This prefix makes the barcode unique.</p>  <p>The prefix must be 1 to 4
+     * This prefix makes the barcode unique.</p>  <p>The prefix must be 1-4
      * characters in length and must be one of the uppercase letters from A to Z.</p>
      * 
      */
@@ -225,7 +225,7 @@ namespace Model
 
     /**
      * <p>A prefix that you append to the barcode of the virtual tape you are creating.
-     * This prefix makes the barcode unique.</p>  <p>The prefix must be 1 to 4
+     * This prefix makes the barcode unique.</p>  <p>The prefix must be 1-4
      * characters in length and must be one of the uppercase letters from A to Z.</p>
      * 
      */
@@ -233,7 +233,7 @@ namespace Model
 
     /**
      * <p>A prefix that you append to the barcode of the virtual tape you are creating.
-     * This prefix makes the barcode unique.</p>  <p>The prefix must be 1 to 4
+     * This prefix makes the barcode unique.</p>  <p>The prefix must be 1-4
      * characters in length and must be one of the uppercase letters from A to Z.</p>
      * 
      */
@@ -241,7 +241,7 @@ namespace Model
 
     /**
      * <p>A prefix that you append to the barcode of the virtual tape you are creating.
-     * This prefix makes the barcode unique.</p>  <p>The prefix must be 1 to 4
+     * This prefix makes the barcode unique.</p>  <p>The prefix must be 1-4
      * characters in length and must be one of the uppercase letters from A to Z.</p>
      * 
      */
@@ -249,7 +249,7 @@ namespace Model
 
     /**
      * <p>A prefix that you append to the barcode of the virtual tape you are creating.
-     * This prefix makes the barcode unique.</p>  <p>The prefix must be 1 to 4
+     * This prefix makes the barcode unique.</p>  <p>The prefix must be 1-4
      * characters in length and must be one of the uppercase letters from A to Z.</p>
      * 
      */
@@ -257,7 +257,7 @@ namespace Model
 
     /**
      * <p>A prefix that you append to the barcode of the virtual tape you are creating.
-     * This prefix makes the barcode unique.</p>  <p>The prefix must be 1 to 4
+     * This prefix makes the barcode unique.</p>  <p>The prefix must be 1-4
      * characters in length and must be one of the uppercase letters from A to Z.</p>
      * 
      */
@@ -265,7 +265,7 @@ namespace Model
 
     /**
      * <p>A prefix that you append to the barcode of the virtual tape you are creating.
-     * This prefix makes the barcode unique.</p>  <p>The prefix must be 1 to 4
+     * This prefix makes the barcode unique.</p>  <p>The prefix must be 1-4
      * characters in length and must be one of the uppercase letters from A to Z.</p>
      * 
      */
@@ -274,28 +274,28 @@ namespace Model
 
     /**
      * <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your
-     * own AWS KMS key, or <code>false</code> to use a key managed by Amazon S3.
+     * own KMS key, or <code>false</code> to use a key managed by Amazon S3.
      * Optional.</p> <p>Valid Values: <code>true</code> | <code>false</code> </p>
      */
     inline bool GetKMSEncrypted() const{ return m_kMSEncrypted; }
 
     /**
      * <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your
-     * own AWS KMS key, or <code>false</code> to use a key managed by Amazon S3.
+     * own KMS key, or <code>false</code> to use a key managed by Amazon S3.
      * Optional.</p> <p>Valid Values: <code>true</code> | <code>false</code> </p>
      */
     inline bool KMSEncryptedHasBeenSet() const { return m_kMSEncryptedHasBeenSet; }
 
     /**
      * <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your
-     * own AWS KMS key, or <code>false</code> to use a key managed by Amazon S3.
+     * own KMS key, or <code>false</code> to use a key managed by Amazon S3.
      * Optional.</p> <p>Valid Values: <code>true</code> | <code>false</code> </p>
      */
     inline void SetKMSEncrypted(bool value) { m_kMSEncryptedHasBeenSet = true; m_kMSEncrypted = value; }
 
     /**
      * <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your
-     * own AWS KMS key, or <code>false</code> to use a key managed by Amazon S3.
+     * own KMS key, or <code>false</code> to use a key managed by Amazon S3.
      * Optional.</p> <p>Valid Values: <code>true</code> | <code>false</code> </p>
      */
     inline CreateTapesRequest& WithKMSEncrypted(bool value) { SetKMSEncrypted(value); return *this;}
@@ -371,8 +371,7 @@ namespace Model
      * in this pool is archived in the S3 storage class that is associated with the
      * pool. When you use your backup application to eject the tape, the tape is
      * archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive)
-     * that corresponds to the pool.</p> <p>Valid Values: <code>GLACIER</code> |
-     * <code>DEEP_ARCHIVE</code> </p>
+     * that corresponds to the pool.</p>
      */
     inline const Aws::String& GetPoolId() const{ return m_poolId; }
 
@@ -381,8 +380,7 @@ namespace Model
      * in this pool is archived in the S3 storage class that is associated with the
      * pool. When you use your backup application to eject the tape, the tape is
      * archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive)
-     * that corresponds to the pool.</p> <p>Valid Values: <code>GLACIER</code> |
-     * <code>DEEP_ARCHIVE</code> </p>
+     * that corresponds to the pool.</p>
      */
     inline bool PoolIdHasBeenSet() const { return m_poolIdHasBeenSet; }
 
@@ -391,8 +389,7 @@ namespace Model
      * in this pool is archived in the S3 storage class that is associated with the
      * pool. When you use your backup application to eject the tape, the tape is
      * archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive)
-     * that corresponds to the pool.</p> <p>Valid Values: <code>GLACIER</code> |
-     * <code>DEEP_ARCHIVE</code> </p>
+     * that corresponds to the pool.</p>
      */
     inline void SetPoolId(const Aws::String& value) { m_poolIdHasBeenSet = true; m_poolId = value; }
 
@@ -401,8 +398,7 @@ namespace Model
      * in this pool is archived in the S3 storage class that is associated with the
      * pool. When you use your backup application to eject the tape, the tape is
      * archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive)
-     * that corresponds to the pool.</p> <p>Valid Values: <code>GLACIER</code> |
-     * <code>DEEP_ARCHIVE</code> </p>
+     * that corresponds to the pool.</p>
      */
     inline void SetPoolId(Aws::String&& value) { m_poolIdHasBeenSet = true; m_poolId = std::move(value); }
 
@@ -411,8 +407,7 @@ namespace Model
      * in this pool is archived in the S3 storage class that is associated with the
      * pool. When you use your backup application to eject the tape, the tape is
      * archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive)
-     * that corresponds to the pool.</p> <p>Valid Values: <code>GLACIER</code> |
-     * <code>DEEP_ARCHIVE</code> </p>
+     * that corresponds to the pool.</p>
      */
     inline void SetPoolId(const char* value) { m_poolIdHasBeenSet = true; m_poolId.assign(value); }
 
@@ -421,8 +416,7 @@ namespace Model
      * in this pool is archived in the S3 storage class that is associated with the
      * pool. When you use your backup application to eject the tape, the tape is
      * archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive)
-     * that corresponds to the pool.</p> <p>Valid Values: <code>GLACIER</code> |
-     * <code>DEEP_ARCHIVE</code> </p>
+     * that corresponds to the pool.</p>
      */
     inline CreateTapesRequest& WithPoolId(const Aws::String& value) { SetPoolId(value); return *this;}
 
@@ -431,8 +425,7 @@ namespace Model
      * in this pool is archived in the S3 storage class that is associated with the
      * pool. When you use your backup application to eject the tape, the tape is
      * archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive)
-     * that corresponds to the pool.</p> <p>Valid Values: <code>GLACIER</code> |
-     * <code>DEEP_ARCHIVE</code> </p>
+     * that corresponds to the pool.</p>
      */
     inline CreateTapesRequest& WithPoolId(Aws::String&& value) { SetPoolId(std::move(value)); return *this;}
 
@@ -441,8 +434,7 @@ namespace Model
      * in this pool is archived in the S3 storage class that is associated with the
      * pool. When you use your backup application to eject the tape, the tape is
      * archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive)
-     * that corresponds to the pool.</p> <p>Valid Values: <code>GLACIER</code> |
-     * <code>DEEP_ARCHIVE</code> </p>
+     * that corresponds to the pool.</p>
      */
     inline CreateTapesRequest& WithPoolId(const char* value) { SetPoolId(value); return *this;}
 

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/comprehend/Comprehend_EXPORTS.h>
 #include <aws/comprehend/model/ModelStatus.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
 
@@ -69,6 +70,47 @@ namespace Model
      * <p>The status of an entity recognizer.</p>
      */
     inline EntityRecognizerFilter& WithStatus(ModelStatus&& value) { SetStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The name that you assigned the entity recognizer.</p>
+     */
+    inline const Aws::String& GetRecognizerName() const{ return m_recognizerName; }
+
+    /**
+     * <p>The name that you assigned the entity recognizer.</p>
+     */
+    inline bool RecognizerNameHasBeenSet() const { return m_recognizerNameHasBeenSet; }
+
+    /**
+     * <p>The name that you assigned the entity recognizer.</p>
+     */
+    inline void SetRecognizerName(const Aws::String& value) { m_recognizerNameHasBeenSet = true; m_recognizerName = value; }
+
+    /**
+     * <p>The name that you assigned the entity recognizer.</p>
+     */
+    inline void SetRecognizerName(Aws::String&& value) { m_recognizerNameHasBeenSet = true; m_recognizerName = std::move(value); }
+
+    /**
+     * <p>The name that you assigned the entity recognizer.</p>
+     */
+    inline void SetRecognizerName(const char* value) { m_recognizerNameHasBeenSet = true; m_recognizerName.assign(value); }
+
+    /**
+     * <p>The name that you assigned the entity recognizer.</p>
+     */
+    inline EntityRecognizerFilter& WithRecognizerName(const Aws::String& value) { SetRecognizerName(value); return *this;}
+
+    /**
+     * <p>The name that you assigned the entity recognizer.</p>
+     */
+    inline EntityRecognizerFilter& WithRecognizerName(Aws::String&& value) { SetRecognizerName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name that you assigned the entity recognizer.</p>
+     */
+    inline EntityRecognizerFilter& WithRecognizerName(const char* value) { SetRecognizerName(value); return *this;}
 
 
     /**
@@ -160,6 +202,9 @@ namespace Model
 
     ModelStatus m_status;
     bool m_statusHasBeenSet;
+
+    Aws::String m_recognizerName;
+    bool m_recognizerNameHasBeenSet;
 
     Aws::Utils::DateTime m_submitTimeBefore;
     bool m_submitTimeBeforeHasBeenSet;

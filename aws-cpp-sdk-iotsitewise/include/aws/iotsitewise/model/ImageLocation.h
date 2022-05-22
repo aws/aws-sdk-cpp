@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains an image that is uploaded to AWS IoT SiteWise and available at a
+   * <p>Contains an image that is uploaded to IoT SiteWise and available at a
    * URL.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ImageLocation">AWS
    * API Reference</a></p>

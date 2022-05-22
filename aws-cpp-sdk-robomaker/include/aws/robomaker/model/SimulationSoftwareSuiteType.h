@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     Gazebo,
-    RosbagPlay
+    RosbagPlay,
+    SimulationRuntime
   };
 
 namespace SimulationSoftwareSuiteTypeMapper

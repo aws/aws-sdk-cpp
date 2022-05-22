@@ -8,7 +8,9 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/robomaker/model/LaunchConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/robomaker/model/UploadConfiguration.h>
 #include <aws/robomaker/model/WorldConfig.h>
+#include <aws/robomaker/model/Tool.h>
 #include <utility>
 
 namespace Aws
@@ -155,6 +157,47 @@ namespace Model
 
 
     /**
+     * <p>Information about upload configurations for the simulation application.</p>
+     */
+    inline const Aws::Vector<UploadConfiguration>& GetUploadConfigurations() const{ return m_uploadConfigurations; }
+
+    /**
+     * <p>Information about upload configurations for the simulation application.</p>
+     */
+    inline bool UploadConfigurationsHasBeenSet() const { return m_uploadConfigurationsHasBeenSet; }
+
+    /**
+     * <p>Information about upload configurations for the simulation application.</p>
+     */
+    inline void SetUploadConfigurations(const Aws::Vector<UploadConfiguration>& value) { m_uploadConfigurationsHasBeenSet = true; m_uploadConfigurations = value; }
+
+    /**
+     * <p>Information about upload configurations for the simulation application.</p>
+     */
+    inline void SetUploadConfigurations(Aws::Vector<UploadConfiguration>&& value) { m_uploadConfigurationsHasBeenSet = true; m_uploadConfigurations = std::move(value); }
+
+    /**
+     * <p>Information about upload configurations for the simulation application.</p>
+     */
+    inline SimulationApplicationConfig& WithUploadConfigurations(const Aws::Vector<UploadConfiguration>& value) { SetUploadConfigurations(value); return *this;}
+
+    /**
+     * <p>Information about upload configurations for the simulation application.</p>
+     */
+    inline SimulationApplicationConfig& WithUploadConfigurations(Aws::Vector<UploadConfiguration>&& value) { SetUploadConfigurations(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about upload configurations for the simulation application.</p>
+     */
+    inline SimulationApplicationConfig& AddUploadConfigurations(const UploadConfiguration& value) { m_uploadConfigurationsHasBeenSet = true; m_uploadConfigurations.push_back(value); return *this; }
+
+    /**
+     * <p>Information about upload configurations for the simulation application.</p>
+     */
+    inline SimulationApplicationConfig& AddUploadConfigurations(UploadConfiguration&& value) { m_uploadConfigurationsHasBeenSet = true; m_uploadConfigurations.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>A list of world configurations.</p>
      */
     inline const Aws::Vector<WorldConfig>& GetWorldConfigs() const{ return m_worldConfigs; }
@@ -194,6 +237,47 @@ namespace Model
      */
     inline SimulationApplicationConfig& AddWorldConfigs(WorldConfig&& value) { m_worldConfigsHasBeenSet = true; m_worldConfigs.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Information about tools configured for the simulation application.</p>
+     */
+    inline const Aws::Vector<Tool>& GetTools() const{ return m_tools; }
+
+    /**
+     * <p>Information about tools configured for the simulation application.</p>
+     */
+    inline bool ToolsHasBeenSet() const { return m_toolsHasBeenSet; }
+
+    /**
+     * <p>Information about tools configured for the simulation application.</p>
+     */
+    inline void SetTools(const Aws::Vector<Tool>& value) { m_toolsHasBeenSet = true; m_tools = value; }
+
+    /**
+     * <p>Information about tools configured for the simulation application.</p>
+     */
+    inline void SetTools(Aws::Vector<Tool>&& value) { m_toolsHasBeenSet = true; m_tools = std::move(value); }
+
+    /**
+     * <p>Information about tools configured for the simulation application.</p>
+     */
+    inline SimulationApplicationConfig& WithTools(const Aws::Vector<Tool>& value) { SetTools(value); return *this;}
+
+    /**
+     * <p>Information about tools configured for the simulation application.</p>
+     */
+    inline SimulationApplicationConfig& WithTools(Aws::Vector<Tool>&& value) { SetTools(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about tools configured for the simulation application.</p>
+     */
+    inline SimulationApplicationConfig& AddTools(const Tool& value) { m_toolsHasBeenSet = true; m_tools.push_back(value); return *this; }
+
+    /**
+     * <p>Information about tools configured for the simulation application.</p>
+     */
+    inline SimulationApplicationConfig& AddTools(Tool&& value) { m_toolsHasBeenSet = true; m_tools.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_application;
@@ -205,8 +289,14 @@ namespace Model
     LaunchConfig m_launchConfig;
     bool m_launchConfigHasBeenSet;
 
+    Aws::Vector<UploadConfiguration> m_uploadConfigurations;
+    bool m_uploadConfigurationsHasBeenSet;
+
     Aws::Vector<WorldConfig> m_worldConfigs;
     bool m_worldConfigsHasBeenSet;
+
+    Aws::Vector<Tool> m_tools;
+    bool m_toolsHasBeenSet;
   };
 
 } // namespace Model

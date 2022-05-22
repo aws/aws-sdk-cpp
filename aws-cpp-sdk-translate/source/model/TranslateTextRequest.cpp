@@ -16,7 +16,8 @@ TranslateTextRequest::TranslateTextRequest() :
     m_textHasBeenSet(false),
     m_terminologyNamesHasBeenSet(false),
     m_sourceLanguageCodeHasBeenSet(false),
-    m_targetLanguageCodeHasBeenSet(false)
+    m_targetLanguageCodeHasBeenSet(false),
+    m_settingsHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,12 @@ Aws::String TranslateTextRequest::SerializePayload() const
   if(m_targetLanguageCodeHasBeenSet)
   {
    payload.WithString("TargetLanguageCode", m_targetLanguageCode);
+
+  }
+
+  if(m_settingsHasBeenSet)
+  {
+   payload.WithObject("Settings", m_settings.Jsonize());
 
   }
 

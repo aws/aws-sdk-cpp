@@ -25,7 +25,9 @@
 #include <aws/glue/model/BatchDeletePartitionRequest.h>
 #include <aws/glue/model/BatchDeleteTableRequest.h>
 #include <aws/glue/model/BatchDeleteTableVersionRequest.h>
+#include <aws/glue/model/BatchGetBlueprintsRequest.h>
 #include <aws/glue/model/BatchGetCrawlersRequest.h>
+#include <aws/glue/model/BatchGetCustomEntityTypesRequest.h>
 #include <aws/glue/model/BatchGetDevEndpointsRequest.h>
 #include <aws/glue/model/BatchGetJobsRequest.h>
 #include <aws/glue/model/BatchGetPartitionRequest.h>
@@ -34,10 +36,13 @@
 #include <aws/glue/model/BatchStopJobRunRequest.h>
 #include <aws/glue/model/BatchUpdatePartitionRequest.h>
 #include <aws/glue/model/CancelMLTaskRunRequest.h>
+#include <aws/glue/model/CancelStatementRequest.h>
 #include <aws/glue/model/CheckSchemaVersionValidityRequest.h>
+#include <aws/glue/model/CreateBlueprintRequest.h>
 #include <aws/glue/model/CreateClassifierRequest.h>
 #include <aws/glue/model/CreateConnectionRequest.h>
 #include <aws/glue/model/CreateCrawlerRequest.h>
+#include <aws/glue/model/CreateCustomEntityTypeRequest.h>
 #include <aws/glue/model/CreateDatabaseRequest.h>
 #include <aws/glue/model/CreateDevEndpointRequest.h>
 #include <aws/glue/model/CreateJobRequest.h>
@@ -48,15 +53,18 @@
 #include <aws/glue/model/CreateSchemaRequest.h>
 #include <aws/glue/model/CreateScriptRequest.h>
 #include <aws/glue/model/CreateSecurityConfigurationRequest.h>
+#include <aws/glue/model/CreateSessionRequest.h>
 #include <aws/glue/model/CreateTableRequest.h>
 #include <aws/glue/model/CreateTriggerRequest.h>
 #include <aws/glue/model/CreateUserDefinedFunctionRequest.h>
 #include <aws/glue/model/CreateWorkflowRequest.h>
+#include <aws/glue/model/DeleteBlueprintRequest.h>
 #include <aws/glue/model/DeleteClassifierRequest.h>
 #include <aws/glue/model/DeleteColumnStatisticsForPartitionRequest.h>
 #include <aws/glue/model/DeleteColumnStatisticsForTableRequest.h>
 #include <aws/glue/model/DeleteConnectionRequest.h>
 #include <aws/glue/model/DeleteCrawlerRequest.h>
+#include <aws/glue/model/DeleteCustomEntityTypeRequest.h>
 #include <aws/glue/model/DeleteDatabaseRequest.h>
 #include <aws/glue/model/DeleteDevEndpointRequest.h>
 #include <aws/glue/model/DeleteJobRequest.h>
@@ -68,11 +76,15 @@
 #include <aws/glue/model/DeleteSchemaRequest.h>
 #include <aws/glue/model/DeleteSchemaVersionsRequest.h>
 #include <aws/glue/model/DeleteSecurityConfigurationRequest.h>
+#include <aws/glue/model/DeleteSessionRequest.h>
 #include <aws/glue/model/DeleteTableRequest.h>
 #include <aws/glue/model/DeleteTableVersionRequest.h>
 #include <aws/glue/model/DeleteTriggerRequest.h>
 #include <aws/glue/model/DeleteUserDefinedFunctionRequest.h>
 #include <aws/glue/model/DeleteWorkflowRequest.h>
+#include <aws/glue/model/GetBlueprintRequest.h>
+#include <aws/glue/model/GetBlueprintRunRequest.h>
+#include <aws/glue/model/GetBlueprintRunsRequest.h>
 #include <aws/glue/model/GetCatalogImportStatusRequest.h>
 #include <aws/glue/model/GetClassifierRequest.h>
 #include <aws/glue/model/GetClassifiersRequest.h>
@@ -83,6 +95,7 @@
 #include <aws/glue/model/GetCrawlerRequest.h>
 #include <aws/glue/model/GetCrawlerMetricsRequest.h>
 #include <aws/glue/model/GetCrawlersRequest.h>
+#include <aws/glue/model/GetCustomEntityTypeRequest.h>
 #include <aws/glue/model/GetDataCatalogEncryptionSettingsRequest.h>
 #include <aws/glue/model/GetDatabaseRequest.h>
 #include <aws/glue/model/GetDatabasesRequest.h>
@@ -112,6 +125,8 @@
 #include <aws/glue/model/GetSchemaVersionsDiffRequest.h>
 #include <aws/glue/model/GetSecurityConfigurationRequest.h>
 #include <aws/glue/model/GetSecurityConfigurationsRequest.h>
+#include <aws/glue/model/GetSessionRequest.h>
+#include <aws/glue/model/GetStatementRequest.h>
 #include <aws/glue/model/GetTableRequest.h>
 #include <aws/glue/model/GetTableVersionRequest.h>
 #include <aws/glue/model/GetTableVersionsRequest.h>
@@ -119,6 +134,9 @@
 #include <aws/glue/model/GetTagsRequest.h>
 #include <aws/glue/model/GetTriggerRequest.h>
 #include <aws/glue/model/GetTriggersRequest.h>
+#include <aws/glue/model/GetUnfilteredPartitionMetadataRequest.h>
+#include <aws/glue/model/GetUnfilteredPartitionsMetadataRequest.h>
+#include <aws/glue/model/GetUnfilteredTableMetadataRequest.h>
 #include <aws/glue/model/GetUserDefinedFunctionRequest.h>
 #include <aws/glue/model/GetUserDefinedFunctionsRequest.h>
 #include <aws/glue/model/GetWorkflowRequest.h>
@@ -126,13 +144,17 @@
 #include <aws/glue/model/GetWorkflowRunPropertiesRequest.h>
 #include <aws/glue/model/GetWorkflowRunsRequest.h>
 #include <aws/glue/model/ImportCatalogToGlueRequest.h>
+#include <aws/glue/model/ListBlueprintsRequest.h>
 #include <aws/glue/model/ListCrawlersRequest.h>
+#include <aws/glue/model/ListCustomEntityTypesRequest.h>
 #include <aws/glue/model/ListDevEndpointsRequest.h>
 #include <aws/glue/model/ListJobsRequest.h>
 #include <aws/glue/model/ListMLTransformsRequest.h>
 #include <aws/glue/model/ListRegistriesRequest.h>
 #include <aws/glue/model/ListSchemaVersionsRequest.h>
 #include <aws/glue/model/ListSchemasRequest.h>
+#include <aws/glue/model/ListSessionsRequest.h>
+#include <aws/glue/model/ListStatementsRequest.h>
 #include <aws/glue/model/ListTriggersRequest.h>
 #include <aws/glue/model/ListWorkflowsRequest.h>
 #include <aws/glue/model/PutDataCatalogEncryptionSettingsRequest.h>
@@ -144,7 +166,9 @@
 #include <aws/glue/model/RemoveSchemaVersionMetadataRequest.h>
 #include <aws/glue/model/ResetJobBookmarkRequest.h>
 #include <aws/glue/model/ResumeWorkflowRunRequest.h>
+#include <aws/glue/model/RunStatementRequest.h>
 #include <aws/glue/model/SearchTablesRequest.h>
+#include <aws/glue/model/StartBlueprintRunRequest.h>
 #include <aws/glue/model/StartCrawlerRequest.h>
 #include <aws/glue/model/StartCrawlerScheduleRequest.h>
 #include <aws/glue/model/StartExportLabelsTaskRunRequest.h>
@@ -156,10 +180,12 @@
 #include <aws/glue/model/StartWorkflowRunRequest.h>
 #include <aws/glue/model/StopCrawlerRequest.h>
 #include <aws/glue/model/StopCrawlerScheduleRequest.h>
+#include <aws/glue/model/StopSessionRequest.h>
 #include <aws/glue/model/StopTriggerRequest.h>
 #include <aws/glue/model/StopWorkflowRunRequest.h>
 #include <aws/glue/model/TagResourceRequest.h>
 #include <aws/glue/model/UntagResourceRequest.h>
+#include <aws/glue/model/UpdateBlueprintRequest.h>
 #include <aws/glue/model/UpdateClassifierRequest.h>
 #include <aws/glue/model/UpdateColumnStatisticsForPartitionRequest.h>
 #include <aws/glue/model/UpdateColumnStatisticsForTableRequest.h>
@@ -225,7 +251,7 @@ GlueClient::~GlueClient()
 {
 }
 
-void GlueClient::init(const ClientConfiguration& config)
+void GlueClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Glue");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -254,9 +280,6 @@ void GlueClient::OverrideEndpoint(const Aws::String& endpoint)
 BatchCreatePartitionOutcome GlueClient::BatchCreatePartition(const BatchCreatePartitionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return BatchCreatePartitionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -281,9 +304,6 @@ void GlueClient::BatchCreatePartitionAsyncHelper(const BatchCreatePartitionReque
 BatchDeleteConnectionOutcome GlueClient::BatchDeleteConnection(const BatchDeleteConnectionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return BatchDeleteConnectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -308,9 +328,6 @@ void GlueClient::BatchDeleteConnectionAsyncHelper(const BatchDeleteConnectionReq
 BatchDeletePartitionOutcome GlueClient::BatchDeletePartition(const BatchDeletePartitionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return BatchDeletePartitionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -335,9 +352,6 @@ void GlueClient::BatchDeletePartitionAsyncHelper(const BatchDeletePartitionReque
 BatchDeleteTableOutcome GlueClient::BatchDeleteTable(const BatchDeleteTableRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return BatchDeleteTableOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -362,9 +376,6 @@ void GlueClient::BatchDeleteTableAsyncHelper(const BatchDeleteTableRequest& requ
 BatchDeleteTableVersionOutcome GlueClient::BatchDeleteTableVersion(const BatchDeleteTableVersionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return BatchDeleteTableVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -386,12 +397,33 @@ void GlueClient::BatchDeleteTableVersionAsyncHelper(const BatchDeleteTableVersio
   handler(this, request, BatchDeleteTableVersion(request), context);
 }
 
+BatchGetBlueprintsOutcome GlueClient::BatchGetBlueprints(const BatchGetBlueprintsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return BatchGetBlueprintsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+BatchGetBlueprintsOutcomeCallable GlueClient::BatchGetBlueprintsCallable(const BatchGetBlueprintsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchGetBlueprintsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchGetBlueprints(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::BatchGetBlueprintsAsync(const BatchGetBlueprintsRequest& request, const BatchGetBlueprintsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->BatchGetBlueprintsAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::BatchGetBlueprintsAsyncHelper(const BatchGetBlueprintsRequest& request, const BatchGetBlueprintsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, BatchGetBlueprints(request), context);
+}
+
 BatchGetCrawlersOutcome GlueClient::BatchGetCrawlers(const BatchGetCrawlersRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return BatchGetCrawlersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -413,12 +445,33 @@ void GlueClient::BatchGetCrawlersAsyncHelper(const BatchGetCrawlersRequest& requ
   handler(this, request, BatchGetCrawlers(request), context);
 }
 
+BatchGetCustomEntityTypesOutcome GlueClient::BatchGetCustomEntityTypes(const BatchGetCustomEntityTypesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return BatchGetCustomEntityTypesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+BatchGetCustomEntityTypesOutcomeCallable GlueClient::BatchGetCustomEntityTypesCallable(const BatchGetCustomEntityTypesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchGetCustomEntityTypesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchGetCustomEntityTypes(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::BatchGetCustomEntityTypesAsync(const BatchGetCustomEntityTypesRequest& request, const BatchGetCustomEntityTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->BatchGetCustomEntityTypesAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::BatchGetCustomEntityTypesAsyncHelper(const BatchGetCustomEntityTypesRequest& request, const BatchGetCustomEntityTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, BatchGetCustomEntityTypes(request), context);
+}
+
 BatchGetDevEndpointsOutcome GlueClient::BatchGetDevEndpoints(const BatchGetDevEndpointsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return BatchGetDevEndpointsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -443,9 +496,6 @@ void GlueClient::BatchGetDevEndpointsAsyncHelper(const BatchGetDevEndpointsReque
 BatchGetJobsOutcome GlueClient::BatchGetJobs(const BatchGetJobsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return BatchGetJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -470,9 +520,6 @@ void GlueClient::BatchGetJobsAsyncHelper(const BatchGetJobsRequest& request, con
 BatchGetPartitionOutcome GlueClient::BatchGetPartition(const BatchGetPartitionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return BatchGetPartitionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -497,9 +544,6 @@ void GlueClient::BatchGetPartitionAsyncHelper(const BatchGetPartitionRequest& re
 BatchGetTriggersOutcome GlueClient::BatchGetTriggers(const BatchGetTriggersRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return BatchGetTriggersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -524,9 +568,6 @@ void GlueClient::BatchGetTriggersAsyncHelper(const BatchGetTriggersRequest& requ
 BatchGetWorkflowsOutcome GlueClient::BatchGetWorkflows(const BatchGetWorkflowsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return BatchGetWorkflowsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -551,9 +592,6 @@ void GlueClient::BatchGetWorkflowsAsyncHelper(const BatchGetWorkflowsRequest& re
 BatchStopJobRunOutcome GlueClient::BatchStopJobRun(const BatchStopJobRunRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return BatchStopJobRunOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -578,9 +616,6 @@ void GlueClient::BatchStopJobRunAsyncHelper(const BatchStopJobRunRequest& reques
 BatchUpdatePartitionOutcome GlueClient::BatchUpdatePartition(const BatchUpdatePartitionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return BatchUpdatePartitionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -605,9 +640,6 @@ void GlueClient::BatchUpdatePartitionAsyncHelper(const BatchUpdatePartitionReque
 CancelMLTaskRunOutcome GlueClient::CancelMLTaskRun(const CancelMLTaskRunRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CancelMLTaskRunOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -629,12 +661,33 @@ void GlueClient::CancelMLTaskRunAsyncHelper(const CancelMLTaskRunRequest& reques
   handler(this, request, CancelMLTaskRun(request), context);
 }
 
+CancelStatementOutcome GlueClient::CancelStatement(const CancelStatementRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CancelStatementOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CancelStatementOutcomeCallable GlueClient::CancelStatementCallable(const CancelStatementRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CancelStatementOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelStatement(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::CancelStatementAsync(const CancelStatementRequest& request, const CancelStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CancelStatementAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::CancelStatementAsyncHelper(const CancelStatementRequest& request, const CancelStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CancelStatement(request), context);
+}
+
 CheckSchemaVersionValidityOutcome GlueClient::CheckSchemaVersionValidity(const CheckSchemaVersionValidityRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CheckSchemaVersionValidityOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -656,12 +709,33 @@ void GlueClient::CheckSchemaVersionValidityAsyncHelper(const CheckSchemaVersionV
   handler(this, request, CheckSchemaVersionValidity(request), context);
 }
 
+CreateBlueprintOutcome GlueClient::CreateBlueprint(const CreateBlueprintRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateBlueprintOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateBlueprintOutcomeCallable GlueClient::CreateBlueprintCallable(const CreateBlueprintRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateBlueprintOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateBlueprint(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::CreateBlueprintAsync(const CreateBlueprintRequest& request, const CreateBlueprintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateBlueprintAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::CreateBlueprintAsyncHelper(const CreateBlueprintRequest& request, const CreateBlueprintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateBlueprint(request), context);
+}
+
 CreateClassifierOutcome GlueClient::CreateClassifier(const CreateClassifierRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateClassifierOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -686,9 +760,6 @@ void GlueClient::CreateClassifierAsyncHelper(const CreateClassifierRequest& requ
 CreateConnectionOutcome GlueClient::CreateConnection(const CreateConnectionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateConnectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -713,9 +784,6 @@ void GlueClient::CreateConnectionAsyncHelper(const CreateConnectionRequest& requ
 CreateCrawlerOutcome GlueClient::CreateCrawler(const CreateCrawlerRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateCrawlerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -737,12 +805,33 @@ void GlueClient::CreateCrawlerAsyncHelper(const CreateCrawlerRequest& request, c
   handler(this, request, CreateCrawler(request), context);
 }
 
+CreateCustomEntityTypeOutcome GlueClient::CreateCustomEntityType(const CreateCustomEntityTypeRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateCustomEntityTypeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateCustomEntityTypeOutcomeCallable GlueClient::CreateCustomEntityTypeCallable(const CreateCustomEntityTypeRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateCustomEntityTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateCustomEntityType(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::CreateCustomEntityTypeAsync(const CreateCustomEntityTypeRequest& request, const CreateCustomEntityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateCustomEntityTypeAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::CreateCustomEntityTypeAsyncHelper(const CreateCustomEntityTypeRequest& request, const CreateCustomEntityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateCustomEntityType(request), context);
+}
+
 CreateDatabaseOutcome GlueClient::CreateDatabase(const CreateDatabaseRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateDatabaseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -767,9 +856,6 @@ void GlueClient::CreateDatabaseAsyncHelper(const CreateDatabaseRequest& request,
 CreateDevEndpointOutcome GlueClient::CreateDevEndpoint(const CreateDevEndpointRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateDevEndpointOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -794,9 +880,6 @@ void GlueClient::CreateDevEndpointAsyncHelper(const CreateDevEndpointRequest& re
 CreateJobOutcome GlueClient::CreateJob(const CreateJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -821,9 +904,6 @@ void GlueClient::CreateJobAsyncHelper(const CreateJobRequest& request, const Cre
 CreateMLTransformOutcome GlueClient::CreateMLTransform(const CreateMLTransformRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateMLTransformOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -848,9 +928,6 @@ void GlueClient::CreateMLTransformAsyncHelper(const CreateMLTransformRequest& re
 CreatePartitionOutcome GlueClient::CreatePartition(const CreatePartitionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreatePartitionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -875,9 +952,6 @@ void GlueClient::CreatePartitionAsyncHelper(const CreatePartitionRequest& reques
 CreatePartitionIndexOutcome GlueClient::CreatePartitionIndex(const CreatePartitionIndexRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreatePartitionIndexOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -902,9 +976,6 @@ void GlueClient::CreatePartitionIndexAsyncHelper(const CreatePartitionIndexReque
 CreateRegistryOutcome GlueClient::CreateRegistry(const CreateRegistryRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateRegistryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -929,9 +1000,6 @@ void GlueClient::CreateRegistryAsyncHelper(const CreateRegistryRequest& request,
 CreateSchemaOutcome GlueClient::CreateSchema(const CreateSchemaRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateSchemaOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -956,9 +1024,6 @@ void GlueClient::CreateSchemaAsyncHelper(const CreateSchemaRequest& request, con
 CreateScriptOutcome GlueClient::CreateScript(const CreateScriptRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateScriptOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -983,9 +1048,6 @@ void GlueClient::CreateScriptAsyncHelper(const CreateScriptRequest& request, con
 CreateSecurityConfigurationOutcome GlueClient::CreateSecurityConfiguration(const CreateSecurityConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateSecurityConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1007,12 +1069,33 @@ void GlueClient::CreateSecurityConfigurationAsyncHelper(const CreateSecurityConf
   handler(this, request, CreateSecurityConfiguration(request), context);
 }
 
+CreateSessionOutcome GlueClient::CreateSession(const CreateSessionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateSessionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateSessionOutcomeCallable GlueClient::CreateSessionCallable(const CreateSessionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateSessionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateSession(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::CreateSessionAsync(const CreateSessionRequest& request, const CreateSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateSessionAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::CreateSessionAsyncHelper(const CreateSessionRequest& request, const CreateSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateSession(request), context);
+}
+
 CreateTableOutcome GlueClient::CreateTable(const CreateTableRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateTableOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1037,9 +1120,6 @@ void GlueClient::CreateTableAsyncHelper(const CreateTableRequest& request, const
 CreateTriggerOutcome GlueClient::CreateTrigger(const CreateTriggerRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateTriggerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1064,9 +1144,6 @@ void GlueClient::CreateTriggerAsyncHelper(const CreateTriggerRequest& request, c
 CreateUserDefinedFunctionOutcome GlueClient::CreateUserDefinedFunction(const CreateUserDefinedFunctionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateUserDefinedFunctionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1091,9 +1168,6 @@ void GlueClient::CreateUserDefinedFunctionAsyncHelper(const CreateUserDefinedFun
 CreateWorkflowOutcome GlueClient::CreateWorkflow(const CreateWorkflowRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateWorkflowOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1115,12 +1189,33 @@ void GlueClient::CreateWorkflowAsyncHelper(const CreateWorkflowRequest& request,
   handler(this, request, CreateWorkflow(request), context);
 }
 
+DeleteBlueprintOutcome GlueClient::DeleteBlueprint(const DeleteBlueprintRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteBlueprintOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteBlueprintOutcomeCallable GlueClient::DeleteBlueprintCallable(const DeleteBlueprintRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteBlueprintOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteBlueprint(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::DeleteBlueprintAsync(const DeleteBlueprintRequest& request, const DeleteBlueprintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteBlueprintAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::DeleteBlueprintAsyncHelper(const DeleteBlueprintRequest& request, const DeleteBlueprintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteBlueprint(request), context);
+}
+
 DeleteClassifierOutcome GlueClient::DeleteClassifier(const DeleteClassifierRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteClassifierOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1145,9 +1240,6 @@ void GlueClient::DeleteClassifierAsyncHelper(const DeleteClassifierRequest& requ
 DeleteColumnStatisticsForPartitionOutcome GlueClient::DeleteColumnStatisticsForPartition(const DeleteColumnStatisticsForPartitionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteColumnStatisticsForPartitionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1172,9 +1264,6 @@ void GlueClient::DeleteColumnStatisticsForPartitionAsyncHelper(const DeleteColum
 DeleteColumnStatisticsForTableOutcome GlueClient::DeleteColumnStatisticsForTable(const DeleteColumnStatisticsForTableRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteColumnStatisticsForTableOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1199,9 +1288,6 @@ void GlueClient::DeleteColumnStatisticsForTableAsyncHelper(const DeleteColumnSta
 DeleteConnectionOutcome GlueClient::DeleteConnection(const DeleteConnectionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteConnectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1226,9 +1312,6 @@ void GlueClient::DeleteConnectionAsyncHelper(const DeleteConnectionRequest& requ
 DeleteCrawlerOutcome GlueClient::DeleteCrawler(const DeleteCrawlerRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteCrawlerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1250,12 +1333,33 @@ void GlueClient::DeleteCrawlerAsyncHelper(const DeleteCrawlerRequest& request, c
   handler(this, request, DeleteCrawler(request), context);
 }
 
+DeleteCustomEntityTypeOutcome GlueClient::DeleteCustomEntityType(const DeleteCustomEntityTypeRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteCustomEntityTypeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteCustomEntityTypeOutcomeCallable GlueClient::DeleteCustomEntityTypeCallable(const DeleteCustomEntityTypeRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteCustomEntityTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteCustomEntityType(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::DeleteCustomEntityTypeAsync(const DeleteCustomEntityTypeRequest& request, const DeleteCustomEntityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteCustomEntityTypeAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::DeleteCustomEntityTypeAsyncHelper(const DeleteCustomEntityTypeRequest& request, const DeleteCustomEntityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteCustomEntityType(request), context);
+}
+
 DeleteDatabaseOutcome GlueClient::DeleteDatabase(const DeleteDatabaseRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteDatabaseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1280,9 +1384,6 @@ void GlueClient::DeleteDatabaseAsyncHelper(const DeleteDatabaseRequest& request,
 DeleteDevEndpointOutcome GlueClient::DeleteDevEndpoint(const DeleteDevEndpointRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteDevEndpointOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1307,9 +1408,6 @@ void GlueClient::DeleteDevEndpointAsyncHelper(const DeleteDevEndpointRequest& re
 DeleteJobOutcome GlueClient::DeleteJob(const DeleteJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1334,9 +1432,6 @@ void GlueClient::DeleteJobAsyncHelper(const DeleteJobRequest& request, const Del
 DeleteMLTransformOutcome GlueClient::DeleteMLTransform(const DeleteMLTransformRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteMLTransformOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1361,9 +1456,6 @@ void GlueClient::DeleteMLTransformAsyncHelper(const DeleteMLTransformRequest& re
 DeletePartitionOutcome GlueClient::DeletePartition(const DeletePartitionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeletePartitionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1388,9 +1480,6 @@ void GlueClient::DeletePartitionAsyncHelper(const DeletePartitionRequest& reques
 DeletePartitionIndexOutcome GlueClient::DeletePartitionIndex(const DeletePartitionIndexRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeletePartitionIndexOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1415,9 +1504,6 @@ void GlueClient::DeletePartitionIndexAsyncHelper(const DeletePartitionIndexReque
 DeleteRegistryOutcome GlueClient::DeleteRegistry(const DeleteRegistryRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteRegistryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1442,9 +1528,6 @@ void GlueClient::DeleteRegistryAsyncHelper(const DeleteRegistryRequest& request,
 DeleteResourcePolicyOutcome GlueClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteResourcePolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1469,9 +1552,6 @@ void GlueClient::DeleteResourcePolicyAsyncHelper(const DeleteResourcePolicyReque
 DeleteSchemaOutcome GlueClient::DeleteSchema(const DeleteSchemaRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteSchemaOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1496,9 +1576,6 @@ void GlueClient::DeleteSchemaAsyncHelper(const DeleteSchemaRequest& request, con
 DeleteSchemaVersionsOutcome GlueClient::DeleteSchemaVersions(const DeleteSchemaVersionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteSchemaVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1523,9 +1600,6 @@ void GlueClient::DeleteSchemaVersionsAsyncHelper(const DeleteSchemaVersionsReque
 DeleteSecurityConfigurationOutcome GlueClient::DeleteSecurityConfiguration(const DeleteSecurityConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteSecurityConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1547,12 +1621,33 @@ void GlueClient::DeleteSecurityConfigurationAsyncHelper(const DeleteSecurityConf
   handler(this, request, DeleteSecurityConfiguration(request), context);
 }
 
+DeleteSessionOutcome GlueClient::DeleteSession(const DeleteSessionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteSessionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteSessionOutcomeCallable GlueClient::DeleteSessionCallable(const DeleteSessionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteSessionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteSession(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::DeleteSessionAsync(const DeleteSessionRequest& request, const DeleteSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteSessionAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::DeleteSessionAsyncHelper(const DeleteSessionRequest& request, const DeleteSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteSession(request), context);
+}
+
 DeleteTableOutcome GlueClient::DeleteTable(const DeleteTableRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteTableOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1577,9 +1672,6 @@ void GlueClient::DeleteTableAsyncHelper(const DeleteTableRequest& request, const
 DeleteTableVersionOutcome GlueClient::DeleteTableVersion(const DeleteTableVersionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteTableVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1604,9 +1696,6 @@ void GlueClient::DeleteTableVersionAsyncHelper(const DeleteTableVersionRequest& 
 DeleteTriggerOutcome GlueClient::DeleteTrigger(const DeleteTriggerRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteTriggerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1631,9 +1720,6 @@ void GlueClient::DeleteTriggerAsyncHelper(const DeleteTriggerRequest& request, c
 DeleteUserDefinedFunctionOutcome GlueClient::DeleteUserDefinedFunction(const DeleteUserDefinedFunctionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteUserDefinedFunctionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1658,9 +1744,6 @@ void GlueClient::DeleteUserDefinedFunctionAsyncHelper(const DeleteUserDefinedFun
 DeleteWorkflowOutcome GlueClient::DeleteWorkflow(const DeleteWorkflowRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteWorkflowOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1682,12 +1765,81 @@ void GlueClient::DeleteWorkflowAsyncHelper(const DeleteWorkflowRequest& request,
   handler(this, request, DeleteWorkflow(request), context);
 }
 
+GetBlueprintOutcome GlueClient::GetBlueprint(const GetBlueprintRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetBlueprintOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetBlueprintOutcomeCallable GlueClient::GetBlueprintCallable(const GetBlueprintRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetBlueprintOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBlueprint(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::GetBlueprintAsync(const GetBlueprintRequest& request, const GetBlueprintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetBlueprintAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::GetBlueprintAsyncHelper(const GetBlueprintRequest& request, const GetBlueprintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetBlueprint(request), context);
+}
+
+GetBlueprintRunOutcome GlueClient::GetBlueprintRun(const GetBlueprintRunRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetBlueprintRunOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetBlueprintRunOutcomeCallable GlueClient::GetBlueprintRunCallable(const GetBlueprintRunRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetBlueprintRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBlueprintRun(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::GetBlueprintRunAsync(const GetBlueprintRunRequest& request, const GetBlueprintRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetBlueprintRunAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::GetBlueprintRunAsyncHelper(const GetBlueprintRunRequest& request, const GetBlueprintRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetBlueprintRun(request), context);
+}
+
+GetBlueprintRunsOutcome GlueClient::GetBlueprintRuns(const GetBlueprintRunsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetBlueprintRunsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetBlueprintRunsOutcomeCallable GlueClient::GetBlueprintRunsCallable(const GetBlueprintRunsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetBlueprintRunsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBlueprintRuns(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::GetBlueprintRunsAsync(const GetBlueprintRunsRequest& request, const GetBlueprintRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetBlueprintRunsAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::GetBlueprintRunsAsyncHelper(const GetBlueprintRunsRequest& request, const GetBlueprintRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetBlueprintRuns(request), context);
+}
+
 GetCatalogImportStatusOutcome GlueClient::GetCatalogImportStatus(const GetCatalogImportStatusRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetCatalogImportStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1712,9 +1864,6 @@ void GlueClient::GetCatalogImportStatusAsyncHelper(const GetCatalogImportStatusR
 GetClassifierOutcome GlueClient::GetClassifier(const GetClassifierRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetClassifierOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1739,9 +1888,6 @@ void GlueClient::GetClassifierAsyncHelper(const GetClassifierRequest& request, c
 GetClassifiersOutcome GlueClient::GetClassifiers(const GetClassifiersRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetClassifiersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1766,9 +1912,6 @@ void GlueClient::GetClassifiersAsyncHelper(const GetClassifiersRequest& request,
 GetColumnStatisticsForPartitionOutcome GlueClient::GetColumnStatisticsForPartition(const GetColumnStatisticsForPartitionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetColumnStatisticsForPartitionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1793,9 +1936,6 @@ void GlueClient::GetColumnStatisticsForPartitionAsyncHelper(const GetColumnStati
 GetColumnStatisticsForTableOutcome GlueClient::GetColumnStatisticsForTable(const GetColumnStatisticsForTableRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetColumnStatisticsForTableOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1820,9 +1960,6 @@ void GlueClient::GetColumnStatisticsForTableAsyncHelper(const GetColumnStatistic
 GetConnectionOutcome GlueClient::GetConnection(const GetConnectionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetConnectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1847,9 +1984,6 @@ void GlueClient::GetConnectionAsyncHelper(const GetConnectionRequest& request, c
 GetConnectionsOutcome GlueClient::GetConnections(const GetConnectionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetConnectionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1874,9 +2008,6 @@ void GlueClient::GetConnectionsAsyncHelper(const GetConnectionsRequest& request,
 GetCrawlerOutcome GlueClient::GetCrawler(const GetCrawlerRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetCrawlerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1901,9 +2032,6 @@ void GlueClient::GetCrawlerAsyncHelper(const GetCrawlerRequest& request, const G
 GetCrawlerMetricsOutcome GlueClient::GetCrawlerMetrics(const GetCrawlerMetricsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetCrawlerMetricsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1928,9 +2056,6 @@ void GlueClient::GetCrawlerMetricsAsyncHelper(const GetCrawlerMetricsRequest& re
 GetCrawlersOutcome GlueClient::GetCrawlers(const GetCrawlersRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetCrawlersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1952,12 +2077,33 @@ void GlueClient::GetCrawlersAsyncHelper(const GetCrawlersRequest& request, const
   handler(this, request, GetCrawlers(request), context);
 }
 
+GetCustomEntityTypeOutcome GlueClient::GetCustomEntityType(const GetCustomEntityTypeRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetCustomEntityTypeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetCustomEntityTypeOutcomeCallable GlueClient::GetCustomEntityTypeCallable(const GetCustomEntityTypeRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetCustomEntityTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCustomEntityType(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::GetCustomEntityTypeAsync(const GetCustomEntityTypeRequest& request, const GetCustomEntityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetCustomEntityTypeAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::GetCustomEntityTypeAsyncHelper(const GetCustomEntityTypeRequest& request, const GetCustomEntityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetCustomEntityType(request), context);
+}
+
 GetDataCatalogEncryptionSettingsOutcome GlueClient::GetDataCatalogEncryptionSettings(const GetDataCatalogEncryptionSettingsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetDataCatalogEncryptionSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1982,9 +2128,6 @@ void GlueClient::GetDataCatalogEncryptionSettingsAsyncHelper(const GetDataCatalo
 GetDatabaseOutcome GlueClient::GetDatabase(const GetDatabaseRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetDatabaseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2009,9 +2152,6 @@ void GlueClient::GetDatabaseAsyncHelper(const GetDatabaseRequest& request, const
 GetDatabasesOutcome GlueClient::GetDatabases(const GetDatabasesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetDatabasesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2036,9 +2176,6 @@ void GlueClient::GetDatabasesAsyncHelper(const GetDatabasesRequest& request, con
 GetDataflowGraphOutcome GlueClient::GetDataflowGraph(const GetDataflowGraphRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetDataflowGraphOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2063,9 +2200,6 @@ void GlueClient::GetDataflowGraphAsyncHelper(const GetDataflowGraphRequest& requ
 GetDevEndpointOutcome GlueClient::GetDevEndpoint(const GetDevEndpointRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetDevEndpointOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2090,9 +2224,6 @@ void GlueClient::GetDevEndpointAsyncHelper(const GetDevEndpointRequest& request,
 GetDevEndpointsOutcome GlueClient::GetDevEndpoints(const GetDevEndpointsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetDevEndpointsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2117,9 +2248,6 @@ void GlueClient::GetDevEndpointsAsyncHelper(const GetDevEndpointsRequest& reques
 GetJobOutcome GlueClient::GetJob(const GetJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2144,9 +2272,6 @@ void GlueClient::GetJobAsyncHelper(const GetJobRequest& request, const GetJobRes
 GetJobBookmarkOutcome GlueClient::GetJobBookmark(const GetJobBookmarkRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetJobBookmarkOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2171,9 +2296,6 @@ void GlueClient::GetJobBookmarkAsyncHelper(const GetJobBookmarkRequest& request,
 GetJobRunOutcome GlueClient::GetJobRun(const GetJobRunRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetJobRunOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2198,9 +2320,6 @@ void GlueClient::GetJobRunAsyncHelper(const GetJobRunRequest& request, const Get
 GetJobRunsOutcome GlueClient::GetJobRuns(const GetJobRunsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetJobRunsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2225,9 +2344,6 @@ void GlueClient::GetJobRunsAsyncHelper(const GetJobRunsRequest& request, const G
 GetJobsOutcome GlueClient::GetJobs(const GetJobsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2252,9 +2368,6 @@ void GlueClient::GetJobsAsyncHelper(const GetJobsRequest& request, const GetJobs
 GetMLTaskRunOutcome GlueClient::GetMLTaskRun(const GetMLTaskRunRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetMLTaskRunOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2279,9 +2392,6 @@ void GlueClient::GetMLTaskRunAsyncHelper(const GetMLTaskRunRequest& request, con
 GetMLTaskRunsOutcome GlueClient::GetMLTaskRuns(const GetMLTaskRunsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetMLTaskRunsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2306,9 +2416,6 @@ void GlueClient::GetMLTaskRunsAsyncHelper(const GetMLTaskRunsRequest& request, c
 GetMLTransformOutcome GlueClient::GetMLTransform(const GetMLTransformRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetMLTransformOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2333,9 +2440,6 @@ void GlueClient::GetMLTransformAsyncHelper(const GetMLTransformRequest& request,
 GetMLTransformsOutcome GlueClient::GetMLTransforms(const GetMLTransformsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetMLTransformsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2360,9 +2464,6 @@ void GlueClient::GetMLTransformsAsyncHelper(const GetMLTransformsRequest& reques
 GetMappingOutcome GlueClient::GetMapping(const GetMappingRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetMappingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2387,9 +2488,6 @@ void GlueClient::GetMappingAsyncHelper(const GetMappingRequest& request, const G
 GetPartitionOutcome GlueClient::GetPartition(const GetPartitionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetPartitionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2414,9 +2512,6 @@ void GlueClient::GetPartitionAsyncHelper(const GetPartitionRequest& request, con
 GetPartitionIndexesOutcome GlueClient::GetPartitionIndexes(const GetPartitionIndexesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetPartitionIndexesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2441,9 +2536,6 @@ void GlueClient::GetPartitionIndexesAsyncHelper(const GetPartitionIndexesRequest
 GetPartitionsOutcome GlueClient::GetPartitions(const GetPartitionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetPartitionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2468,9 +2560,6 @@ void GlueClient::GetPartitionsAsyncHelper(const GetPartitionsRequest& request, c
 GetPlanOutcome GlueClient::GetPlan(const GetPlanRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetPlanOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2495,9 +2584,6 @@ void GlueClient::GetPlanAsyncHelper(const GetPlanRequest& request, const GetPlan
 GetRegistryOutcome GlueClient::GetRegistry(const GetRegistryRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetRegistryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2522,9 +2608,6 @@ void GlueClient::GetRegistryAsyncHelper(const GetRegistryRequest& request, const
 GetResourcePoliciesOutcome GlueClient::GetResourcePolicies(const GetResourcePoliciesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetResourcePoliciesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2549,9 +2632,6 @@ void GlueClient::GetResourcePoliciesAsyncHelper(const GetResourcePoliciesRequest
 GetResourcePolicyOutcome GlueClient::GetResourcePolicy(const GetResourcePolicyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetResourcePolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2576,9 +2656,6 @@ void GlueClient::GetResourcePolicyAsyncHelper(const GetResourcePolicyRequest& re
 GetSchemaOutcome GlueClient::GetSchema(const GetSchemaRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetSchemaOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2603,9 +2680,6 @@ void GlueClient::GetSchemaAsyncHelper(const GetSchemaRequest& request, const Get
 GetSchemaByDefinitionOutcome GlueClient::GetSchemaByDefinition(const GetSchemaByDefinitionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetSchemaByDefinitionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2630,9 +2704,6 @@ void GlueClient::GetSchemaByDefinitionAsyncHelper(const GetSchemaByDefinitionReq
 GetSchemaVersionOutcome GlueClient::GetSchemaVersion(const GetSchemaVersionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetSchemaVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2657,9 +2728,6 @@ void GlueClient::GetSchemaVersionAsyncHelper(const GetSchemaVersionRequest& requ
 GetSchemaVersionsDiffOutcome GlueClient::GetSchemaVersionsDiff(const GetSchemaVersionsDiffRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetSchemaVersionsDiffOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2684,9 +2752,6 @@ void GlueClient::GetSchemaVersionsDiffAsyncHelper(const GetSchemaVersionsDiffReq
 GetSecurityConfigurationOutcome GlueClient::GetSecurityConfiguration(const GetSecurityConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetSecurityConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2711,9 +2776,6 @@ void GlueClient::GetSecurityConfigurationAsyncHelper(const GetSecurityConfigurat
 GetSecurityConfigurationsOutcome GlueClient::GetSecurityConfigurations(const GetSecurityConfigurationsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetSecurityConfigurationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2735,12 +2797,57 @@ void GlueClient::GetSecurityConfigurationsAsyncHelper(const GetSecurityConfigura
   handler(this, request, GetSecurityConfigurations(request), context);
 }
 
+GetSessionOutcome GlueClient::GetSession(const GetSessionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetSessionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetSessionOutcomeCallable GlueClient::GetSessionCallable(const GetSessionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetSessionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSession(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::GetSessionAsync(const GetSessionRequest& request, const GetSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetSessionAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::GetSessionAsyncHelper(const GetSessionRequest& request, const GetSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetSession(request), context);
+}
+
+GetStatementOutcome GlueClient::GetStatement(const GetStatementRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetStatementOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetStatementOutcomeCallable GlueClient::GetStatementCallable(const GetStatementRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetStatementOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetStatement(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::GetStatementAsync(const GetStatementRequest& request, const GetStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetStatementAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::GetStatementAsyncHelper(const GetStatementRequest& request, const GetStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetStatement(request), context);
+}
+
 GetTableOutcome GlueClient::GetTable(const GetTableRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetTableOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2765,9 +2872,6 @@ void GlueClient::GetTableAsyncHelper(const GetTableRequest& request, const GetTa
 GetTableVersionOutcome GlueClient::GetTableVersion(const GetTableVersionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetTableVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2792,9 +2896,6 @@ void GlueClient::GetTableVersionAsyncHelper(const GetTableVersionRequest& reques
 GetTableVersionsOutcome GlueClient::GetTableVersions(const GetTableVersionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetTableVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2819,9 +2920,6 @@ void GlueClient::GetTableVersionsAsyncHelper(const GetTableVersionsRequest& requ
 GetTablesOutcome GlueClient::GetTables(const GetTablesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetTablesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2846,9 +2944,6 @@ void GlueClient::GetTablesAsyncHelper(const GetTablesRequest& request, const Get
 GetTagsOutcome GlueClient::GetTags(const GetTagsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetTagsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2873,9 +2968,6 @@ void GlueClient::GetTagsAsyncHelper(const GetTagsRequest& request, const GetTags
 GetTriggerOutcome GlueClient::GetTrigger(const GetTriggerRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetTriggerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2900,9 +2992,6 @@ void GlueClient::GetTriggerAsyncHelper(const GetTriggerRequest& request, const G
 GetTriggersOutcome GlueClient::GetTriggers(const GetTriggersRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetTriggersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2924,12 +3013,81 @@ void GlueClient::GetTriggersAsyncHelper(const GetTriggersRequest& request, const
   handler(this, request, GetTriggers(request), context);
 }
 
+GetUnfilteredPartitionMetadataOutcome GlueClient::GetUnfilteredPartitionMetadata(const GetUnfilteredPartitionMetadataRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetUnfilteredPartitionMetadataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetUnfilteredPartitionMetadataOutcomeCallable GlueClient::GetUnfilteredPartitionMetadataCallable(const GetUnfilteredPartitionMetadataRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetUnfilteredPartitionMetadataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetUnfilteredPartitionMetadata(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::GetUnfilteredPartitionMetadataAsync(const GetUnfilteredPartitionMetadataRequest& request, const GetUnfilteredPartitionMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetUnfilteredPartitionMetadataAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::GetUnfilteredPartitionMetadataAsyncHelper(const GetUnfilteredPartitionMetadataRequest& request, const GetUnfilteredPartitionMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetUnfilteredPartitionMetadata(request), context);
+}
+
+GetUnfilteredPartitionsMetadataOutcome GlueClient::GetUnfilteredPartitionsMetadata(const GetUnfilteredPartitionsMetadataRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetUnfilteredPartitionsMetadataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetUnfilteredPartitionsMetadataOutcomeCallable GlueClient::GetUnfilteredPartitionsMetadataCallable(const GetUnfilteredPartitionsMetadataRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetUnfilteredPartitionsMetadataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetUnfilteredPartitionsMetadata(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::GetUnfilteredPartitionsMetadataAsync(const GetUnfilteredPartitionsMetadataRequest& request, const GetUnfilteredPartitionsMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetUnfilteredPartitionsMetadataAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::GetUnfilteredPartitionsMetadataAsyncHelper(const GetUnfilteredPartitionsMetadataRequest& request, const GetUnfilteredPartitionsMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetUnfilteredPartitionsMetadata(request), context);
+}
+
+GetUnfilteredTableMetadataOutcome GlueClient::GetUnfilteredTableMetadata(const GetUnfilteredTableMetadataRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetUnfilteredTableMetadataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetUnfilteredTableMetadataOutcomeCallable GlueClient::GetUnfilteredTableMetadataCallable(const GetUnfilteredTableMetadataRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetUnfilteredTableMetadataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetUnfilteredTableMetadata(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::GetUnfilteredTableMetadataAsync(const GetUnfilteredTableMetadataRequest& request, const GetUnfilteredTableMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetUnfilteredTableMetadataAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::GetUnfilteredTableMetadataAsyncHelper(const GetUnfilteredTableMetadataRequest& request, const GetUnfilteredTableMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetUnfilteredTableMetadata(request), context);
+}
+
 GetUserDefinedFunctionOutcome GlueClient::GetUserDefinedFunction(const GetUserDefinedFunctionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetUserDefinedFunctionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2954,9 +3112,6 @@ void GlueClient::GetUserDefinedFunctionAsyncHelper(const GetUserDefinedFunctionR
 GetUserDefinedFunctionsOutcome GlueClient::GetUserDefinedFunctions(const GetUserDefinedFunctionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetUserDefinedFunctionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2981,9 +3136,6 @@ void GlueClient::GetUserDefinedFunctionsAsyncHelper(const GetUserDefinedFunction
 GetWorkflowOutcome GlueClient::GetWorkflow(const GetWorkflowRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetWorkflowOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3008,9 +3160,6 @@ void GlueClient::GetWorkflowAsyncHelper(const GetWorkflowRequest& request, const
 GetWorkflowRunOutcome GlueClient::GetWorkflowRun(const GetWorkflowRunRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetWorkflowRunOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3035,9 +3184,6 @@ void GlueClient::GetWorkflowRunAsyncHelper(const GetWorkflowRunRequest& request,
 GetWorkflowRunPropertiesOutcome GlueClient::GetWorkflowRunProperties(const GetWorkflowRunPropertiesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetWorkflowRunPropertiesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3062,9 +3208,6 @@ void GlueClient::GetWorkflowRunPropertiesAsyncHelper(const GetWorkflowRunPropert
 GetWorkflowRunsOutcome GlueClient::GetWorkflowRuns(const GetWorkflowRunsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetWorkflowRunsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3089,9 +3232,6 @@ void GlueClient::GetWorkflowRunsAsyncHelper(const GetWorkflowRunsRequest& reques
 ImportCatalogToGlueOutcome GlueClient::ImportCatalogToGlue(const ImportCatalogToGlueRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ImportCatalogToGlueOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3113,12 +3253,33 @@ void GlueClient::ImportCatalogToGlueAsyncHelper(const ImportCatalogToGlueRequest
   handler(this, request, ImportCatalogToGlue(request), context);
 }
 
+ListBlueprintsOutcome GlueClient::ListBlueprints(const ListBlueprintsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListBlueprintsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListBlueprintsOutcomeCallable GlueClient::ListBlueprintsCallable(const ListBlueprintsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListBlueprintsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListBlueprints(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::ListBlueprintsAsync(const ListBlueprintsRequest& request, const ListBlueprintsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListBlueprintsAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::ListBlueprintsAsyncHelper(const ListBlueprintsRequest& request, const ListBlueprintsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListBlueprints(request), context);
+}
+
 ListCrawlersOutcome GlueClient::ListCrawlers(const ListCrawlersRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListCrawlersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3140,12 +3301,33 @@ void GlueClient::ListCrawlersAsyncHelper(const ListCrawlersRequest& request, con
   handler(this, request, ListCrawlers(request), context);
 }
 
+ListCustomEntityTypesOutcome GlueClient::ListCustomEntityTypes(const ListCustomEntityTypesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListCustomEntityTypesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListCustomEntityTypesOutcomeCallable GlueClient::ListCustomEntityTypesCallable(const ListCustomEntityTypesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListCustomEntityTypesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListCustomEntityTypes(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::ListCustomEntityTypesAsync(const ListCustomEntityTypesRequest& request, const ListCustomEntityTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListCustomEntityTypesAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::ListCustomEntityTypesAsyncHelper(const ListCustomEntityTypesRequest& request, const ListCustomEntityTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListCustomEntityTypes(request), context);
+}
+
 ListDevEndpointsOutcome GlueClient::ListDevEndpoints(const ListDevEndpointsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListDevEndpointsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3170,9 +3352,6 @@ void GlueClient::ListDevEndpointsAsyncHelper(const ListDevEndpointsRequest& requ
 ListJobsOutcome GlueClient::ListJobs(const ListJobsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3197,9 +3376,6 @@ void GlueClient::ListJobsAsyncHelper(const ListJobsRequest& request, const ListJ
 ListMLTransformsOutcome GlueClient::ListMLTransforms(const ListMLTransformsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListMLTransformsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3224,9 +3400,6 @@ void GlueClient::ListMLTransformsAsyncHelper(const ListMLTransformsRequest& requ
 ListRegistriesOutcome GlueClient::ListRegistries(const ListRegistriesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListRegistriesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3251,9 +3424,6 @@ void GlueClient::ListRegistriesAsyncHelper(const ListRegistriesRequest& request,
 ListSchemaVersionsOutcome GlueClient::ListSchemaVersions(const ListSchemaVersionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListSchemaVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3278,9 +3448,6 @@ void GlueClient::ListSchemaVersionsAsyncHelper(const ListSchemaVersionsRequest& 
 ListSchemasOutcome GlueClient::ListSchemas(const ListSchemasRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListSchemasOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3302,12 +3469,57 @@ void GlueClient::ListSchemasAsyncHelper(const ListSchemasRequest& request, const
   handler(this, request, ListSchemas(request), context);
 }
 
+ListSessionsOutcome GlueClient::ListSessions(const ListSessionsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListSessionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListSessionsOutcomeCallable GlueClient::ListSessionsCallable(const ListSessionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListSessionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSessions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::ListSessionsAsync(const ListSessionsRequest& request, const ListSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListSessionsAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::ListSessionsAsyncHelper(const ListSessionsRequest& request, const ListSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListSessions(request), context);
+}
+
+ListStatementsOutcome GlueClient::ListStatements(const ListStatementsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListStatementsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListStatementsOutcomeCallable GlueClient::ListStatementsCallable(const ListStatementsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListStatementsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListStatements(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::ListStatementsAsync(const ListStatementsRequest& request, const ListStatementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListStatementsAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::ListStatementsAsyncHelper(const ListStatementsRequest& request, const ListStatementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListStatements(request), context);
+}
+
 ListTriggersOutcome GlueClient::ListTriggers(const ListTriggersRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListTriggersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3332,9 +3544,6 @@ void GlueClient::ListTriggersAsyncHelper(const ListTriggersRequest& request, con
 ListWorkflowsOutcome GlueClient::ListWorkflows(const ListWorkflowsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListWorkflowsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3359,9 +3568,6 @@ void GlueClient::ListWorkflowsAsyncHelper(const ListWorkflowsRequest& request, c
 PutDataCatalogEncryptionSettingsOutcome GlueClient::PutDataCatalogEncryptionSettings(const PutDataCatalogEncryptionSettingsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return PutDataCatalogEncryptionSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3386,9 +3592,6 @@ void GlueClient::PutDataCatalogEncryptionSettingsAsyncHelper(const PutDataCatalo
 PutResourcePolicyOutcome GlueClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return PutResourcePolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3413,9 +3616,6 @@ void GlueClient::PutResourcePolicyAsyncHelper(const PutResourcePolicyRequest& re
 PutSchemaVersionMetadataOutcome GlueClient::PutSchemaVersionMetadata(const PutSchemaVersionMetadataRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return PutSchemaVersionMetadataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3440,9 +3640,6 @@ void GlueClient::PutSchemaVersionMetadataAsyncHelper(const PutSchemaVersionMetad
 PutWorkflowRunPropertiesOutcome GlueClient::PutWorkflowRunProperties(const PutWorkflowRunPropertiesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return PutWorkflowRunPropertiesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3467,9 +3664,6 @@ void GlueClient::PutWorkflowRunPropertiesAsyncHelper(const PutWorkflowRunPropert
 QuerySchemaVersionMetadataOutcome GlueClient::QuerySchemaVersionMetadata(const QuerySchemaVersionMetadataRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return QuerySchemaVersionMetadataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3494,9 +3688,6 @@ void GlueClient::QuerySchemaVersionMetadataAsyncHelper(const QuerySchemaVersionM
 RegisterSchemaVersionOutcome GlueClient::RegisterSchemaVersion(const RegisterSchemaVersionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return RegisterSchemaVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3521,9 +3712,6 @@ void GlueClient::RegisterSchemaVersionAsyncHelper(const RegisterSchemaVersionReq
 RemoveSchemaVersionMetadataOutcome GlueClient::RemoveSchemaVersionMetadata(const RemoveSchemaVersionMetadataRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return RemoveSchemaVersionMetadataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3548,9 +3736,6 @@ void GlueClient::RemoveSchemaVersionMetadataAsyncHelper(const RemoveSchemaVersio
 ResetJobBookmarkOutcome GlueClient::ResetJobBookmark(const ResetJobBookmarkRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ResetJobBookmarkOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3575,9 +3760,6 @@ void GlueClient::ResetJobBookmarkAsyncHelper(const ResetJobBookmarkRequest& requ
 ResumeWorkflowRunOutcome GlueClient::ResumeWorkflowRun(const ResumeWorkflowRunRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ResumeWorkflowRunOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3599,12 +3781,33 @@ void GlueClient::ResumeWorkflowRunAsyncHelper(const ResumeWorkflowRunRequest& re
   handler(this, request, ResumeWorkflowRun(request), context);
 }
 
+RunStatementOutcome GlueClient::RunStatement(const RunStatementRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return RunStatementOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+RunStatementOutcomeCallable GlueClient::RunStatementCallable(const RunStatementRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RunStatementOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RunStatement(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::RunStatementAsync(const RunStatementRequest& request, const RunStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RunStatementAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::RunStatementAsyncHelper(const RunStatementRequest& request, const RunStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RunStatement(request), context);
+}
+
 SearchTablesOutcome GlueClient::SearchTables(const SearchTablesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return SearchTablesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3626,12 +3829,33 @@ void GlueClient::SearchTablesAsyncHelper(const SearchTablesRequest& request, con
   handler(this, request, SearchTables(request), context);
 }
 
+StartBlueprintRunOutcome GlueClient::StartBlueprintRun(const StartBlueprintRunRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return StartBlueprintRunOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartBlueprintRunOutcomeCallable GlueClient::StartBlueprintRunCallable(const StartBlueprintRunRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartBlueprintRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartBlueprintRun(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::StartBlueprintRunAsync(const StartBlueprintRunRequest& request, const StartBlueprintRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartBlueprintRunAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::StartBlueprintRunAsyncHelper(const StartBlueprintRunRequest& request, const StartBlueprintRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartBlueprintRun(request), context);
+}
+
 StartCrawlerOutcome GlueClient::StartCrawler(const StartCrawlerRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return StartCrawlerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3656,9 +3880,6 @@ void GlueClient::StartCrawlerAsyncHelper(const StartCrawlerRequest& request, con
 StartCrawlerScheduleOutcome GlueClient::StartCrawlerSchedule(const StartCrawlerScheduleRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return StartCrawlerScheduleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3683,9 +3904,6 @@ void GlueClient::StartCrawlerScheduleAsyncHelper(const StartCrawlerScheduleReque
 StartExportLabelsTaskRunOutcome GlueClient::StartExportLabelsTaskRun(const StartExportLabelsTaskRunRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return StartExportLabelsTaskRunOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3710,9 +3928,6 @@ void GlueClient::StartExportLabelsTaskRunAsyncHelper(const StartExportLabelsTask
 StartImportLabelsTaskRunOutcome GlueClient::StartImportLabelsTaskRun(const StartImportLabelsTaskRunRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return StartImportLabelsTaskRunOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3737,9 +3952,6 @@ void GlueClient::StartImportLabelsTaskRunAsyncHelper(const StartImportLabelsTask
 StartJobRunOutcome GlueClient::StartJobRun(const StartJobRunRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return StartJobRunOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3764,9 +3976,6 @@ void GlueClient::StartJobRunAsyncHelper(const StartJobRunRequest& request, const
 StartMLEvaluationTaskRunOutcome GlueClient::StartMLEvaluationTaskRun(const StartMLEvaluationTaskRunRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return StartMLEvaluationTaskRunOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3791,9 +4000,6 @@ void GlueClient::StartMLEvaluationTaskRunAsyncHelper(const StartMLEvaluationTask
 StartMLLabelingSetGenerationTaskRunOutcome GlueClient::StartMLLabelingSetGenerationTaskRun(const StartMLLabelingSetGenerationTaskRunRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return StartMLLabelingSetGenerationTaskRunOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3818,9 +4024,6 @@ void GlueClient::StartMLLabelingSetGenerationTaskRunAsyncHelper(const StartMLLab
 StartTriggerOutcome GlueClient::StartTrigger(const StartTriggerRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return StartTriggerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3845,9 +4048,6 @@ void GlueClient::StartTriggerAsyncHelper(const StartTriggerRequest& request, con
 StartWorkflowRunOutcome GlueClient::StartWorkflowRun(const StartWorkflowRunRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return StartWorkflowRunOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3872,9 +4072,6 @@ void GlueClient::StartWorkflowRunAsyncHelper(const StartWorkflowRunRequest& requ
 StopCrawlerOutcome GlueClient::StopCrawler(const StopCrawlerRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return StopCrawlerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3899,9 +4096,6 @@ void GlueClient::StopCrawlerAsyncHelper(const StopCrawlerRequest& request, const
 StopCrawlerScheduleOutcome GlueClient::StopCrawlerSchedule(const StopCrawlerScheduleRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return StopCrawlerScheduleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3923,12 +4117,33 @@ void GlueClient::StopCrawlerScheduleAsyncHelper(const StopCrawlerScheduleRequest
   handler(this, request, StopCrawlerSchedule(request), context);
 }
 
+StopSessionOutcome GlueClient::StopSession(const StopSessionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return StopSessionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StopSessionOutcomeCallable GlueClient::StopSessionCallable(const StopSessionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StopSessionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopSession(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::StopSessionAsync(const StopSessionRequest& request, const StopSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StopSessionAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::StopSessionAsyncHelper(const StopSessionRequest& request, const StopSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StopSession(request), context);
+}
+
 StopTriggerOutcome GlueClient::StopTrigger(const StopTriggerRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return StopTriggerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3953,9 +4168,6 @@ void GlueClient::StopTriggerAsyncHelper(const StopTriggerRequest& request, const
 StopWorkflowRunOutcome GlueClient::StopWorkflowRun(const StopWorkflowRunRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return StopWorkflowRunOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3980,9 +4192,6 @@ void GlueClient::StopWorkflowRunAsyncHelper(const StopWorkflowRunRequest& reques
 TagResourceOutcome GlueClient::TagResource(const TagResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -4007,9 +4216,6 @@ void GlueClient::TagResourceAsyncHelper(const TagResourceRequest& request, const
 UntagResourceOutcome GlueClient::UntagResource(const UntagResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -4031,12 +4237,33 @@ void GlueClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, c
   handler(this, request, UntagResource(request), context);
 }
 
+UpdateBlueprintOutcome GlueClient::UpdateBlueprint(const UpdateBlueprintRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateBlueprintOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateBlueprintOutcomeCallable GlueClient::UpdateBlueprintCallable(const UpdateBlueprintRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateBlueprintOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateBlueprint(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::UpdateBlueprintAsync(const UpdateBlueprintRequest& request, const UpdateBlueprintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateBlueprintAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::UpdateBlueprintAsyncHelper(const UpdateBlueprintRequest& request, const UpdateBlueprintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateBlueprint(request), context);
+}
+
 UpdateClassifierOutcome GlueClient::UpdateClassifier(const UpdateClassifierRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return UpdateClassifierOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -4061,9 +4288,6 @@ void GlueClient::UpdateClassifierAsyncHelper(const UpdateClassifierRequest& requ
 UpdateColumnStatisticsForPartitionOutcome GlueClient::UpdateColumnStatisticsForPartition(const UpdateColumnStatisticsForPartitionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return UpdateColumnStatisticsForPartitionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -4088,9 +4312,6 @@ void GlueClient::UpdateColumnStatisticsForPartitionAsyncHelper(const UpdateColum
 UpdateColumnStatisticsForTableOutcome GlueClient::UpdateColumnStatisticsForTable(const UpdateColumnStatisticsForTableRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return UpdateColumnStatisticsForTableOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -4115,9 +4336,6 @@ void GlueClient::UpdateColumnStatisticsForTableAsyncHelper(const UpdateColumnSta
 UpdateConnectionOutcome GlueClient::UpdateConnection(const UpdateConnectionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return UpdateConnectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -4142,9 +4360,6 @@ void GlueClient::UpdateConnectionAsyncHelper(const UpdateConnectionRequest& requ
 UpdateCrawlerOutcome GlueClient::UpdateCrawler(const UpdateCrawlerRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return UpdateCrawlerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -4169,9 +4384,6 @@ void GlueClient::UpdateCrawlerAsyncHelper(const UpdateCrawlerRequest& request, c
 UpdateCrawlerScheduleOutcome GlueClient::UpdateCrawlerSchedule(const UpdateCrawlerScheduleRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return UpdateCrawlerScheduleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -4196,9 +4408,6 @@ void GlueClient::UpdateCrawlerScheduleAsyncHelper(const UpdateCrawlerScheduleReq
 UpdateDatabaseOutcome GlueClient::UpdateDatabase(const UpdateDatabaseRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return UpdateDatabaseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -4223,9 +4432,6 @@ void GlueClient::UpdateDatabaseAsyncHelper(const UpdateDatabaseRequest& request,
 UpdateDevEndpointOutcome GlueClient::UpdateDevEndpoint(const UpdateDevEndpointRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return UpdateDevEndpointOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -4250,9 +4456,6 @@ void GlueClient::UpdateDevEndpointAsyncHelper(const UpdateDevEndpointRequest& re
 UpdateJobOutcome GlueClient::UpdateJob(const UpdateJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return UpdateJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -4277,9 +4480,6 @@ void GlueClient::UpdateJobAsyncHelper(const UpdateJobRequest& request, const Upd
 UpdateMLTransformOutcome GlueClient::UpdateMLTransform(const UpdateMLTransformRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return UpdateMLTransformOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -4304,9 +4504,6 @@ void GlueClient::UpdateMLTransformAsyncHelper(const UpdateMLTransformRequest& re
 UpdatePartitionOutcome GlueClient::UpdatePartition(const UpdatePartitionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return UpdatePartitionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -4331,9 +4528,6 @@ void GlueClient::UpdatePartitionAsyncHelper(const UpdatePartitionRequest& reques
 UpdateRegistryOutcome GlueClient::UpdateRegistry(const UpdateRegistryRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return UpdateRegistryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -4358,9 +4552,6 @@ void GlueClient::UpdateRegistryAsyncHelper(const UpdateRegistryRequest& request,
 UpdateSchemaOutcome GlueClient::UpdateSchema(const UpdateSchemaRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return UpdateSchemaOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -4385,9 +4576,6 @@ void GlueClient::UpdateSchemaAsyncHelper(const UpdateSchemaRequest& request, con
 UpdateTableOutcome GlueClient::UpdateTable(const UpdateTableRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return UpdateTableOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -4412,9 +4600,6 @@ void GlueClient::UpdateTableAsyncHelper(const UpdateTableRequest& request, const
 UpdateTriggerOutcome GlueClient::UpdateTrigger(const UpdateTriggerRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return UpdateTriggerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -4439,9 +4624,6 @@ void GlueClient::UpdateTriggerAsyncHelper(const UpdateTriggerRequest& request, c
 UpdateUserDefinedFunctionOutcome GlueClient::UpdateUserDefinedFunction(const UpdateUserDefinedFunctionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return UpdateUserDefinedFunctionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -4466,9 +4648,6 @@ void GlueClient::UpdateUserDefinedFunctionAsyncHelper(const UpdateUserDefinedFun
 UpdateWorkflowOutcome GlueClient::UpdateWorkflow(const UpdateWorkflowRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return UpdateWorkflowOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

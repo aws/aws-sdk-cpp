@@ -16,7 +16,8 @@ namespace Model
   enum class UrlType
   {
     NOT_SET,
-    FLINK_DASHBOARD_URL
+    FLINK_DASHBOARD_URL,
+    ZEPPELIN_UI_URL
   };
 
 namespace UrlTypeMapper

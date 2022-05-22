@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     remove,
-    mask
+    mask,
+    tag
   };
 
 namespace VocabularyFilterMethodMapper

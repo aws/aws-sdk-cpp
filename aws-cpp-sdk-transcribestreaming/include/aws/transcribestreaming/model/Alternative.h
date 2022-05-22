@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/transcribestreaming/model/Item.h>
+#include <aws/transcribestreaming/model/Entity.h>
 #include <utility>
 
 namespace Aws
@@ -121,6 +122,55 @@ namespace Model
      */
     inline Alternative& AddItems(Item&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Contains the entities identified as personally identifiable information (PII)
+     * in the transcription output.</p>
+     */
+    inline const Aws::Vector<Entity>& GetEntities() const{ return m_entities; }
+
+    /**
+     * <p>Contains the entities identified as personally identifiable information (PII)
+     * in the transcription output.</p>
+     */
+    inline bool EntitiesHasBeenSet() const { return m_entitiesHasBeenSet; }
+
+    /**
+     * <p>Contains the entities identified as personally identifiable information (PII)
+     * in the transcription output.</p>
+     */
+    inline void SetEntities(const Aws::Vector<Entity>& value) { m_entitiesHasBeenSet = true; m_entities = value; }
+
+    /**
+     * <p>Contains the entities identified as personally identifiable information (PII)
+     * in the transcription output.</p>
+     */
+    inline void SetEntities(Aws::Vector<Entity>&& value) { m_entitiesHasBeenSet = true; m_entities = std::move(value); }
+
+    /**
+     * <p>Contains the entities identified as personally identifiable information (PII)
+     * in the transcription output.</p>
+     */
+    inline Alternative& WithEntities(const Aws::Vector<Entity>& value) { SetEntities(value); return *this;}
+
+    /**
+     * <p>Contains the entities identified as personally identifiable information (PII)
+     * in the transcription output.</p>
+     */
+    inline Alternative& WithEntities(Aws::Vector<Entity>&& value) { SetEntities(std::move(value)); return *this;}
+
+    /**
+     * <p>Contains the entities identified as personally identifiable information (PII)
+     * in the transcription output.</p>
+     */
+    inline Alternative& AddEntities(const Entity& value) { m_entitiesHasBeenSet = true; m_entities.push_back(value); return *this; }
+
+    /**
+     * <p>Contains the entities identified as personally identifiable information (PII)
+     * in the transcription output.</p>
+     */
+    inline Alternative& AddEntities(Entity&& value) { m_entitiesHasBeenSet = true; m_entities.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_transcript;
@@ -128,6 +178,9 @@ namespace Model
 
     Aws::Vector<Item> m_items;
     bool m_itemsHasBeenSet;
+
+    Aws::Vector<Entity> m_entities;
+    bool m_entitiesHasBeenSet;
   };
 
 } // namespace Model

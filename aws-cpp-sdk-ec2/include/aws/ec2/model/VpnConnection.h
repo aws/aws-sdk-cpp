@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/VpnState.h>
 #include <aws/ec2/model/GatewayType.h>
+#include <aws/ec2/model/GatewayAssociationState.h>
 #include <aws/ec2/model/VpnConnectionOptions.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/VpnStaticRoute.h>
@@ -162,57 +163,57 @@ namespace Model
 
     /**
      * <p>The category of the VPN connection. A value of <code>VPN</code> indicates an
-     * AWS VPN connection. A value of <code>VPN-Classic</code> indicates an AWS Classic
-     * VPN connection.</p>
+     * Amazon Web Services VPN connection. A value of <code>VPN-Classic</code>
+     * indicates an Amazon Web Services Classic VPN connection.</p>
      */
     inline const Aws::String& GetCategory() const{ return m_category; }
 
     /**
      * <p>The category of the VPN connection. A value of <code>VPN</code> indicates an
-     * AWS VPN connection. A value of <code>VPN-Classic</code> indicates an AWS Classic
-     * VPN connection.</p>
+     * Amazon Web Services VPN connection. A value of <code>VPN-Classic</code>
+     * indicates an Amazon Web Services Classic VPN connection.</p>
      */
     inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
 
     /**
      * <p>The category of the VPN connection. A value of <code>VPN</code> indicates an
-     * AWS VPN connection. A value of <code>VPN-Classic</code> indicates an AWS Classic
-     * VPN connection.</p>
+     * Amazon Web Services VPN connection. A value of <code>VPN-Classic</code>
+     * indicates an Amazon Web Services Classic VPN connection.</p>
      */
     inline void SetCategory(const Aws::String& value) { m_categoryHasBeenSet = true; m_category = value; }
 
     /**
      * <p>The category of the VPN connection. A value of <code>VPN</code> indicates an
-     * AWS VPN connection. A value of <code>VPN-Classic</code> indicates an AWS Classic
-     * VPN connection.</p>
+     * Amazon Web Services VPN connection. A value of <code>VPN-Classic</code>
+     * indicates an Amazon Web Services Classic VPN connection.</p>
      */
     inline void SetCategory(Aws::String&& value) { m_categoryHasBeenSet = true; m_category = std::move(value); }
 
     /**
      * <p>The category of the VPN connection. A value of <code>VPN</code> indicates an
-     * AWS VPN connection. A value of <code>VPN-Classic</code> indicates an AWS Classic
-     * VPN connection.</p>
+     * Amazon Web Services VPN connection. A value of <code>VPN-Classic</code>
+     * indicates an Amazon Web Services Classic VPN connection.</p>
      */
     inline void SetCategory(const char* value) { m_categoryHasBeenSet = true; m_category.assign(value); }
 
     /**
      * <p>The category of the VPN connection. A value of <code>VPN</code> indicates an
-     * AWS VPN connection. A value of <code>VPN-Classic</code> indicates an AWS Classic
-     * VPN connection.</p>
+     * Amazon Web Services VPN connection. A value of <code>VPN-Classic</code>
+     * indicates an Amazon Web Services Classic VPN connection.</p>
      */
     inline VpnConnection& WithCategory(const Aws::String& value) { SetCategory(value); return *this;}
 
     /**
      * <p>The category of the VPN connection. A value of <code>VPN</code> indicates an
-     * AWS VPN connection. A value of <code>VPN-Classic</code> indicates an AWS Classic
-     * VPN connection.</p>
+     * Amazon Web Services VPN connection. A value of <code>VPN-Classic</code>
+     * indicates an Amazon Web Services Classic VPN connection.</p>
      */
     inline VpnConnection& WithCategory(Aws::String&& value) { SetCategory(std::move(value)); return *this;}
 
     /**
      * <p>The category of the VPN connection. A value of <code>VPN</code> indicates an
-     * AWS VPN connection. A value of <code>VPN-Classic</code> indicates an AWS Classic
-     * VPN connection.</p>
+     * Amazon Web Services VPN connection. A value of <code>VPN-Classic</code>
+     * indicates an Amazon Web Services Classic VPN connection.</p>
      */
     inline VpnConnection& WithCategory(const char* value) { SetCategory(value); return *this;}
 
@@ -321,50 +322,50 @@ namespace Model
 
 
     /**
-     * <p>The ID of the virtual private gateway at the AWS side of the VPN
-     * connection.</p>
+     * <p>The ID of the virtual private gateway at the Amazon Web Services side of the
+     * VPN connection.</p>
      */
     inline const Aws::String& GetVpnGatewayId() const{ return m_vpnGatewayId; }
 
     /**
-     * <p>The ID of the virtual private gateway at the AWS side of the VPN
-     * connection.</p>
+     * <p>The ID of the virtual private gateway at the Amazon Web Services side of the
+     * VPN connection.</p>
      */
     inline bool VpnGatewayIdHasBeenSet() const { return m_vpnGatewayIdHasBeenSet; }
 
     /**
-     * <p>The ID of the virtual private gateway at the AWS side of the VPN
-     * connection.</p>
+     * <p>The ID of the virtual private gateway at the Amazon Web Services side of the
+     * VPN connection.</p>
      */
     inline void SetVpnGatewayId(const Aws::String& value) { m_vpnGatewayIdHasBeenSet = true; m_vpnGatewayId = value; }
 
     /**
-     * <p>The ID of the virtual private gateway at the AWS side of the VPN
-     * connection.</p>
+     * <p>The ID of the virtual private gateway at the Amazon Web Services side of the
+     * VPN connection.</p>
      */
     inline void SetVpnGatewayId(Aws::String&& value) { m_vpnGatewayIdHasBeenSet = true; m_vpnGatewayId = std::move(value); }
 
     /**
-     * <p>The ID of the virtual private gateway at the AWS side of the VPN
-     * connection.</p>
+     * <p>The ID of the virtual private gateway at the Amazon Web Services side of the
+     * VPN connection.</p>
      */
     inline void SetVpnGatewayId(const char* value) { m_vpnGatewayIdHasBeenSet = true; m_vpnGatewayId.assign(value); }
 
     /**
-     * <p>The ID of the virtual private gateway at the AWS side of the VPN
-     * connection.</p>
+     * <p>The ID of the virtual private gateway at the Amazon Web Services side of the
+     * VPN connection.</p>
      */
     inline VpnConnection& WithVpnGatewayId(const Aws::String& value) { SetVpnGatewayId(value); return *this;}
 
     /**
-     * <p>The ID of the virtual private gateway at the AWS side of the VPN
-     * connection.</p>
+     * <p>The ID of the virtual private gateway at the Amazon Web Services side of the
+     * VPN connection.</p>
      */
     inline VpnConnection& WithVpnGatewayId(Aws::String&& value) { SetVpnGatewayId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the virtual private gateway at the AWS side of the VPN
-     * connection.</p>
+     * <p>The ID of the virtual private gateway at the Amazon Web Services side of the
+     * VPN connection.</p>
      */
     inline VpnConnection& WithVpnGatewayId(const char* value) { SetVpnGatewayId(value); return *this;}
 
@@ -408,6 +409,119 @@ namespace Model
      * <p>The ID of the transit gateway associated with the VPN connection.</p>
      */
     inline VpnConnection& WithTransitGatewayId(const char* value) { SetTransitGatewayId(value); return *this;}
+
+
+    /**
+     * <p>The ARN of the core network.</p>
+     */
+    inline const Aws::String& GetCoreNetworkArn() const{ return m_coreNetworkArn; }
+
+    /**
+     * <p>The ARN of the core network.</p>
+     */
+    inline bool CoreNetworkArnHasBeenSet() const { return m_coreNetworkArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the core network.</p>
+     */
+    inline void SetCoreNetworkArn(const Aws::String& value) { m_coreNetworkArnHasBeenSet = true; m_coreNetworkArn = value; }
+
+    /**
+     * <p>The ARN of the core network.</p>
+     */
+    inline void SetCoreNetworkArn(Aws::String&& value) { m_coreNetworkArnHasBeenSet = true; m_coreNetworkArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the core network.</p>
+     */
+    inline void SetCoreNetworkArn(const char* value) { m_coreNetworkArnHasBeenSet = true; m_coreNetworkArn.assign(value); }
+
+    /**
+     * <p>The ARN of the core network.</p>
+     */
+    inline VpnConnection& WithCoreNetworkArn(const Aws::String& value) { SetCoreNetworkArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the core network.</p>
+     */
+    inline VpnConnection& WithCoreNetworkArn(Aws::String&& value) { SetCoreNetworkArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the core network.</p>
+     */
+    inline VpnConnection& WithCoreNetworkArn(const char* value) { SetCoreNetworkArn(value); return *this;}
+
+
+    /**
+     * <p>The ARN of the core network attachment.</p>
+     */
+    inline const Aws::String& GetCoreNetworkAttachmentArn() const{ return m_coreNetworkAttachmentArn; }
+
+    /**
+     * <p>The ARN of the core network attachment.</p>
+     */
+    inline bool CoreNetworkAttachmentArnHasBeenSet() const { return m_coreNetworkAttachmentArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the core network attachment.</p>
+     */
+    inline void SetCoreNetworkAttachmentArn(const Aws::String& value) { m_coreNetworkAttachmentArnHasBeenSet = true; m_coreNetworkAttachmentArn = value; }
+
+    /**
+     * <p>The ARN of the core network attachment.</p>
+     */
+    inline void SetCoreNetworkAttachmentArn(Aws::String&& value) { m_coreNetworkAttachmentArnHasBeenSet = true; m_coreNetworkAttachmentArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the core network attachment.</p>
+     */
+    inline void SetCoreNetworkAttachmentArn(const char* value) { m_coreNetworkAttachmentArnHasBeenSet = true; m_coreNetworkAttachmentArn.assign(value); }
+
+    /**
+     * <p>The ARN of the core network attachment.</p>
+     */
+    inline VpnConnection& WithCoreNetworkAttachmentArn(const Aws::String& value) { SetCoreNetworkAttachmentArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the core network attachment.</p>
+     */
+    inline VpnConnection& WithCoreNetworkAttachmentArn(Aws::String&& value) { SetCoreNetworkAttachmentArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the core network attachment.</p>
+     */
+    inline VpnConnection& WithCoreNetworkAttachmentArn(const char* value) { SetCoreNetworkAttachmentArn(value); return *this;}
+
+
+    /**
+     * <p>The current state of the gateway association.</p>
+     */
+    inline const GatewayAssociationState& GetGatewayAssociationState() const{ return m_gatewayAssociationState; }
+
+    /**
+     * <p>The current state of the gateway association.</p>
+     */
+    inline bool GatewayAssociationStateHasBeenSet() const { return m_gatewayAssociationStateHasBeenSet; }
+
+    /**
+     * <p>The current state of the gateway association.</p>
+     */
+    inline void SetGatewayAssociationState(const GatewayAssociationState& value) { m_gatewayAssociationStateHasBeenSet = true; m_gatewayAssociationState = value; }
+
+    /**
+     * <p>The current state of the gateway association.</p>
+     */
+    inline void SetGatewayAssociationState(GatewayAssociationState&& value) { m_gatewayAssociationStateHasBeenSet = true; m_gatewayAssociationState = std::move(value); }
+
+    /**
+     * <p>The current state of the gateway association.</p>
+     */
+    inline VpnConnection& WithGatewayAssociationState(const GatewayAssociationState& value) { SetGatewayAssociationState(value); return *this;}
+
+    /**
+     * <p>The current state of the gateway association.</p>
+     */
+    inline VpnConnection& WithGatewayAssociationState(GatewayAssociationState&& value) { SetGatewayAssociationState(std::move(value)); return *this;}
 
 
     /**
@@ -588,6 +702,15 @@ namespace Model
 
     Aws::String m_transitGatewayId;
     bool m_transitGatewayIdHasBeenSet;
+
+    Aws::String m_coreNetworkArn;
+    bool m_coreNetworkArnHasBeenSet;
+
+    Aws::String m_coreNetworkAttachmentArn;
+    bool m_coreNetworkAttachmentArnHasBeenSet;
+
+    GatewayAssociationState m_gatewayAssociationState;
+    bool m_gatewayAssociationStateHasBeenSet;
 
     VpnConnectionOptions m_options;
     bool m_optionsHasBeenSet;

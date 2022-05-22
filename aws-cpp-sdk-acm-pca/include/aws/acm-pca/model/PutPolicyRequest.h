@@ -100,7 +100,7 @@ namespace Model
 
 
     /**
-     * <p>The path and filename of a JSON-formatted IAM policy to attach to the
+     * <p>The path and file name of a JSON-formatted IAM policy to attach to the
      * specified private CA resource. If this policy does not contain all required
      * statements or if it includes any statement that is not allowed, the
      * <code>PutPolicy</code> action returns an <code>InvalidPolicyException</code>.
@@ -111,7 +111,7 @@ namespace Model
     inline const Aws::String& GetPolicy() const{ return m_policy; }
 
     /**
-     * <p>The path and filename of a JSON-formatted IAM policy to attach to the
+     * <p>The path and file name of a JSON-formatted IAM policy to attach to the
      * specified private CA resource. If this policy does not contain all required
      * statements or if it includes any statement that is not allowed, the
      * <code>PutPolicy</code> action returns an <code>InvalidPolicyException</code>.
@@ -122,7 +122,7 @@ namespace Model
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
 
     /**
-     * <p>The path and filename of a JSON-formatted IAM policy to attach to the
+     * <p>The path and file name of a JSON-formatted IAM policy to attach to the
      * specified private CA resource. If this policy does not contain all required
      * statements or if it includes any statement that is not allowed, the
      * <code>PutPolicy</code> action returns an <code>InvalidPolicyException</code>.
@@ -133,7 +133,7 @@ namespace Model
     inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
 
     /**
-     * <p>The path and filename of a JSON-formatted IAM policy to attach to the
+     * <p>The path and file name of a JSON-formatted IAM policy to attach to the
      * specified private CA resource. If this policy does not contain all required
      * statements or if it includes any statement that is not allowed, the
      * <code>PutPolicy</code> action returns an <code>InvalidPolicyException</code>.
@@ -144,7 +144,7 @@ namespace Model
     inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
 
     /**
-     * <p>The path and filename of a JSON-formatted IAM policy to attach to the
+     * <p>The path and file name of a JSON-formatted IAM policy to attach to the
      * specified private CA resource. If this policy does not contain all required
      * statements or if it includes any statement that is not allowed, the
      * <code>PutPolicy</code> action returns an <code>InvalidPolicyException</code>.
@@ -155,7 +155,7 @@ namespace Model
     inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
 
     /**
-     * <p>The path and filename of a JSON-formatted IAM policy to attach to the
+     * <p>The path and file name of a JSON-formatted IAM policy to attach to the
      * specified private CA resource. If this policy does not contain all required
      * statements or if it includes any statement that is not allowed, the
      * <code>PutPolicy</code> action returns an <code>InvalidPolicyException</code>.
@@ -166,7 +166,7 @@ namespace Model
     inline PutPolicyRequest& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
 
     /**
-     * <p>The path and filename of a JSON-formatted IAM policy to attach to the
+     * <p>The path and file name of a JSON-formatted IAM policy to attach to the
      * specified private CA resource. If this policy does not contain all required
      * statements or if it includes any statement that is not allowed, the
      * <code>PutPolicy</code> action returns an <code>InvalidPolicyException</code>.
@@ -177,7 +177,7 @@ namespace Model
     inline PutPolicyRequest& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
 
     /**
-     * <p>The path and filename of a JSON-formatted IAM policy to attach to the
+     * <p>The path and file name of a JSON-formatted IAM policy to attach to the
      * specified private CA resource. If this policy does not contain all required
      * statements or if it includes any statement that is not allowed, the
      * <code>PutPolicy</code> action returns an <code>InvalidPolicyException</code>.

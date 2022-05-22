@@ -27,7 +27,7 @@ namespace Model
    * <p>A time zone associated with a <code>DBInstance</code> or a
    * <code>DBSnapshot</code>. This data type is an element in the response to the
    * <code>DescribeDBInstances</code>, the <code>DescribeDBSnapshots</code>, and the
-   * <code>DescribeDBEngineVersions</code> actions. </p><p><h3>See Also:</h3>   <a
+   * <code>DescribeDBEngineVersions</code> actions.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/Timezone">AWS API
    * Reference</a></p>
    */

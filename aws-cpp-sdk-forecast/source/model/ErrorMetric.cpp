@@ -23,7 +23,11 @@ ErrorMetric::ErrorMetric() :
     m_wAPE(0.0),
     m_wAPEHasBeenSet(false),
     m_rMSE(0.0),
-    m_rMSEHasBeenSet(false)
+    m_rMSEHasBeenSet(false),
+    m_mASE(0.0),
+    m_mASEHasBeenSet(false),
+    m_mAPE(0.0),
+    m_mAPEHasBeenSet(false)
 {
 }
 
@@ -32,7 +36,11 @@ ErrorMetric::ErrorMetric(JsonView jsonValue) :
     m_wAPE(0.0),
     m_wAPEHasBeenSet(false),
     m_rMSE(0.0),
-    m_rMSEHasBeenSet(false)
+    m_rMSEHasBeenSet(false),
+    m_mASE(0.0),
+    m_mASEHasBeenSet(false),
+    m_mAPE(0.0),
+    m_mAPEHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -60,6 +68,20 @@ ErrorMetric& ErrorMetric::operator =(JsonView jsonValue)
     m_rMSEHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MASE"))
+  {
+    m_mASE = jsonValue.GetDouble("MASE");
+
+    m_mASEHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MAPE"))
+  {
+    m_mAPE = jsonValue.GetDouble("MAPE");
+
+    m_mAPEHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -82,6 +104,18 @@ JsonValue ErrorMetric::Jsonize() const
   if(m_rMSEHasBeenSet)
   {
    payload.WithDouble("RMSE", m_rMSE);
+
+  }
+
+  if(m_mASEHasBeenSet)
+  {
+   payload.WithDouble("MASE", m_mASE);
+
+  }
+
+  if(m_mAPEHasBeenSet)
+  {
+   payload.WithDouble("MAPE", m_mAPE);
 
   }
 

@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/ssm/model/LoggingInfo.h>
+#include <aws/ssm/model/MaintenanceWindowTaskCutoffBehavior.h>
 #include <aws/ssm/model/Target.h>
 #include <aws/ssm/model/MaintenanceWindowTaskParameterValueExpression.h>
 #include <utility>
@@ -127,160 +128,170 @@ namespace Model
 
 
     /**
-     * <p>The resource that the task uses during execution. For RUN_COMMAND and
-     * AUTOMATION task types, <code>TaskArn</code> is the Systems Manager document name
-     * or ARN. For LAMBDA tasks, it's the function name or ARN. For STEP_FUNCTIONS
-     * tasks, it's the state machine ARN.</p>
+     * <p>The resource that the task uses during execution. For
+     * <code>RUN_COMMAND</code> and <code>AUTOMATION</code> task types,
+     * <code>TaskArn</code> is the Amazon Web Services Systems Manager (SSM document)
+     * name or ARN. For <code>LAMBDA</code> tasks, it's the function name or ARN. For
+     * <code>STEP_FUNCTIONS</code> tasks, it's the state machine ARN.</p>
      */
     inline const Aws::String& GetTaskArn() const{ return m_taskArn; }
 
     /**
-     * <p>The resource that the task uses during execution. For RUN_COMMAND and
-     * AUTOMATION task types, <code>TaskArn</code> is the Systems Manager document name
-     * or ARN. For LAMBDA tasks, it's the function name or ARN. For STEP_FUNCTIONS
-     * tasks, it's the state machine ARN.</p>
+     * <p>The resource that the task uses during execution. For
+     * <code>RUN_COMMAND</code> and <code>AUTOMATION</code> task types,
+     * <code>TaskArn</code> is the Amazon Web Services Systems Manager (SSM document)
+     * name or ARN. For <code>LAMBDA</code> tasks, it's the function name or ARN. For
+     * <code>STEP_FUNCTIONS</code> tasks, it's the state machine ARN.</p>
      */
     inline bool TaskArnHasBeenSet() const { return m_taskArnHasBeenSet; }
 
     /**
-     * <p>The resource that the task uses during execution. For RUN_COMMAND and
-     * AUTOMATION task types, <code>TaskArn</code> is the Systems Manager document name
-     * or ARN. For LAMBDA tasks, it's the function name or ARN. For STEP_FUNCTIONS
-     * tasks, it's the state machine ARN.</p>
+     * <p>The resource that the task uses during execution. For
+     * <code>RUN_COMMAND</code> and <code>AUTOMATION</code> task types,
+     * <code>TaskArn</code> is the Amazon Web Services Systems Manager (SSM document)
+     * name or ARN. For <code>LAMBDA</code> tasks, it's the function name or ARN. For
+     * <code>STEP_FUNCTIONS</code> tasks, it's the state machine ARN.</p>
      */
     inline void SetTaskArn(const Aws::String& value) { m_taskArnHasBeenSet = true; m_taskArn = value; }
 
     /**
-     * <p>The resource that the task uses during execution. For RUN_COMMAND and
-     * AUTOMATION task types, <code>TaskArn</code> is the Systems Manager document name
-     * or ARN. For LAMBDA tasks, it's the function name or ARN. For STEP_FUNCTIONS
-     * tasks, it's the state machine ARN.</p>
+     * <p>The resource that the task uses during execution. For
+     * <code>RUN_COMMAND</code> and <code>AUTOMATION</code> task types,
+     * <code>TaskArn</code> is the Amazon Web Services Systems Manager (SSM document)
+     * name or ARN. For <code>LAMBDA</code> tasks, it's the function name or ARN. For
+     * <code>STEP_FUNCTIONS</code> tasks, it's the state machine ARN.</p>
      */
     inline void SetTaskArn(Aws::String&& value) { m_taskArnHasBeenSet = true; m_taskArn = std::move(value); }
 
     /**
-     * <p>The resource that the task uses during execution. For RUN_COMMAND and
-     * AUTOMATION task types, <code>TaskArn</code> is the Systems Manager document name
-     * or ARN. For LAMBDA tasks, it's the function name or ARN. For STEP_FUNCTIONS
-     * tasks, it's the state machine ARN.</p>
+     * <p>The resource that the task uses during execution. For
+     * <code>RUN_COMMAND</code> and <code>AUTOMATION</code> task types,
+     * <code>TaskArn</code> is the Amazon Web Services Systems Manager (SSM document)
+     * name or ARN. For <code>LAMBDA</code> tasks, it's the function name or ARN. For
+     * <code>STEP_FUNCTIONS</code> tasks, it's the state machine ARN.</p>
      */
     inline void SetTaskArn(const char* value) { m_taskArnHasBeenSet = true; m_taskArn.assign(value); }
 
     /**
-     * <p>The resource that the task uses during execution. For RUN_COMMAND and
-     * AUTOMATION task types, <code>TaskArn</code> is the Systems Manager document name
-     * or ARN. For LAMBDA tasks, it's the function name or ARN. For STEP_FUNCTIONS
-     * tasks, it's the state machine ARN.</p>
+     * <p>The resource that the task uses during execution. For
+     * <code>RUN_COMMAND</code> and <code>AUTOMATION</code> task types,
+     * <code>TaskArn</code> is the Amazon Web Services Systems Manager (SSM document)
+     * name or ARN. For <code>LAMBDA</code> tasks, it's the function name or ARN. For
+     * <code>STEP_FUNCTIONS</code> tasks, it's the state machine ARN.</p>
      */
     inline MaintenanceWindowTask& WithTaskArn(const Aws::String& value) { SetTaskArn(value); return *this;}
 
     /**
-     * <p>The resource that the task uses during execution. For RUN_COMMAND and
-     * AUTOMATION task types, <code>TaskArn</code> is the Systems Manager document name
-     * or ARN. For LAMBDA tasks, it's the function name or ARN. For STEP_FUNCTIONS
-     * tasks, it's the state machine ARN.</p>
+     * <p>The resource that the task uses during execution. For
+     * <code>RUN_COMMAND</code> and <code>AUTOMATION</code> task types,
+     * <code>TaskArn</code> is the Amazon Web Services Systems Manager (SSM document)
+     * name or ARN. For <code>LAMBDA</code> tasks, it's the function name or ARN. For
+     * <code>STEP_FUNCTIONS</code> tasks, it's the state machine ARN.</p>
      */
     inline MaintenanceWindowTask& WithTaskArn(Aws::String&& value) { SetTaskArn(std::move(value)); return *this;}
 
     /**
-     * <p>The resource that the task uses during execution. For RUN_COMMAND and
-     * AUTOMATION task types, <code>TaskArn</code> is the Systems Manager document name
-     * or ARN. For LAMBDA tasks, it's the function name or ARN. For STEP_FUNCTIONS
-     * tasks, it's the state machine ARN.</p>
+     * <p>The resource that the task uses during execution. For
+     * <code>RUN_COMMAND</code> and <code>AUTOMATION</code> task types,
+     * <code>TaskArn</code> is the Amazon Web Services Systems Manager (SSM document)
+     * name or ARN. For <code>LAMBDA</code> tasks, it's the function name or ARN. For
+     * <code>STEP_FUNCTIONS</code> tasks, it's the state machine ARN.</p>
      */
     inline MaintenanceWindowTask& WithTaskArn(const char* value) { SetTaskArn(value); return *this;}
 
 
     /**
-     * <p>The type of task. The type can be one of the following: RUN_COMMAND,
-     * AUTOMATION, LAMBDA, or STEP_FUNCTIONS.</p>
+     * <p>The type of task.</p>
      */
     inline const MaintenanceWindowTaskType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of task. The type can be one of the following: RUN_COMMAND,
-     * AUTOMATION, LAMBDA, or STEP_FUNCTIONS.</p>
+     * <p>The type of task.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of task. The type can be one of the following: RUN_COMMAND,
-     * AUTOMATION, LAMBDA, or STEP_FUNCTIONS.</p>
+     * <p>The type of task.</p>
      */
     inline void SetType(const MaintenanceWindowTaskType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of task. The type can be one of the following: RUN_COMMAND,
-     * AUTOMATION, LAMBDA, or STEP_FUNCTIONS.</p>
+     * <p>The type of task.</p>
      */
     inline void SetType(MaintenanceWindowTaskType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of task. The type can be one of the following: RUN_COMMAND,
-     * AUTOMATION, LAMBDA, or STEP_FUNCTIONS.</p>
+     * <p>The type of task.</p>
      */
     inline MaintenanceWindowTask& WithType(const MaintenanceWindowTaskType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of task. The type can be one of the following: RUN_COMMAND,
-     * AUTOMATION, LAMBDA, or STEP_FUNCTIONS.</p>
+     * <p>The type of task.</p>
      */
     inline MaintenanceWindowTask& WithType(MaintenanceWindowTaskType&& value) { SetType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The targets (either instances or tags). Instances are specified using
-     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are
-     * specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.</p>
+     * <p>The targets (either managed nodes or tags). Managed nodes are specified using
+     * <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code>.
+     * Tags are specified using <code>Key=&lt;tag name&gt;,Values=&lt;tag
+     * value&gt;</code>.</p>
      */
     inline const Aws::Vector<Target>& GetTargets() const{ return m_targets; }
 
     /**
-     * <p>The targets (either instances or tags). Instances are specified using
-     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are
-     * specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.</p>
+     * <p>The targets (either managed nodes or tags). Managed nodes are specified using
+     * <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code>.
+     * Tags are specified using <code>Key=&lt;tag name&gt;,Values=&lt;tag
+     * value&gt;</code>.</p>
      */
     inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
 
     /**
-     * <p>The targets (either instances or tags). Instances are specified using
-     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are
-     * specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.</p>
+     * <p>The targets (either managed nodes or tags). Managed nodes are specified using
+     * <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code>.
+     * Tags are specified using <code>Key=&lt;tag name&gt;,Values=&lt;tag
+     * value&gt;</code>.</p>
      */
     inline void SetTargets(const Aws::Vector<Target>& value) { m_targetsHasBeenSet = true; m_targets = value; }
 
     /**
-     * <p>The targets (either instances or tags). Instances are specified using
-     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are
-     * specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.</p>
+     * <p>The targets (either managed nodes or tags). Managed nodes are specified using
+     * <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code>.
+     * Tags are specified using <code>Key=&lt;tag name&gt;,Values=&lt;tag
+     * value&gt;</code>.</p>
      */
     inline void SetTargets(Aws::Vector<Target>&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
 
     /**
-     * <p>The targets (either instances or tags). Instances are specified using
-     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are
-     * specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.</p>
+     * <p>The targets (either managed nodes or tags). Managed nodes are specified using
+     * <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code>.
+     * Tags are specified using <code>Key=&lt;tag name&gt;,Values=&lt;tag
+     * value&gt;</code>.</p>
      */
     inline MaintenanceWindowTask& WithTargets(const Aws::Vector<Target>& value) { SetTargets(value); return *this;}
 
     /**
-     * <p>The targets (either instances or tags). Instances are specified using
-     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are
-     * specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.</p>
+     * <p>The targets (either managed nodes or tags). Managed nodes are specified using
+     * <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code>.
+     * Tags are specified using <code>Key=&lt;tag name&gt;,Values=&lt;tag
+     * value&gt;</code>.</p>
      */
     inline MaintenanceWindowTask& WithTargets(Aws::Vector<Target>&& value) { SetTargets(std::move(value)); return *this;}
 
     /**
-     * <p>The targets (either instances or tags). Instances are specified using
-     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are
-     * specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.</p>
+     * <p>The targets (either managed nodes or tags). Managed nodes are specified using
+     * <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code>.
+     * Tags are specified using <code>Key=&lt;tag name&gt;,Values=&lt;tag
+     * value&gt;</code>.</p>
      */
     inline MaintenanceWindowTask& AddTargets(const Target& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
 
     /**
-     * <p>The targets (either instances or tags). Instances are specified using
-     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are
-     * specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.</p>
+     * <p>The targets (either managed nodes or tags). Managed nodes are specified using
+     * <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code>.
+     * Tags are specified using <code>Key=&lt;tag name&gt;,Values=&lt;tag
+     * value&gt;</code>.</p>
      */
     inline MaintenanceWindowTask& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
 
@@ -437,206 +448,324 @@ namespace Model
 
     /**
      * <p>Information about an S3 bucket to write task-level logs to.</p>  <p>
-     * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain
-     * logs, instead use the <code>OutputS3BucketName</code> and
-     * <code>OutputS3KeyPrefix</code> options in the
-     * <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported maintenance window task
-     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> 
+     * <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple
+     * Storage Service (Amazon S3) bucket to contain logs, instead use the
+     * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in
+     * the <code>TaskInvocationParameters</code> structure. For information about how
+     * Amazon Web Services Systems Manager handles these options for the supported
+     * maintenance window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> 
      */
     inline const LoggingInfo& GetLoggingInfo() const{ return m_loggingInfo; }
 
     /**
      * <p>Information about an S3 bucket to write task-level logs to.</p>  <p>
-     * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain
-     * logs, instead use the <code>OutputS3BucketName</code> and
-     * <code>OutputS3KeyPrefix</code> options in the
-     * <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported maintenance window task
-     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> 
+     * <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple
+     * Storage Service (Amazon S3) bucket to contain logs, instead use the
+     * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in
+     * the <code>TaskInvocationParameters</code> structure. For information about how
+     * Amazon Web Services Systems Manager handles these options for the supported
+     * maintenance window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> 
      */
     inline bool LoggingInfoHasBeenSet() const { return m_loggingInfoHasBeenSet; }
 
     /**
      * <p>Information about an S3 bucket to write task-level logs to.</p>  <p>
-     * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain
-     * logs, instead use the <code>OutputS3BucketName</code> and
-     * <code>OutputS3KeyPrefix</code> options in the
-     * <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported maintenance window task
-     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> 
+     * <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple
+     * Storage Service (Amazon S3) bucket to contain logs, instead use the
+     * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in
+     * the <code>TaskInvocationParameters</code> structure. For information about how
+     * Amazon Web Services Systems Manager handles these options for the supported
+     * maintenance window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> 
      */
     inline void SetLoggingInfo(const LoggingInfo& value) { m_loggingInfoHasBeenSet = true; m_loggingInfo = value; }
 
     /**
      * <p>Information about an S3 bucket to write task-level logs to.</p>  <p>
-     * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain
-     * logs, instead use the <code>OutputS3BucketName</code> and
-     * <code>OutputS3KeyPrefix</code> options in the
-     * <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported maintenance window task
-     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> 
+     * <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple
+     * Storage Service (Amazon S3) bucket to contain logs, instead use the
+     * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in
+     * the <code>TaskInvocationParameters</code> structure. For information about how
+     * Amazon Web Services Systems Manager handles these options for the supported
+     * maintenance window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> 
      */
     inline void SetLoggingInfo(LoggingInfo&& value) { m_loggingInfoHasBeenSet = true; m_loggingInfo = std::move(value); }
 
     /**
      * <p>Information about an S3 bucket to write task-level logs to.</p>  <p>
-     * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain
-     * logs, instead use the <code>OutputS3BucketName</code> and
-     * <code>OutputS3KeyPrefix</code> options in the
-     * <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported maintenance window task
-     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> 
+     * <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple
+     * Storage Service (Amazon S3) bucket to contain logs, instead use the
+     * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in
+     * the <code>TaskInvocationParameters</code> structure. For information about how
+     * Amazon Web Services Systems Manager handles these options for the supported
+     * maintenance window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> 
      */
     inline MaintenanceWindowTask& WithLoggingInfo(const LoggingInfo& value) { SetLoggingInfo(value); return *this;}
 
     /**
      * <p>Information about an S3 bucket to write task-level logs to.</p>  <p>
-     * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain
-     * logs, instead use the <code>OutputS3BucketName</code> and
-     * <code>OutputS3KeyPrefix</code> options in the
-     * <code>TaskInvocationParameters</code> structure. For information about how
-     * Systems Manager handles these options for the supported maintenance window task
-     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> 
+     * <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple
+     * Storage Service (Amazon S3) bucket to contain logs, instead use the
+     * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in
+     * the <code>TaskInvocationParameters</code> structure. For information about how
+     * Amazon Web Services Systems Manager handles these options for the supported
+     * maintenance window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> 
      */
     inline MaintenanceWindowTask& WithLoggingInfo(LoggingInfo&& value) { SetLoggingInfo(std::move(value)); return *this;}
 
 
     /**
-     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
-     * Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * service role to use to publish Amazon Simple Notification Service (Amazon SNS)
+     * notifications for maintenance window Run Command tasks.</p>
      */
     inline const Aws::String& GetServiceRoleArn() const{ return m_serviceRoleArn; }
 
     /**
-     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
-     * Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * service role to use to publish Amazon Simple Notification Service (Amazon SNS)
+     * notifications for maintenance window Run Command tasks.</p>
      */
     inline bool ServiceRoleArnHasBeenSet() const { return m_serviceRoleArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
-     * Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * service role to use to publish Amazon Simple Notification Service (Amazon SNS)
+     * notifications for maintenance window Run Command tasks.</p>
      */
     inline void SetServiceRoleArn(const Aws::String& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = value; }
 
     /**
-     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
-     * Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * service role to use to publish Amazon Simple Notification Service (Amazon SNS)
+     * notifications for maintenance window Run Command tasks.</p>
      */
     inline void SetServiceRoleArn(Aws::String&& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = std::move(value); }
 
     /**
-     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
-     * Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * service role to use to publish Amazon Simple Notification Service (Amazon SNS)
+     * notifications for maintenance window Run Command tasks.</p>
      */
     inline void SetServiceRoleArn(const char* value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn.assign(value); }
 
     /**
-     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
-     * Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * service role to use to publish Amazon Simple Notification Service (Amazon SNS)
+     * notifications for maintenance window Run Command tasks.</p>
      */
     inline MaintenanceWindowTask& WithServiceRoleArn(const Aws::String& value) { SetServiceRoleArn(value); return *this;}
 
     /**
-     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
-     * Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * service role to use to publish Amazon Simple Notification Service (Amazon SNS)
+     * notifications for maintenance window Run Command tasks.</p>
      */
     inline MaintenanceWindowTask& WithServiceRoleArn(Aws::String&& value) { SetServiceRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
-     * Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * service role to use to publish Amazon Simple Notification Service (Amazon SNS)
+     * notifications for maintenance window Run Command tasks.</p>
      */
     inline MaintenanceWindowTask& WithServiceRoleArn(const char* value) { SetServiceRoleArn(value); return *this;}
 
 
     /**
      * <p>The maximum number of targets this task can be run for, in parallel.</p>
+     *  <p>Although this element is listed as "Required: No", a value can be
+     * omitted only when you are registering or updating a <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless
+     * task</a> You must provide a value in all other cases.</p> <p>For maintenance
+     * window tasks without a target specified, you can't supply a value for this
+     * option. Instead, the system inserts a placeholder value of <code>1</code>. This
+     * value doesn't affect the running of your task.</p> 
      */
     inline const Aws::String& GetMaxConcurrency() const{ return m_maxConcurrency; }
 
     /**
      * <p>The maximum number of targets this task can be run for, in parallel.</p>
+     *  <p>Although this element is listed as "Required: No", a value can be
+     * omitted only when you are registering or updating a <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless
+     * task</a> You must provide a value in all other cases.</p> <p>For maintenance
+     * window tasks without a target specified, you can't supply a value for this
+     * option. Instead, the system inserts a placeholder value of <code>1</code>. This
+     * value doesn't affect the running of your task.</p> 
      */
     inline bool MaxConcurrencyHasBeenSet() const { return m_maxConcurrencyHasBeenSet; }
 
     /**
      * <p>The maximum number of targets this task can be run for, in parallel.</p>
+     *  <p>Although this element is listed as "Required: No", a value can be
+     * omitted only when you are registering or updating a <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless
+     * task</a> You must provide a value in all other cases.</p> <p>For maintenance
+     * window tasks without a target specified, you can't supply a value for this
+     * option. Instead, the system inserts a placeholder value of <code>1</code>. This
+     * value doesn't affect the running of your task.</p> 
      */
     inline void SetMaxConcurrency(const Aws::String& value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = value; }
 
     /**
      * <p>The maximum number of targets this task can be run for, in parallel.</p>
+     *  <p>Although this element is listed as "Required: No", a value can be
+     * omitted only when you are registering or updating a <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless
+     * task</a> You must provide a value in all other cases.</p> <p>For maintenance
+     * window tasks without a target specified, you can't supply a value for this
+     * option. Instead, the system inserts a placeholder value of <code>1</code>. This
+     * value doesn't affect the running of your task.</p> 
      */
     inline void SetMaxConcurrency(Aws::String&& value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = std::move(value); }
 
     /**
      * <p>The maximum number of targets this task can be run for, in parallel.</p>
+     *  <p>Although this element is listed as "Required: No", a value can be
+     * omitted only when you are registering or updating a <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless
+     * task</a> You must provide a value in all other cases.</p> <p>For maintenance
+     * window tasks without a target specified, you can't supply a value for this
+     * option. Instead, the system inserts a placeholder value of <code>1</code>. This
+     * value doesn't affect the running of your task.</p> 
      */
     inline void SetMaxConcurrency(const char* value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency.assign(value); }
 
     /**
      * <p>The maximum number of targets this task can be run for, in parallel.</p>
+     *  <p>Although this element is listed as "Required: No", a value can be
+     * omitted only when you are registering or updating a <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless
+     * task</a> You must provide a value in all other cases.</p> <p>For maintenance
+     * window tasks without a target specified, you can't supply a value for this
+     * option. Instead, the system inserts a placeholder value of <code>1</code>. This
+     * value doesn't affect the running of your task.</p> 
      */
     inline MaintenanceWindowTask& WithMaxConcurrency(const Aws::String& value) { SetMaxConcurrency(value); return *this;}
 
     /**
      * <p>The maximum number of targets this task can be run for, in parallel.</p>
+     *  <p>Although this element is listed as "Required: No", a value can be
+     * omitted only when you are registering or updating a <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless
+     * task</a> You must provide a value in all other cases.</p> <p>For maintenance
+     * window tasks without a target specified, you can't supply a value for this
+     * option. Instead, the system inserts a placeholder value of <code>1</code>. This
+     * value doesn't affect the running of your task.</p> 
      */
     inline MaintenanceWindowTask& WithMaxConcurrency(Aws::String&& value) { SetMaxConcurrency(std::move(value)); return *this;}
 
     /**
      * <p>The maximum number of targets this task can be run for, in parallel.</p>
+     *  <p>Although this element is listed as "Required: No", a value can be
+     * omitted only when you are registering or updating a <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless
+     * task</a> You must provide a value in all other cases.</p> <p>For maintenance
+     * window tasks without a target specified, you can't supply a value for this
+     * option. Instead, the system inserts a placeholder value of <code>1</code>. This
+     * value doesn't affect the running of your task.</p> 
      */
     inline MaintenanceWindowTask& WithMaxConcurrency(const char* value) { SetMaxConcurrency(value); return *this;}
 
 
     /**
      * <p>The maximum number of errors allowed before this task stops being
-     * scheduled.</p>
+     * scheduled.</p>  <p>Although this element is listed as "Required: No", a
+     * value can be omitted only when you are registering or updating a <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless
+     * task</a> You must provide a value in all other cases.</p> <p>For maintenance
+     * window tasks without a target specified, you can't supply a value for this
+     * option. Instead, the system inserts a placeholder value of <code>1</code>. This
+     * value doesn't affect the running of your task.</p> 
      */
     inline const Aws::String& GetMaxErrors() const{ return m_maxErrors; }
 
     /**
      * <p>The maximum number of errors allowed before this task stops being
-     * scheduled.</p>
+     * scheduled.</p>  <p>Although this element is listed as "Required: No", a
+     * value can be omitted only when you are registering or updating a <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless
+     * task</a> You must provide a value in all other cases.</p> <p>For maintenance
+     * window tasks without a target specified, you can't supply a value for this
+     * option. Instead, the system inserts a placeholder value of <code>1</code>. This
+     * value doesn't affect the running of your task.</p> 
      */
     inline bool MaxErrorsHasBeenSet() const { return m_maxErrorsHasBeenSet; }
 
     /**
      * <p>The maximum number of errors allowed before this task stops being
-     * scheduled.</p>
+     * scheduled.</p>  <p>Although this element is listed as "Required: No", a
+     * value can be omitted only when you are registering or updating a <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless
+     * task</a> You must provide a value in all other cases.</p> <p>For maintenance
+     * window tasks without a target specified, you can't supply a value for this
+     * option. Instead, the system inserts a placeholder value of <code>1</code>. This
+     * value doesn't affect the running of your task.</p> 
      */
     inline void SetMaxErrors(const Aws::String& value) { m_maxErrorsHasBeenSet = true; m_maxErrors = value; }
 
     /**
      * <p>The maximum number of errors allowed before this task stops being
-     * scheduled.</p>
+     * scheduled.</p>  <p>Although this element is listed as "Required: No", a
+     * value can be omitted only when you are registering or updating a <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless
+     * task</a> You must provide a value in all other cases.</p> <p>For maintenance
+     * window tasks without a target specified, you can't supply a value for this
+     * option. Instead, the system inserts a placeholder value of <code>1</code>. This
+     * value doesn't affect the running of your task.</p> 
      */
     inline void SetMaxErrors(Aws::String&& value) { m_maxErrorsHasBeenSet = true; m_maxErrors = std::move(value); }
 
     /**
      * <p>The maximum number of errors allowed before this task stops being
-     * scheduled.</p>
+     * scheduled.</p>  <p>Although this element is listed as "Required: No", a
+     * value can be omitted only when you are registering or updating a <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless
+     * task</a> You must provide a value in all other cases.</p> <p>For maintenance
+     * window tasks without a target specified, you can't supply a value for this
+     * option. Instead, the system inserts a placeholder value of <code>1</code>. This
+     * value doesn't affect the running of your task.</p> 
      */
     inline void SetMaxErrors(const char* value) { m_maxErrorsHasBeenSet = true; m_maxErrors.assign(value); }
 
     /**
      * <p>The maximum number of errors allowed before this task stops being
-     * scheduled.</p>
+     * scheduled.</p>  <p>Although this element is listed as "Required: No", a
+     * value can be omitted only when you are registering or updating a <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless
+     * task</a> You must provide a value in all other cases.</p> <p>For maintenance
+     * window tasks without a target specified, you can't supply a value for this
+     * option. Instead, the system inserts a placeholder value of <code>1</code>. This
+     * value doesn't affect the running of your task.</p> 
      */
     inline MaintenanceWindowTask& WithMaxErrors(const Aws::String& value) { SetMaxErrors(value); return *this;}
 
     /**
      * <p>The maximum number of errors allowed before this task stops being
-     * scheduled.</p>
+     * scheduled.</p>  <p>Although this element is listed as "Required: No", a
+     * value can be omitted only when you are registering or updating a <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless
+     * task</a> You must provide a value in all other cases.</p> <p>For maintenance
+     * window tasks without a target specified, you can't supply a value for this
+     * option. Instead, the system inserts a placeholder value of <code>1</code>. This
+     * value doesn't affect the running of your task.</p> 
      */
     inline MaintenanceWindowTask& WithMaxErrors(Aws::String&& value) { SetMaxErrors(std::move(value)); return *this;}
 
     /**
      * <p>The maximum number of errors allowed before this task stops being
-     * scheduled.</p>
+     * scheduled.</p>  <p>Although this element is listed as "Required: No", a
+     * value can be omitted only when you are registering or updating a <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">targetless
+     * task</a> You must provide a value in all other cases.</p> <p>For maintenance
+     * window tasks without a target specified, you can't supply a value for this
+     * option. Instead, the system inserts a placeholder value of <code>1</code>. This
+     * value doesn't affect the running of your task.</p> 
      */
     inline MaintenanceWindowTask& WithMaxErrors(const char* value) { SetMaxErrors(value); return *this;}
 
@@ -722,6 +851,43 @@ namespace Model
      */
     inline MaintenanceWindowTask& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
+    /**
+     * <p>The specification for whether tasks should continue to run after the cutoff
+     * time specified in the maintenance windows is reached. </p>
+     */
+    inline const MaintenanceWindowTaskCutoffBehavior& GetCutoffBehavior() const{ return m_cutoffBehavior; }
+
+    /**
+     * <p>The specification for whether tasks should continue to run after the cutoff
+     * time specified in the maintenance windows is reached. </p>
+     */
+    inline bool CutoffBehaviorHasBeenSet() const { return m_cutoffBehaviorHasBeenSet; }
+
+    /**
+     * <p>The specification for whether tasks should continue to run after the cutoff
+     * time specified in the maintenance windows is reached. </p>
+     */
+    inline void SetCutoffBehavior(const MaintenanceWindowTaskCutoffBehavior& value) { m_cutoffBehaviorHasBeenSet = true; m_cutoffBehavior = value; }
+
+    /**
+     * <p>The specification for whether tasks should continue to run after the cutoff
+     * time specified in the maintenance windows is reached. </p>
+     */
+    inline void SetCutoffBehavior(MaintenanceWindowTaskCutoffBehavior&& value) { m_cutoffBehaviorHasBeenSet = true; m_cutoffBehavior = std::move(value); }
+
+    /**
+     * <p>The specification for whether tasks should continue to run after the cutoff
+     * time specified in the maintenance windows is reached. </p>
+     */
+    inline MaintenanceWindowTask& WithCutoffBehavior(const MaintenanceWindowTaskCutoffBehavior& value) { SetCutoffBehavior(value); return *this;}
+
+    /**
+     * <p>The specification for whether tasks should continue to run after the cutoff
+     * time specified in the maintenance windows is reached. </p>
+     */
+    inline MaintenanceWindowTask& WithCutoffBehavior(MaintenanceWindowTaskCutoffBehavior&& value) { SetCutoffBehavior(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_windowId;
@@ -762,6 +928,9 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
+    MaintenanceWindowTaskCutoffBehavior m_cutoffBehavior;
+    bool m_cutoffBehaviorHasBeenSet;
   };
 
 } // namespace Model

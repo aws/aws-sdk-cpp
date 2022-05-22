@@ -129,6 +129,15 @@ DescribeTaskResult& DescribeTaskResult::operator =(const Aws::AmazonWebServiceRe
 
   }
 
+  if(jsonValue.ValueExists("Includes"))
+  {
+    Array<JsonView> includesJsonList = jsonValue.GetArray("Includes");
+    for(unsigned includesIndex = 0; includesIndex < includesJsonList.GetLength(); ++includesIndex)
+    {
+      m_includes.push_back(includesJsonList[includesIndex].AsObject());
+    }
+  }
+
 
 
   return *this;

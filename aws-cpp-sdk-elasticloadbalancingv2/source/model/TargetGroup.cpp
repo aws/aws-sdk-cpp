@@ -46,7 +46,9 @@ TargetGroup::TargetGroup() :
     m_loadBalancerArnsHasBeenSet(false),
     m_targetType(TargetTypeEnum::NOT_SET),
     m_targetTypeHasBeenSet(false),
-    m_protocolVersionHasBeenSet(false)
+    m_protocolVersionHasBeenSet(false),
+    m_ipAddressType(TargetGroupIpAddressTypeEnum::NOT_SET),
+    m_ipAddressTypeHasBeenSet(false)
 {
 }
 
@@ -76,7 +78,9 @@ TargetGroup::TargetGroup(const XmlNode& xmlNode) :
     m_loadBalancerArnsHasBeenSet(false),
     m_targetType(TargetTypeEnum::NOT_SET),
     m_targetTypeHasBeenSet(false),
-    m_protocolVersionHasBeenSet(false)
+    m_protocolVersionHasBeenSet(false),
+    m_ipAddressType(TargetGroupIpAddressTypeEnum::NOT_SET),
+    m_ipAddressTypeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -195,6 +199,12 @@ TargetGroup& TargetGroup::operator =(const XmlNode& xmlNode)
       m_protocolVersion = Aws::Utils::Xml::DecodeEscapedXmlText(protocolVersionNode.GetText());
       m_protocolVersionHasBeenSet = true;
     }
+    XmlNode ipAddressTypeNode = resultNode.FirstChild("IpAddressType");
+    if(!ipAddressTypeNode.IsNull())
+    {
+      m_ipAddressType = TargetGroupIpAddressTypeEnumMapper::GetTargetGroupIpAddressTypeEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipAddressTypeNode.GetText()).c_str()).c_str());
+      m_ipAddressTypeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -293,6 +303,11 @@ void TargetGroup::OutputToStream(Aws::OStream& oStream, const char* location, un
       oStream << location << index << locationValue << ".ProtocolVersion=" << StringUtils::URLEncode(m_protocolVersion.c_str()) << "&";
   }
 
+  if(m_ipAddressTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".IpAddressType=" << TargetGroupIpAddressTypeEnumMapper::GetNameForTargetGroupIpAddressTypeEnum(m_ipAddressType) << "&";
+  }
+
 }
 
 void TargetGroup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -370,6 +385,10 @@ void TargetGroup::OutputToStream(Aws::OStream& oStream, const char* location) co
   if(m_protocolVersionHasBeenSet)
   {
       oStream << location << ".ProtocolVersion=" << StringUtils::URLEncode(m_protocolVersion.c_str()) << "&";
+  }
+  if(m_ipAddressTypeHasBeenSet)
+  {
+      oStream << location << ".IpAddressType=" << TargetGroupIpAddressTypeEnumMapper::GetNameForTargetGroupIpAddressTypeEnum(m_ipAddressType) << "&";
   }
 }
 

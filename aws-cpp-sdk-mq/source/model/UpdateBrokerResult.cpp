@@ -80,6 +80,12 @@ UpdateBrokerResult& UpdateBrokerResult::operator =(const Aws::AmazonWebServiceRe
 
   }
 
+  if(jsonValue.ValueExists("maintenanceWindowStartTime"))
+  {
+    m_maintenanceWindowStartTime = jsonValue.GetObject("maintenanceWindowStartTime");
+
+  }
+
   if(jsonValue.ValueExists("securityGroups"))
   {
     Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("securityGroups");

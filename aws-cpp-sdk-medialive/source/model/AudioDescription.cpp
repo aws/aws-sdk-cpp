@@ -25,6 +25,7 @@ AudioDescription::AudioDescription() :
     m_audioTypeHasBeenSet(false),
     m_audioTypeControl(AudioDescriptionAudioTypeControl::NOT_SET),
     m_audioTypeControlHasBeenSet(false),
+    m_audioWatermarkingSettingsHasBeenSet(false),
     m_codecSettingsHasBeenSet(false),
     m_languageCodeHasBeenSet(false),
     m_languageCodeControl(AudioDescriptionLanguageCodeControl::NOT_SET),
@@ -42,6 +43,7 @@ AudioDescription::AudioDescription(JsonView jsonValue) :
     m_audioTypeHasBeenSet(false),
     m_audioTypeControl(AudioDescriptionAudioTypeControl::NOT_SET),
     m_audioTypeControlHasBeenSet(false),
+    m_audioWatermarkingSettingsHasBeenSet(false),
     m_codecSettingsHasBeenSet(false),
     m_languageCodeHasBeenSet(false),
     m_languageCodeControl(AudioDescriptionLanguageCodeControl::NOT_SET),
@@ -81,6 +83,13 @@ AudioDescription& AudioDescription::operator =(JsonView jsonValue)
     m_audioTypeControl = AudioDescriptionAudioTypeControlMapper::GetAudioDescriptionAudioTypeControlForName(jsonValue.GetString("audioTypeControl"));
 
     m_audioTypeControlHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("audioWatermarkingSettings"))
+  {
+    m_audioWatermarkingSettings = jsonValue.GetObject("audioWatermarkingSettings");
+
+    m_audioWatermarkingSettingsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("codecSettings"))
@@ -152,6 +161,12 @@ JsonValue AudioDescription::Jsonize() const
   if(m_audioTypeControlHasBeenSet)
   {
    payload.WithString("audioTypeControl", AudioDescriptionAudioTypeControlMapper::GetNameForAudioDescriptionAudioTypeControl(m_audioTypeControl));
+  }
+
+  if(m_audioWatermarkingSettingsHasBeenSet)
+  {
+   payload.WithObject("audioWatermarkingSettings", m_audioWatermarkingSettings.Jsonize());
+
   }
 
   if(m_codecSettingsHasBeenSet)

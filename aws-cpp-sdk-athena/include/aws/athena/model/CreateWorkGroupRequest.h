@@ -84,8 +84,8 @@ namespace Model
      * encrypting query results, whether the Amazon CloudWatch Metrics are enabled for
      * the workgroup, the limit for the amount of bytes scanned (cutoff) per query, if
      * it is specified, and whether workgroup's settings (specified with
-     * EnforceWorkGroupConfiguration) in the WorkGroupConfiguration override
-     * client-side settings. See
+     * <code>EnforceWorkGroupConfiguration</code>) in the
+     * <code>WorkGroupConfiguration</code> override client-side settings. See
      * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
      */
     inline const WorkGroupConfiguration& GetConfiguration() const{ return m_configuration; }
@@ -96,8 +96,8 @@ namespace Model
      * encrypting query results, whether the Amazon CloudWatch Metrics are enabled for
      * the workgroup, the limit for the amount of bytes scanned (cutoff) per query, if
      * it is specified, and whether workgroup's settings (specified with
-     * EnforceWorkGroupConfiguration) in the WorkGroupConfiguration override
-     * client-side settings. See
+     * <code>EnforceWorkGroupConfiguration</code>) in the
+     * <code>WorkGroupConfiguration</code> override client-side settings. See
      * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
      */
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
@@ -108,8 +108,8 @@ namespace Model
      * encrypting query results, whether the Amazon CloudWatch Metrics are enabled for
      * the workgroup, the limit for the amount of bytes scanned (cutoff) per query, if
      * it is specified, and whether workgroup's settings (specified with
-     * EnforceWorkGroupConfiguration) in the WorkGroupConfiguration override
-     * client-side settings. See
+     * <code>EnforceWorkGroupConfiguration</code>) in the
+     * <code>WorkGroupConfiguration</code> override client-side settings. See
      * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
      */
     inline void SetConfiguration(const WorkGroupConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
@@ -120,8 +120,8 @@ namespace Model
      * encrypting query results, whether the Amazon CloudWatch Metrics are enabled for
      * the workgroup, the limit for the amount of bytes scanned (cutoff) per query, if
      * it is specified, and whether workgroup's settings (specified with
-     * EnforceWorkGroupConfiguration) in the WorkGroupConfiguration override
-     * client-side settings. See
+     * <code>EnforceWorkGroupConfiguration</code>) in the
+     * <code>WorkGroupConfiguration</code> override client-side settings. See
      * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
      */
     inline void SetConfiguration(WorkGroupConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
@@ -132,8 +132,8 @@ namespace Model
      * encrypting query results, whether the Amazon CloudWatch Metrics are enabled for
      * the workgroup, the limit for the amount of bytes scanned (cutoff) per query, if
      * it is specified, and whether workgroup's settings (specified with
-     * EnforceWorkGroupConfiguration) in the WorkGroupConfiguration override
-     * client-side settings. See
+     * <code>EnforceWorkGroupConfiguration</code>) in the
+     * <code>WorkGroupConfiguration</code> override client-side settings. See
      * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
      */
     inline CreateWorkGroupRequest& WithConfiguration(const WorkGroupConfiguration& value) { SetConfiguration(value); return *this;}
@@ -144,8 +144,8 @@ namespace Model
      * encrypting query results, whether the Amazon CloudWatch Metrics are enabled for
      * the workgroup, the limit for the amount of bytes scanned (cutoff) per query, if
      * it is specified, and whether workgroup's settings (specified with
-     * EnforceWorkGroupConfiguration) in the WorkGroupConfiguration override
-     * client-side settings. See
+     * <code>EnforceWorkGroupConfiguration</code>) in the
+     * <code>WorkGroupConfiguration</code> override client-side settings. See
      * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
      */
     inline CreateWorkGroupRequest& WithConfiguration(WorkGroupConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}

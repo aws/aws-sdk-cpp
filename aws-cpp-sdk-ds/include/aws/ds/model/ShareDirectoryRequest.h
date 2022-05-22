@@ -37,50 +37,50 @@ namespace Model
 
 
     /**
-     * <p>Identifier of the AWS Managed Microsoft AD directory that you want to share
-     * with other AWS accounts.</p>
+     * <p>Identifier of the Managed Microsoft AD directory that you want to share with
+     * other Amazon Web Services accounts.</p>
      */
     inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
 
     /**
-     * <p>Identifier of the AWS Managed Microsoft AD directory that you want to share
-     * with other AWS accounts.</p>
+     * <p>Identifier of the Managed Microsoft AD directory that you want to share with
+     * other Amazon Web Services accounts.</p>
      */
     inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
 
     /**
-     * <p>Identifier of the AWS Managed Microsoft AD directory that you want to share
-     * with other AWS accounts.</p>
+     * <p>Identifier of the Managed Microsoft AD directory that you want to share with
+     * other Amazon Web Services accounts.</p>
      */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
 
     /**
-     * <p>Identifier of the AWS Managed Microsoft AD directory that you want to share
-     * with other AWS accounts.</p>
+     * <p>Identifier of the Managed Microsoft AD directory that you want to share with
+     * other Amazon Web Services accounts.</p>
      */
     inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
 
     /**
-     * <p>Identifier of the AWS Managed Microsoft AD directory that you want to share
-     * with other AWS accounts.</p>
+     * <p>Identifier of the Managed Microsoft AD directory that you want to share with
+     * other Amazon Web Services accounts.</p>
      */
     inline void SetDirectoryId(const char* value) { m_directoryIdHasBeenSet = true; m_directoryId.assign(value); }
 
     /**
-     * <p>Identifier of the AWS Managed Microsoft AD directory that you want to share
-     * with other AWS accounts.</p>
+     * <p>Identifier of the Managed Microsoft AD directory that you want to share with
+     * other Amazon Web Services accounts.</p>
      */
     inline ShareDirectoryRequest& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
 
     /**
-     * <p>Identifier of the AWS Managed Microsoft AD directory that you want to share
-     * with other AWS accounts.</p>
+     * <p>Identifier of the Managed Microsoft AD directory that you want to share with
+     * other Amazon Web Services accounts.</p>
      */
     inline ShareDirectoryRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
 
     /**
-     * <p>Identifier of the AWS Managed Microsoft AD directory that you want to share
-     * with other AWS accounts.</p>
+     * <p>Identifier of the Managed Microsoft AD directory that you want to share with
+     * other Amazon Web Services accounts.</p>
      */
     inline ShareDirectoryRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
 
@@ -189,49 +189,49 @@ namespace Model
 
     /**
      * <p>The method used when sharing a directory to determine whether the directory
-     * should be shared within your AWS organization (<code>ORGANIZATIONS</code>) or
-     * with any AWS account by sending a directory sharing request
-     * (<code>HANDSHAKE</code>).</p>
+     * should be shared within your Amazon Web Services organization
+     * (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by sending
+     * a directory sharing request (<code>HANDSHAKE</code>).</p>
      */
     inline const ShareMethod& GetShareMethod() const{ return m_shareMethod; }
 
     /**
      * <p>The method used when sharing a directory to determine whether the directory
-     * should be shared within your AWS organization (<code>ORGANIZATIONS</code>) or
-     * with any AWS account by sending a directory sharing request
-     * (<code>HANDSHAKE</code>).</p>
+     * should be shared within your Amazon Web Services organization
+     * (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by sending
+     * a directory sharing request (<code>HANDSHAKE</code>).</p>
      */
     inline bool ShareMethodHasBeenSet() const { return m_shareMethodHasBeenSet; }
 
     /**
      * <p>The method used when sharing a directory to determine whether the directory
-     * should be shared within your AWS organization (<code>ORGANIZATIONS</code>) or
-     * with any AWS account by sending a directory sharing request
-     * (<code>HANDSHAKE</code>).</p>
+     * should be shared within your Amazon Web Services organization
+     * (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by sending
+     * a directory sharing request (<code>HANDSHAKE</code>).</p>
      */
     inline void SetShareMethod(const ShareMethod& value) { m_shareMethodHasBeenSet = true; m_shareMethod = value; }
 
     /**
      * <p>The method used when sharing a directory to determine whether the directory
-     * should be shared within your AWS organization (<code>ORGANIZATIONS</code>) or
-     * with any AWS account by sending a directory sharing request
-     * (<code>HANDSHAKE</code>).</p>
+     * should be shared within your Amazon Web Services organization
+     * (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by sending
+     * a directory sharing request (<code>HANDSHAKE</code>).</p>
      */
     inline void SetShareMethod(ShareMethod&& value) { m_shareMethodHasBeenSet = true; m_shareMethod = std::move(value); }
 
     /**
      * <p>The method used when sharing a directory to determine whether the directory
-     * should be shared within your AWS organization (<code>ORGANIZATIONS</code>) or
-     * with any AWS account by sending a directory sharing request
-     * (<code>HANDSHAKE</code>).</p>
+     * should be shared within your Amazon Web Services organization
+     * (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by sending
+     * a directory sharing request (<code>HANDSHAKE</code>).</p>
      */
     inline ShareDirectoryRequest& WithShareMethod(const ShareMethod& value) { SetShareMethod(value); return *this;}
 
     /**
      * <p>The method used when sharing a directory to determine whether the directory
-     * should be shared within your AWS organization (<code>ORGANIZATIONS</code>) or
-     * with any AWS account by sending a directory sharing request
-     * (<code>HANDSHAKE</code>).</p>
+     * should be shared within your Amazon Web Services organization
+     * (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by sending
+     * a directory sharing request (<code>HANDSHAKE</code>).</p>
      */
     inline ShareDirectoryRequest& WithShareMethod(ShareMethod&& value) { SetShareMethod(std::move(value)); return *this;}
 

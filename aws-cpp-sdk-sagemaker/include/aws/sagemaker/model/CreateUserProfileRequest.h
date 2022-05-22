@@ -79,42 +79,42 @@ namespace Model
 
 
     /**
-     * <p>A name for the UserProfile.</p>
+     * <p>A name for the UserProfile. This value is not case sensitive.</p>
      */
     inline const Aws::String& GetUserProfileName() const{ return m_userProfileName; }
 
     /**
-     * <p>A name for the UserProfile.</p>
+     * <p>A name for the UserProfile. This value is not case sensitive.</p>
      */
     inline bool UserProfileNameHasBeenSet() const { return m_userProfileNameHasBeenSet; }
 
     /**
-     * <p>A name for the UserProfile.</p>
+     * <p>A name for the UserProfile. This value is not case sensitive.</p>
      */
     inline void SetUserProfileName(const Aws::String& value) { m_userProfileNameHasBeenSet = true; m_userProfileName = value; }
 
     /**
-     * <p>A name for the UserProfile.</p>
+     * <p>A name for the UserProfile. This value is not case sensitive.</p>
      */
     inline void SetUserProfileName(Aws::String&& value) { m_userProfileNameHasBeenSet = true; m_userProfileName = std::move(value); }
 
     /**
-     * <p>A name for the UserProfile.</p>
+     * <p>A name for the UserProfile. This value is not case sensitive.</p>
      */
     inline void SetUserProfileName(const char* value) { m_userProfileNameHasBeenSet = true; m_userProfileName.assign(value); }
 
     /**
-     * <p>A name for the UserProfile.</p>
+     * <p>A name for the UserProfile. This value is not case sensitive.</p>
      */
     inline CreateUserProfileRequest& WithUserProfileName(const Aws::String& value) { SetUserProfileName(value); return *this;}
 
     /**
-     * <p>A name for the UserProfile.</p>
+     * <p>A name for the UserProfile. This value is not case sensitive.</p>
      */
     inline CreateUserProfileRequest& WithUserProfileName(Aws::String&& value) { SetUserProfileName(std::move(value)); return *this;}
 
     /**
-     * <p>A name for the UserProfile.</p>
+     * <p>A name for the UserProfile. This value is not case sensitive.</p>
      */
     inline CreateUserProfileRequest& WithUserProfileName(const char* value) { SetUserProfileName(value); return *this;}
 
@@ -185,115 +185,123 @@ namespace Model
 
 
     /**
-     * <p>The username of the associated AWS Single Sign-On User for this UserProfile.
-     * If the Domain's AuthMode is SSO, this field is required, and must match a valid
-     * username of a user in your directory. If the Domain's AuthMode is not SSO, this
-     * field cannot be specified. </p>
+     * <p>The username of the associated Amazon Web Services Single Sign-On User for
+     * this UserProfile. If the Domain's AuthMode is SSO, this field is required, and
+     * must match a valid username of a user in your directory. If the Domain's
+     * AuthMode is not SSO, this field cannot be specified. </p>
      */
     inline const Aws::String& GetSingleSignOnUserValue() const{ return m_singleSignOnUserValue; }
 
     /**
-     * <p>The username of the associated AWS Single Sign-On User for this UserProfile.
-     * If the Domain's AuthMode is SSO, this field is required, and must match a valid
-     * username of a user in your directory. If the Domain's AuthMode is not SSO, this
-     * field cannot be specified. </p>
+     * <p>The username of the associated Amazon Web Services Single Sign-On User for
+     * this UserProfile. If the Domain's AuthMode is SSO, this field is required, and
+     * must match a valid username of a user in your directory. If the Domain's
+     * AuthMode is not SSO, this field cannot be specified. </p>
      */
     inline bool SingleSignOnUserValueHasBeenSet() const { return m_singleSignOnUserValueHasBeenSet; }
 
     /**
-     * <p>The username of the associated AWS Single Sign-On User for this UserProfile.
-     * If the Domain's AuthMode is SSO, this field is required, and must match a valid
-     * username of a user in your directory. If the Domain's AuthMode is not SSO, this
-     * field cannot be specified. </p>
+     * <p>The username of the associated Amazon Web Services Single Sign-On User for
+     * this UserProfile. If the Domain's AuthMode is SSO, this field is required, and
+     * must match a valid username of a user in your directory. If the Domain's
+     * AuthMode is not SSO, this field cannot be specified. </p>
      */
     inline void SetSingleSignOnUserValue(const Aws::String& value) { m_singleSignOnUserValueHasBeenSet = true; m_singleSignOnUserValue = value; }
 
     /**
-     * <p>The username of the associated AWS Single Sign-On User for this UserProfile.
-     * If the Domain's AuthMode is SSO, this field is required, and must match a valid
-     * username of a user in your directory. If the Domain's AuthMode is not SSO, this
-     * field cannot be specified. </p>
+     * <p>The username of the associated Amazon Web Services Single Sign-On User for
+     * this UserProfile. If the Domain's AuthMode is SSO, this field is required, and
+     * must match a valid username of a user in your directory. If the Domain's
+     * AuthMode is not SSO, this field cannot be specified. </p>
      */
     inline void SetSingleSignOnUserValue(Aws::String&& value) { m_singleSignOnUserValueHasBeenSet = true; m_singleSignOnUserValue = std::move(value); }
 
     /**
-     * <p>The username of the associated AWS Single Sign-On User for this UserProfile.
-     * If the Domain's AuthMode is SSO, this field is required, and must match a valid
-     * username of a user in your directory. If the Domain's AuthMode is not SSO, this
-     * field cannot be specified. </p>
+     * <p>The username of the associated Amazon Web Services Single Sign-On User for
+     * this UserProfile. If the Domain's AuthMode is SSO, this field is required, and
+     * must match a valid username of a user in your directory. If the Domain's
+     * AuthMode is not SSO, this field cannot be specified. </p>
      */
     inline void SetSingleSignOnUserValue(const char* value) { m_singleSignOnUserValueHasBeenSet = true; m_singleSignOnUserValue.assign(value); }
 
     /**
-     * <p>The username of the associated AWS Single Sign-On User for this UserProfile.
-     * If the Domain's AuthMode is SSO, this field is required, and must match a valid
-     * username of a user in your directory. If the Domain's AuthMode is not SSO, this
-     * field cannot be specified. </p>
+     * <p>The username of the associated Amazon Web Services Single Sign-On User for
+     * this UserProfile. If the Domain's AuthMode is SSO, this field is required, and
+     * must match a valid username of a user in your directory. If the Domain's
+     * AuthMode is not SSO, this field cannot be specified. </p>
      */
     inline CreateUserProfileRequest& WithSingleSignOnUserValue(const Aws::String& value) { SetSingleSignOnUserValue(value); return *this;}
 
     /**
-     * <p>The username of the associated AWS Single Sign-On User for this UserProfile.
-     * If the Domain's AuthMode is SSO, this field is required, and must match a valid
-     * username of a user in your directory. If the Domain's AuthMode is not SSO, this
-     * field cannot be specified. </p>
+     * <p>The username of the associated Amazon Web Services Single Sign-On User for
+     * this UserProfile. If the Domain's AuthMode is SSO, this field is required, and
+     * must match a valid username of a user in your directory. If the Domain's
+     * AuthMode is not SSO, this field cannot be specified. </p>
      */
     inline CreateUserProfileRequest& WithSingleSignOnUserValue(Aws::String&& value) { SetSingleSignOnUserValue(std::move(value)); return *this;}
 
     /**
-     * <p>The username of the associated AWS Single Sign-On User for this UserProfile.
-     * If the Domain's AuthMode is SSO, this field is required, and must match a valid
-     * username of a user in your directory. If the Domain's AuthMode is not SSO, this
-     * field cannot be specified. </p>
+     * <p>The username of the associated Amazon Web Services Single Sign-On User for
+     * this UserProfile. If the Domain's AuthMode is SSO, this field is required, and
+     * must match a valid username of a user in your directory. If the Domain's
+     * AuthMode is not SSO, this field cannot be specified. </p>
      */
     inline CreateUserProfileRequest& WithSingleSignOnUserValue(const char* value) { SetSingleSignOnUserValue(value); return *this;}
 
 
     /**
      * <p>Each tag consists of a key and an optional value. Tag keys must be unique per
-     * resource.</p>
+     * resource.</p> <p>Tags that you specify for the User Profile are also added to
+     * all Apps that the User Profile launches.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
      * <p>Each tag consists of a key and an optional value. Tag keys must be unique per
-     * resource.</p>
+     * resource.</p> <p>Tags that you specify for the User Profile are also added to
+     * all Apps that the User Profile launches.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>Each tag consists of a key and an optional value. Tag keys must be unique per
-     * resource.</p>
+     * resource.</p> <p>Tags that you specify for the User Profile are also added to
+     * all Apps that the User Profile launches.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>Each tag consists of a key and an optional value. Tag keys must be unique per
-     * resource.</p>
+     * resource.</p> <p>Tags that you specify for the User Profile are also added to
+     * all Apps that the User Profile launches.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>Each tag consists of a key and an optional value. Tag keys must be unique per
-     * resource.</p>
+     * resource.</p> <p>Tags that you specify for the User Profile are also added to
+     * all Apps that the User Profile launches.</p>
      */
     inline CreateUserProfileRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
      * <p>Each tag consists of a key and an optional value. Tag keys must be unique per
-     * resource.</p>
+     * resource.</p> <p>Tags that you specify for the User Profile are also added to
+     * all Apps that the User Profile launches.</p>
      */
     inline CreateUserProfileRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>Each tag consists of a key and an optional value. Tag keys must be unique per
-     * resource.</p>
+     * resource.</p> <p>Tags that you specify for the User Profile are also added to
+     * all Apps that the User Profile launches.</p>
      */
     inline CreateUserProfileRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
      * <p>Each tag consists of a key and an optional value. Tag keys must be unique per
-     * resource.</p>
+     * resource.</p> <p>Tags that you specify for the User Profile are also added to
+     * all Apps that the User Profile launches.</p>
      */
     inline CreateUserProfileRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

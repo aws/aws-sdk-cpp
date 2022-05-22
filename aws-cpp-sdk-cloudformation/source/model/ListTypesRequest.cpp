@@ -19,6 +19,7 @@ ListTypesRequest::ListTypesRequest() :
     m_deprecatedStatusHasBeenSet(false),
     m_type(RegistryType::NOT_SET),
     m_typeHasBeenSet(false),
+    m_filtersHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false)
@@ -47,6 +48,11 @@ Aws::String ListTypesRequest::SerializePayload() const
   if(m_typeHasBeenSet)
   {
     ss << "Type=" << RegistryTypeMapper::GetNameForRegistryType(m_type) << "&";
+  }
+
+  if(m_filtersHasBeenSet)
+  {
+    m_filters.OutputToStream(ss, "Filters");
   }
 
   if(m_maxResultsHasBeenSet)

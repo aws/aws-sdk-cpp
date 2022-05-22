@@ -98,82 +98,82 @@ namespace Model
 
 
     /**
-     * <p>The URL to which AWS IoT sends a confirmation message. The value of the
+     * <p>The URL to which IoT sends a confirmation message. The value of the
      * confirmation URL must be a prefix of the endpoint URL. If you do not specify a
-     * confirmation URL AWS IoT uses the endpoint URL as the confirmation URL. If you
-     * use substitution templates in the confirmationUrl, you must create and enable
-     * topic rule destinations that match each possible value of the substitution
-     * template before traffic is allowed to your endpoint URL.</p>
+     * confirmation URL IoT uses the endpoint URL as the confirmation URL. If you use
+     * substitution templates in the confirmationUrl, you must create and enable topic
+     * rule destinations that match each possible value of the substitution template
+     * before traffic is allowed to your endpoint URL.</p>
      */
     inline const Aws::String& GetConfirmationUrl() const{ return m_confirmationUrl; }
 
     /**
-     * <p>The URL to which AWS IoT sends a confirmation message. The value of the
+     * <p>The URL to which IoT sends a confirmation message. The value of the
      * confirmation URL must be a prefix of the endpoint URL. If you do not specify a
-     * confirmation URL AWS IoT uses the endpoint URL as the confirmation URL. If you
-     * use substitution templates in the confirmationUrl, you must create and enable
-     * topic rule destinations that match each possible value of the substitution
-     * template before traffic is allowed to your endpoint URL.</p>
+     * confirmation URL IoT uses the endpoint URL as the confirmation URL. If you use
+     * substitution templates in the confirmationUrl, you must create and enable topic
+     * rule destinations that match each possible value of the substitution template
+     * before traffic is allowed to your endpoint URL.</p>
      */
     inline bool ConfirmationUrlHasBeenSet() const { return m_confirmationUrlHasBeenSet; }
 
     /**
-     * <p>The URL to which AWS IoT sends a confirmation message. The value of the
+     * <p>The URL to which IoT sends a confirmation message. The value of the
      * confirmation URL must be a prefix of the endpoint URL. If you do not specify a
-     * confirmation URL AWS IoT uses the endpoint URL as the confirmation URL. If you
-     * use substitution templates in the confirmationUrl, you must create and enable
-     * topic rule destinations that match each possible value of the substitution
-     * template before traffic is allowed to your endpoint URL.</p>
+     * confirmation URL IoT uses the endpoint URL as the confirmation URL. If you use
+     * substitution templates in the confirmationUrl, you must create and enable topic
+     * rule destinations that match each possible value of the substitution template
+     * before traffic is allowed to your endpoint URL.</p>
      */
     inline void SetConfirmationUrl(const Aws::String& value) { m_confirmationUrlHasBeenSet = true; m_confirmationUrl = value; }
 
     /**
-     * <p>The URL to which AWS IoT sends a confirmation message. The value of the
+     * <p>The URL to which IoT sends a confirmation message. The value of the
      * confirmation URL must be a prefix of the endpoint URL. If you do not specify a
-     * confirmation URL AWS IoT uses the endpoint URL as the confirmation URL. If you
-     * use substitution templates in the confirmationUrl, you must create and enable
-     * topic rule destinations that match each possible value of the substitution
-     * template before traffic is allowed to your endpoint URL.</p>
+     * confirmation URL IoT uses the endpoint URL as the confirmation URL. If you use
+     * substitution templates in the confirmationUrl, you must create and enable topic
+     * rule destinations that match each possible value of the substitution template
+     * before traffic is allowed to your endpoint URL.</p>
      */
     inline void SetConfirmationUrl(Aws::String&& value) { m_confirmationUrlHasBeenSet = true; m_confirmationUrl = std::move(value); }
 
     /**
-     * <p>The URL to which AWS IoT sends a confirmation message. The value of the
+     * <p>The URL to which IoT sends a confirmation message. The value of the
      * confirmation URL must be a prefix of the endpoint URL. If you do not specify a
-     * confirmation URL AWS IoT uses the endpoint URL as the confirmation URL. If you
-     * use substitution templates in the confirmationUrl, you must create and enable
-     * topic rule destinations that match each possible value of the substitution
-     * template before traffic is allowed to your endpoint URL.</p>
+     * confirmation URL IoT uses the endpoint URL as the confirmation URL. If you use
+     * substitution templates in the confirmationUrl, you must create and enable topic
+     * rule destinations that match each possible value of the substitution template
+     * before traffic is allowed to your endpoint URL.</p>
      */
     inline void SetConfirmationUrl(const char* value) { m_confirmationUrlHasBeenSet = true; m_confirmationUrl.assign(value); }
 
     /**
-     * <p>The URL to which AWS IoT sends a confirmation message. The value of the
+     * <p>The URL to which IoT sends a confirmation message. The value of the
      * confirmation URL must be a prefix of the endpoint URL. If you do not specify a
-     * confirmation URL AWS IoT uses the endpoint URL as the confirmation URL. If you
-     * use substitution templates in the confirmationUrl, you must create and enable
-     * topic rule destinations that match each possible value of the substitution
-     * template before traffic is allowed to your endpoint URL.</p>
+     * confirmation URL IoT uses the endpoint URL as the confirmation URL. If you use
+     * substitution templates in the confirmationUrl, you must create and enable topic
+     * rule destinations that match each possible value of the substitution template
+     * before traffic is allowed to your endpoint URL.</p>
      */
     inline HttpAction& WithConfirmationUrl(const Aws::String& value) { SetConfirmationUrl(value); return *this;}
 
     /**
-     * <p>The URL to which AWS IoT sends a confirmation message. The value of the
+     * <p>The URL to which IoT sends a confirmation message. The value of the
      * confirmation URL must be a prefix of the endpoint URL. If you do not specify a
-     * confirmation URL AWS IoT uses the endpoint URL as the confirmation URL. If you
-     * use substitution templates in the confirmationUrl, you must create and enable
-     * topic rule destinations that match each possible value of the substitution
-     * template before traffic is allowed to your endpoint URL.</p>
+     * confirmation URL IoT uses the endpoint URL as the confirmation URL. If you use
+     * substitution templates in the confirmationUrl, you must create and enable topic
+     * rule destinations that match each possible value of the substitution template
+     * before traffic is allowed to your endpoint URL.</p>
      */
     inline HttpAction& WithConfirmationUrl(Aws::String&& value) { SetConfirmationUrl(std::move(value)); return *this;}
 
     /**
-     * <p>The URL to which AWS IoT sends a confirmation message. The value of the
+     * <p>The URL to which IoT sends a confirmation message. The value of the
      * confirmation URL must be a prefix of the endpoint URL. If you do not specify a
-     * confirmation URL AWS IoT uses the endpoint URL as the confirmation URL. If you
-     * use substitution templates in the confirmationUrl, you must create and enable
-     * topic rule destinations that match each possible value of the substitution
-     * template before traffic is allowed to your endpoint URL.</p>
+     * confirmation URL IoT uses the endpoint URL as the confirmation URL. If you use
+     * substitution templates in the confirmationUrl, you must create and enable topic
+     * rule destinations that match each possible value of the substitution template
+     * before traffic is allowed to your endpoint URL.</p>
      */
     inline HttpAction& WithConfirmationUrl(const char* value) { SetConfirmationUrl(value); return *this;}
 

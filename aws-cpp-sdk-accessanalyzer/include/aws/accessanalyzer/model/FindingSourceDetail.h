@@ -39,42 +39,58 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the access point that generated the finding.</p>
+     * <p>The ARN of the access point that generated the finding. The ARN format
+     * depends on whether the ARN represents an access point or a multi-region access
+     * point.</p>
      */
     inline const Aws::String& GetAccessPointArn() const{ return m_accessPointArn; }
 
     /**
-     * <p>The ARN of the access point that generated the finding.</p>
+     * <p>The ARN of the access point that generated the finding. The ARN format
+     * depends on whether the ARN represents an access point or a multi-region access
+     * point.</p>
      */
     inline bool AccessPointArnHasBeenSet() const { return m_accessPointArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the access point that generated the finding.</p>
+     * <p>The ARN of the access point that generated the finding. The ARN format
+     * depends on whether the ARN represents an access point or a multi-region access
+     * point.</p>
      */
     inline void SetAccessPointArn(const Aws::String& value) { m_accessPointArnHasBeenSet = true; m_accessPointArn = value; }
 
     /**
-     * <p>The ARN of the access point that generated the finding.</p>
+     * <p>The ARN of the access point that generated the finding. The ARN format
+     * depends on whether the ARN represents an access point or a multi-region access
+     * point.</p>
      */
     inline void SetAccessPointArn(Aws::String&& value) { m_accessPointArnHasBeenSet = true; m_accessPointArn = std::move(value); }
 
     /**
-     * <p>The ARN of the access point that generated the finding.</p>
+     * <p>The ARN of the access point that generated the finding. The ARN format
+     * depends on whether the ARN represents an access point or a multi-region access
+     * point.</p>
      */
     inline void SetAccessPointArn(const char* value) { m_accessPointArnHasBeenSet = true; m_accessPointArn.assign(value); }
 
     /**
-     * <p>The ARN of the access point that generated the finding.</p>
+     * <p>The ARN of the access point that generated the finding. The ARN format
+     * depends on whether the ARN represents an access point or a multi-region access
+     * point.</p>
      */
     inline FindingSourceDetail& WithAccessPointArn(const Aws::String& value) { SetAccessPointArn(value); return *this;}
 
     /**
-     * <p>The ARN of the access point that generated the finding.</p>
+     * <p>The ARN of the access point that generated the finding. The ARN format
+     * depends on whether the ARN represents an access point or a multi-region access
+     * point.</p>
      */
     inline FindingSourceDetail& WithAccessPointArn(Aws::String&& value) { SetAccessPointArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the access point that generated the finding.</p>
+     * <p>The ARN of the access point that generated the finding. The ARN format
+     * depends on whether the ARN represents an access point or a multi-region access
+     * point.</p>
      */
     inline FindingSourceDetail& WithAccessPointArn(const char* value) { SetAccessPointArn(value); return *this;}
 

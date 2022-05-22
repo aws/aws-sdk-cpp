@@ -24,11 +24,15 @@ StartMedicalTranscriptionJobRequest::StartMedicalTranscriptionJobRequest() :
     m_outputBucketNameHasBeenSet(false),
     m_outputKeyHasBeenSet(false),
     m_outputEncryptionKMSKeyIdHasBeenSet(false),
+    m_kMSEncryptionContextHasBeenSet(false),
     m_settingsHasBeenSet(false),
+    m_contentIdentificationType(MedicalContentIdentificationType::NOT_SET),
+    m_contentIdentificationTypeHasBeenSet(false),
     m_specialty(Specialty::NOT_SET),
     m_specialtyHasBeenSet(false),
     m_type(Type::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -82,10 +86,26 @@ Aws::String StartMedicalTranscriptionJobRequest::SerializePayload() const
 
   }
 
+  if(m_kMSEncryptionContextHasBeenSet)
+  {
+   JsonValue kMSEncryptionContextJsonMap;
+   for(auto& kMSEncryptionContextItem : m_kMSEncryptionContext)
+   {
+     kMSEncryptionContextJsonMap.WithString(kMSEncryptionContextItem.first, kMSEncryptionContextItem.second);
+   }
+   payload.WithObject("KMSEncryptionContext", std::move(kMSEncryptionContextJsonMap));
+
+  }
+
   if(m_settingsHasBeenSet)
   {
    payload.WithObject("Settings", m_settings.Jsonize());
 
+  }
+
+  if(m_contentIdentificationTypeHasBeenSet)
+  {
+   payload.WithString("ContentIdentificationType", MedicalContentIdentificationTypeMapper::GetNameForMedicalContentIdentificationType(m_contentIdentificationType));
   }
 
   if(m_specialtyHasBeenSet)
@@ -96,6 +116,17 @@ Aws::String StartMedicalTranscriptionJobRequest::SerializePayload() const
   if(m_typeHasBeenSet)
   {
    payload.WithString("Type", TypeMapper::GetNameForType(m_type));
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
+
   }
 
   return payload.View().WriteReadable();

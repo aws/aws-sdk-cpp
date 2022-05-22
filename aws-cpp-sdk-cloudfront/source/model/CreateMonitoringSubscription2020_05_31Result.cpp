@@ -19,12 +19,12 @@ CreateMonitoringSubscription2020_05_31Result::CreateMonitoringSubscription2020_0
 {
 }
 
-CreateMonitoringSubscription2020_05_31Result::CreateMonitoringSubscription2020_05_31Result(const AmazonWebServiceResult<XmlDocument>& result)
+CreateMonitoringSubscription2020_05_31Result::CreateMonitoringSubscription2020_05_31Result(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-CreateMonitoringSubscription2020_05_31Result& CreateMonitoringSubscription2020_05_31Result::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+CreateMonitoringSubscription2020_05_31Result& CreateMonitoringSubscription2020_05_31Result::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

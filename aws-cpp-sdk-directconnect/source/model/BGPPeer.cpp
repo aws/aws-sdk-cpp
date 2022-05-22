@@ -31,7 +31,8 @@ BGPPeer::BGPPeer() :
     m_bgpPeerStateHasBeenSet(false),
     m_bgpStatus(BGPStatus::NOT_SET),
     m_bgpStatusHasBeenSet(false),
-    m_awsDeviceV2HasBeenSet(false)
+    m_awsDeviceV2HasBeenSet(false),
+    m_awsLogicalDeviceIdHasBeenSet(false)
 {
 }
 
@@ -48,7 +49,8 @@ BGPPeer::BGPPeer(JsonView jsonValue) :
     m_bgpPeerStateHasBeenSet(false),
     m_bgpStatus(BGPStatus::NOT_SET),
     m_bgpStatusHasBeenSet(false),
-    m_awsDeviceV2HasBeenSet(false)
+    m_awsDeviceV2HasBeenSet(false),
+    m_awsLogicalDeviceIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -118,6 +120,13 @@ BGPPeer& BGPPeer::operator =(JsonView jsonValue)
     m_awsDeviceV2HasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("awsLogicalDeviceId"))
+  {
+    m_awsLogicalDeviceId = jsonValue.GetString("awsLogicalDeviceId");
+
+    m_awsLogicalDeviceIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -173,6 +182,12 @@ JsonValue BGPPeer::Jsonize() const
   if(m_awsDeviceV2HasBeenSet)
   {
    payload.WithString("awsDeviceV2", m_awsDeviceV2);
+
+  }
+
+  if(m_awsLogicalDeviceIdHasBeenSet)
+  {
+   payload.WithString("awsLogicalDeviceId", m_awsLogicalDeviceId);
 
   }
 

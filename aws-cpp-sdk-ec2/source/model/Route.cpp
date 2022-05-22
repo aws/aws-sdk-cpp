@@ -37,7 +37,8 @@ Route::Route() :
     m_originHasBeenSet(false),
     m_state(RouteState::NOT_SET),
     m_stateHasBeenSet(false),
-    m_vpcPeeringConnectionIdHasBeenSet(false)
+    m_vpcPeeringConnectionIdHasBeenSet(false),
+    m_coreNetworkArnHasBeenSet(false)
 {
 }
 
@@ -58,7 +59,8 @@ Route::Route(const XmlNode& xmlNode) :
     m_originHasBeenSet(false),
     m_state(RouteState::NOT_SET),
     m_stateHasBeenSet(false),
-    m_vpcPeeringConnectionIdHasBeenSet(false)
+    m_vpcPeeringConnectionIdHasBeenSet(false),
+    m_coreNetworkArnHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -159,6 +161,12 @@ Route& Route::operator =(const XmlNode& xmlNode)
       m_vpcPeeringConnectionId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcPeeringConnectionIdNode.GetText());
       m_vpcPeeringConnectionIdHasBeenSet = true;
     }
+    XmlNode coreNetworkArnNode = resultNode.FirstChild("coreNetworkArn");
+    if(!coreNetworkArnNode.IsNull())
+    {
+      m_coreNetworkArn = Aws::Utils::Xml::DecodeEscapedXmlText(coreNetworkArnNode.GetText());
+      m_coreNetworkArnHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -241,6 +249,11 @@ void Route::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
       oStream << location << index << locationValue << ".VpcPeeringConnectionId=" << StringUtils::URLEncode(m_vpcPeeringConnectionId.c_str()) << "&";
   }
 
+  if(m_coreNetworkArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CoreNetworkArn=" << StringUtils::URLEncode(m_coreNetworkArn.c_str()) << "&";
+  }
+
 }
 
 void Route::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -304,6 +317,10 @@ void Route::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_vpcPeeringConnectionIdHasBeenSet)
   {
       oStream << location << ".VpcPeeringConnectionId=" << StringUtils::URLEncode(m_vpcPeeringConnectionId.c_str()) << "&";
+  }
+  if(m_coreNetworkArnHasBeenSet)
+  {
+      oStream << location << ".CoreNetworkArn=" << StringUtils::URLEncode(m_coreNetworkArn.c_str()) << "&";
   }
 }
 

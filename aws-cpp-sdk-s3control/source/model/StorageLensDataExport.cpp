@@ -21,12 +21,14 @@ namespace Model
 {
 
 StorageLensDataExport::StorageLensDataExport() : 
-    m_s3BucketDestinationHasBeenSet(false)
+    m_s3BucketDestinationHasBeenSet(false),
+    m_cloudWatchMetricsHasBeenSet(false)
 {
 }
 
 StorageLensDataExport::StorageLensDataExport(const XmlNode& xmlNode) : 
-    m_s3BucketDestinationHasBeenSet(false)
+    m_s3BucketDestinationHasBeenSet(false),
+    m_cloudWatchMetricsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -43,6 +45,12 @@ StorageLensDataExport& StorageLensDataExport::operator =(const XmlNode& xmlNode)
       m_s3BucketDestination = s3BucketDestinationNode;
       m_s3BucketDestinationHasBeenSet = true;
     }
+    XmlNode cloudWatchMetricsNode = resultNode.FirstChild("CloudWatchMetrics");
+    if(!cloudWatchMetricsNode.IsNull())
+    {
+      m_cloudWatchMetrics = cloudWatchMetricsNode;
+      m_cloudWatchMetricsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -55,6 +63,12 @@ void StorageLensDataExport::AddToNode(XmlNode& parentNode) const
   {
    XmlNode s3BucketDestinationNode = parentNode.CreateChildElement("S3BucketDestination");
    m_s3BucketDestination.AddToNode(s3BucketDestinationNode);
+  }
+
+  if(m_cloudWatchMetricsHasBeenSet)
+  {
+   XmlNode cloudWatchMetricsNode = parentNode.CreateChildElement("CloudWatchMetrics");
+   m_cloudWatchMetrics.AddToNode(cloudWatchMetricsNode);
   }
 
 }

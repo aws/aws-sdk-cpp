@@ -40,83 +40,91 @@ namespace Model
 
 
     /**
-     * <p>The name of the AWS DMS event subscription to be described.</p>
+     * <p>The name of the DMS event subscription to be described.</p>
      */
     inline const Aws::String& GetSubscriptionName() const{ return m_subscriptionName; }
 
     /**
-     * <p>The name of the AWS DMS event subscription to be described.</p>
+     * <p>The name of the DMS event subscription to be described.</p>
      */
     inline bool SubscriptionNameHasBeenSet() const { return m_subscriptionNameHasBeenSet; }
 
     /**
-     * <p>The name of the AWS DMS event subscription to be described.</p>
+     * <p>The name of the DMS event subscription to be described.</p>
      */
     inline void SetSubscriptionName(const Aws::String& value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName = value; }
 
     /**
-     * <p>The name of the AWS DMS event subscription to be described.</p>
+     * <p>The name of the DMS event subscription to be described.</p>
      */
     inline void SetSubscriptionName(Aws::String&& value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName = std::move(value); }
 
     /**
-     * <p>The name of the AWS DMS event subscription to be described.</p>
+     * <p>The name of the DMS event subscription to be described.</p>
      */
     inline void SetSubscriptionName(const char* value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName.assign(value); }
 
     /**
-     * <p>The name of the AWS DMS event subscription to be described.</p>
+     * <p>The name of the DMS event subscription to be described.</p>
      */
     inline DescribeEventSubscriptionsRequest& WithSubscriptionName(const Aws::String& value) { SetSubscriptionName(value); return *this;}
 
     /**
-     * <p>The name of the AWS DMS event subscription to be described.</p>
+     * <p>The name of the DMS event subscription to be described.</p>
      */
     inline DescribeEventSubscriptionsRequest& WithSubscriptionName(Aws::String&& value) { SetSubscriptionName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the AWS DMS event subscription to be described.</p>
+     * <p>The name of the DMS event subscription to be described.</p>
      */
     inline DescribeEventSubscriptionsRequest& WithSubscriptionName(const char* value) { SetSubscriptionName(value); return *this;}
 
 
     /**
-     * <p>Filters applied to event subscriptions.</p>
+     * <p>Filters applied to event subscriptions.</p> <p>Valid filter names:
+     * event-subscription-arn | event-subscription-id </p>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>Filters applied to event subscriptions.</p>
+     * <p>Filters applied to event subscriptions.</p> <p>Valid filter names:
+     * event-subscription-arn | event-subscription-id </p>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>Filters applied to event subscriptions.</p>
+     * <p>Filters applied to event subscriptions.</p> <p>Valid filter names:
+     * event-subscription-arn | event-subscription-id </p>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>Filters applied to event subscriptions.</p>
+     * <p>Filters applied to event subscriptions.</p> <p>Valid filter names:
+     * event-subscription-arn | event-subscription-id </p>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>Filters applied to event subscriptions.</p>
+     * <p>Filters applied to event subscriptions.</p> <p>Valid filter names:
+     * event-subscription-arn | event-subscription-id </p>
      */
     inline DescribeEventSubscriptionsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>Filters applied to event subscriptions.</p>
+     * <p>Filters applied to event subscriptions.</p> <p>Valid filter names:
+     * event-subscription-arn | event-subscription-id </p>
      */
     inline DescribeEventSubscriptionsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>Filters applied to event subscriptions.</p>
+     * <p>Filters applied to event subscriptions.</p> <p>Valid filter names:
+     * event-subscription-arn | event-subscription-id </p>
      */
     inline DescribeEventSubscriptionsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>Filters applied to event subscriptions.</p>
+     * <p>Filters applied to event subscriptions.</p> <p>Valid filter names:
+     * event-subscription-arn | event-subscription-id </p>
      */
     inline DescribeEventSubscriptionsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

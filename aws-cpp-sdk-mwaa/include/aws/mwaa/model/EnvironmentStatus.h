@@ -21,7 +21,9 @@ namespace Model
     AVAILABLE,
     UPDATING,
     DELETING,
-    DELETED
+    DELETED,
+    UNAVAILABLE,
+    UPDATE_FAILED
   };
 
 namespace EnvironmentStatusMapper

@@ -20,13 +20,15 @@ namespace Model
 
 UpdateWirelessGatewayTaskEntry::UpdateWirelessGatewayTaskEntry() : 
     m_idHasBeenSet(false),
-    m_loRaWANHasBeenSet(false)
+    m_loRaWANHasBeenSet(false),
+    m_arnHasBeenSet(false)
 {
 }
 
 UpdateWirelessGatewayTaskEntry::UpdateWirelessGatewayTaskEntry(JsonView jsonValue) : 
     m_idHasBeenSet(false),
-    m_loRaWANHasBeenSet(false)
+    m_loRaWANHasBeenSet(false),
+    m_arnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,13 @@ UpdateWirelessGatewayTaskEntry& UpdateWirelessGatewayTaskEntry::operator =(JsonV
     m_loRaWANHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Arn"))
+  {
+    m_arn = jsonValue.GetString("Arn");
+
+    m_arnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,12 @@ JsonValue UpdateWirelessGatewayTaskEntry::Jsonize() const
   if(m_loRaWANHasBeenSet)
   {
    payload.WithObject("LoRaWAN", m_loRaWAN.Jsonize());
+
+  }
+
+  if(m_arnHasBeenSet)
+  {
+   payload.WithString("Arn", m_arn);
 
   }
 

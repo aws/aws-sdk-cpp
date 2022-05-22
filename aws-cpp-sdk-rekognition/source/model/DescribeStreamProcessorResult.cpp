@@ -90,6 +90,33 @@ DescribeStreamProcessorResult& DescribeStreamProcessorResult::operator =(const A
 
   }
 
+  if(jsonValue.ValueExists("NotificationChannel"))
+  {
+    m_notificationChannel = jsonValue.GetObject("NotificationChannel");
+
+  }
+
+  if(jsonValue.ValueExists("KmsKeyId"))
+  {
+    m_kmsKeyId = jsonValue.GetString("KmsKeyId");
+
+  }
+
+  if(jsonValue.ValueExists("RegionsOfInterest"))
+  {
+    Array<JsonView> regionsOfInterestJsonList = jsonValue.GetArray("RegionsOfInterest");
+    for(unsigned regionsOfInterestIndex = 0; regionsOfInterestIndex < regionsOfInterestJsonList.GetLength(); ++regionsOfInterestIndex)
+    {
+      m_regionsOfInterest.push_back(regionsOfInterestJsonList[regionsOfInterestIndex].AsObject());
+    }
+  }
+
+  if(jsonValue.ValueExists("DataSharingPreference"))
+  {
+    m_dataSharingPreference = jsonValue.GetObject("DataSharingPreference");
+
+  }
+
 
 
   return *this;

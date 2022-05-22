@@ -204,50 +204,50 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key that Kinesis Video
-     * Streams uses to encrypt data on the stream.</p>
+     * <p>The ID of the Key Management Service (KMS) key that Kinesis Video Streams
+     * uses to encrypt data on the stream.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key that Kinesis Video
-     * Streams uses to encrypt data on the stream.</p>
+     * <p>The ID of the Key Management Service (KMS) key that Kinesis Video Streams
+     * uses to encrypt data on the stream.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key that Kinesis Video
-     * Streams uses to encrypt data on the stream.</p>
+     * <p>The ID of the Key Management Service (KMS) key that Kinesis Video Streams
+     * uses to encrypt data on the stream.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key that Kinesis Video
-     * Streams uses to encrypt data on the stream.</p>
+     * <p>The ID of the Key Management Service (KMS) key that Kinesis Video Streams
+     * uses to encrypt data on the stream.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key that Kinesis Video
-     * Streams uses to encrypt data on the stream.</p>
+     * <p>The ID of the Key Management Service (KMS) key that Kinesis Video Streams
+     * uses to encrypt data on the stream.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key that Kinesis Video
-     * Streams uses to encrypt data on the stream.</p>
+     * <p>The ID of the Key Management Service (KMS) key that Kinesis Video Streams
+     * uses to encrypt data on the stream.</p>
      */
     inline StreamInfo& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key that Kinesis Video
-     * Streams uses to encrypt data on the stream.</p>
+     * <p>The ID of the Key Management Service (KMS) key that Kinesis Video Streams
+     * uses to encrypt data on the stream.</p>
      */
     inline StreamInfo& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS Key Management Service (AWS KMS) key that Kinesis Video
-     * Streams uses to encrypt data on the stream.</p>
+     * <p>The ID of the Key Management Service (KMS) key that Kinesis Video Streams
+     * uses to encrypt data on the stream.</p>
      */
     inline StreamInfo& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

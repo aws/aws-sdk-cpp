@@ -63,42 +63,42 @@ namespace Model
 
 
     /**
-     * <p>The error code returned by AWS KMS.</p>
+     * <p>The error code returned by KMS.</p>
      */
     inline const Aws::String& GetKmsError() const{ return m_kmsError; }
 
     /**
-     * <p>The error code returned by AWS KMS.</p>
+     * <p>The error code returned by KMS.</p>
      */
     inline bool KmsErrorHasBeenSet() const { return m_kmsErrorHasBeenSet; }
 
     /**
-     * <p>The error code returned by AWS KMS.</p>
+     * <p>The error code returned by KMS.</p>
      */
     inline void SetKmsError(const Aws::String& value) { m_kmsErrorHasBeenSet = true; m_kmsError = value; }
 
     /**
-     * <p>The error code returned by AWS KMS.</p>
+     * <p>The error code returned by KMS.</p>
      */
     inline void SetKmsError(Aws::String&& value) { m_kmsErrorHasBeenSet = true; m_kmsError = std::move(value); }
 
     /**
-     * <p>The error code returned by AWS KMS.</p>
+     * <p>The error code returned by KMS.</p>
      */
     inline void SetKmsError(const char* value) { m_kmsErrorHasBeenSet = true; m_kmsError.assign(value); }
 
     /**
-     * <p>The error code returned by AWS KMS.</p>
+     * <p>The error code returned by KMS.</p>
      */
     inline KmsException& WithKmsError(const Aws::String& value) { SetKmsError(value); return *this;}
 
     /**
-     * <p>The error code returned by AWS KMS.</p>
+     * <p>The error code returned by KMS.</p>
      */
     inline KmsException& WithKmsError(Aws::String&& value) { SetKmsError(std::move(value)); return *this;}
 
     /**
-     * <p>The error code returned by AWS KMS.</p>
+     * <p>The error code returned by KMS.</p>
      */
     inline KmsException& WithKmsError(const char* value) { SetKmsError(value); return *this;}
 

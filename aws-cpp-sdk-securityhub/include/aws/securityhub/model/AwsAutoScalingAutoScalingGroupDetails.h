@@ -7,6 +7,9 @@
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/securityhub/model/AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails.h>
+#include <aws/securityhub/model/AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification.h>
+#include <aws/securityhub/model/AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails.h>
 #include <utility>
 
 namespace Aws
@@ -263,6 +266,130 @@ namespace Model
      */
     inline AwsAutoScalingAutoScalingGroupDetails& WithCreatedTime(const char* value) { SetCreatedTime(value); return *this;}
 
+
+    /**
+     * <p>The mixed instances policy for the automatic scaling group.</p>
+     */
+    inline const AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails& GetMixedInstancesPolicy() const{ return m_mixedInstancesPolicy; }
+
+    /**
+     * <p>The mixed instances policy for the automatic scaling group.</p>
+     */
+    inline bool MixedInstancesPolicyHasBeenSet() const { return m_mixedInstancesPolicyHasBeenSet; }
+
+    /**
+     * <p>The mixed instances policy for the automatic scaling group.</p>
+     */
+    inline void SetMixedInstancesPolicy(const AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails& value) { m_mixedInstancesPolicyHasBeenSet = true; m_mixedInstancesPolicy = value; }
+
+    /**
+     * <p>The mixed instances policy for the automatic scaling group.</p>
+     */
+    inline void SetMixedInstancesPolicy(AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails&& value) { m_mixedInstancesPolicyHasBeenSet = true; m_mixedInstancesPolicy = std::move(value); }
+
+    /**
+     * <p>The mixed instances policy for the automatic scaling group.</p>
+     */
+    inline AwsAutoScalingAutoScalingGroupDetails& WithMixedInstancesPolicy(const AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails& value) { SetMixedInstancesPolicy(value); return *this;}
+
+    /**
+     * <p>The mixed instances policy for the automatic scaling group.</p>
+     */
+    inline AwsAutoScalingAutoScalingGroupDetails& WithMixedInstancesPolicy(AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails&& value) { SetMixedInstancesPolicy(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The list of Availability Zones for the automatic scaling group.</p>
+     */
+    inline const Aws::Vector<AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails>& GetAvailabilityZones() const{ return m_availabilityZones; }
+
+    /**
+     * <p>The list of Availability Zones for the automatic scaling group.</p>
+     */
+    inline bool AvailabilityZonesHasBeenSet() const { return m_availabilityZonesHasBeenSet; }
+
+    /**
+     * <p>The list of Availability Zones for the automatic scaling group.</p>
+     */
+    inline void SetAvailabilityZones(const Aws::Vector<AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails>& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = value; }
+
+    /**
+     * <p>The list of Availability Zones for the automatic scaling group.</p>
+     */
+    inline void SetAvailabilityZones(Aws::Vector<AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails>&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = std::move(value); }
+
+    /**
+     * <p>The list of Availability Zones for the automatic scaling group.</p>
+     */
+    inline AwsAutoScalingAutoScalingGroupDetails& WithAvailabilityZones(const Aws::Vector<AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails>& value) { SetAvailabilityZones(value); return *this;}
+
+    /**
+     * <p>The list of Availability Zones for the automatic scaling group.</p>
+     */
+    inline AwsAutoScalingAutoScalingGroupDetails& WithAvailabilityZones(Aws::Vector<AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails>&& value) { SetAvailabilityZones(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of Availability Zones for the automatic scaling group.</p>
+     */
+    inline AwsAutoScalingAutoScalingGroupDetails& AddAvailabilityZones(const AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
+
+    /**
+     * <p>The list of Availability Zones for the automatic scaling group.</p>
+     */
+    inline AwsAutoScalingAutoScalingGroupDetails& AddAvailabilityZones(AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The launch template to use.</p>
+     */
+    inline const AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification& GetLaunchTemplate() const{ return m_launchTemplate; }
+
+    /**
+     * <p>The launch template to use.</p>
+     */
+    inline bool LaunchTemplateHasBeenSet() const { return m_launchTemplateHasBeenSet; }
+
+    /**
+     * <p>The launch template to use.</p>
+     */
+    inline void SetLaunchTemplate(const AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = value; }
+
+    /**
+     * <p>The launch template to use.</p>
+     */
+    inline void SetLaunchTemplate(AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification&& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = std::move(value); }
+
+    /**
+     * <p>The launch template to use.</p>
+     */
+    inline AwsAutoScalingAutoScalingGroupDetails& WithLaunchTemplate(const AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification& value) { SetLaunchTemplate(value); return *this;}
+
+    /**
+     * <p>The launch template to use.</p>
+     */
+    inline AwsAutoScalingAutoScalingGroupDetails& WithLaunchTemplate(AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification&& value) { SetLaunchTemplate(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Indicates whether capacity rebalancing is enabled. </p>
+     */
+    inline bool GetCapacityRebalance() const{ return m_capacityRebalance; }
+
+    /**
+     * <p>Indicates whether capacity rebalancing is enabled. </p>
+     */
+    inline bool CapacityRebalanceHasBeenSet() const { return m_capacityRebalanceHasBeenSet; }
+
+    /**
+     * <p>Indicates whether capacity rebalancing is enabled. </p>
+     */
+    inline void SetCapacityRebalance(bool value) { m_capacityRebalanceHasBeenSet = true; m_capacityRebalance = value; }
+
+    /**
+     * <p>Indicates whether capacity rebalancing is enabled. </p>
+     */
+    inline AwsAutoScalingAutoScalingGroupDetails& WithCapacityRebalance(bool value) { SetCapacityRebalance(value); return *this;}
+
   private:
 
     Aws::String m_launchConfigurationName;
@@ -279,6 +406,18 @@ namespace Model
 
     Aws::String m_createdTime;
     bool m_createdTimeHasBeenSet;
+
+    AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails m_mixedInstancesPolicy;
+    bool m_mixedInstancesPolicyHasBeenSet;
+
+    Aws::Vector<AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails> m_availabilityZones;
+    bool m_availabilityZonesHasBeenSet;
+
+    AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification m_launchTemplate;
+    bool m_launchTemplateHasBeenSet;
+
+    bool m_capacityRebalance;
+    bool m_capacityRebalanceHasBeenSet;
   };
 
 } // namespace Model

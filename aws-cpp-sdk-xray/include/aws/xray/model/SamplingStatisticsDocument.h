@@ -27,7 +27,8 @@ namespace Model
   /**
    * <p>Request sampling results for a single rule from a service. Results are for
    * the last 10 seconds unless the service has been assigned a longer reporting
-   * interval after a previous call to <a>GetSamplingTargets</a>.</p><p><h3>See
+   * interval after a previous call to <a
+   * href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingTargets.html">GetSamplingTargets</a>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/SamplingStatisticsDocument">AWS
    * API Reference</a></p>

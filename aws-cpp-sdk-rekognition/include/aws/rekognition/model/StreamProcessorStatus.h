@@ -20,7 +20,8 @@ namespace Model
     STARTING,
     RUNNING,
     FAILED,
-    STOPPING
+    STOPPING,
+    UPDATING
   };
 
 namespace StreamProcessorStatusMapper

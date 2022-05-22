@@ -32,7 +32,9 @@ WorkspaceAccessProperties::WorkspaceAccessProperties() :
     m_deviceTypeChromeOs(AccessPropertyValue::NOT_SET),
     m_deviceTypeChromeOsHasBeenSet(false),
     m_deviceTypeZeroClient(AccessPropertyValue::NOT_SET),
-    m_deviceTypeZeroClientHasBeenSet(false)
+    m_deviceTypeZeroClientHasBeenSet(false),
+    m_deviceTypeLinux(AccessPropertyValue::NOT_SET),
+    m_deviceTypeLinuxHasBeenSet(false)
 {
 }
 
@@ -50,7 +52,9 @@ WorkspaceAccessProperties::WorkspaceAccessProperties(JsonView jsonValue) :
     m_deviceTypeChromeOs(AccessPropertyValue::NOT_SET),
     m_deviceTypeChromeOsHasBeenSet(false),
     m_deviceTypeZeroClient(AccessPropertyValue::NOT_SET),
-    m_deviceTypeZeroClientHasBeenSet(false)
+    m_deviceTypeZeroClientHasBeenSet(false),
+    m_deviceTypeLinux(AccessPropertyValue::NOT_SET),
+    m_deviceTypeLinuxHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -106,6 +110,13 @@ WorkspaceAccessProperties& WorkspaceAccessProperties::operator =(JsonView jsonVa
     m_deviceTypeZeroClientHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DeviceTypeLinux"))
+  {
+    m_deviceTypeLinux = AccessPropertyValueMapper::GetAccessPropertyValueForName(jsonValue.GetString("DeviceTypeLinux"));
+
+    m_deviceTypeLinuxHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -146,6 +157,11 @@ JsonValue WorkspaceAccessProperties::Jsonize() const
   if(m_deviceTypeZeroClientHasBeenSet)
   {
    payload.WithString("DeviceTypeZeroClient", AccessPropertyValueMapper::GetNameForAccessPropertyValue(m_deviceTypeZeroClient));
+  }
+
+  if(m_deviceTypeLinuxHasBeenSet)
+  {
+   payload.WithString("DeviceTypeLinux", AccessPropertyValueMapper::GetNameForAccessPropertyValue(m_deviceTypeLinux));
   }
 
   return payload;

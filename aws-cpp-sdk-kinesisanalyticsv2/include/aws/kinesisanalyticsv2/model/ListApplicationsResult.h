@@ -75,7 +75,7 @@ namespace Model
      * there are no additional results. Pass this token into a subsequent command to
      * retrieve the next set of items For more information about pagination, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using
-     * the AWS Command Line Interface's Pagination Options</a>.</p>
+     * the Amazon Command Line Interface's Pagination Options</a>.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
@@ -84,7 +84,7 @@ namespace Model
      * there are no additional results. Pass this token into a subsequent command to
      * retrieve the next set of items For more information about pagination, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using
-     * the AWS Command Line Interface's Pagination Options</a>.</p>
+     * the Amazon Command Line Interface's Pagination Options</a>.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
@@ -93,7 +93,7 @@ namespace Model
      * there are no additional results. Pass this token into a subsequent command to
      * retrieve the next set of items For more information about pagination, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using
-     * the AWS Command Line Interface's Pagination Options</a>.</p>
+     * the Amazon Command Line Interface's Pagination Options</a>.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
@@ -102,7 +102,7 @@ namespace Model
      * there are no additional results. Pass this token into a subsequent command to
      * retrieve the next set of items For more information about pagination, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using
-     * the AWS Command Line Interface's Pagination Options</a>.</p>
+     * the Amazon Command Line Interface's Pagination Options</a>.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
@@ -111,7 +111,7 @@ namespace Model
      * there are no additional results. Pass this token into a subsequent command to
      * retrieve the next set of items For more information about pagination, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using
-     * the AWS Command Line Interface's Pagination Options</a>.</p>
+     * the Amazon Command Line Interface's Pagination Options</a>.</p>
      */
     inline ListApplicationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
@@ -120,7 +120,7 @@ namespace Model
      * there are no additional results. Pass this token into a subsequent command to
      * retrieve the next set of items For more information about pagination, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using
-     * the AWS Command Line Interface's Pagination Options</a>.</p>
+     * the Amazon Command Line Interface's Pagination Options</a>.</p>
      */
     inline ListApplicationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
@@ -129,7 +129,7 @@ namespace Model
      * there are no additional results. Pass this token into a subsequent command to
      * retrieve the next set of items For more information about pagination, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using
-     * the AWS Command Line Interface's Pagination Options</a>.</p>
+     * the Amazon Command Line Interface's Pagination Options</a>.</p>
      */
     inline ListApplicationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

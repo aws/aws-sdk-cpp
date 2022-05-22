@@ -35,89 +35,109 @@ namespace Model
 
 
     /**
-     * <p>The encrypted copy of the private key. When you use the HTTP API or the AWS
-     * CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+     * <p>The encrypted copy of the private key. When you use the HTTP API or the
+     * Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not
+     * Base64-encoded.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetPrivateKeyCiphertextBlob() const{ return m_privateKeyCiphertextBlob; }
 
     /**
-     * <p>The encrypted copy of the private key. When you use the HTTP API or the AWS
-     * CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+     * <p>The encrypted copy of the private key. When you use the HTTP API or the
+     * Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not
+     * Base64-encoded.</p>
      */
     inline void SetPrivateKeyCiphertextBlob(const Aws::Utils::ByteBuffer& value) { m_privateKeyCiphertextBlob = value; }
 
     /**
-     * <p>The encrypted copy of the private key. When you use the HTTP API or the AWS
-     * CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+     * <p>The encrypted copy of the private key. When you use the HTTP API or the
+     * Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not
+     * Base64-encoded.</p>
      */
     inline void SetPrivateKeyCiphertextBlob(Aws::Utils::ByteBuffer&& value) { m_privateKeyCiphertextBlob = std::move(value); }
 
     /**
-     * <p>The encrypted copy of the private key. When you use the HTTP API or the AWS
-     * CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+     * <p>The encrypted copy of the private key. When you use the HTTP API or the
+     * Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not
+     * Base64-encoded.</p>
      */
     inline GenerateDataKeyPairResult& WithPrivateKeyCiphertextBlob(const Aws::Utils::ByteBuffer& value) { SetPrivateKeyCiphertextBlob(value); return *this;}
 
     /**
-     * <p>The encrypted copy of the private key. When you use the HTTP API or the AWS
-     * CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+     * <p>The encrypted copy of the private key. When you use the HTTP API or the
+     * Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not
+     * Base64-encoded.</p>
      */
     inline GenerateDataKeyPairResult& WithPrivateKeyCiphertextBlob(Aws::Utils::ByteBuffer&& value) { SetPrivateKeyCiphertextBlob(std::move(value)); return *this;}
 
 
     /**
-     * <p>The plaintext copy of the private key. When you use the HTTP API or the AWS
-     * CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+     * <p>The plaintext copy of the private key. When you use the HTTP API or the
+     * Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not
+     * Base64-encoded.</p>
      */
     inline const Aws::Utils::CryptoBuffer& GetPrivateKeyPlaintext() const{ return m_privateKeyPlaintext; }
 
     /**
-     * <p>The plaintext copy of the private key. When you use the HTTP API or the AWS
-     * CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+     * <p>The plaintext copy of the private key. When you use the HTTP API or the
+     * Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not
+     * Base64-encoded.</p>
      */
     inline void SetPrivateKeyPlaintext(const Aws::Utils::CryptoBuffer& value) { m_privateKeyPlaintext = value; }
 
     /**
-     * <p>The plaintext copy of the private key. When you use the HTTP API or the AWS
-     * CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+     * <p>The plaintext copy of the private key. When you use the HTTP API or the
+     * Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not
+     * Base64-encoded.</p>
      */
     inline void SetPrivateKeyPlaintext(Aws::Utils::CryptoBuffer&& value) { m_privateKeyPlaintext = std::move(value); }
 
     /**
-     * <p>The plaintext copy of the private key. When you use the HTTP API or the AWS
-     * CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+     * <p>The plaintext copy of the private key. When you use the HTTP API or the
+     * Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not
+     * Base64-encoded.</p>
      */
     inline GenerateDataKeyPairResult& WithPrivateKeyPlaintext(const Aws::Utils::CryptoBuffer& value) { SetPrivateKeyPlaintext(value); return *this;}
 
     /**
-     * <p>The plaintext copy of the private key. When you use the HTTP API or the AWS
-     * CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+     * <p>The plaintext copy of the private key. When you use the HTTP API or the
+     * Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not
+     * Base64-encoded.</p>
      */
     inline GenerateDataKeyPairResult& WithPrivateKeyPlaintext(Aws::Utils::CryptoBuffer&& value) { SetPrivateKeyPlaintext(std::move(value)); return *this;}
 
 
     /**
-     * <p>The public key (in plaintext).</p>
+     * <p>The public key (in plaintext). When you use the HTTP API or the Amazon Web
+     * Services CLI, the value is Base64-encoded. Otherwise, it is not
+     * Base64-encoded.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetPublicKey() const{ return m_publicKey; }
 
     /**
-     * <p>The public key (in plaintext).</p>
+     * <p>The public key (in plaintext). When you use the HTTP API or the Amazon Web
+     * Services CLI, the value is Base64-encoded. Otherwise, it is not
+     * Base64-encoded.</p>
      */
     inline void SetPublicKey(const Aws::Utils::ByteBuffer& value) { m_publicKey = value; }
 
     /**
-     * <p>The public key (in plaintext).</p>
+     * <p>The public key (in plaintext). When you use the HTTP API or the Amazon Web
+     * Services CLI, the value is Base64-encoded. Otherwise, it is not
+     * Base64-encoded.</p>
      */
     inline void SetPublicKey(Aws::Utils::ByteBuffer&& value) { m_publicKey = std::move(value); }
 
     /**
-     * <p>The public key (in plaintext).</p>
+     * <p>The public key (in plaintext). When you use the HTTP API or the Amazon Web
+     * Services CLI, the value is Base64-encoded. Otherwise, it is not
+     * Base64-encoded.</p>
      */
     inline GenerateDataKeyPairResult& WithPublicKey(const Aws::Utils::ByteBuffer& value) { SetPublicKey(value); return *this;}
 
     /**
-     * <p>The public key (in plaintext).</p>
+     * <p>The public key (in plaintext). When you use the HTTP API or the Amazon Web
+     * Services CLI, the value is Base64-encoded. Otherwise, it is not
+     * Base64-encoded.</p>
      */
     inline GenerateDataKeyPairResult& WithPublicKey(Aws::Utils::ByteBuffer&& value) { SetPublicKey(std::move(value)); return *this;}
 
@@ -125,49 +145,49 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
-     * ARN</a>) of the CMK that encrypted the private key.</p>
+     * ARN</a>) of the KMS key that encrypted the private key.</p>
      */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
-     * ARN</a>) of the CMK that encrypted the private key.</p>
+     * ARN</a>) of the KMS key that encrypted the private key.</p>
      */
     inline void SetKeyId(const Aws::String& value) { m_keyId = value; }
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
-     * ARN</a>) of the CMK that encrypted the private key.</p>
+     * ARN</a>) of the KMS key that encrypted the private key.</p>
      */
     inline void SetKeyId(Aws::String&& value) { m_keyId = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
-     * ARN</a>) of the CMK that encrypted the private key.</p>
+     * ARN</a>) of the KMS key that encrypted the private key.</p>
      */
     inline void SetKeyId(const char* value) { m_keyId.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
-     * ARN</a>) of the CMK that encrypted the private key.</p>
+     * ARN</a>) of the KMS key that encrypted the private key.</p>
      */
     inline GenerateDataKeyPairResult& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
-     * ARN</a>) of the CMK that encrypted the private key.</p>
+     * ARN</a>) of the KMS key that encrypted the private key.</p>
      */
     inline GenerateDataKeyPairResult& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
-     * ARN</a>) of the CMK that encrypted the private key.</p>
+     * ARN</a>) of the KMS key that encrypted the private key.</p>
      */
     inline GenerateDataKeyPairResult& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 

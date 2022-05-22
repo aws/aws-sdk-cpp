@@ -9,6 +9,7 @@
 #include <aws/mediaconvert/model/M2tsAudioDuration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediaconvert/model/M2tsBufferModel.h>
+#include <aws/mediaconvert/model/M2tsDataPtsControl.h>
 #include <aws/mediaconvert/model/DvbNitSettings.h>
 #include <aws/mediaconvert/model/DvbSdtSettings.h>
 #include <aws/mediaconvert/model/DvbTdtSettings.h>
@@ -16,6 +17,7 @@
 #include <aws/mediaconvert/model/M2tsEbpPlacement.h>
 #include <aws/mediaconvert/model/M2tsEsRateInPes.h>
 #include <aws/mediaconvert/model/M2tsForceTsVideoEbpOrder.h>
+#include <aws/mediaconvert/model/M2tsKlvMetadata.h>
 #include <aws/mediaconvert/model/M2tsNielsenId3.h>
 #include <aws/mediaconvert/model/M2tsPcrControl.h>
 #include <aws/mediaconvert/model/M2tsRateMode.h>
@@ -347,75 +349,148 @@ namespace Model
 
 
     /**
-     * Inserts DVB Network Information Table (NIT) at the specified table repetition
-     * interval.
+     * If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with
+     * Presentation Timestamp (PTS) values greater than or equal to the first video
+     * packet PTS (MediaConvert drops captions and data packets with lesser PTS
+     * values). Keep the default value (AUTO) to allow all PTS values.
+     */
+    inline const M2tsDataPtsControl& GetDataPTSControl() const{ return m_dataPTSControl; }
+
+    /**
+     * If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with
+     * Presentation Timestamp (PTS) values greater than or equal to the first video
+     * packet PTS (MediaConvert drops captions and data packets with lesser PTS
+     * values). Keep the default value (AUTO) to allow all PTS values.
+     */
+    inline bool DataPTSControlHasBeenSet() const { return m_dataPTSControlHasBeenSet; }
+
+    /**
+     * If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with
+     * Presentation Timestamp (PTS) values greater than or equal to the first video
+     * packet PTS (MediaConvert drops captions and data packets with lesser PTS
+     * values). Keep the default value (AUTO) to allow all PTS values.
+     */
+    inline void SetDataPTSControl(const M2tsDataPtsControl& value) { m_dataPTSControlHasBeenSet = true; m_dataPTSControl = value; }
+
+    /**
+     * If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with
+     * Presentation Timestamp (PTS) values greater than or equal to the first video
+     * packet PTS (MediaConvert drops captions and data packets with lesser PTS
+     * values). Keep the default value (AUTO) to allow all PTS values.
+     */
+    inline void SetDataPTSControl(M2tsDataPtsControl&& value) { m_dataPTSControlHasBeenSet = true; m_dataPTSControl = std::move(value); }
+
+    /**
+     * If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with
+     * Presentation Timestamp (PTS) values greater than or equal to the first video
+     * packet PTS (MediaConvert drops captions and data packets with lesser PTS
+     * values). Keep the default value (AUTO) to allow all PTS values.
+     */
+    inline M2tsSettings& WithDataPTSControl(const M2tsDataPtsControl& value) { SetDataPTSControl(value); return *this;}
+
+    /**
+     * If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with
+     * Presentation Timestamp (PTS) values greater than or equal to the first video
+     * packet PTS (MediaConvert drops captions and data packets with lesser PTS
+     * values). Keep the default value (AUTO) to allow all PTS values.
+     */
+    inline M2tsSettings& WithDataPTSControl(M2tsDataPtsControl&& value) { SetDataPTSControl(std::move(value)); return *this;}
+
+
+    /**
+     * Use these settings to insert a DVB Network Information Table (NIT) in the
+     * transport stream of this output. When you work directly in your JSON job
+     * specification, include this object only when your job has a transport stream
+     * output and the container settings contain the object M2tsSettings.
      */
     inline const DvbNitSettings& GetDvbNitSettings() const{ return m_dvbNitSettings; }
 
     /**
-     * Inserts DVB Network Information Table (NIT) at the specified table repetition
-     * interval.
+     * Use these settings to insert a DVB Network Information Table (NIT) in the
+     * transport stream of this output. When you work directly in your JSON job
+     * specification, include this object only when your job has a transport stream
+     * output and the container settings contain the object M2tsSettings.
      */
     inline bool DvbNitSettingsHasBeenSet() const { return m_dvbNitSettingsHasBeenSet; }
 
     /**
-     * Inserts DVB Network Information Table (NIT) at the specified table repetition
-     * interval.
+     * Use these settings to insert a DVB Network Information Table (NIT) in the
+     * transport stream of this output. When you work directly in your JSON job
+     * specification, include this object only when your job has a transport stream
+     * output and the container settings contain the object M2tsSettings.
      */
     inline void SetDvbNitSettings(const DvbNitSettings& value) { m_dvbNitSettingsHasBeenSet = true; m_dvbNitSettings = value; }
 
     /**
-     * Inserts DVB Network Information Table (NIT) at the specified table repetition
-     * interval.
+     * Use these settings to insert a DVB Network Information Table (NIT) in the
+     * transport stream of this output. When you work directly in your JSON job
+     * specification, include this object only when your job has a transport stream
+     * output and the container settings contain the object M2tsSettings.
      */
     inline void SetDvbNitSettings(DvbNitSettings&& value) { m_dvbNitSettingsHasBeenSet = true; m_dvbNitSettings = std::move(value); }
 
     /**
-     * Inserts DVB Network Information Table (NIT) at the specified table repetition
-     * interval.
+     * Use these settings to insert a DVB Network Information Table (NIT) in the
+     * transport stream of this output. When you work directly in your JSON job
+     * specification, include this object only when your job has a transport stream
+     * output and the container settings contain the object M2tsSettings.
      */
     inline M2tsSettings& WithDvbNitSettings(const DvbNitSettings& value) { SetDvbNitSettings(value); return *this;}
 
     /**
-     * Inserts DVB Network Information Table (NIT) at the specified table repetition
-     * interval.
+     * Use these settings to insert a DVB Network Information Table (NIT) in the
+     * transport stream of this output. When you work directly in your JSON job
+     * specification, include this object only when your job has a transport stream
+     * output and the container settings contain the object M2tsSettings.
      */
     inline M2tsSettings& WithDvbNitSettings(DvbNitSettings&& value) { SetDvbNitSettings(std::move(value)); return *this;}
 
 
     /**
-     * Inserts DVB Service Description Table (NIT) at the specified table repetition
-     * interval.
+     * Use these settings to insert a DVB Service Description Table (SDT) in the
+     * transport stream of this output. When you work directly in your JSON job
+     * specification, include this object only when your job has a transport stream
+     * output and the container settings contain the object M2tsSettings.
      */
     inline const DvbSdtSettings& GetDvbSdtSettings() const{ return m_dvbSdtSettings; }
 
     /**
-     * Inserts DVB Service Description Table (NIT) at the specified table repetition
-     * interval.
+     * Use these settings to insert a DVB Service Description Table (SDT) in the
+     * transport stream of this output. When you work directly in your JSON job
+     * specification, include this object only when your job has a transport stream
+     * output and the container settings contain the object M2tsSettings.
      */
     inline bool DvbSdtSettingsHasBeenSet() const { return m_dvbSdtSettingsHasBeenSet; }
 
     /**
-     * Inserts DVB Service Description Table (NIT) at the specified table repetition
-     * interval.
+     * Use these settings to insert a DVB Service Description Table (SDT) in the
+     * transport stream of this output. When you work directly in your JSON job
+     * specification, include this object only when your job has a transport stream
+     * output and the container settings contain the object M2tsSettings.
      */
     inline void SetDvbSdtSettings(const DvbSdtSettings& value) { m_dvbSdtSettingsHasBeenSet = true; m_dvbSdtSettings = value; }
 
     /**
-     * Inserts DVB Service Description Table (NIT) at the specified table repetition
-     * interval.
+     * Use these settings to insert a DVB Service Description Table (SDT) in the
+     * transport stream of this output. When you work directly in your JSON job
+     * specification, include this object only when your job has a transport stream
+     * output and the container settings contain the object M2tsSettings.
      */
     inline void SetDvbSdtSettings(DvbSdtSettings&& value) { m_dvbSdtSettingsHasBeenSet = true; m_dvbSdtSettings = std::move(value); }
 
     /**
-     * Inserts DVB Service Description Table (NIT) at the specified table repetition
-     * interval.
+     * Use these settings to insert a DVB Service Description Table (SDT) in the
+     * transport stream of this output. When you work directly in your JSON job
+     * specification, include this object only when your job has a transport stream
+     * output and the container settings contain the object M2tsSettings.
      */
     inline M2tsSettings& WithDvbSdtSettings(const DvbSdtSettings& value) { SetDvbSdtSettings(value); return *this;}
 
     /**
-     * Inserts DVB Service Description Table (NIT) at the specified table repetition
-     * interval.
+     * Use these settings to insert a DVB Service Description Table (SDT) in the
+     * transport stream of this output. When you work directly in your JSON job
+     * specification, include this object only when your job has a transport stream
+     * output and the container settings contain the object M2tsSettings.
      */
     inline M2tsSettings& WithDvbSdtSettings(DvbSdtSettings&& value) { SetDvbSdtSettings(std::move(value)); return *this;}
 
@@ -464,38 +539,50 @@ namespace Model
 
 
     /**
-     * Inserts DVB Time and Date Table (TDT) at the specified table repetition
-     * interval.
+     * Use these settings to insert a DVB Time and Date Table (TDT) in the transport
+     * stream of this output. When you work directly in your JSON job specification,
+     * include this object only when your job has a transport stream output and the
+     * container settings contain the object M2tsSettings.
      */
     inline const DvbTdtSettings& GetDvbTdtSettings() const{ return m_dvbTdtSettings; }
 
     /**
-     * Inserts DVB Time and Date Table (TDT) at the specified table repetition
-     * interval.
+     * Use these settings to insert a DVB Time and Date Table (TDT) in the transport
+     * stream of this output. When you work directly in your JSON job specification,
+     * include this object only when your job has a transport stream output and the
+     * container settings contain the object M2tsSettings.
      */
     inline bool DvbTdtSettingsHasBeenSet() const { return m_dvbTdtSettingsHasBeenSet; }
 
     /**
-     * Inserts DVB Time and Date Table (TDT) at the specified table repetition
-     * interval.
+     * Use these settings to insert a DVB Time and Date Table (TDT) in the transport
+     * stream of this output. When you work directly in your JSON job specification,
+     * include this object only when your job has a transport stream output and the
+     * container settings contain the object M2tsSettings.
      */
     inline void SetDvbTdtSettings(const DvbTdtSettings& value) { m_dvbTdtSettingsHasBeenSet = true; m_dvbTdtSettings = value; }
 
     /**
-     * Inserts DVB Time and Date Table (TDT) at the specified table repetition
-     * interval.
+     * Use these settings to insert a DVB Time and Date Table (TDT) in the transport
+     * stream of this output. When you work directly in your JSON job specification,
+     * include this object only when your job has a transport stream output and the
+     * container settings contain the object M2tsSettings.
      */
     inline void SetDvbTdtSettings(DvbTdtSettings&& value) { m_dvbTdtSettingsHasBeenSet = true; m_dvbTdtSettings = std::move(value); }
 
     /**
-     * Inserts DVB Time and Date Table (TDT) at the specified table repetition
-     * interval.
+     * Use these settings to insert a DVB Time and Date Table (TDT) in the transport
+     * stream of this output. When you work directly in your JSON job specification,
+     * include this object only when your job has a transport stream output and the
+     * container settings contain the object M2tsSettings.
      */
     inline M2tsSettings& WithDvbTdtSettings(const DvbTdtSettings& value) { SetDvbTdtSettings(value); return *this;}
 
     /**
-     * Inserts DVB Time and Date Table (TDT) at the specified table repetition
-     * interval.
+     * Use these settings to insert a DVB Time and Date Table (TDT) in the transport
+     * stream of this output. When you work directly in your JSON job specification,
+     * include this object only when your job has a transport stream output and the
+     * container settings contain the object M2tsSettings.
      */
     inline M2tsSettings& WithDvbTdtSettings(DvbTdtSettings&& value) { SetDvbTdtSettings(std::move(value)); return *this;}
 
@@ -728,6 +815,43 @@ namespace Model
      * The length, in seconds, of each fragment. Only used with EBP markers.
      */
     inline M2tsSettings& WithFragmentTime(double value) { SetFragmentTime(value); return *this;}
+
+
+    /**
+     * Applies to MPEG-TS outputs. Use this setting to specify whether the service
+     * inserts the KLV metadata from the input in this output.
+     */
+    inline const M2tsKlvMetadata& GetKlvMetadata() const{ return m_klvMetadata; }
+
+    /**
+     * Applies to MPEG-TS outputs. Use this setting to specify whether the service
+     * inserts the KLV metadata from the input in this output.
+     */
+    inline bool KlvMetadataHasBeenSet() const { return m_klvMetadataHasBeenSet; }
+
+    /**
+     * Applies to MPEG-TS outputs. Use this setting to specify whether the service
+     * inserts the KLV metadata from the input in this output.
+     */
+    inline void SetKlvMetadata(const M2tsKlvMetadata& value) { m_klvMetadataHasBeenSet = true; m_klvMetadata = value; }
+
+    /**
+     * Applies to MPEG-TS outputs. Use this setting to specify whether the service
+     * inserts the KLV metadata from the input in this output.
+     */
+    inline void SetKlvMetadata(M2tsKlvMetadata&& value) { m_klvMetadataHasBeenSet = true; m_klvMetadata = std::move(value); }
+
+    /**
+     * Applies to MPEG-TS outputs. Use this setting to specify whether the service
+     * inserts the KLV metadata from the input in this output.
+     */
+    inline M2tsSettings& WithKlvMetadata(const M2tsKlvMetadata& value) { SetKlvMetadata(value); return *this;}
+
+    /**
+     * Applies to MPEG-TS outputs. Use this setting to specify whether the service
+     * inserts the KLV metadata from the input in this output.
+     */
+    inline M2tsSettings& WithKlvMetadata(M2tsKlvMetadata&& value) { SetKlvMetadata(std::move(value)); return *this;}
 
 
     /**
@@ -1520,6 +1644,9 @@ namespace Model
     M2tsBufferModel m_bufferModel;
     bool m_bufferModelHasBeenSet;
 
+    M2tsDataPtsControl m_dataPTSControl;
+    bool m_dataPTSControlHasBeenSet;
+
     DvbNitSettings m_dvbNitSettings;
     bool m_dvbNitSettingsHasBeenSet;
 
@@ -1549,6 +1676,9 @@ namespace Model
 
     double m_fragmentTime;
     bool m_fragmentTimeHasBeenSet;
+
+    M2tsKlvMetadata m_klvMetadata;
+    bool m_klvMetadataHasBeenSet;
 
     int m_maxPcrInterval;
     bool m_maxPcrIntervalHasBeenSet;

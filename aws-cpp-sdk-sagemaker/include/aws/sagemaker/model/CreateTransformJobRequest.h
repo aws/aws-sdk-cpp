@@ -45,50 +45,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the transform job. The name must be unique within an AWS Region
-     * in an AWS account. </p>
+     * <p>The name of the transform job. The name must be unique within an Amazon Web
+     * Services Region in an Amazon Web Services account. </p>
      */
     inline const Aws::String& GetTransformJobName() const{ return m_transformJobName; }
 
     /**
-     * <p>The name of the transform job. The name must be unique within an AWS Region
-     * in an AWS account. </p>
+     * <p>The name of the transform job. The name must be unique within an Amazon Web
+     * Services Region in an Amazon Web Services account. </p>
      */
     inline bool TransformJobNameHasBeenSet() const { return m_transformJobNameHasBeenSet; }
 
     /**
-     * <p>The name of the transform job. The name must be unique within an AWS Region
-     * in an AWS account. </p>
+     * <p>The name of the transform job. The name must be unique within an Amazon Web
+     * Services Region in an Amazon Web Services account. </p>
      */
     inline void SetTransformJobName(const Aws::String& value) { m_transformJobNameHasBeenSet = true; m_transformJobName = value; }
 
     /**
-     * <p>The name of the transform job. The name must be unique within an AWS Region
-     * in an AWS account. </p>
+     * <p>The name of the transform job. The name must be unique within an Amazon Web
+     * Services Region in an Amazon Web Services account. </p>
      */
     inline void SetTransformJobName(Aws::String&& value) { m_transformJobNameHasBeenSet = true; m_transformJobName = std::move(value); }
 
     /**
-     * <p>The name of the transform job. The name must be unique within an AWS Region
-     * in an AWS account. </p>
+     * <p>The name of the transform job. The name must be unique within an Amazon Web
+     * Services Region in an Amazon Web Services account. </p>
      */
     inline void SetTransformJobName(const char* value) { m_transformJobNameHasBeenSet = true; m_transformJobName.assign(value); }
 
     /**
-     * <p>The name of the transform job. The name must be unique within an AWS Region
-     * in an AWS account. </p>
+     * <p>The name of the transform job. The name must be unique within an Amazon Web
+     * Services Region in an Amazon Web Services account. </p>
      */
     inline CreateTransformJobRequest& WithTransformJobName(const Aws::String& value) { SetTransformJobName(value); return *this;}
 
     /**
-     * <p>The name of the transform job. The name must be unique within an AWS Region
-     * in an AWS account. </p>
+     * <p>The name of the transform job. The name must be unique within an Amazon Web
+     * Services Region in an Amazon Web Services account. </p>
      */
     inline CreateTransformJobRequest& WithTransformJobName(Aws::String&& value) { SetTransformJobName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the transform job. The name must be unique within an AWS Region
-     * in an AWS account. </p>
+     * <p>The name of the transform job. The name must be unique within an Amazon Web
+     * Services Region in an Amazon Web Services account. </p>
      */
     inline CreateTransformJobRequest& WithTransformJobName(const char* value) { SetTransformJobName(value); return *this;}
 
@@ -96,56 +96,56 @@ namespace Model
     /**
      * <p>The name of the model that you want to use for the transform job.
      * <code>ModelName</code> must be the name of an existing Amazon SageMaker model
-     * within an AWS Region in an AWS account.</p>
+     * within an Amazon Web Services Region in an Amazon Web Services account.</p>
      */
     inline const Aws::String& GetModelName() const{ return m_modelName; }
 
     /**
      * <p>The name of the model that you want to use for the transform job.
      * <code>ModelName</code> must be the name of an existing Amazon SageMaker model
-     * within an AWS Region in an AWS account.</p>
+     * within an Amazon Web Services Region in an Amazon Web Services account.</p>
      */
     inline bool ModelNameHasBeenSet() const { return m_modelNameHasBeenSet; }
 
     /**
      * <p>The name of the model that you want to use for the transform job.
      * <code>ModelName</code> must be the name of an existing Amazon SageMaker model
-     * within an AWS Region in an AWS account.</p>
+     * within an Amazon Web Services Region in an Amazon Web Services account.</p>
      */
     inline void SetModelName(const Aws::String& value) { m_modelNameHasBeenSet = true; m_modelName = value; }
 
     /**
      * <p>The name of the model that you want to use for the transform job.
      * <code>ModelName</code> must be the name of an existing Amazon SageMaker model
-     * within an AWS Region in an AWS account.</p>
+     * within an Amazon Web Services Region in an Amazon Web Services account.</p>
      */
     inline void SetModelName(Aws::String&& value) { m_modelNameHasBeenSet = true; m_modelName = std::move(value); }
 
     /**
      * <p>The name of the model that you want to use for the transform job.
      * <code>ModelName</code> must be the name of an existing Amazon SageMaker model
-     * within an AWS Region in an AWS account.</p>
+     * within an Amazon Web Services Region in an Amazon Web Services account.</p>
      */
     inline void SetModelName(const char* value) { m_modelNameHasBeenSet = true; m_modelName.assign(value); }
 
     /**
      * <p>The name of the model that you want to use for the transform job.
      * <code>ModelName</code> must be the name of an existing Amazon SageMaker model
-     * within an AWS Region in an AWS account.</p>
+     * within an Amazon Web Services Region in an Amazon Web Services account.</p>
      */
     inline CreateTransformJobRequest& WithModelName(const Aws::String& value) { SetModelName(value); return *this;}
 
     /**
      * <p>The name of the model that you want to use for the transform job.
      * <code>ModelName</code> must be the name of an existing Amazon SageMaker model
-     * within an AWS Region in an AWS account.</p>
+     * within an Amazon Web Services Region in an Amazon Web Services account.</p>
      */
     inline CreateTransformJobRequest& WithModelName(Aws::String&& value) { SetModelName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the model that you want to use for the transform job.
      * <code>ModelName</code> must be the name of an existing Amazon SageMaker model
-     * within an AWS Region in an AWS account.</p>
+     * within an Amazon Web Services Region in an Amazon Web Services account.</p>
      */
     inline CreateTransformJobRequest& WithModelName(const char* value) { SetModelName(value); return *this;}
 
@@ -247,7 +247,10 @@ namespace Model
      * size of a record in MB, divide the size of your dataset by the number of
      * records. To ensure that the records fit within the maximum payload size, we
      * recommend using a slightly larger value. The default value is <code>6</code> MB.
-     * </p> <p>For cases where the payload might be arbitrarily large and is
+     * </p> <p>The value of <code>MaxPayloadInMB</code> cannot be greater than 100 MB.
+     * If you specify the <code>MaxConcurrentTransforms</code> parameter, the value of
+     * <code>(MaxConcurrentTransforms * MaxPayloadInMB)</code> also cannot exceed 100
+     * MB.</p> <p>For cases where the payload might be arbitrarily large and is
      * transmitted using HTTP chunked encoding, set the value to <code>0</code>. This
      * feature works only in supported algorithms. Currently, Amazon SageMaker built-in
      * algorithms do not support HTTP chunked encoding.</p>
@@ -261,7 +264,10 @@ namespace Model
      * size of a record in MB, divide the size of your dataset by the number of
      * records. To ensure that the records fit within the maximum payload size, we
      * recommend using a slightly larger value. The default value is <code>6</code> MB.
-     * </p> <p>For cases where the payload might be arbitrarily large and is
+     * </p> <p>The value of <code>MaxPayloadInMB</code> cannot be greater than 100 MB.
+     * If you specify the <code>MaxConcurrentTransforms</code> parameter, the value of
+     * <code>(MaxConcurrentTransforms * MaxPayloadInMB)</code> also cannot exceed 100
+     * MB.</p> <p>For cases where the payload might be arbitrarily large and is
      * transmitted using HTTP chunked encoding, set the value to <code>0</code>. This
      * feature works only in supported algorithms. Currently, Amazon SageMaker built-in
      * algorithms do not support HTTP chunked encoding.</p>
@@ -275,7 +281,10 @@ namespace Model
      * size of a record in MB, divide the size of your dataset by the number of
      * records. To ensure that the records fit within the maximum payload size, we
      * recommend using a slightly larger value. The default value is <code>6</code> MB.
-     * </p> <p>For cases where the payload might be arbitrarily large and is
+     * </p> <p>The value of <code>MaxPayloadInMB</code> cannot be greater than 100 MB.
+     * If you specify the <code>MaxConcurrentTransforms</code> parameter, the value of
+     * <code>(MaxConcurrentTransforms * MaxPayloadInMB)</code> also cannot exceed 100
+     * MB.</p> <p>For cases where the payload might be arbitrarily large and is
      * transmitted using HTTP chunked encoding, set the value to <code>0</code>. This
      * feature works only in supported algorithms. Currently, Amazon SageMaker built-in
      * algorithms do not support HTTP chunked encoding.</p>
@@ -289,7 +298,10 @@ namespace Model
      * size of a record in MB, divide the size of your dataset by the number of
      * records. To ensure that the records fit within the maximum payload size, we
      * recommend using a slightly larger value. The default value is <code>6</code> MB.
-     * </p> <p>For cases where the payload might be arbitrarily large and is
+     * </p> <p>The value of <code>MaxPayloadInMB</code> cannot be greater than 100 MB.
+     * If you specify the <code>MaxConcurrentTransforms</code> parameter, the value of
+     * <code>(MaxConcurrentTransforms * MaxPayloadInMB)</code> also cannot exceed 100
+     * MB.</p> <p>For cases where the payload might be arbitrarily large and is
      * transmitted using HTTP chunked encoding, set the value to <code>0</code>. This
      * feature works only in supported algorithms. Currently, Amazon SageMaker built-in
      * algorithms do not support HTTP chunked encoding.</p>
@@ -642,64 +654,64 @@ namespace Model
     /**
      * <p>(Optional) An array of key-value pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-     * Guide</i>.</p>
+     * Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost
+     * Management User Guide</i>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
      * <p>(Optional) An array of key-value pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-     * Guide</i>.</p>
+     * Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost
+     * Management User Guide</i>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>(Optional) An array of key-value pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-     * Guide</i>.</p>
+     * Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost
+     * Management User Guide</i>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>(Optional) An array of key-value pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-     * Guide</i>.</p>
+     * Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost
+     * Management User Guide</i>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>(Optional) An array of key-value pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-     * Guide</i>.</p>
+     * Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost
+     * Management User Guide</i>.</p>
      */
     inline CreateTransformJobRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
      * <p>(Optional) An array of key-value pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-     * Guide</i>.</p>
+     * Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost
+     * Management User Guide</i>.</p>
      */
     inline CreateTransformJobRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>(Optional) An array of key-value pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-     * Guide</i>.</p>
+     * Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost
+     * Management User Guide</i>.</p>
      */
     inline CreateTransformJobRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
      * <p>(Optional) An array of key-value pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-     * Guide</i>.</p>
+     * Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost
+     * Management User Guide</i>.</p>
      */
     inline CreateTransformJobRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

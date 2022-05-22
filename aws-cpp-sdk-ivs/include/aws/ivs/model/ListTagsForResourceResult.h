@@ -33,90 +33,69 @@ namespace Model
     ListTagsForResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline ListTagsForResourceResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline ListTagsForResourceResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline ListTagsForResourceResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
 
-    
+    /**
+     * <p/>
+     */
     inline ListTagsForResourceResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
 
-    
+    /**
+     * <p/>
+     */
     inline ListTagsForResourceResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
-    
+    /**
+     * <p/>
+     */
     inline ListTagsForResourceResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
-    
+    /**
+     * <p/>
+     */
     inline ListTagsForResourceResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
-    
+    /**
+     * <p/>
+     */
     inline ListTagsForResourceResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
 
-    
+    /**
+     * <p/>
+     */
     inline ListTagsForResourceResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
-
-
-    /**
-     * <p>If there are more tags than <code>maxResults</code>, use
-     * <code>nextToken</code> in the request to get the next set.</p>
-     */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>If there are more tags than <code>maxResults</code>, use
-     * <code>nextToken</code> in the request to get the next set.</p>
-     */
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>If there are more tags than <code>maxResults</code>, use
-     * <code>nextToken</code> in the request to get the next set.</p>
-     */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>If there are more tags than <code>maxResults</code>, use
-     * <code>nextToken</code> in the request to get the next set.</p>
-     */
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>If there are more tags than <code>maxResults</code>, use
-     * <code>nextToken</code> in the request to get the next set.</p>
-     */
-    inline ListTagsForResourceResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>If there are more tags than <code>maxResults</code>, use
-     * <code>nextToken</code> in the request to get the next set.</p>
-     */
-    inline ListTagsForResourceResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>If there are more tags than <code>maxResults</code>, use
-     * <code>nextToken</code> in the request to get the next set.</p>
-     */
-    inline ListTagsForResourceResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-
-    Aws::String m_nextToken;
   };
 
 } // namespace Model

@@ -81,6 +81,15 @@ GetLayerVersionResult& GetLayerVersionResult::operator =(const Aws::AmazonWebSer
 
   }
 
+  if(jsonValue.ValueExists("CompatibleArchitectures"))
+  {
+    Array<JsonView> compatibleArchitecturesJsonList = jsonValue.GetArray("CompatibleArchitectures");
+    for(unsigned compatibleArchitecturesIndex = 0; compatibleArchitecturesIndex < compatibleArchitecturesJsonList.GetLength(); ++compatibleArchitecturesIndex)
+    {
+      m_compatibleArchitectures.push_back(ArchitectureMapper::GetArchitectureForName(compatibleArchitecturesJsonList[compatibleArchitecturesIndex].AsString()));
+    }
+  }
+
 
 
   return *this;

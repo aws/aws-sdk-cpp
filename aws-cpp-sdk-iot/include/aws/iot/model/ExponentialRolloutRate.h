@@ -68,30 +68,30 @@ namespace Model
 
 
     /**
-     * <p>The exponential factor to increase the rate of rollout for a job.</p> <p>AWS
-     * IoT supports up to one digit after the decimal (for example, 1.5, but not
-     * 1.55).</p>
+     * <p>The exponential factor to increase the rate of rollout for a job.</p>
+     * <p>Amazon Web Services IoT Core supports up to one digit after the decimal (for
+     * example, 1.5, but not 1.55).</p>
      */
     inline double GetIncrementFactor() const{ return m_incrementFactor; }
 
     /**
-     * <p>The exponential factor to increase the rate of rollout for a job.</p> <p>AWS
-     * IoT supports up to one digit after the decimal (for example, 1.5, but not
-     * 1.55).</p>
+     * <p>The exponential factor to increase the rate of rollout for a job.</p>
+     * <p>Amazon Web Services IoT Core supports up to one digit after the decimal (for
+     * example, 1.5, but not 1.55).</p>
      */
     inline bool IncrementFactorHasBeenSet() const { return m_incrementFactorHasBeenSet; }
 
     /**
-     * <p>The exponential factor to increase the rate of rollout for a job.</p> <p>AWS
-     * IoT supports up to one digit after the decimal (for example, 1.5, but not
-     * 1.55).</p>
+     * <p>The exponential factor to increase the rate of rollout for a job.</p>
+     * <p>Amazon Web Services IoT Core supports up to one digit after the decimal (for
+     * example, 1.5, but not 1.55).</p>
      */
     inline void SetIncrementFactor(double value) { m_incrementFactorHasBeenSet = true; m_incrementFactor = value; }
 
     /**
-     * <p>The exponential factor to increase the rate of rollout for a job.</p> <p>AWS
-     * IoT supports up to one digit after the decimal (for example, 1.5, but not
-     * 1.55).</p>
+     * <p>The exponential factor to increase the rate of rollout for a job.</p>
+     * <p>Amazon Web Services IoT Core supports up to one digit after the decimal (for
+     * example, 1.5, but not 1.55).</p>
      */
     inline ExponentialRolloutRate& WithIncrementFactor(double value) { SetIncrementFactor(value); return *this;}
 

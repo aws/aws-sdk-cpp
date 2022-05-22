@@ -21,8 +21,10 @@
 #include <aws/iot-data/IoTDataPlaneEndpoint.h>
 #include <aws/iot-data/IoTDataPlaneErrorMarshaller.h>
 #include <aws/iot-data/model/DeleteThingShadowRequest.h>
+#include <aws/iot-data/model/GetRetainedMessageRequest.h>
 #include <aws/iot-data/model/GetThingShadowRequest.h>
 #include <aws/iot-data/model/ListNamedShadowsForThingRequest.h>
+#include <aws/iot-data/model/ListRetainedMessagesRequest.h>
 #include <aws/iot-data/model/PublishRequest.h>
 #include <aws/iot-data/model/UpdateThingShadowRequest.h>
 
@@ -73,7 +75,7 @@ IoTDataPlaneClient::~IoTDataPlaneClient()
 {
 }
 
-void IoTDataPlaneClient::init(const ClientConfiguration& config)
+void IoTDataPlaneClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("IoT Data Plane");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -107,11 +109,9 @@ DeleteThingShadowOutcome IoTDataPlaneClient::DeleteThingShadow(const DeleteThing
     return DeleteThingShadowOutcome(Aws::Client::AWSError<IoTDataPlaneErrors>(IoTDataPlaneErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThingName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/things/";
-  ss << request.GetThingName();
-  ss << "/shadow";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/things/");
+  uri.AddPathSegment(request.GetThingName());
+  uri.AddPathSegments("/shadow");
   return DeleteThingShadowOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_DELETE));
 }
 
@@ -133,6 +133,37 @@ void IoTDataPlaneClient::DeleteThingShadowAsyncHelper(const DeleteThingShadowReq
   handler(this, request, DeleteThingShadow(request), context);
 }
 
+GetRetainedMessageOutcome IoTDataPlaneClient::GetRetainedMessage(const GetRetainedMessageRequest& request) const
+{
+  if (!request.TopicHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetRetainedMessage", "Required field: Topic, is not set");
+    return GetRetainedMessageOutcome(Aws::Client::AWSError<IoTDataPlaneErrors>(IoTDataPlaneErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Topic]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/retainedMessage/");
+  uri.AddPathSegment(request.GetTopic());
+  return GetRetainedMessageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetRetainedMessageOutcomeCallable IoTDataPlaneClient::GetRetainedMessageCallable(const GetRetainedMessageRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetRetainedMessageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRetainedMessage(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTDataPlaneClient::GetRetainedMessageAsync(const GetRetainedMessageRequest& request, const GetRetainedMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetRetainedMessageAsyncHelper( request, handler, context ); } );
+}
+
+void IoTDataPlaneClient::GetRetainedMessageAsyncHelper(const GetRetainedMessageRequest& request, const GetRetainedMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetRetainedMessage(request), context);
+}
+
 GetThingShadowOutcome IoTDataPlaneClient::GetThingShadow(const GetThingShadowRequest& request) const
 {
   if (!request.ThingNameHasBeenSet())
@@ -141,11 +172,9 @@ GetThingShadowOutcome IoTDataPlaneClient::GetThingShadow(const GetThingShadowReq
     return GetThingShadowOutcome(Aws::Client::AWSError<IoTDataPlaneErrors>(IoTDataPlaneErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThingName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/things/";
-  ss << request.GetThingName();
-  ss << "/shadow";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/things/");
+  uri.AddPathSegment(request.GetThingName());
+  uri.AddPathSegments("/shadow");
   return GetThingShadowOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -175,10 +204,8 @@ ListNamedShadowsForThingOutcome IoTDataPlaneClient::ListNamedShadowsForThing(con
     return ListNamedShadowsForThingOutcome(Aws::Client::AWSError<IoTDataPlaneErrors>(IoTDataPlaneErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThingName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/api/things/shadow/ListNamedShadowsForThing/";
-  ss << request.GetThingName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/api/things/shadow/ListNamedShadowsForThing/");
+  uri.AddPathSegment(request.GetThingName());
   return ListNamedShadowsForThingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -200,6 +227,31 @@ void IoTDataPlaneClient::ListNamedShadowsForThingAsyncHelper(const ListNamedShad
   handler(this, request, ListNamedShadowsForThing(request), context);
 }
 
+ListRetainedMessagesOutcome IoTDataPlaneClient::ListRetainedMessages(const ListRetainedMessagesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/retainedMessage");
+  return ListRetainedMessagesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListRetainedMessagesOutcomeCallable IoTDataPlaneClient::ListRetainedMessagesCallable(const ListRetainedMessagesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListRetainedMessagesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListRetainedMessages(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTDataPlaneClient::ListRetainedMessagesAsync(const ListRetainedMessagesRequest& request, const ListRetainedMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListRetainedMessagesAsyncHelper( request, handler, context ); } );
+}
+
+void IoTDataPlaneClient::ListRetainedMessagesAsyncHelper(const ListRetainedMessagesRequest& request, const ListRetainedMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListRetainedMessages(request), context);
+}
+
 PublishOutcome IoTDataPlaneClient::Publish(const PublishRequest& request) const
 {
   if (!request.TopicHasBeenSet())
@@ -208,10 +260,8 @@ PublishOutcome IoTDataPlaneClient::Publish(const PublishRequest& request) const
     return PublishOutcome(Aws::Client::AWSError<IoTDataPlaneErrors>(IoTDataPlaneErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Topic]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/topics/";
-  ss << request.GetTopic();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/topics/");
+  uri.AddPathSegment(request.GetTopic());
   return PublishOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -241,11 +291,9 @@ UpdateThingShadowOutcome IoTDataPlaneClient::UpdateThingShadow(const UpdateThing
     return UpdateThingShadowOutcome(Aws::Client::AWSError<IoTDataPlaneErrors>(IoTDataPlaneErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThingName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/things/";
-  ss << request.GetThingName();
-  ss << "/shadow";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/things/");
+  uri.AddPathSegment(request.GetThingName());
+  uri.AddPathSegments("/shadow");
   return UpdateThingShadowOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 

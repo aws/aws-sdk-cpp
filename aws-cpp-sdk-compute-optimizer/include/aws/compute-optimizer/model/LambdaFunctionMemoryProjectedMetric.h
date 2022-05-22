@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes a projected utilization metric of an AWS Lambda function
-   * recommendation option.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes a projected utilization metric of an Lambda function recommendation
+   * option.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/LambdaFunctionMemoryProjectedMetric">AWS
    * API Reference</a></p>
    */

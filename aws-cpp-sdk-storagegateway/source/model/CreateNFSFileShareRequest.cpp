@@ -35,7 +35,10 @@ CreateNFSFileShareRequest::CreateNFSFileShareRequest() :
     m_tagsHasBeenSet(false),
     m_fileShareNameHasBeenSet(false),
     m_cacheAttributesHasBeenSet(false),
-    m_notificationPolicyHasBeenSet(false)
+    m_notificationPolicyHasBeenSet(false),
+    m_vPCEndpointDNSNameHasBeenSet(false),
+    m_bucketRegionHasBeenSet(false),
+    m_auditDestinationARNHasBeenSet(false)
 {
 }
 
@@ -157,6 +160,24 @@ Aws::String CreateNFSFileShareRequest::SerializePayload() const
   if(m_notificationPolicyHasBeenSet)
   {
    payload.WithString("NotificationPolicy", m_notificationPolicy);
+
+  }
+
+  if(m_vPCEndpointDNSNameHasBeenSet)
+  {
+   payload.WithString("VPCEndpointDNSName", m_vPCEndpointDNSName);
+
+  }
+
+  if(m_bucketRegionHasBeenSet)
+  {
+   payload.WithString("BucketRegion", m_bucketRegion);
+
+  }
+
+  if(m_auditDestinationARNHasBeenSet)
+  {
+   payload.WithString("AuditDestinationARN", m_auditDestinationARN);
 
   }
 

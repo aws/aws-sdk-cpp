@@ -27,6 +27,8 @@ Service::Service() :
     m_instanceCount(0),
     m_instanceCountHasBeenSet(false),
     m_dnsConfigHasBeenSet(false),
+    m_type(ServiceType::NOT_SET),
+    m_typeHasBeenSet(false),
     m_healthCheckConfigHasBeenSet(false),
     m_healthCheckCustomConfigHasBeenSet(false),
     m_createDateHasBeenSet(false),
@@ -43,6 +45,8 @@ Service::Service(JsonView jsonValue) :
     m_instanceCount(0),
     m_instanceCountHasBeenSet(false),
     m_dnsConfigHasBeenSet(false),
+    m_type(ServiceType::NOT_SET),
+    m_typeHasBeenSet(false),
     m_healthCheckConfigHasBeenSet(false),
     m_healthCheckCustomConfigHasBeenSet(false),
     m_createDateHasBeenSet(false),
@@ -100,6 +104,13 @@ Service& Service::operator =(JsonView jsonValue)
     m_dnsConfig = jsonValue.GetObject("DnsConfig");
 
     m_dnsConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Type"))
+  {
+    m_type = ServiceTypeMapper::GetServiceTypeForName(jsonValue.GetString("Type"));
+
+    m_typeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("HealthCheckConfig"))
@@ -177,6 +188,11 @@ JsonValue Service::Jsonize() const
   {
    payload.WithObject("DnsConfig", m_dnsConfig.Jsonize());
 
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("Type", ServiceTypeMapper::GetNameForServiceType(m_type));
   }
 
   if(m_healthCheckConfigHasBeenSet)

@@ -37,91 +37,99 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS account where you want to store the new theme. </p>
+     * <p>The ID of the Amazon Web Services account where you want to store the new
+     * theme. </p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p>The ID of the AWS account where you want to store the new theme. </p>
+     * <p>The ID of the Amazon Web Services account where you want to store the new
+     * theme. </p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS account where you want to store the new theme. </p>
+     * <p>The ID of the Amazon Web Services account where you want to store the new
+     * theme. </p>
      */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p>The ID of the AWS account where you want to store the new theme. </p>
+     * <p>The ID of the Amazon Web Services account where you want to store the new
+     * theme. </p>
      */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS account where you want to store the new theme. </p>
+     * <p>The ID of the Amazon Web Services account where you want to store the new
+     * theme. </p>
      */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
 
     /**
-     * <p>The ID of the AWS account where you want to store the new theme. </p>
+     * <p>The ID of the Amazon Web Services account where you want to store the new
+     * theme. </p>
      */
     inline CreateThemeRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS account where you want to store the new theme. </p>
+     * <p>The ID of the Amazon Web Services account where you want to store the new
+     * theme. </p>
      */
     inline CreateThemeRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS account where you want to store the new theme. </p>
+     * <p>The ID of the Amazon Web Services account where you want to store the new
+     * theme. </p>
      */
     inline CreateThemeRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
 
 
     /**
-     * <p>An ID for the theme that you want to create. The theme ID is unique per AWS
-     * Region in each AWS account.</p>
+     * <p>An ID for the theme that you want to create. The theme ID is unique per
+     * Amazon Web Services Region in each Amazon Web Services account.</p>
      */
     inline const Aws::String& GetThemeId() const{ return m_themeId; }
 
     /**
-     * <p>An ID for the theme that you want to create. The theme ID is unique per AWS
-     * Region in each AWS account.</p>
+     * <p>An ID for the theme that you want to create. The theme ID is unique per
+     * Amazon Web Services Region in each Amazon Web Services account.</p>
      */
     inline bool ThemeIdHasBeenSet() const { return m_themeIdHasBeenSet; }
 
     /**
-     * <p>An ID for the theme that you want to create. The theme ID is unique per AWS
-     * Region in each AWS account.</p>
+     * <p>An ID for the theme that you want to create. The theme ID is unique per
+     * Amazon Web Services Region in each Amazon Web Services account.</p>
      */
     inline void SetThemeId(const Aws::String& value) { m_themeIdHasBeenSet = true; m_themeId = value; }
 
     /**
-     * <p>An ID for the theme that you want to create. The theme ID is unique per AWS
-     * Region in each AWS account.</p>
+     * <p>An ID for the theme that you want to create. The theme ID is unique per
+     * Amazon Web Services Region in each Amazon Web Services account.</p>
      */
     inline void SetThemeId(Aws::String&& value) { m_themeIdHasBeenSet = true; m_themeId = std::move(value); }
 
     /**
-     * <p>An ID for the theme that you want to create. The theme ID is unique per AWS
-     * Region in each AWS account.</p>
+     * <p>An ID for the theme that you want to create. The theme ID is unique per
+     * Amazon Web Services Region in each Amazon Web Services account.</p>
      */
     inline void SetThemeId(const char* value) { m_themeIdHasBeenSet = true; m_themeId.assign(value); }
 
     /**
-     * <p>An ID for the theme that you want to create. The theme ID is unique per AWS
-     * Region in each AWS account.</p>
+     * <p>An ID for the theme that you want to create. The theme ID is unique per
+     * Amazon Web Services Region in each Amazon Web Services account.</p>
      */
     inline CreateThemeRequest& WithThemeId(const Aws::String& value) { SetThemeId(value); return *this;}
 
     /**
-     * <p>An ID for the theme that you want to create. The theme ID is unique per AWS
-     * Region in each AWS account.</p>
+     * <p>An ID for the theme that you want to create. The theme ID is unique per
+     * Amazon Web Services Region in each Amazon Web Services account.</p>
      */
     inline CreateThemeRequest& WithThemeId(Aws::String&& value) { SetThemeId(std::move(value)); return *this;}
 
     /**
-     * <p>An ID for the theme that you want to create. The theme ID is unique per AWS
-     * Region in each AWS account.</p>
+     * <p>An ID for the theme that you want to create. The theme ID is unique per
+     * Amazon Web Services Region in each Amazon Web Services account.</p>
      */
     inline CreateThemeRequest& WithThemeId(const char* value) { SetThemeId(value); return *this;}
 
@@ -171,7 +179,7 @@ namespace Model
      * <p>The ID of the theme that a custom theme will inherit from. All themes inherit
      * from one of the starting themes defined by Amazon QuickSight. For a list of the
      * starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within
-     * a QuickSight analysis. </p>
+     * an analysis. </p>
      */
     inline const Aws::String& GetBaseThemeId() const{ return m_baseThemeId; }
 
@@ -179,7 +187,7 @@ namespace Model
      * <p>The ID of the theme that a custom theme will inherit from. All themes inherit
      * from one of the starting themes defined by Amazon QuickSight. For a list of the
      * starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within
-     * a QuickSight analysis. </p>
+     * an analysis. </p>
      */
     inline bool BaseThemeIdHasBeenSet() const { return m_baseThemeIdHasBeenSet; }
 
@@ -187,7 +195,7 @@ namespace Model
      * <p>The ID of the theme that a custom theme will inherit from. All themes inherit
      * from one of the starting themes defined by Amazon QuickSight. For a list of the
      * starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within
-     * a QuickSight analysis. </p>
+     * an analysis. </p>
      */
     inline void SetBaseThemeId(const Aws::String& value) { m_baseThemeIdHasBeenSet = true; m_baseThemeId = value; }
 
@@ -195,7 +203,7 @@ namespace Model
      * <p>The ID of the theme that a custom theme will inherit from. All themes inherit
      * from one of the starting themes defined by Amazon QuickSight. For a list of the
      * starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within
-     * a QuickSight analysis. </p>
+     * an analysis. </p>
      */
     inline void SetBaseThemeId(Aws::String&& value) { m_baseThemeIdHasBeenSet = true; m_baseThemeId = std::move(value); }
 
@@ -203,7 +211,7 @@ namespace Model
      * <p>The ID of the theme that a custom theme will inherit from. All themes inherit
      * from one of the starting themes defined by Amazon QuickSight. For a list of the
      * starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within
-     * a QuickSight analysis. </p>
+     * an analysis. </p>
      */
     inline void SetBaseThemeId(const char* value) { m_baseThemeIdHasBeenSet = true; m_baseThemeId.assign(value); }
 
@@ -211,7 +219,7 @@ namespace Model
      * <p>The ID of the theme that a custom theme will inherit from. All themes inherit
      * from one of the starting themes defined by Amazon QuickSight. For a list of the
      * starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within
-     * a QuickSight analysis. </p>
+     * an analysis. </p>
      */
     inline CreateThemeRequest& WithBaseThemeId(const Aws::String& value) { SetBaseThemeId(value); return *this;}
 
@@ -219,7 +227,7 @@ namespace Model
      * <p>The ID of the theme that a custom theme will inherit from. All themes inherit
      * from one of the starting themes defined by Amazon QuickSight. For a list of the
      * starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within
-     * a QuickSight analysis. </p>
+     * an analysis. </p>
      */
     inline CreateThemeRequest& WithBaseThemeId(Aws::String&& value) { SetBaseThemeId(std::move(value)); return *this;}
 
@@ -227,7 +235,7 @@ namespace Model
      * <p>The ID of the theme that a custom theme will inherit from. All themes inherit
      * from one of the starting themes defined by Amazon QuickSight. For a list of the
      * starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within
-     * a QuickSight analysis. </p>
+     * an analysis. </p>
      */
     inline CreateThemeRequest& WithBaseThemeId(const char* value) { SetBaseThemeId(value); return *this;}
 

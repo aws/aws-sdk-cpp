@@ -185,8 +185,7 @@ namespace Model
      * <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li> <li>
      * <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li> <li>
      * <p> <code>maven</code>: A Maven package that contains compiled code in a
-     * distributable format, such as a JAR file. </p> </li> <li> <p>
-     * <code>nuget</code>: A NuGet package. </p> </li> </ul>
+     * distributable format, such as a JAR file. </p> </li> </ul>
      */
     inline const PackageFormat& GetFormat() const{ return m_format; }
 
@@ -195,8 +194,7 @@ namespace Model
      * <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li> <li>
      * <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li> <li>
      * <p> <code>maven</code>: A Maven package that contains compiled code in a
-     * distributable format, such as a JAR file. </p> </li> <li> <p>
-     * <code>nuget</code>: A NuGet package. </p> </li> </ul>
+     * distributable format, such as a JAR file. </p> </li> </ul>
      */
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
 
@@ -205,8 +203,7 @@ namespace Model
      * <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li> <li>
      * <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li> <li>
      * <p> <code>maven</code>: A Maven package that contains compiled code in a
-     * distributable format, such as a JAR file. </p> </li> <li> <p>
-     * <code>nuget</code>: A NuGet package. </p> </li> </ul>
+     * distributable format, such as a JAR file. </p> </li> </ul>
      */
     inline void SetFormat(const PackageFormat& value) { m_formatHasBeenSet = true; m_format = value; }
 
@@ -215,8 +212,7 @@ namespace Model
      * <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li> <li>
      * <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li> <li>
      * <p> <code>maven</code>: A Maven package that contains compiled code in a
-     * distributable format, such as a JAR file. </p> </li> <li> <p>
-     * <code>nuget</code>: A NuGet package. </p> </li> </ul>
+     * distributable format, such as a JAR file. </p> </li> </ul>
      */
     inline void SetFormat(PackageFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
 
@@ -225,8 +221,7 @@ namespace Model
      * <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li> <li>
      * <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li> <li>
      * <p> <code>maven</code>: A Maven package that contains compiled code in a
-     * distributable format, such as a JAR file. </p> </li> <li> <p>
-     * <code>nuget</code>: A NuGet package. </p> </li> </ul>
+     * distributable format, such as a JAR file. </p> </li> </ul>
      */
     inline ListPackageVersionsRequest& WithFormat(const PackageFormat& value) { SetFormat(value); return *this;}
 
@@ -235,8 +230,7 @@ namespace Model
      * <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li> <li>
      * <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li> <li>
      * <p> <code>maven</code>: A Maven package that contains compiled code in a
-     * distributable format, such as a JAR file. </p> </li> <li> <p>
-     * <code>nuget</code>: A NuGet package. </p> </li> </ul>
+     * distributable format, such as a JAR file. </p> </li> </ul>
      */
     inline ListPackageVersionsRequest& WithFormat(PackageFormat&& value) { SetFormat(std::move(value)); return *this;}
 
@@ -247,9 +241,7 @@ namespace Model
      * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
      * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
      * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> <li> <p> A NuGet package does not contain a
-     * corresponding component, so NuGet packages do not have a namespace. </p> </li>
-     * </ul>
+     * have a namespace. </p> </li> </ul>
      */
     inline const Aws::String& GetNamespace() const{ return m_namespace; }
 
@@ -259,9 +251,7 @@ namespace Model
      * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
      * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
      * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> <li> <p> A NuGet package does not contain a
-     * corresponding component, so NuGet packages do not have a namespace. </p> </li>
-     * </ul>
+     * have a namespace. </p> </li> </ul>
      */
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
 
@@ -271,9 +261,7 @@ namespace Model
      * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
      * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
      * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> <li> <p> A NuGet package does not contain a
-     * corresponding component, so NuGet packages do not have a namespace. </p> </li>
-     * </ul>
+     * have a namespace. </p> </li> </ul>
      */
     inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
 
@@ -283,9 +271,7 @@ namespace Model
      * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
      * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
      * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> <li> <p> A NuGet package does not contain a
-     * corresponding component, so NuGet packages do not have a namespace. </p> </li>
-     * </ul>
+     * have a namespace. </p> </li> </ul>
      */
     inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
 
@@ -295,9 +281,7 @@ namespace Model
      * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
      * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
      * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> <li> <p> A NuGet package does not contain a
-     * corresponding component, so NuGet packages do not have a namespace. </p> </li>
-     * </ul>
+     * have a namespace. </p> </li> </ul>
      */
     inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
 
@@ -307,9 +291,7 @@ namespace Model
      * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
      * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
      * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> <li> <p> A NuGet package does not contain a
-     * corresponding component, so NuGet packages do not have a namespace. </p> </li>
-     * </ul>
+     * have a namespace. </p> </li> </ul>
      */
     inline ListPackageVersionsRequest& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
 
@@ -319,9 +301,7 @@ namespace Model
      * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
      * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
      * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> <li> <p> A NuGet package does not contain a
-     * corresponding component, so NuGet packages do not have a namespace. </p> </li>
-     * </ul>
+     * have a namespace. </p> </li> </ul>
      */
     inline ListPackageVersionsRequest& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
 
@@ -331,9 +311,7 @@ namespace Model
      * a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace
      * of an npm package is its <code>scope</code>. </p> </li> <li> <p> A Python
      * package does not contain a corresponding component, so Python packages do not
-     * have a namespace. </p> </li> <li> <p> A NuGet package does not contain a
-     * corresponding component, so NuGet packages do not have a namespace. </p> </li>
-     * </ul>
+     * have a namespace. </p> </li> </ul>
      */
     inline ListPackageVersionsRequest& WithNamespace(const char* value) { SetNamespace(value); return *this;}
 

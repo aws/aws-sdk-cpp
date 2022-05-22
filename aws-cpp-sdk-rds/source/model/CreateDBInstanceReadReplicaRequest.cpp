@@ -57,6 +57,8 @@ CreateDBInstanceReadReplicaRequest::CreateDBInstanceReadReplicaRequest() :
     m_replicaModeHasBeenSet(false),
     m_maxAllocatedStorage(0),
     m_maxAllocatedStorageHasBeenSet(false),
+    m_customIamInstanceProfileHasBeenSet(false),
+    m_networkTypeHasBeenSet(false),
     m_sourceRegionHasBeenSet(false)
 {
 }
@@ -245,6 +247,16 @@ Aws::String CreateDBInstanceReadReplicaRequest::SerializePayload() const
   if(m_maxAllocatedStorageHasBeenSet)
   {
     ss << "MaxAllocatedStorage=" << m_maxAllocatedStorage << "&";
+  }
+
+  if(m_customIamInstanceProfileHasBeenSet)
+  {
+    ss << "CustomIamInstanceProfile=" << StringUtils::URLEncode(m_customIamInstanceProfile.c_str()) << "&";
+  }
+
+  if(m_networkTypeHasBeenSet)
+  {
+    ss << "NetworkType=" << StringUtils::URLEncode(m_networkType.c_str()) << "&";
   }
 
   ss << "Version=2014-10-31";

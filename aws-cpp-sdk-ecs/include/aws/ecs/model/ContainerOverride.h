@@ -28,8 +28,8 @@ namespace Model
 {
 
   /**
-   * <p>The overrides that should be sent to a container. An empty container override
-   * can be passed in. An example of an empty container override would be
+   * <p>The overrides that are sent to a container. An empty container override can
+   * be passed in. An example of an empty container override is
    * <code>{"containerOverrides": [ ] }</code>. If a non-empty container override is
    * specified, the <code>name</code> parameter must be included.</p><p><h3>See
    * Also:</h3>   <a

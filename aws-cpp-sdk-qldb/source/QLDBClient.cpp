@@ -39,6 +39,7 @@
 #include <aws/qldb/model/TagResourceRequest.h>
 #include <aws/qldb/model/UntagResourceRequest.h>
 #include <aws/qldb/model/UpdateLedgerRequest.h>
+#include <aws/qldb/model/UpdateLedgerPermissionsModeRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -87,7 +88,7 @@ QLDBClient::~QLDBClient()
 {
 }
 
-void QLDBClient::init(const ClientConfiguration& config)
+void QLDBClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("QLDB");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -126,12 +127,10 @@ CancelJournalKinesisStreamOutcome QLDBClient::CancelJournalKinesisStream(const C
     return CancelJournalKinesisStreamOutcome(Aws::Client::AWSError<QLDBErrors>(QLDBErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StreamId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/ledgers/";
-  ss << request.GetLedgerName();
-  ss << "/journal-kinesis-streams/";
-  ss << request.GetStreamId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/ledgers/");
+  uri.AddPathSegment(request.GetLedgerName());
+  uri.AddPathSegments("/journal-kinesis-streams/");
+  uri.AddPathSegment(request.GetStreamId());
   return CancelJournalKinesisStreamOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -156,9 +155,7 @@ void QLDBClient::CancelJournalKinesisStreamAsyncHelper(const CancelJournalKinesi
 CreateLedgerOutcome QLDBClient::CreateLedger(const CreateLedgerRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/ledgers";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/ledgers");
   return CreateLedgerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -188,10 +185,8 @@ DeleteLedgerOutcome QLDBClient::DeleteLedger(const DeleteLedgerRequest& request)
     return DeleteLedgerOutcome(Aws::Client::AWSError<QLDBErrors>(QLDBErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/ledgers/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/ledgers/");
+  uri.AddPathSegment(request.GetName());
   return DeleteLedgerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -226,12 +221,10 @@ DescribeJournalKinesisStreamOutcome QLDBClient::DescribeJournalKinesisStream(con
     return DescribeJournalKinesisStreamOutcome(Aws::Client::AWSError<QLDBErrors>(QLDBErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StreamId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/ledgers/";
-  ss << request.GetLedgerName();
-  ss << "/journal-kinesis-streams/";
-  ss << request.GetStreamId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/ledgers/");
+  uri.AddPathSegment(request.GetLedgerName());
+  uri.AddPathSegments("/journal-kinesis-streams/");
+  uri.AddPathSegment(request.GetStreamId());
   return DescribeJournalKinesisStreamOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -266,12 +259,10 @@ DescribeJournalS3ExportOutcome QLDBClient::DescribeJournalS3Export(const Describ
     return DescribeJournalS3ExportOutcome(Aws::Client::AWSError<QLDBErrors>(QLDBErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ExportId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/ledgers/";
-  ss << request.GetName();
-  ss << "/journal-s3-exports/";
-  ss << request.GetExportId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/ledgers/");
+  uri.AddPathSegment(request.GetName());
+  uri.AddPathSegments("/journal-s3-exports/");
+  uri.AddPathSegment(request.GetExportId());
   return DescribeJournalS3ExportOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -301,10 +292,8 @@ DescribeLedgerOutcome QLDBClient::DescribeLedger(const DescribeLedgerRequest& re
     return DescribeLedgerOutcome(Aws::Client::AWSError<QLDBErrors>(QLDBErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/ledgers/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/ledgers/");
+  uri.AddPathSegment(request.GetName());
   return DescribeLedgerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -334,11 +323,9 @@ ExportJournalToS3Outcome QLDBClient::ExportJournalToS3(const ExportJournalToS3Re
     return ExportJournalToS3Outcome(Aws::Client::AWSError<QLDBErrors>(QLDBErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/ledgers/";
-  ss << request.GetName();
-  ss << "/journal-s3-exports";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/ledgers/");
+  uri.AddPathSegment(request.GetName());
+  uri.AddPathSegments("/journal-s3-exports");
   return ExportJournalToS3Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -368,11 +355,9 @@ GetBlockOutcome QLDBClient::GetBlock(const GetBlockRequest& request) const
     return GetBlockOutcome(Aws::Client::AWSError<QLDBErrors>(QLDBErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/ledgers/";
-  ss << request.GetName();
-  ss << "/block";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/ledgers/");
+  uri.AddPathSegment(request.GetName());
+  uri.AddPathSegments("/block");
   return GetBlockOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -402,11 +387,9 @@ GetDigestOutcome QLDBClient::GetDigest(const GetDigestRequest& request) const
     return GetDigestOutcome(Aws::Client::AWSError<QLDBErrors>(QLDBErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/ledgers/";
-  ss << request.GetName();
-  ss << "/digest";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/ledgers/");
+  uri.AddPathSegment(request.GetName());
+  uri.AddPathSegments("/digest");
   return GetDigestOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -436,11 +419,9 @@ GetRevisionOutcome QLDBClient::GetRevision(const GetRevisionRequest& request) co
     return GetRevisionOutcome(Aws::Client::AWSError<QLDBErrors>(QLDBErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/ledgers/";
-  ss << request.GetName();
-  ss << "/revision";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/ledgers/");
+  uri.AddPathSegment(request.GetName());
+  uri.AddPathSegments("/revision");
   return GetRevisionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -470,11 +451,9 @@ ListJournalKinesisStreamsForLedgerOutcome QLDBClient::ListJournalKinesisStreamsF
     return ListJournalKinesisStreamsForLedgerOutcome(Aws::Client::AWSError<QLDBErrors>(QLDBErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LedgerName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/ledgers/";
-  ss << request.GetLedgerName();
-  ss << "/journal-kinesis-streams";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/ledgers/");
+  uri.AddPathSegment(request.GetLedgerName());
+  uri.AddPathSegments("/journal-kinesis-streams");
   return ListJournalKinesisStreamsForLedgerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -499,9 +478,7 @@ void QLDBClient::ListJournalKinesisStreamsForLedgerAsyncHelper(const ListJournal
 ListJournalS3ExportsOutcome QLDBClient::ListJournalS3Exports(const ListJournalS3ExportsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/journal-s3-exports";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/journal-s3-exports");
   return ListJournalS3ExportsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -531,11 +508,9 @@ ListJournalS3ExportsForLedgerOutcome QLDBClient::ListJournalS3ExportsForLedger(c
     return ListJournalS3ExportsForLedgerOutcome(Aws::Client::AWSError<QLDBErrors>(QLDBErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/ledgers/";
-  ss << request.GetName();
-  ss << "/journal-s3-exports";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/ledgers/");
+  uri.AddPathSegment(request.GetName());
+  uri.AddPathSegments("/journal-s3-exports");
   return ListJournalS3ExportsForLedgerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -560,9 +535,7 @@ void QLDBClient::ListJournalS3ExportsForLedgerAsyncHelper(const ListJournalS3Exp
 ListLedgersOutcome QLDBClient::ListLedgers(const ListLedgersRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/ledgers";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/ledgers");
   return ListLedgersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -592,10 +565,8 @@ ListTagsForResourceOutcome QLDBClient::ListTagsForResource(const ListTagsForReso
     return ListTagsForResourceOutcome(Aws::Client::AWSError<QLDBErrors>(QLDBErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -625,11 +596,9 @@ StreamJournalToKinesisOutcome QLDBClient::StreamJournalToKinesis(const StreamJou
     return StreamJournalToKinesisOutcome(Aws::Client::AWSError<QLDBErrors>(QLDBErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LedgerName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/ledgers/";
-  ss << request.GetLedgerName();
-  ss << "/journal-kinesis-streams";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/ledgers/");
+  uri.AddPathSegment(request.GetLedgerName());
+  uri.AddPathSegments("/journal-kinesis-streams");
   return StreamJournalToKinesisOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -659,10 +628,8 @@ TagResourceOutcome QLDBClient::TagResource(const TagResourceRequest& request) co
     return TagResourceOutcome(Aws::Client::AWSError<QLDBErrors>(QLDBErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -697,10 +664,8 @@ UntagResourceOutcome QLDBClient::UntagResource(const UntagResourceRequest& reque
     return UntagResourceOutcome(Aws::Client::AWSError<QLDBErrors>(QLDBErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -730,10 +695,8 @@ UpdateLedgerOutcome QLDBClient::UpdateLedger(const UpdateLedgerRequest& request)
     return UpdateLedgerOutcome(Aws::Client::AWSError<QLDBErrors>(QLDBErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/ledgers/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/ledgers/");
+  uri.AddPathSegment(request.GetName());
   return UpdateLedgerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -753,5 +716,37 @@ void QLDBClient::UpdateLedgerAsync(const UpdateLedgerRequest& request, const Upd
 void QLDBClient::UpdateLedgerAsyncHelper(const UpdateLedgerRequest& request, const UpdateLedgerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateLedger(request), context);
+}
+
+UpdateLedgerPermissionsModeOutcome QLDBClient::UpdateLedgerPermissionsMode(const UpdateLedgerPermissionsModeRequest& request) const
+{
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateLedgerPermissionsMode", "Required field: Name, is not set");
+    return UpdateLedgerPermissionsModeOutcome(Aws::Client::AWSError<QLDBErrors>(QLDBErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/ledgers/");
+  uri.AddPathSegment(request.GetName());
+  uri.AddPathSegments("/permissions-mode");
+  return UpdateLedgerPermissionsModeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateLedgerPermissionsModeOutcomeCallable QLDBClient::UpdateLedgerPermissionsModeCallable(const UpdateLedgerPermissionsModeRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateLedgerPermissionsModeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateLedgerPermissionsMode(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QLDBClient::UpdateLedgerPermissionsModeAsync(const UpdateLedgerPermissionsModeRequest& request, const UpdateLedgerPermissionsModeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateLedgerPermissionsModeAsyncHelper( request, handler, context ); } );
+}
+
+void QLDBClient::UpdateLedgerPermissionsModeAsyncHelper(const UpdateLedgerPermissionsModeRequest& request, const UpdateLedgerPermissionsModeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateLedgerPermissionsMode(request), context);
 }
 

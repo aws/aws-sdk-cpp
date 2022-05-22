@@ -13,6 +13,42 @@
     "uid": "mediapackage-vod-2018-11-07"
   },
   "operations": {
+    "ConfigureLogs": {
+      "documentation": "Changes the packaging group's properities to configure log subscription",
+      "errors": [
+        {
+          "shape": "UnprocessableEntityException"
+        },
+        {
+          "shape": "InternalServerErrorException"
+        },
+        {
+          "shape": "ForbiddenException"
+        },
+        {
+          "shape": "NotFoundException"
+        },
+        {
+          "shape": "ServiceUnavailableException"
+        },
+        {
+          "shape": "TooManyRequestsException"
+        }
+      ],
+      "http": {
+        "method": "PUT",
+        "requestUri": "/packaging_groups/{id}/configure_logs",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ConfigureLogsRequest"
+      },
+      "name": "ConfigureLogs",
+      "output": {
+        "documentation": "The updated MediaPackage VOD PackagingGroup resource.",
+        "shape": "ConfigureLogsResponse"
+      }
+    },
     "CreateAsset": {
       "documentation": "Creates a new MediaPackage VOD Asset resource.",
       "errors": [
@@ -709,6 +745,11 @@
     "CmafEncryption": {
       "documentation": "A CMAF encryption configuration.",
       "members": {
+        "ConstantInitializationVector": {
+          "documentation": "An optional 128-bit, 16-byte hex value represented by a 32-character string, used in conjunction with the key for encrypting blocks. If you don't specify a value, then MediaPackage creates the constant initialization vector (IV).",
+          "locationName": "constantInitializationVector",
+          "shape": "__string"
+        },
         "SpekeKeyProvider": {
           "locationName": "spekeKeyProvider",
           "shape": "SpekeKeyProvider"
@@ -731,6 +772,11 @@
           "locationName": "hlsManifests",
           "shape": "__listOfHlsManifest"
         },
+        "IncludeEncoderConfigurationInSegments": {
+          "documentation": "When includeEncoderConfigurationInSegments is set to true, MediaPackage places your encoder's Sequence Parameter Set (SPS), Picture Parameter Set (PPS), and Video Parameter Set (VPS) metadata in every video segment instead of in the init fragment. This lets you use different SPS/PPS/VPS settings for your assets during content playback.\n",
+          "locationName": "includeEncoderConfigurationInSegments",
+          "shape": "__boolean"
+        },
         "SegmentDurationSeconds": {
           "documentation": "Duration (in seconds) of each fragment. Actual fragments will be\nrounded to the nearest multiple of the source fragment duration.\n",
           "locationName": "segmentDurationSeconds",
@@ -740,6 +786,67 @@
       "required": [
         "HlsManifests"
       ],
+      "type": "structure"
+    },
+    "ConfigureLogsParameters": {
+      "documentation": "The configuration parameters for egress access logging.",
+      "members": {
+        "EgressAccessLogs": {
+          "locationName": "egressAccessLogs",
+          "shape": "EgressAccessLogs"
+        }
+      },
+      "type": "structure"
+    },
+    "ConfigureLogsRequest": {
+      "documentation": "The option to configure log subscription.",
+      "members": {
+        "EgressAccessLogs": {
+          "locationName": "egressAccessLogs",
+          "shape": "EgressAccessLogs"
+        },
+        "Id": {
+          "documentation": "The ID of a MediaPackage VOD PackagingGroup resource.",
+          "location": "uri",
+          "locationName": "id",
+          "shape": "__string"
+        }
+      },
+      "required": [
+        "Id"
+      ],
+      "type": "structure"
+    },
+    "ConfigureLogsResponse": {
+      "members": {
+        "Arn": {
+          "documentation": "The ARN of the PackagingGroup.",
+          "locationName": "arn",
+          "shape": "__string"
+        },
+        "Authorization": {
+          "locationName": "authorization",
+          "shape": "Authorization"
+        },
+        "DomainName": {
+          "documentation": "The fully qualified domain name for Assets in the PackagingGroup.",
+          "locationName": "domainName",
+          "shape": "__string"
+        },
+        "EgressAccessLogs": {
+          "locationName": "egressAccessLogs",
+          "shape": "EgressAccessLogs"
+        },
+        "Id": {
+          "documentation": "The ID of the PackagingGroup.",
+          "locationName": "id",
+          "shape": "__string"
+        },
+        "Tags": {
+          "locationName": "tags",
+          "shape": "Tags"
+        }
+      },
       "type": "structure"
     },
     "CreateAssetRequest": {
@@ -919,6 +1026,10 @@
           "locationName": "authorization",
           "shape": "Authorization"
         },
+        "EgressAccessLogs": {
+          "locationName": "egressAccessLogs",
+          "shape": "EgressAccessLogs"
+        },
         "Id": {
           "documentation": "The ID of the PackagingGroup.",
           "locationName": "id",
@@ -949,6 +1060,10 @@
           "documentation": "The fully qualified domain name for Assets in the PackagingGroup.",
           "locationName": "domainName",
           "shape": "__string"
+        },
+        "EgressAccessLogs": {
+          "locationName": "egressAccessLogs",
+          "shape": "EgressAccessLogs"
         },
         "Id": {
           "documentation": "The ID of the PackagingGroup.",
@@ -998,6 +1113,11 @@
           "locationName": "profile",
           "shape": "Profile"
         },
+        "ScteMarkersSource": {
+          "documentation": "The source of scte markers used. When set to SEGMENTS, the scte markers are sourced from the segments of the ingested content. When set to MANIFEST, the scte markers are sourced from the manifest of the ingested content.",
+          "locationName": "scteMarkersSource",
+          "shape": "ScteMarkersSource"
+        },
         "StreamSelection": {
           "locationName": "streamSelection",
           "shape": "StreamSelection"
@@ -1016,6 +1136,11 @@
         "Encryption": {
           "locationName": "encryption",
           "shape": "DashEncryption"
+        },
+        "IncludeEncoderConfigurationInSegments": {
+          "documentation": "When includeEncoderConfigurationInSegments is set to true, MediaPackage places your encoder's Sequence Parameter Set (SPS), Picture Parameter Set (PPS), and Video Parameter Set (VPS) metadata in every video segment instead of in the init fragment. This lets you use different SPS/PPS/VPS settings for your assets during content playback.\n",
+          "locationName": "includeEncoderConfigurationInSegments",
+          "shape": "__boolean"
         },
         "PeriodTriggers": {
           "documentation": "A list of triggers that controls when the outgoing Dynamic Adaptive Streaming over HTTP (DASH)\nMedia Presentation Description (MPD) will be partitioned into multiple periods. If empty, the content will not\nbe partitioned into more than one period. If the list contains \"ADS\", new periods will be created where\nthe Asset contains SCTE-35 ad markers.\n",
@@ -1239,6 +1364,10 @@
           "locationName": "domainName",
           "shape": "__string"
         },
+        "EgressAccessLogs": {
+          "locationName": "egressAccessLogs",
+          "shape": "EgressAccessLogs"
+        },
         "Id": {
           "documentation": "The ID of the PackagingGroup.",
           "locationName": "id",
@@ -1251,12 +1380,28 @@
       },
       "type": "structure"
     },
+    "EgressAccessLogs": {
+      "documentation": "Configure egress access logging.",
+      "members": {
+        "LogGroupName": {
+          "documentation": "Customize the log group name.",
+          "locationName": "logGroupName",
+          "shape": "__string"
+        }
+      },
+      "type": "structure"
+    },
     "EgressEndpoint": {
       "documentation": "The endpoint URL used to access an Asset using one PackagingConfiguration.",
       "members": {
         "PackagingConfigurationId": {
           "documentation": "The ID of the PackagingConfiguration being applied to the Asset.",
           "locationName": "packagingConfigurationId",
+          "shape": "__string"
+        },
+        "Status": {
+          "documentation": "The current processing status of the asset used for the packaging configuration. The status can be either QUEUED, PROCESSING, PLAYABLE, or FAILED. Status information won't be available for most assets ingested before 2021-09-30.",
+          "locationName": "status",
           "shape": "__string"
         },
         "Url": {
@@ -1357,6 +1502,11 @@
           "documentation": "A list of HLS manifest configurations.",
           "locationName": "hlsManifests",
           "shape": "__listOfHlsManifest"
+        },
+        "IncludeDvbSubtitles": {
+          "documentation": "When enabled, MediaPackage passes through digital video broadcasting (DVB) subtitles into the output.",
+          "locationName": "includeDvbSubtitles",
+          "shape": "__boolean"
         },
         "SegmentDurationSeconds": {
           "documentation": "Duration (in seconds) of each fragment. Actual fragments will be\nrounded to the nearest multiple of the source fragment duration.\n",
@@ -1711,6 +1861,10 @@
           "locationName": "domainName",
           "shape": "__string"
         },
+        "EgressAccessLogs": {
+          "locationName": "egressAccessLogs",
+          "shape": "EgressAccessLogs"
+        },
         "Id": {
           "documentation": "The ID of the PackagingGroup.",
           "locationName": "id",
@@ -1729,6 +1883,10 @@
         "Authorization": {
           "locationName": "authorization",
           "shape": "Authorization"
+        },
+        "EgressAccessLogs": {
+          "locationName": "egressAccessLogs",
+          "shape": "EgressAccessLogs"
         },
         "Id": {
           "documentation": "The ID of the PackagingGroup.",
@@ -1775,6 +1933,13 @@
       "enum": [
         "NONE",
         "HBBTV_1_5"
+      ],
+      "type": "string"
+    },
+    "ScteMarkersSource": {
+      "enum": [
+        "SEGMENTS",
+        "MANIFEST"
       ],
       "type": "string"
     },
@@ -1981,6 +2146,10 @@
           "documentation": "The fully qualified domain name for Assets in the PackagingGroup.",
           "locationName": "domainName",
           "shape": "__string"
+        },
+        "EgressAccessLogs": {
+          "locationName": "egressAccessLogs",
+          "shape": "EgressAccessLogs"
         },
         "Id": {
           "documentation": "The ID of the PackagingGroup.",

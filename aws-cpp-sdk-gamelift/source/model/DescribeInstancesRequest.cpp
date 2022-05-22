@@ -17,7 +17,8 @@ DescribeInstancesRequest::DescribeInstancesRequest() :
     m_instanceIdHasBeenSet(false),
     m_limit(0),
     m_limitHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_locationHasBeenSet(false)
 {
 }
 
@@ -46,6 +47,12 @@ Aws::String DescribeInstancesRequest::SerializePayload() const
   if(m_nextTokenHasBeenSet)
   {
    payload.WithString("NextToken", m_nextToken);
+
+  }
+
+  if(m_locationHasBeenSet)
+  {
+   payload.WithString("Location", m_location);
 
   }
 

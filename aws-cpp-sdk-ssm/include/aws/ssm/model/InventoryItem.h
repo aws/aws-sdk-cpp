@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>Information collected from managed instances based on your inventory policy
+   * <p>Information collected from managed nodes based on your inventory policy
    * document</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/InventoryItem">AWS
    * API Reference</a></p>
@@ -42,65 +42,73 @@ namespace Model
 
     /**
      * <p>The name of the inventory type. Default inventory item type names start with
-     * AWS. Custom inventory type names will start with Custom. Default inventory item
-     * types include the following: AWS:AWSComponent, AWS:Application,
-     * AWS:InstanceInformation, AWS:Network, and AWS:WindowsUpdate.</p>
+     * <code>AWS</code>. Custom inventory type names will start with Custom. Default
+     * inventory item types include the following: <code>AWS:AWSComponent</code>,
+     * <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>,
+     * <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.</p>
      */
     inline const Aws::String& GetTypeName() const{ return m_typeName; }
 
     /**
      * <p>The name of the inventory type. Default inventory item type names start with
-     * AWS. Custom inventory type names will start with Custom. Default inventory item
-     * types include the following: AWS:AWSComponent, AWS:Application,
-     * AWS:InstanceInformation, AWS:Network, and AWS:WindowsUpdate.</p>
+     * <code>AWS</code>. Custom inventory type names will start with Custom. Default
+     * inventory item types include the following: <code>AWS:AWSComponent</code>,
+     * <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>,
+     * <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.</p>
      */
     inline bool TypeNameHasBeenSet() const { return m_typeNameHasBeenSet; }
 
     /**
      * <p>The name of the inventory type. Default inventory item type names start with
-     * AWS. Custom inventory type names will start with Custom. Default inventory item
-     * types include the following: AWS:AWSComponent, AWS:Application,
-     * AWS:InstanceInformation, AWS:Network, and AWS:WindowsUpdate.</p>
+     * <code>AWS</code>. Custom inventory type names will start with Custom. Default
+     * inventory item types include the following: <code>AWS:AWSComponent</code>,
+     * <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>,
+     * <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.</p>
      */
     inline void SetTypeName(const Aws::String& value) { m_typeNameHasBeenSet = true; m_typeName = value; }
 
     /**
      * <p>The name of the inventory type. Default inventory item type names start with
-     * AWS. Custom inventory type names will start with Custom. Default inventory item
-     * types include the following: AWS:AWSComponent, AWS:Application,
-     * AWS:InstanceInformation, AWS:Network, and AWS:WindowsUpdate.</p>
+     * <code>AWS</code>. Custom inventory type names will start with Custom. Default
+     * inventory item types include the following: <code>AWS:AWSComponent</code>,
+     * <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>,
+     * <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.</p>
      */
     inline void SetTypeName(Aws::String&& value) { m_typeNameHasBeenSet = true; m_typeName = std::move(value); }
 
     /**
      * <p>The name of the inventory type. Default inventory item type names start with
-     * AWS. Custom inventory type names will start with Custom. Default inventory item
-     * types include the following: AWS:AWSComponent, AWS:Application,
-     * AWS:InstanceInformation, AWS:Network, and AWS:WindowsUpdate.</p>
+     * <code>AWS</code>. Custom inventory type names will start with Custom. Default
+     * inventory item types include the following: <code>AWS:AWSComponent</code>,
+     * <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>,
+     * <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.</p>
      */
     inline void SetTypeName(const char* value) { m_typeNameHasBeenSet = true; m_typeName.assign(value); }
 
     /**
      * <p>The name of the inventory type. Default inventory item type names start with
-     * AWS. Custom inventory type names will start with Custom. Default inventory item
-     * types include the following: AWS:AWSComponent, AWS:Application,
-     * AWS:InstanceInformation, AWS:Network, and AWS:WindowsUpdate.</p>
+     * <code>AWS</code>. Custom inventory type names will start with Custom. Default
+     * inventory item types include the following: <code>AWS:AWSComponent</code>,
+     * <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>,
+     * <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.</p>
      */
     inline InventoryItem& WithTypeName(const Aws::String& value) { SetTypeName(value); return *this;}
 
     /**
      * <p>The name of the inventory type. Default inventory item type names start with
-     * AWS. Custom inventory type names will start with Custom. Default inventory item
-     * types include the following: AWS:AWSComponent, AWS:Application,
-     * AWS:InstanceInformation, AWS:Network, and AWS:WindowsUpdate.</p>
+     * <code>AWS</code>. Custom inventory type names will start with Custom. Default
+     * inventory item types include the following: <code>AWS:AWSComponent</code>,
+     * <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>,
+     * <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.</p>
      */
     inline InventoryItem& WithTypeName(Aws::String&& value) { SetTypeName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the inventory type. Default inventory item type names start with
-     * AWS. Custom inventory type names will start with Custom. Default inventory item
-     * types include the following: AWS:AWSComponent, AWS:Application,
-     * AWS:InstanceInformation, AWS:Network, and AWS:WindowsUpdate.</p>
+     * <code>AWS</code>. Custom inventory type names will start with Custom. Default
+     * inventory item types include the following: <code>AWS:AWSComponent</code>,
+     * <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>,
+     * <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.</p>
      */
     inline InventoryItem& WithTypeName(const char* value) { SetTypeName(value); return *this;}
 
@@ -189,64 +197,64 @@ namespace Model
 
     /**
      * <p>MD5 hash of the inventory item type contents. The content hash is used to
-     * determine whether to update inventory information. The PutInventory API does not
-     * update the inventory item type contents if the MD5 hash has not changed since
+     * determine whether to update inventory information. The PutInventory API doesn't
+     * update the inventory item type contents if the MD5 hash hasn't changed since
      * last update. </p>
      */
     inline const Aws::String& GetContentHash() const{ return m_contentHash; }
 
     /**
      * <p>MD5 hash of the inventory item type contents. The content hash is used to
-     * determine whether to update inventory information. The PutInventory API does not
-     * update the inventory item type contents if the MD5 hash has not changed since
+     * determine whether to update inventory information. The PutInventory API doesn't
+     * update the inventory item type contents if the MD5 hash hasn't changed since
      * last update. </p>
      */
     inline bool ContentHashHasBeenSet() const { return m_contentHashHasBeenSet; }
 
     /**
      * <p>MD5 hash of the inventory item type contents. The content hash is used to
-     * determine whether to update inventory information. The PutInventory API does not
-     * update the inventory item type contents if the MD5 hash has not changed since
+     * determine whether to update inventory information. The PutInventory API doesn't
+     * update the inventory item type contents if the MD5 hash hasn't changed since
      * last update. </p>
      */
     inline void SetContentHash(const Aws::String& value) { m_contentHashHasBeenSet = true; m_contentHash = value; }
 
     /**
      * <p>MD5 hash of the inventory item type contents. The content hash is used to
-     * determine whether to update inventory information. The PutInventory API does not
-     * update the inventory item type contents if the MD5 hash has not changed since
+     * determine whether to update inventory information. The PutInventory API doesn't
+     * update the inventory item type contents if the MD5 hash hasn't changed since
      * last update. </p>
      */
     inline void SetContentHash(Aws::String&& value) { m_contentHashHasBeenSet = true; m_contentHash = std::move(value); }
 
     /**
      * <p>MD5 hash of the inventory item type contents. The content hash is used to
-     * determine whether to update inventory information. The PutInventory API does not
-     * update the inventory item type contents if the MD5 hash has not changed since
+     * determine whether to update inventory information. The PutInventory API doesn't
+     * update the inventory item type contents if the MD5 hash hasn't changed since
      * last update. </p>
      */
     inline void SetContentHash(const char* value) { m_contentHashHasBeenSet = true; m_contentHash.assign(value); }
 
     /**
      * <p>MD5 hash of the inventory item type contents. The content hash is used to
-     * determine whether to update inventory information. The PutInventory API does not
-     * update the inventory item type contents if the MD5 hash has not changed since
+     * determine whether to update inventory information. The PutInventory API doesn't
+     * update the inventory item type contents if the MD5 hash hasn't changed since
      * last update. </p>
      */
     inline InventoryItem& WithContentHash(const Aws::String& value) { SetContentHash(value); return *this;}
 
     /**
      * <p>MD5 hash of the inventory item type contents. The content hash is used to
-     * determine whether to update inventory information. The PutInventory API does not
-     * update the inventory item type contents if the MD5 hash has not changed since
+     * determine whether to update inventory information. The PutInventory API doesn't
+     * update the inventory item type contents if the MD5 hash hasn't changed since
      * last update. </p>
      */
     inline InventoryItem& WithContentHash(Aws::String&& value) { SetContentHash(std::move(value)); return *this;}
 
     /**
      * <p>MD5 hash of the inventory item type contents. The content hash is used to
-     * determine whether to update inventory information. The PutInventory API does not
-     * update the inventory item type contents if the MD5 hash has not changed since
+     * determine whether to update inventory information. The PutInventory API doesn't
+     * update the inventory item type contents if the MD5 hash hasn't changed since
      * last update. </p>
      */
     inline InventoryItem& WithContentHash(const char* value) { SetContentHash(value); return *this;}

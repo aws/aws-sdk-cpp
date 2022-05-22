@@ -34,6 +34,12 @@ UpdateElasticsearchDomainConfigResult& UpdateElasticsearchDomainConfigResult::op
 
   }
 
+  if(jsonValue.ValueExists("DryRunResults"))
+  {
+    m_dryRunResults = jsonValue.GetObject("DryRunResults");
+
+  }
+
 
 
   return *this;

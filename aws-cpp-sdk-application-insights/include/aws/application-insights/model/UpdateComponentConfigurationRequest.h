@@ -291,6 +291,19 @@ namespace Model
      */
     inline UpdateComponentConfigurationRequest& WithComponentConfiguration(const char* value) { SetComponentConfiguration(value); return *this;}
 
+
+    
+    inline bool GetAutoConfigEnabled() const{ return m_autoConfigEnabled; }
+
+    
+    inline bool AutoConfigEnabledHasBeenSet() const { return m_autoConfigEnabledHasBeenSet; }
+
+    
+    inline void SetAutoConfigEnabled(bool value) { m_autoConfigEnabledHasBeenSet = true; m_autoConfigEnabled = value; }
+
+    
+    inline UpdateComponentConfigurationRequest& WithAutoConfigEnabled(bool value) { SetAutoConfigEnabled(value); return *this;}
+
   private:
 
     Aws::String m_resourceGroupName;
@@ -307,6 +320,9 @@ namespace Model
 
     Aws::String m_componentConfiguration;
     bool m_componentConfigurationHasBeenSet;
+
+    bool m_autoConfigEnabled;
+    bool m_autoConfigEnabledHasBeenSet;
   };
 
 } // namespace Model

@@ -7,6 +7,7 @@
 #include <aws/mediapackage-vod/MediaPackageVod_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediapackage-vod/model/Authorization.h>
+#include <aws/mediapackage-vod/model/EgressAccessLogs.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -122,6 +123,22 @@ namespace Model
     inline CreatePackagingGroupResult& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
 
+    
+    inline const EgressAccessLogs& GetEgressAccessLogs() const{ return m_egressAccessLogs; }
+
+    
+    inline void SetEgressAccessLogs(const EgressAccessLogs& value) { m_egressAccessLogs = value; }
+
+    
+    inline void SetEgressAccessLogs(EgressAccessLogs&& value) { m_egressAccessLogs = std::move(value); }
+
+    
+    inline CreatePackagingGroupResult& WithEgressAccessLogs(const EgressAccessLogs& value) { SetEgressAccessLogs(value); return *this;}
+
+    
+    inline CreatePackagingGroupResult& WithEgressAccessLogs(EgressAccessLogs&& value) { SetEgressAccessLogs(std::move(value)); return *this;}
+
+
     /**
      * The ID of the PackagingGroup.
      */
@@ -201,6 +218,8 @@ namespace Model
     Authorization m_authorization;
 
     Aws::String m_domainName;
+
+    EgressAccessLogs m_egressAccessLogs;
 
     Aws::String m_id;
 

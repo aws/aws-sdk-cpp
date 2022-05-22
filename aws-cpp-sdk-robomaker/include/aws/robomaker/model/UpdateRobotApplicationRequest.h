@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/robomaker/model/RobotSoftwareSuite.h>
+#include <aws/robomaker/model/Environment.h>
 #include <aws/robomaker/model/SourceConfig.h>
 #include <utility>
 
@@ -194,6 +195,37 @@ namespace Model
      */
     inline UpdateRobotApplicationRequest& WithCurrentRevisionId(const char* value) { SetCurrentRevisionId(value); return *this;}
 
+
+    /**
+     * <p>The object that contains the Docker image URI for your robot application.</p>
+     */
+    inline const Environment& GetEnvironment() const{ return m_environment; }
+
+    /**
+     * <p>The object that contains the Docker image URI for your robot application.</p>
+     */
+    inline bool EnvironmentHasBeenSet() const { return m_environmentHasBeenSet; }
+
+    /**
+     * <p>The object that contains the Docker image URI for your robot application.</p>
+     */
+    inline void SetEnvironment(const Environment& value) { m_environmentHasBeenSet = true; m_environment = value; }
+
+    /**
+     * <p>The object that contains the Docker image URI for your robot application.</p>
+     */
+    inline void SetEnvironment(Environment&& value) { m_environmentHasBeenSet = true; m_environment = std::move(value); }
+
+    /**
+     * <p>The object that contains the Docker image URI for your robot application.</p>
+     */
+    inline UpdateRobotApplicationRequest& WithEnvironment(const Environment& value) { SetEnvironment(value); return *this;}
+
+    /**
+     * <p>The object that contains the Docker image URI for your robot application.</p>
+     */
+    inline UpdateRobotApplicationRequest& WithEnvironment(Environment&& value) { SetEnvironment(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_application;
@@ -207,6 +239,9 @@ namespace Model
 
     Aws::String m_currentRevisionId;
     bool m_currentRevisionIdHasBeenSet;
+
+    Environment m_environment;
+    bool m_environmentHasBeenSet;
   };
 
 } // namespace Model

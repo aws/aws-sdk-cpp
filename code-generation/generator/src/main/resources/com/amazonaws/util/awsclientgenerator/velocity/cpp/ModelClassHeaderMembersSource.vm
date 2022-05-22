@@ -20,12 +20,16 @@
 #end
 #if($member.shape.enum)
   ${spaces}headers.emplace("${locationName}", ${member.shape.name}Mapper::GetNameFor${member.shape.name}($memberVarName));
+#elseif($member.shape.boolean)
+  ${spaces}ss << std::boolalpha << m_${lowerCaseVarName};
+  ${spaces}headers.emplace("${locationName}", ss.str());
+  ${spaces}ss.str("");
 #elseif($member.shape.blob)
   ${spaces}ss << HashingUtils::Base64Encode(m_${lowerCaseVarName});
   ${spaces}headers.emplace("${locationName}", ss.str());
   ${spaces}ss.str("");
 #elseif($member.shape.timeStamp)
-  ${spaces}headers.emplace("${locationName}", m_${lowerCaseVarName}.ToGmtString(DateFormat::RFC822));
+  ${spaces}headers.emplace("${locationName}", m_${lowerCaseVarName}.ToGmtString(DateFormat::$CppViewHelper.computeTimestampFormatInHeader($member.shape)));
 #elseif($member.shape.map)
   ${spaces}for(const auto& item : $memberVarName)
   ${spaces}{
@@ -36,7 +40,11 @@
 #elseif($member.shape.list)
   ${spaces}for(const auto& item : $memberVarName)
   ${spaces}{
+#if($member.shape.listMember.shape.enum)
+  ${spaces}  ss << ${member.shape.listMember.shape.name}Mapper::GetNameFor${member.shape.listMember.shape.name}(item);
+#else
   ${spaces}  ss << item;
+#end
   ${spaces}  headers.emplace("${locationName}", ss.str());
   ${spaces}  ss.str("");
   ${spaces}}

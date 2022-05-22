@@ -18,6 +18,7 @@ UpdateModelVersionRequest::UpdateModelVersionRequest() :
     m_modelTypeHasBeenSet(false),
     m_majorVersionNumberHasBeenSet(false),
     m_externalEventsDetailHasBeenSet(false),
+    m_ingestedEventsDetailHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -46,6 +47,12 @@ Aws::String UpdateModelVersionRequest::SerializePayload() const
   if(m_externalEventsDetailHasBeenSet)
   {
    payload.WithObject("externalEventsDetail", m_externalEventsDetail.Jsonize());
+
+  }
+
+  if(m_ingestedEventsDetailHasBeenSet)
+  {
+   payload.WithObject("ingestedEventsDetail", m_ingestedEventsDetail.Jsonize());
 
   }
 

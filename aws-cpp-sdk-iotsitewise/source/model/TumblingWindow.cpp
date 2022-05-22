@@ -19,12 +19,14 @@ namespace Model
 {
 
 TumblingWindow::TumblingWindow() : 
-    m_intervalHasBeenSet(false)
+    m_intervalHasBeenSet(false),
+    m_offsetHasBeenSet(false)
 {
 }
 
 TumblingWindow::TumblingWindow(JsonView jsonValue) : 
-    m_intervalHasBeenSet(false)
+    m_intervalHasBeenSet(false),
+    m_offsetHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ TumblingWindow& TumblingWindow::operator =(JsonView jsonValue)
     m_intervalHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("offset"))
+  {
+    m_offset = jsonValue.GetString("offset");
+
+    m_offsetHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +57,12 @@ JsonValue TumblingWindow::Jsonize() const
   if(m_intervalHasBeenSet)
   {
    payload.WithString("interval", m_interval);
+
+  }
+
+  if(m_offsetHasBeenSet)
+  {
+   payload.WithString("offset", m_offset);
 
   }
 

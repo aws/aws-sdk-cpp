@@ -17,7 +17,9 @@ AssociateResourceSharePermissionRequest::AssociateResourceSharePermissionRequest
     m_permissionArnHasBeenSet(false),
     m_replace(false),
     m_replaceHasBeenSet(false),
-    m_clientTokenHasBeenSet(false)
+    m_clientTokenHasBeenSet(false),
+    m_permissionVersion(0),
+    m_permissionVersionHasBeenSet(false)
 {
 }
 
@@ -46,6 +48,12 @@ Aws::String AssociateResourceSharePermissionRequest::SerializePayload() const
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("clientToken", m_clientToken);
+
+  }
+
+  if(m_permissionVersionHasBeenSet)
+  {
+   payload.WithInteger("permissionVersion", m_permissionVersion);
 
   }
 

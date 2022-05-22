@@ -27,10 +27,12 @@ namespace FSx
 namespace Model
 {
   class FileSystem;
+  class Volume;
+  class Snapshot;
 
   /**
-   * <p>Describes a specific Amazon FSx administrative action for the current Windows
-   * or Lustre file system.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes a specific Amazon FSx administrative action for the current
+   * Windows, Lustre, or OpenZFS file system.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/AdministrativeAction">AWS
    * API Reference</a></p>
    */
@@ -63,28 +65,28 @@ namespace Model
 
 
     /**
-     * <p>Provides the percent complete of a <code>STORAGE_OPTIMIZATION</code>
+     * <p>The percentage-complete status of a <code>STORAGE_OPTIMIZATION</code>
      * administrative action. Does not apply to any other administrative action
      * type.</p>
      */
     inline int GetProgressPercent() const{ return m_progressPercent; }
 
     /**
-     * <p>Provides the percent complete of a <code>STORAGE_OPTIMIZATION</code>
+     * <p>The percentage-complete status of a <code>STORAGE_OPTIMIZATION</code>
      * administrative action. Does not apply to any other administrative action
      * type.</p>
      */
     inline bool ProgressPercentHasBeenSet() const { return m_progressPercentHasBeenSet; }
 
     /**
-     * <p>Provides the percent complete of a <code>STORAGE_OPTIMIZATION</code>
+     * <p>The percentage-complete status of a <code>STORAGE_OPTIMIZATION</code>
      * administrative action. Does not apply to any other administrative action
      * type.</p>
      */
     inline void SetProgressPercent(int value) { m_progressPercentHasBeenSet = true; m_progressPercent = value; }
 
     /**
-     * <p>Provides the percent complete of a <code>STORAGE_OPTIMIZATION</code>
+     * <p>The percentage-complete status of a <code>STORAGE_OPTIMIZATION</code>
      * administrative action. Does not apply to any other administrative action
      * type.</p>
      */
@@ -92,32 +94,32 @@ namespace Model
 
 
     /**
-     * <p>Time that the administrative action request was received.</p>
+     * <p>The time that the administrative action request was received.</p>
      */
     inline const Aws::Utils::DateTime& GetRequestTime() const{ return m_requestTime; }
 
     /**
-     * <p>Time that the administrative action request was received.</p>
+     * <p>The time that the administrative action request was received.</p>
      */
     inline bool RequestTimeHasBeenSet() const { return m_requestTimeHasBeenSet; }
 
     /**
-     * <p>Time that the administrative action request was received.</p>
+     * <p>The time that the administrative action request was received.</p>
      */
     inline void SetRequestTime(const Aws::Utils::DateTime& value) { m_requestTimeHasBeenSet = true; m_requestTime = value; }
 
     /**
-     * <p>Time that the administrative action request was received.</p>
+     * <p>The time that the administrative action request was received.</p>
      */
     inline void SetRequestTime(Aws::Utils::DateTime&& value) { m_requestTimeHasBeenSet = true; m_requestTime = std::move(value); }
 
     /**
-     * <p>Time that the administrative action request was received.</p>
+     * <p>The time that the administrative action request was received.</p>
      */
     inline AdministrativeAction& WithRequestTime(const Aws::Utils::DateTime& value) { SetRequestTime(value); return *this;}
 
     /**
-     * <p>Time that the administrative action request was received.</p>
+     * <p>The time that the administrative action request was received.</p>
      */
     inline AdministrativeAction& WithRequestTime(Aws::Utils::DateTime&& value) { SetRequestTime(std::move(value)); return *this;}
 
@@ -129,16 +131,10 @@ namespace Model
      * processing the administrative action.</p> </li> <li> <p> <code>PENDING</code> -
      * Amazon FSx is waiting to process the administrative action.</p> </li> <li> <p>
      * <code>COMPLETED</code> - Amazon FSx has finished processing the administrative
-     * task.</p> </li> <li> <p> <code>UPDATED_OPTIMIZING</code> - For a storage
-     * capacity increase update, Amazon FSx has updated the file system with the new
-     * storage capacity, and is now performing the storage optimization process. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing
-     * storage capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i>
-     * and <a
-     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing
-     * storage and throughput capacity</a> in the <i>Amazon FSx for Lustre User
-     * Guide</i>.</p> </li> </ul>
+     * task.</p> </li> <li> <p> <code>UPDATED_OPTIMIZING</code> - For a
+     * storage-capacity increase update, Amazon FSx has updated the file system with
+     * the new storage capacity, and is now performing the storage-optimization
+     * process. </p> </li> </ul>
      */
     inline const Status& GetStatus() const{ return m_status; }
 
@@ -149,16 +145,10 @@ namespace Model
      * processing the administrative action.</p> </li> <li> <p> <code>PENDING</code> -
      * Amazon FSx is waiting to process the administrative action.</p> </li> <li> <p>
      * <code>COMPLETED</code> - Amazon FSx has finished processing the administrative
-     * task.</p> </li> <li> <p> <code>UPDATED_OPTIMIZING</code> - For a storage
-     * capacity increase update, Amazon FSx has updated the file system with the new
-     * storage capacity, and is now performing the storage optimization process. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing
-     * storage capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i>
-     * and <a
-     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing
-     * storage and throughput capacity</a> in the <i>Amazon FSx for Lustre User
-     * Guide</i>.</p> </li> </ul>
+     * task.</p> </li> <li> <p> <code>UPDATED_OPTIMIZING</code> - For a
+     * storage-capacity increase update, Amazon FSx has updated the file system with
+     * the new storage capacity, and is now performing the storage-optimization
+     * process. </p> </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
@@ -169,16 +159,10 @@ namespace Model
      * processing the administrative action.</p> </li> <li> <p> <code>PENDING</code> -
      * Amazon FSx is waiting to process the administrative action.</p> </li> <li> <p>
      * <code>COMPLETED</code> - Amazon FSx has finished processing the administrative
-     * task.</p> </li> <li> <p> <code>UPDATED_OPTIMIZING</code> - For a storage
-     * capacity increase update, Amazon FSx has updated the file system with the new
-     * storage capacity, and is now performing the storage optimization process. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing
-     * storage capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i>
-     * and <a
-     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing
-     * storage and throughput capacity</a> in the <i>Amazon FSx for Lustre User
-     * Guide</i>.</p> </li> </ul>
+     * task.</p> </li> <li> <p> <code>UPDATED_OPTIMIZING</code> - For a
+     * storage-capacity increase update, Amazon FSx has updated the file system with
+     * the new storage capacity, and is now performing the storage-optimization
+     * process. </p> </li> </ul>
      */
     inline void SetStatus(const Status& value) { m_statusHasBeenSet = true; m_status = value; }
 
@@ -189,16 +173,10 @@ namespace Model
      * processing the administrative action.</p> </li> <li> <p> <code>PENDING</code> -
      * Amazon FSx is waiting to process the administrative action.</p> </li> <li> <p>
      * <code>COMPLETED</code> - Amazon FSx has finished processing the administrative
-     * task.</p> </li> <li> <p> <code>UPDATED_OPTIMIZING</code> - For a storage
-     * capacity increase update, Amazon FSx has updated the file system with the new
-     * storage capacity, and is now performing the storage optimization process. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing
-     * storage capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i>
-     * and <a
-     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing
-     * storage and throughput capacity</a> in the <i>Amazon FSx for Lustre User
-     * Guide</i>.</p> </li> </ul>
+     * task.</p> </li> <li> <p> <code>UPDATED_OPTIMIZING</code> - For a
+     * storage-capacity increase update, Amazon FSx has updated the file system with
+     * the new storage capacity, and is now performing the storage-optimization
+     * process. </p> </li> </ul>
      */
     inline void SetStatus(Status&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
@@ -209,16 +187,10 @@ namespace Model
      * processing the administrative action.</p> </li> <li> <p> <code>PENDING</code> -
      * Amazon FSx is waiting to process the administrative action.</p> </li> <li> <p>
      * <code>COMPLETED</code> - Amazon FSx has finished processing the administrative
-     * task.</p> </li> <li> <p> <code>UPDATED_OPTIMIZING</code> - For a storage
-     * capacity increase update, Amazon FSx has updated the file system with the new
-     * storage capacity, and is now performing the storage optimization process. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing
-     * storage capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i>
-     * and <a
-     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing
-     * storage and throughput capacity</a> in the <i>Amazon FSx for Lustre User
-     * Guide</i>.</p> </li> </ul>
+     * task.</p> </li> <li> <p> <code>UPDATED_OPTIMIZING</code> - For a
+     * storage-capacity increase update, Amazon FSx has updated the file system with
+     * the new storage capacity, and is now performing the storage-optimization
+     * process. </p> </li> </ul>
      */
     inline AdministrativeAction& WithStatus(const Status& value) { SetStatus(value); return *this;}
 
@@ -229,16 +201,10 @@ namespace Model
      * processing the administrative action.</p> </li> <li> <p> <code>PENDING</code> -
      * Amazon FSx is waiting to process the administrative action.</p> </li> <li> <p>
      * <code>COMPLETED</code> - Amazon FSx has finished processing the administrative
-     * task.</p> </li> <li> <p> <code>UPDATED_OPTIMIZING</code> - For a storage
-     * capacity increase update, Amazon FSx has updated the file system with the new
-     * storage capacity, and is now performing the storage optimization process. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing
-     * storage capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i>
-     * and <a
-     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing
-     * storage and throughput capacity</a> in the <i>Amazon FSx for Lustre User
-     * Guide</i>.</p> </li> </ul>
+     * task.</p> </li> <li> <p> <code>UPDATED_OPTIMIZING</code> - For a
+     * storage-capacity increase update, Amazon FSx has updated the file system with
+     * the new storage capacity, and is now performing the storage-optimization
+     * process. </p> </li> </ul>
      */
     inline AdministrativeAction& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -304,6 +270,44 @@ namespace Model
     
     inline AdministrativeAction& WithFailureDetails(AdministrativeActionFailureDetails&& value) { SetFailureDetails(std::move(value)); return *this;}
 
+
+    
+    const Volume& GetTargetVolumeValues() const;
+
+    
+    bool TargetVolumeValuesHasBeenSet() const;
+
+    
+    void SetTargetVolumeValues(const Volume& value);
+
+    
+    void SetTargetVolumeValues(Volume&& value);
+
+    
+    AdministrativeAction& WithTargetVolumeValues(const Volume& value);
+
+    
+    AdministrativeAction& WithTargetVolumeValues(Volume&& value);
+
+
+    
+    const Snapshot& GetTargetSnapshotValues() const;
+
+    
+    bool TargetSnapshotValuesHasBeenSet() const;
+
+    
+    void SetTargetSnapshotValues(const Snapshot& value);
+
+    
+    void SetTargetSnapshotValues(Snapshot&& value);
+
+    
+    AdministrativeAction& WithTargetSnapshotValues(const Snapshot& value);
+
+    
+    AdministrativeAction& WithTargetSnapshotValues(Snapshot&& value);
+
   private:
 
     AdministrativeActionType m_administrativeActionType;
@@ -323,6 +327,12 @@ namespace Model
 
     AdministrativeActionFailureDetails m_failureDetails;
     bool m_failureDetailsHasBeenSet;
+
+    std::shared_ptr<Volume> m_targetVolumeValues;
+    bool m_targetVolumeValuesHasBeenSet;
+
+    std::shared_ptr<Snapshot> m_targetSnapshotValues;
+    bool m_targetSnapshotValuesHasBeenSet;
   };
 
 } // namespace Model

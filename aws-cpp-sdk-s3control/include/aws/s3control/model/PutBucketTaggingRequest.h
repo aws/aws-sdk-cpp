@@ -38,42 +38,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID of the Outposts bucket.</p>
+     * <p>The Amazon Web Services account ID of the Outposts bucket.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The AWS account ID of the Outposts bucket.</p>
+     * <p>The Amazon Web Services account ID of the Outposts bucket.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID of the Outposts bucket.</p>
+     * <p>The Amazon Web Services account ID of the Outposts bucket.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The AWS account ID of the Outposts bucket.</p>
+     * <p>The Amazon Web Services account ID of the Outposts bucket.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The AWS account ID of the Outposts bucket.</p>
+     * <p>The Amazon Web Services account ID of the Outposts bucket.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The AWS account ID of the Outposts bucket.</p>
+     * <p>The Amazon Web Services account ID of the Outposts bucket.</p>
      */
     inline PutBucketTaggingRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The AWS account ID of the Outposts bucket.</p>
+     * <p>The Amazon Web Services account ID of the Outposts bucket.</p>
      */
     inline PutBucketTaggingRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID of the Outposts bucket.</p>
+     * <p>The Amazon Web Services account ID of the Outposts bucket.</p>
      */
     inline PutBucketTaggingRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
@@ -82,8 +82,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the bucket.</p> <p>For using this parameter
      * with Amazon S3 on Outposts with the REST API, you must specify the name and the
      * x-amz-outpost-id as well.</p> <p>For using this parameter with S3 on Outposts
-     * with the AWS SDK and CLI, you must specify the ARN of the bucket accessed in the
-     * format
+     * with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket
+     * accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>.
      * For example, to access the bucket <code>reports</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
@@ -97,8 +97,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the bucket.</p> <p>For using this parameter
      * with Amazon S3 on Outposts with the REST API, you must specify the name and the
      * x-amz-outpost-id as well.</p> <p>For using this parameter with S3 on Outposts
-     * with the AWS SDK and CLI, you must specify the ARN of the bucket accessed in the
-     * format
+     * with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket
+     * accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>.
      * For example, to access the bucket <code>reports</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
@@ -112,8 +112,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the bucket.</p> <p>For using this parameter
      * with Amazon S3 on Outposts with the REST API, you must specify the name and the
      * x-amz-outpost-id as well.</p> <p>For using this parameter with S3 on Outposts
-     * with the AWS SDK and CLI, you must specify the ARN of the bucket accessed in the
-     * format
+     * with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket
+     * accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>.
      * For example, to access the bucket <code>reports</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
@@ -127,8 +127,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the bucket.</p> <p>For using this parameter
      * with Amazon S3 on Outposts with the REST API, you must specify the name and the
      * x-amz-outpost-id as well.</p> <p>For using this parameter with S3 on Outposts
-     * with the AWS SDK and CLI, you must specify the ARN of the bucket accessed in the
-     * format
+     * with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket
+     * accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>.
      * For example, to access the bucket <code>reports</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
@@ -142,8 +142,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the bucket.</p> <p>For using this parameter
      * with Amazon S3 on Outposts with the REST API, you must specify the name and the
      * x-amz-outpost-id as well.</p> <p>For using this parameter with S3 on Outposts
-     * with the AWS SDK and CLI, you must specify the ARN of the bucket accessed in the
-     * format
+     * with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket
+     * accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>.
      * For example, to access the bucket <code>reports</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
@@ -157,8 +157,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the bucket.</p> <p>For using this parameter
      * with Amazon S3 on Outposts with the REST API, you must specify the name and the
      * x-amz-outpost-id as well.</p> <p>For using this parameter with S3 on Outposts
-     * with the AWS SDK and CLI, you must specify the ARN of the bucket accessed in the
-     * format
+     * with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket
+     * accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>.
      * For example, to access the bucket <code>reports</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
@@ -172,8 +172,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the bucket.</p> <p>For using this parameter
      * with Amazon S3 on Outposts with the REST API, you must specify the name and the
      * x-amz-outpost-id as well.</p> <p>For using this parameter with S3 on Outposts
-     * with the AWS SDK and CLI, you must specify the ARN of the bucket accessed in the
-     * format
+     * with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket
+     * accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>.
      * For example, to access the bucket <code>reports</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
@@ -187,8 +187,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the bucket.</p> <p>For using this parameter
      * with Amazon S3 on Outposts with the REST API, you must specify the name and the
      * x-amz-outpost-id as well.</p> <p>For using this parameter with S3 on Outposts
-     * with the AWS SDK and CLI, you must specify the ARN of the bucket accessed in the
-     * format
+     * with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket
+     * accessed in the format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>.
      * For example, to access the bucket <code>reports</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region

@@ -33,42 +33,42 @@ namespace Model
 
 
     /**
-     * <p>Deletes a Device Advisor test suite with defined suite Id.</p>
+     * <p>Suite definition ID of the test suite to be deleted.</p>
      */
     inline const Aws::String& GetSuiteDefinitionId() const{ return m_suiteDefinitionId; }
 
     /**
-     * <p>Deletes a Device Advisor test suite with defined suite Id.</p>
+     * <p>Suite definition ID of the test suite to be deleted.</p>
      */
     inline bool SuiteDefinitionIdHasBeenSet() const { return m_suiteDefinitionIdHasBeenSet; }
 
     /**
-     * <p>Deletes a Device Advisor test suite with defined suite Id.</p>
+     * <p>Suite definition ID of the test suite to be deleted.</p>
      */
     inline void SetSuiteDefinitionId(const Aws::String& value) { m_suiteDefinitionIdHasBeenSet = true; m_suiteDefinitionId = value; }
 
     /**
-     * <p>Deletes a Device Advisor test suite with defined suite Id.</p>
+     * <p>Suite definition ID of the test suite to be deleted.</p>
      */
     inline void SetSuiteDefinitionId(Aws::String&& value) { m_suiteDefinitionIdHasBeenSet = true; m_suiteDefinitionId = std::move(value); }
 
     /**
-     * <p>Deletes a Device Advisor test suite with defined suite Id.</p>
+     * <p>Suite definition ID of the test suite to be deleted.</p>
      */
     inline void SetSuiteDefinitionId(const char* value) { m_suiteDefinitionIdHasBeenSet = true; m_suiteDefinitionId.assign(value); }
 
     /**
-     * <p>Deletes a Device Advisor test suite with defined suite Id.</p>
+     * <p>Suite definition ID of the test suite to be deleted.</p>
      */
     inline DeleteSuiteDefinitionRequest& WithSuiteDefinitionId(const Aws::String& value) { SetSuiteDefinitionId(value); return *this;}
 
     /**
-     * <p>Deletes a Device Advisor test suite with defined suite Id.</p>
+     * <p>Suite definition ID of the test suite to be deleted.</p>
      */
     inline DeleteSuiteDefinitionRequest& WithSuiteDefinitionId(Aws::String&& value) { SetSuiteDefinitionId(std::move(value)); return *this;}
 
     /**
-     * <p>Deletes a Device Advisor test suite with defined suite Id.</p>
+     * <p>Suite definition ID of the test suite to be deleted.</p>
      */
     inline DeleteSuiteDefinitionRequest& WithSuiteDefinitionId(const char* value) { SetSuiteDefinitionId(value); return *this;}
 

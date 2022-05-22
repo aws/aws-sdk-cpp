@@ -44,186 +44,170 @@ namespace Model
 
 
     /**
-     * <p>The bucket name.</p> <p>When using this API with an access point, you must
+     * <p>The bucket name.</p> <p>When using this action with an access point, you must
      * direct requests to the access point hostname. The access point hostname takes
      * the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation with an access point through the AWS SDKs, you provide
-     * the access point ARN in place of the bucket name. For more information about
-     * access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
-     * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
-     * takes the form
-     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-     * When using this operation using S3 on Outposts through the AWS SDKs, you provide
-     * the Outposts bucket ARN in place of the bucket name. For more information about
-     * S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
-     * S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p>
+     * When using this action with an access point through the Amazon Web Services
+     * SDKs, you provide the access point ARN in place of the bucket name. For more
+     * information about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
+     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
+     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
+     * When using this action with S3 on Outposts through the Amazon Web Services SDKs,
+     * you provide the Outposts bucket ARN in place of the bucket name. For more
+     * information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
+     * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * <p>The bucket name.</p> <p>When using this API with an access point, you must
+     * <p>The bucket name.</p> <p>When using this action with an access point, you must
      * direct requests to the access point hostname. The access point hostname takes
      * the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation with an access point through the AWS SDKs, you provide
-     * the access point ARN in place of the bucket name. For more information about
-     * access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
-     * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
-     * takes the form
-     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-     * When using this operation using S3 on Outposts through the AWS SDKs, you provide
-     * the Outposts bucket ARN in place of the bucket name. For more information about
-     * S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
-     * S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p>
+     * When using this action with an access point through the Amazon Web Services
+     * SDKs, you provide the access point ARN in place of the bucket name. For more
+     * information about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
+     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
+     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
+     * When using this action with S3 on Outposts through the Amazon Web Services SDKs,
+     * you provide the Outposts bucket ARN in place of the bucket name. For more
+     * information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
+     * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
 
     /**
-     * <p>The bucket name.</p> <p>When using this API with an access point, you must
+     * <p>The bucket name.</p> <p>When using this action with an access point, you must
      * direct requests to the access point hostname. The access point hostname takes
      * the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation with an access point through the AWS SDKs, you provide
-     * the access point ARN in place of the bucket name. For more information about
-     * access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
-     * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
-     * takes the form
-     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-     * When using this operation using S3 on Outposts through the AWS SDKs, you provide
-     * the Outposts bucket ARN in place of the bucket name. For more information about
-     * S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
-     * S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p>
+     * When using this action with an access point through the Amazon Web Services
+     * SDKs, you provide the access point ARN in place of the bucket name. For more
+     * information about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
+     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
+     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
+     * When using this action with S3 on Outposts through the Amazon Web Services SDKs,
+     * you provide the Outposts bucket ARN in place of the bucket name. For more
+     * information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
+     * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * <p>The bucket name.</p> <p>When using this API with an access point, you must
+     * <p>The bucket name.</p> <p>When using this action with an access point, you must
      * direct requests to the access point hostname. The access point hostname takes
      * the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation with an access point through the AWS SDKs, you provide
-     * the access point ARN in place of the bucket name. For more information about
-     * access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
-     * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
-     * takes the form
-     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-     * When using this operation using S3 on Outposts through the AWS SDKs, you provide
-     * the Outposts bucket ARN in place of the bucket name. For more information about
-     * S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
-     * S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p>
+     * When using this action with an access point through the Amazon Web Services
+     * SDKs, you provide the access point ARN in place of the bucket name. For more
+     * information about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
+     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
+     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
+     * When using this action with S3 on Outposts through the Amazon Web Services SDKs,
+     * you provide the Outposts bucket ARN in place of the bucket name. For more
+     * information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
+     * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
-     * <p>The bucket name.</p> <p>When using this API with an access point, you must
+     * <p>The bucket name.</p> <p>When using this action with an access point, you must
      * direct requests to the access point hostname. The access point hostname takes
      * the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation with an access point through the AWS SDKs, you provide
-     * the access point ARN in place of the bucket name. For more information about
-     * access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
-     * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
-     * takes the form
-     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-     * When using this operation using S3 on Outposts through the AWS SDKs, you provide
-     * the Outposts bucket ARN in place of the bucket name. For more information about
-     * S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
-     * S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p>
+     * When using this action with an access point through the Amazon Web Services
+     * SDKs, you provide the access point ARN in place of the bucket name. For more
+     * information about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
+     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
+     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
+     * When using this action with S3 on Outposts through the Amazon Web Services SDKs,
+     * you provide the Outposts bucket ARN in place of the bucket name. For more
+     * information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
+     * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
-     * <p>The bucket name.</p> <p>When using this API with an access point, you must
+     * <p>The bucket name.</p> <p>When using this action with an access point, you must
      * direct requests to the access point hostname. The access point hostname takes
      * the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation with an access point through the AWS SDKs, you provide
-     * the access point ARN in place of the bucket name. For more information about
-     * access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
-     * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
-     * takes the form
-     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-     * When using this operation using S3 on Outposts through the AWS SDKs, you provide
-     * the Outposts bucket ARN in place of the bucket name. For more information about
-     * S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
-     * S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p>
+     * When using this action with an access point through the Amazon Web Services
+     * SDKs, you provide the access point ARN in place of the bucket name. For more
+     * information about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
+     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
+     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
+     * When using this action with S3 on Outposts through the Amazon Web Services SDKs,
+     * you provide the Outposts bucket ARN in place of the bucket name. For more
+     * information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
+     * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline UploadPartCopyRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * <p>The bucket name.</p> <p>When using this API with an access point, you must
+     * <p>The bucket name.</p> <p>When using this action with an access point, you must
      * direct requests to the access point hostname. The access point hostname takes
      * the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation with an access point through the AWS SDKs, you provide
-     * the access point ARN in place of the bucket name. For more information about
-     * access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
-     * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
-     * takes the form
-     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-     * When using this operation using S3 on Outposts through the AWS SDKs, you provide
-     * the Outposts bucket ARN in place of the bucket name. For more information about
-     * S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
-     * S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p>
+     * When using this action with an access point through the Amazon Web Services
+     * SDKs, you provide the access point ARN in place of the bucket name. For more
+     * information about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
+     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
+     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
+     * When using this action with S3 on Outposts through the Amazon Web Services SDKs,
+     * you provide the Outposts bucket ARN in place of the bucket name. For more
+     * information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
+     * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline UploadPartCopyRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * <p>The bucket name.</p> <p>When using this API with an access point, you must
+     * <p>The bucket name.</p> <p>When using this action with an access point, you must
      * direct requests to the access point hostname. The access point hostname takes
      * the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation with an access point through the AWS SDKs, you provide
-     * the access point ARN in place of the bucket name. For more information about
-     * access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
-     * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
-     * takes the form
-     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-     * When using this operation using S3 on Outposts through the AWS SDKs, you provide
-     * the Outposts bucket ARN in place of the bucket name. For more information about
-     * S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
-     * S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p>
+     * When using this action with an access point through the Amazon Web Services
+     * SDKs, you provide the access point ARN in place of the bucket name. For more
+     * information about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
+     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
+     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
+     * When using this action with S3 on Outposts through the Amazon Web Services SDKs,
+     * you provide the Outposts bucket ARN in place of the bucket name. For more
+     * information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
+     * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline UploadPartCopyRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
@@ -232,15 +216,15 @@ namespace Model
      * <p>Specifies the source object for the copy operation. You specify the value in
      * one of two formats, depending on whether you want to access the source object
      * through an <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">access
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">access
      * point</a>:</p> <ul> <li> <p>For objects not accessed through an access point,
      * specify the name of the source bucket and key of the source object, separated by
      * a slash (/). For example, to copy the object <code>reports/january.pdf</code>
      * from the bucket <code>awsexamplebucket</code>, use
-     * <code>awsexamplebucket/reports/january.pdf</code>. The value must be URL
-     * encoded.</p> </li> <li> <p>For objects accessed through access points, specify
-     * the Amazon Resource Name (ARN) of the object as accessed through the access
-     * point, in the format
+     * <code>awsexamplebucket/reports/january.pdf</code>. The value must be
+     * URL-encoded.</p> </li> <li> <p>For objects accessed through access points,
+     * specify the Amazon Resource Name (ARN) of the object as accessed through the
+     * access point, in the format
      * <code>arn:aws:s3:&lt;Region&gt;:&lt;account-id&gt;:accesspoint/&lt;access-point-name&gt;/object/&lt;key&gt;</code>.
      * For example, to copy the object <code>reports/january.pdf</code> through access
      * point <code>my-access-point</code> owned by account <code>123456789012</code> in
@@ -248,14 +232,15 @@ namespace Model
      * <code>arn:aws:s3:us-west-2:123456789012:accesspoint/my-access-point/object/reports/january.pdf</code>.
      * The value must be URL encoded.</p>  <p>Amazon S3 supports copy operations
      * using access points only when the source and destination buckets are in the same
-     * AWS Region.</p>  <p>Alternatively, for objects accessed through Amazon S3
-     * on Outposts, specify the ARN of the object as accessed in the format
+     * Amazon Web Services Region.</p>  <p>Alternatively, for objects accessed
+     * through Amazon S3 on Outposts, specify the ARN of the object as accessed in the
+     * format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/object/&lt;key&gt;</code>.
      * For example, to copy the object <code>reports/january.pdf</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
      * <code>us-west-2</code>, use the URL encoding of
      * <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>.
-     * The value must be URL encoded. </p> </li> </ul> <p>To copy a specific version of
+     * The value must be URL-encoded. </p> </li> </ul> <p>To copy a specific version of
      * an object, append <code>?versionId=&lt;version-id&gt;</code> to the value (for
      * example,
      * <code>awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>).
@@ -268,15 +253,15 @@ namespace Model
      * <p>Specifies the source object for the copy operation. You specify the value in
      * one of two formats, depending on whether you want to access the source object
      * through an <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">access
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">access
      * point</a>:</p> <ul> <li> <p>For objects not accessed through an access point,
      * specify the name of the source bucket and key of the source object, separated by
      * a slash (/). For example, to copy the object <code>reports/january.pdf</code>
      * from the bucket <code>awsexamplebucket</code>, use
-     * <code>awsexamplebucket/reports/january.pdf</code>. The value must be URL
-     * encoded.</p> </li> <li> <p>For objects accessed through access points, specify
-     * the Amazon Resource Name (ARN) of the object as accessed through the access
-     * point, in the format
+     * <code>awsexamplebucket/reports/january.pdf</code>. The value must be
+     * URL-encoded.</p> </li> <li> <p>For objects accessed through access points,
+     * specify the Amazon Resource Name (ARN) of the object as accessed through the
+     * access point, in the format
      * <code>arn:aws:s3:&lt;Region&gt;:&lt;account-id&gt;:accesspoint/&lt;access-point-name&gt;/object/&lt;key&gt;</code>.
      * For example, to copy the object <code>reports/january.pdf</code> through access
      * point <code>my-access-point</code> owned by account <code>123456789012</code> in
@@ -284,14 +269,15 @@ namespace Model
      * <code>arn:aws:s3:us-west-2:123456789012:accesspoint/my-access-point/object/reports/january.pdf</code>.
      * The value must be URL encoded.</p>  <p>Amazon S3 supports copy operations
      * using access points only when the source and destination buckets are in the same
-     * AWS Region.</p>  <p>Alternatively, for objects accessed through Amazon S3
-     * on Outposts, specify the ARN of the object as accessed in the format
+     * Amazon Web Services Region.</p>  <p>Alternatively, for objects accessed
+     * through Amazon S3 on Outposts, specify the ARN of the object as accessed in the
+     * format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/object/&lt;key&gt;</code>.
      * For example, to copy the object <code>reports/january.pdf</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
      * <code>us-west-2</code>, use the URL encoding of
      * <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>.
-     * The value must be URL encoded. </p> </li> </ul> <p>To copy a specific version of
+     * The value must be URL-encoded. </p> </li> </ul> <p>To copy a specific version of
      * an object, append <code>?versionId=&lt;version-id&gt;</code> to the value (for
      * example,
      * <code>awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>).
@@ -304,15 +290,15 @@ namespace Model
      * <p>Specifies the source object for the copy operation. You specify the value in
      * one of two formats, depending on whether you want to access the source object
      * through an <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">access
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">access
      * point</a>:</p> <ul> <li> <p>For objects not accessed through an access point,
      * specify the name of the source bucket and key of the source object, separated by
      * a slash (/). For example, to copy the object <code>reports/january.pdf</code>
      * from the bucket <code>awsexamplebucket</code>, use
-     * <code>awsexamplebucket/reports/january.pdf</code>. The value must be URL
-     * encoded.</p> </li> <li> <p>For objects accessed through access points, specify
-     * the Amazon Resource Name (ARN) of the object as accessed through the access
-     * point, in the format
+     * <code>awsexamplebucket/reports/january.pdf</code>. The value must be
+     * URL-encoded.</p> </li> <li> <p>For objects accessed through access points,
+     * specify the Amazon Resource Name (ARN) of the object as accessed through the
+     * access point, in the format
      * <code>arn:aws:s3:&lt;Region&gt;:&lt;account-id&gt;:accesspoint/&lt;access-point-name&gt;/object/&lt;key&gt;</code>.
      * For example, to copy the object <code>reports/january.pdf</code> through access
      * point <code>my-access-point</code> owned by account <code>123456789012</code> in
@@ -320,14 +306,15 @@ namespace Model
      * <code>arn:aws:s3:us-west-2:123456789012:accesspoint/my-access-point/object/reports/january.pdf</code>.
      * The value must be URL encoded.</p>  <p>Amazon S3 supports copy operations
      * using access points only when the source and destination buckets are in the same
-     * AWS Region.</p>  <p>Alternatively, for objects accessed through Amazon S3
-     * on Outposts, specify the ARN of the object as accessed in the format
+     * Amazon Web Services Region.</p>  <p>Alternatively, for objects accessed
+     * through Amazon S3 on Outposts, specify the ARN of the object as accessed in the
+     * format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/object/&lt;key&gt;</code>.
      * For example, to copy the object <code>reports/january.pdf</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
      * <code>us-west-2</code>, use the URL encoding of
      * <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>.
-     * The value must be URL encoded. </p> </li> </ul> <p>To copy a specific version of
+     * The value must be URL-encoded. </p> </li> </ul> <p>To copy a specific version of
      * an object, append <code>?versionId=&lt;version-id&gt;</code> to the value (for
      * example,
      * <code>awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>).
@@ -340,15 +327,15 @@ namespace Model
      * <p>Specifies the source object for the copy operation. You specify the value in
      * one of two formats, depending on whether you want to access the source object
      * through an <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">access
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">access
      * point</a>:</p> <ul> <li> <p>For objects not accessed through an access point,
      * specify the name of the source bucket and key of the source object, separated by
      * a slash (/). For example, to copy the object <code>reports/january.pdf</code>
      * from the bucket <code>awsexamplebucket</code>, use
-     * <code>awsexamplebucket/reports/january.pdf</code>. The value must be URL
-     * encoded.</p> </li> <li> <p>For objects accessed through access points, specify
-     * the Amazon Resource Name (ARN) of the object as accessed through the access
-     * point, in the format
+     * <code>awsexamplebucket/reports/january.pdf</code>. The value must be
+     * URL-encoded.</p> </li> <li> <p>For objects accessed through access points,
+     * specify the Amazon Resource Name (ARN) of the object as accessed through the
+     * access point, in the format
      * <code>arn:aws:s3:&lt;Region&gt;:&lt;account-id&gt;:accesspoint/&lt;access-point-name&gt;/object/&lt;key&gt;</code>.
      * For example, to copy the object <code>reports/january.pdf</code> through access
      * point <code>my-access-point</code> owned by account <code>123456789012</code> in
@@ -356,14 +343,15 @@ namespace Model
      * <code>arn:aws:s3:us-west-2:123456789012:accesspoint/my-access-point/object/reports/january.pdf</code>.
      * The value must be URL encoded.</p>  <p>Amazon S3 supports copy operations
      * using access points only when the source and destination buckets are in the same
-     * AWS Region.</p>  <p>Alternatively, for objects accessed through Amazon S3
-     * on Outposts, specify the ARN of the object as accessed in the format
+     * Amazon Web Services Region.</p>  <p>Alternatively, for objects accessed
+     * through Amazon S3 on Outposts, specify the ARN of the object as accessed in the
+     * format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/object/&lt;key&gt;</code>.
      * For example, to copy the object <code>reports/january.pdf</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
      * <code>us-west-2</code>, use the URL encoding of
      * <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>.
-     * The value must be URL encoded. </p> </li> </ul> <p>To copy a specific version of
+     * The value must be URL-encoded. </p> </li> </ul> <p>To copy a specific version of
      * an object, append <code>?versionId=&lt;version-id&gt;</code> to the value (for
      * example,
      * <code>awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>).
@@ -376,15 +364,15 @@ namespace Model
      * <p>Specifies the source object for the copy operation. You specify the value in
      * one of two formats, depending on whether you want to access the source object
      * through an <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">access
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">access
      * point</a>:</p> <ul> <li> <p>For objects not accessed through an access point,
      * specify the name of the source bucket and key of the source object, separated by
      * a slash (/). For example, to copy the object <code>reports/january.pdf</code>
      * from the bucket <code>awsexamplebucket</code>, use
-     * <code>awsexamplebucket/reports/january.pdf</code>. The value must be URL
-     * encoded.</p> </li> <li> <p>For objects accessed through access points, specify
-     * the Amazon Resource Name (ARN) of the object as accessed through the access
-     * point, in the format
+     * <code>awsexamplebucket/reports/january.pdf</code>. The value must be
+     * URL-encoded.</p> </li> <li> <p>For objects accessed through access points,
+     * specify the Amazon Resource Name (ARN) of the object as accessed through the
+     * access point, in the format
      * <code>arn:aws:s3:&lt;Region&gt;:&lt;account-id&gt;:accesspoint/&lt;access-point-name&gt;/object/&lt;key&gt;</code>.
      * For example, to copy the object <code>reports/january.pdf</code> through access
      * point <code>my-access-point</code> owned by account <code>123456789012</code> in
@@ -392,14 +380,15 @@ namespace Model
      * <code>arn:aws:s3:us-west-2:123456789012:accesspoint/my-access-point/object/reports/january.pdf</code>.
      * The value must be URL encoded.</p>  <p>Amazon S3 supports copy operations
      * using access points only when the source and destination buckets are in the same
-     * AWS Region.</p>  <p>Alternatively, for objects accessed through Amazon S3
-     * on Outposts, specify the ARN of the object as accessed in the format
+     * Amazon Web Services Region.</p>  <p>Alternatively, for objects accessed
+     * through Amazon S3 on Outposts, specify the ARN of the object as accessed in the
+     * format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/object/&lt;key&gt;</code>.
      * For example, to copy the object <code>reports/january.pdf</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
      * <code>us-west-2</code>, use the URL encoding of
      * <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>.
-     * The value must be URL encoded. </p> </li> </ul> <p>To copy a specific version of
+     * The value must be URL-encoded. </p> </li> </ul> <p>To copy a specific version of
      * an object, append <code>?versionId=&lt;version-id&gt;</code> to the value (for
      * example,
      * <code>awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>).
@@ -412,15 +401,15 @@ namespace Model
      * <p>Specifies the source object for the copy operation. You specify the value in
      * one of two formats, depending on whether you want to access the source object
      * through an <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">access
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">access
      * point</a>:</p> <ul> <li> <p>For objects not accessed through an access point,
      * specify the name of the source bucket and key of the source object, separated by
      * a slash (/). For example, to copy the object <code>reports/january.pdf</code>
      * from the bucket <code>awsexamplebucket</code>, use
-     * <code>awsexamplebucket/reports/january.pdf</code>. The value must be URL
-     * encoded.</p> </li> <li> <p>For objects accessed through access points, specify
-     * the Amazon Resource Name (ARN) of the object as accessed through the access
-     * point, in the format
+     * <code>awsexamplebucket/reports/january.pdf</code>. The value must be
+     * URL-encoded.</p> </li> <li> <p>For objects accessed through access points,
+     * specify the Amazon Resource Name (ARN) of the object as accessed through the
+     * access point, in the format
      * <code>arn:aws:s3:&lt;Region&gt;:&lt;account-id&gt;:accesspoint/&lt;access-point-name&gt;/object/&lt;key&gt;</code>.
      * For example, to copy the object <code>reports/january.pdf</code> through access
      * point <code>my-access-point</code> owned by account <code>123456789012</code> in
@@ -428,14 +417,15 @@ namespace Model
      * <code>arn:aws:s3:us-west-2:123456789012:accesspoint/my-access-point/object/reports/january.pdf</code>.
      * The value must be URL encoded.</p>  <p>Amazon S3 supports copy operations
      * using access points only when the source and destination buckets are in the same
-     * AWS Region.</p>  <p>Alternatively, for objects accessed through Amazon S3
-     * on Outposts, specify the ARN of the object as accessed in the format
+     * Amazon Web Services Region.</p>  <p>Alternatively, for objects accessed
+     * through Amazon S3 on Outposts, specify the ARN of the object as accessed in the
+     * format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/object/&lt;key&gt;</code>.
      * For example, to copy the object <code>reports/january.pdf</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
      * <code>us-west-2</code>, use the URL encoding of
      * <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>.
-     * The value must be URL encoded. </p> </li> </ul> <p>To copy a specific version of
+     * The value must be URL-encoded. </p> </li> </ul> <p>To copy a specific version of
      * an object, append <code>?versionId=&lt;version-id&gt;</code> to the value (for
      * example,
      * <code>awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>).
@@ -448,15 +438,15 @@ namespace Model
      * <p>Specifies the source object for the copy operation. You specify the value in
      * one of two formats, depending on whether you want to access the source object
      * through an <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">access
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">access
      * point</a>:</p> <ul> <li> <p>For objects not accessed through an access point,
      * specify the name of the source bucket and key of the source object, separated by
      * a slash (/). For example, to copy the object <code>reports/january.pdf</code>
      * from the bucket <code>awsexamplebucket</code>, use
-     * <code>awsexamplebucket/reports/january.pdf</code>. The value must be URL
-     * encoded.</p> </li> <li> <p>For objects accessed through access points, specify
-     * the Amazon Resource Name (ARN) of the object as accessed through the access
-     * point, in the format
+     * <code>awsexamplebucket/reports/january.pdf</code>. The value must be
+     * URL-encoded.</p> </li> <li> <p>For objects accessed through access points,
+     * specify the Amazon Resource Name (ARN) of the object as accessed through the
+     * access point, in the format
      * <code>arn:aws:s3:&lt;Region&gt;:&lt;account-id&gt;:accesspoint/&lt;access-point-name&gt;/object/&lt;key&gt;</code>.
      * For example, to copy the object <code>reports/january.pdf</code> through access
      * point <code>my-access-point</code> owned by account <code>123456789012</code> in
@@ -464,14 +454,15 @@ namespace Model
      * <code>arn:aws:s3:us-west-2:123456789012:accesspoint/my-access-point/object/reports/january.pdf</code>.
      * The value must be URL encoded.</p>  <p>Amazon S3 supports copy operations
      * using access points only when the source and destination buckets are in the same
-     * AWS Region.</p>  <p>Alternatively, for objects accessed through Amazon S3
-     * on Outposts, specify the ARN of the object as accessed in the format
+     * Amazon Web Services Region.</p>  <p>Alternatively, for objects accessed
+     * through Amazon S3 on Outposts, specify the ARN of the object as accessed in the
+     * format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/object/&lt;key&gt;</code>.
      * For example, to copy the object <code>reports/january.pdf</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
      * <code>us-west-2</code>, use the URL encoding of
      * <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>.
-     * The value must be URL encoded. </p> </li> </ul> <p>To copy a specific version of
+     * The value must be URL-encoded. </p> </li> </ul> <p>To copy a specific version of
      * an object, append <code>?versionId=&lt;version-id&gt;</code> to the value (for
      * example,
      * <code>awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>).
@@ -484,15 +475,15 @@ namespace Model
      * <p>Specifies the source object for the copy operation. You specify the value in
      * one of two formats, depending on whether you want to access the source object
      * through an <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">access
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">access
      * point</a>:</p> <ul> <li> <p>For objects not accessed through an access point,
      * specify the name of the source bucket and key of the source object, separated by
      * a slash (/). For example, to copy the object <code>reports/january.pdf</code>
      * from the bucket <code>awsexamplebucket</code>, use
-     * <code>awsexamplebucket/reports/january.pdf</code>. The value must be URL
-     * encoded.</p> </li> <li> <p>For objects accessed through access points, specify
-     * the Amazon Resource Name (ARN) of the object as accessed through the access
-     * point, in the format
+     * <code>awsexamplebucket/reports/january.pdf</code>. The value must be
+     * URL-encoded.</p> </li> <li> <p>For objects accessed through access points,
+     * specify the Amazon Resource Name (ARN) of the object as accessed through the
+     * access point, in the format
      * <code>arn:aws:s3:&lt;Region&gt;:&lt;account-id&gt;:accesspoint/&lt;access-point-name&gt;/object/&lt;key&gt;</code>.
      * For example, to copy the object <code>reports/january.pdf</code> through access
      * point <code>my-access-point</code> owned by account <code>123456789012</code> in
@@ -500,14 +491,15 @@ namespace Model
      * <code>arn:aws:s3:us-west-2:123456789012:accesspoint/my-access-point/object/reports/january.pdf</code>.
      * The value must be URL encoded.</p>  <p>Amazon S3 supports copy operations
      * using access points only when the source and destination buckets are in the same
-     * AWS Region.</p>  <p>Alternatively, for objects accessed through Amazon S3
-     * on Outposts, specify the ARN of the object as accessed in the format
+     * Amazon Web Services Region.</p>  <p>Alternatively, for objects accessed
+     * through Amazon S3 on Outposts, specify the ARN of the object as accessed in the
+     * format
      * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/object/&lt;key&gt;</code>.
      * For example, to copy the object <code>reports/january.pdf</code> through outpost
      * <code>my-outpost</code> owned by account <code>123456789012</code> in Region
      * <code>us-west-2</code>, use the URL encoding of
      * <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf</code>.
-     * The value must be URL encoded. </p> </li> </ul> <p>To copy a specific version of
+     * The value must be URL-encoded. </p> </li> </ul> <p>To copy a specific version of
      * an object, append <code>?versionId=&lt;version-id&gt;</code> to the value (for
      * example,
      * <code>awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893</code>).
@@ -1227,115 +1219,115 @@ namespace Model
 
 
     /**
-     * <p>The account id of the expected destination bucket owner. If the destination
-     * bucket is owned by a different account, the request will fail with an HTTP
-     * <code>403 (Access Denied)</code> error.</p>
+     * <p>The account ID of the expected destination bucket owner. If the destination
+     * bucket is owned by a different account, the request fails with the HTTP status
+     * code <code>403 Forbidden</code> (access denied).</p>
      */
     inline const Aws::String& GetExpectedBucketOwner() const{ return m_expectedBucketOwner; }
 
     /**
-     * <p>The account id of the expected destination bucket owner. If the destination
-     * bucket is owned by a different account, the request will fail with an HTTP
-     * <code>403 (Access Denied)</code> error.</p>
+     * <p>The account ID of the expected destination bucket owner. If the destination
+     * bucket is owned by a different account, the request fails with the HTTP status
+     * code <code>403 Forbidden</code> (access denied).</p>
      */
     inline bool ExpectedBucketOwnerHasBeenSet() const { return m_expectedBucketOwnerHasBeenSet; }
 
     /**
-     * <p>The account id of the expected destination bucket owner. If the destination
-     * bucket is owned by a different account, the request will fail with an HTTP
-     * <code>403 (Access Denied)</code> error.</p>
+     * <p>The account ID of the expected destination bucket owner. If the destination
+     * bucket is owned by a different account, the request fails with the HTTP status
+     * code <code>403 Forbidden</code> (access denied).</p>
      */
     inline void SetExpectedBucketOwner(const Aws::String& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = value; }
 
     /**
-     * <p>The account id of the expected destination bucket owner. If the destination
-     * bucket is owned by a different account, the request will fail with an HTTP
-     * <code>403 (Access Denied)</code> error.</p>
+     * <p>The account ID of the expected destination bucket owner. If the destination
+     * bucket is owned by a different account, the request fails with the HTTP status
+     * code <code>403 Forbidden</code> (access denied).</p>
      */
     inline void SetExpectedBucketOwner(Aws::String&& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = std::move(value); }
 
     /**
-     * <p>The account id of the expected destination bucket owner. If the destination
-     * bucket is owned by a different account, the request will fail with an HTTP
-     * <code>403 (Access Denied)</code> error.</p>
+     * <p>The account ID of the expected destination bucket owner. If the destination
+     * bucket is owned by a different account, the request fails with the HTTP status
+     * code <code>403 Forbidden</code> (access denied).</p>
      */
     inline void SetExpectedBucketOwner(const char* value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner.assign(value); }
 
     /**
-     * <p>The account id of the expected destination bucket owner. If the destination
-     * bucket is owned by a different account, the request will fail with an HTTP
-     * <code>403 (Access Denied)</code> error.</p>
+     * <p>The account ID of the expected destination bucket owner. If the destination
+     * bucket is owned by a different account, the request fails with the HTTP status
+     * code <code>403 Forbidden</code> (access denied).</p>
      */
     inline UploadPartCopyRequest& WithExpectedBucketOwner(const Aws::String& value) { SetExpectedBucketOwner(value); return *this;}
 
     /**
-     * <p>The account id of the expected destination bucket owner. If the destination
-     * bucket is owned by a different account, the request will fail with an HTTP
-     * <code>403 (Access Denied)</code> error.</p>
+     * <p>The account ID of the expected destination bucket owner. If the destination
+     * bucket is owned by a different account, the request fails with the HTTP status
+     * code <code>403 Forbidden</code> (access denied).</p>
      */
     inline UploadPartCopyRequest& WithExpectedBucketOwner(Aws::String&& value) { SetExpectedBucketOwner(std::move(value)); return *this;}
 
     /**
-     * <p>The account id of the expected destination bucket owner. If the destination
-     * bucket is owned by a different account, the request will fail with an HTTP
-     * <code>403 (Access Denied)</code> error.</p>
+     * <p>The account ID of the expected destination bucket owner. If the destination
+     * bucket is owned by a different account, the request fails with the HTTP status
+     * code <code>403 Forbidden</code> (access denied).</p>
      */
     inline UploadPartCopyRequest& WithExpectedBucketOwner(const char* value) { SetExpectedBucketOwner(value); return *this;}
 
 
     /**
-     * <p>The account id of the expected source bucket owner. If the source bucket is
-     * owned by a different account, the request will fail with an HTTP <code>403
-     * (Access Denied)</code> error.</p>
+     * <p>The account ID of the expected source bucket owner. If the source bucket is
+     * owned by a different account, the request fails with the HTTP status code
+     * <code>403 Forbidden</code> (access denied).</p>
      */
     inline const Aws::String& GetExpectedSourceBucketOwner() const{ return m_expectedSourceBucketOwner; }
 
     /**
-     * <p>The account id of the expected source bucket owner. If the source bucket is
-     * owned by a different account, the request will fail with an HTTP <code>403
-     * (Access Denied)</code> error.</p>
+     * <p>The account ID of the expected source bucket owner. If the source bucket is
+     * owned by a different account, the request fails with the HTTP status code
+     * <code>403 Forbidden</code> (access denied).</p>
      */
     inline bool ExpectedSourceBucketOwnerHasBeenSet() const { return m_expectedSourceBucketOwnerHasBeenSet; }
 
     /**
-     * <p>The account id of the expected source bucket owner. If the source bucket is
-     * owned by a different account, the request will fail with an HTTP <code>403
-     * (Access Denied)</code> error.</p>
+     * <p>The account ID of the expected source bucket owner. If the source bucket is
+     * owned by a different account, the request fails with the HTTP status code
+     * <code>403 Forbidden</code> (access denied).</p>
      */
     inline void SetExpectedSourceBucketOwner(const Aws::String& value) { m_expectedSourceBucketOwnerHasBeenSet = true; m_expectedSourceBucketOwner = value; }
 
     /**
-     * <p>The account id of the expected source bucket owner. If the source bucket is
-     * owned by a different account, the request will fail with an HTTP <code>403
-     * (Access Denied)</code> error.</p>
+     * <p>The account ID of the expected source bucket owner. If the source bucket is
+     * owned by a different account, the request fails with the HTTP status code
+     * <code>403 Forbidden</code> (access denied).</p>
      */
     inline void SetExpectedSourceBucketOwner(Aws::String&& value) { m_expectedSourceBucketOwnerHasBeenSet = true; m_expectedSourceBucketOwner = std::move(value); }
 
     /**
-     * <p>The account id of the expected source bucket owner. If the source bucket is
-     * owned by a different account, the request will fail with an HTTP <code>403
-     * (Access Denied)</code> error.</p>
+     * <p>The account ID of the expected source bucket owner. If the source bucket is
+     * owned by a different account, the request fails with the HTTP status code
+     * <code>403 Forbidden</code> (access denied).</p>
      */
     inline void SetExpectedSourceBucketOwner(const char* value) { m_expectedSourceBucketOwnerHasBeenSet = true; m_expectedSourceBucketOwner.assign(value); }
 
     /**
-     * <p>The account id of the expected source bucket owner. If the source bucket is
-     * owned by a different account, the request will fail with an HTTP <code>403
-     * (Access Denied)</code> error.</p>
+     * <p>The account ID of the expected source bucket owner. If the source bucket is
+     * owned by a different account, the request fails with the HTTP status code
+     * <code>403 Forbidden</code> (access denied).</p>
      */
     inline UploadPartCopyRequest& WithExpectedSourceBucketOwner(const Aws::String& value) { SetExpectedSourceBucketOwner(value); return *this;}
 
     /**
-     * <p>The account id of the expected source bucket owner. If the source bucket is
-     * owned by a different account, the request will fail with an HTTP <code>403
-     * (Access Denied)</code> error.</p>
+     * <p>The account ID of the expected source bucket owner. If the source bucket is
+     * owned by a different account, the request fails with the HTTP status code
+     * <code>403 Forbidden</code> (access denied).</p>
      */
     inline UploadPartCopyRequest& WithExpectedSourceBucketOwner(Aws::String&& value) { SetExpectedSourceBucketOwner(std::move(value)); return *this;}
 
     /**
-     * <p>The account id of the expected source bucket owner. If the source bucket is
-     * owned by a different account, the request will fail with an HTTP <code>403
-     * (Access Denied)</code> error.</p>
+     * <p>The account ID of the expected source bucket owner. If the source bucket is
+     * owned by a different account, the request fails with the HTTP status code
+     * <code>403 Forbidden</code> (access denied).</p>
      */
     inline UploadPartCopyRequest& WithExpectedSourceBucketOwner(const char* value) { SetExpectedSourceBucketOwner(value); return *this;}
 

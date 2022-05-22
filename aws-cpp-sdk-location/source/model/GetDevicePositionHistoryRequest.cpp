@@ -15,6 +15,8 @@ using namespace Aws::Utils;
 GetDevicePositionHistoryRequest::GetDevicePositionHistoryRequest() : 
     m_deviceIdHasBeenSet(false),
     m_endTimeExclusiveHasBeenSet(false),
+    m_maxResults(0),
+    m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_startTimeInclusiveHasBeenSet(false),
     m_trackerNameHasBeenSet(false)
@@ -28,6 +30,12 @@ Aws::String GetDevicePositionHistoryRequest::SerializePayload() const
   if(m_endTimeExclusiveHasBeenSet)
   {
    payload.WithString("EndTimeExclusive", m_endTimeExclusive.ToGmtString(DateFormat::ISO_8601));
+  }
+
+  if(m_maxResultsHasBeenSet)
+  {
+   payload.WithInteger("MaxResults", m_maxResults);
+
   }
 
   if(m_nextTokenHasBeenSet)

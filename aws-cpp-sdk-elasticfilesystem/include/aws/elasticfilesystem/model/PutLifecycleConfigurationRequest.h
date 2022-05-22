@@ -86,72 +86,144 @@ namespace Model
     /**
      * <p>An array of <code>LifecyclePolicy</code> objects that define the file
      * system's <code>LifecycleConfiguration</code> object. A
-     * <code>LifecycleConfiguration</code> object tells lifecycle management when to
-     * transition files from the Standard storage class to the Infrequent Access
-     * storage class.</p>
+     * <code>LifecycleConfiguration</code> object informs EFS lifecycle management and
+     * EFS Intelligent-Tiering of the following:</p> <ul> <li> <p>When to move files in
+     * the file system from primary storage to the IA storage class.</p> </li> <li>
+     * <p>When to move files that are in IA storage to primary storage.</p> </li> </ul>
+     *  <p>When using the <code>put-lifecycle-configuration</code> CLI command or
+     * the <code>PutLifecycleConfiguration</code> API action, Amazon EFS requires that
+     * each <code>LifecyclePolicy</code> object have only a single transition. This
+     * means that in a request body, <code>LifecyclePolicies</code> must be structured
+     * as an array of <code>LifecyclePolicy</code> objects, one object for each
+     * transition, <code>TransitionToIA</code>,
+     * <code>TransitionToPrimaryStorageClass</code>. See the example requests in the
+     * following section for more information.</p> 
      */
     inline const Aws::Vector<LifecyclePolicy>& GetLifecyclePolicies() const{ return m_lifecyclePolicies; }
 
     /**
      * <p>An array of <code>LifecyclePolicy</code> objects that define the file
      * system's <code>LifecycleConfiguration</code> object. A
-     * <code>LifecycleConfiguration</code> object tells lifecycle management when to
-     * transition files from the Standard storage class to the Infrequent Access
-     * storage class.</p>
+     * <code>LifecycleConfiguration</code> object informs EFS lifecycle management and
+     * EFS Intelligent-Tiering of the following:</p> <ul> <li> <p>When to move files in
+     * the file system from primary storage to the IA storage class.</p> </li> <li>
+     * <p>When to move files that are in IA storage to primary storage.</p> </li> </ul>
+     *  <p>When using the <code>put-lifecycle-configuration</code> CLI command or
+     * the <code>PutLifecycleConfiguration</code> API action, Amazon EFS requires that
+     * each <code>LifecyclePolicy</code> object have only a single transition. This
+     * means that in a request body, <code>LifecyclePolicies</code> must be structured
+     * as an array of <code>LifecyclePolicy</code> objects, one object for each
+     * transition, <code>TransitionToIA</code>,
+     * <code>TransitionToPrimaryStorageClass</code>. See the example requests in the
+     * following section for more information.</p> 
      */
     inline bool LifecyclePoliciesHasBeenSet() const { return m_lifecyclePoliciesHasBeenSet; }
 
     /**
      * <p>An array of <code>LifecyclePolicy</code> objects that define the file
      * system's <code>LifecycleConfiguration</code> object. A
-     * <code>LifecycleConfiguration</code> object tells lifecycle management when to
-     * transition files from the Standard storage class to the Infrequent Access
-     * storage class.</p>
+     * <code>LifecycleConfiguration</code> object informs EFS lifecycle management and
+     * EFS Intelligent-Tiering of the following:</p> <ul> <li> <p>When to move files in
+     * the file system from primary storage to the IA storage class.</p> </li> <li>
+     * <p>When to move files that are in IA storage to primary storage.</p> </li> </ul>
+     *  <p>When using the <code>put-lifecycle-configuration</code> CLI command or
+     * the <code>PutLifecycleConfiguration</code> API action, Amazon EFS requires that
+     * each <code>LifecyclePolicy</code> object have only a single transition. This
+     * means that in a request body, <code>LifecyclePolicies</code> must be structured
+     * as an array of <code>LifecyclePolicy</code> objects, one object for each
+     * transition, <code>TransitionToIA</code>,
+     * <code>TransitionToPrimaryStorageClass</code>. See the example requests in the
+     * following section for more information.</p> 
      */
     inline void SetLifecyclePolicies(const Aws::Vector<LifecyclePolicy>& value) { m_lifecyclePoliciesHasBeenSet = true; m_lifecyclePolicies = value; }
 
     /**
      * <p>An array of <code>LifecyclePolicy</code> objects that define the file
      * system's <code>LifecycleConfiguration</code> object. A
-     * <code>LifecycleConfiguration</code> object tells lifecycle management when to
-     * transition files from the Standard storage class to the Infrequent Access
-     * storage class.</p>
+     * <code>LifecycleConfiguration</code> object informs EFS lifecycle management and
+     * EFS Intelligent-Tiering of the following:</p> <ul> <li> <p>When to move files in
+     * the file system from primary storage to the IA storage class.</p> </li> <li>
+     * <p>When to move files that are in IA storage to primary storage.</p> </li> </ul>
+     *  <p>When using the <code>put-lifecycle-configuration</code> CLI command or
+     * the <code>PutLifecycleConfiguration</code> API action, Amazon EFS requires that
+     * each <code>LifecyclePolicy</code> object have only a single transition. This
+     * means that in a request body, <code>LifecyclePolicies</code> must be structured
+     * as an array of <code>LifecyclePolicy</code> objects, one object for each
+     * transition, <code>TransitionToIA</code>,
+     * <code>TransitionToPrimaryStorageClass</code>. See the example requests in the
+     * following section for more information.</p> 
      */
     inline void SetLifecyclePolicies(Aws::Vector<LifecyclePolicy>&& value) { m_lifecyclePoliciesHasBeenSet = true; m_lifecyclePolicies = std::move(value); }
 
     /**
      * <p>An array of <code>LifecyclePolicy</code> objects that define the file
      * system's <code>LifecycleConfiguration</code> object. A
-     * <code>LifecycleConfiguration</code> object tells lifecycle management when to
-     * transition files from the Standard storage class to the Infrequent Access
-     * storage class.</p>
+     * <code>LifecycleConfiguration</code> object informs EFS lifecycle management and
+     * EFS Intelligent-Tiering of the following:</p> <ul> <li> <p>When to move files in
+     * the file system from primary storage to the IA storage class.</p> </li> <li>
+     * <p>When to move files that are in IA storage to primary storage.</p> </li> </ul>
+     *  <p>When using the <code>put-lifecycle-configuration</code> CLI command or
+     * the <code>PutLifecycleConfiguration</code> API action, Amazon EFS requires that
+     * each <code>LifecyclePolicy</code> object have only a single transition. This
+     * means that in a request body, <code>LifecyclePolicies</code> must be structured
+     * as an array of <code>LifecyclePolicy</code> objects, one object for each
+     * transition, <code>TransitionToIA</code>,
+     * <code>TransitionToPrimaryStorageClass</code>. See the example requests in the
+     * following section for more information.</p> 
      */
     inline PutLifecycleConfigurationRequest& WithLifecyclePolicies(const Aws::Vector<LifecyclePolicy>& value) { SetLifecyclePolicies(value); return *this;}
 
     /**
      * <p>An array of <code>LifecyclePolicy</code> objects that define the file
      * system's <code>LifecycleConfiguration</code> object. A
-     * <code>LifecycleConfiguration</code> object tells lifecycle management when to
-     * transition files from the Standard storage class to the Infrequent Access
-     * storage class.</p>
+     * <code>LifecycleConfiguration</code> object informs EFS lifecycle management and
+     * EFS Intelligent-Tiering of the following:</p> <ul> <li> <p>When to move files in
+     * the file system from primary storage to the IA storage class.</p> </li> <li>
+     * <p>When to move files that are in IA storage to primary storage.</p> </li> </ul>
+     *  <p>When using the <code>put-lifecycle-configuration</code> CLI command or
+     * the <code>PutLifecycleConfiguration</code> API action, Amazon EFS requires that
+     * each <code>LifecyclePolicy</code> object have only a single transition. This
+     * means that in a request body, <code>LifecyclePolicies</code> must be structured
+     * as an array of <code>LifecyclePolicy</code> objects, one object for each
+     * transition, <code>TransitionToIA</code>,
+     * <code>TransitionToPrimaryStorageClass</code>. See the example requests in the
+     * following section for more information.</p> 
      */
     inline PutLifecycleConfigurationRequest& WithLifecyclePolicies(Aws::Vector<LifecyclePolicy>&& value) { SetLifecyclePolicies(std::move(value)); return *this;}
 
     /**
      * <p>An array of <code>LifecyclePolicy</code> objects that define the file
      * system's <code>LifecycleConfiguration</code> object. A
-     * <code>LifecycleConfiguration</code> object tells lifecycle management when to
-     * transition files from the Standard storage class to the Infrequent Access
-     * storage class.</p>
+     * <code>LifecycleConfiguration</code> object informs EFS lifecycle management and
+     * EFS Intelligent-Tiering of the following:</p> <ul> <li> <p>When to move files in
+     * the file system from primary storage to the IA storage class.</p> </li> <li>
+     * <p>When to move files that are in IA storage to primary storage.</p> </li> </ul>
+     *  <p>When using the <code>put-lifecycle-configuration</code> CLI command or
+     * the <code>PutLifecycleConfiguration</code> API action, Amazon EFS requires that
+     * each <code>LifecyclePolicy</code> object have only a single transition. This
+     * means that in a request body, <code>LifecyclePolicies</code> must be structured
+     * as an array of <code>LifecyclePolicy</code> objects, one object for each
+     * transition, <code>TransitionToIA</code>,
+     * <code>TransitionToPrimaryStorageClass</code>. See the example requests in the
+     * following section for more information.</p> 
      */
     inline PutLifecycleConfigurationRequest& AddLifecyclePolicies(const LifecyclePolicy& value) { m_lifecyclePoliciesHasBeenSet = true; m_lifecyclePolicies.push_back(value); return *this; }
 
     /**
      * <p>An array of <code>LifecyclePolicy</code> objects that define the file
      * system's <code>LifecycleConfiguration</code> object. A
-     * <code>LifecycleConfiguration</code> object tells lifecycle management when to
-     * transition files from the Standard storage class to the Infrequent Access
-     * storage class.</p>
+     * <code>LifecycleConfiguration</code> object informs EFS lifecycle management and
+     * EFS Intelligent-Tiering of the following:</p> <ul> <li> <p>When to move files in
+     * the file system from primary storage to the IA storage class.</p> </li> <li>
+     * <p>When to move files that are in IA storage to primary storage.</p> </li> </ul>
+     *  <p>When using the <code>put-lifecycle-configuration</code> CLI command or
+     * the <code>PutLifecycleConfiguration</code> API action, Amazon EFS requires that
+     * each <code>LifecyclePolicy</code> object have only a single transition. This
+     * means that in a request body, <code>LifecyclePolicies</code> must be structured
+     * as an array of <code>LifecyclePolicy</code> objects, one object for each
+     * transition, <code>TransitionToIA</code>,
+     * <code>TransitionToPrimaryStorageClass</code>. See the example requests in the
+     * following section for more information.</p> 
      */
     inline PutLifecycleConfigurationRequest& AddLifecyclePolicies(LifecyclePolicy&& value) { m_lifecyclePoliciesHasBeenSet = true; m_lifecyclePolicies.push_back(std::move(value)); return *this; }
 

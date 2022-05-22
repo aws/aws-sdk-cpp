@@ -35,32 +35,32 @@ namespace Model
 
 
     /**
-     * <p>The encrypted plaintext. When you use the HTTP API or the AWS CLI, the value
-     * is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+     * <p>The encrypted plaintext. When you use the HTTP API or the Amazon Web Services
+     * CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetCiphertextBlob() const{ return m_ciphertextBlob; }
 
     /**
-     * <p>The encrypted plaintext. When you use the HTTP API or the AWS CLI, the value
-     * is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+     * <p>The encrypted plaintext. When you use the HTTP API or the Amazon Web Services
+     * CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
      */
     inline void SetCiphertextBlob(const Aws::Utils::ByteBuffer& value) { m_ciphertextBlob = value; }
 
     /**
-     * <p>The encrypted plaintext. When you use the HTTP API or the AWS CLI, the value
-     * is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+     * <p>The encrypted plaintext. When you use the HTTP API or the Amazon Web Services
+     * CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
      */
     inline void SetCiphertextBlob(Aws::Utils::ByteBuffer&& value) { m_ciphertextBlob = std::move(value); }
 
     /**
-     * <p>The encrypted plaintext. When you use the HTTP API or the AWS CLI, the value
-     * is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+     * <p>The encrypted plaintext. When you use the HTTP API or the Amazon Web Services
+     * CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
      */
     inline EncryptResult& WithCiphertextBlob(const Aws::Utils::ByteBuffer& value) { SetCiphertextBlob(value); return *this;}
 
     /**
-     * <p>The encrypted plaintext. When you use the HTTP API or the AWS CLI, the value
-     * is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
+     * <p>The encrypted plaintext. When you use the HTTP API or the Amazon Web Services
+     * CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
      */
     inline EncryptResult& WithCiphertextBlob(Aws::Utils::ByteBuffer&& value) { SetCiphertextBlob(std::move(value)); return *this;}
 
@@ -68,49 +68,49 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
-     * ARN</a>) of the CMK that was used to encrypt the plaintext.</p>
+     * ARN</a>) of the KMS key that was used to encrypt the plaintext.</p>
      */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
-     * ARN</a>) of the CMK that was used to encrypt the plaintext.</p>
+     * ARN</a>) of the KMS key that was used to encrypt the plaintext.</p>
      */
     inline void SetKeyId(const Aws::String& value) { m_keyId = value; }
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
-     * ARN</a>) of the CMK that was used to encrypt the plaintext.</p>
+     * ARN</a>) of the KMS key that was used to encrypt the plaintext.</p>
      */
     inline void SetKeyId(Aws::String&& value) { m_keyId = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
-     * ARN</a>) of the CMK that was used to encrypt the plaintext.</p>
+     * ARN</a>) of the KMS key that was used to encrypt the plaintext.</p>
      */
     inline void SetKeyId(const char* value) { m_keyId.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
-     * ARN</a>) of the CMK that was used to encrypt the plaintext.</p>
+     * ARN</a>) of the KMS key that was used to encrypt the plaintext.</p>
      */
     inline EncryptResult& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
-     * ARN</a>) of the CMK that was used to encrypt the plaintext.</p>
+     * ARN</a>) of the KMS key that was used to encrypt the plaintext.</p>
      */
     inline EncryptResult& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
-     * ARN</a>) of the CMK that was used to encrypt the plaintext.</p>
+     * ARN</a>) of the KMS key that was used to encrypt the plaintext.</p>
      */
     inline EncryptResult& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 

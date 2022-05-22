@@ -26,6 +26,8 @@ namespace Aws
         static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
         static const int DELETING_HASH = HashingUtils::HashString("DELETING");
         static const int DELETED_HASH = HashingUtils::HashString("DELETED");
+        static const int UNAVAILABLE_HASH = HashingUtils::HashString("UNAVAILABLE");
+        static const int UPDATE_FAILED_HASH = HashingUtils::HashString("UPDATE_FAILED");
 
 
         EnvironmentStatus GetEnvironmentStatusForName(const Aws::String& name)
@@ -55,6 +57,14 @@ namespace Aws
           {
             return EnvironmentStatus::DELETED;
           }
+          else if (hashCode == UNAVAILABLE_HASH)
+          {
+            return EnvironmentStatus::UNAVAILABLE;
+          }
+          else if (hashCode == UPDATE_FAILED_HASH)
+          {
+            return EnvironmentStatus::UPDATE_FAILED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -81,6 +91,10 @@ namespace Aws
             return "DELETING";
           case EnvironmentStatus::DELETED:
             return "DELETED";
+          case EnvironmentStatus::UNAVAILABLE:
+            return "UNAVAILABLE";
+          case EnvironmentStatus::UPDATE_FAILED:
+            return "UPDATE_FAILED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -10,6 +10,7 @@
 #include <aws/workspaces/model/WorkspaceImageState.h>
 #include <aws/workspaces/model/WorkspaceImageRequiredTenancy.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/workspaces/model/UpdateResult.h>
 #include <utility>
 
 namespace Aws
@@ -364,87 +365,118 @@ namespace Model
 
 
     /**
-     * <p>The date when the image was created. If the image has been shared, the AWS
-     * account that the image has been shared with sees the original creation date of
-     * the image.</p>
+     * <p>The date when the image was created. If the image has been shared, the Amazon
+     * Web Services account that the image has been shared with sees the original
+     * creation date of the image.</p>
      */
     inline const Aws::Utils::DateTime& GetCreated() const{ return m_created; }
 
     /**
-     * <p>The date when the image was created. If the image has been shared, the AWS
-     * account that the image has been shared with sees the original creation date of
-     * the image.</p>
+     * <p>The date when the image was created. If the image has been shared, the Amazon
+     * Web Services account that the image has been shared with sees the original
+     * creation date of the image.</p>
      */
     inline bool CreatedHasBeenSet() const { return m_createdHasBeenSet; }
 
     /**
-     * <p>The date when the image was created. If the image has been shared, the AWS
-     * account that the image has been shared with sees the original creation date of
-     * the image.</p>
+     * <p>The date when the image was created. If the image has been shared, the Amazon
+     * Web Services account that the image has been shared with sees the original
+     * creation date of the image.</p>
      */
     inline void SetCreated(const Aws::Utils::DateTime& value) { m_createdHasBeenSet = true; m_created = value; }
 
     /**
-     * <p>The date when the image was created. If the image has been shared, the AWS
-     * account that the image has been shared with sees the original creation date of
-     * the image.</p>
+     * <p>The date when the image was created. If the image has been shared, the Amazon
+     * Web Services account that the image has been shared with sees the original
+     * creation date of the image.</p>
      */
     inline void SetCreated(Aws::Utils::DateTime&& value) { m_createdHasBeenSet = true; m_created = std::move(value); }
 
     /**
-     * <p>The date when the image was created. If the image has been shared, the AWS
-     * account that the image has been shared with sees the original creation date of
-     * the image.</p>
+     * <p>The date when the image was created. If the image has been shared, the Amazon
+     * Web Services account that the image has been shared with sees the original
+     * creation date of the image.</p>
      */
     inline WorkspaceImage& WithCreated(const Aws::Utils::DateTime& value) { SetCreated(value); return *this;}
 
     /**
-     * <p>The date when the image was created. If the image has been shared, the AWS
-     * account that the image has been shared with sees the original creation date of
-     * the image.</p>
+     * <p>The date when the image was created. If the image has been shared, the Amazon
+     * Web Services account that the image has been shared with sees the original
+     * creation date of the image.</p>
      */
     inline WorkspaceImage& WithCreated(Aws::Utils::DateTime&& value) { SetCreated(std::move(value)); return *this;}
 
 
     /**
-     * <p>The identifier of the AWS account that owns the image.</p>
+     * <p>The identifier of the Amazon Web Services account that owns the image.</p>
      */
     inline const Aws::String& GetOwnerAccountId() const{ return m_ownerAccountId; }
 
     /**
-     * <p>The identifier of the AWS account that owns the image.</p>
+     * <p>The identifier of the Amazon Web Services account that owns the image.</p>
      */
     inline bool OwnerAccountIdHasBeenSet() const { return m_ownerAccountIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the AWS account that owns the image.</p>
+     * <p>The identifier of the Amazon Web Services account that owns the image.</p>
      */
     inline void SetOwnerAccountId(const Aws::String& value) { m_ownerAccountIdHasBeenSet = true; m_ownerAccountId = value; }
 
     /**
-     * <p>The identifier of the AWS account that owns the image.</p>
+     * <p>The identifier of the Amazon Web Services account that owns the image.</p>
      */
     inline void SetOwnerAccountId(Aws::String&& value) { m_ownerAccountIdHasBeenSet = true; m_ownerAccountId = std::move(value); }
 
     /**
-     * <p>The identifier of the AWS account that owns the image.</p>
+     * <p>The identifier of the Amazon Web Services account that owns the image.</p>
      */
     inline void SetOwnerAccountId(const char* value) { m_ownerAccountIdHasBeenSet = true; m_ownerAccountId.assign(value); }
 
     /**
-     * <p>The identifier of the AWS account that owns the image.</p>
+     * <p>The identifier of the Amazon Web Services account that owns the image.</p>
      */
     inline WorkspaceImage& WithOwnerAccountId(const Aws::String& value) { SetOwnerAccountId(value); return *this;}
 
     /**
-     * <p>The identifier of the AWS account that owns the image.</p>
+     * <p>The identifier of the Amazon Web Services account that owns the image.</p>
      */
     inline WorkspaceImage& WithOwnerAccountId(Aws::String&& value) { SetOwnerAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the AWS account that owns the image.</p>
+     * <p>The identifier of the Amazon Web Services account that owns the image.</p>
      */
     inline WorkspaceImage& WithOwnerAccountId(const char* value) { SetOwnerAccountId(value); return *this;}
+
+
+    /**
+     * <p>The updates (if any) that are available for the specified image.</p>
+     */
+    inline const UpdateResult& GetUpdates() const{ return m_updates; }
+
+    /**
+     * <p>The updates (if any) that are available for the specified image.</p>
+     */
+    inline bool UpdatesHasBeenSet() const { return m_updatesHasBeenSet; }
+
+    /**
+     * <p>The updates (if any) that are available for the specified image.</p>
+     */
+    inline void SetUpdates(const UpdateResult& value) { m_updatesHasBeenSet = true; m_updates = value; }
+
+    /**
+     * <p>The updates (if any) that are available for the specified image.</p>
+     */
+    inline void SetUpdates(UpdateResult&& value) { m_updatesHasBeenSet = true; m_updates = std::move(value); }
+
+    /**
+     * <p>The updates (if any) that are available for the specified image.</p>
+     */
+    inline WorkspaceImage& WithUpdates(const UpdateResult& value) { SetUpdates(value); return *this;}
+
+    /**
+     * <p>The updates (if any) that are available for the specified image.</p>
+     */
+    inline WorkspaceImage& WithUpdates(UpdateResult&& value) { SetUpdates(std::move(value)); return *this;}
 
   private:
 
@@ -477,6 +509,9 @@ namespace Model
 
     Aws::String m_ownerAccountId;
     bool m_ownerAccountIdHasBeenSet;
+
+    UpdateResult m_updates;
+    bool m_updatesHasBeenSet;
   };
 
 } // namespace Model

@@ -8,6 +8,7 @@
 #include <aws/s3/S3Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3/model/AccelerateConfiguration.h>
+#include <aws/s3/model/ChecksumAlgorithm.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -40,6 +41,8 @@ namespace Model
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+    Aws::String GetChecksumAlgorithmName() const override;
 
 
     /**
@@ -115,60 +118,145 @@ namespace Model
 
 
     /**
-     * <p>The account id of the expected bucket owner. If the bucket is owned by a
-     * different account, the request will fail with an HTTP <code>403 (Access
-     * Denied)</code> error.</p>
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
+     * different account, the request fails with the HTTP status code <code>403
+     * Forbidden</code> (access denied).</p>
      */
     inline const Aws::String& GetExpectedBucketOwner() const{ return m_expectedBucketOwner; }
 
     /**
-     * <p>The account id of the expected bucket owner. If the bucket is owned by a
-     * different account, the request will fail with an HTTP <code>403 (Access
-     * Denied)</code> error.</p>
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
+     * different account, the request fails with the HTTP status code <code>403
+     * Forbidden</code> (access denied).</p>
      */
     inline bool ExpectedBucketOwnerHasBeenSet() const { return m_expectedBucketOwnerHasBeenSet; }
 
     /**
-     * <p>The account id of the expected bucket owner. If the bucket is owned by a
-     * different account, the request will fail with an HTTP <code>403 (Access
-     * Denied)</code> error.</p>
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
+     * different account, the request fails with the HTTP status code <code>403
+     * Forbidden</code> (access denied).</p>
      */
     inline void SetExpectedBucketOwner(const Aws::String& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = value; }
 
     /**
-     * <p>The account id of the expected bucket owner. If the bucket is owned by a
-     * different account, the request will fail with an HTTP <code>403 (Access
-     * Denied)</code> error.</p>
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
+     * different account, the request fails with the HTTP status code <code>403
+     * Forbidden</code> (access denied).</p>
      */
     inline void SetExpectedBucketOwner(Aws::String&& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = std::move(value); }
 
     /**
-     * <p>The account id of the expected bucket owner. If the bucket is owned by a
-     * different account, the request will fail with an HTTP <code>403 (Access
-     * Denied)</code> error.</p>
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
+     * different account, the request fails with the HTTP status code <code>403
+     * Forbidden</code> (access denied).</p>
      */
     inline void SetExpectedBucketOwner(const char* value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner.assign(value); }
 
     /**
-     * <p>The account id of the expected bucket owner. If the bucket is owned by a
-     * different account, the request will fail with an HTTP <code>403 (Access
-     * Denied)</code> error.</p>
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
+     * different account, the request fails with the HTTP status code <code>403
+     * Forbidden</code> (access denied).</p>
      */
     inline PutBucketAccelerateConfigurationRequest& WithExpectedBucketOwner(const Aws::String& value) { SetExpectedBucketOwner(value); return *this;}
 
     /**
-     * <p>The account id of the expected bucket owner. If the bucket is owned by a
-     * different account, the request will fail with an HTTP <code>403 (Access
-     * Denied)</code> error.</p>
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
+     * different account, the request fails with the HTTP status code <code>403
+     * Forbidden</code> (access denied).</p>
      */
     inline PutBucketAccelerateConfigurationRequest& WithExpectedBucketOwner(Aws::String&& value) { SetExpectedBucketOwner(std::move(value)); return *this;}
 
     /**
-     * <p>The account id of the expected bucket owner. If the bucket is owned by a
-     * different account, the request will fail with an HTTP <code>403 (Access
-     * Denied)</code> error.</p>
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
+     * different account, the request fails with the HTTP status code <code>403
+     * Forbidden</code> (access denied).</p>
      */
     inline PutBucketAccelerateConfigurationRequest& WithExpectedBucketOwner(const char* value) { SetExpectedBucketOwner(value); return *this;}
+
+
+    /**
+     * <p>Indicates the algorithm used to create the checksum for the object when using
+     * the SDK. This header will not provide any additional functionality if not using
+     * the SDK. When sending this header, there must be a corresponding
+     * <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent.
+     * Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad
+     * Request</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>If you provide
+     * an individual checksum, Amazon S3 ignores any provided
+     * <code>ChecksumAlgorithm</code> parameter.</p>
+     */
+    inline const ChecksumAlgorithm& GetChecksumAlgorithm() const{ return m_checksumAlgorithm; }
+
+    /**
+     * <p>Indicates the algorithm used to create the checksum for the object when using
+     * the SDK. This header will not provide any additional functionality if not using
+     * the SDK. When sending this header, there must be a corresponding
+     * <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent.
+     * Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad
+     * Request</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>If you provide
+     * an individual checksum, Amazon S3 ignores any provided
+     * <code>ChecksumAlgorithm</code> parameter.</p>
+     */
+    inline bool ChecksumAlgorithmHasBeenSet() const { return m_checksumAlgorithmHasBeenSet; }
+
+    /**
+     * <p>Indicates the algorithm used to create the checksum for the object when using
+     * the SDK. This header will not provide any additional functionality if not using
+     * the SDK. When sending this header, there must be a corresponding
+     * <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent.
+     * Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad
+     * Request</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>If you provide
+     * an individual checksum, Amazon S3 ignores any provided
+     * <code>ChecksumAlgorithm</code> parameter.</p>
+     */
+    inline void SetChecksumAlgorithm(const ChecksumAlgorithm& value) { m_checksumAlgorithmHasBeenSet = true; m_checksumAlgorithm = value; }
+
+    /**
+     * <p>Indicates the algorithm used to create the checksum for the object when using
+     * the SDK. This header will not provide any additional functionality if not using
+     * the SDK. When sending this header, there must be a corresponding
+     * <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent.
+     * Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad
+     * Request</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>If you provide
+     * an individual checksum, Amazon S3 ignores any provided
+     * <code>ChecksumAlgorithm</code> parameter.</p>
+     */
+    inline void SetChecksumAlgorithm(ChecksumAlgorithm&& value) { m_checksumAlgorithmHasBeenSet = true; m_checksumAlgorithm = std::move(value); }
+
+    /**
+     * <p>Indicates the algorithm used to create the checksum for the object when using
+     * the SDK. This header will not provide any additional functionality if not using
+     * the SDK. When sending this header, there must be a corresponding
+     * <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent.
+     * Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad
+     * Request</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>If you provide
+     * an individual checksum, Amazon S3 ignores any provided
+     * <code>ChecksumAlgorithm</code> parameter.</p>
+     */
+    inline PutBucketAccelerateConfigurationRequest& WithChecksumAlgorithm(const ChecksumAlgorithm& value) { SetChecksumAlgorithm(value); return *this;}
+
+    /**
+     * <p>Indicates the algorithm used to create the checksum for the object when using
+     * the SDK. This header will not provide any additional functionality if not using
+     * the SDK. When sending this header, there must be a corresponding
+     * <code>x-amz-checksum</code> or <code>x-amz-trailer</code> header sent.
+     * Otherwise, Amazon S3 fails the request with the HTTP status code <code>400 Bad
+     * Request</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+     * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>If you provide
+     * an individual checksum, Amazon S3 ignores any provided
+     * <code>ChecksumAlgorithm</code> parameter.</p>
+     */
+    inline PutBucketAccelerateConfigurationRequest& WithChecksumAlgorithm(ChecksumAlgorithm&& value) { SetChecksumAlgorithm(std::move(value)); return *this;}
 
 
     
@@ -220,6 +308,9 @@ namespace Model
 
     Aws::String m_expectedBucketOwner;
     bool m_expectedBucketOwnerHasBeenSet;
+
+    ChecksumAlgorithm m_checksumAlgorithm;
+    bool m_checksumAlgorithmHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
     bool m_customizedAccessLogTagHasBeenSet;

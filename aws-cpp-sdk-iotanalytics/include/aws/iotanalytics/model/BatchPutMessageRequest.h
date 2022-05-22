@@ -78,7 +78,7 @@ namespace Model
     /**
      * <p>The list of messages to be sent. Each message has the format: { "messageId":
      * "string", "payload": "string"}.</p> <p>The field names of message payloads
-     * (data) that you send to AWS IoT Analytics:</p> <ul> <li> <p>Must contain only
+     * (data) that you send to IoT Analytics:</p> <ul> <li> <p>Must contain only
      * alphanumeric characters and undescores (_). No other special characters are
      * allowed.</p> </li> <li> <p>Must begin with an alphabetic character or single
      * underscore (_).</p> </li> <li> <p>Cannot contain hyphens (-).</p> </li> <li>
@@ -95,7 +95,7 @@ namespace Model
     /**
      * <p>The list of messages to be sent. Each message has the format: { "messageId":
      * "string", "payload": "string"}.</p> <p>The field names of message payloads
-     * (data) that you send to AWS IoT Analytics:</p> <ul> <li> <p>Must contain only
+     * (data) that you send to IoT Analytics:</p> <ul> <li> <p>Must contain only
      * alphanumeric characters and undescores (_). No other special characters are
      * allowed.</p> </li> <li> <p>Must begin with an alphabetic character or single
      * underscore (_).</p> </li> <li> <p>Cannot contain hyphens (-).</p> </li> <li>
@@ -112,7 +112,7 @@ namespace Model
     /**
      * <p>The list of messages to be sent. Each message has the format: { "messageId":
      * "string", "payload": "string"}.</p> <p>The field names of message payloads
-     * (data) that you send to AWS IoT Analytics:</p> <ul> <li> <p>Must contain only
+     * (data) that you send to IoT Analytics:</p> <ul> <li> <p>Must contain only
      * alphanumeric characters and undescores (_). No other special characters are
      * allowed.</p> </li> <li> <p>Must begin with an alphabetic character or single
      * underscore (_).</p> </li> <li> <p>Cannot contain hyphens (-).</p> </li> <li>
@@ -129,7 +129,7 @@ namespace Model
     /**
      * <p>The list of messages to be sent. Each message has the format: { "messageId":
      * "string", "payload": "string"}.</p> <p>The field names of message payloads
-     * (data) that you send to AWS IoT Analytics:</p> <ul> <li> <p>Must contain only
+     * (data) that you send to IoT Analytics:</p> <ul> <li> <p>Must contain only
      * alphanumeric characters and undescores (_). No other special characters are
      * allowed.</p> </li> <li> <p>Must begin with an alphabetic character or single
      * underscore (_).</p> </li> <li> <p>Cannot contain hyphens (-).</p> </li> <li>
@@ -146,7 +146,7 @@ namespace Model
     /**
      * <p>The list of messages to be sent. Each message has the format: { "messageId":
      * "string", "payload": "string"}.</p> <p>The field names of message payloads
-     * (data) that you send to AWS IoT Analytics:</p> <ul> <li> <p>Must contain only
+     * (data) that you send to IoT Analytics:</p> <ul> <li> <p>Must contain only
      * alphanumeric characters and undescores (_). No other special characters are
      * allowed.</p> </li> <li> <p>Must begin with an alphabetic character or single
      * underscore (_).</p> </li> <li> <p>Cannot contain hyphens (-).</p> </li> <li>
@@ -163,7 +163,7 @@ namespace Model
     /**
      * <p>The list of messages to be sent. Each message has the format: { "messageId":
      * "string", "payload": "string"}.</p> <p>The field names of message payloads
-     * (data) that you send to AWS IoT Analytics:</p> <ul> <li> <p>Must contain only
+     * (data) that you send to IoT Analytics:</p> <ul> <li> <p>Must contain only
      * alphanumeric characters and undescores (_). No other special characters are
      * allowed.</p> </li> <li> <p>Must begin with an alphabetic character or single
      * underscore (_).</p> </li> <li> <p>Cannot contain hyphens (-).</p> </li> <li>
@@ -180,7 +180,7 @@ namespace Model
     /**
      * <p>The list of messages to be sent. Each message has the format: { "messageId":
      * "string", "payload": "string"}.</p> <p>The field names of message payloads
-     * (data) that you send to AWS IoT Analytics:</p> <ul> <li> <p>Must contain only
+     * (data) that you send to IoT Analytics:</p> <ul> <li> <p>Must contain only
      * alphanumeric characters and undescores (_). No other special characters are
      * allowed.</p> </li> <li> <p>Must begin with an alphabetic character or single
      * underscore (_).</p> </li> <li> <p>Cannot contain hyphens (-).</p> </li> <li>
@@ -197,7 +197,7 @@ namespace Model
     /**
      * <p>The list of messages to be sent. Each message has the format: { "messageId":
      * "string", "payload": "string"}.</p> <p>The field names of message payloads
-     * (data) that you send to AWS IoT Analytics:</p> <ul> <li> <p>Must contain only
+     * (data) that you send to IoT Analytics:</p> <ul> <li> <p>Must contain only
      * alphanumeric characters and undescores (_). No other special characters are
      * allowed.</p> </li> <li> <p>Must begin with an alphabetic character or single
      * underscore (_).</p> </li> <li> <p>Cannot contain hyphens (-).</p> </li> <li>

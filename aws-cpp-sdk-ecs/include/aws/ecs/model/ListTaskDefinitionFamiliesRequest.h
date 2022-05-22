@@ -36,7 +36,7 @@ namespace Model
 
 
     /**
-     * <p>The <code>familyPrefix</code> is a string that is used to filter the results
+     * <p>The <code>familyPrefix</code> is a string that's used to filter the results
      * of <code>ListTaskDefinitionFamilies</code>. If you specify a
      * <code>familyPrefix</code>, only task definition family names that begin with the
      * <code>familyPrefix</code> string are returned.</p>
@@ -44,7 +44,7 @@ namespace Model
     inline const Aws::String& GetFamilyPrefix() const{ return m_familyPrefix; }
 
     /**
-     * <p>The <code>familyPrefix</code> is a string that is used to filter the results
+     * <p>The <code>familyPrefix</code> is a string that's used to filter the results
      * of <code>ListTaskDefinitionFamilies</code>. If you specify a
      * <code>familyPrefix</code>, only task definition family names that begin with the
      * <code>familyPrefix</code> string are returned.</p>
@@ -52,7 +52,7 @@ namespace Model
     inline bool FamilyPrefixHasBeenSet() const { return m_familyPrefixHasBeenSet; }
 
     /**
-     * <p>The <code>familyPrefix</code> is a string that is used to filter the results
+     * <p>The <code>familyPrefix</code> is a string that's used to filter the results
      * of <code>ListTaskDefinitionFamilies</code>. If you specify a
      * <code>familyPrefix</code>, only task definition family names that begin with the
      * <code>familyPrefix</code> string are returned.</p>
@@ -60,7 +60,7 @@ namespace Model
     inline void SetFamilyPrefix(const Aws::String& value) { m_familyPrefixHasBeenSet = true; m_familyPrefix = value; }
 
     /**
-     * <p>The <code>familyPrefix</code> is a string that is used to filter the results
+     * <p>The <code>familyPrefix</code> is a string that's used to filter the results
      * of <code>ListTaskDefinitionFamilies</code>. If you specify a
      * <code>familyPrefix</code>, only task definition family names that begin with the
      * <code>familyPrefix</code> string are returned.</p>
@@ -68,7 +68,7 @@ namespace Model
     inline void SetFamilyPrefix(Aws::String&& value) { m_familyPrefixHasBeenSet = true; m_familyPrefix = std::move(value); }
 
     /**
-     * <p>The <code>familyPrefix</code> is a string that is used to filter the results
+     * <p>The <code>familyPrefix</code> is a string that's used to filter the results
      * of <code>ListTaskDefinitionFamilies</code>. If you specify a
      * <code>familyPrefix</code>, only task definition family names that begin with the
      * <code>familyPrefix</code> string are returned.</p>
@@ -76,7 +76,7 @@ namespace Model
     inline void SetFamilyPrefix(const char* value) { m_familyPrefixHasBeenSet = true; m_familyPrefix.assign(value); }
 
     /**
-     * <p>The <code>familyPrefix</code> is a string that is used to filter the results
+     * <p>The <code>familyPrefix</code> is a string that's used to filter the results
      * of <code>ListTaskDefinitionFamilies</code>. If you specify a
      * <code>familyPrefix</code>, only task definition family names that begin with the
      * <code>familyPrefix</code> string are returned.</p>
@@ -84,7 +84,7 @@ namespace Model
     inline ListTaskDefinitionFamiliesRequest& WithFamilyPrefix(const Aws::String& value) { SetFamilyPrefix(value); return *this;}
 
     /**
-     * <p>The <code>familyPrefix</code> is a string that is used to filter the results
+     * <p>The <code>familyPrefix</code> is a string that's used to filter the results
      * of <code>ListTaskDefinitionFamilies</code>. If you specify a
      * <code>familyPrefix</code>, only task definition family names that begin with the
      * <code>familyPrefix</code> string are returned.</p>
@@ -92,7 +92,7 @@ namespace Model
     inline ListTaskDefinitionFamiliesRequest& WithFamilyPrefix(Aws::String&& value) { SetFamilyPrefix(std::move(value)); return *this;}
 
     /**
-     * <p>The <code>familyPrefix</code> is a string that is used to filter the results
+     * <p>The <code>familyPrefix</code> is a string that's used to filter the results
      * of <code>ListTaskDefinitionFamilies</code>. If you specify a
      * <code>familyPrefix</code>, only task definition family names that begin with the
      * <code>familyPrefix</code> string are returned.</p>
@@ -101,8 +101,8 @@ namespace Model
 
 
     /**
-     * <p>The task definition family status with which to filter the
-     * <code>ListTaskDefinitionFamilies</code> results. By default, both
+     * <p>The task definition family status to filter the
+     * <code>ListTaskDefinitionFamilies</code> results with. By default, both
      * <code>ACTIVE</code> and <code>INACTIVE</code> task definition families are
      * listed. If this parameter is set to <code>ACTIVE</code>, only task definition
      * families that have an <code>ACTIVE</code> task definition revision are returned.
@@ -114,8 +114,8 @@ namespace Model
     inline const TaskDefinitionFamilyStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The task definition family status with which to filter the
-     * <code>ListTaskDefinitionFamilies</code> results. By default, both
+     * <p>The task definition family status to filter the
+     * <code>ListTaskDefinitionFamilies</code> results with. By default, both
      * <code>ACTIVE</code> and <code>INACTIVE</code> task definition families are
      * listed. If this parameter is set to <code>ACTIVE</code>, only task definition
      * families that have an <code>ACTIVE</code> task definition revision are returned.
@@ -127,8 +127,8 @@ namespace Model
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The task definition family status with which to filter the
-     * <code>ListTaskDefinitionFamilies</code> results. By default, both
+     * <p>The task definition family status to filter the
+     * <code>ListTaskDefinitionFamilies</code> results with. By default, both
      * <code>ACTIVE</code> and <code>INACTIVE</code> task definition families are
      * listed. If this parameter is set to <code>ACTIVE</code>, only task definition
      * families that have an <code>ACTIVE</code> task definition revision are returned.
@@ -140,8 +140,8 @@ namespace Model
     inline void SetStatus(const TaskDefinitionFamilyStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The task definition family status with which to filter the
-     * <code>ListTaskDefinitionFamilies</code> results. By default, both
+     * <p>The task definition family status to filter the
+     * <code>ListTaskDefinitionFamilies</code> results with. By default, both
      * <code>ACTIVE</code> and <code>INACTIVE</code> task definition families are
      * listed. If this parameter is set to <code>ACTIVE</code>, only task definition
      * families that have an <code>ACTIVE</code> task definition revision are returned.
@@ -153,8 +153,8 @@ namespace Model
     inline void SetStatus(TaskDefinitionFamilyStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The task definition family status with which to filter the
-     * <code>ListTaskDefinitionFamilies</code> results. By default, both
+     * <p>The task definition family status to filter the
+     * <code>ListTaskDefinitionFamilies</code> results with. By default, both
      * <code>ACTIVE</code> and <code>INACTIVE</code> task definition families are
      * listed. If this parameter is set to <code>ACTIVE</code>, only task definition
      * families that have an <code>ACTIVE</code> task definition revision are returned.
@@ -166,8 +166,8 @@ namespace Model
     inline ListTaskDefinitionFamiliesRequest& WithStatus(const TaskDefinitionFamilyStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The task definition family status with which to filter the
-     * <code>ListTaskDefinitionFamilies</code> results. By default, both
+     * <p>The task definition family status to filter the
+     * <code>ListTaskDefinitionFamilies</code> results with. By default, both
      * <code>ACTIVE</code> and <code>INACTIVE</code> task definition families are
      * listed. If this parameter is set to <code>ACTIVE</code>, only task definition
      * families that have an <code>ACTIVE</code> task definition revision are returned.
@@ -269,54 +269,58 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of task definition family results returned by
-     * <code>ListTaskDefinitionFamilies</code> in paginated output. When this parameter
-     * is used, <code>ListTaskDefinitions</code> only returns <code>maxResults</code>
-     * results in a single page along with a <code>nextToken</code> response element.
-     * The remaining results of the initial request can be seen by sending another
-     * <code>ListTaskDefinitionFamilies</code> request with the returned
-     * <code>nextToken</code> value. This value can be between 1 and 100. If this
-     * parameter is not used, then <code>ListTaskDefinitionFamilies</code> returns up
-     * to 100 results and a <code>nextToken</code> value if applicable.</p>
+     * <p>The maximum number of task definition family results that
+     * <code>ListTaskDefinitionFamilies</code> returned in paginated output. When this
+     * parameter is used, <code>ListTaskDefinitions</code> only returns
+     * <code>maxResults</code> results in a single page along with a
+     * <code>nextToken</code> response element. The remaining results of the initial
+     * request can be seen by sending another <code>ListTaskDefinitionFamilies</code>
+     * request with the returned <code>nextToken</code> value. This value can be
+     * between 1 and 100. If this parameter isn't used, then
+     * <code>ListTaskDefinitionFamilies</code> returns up to 100 results and a
+     * <code>nextToken</code> value if applicable.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of task definition family results returned by
-     * <code>ListTaskDefinitionFamilies</code> in paginated output. When this parameter
-     * is used, <code>ListTaskDefinitions</code> only returns <code>maxResults</code>
-     * results in a single page along with a <code>nextToken</code> response element.
-     * The remaining results of the initial request can be seen by sending another
-     * <code>ListTaskDefinitionFamilies</code> request with the returned
-     * <code>nextToken</code> value. This value can be between 1 and 100. If this
-     * parameter is not used, then <code>ListTaskDefinitionFamilies</code> returns up
-     * to 100 results and a <code>nextToken</code> value if applicable.</p>
+     * <p>The maximum number of task definition family results that
+     * <code>ListTaskDefinitionFamilies</code> returned in paginated output. When this
+     * parameter is used, <code>ListTaskDefinitions</code> only returns
+     * <code>maxResults</code> results in a single page along with a
+     * <code>nextToken</code> response element. The remaining results of the initial
+     * request can be seen by sending another <code>ListTaskDefinitionFamilies</code>
+     * request with the returned <code>nextToken</code> value. This value can be
+     * between 1 and 100. If this parameter isn't used, then
+     * <code>ListTaskDefinitionFamilies</code> returns up to 100 results and a
+     * <code>nextToken</code> value if applicable.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of task definition family results returned by
-     * <code>ListTaskDefinitionFamilies</code> in paginated output. When this parameter
-     * is used, <code>ListTaskDefinitions</code> only returns <code>maxResults</code>
-     * results in a single page along with a <code>nextToken</code> response element.
-     * The remaining results of the initial request can be seen by sending another
-     * <code>ListTaskDefinitionFamilies</code> request with the returned
-     * <code>nextToken</code> value. This value can be between 1 and 100. If this
-     * parameter is not used, then <code>ListTaskDefinitionFamilies</code> returns up
-     * to 100 results and a <code>nextToken</code> value if applicable.</p>
+     * <p>The maximum number of task definition family results that
+     * <code>ListTaskDefinitionFamilies</code> returned in paginated output. When this
+     * parameter is used, <code>ListTaskDefinitions</code> only returns
+     * <code>maxResults</code> results in a single page along with a
+     * <code>nextToken</code> response element. The remaining results of the initial
+     * request can be seen by sending another <code>ListTaskDefinitionFamilies</code>
+     * request with the returned <code>nextToken</code> value. This value can be
+     * between 1 and 100. If this parameter isn't used, then
+     * <code>ListTaskDefinitionFamilies</code> returns up to 100 results and a
+     * <code>nextToken</code> value if applicable.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of task definition family results returned by
-     * <code>ListTaskDefinitionFamilies</code> in paginated output. When this parameter
-     * is used, <code>ListTaskDefinitions</code> only returns <code>maxResults</code>
-     * results in a single page along with a <code>nextToken</code> response element.
-     * The remaining results of the initial request can be seen by sending another
-     * <code>ListTaskDefinitionFamilies</code> request with the returned
-     * <code>nextToken</code> value. This value can be between 1 and 100. If this
-     * parameter is not used, then <code>ListTaskDefinitionFamilies</code> returns up
-     * to 100 results and a <code>nextToken</code> value if applicable.</p>
+     * <p>The maximum number of task definition family results that
+     * <code>ListTaskDefinitionFamilies</code> returned in paginated output. When this
+     * parameter is used, <code>ListTaskDefinitions</code> only returns
+     * <code>maxResults</code> results in a single page along with a
+     * <code>nextToken</code> response element. The remaining results of the initial
+     * request can be seen by sending another <code>ListTaskDefinitionFamilies</code>
+     * request with the returned <code>nextToken</code> value. This value can be
+     * between 1 and 100. If this parameter isn't used, then
+     * <code>ListTaskDefinitionFamilies</code> returns up to 100 results and a
+     * <code>nextToken</code> value if applicable.</p>
      */
     inline ListTaskDefinitionFamiliesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

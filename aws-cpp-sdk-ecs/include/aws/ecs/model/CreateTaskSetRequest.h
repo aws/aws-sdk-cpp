@@ -143,7 +143,7 @@ namespace Model
     /**
      * <p>An optional non-unique tag that identifies this task set in external systems.
      * If the task set is associated with a service discovery registry, the tasks in
-     * this task set will have the <code>ECS_TASK_SET_EXTERNAL_ID</code> AWS Cloud Map
+     * this task set will have the <code>ECS_TASK_SET_EXTERNAL_ID</code> Cloud Map
      * attribute set to the provided value.</p>
      */
     inline const Aws::String& GetExternalId() const{ return m_externalId; }
@@ -151,7 +151,7 @@ namespace Model
     /**
      * <p>An optional non-unique tag that identifies this task set in external systems.
      * If the task set is associated with a service discovery registry, the tasks in
-     * this task set will have the <code>ECS_TASK_SET_EXTERNAL_ID</code> AWS Cloud Map
+     * this task set will have the <code>ECS_TASK_SET_EXTERNAL_ID</code> Cloud Map
      * attribute set to the provided value.</p>
      */
     inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }
@@ -159,7 +159,7 @@ namespace Model
     /**
      * <p>An optional non-unique tag that identifies this task set in external systems.
      * If the task set is associated with a service discovery registry, the tasks in
-     * this task set will have the <code>ECS_TASK_SET_EXTERNAL_ID</code> AWS Cloud Map
+     * this task set will have the <code>ECS_TASK_SET_EXTERNAL_ID</code> Cloud Map
      * attribute set to the provided value.</p>
      */
     inline void SetExternalId(const Aws::String& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
@@ -167,7 +167,7 @@ namespace Model
     /**
      * <p>An optional non-unique tag that identifies this task set in external systems.
      * If the task set is associated with a service discovery registry, the tasks in
-     * this task set will have the <code>ECS_TASK_SET_EXTERNAL_ID</code> AWS Cloud Map
+     * this task set will have the <code>ECS_TASK_SET_EXTERNAL_ID</code> Cloud Map
      * attribute set to the provided value.</p>
      */
     inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = std::move(value); }
@@ -175,7 +175,7 @@ namespace Model
     /**
      * <p>An optional non-unique tag that identifies this task set in external systems.
      * If the task set is associated with a service discovery registry, the tasks in
-     * this task set will have the <code>ECS_TASK_SET_EXTERNAL_ID</code> AWS Cloud Map
+     * this task set will have the <code>ECS_TASK_SET_EXTERNAL_ID</code> Cloud Map
      * attribute set to the provided value.</p>
      */
     inline void SetExternalId(const char* value) { m_externalIdHasBeenSet = true; m_externalId.assign(value); }
@@ -183,7 +183,7 @@ namespace Model
     /**
      * <p>An optional non-unique tag that identifies this task set in external systems.
      * If the task set is associated with a service discovery registry, the tasks in
-     * this task set will have the <code>ECS_TASK_SET_EXTERNAL_ID</code> AWS Cloud Map
+     * this task set will have the <code>ECS_TASK_SET_EXTERNAL_ID</code> Cloud Map
      * attribute set to the provided value.</p>
      */
     inline CreateTaskSetRequest& WithExternalId(const Aws::String& value) { SetExternalId(value); return *this;}
@@ -191,7 +191,7 @@ namespace Model
     /**
      * <p>An optional non-unique tag that identifies this task set in external systems.
      * If the task set is associated with a service discovery registry, the tasks in
-     * this task set will have the <code>ECS_TASK_SET_EXTERNAL_ID</code> AWS Cloud Map
+     * this task set will have the <code>ECS_TASK_SET_EXTERNAL_ID</code> Cloud Map
      * attribute set to the provided value.</p>
      */
     inline CreateTaskSetRequest& WithExternalId(Aws::String&& value) { SetExternalId(std::move(value)); return *this;}
@@ -199,7 +199,7 @@ namespace Model
     /**
      * <p>An optional non-unique tag that identifies this task set in external systems.
      * If the task set is associated with a service discovery registry, the tasks in
-     * this task set will have the <code>ECS_TASK_SET_EXTERNAL_ID</code> AWS Cloud Map
+     * this task set will have the <code>ECS_TASK_SET_EXTERNAL_ID</code> Cloud Map
      * attribute set to the provided value.</p>
      */
     inline CreateTaskSetRequest& WithExternalId(const char* value) { SetExternalId(value); return *this;}
@@ -246,22 +246,34 @@ namespace Model
     inline CreateTaskSetRequest& WithTaskDefinition(const char* value) { SetTaskDefinition(value); return *this;}
 
 
-    
+    /**
+     * <p>An object representing the network configuration for a task set.</p>
+     */
     inline const NetworkConfiguration& GetNetworkConfiguration() const{ return m_networkConfiguration; }
 
-    
+    /**
+     * <p>An object representing the network configuration for a task set.</p>
+     */
     inline bool NetworkConfigurationHasBeenSet() const { return m_networkConfigurationHasBeenSet; }
 
-    
+    /**
+     * <p>An object representing the network configuration for a task set.</p>
+     */
     inline void SetNetworkConfiguration(const NetworkConfiguration& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = value; }
 
-    
+    /**
+     * <p>An object representing the network configuration for a task set.</p>
+     */
     inline void SetNetworkConfiguration(NetworkConfiguration&& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = std::move(value); }
 
-    
+    /**
+     * <p>An object representing the network configuration for a task set.</p>
+     */
     inline CreateTaskSetRequest& WithNetworkConfiguration(const NetworkConfiguration& value) { SetNetworkConfiguration(value); return *this;}
 
-    
+    /**
+     * <p>An object representing the network configuration for a task set.</p>
+     */
     inline CreateTaskSetRequest& WithNetworkConfiguration(NetworkConfiguration&& value) { SetNetworkConfiguration(std::move(value)); return *this;}
 
 
@@ -388,8 +400,8 @@ namespace Model
 
 
     /**
-     * <p>The launch type that new tasks in the task set will use. For more
-     * information, see <a
+     * <p>The launch type that new tasks in the task set uses. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If a <code>launchType</code> is specified, the
@@ -398,8 +410,8 @@ namespace Model
     inline const LaunchType& GetLaunchType() const{ return m_launchType; }
 
     /**
-     * <p>The launch type that new tasks in the task set will use. For more
-     * information, see <a
+     * <p>The launch type that new tasks in the task set uses. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If a <code>launchType</code> is specified, the
@@ -408,8 +420,8 @@ namespace Model
     inline bool LaunchTypeHasBeenSet() const { return m_launchTypeHasBeenSet; }
 
     /**
-     * <p>The launch type that new tasks in the task set will use. For more
-     * information, see <a
+     * <p>The launch type that new tasks in the task set uses. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If a <code>launchType</code> is specified, the
@@ -418,8 +430,8 @@ namespace Model
     inline void SetLaunchType(const LaunchType& value) { m_launchTypeHasBeenSet = true; m_launchType = value; }
 
     /**
-     * <p>The launch type that new tasks in the task set will use. For more
-     * information, see <a
+     * <p>The launch type that new tasks in the task set uses. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If a <code>launchType</code> is specified, the
@@ -428,8 +440,8 @@ namespace Model
     inline void SetLaunchType(LaunchType&& value) { m_launchTypeHasBeenSet = true; m_launchType = std::move(value); }
 
     /**
-     * <p>The launch type that new tasks in the task set will use. For more
-     * information, see <a
+     * <p>The launch type that new tasks in the task set uses. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If a <code>launchType</code> is specified, the
@@ -438,8 +450,8 @@ namespace Model
     inline CreateTaskSetRequest& WithLaunchType(const LaunchType& value) { SetLaunchType(value); return *this;}
 
     /**
-     * <p>The launch type that new tasks in the task set will use. For more
-     * information, see <a
+     * <p>The launch type that new tasks in the task set uses. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If a <code>launchType</code> is specified, the
@@ -462,13 +474,12 @@ namespace Model
      * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p> <p>If
      * specifying a capacity provider that uses an Auto Scaling group, the capacity
      * provider must already be created. New capacity providers can be created with the
-     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a AWS Fargate
-     * capacity provider, specify either the <code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers
-     * are available to all accounts and only need to be associated with a cluster to
-     * be used.</p> <p>The <a>PutClusterCapacityProviders</a> API operation is used to
-     * update the list of available capacity providers for a cluster after the cluster
-     * is created.</p>
+     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a Fargate capacity
+     * provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code>
+     * capacity providers. The Fargate capacity providers are available to all accounts
+     * and only need to be associated with a cluster to be used.</p> <p>The
+     * <a>PutClusterCapacityProviders</a> API operation is used to update the list of
+     * available capacity providers for a cluster after the cluster is created.</p>
      */
     inline const Aws::Vector<CapacityProviderStrategyItem>& GetCapacityProviderStrategy() const{ return m_capacityProviderStrategy; }
 
@@ -486,13 +497,12 @@ namespace Model
      * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p> <p>If
      * specifying a capacity provider that uses an Auto Scaling group, the capacity
      * provider must already be created. New capacity providers can be created with the
-     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a AWS Fargate
-     * capacity provider, specify either the <code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers
-     * are available to all accounts and only need to be associated with a cluster to
-     * be used.</p> <p>The <a>PutClusterCapacityProviders</a> API operation is used to
-     * update the list of available capacity providers for a cluster after the cluster
-     * is created.</p>
+     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a Fargate capacity
+     * provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code>
+     * capacity providers. The Fargate capacity providers are available to all accounts
+     * and only need to be associated with a cluster to be used.</p> <p>The
+     * <a>PutClusterCapacityProviders</a> API operation is used to update the list of
+     * available capacity providers for a cluster after the cluster is created.</p>
      */
     inline bool CapacityProviderStrategyHasBeenSet() const { return m_capacityProviderStrategyHasBeenSet; }
 
@@ -510,13 +520,12 @@ namespace Model
      * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p> <p>If
      * specifying a capacity provider that uses an Auto Scaling group, the capacity
      * provider must already be created. New capacity providers can be created with the
-     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a AWS Fargate
-     * capacity provider, specify either the <code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers
-     * are available to all accounts and only need to be associated with a cluster to
-     * be used.</p> <p>The <a>PutClusterCapacityProviders</a> API operation is used to
-     * update the list of available capacity providers for a cluster after the cluster
-     * is created.</p>
+     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a Fargate capacity
+     * provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code>
+     * capacity providers. The Fargate capacity providers are available to all accounts
+     * and only need to be associated with a cluster to be used.</p> <p>The
+     * <a>PutClusterCapacityProviders</a> API operation is used to update the list of
+     * available capacity providers for a cluster after the cluster is created.</p>
      */
     inline void SetCapacityProviderStrategy(const Aws::Vector<CapacityProviderStrategyItem>& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy = value; }
 
@@ -534,13 +543,12 @@ namespace Model
      * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p> <p>If
      * specifying a capacity provider that uses an Auto Scaling group, the capacity
      * provider must already be created. New capacity providers can be created with the
-     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a AWS Fargate
-     * capacity provider, specify either the <code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers
-     * are available to all accounts and only need to be associated with a cluster to
-     * be used.</p> <p>The <a>PutClusterCapacityProviders</a> API operation is used to
-     * update the list of available capacity providers for a cluster after the cluster
-     * is created.</p>
+     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a Fargate capacity
+     * provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code>
+     * capacity providers. The Fargate capacity providers are available to all accounts
+     * and only need to be associated with a cluster to be used.</p> <p>The
+     * <a>PutClusterCapacityProviders</a> API operation is used to update the list of
+     * available capacity providers for a cluster after the cluster is created.</p>
      */
     inline void SetCapacityProviderStrategy(Aws::Vector<CapacityProviderStrategyItem>&& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy = std::move(value); }
 
@@ -558,13 +566,12 @@ namespace Model
      * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p> <p>If
      * specifying a capacity provider that uses an Auto Scaling group, the capacity
      * provider must already be created. New capacity providers can be created with the
-     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a AWS Fargate
-     * capacity provider, specify either the <code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers
-     * are available to all accounts and only need to be associated with a cluster to
-     * be used.</p> <p>The <a>PutClusterCapacityProviders</a> API operation is used to
-     * update the list of available capacity providers for a cluster after the cluster
-     * is created.</p>
+     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a Fargate capacity
+     * provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code>
+     * capacity providers. The Fargate capacity providers are available to all accounts
+     * and only need to be associated with a cluster to be used.</p> <p>The
+     * <a>PutClusterCapacityProviders</a> API operation is used to update the list of
+     * available capacity providers for a cluster after the cluster is created.</p>
      */
     inline CreateTaskSetRequest& WithCapacityProviderStrategy(const Aws::Vector<CapacityProviderStrategyItem>& value) { SetCapacityProviderStrategy(value); return *this;}
 
@@ -582,13 +589,12 @@ namespace Model
      * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p> <p>If
      * specifying a capacity provider that uses an Auto Scaling group, the capacity
      * provider must already be created. New capacity providers can be created with the
-     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a AWS Fargate
-     * capacity provider, specify either the <code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers
-     * are available to all accounts and only need to be associated with a cluster to
-     * be used.</p> <p>The <a>PutClusterCapacityProviders</a> API operation is used to
-     * update the list of available capacity providers for a cluster after the cluster
-     * is created.</p>
+     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a Fargate capacity
+     * provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code>
+     * capacity providers. The Fargate capacity providers are available to all accounts
+     * and only need to be associated with a cluster to be used.</p> <p>The
+     * <a>PutClusterCapacityProviders</a> API operation is used to update the list of
+     * available capacity providers for a cluster after the cluster is created.</p>
      */
     inline CreateTaskSetRequest& WithCapacityProviderStrategy(Aws::Vector<CapacityProviderStrategyItem>&& value) { SetCapacityProviderStrategy(std::move(value)); return *this;}
 
@@ -606,13 +612,12 @@ namespace Model
      * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p> <p>If
      * specifying a capacity provider that uses an Auto Scaling group, the capacity
      * provider must already be created. New capacity providers can be created with the
-     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a AWS Fargate
-     * capacity provider, specify either the <code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers
-     * are available to all accounts and only need to be associated with a cluster to
-     * be used.</p> <p>The <a>PutClusterCapacityProviders</a> API operation is used to
-     * update the list of available capacity providers for a cluster after the cluster
-     * is created.</p>
+     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a Fargate capacity
+     * provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code>
+     * capacity providers. The Fargate capacity providers are available to all accounts
+     * and only need to be associated with a cluster to be used.</p> <p>The
+     * <a>PutClusterCapacityProviders</a> API operation is used to update the list of
+     * available capacity providers for a cluster after the cluster is created.</p>
      */
     inline CreateTaskSetRequest& AddCapacityProviderStrategy(const CapacityProviderStrategyItem& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy.push_back(value); return *this; }
 
@@ -630,307 +635,332 @@ namespace Model
      * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p> <p>If
      * specifying a capacity provider that uses an Auto Scaling group, the capacity
      * provider must already be created. New capacity providers can be created with the
-     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a AWS Fargate
-     * capacity provider, specify either the <code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers
-     * are available to all accounts and only need to be associated with a cluster to
-     * be used.</p> <p>The <a>PutClusterCapacityProviders</a> API operation is used to
-     * update the list of available capacity providers for a cluster after the cluster
-     * is created.</p>
+     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a Fargate capacity
+     * provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code>
+     * capacity providers. The Fargate capacity providers are available to all accounts
+     * and only need to be associated with a cluster to be used.</p> <p>The
+     * <a>PutClusterCapacityProviders</a> API operation is used to update the list of
+     * available capacity providers for a cluster after the cluster is created.</p>
      */
     inline CreateTaskSetRequest& AddCapacityProviderStrategy(CapacityProviderStrategyItem&& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The platform version that the tasks in the task set should use. A platform
-     * version is specified only for tasks using the Fargate launch type. If one isn't
-     * specified, the <code>LATEST</code> platform version is used by default.</p>
+     * <p>The platform version that the tasks in the task set uses. A platform version
+     * is specified only for tasks using the Fargate launch type. If one isn't
+     * specified, the <code>LATEST</code> platform version is used.</p>
      */
     inline const Aws::String& GetPlatformVersion() const{ return m_platformVersion; }
 
     /**
-     * <p>The platform version that the tasks in the task set should use. A platform
-     * version is specified only for tasks using the Fargate launch type. If one isn't
-     * specified, the <code>LATEST</code> platform version is used by default.</p>
+     * <p>The platform version that the tasks in the task set uses. A platform version
+     * is specified only for tasks using the Fargate launch type. If one isn't
+     * specified, the <code>LATEST</code> platform version is used.</p>
      */
     inline bool PlatformVersionHasBeenSet() const { return m_platformVersionHasBeenSet; }
 
     /**
-     * <p>The platform version that the tasks in the task set should use. A platform
-     * version is specified only for tasks using the Fargate launch type. If one isn't
-     * specified, the <code>LATEST</code> platform version is used by default.</p>
+     * <p>The platform version that the tasks in the task set uses. A platform version
+     * is specified only for tasks using the Fargate launch type. If one isn't
+     * specified, the <code>LATEST</code> platform version is used.</p>
      */
     inline void SetPlatformVersion(const Aws::String& value) { m_platformVersionHasBeenSet = true; m_platformVersion = value; }
 
     /**
-     * <p>The platform version that the tasks in the task set should use. A platform
-     * version is specified only for tasks using the Fargate launch type. If one isn't
-     * specified, the <code>LATEST</code> platform version is used by default.</p>
+     * <p>The platform version that the tasks in the task set uses. A platform version
+     * is specified only for tasks using the Fargate launch type. If one isn't
+     * specified, the <code>LATEST</code> platform version is used.</p>
      */
     inline void SetPlatformVersion(Aws::String&& value) { m_platformVersionHasBeenSet = true; m_platformVersion = std::move(value); }
 
     /**
-     * <p>The platform version that the tasks in the task set should use. A platform
-     * version is specified only for tasks using the Fargate launch type. If one isn't
-     * specified, the <code>LATEST</code> platform version is used by default.</p>
+     * <p>The platform version that the tasks in the task set uses. A platform version
+     * is specified only for tasks using the Fargate launch type. If one isn't
+     * specified, the <code>LATEST</code> platform version is used.</p>
      */
     inline void SetPlatformVersion(const char* value) { m_platformVersionHasBeenSet = true; m_platformVersion.assign(value); }
 
     /**
-     * <p>The platform version that the tasks in the task set should use. A platform
-     * version is specified only for tasks using the Fargate launch type. If one isn't
-     * specified, the <code>LATEST</code> platform version is used by default.</p>
+     * <p>The platform version that the tasks in the task set uses. A platform version
+     * is specified only for tasks using the Fargate launch type. If one isn't
+     * specified, the <code>LATEST</code> platform version is used.</p>
      */
     inline CreateTaskSetRequest& WithPlatformVersion(const Aws::String& value) { SetPlatformVersion(value); return *this;}
 
     /**
-     * <p>The platform version that the tasks in the task set should use. A platform
-     * version is specified only for tasks using the Fargate launch type. If one isn't
-     * specified, the <code>LATEST</code> platform version is used by default.</p>
+     * <p>The platform version that the tasks in the task set uses. A platform version
+     * is specified only for tasks using the Fargate launch type. If one isn't
+     * specified, the <code>LATEST</code> platform version is used.</p>
      */
     inline CreateTaskSetRequest& WithPlatformVersion(Aws::String&& value) { SetPlatformVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The platform version that the tasks in the task set should use. A platform
-     * version is specified only for tasks using the Fargate launch type. If one isn't
-     * specified, the <code>LATEST</code> platform version is used by default.</p>
+     * <p>The platform version that the tasks in the task set uses. A platform version
+     * is specified only for tasks using the Fargate launch type. If one isn't
+     * specified, the <code>LATEST</code> platform version is used.</p>
      */
     inline CreateTaskSetRequest& WithPlatformVersion(const char* value) { SetPlatformVersion(value); return *this;}
 
 
-    
+    /**
+     * <p>A floating-point percentage of the desired number of tasks to place and keep
+     * running in the task set.</p>
+     */
     inline const Scale& GetScale() const{ return m_scale; }
 
-    
+    /**
+     * <p>A floating-point percentage of the desired number of tasks to place and keep
+     * running in the task set.</p>
+     */
     inline bool ScaleHasBeenSet() const { return m_scaleHasBeenSet; }
 
-    
+    /**
+     * <p>A floating-point percentage of the desired number of tasks to place and keep
+     * running in the task set.</p>
+     */
     inline void SetScale(const Scale& value) { m_scaleHasBeenSet = true; m_scale = value; }
 
-    
+    /**
+     * <p>A floating-point percentage of the desired number of tasks to place and keep
+     * running in the task set.</p>
+     */
     inline void SetScale(Scale&& value) { m_scaleHasBeenSet = true; m_scale = std::move(value); }
 
-    
+    /**
+     * <p>A floating-point percentage of the desired number of tasks to place and keep
+     * running in the task set.</p>
+     */
     inline CreateTaskSetRequest& WithScale(const Scale& value) { SetScale(value); return *this;}
 
-    
+    /**
+     * <p>A floating-point percentage of the desired number of tasks to place and keep
+     * running in the task set.</p>
+     */
     inline CreateTaskSetRequest& WithScale(Scale&& value) { SetScale(std::move(value)); return *this;}
 
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. Up to 32 ASCII characters are allowed.</p>
+     * <p>The identifier that you provide to ensure the idempotency of the request.
+     * It's case sensitive and must be unique. It can be up to 32 ASCII characters are
+     * allowed.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. Up to 32 ASCII characters are allowed.</p>
+     * <p>The identifier that you provide to ensure the idempotency of the request.
+     * It's case sensitive and must be unique. It can be up to 32 ASCII characters are
+     * allowed.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. Up to 32 ASCII characters are allowed.</p>
+     * <p>The identifier that you provide to ensure the idempotency of the request.
+     * It's case sensitive and must be unique. It can be up to 32 ASCII characters are
+     * allowed.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. Up to 32 ASCII characters are allowed.</p>
+     * <p>The identifier that you provide to ensure the idempotency of the request.
+     * It's case sensitive and must be unique. It can be up to 32 ASCII characters are
+     * allowed.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. Up to 32 ASCII characters are allowed.</p>
+     * <p>The identifier that you provide to ensure the idempotency of the request.
+     * It's case sensitive and must be unique. It can be up to 32 ASCII characters are
+     * allowed.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. Up to 32 ASCII characters are allowed.</p>
+     * <p>The identifier that you provide to ensure the idempotency of the request.
+     * It's case sensitive and must be unique. It can be up to 32 ASCII characters are
+     * allowed.</p>
      */
     inline CreateTaskSetRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. Up to 32 ASCII characters are allowed.</p>
+     * <p>The identifier that you provide to ensure the idempotency of the request.
+     * It's case sensitive and must be unique. It can be up to 32 ASCII characters are
+     * allowed.</p>
      */
     inline CreateTaskSetRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request. Up to 32 ASCII characters are allowed.</p>
+     * <p>The identifier that you provide to ensure the idempotency of the request.
+     * It's case sensitive and must be unique. It can be up to 32 ASCII characters are
+     * allowed.</p>
      */
     inline CreateTaskSetRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
 
     /**
      * <p>The metadata that you apply to the task set to help you categorize and
-     * organize them. Each tag consists of a key and an optional value, both of which
-     * you define. When a service is deleted, the tags are deleted as well.</p> <p>The
-     * following basic restrictions apply to tags:</p> <ul> <li> <p>Maximum number of
-     * tags per resource - 50</p> </li> <li> <p>For each resource, each tag key must be
-     * unique, and each tag key can have only one value.</p> </li> <li> <p>Maximum key
-     * length - 128 Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length
-     * - 256 Unicode characters in UTF-8</p> </li> <li> <p>If your tagging schema is
-     * used across multiple services and resources, remember that other services may
-     * have restrictions on allowed characters. Generally allowed characters are:
-     * letters, numbers, and spaces representable in UTF-8, and the following
-     * characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values are
-     * case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
-     * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * organize them. Each tag consists of a key and an optional value. You define
+     * both. When a service is deleted, the tags are deleted.</p> <p>The following
+     * basic restrictions apply to tags:</p> <ul> <li> <p>Maximum number of tags per
+     * resource - 50</p> </li> <li> <p>For each resource, each tag key must be unique,
+     * and each tag key can have only one value.</p> </li> <li> <p>Maximum key length -
+     * 128 Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length - 256
+     * Unicode characters in UTF-8</p> </li> <li> <p>If your tagging schema is used
+     * across multiple services and resources, remember that other services may have
+     * restrictions on allowed characters. Generally allowed characters are: letters,
+     * numbers, and spaces representable in UTF-8, and the following characters: + - =
+     * . _ : / @.</p> </li> <li> <p>Tag keys and values are case-sensitive.</p> </li>
+     * <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or
+     * lowercase combination of such as a prefix for either keys or values as it is
+     * reserved for Amazon Web Services use. You cannot edit or delete tag keys or
+     * values with this prefix. Tags with this prefix do not count against your tags
+     * per resource limit.</p> </li> </ul>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
      * <p>The metadata that you apply to the task set to help you categorize and
-     * organize them. Each tag consists of a key and an optional value, both of which
-     * you define. When a service is deleted, the tags are deleted as well.</p> <p>The
-     * following basic restrictions apply to tags:</p> <ul> <li> <p>Maximum number of
-     * tags per resource - 50</p> </li> <li> <p>For each resource, each tag key must be
-     * unique, and each tag key can have only one value.</p> </li> <li> <p>Maximum key
-     * length - 128 Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length
-     * - 256 Unicode characters in UTF-8</p> </li> <li> <p>If your tagging schema is
-     * used across multiple services and resources, remember that other services may
-     * have restrictions on allowed characters. Generally allowed characters are:
-     * letters, numbers, and spaces representable in UTF-8, and the following
-     * characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values are
-     * case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
-     * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * organize them. Each tag consists of a key and an optional value. You define
+     * both. When a service is deleted, the tags are deleted.</p> <p>The following
+     * basic restrictions apply to tags:</p> <ul> <li> <p>Maximum number of tags per
+     * resource - 50</p> </li> <li> <p>For each resource, each tag key must be unique,
+     * and each tag key can have only one value.</p> </li> <li> <p>Maximum key length -
+     * 128 Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length - 256
+     * Unicode characters in UTF-8</p> </li> <li> <p>If your tagging schema is used
+     * across multiple services and resources, remember that other services may have
+     * restrictions on allowed characters. Generally allowed characters are: letters,
+     * numbers, and spaces representable in UTF-8, and the following characters: + - =
+     * . _ : / @.</p> </li> <li> <p>Tag keys and values are case-sensitive.</p> </li>
+     * <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or
+     * lowercase combination of such as a prefix for either keys or values as it is
+     * reserved for Amazon Web Services use. You cannot edit or delete tag keys or
+     * values with this prefix. Tags with this prefix do not count against your tags
+     * per resource limit.</p> </li> </ul>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The metadata that you apply to the task set to help you categorize and
-     * organize them. Each tag consists of a key and an optional value, both of which
-     * you define. When a service is deleted, the tags are deleted as well.</p> <p>The
-     * following basic restrictions apply to tags:</p> <ul> <li> <p>Maximum number of
-     * tags per resource - 50</p> </li> <li> <p>For each resource, each tag key must be
-     * unique, and each tag key can have only one value.</p> </li> <li> <p>Maximum key
-     * length - 128 Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length
-     * - 256 Unicode characters in UTF-8</p> </li> <li> <p>If your tagging schema is
-     * used across multiple services and resources, remember that other services may
-     * have restrictions on allowed characters. Generally allowed characters are:
-     * letters, numbers, and spaces representable in UTF-8, and the following
-     * characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values are
-     * case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
-     * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * organize them. Each tag consists of a key and an optional value. You define
+     * both. When a service is deleted, the tags are deleted.</p> <p>The following
+     * basic restrictions apply to tags:</p> <ul> <li> <p>Maximum number of tags per
+     * resource - 50</p> </li> <li> <p>For each resource, each tag key must be unique,
+     * and each tag key can have only one value.</p> </li> <li> <p>Maximum key length -
+     * 128 Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length - 256
+     * Unicode characters in UTF-8</p> </li> <li> <p>If your tagging schema is used
+     * across multiple services and resources, remember that other services may have
+     * restrictions on allowed characters. Generally allowed characters are: letters,
+     * numbers, and spaces representable in UTF-8, and the following characters: + - =
+     * . _ : / @.</p> </li> <li> <p>Tag keys and values are case-sensitive.</p> </li>
+     * <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or
+     * lowercase combination of such as a prefix for either keys or values as it is
+     * reserved for Amazon Web Services use. You cannot edit or delete tag keys or
+     * values with this prefix. Tags with this prefix do not count against your tags
+     * per resource limit.</p> </li> </ul>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>The metadata that you apply to the task set to help you categorize and
-     * organize them. Each tag consists of a key and an optional value, both of which
-     * you define. When a service is deleted, the tags are deleted as well.</p> <p>The
-     * following basic restrictions apply to tags:</p> <ul> <li> <p>Maximum number of
-     * tags per resource - 50</p> </li> <li> <p>For each resource, each tag key must be
-     * unique, and each tag key can have only one value.</p> </li> <li> <p>Maximum key
-     * length - 128 Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length
-     * - 256 Unicode characters in UTF-8</p> </li> <li> <p>If your tagging schema is
-     * used across multiple services and resources, remember that other services may
-     * have restrictions on allowed characters. Generally allowed characters are:
-     * letters, numbers, and spaces representable in UTF-8, and the following
-     * characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values are
-     * case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
-     * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * organize them. Each tag consists of a key and an optional value. You define
+     * both. When a service is deleted, the tags are deleted.</p> <p>The following
+     * basic restrictions apply to tags:</p> <ul> <li> <p>Maximum number of tags per
+     * resource - 50</p> </li> <li> <p>For each resource, each tag key must be unique,
+     * and each tag key can have only one value.</p> </li> <li> <p>Maximum key length -
+     * 128 Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length - 256
+     * Unicode characters in UTF-8</p> </li> <li> <p>If your tagging schema is used
+     * across multiple services and resources, remember that other services may have
+     * restrictions on allowed characters. Generally allowed characters are: letters,
+     * numbers, and spaces representable in UTF-8, and the following characters: + - =
+     * . _ : / @.</p> </li> <li> <p>Tag keys and values are case-sensitive.</p> </li>
+     * <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or
+     * lowercase combination of such as a prefix for either keys or values as it is
+     * reserved for Amazon Web Services use. You cannot edit or delete tag keys or
+     * values with this prefix. Tags with this prefix do not count against your tags
+     * per resource limit.</p> </li> </ul>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>The metadata that you apply to the task set to help you categorize and
-     * organize them. Each tag consists of a key and an optional value, both of which
-     * you define. When a service is deleted, the tags are deleted as well.</p> <p>The
-     * following basic restrictions apply to tags:</p> <ul> <li> <p>Maximum number of
-     * tags per resource - 50</p> </li> <li> <p>For each resource, each tag key must be
-     * unique, and each tag key can have only one value.</p> </li> <li> <p>Maximum key
-     * length - 128 Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length
-     * - 256 Unicode characters in UTF-8</p> </li> <li> <p>If your tagging schema is
-     * used across multiple services and resources, remember that other services may
-     * have restrictions on allowed characters. Generally allowed characters are:
-     * letters, numbers, and spaces representable in UTF-8, and the following
-     * characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values are
-     * case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
-     * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * organize them. Each tag consists of a key and an optional value. You define
+     * both. When a service is deleted, the tags are deleted.</p> <p>The following
+     * basic restrictions apply to tags:</p> <ul> <li> <p>Maximum number of tags per
+     * resource - 50</p> </li> <li> <p>For each resource, each tag key must be unique,
+     * and each tag key can have only one value.</p> </li> <li> <p>Maximum key length -
+     * 128 Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length - 256
+     * Unicode characters in UTF-8</p> </li> <li> <p>If your tagging schema is used
+     * across multiple services and resources, remember that other services may have
+     * restrictions on allowed characters. Generally allowed characters are: letters,
+     * numbers, and spaces representable in UTF-8, and the following characters: + - =
+     * . _ : / @.</p> </li> <li> <p>Tag keys and values are case-sensitive.</p> </li>
+     * <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or
+     * lowercase combination of such as a prefix for either keys or values as it is
+     * reserved for Amazon Web Services use. You cannot edit or delete tag keys or
+     * values with this prefix. Tags with this prefix do not count against your tags
+     * per resource limit.</p> </li> </ul>
      */
     inline CreateTaskSetRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
      * <p>The metadata that you apply to the task set to help you categorize and
-     * organize them. Each tag consists of a key and an optional value, both of which
-     * you define. When a service is deleted, the tags are deleted as well.</p> <p>The
-     * following basic restrictions apply to tags:</p> <ul> <li> <p>Maximum number of
-     * tags per resource - 50</p> </li> <li> <p>For each resource, each tag key must be
-     * unique, and each tag key can have only one value.</p> </li> <li> <p>Maximum key
-     * length - 128 Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length
-     * - 256 Unicode characters in UTF-8</p> </li> <li> <p>If your tagging schema is
-     * used across multiple services and resources, remember that other services may
-     * have restrictions on allowed characters. Generally allowed characters are:
-     * letters, numbers, and spaces representable in UTF-8, and the following
-     * characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values are
-     * case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
-     * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * organize them. Each tag consists of a key and an optional value. You define
+     * both. When a service is deleted, the tags are deleted.</p> <p>The following
+     * basic restrictions apply to tags:</p> <ul> <li> <p>Maximum number of tags per
+     * resource - 50</p> </li> <li> <p>For each resource, each tag key must be unique,
+     * and each tag key can have only one value.</p> </li> <li> <p>Maximum key length -
+     * 128 Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length - 256
+     * Unicode characters in UTF-8</p> </li> <li> <p>If your tagging schema is used
+     * across multiple services and resources, remember that other services may have
+     * restrictions on allowed characters. Generally allowed characters are: letters,
+     * numbers, and spaces representable in UTF-8, and the following characters: + - =
+     * . _ : / @.</p> </li> <li> <p>Tag keys and values are case-sensitive.</p> </li>
+     * <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or
+     * lowercase combination of such as a prefix for either keys or values as it is
+     * reserved for Amazon Web Services use. You cannot edit or delete tag keys or
+     * values with this prefix. Tags with this prefix do not count against your tags
+     * per resource limit.</p> </li> </ul>
      */
     inline CreateTaskSetRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>The metadata that you apply to the task set to help you categorize and
-     * organize them. Each tag consists of a key and an optional value, both of which
-     * you define. When a service is deleted, the tags are deleted as well.</p> <p>The
-     * following basic restrictions apply to tags:</p> <ul> <li> <p>Maximum number of
-     * tags per resource - 50</p> </li> <li> <p>For each resource, each tag key must be
-     * unique, and each tag key can have only one value.</p> </li> <li> <p>Maximum key
-     * length - 128 Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length
-     * - 256 Unicode characters in UTF-8</p> </li> <li> <p>If your tagging schema is
-     * used across multiple services and resources, remember that other services may
-     * have restrictions on allowed characters. Generally allowed characters are:
-     * letters, numbers, and spaces representable in UTF-8, and the following
-     * characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values are
-     * case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
-     * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * organize them. Each tag consists of a key and an optional value. You define
+     * both. When a service is deleted, the tags are deleted.</p> <p>The following
+     * basic restrictions apply to tags:</p> <ul> <li> <p>Maximum number of tags per
+     * resource - 50</p> </li> <li> <p>For each resource, each tag key must be unique,
+     * and each tag key can have only one value.</p> </li> <li> <p>Maximum key length -
+     * 128 Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length - 256
+     * Unicode characters in UTF-8</p> </li> <li> <p>If your tagging schema is used
+     * across multiple services and resources, remember that other services may have
+     * restrictions on allowed characters. Generally allowed characters are: letters,
+     * numbers, and spaces representable in UTF-8, and the following characters: + - =
+     * . _ : / @.</p> </li> <li> <p>Tag keys and values are case-sensitive.</p> </li>
+     * <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or
+     * lowercase combination of such as a prefix for either keys or values as it is
+     * reserved for Amazon Web Services use. You cannot edit or delete tag keys or
+     * values with this prefix. Tags with this prefix do not count against your tags
+     * per resource limit.</p> </li> </ul>
      */
     inline CreateTaskSetRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
      * <p>The metadata that you apply to the task set to help you categorize and
-     * organize them. Each tag consists of a key and an optional value, both of which
-     * you define. When a service is deleted, the tags are deleted as well.</p> <p>The
-     * following basic restrictions apply to tags:</p> <ul> <li> <p>Maximum number of
-     * tags per resource - 50</p> </li> <li> <p>For each resource, each tag key must be
-     * unique, and each tag key can have only one value.</p> </li> <li> <p>Maximum key
-     * length - 128 Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length
-     * - 256 Unicode characters in UTF-8</p> </li> <li> <p>If your tagging schema is
-     * used across multiple services and resources, remember that other services may
-     * have restrictions on allowed characters. Generally allowed characters are:
-     * letters, numbers, and spaces representable in UTF-8, and the following
-     * characters: + - = . _ : / @.</p> </li> <li> <p>Tag keys and values are
-     * case-sensitive.</p> </li> <li> <p>Do not use <code>aws:</code>,
-     * <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * either keys or values as it is reserved for AWS use. You cannot edit or delete
-     * tag keys or values with this prefix. Tags with this prefix do not count against
-     * your tags per resource limit.</p> </li> </ul>
+     * organize them. Each tag consists of a key and an optional value. You define
+     * both. When a service is deleted, the tags are deleted.</p> <p>The following
+     * basic restrictions apply to tags:</p> <ul> <li> <p>Maximum number of tags per
+     * resource - 50</p> </li> <li> <p>For each resource, each tag key must be unique,
+     * and each tag key can have only one value.</p> </li> <li> <p>Maximum key length -
+     * 128 Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length - 256
+     * Unicode characters in UTF-8</p> </li> <li> <p>If your tagging schema is used
+     * across multiple services and resources, remember that other services may have
+     * restrictions on allowed characters. Generally allowed characters are: letters,
+     * numbers, and spaces representable in UTF-8, and the following characters: + - =
+     * . _ : / @.</p> </li> <li> <p>Tag keys and values are case-sensitive.</p> </li>
+     * <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or
+     * lowercase combination of such as a prefix for either keys or values as it is
+     * reserved for Amazon Web Services use. You cannot edit or delete tag keys or
+     * values with this prefix. Tags with this prefix do not count against your tags
+     * per resource limit.</p> </li> </ul>
      */
     inline CreateTaskSetRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

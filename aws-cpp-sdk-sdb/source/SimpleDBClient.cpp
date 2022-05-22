@@ -79,7 +79,7 @@ SimpleDBClient::~SimpleDBClient()
 {
 }
 
-void SimpleDBClient::init(const ClientConfiguration& config)
+void SimpleDBClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("sdb");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -118,9 +118,6 @@ Aws::String SimpleDBClient::ConvertRequestToPresignedUrl(const AmazonSerializabl
 BatchDeleteAttributesOutcome SimpleDBClient::BatchDeleteAttributes(const BatchDeleteAttributesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return BatchDeleteAttributesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -145,9 +142,6 @@ void SimpleDBClient::BatchDeleteAttributesAsyncHelper(const BatchDeleteAttribute
 BatchPutAttributesOutcome SimpleDBClient::BatchPutAttributes(const BatchPutAttributesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return BatchPutAttributesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -172,9 +166,6 @@ void SimpleDBClient::BatchPutAttributesAsyncHelper(const BatchPutAttributesReque
 CreateDomainOutcome SimpleDBClient::CreateDomain(const CreateDomainRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateDomainOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -199,9 +190,6 @@ void SimpleDBClient::CreateDomainAsyncHelper(const CreateDomainRequest& request,
 DeleteAttributesOutcome SimpleDBClient::DeleteAttributes(const DeleteAttributesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteAttributesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -226,9 +214,6 @@ void SimpleDBClient::DeleteAttributesAsyncHelper(const DeleteAttributesRequest& 
 DeleteDomainOutcome SimpleDBClient::DeleteDomain(const DeleteDomainRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteDomainOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -253,9 +238,6 @@ void SimpleDBClient::DeleteDomainAsyncHelper(const DeleteDomainRequest& request,
 DomainMetadataOutcome SimpleDBClient::DomainMetadata(const DomainMetadataRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DomainMetadataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -280,9 +262,6 @@ void SimpleDBClient::DomainMetadataAsyncHelper(const DomainMetadataRequest& requ
 GetAttributesOutcome SimpleDBClient::GetAttributes(const GetAttributesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetAttributesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -307,9 +286,6 @@ void SimpleDBClient::GetAttributesAsyncHelper(const GetAttributesRequest& reques
 ListDomainsOutcome SimpleDBClient::ListDomains(const ListDomainsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListDomainsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -334,9 +310,6 @@ void SimpleDBClient::ListDomainsAsyncHelper(const ListDomainsRequest& request, c
 PutAttributesOutcome SimpleDBClient::PutAttributes(const PutAttributesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return PutAttributesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -361,9 +334,6 @@ void SimpleDBClient::PutAttributesAsyncHelper(const PutAttributesRequest& reques
 SelectOutcome SimpleDBClient::Select(const SelectRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return SelectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -384,6 +354,4 @@ void SimpleDBClient::SelectAsyncHelper(const SelectRequest& request, const Selec
 {
   handler(this, request, Select(request), context);
 }
-
-
 

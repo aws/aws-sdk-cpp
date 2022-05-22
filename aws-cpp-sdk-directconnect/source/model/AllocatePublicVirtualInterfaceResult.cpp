@@ -23,7 +23,8 @@ AllocatePublicVirtualInterfaceResult::AllocatePublicVirtualInterfaceResult() :
     m_addressFamily(AddressFamily::NOT_SET),
     m_virtualInterfaceState(VirtualInterfaceState::NOT_SET),
     m_mtu(0),
-    m_jumboFrameCapable(false)
+    m_jumboFrameCapable(false),
+    m_siteLinkEnabled(false)
 {
 }
 
@@ -34,7 +35,8 @@ AllocatePublicVirtualInterfaceResult::AllocatePublicVirtualInterfaceResult(const
     m_addressFamily(AddressFamily::NOT_SET),
     m_virtualInterfaceState(VirtualInterfaceState::NOT_SET),
     m_mtu(0),
-    m_jumboFrameCapable(false)
+    m_jumboFrameCapable(false),
+    m_siteLinkEnabled(false)
 {
   *this = result;
 }
@@ -186,6 +188,12 @@ AllocatePublicVirtualInterfaceResult& AllocatePublicVirtualInterfaceResult::oper
 
   }
 
+  if(jsonValue.ValueExists("awsLogicalDeviceId"))
+  {
+    m_awsLogicalDeviceId = jsonValue.GetString("awsLogicalDeviceId");
+
+  }
+
   if(jsonValue.ValueExists("tags"))
   {
     Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -193,6 +201,12 @@ AllocatePublicVirtualInterfaceResult& AllocatePublicVirtualInterfaceResult::oper
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("siteLinkEnabled"))
+  {
+    m_siteLinkEnabled = jsonValue.GetBool("siteLinkEnabled");
+
   }
 
 

@@ -21,8 +21,11 @@ UpdateDataSetRequest::UpdateDataSetRequest() :
     m_importMode(DataSetImportMode::NOT_SET),
     m_importModeHasBeenSet(false),
     m_columnGroupsHasBeenSet(false),
+    m_fieldFoldersHasBeenSet(false),
     m_rowLevelPermissionDataSetHasBeenSet(false),
-    m_columnLevelPermissionRulesHasBeenSet(false)
+    m_rowLevelPermissionTagConfigurationHasBeenSet(false),
+    m_columnLevelPermissionRulesHasBeenSet(false),
+    m_dataSetUsageConfigurationHasBeenSet(false)
 {
 }
 
@@ -74,9 +77,26 @@ Aws::String UpdateDataSetRequest::SerializePayload() const
 
   }
 
+  if(m_fieldFoldersHasBeenSet)
+  {
+   JsonValue fieldFoldersJsonMap;
+   for(auto& fieldFoldersItem : m_fieldFolders)
+   {
+     fieldFoldersJsonMap.WithObject(fieldFoldersItem.first, fieldFoldersItem.second.Jsonize());
+   }
+   payload.WithObject("FieldFolders", std::move(fieldFoldersJsonMap));
+
+  }
+
   if(m_rowLevelPermissionDataSetHasBeenSet)
   {
    payload.WithObject("RowLevelPermissionDataSet", m_rowLevelPermissionDataSet.Jsonize());
+
+  }
+
+  if(m_rowLevelPermissionTagConfigurationHasBeenSet)
+  {
+   payload.WithObject("RowLevelPermissionTagConfiguration", m_rowLevelPermissionTagConfiguration.Jsonize());
 
   }
 
@@ -88,6 +108,12 @@ Aws::String UpdateDataSetRequest::SerializePayload() const
      columnLevelPermissionRulesJsonList[columnLevelPermissionRulesIndex].AsObject(m_columnLevelPermissionRules[columnLevelPermissionRulesIndex].Jsonize());
    }
    payload.WithArray("ColumnLevelPermissionRules", std::move(columnLevelPermissionRulesJsonList));
+
+  }
+
+  if(m_dataSetUsageConfigurationHasBeenSet)
+  {
+   payload.WithObject("DataSetUsageConfiguration", m_dataSetUsageConfiguration.Jsonize());
 
   }
 

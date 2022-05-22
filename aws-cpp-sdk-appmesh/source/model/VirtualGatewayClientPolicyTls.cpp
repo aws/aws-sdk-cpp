@@ -19,6 +19,7 @@ namespace Model
 {
 
 VirtualGatewayClientPolicyTls::VirtualGatewayClientPolicyTls() : 
+    m_certificateHasBeenSet(false),
     m_enforce(false),
     m_enforceHasBeenSet(false),
     m_portsHasBeenSet(false),
@@ -27,6 +28,7 @@ VirtualGatewayClientPolicyTls::VirtualGatewayClientPolicyTls() :
 }
 
 VirtualGatewayClientPolicyTls::VirtualGatewayClientPolicyTls(JsonView jsonValue) : 
+    m_certificateHasBeenSet(false),
     m_enforce(false),
     m_enforceHasBeenSet(false),
     m_portsHasBeenSet(false),
@@ -37,6 +39,13 @@ VirtualGatewayClientPolicyTls::VirtualGatewayClientPolicyTls(JsonView jsonValue)
 
 VirtualGatewayClientPolicyTls& VirtualGatewayClientPolicyTls::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("certificate"))
+  {
+    m_certificate = jsonValue.GetObject("certificate");
+
+    m_certificateHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("enforce"))
   {
     m_enforce = jsonValue.GetBool("enforce");
@@ -67,6 +76,12 @@ VirtualGatewayClientPolicyTls& VirtualGatewayClientPolicyTls::operator =(JsonVie
 JsonValue VirtualGatewayClientPolicyTls::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_certificateHasBeenSet)
+  {
+   payload.WithObject("certificate", m_certificate.Jsonize());
+
+  }
 
   if(m_enforceHasBeenSet)
   {

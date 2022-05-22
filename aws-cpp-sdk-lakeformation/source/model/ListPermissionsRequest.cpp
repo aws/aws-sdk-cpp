@@ -20,7 +20,8 @@ ListPermissionsRequest::ListPermissionsRequest() :
     m_resourceHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_includeRelatedHasBeenSet(false)
 {
 }
 
@@ -63,15 +64,13 @@ Aws::String ListPermissionsRequest::SerializePayload() const
 
   }
 
+  if(m_includeRelatedHasBeenSet)
+  {
+   payload.WithString("IncludeRelated", m_includeRelated);
+
+  }
+
   return payload.View().WriteReadable();
-}
-
-Aws::Http::HeaderValueCollection ListPermissionsRequest::GetRequestSpecificHeaders() const
-{
-  Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSLakeFormation.ListPermissions"));
-  return headers;
-
 }
 
 

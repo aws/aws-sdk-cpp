@@ -66,9 +66,10 @@ macro(do_packaging)
             COMPATIBILITY AnyNewerVersion
         )
 
-        export(EXPORT "${PROJECT_NAME}-targets"
-            FILE "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-targets.cmake"
-        )
+        # TODO: Re-enable export after Aws Common Runtime exports their libraries.
+        # export(EXPORT "${PROJECT_NAME}-targets"
+        #     FILE "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-targets.cmake"
+        # )
 
     if(${PROJECT_NAME} STREQUAL "aws-cpp-sdk-core")
         configure_file(

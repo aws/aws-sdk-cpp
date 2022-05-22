@@ -94,9 +94,9 @@ namespace Model
     /**
      * <p>The container instance ID or full ARN of the container instance to
      * deregister. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by
-     * the Region of the container instance, the AWS account ID of the container
-     * instance owner, the <code>container-instance</code> namespace, and then the
-     * container instance ID. For example,
+     * the Region of the container instance, the Amazon Web Services account ID of the
+     * container instance owner, the <code>container-instance</code> namespace, and
+     * then the container instance ID. For example,
      * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
      */
     inline const Aws::String& GetContainerInstance() const{ return m_containerInstance; }
@@ -104,9 +104,9 @@ namespace Model
     /**
      * <p>The container instance ID or full ARN of the container instance to
      * deregister. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by
-     * the Region of the container instance, the AWS account ID of the container
-     * instance owner, the <code>container-instance</code> namespace, and then the
-     * container instance ID. For example,
+     * the Region of the container instance, the Amazon Web Services account ID of the
+     * container instance owner, the <code>container-instance</code> namespace, and
+     * then the container instance ID. For example,
      * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
      */
     inline bool ContainerInstanceHasBeenSet() const { return m_containerInstanceHasBeenSet; }
@@ -114,9 +114,9 @@ namespace Model
     /**
      * <p>The container instance ID or full ARN of the container instance to
      * deregister. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by
-     * the Region of the container instance, the AWS account ID of the container
-     * instance owner, the <code>container-instance</code> namespace, and then the
-     * container instance ID. For example,
+     * the Region of the container instance, the Amazon Web Services account ID of the
+     * container instance owner, the <code>container-instance</code> namespace, and
+     * then the container instance ID. For example,
      * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
      */
     inline void SetContainerInstance(const Aws::String& value) { m_containerInstanceHasBeenSet = true; m_containerInstance = value; }
@@ -124,9 +124,9 @@ namespace Model
     /**
      * <p>The container instance ID or full ARN of the container instance to
      * deregister. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by
-     * the Region of the container instance, the AWS account ID of the container
-     * instance owner, the <code>container-instance</code> namespace, and then the
-     * container instance ID. For example,
+     * the Region of the container instance, the Amazon Web Services account ID of the
+     * container instance owner, the <code>container-instance</code> namespace, and
+     * then the container instance ID. For example,
      * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
      */
     inline void SetContainerInstance(Aws::String&& value) { m_containerInstanceHasBeenSet = true; m_containerInstance = std::move(value); }
@@ -134,9 +134,9 @@ namespace Model
     /**
      * <p>The container instance ID or full ARN of the container instance to
      * deregister. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by
-     * the Region of the container instance, the AWS account ID of the container
-     * instance owner, the <code>container-instance</code> namespace, and then the
-     * container instance ID. For example,
+     * the Region of the container instance, the Amazon Web Services account ID of the
+     * container instance owner, the <code>container-instance</code> namespace, and
+     * then the container instance ID. For example,
      * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
      */
     inline void SetContainerInstance(const char* value) { m_containerInstanceHasBeenSet = true; m_containerInstance.assign(value); }
@@ -144,9 +144,9 @@ namespace Model
     /**
      * <p>The container instance ID or full ARN of the container instance to
      * deregister. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by
-     * the Region of the container instance, the AWS account ID of the container
-     * instance owner, the <code>container-instance</code> namespace, and then the
-     * container instance ID. For example,
+     * the Region of the container instance, the Amazon Web Services account ID of the
+     * container instance owner, the <code>container-instance</code> namespace, and
+     * then the container instance ID. For example,
      * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
      */
     inline DeregisterContainerInstanceRequest& WithContainerInstance(const Aws::String& value) { SetContainerInstance(value); return *this;}
@@ -154,9 +154,9 @@ namespace Model
     /**
      * <p>The container instance ID or full ARN of the container instance to
      * deregister. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by
-     * the Region of the container instance, the AWS account ID of the container
-     * instance owner, the <code>container-instance</code> namespace, and then the
-     * container instance ID. For example,
+     * the Region of the container instance, the Amazon Web Services account ID of the
+     * container instance owner, the <code>container-instance</code> namespace, and
+     * then the container instance ID. For example,
      * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
      */
     inline DeregisterContainerInstanceRequest& WithContainerInstance(Aws::String&& value) { SetContainerInstance(std::move(value)); return *this;}
@@ -164,71 +164,67 @@ namespace Model
     /**
      * <p>The container instance ID or full ARN of the container instance to
      * deregister. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by
-     * the Region of the container instance, the AWS account ID of the container
-     * instance owner, the <code>container-instance</code> namespace, and then the
-     * container instance ID. For example,
+     * the Region of the container instance, the Amazon Web Services account ID of the
+     * container instance owner, the <code>container-instance</code> namespace, and
+     * then the container instance ID. For example,
      * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
      */
     inline DeregisterContainerInstanceRequest& WithContainerInstance(const char* value) { SetContainerInstance(value); return *this;}
 
 
     /**
-     * <p>Forces the deregistration of the container instance. If you have tasks
-     * running on the container instance when you deregister it with the
-     * <code>force</code> option, these tasks remain running until you terminate the
-     * instance or the tasks stop through some other means, but they are orphaned (no
-     * longer monitored or accounted for by Amazon ECS). If an orphaned task on your
-     * container instance is part of an Amazon ECS service, then the service scheduler
-     * starts another copy of that task, on a different container instance if possible.
-     * </p> <p>Any containers in orphaned service tasks that are registered with a
-     * Classic Load Balancer or an Application Load Balancer target group are
-     * deregistered. They begin connection draining according to the settings on the
-     * load balancer or target group.</p>
+     * <p>Forces the container instance to be deregistered. If you have tasks running
+     * on the container instance when you deregister it with the <code>force</code>
+     * option, these tasks remain running until you terminate the instance or the tasks
+     * stop through some other means, but they're orphaned (no longer monitored or
+     * accounted for by Amazon ECS). If an orphaned task on your container instance is
+     * part of an Amazon ECS service, then the service scheduler starts another copy of
+     * that task, on a different container instance if possible. </p> <p>Any containers
+     * in orphaned service tasks that are registered with a Classic Load Balancer or an
+     * Application Load Balancer target group are deregistered. They begin connection
+     * draining according to the settings on the load balancer or target group.</p>
      */
     inline bool GetForce() const{ return m_force; }
 
     /**
-     * <p>Forces the deregistration of the container instance. If you have tasks
-     * running on the container instance when you deregister it with the
-     * <code>force</code> option, these tasks remain running until you terminate the
-     * instance or the tasks stop through some other means, but they are orphaned (no
-     * longer monitored or accounted for by Amazon ECS). If an orphaned task on your
-     * container instance is part of an Amazon ECS service, then the service scheduler
-     * starts another copy of that task, on a different container instance if possible.
-     * </p> <p>Any containers in orphaned service tasks that are registered with a
-     * Classic Load Balancer or an Application Load Balancer target group are
-     * deregistered. They begin connection draining according to the settings on the
-     * load balancer or target group.</p>
+     * <p>Forces the container instance to be deregistered. If you have tasks running
+     * on the container instance when you deregister it with the <code>force</code>
+     * option, these tasks remain running until you terminate the instance or the tasks
+     * stop through some other means, but they're orphaned (no longer monitored or
+     * accounted for by Amazon ECS). If an orphaned task on your container instance is
+     * part of an Amazon ECS service, then the service scheduler starts another copy of
+     * that task, on a different container instance if possible. </p> <p>Any containers
+     * in orphaned service tasks that are registered with a Classic Load Balancer or an
+     * Application Load Balancer target group are deregistered. They begin connection
+     * draining according to the settings on the load balancer or target group.</p>
      */
     inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
 
     /**
-     * <p>Forces the deregistration of the container instance. If you have tasks
-     * running on the container instance when you deregister it with the
-     * <code>force</code> option, these tasks remain running until you terminate the
-     * instance or the tasks stop through some other means, but they are orphaned (no
-     * longer monitored or accounted for by Amazon ECS). If an orphaned task on your
-     * container instance is part of an Amazon ECS service, then the service scheduler
-     * starts another copy of that task, on a different container instance if possible.
-     * </p> <p>Any containers in orphaned service tasks that are registered with a
-     * Classic Load Balancer or an Application Load Balancer target group are
-     * deregistered. They begin connection draining according to the settings on the
-     * load balancer or target group.</p>
+     * <p>Forces the container instance to be deregistered. If you have tasks running
+     * on the container instance when you deregister it with the <code>force</code>
+     * option, these tasks remain running until you terminate the instance or the tasks
+     * stop through some other means, but they're orphaned (no longer monitored or
+     * accounted for by Amazon ECS). If an orphaned task on your container instance is
+     * part of an Amazon ECS service, then the service scheduler starts another copy of
+     * that task, on a different container instance if possible. </p> <p>Any containers
+     * in orphaned service tasks that are registered with a Classic Load Balancer or an
+     * Application Load Balancer target group are deregistered. They begin connection
+     * draining according to the settings on the load balancer or target group.</p>
      */
     inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
 
     /**
-     * <p>Forces the deregistration of the container instance. If you have tasks
-     * running on the container instance when you deregister it with the
-     * <code>force</code> option, these tasks remain running until you terminate the
-     * instance or the tasks stop through some other means, but they are orphaned (no
-     * longer monitored or accounted for by Amazon ECS). If an orphaned task on your
-     * container instance is part of an Amazon ECS service, then the service scheduler
-     * starts another copy of that task, on a different container instance if possible.
-     * </p> <p>Any containers in orphaned service tasks that are registered with a
-     * Classic Load Balancer or an Application Load Balancer target group are
-     * deregistered. They begin connection draining according to the settings on the
-     * load balancer or target group.</p>
+     * <p>Forces the container instance to be deregistered. If you have tasks running
+     * on the container instance when you deregister it with the <code>force</code>
+     * option, these tasks remain running until you terminate the instance or the tasks
+     * stop through some other means, but they're orphaned (no longer monitored or
+     * accounted for by Amazon ECS). If an orphaned task on your container instance is
+     * part of an Amazon ECS service, then the service scheduler starts another copy of
+     * that task, on a different container instance if possible. </p> <p>Any containers
+     * in orphaned service tasks that are registered with a Classic Load Balancer or an
+     * Application Load Balancer target group are deregistered. They begin connection
+     * draining according to the settings on the load balancer or target group.</p>
      */
     inline DeregisterContainerInstanceRequest& WithForce(bool value) { SetForce(value); return *this;}
 

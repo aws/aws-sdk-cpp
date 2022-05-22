@@ -60,37 +60,37 @@ namespace Model
 
 
     /**
-     * <p>Date on which the license is deleted.</p>
+     * <p>Date when the license is deleted.</p>
      */
     inline const Aws::String& GetDeletionDate() const{ return m_deletionDate; }
 
     /**
-     * <p>Date on which the license is deleted.</p>
+     * <p>Date when the license is deleted.</p>
      */
     inline void SetDeletionDate(const Aws::String& value) { m_deletionDate = value; }
 
     /**
-     * <p>Date on which the license is deleted.</p>
+     * <p>Date when the license is deleted.</p>
      */
     inline void SetDeletionDate(Aws::String&& value) { m_deletionDate = std::move(value); }
 
     /**
-     * <p>Date on which the license is deleted.</p>
+     * <p>Date when the license is deleted.</p>
      */
     inline void SetDeletionDate(const char* value) { m_deletionDate.assign(value); }
 
     /**
-     * <p>Date on which the license is deleted.</p>
+     * <p>Date when the license is deleted.</p>
      */
     inline DeleteLicenseResult& WithDeletionDate(const Aws::String& value) { SetDeletionDate(value); return *this;}
 
     /**
-     * <p>Date on which the license is deleted.</p>
+     * <p>Date when the license is deleted.</p>
      */
     inline DeleteLicenseResult& WithDeletionDate(Aws::String&& value) { SetDeletionDate(std::move(value)); return *this;}
 
     /**
-     * <p>Date on which the license is deleted.</p>
+     * <p>Date when the license is deleted.</p>
      */
     inline DeleteLicenseResult& WithDeletionDate(const char* value) { SetDeletionDate(value); return *this;}
 

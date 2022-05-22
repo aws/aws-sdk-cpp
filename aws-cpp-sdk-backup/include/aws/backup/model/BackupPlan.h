@@ -30,7 +30,7 @@ namespace Model
    * <p>Contains an optional backup plan display name and an array of
    * <code>BackupRule</code> objects, each of which specifies a backup rule. Each
    * rule in a backup plan is a separate scheduled task and can back up a different
-   * selection of AWS resources.</p><p><h3>See Also:</h3>   <a
+   * selection of Amazon Web Services resources.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/BackupPlan">AWS
    * API Reference</a></p>
    */
@@ -44,42 +44,50 @@ namespace Model
 
 
     /**
-     * <p>The display name of a backup plan.</p>
+     * <p>The display name of a backup plan. Must contain 1 to 50 alphanumeric or '-_.'
+     * characters.</p>
      */
     inline const Aws::String& GetBackupPlanName() const{ return m_backupPlanName; }
 
     /**
-     * <p>The display name of a backup plan.</p>
+     * <p>The display name of a backup plan. Must contain 1 to 50 alphanumeric or '-_.'
+     * characters.</p>
      */
     inline bool BackupPlanNameHasBeenSet() const { return m_backupPlanNameHasBeenSet; }
 
     /**
-     * <p>The display name of a backup plan.</p>
+     * <p>The display name of a backup plan. Must contain 1 to 50 alphanumeric or '-_.'
+     * characters.</p>
      */
     inline void SetBackupPlanName(const Aws::String& value) { m_backupPlanNameHasBeenSet = true; m_backupPlanName = value; }
 
     /**
-     * <p>The display name of a backup plan.</p>
+     * <p>The display name of a backup plan. Must contain 1 to 50 alphanumeric or '-_.'
+     * characters.</p>
      */
     inline void SetBackupPlanName(Aws::String&& value) { m_backupPlanNameHasBeenSet = true; m_backupPlanName = std::move(value); }
 
     /**
-     * <p>The display name of a backup plan.</p>
+     * <p>The display name of a backup plan. Must contain 1 to 50 alphanumeric or '-_.'
+     * characters.</p>
      */
     inline void SetBackupPlanName(const char* value) { m_backupPlanNameHasBeenSet = true; m_backupPlanName.assign(value); }
 
     /**
-     * <p>The display name of a backup plan.</p>
+     * <p>The display name of a backup plan. Must contain 1 to 50 alphanumeric or '-_.'
+     * characters.</p>
      */
     inline BackupPlan& WithBackupPlanName(const Aws::String& value) { SetBackupPlanName(value); return *this;}
 
     /**
-     * <p>The display name of a backup plan.</p>
+     * <p>The display name of a backup plan. Must contain 1 to 50 alphanumeric or '-_.'
+     * characters.</p>
      */
     inline BackupPlan& WithBackupPlanName(Aws::String&& value) { SetBackupPlanName(std::move(value)); return *this;}
 
     /**
-     * <p>The display name of a backup plan.</p>
+     * <p>The display name of a backup plan. Must contain 1 to 50 alphanumeric or '-_.'
+     * characters.</p>
      */
     inline BackupPlan& WithBackupPlanName(const char* value) { SetBackupPlanName(value); return *this;}
 

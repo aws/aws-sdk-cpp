@@ -43,56 +43,56 @@ namespace Model
     /**
      * <p>The identifier of a specific HSM client certificate for which you want
      * information. If no identifier is specified, information is returned for all HSM
-     * client certificates owned by your AWS customer account.</p>
+     * client certificates owned by your Amazon Web Services account.</p>
      */
     inline const Aws::String& GetHsmClientCertificateIdentifier() const{ return m_hsmClientCertificateIdentifier; }
 
     /**
      * <p>The identifier of a specific HSM client certificate for which you want
      * information. If no identifier is specified, information is returned for all HSM
-     * client certificates owned by your AWS customer account.</p>
+     * client certificates owned by your Amazon Web Services account.</p>
      */
     inline bool HsmClientCertificateIdentifierHasBeenSet() const { return m_hsmClientCertificateIdentifierHasBeenSet; }
 
     /**
      * <p>The identifier of a specific HSM client certificate for which you want
      * information. If no identifier is specified, information is returned for all HSM
-     * client certificates owned by your AWS customer account.</p>
+     * client certificates owned by your Amazon Web Services account.</p>
      */
     inline void SetHsmClientCertificateIdentifier(const Aws::String& value) { m_hsmClientCertificateIdentifierHasBeenSet = true; m_hsmClientCertificateIdentifier = value; }
 
     /**
      * <p>The identifier of a specific HSM client certificate for which you want
      * information. If no identifier is specified, information is returned for all HSM
-     * client certificates owned by your AWS customer account.</p>
+     * client certificates owned by your Amazon Web Services account.</p>
      */
     inline void SetHsmClientCertificateIdentifier(Aws::String&& value) { m_hsmClientCertificateIdentifierHasBeenSet = true; m_hsmClientCertificateIdentifier = std::move(value); }
 
     /**
      * <p>The identifier of a specific HSM client certificate for which you want
      * information. If no identifier is specified, information is returned for all HSM
-     * client certificates owned by your AWS customer account.</p>
+     * client certificates owned by your Amazon Web Services account.</p>
      */
     inline void SetHsmClientCertificateIdentifier(const char* value) { m_hsmClientCertificateIdentifierHasBeenSet = true; m_hsmClientCertificateIdentifier.assign(value); }
 
     /**
      * <p>The identifier of a specific HSM client certificate for which you want
      * information. If no identifier is specified, information is returned for all HSM
-     * client certificates owned by your AWS customer account.</p>
+     * client certificates owned by your Amazon Web Services account.</p>
      */
     inline DescribeHsmClientCertificatesRequest& WithHsmClientCertificateIdentifier(const Aws::String& value) { SetHsmClientCertificateIdentifier(value); return *this;}
 
     /**
      * <p>The identifier of a specific HSM client certificate for which you want
      * information. If no identifier is specified, information is returned for all HSM
-     * client certificates owned by your AWS customer account.</p>
+     * client certificates owned by your Amazon Web Services account.</p>
      */
     inline DescribeHsmClientCertificatesRequest& WithHsmClientCertificateIdentifier(Aws::String&& value) { SetHsmClientCertificateIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of a specific HSM client certificate for which you want
      * information. If no identifier is specified, information is returned for all HSM
-     * client certificates owned by your AWS customer account.</p>
+     * client certificates owned by your Amazon Web Services account.</p>
      */
     inline DescribeHsmClientCertificatesRequest& WithHsmClientCertificateIdentifier(const char* value) { SetHsmClientCertificateIdentifier(value); return *this;}
 
@@ -141,80 +141,80 @@ namespace Model
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
      * response records. When the results of a <a>DescribeHsmClientCertificates</a>
-     * request exceed the value specified in <code>MaxRecords</code>, AWS returns a
-     * value in the <code>Marker</code> field of the response. You can retrieve the
-     * next set of response records by providing the returned marker value in the
-     * <code>Marker</code> parameter and retrying the request. </p>
+     * request exceed the value specified in <code>MaxRecords</code>, Amazon Web
+     * Services returns a value in the <code>Marker</code> field of the response. You
+     * can retrieve the next set of response records by providing the returned marker
+     * value in the <code>Marker</code> parameter and retrying the request. </p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
      * response records. When the results of a <a>DescribeHsmClientCertificates</a>
-     * request exceed the value specified in <code>MaxRecords</code>, AWS returns a
-     * value in the <code>Marker</code> field of the response. You can retrieve the
-     * next set of response records by providing the returned marker value in the
-     * <code>Marker</code> parameter and retrying the request. </p>
+     * request exceed the value specified in <code>MaxRecords</code>, Amazon Web
+     * Services returns a value in the <code>Marker</code> field of the response. You
+     * can retrieve the next set of response records by providing the returned marker
+     * value in the <code>Marker</code> parameter and retrying the request. </p>
      */
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
      * response records. When the results of a <a>DescribeHsmClientCertificates</a>
-     * request exceed the value specified in <code>MaxRecords</code>, AWS returns a
-     * value in the <code>Marker</code> field of the response. You can retrieve the
-     * next set of response records by providing the returned marker value in the
-     * <code>Marker</code> parameter and retrying the request. </p>
+     * request exceed the value specified in <code>MaxRecords</code>, Amazon Web
+     * Services returns a value in the <code>Marker</code> field of the response. You
+     * can retrieve the next set of response records by providing the returned marker
+     * value in the <code>Marker</code> parameter and retrying the request. </p>
      */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
      * response records. When the results of a <a>DescribeHsmClientCertificates</a>
-     * request exceed the value specified in <code>MaxRecords</code>, AWS returns a
-     * value in the <code>Marker</code> field of the response. You can retrieve the
-     * next set of response records by providing the returned marker value in the
-     * <code>Marker</code> parameter and retrying the request. </p>
+     * request exceed the value specified in <code>MaxRecords</code>, Amazon Web
+     * Services returns a value in the <code>Marker</code> field of the response. You
+     * can retrieve the next set of response records by providing the returned marker
+     * value in the <code>Marker</code> parameter and retrying the request. </p>
      */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
      * response records. When the results of a <a>DescribeHsmClientCertificates</a>
-     * request exceed the value specified in <code>MaxRecords</code>, AWS returns a
-     * value in the <code>Marker</code> field of the response. You can retrieve the
-     * next set of response records by providing the returned marker value in the
-     * <code>Marker</code> parameter and retrying the request. </p>
+     * request exceed the value specified in <code>MaxRecords</code>, Amazon Web
+     * Services returns a value in the <code>Marker</code> field of the response. You
+     * can retrieve the next set of response records by providing the returned marker
+     * value in the <code>Marker</code> parameter and retrying the request. </p>
      */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
      * response records. When the results of a <a>DescribeHsmClientCertificates</a>
-     * request exceed the value specified in <code>MaxRecords</code>, AWS returns a
-     * value in the <code>Marker</code> field of the response. You can retrieve the
-     * next set of response records by providing the returned marker value in the
-     * <code>Marker</code> parameter and retrying the request. </p>
+     * request exceed the value specified in <code>MaxRecords</code>, Amazon Web
+     * Services returns a value in the <code>Marker</code> field of the response. You
+     * can retrieve the next set of response records by providing the returned marker
+     * value in the <code>Marker</code> parameter and retrying the request. </p>
      */
     inline DescribeHsmClientCertificatesRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
      * response records. When the results of a <a>DescribeHsmClientCertificates</a>
-     * request exceed the value specified in <code>MaxRecords</code>, AWS returns a
-     * value in the <code>Marker</code> field of the response. You can retrieve the
-     * next set of response records by providing the returned marker value in the
-     * <code>Marker</code> parameter and retrying the request. </p>
+     * request exceed the value specified in <code>MaxRecords</code>, Amazon Web
+     * Services returns a value in the <code>Marker</code> field of the response. You
+     * can retrieve the next set of response records by providing the returned marker
+     * value in the <code>Marker</code> parameter and retrying the request. </p>
      */
     inline DescribeHsmClientCertificatesRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of
      * response records. When the results of a <a>DescribeHsmClientCertificates</a>
-     * request exceed the value specified in <code>MaxRecords</code>, AWS returns a
-     * value in the <code>Marker</code> field of the response. You can retrieve the
-     * next set of response records by providing the returned marker value in the
-     * <code>Marker</code> parameter and retrying the request. </p>
+     * request exceed the value specified in <code>MaxRecords</code>, Amazon Web
+     * Services returns a value in the <code>Marker</code> field of the response. You
+     * can retrieve the next set of response records by providing the returned marker
+     * value in the <code>Marker</code> parameter and retrying the request. </p>
      */
     inline DescribeHsmClientCertificatesRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 

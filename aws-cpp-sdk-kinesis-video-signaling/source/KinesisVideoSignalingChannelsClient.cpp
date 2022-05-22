@@ -70,7 +70,7 @@ KinesisVideoSignalingChannelsClient::~KinesisVideoSignalingChannelsClient()
 {
 }
 
-void KinesisVideoSignalingChannelsClient::init(const ClientConfiguration& config)
+void KinesisVideoSignalingChannelsClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Kinesis Video Signaling");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -99,9 +99,7 @@ void KinesisVideoSignalingChannelsClient::OverrideEndpoint(const Aws::String& en
 GetIceServerConfigOutcome KinesisVideoSignalingChannelsClient::GetIceServerConfig(const GetIceServerConfigRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/get-ice-server-config";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/get-ice-server-config");
   return GetIceServerConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -126,9 +124,7 @@ void KinesisVideoSignalingChannelsClient::GetIceServerConfigAsyncHelper(const Ge
 SendAlexaOfferToMasterOutcome KinesisVideoSignalingChannelsClient::SendAlexaOfferToMaster(const SendAlexaOfferToMasterRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/send-alexa-offer-to-master";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/send-alexa-offer-to-master");
   return SendAlexaOfferToMasterOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

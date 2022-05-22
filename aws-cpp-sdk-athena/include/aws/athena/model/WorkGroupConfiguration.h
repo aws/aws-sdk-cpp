@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/athena/Athena_EXPORTS.h>
 #include <aws/athena/model/ResultConfiguration.h>
+#include <aws/athena/model/EngineVersion.h>
 #include <utility>
 
 namespace Aws
@@ -29,8 +30,8 @@ namespace Model
    * results, whether the Amazon CloudWatch Metrics are enabled for the workgroup and
    * whether workgroup settings override query settings, and the data usage limits
    * for the amount of data scanned per query or per workgroup. The workgroup
-   * settings override is specified in EnforceWorkGroupConfiguration (true/false) in
-   * the WorkGroupConfiguration. See
+   * settings override is specified in <code>EnforceWorkGroupConfiguration</code>
+   * (true/false) in the <code>WorkGroupConfiguration</code>. See
    * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/WorkGroupConfiguration">AWS
@@ -263,6 +264,49 @@ namespace Model
      */
     inline WorkGroupConfiguration& WithRequesterPaysEnabled(bool value) { SetRequesterPaysEnabled(value); return *this;}
 
+
+    /**
+     * <p>The engine version that all queries running on the workgroup use. Queries on
+     * the <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview
+     * engine regardless of this setting.</p>
+     */
+    inline const EngineVersion& GetEngineVersion() const{ return m_engineVersion; }
+
+    /**
+     * <p>The engine version that all queries running on the workgroup use. Queries on
+     * the <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview
+     * engine regardless of this setting.</p>
+     */
+    inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
+
+    /**
+     * <p>The engine version that all queries running on the workgroup use. Queries on
+     * the <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview
+     * engine regardless of this setting.</p>
+     */
+    inline void SetEngineVersion(const EngineVersion& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
+
+    /**
+     * <p>The engine version that all queries running on the workgroup use. Queries on
+     * the <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview
+     * engine regardless of this setting.</p>
+     */
+    inline void SetEngineVersion(EngineVersion&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
+
+    /**
+     * <p>The engine version that all queries running on the workgroup use. Queries on
+     * the <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview
+     * engine regardless of this setting.</p>
+     */
+    inline WorkGroupConfiguration& WithEngineVersion(const EngineVersion& value) { SetEngineVersion(value); return *this;}
+
+    /**
+     * <p>The engine version that all queries running on the workgroup use. Queries on
+     * the <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview
+     * engine regardless of this setting.</p>
+     */
+    inline WorkGroupConfiguration& WithEngineVersion(EngineVersion&& value) { SetEngineVersion(std::move(value)); return *this;}
+
   private:
 
     ResultConfiguration m_resultConfiguration;
@@ -279,6 +323,9 @@ namespace Model
 
     bool m_requesterPaysEnabled;
     bool m_requesterPaysEnabledHasBeenSet;
+
+    EngineVersion m_engineVersion;
+    bool m_engineVersionHasBeenSet;
   };
 
 } // namespace Model

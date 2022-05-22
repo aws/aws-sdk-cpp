@@ -22,6 +22,7 @@ namespace Aws
 
         static const int CSV_HASH = HashingUtils::HashString("CSV");
         static const int TMX_HASH = HashingUtils::HashString("TMX");
+        static const int TSV_HASH = HashingUtils::HashString("TSV");
 
 
         TerminologyDataFormat GetTerminologyDataFormatForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == TMX_HASH)
           {
             return TerminologyDataFormat::TMX;
+          }
+          else if (hashCode == TSV_HASH)
+          {
+            return TerminologyDataFormat::TSV;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "CSV";
           case TerminologyDataFormat::TMX:
             return "TMX";
+          case TerminologyDataFormat::TSV:
+            return "TSV";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

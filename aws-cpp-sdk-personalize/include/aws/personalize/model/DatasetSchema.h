@@ -7,6 +7,7 @@
 #include <aws/personalize/Personalize_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/personalize/model/Domain.h>
 #include <utility>
 
 namespace Aws
@@ -25,8 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes the schema for a dataset. For more information on schemas, see
-   * <a>CreateSchema</a>.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the schema for a dataset. For more information on schemas, see <a
+   * href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSchema.html">CreateSchema</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DatasetSchema">AWS
    * API Reference</a></p>
    */
@@ -223,6 +225,43 @@ namespace Model
      */
     inline DatasetSchema& WithLastUpdatedDateTime(Aws::Utils::DateTime&& value) { SetLastUpdatedDateTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The domain of a schema that you created for a dataset in a Domain dataset
+     * group.</p>
+     */
+    inline const Domain& GetDomain() const{ return m_domain; }
+
+    /**
+     * <p>The domain of a schema that you created for a dataset in a Domain dataset
+     * group.</p>
+     */
+    inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
+
+    /**
+     * <p>The domain of a schema that you created for a dataset in a Domain dataset
+     * group.</p>
+     */
+    inline void SetDomain(const Domain& value) { m_domainHasBeenSet = true; m_domain = value; }
+
+    /**
+     * <p>The domain of a schema that you created for a dataset in a Domain dataset
+     * group.</p>
+     */
+    inline void SetDomain(Domain&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
+
+    /**
+     * <p>The domain of a schema that you created for a dataset in a Domain dataset
+     * group.</p>
+     */
+    inline DatasetSchema& WithDomain(const Domain& value) { SetDomain(value); return *this;}
+
+    /**
+     * <p>The domain of a schema that you created for a dataset in a Domain dataset
+     * group.</p>
+     */
+    inline DatasetSchema& WithDomain(Domain&& value) { SetDomain(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -239,6 +278,9 @@ namespace Model
 
     Aws::Utils::DateTime m_lastUpdatedDateTime;
     bool m_lastUpdatedDateTimeHasBeenSet;
+
+    Domain m_domain;
+    bool m_domainHasBeenSet;
   };
 
 } // namespace Model

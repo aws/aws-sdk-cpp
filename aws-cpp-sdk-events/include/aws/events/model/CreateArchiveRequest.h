@@ -76,42 +76,42 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the event source associated with the archive.</p>
+     * <p>The ARN of the event bus that sends events to the archive.</p>
      */
     inline const Aws::String& GetEventSourceArn() const{ return m_eventSourceArn; }
 
     /**
-     * <p>The ARN of the event source associated with the archive.</p>
+     * <p>The ARN of the event bus that sends events to the archive.</p>
      */
     inline bool EventSourceArnHasBeenSet() const { return m_eventSourceArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the event source associated with the archive.</p>
+     * <p>The ARN of the event bus that sends events to the archive.</p>
      */
     inline void SetEventSourceArn(const Aws::String& value) { m_eventSourceArnHasBeenSet = true; m_eventSourceArn = value; }
 
     /**
-     * <p>The ARN of the event source associated with the archive.</p>
+     * <p>The ARN of the event bus that sends events to the archive.</p>
      */
     inline void SetEventSourceArn(Aws::String&& value) { m_eventSourceArnHasBeenSet = true; m_eventSourceArn = std::move(value); }
 
     /**
-     * <p>The ARN of the event source associated with the archive.</p>
+     * <p>The ARN of the event bus that sends events to the archive.</p>
      */
     inline void SetEventSourceArn(const char* value) { m_eventSourceArnHasBeenSet = true; m_eventSourceArn.assign(value); }
 
     /**
-     * <p>The ARN of the event source associated with the archive.</p>
+     * <p>The ARN of the event bus that sends events to the archive.</p>
      */
     inline CreateArchiveRequest& WithEventSourceArn(const Aws::String& value) { SetEventSourceArn(value); return *this;}
 
     /**
-     * <p>The ARN of the event source associated with the archive.</p>
+     * <p>The ARN of the event bus that sends events to the archive.</p>
      */
     inline CreateArchiveRequest& WithEventSourceArn(Aws::String&& value) { SetEventSourceArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the event source associated with the archive.</p>
+     * <p>The ARN of the event bus that sends events to the archive.</p>
      */
     inline CreateArchiveRequest& WithEventSourceArn(const char* value) { SetEventSourceArn(value); return *this;}
 

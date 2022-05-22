@@ -16,6 +16,10 @@
 #include <aws/sagemaker/model/UserContext.h>
 #include <aws/sagemaker/model/MetadataProperties.h>
 #include <aws/sagemaker/model/ModelMetrics.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/sagemaker/model/DriftCheckBaselines.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/AdditionalInferenceSpecificationDefinition.h>
 #include <utility>
 
 namespace Aws
@@ -293,32 +297,32 @@ namespace Model
 
 
     /**
-     * <p>Configurations for one or more transform jobs that Amazon SageMaker runs to
-     * test the model package.</p>
+     * <p>Configurations for one or more transform jobs that SageMaker runs to test the
+     * model package.</p>
      */
     inline const ModelPackageValidationSpecification& GetValidationSpecification() const{ return m_validationSpecification; }
 
     /**
-     * <p>Configurations for one or more transform jobs that Amazon SageMaker runs to
-     * test the model package.</p>
+     * <p>Configurations for one or more transform jobs that SageMaker runs to test the
+     * model package.</p>
      */
     inline void SetValidationSpecification(const ModelPackageValidationSpecification& value) { m_validationSpecification = value; }
 
     /**
-     * <p>Configurations for one or more transform jobs that Amazon SageMaker runs to
-     * test the model package.</p>
+     * <p>Configurations for one or more transform jobs that SageMaker runs to test the
+     * model package.</p>
      */
     inline void SetValidationSpecification(ModelPackageValidationSpecification&& value) { m_validationSpecification = std::move(value); }
 
     /**
-     * <p>Configurations for one or more transform jobs that Amazon SageMaker runs to
-     * test the model package.</p>
+     * <p>Configurations for one or more transform jobs that SageMaker runs to test the
+     * model package.</p>
      */
     inline DescribeModelPackageResult& WithValidationSpecification(const ModelPackageValidationSpecification& value) { SetValidationSpecification(value); return *this;}
 
     /**
-     * <p>Configurations for one or more transform jobs that Amazon SageMaker runs to
-     * test the model package.</p>
+     * <p>Configurations for one or more transform jobs that SageMaker runs to test the
+     * model package.</p>
      */
     inline DescribeModelPackageResult& WithValidationSpecification(ModelPackageValidationSpecification&& value) { SetValidationSpecification(std::move(value)); return *this;}
 
@@ -376,17 +380,20 @@ namespace Model
 
 
     /**
-     * <p>Whether the model package is certified for listing on AWS Marketplace.</p>
+     * <p>Whether the model package is certified for listing on Amazon Web Services
+     * Marketplace.</p>
      */
     inline bool GetCertifyForMarketplace() const{ return m_certifyForMarketplace; }
 
     /**
-     * <p>Whether the model package is certified for listing on AWS Marketplace.</p>
+     * <p>Whether the model package is certified for listing on Amazon Web Services
+     * Marketplace.</p>
      */
     inline void SetCertifyForMarketplace(bool value) { m_certifyForMarketplace = value; }
 
     /**
-     * <p>Whether the model package is certified for listing on AWS Marketplace.</p>
+     * <p>Whether the model package is certified for listing on Amazon Web Services
+     * Marketplace.</p>
      */
     inline DescribeModelPackageResult& WithCertifyForMarketplace(bool value) { SetCertifyForMarketplace(value); return *this;}
 
@@ -476,27 +483,27 @@ namespace Model
 
 
     /**
-     * <p>The last time the model package was modified.</p>
+     * <p>The last time that the model package was modified.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
 
     /**
-     * <p>The last time the model package was modified.</p>
+     * <p>The last time that the model package was modified.</p>
      */
     inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTime = value; }
 
     /**
-     * <p>The last time the model package was modified.</p>
+     * <p>The last time that the model package was modified.</p>
      */
     inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTime = std::move(value); }
 
     /**
-     * <p>The last time the model package was modified.</p>
+     * <p>The last time that the model package was modified.</p>
      */
     inline DescribeModelPackageResult& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
 
     /**
-     * <p>The last time the model package was modified.</p>
+     * <p>The last time that the model package was modified.</p>
      */
     inline DescribeModelPackageResult& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
 
@@ -552,6 +559,320 @@ namespace Model
      */
     inline DescribeModelPackageResult& WithApprovalDescription(const char* value) { SetApprovalDescription(value); return *this;}
 
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetCustomerMetadataProperties() const{ return m_customerMetadataProperties; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline void SetCustomerMetadataProperties(const Aws::Map<Aws::String, Aws::String>& value) { m_customerMetadataProperties = value; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline void SetCustomerMetadataProperties(Aws::Map<Aws::String, Aws::String>&& value) { m_customerMetadataProperties = std::move(value); }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline DescribeModelPackageResult& WithCustomerMetadataProperties(const Aws::Map<Aws::String, Aws::String>& value) { SetCustomerMetadataProperties(value); return *this;}
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline DescribeModelPackageResult& WithCustomerMetadataProperties(Aws::Map<Aws::String, Aws::String>&& value) { SetCustomerMetadataProperties(std::move(value)); return *this;}
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline DescribeModelPackageResult& AddCustomerMetadataProperties(const Aws::String& key, const Aws::String& value) { m_customerMetadataProperties.emplace(key, value); return *this; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline DescribeModelPackageResult& AddCustomerMetadataProperties(Aws::String&& key, const Aws::String& value) { m_customerMetadataProperties.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline DescribeModelPackageResult& AddCustomerMetadataProperties(const Aws::String& key, Aws::String&& value) { m_customerMetadataProperties.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline DescribeModelPackageResult& AddCustomerMetadataProperties(Aws::String&& key, Aws::String&& value) { m_customerMetadataProperties.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline DescribeModelPackageResult& AddCustomerMetadataProperties(const char* key, Aws::String&& value) { m_customerMetadataProperties.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline DescribeModelPackageResult& AddCustomerMetadataProperties(Aws::String&& key, const char* value) { m_customerMetadataProperties.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline DescribeModelPackageResult& AddCustomerMetadataProperties(const char* key, const char* value) { m_customerMetadataProperties.emplace(key, value); return *this; }
+
+
+    /**
+     * <p>Represents the drift check baselines that can be used when the model monitor
+     * is set using the model package. For more information, see the topic on <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift
+     * Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon
+     * SageMaker Developer Guide</i>. </p>
+     */
+    inline const DriftCheckBaselines& GetDriftCheckBaselines() const{ return m_driftCheckBaselines; }
+
+    /**
+     * <p>Represents the drift check baselines that can be used when the model monitor
+     * is set using the model package. For more information, see the topic on <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift
+     * Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon
+     * SageMaker Developer Guide</i>. </p>
+     */
+    inline void SetDriftCheckBaselines(const DriftCheckBaselines& value) { m_driftCheckBaselines = value; }
+
+    /**
+     * <p>Represents the drift check baselines that can be used when the model monitor
+     * is set using the model package. For more information, see the topic on <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift
+     * Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon
+     * SageMaker Developer Guide</i>. </p>
+     */
+    inline void SetDriftCheckBaselines(DriftCheckBaselines&& value) { m_driftCheckBaselines = std::move(value); }
+
+    /**
+     * <p>Represents the drift check baselines that can be used when the model monitor
+     * is set using the model package. For more information, see the topic on <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift
+     * Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon
+     * SageMaker Developer Guide</i>. </p>
+     */
+    inline DescribeModelPackageResult& WithDriftCheckBaselines(const DriftCheckBaselines& value) { SetDriftCheckBaselines(value); return *this;}
+
+    /**
+     * <p>Represents the drift check baselines that can be used when the model monitor
+     * is set using the model package. For more information, see the topic on <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift
+     * Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon
+     * SageMaker Developer Guide</i>. </p>
+     */
+    inline DescribeModelPackageResult& WithDriftCheckBaselines(DriftCheckBaselines&& value) { SetDriftCheckBaselines(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The machine learning domain of the model package you specified. Common
+     * machine learning domains include computer vision and natural language
+     * processing.</p>
+     */
+    inline const Aws::String& GetDomain() const{ return m_domain; }
+
+    /**
+     * <p>The machine learning domain of the model package you specified. Common
+     * machine learning domains include computer vision and natural language
+     * processing.</p>
+     */
+    inline void SetDomain(const Aws::String& value) { m_domain = value; }
+
+    /**
+     * <p>The machine learning domain of the model package you specified. Common
+     * machine learning domains include computer vision and natural language
+     * processing.</p>
+     */
+    inline void SetDomain(Aws::String&& value) { m_domain = std::move(value); }
+
+    /**
+     * <p>The machine learning domain of the model package you specified. Common
+     * machine learning domains include computer vision and natural language
+     * processing.</p>
+     */
+    inline void SetDomain(const char* value) { m_domain.assign(value); }
+
+    /**
+     * <p>The machine learning domain of the model package you specified. Common
+     * machine learning domains include computer vision and natural language
+     * processing.</p>
+     */
+    inline DescribeModelPackageResult& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
+
+    /**
+     * <p>The machine learning domain of the model package you specified. Common
+     * machine learning domains include computer vision and natural language
+     * processing.</p>
+     */
+    inline DescribeModelPackageResult& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
+
+    /**
+     * <p>The machine learning domain of the model package you specified. Common
+     * machine learning domains include computer vision and natural language
+     * processing.</p>
+     */
+    inline DescribeModelPackageResult& WithDomain(const char* value) { SetDomain(value); return *this;}
+
+
+    /**
+     * <p>The machine learning task you specified that your model package accomplishes.
+     * Common machine learning tasks include object detection and image
+     * classification.</p>
+     */
+    inline const Aws::String& GetTask() const{ return m_task; }
+
+    /**
+     * <p>The machine learning task you specified that your model package accomplishes.
+     * Common machine learning tasks include object detection and image
+     * classification.</p>
+     */
+    inline void SetTask(const Aws::String& value) { m_task = value; }
+
+    /**
+     * <p>The machine learning task you specified that your model package accomplishes.
+     * Common machine learning tasks include object detection and image
+     * classification.</p>
+     */
+    inline void SetTask(Aws::String&& value) { m_task = std::move(value); }
+
+    /**
+     * <p>The machine learning task you specified that your model package accomplishes.
+     * Common machine learning tasks include object detection and image
+     * classification.</p>
+     */
+    inline void SetTask(const char* value) { m_task.assign(value); }
+
+    /**
+     * <p>The machine learning task you specified that your model package accomplishes.
+     * Common machine learning tasks include object detection and image
+     * classification.</p>
+     */
+    inline DescribeModelPackageResult& WithTask(const Aws::String& value) { SetTask(value); return *this;}
+
+    /**
+     * <p>The machine learning task you specified that your model package accomplishes.
+     * Common machine learning tasks include object detection and image
+     * classification.</p>
+     */
+    inline DescribeModelPackageResult& WithTask(Aws::String&& value) { SetTask(std::move(value)); return *this;}
+
+    /**
+     * <p>The machine learning task you specified that your model package accomplishes.
+     * Common machine learning tasks include object detection and image
+     * classification.</p>
+     */
+    inline DescribeModelPackageResult& WithTask(const char* value) { SetTask(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload
+     * are stored. This path points to a single gzip compressed tar archive (.tar.gz
+     * suffix).</p>
+     */
+    inline const Aws::String& GetSamplePayloadUrl() const{ return m_samplePayloadUrl; }
+
+    /**
+     * <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload
+     * are stored. This path points to a single gzip compressed tar archive (.tar.gz
+     * suffix).</p>
+     */
+    inline void SetSamplePayloadUrl(const Aws::String& value) { m_samplePayloadUrl = value; }
+
+    /**
+     * <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload
+     * are stored. This path points to a single gzip compressed tar archive (.tar.gz
+     * suffix).</p>
+     */
+    inline void SetSamplePayloadUrl(Aws::String&& value) { m_samplePayloadUrl = std::move(value); }
+
+    /**
+     * <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload
+     * are stored. This path points to a single gzip compressed tar archive (.tar.gz
+     * suffix).</p>
+     */
+    inline void SetSamplePayloadUrl(const char* value) { m_samplePayloadUrl.assign(value); }
+
+    /**
+     * <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload
+     * are stored. This path points to a single gzip compressed tar archive (.tar.gz
+     * suffix).</p>
+     */
+    inline DescribeModelPackageResult& WithSamplePayloadUrl(const Aws::String& value) { SetSamplePayloadUrl(value); return *this;}
+
+    /**
+     * <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload
+     * are stored. This path points to a single gzip compressed tar archive (.tar.gz
+     * suffix).</p>
+     */
+    inline DescribeModelPackageResult& WithSamplePayloadUrl(Aws::String&& value) { SetSamplePayloadUrl(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload
+     * are stored. This path points to a single gzip compressed tar archive (.tar.gz
+     * suffix).</p>
+     */
+    inline DescribeModelPackageResult& WithSamplePayloadUrl(const char* value) { SetSamplePayloadUrl(value); return *this;}
+
+
+    /**
+     * <p>An array of additional Inference Specification objects. Each additional
+     * Inference Specification specifies artifacts based on this model package that can
+     * be used on inference endpoints. Generally used with SageMaker Neo to store the
+     * compiled artifacts.</p>
+     */
+    inline const Aws::Vector<AdditionalInferenceSpecificationDefinition>& GetAdditionalInferenceSpecifications() const{ return m_additionalInferenceSpecifications; }
+
+    /**
+     * <p>An array of additional Inference Specification objects. Each additional
+     * Inference Specification specifies artifacts based on this model package that can
+     * be used on inference endpoints. Generally used with SageMaker Neo to store the
+     * compiled artifacts.</p>
+     */
+    inline void SetAdditionalInferenceSpecifications(const Aws::Vector<AdditionalInferenceSpecificationDefinition>& value) { m_additionalInferenceSpecifications = value; }
+
+    /**
+     * <p>An array of additional Inference Specification objects. Each additional
+     * Inference Specification specifies artifacts based on this model package that can
+     * be used on inference endpoints. Generally used with SageMaker Neo to store the
+     * compiled artifacts.</p>
+     */
+    inline void SetAdditionalInferenceSpecifications(Aws::Vector<AdditionalInferenceSpecificationDefinition>&& value) { m_additionalInferenceSpecifications = std::move(value); }
+
+    /**
+     * <p>An array of additional Inference Specification objects. Each additional
+     * Inference Specification specifies artifacts based on this model package that can
+     * be used on inference endpoints. Generally used with SageMaker Neo to store the
+     * compiled artifacts.</p>
+     */
+    inline DescribeModelPackageResult& WithAdditionalInferenceSpecifications(const Aws::Vector<AdditionalInferenceSpecificationDefinition>& value) { SetAdditionalInferenceSpecifications(value); return *this;}
+
+    /**
+     * <p>An array of additional Inference Specification objects. Each additional
+     * Inference Specification specifies artifacts based on this model package that can
+     * be used on inference endpoints. Generally used with SageMaker Neo to store the
+     * compiled artifacts.</p>
+     */
+    inline DescribeModelPackageResult& WithAdditionalInferenceSpecifications(Aws::Vector<AdditionalInferenceSpecificationDefinition>&& value) { SetAdditionalInferenceSpecifications(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of additional Inference Specification objects. Each additional
+     * Inference Specification specifies artifacts based on this model package that can
+     * be used on inference endpoints. Generally used with SageMaker Neo to store the
+     * compiled artifacts.</p>
+     */
+    inline DescribeModelPackageResult& AddAdditionalInferenceSpecifications(const AdditionalInferenceSpecificationDefinition& value) { m_additionalInferenceSpecifications.push_back(value); return *this; }
+
+    /**
+     * <p>An array of additional Inference Specification objects. Each additional
+     * Inference Specification specifies artifacts based on this model package that can
+     * be used on inference endpoints. Generally used with SageMaker Neo to store the
+     * compiled artifacts.</p>
+     */
+    inline DescribeModelPackageResult& AddAdditionalInferenceSpecifications(AdditionalInferenceSpecificationDefinition&& value) { m_additionalInferenceSpecifications.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_modelPackageName;
@@ -591,6 +912,18 @@ namespace Model
     UserContext m_lastModifiedBy;
 
     Aws::String m_approvalDescription;
+
+    Aws::Map<Aws::String, Aws::String> m_customerMetadataProperties;
+
+    DriftCheckBaselines m_driftCheckBaselines;
+
+    Aws::String m_domain;
+
+    Aws::String m_task;
+
+    Aws::String m_samplePayloadUrl;
+
+    Aws::Vector<AdditionalInferenceSpecificationDefinition> m_additionalInferenceSpecifications;
   };
 
 } // namespace Model

@@ -122,7 +122,8 @@ namespace Model
      * <p>The ARN of the SSO instance under which the operation will be executed. For
      * more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
+     * Services General Reference</i>.</p>
      */
     inline const Aws::String& GetInstanceArn() const{ return m_instanceArn; }
 
@@ -130,7 +131,8 @@ namespace Model
      * <p>The ARN of the SSO instance under which the operation will be executed. For
      * more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
+     * Services General Reference</i>.</p>
      */
     inline bool InstanceArnHasBeenSet() const { return m_instanceArnHasBeenSet; }
 
@@ -138,7 +140,8 @@ namespace Model
      * <p>The ARN of the SSO instance under which the operation will be executed. For
      * more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
+     * Services General Reference</i>.</p>
      */
     inline void SetInstanceArn(const Aws::String& value) { m_instanceArnHasBeenSet = true; m_instanceArn = value; }
 
@@ -146,7 +149,8 @@ namespace Model
      * <p>The ARN of the SSO instance under which the operation will be executed. For
      * more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
+     * Services General Reference</i>.</p>
      */
     inline void SetInstanceArn(Aws::String&& value) { m_instanceArnHasBeenSet = true; m_instanceArn = std::move(value); }
 
@@ -154,7 +158,8 @@ namespace Model
      * <p>The ARN of the SSO instance under which the operation will be executed. For
      * more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
+     * Services General Reference</i>.</p>
      */
     inline void SetInstanceArn(const char* value) { m_instanceArnHasBeenSet = true; m_instanceArn.assign(value); }
 
@@ -162,7 +167,8 @@ namespace Model
      * <p>The ARN of the SSO instance under which the operation will be executed. For
      * more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
+     * Services General Reference</i>.</p>
      */
     inline CreatePermissionSetRequest& WithInstanceArn(const Aws::String& value) { SetInstanceArn(value); return *this;}
 
@@ -170,7 +176,8 @@ namespace Model
      * <p>The ARN of the SSO instance under which the operation will be executed. For
      * more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
+     * Services General Reference</i>.</p>
      */
     inline CreatePermissionSetRequest& WithInstanceArn(Aws::String&& value) { SetInstanceArn(std::move(value)); return *this;}
 
@@ -178,7 +185,8 @@ namespace Model
      * <p>The ARN of the SSO instance under which the operation will be executed. For
      * more information about ARNs, see <a
      * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     * (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+     * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
+     * Services General Reference</i>.</p>
      */
     inline CreatePermissionSetRequest& WithInstanceArn(const char* value) { SetInstanceArn(value); return *this;}
 

@@ -49,7 +49,10 @@ VirtualInterface::VirtualInterface() :
     m_bgpPeersHasBeenSet(false),
     m_regionHasBeenSet(false),
     m_awsDeviceV2HasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_awsLogicalDeviceIdHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_siteLinkEnabled(false),
+    m_siteLinkEnabledHasBeenSet(false)
 {
 }
 
@@ -84,7 +87,10 @@ VirtualInterface::VirtualInterface(JsonView jsonValue) :
     m_bgpPeersHasBeenSet(false),
     m_regionHasBeenSet(false),
     m_awsDeviceV2HasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_awsLogicalDeviceIdHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_siteLinkEnabled(false),
+    m_siteLinkEnabledHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -258,6 +264,13 @@ VirtualInterface& VirtualInterface::operator =(JsonView jsonValue)
     m_awsDeviceV2HasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("awsLogicalDeviceId"))
+  {
+    m_awsLogicalDeviceId = jsonValue.GetString("awsLogicalDeviceId");
+
+    m_awsLogicalDeviceIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("tags"))
   {
     Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -266,6 +279,13 @@ VirtualInterface& VirtualInterface::operator =(JsonView jsonValue)
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
     }
     m_tagsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("siteLinkEnabled"))
+  {
+    m_siteLinkEnabled = jsonValue.GetBool("siteLinkEnabled");
+
+    m_siteLinkEnabledHasBeenSet = true;
   }
 
   return *this;
@@ -421,6 +441,12 @@ JsonValue VirtualInterface::Jsonize() const
 
   }
 
+  if(m_awsLogicalDeviceIdHasBeenSet)
+  {
+   payload.WithString("awsLogicalDeviceId", m_awsLogicalDeviceId);
+
+  }
+
   if(m_tagsHasBeenSet)
   {
    Array<JsonValue> tagsJsonList(m_tags.size());
@@ -429,6 +455,12 @@ JsonValue VirtualInterface::Jsonize() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_siteLinkEnabledHasBeenSet)
+  {
+   payload.WithBool("siteLinkEnabled", m_siteLinkEnabled);
 
   }
 

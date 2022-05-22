@@ -35,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>The high-level patch state for the requested instances.</p>
+     * <p>The high-level patch state for the requested managed nodes.</p>
      */
     inline const Aws::Vector<InstancePatchState>& GetInstancePatchStates() const{ return m_instancePatchStates; }
 
     /**
-     * <p>The high-level patch state for the requested instances.</p>
+     * <p>The high-level patch state for the requested managed nodes.</p>
      */
     inline void SetInstancePatchStates(const Aws::Vector<InstancePatchState>& value) { m_instancePatchStates = value; }
 
     /**
-     * <p>The high-level patch state for the requested instances.</p>
+     * <p>The high-level patch state for the requested managed nodes.</p>
      */
     inline void SetInstancePatchStates(Aws::Vector<InstancePatchState>&& value) { m_instancePatchStates = std::move(value); }
 
     /**
-     * <p>The high-level patch state for the requested instances.</p>
+     * <p>The high-level patch state for the requested managed nodes.</p>
      */
     inline DescribeInstancePatchStatesResult& WithInstancePatchStates(const Aws::Vector<InstancePatchState>& value) { SetInstancePatchStates(value); return *this;}
 
     /**
-     * <p>The high-level patch state for the requested instances.</p>
+     * <p>The high-level patch state for the requested managed nodes.</p>
      */
     inline DescribeInstancePatchStatesResult& WithInstancePatchStates(Aws::Vector<InstancePatchState>&& value) { SetInstancePatchStates(std::move(value)); return *this;}
 
     /**
-     * <p>The high-level patch state for the requested instances.</p>
+     * <p>The high-level patch state for the requested managed nodes.</p>
      */
     inline DescribeInstancePatchStatesResult& AddInstancePatchStates(const InstancePatchState& value) { m_instancePatchStates.push_back(value); return *this; }
 
     /**
-     * <p>The high-level patch state for the requested instances.</p>
+     * <p>The high-level patch state for the requested managed nodes.</p>
      */
     inline DescribeInstancePatchStatesResult& AddInstancePatchStates(InstancePatchState&& value) { m_instancePatchStates.push_back(std::move(value)); return *this; }
 

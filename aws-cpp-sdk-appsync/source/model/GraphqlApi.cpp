@@ -32,7 +32,8 @@ GraphqlApi::GraphqlApi() :
     m_additionalAuthenticationProvidersHasBeenSet(false),
     m_xrayEnabled(false),
     m_xrayEnabledHasBeenSet(false),
-    m_wafWebAclArnHasBeenSet(false)
+    m_wafWebAclArnHasBeenSet(false),
+    m_lambdaAuthorizerConfigHasBeenSet(false)
 {
 }
 
@@ -50,7 +51,8 @@ GraphqlApi::GraphqlApi(JsonView jsonValue) :
     m_additionalAuthenticationProvidersHasBeenSet(false),
     m_xrayEnabled(false),
     m_xrayEnabledHasBeenSet(false),
-    m_wafWebAclArnHasBeenSet(false)
+    m_wafWebAclArnHasBeenSet(false),
+    m_lambdaAuthorizerConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -150,6 +152,13 @@ GraphqlApi& GraphqlApi::operator =(JsonView jsonValue)
     m_wafWebAclArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("lambdaAuthorizerConfig"))
+  {
+    m_lambdaAuthorizerConfig = jsonValue.GetObject("lambdaAuthorizerConfig");
+
+    m_lambdaAuthorizerConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -240,6 +249,12 @@ JsonValue GraphqlApi::Jsonize() const
   if(m_wafWebAclArnHasBeenSet)
   {
    payload.WithString("wafWebAclArn", m_wafWebAclArn);
+
+  }
+
+  if(m_lambdaAuthorizerConfigHasBeenSet)
+  {
+   payload.WithObject("lambdaAuthorizerConfig", m_lambdaAuthorizerConfig.Jsonize());
 
   }
 

@@ -38,42 +38,42 @@ namespace Model
 
 
     /**
-     * <p>The type of the content. Supported types are text/plain.</p>
+     * <p>The type of the content. Supported types are <code>text/plain</code>.</p>
      */
     inline const Aws::String& GetContentType() const{ return m_contentType; }
 
     /**
-     * <p>The type of the content. Supported types are text/plain.</p>
+     * <p>The type of the content. Supported types are <code>text/plain</code>.</p>
      */
     inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
 
     /**
-     * <p>The type of the content. Supported types are text/plain.</p>
+     * <p>The type of the content. Supported types are <code>text/plain</code>.</p>
      */
     inline void SetContentType(const Aws::String& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
 
     /**
-     * <p>The type of the content. Supported types are text/plain.</p>
+     * <p>The type of the content. Supported types are <code>text/plain</code>.</p>
      */
     inline void SetContentType(Aws::String&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::move(value); }
 
     /**
-     * <p>The type of the content. Supported types are text/plain.</p>
+     * <p>The type of the content. Supported types are <code>text/plain</code>.</p>
      */
     inline void SetContentType(const char* value) { m_contentTypeHasBeenSet = true; m_contentType.assign(value); }
 
     /**
-     * <p>The type of the content. Supported types are text/plain.</p>
+     * <p>The type of the content. Supported types are <code>text/plain</code>.</p>
      */
     inline ChatMessage& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
 
     /**
-     * <p>The type of the content. Supported types are text/plain.</p>
+     * <p>The type of the content. Supported types are <code>text/plain</code>.</p>
      */
     inline ChatMessage& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of the content. Supported types are text/plain.</p>
+     * <p>The type of the content. Supported types are <code>text/plain</code>.</p>
      */
     inline ChatMessage& WithContentType(const char* value) { SetContentType(value); return *this;}
 

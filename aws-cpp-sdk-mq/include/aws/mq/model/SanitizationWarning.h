@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * Returns information about the XML element or attribute that was sanitized in the
-   * configuration.<p><h3>See Also:</h3>   <a
+   * <p>Returns information about the XML element or attribute that was sanitized in
+   * the configuration.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/SanitizationWarning">AWS
    * API Reference</a></p>
    */
@@ -40,114 +40,120 @@ namespace Model
 
 
     /**
-     * The name of the XML attribute that has been sanitized.
+     * <p>The name of the XML attribute that has been sanitized.</p>
      */
     inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
 
     /**
-     * The name of the XML attribute that has been sanitized.
+     * <p>The name of the XML attribute that has been sanitized.</p>
      */
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
 
     /**
-     * The name of the XML attribute that has been sanitized.
+     * <p>The name of the XML attribute that has been sanitized.</p>
      */
     inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
 
     /**
-     * The name of the XML attribute that has been sanitized.
+     * <p>The name of the XML attribute that has been sanitized.</p>
      */
     inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
 
     /**
-     * The name of the XML attribute that has been sanitized.
+     * <p>The name of the XML attribute that has been sanitized.</p>
      */
     inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
 
     /**
-     * The name of the XML attribute that has been sanitized.
+     * <p>The name of the XML attribute that has been sanitized.</p>
      */
     inline SanitizationWarning& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
 
     /**
-     * The name of the XML attribute that has been sanitized.
+     * <p>The name of the XML attribute that has been sanitized.</p>
      */
     inline SanitizationWarning& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
 
     /**
-     * The name of the XML attribute that has been sanitized.
+     * <p>The name of the XML attribute that has been sanitized.</p>
      */
     inline SanitizationWarning& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
 
 
     /**
-     * The name of the XML element that has been sanitized.
+     * <p>The name of the XML element that has been sanitized.</p>
      */
     inline const Aws::String& GetElementName() const{ return m_elementName; }
 
     /**
-     * The name of the XML element that has been sanitized.
+     * <p>The name of the XML element that has been sanitized.</p>
      */
     inline bool ElementNameHasBeenSet() const { return m_elementNameHasBeenSet; }
 
     /**
-     * The name of the XML element that has been sanitized.
+     * <p>The name of the XML element that has been sanitized.</p>
      */
     inline void SetElementName(const Aws::String& value) { m_elementNameHasBeenSet = true; m_elementName = value; }
 
     /**
-     * The name of the XML element that has been sanitized.
+     * <p>The name of the XML element that has been sanitized.</p>
      */
     inline void SetElementName(Aws::String&& value) { m_elementNameHasBeenSet = true; m_elementName = std::move(value); }
 
     /**
-     * The name of the XML element that has been sanitized.
+     * <p>The name of the XML element that has been sanitized.</p>
      */
     inline void SetElementName(const char* value) { m_elementNameHasBeenSet = true; m_elementName.assign(value); }
 
     /**
-     * The name of the XML element that has been sanitized.
+     * <p>The name of the XML element that has been sanitized.</p>
      */
     inline SanitizationWarning& WithElementName(const Aws::String& value) { SetElementName(value); return *this;}
 
     /**
-     * The name of the XML element that has been sanitized.
+     * <p>The name of the XML element that has been sanitized.</p>
      */
     inline SanitizationWarning& WithElementName(Aws::String&& value) { SetElementName(std::move(value)); return *this;}
 
     /**
-     * The name of the XML element that has been sanitized.
+     * <p>The name of the XML element that has been sanitized.</p>
      */
     inline SanitizationWarning& WithElementName(const char* value) { SetElementName(value); return *this;}
 
 
     /**
-     * Required. The reason for which the XML elements or attributes were sanitized.
+     * <p>Required. The reason for which the XML elements or attributes were
+     * sanitized.</p>
      */
     inline const SanitizationWarningReason& GetReason() const{ return m_reason; }
 
     /**
-     * Required. The reason for which the XML elements or attributes were sanitized.
+     * <p>Required. The reason for which the XML elements or attributes were
+     * sanitized.</p>
      */
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
 
     /**
-     * Required. The reason for which the XML elements or attributes were sanitized.
+     * <p>Required. The reason for which the XML elements or attributes were
+     * sanitized.</p>
      */
     inline void SetReason(const SanitizationWarningReason& value) { m_reasonHasBeenSet = true; m_reason = value; }
 
     /**
-     * Required. The reason for which the XML elements or attributes were sanitized.
+     * <p>Required. The reason for which the XML elements or attributes were
+     * sanitized.</p>
      */
     inline void SetReason(SanitizationWarningReason&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
 
     /**
-     * Required. The reason for which the XML elements or attributes were sanitized.
+     * <p>Required. The reason for which the XML elements or attributes were
+     * sanitized.</p>
      */
     inline SanitizationWarning& WithReason(const SanitizationWarningReason& value) { SetReason(value); return *this;}
 
     /**
-     * Required. The reason for which the XML elements or attributes were sanitized.
+     * <p>Required. The reason for which the XML elements or attributes were
+     * sanitized.</p>
      */
     inline SanitizationWarning& WithReason(SanitizationWarningReason&& value) { SetReason(std::move(value)); return *this;}
 

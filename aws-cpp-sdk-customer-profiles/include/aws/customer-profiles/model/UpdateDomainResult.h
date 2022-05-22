@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/customer-profiles/CustomerProfiles_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/customer-profiles/model/MatchingResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
@@ -35,37 +36,37 @@ namespace Model
 
 
     /**
-     * <p>The unique name for the domain.</p>
+     * <p>The unique name of the domain.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
     /**
-     * <p>The unique name for the domain.</p>
+     * <p>The unique name of the domain.</p>
      */
     inline void SetDomainName(const Aws::String& value) { m_domainName = value; }
 
     /**
-     * <p>The unique name for the domain.</p>
+     * <p>The unique name of the domain.</p>
      */
     inline void SetDomainName(Aws::String&& value) { m_domainName = std::move(value); }
 
     /**
-     * <p>The unique name for the domain.</p>
+     * <p>The unique name of the domain.</p>
      */
     inline void SetDomainName(const char* value) { m_domainName.assign(value); }
 
     /**
-     * <p>The unique name for the domain.</p>
+     * <p>The unique name of the domain.</p>
      */
     inline UpdateDomainResult& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
     /**
-     * <p>The unique name for the domain.</p>
+     * <p>The unique name of the domain.</p>
      */
     inline UpdateDomainResult& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
-     * <p>The unique name for the domain.</p>
+     * <p>The unique name of the domain.</p>
      */
     inline UpdateDomainResult& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
@@ -177,6 +178,77 @@ namespace Model
      * associated with ingesting data from third party applications.</p>
      */
     inline UpdateDomainResult& WithDeadLetterQueueUrl(const char* value) { SetDeadLetterQueueUrl(value); return *this;}
+
+
+    /**
+     * <p>The process of matching duplicate profiles. If <code>Matching</code> =
+     * <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch
+     * process called Identity Resolution Job. If you do not specify a date and time
+     * for Identity Resolution Job to run, by default it runs every Saturday at 12AM
+     * UTC to detect duplicate profiles in your domains. </p> <p>After the Identity
+     * Resolution Job completes, use the <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
+     * API to return and review the results. Or, if you have configured
+     * <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can
+     * download the results from S3.</p>
+     */
+    inline const MatchingResponse& GetMatching() const{ return m_matching; }
+
+    /**
+     * <p>The process of matching duplicate profiles. If <code>Matching</code> =
+     * <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch
+     * process called Identity Resolution Job. If you do not specify a date and time
+     * for Identity Resolution Job to run, by default it runs every Saturday at 12AM
+     * UTC to detect duplicate profiles in your domains. </p> <p>After the Identity
+     * Resolution Job completes, use the <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
+     * API to return and review the results. Or, if you have configured
+     * <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can
+     * download the results from S3.</p>
+     */
+    inline void SetMatching(const MatchingResponse& value) { m_matching = value; }
+
+    /**
+     * <p>The process of matching duplicate profiles. If <code>Matching</code> =
+     * <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch
+     * process called Identity Resolution Job. If you do not specify a date and time
+     * for Identity Resolution Job to run, by default it runs every Saturday at 12AM
+     * UTC to detect duplicate profiles in your domains. </p> <p>After the Identity
+     * Resolution Job completes, use the <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
+     * API to return and review the results. Or, if you have configured
+     * <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can
+     * download the results from S3.</p>
+     */
+    inline void SetMatching(MatchingResponse&& value) { m_matching = std::move(value); }
+
+    /**
+     * <p>The process of matching duplicate profiles. If <code>Matching</code> =
+     * <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch
+     * process called Identity Resolution Job. If you do not specify a date and time
+     * for Identity Resolution Job to run, by default it runs every Saturday at 12AM
+     * UTC to detect duplicate profiles in your domains. </p> <p>After the Identity
+     * Resolution Job completes, use the <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
+     * API to return and review the results. Or, if you have configured
+     * <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can
+     * download the results from S3.</p>
+     */
+    inline UpdateDomainResult& WithMatching(const MatchingResponse& value) { SetMatching(value); return *this;}
+
+    /**
+     * <p>The process of matching duplicate profiles. If <code>Matching</code> =
+     * <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch
+     * process called Identity Resolution Job. If you do not specify a date and time
+     * for Identity Resolution Job to run, by default it runs every Saturday at 12AM
+     * UTC to detect duplicate profiles in your domains. </p> <p>After the Identity
+     * Resolution Job completes, use the <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
+     * API to return and review the results. Or, if you have configured
+     * <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can
+     * download the results from S3.</p>
+     */
+    inline UpdateDomainResult& WithMatching(MatchingResponse&& value) { SetMatching(std::move(value)); return *this;}
 
 
     /**
@@ -300,6 +372,8 @@ namespace Model
     Aws::String m_defaultEncryptionKey;
 
     Aws::String m_deadLetterQueueUrl;
+
+    MatchingResponse m_matching;
 
     Aws::Utils::DateTime m_createdAt;
 

@@ -35,44 +35,44 @@ namespace Model
 
 
     /**
-     * <p>A structure that contains all of the dashboards in your AWS account. This
-     * structure provides basic information about the dashboards.</p>
+     * <p>A structure that contains all of the dashboards in your Amazon Web Services
+     * account. This structure provides basic information about the dashboards.</p>
      */
     inline const Aws::Vector<DashboardSummary>& GetDashboardSummaryList() const{ return m_dashboardSummaryList; }
 
     /**
-     * <p>A structure that contains all of the dashboards in your AWS account. This
-     * structure provides basic information about the dashboards.</p>
+     * <p>A structure that contains all of the dashboards in your Amazon Web Services
+     * account. This structure provides basic information about the dashboards.</p>
      */
     inline void SetDashboardSummaryList(const Aws::Vector<DashboardSummary>& value) { m_dashboardSummaryList = value; }
 
     /**
-     * <p>A structure that contains all of the dashboards in your AWS account. This
-     * structure provides basic information about the dashboards.</p>
+     * <p>A structure that contains all of the dashboards in your Amazon Web Services
+     * account. This structure provides basic information about the dashboards.</p>
      */
     inline void SetDashboardSummaryList(Aws::Vector<DashboardSummary>&& value) { m_dashboardSummaryList = std::move(value); }
 
     /**
-     * <p>A structure that contains all of the dashboards in your AWS account. This
-     * structure provides basic information about the dashboards.</p>
+     * <p>A structure that contains all of the dashboards in your Amazon Web Services
+     * account. This structure provides basic information about the dashboards.</p>
      */
     inline ListDashboardsResult& WithDashboardSummaryList(const Aws::Vector<DashboardSummary>& value) { SetDashboardSummaryList(value); return *this;}
 
     /**
-     * <p>A structure that contains all of the dashboards in your AWS account. This
-     * structure provides basic information about the dashboards.</p>
+     * <p>A structure that contains all of the dashboards in your Amazon Web Services
+     * account. This structure provides basic information about the dashboards.</p>
      */
     inline ListDashboardsResult& WithDashboardSummaryList(Aws::Vector<DashboardSummary>&& value) { SetDashboardSummaryList(std::move(value)); return *this;}
 
     /**
-     * <p>A structure that contains all of the dashboards in your AWS account. This
-     * structure provides basic information about the dashboards.</p>
+     * <p>A structure that contains all of the dashboards in your Amazon Web Services
+     * account. This structure provides basic information about the dashboards.</p>
      */
     inline ListDashboardsResult& AddDashboardSummaryList(const DashboardSummary& value) { m_dashboardSummaryList.push_back(value); return *this; }
 
     /**
-     * <p>A structure that contains all of the dashboards in your AWS account. This
-     * structure provides basic information about the dashboards.</p>
+     * <p>A structure that contains all of the dashboards in your Amazon Web Services
+     * account. This structure provides basic information about the dashboards.</p>
      */
     inline ListDashboardsResult& AddDashboardSummaryList(DashboardSummary&& value) { m_dashboardSummaryList.push_back(std::move(value)); return *this; }
 
@@ -137,37 +137,37 @@ namespace Model
 
 
     /**
-     * <p>The AWS request ID for this operation.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
     /**
-     * <p>The AWS request ID for this operation.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
 
     /**
-     * <p>The AWS request ID for this operation.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
 
     /**
-     * <p>The AWS request ID for this operation.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
 
     /**
-     * <p>The AWS request ID for this operation.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline ListDashboardsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
 
     /**
-     * <p>The AWS request ID for this operation.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline ListDashboardsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS request ID for this operation.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline ListDashboardsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
 

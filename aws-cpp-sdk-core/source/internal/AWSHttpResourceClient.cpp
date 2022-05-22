@@ -35,6 +35,7 @@ static const char EC2_IMDS_TOKEN_HEADER[] = "x-aws-ec2-metadata-token";
 static const char RESOURCE_CLIENT_CONFIGURATION_ALLOCATION_TAG[] = "AWSHttpResourceClient";
 static const char EC2_METADATA_CLIENT_LOG_TAG[] = "EC2MetadataClient";
 static const char ECS_CREDENTIALS_CLIENT_LOG_TAG[] = "ECSCredentialsClient";
+static const char SSO_GET_ROLE_RESOURCE[] = "/federation/credentials";
 
 namespace Aws
 {
@@ -160,7 +161,7 @@ namespace Aws
 
                 if (!m_retryStrategy->ShouldRetry(error, retries))
                 {
-                    AWS_LOGSTREAM_ERROR(m_logtag.c_str(), "Can not retrive resource from " << httpRequest->GetURIString());
+                    AWS_LOGSTREAM_ERROR(m_logtag.c_str(), "Can not retrieve resource from " << httpRequest->GetURIString());
                     return {{}, response->GetHeaders(), error.GetResponseCode()};
                 }
                 auto sleepMillis = m_retryStrategy->CalculateDelayBeforeNextRetry(error, retries);
@@ -197,7 +198,7 @@ namespace Aws
                 return GetDefaultCredentialsSecurely();
             }
 
-            AWS_LOGSTREAM_TRACE(m_logtag.c_str(), "Getting default credentials for ec2 instance");
+            AWS_LOGSTREAM_TRACE(m_logtag.c_str(), "Getting default credentials for ec2 instance from " << m_endpoint);
             auto result = GetResourceWithAWSWebServiceResult(m_endpoint.c_str(), EC2_SECURITY_CREDENTIALS_RESOURCE, nullptr);
             Aws::String credentialsString = result.GetPayload();
             auto httpResponseCode = result.GetResponseCode();
@@ -350,6 +351,16 @@ namespace Aws
             return region;
         }
 
+        void EC2MetadataClient::SetEndpoint(const Aws::String& endpoint)
+        {
+            m_endpoint = endpoint;
+        }
+
+        Aws::String EC2MetadataClient::GetEndpoint() const
+        {
+            return Aws::String(m_endpoint);
+        }
+
         #ifdef _MSC_VER
             // VS2015 compiler's bug, warning s_ec2metadataClient: symbol will be dynamically initialized (implementation limitation)
             AWS_SUPPRESS_WARNING(4592,
@@ -365,7 +376,39 @@ namespace Aws
             {
                 return;
             }
-            s_ec2metadataClient = Aws::MakeShared<EC2MetadataClient>(EC2_METADATA_CLIENT_LOG_TAG);
+            Aws::String ec2MetadataServiceEndpoint = Aws::Environment::GetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT");
+            if (ec2MetadataServiceEndpoint.empty())
+            {
+                Aws::String ec2MetadataServiceEndpointMode = Aws::Environment::GetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT_MODE").c_str();
+                if (ec2MetadataServiceEndpointMode.length() == 0 )
+                {
+                    ec2MetadataServiceEndpoint = "http://169.254.169.254"; //default to IPv4 default endpoint
+                }
+                else
+                {
+                    if (ec2MetadataServiceEndpointMode.length() == 4 )
+                    {
+                        if (Aws::Utils::StringUtils::CaselessCompare(ec2MetadataServiceEndpointMode.c_str(), "ipv4"))
+                        {
+                            ec2MetadataServiceEndpoint = "http://169.254.169.254"; //default to IPv4 default endpoint
+                        }
+                        else if (Aws::Utils::StringUtils::CaselessCompare(ec2MetadataServiceEndpointMode.c_str(), "ipv6"))
+                        {
+                            ec2MetadataServiceEndpoint = "http://[fd00:ec2::254]";
+                        }
+                        else
+                        {
+                            AWS_LOGSTREAM_ERROR(EC2_METADATA_CLIENT_LOG_TAG, "AWS_EC2_METADATA_SERVICE_ENDPOINT_MODE can only be set to ipv4 or ipv6, received: " << ec2MetadataServiceEndpointMode );
+                        }
+                    }
+                    else
+                    {
+                        AWS_LOGSTREAM_ERROR(EC2_METADATA_CLIENT_LOG_TAG, "AWS_EC2_METADATA_SERVICE_ENDPOINT_MODE can only be set to ipv4 or ipv6, received: " << ec2MetadataServiceEndpointMode );
+                    }
+                }
+            }
+            AWS_LOGSTREAM_INFO(EC2_METADATA_CLIENT_LOG_TAG, "Using IMDS endpoint: " << ec2MetadataServiceEndpoint);
+            s_ec2metadataClient = Aws::MakeShared<EC2MetadataClient>(EC2_METADATA_CLIENT_LOG_TAG, ec2MetadataServiceEndpoint.c_str());
         }
 
         void CleanupEC2MetadataClient()
@@ -381,7 +424,6 @@ namespace Aws
         {
             return s_ec2metadataClient;
         }
-
 
         ECSCredentialsClient::ECSCredentialsClient(const char* resourcePath, const char* endpoint, const char* token)
             : AWSHttpResourceClient(ECS_CREDENTIALS_CLIENT_LOG_TAG),
@@ -500,6 +542,74 @@ namespace Aws
                     }
                 }
             }
+            return result;
+        }
+
+        static const char SSO_RESOURCE_CLIENT_LOG_TAG[] = "SSOResourceClient";
+        SSOCredentialsClient::SSOCredentialsClient(const Aws::Client::ClientConfiguration& clientConfiguration)
+                : AWSHttpResourceClient(clientConfiguration, SSO_RESOURCE_CLIENT_LOG_TAG)
+        {
+            SetErrorMarshaller(Aws::MakeUnique<Aws::Client::JsonErrorMarshaller>(SSO_RESOURCE_CLIENT_LOG_TAG));
+
+            Aws::StringStream ss;
+            if (clientConfiguration.scheme == Aws::Http::Scheme::HTTP)
+            {
+                ss << "http://";
+            }
+            else
+            {
+                ss << "https://";
+            }
+
+            static const int CN_NORTH_1_HASH = Aws::Utils::HashingUtils::HashString(Aws::Region::CN_NORTH_1);
+            static const int CN_NORTHWEST_1_HASH = Aws::Utils::HashingUtils::HashString(Aws::Region::CN_NORTHWEST_1);
+            auto hash = Aws::Utils::HashingUtils::HashString(clientConfiguration.region.c_str());
+
+            AWS_LOGSTREAM_DEBUG(SSO_RESOURCE_CLIENT_LOG_TAG, "Preparing SSO client for region: " << clientConfiguration.region);
+
+            ss << "portal.sso." << clientConfiguration.region << ".amazonaws.com/federation/credentials";
+            if (hash == CN_NORTH_1_HASH || hash == CN_NORTHWEST_1_HASH)
+            {
+                ss << ".cn";
+            }
+            m_endpoint =  ss.str();
+
+            AWS_LOGSTREAM_INFO(SSO_RESOURCE_CLIENT_LOG_TAG, "Creating SSO ResourceClient with endpoint: " << m_endpoint);
+        }
+
+        SSOCredentialsClient::SSOGetRoleCredentialsResult SSOCredentialsClient::GetSSOCredentials(const SSOGetRoleCredentialsRequest &request)
+        {
+            Aws::StringStream ssUri;
+            ssUri << m_endpoint << SSO_GET_ROLE_RESOURCE;
+
+            std::shared_ptr<HttpRequest> httpRequest(CreateHttpRequest(m_endpoint, HttpMethod::HTTP_GET,
+                                                                       Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
+
+            httpRequest->SetHeaderValue("x-amz-sso_bearer_token", request.m_accessToken);
+
+            httpRequest->SetUserAgent(ComputeUserAgentString());
+
+            httpRequest->AddQueryStringParameter("account_id", Aws::Utils::StringUtils::URLEncode(request.m_ssoAccountId.c_str()));
+            httpRequest->AddQueryStringParameter("role_name", Aws::Utils::StringUtils::URLEncode(request.m_ssoRoleName.c_str()));
+
+            Aws::String credentialsStr = GetResourceWithAWSWebServiceResult(httpRequest).GetPayload();
+
+            Json::JsonValue credentialsDoc(credentialsStr);
+            AWS_LOGSTREAM_TRACE(SSO_RESOURCE_CLIENT_LOG_TAG, "Raw creds returned: " << credentialsStr);
+            Aws::Auth::AWSCredentials creds;
+            if (!credentialsDoc.WasParseSuccessful())
+            {
+                AWS_LOGSTREAM_ERROR(SSO_RESOURCE_CLIENT_LOG_TAG, "Failed to load credential from running. Error: " << credentialsStr);
+                return SSOGetRoleCredentialsResult{creds};
+            }
+            Utils::Json::JsonView credentialsView(credentialsDoc);
+            auto roleCredentials = credentialsView.GetObject("roleCredentials");
+            creds.SetAWSAccessKeyId(roleCredentials.GetString("accessKeyId"));
+            creds.SetAWSSecretKey(roleCredentials.GetString("secretAccessKey"));
+            creds.SetSessionToken(roleCredentials.GetString("sessionToken"));
+            creds.SetExpiration(roleCredentials.GetInt64("expiration"));
+            SSOCredentialsClient::SSOGetRoleCredentialsResult result;
+            result.creds = creds;
             return result;
         }
     }

@@ -40,50 +40,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the artifact. Must be unique to your account in an AWS
-     * Region.</p>
+     * <p>The name of the artifact. Must be unique to your account in an Amazon Web
+     * Services Region.</p>
      */
     inline const Aws::String& GetArtifactName() const{ return m_artifactName; }
 
     /**
-     * <p>The name of the artifact. Must be unique to your account in an AWS
-     * Region.</p>
+     * <p>The name of the artifact. Must be unique to your account in an Amazon Web
+     * Services Region.</p>
      */
     inline bool ArtifactNameHasBeenSet() const { return m_artifactNameHasBeenSet; }
 
     /**
-     * <p>The name of the artifact. Must be unique to your account in an AWS
-     * Region.</p>
+     * <p>The name of the artifact. Must be unique to your account in an Amazon Web
+     * Services Region.</p>
      */
     inline void SetArtifactName(const Aws::String& value) { m_artifactNameHasBeenSet = true; m_artifactName = value; }
 
     /**
-     * <p>The name of the artifact. Must be unique to your account in an AWS
-     * Region.</p>
+     * <p>The name of the artifact. Must be unique to your account in an Amazon Web
+     * Services Region.</p>
      */
     inline void SetArtifactName(Aws::String&& value) { m_artifactNameHasBeenSet = true; m_artifactName = std::move(value); }
 
     /**
-     * <p>The name of the artifact. Must be unique to your account in an AWS
-     * Region.</p>
+     * <p>The name of the artifact. Must be unique to your account in an Amazon Web
+     * Services Region.</p>
      */
     inline void SetArtifactName(const char* value) { m_artifactNameHasBeenSet = true; m_artifactName.assign(value); }
 
     /**
-     * <p>The name of the artifact. Must be unique to your account in an AWS
-     * Region.</p>
+     * <p>The name of the artifact. Must be unique to your account in an Amazon Web
+     * Services Region.</p>
      */
     inline CreateArtifactRequest& WithArtifactName(const Aws::String& value) { SetArtifactName(value); return *this;}
 
     /**
-     * <p>The name of the artifact. Must be unique to your account in an AWS
-     * Region.</p>
+     * <p>The name of the artifact. Must be unique to your account in an Amazon Web
+     * Services Region.</p>
      */
     inline CreateArtifactRequest& WithArtifactName(Aws::String&& value) { SetArtifactName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the artifact. Must be unique to your account in an AWS
-     * Region.</p>
+     * <p>The name of the artifact. Must be unique to your account in an Amazon Web
+     * Services Region.</p>
      */
     inline CreateArtifactRequest& WithArtifactName(const char* value) { SetArtifactName(value); return *this;}
 

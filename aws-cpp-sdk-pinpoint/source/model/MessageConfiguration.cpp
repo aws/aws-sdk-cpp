@@ -26,7 +26,8 @@ MessageConfiguration::MessageConfiguration() :
     m_defaultMessageHasBeenSet(false),
     m_emailMessageHasBeenSet(false),
     m_gCMMessageHasBeenSet(false),
-    m_sMSMessageHasBeenSet(false)
+    m_sMSMessageHasBeenSet(false),
+    m_inAppMessageHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ MessageConfiguration::MessageConfiguration(JsonView jsonValue) :
     m_defaultMessageHasBeenSet(false),
     m_emailMessageHasBeenSet(false),
     m_gCMMessageHasBeenSet(false),
-    m_sMSMessageHasBeenSet(false)
+    m_sMSMessageHasBeenSet(false),
+    m_inAppMessageHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -101,6 +103,13 @@ MessageConfiguration& MessageConfiguration::operator =(JsonView jsonValue)
     m_sMSMessageHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("InAppMessage"))
+  {
+    m_inAppMessage = jsonValue.GetObject("InAppMessage");
+
+    m_inAppMessageHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -153,6 +162,12 @@ JsonValue MessageConfiguration::Jsonize() const
   if(m_sMSMessageHasBeenSet)
   {
    payload.WithObject("SMSMessage", m_sMSMessage.Jsonize());
+
+  }
+
+  if(m_inAppMessageHasBeenSet)
+  {
+   payload.WithObject("InAppMessage", m_inAppMessage.Jsonize());
 
   }
 

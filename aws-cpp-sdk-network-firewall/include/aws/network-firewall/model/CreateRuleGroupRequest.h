@@ -10,6 +10,8 @@
 #include <aws/network-firewall/model/RuleGroup.h>
 #include <aws/network-firewall/model/RuleGroupType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/network-firewall/model/EncryptionConfiguration.h>
+#include <aws/network-firewall/model/SourceMetadata.h>
 #include <aws/network-firewall/model/Tag.h>
 #include <utility>
 
@@ -131,130 +133,98 @@ namespace Model
 
 
     /**
-     * <p>The name of a file containing stateful rule group rules specifications in
-     * Suricata flat format, with one rule per line. Use this to import your existing
-     * Suricata compatible rule groups. </p>  <p>You must provide either this
-     * rules setting or a populated <code>RuleGroup</code> setting, but not both. </p>
-     *  <p>You can provide your rule group specification in a file through this
-     * setting when you create or update your rule group. The call response returns a
-     * <a>RuleGroup</a> object that Network Firewall has populated from your file.
-     * Network Firewall uses the file contents to populate the rule group rules, but
-     * does not maintain a reference to the file or use the file in any way after
-     * performing the create or update. If you call <a>DescribeRuleGroup</a> to
-     * retrieve the rule group, Network Firewall returns rules settings inside a
-     * <a>RuleGroup</a> object. </p>
+     * <p>A string containing stateful rule group rules specifications in Suricata flat
+     * format, with one rule per line. Use this to import your existing Suricata
+     * compatible rule groups. </p>  <p>You must provide either this rules
+     * setting or a populated <code>RuleGroup</code> setting, but not both. </p>
+     *  <p>You can provide your rule group specification in Suricata flat format
+     * through this setting when you create or update your rule group. The call
+     * response returns a <a>RuleGroup</a> object that Network Firewall has populated
+     * from your string. </p>
      */
     inline const Aws::String& GetRules() const{ return m_rules; }
 
     /**
-     * <p>The name of a file containing stateful rule group rules specifications in
-     * Suricata flat format, with one rule per line. Use this to import your existing
-     * Suricata compatible rule groups. </p>  <p>You must provide either this
-     * rules setting or a populated <code>RuleGroup</code> setting, but not both. </p>
-     *  <p>You can provide your rule group specification in a file through this
-     * setting when you create or update your rule group. The call response returns a
-     * <a>RuleGroup</a> object that Network Firewall has populated from your file.
-     * Network Firewall uses the file contents to populate the rule group rules, but
-     * does not maintain a reference to the file or use the file in any way after
-     * performing the create or update. If you call <a>DescribeRuleGroup</a> to
-     * retrieve the rule group, Network Firewall returns rules settings inside a
-     * <a>RuleGroup</a> object. </p>
+     * <p>A string containing stateful rule group rules specifications in Suricata flat
+     * format, with one rule per line. Use this to import your existing Suricata
+     * compatible rule groups. </p>  <p>You must provide either this rules
+     * setting or a populated <code>RuleGroup</code> setting, but not both. </p>
+     *  <p>You can provide your rule group specification in Suricata flat format
+     * through this setting when you create or update your rule group. The call
+     * response returns a <a>RuleGroup</a> object that Network Firewall has populated
+     * from your string. </p>
      */
     inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
 
     /**
-     * <p>The name of a file containing stateful rule group rules specifications in
-     * Suricata flat format, with one rule per line. Use this to import your existing
-     * Suricata compatible rule groups. </p>  <p>You must provide either this
-     * rules setting or a populated <code>RuleGroup</code> setting, but not both. </p>
-     *  <p>You can provide your rule group specification in a file through this
-     * setting when you create or update your rule group. The call response returns a
-     * <a>RuleGroup</a> object that Network Firewall has populated from your file.
-     * Network Firewall uses the file contents to populate the rule group rules, but
-     * does not maintain a reference to the file or use the file in any way after
-     * performing the create or update. If you call <a>DescribeRuleGroup</a> to
-     * retrieve the rule group, Network Firewall returns rules settings inside a
-     * <a>RuleGroup</a> object. </p>
+     * <p>A string containing stateful rule group rules specifications in Suricata flat
+     * format, with one rule per line. Use this to import your existing Suricata
+     * compatible rule groups. </p>  <p>You must provide either this rules
+     * setting or a populated <code>RuleGroup</code> setting, but not both. </p>
+     *  <p>You can provide your rule group specification in Suricata flat format
+     * through this setting when you create or update your rule group. The call
+     * response returns a <a>RuleGroup</a> object that Network Firewall has populated
+     * from your string. </p>
      */
     inline void SetRules(const Aws::String& value) { m_rulesHasBeenSet = true; m_rules = value; }
 
     /**
-     * <p>The name of a file containing stateful rule group rules specifications in
-     * Suricata flat format, with one rule per line. Use this to import your existing
-     * Suricata compatible rule groups. </p>  <p>You must provide either this
-     * rules setting or a populated <code>RuleGroup</code> setting, but not both. </p>
-     *  <p>You can provide your rule group specification in a file through this
-     * setting when you create or update your rule group. The call response returns a
-     * <a>RuleGroup</a> object that Network Firewall has populated from your file.
-     * Network Firewall uses the file contents to populate the rule group rules, but
-     * does not maintain a reference to the file or use the file in any way after
-     * performing the create or update. If you call <a>DescribeRuleGroup</a> to
-     * retrieve the rule group, Network Firewall returns rules settings inside a
-     * <a>RuleGroup</a> object. </p>
+     * <p>A string containing stateful rule group rules specifications in Suricata flat
+     * format, with one rule per line. Use this to import your existing Suricata
+     * compatible rule groups. </p>  <p>You must provide either this rules
+     * setting or a populated <code>RuleGroup</code> setting, but not both. </p>
+     *  <p>You can provide your rule group specification in Suricata flat format
+     * through this setting when you create or update your rule group. The call
+     * response returns a <a>RuleGroup</a> object that Network Firewall has populated
+     * from your string. </p>
      */
     inline void SetRules(Aws::String&& value) { m_rulesHasBeenSet = true; m_rules = std::move(value); }
 
     /**
-     * <p>The name of a file containing stateful rule group rules specifications in
-     * Suricata flat format, with one rule per line. Use this to import your existing
-     * Suricata compatible rule groups. </p>  <p>You must provide either this
-     * rules setting or a populated <code>RuleGroup</code> setting, but not both. </p>
-     *  <p>You can provide your rule group specification in a file through this
-     * setting when you create or update your rule group. The call response returns a
-     * <a>RuleGroup</a> object that Network Firewall has populated from your file.
-     * Network Firewall uses the file contents to populate the rule group rules, but
-     * does not maintain a reference to the file or use the file in any way after
-     * performing the create or update. If you call <a>DescribeRuleGroup</a> to
-     * retrieve the rule group, Network Firewall returns rules settings inside a
-     * <a>RuleGroup</a> object. </p>
+     * <p>A string containing stateful rule group rules specifications in Suricata flat
+     * format, with one rule per line. Use this to import your existing Suricata
+     * compatible rule groups. </p>  <p>You must provide either this rules
+     * setting or a populated <code>RuleGroup</code> setting, but not both. </p>
+     *  <p>You can provide your rule group specification in Suricata flat format
+     * through this setting when you create or update your rule group. The call
+     * response returns a <a>RuleGroup</a> object that Network Firewall has populated
+     * from your string. </p>
      */
     inline void SetRules(const char* value) { m_rulesHasBeenSet = true; m_rules.assign(value); }
 
     /**
-     * <p>The name of a file containing stateful rule group rules specifications in
-     * Suricata flat format, with one rule per line. Use this to import your existing
-     * Suricata compatible rule groups. </p>  <p>You must provide either this
-     * rules setting or a populated <code>RuleGroup</code> setting, but not both. </p>
-     *  <p>You can provide your rule group specification in a file through this
-     * setting when you create or update your rule group. The call response returns a
-     * <a>RuleGroup</a> object that Network Firewall has populated from your file.
-     * Network Firewall uses the file contents to populate the rule group rules, but
-     * does not maintain a reference to the file or use the file in any way after
-     * performing the create or update. If you call <a>DescribeRuleGroup</a> to
-     * retrieve the rule group, Network Firewall returns rules settings inside a
-     * <a>RuleGroup</a> object. </p>
+     * <p>A string containing stateful rule group rules specifications in Suricata flat
+     * format, with one rule per line. Use this to import your existing Suricata
+     * compatible rule groups. </p>  <p>You must provide either this rules
+     * setting or a populated <code>RuleGroup</code> setting, but not both. </p>
+     *  <p>You can provide your rule group specification in Suricata flat format
+     * through this setting when you create or update your rule group. The call
+     * response returns a <a>RuleGroup</a> object that Network Firewall has populated
+     * from your string. </p>
      */
     inline CreateRuleGroupRequest& WithRules(const Aws::String& value) { SetRules(value); return *this;}
 
     /**
-     * <p>The name of a file containing stateful rule group rules specifications in
-     * Suricata flat format, with one rule per line. Use this to import your existing
-     * Suricata compatible rule groups. </p>  <p>You must provide either this
-     * rules setting or a populated <code>RuleGroup</code> setting, but not both. </p>
-     *  <p>You can provide your rule group specification in a file through this
-     * setting when you create or update your rule group. The call response returns a
-     * <a>RuleGroup</a> object that Network Firewall has populated from your file.
-     * Network Firewall uses the file contents to populate the rule group rules, but
-     * does not maintain a reference to the file or use the file in any way after
-     * performing the create or update. If you call <a>DescribeRuleGroup</a> to
-     * retrieve the rule group, Network Firewall returns rules settings inside a
-     * <a>RuleGroup</a> object. </p>
+     * <p>A string containing stateful rule group rules specifications in Suricata flat
+     * format, with one rule per line. Use this to import your existing Suricata
+     * compatible rule groups. </p>  <p>You must provide either this rules
+     * setting or a populated <code>RuleGroup</code> setting, but not both. </p>
+     *  <p>You can provide your rule group specification in Suricata flat format
+     * through this setting when you create or update your rule group. The call
+     * response returns a <a>RuleGroup</a> object that Network Firewall has populated
+     * from your string. </p>
      */
     inline CreateRuleGroupRequest& WithRules(Aws::String&& value) { SetRules(std::move(value)); return *this;}
 
     /**
-     * <p>The name of a file containing stateful rule group rules specifications in
-     * Suricata flat format, with one rule per line. Use this to import your existing
-     * Suricata compatible rule groups. </p>  <p>You must provide either this
-     * rules setting or a populated <code>RuleGroup</code> setting, but not both. </p>
-     *  <p>You can provide your rule group specification in a file through this
-     * setting when you create or update your rule group. The call response returns a
-     * <a>RuleGroup</a> object that Network Firewall has populated from your file.
-     * Network Firewall uses the file contents to populate the rule group rules, but
-     * does not maintain a reference to the file or use the file in any way after
-     * performing the create or update. If you call <a>DescribeRuleGroup</a> to
-     * retrieve the rule group, Network Firewall returns rules settings inside a
-     * <a>RuleGroup</a> object. </p>
+     * <p>A string containing stateful rule group rules specifications in Suricata flat
+     * format, with one rule per line. Use this to import your existing Suricata
+     * compatible rule groups. </p>  <p>You must provide either this rules
+     * setting or a populated <code>RuleGroup</code> setting, but not both. </p>
+     *  <p>You can provide your rule group specification in Suricata flat format
+     * through this setting when you create or update your rule group. The call
+     * response returns a <a>RuleGroup</a> object that Network Firewall has populated
+     * from your string. </p>
      */
     inline CreateRuleGroupRequest& WithRules(const char* value) { SetRules(value); return *this;}
 
@@ -557,6 +527,86 @@ namespace Model
      */
     inline CreateRuleGroupRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
+
+    /**
+     * <p>A complex type that contains settings for encryption of your rule group
+     * resources.</p>
+     */
+    inline const EncryptionConfiguration& GetEncryptionConfiguration() const{ return m_encryptionConfiguration; }
+
+    /**
+     * <p>A complex type that contains settings for encryption of your rule group
+     * resources.</p>
+     */
+    inline bool EncryptionConfigurationHasBeenSet() const { return m_encryptionConfigurationHasBeenSet; }
+
+    /**
+     * <p>A complex type that contains settings for encryption of your rule group
+     * resources.</p>
+     */
+    inline void SetEncryptionConfiguration(const EncryptionConfiguration& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = value; }
+
+    /**
+     * <p>A complex type that contains settings for encryption of your rule group
+     * resources.</p>
+     */
+    inline void SetEncryptionConfiguration(EncryptionConfiguration&& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = std::move(value); }
+
+    /**
+     * <p>A complex type that contains settings for encryption of your rule group
+     * resources.</p>
+     */
+    inline CreateRuleGroupRequest& WithEncryptionConfiguration(const EncryptionConfiguration& value) { SetEncryptionConfiguration(value); return *this;}
+
+    /**
+     * <p>A complex type that contains settings for encryption of your rule group
+     * resources.</p>
+     */
+    inline CreateRuleGroupRequest& WithEncryptionConfiguration(EncryptionConfiguration&& value) { SetEncryptionConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A complex type that contains metadata about the rule group that your own rule
+     * group is copied from. You can use the metadata to keep track of updates made to
+     * the originating rule group.</p>
+     */
+    inline const SourceMetadata& GetSourceMetadata() const{ return m_sourceMetadata; }
+
+    /**
+     * <p>A complex type that contains metadata about the rule group that your own rule
+     * group is copied from. You can use the metadata to keep track of updates made to
+     * the originating rule group.</p>
+     */
+    inline bool SourceMetadataHasBeenSet() const { return m_sourceMetadataHasBeenSet; }
+
+    /**
+     * <p>A complex type that contains metadata about the rule group that your own rule
+     * group is copied from. You can use the metadata to keep track of updates made to
+     * the originating rule group.</p>
+     */
+    inline void SetSourceMetadata(const SourceMetadata& value) { m_sourceMetadataHasBeenSet = true; m_sourceMetadata = value; }
+
+    /**
+     * <p>A complex type that contains metadata about the rule group that your own rule
+     * group is copied from. You can use the metadata to keep track of updates made to
+     * the originating rule group.</p>
+     */
+    inline void SetSourceMetadata(SourceMetadata&& value) { m_sourceMetadataHasBeenSet = true; m_sourceMetadata = std::move(value); }
+
+    /**
+     * <p>A complex type that contains metadata about the rule group that your own rule
+     * group is copied from. You can use the metadata to keep track of updates made to
+     * the originating rule group.</p>
+     */
+    inline CreateRuleGroupRequest& WithSourceMetadata(const SourceMetadata& value) { SetSourceMetadata(value); return *this;}
+
+    /**
+     * <p>A complex type that contains metadata about the rule group that your own rule
+     * group is copied from. You can use the metadata to keep track of updates made to
+     * the originating rule group.</p>
+     */
+    inline CreateRuleGroupRequest& WithSourceMetadata(SourceMetadata&& value) { SetSourceMetadata(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_ruleGroupName;
@@ -582,6 +632,12 @@ namespace Model
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
+    EncryptionConfiguration m_encryptionConfiguration;
+    bool m_encryptionConfigurationHasBeenSet;
+
+    SourceMetadata m_sourceMetadata;
+    bool m_sourceMetadataHasBeenSet;
   };
 
 } // namespace Model

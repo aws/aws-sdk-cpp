@@ -81,74 +81,56 @@ namespace Model
 
 
     /**
-     * <p>One or more customer gateway Amazon Resource Names (ARNs). For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2.html#amazonec2-resources-for-iam-policies">Resources
-     * Defined by Amazon EC2</a>. The maximum is 10.</p>
+     * <p>One or more customer gateway Amazon Resource Names (ARNs). The maximum is
+     * 10.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCustomerGatewayArns() const{ return m_customerGatewayArns; }
 
     /**
-     * <p>One or more customer gateway Amazon Resource Names (ARNs). For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2.html#amazonec2-resources-for-iam-policies">Resources
-     * Defined by Amazon EC2</a>. The maximum is 10.</p>
+     * <p>One or more customer gateway Amazon Resource Names (ARNs). The maximum is
+     * 10.</p>
      */
     inline bool CustomerGatewayArnsHasBeenSet() const { return m_customerGatewayArnsHasBeenSet; }
 
     /**
-     * <p>One or more customer gateway Amazon Resource Names (ARNs). For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2.html#amazonec2-resources-for-iam-policies">Resources
-     * Defined by Amazon EC2</a>. The maximum is 10.</p>
+     * <p>One or more customer gateway Amazon Resource Names (ARNs). The maximum is
+     * 10.</p>
      */
     inline void SetCustomerGatewayArns(const Aws::Vector<Aws::String>& value) { m_customerGatewayArnsHasBeenSet = true; m_customerGatewayArns = value; }
 
     /**
-     * <p>One or more customer gateway Amazon Resource Names (ARNs). For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2.html#amazonec2-resources-for-iam-policies">Resources
-     * Defined by Amazon EC2</a>. The maximum is 10.</p>
+     * <p>One or more customer gateway Amazon Resource Names (ARNs). The maximum is
+     * 10.</p>
      */
     inline void SetCustomerGatewayArns(Aws::Vector<Aws::String>&& value) { m_customerGatewayArnsHasBeenSet = true; m_customerGatewayArns = std::move(value); }
 
     /**
-     * <p>One or more customer gateway Amazon Resource Names (ARNs). For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2.html#amazonec2-resources-for-iam-policies">Resources
-     * Defined by Amazon EC2</a>. The maximum is 10.</p>
+     * <p>One or more customer gateway Amazon Resource Names (ARNs). The maximum is
+     * 10.</p>
      */
     inline GetCustomerGatewayAssociationsRequest& WithCustomerGatewayArns(const Aws::Vector<Aws::String>& value) { SetCustomerGatewayArns(value); return *this;}
 
     /**
-     * <p>One or more customer gateway Amazon Resource Names (ARNs). For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2.html#amazonec2-resources-for-iam-policies">Resources
-     * Defined by Amazon EC2</a>. The maximum is 10.</p>
+     * <p>One or more customer gateway Amazon Resource Names (ARNs). The maximum is
+     * 10.</p>
      */
     inline GetCustomerGatewayAssociationsRequest& WithCustomerGatewayArns(Aws::Vector<Aws::String>&& value) { SetCustomerGatewayArns(std::move(value)); return *this;}
 
     /**
-     * <p>One or more customer gateway Amazon Resource Names (ARNs). For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2.html#amazonec2-resources-for-iam-policies">Resources
-     * Defined by Amazon EC2</a>. The maximum is 10.</p>
+     * <p>One or more customer gateway Amazon Resource Names (ARNs). The maximum is
+     * 10.</p>
      */
     inline GetCustomerGatewayAssociationsRequest& AddCustomerGatewayArns(const Aws::String& value) { m_customerGatewayArnsHasBeenSet = true; m_customerGatewayArns.push_back(value); return *this; }
 
     /**
-     * <p>One or more customer gateway Amazon Resource Names (ARNs). For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2.html#amazonec2-resources-for-iam-policies">Resources
-     * Defined by Amazon EC2</a>. The maximum is 10.</p>
+     * <p>One or more customer gateway Amazon Resource Names (ARNs). The maximum is
+     * 10.</p>
      */
     inline GetCustomerGatewayAssociationsRequest& AddCustomerGatewayArns(Aws::String&& value) { m_customerGatewayArnsHasBeenSet = true; m_customerGatewayArns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more customer gateway Amazon Resource Names (ARNs). For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonec2.html#amazonec2-resources-for-iam-policies">Resources
-     * Defined by Amazon EC2</a>. The maximum is 10.</p>
+     * <p>One or more customer gateway Amazon Resource Names (ARNs). The maximum is
+     * 10.</p>
      */
     inline GetCustomerGatewayAssociationsRequest& AddCustomerGatewayArns(const char* value) { m_customerGatewayArnsHasBeenSet = true; m_customerGatewayArns.push_back(value); return *this; }
 

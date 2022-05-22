@@ -101,58 +101,58 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the AWS account to share or unshare the image with.</p>
-     *  <p>Before sharing the image, confirm that you are sharing to the
-     * correct AWS account ID.</p> 
+     * <p>The identifier of the Amazon Web Services account to share or unshare the
+     * image with.</p>  <p>Before sharing the image, confirm that you are
+     * sharing to the correct Amazon Web Services account ID.</p> 
      */
     inline const Aws::String& GetSharedAccountId() const{ return m_sharedAccountId; }
 
     /**
-     * <p>The identifier of the AWS account to share or unshare the image with.</p>
-     *  <p>Before sharing the image, confirm that you are sharing to the
-     * correct AWS account ID.</p> 
+     * <p>The identifier of the Amazon Web Services account to share or unshare the
+     * image with.</p>  <p>Before sharing the image, confirm that you are
+     * sharing to the correct Amazon Web Services account ID.</p> 
      */
     inline bool SharedAccountIdHasBeenSet() const { return m_sharedAccountIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the AWS account to share or unshare the image with.</p>
-     *  <p>Before sharing the image, confirm that you are sharing to the
-     * correct AWS account ID.</p> 
+     * <p>The identifier of the Amazon Web Services account to share or unshare the
+     * image with.</p>  <p>Before sharing the image, confirm that you are
+     * sharing to the correct Amazon Web Services account ID.</p> 
      */
     inline void SetSharedAccountId(const Aws::String& value) { m_sharedAccountIdHasBeenSet = true; m_sharedAccountId = value; }
 
     /**
-     * <p>The identifier of the AWS account to share or unshare the image with.</p>
-     *  <p>Before sharing the image, confirm that you are sharing to the
-     * correct AWS account ID.</p> 
+     * <p>The identifier of the Amazon Web Services account to share or unshare the
+     * image with.</p>  <p>Before sharing the image, confirm that you are
+     * sharing to the correct Amazon Web Services account ID.</p> 
      */
     inline void SetSharedAccountId(Aws::String&& value) { m_sharedAccountIdHasBeenSet = true; m_sharedAccountId = std::move(value); }
 
     /**
-     * <p>The identifier of the AWS account to share or unshare the image with.</p>
-     *  <p>Before sharing the image, confirm that you are sharing to the
-     * correct AWS account ID.</p> 
+     * <p>The identifier of the Amazon Web Services account to share or unshare the
+     * image with.</p>  <p>Before sharing the image, confirm that you are
+     * sharing to the correct Amazon Web Services account ID.</p> 
      */
     inline void SetSharedAccountId(const char* value) { m_sharedAccountIdHasBeenSet = true; m_sharedAccountId.assign(value); }
 
     /**
-     * <p>The identifier of the AWS account to share or unshare the image with.</p>
-     *  <p>Before sharing the image, confirm that you are sharing to the
-     * correct AWS account ID.</p> 
+     * <p>The identifier of the Amazon Web Services account to share or unshare the
+     * image with.</p>  <p>Before sharing the image, confirm that you are
+     * sharing to the correct Amazon Web Services account ID.</p> 
      */
     inline UpdateWorkspaceImagePermissionRequest& WithSharedAccountId(const Aws::String& value) { SetSharedAccountId(value); return *this;}
 
     /**
-     * <p>The identifier of the AWS account to share or unshare the image with.</p>
-     *  <p>Before sharing the image, confirm that you are sharing to the
-     * correct AWS account ID.</p> 
+     * <p>The identifier of the Amazon Web Services account to share or unshare the
+     * image with.</p>  <p>Before sharing the image, confirm that you are
+     * sharing to the correct Amazon Web Services account ID.</p> 
      */
     inline UpdateWorkspaceImagePermissionRequest& WithSharedAccountId(Aws::String&& value) { SetSharedAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the AWS account to share or unshare the image with.</p>
-     *  <p>Before sharing the image, confirm that you are sharing to the
-     * correct AWS account ID.</p> 
+     * <p>The identifier of the Amazon Web Services account to share or unshare the
+     * image with.</p>  <p>Before sharing the image, confirm that you are
+     * sharing to the correct Amazon Web Services account ID.</p> 
      */
     inline UpdateWorkspaceImagePermissionRequest& WithSharedAccountId(const char* value) { SetSharedAccountId(value); return *this;}
 

@@ -25,9 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>A CA certificate for an AWS account.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/Certificate">AWS API
-   * Reference</a></p>
+   * <p>A CA certificate for an Amazon Web Services account.</p><p><h3>See Also:</h3>
+   * <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/Certificate">AWS
+   * API Reference</a></p>
    */
   class AWS_RDS_API Certificate
   {

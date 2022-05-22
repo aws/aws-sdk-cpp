@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 DeleteTableRequest::DeleteTableRequest() : 
     m_catalogIdHasBeenSet(false),
     m_databaseNameHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_transactionIdHasBeenSet(false)
 {
 }
 
@@ -38,6 +39,12 @@ Aws::String DeleteTableRequest::SerializePayload() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_transactionIdHasBeenSet)
+  {
+   payload.WithString("TransactionId", m_transactionId);
 
   }
 

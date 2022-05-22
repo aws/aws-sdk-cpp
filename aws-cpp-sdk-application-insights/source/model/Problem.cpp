@@ -30,7 +30,10 @@ Problem::Problem() :
     m_severityLevel(SeverityLevel::NOT_SET),
     m_severityLevelHasBeenSet(false),
     m_resourceGroupNameHasBeenSet(false),
-    m_feedbackHasBeenSet(false)
+    m_feedbackHasBeenSet(false),
+    m_recurringCount(0),
+    m_recurringCountHasBeenSet(false),
+    m_lastRecurrenceTimeHasBeenSet(false)
 {
 }
 
@@ -46,7 +49,10 @@ Problem::Problem(JsonView jsonValue) :
     m_severityLevel(SeverityLevel::NOT_SET),
     m_severityLevelHasBeenSet(false),
     m_resourceGroupNameHasBeenSet(false),
-    m_feedbackHasBeenSet(false)
+    m_feedbackHasBeenSet(false),
+    m_recurringCount(0),
+    m_recurringCountHasBeenSet(false),
+    m_lastRecurrenceTimeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -126,6 +132,20 @@ Problem& Problem::operator =(JsonView jsonValue)
     m_feedbackHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RecurringCount"))
+  {
+    m_recurringCount = jsonValue.GetInt64("RecurringCount");
+
+    m_recurringCountHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LastRecurrenceTime"))
+  {
+    m_lastRecurrenceTime = jsonValue.GetDouble("LastRecurrenceTime");
+
+    m_lastRecurrenceTimeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -192,6 +212,17 @@ JsonValue Problem::Jsonize() const
    }
    payload.WithObject("Feedback", std::move(feedbackJsonMap));
 
+  }
+
+  if(m_recurringCountHasBeenSet)
+  {
+   payload.WithInt64("RecurringCount", m_recurringCount);
+
+  }
+
+  if(m_lastRecurrenceTimeHasBeenSet)
+  {
+   payload.WithDouble("LastRecurrenceTime", m_lastRecurrenceTime.SecondsWithMSPrecision());
   }
 
   return payload;

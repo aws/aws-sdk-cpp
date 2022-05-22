@@ -153,42 +153,42 @@ namespace Model
 
 
     /**
-     * <p>Use to remove a mapping from the parent image.</p>
+     * <p>Use to remove a mapping from the base image.</p>
      */
     inline const Aws::String& GetNoDevice() const{ return m_noDevice; }
 
     /**
-     * <p>Use to remove a mapping from the parent image.</p>
+     * <p>Use to remove a mapping from the base image.</p>
      */
     inline bool NoDeviceHasBeenSet() const { return m_noDeviceHasBeenSet; }
 
     /**
-     * <p>Use to remove a mapping from the parent image.</p>
+     * <p>Use to remove a mapping from the base image.</p>
      */
     inline void SetNoDevice(const Aws::String& value) { m_noDeviceHasBeenSet = true; m_noDevice = value; }
 
     /**
-     * <p>Use to remove a mapping from the parent image.</p>
+     * <p>Use to remove a mapping from the base image.</p>
      */
     inline void SetNoDevice(Aws::String&& value) { m_noDeviceHasBeenSet = true; m_noDevice = std::move(value); }
 
     /**
-     * <p>Use to remove a mapping from the parent image.</p>
+     * <p>Use to remove a mapping from the base image.</p>
      */
     inline void SetNoDevice(const char* value) { m_noDeviceHasBeenSet = true; m_noDevice.assign(value); }
 
     /**
-     * <p>Use to remove a mapping from the parent image.</p>
+     * <p>Use to remove a mapping from the base image.</p>
      */
     inline InstanceBlockDeviceMapping& WithNoDevice(const Aws::String& value) { SetNoDevice(value); return *this;}
 
     /**
-     * <p>Use to remove a mapping from the parent image.</p>
+     * <p>Use to remove a mapping from the base image.</p>
      */
     inline InstanceBlockDeviceMapping& WithNoDevice(Aws::String&& value) { SetNoDevice(std::move(value)); return *this;}
 
     /**
-     * <p>Use to remove a mapping from the parent image.</p>
+     * <p>Use to remove a mapping from the base image.</p>
      */
     inline InstanceBlockDeviceMapping& WithNoDevice(const char* value) { SetNoDevice(value); return *this;}
 

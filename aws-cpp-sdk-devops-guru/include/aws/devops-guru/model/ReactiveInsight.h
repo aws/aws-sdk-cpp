@@ -125,32 +125,44 @@ namespace Model
 
 
     /**
-     * <p> The severity of a reactive insight. </p>
+     * <p>The severity of the insight. For more information, see <a
+     * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding
+     * insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
      */
     inline const InsightSeverity& GetSeverity() const{ return m_severity; }
 
     /**
-     * <p> The severity of a reactive insight. </p>
+     * <p>The severity of the insight. For more information, see <a
+     * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding
+     * insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
      */
     inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }
 
     /**
-     * <p> The severity of a reactive insight. </p>
+     * <p>The severity of the insight. For more information, see <a
+     * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding
+     * insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
      */
     inline void SetSeverity(const InsightSeverity& value) { m_severityHasBeenSet = true; m_severity = value; }
 
     /**
-     * <p> The severity of a reactive insight. </p>
+     * <p>The severity of the insight. For more information, see <a
+     * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding
+     * insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
      */
     inline void SetSeverity(InsightSeverity&& value) { m_severityHasBeenSet = true; m_severity = std::move(value); }
 
     /**
-     * <p> The severity of a reactive insight. </p>
+     * <p>The severity of the insight. For more information, see <a
+     * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding
+     * insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
      */
     inline ReactiveInsight& WithSeverity(const InsightSeverity& value) { SetSeverity(value); return *this;}
 
     /**
-     * <p> The severity of a reactive insight. </p>
+     * <p>The severity of the insight. For more information, see <a
+     * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding
+     * insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
      */
     inline ReactiveInsight& WithSeverity(InsightSeverity&& value) { SetSeverity(std::move(value)); return *this;}
 
@@ -225,60 +237,101 @@ namespace Model
 
 
     /**
-     * <p> The ID of the AWS System Manager OpsItem created for this insight. You must
-     * enable the creation of OpstItems insights before they are created for each
-     * insight. </p>
+     * <p> The ID of the Amazon Web Services System Manager OpsItem created for this
+     * insight. You must enable the creation of OpstItems insights before they are
+     * created for each insight. </p>
      */
     inline const Aws::String& GetSsmOpsItemId() const{ return m_ssmOpsItemId; }
 
     /**
-     * <p> The ID of the AWS System Manager OpsItem created for this insight. You must
-     * enable the creation of OpstItems insights before they are created for each
-     * insight. </p>
+     * <p> The ID of the Amazon Web Services System Manager OpsItem created for this
+     * insight. You must enable the creation of OpstItems insights before they are
+     * created for each insight. </p>
      */
     inline bool SsmOpsItemIdHasBeenSet() const { return m_ssmOpsItemIdHasBeenSet; }
 
     /**
-     * <p> The ID of the AWS System Manager OpsItem created for this insight. You must
-     * enable the creation of OpstItems insights before they are created for each
-     * insight. </p>
+     * <p> The ID of the Amazon Web Services System Manager OpsItem created for this
+     * insight. You must enable the creation of OpstItems insights before they are
+     * created for each insight. </p>
      */
     inline void SetSsmOpsItemId(const Aws::String& value) { m_ssmOpsItemIdHasBeenSet = true; m_ssmOpsItemId = value; }
 
     /**
-     * <p> The ID of the AWS System Manager OpsItem created for this insight. You must
-     * enable the creation of OpstItems insights before they are created for each
-     * insight. </p>
+     * <p> The ID of the Amazon Web Services System Manager OpsItem created for this
+     * insight. You must enable the creation of OpstItems insights before they are
+     * created for each insight. </p>
      */
     inline void SetSsmOpsItemId(Aws::String&& value) { m_ssmOpsItemIdHasBeenSet = true; m_ssmOpsItemId = std::move(value); }
 
     /**
-     * <p> The ID of the AWS System Manager OpsItem created for this insight. You must
-     * enable the creation of OpstItems insights before they are created for each
-     * insight. </p>
+     * <p> The ID of the Amazon Web Services System Manager OpsItem created for this
+     * insight. You must enable the creation of OpstItems insights before they are
+     * created for each insight. </p>
      */
     inline void SetSsmOpsItemId(const char* value) { m_ssmOpsItemIdHasBeenSet = true; m_ssmOpsItemId.assign(value); }
 
     /**
-     * <p> The ID of the AWS System Manager OpsItem created for this insight. You must
-     * enable the creation of OpstItems insights before they are created for each
-     * insight. </p>
+     * <p> The ID of the Amazon Web Services System Manager OpsItem created for this
+     * insight. You must enable the creation of OpstItems insights before they are
+     * created for each insight. </p>
      */
     inline ReactiveInsight& WithSsmOpsItemId(const Aws::String& value) { SetSsmOpsItemId(value); return *this;}
 
     /**
-     * <p> The ID of the AWS System Manager OpsItem created for this insight. You must
-     * enable the creation of OpstItems insights before they are created for each
-     * insight. </p>
+     * <p> The ID of the Amazon Web Services System Manager OpsItem created for this
+     * insight. You must enable the creation of OpstItems insights before they are
+     * created for each insight. </p>
      */
     inline ReactiveInsight& WithSsmOpsItemId(Aws::String&& value) { SetSsmOpsItemId(std::move(value)); return *this;}
 
     /**
-     * <p> The ID of the AWS System Manager OpsItem created for this insight. You must
-     * enable the creation of OpstItems insights before they are created for each
-     * insight. </p>
+     * <p> The ID of the Amazon Web Services System Manager OpsItem created for this
+     * insight. You must enable the creation of OpstItems insights before they are
+     * created for each insight. </p>
      */
     inline ReactiveInsight& WithSsmOpsItemId(const char* value) { SetSsmOpsItemId(value); return *this;}
+
+
+    /**
+     * <p>Describes the reactive insight.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>Describes the reactive insight.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>Describes the reactive insight.</p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /**
+     * <p>Describes the reactive insight.</p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+
+    /**
+     * <p>Describes the reactive insight.</p>
+     */
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+
+    /**
+     * <p>Describes the reactive insight.</p>
+     */
+    inline ReactiveInsight& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>Describes the reactive insight.</p>
+     */
+    inline ReactiveInsight& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>Describes the reactive insight.</p>
+     */
+    inline ReactiveInsight& WithDescription(const char* value) { SetDescription(value); return *this;}
 
   private:
 
@@ -302,6 +355,9 @@ namespace Model
 
     Aws::String m_ssmOpsItemId;
     bool m_ssmOpsItemIdHasBeenSet;
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet;
   };
 
 } // namespace Model

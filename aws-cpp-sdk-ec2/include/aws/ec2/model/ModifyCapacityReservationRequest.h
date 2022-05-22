@@ -80,22 +80,30 @@ namespace Model
 
 
     /**
-     * <p>The number of instances for which to reserve capacity.</p>
+     * <p>The number of instances for which to reserve capacity. The number of
+     * instances can't be increased or decreased by more than <code>1000</code> in a
+     * single request.</p>
      */
     inline int GetInstanceCount() const{ return m_instanceCount; }
 
     /**
-     * <p>The number of instances for which to reserve capacity.</p>
+     * <p>The number of instances for which to reserve capacity. The number of
+     * instances can't be increased or decreased by more than <code>1000</code> in a
+     * single request.</p>
      */
     inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
 
     /**
-     * <p>The number of instances for which to reserve capacity.</p>
+     * <p>The number of instances for which to reserve capacity. The number of
+     * instances can't be increased or decreased by more than <code>1000</code> in a
+     * single request.</p>
      */
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
 
     /**
-     * <p>The number of instances for which to reserve capacity.</p>
+     * <p>The number of instances for which to reserve capacity. The number of
+     * instances can't be increased or decreased by more than <code>1000</code> in a
+     * single request.</p>
      */
     inline ModifyCapacityReservationRequest& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
 
@@ -259,6 +267,27 @@ namespace Model
 
 
     /**
+     * <p>Reserved. Capacity Reservations you have created are accepted by default.</p>
+     */
+    inline bool GetAccept() const{ return m_accept; }
+
+    /**
+     * <p>Reserved. Capacity Reservations you have created are accepted by default.</p>
+     */
+    inline bool AcceptHasBeenSet() const { return m_acceptHasBeenSet; }
+
+    /**
+     * <p>Reserved. Capacity Reservations you have created are accepted by default.</p>
+     */
+    inline void SetAccept(bool value) { m_acceptHasBeenSet = true; m_accept = value; }
+
+    /**
+     * <p>Reserved. Capacity Reservations you have created are accepted by default.</p>
+     */
+    inline ModifyCapacityReservationRequest& WithAccept(bool value) { SetAccept(value); return *this;}
+
+
+    /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
      * required permissions, the error response is <code>DryRunOperation</code>.
@@ -290,6 +319,47 @@ namespace Model
      */
     inline ModifyCapacityReservationRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline const Aws::String& GetAdditionalInfo() const{ return m_additionalInfo; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline bool AdditionalInfoHasBeenSet() const { return m_additionalInfoHasBeenSet; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline void SetAdditionalInfo(const Aws::String& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = value; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline void SetAdditionalInfo(Aws::String&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = std::move(value); }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline void SetAdditionalInfo(const char* value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.assign(value); }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline ModifyCapacityReservationRequest& WithAdditionalInfo(const Aws::String& value) { SetAdditionalInfo(value); return *this;}
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline ModifyCapacityReservationRequest& WithAdditionalInfo(Aws::String&& value) { SetAdditionalInfo(std::move(value)); return *this;}
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline ModifyCapacityReservationRequest& WithAdditionalInfo(const char* value) { SetAdditionalInfo(value); return *this;}
+
   private:
 
     Aws::String m_capacityReservationId;
@@ -304,8 +374,14 @@ namespace Model
     EndDateType m_endDateType;
     bool m_endDateTypeHasBeenSet;
 
+    bool m_accept;
+    bool m_acceptHasBeenSet;
+
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
+    Aws::String m_additionalInfo;
+    bool m_additionalInfoHasBeenSet;
   };
 
 } // namespace Model

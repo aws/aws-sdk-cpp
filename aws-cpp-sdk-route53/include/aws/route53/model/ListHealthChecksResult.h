@@ -42,43 +42,50 @@ namespace Model
 
     /**
      * <p>A complex type that contains one <code>HealthCheck</code> element for each
-     * health check that is associated with the current AWS account.</p>
+     * health check that is associated with the current Amazon Web Services
+     * account.</p>
      */
     inline const Aws::Vector<HealthCheck>& GetHealthChecks() const{ return m_healthChecks; }
 
     /**
      * <p>A complex type that contains one <code>HealthCheck</code> element for each
-     * health check that is associated with the current AWS account.</p>
+     * health check that is associated with the current Amazon Web Services
+     * account.</p>
      */
     inline void SetHealthChecks(const Aws::Vector<HealthCheck>& value) { m_healthChecks = value; }
 
     /**
      * <p>A complex type that contains one <code>HealthCheck</code> element for each
-     * health check that is associated with the current AWS account.</p>
+     * health check that is associated with the current Amazon Web Services
+     * account.</p>
      */
     inline void SetHealthChecks(Aws::Vector<HealthCheck>&& value) { m_healthChecks = std::move(value); }
 
     /**
      * <p>A complex type that contains one <code>HealthCheck</code> element for each
-     * health check that is associated with the current AWS account.</p>
+     * health check that is associated with the current Amazon Web Services
+     * account.</p>
      */
     inline ListHealthChecksResult& WithHealthChecks(const Aws::Vector<HealthCheck>& value) { SetHealthChecks(value); return *this;}
 
     /**
      * <p>A complex type that contains one <code>HealthCheck</code> element for each
-     * health check that is associated with the current AWS account.</p>
+     * health check that is associated with the current Amazon Web Services
+     * account.</p>
      */
     inline ListHealthChecksResult& WithHealthChecks(Aws::Vector<HealthCheck>&& value) { SetHealthChecks(std::move(value)); return *this;}
 
     /**
      * <p>A complex type that contains one <code>HealthCheck</code> element for each
-     * health check that is associated with the current AWS account.</p>
+     * health check that is associated with the current Amazon Web Services
+     * account.</p>
      */
     inline ListHealthChecksResult& AddHealthChecks(const HealthCheck& value) { m_healthChecks.push_back(value); return *this; }
 
     /**
      * <p>A complex type that contains one <code>HealthCheck</code> element for each
-     * health check that is associated with the current AWS account.</p>
+     * health check that is associated with the current Amazon Web Services
+     * account.</p>
      */
     inline ListHealthChecksResult& AddHealthChecks(HealthCheck&& value) { m_healthChecks.push_back(std::move(value)); return *this; }
 

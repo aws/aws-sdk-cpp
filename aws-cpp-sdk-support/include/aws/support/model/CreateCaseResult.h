@@ -25,7 +25,7 @@ namespace Support
 namespace Model
 {
   /**
-   * <p>The AWS Support case ID returned by a successful completion of the
+   * <p>The support case ID returned by a successful completion of the
    * <a>CreateCase</a> operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/CreateCaseResponse">AWS
    * API Reference</a></p>
@@ -39,49 +39,49 @@ namespace Model
 
 
     /**
-     * <p>The AWS Support case ID requested or returned in the call. The case ID is an
+     * <p>The support case ID requested or returned in the call. The case ID is an
      * alphanumeric string in the following format:
      * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
     inline const Aws::String& GetCaseId() const{ return m_caseId; }
 
     /**
-     * <p>The AWS Support case ID requested or returned in the call. The case ID is an
+     * <p>The support case ID requested or returned in the call. The case ID is an
      * alphanumeric string in the following format:
      * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
     inline void SetCaseId(const Aws::String& value) { m_caseId = value; }
 
     /**
-     * <p>The AWS Support case ID requested or returned in the call. The case ID is an
+     * <p>The support case ID requested or returned in the call. The case ID is an
      * alphanumeric string in the following format:
      * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
     inline void SetCaseId(Aws::String&& value) { m_caseId = std::move(value); }
 
     /**
-     * <p>The AWS Support case ID requested or returned in the call. The case ID is an
+     * <p>The support case ID requested or returned in the call. The case ID is an
      * alphanumeric string in the following format:
      * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
     inline void SetCaseId(const char* value) { m_caseId.assign(value); }
 
     /**
-     * <p>The AWS Support case ID requested or returned in the call. The case ID is an
+     * <p>The support case ID requested or returned in the call. The case ID is an
      * alphanumeric string in the following format:
      * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
     inline CreateCaseResult& WithCaseId(const Aws::String& value) { SetCaseId(value); return *this;}
 
     /**
-     * <p>The AWS Support case ID requested or returned in the call. The case ID is an
+     * <p>The support case ID requested or returned in the call. The case ID is an
      * alphanumeric string in the following format:
      * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
     inline CreateCaseResult& WithCaseId(Aws::String&& value) { SetCaseId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Support case ID requested or returned in the call. The case ID is an
+     * <p>The support case ID requested or returned in the call. The case ID is an
      * alphanumeric string in the following format:
      * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */

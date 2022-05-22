@@ -20,13 +20,17 @@ namespace Model
 
 SidewalkSendDataToDevice::SidewalkSendDataToDevice() : 
     m_seq(0),
-    m_seqHasBeenSet(false)
+    m_seqHasBeenSet(false),
+    m_messageType(MessageType::NOT_SET),
+    m_messageTypeHasBeenSet(false)
 {
 }
 
 SidewalkSendDataToDevice::SidewalkSendDataToDevice(JsonView jsonValue) : 
     m_seq(0),
-    m_seqHasBeenSet(false)
+    m_seqHasBeenSet(false),
+    m_messageType(MessageType::NOT_SET),
+    m_messageTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -40,6 +44,13 @@ SidewalkSendDataToDevice& SidewalkSendDataToDevice::operator =(JsonView jsonValu
     m_seqHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MessageType"))
+  {
+    m_messageType = MessageTypeMapper::GetMessageTypeForName(jsonValue.GetString("MessageType"));
+
+    m_messageTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -51,6 +62,11 @@ JsonValue SidewalkSendDataToDevice::Jsonize() const
   {
    payload.WithInteger("Seq", m_seq);
 
+  }
+
+  if(m_messageTypeHasBeenSet)
+  {
+   payload.WithString("MessageType", MessageTypeMapper::GetNameForMessageType(m_messageType));
   }
 
   return payload;

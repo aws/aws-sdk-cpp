@@ -18,7 +18,8 @@ CreateLanguageModelRequest::CreateLanguageModelRequest() :
     m_baseModelName(BaseModelName::NOT_SET),
     m_baseModelNameHasBeenSet(false),
     m_modelNameHasBeenSet(false),
-    m_inputDataConfigHasBeenSet(false)
+    m_inputDataConfigHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -45,6 +46,17 @@ Aws::String CreateLanguageModelRequest::SerializePayload() const
   if(m_inputDataConfigHasBeenSet)
   {
    payload.WithObject("InputDataConfig", m_inputDataConfig.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

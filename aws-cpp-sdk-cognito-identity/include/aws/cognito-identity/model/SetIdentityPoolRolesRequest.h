@@ -177,8 +177,8 @@ namespace Model
      * <p>How users for a specific identity provider are to mapped to roles. This is a
      * string to <a>RoleMapping</a> object map. The string identifies the identity
      * provider, for example, "graph.facebook.com" or
-     * "cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p> <p>Up
-     * to 25 rules can be specified per identity provider.</p>
+     * "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
+     * <p>Up to 25 rules can be specified per identity provider.</p>
      */
     inline const Aws::Map<Aws::String, RoleMapping>& GetRoleMappings() const{ return m_roleMappings; }
 
@@ -186,8 +186,8 @@ namespace Model
      * <p>How users for a specific identity provider are to mapped to roles. This is a
      * string to <a>RoleMapping</a> object map. The string identifies the identity
      * provider, for example, "graph.facebook.com" or
-     * "cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p> <p>Up
-     * to 25 rules can be specified per identity provider.</p>
+     * "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
+     * <p>Up to 25 rules can be specified per identity provider.</p>
      */
     inline bool RoleMappingsHasBeenSet() const { return m_roleMappingsHasBeenSet; }
 
@@ -195,8 +195,8 @@ namespace Model
      * <p>How users for a specific identity provider are to mapped to roles. This is a
      * string to <a>RoleMapping</a> object map. The string identifies the identity
      * provider, for example, "graph.facebook.com" or
-     * "cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p> <p>Up
-     * to 25 rules can be specified per identity provider.</p>
+     * "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
+     * <p>Up to 25 rules can be specified per identity provider.</p>
      */
     inline void SetRoleMappings(const Aws::Map<Aws::String, RoleMapping>& value) { m_roleMappingsHasBeenSet = true; m_roleMappings = value; }
 
@@ -204,8 +204,8 @@ namespace Model
      * <p>How users for a specific identity provider are to mapped to roles. This is a
      * string to <a>RoleMapping</a> object map. The string identifies the identity
      * provider, for example, "graph.facebook.com" or
-     * "cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p> <p>Up
-     * to 25 rules can be specified per identity provider.</p>
+     * "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
+     * <p>Up to 25 rules can be specified per identity provider.</p>
      */
     inline void SetRoleMappings(Aws::Map<Aws::String, RoleMapping>&& value) { m_roleMappingsHasBeenSet = true; m_roleMappings = std::move(value); }
 
@@ -213,8 +213,8 @@ namespace Model
      * <p>How users for a specific identity provider are to mapped to roles. This is a
      * string to <a>RoleMapping</a> object map. The string identifies the identity
      * provider, for example, "graph.facebook.com" or
-     * "cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p> <p>Up
-     * to 25 rules can be specified per identity provider.</p>
+     * "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
+     * <p>Up to 25 rules can be specified per identity provider.</p>
      */
     inline SetIdentityPoolRolesRequest& WithRoleMappings(const Aws::Map<Aws::String, RoleMapping>& value) { SetRoleMappings(value); return *this;}
 
@@ -222,8 +222,8 @@ namespace Model
      * <p>How users for a specific identity provider are to mapped to roles. This is a
      * string to <a>RoleMapping</a> object map. The string identifies the identity
      * provider, for example, "graph.facebook.com" or
-     * "cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p> <p>Up
-     * to 25 rules can be specified per identity provider.</p>
+     * "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
+     * <p>Up to 25 rules can be specified per identity provider.</p>
      */
     inline SetIdentityPoolRolesRequest& WithRoleMappings(Aws::Map<Aws::String, RoleMapping>&& value) { SetRoleMappings(std::move(value)); return *this;}
 
@@ -231,8 +231,8 @@ namespace Model
      * <p>How users for a specific identity provider are to mapped to roles. This is a
      * string to <a>RoleMapping</a> object map. The string identifies the identity
      * provider, for example, "graph.facebook.com" or
-     * "cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p> <p>Up
-     * to 25 rules can be specified per identity provider.</p>
+     * "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
+     * <p>Up to 25 rules can be specified per identity provider.</p>
      */
     inline SetIdentityPoolRolesRequest& AddRoleMappings(const Aws::String& key, const RoleMapping& value) { m_roleMappingsHasBeenSet = true; m_roleMappings.emplace(key, value); return *this; }
 
@@ -240,8 +240,8 @@ namespace Model
      * <p>How users for a specific identity provider are to mapped to roles. This is a
      * string to <a>RoleMapping</a> object map. The string identifies the identity
      * provider, for example, "graph.facebook.com" or
-     * "cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p> <p>Up
-     * to 25 rules can be specified per identity provider.</p>
+     * "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
+     * <p>Up to 25 rules can be specified per identity provider.</p>
      */
     inline SetIdentityPoolRolesRequest& AddRoleMappings(Aws::String&& key, const RoleMapping& value) { m_roleMappingsHasBeenSet = true; m_roleMappings.emplace(std::move(key), value); return *this; }
 
@@ -249,8 +249,8 @@ namespace Model
      * <p>How users for a specific identity provider are to mapped to roles. This is a
      * string to <a>RoleMapping</a> object map. The string identifies the identity
      * provider, for example, "graph.facebook.com" or
-     * "cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p> <p>Up
-     * to 25 rules can be specified per identity provider.</p>
+     * "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
+     * <p>Up to 25 rules can be specified per identity provider.</p>
      */
     inline SetIdentityPoolRolesRequest& AddRoleMappings(const Aws::String& key, RoleMapping&& value) { m_roleMappingsHasBeenSet = true; m_roleMappings.emplace(key, std::move(value)); return *this; }
 
@@ -258,8 +258,8 @@ namespace Model
      * <p>How users for a specific identity provider are to mapped to roles. This is a
      * string to <a>RoleMapping</a> object map. The string identifies the identity
      * provider, for example, "graph.facebook.com" or
-     * "cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p> <p>Up
-     * to 25 rules can be specified per identity provider.</p>
+     * "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
+     * <p>Up to 25 rules can be specified per identity provider.</p>
      */
     inline SetIdentityPoolRolesRequest& AddRoleMappings(Aws::String&& key, RoleMapping&& value) { m_roleMappingsHasBeenSet = true; m_roleMappings.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -267,8 +267,8 @@ namespace Model
      * <p>How users for a specific identity provider are to mapped to roles. This is a
      * string to <a>RoleMapping</a> object map. The string identifies the identity
      * provider, for example, "graph.facebook.com" or
-     * "cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p> <p>Up
-     * to 25 rules can be specified per identity provider.</p>
+     * "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
+     * <p>Up to 25 rules can be specified per identity provider.</p>
      */
     inline SetIdentityPoolRolesRequest& AddRoleMappings(const char* key, RoleMapping&& value) { m_roleMappingsHasBeenSet = true; m_roleMappings.emplace(key, std::move(value)); return *this; }
 
@@ -276,8 +276,8 @@ namespace Model
      * <p>How users for a specific identity provider are to mapped to roles. This is a
      * string to <a>RoleMapping</a> object map. The string identifies the identity
      * provider, for example, "graph.facebook.com" or
-     * "cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p> <p>Up
-     * to 25 rules can be specified per identity provider.</p>
+     * "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
+     * <p>Up to 25 rules can be specified per identity provider.</p>
      */
     inline SetIdentityPoolRolesRequest& AddRoleMappings(const char* key, const RoleMapping& value) { m_roleMappingsHasBeenSet = true; m_roleMappings.emplace(key, value); return *this; }
 

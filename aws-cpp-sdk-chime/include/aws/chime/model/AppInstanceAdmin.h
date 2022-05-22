@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Promotes a user to the administrator role for the duration of an app
-   * instance.</p><p><h3>See Also:</h3>   <a
+   * <p>The details of an <code>AppInstanceAdmin</code>.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/AppInstanceAdmin">AWS
    * API Reference</a></p>
    */
@@ -41,73 +41,81 @@ namespace Model
 
 
     /**
-     * <p>The name and metadata of the app instance administrator.</p>
+     * <p>The <code>AppInstanceAdmin</code> data.</p>
      */
     inline const Identity& GetAdmin() const{ return m_admin; }
 
     /**
-     * <p>The name and metadata of the app instance administrator.</p>
+     * <p>The <code>AppInstanceAdmin</code> data.</p>
      */
     inline bool AdminHasBeenSet() const { return m_adminHasBeenSet; }
 
     /**
-     * <p>The name and metadata of the app instance administrator.</p>
+     * <p>The <code>AppInstanceAdmin</code> data.</p>
      */
     inline void SetAdmin(const Identity& value) { m_adminHasBeenSet = true; m_admin = value; }
 
     /**
-     * <p>The name and metadata of the app instance administrator.</p>
+     * <p>The <code>AppInstanceAdmin</code> data.</p>
      */
     inline void SetAdmin(Identity&& value) { m_adminHasBeenSet = true; m_admin = std::move(value); }
 
     /**
-     * <p>The name and metadata of the app instance administrator.</p>
+     * <p>The <code>AppInstanceAdmin</code> data.</p>
      */
     inline AppInstanceAdmin& WithAdmin(const Identity& value) { SetAdmin(value); return *this;}
 
     /**
-     * <p>The name and metadata of the app instance administrator.</p>
+     * <p>The <code>AppInstanceAdmin</code> data.</p>
      */
     inline AppInstanceAdmin& WithAdmin(Identity&& value) { SetAdmin(std::move(value)); return *this;}
 
 
     /**
-     * <p>The ARN of the app instance administrator.</p>
+     * <p>The ARN of the <code>AppInstance</code> for which the user is an
+     * administrator.</p>
      */
     inline const Aws::String& GetAppInstanceArn() const{ return m_appInstanceArn; }
 
     /**
-     * <p>The ARN of the app instance administrator.</p>
+     * <p>The ARN of the <code>AppInstance</code> for which the user is an
+     * administrator.</p>
      */
     inline bool AppInstanceArnHasBeenSet() const { return m_appInstanceArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the app instance administrator.</p>
+     * <p>The ARN of the <code>AppInstance</code> for which the user is an
+     * administrator.</p>
      */
     inline void SetAppInstanceArn(const Aws::String& value) { m_appInstanceArnHasBeenSet = true; m_appInstanceArn = value; }
 
     /**
-     * <p>The ARN of the app instance administrator.</p>
+     * <p>The ARN of the <code>AppInstance</code> for which the user is an
+     * administrator.</p>
      */
     inline void SetAppInstanceArn(Aws::String&& value) { m_appInstanceArnHasBeenSet = true; m_appInstanceArn = std::move(value); }
 
     /**
-     * <p>The ARN of the app instance administrator.</p>
+     * <p>The ARN of the <code>AppInstance</code> for which the user is an
+     * administrator.</p>
      */
     inline void SetAppInstanceArn(const char* value) { m_appInstanceArnHasBeenSet = true; m_appInstanceArn.assign(value); }
 
     /**
-     * <p>The ARN of the app instance administrator.</p>
+     * <p>The ARN of the <code>AppInstance</code> for which the user is an
+     * administrator.</p>
      */
     inline AppInstanceAdmin& WithAppInstanceArn(const Aws::String& value) { SetAppInstanceArn(value); return *this;}
 
     /**
-     * <p>The ARN of the app instance administrator.</p>
+     * <p>The ARN of the <code>AppInstance</code> for which the user is an
+     * administrator.</p>
      */
     inline AppInstanceAdmin& WithAppInstanceArn(Aws::String&& value) { SetAppInstanceArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the app instance administrator.</p>
+     * <p>The ARN of the <code>AppInstance</code> for which the user is an
+     * administrator.</p>
      */
     inline AppInstanceAdmin& WithAppInstanceArn(const char* value) { SetAppInstanceArn(value); return *this;}
 

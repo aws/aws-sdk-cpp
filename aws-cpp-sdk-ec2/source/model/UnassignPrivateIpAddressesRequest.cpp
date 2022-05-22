@@ -12,7 +12,8 @@ using namespace Aws::Utils;
 
 UnassignPrivateIpAddressesRequest::UnassignPrivateIpAddressesRequest() : 
     m_networkInterfaceIdHasBeenSet(false),
-    m_privateIpAddressesHasBeenSet(false)
+    m_privateIpAddressesHasBeenSet(false),
+    m_ipv4PrefixesHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,17 @@ Aws::String UnassignPrivateIpAddressesRequest::SerializePayload() const
       ss << "PrivateIpAddress." << privateIpAddressesCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       privateIpAddressesCount++;
+    }
+  }
+
+  if(m_ipv4PrefixesHasBeenSet)
+  {
+    unsigned ipv4PrefixesCount = 1;
+    for(auto& item : m_ipv4Prefixes)
+    {
+      ss << "Ipv4Prefix." << ipv4PrefixesCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      ipv4PrefixesCount++;
     }
   }
 

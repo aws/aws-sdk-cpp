@@ -25,9 +25,12 @@ namespace Model
 {
 
   /**
-   * <p>Defines the mapping between a field in the Confluence data source to a Amazon
-   * Kendra index field.</p> <p>You must first create the index field using the
-   * operation. </p><p><h3>See Also:</h3>   <a
+   * <p>&gt;Maps attributes or field names of Confluence pages to Amazon Kendra index
+   * field names. To create custom fields, use the <code>UpdateIndex</code> API
+   * before you map to Confluence fields. For more information, see <a
+   * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+   * data source fields</a>. The Confluence data source field names must exist in
+   * your Confluence custom metadata.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ConfluencePageToIndexFieldMapping">AWS
    * API Reference</a></p>
    */
@@ -41,32 +44,32 @@ namespace Model
 
 
     /**
-     * <p>The name of the field in the data source. </p>
+     * <p>The name of the field in the data source.</p>
      */
     inline const ConfluencePageFieldName& GetDataSourceFieldName() const{ return m_dataSourceFieldName; }
 
     /**
-     * <p>The name of the field in the data source. </p>
+     * <p>The name of the field in the data source.</p>
      */
     inline bool DataSourceFieldNameHasBeenSet() const { return m_dataSourceFieldNameHasBeenSet; }
 
     /**
-     * <p>The name of the field in the data source. </p>
+     * <p>The name of the field in the data source.</p>
      */
     inline void SetDataSourceFieldName(const ConfluencePageFieldName& value) { m_dataSourceFieldNameHasBeenSet = true; m_dataSourceFieldName = value; }
 
     /**
-     * <p>The name of the field in the data source. </p>
+     * <p>The name of the field in the data source.</p>
      */
     inline void SetDataSourceFieldName(ConfluencePageFieldName&& value) { m_dataSourceFieldNameHasBeenSet = true; m_dataSourceFieldName = std::move(value); }
 
     /**
-     * <p>The name of the field in the data source. </p>
+     * <p>The name of the field in the data source.</p>
      */
     inline ConfluencePageToIndexFieldMapping& WithDataSourceFieldName(const ConfluencePageFieldName& value) { SetDataSourceFieldName(value); return *this;}
 
     /**
-     * <p>The name of the field in the data source. </p>
+     * <p>The name of the field in the data source.</p>
      */
     inline ConfluencePageToIndexFieldMapping& WithDataSourceFieldName(ConfluencePageFieldName&& value) { SetDataSourceFieldName(std::move(value)); return *this;}
 

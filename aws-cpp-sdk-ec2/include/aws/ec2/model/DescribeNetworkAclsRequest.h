@@ -61,7 +61,7 @@ namespace Model
      * <p> <code>entry.rule-number</code> - The number of an entry (in other words,
      * rule) in the set of ACL entries.</p> </li> <li> <p> <code>network-acl-id</code>
      * - The ID of the network ACL.</p> </li> <li> <p> <code>owner-id</code> - The ID
-     * of the AWS account that owns the network ACL.</p> </li> <li> <p>
+     * of the Amazon Web Services account that owns the network ACL.</p> </li> <li> <p>
      * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
      * the resource. Use the tag key in the filter name and the tag value as the filter
      * value. For example, to find all resources that have a tag with the key
@@ -97,7 +97,7 @@ namespace Model
      * <p> <code>entry.rule-number</code> - The number of an entry (in other words,
      * rule) in the set of ACL entries.</p> </li> <li> <p> <code>network-acl-id</code>
      * - The ID of the network ACL.</p> </li> <li> <p> <code>owner-id</code> - The ID
-     * of the AWS account that owns the network ACL.</p> </li> <li> <p>
+     * of the Amazon Web Services account that owns the network ACL.</p> </li> <li> <p>
      * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
      * the resource. Use the tag key in the filter name and the tag value as the filter
      * value. For example, to find all resources that have a tag with the key
@@ -133,7 +133,7 @@ namespace Model
      * <p> <code>entry.rule-number</code> - The number of an entry (in other words,
      * rule) in the set of ACL entries.</p> </li> <li> <p> <code>network-acl-id</code>
      * - The ID of the network ACL.</p> </li> <li> <p> <code>owner-id</code> - The ID
-     * of the AWS account that owns the network ACL.</p> </li> <li> <p>
+     * of the Amazon Web Services account that owns the network ACL.</p> </li> <li> <p>
      * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
      * the resource. Use the tag key in the filter name and the tag value as the filter
      * value. For example, to find all resources that have a tag with the key
@@ -169,7 +169,7 @@ namespace Model
      * <p> <code>entry.rule-number</code> - The number of an entry (in other words,
      * rule) in the set of ACL entries.</p> </li> <li> <p> <code>network-acl-id</code>
      * - The ID of the network ACL.</p> </li> <li> <p> <code>owner-id</code> - The ID
-     * of the AWS account that owns the network ACL.</p> </li> <li> <p>
+     * of the Amazon Web Services account that owns the network ACL.</p> </li> <li> <p>
      * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
      * the resource. Use the tag key in the filter name and the tag value as the filter
      * value. For example, to find all resources that have a tag with the key
@@ -205,7 +205,7 @@ namespace Model
      * <p> <code>entry.rule-number</code> - The number of an entry (in other words,
      * rule) in the set of ACL entries.</p> </li> <li> <p> <code>network-acl-id</code>
      * - The ID of the network ACL.</p> </li> <li> <p> <code>owner-id</code> - The ID
-     * of the AWS account that owns the network ACL.</p> </li> <li> <p>
+     * of the Amazon Web Services account that owns the network ACL.</p> </li> <li> <p>
      * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
      * the resource. Use the tag key in the filter name and the tag value as the filter
      * value. For example, to find all resources that have a tag with the key
@@ -241,7 +241,7 @@ namespace Model
      * <p> <code>entry.rule-number</code> - The number of an entry (in other words,
      * rule) in the set of ACL entries.</p> </li> <li> <p> <code>network-acl-id</code>
      * - The ID of the network ACL.</p> </li> <li> <p> <code>owner-id</code> - The ID
-     * of the AWS account that owns the network ACL.</p> </li> <li> <p>
+     * of the Amazon Web Services account that owns the network ACL.</p> </li> <li> <p>
      * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
      * the resource. Use the tag key in the filter name and the tag value as the filter
      * value. For example, to find all resources that have a tag with the key
@@ -277,7 +277,7 @@ namespace Model
      * <p> <code>entry.rule-number</code> - The number of an entry (in other words,
      * rule) in the set of ACL entries.</p> </li> <li> <p> <code>network-acl-id</code>
      * - The ID of the network ACL.</p> </li> <li> <p> <code>owner-id</code> - The ID
-     * of the AWS account that owns the network ACL.</p> </li> <li> <p>
+     * of the Amazon Web Services account that owns the network ACL.</p> </li> <li> <p>
      * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
      * the resource. Use the tag key in the filter name and the tag value as the filter
      * value. For example, to find all resources that have a tag with the key
@@ -313,7 +313,7 @@ namespace Model
      * <p> <code>entry.rule-number</code> - The number of an entry (in other words,
      * rule) in the set of ACL entries.</p> </li> <li> <p> <code>network-acl-id</code>
      * - The ID of the network ACL.</p> </li> <li> <p> <code>owner-id</code> - The ID
-     * of the AWS account that owns the network ACL.</p> </li> <li> <p>
+     * of the Amazon Web Services account that owns the network ACL.</p> </li> <li> <p>
      * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
      * the resource. Use the tag key in the filter name and the tag value as the filter
      * value. For example, to find all resources that have a tag with the key

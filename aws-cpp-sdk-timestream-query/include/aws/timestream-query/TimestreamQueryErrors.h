@@ -50,7 +50,8 @@ enum class TimestreamQueryErrors
   CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INTERNAL_SERVER,
   INVALID_ENDPOINT,
-  QUERY_EXECUTION
+  QUERY_EXECUTION,
+  SERVICE_QUOTA_EXCEEDED
 };
 
 class AWS_TIMESTREAMQUERY_API TimestreamQueryError : public Aws::Client::AWSError<TimestreamQueryErrors>

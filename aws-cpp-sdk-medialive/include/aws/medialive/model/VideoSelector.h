@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/medialive/model/VideoSelectorColorSpace.h>
+#include <aws/medialive/model/VideoSelectorColorSpaceSettings.h>
 #include <aws/medialive/model/VideoSelectorColorSpaceUsage.h>
 #include <aws/medialive/model/VideoSelectorSettings.h>
 #include <utility>
@@ -81,6 +82,37 @@ namespace Model
      * if any conversion will be performed.
      */
     inline VideoSelector& WithColorSpace(VideoSelectorColorSpace&& value) { SetColorSpace(std::move(value)); return *this;}
+
+
+    /**
+     * Color space settings
+     */
+    inline const VideoSelectorColorSpaceSettings& GetColorSpaceSettings() const{ return m_colorSpaceSettings; }
+
+    /**
+     * Color space settings
+     */
+    inline bool ColorSpaceSettingsHasBeenSet() const { return m_colorSpaceSettingsHasBeenSet; }
+
+    /**
+     * Color space settings
+     */
+    inline void SetColorSpaceSettings(const VideoSelectorColorSpaceSettings& value) { m_colorSpaceSettingsHasBeenSet = true; m_colorSpaceSettings = value; }
+
+    /**
+     * Color space settings
+     */
+    inline void SetColorSpaceSettings(VideoSelectorColorSpaceSettings&& value) { m_colorSpaceSettingsHasBeenSet = true; m_colorSpaceSettings = std::move(value); }
+
+    /**
+     * Color space settings
+     */
+    inline VideoSelector& WithColorSpaceSettings(const VideoSelectorColorSpaceSettings& value) { SetColorSpaceSettings(value); return *this;}
+
+    /**
+     * Color space settings
+     */
+    inline VideoSelector& WithColorSpaceSettings(VideoSelectorColorSpaceSettings&& value) { SetColorSpaceSettings(std::move(value)); return *this;}
 
 
     /**
@@ -190,6 +222,9 @@ namespace Model
 
     VideoSelectorColorSpace m_colorSpace;
     bool m_colorSpaceHasBeenSet;
+
+    VideoSelectorColorSpaceSettings m_colorSpaceSettings;
+    bool m_colorSpaceSettingsHasBeenSet;
 
     VideoSelectorColorSpaceUsage m_colorSpaceUsage;
     bool m_colorSpaceUsageHasBeenSet;

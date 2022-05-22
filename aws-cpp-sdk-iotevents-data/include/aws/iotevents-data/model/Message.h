@@ -7,6 +7,7 @@
 #include <aws/iotevents-data/IoTEventsData_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/Array.h>
+#include <aws/iotevents-data/model/TimestampValue.h>
 #include <utility>
 
 namespace Aws
@@ -164,6 +165,37 @@ namespace Model
      */
     inline Message& WithPayload(Aws::Utils::ByteBuffer&& value) { SetPayload(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The timestamp associated with the message.</p>
+     */
+    inline const TimestampValue& GetTimestamp() const{ return m_timestamp; }
+
+    /**
+     * <p>The timestamp associated with the message.</p>
+     */
+    inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
+
+    /**
+     * <p>The timestamp associated with the message.</p>
+     */
+    inline void SetTimestamp(const TimestampValue& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
+
+    /**
+     * <p>The timestamp associated with the message.</p>
+     */
+    inline void SetTimestamp(TimestampValue&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
+
+    /**
+     * <p>The timestamp associated with the message.</p>
+     */
+    inline Message& WithTimestamp(const TimestampValue& value) { SetTimestamp(value); return *this;}
+
+    /**
+     * <p>The timestamp associated with the message.</p>
+     */
+    inline Message& WithTimestamp(TimestampValue&& value) { SetTimestamp(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_messageId;
@@ -174,6 +206,9 @@ namespace Model
 
     Aws::Utils::ByteBuffer m_payload;
     bool m_payloadHasBeenSet;
+
+    TimestampValue m_timestamp;
+    bool m_timestampHasBeenSet;
   };
 
 } // namespace Model

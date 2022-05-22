@@ -148,14 +148,14 @@ namespace Model
      * specifically references the federated user session in the <code>Principal</code>
      * element of the policy, the session has the permissions allowed by the policy.
      * These permissions are granted in addition to the permissions that are granted by
-     * the session policies.</p> <p>The plain text that you use for both inline and
+     * the session policies.</p> <p>The plaintext that you use for both inline and
      * managed session policies can't exceed 2,048 characters. The JSON policy
      * characters can be any ASCII character from the space character to the end of the
      * valid character list (\u0020 through \u00FF). It can also include the tab
      * (\u0009), linefeed (\u000A), and carriage return (\u000D) characters.</p> 
-     * <p>An AWS conversion compresses the passed session policies and session tags
-     * into a packed binary format that has a separate limit. Your request can fail for
-     * this limit even if your plain text meets the other requirements. The
+     * <p>An Amazon Web Services conversion compresses the passed session policies and
+     * session tags into a packed binary format that has a separate limit. Your request
+     * can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close
      * the policies and tags for your request are to the upper size limit. </p> 
      */
@@ -181,14 +181,14 @@ namespace Model
      * specifically references the federated user session in the <code>Principal</code>
      * element of the policy, the session has the permissions allowed by the policy.
      * These permissions are granted in addition to the permissions that are granted by
-     * the session policies.</p> <p>The plain text that you use for both inline and
+     * the session policies.</p> <p>The plaintext that you use for both inline and
      * managed session policies can't exceed 2,048 characters. The JSON policy
      * characters can be any ASCII character from the space character to the end of the
      * valid character list (\u0020 through \u00FF). It can also include the tab
      * (\u0009), linefeed (\u000A), and carriage return (\u000D) characters.</p> 
-     * <p>An AWS conversion compresses the passed session policies and session tags
-     * into a packed binary format that has a separate limit. Your request can fail for
-     * this limit even if your plain text meets the other requirements. The
+     * <p>An Amazon Web Services conversion compresses the passed session policies and
+     * session tags into a packed binary format that has a separate limit. Your request
+     * can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close
      * the policies and tags for your request are to the upper size limit. </p> 
      */
@@ -214,14 +214,14 @@ namespace Model
      * specifically references the federated user session in the <code>Principal</code>
      * element of the policy, the session has the permissions allowed by the policy.
      * These permissions are granted in addition to the permissions that are granted by
-     * the session policies.</p> <p>The plain text that you use for both inline and
+     * the session policies.</p> <p>The plaintext that you use for both inline and
      * managed session policies can't exceed 2,048 characters. The JSON policy
      * characters can be any ASCII character from the space character to the end of the
      * valid character list (\u0020 through \u00FF). It can also include the tab
      * (\u0009), linefeed (\u000A), and carriage return (\u000D) characters.</p> 
-     * <p>An AWS conversion compresses the passed session policies and session tags
-     * into a packed binary format that has a separate limit. Your request can fail for
-     * this limit even if your plain text meets the other requirements. The
+     * <p>An Amazon Web Services conversion compresses the passed session policies and
+     * session tags into a packed binary format that has a separate limit. Your request
+     * can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close
      * the policies and tags for your request are to the upper size limit. </p> 
      */
@@ -247,14 +247,14 @@ namespace Model
      * specifically references the federated user session in the <code>Principal</code>
      * element of the policy, the session has the permissions allowed by the policy.
      * These permissions are granted in addition to the permissions that are granted by
-     * the session policies.</p> <p>The plain text that you use for both inline and
+     * the session policies.</p> <p>The plaintext that you use for both inline and
      * managed session policies can't exceed 2,048 characters. The JSON policy
      * characters can be any ASCII character from the space character to the end of the
      * valid character list (\u0020 through \u00FF). It can also include the tab
      * (\u0009), linefeed (\u000A), and carriage return (\u000D) characters.</p> 
-     * <p>An AWS conversion compresses the passed session policies and session tags
-     * into a packed binary format that has a separate limit. Your request can fail for
-     * this limit even if your plain text meets the other requirements. The
+     * <p>An Amazon Web Services conversion compresses the passed session policies and
+     * session tags into a packed binary format that has a separate limit. Your request
+     * can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close
      * the policies and tags for your request are to the upper size limit. </p> 
      */
@@ -280,14 +280,14 @@ namespace Model
      * specifically references the federated user session in the <code>Principal</code>
      * element of the policy, the session has the permissions allowed by the policy.
      * These permissions are granted in addition to the permissions that are granted by
-     * the session policies.</p> <p>The plain text that you use for both inline and
+     * the session policies.</p> <p>The plaintext that you use for both inline and
      * managed session policies can't exceed 2,048 characters. The JSON policy
      * characters can be any ASCII character from the space character to the end of the
      * valid character list (\u0020 through \u00FF). It can also include the tab
      * (\u0009), linefeed (\u000A), and carriage return (\u000D) characters.</p> 
-     * <p>An AWS conversion compresses the passed session policies and session tags
-     * into a packed binary format that has a separate limit. Your request can fail for
-     * this limit even if your plain text meets the other requirements. The
+     * <p>An Amazon Web Services conversion compresses the passed session policies and
+     * session tags into a packed binary format that has a separate limit. Your request
+     * can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close
      * the policies and tags for your request are to the upper size limit. </p> 
      */
@@ -313,14 +313,14 @@ namespace Model
      * specifically references the federated user session in the <code>Principal</code>
      * element of the policy, the session has the permissions allowed by the policy.
      * These permissions are granted in addition to the permissions that are granted by
-     * the session policies.</p> <p>The plain text that you use for both inline and
+     * the session policies.</p> <p>The plaintext that you use for both inline and
      * managed session policies can't exceed 2,048 characters. The JSON policy
      * characters can be any ASCII character from the space character to the end of the
      * valid character list (\u0020 through \u00FF). It can also include the tab
      * (\u0009), linefeed (\u000A), and carriage return (\u000D) characters.</p> 
-     * <p>An AWS conversion compresses the passed session policies and session tags
-     * into a packed binary format that has a separate limit. Your request can fail for
-     * this limit even if your plain text meets the other requirements. The
+     * <p>An Amazon Web Services conversion compresses the passed session policies and
+     * session tags into a packed binary format that has a separate limit. Your request
+     * can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close
      * the policies and tags for your request are to the upper size limit. </p> 
      */
@@ -346,14 +346,14 @@ namespace Model
      * specifically references the federated user session in the <code>Principal</code>
      * element of the policy, the session has the permissions allowed by the policy.
      * These permissions are granted in addition to the permissions that are granted by
-     * the session policies.</p> <p>The plain text that you use for both inline and
+     * the session policies.</p> <p>The plaintext that you use for both inline and
      * managed session policies can't exceed 2,048 characters. The JSON policy
      * characters can be any ASCII character from the space character to the end of the
      * valid character list (\u0020 through \u00FF). It can also include the tab
      * (\u0009), linefeed (\u000A), and carriage return (\u000D) characters.</p> 
-     * <p>An AWS conversion compresses the passed session policies and session tags
-     * into a packed binary format that has a separate limit. Your request can fail for
-     * this limit even if your plain text meets the other requirements. The
+     * <p>An Amazon Web Services conversion compresses the passed session policies and
+     * session tags into a packed binary format that has a separate limit. Your request
+     * can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close
      * the policies and tags for your request are to the upper size limit. </p> 
      */
@@ -379,14 +379,14 @@ namespace Model
      * specifically references the federated user session in the <code>Principal</code>
      * element of the policy, the session has the permissions allowed by the policy.
      * These permissions are granted in addition to the permissions that are granted by
-     * the session policies.</p> <p>The plain text that you use for both inline and
+     * the session policies.</p> <p>The plaintext that you use for both inline and
      * managed session policies can't exceed 2,048 characters. The JSON policy
      * characters can be any ASCII character from the space character to the end of the
      * valid character list (\u0020 through \u00FF). It can also include the tab
      * (\u0009), linefeed (\u000A), and carriage return (\u000D) characters.</p> 
-     * <p>An AWS conversion compresses the passed session policies and session tags
-     * into a packed binary format that has a separate limit. Your request can fail for
-     * this limit even if your plain text meets the other requirements. The
+     * <p>An Amazon Web Services conversion compresses the passed session policies and
+     * session tags into a packed binary format that has a separate limit. Your request
+     * can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close
      * the policies and tags for your request are to the upper size limit. </p> 
      */
@@ -401,31 +401,31 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session
      * policy</a> to this operation. You can pass a single JSON policy document to use
      * as an inline session policy. You can also specify up to 10 managed policies to
-     * use as managed session policies. The plain text that you use for both inline and
+     * use as managed session policies. The plaintext that you use for both inline and
      * managed session policies can't exceed 2,048 characters. You can provide up to 10
      * managed policy ARNs. For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General
-     * Reference.</p> <p>This parameter is optional. However, if you do not pass any
-     * session policies, then the resulting federated user session has no
-     * permissions.</p> <p>When you pass session policies, the session permissions are
-     * the intersection of the IAM user policies and the session policies that you
-     * pass. This gives you a way to further restrict the permissions for a federated
-     * user. You cannot use session policies to grant more permissions than those that
-     * are defined in the permissions policy of the IAM user. For more information, see
-     * <a
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
+     * Amazon Web Services General Reference.</p> <p>This parameter is optional.
+     * However, if you do not pass any session policies, then the resulting federated
+     * user session has no permissions.</p> <p>When you pass session policies, the
+     * session permissions are the intersection of the IAM user policies and the
+     * session policies that you pass. This gives you a way to further restrict the
+     * permissions for a federated user. You cannot use session policies to grant more
+     * permissions than those that are defined in the permissions policy of the IAM
+     * user. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p> <p>The resulting credentials can
      * be used to access a resource that has a resource-based policy. If that policy
      * specifically references the federated user session in the <code>Principal</code>
      * element of the policy, the session has the permissions allowed by the policy.
      * These permissions are granted in addition to the permissions that are granted by
-     * the session policies.</p>  <p>An AWS conversion compresses the passed
-     * session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plain text
-     * meets the other requirements. The <code>PackedPolicySize</code> response element
-     * indicates by percentage how close the policies and tags for your request are to
-     * the upper size limit. </p> 
+     * the session policies.</p>  <p>An Amazon Web Services conversion compresses
+     * the passed session policies and session tags into a packed binary format that
+     * has a separate limit. Your request can fail for this limit even if your
+     * plaintext meets the other requirements. The <code>PackedPolicySize</code>
+     * response element indicates by percentage how close the policies and tags for
+     * your request are to the upper size limit. </p> 
      */
     inline const Aws::Vector<PolicyDescriptorType>& GetPolicyArns() const{ return m_policyArns; }
 
@@ -437,31 +437,31 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session
      * policy</a> to this operation. You can pass a single JSON policy document to use
      * as an inline session policy. You can also specify up to 10 managed policies to
-     * use as managed session policies. The plain text that you use for both inline and
+     * use as managed session policies. The plaintext that you use for both inline and
      * managed session policies can't exceed 2,048 characters. You can provide up to 10
      * managed policy ARNs. For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General
-     * Reference.</p> <p>This parameter is optional. However, if you do not pass any
-     * session policies, then the resulting federated user session has no
-     * permissions.</p> <p>When you pass session policies, the session permissions are
-     * the intersection of the IAM user policies and the session policies that you
-     * pass. This gives you a way to further restrict the permissions for a federated
-     * user. You cannot use session policies to grant more permissions than those that
-     * are defined in the permissions policy of the IAM user. For more information, see
-     * <a
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
+     * Amazon Web Services General Reference.</p> <p>This parameter is optional.
+     * However, if you do not pass any session policies, then the resulting federated
+     * user session has no permissions.</p> <p>When you pass session policies, the
+     * session permissions are the intersection of the IAM user policies and the
+     * session policies that you pass. This gives you a way to further restrict the
+     * permissions for a federated user. You cannot use session policies to grant more
+     * permissions than those that are defined in the permissions policy of the IAM
+     * user. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p> <p>The resulting credentials can
      * be used to access a resource that has a resource-based policy. If that policy
      * specifically references the federated user session in the <code>Principal</code>
      * element of the policy, the session has the permissions allowed by the policy.
      * These permissions are granted in addition to the permissions that are granted by
-     * the session policies.</p>  <p>An AWS conversion compresses the passed
-     * session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plain text
-     * meets the other requirements. The <code>PackedPolicySize</code> response element
-     * indicates by percentage how close the policies and tags for your request are to
-     * the upper size limit. </p> 
+     * the session policies.</p>  <p>An Amazon Web Services conversion compresses
+     * the passed session policies and session tags into a packed binary format that
+     * has a separate limit. Your request can fail for this limit even if your
+     * plaintext meets the other requirements. The <code>PackedPolicySize</code>
+     * response element indicates by percentage how close the policies and tags for
+     * your request are to the upper size limit. </p> 
      */
     inline bool PolicyArnsHasBeenSet() const { return m_policyArnsHasBeenSet; }
 
@@ -473,31 +473,31 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session
      * policy</a> to this operation. You can pass a single JSON policy document to use
      * as an inline session policy. You can also specify up to 10 managed policies to
-     * use as managed session policies. The plain text that you use for both inline and
+     * use as managed session policies. The plaintext that you use for both inline and
      * managed session policies can't exceed 2,048 characters. You can provide up to 10
      * managed policy ARNs. For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General
-     * Reference.</p> <p>This parameter is optional. However, if you do not pass any
-     * session policies, then the resulting federated user session has no
-     * permissions.</p> <p>When you pass session policies, the session permissions are
-     * the intersection of the IAM user policies and the session policies that you
-     * pass. This gives you a way to further restrict the permissions for a federated
-     * user. You cannot use session policies to grant more permissions than those that
-     * are defined in the permissions policy of the IAM user. For more information, see
-     * <a
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
+     * Amazon Web Services General Reference.</p> <p>This parameter is optional.
+     * However, if you do not pass any session policies, then the resulting federated
+     * user session has no permissions.</p> <p>When you pass session policies, the
+     * session permissions are the intersection of the IAM user policies and the
+     * session policies that you pass. This gives you a way to further restrict the
+     * permissions for a federated user. You cannot use session policies to grant more
+     * permissions than those that are defined in the permissions policy of the IAM
+     * user. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p> <p>The resulting credentials can
      * be used to access a resource that has a resource-based policy. If that policy
      * specifically references the federated user session in the <code>Principal</code>
      * element of the policy, the session has the permissions allowed by the policy.
      * These permissions are granted in addition to the permissions that are granted by
-     * the session policies.</p>  <p>An AWS conversion compresses the passed
-     * session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plain text
-     * meets the other requirements. The <code>PackedPolicySize</code> response element
-     * indicates by percentage how close the policies and tags for your request are to
-     * the upper size limit. </p> 
+     * the session policies.</p>  <p>An Amazon Web Services conversion compresses
+     * the passed session policies and session tags into a packed binary format that
+     * has a separate limit. Your request can fail for this limit even if your
+     * plaintext meets the other requirements. The <code>PackedPolicySize</code>
+     * response element indicates by percentage how close the policies and tags for
+     * your request are to the upper size limit. </p> 
      */
     inline void SetPolicyArns(const Aws::Vector<PolicyDescriptorType>& value) { m_policyArnsHasBeenSet = true; m_policyArns = value; }
 
@@ -509,31 +509,31 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session
      * policy</a> to this operation. You can pass a single JSON policy document to use
      * as an inline session policy. You can also specify up to 10 managed policies to
-     * use as managed session policies. The plain text that you use for both inline and
+     * use as managed session policies. The plaintext that you use for both inline and
      * managed session policies can't exceed 2,048 characters. You can provide up to 10
      * managed policy ARNs. For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General
-     * Reference.</p> <p>This parameter is optional. However, if you do not pass any
-     * session policies, then the resulting federated user session has no
-     * permissions.</p> <p>When you pass session policies, the session permissions are
-     * the intersection of the IAM user policies and the session policies that you
-     * pass. This gives you a way to further restrict the permissions for a federated
-     * user. You cannot use session policies to grant more permissions than those that
-     * are defined in the permissions policy of the IAM user. For more information, see
-     * <a
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
+     * Amazon Web Services General Reference.</p> <p>This parameter is optional.
+     * However, if you do not pass any session policies, then the resulting federated
+     * user session has no permissions.</p> <p>When you pass session policies, the
+     * session permissions are the intersection of the IAM user policies and the
+     * session policies that you pass. This gives you a way to further restrict the
+     * permissions for a federated user. You cannot use session policies to grant more
+     * permissions than those that are defined in the permissions policy of the IAM
+     * user. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p> <p>The resulting credentials can
      * be used to access a resource that has a resource-based policy. If that policy
      * specifically references the federated user session in the <code>Principal</code>
      * element of the policy, the session has the permissions allowed by the policy.
      * These permissions are granted in addition to the permissions that are granted by
-     * the session policies.</p>  <p>An AWS conversion compresses the passed
-     * session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plain text
-     * meets the other requirements. The <code>PackedPolicySize</code> response element
-     * indicates by percentage how close the policies and tags for your request are to
-     * the upper size limit. </p> 
+     * the session policies.</p>  <p>An Amazon Web Services conversion compresses
+     * the passed session policies and session tags into a packed binary format that
+     * has a separate limit. Your request can fail for this limit even if your
+     * plaintext meets the other requirements. The <code>PackedPolicySize</code>
+     * response element indicates by percentage how close the policies and tags for
+     * your request are to the upper size limit. </p> 
      */
     inline void SetPolicyArns(Aws::Vector<PolicyDescriptorType>&& value) { m_policyArnsHasBeenSet = true; m_policyArns = std::move(value); }
 
@@ -545,31 +545,31 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session
      * policy</a> to this operation. You can pass a single JSON policy document to use
      * as an inline session policy. You can also specify up to 10 managed policies to
-     * use as managed session policies. The plain text that you use for both inline and
+     * use as managed session policies. The plaintext that you use for both inline and
      * managed session policies can't exceed 2,048 characters. You can provide up to 10
      * managed policy ARNs. For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General
-     * Reference.</p> <p>This parameter is optional. However, if you do not pass any
-     * session policies, then the resulting federated user session has no
-     * permissions.</p> <p>When you pass session policies, the session permissions are
-     * the intersection of the IAM user policies and the session policies that you
-     * pass. This gives you a way to further restrict the permissions for a federated
-     * user. You cannot use session policies to grant more permissions than those that
-     * are defined in the permissions policy of the IAM user. For more information, see
-     * <a
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
+     * Amazon Web Services General Reference.</p> <p>This parameter is optional.
+     * However, if you do not pass any session policies, then the resulting federated
+     * user session has no permissions.</p> <p>When you pass session policies, the
+     * session permissions are the intersection of the IAM user policies and the
+     * session policies that you pass. This gives you a way to further restrict the
+     * permissions for a federated user. You cannot use session policies to grant more
+     * permissions than those that are defined in the permissions policy of the IAM
+     * user. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p> <p>The resulting credentials can
      * be used to access a resource that has a resource-based policy. If that policy
      * specifically references the federated user session in the <code>Principal</code>
      * element of the policy, the session has the permissions allowed by the policy.
      * These permissions are granted in addition to the permissions that are granted by
-     * the session policies.</p>  <p>An AWS conversion compresses the passed
-     * session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plain text
-     * meets the other requirements. The <code>PackedPolicySize</code> response element
-     * indicates by percentage how close the policies and tags for your request are to
-     * the upper size limit. </p> 
+     * the session policies.</p>  <p>An Amazon Web Services conversion compresses
+     * the passed session policies and session tags into a packed binary format that
+     * has a separate limit. Your request can fail for this limit even if your
+     * plaintext meets the other requirements. The <code>PackedPolicySize</code>
+     * response element indicates by percentage how close the policies and tags for
+     * your request are to the upper size limit. </p> 
      */
     inline GetFederationTokenRequest& WithPolicyArns(const Aws::Vector<PolicyDescriptorType>& value) { SetPolicyArns(value); return *this;}
 
@@ -581,31 +581,31 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session
      * policy</a> to this operation. You can pass a single JSON policy document to use
      * as an inline session policy. You can also specify up to 10 managed policies to
-     * use as managed session policies. The plain text that you use for both inline and
+     * use as managed session policies. The plaintext that you use for both inline and
      * managed session policies can't exceed 2,048 characters. You can provide up to 10
      * managed policy ARNs. For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General
-     * Reference.</p> <p>This parameter is optional. However, if you do not pass any
-     * session policies, then the resulting federated user session has no
-     * permissions.</p> <p>When you pass session policies, the session permissions are
-     * the intersection of the IAM user policies and the session policies that you
-     * pass. This gives you a way to further restrict the permissions for a federated
-     * user. You cannot use session policies to grant more permissions than those that
-     * are defined in the permissions policy of the IAM user. For more information, see
-     * <a
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
+     * Amazon Web Services General Reference.</p> <p>This parameter is optional.
+     * However, if you do not pass any session policies, then the resulting federated
+     * user session has no permissions.</p> <p>When you pass session policies, the
+     * session permissions are the intersection of the IAM user policies and the
+     * session policies that you pass. This gives you a way to further restrict the
+     * permissions for a federated user. You cannot use session policies to grant more
+     * permissions than those that are defined in the permissions policy of the IAM
+     * user. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p> <p>The resulting credentials can
      * be used to access a resource that has a resource-based policy. If that policy
      * specifically references the federated user session in the <code>Principal</code>
      * element of the policy, the session has the permissions allowed by the policy.
      * These permissions are granted in addition to the permissions that are granted by
-     * the session policies.</p>  <p>An AWS conversion compresses the passed
-     * session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plain text
-     * meets the other requirements. The <code>PackedPolicySize</code> response element
-     * indicates by percentage how close the policies and tags for your request are to
-     * the upper size limit. </p> 
+     * the session policies.</p>  <p>An Amazon Web Services conversion compresses
+     * the passed session policies and session tags into a packed binary format that
+     * has a separate limit. Your request can fail for this limit even if your
+     * plaintext meets the other requirements. The <code>PackedPolicySize</code>
+     * response element indicates by percentage how close the policies and tags for
+     * your request are to the upper size limit. </p> 
      */
     inline GetFederationTokenRequest& WithPolicyArns(Aws::Vector<PolicyDescriptorType>&& value) { SetPolicyArns(std::move(value)); return *this;}
 
@@ -617,31 +617,31 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session
      * policy</a> to this operation. You can pass a single JSON policy document to use
      * as an inline session policy. You can also specify up to 10 managed policies to
-     * use as managed session policies. The plain text that you use for both inline and
+     * use as managed session policies. The plaintext that you use for both inline and
      * managed session policies can't exceed 2,048 characters. You can provide up to 10
      * managed policy ARNs. For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General
-     * Reference.</p> <p>This parameter is optional. However, if you do not pass any
-     * session policies, then the resulting federated user session has no
-     * permissions.</p> <p>When you pass session policies, the session permissions are
-     * the intersection of the IAM user policies and the session policies that you
-     * pass. This gives you a way to further restrict the permissions for a federated
-     * user. You cannot use session policies to grant more permissions than those that
-     * are defined in the permissions policy of the IAM user. For more information, see
-     * <a
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
+     * Amazon Web Services General Reference.</p> <p>This parameter is optional.
+     * However, if you do not pass any session policies, then the resulting federated
+     * user session has no permissions.</p> <p>When you pass session policies, the
+     * session permissions are the intersection of the IAM user policies and the
+     * session policies that you pass. This gives you a way to further restrict the
+     * permissions for a federated user. You cannot use session policies to grant more
+     * permissions than those that are defined in the permissions policy of the IAM
+     * user. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p> <p>The resulting credentials can
      * be used to access a resource that has a resource-based policy. If that policy
      * specifically references the federated user session in the <code>Principal</code>
      * element of the policy, the session has the permissions allowed by the policy.
      * These permissions are granted in addition to the permissions that are granted by
-     * the session policies.</p>  <p>An AWS conversion compresses the passed
-     * session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plain text
-     * meets the other requirements. The <code>PackedPolicySize</code> response element
-     * indicates by percentage how close the policies and tags for your request are to
-     * the upper size limit. </p> 
+     * the session policies.</p>  <p>An Amazon Web Services conversion compresses
+     * the passed session policies and session tags into a packed binary format that
+     * has a separate limit. Your request can fail for this limit even if your
+     * plaintext meets the other requirements. The <code>PackedPolicySize</code>
+     * response element indicates by percentage how close the policies and tags for
+     * your request are to the upper size limit. </p> 
      */
     inline GetFederationTokenRequest& AddPolicyArns(const PolicyDescriptorType& value) { m_policyArnsHasBeenSet = true; m_policyArns.push_back(value); return *this; }
 
@@ -653,31 +653,31 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session
      * policy</a> to this operation. You can pass a single JSON policy document to use
      * as an inline session policy. You can also specify up to 10 managed policies to
-     * use as managed session policies. The plain text that you use for both inline and
+     * use as managed session policies. The plaintext that you use for both inline and
      * managed session policies can't exceed 2,048 characters. You can provide up to 10
      * managed policy ARNs. For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General
-     * Reference.</p> <p>This parameter is optional. However, if you do not pass any
-     * session policies, then the resulting federated user session has no
-     * permissions.</p> <p>When you pass session policies, the session permissions are
-     * the intersection of the IAM user policies and the session policies that you
-     * pass. This gives you a way to further restrict the permissions for a federated
-     * user. You cannot use session policies to grant more permissions than those that
-     * are defined in the permissions policy of the IAM user. For more information, see
-     * <a
+     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the
+     * Amazon Web Services General Reference.</p> <p>This parameter is optional.
+     * However, if you do not pass any session policies, then the resulting federated
+     * user session has no permissions.</p> <p>When you pass session policies, the
+     * session permissions are the intersection of the IAM user policies and the
+     * session policies that you pass. This gives you a way to further restrict the
+     * permissions for a federated user. You cannot use session policies to grant more
+     * permissions than those that are defined in the permissions policy of the IAM
+     * user. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p> <p>The resulting credentials can
      * be used to access a resource that has a resource-based policy. If that policy
      * specifically references the federated user session in the <code>Principal</code>
      * element of the policy, the session has the permissions allowed by the policy.
      * These permissions are granted in addition to the permissions that are granted by
-     * the session policies.</p>  <p>An AWS conversion compresses the passed
-     * session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plain text
-     * meets the other requirements. The <code>PackedPolicySize</code> response element
-     * indicates by percentage how close the policies and tags for your request are to
-     * the upper size limit. </p> 
+     * the session policies.</p>  <p>An Amazon Web Services conversion compresses
+     * the passed session policies and session tags into a packed binary format that
+     * has a separate limit. Your request can fail for this limit even if your
+     * plaintext meets the other requirements. The <code>PackedPolicySize</code>
+     * response element indicates by percentage how close the policies and tags for
+     * your request are to the upper size limit. </p> 
      */
     inline GetFederationTokenRequest& AddPolicyArns(PolicyDescriptorType&& value) { m_policyArnsHasBeenSet = true; m_policyArns.push_back(std::move(value)); return *this; }
 
@@ -686,9 +686,10 @@ namespace Model
      * <p>The duration, in seconds, that the session should last. Acceptable durations
      * for federation sessions range from 900 seconds (15 minutes) to 129,600 seconds
      * (36 hours), with 43,200 seconds (12 hours) as the default. Sessions obtained
-     * using AWS account root user credentials are restricted to a maximum of 3,600
-     * seconds (one hour). If the specified duration is longer than one hour, the
-     * session obtained by using root user credentials defaults to one hour.</p>
+     * using Amazon Web Services account root user credentials are restricted to a
+     * maximum of 3,600 seconds (one hour). If the specified duration is longer than
+     * one hour, the session obtained by using root user credentials defaults to one
+     * hour.</p>
      */
     inline int GetDurationSeconds() const{ return m_durationSeconds; }
 
@@ -696,9 +697,10 @@ namespace Model
      * <p>The duration, in seconds, that the session should last. Acceptable durations
      * for federation sessions range from 900 seconds (15 minutes) to 129,600 seconds
      * (36 hours), with 43,200 seconds (12 hours) as the default. Sessions obtained
-     * using AWS account root user credentials are restricted to a maximum of 3,600
-     * seconds (one hour). If the specified duration is longer than one hour, the
-     * session obtained by using root user credentials defaults to one hour.</p>
+     * using Amazon Web Services account root user credentials are restricted to a
+     * maximum of 3,600 seconds (one hour). If the specified duration is longer than
+     * one hour, the session obtained by using root user credentials defaults to one
+     * hour.</p>
      */
     inline bool DurationSecondsHasBeenSet() const { return m_durationSecondsHasBeenSet; }
 
@@ -706,9 +708,10 @@ namespace Model
      * <p>The duration, in seconds, that the session should last. Acceptable durations
      * for federation sessions range from 900 seconds (15 minutes) to 129,600 seconds
      * (36 hours), with 43,200 seconds (12 hours) as the default. Sessions obtained
-     * using AWS account root user credentials are restricted to a maximum of 3,600
-     * seconds (one hour). If the specified duration is longer than one hour, the
-     * session obtained by using root user credentials defaults to one hour.</p>
+     * using Amazon Web Services account root user credentials are restricted to a
+     * maximum of 3,600 seconds (one hour). If the specified duration is longer than
+     * one hour, the session obtained by using root user credentials defaults to one
+     * hour.</p>
      */
     inline void SetDurationSeconds(int value) { m_durationSecondsHasBeenSet = true; m_durationSeconds = value; }
 
@@ -716,9 +719,10 @@ namespace Model
      * <p>The duration, in seconds, that the session should last. Acceptable durations
      * for federation sessions range from 900 seconds (15 minutes) to 129,600 seconds
      * (36 hours), with 43,200 seconds (12 hours) as the default. Sessions obtained
-     * using AWS account root user credentials are restricted to a maximum of 3,600
-     * seconds (one hour). If the specified duration is longer than one hour, the
-     * session obtained by using root user credentials defaults to one hour.</p>
+     * using Amazon Web Services account root user credentials are restricted to a
+     * maximum of 3,600 seconds (one hour). If the specified duration is longer than
+     * one hour, the session obtained by using root user credentials defaults to one
+     * hour.</p>
      */
     inline GetFederationTokenRequest& WithDurationSeconds(int value) { SetDurationSeconds(value); return *this;}
 
@@ -728,14 +732,14 @@ namespace Model
      * associated value. For more information about session tags, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing
      * Session Tags in STS</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is
-     * optional. You can pass up to 50 session tags. The plain text session tag keys
+     * optional. You can pass up to 50 session tags. The plaintext session tag keys
      * can’t exceed 128 characters and the values can’t exceed 256 characters. For
      * these and additional limits, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
-     * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An AWS
-     * conversion compresses the passed session policies and session tags into a packed
-     * binary format that has a separate limit. Your request can fail for this limit
-     * even if your plain text meets the other requirements. The
+     * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An
+     * Amazon Web Services conversion compresses the passed session policies and
+     * session tags into a packed binary format that has a separate limit. Your request
+     * can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close
      * the policies and tags for your request are to the upper size limit. </p> 
      * <p>You can pass a session tag with the same key as a tag that is already
@@ -756,14 +760,14 @@ namespace Model
      * associated value. For more information about session tags, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing
      * Session Tags in STS</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is
-     * optional. You can pass up to 50 session tags. The plain text session tag keys
+     * optional. You can pass up to 50 session tags. The plaintext session tag keys
      * can’t exceed 128 characters and the values can’t exceed 256 characters. For
      * these and additional limits, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
-     * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An AWS
-     * conversion compresses the passed session policies and session tags into a packed
-     * binary format that has a separate limit. Your request can fail for this limit
-     * even if your plain text meets the other requirements. The
+     * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An
+     * Amazon Web Services conversion compresses the passed session policies and
+     * session tags into a packed binary format that has a separate limit. Your request
+     * can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close
      * the policies and tags for your request are to the upper size limit. </p> 
      * <p>You can pass a session tag with the same key as a tag that is already
@@ -784,14 +788,14 @@ namespace Model
      * associated value. For more information about session tags, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing
      * Session Tags in STS</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is
-     * optional. You can pass up to 50 session tags. The plain text session tag keys
+     * optional. You can pass up to 50 session tags. The plaintext session tag keys
      * can’t exceed 128 characters and the values can’t exceed 256 characters. For
      * these and additional limits, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
-     * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An AWS
-     * conversion compresses the passed session policies and session tags into a packed
-     * binary format that has a separate limit. Your request can fail for this limit
-     * even if your plain text meets the other requirements. The
+     * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An
+     * Amazon Web Services conversion compresses the passed session policies and
+     * session tags into a packed binary format that has a separate limit. Your request
+     * can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close
      * the policies and tags for your request are to the upper size limit. </p> 
      * <p>You can pass a session tag with the same key as a tag that is already
@@ -812,14 +816,14 @@ namespace Model
      * associated value. For more information about session tags, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing
      * Session Tags in STS</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is
-     * optional. You can pass up to 50 session tags. The plain text session tag keys
+     * optional. You can pass up to 50 session tags. The plaintext session tag keys
      * can’t exceed 128 characters and the values can’t exceed 256 characters. For
      * these and additional limits, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
-     * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An AWS
-     * conversion compresses the passed session policies and session tags into a packed
-     * binary format that has a separate limit. Your request can fail for this limit
-     * even if your plain text meets the other requirements. The
+     * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An
+     * Amazon Web Services conversion compresses the passed session policies and
+     * session tags into a packed binary format that has a separate limit. Your request
+     * can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close
      * the policies and tags for your request are to the upper size limit. </p> 
      * <p>You can pass a session tag with the same key as a tag that is already
@@ -840,14 +844,14 @@ namespace Model
      * associated value. For more information about session tags, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing
      * Session Tags in STS</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is
-     * optional. You can pass up to 50 session tags. The plain text session tag keys
+     * optional. You can pass up to 50 session tags. The plaintext session tag keys
      * can’t exceed 128 characters and the values can’t exceed 256 characters. For
      * these and additional limits, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
-     * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An AWS
-     * conversion compresses the passed session policies and session tags into a packed
-     * binary format that has a separate limit. Your request can fail for this limit
-     * even if your plain text meets the other requirements. The
+     * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An
+     * Amazon Web Services conversion compresses the passed session policies and
+     * session tags into a packed binary format that has a separate limit. Your request
+     * can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close
      * the policies and tags for your request are to the upper size limit. </p> 
      * <p>You can pass a session tag with the same key as a tag that is already
@@ -868,14 +872,14 @@ namespace Model
      * associated value. For more information about session tags, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing
      * Session Tags in STS</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is
-     * optional. You can pass up to 50 session tags. The plain text session tag keys
+     * optional. You can pass up to 50 session tags. The plaintext session tag keys
      * can’t exceed 128 characters and the values can’t exceed 256 characters. For
      * these and additional limits, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
-     * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An AWS
-     * conversion compresses the passed session policies and session tags into a packed
-     * binary format that has a separate limit. Your request can fail for this limit
-     * even if your plain text meets the other requirements. The
+     * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An
+     * Amazon Web Services conversion compresses the passed session policies and
+     * session tags into a packed binary format that has a separate limit. Your request
+     * can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close
      * the policies and tags for your request are to the upper size limit. </p> 
      * <p>You can pass a session tag with the same key as a tag that is already
@@ -896,14 +900,14 @@ namespace Model
      * associated value. For more information about session tags, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing
      * Session Tags in STS</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is
-     * optional. You can pass up to 50 session tags. The plain text session tag keys
+     * optional. You can pass up to 50 session tags. The plaintext session tag keys
      * can’t exceed 128 characters and the values can’t exceed 256 characters. For
      * these and additional limits, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
-     * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An AWS
-     * conversion compresses the passed session policies and session tags into a packed
-     * binary format that has a separate limit. Your request can fail for this limit
-     * even if your plain text meets the other requirements. The
+     * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An
+     * Amazon Web Services conversion compresses the passed session policies and
+     * session tags into a packed binary format that has a separate limit. Your request
+     * can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close
      * the policies and tags for your request are to the upper size limit. </p> 
      * <p>You can pass a session tag with the same key as a tag that is already
@@ -924,14 +928,14 @@ namespace Model
      * associated value. For more information about session tags, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing
      * Session Tags in STS</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is
-     * optional. You can pass up to 50 session tags. The plain text session tag keys
+     * optional. You can pass up to 50 session tags. The plaintext session tag keys
      * can’t exceed 128 characters and the values can’t exceed 256 characters. For
      * these and additional limits, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
-     * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An AWS
-     * conversion compresses the passed session policies and session tags into a packed
-     * binary format that has a separate limit. Your request can fail for this limit
-     * even if your plain text meets the other requirements. The
+     * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An
+     * Amazon Web Services conversion compresses the passed session policies and
+     * session tags into a packed binary format that has a separate limit. Your request
+     * can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close
      * the policies and tags for your request are to the upper size limit. </p> 
      * <p>You can pass a session tag with the same key as a tag that is already

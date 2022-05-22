@@ -156,50 +156,50 @@ namespace Model
 
 
     /**
-     * <p>The tags to attach to the new wireless gateway. Tags are metadata that can be
-     * used to manage a resource.</p>
+     * <p>The tags to attach to the new wireless gateway. Tags are metadata that you
+     * can use to manage a resource.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The tags to attach to the new wireless gateway. Tags are metadata that can be
-     * used to manage a resource.</p>
+     * <p>The tags to attach to the new wireless gateway. Tags are metadata that you
+     * can use to manage a resource.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>The tags to attach to the new wireless gateway. Tags are metadata that can be
-     * used to manage a resource.</p>
+     * <p>The tags to attach to the new wireless gateway. Tags are metadata that you
+     * can use to manage a resource.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The tags to attach to the new wireless gateway. Tags are metadata that can be
-     * used to manage a resource.</p>
+     * <p>The tags to attach to the new wireless gateway. Tags are metadata that you
+     * can use to manage a resource.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The tags to attach to the new wireless gateway. Tags are metadata that can be
-     * used to manage a resource.</p>
+     * <p>The tags to attach to the new wireless gateway. Tags are metadata that you
+     * can use to manage a resource.</p>
      */
     inline CreateWirelessGatewayRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The tags to attach to the new wireless gateway. Tags are metadata that can be
-     * used to manage a resource.</p>
+     * <p>The tags to attach to the new wireless gateway. Tags are metadata that you
+     * can use to manage a resource.</p>
      */
     inline CreateWirelessGatewayRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The tags to attach to the new wireless gateway. Tags are metadata that can be
-     * used to manage a resource.</p>
+     * <p>The tags to attach to the new wireless gateway. Tags are metadata that you
+     * can use to manage a resource.</p>
      */
     inline CreateWirelessGatewayRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>The tags to attach to the new wireless gateway. Tags are metadata that can be
-     * used to manage a resource.</p>
+     * <p>The tags to attach to the new wireless gateway. Tags are metadata that you
+     * can use to manage a resource.</p>
      */
     inline CreateWirelessGatewayRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

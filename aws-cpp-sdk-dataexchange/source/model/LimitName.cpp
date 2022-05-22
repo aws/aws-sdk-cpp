@@ -28,10 +28,20 @@ namespace Aws
         static const int Assets_per_import_job_from_Amazon_S3_HASH = HashingUtils::HashString("Assets per import job from Amazon S3");
         static const int Asset_per_export_job_from_Amazon_S3_HASH = HashingUtils::HashString("Asset per export job from Amazon S3");
         static const int Asset_size_in_GB_HASH = HashingUtils::HashString("Asset size in GB");
-        static const int Concurrent_in_progress_jobs_to_import_assets_from_Amazon_S3_HASH = HashingUtils::HashString("Concurrent in progress jobs to import assets from Amazon S3");
-        static const int Concurrent_in_progress_jobs_to_import_assets_from_a_signed_URL_HASH = HashingUtils::HashString("Concurrent in progress jobs to import assets from a signed URL");
         static const int Concurrent_in_progress_jobs_to_export_assets_to_Amazon_S3_HASH = HashingUtils::HashString("Concurrent in progress jobs to export assets to Amazon S3");
         static const int Concurrent_in_progress_jobs_to_export_assets_to_a_signed_URL_HASH = HashingUtils::HashString("Concurrent in progress jobs to export assets to a signed URL");
+        static const int Concurrent_in_progress_jobs_to_import_assets_from_Amazon_S3_HASH = HashingUtils::HashString("Concurrent in progress jobs to import assets from Amazon S3");
+        static const int Concurrent_in_progress_jobs_to_import_assets_from_a_signed_URL_HASH = HashingUtils::HashString("Concurrent in progress jobs to import assets from a signed URL");
+        static const int Concurrent_in_progress_jobs_to_export_revisions_to_Amazon_S3_HASH = HashingUtils::HashString("Concurrent in progress jobs to export revisions to Amazon S3");
+        static const int Event_actions_per_account_HASH = HashingUtils::HashString("Event actions per account");
+        static const int Auto_export_event_actions_per_data_set_HASH = HashingUtils::HashString("Auto export event actions per data set");
+        static const int Amazon_Redshift_datashare_assets_per_import_job_from_Redshift_HASH = HashingUtils::HashString("Amazon Redshift datashare assets per import job from Redshift");
+        static const int Concurrent_in_progress_jobs_to_import_assets_from_Amazon_Redshift_datashares_HASH = HashingUtils::HashString("Concurrent in progress jobs to import assets from Amazon Redshift datashares");
+        static const int Revisions_per_Amazon_Redshift_datashare_data_set_HASH = HashingUtils::HashString("Revisions per Amazon Redshift datashare data set");
+        static const int Amazon_Redshift_datashare_assets_per_revision_HASH = HashingUtils::HashString("Amazon Redshift datashare assets per revision");
+        static const int Concurrent_in_progress_jobs_to_import_assets_from_an_API_Gateway_API_HASH = HashingUtils::HashString("Concurrent in progress jobs to import assets from an API Gateway API");
+        static const int Amazon_API_Gateway_API_assets_per_revision_HASH = HashingUtils::HashString("Amazon API Gateway API assets per revision");
+        static const int Revisions_per_Amazon_API_Gateway_API_data_set_HASH = HashingUtils::HashString("Revisions per Amazon API Gateway API data set");
 
 
         LimitName GetLimitNameForName(const Aws::String& name)
@@ -69,6 +79,14 @@ namespace Aws
           {
             return LimitName::Asset_size_in_GB;
           }
+          else if (hashCode == Concurrent_in_progress_jobs_to_export_assets_to_Amazon_S3_HASH)
+          {
+            return LimitName::Concurrent_in_progress_jobs_to_export_assets_to_Amazon_S3;
+          }
+          else if (hashCode == Concurrent_in_progress_jobs_to_export_assets_to_a_signed_URL_HASH)
+          {
+            return LimitName::Concurrent_in_progress_jobs_to_export_assets_to_a_signed_URL;
+          }
           else if (hashCode == Concurrent_in_progress_jobs_to_import_assets_from_Amazon_S3_HASH)
           {
             return LimitName::Concurrent_in_progress_jobs_to_import_assets_from_Amazon_S3;
@@ -77,13 +95,45 @@ namespace Aws
           {
             return LimitName::Concurrent_in_progress_jobs_to_import_assets_from_a_signed_URL;
           }
-          else if (hashCode == Concurrent_in_progress_jobs_to_export_assets_to_Amazon_S3_HASH)
+          else if (hashCode == Concurrent_in_progress_jobs_to_export_revisions_to_Amazon_S3_HASH)
           {
-            return LimitName::Concurrent_in_progress_jobs_to_export_assets_to_Amazon_S3;
+            return LimitName::Concurrent_in_progress_jobs_to_export_revisions_to_Amazon_S3;
           }
-          else if (hashCode == Concurrent_in_progress_jobs_to_export_assets_to_a_signed_URL_HASH)
+          else if (hashCode == Event_actions_per_account_HASH)
           {
-            return LimitName::Concurrent_in_progress_jobs_to_export_assets_to_a_signed_URL;
+            return LimitName::Event_actions_per_account;
+          }
+          else if (hashCode == Auto_export_event_actions_per_data_set_HASH)
+          {
+            return LimitName::Auto_export_event_actions_per_data_set;
+          }
+          else if (hashCode == Amazon_Redshift_datashare_assets_per_import_job_from_Redshift_HASH)
+          {
+            return LimitName::Amazon_Redshift_datashare_assets_per_import_job_from_Redshift;
+          }
+          else if (hashCode == Concurrent_in_progress_jobs_to_import_assets_from_Amazon_Redshift_datashares_HASH)
+          {
+            return LimitName::Concurrent_in_progress_jobs_to_import_assets_from_Amazon_Redshift_datashares;
+          }
+          else if (hashCode == Revisions_per_Amazon_Redshift_datashare_data_set_HASH)
+          {
+            return LimitName::Revisions_per_Amazon_Redshift_datashare_data_set;
+          }
+          else if (hashCode == Amazon_Redshift_datashare_assets_per_revision_HASH)
+          {
+            return LimitName::Amazon_Redshift_datashare_assets_per_revision;
+          }
+          else if (hashCode == Concurrent_in_progress_jobs_to_import_assets_from_an_API_Gateway_API_HASH)
+          {
+            return LimitName::Concurrent_in_progress_jobs_to_import_assets_from_an_API_Gateway_API;
+          }
+          else if (hashCode == Amazon_API_Gateway_API_assets_per_revision_HASH)
+          {
+            return LimitName::Amazon_API_Gateway_API_assets_per_revision;
+          }
+          else if (hashCode == Revisions_per_Amazon_API_Gateway_API_data_set_HASH)
+          {
+            return LimitName::Revisions_per_Amazon_API_Gateway_API_data_set;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -115,14 +165,34 @@ namespace Aws
             return "Asset per export job from Amazon S3";
           case LimitName::Asset_size_in_GB:
             return "Asset size in GB";
-          case LimitName::Concurrent_in_progress_jobs_to_import_assets_from_Amazon_S3:
-            return "Concurrent in progress jobs to import assets from Amazon S3";
-          case LimitName::Concurrent_in_progress_jobs_to_import_assets_from_a_signed_URL:
-            return "Concurrent in progress jobs to import assets from a signed URL";
           case LimitName::Concurrent_in_progress_jobs_to_export_assets_to_Amazon_S3:
             return "Concurrent in progress jobs to export assets to Amazon S3";
           case LimitName::Concurrent_in_progress_jobs_to_export_assets_to_a_signed_URL:
             return "Concurrent in progress jobs to export assets to a signed URL";
+          case LimitName::Concurrent_in_progress_jobs_to_import_assets_from_Amazon_S3:
+            return "Concurrent in progress jobs to import assets from Amazon S3";
+          case LimitName::Concurrent_in_progress_jobs_to_import_assets_from_a_signed_URL:
+            return "Concurrent in progress jobs to import assets from a signed URL";
+          case LimitName::Concurrent_in_progress_jobs_to_export_revisions_to_Amazon_S3:
+            return "Concurrent in progress jobs to export revisions to Amazon S3";
+          case LimitName::Event_actions_per_account:
+            return "Event actions per account";
+          case LimitName::Auto_export_event_actions_per_data_set:
+            return "Auto export event actions per data set";
+          case LimitName::Amazon_Redshift_datashare_assets_per_import_job_from_Redshift:
+            return "Amazon Redshift datashare assets per import job from Redshift";
+          case LimitName::Concurrent_in_progress_jobs_to_import_assets_from_Amazon_Redshift_datashares:
+            return "Concurrent in progress jobs to import assets from Amazon Redshift datashares";
+          case LimitName::Revisions_per_Amazon_Redshift_datashare_data_set:
+            return "Revisions per Amazon Redshift datashare data set";
+          case LimitName::Amazon_Redshift_datashare_assets_per_revision:
+            return "Amazon Redshift datashare assets per revision";
+          case LimitName::Concurrent_in_progress_jobs_to_import_assets_from_an_API_Gateway_API:
+            return "Concurrent in progress jobs to import assets from an API Gateway API";
+          case LimitName::Amazon_API_Gateway_API_assets_per_revision:
+            return "Amazon API Gateway API assets per revision";
+          case LimitName::Revisions_per_Amazon_API_Gateway_API_data_set:
+            return "Revisions per Amazon API Gateway API data set";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

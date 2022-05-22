@@ -43,56 +43,56 @@ namespace Model
     /**
      * <p>The name of the self-managed object storage server. This value is the IP
      * address or Domain Name Service (DNS) name of the object storage server. An agent
-     * uses this host name to mount the object storage server in a network. </p>
+     * uses this hostname to mount the object storage server in a network. </p>
      */
     inline const Aws::String& GetServerHostname() const{ return m_serverHostname; }
 
     /**
      * <p>The name of the self-managed object storage server. This value is the IP
      * address or Domain Name Service (DNS) name of the object storage server. An agent
-     * uses this host name to mount the object storage server in a network. </p>
+     * uses this hostname to mount the object storage server in a network. </p>
      */
     inline bool ServerHostnameHasBeenSet() const { return m_serverHostnameHasBeenSet; }
 
     /**
      * <p>The name of the self-managed object storage server. This value is the IP
      * address or Domain Name Service (DNS) name of the object storage server. An agent
-     * uses this host name to mount the object storage server in a network. </p>
+     * uses this hostname to mount the object storage server in a network. </p>
      */
     inline void SetServerHostname(const Aws::String& value) { m_serverHostnameHasBeenSet = true; m_serverHostname = value; }
 
     /**
      * <p>The name of the self-managed object storage server. This value is the IP
      * address or Domain Name Service (DNS) name of the object storage server. An agent
-     * uses this host name to mount the object storage server in a network. </p>
+     * uses this hostname to mount the object storage server in a network. </p>
      */
     inline void SetServerHostname(Aws::String&& value) { m_serverHostnameHasBeenSet = true; m_serverHostname = std::move(value); }
 
     /**
      * <p>The name of the self-managed object storage server. This value is the IP
      * address or Domain Name Service (DNS) name of the object storage server. An agent
-     * uses this host name to mount the object storage server in a network. </p>
+     * uses this hostname to mount the object storage server in a network. </p>
      */
     inline void SetServerHostname(const char* value) { m_serverHostnameHasBeenSet = true; m_serverHostname.assign(value); }
 
     /**
      * <p>The name of the self-managed object storage server. This value is the IP
      * address or Domain Name Service (DNS) name of the object storage server. An agent
-     * uses this host name to mount the object storage server in a network. </p>
+     * uses this hostname to mount the object storage server in a network. </p>
      */
     inline CreateLocationObjectStorageRequest& WithServerHostname(const Aws::String& value) { SetServerHostname(value); return *this;}
 
     /**
      * <p>The name of the self-managed object storage server. This value is the IP
      * address or Domain Name Service (DNS) name of the object storage server. An agent
-     * uses this host name to mount the object storage server in a network. </p>
+     * uses this hostname to mount the object storage server in a network. </p>
      */
     inline CreateLocationObjectStorageRequest& WithServerHostname(Aws::String&& value) { SetServerHostname(std::move(value)); return *this;}
 
     /**
      * <p>The name of the self-managed object storage server. This value is the IP
      * address or Domain Name Service (DNS) name of the object storage server. An agent
-     * uses this host name to mount the object storage server in a network. </p>
+     * uses this hostname to mount the object storage server in a network. </p>
      */
     inline CreateLocationObjectStorageRequest& WithServerHostname(const char* value) { SetServerHostname(value); return *this;}
 

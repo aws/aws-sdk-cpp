@@ -69,37 +69,37 @@ namespace Model
 
 
     /**
-     * <p>The ID string assigned to each message. </p>
+     * <p>The ID string assigned to each message.</p>
      */
     inline const Aws::String& GetMessageId() const{ return m_messageId; }
 
     /**
-     * <p>The ID string assigned to each message. </p>
+     * <p>The ID string assigned to each message.</p>
      */
     inline void SetMessageId(const Aws::String& value) { m_messageId = value; }
 
     /**
-     * <p>The ID string assigned to each message. </p>
+     * <p>The ID string assigned to each message.</p>
      */
     inline void SetMessageId(Aws::String&& value) { m_messageId = std::move(value); }
 
     /**
-     * <p>The ID string assigned to each message. </p>
+     * <p>The ID string assigned to each message.</p>
      */
     inline void SetMessageId(const char* value) { m_messageId.assign(value); }
 
     /**
-     * <p>The ID string assigned to each message. </p>
+     * <p>The ID string assigned to each message.</p>
      */
     inline SendChannelMessageResult& WithMessageId(const Aws::String& value) { SetMessageId(value); return *this;}
 
     /**
-     * <p>The ID string assigned to each message. </p>
+     * <p>The ID string assigned to each message.</p>
      */
     inline SendChannelMessageResult& WithMessageId(Aws::String&& value) { SetMessageId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID string assigned to each message. </p>
+     * <p>The ID string assigned to each message.</p>
      */
     inline SendChannelMessageResult& WithMessageId(const char* value) { SetMessageId(value); return *this;}
 

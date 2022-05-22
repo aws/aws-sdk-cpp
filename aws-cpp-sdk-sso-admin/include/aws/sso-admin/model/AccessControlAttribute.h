@@ -25,12 +25,13 @@ namespace Model
 {
 
   /**
-   * <p>These are AWS SSO identity store attributes that you can configure for use in
-   * attributes-based access control (ABAC). You can create permission policies that
-   * determine who can access your AWS resources based upon the configured attribute
-   * value(s). When you enable ABAC and specify AccessControlAttributes, AWS SSO
-   * passes the attribute(s) value of the authenticated user into IAM for use in
-   * policy evaluation.</p><p><h3>See Also:</h3>   <a
+   * <p>These are Amazon Web Services SSO identity store attributes that you can
+   * configure for use in attributes-based access control (ABAC). You can create
+   * permissions policies that determine who can access your Amazon Web Services
+   * resources based upon the configured attribute values. When you enable ABAC and
+   * specify <code>AccessControlAttributes</code>, Amazon Web Services SSO passes the
+   * attribute values of the authenticated user into IAM for use in policy
+   * evaluation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/AccessControlAttribute">AWS
    * API Reference</a></p>
    */
@@ -46,56 +47,56 @@ namespace Model
     /**
      * <p>The name of the attribute associated with your identities in your identity
      * source. This is used to map a specified attribute in your identity source with
-     * an attribute in AWS SSO.</p>
+     * an attribute in Amazon Web Services SSO.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
 
     /**
      * <p>The name of the attribute associated with your identities in your identity
      * source. This is used to map a specified attribute in your identity source with
-     * an attribute in AWS SSO.</p>
+     * an attribute in Amazon Web Services SSO.</p>
      */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
      * <p>The name of the attribute associated with your identities in your identity
      * source. This is used to map a specified attribute in your identity source with
-     * an attribute in AWS SSO.</p>
+     * an attribute in Amazon Web Services SSO.</p>
      */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
      * <p>The name of the attribute associated with your identities in your identity
      * source. This is used to map a specified attribute in your identity source with
-     * an attribute in AWS SSO.</p>
+     * an attribute in Amazon Web Services SSO.</p>
      */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
      * <p>The name of the attribute associated with your identities in your identity
      * source. This is used to map a specified attribute in your identity source with
-     * an attribute in AWS SSO.</p>
+     * an attribute in Amazon Web Services SSO.</p>
      */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     /**
      * <p>The name of the attribute associated with your identities in your identity
      * source. This is used to map a specified attribute in your identity source with
-     * an attribute in AWS SSO.</p>
+     * an attribute in Amazon Web Services SSO.</p>
      */
     inline AccessControlAttribute& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
     /**
      * <p>The name of the attribute associated with your identities in your identity
      * source. This is used to map a specified attribute in your identity source with
-     * an attribute in AWS SSO.</p>
+     * an attribute in Amazon Web Services SSO.</p>
      */
     inline AccessControlAttribute& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
      * <p>The name of the attribute associated with your identities in your identity
      * source. This is used to map a specified attribute in your identity source with
-     * an attribute in AWS SSO.</p>
+     * an attribute in Amazon Web Services SSO.</p>
      */
     inline AccessControlAttribute& WithKey(const char* value) { SetKey(value); return *this;}
 

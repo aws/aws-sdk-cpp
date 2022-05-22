@@ -7,6 +7,7 @@
 #include <aws/customer-profiles/CustomerProfiles_EXPORTS.h>
 #include <aws/customer-profiles/CustomerProfilesRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/customer-profiles/model/ObjectFilter.h>
 #include <utility>
 
 namespace Aws
@@ -222,6 +223,49 @@ namespace Model
      */
     inline ListProfileObjectsRequest& WithProfileId(const char* value) { SetProfileId(value); return *this;}
 
+
+    /**
+     * <p>Applies a filter to the response to include profile objects with the
+     * specified index values. This filter is only supported for ObjectTypeName _asset,
+     * _case and _order.</p>
+     */
+    inline const ObjectFilter& GetObjectFilter() const{ return m_objectFilter; }
+
+    /**
+     * <p>Applies a filter to the response to include profile objects with the
+     * specified index values. This filter is only supported for ObjectTypeName _asset,
+     * _case and _order.</p>
+     */
+    inline bool ObjectFilterHasBeenSet() const { return m_objectFilterHasBeenSet; }
+
+    /**
+     * <p>Applies a filter to the response to include profile objects with the
+     * specified index values. This filter is only supported for ObjectTypeName _asset,
+     * _case and _order.</p>
+     */
+    inline void SetObjectFilter(const ObjectFilter& value) { m_objectFilterHasBeenSet = true; m_objectFilter = value; }
+
+    /**
+     * <p>Applies a filter to the response to include profile objects with the
+     * specified index values. This filter is only supported for ObjectTypeName _asset,
+     * _case and _order.</p>
+     */
+    inline void SetObjectFilter(ObjectFilter&& value) { m_objectFilterHasBeenSet = true; m_objectFilter = std::move(value); }
+
+    /**
+     * <p>Applies a filter to the response to include profile objects with the
+     * specified index values. This filter is only supported for ObjectTypeName _asset,
+     * _case and _order.</p>
+     */
+    inline ListProfileObjectsRequest& WithObjectFilter(const ObjectFilter& value) { SetObjectFilter(value); return *this;}
+
+    /**
+     * <p>Applies a filter to the response to include profile objects with the
+     * specified index values. This filter is only supported for ObjectTypeName _asset,
+     * _case and _order.</p>
+     */
+    inline ListProfileObjectsRequest& WithObjectFilter(ObjectFilter&& value) { SetObjectFilter(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_nextToken;
@@ -238,6 +282,9 @@ namespace Model
 
     Aws::String m_profileId;
     bool m_profileIdHasBeenSet;
+
+    ObjectFilter m_objectFilter;
+    bool m_objectFilterHasBeenSet;
   };
 
 } // namespace Model

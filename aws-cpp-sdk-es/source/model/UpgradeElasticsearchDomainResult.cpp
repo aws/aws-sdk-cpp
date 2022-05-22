@@ -48,6 +48,12 @@ UpgradeElasticsearchDomainResult& UpgradeElasticsearchDomainResult::operator =(c
 
   }
 
+  if(jsonValue.ValueExists("ChangeProgressDetails"))
+  {
+    m_changeProgressDetails = jsonValue.GetObject("ChangeProgressDetails");
+
+  }
+
 
 
   return *this;

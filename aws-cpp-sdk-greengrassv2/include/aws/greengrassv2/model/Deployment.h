@@ -42,56 +42,56 @@ namespace Model
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the target AWS IoT thing or thing group.</p>
+     * of the target IoT thing or thing group.</p>
      */
     inline const Aws::String& GetTargetArn() const{ return m_targetArn; }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the target AWS IoT thing or thing group.</p>
+     * of the target IoT thing or thing group.</p>
      */
     inline bool TargetArnHasBeenSet() const { return m_targetArnHasBeenSet; }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the target AWS IoT thing or thing group.</p>
+     * of the target IoT thing or thing group.</p>
      */
     inline void SetTargetArn(const Aws::String& value) { m_targetArnHasBeenSet = true; m_targetArn = value; }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the target AWS IoT thing or thing group.</p>
+     * of the target IoT thing or thing group.</p>
      */
     inline void SetTargetArn(Aws::String&& value) { m_targetArnHasBeenSet = true; m_targetArn = std::move(value); }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the target AWS IoT thing or thing group.</p>
+     * of the target IoT thing or thing group.</p>
      */
     inline void SetTargetArn(const char* value) { m_targetArnHasBeenSet = true; m_targetArn.assign(value); }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the target AWS IoT thing or thing group.</p>
+     * of the target IoT thing or thing group.</p>
      */
     inline Deployment& WithTargetArn(const Aws::String& value) { SetTargetArn(value); return *this;}
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the target AWS IoT thing or thing group.</p>
+     * of the target IoT thing or thing group.</p>
      */
     inline Deployment& WithTargetArn(Aws::String&& value) { SetTargetArn(std::move(value)); return *this;}
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
-     * of the target AWS IoT thing or thing group.</p>
+     * of the target IoT thing or thing group.</p>
      */
     inline Deployment& WithTargetArn(const char* value) { SetTargetArn(value); return *this;}
 
@@ -179,74 +179,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the deployment.</p> <p>You can create deployments without names.
-     * If you create a deployment without a name, the AWS IoT Greengrass V2 console
-     * shows the deployment name as <code>&lt;targetType&gt;:&lt;targetName&gt;</code>,
-     * where <code>targetType</code> and <code>targetName</code> are the type and name
-     * of the deployment target.</p>
+     * <p>The name of the deployment.</p>
      */
     inline const Aws::String& GetDeploymentName() const{ return m_deploymentName; }
 
     /**
-     * <p>The name of the deployment.</p> <p>You can create deployments without names.
-     * If you create a deployment without a name, the AWS IoT Greengrass V2 console
-     * shows the deployment name as <code>&lt;targetType&gt;:&lt;targetName&gt;</code>,
-     * where <code>targetType</code> and <code>targetName</code> are the type and name
-     * of the deployment target.</p>
+     * <p>The name of the deployment.</p>
      */
     inline bool DeploymentNameHasBeenSet() const { return m_deploymentNameHasBeenSet; }
 
     /**
-     * <p>The name of the deployment.</p> <p>You can create deployments without names.
-     * If you create a deployment without a name, the AWS IoT Greengrass V2 console
-     * shows the deployment name as <code>&lt;targetType&gt;:&lt;targetName&gt;</code>,
-     * where <code>targetType</code> and <code>targetName</code> are the type and name
-     * of the deployment target.</p>
+     * <p>The name of the deployment.</p>
      */
     inline void SetDeploymentName(const Aws::String& value) { m_deploymentNameHasBeenSet = true; m_deploymentName = value; }
 
     /**
-     * <p>The name of the deployment.</p> <p>You can create deployments without names.
-     * If you create a deployment without a name, the AWS IoT Greengrass V2 console
-     * shows the deployment name as <code>&lt;targetType&gt;:&lt;targetName&gt;</code>,
-     * where <code>targetType</code> and <code>targetName</code> are the type and name
-     * of the deployment target.</p>
+     * <p>The name of the deployment.</p>
      */
     inline void SetDeploymentName(Aws::String&& value) { m_deploymentNameHasBeenSet = true; m_deploymentName = std::move(value); }
 
     /**
-     * <p>The name of the deployment.</p> <p>You can create deployments without names.
-     * If you create a deployment without a name, the AWS IoT Greengrass V2 console
-     * shows the deployment name as <code>&lt;targetType&gt;:&lt;targetName&gt;</code>,
-     * where <code>targetType</code> and <code>targetName</code> are the type and name
-     * of the deployment target.</p>
+     * <p>The name of the deployment.</p>
      */
     inline void SetDeploymentName(const char* value) { m_deploymentNameHasBeenSet = true; m_deploymentName.assign(value); }
 
     /**
-     * <p>The name of the deployment.</p> <p>You can create deployments without names.
-     * If you create a deployment without a name, the AWS IoT Greengrass V2 console
-     * shows the deployment name as <code>&lt;targetType&gt;:&lt;targetName&gt;</code>,
-     * where <code>targetType</code> and <code>targetName</code> are the type and name
-     * of the deployment target.</p>
+     * <p>The name of the deployment.</p>
      */
     inline Deployment& WithDeploymentName(const Aws::String& value) { SetDeploymentName(value); return *this;}
 
     /**
-     * <p>The name of the deployment.</p> <p>You can create deployments without names.
-     * If you create a deployment without a name, the AWS IoT Greengrass V2 console
-     * shows the deployment name as <code>&lt;targetType&gt;:&lt;targetName&gt;</code>,
-     * where <code>targetType</code> and <code>targetName</code> are the type and name
-     * of the deployment target.</p>
+     * <p>The name of the deployment.</p>
      */
     inline Deployment& WithDeploymentName(Aws::String&& value) { SetDeploymentName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the deployment.</p> <p>You can create deployments without names.
-     * If you create a deployment without a name, the AWS IoT Greengrass V2 console
-     * shows the deployment name as <code>&lt;targetType&gt;:&lt;targetName&gt;</code>,
-     * where <code>targetType</code> and <code>targetName</code> are the type and name
-     * of the deployment target.</p>
+     * <p>The name of the deployment.</p>
      */
     inline Deployment& WithDeploymentName(const char* value) { SetDeploymentName(value); return *this;}
 

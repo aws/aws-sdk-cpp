@@ -5,6 +5,7 @@
 
 #include <aws/wafv2/model/ManagedRuleGroupStatement.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/wafv2/model/Statement.h>
 
 #include <utility>
 
@@ -21,17 +22,30 @@ namespace Model
 ManagedRuleGroupStatement::ManagedRuleGroupStatement() : 
     m_vendorNameHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_excludedRulesHasBeenSet(false)
+    m_versionHasBeenSet(false),
+    m_excludedRulesHasBeenSet(false),
+    m_scopeDownStatementHasBeenSet(false),
+    m_managedRuleGroupConfigsHasBeenSet(false)
 {
 }
 
 ManagedRuleGroupStatement::ManagedRuleGroupStatement(JsonView jsonValue) : 
     m_vendorNameHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_excludedRulesHasBeenSet(false)
+    m_versionHasBeenSet(false),
+    m_excludedRulesHasBeenSet(false),
+    m_scopeDownStatementHasBeenSet(false),
+    m_managedRuleGroupConfigsHasBeenSet(false)
 {
   *this = jsonValue;
 }
+
+const Statement& ManagedRuleGroupStatement::GetScopeDownStatement() const{ return *m_scopeDownStatement; }
+bool ManagedRuleGroupStatement::ScopeDownStatementHasBeenSet() const { return m_scopeDownStatementHasBeenSet; }
+void ManagedRuleGroupStatement::SetScopeDownStatement(const Statement& value) { m_scopeDownStatementHasBeenSet = true; m_scopeDownStatement = Aws::MakeShared<Statement>("ManagedRuleGroupStatement", value); }
+void ManagedRuleGroupStatement::SetScopeDownStatement(Statement&& value) { m_scopeDownStatementHasBeenSet = true; m_scopeDownStatement = Aws::MakeShared<Statement>("ManagedRuleGroupStatement", std::move(value)); }
+ManagedRuleGroupStatement& ManagedRuleGroupStatement::WithScopeDownStatement(const Statement& value) { SetScopeDownStatement(value); return *this;}
+ManagedRuleGroupStatement& ManagedRuleGroupStatement::WithScopeDownStatement(Statement&& value) { SetScopeDownStatement(std::move(value)); return *this;}
 
 ManagedRuleGroupStatement& ManagedRuleGroupStatement::operator =(JsonView jsonValue)
 {
@@ -49,6 +63,13 @@ ManagedRuleGroupStatement& ManagedRuleGroupStatement::operator =(JsonView jsonVa
     m_nameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Version"))
+  {
+    m_version = jsonValue.GetString("Version");
+
+    m_versionHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("ExcludedRules"))
   {
     Array<JsonView> excludedRulesJsonList = jsonValue.GetArray("ExcludedRules");
@@ -57,6 +78,23 @@ ManagedRuleGroupStatement& ManagedRuleGroupStatement::operator =(JsonView jsonVa
       m_excludedRules.push_back(excludedRulesJsonList[excludedRulesIndex].AsObject());
     }
     m_excludedRulesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ScopeDownStatement"))
+  {
+    m_scopeDownStatement = Aws::MakeShared<Statement>("ManagedRuleGroupStatement", jsonValue.GetObject("ScopeDownStatement"));
+
+    m_scopeDownStatementHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ManagedRuleGroupConfigs"))
+  {
+    Array<JsonView> managedRuleGroupConfigsJsonList = jsonValue.GetArray("ManagedRuleGroupConfigs");
+    for(unsigned managedRuleGroupConfigsIndex = 0; managedRuleGroupConfigsIndex < managedRuleGroupConfigsJsonList.GetLength(); ++managedRuleGroupConfigsIndex)
+    {
+      m_managedRuleGroupConfigs.push_back(managedRuleGroupConfigsJsonList[managedRuleGroupConfigsIndex].AsObject());
+    }
+    m_managedRuleGroupConfigsHasBeenSet = true;
   }
 
   return *this;
@@ -78,6 +116,12 @@ JsonValue ManagedRuleGroupStatement::Jsonize() const
 
   }
 
+  if(m_versionHasBeenSet)
+  {
+   payload.WithString("Version", m_version);
+
+  }
+
   if(m_excludedRulesHasBeenSet)
   {
    Array<JsonValue> excludedRulesJsonList(m_excludedRules.size());
@@ -86,6 +130,23 @@ JsonValue ManagedRuleGroupStatement::Jsonize() const
      excludedRulesJsonList[excludedRulesIndex].AsObject(m_excludedRules[excludedRulesIndex].Jsonize());
    }
    payload.WithArray("ExcludedRules", std::move(excludedRulesJsonList));
+
+  }
+
+  if(m_scopeDownStatementHasBeenSet)
+  {
+   payload.WithObject("ScopeDownStatement", m_scopeDownStatement->Jsonize());
+
+  }
+
+  if(m_managedRuleGroupConfigsHasBeenSet)
+  {
+   Array<JsonValue> managedRuleGroupConfigsJsonList(m_managedRuleGroupConfigs.size());
+   for(unsigned managedRuleGroupConfigsIndex = 0; managedRuleGroupConfigsIndex < managedRuleGroupConfigsJsonList.GetLength(); ++managedRuleGroupConfigsIndex)
+   {
+     managedRuleGroupConfigsJsonList[managedRuleGroupConfigsIndex].AsObject(m_managedRuleGroupConfigs[managedRuleGroupConfigsIndex].Jsonize());
+   }
+   payload.WithArray("ManagedRuleGroupConfigs", std::move(managedRuleGroupConfigsJsonList));
 
   }
 

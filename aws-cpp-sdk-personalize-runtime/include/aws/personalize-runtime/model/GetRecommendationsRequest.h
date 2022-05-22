@@ -587,6 +587,63 @@ namespace Model
      */
     inline GetRecommendationsRequest& AddFilterValues(const char* key, const char* value) { m_filterValuesHasBeenSet = true; m_filterValues.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the recommender to use to get
+     * recommendations. Provide a recommender ARN if you created a Domain dataset group
+     * with a recommender for a domain use case.</p>
+     */
+    inline const Aws::String& GetRecommenderArn() const{ return m_recommenderArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the recommender to use to get
+     * recommendations. Provide a recommender ARN if you created a Domain dataset group
+     * with a recommender for a domain use case.</p>
+     */
+    inline bool RecommenderArnHasBeenSet() const { return m_recommenderArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the recommender to use to get
+     * recommendations. Provide a recommender ARN if you created a Domain dataset group
+     * with a recommender for a domain use case.</p>
+     */
+    inline void SetRecommenderArn(const Aws::String& value) { m_recommenderArnHasBeenSet = true; m_recommenderArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the recommender to use to get
+     * recommendations. Provide a recommender ARN if you created a Domain dataset group
+     * with a recommender for a domain use case.</p>
+     */
+    inline void SetRecommenderArn(Aws::String&& value) { m_recommenderArnHasBeenSet = true; m_recommenderArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the recommender to use to get
+     * recommendations. Provide a recommender ARN if you created a Domain dataset group
+     * with a recommender for a domain use case.</p>
+     */
+    inline void SetRecommenderArn(const char* value) { m_recommenderArnHasBeenSet = true; m_recommenderArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the recommender to use to get
+     * recommendations. Provide a recommender ARN if you created a Domain dataset group
+     * with a recommender for a domain use case.</p>
+     */
+    inline GetRecommendationsRequest& WithRecommenderArn(const Aws::String& value) { SetRecommenderArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the recommender to use to get
+     * recommendations. Provide a recommender ARN if you created a Domain dataset group
+     * with a recommender for a domain use case.</p>
+     */
+    inline GetRecommendationsRequest& WithRecommenderArn(Aws::String&& value) { SetRecommenderArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the recommender to use to get
+     * recommendations. Provide a recommender ARN if you created a Domain dataset group
+     * with a recommender for a domain use case.</p>
+     */
+    inline GetRecommendationsRequest& WithRecommenderArn(const char* value) { SetRecommenderArn(value); return *this;}
+
   private:
 
     Aws::String m_campaignArn;
@@ -609,6 +666,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_filterValues;
     bool m_filterValuesHasBeenSet;
+
+    Aws::String m_recommenderArn;
+    bool m_recommenderArnHasBeenSet;
   };
 
 } // namespace Model

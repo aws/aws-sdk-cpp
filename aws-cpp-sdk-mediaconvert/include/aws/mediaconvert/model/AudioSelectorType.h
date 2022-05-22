@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     PID,
     TRACK,
-    LANGUAGE_CODE
+    LANGUAGE_CODE,
+    HLS_RENDITION_GROUP
   };
 
 namespace AudioSelectorTypeMapper

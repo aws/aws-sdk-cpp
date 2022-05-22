@@ -123,32 +123,32 @@ namespace Model
 
 
     /**
-     * <p>The S3 configuration.</p>
+     * <p>The S3 bucket configuration.</p>
      */
     inline const S3Config& GetS3Config() const{ return m_s3Config; }
 
     /**
-     * <p>The S3 configuration.</p>
+     * <p>The S3 bucket configuration.</p>
      */
     inline bool S3ConfigHasBeenSet() const { return m_s3ConfigHasBeenSet; }
 
     /**
-     * <p>The S3 configuration.</p>
+     * <p>The S3 bucket configuration.</p>
      */
     inline void SetS3Config(const S3Config& value) { m_s3ConfigHasBeenSet = true; m_s3Config = value; }
 
     /**
-     * <p>The S3 configuration.</p>
+     * <p>The S3 bucket configuration.</p>
      */
     inline void SetS3Config(S3Config&& value) { m_s3ConfigHasBeenSet = true; m_s3Config = std::move(value); }
 
     /**
-     * <p>The S3 configuration.</p>
+     * <p>The S3 bucket configuration.</p>
      */
     inline InstanceStorageConfig& WithS3Config(const S3Config& value) { SetS3Config(value); return *this;}
 
     /**
-     * <p>The S3 configuration.</p>
+     * <p>The S3 bucket configuration.</p>
      */
     inline InstanceStorageConfig& WithS3Config(S3Config&& value) { SetS3Config(std::move(value)); return *this;}
 

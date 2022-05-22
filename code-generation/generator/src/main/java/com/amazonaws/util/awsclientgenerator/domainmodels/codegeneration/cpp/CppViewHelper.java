@@ -27,6 +27,7 @@ public class CppViewHelper {
     private static final Map<String, String> CORAL_TYPE_TO_DEFAULT_VALUES = new HashMap<>();
     private static final Map<String, String> CORAL_PROTOCOL_TO_CONTENT_TYPE_MAPPING = new HashMap<>();
     private static final Map<String, String> CORAL_PROTOCOL_TO_PAYLOAD_TYPE_MAPPING = new HashMap<>();
+    private static final Map<String, String> C2J_TIMESTAMP_FORMAT_TO_CPP_DATE_TIME_FORMAT = new HashMap<>();
 
     static {
         CORAL_TYPE_TO_CPP_TYPE_MAPPING.put("long", "long long");
@@ -34,6 +35,7 @@ public class CppViewHelper {
         CORAL_TYPE_TO_CPP_TYPE_MAPPING.put("string", "Aws::String");
         CORAL_TYPE_TO_CPP_TYPE_MAPPING.put("timestamp", "Aws::Utils::DateTime");
         CORAL_TYPE_TO_CPP_TYPE_MAPPING.put("boolean", "bool");
+        CORAL_TYPE_TO_CPP_TYPE_MAPPING.put("sensitive_boolean", "bool");
         CORAL_TYPE_TO_CPP_TYPE_MAPPING.put("double", "double");
         CORAL_TYPE_TO_CPP_TYPE_MAPPING.put("float", "double");
         CORAL_TYPE_TO_CPP_TYPE_MAPPING.put("blob", "Aws::Utils::ByteBuffer");
@@ -43,6 +45,7 @@ public class CppViewHelper {
         CORAL_TYPE_TO_JSON_CPP_TYPE_MAPPING.put("integer", "Integer");
         CORAL_TYPE_TO_JSON_CPP_TYPE_MAPPING.put("string", "String");
         CORAL_TYPE_TO_JSON_CPP_TYPE_MAPPING.put("boolean", "Bool");
+        CORAL_TYPE_TO_JSON_CPP_TYPE_MAPPING.put("sensitive_boolean", "Bool");
         CORAL_TYPE_TO_JSON_CPP_TYPE_MAPPING.put("double", "Double");
         CORAL_TYPE_TO_JSON_CPP_TYPE_MAPPING.put("map", "Object");
         CORAL_TYPE_TO_JSON_CPP_TYPE_MAPPING.put("list", "Array");
@@ -57,21 +60,23 @@ public class CppViewHelper {
         CORAL_TYPE_TO_XML_CONVERSION_MAPPING.put("long", "StringUtils::ConvertToInt64");
         CORAL_TYPE_TO_XML_CONVERSION_MAPPING.put("integer", "StringUtils::ConvertToInt32");
         CORAL_TYPE_TO_XML_CONVERSION_MAPPING.put("boolean", "StringUtils::ConvertToBool");
+        CORAL_TYPE_TO_XML_CONVERSION_MAPPING.put("sensitive_boolean", "StringUtils::ConvertToBool");
         CORAL_TYPE_TO_XML_CONVERSION_MAPPING.put("double", "StringUtils::ConvertToDouble");
         CORAL_TYPE_TO_XML_CONVERSION_MAPPING.put("float", "StringUtils::ConvertToDouble");
 
         CORAL_TYPE_TO_DEFAULT_VALUES.put("long", "0");
         CORAL_TYPE_TO_DEFAULT_VALUES.put("integer", "0");
         CORAL_TYPE_TO_DEFAULT_VALUES.put("boolean", "false");
+        CORAL_TYPE_TO_DEFAULT_VALUES.put("sensitive_boolean", "false");
         CORAL_TYPE_TO_DEFAULT_VALUES.put("double", "0.0");
         CORAL_TYPE_TO_DEFAULT_VALUES.put("float", "0.0");
 
         CORAL_PROTOCOL_TO_CONTENT_TYPE_MAPPING.put("json", "Aws::AMZN_JSON_CONTENT_TYPE_1_1");
         CORAL_PROTOCOL_TO_CONTENT_TYPE_MAPPING.put("json1.0", "Aws::AMZN_JSON_CONTENT_TYPE_1_0");
         CORAL_PROTOCOL_TO_CONTENT_TYPE_MAPPING.put("json1.1", "Aws::AMZN_JSON_CONTENT_TYPE_1_1");
-        CORAL_PROTOCOL_TO_CONTENT_TYPE_MAPPING.put("rest-json", "Aws::AMZN_JSON_CONTENT_TYPE_1_1");
-        CORAL_PROTOCOL_TO_CONTENT_TYPE_MAPPING.put("rest-json1.0", "Aws::AMZN_JSON_CONTENT_TYPE_1_0");
-        CORAL_PROTOCOL_TO_CONTENT_TYPE_MAPPING.put("rest-json1.1", "Aws::AMZN_JSON_CONTENT_TYPE_1_1");
+        CORAL_PROTOCOL_TO_CONTENT_TYPE_MAPPING.put("rest-json", "Aws::JSON_CONTENT_TYPE");
+        CORAL_PROTOCOL_TO_CONTENT_TYPE_MAPPING.put("rest-json1.0", "Aws::JSON_CONTENT_TYPE");
+        CORAL_PROTOCOL_TO_CONTENT_TYPE_MAPPING.put("rest-json1.1", "Aws::JSON_CONTENT_TYPE");
         CORAL_PROTOCOL_TO_CONTENT_TYPE_MAPPING.put("rest-xml", "Aws::AMZN_XML_CONTENT_TYPE");
         CORAL_PROTOCOL_TO_CONTENT_TYPE_MAPPING.put("query", "Aws::FORM_CONTENT_TYPE");
         CORAL_PROTOCOL_TO_CONTENT_TYPE_MAPPING.put("ec2", "Aws::FORM_CONTENT_TYPE");
@@ -84,6 +89,9 @@ public class CppViewHelper {
         CORAL_PROTOCOL_TO_PAYLOAD_TYPE_MAPPING.put("ec2", "xml");
         CORAL_PROTOCOL_TO_PAYLOAD_TYPE_MAPPING.put("application-json", "json");
         CORAL_PROTOCOL_TO_PAYLOAD_TYPE_MAPPING.put("api-gateway", "json");
+
+        C2J_TIMESTAMP_FORMAT_TO_CPP_DATE_TIME_FORMAT.put("rfc822", "RFC822");
+        C2J_TIMESTAMP_FORMAT_TO_CPP_DATE_TIME_FORMAT.put("iso8601", "ISO_8601");
     }
 
     public static String computeExportValue(String classNamePrefix) {
@@ -153,6 +161,11 @@ public class CppViewHelper {
             return cppType;
         }
 
+        else if(shape.isDocument())
+        {
+            return "Aws::Utils::Document";
+        }
+
         else if(shape.isStructure() || shape.isEnum())
         {
             return shape.getName();
@@ -192,11 +205,39 @@ public class CppViewHelper {
             protocolAndVersion += metadata.getJsonVersion();
         }
 
-        return CORAL_PROTOCOL_TO_CONTENT_TYPE_MAPPING.get(protocolAndVersion);
+        // Customization for request content-type
+        if (metadata.getServiceId().equals("WellArchitected")) {
+            return "Aws::JSON_CONTENT_TYPE";
+        } else if (metadata.getServiceId().equals("savingsplans")) {
+            return "Aws::JSON_CONTENT_TYPE";
+        } else {
+            return CORAL_PROTOCOL_TO_CONTENT_TYPE_MAPPING.get(protocolAndVersion);
+        }
     }
 
     public static String computeServicePayloadType(String protocol) {
         return CORAL_PROTOCOL_TO_PAYLOAD_TYPE_MAPPING.get(protocol);
+    }
+
+    public static String computeTimestampFormatInHeader(Shape shape) {
+        if (shape.getTimestampFormat() != null) {
+            return C2J_TIMESTAMP_FORMAT_TO_CPP_DATE_TIME_FORMAT.get(shape.getTimestampFormat().toLowerCase());
+        }
+        return C2J_TIMESTAMP_FORMAT_TO_CPP_DATE_TIME_FORMAT.get("rfc822");
+    }
+
+    public static String computeTimestampFormatInQueryString(Shape shape) {
+        if (shape.getTimestampFormat() != null) {
+            return C2J_TIMESTAMP_FORMAT_TO_CPP_DATE_TIME_FORMAT.get(shape.getTimestampFormat().toLowerCase());
+        }
+        return C2J_TIMESTAMP_FORMAT_TO_CPP_DATE_TIME_FORMAT.get("iso8601");
+    }
+
+    public static String computeTimestampFormatInXml(Shape shape) {
+        if (shape.getTimestampFormat() != null) {
+            return C2J_TIMESTAMP_FORMAT_TO_CPP_DATE_TIME_FORMAT.get(shape.getTimestampFormat().toLowerCase());
+        }
+        return C2J_TIMESTAMP_FORMAT_TO_CPP_DATE_TIME_FORMAT.get("iso8601");
     }
 
     public static Set<String> computeHeaderIncludes(String projectName, Shape shape) {
@@ -219,16 +260,26 @@ public class CppViewHelper {
             }
             if(next.isList())
             {
-                if(!visited.contains(next.getListMember().getShape().getName()))
-                {
-                    toVisit.add(next.getListMember().getShape());
+                Shape shapeInList = next.getListMember().getShape();
+                if(!visited.contains(shapeInList.getName())) {
+                    toVisit.add(shapeInList);
+                }
+                if (!shapeInList.isPrimitive() && shapeInList.isMutuallyReferencedWith(shape)) {
+                    // C++ requires both forward declaration AND include in the case of mutual reference
+                    // and if compile-time member object info required
+                    headers.add(formatModelIncludeName(projectName, shapeInList));
                 }
             }
             if(!next.isPrimitive()) {
-                if(next.isMutuallyReferencedWith(shape) || shape.isListMemberAndMutuallyReferencedWith(next)) {
+                // if `next` is a direct member of a `shape` and they are mutually referenced
+                if(next.isMutuallyReferencedWith(shape) &&
+                        shape.getMembers().values().parallelStream().anyMatch(member -> member.getShape().getName().equals(next.getName()))) {
+                    // Historically in this SDK, a single mutually referenced member is included as a shared_ptr,
+                    // forward declaration and include shared_ptr header in the model header file is enough
                     includeMemoryHeader = true;
-                }
-                else {
+                } else if (!shape.getName().equals(next.getName())) {
+                    // non-ptr and non-ref objects require object info at compile time (so header is required)
+                    // forward declaration may be required OR not depending on the mutual reference
                     headers.add(formatModelIncludeName(projectName, next));
                 }
                 includeUtilityHeader = true;
@@ -246,6 +297,38 @@ public class CppViewHelper {
         return headers;
     }
 
+    public static Set<String> computeForwardDeclarations(Shape shape) {
+        Set<String> forwardDeclarations = new LinkedHashSet<>();
+        Set<String> visited = new LinkedHashSet<>();
+        Queue<Shape> toVisit = shape.getMembers().values().stream().map(ShapeMember::getShape).collect(Collectors.toCollection(() -> new LinkedList<>()));
+
+        while(!toVisit.isEmpty()) {
+            Shape next = toVisit.remove();
+            visited.add(next.getName());
+            if(next.isMap()) {
+                if(!visited.contains(next.getMapKey().getShape().getName())) {
+                    toVisit.add(next.getMapKey().getShape());
+                }
+                if(!visited.contains(next.getMapValue().getShape().getName())) {
+                    toVisit.add(next.getMapValue().getShape());
+                }
+            }
+            if(next.isList())
+            {
+                Shape shapeInList = next.getListMember().getShape();
+                if(!visited.contains(shapeInList.getName())) {
+                    toVisit.add(shapeInList);
+                }
+            }
+            if(!next.isPrimitive() && !next.isMap() && !next.isList() && !next.isBlob()) {
+                if(!next.getName().equals(shape.getName()) && next.isMutuallyReferencedWith(shape)) {
+                    forwardDeclarations.add(next.getName());
+                }
+            }
+        }
+        return forwardDeclarations;
+    }
+
     public static String formatModelIncludeName(String projectName, Shape shape) {
 
         if(shape.isMap()) {
@@ -253,6 +336,9 @@ public class CppViewHelper {
         }
         else if(shape.isList()) {
             return "<aws/core/utils/memory/stl/AWSVector.h>";
+        }
+        else if(shape.isDocument()) {
+            return "<aws/core/utils/Document.h>";
         }
         else if(shape.isEnum() || shape.isStructure()) {
             return String.format("<aws/%s/model/%s.h>", projectName, shape.getName());
@@ -294,7 +380,7 @@ public class CppViewHelper {
                     toVisit.add(next.getListMember().getShape());
                 }
             }
-            if(!next.isPrimitive() && (next.isMutuallyReferencedWith(shape) || shape.isListMemberAndMutuallyReferencedWith(next))) {
+            if(!next.isPrimitive() && next.isMutuallyReferencedWith(shape)) {
                 headers.add(formatModelIncludeName(projectName, next));
             }
         }
@@ -342,5 +428,15 @@ public class CppViewHelper {
         else {
             return str.toUpperCase();
         }
+    }
+
+    public static String computeChecksumAlgorithm(String algorithm)
+    {
+        return "Aws::Checksum::Algorithm::" + algorithm.toUpperCase();
+    }
+
+    public static String computeChecksumLocation(String location)
+    {
+        return "Aws::Checksum::Location::" + location.toUpperCase();
     }
 }

@@ -33,6 +33,8 @@ StartMedicalStreamTranscriptionRequest::StartMedicalStreamTranscriptionRequest()
     m_enableChannelIdentificationHasBeenSet(false),
     m_numberOfChannels(0),
     m_numberOfChannelsHasBeenSet(false),
+    m_contentIdentificationType(MedicalContentIdentificationType::NOT_SET),
+    m_contentIdentificationTypeHasBeenSet(false),
     m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))
 {
 }
@@ -84,8 +86,8 @@ Aws::Http::HeaderValueCollection StartMedicalStreamTranscriptionRequest::GetRequ
 
   if(m_showSpeakerLabelHasBeenSet)
   {
-    ss << m_showSpeakerLabel;
-    headers.emplace("x-amzn-transcribe-show-speaker-label",  ss.str());
+    ss << std::boolalpha << m_showSpeakerLabel;
+    headers.emplace("x-amzn-transcribe-show-speaker-label", ss.str());
     ss.str("");
   }
 
@@ -98,8 +100,8 @@ Aws::Http::HeaderValueCollection StartMedicalStreamTranscriptionRequest::GetRequ
 
   if(m_enableChannelIdentificationHasBeenSet)
   {
-    ss << m_enableChannelIdentification;
-    headers.emplace("x-amzn-transcribe-enable-channel-identification",  ss.str());
+    ss << std::boolalpha << m_enableChannelIdentification;
+    headers.emplace("x-amzn-transcribe-enable-channel-identification", ss.str());
     ss.str("");
   }
 
@@ -108,6 +110,11 @@ Aws::Http::HeaderValueCollection StartMedicalStreamTranscriptionRequest::GetRequ
     ss << m_numberOfChannels;
     headers.emplace("x-amzn-transcribe-number-of-channels",  ss.str());
     ss.str("");
+  }
+
+  if(m_contentIdentificationTypeHasBeenSet)
+  {
+    headers.emplace("x-amzn-transcribe-content-identification-type", MedicalContentIdentificationTypeMapper::GetNameForMedicalContentIdentificationType(m_contentIdentificationType));
   }
 
   return headers;

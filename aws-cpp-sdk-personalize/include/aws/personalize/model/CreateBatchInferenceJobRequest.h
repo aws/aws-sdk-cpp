@@ -10,6 +10,8 @@
 #include <aws/personalize/model/BatchInferenceJobInput.h>
 #include <aws/personalize/model/BatchInferenceJobOutput.h>
 #include <aws/personalize/model/BatchInferenceJobConfig.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/personalize/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -129,70 +131,86 @@ namespace Model
 
     /**
      * <p>The ARN of the filter to apply to the batch inference job. For more
-     * information on using filters, see Using Filters with Amazon Personalize.</p>
+     * information on using filters, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering
+     * batch recommendations</a>.</p>
      */
     inline const Aws::String& GetFilterArn() const{ return m_filterArn; }
 
     /**
      * <p>The ARN of the filter to apply to the batch inference job. For more
-     * information on using filters, see Using Filters with Amazon Personalize.</p>
+     * information on using filters, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering
+     * batch recommendations</a>.</p>
      */
     inline bool FilterArnHasBeenSet() const { return m_filterArnHasBeenSet; }
 
     /**
      * <p>The ARN of the filter to apply to the batch inference job. For more
-     * information on using filters, see Using Filters with Amazon Personalize.</p>
+     * information on using filters, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering
+     * batch recommendations</a>.</p>
      */
     inline void SetFilterArn(const Aws::String& value) { m_filterArnHasBeenSet = true; m_filterArn = value; }
 
     /**
      * <p>The ARN of the filter to apply to the batch inference job. For more
-     * information on using filters, see Using Filters with Amazon Personalize.</p>
+     * information on using filters, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering
+     * batch recommendations</a>.</p>
      */
     inline void SetFilterArn(Aws::String&& value) { m_filterArnHasBeenSet = true; m_filterArn = std::move(value); }
 
     /**
      * <p>The ARN of the filter to apply to the batch inference job. For more
-     * information on using filters, see Using Filters with Amazon Personalize.</p>
+     * information on using filters, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering
+     * batch recommendations</a>.</p>
      */
     inline void SetFilterArn(const char* value) { m_filterArnHasBeenSet = true; m_filterArn.assign(value); }
 
     /**
      * <p>The ARN of the filter to apply to the batch inference job. For more
-     * information on using filters, see Using Filters with Amazon Personalize.</p>
+     * information on using filters, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering
+     * batch recommendations</a>.</p>
      */
     inline CreateBatchInferenceJobRequest& WithFilterArn(const Aws::String& value) { SetFilterArn(value); return *this;}
 
     /**
      * <p>The ARN of the filter to apply to the batch inference job. For more
-     * information on using filters, see Using Filters with Amazon Personalize.</p>
+     * information on using filters, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering
+     * batch recommendations</a>.</p>
      */
     inline CreateBatchInferenceJobRequest& WithFilterArn(Aws::String&& value) { SetFilterArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the filter to apply to the batch inference job. For more
-     * information on using filters, see Using Filters with Amazon Personalize.</p>
+     * information on using filters, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering
+     * batch recommendations</a>.</p>
      */
     inline CreateBatchInferenceJobRequest& WithFilterArn(const char* value) { SetFilterArn(value); return *this;}
 
 
     /**
-     * <p>The number of recommendations to retreive.</p>
+     * <p>The number of recommendations to retrieve.</p>
      */
     inline int GetNumResults() const{ return m_numResults; }
 
     /**
-     * <p>The number of recommendations to retreive.</p>
+     * <p>The number of recommendations to retrieve.</p>
      */
     inline bool NumResultsHasBeenSet() const { return m_numResultsHasBeenSet; }
 
     /**
-     * <p>The number of recommendations to retreive.</p>
+     * <p>The number of recommendations to retrieve.</p>
      */
     inline void SetNumResults(int value) { m_numResultsHasBeenSet = true; m_numResults = value; }
 
     /**
-     * <p>The number of recommendations to retreive.</p>
+     * <p>The number of recommendations to retrieve.</p>
      */
     inline CreateBatchInferenceJobRequest& WithNumResults(int value) { SetNumResults(value); return *this;}
 
@@ -267,56 +285,56 @@ namespace Model
 
     /**
      * <p>The ARN of the Amazon Identity and Access Management role that has
-     * permissions to read and write to your input and out Amazon S3 buckets
+     * permissions to read and write to your input and output Amazon S3 buckets
      * respectively.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
      * <p>The ARN of the Amazon Identity and Access Management role that has
-     * permissions to read and write to your input and out Amazon S3 buckets
+     * permissions to read and write to your input and output Amazon S3 buckets
      * respectively.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>The ARN of the Amazon Identity and Access Management role that has
-     * permissions to read and write to your input and out Amazon S3 buckets
+     * permissions to read and write to your input and output Amazon S3 buckets
      * respectively.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
      * <p>The ARN of the Amazon Identity and Access Management role that has
-     * permissions to read and write to your input and out Amazon S3 buckets
+     * permissions to read and write to your input and output Amazon S3 buckets
      * respectively.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
      * <p>The ARN of the Amazon Identity and Access Management role that has
-     * permissions to read and write to your input and out Amazon S3 buckets
+     * permissions to read and write to your input and output Amazon S3 buckets
      * respectively.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
      * <p>The ARN of the Amazon Identity and Access Management role that has
-     * permissions to read and write to your input and out Amazon S3 buckets
+     * permissions to read and write to your input and output Amazon S3 buckets
      * respectively.</p>
      */
     inline CreateBatchInferenceJobRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
      * <p>The ARN of the Amazon Identity and Access Management role that has
-     * permissions to read and write to your input and out Amazon S3 buckets
+     * permissions to read and write to your input and output Amazon S3 buckets
      * respectively.</p>
      */
     inline CreateBatchInferenceJobRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the Amazon Identity and Access Management role that has
-     * permissions to read and write to your input and out Amazon S3 buckets
+     * permissions to read and write to your input and output Amazon S3 buckets
      * respectively.</p>
      */
     inline CreateBatchInferenceJobRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
@@ -352,6 +370,63 @@ namespace Model
      */
     inline CreateBatchInferenceJobRequest& WithBatchInferenceJobConfig(BatchInferenceJobConfig&& value) { SetBatchInferenceJobConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A list of <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * to apply to the batch inference job.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * to apply to the batch inference job.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>A list of <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * to apply to the batch inference job.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>A list of <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * to apply to the batch inference job.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>A list of <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * to apply to the batch inference job.</p>
+     */
+    inline CreateBatchInferenceJobRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A list of <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * to apply to the batch inference job.</p>
+     */
+    inline CreateBatchInferenceJobRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * to apply to the batch inference job.</p>
+     */
+    inline CreateBatchInferenceJobRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>A list of <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * to apply to the batch inference job.</p>
+     */
+    inline CreateBatchInferenceJobRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_jobName;
@@ -377,6 +452,9 @@ namespace Model
 
     BatchInferenceJobConfig m_batchInferenceJobConfig;
     bool m_batchInferenceJobConfigHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

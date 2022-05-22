@@ -23,6 +23,7 @@ StreamDescriptionSummary::StreamDescriptionSummary() :
     m_streamARNHasBeenSet(false),
     m_streamStatus(StreamStatus::NOT_SET),
     m_streamStatusHasBeenSet(false),
+    m_streamModeDetailsHasBeenSet(false),
     m_retentionPeriodHours(0),
     m_retentionPeriodHoursHasBeenSet(false),
     m_streamCreationTimestampHasBeenSet(false),
@@ -42,6 +43,7 @@ StreamDescriptionSummary::StreamDescriptionSummary(JsonView jsonValue) :
     m_streamARNHasBeenSet(false),
     m_streamStatus(StreamStatus::NOT_SET),
     m_streamStatusHasBeenSet(false),
+    m_streamModeDetailsHasBeenSet(false),
     m_retentionPeriodHours(0),
     m_retentionPeriodHoursHasBeenSet(false),
     m_streamCreationTimestampHasBeenSet(false),
@@ -78,6 +80,13 @@ StreamDescriptionSummary& StreamDescriptionSummary::operator =(JsonView jsonValu
     m_streamStatus = StreamStatusMapper::GetStreamStatusForName(jsonValue.GetString("StreamStatus"));
 
     m_streamStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StreamModeDetails"))
+  {
+    m_streamModeDetails = jsonValue.GetObject("StreamModeDetails");
+
+    m_streamModeDetailsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("RetentionPeriodHours"))
@@ -154,6 +163,12 @@ JsonValue StreamDescriptionSummary::Jsonize() const
   if(m_streamStatusHasBeenSet)
   {
    payload.WithString("StreamStatus", StreamStatusMapper::GetNameForStreamStatus(m_streamStatus));
+  }
+
+  if(m_streamModeDetailsHasBeenSet)
+  {
+   payload.WithObject("StreamModeDetails", m_streamModeDetails.Jsonize());
+
   }
 
   if(m_retentionPeriodHoursHasBeenSet)

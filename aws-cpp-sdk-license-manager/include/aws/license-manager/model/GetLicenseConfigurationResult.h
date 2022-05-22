@@ -184,27 +184,27 @@ namespace Model
 
 
     /**
-     * <p>Dimension on which the licenses are counted.</p>
+     * <p>Dimension for which the licenses are counted.</p>
      */
     inline const LicenseCountingType& GetLicenseCountingType() const{ return m_licenseCountingType; }
 
     /**
-     * <p>Dimension on which the licenses are counted.</p>
+     * <p>Dimension for which the licenses are counted.</p>
      */
     inline void SetLicenseCountingType(const LicenseCountingType& value) { m_licenseCountingType = value; }
 
     /**
-     * <p>Dimension on which the licenses are counted.</p>
+     * <p>Dimension for which the licenses are counted.</p>
      */
     inline void SetLicenseCountingType(LicenseCountingType&& value) { m_licenseCountingType = std::move(value); }
 
     /**
-     * <p>Dimension on which the licenses are counted.</p>
+     * <p>Dimension for which the licenses are counted.</p>
      */
     inline GetLicenseConfigurationResult& WithLicenseCountingType(const LicenseCountingType& value) { SetLicenseCountingType(value); return *this;}
 
     /**
-     * <p>Dimension on which the licenses are counted.</p>
+     * <p>Dimension for which the licenses are counted.</p>
      */
     inline GetLicenseConfigurationResult& WithLicenseCountingType(LicenseCountingType&& value) { SetLicenseCountingType(std::move(value)); return *this;}
 

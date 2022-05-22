@@ -31,54 +31,44 @@ namespace Model
 
     Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
-
 
     /**
-     * <p>The new role to use for the given resource registered in AWS Lake
-     * Formation.</p>
+     * <p>The new role to use for the given resource registered in Lake Formation.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The new role to use for the given resource registered in AWS Lake
-     * Formation.</p>
+     * <p>The new role to use for the given resource registered in Lake Formation.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>The new role to use for the given resource registered in AWS Lake
-     * Formation.</p>
+     * <p>The new role to use for the given resource registered in Lake Formation.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The new role to use for the given resource registered in AWS Lake
-     * Formation.</p>
+     * <p>The new role to use for the given resource registered in Lake Formation.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>The new role to use for the given resource registered in AWS Lake
-     * Formation.</p>
+     * <p>The new role to use for the given resource registered in Lake Formation.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>The new role to use for the given resource registered in AWS Lake
-     * Formation.</p>
+     * <p>The new role to use for the given resource registered in Lake Formation.</p>
      */
     inline UpdateResourceRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The new role to use for the given resource registered in AWS Lake
-     * Formation.</p>
+     * <p>The new role to use for the given resource registered in Lake Formation.</p>
      */
     inline UpdateResourceRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The new role to use for the given resource registered in AWS Lake
-     * Formation.</p>
+     * <p>The new role to use for the given resource registered in Lake Formation.</p>
      */
     inline UpdateResourceRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

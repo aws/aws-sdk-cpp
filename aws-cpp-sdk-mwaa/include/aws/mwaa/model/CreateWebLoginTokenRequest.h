@@ -33,42 +33,50 @@ namespace Model
 
 
     /**
-     * <p>Create an Airflow Web UI login token request for a MWAA environment.</p>
+     * <p>The name of the Amazon MWAA environment. For example,
+     * <code>MyMWAAEnvironment</code>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Create an Airflow Web UI login token request for a MWAA environment.</p>
+     * <p>The name of the Amazon MWAA environment. For example,
+     * <code>MyMWAAEnvironment</code>.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>Create an Airflow Web UI login token request for a MWAA environment.</p>
+     * <p>The name of the Amazon MWAA environment. For example,
+     * <code>MyMWAAEnvironment</code>.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Create an Airflow Web UI login token request for a MWAA environment.</p>
+     * <p>The name of the Amazon MWAA environment. For example,
+     * <code>MyMWAAEnvironment</code>.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>Create an Airflow Web UI login token request for a MWAA environment.</p>
+     * <p>The name of the Amazon MWAA environment. For example,
+     * <code>MyMWAAEnvironment</code>.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>Create an Airflow Web UI login token request for a MWAA environment.</p>
+     * <p>The name of the Amazon MWAA environment. For example,
+     * <code>MyMWAAEnvironment</code>.</p>
      */
     inline CreateWebLoginTokenRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Create an Airflow Web UI login token request for a MWAA environment.</p>
+     * <p>The name of the Amazon MWAA environment. For example,
+     * <code>MyMWAAEnvironment</code>.</p>
      */
     inline CreateWebLoginTokenRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>Create an Airflow Web UI login token request for a MWAA environment.</p>
+     * <p>The name of the Amazon MWAA environment. For example,
+     * <code>MyMWAAEnvironment</code>.</p>
      */
     inline CreateWebLoginTokenRequest& WithName(const char* value) { SetName(value); return *this;}
 

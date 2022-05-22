@@ -36,6 +36,8 @@ namespace Model
     KmsDataKeyReusePeriodSeconds,
     DeduplicationScope,
     FifoThroughputLimit,
+    RedriveAllowPolicy,
+    SqsManagedSseEnabled,
     SentTimestamp,
     ApproximateFirstReceiveTimestamp,
     ApproximateReceiveCount,

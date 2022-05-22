@@ -26,7 +26,14 @@ namespace Model
   /**
    * <p>The Amazon Simple Notification Service topic to which Amazon Rekognition
    * publishes the completion status of a video analysis operation. For more
-   * information, see <a>api-video</a>.</p><p><h3>See Also:</h3>   <a
+   * information, see <a
+   * href="https://docs.aws.amazon.com/rekognition/latest/dg/api-video.html">Calling
+   * Amazon Rekognition Video operations</a>. Note that the Amazon SNS topic must
+   * have a topic name that begins with <i>AmazonRekognition</i> if you are using the
+   * AmazonRekognitionServiceRole permissions policy to access the topic. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/rekognition/latest/dg/api-video-roles.html#api-video-roles-all-topics">Giving
+   * access to multiple Amazon SNS topics</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/NotificationChannel">AWS
    * API Reference</a></p>
    */
@@ -40,49 +47,49 @@ namespace Model
 
 
     /**
-     * <p>The Amazon SNS topic to which Amazon Rekognition to posts the completion
+     * <p>The Amazon SNS topic to which Amazon Rekognition posts the completion
      * status.</p>
      */
     inline const Aws::String& GetSNSTopicArn() const{ return m_sNSTopicArn; }
 
     /**
-     * <p>The Amazon SNS topic to which Amazon Rekognition to posts the completion
+     * <p>The Amazon SNS topic to which Amazon Rekognition posts the completion
      * status.</p>
      */
     inline bool SNSTopicArnHasBeenSet() const { return m_sNSTopicArnHasBeenSet; }
 
     /**
-     * <p>The Amazon SNS topic to which Amazon Rekognition to posts the completion
+     * <p>The Amazon SNS topic to which Amazon Rekognition posts the completion
      * status.</p>
      */
     inline void SetSNSTopicArn(const Aws::String& value) { m_sNSTopicArnHasBeenSet = true; m_sNSTopicArn = value; }
 
     /**
-     * <p>The Amazon SNS topic to which Amazon Rekognition to posts the completion
+     * <p>The Amazon SNS topic to which Amazon Rekognition posts the completion
      * status.</p>
      */
     inline void SetSNSTopicArn(Aws::String&& value) { m_sNSTopicArnHasBeenSet = true; m_sNSTopicArn = std::move(value); }
 
     /**
-     * <p>The Amazon SNS topic to which Amazon Rekognition to posts the completion
+     * <p>The Amazon SNS topic to which Amazon Rekognition posts the completion
      * status.</p>
      */
     inline void SetSNSTopicArn(const char* value) { m_sNSTopicArnHasBeenSet = true; m_sNSTopicArn.assign(value); }
 
     /**
-     * <p>The Amazon SNS topic to which Amazon Rekognition to posts the completion
+     * <p>The Amazon SNS topic to which Amazon Rekognition posts the completion
      * status.</p>
      */
     inline NotificationChannel& WithSNSTopicArn(const Aws::String& value) { SetSNSTopicArn(value); return *this;}
 
     /**
-     * <p>The Amazon SNS topic to which Amazon Rekognition to posts the completion
+     * <p>The Amazon SNS topic to which Amazon Rekognition posts the completion
      * status.</p>
      */
     inline NotificationChannel& WithSNSTopicArn(Aws::String&& value) { SetSNSTopicArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon SNS topic to which Amazon Rekognition to posts the completion
+     * <p>The Amazon SNS topic to which Amazon Rekognition posts the completion
      * status.</p>
      */
     inline NotificationChannel& WithSNSTopicArn(const char* value) { SetSNSTopicArn(value); return *this;}

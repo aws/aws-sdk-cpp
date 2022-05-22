@@ -27,8 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>Violations for a resource based on the specified AWS Firewall Manager policy
-   * and AWS account.</p><p><h3>See Also:</h3>   <a
+   * <p>Violations for a resource based on the specified Firewall Manager policy and
+   * Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ViolationDetail">AWS
    * API Reference</a></p>
    */
@@ -42,91 +42,99 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS Firewall Manager policy that the violation details were
+     * <p>The ID of the Firewall Manager policy that the violation details were
      * requested for.</p>
      */
     inline const Aws::String& GetPolicyId() const{ return m_policyId; }
 
     /**
-     * <p>The ID of the AWS Firewall Manager policy that the violation details were
+     * <p>The ID of the Firewall Manager policy that the violation details were
      * requested for.</p>
      */
     inline bool PolicyIdHasBeenSet() const { return m_policyIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS Firewall Manager policy that the violation details were
+     * <p>The ID of the Firewall Manager policy that the violation details were
      * requested for.</p>
      */
     inline void SetPolicyId(const Aws::String& value) { m_policyIdHasBeenSet = true; m_policyId = value; }
 
     /**
-     * <p>The ID of the AWS Firewall Manager policy that the violation details were
+     * <p>The ID of the Firewall Manager policy that the violation details were
      * requested for.</p>
      */
     inline void SetPolicyId(Aws::String&& value) { m_policyIdHasBeenSet = true; m_policyId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS Firewall Manager policy that the violation details were
+     * <p>The ID of the Firewall Manager policy that the violation details were
      * requested for.</p>
      */
     inline void SetPolicyId(const char* value) { m_policyIdHasBeenSet = true; m_policyId.assign(value); }
 
     /**
-     * <p>The ID of the AWS Firewall Manager policy that the violation details were
+     * <p>The ID of the Firewall Manager policy that the violation details were
      * requested for.</p>
      */
     inline ViolationDetail& WithPolicyId(const Aws::String& value) { SetPolicyId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS Firewall Manager policy that the violation details were
+     * <p>The ID of the Firewall Manager policy that the violation details were
      * requested for.</p>
      */
     inline ViolationDetail& WithPolicyId(Aws::String&& value) { SetPolicyId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS Firewall Manager policy that the violation details were
+     * <p>The ID of the Firewall Manager policy that the violation details were
      * requested for.</p>
      */
     inline ViolationDetail& WithPolicyId(const char* value) { SetPolicyId(value); return *this;}
 
 
     /**
-     * <p>The AWS account that the violation details were requested for.</p>
+     * <p>The Amazon Web Services account that the violation details were requested
+     * for.</p>
      */
     inline const Aws::String& GetMemberAccount() const{ return m_memberAccount; }
 
     /**
-     * <p>The AWS account that the violation details were requested for.</p>
+     * <p>The Amazon Web Services account that the violation details were requested
+     * for.</p>
      */
     inline bool MemberAccountHasBeenSet() const { return m_memberAccountHasBeenSet; }
 
     /**
-     * <p>The AWS account that the violation details were requested for.</p>
+     * <p>The Amazon Web Services account that the violation details were requested
+     * for.</p>
      */
     inline void SetMemberAccount(const Aws::String& value) { m_memberAccountHasBeenSet = true; m_memberAccount = value; }
 
     /**
-     * <p>The AWS account that the violation details were requested for.</p>
+     * <p>The Amazon Web Services account that the violation details were requested
+     * for.</p>
      */
     inline void SetMemberAccount(Aws::String&& value) { m_memberAccountHasBeenSet = true; m_memberAccount = std::move(value); }
 
     /**
-     * <p>The AWS account that the violation details were requested for.</p>
+     * <p>The Amazon Web Services account that the violation details were requested
+     * for.</p>
      */
     inline void SetMemberAccount(const char* value) { m_memberAccountHasBeenSet = true; m_memberAccount.assign(value); }
 
     /**
-     * <p>The AWS account that the violation details were requested for.</p>
+     * <p>The Amazon Web Services account that the violation details were requested
+     * for.</p>
      */
     inline ViolationDetail& WithMemberAccount(const Aws::String& value) { SetMemberAccount(value); return *this;}
 
     /**
-     * <p>The AWS account that the violation details were requested for.</p>
+     * <p>The Amazon Web Services account that the violation details were requested
+     * for.</p>
      */
     inline ViolationDetail& WithMemberAccount(Aws::String&& value) { SetMemberAccount(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account that the violation details were requested for.</p>
+     * <p>The Amazon Web Services account that the violation details were requested
+     * for.</p>
      */
     inline ViolationDetail& WithMemberAccount(const char* value) { SetMemberAccount(value); return *this;}
 

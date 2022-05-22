@@ -16,6 +16,7 @@ namespace EventBridge
 namespace EventBridgeEndpoint
 {
 AWS_EVENTBRIDGE_API Aws::String ForRegion(const Aws::String& regionName, bool useDualStack = false);
+AWS_EVENTBRIDGE_API Aws::String GetEventBridgeSuffix(const Aws::String& regionName, bool useDualStack = false);
 } // namespace EventBridgeEndpoint
 } // namespace EventBridge
 } // namespace Aws

@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/imagebuilder/model/Logging.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/imagebuilder/model/InstanceMetadataOptions.h>
 #include <utility>
 
 namespace Aws
@@ -369,42 +370,42 @@ namespace Model
 
 
     /**
-     * <p>The EC2 key pair of the infrastructure configuration.</p>
+     * <p>The Amazon EC2 key pair of the infrastructure configuration.</p>
      */
     inline const Aws::String& GetKeyPair() const{ return m_keyPair; }
 
     /**
-     * <p>The EC2 key pair of the infrastructure configuration.</p>
+     * <p>The Amazon EC2 key pair of the infrastructure configuration.</p>
      */
     inline bool KeyPairHasBeenSet() const { return m_keyPairHasBeenSet; }
 
     /**
-     * <p>The EC2 key pair of the infrastructure configuration.</p>
+     * <p>The Amazon EC2 key pair of the infrastructure configuration.</p>
      */
     inline void SetKeyPair(const Aws::String& value) { m_keyPairHasBeenSet = true; m_keyPair = value; }
 
     /**
-     * <p>The EC2 key pair of the infrastructure configuration.</p>
+     * <p>The Amazon EC2 key pair of the infrastructure configuration.</p>
      */
     inline void SetKeyPair(Aws::String&& value) { m_keyPairHasBeenSet = true; m_keyPair = std::move(value); }
 
     /**
-     * <p>The EC2 key pair of the infrastructure configuration.</p>
+     * <p>The Amazon EC2 key pair of the infrastructure configuration.</p>
      */
     inline void SetKeyPair(const char* value) { m_keyPairHasBeenSet = true; m_keyPair.assign(value); }
 
     /**
-     * <p>The EC2 key pair of the infrastructure configuration.</p>
+     * <p>The Amazon EC2 key pair of the infrastructure configuration.</p>
      */
     inline InfrastructureConfiguration& WithKeyPair(const Aws::String& value) { SetKeyPair(value); return *this;}
 
     /**
-     * <p>The EC2 key pair of the infrastructure configuration.</p>
+     * <p>The Amazon EC2 key pair of the infrastructure configuration.</p>
      */
     inline InfrastructureConfiguration& WithKeyPair(Aws::String&& value) { SetKeyPair(std::move(value)); return *this;}
 
     /**
-     * <p>The EC2 key pair of the infrastructure configuration.</p>
+     * <p>The Amazon EC2 key pair of the infrastructure configuration.</p>
      */
     inline InfrastructureConfiguration& WithKeyPair(const char* value) { SetKeyPair(value); return *this;}
 
@@ -435,50 +436,74 @@ namespace Model
 
 
     /**
-     * <p>The SNS topic Amazon Resource Name (ARN) of the infrastructure
-     * configuration.</p>
+     * <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build
+     * event notifications.</p>  <p>EC2 Image Builder is unable to send
+     * notifications to SNS topics that are encrypted using keys from other accounts.
+     * The key that is used to encrypt the SNS topic must reside in the account that
+     * the Image Builder service runs under.</p> 
      */
     inline const Aws::String& GetSnsTopicArn() const{ return m_snsTopicArn; }
 
     /**
-     * <p>The SNS topic Amazon Resource Name (ARN) of the infrastructure
-     * configuration.</p>
+     * <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build
+     * event notifications.</p>  <p>EC2 Image Builder is unable to send
+     * notifications to SNS topics that are encrypted using keys from other accounts.
+     * The key that is used to encrypt the SNS topic must reside in the account that
+     * the Image Builder service runs under.</p> 
      */
     inline bool SnsTopicArnHasBeenSet() const { return m_snsTopicArnHasBeenSet; }
 
     /**
-     * <p>The SNS topic Amazon Resource Name (ARN) of the infrastructure
-     * configuration.</p>
+     * <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build
+     * event notifications.</p>  <p>EC2 Image Builder is unable to send
+     * notifications to SNS topics that are encrypted using keys from other accounts.
+     * The key that is used to encrypt the SNS topic must reside in the account that
+     * the Image Builder service runs under.</p> 
      */
     inline void SetSnsTopicArn(const Aws::String& value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn = value; }
 
     /**
-     * <p>The SNS topic Amazon Resource Name (ARN) of the infrastructure
-     * configuration.</p>
+     * <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build
+     * event notifications.</p>  <p>EC2 Image Builder is unable to send
+     * notifications to SNS topics that are encrypted using keys from other accounts.
+     * The key that is used to encrypt the SNS topic must reside in the account that
+     * the Image Builder service runs under.</p> 
      */
     inline void SetSnsTopicArn(Aws::String&& value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn = std::move(value); }
 
     /**
-     * <p>The SNS topic Amazon Resource Name (ARN) of the infrastructure
-     * configuration.</p>
+     * <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build
+     * event notifications.</p>  <p>EC2 Image Builder is unable to send
+     * notifications to SNS topics that are encrypted using keys from other accounts.
+     * The key that is used to encrypt the SNS topic must reside in the account that
+     * the Image Builder service runs under.</p> 
      */
     inline void SetSnsTopicArn(const char* value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn.assign(value); }
 
     /**
-     * <p>The SNS topic Amazon Resource Name (ARN) of the infrastructure
-     * configuration.</p>
+     * <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build
+     * event notifications.</p>  <p>EC2 Image Builder is unable to send
+     * notifications to SNS topics that are encrypted using keys from other accounts.
+     * The key that is used to encrypt the SNS topic must reside in the account that
+     * the Image Builder service runs under.</p> 
      */
     inline InfrastructureConfiguration& WithSnsTopicArn(const Aws::String& value) { SetSnsTopicArn(value); return *this;}
 
     /**
-     * <p>The SNS topic Amazon Resource Name (ARN) of the infrastructure
-     * configuration.</p>
+     * <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build
+     * event notifications.</p>  <p>EC2 Image Builder is unable to send
+     * notifications to SNS topics that are encrypted using keys from other accounts.
+     * The key that is used to encrypt the SNS topic must reside in the account that
+     * the Image Builder service runs under.</p> 
      */
     inline InfrastructureConfiguration& WithSnsTopicArn(Aws::String&& value) { SetSnsTopicArn(std::move(value)); return *this;}
 
     /**
-     * <p>The SNS topic Amazon Resource Name (ARN) of the infrastructure
-     * configuration.</p>
+     * <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build
+     * event notifications.</p>  <p>EC2 Image Builder is unable to send
+     * notifications to SNS topics that are encrypted using keys from other accounts.
+     * The key that is used to encrypt the SNS topic must reside in the account that
+     * the Image Builder service runs under.</p> 
      */
     inline InfrastructureConfiguration& WithSnsTopicArn(const char* value) { SetSnsTopicArn(value); return *this;}
 
@@ -632,6 +657,43 @@ namespace Model
 
 
     /**
+     * <p>The instance metadata option settings for the infrastructure
+     * configuration.</p>
+     */
+    inline const InstanceMetadataOptions& GetInstanceMetadataOptions() const{ return m_instanceMetadataOptions; }
+
+    /**
+     * <p>The instance metadata option settings for the infrastructure
+     * configuration.</p>
+     */
+    inline bool InstanceMetadataOptionsHasBeenSet() const { return m_instanceMetadataOptionsHasBeenSet; }
+
+    /**
+     * <p>The instance metadata option settings for the infrastructure
+     * configuration.</p>
+     */
+    inline void SetInstanceMetadataOptions(const InstanceMetadataOptions& value) { m_instanceMetadataOptionsHasBeenSet = true; m_instanceMetadataOptions = value; }
+
+    /**
+     * <p>The instance metadata option settings for the infrastructure
+     * configuration.</p>
+     */
+    inline void SetInstanceMetadataOptions(InstanceMetadataOptions&& value) { m_instanceMetadataOptionsHasBeenSet = true; m_instanceMetadataOptions = std::move(value); }
+
+    /**
+     * <p>The instance metadata option settings for the infrastructure
+     * configuration.</p>
+     */
+    inline InfrastructureConfiguration& WithInstanceMetadataOptions(const InstanceMetadataOptions& value) { SetInstanceMetadataOptions(value); return *this;}
+
+    /**
+     * <p>The instance metadata option settings for the infrastructure
+     * configuration.</p>
+     */
+    inline InfrastructureConfiguration& WithInstanceMetadataOptions(InstanceMetadataOptions&& value) { SetInstanceMetadataOptions(std::move(value)); return *this;}
+
+
+    /**
      * <p>The tags of the infrastructure configuration.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
@@ -739,6 +801,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_resourceTags;
     bool m_resourceTagsHasBeenSet;
+
+    InstanceMetadataOptions m_instanceMetadataOptions;
+    bool m_instanceMetadataOptionsHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;

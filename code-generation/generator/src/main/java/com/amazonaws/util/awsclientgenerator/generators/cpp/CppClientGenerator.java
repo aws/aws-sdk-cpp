@@ -21,6 +21,7 @@ import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.VelocityEngine;
 import org.apache.velocity.runtime.RuntimeConstants;
 import org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader;
+import org.slf4j.helpers.NOPLoggerFactory;
 
 import java.io.IOException;
 import java.io.StringWriter;
@@ -33,10 +34,14 @@ public abstract class CppClientGenerator implements ClientGenerator {
 
     public CppClientGenerator() throws Exception {
         velocityEngine = new VelocityEngine();
-        velocityEngine.setProperty(RuntimeConstants.RESOURCE_LOADER, "classpath");
-        velocityEngine.setProperty("classpath.resource.loader.class", ClasspathResourceLoader.class.getName());
-        velocityEngine.setProperty(RuntimeConstants.RUNTIME_LOG_LOGSYSTEM_CLASS, "org.apache.velocity.runtime.log.NullLogChute");
-        velocityEngine.setProperty("template.provide.scope.control", true);
+        velocityEngine.setProperty(RuntimeConstants.RESOURCE_LOADERS, "classpath");
+        velocityEngine.setProperty("resource.loader.classpath.class", ClasspathResourceLoader.class.getName());
+        velocityEngine.addProperty(RuntimeConstants.RUNTIME_LOG_INSTANCE, new NOPLoggerFactory().getLogger(""));
+        velocityEngine.setProperty("context.scope_control.template", true);
+        // Migration from 1.7 to 2.3:: https://velocity.apache.org/engine/2.3/upgrading.html
+        // # Use backward compatible space gobbling
+        velocityEngine.setProperty(RuntimeConstants.SPACE_GOBBLING, RuntimeConstants.SpaceGobbling.BC.toString());
+
         velocityEngine.init();
     }
 
@@ -60,6 +65,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
         fileList.add(generateClientSourceFile(serviceModel));
         fileList.add(generateARNHeaderFile(serviceModel));
         fileList.add(generateARNSourceFile(serviceModel));
+        fileList.add(generateClientConfigurationFile(serviceModel));
         fileList.add(generateRegionHeaderFile(serviceModel));
         fileList.add(generateRegionSourceFile(serviceModel));
         fileList.add(generateErrorsHeaderFile(serviceModel));
@@ -124,7 +130,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
         }
         else if (shape.isEnum()) {
             template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelEnumHeader.vm", StandardCharsets.UTF_8.name());
-            EnumModel enumModel = new EnumModel(shapeEntry.getKey(), shape.getEnumValues());
+            EnumModel enumModel = new EnumModel(serviceModel.getMetadata().getNamespace(), shapeEntry.getKey(), shape.getEnumValues());
             context.put("enumModel", enumModel);
         }
         else if (shape.isEvent() && shape.getEventPayloadType().equals("blob")) {
@@ -207,7 +213,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
 
         if (shape.isEnum()) {
             template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/EnumSource.vm", StandardCharsets.UTF_8.name());
-            EnumModel enumModel = new EnumModel(shapeEntry.getKey(), shape.getEnumValues());
+            EnumModel enumModel = new EnumModel(serviceModel.getMetadata().getNamespace(), shapeEntry.getKey(), shape.getEnumValues());
             context.put("enumModel", enumModel);
 
             context.put("shape", shape);
@@ -325,6 +331,11 @@ public abstract class CppClientGenerator implements ClientGenerator {
         return null;
     }
 
+    protected SdkFileEntry generateClientConfigurationFile(final ServiceModel serviceModel) throws Exception {
+        // no-op for services other than S3Crt.
+        return null;
+    }
+
     private SdkFileEntry generateServiceRequestHeader(final ServiceModel serviceModel) throws Exception {
 
         Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/AbstractServiceRequest.vm", StandardCharsets.UTF_8.name());
@@ -377,7 +388,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
             serviceModel.getMetadata().setGlobalEndpoint("ce.us-east-1.amazonaws.com");
 
         } else if (serviceModel.getServiceName().equals("chime")) {
-            serviceModel.getMetadata().setGlobalEndpoint("service.chime.aws.amazon.com");
+            serviceModel.getMetadata().setGlobalEndpoint("chime.us-east-1.amazonaws.com");
 
         } else if (serviceModel.getServiceName().equals("iam")) {
             endpoints.put("cn-north-1", "iam.cn-north-1.amazonaws.com.cn");
@@ -394,14 +405,20 @@ public abstract class CppClientGenerator implements ClientGenerator {
 
         } else if (serviceModel.getServiceName().equals("organizations")) {
             endpoints.put("us-gov-west-1", "organizations.us-gov-west-1.amazonaws.com");
+            endpoints.put("fips-aws-global", "organizations-fips.us-east-1.amazonaws.com");
             serviceModel.getMetadata().setGlobalEndpoint("organizations.us-east-1.amazonaws.com");
 
         } else if (serviceModel.getServiceName().equals("route53")) {
             endpoints.put("us-gov-west-1", "route53.us-gov.amazonaws.com");
             endpoints.put("us-iso-east-1", "route53.c2s.ic.gov");
+            endpoints.put("fips-aws-global", "route53-fips.amazonaws.com");
             serviceModel.getMetadata().setGlobalEndpoint("route53.amazonaws.com");
 
-        } else if (serviceModel.getServiceName().equals("sts")) {
+        } else if (serviceModel.getServiceName().equals("shield")) {
+            endpoints.put("fips-aws-global", "shield-fips.us-east-1.amazonaws.com");
+        }
+
+        else if (serviceModel.getServiceName().equals("sts")) {
              serviceModel.getMetadata().setGlobalEndpoint(null);
         }
 

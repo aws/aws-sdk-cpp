@@ -23,7 +23,8 @@ LoggingConfiguration::LoggingConfiguration() :
     m_logDestinationConfigsHasBeenSet(false),
     m_redactedFieldsHasBeenSet(false),
     m_managedByFirewallManager(false),
-    m_managedByFirewallManagerHasBeenSet(false)
+    m_managedByFirewallManagerHasBeenSet(false),
+    m_loggingFilterHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ LoggingConfiguration::LoggingConfiguration(JsonView jsonValue) :
     m_logDestinationConfigsHasBeenSet(false),
     m_redactedFieldsHasBeenSet(false),
     m_managedByFirewallManager(false),
-    m_managedByFirewallManagerHasBeenSet(false)
+    m_managedByFirewallManagerHasBeenSet(false),
+    m_loggingFilterHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -73,6 +75,13 @@ LoggingConfiguration& LoggingConfiguration::operator =(JsonView jsonValue)
     m_managedByFirewallManagerHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LoggingFilter"))
+  {
+    m_loggingFilter = jsonValue.GetObject("LoggingFilter");
+
+    m_loggingFilterHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -111,6 +120,12 @@ JsonValue LoggingConfiguration::Jsonize() const
   if(m_managedByFirewallManagerHasBeenSet)
   {
    payload.WithBool("ManagedByFirewallManager", m_managedByFirewallManager);
+
+  }
+
+  if(m_loggingFilterHasBeenSet)
+  {
+   payload.WithObject("LoggingFilter", m_loggingFilter.Jsonize());
 
   }
 

@@ -22,7 +22,8 @@ namespace Model
     ACTIVE,
     FAILED_WORKFLOW,
     DELETED,
-    DISABLED
+    DISABLED,
+    WORKFLOW_COMPLETED
   };
 
 namespace ReceivedStatusMapper

@@ -80,64 +80,64 @@ namespace Model
     /**
      * <p>For CA certificates, provides a path to additional information pertaining to
      * the CA, such as revocation and policy. For more information, see <a
-     * href="https://tools.ietf.org/html/rfc5280#section-4.2.2.2">Subject Information
-     * Access</a> in RFC 5280.</p>
+     * href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.2.2">Subject
+     * Information Access</a> in RFC 5280.</p>
      */
     inline const Aws::Vector<AccessDescription>& GetSubjectInformationAccess() const{ return m_subjectInformationAccess; }
 
     /**
      * <p>For CA certificates, provides a path to additional information pertaining to
      * the CA, such as revocation and policy. For more information, see <a
-     * href="https://tools.ietf.org/html/rfc5280#section-4.2.2.2">Subject Information
-     * Access</a> in RFC 5280.</p>
+     * href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.2.2">Subject
+     * Information Access</a> in RFC 5280.</p>
      */
     inline bool SubjectInformationAccessHasBeenSet() const { return m_subjectInformationAccessHasBeenSet; }
 
     /**
      * <p>For CA certificates, provides a path to additional information pertaining to
      * the CA, such as revocation and policy. For more information, see <a
-     * href="https://tools.ietf.org/html/rfc5280#section-4.2.2.2">Subject Information
-     * Access</a> in RFC 5280.</p>
+     * href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.2.2">Subject
+     * Information Access</a> in RFC 5280.</p>
      */
     inline void SetSubjectInformationAccess(const Aws::Vector<AccessDescription>& value) { m_subjectInformationAccessHasBeenSet = true; m_subjectInformationAccess = value; }
 
     /**
      * <p>For CA certificates, provides a path to additional information pertaining to
      * the CA, such as revocation and policy. For more information, see <a
-     * href="https://tools.ietf.org/html/rfc5280#section-4.2.2.2">Subject Information
-     * Access</a> in RFC 5280.</p>
+     * href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.2.2">Subject
+     * Information Access</a> in RFC 5280.</p>
      */
     inline void SetSubjectInformationAccess(Aws::Vector<AccessDescription>&& value) { m_subjectInformationAccessHasBeenSet = true; m_subjectInformationAccess = std::move(value); }
 
     /**
      * <p>For CA certificates, provides a path to additional information pertaining to
      * the CA, such as revocation and policy. For more information, see <a
-     * href="https://tools.ietf.org/html/rfc5280#section-4.2.2.2">Subject Information
-     * Access</a> in RFC 5280.</p>
+     * href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.2.2">Subject
+     * Information Access</a> in RFC 5280.</p>
      */
     inline CsrExtensions& WithSubjectInformationAccess(const Aws::Vector<AccessDescription>& value) { SetSubjectInformationAccess(value); return *this;}
 
     /**
      * <p>For CA certificates, provides a path to additional information pertaining to
      * the CA, such as revocation and policy. For more information, see <a
-     * href="https://tools.ietf.org/html/rfc5280#section-4.2.2.2">Subject Information
-     * Access</a> in RFC 5280.</p>
+     * href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.2.2">Subject
+     * Information Access</a> in RFC 5280.</p>
      */
     inline CsrExtensions& WithSubjectInformationAccess(Aws::Vector<AccessDescription>&& value) { SetSubjectInformationAccess(std::move(value)); return *this;}
 
     /**
      * <p>For CA certificates, provides a path to additional information pertaining to
      * the CA, such as revocation and policy. For more information, see <a
-     * href="https://tools.ietf.org/html/rfc5280#section-4.2.2.2">Subject Information
-     * Access</a> in RFC 5280.</p>
+     * href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.2.2">Subject
+     * Information Access</a> in RFC 5280.</p>
      */
     inline CsrExtensions& AddSubjectInformationAccess(const AccessDescription& value) { m_subjectInformationAccessHasBeenSet = true; m_subjectInformationAccess.push_back(value); return *this; }
 
     /**
      * <p>For CA certificates, provides a path to additional information pertaining to
      * the CA, such as revocation and policy. For more information, see <a
-     * href="https://tools.ietf.org/html/rfc5280#section-4.2.2.2">Subject Information
-     * Access</a> in RFC 5280.</p>
+     * href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.2.2">Subject
+     * Information Access</a> in RFC 5280.</p>
      */
     inline CsrExtensions& AddSubjectInformationAccess(AccessDescription&& value) { m_subjectInformationAccessHasBeenSet = true; m_subjectInformationAccess.push_back(std::move(value)); return *this; }
 

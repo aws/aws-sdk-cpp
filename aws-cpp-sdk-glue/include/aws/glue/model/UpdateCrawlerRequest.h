@@ -12,6 +12,7 @@
 #include <aws/glue/model/SchemaChangePolicy.h>
 #include <aws/glue/model/RecrawlPolicy.h>
 #include <aws/glue/model/LineageConfiguration.h>
+#include <aws/glue/model/LakeFormationConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -130,49 +131,49 @@ namespace Model
 
 
     /**
-     * <p>The AWS Glue database where results are stored, such as:
+     * <p>The Glue database where results are stored, such as:
      * <code>arn:aws:daylight:us-east-1::database/sometable/ *</code>.</p>
      */
     inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
 
     /**
-     * <p>The AWS Glue database where results are stored, such as:
+     * <p>The Glue database where results are stored, such as:
      * <code>arn:aws:daylight:us-east-1::database/sometable/ *</code>.</p>
      */
     inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
 
     /**
-     * <p>The AWS Glue database where results are stored, such as:
+     * <p>The Glue database where results are stored, such as:
      * <code>arn:aws:daylight:us-east-1::database/sometable/ *</code>.</p>
      */
     inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
 
     /**
-     * <p>The AWS Glue database where results are stored, such as:
+     * <p>The Glue database where results are stored, such as:
      * <code>arn:aws:daylight:us-east-1::database/sometable/ *</code>.</p>
      */
     inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
 
     /**
-     * <p>The AWS Glue database where results are stored, such as:
+     * <p>The Glue database where results are stored, such as:
      * <code>arn:aws:daylight:us-east-1::database/sometable/ *</code>.</p>
      */
     inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
 
     /**
-     * <p>The AWS Glue database where results are stored, such as:
+     * <p>The Glue database where results are stored, such as:
      * <code>arn:aws:daylight:us-east-1::database/sometable/ *</code>.</p>
      */
     inline UpdateCrawlerRequest& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
 
     /**
-     * <p>The AWS Glue database where results are stored, such as:
+     * <p>The Glue database where results are stored, such as:
      * <code>arn:aws:daylight:us-east-1::database/sometable/ *</code>.</p>
      */
     inline UpdateCrawlerRequest& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Glue database where results are stored, such as:
+     * <p>The Glue database where results are stored, such as:
      * <code>arn:aws:daylight:us-east-1::database/sometable/ *</code>.</p>
      */
     inline UpdateCrawlerRequest& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
@@ -519,6 +520,25 @@ namespace Model
     inline UpdateCrawlerRequest& WithLineageConfiguration(LineageConfiguration&& value) { SetLineageConfiguration(std::move(value)); return *this;}
 
 
+    
+    inline const LakeFormationConfiguration& GetLakeFormationConfiguration() const{ return m_lakeFormationConfiguration; }
+
+    
+    inline bool LakeFormationConfigurationHasBeenSet() const { return m_lakeFormationConfigurationHasBeenSet; }
+
+    
+    inline void SetLakeFormationConfiguration(const LakeFormationConfiguration& value) { m_lakeFormationConfigurationHasBeenSet = true; m_lakeFormationConfiguration = value; }
+
+    
+    inline void SetLakeFormationConfiguration(LakeFormationConfiguration&& value) { m_lakeFormationConfigurationHasBeenSet = true; m_lakeFormationConfiguration = std::move(value); }
+
+    
+    inline UpdateCrawlerRequest& WithLakeFormationConfiguration(const LakeFormationConfiguration& value) { SetLakeFormationConfiguration(value); return *this;}
+
+    
+    inline UpdateCrawlerRequest& WithLakeFormationConfiguration(LakeFormationConfiguration&& value) { SetLakeFormationConfiguration(std::move(value)); return *this;}
+
+
     /**
      * <p>Crawler configuration information. This versioned JSON string allows users to
      * specify aspects of a crawler's behavior. For more information, see <a
@@ -666,6 +686,9 @@ namespace Model
 
     LineageConfiguration m_lineageConfiguration;
     bool m_lineageConfigurationHasBeenSet;
+
+    LakeFormationConfiguration m_lakeFormationConfiguration;
+    bool m_lakeFormationConfigurationHasBeenSet;
 
     Aws::String m_configuration;
     bool m_configurationHasBeenSet;

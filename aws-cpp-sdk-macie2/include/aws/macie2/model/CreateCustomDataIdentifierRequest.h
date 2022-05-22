@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/macie2/model/SeverityLevel.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -88,8 +89,8 @@ namespace Model
      * <p>A custom description of the custom data identifier. The description can
      * contain as many as 512 characters.</p> <p>We strongly recommend that you avoid
      * including any sensitive data in the description of a custom data identifier.
-     * Other users of your account might be able to see the identifier's description,
-     * depending on the actions that they're allowed to perform in Amazon Macie.</p>
+     * Other users of your account might be able to see this description, depending on
+     * the actions that they're allowed to perform in Amazon Macie.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
@@ -97,8 +98,8 @@ namespace Model
      * <p>A custom description of the custom data identifier. The description can
      * contain as many as 512 characters.</p> <p>We strongly recommend that you avoid
      * including any sensitive data in the description of a custom data identifier.
-     * Other users of your account might be able to see the identifier's description,
-     * depending on the actions that they're allowed to perform in Amazon Macie.</p>
+     * Other users of your account might be able to see this description, depending on
+     * the actions that they're allowed to perform in Amazon Macie.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
@@ -106,8 +107,8 @@ namespace Model
      * <p>A custom description of the custom data identifier. The description can
      * contain as many as 512 characters.</p> <p>We strongly recommend that you avoid
      * including any sensitive data in the description of a custom data identifier.
-     * Other users of your account might be able to see the identifier's description,
-     * depending on the actions that they're allowed to perform in Amazon Macie.</p>
+     * Other users of your account might be able to see this description, depending on
+     * the actions that they're allowed to perform in Amazon Macie.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
@@ -115,8 +116,8 @@ namespace Model
      * <p>A custom description of the custom data identifier. The description can
      * contain as many as 512 characters.</p> <p>We strongly recommend that you avoid
      * including any sensitive data in the description of a custom data identifier.
-     * Other users of your account might be able to see the identifier's description,
-     * depending on the actions that they're allowed to perform in Amazon Macie.</p>
+     * Other users of your account might be able to see this description, depending on
+     * the actions that they're allowed to perform in Amazon Macie.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
@@ -124,8 +125,8 @@ namespace Model
      * <p>A custom description of the custom data identifier. The description can
      * contain as many as 512 characters.</p> <p>We strongly recommend that you avoid
      * including any sensitive data in the description of a custom data identifier.
-     * Other users of your account might be able to see the identifier's description,
-     * depending on the actions that they're allowed to perform in Amazon Macie.</p>
+     * Other users of your account might be able to see this description, depending on
+     * the actions that they're allowed to perform in Amazon Macie.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
@@ -133,8 +134,8 @@ namespace Model
      * <p>A custom description of the custom data identifier. The description can
      * contain as many as 512 characters.</p> <p>We strongly recommend that you avoid
      * including any sensitive data in the description of a custom data identifier.
-     * Other users of your account might be able to see the identifier's description,
-     * depending on the actions that they're allowed to perform in Amazon Macie.</p>
+     * Other users of your account might be able to see this description, depending on
+     * the actions that they're allowed to perform in Amazon Macie.</p>
      */
     inline CreateCustomDataIdentifierRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
@@ -142,8 +143,8 @@ namespace Model
      * <p>A custom description of the custom data identifier. The description can
      * contain as many as 512 characters.</p> <p>We strongly recommend that you avoid
      * including any sensitive data in the description of a custom data identifier.
-     * Other users of your account might be able to see the identifier's description,
-     * depending on the actions that they're allowed to perform in Amazon Macie.</p>
+     * Other users of your account might be able to see this description, depending on
+     * the actions that they're allowed to perform in Amazon Macie.</p>
      */
     inline CreateCustomDataIdentifierRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
@@ -151,200 +152,200 @@ namespace Model
      * <p>A custom description of the custom data identifier. The description can
      * contain as many as 512 characters.</p> <p>We strongly recommend that you avoid
      * including any sensitive data in the description of a custom data identifier.
-     * Other users of your account might be able to see the identifier's description,
-     * depending on the actions that they're allowed to perform in Amazon Macie.</p>
+     * Other users of your account might be able to see this description, depending on
+     * the actions that they're allowed to perform in Amazon Macie.</p>
      */
     inline CreateCustomDataIdentifierRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * <p>An array that lists specific character sequences (ignore words) to exclude
-     * from the results. If the text matched by the regular expression is the same as
+     * <p>An array that lists specific character sequences (<i>ignore words</i>) to
+     * exclude from the results. If the text matched by the regular expression contains
      * any string in this array, Amazon Macie ignores it. The array can contain as many
-     * as 10 ignore words. Each ignore word can contain 4 - 90 characters. Ignore words
-     * are case sensitive.</p>
+     * as 10 ignore words. Each ignore word can contain 4-90 UTF-8 characters. Ignore
+     * words are case sensitive.</p>
      */
     inline const Aws::Vector<Aws::String>& GetIgnoreWords() const{ return m_ignoreWords; }
 
     /**
-     * <p>An array that lists specific character sequences (ignore words) to exclude
-     * from the results. If the text matched by the regular expression is the same as
+     * <p>An array that lists specific character sequences (<i>ignore words</i>) to
+     * exclude from the results. If the text matched by the regular expression contains
      * any string in this array, Amazon Macie ignores it. The array can contain as many
-     * as 10 ignore words. Each ignore word can contain 4 - 90 characters. Ignore words
-     * are case sensitive.</p>
+     * as 10 ignore words. Each ignore word can contain 4-90 UTF-8 characters. Ignore
+     * words are case sensitive.</p>
      */
     inline bool IgnoreWordsHasBeenSet() const { return m_ignoreWordsHasBeenSet; }
 
     /**
-     * <p>An array that lists specific character sequences (ignore words) to exclude
-     * from the results. If the text matched by the regular expression is the same as
+     * <p>An array that lists specific character sequences (<i>ignore words</i>) to
+     * exclude from the results. If the text matched by the regular expression contains
      * any string in this array, Amazon Macie ignores it. The array can contain as many
-     * as 10 ignore words. Each ignore word can contain 4 - 90 characters. Ignore words
-     * are case sensitive.</p>
+     * as 10 ignore words. Each ignore word can contain 4-90 UTF-8 characters. Ignore
+     * words are case sensitive.</p>
      */
     inline void SetIgnoreWords(const Aws::Vector<Aws::String>& value) { m_ignoreWordsHasBeenSet = true; m_ignoreWords = value; }
 
     /**
-     * <p>An array that lists specific character sequences (ignore words) to exclude
-     * from the results. If the text matched by the regular expression is the same as
+     * <p>An array that lists specific character sequences (<i>ignore words</i>) to
+     * exclude from the results. If the text matched by the regular expression contains
      * any string in this array, Amazon Macie ignores it. The array can contain as many
-     * as 10 ignore words. Each ignore word can contain 4 - 90 characters. Ignore words
-     * are case sensitive.</p>
+     * as 10 ignore words. Each ignore word can contain 4-90 UTF-8 characters. Ignore
+     * words are case sensitive.</p>
      */
     inline void SetIgnoreWords(Aws::Vector<Aws::String>&& value) { m_ignoreWordsHasBeenSet = true; m_ignoreWords = std::move(value); }
 
     /**
-     * <p>An array that lists specific character sequences (ignore words) to exclude
-     * from the results. If the text matched by the regular expression is the same as
+     * <p>An array that lists specific character sequences (<i>ignore words</i>) to
+     * exclude from the results. If the text matched by the regular expression contains
      * any string in this array, Amazon Macie ignores it. The array can contain as many
-     * as 10 ignore words. Each ignore word can contain 4 - 90 characters. Ignore words
-     * are case sensitive.</p>
+     * as 10 ignore words. Each ignore word can contain 4-90 UTF-8 characters. Ignore
+     * words are case sensitive.</p>
      */
     inline CreateCustomDataIdentifierRequest& WithIgnoreWords(const Aws::Vector<Aws::String>& value) { SetIgnoreWords(value); return *this;}
 
     /**
-     * <p>An array that lists specific character sequences (ignore words) to exclude
-     * from the results. If the text matched by the regular expression is the same as
+     * <p>An array that lists specific character sequences (<i>ignore words</i>) to
+     * exclude from the results. If the text matched by the regular expression contains
      * any string in this array, Amazon Macie ignores it. The array can contain as many
-     * as 10 ignore words. Each ignore word can contain 4 - 90 characters. Ignore words
-     * are case sensitive.</p>
+     * as 10 ignore words. Each ignore word can contain 4-90 UTF-8 characters. Ignore
+     * words are case sensitive.</p>
      */
     inline CreateCustomDataIdentifierRequest& WithIgnoreWords(Aws::Vector<Aws::String>&& value) { SetIgnoreWords(std::move(value)); return *this;}
 
     /**
-     * <p>An array that lists specific character sequences (ignore words) to exclude
-     * from the results. If the text matched by the regular expression is the same as
+     * <p>An array that lists specific character sequences (<i>ignore words</i>) to
+     * exclude from the results. If the text matched by the regular expression contains
      * any string in this array, Amazon Macie ignores it. The array can contain as many
-     * as 10 ignore words. Each ignore word can contain 4 - 90 characters. Ignore words
-     * are case sensitive.</p>
+     * as 10 ignore words. Each ignore word can contain 4-90 UTF-8 characters. Ignore
+     * words are case sensitive.</p>
      */
     inline CreateCustomDataIdentifierRequest& AddIgnoreWords(const Aws::String& value) { m_ignoreWordsHasBeenSet = true; m_ignoreWords.push_back(value); return *this; }
 
     /**
-     * <p>An array that lists specific character sequences (ignore words) to exclude
-     * from the results. If the text matched by the regular expression is the same as
+     * <p>An array that lists specific character sequences (<i>ignore words</i>) to
+     * exclude from the results. If the text matched by the regular expression contains
      * any string in this array, Amazon Macie ignores it. The array can contain as many
-     * as 10 ignore words. Each ignore word can contain 4 - 90 characters. Ignore words
-     * are case sensitive.</p>
+     * as 10 ignore words. Each ignore word can contain 4-90 UTF-8 characters. Ignore
+     * words are case sensitive.</p>
      */
     inline CreateCustomDataIdentifierRequest& AddIgnoreWords(Aws::String&& value) { m_ignoreWordsHasBeenSet = true; m_ignoreWords.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>An array that lists specific character sequences (ignore words) to exclude
-     * from the results. If the text matched by the regular expression is the same as
+     * <p>An array that lists specific character sequences (<i>ignore words</i>) to
+     * exclude from the results. If the text matched by the regular expression contains
      * any string in this array, Amazon Macie ignores it. The array can contain as many
-     * as 10 ignore words. Each ignore word can contain 4 - 90 characters. Ignore words
-     * are case sensitive.</p>
+     * as 10 ignore words. Each ignore word can contain 4-90 UTF-8 characters. Ignore
+     * words are case sensitive.</p>
      */
     inline CreateCustomDataIdentifierRequest& AddIgnoreWords(const char* value) { m_ignoreWordsHasBeenSet = true; m_ignoreWords.push_back(value); return *this; }
 
 
     /**
-     * <p>An array that lists specific character sequences (keywords), one of which
-     * must be within proximity (maximumMatchDistance) of the regular expression to
-     * match. The array can contain as many as 50 keywords. Each keyword can contain 4
-     * - 90 characters. Keywords aren't case sensitive.</p>
+     * <p>An array that lists specific character sequences (<i>keywords</i>), one of
+     * which must be within proximity (maximumMatchDistance) of the regular expression
+     * to match. The array can contain as many as 50 keywords. Each keyword can contain
+     * 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
      */
     inline const Aws::Vector<Aws::String>& GetKeywords() const{ return m_keywords; }
 
     /**
-     * <p>An array that lists specific character sequences (keywords), one of which
-     * must be within proximity (maximumMatchDistance) of the regular expression to
-     * match. The array can contain as many as 50 keywords. Each keyword can contain 4
-     * - 90 characters. Keywords aren't case sensitive.</p>
+     * <p>An array that lists specific character sequences (<i>keywords</i>), one of
+     * which must be within proximity (maximumMatchDistance) of the regular expression
+     * to match. The array can contain as many as 50 keywords. Each keyword can contain
+     * 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
      */
     inline bool KeywordsHasBeenSet() const { return m_keywordsHasBeenSet; }
 
     /**
-     * <p>An array that lists specific character sequences (keywords), one of which
-     * must be within proximity (maximumMatchDistance) of the regular expression to
-     * match. The array can contain as many as 50 keywords. Each keyword can contain 4
-     * - 90 characters. Keywords aren't case sensitive.</p>
+     * <p>An array that lists specific character sequences (<i>keywords</i>), one of
+     * which must be within proximity (maximumMatchDistance) of the regular expression
+     * to match. The array can contain as many as 50 keywords. Each keyword can contain
+     * 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
      */
     inline void SetKeywords(const Aws::Vector<Aws::String>& value) { m_keywordsHasBeenSet = true; m_keywords = value; }
 
     /**
-     * <p>An array that lists specific character sequences (keywords), one of which
-     * must be within proximity (maximumMatchDistance) of the regular expression to
-     * match. The array can contain as many as 50 keywords. Each keyword can contain 4
-     * - 90 characters. Keywords aren't case sensitive.</p>
+     * <p>An array that lists specific character sequences (<i>keywords</i>), one of
+     * which must be within proximity (maximumMatchDistance) of the regular expression
+     * to match. The array can contain as many as 50 keywords. Each keyword can contain
+     * 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
      */
     inline void SetKeywords(Aws::Vector<Aws::String>&& value) { m_keywordsHasBeenSet = true; m_keywords = std::move(value); }
 
     /**
-     * <p>An array that lists specific character sequences (keywords), one of which
-     * must be within proximity (maximumMatchDistance) of the regular expression to
-     * match. The array can contain as many as 50 keywords. Each keyword can contain 4
-     * - 90 characters. Keywords aren't case sensitive.</p>
+     * <p>An array that lists specific character sequences (<i>keywords</i>), one of
+     * which must be within proximity (maximumMatchDistance) of the regular expression
+     * to match. The array can contain as many as 50 keywords. Each keyword can contain
+     * 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
      */
     inline CreateCustomDataIdentifierRequest& WithKeywords(const Aws::Vector<Aws::String>& value) { SetKeywords(value); return *this;}
 
     /**
-     * <p>An array that lists specific character sequences (keywords), one of which
-     * must be within proximity (maximumMatchDistance) of the regular expression to
-     * match. The array can contain as many as 50 keywords. Each keyword can contain 4
-     * - 90 characters. Keywords aren't case sensitive.</p>
+     * <p>An array that lists specific character sequences (<i>keywords</i>), one of
+     * which must be within proximity (maximumMatchDistance) of the regular expression
+     * to match. The array can contain as many as 50 keywords. Each keyword can contain
+     * 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
      */
     inline CreateCustomDataIdentifierRequest& WithKeywords(Aws::Vector<Aws::String>&& value) { SetKeywords(std::move(value)); return *this;}
 
     /**
-     * <p>An array that lists specific character sequences (keywords), one of which
-     * must be within proximity (maximumMatchDistance) of the regular expression to
-     * match. The array can contain as many as 50 keywords. Each keyword can contain 4
-     * - 90 characters. Keywords aren't case sensitive.</p>
+     * <p>An array that lists specific character sequences (<i>keywords</i>), one of
+     * which must be within proximity (maximumMatchDistance) of the regular expression
+     * to match. The array can contain as many as 50 keywords. Each keyword can contain
+     * 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
      */
     inline CreateCustomDataIdentifierRequest& AddKeywords(const Aws::String& value) { m_keywordsHasBeenSet = true; m_keywords.push_back(value); return *this; }
 
     /**
-     * <p>An array that lists specific character sequences (keywords), one of which
-     * must be within proximity (maximumMatchDistance) of the regular expression to
-     * match. The array can contain as many as 50 keywords. Each keyword can contain 4
-     * - 90 characters. Keywords aren't case sensitive.</p>
+     * <p>An array that lists specific character sequences (<i>keywords</i>), one of
+     * which must be within proximity (maximumMatchDistance) of the regular expression
+     * to match. The array can contain as many as 50 keywords. Each keyword can contain
+     * 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
      */
     inline CreateCustomDataIdentifierRequest& AddKeywords(Aws::String&& value) { m_keywordsHasBeenSet = true; m_keywords.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>An array that lists specific character sequences (keywords), one of which
-     * must be within proximity (maximumMatchDistance) of the regular expression to
-     * match. The array can contain as many as 50 keywords. Each keyword can contain 4
-     * - 90 characters. Keywords aren't case sensitive.</p>
+     * <p>An array that lists specific character sequences (<i>keywords</i>), one of
+     * which must be within proximity (maximumMatchDistance) of the regular expression
+     * to match. The array can contain as many as 50 keywords. Each keyword can contain
+     * 3-90 UTF-8 characters. Keywords aren't case sensitive.</p>
      */
     inline CreateCustomDataIdentifierRequest& AddKeywords(const char* value) { m_keywordsHasBeenSet = true; m_keywords.push_back(value); return *this; }
 
 
     /**
      * <p>The maximum number of characters that can exist between text that matches the
-     * regex pattern and the character sequences specified by the keywords array. Macie
-     * includes or excludes a result based on the proximity of a keyword to text that
-     * matches the regex pattern. The distance can be 1 - 300 characters. The default
-     * value is 50.</p>
+     * regular expression and the character sequences specified by the keywords array.
+     * Amazon Macie includes or excludes a result based on the proximity of a keyword
+     * to text that matches the regular expression. The distance can be 1-300
+     * characters. The default value is 50.</p>
      */
     inline int GetMaximumMatchDistance() const{ return m_maximumMatchDistance; }
 
     /**
      * <p>The maximum number of characters that can exist between text that matches the
-     * regex pattern and the character sequences specified by the keywords array. Macie
-     * includes or excludes a result based on the proximity of a keyword to text that
-     * matches the regex pattern. The distance can be 1 - 300 characters. The default
-     * value is 50.</p>
+     * regular expression and the character sequences specified by the keywords array.
+     * Amazon Macie includes or excludes a result based on the proximity of a keyword
+     * to text that matches the regular expression. The distance can be 1-300
+     * characters. The default value is 50.</p>
      */
     inline bool MaximumMatchDistanceHasBeenSet() const { return m_maximumMatchDistanceHasBeenSet; }
 
     /**
      * <p>The maximum number of characters that can exist between text that matches the
-     * regex pattern and the character sequences specified by the keywords array. Macie
-     * includes or excludes a result based on the proximity of a keyword to text that
-     * matches the regex pattern. The distance can be 1 - 300 characters. The default
-     * value is 50.</p>
+     * regular expression and the character sequences specified by the keywords array.
+     * Amazon Macie includes or excludes a result based on the proximity of a keyword
+     * to text that matches the regular expression. The distance can be 1-300
+     * characters. The default value is 50.</p>
      */
     inline void SetMaximumMatchDistance(int value) { m_maximumMatchDistanceHasBeenSet = true; m_maximumMatchDistance = value; }
 
     /**
      * <p>The maximum number of characters that can exist between text that matches the
-     * regex pattern and the character sequences specified by the keywords array. Macie
-     * includes or excludes a result based on the proximity of a keyword to text that
-     * matches the regex pattern. The distance can be 1 - 300 characters. The default
-     * value is 50.</p>
+     * regular expression and the character sequences specified by the keywords array.
+     * Amazon Macie includes or excludes a result based on the proximity of a keyword
+     * to text that matches the regular expression. The distance can be 1-300
+     * characters. The default value is 50.</p>
      */
     inline CreateCustomDataIdentifierRequest& WithMaximumMatchDistance(int value) { SetMaximumMatchDistance(value); return *this;}
 
@@ -353,8 +354,8 @@ namespace Model
      * <p>A custom name for the custom data identifier. The name can contain as many as
      * 128 characters.</p> <p>We strongly recommend that you avoid including any
      * sensitive data in the name of a custom data identifier. Other users of your
-     * account might be able to see the identifier's name, depending on the actions
-     * that they're allowed to perform in Amazon Macie.</p>
+     * account might be able to see this name, depending on the actions that they're
+     * allowed to perform in Amazon Macie.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
@@ -362,8 +363,8 @@ namespace Model
      * <p>A custom name for the custom data identifier. The name can contain as many as
      * 128 characters.</p> <p>We strongly recommend that you avoid including any
      * sensitive data in the name of a custom data identifier. Other users of your
-     * account might be able to see the identifier's name, depending on the actions
-     * that they're allowed to perform in Amazon Macie.</p>
+     * account might be able to see this name, depending on the actions that they're
+     * allowed to perform in Amazon Macie.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
@@ -371,8 +372,8 @@ namespace Model
      * <p>A custom name for the custom data identifier. The name can contain as many as
      * 128 characters.</p> <p>We strongly recommend that you avoid including any
      * sensitive data in the name of a custom data identifier. Other users of your
-     * account might be able to see the identifier's name, depending on the actions
-     * that they're allowed to perform in Amazon Macie.</p>
+     * account might be able to see this name, depending on the actions that they're
+     * allowed to perform in Amazon Macie.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
@@ -380,8 +381,8 @@ namespace Model
      * <p>A custom name for the custom data identifier. The name can contain as many as
      * 128 characters.</p> <p>We strongly recommend that you avoid including any
      * sensitive data in the name of a custom data identifier. Other users of your
-     * account might be able to see the identifier's name, depending on the actions
-     * that they're allowed to perform in Amazon Macie.</p>
+     * account might be able to see this name, depending on the actions that they're
+     * allowed to perform in Amazon Macie.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
@@ -389,8 +390,8 @@ namespace Model
      * <p>A custom name for the custom data identifier. The name can contain as many as
      * 128 characters.</p> <p>We strongly recommend that you avoid including any
      * sensitive data in the name of a custom data identifier. Other users of your
-     * account might be able to see the identifier's name, depending on the actions
-     * that they're allowed to perform in Amazon Macie.</p>
+     * account might be able to see this name, depending on the actions that they're
+     * allowed to perform in Amazon Macie.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
@@ -398,8 +399,8 @@ namespace Model
      * <p>A custom name for the custom data identifier. The name can contain as many as
      * 128 characters.</p> <p>We strongly recommend that you avoid including any
      * sensitive data in the name of a custom data identifier. Other users of your
-     * account might be able to see the identifier's name, depending on the actions
-     * that they're allowed to perform in Amazon Macie.</p>
+     * account might be able to see this name, depending on the actions that they're
+     * allowed to perform in Amazon Macie.</p>
      */
     inline CreateCustomDataIdentifierRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
@@ -407,8 +408,8 @@ namespace Model
      * <p>A custom name for the custom data identifier. The name can contain as many as
      * 128 characters.</p> <p>We strongly recommend that you avoid including any
      * sensitive data in the name of a custom data identifier. Other users of your
-     * account might be able to see the identifier's name, depending on the actions
-     * that they're allowed to perform in Amazon Macie.</p>
+     * account might be able to see this name, depending on the actions that they're
+     * allowed to perform in Amazon Macie.</p>
      */
     inline CreateCustomDataIdentifierRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
@@ -416,8 +417,8 @@ namespace Model
      * <p>A custom name for the custom data identifier. The name can contain as many as
      * 128 characters.</p> <p>We strongly recommend that you avoid including any
      * sensitive data in the name of a custom data identifier. Other users of your
-     * account might be able to see the identifier's name, depending on the actions
-     * that they're allowed to perform in Amazon Macie.</p>
+     * account might be able to see this name, depending on the actions that they're
+     * allowed to perform in Amazon Macie.</p>
      */
     inline CreateCustomDataIdentifierRequest& WithName(const char* value) { SetName(value); return *this;}
 
@@ -469,6 +470,127 @@ namespace Model
      * expression can contain as many as 512 characters.</p>
      */
     inline CreateCustomDataIdentifierRequest& WithRegex(const char* value) { SetRegex(value); return *this;}
+
+
+    /**
+     * <p>The severity to assign to findings that the custom data identifier produces,
+     * based on the number of occurrences of text that matches the custom data
+     * identifier's detection criteria. You can specify as many as three SeverityLevel
+     * objects in this array, one for each severity: LOW, MEDIUM, or HIGH. If you
+     * specify more than one, the occurrences thresholds must be in ascending order by
+     * severity, moving from LOW to HIGH. For example, 1 for LOW, 50 for MEDIUM, and
+     * 100 for HIGH. If an S3 object contains fewer occurrences than the lowest
+     * specified threshold, Amazon Macie doesn't create a finding.</p> <p>If you don't
+     * specify any values for this array, Macie creates findings for S3 objects that
+     * contain at least one occurrence of text that matches the detection criteria, and
+     * Macie assigns the MEDIUM severity to those findings.</p>
+     */
+    inline const Aws::Vector<SeverityLevel>& GetSeverityLevels() const{ return m_severityLevels; }
+
+    /**
+     * <p>The severity to assign to findings that the custom data identifier produces,
+     * based on the number of occurrences of text that matches the custom data
+     * identifier's detection criteria. You can specify as many as three SeverityLevel
+     * objects in this array, one for each severity: LOW, MEDIUM, or HIGH. If you
+     * specify more than one, the occurrences thresholds must be in ascending order by
+     * severity, moving from LOW to HIGH. For example, 1 for LOW, 50 for MEDIUM, and
+     * 100 for HIGH. If an S3 object contains fewer occurrences than the lowest
+     * specified threshold, Amazon Macie doesn't create a finding.</p> <p>If you don't
+     * specify any values for this array, Macie creates findings for S3 objects that
+     * contain at least one occurrence of text that matches the detection criteria, and
+     * Macie assigns the MEDIUM severity to those findings.</p>
+     */
+    inline bool SeverityLevelsHasBeenSet() const { return m_severityLevelsHasBeenSet; }
+
+    /**
+     * <p>The severity to assign to findings that the custom data identifier produces,
+     * based on the number of occurrences of text that matches the custom data
+     * identifier's detection criteria. You can specify as many as three SeverityLevel
+     * objects in this array, one for each severity: LOW, MEDIUM, or HIGH. If you
+     * specify more than one, the occurrences thresholds must be in ascending order by
+     * severity, moving from LOW to HIGH. For example, 1 for LOW, 50 for MEDIUM, and
+     * 100 for HIGH. If an S3 object contains fewer occurrences than the lowest
+     * specified threshold, Amazon Macie doesn't create a finding.</p> <p>If you don't
+     * specify any values for this array, Macie creates findings for S3 objects that
+     * contain at least one occurrence of text that matches the detection criteria, and
+     * Macie assigns the MEDIUM severity to those findings.</p>
+     */
+    inline void SetSeverityLevels(const Aws::Vector<SeverityLevel>& value) { m_severityLevelsHasBeenSet = true; m_severityLevels = value; }
+
+    /**
+     * <p>The severity to assign to findings that the custom data identifier produces,
+     * based on the number of occurrences of text that matches the custom data
+     * identifier's detection criteria. You can specify as many as three SeverityLevel
+     * objects in this array, one for each severity: LOW, MEDIUM, or HIGH. If you
+     * specify more than one, the occurrences thresholds must be in ascending order by
+     * severity, moving from LOW to HIGH. For example, 1 for LOW, 50 for MEDIUM, and
+     * 100 for HIGH. If an S3 object contains fewer occurrences than the lowest
+     * specified threshold, Amazon Macie doesn't create a finding.</p> <p>If you don't
+     * specify any values for this array, Macie creates findings for S3 objects that
+     * contain at least one occurrence of text that matches the detection criteria, and
+     * Macie assigns the MEDIUM severity to those findings.</p>
+     */
+    inline void SetSeverityLevels(Aws::Vector<SeverityLevel>&& value) { m_severityLevelsHasBeenSet = true; m_severityLevels = std::move(value); }
+
+    /**
+     * <p>The severity to assign to findings that the custom data identifier produces,
+     * based on the number of occurrences of text that matches the custom data
+     * identifier's detection criteria. You can specify as many as three SeverityLevel
+     * objects in this array, one for each severity: LOW, MEDIUM, or HIGH. If you
+     * specify more than one, the occurrences thresholds must be in ascending order by
+     * severity, moving from LOW to HIGH. For example, 1 for LOW, 50 for MEDIUM, and
+     * 100 for HIGH. If an S3 object contains fewer occurrences than the lowest
+     * specified threshold, Amazon Macie doesn't create a finding.</p> <p>If you don't
+     * specify any values for this array, Macie creates findings for S3 objects that
+     * contain at least one occurrence of text that matches the detection criteria, and
+     * Macie assigns the MEDIUM severity to those findings.</p>
+     */
+    inline CreateCustomDataIdentifierRequest& WithSeverityLevels(const Aws::Vector<SeverityLevel>& value) { SetSeverityLevels(value); return *this;}
+
+    /**
+     * <p>The severity to assign to findings that the custom data identifier produces,
+     * based on the number of occurrences of text that matches the custom data
+     * identifier's detection criteria. You can specify as many as three SeverityLevel
+     * objects in this array, one for each severity: LOW, MEDIUM, or HIGH. If you
+     * specify more than one, the occurrences thresholds must be in ascending order by
+     * severity, moving from LOW to HIGH. For example, 1 for LOW, 50 for MEDIUM, and
+     * 100 for HIGH. If an S3 object contains fewer occurrences than the lowest
+     * specified threshold, Amazon Macie doesn't create a finding.</p> <p>If you don't
+     * specify any values for this array, Macie creates findings for S3 objects that
+     * contain at least one occurrence of text that matches the detection criteria, and
+     * Macie assigns the MEDIUM severity to those findings.</p>
+     */
+    inline CreateCustomDataIdentifierRequest& WithSeverityLevels(Aws::Vector<SeverityLevel>&& value) { SetSeverityLevels(std::move(value)); return *this;}
+
+    /**
+     * <p>The severity to assign to findings that the custom data identifier produces,
+     * based on the number of occurrences of text that matches the custom data
+     * identifier's detection criteria. You can specify as many as three SeverityLevel
+     * objects in this array, one for each severity: LOW, MEDIUM, or HIGH. If you
+     * specify more than one, the occurrences thresholds must be in ascending order by
+     * severity, moving from LOW to HIGH. For example, 1 for LOW, 50 for MEDIUM, and
+     * 100 for HIGH. If an S3 object contains fewer occurrences than the lowest
+     * specified threshold, Amazon Macie doesn't create a finding.</p> <p>If you don't
+     * specify any values for this array, Macie creates findings for S3 objects that
+     * contain at least one occurrence of text that matches the detection criteria, and
+     * Macie assigns the MEDIUM severity to those findings.</p>
+     */
+    inline CreateCustomDataIdentifierRequest& AddSeverityLevels(const SeverityLevel& value) { m_severityLevelsHasBeenSet = true; m_severityLevels.push_back(value); return *this; }
+
+    /**
+     * <p>The severity to assign to findings that the custom data identifier produces,
+     * based on the number of occurrences of text that matches the custom data
+     * identifier's detection criteria. You can specify as many as three SeverityLevel
+     * objects in this array, one for each severity: LOW, MEDIUM, or HIGH. If you
+     * specify more than one, the occurrences thresholds must be in ascending order by
+     * severity, moving from LOW to HIGH. For example, 1 for LOW, 50 for MEDIUM, and
+     * 100 for HIGH. If an S3 object contains fewer occurrences than the lowest
+     * specified threshold, Amazon Macie doesn't create a finding.</p> <p>If you don't
+     * specify any values for this array, Macie creates findings for S3 objects that
+     * contain at least one occurrence of text that matches the detection criteria, and
+     * Macie assigns the MEDIUM severity to those findings.</p>
+     */
+    inline CreateCustomDataIdentifierRequest& AddSeverityLevels(SeverityLevel&& value) { m_severityLevelsHasBeenSet = true; m_severityLevels.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -610,6 +732,9 @@ namespace Model
 
     Aws::String m_regex;
     bool m_regexHasBeenSet;
+
+    Aws::Vector<SeverityLevel> m_severityLevels;
+    bool m_severityLevelsHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;

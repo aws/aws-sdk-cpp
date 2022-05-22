@@ -43,6 +43,12 @@ GetCelebrityInfoResult& GetCelebrityInfoResult::operator =(const Aws::AmazonWebS
 
   }
 
+  if(jsonValue.ValueExists("KnownGender"))
+  {
+    m_knownGender = jsonValue.GetObject("KnownGender");
+
+  }
+
 
 
   return *this;

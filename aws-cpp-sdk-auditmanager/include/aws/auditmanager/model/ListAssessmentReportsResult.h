@@ -35,80 +35,80 @@ namespace Model
 
 
     /**
-     * <p> The list of assessment reports returned by the
-     * <code>ListAssessmentReports</code> API. </p>
+     * <p> The list of assessment reports that the <code>ListAssessmentReports</code>
+     * API returned. </p>
      */
     inline const Aws::Vector<AssessmentReportMetadata>& GetAssessmentReports() const{ return m_assessmentReports; }
 
     /**
-     * <p> The list of assessment reports returned by the
-     * <code>ListAssessmentReports</code> API. </p>
+     * <p> The list of assessment reports that the <code>ListAssessmentReports</code>
+     * API returned. </p>
      */
     inline void SetAssessmentReports(const Aws::Vector<AssessmentReportMetadata>& value) { m_assessmentReports = value; }
 
     /**
-     * <p> The list of assessment reports returned by the
-     * <code>ListAssessmentReports</code> API. </p>
+     * <p> The list of assessment reports that the <code>ListAssessmentReports</code>
+     * API returned. </p>
      */
     inline void SetAssessmentReports(Aws::Vector<AssessmentReportMetadata>&& value) { m_assessmentReports = std::move(value); }
 
     /**
-     * <p> The list of assessment reports returned by the
-     * <code>ListAssessmentReports</code> API. </p>
+     * <p> The list of assessment reports that the <code>ListAssessmentReports</code>
+     * API returned. </p>
      */
     inline ListAssessmentReportsResult& WithAssessmentReports(const Aws::Vector<AssessmentReportMetadata>& value) { SetAssessmentReports(value); return *this;}
 
     /**
-     * <p> The list of assessment reports returned by the
-     * <code>ListAssessmentReports</code> API. </p>
+     * <p> The list of assessment reports that the <code>ListAssessmentReports</code>
+     * API returned. </p>
      */
     inline ListAssessmentReportsResult& WithAssessmentReports(Aws::Vector<AssessmentReportMetadata>&& value) { SetAssessmentReports(std::move(value)); return *this;}
 
     /**
-     * <p> The list of assessment reports returned by the
-     * <code>ListAssessmentReports</code> API. </p>
+     * <p> The list of assessment reports that the <code>ListAssessmentReports</code>
+     * API returned. </p>
      */
     inline ListAssessmentReportsResult& AddAssessmentReports(const AssessmentReportMetadata& value) { m_assessmentReports.push_back(value); return *this; }
 
     /**
-     * <p> The list of assessment reports returned by the
-     * <code>ListAssessmentReports</code> API. </p>
+     * <p> The list of assessment reports that the <code>ListAssessmentReports</code>
+     * API returned. </p>
      */
     inline ListAssessmentReportsResult& AddAssessmentReports(AssessmentReportMetadata&& value) { m_assessmentReports.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p> The pagination token used to fetch the next set of results. </p>
+     * <p> The pagination token that's used to fetch the next set of results. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p> The pagination token used to fetch the next set of results. </p>
+     * <p> The pagination token that's used to fetch the next set of results. </p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p> The pagination token used to fetch the next set of results. </p>
+     * <p> The pagination token that's used to fetch the next set of results. </p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p> The pagination token used to fetch the next set of results. </p>
+     * <p> The pagination token that's used to fetch the next set of results. </p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p> The pagination token used to fetch the next set of results. </p>
+     * <p> The pagination token that's used to fetch the next set of results. </p>
      */
     inline ListAssessmentReportsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p> The pagination token used to fetch the next set of results. </p>
+     * <p> The pagination token that's used to fetch the next set of results. </p>
      */
     inline ListAssessmentReportsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p> The pagination token used to fetch the next set of results. </p>
+     * <p> The pagination token that's used to fetch the next set of results. </p>
      */
     inline ListAssessmentReportsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

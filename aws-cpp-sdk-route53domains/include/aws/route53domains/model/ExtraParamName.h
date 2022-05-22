@@ -44,7 +44,8 @@ namespace Model
     SG_ID_NUMBER,
     VAT_NUMBER,
     UK_CONTACT_TYPE,
-    UK_COMPANY_NUMBER
+    UK_COMPANY_NUMBER,
+    EU_COUNTRY_OF_CITIZENSHIP
   };
 
 namespace ExtraParamNameMapper

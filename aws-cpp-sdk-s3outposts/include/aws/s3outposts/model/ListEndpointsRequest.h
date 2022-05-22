@@ -39,63 +39,71 @@ namespace Model
 
 
     /**
-     * <p>The next endpoint requested in the list.</p>
+     * <p>If a previous response from this operation included a <code>NextToken</code>
+     * value, provide that value here to retrieve the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The next endpoint requested in the list.</p>
+     * <p>If a previous response from this operation included a <code>NextToken</code>
+     * value, provide that value here to retrieve the next page of results.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>The next endpoint requested in the list.</p>
+     * <p>If a previous response from this operation included a <code>NextToken</code>
+     * value, provide that value here to retrieve the next page of results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>The next endpoint requested in the list.</p>
+     * <p>If a previous response from this operation included a <code>NextToken</code>
+     * value, provide that value here to retrieve the next page of results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>The next endpoint requested in the list.</p>
+     * <p>If a previous response from this operation included a <code>NextToken</code>
+     * value, provide that value here to retrieve the next page of results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>The next endpoint requested in the list.</p>
+     * <p>If a previous response from this operation included a <code>NextToken</code>
+     * value, provide that value here to retrieve the next page of results.</p>
      */
     inline ListEndpointsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The next endpoint requested in the list.</p>
+     * <p>If a previous response from this operation included a <code>NextToken</code>
+     * value, provide that value here to retrieve the next page of results.</p>
      */
     inline ListEndpointsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The next endpoint requested in the list.</p>
+     * <p>If a previous response from this operation included a <code>NextToken</code>
+     * value, provide that value here to retrieve the next page of results.</p>
      */
     inline ListEndpointsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
     /**
-     * <p>The max number of endpoints that can be returned on the request.</p>
+     * <p>The maximum number of endpoints that will be returned in the response.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The max number of endpoints that can be returned on the request.</p>
+     * <p>The maximum number of endpoints that will be returned in the response.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The max number of endpoints that can be returned on the request.</p>
+     * <p>The maximum number of endpoints that will be returned in the response.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The max number of endpoints that can be returned on the request.</p>
+     * <p>The maximum number of endpoints that will be returned in the response.</p>
      */
     inline ListEndpointsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

@@ -292,8 +292,8 @@ namespace Model
 
     /**
      * <p>The target capacity of Spot units for the instance fleet, which determines
-     * how many Spot instances to provision. When the instance fleet launches, Amazon
-     * EMR tries to provision Spot instances as specified by <a>InstanceTypeConfig</a>.
+     * how many Spot Instances to provision. When the instance fleet launches, Amazon
+     * EMR tries to provision Spot Instances as specified by <a>InstanceTypeConfig</a>.
      * Each instance configuration has a specified <code>WeightedCapacity</code>. When
      * a Spot instance is provisioned, the <code>WeightedCapacity</code> units count
      * toward the target capacity. Amazon EMR provisions instances until the target
@@ -303,7 +303,7 @@ namespace Model
      * instance is provisioned, and the target capacity is exceeded by 3 units. You can
      * use <a>InstanceFleet$ProvisionedSpotCapacity</a> to determine the Spot capacity
      * units that have been provisioned for the instance fleet.</p>  <p>If not
-     * specified or set to 0, only On-Demand instances are provisioned for the instance
+     * specified or set to 0, only On-Demand Instances are provisioned for the instance
      * fleet. At least one of <code>TargetSpotCapacity</code> and
      * <code>TargetOnDemandCapacity</code> should be greater than 0. For a master
      * instance fleet, only one of <code>TargetSpotCapacity</code> and
@@ -314,8 +314,8 @@ namespace Model
 
     /**
      * <p>The target capacity of Spot units for the instance fleet, which determines
-     * how many Spot instances to provision. When the instance fleet launches, Amazon
-     * EMR tries to provision Spot instances as specified by <a>InstanceTypeConfig</a>.
+     * how many Spot Instances to provision. When the instance fleet launches, Amazon
+     * EMR tries to provision Spot Instances as specified by <a>InstanceTypeConfig</a>.
      * Each instance configuration has a specified <code>WeightedCapacity</code>. When
      * a Spot instance is provisioned, the <code>WeightedCapacity</code> units count
      * toward the target capacity. Amazon EMR provisions instances until the target
@@ -325,7 +325,7 @@ namespace Model
      * instance is provisioned, and the target capacity is exceeded by 3 units. You can
      * use <a>InstanceFleet$ProvisionedSpotCapacity</a> to determine the Spot capacity
      * units that have been provisioned for the instance fleet.</p>  <p>If not
-     * specified or set to 0, only On-Demand instances are provisioned for the instance
+     * specified or set to 0, only On-Demand Instances are provisioned for the instance
      * fleet. At least one of <code>TargetSpotCapacity</code> and
      * <code>TargetOnDemandCapacity</code> should be greater than 0. For a master
      * instance fleet, only one of <code>TargetSpotCapacity</code> and
@@ -336,8 +336,8 @@ namespace Model
 
     /**
      * <p>The target capacity of Spot units for the instance fleet, which determines
-     * how many Spot instances to provision. When the instance fleet launches, Amazon
-     * EMR tries to provision Spot instances as specified by <a>InstanceTypeConfig</a>.
+     * how many Spot Instances to provision. When the instance fleet launches, Amazon
+     * EMR tries to provision Spot Instances as specified by <a>InstanceTypeConfig</a>.
      * Each instance configuration has a specified <code>WeightedCapacity</code>. When
      * a Spot instance is provisioned, the <code>WeightedCapacity</code> units count
      * toward the target capacity. Amazon EMR provisions instances until the target
@@ -347,7 +347,7 @@ namespace Model
      * instance is provisioned, and the target capacity is exceeded by 3 units. You can
      * use <a>InstanceFleet$ProvisionedSpotCapacity</a> to determine the Spot capacity
      * units that have been provisioned for the instance fleet.</p>  <p>If not
-     * specified or set to 0, only On-Demand instances are provisioned for the instance
+     * specified or set to 0, only On-Demand Instances are provisioned for the instance
      * fleet. At least one of <code>TargetSpotCapacity</code> and
      * <code>TargetOnDemandCapacity</code> should be greater than 0. For a master
      * instance fleet, only one of <code>TargetSpotCapacity</code> and
@@ -358,8 +358,8 @@ namespace Model
 
     /**
      * <p>The target capacity of Spot units for the instance fleet, which determines
-     * how many Spot instances to provision. When the instance fleet launches, Amazon
-     * EMR tries to provision Spot instances as specified by <a>InstanceTypeConfig</a>.
+     * how many Spot Instances to provision. When the instance fleet launches, Amazon
+     * EMR tries to provision Spot Instances as specified by <a>InstanceTypeConfig</a>.
      * Each instance configuration has a specified <code>WeightedCapacity</code>. When
      * a Spot instance is provisioned, the <code>WeightedCapacity</code> units count
      * toward the target capacity. Amazon EMR provisions instances until the target
@@ -369,7 +369,7 @@ namespace Model
      * instance is provisioned, and the target capacity is exceeded by 3 units. You can
      * use <a>InstanceFleet$ProvisionedSpotCapacity</a> to determine the Spot capacity
      * units that have been provisioned for the instance fleet.</p>  <p>If not
-     * specified or set to 0, only On-Demand instances are provisioned for the instance
+     * specified or set to 0, only On-Demand Instances are provisioned for the instance
      * fleet. At least one of <code>TargetSpotCapacity</code> and
      * <code>TargetOnDemandCapacity</code> should be greater than 0. For a master
      * instance fleet, only one of <code>TargetSpotCapacity</code> and
@@ -438,58 +438,50 @@ namespace Model
 
 
     /**
-     * <p>The specification for the instance types that comprise an instance fleet. Up
-     * to five unique instance specifications may be defined for each instance fleet.
-     * </p>
+     * <p>An array of specifications for the instance types that comprise an instance
+     * fleet.</p>
      */
     inline const Aws::Vector<InstanceTypeSpecification>& GetInstanceTypeSpecifications() const{ return m_instanceTypeSpecifications; }
 
     /**
-     * <p>The specification for the instance types that comprise an instance fleet. Up
-     * to five unique instance specifications may be defined for each instance fleet.
-     * </p>
+     * <p>An array of specifications for the instance types that comprise an instance
+     * fleet.</p>
      */
     inline bool InstanceTypeSpecificationsHasBeenSet() const { return m_instanceTypeSpecificationsHasBeenSet; }
 
     /**
-     * <p>The specification for the instance types that comprise an instance fleet. Up
-     * to five unique instance specifications may be defined for each instance fleet.
-     * </p>
+     * <p>An array of specifications for the instance types that comprise an instance
+     * fleet.</p>
      */
     inline void SetInstanceTypeSpecifications(const Aws::Vector<InstanceTypeSpecification>& value) { m_instanceTypeSpecificationsHasBeenSet = true; m_instanceTypeSpecifications = value; }
 
     /**
-     * <p>The specification for the instance types that comprise an instance fleet. Up
-     * to five unique instance specifications may be defined for each instance fleet.
-     * </p>
+     * <p>An array of specifications for the instance types that comprise an instance
+     * fleet.</p>
      */
     inline void SetInstanceTypeSpecifications(Aws::Vector<InstanceTypeSpecification>&& value) { m_instanceTypeSpecificationsHasBeenSet = true; m_instanceTypeSpecifications = std::move(value); }
 
     /**
-     * <p>The specification for the instance types that comprise an instance fleet. Up
-     * to five unique instance specifications may be defined for each instance fleet.
-     * </p>
+     * <p>An array of specifications for the instance types that comprise an instance
+     * fleet.</p>
      */
     inline InstanceFleet& WithInstanceTypeSpecifications(const Aws::Vector<InstanceTypeSpecification>& value) { SetInstanceTypeSpecifications(value); return *this;}
 
     /**
-     * <p>The specification for the instance types that comprise an instance fleet. Up
-     * to five unique instance specifications may be defined for each instance fleet.
-     * </p>
+     * <p>An array of specifications for the instance types that comprise an instance
+     * fleet.</p>
      */
     inline InstanceFleet& WithInstanceTypeSpecifications(Aws::Vector<InstanceTypeSpecification>&& value) { SetInstanceTypeSpecifications(std::move(value)); return *this;}
 
     /**
-     * <p>The specification for the instance types that comprise an instance fleet. Up
-     * to five unique instance specifications may be defined for each instance fleet.
-     * </p>
+     * <p>An array of specifications for the instance types that comprise an instance
+     * fleet.</p>
      */
     inline InstanceFleet& AddInstanceTypeSpecifications(const InstanceTypeSpecification& value) { m_instanceTypeSpecificationsHasBeenSet = true; m_instanceTypeSpecifications.push_back(value); return *this; }
 
     /**
-     * <p>The specification for the instance types that comprise an instance fleet. Up
-     * to five unique instance specifications may be defined for each instance fleet.
-     * </p>
+     * <p>An array of specifications for the instance types that comprise an instance
+     * fleet.</p>
      */
     inline InstanceFleet& AddInstanceTypeSpecifications(InstanceTypeSpecification&& value) { m_instanceTypeSpecificationsHasBeenSet = true; m_instanceTypeSpecifications.push_back(std::move(value)); return *this; }
 

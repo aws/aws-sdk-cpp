@@ -147,49 +147,49 @@ namespace Model
 
     /**
      * <p>The Amazon QuickSight-defined ID of the theme that a custom theme inherits
-     * from. All themes initially inherit from a default QuickSight theme.</p>
+     * from. All themes initially inherit from a default Amazon QuickSight theme.</p>
      */
     inline const Aws::String& GetBaseThemeId() const{ return m_baseThemeId; }
 
     /**
      * <p>The Amazon QuickSight-defined ID of the theme that a custom theme inherits
-     * from. All themes initially inherit from a default QuickSight theme.</p>
+     * from. All themes initially inherit from a default Amazon QuickSight theme.</p>
      */
     inline bool BaseThemeIdHasBeenSet() const { return m_baseThemeIdHasBeenSet; }
 
     /**
      * <p>The Amazon QuickSight-defined ID of the theme that a custom theme inherits
-     * from. All themes initially inherit from a default QuickSight theme.</p>
+     * from. All themes initially inherit from a default Amazon QuickSight theme.</p>
      */
     inline void SetBaseThemeId(const Aws::String& value) { m_baseThemeIdHasBeenSet = true; m_baseThemeId = value; }
 
     /**
      * <p>The Amazon QuickSight-defined ID of the theme that a custom theme inherits
-     * from. All themes initially inherit from a default QuickSight theme.</p>
+     * from. All themes initially inherit from a default Amazon QuickSight theme.</p>
      */
     inline void SetBaseThemeId(Aws::String&& value) { m_baseThemeIdHasBeenSet = true; m_baseThemeId = std::move(value); }
 
     /**
      * <p>The Amazon QuickSight-defined ID of the theme that a custom theme inherits
-     * from. All themes initially inherit from a default QuickSight theme.</p>
+     * from. All themes initially inherit from a default Amazon QuickSight theme.</p>
      */
     inline void SetBaseThemeId(const char* value) { m_baseThemeIdHasBeenSet = true; m_baseThemeId.assign(value); }
 
     /**
      * <p>The Amazon QuickSight-defined ID of the theme that a custom theme inherits
-     * from. All themes initially inherit from a default QuickSight theme.</p>
+     * from. All themes initially inherit from a default Amazon QuickSight theme.</p>
      */
     inline ThemeVersion& WithBaseThemeId(const Aws::String& value) { SetBaseThemeId(value); return *this;}
 
     /**
      * <p>The Amazon QuickSight-defined ID of the theme that a custom theme inherits
-     * from. All themes initially inherit from a default QuickSight theme.</p>
+     * from. All themes initially inherit from a default Amazon QuickSight theme.</p>
      */
     inline ThemeVersion& WithBaseThemeId(Aws::String&& value) { SetBaseThemeId(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon QuickSight-defined ID of the theme that a custom theme inherits
-     * from. All themes initially inherit from a default QuickSight theme.</p>
+     * from. All themes initially inherit from a default Amazon QuickSight theme.</p>
      */
     inline ThemeVersion& WithBaseThemeId(const char* value) { SetBaseThemeId(value); return *this;}
 

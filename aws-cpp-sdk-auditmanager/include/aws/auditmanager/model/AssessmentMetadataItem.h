@@ -29,7 +29,7 @@ namespace Model
 {
 
   /**
-   * <p> A metadata object associated with an assessment in AWS Audit Manager.
+   * <p> A metadata object that's associated with an assessment in Audit Manager.
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/AssessmentMetadataItem">AWS
    * API Reference</a></p>
@@ -126,50 +126,50 @@ namespace Model
 
 
     /**
-     * <p> The name of the compliance standard related to the assessment, such as
-     * PCI-DSS. </p>
+     * <p> The name of the compliance standard that's related to the assessment, such
+     * as PCI-DSS. </p>
      */
     inline const Aws::String& GetComplianceType() const{ return m_complianceType; }
 
     /**
-     * <p> The name of the compliance standard related to the assessment, such as
-     * PCI-DSS. </p>
+     * <p> The name of the compliance standard that's related to the assessment, such
+     * as PCI-DSS. </p>
      */
     inline bool ComplianceTypeHasBeenSet() const { return m_complianceTypeHasBeenSet; }
 
     /**
-     * <p> The name of the compliance standard related to the assessment, such as
-     * PCI-DSS. </p>
+     * <p> The name of the compliance standard that's related to the assessment, such
+     * as PCI-DSS. </p>
      */
     inline void SetComplianceType(const Aws::String& value) { m_complianceTypeHasBeenSet = true; m_complianceType = value; }
 
     /**
-     * <p> The name of the compliance standard related to the assessment, such as
-     * PCI-DSS. </p>
+     * <p> The name of the compliance standard that's related to the assessment, such
+     * as PCI-DSS. </p>
      */
     inline void SetComplianceType(Aws::String&& value) { m_complianceTypeHasBeenSet = true; m_complianceType = std::move(value); }
 
     /**
-     * <p> The name of the compliance standard related to the assessment, such as
-     * PCI-DSS. </p>
+     * <p> The name of the compliance standard that's related to the assessment, such
+     * as PCI-DSS. </p>
      */
     inline void SetComplianceType(const char* value) { m_complianceTypeHasBeenSet = true; m_complianceType.assign(value); }
 
     /**
-     * <p> The name of the compliance standard related to the assessment, such as
-     * PCI-DSS. </p>
+     * <p> The name of the compliance standard that's related to the assessment, such
+     * as PCI-DSS. </p>
      */
     inline AssessmentMetadataItem& WithComplianceType(const Aws::String& value) { SetComplianceType(value); return *this;}
 
     /**
-     * <p> The name of the compliance standard related to the assessment, such as
-     * PCI-DSS. </p>
+     * <p> The name of the compliance standard that's related to the assessment, such
+     * as PCI-DSS. </p>
      */
     inline AssessmentMetadataItem& WithComplianceType(Aws::String&& value) { SetComplianceType(std::move(value)); return *this;}
 
     /**
-     * <p> The name of the compliance standard related to the assessment, such as
-     * PCI-DSS. </p>
+     * <p> The name of the compliance standard that's related to the assessment, such
+     * as PCI-DSS. </p>
      */
     inline AssessmentMetadataItem& WithComplianceType(const char* value) { SetComplianceType(value); return *this;}
 
@@ -206,83 +206,83 @@ namespace Model
 
 
     /**
-     * <p> The roles associated with the assessment. </p>
+     * <p> The roles that are associated with the assessment. </p>
      */
     inline const Aws::Vector<Role>& GetRoles() const{ return m_roles; }
 
     /**
-     * <p> The roles associated with the assessment. </p>
+     * <p> The roles that are associated with the assessment. </p>
      */
     inline bool RolesHasBeenSet() const { return m_rolesHasBeenSet; }
 
     /**
-     * <p> The roles associated with the assessment. </p>
+     * <p> The roles that are associated with the assessment. </p>
      */
     inline void SetRoles(const Aws::Vector<Role>& value) { m_rolesHasBeenSet = true; m_roles = value; }
 
     /**
-     * <p> The roles associated with the assessment. </p>
+     * <p> The roles that are associated with the assessment. </p>
      */
     inline void SetRoles(Aws::Vector<Role>&& value) { m_rolesHasBeenSet = true; m_roles = std::move(value); }
 
     /**
-     * <p> The roles associated with the assessment. </p>
+     * <p> The roles that are associated with the assessment. </p>
      */
     inline AssessmentMetadataItem& WithRoles(const Aws::Vector<Role>& value) { SetRoles(value); return *this;}
 
     /**
-     * <p> The roles associated with the assessment. </p>
+     * <p> The roles that are associated with the assessment. </p>
      */
     inline AssessmentMetadataItem& WithRoles(Aws::Vector<Role>&& value) { SetRoles(std::move(value)); return *this;}
 
     /**
-     * <p> The roles associated with the assessment. </p>
+     * <p> The roles that are associated with the assessment. </p>
      */
     inline AssessmentMetadataItem& AddRoles(const Role& value) { m_rolesHasBeenSet = true; m_roles.push_back(value); return *this; }
 
     /**
-     * <p> The roles associated with the assessment. </p>
+     * <p> The roles that are associated with the assessment. </p>
      */
     inline AssessmentMetadataItem& AddRoles(Role&& value) { m_rolesHasBeenSet = true; m_roles.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p> The delegations associated with the assessment. </p>
+     * <p> The delegations that are associated with the assessment. </p>
      */
     inline const Aws::Vector<Delegation>& GetDelegations() const{ return m_delegations; }
 
     /**
-     * <p> The delegations associated with the assessment. </p>
+     * <p> The delegations that are associated with the assessment. </p>
      */
     inline bool DelegationsHasBeenSet() const { return m_delegationsHasBeenSet; }
 
     /**
-     * <p> The delegations associated with the assessment. </p>
+     * <p> The delegations that are associated with the assessment. </p>
      */
     inline void SetDelegations(const Aws::Vector<Delegation>& value) { m_delegationsHasBeenSet = true; m_delegations = value; }
 
     /**
-     * <p> The delegations associated with the assessment. </p>
+     * <p> The delegations that are associated with the assessment. </p>
      */
     inline void SetDelegations(Aws::Vector<Delegation>&& value) { m_delegationsHasBeenSet = true; m_delegations = std::move(value); }
 
     /**
-     * <p> The delegations associated with the assessment. </p>
+     * <p> The delegations that are associated with the assessment. </p>
      */
     inline AssessmentMetadataItem& WithDelegations(const Aws::Vector<Delegation>& value) { SetDelegations(value); return *this;}
 
     /**
-     * <p> The delegations associated with the assessment. </p>
+     * <p> The delegations that are associated with the assessment. </p>
      */
     inline AssessmentMetadataItem& WithDelegations(Aws::Vector<Delegation>&& value) { SetDelegations(std::move(value)); return *this;}
 
     /**
-     * <p> The delegations associated with the assessment. </p>
+     * <p> The delegations that are associated with the assessment. </p>
      */
     inline AssessmentMetadataItem& AddDelegations(const Delegation& value) { m_delegationsHasBeenSet = true; m_delegations.push_back(value); return *this; }
 
     /**
-     * <p> The delegations associated with the assessment. </p>
+     * <p> The delegations that are associated with the assessment. </p>
      */
     inline AssessmentMetadataItem& AddDelegations(Delegation&& value) { m_delegationsHasBeenSet = true; m_delegations.push_back(std::move(value)); return *this; }
 

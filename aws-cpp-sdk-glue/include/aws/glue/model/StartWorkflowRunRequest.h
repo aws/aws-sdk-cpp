@@ -7,6 +7,7 @@
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/glue/GlueRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -74,10 +75,79 @@ namespace Model
      */
     inline StartWorkflowRunRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
+    /**
+     * <p>The workflow run properties for the new workflow run.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetRunProperties() const{ return m_runProperties; }
+
+    /**
+     * <p>The workflow run properties for the new workflow run.</p>
+     */
+    inline bool RunPropertiesHasBeenSet() const { return m_runPropertiesHasBeenSet; }
+
+    /**
+     * <p>The workflow run properties for the new workflow run.</p>
+     */
+    inline void SetRunProperties(const Aws::Map<Aws::String, Aws::String>& value) { m_runPropertiesHasBeenSet = true; m_runProperties = value; }
+
+    /**
+     * <p>The workflow run properties for the new workflow run.</p>
+     */
+    inline void SetRunProperties(Aws::Map<Aws::String, Aws::String>&& value) { m_runPropertiesHasBeenSet = true; m_runProperties = std::move(value); }
+
+    /**
+     * <p>The workflow run properties for the new workflow run.</p>
+     */
+    inline StartWorkflowRunRequest& WithRunProperties(const Aws::Map<Aws::String, Aws::String>& value) { SetRunProperties(value); return *this;}
+
+    /**
+     * <p>The workflow run properties for the new workflow run.</p>
+     */
+    inline StartWorkflowRunRequest& WithRunProperties(Aws::Map<Aws::String, Aws::String>&& value) { SetRunProperties(std::move(value)); return *this;}
+
+    /**
+     * <p>The workflow run properties for the new workflow run.</p>
+     */
+    inline StartWorkflowRunRequest& AddRunProperties(const Aws::String& key, const Aws::String& value) { m_runPropertiesHasBeenSet = true; m_runProperties.emplace(key, value); return *this; }
+
+    /**
+     * <p>The workflow run properties for the new workflow run.</p>
+     */
+    inline StartWorkflowRunRequest& AddRunProperties(Aws::String&& key, const Aws::String& value) { m_runPropertiesHasBeenSet = true; m_runProperties.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The workflow run properties for the new workflow run.</p>
+     */
+    inline StartWorkflowRunRequest& AddRunProperties(const Aws::String& key, Aws::String&& value) { m_runPropertiesHasBeenSet = true; m_runProperties.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The workflow run properties for the new workflow run.</p>
+     */
+    inline StartWorkflowRunRequest& AddRunProperties(Aws::String&& key, Aws::String&& value) { m_runPropertiesHasBeenSet = true; m_runProperties.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The workflow run properties for the new workflow run.</p>
+     */
+    inline StartWorkflowRunRequest& AddRunProperties(const char* key, Aws::String&& value) { m_runPropertiesHasBeenSet = true; m_runProperties.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The workflow run properties for the new workflow run.</p>
+     */
+    inline StartWorkflowRunRequest& AddRunProperties(Aws::String&& key, const char* value) { m_runPropertiesHasBeenSet = true; m_runProperties.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The workflow run properties for the new workflow run.</p>
+     */
+    inline StartWorkflowRunRequest& AddRunProperties(const char* key, const char* value) { m_runPropertiesHasBeenSet = true; m_runProperties.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_runProperties;
+    bool m_runPropertiesHasBeenSet;
   };
 
 } // namespace Model

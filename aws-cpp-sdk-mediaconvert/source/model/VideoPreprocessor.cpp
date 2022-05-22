@@ -22,6 +22,7 @@ VideoPreprocessor::VideoPreprocessor() :
     m_colorCorrectorHasBeenSet(false),
     m_deinterlacerHasBeenSet(false),
     m_dolbyVisionHasBeenSet(false),
+    m_hdr10PlusHasBeenSet(false),
     m_imageInserterHasBeenSet(false),
     m_noiseReducerHasBeenSet(false),
     m_partnerWatermarkingHasBeenSet(false),
@@ -33,6 +34,7 @@ VideoPreprocessor::VideoPreprocessor(JsonView jsonValue) :
     m_colorCorrectorHasBeenSet(false),
     m_deinterlacerHasBeenSet(false),
     m_dolbyVisionHasBeenSet(false),
+    m_hdr10PlusHasBeenSet(false),
     m_imageInserterHasBeenSet(false),
     m_noiseReducerHasBeenSet(false),
     m_partnerWatermarkingHasBeenSet(false),
@@ -62,6 +64,13 @@ VideoPreprocessor& VideoPreprocessor::operator =(JsonView jsonValue)
     m_dolbyVision = jsonValue.GetObject("dolbyVision");
 
     m_dolbyVisionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("hdr10Plus"))
+  {
+    m_hdr10Plus = jsonValue.GetObject("hdr10Plus");
+
+    m_hdr10PlusHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("imageInserter"))
@@ -114,6 +123,12 @@ JsonValue VideoPreprocessor::Jsonize() const
   if(m_dolbyVisionHasBeenSet)
   {
    payload.WithObject("dolbyVision", m_dolbyVision.Jsonize());
+
+  }
+
+  if(m_hdr10PlusHasBeenSet)
+  {
+   payload.WithObject("hdr10Plus", m_hdr10Plus.Jsonize());
 
   }
 

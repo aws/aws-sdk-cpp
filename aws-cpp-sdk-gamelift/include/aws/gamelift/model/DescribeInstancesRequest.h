@@ -38,50 +38,50 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier for a fleet to retrieve instance information for. You can
-     * use either the fleet ID or ARN value.</p>
+     * <p>A unique identifier for the fleet to retrieve instance information for. You
+     * can use either the fleet ID or ARN value.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
 
     /**
-     * <p>A unique identifier for a fleet to retrieve instance information for. You can
-     * use either the fleet ID or ARN value.</p>
+     * <p>A unique identifier for the fleet to retrieve instance information for. You
+     * can use either the fleet ID or ARN value.</p>
      */
     inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
 
     /**
-     * <p>A unique identifier for a fleet to retrieve instance information for. You can
-     * use either the fleet ID or ARN value.</p>
+     * <p>A unique identifier for the fleet to retrieve instance information for. You
+     * can use either the fleet ID or ARN value.</p>
      */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
-     * <p>A unique identifier for a fleet to retrieve instance information for. You can
-     * use either the fleet ID or ARN value.</p>
+     * <p>A unique identifier for the fleet to retrieve instance information for. You
+     * can use either the fleet ID or ARN value.</p>
      */
     inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
 
     /**
-     * <p>A unique identifier for a fleet to retrieve instance information for. You can
-     * use either the fleet ID or ARN value.</p>
+     * <p>A unique identifier for the fleet to retrieve instance information for. You
+     * can use either the fleet ID or ARN value.</p>
      */
     inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
 
     /**
-     * <p>A unique identifier for a fleet to retrieve instance information for. You can
-     * use either the fleet ID or ARN value.</p>
+     * <p>A unique identifier for the fleet to retrieve instance information for. You
+     * can use either the fleet ID or ARN value.</p>
      */
     inline DescribeInstancesRequest& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>A unique identifier for a fleet to retrieve instance information for. You can
-     * use either the fleet ID or ARN value.</p>
+     * <p>A unique identifier for the fleet to retrieve instance information for. You
+     * can use either the fleet ID or ARN value.</p>
      */
     inline DescribeInstancesRequest& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for a fleet to retrieve instance information for. You can
-     * use either the fleet ID or ARN value.</p>
+     * <p>A unique identifier for the fleet to retrieve instance information for. You
+     * can use either the fleet ID or ARN value.</p>
      */
     inline DescribeInstancesRequest& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 
@@ -161,60 +161,109 @@ namespace Model
 
 
     /**
-     * <p>Token that indicates the start of the next sequential page of results. Use
+     * <p>A token that indicates the start of the next sequential page of results. Use
      * the token that is returned with a previous call to this operation. To start at
      * the beginning of the result set, do not specify a value.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>Token that indicates the start of the next sequential page of results. Use
+     * <p>A token that indicates the start of the next sequential page of results. Use
      * the token that is returned with a previous call to this operation. To start at
      * the beginning of the result set, do not specify a value.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>Token that indicates the start of the next sequential page of results. Use
+     * <p>A token that indicates the start of the next sequential page of results. Use
      * the token that is returned with a previous call to this operation. To start at
      * the beginning of the result set, do not specify a value.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>Token that indicates the start of the next sequential page of results. Use
+     * <p>A token that indicates the start of the next sequential page of results. Use
      * the token that is returned with a previous call to this operation. To start at
      * the beginning of the result set, do not specify a value.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>Token that indicates the start of the next sequential page of results. Use
+     * <p>A token that indicates the start of the next sequential page of results. Use
      * the token that is returned with a previous call to this operation. To start at
      * the beginning of the result set, do not specify a value.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>Token that indicates the start of the next sequential page of results. Use
+     * <p>A token that indicates the start of the next sequential page of results. Use
      * the token that is returned with a previous call to this operation. To start at
      * the beginning of the result set, do not specify a value.</p>
      */
     inline DescribeInstancesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Token that indicates the start of the next sequential page of results. Use
+     * <p>A token that indicates the start of the next sequential page of results. Use
      * the token that is returned with a previous call to this operation. To start at
      * the beginning of the result set, do not specify a value.</p>
      */
     inline DescribeInstancesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>Token that indicates the start of the next sequential page of results. Use
+     * <p>A token that indicates the start of the next sequential page of results. Use
      * the token that is returned with a previous call to this operation. To start at
      * the beginning of the result set, do not specify a value.</p>
      */
     inline DescribeInstancesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
+
+    /**
+     * <p>The name of a location to retrieve instance information for, in the form of
+     * an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
+     */
+    inline const Aws::String& GetLocation() const{ return m_location; }
+
+    /**
+     * <p>The name of a location to retrieve instance information for, in the form of
+     * an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
+     */
+    inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
+
+    /**
+     * <p>The name of a location to retrieve instance information for, in the form of
+     * an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
+     */
+    inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
+
+    /**
+     * <p>The name of a location to retrieve instance information for, in the form of
+     * an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
+     */
+    inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
+
+    /**
+     * <p>The name of a location to retrieve instance information for, in the form of
+     * an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
+     */
+    inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
+
+    /**
+     * <p>The name of a location to retrieve instance information for, in the form of
+     * an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
+     */
+    inline DescribeInstancesRequest& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
+
+    /**
+     * <p>The name of a location to retrieve instance information for, in the form of
+     * an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
+     */
+    inline DescribeInstancesRequest& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of a location to retrieve instance information for, in the form of
+     * an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
+     */
+    inline DescribeInstancesRequest& WithLocation(const char* value) { SetLocation(value); return *this;}
 
   private:
 
@@ -229,6 +278,9 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
+    Aws::String m_location;
+    bool m_locationHasBeenSet;
   };
 
 } // namespace Model

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/appmesh/AppMesh_EXPORTS.h>
 #include <aws/appmesh/model/EgressFilter.h>
+#include <aws/appmesh/model/MeshServiceDiscovery.h>
 #include <utility>
 
 namespace Aws
@@ -68,10 +69,32 @@ namespace Model
      */
     inline MeshSpec& WithEgressFilter(EgressFilter&& value) { SetEgressFilter(std::move(value)); return *this;}
 
+
+    
+    inline const MeshServiceDiscovery& GetServiceDiscovery() const{ return m_serviceDiscovery; }
+
+    
+    inline bool ServiceDiscoveryHasBeenSet() const { return m_serviceDiscoveryHasBeenSet; }
+
+    
+    inline void SetServiceDiscovery(const MeshServiceDiscovery& value) { m_serviceDiscoveryHasBeenSet = true; m_serviceDiscovery = value; }
+
+    
+    inline void SetServiceDiscovery(MeshServiceDiscovery&& value) { m_serviceDiscoveryHasBeenSet = true; m_serviceDiscovery = std::move(value); }
+
+    
+    inline MeshSpec& WithServiceDiscovery(const MeshServiceDiscovery& value) { SetServiceDiscovery(value); return *this;}
+
+    
+    inline MeshSpec& WithServiceDiscovery(MeshServiceDiscovery&& value) { SetServiceDiscovery(std::move(value)); return *this;}
+
   private:
 
     EgressFilter m_egressFilter;
     bool m_egressFilterHasBeenSet;
+
+    MeshServiceDiscovery m_serviceDiscovery;
+    bool m_serviceDiscoveryHasBeenSet;
   };
 
 } // namespace Model

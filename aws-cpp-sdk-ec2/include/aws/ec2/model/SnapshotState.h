@@ -18,7 +18,9 @@ namespace Model
     NOT_SET,
     pending,
     completed,
-    error
+    error,
+    recoverable,
+    recovering
   };
 
 namespace SnapshotStateMapper

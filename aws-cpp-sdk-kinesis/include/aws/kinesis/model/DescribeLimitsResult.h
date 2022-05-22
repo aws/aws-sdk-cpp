@@ -61,11 +61,47 @@ namespace Model
      */
     inline DescribeLimitsResult& WithOpenShardCount(int value) { SetOpenShardCount(value); return *this;}
 
+
+    /**
+     * <p> Indicates the number of data streams with the on-demand capacity mode.</p>
+     */
+    inline int GetOnDemandStreamCount() const{ return m_onDemandStreamCount; }
+
+    /**
+     * <p> Indicates the number of data streams with the on-demand capacity mode.</p>
+     */
+    inline void SetOnDemandStreamCount(int value) { m_onDemandStreamCount = value; }
+
+    /**
+     * <p> Indicates the number of data streams with the on-demand capacity mode.</p>
+     */
+    inline DescribeLimitsResult& WithOnDemandStreamCount(int value) { SetOnDemandStreamCount(value); return *this;}
+
+
+    /**
+     * <p> The maximum number of data streams with the on-demand capacity mode. </p>
+     */
+    inline int GetOnDemandStreamCountLimit() const{ return m_onDemandStreamCountLimit; }
+
+    /**
+     * <p> The maximum number of data streams with the on-demand capacity mode. </p>
+     */
+    inline void SetOnDemandStreamCountLimit(int value) { m_onDemandStreamCountLimit = value; }
+
+    /**
+     * <p> The maximum number of data streams with the on-demand capacity mode. </p>
+     */
+    inline DescribeLimitsResult& WithOnDemandStreamCountLimit(int value) { SetOnDemandStreamCountLimit(value); return *this;}
+
   private:
 
     int m_shardLimit;
 
     int m_openShardCount;
+
+    int m_onDemandStreamCount;
+
+    int m_onDemandStreamCountLimit;
   };
 
 } // namespace Model

@@ -183,7 +183,7 @@ namespace Model
      * <p>The path to the entity (user or role). For more information about paths, see
      * <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>. </p>
+     * identifiers</a> in the <i>IAM User Guide</i>. </p>
      */
     inline const Aws::String& GetPath() const{ return m_path; }
 
@@ -191,7 +191,7 @@ namespace Model
      * <p>The path to the entity (user or role). For more information about paths, see
      * <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>. </p>
+     * identifiers</a> in the <i>IAM User Guide</i>. </p>
      */
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
 
@@ -199,7 +199,7 @@ namespace Model
      * <p>The path to the entity (user or role). For more information about paths, see
      * <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>. </p>
+     * identifiers</a> in the <i>IAM User Guide</i>. </p>
      */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
 
@@ -207,7 +207,7 @@ namespace Model
      * <p>The path to the entity (user or role). For more information about paths, see
      * <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>. </p>
+     * identifiers</a> in the <i>IAM User Guide</i>. </p>
      */
     inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
 
@@ -215,7 +215,7 @@ namespace Model
      * <p>The path to the entity (user or role). For more information about paths, see
      * <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>. </p>
+     * identifiers</a> in the <i>IAM User Guide</i>. </p>
      */
     inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
 
@@ -223,7 +223,7 @@ namespace Model
      * <p>The path to the entity (user or role). For more information about paths, see
      * <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>. </p>
+     * identifiers</a> in the <i>IAM User Guide</i>. </p>
      */
     inline EntityInfo& WithPath(const Aws::String& value) { SetPath(value); return *this;}
 
@@ -231,7 +231,7 @@ namespace Model
      * <p>The path to the entity (user or role). For more information about paths, see
      * <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>. </p>
+     * identifiers</a> in the <i>IAM User Guide</i>. </p>
      */
     inline EntityInfo& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
 
@@ -239,7 +239,7 @@ namespace Model
      * <p>The path to the entity (user or role). For more information about paths, see
      * <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>. </p>
+     * identifiers</a> in the <i>IAM User Guide</i>. </p>
      */
     inline EntityInfo& WithPath(const char* value) { SetPath(value); return *this;}
 

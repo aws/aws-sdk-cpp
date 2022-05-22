@@ -21,6 +21,7 @@ CreateImageRecipeRequest::CreateImageRecipeRequest() :
     m_blockDeviceMappingsHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_workingDirectoryHasBeenSet(false),
+    m_additionalInstanceConfigurationHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
     m_clientTokenHasBeenSet(true)
 {
@@ -90,6 +91,12 @@ Aws::String CreateImageRecipeRequest::SerializePayload() const
   if(m_workingDirectoryHasBeenSet)
   {
    payload.WithString("workingDirectory", m_workingDirectory);
+
+  }
+
+  if(m_additionalInstanceConfigurationHasBeenSet)
+  {
+   payload.WithObject("additionalInstanceConfiguration", m_additionalInstanceConfiguration.Jsonize());
 
   }
 

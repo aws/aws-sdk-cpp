@@ -72,65 +72,65 @@ namespace Model
 
 
     /**
-     * <p>The IDs of the AWS accounts that can trigger policy by sharing snapshots with
-     * your account. The policy only runs if one of the specified AWS accounts shares a
-     * snapshot with your account.</p>
+     * <p>The IDs of the Amazon Web Services accounts that can trigger policy by
+     * sharing snapshots with your account. The policy only runs if one of the
+     * specified Amazon Web Services accounts shares a snapshot with your account.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSnapshotOwner() const{ return m_snapshotOwner; }
 
     /**
-     * <p>The IDs of the AWS accounts that can trigger policy by sharing snapshots with
-     * your account. The policy only runs if one of the specified AWS accounts shares a
-     * snapshot with your account.</p>
+     * <p>The IDs of the Amazon Web Services accounts that can trigger policy by
+     * sharing snapshots with your account. The policy only runs if one of the
+     * specified Amazon Web Services accounts shares a snapshot with your account.</p>
      */
     inline bool SnapshotOwnerHasBeenSet() const { return m_snapshotOwnerHasBeenSet; }
 
     /**
-     * <p>The IDs of the AWS accounts that can trigger policy by sharing snapshots with
-     * your account. The policy only runs if one of the specified AWS accounts shares a
-     * snapshot with your account.</p>
+     * <p>The IDs of the Amazon Web Services accounts that can trigger policy by
+     * sharing snapshots with your account. The policy only runs if one of the
+     * specified Amazon Web Services accounts shares a snapshot with your account.</p>
      */
     inline void SetSnapshotOwner(const Aws::Vector<Aws::String>& value) { m_snapshotOwnerHasBeenSet = true; m_snapshotOwner = value; }
 
     /**
-     * <p>The IDs of the AWS accounts that can trigger policy by sharing snapshots with
-     * your account. The policy only runs if one of the specified AWS accounts shares a
-     * snapshot with your account.</p>
+     * <p>The IDs of the Amazon Web Services accounts that can trigger policy by
+     * sharing snapshots with your account. The policy only runs if one of the
+     * specified Amazon Web Services accounts shares a snapshot with your account.</p>
      */
     inline void SetSnapshotOwner(Aws::Vector<Aws::String>&& value) { m_snapshotOwnerHasBeenSet = true; m_snapshotOwner = std::move(value); }
 
     /**
-     * <p>The IDs of the AWS accounts that can trigger policy by sharing snapshots with
-     * your account. The policy only runs if one of the specified AWS accounts shares a
-     * snapshot with your account.</p>
+     * <p>The IDs of the Amazon Web Services accounts that can trigger policy by
+     * sharing snapshots with your account. The policy only runs if one of the
+     * specified Amazon Web Services accounts shares a snapshot with your account.</p>
      */
     inline EventParameters& WithSnapshotOwner(const Aws::Vector<Aws::String>& value) { SetSnapshotOwner(value); return *this;}
 
     /**
-     * <p>The IDs of the AWS accounts that can trigger policy by sharing snapshots with
-     * your account. The policy only runs if one of the specified AWS accounts shares a
-     * snapshot with your account.</p>
+     * <p>The IDs of the Amazon Web Services accounts that can trigger policy by
+     * sharing snapshots with your account. The policy only runs if one of the
+     * specified Amazon Web Services accounts shares a snapshot with your account.</p>
      */
     inline EventParameters& WithSnapshotOwner(Aws::Vector<Aws::String>&& value) { SetSnapshotOwner(std::move(value)); return *this;}
 
     /**
-     * <p>The IDs of the AWS accounts that can trigger policy by sharing snapshots with
-     * your account. The policy only runs if one of the specified AWS accounts shares a
-     * snapshot with your account.</p>
+     * <p>The IDs of the Amazon Web Services accounts that can trigger policy by
+     * sharing snapshots with your account. The policy only runs if one of the
+     * specified Amazon Web Services accounts shares a snapshot with your account.</p>
      */
     inline EventParameters& AddSnapshotOwner(const Aws::String& value) { m_snapshotOwnerHasBeenSet = true; m_snapshotOwner.push_back(value); return *this; }
 
     /**
-     * <p>The IDs of the AWS accounts that can trigger policy by sharing snapshots with
-     * your account. The policy only runs if one of the specified AWS accounts shares a
-     * snapshot with your account.</p>
+     * <p>The IDs of the Amazon Web Services accounts that can trigger policy by
+     * sharing snapshots with your account. The policy only runs if one of the
+     * specified Amazon Web Services accounts shares a snapshot with your account.</p>
      */
     inline EventParameters& AddSnapshotOwner(Aws::String&& value) { m_snapshotOwnerHasBeenSet = true; m_snapshotOwner.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The IDs of the AWS accounts that can trigger policy by sharing snapshots with
-     * your account. The policy only runs if one of the specified AWS accounts shares a
-     * snapshot with your account.</p>
+     * <p>The IDs of the Amazon Web Services accounts that can trigger policy by
+     * sharing snapshots with your account. The policy only runs if one of the
+     * specified Amazon Web Services accounts shares a snapshot with your account.</p>
      */
     inline EventParameters& AddSnapshotOwner(const char* value) { m_snapshotOwnerHasBeenSet = true; m_snapshotOwner.push_back(value); return *this; }
 

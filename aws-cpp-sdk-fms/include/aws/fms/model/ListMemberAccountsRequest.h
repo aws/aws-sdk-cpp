@@ -36,7 +36,7 @@ namespace Model
 
     /**
      * <p>If you specify a value for <code>MaxResults</code> and you have more account
-     * IDs than the number that you specify for <code>MaxResults</code>, AWS Firewall
+     * IDs than the number that you specify for <code>MaxResults</code>, Firewall
      * Manager returns a <code>NextToken</code> value in the response that allows you
      * to list another group of IDs. For the second and subsequent
      * <code>ListMemberAccountsRequest</code> requests, specify the value of
@@ -47,7 +47,7 @@ namespace Model
 
     /**
      * <p>If you specify a value for <code>MaxResults</code> and you have more account
-     * IDs than the number that you specify for <code>MaxResults</code>, AWS Firewall
+     * IDs than the number that you specify for <code>MaxResults</code>, Firewall
      * Manager returns a <code>NextToken</code> value in the response that allows you
      * to list another group of IDs. For the second and subsequent
      * <code>ListMemberAccountsRequest</code> requests, specify the value of
@@ -58,7 +58,7 @@ namespace Model
 
     /**
      * <p>If you specify a value for <code>MaxResults</code> and you have more account
-     * IDs than the number that you specify for <code>MaxResults</code>, AWS Firewall
+     * IDs than the number that you specify for <code>MaxResults</code>, Firewall
      * Manager returns a <code>NextToken</code> value in the response that allows you
      * to list another group of IDs. For the second and subsequent
      * <code>ListMemberAccountsRequest</code> requests, specify the value of
@@ -69,7 +69,7 @@ namespace Model
 
     /**
      * <p>If you specify a value for <code>MaxResults</code> and you have more account
-     * IDs than the number that you specify for <code>MaxResults</code>, AWS Firewall
+     * IDs than the number that you specify for <code>MaxResults</code>, Firewall
      * Manager returns a <code>NextToken</code> value in the response that allows you
      * to list another group of IDs. For the second and subsequent
      * <code>ListMemberAccountsRequest</code> requests, specify the value of
@@ -80,7 +80,7 @@ namespace Model
 
     /**
      * <p>If you specify a value for <code>MaxResults</code> and you have more account
-     * IDs than the number that you specify for <code>MaxResults</code>, AWS Firewall
+     * IDs than the number that you specify for <code>MaxResults</code>, Firewall
      * Manager returns a <code>NextToken</code> value in the response that allows you
      * to list another group of IDs. For the second and subsequent
      * <code>ListMemberAccountsRequest</code> requests, specify the value of
@@ -91,7 +91,7 @@ namespace Model
 
     /**
      * <p>If you specify a value for <code>MaxResults</code> and you have more account
-     * IDs than the number that you specify for <code>MaxResults</code>, AWS Firewall
+     * IDs than the number that you specify for <code>MaxResults</code>, Firewall
      * Manager returns a <code>NextToken</code> value in the response that allows you
      * to list another group of IDs. For the second and subsequent
      * <code>ListMemberAccountsRequest</code> requests, specify the value of
@@ -102,7 +102,7 @@ namespace Model
 
     /**
      * <p>If you specify a value for <code>MaxResults</code> and you have more account
-     * IDs than the number that you specify for <code>MaxResults</code>, AWS Firewall
+     * IDs than the number that you specify for <code>MaxResults</code>, Firewall
      * Manager returns a <code>NextToken</code> value in the response that allows you
      * to list another group of IDs. For the second and subsequent
      * <code>ListMemberAccountsRequest</code> requests, specify the value of
@@ -113,7 +113,7 @@ namespace Model
 
     /**
      * <p>If you specify a value for <code>MaxResults</code> and you have more account
-     * IDs than the number that you specify for <code>MaxResults</code>, AWS Firewall
+     * IDs than the number that you specify for <code>MaxResults</code>, Firewall
      * Manager returns a <code>NextToken</code> value in the response that allows you
      * to list another group of IDs. For the second and subsequent
      * <code>ListMemberAccountsRequest</code> requests, specify the value of
@@ -124,38 +124,34 @@ namespace Model
 
 
     /**
-     * <p>Specifies the number of member account IDs that you want AWS Firewall Manager
-     * to return for this request. If you have more IDs than the number that you
-     * specify for <code>MaxResults</code>, the response includes a
-     * <code>NextToken</code> value that you can use to get another batch of member
-     * account IDs.</p>
+     * <p>Specifies the number of member account IDs that you want Firewall Manager to
+     * return for this request. If you have more IDs than the number that you specify
+     * for <code>MaxResults</code>, the response includes a <code>NextToken</code>
+     * value that you can use to get another batch of member account IDs.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>Specifies the number of member account IDs that you want AWS Firewall Manager
-     * to return for this request. If you have more IDs than the number that you
-     * specify for <code>MaxResults</code>, the response includes a
-     * <code>NextToken</code> value that you can use to get another batch of member
-     * account IDs.</p>
+     * <p>Specifies the number of member account IDs that you want Firewall Manager to
+     * return for this request. If you have more IDs than the number that you specify
+     * for <code>MaxResults</code>, the response includes a <code>NextToken</code>
+     * value that you can use to get another batch of member account IDs.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>Specifies the number of member account IDs that you want AWS Firewall Manager
-     * to return for this request. If you have more IDs than the number that you
-     * specify for <code>MaxResults</code>, the response includes a
-     * <code>NextToken</code> value that you can use to get another batch of member
-     * account IDs.</p>
+     * <p>Specifies the number of member account IDs that you want Firewall Manager to
+     * return for this request. If you have more IDs than the number that you specify
+     * for <code>MaxResults</code>, the response includes a <code>NextToken</code>
+     * value that you can use to get another batch of member account IDs.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>Specifies the number of member account IDs that you want AWS Firewall Manager
-     * to return for this request. If you have more IDs than the number that you
-     * specify for <code>MaxResults</code>, the response includes a
-     * <code>NextToken</code> value that you can use to get another batch of member
-     * account IDs.</p>
+     * <p>Specifies the number of member account IDs that you want Firewall Manager to
+     * return for this request. If you have more IDs than the number that you specify
+     * for <code>MaxResults</code>, the response includes a <code>NextToken</code>
+     * value that you can use to get another batch of member account IDs.</p>
      */
     inline ListMemberAccountsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

@@ -95,9 +95,9 @@ namespace Model
 
     /**
      * <p>The DB cluster capacity.</p> <p>When you change the capacity of a paused
-     * Aurora Serverless DB cluster, it automatically resumes.</p> <p>Constraints:</p>
-     * <ul> <li> <p>For Aurora MySQL, valid capacity values are <code>1</code>,
-     * <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>,
+     * Aurora Serverless v1 DB cluster, it automatically resumes.</p>
+     * <p>Constraints:</p> <ul> <li> <p>For Aurora MySQL, valid capacity values are
+     * <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>,
      * <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.</p>
      * </li> <li> <p>For Aurora PostgreSQL, valid capacity values are <code>2</code>,
      * <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>,
@@ -107,9 +107,9 @@ namespace Model
 
     /**
      * <p>The DB cluster capacity.</p> <p>When you change the capacity of a paused
-     * Aurora Serverless DB cluster, it automatically resumes.</p> <p>Constraints:</p>
-     * <ul> <li> <p>For Aurora MySQL, valid capacity values are <code>1</code>,
-     * <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>,
+     * Aurora Serverless v1 DB cluster, it automatically resumes.</p>
+     * <p>Constraints:</p> <ul> <li> <p>For Aurora MySQL, valid capacity values are
+     * <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>,
      * <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.</p>
      * </li> <li> <p>For Aurora PostgreSQL, valid capacity values are <code>2</code>,
      * <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>,
@@ -119,9 +119,9 @@ namespace Model
 
     /**
      * <p>The DB cluster capacity.</p> <p>When you change the capacity of a paused
-     * Aurora Serverless DB cluster, it automatically resumes.</p> <p>Constraints:</p>
-     * <ul> <li> <p>For Aurora MySQL, valid capacity values are <code>1</code>,
-     * <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>,
+     * Aurora Serverless v1 DB cluster, it automatically resumes.</p>
+     * <p>Constraints:</p> <ul> <li> <p>For Aurora MySQL, valid capacity values are
+     * <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>,
      * <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.</p>
      * </li> <li> <p>For Aurora PostgreSQL, valid capacity values are <code>2</code>,
      * <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>,
@@ -131,9 +131,9 @@ namespace Model
 
     /**
      * <p>The DB cluster capacity.</p> <p>When you change the capacity of a paused
-     * Aurora Serverless DB cluster, it automatically resumes.</p> <p>Constraints:</p>
-     * <ul> <li> <p>For Aurora MySQL, valid capacity values are <code>1</code>,
-     * <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>,
+     * Aurora Serverless v1 DB cluster, it automatically resumes.</p>
+     * <p>Constraints:</p> <ul> <li> <p>For Aurora MySQL, valid capacity values are
+     * <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>,
      * <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.</p>
      * </li> <li> <p>For Aurora PostgreSQL, valid capacity values are <code>2</code>,
      * <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>,
@@ -143,34 +143,30 @@ namespace Model
 
 
     /**
-     * <p>The amount of time, in seconds, that Aurora Serverless tries to find a
+     * <p>The amount of time, in seconds, that Aurora Serverless v1 tries to find a
      * scaling point to perform seamless scaling before enforcing the timeout action.
-     * The default is 300.</p> <ul> <li> <p>Value must be from 10 through 600.</p>
-     * </li> </ul>
+     * The default is 300.</p> <p>Specify a value between 10 and 600 seconds.</p>
      */
     inline int GetSecondsBeforeTimeout() const{ return m_secondsBeforeTimeout; }
 
     /**
-     * <p>The amount of time, in seconds, that Aurora Serverless tries to find a
+     * <p>The amount of time, in seconds, that Aurora Serverless v1 tries to find a
      * scaling point to perform seamless scaling before enforcing the timeout action.
-     * The default is 300.</p> <ul> <li> <p>Value must be from 10 through 600.</p>
-     * </li> </ul>
+     * The default is 300.</p> <p>Specify a value between 10 and 600 seconds.</p>
      */
     inline bool SecondsBeforeTimeoutHasBeenSet() const { return m_secondsBeforeTimeoutHasBeenSet; }
 
     /**
-     * <p>The amount of time, in seconds, that Aurora Serverless tries to find a
+     * <p>The amount of time, in seconds, that Aurora Serverless v1 tries to find a
      * scaling point to perform seamless scaling before enforcing the timeout action.
-     * The default is 300.</p> <ul> <li> <p>Value must be from 10 through 600.</p>
-     * </li> </ul>
+     * The default is 300.</p> <p>Specify a value between 10 and 600 seconds.</p>
      */
     inline void SetSecondsBeforeTimeout(int value) { m_secondsBeforeTimeoutHasBeenSet = true; m_secondsBeforeTimeout = value; }
 
     /**
-     * <p>The amount of time, in seconds, that Aurora Serverless tries to find a
+     * <p>The amount of time, in seconds, that Aurora Serverless v1 tries to find a
      * scaling point to perform seamless scaling before enforcing the timeout action.
-     * The default is 300.</p> <ul> <li> <p>Value must be from 10 through 600.</p>
-     * </li> </ul>
+     * The default is 300.</p> <p>Specify a value between 10 and 600 seconds.</p>
      */
     inline ModifyCurrentDBClusterCapacityRequest& WithSecondsBeforeTimeout(int value) { SetSecondsBeforeTimeout(value); return *this;}
 

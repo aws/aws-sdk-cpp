@@ -39,7 +39,9 @@ CreateServiceRequest::CreateServiceRequest() :
     m_enableECSManagedTags(false),
     m_enableECSManagedTagsHasBeenSet(false),
     m_propagateTags(PropagateTags::NOT_SET),
-    m_propagateTagsHasBeenSet(false)
+    m_propagateTagsHasBeenSet(false),
+    m_enableExecuteCommand(false),
+    m_enableExecuteCommandHasBeenSet(false)
 {
 }
 
@@ -198,6 +200,12 @@ Aws::String CreateServiceRequest::SerializePayload() const
   if(m_propagateTagsHasBeenSet)
   {
    payload.WithString("propagateTags", PropagateTagsMapper::GetNameForPropagateTags(m_propagateTags));
+  }
+
+  if(m_enableExecuteCommandHasBeenSet)
+  {
+   payload.WithBool("enableExecuteCommand", m_enableExecuteCommand);
+
   }
 
   return payload.View().WriteReadable();

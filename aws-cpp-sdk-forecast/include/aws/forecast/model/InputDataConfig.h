@@ -26,9 +26,11 @@ namespace Model
 {
 
   /**
-   * <p>The data used to train a predictor. The data includes a dataset group and any
-   * supplementary features. You specify this object in the <a>CreatePredictor</a>
-   * request.</p><p><h3>See Also:</h3>   <a
+   *  <p>This object belongs to the <a>CreatePredictor</a> operation. If you
+   * created your predictor with <a>CreateAutoPredictor</a>, see
+   * <a>DataConfig</a>.</p>  <p>The data used to train a predictor. The data
+   * includes a dataset group and any supplementary features. You specify this object
+   * in the <a>CreatePredictor</a> request.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/InputDataConfig">AWS
    * API Reference</a></p>
    */

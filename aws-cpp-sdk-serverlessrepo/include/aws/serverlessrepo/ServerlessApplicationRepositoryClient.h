@@ -209,22 +209,12 @@ namespace Model
         virtual Model::CreateApplicationOutcome CreateApplication(const Model::CreateApplicationRequest& request) const;
 
         /**
-         * <p>Creates an application, optionally including an AWS SAM file to create the
-         * first application version in the same call.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/CreateApplication">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateApplication that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateApplicationOutcomeCallable CreateApplicationCallable(const Model::CreateApplicationRequest& request) const;
 
         /**
-         * <p>Creates an application, optionally including an AWS SAM file to create the
-         * first application version in the same call.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/CreateApplication">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateApplicationAsync(const Model::CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -236,20 +226,12 @@ namespace Model
         virtual Model::CreateApplicationVersionOutcome CreateApplicationVersion(const Model::CreateApplicationVersionRequest& request) const;
 
         /**
-         * <p>Creates an application version.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/CreateApplicationVersion">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateApplicationVersion that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateApplicationVersionOutcomeCallable CreateApplicationVersionCallable(const Model::CreateApplicationVersionRequest& request) const;
 
         /**
-         * <p>Creates an application version.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/CreateApplicationVersion">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateApplicationVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateApplicationVersionAsync(const Model::CreateApplicationVersionRequest& request, const CreateApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -262,22 +244,12 @@ namespace Model
         virtual Model::CreateCloudFormationChangeSetOutcome CreateCloudFormationChangeSet(const Model::CreateCloudFormationChangeSetRequest& request) const;
 
         /**
-         * <p>Creates an AWS CloudFormation change set for the given
-         * application.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/CreateCloudFormationChangeSet">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateCloudFormationChangeSet that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateCloudFormationChangeSetOutcomeCallable CreateCloudFormationChangeSetCallable(const Model::CreateCloudFormationChangeSetRequest& request) const;
 
         /**
-         * <p>Creates an AWS CloudFormation change set for the given
-         * application.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/CreateCloudFormationChangeSet">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateCloudFormationChangeSet that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateCloudFormationChangeSetAsync(const Model::CreateCloudFormationChangeSetRequest& request, const CreateCloudFormationChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -289,20 +261,12 @@ namespace Model
         virtual Model::CreateCloudFormationTemplateOutcome CreateCloudFormationTemplate(const Model::CreateCloudFormationTemplateRequest& request) const;
 
         /**
-         * <p>Creates an AWS CloudFormation template.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/CreateCloudFormationTemplate">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateCloudFormationTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateCloudFormationTemplateOutcomeCallable CreateCloudFormationTemplateCallable(const Model::CreateCloudFormationTemplateRequest& request) const;
 
         /**
-         * <p>Creates an AWS CloudFormation template.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/CreateCloudFormationTemplate">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateCloudFormationTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateCloudFormationTemplateAsync(const Model::CreateCloudFormationTemplateRequest& request, const CreateCloudFormationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -314,20 +278,12 @@ namespace Model
         virtual Model::DeleteApplicationOutcome DeleteApplication(const Model::DeleteApplicationRequest& request) const;
 
         /**
-         * <p>Deletes the specified application.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/DeleteApplication">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteApplication that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteApplicationOutcomeCallable DeleteApplicationCallable(const Model::DeleteApplicationRequest& request) const;
 
         /**
-         * <p>Deletes the specified application.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/DeleteApplication">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteApplicationAsync(const Model::DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -339,20 +295,12 @@ namespace Model
         virtual Model::GetApplicationOutcome GetApplication(const Model::GetApplicationRequest& request) const;
 
         /**
-         * <p>Gets the specified application.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/GetApplication">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetApplication that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetApplicationOutcomeCallable GetApplicationCallable(const Model::GetApplicationRequest& request) const;
 
         /**
-         * <p>Gets the specified application.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/GetApplication">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetApplicationAsync(const Model::GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -364,20 +312,12 @@ namespace Model
         virtual Model::GetApplicationPolicyOutcome GetApplicationPolicy(const Model::GetApplicationPolicyRequest& request) const;
 
         /**
-         * <p>Retrieves the policy for the application.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/GetApplicationPolicy">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetApplicationPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetApplicationPolicyOutcomeCallable GetApplicationPolicyCallable(const Model::GetApplicationPolicyRequest& request) const;
 
         /**
-         * <p>Retrieves the policy for the application.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/GetApplicationPolicy">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetApplicationPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetApplicationPolicyAsync(const Model::GetApplicationPolicyRequest& request, const GetApplicationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -389,20 +329,12 @@ namespace Model
         virtual Model::GetCloudFormationTemplateOutcome GetCloudFormationTemplate(const Model::GetCloudFormationTemplateRequest& request) const;
 
         /**
-         * <p>Gets the specified AWS CloudFormation template.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/GetCloudFormationTemplate">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetCloudFormationTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetCloudFormationTemplateOutcomeCallable GetCloudFormationTemplateCallable(const Model::GetCloudFormationTemplateRequest& request) const;
 
         /**
-         * <p>Gets the specified AWS CloudFormation template.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/GetCloudFormationTemplate">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetCloudFormationTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetCloudFormationTemplateAsync(const Model::GetCloudFormationTemplateRequest& request, const GetCloudFormationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -415,22 +347,12 @@ namespace Model
         virtual Model::ListApplicationDependenciesOutcome ListApplicationDependencies(const Model::ListApplicationDependenciesRequest& request) const;
 
         /**
-         * <p>Retrieves the list of applications nested in the containing
-         * application.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/ListApplicationDependencies">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListApplicationDependencies that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListApplicationDependenciesOutcomeCallable ListApplicationDependenciesCallable(const Model::ListApplicationDependenciesRequest& request) const;
 
         /**
-         * <p>Retrieves the list of applications nested in the containing
-         * application.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/ListApplicationDependencies">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListApplicationDependencies that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListApplicationDependenciesAsync(const Model::ListApplicationDependenciesRequest& request, const ListApplicationDependenciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -442,20 +364,12 @@ namespace Model
         virtual Model::ListApplicationVersionsOutcome ListApplicationVersions(const Model::ListApplicationVersionsRequest& request) const;
 
         /**
-         * <p>Lists versions for the specified application.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/ListApplicationVersions">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListApplicationVersions that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListApplicationVersionsOutcomeCallable ListApplicationVersionsCallable(const Model::ListApplicationVersionsRequest& request) const;
 
         /**
-         * <p>Lists versions for the specified application.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/ListApplicationVersions">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListApplicationVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListApplicationVersionsAsync(const Model::ListApplicationVersionsRequest& request, const ListApplicationVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -467,20 +381,12 @@ namespace Model
         virtual Model::ListApplicationsOutcome ListApplications(const Model::ListApplicationsRequest& request) const;
 
         /**
-         * <p>Lists applications owned by the requester.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/ListApplications">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListApplications that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListApplicationsOutcomeCallable ListApplicationsCallable(const Model::ListApplicationsRequest& request) const;
 
         /**
-         * <p>Lists applications owned by the requester.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/ListApplications">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListApplications that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListApplicationsAsync(const Model::ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -498,32 +404,12 @@ namespace Model
         virtual Model::PutApplicationPolicyOutcome PutApplicationPolicy(const Model::PutApplicationPolicyRequest& request) const;
 
         /**
-         * <p>Sets the permission policy for an application. For the list of actions
-         * supported for this operation, see
- <a
-         * href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application
-         * 
- Permissions</a>
- .</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/PutApplicationPolicy">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for PutApplicationPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::PutApplicationPolicyOutcomeCallable PutApplicationPolicyCallable(const Model::PutApplicationPolicyRequest& request) const;
 
         /**
-         * <p>Sets the permission policy for an application. For the list of actions
-         * supported for this operation, see
- <a
-         * href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application
-         * 
- Permissions</a>
- .</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/PutApplicationPolicy">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for PutApplicationPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutApplicationPolicyAsync(const Model::PutApplicationPolicyRequest& request, const PutApplicationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -537,24 +423,12 @@ namespace Model
         virtual Model::UnshareApplicationOutcome UnshareApplication(const Model::UnshareApplicationRequest& request) const;
 
         /**
-         * <p>Unshares an application from an AWS Organization.</p><p>This operation can be
-         * called only from the organization's master account.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/UnshareApplication">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UnshareApplication that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UnshareApplicationOutcomeCallable UnshareApplicationCallable(const Model::UnshareApplicationRequest& request) const;
 
         /**
-         * <p>Unshares an application from an AWS Organization.</p><p>This operation can be
-         * called only from the organization's master account.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/UnshareApplication">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UnshareApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UnshareApplicationAsync(const Model::UnshareApplicationRequest& request, const UnshareApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -566,20 +440,12 @@ namespace Model
         virtual Model::UpdateApplicationOutcome UpdateApplication(const Model::UpdateApplicationRequest& request) const;
 
         /**
-         * <p>Updates the specified application.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/UpdateApplication">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateApplication that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateApplicationOutcomeCallable UpdateApplicationCallable(const Model::UpdateApplicationRequest& request) const;
 
         /**
-         * <p>Updates the specified application.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/UpdateApplication">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateApplicationAsync(const Model::UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 

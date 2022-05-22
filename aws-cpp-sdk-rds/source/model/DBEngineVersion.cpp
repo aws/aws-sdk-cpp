@@ -42,7 +42,17 @@ DBEngineVersion::DBEngineVersion() :
     m_supportsParallelQuery(false),
     m_supportsParallelQueryHasBeenSet(false),
     m_supportsGlobalDatabases(false),
-    m_supportsGlobalDatabasesHasBeenSet(false)
+    m_supportsGlobalDatabasesHasBeenSet(false),
+    m_majorEngineVersionHasBeenSet(false),
+    m_databaseInstallationFilesS3BucketNameHasBeenSet(false),
+    m_databaseInstallationFilesS3PrefixHasBeenSet(false),
+    m_dBEngineVersionArnHasBeenSet(false),
+    m_kMSKeyIdHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
+    m_tagListHasBeenSet(false),
+    m_supportsBabelfish(false),
+    m_supportsBabelfishHasBeenSet(false),
+    m_responseMetadataHasBeenSet(false)
 {
 }
 
@@ -68,7 +78,17 @@ DBEngineVersion::DBEngineVersion(const XmlNode& xmlNode) :
     m_supportsParallelQuery(false),
     m_supportsParallelQueryHasBeenSet(false),
     m_supportsGlobalDatabases(false),
-    m_supportsGlobalDatabasesHasBeenSet(false)
+    m_supportsGlobalDatabasesHasBeenSet(false),
+    m_majorEngineVersionHasBeenSet(false),
+    m_databaseInstallationFilesS3BucketNameHasBeenSet(false),
+    m_databaseInstallationFilesS3PrefixHasBeenSet(false),
+    m_dBEngineVersionArnHasBeenSet(false),
+    m_kMSKeyIdHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
+    m_tagListHasBeenSet(false),
+    m_supportsBabelfish(false),
+    m_supportsBabelfishHasBeenSet(false),
+    m_responseMetadataHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -229,6 +249,60 @@ DBEngineVersion& DBEngineVersion::operator =(const XmlNode& xmlNode)
       m_supportsGlobalDatabases = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsGlobalDatabasesNode.GetText()).c_str()).c_str());
       m_supportsGlobalDatabasesHasBeenSet = true;
     }
+    XmlNode majorEngineVersionNode = resultNode.FirstChild("MajorEngineVersion");
+    if(!majorEngineVersionNode.IsNull())
+    {
+      m_majorEngineVersion = Aws::Utils::Xml::DecodeEscapedXmlText(majorEngineVersionNode.GetText());
+      m_majorEngineVersionHasBeenSet = true;
+    }
+    XmlNode databaseInstallationFilesS3BucketNameNode = resultNode.FirstChild("DatabaseInstallationFilesS3BucketName");
+    if(!databaseInstallationFilesS3BucketNameNode.IsNull())
+    {
+      m_databaseInstallationFilesS3BucketName = Aws::Utils::Xml::DecodeEscapedXmlText(databaseInstallationFilesS3BucketNameNode.GetText());
+      m_databaseInstallationFilesS3BucketNameHasBeenSet = true;
+    }
+    XmlNode databaseInstallationFilesS3PrefixNode = resultNode.FirstChild("DatabaseInstallationFilesS3Prefix");
+    if(!databaseInstallationFilesS3PrefixNode.IsNull())
+    {
+      m_databaseInstallationFilesS3Prefix = Aws::Utils::Xml::DecodeEscapedXmlText(databaseInstallationFilesS3PrefixNode.GetText());
+      m_databaseInstallationFilesS3PrefixHasBeenSet = true;
+    }
+    XmlNode dBEngineVersionArnNode = resultNode.FirstChild("DBEngineVersionArn");
+    if(!dBEngineVersionArnNode.IsNull())
+    {
+      m_dBEngineVersionArn = Aws::Utils::Xml::DecodeEscapedXmlText(dBEngineVersionArnNode.GetText());
+      m_dBEngineVersionArnHasBeenSet = true;
+    }
+    XmlNode kMSKeyIdNode = resultNode.FirstChild("KMSKeyId");
+    if(!kMSKeyIdNode.IsNull())
+    {
+      m_kMSKeyId = Aws::Utils::Xml::DecodeEscapedXmlText(kMSKeyIdNode.GetText());
+      m_kMSKeyIdHasBeenSet = true;
+    }
+    XmlNode createTimeNode = resultNode.FirstChild("CreateTime");
+    if(!createTimeNode.IsNull())
+    {
+      m_createTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_createTimeHasBeenSet = true;
+    }
+    XmlNode tagListNode = resultNode.FirstChild("TagList");
+    if(!tagListNode.IsNull())
+    {
+      XmlNode tagListMember = tagListNode.FirstChild("Tag");
+      while(!tagListMember.IsNull())
+      {
+        m_tagList.push_back(tagListMember);
+        tagListMember = tagListMember.NextNode("Tag");
+      }
+
+      m_tagListHasBeenSet = true;
+    }
+    XmlNode supportsBabelfishNode = resultNode.FirstChild("SupportsBabelfish");
+    if(!supportsBabelfishNode.IsNull())
+    {
+      m_supportsBabelfish = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsBabelfishNode.GetText()).c_str()).c_str());
+      m_supportsBabelfishHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -364,6 +438,59 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
       oStream << location << index << locationValue << ".SupportsGlobalDatabases=" << std::boolalpha << m_supportsGlobalDatabases << "&";
   }
 
+  if(m_majorEngineVersionHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MajorEngineVersion=" << StringUtils::URLEncode(m_majorEngineVersion.c_str()) << "&";
+  }
+
+  if(m_databaseInstallationFilesS3BucketNameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DatabaseInstallationFilesS3BucketName=" << StringUtils::URLEncode(m_databaseInstallationFilesS3BucketName.c_str()) << "&";
+  }
+
+  if(m_databaseInstallationFilesS3PrefixHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DatabaseInstallationFilesS3Prefix=" << StringUtils::URLEncode(m_databaseInstallationFilesS3Prefix.c_str()) << "&";
+  }
+
+  if(m_dBEngineVersionArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DBEngineVersionArn=" << StringUtils::URLEncode(m_dBEngineVersionArn.c_str()) << "&";
+  }
+
+  if(m_kMSKeyIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".KMSKeyId=" << StringUtils::URLEncode(m_kMSKeyId.c_str()) << "&";
+  }
+
+  if(m_createTimeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CreateTime=" << StringUtils::URLEncode(m_createTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+
+  if(m_tagListHasBeenSet)
+  {
+      unsigned tagListIdx = 1;
+      for(auto& item : m_tagList)
+      {
+        Aws::StringStream tagListSs;
+        tagListSs << location << index << locationValue << ".Tag." << tagListIdx++;
+        item.OutputToStream(oStream, tagListSs.str().c_str());
+      }
+  }
+
+  if(m_supportsBabelfishHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SupportsBabelfish=" << std::boolalpha << m_supportsBabelfish << "&";
+  }
+
+  if(m_responseMetadataHasBeenSet)
+  {
+      Aws::StringStream responseMetadataLocationAndMemberSs;
+      responseMetadataLocationAndMemberSs << location << index << locationValue << ".ResponseMetadata";
+      m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -477,6 +604,50 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
   if(m_supportsGlobalDatabasesHasBeenSet)
   {
       oStream << location << ".SupportsGlobalDatabases=" << std::boolalpha << m_supportsGlobalDatabases << "&";
+  }
+  if(m_majorEngineVersionHasBeenSet)
+  {
+      oStream << location << ".MajorEngineVersion=" << StringUtils::URLEncode(m_majorEngineVersion.c_str()) << "&";
+  }
+  if(m_databaseInstallationFilesS3BucketNameHasBeenSet)
+  {
+      oStream << location << ".DatabaseInstallationFilesS3BucketName=" << StringUtils::URLEncode(m_databaseInstallationFilesS3BucketName.c_str()) << "&";
+  }
+  if(m_databaseInstallationFilesS3PrefixHasBeenSet)
+  {
+      oStream << location << ".DatabaseInstallationFilesS3Prefix=" << StringUtils::URLEncode(m_databaseInstallationFilesS3Prefix.c_str()) << "&";
+  }
+  if(m_dBEngineVersionArnHasBeenSet)
+  {
+      oStream << location << ".DBEngineVersionArn=" << StringUtils::URLEncode(m_dBEngineVersionArn.c_str()) << "&";
+  }
+  if(m_kMSKeyIdHasBeenSet)
+  {
+      oStream << location << ".KMSKeyId=" << StringUtils::URLEncode(m_kMSKeyId.c_str()) << "&";
+  }
+  if(m_createTimeHasBeenSet)
+  {
+      oStream << location << ".CreateTime=" << StringUtils::URLEncode(m_createTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if(m_tagListHasBeenSet)
+  {
+      unsigned tagListIdx = 1;
+      for(auto& item : m_tagList)
+      {
+        Aws::StringStream tagListSs;
+        tagListSs << location <<  ".Tag." << tagListIdx++;
+        item.OutputToStream(oStream, tagListSs.str().c_str());
+      }
+  }
+  if(m_supportsBabelfishHasBeenSet)
+  {
+      oStream << location << ".SupportsBabelfish=" << std::boolalpha << m_supportsBabelfish << "&";
+  }
+  if(m_responseMetadataHasBeenSet)
+  {
+      Aws::String responseMetadataLocationAndMember(location);
+      responseMetadataLocationAndMember += ".ResponseMetadata";
+      m_responseMetadata.OutputToStream(oStream, responseMetadataLocationAndMember.c_str());
   }
 }
 

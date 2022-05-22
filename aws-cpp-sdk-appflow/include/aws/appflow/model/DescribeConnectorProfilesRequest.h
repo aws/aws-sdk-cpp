@@ -36,55 +36,55 @@ namespace Model
 
     /**
      * <p> The name of the connector profile. The name is unique for each
-     * <code>ConnectorProfile</code> in the AWS account. </p>
+     * <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
      */
     inline const Aws::Vector<Aws::String>& GetConnectorProfileNames() const{ return m_connectorProfileNames; }
 
     /**
      * <p> The name of the connector profile. The name is unique for each
-     * <code>ConnectorProfile</code> in the AWS account. </p>
+     * <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
      */
     inline bool ConnectorProfileNamesHasBeenSet() const { return m_connectorProfileNamesHasBeenSet; }
 
     /**
      * <p> The name of the connector profile. The name is unique for each
-     * <code>ConnectorProfile</code> in the AWS account. </p>
+     * <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
      */
     inline void SetConnectorProfileNames(const Aws::Vector<Aws::String>& value) { m_connectorProfileNamesHasBeenSet = true; m_connectorProfileNames = value; }
 
     /**
      * <p> The name of the connector profile. The name is unique for each
-     * <code>ConnectorProfile</code> in the AWS account. </p>
+     * <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
      */
     inline void SetConnectorProfileNames(Aws::Vector<Aws::String>&& value) { m_connectorProfileNamesHasBeenSet = true; m_connectorProfileNames = std::move(value); }
 
     /**
      * <p> The name of the connector profile. The name is unique for each
-     * <code>ConnectorProfile</code> in the AWS account. </p>
+     * <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
      */
     inline DescribeConnectorProfilesRequest& WithConnectorProfileNames(const Aws::Vector<Aws::String>& value) { SetConnectorProfileNames(value); return *this;}
 
     /**
      * <p> The name of the connector profile. The name is unique for each
-     * <code>ConnectorProfile</code> in the AWS account. </p>
+     * <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
      */
     inline DescribeConnectorProfilesRequest& WithConnectorProfileNames(Aws::Vector<Aws::String>&& value) { SetConnectorProfileNames(std::move(value)); return *this;}
 
     /**
      * <p> The name of the connector profile. The name is unique for each
-     * <code>ConnectorProfile</code> in the AWS account. </p>
+     * <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
      */
     inline DescribeConnectorProfilesRequest& AddConnectorProfileNames(const Aws::String& value) { m_connectorProfileNamesHasBeenSet = true; m_connectorProfileNames.push_back(value); return *this; }
 
     /**
      * <p> The name of the connector profile. The name is unique for each
-     * <code>ConnectorProfile</code> in the AWS account. </p>
+     * <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
      */
     inline DescribeConnectorProfilesRequest& AddConnectorProfileNames(Aws::String&& value) { m_connectorProfileNamesHasBeenSet = true; m_connectorProfileNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p> The name of the connector profile. The name is unique for each
-     * <code>ConnectorProfile</code> in the AWS account. </p>
+     * <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
      */
     inline DescribeConnectorProfilesRequest& AddConnectorProfileNames(const char* value) { m_connectorProfileNamesHasBeenSet = true; m_connectorProfileNames.push_back(value); return *this; }
 
@@ -118,6 +118,63 @@ namespace Model
      * <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
      */
     inline DescribeConnectorProfilesRequest& WithConnectorType(ConnectorType&& value) { SetConnectorType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The name of the connector. The name is unique for each
+     * <code>ConnectorRegistration</code> in your Amazon Web Services account. Only
+     * needed if calling for CUSTOMCONNECTOR connector type/.</p>
+     */
+    inline const Aws::String& GetConnectorLabel() const{ return m_connectorLabel; }
+
+    /**
+     * <p>The name of the connector. The name is unique for each
+     * <code>ConnectorRegistration</code> in your Amazon Web Services account. Only
+     * needed if calling for CUSTOMCONNECTOR connector type/.</p>
+     */
+    inline bool ConnectorLabelHasBeenSet() const { return m_connectorLabelHasBeenSet; }
+
+    /**
+     * <p>The name of the connector. The name is unique for each
+     * <code>ConnectorRegistration</code> in your Amazon Web Services account. Only
+     * needed if calling for CUSTOMCONNECTOR connector type/.</p>
+     */
+    inline void SetConnectorLabel(const Aws::String& value) { m_connectorLabelHasBeenSet = true; m_connectorLabel = value; }
+
+    /**
+     * <p>The name of the connector. The name is unique for each
+     * <code>ConnectorRegistration</code> in your Amazon Web Services account. Only
+     * needed if calling for CUSTOMCONNECTOR connector type/.</p>
+     */
+    inline void SetConnectorLabel(Aws::String&& value) { m_connectorLabelHasBeenSet = true; m_connectorLabel = std::move(value); }
+
+    /**
+     * <p>The name of the connector. The name is unique for each
+     * <code>ConnectorRegistration</code> in your Amazon Web Services account. Only
+     * needed if calling for CUSTOMCONNECTOR connector type/.</p>
+     */
+    inline void SetConnectorLabel(const char* value) { m_connectorLabelHasBeenSet = true; m_connectorLabel.assign(value); }
+
+    /**
+     * <p>The name of the connector. The name is unique for each
+     * <code>ConnectorRegistration</code> in your Amazon Web Services account. Only
+     * needed if calling for CUSTOMCONNECTOR connector type/.</p>
+     */
+    inline DescribeConnectorProfilesRequest& WithConnectorLabel(const Aws::String& value) { SetConnectorLabel(value); return *this;}
+
+    /**
+     * <p>The name of the connector. The name is unique for each
+     * <code>ConnectorRegistration</code> in your Amazon Web Services account. Only
+     * needed if calling for CUSTOMCONNECTOR connector type/.</p>
+     */
+    inline DescribeConnectorProfilesRequest& WithConnectorLabel(Aws::String&& value) { SetConnectorLabel(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the connector. The name is unique for each
+     * <code>ConnectorRegistration</code> in your Amazon Web Services account. Only
+     * needed if calling for CUSTOMCONNECTOR connector type/.</p>
+     */
+    inline DescribeConnectorProfilesRequest& WithConnectorLabel(const char* value) { SetConnectorLabel(value); return *this;}
 
 
     /**
@@ -196,6 +253,9 @@ namespace Model
 
     ConnectorType m_connectorType;
     bool m_connectorTypeHasBeenSet;
+
+    Aws::String m_connectorLabel;
+    bool m_connectorLabelHasBeenSet;
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet;

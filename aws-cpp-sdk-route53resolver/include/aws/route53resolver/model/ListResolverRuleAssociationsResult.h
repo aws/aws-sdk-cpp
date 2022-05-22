@@ -109,43 +109,50 @@ namespace Model
 
     /**
      * <p>The associations that were created between Resolver rules and VPCs using the
-     * current AWS account, and that match the specified filters, if any.</p>
+     * current Amazon Web Services account, and that match the specified filters, if
+     * any.</p>
      */
     inline const Aws::Vector<ResolverRuleAssociation>& GetResolverRuleAssociations() const{ return m_resolverRuleAssociations; }
 
     /**
      * <p>The associations that were created between Resolver rules and VPCs using the
-     * current AWS account, and that match the specified filters, if any.</p>
+     * current Amazon Web Services account, and that match the specified filters, if
+     * any.</p>
      */
     inline void SetResolverRuleAssociations(const Aws::Vector<ResolverRuleAssociation>& value) { m_resolverRuleAssociations = value; }
 
     /**
      * <p>The associations that were created between Resolver rules and VPCs using the
-     * current AWS account, and that match the specified filters, if any.</p>
+     * current Amazon Web Services account, and that match the specified filters, if
+     * any.</p>
      */
     inline void SetResolverRuleAssociations(Aws::Vector<ResolverRuleAssociation>&& value) { m_resolverRuleAssociations = std::move(value); }
 
     /**
      * <p>The associations that were created between Resolver rules and VPCs using the
-     * current AWS account, and that match the specified filters, if any.</p>
+     * current Amazon Web Services account, and that match the specified filters, if
+     * any.</p>
      */
     inline ListResolverRuleAssociationsResult& WithResolverRuleAssociations(const Aws::Vector<ResolverRuleAssociation>& value) { SetResolverRuleAssociations(value); return *this;}
 
     /**
      * <p>The associations that were created between Resolver rules and VPCs using the
-     * current AWS account, and that match the specified filters, if any.</p>
+     * current Amazon Web Services account, and that match the specified filters, if
+     * any.</p>
      */
     inline ListResolverRuleAssociationsResult& WithResolverRuleAssociations(Aws::Vector<ResolverRuleAssociation>&& value) { SetResolverRuleAssociations(std::move(value)); return *this;}
 
     /**
      * <p>The associations that were created between Resolver rules and VPCs using the
-     * current AWS account, and that match the specified filters, if any.</p>
+     * current Amazon Web Services account, and that match the specified filters, if
+     * any.</p>
      */
     inline ListResolverRuleAssociationsResult& AddResolverRuleAssociations(const ResolverRuleAssociation& value) { m_resolverRuleAssociations.push_back(value); return *this; }
 
     /**
      * <p>The associations that were created between Resolver rules and VPCs using the
-     * current AWS account, and that match the specified filters, if any.</p>
+     * current Amazon Web Services account, and that match the specified filters, if
+     * any.</p>
      */
     inline ListResolverRuleAssociationsResult& AddResolverRuleAssociations(ResolverRuleAssociation&& value) { m_resolverRuleAssociations.push_back(std::move(value)); return *this; }
 

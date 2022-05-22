@@ -69,49 +69,49 @@ namespace Model
 
 
     /**
-     * <p> The Amazon Resource Number (ARN) of the custom metric, e.g.
+     * <p> The Amazon Resource Number (ARN) of the custom metric. For example,
      * <code>arn:<i>aws-partition</i>:iot:<i>region</i>:<i>accountId</i>:custommetric/<i>metricName</i>
      * </code> </p>
      */
     inline const Aws::String& GetMetricArn() const{ return m_metricArn; }
 
     /**
-     * <p> The Amazon Resource Number (ARN) of the custom metric, e.g.
+     * <p> The Amazon Resource Number (ARN) of the custom metric. For example,
      * <code>arn:<i>aws-partition</i>:iot:<i>region</i>:<i>accountId</i>:custommetric/<i>metricName</i>
      * </code> </p>
      */
     inline void SetMetricArn(const Aws::String& value) { m_metricArn = value; }
 
     /**
-     * <p> The Amazon Resource Number (ARN) of the custom metric, e.g.
+     * <p> The Amazon Resource Number (ARN) of the custom metric. For example,
      * <code>arn:<i>aws-partition</i>:iot:<i>region</i>:<i>accountId</i>:custommetric/<i>metricName</i>
      * </code> </p>
      */
     inline void SetMetricArn(Aws::String&& value) { m_metricArn = std::move(value); }
 
     /**
-     * <p> The Amazon Resource Number (ARN) of the custom metric, e.g.
+     * <p> The Amazon Resource Number (ARN) of the custom metric. For example,
      * <code>arn:<i>aws-partition</i>:iot:<i>region</i>:<i>accountId</i>:custommetric/<i>metricName</i>
      * </code> </p>
      */
     inline void SetMetricArn(const char* value) { m_metricArn.assign(value); }
 
     /**
-     * <p> The Amazon Resource Number (ARN) of the custom metric, e.g.
+     * <p> The Amazon Resource Number (ARN) of the custom metric. For example,
      * <code>arn:<i>aws-partition</i>:iot:<i>region</i>:<i>accountId</i>:custommetric/<i>metricName</i>
      * </code> </p>
      */
     inline CreateCustomMetricResult& WithMetricArn(const Aws::String& value) { SetMetricArn(value); return *this;}
 
     /**
-     * <p> The Amazon Resource Number (ARN) of the custom metric, e.g.
+     * <p> The Amazon Resource Number (ARN) of the custom metric. For example,
      * <code>arn:<i>aws-partition</i>:iot:<i>region</i>:<i>accountId</i>:custommetric/<i>metricName</i>
      * </code> </p>
      */
     inline CreateCustomMetricResult& WithMetricArn(Aws::String&& value) { SetMetricArn(std::move(value)); return *this;}
 
     /**
-     * <p> The Amazon Resource Number (ARN) of the custom metric, e.g.
+     * <p> The Amazon Resource Number (ARN) of the custom metric. For example,
      * <code>arn:<i>aws-partition</i>:iot:<i>region</i>:<i>accountId</i>:custommetric/<i>metricName</i>
      * </code> </p>
      */

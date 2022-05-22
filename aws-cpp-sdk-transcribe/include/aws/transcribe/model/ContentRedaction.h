@@ -7,6 +7,8 @@
 #include <aws/transcribe/TranscribeService_EXPORTS.h>
 #include <aws/transcribe/model/RedactionType.h>
 #include <aws/transcribe/model/RedactionOutput.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/transcribe/model/PiiEntityType.h>
 #include <utility>
 
 namespace Aws
@@ -130,6 +132,55 @@ namespace Model
      */
     inline ContentRedaction& WithRedactionOutput(RedactionOutput&& value) { SetRedactionOutput(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The types of personally identifiable information (PII) you want to redact in
+     * your transcript.</p>
+     */
+    inline const Aws::Vector<PiiEntityType>& GetPiiEntityTypes() const{ return m_piiEntityTypes; }
+
+    /**
+     * <p>The types of personally identifiable information (PII) you want to redact in
+     * your transcript.</p>
+     */
+    inline bool PiiEntityTypesHasBeenSet() const { return m_piiEntityTypesHasBeenSet; }
+
+    /**
+     * <p>The types of personally identifiable information (PII) you want to redact in
+     * your transcript.</p>
+     */
+    inline void SetPiiEntityTypes(const Aws::Vector<PiiEntityType>& value) { m_piiEntityTypesHasBeenSet = true; m_piiEntityTypes = value; }
+
+    /**
+     * <p>The types of personally identifiable information (PII) you want to redact in
+     * your transcript.</p>
+     */
+    inline void SetPiiEntityTypes(Aws::Vector<PiiEntityType>&& value) { m_piiEntityTypesHasBeenSet = true; m_piiEntityTypes = std::move(value); }
+
+    /**
+     * <p>The types of personally identifiable information (PII) you want to redact in
+     * your transcript.</p>
+     */
+    inline ContentRedaction& WithPiiEntityTypes(const Aws::Vector<PiiEntityType>& value) { SetPiiEntityTypes(value); return *this;}
+
+    /**
+     * <p>The types of personally identifiable information (PII) you want to redact in
+     * your transcript.</p>
+     */
+    inline ContentRedaction& WithPiiEntityTypes(Aws::Vector<PiiEntityType>&& value) { SetPiiEntityTypes(std::move(value)); return *this;}
+
+    /**
+     * <p>The types of personally identifiable information (PII) you want to redact in
+     * your transcript.</p>
+     */
+    inline ContentRedaction& AddPiiEntityTypes(const PiiEntityType& value) { m_piiEntityTypesHasBeenSet = true; m_piiEntityTypes.push_back(value); return *this; }
+
+    /**
+     * <p>The types of personally identifiable information (PII) you want to redact in
+     * your transcript.</p>
+     */
+    inline ContentRedaction& AddPiiEntityTypes(PiiEntityType&& value) { m_piiEntityTypesHasBeenSet = true; m_piiEntityTypes.push_back(std::move(value)); return *this; }
+
   private:
 
     RedactionType m_redactionType;
@@ -137,6 +188,9 @@ namespace Model
 
     RedactionOutput m_redactionOutput;
     bool m_redactionOutputHasBeenSet;
+
+    Aws::Vector<PiiEntityType> m_piiEntityTypes;
+    bool m_piiEntityTypesHasBeenSet;
   };
 
 } // namespace Model

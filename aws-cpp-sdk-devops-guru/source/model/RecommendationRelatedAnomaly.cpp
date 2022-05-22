@@ -20,13 +20,15 @@ namespace Model
 
 RecommendationRelatedAnomaly::RecommendationRelatedAnomaly() : 
     m_resourcesHasBeenSet(false),
-    m_sourceDetailsHasBeenSet(false)
+    m_sourceDetailsHasBeenSet(false),
+    m_anomalyIdHasBeenSet(false)
 {
 }
 
 RecommendationRelatedAnomaly::RecommendationRelatedAnomaly(JsonView jsonValue) : 
     m_resourcesHasBeenSet(false),
-    m_sourceDetailsHasBeenSet(false)
+    m_sourceDetailsHasBeenSet(false),
+    m_anomalyIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -51,6 +53,13 @@ RecommendationRelatedAnomaly& RecommendationRelatedAnomaly::operator =(JsonView 
       m_sourceDetails.push_back(sourceDetailsJsonList[sourceDetailsIndex].AsObject());
     }
     m_sourceDetailsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AnomalyId"))
+  {
+    m_anomalyId = jsonValue.GetString("AnomalyId");
+
+    m_anomalyIdHasBeenSet = true;
   }
 
   return *this;
@@ -79,6 +88,12 @@ JsonValue RecommendationRelatedAnomaly::Jsonize() const
      sourceDetailsJsonList[sourceDetailsIndex].AsObject(m_sourceDetails[sourceDetailsIndex].Jsonize());
    }
    payload.WithArray("SourceDetails", std::move(sourceDetailsJsonList));
+
+  }
+
+  if(m_anomalyIdHasBeenSet)
+  {
+   payload.WithString("AnomalyId", m_anomalyId);
 
   }
 

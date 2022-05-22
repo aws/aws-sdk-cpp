@@ -42,7 +42,8 @@ CreateCacheClusterRequest::CreateCacheClusterRequest() :
     m_outpostMode(OutpostMode::NOT_SET),
     m_outpostModeHasBeenSet(false),
     m_preferredOutpostArnHasBeenSet(false),
-    m_preferredOutpostArnsHasBeenSet(false)
+    m_preferredOutpostArnsHasBeenSet(false),
+    m_logDeliveryConfigurationsHasBeenSet(false)
 {
 }
 
@@ -212,6 +213,16 @@ Aws::String CreateCacheClusterRequest::SerializePayload() const
       ss << "PreferredOutpostArns.member." << preferredOutpostArnsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       preferredOutpostArnsCount++;
+    }
+  }
+
+  if(m_logDeliveryConfigurationsHasBeenSet)
+  {
+    unsigned logDeliveryConfigurationsCount = 1;
+    for(auto& item : m_logDeliveryConfigurations)
+    {
+      item.OutputToStream(ss, "LogDeliveryConfigurations.member.", logDeliveryConfigurationsCount, "");
+      logDeliveryConfigurationsCount++;
     }
   }
 

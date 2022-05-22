@@ -20,13 +20,15 @@ namespace Model
 
 S3Location::S3Location() : 
     m_bucketHasBeenSet(false),
-    m_keyHasBeenSet(false)
+    m_keyHasBeenSet(false),
+    m_bucketOwnerHasBeenSet(false)
 {
 }
 
 S3Location::S3Location(JsonView jsonValue) : 
     m_bucketHasBeenSet(false),
-    m_keyHasBeenSet(false)
+    m_keyHasBeenSet(false),
+    m_bucketOwnerHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,13 @@ S3Location& S3Location::operator =(JsonView jsonValue)
     m_keyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("BucketOwner"))
+  {
+    m_bucketOwner = jsonValue.GetString("BucketOwner");
+
+    m_bucketOwnerHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,12 @@ JsonValue S3Location::Jsonize() const
   if(m_keyHasBeenSet)
   {
    payload.WithString("Key", m_key);
+
+  }
+
+  if(m_bucketOwnerHasBeenSet)
+  {
+   payload.WithString("BucketOwner", m_bucketOwner);
 
   }
 

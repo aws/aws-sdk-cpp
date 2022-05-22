@@ -68,6 +68,12 @@ GetModelVersionResult& GetModelVersionResult::operator =(const Aws::AmazonWebSer
 
   }
 
+  if(jsonValue.ValueExists("ingestedEventsDetail"))
+  {
+    m_ingestedEventsDetail = jsonValue.GetObject("ingestedEventsDetail");
+
+  }
+
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetString("status");

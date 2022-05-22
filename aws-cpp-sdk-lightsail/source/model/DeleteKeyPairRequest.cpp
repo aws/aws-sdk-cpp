@@ -13,7 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DeleteKeyPairRequest::DeleteKeyPairRequest() : 
-    m_keyPairNameHasBeenSet(false)
+    m_keyPairNameHasBeenSet(false),
+    m_expectedFingerprintHasBeenSet(false)
 {
 }
 
@@ -24,6 +25,12 @@ Aws::String DeleteKeyPairRequest::SerializePayload() const
   if(m_keyPairNameHasBeenSet)
   {
    payload.WithString("keyPairName", m_keyPairName);
+
+  }
+
+  if(m_expectedFingerprintHasBeenSet)
+  {
+   payload.WithString("expectedFingerprint", m_expectedFingerprint);
 
   }
 

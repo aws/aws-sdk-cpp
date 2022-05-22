@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/dlm/DLM_EXPORTS.h>
+#include <aws/dlm/model/LocationValues.h>
 #include <aws/dlm/model/IntervalUnitValues.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -39,6 +40,85 @@ namespace Model
     CreateRule(Aws::Utils::Json::JsonView jsonValue);
     CreateRule& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>Specifies the destination for snapshots created by the policy. To create
+     * snapshots in the same Region as the source resource, specify <code>CLOUD</code>.
+     * To create snapshots on the same Outpost as the source resource, specify
+     * <code>OUTPOST_LOCAL</code>. If you omit this parameter, <code>CLOUD</code> is
+     * used by default.</p> <p>If the policy targets resources in an Amazon Web
+     * Services Region, then you must create snapshots in the same Region as the source
+     * resource.</p> <p>If the policy targets resources on an Outpost, then you can
+     * create snapshots on the same Outpost as the source resource, or in the Region of
+     * that Outpost.</p>
+     */
+    inline const LocationValues& GetLocation() const{ return m_location; }
+
+    /**
+     * <p>Specifies the destination for snapshots created by the policy. To create
+     * snapshots in the same Region as the source resource, specify <code>CLOUD</code>.
+     * To create snapshots on the same Outpost as the source resource, specify
+     * <code>OUTPOST_LOCAL</code>. If you omit this parameter, <code>CLOUD</code> is
+     * used by default.</p> <p>If the policy targets resources in an Amazon Web
+     * Services Region, then you must create snapshots in the same Region as the source
+     * resource.</p> <p>If the policy targets resources on an Outpost, then you can
+     * create snapshots on the same Outpost as the source resource, or in the Region of
+     * that Outpost.</p>
+     */
+    inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
+
+    /**
+     * <p>Specifies the destination for snapshots created by the policy. To create
+     * snapshots in the same Region as the source resource, specify <code>CLOUD</code>.
+     * To create snapshots on the same Outpost as the source resource, specify
+     * <code>OUTPOST_LOCAL</code>. If you omit this parameter, <code>CLOUD</code> is
+     * used by default.</p> <p>If the policy targets resources in an Amazon Web
+     * Services Region, then you must create snapshots in the same Region as the source
+     * resource.</p> <p>If the policy targets resources on an Outpost, then you can
+     * create snapshots on the same Outpost as the source resource, or in the Region of
+     * that Outpost.</p>
+     */
+    inline void SetLocation(const LocationValues& value) { m_locationHasBeenSet = true; m_location = value; }
+
+    /**
+     * <p>Specifies the destination for snapshots created by the policy. To create
+     * snapshots in the same Region as the source resource, specify <code>CLOUD</code>.
+     * To create snapshots on the same Outpost as the source resource, specify
+     * <code>OUTPOST_LOCAL</code>. If you omit this parameter, <code>CLOUD</code> is
+     * used by default.</p> <p>If the policy targets resources in an Amazon Web
+     * Services Region, then you must create snapshots in the same Region as the source
+     * resource.</p> <p>If the policy targets resources on an Outpost, then you can
+     * create snapshots on the same Outpost as the source resource, or in the Region of
+     * that Outpost.</p>
+     */
+    inline void SetLocation(LocationValues&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
+
+    /**
+     * <p>Specifies the destination for snapshots created by the policy. To create
+     * snapshots in the same Region as the source resource, specify <code>CLOUD</code>.
+     * To create snapshots on the same Outpost as the source resource, specify
+     * <code>OUTPOST_LOCAL</code>. If you omit this parameter, <code>CLOUD</code> is
+     * used by default.</p> <p>If the policy targets resources in an Amazon Web
+     * Services Region, then you must create snapshots in the same Region as the source
+     * resource.</p> <p>If the policy targets resources on an Outpost, then you can
+     * create snapshots on the same Outpost as the source resource, or in the Region of
+     * that Outpost.</p>
+     */
+    inline CreateRule& WithLocation(const LocationValues& value) { SetLocation(value); return *this;}
+
+    /**
+     * <p>Specifies the destination for snapshots created by the policy. To create
+     * snapshots in the same Region as the source resource, specify <code>CLOUD</code>.
+     * To create snapshots on the same Outpost as the source resource, specify
+     * <code>OUTPOST_LOCAL</code>. If you omit this parameter, <code>CLOUD</code> is
+     * used by default.</p> <p>If the policy targets resources in an Amazon Web
+     * Services Region, then you must create snapshots in the same Region as the source
+     * resource.</p> <p>If the policy targets resources on an Outpost, then you can
+     * create snapshots on the same Outpost as the source resource, or in the Region of
+     * that Outpost.</p>
+     */
+    inline CreateRule& WithLocation(LocationValues&& value) { SetLocation(std::move(value)); return *this;}
 
 
     /**
@@ -235,6 +315,9 @@ namespace Model
     inline CreateRule& WithCronExpression(const char* value) { SetCronExpression(value); return *this;}
 
   private:
+
+    LocationValues m_location;
+    bool m_locationHasBeenSet;
 
     int m_interval;
     bool m_intervalHasBeenSet;

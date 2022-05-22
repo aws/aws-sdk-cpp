@@ -130,42 +130,50 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The Amazon Web Services account ID of the account used to start the labeling
+     * job.</p>
      */
     inline const Aws::String& GetWorkRequesterAccountId() const{ return m_workRequesterAccountId; }
 
     /**
-     * <p/>
+     * <p>The Amazon Web Services account ID of the account used to start the labeling
+     * job.</p>
      */
     inline bool WorkRequesterAccountIdHasBeenSet() const { return m_workRequesterAccountIdHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The Amazon Web Services account ID of the account used to start the labeling
+     * job.</p>
      */
     inline void SetWorkRequesterAccountId(const Aws::String& value) { m_workRequesterAccountIdHasBeenSet = true; m_workRequesterAccountId = value; }
 
     /**
-     * <p/>
+     * <p>The Amazon Web Services account ID of the account used to start the labeling
+     * job.</p>
      */
     inline void SetWorkRequesterAccountId(Aws::String&& value) { m_workRequesterAccountIdHasBeenSet = true; m_workRequesterAccountId = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The Amazon Web Services account ID of the account used to start the labeling
+     * job.</p>
      */
     inline void SetWorkRequesterAccountId(const char* value) { m_workRequesterAccountIdHasBeenSet = true; m_workRequesterAccountId.assign(value); }
 
     /**
-     * <p/>
+     * <p>The Amazon Web Services account ID of the account used to start the labeling
+     * job.</p>
      */
     inline LabelingJobForWorkteamSummary& WithWorkRequesterAccountId(const Aws::String& value) { SetWorkRequesterAccountId(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The Amazon Web Services account ID of the account used to start the labeling
+     * job.</p>
      */
     inline LabelingJobForWorkteamSummary& WithWorkRequesterAccountId(Aws::String&& value) { SetWorkRequesterAccountId(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The Amazon Web Services account ID of the account used to start the labeling
+     * job.</p>
      */
     inline LabelingJobForWorkteamSummary& WithWorkRequesterAccountId(const char* value) { SetWorkRequesterAccountId(value); return *this;}
 

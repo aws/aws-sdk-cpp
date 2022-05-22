@@ -33,32 +33,32 @@ namespace Model
 
 
     /**
-     * <p>The Web ACL that is associated with the resource. If there is no associated
-     * resource, AWS WAF returns a null Web ACL.</p>
+     * <p>The web ACL that is associated with the resource. If there is no associated
+     * resource, WAF returns a null web ACL.</p>
      */
     inline const WebACL& GetWebACL() const{ return m_webACL; }
 
     /**
-     * <p>The Web ACL that is associated with the resource. If there is no associated
-     * resource, AWS WAF returns a null Web ACL.</p>
+     * <p>The web ACL that is associated with the resource. If there is no associated
+     * resource, WAF returns a null web ACL.</p>
      */
     inline void SetWebACL(const WebACL& value) { m_webACL = value; }
 
     /**
-     * <p>The Web ACL that is associated with the resource. If there is no associated
-     * resource, AWS WAF returns a null Web ACL.</p>
+     * <p>The web ACL that is associated with the resource. If there is no associated
+     * resource, WAF returns a null web ACL.</p>
      */
     inline void SetWebACL(WebACL&& value) { m_webACL = std::move(value); }
 
     /**
-     * <p>The Web ACL that is associated with the resource. If there is no associated
-     * resource, AWS WAF returns a null Web ACL.</p>
+     * <p>The web ACL that is associated with the resource. If there is no associated
+     * resource, WAF returns a null web ACL.</p>
      */
     inline GetWebACLForResourceResult& WithWebACL(const WebACL& value) { SetWebACL(value); return *this;}
 
     /**
-     * <p>The Web ACL that is associated with the resource. If there is no associated
-     * resource, AWS WAF returns a null Web ACL.</p>
+     * <p>The web ACL that is associated with the resource. If there is no associated
+     * resource, WAF returns a null web ACL.</p>
      */
     inline GetWebACLForResourceResult& WithWebACL(WebACL&& value) { SetWebACL(std::move(value)); return *this;}
 

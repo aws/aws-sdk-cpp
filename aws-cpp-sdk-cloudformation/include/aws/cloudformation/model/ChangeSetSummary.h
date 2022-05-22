@@ -209,55 +209,55 @@ namespace Model
 
     /**
      * <p>If the change set execution status is <code>AVAILABLE</code>, you can execute
-     * the change set. If you can’t execute the change set, the status indicates why.
+     * the change set. If you can't execute the change set, the status indicates why.
      * For example, a change set might be in an <code>UNAVAILABLE</code> state because
-     * AWS CloudFormation is still creating it or in an <code>OBSOLETE</code> state
-     * because the stack was already updated.</p>
+     * CloudFormation is still creating it or in an <code>OBSOLETE</code> state because
+     * the stack was already updated.</p>
      */
     inline const ExecutionStatus& GetExecutionStatus() const{ return m_executionStatus; }
 
     /**
      * <p>If the change set execution status is <code>AVAILABLE</code>, you can execute
-     * the change set. If you can’t execute the change set, the status indicates why.
+     * the change set. If you can't execute the change set, the status indicates why.
      * For example, a change set might be in an <code>UNAVAILABLE</code> state because
-     * AWS CloudFormation is still creating it or in an <code>OBSOLETE</code> state
-     * because the stack was already updated.</p>
+     * CloudFormation is still creating it or in an <code>OBSOLETE</code> state because
+     * the stack was already updated.</p>
      */
     inline bool ExecutionStatusHasBeenSet() const { return m_executionStatusHasBeenSet; }
 
     /**
      * <p>If the change set execution status is <code>AVAILABLE</code>, you can execute
-     * the change set. If you can’t execute the change set, the status indicates why.
+     * the change set. If you can't execute the change set, the status indicates why.
      * For example, a change set might be in an <code>UNAVAILABLE</code> state because
-     * AWS CloudFormation is still creating it or in an <code>OBSOLETE</code> state
-     * because the stack was already updated.</p>
+     * CloudFormation is still creating it or in an <code>OBSOLETE</code> state because
+     * the stack was already updated.</p>
      */
     inline void SetExecutionStatus(const ExecutionStatus& value) { m_executionStatusHasBeenSet = true; m_executionStatus = value; }
 
     /**
      * <p>If the change set execution status is <code>AVAILABLE</code>, you can execute
-     * the change set. If you can’t execute the change set, the status indicates why.
+     * the change set. If you can't execute the change set, the status indicates why.
      * For example, a change set might be in an <code>UNAVAILABLE</code> state because
-     * AWS CloudFormation is still creating it or in an <code>OBSOLETE</code> state
-     * because the stack was already updated.</p>
+     * CloudFormation is still creating it or in an <code>OBSOLETE</code> state because
+     * the stack was already updated.</p>
      */
     inline void SetExecutionStatus(ExecutionStatus&& value) { m_executionStatusHasBeenSet = true; m_executionStatus = std::move(value); }
 
     /**
      * <p>If the change set execution status is <code>AVAILABLE</code>, you can execute
-     * the change set. If you can’t execute the change set, the status indicates why.
+     * the change set. If you can't execute the change set, the status indicates why.
      * For example, a change set might be in an <code>UNAVAILABLE</code> state because
-     * AWS CloudFormation is still creating it or in an <code>OBSOLETE</code> state
-     * because the stack was already updated.</p>
+     * CloudFormation is still creating it or in an <code>OBSOLETE</code> state because
+     * the stack was already updated.</p>
      */
     inline ChangeSetSummary& WithExecutionStatus(const ExecutionStatus& value) { SetExecutionStatus(value); return *this;}
 
     /**
      * <p>If the change set execution status is <code>AVAILABLE</code>, you can execute
-     * the change set. If you can’t execute the change set, the status indicates why.
+     * the change set. If you can't execute the change set, the status indicates why.
      * For example, a change set might be in an <code>UNAVAILABLE</code> state because
-     * AWS CloudFormation is still creating it or in an <code>OBSOLETE</code> state
-     * because the stack was already updated.</p>
+     * CloudFormation is still creating it or in an <code>OBSOLETE</code> state because
+     * the stack was already updated.</p>
      */
     inline ChangeSetSummary& WithExecutionStatus(ExecutionStatus&& value) { SetExecutionStatus(std::move(value)); return *this;}
 
@@ -301,57 +301,49 @@ namespace Model
 
     /**
      * <p>A description of the change set's status. For example, if your change set is
-     * in the <code>FAILED</code> state, AWS CloudFormation shows the error
-     * message.</p>
+     * in the <code>FAILED</code> state, CloudFormation shows the error message.</p>
      */
     inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
 
     /**
      * <p>A description of the change set's status. For example, if your change set is
-     * in the <code>FAILED</code> state, AWS CloudFormation shows the error
-     * message.</p>
+     * in the <code>FAILED</code> state, CloudFormation shows the error message.</p>
      */
     inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
 
     /**
      * <p>A description of the change set's status. For example, if your change set is
-     * in the <code>FAILED</code> state, AWS CloudFormation shows the error
-     * message.</p>
+     * in the <code>FAILED</code> state, CloudFormation shows the error message.</p>
      */
     inline void SetStatusReason(const Aws::String& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
 
     /**
      * <p>A description of the change set's status. For example, if your change set is
-     * in the <code>FAILED</code> state, AWS CloudFormation shows the error
-     * message.</p>
+     * in the <code>FAILED</code> state, CloudFormation shows the error message.</p>
      */
     inline void SetStatusReason(Aws::String&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::move(value); }
 
     /**
      * <p>A description of the change set's status. For example, if your change set is
-     * in the <code>FAILED</code> state, AWS CloudFormation shows the error
-     * message.</p>
+     * in the <code>FAILED</code> state, CloudFormation shows the error message.</p>
      */
     inline void SetStatusReason(const char* value) { m_statusReasonHasBeenSet = true; m_statusReason.assign(value); }
 
     /**
      * <p>A description of the change set's status. For example, if your change set is
-     * in the <code>FAILED</code> state, AWS CloudFormation shows the error
-     * message.</p>
+     * in the <code>FAILED</code> state, CloudFormation shows the error message.</p>
      */
     inline ChangeSetSummary& WithStatusReason(const Aws::String& value) { SetStatusReason(value); return *this;}
 
     /**
      * <p>A description of the change set's status. For example, if your change set is
-     * in the <code>FAILED</code> state, AWS CloudFormation shows the error
-     * message.</p>
+     * in the <code>FAILED</code> state, CloudFormation shows the error message.</p>
      */
     inline ChangeSetSummary& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
 
     /**
      * <p>A description of the change set's status. For example, if your change set is
-     * in the <code>FAILED</code> state, AWS CloudFormation shows the error
-     * message.</p>
+     * in the <code>FAILED</code> state, CloudFormation shows the error message.</p>
      */
     inline ChangeSetSummary& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
 

@@ -18,7 +18,9 @@ namespace Model
     NOT_SET,
     JupyterServer,
     KernelGateway,
-    TensorBoard
+    TensorBoard,
+    RStudioServerPro,
+    RSessionGateway
   };
 
 namespace AppTypeMapper

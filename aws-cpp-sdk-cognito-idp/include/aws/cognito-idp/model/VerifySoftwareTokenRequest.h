@@ -76,99 +76,99 @@ namespace Model
 
 
     /**
-     * <p>The session which should be passed both ways in challenge-response calls to
+     * <p>The session that should be passed both ways in challenge-response calls to
      * the service.</p>
      */
     inline const Aws::String& GetSession() const{ return m_session; }
 
     /**
-     * <p>The session which should be passed both ways in challenge-response calls to
+     * <p>The session that should be passed both ways in challenge-response calls to
      * the service.</p>
      */
     inline bool SessionHasBeenSet() const { return m_sessionHasBeenSet; }
 
     /**
-     * <p>The session which should be passed both ways in challenge-response calls to
+     * <p>The session that should be passed both ways in challenge-response calls to
      * the service.</p>
      */
     inline void SetSession(const Aws::String& value) { m_sessionHasBeenSet = true; m_session = value; }
 
     /**
-     * <p>The session which should be passed both ways in challenge-response calls to
+     * <p>The session that should be passed both ways in challenge-response calls to
      * the service.</p>
      */
     inline void SetSession(Aws::String&& value) { m_sessionHasBeenSet = true; m_session = std::move(value); }
 
     /**
-     * <p>The session which should be passed both ways in challenge-response calls to
+     * <p>The session that should be passed both ways in challenge-response calls to
      * the service.</p>
      */
     inline void SetSession(const char* value) { m_sessionHasBeenSet = true; m_session.assign(value); }
 
     /**
-     * <p>The session which should be passed both ways in challenge-response calls to
+     * <p>The session that should be passed both ways in challenge-response calls to
      * the service.</p>
      */
     inline VerifySoftwareTokenRequest& WithSession(const Aws::String& value) { SetSession(value); return *this;}
 
     /**
-     * <p>The session which should be passed both ways in challenge-response calls to
+     * <p>The session that should be passed both ways in challenge-response calls to
      * the service.</p>
      */
     inline VerifySoftwareTokenRequest& WithSession(Aws::String&& value) { SetSession(std::move(value)); return *this;}
 
     /**
-     * <p>The session which should be passed both ways in challenge-response calls to
+     * <p>The session that should be passed both ways in challenge-response calls to
      * the service.</p>
      */
     inline VerifySoftwareTokenRequest& WithSession(const char* value) { SetSession(value); return *this;}
 
 
     /**
-     * <p>The one time password computed using the secret code returned by <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html">AssociateSoftwareToken"</a>.</p>
+     * <p>The one- time password computed using the secret code returned by <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html">AssociateSoftwareToken</a>.</p>
      */
     inline const Aws::String& GetUserCode() const{ return m_userCode; }
 
     /**
-     * <p>The one time password computed using the secret code returned by <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html">AssociateSoftwareToken"</a>.</p>
+     * <p>The one- time password computed using the secret code returned by <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html">AssociateSoftwareToken</a>.</p>
      */
     inline bool UserCodeHasBeenSet() const { return m_userCodeHasBeenSet; }
 
     /**
-     * <p>The one time password computed using the secret code returned by <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html">AssociateSoftwareToken"</a>.</p>
+     * <p>The one- time password computed using the secret code returned by <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html">AssociateSoftwareToken</a>.</p>
      */
     inline void SetUserCode(const Aws::String& value) { m_userCodeHasBeenSet = true; m_userCode = value; }
 
     /**
-     * <p>The one time password computed using the secret code returned by <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html">AssociateSoftwareToken"</a>.</p>
+     * <p>The one- time password computed using the secret code returned by <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html">AssociateSoftwareToken</a>.</p>
      */
     inline void SetUserCode(Aws::String&& value) { m_userCodeHasBeenSet = true; m_userCode = std::move(value); }
 
     /**
-     * <p>The one time password computed using the secret code returned by <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html">AssociateSoftwareToken"</a>.</p>
+     * <p>The one- time password computed using the secret code returned by <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html">AssociateSoftwareToken</a>.</p>
      */
     inline void SetUserCode(const char* value) { m_userCodeHasBeenSet = true; m_userCode.assign(value); }
 
     /**
-     * <p>The one time password computed using the secret code returned by <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html">AssociateSoftwareToken"</a>.</p>
+     * <p>The one- time password computed using the secret code returned by <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html">AssociateSoftwareToken</a>.</p>
      */
     inline VerifySoftwareTokenRequest& WithUserCode(const Aws::String& value) { SetUserCode(value); return *this;}
 
     /**
-     * <p>The one time password computed using the secret code returned by <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html">AssociateSoftwareToken"</a>.</p>
+     * <p>The one- time password computed using the secret code returned by <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html">AssociateSoftwareToken</a>.</p>
      */
     inline VerifySoftwareTokenRequest& WithUserCode(Aws::String&& value) { SetUserCode(std::move(value)); return *this;}
 
     /**
-     * <p>The one time password computed using the secret code returned by <a
-     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html">AssociateSoftwareToken"</a>.</p>
+     * <p>The one- time password computed using the secret code returned by <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html">AssociateSoftwareToken</a>.</p>
      */
     inline VerifySoftwareTokenRequest& WithUserCode(const char* value) { SetUserCode(value); return *this;}
 

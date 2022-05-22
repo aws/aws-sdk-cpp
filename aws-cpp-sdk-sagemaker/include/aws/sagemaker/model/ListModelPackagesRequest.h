@@ -270,56 +270,62 @@ namespace Model
 
 
     /**
-     * <p>A filter that returns onlyl the model packages of the specified type. This
-     * can be one of the following values.</p> <ul> <li> <p> <code>VERSIONED</code> -
-     * List only versioned models.</p> </li> <li> <p> <code>UNVERSIONED</code> - List
-     * only unversioined models.</p> </li> <li> <p> <code>BOTH</code> - List both
-     * versioned and unversioned models.</p> </li> </ul>
+     * <p>A filter that returns only the model packages of the specified type. This can
+     * be one of the following values.</p> <ul> <li> <p> <code>UNVERSIONED</code> -
+     * List only unversioined models. This is the default value if no
+     * <code>ModelPackageType</code> is specified.</p> </li> <li> <p>
+     * <code>VERSIONED</code> - List only versioned models.</p> </li> <li> <p>
+     * <code>BOTH</code> - List both versioned and unversioned models.</p> </li> </ul>
      */
     inline const ModelPackageType& GetModelPackageType() const{ return m_modelPackageType; }
 
     /**
-     * <p>A filter that returns onlyl the model packages of the specified type. This
-     * can be one of the following values.</p> <ul> <li> <p> <code>VERSIONED</code> -
-     * List only versioned models.</p> </li> <li> <p> <code>UNVERSIONED</code> - List
-     * only unversioined models.</p> </li> <li> <p> <code>BOTH</code> - List both
-     * versioned and unversioned models.</p> </li> </ul>
+     * <p>A filter that returns only the model packages of the specified type. This can
+     * be one of the following values.</p> <ul> <li> <p> <code>UNVERSIONED</code> -
+     * List only unversioined models. This is the default value if no
+     * <code>ModelPackageType</code> is specified.</p> </li> <li> <p>
+     * <code>VERSIONED</code> - List only versioned models.</p> </li> <li> <p>
+     * <code>BOTH</code> - List both versioned and unversioned models.</p> </li> </ul>
      */
     inline bool ModelPackageTypeHasBeenSet() const { return m_modelPackageTypeHasBeenSet; }
 
     /**
-     * <p>A filter that returns onlyl the model packages of the specified type. This
-     * can be one of the following values.</p> <ul> <li> <p> <code>VERSIONED</code> -
-     * List only versioned models.</p> </li> <li> <p> <code>UNVERSIONED</code> - List
-     * only unversioined models.</p> </li> <li> <p> <code>BOTH</code> - List both
-     * versioned and unversioned models.</p> </li> </ul>
+     * <p>A filter that returns only the model packages of the specified type. This can
+     * be one of the following values.</p> <ul> <li> <p> <code>UNVERSIONED</code> -
+     * List only unversioined models. This is the default value if no
+     * <code>ModelPackageType</code> is specified.</p> </li> <li> <p>
+     * <code>VERSIONED</code> - List only versioned models.</p> </li> <li> <p>
+     * <code>BOTH</code> - List both versioned and unversioned models.</p> </li> </ul>
      */
     inline void SetModelPackageType(const ModelPackageType& value) { m_modelPackageTypeHasBeenSet = true; m_modelPackageType = value; }
 
     /**
-     * <p>A filter that returns onlyl the model packages of the specified type. This
-     * can be one of the following values.</p> <ul> <li> <p> <code>VERSIONED</code> -
-     * List only versioned models.</p> </li> <li> <p> <code>UNVERSIONED</code> - List
-     * only unversioined models.</p> </li> <li> <p> <code>BOTH</code> - List both
-     * versioned and unversioned models.</p> </li> </ul>
+     * <p>A filter that returns only the model packages of the specified type. This can
+     * be one of the following values.</p> <ul> <li> <p> <code>UNVERSIONED</code> -
+     * List only unversioined models. This is the default value if no
+     * <code>ModelPackageType</code> is specified.</p> </li> <li> <p>
+     * <code>VERSIONED</code> - List only versioned models.</p> </li> <li> <p>
+     * <code>BOTH</code> - List both versioned and unversioned models.</p> </li> </ul>
      */
     inline void SetModelPackageType(ModelPackageType&& value) { m_modelPackageTypeHasBeenSet = true; m_modelPackageType = std::move(value); }
 
     /**
-     * <p>A filter that returns onlyl the model packages of the specified type. This
-     * can be one of the following values.</p> <ul> <li> <p> <code>VERSIONED</code> -
-     * List only versioned models.</p> </li> <li> <p> <code>UNVERSIONED</code> - List
-     * only unversioined models.</p> </li> <li> <p> <code>BOTH</code> - List both
-     * versioned and unversioned models.</p> </li> </ul>
+     * <p>A filter that returns only the model packages of the specified type. This can
+     * be one of the following values.</p> <ul> <li> <p> <code>UNVERSIONED</code> -
+     * List only unversioined models. This is the default value if no
+     * <code>ModelPackageType</code> is specified.</p> </li> <li> <p>
+     * <code>VERSIONED</code> - List only versioned models.</p> </li> <li> <p>
+     * <code>BOTH</code> - List both versioned and unversioned models.</p> </li> </ul>
      */
     inline ListModelPackagesRequest& WithModelPackageType(const ModelPackageType& value) { SetModelPackageType(value); return *this;}
 
     /**
-     * <p>A filter that returns onlyl the model packages of the specified type. This
-     * can be one of the following values.</p> <ul> <li> <p> <code>VERSIONED</code> -
-     * List only versioned models.</p> </li> <li> <p> <code>UNVERSIONED</code> - List
-     * only unversioined models.</p> </li> <li> <p> <code>BOTH</code> - List both
-     * versioned and unversioned models.</p> </li> </ul>
+     * <p>A filter that returns only the model packages of the specified type. This can
+     * be one of the following values.</p> <ul> <li> <p> <code>UNVERSIONED</code> -
+     * List only unversioined models. This is the default value if no
+     * <code>ModelPackageType</code> is specified.</p> </li> <li> <p>
+     * <code>VERSIONED</code> - List only versioned models.</p> </li> <li> <p>
+     * <code>BOTH</code> - List both versioned and unversioned models.</p> </li> </ul>
      */
     inline ListModelPackagesRequest& WithModelPackageType(ModelPackageType&& value) { SetModelPackageType(std::move(value)); return *this;}
 

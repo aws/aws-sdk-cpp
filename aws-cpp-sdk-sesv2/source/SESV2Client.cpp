@@ -83,6 +83,7 @@
 #include <aws/sesv2/model/PutDedicatedIpInPoolRequest.h>
 #include <aws/sesv2/model/PutDedicatedIpWarmupAttributesRequest.h>
 #include <aws/sesv2/model/PutDeliverabilityDashboardOptionRequest.h>
+#include <aws/sesv2/model/PutEmailIdentityConfigurationSetAttributesRequest.h>
 #include <aws/sesv2/model/PutEmailIdentityDkimAttributesRequest.h>
 #include <aws/sesv2/model/PutEmailIdentityDkimSigningAttributesRequest.h>
 #include <aws/sesv2/model/PutEmailIdentityFeedbackAttributesRequest.h>
@@ -148,7 +149,7 @@ SESV2Client::~SESV2Client()
 {
 }
 
-void SESV2Client::init(const ClientConfiguration& config)
+void SESV2Client::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("SESv2");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -177,9 +178,7 @@ void SESV2Client::OverrideEndpoint(const Aws::String& endpoint)
 CreateConfigurationSetOutcome SESV2Client::CreateConfigurationSet(const CreateConfigurationSetRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/configuration-sets";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/configuration-sets");
   return CreateConfigurationSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -209,11 +208,9 @@ CreateConfigurationSetEventDestinationOutcome SESV2Client::CreateConfigurationSe
     return CreateConfigurationSetEventDestinationOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigurationSetName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/configuration-sets/";
-  ss << request.GetConfigurationSetName();
-  ss << "/event-destinations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/configuration-sets/");
+  uri.AddPathSegment(request.GetConfigurationSetName());
+  uri.AddPathSegments("/event-destinations");
   return CreateConfigurationSetEventDestinationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -243,11 +240,9 @@ CreateContactOutcome SESV2Client::CreateContact(const CreateContactRequest& requ
     return CreateContactOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContactListName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/contact-lists/";
-  ss << request.GetContactListName();
-  ss << "/contacts";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/contact-lists/");
+  uri.AddPathSegment(request.GetContactListName());
+  uri.AddPathSegments("/contacts");
   return CreateContactOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -272,9 +267,7 @@ void SESV2Client::CreateContactAsyncHelper(const CreateContactRequest& request, 
 CreateContactListOutcome SESV2Client::CreateContactList(const CreateContactListRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/contact-lists";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/contact-lists");
   return CreateContactListOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -299,9 +292,7 @@ void SESV2Client::CreateContactListAsyncHelper(const CreateContactListRequest& r
 CreateCustomVerificationEmailTemplateOutcome SESV2Client::CreateCustomVerificationEmailTemplate(const CreateCustomVerificationEmailTemplateRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/custom-verification-email-templates";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/custom-verification-email-templates");
   return CreateCustomVerificationEmailTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -326,9 +317,7 @@ void SESV2Client::CreateCustomVerificationEmailTemplateAsyncHelper(const CreateC
 CreateDedicatedIpPoolOutcome SESV2Client::CreateDedicatedIpPool(const CreateDedicatedIpPoolRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/dedicated-ip-pools";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/dedicated-ip-pools");
   return CreateDedicatedIpPoolOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -353,9 +342,7 @@ void SESV2Client::CreateDedicatedIpPoolAsyncHelper(const CreateDedicatedIpPoolRe
 CreateDeliverabilityTestReportOutcome SESV2Client::CreateDeliverabilityTestReport(const CreateDeliverabilityTestReportRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/deliverability-dashboard/test";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/deliverability-dashboard/test");
   return CreateDeliverabilityTestReportOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -380,9 +367,7 @@ void SESV2Client::CreateDeliverabilityTestReportAsyncHelper(const CreateDelivera
 CreateEmailIdentityOutcome SESV2Client::CreateEmailIdentity(const CreateEmailIdentityRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/identities";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/identities");
   return CreateEmailIdentityOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -417,12 +402,10 @@ CreateEmailIdentityPolicyOutcome SESV2Client::CreateEmailIdentityPolicy(const Cr
     return CreateEmailIdentityPolicyOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PolicyName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/identities/";
-  ss << request.GetEmailIdentity();
-  ss << "/policies/";
-  ss << request.GetPolicyName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/identities/");
+  uri.AddPathSegment(request.GetEmailIdentity());
+  uri.AddPathSegments("/policies/");
+  uri.AddPathSegment(request.GetPolicyName());
   return CreateEmailIdentityPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -447,9 +430,7 @@ void SESV2Client::CreateEmailIdentityPolicyAsyncHelper(const CreateEmailIdentity
 CreateEmailTemplateOutcome SESV2Client::CreateEmailTemplate(const CreateEmailTemplateRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/templates";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/templates");
   return CreateEmailTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -474,9 +455,7 @@ void SESV2Client::CreateEmailTemplateAsyncHelper(const CreateEmailTemplateReques
 CreateImportJobOutcome SESV2Client::CreateImportJob(const CreateImportJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/import-jobs";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/import-jobs");
   return CreateImportJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -506,10 +485,8 @@ DeleteConfigurationSetOutcome SESV2Client::DeleteConfigurationSet(const DeleteCo
     return DeleteConfigurationSetOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigurationSetName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/configuration-sets/";
-  ss << request.GetConfigurationSetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/configuration-sets/");
+  uri.AddPathSegment(request.GetConfigurationSetName());
   return DeleteConfigurationSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -544,12 +521,10 @@ DeleteConfigurationSetEventDestinationOutcome SESV2Client::DeleteConfigurationSe
     return DeleteConfigurationSetEventDestinationOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EventDestinationName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/configuration-sets/";
-  ss << request.GetConfigurationSetName();
-  ss << "/event-destinations/";
-  ss << request.GetEventDestinationName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/configuration-sets/");
+  uri.AddPathSegment(request.GetConfigurationSetName());
+  uri.AddPathSegments("/event-destinations/");
+  uri.AddPathSegment(request.GetEventDestinationName());
   return DeleteConfigurationSetEventDestinationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -584,12 +559,10 @@ DeleteContactOutcome SESV2Client::DeleteContact(const DeleteContactRequest& requ
     return DeleteContactOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EmailAddress]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/contact-lists/";
-  ss << request.GetContactListName();
-  ss << "/contacts/";
-  ss << request.GetEmailAddress();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/contact-lists/");
+  uri.AddPathSegment(request.GetContactListName());
+  uri.AddPathSegments("/contacts/");
+  uri.AddPathSegment(request.GetEmailAddress());
   return DeleteContactOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -619,10 +592,8 @@ DeleteContactListOutcome SESV2Client::DeleteContactList(const DeleteContactListR
     return DeleteContactListOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContactListName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/contact-lists/";
-  ss << request.GetContactListName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/contact-lists/");
+  uri.AddPathSegment(request.GetContactListName());
   return DeleteContactListOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -652,10 +623,8 @@ DeleteCustomVerificationEmailTemplateOutcome SESV2Client::DeleteCustomVerificati
     return DeleteCustomVerificationEmailTemplateOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TemplateName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/custom-verification-email-templates/";
-  ss << request.GetTemplateName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/custom-verification-email-templates/");
+  uri.AddPathSegment(request.GetTemplateName());
   return DeleteCustomVerificationEmailTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -685,10 +654,8 @@ DeleteDedicatedIpPoolOutcome SESV2Client::DeleteDedicatedIpPool(const DeleteDedi
     return DeleteDedicatedIpPoolOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PoolName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/dedicated-ip-pools/";
-  ss << request.GetPoolName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/dedicated-ip-pools/");
+  uri.AddPathSegment(request.GetPoolName());
   return DeleteDedicatedIpPoolOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -718,10 +685,8 @@ DeleteEmailIdentityOutcome SESV2Client::DeleteEmailIdentity(const DeleteEmailIde
     return DeleteEmailIdentityOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EmailIdentity]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/identities/";
-  ss << request.GetEmailIdentity();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/identities/");
+  uri.AddPathSegment(request.GetEmailIdentity());
   return DeleteEmailIdentityOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -756,12 +721,10 @@ DeleteEmailIdentityPolicyOutcome SESV2Client::DeleteEmailIdentityPolicy(const De
     return DeleteEmailIdentityPolicyOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PolicyName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/identities/";
-  ss << request.GetEmailIdentity();
-  ss << "/policies/";
-  ss << request.GetPolicyName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/identities/");
+  uri.AddPathSegment(request.GetEmailIdentity());
+  uri.AddPathSegments("/policies/");
+  uri.AddPathSegment(request.GetPolicyName());
   return DeleteEmailIdentityPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -791,10 +754,8 @@ DeleteEmailTemplateOutcome SESV2Client::DeleteEmailTemplate(const DeleteEmailTem
     return DeleteEmailTemplateOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TemplateName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/templates/";
-  ss << request.GetTemplateName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/templates/");
+  uri.AddPathSegment(request.GetTemplateName());
   return DeleteEmailTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -824,10 +785,8 @@ DeleteSuppressedDestinationOutcome SESV2Client::DeleteSuppressedDestination(cons
     return DeleteSuppressedDestinationOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EmailAddress]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/suppression/addresses/";
-  ss << request.GetEmailAddress();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/suppression/addresses/");
+  uri.AddPathSegment(request.GetEmailAddress());
   return DeleteSuppressedDestinationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -852,9 +811,7 @@ void SESV2Client::DeleteSuppressedDestinationAsyncHelper(const DeleteSuppressedD
 GetAccountOutcome SESV2Client::GetAccount(const GetAccountRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/account";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/account");
   return GetAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -884,9 +841,7 @@ GetBlacklistReportsOutcome SESV2Client::GetBlacklistReports(const GetBlacklistRe
     return GetBlacklistReportsOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BlacklistItemNames]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/deliverability-dashboard/blacklist-report";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/deliverability-dashboard/blacklist-report");
   return GetBlacklistReportsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -916,10 +871,8 @@ GetConfigurationSetOutcome SESV2Client::GetConfigurationSet(const GetConfigurati
     return GetConfigurationSetOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigurationSetName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/configuration-sets/";
-  ss << request.GetConfigurationSetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/configuration-sets/");
+  uri.AddPathSegment(request.GetConfigurationSetName());
   return GetConfigurationSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -949,11 +902,9 @@ GetConfigurationSetEventDestinationsOutcome SESV2Client::GetConfigurationSetEven
     return GetConfigurationSetEventDestinationsOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigurationSetName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/configuration-sets/";
-  ss << request.GetConfigurationSetName();
-  ss << "/event-destinations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/configuration-sets/");
+  uri.AddPathSegment(request.GetConfigurationSetName());
+  uri.AddPathSegments("/event-destinations");
   return GetConfigurationSetEventDestinationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -988,12 +939,10 @@ GetContactOutcome SESV2Client::GetContact(const GetContactRequest& request) cons
     return GetContactOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EmailAddress]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/contact-lists/";
-  ss << request.GetContactListName();
-  ss << "/contacts/";
-  ss << request.GetEmailAddress();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/contact-lists/");
+  uri.AddPathSegment(request.GetContactListName());
+  uri.AddPathSegments("/contacts/");
+  uri.AddPathSegment(request.GetEmailAddress());
   return GetContactOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1023,10 +972,8 @@ GetContactListOutcome SESV2Client::GetContactList(const GetContactListRequest& r
     return GetContactListOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContactListName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/contact-lists/";
-  ss << request.GetContactListName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/contact-lists/");
+  uri.AddPathSegment(request.GetContactListName());
   return GetContactListOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1056,10 +1003,8 @@ GetCustomVerificationEmailTemplateOutcome SESV2Client::GetCustomVerificationEmai
     return GetCustomVerificationEmailTemplateOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TemplateName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/custom-verification-email-templates/";
-  ss << request.GetTemplateName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/custom-verification-email-templates/");
+  uri.AddPathSegment(request.GetTemplateName());
   return GetCustomVerificationEmailTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1089,10 +1034,8 @@ GetDedicatedIpOutcome SESV2Client::GetDedicatedIp(const GetDedicatedIpRequest& r
     return GetDedicatedIpOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Ip]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/dedicated-ips/";
-  ss << request.GetIp();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/dedicated-ips/");
+  uri.AddPathSegment(request.GetIp());
   return GetDedicatedIpOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1117,9 +1060,7 @@ void SESV2Client::GetDedicatedIpAsyncHelper(const GetDedicatedIpRequest& request
 GetDedicatedIpsOutcome SESV2Client::GetDedicatedIps(const GetDedicatedIpsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/dedicated-ips";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/dedicated-ips");
   return GetDedicatedIpsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1144,9 +1085,7 @@ void SESV2Client::GetDedicatedIpsAsyncHelper(const GetDedicatedIpsRequest& reque
 GetDeliverabilityDashboardOptionsOutcome SESV2Client::GetDeliverabilityDashboardOptions(const GetDeliverabilityDashboardOptionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/deliverability-dashboard";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/deliverability-dashboard");
   return GetDeliverabilityDashboardOptionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1176,10 +1115,8 @@ GetDeliverabilityTestReportOutcome SESV2Client::GetDeliverabilityTestReport(cons
     return GetDeliverabilityTestReportOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ReportId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/deliverability-dashboard/test-reports/";
-  ss << request.GetReportId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/deliverability-dashboard/test-reports/");
+  uri.AddPathSegment(request.GetReportId());
   return GetDeliverabilityTestReportOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1209,10 +1146,8 @@ GetDomainDeliverabilityCampaignOutcome SESV2Client::GetDomainDeliverabilityCampa
     return GetDomainDeliverabilityCampaignOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CampaignId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/deliverability-dashboard/campaigns/";
-  ss << request.GetCampaignId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/deliverability-dashboard/campaigns/");
+  uri.AddPathSegment(request.GetCampaignId());
   return GetDomainDeliverabilityCampaignOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1252,10 +1187,8 @@ GetDomainStatisticsReportOutcome SESV2Client::GetDomainStatisticsReport(const Ge
     return GetDomainStatisticsReportOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EndDate]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/deliverability-dashboard/statistics-report/";
-  ss << request.GetDomain();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/deliverability-dashboard/statistics-report/");
+  uri.AddPathSegment(request.GetDomain());
   return GetDomainStatisticsReportOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1285,10 +1218,8 @@ GetEmailIdentityOutcome SESV2Client::GetEmailIdentity(const GetEmailIdentityRequ
     return GetEmailIdentityOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EmailIdentity]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/identities/";
-  ss << request.GetEmailIdentity();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/identities/");
+  uri.AddPathSegment(request.GetEmailIdentity());
   return GetEmailIdentityOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1318,11 +1249,9 @@ GetEmailIdentityPoliciesOutcome SESV2Client::GetEmailIdentityPolicies(const GetE
     return GetEmailIdentityPoliciesOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EmailIdentity]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/identities/";
-  ss << request.GetEmailIdentity();
-  ss << "/policies";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/identities/");
+  uri.AddPathSegment(request.GetEmailIdentity());
+  uri.AddPathSegments("/policies");
   return GetEmailIdentityPoliciesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1352,10 +1281,8 @@ GetEmailTemplateOutcome SESV2Client::GetEmailTemplate(const GetEmailTemplateRequ
     return GetEmailTemplateOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TemplateName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/templates/";
-  ss << request.GetTemplateName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/templates/");
+  uri.AddPathSegment(request.GetTemplateName());
   return GetEmailTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1385,10 +1312,8 @@ GetImportJobOutcome SESV2Client::GetImportJob(const GetImportJobRequest& request
     return GetImportJobOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/import-jobs/";
-  ss << request.GetJobId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/import-jobs/");
+  uri.AddPathSegment(request.GetJobId());
   return GetImportJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1418,10 +1343,8 @@ GetSuppressedDestinationOutcome SESV2Client::GetSuppressedDestination(const GetS
     return GetSuppressedDestinationOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EmailAddress]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/suppression/addresses/";
-  ss << request.GetEmailAddress();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/suppression/addresses/");
+  uri.AddPathSegment(request.GetEmailAddress());
   return GetSuppressedDestinationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1446,9 +1369,7 @@ void SESV2Client::GetSuppressedDestinationAsyncHelper(const GetSuppressedDestina
 ListConfigurationSetsOutcome SESV2Client::ListConfigurationSets(const ListConfigurationSetsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/configuration-sets";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/configuration-sets");
   return ListConfigurationSetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1473,9 +1394,7 @@ void SESV2Client::ListConfigurationSetsAsyncHelper(const ListConfigurationSetsRe
 ListContactListsOutcome SESV2Client::ListContactLists(const ListContactListsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/contact-lists";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/contact-lists");
   return ListContactListsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1505,11 +1424,9 @@ ListContactsOutcome SESV2Client::ListContacts(const ListContactsRequest& request
     return ListContactsOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContactListName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/contact-lists/";
-  ss << request.GetContactListName();
-  ss << "/contacts";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/contact-lists/");
+  uri.AddPathSegment(request.GetContactListName());
+  uri.AddPathSegments("/contacts");
   return ListContactsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1534,9 +1451,7 @@ void SESV2Client::ListContactsAsyncHelper(const ListContactsRequest& request, co
 ListCustomVerificationEmailTemplatesOutcome SESV2Client::ListCustomVerificationEmailTemplates(const ListCustomVerificationEmailTemplatesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/custom-verification-email-templates";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/custom-verification-email-templates");
   return ListCustomVerificationEmailTemplatesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1561,9 +1476,7 @@ void SESV2Client::ListCustomVerificationEmailTemplatesAsyncHelper(const ListCust
 ListDedicatedIpPoolsOutcome SESV2Client::ListDedicatedIpPools(const ListDedicatedIpPoolsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/dedicated-ip-pools";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/dedicated-ip-pools");
   return ListDedicatedIpPoolsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1588,9 +1501,7 @@ void SESV2Client::ListDedicatedIpPoolsAsyncHelper(const ListDedicatedIpPoolsRequ
 ListDeliverabilityTestReportsOutcome SESV2Client::ListDeliverabilityTestReports(const ListDeliverabilityTestReportsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/deliverability-dashboard/test-reports";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/deliverability-dashboard/test-reports");
   return ListDeliverabilityTestReportsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1630,11 +1541,9 @@ ListDomainDeliverabilityCampaignsOutcome SESV2Client::ListDomainDeliverabilityCa
     return ListDomainDeliverabilityCampaignsOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SubscribedDomain]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/deliverability-dashboard/domains/";
-  ss << request.GetSubscribedDomain();
-  ss << "/campaigns";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/deliverability-dashboard/domains/");
+  uri.AddPathSegment(request.GetSubscribedDomain());
+  uri.AddPathSegments("/campaigns");
   return ListDomainDeliverabilityCampaignsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1659,9 +1568,7 @@ void SESV2Client::ListDomainDeliverabilityCampaignsAsyncHelper(const ListDomainD
 ListEmailIdentitiesOutcome SESV2Client::ListEmailIdentities(const ListEmailIdentitiesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/identities";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/identities");
   return ListEmailIdentitiesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1686,9 +1593,7 @@ void SESV2Client::ListEmailIdentitiesAsyncHelper(const ListEmailIdentitiesReques
 ListEmailTemplatesOutcome SESV2Client::ListEmailTemplates(const ListEmailTemplatesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/templates";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/templates");
   return ListEmailTemplatesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1713,9 +1618,7 @@ void SESV2Client::ListEmailTemplatesAsyncHelper(const ListEmailTemplatesRequest&
 ListImportJobsOutcome SESV2Client::ListImportJobs(const ListImportJobsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/import-jobs";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/import-jobs");
   return ListImportJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1740,9 +1643,7 @@ void SESV2Client::ListImportJobsAsyncHelper(const ListImportJobsRequest& request
 ListSuppressedDestinationsOutcome SESV2Client::ListSuppressedDestinations(const ListSuppressedDestinationsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/suppression/addresses";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/suppression/addresses");
   return ListSuppressedDestinationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1772,9 +1673,7 @@ ListTagsForResourceOutcome SESV2Client::ListTagsForResource(const ListTagsForRes
     return ListTagsForResourceOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/tags";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/tags");
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1799,9 +1698,7 @@ void SESV2Client::ListTagsForResourceAsyncHelper(const ListTagsForResourceReques
 PutAccountDedicatedIpWarmupAttributesOutcome SESV2Client::PutAccountDedicatedIpWarmupAttributes(const PutAccountDedicatedIpWarmupAttributesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/account/dedicated-ips/warmup";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/account/dedicated-ips/warmup");
   return PutAccountDedicatedIpWarmupAttributesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1826,9 +1723,7 @@ void SESV2Client::PutAccountDedicatedIpWarmupAttributesAsyncHelper(const PutAcco
 PutAccountDetailsOutcome SESV2Client::PutAccountDetails(const PutAccountDetailsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/account/details";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/account/details");
   return PutAccountDetailsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1853,9 +1748,7 @@ void SESV2Client::PutAccountDetailsAsyncHelper(const PutAccountDetailsRequest& r
 PutAccountSendingAttributesOutcome SESV2Client::PutAccountSendingAttributes(const PutAccountSendingAttributesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/account/sending";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/account/sending");
   return PutAccountSendingAttributesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1880,9 +1773,7 @@ void SESV2Client::PutAccountSendingAttributesAsyncHelper(const PutAccountSending
 PutAccountSuppressionAttributesOutcome SESV2Client::PutAccountSuppressionAttributes(const PutAccountSuppressionAttributesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/account/suppression";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/account/suppression");
   return PutAccountSuppressionAttributesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1912,11 +1803,9 @@ PutConfigurationSetDeliveryOptionsOutcome SESV2Client::PutConfigurationSetDelive
     return PutConfigurationSetDeliveryOptionsOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigurationSetName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/configuration-sets/";
-  ss << request.GetConfigurationSetName();
-  ss << "/delivery-options";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/configuration-sets/");
+  uri.AddPathSegment(request.GetConfigurationSetName());
+  uri.AddPathSegments("/delivery-options");
   return PutConfigurationSetDeliveryOptionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1946,11 +1835,9 @@ PutConfigurationSetReputationOptionsOutcome SESV2Client::PutConfigurationSetRepu
     return PutConfigurationSetReputationOptionsOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigurationSetName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/configuration-sets/";
-  ss << request.GetConfigurationSetName();
-  ss << "/reputation-options";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/configuration-sets/");
+  uri.AddPathSegment(request.GetConfigurationSetName());
+  uri.AddPathSegments("/reputation-options");
   return PutConfigurationSetReputationOptionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1980,11 +1867,9 @@ PutConfigurationSetSendingOptionsOutcome SESV2Client::PutConfigurationSetSending
     return PutConfigurationSetSendingOptionsOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigurationSetName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/configuration-sets/";
-  ss << request.GetConfigurationSetName();
-  ss << "/sending";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/configuration-sets/");
+  uri.AddPathSegment(request.GetConfigurationSetName());
+  uri.AddPathSegments("/sending");
   return PutConfigurationSetSendingOptionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2014,11 +1899,9 @@ PutConfigurationSetSuppressionOptionsOutcome SESV2Client::PutConfigurationSetSup
     return PutConfigurationSetSuppressionOptionsOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigurationSetName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/configuration-sets/";
-  ss << request.GetConfigurationSetName();
-  ss << "/suppression-options";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/configuration-sets/");
+  uri.AddPathSegment(request.GetConfigurationSetName());
+  uri.AddPathSegments("/suppression-options");
   return PutConfigurationSetSuppressionOptionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2048,11 +1931,9 @@ PutConfigurationSetTrackingOptionsOutcome SESV2Client::PutConfigurationSetTracki
     return PutConfigurationSetTrackingOptionsOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigurationSetName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/configuration-sets/";
-  ss << request.GetConfigurationSetName();
-  ss << "/tracking-options";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/configuration-sets/");
+  uri.AddPathSegment(request.GetConfigurationSetName());
+  uri.AddPathSegments("/tracking-options");
   return PutConfigurationSetTrackingOptionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2082,11 +1963,9 @@ PutDedicatedIpInPoolOutcome SESV2Client::PutDedicatedIpInPool(const PutDedicated
     return PutDedicatedIpInPoolOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Ip]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/dedicated-ips/";
-  ss << request.GetIp();
-  ss << "/pool";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/dedicated-ips/");
+  uri.AddPathSegment(request.GetIp());
+  uri.AddPathSegments("/pool");
   return PutDedicatedIpInPoolOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2116,11 +1995,9 @@ PutDedicatedIpWarmupAttributesOutcome SESV2Client::PutDedicatedIpWarmupAttribute
     return PutDedicatedIpWarmupAttributesOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Ip]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/dedicated-ips/";
-  ss << request.GetIp();
-  ss << "/warmup";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/dedicated-ips/");
+  uri.AddPathSegment(request.GetIp());
+  uri.AddPathSegments("/warmup");
   return PutDedicatedIpWarmupAttributesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2145,9 +2022,7 @@ void SESV2Client::PutDedicatedIpWarmupAttributesAsyncHelper(const PutDedicatedIp
 PutDeliverabilityDashboardOptionOutcome SESV2Client::PutDeliverabilityDashboardOption(const PutDeliverabilityDashboardOptionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/deliverability-dashboard";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/deliverability-dashboard");
   return PutDeliverabilityDashboardOptionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2169,6 +2044,38 @@ void SESV2Client::PutDeliverabilityDashboardOptionAsyncHelper(const PutDeliverab
   handler(this, request, PutDeliverabilityDashboardOption(request), context);
 }
 
+PutEmailIdentityConfigurationSetAttributesOutcome SESV2Client::PutEmailIdentityConfigurationSetAttributes(const PutEmailIdentityConfigurationSetAttributesRequest& request) const
+{
+  if (!request.EmailIdentityHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutEmailIdentityConfigurationSetAttributes", "Required field: EmailIdentity, is not set");
+    return PutEmailIdentityConfigurationSetAttributesOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EmailIdentity]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/v2/email/identities/");
+  uri.AddPathSegment(request.GetEmailIdentity());
+  uri.AddPathSegments("/configuration-set");
+  return PutEmailIdentityConfigurationSetAttributesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutEmailIdentityConfigurationSetAttributesOutcomeCallable SESV2Client::PutEmailIdentityConfigurationSetAttributesCallable(const PutEmailIdentityConfigurationSetAttributesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutEmailIdentityConfigurationSetAttributesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutEmailIdentityConfigurationSetAttributes(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESV2Client::PutEmailIdentityConfigurationSetAttributesAsync(const PutEmailIdentityConfigurationSetAttributesRequest& request, const PutEmailIdentityConfigurationSetAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutEmailIdentityConfigurationSetAttributesAsyncHelper( request, handler, context ); } );
+}
+
+void SESV2Client::PutEmailIdentityConfigurationSetAttributesAsyncHelper(const PutEmailIdentityConfigurationSetAttributesRequest& request, const PutEmailIdentityConfigurationSetAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutEmailIdentityConfigurationSetAttributes(request), context);
+}
+
 PutEmailIdentityDkimAttributesOutcome SESV2Client::PutEmailIdentityDkimAttributes(const PutEmailIdentityDkimAttributesRequest& request) const
 {
   if (!request.EmailIdentityHasBeenSet())
@@ -2177,11 +2084,9 @@ PutEmailIdentityDkimAttributesOutcome SESV2Client::PutEmailIdentityDkimAttribute
     return PutEmailIdentityDkimAttributesOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EmailIdentity]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/identities/";
-  ss << request.GetEmailIdentity();
-  ss << "/dkim";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/identities/");
+  uri.AddPathSegment(request.GetEmailIdentity());
+  uri.AddPathSegments("/dkim");
   return PutEmailIdentityDkimAttributesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2211,11 +2116,9 @@ PutEmailIdentityDkimSigningAttributesOutcome SESV2Client::PutEmailIdentityDkimSi
     return PutEmailIdentityDkimSigningAttributesOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EmailIdentity]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/email/identities/";
-  ss << request.GetEmailIdentity();
-  ss << "/dkim/signing";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/email/identities/");
+  uri.AddPathSegment(request.GetEmailIdentity());
+  uri.AddPathSegments("/dkim/signing");
   return PutEmailIdentityDkimSigningAttributesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2245,11 +2148,9 @@ PutEmailIdentityFeedbackAttributesOutcome SESV2Client::PutEmailIdentityFeedbackA
     return PutEmailIdentityFeedbackAttributesOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EmailIdentity]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/identities/";
-  ss << request.GetEmailIdentity();
-  ss << "/feedback";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/identities/");
+  uri.AddPathSegment(request.GetEmailIdentity());
+  uri.AddPathSegments("/feedback");
   return PutEmailIdentityFeedbackAttributesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2279,11 +2180,9 @@ PutEmailIdentityMailFromAttributesOutcome SESV2Client::PutEmailIdentityMailFromA
     return PutEmailIdentityMailFromAttributesOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EmailIdentity]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/identities/";
-  ss << request.GetEmailIdentity();
-  ss << "/mail-from";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/identities/");
+  uri.AddPathSegment(request.GetEmailIdentity());
+  uri.AddPathSegments("/mail-from");
   return PutEmailIdentityMailFromAttributesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2308,9 +2207,7 @@ void SESV2Client::PutEmailIdentityMailFromAttributesAsyncHelper(const PutEmailId
 PutSuppressedDestinationOutcome SESV2Client::PutSuppressedDestination(const PutSuppressedDestinationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/suppression/addresses";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/suppression/addresses");
   return PutSuppressedDestinationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2335,9 +2232,7 @@ void SESV2Client::PutSuppressedDestinationAsyncHelper(const PutSuppressedDestina
 SendBulkEmailOutcome SESV2Client::SendBulkEmail(const SendBulkEmailRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/outbound-bulk-emails";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/outbound-bulk-emails");
   return SendBulkEmailOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2362,9 +2257,7 @@ void SESV2Client::SendBulkEmailAsyncHelper(const SendBulkEmailRequest& request, 
 SendCustomVerificationEmailOutcome SESV2Client::SendCustomVerificationEmail(const SendCustomVerificationEmailRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/outbound-custom-verification-emails";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/outbound-custom-verification-emails");
   return SendCustomVerificationEmailOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2389,9 +2282,7 @@ void SESV2Client::SendCustomVerificationEmailAsyncHelper(const SendCustomVerific
 SendEmailOutcome SESV2Client::SendEmail(const SendEmailRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/outbound-emails";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/outbound-emails");
   return SendEmailOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2416,9 +2307,7 @@ void SESV2Client::SendEmailAsyncHelper(const SendEmailRequest& request, const Se
 TagResourceOutcome SESV2Client::TagResource(const TagResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/tags";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/tags");
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2448,11 +2337,9 @@ TestRenderEmailTemplateOutcome SESV2Client::TestRenderEmailTemplate(const TestRe
     return TestRenderEmailTemplateOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TemplateName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/templates/";
-  ss << request.GetTemplateName();
-  ss << "/render";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/templates/");
+  uri.AddPathSegment(request.GetTemplateName());
+  uri.AddPathSegments("/render");
   return TestRenderEmailTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2487,9 +2374,7 @@ UntagResourceOutcome SESV2Client::UntagResource(const UntagResourceRequest& requ
     return UntagResourceOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/tags";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/tags");
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2524,12 +2409,10 @@ UpdateConfigurationSetEventDestinationOutcome SESV2Client::UpdateConfigurationSe
     return UpdateConfigurationSetEventDestinationOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EventDestinationName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/configuration-sets/";
-  ss << request.GetConfigurationSetName();
-  ss << "/event-destinations/";
-  ss << request.GetEventDestinationName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/configuration-sets/");
+  uri.AddPathSegment(request.GetConfigurationSetName());
+  uri.AddPathSegments("/event-destinations/");
+  uri.AddPathSegment(request.GetEventDestinationName());
   return UpdateConfigurationSetEventDestinationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2564,12 +2447,10 @@ UpdateContactOutcome SESV2Client::UpdateContact(const UpdateContactRequest& requ
     return UpdateContactOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EmailAddress]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/contact-lists/";
-  ss << request.GetContactListName();
-  ss << "/contacts/";
-  ss << request.GetEmailAddress();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/contact-lists/");
+  uri.AddPathSegment(request.GetContactListName());
+  uri.AddPathSegments("/contacts/");
+  uri.AddPathSegment(request.GetEmailAddress());
   return UpdateContactOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2599,10 +2480,8 @@ UpdateContactListOutcome SESV2Client::UpdateContactList(const UpdateContactListR
     return UpdateContactListOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContactListName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/contact-lists/";
-  ss << request.GetContactListName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/contact-lists/");
+  uri.AddPathSegment(request.GetContactListName());
   return UpdateContactListOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2632,10 +2511,8 @@ UpdateCustomVerificationEmailTemplateOutcome SESV2Client::UpdateCustomVerificati
     return UpdateCustomVerificationEmailTemplateOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TemplateName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/custom-verification-email-templates/";
-  ss << request.GetTemplateName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/custom-verification-email-templates/");
+  uri.AddPathSegment(request.GetTemplateName());
   return UpdateCustomVerificationEmailTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2670,12 +2547,10 @@ UpdateEmailIdentityPolicyOutcome SESV2Client::UpdateEmailIdentityPolicy(const Up
     return UpdateEmailIdentityPolicyOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PolicyName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/identities/";
-  ss << request.GetEmailIdentity();
-  ss << "/policies/";
-  ss << request.GetPolicyName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/identities/");
+  uri.AddPathSegment(request.GetEmailIdentity());
+  uri.AddPathSegments("/policies/");
+  uri.AddPathSegment(request.GetPolicyName());
   return UpdateEmailIdentityPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2705,10 +2580,8 @@ UpdateEmailTemplateOutcome SESV2Client::UpdateEmailTemplate(const UpdateEmailTem
     return UpdateEmailTemplateOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TemplateName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v2/email/templates/";
-  ss << request.GetTemplateName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v2/email/templates/");
+  uri.AddPathSegment(request.GetTemplateName());
   return UpdateEmailTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 

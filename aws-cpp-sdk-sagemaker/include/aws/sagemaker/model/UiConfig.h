@@ -25,7 +25,11 @@ namespace Model
 
   /**
    * <p>Provided configuration information for the worker UI for a labeling job.
-   * </p><p><h3>See Also:</h3>   <a
+   * Provide either <code>HumanTaskUiArn</code> or <code>UiTemplateS3Uri</code>.</p>
+   * <p>For named entity recognition, 3D point cloud and video frame labeling jobs,
+   * use <code>HumanTaskUiArn</code>.</p> <p>For all other Ground Truth built-in task
+   * types and custom task types, use <code>UiTemplateS3Uri</code> to specify the
+   * location of a worker task template in Amazon S3.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UiConfig">AWS
    * API Reference</a></p>
    */
@@ -114,13 +118,18 @@ namespace Model
     /**
      * <p>The ARN of the worker task template used to render the worker UI and tools
      * for labeling job tasks.</p> <p>Use this parameter when you are creating a
-     * labeling job for 3D point cloud and video fram labeling jobs. Use your labeling
-     * job task type to select one of the following ARN's and use it with this
-     * parameter when you create a labeling job. Replace <code>aws-region</code> with
-     * the AWS region you are creating your labeling job in.</p> <p> <b>3D Point Cloud
-     * HumanTaskUiArns</b> </p> <p>Use this <code>HumanTaskUiArn</code> for 3D point
-     * cloud object detection and 3D point cloud object detection adjustment labeling
-     * jobs. </p> <ul> <li> <p>
+     * labeling job for named entity recognition, 3D point cloud and video frame
+     * labeling jobs. Use your labeling job task type to select one of the following
+     * ARNs and use it with this parameter when you create a labeling job. Replace
+     * <code>aws-region</code> with the Amazon Web Services Region you are creating
+     * your labeling job in. For example, replace <code>aws-region</code> with
+     * <code>us-west-1</code> if you create a labeling job in US West (N.
+     * California).</p> <p> <b>Named Entity Recognition</b> </p> <p>Use the following
+     * <code>HumanTaskUiArn</code> for named entity recognition labeling jobs:</p> <p>
+     * <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/NamedEntityRecognition</code>
+     * </p> <p> <b>3D Point Cloud HumanTaskUiArns</b> </p> <p>Use this
+     * <code>HumanTaskUiArn</code> for 3D point cloud object detection and 3D point
+     * cloud object detection adjustment labeling jobs. </p> <ul> <li> <p>
      * <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudObjectDetection</code>
      * </p> </li> </ul> <p> Use this <code>HumanTaskUiArn</code> for 3D point cloud
      * object tracking and 3D point cloud object tracking adjustment labeling jobs.
@@ -145,13 +154,18 @@ namespace Model
     /**
      * <p>The ARN of the worker task template used to render the worker UI and tools
      * for labeling job tasks.</p> <p>Use this parameter when you are creating a
-     * labeling job for 3D point cloud and video fram labeling jobs. Use your labeling
-     * job task type to select one of the following ARN's and use it with this
-     * parameter when you create a labeling job. Replace <code>aws-region</code> with
-     * the AWS region you are creating your labeling job in.</p> <p> <b>3D Point Cloud
-     * HumanTaskUiArns</b> </p> <p>Use this <code>HumanTaskUiArn</code> for 3D point
-     * cloud object detection and 3D point cloud object detection adjustment labeling
-     * jobs. </p> <ul> <li> <p>
+     * labeling job for named entity recognition, 3D point cloud and video frame
+     * labeling jobs. Use your labeling job task type to select one of the following
+     * ARNs and use it with this parameter when you create a labeling job. Replace
+     * <code>aws-region</code> with the Amazon Web Services Region you are creating
+     * your labeling job in. For example, replace <code>aws-region</code> with
+     * <code>us-west-1</code> if you create a labeling job in US West (N.
+     * California).</p> <p> <b>Named Entity Recognition</b> </p> <p>Use the following
+     * <code>HumanTaskUiArn</code> for named entity recognition labeling jobs:</p> <p>
+     * <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/NamedEntityRecognition</code>
+     * </p> <p> <b>3D Point Cloud HumanTaskUiArns</b> </p> <p>Use this
+     * <code>HumanTaskUiArn</code> for 3D point cloud object detection and 3D point
+     * cloud object detection adjustment labeling jobs. </p> <ul> <li> <p>
      * <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudObjectDetection</code>
      * </p> </li> </ul> <p> Use this <code>HumanTaskUiArn</code> for 3D point cloud
      * object tracking and 3D point cloud object tracking adjustment labeling jobs.
@@ -176,13 +190,18 @@ namespace Model
     /**
      * <p>The ARN of the worker task template used to render the worker UI and tools
      * for labeling job tasks.</p> <p>Use this parameter when you are creating a
-     * labeling job for 3D point cloud and video fram labeling jobs. Use your labeling
-     * job task type to select one of the following ARN's and use it with this
-     * parameter when you create a labeling job. Replace <code>aws-region</code> with
-     * the AWS region you are creating your labeling job in.</p> <p> <b>3D Point Cloud
-     * HumanTaskUiArns</b> </p> <p>Use this <code>HumanTaskUiArn</code> for 3D point
-     * cloud object detection and 3D point cloud object detection adjustment labeling
-     * jobs. </p> <ul> <li> <p>
+     * labeling job for named entity recognition, 3D point cloud and video frame
+     * labeling jobs. Use your labeling job task type to select one of the following
+     * ARNs and use it with this parameter when you create a labeling job. Replace
+     * <code>aws-region</code> with the Amazon Web Services Region you are creating
+     * your labeling job in. For example, replace <code>aws-region</code> with
+     * <code>us-west-1</code> if you create a labeling job in US West (N.
+     * California).</p> <p> <b>Named Entity Recognition</b> </p> <p>Use the following
+     * <code>HumanTaskUiArn</code> for named entity recognition labeling jobs:</p> <p>
+     * <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/NamedEntityRecognition</code>
+     * </p> <p> <b>3D Point Cloud HumanTaskUiArns</b> </p> <p>Use this
+     * <code>HumanTaskUiArn</code> for 3D point cloud object detection and 3D point
+     * cloud object detection adjustment labeling jobs. </p> <ul> <li> <p>
      * <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudObjectDetection</code>
      * </p> </li> </ul> <p> Use this <code>HumanTaskUiArn</code> for 3D point cloud
      * object tracking and 3D point cloud object tracking adjustment labeling jobs.
@@ -207,13 +226,18 @@ namespace Model
     /**
      * <p>The ARN of the worker task template used to render the worker UI and tools
      * for labeling job tasks.</p> <p>Use this parameter when you are creating a
-     * labeling job for 3D point cloud and video fram labeling jobs. Use your labeling
-     * job task type to select one of the following ARN's and use it with this
-     * parameter when you create a labeling job. Replace <code>aws-region</code> with
-     * the AWS region you are creating your labeling job in.</p> <p> <b>3D Point Cloud
-     * HumanTaskUiArns</b> </p> <p>Use this <code>HumanTaskUiArn</code> for 3D point
-     * cloud object detection and 3D point cloud object detection adjustment labeling
-     * jobs. </p> <ul> <li> <p>
+     * labeling job for named entity recognition, 3D point cloud and video frame
+     * labeling jobs. Use your labeling job task type to select one of the following
+     * ARNs and use it with this parameter when you create a labeling job. Replace
+     * <code>aws-region</code> with the Amazon Web Services Region you are creating
+     * your labeling job in. For example, replace <code>aws-region</code> with
+     * <code>us-west-1</code> if you create a labeling job in US West (N.
+     * California).</p> <p> <b>Named Entity Recognition</b> </p> <p>Use the following
+     * <code>HumanTaskUiArn</code> for named entity recognition labeling jobs:</p> <p>
+     * <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/NamedEntityRecognition</code>
+     * </p> <p> <b>3D Point Cloud HumanTaskUiArns</b> </p> <p>Use this
+     * <code>HumanTaskUiArn</code> for 3D point cloud object detection and 3D point
+     * cloud object detection adjustment labeling jobs. </p> <ul> <li> <p>
      * <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudObjectDetection</code>
      * </p> </li> </ul> <p> Use this <code>HumanTaskUiArn</code> for 3D point cloud
      * object tracking and 3D point cloud object tracking adjustment labeling jobs.
@@ -238,13 +262,18 @@ namespace Model
     /**
      * <p>The ARN of the worker task template used to render the worker UI and tools
      * for labeling job tasks.</p> <p>Use this parameter when you are creating a
-     * labeling job for 3D point cloud and video fram labeling jobs. Use your labeling
-     * job task type to select one of the following ARN's and use it with this
-     * parameter when you create a labeling job. Replace <code>aws-region</code> with
-     * the AWS region you are creating your labeling job in.</p> <p> <b>3D Point Cloud
-     * HumanTaskUiArns</b> </p> <p>Use this <code>HumanTaskUiArn</code> for 3D point
-     * cloud object detection and 3D point cloud object detection adjustment labeling
-     * jobs. </p> <ul> <li> <p>
+     * labeling job for named entity recognition, 3D point cloud and video frame
+     * labeling jobs. Use your labeling job task type to select one of the following
+     * ARNs and use it with this parameter when you create a labeling job. Replace
+     * <code>aws-region</code> with the Amazon Web Services Region you are creating
+     * your labeling job in. For example, replace <code>aws-region</code> with
+     * <code>us-west-1</code> if you create a labeling job in US West (N.
+     * California).</p> <p> <b>Named Entity Recognition</b> </p> <p>Use the following
+     * <code>HumanTaskUiArn</code> for named entity recognition labeling jobs:</p> <p>
+     * <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/NamedEntityRecognition</code>
+     * </p> <p> <b>3D Point Cloud HumanTaskUiArns</b> </p> <p>Use this
+     * <code>HumanTaskUiArn</code> for 3D point cloud object detection and 3D point
+     * cloud object detection adjustment labeling jobs. </p> <ul> <li> <p>
      * <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudObjectDetection</code>
      * </p> </li> </ul> <p> Use this <code>HumanTaskUiArn</code> for 3D point cloud
      * object tracking and 3D point cloud object tracking adjustment labeling jobs.
@@ -269,13 +298,18 @@ namespace Model
     /**
      * <p>The ARN of the worker task template used to render the worker UI and tools
      * for labeling job tasks.</p> <p>Use this parameter when you are creating a
-     * labeling job for 3D point cloud and video fram labeling jobs. Use your labeling
-     * job task type to select one of the following ARN's and use it with this
-     * parameter when you create a labeling job. Replace <code>aws-region</code> with
-     * the AWS region you are creating your labeling job in.</p> <p> <b>3D Point Cloud
-     * HumanTaskUiArns</b> </p> <p>Use this <code>HumanTaskUiArn</code> for 3D point
-     * cloud object detection and 3D point cloud object detection adjustment labeling
-     * jobs. </p> <ul> <li> <p>
+     * labeling job for named entity recognition, 3D point cloud and video frame
+     * labeling jobs. Use your labeling job task type to select one of the following
+     * ARNs and use it with this parameter when you create a labeling job. Replace
+     * <code>aws-region</code> with the Amazon Web Services Region you are creating
+     * your labeling job in. For example, replace <code>aws-region</code> with
+     * <code>us-west-1</code> if you create a labeling job in US West (N.
+     * California).</p> <p> <b>Named Entity Recognition</b> </p> <p>Use the following
+     * <code>HumanTaskUiArn</code> for named entity recognition labeling jobs:</p> <p>
+     * <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/NamedEntityRecognition</code>
+     * </p> <p> <b>3D Point Cloud HumanTaskUiArns</b> </p> <p>Use this
+     * <code>HumanTaskUiArn</code> for 3D point cloud object detection and 3D point
+     * cloud object detection adjustment labeling jobs. </p> <ul> <li> <p>
      * <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudObjectDetection</code>
      * </p> </li> </ul> <p> Use this <code>HumanTaskUiArn</code> for 3D point cloud
      * object tracking and 3D point cloud object tracking adjustment labeling jobs.
@@ -300,13 +334,18 @@ namespace Model
     /**
      * <p>The ARN of the worker task template used to render the worker UI and tools
      * for labeling job tasks.</p> <p>Use this parameter when you are creating a
-     * labeling job for 3D point cloud and video fram labeling jobs. Use your labeling
-     * job task type to select one of the following ARN's and use it with this
-     * parameter when you create a labeling job. Replace <code>aws-region</code> with
-     * the AWS region you are creating your labeling job in.</p> <p> <b>3D Point Cloud
-     * HumanTaskUiArns</b> </p> <p>Use this <code>HumanTaskUiArn</code> for 3D point
-     * cloud object detection and 3D point cloud object detection adjustment labeling
-     * jobs. </p> <ul> <li> <p>
+     * labeling job for named entity recognition, 3D point cloud and video frame
+     * labeling jobs. Use your labeling job task type to select one of the following
+     * ARNs and use it with this parameter when you create a labeling job. Replace
+     * <code>aws-region</code> with the Amazon Web Services Region you are creating
+     * your labeling job in. For example, replace <code>aws-region</code> with
+     * <code>us-west-1</code> if you create a labeling job in US West (N.
+     * California).</p> <p> <b>Named Entity Recognition</b> </p> <p>Use the following
+     * <code>HumanTaskUiArn</code> for named entity recognition labeling jobs:</p> <p>
+     * <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/NamedEntityRecognition</code>
+     * </p> <p> <b>3D Point Cloud HumanTaskUiArns</b> </p> <p>Use this
+     * <code>HumanTaskUiArn</code> for 3D point cloud object detection and 3D point
+     * cloud object detection adjustment labeling jobs. </p> <ul> <li> <p>
      * <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudObjectDetection</code>
      * </p> </li> </ul> <p> Use this <code>HumanTaskUiArn</code> for 3D point cloud
      * object tracking and 3D point cloud object tracking adjustment labeling jobs.
@@ -331,13 +370,18 @@ namespace Model
     /**
      * <p>The ARN of the worker task template used to render the worker UI and tools
      * for labeling job tasks.</p> <p>Use this parameter when you are creating a
-     * labeling job for 3D point cloud and video fram labeling jobs. Use your labeling
-     * job task type to select one of the following ARN's and use it with this
-     * parameter when you create a labeling job. Replace <code>aws-region</code> with
-     * the AWS region you are creating your labeling job in.</p> <p> <b>3D Point Cloud
-     * HumanTaskUiArns</b> </p> <p>Use this <code>HumanTaskUiArn</code> for 3D point
-     * cloud object detection and 3D point cloud object detection adjustment labeling
-     * jobs. </p> <ul> <li> <p>
+     * labeling job for named entity recognition, 3D point cloud and video frame
+     * labeling jobs. Use your labeling job task type to select one of the following
+     * ARNs and use it with this parameter when you create a labeling job. Replace
+     * <code>aws-region</code> with the Amazon Web Services Region you are creating
+     * your labeling job in. For example, replace <code>aws-region</code> with
+     * <code>us-west-1</code> if you create a labeling job in US West (N.
+     * California).</p> <p> <b>Named Entity Recognition</b> </p> <p>Use the following
+     * <code>HumanTaskUiArn</code> for named entity recognition labeling jobs:</p> <p>
+     * <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/NamedEntityRecognition</code>
+     * </p> <p> <b>3D Point Cloud HumanTaskUiArns</b> </p> <p>Use this
+     * <code>HumanTaskUiArn</code> for 3D point cloud object detection and 3D point
+     * cloud object detection adjustment labeling jobs. </p> <ul> <li> <p>
      * <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudObjectDetection</code>
      * </p> </li> </ul> <p> Use this <code>HumanTaskUiArn</code> for 3D point cloud
      * object tracking and 3D point cloud object tracking adjustment labeling jobs.

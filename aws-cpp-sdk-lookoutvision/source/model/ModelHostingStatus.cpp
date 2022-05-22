@@ -20,30 +20,35 @@ namespace Aws
       namespace ModelHostingStatusMapper
       {
 
-        static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
-        static const int STARTING_HASH = HashingUtils::HashString("STARTING");
-        static const int STOPPED_HASH = HashingUtils::HashString("STOPPED");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static const int STARTING_HOSTING_HASH = HashingUtils::HashString("STARTING_HOSTING");
+        static const int HOSTED_HASH = HashingUtils::HashString("HOSTED");
+        static const int HOSTING_FAILED_HASH = HashingUtils::HashString("HOSTING_FAILED");
+        static const int STOPPING_HOSTING_HASH = HashingUtils::HashString("STOPPING_HOSTING");
+        static const int SYSTEM_UPDATING_HASH = HashingUtils::HashString("SYSTEM_UPDATING");
 
 
         ModelHostingStatus GetModelHostingStatusForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == RUNNING_HASH)
+          if (hashCode == STARTING_HOSTING_HASH)
           {
-            return ModelHostingStatus::RUNNING;
+            return ModelHostingStatus::STARTING_HOSTING;
           }
-          else if (hashCode == STARTING_HASH)
+          else if (hashCode == HOSTED_HASH)
           {
-            return ModelHostingStatus::STARTING;
+            return ModelHostingStatus::HOSTED;
           }
-          else if (hashCode == STOPPED_HASH)
+          else if (hashCode == HOSTING_FAILED_HASH)
           {
-            return ModelHostingStatus::STOPPED;
+            return ModelHostingStatus::HOSTING_FAILED;
           }
-          else if (hashCode == FAILED_HASH)
+          else if (hashCode == STOPPING_HOSTING_HASH)
           {
-            return ModelHostingStatus::FAILED;
+            return ModelHostingStatus::STOPPING_HOSTING;
+          }
+          else if (hashCode == SYSTEM_UPDATING_HASH)
+          {
+            return ModelHostingStatus::SYSTEM_UPDATING;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -59,14 +64,16 @@ namespace Aws
         {
           switch(enumValue)
           {
-          case ModelHostingStatus::RUNNING:
-            return "RUNNING";
-          case ModelHostingStatus::STARTING:
-            return "STARTING";
-          case ModelHostingStatus::STOPPED:
-            return "STOPPED";
-          case ModelHostingStatus::FAILED:
-            return "FAILED";
+          case ModelHostingStatus::STARTING_HOSTING:
+            return "STARTING_HOSTING";
+          case ModelHostingStatus::HOSTED:
+            return "HOSTED";
+          case ModelHostingStatus::HOSTING_FAILED:
+            return "HOSTING_FAILED";
+          case ModelHostingStatus::STOPPING_HOSTING:
+            return "STOPPING_HOSTING";
+          case ModelHostingStatus::SYSTEM_UPDATING:
+            return "SYSTEM_UPDATING";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

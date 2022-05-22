@@ -22,6 +22,7 @@ namespace Aws
 
         static const int PAFF_HASH = HashingUtils::HashString("PAFF");
         static const int FORCE_FIELD_HASH = HashingUtils::HashString("FORCE_FIELD");
+        static const int MBAFF_HASH = HashingUtils::HashString("MBAFF");
 
 
         H264FieldEncoding GetH264FieldEncodingForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == FORCE_FIELD_HASH)
           {
             return H264FieldEncoding::FORCE_FIELD;
+          }
+          else if (hashCode == MBAFF_HASH)
+          {
+            return H264FieldEncoding::MBAFF;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "PAFF";
           case H264FieldEncoding::FORCE_FIELD:
             return "FORCE_FIELD";
+          case H264FieldEncoding::MBAFF:
+            return "MBAFF";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

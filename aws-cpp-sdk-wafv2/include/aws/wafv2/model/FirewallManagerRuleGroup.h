@@ -27,8 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>A rule group that's defined for an AWS Firewall Manager WAF
-   * policy.</p><p><h3>See Also:</h3>   <a
+   * <p>A rule group that's defined for an Firewall Manager WAF policy.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/FirewallManagerRuleGroup">AWS
    * API Reference</a></p>
    */
@@ -92,7 +92,7 @@ namespace Model
 
     /**
      * <p>If you define more than one rule group in the first or last Firewall Manager
-     * rule groups, AWS WAF evaluates each request against the rule groups in order,
+     * rule groups, WAF evaluates each request against the rule groups in order,
      * starting from the lowest priority setting. The priorities don't need to be
      * consecutive, but they must all be different.</p>
      */
@@ -100,7 +100,7 @@ namespace Model
 
     /**
      * <p>If you define more than one rule group in the first or last Firewall Manager
-     * rule groups, AWS WAF evaluates each request against the rule groups in order,
+     * rule groups, WAF evaluates each request against the rule groups in order,
      * starting from the lowest priority setting. The priorities don't need to be
      * consecutive, but they must all be different.</p>
      */
@@ -108,7 +108,7 @@ namespace Model
 
     /**
      * <p>If you define more than one rule group in the first or last Firewall Manager
-     * rule groups, AWS WAF evaluates each request against the rule groups in order,
+     * rule groups, WAF evaluates each request against the rule groups in order,
      * starting from the lowest priority setting. The priorities don't need to be
      * consecutive, but they must all be different.</p>
      */
@@ -116,7 +116,7 @@ namespace Model
 
     /**
      * <p>If you define more than one rule group in the first or last Firewall Manager
-     * rule groups, AWS WAF evaluates each request against the rule groups in order,
+     * rule groups, WAF evaluates each request against the rule groups in order,
      * starting from the lowest priority setting. The priorities don't need to be
      * consecutive, but they must all be different.</p>
      */
@@ -124,83 +124,161 @@ namespace Model
 
 
     /**
-     * <p>The processing guidance for an AWS Firewall Manager rule. This is like a
-     * regular rule <a>Statement</a>, but it can only contain a rule group
-     * reference.</p>
+     * <p>The processing guidance for an Firewall Manager rule. This is like a regular
+     * rule <a>Statement</a>, but it can only contain a rule group reference.</p>
      */
     inline const FirewallManagerStatement& GetFirewallManagerStatement() const{ return m_firewallManagerStatement; }
 
     /**
-     * <p>The processing guidance for an AWS Firewall Manager rule. This is like a
-     * regular rule <a>Statement</a>, but it can only contain a rule group
-     * reference.</p>
+     * <p>The processing guidance for an Firewall Manager rule. This is like a regular
+     * rule <a>Statement</a>, but it can only contain a rule group reference.</p>
      */
     inline bool FirewallManagerStatementHasBeenSet() const { return m_firewallManagerStatementHasBeenSet; }
 
     /**
-     * <p>The processing guidance for an AWS Firewall Manager rule. This is like a
-     * regular rule <a>Statement</a>, but it can only contain a rule group
-     * reference.</p>
+     * <p>The processing guidance for an Firewall Manager rule. This is like a regular
+     * rule <a>Statement</a>, but it can only contain a rule group reference.</p>
      */
     inline void SetFirewallManagerStatement(const FirewallManagerStatement& value) { m_firewallManagerStatementHasBeenSet = true; m_firewallManagerStatement = value; }
 
     /**
-     * <p>The processing guidance for an AWS Firewall Manager rule. This is like a
-     * regular rule <a>Statement</a>, but it can only contain a rule group
-     * reference.</p>
+     * <p>The processing guidance for an Firewall Manager rule. This is like a regular
+     * rule <a>Statement</a>, but it can only contain a rule group reference.</p>
      */
     inline void SetFirewallManagerStatement(FirewallManagerStatement&& value) { m_firewallManagerStatementHasBeenSet = true; m_firewallManagerStatement = std::move(value); }
 
     /**
-     * <p>The processing guidance for an AWS Firewall Manager rule. This is like a
-     * regular rule <a>Statement</a>, but it can only contain a rule group
-     * reference.</p>
+     * <p>The processing guidance for an Firewall Manager rule. This is like a regular
+     * rule <a>Statement</a>, but it can only contain a rule group reference.</p>
      */
     inline FirewallManagerRuleGroup& WithFirewallManagerStatement(const FirewallManagerStatement& value) { SetFirewallManagerStatement(value); return *this;}
 
     /**
-     * <p>The processing guidance for an AWS Firewall Manager rule. This is like a
-     * regular rule <a>Statement</a>, but it can only contain a rule group
-     * reference.</p>
+     * <p>The processing guidance for an Firewall Manager rule. This is like a regular
+     * rule <a>Statement</a>, but it can only contain a rule group reference.</p>
      */
     inline FirewallManagerRuleGroup& WithFirewallManagerStatement(FirewallManagerStatement&& value) { SetFirewallManagerStatement(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The action to use in the place of the action that results from the rule group
+     * evaluation. Set the override action to none to leave the result of the rule
+     * group alone. Set it to count to override the result to count only. </p> <p>You
+     * can only use this for rule statements that reference a rule group, like
+     * <code>RuleGroupReferenceStatement</code> and
+     * <code>ManagedRuleGroupStatement</code>. </p>  <p>This option is usually
+     * set to none. It does not affect how the rules in the rule group are evaluated.
+     * If you want the rules in the rule group to only count matches, do not use this
+     * and instead exclude those rules in your rule group reference statement settings.
+     * </p> 
+     */
     inline const OverrideAction& GetOverrideAction() const{ return m_overrideAction; }
 
-    
+    /**
+     * <p>The action to use in the place of the action that results from the rule group
+     * evaluation. Set the override action to none to leave the result of the rule
+     * group alone. Set it to count to override the result to count only. </p> <p>You
+     * can only use this for rule statements that reference a rule group, like
+     * <code>RuleGroupReferenceStatement</code> and
+     * <code>ManagedRuleGroupStatement</code>. </p>  <p>This option is usually
+     * set to none. It does not affect how the rules in the rule group are evaluated.
+     * If you want the rules in the rule group to only count matches, do not use this
+     * and instead exclude those rules in your rule group reference statement settings.
+     * </p> 
+     */
     inline bool OverrideActionHasBeenSet() const { return m_overrideActionHasBeenSet; }
 
-    
+    /**
+     * <p>The action to use in the place of the action that results from the rule group
+     * evaluation. Set the override action to none to leave the result of the rule
+     * group alone. Set it to count to override the result to count only. </p> <p>You
+     * can only use this for rule statements that reference a rule group, like
+     * <code>RuleGroupReferenceStatement</code> and
+     * <code>ManagedRuleGroupStatement</code>. </p>  <p>This option is usually
+     * set to none. It does not affect how the rules in the rule group are evaluated.
+     * If you want the rules in the rule group to only count matches, do not use this
+     * and instead exclude those rules in your rule group reference statement settings.
+     * </p> 
+     */
     inline void SetOverrideAction(const OverrideAction& value) { m_overrideActionHasBeenSet = true; m_overrideAction = value; }
 
-    
+    /**
+     * <p>The action to use in the place of the action that results from the rule group
+     * evaluation. Set the override action to none to leave the result of the rule
+     * group alone. Set it to count to override the result to count only. </p> <p>You
+     * can only use this for rule statements that reference a rule group, like
+     * <code>RuleGroupReferenceStatement</code> and
+     * <code>ManagedRuleGroupStatement</code>. </p>  <p>This option is usually
+     * set to none. It does not affect how the rules in the rule group are evaluated.
+     * If you want the rules in the rule group to only count matches, do not use this
+     * and instead exclude those rules in your rule group reference statement settings.
+     * </p> 
+     */
     inline void SetOverrideAction(OverrideAction&& value) { m_overrideActionHasBeenSet = true; m_overrideAction = std::move(value); }
 
-    
+    /**
+     * <p>The action to use in the place of the action that results from the rule group
+     * evaluation. Set the override action to none to leave the result of the rule
+     * group alone. Set it to count to override the result to count only. </p> <p>You
+     * can only use this for rule statements that reference a rule group, like
+     * <code>RuleGroupReferenceStatement</code> and
+     * <code>ManagedRuleGroupStatement</code>. </p>  <p>This option is usually
+     * set to none. It does not affect how the rules in the rule group are evaluated.
+     * If you want the rules in the rule group to only count matches, do not use this
+     * and instead exclude those rules in your rule group reference statement settings.
+     * </p> 
+     */
     inline FirewallManagerRuleGroup& WithOverrideAction(const OverrideAction& value) { SetOverrideAction(value); return *this;}
 
-    
+    /**
+     * <p>The action to use in the place of the action that results from the rule group
+     * evaluation. Set the override action to none to leave the result of the rule
+     * group alone. Set it to count to override the result to count only. </p> <p>You
+     * can only use this for rule statements that reference a rule group, like
+     * <code>RuleGroupReferenceStatement</code> and
+     * <code>ManagedRuleGroupStatement</code>. </p>  <p>This option is usually
+     * set to none. It does not affect how the rules in the rule group are evaluated.
+     * If you want the rules in the rule group to only count matches, do not use this
+     * and instead exclude those rules in your rule group reference statement settings.
+     * </p> 
+     */
     inline FirewallManagerRuleGroup& WithOverrideAction(OverrideAction&& value) { SetOverrideAction(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>Defines and enables Amazon CloudWatch metrics and web request sample
+     * collection. </p>
+     */
     inline const VisibilityConfig& GetVisibilityConfig() const{ return m_visibilityConfig; }
 
-    
+    /**
+     * <p>Defines and enables Amazon CloudWatch metrics and web request sample
+     * collection. </p>
+     */
     inline bool VisibilityConfigHasBeenSet() const { return m_visibilityConfigHasBeenSet; }
 
-    
+    /**
+     * <p>Defines and enables Amazon CloudWatch metrics and web request sample
+     * collection. </p>
+     */
     inline void SetVisibilityConfig(const VisibilityConfig& value) { m_visibilityConfigHasBeenSet = true; m_visibilityConfig = value; }
 
-    
+    /**
+     * <p>Defines and enables Amazon CloudWatch metrics and web request sample
+     * collection. </p>
+     */
     inline void SetVisibilityConfig(VisibilityConfig&& value) { m_visibilityConfigHasBeenSet = true; m_visibilityConfig = std::move(value); }
 
-    
+    /**
+     * <p>Defines and enables Amazon CloudWatch metrics and web request sample
+     * collection. </p>
+     */
     inline FirewallManagerRuleGroup& WithVisibilityConfig(const VisibilityConfig& value) { SetVisibilityConfig(value); return *this;}
 
-    
+    /**
+     * <p>Defines and enables Amazon CloudWatch metrics and web request sample
+     * collection. </p>
+     */
     inline FirewallManagerRuleGroup& WithVisibilityConfig(VisibilityConfig&& value) { SetVisibilityConfig(std::move(value)); return *this;}
 
   private:

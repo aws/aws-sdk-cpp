@@ -20,6 +20,7 @@ namespace Aws
       namespace H264AdaptiveQuantizationMapper
       {
 
+        static const int AUTO_HASH = HashingUtils::HashString("AUTO");
         static const int HIGH_HASH = HashingUtils::HashString("HIGH");
         static const int HIGHER_HASH = HashingUtils::HashString("HIGHER");
         static const int LOW_HASH = HashingUtils::HashString("LOW");
@@ -31,7 +32,11 @@ namespace Aws
         H264AdaptiveQuantization GetH264AdaptiveQuantizationForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == HIGH_HASH)
+          if (hashCode == AUTO_HASH)
+          {
+            return H264AdaptiveQuantization::AUTO;
+          }
+          else if (hashCode == HIGH_HASH)
           {
             return H264AdaptiveQuantization::HIGH;
           }
@@ -69,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case H264AdaptiveQuantization::AUTO:
+            return "AUTO";
           case H264AdaptiveQuantization::HIGH:
             return "HIGH";
           case H264AdaptiveQuantization::HIGHER:

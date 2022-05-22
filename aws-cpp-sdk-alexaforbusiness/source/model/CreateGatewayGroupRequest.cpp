@@ -16,7 +16,8 @@ CreateGatewayGroupRequest::CreateGatewayGroupRequest() :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
-    m_clientRequestTokenHasBeenSet(true)
+    m_clientRequestTokenHasBeenSet(true),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -39,6 +40,17 @@ Aws::String CreateGatewayGroupRequest::SerializePayload() const
   if(m_clientRequestTokenHasBeenSet)
   {
    payload.WithString("ClientRequestToken", m_clientRequestToken);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

@@ -21,6 +21,7 @@
 #include <aws/codedeploy/model/FileExistsBehavior.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codedeploy/model/ComputePlatform.h>
+#include <aws/codedeploy/model/RelatedDeployments.h>
 #include <utility>
 
 namespace Aws
@@ -540,7 +541,9 @@ namespace Model
      * <code>user</code>: A user created the deployment.</p> </li> <li> <p>
      * <code>autoscaling</code>: Amazon EC2 Auto Scaling created the deployment.</p>
      * </li> <li> <p> <code>codeDeployRollback</code>: A rollback process created the
-     * deployment.</p> </li> </ul>
+     * deployment.</p> </li> <li> <p> <code>CodeDeployAutoUpdate</code>: An auto-update
+     * process created the deployment when it detected outdated EC2 instances.</p>
+     * </li> </ul>
      */
     inline const DeploymentCreator& GetCreator() const{ return m_creator; }
 
@@ -549,7 +552,9 @@ namespace Model
      * <code>user</code>: A user created the deployment.</p> </li> <li> <p>
      * <code>autoscaling</code>: Amazon EC2 Auto Scaling created the deployment.</p>
      * </li> <li> <p> <code>codeDeployRollback</code>: A rollback process created the
-     * deployment.</p> </li> </ul>
+     * deployment.</p> </li> <li> <p> <code>CodeDeployAutoUpdate</code>: An auto-update
+     * process created the deployment when it detected outdated EC2 instances.</p>
+     * </li> </ul>
      */
     inline bool CreatorHasBeenSet() const { return m_creatorHasBeenSet; }
 
@@ -558,7 +563,9 @@ namespace Model
      * <code>user</code>: A user created the deployment.</p> </li> <li> <p>
      * <code>autoscaling</code>: Amazon EC2 Auto Scaling created the deployment.</p>
      * </li> <li> <p> <code>codeDeployRollback</code>: A rollback process created the
-     * deployment.</p> </li> </ul>
+     * deployment.</p> </li> <li> <p> <code>CodeDeployAutoUpdate</code>: An auto-update
+     * process created the deployment when it detected outdated EC2 instances.</p>
+     * </li> </ul>
      */
     inline void SetCreator(const DeploymentCreator& value) { m_creatorHasBeenSet = true; m_creator = value; }
 
@@ -567,7 +574,9 @@ namespace Model
      * <code>user</code>: A user created the deployment.</p> </li> <li> <p>
      * <code>autoscaling</code>: Amazon EC2 Auto Scaling created the deployment.</p>
      * </li> <li> <p> <code>codeDeployRollback</code>: A rollback process created the
-     * deployment.</p> </li> </ul>
+     * deployment.</p> </li> <li> <p> <code>CodeDeployAutoUpdate</code>: An auto-update
+     * process created the deployment when it detected outdated EC2 instances.</p>
+     * </li> </ul>
      */
     inline void SetCreator(DeploymentCreator&& value) { m_creatorHasBeenSet = true; m_creator = std::move(value); }
 
@@ -576,7 +585,9 @@ namespace Model
      * <code>user</code>: A user created the deployment.</p> </li> <li> <p>
      * <code>autoscaling</code>: Amazon EC2 Auto Scaling created the deployment.</p>
      * </li> <li> <p> <code>codeDeployRollback</code>: A rollback process created the
-     * deployment.</p> </li> </ul>
+     * deployment.</p> </li> <li> <p> <code>CodeDeployAutoUpdate</code>: An auto-update
+     * process created the deployment when it detected outdated EC2 instances.</p>
+     * </li> </ul>
      */
     inline DeploymentInfo& WithCreator(const DeploymentCreator& value) { SetCreator(value); return *this;}
 
@@ -585,7 +596,9 @@ namespace Model
      * <code>user</code>: A user created the deployment.</p> </li> <li> <p>
      * <code>autoscaling</code>: Amazon EC2 Auto Scaling created the deployment.</p>
      * </li> <li> <p> <code>codeDeployRollback</code>: A rollback process created the
-     * deployment.</p> </li> </ul>
+     * deployment.</p> </li> <li> <p> <code>CodeDeployAutoUpdate</code>: An auto-update
+     * process created the deployment when it detected outdated EC2 instances.</p>
+     * </li> </ul>
      */
     inline DeploymentInfo& WithCreator(DeploymentCreator&& value) { SetCreator(std::move(value)); return *this;}
 
@@ -1214,6 +1227,25 @@ namespace Model
      */
     inline DeploymentInfo& WithExternalId(const char* value) { SetExternalId(value); return *this;}
 
+
+    
+    inline const RelatedDeployments& GetRelatedDeployments() const{ return m_relatedDeployments; }
+
+    
+    inline bool RelatedDeploymentsHasBeenSet() const { return m_relatedDeploymentsHasBeenSet; }
+
+    
+    inline void SetRelatedDeployments(const RelatedDeployments& value) { m_relatedDeploymentsHasBeenSet = true; m_relatedDeployments = value; }
+
+    
+    inline void SetRelatedDeployments(RelatedDeployments&& value) { m_relatedDeploymentsHasBeenSet = true; m_relatedDeployments = std::move(value); }
+
+    
+    inline DeploymentInfo& WithRelatedDeployments(const RelatedDeployments& value) { SetRelatedDeployments(value); return *this;}
+
+    
+    inline DeploymentInfo& WithRelatedDeployments(RelatedDeployments&& value) { SetRelatedDeployments(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_applicationName;
@@ -1299,6 +1331,9 @@ namespace Model
 
     Aws::String m_externalId;
     bool m_externalIdHasBeenSet;
+
+    RelatedDeployments m_relatedDeployments;
+    bool m_relatedDeploymentsHasBeenSet;
   };
 
 } // namespace Model

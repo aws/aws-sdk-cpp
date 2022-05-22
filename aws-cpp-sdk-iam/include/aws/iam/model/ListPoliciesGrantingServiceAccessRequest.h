@@ -152,119 +152,128 @@ namespace Model
 
 
     /**
-     * <p>The service namespace for the AWS services whose policies you want to
-     * list.</p> <p>To learn the service namespace for a service, go to <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_actions-resources-contextkeys.html">Actions,
-     * Resources, and Condition Keys for AWS Services</a> in the <i>IAM User Guide</i>.
-     * Choose the name of the service to view details for that service. In the first
-     * paragraph, find the service prefix. For example, <code>(service prefix:
-     * a4b)</code>. For more information about service namespaces, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-     * Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+     * <p>The service namespace for the Amazon Web Services services whose policies you
+     * want to list.</p> <p>To learn the service namespace for a service, see <a
+     * href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions,
+     * resources, and condition keys for Amazon Web Services services</a> in the <i>IAM
+     * User Guide</i>. Choose the name of the service to view details for that service.
+     * In the first paragraph, find the service prefix. For example, <code>(service
+     * prefix: a4b)</code>. For more information about service namespaces, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon
+     * Web Services service namespaces</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetServiceNamespaces() const{ return m_serviceNamespaces; }
 
     /**
-     * <p>The service namespace for the AWS services whose policies you want to
-     * list.</p> <p>To learn the service namespace for a service, go to <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_actions-resources-contextkeys.html">Actions,
-     * Resources, and Condition Keys for AWS Services</a> in the <i>IAM User Guide</i>.
-     * Choose the name of the service to view details for that service. In the first
-     * paragraph, find the service prefix. For example, <code>(service prefix:
-     * a4b)</code>. For more information about service namespaces, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-     * Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+     * <p>The service namespace for the Amazon Web Services services whose policies you
+     * want to list.</p> <p>To learn the service namespace for a service, see <a
+     * href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions,
+     * resources, and condition keys for Amazon Web Services services</a> in the <i>IAM
+     * User Guide</i>. Choose the name of the service to view details for that service.
+     * In the first paragraph, find the service prefix. For example, <code>(service
+     * prefix: a4b)</code>. For more information about service namespaces, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon
+     * Web Services service namespaces</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline bool ServiceNamespacesHasBeenSet() const { return m_serviceNamespacesHasBeenSet; }
 
     /**
-     * <p>The service namespace for the AWS services whose policies you want to
-     * list.</p> <p>To learn the service namespace for a service, go to <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_actions-resources-contextkeys.html">Actions,
-     * Resources, and Condition Keys for AWS Services</a> in the <i>IAM User Guide</i>.
-     * Choose the name of the service to view details for that service. In the first
-     * paragraph, find the service prefix. For example, <code>(service prefix:
-     * a4b)</code>. For more information about service namespaces, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-     * Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+     * <p>The service namespace for the Amazon Web Services services whose policies you
+     * want to list.</p> <p>To learn the service namespace for a service, see <a
+     * href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions,
+     * resources, and condition keys for Amazon Web Services services</a> in the <i>IAM
+     * User Guide</i>. Choose the name of the service to view details for that service.
+     * In the first paragraph, find the service prefix. For example, <code>(service
+     * prefix: a4b)</code>. For more information about service namespaces, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon
+     * Web Services service namespaces</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline void SetServiceNamespaces(const Aws::Vector<Aws::String>& value) { m_serviceNamespacesHasBeenSet = true; m_serviceNamespaces = value; }
 
     /**
-     * <p>The service namespace for the AWS services whose policies you want to
-     * list.</p> <p>To learn the service namespace for a service, go to <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_actions-resources-contextkeys.html">Actions,
-     * Resources, and Condition Keys for AWS Services</a> in the <i>IAM User Guide</i>.
-     * Choose the name of the service to view details for that service. In the first
-     * paragraph, find the service prefix. For example, <code>(service prefix:
-     * a4b)</code>. For more information about service namespaces, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-     * Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+     * <p>The service namespace for the Amazon Web Services services whose policies you
+     * want to list.</p> <p>To learn the service namespace for a service, see <a
+     * href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions,
+     * resources, and condition keys for Amazon Web Services services</a> in the <i>IAM
+     * User Guide</i>. Choose the name of the service to view details for that service.
+     * In the first paragraph, find the service prefix. For example, <code>(service
+     * prefix: a4b)</code>. For more information about service namespaces, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon
+     * Web Services service namespaces</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline void SetServiceNamespaces(Aws::Vector<Aws::String>&& value) { m_serviceNamespacesHasBeenSet = true; m_serviceNamespaces = std::move(value); }
 
     /**
-     * <p>The service namespace for the AWS services whose policies you want to
-     * list.</p> <p>To learn the service namespace for a service, go to <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_actions-resources-contextkeys.html">Actions,
-     * Resources, and Condition Keys for AWS Services</a> in the <i>IAM User Guide</i>.
-     * Choose the name of the service to view details for that service. In the first
-     * paragraph, find the service prefix. For example, <code>(service prefix:
-     * a4b)</code>. For more information about service namespaces, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-     * Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+     * <p>The service namespace for the Amazon Web Services services whose policies you
+     * want to list.</p> <p>To learn the service namespace for a service, see <a
+     * href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions,
+     * resources, and condition keys for Amazon Web Services services</a> in the <i>IAM
+     * User Guide</i>. Choose the name of the service to view details for that service.
+     * In the first paragraph, find the service prefix. For example, <code>(service
+     * prefix: a4b)</code>. For more information about service namespaces, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon
+     * Web Services service namespaces</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline ListPoliciesGrantingServiceAccessRequest& WithServiceNamespaces(const Aws::Vector<Aws::String>& value) { SetServiceNamespaces(value); return *this;}
 
     /**
-     * <p>The service namespace for the AWS services whose policies you want to
-     * list.</p> <p>To learn the service namespace for a service, go to <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_actions-resources-contextkeys.html">Actions,
-     * Resources, and Condition Keys for AWS Services</a> in the <i>IAM User Guide</i>.
-     * Choose the name of the service to view details for that service. In the first
-     * paragraph, find the service prefix. For example, <code>(service prefix:
-     * a4b)</code>. For more information about service namespaces, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-     * Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+     * <p>The service namespace for the Amazon Web Services services whose policies you
+     * want to list.</p> <p>To learn the service namespace for a service, see <a
+     * href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions,
+     * resources, and condition keys for Amazon Web Services services</a> in the <i>IAM
+     * User Guide</i>. Choose the name of the service to view details for that service.
+     * In the first paragraph, find the service prefix. For example, <code>(service
+     * prefix: a4b)</code>. For more information about service namespaces, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon
+     * Web Services service namespaces</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline ListPoliciesGrantingServiceAccessRequest& WithServiceNamespaces(Aws::Vector<Aws::String>&& value) { SetServiceNamespaces(std::move(value)); return *this;}
 
     /**
-     * <p>The service namespace for the AWS services whose policies you want to
-     * list.</p> <p>To learn the service namespace for a service, go to <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_actions-resources-contextkeys.html">Actions,
-     * Resources, and Condition Keys for AWS Services</a> in the <i>IAM User Guide</i>.
-     * Choose the name of the service to view details for that service. In the first
-     * paragraph, find the service prefix. For example, <code>(service prefix:
-     * a4b)</code>. For more information about service namespaces, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-     * Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+     * <p>The service namespace for the Amazon Web Services services whose policies you
+     * want to list.</p> <p>To learn the service namespace for a service, see <a
+     * href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions,
+     * resources, and condition keys for Amazon Web Services services</a> in the <i>IAM
+     * User Guide</i>. Choose the name of the service to view details for that service.
+     * In the first paragraph, find the service prefix. For example, <code>(service
+     * prefix: a4b)</code>. For more information about service namespaces, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon
+     * Web Services service namespaces</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline ListPoliciesGrantingServiceAccessRequest& AddServiceNamespaces(const Aws::String& value) { m_serviceNamespacesHasBeenSet = true; m_serviceNamespaces.push_back(value); return *this; }
 
     /**
-     * <p>The service namespace for the AWS services whose policies you want to
-     * list.</p> <p>To learn the service namespace for a service, go to <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_actions-resources-contextkeys.html">Actions,
-     * Resources, and Condition Keys for AWS Services</a> in the <i>IAM User Guide</i>.
-     * Choose the name of the service to view details for that service. In the first
-     * paragraph, find the service prefix. For example, <code>(service prefix:
-     * a4b)</code>. For more information about service namespaces, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-     * Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+     * <p>The service namespace for the Amazon Web Services services whose policies you
+     * want to list.</p> <p>To learn the service namespace for a service, see <a
+     * href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions,
+     * resources, and condition keys for Amazon Web Services services</a> in the <i>IAM
+     * User Guide</i>. Choose the name of the service to view details for that service.
+     * In the first paragraph, find the service prefix. For example, <code>(service
+     * prefix: a4b)</code>. For more information about service namespaces, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon
+     * Web Services service namespaces</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline ListPoliciesGrantingServiceAccessRequest& AddServiceNamespaces(Aws::String&& value) { m_serviceNamespacesHasBeenSet = true; m_serviceNamespaces.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The service namespace for the AWS services whose policies you want to
-     * list.</p> <p>To learn the service namespace for a service, go to <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_actions-resources-contextkeys.html">Actions,
-     * Resources, and Condition Keys for AWS Services</a> in the <i>IAM User Guide</i>.
-     * Choose the name of the service to view details for that service. In the first
-     * paragraph, find the service prefix. For example, <code>(service prefix:
-     * a4b)</code>. For more information about service namespaces, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-     * Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+     * <p>The service namespace for the Amazon Web Services services whose policies you
+     * want to list.</p> <p>To learn the service namespace for a service, see <a
+     * href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions,
+     * resources, and condition keys for Amazon Web Services services</a> in the <i>IAM
+     * User Guide</i>. Choose the name of the service to view details for that service.
+     * In the first paragraph, find the service prefix. For example, <code>(service
+     * prefix: a4b)</code>. For more information about service namespaces, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon
+     * Web Services service namespaces</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline ListPoliciesGrantingServiceAccessRequest& AddServiceNamespaces(const char* value) { m_serviceNamespacesHasBeenSet = true; m_serviceNamespaces.push_back(value); return *this; }
 

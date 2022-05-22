@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>The value of a custom document attribute. You can only provide one value for
-   * a custom attribute.</p><p><h3>See Also:</h3>   <a
+   * <p>The value of a document attribute. You can only provide one value for a
+   * document attribute.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DocumentAttributeValue">AWS
    * API Reference</a></p>
    */
@@ -149,32 +149,50 @@ namespace Model
 
 
     /**
-     * <p>A date expressed as an ISO 8601 string.</p>
+     * <p>A date expressed as an ISO 8601 string.</p> <p>It is important for the time
+     * zone to be included in the ISO 8601 date-time format. For example,
+     * 2012-03-25T12:30:10+01:00 is the ISO 8601 date-time format for March 25th 2012
+     * at 12:30PM (plus 10 seconds) in Central European Time.</p>
      */
     inline const Aws::Utils::DateTime& GetDateValue() const{ return m_dateValue; }
 
     /**
-     * <p>A date expressed as an ISO 8601 string.</p>
+     * <p>A date expressed as an ISO 8601 string.</p> <p>It is important for the time
+     * zone to be included in the ISO 8601 date-time format. For example,
+     * 2012-03-25T12:30:10+01:00 is the ISO 8601 date-time format for March 25th 2012
+     * at 12:30PM (plus 10 seconds) in Central European Time.</p>
      */
     inline bool DateValueHasBeenSet() const { return m_dateValueHasBeenSet; }
 
     /**
-     * <p>A date expressed as an ISO 8601 string.</p>
+     * <p>A date expressed as an ISO 8601 string.</p> <p>It is important for the time
+     * zone to be included in the ISO 8601 date-time format. For example,
+     * 2012-03-25T12:30:10+01:00 is the ISO 8601 date-time format for March 25th 2012
+     * at 12:30PM (plus 10 seconds) in Central European Time.</p>
      */
     inline void SetDateValue(const Aws::Utils::DateTime& value) { m_dateValueHasBeenSet = true; m_dateValue = value; }
 
     /**
-     * <p>A date expressed as an ISO 8601 string.</p>
+     * <p>A date expressed as an ISO 8601 string.</p> <p>It is important for the time
+     * zone to be included in the ISO 8601 date-time format. For example,
+     * 2012-03-25T12:30:10+01:00 is the ISO 8601 date-time format for March 25th 2012
+     * at 12:30PM (plus 10 seconds) in Central European Time.</p>
      */
     inline void SetDateValue(Aws::Utils::DateTime&& value) { m_dateValueHasBeenSet = true; m_dateValue = std::move(value); }
 
     /**
-     * <p>A date expressed as an ISO 8601 string.</p>
+     * <p>A date expressed as an ISO 8601 string.</p> <p>It is important for the time
+     * zone to be included in the ISO 8601 date-time format. For example,
+     * 2012-03-25T12:30:10+01:00 is the ISO 8601 date-time format for March 25th 2012
+     * at 12:30PM (plus 10 seconds) in Central European Time.</p>
      */
     inline DocumentAttributeValue& WithDateValue(const Aws::Utils::DateTime& value) { SetDateValue(value); return *this;}
 
     /**
-     * <p>A date expressed as an ISO 8601 string.</p>
+     * <p>A date expressed as an ISO 8601 string.</p> <p>It is important for the time
+     * zone to be included in the ISO 8601 date-time format. For example,
+     * 2012-03-25T12:30:10+01:00 is the ISO 8601 date-time format for March 25th 2012
+     * at 12:30PM (plus 10 seconds) in Central European Time.</p>
      */
     inline DocumentAttributeValue& WithDateValue(Aws::Utils::DateTime&& value) { SetDateValue(std::move(value)); return *this;}
 

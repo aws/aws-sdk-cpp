@@ -22,8 +22,8 @@ namespace Model
 
   /**
    * <p>Retrieves a list of the public and private hosted zones that are associated
-   * with the current AWS account in ASCII order by domain name. </p><p><h3>See
-   * Also:</h3>   <a
+   * with the current Amazon Web Services account in ASCII order by domain name.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZonesByNameRequest">AWS
    * API Reference</a></p>
    */
@@ -48,10 +48,10 @@ namespace Model
      * include the <code>dnsname</code> parameter only if you want to specify the name
      * of the first hosted zone in the response. If you don't include the
      * <code>dnsname</code> parameter, Amazon Route 53 returns all of the hosted zones
-     * that were created by the current AWS account, in ASCII order. For subsequent
-     * requests, include both <code>dnsname</code> and <code>hostedzoneid</code>
-     * parameters. For <code>dnsname</code>, specify the value of
-     * <code>NextDNSName</code> from the previous response.</p>
+     * that were created by the current Amazon Web Services account, in ASCII order.
+     * For subsequent requests, include both <code>dnsname</code> and
+     * <code>hostedzoneid</code> parameters. For <code>dnsname</code>, specify the
+     * value of <code>NextDNSName</code> from the previous response.</p>
      */
     inline const Aws::String& GetDNSName() const{ return m_dNSName; }
 
@@ -60,10 +60,10 @@ namespace Model
      * include the <code>dnsname</code> parameter only if you want to specify the name
      * of the first hosted zone in the response. If you don't include the
      * <code>dnsname</code> parameter, Amazon Route 53 returns all of the hosted zones
-     * that were created by the current AWS account, in ASCII order. For subsequent
-     * requests, include both <code>dnsname</code> and <code>hostedzoneid</code>
-     * parameters. For <code>dnsname</code>, specify the value of
-     * <code>NextDNSName</code> from the previous response.</p>
+     * that were created by the current Amazon Web Services account, in ASCII order.
+     * For subsequent requests, include both <code>dnsname</code> and
+     * <code>hostedzoneid</code> parameters. For <code>dnsname</code>, specify the
+     * value of <code>NextDNSName</code> from the previous response.</p>
      */
     inline bool DNSNameHasBeenSet() const { return m_dNSNameHasBeenSet; }
 
@@ -72,10 +72,10 @@ namespace Model
      * include the <code>dnsname</code> parameter only if you want to specify the name
      * of the first hosted zone in the response. If you don't include the
      * <code>dnsname</code> parameter, Amazon Route 53 returns all of the hosted zones
-     * that were created by the current AWS account, in ASCII order. For subsequent
-     * requests, include both <code>dnsname</code> and <code>hostedzoneid</code>
-     * parameters. For <code>dnsname</code>, specify the value of
-     * <code>NextDNSName</code> from the previous response.</p>
+     * that were created by the current Amazon Web Services account, in ASCII order.
+     * For subsequent requests, include both <code>dnsname</code> and
+     * <code>hostedzoneid</code> parameters. For <code>dnsname</code>, specify the
+     * value of <code>NextDNSName</code> from the previous response.</p>
      */
     inline void SetDNSName(const Aws::String& value) { m_dNSNameHasBeenSet = true; m_dNSName = value; }
 
@@ -84,10 +84,10 @@ namespace Model
      * include the <code>dnsname</code> parameter only if you want to specify the name
      * of the first hosted zone in the response. If you don't include the
      * <code>dnsname</code> parameter, Amazon Route 53 returns all of the hosted zones
-     * that were created by the current AWS account, in ASCII order. For subsequent
-     * requests, include both <code>dnsname</code> and <code>hostedzoneid</code>
-     * parameters. For <code>dnsname</code>, specify the value of
-     * <code>NextDNSName</code> from the previous response.</p>
+     * that were created by the current Amazon Web Services account, in ASCII order.
+     * For subsequent requests, include both <code>dnsname</code> and
+     * <code>hostedzoneid</code> parameters. For <code>dnsname</code>, specify the
+     * value of <code>NextDNSName</code> from the previous response.</p>
      */
     inline void SetDNSName(Aws::String&& value) { m_dNSNameHasBeenSet = true; m_dNSName = std::move(value); }
 
@@ -96,10 +96,10 @@ namespace Model
      * include the <code>dnsname</code> parameter only if you want to specify the name
      * of the first hosted zone in the response. If you don't include the
      * <code>dnsname</code> parameter, Amazon Route 53 returns all of the hosted zones
-     * that were created by the current AWS account, in ASCII order. For subsequent
-     * requests, include both <code>dnsname</code> and <code>hostedzoneid</code>
-     * parameters. For <code>dnsname</code>, specify the value of
-     * <code>NextDNSName</code> from the previous response.</p>
+     * that were created by the current Amazon Web Services account, in ASCII order.
+     * For subsequent requests, include both <code>dnsname</code> and
+     * <code>hostedzoneid</code> parameters. For <code>dnsname</code>, specify the
+     * value of <code>NextDNSName</code> from the previous response.</p>
      */
     inline void SetDNSName(const char* value) { m_dNSNameHasBeenSet = true; m_dNSName.assign(value); }
 
@@ -108,10 +108,10 @@ namespace Model
      * include the <code>dnsname</code> parameter only if you want to specify the name
      * of the first hosted zone in the response. If you don't include the
      * <code>dnsname</code> parameter, Amazon Route 53 returns all of the hosted zones
-     * that were created by the current AWS account, in ASCII order. For subsequent
-     * requests, include both <code>dnsname</code> and <code>hostedzoneid</code>
-     * parameters. For <code>dnsname</code>, specify the value of
-     * <code>NextDNSName</code> from the previous response.</p>
+     * that were created by the current Amazon Web Services account, in ASCII order.
+     * For subsequent requests, include both <code>dnsname</code> and
+     * <code>hostedzoneid</code> parameters. For <code>dnsname</code>, specify the
+     * value of <code>NextDNSName</code> from the previous response.</p>
      */
     inline ListHostedZonesByNameRequest& WithDNSName(const Aws::String& value) { SetDNSName(value); return *this;}
 
@@ -120,10 +120,10 @@ namespace Model
      * include the <code>dnsname</code> parameter only if you want to specify the name
      * of the first hosted zone in the response. If you don't include the
      * <code>dnsname</code> parameter, Amazon Route 53 returns all of the hosted zones
-     * that were created by the current AWS account, in ASCII order. For subsequent
-     * requests, include both <code>dnsname</code> and <code>hostedzoneid</code>
-     * parameters. For <code>dnsname</code>, specify the value of
-     * <code>NextDNSName</code> from the previous response.</p>
+     * that were created by the current Amazon Web Services account, in ASCII order.
+     * For subsequent requests, include both <code>dnsname</code> and
+     * <code>hostedzoneid</code> parameters. For <code>dnsname</code>, specify the
+     * value of <code>NextDNSName</code> from the previous response.</p>
      */
     inline ListHostedZonesByNameRequest& WithDNSName(Aws::String&& value) { SetDNSName(std::move(value)); return *this;}
 
@@ -132,10 +132,10 @@ namespace Model
      * include the <code>dnsname</code> parameter only if you want to specify the name
      * of the first hosted zone in the response. If you don't include the
      * <code>dnsname</code> parameter, Amazon Route 53 returns all of the hosted zones
-     * that were created by the current AWS account, in ASCII order. For subsequent
-     * requests, include both <code>dnsname</code> and <code>hostedzoneid</code>
-     * parameters. For <code>dnsname</code>, specify the value of
-     * <code>NextDNSName</code> from the previous response.</p>
+     * that were created by the current Amazon Web Services account, in ASCII order.
+     * For subsequent requests, include both <code>dnsname</code> and
+     * <code>hostedzoneid</code> parameters. For <code>dnsname</code>, specify the
+     * value of <code>NextDNSName</code> from the previous response.</p>
      */
     inline ListHostedZonesByNameRequest& WithDNSName(const char* value) { SetDNSName(value); return *this;}
 

@@ -34,7 +34,8 @@ SecretListEntry::SecretListEntry() :
     m_tagsHasBeenSet(false),
     m_secretVersionsToStagesHasBeenSet(false),
     m_owningServiceHasBeenSet(false),
-    m_createdDateHasBeenSet(false)
+    m_createdDateHasBeenSet(false),
+    m_primaryRegionHasBeenSet(false)
 {
 }
 
@@ -54,7 +55,8 @@ SecretListEntry::SecretListEntry(JsonView jsonValue) :
     m_tagsHasBeenSet(false),
     m_secretVersionsToStagesHasBeenSet(false),
     m_owningServiceHasBeenSet(false),
-    m_createdDateHasBeenSet(false)
+    m_createdDateHasBeenSet(false),
+    m_primaryRegionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -179,6 +181,13 @@ SecretListEntry& SecretListEntry::operator =(JsonView jsonValue)
     m_createdDateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PrimaryRegion"))
+  {
+    m_primaryRegion = jsonValue.GetString("PrimaryRegion");
+
+    m_primaryRegionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -284,6 +293,12 @@ JsonValue SecretListEntry::Jsonize() const
   if(m_createdDateHasBeenSet)
   {
    payload.WithDouble("CreatedDate", m_createdDate.SecondsWithMSPrecision());
+  }
+
+  if(m_primaryRegionHasBeenSet)
+  {
+   payload.WithString("PrimaryRegion", m_primaryRegion);
+
   }
 
   return payload;

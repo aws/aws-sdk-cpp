@@ -133,7 +133,7 @@ namespace Model
 
 
     /**
-     * <p>An optional message specified when a task is stopped. For example, if you are
+     * <p>An optional message specified when a task is stopped. For example, if you're
      * using a custom scheduler, you can use this parameter to specify the reason for
      * stopping the task here, and the message appears in subsequent
      * <a>DescribeTasks</a> API operations on this task. Up to 255 characters are
@@ -142,7 +142,7 @@ namespace Model
     inline const Aws::String& GetReason() const{ return m_reason; }
 
     /**
-     * <p>An optional message specified when a task is stopped. For example, if you are
+     * <p>An optional message specified when a task is stopped. For example, if you're
      * using a custom scheduler, you can use this parameter to specify the reason for
      * stopping the task here, and the message appears in subsequent
      * <a>DescribeTasks</a> API operations on this task. Up to 255 characters are
@@ -151,7 +151,7 @@ namespace Model
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
 
     /**
-     * <p>An optional message specified when a task is stopped. For example, if you are
+     * <p>An optional message specified when a task is stopped. For example, if you're
      * using a custom scheduler, you can use this parameter to specify the reason for
      * stopping the task here, and the message appears in subsequent
      * <a>DescribeTasks</a> API operations on this task. Up to 255 characters are
@@ -160,7 +160,7 @@ namespace Model
     inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
 
     /**
-     * <p>An optional message specified when a task is stopped. For example, if you are
+     * <p>An optional message specified when a task is stopped. For example, if you're
      * using a custom scheduler, you can use this parameter to specify the reason for
      * stopping the task here, and the message appears in subsequent
      * <a>DescribeTasks</a> API operations on this task. Up to 255 characters are
@@ -169,7 +169,7 @@ namespace Model
     inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
 
     /**
-     * <p>An optional message specified when a task is stopped. For example, if you are
+     * <p>An optional message specified when a task is stopped. For example, if you're
      * using a custom scheduler, you can use this parameter to specify the reason for
      * stopping the task here, and the message appears in subsequent
      * <a>DescribeTasks</a> API operations on this task. Up to 255 characters are
@@ -178,7 +178,7 @@ namespace Model
     inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
 
     /**
-     * <p>An optional message specified when a task is stopped. For example, if you are
+     * <p>An optional message specified when a task is stopped. For example, if you're
      * using a custom scheduler, you can use this parameter to specify the reason for
      * stopping the task here, and the message appears in subsequent
      * <a>DescribeTasks</a> API operations on this task. Up to 255 characters are
@@ -187,7 +187,7 @@ namespace Model
     inline StopTaskRequest& WithReason(const Aws::String& value) { SetReason(value); return *this;}
 
     /**
-     * <p>An optional message specified when a task is stopped. For example, if you are
+     * <p>An optional message specified when a task is stopped. For example, if you're
      * using a custom scheduler, you can use this parameter to specify the reason for
      * stopping the task here, and the message appears in subsequent
      * <a>DescribeTasks</a> API operations on this task. Up to 255 characters are
@@ -196,7 +196,7 @@ namespace Model
     inline StopTaskRequest& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
 
     /**
-     * <p>An optional message specified when a task is stopped. For example, if you are
+     * <p>An optional message specified when a task is stopped. For example, if you're
      * using a custom scheduler, you can use this parameter to specify the reason for
      * stopping the task here, and the message appears in subsequent
      * <a>DescribeTasks</a> API operations on this task. Up to 255 characters are

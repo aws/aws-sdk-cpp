@@ -27,7 +27,8 @@ namespace Model
 
   /**
    * <p>A complex type that contains information about one health check that is
-   * associated with the current AWS account.</p><p><h3>See Also:</h3>   <a
+   * associated with the current Amazon Web Services account.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/HealthCheck">AWS
    * API Reference</a></p>
    */
@@ -42,7 +43,7 @@ namespace Model
 
 
     /**
-     * <p>The identifier that Amazon Route 53assigned to the health check when you
+     * <p>The identifier that Amazon Route 53 assigned to the health check when you
      * created it. When you add or update a resource record set, you use this value to
      * specify which health check to use. The value can be up to 64 characters long.
      * </p>
@@ -50,7 +51,7 @@ namespace Model
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The identifier that Amazon Route 53assigned to the health check when you
+     * <p>The identifier that Amazon Route 53 assigned to the health check when you
      * created it. When you add or update a resource record set, you use this value to
      * specify which health check to use. The value can be up to 64 characters long.
      * </p>
@@ -58,7 +59,7 @@ namespace Model
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * <p>The identifier that Amazon Route 53assigned to the health check when you
+     * <p>The identifier that Amazon Route 53 assigned to the health check when you
      * created it. When you add or update a resource record set, you use this value to
      * specify which health check to use. The value can be up to 64 characters long.
      * </p>
@@ -66,7 +67,7 @@ namespace Model
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The identifier that Amazon Route 53assigned to the health check when you
+     * <p>The identifier that Amazon Route 53 assigned to the health check when you
      * created it. When you add or update a resource record set, you use this value to
      * specify which health check to use. The value can be up to 64 characters long.
      * </p>
@@ -74,7 +75,7 @@ namespace Model
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The identifier that Amazon Route 53assigned to the health check when you
+     * <p>The identifier that Amazon Route 53 assigned to the health check when you
      * created it. When you add or update a resource record set, you use this value to
      * specify which health check to use. The value can be up to 64 characters long.
      * </p>
@@ -82,7 +83,7 @@ namespace Model
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The identifier that Amazon Route 53assigned to the health check when you
+     * <p>The identifier that Amazon Route 53 assigned to the health check when you
      * created it. When you add or update a resource record set, you use this value to
      * specify which health check to use. The value can be up to 64 characters long.
      * </p>
@@ -90,7 +91,7 @@ namespace Model
     inline HealthCheck& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The identifier that Amazon Route 53assigned to the health check when you
+     * <p>The identifier that Amazon Route 53 assigned to the health check when you
      * created it. When you add or update a resource record set, you use this value to
      * specify which health check to use. The value can be up to 64 characters long.
      * </p>
@@ -98,7 +99,7 @@ namespace Model
     inline HealthCheck& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier that Amazon Route 53assigned to the health check when you
+     * <p>The identifier that Amazon Route 53 assigned to the health check when you
      * created it. When you add or update a resource record set, you use this value to
      * specify which health check to use. The value can be up to 64 characters long.
      * </p>

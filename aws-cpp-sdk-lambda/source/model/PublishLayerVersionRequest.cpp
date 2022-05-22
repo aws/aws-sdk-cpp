@@ -17,7 +17,8 @@ PublishLayerVersionRequest::PublishLayerVersionRequest() :
     m_descriptionHasBeenSet(false),
     m_contentHasBeenSet(false),
     m_compatibleRuntimesHasBeenSet(false),
-    m_licenseInfoHasBeenSet(false)
+    m_licenseInfoHasBeenSet(false),
+    m_compatibleArchitecturesHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,17 @@ Aws::String PublishLayerVersionRequest::SerializePayload() const
   if(m_licenseInfoHasBeenSet)
   {
    payload.WithString("LicenseInfo", m_licenseInfo);
+
+  }
+
+  if(m_compatibleArchitecturesHasBeenSet)
+  {
+   Array<JsonValue> compatibleArchitecturesJsonList(m_compatibleArchitectures.size());
+   for(unsigned compatibleArchitecturesIndex = 0; compatibleArchitecturesIndex < compatibleArchitecturesJsonList.GetLength(); ++compatibleArchitecturesIndex)
+   {
+     compatibleArchitecturesJsonList[compatibleArchitecturesIndex].AsString(ArchitectureMapper::GetNameForArchitecture(m_compatibleArchitectures[compatibleArchitecturesIndex]));
+   }
+   payload.WithArray("CompatibleArchitectures", std::move(compatibleArchitecturesJsonList));
 
   }
 

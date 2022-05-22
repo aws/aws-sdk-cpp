@@ -72,86 +72,10 @@ namespace Model
      */
     inline ListTagsForResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 
-
-    /**
-     * <p>The first tag to retrieve. This is used for pagination; see the
-     * <code>nextToken</code> response field.</p>
-     */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The first tag to retrieve. This is used for pagination; see the
-     * <code>nextToken</code> response field.</p>
-     */
-    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>The first tag to retrieve. This is used for pagination; see the
-     * <code>nextToken</code> response field.</p>
-     */
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>The first tag to retrieve. This is used for pagination; see the
-     * <code>nextToken</code> response field.</p>
-     */
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>The first tag to retrieve. This is used for pagination; see the
-     * <code>nextToken</code> response field.</p>
-     */
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>The first tag to retrieve. This is used for pagination; see the
-     * <code>nextToken</code> response field.</p>
-     */
-    inline ListTagsForResourceRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The first tag to retrieve. This is used for pagination; see the
-     * <code>nextToken</code> response field.</p>
-     */
-    inline ListTagsForResourceRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The first tag to retrieve. This is used for pagination; see the
-     * <code>nextToken</code> response field.</p>
-     */
-    inline ListTagsForResourceRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
-
-    /**
-     * <p>Maximum number of tags to return.</p>
-     */
-    inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>Maximum number of tags to return.</p>
-     */
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>Maximum number of tags to return.</p>
-     */
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>Maximum number of tags to return.</p>
-     */
-    inline ListTagsForResourceRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
   private:
 
     Aws::String m_resourceArn;
     bool m_resourceArnHasBeenSet;
-
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
-
-    int m_maxResults;
-    bool m_maxResultsHasBeenSet;
   };
 
 } // namespace Model

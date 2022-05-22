@@ -338,74 +338,83 @@ namespace Model
 
 
     /**
-     * <p>List of owners to use as a filter. For AWS CodeCommit, it is the name of the
-     * CodeCommit account that was used to associate the repository. For other
-     * repository source providers, such as Bitbucket and GitHub Enterprise Server,
-     * this is name of the account that was used to associate the repository. </p>
+     * <p>List of owners to use as a filter. For Amazon Web Services CodeCommit, it is
+     * the name of the CodeCommit account that was used to associate the repository.
+     * For other repository source providers, such as Bitbucket and GitHub Enterprise
+     * Server, this is name of the account that was used to associate the repository.
+     * </p>
      */
     inline const Aws::Vector<Aws::String>& GetOwners() const{ return m_owners; }
 
     /**
-     * <p>List of owners to use as a filter. For AWS CodeCommit, it is the name of the
-     * CodeCommit account that was used to associate the repository. For other
-     * repository source providers, such as Bitbucket and GitHub Enterprise Server,
-     * this is name of the account that was used to associate the repository. </p>
+     * <p>List of owners to use as a filter. For Amazon Web Services CodeCommit, it is
+     * the name of the CodeCommit account that was used to associate the repository.
+     * For other repository source providers, such as Bitbucket and GitHub Enterprise
+     * Server, this is name of the account that was used to associate the repository.
+     * </p>
      */
     inline bool OwnersHasBeenSet() const { return m_ownersHasBeenSet; }
 
     /**
-     * <p>List of owners to use as a filter. For AWS CodeCommit, it is the name of the
-     * CodeCommit account that was used to associate the repository. For other
-     * repository source providers, such as Bitbucket and GitHub Enterprise Server,
-     * this is name of the account that was used to associate the repository. </p>
+     * <p>List of owners to use as a filter. For Amazon Web Services CodeCommit, it is
+     * the name of the CodeCommit account that was used to associate the repository.
+     * For other repository source providers, such as Bitbucket and GitHub Enterprise
+     * Server, this is name of the account that was used to associate the repository.
+     * </p>
      */
     inline void SetOwners(const Aws::Vector<Aws::String>& value) { m_ownersHasBeenSet = true; m_owners = value; }
 
     /**
-     * <p>List of owners to use as a filter. For AWS CodeCommit, it is the name of the
-     * CodeCommit account that was used to associate the repository. For other
-     * repository source providers, such as Bitbucket and GitHub Enterprise Server,
-     * this is name of the account that was used to associate the repository. </p>
+     * <p>List of owners to use as a filter. For Amazon Web Services CodeCommit, it is
+     * the name of the CodeCommit account that was used to associate the repository.
+     * For other repository source providers, such as Bitbucket and GitHub Enterprise
+     * Server, this is name of the account that was used to associate the repository.
+     * </p>
      */
     inline void SetOwners(Aws::Vector<Aws::String>&& value) { m_ownersHasBeenSet = true; m_owners = std::move(value); }
 
     /**
-     * <p>List of owners to use as a filter. For AWS CodeCommit, it is the name of the
-     * CodeCommit account that was used to associate the repository. For other
-     * repository source providers, such as Bitbucket and GitHub Enterprise Server,
-     * this is name of the account that was used to associate the repository. </p>
+     * <p>List of owners to use as a filter. For Amazon Web Services CodeCommit, it is
+     * the name of the CodeCommit account that was used to associate the repository.
+     * For other repository source providers, such as Bitbucket and GitHub Enterprise
+     * Server, this is name of the account that was used to associate the repository.
+     * </p>
      */
     inline ListRepositoryAssociationsRequest& WithOwners(const Aws::Vector<Aws::String>& value) { SetOwners(value); return *this;}
 
     /**
-     * <p>List of owners to use as a filter. For AWS CodeCommit, it is the name of the
-     * CodeCommit account that was used to associate the repository. For other
-     * repository source providers, such as Bitbucket and GitHub Enterprise Server,
-     * this is name of the account that was used to associate the repository. </p>
+     * <p>List of owners to use as a filter. For Amazon Web Services CodeCommit, it is
+     * the name of the CodeCommit account that was used to associate the repository.
+     * For other repository source providers, such as Bitbucket and GitHub Enterprise
+     * Server, this is name of the account that was used to associate the repository.
+     * </p>
      */
     inline ListRepositoryAssociationsRequest& WithOwners(Aws::Vector<Aws::String>&& value) { SetOwners(std::move(value)); return *this;}
 
     /**
-     * <p>List of owners to use as a filter. For AWS CodeCommit, it is the name of the
-     * CodeCommit account that was used to associate the repository. For other
-     * repository source providers, such as Bitbucket and GitHub Enterprise Server,
-     * this is name of the account that was used to associate the repository. </p>
+     * <p>List of owners to use as a filter. For Amazon Web Services CodeCommit, it is
+     * the name of the CodeCommit account that was used to associate the repository.
+     * For other repository source providers, such as Bitbucket and GitHub Enterprise
+     * Server, this is name of the account that was used to associate the repository.
+     * </p>
      */
     inline ListRepositoryAssociationsRequest& AddOwners(const Aws::String& value) { m_ownersHasBeenSet = true; m_owners.push_back(value); return *this; }
 
     /**
-     * <p>List of owners to use as a filter. For AWS CodeCommit, it is the name of the
-     * CodeCommit account that was used to associate the repository. For other
-     * repository source providers, such as Bitbucket and GitHub Enterprise Server,
-     * this is name of the account that was used to associate the repository. </p>
+     * <p>List of owners to use as a filter. For Amazon Web Services CodeCommit, it is
+     * the name of the CodeCommit account that was used to associate the repository.
+     * For other repository source providers, such as Bitbucket and GitHub Enterprise
+     * Server, this is name of the account that was used to associate the repository.
+     * </p>
      */
     inline ListRepositoryAssociationsRequest& AddOwners(Aws::String&& value) { m_ownersHasBeenSet = true; m_owners.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>List of owners to use as a filter. For AWS CodeCommit, it is the name of the
-     * CodeCommit account that was used to associate the repository. For other
-     * repository source providers, such as Bitbucket and GitHub Enterprise Server,
-     * this is name of the account that was used to associate the repository. </p>
+     * <p>List of owners to use as a filter. For Amazon Web Services CodeCommit, it is
+     * the name of the CodeCommit account that was used to associate the repository.
+     * For other repository source providers, such as Bitbucket and GitHub Enterprise
+     * Server, this is name of the account that was used to associate the repository.
+     * </p>
      */
     inline ListRepositoryAssociationsRequest& AddOwners(const char* value) { m_ownersHasBeenSet = true; m_owners.push_back(value); return *this; }
 

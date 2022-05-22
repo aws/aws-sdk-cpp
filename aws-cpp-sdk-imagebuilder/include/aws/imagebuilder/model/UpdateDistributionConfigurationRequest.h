@@ -37,172 +37,172 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the distribution configuration that you
-     * want to update. </p>
+     * want to update.</p>
      */
     inline const Aws::String& GetDistributionConfigurationArn() const{ return m_distributionConfigurationArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the distribution configuration that you
-     * want to update. </p>
+     * want to update.</p>
      */
     inline bool DistributionConfigurationArnHasBeenSet() const { return m_distributionConfigurationArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the distribution configuration that you
-     * want to update. </p>
+     * want to update.</p>
      */
     inline void SetDistributionConfigurationArn(const Aws::String& value) { m_distributionConfigurationArnHasBeenSet = true; m_distributionConfigurationArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the distribution configuration that you
-     * want to update. </p>
+     * want to update.</p>
      */
     inline void SetDistributionConfigurationArn(Aws::String&& value) { m_distributionConfigurationArnHasBeenSet = true; m_distributionConfigurationArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the distribution configuration that you
-     * want to update. </p>
+     * want to update.</p>
      */
     inline void SetDistributionConfigurationArn(const char* value) { m_distributionConfigurationArnHasBeenSet = true; m_distributionConfigurationArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the distribution configuration that you
-     * want to update. </p>
+     * want to update.</p>
      */
     inline UpdateDistributionConfigurationRequest& WithDistributionConfigurationArn(const Aws::String& value) { SetDistributionConfigurationArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the distribution configuration that you
-     * want to update. </p>
+     * want to update.</p>
      */
     inline UpdateDistributionConfigurationRequest& WithDistributionConfigurationArn(Aws::String&& value) { SetDistributionConfigurationArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the distribution configuration that you
-     * want to update. </p>
+     * want to update.</p>
      */
     inline UpdateDistributionConfigurationRequest& WithDistributionConfigurationArn(const char* value) { SetDistributionConfigurationArn(value); return *this;}
 
 
     /**
-     * <p>The description of the distribution configuration. </p>
+     * <p>The description of the distribution configuration.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The description of the distribution configuration. </p>
+     * <p>The description of the distribution configuration.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>The description of the distribution configuration. </p>
+     * <p>The description of the distribution configuration.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The description of the distribution configuration. </p>
+     * <p>The description of the distribution configuration.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The description of the distribution configuration. </p>
+     * <p>The description of the distribution configuration.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The description of the distribution configuration. </p>
+     * <p>The description of the distribution configuration.</p>
      */
     inline UpdateDistributionConfigurationRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The description of the distribution configuration. </p>
+     * <p>The description of the distribution configuration.</p>
      */
     inline UpdateDistributionConfigurationRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The description of the distribution configuration. </p>
+     * <p>The description of the distribution configuration.</p>
      */
     inline UpdateDistributionConfigurationRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * <p>The distributions of the distribution configuration. </p>
+     * <p>The distributions of the distribution configuration.</p>
      */
     inline const Aws::Vector<Distribution>& GetDistributions() const{ return m_distributions; }
 
     /**
-     * <p>The distributions of the distribution configuration. </p>
+     * <p>The distributions of the distribution configuration.</p>
      */
     inline bool DistributionsHasBeenSet() const { return m_distributionsHasBeenSet; }
 
     /**
-     * <p>The distributions of the distribution configuration. </p>
+     * <p>The distributions of the distribution configuration.</p>
      */
     inline void SetDistributions(const Aws::Vector<Distribution>& value) { m_distributionsHasBeenSet = true; m_distributions = value; }
 
     /**
-     * <p>The distributions of the distribution configuration. </p>
+     * <p>The distributions of the distribution configuration.</p>
      */
     inline void SetDistributions(Aws::Vector<Distribution>&& value) { m_distributionsHasBeenSet = true; m_distributions = std::move(value); }
 
     /**
-     * <p>The distributions of the distribution configuration. </p>
+     * <p>The distributions of the distribution configuration.</p>
      */
     inline UpdateDistributionConfigurationRequest& WithDistributions(const Aws::Vector<Distribution>& value) { SetDistributions(value); return *this;}
 
     /**
-     * <p>The distributions of the distribution configuration. </p>
+     * <p>The distributions of the distribution configuration.</p>
      */
     inline UpdateDistributionConfigurationRequest& WithDistributions(Aws::Vector<Distribution>&& value) { SetDistributions(std::move(value)); return *this;}
 
     /**
-     * <p>The distributions of the distribution configuration. </p>
+     * <p>The distributions of the distribution configuration.</p>
      */
     inline UpdateDistributionConfigurationRequest& AddDistributions(const Distribution& value) { m_distributionsHasBeenSet = true; m_distributions.push_back(value); return *this; }
 
     /**
-     * <p>The distributions of the distribution configuration. </p>
+     * <p>The distributions of the distribution configuration.</p>
      */
     inline UpdateDistributionConfigurationRequest& AddDistributions(Distribution&& value) { m_distributionsHasBeenSet = true; m_distributions.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The idempotency token of the distribution configuration. </p>
+     * <p>The idempotency token of the distribution configuration.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>The idempotency token of the distribution configuration. </p>
+     * <p>The idempotency token of the distribution configuration.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
-     * <p>The idempotency token of the distribution configuration. </p>
+     * <p>The idempotency token of the distribution configuration.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>The idempotency token of the distribution configuration. </p>
+     * <p>The idempotency token of the distribution configuration.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>The idempotency token of the distribution configuration. </p>
+     * <p>The idempotency token of the distribution configuration.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>The idempotency token of the distribution configuration. </p>
+     * <p>The idempotency token of the distribution configuration.</p>
      */
     inline UpdateDistributionConfigurationRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>The idempotency token of the distribution configuration. </p>
+     * <p>The idempotency token of the distribution configuration.</p>
      */
     inline UpdateDistributionConfigurationRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>The idempotency token of the distribution configuration. </p>
+     * <p>The idempotency token of the distribution configuration.</p>
      */
     inline UpdateDistributionConfigurationRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 

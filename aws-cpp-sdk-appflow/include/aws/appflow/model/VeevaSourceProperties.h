@@ -78,10 +78,130 @@ namespace Model
      */
     inline VeevaSourceProperties& WithObject(const char* value) { SetObject(value); return *this;}
 
+
+    /**
+     * <p>The document type specified in the Veeva document extract flow.</p>
+     */
+    inline const Aws::String& GetDocumentType() const{ return m_documentType; }
+
+    /**
+     * <p>The document type specified in the Veeva document extract flow.</p>
+     */
+    inline bool DocumentTypeHasBeenSet() const { return m_documentTypeHasBeenSet; }
+
+    /**
+     * <p>The document type specified in the Veeva document extract flow.</p>
+     */
+    inline void SetDocumentType(const Aws::String& value) { m_documentTypeHasBeenSet = true; m_documentType = value; }
+
+    /**
+     * <p>The document type specified in the Veeva document extract flow.</p>
+     */
+    inline void SetDocumentType(Aws::String&& value) { m_documentTypeHasBeenSet = true; m_documentType = std::move(value); }
+
+    /**
+     * <p>The document type specified in the Veeva document extract flow.</p>
+     */
+    inline void SetDocumentType(const char* value) { m_documentTypeHasBeenSet = true; m_documentType.assign(value); }
+
+    /**
+     * <p>The document type specified in the Veeva document extract flow.</p>
+     */
+    inline VeevaSourceProperties& WithDocumentType(const Aws::String& value) { SetDocumentType(value); return *this;}
+
+    /**
+     * <p>The document type specified in the Veeva document extract flow.</p>
+     */
+    inline VeevaSourceProperties& WithDocumentType(Aws::String&& value) { SetDocumentType(std::move(value)); return *this;}
+
+    /**
+     * <p>The document type specified in the Veeva document extract flow.</p>
+     */
+    inline VeevaSourceProperties& WithDocumentType(const char* value) { SetDocumentType(value); return *this;}
+
+
+    /**
+     * <p>Boolean value to include source files in Veeva document extract flow.</p>
+     */
+    inline bool GetIncludeSourceFiles() const{ return m_includeSourceFiles; }
+
+    /**
+     * <p>Boolean value to include source files in Veeva document extract flow.</p>
+     */
+    inline bool IncludeSourceFilesHasBeenSet() const { return m_includeSourceFilesHasBeenSet; }
+
+    /**
+     * <p>Boolean value to include source files in Veeva document extract flow.</p>
+     */
+    inline void SetIncludeSourceFiles(bool value) { m_includeSourceFilesHasBeenSet = true; m_includeSourceFiles = value; }
+
+    /**
+     * <p>Boolean value to include source files in Veeva document extract flow.</p>
+     */
+    inline VeevaSourceProperties& WithIncludeSourceFiles(bool value) { SetIncludeSourceFiles(value); return *this;}
+
+
+    /**
+     * <p>Boolean value to include file renditions in Veeva document extract flow.</p>
+     */
+    inline bool GetIncludeRenditions() const{ return m_includeRenditions; }
+
+    /**
+     * <p>Boolean value to include file renditions in Veeva document extract flow.</p>
+     */
+    inline bool IncludeRenditionsHasBeenSet() const { return m_includeRenditionsHasBeenSet; }
+
+    /**
+     * <p>Boolean value to include file renditions in Veeva document extract flow.</p>
+     */
+    inline void SetIncludeRenditions(bool value) { m_includeRenditionsHasBeenSet = true; m_includeRenditions = value; }
+
+    /**
+     * <p>Boolean value to include file renditions in Veeva document extract flow.</p>
+     */
+    inline VeevaSourceProperties& WithIncludeRenditions(bool value) { SetIncludeRenditions(value); return *this;}
+
+
+    /**
+     * <p>Boolean value to include All Versions of files in Veeva document extract
+     * flow.</p>
+     */
+    inline bool GetIncludeAllVersions() const{ return m_includeAllVersions; }
+
+    /**
+     * <p>Boolean value to include All Versions of files in Veeva document extract
+     * flow.</p>
+     */
+    inline bool IncludeAllVersionsHasBeenSet() const { return m_includeAllVersionsHasBeenSet; }
+
+    /**
+     * <p>Boolean value to include All Versions of files in Veeva document extract
+     * flow.</p>
+     */
+    inline void SetIncludeAllVersions(bool value) { m_includeAllVersionsHasBeenSet = true; m_includeAllVersions = value; }
+
+    /**
+     * <p>Boolean value to include All Versions of files in Veeva document extract
+     * flow.</p>
+     */
+    inline VeevaSourceProperties& WithIncludeAllVersions(bool value) { SetIncludeAllVersions(value); return *this;}
+
   private:
 
     Aws::String m_object;
     bool m_objectHasBeenSet;
+
+    Aws::String m_documentType;
+    bool m_documentTypeHasBeenSet;
+
+    bool m_includeSourceFiles;
+    bool m_includeSourceFilesHasBeenSet;
+
+    bool m_includeRenditions;
+    bool m_includeRenditionsHasBeenSet;
+
+    bool m_includeAllVersions;
+    bool m_includeAllVersionsHasBeenSet;
   };
 
 } // namespace Model

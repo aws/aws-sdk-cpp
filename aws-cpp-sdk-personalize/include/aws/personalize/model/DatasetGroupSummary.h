@@ -7,6 +7,7 @@
 #include <aws/personalize/Personalize_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/personalize/model/Domain.h>
 #include <utility>
 
 namespace Aws
@@ -26,7 +27,9 @@ namespace Model
 
   /**
    * <p>Provides a summary of the properties of a dataset group. For a complete
-   * listing, call the <a>DescribeDatasetGroup</a> API.</p><p><h3>See Also:</h3>   <a
+   * listing, call the <a
+   * href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetGroup.html">DescribeDatasetGroup</a>
+   * API.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DatasetGroupSummary">AWS
    * API Reference</a></p>
    */
@@ -280,6 +283,37 @@ namespace Model
      */
     inline DatasetGroupSummary& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
 
+
+    /**
+     * <p>The domain of a Domain dataset group.</p>
+     */
+    inline const Domain& GetDomain() const{ return m_domain; }
+
+    /**
+     * <p>The domain of a Domain dataset group.</p>
+     */
+    inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
+
+    /**
+     * <p>The domain of a Domain dataset group.</p>
+     */
+    inline void SetDomain(const Domain& value) { m_domainHasBeenSet = true; m_domain = value; }
+
+    /**
+     * <p>The domain of a Domain dataset group.</p>
+     */
+    inline void SetDomain(Domain&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
+
+    /**
+     * <p>The domain of a Domain dataset group.</p>
+     */
+    inline DatasetGroupSummary& WithDomain(const Domain& value) { SetDomain(value); return *this;}
+
+    /**
+     * <p>The domain of a Domain dataset group.</p>
+     */
+    inline DatasetGroupSummary& WithDomain(Domain&& value) { SetDomain(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -299,6 +333,9 @@ namespace Model
 
     Aws::String m_failureReason;
     bool m_failureReasonHasBeenSet;
+
+    Domain m_domain;
+    bool m_domainHasBeenSet;
   };
 
 } // namespace Model

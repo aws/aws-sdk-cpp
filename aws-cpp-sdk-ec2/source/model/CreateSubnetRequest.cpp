@@ -19,7 +19,9 @@ CreateSubnetRequest::CreateSubnetRequest() :
     m_outpostArnHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_dryRun(false),
-    m_dryRunHasBeenSet(false)
+    m_dryRunHasBeenSet(false),
+    m_ipv6Native(false),
+    m_ipv6NativeHasBeenSet(false)
 {
 }
 
@@ -70,6 +72,11 @@ Aws::String CreateSubnetRequest::SerializePayload() const
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+  }
+
+  if(m_ipv6NativeHasBeenSet)
+  {
+    ss << "Ipv6Native=" << std::boolalpha << m_ipv6Native << "&";
   }
 
   ss << "Version=2016-11-15";

@@ -23,7 +23,13 @@ Site::Site() :
     m_accountIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_siteArnHasBeenSet(false),
+    m_notesHasBeenSet(false),
+    m_operatingAddressCountryCodeHasBeenSet(false),
+    m_operatingAddressStateOrRegionHasBeenSet(false),
+    m_operatingAddressCityHasBeenSet(false),
+    m_rackPhysicalPropertiesHasBeenSet(false)
 {
 }
 
@@ -32,7 +38,13 @@ Site::Site(JsonView jsonValue) :
     m_accountIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_siteArnHasBeenSet(false),
+    m_notesHasBeenSet(false),
+    m_operatingAddressCountryCodeHasBeenSet(false),
+    m_operatingAddressStateOrRegionHasBeenSet(false),
+    m_operatingAddressCityHasBeenSet(false),
+    m_rackPhysicalPropertiesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -77,6 +89,48 @@ Site& Site::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SiteArn"))
+  {
+    m_siteArn = jsonValue.GetString("SiteArn");
+
+    m_siteArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Notes"))
+  {
+    m_notes = jsonValue.GetString("Notes");
+
+    m_notesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("OperatingAddressCountryCode"))
+  {
+    m_operatingAddressCountryCode = jsonValue.GetString("OperatingAddressCountryCode");
+
+    m_operatingAddressCountryCodeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("OperatingAddressStateOrRegion"))
+  {
+    m_operatingAddressStateOrRegion = jsonValue.GetString("OperatingAddressStateOrRegion");
+
+    m_operatingAddressStateOrRegionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("OperatingAddressCity"))
+  {
+    m_operatingAddressCity = jsonValue.GetString("OperatingAddressCity");
+
+    m_operatingAddressCityHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RackPhysicalProperties"))
+  {
+    m_rackPhysicalProperties = jsonValue.GetObject("RackPhysicalProperties");
+
+    m_rackPhysicalPropertiesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -116,6 +170,42 @@ JsonValue Site::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("Tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_siteArnHasBeenSet)
+  {
+   payload.WithString("SiteArn", m_siteArn);
+
+  }
+
+  if(m_notesHasBeenSet)
+  {
+   payload.WithString("Notes", m_notes);
+
+  }
+
+  if(m_operatingAddressCountryCodeHasBeenSet)
+  {
+   payload.WithString("OperatingAddressCountryCode", m_operatingAddressCountryCode);
+
+  }
+
+  if(m_operatingAddressStateOrRegionHasBeenSet)
+  {
+   payload.WithString("OperatingAddressStateOrRegion", m_operatingAddressStateOrRegion);
+
+  }
+
+  if(m_operatingAddressCityHasBeenSet)
+  {
+   payload.WithString("OperatingAddressCity", m_operatingAddressCity);
+
+  }
+
+  if(m_rackPhysicalPropertiesHasBeenSet)
+  {
+   payload.WithObject("RackPhysicalProperties", m_rackPhysicalProperties.Jsonize());
 
   }
 

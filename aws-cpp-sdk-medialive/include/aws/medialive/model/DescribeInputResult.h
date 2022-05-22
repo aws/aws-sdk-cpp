@@ -307,10 +307,51 @@ SINGLE_PIPELINE - You can
 
 
     /**
+     * A list of IDs for all Inputs which are partners of this one.
+     */
+    inline const Aws::Vector<Aws::String>& GetInputPartnerIds() const{ return m_inputPartnerIds; }
+
+    /**
+     * A list of IDs for all Inputs which are partners of this one.
+     */
+    inline void SetInputPartnerIds(const Aws::Vector<Aws::String>& value) { m_inputPartnerIds = value; }
+
+    /**
+     * A list of IDs for all Inputs which are partners of this one.
+     */
+    inline void SetInputPartnerIds(Aws::Vector<Aws::String>&& value) { m_inputPartnerIds = std::move(value); }
+
+    /**
+     * A list of IDs for all Inputs which are partners of this one.
+     */
+    inline DescribeInputResult& WithInputPartnerIds(const Aws::Vector<Aws::String>& value) { SetInputPartnerIds(value); return *this;}
+
+    /**
+     * A list of IDs for all Inputs which are partners of this one.
+     */
+    inline DescribeInputResult& WithInputPartnerIds(Aws::Vector<Aws::String>&& value) { SetInputPartnerIds(std::move(value)); return *this;}
+
+    /**
+     * A list of IDs for all Inputs which are partners of this one.
+     */
+    inline DescribeInputResult& AddInputPartnerIds(const Aws::String& value) { m_inputPartnerIds.push_back(value); return *this; }
+
+    /**
+     * A list of IDs for all Inputs which are partners of this one.
+     */
+    inline DescribeInputResult& AddInputPartnerIds(Aws::String&& value) { m_inputPartnerIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * A list of IDs for all Inputs which are partners of this one.
+     */
+    inline DescribeInputResult& AddInputPartnerIds(const char* value) { m_inputPartnerIds.push_back(value); return *this; }
+
+
+    /**
      * Certain pull input sources can be dynamic, meaning that they can have their
      * URL's dynamically changes
 during input switch actions. Presently, this
-     * functionality only works with MP4_FILE inputs.
+     * functionality only works with MP4_FILE and TS_FILE inputs.
 
      */
     inline const InputSourceType& GetInputSourceType() const{ return m_inputSourceType; }
@@ -319,7 +360,7 @@ during input switch actions. Presently, this
      * Certain pull input sources can be dynamic, meaning that they can have their
      * URL's dynamically changes
 during input switch actions. Presently, this
-     * functionality only works with MP4_FILE inputs.
+     * functionality only works with MP4_FILE and TS_FILE inputs.
 
      */
     inline void SetInputSourceType(const InputSourceType& value) { m_inputSourceType = value; }
@@ -328,7 +369,7 @@ during input switch actions. Presently, this
      * Certain pull input sources can be dynamic, meaning that they can have their
      * URL's dynamically changes
 during input switch actions. Presently, this
-     * functionality only works with MP4_FILE inputs.
+     * functionality only works with MP4_FILE and TS_FILE inputs.
 
      */
     inline void SetInputSourceType(InputSourceType&& value) { m_inputSourceType = std::move(value); }
@@ -337,7 +378,7 @@ during input switch actions. Presently, this
      * Certain pull input sources can be dynamic, meaning that they can have their
      * URL's dynamically changes
 during input switch actions. Presently, this
-     * functionality only works with MP4_FILE inputs.
+     * functionality only works with MP4_FILE and TS_FILE inputs.
 
      */
     inline DescribeInputResult& WithInputSourceType(const InputSourceType& value) { SetInputSourceType(value); return *this;}
@@ -346,7 +387,7 @@ during input switch actions. Presently, this
      * Certain pull input sources can be dynamic, meaning that they can have their
      * URL's dynamically changes
 during input switch actions. Presently, this
-     * functionality only works with MP4_FILE inputs.
+     * functionality only works with MP4_FILE and TS_FILE inputs.
 
      */
     inline DescribeInputResult& WithInputSourceType(InputSourceType&& value) { SetInputSourceType(std::move(value)); return *this;}
@@ -649,6 +690,8 @@ during input switch actions. Presently, this
     InputClass m_inputClass;
 
     Aws::Vector<InputDeviceSettings> m_inputDevices;
+
+    Aws::Vector<Aws::String> m_inputPartnerIds;
 
     InputSourceType m_inputSourceType;
 

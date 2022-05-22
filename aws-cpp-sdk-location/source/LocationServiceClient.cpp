@@ -21,22 +21,28 @@
 #include <aws/location/LocationServiceEndpoint.h>
 #include <aws/location/LocationServiceErrorMarshaller.h>
 #include <aws/location/model/AssociateTrackerConsumerRequest.h>
+#include <aws/location/model/BatchDeleteDevicePositionHistoryRequest.h>
 #include <aws/location/model/BatchDeleteGeofenceRequest.h>
 #include <aws/location/model/BatchEvaluateGeofencesRequest.h>
 #include <aws/location/model/BatchGetDevicePositionRequest.h>
 #include <aws/location/model/BatchPutGeofenceRequest.h>
 #include <aws/location/model/BatchUpdateDevicePositionRequest.h>
+#include <aws/location/model/CalculateRouteRequest.h>
+#include <aws/location/model/CalculateRouteMatrixRequest.h>
 #include <aws/location/model/CreateGeofenceCollectionRequest.h>
 #include <aws/location/model/CreateMapRequest.h>
 #include <aws/location/model/CreatePlaceIndexRequest.h>
+#include <aws/location/model/CreateRouteCalculatorRequest.h>
 #include <aws/location/model/CreateTrackerRequest.h>
 #include <aws/location/model/DeleteGeofenceCollectionRequest.h>
 #include <aws/location/model/DeleteMapRequest.h>
 #include <aws/location/model/DeletePlaceIndexRequest.h>
+#include <aws/location/model/DeleteRouteCalculatorRequest.h>
 #include <aws/location/model/DeleteTrackerRequest.h>
 #include <aws/location/model/DescribeGeofenceCollectionRequest.h>
 #include <aws/location/model/DescribeMapRequest.h>
 #include <aws/location/model/DescribePlaceIndexRequest.h>
+#include <aws/location/model/DescribeRouteCalculatorRequest.h>
 #include <aws/location/model/DescribeTrackerRequest.h>
 #include <aws/location/model/DisassociateTrackerConsumerRequest.h>
 #include <aws/location/model/GetDevicePositionRequest.h>
@@ -46,15 +52,26 @@
 #include <aws/location/model/GetMapSpritesRequest.h>
 #include <aws/location/model/GetMapStyleDescriptorRequest.h>
 #include <aws/location/model/GetMapTileRequest.h>
+#include <aws/location/model/ListDevicePositionsRequest.h>
 #include <aws/location/model/ListGeofenceCollectionsRequest.h>
 #include <aws/location/model/ListGeofencesRequest.h>
 #include <aws/location/model/ListMapsRequest.h>
 #include <aws/location/model/ListPlaceIndexesRequest.h>
+#include <aws/location/model/ListRouteCalculatorsRequest.h>
+#include <aws/location/model/ListTagsForResourceRequest.h>
 #include <aws/location/model/ListTrackerConsumersRequest.h>
 #include <aws/location/model/ListTrackersRequest.h>
 #include <aws/location/model/PutGeofenceRequest.h>
 #include <aws/location/model/SearchPlaceIndexForPositionRequest.h>
+#include <aws/location/model/SearchPlaceIndexForSuggestionsRequest.h>
 #include <aws/location/model/SearchPlaceIndexForTextRequest.h>
+#include <aws/location/model/TagResourceRequest.h>
+#include <aws/location/model/UntagResourceRequest.h>
+#include <aws/location/model/UpdateGeofenceCollectionRequest.h>
+#include <aws/location/model/UpdateMapRequest.h>
+#include <aws/location/model/UpdatePlaceIndexRequest.h>
+#include <aws/location/model/UpdateRouteCalculatorRequest.h>
+#include <aws/location/model/UpdateTrackerRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -103,7 +120,7 @@ LocationServiceClient::~LocationServiceClient()
 {
 }
 
-void LocationServiceClient::init(const ClientConfiguration& config)
+void LocationServiceClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Location");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -155,11 +172,9 @@ AssociateTrackerConsumerOutcome LocationServiceClient::AssociateTrackerConsumer(
       return AssociateTrackerConsumerOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/tracking/v0/trackers/";
-  ss << request.GetTrackerName();
-  ss << "/consumers";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tracking/v0/trackers/");
+  uri.AddPathSegment(request.GetTrackerName());
+  uri.AddPathSegments("/consumers");
   return AssociateTrackerConsumerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -181,6 +196,47 @@ void LocationServiceClient::AssociateTrackerConsumerAsyncHelper(const AssociateT
   handler(this, request, AssociateTrackerConsumer(request), context);
 }
 
+BatchDeleteDevicePositionHistoryOutcome LocationServiceClient::BatchDeleteDevicePositionHistory(const BatchDeleteDevicePositionHistoryRequest& request) const
+{
+  if (!request.TrackerNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("BatchDeleteDevicePositionHistory", "Required field: TrackerName, is not set");
+    return BatchDeleteDevicePositionHistoryOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TrackerName]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("tracking." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("BatchDeleteDevicePositionHistory", "Invalid DNS host: " << uri.GetAuthority());
+      return BatchDeleteDevicePositionHistoryOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/tracking/v0/trackers/");
+  uri.AddPathSegment(request.GetTrackerName());
+  uri.AddPathSegments("/delete-positions");
+  return BatchDeleteDevicePositionHistoryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+BatchDeleteDevicePositionHistoryOutcomeCallable LocationServiceClient::BatchDeleteDevicePositionHistoryCallable(const BatchDeleteDevicePositionHistoryRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchDeleteDevicePositionHistoryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchDeleteDevicePositionHistory(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LocationServiceClient::BatchDeleteDevicePositionHistoryAsync(const BatchDeleteDevicePositionHistoryRequest& request, const BatchDeleteDevicePositionHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->BatchDeleteDevicePositionHistoryAsyncHelper( request, handler, context ); } );
+}
+
+void LocationServiceClient::BatchDeleteDevicePositionHistoryAsyncHelper(const BatchDeleteDevicePositionHistoryRequest& request, const BatchDeleteDevicePositionHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, BatchDeleteDevicePositionHistory(request), context);
+}
+
 BatchDeleteGeofenceOutcome LocationServiceClient::BatchDeleteGeofence(const BatchDeleteGeofenceRequest& request) const
 {
   if (!request.CollectionNameHasBeenSet())
@@ -198,11 +254,9 @@ BatchDeleteGeofenceOutcome LocationServiceClient::BatchDeleteGeofence(const Batc
       return BatchDeleteGeofenceOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/geofencing/v0/collections/";
-  ss << request.GetCollectionName();
-  ss << "/delete-geofences";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/geofencing/v0/collections/");
+  uri.AddPathSegment(request.GetCollectionName());
+  uri.AddPathSegments("/delete-geofences");
   return BatchDeleteGeofenceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -241,11 +295,9 @@ BatchEvaluateGeofencesOutcome LocationServiceClient::BatchEvaluateGeofences(cons
       return BatchEvaluateGeofencesOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/geofencing/v0/collections/";
-  ss << request.GetCollectionName();
-  ss << "/positions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/geofencing/v0/collections/");
+  uri.AddPathSegment(request.GetCollectionName());
+  uri.AddPathSegments("/positions");
   return BatchEvaluateGeofencesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -284,11 +336,9 @@ BatchGetDevicePositionOutcome LocationServiceClient::BatchGetDevicePosition(cons
       return BatchGetDevicePositionOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/tracking/v0/trackers/";
-  ss << request.GetTrackerName();
-  ss << "/get-positions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tracking/v0/trackers/");
+  uri.AddPathSegment(request.GetTrackerName());
+  uri.AddPathSegments("/get-positions");
   return BatchGetDevicePositionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -327,11 +377,9 @@ BatchPutGeofenceOutcome LocationServiceClient::BatchPutGeofence(const BatchPutGe
       return BatchPutGeofenceOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/geofencing/v0/collections/";
-  ss << request.GetCollectionName();
-  ss << "/put-geofences";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/geofencing/v0/collections/");
+  uri.AddPathSegment(request.GetCollectionName());
+  uri.AddPathSegments("/put-geofences");
   return BatchPutGeofenceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -370,11 +418,9 @@ BatchUpdateDevicePositionOutcome LocationServiceClient::BatchUpdateDevicePositio
       return BatchUpdateDevicePositionOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/tracking/v0/trackers/";
-  ss << request.GetTrackerName();
-  ss << "/positions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tracking/v0/trackers/");
+  uri.AddPathSegment(request.GetTrackerName());
+  uri.AddPathSegments("/positions");
   return BatchUpdateDevicePositionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -396,6 +442,88 @@ void LocationServiceClient::BatchUpdateDevicePositionAsyncHelper(const BatchUpda
   handler(this, request, BatchUpdateDevicePosition(request), context);
 }
 
+CalculateRouteOutcome LocationServiceClient::CalculateRoute(const CalculateRouteRequest& request) const
+{
+  if (!request.CalculatorNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CalculateRoute", "Required field: CalculatorName, is not set");
+    return CalculateRouteOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CalculatorName]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("routes." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("CalculateRoute", "Invalid DNS host: " << uri.GetAuthority());
+      return CalculateRouteOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/routes/v0/calculators/");
+  uri.AddPathSegment(request.GetCalculatorName());
+  uri.AddPathSegments("/calculate/route");
+  return CalculateRouteOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CalculateRouteOutcomeCallable LocationServiceClient::CalculateRouteCallable(const CalculateRouteRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CalculateRouteOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CalculateRoute(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LocationServiceClient::CalculateRouteAsync(const CalculateRouteRequest& request, const CalculateRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CalculateRouteAsyncHelper( request, handler, context ); } );
+}
+
+void LocationServiceClient::CalculateRouteAsyncHelper(const CalculateRouteRequest& request, const CalculateRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CalculateRoute(request), context);
+}
+
+CalculateRouteMatrixOutcome LocationServiceClient::CalculateRouteMatrix(const CalculateRouteMatrixRequest& request) const
+{
+  if (!request.CalculatorNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CalculateRouteMatrix", "Required field: CalculatorName, is not set");
+    return CalculateRouteMatrixOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CalculatorName]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("routes." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("CalculateRouteMatrix", "Invalid DNS host: " << uri.GetAuthority());
+      return CalculateRouteMatrixOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/routes/v0/calculators/");
+  uri.AddPathSegment(request.GetCalculatorName());
+  uri.AddPathSegments("/calculate/route-matrix");
+  return CalculateRouteMatrixOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CalculateRouteMatrixOutcomeCallable LocationServiceClient::CalculateRouteMatrixCallable(const CalculateRouteMatrixRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CalculateRouteMatrixOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CalculateRouteMatrix(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LocationServiceClient::CalculateRouteMatrixAsync(const CalculateRouteMatrixRequest& request, const CalculateRouteMatrixResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CalculateRouteMatrixAsyncHelper( request, handler, context ); } );
+}
+
+void LocationServiceClient::CalculateRouteMatrixAsyncHelper(const CalculateRouteMatrixRequest& request, const CalculateRouteMatrixResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CalculateRouteMatrix(request), context);
+}
+
 CreateGeofenceCollectionOutcome LocationServiceClient::CreateGeofenceCollection(const CreateGeofenceCollectionRequest& request) const
 {
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
@@ -408,9 +536,7 @@ CreateGeofenceCollectionOutcome LocationServiceClient::CreateGeofenceCollection(
       return CreateGeofenceCollectionOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/geofencing/v0/collections";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/geofencing/v0/collections");
   return CreateGeofenceCollectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -444,9 +570,7 @@ CreateMapOutcome LocationServiceClient::CreateMap(const CreateMapRequest& reques
       return CreateMapOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/maps/v0/maps";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/maps/v0/maps");
   return CreateMapOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -480,9 +604,7 @@ CreatePlaceIndexOutcome LocationServiceClient::CreatePlaceIndex(const CreatePlac
       return CreatePlaceIndexOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/places/v0/indexes";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/places/v0/indexes");
   return CreatePlaceIndexOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -504,6 +626,40 @@ void LocationServiceClient::CreatePlaceIndexAsyncHelper(const CreatePlaceIndexRe
   handler(this, request, CreatePlaceIndex(request), context);
 }
 
+CreateRouteCalculatorOutcome LocationServiceClient::CreateRouteCalculator(const CreateRouteCalculatorRequest& request) const
+{
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("routes." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("CreateRouteCalculator", "Invalid DNS host: " << uri.GetAuthority());
+      return CreateRouteCalculatorOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/routes/v0/calculators");
+  return CreateRouteCalculatorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateRouteCalculatorOutcomeCallable LocationServiceClient::CreateRouteCalculatorCallable(const CreateRouteCalculatorRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateRouteCalculatorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateRouteCalculator(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LocationServiceClient::CreateRouteCalculatorAsync(const CreateRouteCalculatorRequest& request, const CreateRouteCalculatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateRouteCalculatorAsyncHelper( request, handler, context ); } );
+}
+
+void LocationServiceClient::CreateRouteCalculatorAsyncHelper(const CreateRouteCalculatorRequest& request, const CreateRouteCalculatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateRouteCalculator(request), context);
+}
+
 CreateTrackerOutcome LocationServiceClient::CreateTracker(const CreateTrackerRequest& request) const
 {
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
@@ -516,9 +672,7 @@ CreateTrackerOutcome LocationServiceClient::CreateTracker(const CreateTrackerReq
       return CreateTrackerOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/tracking/v0/trackers";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tracking/v0/trackers");
   return CreateTrackerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -557,10 +711,8 @@ DeleteGeofenceCollectionOutcome LocationServiceClient::DeleteGeofenceCollection(
       return DeleteGeofenceCollectionOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/geofencing/v0/collections/";
-  ss << request.GetCollectionName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/geofencing/v0/collections/");
+  uri.AddPathSegment(request.GetCollectionName());
   return DeleteGeofenceCollectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -599,10 +751,8 @@ DeleteMapOutcome LocationServiceClient::DeleteMap(const DeleteMapRequest& reques
       return DeleteMapOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/maps/v0/maps/";
-  ss << request.GetMapName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/maps/v0/maps/");
+  uri.AddPathSegment(request.GetMapName());
   return DeleteMapOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -641,10 +791,8 @@ DeletePlaceIndexOutcome LocationServiceClient::DeletePlaceIndex(const DeletePlac
       return DeletePlaceIndexOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/places/v0/indexes/";
-  ss << request.GetIndexName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/places/v0/indexes/");
+  uri.AddPathSegment(request.GetIndexName());
   return DeletePlaceIndexOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -666,6 +814,46 @@ void LocationServiceClient::DeletePlaceIndexAsyncHelper(const DeletePlaceIndexRe
   handler(this, request, DeletePlaceIndex(request), context);
 }
 
+DeleteRouteCalculatorOutcome LocationServiceClient::DeleteRouteCalculator(const DeleteRouteCalculatorRequest& request) const
+{
+  if (!request.CalculatorNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteRouteCalculator", "Required field: CalculatorName, is not set");
+    return DeleteRouteCalculatorOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CalculatorName]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("routes." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("DeleteRouteCalculator", "Invalid DNS host: " << uri.GetAuthority());
+      return DeleteRouteCalculatorOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/routes/v0/calculators/");
+  uri.AddPathSegment(request.GetCalculatorName());
+  return DeleteRouteCalculatorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteRouteCalculatorOutcomeCallable LocationServiceClient::DeleteRouteCalculatorCallable(const DeleteRouteCalculatorRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteRouteCalculatorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteRouteCalculator(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LocationServiceClient::DeleteRouteCalculatorAsync(const DeleteRouteCalculatorRequest& request, const DeleteRouteCalculatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteRouteCalculatorAsyncHelper( request, handler, context ); } );
+}
+
+void LocationServiceClient::DeleteRouteCalculatorAsyncHelper(const DeleteRouteCalculatorRequest& request, const DeleteRouteCalculatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteRouteCalculator(request), context);
+}
+
 DeleteTrackerOutcome LocationServiceClient::DeleteTracker(const DeleteTrackerRequest& request) const
 {
   if (!request.TrackerNameHasBeenSet())
@@ -683,10 +871,8 @@ DeleteTrackerOutcome LocationServiceClient::DeleteTracker(const DeleteTrackerReq
       return DeleteTrackerOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/tracking/v0/trackers/";
-  ss << request.GetTrackerName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tracking/v0/trackers/");
+  uri.AddPathSegment(request.GetTrackerName());
   return DeleteTrackerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -725,10 +911,8 @@ DescribeGeofenceCollectionOutcome LocationServiceClient::DescribeGeofenceCollect
       return DescribeGeofenceCollectionOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/geofencing/v0/collections/";
-  ss << request.GetCollectionName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/geofencing/v0/collections/");
+  uri.AddPathSegment(request.GetCollectionName());
   return DescribeGeofenceCollectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -767,10 +951,8 @@ DescribeMapOutcome LocationServiceClient::DescribeMap(const DescribeMapRequest& 
       return DescribeMapOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/maps/v0/maps/";
-  ss << request.GetMapName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/maps/v0/maps/");
+  uri.AddPathSegment(request.GetMapName());
   return DescribeMapOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -809,10 +991,8 @@ DescribePlaceIndexOutcome LocationServiceClient::DescribePlaceIndex(const Descri
       return DescribePlaceIndexOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/places/v0/indexes/";
-  ss << request.GetIndexName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/places/v0/indexes/");
+  uri.AddPathSegment(request.GetIndexName());
   return DescribePlaceIndexOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -834,6 +1014,46 @@ void LocationServiceClient::DescribePlaceIndexAsyncHelper(const DescribePlaceInd
   handler(this, request, DescribePlaceIndex(request), context);
 }
 
+DescribeRouteCalculatorOutcome LocationServiceClient::DescribeRouteCalculator(const DescribeRouteCalculatorRequest& request) const
+{
+  if (!request.CalculatorNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeRouteCalculator", "Required field: CalculatorName, is not set");
+    return DescribeRouteCalculatorOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CalculatorName]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("routes." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("DescribeRouteCalculator", "Invalid DNS host: " << uri.GetAuthority());
+      return DescribeRouteCalculatorOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/routes/v0/calculators/");
+  uri.AddPathSegment(request.GetCalculatorName());
+  return DescribeRouteCalculatorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeRouteCalculatorOutcomeCallable LocationServiceClient::DescribeRouteCalculatorCallable(const DescribeRouteCalculatorRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeRouteCalculatorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeRouteCalculator(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LocationServiceClient::DescribeRouteCalculatorAsync(const DescribeRouteCalculatorRequest& request, const DescribeRouteCalculatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeRouteCalculatorAsyncHelper( request, handler, context ); } );
+}
+
+void LocationServiceClient::DescribeRouteCalculatorAsyncHelper(const DescribeRouteCalculatorRequest& request, const DescribeRouteCalculatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeRouteCalculator(request), context);
+}
+
 DescribeTrackerOutcome LocationServiceClient::DescribeTracker(const DescribeTrackerRequest& request) const
 {
   if (!request.TrackerNameHasBeenSet())
@@ -851,10 +1071,8 @@ DescribeTrackerOutcome LocationServiceClient::DescribeTracker(const DescribeTrac
       return DescribeTrackerOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/tracking/v0/trackers/";
-  ss << request.GetTrackerName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tracking/v0/trackers/");
+  uri.AddPathSegment(request.GetTrackerName());
   return DescribeTrackerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -898,12 +1116,10 @@ DisassociateTrackerConsumerOutcome LocationServiceClient::DisassociateTrackerCon
       return DisassociateTrackerConsumerOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/tracking/v0/trackers/";
-  ss << request.GetTrackerName();
-  ss << "/consumers/";
-  ss << request.GetConsumerArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tracking/v0/trackers/");
+  uri.AddPathSegment(request.GetTrackerName());
+  uri.AddPathSegments("/consumers/");
+  uri.AddPathSegment(request.GetConsumerArn());
   return DisassociateTrackerConsumerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -947,13 +1163,11 @@ GetDevicePositionOutcome LocationServiceClient::GetDevicePosition(const GetDevic
       return GetDevicePositionOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/tracking/v0/trackers/";
-  ss << request.GetTrackerName();
-  ss << "/devices/";
-  ss << request.GetDeviceId();
-  ss << "/positions/latest";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tracking/v0/trackers/");
+  uri.AddPathSegment(request.GetTrackerName());
+  uri.AddPathSegments("/devices/");
+  uri.AddPathSegment(request.GetDeviceId());
+  uri.AddPathSegments("/positions/latest");
   return GetDevicePositionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -997,13 +1211,11 @@ GetDevicePositionHistoryOutcome LocationServiceClient::GetDevicePositionHistory(
       return GetDevicePositionHistoryOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/tracking/v0/trackers/";
-  ss << request.GetTrackerName();
-  ss << "/devices/";
-  ss << request.GetDeviceId();
-  ss << "/list-positions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tracking/v0/trackers/");
+  uri.AddPathSegment(request.GetTrackerName());
+  uri.AddPathSegments("/devices/");
+  uri.AddPathSegment(request.GetDeviceId());
+  uri.AddPathSegments("/list-positions");
   return GetDevicePositionHistoryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1047,12 +1259,10 @@ GetGeofenceOutcome LocationServiceClient::GetGeofence(const GetGeofenceRequest& 
       return GetGeofenceOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/geofencing/v0/collections/";
-  ss << request.GetCollectionName();
-  ss << "/geofences/";
-  ss << request.GetGeofenceId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/geofencing/v0/collections/");
+  uri.AddPathSegment(request.GetCollectionName());
+  uri.AddPathSegments("/geofences/");
+  uri.AddPathSegment(request.GetGeofenceId());
   return GetGeofenceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1101,14 +1311,11 @@ GetMapGlyphsOutcome LocationServiceClient::GetMapGlyphs(const GetMapGlyphsReques
       return GetMapGlyphsOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/maps/v0/maps/";
-  ss << request.GetMapName();
-  ss << "/glyphs/";
-  ss << request.GetFontStack();
-  ss << "/";
-  ss << request.GetFontUnicodeRange();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/maps/v0/maps/");
+  uri.AddPathSegment(request.GetMapName());
+  uri.AddPathSegments("/glyphs/");
+  uri.AddPathSegment(request.GetFontStack());
+  uri.AddPathSegment(request.GetFontUnicodeRange());
   return GetMapGlyphsOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1152,12 +1359,10 @@ GetMapSpritesOutcome LocationServiceClient::GetMapSprites(const GetMapSpritesReq
       return GetMapSpritesOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/maps/v0/maps/";
-  ss << request.GetMapName();
-  ss << "/sprites/";
-  ss << request.GetFileName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/maps/v0/maps/");
+  uri.AddPathSegment(request.GetMapName());
+  uri.AddPathSegments("/sprites/");
+  uri.AddPathSegment(request.GetFileName());
   return GetMapSpritesOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1196,11 +1401,9 @@ GetMapStyleDescriptorOutcome LocationServiceClient::GetMapStyleDescriptor(const 
       return GetMapStyleDescriptorOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/maps/v0/maps/";
-  ss << request.GetMapName();
-  ss << "/style-descriptor";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/maps/v0/maps/");
+  uri.AddPathSegment(request.GetMapName());
+  uri.AddPathSegments("/style-descriptor");
   return GetMapStyleDescriptorOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1254,16 +1457,12 @@ GetMapTileOutcome LocationServiceClient::GetMapTile(const GetMapTileRequest& req
       return GetMapTileOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/maps/v0/maps/";
-  ss << request.GetMapName();
-  ss << "/tiles/";
-  ss << request.GetZ();
-  ss << "/";
-  ss << request.GetX();
-  ss << "/";
-  ss << request.GetY();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/maps/v0/maps/");
+  uri.AddPathSegment(request.GetMapName());
+  uri.AddPathSegments("/tiles/");
+  uri.AddPathSegment(request.GetZ());
+  uri.AddPathSegment(request.GetX());
+  uri.AddPathSegment(request.GetY());
   return GetMapTileOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1285,6 +1484,47 @@ void LocationServiceClient::GetMapTileAsyncHelper(const GetMapTileRequest& reque
   handler(this, request, GetMapTile(request), context);
 }
 
+ListDevicePositionsOutcome LocationServiceClient::ListDevicePositions(const ListDevicePositionsRequest& request) const
+{
+  if (!request.TrackerNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListDevicePositions", "Required field: TrackerName, is not set");
+    return ListDevicePositionsOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TrackerName]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("tracking." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("ListDevicePositions", "Invalid DNS host: " << uri.GetAuthority());
+      return ListDevicePositionsOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/tracking/v0/trackers/");
+  uri.AddPathSegment(request.GetTrackerName());
+  uri.AddPathSegments("/list-positions");
+  return ListDevicePositionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListDevicePositionsOutcomeCallable LocationServiceClient::ListDevicePositionsCallable(const ListDevicePositionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListDevicePositionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDevicePositions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LocationServiceClient::ListDevicePositionsAsync(const ListDevicePositionsRequest& request, const ListDevicePositionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListDevicePositionsAsyncHelper( request, handler, context ); } );
+}
+
+void LocationServiceClient::ListDevicePositionsAsyncHelper(const ListDevicePositionsRequest& request, const ListDevicePositionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListDevicePositions(request), context);
+}
+
 ListGeofenceCollectionsOutcome LocationServiceClient::ListGeofenceCollections(const ListGeofenceCollectionsRequest& request) const
 {
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
@@ -1297,9 +1537,7 @@ ListGeofenceCollectionsOutcome LocationServiceClient::ListGeofenceCollections(co
       return ListGeofenceCollectionsOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/geofencing/v0/list-collections";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/geofencing/v0/list-collections");
   return ListGeofenceCollectionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1338,11 +1576,9 @@ ListGeofencesOutcome LocationServiceClient::ListGeofences(const ListGeofencesReq
       return ListGeofencesOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/geofencing/v0/collections/";
-  ss << request.GetCollectionName();
-  ss << "/list-geofences";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/geofencing/v0/collections/");
+  uri.AddPathSegment(request.GetCollectionName());
+  uri.AddPathSegments("/list-geofences");
   return ListGeofencesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1376,9 +1612,7 @@ ListMapsOutcome LocationServiceClient::ListMaps(const ListMapsRequest& request) 
       return ListMapsOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/maps/v0/list-maps";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/maps/v0/list-maps");
   return ListMapsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1412,9 +1646,7 @@ ListPlaceIndexesOutcome LocationServiceClient::ListPlaceIndexes(const ListPlaceI
       return ListPlaceIndexesOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/places/v0/list-indexes";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/places/v0/list-indexes");
   return ListPlaceIndexesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1436,6 +1668,80 @@ void LocationServiceClient::ListPlaceIndexesAsyncHelper(const ListPlaceIndexesRe
   handler(this, request, ListPlaceIndexes(request), context);
 }
 
+ListRouteCalculatorsOutcome LocationServiceClient::ListRouteCalculators(const ListRouteCalculatorsRequest& request) const
+{
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("routes." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("ListRouteCalculators", "Invalid DNS host: " << uri.GetAuthority());
+      return ListRouteCalculatorsOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/routes/v0/list-calculators");
+  return ListRouteCalculatorsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListRouteCalculatorsOutcomeCallable LocationServiceClient::ListRouteCalculatorsCallable(const ListRouteCalculatorsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListRouteCalculatorsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListRouteCalculators(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LocationServiceClient::ListRouteCalculatorsAsync(const ListRouteCalculatorsRequest& request, const ListRouteCalculatorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListRouteCalculatorsAsyncHelper( request, handler, context ); } );
+}
+
+void LocationServiceClient::ListRouteCalculatorsAsyncHelper(const ListRouteCalculatorsRequest& request, const ListRouteCalculatorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListRouteCalculators(request), context);
+}
+
+ListTagsForResourceOutcome LocationServiceClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
+{
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListTagsForResource", "Required field: ResourceArn, is not set");
+    return ListTagsForResourceOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("metadata." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("ListTagsForResource", "Invalid DNS host: " << uri.GetAuthority());
+      return ListTagsForResourceOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
+  return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListTagsForResourceOutcomeCallable LocationServiceClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LocationServiceClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+}
+
+void LocationServiceClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListTagsForResource(request), context);
+}
+
 ListTrackerConsumersOutcome LocationServiceClient::ListTrackerConsumers(const ListTrackerConsumersRequest& request) const
 {
   if (!request.TrackerNameHasBeenSet())
@@ -1453,11 +1759,9 @@ ListTrackerConsumersOutcome LocationServiceClient::ListTrackerConsumers(const Li
       return ListTrackerConsumersOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/tracking/v0/trackers/";
-  ss << request.GetTrackerName();
-  ss << "/list-consumers";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tracking/v0/trackers/");
+  uri.AddPathSegment(request.GetTrackerName());
+  uri.AddPathSegments("/list-consumers");
   return ListTrackerConsumersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1491,9 +1795,7 @@ ListTrackersOutcome LocationServiceClient::ListTrackers(const ListTrackersReques
       return ListTrackersOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/tracking/v0/list-trackers";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tracking/v0/list-trackers");
   return ListTrackersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1537,12 +1839,10 @@ PutGeofenceOutcome LocationServiceClient::PutGeofence(const PutGeofenceRequest& 
       return PutGeofenceOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/geofencing/v0/collections/";
-  ss << request.GetCollectionName();
-  ss << "/geofences/";
-  ss << request.GetGeofenceId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/geofencing/v0/collections/");
+  uri.AddPathSegment(request.GetCollectionName());
+  uri.AddPathSegments("/geofences/");
+  uri.AddPathSegment(request.GetGeofenceId());
   return PutGeofenceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1581,11 +1881,9 @@ SearchPlaceIndexForPositionOutcome LocationServiceClient::SearchPlaceIndexForPos
       return SearchPlaceIndexForPositionOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/places/v0/indexes/";
-  ss << request.GetIndexName();
-  ss << "/search/position";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/places/v0/indexes/");
+  uri.AddPathSegment(request.GetIndexName());
+  uri.AddPathSegments("/search/position");
   return SearchPlaceIndexForPositionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1607,6 +1905,47 @@ void LocationServiceClient::SearchPlaceIndexForPositionAsyncHelper(const SearchP
   handler(this, request, SearchPlaceIndexForPosition(request), context);
 }
 
+SearchPlaceIndexForSuggestionsOutcome LocationServiceClient::SearchPlaceIndexForSuggestions(const SearchPlaceIndexForSuggestionsRequest& request) const
+{
+  if (!request.IndexNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("SearchPlaceIndexForSuggestions", "Required field: IndexName, is not set");
+    return SearchPlaceIndexForSuggestionsOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IndexName]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("places." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("SearchPlaceIndexForSuggestions", "Invalid DNS host: " << uri.GetAuthority());
+      return SearchPlaceIndexForSuggestionsOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/places/v0/indexes/");
+  uri.AddPathSegment(request.GetIndexName());
+  uri.AddPathSegments("/search/suggestions");
+  return SearchPlaceIndexForSuggestionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+SearchPlaceIndexForSuggestionsOutcomeCallable LocationServiceClient::SearchPlaceIndexForSuggestionsCallable(const SearchPlaceIndexForSuggestionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SearchPlaceIndexForSuggestionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SearchPlaceIndexForSuggestions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LocationServiceClient::SearchPlaceIndexForSuggestionsAsync(const SearchPlaceIndexForSuggestionsRequest& request, const SearchPlaceIndexForSuggestionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SearchPlaceIndexForSuggestionsAsyncHelper( request, handler, context ); } );
+}
+
+void LocationServiceClient::SearchPlaceIndexForSuggestionsAsyncHelper(const SearchPlaceIndexForSuggestionsRequest& request, const SearchPlaceIndexForSuggestionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SearchPlaceIndexForSuggestions(request), context);
+}
+
 SearchPlaceIndexForTextOutcome LocationServiceClient::SearchPlaceIndexForText(const SearchPlaceIndexForTextRequest& request) const
 {
   if (!request.IndexNameHasBeenSet())
@@ -1624,11 +1963,9 @@ SearchPlaceIndexForTextOutcome LocationServiceClient::SearchPlaceIndexForText(co
       return SearchPlaceIndexForTextOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/places/v0/indexes/";
-  ss << request.GetIndexName();
-  ss << "/search/text";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/places/v0/indexes/");
+  uri.AddPathSegment(request.GetIndexName());
+  uri.AddPathSegments("/search/text");
   return SearchPlaceIndexForTextOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1648,5 +1985,290 @@ void LocationServiceClient::SearchPlaceIndexForTextAsync(const SearchPlaceIndexF
 void LocationServiceClient::SearchPlaceIndexForTextAsyncHelper(const SearchPlaceIndexForTextRequest& request, const SearchPlaceIndexForTextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, SearchPlaceIndexForText(request), context);
+}
+
+TagResourceOutcome LocationServiceClient::TagResource(const TagResourceRequest& request) const
+{
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("TagResource", "Required field: ResourceArn, is not set");
+    return TagResourceOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("metadata." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("TagResource", "Invalid DNS host: " << uri.GetAuthority());
+      return TagResourceOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
+  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+TagResourceOutcomeCallable LocationServiceClient::TagResourceCallable(const TagResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LocationServiceClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+}
+
+void LocationServiceClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, TagResource(request), context);
+}
+
+UntagResourceOutcome LocationServiceClient::UntagResource(const UntagResourceRequest& request) const
+{
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UntagResource", "Required field: ResourceArn, is not set");
+    return UntagResourceOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
+  if (!request.TagKeysHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UntagResource", "Required field: TagKeys, is not set");
+    return UntagResourceOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("metadata." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("UntagResource", "Invalid DNS host: " << uri.GetAuthority());
+      return UntagResourceOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
+  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+UntagResourceOutcomeCallable LocationServiceClient::UntagResourceCallable(const UntagResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LocationServiceClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+}
+
+void LocationServiceClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UntagResource(request), context);
+}
+
+UpdateGeofenceCollectionOutcome LocationServiceClient::UpdateGeofenceCollection(const UpdateGeofenceCollectionRequest& request) const
+{
+  if (!request.CollectionNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateGeofenceCollection", "Required field: CollectionName, is not set");
+    return UpdateGeofenceCollectionOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CollectionName]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("geofencing." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("UpdateGeofenceCollection", "Invalid DNS host: " << uri.GetAuthority());
+      return UpdateGeofenceCollectionOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/geofencing/v0/collections/");
+  uri.AddPathSegment(request.GetCollectionName());
+  return UpdateGeofenceCollectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateGeofenceCollectionOutcomeCallable LocationServiceClient::UpdateGeofenceCollectionCallable(const UpdateGeofenceCollectionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateGeofenceCollectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateGeofenceCollection(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LocationServiceClient::UpdateGeofenceCollectionAsync(const UpdateGeofenceCollectionRequest& request, const UpdateGeofenceCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateGeofenceCollectionAsyncHelper( request, handler, context ); } );
+}
+
+void LocationServiceClient::UpdateGeofenceCollectionAsyncHelper(const UpdateGeofenceCollectionRequest& request, const UpdateGeofenceCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateGeofenceCollection(request), context);
+}
+
+UpdateMapOutcome LocationServiceClient::UpdateMap(const UpdateMapRequest& request) const
+{
+  if (!request.MapNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateMap", "Required field: MapName, is not set");
+    return UpdateMapOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MapName]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("maps." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("UpdateMap", "Invalid DNS host: " << uri.GetAuthority());
+      return UpdateMapOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/maps/v0/maps/");
+  uri.AddPathSegment(request.GetMapName());
+  return UpdateMapOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateMapOutcomeCallable LocationServiceClient::UpdateMapCallable(const UpdateMapRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateMapOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateMap(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LocationServiceClient::UpdateMapAsync(const UpdateMapRequest& request, const UpdateMapResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateMapAsyncHelper( request, handler, context ); } );
+}
+
+void LocationServiceClient::UpdateMapAsyncHelper(const UpdateMapRequest& request, const UpdateMapResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateMap(request), context);
+}
+
+UpdatePlaceIndexOutcome LocationServiceClient::UpdatePlaceIndex(const UpdatePlaceIndexRequest& request) const
+{
+  if (!request.IndexNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdatePlaceIndex", "Required field: IndexName, is not set");
+    return UpdatePlaceIndexOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IndexName]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("places." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("UpdatePlaceIndex", "Invalid DNS host: " << uri.GetAuthority());
+      return UpdatePlaceIndexOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/places/v0/indexes/");
+  uri.AddPathSegment(request.GetIndexName());
+  return UpdatePlaceIndexOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdatePlaceIndexOutcomeCallable LocationServiceClient::UpdatePlaceIndexCallable(const UpdatePlaceIndexRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdatePlaceIndexOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdatePlaceIndex(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LocationServiceClient::UpdatePlaceIndexAsync(const UpdatePlaceIndexRequest& request, const UpdatePlaceIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdatePlaceIndexAsyncHelper( request, handler, context ); } );
+}
+
+void LocationServiceClient::UpdatePlaceIndexAsyncHelper(const UpdatePlaceIndexRequest& request, const UpdatePlaceIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdatePlaceIndex(request), context);
+}
+
+UpdateRouteCalculatorOutcome LocationServiceClient::UpdateRouteCalculator(const UpdateRouteCalculatorRequest& request) const
+{
+  if (!request.CalculatorNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateRouteCalculator", "Required field: CalculatorName, is not set");
+    return UpdateRouteCalculatorOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CalculatorName]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("routes." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("UpdateRouteCalculator", "Invalid DNS host: " << uri.GetAuthority());
+      return UpdateRouteCalculatorOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/routes/v0/calculators/");
+  uri.AddPathSegment(request.GetCalculatorName());
+  return UpdateRouteCalculatorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateRouteCalculatorOutcomeCallable LocationServiceClient::UpdateRouteCalculatorCallable(const UpdateRouteCalculatorRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateRouteCalculatorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateRouteCalculator(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LocationServiceClient::UpdateRouteCalculatorAsync(const UpdateRouteCalculatorRequest& request, const UpdateRouteCalculatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateRouteCalculatorAsyncHelper( request, handler, context ); } );
+}
+
+void LocationServiceClient::UpdateRouteCalculatorAsyncHelper(const UpdateRouteCalculatorRequest& request, const UpdateRouteCalculatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateRouteCalculator(request), context);
+}
+
+UpdateTrackerOutcome LocationServiceClient::UpdateTracker(const UpdateTrackerRequest& request) const
+{
+  if (!request.TrackerNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateTracker", "Required field: TrackerName, is not set");
+    return UpdateTrackerOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TrackerName]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("tracking." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("UpdateTracker", "Invalid DNS host: " << uri.GetAuthority());
+      return UpdateTrackerOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/tracking/v0/trackers/");
+  uri.AddPathSegment(request.GetTrackerName());
+  return UpdateTrackerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateTrackerOutcomeCallable LocationServiceClient::UpdateTrackerCallable(const UpdateTrackerRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateTrackerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateTracker(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LocationServiceClient::UpdateTrackerAsync(const UpdateTrackerRequest& request, const UpdateTrackerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateTrackerAsyncHelper( request, handler, context ); } );
+}
+
+void LocationServiceClient::UpdateTrackerAsyncHelper(const UpdateTrackerRequest& request, const UpdateTrackerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateTracker(request), context);
 }
 

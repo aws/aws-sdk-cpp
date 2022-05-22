@@ -18,5 +18,7 @@
 #end
 
 #foreach($operation in $serviceModel.operations)
+#if(!$operation.s3CrtSpecific)
         typedef std::future<${operation.name}Outcome> ${operation.name}OutcomeCallable;
+#end
 #end

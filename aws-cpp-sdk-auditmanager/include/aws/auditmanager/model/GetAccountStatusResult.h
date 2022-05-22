@@ -33,27 +33,27 @@ namespace Model
 
 
     /**
-     * <p> The status of the specified AWS account. </p>
+     * <p> The status of the Amazon Web Services account. </p>
      */
     inline const AccountStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p> The status of the specified AWS account. </p>
+     * <p> The status of the Amazon Web Services account. </p>
      */
     inline void SetStatus(const AccountStatus& value) { m_status = value; }
 
     /**
-     * <p> The status of the specified AWS account. </p>
+     * <p> The status of the Amazon Web Services account. </p>
      */
     inline void SetStatus(AccountStatus&& value) { m_status = std::move(value); }
 
     /**
-     * <p> The status of the specified AWS account. </p>
+     * <p> The status of the Amazon Web Services account. </p>
      */
     inline GetAccountStatusResult& WithStatus(const AccountStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p> The status of the specified AWS account. </p>
+     * <p> The status of the Amazon Web Services account. </p>
      */
     inline GetAccountStatusResult& WithStatus(AccountStatus&& value) { SetStatus(std::move(value)); return *this;}
 

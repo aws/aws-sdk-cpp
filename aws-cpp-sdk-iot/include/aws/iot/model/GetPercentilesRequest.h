@@ -75,42 +75,42 @@ namespace Model
 
 
     /**
-     * <p>The query string.</p>
+     * <p>The search query string.</p>
      */
     inline const Aws::String& GetQueryString() const{ return m_queryString; }
 
     /**
-     * <p>The query string.</p>
+     * <p>The search query string.</p>
      */
     inline bool QueryStringHasBeenSet() const { return m_queryStringHasBeenSet; }
 
     /**
-     * <p>The query string.</p>
+     * <p>The search query string.</p>
      */
     inline void SetQueryString(const Aws::String& value) { m_queryStringHasBeenSet = true; m_queryString = value; }
 
     /**
-     * <p>The query string.</p>
+     * <p>The search query string.</p>
      */
     inline void SetQueryString(Aws::String&& value) { m_queryStringHasBeenSet = true; m_queryString = std::move(value); }
 
     /**
-     * <p>The query string.</p>
+     * <p>The search query string.</p>
      */
     inline void SetQueryString(const char* value) { m_queryStringHasBeenSet = true; m_queryString.assign(value); }
 
     /**
-     * <p>The query string.</p>
+     * <p>The search query string.</p>
      */
     inline GetPercentilesRequest& WithQueryString(const Aws::String& value) { SetQueryString(value); return *this;}
 
     /**
-     * <p>The query string.</p>
+     * <p>The search query string.</p>
      */
     inline GetPercentilesRequest& WithQueryString(Aws::String&& value) { SetQueryString(std::move(value)); return *this;}
 
     /**
-     * <p>The query string.</p>
+     * <p>The search query string.</p>
      */
     inline GetPercentilesRequest& WithQueryString(const char* value) { SetQueryString(value); return *this;}
 

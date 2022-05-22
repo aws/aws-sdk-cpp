@@ -29,9 +29,8 @@ namespace Model
    * updating an existing metrics configuration, note that this is a full replacement
    * of the existing metrics configuration. If you don't include the elements you
    * want to keep, they are erased. For more information, see <a
-   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTMetricConfiguration.html">
-   * PUT Bucket metrics</a> in the <i>Amazon Simple Storage Service API
-   * Reference</i>.</p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTMetricConfiguration.html">PutBucketMetricsConfiguration</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/MetricsConfiguration">AWS
    * API Reference</a></p>
    */
@@ -88,43 +87,43 @@ namespace Model
 
     /**
      * <p>Specifies a metrics configuration filter. The metrics configuration will only
-     * include objects that meet the filter's criteria. A filter must be a prefix, a
-     * tag, or a conjunction (MetricsAndOperator).</p>
+     * include objects that meet the filter's criteria. A filter must be a prefix, an
+     * object tag, an access point ARN, or a conjunction (MetricsAndOperator).</p>
      */
     inline const MetricsFilter& GetFilter() const{ return m_filter; }
 
     /**
      * <p>Specifies a metrics configuration filter. The metrics configuration will only
-     * include objects that meet the filter's criteria. A filter must be a prefix, a
-     * tag, or a conjunction (MetricsAndOperator).</p>
+     * include objects that meet the filter's criteria. A filter must be a prefix, an
+     * object tag, an access point ARN, or a conjunction (MetricsAndOperator).</p>
      */
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
 
     /**
      * <p>Specifies a metrics configuration filter. The metrics configuration will only
-     * include objects that meet the filter's criteria. A filter must be a prefix, a
-     * tag, or a conjunction (MetricsAndOperator).</p>
+     * include objects that meet the filter's criteria. A filter must be a prefix, an
+     * object tag, an access point ARN, or a conjunction (MetricsAndOperator).</p>
      */
     inline void SetFilter(const MetricsFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
 
     /**
      * <p>Specifies a metrics configuration filter. The metrics configuration will only
-     * include objects that meet the filter's criteria. A filter must be a prefix, a
-     * tag, or a conjunction (MetricsAndOperator).</p>
+     * include objects that meet the filter's criteria. A filter must be a prefix, an
+     * object tag, an access point ARN, or a conjunction (MetricsAndOperator).</p>
      */
     inline void SetFilter(MetricsFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
     /**
      * <p>Specifies a metrics configuration filter. The metrics configuration will only
-     * include objects that meet the filter's criteria. A filter must be a prefix, a
-     * tag, or a conjunction (MetricsAndOperator).</p>
+     * include objects that meet the filter's criteria. A filter must be a prefix, an
+     * object tag, an access point ARN, or a conjunction (MetricsAndOperator).</p>
      */
     inline MetricsConfiguration& WithFilter(const MetricsFilter& value) { SetFilter(value); return *this;}
 
     /**
      * <p>Specifies a metrics configuration filter. The metrics configuration will only
-     * include objects that meet the filter's criteria. A filter must be a prefix, a
-     * tag, or a conjunction (MetricsAndOperator).</p>
+     * include objects that meet the filter's criteria. A filter must be a prefix, an
+     * object tag, an access point ARN, or a conjunction (MetricsAndOperator).</p>
      */
     inline MetricsConfiguration& WithFilter(MetricsFilter&& value) { SetFilter(std::move(value)); return *this;}
 

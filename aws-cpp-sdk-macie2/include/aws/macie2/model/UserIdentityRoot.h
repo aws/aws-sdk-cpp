@@ -24,9 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>Provides information about an AWS account and entity that performed an action
-   * on an affected resource. The action was performed using the credentials for your
-   * AWS account.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides information about an Amazon Web Services account and entity that
+   * performed an action on an affected resource. The action was performed using the
+   * credentials for your Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UserIdentityRoot">AWS
    * API Reference</a></p>
    */
@@ -40,42 +40,42 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier for the AWS account.</p>
+     * <p>The unique identifier for the Amazon Web Services account.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The unique identifier for the AWS account.</p>
+     * <p>The unique identifier for the Amazon Web Services account.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>The unique identifier for the AWS account.</p>
+     * <p>The unique identifier for the Amazon Web Services account.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The unique identifier for the AWS account.</p>
+     * <p>The unique identifier for the Amazon Web Services account.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The unique identifier for the AWS account.</p>
+     * <p>The unique identifier for the Amazon Web Services account.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The unique identifier for the AWS account.</p>
+     * <p>The unique identifier for the Amazon Web Services account.</p>
      */
     inline UserIdentityRoot& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The unique identifier for the AWS account.</p>
+     * <p>The unique identifier for the Amazon Web Services account.</p>
      */
     inline UserIdentityRoot& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier for the AWS account.</p>
+     * <p>The unique identifier for the Amazon Web Services account.</p>
      */
     inline UserIdentityRoot& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 

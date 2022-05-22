@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes whether to apply multi-factor authentication (MFA) policies for
-   * your Amazon Cognito user pool that's configured as a part of your Amplify
+   * <p>Describes whether to apply multi-factor authentication policies for your
+   * Amazon Cognito user pool configured as a part of your Amplify
    * project.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/CreateBackendAuthMFAConfig">AWS
    * API Reference</a></p>

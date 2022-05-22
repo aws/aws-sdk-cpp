@@ -26,8 +26,8 @@ namespace Model
 
   /**
    * <p>Provides information about settings that define whether one or more objects
-   * in an S3 bucket are replicated to S3 buckets for other AWS accounts and, if so,
-   * which accounts.</p><p><h3>See Also:</h3>   <a
+   * in an S3 bucket are replicated to S3 buckets for other Amazon Web Services
+   * accounts and, if so, which accounts.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ReplicationDetails">AWS
    * API Reference</a></p>
    */
@@ -67,80 +67,84 @@ namespace Model
 
     /**
      * <p>Specifies whether the bucket is configured to replicate one or more objects
-     * to an AWS account that isn't part of the same Amazon Macie organization.</p>
+     * to an Amazon Web Services account that isn't part of the same Amazon Macie
+     * organization.</p>
      */
     inline bool GetReplicatedExternally() const{ return m_replicatedExternally; }
 
     /**
      * <p>Specifies whether the bucket is configured to replicate one or more objects
-     * to an AWS account that isn't part of the same Amazon Macie organization.</p>
+     * to an Amazon Web Services account that isn't part of the same Amazon Macie
+     * organization.</p>
      */
     inline bool ReplicatedExternallyHasBeenSet() const { return m_replicatedExternallyHasBeenSet; }
 
     /**
      * <p>Specifies whether the bucket is configured to replicate one or more objects
-     * to an AWS account that isn't part of the same Amazon Macie organization.</p>
+     * to an Amazon Web Services account that isn't part of the same Amazon Macie
+     * organization.</p>
      */
     inline void SetReplicatedExternally(bool value) { m_replicatedExternallyHasBeenSet = true; m_replicatedExternally = value; }
 
     /**
      * <p>Specifies whether the bucket is configured to replicate one or more objects
-     * to an AWS account that isn't part of the same Amazon Macie organization.</p>
+     * to an Amazon Web Services account that isn't part of the same Amazon Macie
+     * organization.</p>
      */
     inline ReplicationDetails& WithReplicatedExternally(bool value) { SetReplicatedExternally(value); return *this;}
 
 
     /**
-     * <p>An array of AWS account IDs, one for each AWS account that the bucket is
-     * configured to replicate one or more objects to.</p>
+     * <p>An array of Amazon Web Services account IDs, one for each Amazon Web Services
+     * account that the bucket is configured to replicate one or more objects to.</p>
      */
     inline const Aws::Vector<Aws::String>& GetReplicationAccounts() const{ return m_replicationAccounts; }
 
     /**
-     * <p>An array of AWS account IDs, one for each AWS account that the bucket is
-     * configured to replicate one or more objects to.</p>
+     * <p>An array of Amazon Web Services account IDs, one for each Amazon Web Services
+     * account that the bucket is configured to replicate one or more objects to.</p>
      */
     inline bool ReplicationAccountsHasBeenSet() const { return m_replicationAccountsHasBeenSet; }
 
     /**
-     * <p>An array of AWS account IDs, one for each AWS account that the bucket is
-     * configured to replicate one or more objects to.</p>
+     * <p>An array of Amazon Web Services account IDs, one for each Amazon Web Services
+     * account that the bucket is configured to replicate one or more objects to.</p>
      */
     inline void SetReplicationAccounts(const Aws::Vector<Aws::String>& value) { m_replicationAccountsHasBeenSet = true; m_replicationAccounts = value; }
 
     /**
-     * <p>An array of AWS account IDs, one for each AWS account that the bucket is
-     * configured to replicate one or more objects to.</p>
+     * <p>An array of Amazon Web Services account IDs, one for each Amazon Web Services
+     * account that the bucket is configured to replicate one or more objects to.</p>
      */
     inline void SetReplicationAccounts(Aws::Vector<Aws::String>&& value) { m_replicationAccountsHasBeenSet = true; m_replicationAccounts = std::move(value); }
 
     /**
-     * <p>An array of AWS account IDs, one for each AWS account that the bucket is
-     * configured to replicate one or more objects to.</p>
+     * <p>An array of Amazon Web Services account IDs, one for each Amazon Web Services
+     * account that the bucket is configured to replicate one or more objects to.</p>
      */
     inline ReplicationDetails& WithReplicationAccounts(const Aws::Vector<Aws::String>& value) { SetReplicationAccounts(value); return *this;}
 
     /**
-     * <p>An array of AWS account IDs, one for each AWS account that the bucket is
-     * configured to replicate one or more objects to.</p>
+     * <p>An array of Amazon Web Services account IDs, one for each Amazon Web Services
+     * account that the bucket is configured to replicate one or more objects to.</p>
      */
     inline ReplicationDetails& WithReplicationAccounts(Aws::Vector<Aws::String>&& value) { SetReplicationAccounts(std::move(value)); return *this;}
 
     /**
-     * <p>An array of AWS account IDs, one for each AWS account that the bucket is
-     * configured to replicate one or more objects to.</p>
+     * <p>An array of Amazon Web Services account IDs, one for each Amazon Web Services
+     * account that the bucket is configured to replicate one or more objects to.</p>
      */
     inline ReplicationDetails& AddReplicationAccounts(const Aws::String& value) { m_replicationAccountsHasBeenSet = true; m_replicationAccounts.push_back(value); return *this; }
 
     /**
-     * <p>An array of AWS account IDs, one for each AWS account that the bucket is
-     * configured to replicate one or more objects to.</p>
+     * <p>An array of Amazon Web Services account IDs, one for each Amazon Web Services
+     * account that the bucket is configured to replicate one or more objects to.</p>
      */
     inline ReplicationDetails& AddReplicationAccounts(Aws::String&& value) { m_replicationAccountsHasBeenSet = true; m_replicationAccounts.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>An array of AWS account IDs, one for each AWS account that the bucket is
-     * configured to replicate one or more objects to.</p>
+     * <p>An array of Amazon Web Services account IDs, one for each Amazon Web Services
+     * account that the bucket is configured to replicate one or more objects to.</p>
      */
     inline ReplicationDetails& AddReplicationAccounts(const char* value) { m_replicationAccountsHasBeenSet = true; m_replicationAccounts.push_back(value); return *this; }
 

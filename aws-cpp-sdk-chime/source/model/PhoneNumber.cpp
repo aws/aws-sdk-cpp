@@ -21,6 +21,7 @@ namespace Model
 PhoneNumber::PhoneNumber() : 
     m_phoneNumberIdHasBeenSet(false),
     m_e164PhoneNumberHasBeenSet(false),
+    m_countryHasBeenSet(false),
     m_type(PhoneNumberType::NOT_SET),
     m_typeHasBeenSet(false),
     m_productType(PhoneNumberProductType::NOT_SET),
@@ -41,6 +42,7 @@ PhoneNumber::PhoneNumber() :
 PhoneNumber::PhoneNumber(JsonView jsonValue) : 
     m_phoneNumberIdHasBeenSet(false),
     m_e164PhoneNumberHasBeenSet(false),
+    m_countryHasBeenSet(false),
     m_type(PhoneNumberType::NOT_SET),
     m_typeHasBeenSet(false),
     m_productType(PhoneNumberProductType::NOT_SET),
@@ -73,6 +75,13 @@ PhoneNumber& PhoneNumber::operator =(JsonView jsonValue)
     m_e164PhoneNumber = jsonValue.GetString("E164PhoneNumber");
 
     m_e164PhoneNumberHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Country"))
+  {
+    m_country = jsonValue.GetString("Country");
+
+    m_countryHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Type"))
@@ -164,6 +173,12 @@ JsonValue PhoneNumber::Jsonize() const
   if(m_e164PhoneNumberHasBeenSet)
   {
    payload.WithString("E164PhoneNumber", m_e164PhoneNumber);
+
+  }
+
+  if(m_countryHasBeenSet)
+  {
+   payload.WithString("Country", m_country);
 
   }
 

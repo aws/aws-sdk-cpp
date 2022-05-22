@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/compute-optimizer/ComputeOptimizer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/compute-optimizer/model/SavingsOpportunity.h>
 #include <aws/compute-optimizer/model/LambdaFunctionMemoryProjectedMetric.h>
 #include <utility>
 
@@ -25,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes a recommendation option for an AWS Lambda function.</p><p><h3>See
+   * <p>Describes a recommendation option for an Lambda function.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/LambdaFunctionMemoryRecommendationOption">AWS
    * API Reference</a></p>
@@ -133,6 +134,49 @@ namespace Model
      */
     inline LambdaFunctionMemoryRecommendationOption& AddProjectedUtilizationMetrics(LambdaFunctionMemoryProjectedMetric&& value) { m_projectedUtilizationMetricsHasBeenSet = true; m_projectedUtilizationMetrics.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>An object that describes the savings opportunity for the Lambda function
+     * recommendation option. Savings opportunity includes the estimated monthly
+     * savings amount and percentage.</p>
+     */
+    inline const SavingsOpportunity& GetSavingsOpportunity() const{ return m_savingsOpportunity; }
+
+    /**
+     * <p>An object that describes the savings opportunity for the Lambda function
+     * recommendation option. Savings opportunity includes the estimated monthly
+     * savings amount and percentage.</p>
+     */
+    inline bool SavingsOpportunityHasBeenSet() const { return m_savingsOpportunityHasBeenSet; }
+
+    /**
+     * <p>An object that describes the savings opportunity for the Lambda function
+     * recommendation option. Savings opportunity includes the estimated monthly
+     * savings amount and percentage.</p>
+     */
+    inline void SetSavingsOpportunity(const SavingsOpportunity& value) { m_savingsOpportunityHasBeenSet = true; m_savingsOpportunity = value; }
+
+    /**
+     * <p>An object that describes the savings opportunity for the Lambda function
+     * recommendation option. Savings opportunity includes the estimated monthly
+     * savings amount and percentage.</p>
+     */
+    inline void SetSavingsOpportunity(SavingsOpportunity&& value) { m_savingsOpportunityHasBeenSet = true; m_savingsOpportunity = std::move(value); }
+
+    /**
+     * <p>An object that describes the savings opportunity for the Lambda function
+     * recommendation option. Savings opportunity includes the estimated monthly
+     * savings amount and percentage.</p>
+     */
+    inline LambdaFunctionMemoryRecommendationOption& WithSavingsOpportunity(const SavingsOpportunity& value) { SetSavingsOpportunity(value); return *this;}
+
+    /**
+     * <p>An object that describes the savings opportunity for the Lambda function
+     * recommendation option. Savings opportunity includes the estimated monthly
+     * savings amount and percentage.</p>
+     */
+    inline LambdaFunctionMemoryRecommendationOption& WithSavingsOpportunity(SavingsOpportunity&& value) { SetSavingsOpportunity(std::move(value)); return *this;}
+
   private:
 
     int m_rank;
@@ -143,6 +187,9 @@ namespace Model
 
     Aws::Vector<LambdaFunctionMemoryProjectedMetric> m_projectedUtilizationMetrics;
     bool m_projectedUtilizationMetricsHasBeenSet;
+
+    SavingsOpportunity m_savingsOpportunity;
+    bool m_savingsOpportunityHasBeenSet;
   };
 
 } // namespace Model

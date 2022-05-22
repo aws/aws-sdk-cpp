@@ -8,6 +8,7 @@
 #include <aws/dataexchange/DataExchangeErrors.h>
 #include <aws/dataexchange/model/ConflictException.h>
 #include <aws/dataexchange/model/ResourceNotFoundException.h>
+#include <aws/dataexchange/model/ValidationException.h>
 #include <aws/dataexchange/model/ServiceLimitExceededException.h>
 
 using namespace Aws::Client;
@@ -29,6 +30,12 @@ template<> AWS_DATAEXCHANGE_API ResourceNotFoundException DataExchangeError::Get
 {
   assert(this->GetErrorType() == DataExchangeErrors::RESOURCE_NOT_FOUND);
   return ResourceNotFoundException(this->GetJsonPayload().View());
+}
+
+template<> AWS_DATAEXCHANGE_API ValidationException DataExchangeError::GetModeledError()
+{
+  assert(this->GetErrorType() == DataExchangeErrors::VALIDATION);
+  return ValidationException(this->GetJsonPayload().View());
 }
 
 template<> AWS_DATAEXCHANGE_API ServiceLimitExceededException DataExchangeError::GetModeledError()

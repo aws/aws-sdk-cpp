@@ -101,43 +101,43 @@ namespace Model
 
     /**
      * <p>Indicates whether to list patches for the Windows operating system or for
-     * Microsoft applications. Not applicable for the Linux or macOS operating
-     * systems.</p>
+     * applications released by Microsoft. Not applicable for the Linux or macOS
+     * operating systems.</p>
      */
     inline const PatchSet& GetPatchSet() const{ return m_patchSet; }
 
     /**
      * <p>Indicates whether to list patches for the Windows operating system or for
-     * Microsoft applications. Not applicable for the Linux or macOS operating
-     * systems.</p>
+     * applications released by Microsoft. Not applicable for the Linux or macOS
+     * operating systems.</p>
      */
     inline bool PatchSetHasBeenSet() const { return m_patchSetHasBeenSet; }
 
     /**
      * <p>Indicates whether to list patches for the Windows operating system or for
-     * Microsoft applications. Not applicable for the Linux or macOS operating
-     * systems.</p>
+     * applications released by Microsoft. Not applicable for the Linux or macOS
+     * operating systems.</p>
      */
     inline void SetPatchSet(const PatchSet& value) { m_patchSetHasBeenSet = true; m_patchSet = value; }
 
     /**
      * <p>Indicates whether to list patches for the Windows operating system or for
-     * Microsoft applications. Not applicable for the Linux or macOS operating
-     * systems.</p>
+     * applications released by Microsoft. Not applicable for the Linux or macOS
+     * operating systems.</p>
      */
     inline void SetPatchSet(PatchSet&& value) { m_patchSetHasBeenSet = true; m_patchSet = std::move(value); }
 
     /**
      * <p>Indicates whether to list patches for the Windows operating system or for
-     * Microsoft applications. Not applicable for the Linux or macOS operating
-     * systems.</p>
+     * applications released by Microsoft. Not applicable for the Linux or macOS
+     * operating systems.</p>
      */
     inline DescribePatchPropertiesRequest& WithPatchSet(const PatchSet& value) { SetPatchSet(value); return *this;}
 
     /**
      * <p>Indicates whether to list patches for the Windows operating system or for
-     * Microsoft applications. Not applicable for the Linux or macOS operating
-     * systems.</p>
+     * applications released by Microsoft. Not applicable for the Linux or macOS
+     * operating systems.</p>
      */
     inline DescribePatchPropertiesRequest& WithPatchSet(PatchSet&& value) { SetPatchSet(std::move(value)); return *this;}
 

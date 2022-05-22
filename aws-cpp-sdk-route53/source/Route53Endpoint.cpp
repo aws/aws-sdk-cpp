@@ -19,6 +19,7 @@ namespace Route53Endpoint
 
   static const int US_GOV_WEST_1_HASH = Aws::Utils::HashingUtils::HashString("us-gov-west-1");
   static const int US_ISO_EAST_1_HASH = Aws::Utils::HashingUtils::HashString("us-iso-east-1");
+  static const int FIPS_AWS_GLOBAL_HASH = Aws::Utils::HashingUtils::HashString("fips-aws-global");
 
   Aws::String ForRegion(const Aws::String& regionName, bool useDualStack)
   {
@@ -33,6 +34,10 @@ namespace Route53Endpoint
       if(hash == US_ISO_EAST_1_HASH)
       {
         return "route53.c2s.ic.gov";
+      }
+      if(hash == FIPS_AWS_GLOBAL_HASH)
+      {
+        return "route53-fips.amazonaws.com";
       }
     }
     return "route53.amazonaws.com";

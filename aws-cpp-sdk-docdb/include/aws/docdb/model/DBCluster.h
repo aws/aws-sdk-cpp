@@ -853,6 +853,110 @@ namespace Model
 
 
     /**
+     * <p>Contains the identifier of the source cluster if this cluster is a secondary
+     * cluster.</p>
+     */
+    inline const Aws::String& GetReplicationSourceIdentifier() const{ return m_replicationSourceIdentifier; }
+
+    /**
+     * <p>Contains the identifier of the source cluster if this cluster is a secondary
+     * cluster.</p>
+     */
+    inline bool ReplicationSourceIdentifierHasBeenSet() const { return m_replicationSourceIdentifierHasBeenSet; }
+
+    /**
+     * <p>Contains the identifier of the source cluster if this cluster is a secondary
+     * cluster.</p>
+     */
+    inline void SetReplicationSourceIdentifier(const Aws::String& value) { m_replicationSourceIdentifierHasBeenSet = true; m_replicationSourceIdentifier = value; }
+
+    /**
+     * <p>Contains the identifier of the source cluster if this cluster is a secondary
+     * cluster.</p>
+     */
+    inline void SetReplicationSourceIdentifier(Aws::String&& value) { m_replicationSourceIdentifierHasBeenSet = true; m_replicationSourceIdentifier = std::move(value); }
+
+    /**
+     * <p>Contains the identifier of the source cluster if this cluster is a secondary
+     * cluster.</p>
+     */
+    inline void SetReplicationSourceIdentifier(const char* value) { m_replicationSourceIdentifierHasBeenSet = true; m_replicationSourceIdentifier.assign(value); }
+
+    /**
+     * <p>Contains the identifier of the source cluster if this cluster is a secondary
+     * cluster.</p>
+     */
+    inline DBCluster& WithReplicationSourceIdentifier(const Aws::String& value) { SetReplicationSourceIdentifier(value); return *this;}
+
+    /**
+     * <p>Contains the identifier of the source cluster if this cluster is a secondary
+     * cluster.</p>
+     */
+    inline DBCluster& WithReplicationSourceIdentifier(Aws::String&& value) { SetReplicationSourceIdentifier(std::move(value)); return *this;}
+
+    /**
+     * <p>Contains the identifier of the source cluster if this cluster is a secondary
+     * cluster.</p>
+     */
+    inline DBCluster& WithReplicationSourceIdentifier(const char* value) { SetReplicationSourceIdentifier(value); return *this;}
+
+
+    /**
+     * <p>Contains one or more identifiers of the secondary clusters that are
+     * associated with this cluster.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetReadReplicaIdentifiers() const{ return m_readReplicaIdentifiers; }
+
+    /**
+     * <p>Contains one or more identifiers of the secondary clusters that are
+     * associated with this cluster.</p>
+     */
+    inline bool ReadReplicaIdentifiersHasBeenSet() const { return m_readReplicaIdentifiersHasBeenSet; }
+
+    /**
+     * <p>Contains one or more identifiers of the secondary clusters that are
+     * associated with this cluster.</p>
+     */
+    inline void SetReadReplicaIdentifiers(const Aws::Vector<Aws::String>& value) { m_readReplicaIdentifiersHasBeenSet = true; m_readReplicaIdentifiers = value; }
+
+    /**
+     * <p>Contains one or more identifiers of the secondary clusters that are
+     * associated with this cluster.</p>
+     */
+    inline void SetReadReplicaIdentifiers(Aws::Vector<Aws::String>&& value) { m_readReplicaIdentifiersHasBeenSet = true; m_readReplicaIdentifiers = std::move(value); }
+
+    /**
+     * <p>Contains one or more identifiers of the secondary clusters that are
+     * associated with this cluster.</p>
+     */
+    inline DBCluster& WithReadReplicaIdentifiers(const Aws::Vector<Aws::String>& value) { SetReadReplicaIdentifiers(value); return *this;}
+
+    /**
+     * <p>Contains one or more identifiers of the secondary clusters that are
+     * associated with this cluster.</p>
+     */
+    inline DBCluster& WithReadReplicaIdentifiers(Aws::Vector<Aws::String>&& value) { SetReadReplicaIdentifiers(std::move(value)); return *this;}
+
+    /**
+     * <p>Contains one or more identifiers of the secondary clusters that are
+     * associated with this cluster.</p>
+     */
+    inline DBCluster& AddReadReplicaIdentifiers(const Aws::String& value) { m_readReplicaIdentifiersHasBeenSet = true; m_readReplicaIdentifiers.push_back(value); return *this; }
+
+    /**
+     * <p>Contains one or more identifiers of the secondary clusters that are
+     * associated with this cluster.</p>
+     */
+    inline DBCluster& AddReadReplicaIdentifiers(Aws::String&& value) { m_readReplicaIdentifiersHasBeenSet = true; m_readReplicaIdentifiers.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Contains one or more identifiers of the secondary clusters that are
+     * associated with this cluster.</p>
+     */
+    inline DBCluster& AddReadReplicaIdentifiers(const char* value) { m_readReplicaIdentifiersHasBeenSet = true; m_readReplicaIdentifiers.push_back(value); return *this; }
+
+
+    /**
      * <p>Provides the list of instances that make up the cluster.</p>
      */
     inline const Aws::Vector<DBClusterMember>& GetDBClusterMembers() const{ return m_dBClusterMembers; }
@@ -1013,107 +1117,107 @@ namespace Model
 
 
     /**
-     * <p>If <code>StorageEncrypted</code> is <code>true</code>, the AWS KMS key
-     * identifier for the encrypted cluster.</p>
+     * <p>If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier
+     * for the encrypted cluster.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is <code>true</code>, the AWS KMS key
-     * identifier for the encrypted cluster.</p>
+     * <p>If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier
+     * for the encrypted cluster.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is <code>true</code>, the AWS KMS key
-     * identifier for the encrypted cluster.</p>
+     * <p>If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier
+     * for the encrypted cluster.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is <code>true</code>, the AWS KMS key
-     * identifier for the encrypted cluster.</p>
+     * <p>If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier
+     * for the encrypted cluster.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is <code>true</code>, the AWS KMS key
-     * identifier for the encrypted cluster.</p>
+     * <p>If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier
+     * for the encrypted cluster.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is <code>true</code>, the AWS KMS key
-     * identifier for the encrypted cluster.</p>
+     * <p>If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier
+     * for the encrypted cluster.</p>
      */
     inline DBCluster& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>If <code>StorageEncrypted</code> is <code>true</code>, the AWS KMS key
-     * identifier for the encrypted cluster.</p>
+     * <p>If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier
+     * for the encrypted cluster.</p>
      */
     inline DBCluster& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>If <code>StorageEncrypted</code> is <code>true</code>, the AWS KMS key
-     * identifier for the encrypted cluster.</p>
+     * <p>If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier
+     * for the encrypted cluster.</p>
      */
     inline DBCluster& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
 
     /**
-     * <p>The AWS Region-unique, immutable identifier for the cluster. This identifier
-     * is found in AWS CloudTrail log entries whenever the AWS KMS key for the cluster
-     * is accessed.</p>
+     * <p>The Amazon Web Services Region-unique, immutable identifier for the cluster.
+     * This identifier is found in CloudTrail log entries whenever the KMS key for the
+     * cluster is accessed.</p>
      */
     inline const Aws::String& GetDbClusterResourceId() const{ return m_dbClusterResourceId; }
 
     /**
-     * <p>The AWS Region-unique, immutable identifier for the cluster. This identifier
-     * is found in AWS CloudTrail log entries whenever the AWS KMS key for the cluster
-     * is accessed.</p>
+     * <p>The Amazon Web Services Region-unique, immutable identifier for the cluster.
+     * This identifier is found in CloudTrail log entries whenever the KMS key for the
+     * cluster is accessed.</p>
      */
     inline bool DbClusterResourceIdHasBeenSet() const { return m_dbClusterResourceIdHasBeenSet; }
 
     /**
-     * <p>The AWS Region-unique, immutable identifier for the cluster. This identifier
-     * is found in AWS CloudTrail log entries whenever the AWS KMS key for the cluster
-     * is accessed.</p>
+     * <p>The Amazon Web Services Region-unique, immutable identifier for the cluster.
+     * This identifier is found in CloudTrail log entries whenever the KMS key for the
+     * cluster is accessed.</p>
      */
     inline void SetDbClusterResourceId(const Aws::String& value) { m_dbClusterResourceIdHasBeenSet = true; m_dbClusterResourceId = value; }
 
     /**
-     * <p>The AWS Region-unique, immutable identifier for the cluster. This identifier
-     * is found in AWS CloudTrail log entries whenever the AWS KMS key for the cluster
-     * is accessed.</p>
+     * <p>The Amazon Web Services Region-unique, immutable identifier for the cluster.
+     * This identifier is found in CloudTrail log entries whenever the KMS key for the
+     * cluster is accessed.</p>
      */
     inline void SetDbClusterResourceId(Aws::String&& value) { m_dbClusterResourceIdHasBeenSet = true; m_dbClusterResourceId = std::move(value); }
 
     /**
-     * <p>The AWS Region-unique, immutable identifier for the cluster. This identifier
-     * is found in AWS CloudTrail log entries whenever the AWS KMS key for the cluster
-     * is accessed.</p>
+     * <p>The Amazon Web Services Region-unique, immutable identifier for the cluster.
+     * This identifier is found in CloudTrail log entries whenever the KMS key for the
+     * cluster is accessed.</p>
      */
     inline void SetDbClusterResourceId(const char* value) { m_dbClusterResourceIdHasBeenSet = true; m_dbClusterResourceId.assign(value); }
 
     /**
-     * <p>The AWS Region-unique, immutable identifier for the cluster. This identifier
-     * is found in AWS CloudTrail log entries whenever the AWS KMS key for the cluster
-     * is accessed.</p>
+     * <p>The Amazon Web Services Region-unique, immutable identifier for the cluster.
+     * This identifier is found in CloudTrail log entries whenever the KMS key for the
+     * cluster is accessed.</p>
      */
     inline DBCluster& WithDbClusterResourceId(const Aws::String& value) { SetDbClusterResourceId(value); return *this;}
 
     /**
-     * <p>The AWS Region-unique, immutable identifier for the cluster. This identifier
-     * is found in AWS CloudTrail log entries whenever the AWS KMS key for the cluster
-     * is accessed.</p>
+     * <p>The Amazon Web Services Region-unique, immutable identifier for the cluster.
+     * This identifier is found in CloudTrail log entries whenever the KMS key for the
+     * cluster is accessed.</p>
      */
     inline DBCluster& WithDbClusterResourceId(Aws::String&& value) { SetDbClusterResourceId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Region-unique, immutable identifier for the cluster. This identifier
-     * is found in AWS CloudTrail log entries whenever the AWS KMS key for the cluster
-     * is accessed.</p>
+     * <p>The Amazon Web Services Region-unique, immutable identifier for the cluster.
+     * This identifier is found in CloudTrail log entries whenever the KMS key for the
+     * cluster is accessed.</p>
      */
     inline DBCluster& WithDbClusterResourceId(const char* value) { SetDbClusterResourceId(value); return *this;}
 
@@ -1160,66 +1264,66 @@ namespace Model
 
 
     /**
-     * <p>Provides a list of the AWS Identity and Access Management (IAM) roles that
-     * are associated with the cluster. IAM roles that are associated with a cluster
-     * grant permission for the cluster to access other AWS services on your
-     * behalf.</p>
+     * <p>Provides a list of the Identity and Access Management (IAM) roles that are
+     * associated with the cluster. (IAM) roles that are associated with a cluster
+     * grant permission for the cluster to access other Amazon Web Services services on
+     * your behalf.</p>
      */
     inline const Aws::Vector<DBClusterRole>& GetAssociatedRoles() const{ return m_associatedRoles; }
 
     /**
-     * <p>Provides a list of the AWS Identity and Access Management (IAM) roles that
-     * are associated with the cluster. IAM roles that are associated with a cluster
-     * grant permission for the cluster to access other AWS services on your
-     * behalf.</p>
+     * <p>Provides a list of the Identity and Access Management (IAM) roles that are
+     * associated with the cluster. (IAM) roles that are associated with a cluster
+     * grant permission for the cluster to access other Amazon Web Services services on
+     * your behalf.</p>
      */
     inline bool AssociatedRolesHasBeenSet() const { return m_associatedRolesHasBeenSet; }
 
     /**
-     * <p>Provides a list of the AWS Identity and Access Management (IAM) roles that
-     * are associated with the cluster. IAM roles that are associated with a cluster
-     * grant permission for the cluster to access other AWS services on your
-     * behalf.</p>
+     * <p>Provides a list of the Identity and Access Management (IAM) roles that are
+     * associated with the cluster. (IAM) roles that are associated with a cluster
+     * grant permission for the cluster to access other Amazon Web Services services on
+     * your behalf.</p>
      */
     inline void SetAssociatedRoles(const Aws::Vector<DBClusterRole>& value) { m_associatedRolesHasBeenSet = true; m_associatedRoles = value; }
 
     /**
-     * <p>Provides a list of the AWS Identity and Access Management (IAM) roles that
-     * are associated with the cluster. IAM roles that are associated with a cluster
-     * grant permission for the cluster to access other AWS services on your
-     * behalf.</p>
+     * <p>Provides a list of the Identity and Access Management (IAM) roles that are
+     * associated with the cluster. (IAM) roles that are associated with a cluster
+     * grant permission for the cluster to access other Amazon Web Services services on
+     * your behalf.</p>
      */
     inline void SetAssociatedRoles(Aws::Vector<DBClusterRole>&& value) { m_associatedRolesHasBeenSet = true; m_associatedRoles = std::move(value); }
 
     /**
-     * <p>Provides a list of the AWS Identity and Access Management (IAM) roles that
-     * are associated with the cluster. IAM roles that are associated with a cluster
-     * grant permission for the cluster to access other AWS services on your
-     * behalf.</p>
+     * <p>Provides a list of the Identity and Access Management (IAM) roles that are
+     * associated with the cluster. (IAM) roles that are associated with a cluster
+     * grant permission for the cluster to access other Amazon Web Services services on
+     * your behalf.</p>
      */
     inline DBCluster& WithAssociatedRoles(const Aws::Vector<DBClusterRole>& value) { SetAssociatedRoles(value); return *this;}
 
     /**
-     * <p>Provides a list of the AWS Identity and Access Management (IAM) roles that
-     * are associated with the cluster. IAM roles that are associated with a cluster
-     * grant permission for the cluster to access other AWS services on your
-     * behalf.</p>
+     * <p>Provides a list of the Identity and Access Management (IAM) roles that are
+     * associated with the cluster. (IAM) roles that are associated with a cluster
+     * grant permission for the cluster to access other Amazon Web Services services on
+     * your behalf.</p>
      */
     inline DBCluster& WithAssociatedRoles(Aws::Vector<DBClusterRole>&& value) { SetAssociatedRoles(std::move(value)); return *this;}
 
     /**
-     * <p>Provides a list of the AWS Identity and Access Management (IAM) roles that
-     * are associated with the cluster. IAM roles that are associated with a cluster
-     * grant permission for the cluster to access other AWS services on your
-     * behalf.</p>
+     * <p>Provides a list of the Identity and Access Management (IAM) roles that are
+     * associated with the cluster. (IAM) roles that are associated with a cluster
+     * grant permission for the cluster to access other Amazon Web Services services on
+     * your behalf.</p>
      */
     inline DBCluster& AddAssociatedRoles(const DBClusterRole& value) { m_associatedRolesHasBeenSet = true; m_associatedRoles.push_back(value); return *this; }
 
     /**
-     * <p>Provides a list of the AWS Identity and Access Management (IAM) roles that
-     * are associated with the cluster. IAM roles that are associated with a cluster
-     * grant permission for the cluster to access other AWS services on your
-     * behalf.</p>
+     * <p>Provides a list of the Identity and Access Management (IAM) roles that are
+     * associated with the cluster. (IAM) roles that are associated with a cluster
+     * grant permission for the cluster to access other Amazon Web Services services on
+     * your behalf.</p>
      */
     inline DBCluster& AddAssociatedRoles(DBClusterRole&& value) { m_associatedRolesHasBeenSet = true; m_associatedRoles.push_back(std::move(value)); return *this; }
 
@@ -1407,6 +1511,12 @@ namespace Model
 
     Aws::String m_preferredMaintenanceWindow;
     bool m_preferredMaintenanceWindowHasBeenSet;
+
+    Aws::String m_replicationSourceIdentifier;
+    bool m_replicationSourceIdentifierHasBeenSet;
+
+    Aws::Vector<Aws::String> m_readReplicaIdentifiers;
+    bool m_readReplicaIdentifiersHasBeenSet;
 
     Aws::Vector<DBClusterMember> m_dBClusterMembers;
     bool m_dBClusterMembersHasBeenSet;

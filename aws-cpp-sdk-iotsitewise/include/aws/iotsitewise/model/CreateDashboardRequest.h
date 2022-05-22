@@ -161,7 +161,7 @@ namespace Model
      * <p>The dashboard definition specified in a JSON literal. For detailed
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating
-     * dashboards (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline const Aws::String& GetDashboardDefinition() const{ return m_dashboardDefinition; }
 
@@ -169,7 +169,7 @@ namespace Model
      * <p>The dashboard definition specified in a JSON literal. For detailed
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating
-     * dashboards (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline bool DashboardDefinitionHasBeenSet() const { return m_dashboardDefinitionHasBeenSet; }
 
@@ -177,7 +177,7 @@ namespace Model
      * <p>The dashboard definition specified in a JSON literal. For detailed
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating
-     * dashboards (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline void SetDashboardDefinition(const Aws::String& value) { m_dashboardDefinitionHasBeenSet = true; m_dashboardDefinition = value; }
 
@@ -185,7 +185,7 @@ namespace Model
      * <p>The dashboard definition specified in a JSON literal. For detailed
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating
-     * dashboards (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline void SetDashboardDefinition(Aws::String&& value) { m_dashboardDefinitionHasBeenSet = true; m_dashboardDefinition = std::move(value); }
 
@@ -193,7 +193,7 @@ namespace Model
      * <p>The dashboard definition specified in a JSON literal. For detailed
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating
-     * dashboards (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline void SetDashboardDefinition(const char* value) { m_dashboardDefinitionHasBeenSet = true; m_dashboardDefinition.assign(value); }
 
@@ -201,7 +201,7 @@ namespace Model
      * <p>The dashboard definition specified in a JSON literal. For detailed
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating
-     * dashboards (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline CreateDashboardRequest& WithDashboardDefinition(const Aws::String& value) { SetDashboardDefinition(value); return *this;}
 
@@ -209,7 +209,7 @@ namespace Model
      * <p>The dashboard definition specified in a JSON literal. For detailed
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating
-     * dashboards (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline CreateDashboardRequest& WithDashboardDefinition(Aws::String&& value) { SetDashboardDefinition(std::move(value)); return *this;}
 
@@ -217,7 +217,7 @@ namespace Model
      * <p>The dashboard definition specified in a JSON literal. For detailed
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating
-     * dashboards (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline CreateDashboardRequest& WithDashboardDefinition(const char* value) { SetDashboardDefinition(value); return *this;}
 
@@ -283,8 +283,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the dashboard. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
@@ -292,8 +291,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the dashboard. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -301,8 +299,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the dashboard. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -310,8 +307,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the dashboard. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -319,8 +315,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the dashboard. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline CreateDashboardRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
@@ -328,8 +323,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the dashboard. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline CreateDashboardRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -337,8 +331,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the dashboard. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline CreateDashboardRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
@@ -346,8 +339,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the dashboard. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline CreateDashboardRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
@@ -355,8 +347,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the dashboard. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline CreateDashboardRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
@@ -364,8 +355,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the dashboard. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline CreateDashboardRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -373,8 +363,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the dashboard. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline CreateDashboardRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
@@ -382,8 +371,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the dashboard. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline CreateDashboardRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
@@ -391,8 +379,7 @@ namespace Model
      * <p>A list of key-value pairs that contain metadata for the dashboard. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging
-     * your AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline CreateDashboardRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 

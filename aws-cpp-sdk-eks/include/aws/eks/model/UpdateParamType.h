@@ -24,13 +24,21 @@ namespace Model
     DesiredSize,
     LabelsToAdd,
     LabelsToRemove,
+    TaintsToAdd,
+    TaintsToRemove,
     MaxSize,
     MinSize,
     ReleaseVersion,
     PublicAccessCidrs,
+    LaunchTemplateName,
+    LaunchTemplateVersion,
+    IdentityProviderConfig,
+    EncryptionConfig,
     AddonVersion,
     ServiceAccountRoleArn,
-    ResolveConflicts
+    ResolveConflicts,
+    MaxUnavailable,
+    MaxUnavailablePercentage
   };
 
 namespace UpdateParamTypeMapper

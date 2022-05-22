@@ -157,141 +157,149 @@ namespace Model
 
 
     /**
-     * <p>The action to take if the step fails. The default value is Abort.</p>
+     * <p>The action to take if the step fails. The default value is
+     * <code>Abort</code>.</p>
      */
     inline const Aws::String& GetOnFailure() const{ return m_onFailure; }
 
     /**
-     * <p>The action to take if the step fails. The default value is Abort.</p>
+     * <p>The action to take if the step fails. The default value is
+     * <code>Abort</code>.</p>
      */
     inline bool OnFailureHasBeenSet() const { return m_onFailureHasBeenSet; }
 
     /**
-     * <p>The action to take if the step fails. The default value is Abort.</p>
+     * <p>The action to take if the step fails. The default value is
+     * <code>Abort</code>.</p>
      */
     inline void SetOnFailure(const Aws::String& value) { m_onFailureHasBeenSet = true; m_onFailure = value; }
 
     /**
-     * <p>The action to take if the step fails. The default value is Abort.</p>
+     * <p>The action to take if the step fails. The default value is
+     * <code>Abort</code>.</p>
      */
     inline void SetOnFailure(Aws::String&& value) { m_onFailureHasBeenSet = true; m_onFailure = std::move(value); }
 
     /**
-     * <p>The action to take if the step fails. The default value is Abort.</p>
+     * <p>The action to take if the step fails. The default value is
+     * <code>Abort</code>.</p>
      */
     inline void SetOnFailure(const char* value) { m_onFailureHasBeenSet = true; m_onFailure.assign(value); }
 
     /**
-     * <p>The action to take if the step fails. The default value is Abort.</p>
+     * <p>The action to take if the step fails. The default value is
+     * <code>Abort</code>.</p>
      */
     inline StepExecution& WithOnFailure(const Aws::String& value) { SetOnFailure(value); return *this;}
 
     /**
-     * <p>The action to take if the step fails. The default value is Abort.</p>
+     * <p>The action to take if the step fails. The default value is
+     * <code>Abort</code>.</p>
      */
     inline StepExecution& WithOnFailure(Aws::String&& value) { SetOnFailure(std::move(value)); return *this;}
 
     /**
-     * <p>The action to take if the step fails. The default value is Abort.</p>
+     * <p>The action to take if the step fails. The default value is
+     * <code>Abort</code>.</p>
      */
     inline StepExecution& WithOnFailure(const char* value) { SetOnFailure(value); return *this;}
 
 
     /**
      * <p>The maximum number of tries to run the action of the step. The default value
-     * is 1.</p>
+     * is <code>1</code>.</p>
      */
     inline int GetMaxAttempts() const{ return m_maxAttempts; }
 
     /**
      * <p>The maximum number of tries to run the action of the step. The default value
-     * is 1.</p>
+     * is <code>1</code>.</p>
      */
     inline bool MaxAttemptsHasBeenSet() const { return m_maxAttemptsHasBeenSet; }
 
     /**
      * <p>The maximum number of tries to run the action of the step. The default value
-     * is 1.</p>
+     * is <code>1</code>.</p>
      */
     inline void SetMaxAttempts(int value) { m_maxAttemptsHasBeenSet = true; m_maxAttempts = value; }
 
     /**
      * <p>The maximum number of tries to run the action of the step. The default value
-     * is 1.</p>
+     * is <code>1</code>.</p>
      */
     inline StepExecution& WithMaxAttempts(int value) { SetMaxAttempts(value); return *this;}
 
 
     /**
      * <p>If a step has begun execution, this contains the time the step started. If
-     * the step is in Pending status, this field is not populated.</p>
+     * the step is in Pending status, this field isn't populated.</p>
      */
     inline const Aws::Utils::DateTime& GetExecutionStartTime() const{ return m_executionStartTime; }
 
     /**
      * <p>If a step has begun execution, this contains the time the step started. If
-     * the step is in Pending status, this field is not populated.</p>
+     * the step is in Pending status, this field isn't populated.</p>
      */
     inline bool ExecutionStartTimeHasBeenSet() const { return m_executionStartTimeHasBeenSet; }
 
     /**
      * <p>If a step has begun execution, this contains the time the step started. If
-     * the step is in Pending status, this field is not populated.</p>
+     * the step is in Pending status, this field isn't populated.</p>
      */
     inline void SetExecutionStartTime(const Aws::Utils::DateTime& value) { m_executionStartTimeHasBeenSet = true; m_executionStartTime = value; }
 
     /**
      * <p>If a step has begun execution, this contains the time the step started. If
-     * the step is in Pending status, this field is not populated.</p>
+     * the step is in Pending status, this field isn't populated.</p>
      */
     inline void SetExecutionStartTime(Aws::Utils::DateTime&& value) { m_executionStartTimeHasBeenSet = true; m_executionStartTime = std::move(value); }
 
     /**
      * <p>If a step has begun execution, this contains the time the step started. If
-     * the step is in Pending status, this field is not populated.</p>
+     * the step is in Pending status, this field isn't populated.</p>
      */
     inline StepExecution& WithExecutionStartTime(const Aws::Utils::DateTime& value) { SetExecutionStartTime(value); return *this;}
 
     /**
      * <p>If a step has begun execution, this contains the time the step started. If
-     * the step is in Pending status, this field is not populated.</p>
+     * the step is in Pending status, this field isn't populated.</p>
      */
     inline StepExecution& WithExecutionStartTime(Aws::Utils::DateTime&& value) { SetExecutionStartTime(std::move(value)); return *this;}
 
 
     /**
      * <p>If a step has finished execution, this contains the time the execution ended.
-     * If the step has not yet concluded, this field is not populated.</p>
+     * If the step hasn't yet concluded, this field isn't populated.</p>
      */
     inline const Aws::Utils::DateTime& GetExecutionEndTime() const{ return m_executionEndTime; }
 
     /**
      * <p>If a step has finished execution, this contains the time the execution ended.
-     * If the step has not yet concluded, this field is not populated.</p>
+     * If the step hasn't yet concluded, this field isn't populated.</p>
      */
     inline bool ExecutionEndTimeHasBeenSet() const { return m_executionEndTimeHasBeenSet; }
 
     /**
      * <p>If a step has finished execution, this contains the time the execution ended.
-     * If the step has not yet concluded, this field is not populated.</p>
+     * If the step hasn't yet concluded, this field isn't populated.</p>
      */
     inline void SetExecutionEndTime(const Aws::Utils::DateTime& value) { m_executionEndTimeHasBeenSet = true; m_executionEndTime = value; }
 
     /**
      * <p>If a step has finished execution, this contains the time the execution ended.
-     * If the step has not yet concluded, this field is not populated.</p>
+     * If the step hasn't yet concluded, this field isn't populated.</p>
      */
     inline void SetExecutionEndTime(Aws::Utils::DateTime&& value) { m_executionEndTimeHasBeenSet = true; m_executionEndTime = std::move(value); }
 
     /**
      * <p>If a step has finished execution, this contains the time the execution ended.
-     * If the step has not yet concluded, this field is not populated.</p>
+     * If the step hasn't yet concluded, this field isn't populated.</p>
      */
     inline StepExecution& WithExecutionEndTime(const Aws::Utils::DateTime& value) { SetExecutionEndTime(value); return *this;}
 
     /**
      * <p>If a step has finished execution, this contains the time the execution ended.
-     * If the step has not yet concluded, this field is not populated.</p>
+     * If the step hasn't yet concluded, this field isn't populated.</p>
      */
     inline StepExecution& WithExecutionEndTime(Aws::Utils::DateTime&& value) { SetExecutionEndTime(std::move(value)); return *this;}
 
@@ -925,38 +933,38 @@ namespace Model
 
 
     /**
-     * <p>The combination of AWS Regions and accounts targeted by the current
-     * Automation execution.</p>
+     * <p>The combination of Amazon Web Services Regions and Amazon Web Services
+     * accounts targeted by the current Automation execution.</p>
      */
     inline const TargetLocation& GetTargetLocation() const{ return m_targetLocation; }
 
     /**
-     * <p>The combination of AWS Regions and accounts targeted by the current
-     * Automation execution.</p>
+     * <p>The combination of Amazon Web Services Regions and Amazon Web Services
+     * accounts targeted by the current Automation execution.</p>
      */
     inline bool TargetLocationHasBeenSet() const { return m_targetLocationHasBeenSet; }
 
     /**
-     * <p>The combination of AWS Regions and accounts targeted by the current
-     * Automation execution.</p>
+     * <p>The combination of Amazon Web Services Regions and Amazon Web Services
+     * accounts targeted by the current Automation execution.</p>
      */
     inline void SetTargetLocation(const TargetLocation& value) { m_targetLocationHasBeenSet = true; m_targetLocation = value; }
 
     /**
-     * <p>The combination of AWS Regions and accounts targeted by the current
-     * Automation execution.</p>
+     * <p>The combination of Amazon Web Services Regions and Amazon Web Services
+     * accounts targeted by the current Automation execution.</p>
      */
     inline void SetTargetLocation(TargetLocation&& value) { m_targetLocationHasBeenSet = true; m_targetLocation = std::move(value); }
 
     /**
-     * <p>The combination of AWS Regions and accounts targeted by the current
-     * Automation execution.</p>
+     * <p>The combination of Amazon Web Services Regions and Amazon Web Services
+     * accounts targeted by the current Automation execution.</p>
      */
     inline StepExecution& WithTargetLocation(const TargetLocation& value) { SetTargetLocation(value); return *this;}
 
     /**
-     * <p>The combination of AWS Regions and accounts targeted by the current
-     * Automation execution.</p>
+     * <p>The combination of Amazon Web Services Regions and Amazon Web Services
+     * accounts targeted by the current Automation execution.</p>
      */
     inline StepExecution& WithTargetLocation(TargetLocation&& value) { SetTargetLocation(std::move(value)); return *this;}
 

@@ -120,65 +120,65 @@ namespace Model
 
 
     /**
-     * <p>The AWS account IDs of the users (principals) who will be given access to the
-     * specified actions. The users must have AWS accounts, but do not need to be
-     * signed up for this service.</p>
+     * <p>The Amazon Web Services account IDs of the users (principals) who will be
+     * given access to the specified actions. The users must have Amazon Web Services
+     * account, but do not need to be signed up for this service.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAWSAccountId() const{ return m_aWSAccountId; }
 
     /**
-     * <p>The AWS account IDs of the users (principals) who will be given access to the
-     * specified actions. The users must have AWS accounts, but do not need to be
-     * signed up for this service.</p>
+     * <p>The Amazon Web Services account IDs of the users (principals) who will be
+     * given access to the specified actions. The users must have Amazon Web Services
+     * account, but do not need to be signed up for this service.</p>
      */
     inline bool AWSAccountIdHasBeenSet() const { return m_aWSAccountIdHasBeenSet; }
 
     /**
-     * <p>The AWS account IDs of the users (principals) who will be given access to the
-     * specified actions. The users must have AWS accounts, but do not need to be
-     * signed up for this service.</p>
+     * <p>The Amazon Web Services account IDs of the users (principals) who will be
+     * given access to the specified actions. The users must have Amazon Web Services
+     * account, but do not need to be signed up for this service.</p>
      */
     inline void SetAWSAccountId(const Aws::Vector<Aws::String>& value) { m_aWSAccountIdHasBeenSet = true; m_aWSAccountId = value; }
 
     /**
-     * <p>The AWS account IDs of the users (principals) who will be given access to the
-     * specified actions. The users must have AWS accounts, but do not need to be
-     * signed up for this service.</p>
+     * <p>The Amazon Web Services account IDs of the users (principals) who will be
+     * given access to the specified actions. The users must have Amazon Web Services
+     * account, but do not need to be signed up for this service.</p>
      */
     inline void SetAWSAccountId(Aws::Vector<Aws::String>&& value) { m_aWSAccountIdHasBeenSet = true; m_aWSAccountId = std::move(value); }
 
     /**
-     * <p>The AWS account IDs of the users (principals) who will be given access to the
-     * specified actions. The users must have AWS accounts, but do not need to be
-     * signed up for this service.</p>
+     * <p>The Amazon Web Services account IDs of the users (principals) who will be
+     * given access to the specified actions. The users must have Amazon Web Services
+     * account, but do not need to be signed up for this service.</p>
      */
     inline AddPermissionRequest& WithAWSAccountId(const Aws::Vector<Aws::String>& value) { SetAWSAccountId(value); return *this;}
 
     /**
-     * <p>The AWS account IDs of the users (principals) who will be given access to the
-     * specified actions. The users must have AWS accounts, but do not need to be
-     * signed up for this service.</p>
+     * <p>The Amazon Web Services account IDs of the users (principals) who will be
+     * given access to the specified actions. The users must have Amazon Web Services
+     * account, but do not need to be signed up for this service.</p>
      */
     inline AddPermissionRequest& WithAWSAccountId(Aws::Vector<Aws::String>&& value) { SetAWSAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account IDs of the users (principals) who will be given access to the
-     * specified actions. The users must have AWS accounts, but do not need to be
-     * signed up for this service.</p>
+     * <p>The Amazon Web Services account IDs of the users (principals) who will be
+     * given access to the specified actions. The users must have Amazon Web Services
+     * account, but do not need to be signed up for this service.</p>
      */
     inline AddPermissionRequest& AddAWSAccountId(const Aws::String& value) { m_aWSAccountIdHasBeenSet = true; m_aWSAccountId.push_back(value); return *this; }
 
     /**
-     * <p>The AWS account IDs of the users (principals) who will be given access to the
-     * specified actions. The users must have AWS accounts, but do not need to be
-     * signed up for this service.</p>
+     * <p>The Amazon Web Services account IDs of the users (principals) who will be
+     * given access to the specified actions. The users must have Amazon Web Services
+     * account, but do not need to be signed up for this service.</p>
      */
     inline AddPermissionRequest& AddAWSAccountId(Aws::String&& value) { m_aWSAccountIdHasBeenSet = true; m_aWSAccountId.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The AWS account IDs of the users (principals) who will be given access to the
-     * specified actions. The users must have AWS accounts, but do not need to be
-     * signed up for this service.</p>
+     * <p>The Amazon Web Services account IDs of the users (principals) who will be
+     * given access to the specified actions. The users must have Amazon Web Services
+     * account, but do not need to be signed up for this service.</p>
      */
     inline AddPermissionRequest& AddAWSAccountId(const char* value) { m_aWSAccountIdHasBeenSet = true; m_aWSAccountId.push_back(value); return *this; }
 

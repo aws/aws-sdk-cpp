@@ -22,8 +22,8 @@ namespace Model
 {
 
   /**
-   * <p>The retry strategy to use for failed jobs, if the target is an AWS Batch job.
-   * If you specify a retry strategy here, it overrides the retry strategy defined in
+   * <p>The retry strategy to use for failed jobs, if the target is an Batch job. If
+   * you specify a retry strategy here, it overrides the retry strategy defined in
    * the job definition.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/BatchRetryStrategy">AWS
    * API Reference</a></p>

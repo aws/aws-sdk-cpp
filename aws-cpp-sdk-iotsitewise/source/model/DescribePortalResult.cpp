@@ -108,6 +108,18 @@ DescribePortalResult& DescribePortalResult::operator =(const Aws::AmazonWebServi
 
   }
 
+  if(jsonValue.ValueExists("notificationSenderEmail"))
+  {
+    m_notificationSenderEmail = jsonValue.GetString("notificationSenderEmail");
+
+  }
+
+  if(jsonValue.ValueExists("alarms"))
+  {
+    m_alarms = jsonValue.GetObject("alarms");
+
+  }
+
 
 
   return *this;

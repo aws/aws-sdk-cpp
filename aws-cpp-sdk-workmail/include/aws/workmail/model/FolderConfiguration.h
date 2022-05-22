@@ -108,22 +108,22 @@ namespace Model
 
 
     /**
-     * <p>The period of time at which the folder configuration action is applied.</p>
+     * <p>The number of days for which the folder-configuration action applies.</p>
      */
     inline int GetPeriod() const{ return m_period; }
 
     /**
-     * <p>The period of time at which the folder configuration action is applied.</p>
+     * <p>The number of days for which the folder-configuration action applies.</p>
      */
     inline bool PeriodHasBeenSet() const { return m_periodHasBeenSet; }
 
     /**
-     * <p>The period of time at which the folder configuration action is applied.</p>
+     * <p>The number of days for which the folder-configuration action applies.</p>
      */
     inline void SetPeriod(int value) { m_periodHasBeenSet = true; m_period = value; }
 
     /**
-     * <p>The period of time at which the folder configuration action is applied.</p>
+     * <p>The number of days for which the folder-configuration action applies.</p>
      */
     inline FolderConfiguration& WithPeriod(int value) { SetPeriod(value); return *this;}
 

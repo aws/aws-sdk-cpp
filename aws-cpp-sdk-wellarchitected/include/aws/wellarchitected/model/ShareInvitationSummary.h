@@ -7,6 +7,7 @@
 #include <aws/wellarchitected/WellArchitected_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/wellarchitected/model/PermissionType.h>
+#include <aws/wellarchitected/model/ShareResourceType.h>
 #include <utility>
 
 namespace Aws
@@ -148,6 +149,37 @@ namespace Model
     inline ShareInvitationSummary& WithPermissionType(PermissionType&& value) { SetPermissionType(std::move(value)); return *this;}
 
 
+    /**
+     * <p>The resource type of the share invitation.</p>
+     */
+    inline const ShareResourceType& GetShareResourceType() const{ return m_shareResourceType; }
+
+    /**
+     * <p>The resource type of the share invitation.</p>
+     */
+    inline bool ShareResourceTypeHasBeenSet() const { return m_shareResourceTypeHasBeenSet; }
+
+    /**
+     * <p>The resource type of the share invitation.</p>
+     */
+    inline void SetShareResourceType(const ShareResourceType& value) { m_shareResourceTypeHasBeenSet = true; m_shareResourceType = value; }
+
+    /**
+     * <p>The resource type of the share invitation.</p>
+     */
+    inline void SetShareResourceType(ShareResourceType&& value) { m_shareResourceTypeHasBeenSet = true; m_shareResourceType = std::move(value); }
+
+    /**
+     * <p>The resource type of the share invitation.</p>
+     */
+    inline ShareInvitationSummary& WithShareResourceType(const ShareResourceType& value) { SetShareResourceType(value); return *this;}
+
+    /**
+     * <p>The resource type of the share invitation.</p>
+     */
+    inline ShareInvitationSummary& WithShareResourceType(ShareResourceType&& value) { SetShareResourceType(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetWorkloadName() const{ return m_workloadName; }
 
@@ -197,6 +229,72 @@ namespace Model
     
     inline ShareInvitationSummary& WithWorkloadId(const char* value) { SetWorkloadId(value); return *this;}
 
+
+    
+    inline const Aws::String& GetLensName() const{ return m_lensName; }
+
+    
+    inline bool LensNameHasBeenSet() const { return m_lensNameHasBeenSet; }
+
+    
+    inline void SetLensName(const Aws::String& value) { m_lensNameHasBeenSet = true; m_lensName = value; }
+
+    
+    inline void SetLensName(Aws::String&& value) { m_lensNameHasBeenSet = true; m_lensName = std::move(value); }
+
+    
+    inline void SetLensName(const char* value) { m_lensNameHasBeenSet = true; m_lensName.assign(value); }
+
+    
+    inline ShareInvitationSummary& WithLensName(const Aws::String& value) { SetLensName(value); return *this;}
+
+    
+    inline ShareInvitationSummary& WithLensName(Aws::String&& value) { SetLensName(std::move(value)); return *this;}
+
+    
+    inline ShareInvitationSummary& WithLensName(const char* value) { SetLensName(value); return *this;}
+
+
+    /**
+     * <p>The ARN for the lens.</p>
+     */
+    inline const Aws::String& GetLensArn() const{ return m_lensArn; }
+
+    /**
+     * <p>The ARN for the lens.</p>
+     */
+    inline bool LensArnHasBeenSet() const { return m_lensArnHasBeenSet; }
+
+    /**
+     * <p>The ARN for the lens.</p>
+     */
+    inline void SetLensArn(const Aws::String& value) { m_lensArnHasBeenSet = true; m_lensArn = value; }
+
+    /**
+     * <p>The ARN for the lens.</p>
+     */
+    inline void SetLensArn(Aws::String&& value) { m_lensArnHasBeenSet = true; m_lensArn = std::move(value); }
+
+    /**
+     * <p>The ARN for the lens.</p>
+     */
+    inline void SetLensArn(const char* value) { m_lensArnHasBeenSet = true; m_lensArn.assign(value); }
+
+    /**
+     * <p>The ARN for the lens.</p>
+     */
+    inline ShareInvitationSummary& WithLensArn(const Aws::String& value) { SetLensArn(value); return *this;}
+
+    /**
+     * <p>The ARN for the lens.</p>
+     */
+    inline ShareInvitationSummary& WithLensArn(Aws::String&& value) { SetLensArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN for the lens.</p>
+     */
+    inline ShareInvitationSummary& WithLensArn(const char* value) { SetLensArn(value); return *this;}
+
   private:
 
     Aws::String m_shareInvitationId;
@@ -211,11 +309,20 @@ namespace Model
     PermissionType m_permissionType;
     bool m_permissionTypeHasBeenSet;
 
+    ShareResourceType m_shareResourceType;
+    bool m_shareResourceTypeHasBeenSet;
+
     Aws::String m_workloadName;
     bool m_workloadNameHasBeenSet;
 
     Aws::String m_workloadId;
     bool m_workloadIdHasBeenSet;
+
+    Aws::String m_lensName;
+    bool m_lensNameHasBeenSet;
+
+    Aws::String m_lensArn;
+    bool m_lensArnHasBeenSet;
   };
 
 } // namespace Model

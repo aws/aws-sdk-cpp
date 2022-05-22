@@ -25,14 +25,10 @@ namespace Model
 {
 
   /**
-   *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-   * released in November, 2019. For information, including how to migrate your AWS
-   * WAF resources from the prior release, see the <a
-   * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-   * WAF Developer Guide</a>. </p>  <p>In a <a>WebACL</a>, this is the action
-   * that you want AWS WAF to perform when a web request doesn't match any of the
-   * rules in the <code>WebACL</code>. The default action must be a terminating
-   * action, so count is not allowed.</p><p><h3>See Also:</h3>   <a
+   * <p>In a <a>WebACL</a>, this is the action that you want WAF to perform when a
+   * web request doesn't match any of the rules in the <code>WebACL</code>. The
+   * default action must be a terminating action, so you can't use
+   * count.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DefaultAction">AWS
    * API Reference</a></p>
    */
@@ -46,63 +42,63 @@ namespace Model
 
 
     /**
-     * <p>Specifies that AWS WAF should block requests by default. </p>
+     * <p>Specifies that WAF should block requests by default. </p>
      */
     inline const BlockAction& GetBlock() const{ return m_block; }
 
     /**
-     * <p>Specifies that AWS WAF should block requests by default. </p>
+     * <p>Specifies that WAF should block requests by default. </p>
      */
     inline bool BlockHasBeenSet() const { return m_blockHasBeenSet; }
 
     /**
-     * <p>Specifies that AWS WAF should block requests by default. </p>
+     * <p>Specifies that WAF should block requests by default. </p>
      */
     inline void SetBlock(const BlockAction& value) { m_blockHasBeenSet = true; m_block = value; }
 
     /**
-     * <p>Specifies that AWS WAF should block requests by default. </p>
+     * <p>Specifies that WAF should block requests by default. </p>
      */
     inline void SetBlock(BlockAction&& value) { m_blockHasBeenSet = true; m_block = std::move(value); }
 
     /**
-     * <p>Specifies that AWS WAF should block requests by default. </p>
+     * <p>Specifies that WAF should block requests by default. </p>
      */
     inline DefaultAction& WithBlock(const BlockAction& value) { SetBlock(value); return *this;}
 
     /**
-     * <p>Specifies that AWS WAF should block requests by default. </p>
+     * <p>Specifies that WAF should block requests by default. </p>
      */
     inline DefaultAction& WithBlock(BlockAction&& value) { SetBlock(std::move(value)); return *this;}
 
 
     /**
-     * <p>Specifies that AWS WAF should allow requests by default.</p>
+     * <p>Specifies that WAF should allow requests by default.</p>
      */
     inline const AllowAction& GetAllow() const{ return m_allow; }
 
     /**
-     * <p>Specifies that AWS WAF should allow requests by default.</p>
+     * <p>Specifies that WAF should allow requests by default.</p>
      */
     inline bool AllowHasBeenSet() const { return m_allowHasBeenSet; }
 
     /**
-     * <p>Specifies that AWS WAF should allow requests by default.</p>
+     * <p>Specifies that WAF should allow requests by default.</p>
      */
     inline void SetAllow(const AllowAction& value) { m_allowHasBeenSet = true; m_allow = value; }
 
     /**
-     * <p>Specifies that AWS WAF should allow requests by default.</p>
+     * <p>Specifies that WAF should allow requests by default.</p>
      */
     inline void SetAllow(AllowAction&& value) { m_allowHasBeenSet = true; m_allow = std::move(value); }
 
     /**
-     * <p>Specifies that AWS WAF should allow requests by default.</p>
+     * <p>Specifies that WAF should allow requests by default.</p>
      */
     inline DefaultAction& WithAllow(const AllowAction& value) { SetAllow(value); return *this;}
 
     /**
-     * <p>Specifies that AWS WAF should allow requests by default.</p>
+     * <p>Specifies that WAF should allow requests by default.</p>
      */
     inline DefaultAction& WithAllow(AllowAction&& value) { SetAllow(std::move(value)); return *this;}
 

@@ -124,50 +124,50 @@ namespace Model
 
 
     /**
-     * <p>The AWS ID of the owner of the EC2 security group specified in the
-     * <code>EC2SecurityGroupName</code> field. </p>
+     * <p>The Amazon Web Services account ID of the owner of the EC2 security group
+     * specified in the <code>EC2SecurityGroupName</code> field. </p>
      */
     inline const Aws::String& GetEC2SecurityGroupOwnerId() const{ return m_eC2SecurityGroupOwnerId; }
 
     /**
-     * <p>The AWS ID of the owner of the EC2 security group specified in the
-     * <code>EC2SecurityGroupName</code> field. </p>
+     * <p>The Amazon Web Services account ID of the owner of the EC2 security group
+     * specified in the <code>EC2SecurityGroupName</code> field. </p>
      */
     inline bool EC2SecurityGroupOwnerIdHasBeenSet() const { return m_eC2SecurityGroupOwnerIdHasBeenSet; }
 
     /**
-     * <p>The AWS ID of the owner of the EC2 security group specified in the
-     * <code>EC2SecurityGroupName</code> field. </p>
+     * <p>The Amazon Web Services account ID of the owner of the EC2 security group
+     * specified in the <code>EC2SecurityGroupName</code> field. </p>
      */
     inline void SetEC2SecurityGroupOwnerId(const Aws::String& value) { m_eC2SecurityGroupOwnerIdHasBeenSet = true; m_eC2SecurityGroupOwnerId = value; }
 
     /**
-     * <p>The AWS ID of the owner of the EC2 security group specified in the
-     * <code>EC2SecurityGroupName</code> field. </p>
+     * <p>The Amazon Web Services account ID of the owner of the EC2 security group
+     * specified in the <code>EC2SecurityGroupName</code> field. </p>
      */
     inline void SetEC2SecurityGroupOwnerId(Aws::String&& value) { m_eC2SecurityGroupOwnerIdHasBeenSet = true; m_eC2SecurityGroupOwnerId = std::move(value); }
 
     /**
-     * <p>The AWS ID of the owner of the EC2 security group specified in the
-     * <code>EC2SecurityGroupName</code> field. </p>
+     * <p>The Amazon Web Services account ID of the owner of the EC2 security group
+     * specified in the <code>EC2SecurityGroupName</code> field. </p>
      */
     inline void SetEC2SecurityGroupOwnerId(const char* value) { m_eC2SecurityGroupOwnerIdHasBeenSet = true; m_eC2SecurityGroupOwnerId.assign(value); }
 
     /**
-     * <p>The AWS ID of the owner of the EC2 security group specified in the
-     * <code>EC2SecurityGroupName</code> field. </p>
+     * <p>The Amazon Web Services account ID of the owner of the EC2 security group
+     * specified in the <code>EC2SecurityGroupName</code> field. </p>
      */
     inline EC2SecurityGroup& WithEC2SecurityGroupOwnerId(const Aws::String& value) { SetEC2SecurityGroupOwnerId(value); return *this;}
 
     /**
-     * <p>The AWS ID of the owner of the EC2 security group specified in the
-     * <code>EC2SecurityGroupName</code> field. </p>
+     * <p>The Amazon Web Services account ID of the owner of the EC2 security group
+     * specified in the <code>EC2SecurityGroupName</code> field. </p>
      */
     inline EC2SecurityGroup& WithEC2SecurityGroupOwnerId(Aws::String&& value) { SetEC2SecurityGroupOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS ID of the owner of the EC2 security group specified in the
-     * <code>EC2SecurityGroupName</code> field. </p>
+     * <p>The Amazon Web Services account ID of the owner of the EC2 security group
+     * specified in the <code>EC2SecurityGroupName</code> field. </p>
      */
     inline EC2SecurityGroup& WithEC2SecurityGroupOwnerId(const char* value) { SetEC2SecurityGroupOwnerId(value); return *this;}
 

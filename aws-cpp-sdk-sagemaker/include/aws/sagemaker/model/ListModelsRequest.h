@@ -178,50 +178,50 @@ namespace Model
 
 
     /**
-     * <p>A string in the training job name. This filter returns only models in the
-     * training job whose name contains the specified string.</p>
+     * <p>A string in the model name. This filter returns only models whose name
+     * contains the specified string.</p>
      */
     inline const Aws::String& GetNameContains() const{ return m_nameContains; }
 
     /**
-     * <p>A string in the training job name. This filter returns only models in the
-     * training job whose name contains the specified string.</p>
+     * <p>A string in the model name. This filter returns only models whose name
+     * contains the specified string.</p>
      */
     inline bool NameContainsHasBeenSet() const { return m_nameContainsHasBeenSet; }
 
     /**
-     * <p>A string in the training job name. This filter returns only models in the
-     * training job whose name contains the specified string.</p>
+     * <p>A string in the model name. This filter returns only models whose name
+     * contains the specified string.</p>
      */
     inline void SetNameContains(const Aws::String& value) { m_nameContainsHasBeenSet = true; m_nameContains = value; }
 
     /**
-     * <p>A string in the training job name. This filter returns only models in the
-     * training job whose name contains the specified string.</p>
+     * <p>A string in the model name. This filter returns only models whose name
+     * contains the specified string.</p>
      */
     inline void SetNameContains(Aws::String&& value) { m_nameContainsHasBeenSet = true; m_nameContains = std::move(value); }
 
     /**
-     * <p>A string in the training job name. This filter returns only models in the
-     * training job whose name contains the specified string.</p>
+     * <p>A string in the model name. This filter returns only models whose name
+     * contains the specified string.</p>
      */
     inline void SetNameContains(const char* value) { m_nameContainsHasBeenSet = true; m_nameContains.assign(value); }
 
     /**
-     * <p>A string in the training job name. This filter returns only models in the
-     * training job whose name contains the specified string.</p>
+     * <p>A string in the model name. This filter returns only models whose name
+     * contains the specified string.</p>
      */
     inline ListModelsRequest& WithNameContains(const Aws::String& value) { SetNameContains(value); return *this;}
 
     /**
-     * <p>A string in the training job name. This filter returns only models in the
-     * training job whose name contains the specified string.</p>
+     * <p>A string in the model name. This filter returns only models whose name
+     * contains the specified string.</p>
      */
     inline ListModelsRequest& WithNameContains(Aws::String&& value) { SetNameContains(std::move(value)); return *this;}
 
     /**
-     * <p>A string in the training job name. This filter returns only models in the
-     * training job whose name contains the specified string.</p>
+     * <p>A string in the model name. This filter returns only models whose name
+     * contains the specified string.</p>
      */
     inline ListModelsRequest& WithNameContains(const char* value) { SetNameContains(value); return *this;}
 

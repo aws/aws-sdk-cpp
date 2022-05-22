@@ -38,87 +38,89 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
+    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
 
     /**
-     * <p>The ARN of the app instance.</p>
+     * <p>The ARN of the <code>AppInstance</code>.</p>
      */
     inline const Aws::String& GetAppInstanceArn() const{ return m_appInstanceArn; }
 
     /**
-     * <p>The ARN of the app instance.</p>
+     * <p>The ARN of the <code>AppInstance</code>.</p>
      */
     inline bool AppInstanceArnHasBeenSet() const { return m_appInstanceArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the app instance.</p>
+     * <p>The ARN of the <code>AppInstance</code>.</p>
      */
     inline void SetAppInstanceArn(const Aws::String& value) { m_appInstanceArnHasBeenSet = true; m_appInstanceArn = value; }
 
     /**
-     * <p>The ARN of the app instance.</p>
+     * <p>The ARN of the <code>AppInstance</code>.</p>
      */
     inline void SetAppInstanceArn(Aws::String&& value) { m_appInstanceArnHasBeenSet = true; m_appInstanceArn = std::move(value); }
 
     /**
-     * <p>The ARN of the app instance.</p>
+     * <p>The ARN of the <code>AppInstance</code>.</p>
      */
     inline void SetAppInstanceArn(const char* value) { m_appInstanceArnHasBeenSet = true; m_appInstanceArn.assign(value); }
 
     /**
-     * <p>The ARN of the app instance.</p>
+     * <p>The ARN of the <code>AppInstance</code>.</p>
      */
     inline ListChannelsRequest& WithAppInstanceArn(const Aws::String& value) { SetAppInstanceArn(value); return *this;}
 
     /**
-     * <p>The ARN of the app instance.</p>
+     * <p>The ARN of the <code>AppInstance</code>.</p>
      */
     inline ListChannelsRequest& WithAppInstanceArn(Aws::String&& value) { SetAppInstanceArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the app instance.</p>
+     * <p>The ARN of the <code>AppInstance</code>.</p>
      */
     inline ListChannelsRequest& WithAppInstanceArn(const char* value) { SetAppInstanceArn(value); return *this;}
 
 
     /**
      * <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels.
-     * <code>PRIVATE</code> retrieves private channels. Only an app instance
-     * administrator can retrieve private channels.</p>
+     * <code>PRIVATE</code> retrieves private channels. Only an
+     * <code>AppInstanceAdmin</code> can retrieve private channels. </p>
      */
     inline const ChannelPrivacy& GetPrivacy() const{ return m_privacy; }
 
     /**
      * <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels.
-     * <code>PRIVATE</code> retrieves private channels. Only an app instance
-     * administrator can retrieve private channels.</p>
+     * <code>PRIVATE</code> retrieves private channels. Only an
+     * <code>AppInstanceAdmin</code> can retrieve private channels. </p>
      */
     inline bool PrivacyHasBeenSet() const { return m_privacyHasBeenSet; }
 
     /**
      * <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels.
-     * <code>PRIVATE</code> retrieves private channels. Only an app instance
-     * administrator can retrieve private channels.</p>
+     * <code>PRIVATE</code> retrieves private channels. Only an
+     * <code>AppInstanceAdmin</code> can retrieve private channels. </p>
      */
     inline void SetPrivacy(const ChannelPrivacy& value) { m_privacyHasBeenSet = true; m_privacy = value; }
 
     /**
      * <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels.
-     * <code>PRIVATE</code> retrieves private channels. Only an app instance
-     * administrator can retrieve private channels.</p>
+     * <code>PRIVATE</code> retrieves private channels. Only an
+     * <code>AppInstanceAdmin</code> can retrieve private channels. </p>
      */
     inline void SetPrivacy(ChannelPrivacy&& value) { m_privacyHasBeenSet = true; m_privacy = std::move(value); }
 
     /**
      * <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels.
-     * <code>PRIVATE</code> retrieves private channels. Only an app instance
-     * administrator can retrieve private channels.</p>
+     * <code>PRIVATE</code> retrieves private channels. Only an
+     * <code>AppInstanceAdmin</code> can retrieve private channels. </p>
      */
     inline ListChannelsRequest& WithPrivacy(const ChannelPrivacy& value) { SetPrivacy(value); return *this;}
 
     /**
      * <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels.
-     * <code>PRIVATE</code> retrieves private channels. Only an app instance
-     * administrator can retrieve private channels.</p>
+     * <code>PRIVATE</code> retrieves private channels. Only an
+     * <code>AppInstanceAdmin</code> can retrieve private channels. </p>
      */
     inline ListChannelsRequest& WithPrivacy(ChannelPrivacy&& value) { SetPrivacy(std::move(value)); return *this;}
 
@@ -192,6 +194,47 @@ namespace Model
      */
     inline ListChannelsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     */
+    inline const Aws::String& GetChimeBearer() const{ return m_chimeBearer; }
+
+    /**
+     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     */
+    inline bool ChimeBearerHasBeenSet() const { return m_chimeBearerHasBeenSet; }
+
+    /**
+     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     */
+    inline void SetChimeBearer(const Aws::String& value) { m_chimeBearerHasBeenSet = true; m_chimeBearer = value; }
+
+    /**
+     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     */
+    inline void SetChimeBearer(Aws::String&& value) { m_chimeBearerHasBeenSet = true; m_chimeBearer = std::move(value); }
+
+    /**
+     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     */
+    inline void SetChimeBearer(const char* value) { m_chimeBearerHasBeenSet = true; m_chimeBearer.assign(value); }
+
+    /**
+     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     */
+    inline ListChannelsRequest& WithChimeBearer(const Aws::String& value) { SetChimeBearer(value); return *this;}
+
+    /**
+     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     */
+    inline ListChannelsRequest& WithChimeBearer(Aws::String&& value) { SetChimeBearer(std::move(value)); return *this;}
+
+    /**
+     * <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
+     */
+    inline ListChannelsRequest& WithChimeBearer(const char* value) { SetChimeBearer(value); return *this;}
+
   private:
 
     Aws::String m_appInstanceArn;
@@ -205,6 +248,9 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
+    Aws::String m_chimeBearer;
+    bool m_chimeBearerHasBeenSet;
   };
 
 } // namespace Model

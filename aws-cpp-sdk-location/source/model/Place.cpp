@@ -22,13 +22,16 @@ Place::Place() :
     m_addressNumberHasBeenSet(false),
     m_countryHasBeenSet(false),
     m_geometryHasBeenSet(false),
+    m_interpolated(false),
+    m_interpolatedHasBeenSet(false),
     m_labelHasBeenSet(false),
     m_municipalityHasBeenSet(false),
     m_neighborhoodHasBeenSet(false),
     m_postalCodeHasBeenSet(false),
     m_regionHasBeenSet(false),
     m_streetHasBeenSet(false),
-    m_subRegionHasBeenSet(false)
+    m_subRegionHasBeenSet(false),
+    m_timeZoneHasBeenSet(false)
 {
 }
 
@@ -36,13 +39,16 @@ Place::Place(JsonView jsonValue) :
     m_addressNumberHasBeenSet(false),
     m_countryHasBeenSet(false),
     m_geometryHasBeenSet(false),
+    m_interpolated(false),
+    m_interpolatedHasBeenSet(false),
     m_labelHasBeenSet(false),
     m_municipalityHasBeenSet(false),
     m_neighborhoodHasBeenSet(false),
     m_postalCodeHasBeenSet(false),
     m_regionHasBeenSet(false),
     m_streetHasBeenSet(false),
-    m_subRegionHasBeenSet(false)
+    m_subRegionHasBeenSet(false),
+    m_timeZoneHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -68,6 +74,13 @@ Place& Place::operator =(JsonView jsonValue)
     m_geometry = jsonValue.GetObject("Geometry");
 
     m_geometryHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Interpolated"))
+  {
+    m_interpolated = jsonValue.GetBool("Interpolated");
+
+    m_interpolatedHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Label"))
@@ -119,6 +132,13 @@ Place& Place::operator =(JsonView jsonValue)
     m_subRegionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TimeZone"))
+  {
+    m_timeZone = jsonValue.GetObject("TimeZone");
+
+    m_timeZoneHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -141,6 +161,12 @@ JsonValue Place::Jsonize() const
   if(m_geometryHasBeenSet)
   {
    payload.WithObject("Geometry", m_geometry.Jsonize());
+
+  }
+
+  if(m_interpolatedHasBeenSet)
+  {
+   payload.WithBool("Interpolated", m_interpolated);
 
   }
 
@@ -183,6 +209,12 @@ JsonValue Place::Jsonize() const
   if(m_subRegionHasBeenSet)
   {
    payload.WithString("SubRegion", m_subRegion);
+
+  }
+
+  if(m_timeZoneHasBeenSet)
+  {
+   payload.WithObject("TimeZone", m_timeZone.Jsonize());
 
   }
 

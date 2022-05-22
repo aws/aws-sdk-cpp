@@ -130,7 +130,7 @@ namespace Model
 
 
     /**
-     * <p>Properties that describe the AWS principal that created the
+     * <p>Properties that describe the Amazon Web Services principal that created the
      * <code>BlockPublicAccessConfiguration</code> using the
      * <code>PutBlockPublicAccessConfiguration</code> action as well as the date and
      * time that the configuration was created. Each time a configuration for block
@@ -139,7 +139,7 @@ namespace Model
     inline const BlockPublicAccessConfigurationMetadata& GetBlockPublicAccessConfigurationMetadata() const{ return m_blockPublicAccessConfigurationMetadata; }
 
     /**
-     * <p>Properties that describe the AWS principal that created the
+     * <p>Properties that describe the Amazon Web Services principal that created the
      * <code>BlockPublicAccessConfiguration</code> using the
      * <code>PutBlockPublicAccessConfiguration</code> action as well as the date and
      * time that the configuration was created. Each time a configuration for block
@@ -148,7 +148,7 @@ namespace Model
     inline void SetBlockPublicAccessConfigurationMetadata(const BlockPublicAccessConfigurationMetadata& value) { m_blockPublicAccessConfigurationMetadata = value; }
 
     /**
-     * <p>Properties that describe the AWS principal that created the
+     * <p>Properties that describe the Amazon Web Services principal that created the
      * <code>BlockPublicAccessConfiguration</code> using the
      * <code>PutBlockPublicAccessConfiguration</code> action as well as the date and
      * time that the configuration was created. Each time a configuration for block
@@ -157,7 +157,7 @@ namespace Model
     inline void SetBlockPublicAccessConfigurationMetadata(BlockPublicAccessConfigurationMetadata&& value) { m_blockPublicAccessConfigurationMetadata = std::move(value); }
 
     /**
-     * <p>Properties that describe the AWS principal that created the
+     * <p>Properties that describe the Amazon Web Services principal that created the
      * <code>BlockPublicAccessConfiguration</code> using the
      * <code>PutBlockPublicAccessConfiguration</code> action as well as the date and
      * time that the configuration was created. Each time a configuration for block
@@ -166,7 +166,7 @@ namespace Model
     inline GetBlockPublicAccessConfigurationResult& WithBlockPublicAccessConfigurationMetadata(const BlockPublicAccessConfigurationMetadata& value) { SetBlockPublicAccessConfigurationMetadata(value); return *this;}
 
     /**
-     * <p>Properties that describe the AWS principal that created the
+     * <p>Properties that describe the Amazon Web Services principal that created the
      * <code>BlockPublicAccessConfiguration</code> using the
      * <code>PutBlockPublicAccessConfiguration</code> action as well as the date and
      * time that the configuration was created. Each time a configuration for block

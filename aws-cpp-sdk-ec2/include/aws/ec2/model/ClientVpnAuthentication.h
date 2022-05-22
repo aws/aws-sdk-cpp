@@ -30,7 +30,7 @@ namespace Model
    * <p>Describes the authentication methods used by a Client VPN endpoint. For more
    * information, see <a
    * href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/client-authentication.html">Authentication</a>
-   * in the <i>AWS Client VPN Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * in the <i>Client VPN Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ClientVpnAuthentication">AWS
    * API Reference</a></p>
    */

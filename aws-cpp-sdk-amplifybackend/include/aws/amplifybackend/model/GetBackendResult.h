@@ -34,44 +34,73 @@ namespace Model
 
 
     /**
-     * <p>A stringified version of the current configurations for your Amplify
-     * project.</p>
+     * <p>A stringified version of the cli.json file for your Amplify project.</p>
+     */
+    inline const Aws::String& GetAmplifyFeatureFlags() const{ return m_amplifyFeatureFlags; }
+
+    /**
+     * <p>A stringified version of the cli.json file for your Amplify project.</p>
+     */
+    inline void SetAmplifyFeatureFlags(const Aws::String& value) { m_amplifyFeatureFlags = value; }
+
+    /**
+     * <p>A stringified version of the cli.json file for your Amplify project.</p>
+     */
+    inline void SetAmplifyFeatureFlags(Aws::String&& value) { m_amplifyFeatureFlags = std::move(value); }
+
+    /**
+     * <p>A stringified version of the cli.json file for your Amplify project.</p>
+     */
+    inline void SetAmplifyFeatureFlags(const char* value) { m_amplifyFeatureFlags.assign(value); }
+
+    /**
+     * <p>A stringified version of the cli.json file for your Amplify project.</p>
+     */
+    inline GetBackendResult& WithAmplifyFeatureFlags(const Aws::String& value) { SetAmplifyFeatureFlags(value); return *this;}
+
+    /**
+     * <p>A stringified version of the cli.json file for your Amplify project.</p>
+     */
+    inline GetBackendResult& WithAmplifyFeatureFlags(Aws::String&& value) { SetAmplifyFeatureFlags(std::move(value)); return *this;}
+
+    /**
+     * <p>A stringified version of the cli.json file for your Amplify project.</p>
+     */
+    inline GetBackendResult& WithAmplifyFeatureFlags(const char* value) { SetAmplifyFeatureFlags(value); return *this;}
+
+
+    /**
+     * <p>A stringified version of the current configs for your Amplify project.</p>
      */
     inline const Aws::String& GetAmplifyMetaConfig() const{ return m_amplifyMetaConfig; }
 
     /**
-     * <p>A stringified version of the current configurations for your Amplify
-     * project.</p>
+     * <p>A stringified version of the current configs for your Amplify project.</p>
      */
     inline void SetAmplifyMetaConfig(const Aws::String& value) { m_amplifyMetaConfig = value; }
 
     /**
-     * <p>A stringified version of the current configurations for your Amplify
-     * project.</p>
+     * <p>A stringified version of the current configs for your Amplify project.</p>
      */
     inline void SetAmplifyMetaConfig(Aws::String&& value) { m_amplifyMetaConfig = std::move(value); }
 
     /**
-     * <p>A stringified version of the current configurations for your Amplify
-     * project.</p>
+     * <p>A stringified version of the current configs for your Amplify project.</p>
      */
     inline void SetAmplifyMetaConfig(const char* value) { m_amplifyMetaConfig.assign(value); }
 
     /**
-     * <p>A stringified version of the current configurations for your Amplify
-     * project.</p>
+     * <p>A stringified version of the current configs for your Amplify project.</p>
      */
     inline GetBackendResult& WithAmplifyMetaConfig(const Aws::String& value) { SetAmplifyMetaConfig(value); return *this;}
 
     /**
-     * <p>A stringified version of the current configurations for your Amplify
-     * project.</p>
+     * <p>A stringified version of the current configs for your Amplify project.</p>
      */
     inline GetBackendResult& WithAmplifyMetaConfig(Aws::String&& value) { SetAmplifyMetaConfig(std::move(value)); return *this;}
 
     /**
-     * <p>A stringified version of the current configurations for your Amplify
-     * project.</p>
+     * <p>A stringified version of the current configs for your Amplify project.</p>
      */
     inline GetBackendResult& WithAmplifyMetaConfig(const char* value) { SetAmplifyMetaConfig(value); return *this;}
 
@@ -261,6 +290,8 @@ namespace Model
     inline GetBackendResult& WithError(const char* value) { SetError(value); return *this;}
 
   private:
+
+    Aws::String m_amplifyFeatureFlags;
 
     Aws::String m_amplifyMetaConfig;
 

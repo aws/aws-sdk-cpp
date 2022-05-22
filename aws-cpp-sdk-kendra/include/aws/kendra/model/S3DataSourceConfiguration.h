@@ -27,8 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>Provides configuration information for a data source to index documents in an
-   * Amazon S3 bucket.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides the configuration information to connect to an Amazon S3
+   * bucket.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/S3DataSourceConfiguration">AWS
    * API Reference</a></p>
    */
@@ -140,81 +140,117 @@ namespace Model
     /**
      * <p>A list of glob patterns for documents that should be indexed. If a document
      * that matches an inclusion pattern also matches an exclusion pattern, the
-     * document is not indexed.</p> <p>For more information about glob patterns, see <a
-     * href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a>
-     * in <i>Wikipedia</i>.</p>
+     * document is not indexed.</p> <p>Some <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a>
+     * are:</p> <ul> <li> <p> <i>*.txt</i> will include all text files in a directory
+     * (files with the extension .txt).</p> </li> <li> <p> <i>** / *.txt</i> will include
+     * all text files in a directory and its subdirectories.</p> </li> <li> <p>
+     * <i>*tax*</i> will include all files in a directory that contain 'tax' in the
+     * file name, such as 'tax', 'taxes', 'income_tax'.</p> </li> </ul>
      */
     inline const Aws::Vector<Aws::String>& GetInclusionPatterns() const{ return m_inclusionPatterns; }
 
     /**
      * <p>A list of glob patterns for documents that should be indexed. If a document
      * that matches an inclusion pattern also matches an exclusion pattern, the
-     * document is not indexed.</p> <p>For more information about glob patterns, see <a
-     * href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a>
-     * in <i>Wikipedia</i>.</p>
+     * document is not indexed.</p> <p>Some <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a>
+     * are:</p> <ul> <li> <p> <i>*.txt</i> will include all text files in a directory
+     * (files with the extension .txt).</p> </li> <li> <p> <i>** / *.txt</i> will include
+     * all text files in a directory and its subdirectories.</p> </li> <li> <p>
+     * <i>*tax*</i> will include all files in a directory that contain 'tax' in the
+     * file name, such as 'tax', 'taxes', 'income_tax'.</p> </li> </ul>
      */
     inline bool InclusionPatternsHasBeenSet() const { return m_inclusionPatternsHasBeenSet; }
 
     /**
      * <p>A list of glob patterns for documents that should be indexed. If a document
      * that matches an inclusion pattern also matches an exclusion pattern, the
-     * document is not indexed.</p> <p>For more information about glob patterns, see <a
-     * href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a>
-     * in <i>Wikipedia</i>.</p>
+     * document is not indexed.</p> <p>Some <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a>
+     * are:</p> <ul> <li> <p> <i>*.txt</i> will include all text files in a directory
+     * (files with the extension .txt).</p> </li> <li> <p> <i>** / *.txt</i> will include
+     * all text files in a directory and its subdirectories.</p> </li> <li> <p>
+     * <i>*tax*</i> will include all files in a directory that contain 'tax' in the
+     * file name, such as 'tax', 'taxes', 'income_tax'.</p> </li> </ul>
      */
     inline void SetInclusionPatterns(const Aws::Vector<Aws::String>& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns = value; }
 
     /**
      * <p>A list of glob patterns for documents that should be indexed. If a document
      * that matches an inclusion pattern also matches an exclusion pattern, the
-     * document is not indexed.</p> <p>For more information about glob patterns, see <a
-     * href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a>
-     * in <i>Wikipedia</i>.</p>
+     * document is not indexed.</p> <p>Some <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a>
+     * are:</p> <ul> <li> <p> <i>*.txt</i> will include all text files in a directory
+     * (files with the extension .txt).</p> </li> <li> <p> <i>** / *.txt</i> will include
+     * all text files in a directory and its subdirectories.</p> </li> <li> <p>
+     * <i>*tax*</i> will include all files in a directory that contain 'tax' in the
+     * file name, such as 'tax', 'taxes', 'income_tax'.</p> </li> </ul>
      */
     inline void SetInclusionPatterns(Aws::Vector<Aws::String>&& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns = std::move(value); }
 
     /**
      * <p>A list of glob patterns for documents that should be indexed. If a document
      * that matches an inclusion pattern also matches an exclusion pattern, the
-     * document is not indexed.</p> <p>For more information about glob patterns, see <a
-     * href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a>
-     * in <i>Wikipedia</i>.</p>
+     * document is not indexed.</p> <p>Some <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a>
+     * are:</p> <ul> <li> <p> <i>*.txt</i> will include all text files in a directory
+     * (files with the extension .txt).</p> </li> <li> <p> <i>** / *.txt</i> will include
+     * all text files in a directory and its subdirectories.</p> </li> <li> <p>
+     * <i>*tax*</i> will include all files in a directory that contain 'tax' in the
+     * file name, such as 'tax', 'taxes', 'income_tax'.</p> </li> </ul>
      */
     inline S3DataSourceConfiguration& WithInclusionPatterns(const Aws::Vector<Aws::String>& value) { SetInclusionPatterns(value); return *this;}
 
     /**
      * <p>A list of glob patterns for documents that should be indexed. If a document
      * that matches an inclusion pattern also matches an exclusion pattern, the
-     * document is not indexed.</p> <p>For more information about glob patterns, see <a
-     * href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a>
-     * in <i>Wikipedia</i>.</p>
+     * document is not indexed.</p> <p>Some <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a>
+     * are:</p> <ul> <li> <p> <i>*.txt</i> will include all text files in a directory
+     * (files with the extension .txt).</p> </li> <li> <p> <i>** / *.txt</i> will include
+     * all text files in a directory and its subdirectories.</p> </li> <li> <p>
+     * <i>*tax*</i> will include all files in a directory that contain 'tax' in the
+     * file name, such as 'tax', 'taxes', 'income_tax'.</p> </li> </ul>
      */
     inline S3DataSourceConfiguration& WithInclusionPatterns(Aws::Vector<Aws::String>&& value) { SetInclusionPatterns(std::move(value)); return *this;}
 
     /**
      * <p>A list of glob patterns for documents that should be indexed. If a document
      * that matches an inclusion pattern also matches an exclusion pattern, the
-     * document is not indexed.</p> <p>For more information about glob patterns, see <a
-     * href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a>
-     * in <i>Wikipedia</i>.</p>
+     * document is not indexed.</p> <p>Some <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a>
+     * are:</p> <ul> <li> <p> <i>*.txt</i> will include all text files in a directory
+     * (files with the extension .txt).</p> </li> <li> <p> <i>** / *.txt</i> will include
+     * all text files in a directory and its subdirectories.</p> </li> <li> <p>
+     * <i>*tax*</i> will include all files in a directory that contain 'tax' in the
+     * file name, such as 'tax', 'taxes', 'income_tax'.</p> </li> </ul>
      */
     inline S3DataSourceConfiguration& AddInclusionPatterns(const Aws::String& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns.push_back(value); return *this; }
 
     /**
      * <p>A list of glob patterns for documents that should be indexed. If a document
      * that matches an inclusion pattern also matches an exclusion pattern, the
-     * document is not indexed.</p> <p>For more information about glob patterns, see <a
-     * href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a>
-     * in <i>Wikipedia</i>.</p>
+     * document is not indexed.</p> <p>Some <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a>
+     * are:</p> <ul> <li> <p> <i>*.txt</i> will include all text files in a directory
+     * (files with the extension .txt).</p> </li> <li> <p> <i>** / *.txt</i> will include
+     * all text files in a directory and its subdirectories.</p> </li> <li> <p>
+     * <i>*tax*</i> will include all files in a directory that contain 'tax' in the
+     * file name, such as 'tax', 'taxes', 'income_tax'.</p> </li> </ul>
      */
     inline S3DataSourceConfiguration& AddInclusionPatterns(Aws::String&& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of glob patterns for documents that should be indexed. If a document
      * that matches an inclusion pattern also matches an exclusion pattern, the
-     * document is not indexed.</p> <p>For more information about glob patterns, see <a
-     * href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a>
-     * in <i>Wikipedia</i>.</p>
+     * document is not indexed.</p> <p>Some <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a>
+     * are:</p> <ul> <li> <p> <i>*.txt</i> will include all text files in a directory
+     * (files with the extension .txt).</p> </li> <li> <p> <i>** / *.txt</i> will include
+     * all text files in a directory and its subdirectories.</p> </li> <li> <p>
+     * <i>*tax*</i> will include all files in a directory that contain 'tax' in the
+     * file name, such as 'tax', 'taxes', 'income_tax'.</p> </li> </ul>
      */
     inline S3DataSourceConfiguration& AddInclusionPatterns(const char* value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns.push_back(value); return *this; }
 
@@ -222,90 +258,126 @@ namespace Model
     /**
      * <p>A list of glob patterns for documents that should not be indexed. If a
      * document that matches an inclusion prefix or inclusion pattern also matches an
-     * exclusion pattern, the document is not indexed.</p> <p>For more information
-     * about glob patterns, see <a
-     * href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a>
-     * in <i>Wikipedia</i>.</p>
+     * exclusion pattern, the document is not indexed.</p> <p>Some <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a>
+     * are:</p> <ul> <li> <p> <i>*.png , *.jpg</i> will exclude all PNG and JPEG image
+     * files in a directory (files with the extensions .png and .jpg).</p> </li> <li>
+     * <p> <i>*internal*</i> will exclude all files in a directory that contain
+     * 'internal' in the file name, such as 'internal', 'internal_only',
+     * 'company_internal'.</p> </li> <li> <p> <i>** / *internal*</i> will exclude all
+     * internal-related files in a directory and its subdirectories.</p> </li> </ul>
      */
     inline const Aws::Vector<Aws::String>& GetExclusionPatterns() const{ return m_exclusionPatterns; }
 
     /**
      * <p>A list of glob patterns for documents that should not be indexed. If a
      * document that matches an inclusion prefix or inclusion pattern also matches an
-     * exclusion pattern, the document is not indexed.</p> <p>For more information
-     * about glob patterns, see <a
-     * href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a>
-     * in <i>Wikipedia</i>.</p>
+     * exclusion pattern, the document is not indexed.</p> <p>Some <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a>
+     * are:</p> <ul> <li> <p> <i>*.png , *.jpg</i> will exclude all PNG and JPEG image
+     * files in a directory (files with the extensions .png and .jpg).</p> </li> <li>
+     * <p> <i>*internal*</i> will exclude all files in a directory that contain
+     * 'internal' in the file name, such as 'internal', 'internal_only',
+     * 'company_internal'.</p> </li> <li> <p> <i>** / *internal*</i> will exclude all
+     * internal-related files in a directory and its subdirectories.</p> </li> </ul>
      */
     inline bool ExclusionPatternsHasBeenSet() const { return m_exclusionPatternsHasBeenSet; }
 
     /**
      * <p>A list of glob patterns for documents that should not be indexed. If a
      * document that matches an inclusion prefix or inclusion pattern also matches an
-     * exclusion pattern, the document is not indexed.</p> <p>For more information
-     * about glob patterns, see <a
-     * href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a>
-     * in <i>Wikipedia</i>.</p>
+     * exclusion pattern, the document is not indexed.</p> <p>Some <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a>
+     * are:</p> <ul> <li> <p> <i>*.png , *.jpg</i> will exclude all PNG and JPEG image
+     * files in a directory (files with the extensions .png and .jpg).</p> </li> <li>
+     * <p> <i>*internal*</i> will exclude all files in a directory that contain
+     * 'internal' in the file name, such as 'internal', 'internal_only',
+     * 'company_internal'.</p> </li> <li> <p> <i>** / *internal*</i> will exclude all
+     * internal-related files in a directory and its subdirectories.</p> </li> </ul>
      */
     inline void SetExclusionPatterns(const Aws::Vector<Aws::String>& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns = value; }
 
     /**
      * <p>A list of glob patterns for documents that should not be indexed. If a
      * document that matches an inclusion prefix or inclusion pattern also matches an
-     * exclusion pattern, the document is not indexed.</p> <p>For more information
-     * about glob patterns, see <a
-     * href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a>
-     * in <i>Wikipedia</i>.</p>
+     * exclusion pattern, the document is not indexed.</p> <p>Some <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a>
+     * are:</p> <ul> <li> <p> <i>*.png , *.jpg</i> will exclude all PNG and JPEG image
+     * files in a directory (files with the extensions .png and .jpg).</p> </li> <li>
+     * <p> <i>*internal*</i> will exclude all files in a directory that contain
+     * 'internal' in the file name, such as 'internal', 'internal_only',
+     * 'company_internal'.</p> </li> <li> <p> <i>** / *internal*</i> will exclude all
+     * internal-related files in a directory and its subdirectories.</p> </li> </ul>
      */
     inline void SetExclusionPatterns(Aws::Vector<Aws::String>&& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns = std::move(value); }
 
     /**
      * <p>A list of glob patterns for documents that should not be indexed. If a
      * document that matches an inclusion prefix or inclusion pattern also matches an
-     * exclusion pattern, the document is not indexed.</p> <p>For more information
-     * about glob patterns, see <a
-     * href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a>
-     * in <i>Wikipedia</i>.</p>
+     * exclusion pattern, the document is not indexed.</p> <p>Some <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a>
+     * are:</p> <ul> <li> <p> <i>*.png , *.jpg</i> will exclude all PNG and JPEG image
+     * files in a directory (files with the extensions .png and .jpg).</p> </li> <li>
+     * <p> <i>*internal*</i> will exclude all files in a directory that contain
+     * 'internal' in the file name, such as 'internal', 'internal_only',
+     * 'company_internal'.</p> </li> <li> <p> <i>** / *internal*</i> will exclude all
+     * internal-related files in a directory and its subdirectories.</p> </li> </ul>
      */
     inline S3DataSourceConfiguration& WithExclusionPatterns(const Aws::Vector<Aws::String>& value) { SetExclusionPatterns(value); return *this;}
 
     /**
      * <p>A list of glob patterns for documents that should not be indexed. If a
      * document that matches an inclusion prefix or inclusion pattern also matches an
-     * exclusion pattern, the document is not indexed.</p> <p>For more information
-     * about glob patterns, see <a
-     * href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a>
-     * in <i>Wikipedia</i>.</p>
+     * exclusion pattern, the document is not indexed.</p> <p>Some <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a>
+     * are:</p> <ul> <li> <p> <i>*.png , *.jpg</i> will exclude all PNG and JPEG image
+     * files in a directory (files with the extensions .png and .jpg).</p> </li> <li>
+     * <p> <i>*internal*</i> will exclude all files in a directory that contain
+     * 'internal' in the file name, such as 'internal', 'internal_only',
+     * 'company_internal'.</p> </li> <li> <p> <i>** / *internal*</i> will exclude all
+     * internal-related files in a directory and its subdirectories.</p> </li> </ul>
      */
     inline S3DataSourceConfiguration& WithExclusionPatterns(Aws::Vector<Aws::String>&& value) { SetExclusionPatterns(std::move(value)); return *this;}
 
     /**
      * <p>A list of glob patterns for documents that should not be indexed. If a
      * document that matches an inclusion prefix or inclusion pattern also matches an
-     * exclusion pattern, the document is not indexed.</p> <p>For more information
-     * about glob patterns, see <a
-     * href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a>
-     * in <i>Wikipedia</i>.</p>
+     * exclusion pattern, the document is not indexed.</p> <p>Some <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a>
+     * are:</p> <ul> <li> <p> <i>*.png , *.jpg</i> will exclude all PNG and JPEG image
+     * files in a directory (files with the extensions .png and .jpg).</p> </li> <li>
+     * <p> <i>*internal*</i> will exclude all files in a directory that contain
+     * 'internal' in the file name, such as 'internal', 'internal_only',
+     * 'company_internal'.</p> </li> <li> <p> <i>** / *internal*</i> will exclude all
+     * internal-related files in a directory and its subdirectories.</p> </li> </ul>
      */
     inline S3DataSourceConfiguration& AddExclusionPatterns(const Aws::String& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns.push_back(value); return *this; }
 
     /**
      * <p>A list of glob patterns for documents that should not be indexed. If a
      * document that matches an inclusion prefix or inclusion pattern also matches an
-     * exclusion pattern, the document is not indexed.</p> <p>For more information
-     * about glob patterns, see <a
-     * href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a>
-     * in <i>Wikipedia</i>.</p>
+     * exclusion pattern, the document is not indexed.</p> <p>Some <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a>
+     * are:</p> <ul> <li> <p> <i>*.png , *.jpg</i> will exclude all PNG and JPEG image
+     * files in a directory (files with the extensions .png and .jpg).</p> </li> <li>
+     * <p> <i>*internal*</i> will exclude all files in a directory that contain
+     * 'internal' in the file name, such as 'internal', 'internal_only',
+     * 'company_internal'.</p> </li> <li> <p> <i>** / *internal*</i> will exclude all
+     * internal-related files in a directory and its subdirectories.</p> </li> </ul>
      */
     inline S3DataSourceConfiguration& AddExclusionPatterns(Aws::String&& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of glob patterns for documents that should not be indexed. If a
      * document that matches an inclusion prefix or inclusion pattern also matches an
-     * exclusion pattern, the document is not indexed.</p> <p>For more information
-     * about glob patterns, see <a
-     * href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a>
-     * in <i>Wikipedia</i>.</p>
+     * exclusion pattern, the document is not indexed.</p> <p>Some <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a>
+     * are:</p> <ul> <li> <p> <i>*.png , *.jpg</i> will exclude all PNG and JPEG image
+     * files in a directory (files with the extensions .png and .jpg).</p> </li> <li>
+     * <p> <i>*internal*</i> will exclude all files in a directory that contain
+     * 'internal' in the file name, such as 'internal', 'internal_only',
+     * 'company_internal'.</p> </li> <li> <p> <i>** / *internal*</i> will exclude all
+     * internal-related files in a directory and its subdirectories.</p> </li> </ul>
      */
     inline S3DataSourceConfiguration& AddExclusionPatterns(const char* value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns.push_back(value); return *this; }
 

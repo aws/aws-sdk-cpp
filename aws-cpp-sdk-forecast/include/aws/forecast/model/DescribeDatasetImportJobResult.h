@@ -362,6 +362,25 @@ namespace Model
 
 
     /**
+     * <p>The estimated time remaining in minutes for the dataset import job to
+     * complete.</p>
+     */
+    inline long long GetEstimatedTimeRemainingInMinutes() const{ return m_estimatedTimeRemainingInMinutes; }
+
+    /**
+     * <p>The estimated time remaining in minutes for the dataset import job to
+     * complete.</p>
+     */
+    inline void SetEstimatedTimeRemainingInMinutes(long long value) { m_estimatedTimeRemainingInMinutes = value; }
+
+    /**
+     * <p>The estimated time remaining in minutes for the dataset import job to
+     * complete.</p>
+     */
+    inline DescribeDatasetImportJobResult& WithEstimatedTimeRemainingInMinutes(long long value) { SetEstimatedTimeRemainingInMinutes(value); return *this;}
+
+
+    /**
      * <p>Statistical information about each field in the input data.</p>
      */
     inline const Aws::Map<Aws::String, Statistics>& GetFieldStatistics() const{ return m_fieldStatistics; }
@@ -437,86 +456,72 @@ namespace Model
 
 
     /**
-     * <p>The status of the dataset import job. The status is reflected in the status
-     * of the dataset. For example, when the import job status is
-     * <code>CREATE_IN_PROGRESS</code>, the status of the dataset is
-     * <code>UPDATE_IN_PROGRESS</code>. States include:</p> <ul> <li> <p>
+     * <p>The status of the dataset import job. States include:</p> <ul> <li> <p>
      * <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
      * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> <li> <p>
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-     * <code>DELETE_FAILED</code> </p> </li> </ul>
+     * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>CREATE_STOPPING</code>,
+     * <code>CREATE_STOPPED</code> </p> </li> </ul>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the dataset import job. The status is reflected in the status
-     * of the dataset. For example, when the import job status is
-     * <code>CREATE_IN_PROGRESS</code>, the status of the dataset is
-     * <code>UPDATE_IN_PROGRESS</code>. States include:</p> <ul> <li> <p>
+     * <p>The status of the dataset import job. States include:</p> <ul> <li> <p>
      * <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
      * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> <li> <p>
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-     * <code>DELETE_FAILED</code> </p> </li> </ul>
+     * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>CREATE_STOPPING</code>,
+     * <code>CREATE_STOPPED</code> </p> </li> </ul>
      */
     inline void SetStatus(const Aws::String& value) { m_status = value; }
 
     /**
-     * <p>The status of the dataset import job. The status is reflected in the status
-     * of the dataset. For example, when the import job status is
-     * <code>CREATE_IN_PROGRESS</code>, the status of the dataset is
-     * <code>UPDATE_IN_PROGRESS</code>. States include:</p> <ul> <li> <p>
+     * <p>The status of the dataset import job. States include:</p> <ul> <li> <p>
      * <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
      * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> <li> <p>
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-     * <code>DELETE_FAILED</code> </p> </li> </ul>
+     * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>CREATE_STOPPING</code>,
+     * <code>CREATE_STOPPED</code> </p> </li> </ul>
      */
     inline void SetStatus(Aws::String&& value) { m_status = std::move(value); }
 
     /**
-     * <p>The status of the dataset import job. The status is reflected in the status
-     * of the dataset. For example, when the import job status is
-     * <code>CREATE_IN_PROGRESS</code>, the status of the dataset is
-     * <code>UPDATE_IN_PROGRESS</code>. States include:</p> <ul> <li> <p>
+     * <p>The status of the dataset import job. States include:</p> <ul> <li> <p>
      * <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
      * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> <li> <p>
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-     * <code>DELETE_FAILED</code> </p> </li> </ul>
+     * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>CREATE_STOPPING</code>,
+     * <code>CREATE_STOPPED</code> </p> </li> </ul>
      */
     inline void SetStatus(const char* value) { m_status.assign(value); }
 
     /**
-     * <p>The status of the dataset import job. The status is reflected in the status
-     * of the dataset. For example, when the import job status is
-     * <code>CREATE_IN_PROGRESS</code>, the status of the dataset is
-     * <code>UPDATE_IN_PROGRESS</code>. States include:</p> <ul> <li> <p>
+     * <p>The status of the dataset import job. States include:</p> <ul> <li> <p>
      * <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
      * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> <li> <p>
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-     * <code>DELETE_FAILED</code> </p> </li> </ul>
+     * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>CREATE_STOPPING</code>,
+     * <code>CREATE_STOPPED</code> </p> </li> </ul>
      */
     inline DescribeDatasetImportJobResult& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the dataset import job. The status is reflected in the status
-     * of the dataset. For example, when the import job status is
-     * <code>CREATE_IN_PROGRESS</code>, the status of the dataset is
-     * <code>UPDATE_IN_PROGRESS</code>. States include:</p> <ul> <li> <p>
+     * <p>The status of the dataset import job. States include:</p> <ul> <li> <p>
      * <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
      * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> <li> <p>
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-     * <code>DELETE_FAILED</code> </p> </li> </ul>
+     * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>CREATE_STOPPING</code>,
+     * <code>CREATE_STOPPED</code> </p> </li> </ul>
      */
     inline DescribeDatasetImportJobResult& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The status of the dataset import job. The status is reflected in the status
-     * of the dataset. For example, when the import job status is
-     * <code>CREATE_IN_PROGRESS</code>, the status of the dataset is
-     * <code>UPDATE_IN_PROGRESS</code>. States include:</p> <ul> <li> <p>
+     * <p>The status of the dataset import job. States include:</p> <ul> <li> <p>
      * <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
      * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> <li> <p>
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
-     * <code>DELETE_FAILED</code> </p> </li> </ul>
+     * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>CREATE_STOPPING</code>,
+     * <code>CREATE_STOPPED</code> </p> </li> </ul>
      */
     inline DescribeDatasetImportJobResult& WithStatus(const char* value) { SetStatus(value); return *this;}
 
@@ -584,52 +589,57 @@ namespace Model
 
 
     /**
-     * <p>The last time that the dataset was modified. The time depends on the status
-     * of the job, as follows:</p> <ul> <li> <p> <code>CREATE_PENDING</code> - The same
-     * time as <code>CreationTime</code>.</p> </li> <li> <p>
-     * <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li> <li> <p>
-     * <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-     * failed.</p> </li> </ul>
+     * <p>The last time the resource was modified. The timestamp depends on the status
+     * of the job:</p> <ul> <li> <p> <code>CREATE_PENDING</code> - The
+     * <code>CreationTime</code>.</p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> -
+     * The current timestamp.</p> </li> <li> <p> <code>CREATE_STOPPING</code> - The
+     * current timestamp.</p> </li> <li> <p> <code>CREATE_STOPPED</code> - When the job
+     * stopped.</p> </li> <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> -
+     * When the job finished or failed.</p> </li> </ul>
      */
     inline const Aws::Utils::DateTime& GetLastModificationTime() const{ return m_lastModificationTime; }
 
     /**
-     * <p>The last time that the dataset was modified. The time depends on the status
-     * of the job, as follows:</p> <ul> <li> <p> <code>CREATE_PENDING</code> - The same
-     * time as <code>CreationTime</code>.</p> </li> <li> <p>
-     * <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li> <li> <p>
-     * <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-     * failed.</p> </li> </ul>
+     * <p>The last time the resource was modified. The timestamp depends on the status
+     * of the job:</p> <ul> <li> <p> <code>CREATE_PENDING</code> - The
+     * <code>CreationTime</code>.</p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> -
+     * The current timestamp.</p> </li> <li> <p> <code>CREATE_STOPPING</code> - The
+     * current timestamp.</p> </li> <li> <p> <code>CREATE_STOPPED</code> - When the job
+     * stopped.</p> </li> <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> -
+     * When the job finished or failed.</p> </li> </ul>
      */
     inline void SetLastModificationTime(const Aws::Utils::DateTime& value) { m_lastModificationTime = value; }
 
     /**
-     * <p>The last time that the dataset was modified. The time depends on the status
-     * of the job, as follows:</p> <ul> <li> <p> <code>CREATE_PENDING</code> - The same
-     * time as <code>CreationTime</code>.</p> </li> <li> <p>
-     * <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li> <li> <p>
-     * <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-     * failed.</p> </li> </ul>
+     * <p>The last time the resource was modified. The timestamp depends on the status
+     * of the job:</p> <ul> <li> <p> <code>CREATE_PENDING</code> - The
+     * <code>CreationTime</code>.</p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> -
+     * The current timestamp.</p> </li> <li> <p> <code>CREATE_STOPPING</code> - The
+     * current timestamp.</p> </li> <li> <p> <code>CREATE_STOPPED</code> - When the job
+     * stopped.</p> </li> <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> -
+     * When the job finished or failed.</p> </li> </ul>
      */
     inline void SetLastModificationTime(Aws::Utils::DateTime&& value) { m_lastModificationTime = std::move(value); }
 
     /**
-     * <p>The last time that the dataset was modified. The time depends on the status
-     * of the job, as follows:</p> <ul> <li> <p> <code>CREATE_PENDING</code> - The same
-     * time as <code>CreationTime</code>.</p> </li> <li> <p>
-     * <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li> <li> <p>
-     * <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-     * failed.</p> </li> </ul>
+     * <p>The last time the resource was modified. The timestamp depends on the status
+     * of the job:</p> <ul> <li> <p> <code>CREATE_PENDING</code> - The
+     * <code>CreationTime</code>.</p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> -
+     * The current timestamp.</p> </li> <li> <p> <code>CREATE_STOPPING</code> - The
+     * current timestamp.</p> </li> <li> <p> <code>CREATE_STOPPED</code> - When the job
+     * stopped.</p> </li> <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> -
+     * When the job finished or failed.</p> </li> </ul>
      */
     inline DescribeDatasetImportJobResult& WithLastModificationTime(const Aws::Utils::DateTime& value) { SetLastModificationTime(value); return *this;}
 
     /**
-     * <p>The last time that the dataset was modified. The time depends on the status
-     * of the job, as follows:</p> <ul> <li> <p> <code>CREATE_PENDING</code> - The same
-     * time as <code>CreationTime</code>.</p> </li> <li> <p>
-     * <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li> <li> <p>
-     * <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
-     * failed.</p> </li> </ul>
+     * <p>The last time the resource was modified. The timestamp depends on the status
+     * of the job:</p> <ul> <li> <p> <code>CREATE_PENDING</code> - The
+     * <code>CreationTime</code>.</p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> -
+     * The current timestamp.</p> </li> <li> <p> <code>CREATE_STOPPING</code> - The
+     * current timestamp.</p> </li> <li> <p> <code>CREATE_STOPPED</code> - When the job
+     * stopped.</p> </li> <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> -
+     * When the job finished or failed.</p> </li> </ul>
      */
     inline DescribeDatasetImportJobResult& WithLastModificationTime(Aws::Utils::DateTime&& value) { SetLastModificationTime(std::move(value)); return *this;}
 
@@ -650,6 +660,8 @@ namespace Model
     Aws::String m_geolocationFormat;
 
     DataSource m_dataSource;
+
+    long long m_estimatedTimeRemainingInMinutes;
 
     Aws::Map<Aws::String, Statistics> m_fieldStatistics;
 

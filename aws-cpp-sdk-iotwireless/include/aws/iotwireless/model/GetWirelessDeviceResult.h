@@ -8,6 +8,7 @@
 #include <aws/iotwireless/model/WirelessDeviceType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iotwireless/model/LoRaWANDevice.h>
+#include <aws/iotwireless/model/SidewalkDevice.h>
 #include <utility>
 
 namespace Aws
@@ -344,6 +345,32 @@ namespace Model
      */
     inline GetWirelessDeviceResult& WithLoRaWAN(LoRaWANDevice&& value) { SetLoRaWAN(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Sidewalk device object.</p>
+     */
+    inline const SidewalkDevice& GetSidewalk() const{ return m_sidewalk; }
+
+    /**
+     * <p>Sidewalk device object.</p>
+     */
+    inline void SetSidewalk(const SidewalkDevice& value) { m_sidewalk = value; }
+
+    /**
+     * <p>Sidewalk device object.</p>
+     */
+    inline void SetSidewalk(SidewalkDevice&& value) { m_sidewalk = std::move(value); }
+
+    /**
+     * <p>Sidewalk device object.</p>
+     */
+    inline GetWirelessDeviceResult& WithSidewalk(const SidewalkDevice& value) { SetSidewalk(value); return *this;}
+
+    /**
+     * <p>Sidewalk device object.</p>
+     */
+    inline GetWirelessDeviceResult& WithSidewalk(SidewalkDevice&& value) { SetSidewalk(std::move(value)); return *this;}
+
   private:
 
     WirelessDeviceType m_type;
@@ -363,6 +390,8 @@ namespace Model
     Aws::String m_thingArn;
 
     LoRaWANDevice m_loRaWAN;
+
+    SidewalkDevice m_sidewalk;
   };
 
 } // namespace Model

@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>This parameter is specified when you are using <a
+   * <p>This parameter is specified when you're using <a
    * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/what-is.html">Amazon
    * FSx for Windows File Server</a> file system for task storage.</p> <p>For more
    * information and the input format, see <a

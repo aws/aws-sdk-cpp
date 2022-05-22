@@ -431,50 +431,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) that gives Amazon Comprehend Medical read
-     * access to your input data.</p>
+     * <p>The Amazon Resource Name (ARN) that gives Comprehend Medical; read access to
+     * your input data.</p>
      */
     inline const Aws::String& GetDataAccessRoleArn() const{ return m_dataAccessRoleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that gives Amazon Comprehend Medical read
-     * access to your input data.</p>
+     * <p>The Amazon Resource Name (ARN) that gives Comprehend Medical; read access to
+     * your input data.</p>
      */
     inline bool DataAccessRoleArnHasBeenSet() const { return m_dataAccessRoleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that gives Amazon Comprehend Medical read
-     * access to your input data.</p>
+     * <p>The Amazon Resource Name (ARN) that gives Comprehend Medical; read access to
+     * your input data.</p>
      */
     inline void SetDataAccessRoleArn(const Aws::String& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that gives Amazon Comprehend Medical read
-     * access to your input data.</p>
+     * <p>The Amazon Resource Name (ARN) that gives Comprehend Medical; read access to
+     * your input data.</p>
      */
     inline void SetDataAccessRoleArn(Aws::String&& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that gives Amazon Comprehend Medical read
-     * access to your input data.</p>
+     * <p>The Amazon Resource Name (ARN) that gives Comprehend Medical; read access to
+     * your input data.</p>
      */
     inline void SetDataAccessRoleArn(const char* value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that gives Amazon Comprehend Medical read
-     * access to your input data.</p>
+     * <p>The Amazon Resource Name (ARN) that gives Comprehend Medical; read access to
+     * your input data.</p>
      */
     inline ComprehendMedicalAsyncJobProperties& WithDataAccessRoleArn(const Aws::String& value) { SetDataAccessRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) that gives Amazon Comprehend Medical read
-     * access to your input data.</p>
+     * <p>The Amazon Resource Name (ARN) that gives Comprehend Medical; read access to
+     * your input data.</p>
      */
     inline ComprehendMedicalAsyncJobProperties& WithDataAccessRoleArn(Aws::String&& value) { SetDataAccessRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) that gives Amazon Comprehend Medical read
-     * access to your input data.</p>
+     * <p>The Amazon Resource Name (ARN) that gives Comprehend Medical; read access to
+     * your input data.</p>
      */
     inline ComprehendMedicalAsyncJobProperties& WithDataAccessRoleArn(const char* value) { SetDataAccessRoleArn(value); return *this;}
 

@@ -185,7 +185,7 @@ namespace Model
      * <p>Information used to provision a service catalog product. For information, see
      * <a
      * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What
-     * is AWS Service Catalog</a>.</p>
+     * is Amazon Web Services Service Catalog</a>.</p>
      */
     inline const ServiceCatalogProvisioningDetails& GetServiceCatalogProvisioningDetails() const{ return m_serviceCatalogProvisioningDetails; }
 
@@ -193,7 +193,7 @@ namespace Model
      * <p>Information used to provision a service catalog product. For information, see
      * <a
      * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What
-     * is AWS Service Catalog</a>.</p>
+     * is Amazon Web Services Service Catalog</a>.</p>
      */
     inline void SetServiceCatalogProvisioningDetails(const ServiceCatalogProvisioningDetails& value) { m_serviceCatalogProvisioningDetails = value; }
 
@@ -201,7 +201,7 @@ namespace Model
      * <p>Information used to provision a service catalog product. For information, see
      * <a
      * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What
-     * is AWS Service Catalog</a>.</p>
+     * is Amazon Web Services Service Catalog</a>.</p>
      */
     inline void SetServiceCatalogProvisioningDetails(ServiceCatalogProvisioningDetails&& value) { m_serviceCatalogProvisioningDetails = std::move(value); }
 
@@ -209,7 +209,7 @@ namespace Model
      * <p>Information used to provision a service catalog product. For information, see
      * <a
      * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What
-     * is AWS Service Catalog</a>.</p>
+     * is Amazon Web Services Service Catalog</a>.</p>
      */
     inline DescribeProjectResult& WithServiceCatalogProvisioningDetails(const ServiceCatalogProvisioningDetails& value) { SetServiceCatalogProvisioningDetails(value); return *this;}
 
@@ -217,7 +217,7 @@ namespace Model
      * <p>Information used to provision a service catalog product. For information, see
      * <a
      * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What
-     * is AWS Service Catalog</a>.</p>
+     * is Amazon Web Services Service Catalog</a>.</p>
      */
     inline DescribeProjectResult& WithServiceCatalogProvisioningDetails(ServiceCatalogProvisioningDetails&& value) { SetServiceCatalogProvisioningDetails(std::move(value)); return *this;}
 
@@ -315,6 +315,48 @@ namespace Model
      */
     inline DescribeProjectResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The timestamp when project was last modified.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
+
+    /**
+     * <p>The timestamp when project was last modified.</p>
+     */
+    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTime = value; }
+
+    /**
+     * <p>The timestamp when project was last modified.</p>
+     */
+    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTime = std::move(value); }
+
+    /**
+     * <p>The timestamp when project was last modified.</p>
+     */
+    inline DescribeProjectResult& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
+
+    /**
+     * <p>The timestamp when project was last modified.</p>
+     */
+    inline DescribeProjectResult& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+
+
+    
+    inline const UserContext& GetLastModifiedBy() const{ return m_lastModifiedBy; }
+
+    
+    inline void SetLastModifiedBy(const UserContext& value) { m_lastModifiedBy = value; }
+
+    
+    inline void SetLastModifiedBy(UserContext&& value) { m_lastModifiedBy = std::move(value); }
+
+    
+    inline DescribeProjectResult& WithLastModifiedBy(const UserContext& value) { SetLastModifiedBy(value); return *this;}
+
+    
+    inline DescribeProjectResult& WithLastModifiedBy(UserContext&& value) { SetLastModifiedBy(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_projectArn;
@@ -334,6 +376,10 @@ namespace Model
     UserContext m_createdBy;
 
     Aws::Utils::DateTime m_creationTime;
+
+    Aws::Utils::DateTime m_lastModifiedTime;
+
+    UserContext m_lastModifiedBy;
   };
 
 } // namespace Model

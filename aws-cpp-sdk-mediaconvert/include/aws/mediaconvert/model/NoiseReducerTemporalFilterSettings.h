@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/mediaconvert/model/NoiseFilterPostTemporalSharpening.h>
+#include <aws/mediaconvert/model/NoiseFilterPostTemporalSharpeningStrength.h>
 #include <utility>
 
 namespace Aws
@@ -67,64 +68,137 @@ namespace Model
 
 
     /**
-     * Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you
-     * can use this setting to apply sharpening. The default behavior, Auto (AUTO),
-     * allows the transcoder to determine whether to apply filtering, depending on
-     * input type and quality. When you set Noise reducer to Temporal, your output
-     * bandwidth is reduced. When Post temporal sharpening is also enabled, that
-     * bandwidth reduction is smaller.
+     * When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), the bandwidth
+     * and sharpness of your output is reduced. You can optionally use Post temporal
+     * sharpening (postTemporalSharpening) to apply sharpening to the edges of your
+     * output. Note that Post temporal sharpening will also make the bandwidth
+     * reduction from the Noise reducer smaller. The default behavior, Auto (AUTO),
+     * allows the transcoder to determine whether to apply sharpening, depending on
+     * your input type and quality. When you set Post temporal sharpening to Enabled
+     * (ENABLED), specify how much sharpening is applied using Post temporal sharpening
+     * strength (postTemporalSharpeningStrength). Set Post temporal sharpening to
+     * Disabled (DISABLED) to not apply sharpening.
      */
     inline const NoiseFilterPostTemporalSharpening& GetPostTemporalSharpening() const{ return m_postTemporalSharpening; }
 
     /**
-     * Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you
-     * can use this setting to apply sharpening. The default behavior, Auto (AUTO),
-     * allows the transcoder to determine whether to apply filtering, depending on
-     * input type and quality. When you set Noise reducer to Temporal, your output
-     * bandwidth is reduced. When Post temporal sharpening is also enabled, that
-     * bandwidth reduction is smaller.
+     * When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), the bandwidth
+     * and sharpness of your output is reduced. You can optionally use Post temporal
+     * sharpening (postTemporalSharpening) to apply sharpening to the edges of your
+     * output. Note that Post temporal sharpening will also make the bandwidth
+     * reduction from the Noise reducer smaller. The default behavior, Auto (AUTO),
+     * allows the transcoder to determine whether to apply sharpening, depending on
+     * your input type and quality. When you set Post temporal sharpening to Enabled
+     * (ENABLED), specify how much sharpening is applied using Post temporal sharpening
+     * strength (postTemporalSharpeningStrength). Set Post temporal sharpening to
+     * Disabled (DISABLED) to not apply sharpening.
      */
     inline bool PostTemporalSharpeningHasBeenSet() const { return m_postTemporalSharpeningHasBeenSet; }
 
     /**
-     * Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you
-     * can use this setting to apply sharpening. The default behavior, Auto (AUTO),
-     * allows the transcoder to determine whether to apply filtering, depending on
-     * input type and quality. When you set Noise reducer to Temporal, your output
-     * bandwidth is reduced. When Post temporal sharpening is also enabled, that
-     * bandwidth reduction is smaller.
+     * When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), the bandwidth
+     * and sharpness of your output is reduced. You can optionally use Post temporal
+     * sharpening (postTemporalSharpening) to apply sharpening to the edges of your
+     * output. Note that Post temporal sharpening will also make the bandwidth
+     * reduction from the Noise reducer smaller. The default behavior, Auto (AUTO),
+     * allows the transcoder to determine whether to apply sharpening, depending on
+     * your input type and quality. When you set Post temporal sharpening to Enabled
+     * (ENABLED), specify how much sharpening is applied using Post temporal sharpening
+     * strength (postTemporalSharpeningStrength). Set Post temporal sharpening to
+     * Disabled (DISABLED) to not apply sharpening.
      */
     inline void SetPostTemporalSharpening(const NoiseFilterPostTemporalSharpening& value) { m_postTemporalSharpeningHasBeenSet = true; m_postTemporalSharpening = value; }
 
     /**
-     * Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you
-     * can use this setting to apply sharpening. The default behavior, Auto (AUTO),
-     * allows the transcoder to determine whether to apply filtering, depending on
-     * input type and quality. When you set Noise reducer to Temporal, your output
-     * bandwidth is reduced. When Post temporal sharpening is also enabled, that
-     * bandwidth reduction is smaller.
+     * When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), the bandwidth
+     * and sharpness of your output is reduced. You can optionally use Post temporal
+     * sharpening (postTemporalSharpening) to apply sharpening to the edges of your
+     * output. Note that Post temporal sharpening will also make the bandwidth
+     * reduction from the Noise reducer smaller. The default behavior, Auto (AUTO),
+     * allows the transcoder to determine whether to apply sharpening, depending on
+     * your input type and quality. When you set Post temporal sharpening to Enabled
+     * (ENABLED), specify how much sharpening is applied using Post temporal sharpening
+     * strength (postTemporalSharpeningStrength). Set Post temporal sharpening to
+     * Disabled (DISABLED) to not apply sharpening.
      */
     inline void SetPostTemporalSharpening(NoiseFilterPostTemporalSharpening&& value) { m_postTemporalSharpeningHasBeenSet = true; m_postTemporalSharpening = std::move(value); }
 
     /**
-     * Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you
-     * can use this setting to apply sharpening. The default behavior, Auto (AUTO),
-     * allows the transcoder to determine whether to apply filtering, depending on
-     * input type and quality. When you set Noise reducer to Temporal, your output
-     * bandwidth is reduced. When Post temporal sharpening is also enabled, that
-     * bandwidth reduction is smaller.
+     * When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), the bandwidth
+     * and sharpness of your output is reduced. You can optionally use Post temporal
+     * sharpening (postTemporalSharpening) to apply sharpening to the edges of your
+     * output. Note that Post temporal sharpening will also make the bandwidth
+     * reduction from the Noise reducer smaller. The default behavior, Auto (AUTO),
+     * allows the transcoder to determine whether to apply sharpening, depending on
+     * your input type and quality. When you set Post temporal sharpening to Enabled
+     * (ENABLED), specify how much sharpening is applied using Post temporal sharpening
+     * strength (postTemporalSharpeningStrength). Set Post temporal sharpening to
+     * Disabled (DISABLED) to not apply sharpening.
      */
     inline NoiseReducerTemporalFilterSettings& WithPostTemporalSharpening(const NoiseFilterPostTemporalSharpening& value) { SetPostTemporalSharpening(value); return *this;}
 
     /**
-     * Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you
-     * can use this setting to apply sharpening. The default behavior, Auto (AUTO),
-     * allows the transcoder to determine whether to apply filtering, depending on
-     * input type and quality. When you set Noise reducer to Temporal, your output
-     * bandwidth is reduced. When Post temporal sharpening is also enabled, that
-     * bandwidth reduction is smaller.
+     * When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), the bandwidth
+     * and sharpness of your output is reduced. You can optionally use Post temporal
+     * sharpening (postTemporalSharpening) to apply sharpening to the edges of your
+     * output. Note that Post temporal sharpening will also make the bandwidth
+     * reduction from the Noise reducer smaller. The default behavior, Auto (AUTO),
+     * allows the transcoder to determine whether to apply sharpening, depending on
+     * your input type and quality. When you set Post temporal sharpening to Enabled
+     * (ENABLED), specify how much sharpening is applied using Post temporal sharpening
+     * strength (postTemporalSharpeningStrength). Set Post temporal sharpening to
+     * Disabled (DISABLED) to not apply sharpening.
      */
     inline NoiseReducerTemporalFilterSettings& WithPostTemporalSharpening(NoiseFilterPostTemporalSharpening&& value) { SetPostTemporalSharpening(std::move(value)); return *this;}
+
+
+    /**
+     * Use Post temporal sharpening strength (postTemporalSharpeningStrength) to define
+     * the amount of sharpening the transcoder applies to your output. Set Post
+     * temporal sharpening strength to Low (LOW), Medium (MEDIUM), or High (HIGH) to
+     * indicate the amount of sharpening.
+     */
+    inline const NoiseFilterPostTemporalSharpeningStrength& GetPostTemporalSharpeningStrength() const{ return m_postTemporalSharpeningStrength; }
+
+    /**
+     * Use Post temporal sharpening strength (postTemporalSharpeningStrength) to define
+     * the amount of sharpening the transcoder applies to your output. Set Post
+     * temporal sharpening strength to Low (LOW), Medium (MEDIUM), or High (HIGH) to
+     * indicate the amount of sharpening.
+     */
+    inline bool PostTemporalSharpeningStrengthHasBeenSet() const { return m_postTemporalSharpeningStrengthHasBeenSet; }
+
+    /**
+     * Use Post temporal sharpening strength (postTemporalSharpeningStrength) to define
+     * the amount of sharpening the transcoder applies to your output. Set Post
+     * temporal sharpening strength to Low (LOW), Medium (MEDIUM), or High (HIGH) to
+     * indicate the amount of sharpening.
+     */
+    inline void SetPostTemporalSharpeningStrength(const NoiseFilterPostTemporalSharpeningStrength& value) { m_postTemporalSharpeningStrengthHasBeenSet = true; m_postTemporalSharpeningStrength = value; }
+
+    /**
+     * Use Post temporal sharpening strength (postTemporalSharpeningStrength) to define
+     * the amount of sharpening the transcoder applies to your output. Set Post
+     * temporal sharpening strength to Low (LOW), Medium (MEDIUM), or High (HIGH) to
+     * indicate the amount of sharpening.
+     */
+    inline void SetPostTemporalSharpeningStrength(NoiseFilterPostTemporalSharpeningStrength&& value) { m_postTemporalSharpeningStrengthHasBeenSet = true; m_postTemporalSharpeningStrength = std::move(value); }
+
+    /**
+     * Use Post temporal sharpening strength (postTemporalSharpeningStrength) to define
+     * the amount of sharpening the transcoder applies to your output. Set Post
+     * temporal sharpening strength to Low (LOW), Medium (MEDIUM), or High (HIGH) to
+     * indicate the amount of sharpening.
+     */
+    inline NoiseReducerTemporalFilterSettings& WithPostTemporalSharpeningStrength(const NoiseFilterPostTemporalSharpeningStrength& value) { SetPostTemporalSharpeningStrength(value); return *this;}
+
+    /**
+     * Use Post temporal sharpening strength (postTemporalSharpeningStrength) to define
+     * the amount of sharpening the transcoder applies to your output. Set Post
+     * temporal sharpening strength to Low (LOW), Medium (MEDIUM), or High (HIGH) to
+     * indicate the amount of sharpening.
+     */
+    inline NoiseReducerTemporalFilterSettings& WithPostTemporalSharpeningStrength(NoiseFilterPostTemporalSharpeningStrength&& value) { SetPostTemporalSharpeningStrength(std::move(value)); return *this;}
 
 
     /**
@@ -199,6 +273,9 @@ namespace Model
 
     NoiseFilterPostTemporalSharpening m_postTemporalSharpening;
     bool m_postTemporalSharpeningHasBeenSet;
+
+    NoiseFilterPostTemporalSharpeningStrength m_postTemporalSharpeningStrength;
+    bool m_postTemporalSharpeningStrengthHasBeenSet;
 
     int m_speed;
     bool m_speedHasBeenSet;

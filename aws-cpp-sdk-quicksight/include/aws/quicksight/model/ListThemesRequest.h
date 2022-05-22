@@ -40,42 +40,50 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS account that contains the themes that you're listing.</p>
+     * <p>The ID of the Amazon Web Services account that contains the themes that
+     * you're listing.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p>The ID of the AWS account that contains the themes that you're listing.</p>
+     * <p>The ID of the Amazon Web Services account that contains the themes that
+     * you're listing.</p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS account that contains the themes that you're listing.</p>
+     * <p>The ID of the Amazon Web Services account that contains the themes that
+     * you're listing.</p>
      */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p>The ID of the AWS account that contains the themes that you're listing.</p>
+     * <p>The ID of the Amazon Web Services account that contains the themes that
+     * you're listing.</p>
      */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS account that contains the themes that you're listing.</p>
+     * <p>The ID of the Amazon Web Services account that contains the themes that
+     * you're listing.</p>
      */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
 
     /**
-     * <p>The ID of the AWS account that contains the themes that you're listing.</p>
+     * <p>The ID of the Amazon Web Services account that contains the themes that
+     * you're listing.</p>
      */
     inline ListThemesRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS account that contains the themes that you're listing.</p>
+     * <p>The ID of the Amazon Web Services account that contains the themes that
+     * you're listing.</p>
      */
     inline ListThemesRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS account that contains the themes that you're listing.</p>
+     * <p>The ID of the Amazon Web Services account that contains the themes that
+     * you're listing.</p>
      */
     inline ListThemesRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
 
@@ -155,7 +163,7 @@ namespace Model
      * following:</p> <ul> <li> <p> <code>ALL (default)</code>- Display all existing
      * themes.</p> </li> <li> <p> <code>CUSTOM</code> - Display only the themes created
      * by people using Amazon QuickSight.</p> </li> <li> <p> <code>QUICKSIGHT</code> -
-     * Display only the starting themes defined by QuickSight.</p> </li> </ul>
+     * Display only the starting themes defined by Amazon QuickSight.</p> </li> </ul>
      */
     inline const ThemeType& GetType() const{ return m_type; }
 
@@ -164,7 +172,7 @@ namespace Model
      * following:</p> <ul> <li> <p> <code>ALL (default)</code>- Display all existing
      * themes.</p> </li> <li> <p> <code>CUSTOM</code> - Display only the themes created
      * by people using Amazon QuickSight.</p> </li> <li> <p> <code>QUICKSIGHT</code> -
-     * Display only the starting themes defined by QuickSight.</p> </li> </ul>
+     * Display only the starting themes defined by Amazon QuickSight.</p> </li> </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
@@ -173,7 +181,7 @@ namespace Model
      * following:</p> <ul> <li> <p> <code>ALL (default)</code>- Display all existing
      * themes.</p> </li> <li> <p> <code>CUSTOM</code> - Display only the themes created
      * by people using Amazon QuickSight.</p> </li> <li> <p> <code>QUICKSIGHT</code> -
-     * Display only the starting themes defined by QuickSight.</p> </li> </ul>
+     * Display only the starting themes defined by Amazon QuickSight.</p> </li> </ul>
      */
     inline void SetType(const ThemeType& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -182,7 +190,7 @@ namespace Model
      * following:</p> <ul> <li> <p> <code>ALL (default)</code>- Display all existing
      * themes.</p> </li> <li> <p> <code>CUSTOM</code> - Display only the themes created
      * by people using Amazon QuickSight.</p> </li> <li> <p> <code>QUICKSIGHT</code> -
-     * Display only the starting themes defined by QuickSight.</p> </li> </ul>
+     * Display only the starting themes defined by Amazon QuickSight.</p> </li> </ul>
      */
     inline void SetType(ThemeType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -191,7 +199,7 @@ namespace Model
      * following:</p> <ul> <li> <p> <code>ALL (default)</code>- Display all existing
      * themes.</p> </li> <li> <p> <code>CUSTOM</code> - Display only the themes created
      * by people using Amazon QuickSight.</p> </li> <li> <p> <code>QUICKSIGHT</code> -
-     * Display only the starting themes defined by QuickSight.</p> </li> </ul>
+     * Display only the starting themes defined by Amazon QuickSight.</p> </li> </ul>
      */
     inline ListThemesRequest& WithType(const ThemeType& value) { SetType(value); return *this;}
 
@@ -200,7 +208,7 @@ namespace Model
      * following:</p> <ul> <li> <p> <code>ALL (default)</code>- Display all existing
      * themes.</p> </li> <li> <p> <code>CUSTOM</code> - Display only the themes created
      * by people using Amazon QuickSight.</p> </li> <li> <p> <code>QUICKSIGHT</code> -
-     * Display only the starting themes defined by QuickSight.</p> </li> </ul>
+     * Display only the starting themes defined by Amazon QuickSight.</p> </li> </ul>
      */
     inline ListThemesRequest& WithType(ThemeType&& value) { SetType(std::move(value)); return *this;}
 

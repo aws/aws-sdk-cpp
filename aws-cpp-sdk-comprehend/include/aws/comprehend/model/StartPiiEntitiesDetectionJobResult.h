@@ -70,6 +70,84 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Name (ARN) of the PII entity detection job. It is a
+     * unique, fully qualified identifier for the job. It includes the AWS account,
+     * Region, and the job ID. The format of the ARN is as follows:</p> <p>
+     * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:pii-entities-detection-job/&lt;job-id&gt;</code>
+     * </p> <p>The following is an example job ARN:</p> <p>
+     * <code>arn:aws:comprehend:us-west-2:111122223333:pii-entities-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+     * </p>
+     */
+    inline const Aws::String& GetJobArn() const{ return m_jobArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the PII entity detection job. It is a
+     * unique, fully qualified identifier for the job. It includes the AWS account,
+     * Region, and the job ID. The format of the ARN is as follows:</p> <p>
+     * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:pii-entities-detection-job/&lt;job-id&gt;</code>
+     * </p> <p>The following is an example job ARN:</p> <p>
+     * <code>arn:aws:comprehend:us-west-2:111122223333:pii-entities-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+     * </p>
+     */
+    inline void SetJobArn(const Aws::String& value) { m_jobArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the PII entity detection job. It is a
+     * unique, fully qualified identifier for the job. It includes the AWS account,
+     * Region, and the job ID. The format of the ARN is as follows:</p> <p>
+     * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:pii-entities-detection-job/&lt;job-id&gt;</code>
+     * </p> <p>The following is an example job ARN:</p> <p>
+     * <code>arn:aws:comprehend:us-west-2:111122223333:pii-entities-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+     * </p>
+     */
+    inline void SetJobArn(Aws::String&& value) { m_jobArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the PII entity detection job. It is a
+     * unique, fully qualified identifier for the job. It includes the AWS account,
+     * Region, and the job ID. The format of the ARN is as follows:</p> <p>
+     * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:pii-entities-detection-job/&lt;job-id&gt;</code>
+     * </p> <p>The following is an example job ARN:</p> <p>
+     * <code>arn:aws:comprehend:us-west-2:111122223333:pii-entities-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+     * </p>
+     */
+    inline void SetJobArn(const char* value) { m_jobArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the PII entity detection job. It is a
+     * unique, fully qualified identifier for the job. It includes the AWS account,
+     * Region, and the job ID. The format of the ARN is as follows:</p> <p>
+     * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:pii-entities-detection-job/&lt;job-id&gt;</code>
+     * </p> <p>The following is an example job ARN:</p> <p>
+     * <code>arn:aws:comprehend:us-west-2:111122223333:pii-entities-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+     * </p>
+     */
+    inline StartPiiEntitiesDetectionJobResult& WithJobArn(const Aws::String& value) { SetJobArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the PII entity detection job. It is a
+     * unique, fully qualified identifier for the job. It includes the AWS account,
+     * Region, and the job ID. The format of the ARN is as follows:</p> <p>
+     * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:pii-entities-detection-job/&lt;job-id&gt;</code>
+     * </p> <p>The following is an example job ARN:</p> <p>
+     * <code>arn:aws:comprehend:us-west-2:111122223333:pii-entities-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+     * </p>
+     */
+    inline StartPiiEntitiesDetectionJobResult& WithJobArn(Aws::String&& value) { SetJobArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the PII entity detection job. It is a
+     * unique, fully qualified identifier for the job. It includes the AWS account,
+     * Region, and the job ID. The format of the ARN is as follows:</p> <p>
+     * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:pii-entities-detection-job/&lt;job-id&gt;</code>
+     * </p> <p>The following is an example job ARN:</p> <p>
+     * <code>arn:aws:comprehend:us-west-2:111122223333:pii-entities-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+     * </p>
+     */
+    inline StartPiiEntitiesDetectionJobResult& WithJobArn(const char* value) { SetJobArn(value); return *this;}
+
+
+    /**
      * <p>The status of the job.</p>
      */
     inline const JobStatus& GetJobStatus() const{ return m_jobStatus; }
@@ -97,6 +175,8 @@ namespace Model
   private:
 
     Aws::String m_jobId;
+
+    Aws::String m_jobArn;
 
     JobStatus m_jobStatus;
   };

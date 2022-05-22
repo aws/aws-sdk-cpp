@@ -70,6 +70,11 @@ AssumeRoleWithWebIdentityResult& AssumeRoleWithWebIdentityResult::operator =(con
     {
       m_audience = Aws::Utils::Xml::DecodeEscapedXmlText(audienceNode.GetText());
     }
+    XmlNode sourceIdentityNode = resultNode.FirstChild("SourceIdentity");
+    if(!sourceIdentityNode.IsNull())
+    {
+      m_sourceIdentity = Aws::Utils::Xml::DecodeEscapedXmlText(sourceIdentityNode.GetText());
+    }
   }
 
   if (!rootNode.IsNull()) {

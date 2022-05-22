@@ -156,56 +156,56 @@ namespace Model
 
     /**
      * <p>The name of the unique set of Availability Zones, Local Zones, or Wavelength
-     * Zones from which AWS advertises IP addresses, for example,
+     * Zones from which Amazon Web Services advertises IP addresses, for example,
      * <code>us-east-1-wl1-bos-wlz-1</code>.</p>
      */
     inline const Aws::String& GetNetworkBorderGroup() const{ return m_networkBorderGroup; }
 
     /**
      * <p>The name of the unique set of Availability Zones, Local Zones, or Wavelength
-     * Zones from which AWS advertises IP addresses, for example,
+     * Zones from which Amazon Web Services advertises IP addresses, for example,
      * <code>us-east-1-wl1-bos-wlz-1</code>.</p>
      */
     inline bool NetworkBorderGroupHasBeenSet() const { return m_networkBorderGroupHasBeenSet; }
 
     /**
      * <p>The name of the unique set of Availability Zones, Local Zones, or Wavelength
-     * Zones from which AWS advertises IP addresses, for example,
+     * Zones from which Amazon Web Services advertises IP addresses, for example,
      * <code>us-east-1-wl1-bos-wlz-1</code>.</p>
      */
     inline void SetNetworkBorderGroup(const Aws::String& value) { m_networkBorderGroupHasBeenSet = true; m_networkBorderGroup = value; }
 
     /**
      * <p>The name of the unique set of Availability Zones, Local Zones, or Wavelength
-     * Zones from which AWS advertises IP addresses, for example,
+     * Zones from which Amazon Web Services advertises IP addresses, for example,
      * <code>us-east-1-wl1-bos-wlz-1</code>.</p>
      */
     inline void SetNetworkBorderGroup(Aws::String&& value) { m_networkBorderGroupHasBeenSet = true; m_networkBorderGroup = std::move(value); }
 
     /**
      * <p>The name of the unique set of Availability Zones, Local Zones, or Wavelength
-     * Zones from which AWS advertises IP addresses, for example,
+     * Zones from which Amazon Web Services advertises IP addresses, for example,
      * <code>us-east-1-wl1-bos-wlz-1</code>.</p>
      */
     inline void SetNetworkBorderGroup(const char* value) { m_networkBorderGroupHasBeenSet = true; m_networkBorderGroup.assign(value); }
 
     /**
      * <p>The name of the unique set of Availability Zones, Local Zones, or Wavelength
-     * Zones from which AWS advertises IP addresses, for example,
+     * Zones from which Amazon Web Services advertises IP addresses, for example,
      * <code>us-east-1-wl1-bos-wlz-1</code>.</p>
      */
     inline VpcIpv6CidrBlockAssociation& WithNetworkBorderGroup(const Aws::String& value) { SetNetworkBorderGroup(value); return *this;}
 
     /**
      * <p>The name of the unique set of Availability Zones, Local Zones, or Wavelength
-     * Zones from which AWS advertises IP addresses, for example,
+     * Zones from which Amazon Web Services advertises IP addresses, for example,
      * <code>us-east-1-wl1-bos-wlz-1</code>.</p>
      */
     inline VpcIpv6CidrBlockAssociation& WithNetworkBorderGroup(Aws::String&& value) { SetNetworkBorderGroup(std::move(value)); return *this;}
 
     /**
      * <p>The name of the unique set of Availability Zones, Local Zones, or Wavelength
-     * Zones from which AWS advertises IP addresses, for example,
+     * Zones from which Amazon Web Services advertises IP addresses, for example,
      * <code>us-east-1-wl1-bos-wlz-1</code>.</p>
      */
     inline VpcIpv6CidrBlockAssociation& WithNetworkBorderGroup(const char* value) { SetNetworkBorderGroup(value); return *this;}

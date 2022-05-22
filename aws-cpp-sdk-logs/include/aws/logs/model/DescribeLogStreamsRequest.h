@@ -131,9 +131,9 @@ namespace Model
      * by the event time. The default value is <code>LogStreamName</code>.</p> <p>If
      * you order the results by event time, you cannot specify the
      * <code>logStreamNamePrefix</code> parameter.</p> <p>
-     * <code>lastEventTimeStamp</code> represents the time of the most recent log event
+     * <code>lastEventTimestamp</code> represents the time of the most recent log event
      * in the log stream in CloudWatch Logs. This number is expressed as the number of
-     * milliseconds after Jan 1, 1970 00:00:00 UTC. <code>lastEventTimeStamp</code>
+     * milliseconds after Jan 1, 1970 00:00:00 UTC. <code>lastEventTimestamp</code>
      * updates on an eventual consistency basis. It typically updates in less than an
      * hour from ingestion, but in rare situations might take longer.</p>
      */
@@ -145,9 +145,9 @@ namespace Model
      * by the event time. The default value is <code>LogStreamName</code>.</p> <p>If
      * you order the results by event time, you cannot specify the
      * <code>logStreamNamePrefix</code> parameter.</p> <p>
-     * <code>lastEventTimeStamp</code> represents the time of the most recent log event
+     * <code>lastEventTimestamp</code> represents the time of the most recent log event
      * in the log stream in CloudWatch Logs. This number is expressed as the number of
-     * milliseconds after Jan 1, 1970 00:00:00 UTC. <code>lastEventTimeStamp</code>
+     * milliseconds after Jan 1, 1970 00:00:00 UTC. <code>lastEventTimestamp</code>
      * updates on an eventual consistency basis. It typically updates in less than an
      * hour from ingestion, but in rare situations might take longer.</p>
      */
@@ -159,9 +159,9 @@ namespace Model
      * by the event time. The default value is <code>LogStreamName</code>.</p> <p>If
      * you order the results by event time, you cannot specify the
      * <code>logStreamNamePrefix</code> parameter.</p> <p>
-     * <code>lastEventTimeStamp</code> represents the time of the most recent log event
+     * <code>lastEventTimestamp</code> represents the time of the most recent log event
      * in the log stream in CloudWatch Logs. This number is expressed as the number of
-     * milliseconds after Jan 1, 1970 00:00:00 UTC. <code>lastEventTimeStamp</code>
+     * milliseconds after Jan 1, 1970 00:00:00 UTC. <code>lastEventTimestamp</code>
      * updates on an eventual consistency basis. It typically updates in less than an
      * hour from ingestion, but in rare situations might take longer.</p>
      */
@@ -173,9 +173,9 @@ namespace Model
      * by the event time. The default value is <code>LogStreamName</code>.</p> <p>If
      * you order the results by event time, you cannot specify the
      * <code>logStreamNamePrefix</code> parameter.</p> <p>
-     * <code>lastEventTimeStamp</code> represents the time of the most recent log event
+     * <code>lastEventTimestamp</code> represents the time of the most recent log event
      * in the log stream in CloudWatch Logs. This number is expressed as the number of
-     * milliseconds after Jan 1, 1970 00:00:00 UTC. <code>lastEventTimeStamp</code>
+     * milliseconds after Jan 1, 1970 00:00:00 UTC. <code>lastEventTimestamp</code>
      * updates on an eventual consistency basis. It typically updates in less than an
      * hour from ingestion, but in rare situations might take longer.</p>
      */
@@ -187,9 +187,9 @@ namespace Model
      * by the event time. The default value is <code>LogStreamName</code>.</p> <p>If
      * you order the results by event time, you cannot specify the
      * <code>logStreamNamePrefix</code> parameter.</p> <p>
-     * <code>lastEventTimeStamp</code> represents the time of the most recent log event
+     * <code>lastEventTimestamp</code> represents the time of the most recent log event
      * in the log stream in CloudWatch Logs. This number is expressed as the number of
-     * milliseconds after Jan 1, 1970 00:00:00 UTC. <code>lastEventTimeStamp</code>
+     * milliseconds after Jan 1, 1970 00:00:00 UTC. <code>lastEventTimestamp</code>
      * updates on an eventual consistency basis. It typically updates in less than an
      * hour from ingestion, but in rare situations might take longer.</p>
      */
@@ -201,9 +201,9 @@ namespace Model
      * by the event time. The default value is <code>LogStreamName</code>.</p> <p>If
      * you order the results by event time, you cannot specify the
      * <code>logStreamNamePrefix</code> parameter.</p> <p>
-     * <code>lastEventTimeStamp</code> represents the time of the most recent log event
+     * <code>lastEventTimestamp</code> represents the time of the most recent log event
      * in the log stream in CloudWatch Logs. This number is expressed as the number of
-     * milliseconds after Jan 1, 1970 00:00:00 UTC. <code>lastEventTimeStamp</code>
+     * milliseconds after Jan 1, 1970 00:00:00 UTC. <code>lastEventTimestamp</code>
      * updates on an eventual consistency basis. It typically updates in less than an
      * hour from ingestion, but in rare situations might take longer.</p>
      */

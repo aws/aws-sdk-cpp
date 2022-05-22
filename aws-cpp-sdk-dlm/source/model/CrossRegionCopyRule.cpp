@@ -20,23 +20,27 @@ namespace Model
 
 CrossRegionCopyRule::CrossRegionCopyRule() : 
     m_targetRegionHasBeenSet(false),
+    m_targetHasBeenSet(false),
     m_encrypted(false),
     m_encryptedHasBeenSet(false),
     m_cmkArnHasBeenSet(false),
     m_copyTags(false),
     m_copyTagsHasBeenSet(false),
-    m_retainRuleHasBeenSet(false)
+    m_retainRuleHasBeenSet(false),
+    m_deprecateRuleHasBeenSet(false)
 {
 }
 
 CrossRegionCopyRule::CrossRegionCopyRule(JsonView jsonValue) : 
     m_targetRegionHasBeenSet(false),
+    m_targetHasBeenSet(false),
     m_encrypted(false),
     m_encryptedHasBeenSet(false),
     m_cmkArnHasBeenSet(false),
     m_copyTags(false),
     m_copyTagsHasBeenSet(false),
-    m_retainRuleHasBeenSet(false)
+    m_retainRuleHasBeenSet(false),
+    m_deprecateRuleHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +52,13 @@ CrossRegionCopyRule& CrossRegionCopyRule::operator =(JsonView jsonValue)
     m_targetRegion = jsonValue.GetString("TargetRegion");
 
     m_targetRegionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Target"))
+  {
+    m_target = jsonValue.GetString("Target");
+
+    m_targetHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Encrypted"))
@@ -78,6 +89,13 @@ CrossRegionCopyRule& CrossRegionCopyRule::operator =(JsonView jsonValue)
     m_retainRuleHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DeprecateRule"))
+  {
+    m_deprecateRule = jsonValue.GetObject("DeprecateRule");
+
+    m_deprecateRuleHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -88,6 +106,12 @@ JsonValue CrossRegionCopyRule::Jsonize() const
   if(m_targetRegionHasBeenSet)
   {
    payload.WithString("TargetRegion", m_targetRegion);
+
+  }
+
+  if(m_targetHasBeenSet)
+  {
+   payload.WithString("Target", m_target);
 
   }
 
@@ -112,6 +136,12 @@ JsonValue CrossRegionCopyRule::Jsonize() const
   if(m_retainRuleHasBeenSet)
   {
    payload.WithObject("RetainRule", m_retainRule.Jsonize());
+
+  }
+
+  if(m_deprecateRuleHasBeenSet)
+  {
+   payload.WithObject("DeprecateRule", m_deprecateRule.Jsonize());
 
   }
 

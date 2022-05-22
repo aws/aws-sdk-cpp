@@ -32,19 +32,29 @@ namespace Model
     GetPlaybackKeyPairResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <zonbook></zonbook><xhtml></xhtml>
+     */
     inline const PlaybackKeyPair& GetKeyPair() const{ return m_keyPair; }
 
-    
+    /**
+     * <zonbook></zonbook><xhtml></xhtml>
+     */
     inline void SetKeyPair(const PlaybackKeyPair& value) { m_keyPair = value; }
 
-    
+    /**
+     * <zonbook></zonbook><xhtml></xhtml>
+     */
     inline void SetKeyPair(PlaybackKeyPair&& value) { m_keyPair = std::move(value); }
 
-    
+    /**
+     * <zonbook></zonbook><xhtml></xhtml>
+     */
     inline GetPlaybackKeyPairResult& WithKeyPair(const PlaybackKeyPair& value) { SetKeyPair(value); return *this;}
 
-    
+    /**
+     * <zonbook></zonbook><xhtml></xhtml>
+     */
     inline GetPlaybackKeyPairResult& WithKeyPair(PlaybackKeyPair&& value) { SetKeyPair(std::move(value)); return *this;}
 
   private:

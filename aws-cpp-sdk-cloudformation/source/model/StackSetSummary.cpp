@@ -31,7 +31,8 @@ StackSetSummary::StackSetSummary() :
     m_permissionModelHasBeenSet(false),
     m_driftStatus(StackDriftStatus::NOT_SET),
     m_driftStatusHasBeenSet(false),
-    m_lastDriftCheckTimestampHasBeenSet(false)
+    m_lastDriftCheckTimestampHasBeenSet(false),
+    m_managedExecutionHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ StackSetSummary::StackSetSummary(const XmlNode& xmlNode) :
     m_permissionModelHasBeenSet(false),
     m_driftStatus(StackDriftStatus::NOT_SET),
     m_driftStatusHasBeenSet(false),
-    m_lastDriftCheckTimestampHasBeenSet(false)
+    m_lastDriftCheckTimestampHasBeenSet(false),
+    m_managedExecutionHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -105,6 +107,12 @@ StackSetSummary& StackSetSummary::operator =(const XmlNode& xmlNode)
       m_lastDriftCheckTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastDriftCheckTimestampNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_lastDriftCheckTimestampHasBeenSet = true;
     }
+    XmlNode managedExecutionNode = resultNode.FirstChild("ManagedExecution");
+    if(!managedExecutionNode.IsNull())
+    {
+      m_managedExecution = managedExecutionNode;
+      m_managedExecutionHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -154,6 +162,13 @@ void StackSetSummary::OutputToStream(Aws::OStream& oStream, const char* location
       oStream << location << index << locationValue << ".LastDriftCheckTimestamp=" << StringUtils::URLEncode(m_lastDriftCheckTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 
+  if(m_managedExecutionHasBeenSet)
+  {
+      Aws::StringStream managedExecutionLocationAndMemberSs;
+      managedExecutionLocationAndMemberSs << location << index << locationValue << ".ManagedExecution";
+      m_managedExecution.OutputToStream(oStream, managedExecutionLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void StackSetSummary::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -191,6 +206,12 @@ void StackSetSummary::OutputToStream(Aws::OStream& oStream, const char* location
   if(m_lastDriftCheckTimestampHasBeenSet)
   {
       oStream << location << ".LastDriftCheckTimestamp=" << StringUtils::URLEncode(m_lastDriftCheckTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if(m_managedExecutionHasBeenSet)
+  {
+      Aws::String managedExecutionLocationAndMember(location);
+      managedExecutionLocationAndMember += ".ManagedExecution";
+      m_managedExecution.OutputToStream(oStream, managedExecutionLocationAndMember.c_str());
   }
 }
 

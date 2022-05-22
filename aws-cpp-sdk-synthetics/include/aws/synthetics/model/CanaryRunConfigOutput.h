@@ -83,22 +83,22 @@ namespace Model
 
 
     /**
-     * <p>Displays whether this canary run used active AWS X-Ray tracing. </p>
+     * <p>Displays whether this canary run used active X-Ray tracing. </p>
      */
     inline bool GetActiveTracing() const{ return m_activeTracing; }
 
     /**
-     * <p>Displays whether this canary run used active AWS X-Ray tracing. </p>
+     * <p>Displays whether this canary run used active X-Ray tracing. </p>
      */
     inline bool ActiveTracingHasBeenSet() const { return m_activeTracingHasBeenSet; }
 
     /**
-     * <p>Displays whether this canary run used active AWS X-Ray tracing. </p>
+     * <p>Displays whether this canary run used active X-Ray tracing. </p>
      */
     inline void SetActiveTracing(bool value) { m_activeTracingHasBeenSet = true; m_activeTracing = value; }
 
     /**
-     * <p>Displays whether this canary run used active AWS X-Ray tracing. </p>
+     * <p>Displays whether this canary run used active X-Ray tracing. </p>
      */
     inline CanaryRunConfigOutput& WithActiveTracing(bool value) { SetActiveTracing(value); return *this;}
 

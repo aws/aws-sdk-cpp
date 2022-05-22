@@ -41,156 +41,196 @@ namespace Model
 
 
     /**
-     * <p>The name of the Automation document to use for this execution.</p>
+     * <p>The name of the SSM document to run. This can be a public document or a
+     * custom document. To run a shared document belonging to another account, specify
+     * the document ARN. For more information about how to use shared documents, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using
+     * shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetDocumentName() const{ return m_documentName; }
 
     /**
-     * <p>The name of the Automation document to use for this execution.</p>
+     * <p>The name of the SSM document to run. This can be a public document or a
+     * custom document. To run a shared document belonging to another account, specify
+     * the document ARN. For more information about how to use shared documents, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using
+     * shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline bool DocumentNameHasBeenSet() const { return m_documentNameHasBeenSet; }
 
     /**
-     * <p>The name of the Automation document to use for this execution.</p>
+     * <p>The name of the SSM document to run. This can be a public document or a
+     * custom document. To run a shared document belonging to another account, specify
+     * the document ARN. For more information about how to use shared documents, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using
+     * shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline void SetDocumentName(const Aws::String& value) { m_documentNameHasBeenSet = true; m_documentName = value; }
 
     /**
-     * <p>The name of the Automation document to use for this execution.</p>
+     * <p>The name of the SSM document to run. This can be a public document or a
+     * custom document. To run a shared document belonging to another account, specify
+     * the document ARN. For more information about how to use shared documents, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using
+     * shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline void SetDocumentName(Aws::String&& value) { m_documentNameHasBeenSet = true; m_documentName = std::move(value); }
 
     /**
-     * <p>The name of the Automation document to use for this execution.</p>
+     * <p>The name of the SSM document to run. This can be a public document or a
+     * custom document. To run a shared document belonging to another account, specify
+     * the document ARN. For more information about how to use shared documents, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using
+     * shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline void SetDocumentName(const char* value) { m_documentNameHasBeenSet = true; m_documentName.assign(value); }
 
     /**
-     * <p>The name of the Automation document to use for this execution.</p>
+     * <p>The name of the SSM document to run. This can be a public document or a
+     * custom document. To run a shared document belonging to another account, specify
+     * the document ARN. For more information about how to use shared documents, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using
+     * shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline StartAutomationExecutionRequest& WithDocumentName(const Aws::String& value) { SetDocumentName(value); return *this;}
 
     /**
-     * <p>The name of the Automation document to use for this execution.</p>
+     * <p>The name of the SSM document to run. This can be a public document or a
+     * custom document. To run a shared document belonging to another account, specify
+     * the document ARN. For more information about how to use shared documents, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using
+     * shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline StartAutomationExecutionRequest& WithDocumentName(Aws::String&& value) { SetDocumentName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Automation document to use for this execution.</p>
+     * <p>The name of the SSM document to run. This can be a public document or a
+     * custom document. To run a shared document belonging to another account, specify
+     * the document ARN. For more information about how to use shared documents, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using
+     * shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline StartAutomationExecutionRequest& WithDocumentName(const char* value) { SetDocumentName(value); return *this;}
 
 
     /**
-     * <p>The version of the Automation document to use for this execution.</p>
+     * <p>The version of the Automation runbook to use for this execution.</p>
      */
     inline const Aws::String& GetDocumentVersion() const{ return m_documentVersion; }
 
     /**
-     * <p>The version of the Automation document to use for this execution.</p>
+     * <p>The version of the Automation runbook to use for this execution.</p>
      */
     inline bool DocumentVersionHasBeenSet() const { return m_documentVersionHasBeenSet; }
 
     /**
-     * <p>The version of the Automation document to use for this execution.</p>
+     * <p>The version of the Automation runbook to use for this execution.</p>
      */
     inline void SetDocumentVersion(const Aws::String& value) { m_documentVersionHasBeenSet = true; m_documentVersion = value; }
 
     /**
-     * <p>The version of the Automation document to use for this execution.</p>
+     * <p>The version of the Automation runbook to use for this execution.</p>
      */
     inline void SetDocumentVersion(Aws::String&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = std::move(value); }
 
     /**
-     * <p>The version of the Automation document to use for this execution.</p>
+     * <p>The version of the Automation runbook to use for this execution.</p>
      */
     inline void SetDocumentVersion(const char* value) { m_documentVersionHasBeenSet = true; m_documentVersion.assign(value); }
 
     /**
-     * <p>The version of the Automation document to use for this execution.</p>
+     * <p>The version of the Automation runbook to use for this execution.</p>
      */
     inline StartAutomationExecutionRequest& WithDocumentVersion(const Aws::String& value) { SetDocumentVersion(value); return *this;}
 
     /**
-     * <p>The version of the Automation document to use for this execution.</p>
+     * <p>The version of the Automation runbook to use for this execution.</p>
      */
     inline StartAutomationExecutionRequest& WithDocumentVersion(Aws::String&& value) { SetDocumentVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The version of the Automation document to use for this execution.</p>
+     * <p>The version of the Automation runbook to use for this execution.</p>
      */
     inline StartAutomationExecutionRequest& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
 
 
     /**
      * <p>A key-value map of execution parameters, which match the declared parameters
-     * in the Automation document.</p>
+     * in the Automation runbook.</p>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetParameters() const{ return m_parameters; }
 
     /**
      * <p>A key-value map of execution parameters, which match the declared parameters
-     * in the Automation document.</p>
+     * in the Automation runbook.</p>
      */
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
      * <p>A key-value map of execution parameters, which match the declared parameters
-     * in the Automation document.</p>
+     * in the Automation runbook.</p>
      */
     inline void SetParameters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
      * <p>A key-value map of execution parameters, which match the declared parameters
-     * in the Automation document.</p>
+     * in the Automation runbook.</p>
      */
     inline void SetParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
      * <p>A key-value map of execution parameters, which match the declared parameters
-     * in the Automation document.</p>
+     * in the Automation runbook.</p>
      */
     inline StartAutomationExecutionRequest& WithParameters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetParameters(value); return *this;}
 
     /**
      * <p>A key-value map of execution parameters, which match the declared parameters
-     * in the Automation document.</p>
+     * in the Automation runbook.</p>
      */
     inline StartAutomationExecutionRequest& WithParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
      * <p>A key-value map of execution parameters, which match the declared parameters
-     * in the Automation document.</p>
+     * in the Automation runbook.</p>
      */
     inline StartAutomationExecutionRequest& AddParameters(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
     /**
      * <p>A key-value map of execution parameters, which match the declared parameters
-     * in the Automation document.</p>
+     * in the Automation runbook.</p>
      */
     inline StartAutomationExecutionRequest& AddParameters(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>A key-value map of execution parameters, which match the declared parameters
-     * in the Automation document.</p>
+     * in the Automation runbook.</p>
      */
     inline StartAutomationExecutionRequest& AddParameters(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A key-value map of execution parameters, which match the declared parameters
-     * in the Automation document.</p>
+     * in the Automation runbook.</p>
      */
     inline StartAutomationExecutionRequest& AddParameters(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>A key-value map of execution parameters, which match the declared parameters
-     * in the Automation document.</p>
+     * in the Automation runbook.</p>
      */
     inline StartAutomationExecutionRequest& AddParameters(const char* key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>A key-value map of execution parameters, which match the declared parameters
-     * in the Automation document.</p>
+     * in the Automation runbook.</p>
      */
     inline StartAutomationExecutionRequest& AddParameters(const char* key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
@@ -381,49 +421,49 @@ namespace Model
 
     /**
      * <p>A key-value mapping of document parameters to target resources. Both Targets
-     * and TargetMaps cannot be specified together.</p>
+     * and TargetMaps can't be specified together.</p>
      */
     inline const Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>& GetTargetMaps() const{ return m_targetMaps; }
 
     /**
      * <p>A key-value mapping of document parameters to target resources. Both Targets
-     * and TargetMaps cannot be specified together.</p>
+     * and TargetMaps can't be specified together.</p>
      */
     inline bool TargetMapsHasBeenSet() const { return m_targetMapsHasBeenSet; }
 
     /**
      * <p>A key-value mapping of document parameters to target resources. Both Targets
-     * and TargetMaps cannot be specified together.</p>
+     * and TargetMaps can't be specified together.</p>
      */
     inline void SetTargetMaps(const Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>& value) { m_targetMapsHasBeenSet = true; m_targetMaps = value; }
 
     /**
      * <p>A key-value mapping of document parameters to target resources. Both Targets
-     * and TargetMaps cannot be specified together.</p>
+     * and TargetMaps can't be specified together.</p>
      */
     inline void SetTargetMaps(Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>&& value) { m_targetMapsHasBeenSet = true; m_targetMaps = std::move(value); }
 
     /**
      * <p>A key-value mapping of document parameters to target resources. Both Targets
-     * and TargetMaps cannot be specified together.</p>
+     * and TargetMaps can't be specified together.</p>
      */
     inline StartAutomationExecutionRequest& WithTargetMaps(const Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>& value) { SetTargetMaps(value); return *this;}
 
     /**
      * <p>A key-value mapping of document parameters to target resources. Both Targets
-     * and TargetMaps cannot be specified together.</p>
+     * and TargetMaps can't be specified together.</p>
      */
     inline StartAutomationExecutionRequest& WithTargetMaps(Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>&& value) { SetTargetMaps(std::move(value)); return *this;}
 
     /**
      * <p>A key-value mapping of document parameters to target resources. Both Targets
-     * and TargetMaps cannot be specified together.</p>
+     * and TargetMaps can't be specified together.</p>
      */
     inline StartAutomationExecutionRequest& AddTargetMaps(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_targetMapsHasBeenSet = true; m_targetMaps.push_back(value); return *this; }
 
     /**
      * <p>A key-value mapping of document parameters to target resources. Both Targets
-     * and TargetMaps cannot be specified together.</p>
+     * and TargetMaps can't be specified together.</p>
      */
     inline StartAutomationExecutionRequest& AddTargetMaps(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_targetMapsHasBeenSet = true; m_targetMaps.push_back(std::move(value)); return *this; }
 
@@ -431,56 +471,56 @@ namespace Model
     /**
      * <p>The maximum number of targets allowed to run this task in parallel. You can
      * specify a number, such as 10, or a percentage, such as 10%. The default value is
-     * 10.</p>
+     * <code>10</code>.</p>
      */
     inline const Aws::String& GetMaxConcurrency() const{ return m_maxConcurrency; }
 
     /**
      * <p>The maximum number of targets allowed to run this task in parallel. You can
      * specify a number, such as 10, or a percentage, such as 10%. The default value is
-     * 10.</p>
+     * <code>10</code>.</p>
      */
     inline bool MaxConcurrencyHasBeenSet() const { return m_maxConcurrencyHasBeenSet; }
 
     /**
      * <p>The maximum number of targets allowed to run this task in parallel. You can
      * specify a number, such as 10, or a percentage, such as 10%. The default value is
-     * 10.</p>
+     * <code>10</code>.</p>
      */
     inline void SetMaxConcurrency(const Aws::String& value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = value; }
 
     /**
      * <p>The maximum number of targets allowed to run this task in parallel. You can
      * specify a number, such as 10, or a percentage, such as 10%. The default value is
-     * 10.</p>
+     * <code>10</code>.</p>
      */
     inline void SetMaxConcurrency(Aws::String&& value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = std::move(value); }
 
     /**
      * <p>The maximum number of targets allowed to run this task in parallel. You can
      * specify a number, such as 10, or a percentage, such as 10%. The default value is
-     * 10.</p>
+     * <code>10</code>.</p>
      */
     inline void SetMaxConcurrency(const char* value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency.assign(value); }
 
     /**
      * <p>The maximum number of targets allowed to run this task in parallel. You can
      * specify a number, such as 10, or a percentage, such as 10%. The default value is
-     * 10.</p>
+     * <code>10</code>.</p>
      */
     inline StartAutomationExecutionRequest& WithMaxConcurrency(const Aws::String& value) { SetMaxConcurrency(value); return *this;}
 
     /**
      * <p>The maximum number of targets allowed to run this task in parallel. You can
      * specify a number, such as 10, or a percentage, such as 10%. The default value is
-     * 10.</p>
+     * <code>10</code>.</p>
      */
     inline StartAutomationExecutionRequest& WithMaxConcurrency(Aws::String&& value) { SetMaxConcurrency(std::move(value)); return *this;}
 
     /**
      * <p>The maximum number of targets allowed to run this task in parallel. You can
      * specify a number, such as 10, or a percentage, such as 10%. The default value is
-     * 10.</p>
+     * <code>10</code>.</p>
      */
     inline StartAutomationExecutionRequest& WithMaxConcurrency(const char* value) { SetMaxConcurrency(value); return *this;}
 
@@ -623,82 +663,98 @@ namespace Model
 
 
     /**
-     * <p>A location is a combination of AWS Regions and/or AWS accounts where you want
-     * to run the Automation. Use this action to start an Automation in multiple
-     * Regions and multiple accounts. For more information, see <a
+     * <p>A location is a combination of Amazon Web Services Regions and/or Amazon Web
+     * Services accounts where you want to run the automation. Use this operation to
+     * start an automation in multiple Amazon Web Services Regions and multiple Amazon
+     * Web Services accounts. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running
-     * Automation workflows in multiple AWS Regions and accounts</a> in the <i>AWS
-     * Systems Manager User Guide</i>. </p>
+     * Automation workflows in multiple Amazon Web Services Regions and Amazon Web
+     * Services accounts</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>. </p>
      */
     inline const Aws::Vector<TargetLocation>& GetTargetLocations() const{ return m_targetLocations; }
 
     /**
-     * <p>A location is a combination of AWS Regions and/or AWS accounts where you want
-     * to run the Automation. Use this action to start an Automation in multiple
-     * Regions and multiple accounts. For more information, see <a
+     * <p>A location is a combination of Amazon Web Services Regions and/or Amazon Web
+     * Services accounts where you want to run the automation. Use this operation to
+     * start an automation in multiple Amazon Web Services Regions and multiple Amazon
+     * Web Services accounts. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running
-     * Automation workflows in multiple AWS Regions and accounts</a> in the <i>AWS
-     * Systems Manager User Guide</i>. </p>
+     * Automation workflows in multiple Amazon Web Services Regions and Amazon Web
+     * Services accounts</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>. </p>
      */
     inline bool TargetLocationsHasBeenSet() const { return m_targetLocationsHasBeenSet; }
 
     /**
-     * <p>A location is a combination of AWS Regions and/or AWS accounts where you want
-     * to run the Automation. Use this action to start an Automation in multiple
-     * Regions and multiple accounts. For more information, see <a
+     * <p>A location is a combination of Amazon Web Services Regions and/or Amazon Web
+     * Services accounts where you want to run the automation. Use this operation to
+     * start an automation in multiple Amazon Web Services Regions and multiple Amazon
+     * Web Services accounts. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running
-     * Automation workflows in multiple AWS Regions and accounts</a> in the <i>AWS
-     * Systems Manager User Guide</i>. </p>
+     * Automation workflows in multiple Amazon Web Services Regions and Amazon Web
+     * Services accounts</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>. </p>
      */
     inline void SetTargetLocations(const Aws::Vector<TargetLocation>& value) { m_targetLocationsHasBeenSet = true; m_targetLocations = value; }
 
     /**
-     * <p>A location is a combination of AWS Regions and/or AWS accounts where you want
-     * to run the Automation. Use this action to start an Automation in multiple
-     * Regions and multiple accounts. For more information, see <a
+     * <p>A location is a combination of Amazon Web Services Regions and/or Amazon Web
+     * Services accounts where you want to run the automation. Use this operation to
+     * start an automation in multiple Amazon Web Services Regions and multiple Amazon
+     * Web Services accounts. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running
-     * Automation workflows in multiple AWS Regions and accounts</a> in the <i>AWS
-     * Systems Manager User Guide</i>. </p>
+     * Automation workflows in multiple Amazon Web Services Regions and Amazon Web
+     * Services accounts</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>. </p>
      */
     inline void SetTargetLocations(Aws::Vector<TargetLocation>&& value) { m_targetLocationsHasBeenSet = true; m_targetLocations = std::move(value); }
 
     /**
-     * <p>A location is a combination of AWS Regions and/or AWS accounts where you want
-     * to run the Automation. Use this action to start an Automation in multiple
-     * Regions and multiple accounts. For more information, see <a
+     * <p>A location is a combination of Amazon Web Services Regions and/or Amazon Web
+     * Services accounts where you want to run the automation. Use this operation to
+     * start an automation in multiple Amazon Web Services Regions and multiple Amazon
+     * Web Services accounts. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running
-     * Automation workflows in multiple AWS Regions and accounts</a> in the <i>AWS
-     * Systems Manager User Guide</i>. </p>
+     * Automation workflows in multiple Amazon Web Services Regions and Amazon Web
+     * Services accounts</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>. </p>
      */
     inline StartAutomationExecutionRequest& WithTargetLocations(const Aws::Vector<TargetLocation>& value) { SetTargetLocations(value); return *this;}
 
     /**
-     * <p>A location is a combination of AWS Regions and/or AWS accounts where you want
-     * to run the Automation. Use this action to start an Automation in multiple
-     * Regions and multiple accounts. For more information, see <a
+     * <p>A location is a combination of Amazon Web Services Regions and/or Amazon Web
+     * Services accounts where you want to run the automation. Use this operation to
+     * start an automation in multiple Amazon Web Services Regions and multiple Amazon
+     * Web Services accounts. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running
-     * Automation workflows in multiple AWS Regions and accounts</a> in the <i>AWS
-     * Systems Manager User Guide</i>. </p>
+     * Automation workflows in multiple Amazon Web Services Regions and Amazon Web
+     * Services accounts</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>. </p>
      */
     inline StartAutomationExecutionRequest& WithTargetLocations(Aws::Vector<TargetLocation>&& value) { SetTargetLocations(std::move(value)); return *this;}
 
     /**
-     * <p>A location is a combination of AWS Regions and/or AWS accounts where you want
-     * to run the Automation. Use this action to start an Automation in multiple
-     * Regions and multiple accounts. For more information, see <a
+     * <p>A location is a combination of Amazon Web Services Regions and/or Amazon Web
+     * Services accounts where you want to run the automation. Use this operation to
+     * start an automation in multiple Amazon Web Services Regions and multiple Amazon
+     * Web Services accounts. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running
-     * Automation workflows in multiple AWS Regions and accounts</a> in the <i>AWS
-     * Systems Manager User Guide</i>. </p>
+     * Automation workflows in multiple Amazon Web Services Regions and Amazon Web
+     * Services accounts</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>. </p>
      */
     inline StartAutomationExecutionRequest& AddTargetLocations(const TargetLocation& value) { m_targetLocationsHasBeenSet = true; m_targetLocations.push_back(value); return *this; }
 
     /**
-     * <p>A location is a combination of AWS Regions and/or AWS accounts where you want
-     * to run the Automation. Use this action to start an Automation in multiple
-     * Regions and multiple accounts. For more information, see <a
+     * <p>A location is a combination of Amazon Web Services Regions and/or Amazon Web
+     * Services accounts where you want to run the automation. Use this operation to
+     * start an automation in multiple Amazon Web Services Regions and multiple Amazon
+     * Web Services accounts. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running
-     * Automation workflows in multiple AWS Regions and accounts</a> in the <i>AWS
-     * Systems Manager User Guide</i>. </p>
+     * Automation workflows in multiple Amazon Web Services Regions and Amazon Web
+     * Services accounts</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>. </p>
      */
     inline StartAutomationExecutionRequest& AddTargetLocations(TargetLocation&& value) { m_targetLocationsHasBeenSet = true; m_targetLocations.push_back(std::move(value)); return *this; }
 
@@ -708,10 +764,10 @@ namespace Model
      * five tags for an automation. Tags enable you to categorize a resource in
      * different ways, such as by purpose, owner, or environment. For example, you
      * might want to tag an automation to identify an environment or operating system.
-     * In this case, you could specify the following key name/value pairs:</p> <ul>
-     * <li> <p> <code>Key=environment,Value=test</code> </p> </li> <li> <p>
+     * In this case, you could specify the following key-value pairs:</p> <ul> <li> <p>
+     * <code>Key=environment,Value=test</code> </p> </li> <li> <p>
      * <code>Key=OS,Value=Windows</code> </p> </li> </ul>  <p>To add tags to an
-     * existing patch baseline, use the <a>AddTagsToResource</a> action.</p> 
+     * existing automation, use the <a>AddTagsToResource</a> operation.</p> 
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -720,10 +776,10 @@ namespace Model
      * five tags for an automation. Tags enable you to categorize a resource in
      * different ways, such as by purpose, owner, or environment. For example, you
      * might want to tag an automation to identify an environment or operating system.
-     * In this case, you could specify the following key name/value pairs:</p> <ul>
-     * <li> <p> <code>Key=environment,Value=test</code> </p> </li> <li> <p>
+     * In this case, you could specify the following key-value pairs:</p> <ul> <li> <p>
+     * <code>Key=environment,Value=test</code> </p> </li> <li> <p>
      * <code>Key=OS,Value=Windows</code> </p> </li> </ul>  <p>To add tags to an
-     * existing patch baseline, use the <a>AddTagsToResource</a> action.</p> 
+     * existing automation, use the <a>AddTagsToResource</a> operation.</p> 
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -732,10 +788,10 @@ namespace Model
      * five tags for an automation. Tags enable you to categorize a resource in
      * different ways, such as by purpose, owner, or environment. For example, you
      * might want to tag an automation to identify an environment or operating system.
-     * In this case, you could specify the following key name/value pairs:</p> <ul>
-     * <li> <p> <code>Key=environment,Value=test</code> </p> </li> <li> <p>
+     * In this case, you could specify the following key-value pairs:</p> <ul> <li> <p>
+     * <code>Key=environment,Value=test</code> </p> </li> <li> <p>
      * <code>Key=OS,Value=Windows</code> </p> </li> </ul>  <p>To add tags to an
-     * existing patch baseline, use the <a>AddTagsToResource</a> action.</p> 
+     * existing automation, use the <a>AddTagsToResource</a> operation.</p> 
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -744,10 +800,10 @@ namespace Model
      * five tags for an automation. Tags enable you to categorize a resource in
      * different ways, such as by purpose, owner, or environment. For example, you
      * might want to tag an automation to identify an environment or operating system.
-     * In this case, you could specify the following key name/value pairs:</p> <ul>
-     * <li> <p> <code>Key=environment,Value=test</code> </p> </li> <li> <p>
+     * In this case, you could specify the following key-value pairs:</p> <ul> <li> <p>
+     * <code>Key=environment,Value=test</code> </p> </li> <li> <p>
      * <code>Key=OS,Value=Windows</code> </p> </li> </ul>  <p>To add tags to an
-     * existing patch baseline, use the <a>AddTagsToResource</a> action.</p> 
+     * existing automation, use the <a>AddTagsToResource</a> operation.</p> 
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -756,10 +812,10 @@ namespace Model
      * five tags for an automation. Tags enable you to categorize a resource in
      * different ways, such as by purpose, owner, or environment. For example, you
      * might want to tag an automation to identify an environment or operating system.
-     * In this case, you could specify the following key name/value pairs:</p> <ul>
-     * <li> <p> <code>Key=environment,Value=test</code> </p> </li> <li> <p>
+     * In this case, you could specify the following key-value pairs:</p> <ul> <li> <p>
+     * <code>Key=environment,Value=test</code> </p> </li> <li> <p>
      * <code>Key=OS,Value=Windows</code> </p> </li> </ul>  <p>To add tags to an
-     * existing patch baseline, use the <a>AddTagsToResource</a> action.</p> 
+     * existing automation, use the <a>AddTagsToResource</a> operation.</p> 
      */
     inline StartAutomationExecutionRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
@@ -768,10 +824,10 @@ namespace Model
      * five tags for an automation. Tags enable you to categorize a resource in
      * different ways, such as by purpose, owner, or environment. For example, you
      * might want to tag an automation to identify an environment or operating system.
-     * In this case, you could specify the following key name/value pairs:</p> <ul>
-     * <li> <p> <code>Key=environment,Value=test</code> </p> </li> <li> <p>
+     * In this case, you could specify the following key-value pairs:</p> <ul> <li> <p>
+     * <code>Key=environment,Value=test</code> </p> </li> <li> <p>
      * <code>Key=OS,Value=Windows</code> </p> </li> </ul>  <p>To add tags to an
-     * existing patch baseline, use the <a>AddTagsToResource</a> action.</p> 
+     * existing automation, use the <a>AddTagsToResource</a> operation.</p> 
      */
     inline StartAutomationExecutionRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -780,10 +836,10 @@ namespace Model
      * five tags for an automation. Tags enable you to categorize a resource in
      * different ways, such as by purpose, owner, or environment. For example, you
      * might want to tag an automation to identify an environment or operating system.
-     * In this case, you could specify the following key name/value pairs:</p> <ul>
-     * <li> <p> <code>Key=environment,Value=test</code> </p> </li> <li> <p>
+     * In this case, you could specify the following key-value pairs:</p> <ul> <li> <p>
+     * <code>Key=environment,Value=test</code> </p> </li> <li> <p>
      * <code>Key=OS,Value=Windows</code> </p> </li> </ul>  <p>To add tags to an
-     * existing patch baseline, use the <a>AddTagsToResource</a> action.</p> 
+     * existing automation, use the <a>AddTagsToResource</a> operation.</p> 
      */
     inline StartAutomationExecutionRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
@@ -792,10 +848,10 @@ namespace Model
      * five tags for an automation. Tags enable you to categorize a resource in
      * different ways, such as by purpose, owner, or environment. For example, you
      * might want to tag an automation to identify an environment or operating system.
-     * In this case, you could specify the following key name/value pairs:</p> <ul>
-     * <li> <p> <code>Key=environment,Value=test</code> </p> </li> <li> <p>
+     * In this case, you could specify the following key-value pairs:</p> <ul> <li> <p>
+     * <code>Key=environment,Value=test</code> </p> </li> <li> <p>
      * <code>Key=OS,Value=Windows</code> </p> </li> </ul>  <p>To add tags to an
-     * existing patch baseline, use the <a>AddTagsToResource</a> action.</p> 
+     * existing automation, use the <a>AddTagsToResource</a> operation.</p> 
      */
     inline StartAutomationExecutionRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

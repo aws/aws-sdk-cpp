@@ -26,6 +26,8 @@
 #include <aws/quicksight/model/CreateDashboardRequest.h>
 #include <aws/quicksight/model/CreateDataSetRequest.h>
 #include <aws/quicksight/model/CreateDataSourceRequest.h>
+#include <aws/quicksight/model/CreateFolderRequest.h>
+#include <aws/quicksight/model/CreateFolderMembershipRequest.h>
 #include <aws/quicksight/model/CreateGroupRequest.h>
 #include <aws/quicksight/model/CreateGroupMembershipRequest.h>
 #include <aws/quicksight/model/CreateIAMPolicyAssignmentRequest.h>
@@ -40,6 +42,8 @@
 #include <aws/quicksight/model/DeleteDashboardRequest.h>
 #include <aws/quicksight/model/DeleteDataSetRequest.h>
 #include <aws/quicksight/model/DeleteDataSourceRequest.h>
+#include <aws/quicksight/model/DeleteFolderRequest.h>
+#include <aws/quicksight/model/DeleteFolderMembershipRequest.h>
 #include <aws/quicksight/model/DeleteGroupRequest.h>
 #include <aws/quicksight/model/DeleteGroupMembershipRequest.h>
 #include <aws/quicksight/model/DeleteIAMPolicyAssignmentRequest.h>
@@ -60,9 +64,14 @@
 #include <aws/quicksight/model/DescribeDataSetPermissionsRequest.h>
 #include <aws/quicksight/model/DescribeDataSourceRequest.h>
 #include <aws/quicksight/model/DescribeDataSourcePermissionsRequest.h>
+#include <aws/quicksight/model/DescribeFolderRequest.h>
+#include <aws/quicksight/model/DescribeFolderPermissionsRequest.h>
+#include <aws/quicksight/model/DescribeFolderResolvedPermissionsRequest.h>
 #include <aws/quicksight/model/DescribeGroupRequest.h>
+#include <aws/quicksight/model/DescribeGroupMembershipRequest.h>
 #include <aws/quicksight/model/DescribeIAMPolicyAssignmentRequest.h>
 #include <aws/quicksight/model/DescribeIngestionRequest.h>
+#include <aws/quicksight/model/DescribeIpRestrictionRequest.h>
 #include <aws/quicksight/model/DescribeNamespaceRequest.h>
 #include <aws/quicksight/model/DescribeTemplateRequest.h>
 #include <aws/quicksight/model/DescribeTemplateAliasRequest.h>
@@ -71,6 +80,8 @@
 #include <aws/quicksight/model/DescribeThemeAliasRequest.h>
 #include <aws/quicksight/model/DescribeThemePermissionsRequest.h>
 #include <aws/quicksight/model/DescribeUserRequest.h>
+#include <aws/quicksight/model/GenerateEmbedUrlForAnonymousUserRequest.h>
+#include <aws/quicksight/model/GenerateEmbedUrlForRegisteredUserRequest.h>
 #include <aws/quicksight/model/GetDashboardEmbedUrlRequest.h>
 #include <aws/quicksight/model/GetSessionEmbedUrlRequest.h>
 #include <aws/quicksight/model/ListAnalysesRequest.h>
@@ -78,6 +89,8 @@
 #include <aws/quicksight/model/ListDashboardsRequest.h>
 #include <aws/quicksight/model/ListDataSetsRequest.h>
 #include <aws/quicksight/model/ListDataSourcesRequest.h>
+#include <aws/quicksight/model/ListFolderMembersRequest.h>
+#include <aws/quicksight/model/ListFoldersRequest.h>
 #include <aws/quicksight/model/ListGroupMembershipsRequest.h>
 #include <aws/quicksight/model/ListGroupsRequest.h>
 #include <aws/quicksight/model/ListIAMPolicyAssignmentsRequest.h>
@@ -97,6 +110,8 @@
 #include <aws/quicksight/model/RestoreAnalysisRequest.h>
 #include <aws/quicksight/model/SearchAnalysesRequest.h>
 #include <aws/quicksight/model/SearchDashboardsRequest.h>
+#include <aws/quicksight/model/SearchFoldersRequest.h>
+#include <aws/quicksight/model/SearchGroupsRequest.h>
 #include <aws/quicksight/model/TagResourceRequest.h>
 #include <aws/quicksight/model/UntagResourceRequest.h>
 #include <aws/quicksight/model/UpdateAccountCustomizationRequest.h>
@@ -110,8 +125,12 @@
 #include <aws/quicksight/model/UpdateDataSetPermissionsRequest.h>
 #include <aws/quicksight/model/UpdateDataSourceRequest.h>
 #include <aws/quicksight/model/UpdateDataSourcePermissionsRequest.h>
+#include <aws/quicksight/model/UpdateFolderRequest.h>
+#include <aws/quicksight/model/UpdateFolderPermissionsRequest.h>
 #include <aws/quicksight/model/UpdateGroupRequest.h>
 #include <aws/quicksight/model/UpdateIAMPolicyAssignmentRequest.h>
+#include <aws/quicksight/model/UpdateIpRestrictionRequest.h>
+#include <aws/quicksight/model/UpdatePublicSharingSettingsRequest.h>
 #include <aws/quicksight/model/UpdateTemplateRequest.h>
 #include <aws/quicksight/model/UpdateTemplateAliasRequest.h>
 #include <aws/quicksight/model/UpdateTemplatePermissionsRequest.h>
@@ -167,7 +186,7 @@ QuickSightClient::~QuickSightClient()
 {
 }
 
-void QuickSightClient::init(const ClientConfiguration& config)
+void QuickSightClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("QuickSight");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -211,14 +230,12 @@ CancelIngestionOutcome QuickSightClient::CancelIngestion(const CancelIngestionRe
     return CancelIngestionOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IngestionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/data-sets/";
-  ss << request.GetDataSetId();
-  ss << "/ingestions/";
-  ss << request.GetIngestionId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/data-sets/");
+  uri.AddPathSegment(request.GetDataSetId());
+  uri.AddPathSegments("/ingestions/");
+  uri.AddPathSegment(request.GetIngestionId());
   return CancelIngestionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -248,11 +265,9 @@ CreateAccountCustomizationOutcome QuickSightClient::CreateAccountCustomization(c
     return CreateAccountCustomizationOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/customizations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/customizations");
   return CreateAccountCustomizationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -287,12 +302,10 @@ CreateAnalysisOutcome QuickSightClient::CreateAnalysis(const CreateAnalysisReque
     return CreateAnalysisOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AnalysisId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/analyses/";
-  ss << request.GetAnalysisId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/analyses/");
+  uri.AddPathSegment(request.GetAnalysisId());
   return CreateAnalysisOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -327,12 +340,10 @@ CreateDashboardOutcome QuickSightClient::CreateDashboard(const CreateDashboardRe
     return CreateDashboardOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DashboardId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/dashboards/";
-  ss << request.GetDashboardId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/dashboards/");
+  uri.AddPathSegment(request.GetDashboardId());
   return CreateDashboardOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -362,11 +373,9 @@ CreateDataSetOutcome QuickSightClient::CreateDataSet(const CreateDataSetRequest&
     return CreateDataSetOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/data-sets";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/data-sets");
   return CreateDataSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -396,11 +405,9 @@ CreateDataSourceOutcome QuickSightClient::CreateDataSource(const CreateDataSourc
     return CreateDataSourceOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/data-sources";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/data-sources");
   return CreateDataSourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -422,6 +429,95 @@ void QuickSightClient::CreateDataSourceAsyncHelper(const CreateDataSourceRequest
   handler(this, request, CreateDataSource(request), context);
 }
 
+CreateFolderOutcome QuickSightClient::CreateFolder(const CreateFolderRequest& request) const
+{
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateFolder", "Required field: AwsAccountId, is not set");
+    return CreateFolderOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.FolderIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateFolder", "Required field: FolderId, is not set");
+    return CreateFolderOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FolderId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/folders/");
+  uri.AddPathSegment(request.GetFolderId());
+  return CreateFolderOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateFolderOutcomeCallable QuickSightClient::CreateFolderCallable(const CreateFolderRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateFolderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateFolder(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::CreateFolderAsync(const CreateFolderRequest& request, const CreateFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateFolderAsyncHelper( request, handler, context ); } );
+}
+
+void QuickSightClient::CreateFolderAsyncHelper(const CreateFolderRequest& request, const CreateFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateFolder(request), context);
+}
+
+CreateFolderMembershipOutcome QuickSightClient::CreateFolderMembership(const CreateFolderMembershipRequest& request) const
+{
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateFolderMembership", "Required field: AwsAccountId, is not set");
+    return CreateFolderMembershipOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.FolderIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateFolderMembership", "Required field: FolderId, is not set");
+    return CreateFolderMembershipOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FolderId]", false));
+  }
+  if (!request.MemberIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateFolderMembership", "Required field: MemberId, is not set");
+    return CreateFolderMembershipOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MemberId]", false));
+  }
+  if (!request.MemberTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateFolderMembership", "Required field: MemberType, is not set");
+    return CreateFolderMembershipOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MemberType]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/folders/");
+  uri.AddPathSegment(request.GetFolderId());
+  uri.AddPathSegments("/members/");
+  uri.AddPathSegment(MemberTypeMapper::GetNameForMemberType(request.GetMemberType()));
+  uri.AddPathSegment(request.GetMemberId());
+  return CreateFolderMembershipOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateFolderMembershipOutcomeCallable QuickSightClient::CreateFolderMembershipCallable(const CreateFolderMembershipRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateFolderMembershipOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateFolderMembership(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::CreateFolderMembershipAsync(const CreateFolderMembershipRequest& request, const CreateFolderMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateFolderMembershipAsyncHelper( request, handler, context ); } );
+}
+
+void QuickSightClient::CreateFolderMembershipAsyncHelper(const CreateFolderMembershipRequest& request, const CreateFolderMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateFolderMembership(request), context);
+}
+
 CreateGroupOutcome QuickSightClient::CreateGroup(const CreateGroupRequest& request) const
 {
   if (!request.AwsAccountIdHasBeenSet())
@@ -435,13 +531,11 @@ CreateGroupOutcome QuickSightClient::CreateGroup(const CreateGroupRequest& reque
     return CreateGroupOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Namespace]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/namespaces/";
-  ss << request.GetNamespace();
-  ss << "/groups";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/namespaces/");
+  uri.AddPathSegment(request.GetNamespace());
+  uri.AddPathSegments("/groups");
   return CreateGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -486,16 +580,14 @@ CreateGroupMembershipOutcome QuickSightClient::CreateGroupMembership(const Creat
     return CreateGroupMembershipOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Namespace]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/namespaces/";
-  ss << request.GetNamespace();
-  ss << "/groups/";
-  ss << request.GetGroupName();
-  ss << "/members/";
-  ss << request.GetMemberName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/namespaces/");
+  uri.AddPathSegment(request.GetNamespace());
+  uri.AddPathSegments("/groups/");
+  uri.AddPathSegment(request.GetGroupName());
+  uri.AddPathSegments("/members/");
+  uri.AddPathSegment(request.GetMemberName());
   return CreateGroupMembershipOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -530,13 +622,11 @@ CreateIAMPolicyAssignmentOutcome QuickSightClient::CreateIAMPolicyAssignment(con
     return CreateIAMPolicyAssignmentOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Namespace]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/namespaces/";
-  ss << request.GetNamespace();
-  ss << "/iam-policy-assignments/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/namespaces/");
+  uri.AddPathSegment(request.GetNamespace());
+  uri.AddPathSegments("/iam-policy-assignments/");
   return CreateIAMPolicyAssignmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -576,14 +666,12 @@ CreateIngestionOutcome QuickSightClient::CreateIngestion(const CreateIngestionRe
     return CreateIngestionOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/data-sets/";
-  ss << request.GetDataSetId();
-  ss << "/ingestions/";
-  ss << request.GetIngestionId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/data-sets/");
+  uri.AddPathSegment(request.GetDataSetId());
+  uri.AddPathSegments("/ingestions/");
+  uri.AddPathSegment(request.GetIngestionId());
   return CreateIngestionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -613,10 +701,8 @@ CreateNamespaceOutcome QuickSightClient::CreateNamespace(const CreateNamespaceRe
     return CreateNamespaceOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
   return CreateNamespaceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -651,12 +737,10 @@ CreateTemplateOutcome QuickSightClient::CreateTemplate(const CreateTemplateReque
     return CreateTemplateOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TemplateId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/templates/";
-  ss << request.GetTemplateId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/templates/");
+  uri.AddPathSegment(request.GetTemplateId());
   return CreateTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -696,14 +780,12 @@ CreateTemplateAliasOutcome QuickSightClient::CreateTemplateAlias(const CreateTem
     return CreateTemplateAliasOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AliasName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/templates/";
-  ss << request.GetTemplateId();
-  ss << "/aliases/";
-  ss << request.GetAliasName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/templates/");
+  uri.AddPathSegment(request.GetTemplateId());
+  uri.AddPathSegments("/aliases/");
+  uri.AddPathSegment(request.GetAliasName());
   return CreateTemplateAliasOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -738,12 +820,10 @@ CreateThemeOutcome QuickSightClient::CreateTheme(const CreateThemeRequest& reque
     return CreateThemeOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThemeId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/themes/";
-  ss << request.GetThemeId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/themes/");
+  uri.AddPathSegment(request.GetThemeId());
   return CreateThemeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -783,14 +863,12 @@ CreateThemeAliasOutcome QuickSightClient::CreateThemeAlias(const CreateThemeAlia
     return CreateThemeAliasOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AliasName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/themes/";
-  ss << request.GetThemeId();
-  ss << "/aliases/";
-  ss << request.GetAliasName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/themes/");
+  uri.AddPathSegment(request.GetThemeId());
+  uri.AddPathSegments("/aliases/");
+  uri.AddPathSegment(request.GetAliasName());
   return CreateThemeAliasOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -820,11 +898,9 @@ DeleteAccountCustomizationOutcome QuickSightClient::DeleteAccountCustomization(c
     return DeleteAccountCustomizationOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/customizations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/customizations");
   return DeleteAccountCustomizationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -859,12 +935,10 @@ DeleteAnalysisOutcome QuickSightClient::DeleteAnalysis(const DeleteAnalysisReque
     return DeleteAnalysisOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AnalysisId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/analyses/";
-  ss << request.GetAnalysisId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/analyses/");
+  uri.AddPathSegment(request.GetAnalysisId());
   return DeleteAnalysisOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -899,12 +973,10 @@ DeleteDashboardOutcome QuickSightClient::DeleteDashboard(const DeleteDashboardRe
     return DeleteDashboardOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DashboardId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/dashboards/";
-  ss << request.GetDashboardId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/dashboards/");
+  uri.AddPathSegment(request.GetDashboardId());
   return DeleteDashboardOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -939,12 +1011,10 @@ DeleteDataSetOutcome QuickSightClient::DeleteDataSet(const DeleteDataSetRequest&
     return DeleteDataSetOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSetId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/data-sets/";
-  ss << request.GetDataSetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/data-sets/");
+  uri.AddPathSegment(request.GetDataSetId());
   return DeleteDataSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -979,12 +1049,10 @@ DeleteDataSourceOutcome QuickSightClient::DeleteDataSource(const DeleteDataSourc
     return DeleteDataSourceOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSourceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/data-sources/";
-  ss << request.GetDataSourceId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/data-sources/");
+  uri.AddPathSegment(request.GetDataSourceId());
   return DeleteDataSourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1006,6 +1074,95 @@ void QuickSightClient::DeleteDataSourceAsyncHelper(const DeleteDataSourceRequest
   handler(this, request, DeleteDataSource(request), context);
 }
 
+DeleteFolderOutcome QuickSightClient::DeleteFolder(const DeleteFolderRequest& request) const
+{
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteFolder", "Required field: AwsAccountId, is not set");
+    return DeleteFolderOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.FolderIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteFolder", "Required field: FolderId, is not set");
+    return DeleteFolderOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FolderId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/folders/");
+  uri.AddPathSegment(request.GetFolderId());
+  return DeleteFolderOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteFolderOutcomeCallable QuickSightClient::DeleteFolderCallable(const DeleteFolderRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteFolderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteFolder(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::DeleteFolderAsync(const DeleteFolderRequest& request, const DeleteFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteFolderAsyncHelper( request, handler, context ); } );
+}
+
+void QuickSightClient::DeleteFolderAsyncHelper(const DeleteFolderRequest& request, const DeleteFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteFolder(request), context);
+}
+
+DeleteFolderMembershipOutcome QuickSightClient::DeleteFolderMembership(const DeleteFolderMembershipRequest& request) const
+{
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteFolderMembership", "Required field: AwsAccountId, is not set");
+    return DeleteFolderMembershipOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.FolderIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteFolderMembership", "Required field: FolderId, is not set");
+    return DeleteFolderMembershipOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FolderId]", false));
+  }
+  if (!request.MemberIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteFolderMembership", "Required field: MemberId, is not set");
+    return DeleteFolderMembershipOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MemberId]", false));
+  }
+  if (!request.MemberTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteFolderMembership", "Required field: MemberType, is not set");
+    return DeleteFolderMembershipOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MemberType]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/folders/");
+  uri.AddPathSegment(request.GetFolderId());
+  uri.AddPathSegments("/members/");
+  uri.AddPathSegment(MemberTypeMapper::GetNameForMemberType(request.GetMemberType()));
+  uri.AddPathSegment(request.GetMemberId());
+  return DeleteFolderMembershipOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteFolderMembershipOutcomeCallable QuickSightClient::DeleteFolderMembershipCallable(const DeleteFolderMembershipRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteFolderMembershipOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteFolderMembership(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::DeleteFolderMembershipAsync(const DeleteFolderMembershipRequest& request, const DeleteFolderMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteFolderMembershipAsyncHelper( request, handler, context ); } );
+}
+
+void QuickSightClient::DeleteFolderMembershipAsyncHelper(const DeleteFolderMembershipRequest& request, const DeleteFolderMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteFolderMembership(request), context);
+}
+
 DeleteGroupOutcome QuickSightClient::DeleteGroup(const DeleteGroupRequest& request) const
 {
   if (!request.GroupNameHasBeenSet())
@@ -1024,14 +1181,12 @@ DeleteGroupOutcome QuickSightClient::DeleteGroup(const DeleteGroupRequest& reque
     return DeleteGroupOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Namespace]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/namespaces/";
-  ss << request.GetNamespace();
-  ss << "/groups/";
-  ss << request.GetGroupName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/namespaces/");
+  uri.AddPathSegment(request.GetNamespace());
+  uri.AddPathSegments("/groups/");
+  uri.AddPathSegment(request.GetGroupName());
   return DeleteGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1076,16 +1231,14 @@ DeleteGroupMembershipOutcome QuickSightClient::DeleteGroupMembership(const Delet
     return DeleteGroupMembershipOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Namespace]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/namespaces/";
-  ss << request.GetNamespace();
-  ss << "/groups/";
-  ss << request.GetGroupName();
-  ss << "/members/";
-  ss << request.GetMemberName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/namespaces/");
+  uri.AddPathSegment(request.GetNamespace());
+  uri.AddPathSegments("/groups/");
+  uri.AddPathSegment(request.GetGroupName());
+  uri.AddPathSegments("/members/");
+  uri.AddPathSegment(request.GetMemberName());
   return DeleteGroupMembershipOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1125,14 +1278,12 @@ DeleteIAMPolicyAssignmentOutcome QuickSightClient::DeleteIAMPolicyAssignment(con
     return DeleteIAMPolicyAssignmentOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Namespace]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/namespace/";
-  ss << request.GetNamespace();
-  ss << "/iam-policy-assignments/";
-  ss << request.GetAssignmentName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/namespace/");
+  uri.AddPathSegment(request.GetNamespace());
+  uri.AddPathSegments("/iam-policy-assignments/");
+  uri.AddPathSegment(request.GetAssignmentName());
   return DeleteIAMPolicyAssignmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1167,12 +1318,10 @@ DeleteNamespaceOutcome QuickSightClient::DeleteNamespace(const DeleteNamespaceRe
     return DeleteNamespaceOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Namespace]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/namespaces/";
-  ss << request.GetNamespace();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/namespaces/");
+  uri.AddPathSegment(request.GetNamespace());
   return DeleteNamespaceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1207,12 +1356,10 @@ DeleteTemplateOutcome QuickSightClient::DeleteTemplate(const DeleteTemplateReque
     return DeleteTemplateOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TemplateId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/templates/";
-  ss << request.GetTemplateId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/templates/");
+  uri.AddPathSegment(request.GetTemplateId());
   return DeleteTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1252,14 +1399,12 @@ DeleteTemplateAliasOutcome QuickSightClient::DeleteTemplateAlias(const DeleteTem
     return DeleteTemplateAliasOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AliasName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/templates/";
-  ss << request.GetTemplateId();
-  ss << "/aliases/";
-  ss << request.GetAliasName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/templates/");
+  uri.AddPathSegment(request.GetTemplateId());
+  uri.AddPathSegments("/aliases/");
+  uri.AddPathSegment(request.GetAliasName());
   return DeleteTemplateAliasOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1294,12 +1439,10 @@ DeleteThemeOutcome QuickSightClient::DeleteTheme(const DeleteThemeRequest& reque
     return DeleteThemeOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThemeId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/themes/";
-  ss << request.GetThemeId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/themes/");
+  uri.AddPathSegment(request.GetThemeId());
   return DeleteThemeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1339,14 +1482,12 @@ DeleteThemeAliasOutcome QuickSightClient::DeleteThemeAlias(const DeleteThemeAlia
     return DeleteThemeAliasOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AliasName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/themes/";
-  ss << request.GetThemeId();
-  ss << "/aliases/";
-  ss << request.GetAliasName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/themes/");
+  uri.AddPathSegment(request.GetThemeId());
+  uri.AddPathSegments("/aliases/");
+  uri.AddPathSegment(request.GetAliasName());
   return DeleteThemeAliasOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1386,14 +1527,12 @@ DeleteUserOutcome QuickSightClient::DeleteUser(const DeleteUserRequest& request)
     return DeleteUserOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Namespace]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/namespaces/";
-  ss << request.GetNamespace();
-  ss << "/users/";
-  ss << request.GetUserName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/namespaces/");
+  uri.AddPathSegment(request.GetNamespace());
+  uri.AddPathSegments("/users/");
+  uri.AddPathSegment(request.GetUserName());
   return DeleteUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1433,14 +1572,12 @@ DeleteUserByPrincipalIdOutcome QuickSightClient::DeleteUserByPrincipalId(const D
     return DeleteUserByPrincipalIdOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Namespace]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/namespaces/";
-  ss << request.GetNamespace();
-  ss << "/user-principals/";
-  ss << request.GetPrincipalId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/namespaces/");
+  uri.AddPathSegment(request.GetNamespace());
+  uri.AddPathSegments("/user-principals/");
+  uri.AddPathSegment(request.GetPrincipalId());
   return DeleteUserByPrincipalIdOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1470,11 +1607,9 @@ DescribeAccountCustomizationOutcome QuickSightClient::DescribeAccountCustomizati
     return DescribeAccountCustomizationOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/customizations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/customizations");
   return DescribeAccountCustomizationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1504,11 +1639,9 @@ DescribeAccountSettingsOutcome QuickSightClient::DescribeAccountSettings(const D
     return DescribeAccountSettingsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/settings";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/settings");
   return DescribeAccountSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1543,12 +1676,10 @@ DescribeAnalysisOutcome QuickSightClient::DescribeAnalysis(const DescribeAnalysi
     return DescribeAnalysisOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AnalysisId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/analyses/";
-  ss << request.GetAnalysisId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/analyses/");
+  uri.AddPathSegment(request.GetAnalysisId());
   return DescribeAnalysisOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1583,13 +1714,11 @@ DescribeAnalysisPermissionsOutcome QuickSightClient::DescribeAnalysisPermissions
     return DescribeAnalysisPermissionsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AnalysisId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/analyses/";
-  ss << request.GetAnalysisId();
-  ss << "/permissions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/analyses/");
+  uri.AddPathSegment(request.GetAnalysisId());
+  uri.AddPathSegments("/permissions");
   return DescribeAnalysisPermissionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1624,12 +1753,10 @@ DescribeDashboardOutcome QuickSightClient::DescribeDashboard(const DescribeDashb
     return DescribeDashboardOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DashboardId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/dashboards/";
-  ss << request.GetDashboardId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/dashboards/");
+  uri.AddPathSegment(request.GetDashboardId());
   return DescribeDashboardOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1664,13 +1791,11 @@ DescribeDashboardPermissionsOutcome QuickSightClient::DescribeDashboardPermissio
     return DescribeDashboardPermissionsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DashboardId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/dashboards/";
-  ss << request.GetDashboardId();
-  ss << "/permissions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/dashboards/");
+  uri.AddPathSegment(request.GetDashboardId());
+  uri.AddPathSegments("/permissions");
   return DescribeDashboardPermissionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1705,12 +1830,10 @@ DescribeDataSetOutcome QuickSightClient::DescribeDataSet(const DescribeDataSetRe
     return DescribeDataSetOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSetId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/data-sets/";
-  ss << request.GetDataSetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/data-sets/");
+  uri.AddPathSegment(request.GetDataSetId());
   return DescribeDataSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1745,13 +1868,11 @@ DescribeDataSetPermissionsOutcome QuickSightClient::DescribeDataSetPermissions(c
     return DescribeDataSetPermissionsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSetId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/data-sets/";
-  ss << request.GetDataSetId();
-  ss << "/permissions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/data-sets/");
+  uri.AddPathSegment(request.GetDataSetId());
+  uri.AddPathSegments("/permissions");
   return DescribeDataSetPermissionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1786,12 +1907,10 @@ DescribeDataSourceOutcome QuickSightClient::DescribeDataSource(const DescribeDat
     return DescribeDataSourceOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSourceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/data-sources/";
-  ss << request.GetDataSourceId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/data-sources/");
+  uri.AddPathSegment(request.GetDataSourceId());
   return DescribeDataSourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1826,13 +1945,11 @@ DescribeDataSourcePermissionsOutcome QuickSightClient::DescribeDataSourcePermiss
     return DescribeDataSourcePermissionsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSourceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/data-sources/";
-  ss << request.GetDataSourceId();
-  ss << "/permissions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/data-sources/");
+  uri.AddPathSegment(request.GetDataSourceId());
+  uri.AddPathSegments("/permissions");
   return DescribeDataSourcePermissionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1854,6 +1971,122 @@ void QuickSightClient::DescribeDataSourcePermissionsAsyncHelper(const DescribeDa
   handler(this, request, DescribeDataSourcePermissions(request), context);
 }
 
+DescribeFolderOutcome QuickSightClient::DescribeFolder(const DescribeFolderRequest& request) const
+{
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeFolder", "Required field: AwsAccountId, is not set");
+    return DescribeFolderOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.FolderIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeFolder", "Required field: FolderId, is not set");
+    return DescribeFolderOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FolderId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/folders/");
+  uri.AddPathSegment(request.GetFolderId());
+  return DescribeFolderOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeFolderOutcomeCallable QuickSightClient::DescribeFolderCallable(const DescribeFolderRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeFolderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeFolder(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::DescribeFolderAsync(const DescribeFolderRequest& request, const DescribeFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeFolderAsyncHelper( request, handler, context ); } );
+}
+
+void QuickSightClient::DescribeFolderAsyncHelper(const DescribeFolderRequest& request, const DescribeFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeFolder(request), context);
+}
+
+DescribeFolderPermissionsOutcome QuickSightClient::DescribeFolderPermissions(const DescribeFolderPermissionsRequest& request) const
+{
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeFolderPermissions", "Required field: AwsAccountId, is not set");
+    return DescribeFolderPermissionsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.FolderIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeFolderPermissions", "Required field: FolderId, is not set");
+    return DescribeFolderPermissionsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FolderId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/folders/");
+  uri.AddPathSegment(request.GetFolderId());
+  uri.AddPathSegments("/permissions");
+  return DescribeFolderPermissionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeFolderPermissionsOutcomeCallable QuickSightClient::DescribeFolderPermissionsCallable(const DescribeFolderPermissionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeFolderPermissionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeFolderPermissions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::DescribeFolderPermissionsAsync(const DescribeFolderPermissionsRequest& request, const DescribeFolderPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeFolderPermissionsAsyncHelper( request, handler, context ); } );
+}
+
+void QuickSightClient::DescribeFolderPermissionsAsyncHelper(const DescribeFolderPermissionsRequest& request, const DescribeFolderPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeFolderPermissions(request), context);
+}
+
+DescribeFolderResolvedPermissionsOutcome QuickSightClient::DescribeFolderResolvedPermissions(const DescribeFolderResolvedPermissionsRequest& request) const
+{
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeFolderResolvedPermissions", "Required field: AwsAccountId, is not set");
+    return DescribeFolderResolvedPermissionsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.FolderIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeFolderResolvedPermissions", "Required field: FolderId, is not set");
+    return DescribeFolderResolvedPermissionsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FolderId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/folders/");
+  uri.AddPathSegment(request.GetFolderId());
+  uri.AddPathSegments("/resolved-permissions");
+  return DescribeFolderResolvedPermissionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeFolderResolvedPermissionsOutcomeCallable QuickSightClient::DescribeFolderResolvedPermissionsCallable(const DescribeFolderResolvedPermissionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeFolderResolvedPermissionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeFolderResolvedPermissions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::DescribeFolderResolvedPermissionsAsync(const DescribeFolderResolvedPermissionsRequest& request, const DescribeFolderResolvedPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeFolderResolvedPermissionsAsyncHelper( request, handler, context ); } );
+}
+
+void QuickSightClient::DescribeFolderResolvedPermissionsAsyncHelper(const DescribeFolderResolvedPermissionsRequest& request, const DescribeFolderResolvedPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeFolderResolvedPermissions(request), context);
+}
+
 DescribeGroupOutcome QuickSightClient::DescribeGroup(const DescribeGroupRequest& request) const
 {
   if (!request.GroupNameHasBeenSet())
@@ -1872,14 +2105,12 @@ DescribeGroupOutcome QuickSightClient::DescribeGroup(const DescribeGroupRequest&
     return DescribeGroupOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Namespace]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/namespaces/";
-  ss << request.GetNamespace();
-  ss << "/groups/";
-  ss << request.GetGroupName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/namespaces/");
+  uri.AddPathSegment(request.GetNamespace());
+  uri.AddPathSegments("/groups/");
+  uri.AddPathSegment(request.GetGroupName());
   return DescribeGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1901,6 +2132,58 @@ void QuickSightClient::DescribeGroupAsyncHelper(const DescribeGroupRequest& requ
   handler(this, request, DescribeGroup(request), context);
 }
 
+DescribeGroupMembershipOutcome QuickSightClient::DescribeGroupMembership(const DescribeGroupMembershipRequest& request) const
+{
+  if (!request.MemberNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeGroupMembership", "Required field: MemberName, is not set");
+    return DescribeGroupMembershipOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MemberName]", false));
+  }
+  if (!request.GroupNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeGroupMembership", "Required field: GroupName, is not set");
+    return DescribeGroupMembershipOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupName]", false));
+  }
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeGroupMembership", "Required field: AwsAccountId, is not set");
+    return DescribeGroupMembershipOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.NamespaceHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeGroupMembership", "Required field: Namespace, is not set");
+    return DescribeGroupMembershipOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Namespace]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/namespaces/");
+  uri.AddPathSegment(request.GetNamespace());
+  uri.AddPathSegments("/groups/");
+  uri.AddPathSegment(request.GetGroupName());
+  uri.AddPathSegments("/members/");
+  uri.AddPathSegment(request.GetMemberName());
+  return DescribeGroupMembershipOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeGroupMembershipOutcomeCallable QuickSightClient::DescribeGroupMembershipCallable(const DescribeGroupMembershipRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeGroupMembershipOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeGroupMembership(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::DescribeGroupMembershipAsync(const DescribeGroupMembershipRequest& request, const DescribeGroupMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeGroupMembershipAsyncHelper( request, handler, context ); } );
+}
+
+void QuickSightClient::DescribeGroupMembershipAsyncHelper(const DescribeGroupMembershipRequest& request, const DescribeGroupMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeGroupMembership(request), context);
+}
+
 DescribeIAMPolicyAssignmentOutcome QuickSightClient::DescribeIAMPolicyAssignment(const DescribeIAMPolicyAssignmentRequest& request) const
 {
   if (!request.AwsAccountIdHasBeenSet())
@@ -1919,14 +2202,12 @@ DescribeIAMPolicyAssignmentOutcome QuickSightClient::DescribeIAMPolicyAssignment
     return DescribeIAMPolicyAssignmentOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Namespace]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/namespaces/";
-  ss << request.GetNamespace();
-  ss << "/iam-policy-assignments/";
-  ss << request.GetAssignmentName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/namespaces/");
+  uri.AddPathSegment(request.GetNamespace());
+  uri.AddPathSegments("/iam-policy-assignments/");
+  uri.AddPathSegment(request.GetAssignmentName());
   return DescribeIAMPolicyAssignmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1966,14 +2247,12 @@ DescribeIngestionOutcome QuickSightClient::DescribeIngestion(const DescribeInges
     return DescribeIngestionOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IngestionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/data-sets/";
-  ss << request.GetDataSetId();
-  ss << "/ingestions/";
-  ss << request.GetIngestionId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/data-sets/");
+  uri.AddPathSegment(request.GetDataSetId());
+  uri.AddPathSegments("/ingestions/");
+  uri.AddPathSegment(request.GetIngestionId());
   return DescribeIngestionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1995,6 +2274,38 @@ void QuickSightClient::DescribeIngestionAsyncHelper(const DescribeIngestionReque
   handler(this, request, DescribeIngestion(request), context);
 }
 
+DescribeIpRestrictionOutcome QuickSightClient::DescribeIpRestriction(const DescribeIpRestrictionRequest& request) const
+{
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeIpRestriction", "Required field: AwsAccountId, is not set");
+    return DescribeIpRestrictionOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/ip-restriction");
+  return DescribeIpRestrictionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeIpRestrictionOutcomeCallable QuickSightClient::DescribeIpRestrictionCallable(const DescribeIpRestrictionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeIpRestrictionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeIpRestriction(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::DescribeIpRestrictionAsync(const DescribeIpRestrictionRequest& request, const DescribeIpRestrictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeIpRestrictionAsyncHelper( request, handler, context ); } );
+}
+
+void QuickSightClient::DescribeIpRestrictionAsyncHelper(const DescribeIpRestrictionRequest& request, const DescribeIpRestrictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeIpRestriction(request), context);
+}
+
 DescribeNamespaceOutcome QuickSightClient::DescribeNamespace(const DescribeNamespaceRequest& request) const
 {
   if (!request.AwsAccountIdHasBeenSet())
@@ -2008,12 +2319,10 @@ DescribeNamespaceOutcome QuickSightClient::DescribeNamespace(const DescribeNames
     return DescribeNamespaceOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Namespace]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/namespaces/";
-  ss << request.GetNamespace();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/namespaces/");
+  uri.AddPathSegment(request.GetNamespace());
   return DescribeNamespaceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2048,12 +2357,10 @@ DescribeTemplateOutcome QuickSightClient::DescribeTemplate(const DescribeTemplat
     return DescribeTemplateOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TemplateId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/templates/";
-  ss << request.GetTemplateId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/templates/");
+  uri.AddPathSegment(request.GetTemplateId());
   return DescribeTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2093,14 +2400,12 @@ DescribeTemplateAliasOutcome QuickSightClient::DescribeTemplateAlias(const Descr
     return DescribeTemplateAliasOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AliasName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/templates/";
-  ss << request.GetTemplateId();
-  ss << "/aliases/";
-  ss << request.GetAliasName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/templates/");
+  uri.AddPathSegment(request.GetTemplateId());
+  uri.AddPathSegments("/aliases/");
+  uri.AddPathSegment(request.GetAliasName());
   return DescribeTemplateAliasOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2135,13 +2440,11 @@ DescribeTemplatePermissionsOutcome QuickSightClient::DescribeTemplatePermissions
     return DescribeTemplatePermissionsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TemplateId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/templates/";
-  ss << request.GetTemplateId();
-  ss << "/permissions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/templates/");
+  uri.AddPathSegment(request.GetTemplateId());
+  uri.AddPathSegments("/permissions");
   return DescribeTemplatePermissionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2176,12 +2479,10 @@ DescribeThemeOutcome QuickSightClient::DescribeTheme(const DescribeThemeRequest&
     return DescribeThemeOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThemeId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/themes/";
-  ss << request.GetThemeId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/themes/");
+  uri.AddPathSegment(request.GetThemeId());
   return DescribeThemeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2221,14 +2522,12 @@ DescribeThemeAliasOutcome QuickSightClient::DescribeThemeAlias(const DescribeThe
     return DescribeThemeAliasOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AliasName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/themes/";
-  ss << request.GetThemeId();
-  ss << "/aliases/";
-  ss << request.GetAliasName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/themes/");
+  uri.AddPathSegment(request.GetThemeId());
+  uri.AddPathSegments("/aliases/");
+  uri.AddPathSegment(request.GetAliasName());
   return DescribeThemeAliasOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2263,13 +2562,11 @@ DescribeThemePermissionsOutcome QuickSightClient::DescribeThemePermissions(const
     return DescribeThemePermissionsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThemeId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/themes/";
-  ss << request.GetThemeId();
-  ss << "/permissions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/themes/");
+  uri.AddPathSegment(request.GetThemeId());
+  uri.AddPathSegments("/permissions");
   return DescribeThemePermissionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2309,14 +2606,12 @@ DescribeUserOutcome QuickSightClient::DescribeUser(const DescribeUserRequest& re
     return DescribeUserOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Namespace]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/namespaces/";
-  ss << request.GetNamespace();
-  ss << "/users/";
-  ss << request.GetUserName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/namespaces/");
+  uri.AddPathSegment(request.GetNamespace());
+  uri.AddPathSegments("/users/");
+  uri.AddPathSegment(request.GetUserName());
   return DescribeUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2338,6 +2633,70 @@ void QuickSightClient::DescribeUserAsyncHelper(const DescribeUserRequest& reques
   handler(this, request, DescribeUser(request), context);
 }
 
+GenerateEmbedUrlForAnonymousUserOutcome QuickSightClient::GenerateEmbedUrlForAnonymousUser(const GenerateEmbedUrlForAnonymousUserRequest& request) const
+{
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GenerateEmbedUrlForAnonymousUser", "Required field: AwsAccountId, is not set");
+    return GenerateEmbedUrlForAnonymousUserOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/embed-url/anonymous-user");
+  return GenerateEmbedUrlForAnonymousUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GenerateEmbedUrlForAnonymousUserOutcomeCallable QuickSightClient::GenerateEmbedUrlForAnonymousUserCallable(const GenerateEmbedUrlForAnonymousUserRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GenerateEmbedUrlForAnonymousUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GenerateEmbedUrlForAnonymousUser(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::GenerateEmbedUrlForAnonymousUserAsync(const GenerateEmbedUrlForAnonymousUserRequest& request, const GenerateEmbedUrlForAnonymousUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GenerateEmbedUrlForAnonymousUserAsyncHelper( request, handler, context ); } );
+}
+
+void QuickSightClient::GenerateEmbedUrlForAnonymousUserAsyncHelper(const GenerateEmbedUrlForAnonymousUserRequest& request, const GenerateEmbedUrlForAnonymousUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GenerateEmbedUrlForAnonymousUser(request), context);
+}
+
+GenerateEmbedUrlForRegisteredUserOutcome QuickSightClient::GenerateEmbedUrlForRegisteredUser(const GenerateEmbedUrlForRegisteredUserRequest& request) const
+{
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GenerateEmbedUrlForRegisteredUser", "Required field: AwsAccountId, is not set");
+    return GenerateEmbedUrlForRegisteredUserOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/embed-url/registered-user");
+  return GenerateEmbedUrlForRegisteredUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GenerateEmbedUrlForRegisteredUserOutcomeCallable QuickSightClient::GenerateEmbedUrlForRegisteredUserCallable(const GenerateEmbedUrlForRegisteredUserRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GenerateEmbedUrlForRegisteredUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GenerateEmbedUrlForRegisteredUser(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::GenerateEmbedUrlForRegisteredUserAsync(const GenerateEmbedUrlForRegisteredUserRequest& request, const GenerateEmbedUrlForRegisteredUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GenerateEmbedUrlForRegisteredUserAsyncHelper( request, handler, context ); } );
+}
+
+void QuickSightClient::GenerateEmbedUrlForRegisteredUserAsyncHelper(const GenerateEmbedUrlForRegisteredUserRequest& request, const GenerateEmbedUrlForRegisteredUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GenerateEmbedUrlForRegisteredUser(request), context);
+}
+
 GetDashboardEmbedUrlOutcome QuickSightClient::GetDashboardEmbedUrl(const GetDashboardEmbedUrlRequest& request) const
 {
   if (!request.AwsAccountIdHasBeenSet())
@@ -2356,13 +2715,11 @@ GetDashboardEmbedUrlOutcome QuickSightClient::GetDashboardEmbedUrl(const GetDash
     return GetDashboardEmbedUrlOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IdentityType]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/dashboards/";
-  ss << request.GetDashboardId();
-  ss << "/embed-url";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/dashboards/");
+  uri.AddPathSegment(request.GetDashboardId());
+  uri.AddPathSegments("/embed-url");
   return GetDashboardEmbedUrlOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2392,11 +2749,9 @@ GetSessionEmbedUrlOutcome QuickSightClient::GetSessionEmbedUrl(const GetSessionE
     return GetSessionEmbedUrlOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/session-embed-url";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/session-embed-url");
   return GetSessionEmbedUrlOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2426,11 +2781,9 @@ ListAnalysesOutcome QuickSightClient::ListAnalyses(const ListAnalysesRequest& re
     return ListAnalysesOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/analyses";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/analyses");
   return ListAnalysesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2465,13 +2818,11 @@ ListDashboardVersionsOutcome QuickSightClient::ListDashboardVersions(const ListD
     return ListDashboardVersionsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DashboardId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/dashboards/";
-  ss << request.GetDashboardId();
-  ss << "/versions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/dashboards/");
+  uri.AddPathSegment(request.GetDashboardId());
+  uri.AddPathSegments("/versions");
   return ListDashboardVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2501,11 +2852,9 @@ ListDashboardsOutcome QuickSightClient::ListDashboards(const ListDashboardsReque
     return ListDashboardsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/dashboards";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/dashboards");
   return ListDashboardsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2535,11 +2884,9 @@ ListDataSetsOutcome QuickSightClient::ListDataSets(const ListDataSetsRequest& re
     return ListDataSetsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/data-sets";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/data-sets");
   return ListDataSetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2569,11 +2916,9 @@ ListDataSourcesOutcome QuickSightClient::ListDataSources(const ListDataSourcesRe
     return ListDataSourcesOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/data-sources";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/data-sources");
   return ListDataSourcesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2595,6 +2940,77 @@ void QuickSightClient::ListDataSourcesAsyncHelper(const ListDataSourcesRequest& 
   handler(this, request, ListDataSources(request), context);
 }
 
+ListFolderMembersOutcome QuickSightClient::ListFolderMembers(const ListFolderMembersRequest& request) const
+{
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListFolderMembers", "Required field: AwsAccountId, is not set");
+    return ListFolderMembersOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.FolderIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListFolderMembers", "Required field: FolderId, is not set");
+    return ListFolderMembersOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FolderId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/folders/");
+  uri.AddPathSegment(request.GetFolderId());
+  uri.AddPathSegments("/members");
+  return ListFolderMembersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListFolderMembersOutcomeCallable QuickSightClient::ListFolderMembersCallable(const ListFolderMembersRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListFolderMembersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListFolderMembers(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::ListFolderMembersAsync(const ListFolderMembersRequest& request, const ListFolderMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListFolderMembersAsyncHelper( request, handler, context ); } );
+}
+
+void QuickSightClient::ListFolderMembersAsyncHelper(const ListFolderMembersRequest& request, const ListFolderMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListFolderMembers(request), context);
+}
+
+ListFoldersOutcome QuickSightClient::ListFolders(const ListFoldersRequest& request) const
+{
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListFolders", "Required field: AwsAccountId, is not set");
+    return ListFoldersOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/folders");
+  return ListFoldersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListFoldersOutcomeCallable QuickSightClient::ListFoldersCallable(const ListFoldersRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListFoldersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListFolders(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::ListFoldersAsync(const ListFoldersRequest& request, const ListFoldersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListFoldersAsyncHelper( request, handler, context ); } );
+}
+
+void QuickSightClient::ListFoldersAsyncHelper(const ListFoldersRequest& request, const ListFoldersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListFolders(request), context);
+}
+
 ListGroupMembershipsOutcome QuickSightClient::ListGroupMemberships(const ListGroupMembershipsRequest& request) const
 {
   if (!request.GroupNameHasBeenSet())
@@ -2613,15 +3029,13 @@ ListGroupMembershipsOutcome QuickSightClient::ListGroupMemberships(const ListGro
     return ListGroupMembershipsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Namespace]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/namespaces/";
-  ss << request.GetNamespace();
-  ss << "/groups/";
-  ss << request.GetGroupName();
-  ss << "/members";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/namespaces/");
+  uri.AddPathSegment(request.GetNamespace());
+  uri.AddPathSegments("/groups/");
+  uri.AddPathSegment(request.GetGroupName());
+  uri.AddPathSegments("/members");
   return ListGroupMembershipsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2656,13 +3070,11 @@ ListGroupsOutcome QuickSightClient::ListGroups(const ListGroupsRequest& request)
     return ListGroupsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Namespace]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/namespaces/";
-  ss << request.GetNamespace();
-  ss << "/groups";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/namespaces/");
+  uri.AddPathSegment(request.GetNamespace());
+  uri.AddPathSegments("/groups");
   return ListGroupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2697,13 +3109,11 @@ ListIAMPolicyAssignmentsOutcome QuickSightClient::ListIAMPolicyAssignments(const
     return ListIAMPolicyAssignmentsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Namespace]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/namespaces/";
-  ss << request.GetNamespace();
-  ss << "/iam-policy-assignments";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/namespaces/");
+  uri.AddPathSegment(request.GetNamespace());
+  uri.AddPathSegments("/iam-policy-assignments");
   return ListIAMPolicyAssignmentsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2743,15 +3153,13 @@ ListIAMPolicyAssignmentsForUserOutcome QuickSightClient::ListIAMPolicyAssignment
     return ListIAMPolicyAssignmentsForUserOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Namespace]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/namespaces/";
-  ss << request.GetNamespace();
-  ss << "/users/";
-  ss << request.GetUserName();
-  ss << "/iam-policy-assignments";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/namespaces/");
+  uri.AddPathSegment(request.GetNamespace());
+  uri.AddPathSegments("/users/");
+  uri.AddPathSegment(request.GetUserName());
+  uri.AddPathSegments("/iam-policy-assignments");
   return ListIAMPolicyAssignmentsForUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2786,13 +3194,11 @@ ListIngestionsOutcome QuickSightClient::ListIngestions(const ListIngestionsReque
     return ListIngestionsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/data-sets/";
-  ss << request.GetDataSetId();
-  ss << "/ingestions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/data-sets/");
+  uri.AddPathSegment(request.GetDataSetId());
+  uri.AddPathSegments("/ingestions");
   return ListIngestionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2822,11 +3228,9 @@ ListNamespacesOutcome QuickSightClient::ListNamespaces(const ListNamespacesReque
     return ListNamespacesOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/namespaces";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/namespaces");
   return ListNamespacesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2856,11 +3260,9 @@ ListTagsForResourceOutcome QuickSightClient::ListTagsForResource(const ListTagsF
     return ListTagsForResourceOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/resources/";
-  ss << request.GetResourceArn();
-  ss << "/tags";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/resources/");
+  uri.AddPathSegment(request.GetResourceArn());
+  uri.AddPathSegments("/tags");
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2895,13 +3297,11 @@ ListTemplateAliasesOutcome QuickSightClient::ListTemplateAliases(const ListTempl
     return ListTemplateAliasesOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TemplateId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/templates/";
-  ss << request.GetTemplateId();
-  ss << "/aliases";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/templates/");
+  uri.AddPathSegment(request.GetTemplateId());
+  uri.AddPathSegments("/aliases");
   return ListTemplateAliasesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2936,13 +3336,11 @@ ListTemplateVersionsOutcome QuickSightClient::ListTemplateVersions(const ListTem
     return ListTemplateVersionsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TemplateId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/templates/";
-  ss << request.GetTemplateId();
-  ss << "/versions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/templates/");
+  uri.AddPathSegment(request.GetTemplateId());
+  uri.AddPathSegments("/versions");
   return ListTemplateVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2972,11 +3370,9 @@ ListTemplatesOutcome QuickSightClient::ListTemplates(const ListTemplatesRequest&
     return ListTemplatesOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/templates";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/templates");
   return ListTemplatesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3011,13 +3407,11 @@ ListThemeAliasesOutcome QuickSightClient::ListThemeAliases(const ListThemeAliase
     return ListThemeAliasesOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThemeId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/themes/";
-  ss << request.GetThemeId();
-  ss << "/aliases";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/themes/");
+  uri.AddPathSegment(request.GetThemeId());
+  uri.AddPathSegments("/aliases");
   return ListThemeAliasesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3052,13 +3446,11 @@ ListThemeVersionsOutcome QuickSightClient::ListThemeVersions(const ListThemeVers
     return ListThemeVersionsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThemeId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/themes/";
-  ss << request.GetThemeId();
-  ss << "/versions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/themes/");
+  uri.AddPathSegment(request.GetThemeId());
+  uri.AddPathSegments("/versions");
   return ListThemeVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3088,11 +3480,9 @@ ListThemesOutcome QuickSightClient::ListThemes(const ListThemesRequest& request)
     return ListThemesOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/themes";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/themes");
   return ListThemesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3132,15 +3522,13 @@ ListUserGroupsOutcome QuickSightClient::ListUserGroups(const ListUserGroupsReque
     return ListUserGroupsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Namespace]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/namespaces/";
-  ss << request.GetNamespace();
-  ss << "/users/";
-  ss << request.GetUserName();
-  ss << "/groups";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/namespaces/");
+  uri.AddPathSegment(request.GetNamespace());
+  uri.AddPathSegments("/users/");
+  uri.AddPathSegment(request.GetUserName());
+  uri.AddPathSegments("/groups");
   return ListUserGroupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3175,13 +3563,11 @@ ListUsersOutcome QuickSightClient::ListUsers(const ListUsersRequest& request) co
     return ListUsersOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Namespace]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/namespaces/";
-  ss << request.GetNamespace();
-  ss << "/users";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/namespaces/");
+  uri.AddPathSegment(request.GetNamespace());
+  uri.AddPathSegments("/users");
   return ListUsersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3216,13 +3602,11 @@ RegisterUserOutcome QuickSightClient::RegisterUser(const RegisterUserRequest& re
     return RegisterUserOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Namespace]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/namespaces/";
-  ss << request.GetNamespace();
-  ss << "/users";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/namespaces/");
+  uri.AddPathSegment(request.GetNamespace());
+  uri.AddPathSegments("/users");
   return RegisterUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3257,12 +3641,10 @@ RestoreAnalysisOutcome QuickSightClient::RestoreAnalysis(const RestoreAnalysisRe
     return RestoreAnalysisOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AnalysisId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/restore/analyses/";
-  ss << request.GetAnalysisId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/restore/analyses/");
+  uri.AddPathSegment(request.GetAnalysisId());
   return RestoreAnalysisOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3292,11 +3674,9 @@ SearchAnalysesOutcome QuickSightClient::SearchAnalyses(const SearchAnalysesReque
     return SearchAnalysesOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/search/analyses";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/search/analyses");
   return SearchAnalysesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3326,11 +3706,9 @@ SearchDashboardsOutcome QuickSightClient::SearchDashboards(const SearchDashboard
     return SearchDashboardsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/search/dashboards";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/search/dashboards");
   return SearchDashboardsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3352,6 +3730,77 @@ void QuickSightClient::SearchDashboardsAsyncHelper(const SearchDashboardsRequest
   handler(this, request, SearchDashboards(request), context);
 }
 
+SearchFoldersOutcome QuickSightClient::SearchFolders(const SearchFoldersRequest& request) const
+{
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("SearchFolders", "Required field: AwsAccountId, is not set");
+    return SearchFoldersOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/search/folders");
+  return SearchFoldersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+SearchFoldersOutcomeCallable QuickSightClient::SearchFoldersCallable(const SearchFoldersRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SearchFoldersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SearchFolders(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::SearchFoldersAsync(const SearchFoldersRequest& request, const SearchFoldersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SearchFoldersAsyncHelper( request, handler, context ); } );
+}
+
+void QuickSightClient::SearchFoldersAsyncHelper(const SearchFoldersRequest& request, const SearchFoldersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SearchFolders(request), context);
+}
+
+SearchGroupsOutcome QuickSightClient::SearchGroups(const SearchGroupsRequest& request) const
+{
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("SearchGroups", "Required field: AwsAccountId, is not set");
+    return SearchGroupsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.NamespaceHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("SearchGroups", "Required field: Namespace, is not set");
+    return SearchGroupsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Namespace]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/namespaces/");
+  uri.AddPathSegment(request.GetNamespace());
+  uri.AddPathSegments("/groups-search");
+  return SearchGroupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+SearchGroupsOutcomeCallable QuickSightClient::SearchGroupsCallable(const SearchGroupsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SearchGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SearchGroups(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::SearchGroupsAsync(const SearchGroupsRequest& request, const SearchGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SearchGroupsAsyncHelper( request, handler, context ); } );
+}
+
+void QuickSightClient::SearchGroupsAsyncHelper(const SearchGroupsRequest& request, const SearchGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SearchGroups(request), context);
+}
+
 TagResourceOutcome QuickSightClient::TagResource(const TagResourceRequest& request) const
 {
   if (!request.ResourceArnHasBeenSet())
@@ -3360,11 +3809,9 @@ TagResourceOutcome QuickSightClient::TagResource(const TagResourceRequest& reque
     return TagResourceOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/resources/";
-  ss << request.GetResourceArn();
-  ss << "/tags";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/resources/");
+  uri.AddPathSegment(request.GetResourceArn());
+  uri.AddPathSegments("/tags");
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3399,11 +3846,9 @@ UntagResourceOutcome QuickSightClient::UntagResource(const UntagResourceRequest&
     return UntagResourceOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/resources/";
-  ss << request.GetResourceArn();
-  ss << "/tags";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/resources/");
+  uri.AddPathSegment(request.GetResourceArn());
+  uri.AddPathSegments("/tags");
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3433,11 +3878,9 @@ UpdateAccountCustomizationOutcome QuickSightClient::UpdateAccountCustomization(c
     return UpdateAccountCustomizationOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/customizations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/customizations");
   return UpdateAccountCustomizationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3467,11 +3910,9 @@ UpdateAccountSettingsOutcome QuickSightClient::UpdateAccountSettings(const Updat
     return UpdateAccountSettingsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/settings";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/settings");
   return UpdateAccountSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3506,12 +3947,10 @@ UpdateAnalysisOutcome QuickSightClient::UpdateAnalysis(const UpdateAnalysisReque
     return UpdateAnalysisOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AnalysisId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/analyses/";
-  ss << request.GetAnalysisId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/analyses/");
+  uri.AddPathSegment(request.GetAnalysisId());
   return UpdateAnalysisOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3546,13 +3985,11 @@ UpdateAnalysisPermissionsOutcome QuickSightClient::UpdateAnalysisPermissions(con
     return UpdateAnalysisPermissionsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AnalysisId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/analyses/";
-  ss << request.GetAnalysisId();
-  ss << "/permissions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/analyses/");
+  uri.AddPathSegment(request.GetAnalysisId());
+  uri.AddPathSegments("/permissions");
   return UpdateAnalysisPermissionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3587,12 +4024,10 @@ UpdateDashboardOutcome QuickSightClient::UpdateDashboard(const UpdateDashboardRe
     return UpdateDashboardOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DashboardId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/dashboards/";
-  ss << request.GetDashboardId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/dashboards/");
+  uri.AddPathSegment(request.GetDashboardId());
   return UpdateDashboardOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3627,13 +4062,11 @@ UpdateDashboardPermissionsOutcome QuickSightClient::UpdateDashboardPermissions(c
     return UpdateDashboardPermissionsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DashboardId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/dashboards/";
-  ss << request.GetDashboardId();
-  ss << "/permissions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/dashboards/");
+  uri.AddPathSegment(request.GetDashboardId());
+  uri.AddPathSegments("/permissions");
   return UpdateDashboardPermissionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3673,14 +4106,12 @@ UpdateDashboardPublishedVersionOutcome QuickSightClient::UpdateDashboardPublishe
     return UpdateDashboardPublishedVersionOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VersionNumber]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/dashboards/";
-  ss << request.GetDashboardId();
-  ss << "/versions/";
-  ss << request.GetVersionNumber();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/dashboards/");
+  uri.AddPathSegment(request.GetDashboardId());
+  uri.AddPathSegments("/versions/");
+  uri.AddPathSegment(request.GetVersionNumber());
   return UpdateDashboardPublishedVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3715,12 +4146,10 @@ UpdateDataSetOutcome QuickSightClient::UpdateDataSet(const UpdateDataSetRequest&
     return UpdateDataSetOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSetId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/data-sets/";
-  ss << request.GetDataSetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/data-sets/");
+  uri.AddPathSegment(request.GetDataSetId());
   return UpdateDataSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3755,13 +4184,11 @@ UpdateDataSetPermissionsOutcome QuickSightClient::UpdateDataSetPermissions(const
     return UpdateDataSetPermissionsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSetId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/data-sets/";
-  ss << request.GetDataSetId();
-  ss << "/permissions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/data-sets/");
+  uri.AddPathSegment(request.GetDataSetId());
+  uri.AddPathSegments("/permissions");
   return UpdateDataSetPermissionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3796,12 +4223,10 @@ UpdateDataSourceOutcome QuickSightClient::UpdateDataSource(const UpdateDataSourc
     return UpdateDataSourceOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSourceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/data-sources/";
-  ss << request.GetDataSourceId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/data-sources/");
+  uri.AddPathSegment(request.GetDataSourceId());
   return UpdateDataSourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3836,13 +4261,11 @@ UpdateDataSourcePermissionsOutcome QuickSightClient::UpdateDataSourcePermissions
     return UpdateDataSourcePermissionsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSourceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/data-sources/";
-  ss << request.GetDataSourceId();
-  ss << "/permissions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/data-sources/");
+  uri.AddPathSegment(request.GetDataSourceId());
+  uri.AddPathSegments("/permissions");
   return UpdateDataSourcePermissionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3864,6 +4287,83 @@ void QuickSightClient::UpdateDataSourcePermissionsAsyncHelper(const UpdateDataSo
   handler(this, request, UpdateDataSourcePermissions(request), context);
 }
 
+UpdateFolderOutcome QuickSightClient::UpdateFolder(const UpdateFolderRequest& request) const
+{
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateFolder", "Required field: AwsAccountId, is not set");
+    return UpdateFolderOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.FolderIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateFolder", "Required field: FolderId, is not set");
+    return UpdateFolderOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FolderId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/folders/");
+  uri.AddPathSegment(request.GetFolderId());
+  return UpdateFolderOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateFolderOutcomeCallable QuickSightClient::UpdateFolderCallable(const UpdateFolderRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateFolderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateFolder(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::UpdateFolderAsync(const UpdateFolderRequest& request, const UpdateFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateFolderAsyncHelper( request, handler, context ); } );
+}
+
+void QuickSightClient::UpdateFolderAsyncHelper(const UpdateFolderRequest& request, const UpdateFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateFolder(request), context);
+}
+
+UpdateFolderPermissionsOutcome QuickSightClient::UpdateFolderPermissions(const UpdateFolderPermissionsRequest& request) const
+{
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateFolderPermissions", "Required field: AwsAccountId, is not set");
+    return UpdateFolderPermissionsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.FolderIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateFolderPermissions", "Required field: FolderId, is not set");
+    return UpdateFolderPermissionsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FolderId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/folders/");
+  uri.AddPathSegment(request.GetFolderId());
+  uri.AddPathSegments("/permissions");
+  return UpdateFolderPermissionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateFolderPermissionsOutcomeCallable QuickSightClient::UpdateFolderPermissionsCallable(const UpdateFolderPermissionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateFolderPermissionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateFolderPermissions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::UpdateFolderPermissionsAsync(const UpdateFolderPermissionsRequest& request, const UpdateFolderPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateFolderPermissionsAsyncHelper( request, handler, context ); } );
+}
+
+void QuickSightClient::UpdateFolderPermissionsAsyncHelper(const UpdateFolderPermissionsRequest& request, const UpdateFolderPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateFolderPermissions(request), context);
+}
+
 UpdateGroupOutcome QuickSightClient::UpdateGroup(const UpdateGroupRequest& request) const
 {
   if (!request.GroupNameHasBeenSet())
@@ -3882,14 +4382,12 @@ UpdateGroupOutcome QuickSightClient::UpdateGroup(const UpdateGroupRequest& reque
     return UpdateGroupOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Namespace]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/namespaces/";
-  ss << request.GetNamespace();
-  ss << "/groups/";
-  ss << request.GetGroupName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/namespaces/");
+  uri.AddPathSegment(request.GetNamespace());
+  uri.AddPathSegments("/groups/");
+  uri.AddPathSegment(request.GetGroupName());
   return UpdateGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3929,14 +4427,12 @@ UpdateIAMPolicyAssignmentOutcome QuickSightClient::UpdateIAMPolicyAssignment(con
     return UpdateIAMPolicyAssignmentOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Namespace]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/namespaces/";
-  ss << request.GetNamespace();
-  ss << "/iam-policy-assignments/";
-  ss << request.GetAssignmentName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/namespaces/");
+  uri.AddPathSegment(request.GetNamespace());
+  uri.AddPathSegments("/iam-policy-assignments/");
+  uri.AddPathSegment(request.GetAssignmentName());
   return UpdateIAMPolicyAssignmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3958,6 +4454,70 @@ void QuickSightClient::UpdateIAMPolicyAssignmentAsyncHelper(const UpdateIAMPolic
   handler(this, request, UpdateIAMPolicyAssignment(request), context);
 }
 
+UpdateIpRestrictionOutcome QuickSightClient::UpdateIpRestriction(const UpdateIpRestrictionRequest& request) const
+{
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateIpRestriction", "Required field: AwsAccountId, is not set");
+    return UpdateIpRestrictionOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/ip-restriction");
+  return UpdateIpRestrictionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateIpRestrictionOutcomeCallable QuickSightClient::UpdateIpRestrictionCallable(const UpdateIpRestrictionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateIpRestrictionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateIpRestriction(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::UpdateIpRestrictionAsync(const UpdateIpRestrictionRequest& request, const UpdateIpRestrictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateIpRestrictionAsyncHelper( request, handler, context ); } );
+}
+
+void QuickSightClient::UpdateIpRestrictionAsyncHelper(const UpdateIpRestrictionRequest& request, const UpdateIpRestrictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateIpRestriction(request), context);
+}
+
+UpdatePublicSharingSettingsOutcome QuickSightClient::UpdatePublicSharingSettings(const UpdatePublicSharingSettingsRequest& request) const
+{
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdatePublicSharingSettings", "Required field: AwsAccountId, is not set");
+    return UpdatePublicSharingSettingsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/public-sharing-settings");
+  return UpdatePublicSharingSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdatePublicSharingSettingsOutcomeCallable QuickSightClient::UpdatePublicSharingSettingsCallable(const UpdatePublicSharingSettingsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdatePublicSharingSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdatePublicSharingSettings(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::UpdatePublicSharingSettingsAsync(const UpdatePublicSharingSettingsRequest& request, const UpdatePublicSharingSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdatePublicSharingSettingsAsyncHelper( request, handler, context ); } );
+}
+
+void QuickSightClient::UpdatePublicSharingSettingsAsyncHelper(const UpdatePublicSharingSettingsRequest& request, const UpdatePublicSharingSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdatePublicSharingSettings(request), context);
+}
+
 UpdateTemplateOutcome QuickSightClient::UpdateTemplate(const UpdateTemplateRequest& request) const
 {
   if (!request.AwsAccountIdHasBeenSet())
@@ -3971,12 +4531,10 @@ UpdateTemplateOutcome QuickSightClient::UpdateTemplate(const UpdateTemplateReque
     return UpdateTemplateOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TemplateId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/templates/";
-  ss << request.GetTemplateId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/templates/");
+  uri.AddPathSegment(request.GetTemplateId());
   return UpdateTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -4016,14 +4574,12 @@ UpdateTemplateAliasOutcome QuickSightClient::UpdateTemplateAlias(const UpdateTem
     return UpdateTemplateAliasOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AliasName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/templates/";
-  ss << request.GetTemplateId();
-  ss << "/aliases/";
-  ss << request.GetAliasName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/templates/");
+  uri.AddPathSegment(request.GetTemplateId());
+  uri.AddPathSegments("/aliases/");
+  uri.AddPathSegment(request.GetAliasName());
   return UpdateTemplateAliasOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -4058,13 +4614,11 @@ UpdateTemplatePermissionsOutcome QuickSightClient::UpdateTemplatePermissions(con
     return UpdateTemplatePermissionsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TemplateId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/templates/";
-  ss << request.GetTemplateId();
-  ss << "/permissions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/templates/");
+  uri.AddPathSegment(request.GetTemplateId());
+  uri.AddPathSegments("/permissions");
   return UpdateTemplatePermissionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -4099,12 +4653,10 @@ UpdateThemeOutcome QuickSightClient::UpdateTheme(const UpdateThemeRequest& reque
     return UpdateThemeOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThemeId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/themes/";
-  ss << request.GetThemeId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/themes/");
+  uri.AddPathSegment(request.GetThemeId());
   return UpdateThemeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -4144,14 +4696,12 @@ UpdateThemeAliasOutcome QuickSightClient::UpdateThemeAlias(const UpdateThemeAlia
     return UpdateThemeAliasOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AliasName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/themes/";
-  ss << request.GetThemeId();
-  ss << "/aliases/";
-  ss << request.GetAliasName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/themes/");
+  uri.AddPathSegment(request.GetThemeId());
+  uri.AddPathSegments("/aliases/");
+  uri.AddPathSegment(request.GetAliasName());
   return UpdateThemeAliasOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -4186,13 +4736,11 @@ UpdateThemePermissionsOutcome QuickSightClient::UpdateThemePermissions(const Upd
     return UpdateThemePermissionsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThemeId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/themes/";
-  ss << request.GetThemeId();
-  ss << "/permissions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/themes/");
+  uri.AddPathSegment(request.GetThemeId());
+  uri.AddPathSegments("/permissions");
   return UpdateThemePermissionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -4232,14 +4780,12 @@ UpdateUserOutcome QuickSightClient::UpdateUser(const UpdateUserRequest& request)
     return UpdateUserOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Namespace]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAwsAccountId();
-  ss << "/namespaces/";
-  ss << request.GetNamespace();
-  ss << "/users/";
-  ss << request.GetUserName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/namespaces/");
+  uri.AddPathSegment(request.GetNamespace());
+  uri.AddPathSegments("/users/");
+  uri.AddPathSegment(request.GetUserName());
   return UpdateUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 

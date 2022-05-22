@@ -14,6 +14,7 @@ using namespace Aws::Utils;
 
 CreateEntityRecognizerRequest::CreateEntityRecognizerRequest() : 
     m_recognizerNameHasBeenSet(false),
+    m_versionNameHasBeenSet(false),
     m_dataAccessRoleArnHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_inputDataConfigHasBeenSet(false),
@@ -22,7 +23,9 @@ CreateEntityRecognizerRequest::CreateEntityRecognizerRequest() :
     m_languageCode(LanguageCode::NOT_SET),
     m_languageCodeHasBeenSet(false),
     m_volumeKmsKeyIdHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false)
+    m_vpcConfigHasBeenSet(false),
+    m_modelKmsKeyIdHasBeenSet(false),
+    m_modelPolicyHasBeenSet(false)
 {
 }
 
@@ -33,6 +36,12 @@ Aws::String CreateEntityRecognizerRequest::SerializePayload() const
   if(m_recognizerNameHasBeenSet)
   {
    payload.WithString("RecognizerName", m_recognizerName);
+
+  }
+
+  if(m_versionNameHasBeenSet)
+  {
+   payload.WithString("VersionName", m_versionName);
 
   }
 
@@ -79,6 +88,18 @@ Aws::String CreateEntityRecognizerRequest::SerializePayload() const
   if(m_vpcConfigHasBeenSet)
   {
    payload.WithObject("VpcConfig", m_vpcConfig.Jsonize());
+
+  }
+
+  if(m_modelKmsKeyIdHasBeenSet)
+  {
+   payload.WithString("ModelKmsKeyId", m_modelKmsKeyId);
+
+  }
+
+  if(m_modelPolicyHasBeenSet)
+  {
+   payload.WithString("ModelPolicy", m_modelPolicy);
 
   }
 

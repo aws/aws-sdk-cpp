@@ -111,7 +111,7 @@ namespace Model
      * <code>openssl x509 -in <i>file_path</i> -text -noout</code> </p> <p>You can also
      * copy the serial number from the console or use the <a
      * href="https://docs.aws.amazon.com/acm/latest/APIReference/API_DescribeCertificate.html">DescribeCertificate</a>
-     * action in the <i>AWS Certificate Manager API Reference</i>. </p>
+     * action in the <i>Certificate Manager API Reference</i>. </p>
      */
     inline const Aws::String& GetCertificateSerial() const{ return m_certificateSerial; }
 
@@ -126,7 +126,7 @@ namespace Model
      * <code>openssl x509 -in <i>file_path</i> -text -noout</code> </p> <p>You can also
      * copy the serial number from the console or use the <a
      * href="https://docs.aws.amazon.com/acm/latest/APIReference/API_DescribeCertificate.html">DescribeCertificate</a>
-     * action in the <i>AWS Certificate Manager API Reference</i>. </p>
+     * action in the <i>Certificate Manager API Reference</i>. </p>
      */
     inline bool CertificateSerialHasBeenSet() const { return m_certificateSerialHasBeenSet; }
 
@@ -141,7 +141,7 @@ namespace Model
      * <code>openssl x509 -in <i>file_path</i> -text -noout</code> </p> <p>You can also
      * copy the serial number from the console or use the <a
      * href="https://docs.aws.amazon.com/acm/latest/APIReference/API_DescribeCertificate.html">DescribeCertificate</a>
-     * action in the <i>AWS Certificate Manager API Reference</i>. </p>
+     * action in the <i>Certificate Manager API Reference</i>. </p>
      */
     inline void SetCertificateSerial(const Aws::String& value) { m_certificateSerialHasBeenSet = true; m_certificateSerial = value; }
 
@@ -156,7 +156,7 @@ namespace Model
      * <code>openssl x509 -in <i>file_path</i> -text -noout</code> </p> <p>You can also
      * copy the serial number from the console or use the <a
      * href="https://docs.aws.amazon.com/acm/latest/APIReference/API_DescribeCertificate.html">DescribeCertificate</a>
-     * action in the <i>AWS Certificate Manager API Reference</i>. </p>
+     * action in the <i>Certificate Manager API Reference</i>. </p>
      */
     inline void SetCertificateSerial(Aws::String&& value) { m_certificateSerialHasBeenSet = true; m_certificateSerial = std::move(value); }
 
@@ -171,7 +171,7 @@ namespace Model
      * <code>openssl x509 -in <i>file_path</i> -text -noout</code> </p> <p>You can also
      * copy the serial number from the console or use the <a
      * href="https://docs.aws.amazon.com/acm/latest/APIReference/API_DescribeCertificate.html">DescribeCertificate</a>
-     * action in the <i>AWS Certificate Manager API Reference</i>. </p>
+     * action in the <i>Certificate Manager API Reference</i>. </p>
      */
     inline void SetCertificateSerial(const char* value) { m_certificateSerialHasBeenSet = true; m_certificateSerial.assign(value); }
 
@@ -186,7 +186,7 @@ namespace Model
      * <code>openssl x509 -in <i>file_path</i> -text -noout</code> </p> <p>You can also
      * copy the serial number from the console or use the <a
      * href="https://docs.aws.amazon.com/acm/latest/APIReference/API_DescribeCertificate.html">DescribeCertificate</a>
-     * action in the <i>AWS Certificate Manager API Reference</i>. </p>
+     * action in the <i>Certificate Manager API Reference</i>. </p>
      */
     inline RevokeCertificateRequest& WithCertificateSerial(const Aws::String& value) { SetCertificateSerial(value); return *this;}
 
@@ -201,7 +201,7 @@ namespace Model
      * <code>openssl x509 -in <i>file_path</i> -text -noout</code> </p> <p>You can also
      * copy the serial number from the console or use the <a
      * href="https://docs.aws.amazon.com/acm/latest/APIReference/API_DescribeCertificate.html">DescribeCertificate</a>
-     * action in the <i>AWS Certificate Manager API Reference</i>. </p>
+     * action in the <i>Certificate Manager API Reference</i>. </p>
      */
     inline RevokeCertificateRequest& WithCertificateSerial(Aws::String&& value) { SetCertificateSerial(std::move(value)); return *this;}
 
@@ -216,7 +216,7 @@ namespace Model
      * <code>openssl x509 -in <i>file_path</i> -text -noout</code> </p> <p>You can also
      * copy the serial number from the console or use the <a
      * href="https://docs.aws.amazon.com/acm/latest/APIReference/API_DescribeCertificate.html">DescribeCertificate</a>
-     * action in the <i>AWS Certificate Manager API Reference</i>. </p>
+     * action in the <i>Certificate Manager API Reference</i>. </p>
      */
     inline RevokeCertificateRequest& WithCertificateSerial(const char* value) { SetCertificateSerial(value); return *this;}
 

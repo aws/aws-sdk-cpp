@@ -37,6 +37,12 @@ SearchAvailablePhoneNumbersResult& SearchAvailablePhoneNumbersResult::operator =
     }
   }
 
+  if(jsonValue.ValueExists("NextToken"))
+  {
+    m_nextToken = jsonValue.GetString("NextToken");
+
+  }
+
 
 
   return *this;

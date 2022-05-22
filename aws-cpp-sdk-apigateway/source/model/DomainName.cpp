@@ -36,7 +36,8 @@ DomainName::DomainName() :
     m_securityPolicy(SecurityPolicy::NOT_SET),
     m_securityPolicyHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_mutualTlsAuthenticationHasBeenSet(false)
+    m_mutualTlsAuthenticationHasBeenSet(false),
+    m_ownershipVerificationCertificateArnHasBeenSet(false)
 {
 }
 
@@ -58,7 +59,8 @@ DomainName::DomainName(JsonView jsonValue) :
     m_securityPolicy(SecurityPolicy::NOT_SET),
     m_securityPolicyHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_mutualTlsAuthenticationHasBeenSet(false)
+    m_mutualTlsAuthenticationHasBeenSet(false),
+    m_ownershipVerificationCertificateArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -180,6 +182,13 @@ DomainName& DomainName::operator =(JsonView jsonValue)
     m_mutualTlsAuthenticationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ownershipVerificationCertificateArn"))
+  {
+    m_ownershipVerificationCertificateArn = jsonValue.GetString("ownershipVerificationCertificateArn");
+
+    m_ownershipVerificationCertificateArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -282,6 +291,12 @@ JsonValue DomainName::Jsonize() const
   if(m_mutualTlsAuthenticationHasBeenSet)
   {
    payload.WithObject("mutualTlsAuthentication", m_mutualTlsAuthentication.Jsonize());
+
+  }
+
+  if(m_ownershipVerificationCertificateArnHasBeenSet)
+  {
+   payload.WithString("ownershipVerificationCertificateArn", m_ownershipVerificationCertificateArn);
 
   }
 

@@ -37,6 +37,10 @@ namespace Aws
         static const int CassandraReadCapacityUtilization_HASH = HashingUtils::HashString("CassandraReadCapacityUtilization");
         static const int CassandraWriteCapacityUtilization_HASH = HashingUtils::HashString("CassandraWriteCapacityUtilization");
         static const int KafkaBrokerStorageUtilization_HASH = HashingUtils::HashString("KafkaBrokerStorageUtilization");
+        static const int ElastiCachePrimaryEngineCPUUtilization_HASH = HashingUtils::HashString("ElastiCachePrimaryEngineCPUUtilization");
+        static const int ElastiCacheReplicaEngineCPUUtilization_HASH = HashingUtils::HashString("ElastiCacheReplicaEngineCPUUtilization");
+        static const int ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage_HASH = HashingUtils::HashString("ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage");
+        static const int NeptuneReaderAverageCPUUtilization_HASH = HashingUtils::HashString("NeptuneReaderAverageCPUUtilization");
 
 
         MetricType GetMetricTypeForName(const Aws::String& name)
@@ -110,6 +114,22 @@ namespace Aws
           {
             return MetricType::KafkaBrokerStorageUtilization;
           }
+          else if (hashCode == ElastiCachePrimaryEngineCPUUtilization_HASH)
+          {
+            return MetricType::ElastiCachePrimaryEngineCPUUtilization;
+          }
+          else if (hashCode == ElastiCacheReplicaEngineCPUUtilization_HASH)
+          {
+            return MetricType::ElastiCacheReplicaEngineCPUUtilization;
+          }
+          else if (hashCode == ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage_HASH)
+          {
+            return MetricType::ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage;
+          }
+          else if (hashCode == NeptuneReaderAverageCPUUtilization_HASH)
+          {
+            return MetricType::NeptuneReaderAverageCPUUtilization;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -158,6 +178,14 @@ namespace Aws
             return "CassandraWriteCapacityUtilization";
           case MetricType::KafkaBrokerStorageUtilization:
             return "KafkaBrokerStorageUtilization";
+          case MetricType::ElastiCachePrimaryEngineCPUUtilization:
+            return "ElastiCachePrimaryEngineCPUUtilization";
+          case MetricType::ElastiCacheReplicaEngineCPUUtilization:
+            return "ElastiCacheReplicaEngineCPUUtilization";
+          case MetricType::ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage:
+            return "ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage";
+          case MetricType::NeptuneReaderAverageCPUUtilization:
+            return "NeptuneReaderAverageCPUUtilization";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

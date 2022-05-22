@@ -240,8 +240,7 @@ namespace Model
      * type, you must use <code>StringValue</code>.</p> <p>You can also append custom
      * labels. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon
-     * SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.</p>
+     * SQS Message Attributes</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline const Aws::String& GetDataType() const{ return m_dataType; }
 
@@ -251,8 +250,7 @@ namespace Model
      * type, you must use <code>StringValue</code>.</p> <p>You can also append custom
      * labels. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon
-     * SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.</p>
+     * SQS Message Attributes</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline bool DataTypeHasBeenSet() const { return m_dataTypeHasBeenSet; }
 
@@ -262,8 +260,7 @@ namespace Model
      * type, you must use <code>StringValue</code>.</p> <p>You can also append custom
      * labels. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon
-     * SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.</p>
+     * SQS Message Attributes</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline void SetDataType(const Aws::String& value) { m_dataTypeHasBeenSet = true; m_dataType = value; }
 
@@ -273,8 +270,7 @@ namespace Model
      * type, you must use <code>StringValue</code>.</p> <p>You can also append custom
      * labels. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon
-     * SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.</p>
+     * SQS Message Attributes</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline void SetDataType(Aws::String&& value) { m_dataTypeHasBeenSet = true; m_dataType = std::move(value); }
 
@@ -284,8 +280,7 @@ namespace Model
      * type, you must use <code>StringValue</code>.</p> <p>You can also append custom
      * labels. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon
-     * SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.</p>
+     * SQS Message Attributes</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline void SetDataType(const char* value) { m_dataTypeHasBeenSet = true; m_dataType.assign(value); }
 
@@ -295,8 +290,7 @@ namespace Model
      * type, you must use <code>StringValue</code>.</p> <p>You can also append custom
      * labels. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon
-     * SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.</p>
+     * SQS Message Attributes</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline MessageSystemAttributeValue& WithDataType(const Aws::String& value) { SetDataType(value); return *this;}
 
@@ -306,8 +300,7 @@ namespace Model
      * type, you must use <code>StringValue</code>.</p> <p>You can also append custom
      * labels. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon
-     * SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.</p>
+     * SQS Message Attributes</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline MessageSystemAttributeValue& WithDataType(Aws::String&& value) { SetDataType(std::move(value)); return *this;}
 
@@ -317,8 +310,7 @@ namespace Model
      * type, you must use <code>StringValue</code>.</p> <p>You can also append custom
      * labels. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon
-     * SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>.</p>
+     * SQS Message Attributes</a> in the <i>Amazon SQS Developer Guide</i>.</p>
      */
     inline MessageSystemAttributeValue& WithDataType(const char* value) { SetDataType(value); return *this;}
 

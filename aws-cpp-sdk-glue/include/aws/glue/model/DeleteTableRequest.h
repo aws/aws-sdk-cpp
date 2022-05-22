@@ -36,49 +36,49 @@ namespace Model
 
     /**
      * <p>The ID of the Data Catalog where the table resides. If none is provided, the
-     * AWS account ID is used by default.</p>
+     * Amazon Web Services account ID is used by default.</p>
      */
     inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
 
     /**
      * <p>The ID of the Data Catalog where the table resides. If none is provided, the
-     * AWS account ID is used by default.</p>
+     * Amazon Web Services account ID is used by default.</p>
      */
     inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
 
     /**
      * <p>The ID of the Data Catalog where the table resides. If none is provided, the
-     * AWS account ID is used by default.</p>
+     * Amazon Web Services account ID is used by default.</p>
      */
     inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
 
     /**
      * <p>The ID of the Data Catalog where the table resides. If none is provided, the
-     * AWS account ID is used by default.</p>
+     * Amazon Web Services account ID is used by default.</p>
      */
     inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
 
     /**
      * <p>The ID of the Data Catalog where the table resides. If none is provided, the
-     * AWS account ID is used by default.</p>
+     * Amazon Web Services account ID is used by default.</p>
      */
     inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
 
     /**
      * <p>The ID of the Data Catalog where the table resides. If none is provided, the
-     * AWS account ID is used by default.</p>
+     * Amazon Web Services account ID is used by default.</p>
      */
     inline DeleteTableRequest& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
 
     /**
      * <p>The ID of the Data Catalog where the table resides. If none is provided, the
-     * AWS account ID is used by default.</p>
+     * Amazon Web Services account ID is used by default.</p>
      */
     inline DeleteTableRequest& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Data Catalog where the table resides. If none is provided, the
-     * AWS account ID is used by default.</p>
+     * Amazon Web Services account ID is used by default.</p>
      */
     inline DeleteTableRequest& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
 
@@ -180,6 +180,47 @@ namespace Model
      */
     inline DeleteTableRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
+    /**
+     * <p>The transaction ID at which to delete the table contents.</p>
+     */
+    inline const Aws::String& GetTransactionId() const{ return m_transactionId; }
+
+    /**
+     * <p>The transaction ID at which to delete the table contents.</p>
+     */
+    inline bool TransactionIdHasBeenSet() const { return m_transactionIdHasBeenSet; }
+
+    /**
+     * <p>The transaction ID at which to delete the table contents.</p>
+     */
+    inline void SetTransactionId(const Aws::String& value) { m_transactionIdHasBeenSet = true; m_transactionId = value; }
+
+    /**
+     * <p>The transaction ID at which to delete the table contents.</p>
+     */
+    inline void SetTransactionId(Aws::String&& value) { m_transactionIdHasBeenSet = true; m_transactionId = std::move(value); }
+
+    /**
+     * <p>The transaction ID at which to delete the table contents.</p>
+     */
+    inline void SetTransactionId(const char* value) { m_transactionIdHasBeenSet = true; m_transactionId.assign(value); }
+
+    /**
+     * <p>The transaction ID at which to delete the table contents.</p>
+     */
+    inline DeleteTableRequest& WithTransactionId(const Aws::String& value) { SetTransactionId(value); return *this;}
+
+    /**
+     * <p>The transaction ID at which to delete the table contents.</p>
+     */
+    inline DeleteTableRequest& WithTransactionId(Aws::String&& value) { SetTransactionId(std::move(value)); return *this;}
+
+    /**
+     * <p>The transaction ID at which to delete the table contents.</p>
+     */
+    inline DeleteTableRequest& WithTransactionId(const char* value) { SetTransactionId(value); return *this;}
+
   private:
 
     Aws::String m_catalogId;
@@ -190,6 +231,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    Aws::String m_transactionId;
+    bool m_transactionIdHasBeenSet;
   };
 
 } // namespace Model

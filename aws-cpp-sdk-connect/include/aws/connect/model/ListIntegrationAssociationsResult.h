@@ -35,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>The AppIntegration associations.</p>
+     * <p>The associations.</p>
      */
     inline const Aws::Vector<IntegrationAssociationSummary>& GetIntegrationAssociationSummaryList() const{ return m_integrationAssociationSummaryList; }
 
     /**
-     * <p>The AppIntegration associations.</p>
+     * <p>The associations.</p>
      */
     inline void SetIntegrationAssociationSummaryList(const Aws::Vector<IntegrationAssociationSummary>& value) { m_integrationAssociationSummaryList = value; }
 
     /**
-     * <p>The AppIntegration associations.</p>
+     * <p>The associations.</p>
      */
     inline void SetIntegrationAssociationSummaryList(Aws::Vector<IntegrationAssociationSummary>&& value) { m_integrationAssociationSummaryList = std::move(value); }
 
     /**
-     * <p>The AppIntegration associations.</p>
+     * <p>The associations.</p>
      */
     inline ListIntegrationAssociationsResult& WithIntegrationAssociationSummaryList(const Aws::Vector<IntegrationAssociationSummary>& value) { SetIntegrationAssociationSummaryList(value); return *this;}
 
     /**
-     * <p>The AppIntegration associations.</p>
+     * <p>The associations.</p>
      */
     inline ListIntegrationAssociationsResult& WithIntegrationAssociationSummaryList(Aws::Vector<IntegrationAssociationSummary>&& value) { SetIntegrationAssociationSummaryList(std::move(value)); return *this;}
 
     /**
-     * <p>The AppIntegration associations.</p>
+     * <p>The associations.</p>
      */
     inline ListIntegrationAssociationsResult& AddIntegrationAssociationSummaryList(const IntegrationAssociationSummary& value) { m_integrationAssociationSummaryList.push_back(value); return *this; }
 
     /**
-     * <p>The AppIntegration associations.</p>
+     * <p>The associations.</p>
      */
     inline ListIntegrationAssociationsResult& AddIntegrationAssociationSummaryList(IntegrationAssociationSummary&& value) { m_integrationAssociationSummaryList.push_back(std::move(value)); return *this; }
 

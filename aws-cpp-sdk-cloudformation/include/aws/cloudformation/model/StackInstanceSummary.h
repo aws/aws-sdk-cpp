@@ -94,91 +94,99 @@ namespace Model
 
 
     /**
-     * <p>The name of the AWS Region that the stack instance is associated with.</p>
+     * <p>The name of the Amazon Web Services Region that the stack instance is
+     * associated with.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
 
     /**
-     * <p>The name of the AWS Region that the stack instance is associated with.</p>
+     * <p>The name of the Amazon Web Services Region that the stack instance is
+     * associated with.</p>
      */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
     /**
-     * <p>The name of the AWS Region that the stack instance is associated with.</p>
+     * <p>The name of the Amazon Web Services Region that the stack instance is
+     * associated with.</p>
      */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
-     * <p>The name of the AWS Region that the stack instance is associated with.</p>
+     * <p>The name of the Amazon Web Services Region that the stack instance is
+     * associated with.</p>
      */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
     /**
-     * <p>The name of the AWS Region that the stack instance is associated with.</p>
+     * <p>The name of the Amazon Web Services Region that the stack instance is
+     * associated with.</p>
      */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
 
     /**
-     * <p>The name of the AWS Region that the stack instance is associated with.</p>
+     * <p>The name of the Amazon Web Services Region that the stack instance is
+     * associated with.</p>
      */
     inline StackInstanceSummary& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
 
     /**
-     * <p>The name of the AWS Region that the stack instance is associated with.</p>
+     * <p>The name of the Amazon Web Services Region that the stack instance is
+     * associated with.</p>
      */
     inline StackInstanceSummary& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the AWS Region that the stack instance is associated with.</p>
+     * <p>The name of the Amazon Web Services Region that the stack instance is
+     * associated with.</p>
      */
     inline StackInstanceSummary& WithRegion(const char* value) { SetRegion(value); return *this;}
 
 
     /**
-     * <p>[<code>Self-managed</code> permissions] The name of the AWS account that the
-     * stack instance is associated with.</p>
+     * <p>[Self-managed permissions] The name of the Amazon Web Services account that
+     * the stack instance is associated with.</p>
      */
     inline const Aws::String& GetAccount() const{ return m_account; }
 
     /**
-     * <p>[<code>Self-managed</code> permissions] The name of the AWS account that the
-     * stack instance is associated with.</p>
+     * <p>[Self-managed permissions] The name of the Amazon Web Services account that
+     * the stack instance is associated with.</p>
      */
     inline bool AccountHasBeenSet() const { return m_accountHasBeenSet; }
 
     /**
-     * <p>[<code>Self-managed</code> permissions] The name of the AWS account that the
-     * stack instance is associated with.</p>
+     * <p>[Self-managed permissions] The name of the Amazon Web Services account that
+     * the stack instance is associated with.</p>
      */
     inline void SetAccount(const Aws::String& value) { m_accountHasBeenSet = true; m_account = value; }
 
     /**
-     * <p>[<code>Self-managed</code> permissions] The name of the AWS account that the
-     * stack instance is associated with.</p>
+     * <p>[Self-managed permissions] The name of the Amazon Web Services account that
+     * the stack instance is associated with.</p>
      */
     inline void SetAccount(Aws::String&& value) { m_accountHasBeenSet = true; m_account = std::move(value); }
 
     /**
-     * <p>[<code>Self-managed</code> permissions] The name of the AWS account that the
-     * stack instance is associated with.</p>
+     * <p>[Self-managed permissions] The name of the Amazon Web Services account that
+     * the stack instance is associated with.</p>
      */
     inline void SetAccount(const char* value) { m_accountHasBeenSet = true; m_account.assign(value); }
 
     /**
-     * <p>[<code>Self-managed</code> permissions] The name of the AWS account that the
-     * stack instance is associated with.</p>
+     * <p>[Self-managed permissions] The name of the Amazon Web Services account that
+     * the stack instance is associated with.</p>
      */
     inline StackInstanceSummary& WithAccount(const Aws::String& value) { SetAccount(value); return *this;}
 
     /**
-     * <p>[<code>Self-managed</code> permissions] The name of the AWS account that the
-     * stack instance is associated with.</p>
+     * <p>[Self-managed permissions] The name of the Amazon Web Services account that
+     * the stack instance is associated with.</p>
      */
     inline StackInstanceSummary& WithAccount(Aws::String&& value) { SetAccount(std::move(value)); return *this;}
 
     /**
-     * <p>[<code>Self-managed</code> permissions] The name of the AWS account that the
-     * stack instance is associated with.</p>
+     * <p>[Self-managed permissions] The name of the Amazon Web Services account that
+     * the stack instance is associated with.</p>
      */
     inline StackInstanceSummary& WithAccount(const char* value) { SetAccount(value); return *this;}
 
@@ -234,10 +242,10 @@ namespace Model
      * to <code>true</code>, to delete the stack instance, and then delete the stack
      * manually.</p> </li> <li> <p> <code>OUTDATED</code>: The stack isn't currently up
      * to date with the stack set because:</p> <ul> <li> <p>The associated stack failed
-     * during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation.
-     * </p> </li> <li> <p>The stack was part of a <code>CreateStackSet</code> or
-     * <code>UpdateStackSet</code> operation that failed or was stopped before the
-     * stack was created or updated. </p> </li> </ul> </li> <li> <p>
+     * during a <code>CreateStackSet</code> or <code>UpdateStackSet</code>
+     * operation.</p> </li> <li> <p>The stack was part of a <code>CreateStackSet</code>
+     * or <code>UpdateStackSet</code> operation that failed or was stopped before the
+     * stack was created or updated.</p> </li> </ul> </li> <li> <p>
      * <code>CURRENT</code>: The stack is currently up to date with the stack set.</p>
      * </li> </ul>
      */
@@ -253,10 +261,10 @@ namespace Model
      * to <code>true</code>, to delete the stack instance, and then delete the stack
      * manually.</p> </li> <li> <p> <code>OUTDATED</code>: The stack isn't currently up
      * to date with the stack set because:</p> <ul> <li> <p>The associated stack failed
-     * during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation.
-     * </p> </li> <li> <p>The stack was part of a <code>CreateStackSet</code> or
-     * <code>UpdateStackSet</code> operation that failed or was stopped before the
-     * stack was created or updated. </p> </li> </ul> </li> <li> <p>
+     * during a <code>CreateStackSet</code> or <code>UpdateStackSet</code>
+     * operation.</p> </li> <li> <p>The stack was part of a <code>CreateStackSet</code>
+     * or <code>UpdateStackSet</code> operation that failed or was stopped before the
+     * stack was created or updated.</p> </li> </ul> </li> <li> <p>
      * <code>CURRENT</code>: The stack is currently up to date with the stack set.</p>
      * </li> </ul>
      */
@@ -272,10 +280,10 @@ namespace Model
      * to <code>true</code>, to delete the stack instance, and then delete the stack
      * manually.</p> </li> <li> <p> <code>OUTDATED</code>: The stack isn't currently up
      * to date with the stack set because:</p> <ul> <li> <p>The associated stack failed
-     * during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation.
-     * </p> </li> <li> <p>The stack was part of a <code>CreateStackSet</code> or
-     * <code>UpdateStackSet</code> operation that failed or was stopped before the
-     * stack was created or updated. </p> </li> </ul> </li> <li> <p>
+     * during a <code>CreateStackSet</code> or <code>UpdateStackSet</code>
+     * operation.</p> </li> <li> <p>The stack was part of a <code>CreateStackSet</code>
+     * or <code>UpdateStackSet</code> operation that failed or was stopped before the
+     * stack was created or updated.</p> </li> </ul> </li> <li> <p>
      * <code>CURRENT</code>: The stack is currently up to date with the stack set.</p>
      * </li> </ul>
      */
@@ -291,10 +299,10 @@ namespace Model
      * to <code>true</code>, to delete the stack instance, and then delete the stack
      * manually.</p> </li> <li> <p> <code>OUTDATED</code>: The stack isn't currently up
      * to date with the stack set because:</p> <ul> <li> <p>The associated stack failed
-     * during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation.
-     * </p> </li> <li> <p>The stack was part of a <code>CreateStackSet</code> or
-     * <code>UpdateStackSet</code> operation that failed or was stopped before the
-     * stack was created or updated. </p> </li> </ul> </li> <li> <p>
+     * during a <code>CreateStackSet</code> or <code>UpdateStackSet</code>
+     * operation.</p> </li> <li> <p>The stack was part of a <code>CreateStackSet</code>
+     * or <code>UpdateStackSet</code> operation that failed or was stopped before the
+     * stack was created or updated.</p> </li> </ul> </li> <li> <p>
      * <code>CURRENT</code>: The stack is currently up to date with the stack set.</p>
      * </li> </ul>
      */
@@ -310,10 +318,10 @@ namespace Model
      * to <code>true</code>, to delete the stack instance, and then delete the stack
      * manually.</p> </li> <li> <p> <code>OUTDATED</code>: The stack isn't currently up
      * to date with the stack set because:</p> <ul> <li> <p>The associated stack failed
-     * during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation.
-     * </p> </li> <li> <p>The stack was part of a <code>CreateStackSet</code> or
-     * <code>UpdateStackSet</code> operation that failed or was stopped before the
-     * stack was created or updated. </p> </li> </ul> </li> <li> <p>
+     * during a <code>CreateStackSet</code> or <code>UpdateStackSet</code>
+     * operation.</p> </li> <li> <p>The stack was part of a <code>CreateStackSet</code>
+     * or <code>UpdateStackSet</code> operation that failed or was stopped before the
+     * stack was created or updated.</p> </li> </ul> </li> <li> <p>
      * <code>CURRENT</code>: The stack is currently up to date with the stack set.</p>
      * </li> </ul>
      */
@@ -329,10 +337,10 @@ namespace Model
      * to <code>true</code>, to delete the stack instance, and then delete the stack
      * manually.</p> </li> <li> <p> <code>OUTDATED</code>: The stack isn't currently up
      * to date with the stack set because:</p> <ul> <li> <p>The associated stack failed
-     * during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation.
-     * </p> </li> <li> <p>The stack was part of a <code>CreateStackSet</code> or
-     * <code>UpdateStackSet</code> operation that failed or was stopped before the
-     * stack was created or updated. </p> </li> </ul> </li> <li> <p>
+     * during a <code>CreateStackSet</code> or <code>UpdateStackSet</code>
+     * operation.</p> </li> <li> <p>The stack was part of a <code>CreateStackSet</code>
+     * or <code>UpdateStackSet</code> operation that failed or was stopped before the
+     * stack was created or updated.</p> </li> </ul> </li> <li> <p>
      * <code>CURRENT</code>: The stack is currently up to date with the stack set.</p>
      * </li> </ul>
      */
@@ -420,57 +428,57 @@ namespace Model
 
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The organization root ID or
-     * organizational unit (OU) IDs that you specified for <a
+     * <p>[Service-managed permissions] The organization root ID or organizational unit
+     * (OU) IDs that you specified for <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
      */
     inline const Aws::String& GetOrganizationalUnitId() const{ return m_organizationalUnitId; }
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The organization root ID or
-     * organizational unit (OU) IDs that you specified for <a
+     * <p>[Service-managed permissions] The organization root ID or organizational unit
+     * (OU) IDs that you specified for <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
      */
     inline bool OrganizationalUnitIdHasBeenSet() const { return m_organizationalUnitIdHasBeenSet; }
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The organization root ID or
-     * organizational unit (OU) IDs that you specified for <a
+     * <p>[Service-managed permissions] The organization root ID or organizational unit
+     * (OU) IDs that you specified for <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
      */
     inline void SetOrganizationalUnitId(const Aws::String& value) { m_organizationalUnitIdHasBeenSet = true; m_organizationalUnitId = value; }
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The organization root ID or
-     * organizational unit (OU) IDs that you specified for <a
+     * <p>[Service-managed permissions] The organization root ID or organizational unit
+     * (OU) IDs that you specified for <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
      */
     inline void SetOrganizationalUnitId(Aws::String&& value) { m_organizationalUnitIdHasBeenSet = true; m_organizationalUnitId = std::move(value); }
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The organization root ID or
-     * organizational unit (OU) IDs that you specified for <a
+     * <p>[Service-managed permissions] The organization root ID or organizational unit
+     * (OU) IDs that you specified for <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
      */
     inline void SetOrganizationalUnitId(const char* value) { m_organizationalUnitIdHasBeenSet = true; m_organizationalUnitId.assign(value); }
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The organization root ID or
-     * organizational unit (OU) IDs that you specified for <a
+     * <p>[Service-managed permissions] The organization root ID or organizational unit
+     * (OU) IDs that you specified for <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
      */
     inline StackInstanceSummary& WithOrganizationalUnitId(const Aws::String& value) { SetOrganizationalUnitId(value); return *this;}
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The organization root ID or
-     * organizational unit (OU) IDs that you specified for <a
+     * <p>[Service-managed permissions] The organization root ID or organizational unit
+     * (OU) IDs that you specified for <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
      */
     inline StackInstanceSummary& WithOrganizationalUnitId(Aws::String&& value) { SetOrganizationalUnitId(std::move(value)); return *this;}
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The organization root ID or
-     * organizational unit (OU) IDs that you specified for <a
+     * <p>[Service-managed permissions] The organization root ID or organizational unit
+     * (OU) IDs that you specified for <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
      */
     inline StackInstanceSummary& WithOrganizationalUnitId(const char* value) { SetOrganizationalUnitId(value); return *this;}
@@ -478,12 +486,12 @@ namespace Model
 
     /**
      * <p>Status of the stack instance's actual configuration compared to the expected
-     * template and parameter configuration of the stack set to which it belongs. </p>
+     * template and parameter configuration of the stack set to which it belongs.</p>
      * <ul> <li> <p> <code>DRIFTED</code>: The stack differs from the expected template
      * and parameter configuration of the stack set to which it belongs. A stack
      * instance is considered to have drifted if one or more of the resources in the
-     * associated stack have drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: AWS
-     * CloudFormation has not checked if the stack instance differs from its expected
+     * associated stack have drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>:
+     * CloudFormation hasn't checked if the stack instance differs from its expected
      * stack set configuration.</p> </li> <li> <p> <code>IN_SYNC</code>: The stack
      * instance's actual configuration matches its expected stack set
      * configuration.</p> </li> <li> <p> <code>UNKNOWN</code>: This value is reserved
@@ -493,12 +501,12 @@ namespace Model
 
     /**
      * <p>Status of the stack instance's actual configuration compared to the expected
-     * template and parameter configuration of the stack set to which it belongs. </p>
+     * template and parameter configuration of the stack set to which it belongs.</p>
      * <ul> <li> <p> <code>DRIFTED</code>: The stack differs from the expected template
      * and parameter configuration of the stack set to which it belongs. A stack
      * instance is considered to have drifted if one or more of the resources in the
-     * associated stack have drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: AWS
-     * CloudFormation has not checked if the stack instance differs from its expected
+     * associated stack have drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>:
+     * CloudFormation hasn't checked if the stack instance differs from its expected
      * stack set configuration.</p> </li> <li> <p> <code>IN_SYNC</code>: The stack
      * instance's actual configuration matches its expected stack set
      * configuration.</p> </li> <li> <p> <code>UNKNOWN</code>: This value is reserved
@@ -508,12 +516,12 @@ namespace Model
 
     /**
      * <p>Status of the stack instance's actual configuration compared to the expected
-     * template and parameter configuration of the stack set to which it belongs. </p>
+     * template and parameter configuration of the stack set to which it belongs.</p>
      * <ul> <li> <p> <code>DRIFTED</code>: The stack differs from the expected template
      * and parameter configuration of the stack set to which it belongs. A stack
      * instance is considered to have drifted if one or more of the resources in the
-     * associated stack have drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: AWS
-     * CloudFormation has not checked if the stack instance differs from its expected
+     * associated stack have drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>:
+     * CloudFormation hasn't checked if the stack instance differs from its expected
      * stack set configuration.</p> </li> <li> <p> <code>IN_SYNC</code>: The stack
      * instance's actual configuration matches its expected stack set
      * configuration.</p> </li> <li> <p> <code>UNKNOWN</code>: This value is reserved
@@ -523,12 +531,12 @@ namespace Model
 
     /**
      * <p>Status of the stack instance's actual configuration compared to the expected
-     * template and parameter configuration of the stack set to which it belongs. </p>
+     * template and parameter configuration of the stack set to which it belongs.</p>
      * <ul> <li> <p> <code>DRIFTED</code>: The stack differs from the expected template
      * and parameter configuration of the stack set to which it belongs. A stack
      * instance is considered to have drifted if one or more of the resources in the
-     * associated stack have drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: AWS
-     * CloudFormation has not checked if the stack instance differs from its expected
+     * associated stack have drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>:
+     * CloudFormation hasn't checked if the stack instance differs from its expected
      * stack set configuration.</p> </li> <li> <p> <code>IN_SYNC</code>: The stack
      * instance's actual configuration matches its expected stack set
      * configuration.</p> </li> <li> <p> <code>UNKNOWN</code>: This value is reserved
@@ -538,12 +546,12 @@ namespace Model
 
     /**
      * <p>Status of the stack instance's actual configuration compared to the expected
-     * template and parameter configuration of the stack set to which it belongs. </p>
+     * template and parameter configuration of the stack set to which it belongs.</p>
      * <ul> <li> <p> <code>DRIFTED</code>: The stack differs from the expected template
      * and parameter configuration of the stack set to which it belongs. A stack
      * instance is considered to have drifted if one or more of the resources in the
-     * associated stack have drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: AWS
-     * CloudFormation has not checked if the stack instance differs from its expected
+     * associated stack have drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>:
+     * CloudFormation hasn't checked if the stack instance differs from its expected
      * stack set configuration.</p> </li> <li> <p> <code>IN_SYNC</code>: The stack
      * instance's actual configuration matches its expected stack set
      * configuration.</p> </li> <li> <p> <code>UNKNOWN</code>: This value is reserved
@@ -553,12 +561,12 @@ namespace Model
 
     /**
      * <p>Status of the stack instance's actual configuration compared to the expected
-     * template and parameter configuration of the stack set to which it belongs. </p>
+     * template and parameter configuration of the stack set to which it belongs.</p>
      * <ul> <li> <p> <code>DRIFTED</code>: The stack differs from the expected template
      * and parameter configuration of the stack set to which it belongs. A stack
      * instance is considered to have drifted if one or more of the resources in the
-     * associated stack have drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>: AWS
-     * CloudFormation has not checked if the stack instance differs from its expected
+     * associated stack have drifted.</p> </li> <li> <p> <code>NOT_CHECKED</code>:
+     * CloudFormation hasn't checked if the stack instance differs from its expected
      * stack set configuration.</p> </li> <li> <p> <code>IN_SYNC</code>: The stack
      * instance's actual configuration matches its expected stack set
      * configuration.</p> </li> <li> <p> <code>UNKNOWN</code>: This value is reserved
@@ -570,42 +578,42 @@ namespace Model
     /**
      * <p>Most recent time when CloudFormation performed a drift detection operation on
      * the stack instance. This value will be <code>NULL</code> for any stack instance
-     * on which drift detection has not yet been performed.</p>
+     * on which drift detection hasn't yet been performed.</p>
      */
     inline const Aws::Utils::DateTime& GetLastDriftCheckTimestamp() const{ return m_lastDriftCheckTimestamp; }
 
     /**
      * <p>Most recent time when CloudFormation performed a drift detection operation on
      * the stack instance. This value will be <code>NULL</code> for any stack instance
-     * on which drift detection has not yet been performed.</p>
+     * on which drift detection hasn't yet been performed.</p>
      */
     inline bool LastDriftCheckTimestampHasBeenSet() const { return m_lastDriftCheckTimestampHasBeenSet; }
 
     /**
      * <p>Most recent time when CloudFormation performed a drift detection operation on
      * the stack instance. This value will be <code>NULL</code> for any stack instance
-     * on which drift detection has not yet been performed.</p>
+     * on which drift detection hasn't yet been performed.</p>
      */
     inline void SetLastDriftCheckTimestamp(const Aws::Utils::DateTime& value) { m_lastDriftCheckTimestampHasBeenSet = true; m_lastDriftCheckTimestamp = value; }
 
     /**
      * <p>Most recent time when CloudFormation performed a drift detection operation on
      * the stack instance. This value will be <code>NULL</code> for any stack instance
-     * on which drift detection has not yet been performed.</p>
+     * on which drift detection hasn't yet been performed.</p>
      */
     inline void SetLastDriftCheckTimestamp(Aws::Utils::DateTime&& value) { m_lastDriftCheckTimestampHasBeenSet = true; m_lastDriftCheckTimestamp = std::move(value); }
 
     /**
      * <p>Most recent time when CloudFormation performed a drift detection operation on
      * the stack instance. This value will be <code>NULL</code> for any stack instance
-     * on which drift detection has not yet been performed.</p>
+     * on which drift detection hasn't yet been performed.</p>
      */
     inline StackInstanceSummary& WithLastDriftCheckTimestamp(const Aws::Utils::DateTime& value) { SetLastDriftCheckTimestamp(value); return *this;}
 
     /**
      * <p>Most recent time when CloudFormation performed a drift detection operation on
      * the stack instance. This value will be <code>NULL</code> for any stack instance
-     * on which drift detection has not yet been performed.</p>
+     * on which drift detection hasn't yet been performed.</p>
      */
     inline StackInstanceSummary& WithLastDriftCheckTimestamp(Aws::Utils::DateTime&& value) { SetLastDriftCheckTimestamp(std::move(value)); return *this;}
 

@@ -7,6 +7,7 @@
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/SageMakerRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/model/ParallelismConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -156,6 +157,43 @@ namespace Model
      */
     inline UpdatePipelineExecutionRequest& WithPipelineExecutionDisplayName(const char* value) { SetPipelineExecutionDisplayName(value); return *this;}
 
+
+    /**
+     * <p>This configuration, if specified, overrides the parallelism configuration of
+     * the parent pipeline for this specific run.</p>
+     */
+    inline const ParallelismConfiguration& GetParallelismConfiguration() const{ return m_parallelismConfiguration; }
+
+    /**
+     * <p>This configuration, if specified, overrides the parallelism configuration of
+     * the parent pipeline for this specific run.</p>
+     */
+    inline bool ParallelismConfigurationHasBeenSet() const { return m_parallelismConfigurationHasBeenSet; }
+
+    /**
+     * <p>This configuration, if specified, overrides the parallelism configuration of
+     * the parent pipeline for this specific run.</p>
+     */
+    inline void SetParallelismConfiguration(const ParallelismConfiguration& value) { m_parallelismConfigurationHasBeenSet = true; m_parallelismConfiguration = value; }
+
+    /**
+     * <p>This configuration, if specified, overrides the parallelism configuration of
+     * the parent pipeline for this specific run.</p>
+     */
+    inline void SetParallelismConfiguration(ParallelismConfiguration&& value) { m_parallelismConfigurationHasBeenSet = true; m_parallelismConfiguration = std::move(value); }
+
+    /**
+     * <p>This configuration, if specified, overrides the parallelism configuration of
+     * the parent pipeline for this specific run.</p>
+     */
+    inline UpdatePipelineExecutionRequest& WithParallelismConfiguration(const ParallelismConfiguration& value) { SetParallelismConfiguration(value); return *this;}
+
+    /**
+     * <p>This configuration, if specified, overrides the parallelism configuration of
+     * the parent pipeline for this specific run.</p>
+     */
+    inline UpdatePipelineExecutionRequest& WithParallelismConfiguration(ParallelismConfiguration&& value) { SetParallelismConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_pipelineExecutionArn;
@@ -166,6 +204,9 @@ namespace Model
 
     Aws::String m_pipelineExecutionDisplayName;
     bool m_pipelineExecutionDisplayNameHasBeenSet;
+
+    ParallelismConfiguration m_parallelismConfiguration;
+    bool m_parallelismConfigurationHasBeenSet;
   };
 
 } // namespace Model

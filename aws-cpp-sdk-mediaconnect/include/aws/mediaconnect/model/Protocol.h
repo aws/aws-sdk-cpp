@@ -20,7 +20,11 @@ namespace Model
     rtp_fec,
     rtp,
     zixi_pull,
-    rist
+    rist,
+    st2110_jpegxs,
+    cdi,
+    srt_listener,
+    fujitsu_qos
   };
 
 namespace ProtocolMapper

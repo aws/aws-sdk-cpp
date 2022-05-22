@@ -9,6 +9,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/macie2/model/SeverityLevel.h>
 #include <utility>
 
 namespace Aws
@@ -197,64 +198,64 @@ namespace Model
 
 
     /**
-     * <p>An array that lists specific character sequences (ignore words) to exclude
-     * from the results. If the text matched by the regular expression is the same as
+     * <p>An array that lists specific character sequences (<i>ignore words</i>) to
+     * exclude from the results. If the text matched by the regular expression contains
      * any string in this array, Amazon Macie ignores it. Ignore words are case
      * sensitive.</p>
      */
     inline const Aws::Vector<Aws::String>& GetIgnoreWords() const{ return m_ignoreWords; }
 
     /**
-     * <p>An array that lists specific character sequences (ignore words) to exclude
-     * from the results. If the text matched by the regular expression is the same as
+     * <p>An array that lists specific character sequences (<i>ignore words</i>) to
+     * exclude from the results. If the text matched by the regular expression contains
      * any string in this array, Amazon Macie ignores it. Ignore words are case
      * sensitive.</p>
      */
     inline void SetIgnoreWords(const Aws::Vector<Aws::String>& value) { m_ignoreWords = value; }
 
     /**
-     * <p>An array that lists specific character sequences (ignore words) to exclude
-     * from the results. If the text matched by the regular expression is the same as
+     * <p>An array that lists specific character sequences (<i>ignore words</i>) to
+     * exclude from the results. If the text matched by the regular expression contains
      * any string in this array, Amazon Macie ignores it. Ignore words are case
      * sensitive.</p>
      */
     inline void SetIgnoreWords(Aws::Vector<Aws::String>&& value) { m_ignoreWords = std::move(value); }
 
     /**
-     * <p>An array that lists specific character sequences (ignore words) to exclude
-     * from the results. If the text matched by the regular expression is the same as
+     * <p>An array that lists specific character sequences (<i>ignore words</i>) to
+     * exclude from the results. If the text matched by the regular expression contains
      * any string in this array, Amazon Macie ignores it. Ignore words are case
      * sensitive.</p>
      */
     inline GetCustomDataIdentifierResult& WithIgnoreWords(const Aws::Vector<Aws::String>& value) { SetIgnoreWords(value); return *this;}
 
     /**
-     * <p>An array that lists specific character sequences (ignore words) to exclude
-     * from the results. If the text matched by the regular expression is the same as
+     * <p>An array that lists specific character sequences (<i>ignore words</i>) to
+     * exclude from the results. If the text matched by the regular expression contains
      * any string in this array, Amazon Macie ignores it. Ignore words are case
      * sensitive.</p>
      */
     inline GetCustomDataIdentifierResult& WithIgnoreWords(Aws::Vector<Aws::String>&& value) { SetIgnoreWords(std::move(value)); return *this;}
 
     /**
-     * <p>An array that lists specific character sequences (ignore words) to exclude
-     * from the results. If the text matched by the regular expression is the same as
+     * <p>An array that lists specific character sequences (<i>ignore words</i>) to
+     * exclude from the results. If the text matched by the regular expression contains
      * any string in this array, Amazon Macie ignores it. Ignore words are case
      * sensitive.</p>
      */
     inline GetCustomDataIdentifierResult& AddIgnoreWords(const Aws::String& value) { m_ignoreWords.push_back(value); return *this; }
 
     /**
-     * <p>An array that lists specific character sequences (ignore words) to exclude
-     * from the results. If the text matched by the regular expression is the same as
+     * <p>An array that lists specific character sequences (<i>ignore words</i>) to
+     * exclude from the results. If the text matched by the regular expression contains
      * any string in this array, Amazon Macie ignores it. Ignore words are case
      * sensitive.</p>
      */
     inline GetCustomDataIdentifierResult& AddIgnoreWords(Aws::String&& value) { m_ignoreWords.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>An array that lists specific character sequences (ignore words) to exclude
-     * from the results. If the text matched by the regular expression is the same as
+     * <p>An array that lists specific character sequences (<i>ignore words</i>) to
+     * exclude from the results. If the text matched by the regular expression contains
      * any string in this array, Amazon Macie ignores it. Ignore words are case
      * sensitive.</p>
      */
@@ -262,83 +263,83 @@ namespace Model
 
 
     /**
-     * <p>An array that lists specific character sequences (keywords), one of which
-     * must be within proximity (maximumMatchDistance) of the regular expression to
-     * match. Keywords aren't case sensitive.</p>
+     * <p>An array that lists specific character sequences (<i>keywords</i>), one of
+     * which must be within proximity (maximumMatchDistance) of the regular expression
+     * to match. Keywords aren't case sensitive.</p>
      */
     inline const Aws::Vector<Aws::String>& GetKeywords() const{ return m_keywords; }
 
     /**
-     * <p>An array that lists specific character sequences (keywords), one of which
-     * must be within proximity (maximumMatchDistance) of the regular expression to
-     * match. Keywords aren't case sensitive.</p>
+     * <p>An array that lists specific character sequences (<i>keywords</i>), one of
+     * which must be within proximity (maximumMatchDistance) of the regular expression
+     * to match. Keywords aren't case sensitive.</p>
      */
     inline void SetKeywords(const Aws::Vector<Aws::String>& value) { m_keywords = value; }
 
     /**
-     * <p>An array that lists specific character sequences (keywords), one of which
-     * must be within proximity (maximumMatchDistance) of the regular expression to
-     * match. Keywords aren't case sensitive.</p>
+     * <p>An array that lists specific character sequences (<i>keywords</i>), one of
+     * which must be within proximity (maximumMatchDistance) of the regular expression
+     * to match. Keywords aren't case sensitive.</p>
      */
     inline void SetKeywords(Aws::Vector<Aws::String>&& value) { m_keywords = std::move(value); }
 
     /**
-     * <p>An array that lists specific character sequences (keywords), one of which
-     * must be within proximity (maximumMatchDistance) of the regular expression to
-     * match. Keywords aren't case sensitive.</p>
+     * <p>An array that lists specific character sequences (<i>keywords</i>), one of
+     * which must be within proximity (maximumMatchDistance) of the regular expression
+     * to match. Keywords aren't case sensitive.</p>
      */
     inline GetCustomDataIdentifierResult& WithKeywords(const Aws::Vector<Aws::String>& value) { SetKeywords(value); return *this;}
 
     /**
-     * <p>An array that lists specific character sequences (keywords), one of which
-     * must be within proximity (maximumMatchDistance) of the regular expression to
-     * match. Keywords aren't case sensitive.</p>
+     * <p>An array that lists specific character sequences (<i>keywords</i>), one of
+     * which must be within proximity (maximumMatchDistance) of the regular expression
+     * to match. Keywords aren't case sensitive.</p>
      */
     inline GetCustomDataIdentifierResult& WithKeywords(Aws::Vector<Aws::String>&& value) { SetKeywords(std::move(value)); return *this;}
 
     /**
-     * <p>An array that lists specific character sequences (keywords), one of which
-     * must be within proximity (maximumMatchDistance) of the regular expression to
-     * match. Keywords aren't case sensitive.</p>
+     * <p>An array that lists specific character sequences (<i>keywords</i>), one of
+     * which must be within proximity (maximumMatchDistance) of the regular expression
+     * to match. Keywords aren't case sensitive.</p>
      */
     inline GetCustomDataIdentifierResult& AddKeywords(const Aws::String& value) { m_keywords.push_back(value); return *this; }
 
     /**
-     * <p>An array that lists specific character sequences (keywords), one of which
-     * must be within proximity (maximumMatchDistance) of the regular expression to
-     * match. Keywords aren't case sensitive.</p>
+     * <p>An array that lists specific character sequences (<i>keywords</i>), one of
+     * which must be within proximity (maximumMatchDistance) of the regular expression
+     * to match. Keywords aren't case sensitive.</p>
      */
     inline GetCustomDataIdentifierResult& AddKeywords(Aws::String&& value) { m_keywords.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>An array that lists specific character sequences (keywords), one of which
-     * must be within proximity (maximumMatchDistance) of the regular expression to
-     * match. Keywords aren't case sensitive.</p>
+     * <p>An array that lists specific character sequences (<i>keywords</i>), one of
+     * which must be within proximity (maximumMatchDistance) of the regular expression
+     * to match. Keywords aren't case sensitive.</p>
      */
     inline GetCustomDataIdentifierResult& AddKeywords(const char* value) { m_keywords.push_back(value); return *this; }
 
 
     /**
      * <p>The maximum number of characters that can exist between text that matches the
-     * regex pattern and the character sequences specified by the keywords array. Macie
-     * includes or excludes a result based on the proximity of a keyword to text that
-     * matches the regex pattern.</p>
+     * regular expression and the character sequences specified by the keywords array.
+     * Amazon Macie includes or excludes a result based on the proximity of a keyword
+     * to text that matches the regular expression.</p>
      */
     inline int GetMaximumMatchDistance() const{ return m_maximumMatchDistance; }
 
     /**
      * <p>The maximum number of characters that can exist between text that matches the
-     * regex pattern and the character sequences specified by the keywords array. Macie
-     * includes or excludes a result based on the proximity of a keyword to text that
-     * matches the regex pattern.</p>
+     * regular expression and the character sequences specified by the keywords array.
+     * Amazon Macie includes or excludes a result based on the proximity of a keyword
+     * to text that matches the regular expression.</p>
      */
     inline void SetMaximumMatchDistance(int value) { m_maximumMatchDistance = value; }
 
     /**
      * <p>The maximum number of characters that can exist between text that matches the
-     * regex pattern and the character sequences specified by the keywords array. Macie
-     * includes or excludes a result based on the proximity of a keyword to text that
-     * matches the regex pattern.</p>
+     * regular expression and the character sequences specified by the keywords array.
+     * Amazon Macie includes or excludes a result based on the proximity of a keyword
+     * to text that matches the regular expression.</p>
      */
     inline GetCustomDataIdentifierResult& WithMaximumMatchDistance(int value) { SetMaximumMatchDistance(value); return *this;}
 
@@ -413,6 +414,77 @@ namespace Model
      * <p>The regular expression (<i>regex</i>) that defines the pattern to match.</p>
      */
     inline GetCustomDataIdentifierResult& WithRegex(const char* value) { SetRegex(value); return *this;}
+
+
+    /**
+     * <p>Specifies the severity that's assigned to findings that the custom data
+     * identifier produces, based on the number of occurrences of text that matches the
+     * custom data identifier's detection criteria. By default, Amazon Macie creates
+     * findings for S3 objects that contain at least one occurrence of text that
+     * matches the detection criteria, and Macie assigns the MEDIUM severity to those
+     * findings.</p>
+     */
+    inline const Aws::Vector<SeverityLevel>& GetSeverityLevels() const{ return m_severityLevels; }
+
+    /**
+     * <p>Specifies the severity that's assigned to findings that the custom data
+     * identifier produces, based on the number of occurrences of text that matches the
+     * custom data identifier's detection criteria. By default, Amazon Macie creates
+     * findings for S3 objects that contain at least one occurrence of text that
+     * matches the detection criteria, and Macie assigns the MEDIUM severity to those
+     * findings.</p>
+     */
+    inline void SetSeverityLevels(const Aws::Vector<SeverityLevel>& value) { m_severityLevels = value; }
+
+    /**
+     * <p>Specifies the severity that's assigned to findings that the custom data
+     * identifier produces, based on the number of occurrences of text that matches the
+     * custom data identifier's detection criteria. By default, Amazon Macie creates
+     * findings for S3 objects that contain at least one occurrence of text that
+     * matches the detection criteria, and Macie assigns the MEDIUM severity to those
+     * findings.</p>
+     */
+    inline void SetSeverityLevels(Aws::Vector<SeverityLevel>&& value) { m_severityLevels = std::move(value); }
+
+    /**
+     * <p>Specifies the severity that's assigned to findings that the custom data
+     * identifier produces, based on the number of occurrences of text that matches the
+     * custom data identifier's detection criteria. By default, Amazon Macie creates
+     * findings for S3 objects that contain at least one occurrence of text that
+     * matches the detection criteria, and Macie assigns the MEDIUM severity to those
+     * findings.</p>
+     */
+    inline GetCustomDataIdentifierResult& WithSeverityLevels(const Aws::Vector<SeverityLevel>& value) { SetSeverityLevels(value); return *this;}
+
+    /**
+     * <p>Specifies the severity that's assigned to findings that the custom data
+     * identifier produces, based on the number of occurrences of text that matches the
+     * custom data identifier's detection criteria. By default, Amazon Macie creates
+     * findings for S3 objects that contain at least one occurrence of text that
+     * matches the detection criteria, and Macie assigns the MEDIUM severity to those
+     * findings.</p>
+     */
+    inline GetCustomDataIdentifierResult& WithSeverityLevels(Aws::Vector<SeverityLevel>&& value) { SetSeverityLevels(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the severity that's assigned to findings that the custom data
+     * identifier produces, based on the number of occurrences of text that matches the
+     * custom data identifier's detection criteria. By default, Amazon Macie creates
+     * findings for S3 objects that contain at least one occurrence of text that
+     * matches the detection criteria, and Macie assigns the MEDIUM severity to those
+     * findings.</p>
+     */
+    inline GetCustomDataIdentifierResult& AddSeverityLevels(const SeverityLevel& value) { m_severityLevels.push_back(value); return *this; }
+
+    /**
+     * <p>Specifies the severity that's assigned to findings that the custom data
+     * identifier produces, based on the number of occurrences of text that matches the
+     * custom data identifier's detection criteria. By default, Amazon Macie creates
+     * findings for S3 objects that contain at least one occurrence of text that
+     * matches the detection criteria, and Macie assigns the MEDIUM severity to those
+     * findings.</p>
+     */
+    inline GetCustomDataIdentifierResult& AddSeverityLevels(SeverityLevel&& value) { m_severityLevels.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -508,6 +580,8 @@ namespace Model
     Aws::String m_name;
 
     Aws::String m_regex;
+
+    Aws::Vector<SeverityLevel> m_severityLevels;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
   };

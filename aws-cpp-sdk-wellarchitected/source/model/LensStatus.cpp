@@ -23,6 +23,8 @@ namespace Aws
         static const int CURRENT_HASH = HashingUtils::HashString("CURRENT");
         static const int NOT_CURRENT_HASH = HashingUtils::HashString("NOT_CURRENT");
         static const int DEPRECATED_HASH = HashingUtils::HashString("DEPRECATED");
+        static const int DELETED_HASH = HashingUtils::HashString("DELETED");
+        static const int UNSHARED_HASH = HashingUtils::HashString("UNSHARED");
 
 
         LensStatus GetLensStatusForName(const Aws::String& name)
@@ -39,6 +41,14 @@ namespace Aws
           else if (hashCode == DEPRECATED_HASH)
           {
             return LensStatus::DEPRECATED;
+          }
+          else if (hashCode == DELETED_HASH)
+          {
+            return LensStatus::DELETED;
+          }
+          else if (hashCode == UNSHARED_HASH)
+          {
+            return LensStatus::UNSHARED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +70,10 @@ namespace Aws
             return "NOT_CURRENT";
           case LensStatus::DEPRECATED:
             return "DEPRECATED";
+          case LensStatus::DELETED:
+            return "DELETED";
+          case LensStatus::UNSHARED:
+            return "UNSHARED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

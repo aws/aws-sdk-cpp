@@ -6,6 +6,14 @@
 #pragma once
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}_EXPORTS.h>
 \#include <aws/core/utils/memory/stl/AWSString.h>
+#foreach($enumMember in $enumModel.members)
+#if($enumMember.predefined)
+
+\#if defined(_WIN32) && defined($enumMember.memberName)
+#undef $enumMember.memberName
+#endif
+#end
+#end
 
 namespace ${rootNamespace}
 {

@@ -28,8 +28,9 @@ namespace Model
 {
 
   /**
-   * <p>An object that provides information about a specific version of a
-   * <a>Solution</a>.</p><p><h3>See Also:</h3>   <a
+   * <p>An object that provides information about a specific version of a <a
+   * href="https://docs.aws.amazon.com/personalize/latest/dg/API_Solution.html">Solution</a>
+   * in a Custom dataset group.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/SolutionVersion">AWS
    * API Reference</a></p>
    */
@@ -378,80 +379,104 @@ namespace Model
 
 
     /**
-     * <p>The scope of training used to create the solution version. The
+     * <p>The scope of training to be performed when creating the solution version. The
      * <code>FULL</code> option trains the solution version based on the entirety of
      * the input solution's training data, while the <code>UPDATE</code> option
-     * processes only the training data that has changed since the creation of the last
-     * solution version. Choose <code>UPDATE</code> when you want to start recommending
-     * items added to the dataset without retraining the model.</p>  <p>The
-     * <code>UPDATE</code> option can only be used after you've created a solution
-     * version with the <code>FULL</code> option and the training solution uses the
-     * <a>native-recipe-hrnn-coldstart</a>.</p> 
+     * processes only the data that has changed in comparison to the input solution.
+     * Choose <code>UPDATE</code> when you want to incrementally update your solution
+     * version instead of creating an entirely new one.</p>  <p>The
+     * <code>UPDATE</code> option can only be used when you already have an active
+     * solution version created from the input solution using the <code>FULL</code>
+     * option and the input solution was trained with the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>
+     * recipe or the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a>
+     * recipe.</p> 
      */
     inline const TrainingMode& GetTrainingMode() const{ return m_trainingMode; }
 
     /**
-     * <p>The scope of training used to create the solution version. The
+     * <p>The scope of training to be performed when creating the solution version. The
      * <code>FULL</code> option trains the solution version based on the entirety of
      * the input solution's training data, while the <code>UPDATE</code> option
-     * processes only the training data that has changed since the creation of the last
-     * solution version. Choose <code>UPDATE</code> when you want to start recommending
-     * items added to the dataset without retraining the model.</p>  <p>The
-     * <code>UPDATE</code> option can only be used after you've created a solution
-     * version with the <code>FULL</code> option and the training solution uses the
-     * <a>native-recipe-hrnn-coldstart</a>.</p> 
+     * processes only the data that has changed in comparison to the input solution.
+     * Choose <code>UPDATE</code> when you want to incrementally update your solution
+     * version instead of creating an entirely new one.</p>  <p>The
+     * <code>UPDATE</code> option can only be used when you already have an active
+     * solution version created from the input solution using the <code>FULL</code>
+     * option and the input solution was trained with the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>
+     * recipe or the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a>
+     * recipe.</p> 
      */
     inline bool TrainingModeHasBeenSet() const { return m_trainingModeHasBeenSet; }
 
     /**
-     * <p>The scope of training used to create the solution version. The
+     * <p>The scope of training to be performed when creating the solution version. The
      * <code>FULL</code> option trains the solution version based on the entirety of
      * the input solution's training data, while the <code>UPDATE</code> option
-     * processes only the training data that has changed since the creation of the last
-     * solution version. Choose <code>UPDATE</code> when you want to start recommending
-     * items added to the dataset without retraining the model.</p>  <p>The
-     * <code>UPDATE</code> option can only be used after you've created a solution
-     * version with the <code>FULL</code> option and the training solution uses the
-     * <a>native-recipe-hrnn-coldstart</a>.</p> 
+     * processes only the data that has changed in comparison to the input solution.
+     * Choose <code>UPDATE</code> when you want to incrementally update your solution
+     * version instead of creating an entirely new one.</p>  <p>The
+     * <code>UPDATE</code> option can only be used when you already have an active
+     * solution version created from the input solution using the <code>FULL</code>
+     * option and the input solution was trained with the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>
+     * recipe or the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a>
+     * recipe.</p> 
      */
     inline void SetTrainingMode(const TrainingMode& value) { m_trainingModeHasBeenSet = true; m_trainingMode = value; }
 
     /**
-     * <p>The scope of training used to create the solution version. The
+     * <p>The scope of training to be performed when creating the solution version. The
      * <code>FULL</code> option trains the solution version based on the entirety of
      * the input solution's training data, while the <code>UPDATE</code> option
-     * processes only the training data that has changed since the creation of the last
-     * solution version. Choose <code>UPDATE</code> when you want to start recommending
-     * items added to the dataset without retraining the model.</p>  <p>The
-     * <code>UPDATE</code> option can only be used after you've created a solution
-     * version with the <code>FULL</code> option and the training solution uses the
-     * <a>native-recipe-hrnn-coldstart</a>.</p> 
+     * processes only the data that has changed in comparison to the input solution.
+     * Choose <code>UPDATE</code> when you want to incrementally update your solution
+     * version instead of creating an entirely new one.</p>  <p>The
+     * <code>UPDATE</code> option can only be used when you already have an active
+     * solution version created from the input solution using the <code>FULL</code>
+     * option and the input solution was trained with the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>
+     * recipe or the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a>
+     * recipe.</p> 
      */
     inline void SetTrainingMode(TrainingMode&& value) { m_trainingModeHasBeenSet = true; m_trainingMode = std::move(value); }
 
     /**
-     * <p>The scope of training used to create the solution version. The
+     * <p>The scope of training to be performed when creating the solution version. The
      * <code>FULL</code> option trains the solution version based on the entirety of
      * the input solution's training data, while the <code>UPDATE</code> option
-     * processes only the training data that has changed since the creation of the last
-     * solution version. Choose <code>UPDATE</code> when you want to start recommending
-     * items added to the dataset without retraining the model.</p>  <p>The
-     * <code>UPDATE</code> option can only be used after you've created a solution
-     * version with the <code>FULL</code> option and the training solution uses the
-     * <a>native-recipe-hrnn-coldstart</a>.</p> 
+     * processes only the data that has changed in comparison to the input solution.
+     * Choose <code>UPDATE</code> when you want to incrementally update your solution
+     * version instead of creating an entirely new one.</p>  <p>The
+     * <code>UPDATE</code> option can only be used when you already have an active
+     * solution version created from the input solution using the <code>FULL</code>
+     * option and the input solution was trained with the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>
+     * recipe or the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a>
+     * recipe.</p> 
      */
     inline SolutionVersion& WithTrainingMode(const TrainingMode& value) { SetTrainingMode(value); return *this;}
 
     /**
-     * <p>The scope of training used to create the solution version. The
+     * <p>The scope of training to be performed when creating the solution version. The
      * <code>FULL</code> option trains the solution version based on the entirety of
      * the input solution's training data, while the <code>UPDATE</code> option
-     * processes only the training data that has changed since the creation of the last
-     * solution version. Choose <code>UPDATE</code> when you want to start recommending
-     * items added to the dataset without retraining the model.</p>  <p>The
-     * <code>UPDATE</code> option can only be used after you've created a solution
-     * version with the <code>FULL</code> option and the training solution uses the
-     * <a>native-recipe-hrnn-coldstart</a>.</p> 
+     * processes only the data that has changed in comparison to the input solution.
+     * Choose <code>UPDATE</code> when you want to incrementally update your solution
+     * version instead of creating an entirely new one.</p>  <p>The
+     * <code>UPDATE</code> option can only be used when you already have an active
+     * solution version created from the input solution using the <code>FULL</code>
+     * option and the input solution was trained with the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>
+     * recipe or the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a>
+     * recipe.</p> 
      */
     inline SolutionVersion& WithTrainingMode(TrainingMode&& value) { SetTrainingMode(std::move(value)); return *this;}
 
@@ -497,7 +522,8 @@ namespace Model
      * <p>The status of the solution version.</p> <p>A solution version can be in one
      * of the following states:</p> <ul> <li> <p>CREATE PENDING</p> </li> <li>
      * <p>CREATE IN_PROGRESS</p> </li> <li> <p>ACTIVE</p> </li> <li> <p>CREATE
-     * FAILED</p> </li> </ul>
+     * FAILED</p> </li> <li> <p>CREATE STOPPING</p> </li> <li> <p>CREATE STOPPED</p>
+     * </li> </ul>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
@@ -505,7 +531,8 @@ namespace Model
      * <p>The status of the solution version.</p> <p>A solution version can be in one
      * of the following states:</p> <ul> <li> <p>CREATE PENDING</p> </li> <li>
      * <p>CREATE IN_PROGRESS</p> </li> <li> <p>ACTIVE</p> </li> <li> <p>CREATE
-     * FAILED</p> </li> </ul>
+     * FAILED</p> </li> <li> <p>CREATE STOPPING</p> </li> <li> <p>CREATE STOPPED</p>
+     * </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
@@ -513,7 +540,8 @@ namespace Model
      * <p>The status of the solution version.</p> <p>A solution version can be in one
      * of the following states:</p> <ul> <li> <p>CREATE PENDING</p> </li> <li>
      * <p>CREATE IN_PROGRESS</p> </li> <li> <p>ACTIVE</p> </li> <li> <p>CREATE
-     * FAILED</p> </li> </ul>
+     * FAILED</p> </li> <li> <p>CREATE STOPPING</p> </li> <li> <p>CREATE STOPPED</p>
+     * </li> </ul>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
@@ -521,7 +549,8 @@ namespace Model
      * <p>The status of the solution version.</p> <p>A solution version can be in one
      * of the following states:</p> <ul> <li> <p>CREATE PENDING</p> </li> <li>
      * <p>CREATE IN_PROGRESS</p> </li> <li> <p>ACTIVE</p> </li> <li> <p>CREATE
-     * FAILED</p> </li> </ul>
+     * FAILED</p> </li> <li> <p>CREATE STOPPING</p> </li> <li> <p>CREATE STOPPED</p>
+     * </li> </ul>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
@@ -529,7 +558,8 @@ namespace Model
      * <p>The status of the solution version.</p> <p>A solution version can be in one
      * of the following states:</p> <ul> <li> <p>CREATE PENDING</p> </li> <li>
      * <p>CREATE IN_PROGRESS</p> </li> <li> <p>ACTIVE</p> </li> <li> <p>CREATE
-     * FAILED</p> </li> </ul>
+     * FAILED</p> </li> <li> <p>CREATE STOPPING</p> </li> <li> <p>CREATE STOPPED</p>
+     * </li> </ul>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
@@ -537,7 +567,8 @@ namespace Model
      * <p>The status of the solution version.</p> <p>A solution version can be in one
      * of the following states:</p> <ul> <li> <p>CREATE PENDING</p> </li> <li>
      * <p>CREATE IN_PROGRESS</p> </li> <li> <p>ACTIVE</p> </li> <li> <p>CREATE
-     * FAILED</p> </li> </ul>
+     * FAILED</p> </li> <li> <p>CREATE STOPPING</p> </li> <li> <p>CREATE STOPPED</p>
+     * </li> </ul>
      */
     inline SolutionVersion& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
@@ -545,7 +576,8 @@ namespace Model
      * <p>The status of the solution version.</p> <p>A solution version can be in one
      * of the following states:</p> <ul> <li> <p>CREATE PENDING</p> </li> <li>
      * <p>CREATE IN_PROGRESS</p> </li> <li> <p>ACTIVE</p> </li> <li> <p>CREATE
-     * FAILED</p> </li> </ul>
+     * FAILED</p> </li> <li> <p>CREATE STOPPING</p> </li> <li> <p>CREATE STOPPED</p>
+     * </li> </ul>
      */
     inline SolutionVersion& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -553,7 +585,8 @@ namespace Model
      * <p>The status of the solution version.</p> <p>A solution version can be in one
      * of the following states:</p> <ul> <li> <p>CREATE PENDING</p> </li> <li>
      * <p>CREATE IN_PROGRESS</p> </li> <li> <p>ACTIVE</p> </li> <li> <p>CREATE
-     * FAILED</p> </li> </ul>
+     * FAILED</p> </li> <li> <p>CREATE STOPPING</p> </li> <li> <p>CREATE STOPPED</p>
+     * </li> </ul>
      */
     inline SolutionVersion& WithStatus(const char* value) { SetStatus(value); return *this;}
 

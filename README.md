@@ -4,12 +4,29 @@ The AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface fo
 AWS SDK for C++ is in now in General Availability and recommended for production use. We invite our customers to join
 the development efforts by submitting pull requests and sending us feedback and ideas via GitHub Issues.
 
-## Version 1.8 is now Available!
+## Version 1.9 is now Available!
 
-Version 1.8 introduces much asked for new features and changes to the SDK but, because this might also cause compatibility issues with previous versions we've decided to keep it as a seperate branch to make the transition less jarring.
+This release introduces a new Amazon S3 client, providing high throughput for Amazon S3 GET and PUT operations. The all new S3 Client is implemented on the top of the AWS Common Runtime (CRT) libraries, and is aptly named the "S3 CRT client". Lastly, there are also configuration updates related to Endpoint Discovery.
 
-For more information see the [What’s New in AWS SDK for CPP Version 1.8](https://github.com/aws/aws-sdk-cpp/wiki/What%E2%80%99s-New-in-AWS-SDK-for-CPP-Version-1.8) entry of the wiki, and also please provide any feedback you may have of these changes on our pinned [issue](https://github.com/aws/aws-sdk-cpp/issues/1373).
+All CRT libraries are git submodules of SDK for C++. It requires changes in git syntax to get all source code.
+* New users: If you haven't downloaded the source code for SDK for C++, you can get all git submodules recursively by:
+   ```
+   git clone --recurse-submodules https://github.com/aws/aws-sdk-cpp
+   ```
+* Existing users: If you’ve already downloaded source code for SDK for C++, e.g. in directory `aws-sdk-cpp`, you can update the git submodule by:
+   ```
+   cd aws-sdk-cpp
+   git checkout main
+   git pull origin main
+   git submodule update --init --recursive
+   ```
+* Alternatively, if you downloaded the code bundle from GitHub website and have no installation of git, you can download all the dependencies running the `prefetch_crt_dependency.sh` script from the root of the repository. It will download bundles of all dependencies from github website using curl and expand them in the right locations.
 
+
+See Wiki page [Improving S3 Throughput with AWS SDK for CPP v1.9](https://github.com/aws/aws-sdk-cpp/wiki/Improving-S3-Throughput-with-AWS-SDK-for-CPP-v1.9) for more details, and create a new [issue](https://github.com/aws/aws-sdk-cpp/issues/new/choose) or [pull request](https://github.com/aws/aws-sdk-cpp/compare) if you have any feedback on this new version.
+
+## Upgrade Your SDK to Get Latest Security Patches
+The AWS SDK for C++ has a dependency on cJSON. This dependency was updated to version 1.7.14 in the recent SDK updates. We would recommend to upgrade your SDK to version 1.9.67 for 1.9.x or 1.8.187 for 1.8.x. Thank @dkalinowski for reporting this issue: https://github.com/aws/aws-sdk-cpp/issues/1594
 
 __Jump To:__
 * [Getting Started](#Getting-Started)
@@ -39,73 +56,23 @@ __Jump To:__
    * For Auto Make build systems:
    ```sh
    cd <BUILD_DIR>
-   cmake <path-to-root-of-this-source-code> -DCMAKE_BUILD_TYPE=Debug
+   cmake <path-to-root-of-this-source-code> -DCMAKE_BUILD_TYPE=Debug -DCMAKE_PREFIX_PATH=<path-to-install>
    make
-   sudo make install
+   make install
    ```
 
    * For Visual Studio:
    ```sh
    cd <BUILD_DIR>
-   cmake <path-to-root-of-this-source-code> -G "Visual Studio 15 Win64" -DCMAKE_BUILD_TYPE=Debug
+   cmake <path-to-root-of-this-source-code> -G "Visual Studio 15 Win64" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_PREFIX_PATH=<path-to-install>
    msbuild ALL_BUILD.vcxproj /p:Configuration=Debug
    ```
 
    * For macOS - Xcode:
    ```sh
-   cmake <path-to-root-of-this-source-code> -G Xcode -DTARGET_ARCH="APPLE" -DCMAKE_BUILD_TYPE=Debug
+   cmake <path-to-root-of-this-source-code> -G Xcode -DTARGET_ARCH="APPLE" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_PREFIX_PATH=<path-to-install>
    xcodebuild -target ALL_BUILD
    ```
-
-### Third party dependencies:
-Starting from version 1.7.0, we added several third party dependencies, including [`aws-c-common`](https://github.com/awslabs/aws-c-common), [`aws-checksums`](https://github.com/awslabs/aws-checksums) and [`aws-c-event-stream`](https://github.com/awslabs/aws-c-event-stream). By default, they will be built and installed in `<BUILD_DIR>/.deps/install`, and copied to default system directory during SDK installation. You can change the location by specifying `CMAKE_INSTALL_PREFIX`.
-
-However, if you want to build and install these libraries in custom locations:
-1. Download, build and install `aws-c-common`:
-   ```sh
-   git clone https://github.com/awslabs/aws-c-common
-   cd aws-c-common
-   # checkout to a specific commit id if you want.
-   git checkout <commit-id>
-   mkdir build && cd build
-   # without CMAKE_INSTALL_PREFIX, it will be installed to default system directory.
-   cmake .. -DCMAKE_INSTALL_PREFIX=<deps-install-dir> <extra-cmake-parameters-here>
-   make # or MSBuild ALL_BUILD.vcxproj on Windows
-   make install # or MSBuild INSTALL.vcxproj on Windows
-   ```
-2. Download, build and install `aws-checksums`:
-   ```sh
-   git clone https://github.com/awslabs/aws-checksums
-   cd aws-checksums
-   # checkout to a specific commit id if you want
-   git checkout <commit-id>
-   mkdir build && cd build
-   # without CMAKE_INSTALL_PREFIX, it will be installed to default system directory.
-   cmake .. -DCMAKE_INSTALL_PREFIX=<deps-install-dir> <extra-cmake-parameters-here>
-   make # or MSBuild ALL_BUILD.vcxproj on Windows
-   make install # or MSBuild INSTALL.vcxproj on Windows
-   ```
-3. Download, build and install `aws-c-event-stream`:
-   ```sh
-   git clone https://github.com/awslabs/aws-c-event-stream
-   cd aws-c-event-stream
-   # checkout to a specific commit id if you want
-   git checkout <commit-id>
-   mkdir build && cd build
-   # aws-c-common and aws-checksums are dependencies of aws-c-event-stream
-   # without CMAKE_INSTALL_PREFIX, it will be installed to default system directory.
-   cmake .. -DCMAKE_INSTALL_PREFIX=<deps-install-dir> -DCMAKE_PREFIX_PATH=<deps-install-dir> <extra-cmake-parameters-here>
-   make # or MSBuild ALL_BUILD.vcxproj on Windows
-   make install # or MSBuild INSTALL.vcxproj on Windows
-   ```
-4. Turn off `BUILD_DEPS` when building C++ SDK:
-   ```sh
-   cd BUILD_DIR
-   cmake <path-to-root-of-this-source-code> -DBUILD_DEPS=OFF -DCMAKE_PREFIX_PATH=<deps-install-dir>
-   ```
-You may also find the following link helpful for including the build in your project:
-https://aws.amazon.com/blogs/developer/using-cmake-exports-with-the-aws-sdk-for-c/
-
 #### Other Dependencies:
 To compile in Linux, you must have the header files for libcurl, libopenssl. The packages are typically available in your package manager.
 
@@ -147,16 +114,18 @@ For information about maintenance and support for SDK major versions and our und
 * [AWS SDKs and Tools Version Support Matrix](https://docs.aws.amazon.com/credref/latest/refdocs/version-support-matrix.html)
 
 
-
 # Getting Help
 
-The best way to interact with our team is through GitHub. You can [open an issue](https://github.com/aws/aws-sdk-cpp/issues/new/choose) and choose from one of our templates for guidance, bug reports, or feature requests. You may also find help on community resources such as [StackOverFlow](https://stackoverflow.com/questions/tagged/aws-sdk-cpp) with the tag #aws-sdk-cpp or If you have a support plan with [AWS Support](https://aws.amazon.com/premiumsupport/), you can also create a new support case.
+The best way to interact with our team is through GitHub. You can [open an issue](https://github.com/aws/aws-sdk-cpp/issues/new/choose) and choose from one of our templates for guidance, bug reports, or feature requests.
+
+You may also find help on community resources such as [StackOverFlow](https://stackoverflow.com/) with the tag [#aws-sdk-cpp](https://stackoverflow.com/questions/tagged/aws-cli) or on the [AWS Discussion Forum for CPP](https://forums.aws.amazon.com/forum.jspa?forumID=245). If you have a support plan with [AWS Support](https://aws.amazon.com/premiumsupport/), you can also create a new support case.
 
 Please make sure to check out our resources too before opening an issue:
 * Our [Developer Guide](https://docs.aws.amazon.com/sdk-for-cpp/v1/developer-guide/welcome.html) and [API reference](http://sdk.amazonaws.com/cpp/api/LATEST/index.html)
 * Our [Changelog](./CHANGELOG.md) for recent breaking changes.
 * Our [Contribute](./CONTRIBUTING.md) guide.
 * Our [samples repo](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp).
+
 
 # Using the SDK and Other Topics
 * [Using the SDK](./Docs/SDK_usage_guide.md)

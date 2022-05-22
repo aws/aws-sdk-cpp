@@ -22,9 +22,9 @@ namespace Model
 {
 
   /**
-   * <p>[<code>Service-managed</code> permissions] Describes whether StackSets
-   * automatically deploys to AWS Organizations accounts that are added to a target
-   * organization or organizational unit (OU).</p><p><h3>See Also:</h3>   <a
+   * <p>[Service-managed permissions] Describes whether StackSets automatically
+   * deploys to Organizations accounts that are added to a target organization or
+   * organizational unit (OU).</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/AutoDeployment">AWS
    * API Reference</a></p>
    */
@@ -41,37 +41,37 @@ namespace Model
 
     /**
      * <p>If set to <code>true</code>, StackSets automatically deploys additional stack
-     * instances to AWS Organizations accounts that are added to a target organization
-     * or organizational unit (OU) in the specified Regions. If an account is removed
-     * from a target organization or OU, StackSets deletes stack instances from the
-     * account in the specified Regions.</p>
+     * instances to Organizations accounts that are added to a target organization or
+     * organizational unit (OU) in the specified Regions. If an account is removed from
+     * a target organization or OU, StackSets deletes stack instances from the account
+     * in the specified Regions.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
 
     /**
      * <p>If set to <code>true</code>, StackSets automatically deploys additional stack
-     * instances to AWS Organizations accounts that are added to a target organization
-     * or organizational unit (OU) in the specified Regions. If an account is removed
-     * from a target organization or OU, StackSets deletes stack instances from the
-     * account in the specified Regions.</p>
+     * instances to Organizations accounts that are added to a target organization or
+     * organizational unit (OU) in the specified Regions. If an account is removed from
+     * a target organization or OU, StackSets deletes stack instances from the account
+     * in the specified Regions.</p>
      */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
 
     /**
      * <p>If set to <code>true</code>, StackSets automatically deploys additional stack
-     * instances to AWS Organizations accounts that are added to a target organization
-     * or organizational unit (OU) in the specified Regions. If an account is removed
-     * from a target organization or OU, StackSets deletes stack instances from the
-     * account in the specified Regions.</p>
+     * instances to Organizations accounts that are added to a target organization or
+     * organizational unit (OU) in the specified Regions. If an account is removed from
+     * a target organization or OU, StackSets deletes stack instances from the account
+     * in the specified Regions.</p>
      */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
      * <p>If set to <code>true</code>, StackSets automatically deploys additional stack
-     * instances to AWS Organizations accounts that are added to a target organization
-     * or organizational unit (OU) in the specified Regions. If an account is removed
-     * from a target organization or OU, StackSets deletes stack instances from the
-     * account in the specified Regions.</p>
+     * instances to Organizations accounts that are added to a target organization or
+     * organizational unit (OU) in the specified Regions. If an account is removed from
+     * a target organization or OU, StackSets deletes stack instances from the account
+     * in the specified Regions.</p>
      */
     inline AutoDeployment& WithEnabled(bool value) { SetEnabled(value); return *this;}
 

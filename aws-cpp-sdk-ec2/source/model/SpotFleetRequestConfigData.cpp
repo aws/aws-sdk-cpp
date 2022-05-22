@@ -56,6 +56,9 @@ SpotFleetRequestConfigData::SpotFleetRequestConfigData() :
     m_loadBalancersConfigHasBeenSet(false),
     m_instancePoolsToUseCount(0),
     m_instancePoolsToUseCountHasBeenSet(false),
+    m_contextHasBeenSet(false),
+    m_targetCapacityUnitType(TargetCapacityUnitType::NOT_SET),
+    m_targetCapacityUnitTypeHasBeenSet(false),
     m_tagSpecificationsHasBeenSet(false)
 {
 }
@@ -96,6 +99,9 @@ SpotFleetRequestConfigData::SpotFleetRequestConfigData(const XmlNode& xmlNode) :
     m_loadBalancersConfigHasBeenSet(false),
     m_instancePoolsToUseCount(0),
     m_instancePoolsToUseCountHasBeenSet(false),
+    m_contextHasBeenSet(false),
+    m_targetCapacityUnitType(TargetCapacityUnitType::NOT_SET),
+    m_targetCapacityUnitTypeHasBeenSet(false),
     m_tagSpecificationsHasBeenSet(false)
 {
   *this = xmlNode;
@@ -257,6 +263,18 @@ SpotFleetRequestConfigData& SpotFleetRequestConfigData::operator =(const XmlNode
       m_instancePoolsToUseCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instancePoolsToUseCountNode.GetText()).c_str()).c_str());
       m_instancePoolsToUseCountHasBeenSet = true;
     }
+    XmlNode contextNode = resultNode.FirstChild("context");
+    if(!contextNode.IsNull())
+    {
+      m_context = Aws::Utils::Xml::DecodeEscapedXmlText(contextNode.GetText());
+      m_contextHasBeenSet = true;
+    }
+    XmlNode targetCapacityUnitTypeNode = resultNode.FirstChild("targetCapacityUnitType");
+    if(!targetCapacityUnitTypeNode.IsNull())
+    {
+      m_targetCapacityUnitType = TargetCapacityUnitTypeMapper::GetTargetCapacityUnitTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(targetCapacityUnitTypeNode.GetText()).c_str()).c_str());
+      m_targetCapacityUnitTypeHasBeenSet = true;
+    }
     XmlNode tagSpecificationsNode = resultNode.FirstChild("TagSpecification");
     if(!tagSpecificationsNode.IsNull())
     {
@@ -407,6 +425,16 @@ void SpotFleetRequestConfigData::OutputToStream(Aws::OStream& oStream, const cha
       oStream << location << index << locationValue << ".InstancePoolsToUseCount=" << m_instancePoolsToUseCount << "&";
   }
 
+  if(m_contextHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Context=" << StringUtils::URLEncode(m_context.c_str()) << "&";
+  }
+
+  if(m_targetCapacityUnitTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".TargetCapacityUnitType=" << TargetCapacityUnitTypeMapper::GetNameForTargetCapacityUnitType(m_targetCapacityUnitType) << "&";
+  }
+
   if(m_tagSpecificationsHasBeenSet)
   {
       unsigned tagSpecificationsIdx = 1;
@@ -529,6 +557,14 @@ void SpotFleetRequestConfigData::OutputToStream(Aws::OStream& oStream, const cha
   if(m_instancePoolsToUseCountHasBeenSet)
   {
       oStream << location << ".InstancePoolsToUseCount=" << m_instancePoolsToUseCount << "&";
+  }
+  if(m_contextHasBeenSet)
+  {
+      oStream << location << ".Context=" << StringUtils::URLEncode(m_context.c_str()) << "&";
+  }
+  if(m_targetCapacityUnitTypeHasBeenSet)
+  {
+      oStream << location << ".TargetCapacityUnitType=" << TargetCapacityUnitTypeMapper::GetNameForTargetCapacityUnitType(m_targetCapacityUnitType) << "&";
   }
   if(m_tagSpecificationsHasBeenSet)
   {

@@ -73,6 +73,12 @@ GetConfigurationProfileResult& GetConfigurationProfileResult::operator =(const A
     }
   }
 
+  if(jsonValue.ValueExists("Type"))
+  {
+    m_type = jsonValue.GetString("Type");
+
+  }
+
 
 
   return *this;

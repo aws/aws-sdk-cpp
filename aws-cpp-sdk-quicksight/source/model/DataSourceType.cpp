@@ -43,6 +43,8 @@ namespace Aws
         static const int TERADATA_HASH = HashingUtils::HashString("TERADATA");
         static const int TWITTER_HASH = HashingUtils::HashString("TWITTER");
         static const int TIMESTREAM_HASH = HashingUtils::HashString("TIMESTREAM");
+        static const int AMAZON_OPENSEARCH_HASH = HashingUtils::HashString("AMAZON_OPENSEARCH");
+        static const int EXASOL_HASH = HashingUtils::HashString("EXASOL");
 
 
         DataSourceType GetDataSourceTypeForName(const Aws::String& name)
@@ -140,6 +142,14 @@ namespace Aws
           {
             return DataSourceType::TIMESTREAM;
           }
+          else if (hashCode == AMAZON_OPENSEARCH_HASH)
+          {
+            return DataSourceType::AMAZON_OPENSEARCH;
+          }
+          else if (hashCode == EXASOL_HASH)
+          {
+            return DataSourceType::EXASOL;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -200,6 +210,10 @@ namespace Aws
             return "TWITTER";
           case DataSourceType::TIMESTREAM:
             return "TIMESTREAM";
+          case DataSourceType::AMAZON_OPENSEARCH:
+            return "AMAZON_OPENSEARCH";
+          case DataSourceType::EXASOL:
+            return "EXASOL";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

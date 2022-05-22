@@ -34,37 +34,37 @@ namespace Model
 
 
     /**
-     * <p>An array of objects that describe a projected metrics.</p>
+     * <p>An array of objects that describes projected metrics.</p>
      */
     inline const Aws::Vector<RecommendedOptionProjectedMetric>& GetRecommendedOptionProjectedMetrics() const{ return m_recommendedOptionProjectedMetrics; }
 
     /**
-     * <p>An array of objects that describe a projected metrics.</p>
+     * <p>An array of objects that describes projected metrics.</p>
      */
     inline void SetRecommendedOptionProjectedMetrics(const Aws::Vector<RecommendedOptionProjectedMetric>& value) { m_recommendedOptionProjectedMetrics = value; }
 
     /**
-     * <p>An array of objects that describe a projected metrics.</p>
+     * <p>An array of objects that describes projected metrics.</p>
      */
     inline void SetRecommendedOptionProjectedMetrics(Aws::Vector<RecommendedOptionProjectedMetric>&& value) { m_recommendedOptionProjectedMetrics = std::move(value); }
 
     /**
-     * <p>An array of objects that describe a projected metrics.</p>
+     * <p>An array of objects that describes projected metrics.</p>
      */
     inline GetEC2RecommendationProjectedMetricsResult& WithRecommendedOptionProjectedMetrics(const Aws::Vector<RecommendedOptionProjectedMetric>& value) { SetRecommendedOptionProjectedMetrics(value); return *this;}
 
     /**
-     * <p>An array of objects that describe a projected metrics.</p>
+     * <p>An array of objects that describes projected metrics.</p>
      */
     inline GetEC2RecommendationProjectedMetricsResult& WithRecommendedOptionProjectedMetrics(Aws::Vector<RecommendedOptionProjectedMetric>&& value) { SetRecommendedOptionProjectedMetrics(std::move(value)); return *this;}
 
     /**
-     * <p>An array of objects that describe a projected metrics.</p>
+     * <p>An array of objects that describes projected metrics.</p>
      */
     inline GetEC2RecommendationProjectedMetricsResult& AddRecommendedOptionProjectedMetrics(const RecommendedOptionProjectedMetric& value) { m_recommendedOptionProjectedMetrics.push_back(value); return *this; }
 
     /**
-     * <p>An array of objects that describe a projected metrics.</p>
+     * <p>An array of objects that describes projected metrics.</p>
      */
     inline GetEC2RecommendationProjectedMetricsResult& AddRecommendedOptionProjectedMetrics(RecommendedOptionProjectedMetric&& value) { m_recommendedOptionProjectedMetrics.push_back(std::move(value)); return *this; }
 

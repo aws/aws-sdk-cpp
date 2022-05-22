@@ -23,7 +23,7 @@ namespace Model
 
   /**
    * <p>Defines a non-overlapping region of a table's partitions, allowing multiple
-   * requests to be executed in parallel.</p><p><h3>See Also:</h3>   <a
+   * requests to be run in parallel.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Segment">AWS API
    * Reference</a></p>
    */

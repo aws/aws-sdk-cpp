@@ -22,6 +22,7 @@ namespace Aws
 
         static const int TASK_DEFINITION_HASH = HashingUtils::HashString("TASK_DEFINITION");
         static const int SERVICE_HASH = HashingUtils::HashString("SERVICE");
+        static const int NONE_HASH = HashingUtils::HashString("NONE");
 
 
         PropagateTags GetPropagateTagsForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == SERVICE_HASH)
           {
             return PropagateTags::SERVICE;
+          }
+          else if (hashCode == NONE_HASH)
+          {
+            return PropagateTags::NONE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "TASK_DEFINITION";
           case PropagateTags::SERVICE:
             return "SERVICE";
+          case PropagateTags::NONE:
+            return "NONE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

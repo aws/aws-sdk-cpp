@@ -37,17 +37,20 @@ namespace Model
 
 
     /**
-     * <p>The number of health checks associated with the current AWS account.</p>
+     * <p>The number of health checks associated with the current Amazon Web Services
+     * account.</p>
      */
     inline long long GetHealthCheckCount() const{ return m_healthCheckCount; }
 
     /**
-     * <p>The number of health checks associated with the current AWS account.</p>
+     * <p>The number of health checks associated with the current Amazon Web Services
+     * account.</p>
      */
     inline void SetHealthCheckCount(long long value) { m_healthCheckCount = value; }
 
     /**
-     * <p>The number of health checks associated with the current AWS account.</p>
+     * <p>The number of health checks associated with the current Amazon Web Services
+     * account.</p>
      */
     inline GetHealthCheckCountResult& WithHealthCheckCount(long long value) { SetHealthCheckCount(value); return *this;}
 

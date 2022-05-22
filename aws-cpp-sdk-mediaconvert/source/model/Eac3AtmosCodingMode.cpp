@@ -20,13 +20,28 @@ namespace Aws
       namespace Eac3AtmosCodingModeMapper
       {
 
+        static const int CODING_MODE_AUTO_HASH = HashingUtils::HashString("CODING_MODE_AUTO");
+        static const int CODING_MODE_5_1_4_HASH = HashingUtils::HashString("CODING_MODE_5_1_4");
+        static const int CODING_MODE_7_1_4_HASH = HashingUtils::HashString("CODING_MODE_7_1_4");
         static const int CODING_MODE_9_1_6_HASH = HashingUtils::HashString("CODING_MODE_9_1_6");
 
 
         Eac3AtmosCodingMode GetEac3AtmosCodingModeForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == CODING_MODE_9_1_6_HASH)
+          if (hashCode == CODING_MODE_AUTO_HASH)
+          {
+            return Eac3AtmosCodingMode::CODING_MODE_AUTO;
+          }
+          else if (hashCode == CODING_MODE_5_1_4_HASH)
+          {
+            return Eac3AtmosCodingMode::CODING_MODE_5_1_4;
+          }
+          else if (hashCode == CODING_MODE_7_1_4_HASH)
+          {
+            return Eac3AtmosCodingMode::CODING_MODE_7_1_4;
+          }
+          else if (hashCode == CODING_MODE_9_1_6_HASH)
           {
             return Eac3AtmosCodingMode::CODING_MODE_9_1_6;
           }
@@ -44,6 +59,12 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Eac3AtmosCodingMode::CODING_MODE_AUTO:
+            return "CODING_MODE_AUTO";
+          case Eac3AtmosCodingMode::CODING_MODE_5_1_4:
+            return "CODING_MODE_5_1_4";
+          case Eac3AtmosCodingMode::CODING_MODE_7_1_4:
+            return "CODING_MODE_7_1_4";
           case Eac3AtmosCodingMode::CODING_MODE_9_1_6:
             return "CODING_MODE_9_1_6";
           default:

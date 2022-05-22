@@ -20,13 +20,17 @@ namespace Model
 
 RotationRulesType::RotationRulesType() : 
     m_automaticallyAfterDays(0),
-    m_automaticallyAfterDaysHasBeenSet(false)
+    m_automaticallyAfterDaysHasBeenSet(false),
+    m_durationHasBeenSet(false),
+    m_scheduleExpressionHasBeenSet(false)
 {
 }
 
 RotationRulesType::RotationRulesType(JsonView jsonValue) : 
     m_automaticallyAfterDays(0),
-    m_automaticallyAfterDaysHasBeenSet(false)
+    m_automaticallyAfterDaysHasBeenSet(false),
+    m_durationHasBeenSet(false),
+    m_scheduleExpressionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -40,6 +44,20 @@ RotationRulesType& RotationRulesType::operator =(JsonView jsonValue)
     m_automaticallyAfterDaysHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Duration"))
+  {
+    m_duration = jsonValue.GetString("Duration");
+
+    m_durationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ScheduleExpression"))
+  {
+    m_scheduleExpression = jsonValue.GetString("ScheduleExpression");
+
+    m_scheduleExpressionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -50,6 +68,18 @@ JsonValue RotationRulesType::Jsonize() const
   if(m_automaticallyAfterDaysHasBeenSet)
   {
    payload.WithInt64("AutomaticallyAfterDays", m_automaticallyAfterDays);
+
+  }
+
+  if(m_durationHasBeenSet)
+  {
+   payload.WithString("Duration", m_duration);
+
+  }
+
+  if(m_scheduleExpressionHasBeenSet)
+  {
+   payload.WithString("ScheduleExpression", m_scheduleExpression);
 
   }
 

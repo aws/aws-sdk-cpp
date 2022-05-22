@@ -10,7 +10,14 @@
 #include <aws/appflow/model/SalesforceDestinationProperties.h>
 #include <aws/appflow/model/SnowflakeDestinationProperties.h>
 #include <aws/appflow/model/EventBridgeDestinationProperties.h>
+#include <aws/appflow/model/LookoutMetricsDestinationProperties.h>
 #include <aws/appflow/model/UpsolverDestinationProperties.h>
+#include <aws/appflow/model/HoneycodeDestinationProperties.h>
+#include <aws/appflow/model/CustomerProfilesDestinationProperties.h>
+#include <aws/appflow/model/ZendeskDestinationProperties.h>
+#include <aws/appflow/model/MarketoDestinationProperties.h>
+#include <aws/appflow/model/CustomConnectorDestinationProperties.h>
+#include <aws/appflow/model/SAPODataDestinationProperties.h>
 #include <utility>
 
 namespace Aws
@@ -199,6 +206,37 @@ namespace Model
 
 
     /**
+     * <p> The properties required to query Amazon Lookout for Metrics. </p>
+     */
+    inline const LookoutMetricsDestinationProperties& GetLookoutMetrics() const{ return m_lookoutMetrics; }
+
+    /**
+     * <p> The properties required to query Amazon Lookout for Metrics. </p>
+     */
+    inline bool LookoutMetricsHasBeenSet() const { return m_lookoutMetricsHasBeenSet; }
+
+    /**
+     * <p> The properties required to query Amazon Lookout for Metrics. </p>
+     */
+    inline void SetLookoutMetrics(const LookoutMetricsDestinationProperties& value) { m_lookoutMetricsHasBeenSet = true; m_lookoutMetrics = value; }
+
+    /**
+     * <p> The properties required to query Amazon Lookout for Metrics. </p>
+     */
+    inline void SetLookoutMetrics(LookoutMetricsDestinationProperties&& value) { m_lookoutMetricsHasBeenSet = true; m_lookoutMetrics = std::move(value); }
+
+    /**
+     * <p> The properties required to query Amazon Lookout for Metrics. </p>
+     */
+    inline DestinationConnectorProperties& WithLookoutMetrics(const LookoutMetricsDestinationProperties& value) { SetLookoutMetrics(value); return *this;}
+
+    /**
+     * <p> The properties required to query Amazon Lookout for Metrics. </p>
+     */
+    inline DestinationConnectorProperties& WithLookoutMetrics(LookoutMetricsDestinationProperties&& value) { SetLookoutMetrics(std::move(value)); return *this;}
+
+
+    /**
      * <p> The properties required to query Upsolver. </p>
      */
     inline const UpsolverDestinationProperties& GetUpsolver() const{ return m_upsolver; }
@@ -228,6 +266,192 @@ namespace Model
      */
     inline DestinationConnectorProperties& WithUpsolver(UpsolverDestinationProperties&& value) { SetUpsolver(std::move(value)); return *this;}
 
+
+    /**
+     * <p> The properties required to query Amazon Honeycode. </p>
+     */
+    inline const HoneycodeDestinationProperties& GetHoneycode() const{ return m_honeycode; }
+
+    /**
+     * <p> The properties required to query Amazon Honeycode. </p>
+     */
+    inline bool HoneycodeHasBeenSet() const { return m_honeycodeHasBeenSet; }
+
+    /**
+     * <p> The properties required to query Amazon Honeycode. </p>
+     */
+    inline void SetHoneycode(const HoneycodeDestinationProperties& value) { m_honeycodeHasBeenSet = true; m_honeycode = value; }
+
+    /**
+     * <p> The properties required to query Amazon Honeycode. </p>
+     */
+    inline void SetHoneycode(HoneycodeDestinationProperties&& value) { m_honeycodeHasBeenSet = true; m_honeycode = std::move(value); }
+
+    /**
+     * <p> The properties required to query Amazon Honeycode. </p>
+     */
+    inline DestinationConnectorProperties& WithHoneycode(const HoneycodeDestinationProperties& value) { SetHoneycode(value); return *this;}
+
+    /**
+     * <p> The properties required to query Amazon Honeycode. </p>
+     */
+    inline DestinationConnectorProperties& WithHoneycode(HoneycodeDestinationProperties&& value) { SetHoneycode(std::move(value)); return *this;}
+
+
+    /**
+     * <p> The properties required to query Amazon Connect Customer Profiles. </p>
+     */
+    inline const CustomerProfilesDestinationProperties& GetCustomerProfiles() const{ return m_customerProfiles; }
+
+    /**
+     * <p> The properties required to query Amazon Connect Customer Profiles. </p>
+     */
+    inline bool CustomerProfilesHasBeenSet() const { return m_customerProfilesHasBeenSet; }
+
+    /**
+     * <p> The properties required to query Amazon Connect Customer Profiles. </p>
+     */
+    inline void SetCustomerProfiles(const CustomerProfilesDestinationProperties& value) { m_customerProfilesHasBeenSet = true; m_customerProfiles = value; }
+
+    /**
+     * <p> The properties required to query Amazon Connect Customer Profiles. </p>
+     */
+    inline void SetCustomerProfiles(CustomerProfilesDestinationProperties&& value) { m_customerProfilesHasBeenSet = true; m_customerProfiles = std::move(value); }
+
+    /**
+     * <p> The properties required to query Amazon Connect Customer Profiles. </p>
+     */
+    inline DestinationConnectorProperties& WithCustomerProfiles(const CustomerProfilesDestinationProperties& value) { SetCustomerProfiles(value); return *this;}
+
+    /**
+     * <p> The properties required to query Amazon Connect Customer Profiles. </p>
+     */
+    inline DestinationConnectorProperties& WithCustomerProfiles(CustomerProfilesDestinationProperties&& value) { SetCustomerProfiles(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The properties required to query Zendesk.</p>
+     */
+    inline const ZendeskDestinationProperties& GetZendesk() const{ return m_zendesk; }
+
+    /**
+     * <p>The properties required to query Zendesk.</p>
+     */
+    inline bool ZendeskHasBeenSet() const { return m_zendeskHasBeenSet; }
+
+    /**
+     * <p>The properties required to query Zendesk.</p>
+     */
+    inline void SetZendesk(const ZendeskDestinationProperties& value) { m_zendeskHasBeenSet = true; m_zendesk = value; }
+
+    /**
+     * <p>The properties required to query Zendesk.</p>
+     */
+    inline void SetZendesk(ZendeskDestinationProperties&& value) { m_zendeskHasBeenSet = true; m_zendesk = std::move(value); }
+
+    /**
+     * <p>The properties required to query Zendesk.</p>
+     */
+    inline DestinationConnectorProperties& WithZendesk(const ZendeskDestinationProperties& value) { SetZendesk(value); return *this;}
+
+    /**
+     * <p>The properties required to query Zendesk.</p>
+     */
+    inline DestinationConnectorProperties& WithZendesk(ZendeskDestinationProperties&& value) { SetZendesk(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The properties required to query Marketo.</p>
+     */
+    inline const MarketoDestinationProperties& GetMarketo() const{ return m_marketo; }
+
+    /**
+     * <p>The properties required to query Marketo.</p>
+     */
+    inline bool MarketoHasBeenSet() const { return m_marketoHasBeenSet; }
+
+    /**
+     * <p>The properties required to query Marketo.</p>
+     */
+    inline void SetMarketo(const MarketoDestinationProperties& value) { m_marketoHasBeenSet = true; m_marketo = value; }
+
+    /**
+     * <p>The properties required to query Marketo.</p>
+     */
+    inline void SetMarketo(MarketoDestinationProperties&& value) { m_marketoHasBeenSet = true; m_marketo = std::move(value); }
+
+    /**
+     * <p>The properties required to query Marketo.</p>
+     */
+    inline DestinationConnectorProperties& WithMarketo(const MarketoDestinationProperties& value) { SetMarketo(value); return *this;}
+
+    /**
+     * <p>The properties required to query Marketo.</p>
+     */
+    inline DestinationConnectorProperties& WithMarketo(MarketoDestinationProperties&& value) { SetMarketo(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The properties that are required to query the custom Connector.</p>
+     */
+    inline const CustomConnectorDestinationProperties& GetCustomConnector() const{ return m_customConnector; }
+
+    /**
+     * <p>The properties that are required to query the custom Connector.</p>
+     */
+    inline bool CustomConnectorHasBeenSet() const { return m_customConnectorHasBeenSet; }
+
+    /**
+     * <p>The properties that are required to query the custom Connector.</p>
+     */
+    inline void SetCustomConnector(const CustomConnectorDestinationProperties& value) { m_customConnectorHasBeenSet = true; m_customConnector = value; }
+
+    /**
+     * <p>The properties that are required to query the custom Connector.</p>
+     */
+    inline void SetCustomConnector(CustomConnectorDestinationProperties&& value) { m_customConnectorHasBeenSet = true; m_customConnector = std::move(value); }
+
+    /**
+     * <p>The properties that are required to query the custom Connector.</p>
+     */
+    inline DestinationConnectorProperties& WithCustomConnector(const CustomConnectorDestinationProperties& value) { SetCustomConnector(value); return *this;}
+
+    /**
+     * <p>The properties that are required to query the custom Connector.</p>
+     */
+    inline DestinationConnectorProperties& WithCustomConnector(CustomConnectorDestinationProperties&& value) { SetCustomConnector(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The properties required to query SAPOData.</p>
+     */
+    inline const SAPODataDestinationProperties& GetSAPOData() const{ return m_sAPOData; }
+
+    /**
+     * <p>The properties required to query SAPOData.</p>
+     */
+    inline bool SAPODataHasBeenSet() const { return m_sAPODataHasBeenSet; }
+
+    /**
+     * <p>The properties required to query SAPOData.</p>
+     */
+    inline void SetSAPOData(const SAPODataDestinationProperties& value) { m_sAPODataHasBeenSet = true; m_sAPOData = value; }
+
+    /**
+     * <p>The properties required to query SAPOData.</p>
+     */
+    inline void SetSAPOData(SAPODataDestinationProperties&& value) { m_sAPODataHasBeenSet = true; m_sAPOData = std::move(value); }
+
+    /**
+     * <p>The properties required to query SAPOData.</p>
+     */
+    inline DestinationConnectorProperties& WithSAPOData(const SAPODataDestinationProperties& value) { SetSAPOData(value); return *this;}
+
+    /**
+     * <p>The properties required to query SAPOData.</p>
+     */
+    inline DestinationConnectorProperties& WithSAPOData(SAPODataDestinationProperties&& value) { SetSAPOData(std::move(value)); return *this;}
+
   private:
 
     RedshiftDestinationProperties m_redshift;
@@ -245,8 +469,29 @@ namespace Model
     EventBridgeDestinationProperties m_eventBridge;
     bool m_eventBridgeHasBeenSet;
 
+    LookoutMetricsDestinationProperties m_lookoutMetrics;
+    bool m_lookoutMetricsHasBeenSet;
+
     UpsolverDestinationProperties m_upsolver;
     bool m_upsolverHasBeenSet;
+
+    HoneycodeDestinationProperties m_honeycode;
+    bool m_honeycodeHasBeenSet;
+
+    CustomerProfilesDestinationProperties m_customerProfiles;
+    bool m_customerProfilesHasBeenSet;
+
+    ZendeskDestinationProperties m_zendesk;
+    bool m_zendeskHasBeenSet;
+
+    MarketoDestinationProperties m_marketo;
+    bool m_marketoHasBeenSet;
+
+    CustomConnectorDestinationProperties m_customConnector;
+    bool m_customConnectorHasBeenSet;
+
+    SAPODataDestinationProperties m_sAPOData;
+    bool m_sAPODataHasBeenSet;
   };
 
 } // namespace Model

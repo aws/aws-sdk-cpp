@@ -215,7 +215,11 @@ namespace Model
      * | <code>Terminating</code> | <code>Terminating:Wait</code> |
      * <code>Terminating:Proceed</code> | <code>Terminated</code> |
      * <code>Detaching</code> | <code>Detached</code> | <code>EnteringStandby</code> |
-     * <code>Standby</code> </p>
+     * <code>Standby</code> | <code>Warmed:Pending</code> |
+     * <code>Warmed:Pending:Wait</code> | <code>Warmed:Pending:Proceed</code> |
+     * <code>Warmed:Terminating</code> | <code>Warmed:Terminating:Wait</code> |
+     * <code>Warmed:Terminating:Proceed</code> | <code>Warmed:Terminated</code> |
+     * <code>Warmed:Stopped</code> | <code>Warmed:Running</code> </p>
      */
     inline const Aws::String& GetLifecycleState() const{ return m_lifecycleState; }
 
@@ -229,7 +233,11 @@ namespace Model
      * | <code>Terminating</code> | <code>Terminating:Wait</code> |
      * <code>Terminating:Proceed</code> | <code>Terminated</code> |
      * <code>Detaching</code> | <code>Detached</code> | <code>EnteringStandby</code> |
-     * <code>Standby</code> </p>
+     * <code>Standby</code> | <code>Warmed:Pending</code> |
+     * <code>Warmed:Pending:Wait</code> | <code>Warmed:Pending:Proceed</code> |
+     * <code>Warmed:Terminating</code> | <code>Warmed:Terminating:Wait</code> |
+     * <code>Warmed:Terminating:Proceed</code> | <code>Warmed:Terminated</code> |
+     * <code>Warmed:Stopped</code> | <code>Warmed:Running</code> </p>
      */
     inline bool LifecycleStateHasBeenSet() const { return m_lifecycleStateHasBeenSet; }
 
@@ -243,7 +251,11 @@ namespace Model
      * | <code>Terminating</code> | <code>Terminating:Wait</code> |
      * <code>Terminating:Proceed</code> | <code>Terminated</code> |
      * <code>Detaching</code> | <code>Detached</code> | <code>EnteringStandby</code> |
-     * <code>Standby</code> </p>
+     * <code>Standby</code> | <code>Warmed:Pending</code> |
+     * <code>Warmed:Pending:Wait</code> | <code>Warmed:Pending:Proceed</code> |
+     * <code>Warmed:Terminating</code> | <code>Warmed:Terminating:Wait</code> |
+     * <code>Warmed:Terminating:Proceed</code> | <code>Warmed:Terminated</code> |
+     * <code>Warmed:Stopped</code> | <code>Warmed:Running</code> </p>
      */
     inline void SetLifecycleState(const Aws::String& value) { m_lifecycleStateHasBeenSet = true; m_lifecycleState = value; }
 
@@ -257,7 +269,11 @@ namespace Model
      * | <code>Terminating</code> | <code>Terminating:Wait</code> |
      * <code>Terminating:Proceed</code> | <code>Terminated</code> |
      * <code>Detaching</code> | <code>Detached</code> | <code>EnteringStandby</code> |
-     * <code>Standby</code> </p>
+     * <code>Standby</code> | <code>Warmed:Pending</code> |
+     * <code>Warmed:Pending:Wait</code> | <code>Warmed:Pending:Proceed</code> |
+     * <code>Warmed:Terminating</code> | <code>Warmed:Terminating:Wait</code> |
+     * <code>Warmed:Terminating:Proceed</code> | <code>Warmed:Terminated</code> |
+     * <code>Warmed:Stopped</code> | <code>Warmed:Running</code> </p>
      */
     inline void SetLifecycleState(Aws::String&& value) { m_lifecycleStateHasBeenSet = true; m_lifecycleState = std::move(value); }
 
@@ -271,7 +287,11 @@ namespace Model
      * | <code>Terminating</code> | <code>Terminating:Wait</code> |
      * <code>Terminating:Proceed</code> | <code>Terminated</code> |
      * <code>Detaching</code> | <code>Detached</code> | <code>EnteringStandby</code> |
-     * <code>Standby</code> </p>
+     * <code>Standby</code> | <code>Warmed:Pending</code> |
+     * <code>Warmed:Pending:Wait</code> | <code>Warmed:Pending:Proceed</code> |
+     * <code>Warmed:Terminating</code> | <code>Warmed:Terminating:Wait</code> |
+     * <code>Warmed:Terminating:Proceed</code> | <code>Warmed:Terminated</code> |
+     * <code>Warmed:Stopped</code> | <code>Warmed:Running</code> </p>
      */
     inline void SetLifecycleState(const char* value) { m_lifecycleStateHasBeenSet = true; m_lifecycleState.assign(value); }
 
@@ -285,7 +305,11 @@ namespace Model
      * | <code>Terminating</code> | <code>Terminating:Wait</code> |
      * <code>Terminating:Proceed</code> | <code>Terminated</code> |
      * <code>Detaching</code> | <code>Detached</code> | <code>EnteringStandby</code> |
-     * <code>Standby</code> </p>
+     * <code>Standby</code> | <code>Warmed:Pending</code> |
+     * <code>Warmed:Pending:Wait</code> | <code>Warmed:Pending:Proceed</code> |
+     * <code>Warmed:Terminating</code> | <code>Warmed:Terminating:Wait</code> |
+     * <code>Warmed:Terminating:Proceed</code> | <code>Warmed:Terminated</code> |
+     * <code>Warmed:Stopped</code> | <code>Warmed:Running</code> </p>
      */
     inline AutoScalingInstanceDetails& WithLifecycleState(const Aws::String& value) { SetLifecycleState(value); return *this;}
 
@@ -299,7 +323,11 @@ namespace Model
      * | <code>Terminating</code> | <code>Terminating:Wait</code> |
      * <code>Terminating:Proceed</code> | <code>Terminated</code> |
      * <code>Detaching</code> | <code>Detached</code> | <code>EnteringStandby</code> |
-     * <code>Standby</code> </p>
+     * <code>Standby</code> | <code>Warmed:Pending</code> |
+     * <code>Warmed:Pending:Wait</code> | <code>Warmed:Pending:Proceed</code> |
+     * <code>Warmed:Terminating</code> | <code>Warmed:Terminating:Wait</code> |
+     * <code>Warmed:Terminating:Proceed</code> | <code>Warmed:Terminated</code> |
+     * <code>Warmed:Stopped</code> | <code>Warmed:Running</code> </p>
      */
     inline AutoScalingInstanceDetails& WithLifecycleState(Aws::String&& value) { SetLifecycleState(std::move(value)); return *this;}
 
@@ -313,7 +341,11 @@ namespace Model
      * | <code>Terminating</code> | <code>Terminating:Wait</code> |
      * <code>Terminating:Proceed</code> | <code>Terminated</code> |
      * <code>Detaching</code> | <code>Detached</code> | <code>EnteringStandby</code> |
-     * <code>Standby</code> </p>
+     * <code>Standby</code> | <code>Warmed:Pending</code> |
+     * <code>Warmed:Pending:Wait</code> | <code>Warmed:Pending:Proceed</code> |
+     * <code>Warmed:Terminating</code> | <code>Warmed:Terminating:Wait</code> |
+     * <code>Warmed:Terminating:Proceed</code> | <code>Warmed:Terminated</code> |
+     * <code>Warmed:Stopped</code> | <code>Warmed:Running</code> </p>
      */
     inline AutoScalingInstanceDetails& WithLifecycleState(const char* value) { SetLifecycleState(value); return *this;}
 

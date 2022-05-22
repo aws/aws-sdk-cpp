@@ -15,6 +15,7 @@
 #include <aws/sagemaker/model/Pipeline.h>
 #include <aws/sagemaker/model/PipelineExecution.h>
 #include <aws/sagemaker/model/FeatureGroup.h>
+#include <aws/sagemaker/model/Project.h>
 #include <utility>
 
 namespace Aws
@@ -284,6 +285,37 @@ namespace Model
     
     inline SearchRecord& WithFeatureGroup(FeatureGroup&& value) { SetFeatureGroup(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The properties of a project.</p>
+     */
+    inline const Project& GetProject() const{ return m_project; }
+
+    /**
+     * <p>The properties of a project.</p>
+     */
+    inline bool ProjectHasBeenSet() const { return m_projectHasBeenSet; }
+
+    /**
+     * <p>The properties of a project.</p>
+     */
+    inline void SetProject(const Project& value) { m_projectHasBeenSet = true; m_project = value; }
+
+    /**
+     * <p>The properties of a project.</p>
+     */
+    inline void SetProject(Project&& value) { m_projectHasBeenSet = true; m_project = std::move(value); }
+
+    /**
+     * <p>The properties of a project.</p>
+     */
+    inline SearchRecord& WithProject(const Project& value) { SetProject(value); return *this;}
+
+    /**
+     * <p>The properties of a project.</p>
+     */
+    inline SearchRecord& WithProject(Project&& value) { SetProject(std::move(value)); return *this;}
+
   private:
 
     TrainingJob m_trainingJob;
@@ -315,6 +347,9 @@ namespace Model
 
     FeatureGroup m_featureGroup;
     bool m_featureGroupHasBeenSet;
+
+    Project m_project;
+    bool m_projectHasBeenSet;
   };
 
 } // namespace Model

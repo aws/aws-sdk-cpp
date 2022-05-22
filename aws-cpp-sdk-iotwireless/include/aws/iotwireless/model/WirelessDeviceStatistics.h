@@ -9,6 +9,7 @@
 #include <aws/iotwireless/model/WirelessDeviceType.h>
 #include <aws/iotwireless/model/LoRaWANListDevice.h>
 #include <aws/iotwireless/model/SidewalkListDevice.h>
+#include <aws/iotwireless/model/FuotaDeviceStatus.h>
 #include <utility>
 
 namespace Aws
@@ -338,6 +339,79 @@ namespace Model
      */
     inline WirelessDeviceStatistics& WithSidewalk(SidewalkListDevice&& value) { SetSidewalk(std::move(value)); return *this;}
 
+
+    
+    inline const FuotaDeviceStatus& GetFuotaDeviceStatus() const{ return m_fuotaDeviceStatus; }
+
+    
+    inline bool FuotaDeviceStatusHasBeenSet() const { return m_fuotaDeviceStatusHasBeenSet; }
+
+    
+    inline void SetFuotaDeviceStatus(const FuotaDeviceStatus& value) { m_fuotaDeviceStatusHasBeenSet = true; m_fuotaDeviceStatus = value; }
+
+    
+    inline void SetFuotaDeviceStatus(FuotaDeviceStatus&& value) { m_fuotaDeviceStatusHasBeenSet = true; m_fuotaDeviceStatus = std::move(value); }
+
+    
+    inline WirelessDeviceStatistics& WithFuotaDeviceStatus(const FuotaDeviceStatus& value) { SetFuotaDeviceStatus(value); return *this;}
+
+    
+    inline WirelessDeviceStatistics& WithFuotaDeviceStatus(FuotaDeviceStatus&& value) { SetFuotaDeviceStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The status of the wireless device in the multicast group.</p>
+     */
+    inline const Aws::String& GetMulticastDeviceStatus() const{ return m_multicastDeviceStatus; }
+
+    /**
+     * <p>The status of the wireless device in the multicast group.</p>
+     */
+    inline bool MulticastDeviceStatusHasBeenSet() const { return m_multicastDeviceStatusHasBeenSet; }
+
+    /**
+     * <p>The status of the wireless device in the multicast group.</p>
+     */
+    inline void SetMulticastDeviceStatus(const Aws::String& value) { m_multicastDeviceStatusHasBeenSet = true; m_multicastDeviceStatus = value; }
+
+    /**
+     * <p>The status of the wireless device in the multicast group.</p>
+     */
+    inline void SetMulticastDeviceStatus(Aws::String&& value) { m_multicastDeviceStatusHasBeenSet = true; m_multicastDeviceStatus = std::move(value); }
+
+    /**
+     * <p>The status of the wireless device in the multicast group.</p>
+     */
+    inline void SetMulticastDeviceStatus(const char* value) { m_multicastDeviceStatusHasBeenSet = true; m_multicastDeviceStatus.assign(value); }
+
+    /**
+     * <p>The status of the wireless device in the multicast group.</p>
+     */
+    inline WirelessDeviceStatistics& WithMulticastDeviceStatus(const Aws::String& value) { SetMulticastDeviceStatus(value); return *this;}
+
+    /**
+     * <p>The status of the wireless device in the multicast group.</p>
+     */
+    inline WirelessDeviceStatistics& WithMulticastDeviceStatus(Aws::String&& value) { SetMulticastDeviceStatus(std::move(value)); return *this;}
+
+    /**
+     * <p>The status of the wireless device in the multicast group.</p>
+     */
+    inline WirelessDeviceStatistics& WithMulticastDeviceStatus(const char* value) { SetMulticastDeviceStatus(value); return *this;}
+
+
+    
+    inline int GetMcGroupId() const{ return m_mcGroupId; }
+
+    
+    inline bool McGroupIdHasBeenSet() const { return m_mcGroupIdHasBeenSet; }
+
+    
+    inline void SetMcGroupId(int value) { m_mcGroupIdHasBeenSet = true; m_mcGroupId = value; }
+
+    
+    inline WirelessDeviceStatistics& WithMcGroupId(int value) { SetMcGroupId(value); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -363,6 +437,15 @@ namespace Model
 
     SidewalkListDevice m_sidewalk;
     bool m_sidewalkHasBeenSet;
+
+    FuotaDeviceStatus m_fuotaDeviceStatus;
+    bool m_fuotaDeviceStatusHasBeenSet;
+
+    Aws::String m_multicastDeviceStatus;
+    bool m_multicastDeviceStatusHasBeenSet;
+
+    int m_mcGroupId;
+    bool m_mcGroupIdHasBeenSet;
   };
 
 } // namespace Model

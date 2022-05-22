@@ -29,10 +29,14 @@ namespace Model
   /**
    * <p>An instance type configuration for each instance type in an instance fleet,
    * which determines the EC2 instances Amazon EMR attempts to provision to fulfill
-   * On-Demand and Spot target capacities. There can be a maximum of five instance
-   * type configurations in a fleet.</p>  <p>The instance fleet configuration
-   * is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
-   * versions.</p> <p><h3>See Also:</h3>   <a
+   * On-Demand and Spot target capacities. When you use an allocation strategy, you
+   * can include a maximum of 30 instance type configurations for a fleet. For more
+   * information about how to use an allocation strategy, see <a
+   * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-instance-fleet.html">Configure
+   * Instance Fleets</a>. Without an allocation strategy, you may specify a maximum
+   * of five instance type configurations for a fleet.</p>  <p>The instance
+   * fleet configuration is available only in Amazon EMR versions 4.8.0 and later,
+   * excluding 5.0.x versions.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/InstanceTypeConfig">AWS
    * API Reference</a></p>
    */
@@ -222,38 +226,38 @@ namespace Model
 
 
     /**
-     * <p>The configuration of Amazon Elastic Block Storage (Amazon EBS) attached to
-     * each instance as defined by <code>InstanceType</code>. </p>
+     * <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each
+     * instance as defined by <code>InstanceType</code>. </p>
      */
     inline const EbsConfiguration& GetEbsConfiguration() const{ return m_ebsConfiguration; }
 
     /**
-     * <p>The configuration of Amazon Elastic Block Storage (Amazon EBS) attached to
-     * each instance as defined by <code>InstanceType</code>. </p>
+     * <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each
+     * instance as defined by <code>InstanceType</code>. </p>
      */
     inline bool EbsConfigurationHasBeenSet() const { return m_ebsConfigurationHasBeenSet; }
 
     /**
-     * <p>The configuration of Amazon Elastic Block Storage (Amazon EBS) attached to
-     * each instance as defined by <code>InstanceType</code>. </p>
+     * <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each
+     * instance as defined by <code>InstanceType</code>. </p>
      */
     inline void SetEbsConfiguration(const EbsConfiguration& value) { m_ebsConfigurationHasBeenSet = true; m_ebsConfiguration = value; }
 
     /**
-     * <p>The configuration of Amazon Elastic Block Storage (Amazon EBS) attached to
-     * each instance as defined by <code>InstanceType</code>. </p>
+     * <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each
+     * instance as defined by <code>InstanceType</code>. </p>
      */
     inline void SetEbsConfiguration(EbsConfiguration&& value) { m_ebsConfigurationHasBeenSet = true; m_ebsConfiguration = std::move(value); }
 
     /**
-     * <p>The configuration of Amazon Elastic Block Storage (Amazon EBS) attached to
-     * each instance as defined by <code>InstanceType</code>. </p>
+     * <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each
+     * instance as defined by <code>InstanceType</code>. </p>
      */
     inline InstanceTypeConfig& WithEbsConfiguration(const EbsConfiguration& value) { SetEbsConfiguration(value); return *this;}
 
     /**
-     * <p>The configuration of Amazon Elastic Block Storage (Amazon EBS) attached to
-     * each instance as defined by <code>InstanceType</code>. </p>
+     * <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each
+     * instance as defined by <code>InstanceType</code>. </p>
      */
     inline InstanceTypeConfig& WithEbsConfiguration(EbsConfiguration&& value) { SetEbsConfiguration(std::move(value)); return *this;}
 
@@ -314,6 +318,47 @@ namespace Model
      */
     inline InstanceTypeConfig& AddConfigurations(Configuration&& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The custom AMI ID to use for the instance type.</p>
+     */
+    inline const Aws::String& GetCustomAmiId() const{ return m_customAmiId; }
+
+    /**
+     * <p>The custom AMI ID to use for the instance type.</p>
+     */
+    inline bool CustomAmiIdHasBeenSet() const { return m_customAmiIdHasBeenSet; }
+
+    /**
+     * <p>The custom AMI ID to use for the instance type.</p>
+     */
+    inline void SetCustomAmiId(const Aws::String& value) { m_customAmiIdHasBeenSet = true; m_customAmiId = value; }
+
+    /**
+     * <p>The custom AMI ID to use for the instance type.</p>
+     */
+    inline void SetCustomAmiId(Aws::String&& value) { m_customAmiIdHasBeenSet = true; m_customAmiId = std::move(value); }
+
+    /**
+     * <p>The custom AMI ID to use for the instance type.</p>
+     */
+    inline void SetCustomAmiId(const char* value) { m_customAmiIdHasBeenSet = true; m_customAmiId.assign(value); }
+
+    /**
+     * <p>The custom AMI ID to use for the instance type.</p>
+     */
+    inline InstanceTypeConfig& WithCustomAmiId(const Aws::String& value) { SetCustomAmiId(value); return *this;}
+
+    /**
+     * <p>The custom AMI ID to use for the instance type.</p>
+     */
+    inline InstanceTypeConfig& WithCustomAmiId(Aws::String&& value) { SetCustomAmiId(std::move(value)); return *this;}
+
+    /**
+     * <p>The custom AMI ID to use for the instance type.</p>
+     */
+    inline InstanceTypeConfig& WithCustomAmiId(const char* value) { SetCustomAmiId(value); return *this;}
+
   private:
 
     Aws::String m_instanceType;
@@ -333,6 +378,9 @@ namespace Model
 
     Aws::Vector<Configuration> m_configurations;
     bool m_configurationsHasBeenSet;
+
+    Aws::String m_customAmiId;
+    bool m_customAmiIdHasBeenSet;
   };
 
 } // namespace Model

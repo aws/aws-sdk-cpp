@@ -26,9 +26,9 @@ namespace Model
   /**
    * <p>Provides information about the location that is configured for storing model
    * artifacts. </p> <p>Model artifacts are the output that results from training a
-   * model, and typically consist of trained parameters, a model defintion that
-   * desribes how to compute inferences, and other metadata.</p><p><h3>See Also:</h3>
-   * <a
+   * model, and typically consist of trained parameters, a model definition that
+   * describes how to compute inferences, and other metadata.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ModelArtifacts">AWS
    * API Reference</a></p>
    */

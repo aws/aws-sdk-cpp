@@ -22,8 +22,8 @@ namespace Model
 {
 
   /**
-   * <p>AWS Systems Manager (SSM) specific remediation controls.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Amazon Web Services Systems Manager (SSM) specific remediation
+   * controls.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/SsmControls">AWS
    * API Reference</a></p>
    */

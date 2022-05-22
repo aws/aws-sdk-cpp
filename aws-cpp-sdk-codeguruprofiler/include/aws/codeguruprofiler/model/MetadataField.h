@@ -16,15 +16,15 @@ namespace Model
   enum class MetadataField
   {
     NOT_SET,
+    ComputePlatform,
     AgentId,
     AwsRequestId,
-    ComputePlatform,
     ExecutionEnvironment,
     LambdaFunctionArn,
     LambdaMemoryLimitInMB,
-    LambdaPreviousExecutionTimeInMilliseconds,
     LambdaRemainingTimeInMilliseconds,
-    LambdaTimeGapBetweenInvokesInMilliseconds
+    LambdaTimeGapBetweenInvokesInMilliseconds,
+    LambdaPreviousExecutionTimeInMilliseconds
   };
 
 namespace MetadataFieldMapper

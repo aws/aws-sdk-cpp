@@ -33,37 +33,37 @@ namespace Model
 
 
     /**
-     * <p>ARN for the newly create stream processor.</p>
+     * <p>Amazon Resource Number for the newly created stream processor.</p>
      */
     inline const Aws::String& GetStreamProcessorArn() const{ return m_streamProcessorArn; }
 
     /**
-     * <p>ARN for the newly create stream processor.</p>
+     * <p>Amazon Resource Number for the newly created stream processor.</p>
      */
     inline void SetStreamProcessorArn(const Aws::String& value) { m_streamProcessorArn = value; }
 
     /**
-     * <p>ARN for the newly create stream processor.</p>
+     * <p>Amazon Resource Number for the newly created stream processor.</p>
      */
     inline void SetStreamProcessorArn(Aws::String&& value) { m_streamProcessorArn = std::move(value); }
 
     /**
-     * <p>ARN for the newly create stream processor.</p>
+     * <p>Amazon Resource Number for the newly created stream processor.</p>
      */
     inline void SetStreamProcessorArn(const char* value) { m_streamProcessorArn.assign(value); }
 
     /**
-     * <p>ARN for the newly create stream processor.</p>
+     * <p>Amazon Resource Number for the newly created stream processor.</p>
      */
     inline CreateStreamProcessorResult& WithStreamProcessorArn(const Aws::String& value) { SetStreamProcessorArn(value); return *this;}
 
     /**
-     * <p>ARN for the newly create stream processor.</p>
+     * <p>Amazon Resource Number for the newly created stream processor.</p>
      */
     inline CreateStreamProcessorResult& WithStreamProcessorArn(Aws::String&& value) { SetStreamProcessorArn(std::move(value)); return *this;}
 
     /**
-     * <p>ARN for the newly create stream processor.</p>
+     * <p>Amazon Resource Number for the newly created stream processor.</p>
      */
     inline CreateStreamProcessorResult& WithStreamProcessorArn(const char* value) { SetStreamProcessorArn(value); return *this;}
 

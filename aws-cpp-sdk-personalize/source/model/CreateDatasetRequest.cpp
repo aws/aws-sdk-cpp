@@ -16,7 +16,8 @@ CreateDatasetRequest::CreateDatasetRequest() :
     m_nameHasBeenSet(false),
     m_schemaArnHasBeenSet(false),
     m_datasetGroupArnHasBeenSet(false),
-    m_datasetTypeHasBeenSet(false)
+    m_datasetTypeHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -45,6 +46,17 @@ Aws::String CreateDatasetRequest::SerializePayload() const
   if(m_datasetTypeHasBeenSet)
   {
    payload.WithString("datasetType", m_datasetType);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
 
   }
 

@@ -269,6 +269,7 @@ namespace Aws
         static const int YE_HASH = HashingUtils::HashString("YE");
         static const int ZM_HASH = HashingUtils::HashString("ZM");
         static const int ZW_HASH = HashingUtils::HashString("ZW");
+        static const int XK_HASH = HashingUtils::HashString("XK");
 
         /*
         The if-else chains in this file are converted into a jump table by the compiler,
@@ -1530,6 +1531,11 @@ namespace Aws
             enumValue = CountryCode::ZW;
             return true;
           }
+          else if (hashCode == XK_HASH)
+          {
+            enumValue = CountryCode::XK;
+            return true;
+          }
           return false;
         }
 
@@ -2299,6 +2305,9 @@ namespace Aws
             return true;
           case CountryCode::ZW:
             value = "ZW";
+            return true;
+          case CountryCode::XK:
+            value = "XK";
             return true;
           default:
             return false;

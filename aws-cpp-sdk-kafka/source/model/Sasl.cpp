@@ -19,12 +19,14 @@ namespace Model
 {
 
 Sasl::Sasl() : 
-    m_scramHasBeenSet(false)
+    m_scramHasBeenSet(false),
+    m_iamHasBeenSet(false)
 {
 }
 
 Sasl::Sasl(JsonView jsonValue) : 
-    m_scramHasBeenSet(false)
+    m_scramHasBeenSet(false),
+    m_iamHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ Sasl& Sasl::operator =(JsonView jsonValue)
     m_scramHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("iam"))
+  {
+    m_iam = jsonValue.GetObject("iam");
+
+    m_iamHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +57,12 @@ JsonValue Sasl::Jsonize() const
   if(m_scramHasBeenSet)
   {
    payload.WithObject("scram", m_scram.Jsonize());
+
+  }
+
+  if(m_iamHasBeenSet)
+  {
+   payload.WithObject("iam", m_iam.Jsonize());
 
   }
 

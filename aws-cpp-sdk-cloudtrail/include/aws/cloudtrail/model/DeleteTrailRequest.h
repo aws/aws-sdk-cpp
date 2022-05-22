@@ -40,56 +40,56 @@ namespace Model
 
     /**
      * <p>Specifies the name or the CloudTrail ARN of the trail to be deleted. The
-     * format of a trail ARN is:
+     * following is the format of a trail ARN.
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
      * <p>Specifies the name or the CloudTrail ARN of the trail to be deleted. The
-     * format of a trail ARN is:
+     * following is the format of a trail ARN.
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>Specifies the name or the CloudTrail ARN of the trail to be deleted. The
-     * format of a trail ARN is:
+     * following is the format of a trail ARN.
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
      * <p>Specifies the name or the CloudTrail ARN of the trail to be deleted. The
-     * format of a trail ARN is:
+     * following is the format of a trail ARN.
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>Specifies the name or the CloudTrail ARN of the trail to be deleted. The
-     * format of a trail ARN is:
+     * following is the format of a trail ARN.
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
      * <p>Specifies the name or the CloudTrail ARN of the trail to be deleted. The
-     * format of a trail ARN is:
+     * following is the format of a trail ARN.
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline DeleteTrailRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
      * <p>Specifies the name or the CloudTrail ARN of the trail to be deleted. The
-     * format of a trail ARN is:
+     * following is the format of a trail ARN.
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline DeleteTrailRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the name or the CloudTrail ARN of the trail to be deleted. The
-     * format of a trail ARN is:
+     * following is the format of a trail ARN.
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline DeleteTrailRequest& WithName(const char* value) { SetName(value); return *this;}

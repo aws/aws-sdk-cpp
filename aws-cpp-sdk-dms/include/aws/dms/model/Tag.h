@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>A user-defined key-value pair that describes metadata added to an AWS DMS
+   * <p>A user-defined key-value pair that describes metadata added to an DMS
    * resource and that is used by operations such as the following:</p> <ul> <li> <p>
    * <code>AddTagsToResource</code> </p> </li> <li> <p>
    * <code>ListTagsForResource</code> </p> </li> <li> <p>
@@ -186,6 +186,55 @@ namespace Model
      */
     inline Tag& WithValue(const char* value) { SetValue(value); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) string that uniquely identifies the resource
+     * for which the tag is created.</p>
+     */
+    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) string that uniquely identifies the resource
+     * for which the tag is created.</p>
+     */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) string that uniquely identifies the resource
+     * for which the tag is created.</p>
+     */
+    inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) string that uniquely identifies the resource
+     * for which the tag is created.</p>
+     */
+    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) string that uniquely identifies the resource
+     * for which the tag is created.</p>
+     */
+    inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) string that uniquely identifies the resource
+     * for which the tag is created.</p>
+     */
+    inline Tag& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) string that uniquely identifies the resource
+     * for which the tag is created.</p>
+     */
+    inline Tag& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) string that uniquely identifies the resource
+     * for which the tag is created.</p>
+     */
+    inline Tag& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+
   private:
 
     Aws::String m_key;
@@ -193,6 +242,9 @@ namespace Model
 
     Aws::String m_value;
     bool m_valueHasBeenSet;
+
+    Aws::String m_resourceArn;
+    bool m_resourceArnHasBeenSet;
   };
 
 } // namespace Model

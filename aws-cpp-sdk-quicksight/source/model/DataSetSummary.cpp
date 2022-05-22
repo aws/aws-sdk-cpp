@@ -27,6 +27,8 @@ DataSetSummary::DataSetSummary() :
     m_importMode(DataSetImportMode::NOT_SET),
     m_importModeHasBeenSet(false),
     m_rowLevelPermissionDataSetHasBeenSet(false),
+    m_rowLevelPermissionTagConfigurationApplied(false),
+    m_rowLevelPermissionTagConfigurationAppliedHasBeenSet(false),
     m_columnLevelPermissionRulesApplied(false),
     m_columnLevelPermissionRulesAppliedHasBeenSet(false)
 {
@@ -41,6 +43,8 @@ DataSetSummary::DataSetSummary(JsonView jsonValue) :
     m_importMode(DataSetImportMode::NOT_SET),
     m_importModeHasBeenSet(false),
     m_rowLevelPermissionDataSetHasBeenSet(false),
+    m_rowLevelPermissionTagConfigurationApplied(false),
+    m_rowLevelPermissionTagConfigurationAppliedHasBeenSet(false),
     m_columnLevelPermissionRulesApplied(false),
     m_columnLevelPermissionRulesAppliedHasBeenSet(false)
 {
@@ -98,6 +102,13 @@ DataSetSummary& DataSetSummary::operator =(JsonView jsonValue)
     m_rowLevelPermissionDataSetHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RowLevelPermissionTagConfigurationApplied"))
+  {
+    m_rowLevelPermissionTagConfigurationApplied = jsonValue.GetBool("RowLevelPermissionTagConfigurationApplied");
+
+    m_rowLevelPermissionTagConfigurationAppliedHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("ColumnLevelPermissionRulesApplied"))
   {
     m_columnLevelPermissionRulesApplied = jsonValue.GetBool("ColumnLevelPermissionRulesApplied");
@@ -148,6 +159,12 @@ JsonValue DataSetSummary::Jsonize() const
   if(m_rowLevelPermissionDataSetHasBeenSet)
   {
    payload.WithObject("RowLevelPermissionDataSet", m_rowLevelPermissionDataSet.Jsonize());
+
+  }
+
+  if(m_rowLevelPermissionTagConfigurationAppliedHasBeenSet)
+  {
+   payload.WithBool("RowLevelPermissionTagConfigurationApplied", m_rowLevelPermissionTagConfigurationApplied);
 
   }
 

@@ -20,7 +20,8 @@ namespace Model
     AVAILABLE,
     MISCONFIGURED,
     UPDATING,
-    DELETING
+    DELETING,
+    FAILED
   };
 
 namespace DataRepositoryLifecycleMapper

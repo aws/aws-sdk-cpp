@@ -19,12 +19,18 @@ namespace Model
 {
 
 KubernetesNetworkConfigResponse::KubernetesNetworkConfigResponse() : 
-    m_serviceIpv4CidrHasBeenSet(false)
+    m_serviceIpv4CidrHasBeenSet(false),
+    m_serviceIpv6CidrHasBeenSet(false),
+    m_ipFamily(IpFamily::NOT_SET),
+    m_ipFamilyHasBeenSet(false)
 {
 }
 
 KubernetesNetworkConfigResponse::KubernetesNetworkConfigResponse(JsonView jsonValue) : 
-    m_serviceIpv4CidrHasBeenSet(false)
+    m_serviceIpv4CidrHasBeenSet(false),
+    m_serviceIpv6CidrHasBeenSet(false),
+    m_ipFamily(IpFamily::NOT_SET),
+    m_ipFamilyHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +44,20 @@ KubernetesNetworkConfigResponse& KubernetesNetworkConfigResponse::operator =(Jso
     m_serviceIpv4CidrHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("serviceIpv6Cidr"))
+  {
+    m_serviceIpv6Cidr = jsonValue.GetString("serviceIpv6Cidr");
+
+    m_serviceIpv6CidrHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ipFamily"))
+  {
+    m_ipFamily = IpFamilyMapper::GetIpFamilyForName(jsonValue.GetString("ipFamily"));
+
+    m_ipFamilyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -49,6 +69,17 @@ JsonValue KubernetesNetworkConfigResponse::Jsonize() const
   {
    payload.WithString("serviceIpv4Cidr", m_serviceIpv4Cidr);
 
+  }
+
+  if(m_serviceIpv6CidrHasBeenSet)
+  {
+   payload.WithString("serviceIpv6Cidr", m_serviceIpv6Cidr);
+
+  }
+
+  if(m_ipFamilyHasBeenSet)
+  {
+   payload.WithString("ipFamily", IpFamilyMapper::GetNameForIpFamily(m_ipFamily));
   }
 
   return payload;

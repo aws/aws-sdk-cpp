@@ -37,42 +37,42 @@ namespace Model
 
 
     /**
-     * <p>A list of AWS Config rule names.</p>
+     * <p>A list of Config rule names.</p>
      */
     inline const Aws::String& GetConfigRuleName() const{ return m_configRuleName; }
 
     /**
-     * <p>A list of AWS Config rule names.</p>
+     * <p>A list of Config rule names.</p>
      */
     inline bool ConfigRuleNameHasBeenSet() const { return m_configRuleNameHasBeenSet; }
 
     /**
-     * <p>A list of AWS Config rule names.</p>
+     * <p>A list of Config rule names.</p>
      */
     inline void SetConfigRuleName(const Aws::String& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = value; }
 
     /**
-     * <p>A list of AWS Config rule names.</p>
+     * <p>A list of Config rule names.</p>
      */
     inline void SetConfigRuleName(Aws::String&& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = std::move(value); }
 
     /**
-     * <p>A list of AWS Config rule names.</p>
+     * <p>A list of Config rule names.</p>
      */
     inline void SetConfigRuleName(const char* value) { m_configRuleNameHasBeenSet = true; m_configRuleName.assign(value); }
 
     /**
-     * <p>A list of AWS Config rule names.</p>
+     * <p>A list of Config rule names.</p>
      */
     inline DescribeRemediationExecutionStatusRequest& WithConfigRuleName(const Aws::String& value) { SetConfigRuleName(value); return *this;}
 
     /**
-     * <p>A list of AWS Config rule names.</p>
+     * <p>A list of Config rule names.</p>
      */
     inline DescribeRemediationExecutionStatusRequest& WithConfigRuleName(Aws::String&& value) { SetConfigRuleName(std::move(value)); return *this;}
 
     /**
-     * <p>A list of AWS Config rule names.</p>
+     * <p>A list of Config rule names.</p>
      */
     inline DescribeRemediationExecutionStatusRequest& WithConfigRuleName(const char* value) { SetConfigRuleName(value); return *this;}
 
@@ -128,25 +128,25 @@ namespace Model
 
     /**
      * <p>The maximum number of RemediationExecutionStatuses returned on each page. The
-     * default is maximum. If you specify 0, AWS Config uses the default. </p>
+     * default is maximum. If you specify 0, Config uses the default. </p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
      * <p>The maximum number of RemediationExecutionStatuses returned on each page. The
-     * default is maximum. If you specify 0, AWS Config uses the default. </p>
+     * default is maximum. If you specify 0, Config uses the default. </p>
      */
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
      * <p>The maximum number of RemediationExecutionStatuses returned on each page. The
-     * default is maximum. If you specify 0, AWS Config uses the default. </p>
+     * default is maximum. If you specify 0, Config uses the default. </p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
      * <p>The maximum number of RemediationExecutionStatuses returned on each page. The
-     * default is maximum. If you specify 0, AWS Config uses the default. </p>
+     * default is maximum. If you specify 0, Config uses the default. </p>
      */
     inline DescribeRemediationExecutionStatusRequest& WithLimit(int value) { SetLimit(value); return *this;}
 

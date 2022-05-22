@@ -7,6 +7,7 @@
 #include <aws/rekognition/Rekognition_EXPORTS.h>
 #include <aws/rekognition/RekognitionRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -127,6 +128,70 @@ namespace Model
      */
     inline DescribeProjectsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
+
+    /**
+     * <p>A list of the projects that you want Amazon Rekognition Custom Labels to
+     * describe. If you don't specify a value, the response includes descriptions for
+     * all the projects in your AWS account.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetProjectNames() const{ return m_projectNames; }
+
+    /**
+     * <p>A list of the projects that you want Amazon Rekognition Custom Labels to
+     * describe. If you don't specify a value, the response includes descriptions for
+     * all the projects in your AWS account.</p>
+     */
+    inline bool ProjectNamesHasBeenSet() const { return m_projectNamesHasBeenSet; }
+
+    /**
+     * <p>A list of the projects that you want Amazon Rekognition Custom Labels to
+     * describe. If you don't specify a value, the response includes descriptions for
+     * all the projects in your AWS account.</p>
+     */
+    inline void SetProjectNames(const Aws::Vector<Aws::String>& value) { m_projectNamesHasBeenSet = true; m_projectNames = value; }
+
+    /**
+     * <p>A list of the projects that you want Amazon Rekognition Custom Labels to
+     * describe. If you don't specify a value, the response includes descriptions for
+     * all the projects in your AWS account.</p>
+     */
+    inline void SetProjectNames(Aws::Vector<Aws::String>&& value) { m_projectNamesHasBeenSet = true; m_projectNames = std::move(value); }
+
+    /**
+     * <p>A list of the projects that you want Amazon Rekognition Custom Labels to
+     * describe. If you don't specify a value, the response includes descriptions for
+     * all the projects in your AWS account.</p>
+     */
+    inline DescribeProjectsRequest& WithProjectNames(const Aws::Vector<Aws::String>& value) { SetProjectNames(value); return *this;}
+
+    /**
+     * <p>A list of the projects that you want Amazon Rekognition Custom Labels to
+     * describe. If you don't specify a value, the response includes descriptions for
+     * all the projects in your AWS account.</p>
+     */
+    inline DescribeProjectsRequest& WithProjectNames(Aws::Vector<Aws::String>&& value) { SetProjectNames(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of the projects that you want Amazon Rekognition Custom Labels to
+     * describe. If you don't specify a value, the response includes descriptions for
+     * all the projects in your AWS account.</p>
+     */
+    inline DescribeProjectsRequest& AddProjectNames(const Aws::String& value) { m_projectNamesHasBeenSet = true; m_projectNames.push_back(value); return *this; }
+
+    /**
+     * <p>A list of the projects that you want Amazon Rekognition Custom Labels to
+     * describe. If you don't specify a value, the response includes descriptions for
+     * all the projects in your AWS account.</p>
+     */
+    inline DescribeProjectsRequest& AddProjectNames(Aws::String&& value) { m_projectNamesHasBeenSet = true; m_projectNames.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>A list of the projects that you want Amazon Rekognition Custom Labels to
+     * describe. If you don't specify a value, the response includes descriptions for
+     * all the projects in your AWS account.</p>
+     */
+    inline DescribeProjectsRequest& AddProjectNames(const char* value) { m_projectNamesHasBeenSet = true; m_projectNames.push_back(value); return *this; }
+
   private:
 
     Aws::String m_nextToken;
@@ -134,6 +199,9 @@ namespace Model
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
+    Aws::Vector<Aws::String> m_projectNames;
+    bool m_projectNamesHasBeenSet;
   };
 
 } // namespace Model

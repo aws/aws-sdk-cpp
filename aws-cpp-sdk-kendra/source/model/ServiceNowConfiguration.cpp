@@ -24,7 +24,9 @@ ServiceNowConfiguration::ServiceNowConfiguration() :
     m_serviceNowBuildVersion(ServiceNowBuildVersionType::NOT_SET),
     m_serviceNowBuildVersionHasBeenSet(false),
     m_knowledgeArticleConfigurationHasBeenSet(false),
-    m_serviceCatalogConfigurationHasBeenSet(false)
+    m_serviceCatalogConfigurationHasBeenSet(false),
+    m_authenticationType(ServiceNowAuthenticationType::NOT_SET),
+    m_authenticationTypeHasBeenSet(false)
 {
 }
 
@@ -34,7 +36,9 @@ ServiceNowConfiguration::ServiceNowConfiguration(JsonView jsonValue) :
     m_serviceNowBuildVersion(ServiceNowBuildVersionType::NOT_SET),
     m_serviceNowBuildVersionHasBeenSet(false),
     m_knowledgeArticleConfigurationHasBeenSet(false),
-    m_serviceCatalogConfigurationHasBeenSet(false)
+    m_serviceCatalogConfigurationHasBeenSet(false),
+    m_authenticationType(ServiceNowAuthenticationType::NOT_SET),
+    m_authenticationTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -76,6 +80,13 @@ ServiceNowConfiguration& ServiceNowConfiguration::operator =(JsonView jsonValue)
     m_serviceCatalogConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AuthenticationType"))
+  {
+    m_authenticationType = ServiceNowAuthenticationTypeMapper::GetServiceNowAuthenticationTypeForName(jsonValue.GetString("AuthenticationType"));
+
+    m_authenticationTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -110,6 +121,11 @@ JsonValue ServiceNowConfiguration::Jsonize() const
   {
    payload.WithObject("ServiceCatalogConfiguration", m_serviceCatalogConfiguration.Jsonize());
 
+  }
+
+  if(m_authenticationTypeHasBeenSet)
+  {
+   payload.WithString("AuthenticationType", ServiceNowAuthenticationTypeMapper::GetNameForServiceNowAuthenticationType(m_authenticationType));
   }
 
   return payload;

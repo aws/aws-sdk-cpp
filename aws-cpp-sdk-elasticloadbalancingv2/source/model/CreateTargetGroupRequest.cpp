@@ -35,7 +35,9 @@ CreateTargetGroupRequest::CreateTargetGroupRequest() :
     m_matcherHasBeenSet(false),
     m_targetType(TargetTypeEnum::NOT_SET),
     m_targetTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_ipAddressType(TargetGroupIpAddressTypeEnum::NOT_SET),
+    m_ipAddressTypeHasBeenSet(false)
 {
 }
 
@@ -126,6 +128,11 @@ Aws::String CreateTargetGroupRequest::SerializePayload() const
       item.OutputToStream(ss, "Tags.member.", tagsCount, "");
       tagsCount++;
     }
+  }
+
+  if(m_ipAddressTypeHasBeenSet)
+  {
+    ss << "IpAddressType=" << TargetGroupIpAddressTypeEnumMapper::GetNameForTargetGroupIpAddressTypeEnum(m_ipAddressType) << "&";
   }
 
   ss << "Version=2015-12-01";

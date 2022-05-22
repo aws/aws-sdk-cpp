@@ -160,27 +160,27 @@ namespace Model
 
 
     /**
-     * <p>The time that the agent last connected to DataSyc.</p>
+     * <p>The time that the agent last connected to DataSync.</p>
      */
     inline const Aws::Utils::DateTime& GetLastConnectionTime() const{ return m_lastConnectionTime; }
 
     /**
-     * <p>The time that the agent last connected to DataSyc.</p>
+     * <p>The time that the agent last connected to DataSync.</p>
      */
     inline void SetLastConnectionTime(const Aws::Utils::DateTime& value) { m_lastConnectionTime = value; }
 
     /**
-     * <p>The time that the agent last connected to DataSyc.</p>
+     * <p>The time that the agent last connected to DataSync.</p>
      */
     inline void SetLastConnectionTime(Aws::Utils::DateTime&& value) { m_lastConnectionTime = std::move(value); }
 
     /**
-     * <p>The time that the agent last connected to DataSyc.</p>
+     * <p>The time that the agent last connected to DataSync.</p>
      */
     inline DescribeAgentResult& WithLastConnectionTime(const Aws::Utils::DateTime& value) { SetLastConnectionTime(value); return *this;}
 
     /**
-     * <p>The time that the agent last connected to DataSyc.</p>
+     * <p>The time that the agent last connected to DataSync.</p>
      */
     inline DescribeAgentResult& WithLastConnectionTime(Aws::Utils::DateTime&& value) { SetLastConnectionTime(std::move(value)); return *this;}
 

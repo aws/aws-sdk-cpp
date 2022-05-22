@@ -18,7 +18,8 @@ using namespace Aws::Http;
 ListClustersRequest::ListClustersRequest() : 
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_includeHasBeenSet(false)
 {
 }
 
@@ -42,6 +43,16 @@ void ListClustersRequest::AddQueryStringParameters(URI& uri) const
       ss << m_nextToken;
       uri.AddQueryStringParameter("nextToken", ss.str());
       ss.str("");
+    }
+
+    if(m_includeHasBeenSet)
+    {
+      for(const auto& item : m_include)
+      {
+        ss << item;
+        uri.AddQueryStringParameter("include", ss.str());
+        ss.str("");
+      }
     }
 
 }

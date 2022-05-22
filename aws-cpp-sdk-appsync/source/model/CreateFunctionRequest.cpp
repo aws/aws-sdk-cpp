@@ -19,7 +19,10 @@ CreateFunctionRequest::CreateFunctionRequest() :
     m_dataSourceNameHasBeenSet(false),
     m_requestMappingTemplateHasBeenSet(false),
     m_responseMappingTemplateHasBeenSet(false),
-    m_functionVersionHasBeenSet(false)
+    m_functionVersionHasBeenSet(false),
+    m_syncConfigHasBeenSet(false),
+    m_maxBatchSize(0),
+    m_maxBatchSizeHasBeenSet(false)
 {
 }
 
@@ -60,6 +63,18 @@ Aws::String CreateFunctionRequest::SerializePayload() const
   if(m_functionVersionHasBeenSet)
   {
    payload.WithString("functionVersion", m_functionVersion);
+
+  }
+
+  if(m_syncConfigHasBeenSet)
+  {
+   payload.WithObject("syncConfig", m_syncConfig.Jsonize());
+
+  }
+
+  if(m_maxBatchSizeHasBeenSet)
+  {
+   payload.WithInteger("maxBatchSize", m_maxBatchSize);
 
   }
 

@@ -30,7 +30,11 @@ CreateAssociationRequest::CreateAssociationRequest() :
     m_syncComplianceHasBeenSet(false),
     m_applyOnlyAtCronInterval(false),
     m_applyOnlyAtCronIntervalHasBeenSet(false),
-    m_targetLocationsHasBeenSet(false)
+    m_calendarNamesHasBeenSet(false),
+    m_targetLocationsHasBeenSet(false),
+    m_scheduleOffset(0),
+    m_scheduleOffsetHasBeenSet(false),
+    m_targetMapsHasBeenSet(false)
 {
 }
 
@@ -135,6 +139,17 @@ Aws::String CreateAssociationRequest::SerializePayload() const
 
   }
 
+  if(m_calendarNamesHasBeenSet)
+  {
+   Array<JsonValue> calendarNamesJsonList(m_calendarNames.size());
+   for(unsigned calendarNamesIndex = 0; calendarNamesIndex < calendarNamesJsonList.GetLength(); ++calendarNamesIndex)
+   {
+     calendarNamesJsonList[calendarNamesIndex].AsString(m_calendarNames[calendarNamesIndex]);
+   }
+   payload.WithArray("CalendarNames", std::move(calendarNamesJsonList));
+
+  }
+
   if(m_targetLocationsHasBeenSet)
   {
    Array<JsonValue> targetLocationsJsonList(m_targetLocations.size());
@@ -143,6 +158,33 @@ Aws::String CreateAssociationRequest::SerializePayload() const
      targetLocationsJsonList[targetLocationsIndex].AsObject(m_targetLocations[targetLocationsIndex].Jsonize());
    }
    payload.WithArray("TargetLocations", std::move(targetLocationsJsonList));
+
+  }
+
+  if(m_scheduleOffsetHasBeenSet)
+  {
+   payload.WithInteger("ScheduleOffset", m_scheduleOffset);
+
+  }
+
+  if(m_targetMapsHasBeenSet)
+  {
+   Array<JsonValue> targetMapsJsonList(m_targetMaps.size());
+   for(unsigned targetMapsIndex = 0; targetMapsIndex < targetMapsJsonList.GetLength(); ++targetMapsIndex)
+   {
+     JsonValue targetMapJsonMap;
+     for(auto& targetMapItem : m_targetMaps[targetMapsIndex])
+     {
+       Array<JsonValue> targetMapValueListJsonList(targetMapItem.second.size());
+       for(unsigned targetMapValueListIndex = 0; targetMapValueListIndex < targetMapValueListJsonList.GetLength(); ++targetMapValueListIndex)
+       {
+         targetMapValueListJsonList[targetMapValueListIndex].AsString(targetMapItem.second[targetMapValueListIndex]);
+       }
+       targetMapJsonMap.WithArray(targetMapItem.first, std::move(targetMapValueListJsonList));
+     }
+     targetMapsJsonList[targetMapsIndex].AsObject(std::move(targetMapJsonMap));
+   }
+   payload.WithArray("TargetMaps", std::move(targetMapsJsonList));
 
   }
 

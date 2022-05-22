@@ -76,71 +76,55 @@ namespace Model
 
     /**
      * <p>The transmit mode to use to send data to the wireless device. Can be:
-     * <code>0</code> for UM (unacknowledge mode), <code>1</code> for AM (acknowledge
-     * mode), or <code>2</code> for (TM) transparent mode.</p>
+     * <code>0</code> for UM (unacknowledge mode) or <code>1</code> for AM (acknowledge
+     * mode).</p>
      */
     inline int GetTransmitMode() const{ return m_transmitMode; }
 
     /**
      * <p>The transmit mode to use to send data to the wireless device. Can be:
-     * <code>0</code> for UM (unacknowledge mode), <code>1</code> for AM (acknowledge
-     * mode), or <code>2</code> for (TM) transparent mode.</p>
+     * <code>0</code> for UM (unacknowledge mode) or <code>1</code> for AM (acknowledge
+     * mode).</p>
      */
     inline bool TransmitModeHasBeenSet() const { return m_transmitModeHasBeenSet; }
 
     /**
      * <p>The transmit mode to use to send data to the wireless device. Can be:
-     * <code>0</code> for UM (unacknowledge mode), <code>1</code> for AM (acknowledge
-     * mode), or <code>2</code> for (TM) transparent mode.</p>
+     * <code>0</code> for UM (unacknowledge mode) or <code>1</code> for AM (acknowledge
+     * mode).</p>
      */
     inline void SetTransmitMode(int value) { m_transmitModeHasBeenSet = true; m_transmitMode = value; }
 
     /**
      * <p>The transmit mode to use to send data to the wireless device. Can be:
-     * <code>0</code> for UM (unacknowledge mode), <code>1</code> for AM (acknowledge
-     * mode), or <code>2</code> for (TM) transparent mode.</p>
+     * <code>0</code> for UM (unacknowledge mode) or <code>1</code> for AM (acknowledge
+     * mode).</p>
      */
     inline SendDataToWirelessDeviceRequest& WithTransmitMode(int value) { SetTransmitMode(value); return *this;}
 
 
-    /**
-     * <p>The message payload to send.</p>
-     */
+    
     inline const Aws::String& GetPayloadData() const{ return m_payloadData; }
 
-    /**
-     * <p>The message payload to send.</p>
-     */
+    
     inline bool PayloadDataHasBeenSet() const { return m_payloadDataHasBeenSet; }
 
-    /**
-     * <p>The message payload to send.</p>
-     */
+    
     inline void SetPayloadData(const Aws::String& value) { m_payloadDataHasBeenSet = true; m_payloadData = value; }
 
-    /**
-     * <p>The message payload to send.</p>
-     */
+    
     inline void SetPayloadData(Aws::String&& value) { m_payloadDataHasBeenSet = true; m_payloadData = std::move(value); }
 
-    /**
-     * <p>The message payload to send.</p>
-     */
+    
     inline void SetPayloadData(const char* value) { m_payloadDataHasBeenSet = true; m_payloadData.assign(value); }
 
-    /**
-     * <p>The message payload to send.</p>
-     */
+    
     inline SendDataToWirelessDeviceRequest& WithPayloadData(const Aws::String& value) { SetPayloadData(value); return *this;}
 
-    /**
-     * <p>The message payload to send.</p>
-     */
+    
     inline SendDataToWirelessDeviceRequest& WithPayloadData(Aws::String&& value) { SetPayloadData(std::move(value)); return *this;}
 
-    /**
-     * <p>The message payload to send.</p>
-     */
+    
     inline SendDataToWirelessDeviceRequest& WithPayloadData(const char* value) { SetPayloadData(value); return *this;}
 
 

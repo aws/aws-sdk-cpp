@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/appmesh/AppMesh_EXPORTS.h>
+#include <aws/appmesh/model/HttpGatewayRouteRewrite.h>
 #include <aws/appmesh/model/GatewayRouteTarget.h>
 #include <utility>
 
@@ -36,6 +37,37 @@ namespace Model
     HttpGatewayRouteAction(Aws::Utils::Json::JsonView jsonValue);
     HttpGatewayRouteAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The gateway route action to rewrite.</p>
+     */
+    inline const HttpGatewayRouteRewrite& GetRewrite() const{ return m_rewrite; }
+
+    /**
+     * <p>The gateway route action to rewrite.</p>
+     */
+    inline bool RewriteHasBeenSet() const { return m_rewriteHasBeenSet; }
+
+    /**
+     * <p>The gateway route action to rewrite.</p>
+     */
+    inline void SetRewrite(const HttpGatewayRouteRewrite& value) { m_rewriteHasBeenSet = true; m_rewrite = value; }
+
+    /**
+     * <p>The gateway route action to rewrite.</p>
+     */
+    inline void SetRewrite(HttpGatewayRouteRewrite&& value) { m_rewriteHasBeenSet = true; m_rewrite = std::move(value); }
+
+    /**
+     * <p>The gateway route action to rewrite.</p>
+     */
+    inline HttpGatewayRouteAction& WithRewrite(const HttpGatewayRouteRewrite& value) { SetRewrite(value); return *this;}
+
+    /**
+     * <p>The gateway route action to rewrite.</p>
+     */
+    inline HttpGatewayRouteAction& WithRewrite(HttpGatewayRouteRewrite&& value) { SetRewrite(std::move(value)); return *this;}
 
 
     /**
@@ -75,6 +107,9 @@ namespace Model
     inline HttpGatewayRouteAction& WithTarget(GatewayRouteTarget&& value) { SetTarget(std::move(value)); return *this;}
 
   private:
+
+    HttpGatewayRouteRewrite m_rewrite;
+    bool m_rewriteHasBeenSet;
 
     GatewayRouteTarget m_target;
     bool m_targetHasBeenSet;

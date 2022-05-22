@@ -26,16 +26,20 @@
 #include <aws/databrew/model/CreateProjectRequest.h>
 #include <aws/databrew/model/CreateRecipeRequest.h>
 #include <aws/databrew/model/CreateRecipeJobRequest.h>
+#include <aws/databrew/model/CreateRulesetRequest.h>
 #include <aws/databrew/model/CreateScheduleRequest.h>
 #include <aws/databrew/model/DeleteDatasetRequest.h>
 #include <aws/databrew/model/DeleteJobRequest.h>
 #include <aws/databrew/model/DeleteProjectRequest.h>
 #include <aws/databrew/model/DeleteRecipeVersionRequest.h>
+#include <aws/databrew/model/DeleteRulesetRequest.h>
 #include <aws/databrew/model/DeleteScheduleRequest.h>
 #include <aws/databrew/model/DescribeDatasetRequest.h>
 #include <aws/databrew/model/DescribeJobRequest.h>
+#include <aws/databrew/model/DescribeJobRunRequest.h>
 #include <aws/databrew/model/DescribeProjectRequest.h>
 #include <aws/databrew/model/DescribeRecipeRequest.h>
+#include <aws/databrew/model/DescribeRulesetRequest.h>
 #include <aws/databrew/model/DescribeScheduleRequest.h>
 #include <aws/databrew/model/ListDatasetsRequest.h>
 #include <aws/databrew/model/ListJobRunsRequest.h>
@@ -43,6 +47,7 @@
 #include <aws/databrew/model/ListProjectsRequest.h>
 #include <aws/databrew/model/ListRecipeVersionsRequest.h>
 #include <aws/databrew/model/ListRecipesRequest.h>
+#include <aws/databrew/model/ListRulesetsRequest.h>
 #include <aws/databrew/model/ListSchedulesRequest.h>
 #include <aws/databrew/model/ListTagsForResourceRequest.h>
 #include <aws/databrew/model/PublishRecipeRequest.h>
@@ -57,6 +62,7 @@
 #include <aws/databrew/model/UpdateProjectRequest.h>
 #include <aws/databrew/model/UpdateRecipeRequest.h>
 #include <aws/databrew/model/UpdateRecipeJobRequest.h>
+#include <aws/databrew/model/UpdateRulesetRequest.h>
 #include <aws/databrew/model/UpdateScheduleRequest.h>
 
 using namespace Aws;
@@ -106,7 +112,7 @@ GlueDataBrewClient::~GlueDataBrewClient()
 {
 }
 
-void GlueDataBrewClient::init(const ClientConfiguration& config)
+void GlueDataBrewClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("DataBrew");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -140,11 +146,9 @@ BatchDeleteRecipeVersionOutcome GlueDataBrewClient::BatchDeleteRecipeVersion(con
     return BatchDeleteRecipeVersionOutcome(Aws::Client::AWSError<GlueDataBrewErrors>(GlueDataBrewErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/recipes/";
-  ss << request.GetName();
-  ss << "/batchDeleteRecipeVersion";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/recipes/");
+  uri.AddPathSegment(request.GetName());
+  uri.AddPathSegments("/batchDeleteRecipeVersion");
   return BatchDeleteRecipeVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -169,9 +173,7 @@ void GlueDataBrewClient::BatchDeleteRecipeVersionAsyncHelper(const BatchDeleteRe
 CreateDatasetOutcome GlueDataBrewClient::CreateDataset(const CreateDatasetRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/datasets";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/datasets");
   return CreateDatasetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -196,9 +198,7 @@ void GlueDataBrewClient::CreateDatasetAsyncHelper(const CreateDatasetRequest& re
 CreateProfileJobOutcome GlueDataBrewClient::CreateProfileJob(const CreateProfileJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/profileJobs";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/profileJobs");
   return CreateProfileJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -223,9 +223,7 @@ void GlueDataBrewClient::CreateProfileJobAsyncHelper(const CreateProfileJobReque
 CreateProjectOutcome GlueDataBrewClient::CreateProject(const CreateProjectRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/projects";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/projects");
   return CreateProjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -250,9 +248,7 @@ void GlueDataBrewClient::CreateProjectAsyncHelper(const CreateProjectRequest& re
 CreateRecipeOutcome GlueDataBrewClient::CreateRecipe(const CreateRecipeRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/recipes";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/recipes");
   return CreateRecipeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -277,9 +273,7 @@ void GlueDataBrewClient::CreateRecipeAsyncHelper(const CreateRecipeRequest& requ
 CreateRecipeJobOutcome GlueDataBrewClient::CreateRecipeJob(const CreateRecipeJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/recipeJobs";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/recipeJobs");
   return CreateRecipeJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -301,12 +295,35 @@ void GlueDataBrewClient::CreateRecipeJobAsyncHelper(const CreateRecipeJobRequest
   handler(this, request, CreateRecipeJob(request), context);
 }
 
+CreateRulesetOutcome GlueDataBrewClient::CreateRuleset(const CreateRulesetRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/rulesets");
+  return CreateRulesetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateRulesetOutcomeCallable GlueDataBrewClient::CreateRulesetCallable(const CreateRulesetRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateRulesetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateRuleset(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueDataBrewClient::CreateRulesetAsync(const CreateRulesetRequest& request, const CreateRulesetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateRulesetAsyncHelper( request, handler, context ); } );
+}
+
+void GlueDataBrewClient::CreateRulesetAsyncHelper(const CreateRulesetRequest& request, const CreateRulesetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateRuleset(request), context);
+}
+
 CreateScheduleOutcome GlueDataBrewClient::CreateSchedule(const CreateScheduleRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/schedules";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/schedules");
   return CreateScheduleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -336,10 +353,8 @@ DeleteDatasetOutcome GlueDataBrewClient::DeleteDataset(const DeleteDatasetReques
     return DeleteDatasetOutcome(Aws::Client::AWSError<GlueDataBrewErrors>(GlueDataBrewErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/datasets/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/datasets/");
+  uri.AddPathSegment(request.GetName());
   return DeleteDatasetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -369,10 +384,8 @@ DeleteJobOutcome GlueDataBrewClient::DeleteJob(const DeleteJobRequest& request) 
     return DeleteJobOutcome(Aws::Client::AWSError<GlueDataBrewErrors>(GlueDataBrewErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/jobs/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/jobs/");
+  uri.AddPathSegment(request.GetName());
   return DeleteJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -402,10 +415,8 @@ DeleteProjectOutcome GlueDataBrewClient::DeleteProject(const DeleteProjectReques
     return DeleteProjectOutcome(Aws::Client::AWSError<GlueDataBrewErrors>(GlueDataBrewErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/projects/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/projects/");
+  uri.AddPathSegment(request.GetName());
   return DeleteProjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -440,12 +451,10 @@ DeleteRecipeVersionOutcome GlueDataBrewClient::DeleteRecipeVersion(const DeleteR
     return DeleteRecipeVersionOutcome(Aws::Client::AWSError<GlueDataBrewErrors>(GlueDataBrewErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RecipeVersion]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/recipes/";
-  ss << request.GetName();
-  ss << "/recipeVersion/";
-  ss << request.GetRecipeVersion();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/recipes/");
+  uri.AddPathSegment(request.GetName());
+  uri.AddPathSegments("/recipeVersion/");
+  uri.AddPathSegment(request.GetRecipeVersion());
   return DeleteRecipeVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -467,6 +476,37 @@ void GlueDataBrewClient::DeleteRecipeVersionAsyncHelper(const DeleteRecipeVersio
   handler(this, request, DeleteRecipeVersion(request), context);
 }
 
+DeleteRulesetOutcome GlueDataBrewClient::DeleteRuleset(const DeleteRulesetRequest& request) const
+{
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteRuleset", "Required field: Name, is not set");
+    return DeleteRulesetOutcome(Aws::Client::AWSError<GlueDataBrewErrors>(GlueDataBrewErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/rulesets/");
+  uri.AddPathSegment(request.GetName());
+  return DeleteRulesetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteRulesetOutcomeCallable GlueDataBrewClient::DeleteRulesetCallable(const DeleteRulesetRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteRulesetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteRuleset(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueDataBrewClient::DeleteRulesetAsync(const DeleteRulesetRequest& request, const DeleteRulesetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteRulesetAsyncHelper( request, handler, context ); } );
+}
+
+void GlueDataBrewClient::DeleteRulesetAsyncHelper(const DeleteRulesetRequest& request, const DeleteRulesetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteRuleset(request), context);
+}
+
 DeleteScheduleOutcome GlueDataBrewClient::DeleteSchedule(const DeleteScheduleRequest& request) const
 {
   if (!request.NameHasBeenSet())
@@ -475,10 +515,8 @@ DeleteScheduleOutcome GlueDataBrewClient::DeleteSchedule(const DeleteScheduleReq
     return DeleteScheduleOutcome(Aws::Client::AWSError<GlueDataBrewErrors>(GlueDataBrewErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/schedules/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/schedules/");
+  uri.AddPathSegment(request.GetName());
   return DeleteScheduleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -508,10 +546,8 @@ DescribeDatasetOutcome GlueDataBrewClient::DescribeDataset(const DescribeDataset
     return DescribeDatasetOutcome(Aws::Client::AWSError<GlueDataBrewErrors>(GlueDataBrewErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/datasets/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/datasets/");
+  uri.AddPathSegment(request.GetName());
   return DescribeDatasetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -541,10 +577,8 @@ DescribeJobOutcome GlueDataBrewClient::DescribeJob(const DescribeJobRequest& req
     return DescribeJobOutcome(Aws::Client::AWSError<GlueDataBrewErrors>(GlueDataBrewErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/jobs/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/jobs/");
+  uri.AddPathSegment(request.GetName());
   return DescribeJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -566,6 +600,44 @@ void GlueDataBrewClient::DescribeJobAsyncHelper(const DescribeJobRequest& reques
   handler(this, request, DescribeJob(request), context);
 }
 
+DescribeJobRunOutcome GlueDataBrewClient::DescribeJobRun(const DescribeJobRunRequest& request) const
+{
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeJobRun", "Required field: Name, is not set");
+    return DescribeJobRunOutcome(Aws::Client::AWSError<GlueDataBrewErrors>(GlueDataBrewErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  if (!request.RunIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeJobRun", "Required field: RunId, is not set");
+    return DescribeJobRunOutcome(Aws::Client::AWSError<GlueDataBrewErrors>(GlueDataBrewErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RunId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/jobs/");
+  uri.AddPathSegment(request.GetName());
+  uri.AddPathSegments("/jobRun/");
+  uri.AddPathSegment(request.GetRunId());
+  return DescribeJobRunOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeJobRunOutcomeCallable GlueDataBrewClient::DescribeJobRunCallable(const DescribeJobRunRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeJobRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeJobRun(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueDataBrewClient::DescribeJobRunAsync(const DescribeJobRunRequest& request, const DescribeJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeJobRunAsyncHelper( request, handler, context ); } );
+}
+
+void GlueDataBrewClient::DescribeJobRunAsyncHelper(const DescribeJobRunRequest& request, const DescribeJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeJobRun(request), context);
+}
+
 DescribeProjectOutcome GlueDataBrewClient::DescribeProject(const DescribeProjectRequest& request) const
 {
   if (!request.NameHasBeenSet())
@@ -574,10 +646,8 @@ DescribeProjectOutcome GlueDataBrewClient::DescribeProject(const DescribeProject
     return DescribeProjectOutcome(Aws::Client::AWSError<GlueDataBrewErrors>(GlueDataBrewErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/projects/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/projects/");
+  uri.AddPathSegment(request.GetName());
   return DescribeProjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -607,10 +677,8 @@ DescribeRecipeOutcome GlueDataBrewClient::DescribeRecipe(const DescribeRecipeReq
     return DescribeRecipeOutcome(Aws::Client::AWSError<GlueDataBrewErrors>(GlueDataBrewErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/recipes/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/recipes/");
+  uri.AddPathSegment(request.GetName());
   return DescribeRecipeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -632,6 +700,37 @@ void GlueDataBrewClient::DescribeRecipeAsyncHelper(const DescribeRecipeRequest& 
   handler(this, request, DescribeRecipe(request), context);
 }
 
+DescribeRulesetOutcome GlueDataBrewClient::DescribeRuleset(const DescribeRulesetRequest& request) const
+{
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeRuleset", "Required field: Name, is not set");
+    return DescribeRulesetOutcome(Aws::Client::AWSError<GlueDataBrewErrors>(GlueDataBrewErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/rulesets/");
+  uri.AddPathSegment(request.GetName());
+  return DescribeRulesetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeRulesetOutcomeCallable GlueDataBrewClient::DescribeRulesetCallable(const DescribeRulesetRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeRulesetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeRuleset(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueDataBrewClient::DescribeRulesetAsync(const DescribeRulesetRequest& request, const DescribeRulesetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeRulesetAsyncHelper( request, handler, context ); } );
+}
+
+void GlueDataBrewClient::DescribeRulesetAsyncHelper(const DescribeRulesetRequest& request, const DescribeRulesetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeRuleset(request), context);
+}
+
 DescribeScheduleOutcome GlueDataBrewClient::DescribeSchedule(const DescribeScheduleRequest& request) const
 {
   if (!request.NameHasBeenSet())
@@ -640,10 +739,8 @@ DescribeScheduleOutcome GlueDataBrewClient::DescribeSchedule(const DescribeSched
     return DescribeScheduleOutcome(Aws::Client::AWSError<GlueDataBrewErrors>(GlueDataBrewErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/schedules/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/schedules/");
+  uri.AddPathSegment(request.GetName());
   return DescribeScheduleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -668,9 +765,7 @@ void GlueDataBrewClient::DescribeScheduleAsyncHelper(const DescribeScheduleReque
 ListDatasetsOutcome GlueDataBrewClient::ListDatasets(const ListDatasetsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/datasets";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/datasets");
   return ListDatasetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -700,11 +795,9 @@ ListJobRunsOutcome GlueDataBrewClient::ListJobRuns(const ListJobRunsRequest& req
     return ListJobRunsOutcome(Aws::Client::AWSError<GlueDataBrewErrors>(GlueDataBrewErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/jobs/";
-  ss << request.GetName();
-  ss << "/jobRuns";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/jobs/");
+  uri.AddPathSegment(request.GetName());
+  uri.AddPathSegments("/jobRuns");
   return ListJobRunsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -729,9 +822,7 @@ void GlueDataBrewClient::ListJobRunsAsyncHelper(const ListJobRunsRequest& reques
 ListJobsOutcome GlueDataBrewClient::ListJobs(const ListJobsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/jobs";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/jobs");
   return ListJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -756,9 +847,7 @@ void GlueDataBrewClient::ListJobsAsyncHelper(const ListJobsRequest& request, con
 ListProjectsOutcome GlueDataBrewClient::ListProjects(const ListProjectsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/projects";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/projects");
   return ListProjectsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -788,9 +877,7 @@ ListRecipeVersionsOutcome GlueDataBrewClient::ListRecipeVersions(const ListRecip
     return ListRecipeVersionsOutcome(Aws::Client::AWSError<GlueDataBrewErrors>(GlueDataBrewErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/recipeVersions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/recipeVersions");
   return ListRecipeVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -815,9 +902,7 @@ void GlueDataBrewClient::ListRecipeVersionsAsyncHelper(const ListRecipeVersionsR
 ListRecipesOutcome GlueDataBrewClient::ListRecipes(const ListRecipesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/recipes";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/recipes");
   return ListRecipesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -839,12 +924,35 @@ void GlueDataBrewClient::ListRecipesAsyncHelper(const ListRecipesRequest& reques
   handler(this, request, ListRecipes(request), context);
 }
 
+ListRulesetsOutcome GlueDataBrewClient::ListRulesets(const ListRulesetsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/rulesets");
+  return ListRulesetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListRulesetsOutcomeCallable GlueDataBrewClient::ListRulesetsCallable(const ListRulesetsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListRulesetsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListRulesets(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueDataBrewClient::ListRulesetsAsync(const ListRulesetsRequest& request, const ListRulesetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListRulesetsAsyncHelper( request, handler, context ); } );
+}
+
+void GlueDataBrewClient::ListRulesetsAsyncHelper(const ListRulesetsRequest& request, const ListRulesetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListRulesets(request), context);
+}
+
 ListSchedulesOutcome GlueDataBrewClient::ListSchedules(const ListSchedulesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/schedules";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/schedules");
   return ListSchedulesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -874,10 +982,8 @@ ListTagsForResourceOutcome GlueDataBrewClient::ListTagsForResource(const ListTag
     return ListTagsForResourceOutcome(Aws::Client::AWSError<GlueDataBrewErrors>(GlueDataBrewErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -907,11 +1013,9 @@ PublishRecipeOutcome GlueDataBrewClient::PublishRecipe(const PublishRecipeReques
     return PublishRecipeOutcome(Aws::Client::AWSError<GlueDataBrewErrors>(GlueDataBrewErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/recipes/";
-  ss << request.GetName();
-  ss << "/publishRecipe";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/recipes/");
+  uri.AddPathSegment(request.GetName());
+  uri.AddPathSegments("/publishRecipe");
   return PublishRecipeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -941,11 +1045,9 @@ SendProjectSessionActionOutcome GlueDataBrewClient::SendProjectSessionAction(con
     return SendProjectSessionActionOutcome(Aws::Client::AWSError<GlueDataBrewErrors>(GlueDataBrewErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/projects/";
-  ss << request.GetName();
-  ss << "/sendProjectSessionAction";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/projects/");
+  uri.AddPathSegment(request.GetName());
+  uri.AddPathSegments("/sendProjectSessionAction");
   return SendProjectSessionActionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -975,11 +1077,9 @@ StartJobRunOutcome GlueDataBrewClient::StartJobRun(const StartJobRunRequest& req
     return StartJobRunOutcome(Aws::Client::AWSError<GlueDataBrewErrors>(GlueDataBrewErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/jobs/";
-  ss << request.GetName();
-  ss << "/startJobRun";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/jobs/");
+  uri.AddPathSegment(request.GetName());
+  uri.AddPathSegments("/startJobRun");
   return StartJobRunOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1009,11 +1109,9 @@ StartProjectSessionOutcome GlueDataBrewClient::StartProjectSession(const StartPr
     return StartProjectSessionOutcome(Aws::Client::AWSError<GlueDataBrewErrors>(GlueDataBrewErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/projects/";
-  ss << request.GetName();
-  ss << "/startProjectSession";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/projects/");
+  uri.AddPathSegment(request.GetName());
+  uri.AddPathSegments("/startProjectSession");
   return StartProjectSessionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1048,13 +1146,11 @@ StopJobRunOutcome GlueDataBrewClient::StopJobRun(const StopJobRunRequest& reques
     return StopJobRunOutcome(Aws::Client::AWSError<GlueDataBrewErrors>(GlueDataBrewErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RunId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/jobs/";
-  ss << request.GetName();
-  ss << "/jobRun/";
-  ss << request.GetRunId();
-  ss << "/stopJobRun";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/jobs/");
+  uri.AddPathSegment(request.GetName());
+  uri.AddPathSegments("/jobRun/");
+  uri.AddPathSegment(request.GetRunId());
+  uri.AddPathSegments("/stopJobRun");
   return StopJobRunOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1084,10 +1180,8 @@ TagResourceOutcome GlueDataBrewClient::TagResource(const TagResourceRequest& req
     return TagResourceOutcome(Aws::Client::AWSError<GlueDataBrewErrors>(GlueDataBrewErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1122,10 +1216,8 @@ UntagResourceOutcome GlueDataBrewClient::UntagResource(const UntagResourceReques
     return UntagResourceOutcome(Aws::Client::AWSError<GlueDataBrewErrors>(GlueDataBrewErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1155,10 +1247,8 @@ UpdateDatasetOutcome GlueDataBrewClient::UpdateDataset(const UpdateDatasetReques
     return UpdateDatasetOutcome(Aws::Client::AWSError<GlueDataBrewErrors>(GlueDataBrewErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/datasets/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/datasets/");
+  uri.AddPathSegment(request.GetName());
   return UpdateDatasetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1188,10 +1278,8 @@ UpdateProfileJobOutcome GlueDataBrewClient::UpdateProfileJob(const UpdateProfile
     return UpdateProfileJobOutcome(Aws::Client::AWSError<GlueDataBrewErrors>(GlueDataBrewErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/profileJobs/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/profileJobs/");
+  uri.AddPathSegment(request.GetName());
   return UpdateProfileJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1221,10 +1309,8 @@ UpdateProjectOutcome GlueDataBrewClient::UpdateProject(const UpdateProjectReques
     return UpdateProjectOutcome(Aws::Client::AWSError<GlueDataBrewErrors>(GlueDataBrewErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/projects/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/projects/");
+  uri.AddPathSegment(request.GetName());
   return UpdateProjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1254,10 +1340,8 @@ UpdateRecipeOutcome GlueDataBrewClient::UpdateRecipe(const UpdateRecipeRequest& 
     return UpdateRecipeOutcome(Aws::Client::AWSError<GlueDataBrewErrors>(GlueDataBrewErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/recipes/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/recipes/");
+  uri.AddPathSegment(request.GetName());
   return UpdateRecipeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1287,10 +1371,8 @@ UpdateRecipeJobOutcome GlueDataBrewClient::UpdateRecipeJob(const UpdateRecipeJob
     return UpdateRecipeJobOutcome(Aws::Client::AWSError<GlueDataBrewErrors>(GlueDataBrewErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/recipeJobs/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/recipeJobs/");
+  uri.AddPathSegment(request.GetName());
   return UpdateRecipeJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1312,6 +1394,37 @@ void GlueDataBrewClient::UpdateRecipeJobAsyncHelper(const UpdateRecipeJobRequest
   handler(this, request, UpdateRecipeJob(request), context);
 }
 
+UpdateRulesetOutcome GlueDataBrewClient::UpdateRuleset(const UpdateRulesetRequest& request) const
+{
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateRuleset", "Required field: Name, is not set");
+    return UpdateRulesetOutcome(Aws::Client::AWSError<GlueDataBrewErrors>(GlueDataBrewErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/rulesets/");
+  uri.AddPathSegment(request.GetName());
+  return UpdateRulesetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateRulesetOutcomeCallable GlueDataBrewClient::UpdateRulesetCallable(const UpdateRulesetRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateRulesetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateRuleset(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueDataBrewClient::UpdateRulesetAsync(const UpdateRulesetRequest& request, const UpdateRulesetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateRulesetAsyncHelper( request, handler, context ); } );
+}
+
+void GlueDataBrewClient::UpdateRulesetAsyncHelper(const UpdateRulesetRequest& request, const UpdateRulesetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateRuleset(request), context);
+}
+
 UpdateScheduleOutcome GlueDataBrewClient::UpdateSchedule(const UpdateScheduleRequest& request) const
 {
   if (!request.NameHasBeenSet())
@@ -1320,10 +1433,8 @@ UpdateScheduleOutcome GlueDataBrewClient::UpdateSchedule(const UpdateScheduleReq
     return UpdateScheduleOutcome(Aws::Client::AWSError<GlueDataBrewErrors>(GlueDataBrewErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/schedules/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/schedules/");
+  uri.AddPathSegment(request.GetName());
   return UpdateScheduleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 

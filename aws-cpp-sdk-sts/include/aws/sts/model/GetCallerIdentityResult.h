@@ -112,80 +112,80 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID number of the account that owns or contains the calling
-     * entity.</p>
+     * <p>The Amazon Web Services account ID number of the account that owns or
+     * contains the calling entity.</p>
      */
     inline const Aws::String& GetAccount() const{ return m_account; }
 
     /**
-     * <p>The AWS account ID number of the account that owns or contains the calling
-     * entity.</p>
+     * <p>The Amazon Web Services account ID number of the account that owns or
+     * contains the calling entity.</p>
      */
     inline void SetAccount(const Aws::String& value) { m_account = value; }
 
     /**
-     * <p>The AWS account ID number of the account that owns or contains the calling
-     * entity.</p>
+     * <p>The Amazon Web Services account ID number of the account that owns or
+     * contains the calling entity.</p>
      */
     inline void SetAccount(Aws::String&& value) { m_account = std::move(value); }
 
     /**
-     * <p>The AWS account ID number of the account that owns or contains the calling
-     * entity.</p>
+     * <p>The Amazon Web Services account ID number of the account that owns or
+     * contains the calling entity.</p>
      */
     inline void SetAccount(const char* value) { m_account.assign(value); }
 
     /**
-     * <p>The AWS account ID number of the account that owns or contains the calling
-     * entity.</p>
+     * <p>The Amazon Web Services account ID number of the account that owns or
+     * contains the calling entity.</p>
      */
     inline GetCallerIdentityResult& WithAccount(const Aws::String& value) { SetAccount(value); return *this;}
 
     /**
-     * <p>The AWS account ID number of the account that owns or contains the calling
-     * entity.</p>
+     * <p>The Amazon Web Services account ID number of the account that owns or
+     * contains the calling entity.</p>
      */
     inline GetCallerIdentityResult& WithAccount(Aws::String&& value) { SetAccount(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID number of the account that owns or contains the calling
-     * entity.</p>
+     * <p>The Amazon Web Services account ID number of the account that owns or
+     * contains the calling entity.</p>
      */
     inline GetCallerIdentityResult& WithAccount(const char* value) { SetAccount(value); return *this;}
 
 
     /**
-     * <p>The AWS ARN associated with the calling entity.</p>
+     * <p>The Amazon Web Services ARN associated with the calling entity.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The AWS ARN associated with the calling entity.</p>
+     * <p>The Amazon Web Services ARN associated with the calling entity.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arn = value; }
 
     /**
-     * <p>The AWS ARN associated with the calling entity.</p>
+     * <p>The Amazon Web Services ARN associated with the calling entity.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
 
     /**
-     * <p>The AWS ARN associated with the calling entity.</p>
+     * <p>The Amazon Web Services ARN associated with the calling entity.</p>
      */
     inline void SetArn(const char* value) { m_arn.assign(value); }
 
     /**
-     * <p>The AWS ARN associated with the calling entity.</p>
+     * <p>The Amazon Web Services ARN associated with the calling entity.</p>
      */
     inline GetCallerIdentityResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The AWS ARN associated with the calling entity.</p>
+     * <p>The Amazon Web Services ARN associated with the calling entity.</p>
      */
     inline GetCallerIdentityResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS ARN associated with the calling entity.</p>
+     * <p>The Amazon Web Services ARN associated with the calling entity.</p>
      */
     inline GetCallerIdentityResult& WithArn(const char* value) { SetArn(value); return *this;}
 

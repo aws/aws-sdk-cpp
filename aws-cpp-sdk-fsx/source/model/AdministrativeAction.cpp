@@ -6,6 +6,8 @@
 #include <aws/fsx/model/AdministrativeAction.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/fsx/model/FileSystem.h>
+#include <aws/fsx/model/Volume.h>
+#include <aws/fsx/model/Snapshot.h>
 
 #include <utility>
 
@@ -28,7 +30,9 @@ AdministrativeAction::AdministrativeAction() :
     m_status(Status::NOT_SET),
     m_statusHasBeenSet(false),
     m_targetFileSystemValuesHasBeenSet(false),
-    m_failureDetailsHasBeenSet(false)
+    m_failureDetailsHasBeenSet(false),
+    m_targetVolumeValuesHasBeenSet(false),
+    m_targetSnapshotValuesHasBeenSet(false)
 {
 }
 
@@ -41,7 +45,9 @@ AdministrativeAction::AdministrativeAction(JsonView jsonValue) :
     m_status(Status::NOT_SET),
     m_statusHasBeenSet(false),
     m_targetFileSystemValuesHasBeenSet(false),
-    m_failureDetailsHasBeenSet(false)
+    m_failureDetailsHasBeenSet(false),
+    m_targetVolumeValuesHasBeenSet(false),
+    m_targetSnapshotValuesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -52,6 +58,20 @@ void AdministrativeAction::SetTargetFileSystemValues(const FileSystem& value) { 
 void AdministrativeAction::SetTargetFileSystemValues(FileSystem&& value) { m_targetFileSystemValuesHasBeenSet = true; m_targetFileSystemValues = Aws::MakeShared<FileSystem>("AdministrativeAction", std::move(value)); }
 AdministrativeAction& AdministrativeAction::WithTargetFileSystemValues(const FileSystem& value) { SetTargetFileSystemValues(value); return *this;}
 AdministrativeAction& AdministrativeAction::WithTargetFileSystemValues(FileSystem&& value) { SetTargetFileSystemValues(std::move(value)); return *this;}
+
+const Volume& AdministrativeAction::GetTargetVolumeValues() const{ return *m_targetVolumeValues; }
+bool AdministrativeAction::TargetVolumeValuesHasBeenSet() const { return m_targetVolumeValuesHasBeenSet; }
+void AdministrativeAction::SetTargetVolumeValues(const Volume& value) { m_targetVolumeValuesHasBeenSet = true; m_targetVolumeValues = Aws::MakeShared<Volume>("AdministrativeAction", value); }
+void AdministrativeAction::SetTargetVolumeValues(Volume&& value) { m_targetVolumeValuesHasBeenSet = true; m_targetVolumeValues = Aws::MakeShared<Volume>("AdministrativeAction", std::move(value)); }
+AdministrativeAction& AdministrativeAction::WithTargetVolumeValues(const Volume& value) { SetTargetVolumeValues(value); return *this;}
+AdministrativeAction& AdministrativeAction::WithTargetVolumeValues(Volume&& value) { SetTargetVolumeValues(std::move(value)); return *this;}
+
+const Snapshot& AdministrativeAction::GetTargetSnapshotValues() const{ return *m_targetSnapshotValues; }
+bool AdministrativeAction::TargetSnapshotValuesHasBeenSet() const { return m_targetSnapshotValuesHasBeenSet; }
+void AdministrativeAction::SetTargetSnapshotValues(const Snapshot& value) { m_targetSnapshotValuesHasBeenSet = true; m_targetSnapshotValues = Aws::MakeShared<Snapshot>("AdministrativeAction", value); }
+void AdministrativeAction::SetTargetSnapshotValues(Snapshot&& value) { m_targetSnapshotValuesHasBeenSet = true; m_targetSnapshotValues = Aws::MakeShared<Snapshot>("AdministrativeAction", std::move(value)); }
+AdministrativeAction& AdministrativeAction::WithTargetSnapshotValues(const Snapshot& value) { SetTargetSnapshotValues(value); return *this;}
+AdministrativeAction& AdministrativeAction::WithTargetSnapshotValues(Snapshot&& value) { SetTargetSnapshotValues(std::move(value)); return *this;}
 
 AdministrativeAction& AdministrativeAction::operator =(JsonView jsonValue)
 {
@@ -97,6 +117,20 @@ AdministrativeAction& AdministrativeAction::operator =(JsonView jsonValue)
     m_failureDetailsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TargetVolumeValues"))
+  {
+    m_targetVolumeValues = Aws::MakeShared<Volume>("AdministrativeAction", jsonValue.GetObject("TargetVolumeValues"));
+
+    m_targetVolumeValuesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TargetSnapshotValues"))
+  {
+    m_targetSnapshotValues = Aws::MakeShared<Snapshot>("AdministrativeAction", jsonValue.GetObject("TargetSnapshotValues"));
+
+    m_targetSnapshotValuesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -134,6 +168,18 @@ JsonValue AdministrativeAction::Jsonize() const
   if(m_failureDetailsHasBeenSet)
   {
    payload.WithObject("FailureDetails", m_failureDetails.Jsonize());
+
+  }
+
+  if(m_targetVolumeValuesHasBeenSet)
+  {
+   payload.WithObject("TargetVolumeValues", m_targetVolumeValues->Jsonize());
+
+  }
+
+  if(m_targetSnapshotValuesHasBeenSet)
+  {
+   payload.WithObject("TargetSnapshotValues", m_targetSnapshotValues->Jsonize());
 
   }
 

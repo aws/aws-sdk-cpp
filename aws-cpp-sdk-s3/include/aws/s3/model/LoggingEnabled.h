@@ -28,8 +28,8 @@ namespace Model
    * <p>Describes where logs are stored and the prefix that Amazon S3 assigns to all
    * log object keys for a bucket. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlogging.html">PUT
-   * Bucket logging</a> in the <i>Amazon Simple Storage Service API
-   * Reference</i>.</p><p><h3>See Also:</h3>   <a
+   * Bucket logging</a> in the <i>Amazon S3 API Reference</i>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/LoggingEnabled">AWS
    * API Reference</a></p>
    */
@@ -125,42 +125,74 @@ namespace Model
 
 
     /**
-     * <p>Container for granting information.</p>
+     * <p>Container for granting information.</p> <p>Buckets that use the bucket owner
+     * enforced setting for Object Ownership don't support target grants. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/enable-server-access-logging.html#grant-log-delivery-permissions-general">Permissions
+     * for server access log delivery</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline const Aws::Vector<TargetGrant>& GetTargetGrants() const{ return m_targetGrants; }
 
     /**
-     * <p>Container for granting information.</p>
+     * <p>Container for granting information.</p> <p>Buckets that use the bucket owner
+     * enforced setting for Object Ownership don't support target grants. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/enable-server-access-logging.html#grant-log-delivery-permissions-general">Permissions
+     * for server access log delivery</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline bool TargetGrantsHasBeenSet() const { return m_targetGrantsHasBeenSet; }
 
     /**
-     * <p>Container for granting information.</p>
+     * <p>Container for granting information.</p> <p>Buckets that use the bucket owner
+     * enforced setting for Object Ownership don't support target grants. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/enable-server-access-logging.html#grant-log-delivery-permissions-general">Permissions
+     * for server access log delivery</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetTargetGrants(const Aws::Vector<TargetGrant>& value) { m_targetGrantsHasBeenSet = true; m_targetGrants = value; }
 
     /**
-     * <p>Container for granting information.</p>
+     * <p>Container for granting information.</p> <p>Buckets that use the bucket owner
+     * enforced setting for Object Ownership don't support target grants. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/enable-server-access-logging.html#grant-log-delivery-permissions-general">Permissions
+     * for server access log delivery</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetTargetGrants(Aws::Vector<TargetGrant>&& value) { m_targetGrantsHasBeenSet = true; m_targetGrants = std::move(value); }
 
     /**
-     * <p>Container for granting information.</p>
+     * <p>Container for granting information.</p> <p>Buckets that use the bucket owner
+     * enforced setting for Object Ownership don't support target grants. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/enable-server-access-logging.html#grant-log-delivery-permissions-general">Permissions
+     * for server access log delivery</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline LoggingEnabled& WithTargetGrants(const Aws::Vector<TargetGrant>& value) { SetTargetGrants(value); return *this;}
 
     /**
-     * <p>Container for granting information.</p>
+     * <p>Container for granting information.</p> <p>Buckets that use the bucket owner
+     * enforced setting for Object Ownership don't support target grants. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/enable-server-access-logging.html#grant-log-delivery-permissions-general">Permissions
+     * for server access log delivery</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline LoggingEnabled& WithTargetGrants(Aws::Vector<TargetGrant>&& value) { SetTargetGrants(std::move(value)); return *this;}
 
     /**
-     * <p>Container for granting information.</p>
+     * <p>Container for granting information.</p> <p>Buckets that use the bucket owner
+     * enforced setting for Object Ownership don't support target grants. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/enable-server-access-logging.html#grant-log-delivery-permissions-general">Permissions
+     * for server access log delivery</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline LoggingEnabled& AddTargetGrants(const TargetGrant& value) { m_targetGrantsHasBeenSet = true; m_targetGrants.push_back(value); return *this; }
 
     /**
-     * <p>Container for granting information.</p>
+     * <p>Container for granting information.</p> <p>Buckets that use the bucket owner
+     * enforced setting for Object Ownership don't support target grants. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/enable-server-access-logging.html#grant-log-delivery-permissions-general">Permissions
+     * for server access log delivery</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline LoggingEnabled& AddTargetGrants(TargetGrant&& value) { m_targetGrantsHasBeenSet = true; m_targetGrants.push_back(std::move(value)); return *this; }
 

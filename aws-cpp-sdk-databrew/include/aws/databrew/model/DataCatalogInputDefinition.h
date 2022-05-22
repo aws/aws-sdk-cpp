@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents how metadata stored in the AWS Glue Data Catalog is defined in an
-   * AWS Glue DataBrew dataset. </p><p><h3>See Also:</h3>   <a
+   * <p>Represents how metadata stored in the Glue Data Catalog is defined in a
+   * DataBrew dataset. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DataCatalogInputDefinition">AWS
    * API Reference</a></p>
    */
@@ -40,50 +40,50 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier of the AWS account that holds the Data Catalog that
-     * stores the data.</p>
+     * <p>The unique identifier of the Amazon Web Services account that holds the Data
+     * Catalog that stores the data.</p>
      */
     inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
 
     /**
-     * <p>The unique identifier of the AWS account that holds the Data Catalog that
-     * stores the data.</p>
+     * <p>The unique identifier of the Amazon Web Services account that holds the Data
+     * Catalog that stores the data.</p>
      */
     inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
 
     /**
-     * <p>The unique identifier of the AWS account that holds the Data Catalog that
-     * stores the data.</p>
+     * <p>The unique identifier of the Amazon Web Services account that holds the Data
+     * Catalog that stores the data.</p>
      */
     inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
 
     /**
-     * <p>The unique identifier of the AWS account that holds the Data Catalog that
-     * stores the data.</p>
+     * <p>The unique identifier of the Amazon Web Services account that holds the Data
+     * Catalog that stores the data.</p>
      */
     inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
 
     /**
-     * <p>The unique identifier of the AWS account that holds the Data Catalog that
-     * stores the data.</p>
+     * <p>The unique identifier of the Amazon Web Services account that holds the Data
+     * Catalog that stores the data.</p>
      */
     inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
 
     /**
-     * <p>The unique identifier of the AWS account that holds the Data Catalog that
-     * stores the data.</p>
+     * <p>The unique identifier of the Amazon Web Services account that holds the Data
+     * Catalog that stores the data.</p>
      */
     inline DataCatalogInputDefinition& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
 
     /**
-     * <p>The unique identifier of the AWS account that holds the Data Catalog that
-     * stores the data.</p>
+     * <p>The unique identifier of the Amazon Web Services account that holds the Data
+     * Catalog that stores the data.</p>
      */
     inline DataCatalogInputDefinition& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier of the AWS account that holds the Data Catalog that
-     * stores the data.</p>
+     * <p>The unique identifier of the Amazon Web Services account that holds the Data
+     * Catalog that stores the data.</p>
      */
     inline DataCatalogInputDefinition& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
 
@@ -179,38 +179,38 @@ namespace Model
 
 
     /**
-     * <p>An Amazon location that AWS Glue Data Catalog can use as a temporary
-     * directory.</p>
+     * <p>Represents an Amazon location where DataBrew can store intermediate
+     * results.</p>
      */
     inline const S3Location& GetTempDirectory() const{ return m_tempDirectory; }
 
     /**
-     * <p>An Amazon location that AWS Glue Data Catalog can use as a temporary
-     * directory.</p>
+     * <p>Represents an Amazon location where DataBrew can store intermediate
+     * results.</p>
      */
     inline bool TempDirectoryHasBeenSet() const { return m_tempDirectoryHasBeenSet; }
 
     /**
-     * <p>An Amazon location that AWS Glue Data Catalog can use as a temporary
-     * directory.</p>
+     * <p>Represents an Amazon location where DataBrew can store intermediate
+     * results.</p>
      */
     inline void SetTempDirectory(const S3Location& value) { m_tempDirectoryHasBeenSet = true; m_tempDirectory = value; }
 
     /**
-     * <p>An Amazon location that AWS Glue Data Catalog can use as a temporary
-     * directory.</p>
+     * <p>Represents an Amazon location where DataBrew can store intermediate
+     * results.</p>
      */
     inline void SetTempDirectory(S3Location&& value) { m_tempDirectoryHasBeenSet = true; m_tempDirectory = std::move(value); }
 
     /**
-     * <p>An Amazon location that AWS Glue Data Catalog can use as a temporary
-     * directory.</p>
+     * <p>Represents an Amazon location where DataBrew can store intermediate
+     * results.</p>
      */
     inline DataCatalogInputDefinition& WithTempDirectory(const S3Location& value) { SetTempDirectory(value); return *this;}
 
     /**
-     * <p>An Amazon location that AWS Glue Data Catalog can use as a temporary
-     * directory.</p>
+     * <p>Represents an Amazon location where DataBrew can store intermediate
+     * results.</p>
      */
     inline DataCatalogInputDefinition& WithTempDirectory(S3Location&& value) { SetTempDirectory(std::move(value)); return *this;}
 

@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/ContainerDefinition.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/InferenceExecutionConfig.h>
 #include <aws/sagemaker/model/VpcConfig.h>
 #include <aws/sagemaker/model/Tag.h>
 #include <utility>
@@ -164,171 +165,200 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can
-     * assume to access model artifacts and docker image for deployment on ML compute
-     * instances or for batch transform jobs. Deploying on ML compute instances is part
-     * of model hosting. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
-     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> 
+     * <p>Specifies details of how containers in a multi-container endpoint are
+     * called.</p>
+     */
+    inline const InferenceExecutionConfig& GetInferenceExecutionConfig() const{ return m_inferenceExecutionConfig; }
+
+    /**
+     * <p>Specifies details of how containers in a multi-container endpoint are
+     * called.</p>
+     */
+    inline bool InferenceExecutionConfigHasBeenSet() const { return m_inferenceExecutionConfigHasBeenSet; }
+
+    /**
+     * <p>Specifies details of how containers in a multi-container endpoint are
+     * called.</p>
+     */
+    inline void SetInferenceExecutionConfig(const InferenceExecutionConfig& value) { m_inferenceExecutionConfigHasBeenSet = true; m_inferenceExecutionConfig = value; }
+
+    /**
+     * <p>Specifies details of how containers in a multi-container endpoint are
+     * called.</p>
+     */
+    inline void SetInferenceExecutionConfig(InferenceExecutionConfig&& value) { m_inferenceExecutionConfigHasBeenSet = true; m_inferenceExecutionConfig = std::move(value); }
+
+    /**
+     * <p>Specifies details of how containers in a multi-container endpoint are
+     * called.</p>
+     */
+    inline CreateModelRequest& WithInferenceExecutionConfig(const InferenceExecutionConfig& value) { SetInferenceExecutionConfig(value); return *this;}
+
+    /**
+     * <p>Specifies details of how containers in a multi-container endpoint are
+     * called.</p>
+     */
+    inline CreateModelRequest& WithInferenceExecutionConfig(InferenceExecutionConfig&& value) { SetInferenceExecutionConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role that SageMaker can assume to
+     * access model artifacts and docker image for deployment on ML compute instances
+     * or for batch transform jobs. Deploying on ML compute instances is part of model
+     * hosting. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker
+     * Roles</a>. </p>  <p>To be able to pass this role to SageMaker, the caller
+     * of this API must have the <code>iam:PassRole</code> permission.</p> 
      */
     inline const Aws::String& GetExecutionRoleArn() const{ return m_executionRoleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can
-     * assume to access model artifacts and docker image for deployment on ML compute
-     * instances or for batch transform jobs. Deploying on ML compute instances is part
-     * of model hosting. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
-     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> 
+     * <p>The Amazon Resource Name (ARN) of the IAM role that SageMaker can assume to
+     * access model artifacts and docker image for deployment on ML compute instances
+     * or for batch transform jobs. Deploying on ML compute instances is part of model
+     * hosting. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker
+     * Roles</a>. </p>  <p>To be able to pass this role to SageMaker, the caller
+     * of this API must have the <code>iam:PassRole</code> permission.</p> 
      */
     inline bool ExecutionRoleArnHasBeenSet() const { return m_executionRoleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can
-     * assume to access model artifacts and docker image for deployment on ML compute
-     * instances or for batch transform jobs. Deploying on ML compute instances is part
-     * of model hosting. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
-     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> 
+     * <p>The Amazon Resource Name (ARN) of the IAM role that SageMaker can assume to
+     * access model artifacts and docker image for deployment on ML compute instances
+     * or for batch transform jobs. Deploying on ML compute instances is part of model
+     * hosting. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker
+     * Roles</a>. </p>  <p>To be able to pass this role to SageMaker, the caller
+     * of this API must have the <code>iam:PassRole</code> permission.</p> 
      */
     inline void SetExecutionRoleArn(const Aws::String& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can
-     * assume to access model artifacts and docker image for deployment on ML compute
-     * instances or for batch transform jobs. Deploying on ML compute instances is part
-     * of model hosting. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
-     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> 
+     * <p>The Amazon Resource Name (ARN) of the IAM role that SageMaker can assume to
+     * access model artifacts and docker image for deployment on ML compute instances
+     * or for batch transform jobs. Deploying on ML compute instances is part of model
+     * hosting. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker
+     * Roles</a>. </p>  <p>To be able to pass this role to SageMaker, the caller
+     * of this API must have the <code>iam:PassRole</code> permission.</p> 
      */
     inline void SetExecutionRoleArn(Aws::String&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can
-     * assume to access model artifacts and docker image for deployment on ML compute
-     * instances or for batch transform jobs. Deploying on ML compute instances is part
-     * of model hosting. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
-     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> 
+     * <p>The Amazon Resource Name (ARN) of the IAM role that SageMaker can assume to
+     * access model artifacts and docker image for deployment on ML compute instances
+     * or for batch transform jobs. Deploying on ML compute instances is part of model
+     * hosting. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker
+     * Roles</a>. </p>  <p>To be able to pass this role to SageMaker, the caller
+     * of this API must have the <code>iam:PassRole</code> permission.</p> 
      */
     inline void SetExecutionRoleArn(const char* value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can
-     * assume to access model artifacts and docker image for deployment on ML compute
-     * instances or for batch transform jobs. Deploying on ML compute instances is part
-     * of model hosting. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
-     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> 
+     * <p>The Amazon Resource Name (ARN) of the IAM role that SageMaker can assume to
+     * access model artifacts and docker image for deployment on ML compute instances
+     * or for batch transform jobs. Deploying on ML compute instances is part of model
+     * hosting. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker
+     * Roles</a>. </p>  <p>To be able to pass this role to SageMaker, the caller
+     * of this API must have the <code>iam:PassRole</code> permission.</p> 
      */
     inline CreateModelRequest& WithExecutionRoleArn(const Aws::String& value) { SetExecutionRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can
-     * assume to access model artifacts and docker image for deployment on ML compute
-     * instances or for batch transform jobs. Deploying on ML compute instances is part
-     * of model hosting. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
-     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> 
+     * <p>The Amazon Resource Name (ARN) of the IAM role that SageMaker can assume to
+     * access model artifacts and docker image for deployment on ML compute instances
+     * or for batch transform jobs. Deploying on ML compute instances is part of model
+     * hosting. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker
+     * Roles</a>. </p>  <p>To be able to pass this role to SageMaker, the caller
+     * of this API must have the <code>iam:PassRole</code> permission.</p> 
      */
     inline CreateModelRequest& WithExecutionRoleArn(Aws::String&& value) { SetExecutionRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can
-     * assume to access model artifacts and docker image for deployment on ML compute
-     * instances or for batch transform jobs. Deploying on ML compute instances is part
-     * of model hosting. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
-     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> 
+     * <p>The Amazon Resource Name (ARN) of the IAM role that SageMaker can assume to
+     * access model artifacts and docker image for deployment on ML compute instances
+     * or for batch transform jobs. Deploying on ML compute instances is part of model
+     * hosting. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker
+     * Roles</a>. </p>  <p>To be able to pass this role to SageMaker, the caller
+     * of this API must have the <code>iam:PassRole</code> permission.</p> 
      */
     inline CreateModelRequest& WithExecutionRoleArn(const char* value) { SetExecutionRoleArn(value); return *this;}
 
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p>
+     * Amazon Web Services Resources</a>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p>
+     * Amazon Web Services Resources</a>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p>
+     * Amazon Web Services Resources</a>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p>
+     * Amazon Web Services Resources</a>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p>
+     * Amazon Web Services Resources</a>.</p>
      */
     inline CreateModelRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p>
+     * Amazon Web Services Resources</a>.</p>
      */
     inline CreateModelRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p>
+     * Amazon Web Services Resources</a>.</p>
      */
     inline CreateModelRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p>
+     * Amazon Web Services Resources</a>.</p>
      */
     inline CreateModelRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
@@ -440,6 +470,9 @@ namespace Model
 
     Aws::Vector<ContainerDefinition> m_containers;
     bool m_containersHasBeenSet;
+
+    InferenceExecutionConfig m_inferenceExecutionConfig;
+    bool m_inferenceExecutionConfigHasBeenSet;
 
     Aws::String m_executionRoleArn;
     bool m_executionRoleArnHasBeenSet;

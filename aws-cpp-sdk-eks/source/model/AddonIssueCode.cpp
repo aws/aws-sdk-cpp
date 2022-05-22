@@ -25,6 +25,9 @@ namespace Aws
         static const int ClusterUnreachable_HASH = HashingUtils::HashString("ClusterUnreachable");
         static const int InsufficientNumberOfReplicas_HASH = HashingUtils::HashString("InsufficientNumberOfReplicas");
         static const int ConfigurationConflict_HASH = HashingUtils::HashString("ConfigurationConflict");
+        static const int AdmissionRequestDenied_HASH = HashingUtils::HashString("AdmissionRequestDenied");
+        static const int UnsupportedAddonModification_HASH = HashingUtils::HashString("UnsupportedAddonModification");
+        static const int K8sResourceNotFound_HASH = HashingUtils::HashString("K8sResourceNotFound");
 
 
         AddonIssueCode GetAddonIssueCodeForName(const Aws::String& name)
@@ -50,6 +53,18 @@ namespace Aws
           {
             return AddonIssueCode::ConfigurationConflict;
           }
+          else if (hashCode == AdmissionRequestDenied_HASH)
+          {
+            return AddonIssueCode::AdmissionRequestDenied;
+          }
+          else if (hashCode == UnsupportedAddonModification_HASH)
+          {
+            return AddonIssueCode::UnsupportedAddonModification;
+          }
+          else if (hashCode == K8sResourceNotFound_HASH)
+          {
+            return AddonIssueCode::K8sResourceNotFound;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -74,6 +89,12 @@ namespace Aws
             return "InsufficientNumberOfReplicas";
           case AddonIssueCode::ConfigurationConflict:
             return "ConfigurationConflict";
+          case AddonIssueCode::AdmissionRequestDenied:
+            return "AdmissionRequestDenied";
+          case AddonIssueCode::UnsupportedAddonModification:
+            return "UnsupportedAddonModification";
+          case AddonIssueCode::K8sResourceNotFound:
+            return "K8sResourceNotFound";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -26,9 +26,9 @@ namespace Model
   /**
    * <p>An Amazon Pinpoint analytics endpoint.</p> <p>An endpoint uniquely identifies
    * a mobile device, email address, or phone number that can receive messages from
-   * Amazon Pinpoint analytics.</p>  <p>Cognito User Pools only supports
+   * Amazon Pinpoint analytics.</p>  <p>Amazon Cognito user pools only support
    * sending events to Amazon Pinpoint projects in the US East (N. Virginia)
-   * us-east-1 Region, regardless of the region in which the user pool resides.</p>
+   * us-east-1 Region, regardless of the Region where the user pool resides.</p>
    * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AnalyticsMetadataType">AWS
    * API Reference</a></p>

@@ -16,8 +16,7 @@ CreateMapRequest::CreateMapRequest() :
     m_configurationHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_mapNameHasBeenSet(false),
-    m_pricingPlan(PricingPlan::NOT_SET),
-    m_pricingPlanHasBeenSet(false)
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -43,9 +42,15 @@ Aws::String CreateMapRequest::SerializePayload() const
 
   }
 
-  if(m_pricingPlanHasBeenSet)
+  if(m_tagsHasBeenSet)
   {
-   payload.WithString("PricingPlan", PricingPlanMapper::GetNameForPricingPlan(m_pricingPlan));
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("Tags", std::move(tagsJsonMap));
+
   }
 
   return payload.View().WriteReadable();

@@ -204,79 +204,79 @@ namespace Model
 
 
     /**
-     * <p> The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page size.
-     * </p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size. </p>
      */
     inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
 
     /**
-     * <p> The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page size.
-     * </p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size. </p>
      */
     inline bool NextPageTokenHasBeenSet() const { return m_nextPageTokenHasBeenSet; }
 
     /**
-     * <p> The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page size.
-     * </p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size. </p>
      */
     inline void SetNextPageToken(const Aws::String& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = value; }
 
     /**
-     * <p> The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page size.
-     * </p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size. </p>
      */
     inline void SetNextPageToken(Aws::String&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::move(value); }
 
     /**
-     * <p> The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page size.
-     * </p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size. </p>
      */
     inline void SetNextPageToken(const char* value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken.assign(value); }
 
     /**
-     * <p> The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page size.
-     * </p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size. </p>
      */
     inline GetAnomaliesRequest& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
 
     /**
-     * <p> The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page size.
-     * </p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size. </p>
      */
     inline GetAnomaliesRequest& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
 
     /**
-     * <p> The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page size.
-     * </p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size. </p>
      */
     inline GetAnomaliesRequest& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 
 
     /**
-     * <p> The number of entries a paginated response contains. </p>
+     * <p>The number of entries a paginated response contains. </p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p> The number of entries a paginated response contains. </p>
+     * <p>The number of entries a paginated response contains. </p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p> The number of entries a paginated response contains. </p>
+     * <p>The number of entries a paginated response contains. </p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p> The number of entries a paginated response contains. </p>
+     * <p>The number of entries a paginated response contains. </p>
      */
     inline GetAnomaliesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

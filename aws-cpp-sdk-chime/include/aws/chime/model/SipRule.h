@@ -125,63 +125,63 @@ namespace Model
 
 
     /**
-     * <p>Indicates if the SIP rule is enabled or disabled. You must disable a rule
-     * before you can delete it.</p>
+     * <p>Indicates whether the SIP rule is enabled or disabled. You must disable a
+     * rule before you can delete it.</p>
      */
     inline bool GetDisabled() const{ return m_disabled; }
 
     /**
-     * <p>Indicates if the SIP rule is enabled or disabled. You must disable a rule
-     * before you can delete it.</p>
+     * <p>Indicates whether the SIP rule is enabled or disabled. You must disable a
+     * rule before you can delete it.</p>
      */
     inline bool DisabledHasBeenSet() const { return m_disabledHasBeenSet; }
 
     /**
-     * <p>Indicates if the SIP rule is enabled or disabled. You must disable a rule
-     * before you can delete it.</p>
+     * <p>Indicates whether the SIP rule is enabled or disabled. You must disable a
+     * rule before you can delete it.</p>
      */
     inline void SetDisabled(bool value) { m_disabledHasBeenSet = true; m_disabled = value; }
 
     /**
-     * <p>Indicates if the SIP rule is enabled or disabled. You must disable a rule
-     * before you can delete it.</p>
+     * <p>Indicates whether the SIP rule is enabled or disabled. You must disable a
+     * rule before you can delete it.</p>
      */
     inline SipRule& WithDisabled(bool value) { SetDisabled(value); return *this;}
 
 
     /**
-     * <p>The type of trigger whose value is assigned to the SIP rule in
-     * <code>TriggerValue</code>.</p>
+     * <p>The type of trigger assigned to the SIP rule in <code>TriggerValue</code>,
+     * currently <code>RequestUriHostname</code> or <code>ToPhoneNumber</code>.</p>
      */
     inline const SipRuleTriggerType& GetTriggerType() const{ return m_triggerType; }
 
     /**
-     * <p>The type of trigger whose value is assigned to the SIP rule in
-     * <code>TriggerValue</code>.</p>
+     * <p>The type of trigger assigned to the SIP rule in <code>TriggerValue</code>,
+     * currently <code>RequestUriHostname</code> or <code>ToPhoneNumber</code>.</p>
      */
     inline bool TriggerTypeHasBeenSet() const { return m_triggerTypeHasBeenSet; }
 
     /**
-     * <p>The type of trigger whose value is assigned to the SIP rule in
-     * <code>TriggerValue</code>.</p>
+     * <p>The type of trigger assigned to the SIP rule in <code>TriggerValue</code>,
+     * currently <code>RequestUriHostname</code> or <code>ToPhoneNumber</code>.</p>
      */
     inline void SetTriggerType(const SipRuleTriggerType& value) { m_triggerTypeHasBeenSet = true; m_triggerType = value; }
 
     /**
-     * <p>The type of trigger whose value is assigned to the SIP rule in
-     * <code>TriggerValue</code>.</p>
+     * <p>The type of trigger assigned to the SIP rule in <code>TriggerValue</code>,
+     * currently <code>RequestUriHostname</code> or <code>ToPhoneNumber</code>.</p>
      */
     inline void SetTriggerType(SipRuleTriggerType&& value) { m_triggerTypeHasBeenSet = true; m_triggerType = std::move(value); }
 
     /**
-     * <p>The type of trigger whose value is assigned to the SIP rule in
-     * <code>TriggerValue</code>.</p>
+     * <p>The type of trigger assigned to the SIP rule in <code>TriggerValue</code>,
+     * currently <code>RequestUriHostname</code> or <code>ToPhoneNumber</code>.</p>
      */
     inline SipRule& WithTriggerType(const SipRuleTriggerType& value) { SetTriggerType(value); return *this;}
 
     /**
-     * <p>The type of trigger whose value is assigned to the SIP rule in
-     * <code>TriggerValue</code>.</p>
+     * <p>The type of trigger assigned to the SIP rule in <code>TriggerValue</code>,
+     * currently <code>RequestUriHostname</code> or <code>ToPhoneNumber</code>.</p>
      */
     inline SipRule& WithTriggerType(SipRuleTriggerType&& value) { SetTriggerType(std::move(value)); return *this;}
 
@@ -268,112 +268,120 @@ namespace Model
 
 
     /**
-     * <p>List of SIP media applications with priority and AWS Region. You can only use
-     * one SIP application per AWS Region and priority combination.</p>
+     * <p>Target SIP media application and other details, such as priority and AWS
+     * Region, to be specified in the SIP rule. Only one SIP rule per AWS Region can be
+     * provided.</p>
      */
     inline const Aws::Vector<SipRuleTargetApplication>& GetTargetApplications() const{ return m_targetApplications; }
 
     /**
-     * <p>List of SIP media applications with priority and AWS Region. You can only use
-     * one SIP application per AWS Region and priority combination.</p>
+     * <p>Target SIP media application and other details, such as priority and AWS
+     * Region, to be specified in the SIP rule. Only one SIP rule per AWS Region can be
+     * provided.</p>
      */
     inline bool TargetApplicationsHasBeenSet() const { return m_targetApplicationsHasBeenSet; }
 
     /**
-     * <p>List of SIP media applications with priority and AWS Region. You can only use
-     * one SIP application per AWS Region and priority combination.</p>
+     * <p>Target SIP media application and other details, such as priority and AWS
+     * Region, to be specified in the SIP rule. Only one SIP rule per AWS Region can be
+     * provided.</p>
      */
     inline void SetTargetApplications(const Aws::Vector<SipRuleTargetApplication>& value) { m_targetApplicationsHasBeenSet = true; m_targetApplications = value; }
 
     /**
-     * <p>List of SIP media applications with priority and AWS Region. You can only use
-     * one SIP application per AWS Region and priority combination.</p>
+     * <p>Target SIP media application and other details, such as priority and AWS
+     * Region, to be specified in the SIP rule. Only one SIP rule per AWS Region can be
+     * provided.</p>
      */
     inline void SetTargetApplications(Aws::Vector<SipRuleTargetApplication>&& value) { m_targetApplicationsHasBeenSet = true; m_targetApplications = std::move(value); }
 
     /**
-     * <p>List of SIP media applications with priority and AWS Region. You can only use
-     * one SIP application per AWS Region and priority combination.</p>
+     * <p>Target SIP media application and other details, such as priority and AWS
+     * Region, to be specified in the SIP rule. Only one SIP rule per AWS Region can be
+     * provided.</p>
      */
     inline SipRule& WithTargetApplications(const Aws::Vector<SipRuleTargetApplication>& value) { SetTargetApplications(value); return *this;}
 
     /**
-     * <p>List of SIP media applications with priority and AWS Region. You can only use
-     * one SIP application per AWS Region and priority combination.</p>
+     * <p>Target SIP media application and other details, such as priority and AWS
+     * Region, to be specified in the SIP rule. Only one SIP rule per AWS Region can be
+     * provided.</p>
      */
     inline SipRule& WithTargetApplications(Aws::Vector<SipRuleTargetApplication>&& value) { SetTargetApplications(std::move(value)); return *this;}
 
     /**
-     * <p>List of SIP media applications with priority and AWS Region. You can only use
-     * one SIP application per AWS Region and priority combination.</p>
+     * <p>Target SIP media application and other details, such as priority and AWS
+     * Region, to be specified in the SIP rule. Only one SIP rule per AWS Region can be
+     * provided.</p>
      */
     inline SipRule& AddTargetApplications(const SipRuleTargetApplication& value) { m_targetApplicationsHasBeenSet = true; m_targetApplications.push_back(value); return *this; }
 
     /**
-     * <p>List of SIP media applications with priority and AWS Region. You can only use
-     * one SIP application per AWS Region and priority combination.</p>
+     * <p>Target SIP media application and other details, such as priority and AWS
+     * Region, to be specified in the SIP rule. Only one SIP rule per AWS Region can be
+     * provided.</p>
      */
     inline SipRule& AddTargetApplications(SipRuleTargetApplication&& value) { m_targetApplicationsHasBeenSet = true; m_targetApplications.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The SIP rule created timestamp, in ISO 8601 format.</p>
+     * <p>The time at which the SIP rule was created, in ISO 8601 format.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedTimestamp() const{ return m_createdTimestamp; }
 
     /**
-     * <p>The SIP rule created timestamp, in ISO 8601 format.</p>
+     * <p>The time at which the SIP rule was created, in ISO 8601 format.</p>
      */
     inline bool CreatedTimestampHasBeenSet() const { return m_createdTimestampHasBeenSet; }
 
     /**
-     * <p>The SIP rule created timestamp, in ISO 8601 format.</p>
+     * <p>The time at which the SIP rule was created, in ISO 8601 format.</p>
      */
     inline void SetCreatedTimestamp(const Aws::Utils::DateTime& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = value; }
 
     /**
-     * <p>The SIP rule created timestamp, in ISO 8601 format.</p>
+     * <p>The time at which the SIP rule was created, in ISO 8601 format.</p>
      */
     inline void SetCreatedTimestamp(Aws::Utils::DateTime&& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = std::move(value); }
 
     /**
-     * <p>The SIP rule created timestamp, in ISO 8601 format.</p>
+     * <p>The time at which the SIP rule was created, in ISO 8601 format.</p>
      */
     inline SipRule& WithCreatedTimestamp(const Aws::Utils::DateTime& value) { SetCreatedTimestamp(value); return *this;}
 
     /**
-     * <p>The SIP rule created timestamp, in ISO 8601 format.</p>
+     * <p>The time at which the SIP rule was created, in ISO 8601 format.</p>
      */
     inline SipRule& WithCreatedTimestamp(Aws::Utils::DateTime&& value) { SetCreatedTimestamp(std::move(value)); return *this;}
 
 
     /**
-     * <p>The SIP rule updated timestamp, in ISO 8601 format.</p>
+     * <p>The time at which the SIP rule was last updated, in ISO 8601 format.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedTimestamp() const{ return m_updatedTimestamp; }
 
     /**
-     * <p>The SIP rule updated timestamp, in ISO 8601 format.</p>
+     * <p>The time at which the SIP rule was last updated, in ISO 8601 format.</p>
      */
     inline bool UpdatedTimestampHasBeenSet() const { return m_updatedTimestampHasBeenSet; }
 
     /**
-     * <p>The SIP rule updated timestamp, in ISO 8601 format.</p>
+     * <p>The time at which the SIP rule was last updated, in ISO 8601 format.</p>
      */
     inline void SetUpdatedTimestamp(const Aws::Utils::DateTime& value) { m_updatedTimestampHasBeenSet = true; m_updatedTimestamp = value; }
 
     /**
-     * <p>The SIP rule updated timestamp, in ISO 8601 format.</p>
+     * <p>The time at which the SIP rule was last updated, in ISO 8601 format.</p>
      */
     inline void SetUpdatedTimestamp(Aws::Utils::DateTime&& value) { m_updatedTimestampHasBeenSet = true; m_updatedTimestamp = std::move(value); }
 
     /**
-     * <p>The SIP rule updated timestamp, in ISO 8601 format.</p>
+     * <p>The time at which the SIP rule was last updated, in ISO 8601 format.</p>
      */
     inline SipRule& WithUpdatedTimestamp(const Aws::Utils::DateTime& value) { SetUpdatedTimestamp(value); return *this;}
 
     /**
-     * <p>The SIP rule updated timestamp, in ISO 8601 format.</p>
+     * <p>The time at which the SIP rule was last updated, in ISO 8601 format.</p>
      */
     inline SipRule& WithUpdatedTimestamp(Aws::Utils::DateTime&& value) { SetUpdatedTimestamp(std::move(value)); return *this;}
 

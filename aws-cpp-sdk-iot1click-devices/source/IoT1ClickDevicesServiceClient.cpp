@@ -81,7 +81,7 @@ IoT1ClickDevicesServiceClient::~IoT1ClickDevicesServiceClient()
 {
 }
 
-void IoT1ClickDevicesServiceClient::init(const ClientConfiguration& config)
+void IoT1ClickDevicesServiceClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("IoT 1Click Devices Service");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -115,10 +115,8 @@ ClaimDevicesByClaimCodeOutcome IoT1ClickDevicesServiceClient::ClaimDevicesByClai
     return ClaimDevicesByClaimCodeOutcome(Aws::Client::AWSError<IoT1ClickDevicesServiceErrors>(IoT1ClickDevicesServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClaimCode]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/claims/";
-  ss << request.GetClaimCode();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/claims/");
+  uri.AddPathSegment(request.GetClaimCode());
   return ClaimDevicesByClaimCodeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -148,10 +146,8 @@ DescribeDeviceOutcome IoT1ClickDevicesServiceClient::DescribeDevice(const Descri
     return DescribeDeviceOutcome(Aws::Client::AWSError<IoT1ClickDevicesServiceErrors>(IoT1ClickDevicesServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeviceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/devices/";
-  ss << request.GetDeviceId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/devices/");
+  uri.AddPathSegment(request.GetDeviceId());
   return DescribeDeviceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -181,11 +177,9 @@ FinalizeDeviceClaimOutcome IoT1ClickDevicesServiceClient::FinalizeDeviceClaim(co
     return FinalizeDeviceClaimOutcome(Aws::Client::AWSError<IoT1ClickDevicesServiceErrors>(IoT1ClickDevicesServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeviceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/devices/";
-  ss << request.GetDeviceId();
-  ss << "/finalize-claim";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/devices/");
+  uri.AddPathSegment(request.GetDeviceId());
+  uri.AddPathSegments("/finalize-claim");
   return FinalizeDeviceClaimOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -215,11 +209,9 @@ GetDeviceMethodsOutcome IoT1ClickDevicesServiceClient::GetDeviceMethods(const Ge
     return GetDeviceMethodsOutcome(Aws::Client::AWSError<IoT1ClickDevicesServiceErrors>(IoT1ClickDevicesServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeviceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/devices/";
-  ss << request.GetDeviceId();
-  ss << "/methods";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/devices/");
+  uri.AddPathSegment(request.GetDeviceId());
+  uri.AddPathSegments("/methods");
   return GetDeviceMethodsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -249,11 +241,9 @@ InitiateDeviceClaimOutcome IoT1ClickDevicesServiceClient::InitiateDeviceClaim(co
     return InitiateDeviceClaimOutcome(Aws::Client::AWSError<IoT1ClickDevicesServiceErrors>(IoT1ClickDevicesServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeviceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/devices/";
-  ss << request.GetDeviceId();
-  ss << "/initiate-claim";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/devices/");
+  uri.AddPathSegment(request.GetDeviceId());
+  uri.AddPathSegments("/initiate-claim");
   return InitiateDeviceClaimOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -283,11 +273,9 @@ InvokeDeviceMethodOutcome IoT1ClickDevicesServiceClient::InvokeDeviceMethod(cons
     return InvokeDeviceMethodOutcome(Aws::Client::AWSError<IoT1ClickDevicesServiceErrors>(IoT1ClickDevicesServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeviceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/devices/";
-  ss << request.GetDeviceId();
-  ss << "/methods";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/devices/");
+  uri.AddPathSegment(request.GetDeviceId());
+  uri.AddPathSegments("/methods");
   return InvokeDeviceMethodOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -327,11 +315,9 @@ ListDeviceEventsOutcome IoT1ClickDevicesServiceClient::ListDeviceEvents(const Li
     return ListDeviceEventsOutcome(Aws::Client::AWSError<IoT1ClickDevicesServiceErrors>(IoT1ClickDevicesServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ToTimeStamp]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/devices/";
-  ss << request.GetDeviceId();
-  ss << "/events";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/devices/");
+  uri.AddPathSegment(request.GetDeviceId());
+  uri.AddPathSegments("/events");
   return ListDeviceEventsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -356,9 +342,7 @@ void IoT1ClickDevicesServiceClient::ListDeviceEventsAsyncHelper(const ListDevice
 ListDevicesOutcome IoT1ClickDevicesServiceClient::ListDevices(const ListDevicesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/devices";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/devices");
   return ListDevicesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -388,10 +372,8 @@ ListTagsForResourceOutcome IoT1ClickDevicesServiceClient::ListTagsForResource(co
     return ListTagsForResourceOutcome(Aws::Client::AWSError<IoT1ClickDevicesServiceErrors>(IoT1ClickDevicesServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -421,10 +403,8 @@ TagResourceOutcome IoT1ClickDevicesServiceClient::TagResource(const TagResourceR
     return TagResourceOutcome(Aws::Client::AWSError<IoT1ClickDevicesServiceErrors>(IoT1ClickDevicesServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -454,11 +434,9 @@ UnclaimDeviceOutcome IoT1ClickDevicesServiceClient::UnclaimDevice(const UnclaimD
     return UnclaimDeviceOutcome(Aws::Client::AWSError<IoT1ClickDevicesServiceErrors>(IoT1ClickDevicesServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeviceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/devices/";
-  ss << request.GetDeviceId();
-  ss << "/unclaim";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/devices/");
+  uri.AddPathSegment(request.GetDeviceId());
+  uri.AddPathSegments("/unclaim");
   return UnclaimDeviceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -493,10 +471,8 @@ UntagResourceOutcome IoT1ClickDevicesServiceClient::UntagResource(const UntagRes
     return UntagResourceOutcome(Aws::Client::AWSError<IoT1ClickDevicesServiceErrors>(IoT1ClickDevicesServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -526,11 +502,9 @@ UpdateDeviceStateOutcome IoT1ClickDevicesServiceClient::UpdateDeviceState(const 
     return UpdateDeviceStateOutcome(Aws::Client::AWSError<IoT1ClickDevicesServiceErrors>(IoT1ClickDevicesServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeviceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/devices/";
-  ss << request.GetDeviceId();
-  ss << "/state";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/devices/");
+  uri.AddPathSegment(request.GetDeviceId());
+  uri.AddPathSegments("/state");
   return UpdateDeviceStateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
