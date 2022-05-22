@@ -57,8 +57,7 @@ ClientConfiguration::ClientConfiguration() :
     enableClockSkewAdjustment(true),
     enableHostPrefixInjection(true),
     enableEndpointDiscovery(false),
-    profileName(Aws::Auth::GetConfigProfileName()),
-    perRequestConfiguration([] (const Aws::Http::HttpRequest &) { return ClientConfigurationPerRequest(); })
+    profileName(Aws::Auth::GetConfigProfileName())
 {
     AWS_LOGSTREAM_DEBUG(CLIENT_CONFIG_TAG, "ClientConfiguration will use SDK Auto Resolved profile: [" << profileName << "] if not specified by users.");
 

@@ -26,10 +26,6 @@ namespace Aws
             class RateLimiterInterface;
         } // namespace RateLimits
     } // namespace Utils
-    namespace Http
-    {
-        class HttpRequest; // forward declare
-    }
     namespace Client
     {
         class RetryStrategy; // forward declare
@@ -45,23 +41,6 @@ namespace Aws
             DEFAULT,
             ALWAYS,
             NEVER
-        };
-
-        /**
-        * Dynamic configuration per each request.
-        */
-        struct AWS_CORE_API ClientConfigurationPerRequest
-        {
-            ClientConfigurationPerRequest() : proxyPort(0) {}
-
-            /**
-             * If you have users going through a proxy, set the host here.
-             */
-            Aws::String proxyHost;
-            /**
-             * If you have users going through a proxy, set the port here.
-             */
-            unsigned proxyPort;
         };
 
         /**
@@ -260,13 +239,6 @@ namespace Aws
              */
             Aws::String profileName;
 
-            /**
-             * Only works for Curl http client.
-             * Supplier for per-request client configuration. Invoked on each request.
-             * Per-request configuration parameter overrides parameter from initial configuration in case of difference.
-             * Default supplier returns empty configuration that overrides nothing.
-             */
-            std::function<Aws::Client::ClientConfigurationPerRequest(const Aws::Http::HttpRequest &)> perRequestConfiguration;
         };
 
     } // namespace Client
