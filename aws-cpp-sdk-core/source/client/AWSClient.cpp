@@ -885,7 +885,7 @@ JsonOutcome AWSJsonClient::MakeRequest(const Aws::Http::URI& uri,
         return JsonOutcome(std::move(httpOutcome));
     }
 
-    if (httpOutcome.GetResult()->GetResponseBody().peek() != std::char_traits<char>::eof())
+    if (httpOutcome.GetResult()->GetResponseBody().tellp() > 0)
         //this is stupid, but gcc doesn't pick up the covariant on the dereference so we have to give it a little hint.
         return JsonOutcome(AmazonWebServiceResult<JsonValue>(JsonValue(httpOutcome.GetResult()->GetResponseBody()),
         httpOutcome.GetResult()->GetHeaders(),
@@ -908,7 +908,7 @@ JsonOutcome AWSJsonClient::MakeRequest(const Aws::Http::URI& uri,
         return JsonOutcome(std::move(httpOutcome));
     }
 
-    if (httpOutcome.GetResult()->GetResponseBody().peek() != std::char_traits<char>::eof())
+    if (httpOutcome.GetResult()->GetResponseBody().tellp() > 0)
     {
         JsonValue jsonValue(httpOutcome.GetResult()->GetResponseBody());
         if (!jsonValue.WasParseSuccessful())
@@ -941,7 +941,7 @@ JsonOutcome AWSJsonClient::MakeEventStreamRequest(std::shared_ptr<Aws::Http::Htt
 
     HttpResponseOutcome httpOutcome(std::move(httpResponse));
 
-    if (httpOutcome.GetResult()->GetResponseBody().peek() != std::char_traits<char>::eof())
+    if (httpOutcome.GetResult()->GetResponseBody().tellp() > 0)
     {
         JsonValue jsonValue(httpOutcome.GetResult()->GetResponseBody());
         if (!jsonValue.WasParseSuccessful())
@@ -967,7 +967,7 @@ AWSError<CoreErrors> AWSJsonClient::BuildAWSError(
         bool retryable = httpResponse->GetClientErrorType() == CoreErrors::NETWORK_CONNECTION ? true : false;
         error = AWSError<CoreErrors>(httpResponse->GetClientErrorType(), "", httpResponse->GetClientErrorMessage(), retryable);
     }
-    else if (!httpResponse->GetResponseBody() || httpResponse->GetResponseBody().peek() == std::char_traits<char>::eof())
+    else if (!httpResponse->GetResponseBody() || httpResponse->GetResponseBody().tellp() < 1)
     {
         auto responseCode = httpResponse->GetResponseCode();
         auto errorCode = GuessBodylessErrorType(responseCode);
@@ -1018,7 +1018,7 @@ XmlOutcome AWSXMLClient::MakeRequest(const Aws::Http::URI& uri,
         return XmlOutcome(std::move(httpOutcome));
     }
 
-    if (httpOutcome.GetResult()->GetResponseBody().peek() != std::char_traits<char>::eof())
+    if (httpOutcome.GetResult()->GetResponseBody().tellp() > 0)
     {
         XmlDocument xmlDoc = XmlDocument::CreateFromXmlStream(httpOutcome.GetResult()->GetResponseBody());
 
@@ -1048,7 +1048,7 @@ XmlOutcome AWSXMLClient::MakeRequest(const Aws::Http::URI& uri,
         return XmlOutcome(std::move(httpOutcome));
     }
 
-    if (httpOutcome.GetResult()->GetResponseBody().peek() != std::char_traits<char>::eof())
+    if (httpOutcome.GetResult()->GetResponseBody().tellp() > 0)
     {
         return XmlOutcome(AmazonWebServiceResult<XmlDocument>(
             XmlDocument::CreateFromXmlStream(httpOutcome.GetResult()->GetResponseBody()),
@@ -1066,7 +1066,7 @@ AWSError<CoreErrors> AWSXMLClient::BuildAWSError(const std::shared_ptr<Http::Htt
         bool retryable = httpResponse->GetClientErrorType() == CoreErrors::NETWORK_CONNECTION ? true : false;
         error = AWSError<CoreErrors>(httpResponse->GetClientErrorType(), "", httpResponse->GetClientErrorMessage(), retryable);
     }
-    else if (!httpResponse->GetResponseBody() || httpResponse->GetResponseBody().peek() == std::char_traits<char>::eof())
+    else if (!httpResponse->GetResponseBody() || httpResponse->GetResponseBody().tellp() < 1)
     {
         auto responseCode = httpResponse->GetResponseCode();
         auto errorCode = GuessBodylessErrorType(responseCode);
