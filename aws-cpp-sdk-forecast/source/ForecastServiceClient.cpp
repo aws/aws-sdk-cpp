@@ -28,6 +28,7 @@
 #include <aws/forecast/model/CreateExplainabilityExportRequest.h>
 #include <aws/forecast/model/CreateForecastRequest.h>
 #include <aws/forecast/model/CreateForecastExportJobRequest.h>
+#include <aws/forecast/model/CreateMonitorRequest.h>
 #include <aws/forecast/model/CreatePredictorRequest.h>
 #include <aws/forecast/model/CreatePredictorBacktestExportJobRequest.h>
 #include <aws/forecast/model/DeleteDatasetRequest.h>
@@ -37,6 +38,7 @@
 #include <aws/forecast/model/DeleteExplainabilityExportRequest.h>
 #include <aws/forecast/model/DeleteForecastRequest.h>
 #include <aws/forecast/model/DeleteForecastExportJobRequest.h>
+#include <aws/forecast/model/DeleteMonitorRequest.h>
 #include <aws/forecast/model/DeletePredictorRequest.h>
 #include <aws/forecast/model/DeletePredictorBacktestExportJobRequest.h>
 #include <aws/forecast/model/DeleteResourceTreeRequest.h>
@@ -48,6 +50,7 @@
 #include <aws/forecast/model/DescribeExplainabilityExportRequest.h>
 #include <aws/forecast/model/DescribeForecastRequest.h>
 #include <aws/forecast/model/DescribeForecastExportJobRequest.h>
+#include <aws/forecast/model/DescribeMonitorRequest.h>
 #include <aws/forecast/model/DescribePredictorRequest.h>
 #include <aws/forecast/model/DescribePredictorBacktestExportJobRequest.h>
 #include <aws/forecast/model/GetAccuracyMetricsRequest.h>
@@ -58,9 +61,12 @@
 #include <aws/forecast/model/ListExplainabilityExportsRequest.h>
 #include <aws/forecast/model/ListForecastExportJobsRequest.h>
 #include <aws/forecast/model/ListForecastsRequest.h>
+#include <aws/forecast/model/ListMonitorEvaluationsRequest.h>
+#include <aws/forecast/model/ListMonitorsRequest.h>
 #include <aws/forecast/model/ListPredictorBacktestExportJobsRequest.h>
 #include <aws/forecast/model/ListPredictorsRequest.h>
 #include <aws/forecast/model/ListTagsForResourceRequest.h>
+#include <aws/forecast/model/ResumeResourceRequest.h>
 #include <aws/forecast/model/StopResourceRequest.h>
 #include <aws/forecast/model/TagResourceRequest.h>
 #include <aws/forecast/model/UntagResourceRequest.h>
@@ -331,6 +337,30 @@ void ForecastServiceClient::CreateForecastExportJobAsyncHelper(const CreateForec
   handler(this, request, CreateForecastExportJob(request), context);
 }
 
+CreateMonitorOutcome ForecastServiceClient::CreateMonitor(const CreateMonitorRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateMonitorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateMonitorOutcomeCallable ForecastServiceClient::CreateMonitorCallable(const CreateMonitorRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateMonitorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateMonitor(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ForecastServiceClient::CreateMonitorAsync(const CreateMonitorRequest& request, const CreateMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateMonitorAsyncHelper( request, handler, context ); } );
+}
+
+void ForecastServiceClient::CreateMonitorAsyncHelper(const CreateMonitorRequest& request, const CreateMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateMonitor(request), context);
+}
+
 CreatePredictorOutcome ForecastServiceClient::CreatePredictor(const CreatePredictorRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -545,6 +575,30 @@ void ForecastServiceClient::DeleteForecastExportJobAsync(const DeleteForecastExp
 void ForecastServiceClient::DeleteForecastExportJobAsyncHelper(const DeleteForecastExportJobRequest& request, const DeleteForecastExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteForecastExportJob(request), context);
+}
+
+DeleteMonitorOutcome ForecastServiceClient::DeleteMonitor(const DeleteMonitorRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteMonitorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteMonitorOutcomeCallable ForecastServiceClient::DeleteMonitorCallable(const DeleteMonitorRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteMonitorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteMonitor(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ForecastServiceClient::DeleteMonitorAsync(const DeleteMonitorRequest& request, const DeleteMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteMonitorAsyncHelper( request, handler, context ); } );
+}
+
+void ForecastServiceClient::DeleteMonitorAsyncHelper(const DeleteMonitorRequest& request, const DeleteMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteMonitor(request), context);
 }
 
 DeletePredictorOutcome ForecastServiceClient::DeletePredictor(const DeletePredictorRequest& request) const
@@ -811,6 +865,30 @@ void ForecastServiceClient::DescribeForecastExportJobAsyncHelper(const DescribeF
   handler(this, request, DescribeForecastExportJob(request), context);
 }
 
+DescribeMonitorOutcome ForecastServiceClient::DescribeMonitor(const DescribeMonitorRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeMonitorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeMonitorOutcomeCallable ForecastServiceClient::DescribeMonitorCallable(const DescribeMonitorRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeMonitorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeMonitor(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ForecastServiceClient::DescribeMonitorAsync(const DescribeMonitorRequest& request, const DescribeMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeMonitorAsyncHelper( request, handler, context ); } );
+}
+
+void ForecastServiceClient::DescribeMonitorAsyncHelper(const DescribeMonitorRequest& request, const DescribeMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeMonitor(request), context);
+}
+
 DescribePredictorOutcome ForecastServiceClient::DescribePredictor(const DescribePredictorRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1051,6 +1129,54 @@ void ForecastServiceClient::ListForecastsAsyncHelper(const ListForecastsRequest&
   handler(this, request, ListForecasts(request), context);
 }
 
+ListMonitorEvaluationsOutcome ForecastServiceClient::ListMonitorEvaluations(const ListMonitorEvaluationsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListMonitorEvaluationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListMonitorEvaluationsOutcomeCallable ForecastServiceClient::ListMonitorEvaluationsCallable(const ListMonitorEvaluationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListMonitorEvaluationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListMonitorEvaluations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ForecastServiceClient::ListMonitorEvaluationsAsync(const ListMonitorEvaluationsRequest& request, const ListMonitorEvaluationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListMonitorEvaluationsAsyncHelper( request, handler, context ); } );
+}
+
+void ForecastServiceClient::ListMonitorEvaluationsAsyncHelper(const ListMonitorEvaluationsRequest& request, const ListMonitorEvaluationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListMonitorEvaluations(request), context);
+}
+
+ListMonitorsOutcome ForecastServiceClient::ListMonitors(const ListMonitorsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListMonitorsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListMonitorsOutcomeCallable ForecastServiceClient::ListMonitorsCallable(const ListMonitorsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListMonitorsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListMonitors(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ForecastServiceClient::ListMonitorsAsync(const ListMonitorsRequest& request, const ListMonitorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListMonitorsAsyncHelper( request, handler, context ); } );
+}
+
+void ForecastServiceClient::ListMonitorsAsyncHelper(const ListMonitorsRequest& request, const ListMonitorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListMonitors(request), context);
+}
+
 ListPredictorBacktestExportJobsOutcome ForecastServiceClient::ListPredictorBacktestExportJobs(const ListPredictorBacktestExportJobsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1121,6 +1247,30 @@ void ForecastServiceClient::ListTagsForResourceAsync(const ListTagsForResourceRe
 void ForecastServiceClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListTagsForResource(request), context);
+}
+
+ResumeResourceOutcome ForecastServiceClient::ResumeResource(const ResumeResourceRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ResumeResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ResumeResourceOutcomeCallable ForecastServiceClient::ResumeResourceCallable(const ResumeResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ResumeResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ResumeResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ForecastServiceClient::ResumeResourceAsync(const ResumeResourceRequest& request, const ResumeResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ResumeResourceAsyncHelper( request, handler, context ); } );
+}
+
+void ForecastServiceClient::ResumeResourceAsyncHelper(const ResumeResourceRequest& request, const ResumeResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ResumeResource(request), context);
 }
 
 StopResourceOutcome ForecastServiceClient::StopResource(const StopResourceRequest& request) const

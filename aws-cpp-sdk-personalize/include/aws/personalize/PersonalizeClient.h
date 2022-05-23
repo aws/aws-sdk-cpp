@@ -718,8 +718,10 @@ namespace Model
          * <code>minRecommendationRequestsPerSecond</code> as necessary. </p> <p>
          * <b>Status</b> </p> <p>A recommender can be in one of the following states:</p>
          * <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE
-         * FAILED</p> </li> <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> </ul>
-         * <p>To get the recommender status, call <a
+         * FAILED</p> </li> <li> <p>STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt;
+         * START PENDING &gt; START IN_PROGRESS &gt; ACTIVE</p> </li> <li> <p>DELETE
+         * PENDING &gt; DELETE IN_PROGRESS</p> </li> </ul> <p>To get the recommender
+         * status, call <a
          * href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeRecommender.html">DescribeRecommender</a>.</p>
          *  <p>Wait until the <code>status</code> of the recommender is
          * <code>ACTIVE</code> before asking the recommender for recommendations.</p>
@@ -1285,11 +1287,13 @@ namespace Model
         /**
          * <p>Describes the given recommender, including its status.</p> <p>A recommender
          * can be in one of the following states:</p> <ul> <li> <p>CREATE PENDING &gt;
-         * CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> <li> <p>DELETE
-         * PENDING &gt; DELETE IN_PROGRESS</p> </li> </ul> <p>When the <code>status</code>
-         * is <code>CREATE FAILED</code>, the response includes the
-         * <code>failureReason</code> key, which describes why.</p> <p>For more information
-         * on recommenders, see <a
+         * CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> <li> <p>STOP PENDING
+         * &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS
+         * &gt; ACTIVE</p> </li> <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
+         * </ul> <p>When the <code>status</code> is <code>CREATE FAILED</code>, the
+         * response includes the <code>failureReason</code> key, which describes why.</p>
+         * <p>The <code>modelMetrics</code> key is null when the recommender is being
+         * created or deleted.</p> <p>For more information on recommenders, see <a
          * href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateRecommender.html">CreateRecommender</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeRecommender">AWS

@@ -13,6 +13,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/forecast/model/OptimizationMetric.h>
 #include <aws/forecast/model/ExplainabilityInfo.h>
+#include <aws/forecast/model/MonitorInfo.h>
 #include <utility>
 
 namespace Aws
@@ -671,6 +672,37 @@ namespace Model
      */
     inline DescribeAutoPredictorResult& WithExplainabilityInfo(ExplainabilityInfo&& value) { SetExplainabilityInfo(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A object with the Amazon Resource Name (ARN) and status of the monitor
+     * resource.</p>
+     */
+    inline const MonitorInfo& GetMonitorInfo() const{ return m_monitorInfo; }
+
+    /**
+     * <p>A object with the Amazon Resource Name (ARN) and status of the monitor
+     * resource.</p>
+     */
+    inline void SetMonitorInfo(const MonitorInfo& value) { m_monitorInfo = value; }
+
+    /**
+     * <p>A object with the Amazon Resource Name (ARN) and status of the monitor
+     * resource.</p>
+     */
+    inline void SetMonitorInfo(MonitorInfo&& value) { m_monitorInfo = std::move(value); }
+
+    /**
+     * <p>A object with the Amazon Resource Name (ARN) and status of the monitor
+     * resource.</p>
+     */
+    inline DescribeAutoPredictorResult& WithMonitorInfo(const MonitorInfo& value) { SetMonitorInfo(value); return *this;}
+
+    /**
+     * <p>A object with the Amazon Resource Name (ARN) and status of the monitor
+     * resource.</p>
+     */
+    inline DescribeAutoPredictorResult& WithMonitorInfo(MonitorInfo&& value) { SetMonitorInfo(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_predictorArn;
@@ -706,6 +738,8 @@ namespace Model
     OptimizationMetric m_optimizationMetric;
 
     ExplainabilityInfo m_explainabilityInfo;
+
+    MonitorInfo m_monitorInfo;
   };
 
 } // namespace Model

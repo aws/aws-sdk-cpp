@@ -11,6 +11,7 @@
 #include <aws/forecast/model/DataConfig.h>
 #include <aws/forecast/model/EncryptionConfig.h>
 #include <aws/forecast/model/OptimizationMetric.h>
+#include <aws/forecast/model/MonitorConfig.h>
 #include <aws/forecast/model/Tag.h>
 #include <utility>
 
@@ -82,25 +83,49 @@ namespace Model
 
     /**
      * <p>The number of time-steps that the model predicts. The forecast horizon is
-     * also called the prediction length.</p>
+     * also called the prediction length.</p> <p>The maximum forecast horizon is the
+     * lesser of 500 time-steps or 1/4 of the TARGET_TIME_SERIES dataset length. If you
+     * are retraining an existing AutoPredictor, then the maximum forecast horizon is
+     * the lesser of 500 time-steps or 1/3 of the TARGET_TIME_SERIES dataset
+     * length.</p> <p>If you are upgrading to an AutoPredictor or retraining an
+     * existing AutoPredictor, you cannot update the forecast horizon parameter. You
+     * can meet this requirement by providing longer time-series in the dataset.</p>
      */
     inline int GetForecastHorizon() const{ return m_forecastHorizon; }
 
     /**
      * <p>The number of time-steps that the model predicts. The forecast horizon is
-     * also called the prediction length.</p>
+     * also called the prediction length.</p> <p>The maximum forecast horizon is the
+     * lesser of 500 time-steps or 1/4 of the TARGET_TIME_SERIES dataset length. If you
+     * are retraining an existing AutoPredictor, then the maximum forecast horizon is
+     * the lesser of 500 time-steps or 1/3 of the TARGET_TIME_SERIES dataset
+     * length.</p> <p>If you are upgrading to an AutoPredictor or retraining an
+     * existing AutoPredictor, you cannot update the forecast horizon parameter. You
+     * can meet this requirement by providing longer time-series in the dataset.</p>
      */
     inline bool ForecastHorizonHasBeenSet() const { return m_forecastHorizonHasBeenSet; }
 
     /**
      * <p>The number of time-steps that the model predicts. The forecast horizon is
-     * also called the prediction length.</p>
+     * also called the prediction length.</p> <p>The maximum forecast horizon is the
+     * lesser of 500 time-steps or 1/4 of the TARGET_TIME_SERIES dataset length. If you
+     * are retraining an existing AutoPredictor, then the maximum forecast horizon is
+     * the lesser of 500 time-steps or 1/3 of the TARGET_TIME_SERIES dataset
+     * length.</p> <p>If you are upgrading to an AutoPredictor or retraining an
+     * existing AutoPredictor, you cannot update the forecast horizon parameter. You
+     * can meet this requirement by providing longer time-series in the dataset.</p>
      */
     inline void SetForecastHorizon(int value) { m_forecastHorizonHasBeenSet = true; m_forecastHorizon = value; }
 
     /**
      * <p>The number of time-steps that the model predicts. The forecast horizon is
-     * also called the prediction length.</p>
+     * also called the prediction length.</p> <p>The maximum forecast horizon is the
+     * lesser of 500 time-steps or 1/4 of the TARGET_TIME_SERIES dataset length. If you
+     * are retraining an existing AutoPredictor, then the maximum forecast horizon is
+     * the lesser of 500 time-steps or 1/3 of the TARGET_TIME_SERIES dataset
+     * length.</p> <p>If you are upgrading to an AutoPredictor or retraining an
+     * existing AutoPredictor, you cannot update the forecast horizon parameter. You
+     * can meet this requirement by providing longer time-series in the dataset.</p>
      */
     inline CreateAutoPredictorRequest& WithForecastHorizon(int value) { SetForecastHorizon(value); return *this;}
 
@@ -706,6 +731,67 @@ namespace Model
      */
     inline CreateAutoPredictorRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The configuration details for predictor monitoring. Provide a name for the
+     * monitor resource to enable predictor monitoring.</p> <p>Predictor monitoring
+     * allows you to see how your predictor's performance changes over time. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring.html">Predictor
+     * Monitoring</a>.</p>
+     */
+    inline const MonitorConfig& GetMonitorConfig() const{ return m_monitorConfig; }
+
+    /**
+     * <p>The configuration details for predictor monitoring. Provide a name for the
+     * monitor resource to enable predictor monitoring.</p> <p>Predictor monitoring
+     * allows you to see how your predictor's performance changes over time. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring.html">Predictor
+     * Monitoring</a>.</p>
+     */
+    inline bool MonitorConfigHasBeenSet() const { return m_monitorConfigHasBeenSet; }
+
+    /**
+     * <p>The configuration details for predictor monitoring. Provide a name for the
+     * monitor resource to enable predictor monitoring.</p> <p>Predictor monitoring
+     * allows you to see how your predictor's performance changes over time. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring.html">Predictor
+     * Monitoring</a>.</p>
+     */
+    inline void SetMonitorConfig(const MonitorConfig& value) { m_monitorConfigHasBeenSet = true; m_monitorConfig = value; }
+
+    /**
+     * <p>The configuration details for predictor monitoring. Provide a name for the
+     * monitor resource to enable predictor monitoring.</p> <p>Predictor monitoring
+     * allows you to see how your predictor's performance changes over time. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring.html">Predictor
+     * Monitoring</a>.</p>
+     */
+    inline void SetMonitorConfig(MonitorConfig&& value) { m_monitorConfigHasBeenSet = true; m_monitorConfig = std::move(value); }
+
+    /**
+     * <p>The configuration details for predictor monitoring. Provide a name for the
+     * monitor resource to enable predictor monitoring.</p> <p>Predictor monitoring
+     * allows you to see how your predictor's performance changes over time. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring.html">Predictor
+     * Monitoring</a>.</p>
+     */
+    inline CreateAutoPredictorRequest& WithMonitorConfig(const MonitorConfig& value) { SetMonitorConfig(value); return *this;}
+
+    /**
+     * <p>The configuration details for predictor monitoring. Provide a name for the
+     * monitor resource to enable predictor monitoring.</p> <p>Predictor monitoring
+     * allows you to see how your predictor's performance changes over time. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring.html">Predictor
+     * Monitoring</a>.</p>
+     */
+    inline CreateAutoPredictorRequest& WithMonitorConfig(MonitorConfig&& value) { SetMonitorConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_predictorName;
@@ -740,6 +826,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    MonitorConfig m_monitorConfig;
+    bool m_monitorConfigHasBeenSet;
   };
 
 } // namespace Model

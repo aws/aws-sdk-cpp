@@ -205,25 +205,25 @@ namespace Model
 
 
     /**
-     * <p>Create an Expainability visualization that is viewable within the AWS
+     * <p>Create an Explainability visualization that is viewable within the AWS
      * console.</p>
      */
     inline bool GetEnableVisualization() const{ return m_enableVisualization; }
 
     /**
-     * <p>Create an Expainability visualization that is viewable within the AWS
+     * <p>Create an Explainability visualization that is viewable within the AWS
      * console.</p>
      */
     inline bool EnableVisualizationHasBeenSet() const { return m_enableVisualizationHasBeenSet; }
 
     /**
-     * <p>Create an Expainability visualization that is viewable within the AWS
+     * <p>Create an Explainability visualization that is viewable within the AWS
      * console.</p>
      */
     inline void SetEnableVisualization(bool value) { m_enableVisualizationHasBeenSet = true; m_enableVisualization = value; }
 
     /**
-     * <p>Create an Expainability visualization that is viewable within the AWS
+     * <p>Create an Explainability visualization that is viewable within the AWS
      * console.</p>
      */
     inline CreateExplainabilityRequest& WithEnableVisualization(bool value) { SetEnableVisualization(value); return *this;}

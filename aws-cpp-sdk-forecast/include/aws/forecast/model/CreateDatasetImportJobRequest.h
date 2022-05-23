@@ -158,7 +158,8 @@ namespace Model
      * used, <code>DataSource</code> must include an AWS Key Management Service (KMS)
      * key and the IAM role must allow Amazon Forecast permission to access the key.
      * The KMS key and IAM role must match those specified in the
-     * <code>EncryptionConfig</code> parameter of the <a>CreateDataset</a>
+     * <code>EncryptionConfig</code> parameter of the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a>
      * operation.</p>
      */
     inline const DataSource& GetDataSource() const{ return m_dataSource; }
@@ -170,7 +171,8 @@ namespace Model
      * used, <code>DataSource</code> must include an AWS Key Management Service (KMS)
      * key and the IAM role must allow Amazon Forecast permission to access the key.
      * The KMS key and IAM role must match those specified in the
-     * <code>EncryptionConfig</code> parameter of the <a>CreateDataset</a>
+     * <code>EncryptionConfig</code> parameter of the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a>
      * operation.</p>
      */
     inline bool DataSourceHasBeenSet() const { return m_dataSourceHasBeenSet; }
@@ -182,7 +184,8 @@ namespace Model
      * used, <code>DataSource</code> must include an AWS Key Management Service (KMS)
      * key and the IAM role must allow Amazon Forecast permission to access the key.
      * The KMS key and IAM role must match those specified in the
-     * <code>EncryptionConfig</code> parameter of the <a>CreateDataset</a>
+     * <code>EncryptionConfig</code> parameter of the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a>
      * operation.</p>
      */
     inline void SetDataSource(const DataSource& value) { m_dataSourceHasBeenSet = true; m_dataSource = value; }
@@ -194,7 +197,8 @@ namespace Model
      * used, <code>DataSource</code> must include an AWS Key Management Service (KMS)
      * key and the IAM role must allow Amazon Forecast permission to access the key.
      * The KMS key and IAM role must match those specified in the
-     * <code>EncryptionConfig</code> parameter of the <a>CreateDataset</a>
+     * <code>EncryptionConfig</code> parameter of the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a>
      * operation.</p>
      */
     inline void SetDataSource(DataSource&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::move(value); }
@@ -206,7 +210,8 @@ namespace Model
      * used, <code>DataSource</code> must include an AWS Key Management Service (KMS)
      * key and the IAM role must allow Amazon Forecast permission to access the key.
      * The KMS key and IAM role must match those specified in the
-     * <code>EncryptionConfig</code> parameter of the <a>CreateDataset</a>
+     * <code>EncryptionConfig</code> parameter of the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a>
      * operation.</p>
      */
     inline CreateDatasetImportJobRequest& WithDataSource(const DataSource& value) { SetDataSource(value); return *this;}
@@ -218,7 +223,8 @@ namespace Model
      * used, <code>DataSource</code> must include an AWS Key Management Service (KMS)
      * key and the IAM role must allow Amazon Forecast permission to access the key.
      * The KMS key and IAM role must match those specified in the
-     * <code>EncryptionConfig</code> parameter of the <a>CreateDataset</a>
+     * <code>EncryptionConfig</code> parameter of the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a>
      * operation.</p>
      */
     inline CreateDatasetImportJobRequest& WithDataSource(DataSource&& value) { SetDataSource(std::move(value)); return *this;}

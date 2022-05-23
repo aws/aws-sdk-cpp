@@ -43,7 +43,9 @@ CreateCacheClusterRequest::CreateCacheClusterRequest() :
     m_outpostModeHasBeenSet(false),
     m_preferredOutpostArnHasBeenSet(false),
     m_preferredOutpostArnsHasBeenSet(false),
-    m_logDeliveryConfigurationsHasBeenSet(false)
+    m_logDeliveryConfigurationsHasBeenSet(false),
+    m_transitEncryptionEnabled(false),
+    m_transitEncryptionEnabledHasBeenSet(false)
 {
 }
 
@@ -224,6 +226,11 @@ Aws::String CreateCacheClusterRequest::SerializePayload() const
       item.OutputToStream(ss, "LogDeliveryConfigurations.member.", logDeliveryConfigurationsCount, "");
       logDeliveryConfigurationsCount++;
     }
+  }
+
+  if(m_transitEncryptionEnabledHasBeenSet)
+  {
+    ss << "TransitEncryptionEnabled=" << std::boolalpha << m_transitEncryptionEnabled << "&";
   }
 
   ss << "Version=2015-02-02";

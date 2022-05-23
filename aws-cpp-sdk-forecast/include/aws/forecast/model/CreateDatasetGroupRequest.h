@@ -81,84 +81,102 @@ namespace Model
     /**
      * <p>The domain associated with the dataset group. When you add a dataset to a
      * dataset group, this value and the value specified for the <code>Domain</code>
-     * parameter of the <a>CreateDataset</a> operation must match.</p> <p>The
-     * <code>Domain</code> and <code>DatasetType</code> that you choose determine the
-     * fields that must be present in training data that you import to a dataset. For
-     * example, if you choose the <code>RETAIL</code> domain and
-     * <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon Forecast
-     * requires that <code>item_id</code>, <code>timestamp</code>, and
-     * <code>demand</code> fields are present in your data. For more information, see
-     * <a>howitworks-datasets-groups</a>.</p>
+     * parameter of the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a>
+     * operation must match.</p> <p>The <code>Domain</code> and
+     * <code>DatasetType</code> that you choose determine the fields that must be
+     * present in training data that you import to a dataset. For example, if you
+     * choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the
+     * <code>DatasetType</code>, Amazon Forecast requires that <code>item_id</code>,
+     * <code>timestamp</code>, and <code>demand</code> fields are present in your data.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/howitworks-datasets-groups.html">Dataset
+     * groups</a>.</p>
      */
     inline const Domain& GetDomain() const{ return m_domain; }
 
     /**
      * <p>The domain associated with the dataset group. When you add a dataset to a
      * dataset group, this value and the value specified for the <code>Domain</code>
-     * parameter of the <a>CreateDataset</a> operation must match.</p> <p>The
-     * <code>Domain</code> and <code>DatasetType</code> that you choose determine the
-     * fields that must be present in training data that you import to a dataset. For
-     * example, if you choose the <code>RETAIL</code> domain and
-     * <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon Forecast
-     * requires that <code>item_id</code>, <code>timestamp</code>, and
-     * <code>demand</code> fields are present in your data. For more information, see
-     * <a>howitworks-datasets-groups</a>.</p>
+     * parameter of the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a>
+     * operation must match.</p> <p>The <code>Domain</code> and
+     * <code>DatasetType</code> that you choose determine the fields that must be
+     * present in training data that you import to a dataset. For example, if you
+     * choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the
+     * <code>DatasetType</code>, Amazon Forecast requires that <code>item_id</code>,
+     * <code>timestamp</code>, and <code>demand</code> fields are present in your data.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/howitworks-datasets-groups.html">Dataset
+     * groups</a>.</p>
      */
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
 
     /**
      * <p>The domain associated with the dataset group. When you add a dataset to a
      * dataset group, this value and the value specified for the <code>Domain</code>
-     * parameter of the <a>CreateDataset</a> operation must match.</p> <p>The
-     * <code>Domain</code> and <code>DatasetType</code> that you choose determine the
-     * fields that must be present in training data that you import to a dataset. For
-     * example, if you choose the <code>RETAIL</code> domain and
-     * <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon Forecast
-     * requires that <code>item_id</code>, <code>timestamp</code>, and
-     * <code>demand</code> fields are present in your data. For more information, see
-     * <a>howitworks-datasets-groups</a>.</p>
+     * parameter of the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a>
+     * operation must match.</p> <p>The <code>Domain</code> and
+     * <code>DatasetType</code> that you choose determine the fields that must be
+     * present in training data that you import to a dataset. For example, if you
+     * choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the
+     * <code>DatasetType</code>, Amazon Forecast requires that <code>item_id</code>,
+     * <code>timestamp</code>, and <code>demand</code> fields are present in your data.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/howitworks-datasets-groups.html">Dataset
+     * groups</a>.</p>
      */
     inline void SetDomain(const Domain& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
      * <p>The domain associated with the dataset group. When you add a dataset to a
      * dataset group, this value and the value specified for the <code>Domain</code>
-     * parameter of the <a>CreateDataset</a> operation must match.</p> <p>The
-     * <code>Domain</code> and <code>DatasetType</code> that you choose determine the
-     * fields that must be present in training data that you import to a dataset. For
-     * example, if you choose the <code>RETAIL</code> domain and
-     * <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon Forecast
-     * requires that <code>item_id</code>, <code>timestamp</code>, and
-     * <code>demand</code> fields are present in your data. For more information, see
-     * <a>howitworks-datasets-groups</a>.</p>
+     * parameter of the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a>
+     * operation must match.</p> <p>The <code>Domain</code> and
+     * <code>DatasetType</code> that you choose determine the fields that must be
+     * present in training data that you import to a dataset. For example, if you
+     * choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the
+     * <code>DatasetType</code>, Amazon Forecast requires that <code>item_id</code>,
+     * <code>timestamp</code>, and <code>demand</code> fields are present in your data.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/howitworks-datasets-groups.html">Dataset
+     * groups</a>.</p>
      */
     inline void SetDomain(Domain&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
      * <p>The domain associated with the dataset group. When you add a dataset to a
      * dataset group, this value and the value specified for the <code>Domain</code>
-     * parameter of the <a>CreateDataset</a> operation must match.</p> <p>The
-     * <code>Domain</code> and <code>DatasetType</code> that you choose determine the
-     * fields that must be present in training data that you import to a dataset. For
-     * example, if you choose the <code>RETAIL</code> domain and
-     * <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon Forecast
-     * requires that <code>item_id</code>, <code>timestamp</code>, and
-     * <code>demand</code> fields are present in your data. For more information, see
-     * <a>howitworks-datasets-groups</a>.</p>
+     * parameter of the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a>
+     * operation must match.</p> <p>The <code>Domain</code> and
+     * <code>DatasetType</code> that you choose determine the fields that must be
+     * present in training data that you import to a dataset. For example, if you
+     * choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the
+     * <code>DatasetType</code>, Amazon Forecast requires that <code>item_id</code>,
+     * <code>timestamp</code>, and <code>demand</code> fields are present in your data.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/howitworks-datasets-groups.html">Dataset
+     * groups</a>.</p>
      */
     inline CreateDatasetGroupRequest& WithDomain(const Domain& value) { SetDomain(value); return *this;}
 
     /**
      * <p>The domain associated with the dataset group. When you add a dataset to a
      * dataset group, this value and the value specified for the <code>Domain</code>
-     * parameter of the <a>CreateDataset</a> operation must match.</p> <p>The
-     * <code>Domain</code> and <code>DatasetType</code> that you choose determine the
-     * fields that must be present in training data that you import to a dataset. For
-     * example, if you choose the <code>RETAIL</code> domain and
-     * <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon Forecast
-     * requires that <code>item_id</code>, <code>timestamp</code>, and
-     * <code>demand</code> fields are present in your data. For more information, see
-     * <a>howitworks-datasets-groups</a>.</p>
+     * parameter of the <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a>
+     * operation must match.</p> <p>The <code>Domain</code> and
+     * <code>DatasetType</code> that you choose determine the fields that must be
+     * present in training data that you import to a dataset. For example, if you
+     * choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the
+     * <code>DatasetType</code>, Amazon Forecast requires that <code>item_id</code>,
+     * <code>timestamp</code>, and <code>demand</code> fields are present in your data.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/howitworks-datasets-groups.html">Dataset
+     * groups</a>.</p>
      */
     inline CreateDatasetGroupRequest& WithDomain(Domain&& value) { SetDomain(std::move(value)); return *this;}
 

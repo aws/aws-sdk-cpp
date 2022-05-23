@@ -145,6 +145,12 @@ DescribeAutoPredictorResult& DescribeAutoPredictorResult::operator =(const Aws::
 
   }
 
+  if(jsonValue.ValueExists("MonitorInfo"))
+  {
+    m_monitorInfo = jsonValue.GetObject("MonitorInfo");
+
+  }
+
 
 
   return *this;
