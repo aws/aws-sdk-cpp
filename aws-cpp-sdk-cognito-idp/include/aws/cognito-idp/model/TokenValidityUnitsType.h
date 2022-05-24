@@ -24,8 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>The data type for TokenValidityUnits that specifics the time measurements for
-   * token validity.</p><p><h3>See Also:</h3>   <a
+   * <p>The data type TokenValidityUnits specifies the time units you use when you
+   * set the duration of ID, access, and refresh tokens.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/TokenValidityUnitsType">AWS
    * API Reference</a></p>
    */

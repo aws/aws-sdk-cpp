@@ -40,50 +40,50 @@ namespace Model
 
 
     /**
-     * <p>The access token returned by the server response to get the user attribute
-     * verification code.</p>
+     * <p>A non-expired access token for the user whose attribute verification code you
+     * want to generate.</p>
      */
     inline const Aws::String& GetAccessToken() const{ return m_accessToken; }
 
     /**
-     * <p>The access token returned by the server response to get the user attribute
-     * verification code.</p>
+     * <p>A non-expired access token for the user whose attribute verification code you
+     * want to generate.</p>
      */
     inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }
 
     /**
-     * <p>The access token returned by the server response to get the user attribute
-     * verification code.</p>
+     * <p>A non-expired access token for the user whose attribute verification code you
+     * want to generate.</p>
      */
     inline void SetAccessToken(const Aws::String& value) { m_accessTokenHasBeenSet = true; m_accessToken = value; }
 
     /**
-     * <p>The access token returned by the server response to get the user attribute
-     * verification code.</p>
+     * <p>A non-expired access token for the user whose attribute verification code you
+     * want to generate.</p>
      */
     inline void SetAccessToken(Aws::String&& value) { m_accessTokenHasBeenSet = true; m_accessToken = std::move(value); }
 
     /**
-     * <p>The access token returned by the server response to get the user attribute
-     * verification code.</p>
+     * <p>A non-expired access token for the user whose attribute verification code you
+     * want to generate.</p>
      */
     inline void SetAccessToken(const char* value) { m_accessTokenHasBeenSet = true; m_accessToken.assign(value); }
 
     /**
-     * <p>The access token returned by the server response to get the user attribute
-     * verification code.</p>
+     * <p>A non-expired access token for the user whose attribute verification code you
+     * want to generate.</p>
      */
     inline GetUserAttributeVerificationCodeRequest& WithAccessToken(const Aws::String& value) { SetAccessToken(value); return *this;}
 
     /**
-     * <p>The access token returned by the server response to get the user attribute
-     * verification code.</p>
+     * <p>A non-expired access token for the user whose attribute verification code you
+     * want to generate.</p>
      */
     inline GetUserAttributeVerificationCodeRequest& WithAccessToken(Aws::String&& value) { SetAccessToken(std::move(value)); return *this;}
 
     /**
-     * <p>The access token returned by the server response to get the user attribute
-     * verification code.</p>
+     * <p>A non-expired access token for the user whose attribute verification code you
+     * want to generate.</p>
      */
     inline GetUserAttributeVerificationCodeRequest& WithAccessToken(const char* value) { SetAccessToken(value); return *this;}
 

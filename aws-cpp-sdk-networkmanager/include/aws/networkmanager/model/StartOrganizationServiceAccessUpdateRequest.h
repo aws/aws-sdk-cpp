@@ -1,0 +1,67 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/networkmanager/NetworkManager_EXPORTS.h>
+#include <aws/networkmanager/NetworkManagerRequest.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
+
+namespace Aws
+{
+namespace NetworkManager
+{
+namespace Model
+{
+
+  /**
+   */
+  class AWS_NETWORKMANAGER_API StartOrganizationServiceAccessUpdateRequest : public NetworkManagerRequest
+  {
+  public:
+    StartOrganizationServiceAccessUpdateRequest();
+
+    // Service request name is the Operation name which will send this request out,
+    // each operation should has unique request name, so that we can get operation's name from this request.
+    // Note: this is not true for response, multiple operations may have the same response name,
+    // so we can not get operation's name from response.
+    inline virtual const char* GetServiceRequestName() const override { return "StartOrganizationServiceAccessUpdate"; }
+
+    Aws::String SerializePayload() const override;
+
+
+    
+    inline const Aws::String& GetAction() const{ return m_action; }
+
+    
+    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
+
+    
+    inline void SetAction(const Aws::String& value) { m_actionHasBeenSet = true; m_action = value; }
+
+    
+    inline void SetAction(Aws::String&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
+
+    
+    inline void SetAction(const char* value) { m_actionHasBeenSet = true; m_action.assign(value); }
+
+    
+    inline StartOrganizationServiceAccessUpdateRequest& WithAction(const Aws::String& value) { SetAction(value); return *this;}
+
+    
+    inline StartOrganizationServiceAccessUpdateRequest& WithAction(Aws::String&& value) { SetAction(std::move(value)); return *this;}
+
+    
+    inline StartOrganizationServiceAccessUpdateRequest& WithAction(const char* value) { SetAction(value); return *this;}
+
+  private:
+
+    Aws::String m_action;
+    bool m_actionHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace NetworkManager
+} // namespace Aws

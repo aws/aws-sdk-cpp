@@ -79,12 +79,14 @@
 #include <aws/networkmanager/model/ListConnectPeersRequest.h>
 #include <aws/networkmanager/model/ListCoreNetworkPolicyVersionsRequest.h>
 #include <aws/networkmanager/model/ListCoreNetworksRequest.h>
+#include <aws/networkmanager/model/ListOrganizationServiceAccessStatusRequest.h>
 #include <aws/networkmanager/model/ListTagsForResourceRequest.h>
 #include <aws/networkmanager/model/PutCoreNetworkPolicyRequest.h>
 #include <aws/networkmanager/model/PutResourcePolicyRequest.h>
 #include <aws/networkmanager/model/RegisterTransitGatewayRequest.h>
 #include <aws/networkmanager/model/RejectAttachmentRequest.h>
 #include <aws/networkmanager/model/RestoreCoreNetworkPolicyVersionRequest.h>
+#include <aws/networkmanager/model/StartOrganizationServiceAccessUpdateRequest.h>
 #include <aws/networkmanager/model/StartRouteAnalysisRequest.h>
 #include <aws/networkmanager/model/TagResourceRequest.h>
 #include <aws/networkmanager/model/UntagResourceRequest.h>
@@ -2060,6 +2062,31 @@ void NetworkManagerClient::ListCoreNetworksAsyncHelper(const ListCoreNetworksReq
   handler(this, request, ListCoreNetworks(request), context);
 }
 
+ListOrganizationServiceAccessStatusOutcome NetworkManagerClient::ListOrganizationServiceAccessStatus(const ListOrganizationServiceAccessStatusRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/organizations/service-access");
+  return ListOrganizationServiceAccessStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListOrganizationServiceAccessStatusOutcomeCallable NetworkManagerClient::ListOrganizationServiceAccessStatusCallable(const ListOrganizationServiceAccessStatusRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListOrganizationServiceAccessStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListOrganizationServiceAccessStatus(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void NetworkManagerClient::ListOrganizationServiceAccessStatusAsync(const ListOrganizationServiceAccessStatusRequest& request, const ListOrganizationServiceAccessStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListOrganizationServiceAccessStatusAsyncHelper( request, handler, context ); } );
+}
+
+void NetworkManagerClient::ListOrganizationServiceAccessStatusAsyncHelper(const ListOrganizationServiceAccessStatusRequest& request, const ListOrganizationServiceAccessStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListOrganizationServiceAccessStatus(request), context);
+}
+
 ListTagsForResourceOutcome NetworkManagerClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
   if (!request.ResourceArnHasBeenSet())
@@ -2255,6 +2282,31 @@ void NetworkManagerClient::RestoreCoreNetworkPolicyVersionAsync(const RestoreCor
 void NetworkManagerClient::RestoreCoreNetworkPolicyVersionAsyncHelper(const RestoreCoreNetworkPolicyVersionRequest& request, const RestoreCoreNetworkPolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, RestoreCoreNetworkPolicyVersion(request), context);
+}
+
+StartOrganizationServiceAccessUpdateOutcome NetworkManagerClient::StartOrganizationServiceAccessUpdate(const StartOrganizationServiceAccessUpdateRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/organizations/service-access");
+  return StartOrganizationServiceAccessUpdateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartOrganizationServiceAccessUpdateOutcomeCallable NetworkManagerClient::StartOrganizationServiceAccessUpdateCallable(const StartOrganizationServiceAccessUpdateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartOrganizationServiceAccessUpdateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartOrganizationServiceAccessUpdate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void NetworkManagerClient::StartOrganizationServiceAccessUpdateAsync(const StartOrganizationServiceAccessUpdateRequest& request, const StartOrganizationServiceAccessUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartOrganizationServiceAccessUpdateAsyncHelper( request, handler, context ); } );
+}
+
+void NetworkManagerClient::StartOrganizationServiceAccessUpdateAsyncHelper(const StartOrganizationServiceAccessUpdateRequest& request, const StartOrganizationServiceAccessUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartOrganizationServiceAccessUpdate(request), context);
 }
 
 StartRouteAnalysisOutcome NetworkManagerClient::StartRouteAnalysis(const StartRouteAnalysisRequest& request) const

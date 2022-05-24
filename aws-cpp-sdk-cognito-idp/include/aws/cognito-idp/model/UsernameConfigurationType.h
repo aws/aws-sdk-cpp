@@ -36,7 +36,7 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether username case sensitivity will be applied for all users in
+     * <p>Specifies whether user name case sensitivity will be applied for all users in
      * the user pool through Amazon Cognito APIs.</p> <p>Valid values include:</p> <dl>
      * <dt>True</dt> <dd> <p>Enables case sensitivity for all username input. When this
      * option is set to <code>True</code>, users must sign in using the exact
@@ -51,7 +51,7 @@ namespace Model
     inline bool GetCaseSensitive() const{ return m_caseSensitive; }
 
     /**
-     * <p>Specifies whether username case sensitivity will be applied for all users in
+     * <p>Specifies whether user name case sensitivity will be applied for all users in
      * the user pool through Amazon Cognito APIs.</p> <p>Valid values include:</p> <dl>
      * <dt>True</dt> <dd> <p>Enables case sensitivity for all username input. When this
      * option is set to <code>True</code>, users must sign in using the exact
@@ -66,7 +66,7 @@ namespace Model
     inline bool CaseSensitiveHasBeenSet() const { return m_caseSensitiveHasBeenSet; }
 
     /**
-     * <p>Specifies whether username case sensitivity will be applied for all users in
+     * <p>Specifies whether user name case sensitivity will be applied for all users in
      * the user pool through Amazon Cognito APIs.</p> <p>Valid values include:</p> <dl>
      * <dt>True</dt> <dd> <p>Enables case sensitivity for all username input. When this
      * option is set to <code>True</code>, users must sign in using the exact
@@ -81,7 +81,7 @@ namespace Model
     inline void SetCaseSensitive(bool value) { m_caseSensitiveHasBeenSet = true; m_caseSensitive = value; }
 
     /**
-     * <p>Specifies whether username case sensitivity will be applied for all users in
+     * <p>Specifies whether user name case sensitivity will be applied for all users in
      * the user pool through Amazon Cognito APIs.</p> <p>Valid values include:</p> <dl>
      * <dt>True</dt> <dd> <p>Enables case sensitivity for all username input. When this
      * option is set to <code>True</code>, users must sign in using the exact

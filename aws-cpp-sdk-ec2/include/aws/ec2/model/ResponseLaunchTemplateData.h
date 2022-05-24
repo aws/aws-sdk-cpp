@@ -1192,6 +1192,39 @@ namespace Model
      */
     inline ResponseLaunchTemplateData& WithMaintenanceOptions(LaunchTemplateInstanceMaintenanceOptions&& value) { SetMaintenanceOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Indicates whether the instance is enabled for stop protection. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
+     * Protection</a>.</p>
+     */
+    inline bool GetDisableApiStop() const{ return m_disableApiStop; }
+
+    /**
+     * <p>Indicates whether the instance is enabled for stop protection. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
+     * Protection</a>.</p>
+     */
+    inline bool DisableApiStopHasBeenSet() const { return m_disableApiStopHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the instance is enabled for stop protection. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
+     * Protection</a>.</p>
+     */
+    inline void SetDisableApiStop(bool value) { m_disableApiStopHasBeenSet = true; m_disableApiStop = value; }
+
+    /**
+     * <p>Indicates whether the instance is enabled for stop protection. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
+     * Protection</a>.</p>
+     */
+    inline ResponseLaunchTemplateData& WithDisableApiStop(bool value) { SetDisableApiStop(value); return *this;}
+
   private:
 
     Aws::String m_kernelId;
@@ -1283,6 +1316,9 @@ namespace Model
 
     LaunchTemplateInstanceMaintenanceOptions m_maintenanceOptions;
     bool m_maintenanceOptionsHasBeenSet;
+
+    bool m_disableApiStop;
+    bool m_disableApiStopHasBeenSet;
   };
 
 } // namespace Model

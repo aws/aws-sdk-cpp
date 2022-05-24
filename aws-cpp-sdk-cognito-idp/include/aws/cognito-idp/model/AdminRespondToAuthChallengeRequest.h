@@ -174,16 +174,26 @@ namespace Model
      * </li> <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: <code>PASSWORD</code>,
      * <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured
      * with client secret). </p> </li> <li> <p> <code>NEW_PASSWORD_REQUIRED</code>:
-     * <code>NEW_PASSWORD</code>, any other required attributes, <code>USERNAME</code>,
-     * <code>SECRET_HASH</code> (if app client is configured with client secret). </p>
-     * </li> <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you
-     * must use the session value returned by <code>VerifySoftwareToken</code> in the
-     * <code>Session</code> parameter.</p> </li> </ul> <p>The value of the
-     * <code>USERNAME</code> attribute must be the user's actual username, not an alias
-     * (such as an email address or phone number). To make this simpler, the
-     * <code>AdminInitiateAuth</code> response includes the actual username value in
-     * the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute. This happens even if you
-     * specified an alias in your call to <code>AdminInitiateAuth</code>.</p>
+     * <code>NEW_PASSWORD</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if
+     * app client is configured with client secret). To set any required attributes
+     * that Amazon Cognito returned as <code>requiredAttributes</code> in the
+     * <code>AdminInitiateAuth</code> response, add a
+     * <code>userAttributes.<i>attributename</i> </code> parameter. This parameter can
+     * also set values for writable attributes that aren't required by your user
+     * pool.</p>  <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response,
+     * you can't modify a required attribute that already has a value. In
+     * <code>AdminRespondToAuthChallenge</code>, set a value for any keys that Amazon
+     * Cognito returned in the <code>requiredAttributes</code> parameter, then use the
+     * <code>AdminUpdateUserAttributes</code> API operation to modify the value of any
+     * additional attributes.</p>  </li> <li> <p> <code>MFA_SETUP</code>
+     * requires <code>USERNAME</code>, plus you must use the session value returned by
+     * <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.</p>
+     * </li> </ul> <p>The value of the <code>USERNAME</code> attribute must be the
+     * user's actual username, not an alias (such as an email address or phone number).
+     * To make this simpler, the <code>AdminInitiateAuth</code> response includes the
+     * actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute.
+     * This happens even if you specified an alias in your call to
+     * <code>AdminInitiateAuth</code>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetChallengeResponses() const{ return m_challengeResponses; }
 
@@ -200,16 +210,26 @@ namespace Model
      * </li> <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: <code>PASSWORD</code>,
      * <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured
      * with client secret). </p> </li> <li> <p> <code>NEW_PASSWORD_REQUIRED</code>:
-     * <code>NEW_PASSWORD</code>, any other required attributes, <code>USERNAME</code>,
-     * <code>SECRET_HASH</code> (if app client is configured with client secret). </p>
-     * </li> <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you
-     * must use the session value returned by <code>VerifySoftwareToken</code> in the
-     * <code>Session</code> parameter.</p> </li> </ul> <p>The value of the
-     * <code>USERNAME</code> attribute must be the user's actual username, not an alias
-     * (such as an email address or phone number). To make this simpler, the
-     * <code>AdminInitiateAuth</code> response includes the actual username value in
-     * the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute. This happens even if you
-     * specified an alias in your call to <code>AdminInitiateAuth</code>.</p>
+     * <code>NEW_PASSWORD</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if
+     * app client is configured with client secret). To set any required attributes
+     * that Amazon Cognito returned as <code>requiredAttributes</code> in the
+     * <code>AdminInitiateAuth</code> response, add a
+     * <code>userAttributes.<i>attributename</i> </code> parameter. This parameter can
+     * also set values for writable attributes that aren't required by your user
+     * pool.</p>  <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response,
+     * you can't modify a required attribute that already has a value. In
+     * <code>AdminRespondToAuthChallenge</code>, set a value for any keys that Amazon
+     * Cognito returned in the <code>requiredAttributes</code> parameter, then use the
+     * <code>AdminUpdateUserAttributes</code> API operation to modify the value of any
+     * additional attributes.</p>  </li> <li> <p> <code>MFA_SETUP</code>
+     * requires <code>USERNAME</code>, plus you must use the session value returned by
+     * <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.</p>
+     * </li> </ul> <p>The value of the <code>USERNAME</code> attribute must be the
+     * user's actual username, not an alias (such as an email address or phone number).
+     * To make this simpler, the <code>AdminInitiateAuth</code> response includes the
+     * actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute.
+     * This happens even if you specified an alias in your call to
+     * <code>AdminInitiateAuth</code>.</p>
      */
     inline bool ChallengeResponsesHasBeenSet() const { return m_challengeResponsesHasBeenSet; }
 
@@ -226,16 +246,26 @@ namespace Model
      * </li> <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: <code>PASSWORD</code>,
      * <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured
      * with client secret). </p> </li> <li> <p> <code>NEW_PASSWORD_REQUIRED</code>:
-     * <code>NEW_PASSWORD</code>, any other required attributes, <code>USERNAME</code>,
-     * <code>SECRET_HASH</code> (if app client is configured with client secret). </p>
-     * </li> <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you
-     * must use the session value returned by <code>VerifySoftwareToken</code> in the
-     * <code>Session</code> parameter.</p> </li> </ul> <p>The value of the
-     * <code>USERNAME</code> attribute must be the user's actual username, not an alias
-     * (such as an email address or phone number). To make this simpler, the
-     * <code>AdminInitiateAuth</code> response includes the actual username value in
-     * the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute. This happens even if you
-     * specified an alias in your call to <code>AdminInitiateAuth</code>.</p>
+     * <code>NEW_PASSWORD</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if
+     * app client is configured with client secret). To set any required attributes
+     * that Amazon Cognito returned as <code>requiredAttributes</code> in the
+     * <code>AdminInitiateAuth</code> response, add a
+     * <code>userAttributes.<i>attributename</i> </code> parameter. This parameter can
+     * also set values for writable attributes that aren't required by your user
+     * pool.</p>  <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response,
+     * you can't modify a required attribute that already has a value. In
+     * <code>AdminRespondToAuthChallenge</code>, set a value for any keys that Amazon
+     * Cognito returned in the <code>requiredAttributes</code> parameter, then use the
+     * <code>AdminUpdateUserAttributes</code> API operation to modify the value of any
+     * additional attributes.</p>  </li> <li> <p> <code>MFA_SETUP</code>
+     * requires <code>USERNAME</code>, plus you must use the session value returned by
+     * <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.</p>
+     * </li> </ul> <p>The value of the <code>USERNAME</code> attribute must be the
+     * user's actual username, not an alias (such as an email address or phone number).
+     * To make this simpler, the <code>AdminInitiateAuth</code> response includes the
+     * actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute.
+     * This happens even if you specified an alias in your call to
+     * <code>AdminInitiateAuth</code>.</p>
      */
     inline void SetChallengeResponses(const Aws::Map<Aws::String, Aws::String>& value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses = value; }
 
@@ -252,16 +282,26 @@ namespace Model
      * </li> <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: <code>PASSWORD</code>,
      * <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured
      * with client secret). </p> </li> <li> <p> <code>NEW_PASSWORD_REQUIRED</code>:
-     * <code>NEW_PASSWORD</code>, any other required attributes, <code>USERNAME</code>,
-     * <code>SECRET_HASH</code> (if app client is configured with client secret). </p>
-     * </li> <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you
-     * must use the session value returned by <code>VerifySoftwareToken</code> in the
-     * <code>Session</code> parameter.</p> </li> </ul> <p>The value of the
-     * <code>USERNAME</code> attribute must be the user's actual username, not an alias
-     * (such as an email address or phone number). To make this simpler, the
-     * <code>AdminInitiateAuth</code> response includes the actual username value in
-     * the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute. This happens even if you
-     * specified an alias in your call to <code>AdminInitiateAuth</code>.</p>
+     * <code>NEW_PASSWORD</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if
+     * app client is configured with client secret). To set any required attributes
+     * that Amazon Cognito returned as <code>requiredAttributes</code> in the
+     * <code>AdminInitiateAuth</code> response, add a
+     * <code>userAttributes.<i>attributename</i> </code> parameter. This parameter can
+     * also set values for writable attributes that aren't required by your user
+     * pool.</p>  <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response,
+     * you can't modify a required attribute that already has a value. In
+     * <code>AdminRespondToAuthChallenge</code>, set a value for any keys that Amazon
+     * Cognito returned in the <code>requiredAttributes</code> parameter, then use the
+     * <code>AdminUpdateUserAttributes</code> API operation to modify the value of any
+     * additional attributes.</p>  </li> <li> <p> <code>MFA_SETUP</code>
+     * requires <code>USERNAME</code>, plus you must use the session value returned by
+     * <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.</p>
+     * </li> </ul> <p>The value of the <code>USERNAME</code> attribute must be the
+     * user's actual username, not an alias (such as an email address or phone number).
+     * To make this simpler, the <code>AdminInitiateAuth</code> response includes the
+     * actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute.
+     * This happens even if you specified an alias in your call to
+     * <code>AdminInitiateAuth</code>.</p>
      */
     inline void SetChallengeResponses(Aws::Map<Aws::String, Aws::String>&& value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses = std::move(value); }
 
@@ -278,16 +318,26 @@ namespace Model
      * </li> <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: <code>PASSWORD</code>,
      * <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured
      * with client secret). </p> </li> <li> <p> <code>NEW_PASSWORD_REQUIRED</code>:
-     * <code>NEW_PASSWORD</code>, any other required attributes, <code>USERNAME</code>,
-     * <code>SECRET_HASH</code> (if app client is configured with client secret). </p>
-     * </li> <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you
-     * must use the session value returned by <code>VerifySoftwareToken</code> in the
-     * <code>Session</code> parameter.</p> </li> </ul> <p>The value of the
-     * <code>USERNAME</code> attribute must be the user's actual username, not an alias
-     * (such as an email address or phone number). To make this simpler, the
-     * <code>AdminInitiateAuth</code> response includes the actual username value in
-     * the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute. This happens even if you
-     * specified an alias in your call to <code>AdminInitiateAuth</code>.</p>
+     * <code>NEW_PASSWORD</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if
+     * app client is configured with client secret). To set any required attributes
+     * that Amazon Cognito returned as <code>requiredAttributes</code> in the
+     * <code>AdminInitiateAuth</code> response, add a
+     * <code>userAttributes.<i>attributename</i> </code> parameter. This parameter can
+     * also set values for writable attributes that aren't required by your user
+     * pool.</p>  <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response,
+     * you can't modify a required attribute that already has a value. In
+     * <code>AdminRespondToAuthChallenge</code>, set a value for any keys that Amazon
+     * Cognito returned in the <code>requiredAttributes</code> parameter, then use the
+     * <code>AdminUpdateUserAttributes</code> API operation to modify the value of any
+     * additional attributes.</p>  </li> <li> <p> <code>MFA_SETUP</code>
+     * requires <code>USERNAME</code>, plus you must use the session value returned by
+     * <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.</p>
+     * </li> </ul> <p>The value of the <code>USERNAME</code> attribute must be the
+     * user's actual username, not an alias (such as an email address or phone number).
+     * To make this simpler, the <code>AdminInitiateAuth</code> response includes the
+     * actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute.
+     * This happens even if you specified an alias in your call to
+     * <code>AdminInitiateAuth</code>.</p>
      */
     inline AdminRespondToAuthChallengeRequest& WithChallengeResponses(const Aws::Map<Aws::String, Aws::String>& value) { SetChallengeResponses(value); return *this;}
 
@@ -304,16 +354,26 @@ namespace Model
      * </li> <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: <code>PASSWORD</code>,
      * <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured
      * with client secret). </p> </li> <li> <p> <code>NEW_PASSWORD_REQUIRED</code>:
-     * <code>NEW_PASSWORD</code>, any other required attributes, <code>USERNAME</code>,
-     * <code>SECRET_HASH</code> (if app client is configured with client secret). </p>
-     * </li> <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you
-     * must use the session value returned by <code>VerifySoftwareToken</code> in the
-     * <code>Session</code> parameter.</p> </li> </ul> <p>The value of the
-     * <code>USERNAME</code> attribute must be the user's actual username, not an alias
-     * (such as an email address or phone number). To make this simpler, the
-     * <code>AdminInitiateAuth</code> response includes the actual username value in
-     * the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute. This happens even if you
-     * specified an alias in your call to <code>AdminInitiateAuth</code>.</p>
+     * <code>NEW_PASSWORD</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if
+     * app client is configured with client secret). To set any required attributes
+     * that Amazon Cognito returned as <code>requiredAttributes</code> in the
+     * <code>AdminInitiateAuth</code> response, add a
+     * <code>userAttributes.<i>attributename</i> </code> parameter. This parameter can
+     * also set values for writable attributes that aren't required by your user
+     * pool.</p>  <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response,
+     * you can't modify a required attribute that already has a value. In
+     * <code>AdminRespondToAuthChallenge</code>, set a value for any keys that Amazon
+     * Cognito returned in the <code>requiredAttributes</code> parameter, then use the
+     * <code>AdminUpdateUserAttributes</code> API operation to modify the value of any
+     * additional attributes.</p>  </li> <li> <p> <code>MFA_SETUP</code>
+     * requires <code>USERNAME</code>, plus you must use the session value returned by
+     * <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.</p>
+     * </li> </ul> <p>The value of the <code>USERNAME</code> attribute must be the
+     * user's actual username, not an alias (such as an email address or phone number).
+     * To make this simpler, the <code>AdminInitiateAuth</code> response includes the
+     * actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute.
+     * This happens even if you specified an alias in your call to
+     * <code>AdminInitiateAuth</code>.</p>
      */
     inline AdminRespondToAuthChallengeRequest& WithChallengeResponses(Aws::Map<Aws::String, Aws::String>&& value) { SetChallengeResponses(std::move(value)); return *this;}
 
@@ -330,16 +390,26 @@ namespace Model
      * </li> <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: <code>PASSWORD</code>,
      * <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured
      * with client secret). </p> </li> <li> <p> <code>NEW_PASSWORD_REQUIRED</code>:
-     * <code>NEW_PASSWORD</code>, any other required attributes, <code>USERNAME</code>,
-     * <code>SECRET_HASH</code> (if app client is configured with client secret). </p>
-     * </li> <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you
-     * must use the session value returned by <code>VerifySoftwareToken</code> in the
-     * <code>Session</code> parameter.</p> </li> </ul> <p>The value of the
-     * <code>USERNAME</code> attribute must be the user's actual username, not an alias
-     * (such as an email address or phone number). To make this simpler, the
-     * <code>AdminInitiateAuth</code> response includes the actual username value in
-     * the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute. This happens even if you
-     * specified an alias in your call to <code>AdminInitiateAuth</code>.</p>
+     * <code>NEW_PASSWORD</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if
+     * app client is configured with client secret). To set any required attributes
+     * that Amazon Cognito returned as <code>requiredAttributes</code> in the
+     * <code>AdminInitiateAuth</code> response, add a
+     * <code>userAttributes.<i>attributename</i> </code> parameter. This parameter can
+     * also set values for writable attributes that aren't required by your user
+     * pool.</p>  <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response,
+     * you can't modify a required attribute that already has a value. In
+     * <code>AdminRespondToAuthChallenge</code>, set a value for any keys that Amazon
+     * Cognito returned in the <code>requiredAttributes</code> parameter, then use the
+     * <code>AdminUpdateUserAttributes</code> API operation to modify the value of any
+     * additional attributes.</p>  </li> <li> <p> <code>MFA_SETUP</code>
+     * requires <code>USERNAME</code>, plus you must use the session value returned by
+     * <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.</p>
+     * </li> </ul> <p>The value of the <code>USERNAME</code> attribute must be the
+     * user's actual username, not an alias (such as an email address or phone number).
+     * To make this simpler, the <code>AdminInitiateAuth</code> response includes the
+     * actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute.
+     * This happens even if you specified an alias in your call to
+     * <code>AdminInitiateAuth</code>.</p>
      */
     inline AdminRespondToAuthChallengeRequest& AddChallengeResponses(const Aws::String& key, const Aws::String& value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses.emplace(key, value); return *this; }
 
@@ -356,16 +426,26 @@ namespace Model
      * </li> <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: <code>PASSWORD</code>,
      * <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured
      * with client secret). </p> </li> <li> <p> <code>NEW_PASSWORD_REQUIRED</code>:
-     * <code>NEW_PASSWORD</code>, any other required attributes, <code>USERNAME</code>,
-     * <code>SECRET_HASH</code> (if app client is configured with client secret). </p>
-     * </li> <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you
-     * must use the session value returned by <code>VerifySoftwareToken</code> in the
-     * <code>Session</code> parameter.</p> </li> </ul> <p>The value of the
-     * <code>USERNAME</code> attribute must be the user's actual username, not an alias
-     * (such as an email address or phone number). To make this simpler, the
-     * <code>AdminInitiateAuth</code> response includes the actual username value in
-     * the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute. This happens even if you
-     * specified an alias in your call to <code>AdminInitiateAuth</code>.</p>
+     * <code>NEW_PASSWORD</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if
+     * app client is configured with client secret). To set any required attributes
+     * that Amazon Cognito returned as <code>requiredAttributes</code> in the
+     * <code>AdminInitiateAuth</code> response, add a
+     * <code>userAttributes.<i>attributename</i> </code> parameter. This parameter can
+     * also set values for writable attributes that aren't required by your user
+     * pool.</p>  <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response,
+     * you can't modify a required attribute that already has a value. In
+     * <code>AdminRespondToAuthChallenge</code>, set a value for any keys that Amazon
+     * Cognito returned in the <code>requiredAttributes</code> parameter, then use the
+     * <code>AdminUpdateUserAttributes</code> API operation to modify the value of any
+     * additional attributes.</p>  </li> <li> <p> <code>MFA_SETUP</code>
+     * requires <code>USERNAME</code>, plus you must use the session value returned by
+     * <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.</p>
+     * </li> </ul> <p>The value of the <code>USERNAME</code> attribute must be the
+     * user's actual username, not an alias (such as an email address or phone number).
+     * To make this simpler, the <code>AdminInitiateAuth</code> response includes the
+     * actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute.
+     * This happens even if you specified an alias in your call to
+     * <code>AdminInitiateAuth</code>.</p>
      */
     inline AdminRespondToAuthChallengeRequest& AddChallengeResponses(Aws::String&& key, const Aws::String& value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses.emplace(std::move(key), value); return *this; }
 
@@ -382,16 +462,26 @@ namespace Model
      * </li> <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: <code>PASSWORD</code>,
      * <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured
      * with client secret). </p> </li> <li> <p> <code>NEW_PASSWORD_REQUIRED</code>:
-     * <code>NEW_PASSWORD</code>, any other required attributes, <code>USERNAME</code>,
-     * <code>SECRET_HASH</code> (if app client is configured with client secret). </p>
-     * </li> <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you
-     * must use the session value returned by <code>VerifySoftwareToken</code> in the
-     * <code>Session</code> parameter.</p> </li> </ul> <p>The value of the
-     * <code>USERNAME</code> attribute must be the user's actual username, not an alias
-     * (such as an email address or phone number). To make this simpler, the
-     * <code>AdminInitiateAuth</code> response includes the actual username value in
-     * the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute. This happens even if you
-     * specified an alias in your call to <code>AdminInitiateAuth</code>.</p>
+     * <code>NEW_PASSWORD</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if
+     * app client is configured with client secret). To set any required attributes
+     * that Amazon Cognito returned as <code>requiredAttributes</code> in the
+     * <code>AdminInitiateAuth</code> response, add a
+     * <code>userAttributes.<i>attributename</i> </code> parameter. This parameter can
+     * also set values for writable attributes that aren't required by your user
+     * pool.</p>  <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response,
+     * you can't modify a required attribute that already has a value. In
+     * <code>AdminRespondToAuthChallenge</code>, set a value for any keys that Amazon
+     * Cognito returned in the <code>requiredAttributes</code> parameter, then use the
+     * <code>AdminUpdateUserAttributes</code> API operation to modify the value of any
+     * additional attributes.</p>  </li> <li> <p> <code>MFA_SETUP</code>
+     * requires <code>USERNAME</code>, plus you must use the session value returned by
+     * <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.</p>
+     * </li> </ul> <p>The value of the <code>USERNAME</code> attribute must be the
+     * user's actual username, not an alias (such as an email address or phone number).
+     * To make this simpler, the <code>AdminInitiateAuth</code> response includes the
+     * actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute.
+     * This happens even if you specified an alias in your call to
+     * <code>AdminInitiateAuth</code>.</p>
      */
     inline AdminRespondToAuthChallengeRequest& AddChallengeResponses(const Aws::String& key, Aws::String&& value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses.emplace(key, std::move(value)); return *this; }
 
@@ -408,16 +498,26 @@ namespace Model
      * </li> <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: <code>PASSWORD</code>,
      * <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured
      * with client secret). </p> </li> <li> <p> <code>NEW_PASSWORD_REQUIRED</code>:
-     * <code>NEW_PASSWORD</code>, any other required attributes, <code>USERNAME</code>,
-     * <code>SECRET_HASH</code> (if app client is configured with client secret). </p>
-     * </li> <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you
-     * must use the session value returned by <code>VerifySoftwareToken</code> in the
-     * <code>Session</code> parameter.</p> </li> </ul> <p>The value of the
-     * <code>USERNAME</code> attribute must be the user's actual username, not an alias
-     * (such as an email address or phone number). To make this simpler, the
-     * <code>AdminInitiateAuth</code> response includes the actual username value in
-     * the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute. This happens even if you
-     * specified an alias in your call to <code>AdminInitiateAuth</code>.</p>
+     * <code>NEW_PASSWORD</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if
+     * app client is configured with client secret). To set any required attributes
+     * that Amazon Cognito returned as <code>requiredAttributes</code> in the
+     * <code>AdminInitiateAuth</code> response, add a
+     * <code>userAttributes.<i>attributename</i> </code> parameter. This parameter can
+     * also set values for writable attributes that aren't required by your user
+     * pool.</p>  <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response,
+     * you can't modify a required attribute that already has a value. In
+     * <code>AdminRespondToAuthChallenge</code>, set a value for any keys that Amazon
+     * Cognito returned in the <code>requiredAttributes</code> parameter, then use the
+     * <code>AdminUpdateUserAttributes</code> API operation to modify the value of any
+     * additional attributes.</p>  </li> <li> <p> <code>MFA_SETUP</code>
+     * requires <code>USERNAME</code>, plus you must use the session value returned by
+     * <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.</p>
+     * </li> </ul> <p>The value of the <code>USERNAME</code> attribute must be the
+     * user's actual username, not an alias (such as an email address or phone number).
+     * To make this simpler, the <code>AdminInitiateAuth</code> response includes the
+     * actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute.
+     * This happens even if you specified an alias in your call to
+     * <code>AdminInitiateAuth</code>.</p>
      */
     inline AdminRespondToAuthChallengeRequest& AddChallengeResponses(Aws::String&& key, Aws::String&& value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -434,16 +534,26 @@ namespace Model
      * </li> <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: <code>PASSWORD</code>,
      * <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured
      * with client secret). </p> </li> <li> <p> <code>NEW_PASSWORD_REQUIRED</code>:
-     * <code>NEW_PASSWORD</code>, any other required attributes, <code>USERNAME</code>,
-     * <code>SECRET_HASH</code> (if app client is configured with client secret). </p>
-     * </li> <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you
-     * must use the session value returned by <code>VerifySoftwareToken</code> in the
-     * <code>Session</code> parameter.</p> </li> </ul> <p>The value of the
-     * <code>USERNAME</code> attribute must be the user's actual username, not an alias
-     * (such as an email address or phone number). To make this simpler, the
-     * <code>AdminInitiateAuth</code> response includes the actual username value in
-     * the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute. This happens even if you
-     * specified an alias in your call to <code>AdminInitiateAuth</code>.</p>
+     * <code>NEW_PASSWORD</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if
+     * app client is configured with client secret). To set any required attributes
+     * that Amazon Cognito returned as <code>requiredAttributes</code> in the
+     * <code>AdminInitiateAuth</code> response, add a
+     * <code>userAttributes.<i>attributename</i> </code> parameter. This parameter can
+     * also set values for writable attributes that aren't required by your user
+     * pool.</p>  <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response,
+     * you can't modify a required attribute that already has a value. In
+     * <code>AdminRespondToAuthChallenge</code>, set a value for any keys that Amazon
+     * Cognito returned in the <code>requiredAttributes</code> parameter, then use the
+     * <code>AdminUpdateUserAttributes</code> API operation to modify the value of any
+     * additional attributes.</p>  </li> <li> <p> <code>MFA_SETUP</code>
+     * requires <code>USERNAME</code>, plus you must use the session value returned by
+     * <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.</p>
+     * </li> </ul> <p>The value of the <code>USERNAME</code> attribute must be the
+     * user's actual username, not an alias (such as an email address or phone number).
+     * To make this simpler, the <code>AdminInitiateAuth</code> response includes the
+     * actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute.
+     * This happens even if you specified an alias in your call to
+     * <code>AdminInitiateAuth</code>.</p>
      */
     inline AdminRespondToAuthChallengeRequest& AddChallengeResponses(const char* key, Aws::String&& value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses.emplace(key, std::move(value)); return *this; }
 
@@ -460,16 +570,26 @@ namespace Model
      * </li> <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: <code>PASSWORD</code>,
      * <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured
      * with client secret). </p> </li> <li> <p> <code>NEW_PASSWORD_REQUIRED</code>:
-     * <code>NEW_PASSWORD</code>, any other required attributes, <code>USERNAME</code>,
-     * <code>SECRET_HASH</code> (if app client is configured with client secret). </p>
-     * </li> <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you
-     * must use the session value returned by <code>VerifySoftwareToken</code> in the
-     * <code>Session</code> parameter.</p> </li> </ul> <p>The value of the
-     * <code>USERNAME</code> attribute must be the user's actual username, not an alias
-     * (such as an email address or phone number). To make this simpler, the
-     * <code>AdminInitiateAuth</code> response includes the actual username value in
-     * the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute. This happens even if you
-     * specified an alias in your call to <code>AdminInitiateAuth</code>.</p>
+     * <code>NEW_PASSWORD</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if
+     * app client is configured with client secret). To set any required attributes
+     * that Amazon Cognito returned as <code>requiredAttributes</code> in the
+     * <code>AdminInitiateAuth</code> response, add a
+     * <code>userAttributes.<i>attributename</i> </code> parameter. This parameter can
+     * also set values for writable attributes that aren't required by your user
+     * pool.</p>  <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response,
+     * you can't modify a required attribute that already has a value. In
+     * <code>AdminRespondToAuthChallenge</code>, set a value for any keys that Amazon
+     * Cognito returned in the <code>requiredAttributes</code> parameter, then use the
+     * <code>AdminUpdateUserAttributes</code> API operation to modify the value of any
+     * additional attributes.</p>  </li> <li> <p> <code>MFA_SETUP</code>
+     * requires <code>USERNAME</code>, plus you must use the session value returned by
+     * <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.</p>
+     * </li> </ul> <p>The value of the <code>USERNAME</code> attribute must be the
+     * user's actual username, not an alias (such as an email address or phone number).
+     * To make this simpler, the <code>AdminInitiateAuth</code> response includes the
+     * actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute.
+     * This happens even if you specified an alias in your call to
+     * <code>AdminInitiateAuth</code>.</p>
      */
     inline AdminRespondToAuthChallengeRequest& AddChallengeResponses(Aws::String&& key, const char* value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses.emplace(std::move(key), value); return *this; }
 
@@ -486,16 +606,26 @@ namespace Model
      * </li> <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: <code>PASSWORD</code>,
      * <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured
      * with client secret). </p> </li> <li> <p> <code>NEW_PASSWORD_REQUIRED</code>:
-     * <code>NEW_PASSWORD</code>, any other required attributes, <code>USERNAME</code>,
-     * <code>SECRET_HASH</code> (if app client is configured with client secret). </p>
-     * </li> <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you
-     * must use the session value returned by <code>VerifySoftwareToken</code> in the
-     * <code>Session</code> parameter.</p> </li> </ul> <p>The value of the
-     * <code>USERNAME</code> attribute must be the user's actual username, not an alias
-     * (such as an email address or phone number). To make this simpler, the
-     * <code>AdminInitiateAuth</code> response includes the actual username value in
-     * the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute. This happens even if you
-     * specified an alias in your call to <code>AdminInitiateAuth</code>.</p>
+     * <code>NEW_PASSWORD</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if
+     * app client is configured with client secret). To set any required attributes
+     * that Amazon Cognito returned as <code>requiredAttributes</code> in the
+     * <code>AdminInitiateAuth</code> response, add a
+     * <code>userAttributes.<i>attributename</i> </code> parameter. This parameter can
+     * also set values for writable attributes that aren't required by your user
+     * pool.</p>  <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response,
+     * you can't modify a required attribute that already has a value. In
+     * <code>AdminRespondToAuthChallenge</code>, set a value for any keys that Amazon
+     * Cognito returned in the <code>requiredAttributes</code> parameter, then use the
+     * <code>AdminUpdateUserAttributes</code> API operation to modify the value of any
+     * additional attributes.</p>  </li> <li> <p> <code>MFA_SETUP</code>
+     * requires <code>USERNAME</code>, plus you must use the session value returned by
+     * <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.</p>
+     * </li> </ul> <p>The value of the <code>USERNAME</code> attribute must be the
+     * user's actual username, not an alias (such as an email address or phone number).
+     * To make this simpler, the <code>AdminInitiateAuth</code> response includes the
+     * actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute.
+     * This happens even if you specified an alias in your call to
+     * <code>AdminInitiateAuth</code>.</p>
      */
     inline AdminRespondToAuthChallengeRequest& AddChallengeResponses(const char* key, const char* value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses.emplace(key, value); return *this; }
 

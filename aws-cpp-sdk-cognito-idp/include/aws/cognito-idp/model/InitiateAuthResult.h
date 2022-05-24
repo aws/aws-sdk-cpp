@@ -59,13 +59,23 @@ namespace Model
      * this device.</p> </li> <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code>: Similar
      * to <code>PASSWORD_VERIFIER</code>, but for devices only.</p> </li> <li> <p>
      * <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their
-     * passwords after successful first login. This challenge should be passed with
-     * <code>NEW_PASSWORD</code> and any other required attributes.</p> </li> <li> <p>
-     * <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before
-     * they can sign in. The MFA types activated for the user pool will be listed in
-     * the challenge parameters <code>MFA_CAN_SETUP</code> value. </p> <p> To set up
-     * software token MFA, use the session returned here from <code>InitiateAuth</code>
-     * as an input to <code>AssociateSoftwareToken</code>. Use the session returned by
+     * passwords after successful first login. </p> <p>Respond to this challenge with
+     * <code>NEW_PASSWORD</code> and any required attributes that Amazon Cognito
+     * returned in the <code>requiredAttributes</code> parameter. You can also set
+     * values for attributes that aren't required by your user pool and that your app
+     * client can write. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RespondToAuthChallenge.html">RespondToAuthChallenge</a>.</p>
+     *  <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't
+     * modify a required attribute that already has a value. In
+     * <code>RespondToAuthChallenge</code>, set a value for any keys that Amazon
+     * Cognito returned in the <code>requiredAttributes</code> parameter, then use the
+     * <code>UpdateUserAttributes</code> API operation to modify the value of any
+     * additional attributes.</p>  </li> <li> <p> <code>MFA_SETUP</code>: For
+     * users who are required to setup an MFA factor before they can sign in. The MFA
+     * types activated for the user pool will be listed in the challenge parameters
+     * <code>MFA_CAN_SETUP</code> value. </p> <p> To set up software token MFA, use the
+     * session returned here from <code>InitiateAuth</code> as an input to
+     * <code>AssociateSoftwareToken</code>. Use the session returned by
      * <code>VerifySoftwareToken</code> as an input to
      * <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code>
      * to complete sign-in. To set up SMS MFA, an administrator should help the user to
@@ -93,13 +103,23 @@ namespace Model
      * this device.</p> </li> <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code>: Similar
      * to <code>PASSWORD_VERIFIER</code>, but for devices only.</p> </li> <li> <p>
      * <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their
-     * passwords after successful first login. This challenge should be passed with
-     * <code>NEW_PASSWORD</code> and any other required attributes.</p> </li> <li> <p>
-     * <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before
-     * they can sign in. The MFA types activated for the user pool will be listed in
-     * the challenge parameters <code>MFA_CAN_SETUP</code> value. </p> <p> To set up
-     * software token MFA, use the session returned here from <code>InitiateAuth</code>
-     * as an input to <code>AssociateSoftwareToken</code>. Use the session returned by
+     * passwords after successful first login. </p> <p>Respond to this challenge with
+     * <code>NEW_PASSWORD</code> and any required attributes that Amazon Cognito
+     * returned in the <code>requiredAttributes</code> parameter. You can also set
+     * values for attributes that aren't required by your user pool and that your app
+     * client can write. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RespondToAuthChallenge.html">RespondToAuthChallenge</a>.</p>
+     *  <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't
+     * modify a required attribute that already has a value. In
+     * <code>RespondToAuthChallenge</code>, set a value for any keys that Amazon
+     * Cognito returned in the <code>requiredAttributes</code> parameter, then use the
+     * <code>UpdateUserAttributes</code> API operation to modify the value of any
+     * additional attributes.</p>  </li> <li> <p> <code>MFA_SETUP</code>: For
+     * users who are required to setup an MFA factor before they can sign in. The MFA
+     * types activated for the user pool will be listed in the challenge parameters
+     * <code>MFA_CAN_SETUP</code> value. </p> <p> To set up software token MFA, use the
+     * session returned here from <code>InitiateAuth</code> as an input to
+     * <code>AssociateSoftwareToken</code>. Use the session returned by
      * <code>VerifySoftwareToken</code> as an input to
      * <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code>
      * to complete sign-in. To set up SMS MFA, an administrator should help the user to
@@ -127,13 +147,23 @@ namespace Model
      * this device.</p> </li> <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code>: Similar
      * to <code>PASSWORD_VERIFIER</code>, but for devices only.</p> </li> <li> <p>
      * <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their
-     * passwords after successful first login. This challenge should be passed with
-     * <code>NEW_PASSWORD</code> and any other required attributes.</p> </li> <li> <p>
-     * <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before
-     * they can sign in. The MFA types activated for the user pool will be listed in
-     * the challenge parameters <code>MFA_CAN_SETUP</code> value. </p> <p> To set up
-     * software token MFA, use the session returned here from <code>InitiateAuth</code>
-     * as an input to <code>AssociateSoftwareToken</code>. Use the session returned by
+     * passwords after successful first login. </p> <p>Respond to this challenge with
+     * <code>NEW_PASSWORD</code> and any required attributes that Amazon Cognito
+     * returned in the <code>requiredAttributes</code> parameter. You can also set
+     * values for attributes that aren't required by your user pool and that your app
+     * client can write. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RespondToAuthChallenge.html">RespondToAuthChallenge</a>.</p>
+     *  <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't
+     * modify a required attribute that already has a value. In
+     * <code>RespondToAuthChallenge</code>, set a value for any keys that Amazon
+     * Cognito returned in the <code>requiredAttributes</code> parameter, then use the
+     * <code>UpdateUserAttributes</code> API operation to modify the value of any
+     * additional attributes.</p>  </li> <li> <p> <code>MFA_SETUP</code>: For
+     * users who are required to setup an MFA factor before they can sign in. The MFA
+     * types activated for the user pool will be listed in the challenge parameters
+     * <code>MFA_CAN_SETUP</code> value. </p> <p> To set up software token MFA, use the
+     * session returned here from <code>InitiateAuth</code> as an input to
+     * <code>AssociateSoftwareToken</code>. Use the session returned by
      * <code>VerifySoftwareToken</code> as an input to
      * <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code>
      * to complete sign-in. To set up SMS MFA, an administrator should help the user to
@@ -161,13 +191,23 @@ namespace Model
      * this device.</p> </li> <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code>: Similar
      * to <code>PASSWORD_VERIFIER</code>, but for devices only.</p> </li> <li> <p>
      * <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their
-     * passwords after successful first login. This challenge should be passed with
-     * <code>NEW_PASSWORD</code> and any other required attributes.</p> </li> <li> <p>
-     * <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before
-     * they can sign in. The MFA types activated for the user pool will be listed in
-     * the challenge parameters <code>MFA_CAN_SETUP</code> value. </p> <p> To set up
-     * software token MFA, use the session returned here from <code>InitiateAuth</code>
-     * as an input to <code>AssociateSoftwareToken</code>. Use the session returned by
+     * passwords after successful first login. </p> <p>Respond to this challenge with
+     * <code>NEW_PASSWORD</code> and any required attributes that Amazon Cognito
+     * returned in the <code>requiredAttributes</code> parameter. You can also set
+     * values for attributes that aren't required by your user pool and that your app
+     * client can write. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RespondToAuthChallenge.html">RespondToAuthChallenge</a>.</p>
+     *  <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't
+     * modify a required attribute that already has a value. In
+     * <code>RespondToAuthChallenge</code>, set a value for any keys that Amazon
+     * Cognito returned in the <code>requiredAttributes</code> parameter, then use the
+     * <code>UpdateUserAttributes</code> API operation to modify the value of any
+     * additional attributes.</p>  </li> <li> <p> <code>MFA_SETUP</code>: For
+     * users who are required to setup an MFA factor before they can sign in. The MFA
+     * types activated for the user pool will be listed in the challenge parameters
+     * <code>MFA_CAN_SETUP</code> value. </p> <p> To set up software token MFA, use the
+     * session returned here from <code>InitiateAuth</code> as an input to
+     * <code>AssociateSoftwareToken</code>. Use the session returned by
      * <code>VerifySoftwareToken</code> as an input to
      * <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code>
      * to complete sign-in. To set up SMS MFA, an administrator should help the user to
@@ -195,13 +235,23 @@ namespace Model
      * this device.</p> </li> <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code>: Similar
      * to <code>PASSWORD_VERIFIER</code>, but for devices only.</p> </li> <li> <p>
      * <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their
-     * passwords after successful first login. This challenge should be passed with
-     * <code>NEW_PASSWORD</code> and any other required attributes.</p> </li> <li> <p>
-     * <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before
-     * they can sign in. The MFA types activated for the user pool will be listed in
-     * the challenge parameters <code>MFA_CAN_SETUP</code> value. </p> <p> To set up
-     * software token MFA, use the session returned here from <code>InitiateAuth</code>
-     * as an input to <code>AssociateSoftwareToken</code>. Use the session returned by
+     * passwords after successful first login. </p> <p>Respond to this challenge with
+     * <code>NEW_PASSWORD</code> and any required attributes that Amazon Cognito
+     * returned in the <code>requiredAttributes</code> parameter. You can also set
+     * values for attributes that aren't required by your user pool and that your app
+     * client can write. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RespondToAuthChallenge.html">RespondToAuthChallenge</a>.</p>
+     *  <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't
+     * modify a required attribute that already has a value. In
+     * <code>RespondToAuthChallenge</code>, set a value for any keys that Amazon
+     * Cognito returned in the <code>requiredAttributes</code> parameter, then use the
+     * <code>UpdateUserAttributes</code> API operation to modify the value of any
+     * additional attributes.</p>  </li> <li> <p> <code>MFA_SETUP</code>: For
+     * users who are required to setup an MFA factor before they can sign in. The MFA
+     * types activated for the user pool will be listed in the challenge parameters
+     * <code>MFA_CAN_SETUP</code> value. </p> <p> To set up software token MFA, use the
+     * session returned here from <code>InitiateAuth</code> as an input to
+     * <code>AssociateSoftwareToken</code>. Use the session returned by
      * <code>VerifySoftwareToken</code> as an input to
      * <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code>
      * to complete sign-in. To set up SMS MFA, an administrator should help the user to

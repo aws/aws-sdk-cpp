@@ -12,6 +12,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cognito-idp/model/VerificationMessageTemplateType.h>
+#include <aws/cognito-idp/model/UserAttributeUpdateSettingsType.h>
 #include <aws/cognito-idp/model/UserPoolMfaType.h>
 #include <aws/cognito-idp/model/DeviceConfigurationType.h>
 #include <aws/cognito-idp/model/EmailConfigurationType.h>
@@ -659,6 +660,37 @@ namespace Model
      * <p>The contents of the SMS authentication message.</p>
      */
     inline UserPoolType& WithSmsAuthenticationMessage(const char* value) { SetSmsAuthenticationMessage(value); return *this;}
+
+
+    /**
+     * <p/>
+     */
+    inline const UserAttributeUpdateSettingsType& GetUserAttributeUpdateSettings() const{ return m_userAttributeUpdateSettings; }
+
+    /**
+     * <p/>
+     */
+    inline bool UserAttributeUpdateSettingsHasBeenSet() const { return m_userAttributeUpdateSettingsHasBeenSet; }
+
+    /**
+     * <p/>
+     */
+    inline void SetUserAttributeUpdateSettings(const UserAttributeUpdateSettingsType& value) { m_userAttributeUpdateSettingsHasBeenSet = true; m_userAttributeUpdateSettings = value; }
+
+    /**
+     * <p/>
+     */
+    inline void SetUserAttributeUpdateSettings(UserAttributeUpdateSettingsType&& value) { m_userAttributeUpdateSettingsHasBeenSet = true; m_userAttributeUpdateSettings = std::move(value); }
+
+    /**
+     * <p/>
+     */
+    inline UserPoolType& WithUserAttributeUpdateSettings(const UserAttributeUpdateSettingsType& value) { SetUserAttributeUpdateSettings(value); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline UserPoolType& WithUserAttributeUpdateSettings(UserAttributeUpdateSettingsType&& value) { SetUserAttributeUpdateSettings(std::move(value)); return *this;}
 
 
     /**
@@ -1575,6 +1607,9 @@ namespace Model
 
     Aws::String m_smsAuthenticationMessage;
     bool m_smsAuthenticationMessageHasBeenSet;
+
+    UserAttributeUpdateSettingsType m_userAttributeUpdateSettings;
+    bool m_userAttributeUpdateSettingsHasBeenSet;
 
     UserPoolMfaType m_mfaConfiguration;
     bool m_mfaConfigurationHasBeenSet;

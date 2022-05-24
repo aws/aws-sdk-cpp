@@ -202,7 +202,7 @@ namespace Model
      * <p>A non-negative integer value that specifies the precedence of this group
      * relative to the other groups that a user can belong to in the user pool. Zero is
      * the highest precedence value. Groups with lower <code>Precedence</code> values
-     * take precedence over groups with higher ornull <code>Precedence</code> values.
+     * take precedence over groups with higher or null <code>Precedence</code> values.
      * If a user belongs to two or more groups, it is the group with the lowest
      * precedence value whose role ARN is given in the user's tokens for the
      * <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims.</p>
@@ -212,7 +212,8 @@ namespace Model
      * <code>cognito:preferred_role</code> claim in tokens for users in each group. If
      * the two groups have different role ARNs, the <code>cognito:preferred_role</code>
      * claim isn't set in users' tokens.</p> <p>The default <code>Precedence</code>
-     * value is null.</p>
+     * value is null. The maximum <code>Precedence</code> value is
+     * <code>2^31-1</code>.</p>
      */
     inline int GetPrecedence() const{ return m_precedence; }
 
@@ -220,7 +221,7 @@ namespace Model
      * <p>A non-negative integer value that specifies the precedence of this group
      * relative to the other groups that a user can belong to in the user pool. Zero is
      * the highest precedence value. Groups with lower <code>Precedence</code> values
-     * take precedence over groups with higher ornull <code>Precedence</code> values.
+     * take precedence over groups with higher or null <code>Precedence</code> values.
      * If a user belongs to two or more groups, it is the group with the lowest
      * precedence value whose role ARN is given in the user's tokens for the
      * <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims.</p>
@@ -230,7 +231,8 @@ namespace Model
      * <code>cognito:preferred_role</code> claim in tokens for users in each group. If
      * the two groups have different role ARNs, the <code>cognito:preferred_role</code>
      * claim isn't set in users' tokens.</p> <p>The default <code>Precedence</code>
-     * value is null.</p>
+     * value is null. The maximum <code>Precedence</code> value is
+     * <code>2^31-1</code>.</p>
      */
     inline bool PrecedenceHasBeenSet() const { return m_precedenceHasBeenSet; }
 
@@ -238,7 +240,7 @@ namespace Model
      * <p>A non-negative integer value that specifies the precedence of this group
      * relative to the other groups that a user can belong to in the user pool. Zero is
      * the highest precedence value. Groups with lower <code>Precedence</code> values
-     * take precedence over groups with higher ornull <code>Precedence</code> values.
+     * take precedence over groups with higher or null <code>Precedence</code> values.
      * If a user belongs to two or more groups, it is the group with the lowest
      * precedence value whose role ARN is given in the user's tokens for the
      * <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims.</p>
@@ -248,7 +250,8 @@ namespace Model
      * <code>cognito:preferred_role</code> claim in tokens for users in each group. If
      * the two groups have different role ARNs, the <code>cognito:preferred_role</code>
      * claim isn't set in users' tokens.</p> <p>The default <code>Precedence</code>
-     * value is null.</p>
+     * value is null. The maximum <code>Precedence</code> value is
+     * <code>2^31-1</code>.</p>
      */
     inline void SetPrecedence(int value) { m_precedenceHasBeenSet = true; m_precedence = value; }
 
@@ -256,7 +259,7 @@ namespace Model
      * <p>A non-negative integer value that specifies the precedence of this group
      * relative to the other groups that a user can belong to in the user pool. Zero is
      * the highest precedence value. Groups with lower <code>Precedence</code> values
-     * take precedence over groups with higher ornull <code>Precedence</code> values.
+     * take precedence over groups with higher or null <code>Precedence</code> values.
      * If a user belongs to two or more groups, it is the group with the lowest
      * precedence value whose role ARN is given in the user's tokens for the
      * <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims.</p>
@@ -266,7 +269,8 @@ namespace Model
      * <code>cognito:preferred_role</code> claim in tokens for users in each group. If
      * the two groups have different role ARNs, the <code>cognito:preferred_role</code>
      * claim isn't set in users' tokens.</p> <p>The default <code>Precedence</code>
-     * value is null.</p>
+     * value is null. The maximum <code>Precedence</code> value is
+     * <code>2^31-1</code>.</p>
      */
     inline CreateGroupRequest& WithPrecedence(int value) { SetPrecedence(value); return *this;}
 

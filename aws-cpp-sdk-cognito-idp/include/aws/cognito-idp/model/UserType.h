@@ -29,7 +29,7 @@ namespace Model
 {
 
   /**
-   * <p>The user type.</p><p><h3>See Also:</h3>   <a
+   * <p>A user profile in a Amazon Cognito user pool.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UserType">AWS
    * API Reference</a></p>
    */
@@ -210,7 +210,8 @@ namespace Model
     /**
      * <p>The user status. This can be one of the following:</p> <ul> <li>
      * <p>UNCONFIRMED - User has been created but not confirmed.</p> </li> <li>
-     * <p>CONFIRMED - User has been confirmed.</p> </li> <li> <p>ARCHIVED - User is no
+     * <p>CONFIRMED - User has been confirmed.</p> </li> <li> <p>EXTERNAL_PROVIDER -
+     * User signed in with a third-party IdP.</p> </li> <li> <p>ARCHIVED - User is no
      * longer active.</p> </li> <li> <p>UNKNOWN - User status isn't known.</p> </li>
      * <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a code and
      * reset their password before they can sign in.</p> </li> <li>
@@ -223,7 +224,8 @@ namespace Model
     /**
      * <p>The user status. This can be one of the following:</p> <ul> <li>
      * <p>UNCONFIRMED - User has been created but not confirmed.</p> </li> <li>
-     * <p>CONFIRMED - User has been confirmed.</p> </li> <li> <p>ARCHIVED - User is no
+     * <p>CONFIRMED - User has been confirmed.</p> </li> <li> <p>EXTERNAL_PROVIDER -
+     * User signed in with a third-party IdP.</p> </li> <li> <p>ARCHIVED - User is no
      * longer active.</p> </li> <li> <p>UNKNOWN - User status isn't known.</p> </li>
      * <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a code and
      * reset their password before they can sign in.</p> </li> <li>
@@ -236,7 +238,8 @@ namespace Model
     /**
      * <p>The user status. This can be one of the following:</p> <ul> <li>
      * <p>UNCONFIRMED - User has been created but not confirmed.</p> </li> <li>
-     * <p>CONFIRMED - User has been confirmed.</p> </li> <li> <p>ARCHIVED - User is no
+     * <p>CONFIRMED - User has been confirmed.</p> </li> <li> <p>EXTERNAL_PROVIDER -
+     * User signed in with a third-party IdP.</p> </li> <li> <p>ARCHIVED - User is no
      * longer active.</p> </li> <li> <p>UNKNOWN - User status isn't known.</p> </li>
      * <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a code and
      * reset their password before they can sign in.</p> </li> <li>
@@ -249,7 +252,8 @@ namespace Model
     /**
      * <p>The user status. This can be one of the following:</p> <ul> <li>
      * <p>UNCONFIRMED - User has been created but not confirmed.</p> </li> <li>
-     * <p>CONFIRMED - User has been confirmed.</p> </li> <li> <p>ARCHIVED - User is no
+     * <p>CONFIRMED - User has been confirmed.</p> </li> <li> <p>EXTERNAL_PROVIDER -
+     * User signed in with a third-party IdP.</p> </li> <li> <p>ARCHIVED - User is no
      * longer active.</p> </li> <li> <p>UNKNOWN - User status isn't known.</p> </li>
      * <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a code and
      * reset their password before they can sign in.</p> </li> <li>
@@ -262,7 +266,8 @@ namespace Model
     /**
      * <p>The user status. This can be one of the following:</p> <ul> <li>
      * <p>UNCONFIRMED - User has been created but not confirmed.</p> </li> <li>
-     * <p>CONFIRMED - User has been confirmed.</p> </li> <li> <p>ARCHIVED - User is no
+     * <p>CONFIRMED - User has been confirmed.</p> </li> <li> <p>EXTERNAL_PROVIDER -
+     * User signed in with a third-party IdP.</p> </li> <li> <p>ARCHIVED - User is no
      * longer active.</p> </li> <li> <p>UNKNOWN - User status isn't known.</p> </li>
      * <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a code and
      * reset their password before they can sign in.</p> </li> <li>
@@ -275,7 +280,8 @@ namespace Model
     /**
      * <p>The user status. This can be one of the following:</p> <ul> <li>
      * <p>UNCONFIRMED - User has been created but not confirmed.</p> </li> <li>
-     * <p>CONFIRMED - User has been confirmed.</p> </li> <li> <p>ARCHIVED - User is no
+     * <p>CONFIRMED - User has been confirmed.</p> </li> <li> <p>EXTERNAL_PROVIDER -
+     * User signed in with a third-party IdP.</p> </li> <li> <p>ARCHIVED - User is no
      * longer active.</p> </li> <li> <p>UNKNOWN - User status isn't known.</p> </li>
      * <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a code and
      * reset their password before they can sign in.</p> </li> <li>

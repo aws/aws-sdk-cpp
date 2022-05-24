@@ -70,12 +70,14 @@
 #include <aws/networkmanager/model/ListConnectPeersResult.h>
 #include <aws/networkmanager/model/ListCoreNetworkPolicyVersionsResult.h>
 #include <aws/networkmanager/model/ListCoreNetworksResult.h>
+#include <aws/networkmanager/model/ListOrganizationServiceAccessStatusResult.h>
 #include <aws/networkmanager/model/ListTagsForResourceResult.h>
 #include <aws/networkmanager/model/PutCoreNetworkPolicyResult.h>
 #include <aws/networkmanager/model/PutResourcePolicyResult.h>
 #include <aws/networkmanager/model/RegisterTransitGatewayResult.h>
 #include <aws/networkmanager/model/RejectAttachmentResult.h>
 #include <aws/networkmanager/model/RestoreCoreNetworkPolicyVersionResult.h>
+#include <aws/networkmanager/model/StartOrganizationServiceAccessUpdateResult.h>
 #include <aws/networkmanager/model/StartRouteAnalysisResult.h>
 #include <aws/networkmanager/model/TagResourceResult.h>
 #include <aws/networkmanager/model/UntagResourceResult.h>
@@ -185,12 +187,14 @@ namespace Model
         class ListConnectPeersRequest;
         class ListCoreNetworkPolicyVersionsRequest;
         class ListCoreNetworksRequest;
+        class ListOrganizationServiceAccessStatusRequest;
         class ListTagsForResourceRequest;
         class PutCoreNetworkPolicyRequest;
         class PutResourcePolicyRequest;
         class RegisterTransitGatewayRequest;
         class RejectAttachmentRequest;
         class RestoreCoreNetworkPolicyVersionRequest;
+        class StartOrganizationServiceAccessUpdateRequest;
         class StartRouteAnalysisRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
@@ -262,12 +266,14 @@ namespace Model
         typedef Aws::Utils::Outcome<ListConnectPeersResult, NetworkManagerError> ListConnectPeersOutcome;
         typedef Aws::Utils::Outcome<ListCoreNetworkPolicyVersionsResult, NetworkManagerError> ListCoreNetworkPolicyVersionsOutcome;
         typedef Aws::Utils::Outcome<ListCoreNetworksResult, NetworkManagerError> ListCoreNetworksOutcome;
+        typedef Aws::Utils::Outcome<ListOrganizationServiceAccessStatusResult, NetworkManagerError> ListOrganizationServiceAccessStatusOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, NetworkManagerError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<PutCoreNetworkPolicyResult, NetworkManagerError> PutCoreNetworkPolicyOutcome;
         typedef Aws::Utils::Outcome<PutResourcePolicyResult, NetworkManagerError> PutResourcePolicyOutcome;
         typedef Aws::Utils::Outcome<RegisterTransitGatewayResult, NetworkManagerError> RegisterTransitGatewayOutcome;
         typedef Aws::Utils::Outcome<RejectAttachmentResult, NetworkManagerError> RejectAttachmentOutcome;
         typedef Aws::Utils::Outcome<RestoreCoreNetworkPolicyVersionResult, NetworkManagerError> RestoreCoreNetworkPolicyVersionOutcome;
+        typedef Aws::Utils::Outcome<StartOrganizationServiceAccessUpdateResult, NetworkManagerError> StartOrganizationServiceAccessUpdateOutcome;
         typedef Aws::Utils::Outcome<StartRouteAnalysisResult, NetworkManagerError> StartRouteAnalysisOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, NetworkManagerError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, NetworkManagerError> UntagResourceOutcome;
@@ -339,12 +345,14 @@ namespace Model
         typedef std::future<ListConnectPeersOutcome> ListConnectPeersOutcomeCallable;
         typedef std::future<ListCoreNetworkPolicyVersionsOutcome> ListCoreNetworkPolicyVersionsOutcomeCallable;
         typedef std::future<ListCoreNetworksOutcome> ListCoreNetworksOutcomeCallable;
+        typedef std::future<ListOrganizationServiceAccessStatusOutcome> ListOrganizationServiceAccessStatusOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<PutCoreNetworkPolicyOutcome> PutCoreNetworkPolicyOutcomeCallable;
         typedef std::future<PutResourcePolicyOutcome> PutResourcePolicyOutcomeCallable;
         typedef std::future<RegisterTransitGatewayOutcome> RegisterTransitGatewayOutcomeCallable;
         typedef std::future<RejectAttachmentOutcome> RejectAttachmentOutcomeCallable;
         typedef std::future<RestoreCoreNetworkPolicyVersionOutcome> RestoreCoreNetworkPolicyVersionOutcomeCallable;
+        typedef std::future<StartOrganizationServiceAccessUpdateOutcome> StartOrganizationServiceAccessUpdateOutcomeCallable;
         typedef std::future<StartRouteAnalysisOutcome> StartRouteAnalysisOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
@@ -419,12 +427,14 @@ namespace Model
     typedef std::function<void(const NetworkManagerClient*, const Model::ListConnectPeersRequest&, const Model::ListConnectPeersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListConnectPeersResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::ListCoreNetworkPolicyVersionsRequest&, const Model::ListCoreNetworkPolicyVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCoreNetworkPolicyVersionsResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::ListCoreNetworksRequest&, const Model::ListCoreNetworksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCoreNetworksResponseReceivedHandler;
+    typedef std::function<void(const NetworkManagerClient*, const Model::ListOrganizationServiceAccessStatusRequest&, const Model::ListOrganizationServiceAccessStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOrganizationServiceAccessStatusResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::PutCoreNetworkPolicyRequest&, const Model::PutCoreNetworkPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutCoreNetworkPolicyResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::PutResourcePolicyRequest&, const Model::PutResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutResourcePolicyResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::RegisterTransitGatewayRequest&, const Model::RegisterTransitGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterTransitGatewayResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::RejectAttachmentRequest&, const Model::RejectAttachmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RejectAttachmentResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::RestoreCoreNetworkPolicyVersionRequest&, const Model::RestoreCoreNetworkPolicyVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreCoreNetworkPolicyVersionResponseReceivedHandler;
+    typedef std::function<void(const NetworkManagerClient*, const Model::StartOrganizationServiceAccessUpdateRequest&, const Model::StartOrganizationServiceAccessUpdateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartOrganizationServiceAccessUpdateResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::StartRouteAnalysisRequest&, const Model::StartRouteAnalysisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartRouteAnalysisResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const NetworkManagerClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
@@ -438,9 +448,9 @@ namespace Model
     typedef std::function<void(const NetworkManagerClient*, const Model::UpdateVpcAttachmentRequest&, const Model::UpdateVpcAttachmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateVpcAttachmentResponseReceivedHandler;
 
   /**
-   * <p>Transit Gateway Network Manager (Network Manager) enables you to create a
-   * global network, in which you can monitor your Amazon Web Services and
-   * on-premises networks that are built around transit gateways.</p>
+   * <p>Amazon Web Services enables you to centrally manage your Amazon Web Services
+   * Cloud WAN core network and your Transit Gateway network across Amazon Web
+   * Services accounts, Regions, and on-premises locations.</p>
    */
   class AWS_NETWORKMANAGER_API NetworkManagerClient : public Aws::Client::AWSJsonClient
   {
@@ -513,9 +523,9 @@ namespace Model
          * <p>Associates a customer gateway with a device and optionally, with a link. If
          * you specify a link, it must be associated with the specified device. </p> <p>You
          * can only associate customer gateways that are connected to a VPN attachment on a
-         * transit gateway. The transit gateway must be registered in your global network.
-         * When you register a transit gateway, customer gateways that are connected to the
-         * transit gateway are automatically included in the global network. To list
+         * transit gateway or core network registered in your global network. When you
+         * register a transit gateway or core network, customer gateways that are connected
+         * to the transit gateway are automatically included in the global network. To list
          * customer gateways that are connected to a transit gateway, use the <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpnConnections.html">DescribeVpnConnections</a>
          * EC2 API and filter by <code>transit-gateway-id</code>.</p> <p>You cannot
@@ -599,7 +609,7 @@ namespace Model
         virtual void CreateConnectAttachmentAsync(const Model::CreateConnectAttachmentRequest& request, const CreateConnectAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a core network connect peer for a specified core network connect
+         * <p>Creates a core network Connect peer for a specified core network connect
          * attachment between a core network and an appliance. The peer address and transit
          * gateway address must be the same IP address family (IPv4 or IPv6).</p><p><h3>See
          * Also:</h3>   <a
@@ -727,8 +737,8 @@ namespace Model
         virtual void CreateSiteAsync(const Model::CreateSiteRequest& request, const CreateSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a site-to-site VPN attachment on an edge location of a core
-         * network.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an Amazon Web Services site-to-site VPN attachment on an edge
+         * location of a core network.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateSiteToSiteVpnAttachment">AWS
          * API Reference</a></p>
          */
@@ -872,8 +882,8 @@ namespace Model
 
         /**
          * <p>Deletes an existing global network. You must first delete all global network
-         * objects (devices, links, and sites) and deregister all transit
-         * gateways.</p><p><h3>See Also:</h3>   <a
+         * objects (devices, links, and sites), deregister all transit gateways, and delete
+         * any core networks.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteGlobalNetwork">AWS
          * API Reference</a></p>
          */
@@ -1148,8 +1158,8 @@ namespace Model
         virtual void GetConnectionsAsync(const Model::GetConnectionsRequest& request, const GetConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns information about a core network. By default it returns the LIVE
-         * policy.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about the LIVE policy for a core network.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetCoreNetwork">AWS
          * API Reference</a></p>
          */
@@ -1562,6 +1572,21 @@ namespace Model
         virtual void ListCoreNetworksAsync(const Model::ListCoreNetworksRequest& request, const ListCoreNetworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * 
+         */
+        virtual Model::ListOrganizationServiceAccessStatusOutcome ListOrganizationServiceAccessStatus(const Model::ListOrganizationServiceAccessStatusRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListOrganizationServiceAccessStatus that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListOrganizationServiceAccessStatusOutcomeCallable ListOrganizationServiceAccessStatusCallable(const Model::ListOrganizationServiceAccessStatusRequest& request) const;
+
+        /**
+         * An Async wrapper for ListOrganizationServiceAccessStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListOrganizationServiceAccessStatusAsync(const Model::ListOrganizationServiceAccessStatusRequest& request, const ListOrganizationServiceAccessStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists the tags for a specified resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListTagsForResource">AWS
          * API Reference</a></p>
@@ -1669,6 +1694,21 @@ namespace Model
          * An Async wrapper for RestoreCoreNetworkPolicyVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RestoreCoreNetworkPolicyVersionAsync(const Model::RestoreCoreNetworkPolicyVersionRequest& request, const RestoreCoreNetworkPolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * 
+         */
+        virtual Model::StartOrganizationServiceAccessUpdateOutcome StartOrganizationServiceAccessUpdate(const Model::StartOrganizationServiceAccessUpdateRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartOrganizationServiceAccessUpdate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartOrganizationServiceAccessUpdateOutcomeCallable StartOrganizationServiceAccessUpdateCallable(const Model::StartOrganizationServiceAccessUpdateRequest& request) const;
+
+        /**
+         * An Async wrapper for StartOrganizationServiceAccessUpdate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartOrganizationServiceAccessUpdateAsync(const Model::StartOrganizationServiceAccessUpdateRequest& request, const StartOrganizationServiceAccessUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts analyzing the routing path between the specified source and
@@ -1929,12 +1969,14 @@ namespace Model
         void ListConnectPeersAsyncHelper(const Model::ListConnectPeersRequest& request, const ListConnectPeersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListCoreNetworkPolicyVersionsAsyncHelper(const Model::ListCoreNetworkPolicyVersionsRequest& request, const ListCoreNetworkPolicyVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListCoreNetworksAsyncHelper(const Model::ListCoreNetworksRequest& request, const ListCoreNetworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListOrganizationServiceAccessStatusAsyncHelper(const Model::ListOrganizationServiceAccessStatusRequest& request, const ListOrganizationServiceAccessStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutCoreNetworkPolicyAsyncHelper(const Model::PutCoreNetworkPolicyRequest& request, const PutCoreNetworkPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutResourcePolicyAsyncHelper(const Model::PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RegisterTransitGatewayAsyncHelper(const Model::RegisterTransitGatewayRequest& request, const RegisterTransitGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RejectAttachmentAsyncHelper(const Model::RejectAttachmentRequest& request, const RejectAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RestoreCoreNetworkPolicyVersionAsyncHelper(const Model::RestoreCoreNetworkPolicyVersionRequest& request, const RestoreCoreNetworkPolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartOrganizationServiceAccessUpdateAsyncHelper(const Model::StartOrganizationServiceAccessUpdateRequest& request, const StartOrganizationServiceAccessUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartRouteAnalysisAsyncHelper(const Model::StartRouteAnalysisRequest& request, const StartRouteAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

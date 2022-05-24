@@ -276,38 +276,56 @@ namespace Model
 
 
     /**
-     * Applies to DASH ISO outputs. Use this setting to specify whether the service
-     * inserts the KLV metadata from the input in this output.
+     * To include key-length-value metadata in this output: Set KLV metadata insertion
+     * to Passthrough. MediaConvert reads KLV metadata present in your input and writes
+     * each instance to a separate event message box in the output, according to MISB
+     * ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to None or
+     * leave blank.
      */
     inline const MpdKlvMetadata& GetKlvMetadata() const{ return m_klvMetadata; }
 
     /**
-     * Applies to DASH ISO outputs. Use this setting to specify whether the service
-     * inserts the KLV metadata from the input in this output.
+     * To include key-length-value metadata in this output: Set KLV metadata insertion
+     * to Passthrough. MediaConvert reads KLV metadata present in your input and writes
+     * each instance to a separate event message box in the output, according to MISB
+     * ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to None or
+     * leave blank.
      */
     inline bool KlvMetadataHasBeenSet() const { return m_klvMetadataHasBeenSet; }
 
     /**
-     * Applies to DASH ISO outputs. Use this setting to specify whether the service
-     * inserts the KLV metadata from the input in this output.
+     * To include key-length-value metadata in this output: Set KLV metadata insertion
+     * to Passthrough. MediaConvert reads KLV metadata present in your input and writes
+     * each instance to a separate event message box in the output, according to MISB
+     * ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to None or
+     * leave blank.
      */
     inline void SetKlvMetadata(const MpdKlvMetadata& value) { m_klvMetadataHasBeenSet = true; m_klvMetadata = value; }
 
     /**
-     * Applies to DASH ISO outputs. Use this setting to specify whether the service
-     * inserts the KLV metadata from the input in this output.
+     * To include key-length-value metadata in this output: Set KLV metadata insertion
+     * to Passthrough. MediaConvert reads KLV metadata present in your input and writes
+     * each instance to a separate event message box in the output, according to MISB
+     * ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to None or
+     * leave blank.
      */
     inline void SetKlvMetadata(MpdKlvMetadata&& value) { m_klvMetadataHasBeenSet = true; m_klvMetadata = std::move(value); }
 
     /**
-     * Applies to DASH ISO outputs. Use this setting to specify whether the service
-     * inserts the KLV metadata from the input in this output.
+     * To include key-length-value metadata in this output: Set KLV metadata insertion
+     * to Passthrough. MediaConvert reads KLV metadata present in your input and writes
+     * each instance to a separate event message box in the output, according to MISB
+     * ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to None or
+     * leave blank.
      */
     inline MpdSettings& WithKlvMetadata(const MpdKlvMetadata& value) { SetKlvMetadata(value); return *this;}
 
     /**
-     * Applies to DASH ISO outputs. Use this setting to specify whether the service
-     * inserts the KLV metadata from the input in this output.
+     * To include key-length-value metadata in this output: Set KLV metadata insertion
+     * to Passthrough. MediaConvert reads KLV metadata present in your input and writes
+     * each instance to a separate event message box in the output, according to MISB
+     * ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to None or
+     * leave blank.
      */
     inline MpdSettings& WithKlvMetadata(MpdKlvMetadata&& value) { SetKlvMetadata(std::move(value)); return *this;}
 

@@ -54,7 +54,9 @@ RequestLaunchTemplateData::RequestLaunchTemplateData() :
     m_enclaveOptionsHasBeenSet(false),
     m_instanceRequirementsHasBeenSet(false),
     m_privateDnsNameOptionsHasBeenSet(false),
-    m_maintenanceOptionsHasBeenSet(false)
+    m_maintenanceOptionsHasBeenSet(false),
+    m_disableApiStop(false),
+    m_disableApiStopHasBeenSet(false)
 {
 }
 
@@ -92,7 +94,9 @@ RequestLaunchTemplateData::RequestLaunchTemplateData(const XmlNode& xmlNode) :
     m_enclaveOptionsHasBeenSet(false),
     m_instanceRequirementsHasBeenSet(false),
     m_privateDnsNameOptionsHasBeenSet(false),
-    m_maintenanceOptionsHasBeenSet(false)
+    m_maintenanceOptionsHasBeenSet(false),
+    m_disableApiStop(false),
+    m_disableApiStopHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -331,6 +335,12 @@ RequestLaunchTemplateData& RequestLaunchTemplateData::operator =(const XmlNode& 
       m_maintenanceOptions = maintenanceOptionsNode;
       m_maintenanceOptionsHasBeenSet = true;
     }
+    XmlNode disableApiStopNode = resultNode.FirstChild("DisableApiStop");
+    if(!disableApiStopNode.IsNull())
+    {
+      m_disableApiStop = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(disableApiStopNode.GetText()).c_str()).c_str());
+      m_disableApiStopHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -558,6 +568,11 @@ void RequestLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const char
       m_maintenanceOptions.OutputToStream(oStream, maintenanceOptionsLocationAndMemberSs.str().c_str());
   }
 
+  if(m_disableApiStopHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DisableApiStop=" << std::boolalpha << m_disableApiStop << "&";
+  }
+
 }
 
 void RequestLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -751,6 +766,10 @@ void RequestLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const char
       Aws::String maintenanceOptionsLocationAndMember(location);
       maintenanceOptionsLocationAndMember += ".MaintenanceOptions";
       m_maintenanceOptions.OutputToStream(oStream, maintenanceOptionsLocationAndMember.c_str());
+  }
+  if(m_disableApiStopHasBeenSet)
+  {
+      oStream << location << ".DisableApiStop=" << std::boolalpha << m_disableApiStop << "&";
   }
 }
 

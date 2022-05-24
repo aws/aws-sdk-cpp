@@ -25,7 +25,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
   /**
-   * <p>Respresents the response from the server regarding the request to reset a
+   * <p>Represents the response from the server regarding the request to reset a
    * password.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ForgotPasswordResponse">AWS
    * API Reference</a></p>

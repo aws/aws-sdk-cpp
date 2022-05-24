@@ -176,113 +176,213 @@ namespace Model
 
 
     /**
-     * <p>The time limit, in days, after which the refresh token is no longer valid and
-     * can't be used.</p>
+     * <p>The refresh token time limit. After this limit expires, your user can't use
+     * their refresh token. To specify the time unit for
+     * <code>RefreshTokenValidity</code> as <code>seconds</code>, <code>minutes</code>,
+     * <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code>
+     * value in your API request.</p> <p>For example, when you set
+     * <code>RefreshTokenValidity</code> as <code>10</code> and
+     * <code>TokenValidityUnits</code> as <code>days</code>, your user can refresh
+     * their session and retrieve new access and ID tokens for 10 days.</p> <p>The
+     * default time unit for <code>RefreshTokenValidity</code> in an API request is
+     * days. You can't set <code>RefreshTokenValidity</code> to 0. If you do, Amazon
+     * Cognito overrides the value with the default value of 30 days. <i>Valid
+     * range</i> is displayed below in seconds.</p>
      */
     inline int GetRefreshTokenValidity() const{ return m_refreshTokenValidity; }
 
     /**
-     * <p>The time limit, in days, after which the refresh token is no longer valid and
-     * can't be used.</p>
+     * <p>The refresh token time limit. After this limit expires, your user can't use
+     * their refresh token. To specify the time unit for
+     * <code>RefreshTokenValidity</code> as <code>seconds</code>, <code>minutes</code>,
+     * <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code>
+     * value in your API request.</p> <p>For example, when you set
+     * <code>RefreshTokenValidity</code> as <code>10</code> and
+     * <code>TokenValidityUnits</code> as <code>days</code>, your user can refresh
+     * their session and retrieve new access and ID tokens for 10 days.</p> <p>The
+     * default time unit for <code>RefreshTokenValidity</code> in an API request is
+     * days. You can't set <code>RefreshTokenValidity</code> to 0. If you do, Amazon
+     * Cognito overrides the value with the default value of 30 days. <i>Valid
+     * range</i> is displayed below in seconds.</p>
      */
     inline bool RefreshTokenValidityHasBeenSet() const { return m_refreshTokenValidityHasBeenSet; }
 
     /**
-     * <p>The time limit, in days, after which the refresh token is no longer valid and
-     * can't be used.</p>
+     * <p>The refresh token time limit. After this limit expires, your user can't use
+     * their refresh token. To specify the time unit for
+     * <code>RefreshTokenValidity</code> as <code>seconds</code>, <code>minutes</code>,
+     * <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code>
+     * value in your API request.</p> <p>For example, when you set
+     * <code>RefreshTokenValidity</code> as <code>10</code> and
+     * <code>TokenValidityUnits</code> as <code>days</code>, your user can refresh
+     * their session and retrieve new access and ID tokens for 10 days.</p> <p>The
+     * default time unit for <code>RefreshTokenValidity</code> in an API request is
+     * days. You can't set <code>RefreshTokenValidity</code> to 0. If you do, Amazon
+     * Cognito overrides the value with the default value of 30 days. <i>Valid
+     * range</i> is displayed below in seconds.</p>
      */
     inline void SetRefreshTokenValidity(int value) { m_refreshTokenValidityHasBeenSet = true; m_refreshTokenValidity = value; }
 
     /**
-     * <p>The time limit, in days, after which the refresh token is no longer valid and
-     * can't be used.</p>
+     * <p>The refresh token time limit. After this limit expires, your user can't use
+     * their refresh token. To specify the time unit for
+     * <code>RefreshTokenValidity</code> as <code>seconds</code>, <code>minutes</code>,
+     * <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code>
+     * value in your API request.</p> <p>For example, when you set
+     * <code>RefreshTokenValidity</code> as <code>10</code> and
+     * <code>TokenValidityUnits</code> as <code>days</code>, your user can refresh
+     * their session and retrieve new access and ID tokens for 10 days.</p> <p>The
+     * default time unit for <code>RefreshTokenValidity</code> in an API request is
+     * days. You can't set <code>RefreshTokenValidity</code> to 0. If you do, Amazon
+     * Cognito overrides the value with the default value of 30 days. <i>Valid
+     * range</i> is displayed below in seconds.</p>
      */
     inline UpdateUserPoolClientRequest& WithRefreshTokenValidity(int value) { SetRefreshTokenValidity(value); return *this;}
 
 
     /**
-     * <p>The time limit after which the access token is no longer valid and can't be
-     * used.</p>
+     * <p>The access token time limit. After this limit expires, your user can't use
+     * their access token. To specify the time unit for
+     * <code>AccessTokenValidity</code> as <code>seconds</code>, <code>minutes</code>,
+     * <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code>
+     * value in your API request.</p> <p>For example, when you set
+     * <code>AccessTokenValidity</code> to <code>10</code> and
+     * <code>TokenValidityUnits</code> to <code>hours</code>, your user can authorize
+     * access with their access token for 10 hours.</p> <p>The default time unit for
+     * <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i>
+     * is displayed below in seconds.</p>
      */
     inline int GetAccessTokenValidity() const{ return m_accessTokenValidity; }
 
     /**
-     * <p>The time limit after which the access token is no longer valid and can't be
-     * used.</p>
+     * <p>The access token time limit. After this limit expires, your user can't use
+     * their access token. To specify the time unit for
+     * <code>AccessTokenValidity</code> as <code>seconds</code>, <code>minutes</code>,
+     * <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code>
+     * value in your API request.</p> <p>For example, when you set
+     * <code>AccessTokenValidity</code> to <code>10</code> and
+     * <code>TokenValidityUnits</code> to <code>hours</code>, your user can authorize
+     * access with their access token for 10 hours.</p> <p>The default time unit for
+     * <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i>
+     * is displayed below in seconds.</p>
      */
     inline bool AccessTokenValidityHasBeenSet() const { return m_accessTokenValidityHasBeenSet; }
 
     /**
-     * <p>The time limit after which the access token is no longer valid and can't be
-     * used.</p>
+     * <p>The access token time limit. After this limit expires, your user can't use
+     * their access token. To specify the time unit for
+     * <code>AccessTokenValidity</code> as <code>seconds</code>, <code>minutes</code>,
+     * <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code>
+     * value in your API request.</p> <p>For example, when you set
+     * <code>AccessTokenValidity</code> to <code>10</code> and
+     * <code>TokenValidityUnits</code> to <code>hours</code>, your user can authorize
+     * access with their access token for 10 hours.</p> <p>The default time unit for
+     * <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i>
+     * is displayed below in seconds.</p>
      */
     inline void SetAccessTokenValidity(int value) { m_accessTokenValidityHasBeenSet = true; m_accessTokenValidity = value; }
 
     /**
-     * <p>The time limit after which the access token is no longer valid and can't be
-     * used.</p>
+     * <p>The access token time limit. After this limit expires, your user can't use
+     * their access token. To specify the time unit for
+     * <code>AccessTokenValidity</code> as <code>seconds</code>, <code>minutes</code>,
+     * <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code>
+     * value in your API request.</p> <p>For example, when you set
+     * <code>AccessTokenValidity</code> to <code>10</code> and
+     * <code>TokenValidityUnits</code> to <code>hours</code>, your user can authorize
+     * access with their access token for 10 hours.</p> <p>The default time unit for
+     * <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i>
+     * is displayed below in seconds.</p>
      */
     inline UpdateUserPoolClientRequest& WithAccessTokenValidity(int value) { SetAccessTokenValidity(value); return *this;}
 
 
     /**
-     * <p>The time limit after which the ID token is no longer valid and can't be
-     * used.</p>
+     * <p>The ID token time limit. After this limit expires, your user can't use their
+     * ID token. To specify the time unit for <code>IdTokenValidity</code> as
+     * <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or
+     * <code>days</code>, set a <code>TokenValidityUnits</code> value in your API
+     * request.</p> <p>For example, when you set <code>IdTokenValidity</code> as
+     * <code>10</code> and <code>TokenValidityUnits</code> as <code>hours</code>, your
+     * user can authenticate their session with their ID token for 10 hours.</p> <p>The
+     * default time unit for <code>AccessTokenValidity</code> in an API request is
+     * hours. <i>Valid range</i> is displayed below in seconds.</p>
      */
     inline int GetIdTokenValidity() const{ return m_idTokenValidity; }
 
     /**
-     * <p>The time limit after which the ID token is no longer valid and can't be
-     * used.</p>
+     * <p>The ID token time limit. After this limit expires, your user can't use their
+     * ID token. To specify the time unit for <code>IdTokenValidity</code> as
+     * <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or
+     * <code>days</code>, set a <code>TokenValidityUnits</code> value in your API
+     * request.</p> <p>For example, when you set <code>IdTokenValidity</code> as
+     * <code>10</code> and <code>TokenValidityUnits</code> as <code>hours</code>, your
+     * user can authenticate their session with their ID token for 10 hours.</p> <p>The
+     * default time unit for <code>AccessTokenValidity</code> in an API request is
+     * hours. <i>Valid range</i> is displayed below in seconds.</p>
      */
     inline bool IdTokenValidityHasBeenSet() const { return m_idTokenValidityHasBeenSet; }
 
     /**
-     * <p>The time limit after which the ID token is no longer valid and can't be
-     * used.</p>
+     * <p>The ID token time limit. After this limit expires, your user can't use their
+     * ID token. To specify the time unit for <code>IdTokenValidity</code> as
+     * <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or
+     * <code>days</code>, set a <code>TokenValidityUnits</code> value in your API
+     * request.</p> <p>For example, when you set <code>IdTokenValidity</code> as
+     * <code>10</code> and <code>TokenValidityUnits</code> as <code>hours</code>, your
+     * user can authenticate their session with their ID token for 10 hours.</p> <p>The
+     * default time unit for <code>AccessTokenValidity</code> in an API request is
+     * hours. <i>Valid range</i> is displayed below in seconds.</p>
      */
     inline void SetIdTokenValidity(int value) { m_idTokenValidityHasBeenSet = true; m_idTokenValidity = value; }
 
     /**
-     * <p>The time limit after which the ID token is no longer valid and can't be
-     * used.</p>
+     * <p>The ID token time limit. After this limit expires, your user can't use their
+     * ID token. To specify the time unit for <code>IdTokenValidity</code> as
+     * <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or
+     * <code>days</code>, set a <code>TokenValidityUnits</code> value in your API
+     * request.</p> <p>For example, when you set <code>IdTokenValidity</code> as
+     * <code>10</code> and <code>TokenValidityUnits</code> as <code>hours</code>, your
+     * user can authenticate their session with their ID token for 10 hours.</p> <p>The
+     * default time unit for <code>AccessTokenValidity</code> in an API request is
+     * hours. <i>Valid range</i> is displayed below in seconds.</p>
      */
     inline UpdateUserPoolClientRequest& WithIdTokenValidity(int value) { SetIdTokenValidity(value); return *this;}
 
 
     /**
-     * <p>The units in which the validity times are represented. Default for
-     * RefreshToken is days, and default for ID and access tokens is hours.</p>
+     * <p>The units in which the validity times are represented. The default unit for
+     * RefreshToken is days, and the default for ID and access tokens is hours.</p>
      */
     inline const TokenValidityUnitsType& GetTokenValidityUnits() const{ return m_tokenValidityUnits; }
 
     /**
-     * <p>The units in which the validity times are represented. Default for
-     * RefreshToken is days, and default for ID and access tokens is hours.</p>
+     * <p>The units in which the validity times are represented. The default unit for
+     * RefreshToken is days, and the default for ID and access tokens is hours.</p>
      */
     inline bool TokenValidityUnitsHasBeenSet() const { return m_tokenValidityUnitsHasBeenSet; }
 
     /**
-     * <p>The units in which the validity times are represented. Default for
-     * RefreshToken is days, and default for ID and access tokens is hours.</p>
+     * <p>The units in which the validity times are represented. The default unit for
+     * RefreshToken is days, and the default for ID and access tokens is hours.</p>
      */
     inline void SetTokenValidityUnits(const TokenValidityUnitsType& value) { m_tokenValidityUnitsHasBeenSet = true; m_tokenValidityUnits = value; }
 
     /**
-     * <p>The units in which the validity times are represented. Default for
-     * RefreshToken is days, and default for ID and access tokens is hours.</p>
+     * <p>The units in which the validity times are represented. The default unit for
+     * RefreshToken is days, and the default for ID and access tokens is hours.</p>
      */
     inline void SetTokenValidityUnits(TokenValidityUnitsType&& value) { m_tokenValidityUnitsHasBeenSet = true; m_tokenValidityUnits = std::move(value); }
 
     /**
-     * <p>The units in which the validity times are represented. Default for
-     * RefreshToken is days, and default for ID and access tokens is hours.</p>
+     * <p>The units in which the validity times are represented. The default unit for
+     * RefreshToken is days, and the default for ID and access tokens is hours.</p>
      */
     inline UpdateUserPoolClientRequest& WithTokenValidityUnits(const TokenValidityUnitsType& value) { SetTokenValidityUnits(value); return *this;}
 
     /**
-     * <p>The units in which the validity times are represented. Default for
-     * RefreshToken is days, and default for ID and access tokens is hours.</p>
+     * <p>The units in which the validity times are represented. The default unit for
+     * RefreshToken is days, and the default for ID and access tokens is hours.</p>
      */
     inline UpdateUserPoolClientRequest& WithTokenValidityUnits(TokenValidityUnitsType&& value) { SetTokenValidityUnits(std::move(value)); return *this;}
 
@@ -549,65 +649,83 @@ namespace Model
 
 
     /**
-     * <p>A list of provider names for the identity providers that are supported on
-     * this client.</p>
+     * <p>A list of provider names for the IdPs that this client supports. The
+     * following are supported: <code>COGNITO</code>, <code>Facebook</code>,
+     * <code>Google</code> <code>LoginWithAmazon</code>, and the names of your own SAML
+     * and OIDC providers.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSupportedIdentityProviders() const{ return m_supportedIdentityProviders; }
 
     /**
-     * <p>A list of provider names for the identity providers that are supported on
-     * this client.</p>
+     * <p>A list of provider names for the IdPs that this client supports. The
+     * following are supported: <code>COGNITO</code>, <code>Facebook</code>,
+     * <code>Google</code> <code>LoginWithAmazon</code>, and the names of your own SAML
+     * and OIDC providers.</p>
      */
     inline bool SupportedIdentityProvidersHasBeenSet() const { return m_supportedIdentityProvidersHasBeenSet; }
 
     /**
-     * <p>A list of provider names for the identity providers that are supported on
-     * this client.</p>
+     * <p>A list of provider names for the IdPs that this client supports. The
+     * following are supported: <code>COGNITO</code>, <code>Facebook</code>,
+     * <code>Google</code> <code>LoginWithAmazon</code>, and the names of your own SAML
+     * and OIDC providers.</p>
      */
     inline void SetSupportedIdentityProviders(const Aws::Vector<Aws::String>& value) { m_supportedIdentityProvidersHasBeenSet = true; m_supportedIdentityProviders = value; }
 
     /**
-     * <p>A list of provider names for the identity providers that are supported on
-     * this client.</p>
+     * <p>A list of provider names for the IdPs that this client supports. The
+     * following are supported: <code>COGNITO</code>, <code>Facebook</code>,
+     * <code>Google</code> <code>LoginWithAmazon</code>, and the names of your own SAML
+     * and OIDC providers.</p>
      */
     inline void SetSupportedIdentityProviders(Aws::Vector<Aws::String>&& value) { m_supportedIdentityProvidersHasBeenSet = true; m_supportedIdentityProviders = std::move(value); }
 
     /**
-     * <p>A list of provider names for the identity providers that are supported on
-     * this client.</p>
+     * <p>A list of provider names for the IdPs that this client supports. The
+     * following are supported: <code>COGNITO</code>, <code>Facebook</code>,
+     * <code>Google</code> <code>LoginWithAmazon</code>, and the names of your own SAML
+     * and OIDC providers.</p>
      */
     inline UpdateUserPoolClientRequest& WithSupportedIdentityProviders(const Aws::Vector<Aws::String>& value) { SetSupportedIdentityProviders(value); return *this;}
 
     /**
-     * <p>A list of provider names for the identity providers that are supported on
-     * this client.</p>
+     * <p>A list of provider names for the IdPs that this client supports. The
+     * following are supported: <code>COGNITO</code>, <code>Facebook</code>,
+     * <code>Google</code> <code>LoginWithAmazon</code>, and the names of your own SAML
+     * and OIDC providers.</p>
      */
     inline UpdateUserPoolClientRequest& WithSupportedIdentityProviders(Aws::Vector<Aws::String>&& value) { SetSupportedIdentityProviders(std::move(value)); return *this;}
 
     /**
-     * <p>A list of provider names for the identity providers that are supported on
-     * this client.</p>
+     * <p>A list of provider names for the IdPs that this client supports. The
+     * following are supported: <code>COGNITO</code>, <code>Facebook</code>,
+     * <code>Google</code> <code>LoginWithAmazon</code>, and the names of your own SAML
+     * and OIDC providers.</p>
      */
     inline UpdateUserPoolClientRequest& AddSupportedIdentityProviders(const Aws::String& value) { m_supportedIdentityProvidersHasBeenSet = true; m_supportedIdentityProviders.push_back(value); return *this; }
 
     /**
-     * <p>A list of provider names for the identity providers that are supported on
-     * this client.</p>
+     * <p>A list of provider names for the IdPs that this client supports. The
+     * following are supported: <code>COGNITO</code>, <code>Facebook</code>,
+     * <code>Google</code> <code>LoginWithAmazon</code>, and the names of your own SAML
+     * and OIDC providers.</p>
      */
     inline UpdateUserPoolClientRequest& AddSupportedIdentityProviders(Aws::String&& value) { m_supportedIdentityProvidersHasBeenSet = true; m_supportedIdentityProviders.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of provider names for the identity providers that are supported on
-     * this client.</p>
+     * <p>A list of provider names for the IdPs that this client supports. The
+     * following are supported: <code>COGNITO</code>, <code>Facebook</code>,
+     * <code>Google</code> <code>LoginWithAmazon</code>, and the names of your own SAML
+     * and OIDC providers.</p>
      */
     inline UpdateUserPoolClientRequest& AddSupportedIdentityProviders(const char* value) { m_supportedIdentityProvidersHasBeenSet = true; m_supportedIdentityProviders.push_back(value); return *this; }
 
 
     /**
-     * <p>A list of allowed redirect (callback) URLs for the identity providers.</p>
-     * <p>A redirect URI must:</p> <ul> <li> <p>Be an absolute URI.</p> </li> <li>
-     * <p>Be registered with the authorization server.</p> </li> <li> <p>Not include a
-     * fragment component.</p> </li> </ul> <p>See <a
+     * <p>A list of allowed redirect (callback) URLs for the IdPs.</p> <p>A redirect
+     * URI must:</p> <ul> <li> <p>Be an absolute URI.</p> </li> <li> <p>Be registered
+     * with the authorization server.</p> </li> <li> <p>Not include a fragment
+     * component.</p> </li> </ul> <p>See <a
      * href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection
      * Endpoint</a>.</p> <p>Amazon Cognito requires HTTPS over HTTP except for
      * http://localhost for testing purposes only.</p> <p>App callback URLs such as
@@ -616,10 +734,10 @@ namespace Model
     inline const Aws::Vector<Aws::String>& GetCallbackURLs() const{ return m_callbackURLs; }
 
     /**
-     * <p>A list of allowed redirect (callback) URLs for the identity providers.</p>
-     * <p>A redirect URI must:</p> <ul> <li> <p>Be an absolute URI.</p> </li> <li>
-     * <p>Be registered with the authorization server.</p> </li> <li> <p>Not include a
-     * fragment component.</p> </li> </ul> <p>See <a
+     * <p>A list of allowed redirect (callback) URLs for the IdPs.</p> <p>A redirect
+     * URI must:</p> <ul> <li> <p>Be an absolute URI.</p> </li> <li> <p>Be registered
+     * with the authorization server.</p> </li> <li> <p>Not include a fragment
+     * component.</p> </li> </ul> <p>See <a
      * href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection
      * Endpoint</a>.</p> <p>Amazon Cognito requires HTTPS over HTTP except for
      * http://localhost for testing purposes only.</p> <p>App callback URLs such as
@@ -628,10 +746,10 @@ namespace Model
     inline bool CallbackURLsHasBeenSet() const { return m_callbackURLsHasBeenSet; }
 
     /**
-     * <p>A list of allowed redirect (callback) URLs for the identity providers.</p>
-     * <p>A redirect URI must:</p> <ul> <li> <p>Be an absolute URI.</p> </li> <li>
-     * <p>Be registered with the authorization server.</p> </li> <li> <p>Not include a
-     * fragment component.</p> </li> </ul> <p>See <a
+     * <p>A list of allowed redirect (callback) URLs for the IdPs.</p> <p>A redirect
+     * URI must:</p> <ul> <li> <p>Be an absolute URI.</p> </li> <li> <p>Be registered
+     * with the authorization server.</p> </li> <li> <p>Not include a fragment
+     * component.</p> </li> </ul> <p>See <a
      * href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection
      * Endpoint</a>.</p> <p>Amazon Cognito requires HTTPS over HTTP except for
      * http://localhost for testing purposes only.</p> <p>App callback URLs such as
@@ -640,10 +758,10 @@ namespace Model
     inline void SetCallbackURLs(const Aws::Vector<Aws::String>& value) { m_callbackURLsHasBeenSet = true; m_callbackURLs = value; }
 
     /**
-     * <p>A list of allowed redirect (callback) URLs for the identity providers.</p>
-     * <p>A redirect URI must:</p> <ul> <li> <p>Be an absolute URI.</p> </li> <li>
-     * <p>Be registered with the authorization server.</p> </li> <li> <p>Not include a
-     * fragment component.</p> </li> </ul> <p>See <a
+     * <p>A list of allowed redirect (callback) URLs for the IdPs.</p> <p>A redirect
+     * URI must:</p> <ul> <li> <p>Be an absolute URI.</p> </li> <li> <p>Be registered
+     * with the authorization server.</p> </li> <li> <p>Not include a fragment
+     * component.</p> </li> </ul> <p>See <a
      * href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection
      * Endpoint</a>.</p> <p>Amazon Cognito requires HTTPS over HTTP except for
      * http://localhost for testing purposes only.</p> <p>App callback URLs such as
@@ -652,10 +770,10 @@ namespace Model
     inline void SetCallbackURLs(Aws::Vector<Aws::String>&& value) { m_callbackURLsHasBeenSet = true; m_callbackURLs = std::move(value); }
 
     /**
-     * <p>A list of allowed redirect (callback) URLs for the identity providers.</p>
-     * <p>A redirect URI must:</p> <ul> <li> <p>Be an absolute URI.</p> </li> <li>
-     * <p>Be registered with the authorization server.</p> </li> <li> <p>Not include a
-     * fragment component.</p> </li> </ul> <p>See <a
+     * <p>A list of allowed redirect (callback) URLs for the IdPs.</p> <p>A redirect
+     * URI must:</p> <ul> <li> <p>Be an absolute URI.</p> </li> <li> <p>Be registered
+     * with the authorization server.</p> </li> <li> <p>Not include a fragment
+     * component.</p> </li> </ul> <p>See <a
      * href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection
      * Endpoint</a>.</p> <p>Amazon Cognito requires HTTPS over HTTP except for
      * http://localhost for testing purposes only.</p> <p>App callback URLs such as
@@ -664,10 +782,10 @@ namespace Model
     inline UpdateUserPoolClientRequest& WithCallbackURLs(const Aws::Vector<Aws::String>& value) { SetCallbackURLs(value); return *this;}
 
     /**
-     * <p>A list of allowed redirect (callback) URLs for the identity providers.</p>
-     * <p>A redirect URI must:</p> <ul> <li> <p>Be an absolute URI.</p> </li> <li>
-     * <p>Be registered with the authorization server.</p> </li> <li> <p>Not include a
-     * fragment component.</p> </li> </ul> <p>See <a
+     * <p>A list of allowed redirect (callback) URLs for the IdPs.</p> <p>A redirect
+     * URI must:</p> <ul> <li> <p>Be an absolute URI.</p> </li> <li> <p>Be registered
+     * with the authorization server.</p> </li> <li> <p>Not include a fragment
+     * component.</p> </li> </ul> <p>See <a
      * href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection
      * Endpoint</a>.</p> <p>Amazon Cognito requires HTTPS over HTTP except for
      * http://localhost for testing purposes only.</p> <p>App callback URLs such as
@@ -676,10 +794,10 @@ namespace Model
     inline UpdateUserPoolClientRequest& WithCallbackURLs(Aws::Vector<Aws::String>&& value) { SetCallbackURLs(std::move(value)); return *this;}
 
     /**
-     * <p>A list of allowed redirect (callback) URLs for the identity providers.</p>
-     * <p>A redirect URI must:</p> <ul> <li> <p>Be an absolute URI.</p> </li> <li>
-     * <p>Be registered with the authorization server.</p> </li> <li> <p>Not include a
-     * fragment component.</p> </li> </ul> <p>See <a
+     * <p>A list of allowed redirect (callback) URLs for the IdPs.</p> <p>A redirect
+     * URI must:</p> <ul> <li> <p>Be an absolute URI.</p> </li> <li> <p>Be registered
+     * with the authorization server.</p> </li> <li> <p>Not include a fragment
+     * component.</p> </li> </ul> <p>See <a
      * href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection
      * Endpoint</a>.</p> <p>Amazon Cognito requires HTTPS over HTTP except for
      * http://localhost for testing purposes only.</p> <p>App callback URLs such as
@@ -688,10 +806,10 @@ namespace Model
     inline UpdateUserPoolClientRequest& AddCallbackURLs(const Aws::String& value) { m_callbackURLsHasBeenSet = true; m_callbackURLs.push_back(value); return *this; }
 
     /**
-     * <p>A list of allowed redirect (callback) URLs for the identity providers.</p>
-     * <p>A redirect URI must:</p> <ul> <li> <p>Be an absolute URI.</p> </li> <li>
-     * <p>Be registered with the authorization server.</p> </li> <li> <p>Not include a
-     * fragment component.</p> </li> </ul> <p>See <a
+     * <p>A list of allowed redirect (callback) URLs for the IdPs.</p> <p>A redirect
+     * URI must:</p> <ul> <li> <p>Be an absolute URI.</p> </li> <li> <p>Be registered
+     * with the authorization server.</p> </li> <li> <p>Not include a fragment
+     * component.</p> </li> </ul> <p>See <a
      * href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection
      * Endpoint</a>.</p> <p>Amazon Cognito requires HTTPS over HTTP except for
      * http://localhost for testing purposes only.</p> <p>App callback URLs such as
@@ -700,10 +818,10 @@ namespace Model
     inline UpdateUserPoolClientRequest& AddCallbackURLs(Aws::String&& value) { m_callbackURLsHasBeenSet = true; m_callbackURLs.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of allowed redirect (callback) URLs for the identity providers.</p>
-     * <p>A redirect URI must:</p> <ul> <li> <p>Be an absolute URI.</p> </li> <li>
-     * <p>Be registered with the authorization server.</p> </li> <li> <p>Not include a
-     * fragment component.</p> </li> </ul> <p>See <a
+     * <p>A list of allowed redirect (callback) URLs for the IdPs.</p> <p>A redirect
+     * URI must:</p> <ul> <li> <p>Be an absolute URI.</p> </li> <li> <p>Be registered
+     * with the authorization server.</p> </li> <li> <p>Not include a fragment
+     * component.</p> </li> </ul> <p>See <a
      * href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection
      * Endpoint</a>.</p> <p>Amazon Cognito requires HTTPS over HTTP except for
      * http://localhost for testing purposes only.</p> <p>App callback URLs such as
@@ -713,47 +831,47 @@ namespace Model
 
 
     /**
-     * <p>A list of allowed logout URLs for the identity providers.</p>
+     * <p>A list of allowed logout URLs for the IdPs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLogoutURLs() const{ return m_logoutURLs; }
 
     /**
-     * <p>A list of allowed logout URLs for the identity providers.</p>
+     * <p>A list of allowed logout URLs for the IdPs.</p>
      */
     inline bool LogoutURLsHasBeenSet() const { return m_logoutURLsHasBeenSet; }
 
     /**
-     * <p>A list of allowed logout URLs for the identity providers.</p>
+     * <p>A list of allowed logout URLs for the IdPs.</p>
      */
     inline void SetLogoutURLs(const Aws::Vector<Aws::String>& value) { m_logoutURLsHasBeenSet = true; m_logoutURLs = value; }
 
     /**
-     * <p>A list of allowed logout URLs for the identity providers.</p>
+     * <p>A list of allowed logout URLs for the IdPs.</p>
      */
     inline void SetLogoutURLs(Aws::Vector<Aws::String>&& value) { m_logoutURLsHasBeenSet = true; m_logoutURLs = std::move(value); }
 
     /**
-     * <p>A list of allowed logout URLs for the identity providers.</p>
+     * <p>A list of allowed logout URLs for the IdPs.</p>
      */
     inline UpdateUserPoolClientRequest& WithLogoutURLs(const Aws::Vector<Aws::String>& value) { SetLogoutURLs(value); return *this;}
 
     /**
-     * <p>A list of allowed logout URLs for the identity providers.</p>
+     * <p>A list of allowed logout URLs for the IdPs.</p>
      */
     inline UpdateUserPoolClientRequest& WithLogoutURLs(Aws::Vector<Aws::String>&& value) { SetLogoutURLs(std::move(value)); return *this;}
 
     /**
-     * <p>A list of allowed logout URLs for the identity providers.</p>
+     * <p>A list of allowed logout URLs for the IdPs.</p>
      */
     inline UpdateUserPoolClientRequest& AddLogoutURLs(const Aws::String& value) { m_logoutURLsHasBeenSet = true; m_logoutURLs.push_back(value); return *this; }
 
     /**
-     * <p>A list of allowed logout URLs for the identity providers.</p>
+     * <p>A list of allowed logout URLs for the IdPs.</p>
      */
     inline UpdateUserPoolClientRequest& AddLogoutURLs(Aws::String&& value) { m_logoutURLsHasBeenSet = true; m_logoutURLs.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of allowed logout URLs for the identity providers.</p>
+     * <p>A list of allowed logout URLs for the IdPs.</p>
      */
     inline UpdateUserPoolClientRequest& AddLogoutURLs(const char* value) { m_logoutURLsHasBeenSet = true; m_logoutURLs.push_back(value); return *this; }
 
@@ -856,178 +974,178 @@ namespace Model
 
 
     /**
-     * <p>The allowed OAuth flows.</p> <p>Set to <code>code</code> to initiate a code
-     * grant flow, which provides an authorization code as the response. This code can
-     * be exchanged for access tokens with the token endpoint.</p> <p>Set to
-     * <code>implicit</code> to specify that the client should get the access token
-     * (and, optionally, ID token, based on scopes) directly.</p> <p>Set to
-     * <code>client_credentials</code> to specify that the client should get the access
-     * token (and, optionally, ID token, based on scopes) from the token endpoint using
-     * a combination of client and client_secret.</p>
+     * <p>The allowed OAuth flows.</p> <dl> <dt>code</dt> <dd> <p>Use a code grant
+     * flow, which provides an authorization code as the response. This code can be
+     * exchanged for access tokens with the <code>/oauth2/token</code> endpoint.</p>
+     * </dd> <dt>implicit</dt> <dd> <p>Issue the access token (and, optionally, ID
+     * token, based on scopes) directly to your user.</p> </dd>
+     * <dt>client_credentials</dt> <dd> <p>Issue the access token from the
+     * <code>/oauth2/token</code> endpoint directly to a non-person user using a
+     * combination of the client ID and client secret.</p> </dd> </dl>
      */
     inline const Aws::Vector<OAuthFlowType>& GetAllowedOAuthFlows() const{ return m_allowedOAuthFlows; }
 
     /**
-     * <p>The allowed OAuth flows.</p> <p>Set to <code>code</code> to initiate a code
-     * grant flow, which provides an authorization code as the response. This code can
-     * be exchanged for access tokens with the token endpoint.</p> <p>Set to
-     * <code>implicit</code> to specify that the client should get the access token
-     * (and, optionally, ID token, based on scopes) directly.</p> <p>Set to
-     * <code>client_credentials</code> to specify that the client should get the access
-     * token (and, optionally, ID token, based on scopes) from the token endpoint using
-     * a combination of client and client_secret.</p>
+     * <p>The allowed OAuth flows.</p> <dl> <dt>code</dt> <dd> <p>Use a code grant
+     * flow, which provides an authorization code as the response. This code can be
+     * exchanged for access tokens with the <code>/oauth2/token</code> endpoint.</p>
+     * </dd> <dt>implicit</dt> <dd> <p>Issue the access token (and, optionally, ID
+     * token, based on scopes) directly to your user.</p> </dd>
+     * <dt>client_credentials</dt> <dd> <p>Issue the access token from the
+     * <code>/oauth2/token</code> endpoint directly to a non-person user using a
+     * combination of the client ID and client secret.</p> </dd> </dl>
      */
     inline bool AllowedOAuthFlowsHasBeenSet() const { return m_allowedOAuthFlowsHasBeenSet; }
 
     /**
-     * <p>The allowed OAuth flows.</p> <p>Set to <code>code</code> to initiate a code
-     * grant flow, which provides an authorization code as the response. This code can
-     * be exchanged for access tokens with the token endpoint.</p> <p>Set to
-     * <code>implicit</code> to specify that the client should get the access token
-     * (and, optionally, ID token, based on scopes) directly.</p> <p>Set to
-     * <code>client_credentials</code> to specify that the client should get the access
-     * token (and, optionally, ID token, based on scopes) from the token endpoint using
-     * a combination of client and client_secret.</p>
+     * <p>The allowed OAuth flows.</p> <dl> <dt>code</dt> <dd> <p>Use a code grant
+     * flow, which provides an authorization code as the response. This code can be
+     * exchanged for access tokens with the <code>/oauth2/token</code> endpoint.</p>
+     * </dd> <dt>implicit</dt> <dd> <p>Issue the access token (and, optionally, ID
+     * token, based on scopes) directly to your user.</p> </dd>
+     * <dt>client_credentials</dt> <dd> <p>Issue the access token from the
+     * <code>/oauth2/token</code> endpoint directly to a non-person user using a
+     * combination of the client ID and client secret.</p> </dd> </dl>
      */
     inline void SetAllowedOAuthFlows(const Aws::Vector<OAuthFlowType>& value) { m_allowedOAuthFlowsHasBeenSet = true; m_allowedOAuthFlows = value; }
 
     /**
-     * <p>The allowed OAuth flows.</p> <p>Set to <code>code</code> to initiate a code
-     * grant flow, which provides an authorization code as the response. This code can
-     * be exchanged for access tokens with the token endpoint.</p> <p>Set to
-     * <code>implicit</code> to specify that the client should get the access token
-     * (and, optionally, ID token, based on scopes) directly.</p> <p>Set to
-     * <code>client_credentials</code> to specify that the client should get the access
-     * token (and, optionally, ID token, based on scopes) from the token endpoint using
-     * a combination of client and client_secret.</p>
+     * <p>The allowed OAuth flows.</p> <dl> <dt>code</dt> <dd> <p>Use a code grant
+     * flow, which provides an authorization code as the response. This code can be
+     * exchanged for access tokens with the <code>/oauth2/token</code> endpoint.</p>
+     * </dd> <dt>implicit</dt> <dd> <p>Issue the access token (and, optionally, ID
+     * token, based on scopes) directly to your user.</p> </dd>
+     * <dt>client_credentials</dt> <dd> <p>Issue the access token from the
+     * <code>/oauth2/token</code> endpoint directly to a non-person user using a
+     * combination of the client ID and client secret.</p> </dd> </dl>
      */
     inline void SetAllowedOAuthFlows(Aws::Vector<OAuthFlowType>&& value) { m_allowedOAuthFlowsHasBeenSet = true; m_allowedOAuthFlows = std::move(value); }
 
     /**
-     * <p>The allowed OAuth flows.</p> <p>Set to <code>code</code> to initiate a code
-     * grant flow, which provides an authorization code as the response. This code can
-     * be exchanged for access tokens with the token endpoint.</p> <p>Set to
-     * <code>implicit</code> to specify that the client should get the access token
-     * (and, optionally, ID token, based on scopes) directly.</p> <p>Set to
-     * <code>client_credentials</code> to specify that the client should get the access
-     * token (and, optionally, ID token, based on scopes) from the token endpoint using
-     * a combination of client and client_secret.</p>
+     * <p>The allowed OAuth flows.</p> <dl> <dt>code</dt> <dd> <p>Use a code grant
+     * flow, which provides an authorization code as the response. This code can be
+     * exchanged for access tokens with the <code>/oauth2/token</code> endpoint.</p>
+     * </dd> <dt>implicit</dt> <dd> <p>Issue the access token (and, optionally, ID
+     * token, based on scopes) directly to your user.</p> </dd>
+     * <dt>client_credentials</dt> <dd> <p>Issue the access token from the
+     * <code>/oauth2/token</code> endpoint directly to a non-person user using a
+     * combination of the client ID and client secret.</p> </dd> </dl>
      */
     inline UpdateUserPoolClientRequest& WithAllowedOAuthFlows(const Aws::Vector<OAuthFlowType>& value) { SetAllowedOAuthFlows(value); return *this;}
 
     /**
-     * <p>The allowed OAuth flows.</p> <p>Set to <code>code</code> to initiate a code
-     * grant flow, which provides an authorization code as the response. This code can
-     * be exchanged for access tokens with the token endpoint.</p> <p>Set to
-     * <code>implicit</code> to specify that the client should get the access token
-     * (and, optionally, ID token, based on scopes) directly.</p> <p>Set to
-     * <code>client_credentials</code> to specify that the client should get the access
-     * token (and, optionally, ID token, based on scopes) from the token endpoint using
-     * a combination of client and client_secret.</p>
+     * <p>The allowed OAuth flows.</p> <dl> <dt>code</dt> <dd> <p>Use a code grant
+     * flow, which provides an authorization code as the response. This code can be
+     * exchanged for access tokens with the <code>/oauth2/token</code> endpoint.</p>
+     * </dd> <dt>implicit</dt> <dd> <p>Issue the access token (and, optionally, ID
+     * token, based on scopes) directly to your user.</p> </dd>
+     * <dt>client_credentials</dt> <dd> <p>Issue the access token from the
+     * <code>/oauth2/token</code> endpoint directly to a non-person user using a
+     * combination of the client ID and client secret.</p> </dd> </dl>
      */
     inline UpdateUserPoolClientRequest& WithAllowedOAuthFlows(Aws::Vector<OAuthFlowType>&& value) { SetAllowedOAuthFlows(std::move(value)); return *this;}
 
     /**
-     * <p>The allowed OAuth flows.</p> <p>Set to <code>code</code> to initiate a code
-     * grant flow, which provides an authorization code as the response. This code can
-     * be exchanged for access tokens with the token endpoint.</p> <p>Set to
-     * <code>implicit</code> to specify that the client should get the access token
-     * (and, optionally, ID token, based on scopes) directly.</p> <p>Set to
-     * <code>client_credentials</code> to specify that the client should get the access
-     * token (and, optionally, ID token, based on scopes) from the token endpoint using
-     * a combination of client and client_secret.</p>
+     * <p>The allowed OAuth flows.</p> <dl> <dt>code</dt> <dd> <p>Use a code grant
+     * flow, which provides an authorization code as the response. This code can be
+     * exchanged for access tokens with the <code>/oauth2/token</code> endpoint.</p>
+     * </dd> <dt>implicit</dt> <dd> <p>Issue the access token (and, optionally, ID
+     * token, based on scopes) directly to your user.</p> </dd>
+     * <dt>client_credentials</dt> <dd> <p>Issue the access token from the
+     * <code>/oauth2/token</code> endpoint directly to a non-person user using a
+     * combination of the client ID and client secret.</p> </dd> </dl>
      */
     inline UpdateUserPoolClientRequest& AddAllowedOAuthFlows(const OAuthFlowType& value) { m_allowedOAuthFlowsHasBeenSet = true; m_allowedOAuthFlows.push_back(value); return *this; }
 
     /**
-     * <p>The allowed OAuth flows.</p> <p>Set to <code>code</code> to initiate a code
-     * grant flow, which provides an authorization code as the response. This code can
-     * be exchanged for access tokens with the token endpoint.</p> <p>Set to
-     * <code>implicit</code> to specify that the client should get the access token
-     * (and, optionally, ID token, based on scopes) directly.</p> <p>Set to
-     * <code>client_credentials</code> to specify that the client should get the access
-     * token (and, optionally, ID token, based on scopes) from the token endpoint using
-     * a combination of client and client_secret.</p>
+     * <p>The allowed OAuth flows.</p> <dl> <dt>code</dt> <dd> <p>Use a code grant
+     * flow, which provides an authorization code as the response. This code can be
+     * exchanged for access tokens with the <code>/oauth2/token</code> endpoint.</p>
+     * </dd> <dt>implicit</dt> <dd> <p>Issue the access token (and, optionally, ID
+     * token, based on scopes) directly to your user.</p> </dd>
+     * <dt>client_credentials</dt> <dd> <p>Issue the access token from the
+     * <code>/oauth2/token</code> endpoint directly to a non-person user using a
+     * combination of the client ID and client secret.</p> </dd> </dl>
      */
     inline UpdateUserPoolClientRequest& AddAllowedOAuthFlows(OAuthFlowType&& value) { m_allowedOAuthFlowsHasBeenSet = true; m_allowedOAuthFlows.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The allowed OAuth scopes. Possible values provided by OAuth are:
+     * <p>The allowed OAuth scopes. Possible values provided by OAuth are
      * <code>phone</code>, <code>email</code>, <code>openid</code>, and
-     * <code>profile</code>. Possible values provided by Amazon Web Services are:
+     * <code>profile</code>. Possible values provided by Amazon Web Services are
      * <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource
      * Servers are also supported.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAllowedOAuthScopes() const{ return m_allowedOAuthScopes; }
 
     /**
-     * <p>The allowed OAuth scopes. Possible values provided by OAuth are:
+     * <p>The allowed OAuth scopes. Possible values provided by OAuth are
      * <code>phone</code>, <code>email</code>, <code>openid</code>, and
-     * <code>profile</code>. Possible values provided by Amazon Web Services are:
+     * <code>profile</code>. Possible values provided by Amazon Web Services are
      * <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource
      * Servers are also supported.</p>
      */
     inline bool AllowedOAuthScopesHasBeenSet() const { return m_allowedOAuthScopesHasBeenSet; }
 
     /**
-     * <p>The allowed OAuth scopes. Possible values provided by OAuth are:
+     * <p>The allowed OAuth scopes. Possible values provided by OAuth are
      * <code>phone</code>, <code>email</code>, <code>openid</code>, and
-     * <code>profile</code>. Possible values provided by Amazon Web Services are:
+     * <code>profile</code>. Possible values provided by Amazon Web Services are
      * <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource
      * Servers are also supported.</p>
      */
     inline void SetAllowedOAuthScopes(const Aws::Vector<Aws::String>& value) { m_allowedOAuthScopesHasBeenSet = true; m_allowedOAuthScopes = value; }
 
     /**
-     * <p>The allowed OAuth scopes. Possible values provided by OAuth are:
+     * <p>The allowed OAuth scopes. Possible values provided by OAuth are
      * <code>phone</code>, <code>email</code>, <code>openid</code>, and
-     * <code>profile</code>. Possible values provided by Amazon Web Services are:
+     * <code>profile</code>. Possible values provided by Amazon Web Services are
      * <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource
      * Servers are also supported.</p>
      */
     inline void SetAllowedOAuthScopes(Aws::Vector<Aws::String>&& value) { m_allowedOAuthScopesHasBeenSet = true; m_allowedOAuthScopes = std::move(value); }
 
     /**
-     * <p>The allowed OAuth scopes. Possible values provided by OAuth are:
+     * <p>The allowed OAuth scopes. Possible values provided by OAuth are
      * <code>phone</code>, <code>email</code>, <code>openid</code>, and
-     * <code>profile</code>. Possible values provided by Amazon Web Services are:
+     * <code>profile</code>. Possible values provided by Amazon Web Services are
      * <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource
      * Servers are also supported.</p>
      */
     inline UpdateUserPoolClientRequest& WithAllowedOAuthScopes(const Aws::Vector<Aws::String>& value) { SetAllowedOAuthScopes(value); return *this;}
 
     /**
-     * <p>The allowed OAuth scopes. Possible values provided by OAuth are:
+     * <p>The allowed OAuth scopes. Possible values provided by OAuth are
      * <code>phone</code>, <code>email</code>, <code>openid</code>, and
-     * <code>profile</code>. Possible values provided by Amazon Web Services are:
+     * <code>profile</code>. Possible values provided by Amazon Web Services are
      * <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource
      * Servers are also supported.</p>
      */
     inline UpdateUserPoolClientRequest& WithAllowedOAuthScopes(Aws::Vector<Aws::String>&& value) { SetAllowedOAuthScopes(std::move(value)); return *this;}
 
     /**
-     * <p>The allowed OAuth scopes. Possible values provided by OAuth are:
+     * <p>The allowed OAuth scopes. Possible values provided by OAuth are
      * <code>phone</code>, <code>email</code>, <code>openid</code>, and
-     * <code>profile</code>. Possible values provided by Amazon Web Services are:
+     * <code>profile</code>. Possible values provided by Amazon Web Services are
      * <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource
      * Servers are also supported.</p>
      */
     inline UpdateUserPoolClientRequest& AddAllowedOAuthScopes(const Aws::String& value) { m_allowedOAuthScopesHasBeenSet = true; m_allowedOAuthScopes.push_back(value); return *this; }
 
     /**
-     * <p>The allowed OAuth scopes. Possible values provided by OAuth are:
+     * <p>The allowed OAuth scopes. Possible values provided by OAuth are
      * <code>phone</code>, <code>email</code>, <code>openid</code>, and
-     * <code>profile</code>. Possible values provided by Amazon Web Services are:
+     * <code>profile</code>. Possible values provided by Amazon Web Services are
      * <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource
      * Servers are also supported.</p>
      */
     inline UpdateUserPoolClientRequest& AddAllowedOAuthScopes(Aws::String&& value) { m_allowedOAuthScopesHasBeenSet = true; m_allowedOAuthScopes.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The allowed OAuth scopes. Possible values provided by OAuth are:
+     * <p>The allowed OAuth scopes. Possible values provided by OAuth are
      * <code>phone</code>, <code>email</code>, <code>openid</code>, and
-     * <code>profile</code>. Possible values provided by Amazon Web Services are:
+     * <code>profile</code>. Possible values provided by Amazon Web Services are
      * <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource
      * Servers are also supported.</p>
      */
@@ -1060,62 +1178,62 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Pinpoint analytics configuration for collecting metrics for this
-     * user pool.</p>  <p>In Amazon Web Services Regions where Amazon Pinpoint
-     * isn't available, user pools only support sending events to Amazon Pinpoint
-     * projects in us-east-1. In Regions where Amazon Pinpoint is available, user pools
-     * support sending events to Amazon Pinpoint projects within that same Region.</p>
-     * 
+     * <p>The Amazon Pinpoint analytics configuration necessary to collect metrics for
+     * this user pool.</p>  <p>In Amazon Web Services Regions where Amazon
+     * Pinpoint isn't available, user pools only support sending events to Amazon
+     * Pinpoint projects in us-east-1. In Regions where Amazon Pinpoint is available,
+     * user pools support sending events to Amazon Pinpoint projects within that same
+     * Region.</p> 
      */
     inline const AnalyticsConfigurationType& GetAnalyticsConfiguration() const{ return m_analyticsConfiguration; }
 
     /**
-     * <p>The Amazon Pinpoint analytics configuration for collecting metrics for this
-     * user pool.</p>  <p>In Amazon Web Services Regions where Amazon Pinpoint
-     * isn't available, user pools only support sending events to Amazon Pinpoint
-     * projects in us-east-1. In Regions where Amazon Pinpoint is available, user pools
-     * support sending events to Amazon Pinpoint projects within that same Region.</p>
-     * 
+     * <p>The Amazon Pinpoint analytics configuration necessary to collect metrics for
+     * this user pool.</p>  <p>In Amazon Web Services Regions where Amazon
+     * Pinpoint isn't available, user pools only support sending events to Amazon
+     * Pinpoint projects in us-east-1. In Regions where Amazon Pinpoint is available,
+     * user pools support sending events to Amazon Pinpoint projects within that same
+     * Region.</p> 
      */
     inline bool AnalyticsConfigurationHasBeenSet() const { return m_analyticsConfigurationHasBeenSet; }
 
     /**
-     * <p>The Amazon Pinpoint analytics configuration for collecting metrics for this
-     * user pool.</p>  <p>In Amazon Web Services Regions where Amazon Pinpoint
-     * isn't available, user pools only support sending events to Amazon Pinpoint
-     * projects in us-east-1. In Regions where Amazon Pinpoint is available, user pools
-     * support sending events to Amazon Pinpoint projects within that same Region.</p>
-     * 
+     * <p>The Amazon Pinpoint analytics configuration necessary to collect metrics for
+     * this user pool.</p>  <p>In Amazon Web Services Regions where Amazon
+     * Pinpoint isn't available, user pools only support sending events to Amazon
+     * Pinpoint projects in us-east-1. In Regions where Amazon Pinpoint is available,
+     * user pools support sending events to Amazon Pinpoint projects within that same
+     * Region.</p> 
      */
     inline void SetAnalyticsConfiguration(const AnalyticsConfigurationType& value) { m_analyticsConfigurationHasBeenSet = true; m_analyticsConfiguration = value; }
 
     /**
-     * <p>The Amazon Pinpoint analytics configuration for collecting metrics for this
-     * user pool.</p>  <p>In Amazon Web Services Regions where Amazon Pinpoint
-     * isn't available, user pools only support sending events to Amazon Pinpoint
-     * projects in us-east-1. In Regions where Amazon Pinpoint is available, user pools
-     * support sending events to Amazon Pinpoint projects within that same Region.</p>
-     * 
+     * <p>The Amazon Pinpoint analytics configuration necessary to collect metrics for
+     * this user pool.</p>  <p>In Amazon Web Services Regions where Amazon
+     * Pinpoint isn't available, user pools only support sending events to Amazon
+     * Pinpoint projects in us-east-1. In Regions where Amazon Pinpoint is available,
+     * user pools support sending events to Amazon Pinpoint projects within that same
+     * Region.</p> 
      */
     inline void SetAnalyticsConfiguration(AnalyticsConfigurationType&& value) { m_analyticsConfigurationHasBeenSet = true; m_analyticsConfiguration = std::move(value); }
 
     /**
-     * <p>The Amazon Pinpoint analytics configuration for collecting metrics for this
-     * user pool.</p>  <p>In Amazon Web Services Regions where Amazon Pinpoint
-     * isn't available, user pools only support sending events to Amazon Pinpoint
-     * projects in us-east-1. In Regions where Amazon Pinpoint is available, user pools
-     * support sending events to Amazon Pinpoint projects within that same Region.</p>
-     * 
+     * <p>The Amazon Pinpoint analytics configuration necessary to collect metrics for
+     * this user pool.</p>  <p>In Amazon Web Services Regions where Amazon
+     * Pinpoint isn't available, user pools only support sending events to Amazon
+     * Pinpoint projects in us-east-1. In Regions where Amazon Pinpoint is available,
+     * user pools support sending events to Amazon Pinpoint projects within that same
+     * Region.</p> 
      */
     inline UpdateUserPoolClientRequest& WithAnalyticsConfiguration(const AnalyticsConfigurationType& value) { SetAnalyticsConfiguration(value); return *this;}
 
     /**
-     * <p>The Amazon Pinpoint analytics configuration for collecting metrics for this
-     * user pool.</p>  <p>In Amazon Web Services Regions where Amazon Pinpoint
-     * isn't available, user pools only support sending events to Amazon Pinpoint
-     * projects in us-east-1. In Regions where Amazon Pinpoint is available, user pools
-     * support sending events to Amazon Pinpoint projects within that same Region.</p>
-     * 
+     * <p>The Amazon Pinpoint analytics configuration necessary to collect metrics for
+     * this user pool.</p>  <p>In Amazon Web Services Regions where Amazon
+     * Pinpoint isn't available, user pools only support sending events to Amazon
+     * Pinpoint projects in us-east-1. In Regions where Amazon Pinpoint is available,
+     * user pools support sending events to Amazon Pinpoint projects within that same
+     * Region.</p> 
      */
     inline UpdateUserPoolClientRequest& WithAnalyticsConfiguration(AnalyticsConfigurationType&& value) { SetAnalyticsConfiguration(std::move(value)); return *this;}
 

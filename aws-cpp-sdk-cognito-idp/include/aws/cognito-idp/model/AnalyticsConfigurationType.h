@@ -24,11 +24,12 @@ namespace Model
 {
 
   /**
-   * <p>The Amazon Pinpoint analytics configuration for collecting metrics for a user
-   * pool.</p>  <p>In Regions where Amazon Pinpointisn't available, user pools
-   * only support sending events to Amazon Pinpoint projects in us-east-1. In Regions
-   * where Amazon Pinpoint is available, user pools support sending events to Amazon
-   * Pinpoint projects within that same Region.</p> <p><h3>See Also:</h3>   <a
+   * <p>The Amazon Pinpoint analytics configuration necessary to collect metrics for
+   * a user pool.</p>  <p>In Regions where Amazon Pinpointisn't available, user
+   * pools only support sending events to Amazon Pinpoint projects in us-east-1. In
+   * Regions where Amazon Pinpoint is available, user pools support sending events to
+   * Amazon Pinpoint projects within that same Region.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AnalyticsConfigurationType">AWS
    * API Reference</a></p>
    */
@@ -85,64 +86,64 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the
      * Amazon Pinpoint project to integrate with the chosen user pool Client. Amazon
-     * Cognito publishes events to the Amazon Pinpointproject declared by the app
-     * ARN.</p>
+     * Cognito publishes events to the Amazon Pinpoint project that the app ARN
+     * declares.</p>
      */
     inline const Aws::String& GetApplicationArn() const{ return m_applicationArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the
      * Amazon Pinpoint project to integrate with the chosen user pool Client. Amazon
-     * Cognito publishes events to the Amazon Pinpointproject declared by the app
-     * ARN.</p>
+     * Cognito publishes events to the Amazon Pinpoint project that the app ARN
+     * declares.</p>
      */
     inline bool ApplicationArnHasBeenSet() const { return m_applicationArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the
      * Amazon Pinpoint project to integrate with the chosen user pool Client. Amazon
-     * Cognito publishes events to the Amazon Pinpointproject declared by the app
-     * ARN.</p>
+     * Cognito publishes events to the Amazon Pinpoint project that the app ARN
+     * declares.</p>
      */
     inline void SetApplicationArn(const Aws::String& value) { m_applicationArnHasBeenSet = true; m_applicationArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the
      * Amazon Pinpoint project to integrate with the chosen user pool Client. Amazon
-     * Cognito publishes events to the Amazon Pinpointproject declared by the app
-     * ARN.</p>
+     * Cognito publishes events to the Amazon Pinpoint project that the app ARN
+     * declares.</p>
      */
     inline void SetApplicationArn(Aws::String&& value) { m_applicationArnHasBeenSet = true; m_applicationArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the
      * Amazon Pinpoint project to integrate with the chosen user pool Client. Amazon
-     * Cognito publishes events to the Amazon Pinpointproject declared by the app
-     * ARN.</p>
+     * Cognito publishes events to the Amazon Pinpoint project that the app ARN
+     * declares.</p>
      */
     inline void SetApplicationArn(const char* value) { m_applicationArnHasBeenSet = true; m_applicationArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the
      * Amazon Pinpoint project to integrate with the chosen user pool Client. Amazon
-     * Cognito publishes events to the Amazon Pinpointproject declared by the app
-     * ARN.</p>
+     * Cognito publishes events to the Amazon Pinpoint project that the app ARN
+     * declares.</p>
      */
     inline AnalyticsConfigurationType& WithApplicationArn(const Aws::String& value) { SetApplicationArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the
      * Amazon Pinpoint project to integrate with the chosen user pool Client. Amazon
-     * Cognito publishes events to the Amazon Pinpointproject declared by the app
-     * ARN.</p>
+     * Cognito publishes events to the Amazon Pinpoint project that the app ARN
+     * declares.</p>
      */
     inline AnalyticsConfigurationType& WithApplicationArn(Aws::String&& value) { SetApplicationArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the
      * Amazon Pinpoint project to integrate with the chosen user pool Client. Amazon
-     * Cognito publishes events to the Amazon Pinpointproject declared by the app
-     * ARN.</p>
+     * Cognito publishes events to the Amazon Pinpoint project that the app ARN
+     * declares.</p>
      */
     inline AnalyticsConfigurationType& WithApplicationArn(const char* value) { SetApplicationArn(value); return *this;}
 
@@ -238,26 +239,26 @@ namespace Model
 
 
     /**
-     * <p>If <code>UserDataShared</code> is <code>true</code>, Amazon Cognito will
-     * include user data in the events it publishes to Amazon Pinpoint analytics.</p>
+     * <p>If <code>UserDataShared</code> is <code>true</code>, Amazon Cognito includes
+     * user data in the events that it publishes to Amazon Pinpoint analytics.</p>
      */
     inline bool GetUserDataShared() const{ return m_userDataShared; }
 
     /**
-     * <p>If <code>UserDataShared</code> is <code>true</code>, Amazon Cognito will
-     * include user data in the events it publishes to Amazon Pinpoint analytics.</p>
+     * <p>If <code>UserDataShared</code> is <code>true</code>, Amazon Cognito includes
+     * user data in the events that it publishes to Amazon Pinpoint analytics.</p>
      */
     inline bool UserDataSharedHasBeenSet() const { return m_userDataSharedHasBeenSet; }
 
     /**
-     * <p>If <code>UserDataShared</code> is <code>true</code>, Amazon Cognito will
-     * include user data in the events it publishes to Amazon Pinpoint analytics.</p>
+     * <p>If <code>UserDataShared</code> is <code>true</code>, Amazon Cognito includes
+     * user data in the events that it publishes to Amazon Pinpoint analytics.</p>
      */
     inline void SetUserDataShared(bool value) { m_userDataSharedHasBeenSet = true; m_userDataShared = value; }
 
     /**
-     * <p>If <code>UserDataShared</code> is <code>true</code>, Amazon Cognito will
-     * include user data in the events it publishes to Amazon Pinpoint analytics.</p>
+     * <p>If <code>UserDataShared</code> is <code>true</code>, Amazon Cognito includes
+     * user data in the events that it publishes to Amazon Pinpoint analytics.</p>
      */
     inline AnalyticsConfigurationType& WithUserDataShared(bool value) { SetUserDataShared(value); return *this;}
 

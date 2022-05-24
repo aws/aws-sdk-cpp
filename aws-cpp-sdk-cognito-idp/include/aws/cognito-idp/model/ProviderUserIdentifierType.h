@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>A container for information about an identity provider for a user
-   * pool.</p><p><h3>See Also:</h3>   <a
+   * <p>A container for information about an IdP for a user pool.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ProviderUserIdentifierType">AWS
    * API Reference</a></p>
    */

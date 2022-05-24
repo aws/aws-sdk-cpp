@@ -725,13 +725,12 @@ namespace Model
 
         /**
          * <p>Prevents the user from signing in with the specified external (SAML or
-         * social) identity provider. If the user that you want to deactivate is a Amazon
-         * Cognito user pools native username + password user, they can't use their
-         * password to sign in. If the user to deactivate is a linked external identity
-         * provider (IdP) user, any link between that user and an existing user is removed.
-         * When the external user signs in again, and the user is no longer attached to the
-         * previously linked <code>DestinationUser</code>, the user must create a new user
-         * account. See <a
+         * social) identity provider (IdP). If the user that you want to deactivate is a
+         * Amazon Cognito user pools native username + password user, they can't use their
+         * password to sign in. If the user to deactivate is a linked external IdP user,
+         * any link between that user and an existing user is removed. When the external
+         * user signs in again, and the user is no longer attached to the previously linked
+         * <code>DestinationUser</code>, the user must create a new user account. See <a
          * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminLinkProviderForUser.html">AdminLinkProviderForUser</a>.</p>
          * <p>This action is enabled only for admin access and requires developer
          * credentials.</p> <p>The <code>ProviderName</code> must match the value specified
@@ -740,7 +739,7 @@ namespace Model
          * and the <code>ProviderAttributeName</code> must be <code>Cognito_Subject</code>.
          * The <code>ProviderAttributeValue</code> must be the name that is used in the
          * user pool for the user.</p> <p>The <code>ProviderAttributeName</code> must
-         * always be <code>Cognito_Subject</code> for social identity providers. The
+         * always be <code>Cognito_Subject</code> for social IdPs. The
          * <code>ProviderAttributeValue</code> must always be the exact subject that was
          * used when the user was originally linked as a source user.</p> <p>For de-linking
          * a SAML identity, there are two scenarios. If the linked identity has not yet
@@ -897,20 +896,20 @@ namespace Model
 
         /**
          * <p>Links an existing user account in a user pool (<code>DestinationUser</code>)
-         * to an identity from an external identity provider (<code>SourceUser</code>)
-         * based on a specified attribute name and value from the external identity
-         * provider. This allows you to create a link from the existing user account to an
-         * external federated user identity that has not yet been used to sign in. You can
-         * then use the federated user identity to sign in as the existing user account.
-         * </p> <p> For example, if there is an existing user with a username and password,
-         * this API links that user to a federated user identity. When the user signs in
-         * with a federated user identity, they sign in as the existing user account.</p>
-         *  <p>The maximum number of federated identities linked to a user is 5.</p>
-         *   <p>Because this API allows a user with an external federated
-         * identity to sign in as an existing user in the user pool, it is critical that it
-         * only be used with external identity providers and provider attributes that have
-         * been trusted by the application owner.</p>  <p>This action is
-         * administrative and requires developer credentials.</p><p><h3>See Also:</h3>   <a
+         * to an identity from an external IdP (<code>SourceUser</code>) based on a
+         * specified attribute name and value from the external IdP. This allows you to
+         * create a link from the existing user account to an external federated user
+         * identity that has not yet been used to sign in. You can then use the federated
+         * user identity to sign in as the existing user account. </p> <p> For example, if
+         * there is an existing user with a username and password, this API links that user
+         * to a federated user identity. When the user signs in with a federated user
+         * identity, they sign in as the existing user account.</p>  <p>The maximum
+         * number of federated identities linked to a user is five.</p>  
+         * <p>Because this API allows a user with an external federated identity to sign in
+         * as an existing user in the user pool, it is critical that it only be used with
+         * external IdPs and provider attributes that have been trusted by the application
+         * owner.</p>  <p>This action is administrative and requires developer
+         * credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminLinkProviderForUser">AWS
          * API Reference</a></p>
          */
@@ -1221,11 +1220,14 @@ namespace Model
         virtual void AdminUpdateUserAttributesAsync(const Model::AdminUpdateUserAttributesRequest& request, const AdminUpdateUserAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Signs out users from all devices, as an administrator. It also invalidates
-         * all refresh tokens issued to a user. The user's current access and Id tokens
-         * remain valid until their expiry. Access and Id tokens expire one hour after
-         * they're issued.</p> <p>Calling this action requires developer
-         * credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Signs out a user from all devices. You must sign
+         * <code>AdminUserGlobalSignOut</code> requests with Amazon Web Services
+         * credentials. It also invalidates all refresh tokens that Amazon Cognito has
+         * issued to a user. The user's current access and ID tokens remain valid until
+         * they expire. By default, access and ID tokens expire one hour after they're
+         * issued. A user can still use a hosted UI cookie to retrieve new tokens for the
+         * duration of the cookie validity period of 1 hour.</p> <p>Calling this action
+         * requires developer credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUserGlobalSignOut">AWS
          * API Reference</a></p>
          */
@@ -1321,8 +1323,7 @@ namespace Model
         virtual void ConfirmForgotPasswordAsync(const Model::ConfirmForgotPasswordRequest& request, const ConfirmForgotPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Confirms registration of a user and handles the existing alias from a
-         * previous user.</p><p><h3>See Also:</h3>   <a
+         * <p>Confirms registration of a new user.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ConfirmSignUp">AWS
          * API Reference</a></p>
          */
@@ -1357,7 +1358,7 @@ namespace Model
         virtual void CreateGroupAsync(const Model::CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an identity provider for a user pool.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an IdP for a user pool.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateIdentityProvider">AWS
          * API Reference</a></p>
          */
@@ -1499,7 +1500,7 @@ namespace Model
         virtual void DeleteGroupAsync(const Model::DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes an identity provider for a user pool.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an IdP for a user pool.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteIdentityProvider">AWS
          * API Reference</a></p>
          */
@@ -1619,8 +1620,7 @@ namespace Model
         virtual void DeleteUserPoolDomainAsync(const Model::DeleteUserPoolDomainRequest& request, const DeleteUserPoolDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about a specific identity provider.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Gets information about a specific IdP.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeIdentityProvider">AWS
          * API Reference</a></p>
          */
@@ -1855,7 +1855,7 @@ namespace Model
         virtual void GetGroupAsync(const Model::GetGroupRequest& request, const GetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets the specified identity provider.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the specified IdP.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetIdentityProviderByIdentifier">AWS
          * API Reference</a></p>
          */
@@ -1930,18 +1930,19 @@ namespace Model
         virtual void GetUserAsync(const Model::GetUserRequest& request, const GetUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets the user attribute verification code for the specified attribute
-         * name.</p>  <p>This action might generate an SMS text message. Starting
-         * June 1, 2021, US telecom carriers require you to register an origination phone
-         * number before you can send SMS messages to US phone numbers. If you use SMS text
-         * messages in Amazon Cognito, you must register a phone number with <a
-         * href="https://console.aws.amazon.com/pinpoint/home/">Amazon Pinpoint</a>. Amazon
-         * Cognito uses the registered number automatically. Otherwise, Amazon Cognito
-         * users who must receive SMS messages might not be able to sign up, activate their
-         * accounts, or sign in.</p> <p>If you have never used SMS text messages with
-         * Amazon Cognito or any other Amazon Web Service, Amazon Simple Notification
-         * Service might place your account in the SMS sandbox. In <i> <a
-         * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
+         * <p>Generates a user attribute verification code for the specified attribute
+         * name. Sends a message to a user with a code that they must return in a
+         * VerifyUserAttribute request.</p>  <p>This action might generate an SMS
+         * text message. Starting June 1, 2021, US telecom carriers require you to register
+         * an origination phone number before you can send SMS messages to US phone
+         * numbers. If you use SMS text messages in Amazon Cognito, you must register a
+         * phone number with <a href="https://console.aws.amazon.com/pinpoint/home/">Amazon
+         * Pinpoint</a>. Amazon Cognito uses the registered number automatically.
+         * Otherwise, Amazon Cognito users who must receive SMS messages might not be able
+         * to sign up, activate their accounts, or sign in.</p> <p>If you have never used
+         * SMS text messages with Amazon Cognito or any other Amazon Web Service, Amazon
+         * Simple Notification Service might place your account in the SMS sandbox. In <i>
+         * <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you can send messages only to verified phone numbers. After you
          * test your app while in the sandbox environment, you can move out of the sandbox
          * and into production. For more information, see <a
@@ -1982,10 +1983,12 @@ namespace Model
         virtual void GetUserPoolMfaConfigAsync(const Model::GetUserPoolMfaConfigRequest& request, const GetUserPoolMfaConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Signs out users from all devices. It also invalidates all refresh tokens
-         * issued to a user. The user's current access and ID tokens remain valid until
-         * their expiry. Access and Id tokens expire one hour after they're
-         * issued.</p><p><h3>See Also:</h3>   <a
+         * <p>Signs out users from all devices. It also invalidates all refresh tokens that
+         * Amazon Cognito has issued to a user. The user's current access and ID tokens
+         * remain valid until their expiry. By default, access and ID tokens expire one
+         * hour after Amazon Cognito issues them. A user can still use a hosted UI cookie
+         * to retrieve new tokens for the duration of the cookie validity period of 1
+         * hour.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GlobalSignOut">AWS
          * API Reference</a></p>
          */
@@ -2002,11 +2005,15 @@ namespace Model
         virtual void GlobalSignOutAsync(const Model::GlobalSignOutRequest& request, const GlobalSignOutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Initiates the authentication flow.</p>  <p>This action might generate
-         * an SMS text message. Starting June 1, 2021, US telecom carriers require you to
-         * register an origination phone number before you can send SMS messages to US
-         * phone numbers. If you use SMS text messages in Amazon Cognito, you must register
-         * a phone number with <a
+         * <p>Initiates sign-in for a user in the Amazon Cognito user directory. You can't
+         * sign in a user with a federated IdP with <code>InitiateAuth</code>. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation.html">
+         * Adding user pool sign-in through a third party</a>.</p>  <p>This action
+         * might generate an SMS text message. Starting June 1, 2021, US telecom carriers
+         * require you to register an origination phone number before you can send SMS
+         * messages to US phone numbers. If you use SMS text messages in Amazon Cognito,
+         * you must register a phone number with <a
          * href="https://console.aws.amazon.com/pinpoint/home/">Amazon Pinpoint</a>. Amazon
          * Cognito uses the registered number automatically. Otherwise, Amazon Cognito
          * users who must receive SMS messages might not be able to sign up, activate their
@@ -2036,7 +2043,8 @@ namespace Model
         virtual void InitiateAuthAsync(const Model::InitiateAuthRequest& request, const InitiateAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the devices.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the sign-in devices that Amazon Cognito has registered to the current
+         * user.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListDevices">AWS
          * API Reference</a></p>
          */
@@ -2071,8 +2079,8 @@ namespace Model
         virtual void ListGroupsAsync(const Model::ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists information about all identity providers for a user pool.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists information about all IdPs for a user pool.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListIdentityProviders">AWS
          * API Reference</a></p>
          */
@@ -2602,8 +2610,7 @@ namespace Model
         virtual void UpdateGroupAsync(const Model::UpdateGroupRequest& request, const UpdateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates identity provider information for a user pool.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates IdP information for a user pool.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateIdentityProvider">AWS
          * API Reference</a></p>
          */
@@ -2677,7 +2684,7 @@ namespace Model
          * list of the current user pool settings using <a
          * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html">DescribeUserPool</a>.
          * If you don't provide a value for an attribute, it will be set to the default
-         * value.</p>  <p>This action might generate an SMS text message. Starting
+         * value. </p>  <p>This action might generate an SMS text message. Starting
          * June 1, 2021, US telecom carriers require you to register an origination phone
          * number before you can send SMS messages to US phone numbers. If you use SMS text
          * messages in Amazon Cognito, you must register a phone number with <a
@@ -2792,8 +2799,12 @@ namespace Model
         virtual void VerifySoftwareTokenAsync(const Model::VerifySoftwareTokenRequest& request, const VerifySoftwareTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Verifies the specified user attributes in the user pool.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Verifies the specified user attributes in the user pool.</p> <p> If your user
+         * pool requires verification before Amazon Cognito updates the attribute value,
+         * VerifyUserAttribute updates the affected attribute to its pending value. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UserAttributeUpdateSettingsType.html">
+         * UserAttributeUpdateSettingsType</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/VerifyUserAttribute">AWS
          * API Reference</a></p>
          */

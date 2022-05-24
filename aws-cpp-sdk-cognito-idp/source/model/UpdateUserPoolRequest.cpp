@@ -22,6 +22,7 @@ UpdateUserPoolRequest::UpdateUserPoolRequest() :
     m_emailVerificationSubjectHasBeenSet(false),
     m_verificationMessageTemplateHasBeenSet(false),
     m_smsAuthenticationMessageHasBeenSet(false),
+    m_userAttributeUpdateSettingsHasBeenSet(false),
     m_mfaConfiguration(UserPoolMfaType::NOT_SET),
     m_mfaConfigurationHasBeenSet(false),
     m_deviceConfigurationHasBeenSet(false),
@@ -94,6 +95,12 @@ Aws::String UpdateUserPoolRequest::SerializePayload() const
   if(m_smsAuthenticationMessageHasBeenSet)
   {
    payload.WithString("SmsAuthenticationMessage", m_smsAuthenticationMessage);
+
+  }
+
+  if(m_userAttributeUpdateSettingsHasBeenSet)
+  {
+   payload.WithObject("UserAttributeUpdateSettings", m_userAttributeUpdateSettings.Jsonize());
 
   }
 

@@ -55,9 +55,9 @@ namespace Model
      * Authentication flow for refreshing the access token and ID token by supplying a
      * valid refresh token.</p> </li> <li> <p> <code>CUSTOM_AUTH</code>: Custom
      * authentication flow.</p> </li> <li> <p> <code>USER_PASSWORD_AUTH</code>: Non-SRP
-     * authentication flow; USERNAME and PASSWORD are passed directly. If a user
+     * authentication flow; user name and password are passed directly. If a user
      * migration Lambda trigger is set, this flow will invoke the user migration Lambda
-     * if it doesn't find the USERNAME in the user pool. </p> </li> </ul> <p>
+     * if it doesn't find the user name in the user pool. </p> </li> </ul> <p>
      * <code>ADMIN_NO_SRP_AUTH</code> isn't a valid value.</p>
      */
     inline const AuthFlowType& GetAuthFlow() const{ return m_authFlow; }
@@ -76,9 +76,9 @@ namespace Model
      * Authentication flow for refreshing the access token and ID token by supplying a
      * valid refresh token.</p> </li> <li> <p> <code>CUSTOM_AUTH</code>: Custom
      * authentication flow.</p> </li> <li> <p> <code>USER_PASSWORD_AUTH</code>: Non-SRP
-     * authentication flow; USERNAME and PASSWORD are passed directly. If a user
+     * authentication flow; user name and password are passed directly. If a user
      * migration Lambda trigger is set, this flow will invoke the user migration Lambda
-     * if it doesn't find the USERNAME in the user pool. </p> </li> </ul> <p>
+     * if it doesn't find the user name in the user pool. </p> </li> </ul> <p>
      * <code>ADMIN_NO_SRP_AUTH</code> isn't a valid value.</p>
      */
     inline bool AuthFlowHasBeenSet() const { return m_authFlowHasBeenSet; }
@@ -97,9 +97,9 @@ namespace Model
      * Authentication flow for refreshing the access token and ID token by supplying a
      * valid refresh token.</p> </li> <li> <p> <code>CUSTOM_AUTH</code>: Custom
      * authentication flow.</p> </li> <li> <p> <code>USER_PASSWORD_AUTH</code>: Non-SRP
-     * authentication flow; USERNAME and PASSWORD are passed directly. If a user
+     * authentication flow; user name and password are passed directly. If a user
      * migration Lambda trigger is set, this flow will invoke the user migration Lambda
-     * if it doesn't find the USERNAME in the user pool. </p> </li> </ul> <p>
+     * if it doesn't find the user name in the user pool. </p> </li> </ul> <p>
      * <code>ADMIN_NO_SRP_AUTH</code> isn't a valid value.</p>
      */
     inline void SetAuthFlow(const AuthFlowType& value) { m_authFlowHasBeenSet = true; m_authFlow = value; }
@@ -118,9 +118,9 @@ namespace Model
      * Authentication flow for refreshing the access token and ID token by supplying a
      * valid refresh token.</p> </li> <li> <p> <code>CUSTOM_AUTH</code>: Custom
      * authentication flow.</p> </li> <li> <p> <code>USER_PASSWORD_AUTH</code>: Non-SRP
-     * authentication flow; USERNAME and PASSWORD are passed directly. If a user
+     * authentication flow; user name and password are passed directly. If a user
      * migration Lambda trigger is set, this flow will invoke the user migration Lambda
-     * if it doesn't find the USERNAME in the user pool. </p> </li> </ul> <p>
+     * if it doesn't find the user name in the user pool. </p> </li> </ul> <p>
      * <code>ADMIN_NO_SRP_AUTH</code> isn't a valid value.</p>
      */
     inline void SetAuthFlow(AuthFlowType&& value) { m_authFlowHasBeenSet = true; m_authFlow = std::move(value); }
@@ -139,9 +139,9 @@ namespace Model
      * Authentication flow for refreshing the access token and ID token by supplying a
      * valid refresh token.</p> </li> <li> <p> <code>CUSTOM_AUTH</code>: Custom
      * authentication flow.</p> </li> <li> <p> <code>USER_PASSWORD_AUTH</code>: Non-SRP
-     * authentication flow; USERNAME and PASSWORD are passed directly. If a user
+     * authentication flow; user name and password are passed directly. If a user
      * migration Lambda trigger is set, this flow will invoke the user migration Lambda
-     * if it doesn't find the USERNAME in the user pool. </p> </li> </ul> <p>
+     * if it doesn't find the user name in the user pool. </p> </li> </ul> <p>
      * <code>ADMIN_NO_SRP_AUTH</code> isn't a valid value.</p>
      */
     inline InitiateAuthRequest& WithAuthFlow(const AuthFlowType& value) { SetAuthFlow(value); return *this;}
@@ -160,9 +160,9 @@ namespace Model
      * Authentication flow for refreshing the access token and ID token by supplying a
      * valid refresh token.</p> </li> <li> <p> <code>CUSTOM_AUTH</code>: Custom
      * authentication flow.</p> </li> <li> <p> <code>USER_PASSWORD_AUTH</code>: Non-SRP
-     * authentication flow; USERNAME and PASSWORD are passed directly. If a user
+     * authentication flow; user name and password are passed directly. If a user
      * migration Lambda trigger is set, this flow will invoke the user migration Lambda
-     * if it doesn't find the USERNAME in the user pool. </p> </li> </ul> <p>
+     * if it doesn't find the user name in the user pool. </p> </li> </ul> <p>
      * <code>ADMIN_NO_SRP_AUTH</code> isn't a valid value.</p>
      */
     inline InitiateAuthRequest& WithAuthFlow(AuthFlowType&& value) { SetAuthFlow(std::move(value)); return *this;}
@@ -875,37 +875,37 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+     * <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for
      * <code>InitiateAuth</code> calls.</p>
      */
     inline const AnalyticsMetadataType& GetAnalyticsMetadata() const{ return m_analyticsMetadata; }
 
     /**
-     * <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+     * <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for
      * <code>InitiateAuth</code> calls.</p>
      */
     inline bool AnalyticsMetadataHasBeenSet() const { return m_analyticsMetadataHasBeenSet; }
 
     /**
-     * <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+     * <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for
      * <code>InitiateAuth</code> calls.</p>
      */
     inline void SetAnalyticsMetadata(const AnalyticsMetadataType& value) { m_analyticsMetadataHasBeenSet = true; m_analyticsMetadata = value; }
 
     /**
-     * <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+     * <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for
      * <code>InitiateAuth</code> calls.</p>
      */
     inline void SetAnalyticsMetadata(AnalyticsMetadataType&& value) { m_analyticsMetadataHasBeenSet = true; m_analyticsMetadata = std::move(value); }
 
     /**
-     * <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+     * <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for
      * <code>InitiateAuth</code> calls.</p>
      */
     inline InitiateAuthRequest& WithAnalyticsMetadata(const AnalyticsMetadataType& value) { SetAnalyticsMetadata(value); return *this;}
 
     /**
-     * <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+     * <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for
      * <code>InitiateAuth</code> calls.</p>
      */
     inline InitiateAuthRequest& WithAnalyticsMetadata(AnalyticsMetadataType&& value) { SetAnalyticsMetadata(std::move(value)); return *this;}

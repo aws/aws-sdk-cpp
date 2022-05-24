@@ -41,55 +41,67 @@ namespace Model
 
     /**
      * <p>Specifies the fallback behavior (whether the message is allowed or denied) if
-     * the handler does not return a valid response, encounters an error or times out.
-     * If allowed, the message is delivered with returned content to all users
-     * connected to the room. If denied, the message is not delivered to any user.
-     * Default: <code>ALLOW</code>.</p>
+     * the handler does not return a valid response, encounters an error, or times out.
+     * (For the timeout period, see <a
+     * href="https://docs.aws.amazon.com/ivs/latest/userguide/service-quotas.html">
+     * Service Quotas</a>.) If allowed, the message is delivered with returned content
+     * to all users connected to the room. If denied, the message is not delivered to
+     * any user. Default: <code>ALLOW</code>.</p>
      */
     inline const FallbackResult& GetFallbackResult() const{ return m_fallbackResult; }
 
     /**
      * <p>Specifies the fallback behavior (whether the message is allowed or denied) if
-     * the handler does not return a valid response, encounters an error or times out.
-     * If allowed, the message is delivered with returned content to all users
-     * connected to the room. If denied, the message is not delivered to any user.
-     * Default: <code>ALLOW</code>.</p>
+     * the handler does not return a valid response, encounters an error, or times out.
+     * (For the timeout period, see <a
+     * href="https://docs.aws.amazon.com/ivs/latest/userguide/service-quotas.html">
+     * Service Quotas</a>.) If allowed, the message is delivered with returned content
+     * to all users connected to the room. If denied, the message is not delivered to
+     * any user. Default: <code>ALLOW</code>.</p>
      */
     inline bool FallbackResultHasBeenSet() const { return m_fallbackResultHasBeenSet; }
 
     /**
      * <p>Specifies the fallback behavior (whether the message is allowed or denied) if
-     * the handler does not return a valid response, encounters an error or times out.
-     * If allowed, the message is delivered with returned content to all users
-     * connected to the room. If denied, the message is not delivered to any user.
-     * Default: <code>ALLOW</code>.</p>
+     * the handler does not return a valid response, encounters an error, or times out.
+     * (For the timeout period, see <a
+     * href="https://docs.aws.amazon.com/ivs/latest/userguide/service-quotas.html">
+     * Service Quotas</a>.) If allowed, the message is delivered with returned content
+     * to all users connected to the room. If denied, the message is not delivered to
+     * any user. Default: <code>ALLOW</code>.</p>
      */
     inline void SetFallbackResult(const FallbackResult& value) { m_fallbackResultHasBeenSet = true; m_fallbackResult = value; }
 
     /**
      * <p>Specifies the fallback behavior (whether the message is allowed or denied) if
-     * the handler does not return a valid response, encounters an error or times out.
-     * If allowed, the message is delivered with returned content to all users
-     * connected to the room. If denied, the message is not delivered to any user.
-     * Default: <code>ALLOW</code>.</p>
+     * the handler does not return a valid response, encounters an error, or times out.
+     * (For the timeout period, see <a
+     * href="https://docs.aws.amazon.com/ivs/latest/userguide/service-quotas.html">
+     * Service Quotas</a>.) If allowed, the message is delivered with returned content
+     * to all users connected to the room. If denied, the message is not delivered to
+     * any user. Default: <code>ALLOW</code>.</p>
      */
     inline void SetFallbackResult(FallbackResult&& value) { m_fallbackResultHasBeenSet = true; m_fallbackResult = std::move(value); }
 
     /**
      * <p>Specifies the fallback behavior (whether the message is allowed or denied) if
-     * the handler does not return a valid response, encounters an error or times out.
-     * If allowed, the message is delivered with returned content to all users
-     * connected to the room. If denied, the message is not delivered to any user.
-     * Default: <code>ALLOW</code>.</p>
+     * the handler does not return a valid response, encounters an error, or times out.
+     * (For the timeout period, see <a
+     * href="https://docs.aws.amazon.com/ivs/latest/userguide/service-quotas.html">
+     * Service Quotas</a>.) If allowed, the message is delivered with returned content
+     * to all users connected to the room. If denied, the message is not delivered to
+     * any user. Default: <code>ALLOW</code>.</p>
      */
     inline MessageReviewHandler& WithFallbackResult(const FallbackResult& value) { SetFallbackResult(value); return *this;}
 
     /**
      * <p>Specifies the fallback behavior (whether the message is allowed or denied) if
-     * the handler does not return a valid response, encounters an error or times out.
-     * If allowed, the message is delivered with returned content to all users
-     * connected to the room. If denied, the message is not delivered to any user.
-     * Default: <code>ALLOW</code>.</p>
+     * the handler does not return a valid response, encounters an error, or times out.
+     * (For the timeout period, see <a
+     * href="https://docs.aws.amazon.com/ivs/latest/userguide/service-quotas.html">
+     * Service Quotas</a>.) If allowed, the message is delivered with returned content
+     * to all users connected to the room. If denied, the message is not delivered to
+     * any user. Default: <code>ALLOW</code>.</p>
      */
     inline MessageReviewHandler& WithFallbackResult(FallbackResult&& value) { SetFallbackResult(std::move(value)); return *this;}
 

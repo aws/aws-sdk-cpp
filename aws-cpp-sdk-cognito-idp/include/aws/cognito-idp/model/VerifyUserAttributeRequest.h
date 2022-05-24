@@ -39,42 +39,50 @@ namespace Model
 
 
     /**
-     * <p>The access token of the request to verify user attributes.</p>
+     * <p>A valid access token that Amazon Cognito issued to the user whose user
+     * attributes you want to verify.</p>
      */
     inline const Aws::String& GetAccessToken() const{ return m_accessToken; }
 
     /**
-     * <p>The access token of the request to verify user attributes.</p>
+     * <p>A valid access token that Amazon Cognito issued to the user whose user
+     * attributes you want to verify.</p>
      */
     inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }
 
     /**
-     * <p>The access token of the request to verify user attributes.</p>
+     * <p>A valid access token that Amazon Cognito issued to the user whose user
+     * attributes you want to verify.</p>
      */
     inline void SetAccessToken(const Aws::String& value) { m_accessTokenHasBeenSet = true; m_accessToken = value; }
 
     /**
-     * <p>The access token of the request to verify user attributes.</p>
+     * <p>A valid access token that Amazon Cognito issued to the user whose user
+     * attributes you want to verify.</p>
      */
     inline void SetAccessToken(Aws::String&& value) { m_accessTokenHasBeenSet = true; m_accessToken = std::move(value); }
 
     /**
-     * <p>The access token of the request to verify user attributes.</p>
+     * <p>A valid access token that Amazon Cognito issued to the user whose user
+     * attributes you want to verify.</p>
      */
     inline void SetAccessToken(const char* value) { m_accessTokenHasBeenSet = true; m_accessToken.assign(value); }
 
     /**
-     * <p>The access token of the request to verify user attributes.</p>
+     * <p>A valid access token that Amazon Cognito issued to the user whose user
+     * attributes you want to verify.</p>
      */
     inline VerifyUserAttributeRequest& WithAccessToken(const Aws::String& value) { SetAccessToken(value); return *this;}
 
     /**
-     * <p>The access token of the request to verify user attributes.</p>
+     * <p>A valid access token that Amazon Cognito issued to the user whose user
+     * attributes you want to verify.</p>
      */
     inline VerifyUserAttributeRequest& WithAccessToken(Aws::String&& value) { SetAccessToken(std::move(value)); return *this;}
 
     /**
-     * <p>The access token of the request to verify user attributes.</p>
+     * <p>A valid access token that Amazon Cognito issued to the user whose user
+     * attributes you want to verify.</p>
      */
     inline VerifyUserAttributeRequest& WithAccessToken(const char* value) { SetAccessToken(value); return *this;}
 

@@ -671,38 +671,56 @@ namespace Model
 
 
     /**
-     * Applies to CMAF outputs. Use this setting to specify whether the service inserts
-     * the KLV metadata from the input in this output.
+     * To include key-length-value metadata in this output: Set KLV metadata insertion
+     * to Passthrough. MediaConvert reads KLV metadata present in your input and writes
+     * each instance to a separate event message box in the output, according to MISB
+     * ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to None or
+     * leave blank.
      */
     inline const CmfcKlvMetadata& GetKlvMetadata() const{ return m_klvMetadata; }
 
     /**
-     * Applies to CMAF outputs. Use this setting to specify whether the service inserts
-     * the KLV metadata from the input in this output.
+     * To include key-length-value metadata in this output: Set KLV metadata insertion
+     * to Passthrough. MediaConvert reads KLV metadata present in your input and writes
+     * each instance to a separate event message box in the output, according to MISB
+     * ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to None or
+     * leave blank.
      */
     inline bool KlvMetadataHasBeenSet() const { return m_klvMetadataHasBeenSet; }
 
     /**
-     * Applies to CMAF outputs. Use this setting to specify whether the service inserts
-     * the KLV metadata from the input in this output.
+     * To include key-length-value metadata in this output: Set KLV metadata insertion
+     * to Passthrough. MediaConvert reads KLV metadata present in your input and writes
+     * each instance to a separate event message box in the output, according to MISB
+     * ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to None or
+     * leave blank.
      */
     inline void SetKlvMetadata(const CmfcKlvMetadata& value) { m_klvMetadataHasBeenSet = true; m_klvMetadata = value; }
 
     /**
-     * Applies to CMAF outputs. Use this setting to specify whether the service inserts
-     * the KLV metadata from the input in this output.
+     * To include key-length-value metadata in this output: Set KLV metadata insertion
+     * to Passthrough. MediaConvert reads KLV metadata present in your input and writes
+     * each instance to a separate event message box in the output, according to MISB
+     * ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to None or
+     * leave blank.
      */
     inline void SetKlvMetadata(CmfcKlvMetadata&& value) { m_klvMetadataHasBeenSet = true; m_klvMetadata = std::move(value); }
 
     /**
-     * Applies to CMAF outputs. Use this setting to specify whether the service inserts
-     * the KLV metadata from the input in this output.
+     * To include key-length-value metadata in this output: Set KLV metadata insertion
+     * to Passthrough. MediaConvert reads KLV metadata present in your input and writes
+     * each instance to a separate event message box in the output, according to MISB
+     * ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to None or
+     * leave blank.
      */
     inline CmfcSettings& WithKlvMetadata(const CmfcKlvMetadata& value) { SetKlvMetadata(value); return *this;}
 
     /**
-     * Applies to CMAF outputs. Use this setting to specify whether the service inserts
-     * the KLV metadata from the input in this output.
+     * To include key-length-value metadata in this output: Set KLV metadata insertion
+     * to Passthrough. MediaConvert reads KLV metadata present in your input and writes
+     * each instance to a separate event message box in the output, according to MISB
+     * ST1910.1. To exclude this KLV metadata: Set KLV metadata insertion to None or
+     * leave blank.
      */
     inline CmfcSettings& WithKlvMetadata(CmfcKlvMetadata&& value) { SetKlvMetadata(std::move(value)); return *this;}
 

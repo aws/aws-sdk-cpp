@@ -313,37 +313,37 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+     * <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for
      * <code>SignUp</code> calls.</p>
      */
     inline const AnalyticsMetadataType& GetAnalyticsMetadata() const{ return m_analyticsMetadata; }
 
     /**
-     * <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+     * <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for
      * <code>SignUp</code> calls.</p>
      */
     inline bool AnalyticsMetadataHasBeenSet() const { return m_analyticsMetadataHasBeenSet; }
 
     /**
-     * <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+     * <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for
      * <code>SignUp</code> calls.</p>
      */
     inline void SetAnalyticsMetadata(const AnalyticsMetadataType& value) { m_analyticsMetadataHasBeenSet = true; m_analyticsMetadata = value; }
 
     /**
-     * <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+     * <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for
      * <code>SignUp</code> calls.</p>
      */
     inline void SetAnalyticsMetadata(AnalyticsMetadataType&& value) { m_analyticsMetadataHasBeenSet = true; m_analyticsMetadata = std::move(value); }
 
     /**
-     * <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+     * <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for
      * <code>SignUp</code> calls.</p>
      */
     inline SignUpRequest& WithAnalyticsMetadata(const AnalyticsMetadataType& value) { SetAnalyticsMetadata(value); return *this;}
 
     /**
-     * <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+     * <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for
      * <code>SignUp</code> calls.</p>
      */
     inline SignUpRequest& WithAnalyticsMetadata(AnalyticsMetadataType&& value) { SetAnalyticsMetadata(std::move(value)); return *this;}
