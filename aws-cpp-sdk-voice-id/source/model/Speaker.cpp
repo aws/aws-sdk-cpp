@@ -23,6 +23,7 @@ Speaker::Speaker() :
     m_customerSpeakerIdHasBeenSet(false),
     m_domainIdHasBeenSet(false),
     m_generatedSpeakerIdHasBeenSet(false),
+    m_lastAccessedAtHasBeenSet(false),
     m_status(SpeakerStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_updatedAtHasBeenSet(false)
@@ -34,6 +35,7 @@ Speaker::Speaker(JsonView jsonValue) :
     m_customerSpeakerIdHasBeenSet(false),
     m_domainIdHasBeenSet(false),
     m_generatedSpeakerIdHasBeenSet(false),
+    m_lastAccessedAtHasBeenSet(false),
     m_status(SpeakerStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_updatedAtHasBeenSet(false)
@@ -69,6 +71,13 @@ Speaker& Speaker::operator =(JsonView jsonValue)
     m_generatedSpeakerId = jsonValue.GetString("GeneratedSpeakerId");
 
     m_generatedSpeakerIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LastAccessedAt"))
+  {
+    m_lastAccessedAt = jsonValue.GetDouble("LastAccessedAt");
+
+    m_lastAccessedAtHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Status"))
@@ -113,6 +122,11 @@ JsonValue Speaker::Jsonize() const
   {
    payload.WithString("GeneratedSpeakerId", m_generatedSpeakerId);
 
+  }
+
+  if(m_lastAccessedAtHasBeenSet)
+  {
+   payload.WithDouble("LastAccessedAt", m_lastAccessedAt.SecondsWithMSPrecision());
   }
 
   if(m_statusHasBeenSet)

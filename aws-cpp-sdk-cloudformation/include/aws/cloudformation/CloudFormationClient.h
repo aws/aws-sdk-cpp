@@ -721,8 +721,8 @@ namespace Model
         virtual void DeleteStackInstancesAsync(const Model::DeleteStackInstancesRequest& request, const DeleteStackInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a stack set. Before you can delete a stack set, all of its member
-         * stack instances must be deleted. For more information about how to do this, see
+         * <p>Deletes a stack set. Before you can delete a stack set, all its member stack
+         * instances must be deleted. For more information about how to complete this, see
          * <a>DeleteStackInstances</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteStackSet">AWS
          * API Reference</a></p>
@@ -835,7 +835,7 @@ namespace Model
          * <p>Returns information about a CloudFormation extension publisher.</p> <p>If you
          * don't supply a <code>PublisherId</code>, and you have registered as an extension
          * publisher, <code>DescribePublisher</code> returns information about your own
-         * publisher account.</p> <p>For more information on registering as a publisher,
+         * publisher account.</p> <p>For more information about registering as a publisher,
          * see:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterPublisher.html">RegisterPublisher</a>
          * </p> </li> <li> <p> <a
@@ -863,7 +863,7 @@ namespace Model
          * has <i>drifted</i>, from it's expected configuration, as defined in the stack
          * template and any values specified as template parameters. A stack is considered
          * to have drifted if one or more of its resources have drifted. For more
-         * information on stack and resource drift, see <a
+         * information about stack and resource drift, see <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
          * Unregulated Configuration Changes to Stacks and Resources</a>.</p> <p>Use
          * <a>DetectStackDrift</a> to initiate a stack drift detection operation.
@@ -1203,8 +1203,8 @@ namespace Model
          * checked of each instance.</p> </li> <li> <p>Use <code>
          * <a>DescribeStackInstance</a> </code> to return detailed information about a
          * specific stack instance, including its drift status and last drift time
-         * checked.</p> </li> </ul> <p>For more information on performing a drift detection
-         * operation on a stack set, see <a
+         * checked.</p> </li> </ul> <p>For more information about performing a drift
+         * detection operation on a stack set, see <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting
          * unmanaged changes in stack sets</a>.</p> <p>You can only run a single drift
          * detection operation on a given stack set at one time.</p> <p>To stop a drift
@@ -1605,7 +1605,7 @@ namespace Model
         /**
          * <p>Publishes the specified extension to the CloudFormation registry as a public
          * extension in this region. Public extensions are available for use by all
-         * CloudFormation users. For more information on publishing extensions, see <a
+         * CloudFormation users. For more information about publishing extensions, see <a
          * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Publishing
          * extensions to make them available for public use</a> in the <i>CloudFormation
          * CLI User Guide</i>.</p> <p>To publish an extension, you must be registered as a
@@ -1651,8 +1651,8 @@ namespace Model
          * <p>Registers your account as a publisher of public extensions in the
          * CloudFormation registry. Public extensions are available for use by all
          * CloudFormation users. This publisher ID applies to your account in all Amazon
-         * Web Services Regions.</p> <p>For information on requirements for registering as
-         * a public extension publisher, see <a
+         * Web Services Regions.</p> <p>For information about requirements for registering
+         * as a public extension publisher, see <a
          * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html#publish-extension-prereqs">Registering
          * your account to publish CloudFormation extensions</a> in the <i>CloudFormation
          * CLI User Guide</i>.</p> <p/><p><h3>See Also:</h3>   <a
@@ -1677,7 +1677,7 @@ namespace Model
          * Web Services account, and includes:</p> <ul> <li> <p>Validating the extension
          * schema.</p> </li> <li> <p>Determining which handlers, if any, have been
          * specified for the extension.</p> </li> <li> <p>Making the extension available
-         * for use in your account.</p> </li> </ul> <p>For more information on how to
+         * for use in your account.</p> </li> </ul> <p>For more information about how to
          * develop extensions and ready them for registration, see <a
          * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-types.html">Creating
          * Resource Providers</a> in the <i>CloudFormation CLI User Guide</i>.</p> <p>You

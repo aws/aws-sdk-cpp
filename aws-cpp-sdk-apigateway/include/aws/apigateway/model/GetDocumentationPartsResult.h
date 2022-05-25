@@ -27,10 +27,8 @@ namespace APIGateway
 namespace Model
 {
   /**
-   * <p>The collection of documentation parts of an API.</p> <div class="remarks"/>
-   * <div class="seeAlso"> <a
-   * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-documenting-api.html">Documenting
-   * an API</a>, <a>DocumentationPart</a> </div><p><h3>See Also:</h3>   <a
+   * <p>The collection of documentation parts of an API.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DocumentationParts">AWS
    * API Reference</a></p>
    */

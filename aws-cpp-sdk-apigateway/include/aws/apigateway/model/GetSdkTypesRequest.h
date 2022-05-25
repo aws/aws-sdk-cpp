@@ -21,7 +21,7 @@ namespace Model
 {
 
   /**
-   * <p>Get the <a>SdkTypes</a> collection.</p><p><h3>See Also:</h3>   <a
+   * <p>Get the SdkTypes collection.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetSdkTypesRequest">AWS
    * API Reference</a></p>
    */

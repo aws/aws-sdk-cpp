@@ -174,29 +174,25 @@ namespace Model
 
     /**
      * <p>Specifies whether to block resource-based policies that allow broad access to
-     * the secret. By default, Secrets Manager blocks policies that allow broad access,
-     * for example those that use a wildcard for the principal.</p>
+     * the secret, for example those that use a wildcard for the principal.</p>
      */
     inline bool GetBlockPublicPolicy() const{ return m_blockPublicPolicy; }
 
     /**
      * <p>Specifies whether to block resource-based policies that allow broad access to
-     * the secret. By default, Secrets Manager blocks policies that allow broad access,
-     * for example those that use a wildcard for the principal.</p>
+     * the secret, for example those that use a wildcard for the principal.</p>
      */
     inline bool BlockPublicPolicyHasBeenSet() const { return m_blockPublicPolicyHasBeenSet; }
 
     /**
      * <p>Specifies whether to block resource-based policies that allow broad access to
-     * the secret. By default, Secrets Manager blocks policies that allow broad access,
-     * for example those that use a wildcard for the principal.</p>
+     * the secret, for example those that use a wildcard for the principal.</p>
      */
     inline void SetBlockPublicPolicy(bool value) { m_blockPublicPolicyHasBeenSet = true; m_blockPublicPolicy = value; }
 
     /**
      * <p>Specifies whether to block resource-based policies that allow broad access to
-     * the secret. By default, Secrets Manager blocks policies that allow broad access,
-     * for example those that use a wildcard for the principal.</p>
+     * the secret, for example those that use a wildcard for the principal.</p>
      */
     inline PutResourcePolicyRequest& WithBlockPublicPolicy(bool value) { SetBlockPublicPolicy(value); return *this;}
 

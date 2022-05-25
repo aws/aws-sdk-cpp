@@ -34,43 +34,43 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Number (ARN) assigned to the public extension upon
+     * <p>The Amazon Resource Name (ARN) assigned to the public extension upon
      * publication.</p>
      */
     inline const Aws::String& GetPublicTypeArn() const{ return m_publicTypeArn; }
 
     /**
-     * <p>The Amazon Resource Number (ARN) assigned to the public extension upon
+     * <p>The Amazon Resource Name (ARN) assigned to the public extension upon
      * publication.</p>
      */
     inline void SetPublicTypeArn(const Aws::String& value) { m_publicTypeArn = value; }
 
     /**
-     * <p>The Amazon Resource Number (ARN) assigned to the public extension upon
+     * <p>The Amazon Resource Name (ARN) assigned to the public extension upon
      * publication.</p>
      */
     inline void SetPublicTypeArn(Aws::String&& value) { m_publicTypeArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Number (ARN) assigned to the public extension upon
+     * <p>The Amazon Resource Name (ARN) assigned to the public extension upon
      * publication.</p>
      */
     inline void SetPublicTypeArn(const char* value) { m_publicTypeArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Number (ARN) assigned to the public extension upon
+     * <p>The Amazon Resource Name (ARN) assigned to the public extension upon
      * publication.</p>
      */
     inline PublishTypeResult& WithPublicTypeArn(const Aws::String& value) { SetPublicTypeArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Number (ARN) assigned to the public extension upon
+     * <p>The Amazon Resource Name (ARN) assigned to the public extension upon
      * publication.</p>
      */
     inline PublishTypeResult& WithPublicTypeArn(Aws::String&& value) { SetPublicTypeArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Number (ARN) assigned to the public extension upon
+     * <p>The Amazon Resource Name (ARN) assigned to the public extension upon
      * publication.</p>
      */
     inline PublishTypeResult& WithPublicTypeArn(const char* value) { SetPublicTypeArn(value); return *this;}

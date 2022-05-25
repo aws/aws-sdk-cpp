@@ -11,6 +11,7 @@
 #include <aws/fsx/model/DriveCacheType.h>
 #include <aws/fsx/model/DataCompressionType.h>
 #include <aws/fsx/model/LustreLogConfiguration.h>
+#include <aws/fsx/model/LustreRootSquashConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -45,57 +46,57 @@ namespace Model
 
     /**
      * <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in
-     * the UTC time zone. Here, d is the weekday number, from 1 through 7, beginning
-     * with Monday and ending with Sunday.</p>
+     * the UTC time zone. Here, <code>d</code> is the weekday number, from 1 through 7,
+     * beginning with Monday and ending with Sunday.</p>
      */
     inline const Aws::String& GetWeeklyMaintenanceStartTime() const{ return m_weeklyMaintenanceStartTime; }
 
     /**
      * <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in
-     * the UTC time zone. Here, d is the weekday number, from 1 through 7, beginning
-     * with Monday and ending with Sunday.</p>
+     * the UTC time zone. Here, <code>d</code> is the weekday number, from 1 through 7,
+     * beginning with Monday and ending with Sunday.</p>
      */
     inline bool WeeklyMaintenanceStartTimeHasBeenSet() const { return m_weeklyMaintenanceStartTimeHasBeenSet; }
 
     /**
      * <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in
-     * the UTC time zone. Here, d is the weekday number, from 1 through 7, beginning
-     * with Monday and ending with Sunday.</p>
+     * the UTC time zone. Here, <code>d</code> is the weekday number, from 1 through 7,
+     * beginning with Monday and ending with Sunday.</p>
      */
     inline void SetWeeklyMaintenanceStartTime(const Aws::String& value) { m_weeklyMaintenanceStartTimeHasBeenSet = true; m_weeklyMaintenanceStartTime = value; }
 
     /**
      * <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in
-     * the UTC time zone. Here, d is the weekday number, from 1 through 7, beginning
-     * with Monday and ending with Sunday.</p>
+     * the UTC time zone. Here, <code>d</code> is the weekday number, from 1 through 7,
+     * beginning with Monday and ending with Sunday.</p>
      */
     inline void SetWeeklyMaintenanceStartTime(Aws::String&& value) { m_weeklyMaintenanceStartTimeHasBeenSet = true; m_weeklyMaintenanceStartTime = std::move(value); }
 
     /**
      * <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in
-     * the UTC time zone. Here, d is the weekday number, from 1 through 7, beginning
-     * with Monday and ending with Sunday.</p>
+     * the UTC time zone. Here, <code>d</code> is the weekday number, from 1 through 7,
+     * beginning with Monday and ending with Sunday.</p>
      */
     inline void SetWeeklyMaintenanceStartTime(const char* value) { m_weeklyMaintenanceStartTimeHasBeenSet = true; m_weeklyMaintenanceStartTime.assign(value); }
 
     /**
      * <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in
-     * the UTC time zone. Here, d is the weekday number, from 1 through 7, beginning
-     * with Monday and ending with Sunday.</p>
+     * the UTC time zone. Here, <code>d</code> is the weekday number, from 1 through 7,
+     * beginning with Monday and ending with Sunday.</p>
      */
     inline LustreFileSystemConfiguration& WithWeeklyMaintenanceStartTime(const Aws::String& value) { SetWeeklyMaintenanceStartTime(value); return *this;}
 
     /**
      * <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in
-     * the UTC time zone. Here, d is the weekday number, from 1 through 7, beginning
-     * with Monday and ending with Sunday.</p>
+     * the UTC time zone. Here, <code>d</code> is the weekday number, from 1 through 7,
+     * beginning with Monday and ending with Sunday.</p>
      */
     inline LustreFileSystemConfiguration& WithWeeklyMaintenanceStartTime(Aws::String&& value) { SetWeeklyMaintenanceStartTime(std::move(value)); return *this;}
 
     /**
      * <p>The preferred start time to perform weekly maintenance, formatted d:HH:MM in
-     * the UTC time zone. Here, d is the weekday number, from 1 through 7, beginning
-     * with Monday and ending with Sunday.</p>
+     * the UTC time zone. Here, <code>d</code> is the weekday number, from 1 through 7,
+     * beginning with Monday and ending with Sunday.</p>
      */
     inline LustreFileSystemConfiguration& WithWeeklyMaintenanceStartTime(const char* value) { SetWeeklyMaintenanceStartTime(value); return *this;}
 
@@ -609,6 +610,49 @@ namespace Model
      */
     inline LustreFileSystemConfiguration& WithLogConfiguration(LustreLogConfiguration&& value) { SetLogConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Lustre root squash configuration for an Amazon FSx for Lustre file
+     * system. When enabled, root squash restricts root-level access from clients that
+     * try to access your file system as a root user.</p>
+     */
+    inline const LustreRootSquashConfiguration& GetRootSquashConfiguration() const{ return m_rootSquashConfiguration; }
+
+    /**
+     * <p>The Lustre root squash configuration for an Amazon FSx for Lustre file
+     * system. When enabled, root squash restricts root-level access from clients that
+     * try to access your file system as a root user.</p>
+     */
+    inline bool RootSquashConfigurationHasBeenSet() const { return m_rootSquashConfigurationHasBeenSet; }
+
+    /**
+     * <p>The Lustre root squash configuration for an Amazon FSx for Lustre file
+     * system. When enabled, root squash restricts root-level access from clients that
+     * try to access your file system as a root user.</p>
+     */
+    inline void SetRootSquashConfiguration(const LustreRootSquashConfiguration& value) { m_rootSquashConfigurationHasBeenSet = true; m_rootSquashConfiguration = value; }
+
+    /**
+     * <p>The Lustre root squash configuration for an Amazon FSx for Lustre file
+     * system. When enabled, root squash restricts root-level access from clients that
+     * try to access your file system as a root user.</p>
+     */
+    inline void SetRootSquashConfiguration(LustreRootSquashConfiguration&& value) { m_rootSquashConfigurationHasBeenSet = true; m_rootSquashConfiguration = std::move(value); }
+
+    /**
+     * <p>The Lustre root squash configuration for an Amazon FSx for Lustre file
+     * system. When enabled, root squash restricts root-level access from clients that
+     * try to access your file system as a root user.</p>
+     */
+    inline LustreFileSystemConfiguration& WithRootSquashConfiguration(const LustreRootSquashConfiguration& value) { SetRootSquashConfiguration(value); return *this;}
+
+    /**
+     * <p>The Lustre root squash configuration for an Amazon FSx for Lustre file
+     * system. When enabled, root squash restricts root-level access from clients that
+     * try to access your file system as a root user.</p>
+     */
+    inline LustreFileSystemConfiguration& WithRootSquashConfiguration(LustreRootSquashConfiguration&& value) { SetRootSquashConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_weeklyMaintenanceStartTime;
@@ -643,6 +687,9 @@ namespace Model
 
     LustreLogConfiguration m_logConfiguration;
     bool m_logConfigurationHasBeenSet;
+
+    LustreRootSquashConfiguration m_rootSquashConfiguration;
+    bool m_rootSquashConfigurationHasBeenSet;
   };
 
 } // namespace Model

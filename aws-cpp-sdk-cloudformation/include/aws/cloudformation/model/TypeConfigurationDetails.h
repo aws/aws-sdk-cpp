@@ -373,25 +373,25 @@ namespace Model
 
 
     /**
-     * <p>Whether or not this configuration data is the default configuration for the
+     * <p>Whether this configuration data is the default configuration for the
      * extension.</p>
      */
     inline bool GetIsDefaultConfiguration() const{ return m_isDefaultConfiguration; }
 
     /**
-     * <p>Whether or not this configuration data is the default configuration for the
+     * <p>Whether this configuration data is the default configuration for the
      * extension.</p>
      */
     inline bool IsDefaultConfigurationHasBeenSet() const { return m_isDefaultConfigurationHasBeenSet; }
 
     /**
-     * <p>Whether or not this configuration data is the default configuration for the
+     * <p>Whether this configuration data is the default configuration for the
      * extension.</p>
      */
     inline void SetIsDefaultConfiguration(bool value) { m_isDefaultConfigurationHasBeenSet = true; m_isDefaultConfiguration = value; }
 
     /**
-     * <p>Whether or not this configuration data is the default configuration for the
+     * <p>Whether this configuration data is the default configuration for the
      * extension.</p>
      */
     inline TypeConfigurationDetails& WithIsDefaultConfiguration(bool value) { SetIsDefaultConfiguration(value); return *this;}

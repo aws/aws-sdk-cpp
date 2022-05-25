@@ -55,7 +55,7 @@ namespace Model
      * that Support Drift Detection</a>. If you performed an
      * <a>ContinueUpdateRollback</a> operation on a stack, any resources included in
      * <code>ResourcesToSkip</code> will also have a status of
-     * <code>NOT_CHECKED</code>. For more information on skipping resources during
+     * <code>NOT_CHECKED</code>. For more information about skipping resources during
      * rollback operations, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html">Continue
      * Rolling Back an Update</a> in the CloudFormation User Guide.</p> </li> <li> <p>
@@ -77,7 +77,7 @@ namespace Model
      * that Support Drift Detection</a>. If you performed an
      * <a>ContinueUpdateRollback</a> operation on a stack, any resources included in
      * <code>ResourcesToSkip</code> will also have a status of
-     * <code>NOT_CHECKED</code>. For more information on skipping resources during
+     * <code>NOT_CHECKED</code>. For more information about skipping resources during
      * rollback operations, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html">Continue
      * Rolling Back an Update</a> in the CloudFormation User Guide.</p> </li> <li> <p>
@@ -99,7 +99,7 @@ namespace Model
      * that Support Drift Detection</a>. If you performed an
      * <a>ContinueUpdateRollback</a> operation on a stack, any resources included in
      * <code>ResourcesToSkip</code> will also have a status of
-     * <code>NOT_CHECKED</code>. For more information on skipping resources during
+     * <code>NOT_CHECKED</code>. For more information about skipping resources during
      * rollback operations, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html">Continue
      * Rolling Back an Update</a> in the CloudFormation User Guide.</p> </li> <li> <p>
@@ -121,7 +121,7 @@ namespace Model
      * that Support Drift Detection</a>. If you performed an
      * <a>ContinueUpdateRollback</a> operation on a stack, any resources included in
      * <code>ResourcesToSkip</code> will also have a status of
-     * <code>NOT_CHECKED</code>. For more information on skipping resources during
+     * <code>NOT_CHECKED</code>. For more information about skipping resources during
      * rollback operations, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html">Continue
      * Rolling Back an Update</a> in the CloudFormation User Guide.</p> </li> <li> <p>
@@ -143,7 +143,7 @@ namespace Model
      * that Support Drift Detection</a>. If you performed an
      * <a>ContinueUpdateRollback</a> operation on a stack, any resources included in
      * <code>ResourcesToSkip</code> will also have a status of
-     * <code>NOT_CHECKED</code>. For more information on skipping resources during
+     * <code>NOT_CHECKED</code>. For more information about skipping resources during
      * rollback operations, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html">Continue
      * Rolling Back an Update</a> in the CloudFormation User Guide.</p> </li> <li> <p>
@@ -165,7 +165,7 @@ namespace Model
      * that Support Drift Detection</a>. If you performed an
      * <a>ContinueUpdateRollback</a> operation on a stack, any resources included in
      * <code>ResourcesToSkip</code> will also have a status of
-     * <code>NOT_CHECKED</code>. For more information on skipping resources during
+     * <code>NOT_CHECKED</code>. For more information about skipping resources during
      * rollback operations, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html">Continue
      * Rolling Back an Update</a> in the CloudFormation User Guide.</p> </li> <li> <p>

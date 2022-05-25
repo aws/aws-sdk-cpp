@@ -8,6 +8,7 @@
 #include <aws/sagemaker/model/AutoMLJobCompletionCriteria.h>
 #include <aws/sagemaker/model/AutoMLSecurityConfig.h>
 #include <aws/sagemaker/model/AutoMLDataSplitConfig.h>
+#include <aws/sagemaker/model/AutoMLCandidateGenerationConfig.h>
 #include <utility>
 
 namespace Aws
@@ -144,6 +145,43 @@ namespace Model
      */
     inline AutoMLJobConfig& WithDataSplitConfig(AutoMLDataSplitConfig&& value) { SetDataSplitConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The configuration for generating a candidate for an AutoML job (optional).
+     * </p>
+     */
+    inline const AutoMLCandidateGenerationConfig& GetCandidateGenerationConfig() const{ return m_candidateGenerationConfig; }
+
+    /**
+     * <p>The configuration for generating a candidate for an AutoML job (optional).
+     * </p>
+     */
+    inline bool CandidateGenerationConfigHasBeenSet() const { return m_candidateGenerationConfigHasBeenSet; }
+
+    /**
+     * <p>The configuration for generating a candidate for an AutoML job (optional).
+     * </p>
+     */
+    inline void SetCandidateGenerationConfig(const AutoMLCandidateGenerationConfig& value) { m_candidateGenerationConfigHasBeenSet = true; m_candidateGenerationConfig = value; }
+
+    /**
+     * <p>The configuration for generating a candidate for an AutoML job (optional).
+     * </p>
+     */
+    inline void SetCandidateGenerationConfig(AutoMLCandidateGenerationConfig&& value) { m_candidateGenerationConfigHasBeenSet = true; m_candidateGenerationConfig = std::move(value); }
+
+    /**
+     * <p>The configuration for generating a candidate for an AutoML job (optional).
+     * </p>
+     */
+    inline AutoMLJobConfig& WithCandidateGenerationConfig(const AutoMLCandidateGenerationConfig& value) { SetCandidateGenerationConfig(value); return *this;}
+
+    /**
+     * <p>The configuration for generating a candidate for an AutoML job (optional).
+     * </p>
+     */
+    inline AutoMLJobConfig& WithCandidateGenerationConfig(AutoMLCandidateGenerationConfig&& value) { SetCandidateGenerationConfig(std::move(value)); return *this;}
+
   private:
 
     AutoMLJobCompletionCriteria m_completionCriteria;
@@ -154,6 +192,9 @@ namespace Model
 
     AutoMLDataSplitConfig m_dataSplitConfig;
     bool m_dataSplitConfigHasBeenSet;
+
+    AutoMLCandidateGenerationConfig m_candidateGenerationConfig;
+    bool m_candidateGenerationConfigHasBeenSet;
   };
 
 } // namespace Model

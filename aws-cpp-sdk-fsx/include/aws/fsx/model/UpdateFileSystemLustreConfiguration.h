@@ -9,6 +9,7 @@
 #include <aws/fsx/model/AutoImportPolicyType.h>
 #include <aws/fsx/model/DataCompressionType.h>
 #include <aws/fsx/model/LustreLogCreateConfiguration.h>
+#include <aws/fsx/model/LustreRootSquashConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -414,6 +415,49 @@ namespace Model
      */
     inline UpdateFileSystemLustreConfiguration& WithLogConfiguration(LustreLogCreateConfiguration&& value) { SetLogConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Lustre root squash configuration used when updating an Amazon FSx for
+     * Lustre file system. When enabled, root squash restricts root-level access from
+     * clients that try to access your file system as a root user.</p>
+     */
+    inline const LustreRootSquashConfiguration& GetRootSquashConfiguration() const{ return m_rootSquashConfiguration; }
+
+    /**
+     * <p>The Lustre root squash configuration used when updating an Amazon FSx for
+     * Lustre file system. When enabled, root squash restricts root-level access from
+     * clients that try to access your file system as a root user.</p>
+     */
+    inline bool RootSquashConfigurationHasBeenSet() const { return m_rootSquashConfigurationHasBeenSet; }
+
+    /**
+     * <p>The Lustre root squash configuration used when updating an Amazon FSx for
+     * Lustre file system. When enabled, root squash restricts root-level access from
+     * clients that try to access your file system as a root user.</p>
+     */
+    inline void SetRootSquashConfiguration(const LustreRootSquashConfiguration& value) { m_rootSquashConfigurationHasBeenSet = true; m_rootSquashConfiguration = value; }
+
+    /**
+     * <p>The Lustre root squash configuration used when updating an Amazon FSx for
+     * Lustre file system. When enabled, root squash restricts root-level access from
+     * clients that try to access your file system as a root user.</p>
+     */
+    inline void SetRootSquashConfiguration(LustreRootSquashConfiguration&& value) { m_rootSquashConfigurationHasBeenSet = true; m_rootSquashConfiguration = std::move(value); }
+
+    /**
+     * <p>The Lustre root squash configuration used when updating an Amazon FSx for
+     * Lustre file system. When enabled, root squash restricts root-level access from
+     * clients that try to access your file system as a root user.</p>
+     */
+    inline UpdateFileSystemLustreConfiguration& WithRootSquashConfiguration(const LustreRootSquashConfiguration& value) { SetRootSquashConfiguration(value); return *this;}
+
+    /**
+     * <p>The Lustre root squash configuration used when updating an Amazon FSx for
+     * Lustre file system. When enabled, root squash restricts root-level access from
+     * clients that try to access your file system as a root user.</p>
+     */
+    inline UpdateFileSystemLustreConfiguration& WithRootSquashConfiguration(LustreRootSquashConfiguration&& value) { SetRootSquashConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_weeklyMaintenanceStartTime;
@@ -433,6 +477,9 @@ namespace Model
 
     LustreLogCreateConfiguration m_logConfiguration;
     bool m_logConfigurationHasBeenSet;
+
+    LustreRootSquashConfiguration m_rootSquashConfiguration;
+    bool m_rootSquashConfigurationHasBeenSet;
   };
 
 } // namespace Model

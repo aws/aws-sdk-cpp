@@ -17,8 +17,8 @@ namespace Model
 {
 
   /**
-   * <p>A request to delete the <a>BasePathMapping</a> resource.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>A request to delete the BasePathMapping resource.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteBasePathMappingRequest">AWS
    * API Reference</a></p>
    */
@@ -37,107 +37,91 @@ namespace Model
 
 
     /**
-     * <p>[Required] The domain name of the <a>BasePathMapping</a> resource to
-     * delete.</p>
+     * <p>The domain name of the BasePathMapping resource to delete.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
     /**
-     * <p>[Required] The domain name of the <a>BasePathMapping</a> resource to
-     * delete.</p>
+     * <p>The domain name of the BasePathMapping resource to delete.</p>
      */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
 
     /**
-     * <p>[Required] The domain name of the <a>BasePathMapping</a> resource to
-     * delete.</p>
+     * <p>The domain name of the BasePathMapping resource to delete.</p>
      */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
-     * <p>[Required] The domain name of the <a>BasePathMapping</a> resource to
-     * delete.</p>
+     * <p>The domain name of the BasePathMapping resource to delete.</p>
      */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
-     * <p>[Required] The domain name of the <a>BasePathMapping</a> resource to
-     * delete.</p>
+     * <p>The domain name of the BasePathMapping resource to delete.</p>
      */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
     /**
-     * <p>[Required] The domain name of the <a>BasePathMapping</a> resource to
-     * delete.</p>
+     * <p>The domain name of the BasePathMapping resource to delete.</p>
      */
     inline DeleteBasePathMappingRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
     /**
-     * <p>[Required] The domain name of the <a>BasePathMapping</a> resource to
-     * delete.</p>
+     * <p>The domain name of the BasePathMapping resource to delete.</p>
      */
     inline DeleteBasePathMappingRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] The domain name of the <a>BasePathMapping</a> resource to
-     * delete.</p>
+     * <p>The domain name of the BasePathMapping resource to delete.</p>
      */
     inline DeleteBasePathMappingRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
 
     /**
-     * <p>[Required] The base path name of the <a>BasePathMapping</a> resource to
-     * delete.</p> <p>To specify an empty base path, set this parameter to
-     * <code>'(none)'</code>.</p>
+     * <p>The base path name of the BasePathMapping resource to delete.</p> <p>To
+     * specify an empty base path, set this parameter to <code>'(none)'</code>.</p>
      */
     inline const Aws::String& GetBasePath() const{ return m_basePath; }
 
     /**
-     * <p>[Required] The base path name of the <a>BasePathMapping</a> resource to
-     * delete.</p> <p>To specify an empty base path, set this parameter to
-     * <code>'(none)'</code>.</p>
+     * <p>The base path name of the BasePathMapping resource to delete.</p> <p>To
+     * specify an empty base path, set this parameter to <code>'(none)'</code>.</p>
      */
     inline bool BasePathHasBeenSet() const { return m_basePathHasBeenSet; }
 
     /**
-     * <p>[Required] The base path name of the <a>BasePathMapping</a> resource to
-     * delete.</p> <p>To specify an empty base path, set this parameter to
-     * <code>'(none)'</code>.</p>
+     * <p>The base path name of the BasePathMapping resource to delete.</p> <p>To
+     * specify an empty base path, set this parameter to <code>'(none)'</code>.</p>
      */
     inline void SetBasePath(const Aws::String& value) { m_basePathHasBeenSet = true; m_basePath = value; }
 
     /**
-     * <p>[Required] The base path name of the <a>BasePathMapping</a> resource to
-     * delete.</p> <p>To specify an empty base path, set this parameter to
-     * <code>'(none)'</code>.</p>
+     * <p>The base path name of the BasePathMapping resource to delete.</p> <p>To
+     * specify an empty base path, set this parameter to <code>'(none)'</code>.</p>
      */
     inline void SetBasePath(Aws::String&& value) { m_basePathHasBeenSet = true; m_basePath = std::move(value); }
 
     /**
-     * <p>[Required] The base path name of the <a>BasePathMapping</a> resource to
-     * delete.</p> <p>To specify an empty base path, set this parameter to
-     * <code>'(none)'</code>.</p>
+     * <p>The base path name of the BasePathMapping resource to delete.</p> <p>To
+     * specify an empty base path, set this parameter to <code>'(none)'</code>.</p>
      */
     inline void SetBasePath(const char* value) { m_basePathHasBeenSet = true; m_basePath.assign(value); }
 
     /**
-     * <p>[Required] The base path name of the <a>BasePathMapping</a> resource to
-     * delete.</p> <p>To specify an empty base path, set this parameter to
-     * <code>'(none)'</code>.</p>
+     * <p>The base path name of the BasePathMapping resource to delete.</p> <p>To
+     * specify an empty base path, set this parameter to <code>'(none)'</code>.</p>
      */
     inline DeleteBasePathMappingRequest& WithBasePath(const Aws::String& value) { SetBasePath(value); return *this;}
 
     /**
-     * <p>[Required] The base path name of the <a>BasePathMapping</a> resource to
-     * delete.</p> <p>To specify an empty base path, set this parameter to
-     * <code>'(none)'</code>.</p>
+     * <p>The base path name of the BasePathMapping resource to delete.</p> <p>To
+     * specify an empty base path, set this parameter to <code>'(none)'</code>.</p>
      */
     inline DeleteBasePathMappingRequest& WithBasePath(Aws::String&& value) { SetBasePath(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] The base path name of the <a>BasePathMapping</a> resource to
-     * delete.</p> <p>To specify an empty base path, set this parameter to
-     * <code>'(none)'</code>.</p>
+     * <p>The base path name of the BasePathMapping resource to delete.</p> <p>To
+     * specify an empty base path, set this parameter to <code>'(none)'</code>.</p>
      */
     inline DeleteBasePathMappingRequest& WithBasePath(const char* value) { SetBasePath(value); return *this;}
 

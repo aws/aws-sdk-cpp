@@ -21,8 +21,7 @@ namespace Model
 {
 
   /**
-   * <p>Gets the <a>Tags</a> collection for a given resource.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Gets the Tags collection for a given resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetTagsRequest">AWS
    * API Reference</a></p>
    */
@@ -43,42 +42,42 @@ namespace Model
 
 
     /**
-     * <p>[Required] The ARN of a resource that can be tagged.</p>
+     * <p>The ARN of a resource that can be tagged.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
 
     /**
-     * <p>[Required] The ARN of a resource that can be tagged.</p>
+     * <p>The ARN of a resource that can be tagged.</p>
      */
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
 
     /**
-     * <p>[Required] The ARN of a resource that can be tagged.</p>
+     * <p>The ARN of a resource that can be tagged.</p>
      */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
-     * <p>[Required] The ARN of a resource that can be tagged.</p>
+     * <p>The ARN of a resource that can be tagged.</p>
      */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
 
     /**
-     * <p>[Required] The ARN of a resource that can be tagged.</p>
+     * <p>The ARN of a resource that can be tagged.</p>
      */
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
 
     /**
-     * <p>[Required] The ARN of a resource that can be tagged.</p>
+     * <p>The ARN of a resource that can be tagged.</p>
      */
     inline GetTagsRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
 
     /**
-     * <p>[Required] The ARN of a resource that can be tagged.</p>
+     * <p>The ARN of a resource that can be tagged.</p>
      */
     inline GetTagsRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] The ARN of a resource that can be tagged.</p>
+     * <p>The ARN of a resource that can be tagged.</p>
      */
     inline GetTagsRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 

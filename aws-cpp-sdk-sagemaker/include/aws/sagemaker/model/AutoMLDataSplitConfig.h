@@ -40,32 +40,32 @@ namespace Model
     /**
      * <p>The validation fraction (optional) is a float that specifies the portion of
      * the training dataset to be used for validation. The default value is 0.2, and
-     * values can range from 0 to 1. We recommend setting this value to be less than
-     * 0.5.</p>
+     * values must be greater than 0 and less than 1. We recommend setting this value
+     * to be less than 0.5.</p>
      */
     inline double GetValidationFraction() const{ return m_validationFraction; }
 
     /**
      * <p>The validation fraction (optional) is a float that specifies the portion of
      * the training dataset to be used for validation. The default value is 0.2, and
-     * values can range from 0 to 1. We recommend setting this value to be less than
-     * 0.5.</p>
+     * values must be greater than 0 and less than 1. We recommend setting this value
+     * to be less than 0.5.</p>
      */
     inline bool ValidationFractionHasBeenSet() const { return m_validationFractionHasBeenSet; }
 
     /**
      * <p>The validation fraction (optional) is a float that specifies the portion of
      * the training dataset to be used for validation. The default value is 0.2, and
-     * values can range from 0 to 1. We recommend setting this value to be less than
-     * 0.5.</p>
+     * values must be greater than 0 and less than 1. We recommend setting this value
+     * to be less than 0.5.</p>
      */
     inline void SetValidationFraction(double value) { m_validationFractionHasBeenSet = true; m_validationFraction = value; }
 
     /**
      * <p>The validation fraction (optional) is a float that specifies the portion of
      * the training dataset to be used for validation. The default value is 0.2, and
-     * values can range from 0 to 1. We recommend setting this value to be less than
-     * 0.5.</p>
+     * values must be greater than 0 and less than 1. We recommend setting this value
+     * to be less than 0.5.</p>
      */
     inline AutoMLDataSplitConfig& WithValidationFraction(double value) { SetValidationFraction(value); return *this;}
 

@@ -35,7 +35,8 @@ LustreFileSystemConfiguration::LustreFileSystemConfiguration() :
     m_driveCacheTypeHasBeenSet(false),
     m_dataCompressionType(DataCompressionType::NOT_SET),
     m_dataCompressionTypeHasBeenSet(false),
-    m_logConfigurationHasBeenSet(false)
+    m_logConfigurationHasBeenSet(false),
+    m_rootSquashConfigurationHasBeenSet(false)
 {
 }
 
@@ -56,7 +57,8 @@ LustreFileSystemConfiguration::LustreFileSystemConfiguration(JsonView jsonValue)
     m_driveCacheTypeHasBeenSet(false),
     m_dataCompressionType(DataCompressionType::NOT_SET),
     m_dataCompressionTypeHasBeenSet(false),
-    m_logConfigurationHasBeenSet(false)
+    m_logConfigurationHasBeenSet(false),
+    m_rootSquashConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -140,6 +142,13 @@ LustreFileSystemConfiguration& LustreFileSystemConfiguration::operator =(JsonVie
     m_logConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RootSquashConfiguration"))
+  {
+    m_rootSquashConfiguration = jsonValue.GetObject("RootSquashConfiguration");
+
+    m_rootSquashConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -207,6 +216,12 @@ JsonValue LustreFileSystemConfiguration::Jsonize() const
   if(m_logConfigurationHasBeenSet)
   {
    payload.WithObject("LogConfiguration", m_logConfiguration.Jsonize());
+
+  }
+
+  if(m_rootSquashConfigurationHasBeenSet)
+  {
+   payload.WithObject("RootSquashConfiguration", m_rootSquashConfiguration.Jsonize());
 
   }
 

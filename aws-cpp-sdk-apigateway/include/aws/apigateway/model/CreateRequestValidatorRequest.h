@@ -17,8 +17,7 @@ namespace Model
 {
 
   /**
-   * <p>Creates a <a>RequestValidator</a> of a given <a>RestApi</a>.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Creates a RequestValidator of a given RestApi.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateRequestValidatorRequest">AWS
    * API Reference</a></p>
    */
@@ -37,83 +36,83 @@ namespace Model
 
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline const Aws::String& GetRestApiId() const{ return m_restApiId; }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline void SetRestApiId(const char* value) { m_restApiIdHasBeenSet = true; m_restApiId.assign(value); }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline CreateRequestValidatorRequest& WithRestApiId(const Aws::String& value) { SetRestApiId(value); return *this;}
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline CreateRequestValidatorRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline CreateRequestValidatorRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
 
 
     /**
-     * <p>The name of the to-be-created <a>RequestValidator</a>.</p>
+     * <p>The name of the to-be-created RequestValidator.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the to-be-created <a>RequestValidator</a>.</p>
+     * <p>The name of the to-be-created RequestValidator.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the to-be-created <a>RequestValidator</a>.</p>
+     * <p>The name of the to-be-created RequestValidator.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the to-be-created <a>RequestValidator</a>.</p>
+     * <p>The name of the to-be-created RequestValidator.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the to-be-created <a>RequestValidator</a>.</p>
+     * <p>The name of the to-be-created RequestValidator.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the to-be-created <a>RequestValidator</a>.</p>
+     * <p>The name of the to-be-created RequestValidator.</p>
      */
     inline CreateRequestValidatorRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the to-be-created <a>RequestValidator</a>.</p>
+     * <p>The name of the to-be-created RequestValidator.</p>
      */
     inline CreateRequestValidatorRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the to-be-created <a>RequestValidator</a>.</p>
+     * <p>The name of the to-be-created RequestValidator.</p>
      */
     inline CreateRequestValidatorRequest& WithName(const char* value) { SetName(value); return *this;}
 

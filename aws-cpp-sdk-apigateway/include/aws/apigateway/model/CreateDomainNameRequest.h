@@ -40,42 +40,42 @@ namespace Model
 
 
     /**
-     * <p>[Required] The name of the <a>DomainName</a> resource.</p>
+     * <p>The name of the DomainName resource.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
     /**
-     * <p>[Required] The name of the <a>DomainName</a> resource.</p>
+     * <p>The name of the DomainName resource.</p>
      */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
 
     /**
-     * <p>[Required] The name of the <a>DomainName</a> resource.</p>
+     * <p>The name of the DomainName resource.</p>
      */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
-     * <p>[Required] The name of the <a>DomainName</a> resource.</p>
+     * <p>The name of the DomainName resource.</p>
      */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
-     * <p>[Required] The name of the <a>DomainName</a> resource.</p>
+     * <p>The name of the DomainName resource.</p>
      */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
     /**
-     * <p>[Required] The name of the <a>DomainName</a> resource.</p>
+     * <p>The name of the DomainName resource.</p>
      */
     inline CreateDomainNameRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
     /**
-     * <p>[Required] The name of the <a>DomainName</a> resource.</p>
+     * <p>The name of the DomainName resource.</p>
      */
     inline CreateDomainNameRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] The name of the <a>DomainName</a> resource.</p>
+     * <p>The name of the DomainName resource.</p>
      */
     inline CreateDomainNameRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
@@ -488,38 +488,38 @@ namespace Model
 
 
     /**
-     * <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint
-     * types of the domain name.</p>
+     * <p>The endpoint configuration of this DomainName showing the endpoint types of
+     * the domain name. </p>
      */
     inline const EndpointConfiguration& GetEndpointConfiguration() const{ return m_endpointConfiguration; }
 
     /**
-     * <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint
-     * types of the domain name.</p>
+     * <p>The endpoint configuration of this DomainName showing the endpoint types of
+     * the domain name. </p>
      */
     inline bool EndpointConfigurationHasBeenSet() const { return m_endpointConfigurationHasBeenSet; }
 
     /**
-     * <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint
-     * types of the domain name.</p>
+     * <p>The endpoint configuration of this DomainName showing the endpoint types of
+     * the domain name. </p>
      */
     inline void SetEndpointConfiguration(const EndpointConfiguration& value) { m_endpointConfigurationHasBeenSet = true; m_endpointConfiguration = value; }
 
     /**
-     * <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint
-     * types of the domain name.</p>
+     * <p>The endpoint configuration of this DomainName showing the endpoint types of
+     * the domain name. </p>
      */
     inline void SetEndpointConfiguration(EndpointConfiguration&& value) { m_endpointConfigurationHasBeenSet = true; m_endpointConfiguration = std::move(value); }
 
     /**
-     * <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint
-     * types of the domain name.</p>
+     * <p>The endpoint configuration of this DomainName showing the endpoint types of
+     * the domain name. </p>
      */
     inline CreateDomainNameRequest& WithEndpointConfiguration(const EndpointConfiguration& value) { SetEndpointConfiguration(value); return *this;}
 
     /**
-     * <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint
-     * types of the domain name.</p>
+     * <p>The endpoint configuration of this DomainName showing the endpoint types of
+     * the domain name. </p>
      */
     inline CreateDomainNameRequest& WithEndpointConfiguration(EndpointConfiguration&& value) { SetEndpointConfiguration(std::move(value)); return *this;}
 
@@ -618,42 +618,42 @@ namespace Model
 
     /**
      * <p>The Transport Layer Security (TLS) version + cipher suite for this
-     * <a>DomainName</a>. The valid values are <code>TLS_1_0</code> and
+     * DomainName. The valid values are <code>TLS_1_0</code> and
      * <code>TLS_1_2</code>.</p>
      */
     inline const SecurityPolicy& GetSecurityPolicy() const{ return m_securityPolicy; }
 
     /**
      * <p>The Transport Layer Security (TLS) version + cipher suite for this
-     * <a>DomainName</a>. The valid values are <code>TLS_1_0</code> and
+     * DomainName. The valid values are <code>TLS_1_0</code> and
      * <code>TLS_1_2</code>.</p>
      */
     inline bool SecurityPolicyHasBeenSet() const { return m_securityPolicyHasBeenSet; }
 
     /**
      * <p>The Transport Layer Security (TLS) version + cipher suite for this
-     * <a>DomainName</a>. The valid values are <code>TLS_1_0</code> and
+     * DomainName. The valid values are <code>TLS_1_0</code> and
      * <code>TLS_1_2</code>.</p>
      */
     inline void SetSecurityPolicy(const SecurityPolicy& value) { m_securityPolicyHasBeenSet = true; m_securityPolicy = value; }
 
     /**
      * <p>The Transport Layer Security (TLS) version + cipher suite for this
-     * <a>DomainName</a>. The valid values are <code>TLS_1_0</code> and
+     * DomainName. The valid values are <code>TLS_1_0</code> and
      * <code>TLS_1_2</code>.</p>
      */
     inline void SetSecurityPolicy(SecurityPolicy&& value) { m_securityPolicyHasBeenSet = true; m_securityPolicy = std::move(value); }
 
     /**
      * <p>The Transport Layer Security (TLS) version + cipher suite for this
-     * <a>DomainName</a>. The valid values are <code>TLS_1_0</code> and
+     * DomainName. The valid values are <code>TLS_1_0</code> and
      * <code>TLS_1_2</code>.</p>
      */
     inline CreateDomainNameRequest& WithSecurityPolicy(const SecurityPolicy& value) { SetSecurityPolicy(value); return *this;}
 
     /**
      * <p>The Transport Layer Security (TLS) version + cipher suite for this
-     * <a>DomainName</a>. The valid values are <code>TLS_1_0</code> and
+     * DomainName. The valid values are <code>TLS_1_0</code> and
      * <code>TLS_1_2</code>.</p>
      */
     inline CreateDomainNameRequest& WithSecurityPolicy(SecurityPolicy&& value) { SetSecurityPolicy(std::move(value)); return *this;}

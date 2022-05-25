@@ -27,7 +27,7 @@ namespace APIGateway
 namespace Model
 {
   /**
-   * <p>The collection of <a>SdkType</a> instances.</p><p><h3>See Also:</h3>   <a
+   * <p>The collection of SdkType instances.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/SdkTypes">AWS
    * API Reference</a></p>
    */

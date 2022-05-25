@@ -668,9 +668,7 @@ namespace Model
 
 
         /**
-         * <p>Create an <a>ApiKey</a> resource. </p> <div class="seeAlso"><a
-         * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/create-api-key.html">AWS
-         * CLI</a></div><p><h3>See Also:</h3>   <a
+         * <p>Create an ApiKey resource. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateApiKey">AWS
          * API Reference</a></p>
          */
@@ -687,10 +685,8 @@ namespace Model
         virtual void CreateApiKeyAsync(const Model::CreateApiKeyRequest& request, const CreateApiKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds a new <a>Authorizer</a> resource to an existing <a>RestApi</a>
-         * resource.</p> <div class="seeAlso"><a
-         * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/create-authorizer.html">AWS
-         * CLI</a></div><p><h3>See Also:</h3>   <a
+         * <p>Adds a new Authorizer resource to an existing RestApi resource.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateAuthorizer">AWS
          * API Reference</a></p>
          */
@@ -707,7 +703,7 @@ namespace Model
         virtual void CreateAuthorizerAsync(const Model::CreateAuthorizerRequest& request, const CreateAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new <a>BasePathMapping</a> resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new BasePathMapping resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateBasePathMapping">AWS
          * API Reference</a></p>
          */
@@ -724,8 +720,8 @@ namespace Model
         virtual void CreateBasePathMappingAsync(const Model::CreateBasePathMappingRequest& request, const CreateBasePathMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a <a>Deployment</a> resource, which makes a specified <a>RestApi</a>
-         * callable over the internet.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a Deployment resource, which makes a specified RestApi callable over
+         * the internet.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateDeployment">AWS
          * API Reference</a></p>
          */
@@ -742,7 +738,9 @@ namespace Model
         virtual void CreateDeploymentAsync(const Model::CreateDeploymentRequest& request, const CreateDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Creates a documentation part.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateDocumentationPart">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateDocumentationPartOutcome CreateDocumentationPart(const Model::CreateDocumentationPartRequest& request) const;
 
@@ -757,7 +755,9 @@ namespace Model
         virtual void CreateDocumentationPartAsync(const Model::CreateDocumentationPartRequest& request, const CreateDocumentationPartResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Creates a documentation version</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateDocumentationVersion">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateDocumentationVersionOutcome CreateDocumentationVersion(const Model::CreateDocumentationVersionRequest& request) const;
 
@@ -789,8 +789,8 @@ namespace Model
         virtual void CreateDomainNameAsync(const Model::CreateDomainNameRequest& request, const CreateDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds a new <a>Model</a> resource to an existing <a>RestApi</a>
-         * resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds a new Model resource to an existing RestApi resource.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateModel">AWS
          * API Reference</a></p>
          */
@@ -807,8 +807,7 @@ namespace Model
         virtual void CreateModelAsync(const Model::CreateModelRequest& request, const CreateModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a <a>ReqeustValidator</a> of a given <a>RestApi</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a RequestValidator of a given RestApi.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateRequestValidator">AWS
          * API Reference</a></p>
          */
@@ -825,7 +824,7 @@ namespace Model
         virtual void CreateRequestValidatorAsync(const Model::CreateRequestValidatorRequest& request, const CreateRequestValidatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a <a>Resource</a> resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a Resource resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateResource">AWS
          * API Reference</a></p>
          */
@@ -842,7 +841,7 @@ namespace Model
         virtual void CreateResourceAsync(const Model::CreateResourceRequest& request, const CreateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new <a>RestApi</a> resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new RestApi resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateRestApi">AWS
          * API Reference</a></p>
          */
@@ -859,8 +858,8 @@ namespace Model
         virtual void CreateRestApiAsync(const Model::CreateRestApiRequest& request, const CreateRestApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new <a>Stage</a> resource that references a pre-existing
-         * <a>Deployment</a> for the API. </p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new Stage resource that references a pre-existing Deployment for
+         * the API. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateStage">AWS
          * API Reference</a></p>
          */
@@ -933,7 +932,7 @@ namespace Model
         virtual void CreateVpcLinkAsync(const Model::CreateVpcLinkRequest& request, const CreateVpcLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the <a>ApiKey</a> resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the ApiKey resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteApiKey">AWS
          * API Reference</a></p>
          */
@@ -950,9 +949,7 @@ namespace Model
         virtual void DeleteApiKeyAsync(const Model::DeleteApiKeyRequest& request, const DeleteApiKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes an existing <a>Authorizer</a> resource.</p> <div class="seeAlso"><a
-         * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/delete-authorizer.html">AWS
-         * CLI</a></div><p><h3>See Also:</h3>   <a
+         * <p>Deletes an existing Authorizer resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteAuthorizer">AWS
          * API Reference</a></p>
          */
@@ -969,7 +966,7 @@ namespace Model
         virtual void DeleteAuthorizerAsync(const Model::DeleteAuthorizerRequest& request, const DeleteAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the <a>BasePathMapping</a> resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the BasePathMapping resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteBasePathMapping">AWS
          * API Reference</a></p>
          */
@@ -986,7 +983,7 @@ namespace Model
         virtual void DeleteBasePathMappingAsync(const Model::DeleteBasePathMappingRequest& request, const DeleteBasePathMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the <a>ClientCertificate</a> resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the ClientCertificate resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteClientCertificate">AWS
          * API Reference</a></p>
          */
@@ -1003,9 +1000,8 @@ namespace Model
         virtual void DeleteClientCertificateAsync(const Model::DeleteClientCertificateRequest& request, const DeleteClientCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a <a>Deployment</a> resource. Deleting a deployment will only succeed
-         * if there are no <a>Stage</a> resources associated with it.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes a Deployment resource. Deleting a deployment will only succeed if
+         * there are no Stage resources associated with it.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteDeployment">AWS
          * API Reference</a></p>
          */
@@ -1022,7 +1018,9 @@ namespace Model
         virtual void DeleteDeploymentAsync(const Model::DeleteDeploymentRequest& request, const DeleteDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Deletes a documentation part</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteDocumentationPart">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteDocumentationPartOutcome DeleteDocumentationPart(const Model::DeleteDocumentationPartRequest& request) const;
 
@@ -1037,7 +1035,9 @@ namespace Model
         virtual void DeleteDocumentationPartAsync(const Model::DeleteDocumentationPartRequest& request, const DeleteDocumentationPartResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Deletes a documentation version.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteDocumentationVersion">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteDocumentationVersionOutcome DeleteDocumentationVersion(const Model::DeleteDocumentationVersionRequest& request) const;
 
@@ -1052,7 +1052,7 @@ namespace Model
         virtual void DeleteDocumentationVersionAsync(const Model::DeleteDocumentationVersionRequest& request, const DeleteDocumentationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the <a>DomainName</a> resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the DomainName resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteDomainName">AWS
          * API Reference</a></p>
          */
@@ -1069,9 +1069,9 @@ namespace Model
         virtual void DeleteDomainNameAsync(const Model::DeleteDomainNameRequest& request, const DeleteDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Clears any customization of a <a>GatewayResponse</a> of a specified response
-         * type on the given <a>RestApi</a> and resets it with the default
-         * settings.</p><p><h3>See Also:</h3>   <a
+         * <p>Clears any customization of a GatewayResponse of a specified response type on
+         * the given RestApi and resets it with the default settings.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteGatewayResponse">AWS
          * API Reference</a></p>
          */
@@ -1122,7 +1122,7 @@ namespace Model
         virtual void DeleteIntegrationResponseAsync(const Model::DeleteIntegrationResponseRequest& request, const DeleteIntegrationResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes an existing <a>Method</a> resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an existing Method resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteMethod">AWS
          * API Reference</a></p>
          */
@@ -1139,8 +1139,7 @@ namespace Model
         virtual void DeleteMethodAsync(const Model::DeleteMethodRequest& request, const DeleteMethodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes an existing <a>MethodResponse</a> resource.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Deletes an existing MethodResponse resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteMethodResponse">AWS
          * API Reference</a></p>
          */
@@ -1174,8 +1173,7 @@ namespace Model
         virtual void DeleteModelAsync(const Model::DeleteModelRequest& request, const DeleteModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a <a>RequestValidator</a> of a given <a>RestApi</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes a RequestValidator of a given RestApi.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteRequestValidator">AWS
          * API Reference</a></p>
          */
@@ -1192,7 +1190,7 @@ namespace Model
         virtual void DeleteRequestValidatorAsync(const Model::DeleteRequestValidatorRequest& request, const DeleteRequestValidatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a <a>Resource</a> resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a Resource resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteResource">AWS
          * API Reference</a></p>
          */
@@ -1226,7 +1224,7 @@ namespace Model
         virtual void DeleteRestApiAsync(const Model::DeleteRestApiRequest& request, const DeleteRestApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a <a>Stage</a> resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a Stage resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteStage">AWS
          * API Reference</a></p>
          */
@@ -1278,7 +1276,7 @@ namespace Model
         virtual void DeleteUsagePlanKeyAsync(const Model::DeleteUsagePlanKeyRequest& request, const DeleteUsagePlanKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes an existing <a>VpcLink</a> of a specified identifier.</p><p><h3>See
+         * <p>Deletes an existing VpcLink of a specified identifier.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteVpcLink">AWS
          * API Reference</a></p>
@@ -1331,7 +1329,7 @@ namespace Model
         virtual void FlushStageCacheAsync(const Model::FlushStageCacheRequest& request, const FlushStageCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Generates a <a>ClientCertificate</a> resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Generates a ClientCertificate resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GenerateClientCertificate">AWS
          * API Reference</a></p>
          */
@@ -1348,8 +1346,8 @@ namespace Model
         virtual void GenerateClientCertificateAsync(const Model::GenerateClientCertificateRequest& request, const GenerateClientCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about the current <a>Account</a> resource.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets information about the current Account resource.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetAccount">AWS
          * API Reference</a></p>
          */
@@ -1366,8 +1364,8 @@ namespace Model
         virtual void GetAccountAsync(const Model::GetAccountRequest& request, const GetAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about the current <a>ApiKey</a> resource.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets information about the current ApiKey resource.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetApiKey">AWS
          * API Reference</a></p>
          */
@@ -1384,8 +1382,8 @@ namespace Model
         virtual void GetApiKeyAsync(const Model::GetApiKeyRequest& request, const GetApiKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about the current <a>ApiKeys</a> resource.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets information about the current ApiKeys resource.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetApiKeys">AWS
          * API Reference</a></p>
          */
@@ -1402,9 +1400,7 @@ namespace Model
         virtual void GetApiKeysAsync(const Model::GetApiKeysRequest& request, const GetApiKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describe an existing <a>Authorizer</a> resource.</p> <div class="seeAlso"><a
-         * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-authorizer.html">AWS
-         * CLI</a></div><p><h3>See Also:</h3>   <a
+         * <p>Describe an existing Authorizer resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetAuthorizer">AWS
          * API Reference</a></p>
          */
@@ -1421,9 +1417,7 @@ namespace Model
         virtual void GetAuthorizerAsync(const Model::GetAuthorizerRequest& request, const GetAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describe an existing <a>Authorizers</a> resource.</p> <div class="seeAlso"><a
-         * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-authorizers.html">AWS
-         * CLI</a></div><p><h3>See Also:</h3>   <a
+         * <p>Describe an existing Authorizers resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetAuthorizers">AWS
          * API Reference</a></p>
          */
@@ -1440,7 +1434,7 @@ namespace Model
         virtual void GetAuthorizersAsync(const Model::GetAuthorizersRequest& request, const GetAuthorizersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describe a <a>BasePathMapping</a> resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Describe a BasePathMapping resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetBasePathMapping">AWS
          * API Reference</a></p>
          */
@@ -1457,7 +1451,7 @@ namespace Model
         virtual void GetBasePathMappingAsync(const Model::GetBasePathMappingRequest& request, const GetBasePathMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Represents a collection of <a>BasePathMapping</a> resources.</p><p><h3>See
+         * <p>Represents a collection of BasePathMapping resources.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetBasePathMappings">AWS
          * API Reference</a></p>
@@ -1475,8 +1469,8 @@ namespace Model
         virtual void GetBasePathMappingsAsync(const Model::GetBasePathMappingsRequest& request, const GetBasePathMappingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about the current <a>ClientCertificate</a>
-         * resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about the current ClientCertificate resource.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetClientCertificate">AWS
          * API Reference</a></p>
          */
@@ -1493,8 +1487,8 @@ namespace Model
         virtual void GetClientCertificateAsync(const Model::GetClientCertificateRequest& request, const GetClientCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets a collection of <a>ClientCertificate</a> resources.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets a collection of ClientCertificate resources.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetClientCertificates">AWS
          * API Reference</a></p>
          */
@@ -1511,8 +1505,7 @@ namespace Model
         virtual void GetClientCertificatesAsync(const Model::GetClientCertificatesRequest& request, const GetClientCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about a <a>Deployment</a> resource.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Gets information about a Deployment resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDeployment">AWS
          * API Reference</a></p>
          */
@@ -1529,8 +1522,8 @@ namespace Model
         virtual void GetDeploymentAsync(const Model::GetDeploymentRequest& request, const GetDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about a <a>Deployments</a> collection.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets information about a Deployments collection.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDeployments">AWS
          * API Reference</a></p>
          */
@@ -1547,7 +1540,9 @@ namespace Model
         virtual void GetDeploymentsAsync(const Model::GetDeploymentsRequest& request, const GetDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Gets a documentation part.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDocumentationPart">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetDocumentationPartOutcome GetDocumentationPart(const Model::GetDocumentationPartRequest& request) const;
 
@@ -1562,7 +1557,9 @@ namespace Model
         virtual void GetDocumentationPartAsync(const Model::GetDocumentationPartRequest& request, const GetDocumentationPartResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Gets documentation parts.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDocumentationParts">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetDocumentationPartsOutcome GetDocumentationParts(const Model::GetDocumentationPartsRequest& request) const;
 
@@ -1577,7 +1574,9 @@ namespace Model
         virtual void GetDocumentationPartsAsync(const Model::GetDocumentationPartsRequest& request, const GetDocumentationPartsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Gets a documentation version.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDocumentationVersion">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetDocumentationVersionOutcome GetDocumentationVersion(const Model::GetDocumentationVersionRequest& request) const;
 
@@ -1592,7 +1591,9 @@ namespace Model
         virtual void GetDocumentationVersionAsync(const Model::GetDocumentationVersionRequest& request, const GetDocumentationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Gets documentation versions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDocumentationVersions">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetDocumentationVersionsOutcome GetDocumentationVersions(const Model::GetDocumentationVersionsRequest& request) const;
 
@@ -1625,8 +1626,8 @@ namespace Model
         virtual void GetDomainNameAsync(const Model::GetDomainNameRequest& request, const GetDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Represents a collection of <a>DomainName</a> resources.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Represents a collection of DomainName resources.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDomainNames">AWS
          * API Reference</a></p>
          */
@@ -1643,8 +1644,8 @@ namespace Model
         virtual void GetDomainNamesAsync(const Model::GetDomainNamesRequest& request, const GetDomainNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Exports a deployed version of a <a>RestApi</a> in a specified
-         * format.</p><p><h3>See Also:</h3>   <a
+         * <p>Exports a deployed version of a RestApi in a specified format.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetExport">AWS
          * API Reference</a></p>
          */
@@ -1661,8 +1662,8 @@ namespace Model
         virtual void GetExportAsync(const Model::GetExportRequest& request, const GetExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets a <a>GatewayResponse</a> of a specified response type on the given
-         * <a>RestApi</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets a GatewayResponse of a specified response type on the given
+         * RestApi.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetGatewayResponse">AWS
          * API Reference</a></p>
          */
@@ -1679,10 +1680,10 @@ namespace Model
         virtual void GetGatewayResponseAsync(const Model::GetGatewayResponseRequest& request, const GetGatewayResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets the <a>GatewayResponses</a> collection on the given <a>RestApi</a>. If
-         * an API developer has not added any definitions for gateway responses, the result
-         * will be the API Gateway-generated default <a>GatewayResponses</a> collection for
-         * the supported response types.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the GatewayResponses collection on the given RestApi. If an API
+         * developer has not added any definitions for gateway responses, the result will
+         * be the API Gateway-generated default GatewayResponses collection for the
+         * supported response types.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetGatewayResponses">AWS
          * API Reference</a></p>
          */
@@ -1733,7 +1734,7 @@ namespace Model
         virtual void GetIntegrationResponseAsync(const Model::GetIntegrationResponseRequest& request, const GetIntegrationResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describe an existing <a>Method</a> resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Describe an existing Method resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetMethod">AWS
          * API Reference</a></p>
          */
@@ -1750,7 +1751,7 @@ namespace Model
         virtual void GetMethodAsync(const Model::GetMethodRequest& request, const GetMethodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes a <a>MethodResponse</a> resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes a MethodResponse resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetMethodResponse">AWS
          * API Reference</a></p>
          */
@@ -1767,8 +1768,8 @@ namespace Model
         virtual void GetMethodResponseAsync(const Model::GetMethodResponseRequest& request, const GetMethodResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes an existing model defined for a <a>RestApi</a>
-         * resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes an existing model defined for a RestApi resource.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetModel">AWS
          * API Reference</a></p>
          */
@@ -1803,8 +1804,8 @@ namespace Model
         virtual void GetModelTemplateAsync(const Model::GetModelTemplateRequest& request, const GetModelTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes existing <a>Models</a> defined for a <a>RestApi</a>
-         * resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes existing Models defined for a RestApi resource.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetModels">AWS
          * API Reference</a></p>
          */
@@ -1821,8 +1822,7 @@ namespace Model
         virtual void GetModelsAsync(const Model::GetModelsRequest& request, const GetModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets a <a>RequestValidator</a> of a given <a>RestApi</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets a RequestValidator of a given RestApi.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetRequestValidator">AWS
          * API Reference</a></p>
          */
@@ -1839,8 +1839,8 @@ namespace Model
         virtual void GetRequestValidatorAsync(const Model::GetRequestValidatorRequest& request, const GetRequestValidatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets the <a>RequestValidators</a> collection of a given
-         * <a>RestApi</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the RequestValidators collection of a given RestApi.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetRequestValidators">AWS
          * API Reference</a></p>
          */
@@ -1874,8 +1874,8 @@ namespace Model
         virtual void GetResourceAsync(const Model::GetResourceRequest& request, const GetResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists information about a collection of <a>Resource</a>
-         * resources.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists information about a collection of Resource resources.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetResources">AWS
          * API Reference</a></p>
          */
@@ -1892,8 +1892,7 @@ namespace Model
         virtual void GetResourcesAsync(const Model::GetResourcesRequest& request, const GetResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the <a>RestApi</a> resource in the collection.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Lists the RestApi resource in the collection.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetRestApi">AWS
          * API Reference</a></p>
          */
@@ -1910,8 +1909,8 @@ namespace Model
         virtual void GetRestApiAsync(const Model::GetRestApiRequest& request, const GetRestApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the <a>RestApis</a> resources for your collection.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the RestApis resources for your collection.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetRestApis">AWS
          * API Reference</a></p>
          */
@@ -1928,8 +1927,7 @@ namespace Model
         virtual void GetRestApisAsync(const Model::GetRestApisRequest& request, const GetRestApisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Generates a client SDK for a <a>RestApi</a> and <a>Stage</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Generates a client SDK for a RestApi and Stage.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetSdk">AWS
          * API Reference</a></p>
          */
@@ -1946,7 +1944,9 @@ namespace Model
         virtual void GetSdkAsync(const Model::GetSdkRequest& request, const GetSdkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Gets an SDK type.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetSdkType">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetSdkTypeOutcome GetSdkType(const Model::GetSdkTypeRequest& request) const;
 
@@ -1961,7 +1961,9 @@ namespace Model
         virtual void GetSdkTypeAsync(const Model::GetSdkTypeRequest& request, const GetSdkTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Gets SDK types</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetSdkTypes">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetSdkTypesOutcome GetSdkTypes(const Model::GetSdkTypesRequest& request) const;
 
@@ -1976,7 +1978,7 @@ namespace Model
         virtual void GetSdkTypesAsync(const Model::GetSdkTypesRequest& request, const GetSdkTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about a <a>Stage</a> resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about a Stage resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetStage">AWS
          * API Reference</a></p>
          */
@@ -1993,8 +1995,8 @@ namespace Model
         virtual void GetStageAsync(const Model::GetStageRequest& request, const GetStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about one or more <a>Stage</a> resources.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets information about one or more Stage resources.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetStages">AWS
          * API Reference</a></p>
          */
@@ -2011,8 +2013,7 @@ namespace Model
         virtual void GetStagesAsync(const Model::GetStagesRequest& request, const GetStagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets the <a>Tags</a> collection for a given resource.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets the Tags collection for a given resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetTags">AWS
          * API Reference</a></p>
          */
@@ -2136,7 +2137,7 @@ namespace Model
         virtual void GetVpcLinkAsync(const Model::GetVpcLinkRequest& request, const GetVpcLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets the <a>VpcLinks</a> collection under the caller's account in a selected
+         * <p>Gets the VpcLinks collection under the caller's account in a selected
          * region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetVpcLinks">AWS
          * API Reference</a></p>
@@ -2172,7 +2173,9 @@ namespace Model
         virtual void ImportApiKeysAsync(const Model::ImportApiKeysRequest& request, const ImportApiKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Imports documentation parts</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/ImportDocumentationParts">AWS
+         * API Reference</a></p>
          */
         virtual Model::ImportDocumentationPartsOutcome ImportDocumentationParts(const Model::ImportDocumentationPartsRequest& request) const;
 
@@ -2205,8 +2208,8 @@ namespace Model
         virtual void ImportRestApiAsync(const Model::ImportRestApiRequest& request, const ImportRestApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a customization of a <a>GatewayResponse</a> of a specified response
-         * type and status code on the given <a>RestApi</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a customization of a GatewayResponse of a specified response type and
+         * status code on the given RestApi.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutGatewayResponse">AWS
          * API Reference</a></p>
          */
@@ -2257,8 +2260,7 @@ namespace Model
         virtual void PutIntegrationResponseAsync(const Model::PutIntegrationResponseRequest& request, const PutIntegrationResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Add a method to an existing <a>Resource</a> resource.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Add a method to an existing Resource resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutMethod">AWS
          * API Reference</a></p>
          */
@@ -2275,8 +2277,8 @@ namespace Model
         virtual void PutMethodAsync(const Model::PutMethodRequest& request, const PutMethodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds a <a>MethodResponse</a> to an existing <a>Method</a>
-         * resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds a MethodResponse to an existing Method resource.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/PutMethodResponse">AWS
          * API Reference</a></p>
          */
@@ -2330,12 +2332,8 @@ namespace Model
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Simulate the execution of an <a>Authorizer</a> in your <a>RestApi</a> with
-         * headers, parameters, and an incoming request body.</p> <div class="seeAlso"> <a
-         * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-use-lambda-authorizer.html">Use
-         * Lambda Function as Authorizer</a> <a
-         * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-integrate-with-cognito.html">Use
-         * Cognito User Pool as Authorizer</a> </div><p><h3>See Also:</h3>   <a
+         * <p>Simulate the execution of an Authorizer in your RestApi with headers,
+         * parameters, and an incoming request body.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/TestInvokeAuthorizer">AWS
          * API Reference</a></p>
          */
@@ -2352,8 +2350,8 @@ namespace Model
         virtual void TestInvokeAuthorizerAsync(const Model::TestInvokeAuthorizerRequest& request, const TestInvokeAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Simulate the execution of a <a>Method</a> in your <a>RestApi</a> with
-         * headers, parameters, and an incoming request body.</p><p><h3>See Also:</h3>   <a
+         * <p>Simulate the invocation of a Method in your RestApi with headers, parameters,
+         * and an incoming request body.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/TestInvokeMethod">AWS
          * API Reference</a></p>
          */
@@ -2387,7 +2385,7 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Changes information about the current <a>Account</a> resource.</p><p><h3>See
+         * <p>Changes information about the current Account resource.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateAccount">AWS
          * API Reference</a></p>
@@ -2405,8 +2403,7 @@ namespace Model
         virtual void UpdateAccountAsync(const Model::UpdateAccountRequest& request, const UpdateAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Changes information about an <a>ApiKey</a> resource.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Changes information about an ApiKey resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateApiKey">AWS
          * API Reference</a></p>
          */
@@ -2423,9 +2420,7 @@ namespace Model
         virtual void UpdateApiKeyAsync(const Model::UpdateApiKeyRequest& request, const UpdateApiKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates an existing <a>Authorizer</a> resource.</p> <div class="seeAlso"><a
-         * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/update-authorizer.html">AWS
-         * CLI</a></div><p><h3>See Also:</h3>   <a
+         * <p>Updates an existing Authorizer resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateAuthorizer">AWS
          * API Reference</a></p>
          */
@@ -2442,7 +2437,7 @@ namespace Model
         virtual void UpdateAuthorizerAsync(const Model::UpdateAuthorizerRequest& request, const UpdateAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Changes information about the <a>BasePathMapping</a> resource.</p><p><h3>See
+         * <p>Changes information about the BasePathMapping resource.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateBasePathMapping">AWS
          * API Reference</a></p>
@@ -2460,7 +2455,7 @@ namespace Model
         virtual void UpdateBasePathMappingAsync(const Model::UpdateBasePathMappingRequest& request, const UpdateBasePathMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Changes information about an <a>ClientCertificate</a> resource.</p><p><h3>See
+         * <p>Changes information about an ClientCertificate resource.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateClientCertificate">AWS
          * API Reference</a></p>
@@ -2478,8 +2473,8 @@ namespace Model
         virtual void UpdateClientCertificateAsync(const Model::UpdateClientCertificateRequest& request, const UpdateClientCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Changes information about a <a>Deployment</a> resource.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Changes information about a Deployment resource.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateDeployment">AWS
          * API Reference</a></p>
          */
@@ -2496,7 +2491,9 @@ namespace Model
         virtual void UpdateDeploymentAsync(const Model::UpdateDeploymentRequest& request, const UpdateDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Updates a documentation part.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateDocumentationPart">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateDocumentationPartOutcome UpdateDocumentationPart(const Model::UpdateDocumentationPartRequest& request) const;
 
@@ -2511,7 +2508,9 @@ namespace Model
         virtual void UpdateDocumentationPartAsync(const Model::UpdateDocumentationPartRequest& request, const UpdateDocumentationPartResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Updates a documentation version.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateDocumentationVersion">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateDocumentationVersionOutcome UpdateDocumentationVersion(const Model::UpdateDocumentationVersionRequest& request) const;
 
@@ -2526,8 +2525,8 @@ namespace Model
         virtual void UpdateDocumentationVersionAsync(const Model::UpdateDocumentationVersionRequest& request, const UpdateDocumentationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Changes information about the <a>DomainName</a> resource.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Changes information about the DomainName resource.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateDomainName">AWS
          * API Reference</a></p>
          */
@@ -2544,8 +2543,8 @@ namespace Model
         virtual void UpdateDomainNameAsync(const Model::UpdateDomainNameRequest& request, const UpdateDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates a <a>GatewayResponse</a> of a specified response type on the given
-         * <a>RestApi</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates a GatewayResponse of a specified response type on the given
+         * RestApi.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateGatewayResponse">AWS
          * API Reference</a></p>
          */
@@ -2596,7 +2595,7 @@ namespace Model
         virtual void UpdateIntegrationResponseAsync(const Model::UpdateIntegrationResponseRequest& request, const UpdateIntegrationResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates an existing <a>Method</a> resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an existing Method resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateMethod">AWS
          * API Reference</a></p>
          */
@@ -2613,8 +2612,7 @@ namespace Model
         virtual void UpdateMethodAsync(const Model::UpdateMethodRequest& request, const UpdateMethodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates an existing <a>MethodResponse</a> resource.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Updates an existing MethodResponse resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateMethodResponse">AWS
          * API Reference</a></p>
          */
@@ -2648,8 +2646,7 @@ namespace Model
         virtual void UpdateModelAsync(const Model::UpdateModelRequest& request, const UpdateModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates a <a>RequestValidator</a> of a given <a>RestApi</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates a RequestValidator of a given RestApi.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateRequestValidator">AWS
          * API Reference</a></p>
          */
@@ -2666,8 +2663,7 @@ namespace Model
         virtual void UpdateRequestValidatorAsync(const Model::UpdateRequestValidatorRequest& request, const UpdateRequestValidatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Changes information about a <a>Resource</a> resource.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Changes information about a Resource resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateResource">AWS
          * API Reference</a></p>
          */
@@ -2701,8 +2697,7 @@ namespace Model
         virtual void UpdateRestApiAsync(const Model::UpdateRestApiRequest& request, const UpdateRestApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Changes information about a <a>Stage</a> resource.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Changes information about a Stage resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateStage">AWS
          * API Reference</a></p>
          */
@@ -2754,7 +2749,7 @@ namespace Model
         virtual void UpdateUsagePlanAsync(const Model::UpdateUsagePlanRequest& request, const UpdateUsagePlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates an existing <a>VpcLink</a> of a specified identifier.</p><p><h3>See
+         * <p>Updates an existing VpcLink of a specified identifier.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateVpcLink">AWS
          * API Reference</a></p>

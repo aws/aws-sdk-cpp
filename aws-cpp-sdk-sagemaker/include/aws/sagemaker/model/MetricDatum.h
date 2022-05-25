@@ -124,32 +124,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the standard metric.</p>
+     * <p>The name of the standard metric. </p>  <p>For definitions of the
+     * standard metrics, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-metrics">
+     * <code>Autopilot candidate metrics</code> </a>.</p> 
      */
     inline const AutoMLMetricExtendedEnum& GetStandardMetricName() const{ return m_standardMetricName; }
 
     /**
-     * <p>The name of the standard metric.</p>
+     * <p>The name of the standard metric. </p>  <p>For definitions of the
+     * standard metrics, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-metrics">
+     * <code>Autopilot candidate metrics</code> </a>.</p> 
      */
     inline bool StandardMetricNameHasBeenSet() const { return m_standardMetricNameHasBeenSet; }
 
     /**
-     * <p>The name of the standard metric.</p>
+     * <p>The name of the standard metric. </p>  <p>For definitions of the
+     * standard metrics, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-metrics">
+     * <code>Autopilot candidate metrics</code> </a>.</p> 
      */
     inline void SetStandardMetricName(const AutoMLMetricExtendedEnum& value) { m_standardMetricNameHasBeenSet = true; m_standardMetricName = value; }
 
     /**
-     * <p>The name of the standard metric.</p>
+     * <p>The name of the standard metric. </p>  <p>For definitions of the
+     * standard metrics, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-metrics">
+     * <code>Autopilot candidate metrics</code> </a>.</p> 
      */
     inline void SetStandardMetricName(AutoMLMetricExtendedEnum&& value) { m_standardMetricNameHasBeenSet = true; m_standardMetricName = std::move(value); }
 
     /**
-     * <p>The name of the standard metric.</p>
+     * <p>The name of the standard metric. </p>  <p>For definitions of the
+     * standard metrics, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-metrics">
+     * <code>Autopilot candidate metrics</code> </a>.</p> 
      */
     inline MetricDatum& WithStandardMetricName(const AutoMLMetricExtendedEnum& value) { SetStandardMetricName(value); return *this;}
 
     /**
-     * <p>The name of the standard metric.</p>
+     * <p>The name of the standard metric. </p>  <p>For definitions of the
+     * standard metrics, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-metrics">
+     * <code>Autopilot candidate metrics</code> </a>.</p> 
      */
     inline MetricDatum& WithStandardMetricName(AutoMLMetricExtendedEnum&& value) { SetStandardMetricName(std::move(value)); return *this;}
 

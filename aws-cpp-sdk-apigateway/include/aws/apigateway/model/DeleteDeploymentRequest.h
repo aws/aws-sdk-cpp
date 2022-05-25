@@ -17,7 +17,7 @@ namespace Model
 {
 
   /**
-   * <p>Requests API Gateway to delete a <a>Deployment</a> resource.</p><p><h3>See
+   * <p>Requests API Gateway to delete a Deployment resource.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteDeploymentRequest">AWS
    * API Reference</a></p>
@@ -37,83 +37,83 @@ namespace Model
 
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline const Aws::String& GetRestApiId() const{ return m_restApiId; }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline void SetRestApiId(const char* value) { m_restApiIdHasBeenSet = true; m_restApiId.assign(value); }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline DeleteDeploymentRequest& WithRestApiId(const Aws::String& value) { SetRestApiId(value); return *this;}
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline DeleteDeploymentRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline DeleteDeploymentRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
 
 
     /**
-     * <p>[Required] The identifier of the <a>Deployment</a> resource to delete.</p>
+     * <p>The identifier of the Deployment resource to delete.</p>
      */
     inline const Aws::String& GetDeploymentId() const{ return m_deploymentId; }
 
     /**
-     * <p>[Required] The identifier of the <a>Deployment</a> resource to delete.</p>
+     * <p>The identifier of the Deployment resource to delete.</p>
      */
     inline bool DeploymentIdHasBeenSet() const { return m_deploymentIdHasBeenSet; }
 
     /**
-     * <p>[Required] The identifier of the <a>Deployment</a> resource to delete.</p>
+     * <p>The identifier of the Deployment resource to delete.</p>
      */
     inline void SetDeploymentId(const Aws::String& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
 
     /**
-     * <p>[Required] The identifier of the <a>Deployment</a> resource to delete.</p>
+     * <p>The identifier of the Deployment resource to delete.</p>
      */
     inline void SetDeploymentId(Aws::String&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = std::move(value); }
 
     /**
-     * <p>[Required] The identifier of the <a>Deployment</a> resource to delete.</p>
+     * <p>The identifier of the Deployment resource to delete.</p>
      */
     inline void SetDeploymentId(const char* value) { m_deploymentIdHasBeenSet = true; m_deploymentId.assign(value); }
 
     /**
-     * <p>[Required] The identifier of the <a>Deployment</a> resource to delete.</p>
+     * <p>The identifier of the Deployment resource to delete.</p>
      */
     inline DeleteDeploymentRequest& WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
 
     /**
-     * <p>[Required] The identifier of the <a>Deployment</a> resource to delete.</p>
+     * <p>The identifier of the Deployment resource to delete.</p>
      */
     inline DeleteDeploymentRequest& WithDeploymentId(Aws::String&& value) { SetDeploymentId(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] The identifier of the <a>Deployment</a> resource to delete.</p>
+     * <p>The identifier of the Deployment resource to delete.</p>
      */
     inline DeleteDeploymentRequest& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
 

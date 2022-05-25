@@ -94,56 +94,72 @@ namespace Model
     /**
      * <p>An array of channel objects that describes the input data and its location.
      * Each channel is a named input source. Similar to <code>InputDataConfig</code>
-     * supported by . Format(s) supported: CSV. Minimum of 500 rows.</p>
+     * supported by . Format(s) supported: CSV, Parquet. A minimum of 500 rows is
+     * required for the training dataset. There is not a minimum number of rows
+     * required for the validation dataset.</p>
      */
     inline const Aws::Vector<AutoMLChannel>& GetInputDataConfig() const{ return m_inputDataConfig; }
 
     /**
      * <p>An array of channel objects that describes the input data and its location.
      * Each channel is a named input source. Similar to <code>InputDataConfig</code>
-     * supported by . Format(s) supported: CSV. Minimum of 500 rows.</p>
+     * supported by . Format(s) supported: CSV, Parquet. A minimum of 500 rows is
+     * required for the training dataset. There is not a minimum number of rows
+     * required for the validation dataset.</p>
      */
     inline bool InputDataConfigHasBeenSet() const { return m_inputDataConfigHasBeenSet; }
 
     /**
      * <p>An array of channel objects that describes the input data and its location.
      * Each channel is a named input source. Similar to <code>InputDataConfig</code>
-     * supported by . Format(s) supported: CSV. Minimum of 500 rows.</p>
+     * supported by . Format(s) supported: CSV, Parquet. A minimum of 500 rows is
+     * required for the training dataset. There is not a minimum number of rows
+     * required for the validation dataset.</p>
      */
     inline void SetInputDataConfig(const Aws::Vector<AutoMLChannel>& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig = value; }
 
     /**
      * <p>An array of channel objects that describes the input data and its location.
      * Each channel is a named input source. Similar to <code>InputDataConfig</code>
-     * supported by . Format(s) supported: CSV. Minimum of 500 rows.</p>
+     * supported by . Format(s) supported: CSV, Parquet. A minimum of 500 rows is
+     * required for the training dataset. There is not a minimum number of rows
+     * required for the validation dataset.</p>
      */
     inline void SetInputDataConfig(Aws::Vector<AutoMLChannel>&& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig = std::move(value); }
 
     /**
      * <p>An array of channel objects that describes the input data and its location.
      * Each channel is a named input source. Similar to <code>InputDataConfig</code>
-     * supported by . Format(s) supported: CSV. Minimum of 500 rows.</p>
+     * supported by . Format(s) supported: CSV, Parquet. A minimum of 500 rows is
+     * required for the training dataset. There is not a minimum number of rows
+     * required for the validation dataset.</p>
      */
     inline CreateAutoMLJobRequest& WithInputDataConfig(const Aws::Vector<AutoMLChannel>& value) { SetInputDataConfig(value); return *this;}
 
     /**
      * <p>An array of channel objects that describes the input data and its location.
      * Each channel is a named input source. Similar to <code>InputDataConfig</code>
-     * supported by . Format(s) supported: CSV. Minimum of 500 rows.</p>
+     * supported by . Format(s) supported: CSV, Parquet. A minimum of 500 rows is
+     * required for the training dataset. There is not a minimum number of rows
+     * required for the validation dataset.</p>
      */
     inline CreateAutoMLJobRequest& WithInputDataConfig(Aws::Vector<AutoMLChannel>&& value) { SetInputDataConfig(std::move(value)); return *this;}
 
     /**
      * <p>An array of channel objects that describes the input data and its location.
      * Each channel is a named input source. Similar to <code>InputDataConfig</code>
-     * supported by . Format(s) supported: CSV. Minimum of 500 rows.</p>
+     * supported by . Format(s) supported: CSV, Parquet. A minimum of 500 rows is
+     * required for the training dataset. There is not a minimum number of rows
+     * required for the validation dataset.</p>
      */
     inline CreateAutoMLJobRequest& AddInputDataConfig(const AutoMLChannel& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig.push_back(value); return *this; }
 
     /**
      * <p>An array of channel objects that describes the input data and its location.
      * Each channel is a named input source. Similar to <code>InputDataConfig</code>
-     * supported by . Format(s) supported: CSV. Minimum of 500 rows.</p>
+     * supported by . Format(s) supported: CSV, Parquet. A minimum of 500 rows is
+     * required for the training dataset. There is not a minimum number of rows
+     * required for the validation dataset.</p>
      */
     inline CreateAutoMLJobRequest& AddInputDataConfig(AutoMLChannel&& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig.push_back(std::move(value)); return *this; }
 
@@ -186,60 +202,48 @@ namespace Model
 
 
     /**
-     * <p>Defines the type of supervised learning available for the candidates. Options
-     * include: <code>BinaryClassification</code>,
-     * <code>MulticlassClassification</code>, and <code>Regression</code>. For more
-     * information, see <a
+     * <p>Defines the type of supervised learning available for the candidates. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html">
      * Amazon SageMaker Autopilot problem types and algorithm support</a>.</p>
      */
     inline const ProblemType& GetProblemType() const{ return m_problemType; }
 
     /**
-     * <p>Defines the type of supervised learning available for the candidates. Options
-     * include: <code>BinaryClassification</code>,
-     * <code>MulticlassClassification</code>, and <code>Regression</code>. For more
-     * information, see <a
+     * <p>Defines the type of supervised learning available for the candidates. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html">
      * Amazon SageMaker Autopilot problem types and algorithm support</a>.</p>
      */
     inline bool ProblemTypeHasBeenSet() const { return m_problemTypeHasBeenSet; }
 
     /**
-     * <p>Defines the type of supervised learning available for the candidates. Options
-     * include: <code>BinaryClassification</code>,
-     * <code>MulticlassClassification</code>, and <code>Regression</code>. For more
-     * information, see <a
+     * <p>Defines the type of supervised learning available for the candidates. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html">
      * Amazon SageMaker Autopilot problem types and algorithm support</a>.</p>
      */
     inline void SetProblemType(const ProblemType& value) { m_problemTypeHasBeenSet = true; m_problemType = value; }
 
     /**
-     * <p>Defines the type of supervised learning available for the candidates. Options
-     * include: <code>BinaryClassification</code>,
-     * <code>MulticlassClassification</code>, and <code>Regression</code>. For more
-     * information, see <a
+     * <p>Defines the type of supervised learning available for the candidates. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html">
      * Amazon SageMaker Autopilot problem types and algorithm support</a>.</p>
      */
     inline void SetProblemType(ProblemType&& value) { m_problemTypeHasBeenSet = true; m_problemType = std::move(value); }
 
     /**
-     * <p>Defines the type of supervised learning available for the candidates. Options
-     * include: <code>BinaryClassification</code>,
-     * <code>MulticlassClassification</code>, and <code>Regression</code>. For more
-     * information, see <a
+     * <p>Defines the type of supervised learning available for the candidates. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html">
      * Amazon SageMaker Autopilot problem types and algorithm support</a>.</p>
      */
     inline CreateAutoMLJobRequest& WithProblemType(const ProblemType& value) { SetProblemType(value); return *this;}
 
     /**
-     * <p>Defines the type of supervised learning available for the candidates. Options
-     * include: <code>BinaryClassification</code>,
-     * <code>MulticlassClassification</code>, and <code>Regression</code>. For more
-     * information, see <a
+     * <p>Defines the type of supervised learning available for the candidates. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html">
      * Amazon SageMaker Autopilot problem types and algorithm support</a>.</p>
      */
@@ -290,38 +294,32 @@ namespace Model
 
 
     /**
-     * <p>Contains <code>CompletionCriteria</code> and <code>SecurityConfig</code>
-     * settings for the AutoML job.</p>
+     * <p>A collection of settings used to configure an AutoML job.</p>
      */
     inline const AutoMLJobConfig& GetAutoMLJobConfig() const{ return m_autoMLJobConfig; }
 
     /**
-     * <p>Contains <code>CompletionCriteria</code> and <code>SecurityConfig</code>
-     * settings for the AutoML job.</p>
+     * <p>A collection of settings used to configure an AutoML job.</p>
      */
     inline bool AutoMLJobConfigHasBeenSet() const { return m_autoMLJobConfigHasBeenSet; }
 
     /**
-     * <p>Contains <code>CompletionCriteria</code> and <code>SecurityConfig</code>
-     * settings for the AutoML job.</p>
+     * <p>A collection of settings used to configure an AutoML job.</p>
      */
     inline void SetAutoMLJobConfig(const AutoMLJobConfig& value) { m_autoMLJobConfigHasBeenSet = true; m_autoMLJobConfig = value; }
 
     /**
-     * <p>Contains <code>CompletionCriteria</code> and <code>SecurityConfig</code>
-     * settings for the AutoML job.</p>
+     * <p>A collection of settings used to configure an AutoML job.</p>
      */
     inline void SetAutoMLJobConfig(AutoMLJobConfig&& value) { m_autoMLJobConfigHasBeenSet = true; m_autoMLJobConfig = std::move(value); }
 
     /**
-     * <p>Contains <code>CompletionCriteria</code> and <code>SecurityConfig</code>
-     * settings for the AutoML job.</p>
+     * <p>A collection of settings used to configure an AutoML job.</p>
      */
     inline CreateAutoMLJobRequest& WithAutoMLJobConfig(const AutoMLJobConfig& value) { SetAutoMLJobConfig(value); return *this;}
 
     /**
-     * <p>Contains <code>CompletionCriteria</code> and <code>SecurityConfig</code>
-     * settings for the AutoML job.</p>
+     * <p>A collection of settings used to configure an AutoML job.</p>
      */
     inline CreateAutoMLJobRequest& WithAutoMLJobConfig(AutoMLJobConfig&& value) { SetAutoMLJobConfig(std::move(value)); return *this;}
 

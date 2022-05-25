@@ -37,173 +37,165 @@ namespace Model
 
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline const Aws::String& GetRestApiId() const{ return m_restApiId; }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline void SetRestApiId(const char* value) { m_restApiIdHasBeenSet = true; m_restApiId.assign(value); }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline DeleteIntegrationResponseRequest& WithRestApiId(const Aws::String& value) { SetRestApiId(value); return *this;}
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline DeleteIntegrationResponseRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline DeleteIntegrationResponseRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
 
 
     /**
-     * <p>[Required] Specifies a delete integration response request's resource
-     * identifier.</p>
+     * <p>Specifies a delete integration response request's resource identifier.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
 
     /**
-     * <p>[Required] Specifies a delete integration response request's resource
-     * identifier.</p>
+     * <p>Specifies a delete integration response request's resource identifier.</p>
      */
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
     /**
-     * <p>[Required] Specifies a delete integration response request's resource
-     * identifier.</p>
+     * <p>Specifies a delete integration response request's resource identifier.</p>
      */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
-     * <p>[Required] Specifies a delete integration response request's resource
-     * identifier.</p>
+     * <p>Specifies a delete integration response request's resource identifier.</p>
      */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
-     * <p>[Required] Specifies a delete integration response request's resource
-     * identifier.</p>
+     * <p>Specifies a delete integration response request's resource identifier.</p>
      */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
 
     /**
-     * <p>[Required] Specifies a delete integration response request's resource
-     * identifier.</p>
+     * <p>Specifies a delete integration response request's resource identifier.</p>
      */
     inline DeleteIntegrationResponseRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
 
     /**
-     * <p>[Required] Specifies a delete integration response request's resource
-     * identifier.</p>
+     * <p>Specifies a delete integration response request's resource identifier.</p>
      */
     inline DeleteIntegrationResponseRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] Specifies a delete integration response request's resource
-     * identifier.</p>
+     * <p>Specifies a delete integration response request's resource identifier.</p>
      */
     inline DeleteIntegrationResponseRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
 
     /**
-     * <p>[Required] Specifies a delete integration response request's HTTP method.</p>
+     * <p>Specifies a delete integration response request's HTTP method.</p>
      */
     inline const Aws::String& GetHttpMethod() const{ return m_httpMethod; }
 
     /**
-     * <p>[Required] Specifies a delete integration response request's HTTP method.</p>
+     * <p>Specifies a delete integration response request's HTTP method.</p>
      */
     inline bool HttpMethodHasBeenSet() const { return m_httpMethodHasBeenSet; }
 
     /**
-     * <p>[Required] Specifies a delete integration response request's HTTP method.</p>
+     * <p>Specifies a delete integration response request's HTTP method.</p>
      */
     inline void SetHttpMethod(const Aws::String& value) { m_httpMethodHasBeenSet = true; m_httpMethod = value; }
 
     /**
-     * <p>[Required] Specifies a delete integration response request's HTTP method.</p>
+     * <p>Specifies a delete integration response request's HTTP method.</p>
      */
     inline void SetHttpMethod(Aws::String&& value) { m_httpMethodHasBeenSet = true; m_httpMethod = std::move(value); }
 
     /**
-     * <p>[Required] Specifies a delete integration response request's HTTP method.</p>
+     * <p>Specifies a delete integration response request's HTTP method.</p>
      */
     inline void SetHttpMethod(const char* value) { m_httpMethodHasBeenSet = true; m_httpMethod.assign(value); }
 
     /**
-     * <p>[Required] Specifies a delete integration response request's HTTP method.</p>
+     * <p>Specifies a delete integration response request's HTTP method.</p>
      */
     inline DeleteIntegrationResponseRequest& WithHttpMethod(const Aws::String& value) { SetHttpMethod(value); return *this;}
 
     /**
-     * <p>[Required] Specifies a delete integration response request's HTTP method.</p>
+     * <p>Specifies a delete integration response request's HTTP method.</p>
      */
     inline DeleteIntegrationResponseRequest& WithHttpMethod(Aws::String&& value) { SetHttpMethod(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] Specifies a delete integration response request's HTTP method.</p>
+     * <p>Specifies a delete integration response request's HTTP method.</p>
      */
     inline DeleteIntegrationResponseRequest& WithHttpMethod(const char* value) { SetHttpMethod(value); return *this;}
 
 
     /**
-     * <p>[Required] Specifies a delete integration response request's status code.</p>
+     * <p>Specifies a delete integration response request's status code.</p>
      */
     inline const Aws::String& GetStatusCode() const{ return m_statusCode; }
 
     /**
-     * <p>[Required] Specifies a delete integration response request's status code.</p>
+     * <p>Specifies a delete integration response request's status code.</p>
      */
     inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
 
     /**
-     * <p>[Required] Specifies a delete integration response request's status code.</p>
+     * <p>Specifies a delete integration response request's status code.</p>
      */
     inline void SetStatusCode(const Aws::String& value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
 
     /**
-     * <p>[Required] Specifies a delete integration response request's status code.</p>
+     * <p>Specifies a delete integration response request's status code.</p>
      */
     inline void SetStatusCode(Aws::String&& value) { m_statusCodeHasBeenSet = true; m_statusCode = std::move(value); }
 
     /**
-     * <p>[Required] Specifies a delete integration response request's status code.</p>
+     * <p>Specifies a delete integration response request's status code.</p>
      */
     inline void SetStatusCode(const char* value) { m_statusCodeHasBeenSet = true; m_statusCode.assign(value); }
 
     /**
-     * <p>[Required] Specifies a delete integration response request's status code.</p>
+     * <p>Specifies a delete integration response request's status code.</p>
      */
     inline DeleteIntegrationResponseRequest& WithStatusCode(const Aws::String& value) { SetStatusCode(value); return *this;}
 
     /**
-     * <p>[Required] Specifies a delete integration response request's status code.</p>
+     * <p>Specifies a delete integration response request's status code.</p>
      */
     inline DeleteIntegrationResponseRequest& WithStatusCode(Aws::String&& value) { SetStatusCode(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] Specifies a delete integration response request's status code.</p>
+     * <p>Specifies a delete integration response request's status code.</p>
      */
     inline DeleteIntegrationResponseRequest& WithStatusCode(const char* value) { SetStatusCode(value); return *this;}
 

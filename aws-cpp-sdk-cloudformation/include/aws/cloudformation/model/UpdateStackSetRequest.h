@@ -1047,7 +1047,7 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the IAM role to use to update this stack
+     * <p>The Amazon Resource Name (ARN) of the IAM role to use to update this stack
      * set.</p> <p>Specify an IAM role only if you are using customized administrator
      * roles to control which users or groups can manage specific stack sets within the
      * same administrator account. For more information, see <a
@@ -1061,7 +1061,7 @@ namespace Model
     inline const Aws::String& GetAdministrationRoleARN() const{ return m_administrationRoleARN; }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the IAM role to use to update this stack
+     * <p>The Amazon Resource Name (ARN) of the IAM role to use to update this stack
      * set.</p> <p>Specify an IAM role only if you are using customized administrator
      * roles to control which users or groups can manage specific stack sets within the
      * same administrator account. For more information, see <a
@@ -1075,7 +1075,7 @@ namespace Model
     inline bool AdministrationRoleARNHasBeenSet() const { return m_administrationRoleARNHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the IAM role to use to update this stack
+     * <p>The Amazon Resource Name (ARN) of the IAM role to use to update this stack
      * set.</p> <p>Specify an IAM role only if you are using customized administrator
      * roles to control which users or groups can manage specific stack sets within the
      * same administrator account. For more information, see <a
@@ -1089,7 +1089,7 @@ namespace Model
     inline void SetAdministrationRoleARN(const Aws::String& value) { m_administrationRoleARNHasBeenSet = true; m_administrationRoleARN = value; }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the IAM role to use to update this stack
+     * <p>The Amazon Resource Name (ARN) of the IAM role to use to update this stack
      * set.</p> <p>Specify an IAM role only if you are using customized administrator
      * roles to control which users or groups can manage specific stack sets within the
      * same administrator account. For more information, see <a
@@ -1103,7 +1103,7 @@ namespace Model
     inline void SetAdministrationRoleARN(Aws::String&& value) { m_administrationRoleARNHasBeenSet = true; m_administrationRoleARN = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the IAM role to use to update this stack
+     * <p>The Amazon Resource Name (ARN) of the IAM role to use to update this stack
      * set.</p> <p>Specify an IAM role only if you are using customized administrator
      * roles to control which users or groups can manage specific stack sets within the
      * same administrator account. For more information, see <a
@@ -1117,7 +1117,7 @@ namespace Model
     inline void SetAdministrationRoleARN(const char* value) { m_administrationRoleARNHasBeenSet = true; m_administrationRoleARN.assign(value); }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the IAM role to use to update this stack
+     * <p>The Amazon Resource Name (ARN) of the IAM role to use to update this stack
      * set.</p> <p>Specify an IAM role only if you are using customized administrator
      * roles to control which users or groups can manage specific stack sets within the
      * same administrator account. For more information, see <a
@@ -1131,7 +1131,7 @@ namespace Model
     inline UpdateStackSetRequest& WithAdministrationRoleARN(const Aws::String& value) { SetAdministrationRoleARN(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the IAM role to use to update this stack
+     * <p>The Amazon Resource Name (ARN) of the IAM role to use to update this stack
      * set.</p> <p>Specify an IAM role only if you are using customized administrator
      * roles to control which users or groups can manage specific stack sets within the
      * same administrator account. For more information, see <a
@@ -1145,7 +1145,7 @@ namespace Model
     inline UpdateStackSetRequest& WithAdministrationRoleARN(Aws::String&& value) { SetAdministrationRoleARN(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the IAM role to use to update this stack
+     * <p>The Amazon Resource Name (ARN) of the IAM role to use to update this stack
      * set.</p> <p>Specify an IAM role only if you are using customized administrator
      * roles to control which users or groups can manage specific stack sets within the
      * same administrator account. For more information, see <a

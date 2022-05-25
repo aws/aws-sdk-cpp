@@ -18,8 +18,8 @@ namespace Model
 {
 
   /**
-   * <p>Gets a <a>GatewayResponse</a> of a specified response type on the given
-   * <a>RestApi</a>.</p><p><h3>See Also:</h3>   <a
+   * <p>Gets a GatewayResponse of a specified response type on the given
+   * RestApi.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetGatewayResponseRequest">AWS
    * API Reference</a></p>
    */
@@ -38,79 +38,73 @@ namespace Model
 
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline const Aws::String& GetRestApiId() const{ return m_restApiId; }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline void SetRestApiId(const char* value) { m_restApiIdHasBeenSet = true; m_restApiId.assign(value); }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline GetGatewayResponseRequest& WithRestApiId(const Aws::String& value) { SetRestApiId(value); return *this;}
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline GetGatewayResponseRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline GetGatewayResponseRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
 
 
     /**
-     * <p>[Required] <p>The response type of the associated
-     * <a>GatewayResponse</a>.</p></p>
+     * <p>The response type of the associated GatewayResponse.</p>
      */
     inline const GatewayResponseType& GetResponseType() const{ return m_responseType; }
 
     /**
-     * <p>[Required] <p>The response type of the associated
-     * <a>GatewayResponse</a>.</p></p>
+     * <p>The response type of the associated GatewayResponse.</p>
      */
     inline bool ResponseTypeHasBeenSet() const { return m_responseTypeHasBeenSet; }
 
     /**
-     * <p>[Required] <p>The response type of the associated
-     * <a>GatewayResponse</a>.</p></p>
+     * <p>The response type of the associated GatewayResponse.</p>
      */
     inline void SetResponseType(const GatewayResponseType& value) { m_responseTypeHasBeenSet = true; m_responseType = value; }
 
     /**
-     * <p>[Required] <p>The response type of the associated
-     * <a>GatewayResponse</a>.</p></p>
+     * <p>The response type of the associated GatewayResponse.</p>
      */
     inline void SetResponseType(GatewayResponseType&& value) { m_responseTypeHasBeenSet = true; m_responseType = std::move(value); }
 
     /**
-     * <p>[Required] <p>The response type of the associated
-     * <a>GatewayResponse</a>.</p></p>
+     * <p>The response type of the associated GatewayResponse.</p>
      */
     inline GetGatewayResponseRequest& WithResponseType(const GatewayResponseType& value) { SetResponseType(value); return *this;}
 
     /**
-     * <p>[Required] <p>The response type of the associated
-     * <a>GatewayResponse</a>.</p></p>
+     * <p>The response type of the associated GatewayResponse.</p>
      */
     inline GetGatewayResponseRequest& WithResponseType(GatewayResponseType&& value) { SetResponseType(std::move(value)); return *this;}
 

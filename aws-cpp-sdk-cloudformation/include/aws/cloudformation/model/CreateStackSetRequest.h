@@ -315,49 +315,49 @@ namespace Model
 
     /**
      * <p>The stack ID you are importing into a new stack set. Specify the Amazon
-     * Resource Number (ARN) of the stack.</p>
+     * Resource Name (ARN) of the stack.</p>
      */
     inline const Aws::String& GetStackId() const{ return m_stackId; }
 
     /**
      * <p>The stack ID you are importing into a new stack set. Specify the Amazon
-     * Resource Number (ARN) of the stack.</p>
+     * Resource Name (ARN) of the stack.</p>
      */
     inline bool StackIdHasBeenSet() const { return m_stackIdHasBeenSet; }
 
     /**
      * <p>The stack ID you are importing into a new stack set. Specify the Amazon
-     * Resource Number (ARN) of the stack.</p>
+     * Resource Name (ARN) of the stack.</p>
      */
     inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
 
     /**
      * <p>The stack ID you are importing into a new stack set. Specify the Amazon
-     * Resource Number (ARN) of the stack.</p>
+     * Resource Name (ARN) of the stack.</p>
      */
     inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = std::move(value); }
 
     /**
      * <p>The stack ID you are importing into a new stack set. Specify the Amazon
-     * Resource Number (ARN) of the stack.</p>
+     * Resource Name (ARN) of the stack.</p>
      */
     inline void SetStackId(const char* value) { m_stackIdHasBeenSet = true; m_stackId.assign(value); }
 
     /**
      * <p>The stack ID you are importing into a new stack set. Specify the Amazon
-     * Resource Number (ARN) of the stack.</p>
+     * Resource Name (ARN) of the stack.</p>
      */
     inline CreateStackSetRequest& WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
 
     /**
      * <p>The stack ID you are importing into a new stack set. Specify the Amazon
-     * Resource Number (ARN) of the stack.</p>
+     * Resource Name (ARN) of the stack.</p>
      */
     inline CreateStackSetRequest& WithStackId(Aws::String&& value) { SetStackId(std::move(value)); return *this;}
 
     /**
      * <p>The stack ID you are importing into a new stack set. Specify the Amazon
-     * Resource Number (ARN) of the stack.</p>
+     * Resource Name (ARN) of the stack.</p>
      */
     inline CreateStackSetRequest& WithStackId(const char* value) { SetStackId(value); return *this;}
 
@@ -918,7 +918,7 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the IAM role to use to create this stack
+     * <p>The Amazon Resource Name (ARN) of the IAM role to use to create this stack
      * set.</p> <p>Specify an IAM role only if you are using customized administrator
      * roles to control which users or groups can manage specific stack sets within the
      * same administrator account. For more information, see <a
@@ -929,7 +929,7 @@ namespace Model
     inline const Aws::String& GetAdministrationRoleARN() const{ return m_administrationRoleARN; }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the IAM role to use to create this stack
+     * <p>The Amazon Resource Name (ARN) of the IAM role to use to create this stack
      * set.</p> <p>Specify an IAM role only if you are using customized administrator
      * roles to control which users or groups can manage specific stack sets within the
      * same administrator account. For more information, see <a
@@ -940,7 +940,7 @@ namespace Model
     inline bool AdministrationRoleARNHasBeenSet() const { return m_administrationRoleARNHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the IAM role to use to create this stack
+     * <p>The Amazon Resource Name (ARN) of the IAM role to use to create this stack
      * set.</p> <p>Specify an IAM role only if you are using customized administrator
      * roles to control which users or groups can manage specific stack sets within the
      * same administrator account. For more information, see <a
@@ -951,7 +951,7 @@ namespace Model
     inline void SetAdministrationRoleARN(const Aws::String& value) { m_administrationRoleARNHasBeenSet = true; m_administrationRoleARN = value; }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the IAM role to use to create this stack
+     * <p>The Amazon Resource Name (ARN) of the IAM role to use to create this stack
      * set.</p> <p>Specify an IAM role only if you are using customized administrator
      * roles to control which users or groups can manage specific stack sets within the
      * same administrator account. For more information, see <a
@@ -962,7 +962,7 @@ namespace Model
     inline void SetAdministrationRoleARN(Aws::String&& value) { m_administrationRoleARNHasBeenSet = true; m_administrationRoleARN = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the IAM role to use to create this stack
+     * <p>The Amazon Resource Name (ARN) of the IAM role to use to create this stack
      * set.</p> <p>Specify an IAM role only if you are using customized administrator
      * roles to control which users or groups can manage specific stack sets within the
      * same administrator account. For more information, see <a
@@ -973,7 +973,7 @@ namespace Model
     inline void SetAdministrationRoleARN(const char* value) { m_administrationRoleARNHasBeenSet = true; m_administrationRoleARN.assign(value); }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the IAM role to use to create this stack
+     * <p>The Amazon Resource Name (ARN) of the IAM role to use to create this stack
      * set.</p> <p>Specify an IAM role only if you are using customized administrator
      * roles to control which users or groups can manage specific stack sets within the
      * same administrator account. For more information, see <a
@@ -984,7 +984,7 @@ namespace Model
     inline CreateStackSetRequest& WithAdministrationRoleARN(const Aws::String& value) { SetAdministrationRoleARN(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the IAM role to use to create this stack
+     * <p>The Amazon Resource Name (ARN) of the IAM role to use to create this stack
      * set.</p> <p>Specify an IAM role only if you are using customized administrator
      * roles to control which users or groups can manage specific stack sets within the
      * same administrator account. For more information, see <a
@@ -995,7 +995,7 @@ namespace Model
     inline CreateStackSetRequest& WithAdministrationRoleARN(Aws::String&& value) { SetAdministrationRoleARN(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the IAM role to use to create this stack
+     * <p>The Amazon Resource Name (ARN) of the IAM role to use to create this stack
      * set.</p> <p>Specify an IAM role only if you are using customized administrator
      * roles to control which users or groups can manage specific stack sets within the
      * same administrator account. For more information, see <a

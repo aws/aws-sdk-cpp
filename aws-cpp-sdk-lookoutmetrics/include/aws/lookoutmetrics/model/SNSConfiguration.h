@@ -123,32 +123,32 @@ namespace Model
 
 
     /**
-     * <p>The text format for alerts.</p>
+     * <p>The format of the SNS topic.</p>
      */
     inline const SnsFormat& GetSnsFormat() const{ return m_snsFormat; }
 
     /**
-     * <p>The text format for alerts.</p>
+     * <p>The format of the SNS topic.</p>
      */
     inline bool SnsFormatHasBeenSet() const { return m_snsFormatHasBeenSet; }
 
     /**
-     * <p>The text format for alerts.</p>
+     * <p>The format of the SNS topic.</p>
      */
     inline void SetSnsFormat(const SnsFormat& value) { m_snsFormatHasBeenSet = true; m_snsFormat = value; }
 
     /**
-     * <p>The text format for alerts.</p>
+     * <p>The format of the SNS topic.</p>
      */
     inline void SetSnsFormat(SnsFormat&& value) { m_snsFormatHasBeenSet = true; m_snsFormat = std::move(value); }
 
     /**
-     * <p>The text format for alerts.</p>
+     * <p>The format of the SNS topic.</p>
      */
     inline SNSConfiguration& WithSnsFormat(const SnsFormat& value) { SetSnsFormat(value); return *this;}
 
     /**
-     * <p>The text format for alerts.</p>
+     * <p>The format of the SNS topic.</p>
      */
     inline SNSConfiguration& WithSnsFormat(SnsFormat&& value) { SetSnsFormat(std::move(value)); return *this;}
 

@@ -36,91 +36,83 @@ namespace Model
 
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline const Aws::String& GetRestApiId() const{ return m_restApiId; }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline void SetRestApiId(const char* value) { m_restApiIdHasBeenSet = true; m_restApiId.assign(value); }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline GetDocumentationVersionRequest& WithRestApiId(const Aws::String& value) { SetRestApiId(value); return *this;}
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline GetDocumentationVersionRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline GetDocumentationVersionRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
 
 
     /**
-     * <p>[Required] The version identifier of the to-be-retrieved documentation
-     * snapshot.</p>
+     * <p>The version identifier of the to-be-retrieved documentation snapshot.</p>
      */
     inline const Aws::String& GetDocumentationVersion() const{ return m_documentationVersion; }
 
     /**
-     * <p>[Required] The version identifier of the to-be-retrieved documentation
-     * snapshot.</p>
+     * <p>The version identifier of the to-be-retrieved documentation snapshot.</p>
      */
     inline bool DocumentationVersionHasBeenSet() const { return m_documentationVersionHasBeenSet; }
 
     /**
-     * <p>[Required] The version identifier of the to-be-retrieved documentation
-     * snapshot.</p>
+     * <p>The version identifier of the to-be-retrieved documentation snapshot.</p>
      */
     inline void SetDocumentationVersion(const Aws::String& value) { m_documentationVersionHasBeenSet = true; m_documentationVersion = value; }
 
     /**
-     * <p>[Required] The version identifier of the to-be-retrieved documentation
-     * snapshot.</p>
+     * <p>The version identifier of the to-be-retrieved documentation snapshot.</p>
      */
     inline void SetDocumentationVersion(Aws::String&& value) { m_documentationVersionHasBeenSet = true; m_documentationVersion = std::move(value); }
 
     /**
-     * <p>[Required] The version identifier of the to-be-retrieved documentation
-     * snapshot.</p>
+     * <p>The version identifier of the to-be-retrieved documentation snapshot.</p>
      */
     inline void SetDocumentationVersion(const char* value) { m_documentationVersionHasBeenSet = true; m_documentationVersion.assign(value); }
 
     /**
-     * <p>[Required] The version identifier of the to-be-retrieved documentation
-     * snapshot.</p>
+     * <p>The version identifier of the to-be-retrieved documentation snapshot.</p>
      */
     inline GetDocumentationVersionRequest& WithDocumentationVersion(const Aws::String& value) { SetDocumentationVersion(value); return *this;}
 
     /**
-     * <p>[Required] The version identifier of the to-be-retrieved documentation
-     * snapshot.</p>
+     * <p>The version identifier of the to-be-retrieved documentation snapshot.</p>
      */
     inline GetDocumentationVersionRequest& WithDocumentationVersion(Aws::String&& value) { SetDocumentationVersion(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] The version identifier of the to-be-retrieved documentation
-     * snapshot.</p>
+     * <p>The version identifier of the to-be-retrieved documentation snapshot.</p>
      */
     inline GetDocumentationVersionRequest& WithDocumentationVersion(const char* value) { SetDocumentationVersion(value); return *this;}
 

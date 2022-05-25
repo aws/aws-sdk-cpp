@@ -43,42 +43,42 @@ namespace Model
 
 
     /**
-     * <p>[Required] The name of the usage plan.</p>
+     * <p>The name of the usage plan.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>[Required] The name of the usage plan.</p>
+     * <p>The name of the usage plan.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>[Required] The name of the usage plan.</p>
+     * <p>The name of the usage plan.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>[Required] The name of the usage plan.</p>
+     * <p>The name of the usage plan.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>[Required] The name of the usage plan.</p>
+     * <p>The name of the usage plan.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>[Required] The name of the usage plan.</p>
+     * <p>The name of the usage plan.</p>
      */
     inline CreateUsagePlanRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>[Required] The name of the usage plan.</p>
+     * <p>The name of the usage plan.</p>
      */
     inline CreateUsagePlanRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] The name of the usage plan.</p>
+     * <p>The name of the usage plan.</p>
      */
     inline CreateUsagePlanRequest& WithName(const char* value) { SetName(value); return *this;}
 

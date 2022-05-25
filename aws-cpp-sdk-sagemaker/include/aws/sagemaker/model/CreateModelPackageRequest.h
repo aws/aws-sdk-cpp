@@ -758,49 +758,97 @@ namespace Model
 
     /**
      * <p>The machine learning task your model package accomplishes. Common machine
-     * learning tasks include object detection and image classification.</p>
+     * learning tasks include object detection and image classification. The following
+     * tasks are supported by Inference Recommender:
+     * <code>"IMAGE_CLASSIFICATION"</code> | <code>"OBJECT_DETECTION"</code> |
+     * <code>"TEXT_GENERATION"</code> |<code>"IMAGE_SEGMENTATION"</code> |
+     * <code>"FILL_MASK"</code> | <code>"CLASSIFICATION"</code> |
+     * <code>"REGRESSION"</code> | <code>"OTHER"</code>.</p> <p>Specify "OTHER" if none
+     * of the tasks listed fit your use case.</p>
      */
     inline const Aws::String& GetTask() const{ return m_task; }
 
     /**
      * <p>The machine learning task your model package accomplishes. Common machine
-     * learning tasks include object detection and image classification.</p>
+     * learning tasks include object detection and image classification. The following
+     * tasks are supported by Inference Recommender:
+     * <code>"IMAGE_CLASSIFICATION"</code> | <code>"OBJECT_DETECTION"</code> |
+     * <code>"TEXT_GENERATION"</code> |<code>"IMAGE_SEGMENTATION"</code> |
+     * <code>"FILL_MASK"</code> | <code>"CLASSIFICATION"</code> |
+     * <code>"REGRESSION"</code> | <code>"OTHER"</code>.</p> <p>Specify "OTHER" if none
+     * of the tasks listed fit your use case.</p>
      */
     inline bool TaskHasBeenSet() const { return m_taskHasBeenSet; }
 
     /**
      * <p>The machine learning task your model package accomplishes. Common machine
-     * learning tasks include object detection and image classification.</p>
+     * learning tasks include object detection and image classification. The following
+     * tasks are supported by Inference Recommender:
+     * <code>"IMAGE_CLASSIFICATION"</code> | <code>"OBJECT_DETECTION"</code> |
+     * <code>"TEXT_GENERATION"</code> |<code>"IMAGE_SEGMENTATION"</code> |
+     * <code>"FILL_MASK"</code> | <code>"CLASSIFICATION"</code> |
+     * <code>"REGRESSION"</code> | <code>"OTHER"</code>.</p> <p>Specify "OTHER" if none
+     * of the tasks listed fit your use case.</p>
      */
     inline void SetTask(const Aws::String& value) { m_taskHasBeenSet = true; m_task = value; }
 
     /**
      * <p>The machine learning task your model package accomplishes. Common machine
-     * learning tasks include object detection and image classification.</p>
+     * learning tasks include object detection and image classification. The following
+     * tasks are supported by Inference Recommender:
+     * <code>"IMAGE_CLASSIFICATION"</code> | <code>"OBJECT_DETECTION"</code> |
+     * <code>"TEXT_GENERATION"</code> |<code>"IMAGE_SEGMENTATION"</code> |
+     * <code>"FILL_MASK"</code> | <code>"CLASSIFICATION"</code> |
+     * <code>"REGRESSION"</code> | <code>"OTHER"</code>.</p> <p>Specify "OTHER" if none
+     * of the tasks listed fit your use case.</p>
      */
     inline void SetTask(Aws::String&& value) { m_taskHasBeenSet = true; m_task = std::move(value); }
 
     /**
      * <p>The machine learning task your model package accomplishes. Common machine
-     * learning tasks include object detection and image classification.</p>
+     * learning tasks include object detection and image classification. The following
+     * tasks are supported by Inference Recommender:
+     * <code>"IMAGE_CLASSIFICATION"</code> | <code>"OBJECT_DETECTION"</code> |
+     * <code>"TEXT_GENERATION"</code> |<code>"IMAGE_SEGMENTATION"</code> |
+     * <code>"FILL_MASK"</code> | <code>"CLASSIFICATION"</code> |
+     * <code>"REGRESSION"</code> | <code>"OTHER"</code>.</p> <p>Specify "OTHER" if none
+     * of the tasks listed fit your use case.</p>
      */
     inline void SetTask(const char* value) { m_taskHasBeenSet = true; m_task.assign(value); }
 
     /**
      * <p>The machine learning task your model package accomplishes. Common machine
-     * learning tasks include object detection and image classification.</p>
+     * learning tasks include object detection and image classification. The following
+     * tasks are supported by Inference Recommender:
+     * <code>"IMAGE_CLASSIFICATION"</code> | <code>"OBJECT_DETECTION"</code> |
+     * <code>"TEXT_GENERATION"</code> |<code>"IMAGE_SEGMENTATION"</code> |
+     * <code>"FILL_MASK"</code> | <code>"CLASSIFICATION"</code> |
+     * <code>"REGRESSION"</code> | <code>"OTHER"</code>.</p> <p>Specify "OTHER" if none
+     * of the tasks listed fit your use case.</p>
      */
     inline CreateModelPackageRequest& WithTask(const Aws::String& value) { SetTask(value); return *this;}
 
     /**
      * <p>The machine learning task your model package accomplishes. Common machine
-     * learning tasks include object detection and image classification.</p>
+     * learning tasks include object detection and image classification. The following
+     * tasks are supported by Inference Recommender:
+     * <code>"IMAGE_CLASSIFICATION"</code> | <code>"OBJECT_DETECTION"</code> |
+     * <code>"TEXT_GENERATION"</code> |<code>"IMAGE_SEGMENTATION"</code> |
+     * <code>"FILL_MASK"</code> | <code>"CLASSIFICATION"</code> |
+     * <code>"REGRESSION"</code> | <code>"OTHER"</code>.</p> <p>Specify "OTHER" if none
+     * of the tasks listed fit your use case.</p>
      */
     inline CreateModelPackageRequest& WithTask(Aws::String&& value) { SetTask(std::move(value)); return *this;}
 
     /**
      * <p>The machine learning task your model package accomplishes. Common machine
-     * learning tasks include object detection and image classification.</p>
+     * learning tasks include object detection and image classification. The following
+     * tasks are supported by Inference Recommender:
+     * <code>"IMAGE_CLASSIFICATION"</code> | <code>"OBJECT_DETECTION"</code> |
+     * <code>"TEXT_GENERATION"</code> |<code>"IMAGE_SEGMENTATION"</code> |
+     * <code>"FILL_MASK"</code> | <code>"CLASSIFICATION"</code> |
+     * <code>"REGRESSION"</code> | <code>"OTHER"</code>.</p> <p>Specify "OTHER" if none
+     * of the tasks listed fit your use case.</p>
      */
     inline CreateModelPackageRequest& WithTask(const char* value) { SetTask(value); return *this;}
 

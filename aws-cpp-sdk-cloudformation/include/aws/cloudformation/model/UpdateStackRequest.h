@@ -309,8 +309,8 @@ namespace Model
      * specify either the <code>StackPolicyDuringUpdateBody</code> or the
      * <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you
      * want to update protected resources, specify a temporary overriding stack policy
-     * during this update. If you do not specify a stack policy, the current policy
-     * that is associated with the stack will be used.</p>
+     * during this update. If you don't specify a stack policy, the current policy that
+     * is associated with the stack will be used.</p>
      */
     inline const Aws::String& GetStackPolicyDuringUpdateBody() const{ return m_stackPolicyDuringUpdateBody; }
 
@@ -319,8 +319,8 @@ namespace Model
      * specify either the <code>StackPolicyDuringUpdateBody</code> or the
      * <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you
      * want to update protected resources, specify a temporary overriding stack policy
-     * during this update. If you do not specify a stack policy, the current policy
-     * that is associated with the stack will be used.</p>
+     * during this update. If you don't specify a stack policy, the current policy that
+     * is associated with the stack will be used.</p>
      */
     inline bool StackPolicyDuringUpdateBodyHasBeenSet() const { return m_stackPolicyDuringUpdateBodyHasBeenSet; }
 
@@ -329,8 +329,8 @@ namespace Model
      * specify either the <code>StackPolicyDuringUpdateBody</code> or the
      * <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you
      * want to update protected resources, specify a temporary overriding stack policy
-     * during this update. If you do not specify a stack policy, the current policy
-     * that is associated with the stack will be used.</p>
+     * during this update. If you don't specify a stack policy, the current policy that
+     * is associated with the stack will be used.</p>
      */
     inline void SetStackPolicyDuringUpdateBody(const Aws::String& value) { m_stackPolicyDuringUpdateBodyHasBeenSet = true; m_stackPolicyDuringUpdateBody = value; }
 
@@ -339,8 +339,8 @@ namespace Model
      * specify either the <code>StackPolicyDuringUpdateBody</code> or the
      * <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you
      * want to update protected resources, specify a temporary overriding stack policy
-     * during this update. If you do not specify a stack policy, the current policy
-     * that is associated with the stack will be used.</p>
+     * during this update. If you don't specify a stack policy, the current policy that
+     * is associated with the stack will be used.</p>
      */
     inline void SetStackPolicyDuringUpdateBody(Aws::String&& value) { m_stackPolicyDuringUpdateBodyHasBeenSet = true; m_stackPolicyDuringUpdateBody = std::move(value); }
 
@@ -349,8 +349,8 @@ namespace Model
      * specify either the <code>StackPolicyDuringUpdateBody</code> or the
      * <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you
      * want to update protected resources, specify a temporary overriding stack policy
-     * during this update. If you do not specify a stack policy, the current policy
-     * that is associated with the stack will be used.</p>
+     * during this update. If you don't specify a stack policy, the current policy that
+     * is associated with the stack will be used.</p>
      */
     inline void SetStackPolicyDuringUpdateBody(const char* value) { m_stackPolicyDuringUpdateBodyHasBeenSet = true; m_stackPolicyDuringUpdateBody.assign(value); }
 
@@ -359,8 +359,8 @@ namespace Model
      * specify either the <code>StackPolicyDuringUpdateBody</code> or the
      * <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you
      * want to update protected resources, specify a temporary overriding stack policy
-     * during this update. If you do not specify a stack policy, the current policy
-     * that is associated with the stack will be used.</p>
+     * during this update. If you don't specify a stack policy, the current policy that
+     * is associated with the stack will be used.</p>
      */
     inline UpdateStackRequest& WithStackPolicyDuringUpdateBody(const Aws::String& value) { SetStackPolicyDuringUpdateBody(value); return *this;}
 
@@ -369,8 +369,8 @@ namespace Model
      * specify either the <code>StackPolicyDuringUpdateBody</code> or the
      * <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you
      * want to update protected resources, specify a temporary overriding stack policy
-     * during this update. If you do not specify a stack policy, the current policy
-     * that is associated with the stack will be used.</p>
+     * during this update. If you don't specify a stack policy, the current policy that
+     * is associated with the stack will be used.</p>
      */
     inline UpdateStackRequest& WithStackPolicyDuringUpdateBody(Aws::String&& value) { SetStackPolicyDuringUpdateBody(std::move(value)); return *this;}
 
@@ -379,8 +379,8 @@ namespace Model
      * specify either the <code>StackPolicyDuringUpdateBody</code> or the
      * <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you
      * want to update protected resources, specify a temporary overriding stack policy
-     * during this update. If you do not specify a stack policy, the current policy
-     * that is associated with the stack will be used.</p>
+     * during this update. If you don't specify a stack policy, the current policy that
+     * is associated with the stack will be used.</p>
      */
     inline UpdateStackRequest& WithStackPolicyDuringUpdateBody(const char* value) { SetStackPolicyDuringUpdateBody(value); return *this;}
 
@@ -392,8 +392,8 @@ namespace Model
      * <code>StackPolicyDuringUpdateBody</code> or the
      * <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you
      * want to update protected resources, specify a temporary overriding stack policy
-     * during this update. If you do not specify a stack policy, the current policy
-     * that is associated with the stack will be used.</p>
+     * during this update. If you don't specify a stack policy, the current policy that
+     * is associated with the stack will be used.</p>
      */
     inline const Aws::String& GetStackPolicyDuringUpdateURL() const{ return m_stackPolicyDuringUpdateURL; }
 
@@ -404,8 +404,8 @@ namespace Model
      * <code>StackPolicyDuringUpdateBody</code> or the
      * <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you
      * want to update protected resources, specify a temporary overriding stack policy
-     * during this update. If you do not specify a stack policy, the current policy
-     * that is associated with the stack will be used.</p>
+     * during this update. If you don't specify a stack policy, the current policy that
+     * is associated with the stack will be used.</p>
      */
     inline bool StackPolicyDuringUpdateURLHasBeenSet() const { return m_stackPolicyDuringUpdateURLHasBeenSet; }
 
@@ -416,8 +416,8 @@ namespace Model
      * <code>StackPolicyDuringUpdateBody</code> or the
      * <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you
      * want to update protected resources, specify a temporary overriding stack policy
-     * during this update. If you do not specify a stack policy, the current policy
-     * that is associated with the stack will be used.</p>
+     * during this update. If you don't specify a stack policy, the current policy that
+     * is associated with the stack will be used.</p>
      */
     inline void SetStackPolicyDuringUpdateURL(const Aws::String& value) { m_stackPolicyDuringUpdateURLHasBeenSet = true; m_stackPolicyDuringUpdateURL = value; }
 
@@ -428,8 +428,8 @@ namespace Model
      * <code>StackPolicyDuringUpdateBody</code> or the
      * <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you
      * want to update protected resources, specify a temporary overriding stack policy
-     * during this update. If you do not specify a stack policy, the current policy
-     * that is associated with the stack will be used.</p>
+     * during this update. If you don't specify a stack policy, the current policy that
+     * is associated with the stack will be used.</p>
      */
     inline void SetStackPolicyDuringUpdateURL(Aws::String&& value) { m_stackPolicyDuringUpdateURLHasBeenSet = true; m_stackPolicyDuringUpdateURL = std::move(value); }
 
@@ -440,8 +440,8 @@ namespace Model
      * <code>StackPolicyDuringUpdateBody</code> or the
      * <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you
      * want to update protected resources, specify a temporary overriding stack policy
-     * during this update. If you do not specify a stack policy, the current policy
-     * that is associated with the stack will be used.</p>
+     * during this update. If you don't specify a stack policy, the current policy that
+     * is associated with the stack will be used.</p>
      */
     inline void SetStackPolicyDuringUpdateURL(const char* value) { m_stackPolicyDuringUpdateURLHasBeenSet = true; m_stackPolicyDuringUpdateURL.assign(value); }
 
@@ -452,8 +452,8 @@ namespace Model
      * <code>StackPolicyDuringUpdateBody</code> or the
      * <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you
      * want to update protected resources, specify a temporary overriding stack policy
-     * during this update. If you do not specify a stack policy, the current policy
-     * that is associated with the stack will be used.</p>
+     * during this update. If you don't specify a stack policy, the current policy that
+     * is associated with the stack will be used.</p>
      */
     inline UpdateStackRequest& WithStackPolicyDuringUpdateURL(const Aws::String& value) { SetStackPolicyDuringUpdateURL(value); return *this;}
 
@@ -464,8 +464,8 @@ namespace Model
      * <code>StackPolicyDuringUpdateBody</code> or the
      * <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you
      * want to update protected resources, specify a temporary overriding stack policy
-     * during this update. If you do not specify a stack policy, the current policy
-     * that is associated with the stack will be used.</p>
+     * during this update. If you don't specify a stack policy, the current policy that
+     * is associated with the stack will be used.</p>
      */
     inline UpdateStackRequest& WithStackPolicyDuringUpdateURL(Aws::String&& value) { SetStackPolicyDuringUpdateURL(std::move(value)); return *this;}
 
@@ -476,8 +476,8 @@ namespace Model
      * <code>StackPolicyDuringUpdateBody</code> or the
      * <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you
      * want to update protected resources, specify a temporary overriding stack policy
-     * during this update. If you do not specify a stack policy, the current policy
-     * that is associated with the stack will be used.</p>
+     * during this update. If you don't specify a stack policy, the current policy that
+     * is associated with the stack will be used.</p>
      */
     inline UpdateStackRequest& WithStackPolicyDuringUpdateURL(const char* value) { SetStackPolicyDuringUpdateURL(value); return *this;}
 
@@ -562,7 +562,7 @@ namespace Model
      * <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.</p> </li> <li> <p>If you
      * don't specify either of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
-     * template contains these resources, we recommend that you review all permissions
+     * template contains these resources, we suggest that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
@@ -623,7 +623,7 @@ namespace Model
      * <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.</p> </li> <li> <p>If you
      * don't specify either of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
-     * template contains these resources, we recommend that you review all permissions
+     * template contains these resources, we suggest that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
@@ -684,7 +684,7 @@ namespace Model
      * <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.</p> </li> <li> <p>If you
      * don't specify either of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
-     * template contains these resources, we recommend that you review all permissions
+     * template contains these resources, we suggest that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
@@ -745,7 +745,7 @@ namespace Model
      * <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.</p> </li> <li> <p>If you
      * don't specify either of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
-     * template contains these resources, we recommend that you review all permissions
+     * template contains these resources, we suggest that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
@@ -806,7 +806,7 @@ namespace Model
      * <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.</p> </li> <li> <p>If you
      * don't specify either of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
-     * template contains these resources, we recommend that you review all permissions
+     * template contains these resources, we suggest that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
@@ -867,7 +867,7 @@ namespace Model
      * <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.</p> </li> <li> <p>If you
      * don't specify either of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
-     * template contains these resources, we recommend that you review all permissions
+     * template contains these resources, we suggest that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
@@ -928,7 +928,7 @@ namespace Model
      * <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.</p> </li> <li> <p>If you
      * don't specify either of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
-     * template contains these resources, we recommend that you review all permissions
+     * template contains these resources, we suggest that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
@@ -989,7 +989,7 @@ namespace Model
      * <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.</p> </li> <li> <p>If you
      * don't specify either of these capabilities, CloudFormation returns an
      * <code>InsufficientCapabilities</code> error.</p> </li> </ul> <p>If your stack
-     * template contains these resources, we recommend that you review all permissions
+     * template contains these resources, we suggest that you review all permissions
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">

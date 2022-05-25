@@ -874,30 +874,30 @@ namespace Model
 
 
     /**
-     * <p>Whether or not the extension is activated for this account and region.</p>
-     * <p>This applies only to third-party public extensions. Extensions published by
-     * Amazon are activated by default.</p>
+     * <p>Whether the extension is activated for this account and region.</p> <p>This
+     * applies only to third-party public extensions. Extensions published by Amazon
+     * are activated by default.</p>
      */
     inline bool GetIsActivated() const{ return m_isActivated; }
 
     /**
-     * <p>Whether or not the extension is activated for this account and region.</p>
-     * <p>This applies only to third-party public extensions. Extensions published by
-     * Amazon are activated by default.</p>
+     * <p>Whether the extension is activated for this account and region.</p> <p>This
+     * applies only to third-party public extensions. Extensions published by Amazon
+     * are activated by default.</p>
      */
     inline bool IsActivatedHasBeenSet() const { return m_isActivatedHasBeenSet; }
 
     /**
-     * <p>Whether or not the extension is activated for this account and region.</p>
-     * <p>This applies only to third-party public extensions. Extensions published by
-     * Amazon are activated by default.</p>
+     * <p>Whether the extension is activated for this account and region.</p> <p>This
+     * applies only to third-party public extensions. Extensions published by Amazon
+     * are activated by default.</p>
      */
     inline void SetIsActivated(bool value) { m_isActivatedHasBeenSet = true; m_isActivated = value; }
 
     /**
-     * <p>Whether or not the extension is activated for this account and region.</p>
-     * <p>This applies only to third-party public extensions. Extensions published by
-     * Amazon are activated by default.</p>
+     * <p>Whether the extension is activated for this account and region.</p> <p>This
+     * applies only to third-party public extensions. Extensions published by Amazon
+     * are activated by default.</p>
      */
     inline TypeSummary& WithIsActivated(bool value) { SetIsActivated(value); return *this;}
 

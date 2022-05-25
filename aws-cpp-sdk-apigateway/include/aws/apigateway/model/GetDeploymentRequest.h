@@ -22,7 +22,7 @@ namespace Model
 {
 
   /**
-   * <p>Requests API Gateway to get information about a <a>Deployment</a>
+   * <p>Requests API Gateway to get information about a Deployment
    * resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDeploymentRequest">AWS
    * API Reference</a></p>
@@ -44,98 +44,90 @@ namespace Model
 
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline const Aws::String& GetRestApiId() const{ return m_restApiId; }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline void SetRestApiId(const char* value) { m_restApiIdHasBeenSet = true; m_restApiId.assign(value); }
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline GetDeploymentRequest& WithRestApiId(const Aws::String& value) { SetRestApiId(value); return *this;}
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline GetDeploymentRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>The string identifier of the associated RestApi.</p>
      */
     inline GetDeploymentRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
 
 
     /**
-     * <p>[Required] The identifier of the <a>Deployment</a> resource to get
-     * information about.</p>
+     * <p>The identifier of the Deployment resource to get information about.</p>
      */
     inline const Aws::String& GetDeploymentId() const{ return m_deploymentId; }
 
     /**
-     * <p>[Required] The identifier of the <a>Deployment</a> resource to get
-     * information about.</p>
+     * <p>The identifier of the Deployment resource to get information about.</p>
      */
     inline bool DeploymentIdHasBeenSet() const { return m_deploymentIdHasBeenSet; }
 
     /**
-     * <p>[Required] The identifier of the <a>Deployment</a> resource to get
-     * information about.</p>
+     * <p>The identifier of the Deployment resource to get information about.</p>
      */
     inline void SetDeploymentId(const Aws::String& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
 
     /**
-     * <p>[Required] The identifier of the <a>Deployment</a> resource to get
-     * information about.</p>
+     * <p>The identifier of the Deployment resource to get information about.</p>
      */
     inline void SetDeploymentId(Aws::String&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = std::move(value); }
 
     /**
-     * <p>[Required] The identifier of the <a>Deployment</a> resource to get
-     * information about.</p>
+     * <p>The identifier of the Deployment resource to get information about.</p>
      */
     inline void SetDeploymentId(const char* value) { m_deploymentIdHasBeenSet = true; m_deploymentId.assign(value); }
 
     /**
-     * <p>[Required] The identifier of the <a>Deployment</a> resource to get
-     * information about.</p>
+     * <p>The identifier of the Deployment resource to get information about.</p>
      */
     inline GetDeploymentRequest& WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
 
     /**
-     * <p>[Required] The identifier of the <a>Deployment</a> resource to get
-     * information about.</p>
+     * <p>The identifier of the Deployment resource to get information about.</p>
      */
     inline GetDeploymentRequest& WithDeploymentId(Aws::String&& value) { SetDeploymentId(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] The identifier of the <a>Deployment</a> resource to get
-     * information about.</p>
+     * <p>The identifier of the Deployment resource to get information about.</p>
      */
     inline GetDeploymentRequest& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
 
 
     /**
      * <p>A query parameter to retrieve the specified embedded resources of the
-     * returned <a>Deployment</a> resource in the response. In a REST API call, this
+     * returned Deployment resource in the response. In a REST API call, this
      * <code>embed</code> parameter value is a list of comma-separated strings, as in
      * <code>GET
      * /restapis/{restapi_id}/deployments/{deployment_id}?embed=var1,var2</code>. The
@@ -149,7 +141,7 @@ namespace Model
 
     /**
      * <p>A query parameter to retrieve the specified embedded resources of the
-     * returned <a>Deployment</a> resource in the response. In a REST API call, this
+     * returned Deployment resource in the response. In a REST API call, this
      * <code>embed</code> parameter value is a list of comma-separated strings, as in
      * <code>GET
      * /restapis/{restapi_id}/deployments/{deployment_id}?embed=var1,var2</code>. The
@@ -163,7 +155,7 @@ namespace Model
 
     /**
      * <p>A query parameter to retrieve the specified embedded resources of the
-     * returned <a>Deployment</a> resource in the response. In a REST API call, this
+     * returned Deployment resource in the response. In a REST API call, this
      * <code>embed</code> parameter value is a list of comma-separated strings, as in
      * <code>GET
      * /restapis/{restapi_id}/deployments/{deployment_id}?embed=var1,var2</code>. The
@@ -177,7 +169,7 @@ namespace Model
 
     /**
      * <p>A query parameter to retrieve the specified embedded resources of the
-     * returned <a>Deployment</a> resource in the response. In a REST API call, this
+     * returned Deployment resource in the response. In a REST API call, this
      * <code>embed</code> parameter value is a list of comma-separated strings, as in
      * <code>GET
      * /restapis/{restapi_id}/deployments/{deployment_id}?embed=var1,var2</code>. The
@@ -191,7 +183,7 @@ namespace Model
 
     /**
      * <p>A query parameter to retrieve the specified embedded resources of the
-     * returned <a>Deployment</a> resource in the response. In a REST API call, this
+     * returned Deployment resource in the response. In a REST API call, this
      * <code>embed</code> parameter value is a list of comma-separated strings, as in
      * <code>GET
      * /restapis/{restapi_id}/deployments/{deployment_id}?embed=var1,var2</code>. The
@@ -205,7 +197,7 @@ namespace Model
 
     /**
      * <p>A query parameter to retrieve the specified embedded resources of the
-     * returned <a>Deployment</a> resource in the response. In a REST API call, this
+     * returned Deployment resource in the response. In a REST API call, this
      * <code>embed</code> parameter value is a list of comma-separated strings, as in
      * <code>GET
      * /restapis/{restapi_id}/deployments/{deployment_id}?embed=var1,var2</code>. The
@@ -219,7 +211,7 @@ namespace Model
 
     /**
      * <p>A query parameter to retrieve the specified embedded resources of the
-     * returned <a>Deployment</a> resource in the response. In a REST API call, this
+     * returned Deployment resource in the response. In a REST API call, this
      * <code>embed</code> parameter value is a list of comma-separated strings, as in
      * <code>GET
      * /restapis/{restapi_id}/deployments/{deployment_id}?embed=var1,var2</code>. The
@@ -233,7 +225,7 @@ namespace Model
 
     /**
      * <p>A query parameter to retrieve the specified embedded resources of the
-     * returned <a>Deployment</a> resource in the response. In a REST API call, this
+     * returned Deployment resource in the response. In a REST API call, this
      * <code>embed</code> parameter value is a list of comma-separated strings, as in
      * <code>GET
      * /restapis/{restapi_id}/deployments/{deployment_id}?embed=var1,var2</code>. The
@@ -247,7 +239,7 @@ namespace Model
 
     /**
      * <p>A query parameter to retrieve the specified embedded resources of the
-     * returned <a>Deployment</a> resource in the response. In a REST API call, this
+     * returned Deployment resource in the response. In a REST API call, this
      * <code>embed</code> parameter value is a list of comma-separated strings, as in
      * <code>GET
      * /restapis/{restapi_id}/deployments/{deployment_id}?embed=var1,var2</code>. The

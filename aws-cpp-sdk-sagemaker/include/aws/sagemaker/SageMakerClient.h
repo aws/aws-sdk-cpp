@@ -2504,13 +2504,15 @@ namespace Model
          * <code>ModelName</code> - Identifies the model to use. <code>ModelName</code>
          * must be the name of an existing Amazon SageMaker model in the same Amazon Web
          * Services Region and Amazon Web Services account. For information on creating a
-         * model, see <a>CreateModel</a>.</p> </li> <li> <p> <code>TransformInput</code> -
-         * Describes the dataset to be transformed and the Amazon S3 location where it is
-         * stored.</p> </li> <li> <p> <code>TransformOutput</code> - Identifies the Amazon
-         * S3 location where you want Amazon SageMaker to save the results from the
-         * transform job.</p> </li> <li> <p> <code>TransformResources</code> - Identifies
-         * the ML compute instances for the transform job.</p> </li> </ul> <p>For more
-         * information about how batch transformation works, see <a
+         * model, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateModel.html">CreateModel</a>.</p>
+         * </li> <li> <p> <code>TransformInput</code> - Describes the dataset to be
+         * transformed and the Amazon S3 location where it is stored.</p> </li> <li> <p>
+         * <code>TransformOutput</code> - Identifies the Amazon S3 location where you want
+         * Amazon SageMaker to save the results from the transform job.</p> </li> <li> <p>
+         * <code>TransformResources</code> - Identifies the ML compute instances for the
+         * transform job.</p> </li> </ul> <p>For more information about how batch
+         * transformation works, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform.html">Batch
          * Transform</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTransformJob">AWS

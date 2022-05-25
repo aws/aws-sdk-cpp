@@ -89,7 +89,7 @@ namespace Model
 
 
     /**
-     * <p>If the previous request didn't return all of the remaining results, the
+     * <p>If the previous request didn't return all the remaining results, the
      * response's <code>NextToken</code> parameter value is set to a token. To retrieve
      * the next set of results, call <code>ListStackInstances</code> again and assign
      * that token to the request object's <code>NextToken</code> parameter. If there
@@ -99,7 +99,7 @@ namespace Model
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>If the previous request didn't return all of the remaining results, the
+     * <p>If the previous request didn't return all the remaining results, the
      * response's <code>NextToken</code> parameter value is set to a token. To retrieve
      * the next set of results, call <code>ListStackInstances</code> again and assign
      * that token to the request object's <code>NextToken</code> parameter. If there
@@ -109,7 +109,7 @@ namespace Model
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>If the previous request didn't return all of the remaining results, the
+     * <p>If the previous request didn't return all the remaining results, the
      * response's <code>NextToken</code> parameter value is set to a token. To retrieve
      * the next set of results, call <code>ListStackInstances</code> again and assign
      * that token to the request object's <code>NextToken</code> parameter. If there
@@ -119,7 +119,7 @@ namespace Model
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>If the previous request didn't return all of the remaining results, the
+     * <p>If the previous request didn't return all the remaining results, the
      * response's <code>NextToken</code> parameter value is set to a token. To retrieve
      * the next set of results, call <code>ListStackInstances</code> again and assign
      * that token to the request object's <code>NextToken</code> parameter. If there
@@ -129,7 +129,7 @@ namespace Model
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>If the previous request didn't return all of the remaining results, the
+     * <p>If the previous request didn't return all the remaining results, the
      * response's <code>NextToken</code> parameter value is set to a token. To retrieve
      * the next set of results, call <code>ListStackInstances</code> again and assign
      * that token to the request object's <code>NextToken</code> parameter. If there
@@ -139,7 +139,7 @@ namespace Model
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>If the previous request didn't return all of the remaining results, the
+     * <p>If the previous request didn't return all the remaining results, the
      * response's <code>NextToken</code> parameter value is set to a token. To retrieve
      * the next set of results, call <code>ListStackInstances</code> again and assign
      * that token to the request object's <code>NextToken</code> parameter. If there
@@ -149,7 +149,7 @@ namespace Model
     inline ListStackInstancesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>If the previous request didn't return all of the remaining results, the
+     * <p>If the previous request didn't return all the remaining results, the
      * response's <code>NextToken</code> parameter value is set to a token. To retrieve
      * the next set of results, call <code>ListStackInstances</code> again and assign
      * that token to the request object's <code>NextToken</code> parameter. If there
@@ -159,7 +159,7 @@ namespace Model
     inline ListStackInstancesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>If the previous request didn't return all of the remaining results, the
+     * <p>If the previous request didn't return all the remaining results, the
      * response's <code>NextToken</code> parameter value is set to a token. To retrieve
      * the next set of results, call <code>ListStackInstances</code> again and assign
      * that token to the request object's <code>NextToken</code> parameter. If there

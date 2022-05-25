@@ -83,56 +83,56 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the public extension.</p> <p>Conditional:
+     * <p>The Amazon Resource Name (ARN) of the public extension.</p> <p>Conditional:
      * You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>,
      * <code>Type</code>, and <code>PublisherId</code>.</p>
      */
     inline const Aws::String& GetPublicTypeArn() const{ return m_publicTypeArn; }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the public extension.</p> <p>Conditional:
+     * <p>The Amazon Resource Name (ARN) of the public extension.</p> <p>Conditional:
      * You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>,
      * <code>Type</code>, and <code>PublisherId</code>.</p>
      */
     inline bool PublicTypeArnHasBeenSet() const { return m_publicTypeArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the public extension.</p> <p>Conditional:
+     * <p>The Amazon Resource Name (ARN) of the public extension.</p> <p>Conditional:
      * You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>,
      * <code>Type</code>, and <code>PublisherId</code>.</p>
      */
     inline void SetPublicTypeArn(const Aws::String& value) { m_publicTypeArnHasBeenSet = true; m_publicTypeArn = value; }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the public extension.</p> <p>Conditional:
+     * <p>The Amazon Resource Name (ARN) of the public extension.</p> <p>Conditional:
      * You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>,
      * <code>Type</code>, and <code>PublisherId</code>.</p>
      */
     inline void SetPublicTypeArn(Aws::String&& value) { m_publicTypeArnHasBeenSet = true; m_publicTypeArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the public extension.</p> <p>Conditional:
+     * <p>The Amazon Resource Name (ARN) of the public extension.</p> <p>Conditional:
      * You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>,
      * <code>Type</code>, and <code>PublisherId</code>.</p>
      */
     inline void SetPublicTypeArn(const char* value) { m_publicTypeArnHasBeenSet = true; m_publicTypeArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the public extension.</p> <p>Conditional:
+     * <p>The Amazon Resource Name (ARN) of the public extension.</p> <p>Conditional:
      * You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>,
      * <code>Type</code>, and <code>PublisherId</code>.</p>
      */
     inline ActivateTypeRequest& WithPublicTypeArn(const Aws::String& value) { SetPublicTypeArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the public extension.</p> <p>Conditional:
+     * <p>The Amazon Resource Name (ARN) of the public extension.</p> <p>Conditional:
      * You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>,
      * <code>Type</code>, and <code>PublisherId</code>.</p>
      */
     inline ActivateTypeRequest& WithPublicTypeArn(Aws::String&& value) { SetPublicTypeArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Number (ARN) of the public extension.</p> <p>Conditional:
+     * <p>The Amazon Resource Name (ARN) of the public extension.</p> <p>Conditional:
      * You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>,
      * <code>Type</code>, and <code>PublisherId</code>.</p>
      */

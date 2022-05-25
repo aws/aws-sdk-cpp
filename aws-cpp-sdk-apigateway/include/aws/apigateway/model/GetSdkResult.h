@@ -20,7 +20,7 @@ namespace APIGateway
 namespace Model
 {
   /**
-   * <p>The binary blob response to <a>GetSdk</a>, which contains the generated
+   * <p>The binary blob response to GetSdk, which contains the generated
    * SDK.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/SdkResponse">AWS
    * API Reference</a></p>
@@ -116,14 +116,12 @@ namespace Model
 
 
     /**
-     * <p>The binary blob response to <a>GetSdk</a>, which contains the generated
-     * SDK.</p>
+     * <p>The binary blob response to GetSdk, which contains the generated SDK.</p>
      */
     inline Aws::IOStream& GetBody() { return m_body.GetUnderlyingStream(); }
 
     /**
-     * <p>The binary blob response to <a>GetSdk</a>, which contains the generated
-     * SDK.</p>
+     * <p>The binary blob response to GetSdk, which contains the generated SDK.</p>
      */
     inline void ReplaceBody(Aws::IOStream* body) { m_body = Aws::Utils::Stream::ResponseStream(body); }
 
