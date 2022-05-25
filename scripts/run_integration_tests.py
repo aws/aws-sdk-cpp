@@ -13,11 +13,9 @@ def ParseArguments():
 
     parser = argparse.ArgumentParser(description="AWSNativeSDK Run all Integration Tests")
     parser.add_argument("--testDir", action="store")
-    parser.add_argument("--retries", type=int, action="store")
 
     args = vars( parser.parse_args() )
-    argMap[ "testDir" ] = args[ "testDir" ] or "./build"
-    argMap[ "retries" ] = args[ "retries" ] or 3
+    argMap["testDir"] = args["testDir"] or "./build"
 
     return argMap
 
@@ -49,30 +47,20 @@ def Main():
                  #"aws-cpp-sdk-redshift-integration-tests", # Don't run this test unless you really want to, it will cost you a lot of money. The test takes around a half hour to finish.
                  #"aws-cpp-sdk-cloudfront-integration-tests", # This test will cost you a lot of money as well.
                  "aws-cpp-sdk-ec2-integration-tests" ]
-    # Shuffle the list to avoid multiple jobs running the same tests in the testing pipeline.
+
     random.shuffle(testList)
 
     for testName in testList:
-        testExe = os.path.join(arguments[ "testDir" ], testName if testHasParentDir else "", testName) + exeExtension
+        test_exe = os.path.join(arguments["testDir"], testName if testHasParentDir else "", testName) + exeExtension
         # when build with BUILD_ONLY, not all test binaries will be generated.
-        if not os.path.isfile(testExe):
-            print("Test: \"{}\" doesn't exist, skipped.".format(testExe))
+        if not os.path.isfile(test_exe):
+            print("Test: \"{}\" doesn't exist, skipped.".format(test_exe))
             continue
         prefix = "--aws_resource_prefix=" + platform.system().lower()
-        print("testExe = " + testExe)
+        print("testExe = " + test_exe)
         print("prefix = " + prefix)
-        AddExecutableBit(testExe)
-        for attempt in range(arguments[ "retries" ]):
-            try:
-                subprocess.check_call([testExe, prefix])
-                break
-            except subprocess.CalledProcessError:
-                print("Integration test: {} failed. Attempt: {} in {}".format(testName, attempt + 1, arguments[ "retries" ]))
-                # Hit the max attempt.
-                if attempt == arguments[ "retries" ] - 1:
-                    raise Exception("All {} attempt(s) failed.".format(arguments[ "retries" ]))
-                else:
-                    print("Retrying...")
+        AddExecutableBit(test_exe)
+        subprocess.check_call([test_exe, prefix])
 
 
 # Run from powershell; make sure msbuild is in PATH environment variable
