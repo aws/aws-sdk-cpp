@@ -27,7 +27,8 @@ CreateAutoPredictorRequest::CreateAutoPredictorRequest() :
     m_explainPredictor(false),
     m_explainPredictorHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_monitorConfigHasBeenSet(false)
+    m_monitorConfigHasBeenSet(false),
+    m_timeAlignmentBoundaryHasBeenSet(false)
 {
 }
 
@@ -118,6 +119,12 @@ Aws::String CreateAutoPredictorRequest::SerializePayload() const
   if(m_monitorConfigHasBeenSet)
   {
    payload.WithObject("MonitorConfig", m_monitorConfig.Jsonize());
+
+  }
+
+  if(m_timeAlignmentBoundaryHasBeenSet)
+  {
+   payload.WithObject("TimeAlignmentBoundary", m_timeAlignmentBoundary.Jsonize());
 
   }
 

@@ -534,6 +534,17 @@ namespace Aws
         static const int i4i_8xlarge_HASH = HashingUtils::HashString("i4i.8xlarge");
         static const int i4i_16xlarge_HASH = HashingUtils::HashString("i4i.16xlarge");
         static const int i4i_32xlarge_HASH = HashingUtils::HashString("i4i.32xlarge");
+        static const int i4i_metal_HASH = HashingUtils::HashString("i4i.metal");
+        static const int x2idn_metal_HASH = HashingUtils::HashString("x2idn.metal");
+        static const int x2iedn_metal_HASH = HashingUtils::HashString("x2iedn.metal");
+        static const int c7g_medium_HASH = HashingUtils::HashString("c7g.medium");
+        static const int c7g_large_HASH = HashingUtils::HashString("c7g.large");
+        static const int c7g_xlarge_HASH = HashingUtils::HashString("c7g.xlarge");
+        static const int c7g_2xlarge_HASH = HashingUtils::HashString("c7g.2xlarge");
+        static const int c7g_4xlarge_HASH = HashingUtils::HashString("c7g.4xlarge");
+        static const int c7g_8xlarge_HASH = HashingUtils::HashString("c7g.8xlarge");
+        static const int c7g_12xlarge_HASH = HashingUtils::HashString("c7g.12xlarge");
+        static const int c7g_16xlarge_HASH = HashingUtils::HashString("c7g.16xlarge");
 
         /*
         The if-else chains in this file are converted into a jump table by the compiler,
@@ -3128,6 +3139,61 @@ namespace Aws
             enumValue = InstanceType::i4i_32xlarge;
             return true;
           }
+          else if (hashCode == i4i_metal_HASH)
+          {
+            enumValue = InstanceType::i4i_metal;
+            return true;
+          }
+          else if (hashCode == x2idn_metal_HASH)
+          {
+            enumValue = InstanceType::x2idn_metal;
+            return true;
+          }
+          else if (hashCode == x2iedn_metal_HASH)
+          {
+            enumValue = InstanceType::x2iedn_metal;
+            return true;
+          }
+          else if (hashCode == c7g_medium_HASH)
+          {
+            enumValue = InstanceType::c7g_medium;
+            return true;
+          }
+          else if (hashCode == c7g_large_HASH)
+          {
+            enumValue = InstanceType::c7g_large;
+            return true;
+          }
+          else if (hashCode == c7g_xlarge_HASH)
+          {
+            enumValue = InstanceType::c7g_xlarge;
+            return true;
+          }
+          else if (hashCode == c7g_2xlarge_HASH)
+          {
+            enumValue = InstanceType::c7g_2xlarge;
+            return true;
+          }
+          else if (hashCode == c7g_4xlarge_HASH)
+          {
+            enumValue = InstanceType::c7g_4xlarge;
+            return true;
+          }
+          else if (hashCode == c7g_8xlarge_HASH)
+          {
+            enumValue = InstanceType::c7g_8xlarge;
+            return true;
+          }
+          else if (hashCode == c7g_12xlarge_HASH)
+          {
+            enumValue = InstanceType::c7g_12xlarge;
+            return true;
+          }
+          else if (hashCode == c7g_16xlarge_HASH)
+          {
+            enumValue = InstanceType::c7g_16xlarge;
+            return true;
+          }
           return false;
         }
 
@@ -4708,6 +4774,39 @@ namespace Aws
             return true;
           case InstanceType::i4i_32xlarge:
             value = "i4i.32xlarge";
+            return true;
+          case InstanceType::i4i_metal:
+            value = "i4i.metal";
+            return true;
+          case InstanceType::x2idn_metal:
+            value = "x2idn.metal";
+            return true;
+          case InstanceType::x2iedn_metal:
+            value = "x2iedn.metal";
+            return true;
+          case InstanceType::c7g_medium:
+            value = "c7g.medium";
+            return true;
+          case InstanceType::c7g_large:
+            value = "c7g.large";
+            return true;
+          case InstanceType::c7g_xlarge:
+            value = "c7g.xlarge";
+            return true;
+          case InstanceType::c7g_2xlarge:
+            value = "c7g.2xlarge";
+            return true;
+          case InstanceType::c7g_4xlarge:
+            value = "c7g.4xlarge";
+            return true;
+          case InstanceType::c7g_8xlarge:
+            value = "c7g.8xlarge";
+            return true;
+          case InstanceType::c7g_12xlarge:
+            value = "c7g.12xlarge";
+            return true;
+          case InstanceType::c7g_16xlarge:
+            value = "c7g.16xlarge";
             return true;
           default:
             return false;

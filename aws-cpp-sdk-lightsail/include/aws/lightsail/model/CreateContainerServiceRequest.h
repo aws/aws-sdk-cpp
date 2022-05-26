@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/lightsail/model/ContainerServiceDeploymentRequest.h>
+#include <aws/lightsail/model/PrivateRegistryAccessRequest.h>
 #include <aws/lightsail/model/Tag.h>
 #include <utility>
 
@@ -624,6 +625,67 @@ namespace Model
      */
     inline CreateContainerServiceRequest& WithDeployment(ContainerServiceDeploymentRequest&& value) { SetDeployment(std::move(value)); return *this;}
 
+
+    /**
+     * <p>An object to describe the configuration for the container service to access
+     * private container image repositories, such as Amazon Elastic Container Registry
+     * (Amazon ECR) private repositories.</p> <p>For more information, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring
+     * access to an Amazon ECR private repository for an Amazon Lightsail container
+     * service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+     */
+    inline const PrivateRegistryAccessRequest& GetPrivateRegistryAccess() const{ return m_privateRegistryAccess; }
+
+    /**
+     * <p>An object to describe the configuration for the container service to access
+     * private container image repositories, such as Amazon Elastic Container Registry
+     * (Amazon ECR) private repositories.</p> <p>For more information, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring
+     * access to an Amazon ECR private repository for an Amazon Lightsail container
+     * service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+     */
+    inline bool PrivateRegistryAccessHasBeenSet() const { return m_privateRegistryAccessHasBeenSet; }
+
+    /**
+     * <p>An object to describe the configuration for the container service to access
+     * private container image repositories, such as Amazon Elastic Container Registry
+     * (Amazon ECR) private repositories.</p> <p>For more information, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring
+     * access to an Amazon ECR private repository for an Amazon Lightsail container
+     * service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+     */
+    inline void SetPrivateRegistryAccess(const PrivateRegistryAccessRequest& value) { m_privateRegistryAccessHasBeenSet = true; m_privateRegistryAccess = value; }
+
+    /**
+     * <p>An object to describe the configuration for the container service to access
+     * private container image repositories, such as Amazon Elastic Container Registry
+     * (Amazon ECR) private repositories.</p> <p>For more information, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring
+     * access to an Amazon ECR private repository for an Amazon Lightsail container
+     * service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+     */
+    inline void SetPrivateRegistryAccess(PrivateRegistryAccessRequest&& value) { m_privateRegistryAccessHasBeenSet = true; m_privateRegistryAccess = std::move(value); }
+
+    /**
+     * <p>An object to describe the configuration for the container service to access
+     * private container image repositories, such as Amazon Elastic Container Registry
+     * (Amazon ECR) private repositories.</p> <p>For more information, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring
+     * access to an Amazon ECR private repository for an Amazon Lightsail container
+     * service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+     */
+    inline CreateContainerServiceRequest& WithPrivateRegistryAccess(const PrivateRegistryAccessRequest& value) { SetPrivateRegistryAccess(value); return *this;}
+
+    /**
+     * <p>An object to describe the configuration for the container service to access
+     * private container image repositories, such as Amazon Elastic Container Registry
+     * (Amazon ECR) private repositories.</p> <p>For more information, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring
+     * access to an Amazon ECR private repository for an Amazon Lightsail container
+     * service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+     */
+    inline CreateContainerServiceRequest& WithPrivateRegistryAccess(PrivateRegistryAccessRequest&& value) { SetPrivateRegistryAccess(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_serviceName;
@@ -643,6 +705,9 @@ namespace Model
 
     ContainerServiceDeploymentRequest m_deployment;
     bool m_deploymentHasBeenSet;
+
+    PrivateRegistryAccessRequest m_privateRegistryAccess;
+    bool m_privateRegistryAccessHasBeenSet;
   };
 
 } // namespace Model

@@ -12,6 +12,7 @@
 #include <aws/forecast/model/EncryptionConfig.h>
 #include <aws/forecast/model/OptimizationMetric.h>
 #include <aws/forecast/model/MonitorConfig.h>
+#include <aws/forecast/model/TimeAlignmentBoundary.h>
 #include <aws/forecast/model/Tag.h>
 #include <utility>
 
@@ -792,6 +793,85 @@ namespace Model
      */
     inline CreateAutoPredictorRequest& WithMonitorConfig(MonitorConfig&& value) { SetMonitorConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The time boundary Forecast uses to align and aggregate any data that doesn't
+     * align with your forecast frequency. Provide the unit of time and the time
+     * boundary as a key value pair. For more information on specifying a time
+     * boundary, see <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html#specifying-time-boundary">Specifying
+     * a Time Boundary</a>. If you don't provide a time boundary, Forecast uses a set
+     * of <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html#default-time-boundaries">Default
+     * Time Boundaries</a>.</p>
+     */
+    inline const TimeAlignmentBoundary& GetTimeAlignmentBoundary() const{ return m_timeAlignmentBoundary; }
+
+    /**
+     * <p>The time boundary Forecast uses to align and aggregate any data that doesn't
+     * align with your forecast frequency. Provide the unit of time and the time
+     * boundary as a key value pair. For more information on specifying a time
+     * boundary, see <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html#specifying-time-boundary">Specifying
+     * a Time Boundary</a>. If you don't provide a time boundary, Forecast uses a set
+     * of <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html#default-time-boundaries">Default
+     * Time Boundaries</a>.</p>
+     */
+    inline bool TimeAlignmentBoundaryHasBeenSet() const { return m_timeAlignmentBoundaryHasBeenSet; }
+
+    /**
+     * <p>The time boundary Forecast uses to align and aggregate any data that doesn't
+     * align with your forecast frequency. Provide the unit of time and the time
+     * boundary as a key value pair. For more information on specifying a time
+     * boundary, see <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html#specifying-time-boundary">Specifying
+     * a Time Boundary</a>. If you don't provide a time boundary, Forecast uses a set
+     * of <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html#default-time-boundaries">Default
+     * Time Boundaries</a>.</p>
+     */
+    inline void SetTimeAlignmentBoundary(const TimeAlignmentBoundary& value) { m_timeAlignmentBoundaryHasBeenSet = true; m_timeAlignmentBoundary = value; }
+
+    /**
+     * <p>The time boundary Forecast uses to align and aggregate any data that doesn't
+     * align with your forecast frequency. Provide the unit of time and the time
+     * boundary as a key value pair. For more information on specifying a time
+     * boundary, see <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html#specifying-time-boundary">Specifying
+     * a Time Boundary</a>. If you don't provide a time boundary, Forecast uses a set
+     * of <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html#default-time-boundaries">Default
+     * Time Boundaries</a>.</p>
+     */
+    inline void SetTimeAlignmentBoundary(TimeAlignmentBoundary&& value) { m_timeAlignmentBoundaryHasBeenSet = true; m_timeAlignmentBoundary = std::move(value); }
+
+    /**
+     * <p>The time boundary Forecast uses to align and aggregate any data that doesn't
+     * align with your forecast frequency. Provide the unit of time and the time
+     * boundary as a key value pair. For more information on specifying a time
+     * boundary, see <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html#specifying-time-boundary">Specifying
+     * a Time Boundary</a>. If you don't provide a time boundary, Forecast uses a set
+     * of <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html#default-time-boundaries">Default
+     * Time Boundaries</a>.</p>
+     */
+    inline CreateAutoPredictorRequest& WithTimeAlignmentBoundary(const TimeAlignmentBoundary& value) { SetTimeAlignmentBoundary(value); return *this;}
+
+    /**
+     * <p>The time boundary Forecast uses to align and aggregate any data that doesn't
+     * align with your forecast frequency. Provide the unit of time and the time
+     * boundary as a key value pair. For more information on specifying a time
+     * boundary, see <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html#specifying-time-boundary">Specifying
+     * a Time Boundary</a>. If you don't provide a time boundary, Forecast uses a set
+     * of <a
+     * href="https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html#default-time-boundaries">Default
+     * Time Boundaries</a>.</p>
+     */
+    inline CreateAutoPredictorRequest& WithTimeAlignmentBoundary(TimeAlignmentBoundary&& value) { SetTimeAlignmentBoundary(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_predictorName;
@@ -829,6 +909,9 @@ namespace Model
 
     MonitorConfig m_monitorConfig;
     bool m_monitorConfigHasBeenSet;
+
+    TimeAlignmentBoundary m_timeAlignmentBoundary;
+    bool m_timeAlignmentBoundaryHasBeenSet;
   };
 
 } // namespace Model

@@ -14,6 +14,7 @@
 #include <aws/forecast/model/OptimizationMetric.h>
 #include <aws/forecast/model/ExplainabilityInfo.h>
 #include <aws/forecast/model/MonitorInfo.h>
+#include <aws/forecast/model/TimeAlignmentBoundary.h>
 #include <utility>
 
 namespace Aws
@@ -703,6 +704,32 @@ namespace Model
      */
     inline DescribeAutoPredictorResult& WithMonitorInfo(MonitorInfo&& value) { SetMonitorInfo(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The time boundary Forecast uses when aggregating data.</p>
+     */
+    inline const TimeAlignmentBoundary& GetTimeAlignmentBoundary() const{ return m_timeAlignmentBoundary; }
+
+    /**
+     * <p>The time boundary Forecast uses when aggregating data.</p>
+     */
+    inline void SetTimeAlignmentBoundary(const TimeAlignmentBoundary& value) { m_timeAlignmentBoundary = value; }
+
+    /**
+     * <p>The time boundary Forecast uses when aggregating data.</p>
+     */
+    inline void SetTimeAlignmentBoundary(TimeAlignmentBoundary&& value) { m_timeAlignmentBoundary = std::move(value); }
+
+    /**
+     * <p>The time boundary Forecast uses when aggregating data.</p>
+     */
+    inline DescribeAutoPredictorResult& WithTimeAlignmentBoundary(const TimeAlignmentBoundary& value) { SetTimeAlignmentBoundary(value); return *this;}
+
+    /**
+     * <p>The time boundary Forecast uses when aggregating data.</p>
+     */
+    inline DescribeAutoPredictorResult& WithTimeAlignmentBoundary(TimeAlignmentBoundary&& value) { SetTimeAlignmentBoundary(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_predictorArn;
@@ -740,6 +767,8 @@ namespace Model
     ExplainabilityInfo m_explainabilityInfo;
 
     MonitorInfo m_monitorInfo;
+
+    TimeAlignmentBoundary m_timeAlignmentBoundary;
   };
 
 } // namespace Model
