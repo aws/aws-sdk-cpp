@@ -40,9 +40,14 @@ else ()
     set(CMAKE_CXX_EXTENSIONS OFF)
     set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-    message(STATUS "Building ${PROJECT_NAME} ${CMAKE_PROJECT_VERSION}")
+    # Setting build to hide symbols in targets by default
+    set(CMAKE_CXX_VISIBILITY_PRESET hidden)
+    set(CMAKE_VISIBILITY_INLINES_HIDDEN YES)
 
-    # Setting version header for library
+    # Preventing writes to package registry by default
+    set(CMAKE_EXPORT_NO_PACKAGE_REGISTRY YES)
+
+    message(STATUS "Generating source file for introspection of version to ${CMAKE_PROJECT_VERSION} ")
     configure_file(
             VersionConfig.h.in
             src/aws-cpp-sdk-core/include/aws/core/VersionConfig.h
@@ -62,10 +67,31 @@ else ()
             message(FATAL_ERROR "Unknown build type: ${CMAKE_BUILD_TYPE}")
         endif ()
     endif ()
-    option(BUILD_TESTS "If enabled, the SDK will include tests in the build" OFF)
+
+    # Options definition
+    option(BUILD_TESTING "If enabled, the SDK will include tests in the build" OFF)
+
+    message(STATUS "Setting toolchain and dependencies")
+    if (BUILD_TESTING)
+        message(STATUS "Building tests")
+        enable_testing()
+        # Testing dependency
+        find_package(GTest 1.11 REQUIRED )
+        include(GoogleTest) # for gtest_discover_tests()
+    endif ()
+
+    # Project dependencies http library (curl or OS), tinyxml2, cJSON, ssl (open or other), CRT
+    find_package(CURL REQUIRED)
+    find_package(ZLIB REQUIRED)
+    find_package(OpenSSL REQUIRED COMPONENTS Crypto)
+    pkg_check_modules(tinyxml2 REQUIRED IMPORTED_TARGET tinyxml2>=9.0.0)
+    pkg_check_modules(CJSON REQUIRED IMPORTED_TARGET libcjson>=1.7.15)
+    find_package(aws-crt-cpp 0.17.9 EXACT REQUIRED COMPONENTS io)
+
+    message(WARNING "The dependencies are currently checked only for a basic Linux build, new ones need to be added for other platforms yet")
 
     message(WARNING "Anything below this warning is a TODO not yet implemented.")
-    message(STATUS "Detecting toolchain and external dependencies.")
+
     message(STATUS "Setting up core library.")
     message(STATUS "Prepare CRT dependency.")
     message(STATUS "Building core library.")
