@@ -299,6 +299,13 @@ namespace Aws
              */
             std::shared_ptr<Aws::Http::HttpResponse> MakeHttpRequest(std::shared_ptr<Aws::Http::HttpRequest>& request) const;
             Aws::String m_region;
+
+            /**
+             * Adds "X-Amzn-Trace-Id" header with the value of _X_AMZN_TRACE_ID if both
+             * enviroment variables AWS_LAMBDA_FUNCTION_NAME and _X_AMZN_TRACE_ID are set.
+             * Does not add/modify header "X-Amzn-Trace-Id" if it is already set.
+             */
+            static void AppendRecursionDetectionHeader(std::shared_ptr<Aws::Http::HttpRequest> ioRequest);
         private:
             /**
              * Try to adjust signer's clock

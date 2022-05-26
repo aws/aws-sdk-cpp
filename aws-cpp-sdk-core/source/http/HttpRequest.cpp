@@ -39,6 +39,7 @@ namespace Aws
         const char SDK_REQUEST_HEADER[] = "amz-sdk-request";
         const char CHUNKED_VALUE[] = "chunked";
         const char AWS_CHUNKED_VALUE[] = "aws-chunked";
+        const char X_AMZN_TRACE_ID_HEADER[] = "X-Amzn-Trace-Id";
 
         std::shared_ptr<Aws::Crt::Http::HttpRequest> HttpRequest::ToCrtHttpRequest()
         {

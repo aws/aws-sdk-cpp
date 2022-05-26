@@ -38,10 +38,12 @@
 #include <aws/core/Region.h>
 #include <aws/core/utils/DNS.h>
 #include <aws/core/Version.h>
+#include <aws/core/platform/Environment.h>
 #include <aws/core/platform/OSVersionInfo.h>
 
 #include <cstring>
 #include <cassert>
+#include <iomanip>
 
 using namespace Aws;
 using namespace Aws::Client;
@@ -54,6 +56,9 @@ static const int SUCCESS_RESPONSE_MIN = 200;
 static const int SUCCESS_RESPONSE_MAX = 299;
 
 static const char AWS_CLIENT_LOG_TAG[] = "AWSClient";
+static const char AWS_LAMBDA_FUNCTION_NAME[] = "AWS_LAMBDA_FUNCTION_NAME";
+static const char X_AMZN_TRACE_ID[] = "_X_AMZN_TRACE_ID";
+
 //4 Minutes
 static const std::chrono::milliseconds TIME_DIFF_MAX = std::chrono::minutes(4);
 //-4 Minutes
@@ -241,6 +246,7 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
     requestInfo.maxAttempts = 0;
     httpRequest->SetHeaderValue(Http::SDK_INVOCATION_ID_HEADER, invocationId);
     httpRequest->SetHeaderValue(Http::SDK_REQUEST_HEADER, requestInfo);
+    AppendRecursionDetectionHeader(httpRequest);
 
     for (long retries = 0;; retries++)
     {
@@ -374,6 +380,7 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
     requestInfo.maxAttempts = 0;
     httpRequest->SetHeaderValue(Http::SDK_INVOCATION_ID_HEADER, invocationId);
     httpRequest->SetHeaderValue(Http::SDK_REQUEST_HEADER, requestInfo);
+    AppendRecursionDetectionHeader(httpRequest);
 
     for (long retries = 0;; retries++)
     {
@@ -1025,6 +1032,41 @@ std::shared_ptr<Aws::Http::HttpResponse> AWSClient::MakeHttpRequest(std::shared_
     return m_httpClient->MakeRequest(request, m_readRateLimiter.get(), m_writeRateLimiter.get());
 }
 
+void AWSClient::AppendRecursionDetectionHeader(std::shared_ptr<Aws::Http::HttpRequest> ioRequest)
+{
+    if(!ioRequest || ioRequest->HasHeader(Aws::Http::X_AMZN_TRACE_ID_HEADER)) {
+        return;
+    }
+    Aws::String awsLambdaFunctionName = Aws::Environment::GetEnv(AWS_LAMBDA_FUNCTION_NAME);
+    if(awsLambdaFunctionName.empty()) {
+        return;
+    }
+    Aws::String xAmznTraceIdVal = Aws::Environment::GetEnv(X_AMZN_TRACE_ID);
+    if(xAmznTraceIdVal.empty()) {
+        return;
+    }
+
+    // Escape all non-printable ASCII characters by percent encoding
+    Aws::OStringStream xAmznTraceIdValEncodedStr;
+    for(const char ch : xAmznTraceIdVal)
+    {
+        if (ch >= 0x20 && ch <= 0x7e) // ascii chars [32-126] or [' ' to '~'] are not escaped
+        {
+            xAmznTraceIdValEncodedStr << ch;
+        }
+        else
+        {
+            // A percent-encoded octet is encoded as a character triplet
+            xAmznTraceIdValEncodedStr << '%' // consisting of the percent character "%"
+                                      << std::hex << std::setfill('0') << std::setw(2) << std::uppercase
+                                      << (size_t) ch //followed by the two hexadecimal digits representing that octet's numeric value
+                                      << std::dec << std::setfill(' ') << std::setw(0) << std::nouppercase;
+        }
+    }
+    xAmznTraceIdVal = xAmznTraceIdValEncodedStr.str();
+
+    ioRequest->SetHeaderValue(Aws::Http::X_AMZN_TRACE_ID_HEADER, xAmznTraceIdVal);
+}
 
 ////////////////////////////////////////////////////////////////////////////
 AWSJsonClient::AWSJsonClient(const Aws::Client::ClientConfiguration& configuration,
