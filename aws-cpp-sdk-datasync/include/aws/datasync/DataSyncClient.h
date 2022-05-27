@@ -358,8 +358,10 @@ namespace Model
         virtual void CreateAgentAsync(const Model::CreateAgentRequest& request, const CreateAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an endpoint for an Amazon EFS file system.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Creates an endpoint for an Amazon EFS file system that DataSync can access
+         * for a transfer. For more information, see <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-efs-location.html">Creating
+         * a location for Amazon EFS</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationEfs">AWS
          * API Reference</a></p>
          */
@@ -633,8 +635,8 @@ namespace Model
         virtual void DescribeAgentAsync(const Model::DescribeAgentRequest& request, const DescribeAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns metadata, such as the path information about an Amazon EFS
-         * location.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns metadata about your DataSync location for an Amazon EFS file
+         * system.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationEfs">AWS
          * API Reference</a></p>
          */

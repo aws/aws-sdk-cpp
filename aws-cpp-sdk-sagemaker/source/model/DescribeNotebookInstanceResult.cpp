@@ -173,6 +173,12 @@ DescribeNotebookInstanceResult& DescribeNotebookInstanceResult::operator =(const
 
   }
 
+  if(jsonValue.ValueExists("InstanceMetadataServiceConfiguration"))
+  {
+    m_instanceMetadataServiceConfiguration = jsonValue.GetObject("InstanceMetadataServiceConfiguration");
+
+  }
+
 
 
   return *this;

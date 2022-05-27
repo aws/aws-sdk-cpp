@@ -31,7 +31,8 @@ CreateNotebookInstanceRequest::CreateNotebookInstanceRequest() :
     m_additionalCodeRepositoriesHasBeenSet(false),
     m_rootAccess(RootAccess::NOT_SET),
     m_rootAccessHasBeenSet(false),
-    m_platformIdentifierHasBeenSet(false)
+    m_platformIdentifierHasBeenSet(false),
+    m_instanceMetadataServiceConfigurationHasBeenSet(false)
 {
 }
 
@@ -143,6 +144,12 @@ Aws::String CreateNotebookInstanceRequest::SerializePayload() const
   if(m_platformIdentifierHasBeenSet)
   {
    payload.WithString("PlatformIdentifier", m_platformIdentifier);
+
+  }
+
+  if(m_instanceMetadataServiceConfigurationHasBeenSet)
+  {
+   payload.WithObject("InstanceMetadataServiceConfiguration", m_instanceMetadataServiceConfiguration.Jsonize());
 
   }
 

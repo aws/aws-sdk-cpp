@@ -228,7 +228,8 @@ namespace Model
          * account. There is a soft quota of 100 connector profiles per Amazon Web Services
          * account. If you need more connector profiles than this quota allows, you can
          * submit a request to the Amazon AppFlow team through the Amazon AppFlow support
-         * channel. </p><p><h3>See Also:</h3>   <a
+         * channel. In each connector profile that you create, you can provide the
+         * credentials and properties for only one connector.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/CreateConnectorProfile">AWS
          * API Reference</a></p>
          */
@@ -324,7 +325,8 @@ namespace Model
 
         /**
          * <p> Provides details regarding the entity used with the connector, with a
-         * description of the data model for each entity. </p><p><h3>See Also:</h3>   <a
+         * description of the data model for each field in that entity. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/DescribeConnectorEntity">AWS
          * API Reference</a></p>
          */
