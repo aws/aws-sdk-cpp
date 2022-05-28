@@ -80,7 +80,7 @@ namespace Aws
      */
     struct HttpOptions
     {
-        HttpOptions() : initAndCleanupCurl(true), installSigPipeHandler(false)
+        HttpOptions() : initAndCleanupCurl(true), installSigPipeHandler(false), compliantRfc3986Encoding(false)
         { }
 
         /**
@@ -100,6 +100,10 @@ namespace Aws
          * NOTE: CURLOPT_NOSIGNAL is already being set.
          */
         bool installSigPipeHandler;
+        /**
+         * Disable legacy URL encoding that leaves `$&,:@=` unescaped for legacy purposes.
+         */
+        bool compliantRfc3986Encoding;
     };
 
     /**

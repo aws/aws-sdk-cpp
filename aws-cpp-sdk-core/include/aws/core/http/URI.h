@@ -21,6 +21,9 @@ namespace Aws
         static const uint16_t HTTP_DEFAULT_PORT = 80;
         static const uint16_t HTTPS_DEFAULT_PORT = 443;
 
+        static bool s_compliantRfc3986Encoding = false;
+        AWS_CORE_API void SetCompliantRfc3986Encoding(bool compliant);
+
         //per https://tools.ietf.org/html/rfc3986#section-3.4 there is nothing preventing servers from allowing
         //multiple values for the same key. So use a multimap instead of a map.
         typedef Aws::MultiMap<Aws::String, Aws::String> QueryStringParameterCollection;
