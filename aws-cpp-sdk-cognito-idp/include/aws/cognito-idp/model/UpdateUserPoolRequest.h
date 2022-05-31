@@ -405,32 +405,62 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The settings for updates to user attributes. These settings include the
+     * property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool
+     * setting that tells Amazon Cognito how to handle changes to the value of your
+     * users' email address and phone number attributes. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates">
+     * Verifying updates to to email addresses and phone numbers</a>.</p>
      */
     inline const UserAttributeUpdateSettingsType& GetUserAttributeUpdateSettings() const{ return m_userAttributeUpdateSettings; }
 
     /**
-     * <p/>
+     * <p>The settings for updates to user attributes. These settings include the
+     * property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool
+     * setting that tells Amazon Cognito how to handle changes to the value of your
+     * users' email address and phone number attributes. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates">
+     * Verifying updates to to email addresses and phone numbers</a>.</p>
      */
     inline bool UserAttributeUpdateSettingsHasBeenSet() const { return m_userAttributeUpdateSettingsHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The settings for updates to user attributes. These settings include the
+     * property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool
+     * setting that tells Amazon Cognito how to handle changes to the value of your
+     * users' email address and phone number attributes. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates">
+     * Verifying updates to to email addresses and phone numbers</a>.</p>
      */
     inline void SetUserAttributeUpdateSettings(const UserAttributeUpdateSettingsType& value) { m_userAttributeUpdateSettingsHasBeenSet = true; m_userAttributeUpdateSettings = value; }
 
     /**
-     * <p/>
+     * <p>The settings for updates to user attributes. These settings include the
+     * property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool
+     * setting that tells Amazon Cognito how to handle changes to the value of your
+     * users' email address and phone number attributes. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates">
+     * Verifying updates to to email addresses and phone numbers</a>.</p>
      */
     inline void SetUserAttributeUpdateSettings(UserAttributeUpdateSettingsType&& value) { m_userAttributeUpdateSettingsHasBeenSet = true; m_userAttributeUpdateSettings = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The settings for updates to user attributes. These settings include the
+     * property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool
+     * setting that tells Amazon Cognito how to handle changes to the value of your
+     * users' email address and phone number attributes. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates">
+     * Verifying updates to to email addresses and phone numbers</a>.</p>
      */
     inline UpdateUserPoolRequest& WithUserAttributeUpdateSettings(const UserAttributeUpdateSettingsType& value) { SetUserAttributeUpdateSettings(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The settings for updates to user attributes. These settings include the
+     * property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool
+     * setting that tells Amazon Cognito how to handle changes to the value of your
+     * users' email address and phone number attributes. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates">
+     * Verifying updates to to email addresses and phone numbers</a>.</p>
      */
     inline UpdateUserPoolRequest& WithUserAttributeUpdateSettings(UserAttributeUpdateSettingsType&& value) { SetUserAttributeUpdateSettings(std::move(value)); return *this;}
 

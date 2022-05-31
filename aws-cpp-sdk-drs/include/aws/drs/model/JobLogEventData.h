@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/drs/Drs_EXPORTS.h>
+#include <aws/drs/model/ConversionProperties.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -35,6 +36,37 @@ namespace Model
     JobLogEventData(Aws::Utils::Json::JsonView jsonValue);
     JobLogEventData& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>Properties of a conversion job</p>
+     */
+    inline const ConversionProperties& GetConversionProperties() const{ return m_conversionProperties; }
+
+    /**
+     * <p>Properties of a conversion job</p>
+     */
+    inline bool ConversionPropertiesHasBeenSet() const { return m_conversionPropertiesHasBeenSet; }
+
+    /**
+     * <p>Properties of a conversion job</p>
+     */
+    inline void SetConversionProperties(const ConversionProperties& value) { m_conversionPropertiesHasBeenSet = true; m_conversionProperties = value; }
+
+    /**
+     * <p>Properties of a conversion job</p>
+     */
+    inline void SetConversionProperties(ConversionProperties&& value) { m_conversionPropertiesHasBeenSet = true; m_conversionProperties = std::move(value); }
+
+    /**
+     * <p>Properties of a conversion job</p>
+     */
+    inline JobLogEventData& WithConversionProperties(const ConversionProperties& value) { SetConversionProperties(value); return *this;}
+
+    /**
+     * <p>Properties of a conversion job</p>
+     */
+    inline JobLogEventData& WithConversionProperties(ConversionProperties&& value) { SetConversionProperties(std::move(value)); return *this;}
 
 
     /**
@@ -201,6 +233,9 @@ namespace Model
     inline JobLogEventData& WithTargetInstanceID(const char* value) { SetTargetInstanceID(value); return *this;}
 
   private:
+
+    ConversionProperties m_conversionProperties;
+    bool m_conversionPropertiesHasBeenSet;
 
     Aws::String m_conversionServerID;
     bool m_conversionServerIDHasBeenSet;

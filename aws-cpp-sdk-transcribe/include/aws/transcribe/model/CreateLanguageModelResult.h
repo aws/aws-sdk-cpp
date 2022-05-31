@@ -63,149 +63,134 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Transcribe standard language model, or base model, you used when
-     * creating your custom language model.</p> <p>If your audio has a sample rate of
-     * 16,000 Hz or greater, this value should be <code>WideBand</code>. If your audio
-     * has a sample rate of less than 16,000 Hz, this value should be
-     * <code>NarrowBand</code>.</p>
+     * <p>The Amazon Transcribe standard language model, or base model, you specified
+     * when creating your custom language model.</p>
      */
     inline const BaseModelName& GetBaseModelName() const{ return m_baseModelName; }
 
     /**
-     * <p>The Amazon Transcribe standard language model, or base model, you used when
-     * creating your custom language model.</p> <p>If your audio has a sample rate of
-     * 16,000 Hz or greater, this value should be <code>WideBand</code>. If your audio
-     * has a sample rate of less than 16,000 Hz, this value should be
-     * <code>NarrowBand</code>.</p>
+     * <p>The Amazon Transcribe standard language model, or base model, you specified
+     * when creating your custom language model.</p>
      */
     inline void SetBaseModelName(const BaseModelName& value) { m_baseModelName = value; }
 
     /**
-     * <p>The Amazon Transcribe standard language model, or base model, you used when
-     * creating your custom language model.</p> <p>If your audio has a sample rate of
-     * 16,000 Hz or greater, this value should be <code>WideBand</code>. If your audio
-     * has a sample rate of less than 16,000 Hz, this value should be
-     * <code>NarrowBand</code>.</p>
+     * <p>The Amazon Transcribe standard language model, or base model, you specified
+     * when creating your custom language model.</p>
      */
     inline void SetBaseModelName(BaseModelName&& value) { m_baseModelName = std::move(value); }
 
     /**
-     * <p>The Amazon Transcribe standard language model, or base model, you used when
-     * creating your custom language model.</p> <p>If your audio has a sample rate of
-     * 16,000 Hz or greater, this value should be <code>WideBand</code>. If your audio
-     * has a sample rate of less than 16,000 Hz, this value should be
-     * <code>NarrowBand</code>.</p>
+     * <p>The Amazon Transcribe standard language model, or base model, you specified
+     * when creating your custom language model.</p>
      */
     inline CreateLanguageModelResult& WithBaseModelName(const BaseModelName& value) { SetBaseModelName(value); return *this;}
 
     /**
-     * <p>The Amazon Transcribe standard language model, or base model, you used when
-     * creating your custom language model.</p> <p>If your audio has a sample rate of
-     * 16,000 Hz or greater, this value should be <code>WideBand</code>. If your audio
-     * has a sample rate of less than 16,000 Hz, this value should be
-     * <code>NarrowBand</code>.</p>
+     * <p>The Amazon Transcribe standard language model, or base model, you specified
+     * when creating your custom language model.</p>
      */
     inline CreateLanguageModelResult& WithBaseModelName(BaseModelName&& value) { SetBaseModelName(std::move(value)); return *this;}
 
 
     /**
-     * <p>The unique name you chose for your custom language model.</p>
+     * <p>The name of your custom language model.</p>
      */
     inline const Aws::String& GetModelName() const{ return m_modelName; }
 
     /**
-     * <p>The unique name you chose for your custom language model.</p>
+     * <p>The name of your custom language model.</p>
      */
     inline void SetModelName(const Aws::String& value) { m_modelName = value; }
 
     /**
-     * <p>The unique name you chose for your custom language model.</p>
+     * <p>The name of your custom language model.</p>
      */
     inline void SetModelName(Aws::String&& value) { m_modelName = std::move(value); }
 
     /**
-     * <p>The unique name you chose for your custom language model.</p>
+     * <p>The name of your custom language model.</p>
      */
     inline void SetModelName(const char* value) { m_modelName.assign(value); }
 
     /**
-     * <p>The unique name you chose for your custom language model.</p>
+     * <p>The name of your custom language model.</p>
      */
     inline CreateLanguageModelResult& WithModelName(const Aws::String& value) { SetModelName(value); return *this;}
 
     /**
-     * <p>The unique name you chose for your custom language model.</p>
+     * <p>The name of your custom language model.</p>
      */
     inline CreateLanguageModelResult& WithModelName(Aws::String&& value) { SetModelName(std::move(value)); return *this;}
 
     /**
-     * <p>The unique name you chose for your custom language model.</p>
+     * <p>The name of your custom language model.</p>
      */
     inline CreateLanguageModelResult& WithModelName(const char* value) { SetModelName(value); return *this;}
 
 
     /**
      * <p>Lists your data access role ARN (Amazon Resource Name) and the Amazon S3
-     * locations your provided for your training (<code>S3Uri</code>) and tuning
+     * locations you provided for your training (<code>S3Uri</code>) and tuning
      * (<code>TuningDataS3Uri</code>) data.</p>
      */
     inline const InputDataConfig& GetInputDataConfig() const{ return m_inputDataConfig; }
 
     /**
      * <p>Lists your data access role ARN (Amazon Resource Name) and the Amazon S3
-     * locations your provided for your training (<code>S3Uri</code>) and tuning
+     * locations you provided for your training (<code>S3Uri</code>) and tuning
      * (<code>TuningDataS3Uri</code>) data.</p>
      */
     inline void SetInputDataConfig(const InputDataConfig& value) { m_inputDataConfig = value; }
 
     /**
      * <p>Lists your data access role ARN (Amazon Resource Name) and the Amazon S3
-     * locations your provided for your training (<code>S3Uri</code>) and tuning
+     * locations you provided for your training (<code>S3Uri</code>) and tuning
      * (<code>TuningDataS3Uri</code>) data.</p>
      */
     inline void SetInputDataConfig(InputDataConfig&& value) { m_inputDataConfig = std::move(value); }
 
     /**
      * <p>Lists your data access role ARN (Amazon Resource Name) and the Amazon S3
-     * locations your provided for your training (<code>S3Uri</code>) and tuning
+     * locations you provided for your training (<code>S3Uri</code>) and tuning
      * (<code>TuningDataS3Uri</code>) data.</p>
      */
     inline CreateLanguageModelResult& WithInputDataConfig(const InputDataConfig& value) { SetInputDataConfig(value); return *this;}
 
     /**
      * <p>Lists your data access role ARN (Amazon Resource Name) and the Amazon S3
-     * locations your provided for your training (<code>S3Uri</code>) and tuning
+     * locations you provided for your training (<code>S3Uri</code>) and tuning
      * (<code>TuningDataS3Uri</code>) data.</p>
      */
     inline CreateLanguageModelResult& WithInputDataConfig(InputDataConfig&& value) { SetInputDataConfig(std::move(value)); return *this;}
 
 
     /**
-     * <p>The status of your custom language model. When the status shows as
+     * <p>The status of your custom language model. When the status displays as
      * <code>COMPLETED</code>, your model is ready to use.</p>
      */
     inline const ModelStatus& GetModelStatus() const{ return m_modelStatus; }
 
     /**
-     * <p>The status of your custom language model. When the status shows as
+     * <p>The status of your custom language model. When the status displays as
      * <code>COMPLETED</code>, your model is ready to use.</p>
      */
     inline void SetModelStatus(const ModelStatus& value) { m_modelStatus = value; }
 
     /**
-     * <p>The status of your custom language model. When the status shows as
+     * <p>The status of your custom language model. When the status displays as
      * <code>COMPLETED</code>, your model is ready to use.</p>
      */
     inline void SetModelStatus(ModelStatus&& value) { m_modelStatus = std::move(value); }
 
     /**
-     * <p>The status of your custom language model. When the status shows as
+     * <p>The status of your custom language model. When the status displays as
      * <code>COMPLETED</code>, your model is ready to use.</p>
      */
     inline CreateLanguageModelResult& WithModelStatus(const ModelStatus& value) { SetModelStatus(value); return *this;}
 
     /**
-     * <p>The status of your custom language model. When the status shows as
+     * <p>The status of your custom language model. When the status displays as
      * <code>COMPLETED</code>, your model is ready to use.</p>
      */
     inline CreateLanguageModelResult& WithModelStatus(ModelStatus&& value) { SetModelStatus(std::move(value)); return *this;}

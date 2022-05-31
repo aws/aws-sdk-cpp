@@ -19,6 +19,7 @@ namespace Model
 {
 
 JobLogEventData::JobLogEventData() : 
+    m_conversionPropertiesHasBeenSet(false),
     m_conversionServerIDHasBeenSet(false),
     m_rawErrorHasBeenSet(false),
     m_sourceServerIDHasBeenSet(false),
@@ -27,6 +28,7 @@ JobLogEventData::JobLogEventData() :
 }
 
 JobLogEventData::JobLogEventData(JsonView jsonValue) : 
+    m_conversionPropertiesHasBeenSet(false),
     m_conversionServerIDHasBeenSet(false),
     m_rawErrorHasBeenSet(false),
     m_sourceServerIDHasBeenSet(false),
@@ -37,6 +39,13 @@ JobLogEventData::JobLogEventData(JsonView jsonValue) :
 
 JobLogEventData& JobLogEventData::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("conversionProperties"))
+  {
+    m_conversionProperties = jsonValue.GetObject("conversionProperties");
+
+    m_conversionPropertiesHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("conversionServerID"))
   {
     m_conversionServerID = jsonValue.GetString("conversionServerID");
@@ -71,6 +80,12 @@ JobLogEventData& JobLogEventData::operator =(JsonView jsonValue)
 JsonValue JobLogEventData::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_conversionPropertiesHasBeenSet)
+  {
+   payload.WithObject("conversionProperties", m_conversionProperties.Jsonize());
+
+  }
 
   if(m_conversionServerIDHasBeenSet)
   {

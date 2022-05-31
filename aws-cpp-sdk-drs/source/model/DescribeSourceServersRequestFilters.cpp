@@ -20,13 +20,15 @@ namespace Model
 
 DescribeSourceServersRequestFilters::DescribeSourceServersRequestFilters() : 
     m_hardwareIdHasBeenSet(false),
-    m_sourceServerIDsHasBeenSet(false)
+    m_sourceServerIDsHasBeenSet(false),
+    m_stagingAccountIDsHasBeenSet(false)
 {
 }
 
 DescribeSourceServersRequestFilters::DescribeSourceServersRequestFilters(JsonView jsonValue) : 
     m_hardwareIdHasBeenSet(false),
-    m_sourceServerIDsHasBeenSet(false)
+    m_sourceServerIDsHasBeenSet(false),
+    m_stagingAccountIDsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -50,6 +52,16 @@ DescribeSourceServersRequestFilters& DescribeSourceServersRequestFilters::operat
     m_sourceServerIDsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("stagingAccountIDs"))
+  {
+    Array<JsonView> stagingAccountIDsJsonList = jsonValue.GetArray("stagingAccountIDs");
+    for(unsigned stagingAccountIDsIndex = 0; stagingAccountIDsIndex < stagingAccountIDsJsonList.GetLength(); ++stagingAccountIDsIndex)
+    {
+      m_stagingAccountIDs.push_back(stagingAccountIDsJsonList[stagingAccountIDsIndex].AsString());
+    }
+    m_stagingAccountIDsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -71,6 +83,17 @@ JsonValue DescribeSourceServersRequestFilters::Jsonize() const
      sourceServerIDsJsonList[sourceServerIDsIndex].AsString(m_sourceServerIDs[sourceServerIDsIndex]);
    }
    payload.WithArray("sourceServerIDs", std::move(sourceServerIDsJsonList));
+
+  }
+
+  if(m_stagingAccountIDsHasBeenSet)
+  {
+   Array<JsonValue> stagingAccountIDsJsonList(m_stagingAccountIDs.size());
+   for(unsigned stagingAccountIDsIndex = 0; stagingAccountIDsIndex < stagingAccountIDsJsonList.GetLength(); ++stagingAccountIDsIndex)
+   {
+     stagingAccountIDsJsonList[stagingAccountIDsIndex].AsString(m_stagingAccountIDs[stagingAccountIDsIndex]);
+   }
+   payload.WithArray("stagingAccountIDs", std::move(stagingAccountIDsJsonList));
 
   }
 

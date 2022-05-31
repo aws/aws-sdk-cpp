@@ -11,6 +11,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/drs/model/CreateExtendedSourceServerResult.h>
 #include <aws/drs/model/CreateReplicationConfigurationTemplateResult.h>
 #include <aws/drs/model/DeleteJobResult.h>
 #include <aws/drs/model/DeleteReplicationConfigurationTemplateResult.h>
@@ -26,6 +27,8 @@
 #include <aws/drs/model/GetLaunchConfigurationResult.h>
 #include <aws/drs/model/GetReplicationConfigurationResult.h>
 #include <aws/drs/model/InitializeServiceResult.h>
+#include <aws/drs/model/ListExtensibleSourceServersResult.h>
+#include <aws/drs/model/ListStagingAccountsResult.h>
 #include <aws/drs/model/ListTagsForResourceResult.h>
 #include <aws/drs/model/RetryDataReplicationResult.h>
 #include <aws/drs/model/StartFailbackLaunchResult.h>
@@ -74,6 +77,7 @@ namespace drs
 
 namespace Model
 {
+        class CreateExtendedSourceServerRequest;
         class CreateReplicationConfigurationTemplateRequest;
         class DeleteJobRequest;
         class DeleteRecoveryInstanceRequest;
@@ -91,6 +95,8 @@ namespace Model
         class GetLaunchConfigurationRequest;
         class GetReplicationConfigurationRequest;
         class InitializeServiceRequest;
+        class ListExtensibleSourceServersRequest;
+        class ListStagingAccountsRequest;
         class ListTagsForResourceRequest;
         class RetryDataReplicationRequest;
         class StartFailbackLaunchRequest;
@@ -104,6 +110,7 @@ namespace Model
         class UpdateReplicationConfigurationRequest;
         class UpdateReplicationConfigurationTemplateRequest;
 
+        typedef Aws::Utils::Outcome<CreateExtendedSourceServerResult, DrsError> CreateExtendedSourceServerOutcome;
         typedef Aws::Utils::Outcome<CreateReplicationConfigurationTemplateResult, DrsError> CreateReplicationConfigurationTemplateOutcome;
         typedef Aws::Utils::Outcome<DeleteJobResult, DrsError> DeleteJobOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, DrsError> DeleteRecoveryInstanceOutcome;
@@ -121,6 +128,8 @@ namespace Model
         typedef Aws::Utils::Outcome<GetLaunchConfigurationResult, DrsError> GetLaunchConfigurationOutcome;
         typedef Aws::Utils::Outcome<GetReplicationConfigurationResult, DrsError> GetReplicationConfigurationOutcome;
         typedef Aws::Utils::Outcome<InitializeServiceResult, DrsError> InitializeServiceOutcome;
+        typedef Aws::Utils::Outcome<ListExtensibleSourceServersResult, DrsError> ListExtensibleSourceServersOutcome;
+        typedef Aws::Utils::Outcome<ListStagingAccountsResult, DrsError> ListStagingAccountsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, DrsError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<RetryDataReplicationResult, DrsError> RetryDataReplicationOutcome;
         typedef Aws::Utils::Outcome<StartFailbackLaunchResult, DrsError> StartFailbackLaunchOutcome;
@@ -134,6 +143,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateReplicationConfigurationResult, DrsError> UpdateReplicationConfigurationOutcome;
         typedef Aws::Utils::Outcome<UpdateReplicationConfigurationTemplateResult, DrsError> UpdateReplicationConfigurationTemplateOutcome;
 
+        typedef std::future<CreateExtendedSourceServerOutcome> CreateExtendedSourceServerOutcomeCallable;
         typedef std::future<CreateReplicationConfigurationTemplateOutcome> CreateReplicationConfigurationTemplateOutcomeCallable;
         typedef std::future<DeleteJobOutcome> DeleteJobOutcomeCallable;
         typedef std::future<DeleteRecoveryInstanceOutcome> DeleteRecoveryInstanceOutcomeCallable;
@@ -151,6 +161,8 @@ namespace Model
         typedef std::future<GetLaunchConfigurationOutcome> GetLaunchConfigurationOutcomeCallable;
         typedef std::future<GetReplicationConfigurationOutcome> GetReplicationConfigurationOutcomeCallable;
         typedef std::future<InitializeServiceOutcome> InitializeServiceOutcomeCallable;
+        typedef std::future<ListExtensibleSourceServersOutcome> ListExtensibleSourceServersOutcomeCallable;
+        typedef std::future<ListStagingAccountsOutcome> ListStagingAccountsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<RetryDataReplicationOutcome> RetryDataReplicationOutcomeCallable;
         typedef std::future<StartFailbackLaunchOutcome> StartFailbackLaunchOutcomeCallable;
@@ -167,6 +179,7 @@ namespace Model
 
   class DrsClient;
 
+    typedef std::function<void(const DrsClient*, const Model::CreateExtendedSourceServerRequest&, const Model::CreateExtendedSourceServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateExtendedSourceServerResponseReceivedHandler;
     typedef std::function<void(const DrsClient*, const Model::CreateReplicationConfigurationTemplateRequest&, const Model::CreateReplicationConfigurationTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateReplicationConfigurationTemplateResponseReceivedHandler;
     typedef std::function<void(const DrsClient*, const Model::DeleteJobRequest&, const Model::DeleteJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteJobResponseReceivedHandler;
     typedef std::function<void(const DrsClient*, const Model::DeleteRecoveryInstanceRequest&, const Model::DeleteRecoveryInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRecoveryInstanceResponseReceivedHandler;
@@ -184,6 +197,8 @@ namespace Model
     typedef std::function<void(const DrsClient*, const Model::GetLaunchConfigurationRequest&, const Model::GetLaunchConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLaunchConfigurationResponseReceivedHandler;
     typedef std::function<void(const DrsClient*, const Model::GetReplicationConfigurationRequest&, const Model::GetReplicationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetReplicationConfigurationResponseReceivedHandler;
     typedef std::function<void(const DrsClient*, const Model::InitializeServiceRequest&, const Model::InitializeServiceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InitializeServiceResponseReceivedHandler;
+    typedef std::function<void(const DrsClient*, const Model::ListExtensibleSourceServersRequest&, const Model::ListExtensibleSourceServersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListExtensibleSourceServersResponseReceivedHandler;
+    typedef std::function<void(const DrsClient*, const Model::ListStagingAccountsRequest&, const Model::ListStagingAccountsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStagingAccountsResponseReceivedHandler;
     typedef std::function<void(const DrsClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const DrsClient*, const Model::RetryDataReplicationRequest&, const Model::RetryDataReplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RetryDataReplicationResponseReceivedHandler;
     typedef std::function<void(const DrsClient*, const Model::StartFailbackLaunchRequest&, const Model::StartFailbackLaunchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartFailbackLaunchResponseReceivedHandler;
@@ -226,6 +241,24 @@ namespace Model
 
         virtual ~DrsClient();
 
+
+        /**
+         * <p>Create an extended source server in the target Account based on the source
+         * server in staging account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/CreateExtendedSourceServer">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateExtendedSourceServerOutcome CreateExtendedSourceServer(const Model::CreateExtendedSourceServerRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateExtendedSourceServer that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateExtendedSourceServerOutcomeCallable CreateExtendedSourceServerCallable(const Model::CreateExtendedSourceServerRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateExtendedSourceServer that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateExtendedSourceServerAsync(const Model::CreateExtendedSourceServerRequest& request, const CreateExtendedSourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new ReplicationConfigurationTemplate.</p><p><h3>See Also:</h3>   <a
@@ -556,6 +589,44 @@ namespace Model
         virtual void InitializeServiceAsync(const Model::InitializeServiceRequest& request, const InitializeServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns a list of source servers on a staging account that are extensible,
+         * which means that: a. The source server is not already extended into this
+         * Account. b. The source server on the Account we’re reading from is not an
+         * extension of another source server. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ListExtensibleSourceServers">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListExtensibleSourceServersOutcome ListExtensibleSourceServers(const Model::ListExtensibleSourceServersRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListExtensibleSourceServers that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListExtensibleSourceServersOutcomeCallable ListExtensibleSourceServersCallable(const Model::ListExtensibleSourceServersRequest& request) const;
+
+        /**
+         * An Async wrapper for ListExtensibleSourceServers that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListExtensibleSourceServersAsync(const Model::ListExtensibleSourceServersRequest& request, const ListExtensibleSourceServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns an array of staging accounts for existing extended source
+         * servers.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ListStagingAccounts">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListStagingAccountsOutcome ListStagingAccounts(const Model::ListStagingAccountsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListStagingAccounts that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListStagingAccountsOutcomeCallable ListStagingAccountsCallable(const Model::ListStagingAccountsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListStagingAccounts that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListStagingAccountsAsync(const Model::ListStagingAccountsRequest& request, const ListStagingAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>List all tags for your Elastic Disaster Recovery resources.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ListTagsForResource">AWS
@@ -784,6 +855,7 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+        void CreateExtendedSourceServerAsyncHelper(const Model::CreateExtendedSourceServerRequest& request, const CreateExtendedSourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateReplicationConfigurationTemplateAsyncHelper(const Model::CreateReplicationConfigurationTemplateRequest& request, const CreateReplicationConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteJobAsyncHelper(const Model::DeleteJobRequest& request, const DeleteJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRecoveryInstanceAsyncHelper(const Model::DeleteRecoveryInstanceRequest& request, const DeleteRecoveryInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -801,6 +873,8 @@ namespace Model
         void GetLaunchConfigurationAsyncHelper(const Model::GetLaunchConfigurationRequest& request, const GetLaunchConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetReplicationConfigurationAsyncHelper(const Model::GetReplicationConfigurationRequest& request, const GetReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void InitializeServiceAsyncHelper(const Model::InitializeServiceRequest& request, const InitializeServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListExtensibleSourceServersAsyncHelper(const Model::ListExtensibleSourceServersRequest& request, const ListExtensibleSourceServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListStagingAccountsAsyncHelper(const Model::ListStagingAccountsRequest& request, const ListStagingAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RetryDataReplicationAsyncHelper(const Model::RetryDataReplicationRequest& request, const RetryDataReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartFailbackLaunchAsyncHelper(const Model::StartFailbackLaunchRequest& request, const StartFailbackLaunchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -1363,6 +1363,55 @@ namespace Model
      */
     inline UpdateUserPoolClientRequest& WithEnableTokenRevocation(bool value) { SetEnableTokenRevocation(value); return *this;}
 
+
+    /**
+     * <p>Activates the propagation of additional user context data. For more
+     * information about propagation of user context data, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">
+     * Adding advanced security to a user pool</a>. If you don’t include this
+     * parameter, you can't send device fingerprint information, including source IP
+     * address, to Amazon Cognito advanced security. You can only activate
+     * <code>EnablePropagateAdditionalUserContextData</code> in an app client that has
+     * a client secret.</p>
+     */
+    inline bool GetEnablePropagateAdditionalUserContextData() const{ return m_enablePropagateAdditionalUserContextData; }
+
+    /**
+     * <p>Activates the propagation of additional user context data. For more
+     * information about propagation of user context data, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">
+     * Adding advanced security to a user pool</a>. If you don’t include this
+     * parameter, you can't send device fingerprint information, including source IP
+     * address, to Amazon Cognito advanced security. You can only activate
+     * <code>EnablePropagateAdditionalUserContextData</code> in an app client that has
+     * a client secret.</p>
+     */
+    inline bool EnablePropagateAdditionalUserContextDataHasBeenSet() const { return m_enablePropagateAdditionalUserContextDataHasBeenSet; }
+
+    /**
+     * <p>Activates the propagation of additional user context data. For more
+     * information about propagation of user context data, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">
+     * Adding advanced security to a user pool</a>. If you don’t include this
+     * parameter, you can't send device fingerprint information, including source IP
+     * address, to Amazon Cognito advanced security. You can only activate
+     * <code>EnablePropagateAdditionalUserContextData</code> in an app client that has
+     * a client secret.</p>
+     */
+    inline void SetEnablePropagateAdditionalUserContextData(bool value) { m_enablePropagateAdditionalUserContextDataHasBeenSet = true; m_enablePropagateAdditionalUserContextData = value; }
+
+    /**
+     * <p>Activates the propagation of additional user context data. For more
+     * information about propagation of user context data, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">
+     * Adding advanced security to a user pool</a>. If you don’t include this
+     * parameter, you can't send device fingerprint information, including source IP
+     * address, to Amazon Cognito advanced security. You can only activate
+     * <code>EnablePropagateAdditionalUserContextData</code> in an app client that has
+     * a client secret.</p>
+     */
+    inline UpdateUserPoolClientRequest& WithEnablePropagateAdditionalUserContextData(bool value) { SetEnablePropagateAdditionalUserContextData(value); return *this;}
+
   private:
 
     Aws::String m_userPoolId;
@@ -1424,6 +1473,9 @@ namespace Model
 
     bool m_enableTokenRevocation;
     bool m_enableTokenRevocationHasBeenSet;
+
+    bool m_enablePropagateAdditionalUserContextData;
+    bool m_enablePropagateAdditionalUserContextDataHasBeenSet;
   };
 
 } // namespace Model

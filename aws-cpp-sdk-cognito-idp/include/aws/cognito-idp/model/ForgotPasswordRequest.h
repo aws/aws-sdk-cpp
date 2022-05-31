@@ -132,44 +132,50 @@ namespace Model
 
 
     /**
-     * <p>Contextual data such as the user's device fingerprint, IP address, or
-     * location used for evaluating the risk of an unexpected event by Amazon Cognito
-     * advanced security.</p>
+     * <p>Contextual data about your user session, such as the device fingerprint, IP
+     * address, or location. Amazon Cognito advanced security evaluates the risk of an
+     * authentication event based on the context that your app generates and passes to
+     * Amazon Cognito when it makes API requests.</p>
      */
     inline const UserContextDataType& GetUserContextData() const{ return m_userContextData; }
 
     /**
-     * <p>Contextual data such as the user's device fingerprint, IP address, or
-     * location used for evaluating the risk of an unexpected event by Amazon Cognito
-     * advanced security.</p>
+     * <p>Contextual data about your user session, such as the device fingerprint, IP
+     * address, or location. Amazon Cognito advanced security evaluates the risk of an
+     * authentication event based on the context that your app generates and passes to
+     * Amazon Cognito when it makes API requests.</p>
      */
     inline bool UserContextDataHasBeenSet() const { return m_userContextDataHasBeenSet; }
 
     /**
-     * <p>Contextual data such as the user's device fingerprint, IP address, or
-     * location used for evaluating the risk of an unexpected event by Amazon Cognito
-     * advanced security.</p>
+     * <p>Contextual data about your user session, such as the device fingerprint, IP
+     * address, or location. Amazon Cognito advanced security evaluates the risk of an
+     * authentication event based on the context that your app generates and passes to
+     * Amazon Cognito when it makes API requests.</p>
      */
     inline void SetUserContextData(const UserContextDataType& value) { m_userContextDataHasBeenSet = true; m_userContextData = value; }
 
     /**
-     * <p>Contextual data such as the user's device fingerprint, IP address, or
-     * location used for evaluating the risk of an unexpected event by Amazon Cognito
-     * advanced security.</p>
+     * <p>Contextual data about your user session, such as the device fingerprint, IP
+     * address, or location. Amazon Cognito advanced security evaluates the risk of an
+     * authentication event based on the context that your app generates and passes to
+     * Amazon Cognito when it makes API requests.</p>
      */
     inline void SetUserContextData(UserContextDataType&& value) { m_userContextDataHasBeenSet = true; m_userContextData = std::move(value); }
 
     /**
-     * <p>Contextual data such as the user's device fingerprint, IP address, or
-     * location used for evaluating the risk of an unexpected event by Amazon Cognito
-     * advanced security.</p>
+     * <p>Contextual data about your user session, such as the device fingerprint, IP
+     * address, or location. Amazon Cognito advanced security evaluates the risk of an
+     * authentication event based on the context that your app generates and passes to
+     * Amazon Cognito when it makes API requests.</p>
      */
     inline ForgotPasswordRequest& WithUserContextData(const UserContextDataType& value) { SetUserContextData(value); return *this;}
 
     /**
-     * <p>Contextual data such as the user's device fingerprint, IP address, or
-     * location used for evaluating the risk of an unexpected event by Amazon Cognito
-     * advanced security.</p>
+     * <p>Contextual data about your user session, such as the device fingerprint, IP
+     * address, or location. Amazon Cognito advanced security evaluates the risk of an
+     * authentication event based on the context that your app generates and passes to
+     * Amazon Cognito when it makes API requests.</p>
      */
     inline ForgotPasswordRequest& WithUserContextData(UserContextDataType&& value) { SetUserContextData(std::move(value)); return *this;}
 

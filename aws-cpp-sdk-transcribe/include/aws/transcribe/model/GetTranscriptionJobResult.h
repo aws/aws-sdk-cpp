@@ -33,27 +33,32 @@ namespace Model
 
 
     /**
-     * <p>An object that contains the results of the transcription job.</p>
+     * <p>Provides detailed information about the specified transcription job,
+     * including job status and, if applicable, failure reason.</p>
      */
     inline const TranscriptionJob& GetTranscriptionJob() const{ return m_transcriptionJob; }
 
     /**
-     * <p>An object that contains the results of the transcription job.</p>
+     * <p>Provides detailed information about the specified transcription job,
+     * including job status and, if applicable, failure reason.</p>
      */
     inline void SetTranscriptionJob(const TranscriptionJob& value) { m_transcriptionJob = value; }
 
     /**
-     * <p>An object that contains the results of the transcription job.</p>
+     * <p>Provides detailed information about the specified transcription job,
+     * including job status and, if applicable, failure reason.</p>
      */
     inline void SetTranscriptionJob(TranscriptionJob&& value) { m_transcriptionJob = std::move(value); }
 
     /**
-     * <p>An object that contains the results of the transcription job.</p>
+     * <p>Provides detailed information about the specified transcription job,
+     * including job status and, if applicable, failure reason.</p>
      */
     inline GetTranscriptionJobResult& WithTranscriptionJob(const TranscriptionJob& value) { SetTranscriptionJob(value); return *this;}
 
     /**
-     * <p>An object that contains the results of the transcription job.</p>
+     * <p>Provides detailed information about the specified transcription job,
+     * including job status and, if applicable, failure reason.</p>
      */
     inline GetTranscriptionJobResult& WithTranscriptionJob(TranscriptionJob&& value) { SetTranscriptionJob(std::move(value)); return *this;}
 

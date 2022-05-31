@@ -20,6 +20,7 @@
 #include <aws/drs/DrsClient.h>
 #include <aws/drs/DrsEndpoint.h>
 #include <aws/drs/DrsErrorMarshaller.h>
+#include <aws/drs/model/CreateExtendedSourceServerRequest.h>
 #include <aws/drs/model/CreateReplicationConfigurationTemplateRequest.h>
 #include <aws/drs/model/DeleteJobRequest.h>
 #include <aws/drs/model/DeleteRecoveryInstanceRequest.h>
@@ -37,6 +38,8 @@
 #include <aws/drs/model/GetLaunchConfigurationRequest.h>
 #include <aws/drs/model/GetReplicationConfigurationRequest.h>
 #include <aws/drs/model/InitializeServiceRequest.h>
+#include <aws/drs/model/ListExtensibleSourceServersRequest.h>
+#include <aws/drs/model/ListStagingAccountsRequest.h>
 #include <aws/drs/model/ListTagsForResourceRequest.h>
 #include <aws/drs/model/RetryDataReplicationRequest.h>
 #include <aws/drs/model/StartFailbackLaunchRequest.h>
@@ -121,6 +124,31 @@ void DrsClient::OverrideEndpoint(const Aws::String& endpoint)
   {
       m_uri = m_configScheme + "://" + endpoint;
   }
+}
+
+CreateExtendedSourceServerOutcome DrsClient::CreateExtendedSourceServer(const CreateExtendedSourceServerRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/CreateExtendedSourceServer");
+  return CreateExtendedSourceServerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateExtendedSourceServerOutcomeCallable DrsClient::CreateExtendedSourceServerCallable(const CreateExtendedSourceServerRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateExtendedSourceServerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateExtendedSourceServer(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DrsClient::CreateExtendedSourceServerAsync(const CreateExtendedSourceServerRequest& request, const CreateExtendedSourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateExtendedSourceServerAsyncHelper( request, handler, context ); } );
+}
+
+void DrsClient::CreateExtendedSourceServerAsyncHelper(const CreateExtendedSourceServerRequest& request, const CreateExtendedSourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateExtendedSourceServer(request), context);
 }
 
 CreateReplicationConfigurationTemplateOutcome DrsClient::CreateReplicationConfigurationTemplate(const CreateReplicationConfigurationTemplateRequest& request) const
@@ -546,6 +574,56 @@ void DrsClient::InitializeServiceAsync(const InitializeServiceRequest& request, 
 void DrsClient::InitializeServiceAsyncHelper(const InitializeServiceRequest& request, const InitializeServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, InitializeService(request), context);
+}
+
+ListExtensibleSourceServersOutcome DrsClient::ListExtensibleSourceServers(const ListExtensibleSourceServersRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/ListExtensibleSourceServers");
+  return ListExtensibleSourceServersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListExtensibleSourceServersOutcomeCallable DrsClient::ListExtensibleSourceServersCallable(const ListExtensibleSourceServersRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListExtensibleSourceServersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListExtensibleSourceServers(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DrsClient::ListExtensibleSourceServersAsync(const ListExtensibleSourceServersRequest& request, const ListExtensibleSourceServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListExtensibleSourceServersAsyncHelper( request, handler, context ); } );
+}
+
+void DrsClient::ListExtensibleSourceServersAsyncHelper(const ListExtensibleSourceServersRequest& request, const ListExtensibleSourceServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListExtensibleSourceServers(request), context);
+}
+
+ListStagingAccountsOutcome DrsClient::ListStagingAccounts(const ListStagingAccountsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/ListStagingAccounts");
+  return ListStagingAccountsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListStagingAccountsOutcomeCallable DrsClient::ListStagingAccountsCallable(const ListStagingAccountsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListStagingAccountsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListStagingAccounts(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DrsClient::ListStagingAccountsAsync(const ListStagingAccountsRequest& request, const ListStagingAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListStagingAccountsAsyncHelper( request, handler, context ); } );
+}
+
+void DrsClient::ListStagingAccountsAsyncHelper(const ListStagingAccountsRequest& request, const ListStagingAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListStagingAccounts(request), context);
 }
 
 ListTagsForResourceOutcome DrsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const

@@ -36,73 +36,73 @@ namespace Model
 
 
     /**
-     * <p>The name you chose for your vocabulary.</p>
+     * <p>The name you chose for your custom medical vocabulary.</p>
      */
     inline const Aws::String& GetVocabularyName() const{ return m_vocabularyName; }
 
     /**
-     * <p>The name you chose for your vocabulary.</p>
+     * <p>The name you chose for your custom medical vocabulary.</p>
      */
     inline void SetVocabularyName(const Aws::String& value) { m_vocabularyName = value; }
 
     /**
-     * <p>The name you chose for your vocabulary.</p>
+     * <p>The name you chose for your custom medical vocabulary.</p>
      */
     inline void SetVocabularyName(Aws::String&& value) { m_vocabularyName = std::move(value); }
 
     /**
-     * <p>The name you chose for your vocabulary.</p>
+     * <p>The name you chose for your custom medical vocabulary.</p>
      */
     inline void SetVocabularyName(const char* value) { m_vocabularyName.assign(value); }
 
     /**
-     * <p>The name you chose for your vocabulary.</p>
+     * <p>The name you chose for your custom medical vocabulary.</p>
      */
     inline CreateMedicalVocabularyResult& WithVocabularyName(const Aws::String& value) { SetVocabularyName(value); return *this;}
 
     /**
-     * <p>The name you chose for your vocabulary.</p>
+     * <p>The name you chose for your custom medical vocabulary.</p>
      */
     inline CreateMedicalVocabularyResult& WithVocabularyName(Aws::String&& value) { SetVocabularyName(std::move(value)); return *this;}
 
     /**
-     * <p>The name you chose for your vocabulary.</p>
+     * <p>The name you chose for your custom medical vocabulary.</p>
      */
     inline CreateMedicalVocabularyResult& WithVocabularyName(const char* value) { SetVocabularyName(value); return *this;}
 
 
     /**
-     * <p>The language code you selected for your medical vocabulary. Note that U.S.
-     * English (<code>en-US</code>) is the only language supported with Amazon
-     * Transcribe Medical.</p>
+     * <p>The language code you selected for your medical vocabulary. US English
+     * (<code>en-US</code>) is the only language supported with Amazon Transcribe
+     * Medical.</p>
      */
     inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
 
     /**
-     * <p>The language code you selected for your medical vocabulary. Note that U.S.
-     * English (<code>en-US</code>) is the only language supported with Amazon
-     * Transcribe Medical.</p>
+     * <p>The language code you selected for your medical vocabulary. US English
+     * (<code>en-US</code>) is the only language supported with Amazon Transcribe
+     * Medical.</p>
      */
     inline void SetLanguageCode(const LanguageCode& value) { m_languageCode = value; }
 
     /**
-     * <p>The language code you selected for your medical vocabulary. Note that U.S.
-     * English (<code>en-US</code>) is the only language supported with Amazon
-     * Transcribe Medical.</p>
+     * <p>The language code you selected for your medical vocabulary. US English
+     * (<code>en-US</code>) is the only language supported with Amazon Transcribe
+     * Medical.</p>
      */
     inline void SetLanguageCode(LanguageCode&& value) { m_languageCode = std::move(value); }
 
     /**
-     * <p>The language code you selected for your medical vocabulary. Note that U.S.
-     * English (<code>en-US</code>) is the only language supported with Amazon
-     * Transcribe Medical.</p>
+     * <p>The language code you selected for your medical vocabulary. US English
+     * (<code>en-US</code>) is the only language supported with Amazon Transcribe
+     * Medical.</p>
      */
     inline CreateMedicalVocabularyResult& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
 
     /**
-     * <p>The language code you selected for your medical vocabulary. Note that U.S.
-     * English (<code>en-US</code>) is the only language supported with Amazon
-     * Transcribe Medical.</p>
+     * <p>The language code you selected for your medical vocabulary. US English
+     * (<code>en-US</code>) is the only language supported with Amazon Transcribe
+     * Medical.</p>
      */
     inline CreateMedicalVocabularyResult& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
 
@@ -145,69 +145,105 @@ namespace Model
 
     /**
      * <p>The date and time you created your custom medical vocabulary.</p>
+     * <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>.
+     * For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM
+     * UTC-7 on May 4, 2022.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
 
     /**
      * <p>The date and time you created your custom medical vocabulary.</p>
+     * <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>.
+     * For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM
+     * UTC-7 on May 4, 2022.</p>
      */
     inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTime = value; }
 
     /**
      * <p>The date and time you created your custom medical vocabulary.</p>
+     * <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>.
+     * For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM
+     * UTC-7 on May 4, 2022.</p>
      */
     inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTime = std::move(value); }
 
     /**
      * <p>The date and time you created your custom medical vocabulary.</p>
+     * <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>.
+     * For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM
+     * UTC-7 on May 4, 2022.</p>
      */
     inline CreateMedicalVocabularyResult& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
 
     /**
      * <p>The date and time you created your custom medical vocabulary.</p>
+     * <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>.
+     * For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM
+     * UTC-7 on May 4, 2022.</p>
      */
     inline CreateMedicalVocabularyResult& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>If the <code>VocabularyState</code> field is <code>FAILED</code>,
-     * <code>FailureReason</code> contains information about why the job failed.</p>
+     * <p>If <code>VocabularyState</code> is <code>FAILED</code>,
+     * <code>FailureReason</code> contains information about why the medical
+     * transcription job request failed. See also: <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common
+     * Errors</a>.</p>
      */
     inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
 
     /**
-     * <p>If the <code>VocabularyState</code> field is <code>FAILED</code>,
-     * <code>FailureReason</code> contains information about why the job failed.</p>
+     * <p>If <code>VocabularyState</code> is <code>FAILED</code>,
+     * <code>FailureReason</code> contains information about why the medical
+     * transcription job request failed. See also: <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common
+     * Errors</a>.</p>
      */
     inline void SetFailureReason(const Aws::String& value) { m_failureReason = value; }
 
     /**
-     * <p>If the <code>VocabularyState</code> field is <code>FAILED</code>,
-     * <code>FailureReason</code> contains information about why the job failed.</p>
+     * <p>If <code>VocabularyState</code> is <code>FAILED</code>,
+     * <code>FailureReason</code> contains information about why the medical
+     * transcription job request failed. See also: <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common
+     * Errors</a>.</p>
      */
     inline void SetFailureReason(Aws::String&& value) { m_failureReason = std::move(value); }
 
     /**
-     * <p>If the <code>VocabularyState</code> field is <code>FAILED</code>,
-     * <code>FailureReason</code> contains information about why the job failed.</p>
+     * <p>If <code>VocabularyState</code> is <code>FAILED</code>,
+     * <code>FailureReason</code> contains information about why the medical
+     * transcription job request failed. See also: <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common
+     * Errors</a>.</p>
      */
     inline void SetFailureReason(const char* value) { m_failureReason.assign(value); }
 
     /**
-     * <p>If the <code>VocabularyState</code> field is <code>FAILED</code>,
-     * <code>FailureReason</code> contains information about why the job failed.</p>
+     * <p>If <code>VocabularyState</code> is <code>FAILED</code>,
+     * <code>FailureReason</code> contains information about why the medical
+     * transcription job request failed. See also: <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common
+     * Errors</a>.</p>
      */
     inline CreateMedicalVocabularyResult& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
 
     /**
-     * <p>If the <code>VocabularyState</code> field is <code>FAILED</code>,
-     * <code>FailureReason</code> contains information about why the job failed.</p>
+     * <p>If <code>VocabularyState</code> is <code>FAILED</code>,
+     * <code>FailureReason</code> contains information about why the medical
+     * transcription job request failed. See also: <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common
+     * Errors</a>.</p>
      */
     inline CreateMedicalVocabularyResult& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
 
     /**
-     * <p>If the <code>VocabularyState</code> field is <code>FAILED</code>,
-     * <code>FailureReason</code> contains information about why the job failed.</p>
+     * <p>If <code>VocabularyState</code> is <code>FAILED</code>,
+     * <code>FailureReason</code> contains information about why the medical
+     * transcription job request failed. See also: <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common
+     * Errors</a>.</p>
      */
     inline CreateMedicalVocabularyResult& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
 

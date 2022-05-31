@@ -22,6 +22,7 @@ namespace Aws
 
         static const int LAUNCH_HASH = HashingUtils::HashString("LAUNCH");
         static const int TERMINATE_HASH = HashingUtils::HashString("TERMINATE");
+        static const int CREATE_CONVERTED_SNAPSHOT_HASH = HashingUtils::HashString("CREATE_CONVERTED_SNAPSHOT");
 
 
         JobType GetJobTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == TERMINATE_HASH)
           {
             return JobType::TERMINATE;
+          }
+          else if (hashCode == CREATE_CONVERTED_SNAPSHOT_HASH)
+          {
+            return JobType::CREATE_CONVERTED_SNAPSHOT;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "LAUNCH";
           case JobType::TERMINATE:
             return "TERMINATE";
+          case JobType::CREATE_CONVERTED_SNAPSHOT:
+            return "CREATE_CONVERTED_SNAPSHOT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

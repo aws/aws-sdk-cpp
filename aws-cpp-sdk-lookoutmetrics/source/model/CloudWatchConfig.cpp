@@ -19,12 +19,14 @@ namespace Model
 {
 
 CloudWatchConfig::CloudWatchConfig() : 
-    m_roleArnHasBeenSet(false)
+    m_roleArnHasBeenSet(false),
+    m_backTestConfigurationHasBeenSet(false)
 {
 }
 
 CloudWatchConfig::CloudWatchConfig(JsonView jsonValue) : 
-    m_roleArnHasBeenSet(false)
+    m_roleArnHasBeenSet(false),
+    m_backTestConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ CloudWatchConfig& CloudWatchConfig::operator =(JsonView jsonValue)
     m_roleArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("BackTestConfiguration"))
+  {
+    m_backTestConfiguration = jsonValue.GetObject("BackTestConfiguration");
+
+    m_backTestConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +57,12 @@ JsonValue CloudWatchConfig::Jsonize() const
   if(m_roleArnHasBeenSet)
   {
    payload.WithString("RoleArn", m_roleArn);
+
+  }
+
+  if(m_backTestConfigurationHasBeenSet)
+  {
+   payload.WithObject("BackTestConfiguration", m_backTestConfiguration.Jsonize());
 
   }
 

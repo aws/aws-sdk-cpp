@@ -43,7 +43,7 @@ namespace Model
      * <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data
      * into the hot tier. The hot tier is a service-managed database.</p> </li> <li>
      * <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the
-     * cold tier and the cold tier. The cold tier is a customer-managed Amazon S3
+     * cold tier and the hot tier. The cold tier is a customer-managed Amazon S3
      * bucket.</p> </li> </ul>
      */
     inline const StorageType& GetStorageType() const{ return m_storageType; }
@@ -54,7 +54,7 @@ namespace Model
      * <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data
      * into the hot tier. The hot tier is a service-managed database.</p> </li> <li>
      * <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the
-     * cold tier and the cold tier. The cold tier is a customer-managed Amazon S3
+     * cold tier and the hot tier. The cold tier is a customer-managed Amazon S3
      * bucket.</p> </li> </ul>
      */
     inline void SetStorageType(const StorageType& value) { m_storageType = value; }
@@ -65,7 +65,7 @@ namespace Model
      * <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data
      * into the hot tier. The hot tier is a service-managed database.</p> </li> <li>
      * <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the
-     * cold tier and the cold tier. The cold tier is a customer-managed Amazon S3
+     * cold tier and the hot tier. The cold tier is a customer-managed Amazon S3
      * bucket.</p> </li> </ul>
      */
     inline void SetStorageType(StorageType&& value) { m_storageType = std::move(value); }
@@ -76,7 +76,7 @@ namespace Model
      * <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data
      * into the hot tier. The hot tier is a service-managed database.</p> </li> <li>
      * <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the
-     * cold tier and the cold tier. The cold tier is a customer-managed Amazon S3
+     * cold tier and the hot tier. The cold tier is a customer-managed Amazon S3
      * bucket.</p> </li> </ul>
      */
     inline DescribeStorageConfigurationResult& WithStorageType(const StorageType& value) { SetStorageType(value); return *this;}
@@ -87,7 +87,7 @@ namespace Model
      * <li> <p> <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data
      * into the hot tier. The hot tier is a service-managed database.</p> </li> <li>
      * <p> <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the
-     * cold tier and the cold tier. The cold tier is a customer-managed Amazon S3
+     * cold tier and the hot tier. The cold tier is a customer-managed Amazon S3
      * bucket.</p> </li> </ul>
      */
     inline DescribeStorageConfigurationResult& WithStorageType(StorageType&& value) { SetStorageType(std::move(value)); return *this;}

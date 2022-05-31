@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>TYou do not have sufficient access to perform this action.</p><p><h3>See
+   * <p>You do not have sufficient access to perform this action.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/AccessDeniedException">AWS
    * API Reference</a></p>
