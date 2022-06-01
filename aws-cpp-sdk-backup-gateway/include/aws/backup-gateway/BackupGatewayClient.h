@@ -16,6 +16,7 @@
 #include <aws/backup-gateway/model/DeleteGatewayResult.h>
 #include <aws/backup-gateway/model/DeleteHypervisorResult.h>
 #include <aws/backup-gateway/model/DisassociateGatewayFromServerResult.h>
+#include <aws/backup-gateway/model/GetGatewayResult.h>
 #include <aws/backup-gateway/model/ImportHypervisorConfigurationResult.h>
 #include <aws/backup-gateway/model/ListGatewaysResult.h>
 #include <aws/backup-gateway/model/ListHypervisorsResult.h>
@@ -26,6 +27,7 @@
 #include <aws/backup-gateway/model/TestHypervisorConfigurationResult.h>
 #include <aws/backup-gateway/model/UntagResourceResult.h>
 #include <aws/backup-gateway/model/UpdateGatewayInformationResult.h>
+#include <aws/backup-gateway/model/UpdateGatewaySoftwareNowResult.h>
 #include <aws/backup-gateway/model/UpdateHypervisorResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -71,6 +73,7 @@ namespace Model
         class DeleteGatewayRequest;
         class DeleteHypervisorRequest;
         class DisassociateGatewayFromServerRequest;
+        class GetGatewayRequest;
         class ImportHypervisorConfigurationRequest;
         class ListGatewaysRequest;
         class ListHypervisorsRequest;
@@ -81,6 +84,7 @@ namespace Model
         class TestHypervisorConfigurationRequest;
         class UntagResourceRequest;
         class UpdateGatewayInformationRequest;
+        class UpdateGatewaySoftwareNowRequest;
         class UpdateHypervisorRequest;
 
         typedef Aws::Utils::Outcome<AssociateGatewayToServerResult, BackupGatewayError> AssociateGatewayToServerOutcome;
@@ -88,6 +92,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteGatewayResult, BackupGatewayError> DeleteGatewayOutcome;
         typedef Aws::Utils::Outcome<DeleteHypervisorResult, BackupGatewayError> DeleteHypervisorOutcome;
         typedef Aws::Utils::Outcome<DisassociateGatewayFromServerResult, BackupGatewayError> DisassociateGatewayFromServerOutcome;
+        typedef Aws::Utils::Outcome<GetGatewayResult, BackupGatewayError> GetGatewayOutcome;
         typedef Aws::Utils::Outcome<ImportHypervisorConfigurationResult, BackupGatewayError> ImportHypervisorConfigurationOutcome;
         typedef Aws::Utils::Outcome<ListGatewaysResult, BackupGatewayError> ListGatewaysOutcome;
         typedef Aws::Utils::Outcome<ListHypervisorsResult, BackupGatewayError> ListHypervisorsOutcome;
@@ -98,6 +103,7 @@ namespace Model
         typedef Aws::Utils::Outcome<TestHypervisorConfigurationResult, BackupGatewayError> TestHypervisorConfigurationOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, BackupGatewayError> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateGatewayInformationResult, BackupGatewayError> UpdateGatewayInformationOutcome;
+        typedef Aws::Utils::Outcome<UpdateGatewaySoftwareNowResult, BackupGatewayError> UpdateGatewaySoftwareNowOutcome;
         typedef Aws::Utils::Outcome<UpdateHypervisorResult, BackupGatewayError> UpdateHypervisorOutcome;
 
         typedef std::future<AssociateGatewayToServerOutcome> AssociateGatewayToServerOutcomeCallable;
@@ -105,6 +111,7 @@ namespace Model
         typedef std::future<DeleteGatewayOutcome> DeleteGatewayOutcomeCallable;
         typedef std::future<DeleteHypervisorOutcome> DeleteHypervisorOutcomeCallable;
         typedef std::future<DisassociateGatewayFromServerOutcome> DisassociateGatewayFromServerOutcomeCallable;
+        typedef std::future<GetGatewayOutcome> GetGatewayOutcomeCallable;
         typedef std::future<ImportHypervisorConfigurationOutcome> ImportHypervisorConfigurationOutcomeCallable;
         typedef std::future<ListGatewaysOutcome> ListGatewaysOutcomeCallable;
         typedef std::future<ListHypervisorsOutcome> ListHypervisorsOutcomeCallable;
@@ -115,6 +122,7 @@ namespace Model
         typedef std::future<TestHypervisorConfigurationOutcome> TestHypervisorConfigurationOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateGatewayInformationOutcome> UpdateGatewayInformationOutcomeCallable;
+        typedef std::future<UpdateGatewaySoftwareNowOutcome> UpdateGatewaySoftwareNowOutcomeCallable;
         typedef std::future<UpdateHypervisorOutcome> UpdateHypervisorOutcomeCallable;
 } // namespace Model
 
@@ -125,6 +133,7 @@ namespace Model
     typedef std::function<void(const BackupGatewayClient*, const Model::DeleteGatewayRequest&, const Model::DeleteGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteGatewayResponseReceivedHandler;
     typedef std::function<void(const BackupGatewayClient*, const Model::DeleteHypervisorRequest&, const Model::DeleteHypervisorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteHypervisorResponseReceivedHandler;
     typedef std::function<void(const BackupGatewayClient*, const Model::DisassociateGatewayFromServerRequest&, const Model::DisassociateGatewayFromServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateGatewayFromServerResponseReceivedHandler;
+    typedef std::function<void(const BackupGatewayClient*, const Model::GetGatewayRequest&, const Model::GetGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGatewayResponseReceivedHandler;
     typedef std::function<void(const BackupGatewayClient*, const Model::ImportHypervisorConfigurationRequest&, const Model::ImportHypervisorConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportHypervisorConfigurationResponseReceivedHandler;
     typedef std::function<void(const BackupGatewayClient*, const Model::ListGatewaysRequest&, const Model::ListGatewaysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGatewaysResponseReceivedHandler;
     typedef std::function<void(const BackupGatewayClient*, const Model::ListHypervisorsRequest&, const Model::ListHypervisorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListHypervisorsResponseReceivedHandler;
@@ -135,6 +144,7 @@ namespace Model
     typedef std::function<void(const BackupGatewayClient*, const Model::TestHypervisorConfigurationRequest&, const Model::TestHypervisorConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TestHypervisorConfigurationResponseReceivedHandler;
     typedef std::function<void(const BackupGatewayClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const BackupGatewayClient*, const Model::UpdateGatewayInformationRequest&, const Model::UpdateGatewayInformationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGatewayInformationResponseReceivedHandler;
+    typedef std::function<void(const BackupGatewayClient*, const Model::UpdateGatewaySoftwareNowRequest&, const Model::UpdateGatewaySoftwareNowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGatewaySoftwareNowResponseReceivedHandler;
     typedef std::function<void(const BackupGatewayClient*, const Model::UpdateHypervisorRequest&, const Model::UpdateHypervisorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateHypervisorResponseReceivedHandler;
 
   /**
@@ -267,6 +277,24 @@ namespace Model
          * An Async wrapper for DisassociateGatewayFromServer that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DisassociateGatewayFromServerAsync(const Model::DisassociateGatewayFromServerRequest& request, const DisassociateGatewayFromServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>By providing the ARN (Amazon Resource Name), this API returns the
+         * gateway.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetGateway">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetGatewayOutcome GetGateway(const Model::GetGatewayRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetGateway that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetGatewayOutcomeCallable GetGatewayCallable(const Model::GetGatewayRequest& request) const;
+
+        /**
+         * An Async wrapper for GetGateway that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetGatewayAsync(const Model::GetGatewayRequest& request, const GetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Connect to a hypervisor by importing its configuration.</p><p><h3>See
@@ -446,6 +474,26 @@ namespace Model
         virtual void UpdateGatewayInformationAsync(const Model::UpdateGatewayInformationRequest& request, const UpdateGatewayInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates the gateway virtual machine (VM) software. The request immediately
+         * triggers the software update.</p>  <p>When you make this request, you get
+         * a <code>200 OK</code> success response immediately. However, it might take some
+         * time for the update to complete.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/UpdateGatewaySoftwareNow">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateGatewaySoftwareNowOutcome UpdateGatewaySoftwareNow(const Model::UpdateGatewaySoftwareNowRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateGatewaySoftwareNow that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateGatewaySoftwareNowOutcomeCallable UpdateGatewaySoftwareNowCallable(const Model::UpdateGatewaySoftwareNowRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateGatewaySoftwareNow that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateGatewaySoftwareNowAsync(const Model::UpdateGatewaySoftwareNowRequest& request, const UpdateGatewaySoftwareNowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates a hypervisor metadata, including its host, username, and password.
          * Specify which hypervisor to update using the Amazon Resource Name (ARN) of the
          * hypervisor in your request.</p><p><h3>See Also:</h3>   <a
@@ -473,6 +521,7 @@ namespace Model
         void DeleteGatewayAsyncHelper(const Model::DeleteGatewayRequest& request, const DeleteGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteHypervisorAsyncHelper(const Model::DeleteHypervisorRequest& request, const DeleteHypervisorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateGatewayFromServerAsyncHelper(const Model::DisassociateGatewayFromServerRequest& request, const DisassociateGatewayFromServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetGatewayAsyncHelper(const Model::GetGatewayRequest& request, const GetGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ImportHypervisorConfigurationAsyncHelper(const Model::ImportHypervisorConfigurationRequest& request, const ImportHypervisorConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListGatewaysAsyncHelper(const Model::ListGatewaysRequest& request, const ListGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListHypervisorsAsyncHelper(const Model::ListHypervisorsRequest& request, const ListHypervisorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -483,6 +532,7 @@ namespace Model
         void TestHypervisorConfigurationAsyncHelper(const Model::TestHypervisorConfigurationRequest& request, const TestHypervisorConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateGatewayInformationAsyncHelper(const Model::UpdateGatewayInformationRequest& request, const UpdateGatewayInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateGatewaySoftwareNowAsyncHelper(const Model::UpdateGatewaySoftwareNowRequest& request, const UpdateGatewaySoftwareNowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateHypervisorAsyncHelper(const Model::UpdateHypervisorRequest& request, const UpdateHypervisorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;

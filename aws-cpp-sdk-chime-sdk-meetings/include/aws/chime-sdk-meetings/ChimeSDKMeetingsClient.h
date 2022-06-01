@@ -18,6 +18,7 @@
 #include <aws/chime-sdk-meetings/model/GetAttendeeResult.h>
 #include <aws/chime-sdk-meetings/model/GetMeetingResult.h>
 #include <aws/chime-sdk-meetings/model/ListAttendeesResult.h>
+#include <aws/chime-sdk-meetings/model/UpdateAttendeeCapabilitiesResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -59,6 +60,7 @@ namespace ChimeSDKMeetings
 namespace Model
 {
         class BatchCreateAttendeeRequest;
+        class BatchUpdateAttendeeCapabilitiesExceptRequest;
         class CreateAttendeeRequest;
         class CreateMeetingRequest;
         class CreateMeetingWithAttendeesRequest;
@@ -69,8 +71,10 @@ namespace Model
         class ListAttendeesRequest;
         class StartMeetingTranscriptionRequest;
         class StopMeetingTranscriptionRequest;
+        class UpdateAttendeeCapabilitiesRequest;
 
         typedef Aws::Utils::Outcome<BatchCreateAttendeeResult, ChimeSDKMeetingsError> BatchCreateAttendeeOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ChimeSDKMeetingsError> BatchUpdateAttendeeCapabilitiesExceptOutcome;
         typedef Aws::Utils::Outcome<CreateAttendeeResult, ChimeSDKMeetingsError> CreateAttendeeOutcome;
         typedef Aws::Utils::Outcome<CreateMeetingResult, ChimeSDKMeetingsError> CreateMeetingOutcome;
         typedef Aws::Utils::Outcome<CreateMeetingWithAttendeesResult, ChimeSDKMeetingsError> CreateMeetingWithAttendeesOutcome;
@@ -81,8 +85,10 @@ namespace Model
         typedef Aws::Utils::Outcome<ListAttendeesResult, ChimeSDKMeetingsError> ListAttendeesOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ChimeSDKMeetingsError> StartMeetingTranscriptionOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ChimeSDKMeetingsError> StopMeetingTranscriptionOutcome;
+        typedef Aws::Utils::Outcome<UpdateAttendeeCapabilitiesResult, ChimeSDKMeetingsError> UpdateAttendeeCapabilitiesOutcome;
 
         typedef std::future<BatchCreateAttendeeOutcome> BatchCreateAttendeeOutcomeCallable;
+        typedef std::future<BatchUpdateAttendeeCapabilitiesExceptOutcome> BatchUpdateAttendeeCapabilitiesExceptOutcomeCallable;
         typedef std::future<CreateAttendeeOutcome> CreateAttendeeOutcomeCallable;
         typedef std::future<CreateMeetingOutcome> CreateMeetingOutcomeCallable;
         typedef std::future<CreateMeetingWithAttendeesOutcome> CreateMeetingWithAttendeesOutcomeCallable;
@@ -93,11 +99,13 @@ namespace Model
         typedef std::future<ListAttendeesOutcome> ListAttendeesOutcomeCallable;
         typedef std::future<StartMeetingTranscriptionOutcome> StartMeetingTranscriptionOutcomeCallable;
         typedef std::future<StopMeetingTranscriptionOutcome> StopMeetingTranscriptionOutcomeCallable;
+        typedef std::future<UpdateAttendeeCapabilitiesOutcome> UpdateAttendeeCapabilitiesOutcomeCallable;
 } // namespace Model
 
   class ChimeSDKMeetingsClient;
 
     typedef std::function<void(const ChimeSDKMeetingsClient*, const Model::BatchCreateAttendeeRequest&, const Model::BatchCreateAttendeeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchCreateAttendeeResponseReceivedHandler;
+    typedef std::function<void(const ChimeSDKMeetingsClient*, const Model::BatchUpdateAttendeeCapabilitiesExceptRequest&, const Model::BatchUpdateAttendeeCapabilitiesExceptOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchUpdateAttendeeCapabilitiesExceptResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMeetingsClient*, const Model::CreateAttendeeRequest&, const Model::CreateAttendeeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAttendeeResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMeetingsClient*, const Model::CreateMeetingRequest&, const Model::CreateMeetingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMeetingResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMeetingsClient*, const Model::CreateMeetingWithAttendeesRequest&, const Model::CreateMeetingWithAttendeesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMeetingWithAttendeesResponseReceivedHandler;
@@ -108,6 +116,7 @@ namespace Model
     typedef std::function<void(const ChimeSDKMeetingsClient*, const Model::ListAttendeesRequest&, const Model::ListAttendeesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAttendeesResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMeetingsClient*, const Model::StartMeetingTranscriptionRequest&, const Model::StartMeetingTranscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartMeetingTranscriptionResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMeetingsClient*, const Model::StopMeetingTranscriptionRequest&, const Model::StopMeetingTranscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopMeetingTranscriptionResponseReceivedHandler;
+    typedef std::function<void(const ChimeSDKMeetingsClient*, const Model::UpdateAttendeeCapabilitiesRequest&, const Model::UpdateAttendeeCapabilitiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAttendeeCapabilitiesResponseReceivedHandler;
 
   /**
    * <p>The Amazon Chime SDK meetings APIs in this section allow software developers
@@ -164,6 +173,24 @@ namespace Model
          * An Async wrapper for BatchCreateAttendee that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void BatchCreateAttendeeAsync(const Model::BatchCreateAttendeeRequest& request, const BatchCreateAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates <code>AttendeeCapabilities</code> except the capabilities listed in
+         * an <code>ExcludedAttendeeIds</code> table.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/BatchUpdateAttendeeCapabilitiesExcept">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchUpdateAttendeeCapabilitiesExceptOutcome BatchUpdateAttendeeCapabilitiesExcept(const Model::BatchUpdateAttendeeCapabilitiesExceptRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchUpdateAttendeeCapabilitiesExcept that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchUpdateAttendeeCapabilitiesExceptOutcomeCallable BatchUpdateAttendeeCapabilitiesExceptCallable(const Model::BatchUpdateAttendeeCapabilitiesExceptRequest& request) const;
+
+        /**
+         * An Async wrapper for BatchUpdateAttendeeCapabilitiesExcept that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchUpdateAttendeeCapabilitiesExceptAsync(const Model::BatchUpdateAttendeeCapabilitiesExceptRequest& request, const BatchUpdateAttendeeCapabilitiesExceptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Creates a new attendee for an active Amazon Chime SDK meeting. For more
@@ -378,11 +405,29 @@ namespace Model
          */
         virtual void StopMeetingTranscriptionAsync(const Model::StopMeetingTranscriptionRequest& request, const StopMeetingTranscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>The capabilties that you want to update.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/UpdateAttendeeCapabilities">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateAttendeeCapabilitiesOutcome UpdateAttendeeCapabilities(const Model::UpdateAttendeeCapabilitiesRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateAttendeeCapabilities that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateAttendeeCapabilitiesOutcomeCallable UpdateAttendeeCapabilitiesCallable(const Model::UpdateAttendeeCapabilitiesRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateAttendeeCapabilities that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateAttendeeCapabilitiesAsync(const Model::UpdateAttendeeCapabilitiesRequest& request, const UpdateAttendeeCapabilitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void BatchCreateAttendeeAsyncHelper(const Model::BatchCreateAttendeeRequest& request, const BatchCreateAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void BatchUpdateAttendeeCapabilitiesExceptAsyncHelper(const Model::BatchUpdateAttendeeCapabilitiesExceptRequest& request, const BatchUpdateAttendeeCapabilitiesExceptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateAttendeeAsyncHelper(const Model::CreateAttendeeRequest& request, const CreateAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateMeetingAsyncHelper(const Model::CreateMeetingRequest& request, const CreateMeetingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateMeetingWithAttendeesAsyncHelper(const Model::CreateMeetingWithAttendeesRequest& request, const CreateMeetingWithAttendeesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -393,6 +438,7 @@ namespace Model
         void ListAttendeesAsyncHelper(const Model::ListAttendeesRequest& request, const ListAttendeesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartMeetingTranscriptionAsyncHelper(const Model::StartMeetingTranscriptionRequest& request, const StartMeetingTranscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopMeetingTranscriptionAsyncHelper(const Model::StopMeetingTranscriptionRequest& request, const StopMeetingTranscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateAttendeeCapabilitiesAsyncHelper(const Model::UpdateAttendeeCapabilitiesRequest& request, const UpdateAttendeeCapabilitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

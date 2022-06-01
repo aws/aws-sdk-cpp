@@ -7,6 +7,7 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/chime-sdk-meetings/ChimeSDKMeetingsErrors.h>
 #include <aws/chime-sdk-meetings/model/ServiceUnavailableException.h>
+#include <aws/chime-sdk-meetings/model/ConflictException.h>
 #include <aws/chime-sdk-meetings/model/ThrottlingException.h>
 #include <aws/chime-sdk-meetings/model/NotFoundException.h>
 #include <aws/chime-sdk-meetings/model/ServiceFailureException.h>
@@ -29,6 +30,12 @@ template<> AWS_CHIMESDKMEETINGS_API ServiceUnavailableException ChimeSDKMeetings
 {
   assert(this->GetErrorType() == ChimeSDKMeetingsErrors::SERVICE_UNAVAILABLE);
   return ServiceUnavailableException(this->GetJsonPayload().View());
+}
+
+template<> AWS_CHIMESDKMEETINGS_API ConflictException ChimeSDKMeetingsError::GetModeledError()
+{
+  assert(this->GetErrorType() == ChimeSDKMeetingsErrors::CONFLICT);
+  return ConflictException(this->GetJsonPayload().View());
 }
 
 template<> AWS_CHIMESDKMEETINGS_API ThrottlingException ChimeSDKMeetingsError::GetModeledError()
@@ -82,6 +89,7 @@ template<> AWS_CHIMESDKMEETINGS_API BadRequestException ChimeSDKMeetingsError::G
 namespace ChimeSDKMeetingsErrorMapper
 {
 
+static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
 static const int SERVICE_FAILURE_HASH = HashingUtils::HashString("ServiceFailureException");
 static const int FORBIDDEN_HASH = HashingUtils::HashString("ForbiddenException");
@@ -95,7 +103,11 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == NOT_FOUND_HASH)
+  if (hashCode == CONFLICT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeSDKMeetingsErrors::CONFLICT), false);
+  }
+  else if (hashCode == NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ChimeSDKMeetingsErrors::NOT_FOUND), false);
   }

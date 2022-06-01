@@ -127,6 +127,12 @@ DescribeDatasetImportJobResult& DescribeDatasetImportJobResult::operator =(const
 
   }
 
+  if(jsonValue.ValueExists("Format"))
+  {
+    m_format = jsonValue.GetString("Format");
+
+  }
+
 
 
   return *this;

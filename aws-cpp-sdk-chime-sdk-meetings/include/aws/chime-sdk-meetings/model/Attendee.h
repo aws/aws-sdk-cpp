@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/chime-sdk-meetings/ChimeSDKMeetings_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/chime-sdk-meetings/model/AttendeeCapabilities.h>
 #include <utility>
 
 namespace Aws
@@ -175,6 +176,37 @@ namespace Model
      */
     inline Attendee& WithJoinToken(const char* value) { SetJoinToken(value); return *this;}
 
+
+    /**
+     * <p>The capabilities (audio, video, or content) assigned to an attendee.</p>
+     */
+    inline const AttendeeCapabilities& GetCapabilities() const{ return m_capabilities; }
+
+    /**
+     * <p>The capabilities (audio, video, or content) assigned to an attendee.</p>
+     */
+    inline bool CapabilitiesHasBeenSet() const { return m_capabilitiesHasBeenSet; }
+
+    /**
+     * <p>The capabilities (audio, video, or content) assigned to an attendee.</p>
+     */
+    inline void SetCapabilities(const AttendeeCapabilities& value) { m_capabilitiesHasBeenSet = true; m_capabilities = value; }
+
+    /**
+     * <p>The capabilities (audio, video, or content) assigned to an attendee.</p>
+     */
+    inline void SetCapabilities(AttendeeCapabilities&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::move(value); }
+
+    /**
+     * <p>The capabilities (audio, video, or content) assigned to an attendee.</p>
+     */
+    inline Attendee& WithCapabilities(const AttendeeCapabilities& value) { SetCapabilities(value); return *this;}
+
+    /**
+     * <p>The capabilities (audio, video, or content) assigned to an attendee.</p>
+     */
+    inline Attendee& WithCapabilities(AttendeeCapabilities&& value) { SetCapabilities(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_externalUserId;
@@ -185,6 +217,9 @@ namespace Model
 
     Aws::String m_joinToken;
     bool m_joinTokenHasBeenSet;
+
+    AttendeeCapabilities m_capabilities;
+    bool m_capabilitiesHasBeenSet;
   };
 
 } // namespace Model

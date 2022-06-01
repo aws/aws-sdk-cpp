@@ -14,8 +14,10 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/route53/model/ActivateKeySigningKeyResult.h>
 #include <aws/route53/model/AssociateVPCWithHostedZoneResult.h>
+#include <aws/route53/model/ChangeCidrCollectionResult.h>
 #include <aws/route53/model/ChangeResourceRecordSetsResult.h>
 #include <aws/route53/model/ChangeTagsForResourceResult.h>
+#include <aws/route53/model/CreateCidrCollectionResult.h>
 #include <aws/route53/model/CreateHealthCheckResult.h>
 #include <aws/route53/model/CreateHostedZoneResult.h>
 #include <aws/route53/model/CreateKeySigningKeyResult.h>
@@ -26,6 +28,7 @@
 #include <aws/route53/model/CreateTrafficPolicyVersionResult.h>
 #include <aws/route53/model/CreateVPCAssociationAuthorizationResult.h>
 #include <aws/route53/model/DeactivateKeySigningKeyResult.h>
+#include <aws/route53/model/DeleteCidrCollectionResult.h>
 #include <aws/route53/model/DeleteHealthCheckResult.h>
 #include <aws/route53/model/DeleteHostedZoneResult.h>
 #include <aws/route53/model/DeleteKeySigningKeyResult.h>
@@ -55,6 +58,9 @@
 #include <aws/route53/model/GetTrafficPolicyResult.h>
 #include <aws/route53/model/GetTrafficPolicyInstanceResult.h>
 #include <aws/route53/model/GetTrafficPolicyInstanceCountResult.h>
+#include <aws/route53/model/ListCidrBlocksResult.h>
+#include <aws/route53/model/ListCidrCollectionsResult.h>
+#include <aws/route53/model/ListCidrLocationsResult.h>
 #include <aws/route53/model/ListGeoLocationsResult.h>
 #include <aws/route53/model/ListHealthChecksResult.h>
 #include <aws/route53/model/ListHostedZonesResult.h>
@@ -123,8 +129,10 @@ namespace Model
 {
         class ActivateKeySigningKeyRequest;
         class AssociateVPCWithHostedZoneRequest;
+        class ChangeCidrCollectionRequest;
         class ChangeResourceRecordSetsRequest;
         class ChangeTagsForResourceRequest;
+        class CreateCidrCollectionRequest;
         class CreateHealthCheckRequest;
         class CreateHostedZoneRequest;
         class CreateKeySigningKeyRequest;
@@ -135,6 +143,7 @@ namespace Model
         class CreateTrafficPolicyVersionRequest;
         class CreateVPCAssociationAuthorizationRequest;
         class DeactivateKeySigningKeyRequest;
+        class DeleteCidrCollectionRequest;
         class DeleteHealthCheckRequest;
         class DeleteHostedZoneRequest;
         class DeleteKeySigningKeyRequest;
@@ -164,6 +173,9 @@ namespace Model
         class GetTrafficPolicyRequest;
         class GetTrafficPolicyInstanceRequest;
         class GetTrafficPolicyInstanceCountRequest;
+        class ListCidrBlocksRequest;
+        class ListCidrCollectionsRequest;
+        class ListCidrLocationsRequest;
         class ListGeoLocationsRequest;
         class ListHealthChecksRequest;
         class ListHostedZonesRequest;
@@ -188,8 +200,10 @@ namespace Model
 
         typedef Aws::Utils::Outcome<ActivateKeySigningKeyResult, Route53Error> ActivateKeySigningKeyOutcome;
         typedef Aws::Utils::Outcome<AssociateVPCWithHostedZoneResult, Route53Error> AssociateVPCWithHostedZoneOutcome;
+        typedef Aws::Utils::Outcome<ChangeCidrCollectionResult, Route53Error> ChangeCidrCollectionOutcome;
         typedef Aws::Utils::Outcome<ChangeResourceRecordSetsResult, Route53Error> ChangeResourceRecordSetsOutcome;
         typedef Aws::Utils::Outcome<ChangeTagsForResourceResult, Route53Error> ChangeTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<CreateCidrCollectionResult, Route53Error> CreateCidrCollectionOutcome;
         typedef Aws::Utils::Outcome<CreateHealthCheckResult, Route53Error> CreateHealthCheckOutcome;
         typedef Aws::Utils::Outcome<CreateHostedZoneResult, Route53Error> CreateHostedZoneOutcome;
         typedef Aws::Utils::Outcome<CreateKeySigningKeyResult, Route53Error> CreateKeySigningKeyOutcome;
@@ -200,6 +214,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateTrafficPolicyVersionResult, Route53Error> CreateTrafficPolicyVersionOutcome;
         typedef Aws::Utils::Outcome<CreateVPCAssociationAuthorizationResult, Route53Error> CreateVPCAssociationAuthorizationOutcome;
         typedef Aws::Utils::Outcome<DeactivateKeySigningKeyResult, Route53Error> DeactivateKeySigningKeyOutcome;
+        typedef Aws::Utils::Outcome<DeleteCidrCollectionResult, Route53Error> DeleteCidrCollectionOutcome;
         typedef Aws::Utils::Outcome<DeleteHealthCheckResult, Route53Error> DeleteHealthCheckOutcome;
         typedef Aws::Utils::Outcome<DeleteHostedZoneResult, Route53Error> DeleteHostedZoneOutcome;
         typedef Aws::Utils::Outcome<DeleteKeySigningKeyResult, Route53Error> DeleteKeySigningKeyOutcome;
@@ -229,6 +244,9 @@ namespace Model
         typedef Aws::Utils::Outcome<GetTrafficPolicyResult, Route53Error> GetTrafficPolicyOutcome;
         typedef Aws::Utils::Outcome<GetTrafficPolicyInstanceResult, Route53Error> GetTrafficPolicyInstanceOutcome;
         typedef Aws::Utils::Outcome<GetTrafficPolicyInstanceCountResult, Route53Error> GetTrafficPolicyInstanceCountOutcome;
+        typedef Aws::Utils::Outcome<ListCidrBlocksResult, Route53Error> ListCidrBlocksOutcome;
+        typedef Aws::Utils::Outcome<ListCidrCollectionsResult, Route53Error> ListCidrCollectionsOutcome;
+        typedef Aws::Utils::Outcome<ListCidrLocationsResult, Route53Error> ListCidrLocationsOutcome;
         typedef Aws::Utils::Outcome<ListGeoLocationsResult, Route53Error> ListGeoLocationsOutcome;
         typedef Aws::Utils::Outcome<ListHealthChecksResult, Route53Error> ListHealthChecksOutcome;
         typedef Aws::Utils::Outcome<ListHostedZonesResult, Route53Error> ListHostedZonesOutcome;
@@ -253,8 +271,10 @@ namespace Model
 
         typedef std::future<ActivateKeySigningKeyOutcome> ActivateKeySigningKeyOutcomeCallable;
         typedef std::future<AssociateVPCWithHostedZoneOutcome> AssociateVPCWithHostedZoneOutcomeCallable;
+        typedef std::future<ChangeCidrCollectionOutcome> ChangeCidrCollectionOutcomeCallable;
         typedef std::future<ChangeResourceRecordSetsOutcome> ChangeResourceRecordSetsOutcomeCallable;
         typedef std::future<ChangeTagsForResourceOutcome> ChangeTagsForResourceOutcomeCallable;
+        typedef std::future<CreateCidrCollectionOutcome> CreateCidrCollectionOutcomeCallable;
         typedef std::future<CreateHealthCheckOutcome> CreateHealthCheckOutcomeCallable;
         typedef std::future<CreateHostedZoneOutcome> CreateHostedZoneOutcomeCallable;
         typedef std::future<CreateKeySigningKeyOutcome> CreateKeySigningKeyOutcomeCallable;
@@ -265,6 +285,7 @@ namespace Model
         typedef std::future<CreateTrafficPolicyVersionOutcome> CreateTrafficPolicyVersionOutcomeCallable;
         typedef std::future<CreateVPCAssociationAuthorizationOutcome> CreateVPCAssociationAuthorizationOutcomeCallable;
         typedef std::future<DeactivateKeySigningKeyOutcome> DeactivateKeySigningKeyOutcomeCallable;
+        typedef std::future<DeleteCidrCollectionOutcome> DeleteCidrCollectionOutcomeCallable;
         typedef std::future<DeleteHealthCheckOutcome> DeleteHealthCheckOutcomeCallable;
         typedef std::future<DeleteHostedZoneOutcome> DeleteHostedZoneOutcomeCallable;
         typedef std::future<DeleteKeySigningKeyOutcome> DeleteKeySigningKeyOutcomeCallable;
@@ -294,6 +315,9 @@ namespace Model
         typedef std::future<GetTrafficPolicyOutcome> GetTrafficPolicyOutcomeCallable;
         typedef std::future<GetTrafficPolicyInstanceOutcome> GetTrafficPolicyInstanceOutcomeCallable;
         typedef std::future<GetTrafficPolicyInstanceCountOutcome> GetTrafficPolicyInstanceCountOutcomeCallable;
+        typedef std::future<ListCidrBlocksOutcome> ListCidrBlocksOutcomeCallable;
+        typedef std::future<ListCidrCollectionsOutcome> ListCidrCollectionsOutcomeCallable;
+        typedef std::future<ListCidrLocationsOutcome> ListCidrLocationsOutcomeCallable;
         typedef std::future<ListGeoLocationsOutcome> ListGeoLocationsOutcomeCallable;
         typedef std::future<ListHealthChecksOutcome> ListHealthChecksOutcomeCallable;
         typedef std::future<ListHostedZonesOutcome> ListHostedZonesOutcomeCallable;
@@ -321,8 +345,10 @@ namespace Model
 
     typedef std::function<void(const Route53Client*, const Model::ActivateKeySigningKeyRequest&, const Model::ActivateKeySigningKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ActivateKeySigningKeyResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::AssociateVPCWithHostedZoneRequest&, const Model::AssociateVPCWithHostedZoneOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateVPCWithHostedZoneResponseReceivedHandler;
+    typedef std::function<void(const Route53Client*, const Model::ChangeCidrCollectionRequest&, const Model::ChangeCidrCollectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ChangeCidrCollectionResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::ChangeResourceRecordSetsRequest&, const Model::ChangeResourceRecordSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ChangeResourceRecordSetsResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::ChangeTagsForResourceRequest&, const Model::ChangeTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ChangeTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const Route53Client*, const Model::CreateCidrCollectionRequest&, const Model::CreateCidrCollectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCidrCollectionResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::CreateHealthCheckRequest&, const Model::CreateHealthCheckOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateHealthCheckResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::CreateHostedZoneRequest&, const Model::CreateHostedZoneOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateHostedZoneResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::CreateKeySigningKeyRequest&, const Model::CreateKeySigningKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateKeySigningKeyResponseReceivedHandler;
@@ -333,6 +359,7 @@ namespace Model
     typedef std::function<void(const Route53Client*, const Model::CreateTrafficPolicyVersionRequest&, const Model::CreateTrafficPolicyVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTrafficPolicyVersionResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::CreateVPCAssociationAuthorizationRequest&, const Model::CreateVPCAssociationAuthorizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateVPCAssociationAuthorizationResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::DeactivateKeySigningKeyRequest&, const Model::DeactivateKeySigningKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeactivateKeySigningKeyResponseReceivedHandler;
+    typedef std::function<void(const Route53Client*, const Model::DeleteCidrCollectionRequest&, const Model::DeleteCidrCollectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCidrCollectionResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::DeleteHealthCheckRequest&, const Model::DeleteHealthCheckOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteHealthCheckResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::DeleteHostedZoneRequest&, const Model::DeleteHostedZoneOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteHostedZoneResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::DeleteKeySigningKeyRequest&, const Model::DeleteKeySigningKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteKeySigningKeyResponseReceivedHandler;
@@ -362,6 +389,9 @@ namespace Model
     typedef std::function<void(const Route53Client*, const Model::GetTrafficPolicyRequest&, const Model::GetTrafficPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTrafficPolicyResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::GetTrafficPolicyInstanceRequest&, const Model::GetTrafficPolicyInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTrafficPolicyInstanceResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::GetTrafficPolicyInstanceCountRequest&, const Model::GetTrafficPolicyInstanceCountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTrafficPolicyInstanceCountResponseReceivedHandler;
+    typedef std::function<void(const Route53Client*, const Model::ListCidrBlocksRequest&, const Model::ListCidrBlocksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCidrBlocksResponseReceivedHandler;
+    typedef std::function<void(const Route53Client*, const Model::ListCidrCollectionsRequest&, const Model::ListCidrCollectionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCidrCollectionsResponseReceivedHandler;
+    typedef std::function<void(const Route53Client*, const Model::ListCidrLocationsRequest&, const Model::ListCidrLocationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCidrLocationsResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::ListGeoLocationsRequest&, const Model::ListGeoLocationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGeoLocationsResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::ListHealthChecksRequest&, const Model::ListHealthChecksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListHealthChecksResponseReceivedHandler;
     typedef std::function<void(const Route53Client*, const Model::ListHostedZonesRequest&, const Model::ListHostedZonesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListHostedZonesResponseReceivedHandler;
@@ -471,6 +501,34 @@ namespace Model
         virtual void AssociateVPCWithHostedZoneAsync(const Model::AssociateVPCWithHostedZoneRequest& request, const AssociateVPCWithHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates, changes, or deletes CIDR blocks within a collection. Contains
+         * authoritative IP information mapping blocks to one or multiple locations.</p>
+         * <p>A change request can update multiple locations in a collection at a time,
+         * which is helpful if you want to move one or more CIDR blocks from one location
+         * to another in one transaction, without downtime. </p> <p> <b>Limits</b> </p>
+         * <p>The max number of CIDR blocks included in the request is 1000. As a result,
+         * big updates require multiple API calls.</p> <p> <b> PUT and DELETE_IF_EXISTS</b>
+         * </p> <p>Use <code>ChangeCidrCollection</code> to perform the following
+         * actions:</p> <ul> <li> <p> <code>PUT</code>: Create a CIDR block within the
+         * specified collection.</p> </li> <li> <p> <code> DELETE_IF_EXISTS</code>: Delete
+         * an existing CIDR block from the collection.</p> </li> </ul><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeCidrCollection">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ChangeCidrCollectionOutcome ChangeCidrCollection(const Model::ChangeCidrCollectionRequest& request) const;
+
+        /**
+         * A Callable wrapper for ChangeCidrCollection that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ChangeCidrCollectionOutcomeCallable ChangeCidrCollectionCallable(const Model::ChangeCidrCollectionRequest& request) const;
+
+        /**
+         * An Async wrapper for ChangeCidrCollection that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ChangeCidrCollectionAsync(const Model::ChangeCidrCollectionRequest& request, const ChangeCidrCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates, changes, or deletes a resource record set, which contains
          * authoritative DNS information for a specified domain name or subdomain name. For
          * example, you can use <code>ChangeResourceRecordSets</code> to create a resource
@@ -568,6 +626,24 @@ namespace Model
         virtual void ChangeTagsForResourceAsync(const Model::ChangeTagsForResourceRequest& request, const ChangeTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates a CIDR collection in the current Amazon Web Services
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateCidrCollection">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateCidrCollectionOutcome CreateCidrCollection(const Model::CreateCidrCollectionRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateCidrCollection that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateCidrCollectionOutcomeCallable CreateCidrCollectionCallable(const Model::CreateCidrCollectionRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateCidrCollection that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateCidrCollectionAsync(const Model::CreateCidrCollectionRequest& request, const CreateCidrCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates a new health check.</p> <p>For information about adding health checks
          * to resource record sets, see <a
          * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResourceRecordSet.html#Route53-Type-ResourceRecordSet-HealthCheckId">HealthCheckId</a>
@@ -618,26 +694,26 @@ namespace Model
          * public hosted zone to a private hosted zone or vice versa. Instead, you must
          * create a new hosted zone with the same name and create new resource record
          * sets.</p>  <p>For more information about charges for hosted zones,
-         * see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53
+         * see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53
          * Pricing</a>.</p> <p>Note the following:</p> <ul> <li> <p>You can't create a
          * hosted zone for a top-level domain (TLD) such as .com.</p> </li> <li> <p>For
          * public hosted zones, Route 53 automatically creates a default SOA record and
          * four NS records for the zone. For more information about SOA and NS records, see
          * <a
          * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html">NS
-         * and SOA Records that Route 53 Creates for a Hosted Zone</a> in the <i>Amazon
+         * and SOA Records that Route 53 Creates for a Hosted Zone</a> in the <i>Amazon
          * Route 53 Developer Guide</i>.</p> <p>If you want to use the same name servers
          * for multiple public hosted zones, you can optionally associate a reusable
          * delegation set with the hosted zone. See the <code>DelegationSetId</code>
          * element.</p> </li> <li> <p>If your domain is registered with a registrar other
-         * than Route 53, you must update the name servers with your registrar to make
+         * than Route 53, you must update the name servers with your registrar to make
          * Route 53 the DNS service for the domain. For more information, see <a
          * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/MigratingDNS.html">Migrating
-         * DNS Service for an Existing Domain to Amazon Route 53</a> in the <i>Amazon Route
+         * DNS Service for an Existing Domain to Amazon Route 53</a> in the <i>Amazon Route
          * 53 Developer Guide</i>. </p> </li> </ul> <p>When you submit a
          * <code>CreateHostedZone</code> request, the initial status of the hosted zone is
          * <code>PENDING</code>. For public hosted zones, this means that the NS and SOA
-         * records are not yet available on all Route 53 DNS servers. When the NS and SOA
+         * records are not yet available on all Route 53 DNS servers. When the NS and SOA
          * records are available, the status of the zone changes to
          * <code>INSYNC</code>.</p> <p>The <code>CreateHostedZone</code> request requires
          * the caller to have an <code>ec2:DescribeVpcs</code> permission.</p> 
@@ -945,6 +1021,24 @@ namespace Model
         virtual void DeactivateKeySigningKeyAsync(const Model::DeactivateKeySigningKeyRequest& request, const DeactivateKeySigningKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes a CIDR collection in the current Amazon Web Services account. The
+         * collection must be empty before it can be deleted.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteCidrCollection">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteCidrCollectionOutcome DeleteCidrCollection(const Model::DeleteCidrCollectionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteCidrCollection that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteCidrCollectionOutcomeCallable DeleteCidrCollectionCallable(const Model::DeleteCidrCollectionRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteCidrCollection that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteCidrCollectionAsync(const Model::DeleteCidrCollectionRequest& request, const DeleteCidrCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes a health check.</p>  <p>Amazon Route 53 does not prevent
          * you from deleting a health check even if the health check is associated with one
          * or more resource record sets. If you delete a health check and you don't update
@@ -979,7 +1073,7 @@ namespace Model
          * service, such as Cloud Map, see <a
          * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DeleteHostedZone.html#delete-public-hosted-zone-created-by-another-service">Deleting
          * Public Hosted Zones That Were Created by Another Service</a> in the <i>Amazon
-         * Route 53 Developer Guide</i> for information about how to delete it. (The
+         * Route 53 Developer Guide</i> for information about how to delete it. (The
          * process is the same for public and private hosted zones that were created by
          * another service.)</p> <p>If you want to keep your domain registration but you
          * want to stop routing internet traffic to your website or web application, we
@@ -994,9 +1088,9 @@ namespace Model
          *  <p>If you want to avoid the monthly charge for the hosted zone, you
          * can transfer DNS service for the domain to a free DNS service. When you transfer
          * DNS service, you have to update the name servers for the domain registration. If
-         * the domain is registered with Route 53, see <a
+         * the domain is registered with Route 53, see <a
          * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_UpdateDomainNameservers.html">UpdateDomainNameservers</a>
-         * for information about how to replace Route 53 name servers with name servers for
+         * for information about how to replace Route 53 name servers with name servers for
          * the new DNS service. If the domain is registered with another registrar, use the
          * method provided by the registrar to update name servers for the domain
          * registration. For more information, perform an internet search on "free DNS
@@ -1004,7 +1098,7 @@ namespace Model
          * default SOA record and NS resource record sets. If the hosted zone contains
          * other resource record sets, you must delete them before you can delete the
          * hosted zone. If you try to delete a hosted zone that contains other resource
-         * record sets, the request fails, and Route 53 returns a
+         * record sets, the request fails, and Route 53 returns a
          * <code>HostedZoneNotEmpty</code> error. For information about deleting records
          * from your hosted zone, see <a
          * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ChangeResourceRecordSets.html">ChangeResourceRecordSets</a>.</p>
@@ -1631,6 +1725,60 @@ namespace Model
         virtual void GetTrafficPolicyInstanceCountAsync(const Model::GetTrafficPolicyInstanceCountRequest& request, const GetTrafficPolicyInstanceCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns a paginated list of location objects and their CIDR
+         * blocks.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListCidrBlocks">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListCidrBlocksOutcome ListCidrBlocks(const Model::ListCidrBlocksRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListCidrBlocks that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListCidrBlocksOutcomeCallable ListCidrBlocksCallable(const Model::ListCidrBlocksRequest& request) const;
+
+        /**
+         * An Async wrapper for ListCidrBlocks that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListCidrBlocksAsync(const Model::ListCidrBlocksRequest& request, const ListCidrBlocksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns a paginated list of CIDR collections in the Amazon Web Services
+         * account (metadata only).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListCidrCollections">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListCidrCollectionsOutcome ListCidrCollections(const Model::ListCidrCollectionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListCidrCollections that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListCidrCollectionsOutcomeCallable ListCidrCollectionsCallable(const Model::ListCidrCollectionsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListCidrCollections that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListCidrCollectionsAsync(const Model::ListCidrCollectionsRequest& request, const ListCidrCollectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns a paginated list of CIDR locations for the given collection (metadata
+         * only, does not include CIDR blocks).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListCidrLocations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListCidrLocationsOutcome ListCidrLocations(const Model::ListCidrLocationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListCidrLocations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListCidrLocationsOutcomeCallable ListCidrLocationsCallable(const Model::ListCidrLocationsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListCidrLocations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListCidrLocationsAsync(const Model::ListCidrLocationsRequest& request, const ListCidrLocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves a list of supported geographic locations.</p> <p>Countries are
          * listed first, and continents are listed last. If Amazon Route 53 supports
          * subdivisions for a country (for example, states or provinces), the subdivisions
@@ -2183,8 +2331,10 @@ namespace Model
         void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void ActivateKeySigningKeyAsyncHelper(const Model::ActivateKeySigningKeyRequest& request, const ActivateKeySigningKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateVPCWithHostedZoneAsyncHelper(const Model::AssociateVPCWithHostedZoneRequest& request, const AssociateVPCWithHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ChangeCidrCollectionAsyncHelper(const Model::ChangeCidrCollectionRequest& request, const ChangeCidrCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ChangeResourceRecordSetsAsyncHelper(const Model::ChangeResourceRecordSetsRequest& request, const ChangeResourceRecordSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ChangeTagsForResourceAsyncHelper(const Model::ChangeTagsForResourceRequest& request, const ChangeTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateCidrCollectionAsyncHelper(const Model::CreateCidrCollectionRequest& request, const CreateCidrCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateHealthCheckAsyncHelper(const Model::CreateHealthCheckRequest& request, const CreateHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateHostedZoneAsyncHelper(const Model::CreateHostedZoneRequest& request, const CreateHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateKeySigningKeyAsyncHelper(const Model::CreateKeySigningKeyRequest& request, const CreateKeySigningKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2195,6 +2345,7 @@ namespace Model
         void CreateTrafficPolicyVersionAsyncHelper(const Model::CreateTrafficPolicyVersionRequest& request, const CreateTrafficPolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateVPCAssociationAuthorizationAsyncHelper(const Model::CreateVPCAssociationAuthorizationRequest& request, const CreateVPCAssociationAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeactivateKeySigningKeyAsyncHelper(const Model::DeactivateKeySigningKeyRequest& request, const DeactivateKeySigningKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteCidrCollectionAsyncHelper(const Model::DeleteCidrCollectionRequest& request, const DeleteCidrCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteHealthCheckAsyncHelper(const Model::DeleteHealthCheckRequest& request, const DeleteHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteHostedZoneAsyncHelper(const Model::DeleteHostedZoneRequest& request, const DeleteHostedZoneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteKeySigningKeyAsyncHelper(const Model::DeleteKeySigningKeyRequest& request, const DeleteKeySigningKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2224,6 +2375,9 @@ namespace Model
         void GetTrafficPolicyAsyncHelper(const Model::GetTrafficPolicyRequest& request, const GetTrafficPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTrafficPolicyInstanceAsyncHelper(const Model::GetTrafficPolicyInstanceRequest& request, const GetTrafficPolicyInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTrafficPolicyInstanceCountAsyncHelper(const Model::GetTrafficPolicyInstanceCountRequest& request, const GetTrafficPolicyInstanceCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListCidrBlocksAsyncHelper(const Model::ListCidrBlocksRequest& request, const ListCidrBlocksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListCidrCollectionsAsyncHelper(const Model::ListCidrCollectionsRequest& request, const ListCidrCollectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListCidrLocationsAsyncHelper(const Model::ListCidrLocationsRequest& request, const ListCidrLocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListGeoLocationsAsyncHelper(const Model::ListGeoLocationsRequest& request, const ListGeoLocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListHealthChecksAsyncHelper(const Model::ListHealthChecksRequest& request, const ListHealthChecksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListHostedZonesAsyncHelper(const Model::ListHostedZonesRequest& request, const ListHostedZonesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -39,18 +39,22 @@ static const int KEY_SIGNING_KEY_ALREADY_EXISTS_HASH = HashingUtils::HashString(
 static const int INVALID_CHANGE_BATCH_HASH = HashingUtils::HashString("InvalidChangeBatch");
 static const int NO_SUCH_CLOUD_WATCH_LOGS_LOG_GROUP_HASH = HashingUtils::HashString("NoSuchCloudWatchLogsLogGroup");
 static const int INVALID_V_P_C_ID_HASH = HashingUtils::HashString("InvalidVPCId");
+static const int CIDR_BLOCK_IN_USE_HASH = HashingUtils::HashString("CidrBlockInUseException");
 static const int V_P_C_ASSOCIATION_NOT_FOUND_HASH = HashingUtils::HashString("VPCAssociationNotFound");
+static const int CIDR_COLLECTION_VERSION_MISMATCH_HASH = HashingUtils::HashString("CidrCollectionVersionMismatchException");
 static const int INVALID_TRAFFIC_POLICY_DOCUMENT_HASH = HashingUtils::HashString("InvalidTrafficPolicyDocument");
 static const int HOSTED_ZONE_ALREADY_EXISTS_HASH = HashingUtils::HashString("HostedZoneAlreadyExists");
 static const int LAST_V_P_C_ASSOCIATION_HASH = HashingUtils::HashString("LastVPCAssociation");
 static const int DELEGATION_SET_NOT_AVAILABLE_HASH = HashingUtils::HashString("DelegationSetNotAvailable");
 static const int LIMITS_EXCEEDED_HASH = HashingUtils::HashString("LimitsExceeded");
 static const int PUBLIC_ZONE_V_P_C_ASSOCIATION_HASH = HashingUtils::HashString("PublicZoneVPCAssociation");
+static const int NO_SUCH_CIDR_COLLECTION_HASH = HashingUtils::HashString("NoSuchCidrCollectionException");
 static const int NO_SUCH_DELEGATION_SET_HASH = HashingUtils::HashString("NoSuchDelegationSet");
 static const int KEY_SIGNING_KEY_IN_PARENT_D_S_RECORD_HASH = HashingUtils::HashString("KeySigningKeyInParentDSRecord");
 static const int NO_SUCH_TRAFFIC_POLICY_HASH = HashingUtils::HashString("NoSuchTrafficPolicy");
 static const int CONFLICTING_TYPES_HASH = HashingUtils::HashString("ConflictingTypes");
 static const int TOO_MANY_TRAFFIC_POLICY_VERSIONS_FOR_CURRENT_POLICY_HASH = HashingUtils::HashString("TooManyTrafficPolicyVersionsForCurrentPolicy");
+static const int CIDR_COLLECTION_IN_USE_HASH = HashingUtils::HashString("CidrCollectionInUseException");
 static const int NO_SUCH_TRAFFIC_POLICY_INSTANCE_HASH = HashingUtils::HashString("NoSuchTrafficPolicyInstance");
 static const int NO_SUCH_QUERY_LOGGING_CONFIG_HASH = HashingUtils::HashString("NoSuchQueryLoggingConfig");
 static const int HEALTH_CHECK_VERSION_MISMATCH_HASH = HashingUtils::HashString("HealthCheckVersionMismatch");
@@ -68,6 +72,7 @@ static const int HEALTH_CHECK_ALREADY_EXISTS_HASH = HashingUtils::HashString("He
 static const int TOO_MANY_TRAFFIC_POLICIES_HASH = HashingUtils::HashString("TooManyTrafficPolicies");
 static const int TRAFFIC_POLICY_ALREADY_EXISTS_HASH = HashingUtils::HashString("TrafficPolicyAlreadyExists");
 static const int KEY_SIGNING_KEY_WITH_ACTIVE_STATUS_NOT_FOUND_HASH = HashingUtils::HashString("KeySigningKeyWithActiveStatusNotFound");
+static const int NO_SUCH_CIDR_LOCATION_HASH = HashingUtils::HashString("NoSuchCidrLocationException");
 static const int PRIOR_REQUEST_NOT_COMPLETE_HASH = HashingUtils::HashString("PriorRequestNotComplete");
 static const int TOO_MANY_V_P_C_ASSOCIATION_AUTHORIZATIONS_HASH = HashingUtils::HashString("TooManyVPCAssociationAuthorizations");
 static const int INCOMPATIBLE_VERSION_HASH = HashingUtils::HashString("IncompatibleVersion");
@@ -86,6 +91,7 @@ static const int V_P_C_ASSOCIATION_AUTHORIZATION_NOT_FOUND_HASH = HashingUtils::
 static const int HOSTED_ZONE_NOT_PRIVATE_HASH = HashingUtils::HashString("HostedZoneNotPrivate");
 static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModification");
 static const int NOT_AUTHORIZED_HASH = HashingUtils::HashString("NotAuthorizedException");
+static const int CIDR_COLLECTION_ALREADY_EXISTS_HASH = HashingUtils::HashString("CidrCollectionAlreadyExistsException");
 static const int QUERY_LOGGING_CONFIG_ALREADY_EXISTS_HASH = HashingUtils::HashString("QueryLoggingConfigAlreadyExists");
 static const int NO_SUCH_HOSTED_ZONE_HASH = HashingUtils::HashString("NoSuchHostedZone");
 
@@ -146,9 +152,17 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53Errors::INVALID_V_P_C_ID), false);
   }
+  else if (hashCode == CIDR_BLOCK_IN_USE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53Errors::CIDR_BLOCK_IN_USE), false);
+  }
   else if (hashCode == V_P_C_ASSOCIATION_NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53Errors::V_P_C_ASSOCIATION_NOT_FOUND), false);
+  }
+  else if (hashCode == CIDR_COLLECTION_VERSION_MISMATCH_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53Errors::CIDR_COLLECTION_VERSION_MISMATCH), false);
   }
   else if (hashCode == INVALID_TRAFFIC_POLICY_DOCUMENT_HASH)
   {
@@ -174,6 +188,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53Errors::PUBLIC_ZONE_V_P_C_ASSOCIATION), false);
   }
+  else if (hashCode == NO_SUCH_CIDR_COLLECTION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53Errors::NO_SUCH_CIDR_COLLECTION), false);
+  }
   else if (hashCode == NO_SUCH_DELEGATION_SET_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53Errors::NO_SUCH_DELEGATION_SET), false);
@@ -193,6 +211,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == TOO_MANY_TRAFFIC_POLICY_VERSIONS_FOR_CURRENT_POLICY_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53Errors::TOO_MANY_TRAFFIC_POLICY_VERSIONS_FOR_CURRENT_POLICY), false);
+  }
+  else if (hashCode == CIDR_COLLECTION_IN_USE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53Errors::CIDR_COLLECTION_IN_USE), false);
   }
   else if (hashCode == NO_SUCH_TRAFFIC_POLICY_INSTANCE_HASH)
   {
@@ -261,6 +283,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == KEY_SIGNING_KEY_WITH_ACTIVE_STATUS_NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53Errors::KEY_SIGNING_KEY_WITH_ACTIVE_STATUS_NOT_FOUND), false);
+  }
+  else if (hashCode == NO_SUCH_CIDR_LOCATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53Errors::NO_SUCH_CIDR_LOCATION), false);
   }
   else if (hashCode == PRIOR_REQUEST_NOT_COMPLETE_HASH)
   {
@@ -333,6 +359,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == NOT_AUTHORIZED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53Errors::NOT_AUTHORIZED), false);
+  }
+  else if (hashCode == CIDR_COLLECTION_ALREADY_EXISTS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53Errors::CIDR_COLLECTION_ALREADY_EXISTS), false);
   }
   else if (hashCode == QUERY_LOGGING_CONFIG_ALREADY_EXISTS_HASH)
   {

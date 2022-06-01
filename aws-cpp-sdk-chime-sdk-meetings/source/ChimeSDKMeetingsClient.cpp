@@ -21,6 +21,7 @@
 #include <aws/chime-sdk-meetings/ChimeSDKMeetingsEndpoint.h>
 #include <aws/chime-sdk-meetings/ChimeSDKMeetingsErrorMarshaller.h>
 #include <aws/chime-sdk-meetings/model/BatchCreateAttendeeRequest.h>
+#include <aws/chime-sdk-meetings/model/BatchUpdateAttendeeCapabilitiesExceptRequest.h>
 #include <aws/chime-sdk-meetings/model/CreateAttendeeRequest.h>
 #include <aws/chime-sdk-meetings/model/CreateMeetingRequest.h>
 #include <aws/chime-sdk-meetings/model/CreateMeetingWithAttendeesRequest.h>
@@ -31,6 +32,7 @@
 #include <aws/chime-sdk-meetings/model/ListAttendeesRequest.h>
 #include <aws/chime-sdk-meetings/model/StartMeetingTranscriptionRequest.h>
 #include <aws/chime-sdk-meetings/model/StopMeetingTranscriptionRequest.h>
+#include <aws/chime-sdk-meetings/model/UpdateAttendeeCapabilitiesRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -138,6 +140,41 @@ void ChimeSDKMeetingsClient::BatchCreateAttendeeAsync(const BatchCreateAttendeeR
 void ChimeSDKMeetingsClient::BatchCreateAttendeeAsyncHelper(const BatchCreateAttendeeRequest& request, const BatchCreateAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, BatchCreateAttendee(request), context);
+}
+
+BatchUpdateAttendeeCapabilitiesExceptOutcome ChimeSDKMeetingsClient::BatchUpdateAttendeeCapabilitiesExcept(const BatchUpdateAttendeeCapabilitiesExceptRequest& request) const
+{
+  if (!request.MeetingIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("BatchUpdateAttendeeCapabilitiesExcept", "Required field: MeetingId, is not set");
+    return BatchUpdateAttendeeCapabilitiesExceptOutcome(Aws::Client::AWSError<ChimeSDKMeetingsErrors>(ChimeSDKMeetingsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeetingId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  uri.AddPathSegments("/meetings/");
+  uri.AddPathSegment(request.GetMeetingId());
+  uri.AddPathSegments("/attendees/capabilities");
+  ss.str("?operation=batch-update-except");
+  uri.SetQueryString(ss.str());
+  return BatchUpdateAttendeeCapabilitiesExceptOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+BatchUpdateAttendeeCapabilitiesExceptOutcomeCallable ChimeSDKMeetingsClient::BatchUpdateAttendeeCapabilitiesExceptCallable(const BatchUpdateAttendeeCapabilitiesExceptRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchUpdateAttendeeCapabilitiesExceptOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchUpdateAttendeeCapabilitiesExcept(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeSDKMeetingsClient::BatchUpdateAttendeeCapabilitiesExceptAsync(const BatchUpdateAttendeeCapabilitiesExceptRequest& request, const BatchUpdateAttendeeCapabilitiesExceptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->BatchUpdateAttendeeCapabilitiesExceptAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeSDKMeetingsClient::BatchUpdateAttendeeCapabilitiesExceptAsyncHelper(const BatchUpdateAttendeeCapabilitiesExceptRequest& request, const BatchUpdateAttendeeCapabilitiesExceptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, BatchUpdateAttendeeCapabilitiesExcept(request), context);
 }
 
 CreateAttendeeOutcome ChimeSDKMeetingsClient::CreateAttendee(const CreateAttendeeRequest& request) const
@@ -463,5 +500,44 @@ void ChimeSDKMeetingsClient::StopMeetingTranscriptionAsync(const StopMeetingTran
 void ChimeSDKMeetingsClient::StopMeetingTranscriptionAsyncHelper(const StopMeetingTranscriptionRequest& request, const StopMeetingTranscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, StopMeetingTranscription(request), context);
+}
+
+UpdateAttendeeCapabilitiesOutcome ChimeSDKMeetingsClient::UpdateAttendeeCapabilities(const UpdateAttendeeCapabilitiesRequest& request) const
+{
+  if (!request.MeetingIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateAttendeeCapabilities", "Required field: MeetingId, is not set");
+    return UpdateAttendeeCapabilitiesOutcome(Aws::Client::AWSError<ChimeSDKMeetingsErrors>(ChimeSDKMeetingsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeetingId]", false));
+  }
+  if (!request.AttendeeIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateAttendeeCapabilities", "Required field: AttendeeId, is not set");
+    return UpdateAttendeeCapabilitiesOutcome(Aws::Client::AWSError<ChimeSDKMeetingsErrors>(ChimeSDKMeetingsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AttendeeId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/meetings/");
+  uri.AddPathSegment(request.GetMeetingId());
+  uri.AddPathSegments("/attendees/");
+  uri.AddPathSegment(request.GetAttendeeId());
+  uri.AddPathSegments("/capabilities");
+  return UpdateAttendeeCapabilitiesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateAttendeeCapabilitiesOutcomeCallable ChimeSDKMeetingsClient::UpdateAttendeeCapabilitiesCallable(const UpdateAttendeeCapabilitiesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateAttendeeCapabilitiesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateAttendeeCapabilities(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeSDKMeetingsClient::UpdateAttendeeCapabilitiesAsync(const UpdateAttendeeCapabilitiesRequest& request, const UpdateAttendeeCapabilitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateAttendeeCapabilitiesAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeSDKMeetingsClient::UpdateAttendeeCapabilitiesAsyncHelper(const UpdateAttendeeCapabilitiesRequest& request, const UpdateAttendeeCapabilitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateAttendeeCapabilities(request), context);
 }
 

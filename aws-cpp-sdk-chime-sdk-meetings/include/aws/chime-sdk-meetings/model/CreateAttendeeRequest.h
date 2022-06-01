@@ -7,6 +7,7 @@
 #include <aws/chime-sdk-meetings/ChimeSDKMeetings_EXPORTS.h>
 #include <aws/chime-sdk-meetings/ChimeSDKMeetingsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/chime-sdk-meetings/model/AttendeeCapabilities.h>
 #include <utility>
 
 namespace Aws
@@ -121,6 +122,55 @@ namespace Model
      */
     inline CreateAttendeeRequest& WithExternalUserId(const char* value) { SetExternalUserId(value); return *this;}
 
+
+    /**
+     * <p>The capabilities (<code>audio</code>, <code>video</code>, or
+     * <code>content</code>) that you want to grant an attendee. If you don't specify
+     * capabilities, all users have send and receive capabilities on all media channels
+     * by default.</p>
+     */
+    inline const AttendeeCapabilities& GetCapabilities() const{ return m_capabilities; }
+
+    /**
+     * <p>The capabilities (<code>audio</code>, <code>video</code>, or
+     * <code>content</code>) that you want to grant an attendee. If you don't specify
+     * capabilities, all users have send and receive capabilities on all media channels
+     * by default.</p>
+     */
+    inline bool CapabilitiesHasBeenSet() const { return m_capabilitiesHasBeenSet; }
+
+    /**
+     * <p>The capabilities (<code>audio</code>, <code>video</code>, or
+     * <code>content</code>) that you want to grant an attendee. If you don't specify
+     * capabilities, all users have send and receive capabilities on all media channels
+     * by default.</p>
+     */
+    inline void SetCapabilities(const AttendeeCapabilities& value) { m_capabilitiesHasBeenSet = true; m_capabilities = value; }
+
+    /**
+     * <p>The capabilities (<code>audio</code>, <code>video</code>, or
+     * <code>content</code>) that you want to grant an attendee. If you don't specify
+     * capabilities, all users have send and receive capabilities on all media channels
+     * by default.</p>
+     */
+    inline void SetCapabilities(AttendeeCapabilities&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::move(value); }
+
+    /**
+     * <p>The capabilities (<code>audio</code>, <code>video</code>, or
+     * <code>content</code>) that you want to grant an attendee. If you don't specify
+     * capabilities, all users have send and receive capabilities on all media channels
+     * by default.</p>
+     */
+    inline CreateAttendeeRequest& WithCapabilities(const AttendeeCapabilities& value) { SetCapabilities(value); return *this;}
+
+    /**
+     * <p>The capabilities (<code>audio</code>, <code>video</code>, or
+     * <code>content</code>) that you want to grant an attendee. If you don't specify
+     * capabilities, all users have send and receive capabilities on all media channels
+     * by default.</p>
+     */
+    inline CreateAttendeeRequest& WithCapabilities(AttendeeCapabilities&& value) { SetCapabilities(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_meetingId;
@@ -128,6 +178,9 @@ namespace Model
 
     Aws::String m_externalUserId;
     bool m_externalUserIdHasBeenSet;
+
+    AttendeeCapabilities m_capabilities;
+    bool m_capabilitiesHasBeenSet;
   };
 
 } // namespace Model

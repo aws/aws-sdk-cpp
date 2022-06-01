@@ -12,6 +12,7 @@
 #include <aws/route53/model/ResourceRecordSetFailover.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/route53/model/AliasTarget.h>
+#include <aws/route53/model/CidrRoutingConfig.h>
 #include <aws/route53/model/ResourceRecord.h>
 #include <utility>
 
@@ -2463,6 +2464,25 @@ namespace Model
      */
     inline ResourceRecordSet& WithTrafficPolicyInstanceId(const char* value) { SetTrafficPolicyInstanceId(value); return *this;}
 
+
+    
+    inline const CidrRoutingConfig& GetCidrRoutingConfig() const{ return m_cidrRoutingConfig; }
+
+    
+    inline bool CidrRoutingConfigHasBeenSet() const { return m_cidrRoutingConfigHasBeenSet; }
+
+    
+    inline void SetCidrRoutingConfig(const CidrRoutingConfig& value) { m_cidrRoutingConfigHasBeenSet = true; m_cidrRoutingConfig = value; }
+
+    
+    inline void SetCidrRoutingConfig(CidrRoutingConfig&& value) { m_cidrRoutingConfigHasBeenSet = true; m_cidrRoutingConfig = std::move(value); }
+
+    
+    inline ResourceRecordSet& WithCidrRoutingConfig(const CidrRoutingConfig& value) { SetCidrRoutingConfig(value); return *this;}
+
+    
+    inline ResourceRecordSet& WithCidrRoutingConfig(CidrRoutingConfig&& value) { SetCidrRoutingConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -2503,6 +2523,9 @@ namespace Model
 
     Aws::String m_trafficPolicyInstanceId;
     bool m_trafficPolicyInstanceIdHasBeenSet;
+
+    CidrRoutingConfig m_cidrRoutingConfig;
+    bool m_cidrRoutingConfigHasBeenSet;
   };
 
 } // namespace Model

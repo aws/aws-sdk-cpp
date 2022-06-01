@@ -39,7 +39,8 @@ ResourceRecordSet::ResourceRecordSet() :
     m_resourceRecordsHasBeenSet(false),
     m_aliasTargetHasBeenSet(false),
     m_healthCheckIdHasBeenSet(false),
-    m_trafficPolicyInstanceIdHasBeenSet(false)
+    m_trafficPolicyInstanceIdHasBeenSet(false),
+    m_cidrRoutingConfigHasBeenSet(false)
 {
 }
 
@@ -62,7 +63,8 @@ ResourceRecordSet::ResourceRecordSet(const XmlNode& xmlNode) :
     m_resourceRecordsHasBeenSet(false),
     m_aliasTargetHasBeenSet(false),
     m_healthCheckIdHasBeenSet(false),
-    m_trafficPolicyInstanceIdHasBeenSet(false)
+    m_trafficPolicyInstanceIdHasBeenSet(false),
+    m_cidrRoutingConfigHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -156,6 +158,12 @@ ResourceRecordSet& ResourceRecordSet::operator =(const XmlNode& xmlNode)
     {
       m_trafficPolicyInstanceId = Aws::Utils::Xml::DecodeEscapedXmlText(trafficPolicyInstanceIdNode.GetText());
       m_trafficPolicyInstanceIdHasBeenSet = true;
+    }
+    XmlNode cidrRoutingConfigNode = resultNode.FirstChild("CidrRoutingConfig");
+    if(!cidrRoutingConfigNode.IsNull())
+    {
+      m_cidrRoutingConfig = cidrRoutingConfigNode;
+      m_cidrRoutingConfigHasBeenSet = true;
     }
   }
 
@@ -251,6 +259,12 @@ void ResourceRecordSet::AddToNode(XmlNode& parentNode) const
   {
    XmlNode trafficPolicyInstanceIdNode = parentNode.CreateChildElement("TrafficPolicyInstanceId");
    trafficPolicyInstanceIdNode.SetText(m_trafficPolicyInstanceId);
+  }
+
+  if(m_cidrRoutingConfigHasBeenSet)
+  {
+   XmlNode cidrRoutingConfigNode = parentNode.CreateChildElement("CidrRoutingConfig");
+   m_cidrRoutingConfig.AddToNode(cidrRoutingConfigNode);
   }
 
 }
