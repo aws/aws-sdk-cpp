@@ -25,11 +25,13 @@
 #include <aws/connect/model/CreateQuickConnectResult.h>
 #include <aws/connect/model/CreateRoutingProfileResult.h>
 #include <aws/connect/model/CreateSecurityProfileResult.h>
+#include <aws/connect/model/CreateTaskTemplateResult.h>
 #include <aws/connect/model/CreateUseCaseResult.h>
 #include <aws/connect/model/CreateUserResult.h>
 #include <aws/connect/model/CreateUserHierarchyGroupResult.h>
 #include <aws/connect/model/CreateVocabularyResult.h>
 #include <aws/connect/model/DeleteContactFlowModuleResult.h>
+#include <aws/connect/model/DeleteTaskTemplateResult.h>
 #include <aws/connect/model/DeleteVocabularyResult.h>
 #include <aws/connect/model/DescribeAgentStatusResult.h>
 #include <aws/connect/model/DescribeContactResult.h>
@@ -52,6 +54,7 @@
 #include <aws/connect/model/GetCurrentMetricDataResult.h>
 #include <aws/connect/model/GetFederationTokenResult.h>
 #include <aws/connect/model/GetMetricDataResult.h>
+#include <aws/connect/model/GetTaskTemplateResult.h>
 #include <aws/connect/model/ListAgentStatusesResult.h>
 #include <aws/connect/model/ListApprovedOriginsResult.h>
 #include <aws/connect/model/ListBotsResult.h>
@@ -78,6 +81,7 @@
 #include <aws/connect/model/ListSecurityProfilePermissionsResult.h>
 #include <aws/connect/model/ListSecurityProfilesResult.h>
 #include <aws/connect/model/ListTagsForResourceResult.h>
+#include <aws/connect/model/ListTaskTemplatesResult.h>
 #include <aws/connect/model/ListUseCasesResult.h>
 #include <aws/connect/model/ListUserHierarchyGroupsResult.h>
 #include <aws/connect/model/ListUsersResult.h>
@@ -95,12 +99,14 @@
 #include <aws/connect/model/StopContactRecordingResult.h>
 #include <aws/connect/model/StopContactStreamingResult.h>
 #include <aws/connect/model/SuspendContactRecordingResult.h>
+#include <aws/connect/model/TransferContactResult.h>
 #include <aws/connect/model/UpdateContactResult.h>
 #include <aws/connect/model/UpdateContactAttributesResult.h>
 #include <aws/connect/model/UpdateContactFlowModuleContentResult.h>
 #include <aws/connect/model/UpdateContactFlowModuleMetadataResult.h>
 #include <aws/connect/model/UpdateContactScheduleResult.h>
 #include <aws/connect/model/UpdatePhoneNumberResult.h>
+#include <aws/connect/model/UpdateTaskTemplateResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -162,6 +168,7 @@ namespace Model
         class CreateQuickConnectRequest;
         class CreateRoutingProfileRequest;
         class CreateSecurityProfileRequest;
+        class CreateTaskTemplateRequest;
         class CreateUseCaseRequest;
         class CreateUserRequest;
         class CreateUserHierarchyGroupRequest;
@@ -173,6 +180,7 @@ namespace Model
         class DeleteIntegrationAssociationRequest;
         class DeleteQuickConnectRequest;
         class DeleteSecurityProfileRequest;
+        class DeleteTaskTemplateRequest;
         class DeleteUseCaseRequest;
         class DeleteUserRequest;
         class DeleteUserHierarchyGroupRequest;
@@ -207,6 +215,7 @@ namespace Model
         class GetCurrentMetricDataRequest;
         class GetFederationTokenRequest;
         class GetMetricDataRequest;
+        class GetTaskTemplateRequest;
         class ListAgentStatusesRequest;
         class ListApprovedOriginsRequest;
         class ListBotsRequest;
@@ -233,6 +242,7 @@ namespace Model
         class ListSecurityProfilePermissionsRequest;
         class ListSecurityProfilesRequest;
         class ListTagsForResourceRequest;
+        class ListTaskTemplatesRequest;
         class ListUseCasesRequest;
         class ListUserHierarchyGroupsRequest;
         class ListUsersRequest;
@@ -252,6 +262,7 @@ namespace Model
         class StopContactStreamingRequest;
         class SuspendContactRecordingRequest;
         class TagResourceRequest;
+        class TransferContactRequest;
         class UntagResourceRequest;
         class UpdateAgentStatusRequest;
         class UpdateContactRequest;
@@ -278,6 +289,7 @@ namespace Model
         class UpdateRoutingProfileNameRequest;
         class UpdateRoutingProfileQueuesRequest;
         class UpdateSecurityProfileRequest;
+        class UpdateTaskTemplateRequest;
         class UpdateUserHierarchyRequest;
         class UpdateUserHierarchyGroupNameRequest;
         class UpdateUserHierarchyStructureRequest;
@@ -307,6 +319,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateQuickConnectResult, ConnectError> CreateQuickConnectOutcome;
         typedef Aws::Utils::Outcome<CreateRoutingProfileResult, ConnectError> CreateRoutingProfileOutcome;
         typedef Aws::Utils::Outcome<CreateSecurityProfileResult, ConnectError> CreateSecurityProfileOutcome;
+        typedef Aws::Utils::Outcome<CreateTaskTemplateResult, ConnectError> CreateTaskTemplateOutcome;
         typedef Aws::Utils::Outcome<CreateUseCaseResult, ConnectError> CreateUseCaseOutcome;
         typedef Aws::Utils::Outcome<CreateUserResult, ConnectError> CreateUserOutcome;
         typedef Aws::Utils::Outcome<CreateUserHierarchyGroupResult, ConnectError> CreateUserHierarchyGroupOutcome;
@@ -318,6 +331,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteIntegrationAssociationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteQuickConnectOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteSecurityProfileOutcome;
+        typedef Aws::Utils::Outcome<DeleteTaskTemplateResult, ConnectError> DeleteTaskTemplateOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteUseCaseOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteUserOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> DeleteUserHierarchyGroupOutcome;
@@ -352,6 +366,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetCurrentMetricDataResult, ConnectError> GetCurrentMetricDataOutcome;
         typedef Aws::Utils::Outcome<GetFederationTokenResult, ConnectError> GetFederationTokenOutcome;
         typedef Aws::Utils::Outcome<GetMetricDataResult, ConnectError> GetMetricDataOutcome;
+        typedef Aws::Utils::Outcome<GetTaskTemplateResult, ConnectError> GetTaskTemplateOutcome;
         typedef Aws::Utils::Outcome<ListAgentStatusesResult, ConnectError> ListAgentStatusesOutcome;
         typedef Aws::Utils::Outcome<ListApprovedOriginsResult, ConnectError> ListApprovedOriginsOutcome;
         typedef Aws::Utils::Outcome<ListBotsResult, ConnectError> ListBotsOutcome;
@@ -378,6 +393,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListSecurityProfilePermissionsResult, ConnectError> ListSecurityProfilePermissionsOutcome;
         typedef Aws::Utils::Outcome<ListSecurityProfilesResult, ConnectError> ListSecurityProfilesOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, ConnectError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<ListTaskTemplatesResult, ConnectError> ListTaskTemplatesOutcome;
         typedef Aws::Utils::Outcome<ListUseCasesResult, ConnectError> ListUseCasesOutcome;
         typedef Aws::Utils::Outcome<ListUserHierarchyGroupsResult, ConnectError> ListUserHierarchyGroupsOutcome;
         typedef Aws::Utils::Outcome<ListUsersResult, ConnectError> ListUsersOutcome;
@@ -397,6 +413,7 @@ namespace Model
         typedef Aws::Utils::Outcome<StopContactStreamingResult, ConnectError> StopContactStreamingOutcome;
         typedef Aws::Utils::Outcome<SuspendContactRecordingResult, ConnectError> SuspendContactRecordingOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<TransferContactResult, ConnectError> TransferContactOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateAgentStatusOutcome;
         typedef Aws::Utils::Outcome<UpdateContactResult, ConnectError> UpdateContactOutcome;
@@ -423,6 +440,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateRoutingProfileNameOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateRoutingProfileQueuesOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateSecurityProfileOutcome;
+        typedef Aws::Utils::Outcome<UpdateTaskTemplateResult, ConnectError> UpdateTaskTemplateOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateUserHierarchyOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateUserHierarchyGroupNameOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateUserHierarchyStructureOutcome;
@@ -452,6 +470,7 @@ namespace Model
         typedef std::future<CreateQuickConnectOutcome> CreateQuickConnectOutcomeCallable;
         typedef std::future<CreateRoutingProfileOutcome> CreateRoutingProfileOutcomeCallable;
         typedef std::future<CreateSecurityProfileOutcome> CreateSecurityProfileOutcomeCallable;
+        typedef std::future<CreateTaskTemplateOutcome> CreateTaskTemplateOutcomeCallable;
         typedef std::future<CreateUseCaseOutcome> CreateUseCaseOutcomeCallable;
         typedef std::future<CreateUserOutcome> CreateUserOutcomeCallable;
         typedef std::future<CreateUserHierarchyGroupOutcome> CreateUserHierarchyGroupOutcomeCallable;
@@ -463,6 +482,7 @@ namespace Model
         typedef std::future<DeleteIntegrationAssociationOutcome> DeleteIntegrationAssociationOutcomeCallable;
         typedef std::future<DeleteQuickConnectOutcome> DeleteQuickConnectOutcomeCallable;
         typedef std::future<DeleteSecurityProfileOutcome> DeleteSecurityProfileOutcomeCallable;
+        typedef std::future<DeleteTaskTemplateOutcome> DeleteTaskTemplateOutcomeCallable;
         typedef std::future<DeleteUseCaseOutcome> DeleteUseCaseOutcomeCallable;
         typedef std::future<DeleteUserOutcome> DeleteUserOutcomeCallable;
         typedef std::future<DeleteUserHierarchyGroupOutcome> DeleteUserHierarchyGroupOutcomeCallable;
@@ -497,6 +517,7 @@ namespace Model
         typedef std::future<GetCurrentMetricDataOutcome> GetCurrentMetricDataOutcomeCallable;
         typedef std::future<GetFederationTokenOutcome> GetFederationTokenOutcomeCallable;
         typedef std::future<GetMetricDataOutcome> GetMetricDataOutcomeCallable;
+        typedef std::future<GetTaskTemplateOutcome> GetTaskTemplateOutcomeCallable;
         typedef std::future<ListAgentStatusesOutcome> ListAgentStatusesOutcomeCallable;
         typedef std::future<ListApprovedOriginsOutcome> ListApprovedOriginsOutcomeCallable;
         typedef std::future<ListBotsOutcome> ListBotsOutcomeCallable;
@@ -523,6 +544,7 @@ namespace Model
         typedef std::future<ListSecurityProfilePermissionsOutcome> ListSecurityProfilePermissionsOutcomeCallable;
         typedef std::future<ListSecurityProfilesOutcome> ListSecurityProfilesOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+        typedef std::future<ListTaskTemplatesOutcome> ListTaskTemplatesOutcomeCallable;
         typedef std::future<ListUseCasesOutcome> ListUseCasesOutcomeCallable;
         typedef std::future<ListUserHierarchyGroupsOutcome> ListUserHierarchyGroupsOutcomeCallable;
         typedef std::future<ListUsersOutcome> ListUsersOutcomeCallable;
@@ -542,6 +564,7 @@ namespace Model
         typedef std::future<StopContactStreamingOutcome> StopContactStreamingOutcomeCallable;
         typedef std::future<SuspendContactRecordingOutcome> SuspendContactRecordingOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+        typedef std::future<TransferContactOutcome> TransferContactOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateAgentStatusOutcome> UpdateAgentStatusOutcomeCallable;
         typedef std::future<UpdateContactOutcome> UpdateContactOutcomeCallable;
@@ -568,6 +591,7 @@ namespace Model
         typedef std::future<UpdateRoutingProfileNameOutcome> UpdateRoutingProfileNameOutcomeCallable;
         typedef std::future<UpdateRoutingProfileQueuesOutcome> UpdateRoutingProfileQueuesOutcomeCallable;
         typedef std::future<UpdateSecurityProfileOutcome> UpdateSecurityProfileOutcomeCallable;
+        typedef std::future<UpdateTaskTemplateOutcome> UpdateTaskTemplateOutcomeCallable;
         typedef std::future<UpdateUserHierarchyOutcome> UpdateUserHierarchyOutcomeCallable;
         typedef std::future<UpdateUserHierarchyGroupNameOutcome> UpdateUserHierarchyGroupNameOutcomeCallable;
         typedef std::future<UpdateUserHierarchyStructureOutcome> UpdateUserHierarchyStructureOutcomeCallable;
@@ -600,6 +624,7 @@ namespace Model
     typedef std::function<void(const ConnectClient*, const Model::CreateQuickConnectRequest&, const Model::CreateQuickConnectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateQuickConnectResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::CreateRoutingProfileRequest&, const Model::CreateRoutingProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRoutingProfileResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::CreateSecurityProfileRequest&, const Model::CreateSecurityProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSecurityProfileResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::CreateTaskTemplateRequest&, const Model::CreateTaskTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTaskTemplateResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::CreateUseCaseRequest&, const Model::CreateUseCaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUseCaseResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::CreateUserRequest&, const Model::CreateUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUserResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::CreateUserHierarchyGroupRequest&, const Model::CreateUserHierarchyGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUserHierarchyGroupResponseReceivedHandler;
@@ -611,6 +636,7 @@ namespace Model
     typedef std::function<void(const ConnectClient*, const Model::DeleteIntegrationAssociationRequest&, const Model::DeleteIntegrationAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteIntegrationAssociationResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DeleteQuickConnectRequest&, const Model::DeleteQuickConnectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteQuickConnectResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DeleteSecurityProfileRequest&, const Model::DeleteSecurityProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSecurityProfileResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::DeleteTaskTemplateRequest&, const Model::DeleteTaskTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTaskTemplateResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DeleteUseCaseRequest&, const Model::DeleteUseCaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUseCaseResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DeleteUserRequest&, const Model::DeleteUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DeleteUserHierarchyGroupRequest&, const Model::DeleteUserHierarchyGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserHierarchyGroupResponseReceivedHandler;
@@ -645,6 +671,7 @@ namespace Model
     typedef std::function<void(const ConnectClient*, const Model::GetCurrentMetricDataRequest&, const Model::GetCurrentMetricDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCurrentMetricDataResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::GetFederationTokenRequest&, const Model::GetFederationTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFederationTokenResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::GetMetricDataRequest&, const Model::GetMetricDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMetricDataResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::GetTaskTemplateRequest&, const Model::GetTaskTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTaskTemplateResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListAgentStatusesRequest&, const Model::ListAgentStatusesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAgentStatusesResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListApprovedOriginsRequest&, const Model::ListApprovedOriginsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApprovedOriginsResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListBotsRequest&, const Model::ListBotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBotsResponseReceivedHandler;
@@ -671,6 +698,7 @@ namespace Model
     typedef std::function<void(const ConnectClient*, const Model::ListSecurityProfilePermissionsRequest&, const Model::ListSecurityProfilePermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSecurityProfilePermissionsResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListSecurityProfilesRequest&, const Model::ListSecurityProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSecurityProfilesResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::ListTaskTemplatesRequest&, const Model::ListTaskTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTaskTemplatesResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListUseCasesRequest&, const Model::ListUseCasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUseCasesResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListUserHierarchyGroupsRequest&, const Model::ListUserHierarchyGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUserHierarchyGroupsResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ListUsersRequest&, const Model::ListUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUsersResponseReceivedHandler;
@@ -690,6 +718,7 @@ namespace Model
     typedef std::function<void(const ConnectClient*, const Model::StopContactStreamingRequest&, const Model::StopContactStreamingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopContactStreamingResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::SuspendContactRecordingRequest&, const Model::SuspendContactRecordingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SuspendContactRecordingResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::TransferContactRequest&, const Model::TransferContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TransferContactResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UpdateAgentStatusRequest&, const Model::UpdateAgentStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAgentStatusResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UpdateContactRequest&, const Model::UpdateContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateContactResponseReceivedHandler;
@@ -716,6 +745,7 @@ namespace Model
     typedef std::function<void(const ConnectClient*, const Model::UpdateRoutingProfileNameRequest&, const Model::UpdateRoutingProfileNameOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRoutingProfileNameResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UpdateRoutingProfileQueuesRequest&, const Model::UpdateRoutingProfileQueuesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRoutingProfileQueuesResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UpdateSecurityProfileRequest&, const Model::UpdateSecurityProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSecurityProfileResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::UpdateTaskTemplateRequest&, const Model::UpdateTaskTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTaskTemplateResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UpdateUserHierarchyRequest&, const Model::UpdateUserHierarchyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserHierarchyResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UpdateUserHierarchyGroupNameRequest&, const Model::UpdateUserHierarchyGroupNameOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserHierarchyGroupNameResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UpdateUserHierarchyStructureRequest&, const Model::UpdateUserHierarchyStructureOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserHierarchyStructureResponseReceivedHandler;
@@ -1173,6 +1203,24 @@ namespace Model
         virtual void CreateSecurityProfileAsync(const Model::CreateSecurityProfileRequest& request, const CreateSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates a new task template in the specified Amazon Connect
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateTaskTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateTaskTemplateOutcome CreateTaskTemplate(const Model::CreateTaskTemplateRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateTaskTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateTaskTemplateOutcomeCallable CreateTaskTemplateCallable(const Model::CreateTaskTemplateRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateTaskTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateTaskTemplateAsync(const Model::CreateTaskTemplateRequest& request, const CreateTaskTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates a use case for an integration association.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateUseCase">AWS
@@ -1379,6 +1427,23 @@ namespace Model
          * An Async wrapper for DeleteSecurityProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteSecurityProfileAsync(const Model::DeleteSecurityProfileRequest& request, const DeleteSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the task template.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteTaskTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteTaskTemplateOutcome DeleteTaskTemplate(const Model::DeleteTaskTemplateRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteTaskTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteTaskTemplateOutcomeCallable DeleteTaskTemplateCallable(const Model::DeleteTaskTemplateRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteTaskTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteTaskTemplateAsync(const Model::DeleteTaskTemplateRequest& request, const DeleteTaskTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a use case from an integration association.</p><p><h3>See Also:</h3> 
@@ -2022,6 +2087,24 @@ namespace Model
         virtual void GetMetricDataAsync(const Model::GetMetricDataRequest& request, const GetMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gets details about a specific task template in the specified Amazon Connect
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetTaskTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetTaskTemplateOutcome GetTaskTemplate(const Model::GetTaskTemplateRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetTaskTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetTaskTemplateOutcomeCallable GetTaskTemplateCallable(const Model::GetTaskTemplateRequest& request) const;
+
+        /**
+         * An Async wrapper for GetTaskTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetTaskTemplateAsync(const Model::GetTaskTemplateRequest& request, const GetTaskTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>This API is in preview release for Amazon Connect and is subject to
          * change.</p> <p>Lists agent statuses.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListAgentStatuses">AWS
@@ -2541,6 +2624,24 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists task templates for the specified Amazon Connect instance.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTaskTemplates">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTaskTemplatesOutcome ListTaskTemplates(const Model::ListTaskTemplatesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListTaskTemplates that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTaskTemplatesOutcomeCallable ListTaskTemplatesCallable(const Model::ListTaskTemplatesRequest& request) const;
+
+        /**
+         * An Async wrapper for ListTaskTemplates that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTaskTemplatesAsync(const Model::ListTaskTemplatesRequest& request, const ListTaskTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists the use cases for the integration association. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListUseCases">AWS
@@ -2939,8 +3040,8 @@ namespace Model
         /**
          * <p>Adds the specified tags to the specified resource.</p> <p>The supported
          * resource types are users, routing profiles, queues, quick connects, contact
-         * flows, agent status, hours of operation, and phone number.</p> <p>For sample
-         * policies that use tags, see <a
+         * flows, agent status, hours of operation, phone number, security profiles, and
+         * task templates.</p> <p>For sample policies that use tags, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_id-based-policy-examples.html">Amazon
          * Connect Identity-Based Policy Examples</a> in the <i>Amazon Connect
          * Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -2958,6 +3059,35 @@ namespace Model
          * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Transfers contacts from one agent or queue to another agent or queue at any
+         * point after a contact is created. You can transfer a contact to another queue by
+         * providing the contact flow which orchestrates the contact to the destination
+         * queue. This gives you more control over contact handling and helps you adhere to
+         * the service level agreement (SLA) guaranteed to your customers.</p> <p>Note the
+         * following requirements:</p> <ul> <li> <p>Transfer is supported for only
+         * <code>TASK</code> contacts.</p> </li> <li> <p>Do not use both
+         * <code>QueueId</code> and <code>UserId</code> in the same call.</p> </li> <li>
+         * <p>The following contact flow types are supported: Inbound contact flow,
+         * Transfer to agent flow, and Transfer to queue flow.</p> </li> <li> <p>The
+         * <code>TransferContact</code> API can be called only on active contacts.</p>
+         * </li> <li> <p>A contact cannot be transferred more than 11 times.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/TransferContact">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TransferContactOutcome TransferContact(const Model::TransferContactRequest& request) const;
+
+        /**
+         * A Callable wrapper for TransferContact that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TransferContactOutcomeCallable TransferContactCallable(const Model::TransferContactRequest& request) const;
+
+        /**
+         * An Async wrapper for TransferContact that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TransferContactAsync(const Model::TransferContactRequest& request, const TransferContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the specified tags from the specified resource.</p><p><h3>See
@@ -3463,6 +3593,25 @@ namespace Model
         virtual void UpdateSecurityProfileAsync(const Model::UpdateSecurityProfileRequest& request, const UpdateSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates details about a specific task template in the specified Amazon
+         * Connect instance. This operation does not support partial updates. Instead it
+         * does a full update of template content.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateTaskTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateTaskTemplateOutcome UpdateTaskTemplate(const Model::UpdateTaskTemplateRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateTaskTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateTaskTemplateOutcomeCallable UpdateTaskTemplateCallable(const Model::UpdateTaskTemplateRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateTaskTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateTaskTemplateAsync(const Model::UpdateTaskTemplateRequest& request, const UpdateTaskTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Assigns the specified hierarchy group to the specified user.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserHierarchy">AWS
@@ -3620,6 +3769,7 @@ namespace Model
         void CreateQuickConnectAsyncHelper(const Model::CreateQuickConnectRequest& request, const CreateQuickConnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateRoutingProfileAsyncHelper(const Model::CreateRoutingProfileRequest& request, const CreateRoutingProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateSecurityProfileAsyncHelper(const Model::CreateSecurityProfileRequest& request, const CreateSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateTaskTemplateAsyncHelper(const Model::CreateTaskTemplateRequest& request, const CreateTaskTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateUseCaseAsyncHelper(const Model::CreateUseCaseRequest& request, const CreateUseCaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateUserAsyncHelper(const Model::CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateUserHierarchyGroupAsyncHelper(const Model::CreateUserHierarchyGroupRequest& request, const CreateUserHierarchyGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3631,6 +3781,7 @@ namespace Model
         void DeleteIntegrationAssociationAsyncHelper(const Model::DeleteIntegrationAssociationRequest& request, const DeleteIntegrationAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteQuickConnectAsyncHelper(const Model::DeleteQuickConnectRequest& request, const DeleteQuickConnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSecurityProfileAsyncHelper(const Model::DeleteSecurityProfileRequest& request, const DeleteSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteTaskTemplateAsyncHelper(const Model::DeleteTaskTemplateRequest& request, const DeleteTaskTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteUseCaseAsyncHelper(const Model::DeleteUseCaseRequest& request, const DeleteUseCaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteUserAsyncHelper(const Model::DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteUserHierarchyGroupAsyncHelper(const Model::DeleteUserHierarchyGroupRequest& request, const DeleteUserHierarchyGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3665,6 +3816,7 @@ namespace Model
         void GetCurrentMetricDataAsyncHelper(const Model::GetCurrentMetricDataRequest& request, const GetCurrentMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetFederationTokenAsyncHelper(const Model::GetFederationTokenRequest& request, const GetFederationTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetMetricDataAsyncHelper(const Model::GetMetricDataRequest& request, const GetMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetTaskTemplateAsyncHelper(const Model::GetTaskTemplateRequest& request, const GetTaskTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAgentStatusesAsyncHelper(const Model::ListAgentStatusesRequest& request, const ListAgentStatusesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListApprovedOriginsAsyncHelper(const Model::ListApprovedOriginsRequest& request, const ListApprovedOriginsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListBotsAsyncHelper(const Model::ListBotsRequest& request, const ListBotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3691,6 +3843,7 @@ namespace Model
         void ListSecurityProfilePermissionsAsyncHelper(const Model::ListSecurityProfilePermissionsRequest& request, const ListSecurityProfilePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSecurityProfilesAsyncHelper(const Model::ListSecurityProfilesRequest& request, const ListSecurityProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTaskTemplatesAsyncHelper(const Model::ListTaskTemplatesRequest& request, const ListTaskTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListUseCasesAsyncHelper(const Model::ListUseCasesRequest& request, const ListUseCasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListUserHierarchyGroupsAsyncHelper(const Model::ListUserHierarchyGroupsRequest& request, const ListUserHierarchyGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListUsersAsyncHelper(const Model::ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3710,6 +3863,7 @@ namespace Model
         void StopContactStreamingAsyncHelper(const Model::StopContactStreamingRequest& request, const StopContactStreamingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SuspendContactRecordingAsyncHelper(const Model::SuspendContactRecordingRequest& request, const SuspendContactRecordingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TransferContactAsyncHelper(const Model::TransferContactRequest& request, const TransferContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateAgentStatusAsyncHelper(const Model::UpdateAgentStatusRequest& request, const UpdateAgentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateContactAsyncHelper(const Model::UpdateContactRequest& request, const UpdateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3736,6 +3890,7 @@ namespace Model
         void UpdateRoutingProfileNameAsyncHelper(const Model::UpdateRoutingProfileNameRequest& request, const UpdateRoutingProfileNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateRoutingProfileQueuesAsyncHelper(const Model::UpdateRoutingProfileQueuesRequest& request, const UpdateRoutingProfileQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateSecurityProfileAsyncHelper(const Model::UpdateSecurityProfileRequest& request, const UpdateSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateTaskTemplateAsyncHelper(const Model::UpdateTaskTemplateRequest& request, const UpdateTaskTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateUserHierarchyAsyncHelper(const Model::UpdateUserHierarchyRequest& request, const UpdateUserHierarchyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateUserHierarchyGroupNameAsyncHelper(const Model::UpdateUserHierarchyGroupNameRequest& request, const UpdateUserHierarchyGroupNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateUserHierarchyStructureAsyncHelper(const Model::UpdateUserHierarchyStructureRequest& request, const UpdateUserHierarchyStructureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

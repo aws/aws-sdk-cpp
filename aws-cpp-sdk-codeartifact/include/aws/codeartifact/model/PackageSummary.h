@@ -42,44 +42,32 @@ namespace Model
 
 
     /**
-     * <p> The format of the package. Valid values are: </p> <ul> <li> <p>
-     * <code>npm</code> </p> </li> <li> <p> <code>pypi</code> </p> </li> <li> <p>
-     * <code>maven</code> </p> </li> </ul>
+     * <p> The format of the package. </p>
      */
     inline const PackageFormat& GetFormat() const{ return m_format; }
 
     /**
-     * <p> The format of the package. Valid values are: </p> <ul> <li> <p>
-     * <code>npm</code> </p> </li> <li> <p> <code>pypi</code> </p> </li> <li> <p>
-     * <code>maven</code> </p> </li> </ul>
+     * <p> The format of the package. </p>
      */
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
 
     /**
-     * <p> The format of the package. Valid values are: </p> <ul> <li> <p>
-     * <code>npm</code> </p> </li> <li> <p> <code>pypi</code> </p> </li> <li> <p>
-     * <code>maven</code> </p> </li> </ul>
+     * <p> The format of the package. </p>
      */
     inline void SetFormat(const PackageFormat& value) { m_formatHasBeenSet = true; m_format = value; }
 
     /**
-     * <p> The format of the package. Valid values are: </p> <ul> <li> <p>
-     * <code>npm</code> </p> </li> <li> <p> <code>pypi</code> </p> </li> <li> <p>
-     * <code>maven</code> </p> </li> </ul>
+     * <p> The format of the package. </p>
      */
     inline void SetFormat(PackageFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
 
     /**
-     * <p> The format of the package. Valid values are: </p> <ul> <li> <p>
-     * <code>npm</code> </p> </li> <li> <p> <code>pypi</code> </p> </li> <li> <p>
-     * <code>maven</code> </p> </li> </ul>
+     * <p> The format of the package. </p>
      */
     inline PackageSummary& WithFormat(const PackageFormat& value) { SetFormat(value); return *this;}
 
     /**
-     * <p> The format of the package. Valid values are: </p> <ul> <li> <p>
-     * <code>npm</code> </p> </li> <li> <p> <code>pypi</code> </p> </li> <li> <p>
-     * <code>maven</code> </p> </li> </ul>
+     * <p> The format of the package. </p>
      */
     inline PackageSummary& WithFormat(PackageFormat&& value) { SetFormat(std::move(value)); return *this;}
 

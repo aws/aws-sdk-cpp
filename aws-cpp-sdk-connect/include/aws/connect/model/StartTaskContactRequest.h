@@ -603,6 +603,88 @@ namespace Model
      */
     inline StartTaskContactRequest& WithScheduledTime(Aws::Utils::DateTime&& value) { SetScheduledTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A unique identifier for the task template.</p>
+     */
+    inline const Aws::String& GetTaskTemplateId() const{ return m_taskTemplateId; }
+
+    /**
+     * <p>A unique identifier for the task template.</p>
+     */
+    inline bool TaskTemplateIdHasBeenSet() const { return m_taskTemplateIdHasBeenSet; }
+
+    /**
+     * <p>A unique identifier for the task template.</p>
+     */
+    inline void SetTaskTemplateId(const Aws::String& value) { m_taskTemplateIdHasBeenSet = true; m_taskTemplateId = value; }
+
+    /**
+     * <p>A unique identifier for the task template.</p>
+     */
+    inline void SetTaskTemplateId(Aws::String&& value) { m_taskTemplateIdHasBeenSet = true; m_taskTemplateId = std::move(value); }
+
+    /**
+     * <p>A unique identifier for the task template.</p>
+     */
+    inline void SetTaskTemplateId(const char* value) { m_taskTemplateIdHasBeenSet = true; m_taskTemplateId.assign(value); }
+
+    /**
+     * <p>A unique identifier for the task template.</p>
+     */
+    inline StartTaskContactRequest& WithTaskTemplateId(const Aws::String& value) { SetTaskTemplateId(value); return *this;}
+
+    /**
+     * <p>A unique identifier for the task template.</p>
+     */
+    inline StartTaskContactRequest& WithTaskTemplateId(Aws::String&& value) { SetTaskTemplateId(std::move(value)); return *this;}
+
+    /**
+     * <p>A unique identifier for the task template.</p>
+     */
+    inline StartTaskContactRequest& WithTaskTemplateId(const char* value) { SetTaskTemplateId(value); return *this;}
+
+
+    /**
+     * <p>The identifier for the quick connect.</p>
+     */
+    inline const Aws::String& GetQuickConnectId() const{ return m_quickConnectId; }
+
+    /**
+     * <p>The identifier for the quick connect.</p>
+     */
+    inline bool QuickConnectIdHasBeenSet() const { return m_quickConnectIdHasBeenSet; }
+
+    /**
+     * <p>The identifier for the quick connect.</p>
+     */
+    inline void SetQuickConnectId(const Aws::String& value) { m_quickConnectIdHasBeenSet = true; m_quickConnectId = value; }
+
+    /**
+     * <p>The identifier for the quick connect.</p>
+     */
+    inline void SetQuickConnectId(Aws::String&& value) { m_quickConnectIdHasBeenSet = true; m_quickConnectId = std::move(value); }
+
+    /**
+     * <p>The identifier for the quick connect.</p>
+     */
+    inline void SetQuickConnectId(const char* value) { m_quickConnectIdHasBeenSet = true; m_quickConnectId.assign(value); }
+
+    /**
+     * <p>The identifier for the quick connect.</p>
+     */
+    inline StartTaskContactRequest& WithQuickConnectId(const Aws::String& value) { SetQuickConnectId(value); return *this;}
+
+    /**
+     * <p>The identifier for the quick connect.</p>
+     */
+    inline StartTaskContactRequest& WithQuickConnectId(Aws::String&& value) { SetQuickConnectId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier for the quick connect.</p>
+     */
+    inline StartTaskContactRequest& WithQuickConnectId(const char* value) { SetQuickConnectId(value); return *this;}
+
   private:
 
     Aws::String m_instanceId;
@@ -631,6 +713,12 @@ namespace Model
 
     Aws::Utils::DateTime m_scheduledTime;
     bool m_scheduledTimeHasBeenSet;
+
+    Aws::String m_taskTemplateId;
+    bool m_taskTemplateIdHasBeenSet;
+
+    Aws::String m_quickConnectId;
+    bool m_quickConnectIdHasBeenSet;
   };
 
 } // namespace Model

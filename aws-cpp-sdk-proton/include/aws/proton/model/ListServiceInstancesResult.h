@@ -78,37 +78,37 @@ namespace Model
 
 
     /**
-     * <p>An array of service instances with summaries of detail data.</p>
+     * <p>An array of service instances with summary data.</p>
      */
     inline const Aws::Vector<ServiceInstanceSummary>& GetServiceInstances() const{ return m_serviceInstances; }
 
     /**
-     * <p>An array of service instances with summaries of detail data.</p>
+     * <p>An array of service instances with summary data.</p>
      */
     inline void SetServiceInstances(const Aws::Vector<ServiceInstanceSummary>& value) { m_serviceInstances = value; }
 
     /**
-     * <p>An array of service instances with summaries of detail data.</p>
+     * <p>An array of service instances with summary data.</p>
      */
     inline void SetServiceInstances(Aws::Vector<ServiceInstanceSummary>&& value) { m_serviceInstances = std::move(value); }
 
     /**
-     * <p>An array of service instances with summaries of detail data.</p>
+     * <p>An array of service instances with summary data.</p>
      */
     inline ListServiceInstancesResult& WithServiceInstances(const Aws::Vector<ServiceInstanceSummary>& value) { SetServiceInstances(value); return *this;}
 
     /**
-     * <p>An array of service instances with summaries of detail data.</p>
+     * <p>An array of service instances with summary data.</p>
      */
     inline ListServiceInstancesResult& WithServiceInstances(Aws::Vector<ServiceInstanceSummary>&& value) { SetServiceInstances(std::move(value)); return *this;}
 
     /**
-     * <p>An array of service instances with summaries of detail data.</p>
+     * <p>An array of service instances with summary data.</p>
      */
     inline ListServiceInstancesResult& AddServiceInstances(const ServiceInstanceSummary& value) { m_serviceInstances.push_back(value); return *this; }
 
     /**
-     * <p>An array of service instances with summaries of detail data.</p>
+     * <p>An array of service instances with summary data.</p>
      */
     inline ListServiceInstancesResult& AddServiceInstances(ServiceInstanceSummary&& value) { m_serviceInstances.push_back(std::move(value)); return *this; }
 

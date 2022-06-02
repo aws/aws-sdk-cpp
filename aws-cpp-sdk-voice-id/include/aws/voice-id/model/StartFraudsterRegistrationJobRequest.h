@@ -297,37 +297,37 @@ namespace Model
 
     /**
      * <p>The output data config containing the S3 location where Voice ID writes the
-     * job output file; you must also include a KMS Key ID to encrypt the file.</p>
+     * job output file; you must also include a KMS key ID to encrypt the file.</p>
      */
     inline const OutputDataConfig& GetOutputDataConfig() const{ return m_outputDataConfig; }
 
     /**
      * <p>The output data config containing the S3 location where Voice ID writes the
-     * job output file; you must also include a KMS Key ID to encrypt the file.</p>
+     * job output file; you must also include a KMS key ID to encrypt the file.</p>
      */
     inline bool OutputDataConfigHasBeenSet() const { return m_outputDataConfigHasBeenSet; }
 
     /**
      * <p>The output data config containing the S3 location where Voice ID writes the
-     * job output file; you must also include a KMS Key ID to encrypt the file.</p>
+     * job output file; you must also include a KMS key ID to encrypt the file.</p>
      */
     inline void SetOutputDataConfig(const OutputDataConfig& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = value; }
 
     /**
      * <p>The output data config containing the S3 location where Voice ID writes the
-     * job output file; you must also include a KMS Key ID to encrypt the file.</p>
+     * job output file; you must also include a KMS key ID to encrypt the file.</p>
      */
     inline void SetOutputDataConfig(OutputDataConfig&& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = std::move(value); }
 
     /**
      * <p>The output data config containing the S3 location where Voice ID writes the
-     * job output file; you must also include a KMS Key ID to encrypt the file.</p>
+     * job output file; you must also include a KMS key ID to encrypt the file.</p>
      */
     inline StartFraudsterRegistrationJobRequest& WithOutputDataConfig(const OutputDataConfig& value) { SetOutputDataConfig(value); return *this;}
 
     /**
      * <p>The output data config containing the S3 location where Voice ID writes the
-     * job output file; you must also include a KMS Key ID to encrypt the file.</p>
+     * job output file; you must also include a KMS key ID to encrypt the file.</p>
      */
     inline StartFraudsterRegistrationJobRequest& WithOutputDataConfig(OutputDataConfig&& value) { SetOutputDataConfig(std::move(value)); return *this;}
 

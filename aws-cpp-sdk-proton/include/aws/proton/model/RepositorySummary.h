@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>A summary of detail data for a registered repository.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Summary data of a repository that has been registered with
+   * Proton.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/RepositorySummary">AWS
    * API Reference</a></p>
    */

@@ -31,6 +31,7 @@ ServiceTemplateVersion::ServiceTemplateVersion() :
     m_status(TemplateVersionStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
+    m_supportedComponentSourcesHasBeenSet(false),
     m_templateNameHasBeenSet(false)
 {
 }
@@ -48,6 +49,7 @@ ServiceTemplateVersion::ServiceTemplateVersion(JsonView jsonValue) :
     m_status(TemplateVersionStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
+    m_supportedComponentSourcesHasBeenSet(false),
     m_templateNameHasBeenSet(false)
 {
   *this = jsonValue;
@@ -135,6 +137,16 @@ ServiceTemplateVersion& ServiceTemplateVersion::operator =(JsonView jsonValue)
     m_statusMessageHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("supportedComponentSources"))
+  {
+    Array<JsonView> supportedComponentSourcesJsonList = jsonValue.GetArray("supportedComponentSources");
+    for(unsigned supportedComponentSourcesIndex = 0; supportedComponentSourcesIndex < supportedComponentSourcesJsonList.GetLength(); ++supportedComponentSourcesIndex)
+    {
+      m_supportedComponentSources.push_back(ServiceTemplateSupportedComponentSourceTypeMapper::GetServiceTemplateSupportedComponentSourceTypeForName(supportedComponentSourcesJsonList[supportedComponentSourcesIndex].AsString()));
+    }
+    m_supportedComponentSourcesHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("templateName"))
   {
     m_templateName = jsonValue.GetString("templateName");
@@ -214,6 +226,17 @@ JsonValue ServiceTemplateVersion::Jsonize() const
   if(m_statusMessageHasBeenSet)
   {
    payload.WithString("statusMessage", m_statusMessage);
+
+  }
+
+  if(m_supportedComponentSourcesHasBeenSet)
+  {
+   Array<JsonValue> supportedComponentSourcesJsonList(m_supportedComponentSources.size());
+   for(unsigned supportedComponentSourcesIndex = 0; supportedComponentSourcesIndex < supportedComponentSourcesJsonList.GetLength(); ++supportedComponentSourcesIndex)
+   {
+     supportedComponentSourcesJsonList[supportedComponentSourcesIndex].AsString(ServiceTemplateSupportedComponentSourceTypeMapper::GetNameForServiceTemplateSupportedComponentSourceType(m_supportedComponentSources[supportedComponentSourcesIndex]));
+   }
+   payload.WithArray("supportedComponentSources", std::move(supportedComponentSourcesJsonList));
 
   }
 

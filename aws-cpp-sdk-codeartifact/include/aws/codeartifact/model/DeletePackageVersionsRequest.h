@@ -83,50 +83,50 @@ namespace Model
 
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline const Aws::String& GetDomainOwner() const{ return m_domainOwner; }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline bool DomainOwnerHasBeenSet() const { return m_domainOwnerHasBeenSet; }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline void SetDomainOwner(const Aws::String& value) { m_domainOwnerHasBeenSet = true; m_domainOwner = value; }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline void SetDomainOwner(Aws::String&& value) { m_domainOwnerHasBeenSet = true; m_domainOwner = std::move(value); }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline void SetDomainOwner(const char* value) { m_domainOwnerHasBeenSet = true; m_domainOwner.assign(value); }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline DeletePackageVersionsRequest& WithDomainOwner(const Aws::String& value) { SetDomainOwner(value); return *this;}
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline DeletePackageVersionsRequest& WithDomainOwner(Aws::String&& value) { SetDomainOwner(std::move(value)); return *this;}
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline DeletePackageVersionsRequest& WithDomainOwner(const char* value) { SetDomainOwner(value); return *this;}
 
@@ -181,44 +181,32 @@ namespace Model
 
 
     /**
-     * <p> The format of the package versions to delete. The valid values are: </p>
-     * <ul> <li> <p> <code>npm</code> </p> </li> <li> <p> <code>pypi</code> </p> </li>
-     * <li> <p> <code>maven</code> </p> </li> </ul>
+     * <p> The format of the package versions to delete. </p>
      */
     inline const PackageFormat& GetFormat() const{ return m_format; }
 
     /**
-     * <p> The format of the package versions to delete. The valid values are: </p>
-     * <ul> <li> <p> <code>npm</code> </p> </li> <li> <p> <code>pypi</code> </p> </li>
-     * <li> <p> <code>maven</code> </p> </li> </ul>
+     * <p> The format of the package versions to delete. </p>
      */
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
 
     /**
-     * <p> The format of the package versions to delete. The valid values are: </p>
-     * <ul> <li> <p> <code>npm</code> </p> </li> <li> <p> <code>pypi</code> </p> </li>
-     * <li> <p> <code>maven</code> </p> </li> </ul>
+     * <p> The format of the package versions to delete. </p>
      */
     inline void SetFormat(const PackageFormat& value) { m_formatHasBeenSet = true; m_format = value; }
 
     /**
-     * <p> The format of the package versions to delete. The valid values are: </p>
-     * <ul> <li> <p> <code>npm</code> </p> </li> <li> <p> <code>pypi</code> </p> </li>
-     * <li> <p> <code>maven</code> </p> </li> </ul>
+     * <p> The format of the package versions to delete. </p>
      */
     inline void SetFormat(PackageFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
 
     /**
-     * <p> The format of the package versions to delete. The valid values are: </p>
-     * <ul> <li> <p> <code>npm</code> </p> </li> <li> <p> <code>pypi</code> </p> </li>
-     * <li> <p> <code>maven</code> </p> </li> </ul>
+     * <p> The format of the package versions to delete. </p>
      */
     inline DeletePackageVersionsRequest& WithFormat(const PackageFormat& value) { SetFormat(value); return *this;}
 
     /**
-     * <p> The format of the package versions to delete. The valid values are: </p>
-     * <ul> <li> <p> <code>npm</code> </p> </li> <li> <p> <code>pypi</code> </p> </li>
-     * <li> <p> <code>maven</code> </p> </li> </ul>
+     * <p> The format of the package versions to delete. </p>
      */
     inline DeletePackageVersionsRequest& WithFormat(PackageFormat&& value) { SetFormat(std::move(value)); return *this;}
 
@@ -392,50 +380,32 @@ namespace Model
 
 
     /**
-     * <p> The expected status of the package version to delete. Valid values are: </p>
-     * <ul> <li> <p> <code>Published</code> </p> </li> <li> <p> <code>Unfinished</code>
-     * </p> </li> <li> <p> <code>Unlisted</code> </p> </li> <li> <p>
-     * <code>Archived</code> </p> </li> <li> <p> <code>Disposed</code> </p> </li> </ul>
+     * <p> The expected status of the package version to delete. </p>
      */
     inline const PackageVersionStatus& GetExpectedStatus() const{ return m_expectedStatus; }
 
     /**
-     * <p> The expected status of the package version to delete. Valid values are: </p>
-     * <ul> <li> <p> <code>Published</code> </p> </li> <li> <p> <code>Unfinished</code>
-     * </p> </li> <li> <p> <code>Unlisted</code> </p> </li> <li> <p>
-     * <code>Archived</code> </p> </li> <li> <p> <code>Disposed</code> </p> </li> </ul>
+     * <p> The expected status of the package version to delete. </p>
      */
     inline bool ExpectedStatusHasBeenSet() const { return m_expectedStatusHasBeenSet; }
 
     /**
-     * <p> The expected status of the package version to delete. Valid values are: </p>
-     * <ul> <li> <p> <code>Published</code> </p> </li> <li> <p> <code>Unfinished</code>
-     * </p> </li> <li> <p> <code>Unlisted</code> </p> </li> <li> <p>
-     * <code>Archived</code> </p> </li> <li> <p> <code>Disposed</code> </p> </li> </ul>
+     * <p> The expected status of the package version to delete. </p>
      */
     inline void SetExpectedStatus(const PackageVersionStatus& value) { m_expectedStatusHasBeenSet = true; m_expectedStatus = value; }
 
     /**
-     * <p> The expected status of the package version to delete. Valid values are: </p>
-     * <ul> <li> <p> <code>Published</code> </p> </li> <li> <p> <code>Unfinished</code>
-     * </p> </li> <li> <p> <code>Unlisted</code> </p> </li> <li> <p>
-     * <code>Archived</code> </p> </li> <li> <p> <code>Disposed</code> </p> </li> </ul>
+     * <p> The expected status of the package version to delete. </p>
      */
     inline void SetExpectedStatus(PackageVersionStatus&& value) { m_expectedStatusHasBeenSet = true; m_expectedStatus = std::move(value); }
 
     /**
-     * <p> The expected status of the package version to delete. Valid values are: </p>
-     * <ul> <li> <p> <code>Published</code> </p> </li> <li> <p> <code>Unfinished</code>
-     * </p> </li> <li> <p> <code>Unlisted</code> </p> </li> <li> <p>
-     * <code>Archived</code> </p> </li> <li> <p> <code>Disposed</code> </p> </li> </ul>
+     * <p> The expected status of the package version to delete. </p>
      */
     inline DeletePackageVersionsRequest& WithExpectedStatus(const PackageVersionStatus& value) { SetExpectedStatus(value); return *this;}
 
     /**
-     * <p> The expected status of the package version to delete. Valid values are: </p>
-     * <ul> <li> <p> <code>Published</code> </p> </li> <li> <p> <code>Unfinished</code>
-     * </p> </li> <li> <p> <code>Unlisted</code> </p> </li> <li> <p>
-     * <code>Archived</code> </p> </li> <li> <p> <code>Disposed</code> </p> </li> </ul>
+     * <p> The expected status of the package version to delete. </p>
      */
     inline DeletePackageVersionsRequest& WithExpectedStatus(PackageVersionStatus&& value) { SetExpectedStatus(std::move(value)); return *this;}
 

@@ -13,6 +13,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateEnvironmentRequest::CreateEnvironmentRequest() : 
+    m_componentRoleArnHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_environmentAccountConnectionIdHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -29,6 +30,12 @@ CreateEnvironmentRequest::CreateEnvironmentRequest() :
 Aws::String CreateEnvironmentRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_componentRoleArnHasBeenSet)
+  {
+   payload.WithString("componentRoleArn", m_componentRoleArn);
+
+  }
 
   if(m_descriptionHasBeenSet)
   {

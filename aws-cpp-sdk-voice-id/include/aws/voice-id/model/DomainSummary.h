@@ -9,6 +9,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/voice-id/model/DomainStatus.h>
 #include <aws/voice-id/model/ServerSideEncryptionConfiguration.h>
+#include <aws/voice-id/model/ServerSideEncryptionUpdateDetails.h>
 #include <utility>
 
 namespace Aws
@@ -268,40 +269,89 @@ namespace Model
 
 
     /**
-     * <p>The server-side encryption configuration containing the KMS Key Identifier
-     * you want Voice ID to use to encrypt your data..</p>
+     * <p>The server-side encryption configuration containing the KMS key identifier
+     * you want Voice ID to use to encrypt your data.</p>
      */
     inline const ServerSideEncryptionConfiguration& GetServerSideEncryptionConfiguration() const{ return m_serverSideEncryptionConfiguration; }
 
     /**
-     * <p>The server-side encryption configuration containing the KMS Key Identifier
-     * you want Voice ID to use to encrypt your data..</p>
+     * <p>The server-side encryption configuration containing the KMS key identifier
+     * you want Voice ID to use to encrypt your data.</p>
      */
     inline bool ServerSideEncryptionConfigurationHasBeenSet() const { return m_serverSideEncryptionConfigurationHasBeenSet; }
 
     /**
-     * <p>The server-side encryption configuration containing the KMS Key Identifier
-     * you want Voice ID to use to encrypt your data..</p>
+     * <p>The server-side encryption configuration containing the KMS key identifier
+     * you want Voice ID to use to encrypt your data.</p>
      */
     inline void SetServerSideEncryptionConfiguration(const ServerSideEncryptionConfiguration& value) { m_serverSideEncryptionConfigurationHasBeenSet = true; m_serverSideEncryptionConfiguration = value; }
 
     /**
-     * <p>The server-side encryption configuration containing the KMS Key Identifier
-     * you want Voice ID to use to encrypt your data..</p>
+     * <p>The server-side encryption configuration containing the KMS key identifier
+     * you want Voice ID to use to encrypt your data.</p>
      */
     inline void SetServerSideEncryptionConfiguration(ServerSideEncryptionConfiguration&& value) { m_serverSideEncryptionConfigurationHasBeenSet = true; m_serverSideEncryptionConfiguration = std::move(value); }
 
     /**
-     * <p>The server-side encryption configuration containing the KMS Key Identifier
-     * you want Voice ID to use to encrypt your data..</p>
+     * <p>The server-side encryption configuration containing the KMS key identifier
+     * you want Voice ID to use to encrypt your data.</p>
      */
     inline DomainSummary& WithServerSideEncryptionConfiguration(const ServerSideEncryptionConfiguration& value) { SetServerSideEncryptionConfiguration(value); return *this;}
 
     /**
-     * <p>The server-side encryption configuration containing the KMS Key Identifier
-     * you want Voice ID to use to encrypt your data..</p>
+     * <p>The server-side encryption configuration containing the KMS key identifier
+     * you want Voice ID to use to encrypt your data.</p>
      */
     inline DomainSummary& WithServerSideEncryptionConfiguration(ServerSideEncryptionConfiguration&& value) { SetServerSideEncryptionConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Details about the most recent server-side encryption configuration update.
+     * When the server-side encryption configuration is changed, dependency on the old
+     * KMS key is removed through an asynchronous process. When this update is
+     * complete, the domain’s data can only be accessed using the new KMS key.</p>
+     */
+    inline const ServerSideEncryptionUpdateDetails& GetServerSideEncryptionUpdateDetails() const{ return m_serverSideEncryptionUpdateDetails; }
+
+    /**
+     * <p>Details about the most recent server-side encryption configuration update.
+     * When the server-side encryption configuration is changed, dependency on the old
+     * KMS key is removed through an asynchronous process. When this update is
+     * complete, the domain’s data can only be accessed using the new KMS key.</p>
+     */
+    inline bool ServerSideEncryptionUpdateDetailsHasBeenSet() const { return m_serverSideEncryptionUpdateDetailsHasBeenSet; }
+
+    /**
+     * <p>Details about the most recent server-side encryption configuration update.
+     * When the server-side encryption configuration is changed, dependency on the old
+     * KMS key is removed through an asynchronous process. When this update is
+     * complete, the domain’s data can only be accessed using the new KMS key.</p>
+     */
+    inline void SetServerSideEncryptionUpdateDetails(const ServerSideEncryptionUpdateDetails& value) { m_serverSideEncryptionUpdateDetailsHasBeenSet = true; m_serverSideEncryptionUpdateDetails = value; }
+
+    /**
+     * <p>Details about the most recent server-side encryption configuration update.
+     * When the server-side encryption configuration is changed, dependency on the old
+     * KMS key is removed through an asynchronous process. When this update is
+     * complete, the domain’s data can only be accessed using the new KMS key.</p>
+     */
+    inline void SetServerSideEncryptionUpdateDetails(ServerSideEncryptionUpdateDetails&& value) { m_serverSideEncryptionUpdateDetailsHasBeenSet = true; m_serverSideEncryptionUpdateDetails = std::move(value); }
+
+    /**
+     * <p>Details about the most recent server-side encryption configuration update.
+     * When the server-side encryption configuration is changed, dependency on the old
+     * KMS key is removed through an asynchronous process. When this update is
+     * complete, the domain’s data can only be accessed using the new KMS key.</p>
+     */
+    inline DomainSummary& WithServerSideEncryptionUpdateDetails(const ServerSideEncryptionUpdateDetails& value) { SetServerSideEncryptionUpdateDetails(value); return *this;}
+
+    /**
+     * <p>Details about the most recent server-side encryption configuration update.
+     * When the server-side encryption configuration is changed, dependency on the old
+     * KMS key is removed through an asynchronous process. When this update is
+     * complete, the domain’s data can only be accessed using the new KMS key.</p>
+     */
+    inline DomainSummary& WithServerSideEncryptionUpdateDetails(ServerSideEncryptionUpdateDetails&& value) { SetServerSideEncryptionUpdateDetails(std::move(value)); return *this;}
 
 
     /**
@@ -356,6 +406,9 @@ namespace Model
 
     ServerSideEncryptionConfiguration m_serverSideEncryptionConfiguration;
     bool m_serverSideEncryptionConfigurationHasBeenSet;
+
+    ServerSideEncryptionUpdateDetails m_serverSideEncryptionUpdateDetails;
+    bool m_serverSideEncryptionUpdateDetailsHasBeenSet;
 
     Aws::Utils::DateTime m_updatedAt;
     bool m_updatedAtHasBeenSet;

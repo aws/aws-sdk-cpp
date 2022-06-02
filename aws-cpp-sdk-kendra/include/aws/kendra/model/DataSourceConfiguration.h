@@ -20,6 +20,7 @@
 #include <aws/kendra/model/BoxConfiguration.h>
 #include <aws/kendra/model/QuipConfiguration.h>
 #include <aws/kendra/model/JiraConfiguration.h>
+#include <aws/kendra/model/GitHubConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -588,6 +589,43 @@ namespace Model
      */
     inline DataSourceConfiguration& WithJiraConfiguration(JiraConfiguration&& value) { SetJiraConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Provides the configuration information to connect to GitHub as your data
+     * source.</p>
+     */
+    inline const GitHubConfiguration& GetGitHubConfiguration() const{ return m_gitHubConfiguration; }
+
+    /**
+     * <p>Provides the configuration information to connect to GitHub as your data
+     * source.</p>
+     */
+    inline bool GitHubConfigurationHasBeenSet() const { return m_gitHubConfigurationHasBeenSet; }
+
+    /**
+     * <p>Provides the configuration information to connect to GitHub as your data
+     * source.</p>
+     */
+    inline void SetGitHubConfiguration(const GitHubConfiguration& value) { m_gitHubConfigurationHasBeenSet = true; m_gitHubConfiguration = value; }
+
+    /**
+     * <p>Provides the configuration information to connect to GitHub as your data
+     * source.</p>
+     */
+    inline void SetGitHubConfiguration(GitHubConfiguration&& value) { m_gitHubConfigurationHasBeenSet = true; m_gitHubConfiguration = std::move(value); }
+
+    /**
+     * <p>Provides the configuration information to connect to GitHub as your data
+     * source.</p>
+     */
+    inline DataSourceConfiguration& WithGitHubConfiguration(const GitHubConfiguration& value) { SetGitHubConfiguration(value); return *this;}
+
+    /**
+     * <p>Provides the configuration information to connect to GitHub as your data
+     * source.</p>
+     */
+    inline DataSourceConfiguration& WithGitHubConfiguration(GitHubConfiguration&& value) { SetGitHubConfiguration(std::move(value)); return *this;}
+
   private:
 
     S3DataSourceConfiguration m_s3Configuration;
@@ -634,6 +672,9 @@ namespace Model
 
     JiraConfiguration m_jiraConfiguration;
     bool m_jiraConfigurationHasBeenSet;
+
+    GitHubConfiguration m_gitHubConfiguration;
+    bool m_gitHubConfigurationHasBeenSet;
   };
 
 } // namespace Model

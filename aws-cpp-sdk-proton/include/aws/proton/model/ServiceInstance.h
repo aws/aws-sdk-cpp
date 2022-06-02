@@ -26,7 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>The service instance detail data.</p><p><h3>See Also:</h3>   <a
+   * <p>Detailed data of an Proton service instance resource.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ServiceInstance">AWS
    * API Reference</a></p>
    */
@@ -143,42 +144,42 @@ namespace Model
 
 
     /**
-     * <p>A service instance deployment status message.</p>
+     * <p>The message associated with the service instance deployment status.</p>
      */
     inline const Aws::String& GetDeploymentStatusMessage() const{ return m_deploymentStatusMessage; }
 
     /**
-     * <p>A service instance deployment status message.</p>
+     * <p>The message associated with the service instance deployment status.</p>
      */
     inline bool DeploymentStatusMessageHasBeenSet() const { return m_deploymentStatusMessageHasBeenSet; }
 
     /**
-     * <p>A service instance deployment status message.</p>
+     * <p>The message associated with the service instance deployment status.</p>
      */
     inline void SetDeploymentStatusMessage(const Aws::String& value) { m_deploymentStatusMessageHasBeenSet = true; m_deploymentStatusMessage = value; }
 
     /**
-     * <p>A service instance deployment status message.</p>
+     * <p>The message associated with the service instance deployment status.</p>
      */
     inline void SetDeploymentStatusMessage(Aws::String&& value) { m_deploymentStatusMessageHasBeenSet = true; m_deploymentStatusMessage = std::move(value); }
 
     /**
-     * <p>A service instance deployment status message.</p>
+     * <p>The message associated with the service instance deployment status.</p>
      */
     inline void SetDeploymentStatusMessage(const char* value) { m_deploymentStatusMessageHasBeenSet = true; m_deploymentStatusMessage.assign(value); }
 
     /**
-     * <p>A service instance deployment status message.</p>
+     * <p>The message associated with the service instance deployment status.</p>
      */
     inline ServiceInstance& WithDeploymentStatusMessage(const Aws::String& value) { SetDeploymentStatusMessage(value); return *this;}
 
     /**
-     * <p>A service instance deployment status message.</p>
+     * <p>The message associated with the service instance deployment status.</p>
      */
     inline ServiceInstance& WithDeploymentStatusMessage(Aws::String&& value) { SetDeploymentStatusMessage(std::move(value)); return *this;}
 
     /**
-     * <p>A service instance deployment status message.</p>
+     * <p>The message associated with the service instance deployment status.</p>
      */
     inline ServiceInstance& WithDeploymentStatusMessage(const char* value) { SetDeploymentStatusMessage(value); return *this;}
 

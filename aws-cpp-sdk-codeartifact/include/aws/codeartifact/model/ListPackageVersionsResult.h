@@ -100,37 +100,27 @@ namespace Model
 
 
     /**
-     * <p> A format of the package. Valid package format values are: </p> <ul> <li> <p>
-     * <code>npm</code> </p> </li> <li> <p> <code>pypi</code> </p> </li> <li> <p>
-     * <code>maven</code> </p> </li> </ul>
+     * <p> A format of the package. </p>
      */
     inline const PackageFormat& GetFormat() const{ return m_format; }
 
     /**
-     * <p> A format of the package. Valid package format values are: </p> <ul> <li> <p>
-     * <code>npm</code> </p> </li> <li> <p> <code>pypi</code> </p> </li> <li> <p>
-     * <code>maven</code> </p> </li> </ul>
+     * <p> A format of the package. </p>
      */
     inline void SetFormat(const PackageFormat& value) { m_format = value; }
 
     /**
-     * <p> A format of the package. Valid package format values are: </p> <ul> <li> <p>
-     * <code>npm</code> </p> </li> <li> <p> <code>pypi</code> </p> </li> <li> <p>
-     * <code>maven</code> </p> </li> </ul>
+     * <p> A format of the package. </p>
      */
     inline void SetFormat(PackageFormat&& value) { m_format = std::move(value); }
 
     /**
-     * <p> A format of the package. Valid package format values are: </p> <ul> <li> <p>
-     * <code>npm</code> </p> </li> <li> <p> <code>pypi</code> </p> </li> <li> <p>
-     * <code>maven</code> </p> </li> </ul>
+     * <p> A format of the package. </p>
      */
     inline ListPackageVersionsResult& WithFormat(const PackageFormat& value) { SetFormat(value); return *this;}
 
     /**
-     * <p> A format of the package. Valid package format values are: </p> <ul> <li> <p>
-     * <code>npm</code> </p> </li> <li> <p> <code>pypi</code> </p> </li> <li> <p>
-     * <code>maven</code> </p> </li> </ul>
+     * <p> A format of the package. </p>
      */
     inline ListPackageVersionsResult& WithFormat(PackageFormat&& value) { SetFormat(std::move(value)); return *this;}
 

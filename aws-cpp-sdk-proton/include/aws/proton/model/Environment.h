@@ -28,8 +28,8 @@ namespace Model
 {
 
   /**
-   * <p>The environment detail data. An Proton environment is a set resources shared
-   * across an Proton service.</p><p><h3>See Also:</h3>   <a
+   * <p>Detailed data of an Proton environment resource. An Proton environment is a
+   * set of resources shared across Proton services.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/Environment">AWS
    * API Reference</a></p>
    */
@@ -81,6 +81,103 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the environment.</p>
      */
     inline Environment& WithArn(const char* value) { SetArn(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when
+     * provisioning directly defined components in this environment. It determines the
+     * scope of infrastructure that a component can provision.</p> <p>The environment
+     * must have a <code>componentRoleArn</code> to allow directly defined components
+     * to be associated with the environment.</p> <p>For more information about
+     * components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
+     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     */
+    inline const Aws::String& GetComponentRoleArn() const{ return m_componentRoleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when
+     * provisioning directly defined components in this environment. It determines the
+     * scope of infrastructure that a component can provision.</p> <p>The environment
+     * must have a <code>componentRoleArn</code> to allow directly defined components
+     * to be associated with the environment.</p> <p>For more information about
+     * components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
+     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     */
+    inline bool ComponentRoleArnHasBeenSet() const { return m_componentRoleArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when
+     * provisioning directly defined components in this environment. It determines the
+     * scope of infrastructure that a component can provision.</p> <p>The environment
+     * must have a <code>componentRoleArn</code> to allow directly defined components
+     * to be associated with the environment.</p> <p>For more information about
+     * components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
+     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     */
+    inline void SetComponentRoleArn(const Aws::String& value) { m_componentRoleArnHasBeenSet = true; m_componentRoleArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when
+     * provisioning directly defined components in this environment. It determines the
+     * scope of infrastructure that a component can provision.</p> <p>The environment
+     * must have a <code>componentRoleArn</code> to allow directly defined components
+     * to be associated with the environment.</p> <p>For more information about
+     * components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
+     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     */
+    inline void SetComponentRoleArn(Aws::String&& value) { m_componentRoleArnHasBeenSet = true; m_componentRoleArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when
+     * provisioning directly defined components in this environment. It determines the
+     * scope of infrastructure that a component can provision.</p> <p>The environment
+     * must have a <code>componentRoleArn</code> to allow directly defined components
+     * to be associated with the environment.</p> <p>For more information about
+     * components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
+     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     */
+    inline void SetComponentRoleArn(const char* value) { m_componentRoleArnHasBeenSet = true; m_componentRoleArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when
+     * provisioning directly defined components in this environment. It determines the
+     * scope of infrastructure that a component can provision.</p> <p>The environment
+     * must have a <code>componentRoleArn</code> to allow directly defined components
+     * to be associated with the environment.</p> <p>For more information about
+     * components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
+     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     */
+    inline Environment& WithComponentRoleArn(const Aws::String& value) { SetComponentRoleArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when
+     * provisioning directly defined components in this environment. It determines the
+     * scope of infrastructure that a component can provision.</p> <p>The environment
+     * must have a <code>componentRoleArn</code> to allow directly defined components
+     * to be associated with the environment.</p> <p>For more information about
+     * components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
+     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     */
+    inline Environment& WithComponentRoleArn(Aws::String&& value) { SetComponentRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when
+     * provisioning directly defined components in this environment. It determines the
+     * scope of infrastructure that a component can provision.</p> <p>The environment
+     * must have a <code>componentRoleArn</code> to allow directly defined components
+     * to be associated with the environment.</p> <p>For more information about
+     * components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
+     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     */
+    inline Environment& WithComponentRoleArn(const char* value) { SetComponentRoleArn(value); return *this;}
 
 
     /**
@@ -718,6 +815,9 @@ namespace Model
 
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
+    Aws::String m_componentRoleArn;
+    bool m_componentRoleArnHasBeenSet;
 
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet;

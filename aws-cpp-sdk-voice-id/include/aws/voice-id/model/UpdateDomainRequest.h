@@ -159,7 +159,7 @@ namespace Model
 
 
     /**
-     * <p>The configuration, containing the KMS Key Identifier, to be used by Voice ID
+     * <p>The configuration, containing the KMS key identifier, to be used by Voice ID
      * for the server-side encryption of your data. Note that all the existing data in
      * the domain are still encrypted using the existing key, only the data added to
      * domain after updating the key is encrypted using the new key. </p>
@@ -167,7 +167,7 @@ namespace Model
     inline const ServerSideEncryptionConfiguration& GetServerSideEncryptionConfiguration() const{ return m_serverSideEncryptionConfiguration; }
 
     /**
-     * <p>The configuration, containing the KMS Key Identifier, to be used by Voice ID
+     * <p>The configuration, containing the KMS key identifier, to be used by Voice ID
      * for the server-side encryption of your data. Note that all the existing data in
      * the domain are still encrypted using the existing key, only the data added to
      * domain after updating the key is encrypted using the new key. </p>
@@ -175,7 +175,7 @@ namespace Model
     inline bool ServerSideEncryptionConfigurationHasBeenSet() const { return m_serverSideEncryptionConfigurationHasBeenSet; }
 
     /**
-     * <p>The configuration, containing the KMS Key Identifier, to be used by Voice ID
+     * <p>The configuration, containing the KMS key identifier, to be used by Voice ID
      * for the server-side encryption of your data. Note that all the existing data in
      * the domain are still encrypted using the existing key, only the data added to
      * domain after updating the key is encrypted using the new key. </p>
@@ -183,7 +183,7 @@ namespace Model
     inline void SetServerSideEncryptionConfiguration(const ServerSideEncryptionConfiguration& value) { m_serverSideEncryptionConfigurationHasBeenSet = true; m_serverSideEncryptionConfiguration = value; }
 
     /**
-     * <p>The configuration, containing the KMS Key Identifier, to be used by Voice ID
+     * <p>The configuration, containing the KMS key identifier, to be used by Voice ID
      * for the server-side encryption of your data. Note that all the existing data in
      * the domain are still encrypted using the existing key, only the data added to
      * domain after updating the key is encrypted using the new key. </p>
@@ -191,7 +191,7 @@ namespace Model
     inline void SetServerSideEncryptionConfiguration(ServerSideEncryptionConfiguration&& value) { m_serverSideEncryptionConfigurationHasBeenSet = true; m_serverSideEncryptionConfiguration = std::move(value); }
 
     /**
-     * <p>The configuration, containing the KMS Key Identifier, to be used by Voice ID
+     * <p>The configuration, containing the KMS key identifier, to be used by Voice ID
      * for the server-side encryption of your data. Note that all the existing data in
      * the domain are still encrypted using the existing key, only the data added to
      * domain after updating the key is encrypted using the new key. </p>
@@ -199,7 +199,7 @@ namespace Model
     inline UpdateDomainRequest& WithServerSideEncryptionConfiguration(const ServerSideEncryptionConfiguration& value) { SetServerSideEncryptionConfiguration(value); return *this;}
 
     /**
-     * <p>The configuration, containing the KMS Key Identifier, to be used by Voice ID
+     * <p>The configuration, containing the KMS key identifier, to be used by Voice ID
      * for the server-side encryption of your data. Note that all the existing data in
      * the domain are still encrypted using the existing key, only the data added to
      * domain after updating the key is encrypted using the new key. </p>

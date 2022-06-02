@@ -89,50 +89,50 @@ namespace Model
 
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline const Aws::String& GetDomainOwner() const{ return m_domainOwner; }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline bool DomainOwnerHasBeenSet() const { return m_domainOwnerHasBeenSet; }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline void SetDomainOwner(const Aws::String& value) { m_domainOwnerHasBeenSet = true; m_domainOwner = value; }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline void SetDomainOwner(Aws::String&& value) { m_domainOwnerHasBeenSet = true; m_domainOwner = std::move(value); }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline void SetDomainOwner(const char* value) { m_domainOwnerHasBeenSet = true; m_domainOwner.assign(value); }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline GetPackageVersionReadmeRequest& WithDomainOwner(const Aws::String& value) { SetDomainOwner(value); return *this;}
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline GetPackageVersionReadmeRequest& WithDomainOwner(Aws::String&& value) { SetDomainOwner(std::move(value)); return *this;}
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline GetPackageVersionReadmeRequest& WithDomainOwner(const char* value) { SetDomainOwner(value); return *this;}
 
@@ -188,49 +188,49 @@ namespace Model
 
     /**
      * <p> A format that specifies the type of the package version with the requested
-     * readme file. The valid values are: </p> <ul> <li> <p> <code>npm</code> </p>
-     * </li> <li> <p> <code>pypi</code> </p> </li> <li> <p> <code>maven</code> </p>
-     * </li> </ul>
+     * readme file. </p>  <p>Although <code>maven</code> is listed as a valid
+     * value, CodeArtifact does not support displaying readme files for Maven
+     * packages.</p> 
      */
     inline const PackageFormat& GetFormat() const{ return m_format; }
 
     /**
      * <p> A format that specifies the type of the package version with the requested
-     * readme file. The valid values are: </p> <ul> <li> <p> <code>npm</code> </p>
-     * </li> <li> <p> <code>pypi</code> </p> </li> <li> <p> <code>maven</code> </p>
-     * </li> </ul>
+     * readme file. </p>  <p>Although <code>maven</code> is listed as a valid
+     * value, CodeArtifact does not support displaying readme files for Maven
+     * packages.</p> 
      */
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
 
     /**
      * <p> A format that specifies the type of the package version with the requested
-     * readme file. The valid values are: </p> <ul> <li> <p> <code>npm</code> </p>
-     * </li> <li> <p> <code>pypi</code> </p> </li> <li> <p> <code>maven</code> </p>
-     * </li> </ul>
+     * readme file. </p>  <p>Although <code>maven</code> is listed as a valid
+     * value, CodeArtifact does not support displaying readme files for Maven
+     * packages.</p> 
      */
     inline void SetFormat(const PackageFormat& value) { m_formatHasBeenSet = true; m_format = value; }
 
     /**
      * <p> A format that specifies the type of the package version with the requested
-     * readme file. The valid values are: </p> <ul> <li> <p> <code>npm</code> </p>
-     * </li> <li> <p> <code>pypi</code> </p> </li> <li> <p> <code>maven</code> </p>
-     * </li> </ul>
+     * readme file. </p>  <p>Although <code>maven</code> is listed as a valid
+     * value, CodeArtifact does not support displaying readme files for Maven
+     * packages.</p> 
      */
     inline void SetFormat(PackageFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
 
     /**
      * <p> A format that specifies the type of the package version with the requested
-     * readme file. The valid values are: </p> <ul> <li> <p> <code>npm</code> </p>
-     * </li> <li> <p> <code>pypi</code> </p> </li> <li> <p> <code>maven</code> </p>
-     * </li> </ul>
+     * readme file. </p>  <p>Although <code>maven</code> is listed as a valid
+     * value, CodeArtifact does not support displaying readme files for Maven
+     * packages.</p> 
      */
     inline GetPackageVersionReadmeRequest& WithFormat(const PackageFormat& value) { SetFormat(value); return *this;}
 
     /**
      * <p> A format that specifies the type of the package version with the requested
-     * readme file. The valid values are: </p> <ul> <li> <p> <code>npm</code> </p>
-     * </li> <li> <p> <code>pypi</code> </p> </li> <li> <p> <code>maven</code> </p>
-     * </li> </ul>
+     * readme file. </p>  <p>Although <code>maven</code> is listed as a valid
+     * value, CodeArtifact does not support displaying readme files for Maven
+     * packages.</p> 
      */
     inline GetPackageVersionReadmeRequest& WithFormat(PackageFormat&& value) { SetFormat(std::move(value)); return *this;}
 

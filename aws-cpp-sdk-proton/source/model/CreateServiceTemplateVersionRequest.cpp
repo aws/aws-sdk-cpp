@@ -19,6 +19,7 @@ CreateServiceTemplateVersionRequest::CreateServiceTemplateVersionRequest() :
     m_descriptionHasBeenSet(false),
     m_majorVersionHasBeenSet(false),
     m_sourceHasBeenSet(false),
+    m_supportedComponentSourcesHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_templateNameHasBeenSet(false)
 {
@@ -60,6 +61,17 @@ Aws::String CreateServiceTemplateVersionRequest::SerializePayload() const
   if(m_sourceHasBeenSet)
   {
    payload.WithObject("source", m_source.Jsonize());
+
+  }
+
+  if(m_supportedComponentSourcesHasBeenSet)
+  {
+   Array<JsonValue> supportedComponentSourcesJsonList(m_supportedComponentSources.size());
+   for(unsigned supportedComponentSourcesIndex = 0; supportedComponentSourcesIndex < supportedComponentSourcesJsonList.GetLength(); ++supportedComponentSourcesIndex)
+   {
+     supportedComponentSourcesJsonList[supportedComponentSourcesIndex].AsString(ServiceTemplateSupportedComponentSourceTypeMapper::GetNameForServiceTemplateSupportedComponentSourceType(m_supportedComponentSources[supportedComponentSourcesIndex]));
+   }
+   payload.WithArray("supportedComponentSources", std::move(supportedComponentSourcesJsonList));
 
   }
 

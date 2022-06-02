@@ -228,42 +228,46 @@ namespace Model
     typedef std::function<void(const CodeArtifactClient*, const Model::UpdateRepositoryRequest&, const Model::UpdateRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRepositoryResponseReceivedHandler;
 
   /**
-   * <p> AWS CodeArtifact is a fully managed artifact repository compatible with
-   * language-native package managers and build tools such as npm, Apache Maven, and
-   * pip. You can use CodeArtifact to share packages with development teams and pull
-   * packages. Packages can be pulled from both public and CodeArtifact repositories.
-   * You can also create an upstream relationship between a CodeArtifact repository
-   * and another repository, which effectively merges their contents from the point
-   * of view of a package manager client. </p> <p> <b>AWS CodeArtifact Components</b>
-   * </p> <p>Use the information in this guide to help you work with the following
-   * CodeArtifact components:</p> <ul> <li> <p> <b>Repository</b>: A CodeArtifact
-   * repository contains a set of <a
+   * <p> CodeArtifact is a fully managed artifact repository compatible with
+   * language-native package managers and build tools such as npm, Apache Maven, pip,
+   * and dotnet. You can use CodeArtifact to share packages with development teams
+   * and pull packages. Packages can be pulled from both public and CodeArtifact
+   * repositories. You can also create an upstream relationship between a
+   * CodeArtifact repository and another repository, which effectively merges their
+   * contents from the point of view of a package manager client. </p> <p>
+   * <b>CodeArtifact Components</b> </p> <p>Use the information in this guide to help
+   * you work with the following CodeArtifact components:</p> <ul> <li> <p>
+   * <b>Repository</b>: A CodeArtifact repository contains a set of <a
    * href="https://docs.aws.amazon.com/codeartifact/latest/ug/welcome.html#welcome-concepts-package-version">package
    * versions</a>, each of which maps to a set of assets, or files. Repositories are
    * polyglot, so a single repository can contain packages of any supported type.
    * Each repository exposes endpoints for fetching and publishing packages using
    * tools like the <b> <code>npm</code> </b> CLI, the Maven CLI (<b>
-   * <code>mvn</code> </b>), and <b> <code>pip</code> </b>.</p> </li> <li> <p>
-   * <b>Domain</b>: Repositories are aggregated into a higher-level entity known as a
-   * <i>domain</i>. All package assets and metadata are stored in the domain, but are
-   * consumed through repositories. A given package asset, such as a Maven JAR file,
-   * is stored once per domain, no matter how many repositories it's present in. All
-   * of the assets and metadata in a domain are encrypted with the same customer
-   * master key (CMK) stored in AWS Key Management Service (AWS KMS).</p> <p>Each
-   * repository is a member of a single domain and can't be moved to a different
-   * domain.</p> <p>The domain allows organizational policy to be applied across
-   * multiple repositories, such as which accounts can access repositories in the
-   * domain, and which public repositories can be used as sources of packages.</p>
-   * <p>Although an organization can have multiple domains, we recommend a single
-   * production domain that contains all published artifacts so that teams can find
-   * and share packages across their organization.</p> </li> <li> <p> <b>Package</b>:
-   * A <i>package</i> is a bundle of software and the metadata required to resolve
-   * dependencies and install the software. CodeArtifact supports <a
+   * <code>mvn</code> </b>), Python CLIs (<b> <code>pip</code> </b> and
+   * <code>twine</code>), and NuGet CLIs (<code>nuget</code> and
+   * <code>dotnet</code>).</p> </li> <li> <p> <b>Domain</b>: Repositories are
+   * aggregated into a higher-level entity known as a <i>domain</i>. All package
+   * assets and metadata are stored in the domain, but are consumed through
+   * repositories. A given package asset, such as a Maven JAR file, is stored once
+   * per domain, no matter how many repositories it's present in. All of the assets
+   * and metadata in a domain are encrypted with the same customer master key (CMK)
+   * stored in Key Management Service (KMS).</p> <p>Each repository is a member of a
+   * single domain and can't be moved to a different domain.</p> <p>The domain allows
+   * organizational policy to be applied across multiple repositories, such as which
+   * accounts can access repositories in the domain, and which public repositories
+   * can be used as sources of packages.</p> <p>Although an organization can have
+   * multiple domains, we recommend a single production domain that contains all
+   * published artifacts so that teams can find and share packages across their
+   * organization.</p> </li> <li> <p> <b>Package</b>: A <i>package</i> is a bundle of
+   * software and the metadata required to resolve dependencies and install the
+   * software. CodeArtifact supports <a
    * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-npm.html">npm</a>,
    * <a
    * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-python.html">PyPI</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-maven">Maven</a>,
    * and <a
-   * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-maven">Maven</a>
+   * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-nuget">NuGet</a>
    * package formats.</p> <p>In CodeArtifact, a package consists of:</p> <ul> <li>
    * <p>A <i>name</i> (for example, <code>webpack</code> is the name of a popular npm
    * package)</p> </li> <li> <p>An optional namespace (for example,
@@ -323,21 +327,22 @@ namespace Model
    * Gets the readme file or descriptive text for a package version.</p> </li> <li>
    * <p> <code>GetRepositoryEndpoint</code>: Returns the endpoint of a repository for
    * a specific package format. A repository has one endpoint for each package
-   * format: </p> <ul> <li> <p> <code>npm</code> </p> </li> <li> <p>
-   * <code>pypi</code> </p> </li> <li> <p> <code>maven</code> </p> </li> </ul> </li>
-   * <li> <p> <code>GetRepositoryPermissionsPolicy</code>: Returns the resource
-   * policy that is set on a repository. </p> </li> <li> <p>
-   * <code>ListDomains</code>: Returns a list of <code>DomainSummary</code> objects.
-   * Each returned <code>DomainSummary</code> object contains information about a
-   * domain.</p> </li> <li> <p> <code>ListPackages</code>: Lists the packages in a
-   * repository.</p> </li> <li> <p> <code>ListPackageVersionAssets</code>: Lists the
-   * assets for a given package version.</p> </li> <li> <p>
+   * format: </p> <ul> <li> <p> <code>maven</code> </p> </li> <li> <p>
+   * <code>npm</code> </p> </li> <li> <p> <code>nuget</code> </p> </li> <li> <p>
+   * <code>pypi</code> </p> </li> </ul> </li> <li> <p>
+   * <code>GetRepositoryPermissionsPolicy</code>: Returns the resource policy that is
+   * set on a repository. </p> </li> <li> <p> <code>ListDomains</code>: Returns a
+   * list of <code>DomainSummary</code> objects. Each returned
+   * <code>DomainSummary</code> object contains information about a domain.</p> </li>
+   * <li> <p> <code>ListPackages</code>: Lists the packages in a repository.</p>
+   * </li> <li> <p> <code>ListPackageVersionAssets</code>: Lists the assets for a
+   * given package version.</p> </li> <li> <p>
    * <code>ListPackageVersionDependencies</code>: Returns a list of the direct
    * dependencies for a package version. </p> </li> <li> <p>
    * <code>ListPackageVersions</code>: Returns a list of package versions for a
    * specified package in a repository.</p> </li> <li> <p>
-   * <code>ListRepositories</code>: Returns a list of repositories owned by the AWS
-   * account that called this method.</p> </li> <li> <p>
+   * <code>ListRepositories</code>: Returns a list of repositories owned by the
+   * Amazon Web Services account that called this method.</p> </li> <li> <p>
    * <code>ListRepositoriesInDomain</code>: Returns a list of the repositories in a
    * domain.</p> </li> <li> <p> <code>PutDomainPermissionsPolicy</code>: Attaches a
    * resource policy to a domain.</p> </li> <li> <p>
@@ -417,12 +422,13 @@ namespace Model
         /**
          * <p> Creates a domain. CodeArtifact <i>domains</i> make it easier to manage
          * multiple repositories across an organization. You can use a domain to apply
-         * permissions across many repositories owned by different AWS accounts. An asset
-         * is stored only once in a domain, even if it's in multiple repositories. </p>
-         * <p>Although you can have multiple domains, we recommend a single production
-         * domain that contains all published artifacts so that your development teams can
-         * find and share packages. You can use a second pre-production domain to test
-         * changes to the production domain configuration. </p><p><h3>See Also:</h3>   <a
+         * permissions across many repositories owned by different Amazon Web Services
+         * accounts. An asset is stored only once in a domain, even if it's in multiple
+         * repositories. </p> <p>Although you can have multiple domains, we recommend a
+         * single production domain that contains all published artifacts so that your
+         * development teams can find and share packages. You can use a second
+         * pre-production domain to test changes to the production domain configuration.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/CreateDomain">AWS
          * API Reference</a></p>
          */
@@ -538,9 +544,9 @@ namespace Model
          * policy is deleted, the permissions allowed and denied by the deleted policy are
          * removed. The effect of deleting a resource policy might not be immediate. </p>
          *  <p> Use <code>DeleteRepositoryPermissionsPolicy</code> with caution.
-         * After a policy is deleted, AWS users, roles, and accounts lose permissions to
-         * perform the repository actions granted by the deleted policy. </p>
-         * <p><h3>See Also:</h3>   <a
+         * After a policy is deleted, Amazon Web Services users, roles, and accounts lose
+         * permissions to perform the repository actions granted by the deleted policy.
+         * </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DeleteRepositoryPermissionsPolicy">AWS
          * API Reference</a></p>
          */
@@ -664,21 +670,20 @@ namespace Model
          * domain. This API requires the <code>codeartifact:GetAuthorizationToken</code>
          * and <code>sts:GetServiceBearerToken</code> permissions. For more information
          * about authorization tokens, see <a
-         * href="https://docs.aws.amazon.com/codeartifact/latest/ug/tokens-authentication.html">AWS
-         * CodeArtifact authentication and tokens</a>. </p>  <p>CodeArtifact
-         * authorization tokens are valid for a period of 12 hours when created with the
-         * <code>login</code> command. You can call <code>login</code> periodically to
-         * refresh the token. When you create an authorization token with the
-         * <code>GetAuthorizationToken</code> API, you can set a custom authorization
-         * period, up to a maximum of 12 hours, with the <code>durationSeconds</code>
-         * parameter.</p> <p>The authorization period begins after <code>login</code> or
-         * <code>GetAuthorizationToken</code> is called. If <code>login</code> or
-         * <code>GetAuthorizationToken</code> is called while assuming a role, the token
-         * lifetime is independent of the maximum session duration of the role. For
-         * example, if you call <code>sts assume-role</code> and specify a session duration
-         * of 15 minutes, then generate a CodeArtifact authorization token, the token will
-         * be valid for the full authorization period even though this is longer than the
-         * 15-minute session duration.</p> <p>See <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/ug/tokens-authentication.html">CodeArtifact
+         * authentication and tokens</a>. </p>  <p>CodeArtifact authorization tokens
+         * are valid for a period of 12 hours when created with the <code>login</code>
+         * command. You can call <code>login</code> periodically to refresh the token. When
+         * you create an authorization token with the <code>GetAuthorizationToken</code>
+         * API, you can set a custom authorization period, up to a maximum of 12 hours,
+         * with the <code>durationSeconds</code> parameter.</p> <p>The authorization period
+         * begins after <code>login</code> or <code>GetAuthorizationToken</code> is called.
+         * If <code>login</code> or <code>GetAuthorizationToken</code> is called while
+         * assuming a role, the token lifetime is independent of the maximum session
+         * duration of the role. For example, if you call <code>sts assume-role</code> and
+         * specify a session duration of 15 minutes, then generate a CodeArtifact
+         * authorization token, the token will be valid for the full authorization period
+         * even though this is longer than the 15-minute session duration.</p> <p>See <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
          * IAM Roles</a> for more information on controlling session duration. </p>
          * <p><h3>See Also:</h3>   <a
@@ -702,8 +707,8 @@ namespace Model
          * <p> The policy is a resource-based policy, not an identity-based policy. For
          * more information, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_identity-vs-resource.html">Identity-based
-         * policies and resource-based policies </a> in the <i>AWS Identity and Access
-         * Management User Guide</i>. </p> <p><h3>See Also:</h3>   <a
+         * policies and resource-based policies </a> in the <i>IAM User Guide</i>. </p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/GetDomainPermissionsPolicy">AWS
          * API Reference</a></p>
          */
@@ -740,12 +745,9 @@ namespace Model
         virtual void GetPackageVersionAssetAsync(const Model::GetPackageVersionAssetRequest& request, const GetPackageVersionAssetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Gets the readme file or descriptive text for a package version. For packages
-         * that do not contain a readme file, CodeArtifact extracts a description from a
-         * metadata file. For example, from the <code>&lt;description&gt;</code> element in
-         * the <code>pom.xml</code> file of a Maven package. </p> <p> The returned text
-         * might contain formatting. For example, it might contain formatting for Markdown
-         * or reStructuredText. </p><p><h3>See Also:</h3>   <a
+         * <p> Gets the readme file or descriptive text for a package version. </p> <p> The
+         * returned text might contain formatting. For example, it might contain formatting
+         * for Markdown or reStructuredText. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/GetPackageVersionReadme">AWS
          * API Reference</a></p>
          */
@@ -764,8 +766,9 @@ namespace Model
         /**
          * <p> Returns the endpoint of a repository for a specific package format. A
          * repository has one endpoint for each package format: </p> <ul> <li> <p>
-         * <code>npm</code> </p> </li> <li> <p> <code>pypi</code> </p> </li> <li> <p>
-         * <code>maven</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <code>maven</code> </p> </li> <li> <p> <code>npm</code> </p> </li> <li> <p>
+         * <code>nuget</code> </p> </li> <li> <p> <code>pypi</code> </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/GetRepositoryEndpoint">AWS
          * API Reference</a></p>
          */
@@ -802,9 +805,9 @@ namespace Model
         /**
          * <p> Returns a list of <a
          * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">DomainSummary</a>
-         * objects for all domains owned by the AWS account that makes this call. Each
-         * returned <code>DomainSummary</code> object contains information about a domain.
-         * </p><p><h3>See Also:</h3>   <a
+         * objects for all domains owned by the Amazon Web Services account that makes this
+         * call. Each returned <code>DomainSummary</code> object contains information about
+         * a domain. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListDomains">AWS
          * API Reference</a></p>
          */
@@ -907,8 +910,8 @@ namespace Model
          * <p> Returns a list of <a
          * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a>
          * objects. Each <code>RepositorySummary</code> contains information about a
-         * repository in the specified AWS account and that matches the input parameters.
-         * </p><p><h3>See Also:</h3>   <a
+         * repository in the specified Amazon Web Services account and that matches the
+         * input parameters. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListRepositories">AWS
          * API Reference</a></p>
          */
@@ -946,8 +949,8 @@ namespace Model
         virtual void ListRepositoriesInDomainAsync(const Model::ListRepositoriesInDomainRequest& request, const ListRepositoriesInDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about AWS tags for a specified Amazon Resource Name (ARN) in
-         * AWS CodeArtifact.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about Amazon Web Services tags for a specified Amazon
+         * Resource Name (ARN) in CodeArtifact.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListTagsForResource">AWS
          * API Reference</a></p>
          */
@@ -1008,8 +1011,8 @@ namespace Model
         virtual void PutRepositoryPermissionsPolicyAsync(const Model::PutRepositoryPermissionsPolicyRequest& request, const PutRepositoryPermissionsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds or updates tags for a resource in AWS CodeArtifact.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Adds or updates tags for a resource in CodeArtifact.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/TagResource">AWS
          * API Reference</a></p>
          */
@@ -1026,8 +1029,7 @@ namespace Model
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes tags from a resource in AWS CodeArtifact.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Removes tags from a resource in CodeArtifact.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/UntagResource">AWS
          * API Reference</a></p>
          */
@@ -1044,8 +1046,13 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Updates the status of one or more versions of a package. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p> Updates the status of one or more versions of a package. Using
+         * <code>UpdatePackageVersionsStatus</code>, you can update the status of package
+         * versions to <code>Archived</code>, <code>Published</code>, or
+         * <code>Unlisted</code>. To set the status of a package version to
+         * <code>Disposed</code>, use <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DisposePackageVersions.html">DisposePackageVersions</a>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/UpdatePackageVersionsStatus">AWS
          * API Reference</a></p>
          */

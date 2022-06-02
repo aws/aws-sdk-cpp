@@ -23,7 +23,9 @@ CreateApplicationRequest::CreateApplicationRequest() :
     m_autoConfigEnabled(false),
     m_autoConfigEnabledHasBeenSet(false),
     m_autoCreate(false),
-    m_autoCreateHasBeenSet(false)
+    m_autoCreateHasBeenSet(false),
+    m_groupingType(GroupingType::NOT_SET),
+    m_groupingTypeHasBeenSet(false)
 {
 }
 
@@ -76,6 +78,11 @@ Aws::String CreateApplicationRequest::SerializePayload() const
   {
    payload.WithBool("AutoCreate", m_autoCreate);
 
+  }
+
+  if(m_groupingTypeHasBeenSet)
+  {
+   payload.WithString("GroupingType", GroupingTypeMapper::GetNameForGroupingType(m_groupingType));
   }
 
   return payload.View().WriteReadable();

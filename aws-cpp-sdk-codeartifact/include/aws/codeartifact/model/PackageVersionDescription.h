@@ -43,56 +43,32 @@ namespace Model
 
 
     /**
-     * <p> The format of the package version. The valid package formats are: </p> <ul>
-     * <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li> <li>
-     * <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li> <li>
-     * <p> <code>maven</code>: A Maven package that contains compiled code in a
-     * distributable format, such as a JAR file. </p> </li> </ul>
+     * <p> The format of the package version. </p>
      */
     inline const PackageFormat& GetFormat() const{ return m_format; }
 
     /**
-     * <p> The format of the package version. The valid package formats are: </p> <ul>
-     * <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li> <li>
-     * <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li> <li>
-     * <p> <code>maven</code>: A Maven package that contains compiled code in a
-     * distributable format, such as a JAR file. </p> </li> </ul>
+     * <p> The format of the package version. </p>
      */
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
 
     /**
-     * <p> The format of the package version. The valid package formats are: </p> <ul>
-     * <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li> <li>
-     * <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li> <li>
-     * <p> <code>maven</code>: A Maven package that contains compiled code in a
-     * distributable format, such as a JAR file. </p> </li> </ul>
+     * <p> The format of the package version. </p>
      */
     inline void SetFormat(const PackageFormat& value) { m_formatHasBeenSet = true; m_format = value; }
 
     /**
-     * <p> The format of the package version. The valid package formats are: </p> <ul>
-     * <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li> <li>
-     * <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li> <li>
-     * <p> <code>maven</code>: A Maven package that contains compiled code in a
-     * distributable format, such as a JAR file. </p> </li> </ul>
+     * <p> The format of the package version. </p>
      */
     inline void SetFormat(PackageFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
 
     /**
-     * <p> The format of the package version. The valid package formats are: </p> <ul>
-     * <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li> <li>
-     * <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li> <li>
-     * <p> <code>maven</code>: A Maven package that contains compiled code in a
-     * distributable format, such as a JAR file. </p> </li> </ul>
+     * <p> The format of the package version. </p>
      */
     inline PackageVersionDescription& WithFormat(const PackageFormat& value) { SetFormat(value); return *this;}
 
     /**
-     * <p> The format of the package version. The valid package formats are: </p> <ul>
-     * <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li> <li>
-     * <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li> <li>
-     * <p> <code>maven</code>: A Maven package that contains compiled code in a
-     * distributable format, such as a JAR file. </p> </li> </ul>
+     * <p> The format of the package version. </p>
      */
     inline PackageVersionDescription& WithFormat(PackageFormat&& value) { SetFormat(std::move(value)); return *this;}
 
@@ -600,56 +576,32 @@ namespace Model
 
 
     /**
-     * <p> A string that contains the status of the package version. It can be one of
-     * the following: </p> <ul> <li> <p> <code>Published</code> </p> </li> <li> <p>
-     * <code>Unfinished</code> </p> </li> <li> <p> <code>Unlisted</code> </p> </li>
-     * <li> <p> <code>Archived</code> </p> </li> <li> <p> <code>Disposed</code> </p>
-     * </li> </ul>
+     * <p> A string that contains the status of the package version. </p>
      */
     inline const PackageVersionStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p> A string that contains the status of the package version. It can be one of
-     * the following: </p> <ul> <li> <p> <code>Published</code> </p> </li> <li> <p>
-     * <code>Unfinished</code> </p> </li> <li> <p> <code>Unlisted</code> </p> </li>
-     * <li> <p> <code>Archived</code> </p> </li> <li> <p> <code>Disposed</code> </p>
-     * </li> </ul>
+     * <p> A string that contains the status of the package version. </p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p> A string that contains the status of the package version. It can be one of
-     * the following: </p> <ul> <li> <p> <code>Published</code> </p> </li> <li> <p>
-     * <code>Unfinished</code> </p> </li> <li> <p> <code>Unlisted</code> </p> </li>
-     * <li> <p> <code>Archived</code> </p> </li> <li> <p> <code>Disposed</code> </p>
-     * </li> </ul>
+     * <p> A string that contains the status of the package version. </p>
      */
     inline void SetStatus(const PackageVersionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p> A string that contains the status of the package version. It can be one of
-     * the following: </p> <ul> <li> <p> <code>Published</code> </p> </li> <li> <p>
-     * <code>Unfinished</code> </p> </li> <li> <p> <code>Unlisted</code> </p> </li>
-     * <li> <p> <code>Archived</code> </p> </li> <li> <p> <code>Disposed</code> </p>
-     * </li> </ul>
+     * <p> A string that contains the status of the package version. </p>
      */
     inline void SetStatus(PackageVersionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p> A string that contains the status of the package version. It can be one of
-     * the following: </p> <ul> <li> <p> <code>Published</code> </p> </li> <li> <p>
-     * <code>Unfinished</code> </p> </li> <li> <p> <code>Unlisted</code> </p> </li>
-     * <li> <p> <code>Archived</code> </p> </li> <li> <p> <code>Disposed</code> </p>
-     * </li> </ul>
+     * <p> A string that contains the status of the package version. </p>
      */
     inline PackageVersionDescription& WithStatus(const PackageVersionStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p> A string that contains the status of the package version. It can be one of
-     * the following: </p> <ul> <li> <p> <code>Published</code> </p> </li> <li> <p>
-     * <code>Unfinished</code> </p> </li> <li> <p> <code>Unlisted</code> </p> </li>
-     * <li> <p> <code>Archived</code> </p> </li> <li> <p> <code>Disposed</code> </p>
-     * </li> </ul>
+     * <p> A string that contains the status of the package version. </p>
      */
     inline PackageVersionDescription& WithStatus(PackageVersionStatus&& value) { SetStatus(std::move(value)); return *this;}
 

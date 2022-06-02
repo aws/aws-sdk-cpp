@@ -80,50 +80,50 @@ namespace Model
 
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline const Aws::String& GetDomainOwner() const{ return m_domainOwner; }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline bool DomainOwnerHasBeenSet() const { return m_domainOwnerHasBeenSet; }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline void SetDomainOwner(const Aws::String& value) { m_domainOwnerHasBeenSet = true; m_domainOwner = value; }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline void SetDomainOwner(Aws::String&& value) { m_domainOwnerHasBeenSet = true; m_domainOwner = std::move(value); }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline void SetDomainOwner(const char* value) { m_domainOwnerHasBeenSet = true; m_domainOwner.assign(value); }
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline AssociateExternalConnectionRequest& WithDomainOwner(const Aws::String& value) { SetDomainOwner(value); return *this;}
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline AssociateExternalConnectionRequest& WithDomainOwner(Aws::String&& value) { SetDomainOwner(std::move(value)); return *this;}
 
     /**
-     * <p> The 12-digit account number of the AWS account that owns the domain. It does
-     * not include dashes or spaces. </p>
+     * <p> The 12-digit account number of the Amazon Web Services account that owns the
+     * domain. It does not include dashes or spaces. </p>
      */
     inline AssociateExternalConnectionRequest& WithDomainOwner(const char* value) { SetDomainOwner(value); return *this;}
 
@@ -172,7 +172,8 @@ namespace Model
     /**
      * <p> The name of the external connection to add to the repository. The following
      * values are supported: </p> <ul> <li> <p> <code>public:npmjs</code> - for the npm
-     * public repository. </p> </li> <li> <p> <code>public:pypi</code> - for the Python
+     * public repository. </p> </li> <li> <p> <code>public:nuget-org</code> - for the
+     * NuGet Gallery. </p> </li> <li> <p> <code>public:pypi</code> - for the Python
      * Package Index. </p> </li> <li> <p> <code>public:maven-central</code> - for Maven
      * Central. </p> </li> <li> <p> <code>public:maven-googleandroid</code> - for the
      * Google Android repository. </p> </li> <li> <p>
@@ -185,7 +186,8 @@ namespace Model
     /**
      * <p> The name of the external connection to add to the repository. The following
      * values are supported: </p> <ul> <li> <p> <code>public:npmjs</code> - for the npm
-     * public repository. </p> </li> <li> <p> <code>public:pypi</code> - for the Python
+     * public repository. </p> </li> <li> <p> <code>public:nuget-org</code> - for the
+     * NuGet Gallery. </p> </li> <li> <p> <code>public:pypi</code> - for the Python
      * Package Index. </p> </li> <li> <p> <code>public:maven-central</code> - for Maven
      * Central. </p> </li> <li> <p> <code>public:maven-googleandroid</code> - for the
      * Google Android repository. </p> </li> <li> <p>
@@ -198,7 +200,8 @@ namespace Model
     /**
      * <p> The name of the external connection to add to the repository. The following
      * values are supported: </p> <ul> <li> <p> <code>public:npmjs</code> - for the npm
-     * public repository. </p> </li> <li> <p> <code>public:pypi</code> - for the Python
+     * public repository. </p> </li> <li> <p> <code>public:nuget-org</code> - for the
+     * NuGet Gallery. </p> </li> <li> <p> <code>public:pypi</code> - for the Python
      * Package Index. </p> </li> <li> <p> <code>public:maven-central</code> - for Maven
      * Central. </p> </li> <li> <p> <code>public:maven-googleandroid</code> - for the
      * Google Android repository. </p> </li> <li> <p>
@@ -211,7 +214,8 @@ namespace Model
     /**
      * <p> The name of the external connection to add to the repository. The following
      * values are supported: </p> <ul> <li> <p> <code>public:npmjs</code> - for the npm
-     * public repository. </p> </li> <li> <p> <code>public:pypi</code> - for the Python
+     * public repository. </p> </li> <li> <p> <code>public:nuget-org</code> - for the
+     * NuGet Gallery. </p> </li> <li> <p> <code>public:pypi</code> - for the Python
      * Package Index. </p> </li> <li> <p> <code>public:maven-central</code> - for Maven
      * Central. </p> </li> <li> <p> <code>public:maven-googleandroid</code> - for the
      * Google Android repository. </p> </li> <li> <p>
@@ -224,7 +228,8 @@ namespace Model
     /**
      * <p> The name of the external connection to add to the repository. The following
      * values are supported: </p> <ul> <li> <p> <code>public:npmjs</code> - for the npm
-     * public repository. </p> </li> <li> <p> <code>public:pypi</code> - for the Python
+     * public repository. </p> </li> <li> <p> <code>public:nuget-org</code> - for the
+     * NuGet Gallery. </p> </li> <li> <p> <code>public:pypi</code> - for the Python
      * Package Index. </p> </li> <li> <p> <code>public:maven-central</code> - for Maven
      * Central. </p> </li> <li> <p> <code>public:maven-googleandroid</code> - for the
      * Google Android repository. </p> </li> <li> <p>
@@ -237,7 +242,8 @@ namespace Model
     /**
      * <p> The name of the external connection to add to the repository. The following
      * values are supported: </p> <ul> <li> <p> <code>public:npmjs</code> - for the npm
-     * public repository. </p> </li> <li> <p> <code>public:pypi</code> - for the Python
+     * public repository. </p> </li> <li> <p> <code>public:nuget-org</code> - for the
+     * NuGet Gallery. </p> </li> <li> <p> <code>public:pypi</code> - for the Python
      * Package Index. </p> </li> <li> <p> <code>public:maven-central</code> - for Maven
      * Central. </p> </li> <li> <p> <code>public:maven-googleandroid</code> - for the
      * Google Android repository. </p> </li> <li> <p>
@@ -250,7 +256,8 @@ namespace Model
     /**
      * <p> The name of the external connection to add to the repository. The following
      * values are supported: </p> <ul> <li> <p> <code>public:npmjs</code> - for the npm
-     * public repository. </p> </li> <li> <p> <code>public:pypi</code> - for the Python
+     * public repository. </p> </li> <li> <p> <code>public:nuget-org</code> - for the
+     * NuGet Gallery. </p> </li> <li> <p> <code>public:pypi</code> - for the Python
      * Package Index. </p> </li> <li> <p> <code>public:maven-central</code> - for Maven
      * Central. </p> </li> <li> <p> <code>public:maven-googleandroid</code> - for the
      * Google Android repository. </p> </li> <li> <p>
@@ -263,7 +270,8 @@ namespace Model
     /**
      * <p> The name of the external connection to add to the repository. The following
      * values are supported: </p> <ul> <li> <p> <code>public:npmjs</code> - for the npm
-     * public repository. </p> </li> <li> <p> <code>public:pypi</code> - for the Python
+     * public repository. </p> </li> <li> <p> <code>public:nuget-org</code> - for the
+     * NuGet Gallery. </p> </li> <li> <p> <code>public:pypi</code> - for the Python
      * Package Index. </p> </li> <li> <p> <code>public:maven-central</code> - for Maven
      * Central. </p> </li> <li> <p> <code>public:maven-googleandroid</code> - for the
      * Google Android repository. </p> </li> <li> <p>

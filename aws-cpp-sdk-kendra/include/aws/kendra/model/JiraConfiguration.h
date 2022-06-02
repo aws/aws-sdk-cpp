@@ -27,6 +27,12 @@ namespace kendra
 namespace Model
 {
 
+  /**
+   * <p>Provides the configuration information to connect to Jira as your data
+   * source.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/JiraConfiguration">AWS
+   * API Reference</a></p>
+   */
   class AWS_KENDRA_API JiraConfiguration
   {
   public:
@@ -97,9 +103,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
      * key-value pairs required to connect to your Jira data source. The secret must
      * contain a JSON structure with the following keys:</p> <ul> <li> <p>jira-id—The
-     * Active Directory user name, along with the Domain Name System (DNS) domain name.
-     * For example, <i>user@corp.example.com</i>.</p> </li> <li> <p>jiraCredentials—The
-     * password of the Jira account user.</p> </li> </ul>
+     * ID of the Jira account.</p> </li> <li> <p>jiraCredentials—The password of the
+     * Jira account user.</p> </li> </ul>
      */
     inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
 
@@ -107,9 +112,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
      * key-value pairs required to connect to your Jira data source. The secret must
      * contain a JSON structure with the following keys:</p> <ul> <li> <p>jira-id—The
-     * Active Directory user name, along with the Domain Name System (DNS) domain name.
-     * For example, <i>user@corp.example.com</i>.</p> </li> <li> <p>jiraCredentials—The
-     * password of the Jira account user.</p> </li> </ul>
+     * ID of the Jira account.</p> </li> <li> <p>jiraCredentials—The password of the
+     * Jira account user.</p> </li> </ul>
      */
     inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
 
@@ -117,9 +121,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
      * key-value pairs required to connect to your Jira data source. The secret must
      * contain a JSON structure with the following keys:</p> <ul> <li> <p>jira-id—The
-     * Active Directory user name, along with the Domain Name System (DNS) domain name.
-     * For example, <i>user@corp.example.com</i>.</p> </li> <li> <p>jiraCredentials—The
-     * password of the Jira account user.</p> </li> </ul>
+     * ID of the Jira account.</p> </li> <li> <p>jiraCredentials—The password of the
+     * Jira account user.</p> </li> </ul>
      */
     inline void SetSecretArn(const Aws::String& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
 
@@ -127,9 +130,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
      * key-value pairs required to connect to your Jira data source. The secret must
      * contain a JSON structure with the following keys:</p> <ul> <li> <p>jira-id—The
-     * Active Directory user name, along with the Domain Name System (DNS) domain name.
-     * For example, <i>user@corp.example.com</i>.</p> </li> <li> <p>jiraCredentials—The
-     * password of the Jira account user.</p> </li> </ul>
+     * ID of the Jira account.</p> </li> <li> <p>jiraCredentials—The password of the
+     * Jira account user.</p> </li> </ul>
      */
     inline void SetSecretArn(Aws::String&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
 
@@ -137,9 +139,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
      * key-value pairs required to connect to your Jira data source. The secret must
      * contain a JSON structure with the following keys:</p> <ul> <li> <p>jira-id—The
-     * Active Directory user name, along with the Domain Name System (DNS) domain name.
-     * For example, <i>user@corp.example.com</i>.</p> </li> <li> <p>jiraCredentials—The
-     * password of the Jira account user.</p> </li> </ul>
+     * ID of the Jira account.</p> </li> <li> <p>jiraCredentials—The password of the
+     * Jira account user.</p> </li> </ul>
      */
     inline void SetSecretArn(const char* value) { m_secretArnHasBeenSet = true; m_secretArn.assign(value); }
 
@@ -147,9 +148,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
      * key-value pairs required to connect to your Jira data source. The secret must
      * contain a JSON structure with the following keys:</p> <ul> <li> <p>jira-id—The
-     * Active Directory user name, along with the Domain Name System (DNS) domain name.
-     * For example, <i>user@corp.example.com</i>.</p> </li> <li> <p>jiraCredentials—The
-     * password of the Jira account user.</p> </li> </ul>
+     * ID of the Jira account.</p> </li> <li> <p>jiraCredentials—The password of the
+     * Jira account user.</p> </li> </ul>
      */
     inline JiraConfiguration& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
 
@@ -157,9 +157,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
      * key-value pairs required to connect to your Jira data source. The secret must
      * contain a JSON structure with the following keys:</p> <ul> <li> <p>jira-id—The
-     * Active Directory user name, along with the Domain Name System (DNS) domain name.
-     * For example, <i>user@corp.example.com</i>.</p> </li> <li> <p>jiraCredentials—The
-     * password of the Jira account user.</p> </li> </ul>
+     * ID of the Jira account.</p> </li> <li> <p>jiraCredentials—The password of the
+     * Jira account user.</p> </li> </ul>
      */
     inline JiraConfiguration& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
 
@@ -167,9 +166,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
      * key-value pairs required to connect to your Jira data source. The secret must
      * contain a JSON structure with the following keys:</p> <ul> <li> <p>jira-id—The
-     * Active Directory user name, along with the Domain Name System (DNS) domain name.
-     * For example, <i>user@corp.example.com</i>.</p> </li> <li> <p>jiraCredentials—The
-     * password of the Jira account user.</p> </li> </ul>
+     * ID of the Jira account.</p> </li> <li> <p>jiraCredentials—The password of the
+     * Jira account user.</p> </li> </ul>
      */
     inline JiraConfiguration& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}
 

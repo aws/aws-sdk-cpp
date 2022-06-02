@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>The service detail data.</p><p><h3>See Also:</h3>   <a
+   * <p>Detailed data of an Proton service resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/Service">AWS API
    * Reference</a></p>
    */
@@ -162,42 +162,42 @@ namespace Model
 
 
     /**
-     * <p>A description of a service.</p>
+     * <p>A description of the service.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>A description of a service.</p>
+     * <p>A description of the service.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>A description of a service.</p>
+     * <p>A description of the service.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>A description of a service.</p>
+     * <p>A description of the service.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>A description of a service.</p>
+     * <p>A description of the service.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>A description of a service.</p>
+     * <p>A description of the service.</p>
      */
     inline Service& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>A description of a service.</p>
+     * <p>A description of the service.</p>
      */
     inline Service& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>A description of a service.</p>
+     * <p>A description of the service.</p>
      */
     inline Service& WithDescription(const char* value) { SetDescription(value); return *this;}
 

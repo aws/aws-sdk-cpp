@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>A summary of the service detail data.</p><p><h3>See Also:</h3>   <a
+   * <p>Summary data of an Proton service resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ServiceSummary">AWS
    * API Reference</a></p>
    */

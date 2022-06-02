@@ -31,7 +31,8 @@ namespace Model
     SLACK,
     BOX,
     QUIP,
-    JIRA
+    JIRA,
+    GITHUB
   };
 
 namespace DataSourceTypeMapper

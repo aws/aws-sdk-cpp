@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The configuration containing information about the customer-managed KMS Key
-   * used for encrypting customer data.</p><p><h3>See Also:</h3>   <a
+   * <p>The configuration containing information about the customer managed key used
+   * for encrypting customer data.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/ServerSideEncryptionConfiguration">AWS
    * API Reference</a></p>
    */
@@ -39,49 +39,49 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the KMS Key you want Voice ID to use to encrypt your
+     * <p>The identifier of the KMS key you want Voice ID to use to encrypt your
      * data.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The identifier of the KMS Key you want Voice ID to use to encrypt your
+     * <p>The identifier of the KMS key you want Voice ID to use to encrypt your
      * data.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the KMS Key you want Voice ID to use to encrypt your
+     * <p>The identifier of the KMS key you want Voice ID to use to encrypt your
      * data.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The identifier of the KMS Key you want Voice ID to use to encrypt your
+     * <p>The identifier of the KMS key you want Voice ID to use to encrypt your
      * data.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The identifier of the KMS Key you want Voice ID to use to encrypt your
+     * <p>The identifier of the KMS key you want Voice ID to use to encrypt your
      * data.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The identifier of the KMS Key you want Voice ID to use to encrypt your
+     * <p>The identifier of the KMS key you want Voice ID to use to encrypt your
      * data.</p>
      */
     inline ServerSideEncryptionConfiguration& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The identifier of the KMS Key you want Voice ID to use to encrypt your
+     * <p>The identifier of the KMS key you want Voice ID to use to encrypt your
      * data.</p>
      */
     inline ServerSideEncryptionConfiguration& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the KMS Key you want Voice ID to use to encrypt your
+     * <p>The identifier of the KMS key you want Voice ID to use to encrypt your
      * data.</p>
      */
     inline ServerSideEncryptionConfiguration& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}

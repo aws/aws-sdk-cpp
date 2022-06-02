@@ -215,73 +215,73 @@ namespace Model
 
 
     /**
-     * <p>A formatted URL that is shown to an agent in the Contact Control Panel
+     * <p>Well-formed data on contact, shown to agents on Contact Control Panel
      * (CCP).</p>
      */
     inline const Aws::Map<Aws::String, Reference>& GetReferences() const{ return m_references; }
 
     /**
-     * <p>A formatted URL that is shown to an agent in the Contact Control Panel
+     * <p>Well-formed data on contact, shown to agents on Contact Control Panel
      * (CCP).</p>
      */
     inline bool ReferencesHasBeenSet() const { return m_referencesHasBeenSet; }
 
     /**
-     * <p>A formatted URL that is shown to an agent in the Contact Control Panel
+     * <p>Well-formed data on contact, shown to agents on Contact Control Panel
      * (CCP).</p>
      */
     inline void SetReferences(const Aws::Map<Aws::String, Reference>& value) { m_referencesHasBeenSet = true; m_references = value; }
 
     /**
-     * <p>A formatted URL that is shown to an agent in the Contact Control Panel
+     * <p>Well-formed data on contact, shown to agents on Contact Control Panel
      * (CCP).</p>
      */
     inline void SetReferences(Aws::Map<Aws::String, Reference>&& value) { m_referencesHasBeenSet = true; m_references = std::move(value); }
 
     /**
-     * <p>A formatted URL that is shown to an agent in the Contact Control Panel
+     * <p>Well-formed data on contact, shown to agents on Contact Control Panel
      * (CCP).</p>
      */
     inline UpdateContactRequest& WithReferences(const Aws::Map<Aws::String, Reference>& value) { SetReferences(value); return *this;}
 
     /**
-     * <p>A formatted URL that is shown to an agent in the Contact Control Panel
+     * <p>Well-formed data on contact, shown to agents on Contact Control Panel
      * (CCP).</p>
      */
     inline UpdateContactRequest& WithReferences(Aws::Map<Aws::String, Reference>&& value) { SetReferences(std::move(value)); return *this;}
 
     /**
-     * <p>A formatted URL that is shown to an agent in the Contact Control Panel
+     * <p>Well-formed data on contact, shown to agents on Contact Control Panel
      * (CCP).</p>
      */
     inline UpdateContactRequest& AddReferences(const Aws::String& key, const Reference& value) { m_referencesHasBeenSet = true; m_references.emplace(key, value); return *this; }
 
     /**
-     * <p>A formatted URL that is shown to an agent in the Contact Control Panel
+     * <p>Well-formed data on contact, shown to agents on Contact Control Panel
      * (CCP).</p>
      */
     inline UpdateContactRequest& AddReferences(Aws::String&& key, const Reference& value) { m_referencesHasBeenSet = true; m_references.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A formatted URL that is shown to an agent in the Contact Control Panel
+     * <p>Well-formed data on contact, shown to agents on Contact Control Panel
      * (CCP).</p>
      */
     inline UpdateContactRequest& AddReferences(const Aws::String& key, Reference&& value) { m_referencesHasBeenSet = true; m_references.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A formatted URL that is shown to an agent in the Contact Control Panel
+     * <p>Well-formed data on contact, shown to agents on Contact Control Panel
      * (CCP).</p>
      */
     inline UpdateContactRequest& AddReferences(Aws::String&& key, Reference&& value) { m_referencesHasBeenSet = true; m_references.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>A formatted URL that is shown to an agent in the Contact Control Panel
+     * <p>Well-formed data on contact, shown to agents on Contact Control Panel
      * (CCP).</p>
      */
     inline UpdateContactRequest& AddReferences(const char* key, Reference&& value) { m_referencesHasBeenSet = true; m_references.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A formatted URL that is shown to an agent in the Contact Control Panel
+     * <p>Well-formed data on contact, shown to agents on Contact Control Panel
      * (CCP).</p>
      */
     inline UpdateContactRequest& AddReferences(const char* key, const Reference& value) { m_referencesHasBeenSet = true; m_references.emplace(key, value); return *this; }

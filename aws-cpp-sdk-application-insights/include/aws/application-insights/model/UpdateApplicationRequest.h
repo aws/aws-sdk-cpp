@@ -211,16 +211,24 @@ namespace Model
     inline UpdateApplicationRequest& WithRemoveSNSTopic(bool value) { SetRemoveSNSTopic(value); return *this;}
 
 
-    
+    /**
+     * <p> Turns auto-configuration on or off. </p>
+     */
     inline bool GetAutoConfigEnabled() const{ return m_autoConfigEnabled; }
 
-    
+    /**
+     * <p> Turns auto-configuration on or off. </p>
+     */
     inline bool AutoConfigEnabledHasBeenSet() const { return m_autoConfigEnabledHasBeenSet; }
 
-    
+    /**
+     * <p> Turns auto-configuration on or off. </p>
+     */
     inline void SetAutoConfigEnabled(bool value) { m_autoConfigEnabledHasBeenSet = true; m_autoConfigEnabled = value; }
 
-    
+    /**
+     * <p> Turns auto-configuration on or off. </p>
+     */
     inline UpdateApplicationRequest& WithAutoConfigEnabled(bool value) { SetAutoConfigEnabled(value); return *this;}
 
   private:

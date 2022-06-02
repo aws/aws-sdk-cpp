@@ -33,7 +33,8 @@ DataSourceConfiguration::DataSourceConfiguration() :
     m_slackConfigurationHasBeenSet(false),
     m_boxConfigurationHasBeenSet(false),
     m_quipConfigurationHasBeenSet(false),
-    m_jiraConfigurationHasBeenSet(false)
+    m_jiraConfigurationHasBeenSet(false),
+    m_gitHubConfigurationHasBeenSet(false)
 {
 }
 
@@ -52,7 +53,8 @@ DataSourceConfiguration::DataSourceConfiguration(JsonView jsonValue) :
     m_slackConfigurationHasBeenSet(false),
     m_boxConfigurationHasBeenSet(false),
     m_quipConfigurationHasBeenSet(false),
-    m_jiraConfigurationHasBeenSet(false)
+    m_jiraConfigurationHasBeenSet(false),
+    m_gitHubConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -164,6 +166,13 @@ DataSourceConfiguration& DataSourceConfiguration::operator =(JsonView jsonValue)
     m_jiraConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("GitHubConfiguration"))
+  {
+    m_gitHubConfiguration = jsonValue.GetObject("GitHubConfiguration");
+
+    m_gitHubConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -258,6 +267,12 @@ JsonValue DataSourceConfiguration::Jsonize() const
   if(m_jiraConfigurationHasBeenSet)
   {
    payload.WithObject("JiraConfiguration", m_jiraConfiguration.Jsonize());
+
+  }
+
+  if(m_gitHubConfigurationHasBeenSet)
+  {
+   payload.WithObject("GitHubConfiguration", m_gitHubConfiguration.Jsonize());
 
   }
 

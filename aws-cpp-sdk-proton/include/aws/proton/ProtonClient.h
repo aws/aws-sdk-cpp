@@ -12,9 +12,11 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/proton/model/AcceptEnvironmentAccountConnectionResult.h>
+#include <aws/proton/model/CancelComponentDeploymentResult.h>
 #include <aws/proton/model/CancelEnvironmentDeploymentResult.h>
 #include <aws/proton/model/CancelServiceInstanceDeploymentResult.h>
 #include <aws/proton/model/CancelServicePipelineDeploymentResult.h>
+#include <aws/proton/model/CreateComponentResult.h>
 #include <aws/proton/model/CreateEnvironmentResult.h>
 #include <aws/proton/model/CreateEnvironmentAccountConnectionResult.h>
 #include <aws/proton/model/CreateEnvironmentTemplateResult.h>
@@ -24,6 +26,7 @@
 #include <aws/proton/model/CreateServiceTemplateResult.h>
 #include <aws/proton/model/CreateServiceTemplateVersionResult.h>
 #include <aws/proton/model/CreateTemplateSyncConfigResult.h>
+#include <aws/proton/model/DeleteComponentResult.h>
 #include <aws/proton/model/DeleteEnvironmentResult.h>
 #include <aws/proton/model/DeleteEnvironmentAccountConnectionResult.h>
 #include <aws/proton/model/DeleteEnvironmentTemplateResult.h>
@@ -34,6 +37,7 @@
 #include <aws/proton/model/DeleteServiceTemplateVersionResult.h>
 #include <aws/proton/model/DeleteTemplateSyncConfigResult.h>
 #include <aws/proton/model/GetAccountSettingsResult.h>
+#include <aws/proton/model/GetComponentResult.h>
 #include <aws/proton/model/GetEnvironmentResult.h>
 #include <aws/proton/model/GetEnvironmentAccountConnectionResult.h>
 #include <aws/proton/model/GetEnvironmentTemplateResult.h>
@@ -46,6 +50,9 @@
 #include <aws/proton/model/GetServiceTemplateVersionResult.h>
 #include <aws/proton/model/GetTemplateSyncConfigResult.h>
 #include <aws/proton/model/GetTemplateSyncStatusResult.h>
+#include <aws/proton/model/ListComponentOutputsResult.h>
+#include <aws/proton/model/ListComponentProvisionedResourcesResult.h>
+#include <aws/proton/model/ListComponentsResult.h>
 #include <aws/proton/model/ListEnvironmentAccountConnectionsResult.h>
 #include <aws/proton/model/ListEnvironmentOutputsResult.h>
 #include <aws/proton/model/ListEnvironmentProvisionedResourcesResult.h>
@@ -68,6 +75,7 @@
 #include <aws/proton/model/TagResourceResult.h>
 #include <aws/proton/model/UntagResourceResult.h>
 #include <aws/proton/model/UpdateAccountSettingsResult.h>
+#include <aws/proton/model/UpdateComponentResult.h>
 #include <aws/proton/model/UpdateEnvironmentResult.h>
 #include <aws/proton/model/UpdateEnvironmentAccountConnectionResult.h>
 #include <aws/proton/model/UpdateEnvironmentTemplateResult.h>
@@ -118,9 +126,11 @@ namespace Proton
 namespace Model
 {
         class AcceptEnvironmentAccountConnectionRequest;
+        class CancelComponentDeploymentRequest;
         class CancelEnvironmentDeploymentRequest;
         class CancelServiceInstanceDeploymentRequest;
         class CancelServicePipelineDeploymentRequest;
+        class CreateComponentRequest;
         class CreateEnvironmentRequest;
         class CreateEnvironmentAccountConnectionRequest;
         class CreateEnvironmentTemplateRequest;
@@ -130,6 +140,7 @@ namespace Model
         class CreateServiceTemplateRequest;
         class CreateServiceTemplateVersionRequest;
         class CreateTemplateSyncConfigRequest;
+        class DeleteComponentRequest;
         class DeleteEnvironmentRequest;
         class DeleteEnvironmentAccountConnectionRequest;
         class DeleteEnvironmentTemplateRequest;
@@ -140,6 +151,7 @@ namespace Model
         class DeleteServiceTemplateVersionRequest;
         class DeleteTemplateSyncConfigRequest;
         class GetAccountSettingsRequest;
+        class GetComponentRequest;
         class GetEnvironmentRequest;
         class GetEnvironmentAccountConnectionRequest;
         class GetEnvironmentTemplateRequest;
@@ -152,6 +164,9 @@ namespace Model
         class GetServiceTemplateVersionRequest;
         class GetTemplateSyncConfigRequest;
         class GetTemplateSyncStatusRequest;
+        class ListComponentOutputsRequest;
+        class ListComponentProvisionedResourcesRequest;
+        class ListComponentsRequest;
         class ListEnvironmentAccountConnectionsRequest;
         class ListEnvironmentOutputsRequest;
         class ListEnvironmentProvisionedResourcesRequest;
@@ -174,6 +189,7 @@ namespace Model
         class TagResourceRequest;
         class UntagResourceRequest;
         class UpdateAccountSettingsRequest;
+        class UpdateComponentRequest;
         class UpdateEnvironmentRequest;
         class UpdateEnvironmentAccountConnectionRequest;
         class UpdateEnvironmentTemplateRequest;
@@ -186,9 +202,11 @@ namespace Model
         class UpdateTemplateSyncConfigRequest;
 
         typedef Aws::Utils::Outcome<AcceptEnvironmentAccountConnectionResult, ProtonError> AcceptEnvironmentAccountConnectionOutcome;
+        typedef Aws::Utils::Outcome<CancelComponentDeploymentResult, ProtonError> CancelComponentDeploymentOutcome;
         typedef Aws::Utils::Outcome<CancelEnvironmentDeploymentResult, ProtonError> CancelEnvironmentDeploymentOutcome;
         typedef Aws::Utils::Outcome<CancelServiceInstanceDeploymentResult, ProtonError> CancelServiceInstanceDeploymentOutcome;
         typedef Aws::Utils::Outcome<CancelServicePipelineDeploymentResult, ProtonError> CancelServicePipelineDeploymentOutcome;
+        typedef Aws::Utils::Outcome<CreateComponentResult, ProtonError> CreateComponentOutcome;
         typedef Aws::Utils::Outcome<CreateEnvironmentResult, ProtonError> CreateEnvironmentOutcome;
         typedef Aws::Utils::Outcome<CreateEnvironmentAccountConnectionResult, ProtonError> CreateEnvironmentAccountConnectionOutcome;
         typedef Aws::Utils::Outcome<CreateEnvironmentTemplateResult, ProtonError> CreateEnvironmentTemplateOutcome;
@@ -198,6 +216,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateServiceTemplateResult, ProtonError> CreateServiceTemplateOutcome;
         typedef Aws::Utils::Outcome<CreateServiceTemplateVersionResult, ProtonError> CreateServiceTemplateVersionOutcome;
         typedef Aws::Utils::Outcome<CreateTemplateSyncConfigResult, ProtonError> CreateTemplateSyncConfigOutcome;
+        typedef Aws::Utils::Outcome<DeleteComponentResult, ProtonError> DeleteComponentOutcome;
         typedef Aws::Utils::Outcome<DeleteEnvironmentResult, ProtonError> DeleteEnvironmentOutcome;
         typedef Aws::Utils::Outcome<DeleteEnvironmentAccountConnectionResult, ProtonError> DeleteEnvironmentAccountConnectionOutcome;
         typedef Aws::Utils::Outcome<DeleteEnvironmentTemplateResult, ProtonError> DeleteEnvironmentTemplateOutcome;
@@ -208,6 +227,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteServiceTemplateVersionResult, ProtonError> DeleteServiceTemplateVersionOutcome;
         typedef Aws::Utils::Outcome<DeleteTemplateSyncConfigResult, ProtonError> DeleteTemplateSyncConfigOutcome;
         typedef Aws::Utils::Outcome<GetAccountSettingsResult, ProtonError> GetAccountSettingsOutcome;
+        typedef Aws::Utils::Outcome<GetComponentResult, ProtonError> GetComponentOutcome;
         typedef Aws::Utils::Outcome<GetEnvironmentResult, ProtonError> GetEnvironmentOutcome;
         typedef Aws::Utils::Outcome<GetEnvironmentAccountConnectionResult, ProtonError> GetEnvironmentAccountConnectionOutcome;
         typedef Aws::Utils::Outcome<GetEnvironmentTemplateResult, ProtonError> GetEnvironmentTemplateOutcome;
@@ -220,6 +240,9 @@ namespace Model
         typedef Aws::Utils::Outcome<GetServiceTemplateVersionResult, ProtonError> GetServiceTemplateVersionOutcome;
         typedef Aws::Utils::Outcome<GetTemplateSyncConfigResult, ProtonError> GetTemplateSyncConfigOutcome;
         typedef Aws::Utils::Outcome<GetTemplateSyncStatusResult, ProtonError> GetTemplateSyncStatusOutcome;
+        typedef Aws::Utils::Outcome<ListComponentOutputsResult, ProtonError> ListComponentOutputsOutcome;
+        typedef Aws::Utils::Outcome<ListComponentProvisionedResourcesResult, ProtonError> ListComponentProvisionedResourcesOutcome;
+        typedef Aws::Utils::Outcome<ListComponentsResult, ProtonError> ListComponentsOutcome;
         typedef Aws::Utils::Outcome<ListEnvironmentAccountConnectionsResult, ProtonError> ListEnvironmentAccountConnectionsOutcome;
         typedef Aws::Utils::Outcome<ListEnvironmentOutputsResult, ProtonError> ListEnvironmentOutputsOutcome;
         typedef Aws::Utils::Outcome<ListEnvironmentProvisionedResourcesResult, ProtonError> ListEnvironmentProvisionedResourcesOutcome;
@@ -242,6 +265,7 @@ namespace Model
         typedef Aws::Utils::Outcome<TagResourceResult, ProtonError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, ProtonError> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateAccountSettingsResult, ProtonError> UpdateAccountSettingsOutcome;
+        typedef Aws::Utils::Outcome<UpdateComponentResult, ProtonError> UpdateComponentOutcome;
         typedef Aws::Utils::Outcome<UpdateEnvironmentResult, ProtonError> UpdateEnvironmentOutcome;
         typedef Aws::Utils::Outcome<UpdateEnvironmentAccountConnectionResult, ProtonError> UpdateEnvironmentAccountConnectionOutcome;
         typedef Aws::Utils::Outcome<UpdateEnvironmentTemplateResult, ProtonError> UpdateEnvironmentTemplateOutcome;
@@ -254,9 +278,11 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateTemplateSyncConfigResult, ProtonError> UpdateTemplateSyncConfigOutcome;
 
         typedef std::future<AcceptEnvironmentAccountConnectionOutcome> AcceptEnvironmentAccountConnectionOutcomeCallable;
+        typedef std::future<CancelComponentDeploymentOutcome> CancelComponentDeploymentOutcomeCallable;
         typedef std::future<CancelEnvironmentDeploymentOutcome> CancelEnvironmentDeploymentOutcomeCallable;
         typedef std::future<CancelServiceInstanceDeploymentOutcome> CancelServiceInstanceDeploymentOutcomeCallable;
         typedef std::future<CancelServicePipelineDeploymentOutcome> CancelServicePipelineDeploymentOutcomeCallable;
+        typedef std::future<CreateComponentOutcome> CreateComponentOutcomeCallable;
         typedef std::future<CreateEnvironmentOutcome> CreateEnvironmentOutcomeCallable;
         typedef std::future<CreateEnvironmentAccountConnectionOutcome> CreateEnvironmentAccountConnectionOutcomeCallable;
         typedef std::future<CreateEnvironmentTemplateOutcome> CreateEnvironmentTemplateOutcomeCallable;
@@ -266,6 +292,7 @@ namespace Model
         typedef std::future<CreateServiceTemplateOutcome> CreateServiceTemplateOutcomeCallable;
         typedef std::future<CreateServiceTemplateVersionOutcome> CreateServiceTemplateVersionOutcomeCallable;
         typedef std::future<CreateTemplateSyncConfigOutcome> CreateTemplateSyncConfigOutcomeCallable;
+        typedef std::future<DeleteComponentOutcome> DeleteComponentOutcomeCallable;
         typedef std::future<DeleteEnvironmentOutcome> DeleteEnvironmentOutcomeCallable;
         typedef std::future<DeleteEnvironmentAccountConnectionOutcome> DeleteEnvironmentAccountConnectionOutcomeCallable;
         typedef std::future<DeleteEnvironmentTemplateOutcome> DeleteEnvironmentTemplateOutcomeCallable;
@@ -276,6 +303,7 @@ namespace Model
         typedef std::future<DeleteServiceTemplateVersionOutcome> DeleteServiceTemplateVersionOutcomeCallable;
         typedef std::future<DeleteTemplateSyncConfigOutcome> DeleteTemplateSyncConfigOutcomeCallable;
         typedef std::future<GetAccountSettingsOutcome> GetAccountSettingsOutcomeCallable;
+        typedef std::future<GetComponentOutcome> GetComponentOutcomeCallable;
         typedef std::future<GetEnvironmentOutcome> GetEnvironmentOutcomeCallable;
         typedef std::future<GetEnvironmentAccountConnectionOutcome> GetEnvironmentAccountConnectionOutcomeCallable;
         typedef std::future<GetEnvironmentTemplateOutcome> GetEnvironmentTemplateOutcomeCallable;
@@ -288,6 +316,9 @@ namespace Model
         typedef std::future<GetServiceTemplateVersionOutcome> GetServiceTemplateVersionOutcomeCallable;
         typedef std::future<GetTemplateSyncConfigOutcome> GetTemplateSyncConfigOutcomeCallable;
         typedef std::future<GetTemplateSyncStatusOutcome> GetTemplateSyncStatusOutcomeCallable;
+        typedef std::future<ListComponentOutputsOutcome> ListComponentOutputsOutcomeCallable;
+        typedef std::future<ListComponentProvisionedResourcesOutcome> ListComponentProvisionedResourcesOutcomeCallable;
+        typedef std::future<ListComponentsOutcome> ListComponentsOutcomeCallable;
         typedef std::future<ListEnvironmentAccountConnectionsOutcome> ListEnvironmentAccountConnectionsOutcomeCallable;
         typedef std::future<ListEnvironmentOutputsOutcome> ListEnvironmentOutputsOutcomeCallable;
         typedef std::future<ListEnvironmentProvisionedResourcesOutcome> ListEnvironmentProvisionedResourcesOutcomeCallable;
@@ -310,6 +341,7 @@ namespace Model
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateAccountSettingsOutcome> UpdateAccountSettingsOutcomeCallable;
+        typedef std::future<UpdateComponentOutcome> UpdateComponentOutcomeCallable;
         typedef std::future<UpdateEnvironmentOutcome> UpdateEnvironmentOutcomeCallable;
         typedef std::future<UpdateEnvironmentAccountConnectionOutcome> UpdateEnvironmentAccountConnectionOutcomeCallable;
         typedef std::future<UpdateEnvironmentTemplateOutcome> UpdateEnvironmentTemplateOutcomeCallable;
@@ -325,9 +357,11 @@ namespace Model
   class ProtonClient;
 
     typedef std::function<void(const ProtonClient*, const Model::AcceptEnvironmentAccountConnectionRequest&, const Model::AcceptEnvironmentAccountConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AcceptEnvironmentAccountConnectionResponseReceivedHandler;
+    typedef std::function<void(const ProtonClient*, const Model::CancelComponentDeploymentRequest&, const Model::CancelComponentDeploymentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelComponentDeploymentResponseReceivedHandler;
     typedef std::function<void(const ProtonClient*, const Model::CancelEnvironmentDeploymentRequest&, const Model::CancelEnvironmentDeploymentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelEnvironmentDeploymentResponseReceivedHandler;
     typedef std::function<void(const ProtonClient*, const Model::CancelServiceInstanceDeploymentRequest&, const Model::CancelServiceInstanceDeploymentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelServiceInstanceDeploymentResponseReceivedHandler;
     typedef std::function<void(const ProtonClient*, const Model::CancelServicePipelineDeploymentRequest&, const Model::CancelServicePipelineDeploymentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelServicePipelineDeploymentResponseReceivedHandler;
+    typedef std::function<void(const ProtonClient*, const Model::CreateComponentRequest&, const Model::CreateComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateComponentResponseReceivedHandler;
     typedef std::function<void(const ProtonClient*, const Model::CreateEnvironmentRequest&, const Model::CreateEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEnvironmentResponseReceivedHandler;
     typedef std::function<void(const ProtonClient*, const Model::CreateEnvironmentAccountConnectionRequest&, const Model::CreateEnvironmentAccountConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEnvironmentAccountConnectionResponseReceivedHandler;
     typedef std::function<void(const ProtonClient*, const Model::CreateEnvironmentTemplateRequest&, const Model::CreateEnvironmentTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEnvironmentTemplateResponseReceivedHandler;
@@ -337,6 +371,7 @@ namespace Model
     typedef std::function<void(const ProtonClient*, const Model::CreateServiceTemplateRequest&, const Model::CreateServiceTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateServiceTemplateResponseReceivedHandler;
     typedef std::function<void(const ProtonClient*, const Model::CreateServiceTemplateVersionRequest&, const Model::CreateServiceTemplateVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateServiceTemplateVersionResponseReceivedHandler;
     typedef std::function<void(const ProtonClient*, const Model::CreateTemplateSyncConfigRequest&, const Model::CreateTemplateSyncConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTemplateSyncConfigResponseReceivedHandler;
+    typedef std::function<void(const ProtonClient*, const Model::DeleteComponentRequest&, const Model::DeleteComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteComponentResponseReceivedHandler;
     typedef std::function<void(const ProtonClient*, const Model::DeleteEnvironmentRequest&, const Model::DeleteEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEnvironmentResponseReceivedHandler;
     typedef std::function<void(const ProtonClient*, const Model::DeleteEnvironmentAccountConnectionRequest&, const Model::DeleteEnvironmentAccountConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEnvironmentAccountConnectionResponseReceivedHandler;
     typedef std::function<void(const ProtonClient*, const Model::DeleteEnvironmentTemplateRequest&, const Model::DeleteEnvironmentTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEnvironmentTemplateResponseReceivedHandler;
@@ -347,6 +382,7 @@ namespace Model
     typedef std::function<void(const ProtonClient*, const Model::DeleteServiceTemplateVersionRequest&, const Model::DeleteServiceTemplateVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteServiceTemplateVersionResponseReceivedHandler;
     typedef std::function<void(const ProtonClient*, const Model::DeleteTemplateSyncConfigRequest&, const Model::DeleteTemplateSyncConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTemplateSyncConfigResponseReceivedHandler;
     typedef std::function<void(const ProtonClient*, const Model::GetAccountSettingsRequest&, const Model::GetAccountSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccountSettingsResponseReceivedHandler;
+    typedef std::function<void(const ProtonClient*, const Model::GetComponentRequest&, const Model::GetComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetComponentResponseReceivedHandler;
     typedef std::function<void(const ProtonClient*, const Model::GetEnvironmentRequest&, const Model::GetEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEnvironmentResponseReceivedHandler;
     typedef std::function<void(const ProtonClient*, const Model::GetEnvironmentAccountConnectionRequest&, const Model::GetEnvironmentAccountConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEnvironmentAccountConnectionResponseReceivedHandler;
     typedef std::function<void(const ProtonClient*, const Model::GetEnvironmentTemplateRequest&, const Model::GetEnvironmentTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEnvironmentTemplateResponseReceivedHandler;
@@ -359,6 +395,9 @@ namespace Model
     typedef std::function<void(const ProtonClient*, const Model::GetServiceTemplateVersionRequest&, const Model::GetServiceTemplateVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetServiceTemplateVersionResponseReceivedHandler;
     typedef std::function<void(const ProtonClient*, const Model::GetTemplateSyncConfigRequest&, const Model::GetTemplateSyncConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTemplateSyncConfigResponseReceivedHandler;
     typedef std::function<void(const ProtonClient*, const Model::GetTemplateSyncStatusRequest&, const Model::GetTemplateSyncStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTemplateSyncStatusResponseReceivedHandler;
+    typedef std::function<void(const ProtonClient*, const Model::ListComponentOutputsRequest&, const Model::ListComponentOutputsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListComponentOutputsResponseReceivedHandler;
+    typedef std::function<void(const ProtonClient*, const Model::ListComponentProvisionedResourcesRequest&, const Model::ListComponentProvisionedResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListComponentProvisionedResourcesResponseReceivedHandler;
+    typedef std::function<void(const ProtonClient*, const Model::ListComponentsRequest&, const Model::ListComponentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListComponentsResponseReceivedHandler;
     typedef std::function<void(const ProtonClient*, const Model::ListEnvironmentAccountConnectionsRequest&, const Model::ListEnvironmentAccountConnectionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEnvironmentAccountConnectionsResponseReceivedHandler;
     typedef std::function<void(const ProtonClient*, const Model::ListEnvironmentOutputsRequest&, const Model::ListEnvironmentOutputsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEnvironmentOutputsResponseReceivedHandler;
     typedef std::function<void(const ProtonClient*, const Model::ListEnvironmentProvisionedResourcesRequest&, const Model::ListEnvironmentProvisionedResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEnvironmentProvisionedResourcesResponseReceivedHandler;
@@ -381,6 +420,7 @@ namespace Model
     typedef std::function<void(const ProtonClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const ProtonClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const ProtonClient*, const Model::UpdateAccountSettingsRequest&, const Model::UpdateAccountSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAccountSettingsResponseReceivedHandler;
+    typedef std::function<void(const ProtonClient*, const Model::UpdateComponentRequest&, const Model::UpdateComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateComponentResponseReceivedHandler;
     typedef std::function<void(const ProtonClient*, const Model::UpdateEnvironmentRequest&, const Model::UpdateEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEnvironmentResponseReceivedHandler;
     typedef std::function<void(const ProtonClient*, const Model::UpdateEnvironmentAccountConnectionRequest&, const Model::UpdateEnvironmentAccountConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEnvironmentAccountConnectionResponseReceivedHandler;
     typedef std::function<void(const ProtonClient*, const Model::UpdateEnvironmentTemplateRequest&, const Model::UpdateEnvironmentTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEnvironmentTemplateResponseReceivedHandler;
@@ -535,6 +575,28 @@ namespace Model
         virtual void AcceptEnvironmentAccountConnectionAsync(const Model::AcceptEnvironmentAccountConnectionRequest& request, const AcceptEnvironmentAccountConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Attempts to cancel a component deployment (for a component that is in the
+         * <code>IN_PROGRESS</code> deployment status).</p> <p>For more information about
+         * components, see <a
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
+         * components</a> in the <i>Proton Administrator Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CancelComponentDeployment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CancelComponentDeploymentOutcome CancelComponentDeployment(const Model::CancelComponentDeploymentRequest& request) const;
+
+        /**
+         * A Callable wrapper for CancelComponentDeployment that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CancelComponentDeploymentOutcomeCallable CancelComponentDeploymentCallable(const Model::CancelComponentDeploymentRequest& request) const;
+
+        /**
+         * An Async wrapper for CancelComponentDeployment that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CancelComponentDeploymentAsync(const Model::CancelComponentDeploymentRequest& request, const CancelComponentDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Attempts to cancel an environment deployment on an <a>UpdateEnvironment</a>
          * action, if the deployment is <code>IN_PROGRESS</code>. For more information, see
          * <a
@@ -623,6 +685,27 @@ namespace Model
          * An Async wrapper for CancelServicePipelineDeployment that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CancelServicePipelineDeploymentAsync(const Model::CancelServicePipelineDeploymentRequest& request, const CancelServicePipelineDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Create an Proton component. A component is an infrastructure extension for a
+         * service instance.</p> <p>For more information about components, see <a
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
+         * components</a> in the <i>Proton Administrator Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateComponent">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateComponentOutcome CreateComponent(const Model::CreateComponentRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateComponent that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateComponentOutcomeCallable CreateComponentCallable(const Model::CreateComponentRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateComponent that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateComponentAsync(const Model::CreateComponentRequest& request, const CreateComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deploy a new environment. An Proton environment is created from an
@@ -851,6 +934,27 @@ namespace Model
         virtual void CreateTemplateSyncConfigAsync(const Model::CreateTemplateSyncConfigRequest& request, const CreateTemplateSyncConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Delete an Proton component resource.</p> <p>For more information about
+         * components, see <a
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
+         * components</a> in the <i>Proton Administrator Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteComponent">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteComponentOutcome DeleteComponent(const Model::DeleteComponentRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteComponent that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteComponentOutcomeCallable DeleteComponentCallable(const Model::DeleteComponentRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteComponent that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteComponentAsync(const Model::DeleteComponentRequest& request, const DeleteComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Delete an environment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteEnvironment">AWS
          * API Reference</a></p>
@@ -956,7 +1060,12 @@ namespace Model
         virtual void DeleteRepositoryAsync(const Model::DeleteRepositoryRequest& request, const DeleteRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Delete a service.</p><p><h3>See Also:</h3>   <a
+         * <p>Delete a service, with its instances and pipeline.</p>  <p>You can't
+         * delete a service if it has any service instances that have components attached
+         * to them.</p> <p>For more information about components, see <a
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
+         * components</a> in the <i>Proton Administrator Guide</i>.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteService">AWS
          * API Reference</a></p>
          */
@@ -1052,7 +1161,28 @@ namespace Model
         virtual void GetAccountSettingsAsync(const Model::GetAccountSettingsRequest& request, const GetAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Get detail data for an environment.</p><p><h3>See Also:</h3>   <a
+         * <p>Get detailed data for a component.</p> <p>For more information about
+         * components, see <a
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
+         * components</a> in the <i>Proton Administrator Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetComponent">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetComponentOutcome GetComponent(const Model::GetComponentRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetComponent that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetComponentOutcomeCallable GetComponentCallable(const Model::GetComponentRequest& request) const;
+
+        /**
+         * An Async wrapper for GetComponent that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetComponentAsync(const Model::GetComponentRequest& request, const GetComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Get detailed data for an environment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetEnvironment">AWS
          * API Reference</a></p>
          */
@@ -1069,7 +1199,7 @@ namespace Model
         virtual void GetEnvironmentAsync(const Model::GetEnvironmentRequest& request, const GetEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>In an environment account, view the detail data for an environment account
+         * <p>In an environment account, get the detailed data for an environment account
          * connection.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
          * account connections</a> in the <i>Proton Administrator guide</i>.</p><p><h3>See
@@ -1090,7 +1220,7 @@ namespace Model
         virtual void GetEnvironmentAccountConnectionAsync(const Model::GetEnvironmentAccountConnectionRequest& request, const GetEnvironmentAccountConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Get detail data for an environment template.</p><p><h3>See Also:</h3>   <a
+         * <p>Get detailed data for an environment template.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetEnvironmentTemplate">AWS
          * API Reference</a></p>
          */
@@ -1107,7 +1237,7 @@ namespace Model
         virtual void GetEnvironmentTemplateAsync(const Model::GetEnvironmentTemplateRequest& request, const GetEnvironmentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>View detail data for a major or minor version of an environment
+         * <p>Get detailed data for a major or minor version of an environment
          * template.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetEnvironmentTemplateVersion">AWS
          * API Reference</a></p>
@@ -1167,7 +1297,7 @@ namespace Model
         virtual void GetRepositorySyncStatusAsync(const Model::GetRepositorySyncStatusRequest& request, const GetRepositorySyncStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Get detail data for a service.</p><p><h3>See Also:</h3>   <a
+         * <p>Get detailed data for a service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetService">AWS
          * API Reference</a></p>
          */
@@ -1184,7 +1314,7 @@ namespace Model
         virtual void GetServiceAsync(const Model::GetServiceRequest& request, const GetServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Get detail data for a service instance. A service instance is an
+         * <p>Get detailed data for a service instance. A service instance is an
          * instantiation of service template and it runs in a specific
          * environment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceInstance">AWS
@@ -1203,7 +1333,7 @@ namespace Model
         virtual void GetServiceInstanceAsync(const Model::GetServiceInstanceRequest& request, const GetServiceInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Get detail data for a service template.</p><p><h3>See Also:</h3>   <a
+         * <p>Get detailed data for a service template.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceTemplate">AWS
          * API Reference</a></p>
          */
@@ -1220,7 +1350,7 @@ namespace Model
         virtual void GetServiceTemplateAsync(const Model::GetServiceTemplateRequest& request, const GetServiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>View detail data for a major or minor version of a service
+         * <p>Get detailed data for a major or minor version of a service
          * template.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceTemplateVersion">AWS
          * API Reference</a></p>
@@ -1271,6 +1401,70 @@ namespace Model
          * An Async wrapper for GetTemplateSyncStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetTemplateSyncStatusAsync(const Model::GetTemplateSyncStatusRequest& request, const GetTemplateSyncStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Get a list of component Infrastructure as Code (IaC) outputs.</p> <p>For more
+         * information about components, see <a
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
+         * components</a> in the <i>Proton Administrator Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListComponentOutputs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListComponentOutputsOutcome ListComponentOutputs(const Model::ListComponentOutputsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListComponentOutputs that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListComponentOutputsOutcomeCallable ListComponentOutputsCallable(const Model::ListComponentOutputsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListComponentOutputs that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListComponentOutputsAsync(const Model::ListComponentOutputsRequest& request, const ListComponentOutputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>List provisioned resources for a component with details.</p> <p>For more
+         * information about components, see <a
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
+         * components</a> in the <i>Proton Administrator Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListComponentProvisionedResources">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListComponentProvisionedResourcesOutcome ListComponentProvisionedResources(const Model::ListComponentProvisionedResourcesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListComponentProvisionedResources that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListComponentProvisionedResourcesOutcomeCallable ListComponentProvisionedResourcesCallable(const Model::ListComponentProvisionedResourcesRequest& request) const;
+
+        /**
+         * An Async wrapper for ListComponentProvisionedResources that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListComponentProvisionedResourcesAsync(const Model::ListComponentProvisionedResourcesRequest& request, const ListComponentProvisionedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>List components with summary data. You can filter the result list by
+         * environment, service, or a single service instance.</p> <p>For more information
+         * about components, see <a
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
+         * components</a> in the <i>Proton Administrator Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListComponents">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListComponentsOutcome ListComponents(const Model::ListComponentsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListComponents that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListComponentsOutcomeCallable ListComponentsCallable(const Model::ListComponentsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListComponents that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListComponentsAsync(const Model::ListComponentsRequest& request, const ListComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>View a list of environment account connections.</p> <p>For more information,
@@ -1417,8 +1611,8 @@ namespace Model
         virtual void ListRepositorySyncDefinitionsAsync(const Model::ListRepositorySyncDefinitionsRequest& request, const ListRepositorySyncDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>View a list service instance infrastructure as code outputs with detail
-         * data.</p><p><h3>See Also:</h3>   <a
+         * <p>Get a list service of instance Infrastructure as Code (IaC)
+         * outputs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListServiceInstanceOutputs">AWS
          * API Reference</a></p>
          */
@@ -1453,8 +1647,7 @@ namespace Model
         virtual void ListServiceInstanceProvisionedResourcesAsync(const Model::ListServiceInstanceProvisionedResourcesRequest& request, const ListServiceInstanceProvisionedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>List service instances with summaries of detail data.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>List service instances with summary data.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListServiceInstances">AWS
          * API Reference</a></p>
          */
@@ -1471,8 +1664,8 @@ namespace Model
         virtual void ListServiceInstancesAsync(const Model::ListServiceInstancesRequest& request, const ListServiceInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>View a list service pipeline infrastructure as code outputs with
-         * detail.</p><p><h3>See Also:</h3>   <a
+         * <p>Get a list of service pipeline Infrastructure as Code (IaC)
+         * outputs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListServicePipelineOutputs">AWS
          * API Reference</a></p>
          */
@@ -1691,6 +1884,30 @@ namespace Model
         virtual void UpdateAccountSettingsAsync(const Model::UpdateAccountSettingsRequest& request, const UpdateAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Update a component.</p> <p>There are a few modes for updating a component.
+         * The <code>deploymentType</code> field defines the mode.</p>  <p>You can't
+         * update a component while its deployment status, or the deployment status of a
+         * service instance attached to it, is <code>IN_PROGRESS</code>.</p>  <p>For
+         * more information about components, see <a
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
+         * components</a> in the <i>Proton Administrator Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateComponent">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateComponentOutcome UpdateComponent(const Model::UpdateComponentRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateComponent that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateComponentOutcomeCallable UpdateComponentCallable(const Model::UpdateComponentRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateComponent that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateComponentAsync(const Model::UpdateComponentRequest& request, const UpdateComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Update an environment.</p> <p>If the environment is associated with an
          * environment account connection, <i>don't</i> update or include the
          * <code>protonServiceRoleArn</code> and <code>provisioningRepository</code>
@@ -1808,8 +2025,12 @@ namespace Model
          * instances.</p>  <p>Existing service instances and the service pipeline
          * <i>can't</i> be edited using this API. They can only be deleted.</p> 
          * <p>Use the <code>description</code> parameter to modify the description.</p>
-         * <p>Edit the <code>spec</code> parameter to add or delete
-         * instances.</p><p><h3>See Also:</h3>   <a
+         * <p>Edit the <code>spec</code> parameter to add or delete instances.</p> 
+         * <p>You can't delete a service instance (remove it from the spec) if it has an
+         * attached component.</p> <p>For more information about components, see <a
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
+         * components</a> in the <i>Proton Administrator Guide</i>.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateService">AWS
          * API Reference</a></p>
          */
@@ -1826,23 +2047,14 @@ namespace Model
         virtual void UpdateServiceAsync(const Model::UpdateServiceRequest& request, const UpdateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Update a service instance.</p> <p>There are four modes for updating a service
-         * instance. The <code>deploymentType</code> field defines the mode.</p> <dl> <dt/>
-         * <dd> <p> <code>NONE</code> </p> <p>In this mode, a deployment <i>doesn't</i>
-         * occur. Only the requested metadata parameters are updated.</p> </dd> <dt/> <dd>
-         * <p> <code>CURRENT_VERSION</code> </p> <p>In this mode, the service instance is
-         * deployed and updated with the new spec that you provide. Only requested
-         * parameters are updated. <i>Don’t</i> include minor or major version parameters
-         * when you use this <code>deployment-type</code>.</p> </dd> <dt/> <dd> <p>
-         * <code>MINOR_VERSION</code> </p> <p>In this mode, the service instance is
-         * deployed and updated with the published, recommended (latest) minor version of
-         * the current major version in use, by default. You can also specify a different
-         * minor version of the current major version in use.</p> </dd> <dt/> <dd> <p>
-         * <code>MAJOR_VERSION</code> </p> <p>In this mode, the service instance is
-         * deployed and updated with the published, recommended (latest) major and minor
-         * version of the current template, by default. You can also specify a different
-         * major version that's higher than the major version in use and a minor
-         * version.</p> </dd> </dl><p><h3>See Also:</h3>   <a
+         * <p>Update a service instance.</p> <p>There are a few modes for updating a
+         * service instance. The <code>deploymentType</code> field defines the mode.</p>
+         *  <p>You can't update a service instance while its deployment status, or
+         * the deployment status of a component attached to it, is
+         * <code>IN_PROGRESS</code>.</p> <p>For more information about components, see <a
+         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
+         * components</a> in the <i>Proton Administrator Guide</i>.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServiceInstance">AWS
          * API Reference</a></p>
          */
@@ -1950,9 +2162,11 @@ namespace Model
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void AcceptEnvironmentAccountConnectionAsyncHelper(const Model::AcceptEnvironmentAccountConnectionRequest& request, const AcceptEnvironmentAccountConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CancelComponentDeploymentAsyncHelper(const Model::CancelComponentDeploymentRequest& request, const CancelComponentDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CancelEnvironmentDeploymentAsyncHelper(const Model::CancelEnvironmentDeploymentRequest& request, const CancelEnvironmentDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CancelServiceInstanceDeploymentAsyncHelper(const Model::CancelServiceInstanceDeploymentRequest& request, const CancelServiceInstanceDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CancelServicePipelineDeploymentAsyncHelper(const Model::CancelServicePipelineDeploymentRequest& request, const CancelServicePipelineDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateComponentAsyncHelper(const Model::CreateComponentRequest& request, const CreateComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateEnvironmentAsyncHelper(const Model::CreateEnvironmentRequest& request, const CreateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateEnvironmentAccountConnectionAsyncHelper(const Model::CreateEnvironmentAccountConnectionRequest& request, const CreateEnvironmentAccountConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateEnvironmentTemplateAsyncHelper(const Model::CreateEnvironmentTemplateRequest& request, const CreateEnvironmentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1962,6 +2176,7 @@ namespace Model
         void CreateServiceTemplateAsyncHelper(const Model::CreateServiceTemplateRequest& request, const CreateServiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateServiceTemplateVersionAsyncHelper(const Model::CreateServiceTemplateVersionRequest& request, const CreateServiceTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateTemplateSyncConfigAsyncHelper(const Model::CreateTemplateSyncConfigRequest& request, const CreateTemplateSyncConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteComponentAsyncHelper(const Model::DeleteComponentRequest& request, const DeleteComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteEnvironmentAsyncHelper(const Model::DeleteEnvironmentRequest& request, const DeleteEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteEnvironmentAccountConnectionAsyncHelper(const Model::DeleteEnvironmentAccountConnectionRequest& request, const DeleteEnvironmentAccountConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteEnvironmentTemplateAsyncHelper(const Model::DeleteEnvironmentTemplateRequest& request, const DeleteEnvironmentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1972,6 +2187,7 @@ namespace Model
         void DeleteServiceTemplateVersionAsyncHelper(const Model::DeleteServiceTemplateVersionRequest& request, const DeleteServiceTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTemplateSyncConfigAsyncHelper(const Model::DeleteTemplateSyncConfigRequest& request, const DeleteTemplateSyncConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAccountSettingsAsyncHelper(const Model::GetAccountSettingsRequest& request, const GetAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetComponentAsyncHelper(const Model::GetComponentRequest& request, const GetComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetEnvironmentAsyncHelper(const Model::GetEnvironmentRequest& request, const GetEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetEnvironmentAccountConnectionAsyncHelper(const Model::GetEnvironmentAccountConnectionRequest& request, const GetEnvironmentAccountConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetEnvironmentTemplateAsyncHelper(const Model::GetEnvironmentTemplateRequest& request, const GetEnvironmentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1984,6 +2200,9 @@ namespace Model
         void GetServiceTemplateVersionAsyncHelper(const Model::GetServiceTemplateVersionRequest& request, const GetServiceTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTemplateSyncConfigAsyncHelper(const Model::GetTemplateSyncConfigRequest& request, const GetTemplateSyncConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTemplateSyncStatusAsyncHelper(const Model::GetTemplateSyncStatusRequest& request, const GetTemplateSyncStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListComponentOutputsAsyncHelper(const Model::ListComponentOutputsRequest& request, const ListComponentOutputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListComponentProvisionedResourcesAsyncHelper(const Model::ListComponentProvisionedResourcesRequest& request, const ListComponentProvisionedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListComponentsAsyncHelper(const Model::ListComponentsRequest& request, const ListComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListEnvironmentAccountConnectionsAsyncHelper(const Model::ListEnvironmentAccountConnectionsRequest& request, const ListEnvironmentAccountConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListEnvironmentOutputsAsyncHelper(const Model::ListEnvironmentOutputsRequest& request, const ListEnvironmentOutputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListEnvironmentProvisionedResourcesAsyncHelper(const Model::ListEnvironmentProvisionedResourcesRequest& request, const ListEnvironmentProvisionedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2006,6 +2225,7 @@ namespace Model
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateAccountSettingsAsyncHelper(const Model::UpdateAccountSettingsRequest& request, const UpdateAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateComponentAsyncHelper(const Model::UpdateComponentRequest& request, const UpdateComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateEnvironmentAsyncHelper(const Model::UpdateEnvironmentRequest& request, const UpdateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateEnvironmentAccountConnectionAsyncHelper(const Model::UpdateEnvironmentAccountConnectionRequest& request, const UpdateEnvironmentAccountConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateEnvironmentTemplateAsyncHelper(const Model::UpdateEnvironmentTemplateRequest& request, const UpdateEnvironmentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

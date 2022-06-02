@@ -211,8 +211,7 @@ namespace Model
         virtual void CreateDomainAsync(const Model::CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified domain from the Amazon Connect Voice ID
-         * system.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified domain from Voice ID.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/DeleteDomain">AWS
          * API Reference</a></p>
          */
@@ -229,8 +228,7 @@ namespace Model
         virtual void DeleteDomainAsync(const Model::DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified fraudster from the Amazon Connect Voice ID
-         * system.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified fraudster from Voice ID.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/DeleteFraudster">AWS
          * API Reference</a></p>
          */
@@ -247,8 +245,7 @@ namespace Model
         virtual void DeleteFraudsterAsync(const Model::DeleteFraudsterRequest& request, const DeleteFraudsterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified speaker from the Amazon Connect Voice ID
-         * system.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified speaker from Voice ID.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/DeleteSpeaker">AWS
          * API Reference</a></p>
          */
@@ -462,13 +459,13 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Opts out a speaker from Voice ID system. A speaker can be opted out
-         * regardless of whether or not they already exist in the system. If they don't yet
-         * exist, a new speaker is created in an opted out state. If they already exist,
-         * their existing status is overridden and they are opted out. Enrollment and
-         * evaluation authentication requests are rejected for opted out speakers, and
-         * opted out speakers have no voice embeddings stored in the system.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Opts out a speaker from Voice ID. A speaker can be opted out regardless of
+         * whether or not they already exist in Voice ID. If they don't yet exist, a new
+         * speaker is created in an opted out state. If they already exist, their existing
+         * status is overridden and they are opted out. Enrollment and evaluation
+         * authentication requests are rejected for opted out speakers, and opted out
+         * speakers have no voice embeddings stored in Voice ID.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/OptOutSpeaker">AWS
          * API Reference</a></p>
          */
@@ -521,8 +518,8 @@ namespace Model
         virtual void StartSpeakerEnrollmentJobAsync(const Model::StartSpeakerEnrollmentJobRequest& request, const StartSpeakerEnrollmentJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Tags an Amazon Connect Voice ID resource with the provided list of
-         * tags.</p><p><h3>See Also:</h3>   <a
+         * <p>Tags a Voice ID resource with the provided list of tags.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/TagResource">AWS
          * API Reference</a></p>
          */

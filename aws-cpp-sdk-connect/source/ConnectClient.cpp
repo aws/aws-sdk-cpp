@@ -41,6 +41,7 @@
 #include <aws/connect/model/CreateQuickConnectRequest.h>
 #include <aws/connect/model/CreateRoutingProfileRequest.h>
 #include <aws/connect/model/CreateSecurityProfileRequest.h>
+#include <aws/connect/model/CreateTaskTemplateRequest.h>
 #include <aws/connect/model/CreateUseCaseRequest.h>
 #include <aws/connect/model/CreateUserRequest.h>
 #include <aws/connect/model/CreateUserHierarchyGroupRequest.h>
@@ -52,6 +53,7 @@
 #include <aws/connect/model/DeleteIntegrationAssociationRequest.h>
 #include <aws/connect/model/DeleteQuickConnectRequest.h>
 #include <aws/connect/model/DeleteSecurityProfileRequest.h>
+#include <aws/connect/model/DeleteTaskTemplateRequest.h>
 #include <aws/connect/model/DeleteUseCaseRequest.h>
 #include <aws/connect/model/DeleteUserRequest.h>
 #include <aws/connect/model/DeleteUserHierarchyGroupRequest.h>
@@ -86,6 +88,7 @@
 #include <aws/connect/model/GetCurrentMetricDataRequest.h>
 #include <aws/connect/model/GetFederationTokenRequest.h>
 #include <aws/connect/model/GetMetricDataRequest.h>
+#include <aws/connect/model/GetTaskTemplateRequest.h>
 #include <aws/connect/model/ListAgentStatusesRequest.h>
 #include <aws/connect/model/ListApprovedOriginsRequest.h>
 #include <aws/connect/model/ListBotsRequest.h>
@@ -112,6 +115,7 @@
 #include <aws/connect/model/ListSecurityProfilePermissionsRequest.h>
 #include <aws/connect/model/ListSecurityProfilesRequest.h>
 #include <aws/connect/model/ListTagsForResourceRequest.h>
+#include <aws/connect/model/ListTaskTemplatesRequest.h>
 #include <aws/connect/model/ListUseCasesRequest.h>
 #include <aws/connect/model/ListUserHierarchyGroupsRequest.h>
 #include <aws/connect/model/ListUsersRequest.h>
@@ -131,6 +135,7 @@
 #include <aws/connect/model/StopContactStreamingRequest.h>
 #include <aws/connect/model/SuspendContactRecordingRequest.h>
 #include <aws/connect/model/TagResourceRequest.h>
+#include <aws/connect/model/TransferContactRequest.h>
 #include <aws/connect/model/UntagResourceRequest.h>
 #include <aws/connect/model/UpdateAgentStatusRequest.h>
 #include <aws/connect/model/UpdateContactRequest.h>
@@ -157,6 +162,7 @@
 #include <aws/connect/model/UpdateRoutingProfileNameRequest.h>
 #include <aws/connect/model/UpdateRoutingProfileQueuesRequest.h>
 #include <aws/connect/model/UpdateSecurityProfileRequest.h>
+#include <aws/connect/model/UpdateTaskTemplateRequest.h>
 #include <aws/connect/model/UpdateUserHierarchyRequest.h>
 #include <aws/connect/model/UpdateUserHierarchyGroupNameRequest.h>
 #include <aws/connect/model/UpdateUserHierarchyStructureRequest.h>
@@ -905,6 +911,38 @@ void ConnectClient::CreateSecurityProfileAsyncHelper(const CreateSecurityProfile
   handler(this, request, CreateSecurityProfile(request), context);
 }
 
+CreateTaskTemplateOutcome ConnectClient::CreateTaskTemplate(const CreateTaskTemplateRequest& request) const
+{
+  if (!request.InstanceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateTaskTemplate", "Required field: InstanceId, is not set");
+    return CreateTaskTemplateOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/instance/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegments("/task/template");
+  return CreateTaskTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateTaskTemplateOutcomeCallable ConnectClient::CreateTaskTemplateCallable(const CreateTaskTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateTaskTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateTaskTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectClient::CreateTaskTemplateAsync(const CreateTaskTemplateRequest& request, const CreateTaskTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateTaskTemplateAsyncHelper( request, handler, context ); } );
+}
+
+void ConnectClient::CreateTaskTemplateAsyncHelper(const CreateTaskTemplateRequest& request, const CreateTaskTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateTaskTemplate(request), context);
+}
+
 CreateUseCaseOutcome ConnectClient::CreateUseCase(const CreateUseCaseRequest& request) const
 {
   if (!request.InstanceIdHasBeenSet())
@@ -1289,6 +1327,44 @@ void ConnectClient::DeleteSecurityProfileAsync(const DeleteSecurityProfileReques
 void ConnectClient::DeleteSecurityProfileAsyncHelper(const DeleteSecurityProfileRequest& request, const DeleteSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteSecurityProfile(request), context);
+}
+
+DeleteTaskTemplateOutcome ConnectClient::DeleteTaskTemplate(const DeleteTaskTemplateRequest& request) const
+{
+  if (!request.InstanceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteTaskTemplate", "Required field: InstanceId, is not set");
+    return DeleteTaskTemplateOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  if (!request.TaskTemplateIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteTaskTemplate", "Required field: TaskTemplateId, is not set");
+    return DeleteTaskTemplateOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TaskTemplateId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/instance/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegments("/task/template/");
+  uri.AddPathSegment(request.GetTaskTemplateId());
+  return DeleteTaskTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteTaskTemplateOutcomeCallable ConnectClient::DeleteTaskTemplateCallable(const DeleteTaskTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteTaskTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteTaskTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectClient::DeleteTaskTemplateAsync(const DeleteTaskTemplateRequest& request, const DeleteTaskTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteTaskTemplateAsyncHelper( request, handler, context ); } );
+}
+
+void ConnectClient::DeleteTaskTemplateAsyncHelper(const DeleteTaskTemplateRequest& request, const DeleteTaskTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteTaskTemplate(request), context);
 }
 
 DeleteUseCaseOutcome ConnectClient::DeleteUseCase(const DeleteUseCaseRequest& request) const
@@ -2537,6 +2613,44 @@ void ConnectClient::GetMetricDataAsyncHelper(const GetMetricDataRequest& request
   handler(this, request, GetMetricData(request), context);
 }
 
+GetTaskTemplateOutcome ConnectClient::GetTaskTemplate(const GetTaskTemplateRequest& request) const
+{
+  if (!request.InstanceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetTaskTemplate", "Required field: InstanceId, is not set");
+    return GetTaskTemplateOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  if (!request.TaskTemplateIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetTaskTemplate", "Required field: TaskTemplateId, is not set");
+    return GetTaskTemplateOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TaskTemplateId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/instance/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegments("/task/template/");
+  uri.AddPathSegment(request.GetTaskTemplateId());
+  return GetTaskTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetTaskTemplateOutcomeCallable ConnectClient::GetTaskTemplateCallable(const GetTaskTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetTaskTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetTaskTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectClient::GetTaskTemplateAsync(const GetTaskTemplateRequest& request, const GetTaskTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetTaskTemplateAsyncHelper( request, handler, context ); } );
+}
+
+void ConnectClient::GetTaskTemplateAsyncHelper(const GetTaskTemplateRequest& request, const GetTaskTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetTaskTemplate(request), context);
+}
+
 ListAgentStatusesOutcome ConnectClient::ListAgentStatuses(const ListAgentStatusesRequest& request) const
 {
   if (!request.InstanceIdHasBeenSet())
@@ -3380,6 +3494,38 @@ void ConnectClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequ
   handler(this, request, ListTagsForResource(request), context);
 }
 
+ListTaskTemplatesOutcome ConnectClient::ListTaskTemplates(const ListTaskTemplatesRequest& request) const
+{
+  if (!request.InstanceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListTaskTemplates", "Required field: InstanceId, is not set");
+    return ListTaskTemplatesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/instance/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegments("/task/template");
+  return ListTaskTemplatesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListTaskTemplatesOutcomeCallable ConnectClient::ListTaskTemplatesCallable(const ListTaskTemplatesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListTaskTemplatesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTaskTemplates(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectClient::ListTaskTemplatesAsync(const ListTaskTemplatesRequest& request, const ListTaskTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListTaskTemplatesAsyncHelper( request, handler, context ); } );
+}
+
+void ConnectClient::ListTaskTemplatesAsyncHelper(const ListTaskTemplatesRequest& request, const ListTaskTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListTaskTemplates(request), context);
+}
+
 ListUseCasesOutcome ConnectClient::ListUseCases(const ListUseCasesRequest& request) const
 {
   if (!request.InstanceIdHasBeenSet())
@@ -3910,6 +4056,31 @@ void ConnectClient::TagResourceAsync(const TagResourceRequest& request, const Ta
 void ConnectClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, TagResource(request), context);
+}
+
+TransferContactOutcome ConnectClient::TransferContact(const TransferContactRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/contact/transfer");
+  return TransferContactOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+TransferContactOutcomeCallable ConnectClient::TransferContactCallable(const TransferContactRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< TransferContactOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TransferContact(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectClient::TransferContactAsync(const TransferContactRequest& request, const TransferContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->TransferContactAsyncHelper( request, handler, context ); } );
+}
+
+void ConnectClient::TransferContactAsyncHelper(const TransferContactRequest& request, const TransferContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, TransferContact(request), context);
 }
 
 UntagResourceOutcome ConnectClient::UntagResource(const UntagResourceRequest& request) const
@@ -4864,6 +5035,44 @@ void ConnectClient::UpdateSecurityProfileAsync(const UpdateSecurityProfileReques
 void ConnectClient::UpdateSecurityProfileAsyncHelper(const UpdateSecurityProfileRequest& request, const UpdateSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateSecurityProfile(request), context);
+}
+
+UpdateTaskTemplateOutcome ConnectClient::UpdateTaskTemplate(const UpdateTaskTemplateRequest& request) const
+{
+  if (!request.TaskTemplateIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateTaskTemplate", "Required field: TaskTemplateId, is not set");
+    return UpdateTaskTemplateOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TaskTemplateId]", false));
+  }
+  if (!request.InstanceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateTaskTemplate", "Required field: InstanceId, is not set");
+    return UpdateTaskTemplateOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/instance/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegments("/task/template/");
+  uri.AddPathSegment(request.GetTaskTemplateId());
+  return UpdateTaskTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateTaskTemplateOutcomeCallable ConnectClient::UpdateTaskTemplateCallable(const UpdateTaskTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateTaskTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateTaskTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectClient::UpdateTaskTemplateAsync(const UpdateTaskTemplateRequest& request, const UpdateTaskTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateTaskTemplateAsyncHelper( request, handler, context ); } );
+}
+
+void ConnectClient::UpdateTaskTemplateAsyncHelper(const UpdateTaskTemplateRequest& request, const UpdateTaskTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateTaskTemplate(request), context);
 }
 
 UpdateUserHierarchyOutcome ConnectClient::UpdateUserHierarchy(const UpdateUserHierarchyRequest& request) const
