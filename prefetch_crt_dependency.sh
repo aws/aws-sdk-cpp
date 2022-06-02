@@ -1,27 +1,22 @@
 #!/bin/sh
 CRT_URI_PREFIX=https://codeload.github.com/awslabs
-CRT_URI=${CRT_URI_PREFIX}/aws-crt-cpp/zip/b6d311d76b504bf8ace5134d3fca0e672c36c9c3
-CRT_AUTH_URI=${CRT_URI_PREFIX}/aws-c-auth/zip/517627e0e47f85d62988bdd093bbc79150ac6086
-CRT_CAL_URI=${CRT_URI_PREFIX}/aws-c-cal/zip/c4c5b175e05f2affe5e3f0203ca6c8bc5cdd8f51
+CRT_URI=${CRT_URI_PREFIX}/aws-crt-cpp/zip/1e31c173215cef18005831bff1f19a621dd870b6
+CRT_AUTH_URI=${CRT_URI_PREFIX}/aws-c-auth/zip/e1b95cca6f2248c28b66ddb40bcccd35a59cb8b5
+CRT_CAL_URI=${CRT_URI_PREFIX}/aws-c-cal/zip/7eb1d7360ea205ff275d2acc6cce2682063b643f
 
-CRT_COMMON_URI=${CRT_URI_PREFIX}/aws-c-common/zip/79e77e4238dc545da3d37992d4f7731206e29e16
-AWSBA_URI=${CRT_URI_PREFIX}/aws-build-accumulator/zip/ea0a5ce88ecccc9a75bdf8790921f11f5c76f17a
-AWS_TEMPLATES_URI=${CRT_URI_PREFIX}/aws-templates-for-cbmc-proofs/zip/1b94adc2db35a33d165fe49986d6927a0d5acae7
+CRT_COMMON_URI=${CRT_URI_PREFIX}/aws-c-common/zip/68f28f8df258390744f3c5b460250f8809161041
 
 CRT_COMPRESSION_URI=${CRT_URI_PREFIX}/aws-c-compression/zip/5fab8bc5ab5321d86f6d153b06062419080820ec
 CRT_EVENT_STREAM_URI=${CRT_URI_PREFIX}/aws-c-event-stream/zip/e87537be561d753ec82e783bc0929b1979c585f8
-CRT_HTTP_URI=${CRT_URI_PREFIX}/aws-c-http/zip/bf598f4c0aa91a8114a0e2a339a14ac83a44879f
-CRT_IO=${CRT_URI_PREFIX}/aws-c-io/zip/e79490145459c16997f19c39550dbf060e7e650e
-CRT_MQTT_URI=${CRT_URI_PREFIX}/aws-c-mqtt/zip/7a7a07a9d9f5be8d15baa7bec2c32cdc837523a7
-CRT_S3_URI=${CRT_URI_PREFIX}/aws-c-s3/zip/1ea630bf17101242409bc022cee618e143a7b1fa
+CRT_HTTP_URI=${CRT_URI_PREFIX}/aws-c-http/zip/3f8ffda541eab815646f739cef2b350d6e7d5406
+CRT_IO=${CRT_URI_PREFIX}/aws-c-io/zip/59b4225bb87021d44d7fd2509b54d7038f11b7e7
+CRT_MQTT_URI=${CRT_URI_PREFIX}/aws-c-mqtt/zip/6168e32bf9f745dec40df633b78baa03420b7f83
+CRT_S3_URI=${CRT_URI_PREFIX}/aws-c-s3/zip/92067b1f44523e70337e0c5eb00b80c9cf10b941
+CRT_SDKUTILS_URI=${CRT_URI_PREFIX}/aws-c-sdkutils/zip/e3c23f4aca31d9e66df25827645f72cbcbfb657a
 AWS_CHECKSUMS_URI=${CRT_URI_PREFIX}/aws-checksums/zip/41df3031b92120b6d8127b7b7122391d5ac6f33f
-AWS_LC_URI=${CRT_URI_PREFIX}/aws-lc/zip/d0a5455417d80e68581e197d95720c3fb25e3926
+AWS_LC_URI=${CRT_URI_PREFIX}/aws-lc/zip/11b50d39cf2378703a4ca6b6fee9d76a2e9852d1
 
-S2N_URI=${CRT_URI_PREFIX}/s2n/zip/4de98dcf20c476519c15241f92122b99fd2a9297
-S2N_TEMPLATES_MODEL_URI=${CRT_URI_PREFIX}/aws-verification-model-for-libcrypto/zip/42caa4790273b37cbdf303427b53f445ab1b3480
-S2N_TEMPLATES_URI=${CRT_URI_PREFIX}/aws-templates-for-cbmc-proofs/zip/7fdd7048b01e68fd549e20da1d216e34d719043a
-S2NBA_URI=${CRT_URI_PREFIX}/aws-build-accumulator/zip/ea0a5ce88ecccc9a75bdf8790921f11f5c76f17a
-
+S2N_URI=${CRT_URI_PREFIX}/s2n/zip/88c7ae4d3fd9b3e9e49fcecc9bee1ddb8099ae70
 
 echo "Removing CRT"
 rm -rf crt
@@ -43,11 +38,12 @@ curl ${CRT_HTTP_URI} --output crt/tmp/6.zip
 curl ${CRT_IO} --output crt/tmp/7.zip
 curl ${CRT_MQTT_URI} --output crt/tmp/8.zip
 curl ${CRT_S3_URI} --output crt/tmp/9.zip
-curl ${AWS_CHECKSUMS_URI} --output crt/tmp/10.zip
-curl ${AWS_LC_URI} --output crt/tmp/11.zip
-curl ${S2N_URI} --output crt/tmp/12.zip
+curl ${CRT_SDKUTILS_URI} --output crt/tmp/10.zip
+curl ${AWS_CHECKSUMS_URI} --output crt/tmp/11.zip
+curl ${AWS_LC_URI} --output crt/tmp/12.zip
+curl ${S2N_URI} --output crt/tmp/13.zip
 
-for a in `seq 1 12`; do
+for a in `seq 1 13`; do
     unzip crt/tmp/${a} -d crt/tmp
 done
 
@@ -60,31 +56,5 @@ done
 
 echo "Adjust S2N location"
 mv crt/aws-crt-cpp/crt/s2n-tls crt/aws-crt-cpp/crt/s2n
-
-echo "Fetching recursive dependancies"
-rm -rf crt/aws-crt-cpp/crt/s2n/tests/cbmc/aws-verification-model-for-libcrypto
-curl ${S2N_TEMPLATES_MODEL_URI} --output crt/aws-crt-cpp/crt/s2n/tests/cbmc/s2ntemplatesmodel.zip
-unzip crt/aws-crt-cpp/crt/s2n/tests/cbmc/s2ntemplatesmodel.zip -d crt/aws-crt-cpp/crt/s2n/tests/cbmc
-mv crt/aws-crt-cpp/crt/s2n/tests/cbmc/s2ntemplatesmodel-* crt/aws-crt-cpp/crt/s2n/tests/cbmc/aws-verification-model-for-libcrypto
-
-rm -rf crt/aws-crt-cpp/crt/s2n/tests/cbmc/templates
-curl ${S2N_TEMPLATES_URI} --output crt/aws-crt-cpp/crt/s2n/tests/cbmc/s2ntemplates.zip
-unzip crt/aws-crt-cpp/crt/s2n/tests/cbmc/s2ntemplates.zip -d crt/aws-crt-cpp/crt/s2n/tests/cbmc
-mv crt/aws-crt-cpp/crt/s2n/tests/cbmc/s2ntemplates-* crt/aws-crt-cpp/crt/s2n/tests/cbmc/templates
-
-rm -rf crt/aws-crt-cpp/crt/s2n/tests/litani 
-curl ${S2NBA_URI} --output crt/aws-crt-cpp/crt/s2n/tests/s2nba.zip
-unzip crt/aws-crt-cpp/crt/s2n/tests/s2nba.zip -d crt/aws-crt-cpp/crt/s2n/tests
-mv crt/aws-crt-cpp/crt/s2n/tests/s2nba-* crt/aws-crt-cpp/crt/s2n/tests/litani
-
-rm -rf crt/aws-crt-cpp/crt/aws-c-common/verification/cbmc/litani
-curl ${AWSBA_URI} --output crt/tmp/awsba.zip
-unzip crt/tmp/awsba.zip -d crt/tmp
-mv crt/tmp/aws-build-accumulator-* crt/aws-crt-cpp/crt/aws-c-common/verification/cbmc/litani
-
-rm -rf crt/aws-crt-cpp/crt/aws-c-common/verification/cbmc/templates
-curl ${AWS_TEMPLATES_URI} --output crt/tmp/awstemplates.zip
-unzip crt/tmp/awstemplates.zip -d crt/tmp
-mv crt/tmp/aws-templates-for-cbmc-proofs-* crt/aws-crt-cpp/crt/aws-c-common/verification/cbmc/templates
 
 echo "To complete setup run cmake -Bbuild; cmake --build build; cmake --build --target install"
