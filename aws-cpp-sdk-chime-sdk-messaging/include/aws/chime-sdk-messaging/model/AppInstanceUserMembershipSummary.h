@@ -71,32 +71,38 @@ namespace Model
 
 
     /**
-     * <p>The time at which a message was last read.</p>
+     * <p>The time at which an <code>AppInstanceUser</code> last marked a channel as
+     * read.</p>
      */
     inline const Aws::Utils::DateTime& GetReadMarkerTimestamp() const{ return m_readMarkerTimestamp; }
 
     /**
-     * <p>The time at which a message was last read.</p>
+     * <p>The time at which an <code>AppInstanceUser</code> last marked a channel as
+     * read.</p>
      */
     inline bool ReadMarkerTimestampHasBeenSet() const { return m_readMarkerTimestampHasBeenSet; }
 
     /**
-     * <p>The time at which a message was last read.</p>
+     * <p>The time at which an <code>AppInstanceUser</code> last marked a channel as
+     * read.</p>
      */
     inline void SetReadMarkerTimestamp(const Aws::Utils::DateTime& value) { m_readMarkerTimestampHasBeenSet = true; m_readMarkerTimestamp = value; }
 
     /**
-     * <p>The time at which a message was last read.</p>
+     * <p>The time at which an <code>AppInstanceUser</code> last marked a channel as
+     * read.</p>
      */
     inline void SetReadMarkerTimestamp(Aws::Utils::DateTime&& value) { m_readMarkerTimestampHasBeenSet = true; m_readMarkerTimestamp = std::move(value); }
 
     /**
-     * <p>The time at which a message was last read.</p>
+     * <p>The time at which an <code>AppInstanceUser</code> last marked a channel as
+     * read.</p>
      */
     inline AppInstanceUserMembershipSummary& WithReadMarkerTimestamp(const Aws::Utils::DateTime& value) { SetReadMarkerTimestamp(value); return *this;}
 
     /**
-     * <p>The time at which a message was last read.</p>
+     * <p>The time at which an <code>AppInstanceUser</code> last marked a channel as
+     * read.</p>
      */
     inline AppInstanceUserMembershipSummary& WithReadMarkerTimestamp(Aws::Utils::DateTime&& value) { SetReadMarkerTimestamp(std::move(value)); return *this;}
 

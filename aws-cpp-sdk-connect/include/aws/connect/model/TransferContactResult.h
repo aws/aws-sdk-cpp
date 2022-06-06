@@ -33,37 +33,37 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the contact in this instance of Amazon Connect </p>
+     * <p>The identifier of the contact in this instance of Amazon Connect. </p>
      */
     inline const Aws::String& GetContactId() const{ return m_contactId; }
 
     /**
-     * <p>The identifier of the contact in this instance of Amazon Connect </p>
+     * <p>The identifier of the contact in this instance of Amazon Connect. </p>
      */
     inline void SetContactId(const Aws::String& value) { m_contactId = value; }
 
     /**
-     * <p>The identifier of the contact in this instance of Amazon Connect </p>
+     * <p>The identifier of the contact in this instance of Amazon Connect. </p>
      */
     inline void SetContactId(Aws::String&& value) { m_contactId = std::move(value); }
 
     /**
-     * <p>The identifier of the contact in this instance of Amazon Connect </p>
+     * <p>The identifier of the contact in this instance of Amazon Connect. </p>
      */
     inline void SetContactId(const char* value) { m_contactId.assign(value); }
 
     /**
-     * <p>The identifier of the contact in this instance of Amazon Connect </p>
+     * <p>The identifier of the contact in this instance of Amazon Connect. </p>
      */
     inline TransferContactResult& WithContactId(const Aws::String& value) { SetContactId(value); return *this;}
 
     /**
-     * <p>The identifier of the contact in this instance of Amazon Connect </p>
+     * <p>The identifier of the contact in this instance of Amazon Connect. </p>
      */
     inline TransferContactResult& WithContactId(Aws::String&& value) { SetContactId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the contact in this instance of Amazon Connect </p>
+     * <p>The identifier of the contact in this instance of Amazon Connect. </p>
      */
     inline TransferContactResult& WithContactId(const char* value) { SetContactId(value); return *this;}
 

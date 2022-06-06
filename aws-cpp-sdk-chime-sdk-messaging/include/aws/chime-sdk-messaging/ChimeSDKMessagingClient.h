@@ -41,6 +41,7 @@
 #include <aws/chime-sdk-messaging/model/ListTagsForResourceResult.h>
 #include <aws/chime-sdk-messaging/model/PutChannelMembershipPreferencesResult.h>
 #include <aws/chime-sdk-messaging/model/RedactChannelMessageResult.h>
+#include <aws/chime-sdk-messaging/model/SearchChannelsResult.h>
 #include <aws/chime-sdk-messaging/model/SendChannelMessageResult.h>
 #include <aws/chime-sdk-messaging/model/UpdateChannelResult.h>
 #include <aws/chime-sdk-messaging/model/UpdateChannelFlowResult.h>
@@ -124,6 +125,7 @@ namespace Model
         class ListTagsForResourceRequest;
         class PutChannelMembershipPreferencesRequest;
         class RedactChannelMessageRequest;
+        class SearchChannelsRequest;
         class SendChannelMessageRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
@@ -170,6 +172,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, ChimeSDKMessagingError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<PutChannelMembershipPreferencesResult, ChimeSDKMessagingError> PutChannelMembershipPreferencesOutcome;
         typedef Aws::Utils::Outcome<RedactChannelMessageResult, ChimeSDKMessagingError> RedactChannelMessageOutcome;
+        typedef Aws::Utils::Outcome<SearchChannelsResult, ChimeSDKMessagingError> SearchChannelsOutcome;
         typedef Aws::Utils::Outcome<SendChannelMessageResult, ChimeSDKMessagingError> SendChannelMessageOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ChimeSDKMessagingError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ChimeSDKMessagingError> UntagResourceOutcome;
@@ -216,6 +219,7 @@ namespace Model
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<PutChannelMembershipPreferencesOutcome> PutChannelMembershipPreferencesOutcomeCallable;
         typedef std::future<RedactChannelMessageOutcome> RedactChannelMessageOutcomeCallable;
+        typedef std::future<SearchChannelsOutcome> SearchChannelsOutcomeCallable;
         typedef std::future<SendChannelMessageOutcome> SendChannelMessageOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
@@ -265,6 +269,7 @@ namespace Model
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::PutChannelMembershipPreferencesRequest&, const Model::PutChannelMembershipPreferencesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutChannelMembershipPreferencesResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::RedactChannelMessageRequest&, const Model::RedactChannelMessageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RedactChannelMessageResponseReceivedHandler;
+    typedef std::function<void(const ChimeSDKMessagingClient*, const Model::SearchChannelsRequest&, const Model::SearchChannelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchChannelsResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::SendChannelMessageRequest&, const Model::SendChannelMessageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendChannelMessageResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKMessagingClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
@@ -278,8 +283,8 @@ namespace Model
    * to send and receive messages in custom messaging applications. These APIs depend
    * on the frameworks provided by the Amazon Chime SDK Identity APIs. For more
    * information about the messaging APIs, see <a
-   * href="https://docs.aws.amazon.com/chime/latest/APIReference/API_Operations_Amazon_Chime_SDK_Messaging">Amazon
-   * Chime SDK messaging</a> </p>
+   * href="https://docs.aws.amazon.com/chime/latest/APIReference/API_Operations_Amazon_Chime_SDK_Messaging.html">Amazon
+   * Chime SDK messaging</a>.</p>
    */
   class AWS_CHIMESDKMESSAGING_API ChimeSDKMessagingClient : public Aws::Client::AWSJsonClient
   {
@@ -1127,6 +1132,26 @@ namespace Model
         virtual void RedactChannelMessageAsync(const Model::RedactChannelMessageRequest& request, const RedactChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Allows an <code>AppInstanceUser</code> to search the channels that they
+         * belong to. The <code>AppInstanceUser</code> can search by membership or external
+         * ID. An <code>AppInstanceAdmin</code> can search across all channels within the
+         * <code>AppInstance</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/SearchChannels">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SearchChannelsOutcome SearchChannels(const Model::SearchChannelsRequest& request) const;
+
+        /**
+         * A Callable wrapper for SearchChannels that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SearchChannelsOutcomeCallable SearchChannelsCallable(const Model::SearchChannelsRequest& request) const;
+
+        /**
+         * An Async wrapper for SearchChannels that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SearchChannelsAsync(const Model::SearchChannelsRequest& request, const SearchChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Sends a message to a particular channel that the member is a part of.</p>
          *  <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use
          * the <code>AppInstanceUserArn</code> of the user that makes the API call as the
@@ -1305,6 +1330,7 @@ namespace Model
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutChannelMembershipPreferencesAsyncHelper(const Model::PutChannelMembershipPreferencesRequest& request, const PutChannelMembershipPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RedactChannelMessageAsyncHelper(const Model::RedactChannelMessageRequest& request, const RedactChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void SearchChannelsAsyncHelper(const Model::SearchChannelsRequest& request, const SearchChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SendChannelMessageAsyncHelper(const Model::SendChannelMessageRequest& request, const SendChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

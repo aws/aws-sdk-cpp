@@ -58,6 +58,7 @@
 #include <aws/chime-sdk-messaging/model/ListTagsForResourceRequest.h>
 #include <aws/chime-sdk-messaging/model/PutChannelMembershipPreferencesRequest.h>
 #include <aws/chime-sdk-messaging/model/RedactChannelMessageRequest.h>
+#include <aws/chime-sdk-messaging/model/SearchChannelsRequest.h>
 #include <aws/chime-sdk-messaging/model/SendChannelMessageRequest.h>
 #include <aws/chime-sdk-messaging/model/TagResourceRequest.h>
 #include <aws/chime-sdk-messaging/model/UntagResourceRequest.h>
@@ -1570,6 +1571,34 @@ void ChimeSDKMessagingClient::RedactChannelMessageAsync(const RedactChannelMessa
 void ChimeSDKMessagingClient::RedactChannelMessageAsyncHelper(const RedactChannelMessageRequest& request, const RedactChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, RedactChannelMessage(request), context);
+}
+
+SearchChannelsOutcome ChimeSDKMessagingClient::SearchChannels(const SearchChannelsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  uri.AddPathSegments("/channels");
+  ss.str("?operation=search");
+  uri.SetQueryString(ss.str());
+  return SearchChannelsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+SearchChannelsOutcomeCallable ChimeSDKMessagingClient::SearchChannelsCallable(const SearchChannelsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SearchChannelsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SearchChannels(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeSDKMessagingClient::SearchChannelsAsync(const SearchChannelsRequest& request, const SearchChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SearchChannelsAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeSDKMessagingClient::SearchChannelsAsyncHelper(const SearchChannelsRequest& request, const SearchChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SearchChannels(request), context);
 }
 
 SendChannelMessageOutcome ChimeSDKMessagingClient::SendChannelMessage(const SendChannelMessageRequest& request) const
