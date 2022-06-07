@@ -35,7 +35,7 @@ namespace Model
 
     /**
      * <p>If the number of objects that are still available for retrieval exceeds the
-     * limit, Amazon Web Services returns a NextPageToken value in the response. To
+     * quota, Amazon Web Services returns a NextPageToken value in the response. To
      * retrieve the next batch of objects, provide the marker from the prior call in
      * your next request.</p>
      */
@@ -43,7 +43,7 @@ namespace Model
 
     /**
      * <p>If the number of objects that are still available for retrieval exceeds the
-     * limit, Amazon Web Services returns a NextPageToken value in the response. To
+     * quota, Amazon Web Services returns a NextPageToken value in the response. To
      * retrieve the next batch of objects, provide the marker from the prior call in
      * your next request.</p>
      */
@@ -51,7 +51,7 @@ namespace Model
 
     /**
      * <p>If the number of objects that are still available for retrieval exceeds the
-     * limit, Amazon Web Services returns a NextPageToken value in the response. To
+     * quota, Amazon Web Services returns a NextPageToken value in the response. To
      * retrieve the next batch of objects, provide the marker from the prior call in
      * your next request.</p>
      */
@@ -59,7 +59,7 @@ namespace Model
 
     /**
      * <p>If the number of objects that are still available for retrieval exceeds the
-     * limit, Amazon Web Services returns a NextPageToken value in the response. To
+     * quota, Amazon Web Services returns a NextPageToken value in the response. To
      * retrieve the next batch of objects, provide the marker from the prior call in
      * your next request.</p>
      */
@@ -67,7 +67,7 @@ namespace Model
 
     /**
      * <p>If the number of objects that are still available for retrieval exceeds the
-     * limit, Amazon Web Services returns a NextPageToken value in the response. To
+     * quota, Amazon Web Services returns a NextPageToken value in the response. To
      * retrieve the next batch of objects, provide the marker from the prior call in
      * your next request.</p>
      */
@@ -75,7 +75,7 @@ namespace Model
 
     /**
      * <p>If the number of objects that are still available for retrieval exceeds the
-     * limit, Amazon Web Services returns a NextPageToken value in the response. To
+     * quota, Amazon Web Services returns a NextPageToken value in the response. To
      * retrieve the next batch of objects, provide the marker from the prior call in
      * your next request.</p>
      */
@@ -83,7 +83,7 @@ namespace Model
 
     /**
      * <p>If the number of objects that are still available for retrieval exceeds the
-     * limit, Amazon Web Services returns a NextPageToken value in the response. To
+     * quota, Amazon Web Services returns a NextPageToken value in the response. To
      * retrieve the next batch of objects, provide the marker from the prior call in
      * your next request.</p>
      */
@@ -132,66 +132,74 @@ namespace Model
 
 
     /**
-     * <p>The Cost Category values.</p> <p> <code>CostCategoryValues</code> are not
-     * returned if <code>CostCategoryName</code> is not specified in the request. </p>
+     * <p>The Cost Category values.</p> <p>If the <code>CostCategoryName</code> key
+     * isn't specified in the request, the <code>CostCategoryValues</code> fields
+     * aren't returned. </p>
      */
     inline const Aws::Vector<Aws::String>& GetCostCategoryValues() const{ return m_costCategoryValues; }
 
     /**
-     * <p>The Cost Category values.</p> <p> <code>CostCategoryValues</code> are not
-     * returned if <code>CostCategoryName</code> is not specified in the request. </p>
+     * <p>The Cost Category values.</p> <p>If the <code>CostCategoryName</code> key
+     * isn't specified in the request, the <code>CostCategoryValues</code> fields
+     * aren't returned. </p>
      */
     inline void SetCostCategoryValues(const Aws::Vector<Aws::String>& value) { m_costCategoryValues = value; }
 
     /**
-     * <p>The Cost Category values.</p> <p> <code>CostCategoryValues</code> are not
-     * returned if <code>CostCategoryName</code> is not specified in the request. </p>
+     * <p>The Cost Category values.</p> <p>If the <code>CostCategoryName</code> key
+     * isn't specified in the request, the <code>CostCategoryValues</code> fields
+     * aren't returned. </p>
      */
     inline void SetCostCategoryValues(Aws::Vector<Aws::String>&& value) { m_costCategoryValues = std::move(value); }
 
     /**
-     * <p>The Cost Category values.</p> <p> <code>CostCategoryValues</code> are not
-     * returned if <code>CostCategoryName</code> is not specified in the request. </p>
+     * <p>The Cost Category values.</p> <p>If the <code>CostCategoryName</code> key
+     * isn't specified in the request, the <code>CostCategoryValues</code> fields
+     * aren't returned. </p>
      */
     inline GetCostCategoriesResult& WithCostCategoryValues(const Aws::Vector<Aws::String>& value) { SetCostCategoryValues(value); return *this;}
 
     /**
-     * <p>The Cost Category values.</p> <p> <code>CostCategoryValues</code> are not
-     * returned if <code>CostCategoryName</code> is not specified in the request. </p>
+     * <p>The Cost Category values.</p> <p>If the <code>CostCategoryName</code> key
+     * isn't specified in the request, the <code>CostCategoryValues</code> fields
+     * aren't returned. </p>
      */
     inline GetCostCategoriesResult& WithCostCategoryValues(Aws::Vector<Aws::String>&& value) { SetCostCategoryValues(std::move(value)); return *this;}
 
     /**
-     * <p>The Cost Category values.</p> <p> <code>CostCategoryValues</code> are not
-     * returned if <code>CostCategoryName</code> is not specified in the request. </p>
+     * <p>The Cost Category values.</p> <p>If the <code>CostCategoryName</code> key
+     * isn't specified in the request, the <code>CostCategoryValues</code> fields
+     * aren't returned. </p>
      */
     inline GetCostCategoriesResult& AddCostCategoryValues(const Aws::String& value) { m_costCategoryValues.push_back(value); return *this; }
 
     /**
-     * <p>The Cost Category values.</p> <p> <code>CostCategoryValues</code> are not
-     * returned if <code>CostCategoryName</code> is not specified in the request. </p>
+     * <p>The Cost Category values.</p> <p>If the <code>CostCategoryName</code> key
+     * isn't specified in the request, the <code>CostCategoryValues</code> fields
+     * aren't returned. </p>
      */
     inline GetCostCategoriesResult& AddCostCategoryValues(Aws::String&& value) { m_costCategoryValues.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The Cost Category values.</p> <p> <code>CostCategoryValues</code> are not
-     * returned if <code>CostCategoryName</code> is not specified in the request. </p>
+     * <p>The Cost Category values.</p> <p>If the <code>CostCategoryName</code> key
+     * isn't specified in the request, the <code>CostCategoryValues</code> fields
+     * aren't returned. </p>
      */
     inline GetCostCategoriesResult& AddCostCategoryValues(const char* value) { m_costCategoryValues.push_back(value); return *this; }
 
 
     /**
-     * <p>The number of objects returned.</p>
+     * <p>The number of objects that are returned.</p>
      */
     inline int GetReturnSize() const{ return m_returnSize; }
 
     /**
-     * <p>The number of objects returned.</p>
+     * <p>The number of objects that are returned.</p>
      */
     inline void SetReturnSize(int value) { m_returnSize = value; }
 
     /**
-     * <p>The number of objects returned.</p>
+     * <p>The number of objects that are returned.</p>
      */
     inline GetCostCategoriesResult& WithReturnSize(int value) { SetReturnSize(value); return *this;}
 

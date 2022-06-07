@@ -167,50 +167,50 @@ namespace Model
 
 
     /**
-     * <p>The dimension for the anomaly (for example, an Amazon Web Services service in
-     * a service monitor). </p>
+     * <p>The dimension for the anomaly (for example, an Amazon Web Service in a
+     * service monitor). </p>
      */
     inline const Aws::String& GetDimensionValue() const{ return m_dimensionValue; }
 
     /**
-     * <p>The dimension for the anomaly (for example, an Amazon Web Services service in
-     * a service monitor). </p>
+     * <p>The dimension for the anomaly (for example, an Amazon Web Service in a
+     * service monitor). </p>
      */
     inline bool DimensionValueHasBeenSet() const { return m_dimensionValueHasBeenSet; }
 
     /**
-     * <p>The dimension for the anomaly (for example, an Amazon Web Services service in
-     * a service monitor). </p>
+     * <p>The dimension for the anomaly (for example, an Amazon Web Service in a
+     * service monitor). </p>
      */
     inline void SetDimensionValue(const Aws::String& value) { m_dimensionValueHasBeenSet = true; m_dimensionValue = value; }
 
     /**
-     * <p>The dimension for the anomaly (for example, an Amazon Web Services service in
-     * a service monitor). </p>
+     * <p>The dimension for the anomaly (for example, an Amazon Web Service in a
+     * service monitor). </p>
      */
     inline void SetDimensionValue(Aws::String&& value) { m_dimensionValueHasBeenSet = true; m_dimensionValue = std::move(value); }
 
     /**
-     * <p>The dimension for the anomaly (for example, an Amazon Web Services service in
-     * a service monitor). </p>
+     * <p>The dimension for the anomaly (for example, an Amazon Web Service in a
+     * service monitor). </p>
      */
     inline void SetDimensionValue(const char* value) { m_dimensionValueHasBeenSet = true; m_dimensionValue.assign(value); }
 
     /**
-     * <p>The dimension for the anomaly (for example, an Amazon Web Services service in
-     * a service monitor). </p>
+     * <p>The dimension for the anomaly (for example, an Amazon Web Service in a
+     * service monitor). </p>
      */
     inline Anomaly& WithDimensionValue(const Aws::String& value) { SetDimensionValue(value); return *this;}
 
     /**
-     * <p>The dimension for the anomaly (for example, an Amazon Web Services service in
-     * a service monitor). </p>
+     * <p>The dimension for the anomaly (for example, an Amazon Web Service in a
+     * service monitor). </p>
      */
     inline Anomaly& WithDimensionValue(Aws::String&& value) { SetDimensionValue(std::move(value)); return *this;}
 
     /**
-     * <p>The dimension for the anomaly (for example, an Amazon Web Services service in
-     * a service monitor). </p>
+     * <p>The dimension for the anomaly (for example, an Amazon Web Service in a
+     * service monitor). </p>
      */
     inline Anomaly& WithDimensionValue(const char* value) { SetDimensionValue(value); return *this;}
 

@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>The details of how to sort the data.</p><p><h3>See Also:</h3>   <a
+   * <p>The details for how to sort the data.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/SortDefinition">AWS
    * API Reference</a></p>
    */

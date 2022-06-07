@@ -126,42 +126,42 @@ namespace Model
 
 
     /**
-     * <p> The effective end data of your Cost Category.</p>
+     * <p>The effective end data of your Cost Category.</p>
      */
     inline const Aws::String& GetEffectiveEnd() const{ return m_effectiveEnd; }
 
     /**
-     * <p> The effective end data of your Cost Category.</p>
+     * <p>The effective end data of your Cost Category.</p>
      */
     inline bool EffectiveEndHasBeenSet() const { return m_effectiveEndHasBeenSet; }
 
     /**
-     * <p> The effective end data of your Cost Category.</p>
+     * <p>The effective end data of your Cost Category.</p>
      */
     inline void SetEffectiveEnd(const Aws::String& value) { m_effectiveEndHasBeenSet = true; m_effectiveEnd = value; }
 
     /**
-     * <p> The effective end data of your Cost Category.</p>
+     * <p>The effective end data of your Cost Category.</p>
      */
     inline void SetEffectiveEnd(Aws::String&& value) { m_effectiveEndHasBeenSet = true; m_effectiveEnd = std::move(value); }
 
     /**
-     * <p> The effective end data of your Cost Category.</p>
+     * <p>The effective end data of your Cost Category.</p>
      */
     inline void SetEffectiveEnd(const char* value) { m_effectiveEndHasBeenSet = true; m_effectiveEnd.assign(value); }
 
     /**
-     * <p> The effective end data of your Cost Category.</p>
+     * <p>The effective end data of your Cost Category.</p>
      */
     inline CostCategory& WithEffectiveEnd(const Aws::String& value) { SetEffectiveEnd(value); return *this;}
 
     /**
-     * <p> The effective end data of your Cost Category.</p>
+     * <p>The effective end data of your Cost Category.</p>
      */
     inline CostCategory& WithEffectiveEnd(Aws::String&& value) { SetEffectiveEnd(std::move(value)); return *this;}
 
     /**
-     * <p> The effective end data of your Cost Category.</p>
+     * <p>The effective end data of your Cost Category.</p>
      */
     inline CostCategory& WithEffectiveEnd(const char* value) { SetEffectiveEnd(value); return *this;}
 

@@ -390,42 +390,42 @@ namespace Model
 
 
     /**
-     * <p> The number of VCPU cores in the Amazon Web Services instance type.</p>
+     * <p>The number of VCPU cores in the Amazon Web Services instance type.</p>
      */
     inline const Aws::String& GetVcpu() const{ return m_vcpu; }
 
     /**
-     * <p> The number of VCPU cores in the Amazon Web Services instance type.</p>
+     * <p>The number of VCPU cores in the Amazon Web Services instance type.</p>
      */
     inline bool VcpuHasBeenSet() const { return m_vcpuHasBeenSet; }
 
     /**
-     * <p> The number of VCPU cores in the Amazon Web Services instance type.</p>
+     * <p>The number of VCPU cores in the Amazon Web Services instance type.</p>
      */
     inline void SetVcpu(const Aws::String& value) { m_vcpuHasBeenSet = true; m_vcpu = value; }
 
     /**
-     * <p> The number of VCPU cores in the Amazon Web Services instance type.</p>
+     * <p>The number of VCPU cores in the Amazon Web Services instance type.</p>
      */
     inline void SetVcpu(Aws::String&& value) { m_vcpuHasBeenSet = true; m_vcpu = std::move(value); }
 
     /**
-     * <p> The number of VCPU cores in the Amazon Web Services instance type.</p>
+     * <p>The number of VCPU cores in the Amazon Web Services instance type.</p>
      */
     inline void SetVcpu(const char* value) { m_vcpuHasBeenSet = true; m_vcpu.assign(value); }
 
     /**
-     * <p> The number of VCPU cores in the Amazon Web Services instance type.</p>
+     * <p>The number of VCPU cores in the Amazon Web Services instance type.</p>
      */
     inline EC2ResourceDetails& WithVcpu(const Aws::String& value) { SetVcpu(value); return *this;}
 
     /**
-     * <p> The number of VCPU cores in the Amazon Web Services instance type.</p>
+     * <p>The number of VCPU cores in the Amazon Web Services instance type.</p>
      */
     inline EC2ResourceDetails& WithVcpu(Aws::String&& value) { SetVcpu(std::move(value)); return *this;}
 
     /**
-     * <p> The number of VCPU cores in the Amazon Web Services instance type.</p>
+     * <p>The number of VCPU cores in the Amazon Web Services instance type.</p>
      */
     inline EC2ResourceDetails& WithVcpu(const char* value) { SetVcpu(value); return *this;}
 

@@ -28,10 +28,10 @@ namespace Model
 {
 
   /**
-   * <p>A single daily or monthly Savings Plans utilization rate, and details for
-   * your account. A management account in an organization have access to member
-   * accounts. You can use <code>GetDimensionValues</code> to determine the possible
-   * dimension values. </p><p><h3>See Also:</h3>   <a
+   * <p>A single daily or monthly Savings Plans utilization rate and details for your
+   * account. A management account in an organization have access to member accounts.
+   * You can use <code>GetDimensionValues</code> to determine the possible dimension
+   * values. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/SavingsPlansUtilizationDetail">AWS
    * API Reference</a></p>
    */
@@ -190,42 +190,42 @@ namespace Model
 
     /**
      * <p>The amount saved by using existing Savings Plans. Savings returns both net
-     * savings from savings plans as well as the <code>onDemandCostEquivalent</code> of
+     * savings from savings plans and also the <code>onDemandCostEquivalent</code> of
      * the Savings Plans when considering the utilization rate.</p>
      */
     inline const SavingsPlansSavings& GetSavings() const{ return m_savings; }
 
     /**
      * <p>The amount saved by using existing Savings Plans. Savings returns both net
-     * savings from savings plans as well as the <code>onDemandCostEquivalent</code> of
+     * savings from savings plans and also the <code>onDemandCostEquivalent</code> of
      * the Savings Plans when considering the utilization rate.</p>
      */
     inline bool SavingsHasBeenSet() const { return m_savingsHasBeenSet; }
 
     /**
      * <p>The amount saved by using existing Savings Plans. Savings returns both net
-     * savings from savings plans as well as the <code>onDemandCostEquivalent</code> of
+     * savings from savings plans and also the <code>onDemandCostEquivalent</code> of
      * the Savings Plans when considering the utilization rate.</p>
      */
     inline void SetSavings(const SavingsPlansSavings& value) { m_savingsHasBeenSet = true; m_savings = value; }
 
     /**
      * <p>The amount saved by using existing Savings Plans. Savings returns both net
-     * savings from savings plans as well as the <code>onDemandCostEquivalent</code> of
+     * savings from savings plans and also the <code>onDemandCostEquivalent</code> of
      * the Savings Plans when considering the utilization rate.</p>
      */
     inline void SetSavings(SavingsPlansSavings&& value) { m_savingsHasBeenSet = true; m_savings = std::move(value); }
 
     /**
      * <p>The amount saved by using existing Savings Plans. Savings returns both net
-     * savings from savings plans as well as the <code>onDemandCostEquivalent</code> of
+     * savings from savings plans and also the <code>onDemandCostEquivalent</code> of
      * the Savings Plans when considering the utilization rate.</p>
      */
     inline SavingsPlansUtilizationDetail& WithSavings(const SavingsPlansSavings& value) { SetSavings(value); return *this;}
 
     /**
      * <p>The amount saved by using existing Savings Plans. Savings returns both net
-     * savings from savings plans as well as the <code>onDemandCostEquivalent</code> of
+     * savings from savings plans and also the <code>onDemandCostEquivalent</code> of
      * the Savings Plans when considering the utilization rate.</p>
      */
     inline SavingsPlansUtilizationDetail& WithSavings(SavingsPlansSavings&& value) { SetSavings(std::move(value)); return *this;}

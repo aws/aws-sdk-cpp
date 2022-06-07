@@ -404,79 +404,79 @@ namespace Model
 
 
     /**
-     * <p>The value by which you want to sort the data.</p> <p>The following values are
+     * <p>The value that you want to sort the data by.</p> <p>The following values are
      * supported for <code>Key</code>:</p> <ul> <li> <p>
      * <code>SpendCoveredBySavingsPlan</code> </p> </li> <li> <p>
      * <code>OnDemandCost</code> </p> </li> <li> <p> <code>CoveragePercentage</code>
      * </p> </li> <li> <p> <code>TotalCost</code> </p> </li> <li> <p>
      * <code>InstanceFamily</code> </p> </li> <li> <p> <code>Region</code> </p> </li>
-     * <li> <p> <code>Service</code> </p> </li> </ul> <p>Supported values for
-     * <code>SortOrder</code> are <code>ASCENDING</code> or
+     * <li> <p> <code>Service</code> </p> </li> </ul> <p>The supported values for
+     * <code>SortOrder</code> are <code>ASCENDING</code> and
      * <code>DESCENDING</code>.</p>
      */
     inline const SortDefinition& GetSortBy() const{ return m_sortBy; }
 
     /**
-     * <p>The value by which you want to sort the data.</p> <p>The following values are
+     * <p>The value that you want to sort the data by.</p> <p>The following values are
      * supported for <code>Key</code>:</p> <ul> <li> <p>
      * <code>SpendCoveredBySavingsPlan</code> </p> </li> <li> <p>
      * <code>OnDemandCost</code> </p> </li> <li> <p> <code>CoveragePercentage</code>
      * </p> </li> <li> <p> <code>TotalCost</code> </p> </li> <li> <p>
      * <code>InstanceFamily</code> </p> </li> <li> <p> <code>Region</code> </p> </li>
-     * <li> <p> <code>Service</code> </p> </li> </ul> <p>Supported values for
-     * <code>SortOrder</code> are <code>ASCENDING</code> or
+     * <li> <p> <code>Service</code> </p> </li> </ul> <p>The supported values for
+     * <code>SortOrder</code> are <code>ASCENDING</code> and
      * <code>DESCENDING</code>.</p>
      */
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
 
     /**
-     * <p>The value by which you want to sort the data.</p> <p>The following values are
+     * <p>The value that you want to sort the data by.</p> <p>The following values are
      * supported for <code>Key</code>:</p> <ul> <li> <p>
      * <code>SpendCoveredBySavingsPlan</code> </p> </li> <li> <p>
      * <code>OnDemandCost</code> </p> </li> <li> <p> <code>CoveragePercentage</code>
      * </p> </li> <li> <p> <code>TotalCost</code> </p> </li> <li> <p>
      * <code>InstanceFamily</code> </p> </li> <li> <p> <code>Region</code> </p> </li>
-     * <li> <p> <code>Service</code> </p> </li> </ul> <p>Supported values for
-     * <code>SortOrder</code> are <code>ASCENDING</code> or
+     * <li> <p> <code>Service</code> </p> </li> </ul> <p>The supported values for
+     * <code>SortOrder</code> are <code>ASCENDING</code> and
      * <code>DESCENDING</code>.</p>
      */
     inline void SetSortBy(const SortDefinition& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
 
     /**
-     * <p>The value by which you want to sort the data.</p> <p>The following values are
+     * <p>The value that you want to sort the data by.</p> <p>The following values are
      * supported for <code>Key</code>:</p> <ul> <li> <p>
      * <code>SpendCoveredBySavingsPlan</code> </p> </li> <li> <p>
      * <code>OnDemandCost</code> </p> </li> <li> <p> <code>CoveragePercentage</code>
      * </p> </li> <li> <p> <code>TotalCost</code> </p> </li> <li> <p>
      * <code>InstanceFamily</code> </p> </li> <li> <p> <code>Region</code> </p> </li>
-     * <li> <p> <code>Service</code> </p> </li> </ul> <p>Supported values for
-     * <code>SortOrder</code> are <code>ASCENDING</code> or
+     * <li> <p> <code>Service</code> </p> </li> </ul> <p>The supported values for
+     * <code>SortOrder</code> are <code>ASCENDING</code> and
      * <code>DESCENDING</code>.</p>
      */
     inline void SetSortBy(SortDefinition&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
 
     /**
-     * <p>The value by which you want to sort the data.</p> <p>The following values are
+     * <p>The value that you want to sort the data by.</p> <p>The following values are
      * supported for <code>Key</code>:</p> <ul> <li> <p>
      * <code>SpendCoveredBySavingsPlan</code> </p> </li> <li> <p>
      * <code>OnDemandCost</code> </p> </li> <li> <p> <code>CoveragePercentage</code>
      * </p> </li> <li> <p> <code>TotalCost</code> </p> </li> <li> <p>
      * <code>InstanceFamily</code> </p> </li> <li> <p> <code>Region</code> </p> </li>
-     * <li> <p> <code>Service</code> </p> </li> </ul> <p>Supported values for
-     * <code>SortOrder</code> are <code>ASCENDING</code> or
+     * <li> <p> <code>Service</code> </p> </li> </ul> <p>The supported values for
+     * <code>SortOrder</code> are <code>ASCENDING</code> and
      * <code>DESCENDING</code>.</p>
      */
     inline GetSavingsPlansCoverageRequest& WithSortBy(const SortDefinition& value) { SetSortBy(value); return *this;}
 
     /**
-     * <p>The value by which you want to sort the data.</p> <p>The following values are
+     * <p>The value that you want to sort the data by.</p> <p>The following values are
      * supported for <code>Key</code>:</p> <ul> <li> <p>
      * <code>SpendCoveredBySavingsPlan</code> </p> </li> <li> <p>
      * <code>OnDemandCost</code> </p> </li> <li> <p> <code>CoveragePercentage</code>
      * </p> </li> <li> <p> <code>TotalCost</code> </p> </li> <li> <p>
      * <code>InstanceFamily</code> </p> </li> <li> <p> <code>Region</code> </p> </li>
-     * <li> <p> <code>Service</code> </p> </li> </ul> <p>Supported values for
-     * <code>SortOrder</code> are <code>ASCENDING</code> or
+     * <li> <p> <code>Service</code> </p> </li> </ul> <p>The supported values for
+     * <code>SortOrder</code> are <code>ASCENDING</code> and
      * <code>DESCENDING</code>.</p>
      */
     inline GetSavingsPlansCoverageRequest& WithSortBy(SortDefinition&& value) { SetSortBy(std::move(value)); return *this;}

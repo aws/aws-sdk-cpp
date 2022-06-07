@@ -36,6 +36,7 @@
 #include <aws/ce/model/GetSavingsPlansUtilizationDetailsResult.h>
 #include <aws/ce/model/GetTagsResult.h>
 #include <aws/ce/model/GetUsageForecastResult.h>
+#include <aws/ce/model/ListCostAllocationTagsResult.h>
 #include <aws/ce/model/ListCostCategoryDefinitionsResult.h>
 #include <aws/ce/model/ListTagsForResourceResult.h>
 #include <aws/ce/model/ProvideAnomalyFeedbackResult.h>
@@ -43,6 +44,7 @@
 #include <aws/ce/model/UntagResourceResult.h>
 #include <aws/ce/model/UpdateAnomalyMonitorResult.h>
 #include <aws/ce/model/UpdateAnomalySubscriptionResult.h>
+#include <aws/ce/model/UpdateCostAllocationTagsStatusResult.h>
 #include <aws/ce/model/UpdateCostCategoryDefinitionResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -108,6 +110,7 @@ namespace Model
         class GetSavingsPlansUtilizationDetailsRequest;
         class GetTagsRequest;
         class GetUsageForecastRequest;
+        class ListCostAllocationTagsRequest;
         class ListCostCategoryDefinitionsRequest;
         class ListTagsForResourceRequest;
         class ProvideAnomalyFeedbackRequest;
@@ -115,6 +118,7 @@ namespace Model
         class UntagResourceRequest;
         class UpdateAnomalyMonitorRequest;
         class UpdateAnomalySubscriptionRequest;
+        class UpdateCostAllocationTagsStatusRequest;
         class UpdateCostCategoryDefinitionRequest;
 
         typedef Aws::Utils::Outcome<CreateAnomalyMonitorResult, CostExplorerError> CreateAnomalyMonitorOutcome;
@@ -142,6 +146,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetSavingsPlansUtilizationDetailsResult, CostExplorerError> GetSavingsPlansUtilizationDetailsOutcome;
         typedef Aws::Utils::Outcome<GetTagsResult, CostExplorerError> GetTagsOutcome;
         typedef Aws::Utils::Outcome<GetUsageForecastResult, CostExplorerError> GetUsageForecastOutcome;
+        typedef Aws::Utils::Outcome<ListCostAllocationTagsResult, CostExplorerError> ListCostAllocationTagsOutcome;
         typedef Aws::Utils::Outcome<ListCostCategoryDefinitionsResult, CostExplorerError> ListCostCategoryDefinitionsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, CostExplorerError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<ProvideAnomalyFeedbackResult, CostExplorerError> ProvideAnomalyFeedbackOutcome;
@@ -149,6 +154,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UntagResourceResult, CostExplorerError> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateAnomalyMonitorResult, CostExplorerError> UpdateAnomalyMonitorOutcome;
         typedef Aws::Utils::Outcome<UpdateAnomalySubscriptionResult, CostExplorerError> UpdateAnomalySubscriptionOutcome;
+        typedef Aws::Utils::Outcome<UpdateCostAllocationTagsStatusResult, CostExplorerError> UpdateCostAllocationTagsStatusOutcome;
         typedef Aws::Utils::Outcome<UpdateCostCategoryDefinitionResult, CostExplorerError> UpdateCostCategoryDefinitionOutcome;
 
         typedef std::future<CreateAnomalyMonitorOutcome> CreateAnomalyMonitorOutcomeCallable;
@@ -176,6 +182,7 @@ namespace Model
         typedef std::future<GetSavingsPlansUtilizationDetailsOutcome> GetSavingsPlansUtilizationDetailsOutcomeCallable;
         typedef std::future<GetTagsOutcome> GetTagsOutcomeCallable;
         typedef std::future<GetUsageForecastOutcome> GetUsageForecastOutcomeCallable;
+        typedef std::future<ListCostAllocationTagsOutcome> ListCostAllocationTagsOutcomeCallable;
         typedef std::future<ListCostCategoryDefinitionsOutcome> ListCostCategoryDefinitionsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<ProvideAnomalyFeedbackOutcome> ProvideAnomalyFeedbackOutcomeCallable;
@@ -183,6 +190,7 @@ namespace Model
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateAnomalyMonitorOutcome> UpdateAnomalyMonitorOutcomeCallable;
         typedef std::future<UpdateAnomalySubscriptionOutcome> UpdateAnomalySubscriptionOutcomeCallable;
+        typedef std::future<UpdateCostAllocationTagsStatusOutcome> UpdateCostAllocationTagsStatusOutcomeCallable;
         typedef std::future<UpdateCostCategoryDefinitionOutcome> UpdateCostCategoryDefinitionOutcomeCallable;
 } // namespace Model
 
@@ -213,6 +221,7 @@ namespace Model
     typedef std::function<void(const CostExplorerClient*, const Model::GetSavingsPlansUtilizationDetailsRequest&, const Model::GetSavingsPlansUtilizationDetailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSavingsPlansUtilizationDetailsResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::GetTagsRequest&, const Model::GetTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTagsResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::GetUsageForecastRequest&, const Model::GetUsageForecastOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUsageForecastResponseReceivedHandler;
+    typedef std::function<void(const CostExplorerClient*, const Model::ListCostAllocationTagsRequest&, const Model::ListCostAllocationTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCostAllocationTagsResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::ListCostCategoryDefinitionsRequest&, const Model::ListCostCategoryDefinitionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCostCategoryDefinitionsResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::ProvideAnomalyFeedbackRequest&, const Model::ProvideAnomalyFeedbackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ProvideAnomalyFeedbackResponseReceivedHandler;
@@ -220,6 +229,7 @@ namespace Model
     typedef std::function<void(const CostExplorerClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::UpdateAnomalyMonitorRequest&, const Model::UpdateAnomalyMonitorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAnomalyMonitorResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::UpdateAnomalySubscriptionRequest&, const Model::UpdateAnomalySubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAnomalySubscriptionResponseReceivedHandler;
+    typedef std::function<void(const CostExplorerClient*, const Model::UpdateCostAllocationTagsStatusRequest&, const Model::UpdateCostAllocationTagsStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCostAllocationTagsStatusResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::UpdateCostCategoryDefinitionRequest&, const Model::UpdateCostCategoryDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCostCategoryDefinitionResponseReceivedHandler;
 
   /**
@@ -370,13 +380,13 @@ namespace Model
         virtual void DeleteCostCategoryDefinitionAsync(const Model::DeleteCostCategoryDefinitionRequest& request, const DeleteCostCategoryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the name, ARN, rules, definition, and effective dates of a Cost
-         * Category that's defined in the account.</p> <p>You have the option to use
-         * <code>EffectiveOn</code> to return a Cost Category that is active on a specific
-         * date. If there is no <code>EffectiveOn</code> specified, you’ll see a Cost
-         * Category that is effective on the current date. If Cost Category is still
-         * effective, <code>EffectiveEnd</code> is omitted in the response. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns the name, Amazon Resource Name (ARN), rules, definition, and
+         * effective dates of a Cost Category that's defined in the account.</p> <p>You
+         * have the option to use <code>EffectiveOn</code> to return a Cost Category that's
+         * active on a specific date. If there's no <code>EffectiveOn</code> specified, you
+         * see a Cost Category that's effective on the current date. If Cost Category is
+         * still effective, <code>EffectiveEnd</code> is omitted in the response.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/DescribeCostCategoryDefinition">AWS
          * API Reference</a></p>
          */
@@ -489,7 +499,7 @@ namespace Model
          * all member accounts. This API is currently available for the Amazon Elastic
          * Compute Cloud – Compute service only.</p>  <p>This is an opt-in only
          * feature. You can enable this feature from the Cost Explorer Settings page. For
-         * information on how to access the Settings page, see <a
+         * information about how to access the Settings page, see <a
          * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-access.html">Controlling
          * Access for Cost Explorer</a> in the <i>Billing and Cost Management User
          * Guide</i>.</p> <p><h3>See Also:</h3>   <a
@@ -567,7 +577,7 @@ namespace Model
         virtual void GetDimensionValuesAsync(const Model::GetDimensionValuesRequest& request, const GetDimensionValuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the reservation coverage for your account. This enables you to see
+         * <p>Retrieves the reservation coverage for your account, which you can use to see
          * how much of your Amazon Elastic Compute Cloud, Amazon ElastiCache, Amazon
          * Relational Database Service, or Amazon Redshift usage is covered by a
          * reservation. An organization's management account can see the coverage of the
@@ -597,24 +607,24 @@ namespace Model
         virtual void GetReservationCoverageAsync(const Model::GetReservationCoverageRequest& request, const GetReservationCoverageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets recommendations for which reservations to purchase. These
-         * recommendations could help you reduce your costs. Reservations provide a
-         * discounted hourly rate (up to 75%) compared to On-Demand pricing.</p> <p>Amazon
-         * Web Services generates your recommendations by identifying your On-Demand usage
-         * during a specific time period and collecting your usage into categories that are
-         * eligible for a reservation. After Amazon Web Services has these categories, it
-         * simulates every combination of reservations in each category of usage to
-         * identify the best number of each type of RI to purchase to maximize your
+         * <p>Gets recommendations for reservation purchases. These recommendations might
+         * help you to reduce your costs. Reservations provide a discounted hourly rate (up
+         * to 75%) compared to On-Demand pricing.</p> <p>Amazon Web Services generates your
+         * recommendations by identifying your On-Demand usage during a specific time
+         * period and collecting your usage into categories that are eligible for a
+         * reservation. After Amazon Web Services has these categories, it simulates every
+         * combination of reservations in each category of usage to identify the best
+         * number of each type of Reserved Instance (RI) to purchase to maximize your
          * estimated savings. </p> <p>For example, Amazon Web Services automatically
          * aggregates your Amazon EC2 Linux, shared tenancy, and c4 family usage in the US
          * West (Oregon) Region and recommends that you buy size-flexible regional
          * reservations to apply to the c4 family usage. Amazon Web Services recommends the
          * smallest size instance in an instance family. This makes it easier to purchase a
-         * size-flexible RI. Amazon Web Services also shows the equal number of normalized
-         * units so that you can purchase any instance size that you want. For this
-         * example, your RI recommendation would be for <code>c4.large</code> because that
-         * is the smallest size instance in the c4 instance family.</p><p><h3>See
-         * Also:</h3>   <a
+         * size-flexible Reserved Instance (RI). Amazon Web Services also shows the equal
+         * number of normalized units. This way, you can purchase any instance size that
+         * you want. For this example, your RI recommendation is for <code>c4.large</code>
+         * because that is the smallest size instance in the c4 instance
+         * family.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetReservationPurchaseRecommendation">AWS
          * API Reference</a></p>
          */
@@ -655,7 +665,7 @@ namespace Model
          * <p>Creates recommendations that help you save cost by identifying idle and
          * underutilized Amazon EC2 instances.</p> <p>Recommendations are generated to
          * either downsize or terminate instances, along with providing savings detail and
-         * metrics. For details on calculation and function, see <a
+         * metrics. For more information about calculation and function, see <a
          * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-rightsizing.html">Optimizing
          * Your Cost with Rightsizing Recommendations</a> in the <i>Billing and Cost
          * Management User Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -723,7 +733,7 @@ namespace Model
          * with daily or monthly granularity. Management account in an organization have
          * access to member accounts. You can use <code>GetDimensionValues</code> in
          * <code>SAVINGS_PLANS</code> to determine the possible dimension values.</p>
-         *  <p>You cannot group by any dimension values for
+         *  <p>You can't group by any dimension values for
          * <code>GetSavingsPlansUtilization</code>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansUtilization">AWS
          * API Reference</a></p>
@@ -803,14 +813,34 @@ namespace Model
         virtual void GetUsageForecastAsync(const Model::GetUsageForecastRequest& request, const GetUsageForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the name, ARN, <code>NumberOfRules</code> and effective dates of all
-         * Cost Categories defined in the account. You have the option to use
-         * <code>EffectiveOn</code> to return a list of Cost Categories that were active on
-         * a specific date. If there is no <code>EffectiveOn</code> specified, you’ll see
-         * Cost Categories that are effective on the current date. If Cost Category is
-         * still effective, <code>EffectiveEnd</code> is omitted in the response.
-         * <code>ListCostCategoryDefinitions</code> supports pagination. The request can
-         * have a <code>MaxResults</code> range up to 100.</p><p><h3>See Also:</h3>   <a
+         * <p>Get a list of cost allocation tags. All inputs in the API are optional and
+         * serve as filters. By default, all cost allocation tags are returned.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListCostAllocationTags">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListCostAllocationTagsOutcome ListCostAllocationTags(const Model::ListCostAllocationTagsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListCostAllocationTags that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListCostAllocationTagsOutcomeCallable ListCostAllocationTagsCallable(const Model::ListCostAllocationTagsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListCostAllocationTags that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListCostAllocationTagsAsync(const Model::ListCostAllocationTagsRequest& request, const ListCostAllocationTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the name, Amazon Resource Name (ARN), <code>NumberOfRules</code> and
+         * effective dates of all Cost Categories defined in the account. You have the
+         * option to use <code>EffectiveOn</code> to return a list of Cost Categories that
+         * were active on a specific date. If there is no <code>EffectiveOn</code>
+         * specified, you’ll see Cost Categories that are effective on the current date. If
+         * Cost Category is still effective, <code>EffectiveEnd</code> is omitted in the
+         * response. <code>ListCostCategoryDefinitions</code> supports pagination. The
+         * request can have a <code>MaxResults</code> range up to 100.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListCostCategoryDefinitions">AWS
          * API Reference</a></p>
          */
@@ -868,7 +898,7 @@ namespace Model
          * resource that already has tags. If you specify a new tag key for the resource,
          * this tag is appended to the list of tags associated with the resource. If you
          * specify a tag key that is already associated with the resource, the new tag
-         * value you specify replaces the previous value for that tag.</p> <p> Although the
+         * value you specify replaces the previous value for that tag.</p> <p>Although the
          * maximum number of array members is 200, user-tag maximum is 50. The remaining
          * are reserved for Amazon Web Services use.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/TagResource">AWS API
@@ -887,8 +917,8 @@ namespace Model
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Removes one or more tags from a resource. Specify only tag key(s) in your
-         * request. Do not specify the value. </p><p><h3>See Also:</h3>   <a
+         * <p>Removes one or more tags from a resource. Specify only tag keys in your
+         * request. Don't specify the value. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/UntagResource">AWS
          * API Reference</a></p>
          */
@@ -942,6 +972,26 @@ namespace Model
         virtual void UpdateAnomalySubscriptionAsync(const Model::UpdateAnomalySubscriptionRequest& request, const UpdateAnomalySubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates status for cost allocation tags in bulk, with maximum batch size of
+         * 20. If the tag status that's updated is the same as the existing tag status, the
+         * request doesn't fail. Instead, it doesn't have any effect on the tag status (for
+         * example, activating the active tag). </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/UpdateCostAllocationTagsStatus">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateCostAllocationTagsStatusOutcome UpdateCostAllocationTagsStatus(const Model::UpdateCostAllocationTagsStatusRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateCostAllocationTagsStatus that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateCostAllocationTagsStatusOutcomeCallable UpdateCostAllocationTagsStatusCallable(const Model::UpdateCostAllocationTagsStatusRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateCostAllocationTagsStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateCostAllocationTagsStatusAsync(const Model::UpdateCostAllocationTagsStatusRequest& request, const UpdateCostAllocationTagsStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates an existing Cost Category. Changes made to the Cost Category rules
          * will be used to categorize the current month’s expenses and future expenses.
          * This won’t change categorization for the previous months.</p><p><h3>See
@@ -990,6 +1040,7 @@ namespace Model
         void GetSavingsPlansUtilizationDetailsAsyncHelper(const Model::GetSavingsPlansUtilizationDetailsRequest& request, const GetSavingsPlansUtilizationDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTagsAsyncHelper(const Model::GetTagsRequest& request, const GetTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetUsageForecastAsyncHelper(const Model::GetUsageForecastRequest& request, const GetUsageForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListCostAllocationTagsAsyncHelper(const Model::ListCostAllocationTagsRequest& request, const ListCostAllocationTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListCostCategoryDefinitionsAsyncHelper(const Model::ListCostCategoryDefinitionsRequest& request, const ListCostCategoryDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ProvideAnomalyFeedbackAsyncHelper(const Model::ProvideAnomalyFeedbackRequest& request, const ProvideAnomalyFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -997,6 +1048,7 @@ namespace Model
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateAnomalyMonitorAsyncHelper(const Model::UpdateAnomalyMonitorRequest& request, const UpdateAnomalyMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateAnomalySubscriptionAsyncHelper(const Model::UpdateAnomalySubscriptionRequest& request, const UpdateAnomalySubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateCostAllocationTagsStatusAsyncHelper(const Model::UpdateCostAllocationTagsStatusRequest& request, const UpdateCostAllocationTagsStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateCostCategoryDefinitionAsyncHelper(const Model::UpdateCostCategoryDefinitionRequest& request, const UpdateCostCategoryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;

@@ -40,49 +40,49 @@ namespace Model
 
 
     /**
-     * <p>The amount of your Amazon Web Services usage that is covered by a Savings
+     * <p>The amount of your Amazon Web Services usage that's covered by a Savings
      * Plans.</p>
      */
     inline const Aws::String& GetSpendCoveredBySavingsPlans() const{ return m_spendCoveredBySavingsPlans; }
 
     /**
-     * <p>The amount of your Amazon Web Services usage that is covered by a Savings
+     * <p>The amount of your Amazon Web Services usage that's covered by a Savings
      * Plans.</p>
      */
     inline bool SpendCoveredBySavingsPlansHasBeenSet() const { return m_spendCoveredBySavingsPlansHasBeenSet; }
 
     /**
-     * <p>The amount of your Amazon Web Services usage that is covered by a Savings
+     * <p>The amount of your Amazon Web Services usage that's covered by a Savings
      * Plans.</p>
      */
     inline void SetSpendCoveredBySavingsPlans(const Aws::String& value) { m_spendCoveredBySavingsPlansHasBeenSet = true; m_spendCoveredBySavingsPlans = value; }
 
     /**
-     * <p>The amount of your Amazon Web Services usage that is covered by a Savings
+     * <p>The amount of your Amazon Web Services usage that's covered by a Savings
      * Plans.</p>
      */
     inline void SetSpendCoveredBySavingsPlans(Aws::String&& value) { m_spendCoveredBySavingsPlansHasBeenSet = true; m_spendCoveredBySavingsPlans = std::move(value); }
 
     /**
-     * <p>The amount of your Amazon Web Services usage that is covered by a Savings
+     * <p>The amount of your Amazon Web Services usage that's covered by a Savings
      * Plans.</p>
      */
     inline void SetSpendCoveredBySavingsPlans(const char* value) { m_spendCoveredBySavingsPlansHasBeenSet = true; m_spendCoveredBySavingsPlans.assign(value); }
 
     /**
-     * <p>The amount of your Amazon Web Services usage that is covered by a Savings
+     * <p>The amount of your Amazon Web Services usage that's covered by a Savings
      * Plans.</p>
      */
     inline SavingsPlansCoverageData& WithSpendCoveredBySavingsPlans(const Aws::String& value) { SetSpendCoveredBySavingsPlans(value); return *this;}
 
     /**
-     * <p>The amount of your Amazon Web Services usage that is covered by a Savings
+     * <p>The amount of your Amazon Web Services usage that's covered by a Savings
      * Plans.</p>
      */
     inline SavingsPlansCoverageData& WithSpendCoveredBySavingsPlans(Aws::String&& value) { SetSpendCoveredBySavingsPlans(std::move(value)); return *this;}
 
     /**
-     * <p>The amount of your Amazon Web Services usage that is covered by a Savings
+     * <p>The amount of your Amazon Web Services usage that's covered by a Savings
      * Plans.</p>
      */
     inline SavingsPlansCoverageData& WithSpendCoveredBySavingsPlans(const char* value) { SetSpendCoveredBySavingsPlans(value); return *this;}
