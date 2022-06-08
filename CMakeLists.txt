@@ -91,6 +91,9 @@ else ()
     message(STATUS "Preparing core library build")
     add_subdirectory(src)
 
+    message(STATUS "Preparing CPack metadata")
+    add_subdirectory(packaging)
+
     message(WARNING "The dependencies are currently checked only for a basic Linux build, new ones need to be added for other platforms yet")
 
     message(WARNING "Anything below this warning is a TODO not yet implemented.")
