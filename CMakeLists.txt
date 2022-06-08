@@ -76,7 +76,7 @@ else ()
         message(STATUS "Building tests")
         enable_testing()
         # Testing dependency
-        find_package(GTest 1.11 REQUIRED )
+        find_package(GTest 1.11 REQUIRED)
         include(GoogleTest) # for gtest_discover_tests()
     endif ()
 
@@ -87,6 +87,9 @@ else ()
     pkg_check_modules(tinyxml2 REQUIRED IMPORTED_TARGET tinyxml2>=9.0.0)
     pkg_check_modules(CJSON REQUIRED IMPORTED_TARGET libcjson>=1.7.15)
     find_package(aws-crt-cpp 0.17.9 EXACT REQUIRED COMPONENTS io)
+
+    message(STATUS "Preparing core library build")
+    add_subdirectory(src)
 
     message(WARNING "The dependencies are currently checked only for a basic Linux build, new ones need to be added for other platforms yet")
 
@@ -104,5 +107,4 @@ else ()
     message(STATUS "Setting up docs.")
     message(STATUS "Add support support for SDK flags.")
     message(STATUS "Add previously available options.")
-
 endif ()
