@@ -490,8 +490,9 @@ namespace Model
      * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
      * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
      * least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li>
-     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except '
-     * (single quote), " (double quote), \, /, or @.</p> </li> </ul>
+     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except
+     * <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>,
+     * <code>/</code>, or <code>@</code>.</p> </li> </ul>
      */
     inline const Aws::String& GetMasterUserPassword() const{ return m_masterUserPassword; }
 
@@ -506,8 +507,9 @@ namespace Model
      * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
      * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
      * least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li>
-     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except '
-     * (single quote), " (double quote), \, /, or @.</p> </li> </ul>
+     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except
+     * <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>,
+     * <code>/</code>, or <code>@</code>.</p> </li> </ul>
      */
     inline bool MasterUserPasswordHasBeenSet() const { return m_masterUserPasswordHasBeenSet; }
 
@@ -522,8 +524,9 @@ namespace Model
      * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
      * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
      * least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li>
-     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except '
-     * (single quote), " (double quote), \, /, or @.</p> </li> </ul>
+     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except
+     * <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>,
+     * <code>/</code>, or <code>@</code>.</p> </li> </ul>
      */
     inline void SetMasterUserPassword(const Aws::String& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
 
@@ -538,8 +541,9 @@ namespace Model
      * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
      * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
      * least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li>
-     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except '
-     * (single quote), " (double quote), \, /, or @.</p> </li> </ul>
+     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except
+     * <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>,
+     * <code>/</code>, or <code>@</code>.</p> </li> </ul>
      */
     inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = std::move(value); }
 
@@ -554,8 +558,9 @@ namespace Model
      * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
      * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
      * least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li>
-     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except '
-     * (single quote), " (double quote), \, /, or @.</p> </li> </ul>
+     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except
+     * <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>,
+     * <code>/</code>, or <code>@</code>.</p> </li> </ul>
      */
     inline void SetMasterUserPassword(const char* value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword.assign(value); }
 
@@ -570,8 +575,9 @@ namespace Model
      * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
      * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
      * least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li>
-     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except '
-     * (single quote), " (double quote), \, /, or @.</p> </li> </ul>
+     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except
+     * <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>,
+     * <code>/</code>, or <code>@</code>.</p> </li> </ul>
      */
     inline ModifyClusterRequest& WithMasterUserPassword(const Aws::String& value) { SetMasterUserPassword(value); return *this;}
 
@@ -586,8 +592,9 @@ namespace Model
      * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
      * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
      * least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li>
-     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except '
-     * (single quote), " (double quote), \, /, or @.</p> </li> </ul>
+     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except
+     * <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>,
+     * <code>/</code>, or <code>@</code>.</p> </li> </ul>
      */
     inline ModifyClusterRequest& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(std::move(value)); return *this;}
 
@@ -602,8 +609,9 @@ namespace Model
      * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
      * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
      * least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li>
-     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except '
-     * (single quote), " (double quote), \, /, or @.</p> </li> </ul>
+     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except
+     * <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>,
+     * <code>/</code>, or <code>@</code>.</p> </li> </ul>
      */
     inline ModifyClusterRequest& WithMasterUserPassword(const char* value) { SetMasterUserPassword(value); return *this;}
 

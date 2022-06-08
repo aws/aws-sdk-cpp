@@ -16,6 +16,7 @@
 #include <aws/dms/model/CancelReplicationTaskAssessmentRunResult.h>
 #include <aws/dms/model/CreateEndpointResult.h>
 #include <aws/dms/model/CreateEventSubscriptionResult.h>
+#include <aws/dms/model/CreateFleetAdvisorCollectorResult.h>
 #include <aws/dms/model/CreateReplicationInstanceResult.h>
 #include <aws/dms/model/CreateReplicationSubnetGroupResult.h>
 #include <aws/dms/model/CreateReplicationTaskResult.h>
@@ -23,6 +24,7 @@
 #include <aws/dms/model/DeleteConnectionResult.h>
 #include <aws/dms/model/DeleteEndpointResult.h>
 #include <aws/dms/model/DeleteEventSubscriptionResult.h>
+#include <aws/dms/model/DeleteFleetAdvisorDatabasesResult.h>
 #include <aws/dms/model/DeleteReplicationInstanceResult.h>
 #include <aws/dms/model/DeleteReplicationSubnetGroupResult.h>
 #include <aws/dms/model/DeleteReplicationTaskResult.h>
@@ -37,6 +39,11 @@
 #include <aws/dms/model/DescribeEventCategoriesResult.h>
 #include <aws/dms/model/DescribeEventSubscriptionsResult.h>
 #include <aws/dms/model/DescribeEventsResult.h>
+#include <aws/dms/model/DescribeFleetAdvisorCollectorsResult.h>
+#include <aws/dms/model/DescribeFleetAdvisorDatabasesResult.h>
+#include <aws/dms/model/DescribeFleetAdvisorLsaAnalysisResult.h>
+#include <aws/dms/model/DescribeFleetAdvisorSchemaObjectSummaryResult.h>
+#include <aws/dms/model/DescribeFleetAdvisorSchemasResult.h>
 #include <aws/dms/model/DescribeOrderableReplicationInstancesResult.h>
 #include <aws/dms/model/DescribePendingMaintenanceActionsResult.h>
 #include <aws/dms/model/DescribeRefreshSchemasStatusResult.h>
@@ -61,11 +68,13 @@
 #include <aws/dms/model/RefreshSchemasResult.h>
 #include <aws/dms/model/ReloadTablesResult.h>
 #include <aws/dms/model/RemoveTagsFromResourceResult.h>
+#include <aws/dms/model/RunFleetAdvisorLsaAnalysisResult.h>
 #include <aws/dms/model/StartReplicationTaskResult.h>
 #include <aws/dms/model/StartReplicationTaskAssessmentResult.h>
 #include <aws/dms/model/StartReplicationTaskAssessmentRunResult.h>
 #include <aws/dms/model/StopReplicationTaskResult.h>
 #include <aws/dms/model/TestConnectionResult.h>
+#include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
 #include <future>
@@ -110,6 +119,7 @@ namespace Model
         class CancelReplicationTaskAssessmentRunRequest;
         class CreateEndpointRequest;
         class CreateEventSubscriptionRequest;
+        class CreateFleetAdvisorCollectorRequest;
         class CreateReplicationInstanceRequest;
         class CreateReplicationSubnetGroupRequest;
         class CreateReplicationTaskRequest;
@@ -117,6 +127,8 @@ namespace Model
         class DeleteConnectionRequest;
         class DeleteEndpointRequest;
         class DeleteEventSubscriptionRequest;
+        class DeleteFleetAdvisorCollectorRequest;
+        class DeleteFleetAdvisorDatabasesRequest;
         class DeleteReplicationInstanceRequest;
         class DeleteReplicationSubnetGroupRequest;
         class DeleteReplicationTaskRequest;
@@ -131,6 +143,11 @@ namespace Model
         class DescribeEventCategoriesRequest;
         class DescribeEventSubscriptionsRequest;
         class DescribeEventsRequest;
+        class DescribeFleetAdvisorCollectorsRequest;
+        class DescribeFleetAdvisorDatabasesRequest;
+        class DescribeFleetAdvisorLsaAnalysisRequest;
+        class DescribeFleetAdvisorSchemaObjectSummaryRequest;
+        class DescribeFleetAdvisorSchemasRequest;
         class DescribeOrderableReplicationInstancesRequest;
         class DescribePendingMaintenanceActionsRequest;
         class DescribeRefreshSchemasStatusRequest;
@@ -166,6 +183,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CancelReplicationTaskAssessmentRunResult, DatabaseMigrationServiceError> CancelReplicationTaskAssessmentRunOutcome;
         typedef Aws::Utils::Outcome<CreateEndpointResult, DatabaseMigrationServiceError> CreateEndpointOutcome;
         typedef Aws::Utils::Outcome<CreateEventSubscriptionResult, DatabaseMigrationServiceError> CreateEventSubscriptionOutcome;
+        typedef Aws::Utils::Outcome<CreateFleetAdvisorCollectorResult, DatabaseMigrationServiceError> CreateFleetAdvisorCollectorOutcome;
         typedef Aws::Utils::Outcome<CreateReplicationInstanceResult, DatabaseMigrationServiceError> CreateReplicationInstanceOutcome;
         typedef Aws::Utils::Outcome<CreateReplicationSubnetGroupResult, DatabaseMigrationServiceError> CreateReplicationSubnetGroupOutcome;
         typedef Aws::Utils::Outcome<CreateReplicationTaskResult, DatabaseMigrationServiceError> CreateReplicationTaskOutcome;
@@ -173,6 +191,8 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteConnectionResult, DatabaseMigrationServiceError> DeleteConnectionOutcome;
         typedef Aws::Utils::Outcome<DeleteEndpointResult, DatabaseMigrationServiceError> DeleteEndpointOutcome;
         typedef Aws::Utils::Outcome<DeleteEventSubscriptionResult, DatabaseMigrationServiceError> DeleteEventSubscriptionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, DatabaseMigrationServiceError> DeleteFleetAdvisorCollectorOutcome;
+        typedef Aws::Utils::Outcome<DeleteFleetAdvisorDatabasesResult, DatabaseMigrationServiceError> DeleteFleetAdvisorDatabasesOutcome;
         typedef Aws::Utils::Outcome<DeleteReplicationInstanceResult, DatabaseMigrationServiceError> DeleteReplicationInstanceOutcome;
         typedef Aws::Utils::Outcome<DeleteReplicationSubnetGroupResult, DatabaseMigrationServiceError> DeleteReplicationSubnetGroupOutcome;
         typedef Aws::Utils::Outcome<DeleteReplicationTaskResult, DatabaseMigrationServiceError> DeleteReplicationTaskOutcome;
@@ -187,6 +207,11 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeEventCategoriesResult, DatabaseMigrationServiceError> DescribeEventCategoriesOutcome;
         typedef Aws::Utils::Outcome<DescribeEventSubscriptionsResult, DatabaseMigrationServiceError> DescribeEventSubscriptionsOutcome;
         typedef Aws::Utils::Outcome<DescribeEventsResult, DatabaseMigrationServiceError> DescribeEventsOutcome;
+        typedef Aws::Utils::Outcome<DescribeFleetAdvisorCollectorsResult, DatabaseMigrationServiceError> DescribeFleetAdvisorCollectorsOutcome;
+        typedef Aws::Utils::Outcome<DescribeFleetAdvisorDatabasesResult, DatabaseMigrationServiceError> DescribeFleetAdvisorDatabasesOutcome;
+        typedef Aws::Utils::Outcome<DescribeFleetAdvisorLsaAnalysisResult, DatabaseMigrationServiceError> DescribeFleetAdvisorLsaAnalysisOutcome;
+        typedef Aws::Utils::Outcome<DescribeFleetAdvisorSchemaObjectSummaryResult, DatabaseMigrationServiceError> DescribeFleetAdvisorSchemaObjectSummaryOutcome;
+        typedef Aws::Utils::Outcome<DescribeFleetAdvisorSchemasResult, DatabaseMigrationServiceError> DescribeFleetAdvisorSchemasOutcome;
         typedef Aws::Utils::Outcome<DescribeOrderableReplicationInstancesResult, DatabaseMigrationServiceError> DescribeOrderableReplicationInstancesOutcome;
         typedef Aws::Utils::Outcome<DescribePendingMaintenanceActionsResult, DatabaseMigrationServiceError> DescribePendingMaintenanceActionsOutcome;
         typedef Aws::Utils::Outcome<DescribeRefreshSchemasStatusResult, DatabaseMigrationServiceError> DescribeRefreshSchemasStatusOutcome;
@@ -211,6 +236,7 @@ namespace Model
         typedef Aws::Utils::Outcome<RefreshSchemasResult, DatabaseMigrationServiceError> RefreshSchemasOutcome;
         typedef Aws::Utils::Outcome<ReloadTablesResult, DatabaseMigrationServiceError> ReloadTablesOutcome;
         typedef Aws::Utils::Outcome<RemoveTagsFromResourceResult, DatabaseMigrationServiceError> RemoveTagsFromResourceOutcome;
+        typedef Aws::Utils::Outcome<RunFleetAdvisorLsaAnalysisResult, DatabaseMigrationServiceError> RunFleetAdvisorLsaAnalysisOutcome;
         typedef Aws::Utils::Outcome<StartReplicationTaskResult, DatabaseMigrationServiceError> StartReplicationTaskOutcome;
         typedef Aws::Utils::Outcome<StartReplicationTaskAssessmentResult, DatabaseMigrationServiceError> StartReplicationTaskAssessmentOutcome;
         typedef Aws::Utils::Outcome<StartReplicationTaskAssessmentRunResult, DatabaseMigrationServiceError> StartReplicationTaskAssessmentRunOutcome;
@@ -222,6 +248,7 @@ namespace Model
         typedef std::future<CancelReplicationTaskAssessmentRunOutcome> CancelReplicationTaskAssessmentRunOutcomeCallable;
         typedef std::future<CreateEndpointOutcome> CreateEndpointOutcomeCallable;
         typedef std::future<CreateEventSubscriptionOutcome> CreateEventSubscriptionOutcomeCallable;
+        typedef std::future<CreateFleetAdvisorCollectorOutcome> CreateFleetAdvisorCollectorOutcomeCallable;
         typedef std::future<CreateReplicationInstanceOutcome> CreateReplicationInstanceOutcomeCallable;
         typedef std::future<CreateReplicationSubnetGroupOutcome> CreateReplicationSubnetGroupOutcomeCallable;
         typedef std::future<CreateReplicationTaskOutcome> CreateReplicationTaskOutcomeCallable;
@@ -229,6 +256,8 @@ namespace Model
         typedef std::future<DeleteConnectionOutcome> DeleteConnectionOutcomeCallable;
         typedef std::future<DeleteEndpointOutcome> DeleteEndpointOutcomeCallable;
         typedef std::future<DeleteEventSubscriptionOutcome> DeleteEventSubscriptionOutcomeCallable;
+        typedef std::future<DeleteFleetAdvisorCollectorOutcome> DeleteFleetAdvisorCollectorOutcomeCallable;
+        typedef std::future<DeleteFleetAdvisorDatabasesOutcome> DeleteFleetAdvisorDatabasesOutcomeCallable;
         typedef std::future<DeleteReplicationInstanceOutcome> DeleteReplicationInstanceOutcomeCallable;
         typedef std::future<DeleteReplicationSubnetGroupOutcome> DeleteReplicationSubnetGroupOutcomeCallable;
         typedef std::future<DeleteReplicationTaskOutcome> DeleteReplicationTaskOutcomeCallable;
@@ -243,6 +272,11 @@ namespace Model
         typedef std::future<DescribeEventCategoriesOutcome> DescribeEventCategoriesOutcomeCallable;
         typedef std::future<DescribeEventSubscriptionsOutcome> DescribeEventSubscriptionsOutcomeCallable;
         typedef std::future<DescribeEventsOutcome> DescribeEventsOutcomeCallable;
+        typedef std::future<DescribeFleetAdvisorCollectorsOutcome> DescribeFleetAdvisorCollectorsOutcomeCallable;
+        typedef std::future<DescribeFleetAdvisorDatabasesOutcome> DescribeFleetAdvisorDatabasesOutcomeCallable;
+        typedef std::future<DescribeFleetAdvisorLsaAnalysisOutcome> DescribeFleetAdvisorLsaAnalysisOutcomeCallable;
+        typedef std::future<DescribeFleetAdvisorSchemaObjectSummaryOutcome> DescribeFleetAdvisorSchemaObjectSummaryOutcomeCallable;
+        typedef std::future<DescribeFleetAdvisorSchemasOutcome> DescribeFleetAdvisorSchemasOutcomeCallable;
         typedef std::future<DescribeOrderableReplicationInstancesOutcome> DescribeOrderableReplicationInstancesOutcomeCallable;
         typedef std::future<DescribePendingMaintenanceActionsOutcome> DescribePendingMaintenanceActionsOutcomeCallable;
         typedef std::future<DescribeRefreshSchemasStatusOutcome> DescribeRefreshSchemasStatusOutcomeCallable;
@@ -267,6 +301,7 @@ namespace Model
         typedef std::future<RefreshSchemasOutcome> RefreshSchemasOutcomeCallable;
         typedef std::future<ReloadTablesOutcome> ReloadTablesOutcomeCallable;
         typedef std::future<RemoveTagsFromResourceOutcome> RemoveTagsFromResourceOutcomeCallable;
+        typedef std::future<RunFleetAdvisorLsaAnalysisOutcome> RunFleetAdvisorLsaAnalysisOutcomeCallable;
         typedef std::future<StartReplicationTaskOutcome> StartReplicationTaskOutcomeCallable;
         typedef std::future<StartReplicationTaskAssessmentOutcome> StartReplicationTaskAssessmentOutcomeCallable;
         typedef std::future<StartReplicationTaskAssessmentRunOutcome> StartReplicationTaskAssessmentRunOutcomeCallable;
@@ -281,6 +316,7 @@ namespace Model
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::CancelReplicationTaskAssessmentRunRequest&, const Model::CancelReplicationTaskAssessmentRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelReplicationTaskAssessmentRunResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::CreateEndpointRequest&, const Model::CreateEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEndpointResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::CreateEventSubscriptionRequest&, const Model::CreateEventSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEventSubscriptionResponseReceivedHandler;
+    typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::CreateFleetAdvisorCollectorRequest&, const Model::CreateFleetAdvisorCollectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFleetAdvisorCollectorResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::CreateReplicationInstanceRequest&, const Model::CreateReplicationInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateReplicationInstanceResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::CreateReplicationSubnetGroupRequest&, const Model::CreateReplicationSubnetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateReplicationSubnetGroupResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::CreateReplicationTaskRequest&, const Model::CreateReplicationTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateReplicationTaskResponseReceivedHandler;
@@ -288,6 +324,8 @@ namespace Model
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DeleteConnectionRequest&, const Model::DeleteConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConnectionResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DeleteEndpointRequest&, const Model::DeleteEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEndpointResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DeleteEventSubscriptionRequest&, const Model::DeleteEventSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEventSubscriptionResponseReceivedHandler;
+    typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DeleteFleetAdvisorCollectorRequest&, const Model::DeleteFleetAdvisorCollectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFleetAdvisorCollectorResponseReceivedHandler;
+    typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DeleteFleetAdvisorDatabasesRequest&, const Model::DeleteFleetAdvisorDatabasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFleetAdvisorDatabasesResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DeleteReplicationInstanceRequest&, const Model::DeleteReplicationInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteReplicationInstanceResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DeleteReplicationSubnetGroupRequest&, const Model::DeleteReplicationSubnetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteReplicationSubnetGroupResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DeleteReplicationTaskRequest&, const Model::DeleteReplicationTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteReplicationTaskResponseReceivedHandler;
@@ -302,6 +340,11 @@ namespace Model
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DescribeEventCategoriesRequest&, const Model::DescribeEventCategoriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEventCategoriesResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DescribeEventSubscriptionsRequest&, const Model::DescribeEventSubscriptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEventSubscriptionsResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DescribeEventsRequest&, const Model::DescribeEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEventsResponseReceivedHandler;
+    typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DescribeFleetAdvisorCollectorsRequest&, const Model::DescribeFleetAdvisorCollectorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFleetAdvisorCollectorsResponseReceivedHandler;
+    typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DescribeFleetAdvisorDatabasesRequest&, const Model::DescribeFleetAdvisorDatabasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFleetAdvisorDatabasesResponseReceivedHandler;
+    typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DescribeFleetAdvisorLsaAnalysisRequest&, const Model::DescribeFleetAdvisorLsaAnalysisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFleetAdvisorLsaAnalysisResponseReceivedHandler;
+    typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DescribeFleetAdvisorSchemaObjectSummaryRequest&, const Model::DescribeFleetAdvisorSchemaObjectSummaryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFleetAdvisorSchemaObjectSummaryResponseReceivedHandler;
+    typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DescribeFleetAdvisorSchemasRequest&, const Model::DescribeFleetAdvisorSchemasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFleetAdvisorSchemasResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DescribeOrderableReplicationInstancesRequest&, const Model::DescribeOrderableReplicationInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeOrderableReplicationInstancesResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DescribePendingMaintenanceActionsRequest&, const Model::DescribePendingMaintenanceActionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePendingMaintenanceActionsResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DescribeRefreshSchemasStatusRequest&, const Model::DescribeRefreshSchemasStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRefreshSchemasStatusResponseReceivedHandler;
@@ -326,6 +369,7 @@ namespace Model
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::RefreshSchemasRequest&, const Model::RefreshSchemasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RefreshSchemasResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::ReloadTablesRequest&, const Model::ReloadTablesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReloadTablesResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::RemoveTagsFromResourceRequest&, const Model::RemoveTagsFromResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveTagsFromResourceResponseReceivedHandler;
+    typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::RunFleetAdvisorLsaAnalysisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RunFleetAdvisorLsaAnalysisResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::StartReplicationTaskRequest&, const Model::StartReplicationTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartReplicationTaskResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::StartReplicationTaskAssessmentRequest&, const Model::StartReplicationTaskAssessmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartReplicationTaskAssessmentResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::StartReplicationTaskAssessmentRunRequest&, const Model::StartReplicationTaskAssessmentRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartReplicationTaskAssessmentRunResponseReceivedHandler;
@@ -489,6 +533,24 @@ namespace Model
         virtual void CreateEventSubscriptionAsync(const Model::CreateEventSubscriptionRequest& request, const CreateEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates a Fleet Advisor collector using the specified
+         * parameters.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateFleetAdvisorCollector">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateFleetAdvisorCollectorOutcome CreateFleetAdvisorCollector(const Model::CreateFleetAdvisorCollectorRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateFleetAdvisorCollector that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateFleetAdvisorCollectorOutcomeCallable CreateFleetAdvisorCollectorCallable(const Model::CreateFleetAdvisorCollectorRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateFleetAdvisorCollector that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateFleetAdvisorCollectorAsync(const Model::CreateFleetAdvisorCollectorRequest& request, const CreateFleetAdvisorCollectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates the replication instance using the specified parameters.</p> <p>DMS
          * requires that your account have certain roles with appropriate permissions
          * before you can create a replication instance. For information on the required
@@ -622,6 +684,41 @@ namespace Model
          * An Async wrapper for DeleteEventSubscription that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteEventSubscriptionAsync(const Model::DeleteEventSubscriptionRequest& request, const DeleteEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the specified Fleet Advisor collector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteFleetAdvisorCollector">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteFleetAdvisorCollectorOutcome DeleteFleetAdvisorCollector(const Model::DeleteFleetAdvisorCollectorRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteFleetAdvisorCollector that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteFleetAdvisorCollectorOutcomeCallable DeleteFleetAdvisorCollectorCallable(const Model::DeleteFleetAdvisorCollectorRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteFleetAdvisorCollector that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteFleetAdvisorCollectorAsync(const Model::DeleteFleetAdvisorCollectorRequest& request, const DeleteFleetAdvisorCollectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the specified Fleet Advisor collector databases.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteFleetAdvisorDatabases">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteFleetAdvisorDatabasesOutcome DeleteFleetAdvisorDatabases(const Model::DeleteFleetAdvisorDatabasesRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteFleetAdvisorDatabases that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteFleetAdvisorDatabasesOutcomeCallable DeleteFleetAdvisorDatabasesCallable(const Model::DeleteFleetAdvisorDatabasesRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteFleetAdvisorDatabases that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteFleetAdvisorDatabasesAsync(const Model::DeleteFleetAdvisorDatabasesRequest& request, const DeleteFleetAdvisorDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified replication instance.</p>  <p>You must delete any
@@ -907,6 +1004,96 @@ namespace Model
          * An Async wrapper for DescribeEvents that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeEventsAsync(const Model::DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns a list of the Fleet Advisor collectors in your account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeFleetAdvisorCollectors">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeFleetAdvisorCollectorsOutcome DescribeFleetAdvisorCollectors(const Model::DescribeFleetAdvisorCollectorsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeFleetAdvisorCollectors that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeFleetAdvisorCollectorsOutcomeCallable DescribeFleetAdvisorCollectorsCallable(const Model::DescribeFleetAdvisorCollectorsRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeFleetAdvisorCollectors that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeFleetAdvisorCollectorsAsync(const Model::DescribeFleetAdvisorCollectorsRequest& request, const DescribeFleetAdvisorCollectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns a list of Fleet Advisor databases in your account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeFleetAdvisorDatabases">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeFleetAdvisorDatabasesOutcome DescribeFleetAdvisorDatabases(const Model::DescribeFleetAdvisorDatabasesRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeFleetAdvisorDatabases that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeFleetAdvisorDatabasesOutcomeCallable DescribeFleetAdvisorDatabasesCallable(const Model::DescribeFleetAdvisorDatabasesRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeFleetAdvisorDatabases that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeFleetAdvisorDatabasesAsync(const Model::DescribeFleetAdvisorDatabasesRequest& request, const DescribeFleetAdvisorDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Provides descriptions of large-scale assessment (LSA) analyses produced by
+         * your Fleet Advisor collectors. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeFleetAdvisorLsaAnalysis">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeFleetAdvisorLsaAnalysisOutcome DescribeFleetAdvisorLsaAnalysis(const Model::DescribeFleetAdvisorLsaAnalysisRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeFleetAdvisorLsaAnalysis that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeFleetAdvisorLsaAnalysisOutcomeCallable DescribeFleetAdvisorLsaAnalysisCallable(const Model::DescribeFleetAdvisorLsaAnalysisRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeFleetAdvisorLsaAnalysis that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeFleetAdvisorLsaAnalysisAsync(const Model::DescribeFleetAdvisorLsaAnalysisRequest& request, const DescribeFleetAdvisorLsaAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Provides descriptions of the schemas discovered by your Fleet Advisor
+         * collectors.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeFleetAdvisorSchemaObjectSummary">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeFleetAdvisorSchemaObjectSummaryOutcome DescribeFleetAdvisorSchemaObjectSummary(const Model::DescribeFleetAdvisorSchemaObjectSummaryRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeFleetAdvisorSchemaObjectSummary that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeFleetAdvisorSchemaObjectSummaryOutcomeCallable DescribeFleetAdvisorSchemaObjectSummaryCallable(const Model::DescribeFleetAdvisorSchemaObjectSummaryRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeFleetAdvisorSchemaObjectSummary that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeFleetAdvisorSchemaObjectSummaryAsync(const Model::DescribeFleetAdvisorSchemaObjectSummaryRequest& request, const DescribeFleetAdvisorSchemaObjectSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns a list of schemas detected by Fleet Advisor Collectors in your
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeFleetAdvisorSchemas">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeFleetAdvisorSchemasOutcome DescribeFleetAdvisorSchemas(const Model::DescribeFleetAdvisorSchemasRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeFleetAdvisorSchemas that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeFleetAdvisorSchemasOutcomeCallable DescribeFleetAdvisorSchemasCallable(const Model::DescribeFleetAdvisorSchemasRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeFleetAdvisorSchemas that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeFleetAdvisorSchemasAsync(const Model::DescribeFleetAdvisorSchemasRequest& request, const DescribeFleetAdvisorSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the replication instance types that can be created
@@ -1375,6 +1562,23 @@ namespace Model
         virtual void RemoveTagsFromResourceAsync(const Model::RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Runs large-scale assessment (LSA) analysis on every Fleet Advisor collector
+         * in your account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/RunFleetAdvisorLsaAnalysis">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RunFleetAdvisorLsaAnalysisOutcome RunFleetAdvisorLsaAnalysis() const;
+
+        /**
+         * A Callable wrapper for RunFleetAdvisorLsaAnalysis that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RunFleetAdvisorLsaAnalysisOutcomeCallable RunFleetAdvisorLsaAnalysisCallable() const;
+
+        /**
+         * An Async wrapper for RunFleetAdvisorLsaAnalysis that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RunFleetAdvisorLsaAnalysisAsync(const RunFleetAdvisorLsaAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        /**
          * <p>Starts the replication task.</p> <p>For more information about DMS tasks, see
          * <a
          * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html">Working
@@ -1489,6 +1693,7 @@ namespace Model
         void CancelReplicationTaskAssessmentRunAsyncHelper(const Model::CancelReplicationTaskAssessmentRunRequest& request, const CancelReplicationTaskAssessmentRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateEndpointAsyncHelper(const Model::CreateEndpointRequest& request, const CreateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateEventSubscriptionAsyncHelper(const Model::CreateEventSubscriptionRequest& request, const CreateEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateFleetAdvisorCollectorAsyncHelper(const Model::CreateFleetAdvisorCollectorRequest& request, const CreateFleetAdvisorCollectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateReplicationInstanceAsyncHelper(const Model::CreateReplicationInstanceRequest& request, const CreateReplicationInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateReplicationSubnetGroupAsyncHelper(const Model::CreateReplicationSubnetGroupRequest& request, const CreateReplicationSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateReplicationTaskAsyncHelper(const Model::CreateReplicationTaskRequest& request, const CreateReplicationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1496,6 +1701,8 @@ namespace Model
         void DeleteConnectionAsyncHelper(const Model::DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteEndpointAsyncHelper(const Model::DeleteEndpointRequest& request, const DeleteEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteEventSubscriptionAsyncHelper(const Model::DeleteEventSubscriptionRequest& request, const DeleteEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteFleetAdvisorCollectorAsyncHelper(const Model::DeleteFleetAdvisorCollectorRequest& request, const DeleteFleetAdvisorCollectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteFleetAdvisorDatabasesAsyncHelper(const Model::DeleteFleetAdvisorDatabasesRequest& request, const DeleteFleetAdvisorDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteReplicationInstanceAsyncHelper(const Model::DeleteReplicationInstanceRequest& request, const DeleteReplicationInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteReplicationSubnetGroupAsyncHelper(const Model::DeleteReplicationSubnetGroupRequest& request, const DeleteReplicationSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteReplicationTaskAsyncHelper(const Model::DeleteReplicationTaskRequest& request, const DeleteReplicationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1510,6 +1717,11 @@ namespace Model
         void DescribeEventCategoriesAsyncHelper(const Model::DescribeEventCategoriesRequest& request, const DescribeEventCategoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeEventSubscriptionsAsyncHelper(const Model::DescribeEventSubscriptionsRequest& request, const DescribeEventSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeEventsAsyncHelper(const Model::DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeFleetAdvisorCollectorsAsyncHelper(const Model::DescribeFleetAdvisorCollectorsRequest& request, const DescribeFleetAdvisorCollectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeFleetAdvisorDatabasesAsyncHelper(const Model::DescribeFleetAdvisorDatabasesRequest& request, const DescribeFleetAdvisorDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeFleetAdvisorLsaAnalysisAsyncHelper(const Model::DescribeFleetAdvisorLsaAnalysisRequest& request, const DescribeFleetAdvisorLsaAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeFleetAdvisorSchemaObjectSummaryAsyncHelper(const Model::DescribeFleetAdvisorSchemaObjectSummaryRequest& request, const DescribeFleetAdvisorSchemaObjectSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeFleetAdvisorSchemasAsyncHelper(const Model::DescribeFleetAdvisorSchemasRequest& request, const DescribeFleetAdvisorSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeOrderableReplicationInstancesAsyncHelper(const Model::DescribeOrderableReplicationInstancesRequest& request, const DescribeOrderableReplicationInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribePendingMaintenanceActionsAsyncHelper(const Model::DescribePendingMaintenanceActionsRequest& request, const DescribePendingMaintenanceActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeRefreshSchemasStatusAsyncHelper(const Model::DescribeRefreshSchemasStatusRequest& request, const DescribeRefreshSchemasStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1534,6 +1746,7 @@ namespace Model
         void RefreshSchemasAsyncHelper(const Model::RefreshSchemasRequest& request, const RefreshSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ReloadTablesAsyncHelper(const Model::ReloadTablesRequest& request, const ReloadTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveTagsFromResourceAsyncHelper(const Model::RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void RunFleetAdvisorLsaAnalysisAsyncHelper(const RunFleetAdvisorLsaAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartReplicationTaskAsyncHelper(const Model::StartReplicationTaskRequest& request, const StartReplicationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartReplicationTaskAssessmentAsyncHelper(const Model::StartReplicationTaskAssessmentRequest& request, const StartReplicationTaskAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartReplicationTaskAssessmentRunAsyncHelper(const Model::StartReplicationTaskAssessmentRunRequest& request, const StartReplicationTaskAssessmentRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

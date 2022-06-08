@@ -25,11 +25,13 @@
 #include <aws/neptune/model/CreateDBParameterGroupResult.h>
 #include <aws/neptune/model/CreateDBSubnetGroupResult.h>
 #include <aws/neptune/model/CreateEventSubscriptionResult.h>
+#include <aws/neptune/model/CreateGlobalClusterResult.h>
 #include <aws/neptune/model/DeleteDBClusterResult.h>
 #include <aws/neptune/model/DeleteDBClusterEndpointResult.h>
 #include <aws/neptune/model/DeleteDBClusterSnapshotResult.h>
 #include <aws/neptune/model/DeleteDBInstanceResult.h>
 #include <aws/neptune/model/DeleteEventSubscriptionResult.h>
+#include <aws/neptune/model/DeleteGlobalClusterResult.h>
 #include <aws/neptune/model/DescribeDBClusterEndpointsResult.h>
 #include <aws/neptune/model/DescribeDBClusterParameterGroupsResult.h>
 #include <aws/neptune/model/DescribeDBClusterParametersResult.h>
@@ -46,10 +48,12 @@
 #include <aws/neptune/model/DescribeEventCategoriesResult.h>
 #include <aws/neptune/model/DescribeEventSubscriptionsResult.h>
 #include <aws/neptune/model/DescribeEventsResult.h>
+#include <aws/neptune/model/DescribeGlobalClustersResult.h>
 #include <aws/neptune/model/DescribeOrderableDBInstanceOptionsResult.h>
 #include <aws/neptune/model/DescribePendingMaintenanceActionsResult.h>
 #include <aws/neptune/model/DescribeValidDBInstanceModificationsResult.h>
 #include <aws/neptune/model/FailoverDBClusterResult.h>
+#include <aws/neptune/model/FailoverGlobalClusterResult.h>
 #include <aws/neptune/model/ListTagsForResourceResult.h>
 #include <aws/neptune/model/ModifyDBClusterResult.h>
 #include <aws/neptune/model/ModifyDBClusterEndpointResult.h>
@@ -59,8 +63,10 @@
 #include <aws/neptune/model/ModifyDBParameterGroupResult.h>
 #include <aws/neptune/model/ModifyDBSubnetGroupResult.h>
 #include <aws/neptune/model/ModifyEventSubscriptionResult.h>
+#include <aws/neptune/model/ModifyGlobalClusterResult.h>
 #include <aws/neptune/model/PromoteReadReplicaDBClusterResult.h>
 #include <aws/neptune/model/RebootDBInstanceResult.h>
+#include <aws/neptune/model/RemoveFromGlobalClusterResult.h>
 #include <aws/neptune/model/RemoveSourceIdentifierFromSubscriptionResult.h>
 #include <aws/neptune/model/ResetDBClusterParameterGroupResult.h>
 #include <aws/neptune/model/ResetDBParameterGroupResult.h>
@@ -129,6 +135,7 @@ namespace Model
         class CreateDBParameterGroupRequest;
         class CreateDBSubnetGroupRequest;
         class CreateEventSubscriptionRequest;
+        class CreateGlobalClusterRequest;
         class DeleteDBClusterRequest;
         class DeleteDBClusterEndpointRequest;
         class DeleteDBClusterParameterGroupRequest;
@@ -137,6 +144,7 @@ namespace Model
         class DeleteDBParameterGroupRequest;
         class DeleteDBSubnetGroupRequest;
         class DeleteEventSubscriptionRequest;
+        class DeleteGlobalClusterRequest;
         class DescribeDBClusterEndpointsRequest;
         class DescribeDBClusterParameterGroupsRequest;
         class DescribeDBClusterParametersRequest;
@@ -153,10 +161,12 @@ namespace Model
         class DescribeEventCategoriesRequest;
         class DescribeEventSubscriptionsRequest;
         class DescribeEventsRequest;
+        class DescribeGlobalClustersRequest;
         class DescribeOrderableDBInstanceOptionsRequest;
         class DescribePendingMaintenanceActionsRequest;
         class DescribeValidDBInstanceModificationsRequest;
         class FailoverDBClusterRequest;
+        class FailoverGlobalClusterRequest;
         class ListTagsForResourceRequest;
         class ModifyDBClusterRequest;
         class ModifyDBClusterEndpointRequest;
@@ -166,8 +176,10 @@ namespace Model
         class ModifyDBParameterGroupRequest;
         class ModifyDBSubnetGroupRequest;
         class ModifyEventSubscriptionRequest;
+        class ModifyGlobalClusterRequest;
         class PromoteReadReplicaDBClusterRequest;
         class RebootDBInstanceRequest;
+        class RemoveFromGlobalClusterRequest;
         class RemoveRoleFromDBClusterRequest;
         class RemoveSourceIdentifierFromSubscriptionRequest;
         class RemoveTagsFromResourceRequest;
@@ -193,6 +205,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateDBParameterGroupResult, NeptuneError> CreateDBParameterGroupOutcome;
         typedef Aws::Utils::Outcome<CreateDBSubnetGroupResult, NeptuneError> CreateDBSubnetGroupOutcome;
         typedef Aws::Utils::Outcome<CreateEventSubscriptionResult, NeptuneError> CreateEventSubscriptionOutcome;
+        typedef Aws::Utils::Outcome<CreateGlobalClusterResult, NeptuneError> CreateGlobalClusterOutcome;
         typedef Aws::Utils::Outcome<DeleteDBClusterResult, NeptuneError> DeleteDBClusterOutcome;
         typedef Aws::Utils::Outcome<DeleteDBClusterEndpointResult, NeptuneError> DeleteDBClusterEndpointOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, NeptuneError> DeleteDBClusterParameterGroupOutcome;
@@ -201,6 +214,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, NeptuneError> DeleteDBParameterGroupOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, NeptuneError> DeleteDBSubnetGroupOutcome;
         typedef Aws::Utils::Outcome<DeleteEventSubscriptionResult, NeptuneError> DeleteEventSubscriptionOutcome;
+        typedef Aws::Utils::Outcome<DeleteGlobalClusterResult, NeptuneError> DeleteGlobalClusterOutcome;
         typedef Aws::Utils::Outcome<DescribeDBClusterEndpointsResult, NeptuneError> DescribeDBClusterEndpointsOutcome;
         typedef Aws::Utils::Outcome<DescribeDBClusterParameterGroupsResult, NeptuneError> DescribeDBClusterParameterGroupsOutcome;
         typedef Aws::Utils::Outcome<DescribeDBClusterParametersResult, NeptuneError> DescribeDBClusterParametersOutcome;
@@ -217,10 +231,12 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeEventCategoriesResult, NeptuneError> DescribeEventCategoriesOutcome;
         typedef Aws::Utils::Outcome<DescribeEventSubscriptionsResult, NeptuneError> DescribeEventSubscriptionsOutcome;
         typedef Aws::Utils::Outcome<DescribeEventsResult, NeptuneError> DescribeEventsOutcome;
+        typedef Aws::Utils::Outcome<DescribeGlobalClustersResult, NeptuneError> DescribeGlobalClustersOutcome;
         typedef Aws::Utils::Outcome<DescribeOrderableDBInstanceOptionsResult, NeptuneError> DescribeOrderableDBInstanceOptionsOutcome;
         typedef Aws::Utils::Outcome<DescribePendingMaintenanceActionsResult, NeptuneError> DescribePendingMaintenanceActionsOutcome;
         typedef Aws::Utils::Outcome<DescribeValidDBInstanceModificationsResult, NeptuneError> DescribeValidDBInstanceModificationsOutcome;
         typedef Aws::Utils::Outcome<FailoverDBClusterResult, NeptuneError> FailoverDBClusterOutcome;
+        typedef Aws::Utils::Outcome<FailoverGlobalClusterResult, NeptuneError> FailoverGlobalClusterOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, NeptuneError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<ModifyDBClusterResult, NeptuneError> ModifyDBClusterOutcome;
         typedef Aws::Utils::Outcome<ModifyDBClusterEndpointResult, NeptuneError> ModifyDBClusterEndpointOutcome;
@@ -230,8 +246,10 @@ namespace Model
         typedef Aws::Utils::Outcome<ModifyDBParameterGroupResult, NeptuneError> ModifyDBParameterGroupOutcome;
         typedef Aws::Utils::Outcome<ModifyDBSubnetGroupResult, NeptuneError> ModifyDBSubnetGroupOutcome;
         typedef Aws::Utils::Outcome<ModifyEventSubscriptionResult, NeptuneError> ModifyEventSubscriptionOutcome;
+        typedef Aws::Utils::Outcome<ModifyGlobalClusterResult, NeptuneError> ModifyGlobalClusterOutcome;
         typedef Aws::Utils::Outcome<PromoteReadReplicaDBClusterResult, NeptuneError> PromoteReadReplicaDBClusterOutcome;
         typedef Aws::Utils::Outcome<RebootDBInstanceResult, NeptuneError> RebootDBInstanceOutcome;
+        typedef Aws::Utils::Outcome<RemoveFromGlobalClusterResult, NeptuneError> RemoveFromGlobalClusterOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, NeptuneError> RemoveRoleFromDBClusterOutcome;
         typedef Aws::Utils::Outcome<RemoveSourceIdentifierFromSubscriptionResult, NeptuneError> RemoveSourceIdentifierFromSubscriptionOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, NeptuneError> RemoveTagsFromResourceOutcome;
@@ -257,6 +275,7 @@ namespace Model
         typedef std::future<CreateDBParameterGroupOutcome> CreateDBParameterGroupOutcomeCallable;
         typedef std::future<CreateDBSubnetGroupOutcome> CreateDBSubnetGroupOutcomeCallable;
         typedef std::future<CreateEventSubscriptionOutcome> CreateEventSubscriptionOutcomeCallable;
+        typedef std::future<CreateGlobalClusterOutcome> CreateGlobalClusterOutcomeCallable;
         typedef std::future<DeleteDBClusterOutcome> DeleteDBClusterOutcomeCallable;
         typedef std::future<DeleteDBClusterEndpointOutcome> DeleteDBClusterEndpointOutcomeCallable;
         typedef std::future<DeleteDBClusterParameterGroupOutcome> DeleteDBClusterParameterGroupOutcomeCallable;
@@ -265,6 +284,7 @@ namespace Model
         typedef std::future<DeleteDBParameterGroupOutcome> DeleteDBParameterGroupOutcomeCallable;
         typedef std::future<DeleteDBSubnetGroupOutcome> DeleteDBSubnetGroupOutcomeCallable;
         typedef std::future<DeleteEventSubscriptionOutcome> DeleteEventSubscriptionOutcomeCallable;
+        typedef std::future<DeleteGlobalClusterOutcome> DeleteGlobalClusterOutcomeCallable;
         typedef std::future<DescribeDBClusterEndpointsOutcome> DescribeDBClusterEndpointsOutcomeCallable;
         typedef std::future<DescribeDBClusterParameterGroupsOutcome> DescribeDBClusterParameterGroupsOutcomeCallable;
         typedef std::future<DescribeDBClusterParametersOutcome> DescribeDBClusterParametersOutcomeCallable;
@@ -281,10 +301,12 @@ namespace Model
         typedef std::future<DescribeEventCategoriesOutcome> DescribeEventCategoriesOutcomeCallable;
         typedef std::future<DescribeEventSubscriptionsOutcome> DescribeEventSubscriptionsOutcomeCallable;
         typedef std::future<DescribeEventsOutcome> DescribeEventsOutcomeCallable;
+        typedef std::future<DescribeGlobalClustersOutcome> DescribeGlobalClustersOutcomeCallable;
         typedef std::future<DescribeOrderableDBInstanceOptionsOutcome> DescribeOrderableDBInstanceOptionsOutcomeCallable;
         typedef std::future<DescribePendingMaintenanceActionsOutcome> DescribePendingMaintenanceActionsOutcomeCallable;
         typedef std::future<DescribeValidDBInstanceModificationsOutcome> DescribeValidDBInstanceModificationsOutcomeCallable;
         typedef std::future<FailoverDBClusterOutcome> FailoverDBClusterOutcomeCallable;
+        typedef std::future<FailoverGlobalClusterOutcome> FailoverGlobalClusterOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<ModifyDBClusterOutcome> ModifyDBClusterOutcomeCallable;
         typedef std::future<ModifyDBClusterEndpointOutcome> ModifyDBClusterEndpointOutcomeCallable;
@@ -294,8 +316,10 @@ namespace Model
         typedef std::future<ModifyDBParameterGroupOutcome> ModifyDBParameterGroupOutcomeCallable;
         typedef std::future<ModifyDBSubnetGroupOutcome> ModifyDBSubnetGroupOutcomeCallable;
         typedef std::future<ModifyEventSubscriptionOutcome> ModifyEventSubscriptionOutcomeCallable;
+        typedef std::future<ModifyGlobalClusterOutcome> ModifyGlobalClusterOutcomeCallable;
         typedef std::future<PromoteReadReplicaDBClusterOutcome> PromoteReadReplicaDBClusterOutcomeCallable;
         typedef std::future<RebootDBInstanceOutcome> RebootDBInstanceOutcomeCallable;
+        typedef std::future<RemoveFromGlobalClusterOutcome> RemoveFromGlobalClusterOutcomeCallable;
         typedef std::future<RemoveRoleFromDBClusterOutcome> RemoveRoleFromDBClusterOutcomeCallable;
         typedef std::future<RemoveSourceIdentifierFromSubscriptionOutcome> RemoveSourceIdentifierFromSubscriptionOutcomeCallable;
         typedef std::future<RemoveTagsFromResourceOutcome> RemoveTagsFromResourceOutcomeCallable;
@@ -324,6 +348,7 @@ namespace Model
     typedef std::function<void(const NeptuneClient*, const Model::CreateDBParameterGroupRequest&, const Model::CreateDBParameterGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDBParameterGroupResponseReceivedHandler;
     typedef std::function<void(const NeptuneClient*, const Model::CreateDBSubnetGroupRequest&, const Model::CreateDBSubnetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDBSubnetGroupResponseReceivedHandler;
     typedef std::function<void(const NeptuneClient*, const Model::CreateEventSubscriptionRequest&, const Model::CreateEventSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEventSubscriptionResponseReceivedHandler;
+    typedef std::function<void(const NeptuneClient*, const Model::CreateGlobalClusterRequest&, const Model::CreateGlobalClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateGlobalClusterResponseReceivedHandler;
     typedef std::function<void(const NeptuneClient*, const Model::DeleteDBClusterRequest&, const Model::DeleteDBClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDBClusterResponseReceivedHandler;
     typedef std::function<void(const NeptuneClient*, const Model::DeleteDBClusterEndpointRequest&, const Model::DeleteDBClusterEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDBClusterEndpointResponseReceivedHandler;
     typedef std::function<void(const NeptuneClient*, const Model::DeleteDBClusterParameterGroupRequest&, const Model::DeleteDBClusterParameterGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDBClusterParameterGroupResponseReceivedHandler;
@@ -332,6 +357,7 @@ namespace Model
     typedef std::function<void(const NeptuneClient*, const Model::DeleteDBParameterGroupRequest&, const Model::DeleteDBParameterGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDBParameterGroupResponseReceivedHandler;
     typedef std::function<void(const NeptuneClient*, const Model::DeleteDBSubnetGroupRequest&, const Model::DeleteDBSubnetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDBSubnetGroupResponseReceivedHandler;
     typedef std::function<void(const NeptuneClient*, const Model::DeleteEventSubscriptionRequest&, const Model::DeleteEventSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEventSubscriptionResponseReceivedHandler;
+    typedef std::function<void(const NeptuneClient*, const Model::DeleteGlobalClusterRequest&, const Model::DeleteGlobalClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteGlobalClusterResponseReceivedHandler;
     typedef std::function<void(const NeptuneClient*, const Model::DescribeDBClusterEndpointsRequest&, const Model::DescribeDBClusterEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDBClusterEndpointsResponseReceivedHandler;
     typedef std::function<void(const NeptuneClient*, const Model::DescribeDBClusterParameterGroupsRequest&, const Model::DescribeDBClusterParameterGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDBClusterParameterGroupsResponseReceivedHandler;
     typedef std::function<void(const NeptuneClient*, const Model::DescribeDBClusterParametersRequest&, const Model::DescribeDBClusterParametersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDBClusterParametersResponseReceivedHandler;
@@ -348,10 +374,12 @@ namespace Model
     typedef std::function<void(const NeptuneClient*, const Model::DescribeEventCategoriesRequest&, const Model::DescribeEventCategoriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEventCategoriesResponseReceivedHandler;
     typedef std::function<void(const NeptuneClient*, const Model::DescribeEventSubscriptionsRequest&, const Model::DescribeEventSubscriptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEventSubscriptionsResponseReceivedHandler;
     typedef std::function<void(const NeptuneClient*, const Model::DescribeEventsRequest&, const Model::DescribeEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEventsResponseReceivedHandler;
+    typedef std::function<void(const NeptuneClient*, const Model::DescribeGlobalClustersRequest&, const Model::DescribeGlobalClustersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeGlobalClustersResponseReceivedHandler;
     typedef std::function<void(const NeptuneClient*, const Model::DescribeOrderableDBInstanceOptionsRequest&, const Model::DescribeOrderableDBInstanceOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeOrderableDBInstanceOptionsResponseReceivedHandler;
     typedef std::function<void(const NeptuneClient*, const Model::DescribePendingMaintenanceActionsRequest&, const Model::DescribePendingMaintenanceActionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePendingMaintenanceActionsResponseReceivedHandler;
     typedef std::function<void(const NeptuneClient*, const Model::DescribeValidDBInstanceModificationsRequest&, const Model::DescribeValidDBInstanceModificationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeValidDBInstanceModificationsResponseReceivedHandler;
     typedef std::function<void(const NeptuneClient*, const Model::FailoverDBClusterRequest&, const Model::FailoverDBClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > FailoverDBClusterResponseReceivedHandler;
+    typedef std::function<void(const NeptuneClient*, const Model::FailoverGlobalClusterRequest&, const Model::FailoverGlobalClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > FailoverGlobalClusterResponseReceivedHandler;
     typedef std::function<void(const NeptuneClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const NeptuneClient*, const Model::ModifyDBClusterRequest&, const Model::ModifyDBClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyDBClusterResponseReceivedHandler;
     typedef std::function<void(const NeptuneClient*, const Model::ModifyDBClusterEndpointRequest&, const Model::ModifyDBClusterEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyDBClusterEndpointResponseReceivedHandler;
@@ -361,8 +389,10 @@ namespace Model
     typedef std::function<void(const NeptuneClient*, const Model::ModifyDBParameterGroupRequest&, const Model::ModifyDBParameterGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyDBParameterGroupResponseReceivedHandler;
     typedef std::function<void(const NeptuneClient*, const Model::ModifyDBSubnetGroupRequest&, const Model::ModifyDBSubnetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyDBSubnetGroupResponseReceivedHandler;
     typedef std::function<void(const NeptuneClient*, const Model::ModifyEventSubscriptionRequest&, const Model::ModifyEventSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyEventSubscriptionResponseReceivedHandler;
+    typedef std::function<void(const NeptuneClient*, const Model::ModifyGlobalClusterRequest&, const Model::ModifyGlobalClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyGlobalClusterResponseReceivedHandler;
     typedef std::function<void(const NeptuneClient*, const Model::PromoteReadReplicaDBClusterRequest&, const Model::PromoteReadReplicaDBClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PromoteReadReplicaDBClusterResponseReceivedHandler;
     typedef std::function<void(const NeptuneClient*, const Model::RebootDBInstanceRequest&, const Model::RebootDBInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RebootDBInstanceResponseReceivedHandler;
+    typedef std::function<void(const NeptuneClient*, const Model::RemoveFromGlobalClusterRequest&, const Model::RemoveFromGlobalClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveFromGlobalClusterResponseReceivedHandler;
     typedef std::function<void(const NeptuneClient*, const Model::RemoveRoleFromDBClusterRequest&, const Model::RemoveRoleFromDBClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveRoleFromDBClusterResponseReceivedHandler;
     typedef std::function<void(const NeptuneClient*, const Model::RemoveSourceIdentifierFromSubscriptionRequest&, const Model::RemoveSourceIdentifierFromSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveSourceIdentifierFromSubscriptionResponseReceivedHandler;
     typedef std::function<void(const NeptuneClient*, const Model::RemoveTagsFromResourceRequest&, const Model::RemoveTagsFromResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveTagsFromResourceResponseReceivedHandler;
@@ -755,6 +785,30 @@ namespace Model
         virtual void CreateEventSubscriptionAsync(const Model::CreateEventSubscriptionRequest& request, const CreateEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates a Neptune global database spread across multiple Amazon Regions. The
+         * global database contains a single primary cluster with read-write capability,
+         * and read-only secondary clusters that receive data from the primary cluster
+         * through high-speed replication performed by the Neptune storage subsystem.</p>
+         * <p>You can create a global database that is initially empty, and then add a
+         * primary cluster and secondary clusters to it, or you can specify an existing
+         * Neptune cluster during the create operation to become the primary cluster of the
+         * global database.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateGlobalCluster">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateGlobalClusterOutcome CreateGlobalCluster(const Model::CreateGlobalClusterRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateGlobalCluster that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateGlobalClusterOutcomeCallable CreateGlobalClusterCallable(const Model::CreateGlobalClusterRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateGlobalCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateGlobalClusterAsync(const Model::CreateGlobalClusterRequest& request, const CreateGlobalClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>The DeleteDBCluster action deletes a previously provisioned DB cluster. When
          * you delete a DB cluster, all automated backups for that DB cluster are deleted
          * and can't be recovered. Manual DB cluster snapshots of the specified DB cluster
@@ -917,6 +971,24 @@ namespace Model
          * An Async wrapper for DeleteEventSubscription that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteEventSubscriptionAsync(const Model::DeleteEventSubscriptionRequest& request, const DeleteEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a global database. The primary and all secondary clusters must
+         * already be detached or deleted first.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteGlobalCluster">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteGlobalClusterOutcome DeleteGlobalCluster(const Model::DeleteGlobalClusterRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteGlobalCluster that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteGlobalClusterOutcomeCallable DeleteGlobalClusterCallable(const Model::DeleteGlobalClusterRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteGlobalCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteGlobalClusterAsync(const Model::DeleteGlobalClusterRequest& request, const DeleteGlobalClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about endpoints for an Amazon Neptune DB cluster.</p>
@@ -1231,6 +1303,24 @@ namespace Model
         virtual void DescribeEventsAsync(const Model::DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns information about Neptune global database clusters. This API supports
+         * pagination.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeGlobalClusters">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeGlobalClustersOutcome DescribeGlobalClusters(const Model::DescribeGlobalClustersRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeGlobalClusters that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeGlobalClustersOutcomeCallable DescribeGlobalClustersCallable(const Model::DescribeGlobalClustersRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeGlobalClusters that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeGlobalClustersAsync(const Model::DescribeGlobalClustersRequest& request, const DescribeGlobalClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns a list of orderable DB instance options for the specified
          * engine.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeOrderableDBInstanceOptions">AWS
@@ -1309,6 +1399,33 @@ namespace Model
          * An Async wrapper for FailoverDBCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void FailoverDBClusterAsync(const Model::FailoverDBClusterRequest& request, const FailoverDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Initiates the failover process for a Neptune global database.</p> <p>A
+         * failover for a Neptune global database promotes one of secondary read-only DB
+         * clusters to be the primary DB cluster and demotes the primary DB cluster to
+         * being a secondary (read-only) DB cluster. In other words, the role of the
+         * current primary DB cluster and the selected target secondary DB cluster are
+         * switched. The selected secondary DB cluster assumes full read/write capabilities
+         * for the Neptune global database.</p>  <p>This action applies <b>only</b>
+         * to Neptune global databases. This action is only intended for use on healthy
+         * Neptune global databases with healthy Neptune DB clusters and no region-wide
+         * outages, to test disaster recovery scenarios or to reconfigure the global
+         * database topology.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/FailoverGlobalCluster">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::FailoverGlobalClusterOutcome FailoverGlobalCluster(const Model::FailoverGlobalClusterRequest& request) const;
+
+        /**
+         * A Callable wrapper for FailoverGlobalCluster that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::FailoverGlobalClusterOutcomeCallable FailoverGlobalClusterCallable(const Model::FailoverGlobalClusterRequest& request) const;
+
+        /**
+         * An Async wrapper for FailoverGlobalCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void FailoverGlobalClusterAsync(const Model::FailoverGlobalClusterRequest& request, const FailoverGlobalClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all tags on an Amazon Neptune resource.</p><p><h3>See Also:</h3>   <a
@@ -1527,6 +1644,25 @@ namespace Model
         virtual void ModifyEventSubscriptionAsync(const Model::ModifyEventSubscriptionRequest& request, const ModifyEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Modify a setting for an Amazon Neptune global cluster. You can change one or
+         * more database configuration parameters by specifying these parameters and their
+         * new values in the request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/ModifyGlobalCluster">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyGlobalClusterOutcome ModifyGlobalCluster(const Model::ModifyGlobalClusterRequest& request) const;
+
+        /**
+         * A Callable wrapper for ModifyGlobalCluster that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ModifyGlobalClusterOutcomeCallable ModifyGlobalClusterCallable(const Model::ModifyGlobalClusterRequest& request) const;
+
+        /**
+         * An Async wrapper for ModifyGlobalCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ModifyGlobalClusterAsync(const Model::ModifyGlobalClusterRequest& request, const ModifyGlobalClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Not supported.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/PromoteReadReplicaDBCluster">AWS
          * API Reference</a></p>
@@ -1565,6 +1701,26 @@ namespace Model
          * An Async wrapper for RebootDBInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RebootDBInstanceAsync(const Model::RebootDBInstanceRequest& request, const RebootDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Detaches a Neptune DB cluster from a Neptune global database. A secondary
+         * cluster becomes a normal standalone cluster with read-write capability instead
+         * of being read-only, and no longer receives data from a the primary
+         * cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/RemoveFromGlobalCluster">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RemoveFromGlobalClusterOutcome RemoveFromGlobalCluster(const Model::RemoveFromGlobalClusterRequest& request) const;
+
+        /**
+         * A Callable wrapper for RemoveFromGlobalCluster that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RemoveFromGlobalClusterOutcomeCallable RemoveFromGlobalClusterCallable(const Model::RemoveFromGlobalClusterRequest& request) const;
+
+        /**
+         * An Async wrapper for RemoveFromGlobalCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RemoveFromGlobalClusterAsync(const Model::RemoveFromGlobalClusterRequest& request, const RemoveFromGlobalClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociates an Identity and Access Management (IAM) role from a DB
@@ -1779,6 +1935,7 @@ namespace Model
         void CreateDBParameterGroupAsyncHelper(const Model::CreateDBParameterGroupRequest& request, const CreateDBParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDBSubnetGroupAsyncHelper(const Model::CreateDBSubnetGroupRequest& request, const CreateDBSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateEventSubscriptionAsyncHelper(const Model::CreateEventSubscriptionRequest& request, const CreateEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateGlobalClusterAsyncHelper(const Model::CreateGlobalClusterRequest& request, const CreateGlobalClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDBClusterAsyncHelper(const Model::DeleteDBClusterRequest& request, const DeleteDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDBClusterEndpointAsyncHelper(const Model::DeleteDBClusterEndpointRequest& request, const DeleteDBClusterEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDBClusterParameterGroupAsyncHelper(const Model::DeleteDBClusterParameterGroupRequest& request, const DeleteDBClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1787,6 +1944,7 @@ namespace Model
         void DeleteDBParameterGroupAsyncHelper(const Model::DeleteDBParameterGroupRequest& request, const DeleteDBParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDBSubnetGroupAsyncHelper(const Model::DeleteDBSubnetGroupRequest& request, const DeleteDBSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteEventSubscriptionAsyncHelper(const Model::DeleteEventSubscriptionRequest& request, const DeleteEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteGlobalClusterAsyncHelper(const Model::DeleteGlobalClusterRequest& request, const DeleteGlobalClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDBClusterEndpointsAsyncHelper(const Model::DescribeDBClusterEndpointsRequest& request, const DescribeDBClusterEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDBClusterParameterGroupsAsyncHelper(const Model::DescribeDBClusterParameterGroupsRequest& request, const DescribeDBClusterParameterGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDBClusterParametersAsyncHelper(const Model::DescribeDBClusterParametersRequest& request, const DescribeDBClusterParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1803,10 +1961,12 @@ namespace Model
         void DescribeEventCategoriesAsyncHelper(const Model::DescribeEventCategoriesRequest& request, const DescribeEventCategoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeEventSubscriptionsAsyncHelper(const Model::DescribeEventSubscriptionsRequest& request, const DescribeEventSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeEventsAsyncHelper(const Model::DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeGlobalClustersAsyncHelper(const Model::DescribeGlobalClustersRequest& request, const DescribeGlobalClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeOrderableDBInstanceOptionsAsyncHelper(const Model::DescribeOrderableDBInstanceOptionsRequest& request, const DescribeOrderableDBInstanceOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribePendingMaintenanceActionsAsyncHelper(const Model::DescribePendingMaintenanceActionsRequest& request, const DescribePendingMaintenanceActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeValidDBInstanceModificationsAsyncHelper(const Model::DescribeValidDBInstanceModificationsRequest& request, const DescribeValidDBInstanceModificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void FailoverDBClusterAsyncHelper(const Model::FailoverDBClusterRequest& request, const FailoverDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void FailoverGlobalClusterAsyncHelper(const Model::FailoverGlobalClusterRequest& request, const FailoverGlobalClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyDBClusterAsyncHelper(const Model::ModifyDBClusterRequest& request, const ModifyDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyDBClusterEndpointAsyncHelper(const Model::ModifyDBClusterEndpointRequest& request, const ModifyDBClusterEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1816,8 +1976,10 @@ namespace Model
         void ModifyDBParameterGroupAsyncHelper(const Model::ModifyDBParameterGroupRequest& request, const ModifyDBParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyDBSubnetGroupAsyncHelper(const Model::ModifyDBSubnetGroupRequest& request, const ModifyDBSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyEventSubscriptionAsyncHelper(const Model::ModifyEventSubscriptionRequest& request, const ModifyEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ModifyGlobalClusterAsyncHelper(const Model::ModifyGlobalClusterRequest& request, const ModifyGlobalClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PromoteReadReplicaDBClusterAsyncHelper(const Model::PromoteReadReplicaDBClusterRequest& request, const PromoteReadReplicaDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RebootDBInstanceAsyncHelper(const Model::RebootDBInstanceRequest& request, const RebootDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void RemoveFromGlobalClusterAsyncHelper(const Model::RemoveFromGlobalClusterRequest& request, const RemoveFromGlobalClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveRoleFromDBClusterAsyncHelper(const Model::RemoveRoleFromDBClusterRequest& request, const RemoveRoleFromDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveSourceIdentifierFromSubscriptionAsyncHelper(const Model::RemoveSourceIdentifierFromSubscriptionRequest& request, const RemoveSourceIdentifierFromSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveTagsFromResourceAsyncHelper(const Model::RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

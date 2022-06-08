@@ -35,6 +35,7 @@
 #include <aws/neptune/model/CreateDBParameterGroupRequest.h>
 #include <aws/neptune/model/CreateDBSubnetGroupRequest.h>
 #include <aws/neptune/model/CreateEventSubscriptionRequest.h>
+#include <aws/neptune/model/CreateGlobalClusterRequest.h>
 #include <aws/neptune/model/DeleteDBClusterRequest.h>
 #include <aws/neptune/model/DeleteDBClusterEndpointRequest.h>
 #include <aws/neptune/model/DeleteDBClusterParameterGroupRequest.h>
@@ -43,6 +44,7 @@
 #include <aws/neptune/model/DeleteDBParameterGroupRequest.h>
 #include <aws/neptune/model/DeleteDBSubnetGroupRequest.h>
 #include <aws/neptune/model/DeleteEventSubscriptionRequest.h>
+#include <aws/neptune/model/DeleteGlobalClusterRequest.h>
 #include <aws/neptune/model/DescribeDBClusterEndpointsRequest.h>
 #include <aws/neptune/model/DescribeDBClusterParameterGroupsRequest.h>
 #include <aws/neptune/model/DescribeDBClusterParametersRequest.h>
@@ -59,10 +61,12 @@
 #include <aws/neptune/model/DescribeEventCategoriesRequest.h>
 #include <aws/neptune/model/DescribeEventSubscriptionsRequest.h>
 #include <aws/neptune/model/DescribeEventsRequest.h>
+#include <aws/neptune/model/DescribeGlobalClustersRequest.h>
 #include <aws/neptune/model/DescribeOrderableDBInstanceOptionsRequest.h>
 #include <aws/neptune/model/DescribePendingMaintenanceActionsRequest.h>
 #include <aws/neptune/model/DescribeValidDBInstanceModificationsRequest.h>
 #include <aws/neptune/model/FailoverDBClusterRequest.h>
+#include <aws/neptune/model/FailoverGlobalClusterRequest.h>
 #include <aws/neptune/model/ListTagsForResourceRequest.h>
 #include <aws/neptune/model/ModifyDBClusterRequest.h>
 #include <aws/neptune/model/ModifyDBClusterEndpointRequest.h>
@@ -72,8 +76,10 @@
 #include <aws/neptune/model/ModifyDBParameterGroupRequest.h>
 #include <aws/neptune/model/ModifyDBSubnetGroupRequest.h>
 #include <aws/neptune/model/ModifyEventSubscriptionRequest.h>
+#include <aws/neptune/model/ModifyGlobalClusterRequest.h>
 #include <aws/neptune/model/PromoteReadReplicaDBClusterRequest.h>
 #include <aws/neptune/model/RebootDBInstanceRequest.h>
+#include <aws/neptune/model/RemoveFromGlobalClusterRequest.h>
 #include <aws/neptune/model/RemoveRoleFromDBClusterRequest.h>
 #include <aws/neptune/model/RemoveSourceIdentifierFromSubscriptionRequest.h>
 #include <aws/neptune/model/RemoveTagsFromResourceRequest.h>
@@ -541,6 +547,30 @@ void NeptuneClient::CreateEventSubscriptionAsyncHelper(const CreateEventSubscrip
   handler(this, request, CreateEventSubscription(request), context);
 }
 
+CreateGlobalClusterOutcome NeptuneClient::CreateGlobalCluster(const CreateGlobalClusterRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateGlobalClusterOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+CreateGlobalClusterOutcomeCallable NeptuneClient::CreateGlobalClusterCallable(const CreateGlobalClusterRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateGlobalClusterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateGlobalCluster(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void NeptuneClient::CreateGlobalClusterAsync(const CreateGlobalClusterRequest& request, const CreateGlobalClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateGlobalClusterAsyncHelper( request, handler, context ); } );
+}
+
+void NeptuneClient::CreateGlobalClusterAsyncHelper(const CreateGlobalClusterRequest& request, const CreateGlobalClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateGlobalCluster(request), context);
+}
+
 DeleteDBClusterOutcome NeptuneClient::DeleteDBCluster(const DeleteDBClusterRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -731,6 +761,30 @@ void NeptuneClient::DeleteEventSubscriptionAsync(const DeleteEventSubscriptionRe
 void NeptuneClient::DeleteEventSubscriptionAsyncHelper(const DeleteEventSubscriptionRequest& request, const DeleteEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteEventSubscription(request), context);
+}
+
+DeleteGlobalClusterOutcome NeptuneClient::DeleteGlobalCluster(const DeleteGlobalClusterRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteGlobalClusterOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DeleteGlobalClusterOutcomeCallable NeptuneClient::DeleteGlobalClusterCallable(const DeleteGlobalClusterRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteGlobalClusterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteGlobalCluster(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void NeptuneClient::DeleteGlobalClusterAsync(const DeleteGlobalClusterRequest& request, const DeleteGlobalClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteGlobalClusterAsyncHelper( request, handler, context ); } );
+}
+
+void NeptuneClient::DeleteGlobalClusterAsyncHelper(const DeleteGlobalClusterRequest& request, const DeleteGlobalClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteGlobalCluster(request), context);
 }
 
 DescribeDBClusterEndpointsOutcome NeptuneClient::DescribeDBClusterEndpoints(const DescribeDBClusterEndpointsRequest& request) const
@@ -1117,6 +1171,30 @@ void NeptuneClient::DescribeEventsAsyncHelper(const DescribeEventsRequest& reque
   handler(this, request, DescribeEvents(request), context);
 }
 
+DescribeGlobalClustersOutcome NeptuneClient::DescribeGlobalClusters(const DescribeGlobalClustersRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeGlobalClustersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DescribeGlobalClustersOutcomeCallable NeptuneClient::DescribeGlobalClustersCallable(const DescribeGlobalClustersRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeGlobalClustersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeGlobalClusters(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void NeptuneClient::DescribeGlobalClustersAsync(const DescribeGlobalClustersRequest& request, const DescribeGlobalClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeGlobalClustersAsyncHelper( request, handler, context ); } );
+}
+
+void NeptuneClient::DescribeGlobalClustersAsyncHelper(const DescribeGlobalClustersRequest& request, const DescribeGlobalClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeGlobalClusters(request), context);
+}
+
 DescribeOrderableDBInstanceOptionsOutcome NeptuneClient::DescribeOrderableDBInstanceOptions(const DescribeOrderableDBInstanceOptionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1211,6 +1289,30 @@ void NeptuneClient::FailoverDBClusterAsync(const FailoverDBClusterRequest& reque
 void NeptuneClient::FailoverDBClusterAsyncHelper(const FailoverDBClusterRequest& request, const FailoverDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, FailoverDBCluster(request), context);
+}
+
+FailoverGlobalClusterOutcome NeptuneClient::FailoverGlobalCluster(const FailoverGlobalClusterRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return FailoverGlobalClusterOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+FailoverGlobalClusterOutcomeCallable NeptuneClient::FailoverGlobalClusterCallable(const FailoverGlobalClusterRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< FailoverGlobalClusterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->FailoverGlobalCluster(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void NeptuneClient::FailoverGlobalClusterAsync(const FailoverGlobalClusterRequest& request, const FailoverGlobalClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->FailoverGlobalClusterAsyncHelper( request, handler, context ); } );
+}
+
+void NeptuneClient::FailoverGlobalClusterAsyncHelper(const FailoverGlobalClusterRequest& request, const FailoverGlobalClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, FailoverGlobalCluster(request), context);
 }
 
 ListTagsForResourceOutcome NeptuneClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1429,6 +1531,30 @@ void NeptuneClient::ModifyEventSubscriptionAsyncHelper(const ModifyEventSubscrip
   handler(this, request, ModifyEventSubscription(request), context);
 }
 
+ModifyGlobalClusterOutcome NeptuneClient::ModifyGlobalCluster(const ModifyGlobalClusterRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ModifyGlobalClusterOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+ModifyGlobalClusterOutcomeCallable NeptuneClient::ModifyGlobalClusterCallable(const ModifyGlobalClusterRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ModifyGlobalClusterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ModifyGlobalCluster(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void NeptuneClient::ModifyGlobalClusterAsync(const ModifyGlobalClusterRequest& request, const ModifyGlobalClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ModifyGlobalClusterAsyncHelper( request, handler, context ); } );
+}
+
+void NeptuneClient::ModifyGlobalClusterAsyncHelper(const ModifyGlobalClusterRequest& request, const ModifyGlobalClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ModifyGlobalCluster(request), context);
+}
+
 PromoteReadReplicaDBClusterOutcome NeptuneClient::PromoteReadReplicaDBCluster(const PromoteReadReplicaDBClusterRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1475,6 +1601,30 @@ void NeptuneClient::RebootDBInstanceAsync(const RebootDBInstanceRequest& request
 void NeptuneClient::RebootDBInstanceAsyncHelper(const RebootDBInstanceRequest& request, const RebootDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, RebootDBInstance(request), context);
+}
+
+RemoveFromGlobalClusterOutcome NeptuneClient::RemoveFromGlobalCluster(const RemoveFromGlobalClusterRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return RemoveFromGlobalClusterOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+RemoveFromGlobalClusterOutcomeCallable NeptuneClient::RemoveFromGlobalClusterCallable(const RemoveFromGlobalClusterRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RemoveFromGlobalClusterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RemoveFromGlobalCluster(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void NeptuneClient::RemoveFromGlobalClusterAsync(const RemoveFromGlobalClusterRequest& request, const RemoveFromGlobalClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RemoveFromGlobalClusterAsyncHelper( request, handler, context ); } );
+}
+
+void NeptuneClient::RemoveFromGlobalClusterAsyncHelper(const RemoveFromGlobalClusterRequest& request, const RemoveFromGlobalClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RemoveFromGlobalCluster(request), context);
 }
 
 RemoveRoleFromDBClusterOutcome NeptuneClient::RemoveRoleFromDBCluster(const RemoveRoleFromDBClusterRequest& request) const

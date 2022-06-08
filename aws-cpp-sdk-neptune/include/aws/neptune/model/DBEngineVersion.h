@@ -519,6 +519,31 @@ namespace Model
      */
     inline DBEngineVersion& WithSupportsReadReplica(bool value) { SetSupportsReadReplica(value); return *this;}
 
+
+    /**
+     * <p>A value that indicates whether you can use Aurora global databases with a
+     * specific DB engine version.</p>
+     */
+    inline bool GetSupportsGlobalDatabases() const{ return m_supportsGlobalDatabases; }
+
+    /**
+     * <p>A value that indicates whether you can use Aurora global databases with a
+     * specific DB engine version.</p>
+     */
+    inline bool SupportsGlobalDatabasesHasBeenSet() const { return m_supportsGlobalDatabasesHasBeenSet; }
+
+    /**
+     * <p>A value that indicates whether you can use Aurora global databases with a
+     * specific DB engine version.</p>
+     */
+    inline void SetSupportsGlobalDatabases(bool value) { m_supportsGlobalDatabasesHasBeenSet = true; m_supportsGlobalDatabases = value; }
+
+    /**
+     * <p>A value that indicates whether you can use Aurora global databases with a
+     * specific DB engine version.</p>
+     */
+    inline DBEngineVersion& WithSupportsGlobalDatabases(bool value) { SetSupportsGlobalDatabases(value); return *this;}
+
   private:
 
     Aws::String m_engine;
@@ -556,6 +581,9 @@ namespace Model
 
     bool m_supportsReadReplica;
     bool m_supportsReadReplicaHasBeenSet;
+
+    bool m_supportsGlobalDatabases;
+    bool m_supportsGlobalDatabasesHasBeenSet;
   };
 
 } // namespace Model

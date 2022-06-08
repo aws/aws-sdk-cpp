@@ -106,6 +106,7 @@
 #include <aws/redshift/model/EnableLoggingRequest.h>
 #include <aws/redshift/model/EnableSnapshotCopyRequest.h>
 #include <aws/redshift/model/GetClusterCredentialsRequest.h>
+#include <aws/redshift/model/GetClusterCredentialsWithIAMRequest.h>
 #include <aws/redshift/model/GetReservedNodeExchangeConfigurationOptionsRequest.h>
 #include <aws/redshift/model/GetReservedNodeExchangeOfferingsRequest.h>
 #include <aws/redshift/model/ModifyAquaConfigurationRequest.h>
@@ -2285,6 +2286,30 @@ void RedshiftClient::GetClusterCredentialsAsync(const GetClusterCredentialsReque
 void RedshiftClient::GetClusterCredentialsAsyncHelper(const GetClusterCredentialsRequest& request, const GetClusterCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetClusterCredentials(request), context);
+}
+
+GetClusterCredentialsWithIAMOutcome RedshiftClient::GetClusterCredentialsWithIAM(const GetClusterCredentialsWithIAMRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetClusterCredentialsWithIAMOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+GetClusterCredentialsWithIAMOutcomeCallable RedshiftClient::GetClusterCredentialsWithIAMCallable(const GetClusterCredentialsWithIAMRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetClusterCredentialsWithIAMOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetClusterCredentialsWithIAM(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RedshiftClient::GetClusterCredentialsWithIAMAsync(const GetClusterCredentialsWithIAMRequest& request, const GetClusterCredentialsWithIAMResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetClusterCredentialsWithIAMAsyncHelper( request, handler, context ); } );
+}
+
+void RedshiftClient::GetClusterCredentialsWithIAMAsyncHelper(const GetClusterCredentialsWithIAMRequest& request, const GetClusterCredentialsWithIAMResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetClusterCredentialsWithIAM(request), context);
 }
 
 GetReservedNodeExchangeConfigurationOptionsOutcome RedshiftClient::GetReservedNodeExchangeConfigurationOptions(const GetReservedNodeExchangeConfigurationOptionsRequest& request) const

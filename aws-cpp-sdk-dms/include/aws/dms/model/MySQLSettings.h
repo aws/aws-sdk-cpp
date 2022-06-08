@@ -261,42 +261,54 @@ namespace Model
 
     /**
      * <p>Specifies where to migrate source tables on the target, either to a single
-     * database or multiple databases.</p> <p>Example:
+     * database or multiple databases. If you specify <code>SPECIFIC_DATABASE</code>,
+     * specify the database name using the <code>DatabaseName</code> parameter of the
+     * <code>Endpoint</code> object.</p> <p>Example:
      * <code>targetDbType=MULTIPLE_DATABASES</code> </p>
      */
     inline const TargetDbType& GetTargetDbType() const{ return m_targetDbType; }
 
     /**
      * <p>Specifies where to migrate source tables on the target, either to a single
-     * database or multiple databases.</p> <p>Example:
+     * database or multiple databases. If you specify <code>SPECIFIC_DATABASE</code>,
+     * specify the database name using the <code>DatabaseName</code> parameter of the
+     * <code>Endpoint</code> object.</p> <p>Example:
      * <code>targetDbType=MULTIPLE_DATABASES</code> </p>
      */
     inline bool TargetDbTypeHasBeenSet() const { return m_targetDbTypeHasBeenSet; }
 
     /**
      * <p>Specifies where to migrate source tables on the target, either to a single
-     * database or multiple databases.</p> <p>Example:
+     * database or multiple databases. If you specify <code>SPECIFIC_DATABASE</code>,
+     * specify the database name using the <code>DatabaseName</code> parameter of the
+     * <code>Endpoint</code> object.</p> <p>Example:
      * <code>targetDbType=MULTIPLE_DATABASES</code> </p>
      */
     inline void SetTargetDbType(const TargetDbType& value) { m_targetDbTypeHasBeenSet = true; m_targetDbType = value; }
 
     /**
      * <p>Specifies where to migrate source tables on the target, either to a single
-     * database or multiple databases.</p> <p>Example:
+     * database or multiple databases. If you specify <code>SPECIFIC_DATABASE</code>,
+     * specify the database name using the <code>DatabaseName</code> parameter of the
+     * <code>Endpoint</code> object.</p> <p>Example:
      * <code>targetDbType=MULTIPLE_DATABASES</code> </p>
      */
     inline void SetTargetDbType(TargetDbType&& value) { m_targetDbTypeHasBeenSet = true; m_targetDbType = std::move(value); }
 
     /**
      * <p>Specifies where to migrate source tables on the target, either to a single
-     * database or multiple databases.</p> <p>Example:
+     * database or multiple databases. If you specify <code>SPECIFIC_DATABASE</code>,
+     * specify the database name using the <code>DatabaseName</code> parameter of the
+     * <code>Endpoint</code> object.</p> <p>Example:
      * <code>targetDbType=MULTIPLE_DATABASES</code> </p>
      */
     inline MySQLSettings& WithTargetDbType(const TargetDbType& value) { SetTargetDbType(value); return *this;}
 
     /**
      * <p>Specifies where to migrate source tables on the target, either to a single
-     * database or multiple databases.</p> <p>Example:
+     * database or multiple databases. If you specify <code>SPECIFIC_DATABASE</code>,
+     * specify the database name using the <code>DatabaseName</code> parameter of the
+     * <code>Endpoint</code> object.</p> <p>Example:
      * <code>targetDbType=MULTIPLE_DATABASES</code> </p>
      */
     inline MySQLSettings& WithTargetDbType(TargetDbType&& value) { SetTargetDbType(std::move(value)); return *this;}

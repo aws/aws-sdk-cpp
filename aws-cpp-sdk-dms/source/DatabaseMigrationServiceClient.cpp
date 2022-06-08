@@ -25,6 +25,7 @@
 #include <aws/dms/model/CancelReplicationTaskAssessmentRunRequest.h>
 #include <aws/dms/model/CreateEndpointRequest.h>
 #include <aws/dms/model/CreateEventSubscriptionRequest.h>
+#include <aws/dms/model/CreateFleetAdvisorCollectorRequest.h>
 #include <aws/dms/model/CreateReplicationInstanceRequest.h>
 #include <aws/dms/model/CreateReplicationSubnetGroupRequest.h>
 #include <aws/dms/model/CreateReplicationTaskRequest.h>
@@ -32,6 +33,8 @@
 #include <aws/dms/model/DeleteConnectionRequest.h>
 #include <aws/dms/model/DeleteEndpointRequest.h>
 #include <aws/dms/model/DeleteEventSubscriptionRequest.h>
+#include <aws/dms/model/DeleteFleetAdvisorCollectorRequest.h>
+#include <aws/dms/model/DeleteFleetAdvisorDatabasesRequest.h>
 #include <aws/dms/model/DeleteReplicationInstanceRequest.h>
 #include <aws/dms/model/DeleteReplicationSubnetGroupRequest.h>
 #include <aws/dms/model/DeleteReplicationTaskRequest.h>
@@ -46,6 +49,11 @@
 #include <aws/dms/model/DescribeEventCategoriesRequest.h>
 #include <aws/dms/model/DescribeEventSubscriptionsRequest.h>
 #include <aws/dms/model/DescribeEventsRequest.h>
+#include <aws/dms/model/DescribeFleetAdvisorCollectorsRequest.h>
+#include <aws/dms/model/DescribeFleetAdvisorDatabasesRequest.h>
+#include <aws/dms/model/DescribeFleetAdvisorLsaAnalysisRequest.h>
+#include <aws/dms/model/DescribeFleetAdvisorSchemaObjectSummaryRequest.h>
+#include <aws/dms/model/DescribeFleetAdvisorSchemasRequest.h>
 #include <aws/dms/model/DescribeOrderableReplicationInstancesRequest.h>
 #include <aws/dms/model/DescribePendingMaintenanceActionsRequest.h>
 #include <aws/dms/model/DescribeRefreshSchemasStatusRequest.h>
@@ -269,6 +277,30 @@ void DatabaseMigrationServiceClient::CreateEventSubscriptionAsyncHelper(const Cr
   handler(this, request, CreateEventSubscription(request), context);
 }
 
+CreateFleetAdvisorCollectorOutcome DatabaseMigrationServiceClient::CreateFleetAdvisorCollector(const CreateFleetAdvisorCollectorRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateFleetAdvisorCollectorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateFleetAdvisorCollectorOutcomeCallable DatabaseMigrationServiceClient::CreateFleetAdvisorCollectorCallable(const CreateFleetAdvisorCollectorRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateFleetAdvisorCollectorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateFleetAdvisorCollector(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DatabaseMigrationServiceClient::CreateFleetAdvisorCollectorAsync(const CreateFleetAdvisorCollectorRequest& request, const CreateFleetAdvisorCollectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateFleetAdvisorCollectorAsyncHelper( request, handler, context ); } );
+}
+
+void DatabaseMigrationServiceClient::CreateFleetAdvisorCollectorAsyncHelper(const CreateFleetAdvisorCollectorRequest& request, const CreateFleetAdvisorCollectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateFleetAdvisorCollector(request), context);
+}
+
 CreateReplicationInstanceOutcome DatabaseMigrationServiceClient::CreateReplicationInstance(const CreateReplicationInstanceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -435,6 +467,54 @@ void DatabaseMigrationServiceClient::DeleteEventSubscriptionAsync(const DeleteEv
 void DatabaseMigrationServiceClient::DeleteEventSubscriptionAsyncHelper(const DeleteEventSubscriptionRequest& request, const DeleteEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteEventSubscription(request), context);
+}
+
+DeleteFleetAdvisorCollectorOutcome DatabaseMigrationServiceClient::DeleteFleetAdvisorCollector(const DeleteFleetAdvisorCollectorRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteFleetAdvisorCollectorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteFleetAdvisorCollectorOutcomeCallable DatabaseMigrationServiceClient::DeleteFleetAdvisorCollectorCallable(const DeleteFleetAdvisorCollectorRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteFleetAdvisorCollectorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteFleetAdvisorCollector(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DatabaseMigrationServiceClient::DeleteFleetAdvisorCollectorAsync(const DeleteFleetAdvisorCollectorRequest& request, const DeleteFleetAdvisorCollectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteFleetAdvisorCollectorAsyncHelper( request, handler, context ); } );
+}
+
+void DatabaseMigrationServiceClient::DeleteFleetAdvisorCollectorAsyncHelper(const DeleteFleetAdvisorCollectorRequest& request, const DeleteFleetAdvisorCollectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteFleetAdvisorCollector(request), context);
+}
+
+DeleteFleetAdvisorDatabasesOutcome DatabaseMigrationServiceClient::DeleteFleetAdvisorDatabases(const DeleteFleetAdvisorDatabasesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteFleetAdvisorDatabasesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteFleetAdvisorDatabasesOutcomeCallable DatabaseMigrationServiceClient::DeleteFleetAdvisorDatabasesCallable(const DeleteFleetAdvisorDatabasesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteFleetAdvisorDatabasesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteFleetAdvisorDatabases(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DatabaseMigrationServiceClient::DeleteFleetAdvisorDatabasesAsync(const DeleteFleetAdvisorDatabasesRequest& request, const DeleteFleetAdvisorDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteFleetAdvisorDatabasesAsyncHelper( request, handler, context ); } );
+}
+
+void DatabaseMigrationServiceClient::DeleteFleetAdvisorDatabasesAsyncHelper(const DeleteFleetAdvisorDatabasesRequest& request, const DeleteFleetAdvisorDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteFleetAdvisorDatabases(request), context);
 }
 
 DeleteReplicationInstanceOutcome DatabaseMigrationServiceClient::DeleteReplicationInstance(const DeleteReplicationInstanceRequest& request) const
@@ -771,6 +851,126 @@ void DatabaseMigrationServiceClient::DescribeEventsAsync(const DescribeEventsReq
 void DatabaseMigrationServiceClient::DescribeEventsAsyncHelper(const DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeEvents(request), context);
+}
+
+DescribeFleetAdvisorCollectorsOutcome DatabaseMigrationServiceClient::DescribeFleetAdvisorCollectors(const DescribeFleetAdvisorCollectorsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeFleetAdvisorCollectorsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeFleetAdvisorCollectorsOutcomeCallable DatabaseMigrationServiceClient::DescribeFleetAdvisorCollectorsCallable(const DescribeFleetAdvisorCollectorsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeFleetAdvisorCollectorsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeFleetAdvisorCollectors(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DatabaseMigrationServiceClient::DescribeFleetAdvisorCollectorsAsync(const DescribeFleetAdvisorCollectorsRequest& request, const DescribeFleetAdvisorCollectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeFleetAdvisorCollectorsAsyncHelper( request, handler, context ); } );
+}
+
+void DatabaseMigrationServiceClient::DescribeFleetAdvisorCollectorsAsyncHelper(const DescribeFleetAdvisorCollectorsRequest& request, const DescribeFleetAdvisorCollectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeFleetAdvisorCollectors(request), context);
+}
+
+DescribeFleetAdvisorDatabasesOutcome DatabaseMigrationServiceClient::DescribeFleetAdvisorDatabases(const DescribeFleetAdvisorDatabasesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeFleetAdvisorDatabasesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeFleetAdvisorDatabasesOutcomeCallable DatabaseMigrationServiceClient::DescribeFleetAdvisorDatabasesCallable(const DescribeFleetAdvisorDatabasesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeFleetAdvisorDatabasesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeFleetAdvisorDatabases(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DatabaseMigrationServiceClient::DescribeFleetAdvisorDatabasesAsync(const DescribeFleetAdvisorDatabasesRequest& request, const DescribeFleetAdvisorDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeFleetAdvisorDatabasesAsyncHelper( request, handler, context ); } );
+}
+
+void DatabaseMigrationServiceClient::DescribeFleetAdvisorDatabasesAsyncHelper(const DescribeFleetAdvisorDatabasesRequest& request, const DescribeFleetAdvisorDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeFleetAdvisorDatabases(request), context);
+}
+
+DescribeFleetAdvisorLsaAnalysisOutcome DatabaseMigrationServiceClient::DescribeFleetAdvisorLsaAnalysis(const DescribeFleetAdvisorLsaAnalysisRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeFleetAdvisorLsaAnalysisOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeFleetAdvisorLsaAnalysisOutcomeCallable DatabaseMigrationServiceClient::DescribeFleetAdvisorLsaAnalysisCallable(const DescribeFleetAdvisorLsaAnalysisRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeFleetAdvisorLsaAnalysisOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeFleetAdvisorLsaAnalysis(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DatabaseMigrationServiceClient::DescribeFleetAdvisorLsaAnalysisAsync(const DescribeFleetAdvisorLsaAnalysisRequest& request, const DescribeFleetAdvisorLsaAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeFleetAdvisorLsaAnalysisAsyncHelper( request, handler, context ); } );
+}
+
+void DatabaseMigrationServiceClient::DescribeFleetAdvisorLsaAnalysisAsyncHelper(const DescribeFleetAdvisorLsaAnalysisRequest& request, const DescribeFleetAdvisorLsaAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeFleetAdvisorLsaAnalysis(request), context);
+}
+
+DescribeFleetAdvisorSchemaObjectSummaryOutcome DatabaseMigrationServiceClient::DescribeFleetAdvisorSchemaObjectSummary(const DescribeFleetAdvisorSchemaObjectSummaryRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeFleetAdvisorSchemaObjectSummaryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeFleetAdvisorSchemaObjectSummaryOutcomeCallable DatabaseMigrationServiceClient::DescribeFleetAdvisorSchemaObjectSummaryCallable(const DescribeFleetAdvisorSchemaObjectSummaryRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeFleetAdvisorSchemaObjectSummaryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeFleetAdvisorSchemaObjectSummary(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DatabaseMigrationServiceClient::DescribeFleetAdvisorSchemaObjectSummaryAsync(const DescribeFleetAdvisorSchemaObjectSummaryRequest& request, const DescribeFleetAdvisorSchemaObjectSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeFleetAdvisorSchemaObjectSummaryAsyncHelper( request, handler, context ); } );
+}
+
+void DatabaseMigrationServiceClient::DescribeFleetAdvisorSchemaObjectSummaryAsyncHelper(const DescribeFleetAdvisorSchemaObjectSummaryRequest& request, const DescribeFleetAdvisorSchemaObjectSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeFleetAdvisorSchemaObjectSummary(request), context);
+}
+
+DescribeFleetAdvisorSchemasOutcome DatabaseMigrationServiceClient::DescribeFleetAdvisorSchemas(const DescribeFleetAdvisorSchemasRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeFleetAdvisorSchemasOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeFleetAdvisorSchemasOutcomeCallable DatabaseMigrationServiceClient::DescribeFleetAdvisorSchemasCallable(const DescribeFleetAdvisorSchemasRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeFleetAdvisorSchemasOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeFleetAdvisorSchemas(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DatabaseMigrationServiceClient::DescribeFleetAdvisorSchemasAsync(const DescribeFleetAdvisorSchemasRequest& request, const DescribeFleetAdvisorSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeFleetAdvisorSchemasAsyncHelper( request, handler, context ); } );
+}
+
+void DatabaseMigrationServiceClient::DescribeFleetAdvisorSchemasAsyncHelper(const DescribeFleetAdvisorSchemasRequest& request, const DescribeFleetAdvisorSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeFleetAdvisorSchemas(request), context);
 }
 
 DescribeOrderableReplicationInstancesOutcome DatabaseMigrationServiceClient::DescribeOrderableReplicationInstances(const DescribeOrderableReplicationInstancesRequest& request) const
@@ -1347,6 +1547,31 @@ void DatabaseMigrationServiceClient::RemoveTagsFromResourceAsync(const RemoveTag
 void DatabaseMigrationServiceClient::RemoveTagsFromResourceAsyncHelper(const RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, RemoveTagsFromResource(request), context);
+}
+
+RunFleetAdvisorLsaAnalysisOutcome DatabaseMigrationServiceClient::RunFleetAdvisorLsaAnalysis() const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+  return RunFleetAdvisorLsaAnalysisOutcome(MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, "RunFleetAdvisorLsaAnalysis"));
+}
+
+RunFleetAdvisorLsaAnalysisOutcomeCallable DatabaseMigrationServiceClient::RunFleetAdvisorLsaAnalysisCallable() const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RunFleetAdvisorLsaAnalysisOutcome() > >(ALLOCATION_TAG, [this](){ return this->RunFleetAdvisorLsaAnalysis(); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DatabaseMigrationServiceClient::RunFleetAdvisorLsaAnalysisAsync(const RunFleetAdvisorLsaAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, handler, context](){ this->RunFleetAdvisorLsaAnalysisAsyncHelper( handler, context ); } );
+}
+
+void DatabaseMigrationServiceClient::RunFleetAdvisorLsaAnalysisAsyncHelper(const RunFleetAdvisorLsaAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, RunFleetAdvisorLsaAnalysis(), context);
 }
 
 StartReplicationTaskOutcome DatabaseMigrationServiceClient::StartReplicationTask(const StartReplicationTaskRequest& request) const

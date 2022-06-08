@@ -86,6 +86,7 @@
 #include <aws/redshift/model/EnableLoggingResult.h>
 #include <aws/redshift/model/EnableSnapshotCopyResult.h>
 #include <aws/redshift/model/GetClusterCredentialsResult.h>
+#include <aws/redshift/model/GetClusterCredentialsWithIAMResult.h>
 #include <aws/redshift/model/GetReservedNodeExchangeConfigurationOptionsResult.h>
 #include <aws/redshift/model/GetReservedNodeExchangeOfferingsResult.h>
 #include <aws/redshift/model/ModifyAquaConfigurationResult.h>
@@ -249,6 +250,7 @@ namespace Model
         class EnableLoggingRequest;
         class EnableSnapshotCopyRequest;
         class GetClusterCredentialsRequest;
+        class GetClusterCredentialsWithIAMRequest;
         class GetReservedNodeExchangeConfigurationOptionsRequest;
         class GetReservedNodeExchangeOfferingsRequest;
         class ModifyAquaConfigurationRequest;
@@ -368,6 +370,7 @@ namespace Model
         typedef Aws::Utils::Outcome<EnableLoggingResult, RedshiftError> EnableLoggingOutcome;
         typedef Aws::Utils::Outcome<EnableSnapshotCopyResult, RedshiftError> EnableSnapshotCopyOutcome;
         typedef Aws::Utils::Outcome<GetClusterCredentialsResult, RedshiftError> GetClusterCredentialsOutcome;
+        typedef Aws::Utils::Outcome<GetClusterCredentialsWithIAMResult, RedshiftError> GetClusterCredentialsWithIAMOutcome;
         typedef Aws::Utils::Outcome<GetReservedNodeExchangeConfigurationOptionsResult, RedshiftError> GetReservedNodeExchangeConfigurationOptionsOutcome;
         typedef Aws::Utils::Outcome<GetReservedNodeExchangeOfferingsResult, RedshiftError> GetReservedNodeExchangeOfferingsOutcome;
         typedef Aws::Utils::Outcome<ModifyAquaConfigurationResult, RedshiftError> ModifyAquaConfigurationOutcome;
@@ -487,6 +490,7 @@ namespace Model
         typedef std::future<EnableLoggingOutcome> EnableLoggingOutcomeCallable;
         typedef std::future<EnableSnapshotCopyOutcome> EnableSnapshotCopyOutcomeCallable;
         typedef std::future<GetClusterCredentialsOutcome> GetClusterCredentialsOutcomeCallable;
+        typedef std::future<GetClusterCredentialsWithIAMOutcome> GetClusterCredentialsWithIAMOutcomeCallable;
         typedef std::future<GetReservedNodeExchangeConfigurationOptionsOutcome> GetReservedNodeExchangeConfigurationOptionsOutcomeCallable;
         typedef std::future<GetReservedNodeExchangeOfferingsOutcome> GetReservedNodeExchangeOfferingsOutcomeCallable;
         typedef std::future<ModifyAquaConfigurationOutcome> ModifyAquaConfigurationOutcomeCallable;
@@ -609,6 +613,7 @@ namespace Model
     typedef std::function<void(const RedshiftClient*, const Model::EnableLoggingRequest&, const Model::EnableLoggingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableLoggingResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::EnableSnapshotCopyRequest&, const Model::EnableSnapshotCopyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableSnapshotCopyResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::GetClusterCredentialsRequest&, const Model::GetClusterCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetClusterCredentialsResponseReceivedHandler;
+    typedef std::function<void(const RedshiftClient*, const Model::GetClusterCredentialsWithIAMRequest&, const Model::GetClusterCredentialsWithIAMOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetClusterCredentialsWithIAMResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::GetReservedNodeExchangeConfigurationOptionsRequest&, const Model::GetReservedNodeExchangeConfigurationOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetReservedNodeExchangeConfigurationOptionsResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::GetReservedNodeExchangeOfferingsRequest&, const Model::GetReservedNodeExchangeOfferingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetReservedNodeExchangeOfferingsResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::ModifyAquaConfigurationRequest&, const Model::ModifyAquaConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyAquaConfigurationResponseReceivedHandler;
@@ -2559,6 +2564,35 @@ namespace Model
         virtual void GetClusterCredentialsAsync(const Model::GetClusterCredentialsRequest& request, const GetClusterCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns a database user name and temporary password with temporary
+         * authorization to log in to an Amazon Redshift database. The database user is
+         * mapped 1:1 to the source Identity and Access Management (IAM) identity. For more
+         * information about IAM identities, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id.html">IAM Identities
+         * (users, user groups, and roles)</a> in the Amazon Web Services Identity and
+         * Access Management User Guide.</p> <p>The Identity and Access Management (IAM)
+         * identity that runs this operation must have an IAM policy attached that allows
+         * access to all necessary actions and resources. For more information about
+         * permissions, see <a
+         * href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html">Using
+         * identity-based policies (IAM policies)</a> in the Amazon Redshift Cluster
+         * Management Guide. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/GetClusterCredentialsWithIAM">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetClusterCredentialsWithIAMOutcome GetClusterCredentialsWithIAM(const Model::GetClusterCredentialsWithIAMRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetClusterCredentialsWithIAM that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetClusterCredentialsWithIAMOutcomeCallable GetClusterCredentialsWithIAMCallable(const Model::GetClusterCredentialsWithIAMRequest& request) const;
+
+        /**
+         * An Async wrapper for GetClusterCredentialsWithIAM that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetClusterCredentialsWithIAMAsync(const Model::GetClusterCredentialsWithIAMRequest& request, const GetClusterCredentialsWithIAMResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets the configuration options for the reserved-node exchange. These options
          * include information about the source reserved node and target reserved node
          * offering. Details include the node type, the price, the node count, and the
@@ -3302,6 +3336,7 @@ namespace Model
         void EnableLoggingAsyncHelper(const Model::EnableLoggingRequest& request, const EnableLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EnableSnapshotCopyAsyncHelper(const Model::EnableSnapshotCopyRequest& request, const EnableSnapshotCopyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetClusterCredentialsAsyncHelper(const Model::GetClusterCredentialsRequest& request, const GetClusterCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetClusterCredentialsWithIAMAsyncHelper(const Model::GetClusterCredentialsWithIAMRequest& request, const GetClusterCredentialsWithIAMResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetReservedNodeExchangeConfigurationOptionsAsyncHelper(const Model::GetReservedNodeExchangeConfigurationOptionsRequest& request, const GetReservedNodeExchangeConfigurationOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetReservedNodeExchangeOfferingsAsyncHelper(const Model::GetReservedNodeExchangeOfferingsRequest& request, const GetReservedNodeExchangeOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyAquaConfigurationAsyncHelper(const Model::ModifyAquaConfigurationRequest& request, const ModifyAquaConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
