@@ -1,0 +1,23 @@
+if (WIN32) #Starting simple with archive only packages
+    set(CPACK_GENERATOR ZIP)
+else ()
+    set(CPACK_GENERATOR TGZ)
+endif ()
+
+set(CPACK_PACKAGE_NAME "aws-cpp-sdk")
+set(CPACK_PACKAGE_VENDOR "Amazon Web Services")
+set(CPACK_PACKAGE_INSTALL_DIRECTORY ${CPACK_PACKAGE_NAME})
+set(CPACK_PACKAGE_VERSION_MAJOR ${aws-cpp-sdk_VERSION_MAJOR})
+set(CPACK_PACKAGE_VERSION_MINOR ${aws-cpp-sdk_VERSION_MINOR})
+set(CPACK_PACKAGE_VERSION_PATCH ${aws-cpp-sdk_VERSION_PATCH})
+set(CPACK_VERBATIM_VARIABLES YES)
+set(CPACK_RESOURCE_FILE_LICENSE ${CMAKE_CURRENT_LIST_DIR}/../LICENSE)
+set(CPACK_RESOURCE_FILE_README${CMAKE_CURRENT_LIST_DIR}/../Readme.md)
+set(CPACK_MONOLITHIC_INSTALL OFF)
+set(CPACK_COMPONENTS_GROUPING IGNORE)
+include(CPack)
+cpack_add_component(aws-cpp-sdk_core
+        DISPLAY_NAME Core
+        DESCRIPTION "Core library"
+        REQUIRED
+        )
