@@ -17,6 +17,7 @@ if (LEGACY_BUILD)
     project("aws-cpp-sdk-all" VERSION "${PROJECT_VERSION}" LANGUAGES CXX)
     include(legacy_main)
 else ()
+    # -- Preamble --
     message(STATUS "Building with new CMake scripts.")
     string(CONCAT DESCRIPTION_STRING "The AWS SDK for C++ provides a modern C++ (standard version C++11 or later) "
             "interface for Amazon Web Services (AWS).")
@@ -34,7 +35,8 @@ else ()
             DESCRIPTION ${DESCRIPTION_STRING}
             HOMEPAGE_URL "https://docs.aws.amazon.com/sdk-for-cpp"
             )
-
+    include(CTest)
+    # -- Project wide setup --
     # Setting C++ minimum requirements
     set(CMAKE_CXX_STANDARD 11)
     set(CMAKE_CXX_EXTENSIONS OFF)
@@ -71,29 +73,17 @@ else ()
     # Options definition
     option(BUILD_TESTING "If enabled, the SDK will include tests in the build" OFF)
 
-    message(STATUS "Setting toolchain and dependencies")
-    if (BUILD_TESTING)
-        message(STATUS "Building tests")
-        enable_testing()
-        # Testing dependency
-        find_package(GTest 1.11 REQUIRED)
-        include(GoogleTest) # for gtest_discover_tests()
-    endif ()
+    # -- Dependencies --
+    add_subdirectory(dependencies)
 
-    # Project dependencies http library (curl or OS), tinyxml2, cJSON, ssl (open or other), CRT
-    find_package(CURL REQUIRED)
-    find_package(ZLIB REQUIRED)
-    find_package(OpenSSL REQUIRED COMPONENTS Crypto)
-    pkg_check_modules(tinyxml2 REQUIRED IMPORTED_TARGET tinyxml2>=9.0.0)
-    pkg_check_modules(CJSON REQUIRED IMPORTED_TARGET libcjson>=1.7.15)
-    find_package(aws-crt-cpp 0.17.9 EXACT REQUIRED COMPONENTS io)
-
-    message(STATUS "Preparing core library build")
+    # -- main build targets --
     add_subdirectory(src)
 
-    message(STATUS "Preparing CPack metadata")
-    add_subdirectory(packaging)
-
+    if (CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
+        # -- Test --
+        # -- Packaging --
+        add_subdirectory(packaging)
+    endif ()
     message(WARNING "The dependencies are currently checked only for a basic Linux build, new ones need to be added for other platforms yet")
 
     message(WARNING "Anything below this warning is a TODO not yet implemented.")
