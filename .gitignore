@@ -34,7 +34,6 @@ doxygen/latex/
 
 
 #cmake artifacts
-dependencies
 _build
 build
 _build_*
