@@ -27,7 +27,8 @@ namespace Model
     eu_west_1,
     eu_west_2,
     sa_east_1,
-    auto_
+    auto_,
+    us_gov_west_1
   };
 
 namespace TranscribeRegionMapper
