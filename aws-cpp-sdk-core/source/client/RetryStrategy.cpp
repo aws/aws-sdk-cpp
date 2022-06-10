@@ -23,14 +23,14 @@ namespace Aws
             m_retryQuotaContainer(Aws::MakeShared<DefaultRetryQuotaContainer>("StandardRetryStrategy")),
             m_maxAttempts(maxAttempts)
         {
-          srand(time(NULL));
+          srand((unsigned int)time(NULL));
         }
 
         StandardRetryStrategy::StandardRetryStrategy(std::shared_ptr<RetryQuotaContainer> retryQuotaContainer, long maxAttempts) :
             m_retryQuotaContainer(retryQuotaContainer),
             m_maxAttempts(maxAttempts)
         {
-          srand(time(NULL));
+          srand((unsigned int)time(NULL));
         }
 
         void StandardRetryStrategy::RequestBookkeeping(const HttpResponseOutcome& httpResponseOutcome)
