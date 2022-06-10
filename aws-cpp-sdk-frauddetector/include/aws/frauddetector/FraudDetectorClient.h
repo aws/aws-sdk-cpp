@@ -401,7 +401,19 @@ namespace Model
    * who need detailed information about Amazon Fraud Detector API actions, data
    * types, and errors. For more information about Amazon Fraud Detector features,
    * see the <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/">Amazon
-   * Fraud Detector User Guide</a>.</p>
+   * Fraud Detector User Guide</a>.</p> <p>We provide the Query API as well as AWS
+   * software development kits (SDK) for Amazon Fraud Detector in Java and Python
+   * programming languages.</p> <p>The Amazon Fraud Detector Query API provides HTTPS
+   * requests that use the HTTP verb GET or POST and a Query parameter
+   * <code>Action</code>. AWS SDK provides libraries, sample code, tutorials, and
+   * other resources for software developers who prefer to build applications using
+   * language-specific APIs instead of submitting a request over HTTP or HTTPS. These
+   * libraries provide basic functions that automatically take care of tasks such as
+   * cryptographically signing your requests, retrying requests, and handling error
+   * responses, so that it is easier for you to get started. For more information
+   * about the AWS SDKs, see <a
+   * href="https://docs.aws.amazon.com/https:/aws.amazon.com/tools/">Tools to build
+   * on AWS</a>. </p>
    */
   class AWS_FRAUDDETECTOR_API FraudDetectorClient : public Aws::Client::AWSJsonClient
   {
@@ -621,8 +633,8 @@ namespace Model
         virtual void CreateVariableAsync(const Model::CreateVariableRequest& request, const CreateVariableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes data that was batch imported to Amazon Fraud Detector. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes the specified batch import job ID record. This action does not delete
+         * the data that was batch imported. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteBatchImportJob">AWS
          * API Reference</a></p>
          */
@@ -1690,9 +1702,11 @@ namespace Model
 
         /**
          * <p>Updates the status of a model version.</p> <p>You can perform the following
-         * status updates:</p> <ol> <li> <p>Change the <code>TRAINING_COMPLETE</code>
-         * status to <code>ACTIVE</code>.</p> </li> <li> <p>Change <code>ACTIVE</code> to
-         * <code>INACTIVE</code>.</p> </li> </ol><p><h3>See Also:</h3>   <a
+         * status updates:</p> <ol> <li> <p>Change the <code>TRAINING_IN_PROGRESS</code>
+         * status to <code>TRAINING_CANCELLED</code>.</p> </li> <li> <p>Change the
+         * <code>TRAINING_COMPLETE</code> status to <code>ACTIVE</code>.</p> </li> <li>
+         * <p>Change <code>ACTIVE</code> to <code>INACTIVE</code>.</p> </li>
+         * </ol><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UpdateModelVersionStatus">AWS
          * API Reference</a></p>
          */
