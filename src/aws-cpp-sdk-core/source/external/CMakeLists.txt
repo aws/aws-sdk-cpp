@@ -1,0 +1,1 @@
+message(FATAL_ERROR "Skip this directory when building with new build system")
