@@ -27,6 +27,7 @@
 #include <aws/outposts/model/DeleteOutpostRequest.h>
 #include <aws/outposts/model/DeleteSiteRequest.h>
 #include <aws/outposts/model/GetCatalogItemRequest.h>
+#include <aws/outposts/model/GetConnectionRequest.h>
 #include <aws/outposts/model/GetOrderRequest.h>
 #include <aws/outposts/model/GetOutpostRequest.h>
 #include <aws/outposts/model/GetOutpostInstanceTypesRequest.h>
@@ -38,6 +39,7 @@
 #include <aws/outposts/model/ListOutpostsRequest.h>
 #include <aws/outposts/model/ListSitesRequest.h>
 #include <aws/outposts/model/ListTagsForResourceRequest.h>
+#include <aws/outposts/model/StartConnectionRequest.h>
 #include <aws/outposts/model/TagResourceRequest.h>
 #include <aws/outposts/model/UntagResourceRequest.h>
 #include <aws/outposts/model/UpdateOutpostRequest.h>
@@ -316,6 +318,37 @@ void OutpostsClient::GetCatalogItemAsync(const GetCatalogItemRequest& request, c
 void OutpostsClient::GetCatalogItemAsyncHelper(const GetCatalogItemRequest& request, const GetCatalogItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetCatalogItem(request), context);
+}
+
+GetConnectionOutcome OutpostsClient::GetConnection(const GetConnectionRequest& request) const
+{
+  if (!request.ConnectionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetConnection", "Required field: ConnectionId, is not set");
+    return GetConnectionOutcome(Aws::Client::AWSError<OutpostsErrors>(OutpostsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConnectionId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/connections/");
+  uri.AddPathSegment(request.GetConnectionId());
+  return GetConnectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetConnectionOutcomeCallable OutpostsClient::GetConnectionCallable(const GetConnectionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetConnection(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void OutpostsClient::GetConnectionAsync(const GetConnectionRequest& request, const GetConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetConnectionAsyncHelper( request, handler, context ); } );
+}
+
+void OutpostsClient::GetConnectionAsyncHelper(const GetConnectionRequest& request, const GetConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetConnection(request), context);
 }
 
 GetOrderOutcome OutpostsClient::GetOrder(const GetOrderRequest& request) const
@@ -641,6 +674,31 @@ void OutpostsClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& 
 void OutpostsClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListTagsForResource(request), context);
+}
+
+StartConnectionOutcome OutpostsClient::StartConnection(const StartConnectionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/connections");
+  return StartConnectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartConnectionOutcomeCallable OutpostsClient::StartConnectionCallable(const StartConnectionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartConnection(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void OutpostsClient::StartConnectionAsync(const StartConnectionRequest& request, const StartConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartConnectionAsyncHelper( request, handler, context ); } );
+}
+
+void OutpostsClient::StartConnectionAsyncHelper(const StartConnectionRequest& request, const StartConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartConnection(request), context);
 }
 
 TagResourceOutcome OutpostsClient::TagResource(const TagResourceRequest& request) const
