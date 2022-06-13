@@ -1,0 +1,8 @@
+message(WARNING "aws-sdk-cpp-core platform needs refactor on platform dependant codebase")
+if (CMAKE_SYSTEM_NAME STREQUAL "Windows")
+    add_subdirectory(windows)
+elseif (CMAKE_SYSTEM_NAME STREQUAL "Android")
+    add_subdirectory(android)
+else ()
+    add_subdirectory(linux-shared)
+endif ()

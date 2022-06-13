@@ -1,0 +1,12 @@
+target_sources(aws-sdk-cpp-core
+        PRIVATE
+        ${CMAKE_CURRENT_SOURCE_DIR}/AdaptiveRetryStrategy.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/AsyncCallerContext.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/AWSClient.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/AWSErrorMarshaller.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/ClientConfiguration.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/CoreErrors.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/DefaultRetryStrategy.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/RetryStrategy.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/SpecifiedRetryableErrorsRetryStrategy.cpp
+        )

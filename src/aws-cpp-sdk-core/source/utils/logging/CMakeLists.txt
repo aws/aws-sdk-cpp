@@ -1,0 +1,10 @@
+target_sources(aws-sdk-cpp-core
+        PRIVATE
+        ${CMAKE_CURRENT_SOURCE_DIR}/AWSLogging.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/ConsoleLogSystem.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/CRTLogging.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/CRTLogSystem.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/DefaultLogSystem.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/FormattedLogSystem.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/LogLevel.cpp
+        )

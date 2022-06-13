@@ -1,5 +1,13 @@
 if (NOT LEGACY_BUILD)
     message(WARNING "Building core with new cmake scripts not yet implemented")
+    add_library(aws-sdk-cpp-core)
+    add_library(aws-sdk-cpp::core ALIAS aws-sdk-cpp-core)
+    target_include_directories(
+            aws-sdk-cpp-core
+            PRIVATE ${aws-crt-cpp_INCLUDE_DIRS}
+    )
+    add_subdirectory(include)
+    add_subdirectory(source)
 else ()
     add_project(aws-cpp-sdk-core "Core http and utility library for the AWS C++ SDK")
 
