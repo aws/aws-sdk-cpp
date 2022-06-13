@@ -1,0 +1,11 @@
+target_sources(aws-sdk-cpp-core
+        PRIVATE
+        ${CMAKE_CURRENT_SOURCE_DIR}/EventDecoderStream.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/EventEncoderStream.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/EventHeader.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/EventMessage.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/EventStreamBuf.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/EventStreamDecoder.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/EventStreamEncoder.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/EventStreamErrors.cpp
+        )
