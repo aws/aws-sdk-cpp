@@ -1,0 +1,24 @@
+add_subdirectory(base64)
+add_subdirectory(crypto)
+add_subdirectory(event)
+add_subdirectory(json)
+add_subdirectory(logging)
+add_subdirectory(memory)
+add_subdirectory(stream)
+add_subdirectory(threading)
+add_subdirectory(xml)
+
+target_sources(aws-sdk-cpp-core
+        PRIVATE
+        ${CMAKE_CURRENT_SOURCE_DIR}/DateTimeCommon.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/Directory.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/DNS.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/Document.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/EnumParseOverflowContainer.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/FileSystemUtils.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/GetTheLights.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/HashingUtils.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/StringUtils.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/TempFile.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/UUID.cpp
+        )
