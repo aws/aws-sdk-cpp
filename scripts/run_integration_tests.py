@@ -7,6 +7,7 @@ import stat
 import subprocess
 import platform
 import random
+import string
 
 def ParseArguments():
     argMap = {}
@@ -56,7 +57,7 @@ def Main():
         if not os.path.isfile(test_exe):
             print("Test: \"{}\" doesn't exist, skipped.".format(test_exe))
             continue
-        prefix = "--aws_resource_prefix=" + platform.system().lower()
+        prefix = "--aws_resource_prefix=" + ''.join(random.choice(string.ascii_lowercase + string.digits) for _ in range(8))
         print("testExe = " + test_exe)
         print("prefix = " + prefix)
         AddExecutableBit(test_exe)
