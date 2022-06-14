@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lookoutmetrics/model/Action.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/lookoutmetrics/model/AlertFilters.h>
 #include <utility>
 
 namespace Aws
@@ -300,6 +301,43 @@ namespace Model
      */
     inline CreateAlertRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The configuration of the alert filters, containing MetricList and
+     * DimensionFilterList.</p>
+     */
+    inline const AlertFilters& GetAlertFilters() const{ return m_alertFilters; }
+
+    /**
+     * <p>The configuration of the alert filters, containing MetricList and
+     * DimensionFilterList.</p>
+     */
+    inline bool AlertFiltersHasBeenSet() const { return m_alertFiltersHasBeenSet; }
+
+    /**
+     * <p>The configuration of the alert filters, containing MetricList and
+     * DimensionFilterList.</p>
+     */
+    inline void SetAlertFilters(const AlertFilters& value) { m_alertFiltersHasBeenSet = true; m_alertFilters = value; }
+
+    /**
+     * <p>The configuration of the alert filters, containing MetricList and
+     * DimensionFilterList.</p>
+     */
+    inline void SetAlertFilters(AlertFilters&& value) { m_alertFiltersHasBeenSet = true; m_alertFilters = std::move(value); }
+
+    /**
+     * <p>The configuration of the alert filters, containing MetricList and
+     * DimensionFilterList.</p>
+     */
+    inline CreateAlertRequest& WithAlertFilters(const AlertFilters& value) { SetAlertFilters(value); return *this;}
+
+    /**
+     * <p>The configuration of the alert filters, containing MetricList and
+     * DimensionFilterList.</p>
+     */
+    inline CreateAlertRequest& WithAlertFilters(AlertFilters&& value) { SetAlertFilters(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_alertName;
@@ -319,6 +357,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
+
+    AlertFilters m_alertFilters;
+    bool m_alertFiltersHasBeenSet;
   };
 
 } // namespace Model

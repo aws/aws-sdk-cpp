@@ -31,7 +31,8 @@ Alert::Alert() :
     m_alertStatus(AlertStatus::NOT_SET),
     m_alertStatusHasBeenSet(false),
     m_lastModificationTimeHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
+    m_creationTimeHasBeenSet(false),
+    m_alertFiltersHasBeenSet(false)
 {
 }
 
@@ -48,7 +49,8 @@ Alert::Alert(JsonView jsonValue) :
     m_alertStatus(AlertStatus::NOT_SET),
     m_alertStatusHasBeenSet(false),
     m_lastModificationTimeHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
+    m_creationTimeHasBeenSet(false),
+    m_alertFiltersHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -125,6 +127,13 @@ Alert& Alert::operator =(JsonView jsonValue)
     m_creationTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AlertFilters"))
+  {
+    m_alertFilters = jsonValue.GetObject("AlertFilters");
+
+    m_alertFiltersHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -186,6 +195,12 @@ JsonValue Alert::Jsonize() const
   if(m_creationTimeHasBeenSet)
   {
    payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
+  }
+
+  if(m_alertFiltersHasBeenSet)
+  {
+   payload.WithObject("AlertFilters", m_alertFilters.Jsonize());
+
   }
 
   return payload;

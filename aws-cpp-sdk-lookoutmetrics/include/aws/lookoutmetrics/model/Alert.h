@@ -10,6 +10,7 @@
 #include <aws/lookoutmetrics/model/AlertType.h>
 #include <aws/lookoutmetrics/model/AlertStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/lookoutmetrics/model/AlertFilters.h>
 #include <utility>
 
 namespace Aws
@@ -381,6 +382,43 @@ namespace Model
      */
     inline Alert& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The configuration of the alert filters, containing MetricList and
+     * DimensionFilter.</p>
+     */
+    inline const AlertFilters& GetAlertFilters() const{ return m_alertFilters; }
+
+    /**
+     * <p>The configuration of the alert filters, containing MetricList and
+     * DimensionFilter.</p>
+     */
+    inline bool AlertFiltersHasBeenSet() const { return m_alertFiltersHasBeenSet; }
+
+    /**
+     * <p>The configuration of the alert filters, containing MetricList and
+     * DimensionFilter.</p>
+     */
+    inline void SetAlertFilters(const AlertFilters& value) { m_alertFiltersHasBeenSet = true; m_alertFilters = value; }
+
+    /**
+     * <p>The configuration of the alert filters, containing MetricList and
+     * DimensionFilter.</p>
+     */
+    inline void SetAlertFilters(AlertFilters&& value) { m_alertFiltersHasBeenSet = true; m_alertFilters = std::move(value); }
+
+    /**
+     * <p>The configuration of the alert filters, containing MetricList and
+     * DimensionFilter.</p>
+     */
+    inline Alert& WithAlertFilters(const AlertFilters& value) { SetAlertFilters(value); return *this;}
+
+    /**
+     * <p>The configuration of the alert filters, containing MetricList and
+     * DimensionFilter.</p>
+     */
+    inline Alert& WithAlertFilters(AlertFilters&& value) { SetAlertFilters(std::move(value)); return *this;}
+
   private:
 
     Action m_action;
@@ -412,6 +450,9 @@ namespace Model
 
     Aws::Utils::DateTime m_creationTime;
     bool m_creationTimeHasBeenSet;
+
+    AlertFilters m_alertFilters;
+    bool m_alertFiltersHasBeenSet;
   };
 
 } // namespace Model

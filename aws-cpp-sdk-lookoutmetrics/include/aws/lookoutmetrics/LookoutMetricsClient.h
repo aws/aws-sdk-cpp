@@ -37,6 +37,7 @@
 #include <aws/lookoutmetrics/model/PutFeedbackResult.h>
 #include <aws/lookoutmetrics/model/TagResourceResult.h>
 #include <aws/lookoutmetrics/model/UntagResourceResult.h>
+#include <aws/lookoutmetrics/model/UpdateAlertResult.h>
 #include <aws/lookoutmetrics/model/UpdateAnomalyDetectorResult.h>
 #include <aws/lookoutmetrics/model/UpdateMetricSetResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -104,6 +105,7 @@ namespace Model
         class PutFeedbackRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
+        class UpdateAlertRequest;
         class UpdateAnomalyDetectorRequest;
         class UpdateMetricSetRequest;
 
@@ -133,6 +135,7 @@ namespace Model
         typedef Aws::Utils::Outcome<PutFeedbackResult, LookoutMetricsError> PutFeedbackOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, LookoutMetricsError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, LookoutMetricsError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateAlertResult, LookoutMetricsError> UpdateAlertOutcome;
         typedef Aws::Utils::Outcome<UpdateAnomalyDetectorResult, LookoutMetricsError> UpdateAnomalyDetectorOutcome;
         typedef Aws::Utils::Outcome<UpdateMetricSetResult, LookoutMetricsError> UpdateMetricSetOutcome;
 
@@ -162,6 +165,7 @@ namespace Model
         typedef std::future<PutFeedbackOutcome> PutFeedbackOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+        typedef std::future<UpdateAlertOutcome> UpdateAlertOutcomeCallable;
         typedef std::future<UpdateAnomalyDetectorOutcome> UpdateAnomalyDetectorOutcomeCallable;
         typedef std::future<UpdateMetricSetOutcome> UpdateMetricSetOutcomeCallable;
 } // namespace Model
@@ -194,6 +198,7 @@ namespace Model
     typedef std::function<void(const LookoutMetricsClient*, const Model::PutFeedbackRequest&, const Model::PutFeedbackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutFeedbackResponseReceivedHandler;
     typedef std::function<void(const LookoutMetricsClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const LookoutMetricsClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
+    typedef std::function<void(const LookoutMetricsClient*, const Model::UpdateAlertRequest&, const Model::UpdateAlertOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAlertResponseReceivedHandler;
     typedef std::function<void(const LookoutMetricsClient*, const Model::UpdateAnomalyDetectorRequest&, const Model::UpdateAnomalyDetectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAnomalyDetectorResponseReceivedHandler;
     typedef std::function<void(const LookoutMetricsClient*, const Model::UpdateMetricSetRequest&, const Model::UpdateMetricSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMetricSetResponseReceivedHandler;
 
@@ -706,6 +711,23 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Make changes to an existing alert.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/UpdateAlert">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateAlertOutcome UpdateAlert(const Model::UpdateAlertRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateAlert that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateAlertOutcomeCallable UpdateAlertCallable(const Model::UpdateAlertRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateAlert that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateAlertAsync(const Model::UpdateAlertRequest& request, const UpdateAlertResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates a detector. After activation, you can only change a detector's
          * ingestion delay and description.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/UpdateAnomalyDetector">AWS
@@ -770,6 +792,7 @@ namespace Model
         void PutFeedbackAsyncHelper(const Model::PutFeedbackRequest& request, const PutFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateAlertAsyncHelper(const Model::UpdateAlertRequest& request, const UpdateAlertResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateAnomalyDetectorAsyncHelper(const Model::UpdateAnomalyDetectorRequest& request, const UpdateAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateMetricSetAsyncHelper(const Model::UpdateMetricSetRequest& request, const UpdateMetricSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 

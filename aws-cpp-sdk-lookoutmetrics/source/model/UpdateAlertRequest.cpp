@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/lookoutmetrics/model/CreateAlertRequest.h>
+#include <aws/lookoutmetrics/model/UpdateAlertRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -12,31 +12,23 @@ using namespace Aws::LookoutMetrics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateAlertRequest::CreateAlertRequest() : 
-    m_alertNameHasBeenSet(false),
+UpdateAlertRequest::UpdateAlertRequest() : 
+    m_alertArnHasBeenSet(false),
+    m_alertDescriptionHasBeenSet(false),
     m_alertSensitivityThreshold(0),
     m_alertSensitivityThresholdHasBeenSet(false),
-    m_alertDescriptionHasBeenSet(false),
-    m_anomalyDetectorArnHasBeenSet(false),
     m_actionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
     m_alertFiltersHasBeenSet(false)
 {
 }
 
-Aws::String CreateAlertRequest::SerializePayload() const
+Aws::String UpdateAlertRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_alertNameHasBeenSet)
+  if(m_alertArnHasBeenSet)
   {
-   payload.WithString("AlertName", m_alertName);
-
-  }
-
-  if(m_alertSensitivityThresholdHasBeenSet)
-  {
-   payload.WithInteger("AlertSensitivityThreshold", m_alertSensitivityThreshold);
+   payload.WithString("AlertArn", m_alertArn);
 
   }
 
@@ -46,26 +38,15 @@ Aws::String CreateAlertRequest::SerializePayload() const
 
   }
 
-  if(m_anomalyDetectorArnHasBeenSet)
+  if(m_alertSensitivityThresholdHasBeenSet)
   {
-   payload.WithString("AnomalyDetectorArn", m_anomalyDetectorArn);
+   payload.WithInteger("AlertSensitivityThreshold", m_alertSensitivityThreshold);
 
   }
 
   if(m_actionHasBeenSet)
   {
    payload.WithObject("Action", m_action.Jsonize());
-
-  }
-
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("Tags", std::move(tagsJsonMap));
 
   }
 

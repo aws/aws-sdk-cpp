@@ -46,6 +46,7 @@
 #include <aws/lookoutmetrics/model/PutFeedbackRequest.h>
 #include <aws/lookoutmetrics/model/TagResourceRequest.h>
 #include <aws/lookoutmetrics/model/UntagResourceRequest.h>
+#include <aws/lookoutmetrics/model/UpdateAlertRequest.h>
 #include <aws/lookoutmetrics/model/UpdateAnomalyDetectorRequest.h>
 #include <aws/lookoutmetrics/model/UpdateMetricSetRequest.h>
 
@@ -793,6 +794,31 @@ void LookoutMetricsClient::UntagResourceAsync(const UntagResourceRequest& reques
 void LookoutMetricsClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UntagResource(request), context);
+}
+
+UpdateAlertOutcome LookoutMetricsClient::UpdateAlert(const UpdateAlertRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/UpdateAlert");
+  return UpdateAlertOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateAlertOutcomeCallable LookoutMetricsClient::UpdateAlertCallable(const UpdateAlertRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateAlertOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateAlert(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LookoutMetricsClient::UpdateAlertAsync(const UpdateAlertRequest& request, const UpdateAlertResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateAlertAsyncHelper( request, handler, context ); } );
+}
+
+void LookoutMetricsClient::UpdateAlertAsyncHelper(const UpdateAlertRequest& request, const UpdateAlertResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateAlert(request), context);
 }
 
 UpdateAnomalyDetectorOutcome LookoutMetricsClient::UpdateAnomalyDetector(const UpdateAnomalyDetectorRequest& request) const
