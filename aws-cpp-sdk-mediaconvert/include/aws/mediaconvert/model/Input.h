@@ -1369,56 +1369,62 @@ namespace Model
 
 
     /**
-     * Use this setting if you do not have a video input or if you want to add black
-     * video frames before, or after, other inputs. When you include Video generator,
-     * MediaConvert creates a video input with black frames and without an audio track.
-     * You can specify a value for Video generator, or you can specify an Input file,
-     * but you cannot specify both.
+     * When you include Video generator, MediaConvert creates a video input with black
+     * frames. Use this setting if you do not have a video input or if you want to add
+     * black video frames before, or after, other inputs. You can specify Video
+     * generator, or you can specify an Input file, but you cannot specify both. For
+     * more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/video-generator.html
      */
     inline const InputVideoGenerator& GetVideoGenerator() const{ return m_videoGenerator; }
 
     /**
-     * Use this setting if you do not have a video input or if you want to add black
-     * video frames before, or after, other inputs. When you include Video generator,
-     * MediaConvert creates a video input with black frames and without an audio track.
-     * You can specify a value for Video generator, or you can specify an Input file,
-     * but you cannot specify both.
+     * When you include Video generator, MediaConvert creates a video input with black
+     * frames. Use this setting if you do not have a video input or if you want to add
+     * black video frames before, or after, other inputs. You can specify Video
+     * generator, or you can specify an Input file, but you cannot specify both. For
+     * more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/video-generator.html
      */
     inline bool VideoGeneratorHasBeenSet() const { return m_videoGeneratorHasBeenSet; }
 
     /**
-     * Use this setting if you do not have a video input or if you want to add black
-     * video frames before, or after, other inputs. When you include Video generator,
-     * MediaConvert creates a video input with black frames and without an audio track.
-     * You can specify a value for Video generator, or you can specify an Input file,
-     * but you cannot specify both.
+     * When you include Video generator, MediaConvert creates a video input with black
+     * frames. Use this setting if you do not have a video input or if you want to add
+     * black video frames before, or after, other inputs. You can specify Video
+     * generator, or you can specify an Input file, but you cannot specify both. For
+     * more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/video-generator.html
      */
     inline void SetVideoGenerator(const InputVideoGenerator& value) { m_videoGeneratorHasBeenSet = true; m_videoGenerator = value; }
 
     /**
-     * Use this setting if you do not have a video input or if you want to add black
-     * video frames before, or after, other inputs. When you include Video generator,
-     * MediaConvert creates a video input with black frames and without an audio track.
-     * You can specify a value for Video generator, or you can specify an Input file,
-     * but you cannot specify both.
+     * When you include Video generator, MediaConvert creates a video input with black
+     * frames. Use this setting if you do not have a video input or if you want to add
+     * black video frames before, or after, other inputs. You can specify Video
+     * generator, or you can specify an Input file, but you cannot specify both. For
+     * more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/video-generator.html
      */
     inline void SetVideoGenerator(InputVideoGenerator&& value) { m_videoGeneratorHasBeenSet = true; m_videoGenerator = std::move(value); }
 
     /**
-     * Use this setting if you do not have a video input or if you want to add black
-     * video frames before, or after, other inputs. When you include Video generator,
-     * MediaConvert creates a video input with black frames and without an audio track.
-     * You can specify a value for Video generator, or you can specify an Input file,
-     * but you cannot specify both.
+     * When you include Video generator, MediaConvert creates a video input with black
+     * frames. Use this setting if you do not have a video input or if you want to add
+     * black video frames before, or after, other inputs. You can specify Video
+     * generator, or you can specify an Input file, but you cannot specify both. For
+     * more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/video-generator.html
      */
     inline Input& WithVideoGenerator(const InputVideoGenerator& value) { SetVideoGenerator(value); return *this;}
 
     /**
-     * Use this setting if you do not have a video input or if you want to add black
-     * video frames before, or after, other inputs. When you include Video generator,
-     * MediaConvert creates a video input with black frames and without an audio track.
-     * You can specify a value for Video generator, or you can specify an Input file,
-     * but you cannot specify both.
+     * When you include Video generator, MediaConvert creates a video input with black
+     * frames. Use this setting if you do not have a video input or if you want to add
+     * black video frames before, or after, other inputs. You can specify Video
+     * generator, or you can specify an Input file, but you cannot specify both. For
+     * more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/video-generator.html
      */
     inline Input& WithVideoGenerator(InputVideoGenerator&& value) { SetVideoGenerator(std::move(value)); return *this;}
 

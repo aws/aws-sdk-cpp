@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
+#include <aws/mediaconvert/model/AudioDurationCorrection.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconvert/model/AudioDefaultSelection.h>
 #include <aws/mediaconvert/model/HlsRenditionGroupSettings.h>
@@ -43,6 +44,115 @@ namespace Model
     AudioSelector(Aws::Utils::Json::JsonView jsonValue);
     AudioSelector& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * Apply audio timing corrections to help synchronize audio and video in your
+     * output. To apply timing corrections, your input must meet the following
+     * requirements: * Container: MP4, or MOV, with an accurate time-to-sample (STTS)
+     * table. * Audio track: AAC. Choose from the following audio timing correction
+     * settings: * Disabled (Default): Apply no correction. * Auto: Recommended for
+     * most inputs. MediaConvert analyzes the audio timing in your input and determines
+     * which correction setting to use, if needed. * Track: Adjust the duration of each
+     * audio frame by a constant amount to align the audio track length with STTS
+     * duration. Track-level correction does not affect pitch, and is recommended for
+     * tonal audio content such as music. * Frame: Adjust the duration of each audio
+     * frame by a variable amount to align audio frames with STTS timestamps. No
+     * corrections are made to already-aligned frames. Frame-level correction may
+     * affect the pitch of corrected frames, and is recommended for atonal audio
+     * content such as speech or percussion.
+     */
+    inline const AudioDurationCorrection& GetAudioDurationCorrection() const{ return m_audioDurationCorrection; }
+
+    /**
+     * Apply audio timing corrections to help synchronize audio and video in your
+     * output. To apply timing corrections, your input must meet the following
+     * requirements: * Container: MP4, or MOV, with an accurate time-to-sample (STTS)
+     * table. * Audio track: AAC. Choose from the following audio timing correction
+     * settings: * Disabled (Default): Apply no correction. * Auto: Recommended for
+     * most inputs. MediaConvert analyzes the audio timing in your input and determines
+     * which correction setting to use, if needed. * Track: Adjust the duration of each
+     * audio frame by a constant amount to align the audio track length with STTS
+     * duration. Track-level correction does not affect pitch, and is recommended for
+     * tonal audio content such as music. * Frame: Adjust the duration of each audio
+     * frame by a variable amount to align audio frames with STTS timestamps. No
+     * corrections are made to already-aligned frames. Frame-level correction may
+     * affect the pitch of corrected frames, and is recommended for atonal audio
+     * content such as speech or percussion.
+     */
+    inline bool AudioDurationCorrectionHasBeenSet() const { return m_audioDurationCorrectionHasBeenSet; }
+
+    /**
+     * Apply audio timing corrections to help synchronize audio and video in your
+     * output. To apply timing corrections, your input must meet the following
+     * requirements: * Container: MP4, or MOV, with an accurate time-to-sample (STTS)
+     * table. * Audio track: AAC. Choose from the following audio timing correction
+     * settings: * Disabled (Default): Apply no correction. * Auto: Recommended for
+     * most inputs. MediaConvert analyzes the audio timing in your input and determines
+     * which correction setting to use, if needed. * Track: Adjust the duration of each
+     * audio frame by a constant amount to align the audio track length with STTS
+     * duration. Track-level correction does not affect pitch, and is recommended for
+     * tonal audio content such as music. * Frame: Adjust the duration of each audio
+     * frame by a variable amount to align audio frames with STTS timestamps. No
+     * corrections are made to already-aligned frames. Frame-level correction may
+     * affect the pitch of corrected frames, and is recommended for atonal audio
+     * content such as speech or percussion.
+     */
+    inline void SetAudioDurationCorrection(const AudioDurationCorrection& value) { m_audioDurationCorrectionHasBeenSet = true; m_audioDurationCorrection = value; }
+
+    /**
+     * Apply audio timing corrections to help synchronize audio and video in your
+     * output. To apply timing corrections, your input must meet the following
+     * requirements: * Container: MP4, or MOV, with an accurate time-to-sample (STTS)
+     * table. * Audio track: AAC. Choose from the following audio timing correction
+     * settings: * Disabled (Default): Apply no correction. * Auto: Recommended for
+     * most inputs. MediaConvert analyzes the audio timing in your input and determines
+     * which correction setting to use, if needed. * Track: Adjust the duration of each
+     * audio frame by a constant amount to align the audio track length with STTS
+     * duration. Track-level correction does not affect pitch, and is recommended for
+     * tonal audio content such as music. * Frame: Adjust the duration of each audio
+     * frame by a variable amount to align audio frames with STTS timestamps. No
+     * corrections are made to already-aligned frames. Frame-level correction may
+     * affect the pitch of corrected frames, and is recommended for atonal audio
+     * content such as speech or percussion.
+     */
+    inline void SetAudioDurationCorrection(AudioDurationCorrection&& value) { m_audioDurationCorrectionHasBeenSet = true; m_audioDurationCorrection = std::move(value); }
+
+    /**
+     * Apply audio timing corrections to help synchronize audio and video in your
+     * output. To apply timing corrections, your input must meet the following
+     * requirements: * Container: MP4, or MOV, with an accurate time-to-sample (STTS)
+     * table. * Audio track: AAC. Choose from the following audio timing correction
+     * settings: * Disabled (Default): Apply no correction. * Auto: Recommended for
+     * most inputs. MediaConvert analyzes the audio timing in your input and determines
+     * which correction setting to use, if needed. * Track: Adjust the duration of each
+     * audio frame by a constant amount to align the audio track length with STTS
+     * duration. Track-level correction does not affect pitch, and is recommended for
+     * tonal audio content such as music. * Frame: Adjust the duration of each audio
+     * frame by a variable amount to align audio frames with STTS timestamps. No
+     * corrections are made to already-aligned frames. Frame-level correction may
+     * affect the pitch of corrected frames, and is recommended for atonal audio
+     * content such as speech or percussion.
+     */
+    inline AudioSelector& WithAudioDurationCorrection(const AudioDurationCorrection& value) { SetAudioDurationCorrection(value); return *this;}
+
+    /**
+     * Apply audio timing corrections to help synchronize audio and video in your
+     * output. To apply timing corrections, your input must meet the following
+     * requirements: * Container: MP4, or MOV, with an accurate time-to-sample (STTS)
+     * table. * Audio track: AAC. Choose from the following audio timing correction
+     * settings: * Disabled (Default): Apply no correction. * Auto: Recommended for
+     * most inputs. MediaConvert analyzes the audio timing in your input and determines
+     * which correction setting to use, if needed. * Track: Adjust the duration of each
+     * audio frame by a constant amount to align the audio track length with STTS
+     * duration. Track-level correction does not affect pitch, and is recommended for
+     * tonal audio content such as music. * Frame: Adjust the duration of each audio
+     * frame by a variable amount to align audio frames with STTS timestamps. No
+     * corrections are made to already-aligned frames. Frame-level correction may
+     * affect the pitch of corrected frames, and is recommended for atonal audio
+     * content such as speech or percussion.
+     */
+    inline AudioSelector& WithAudioDurationCorrection(AudioDurationCorrection&& value) { SetAudioDurationCorrection(std::move(value)); return *this;}
 
 
     /**
@@ -537,6 +647,9 @@ namespace Model
     inline AudioSelector& AddTracks(int value) { m_tracksHasBeenSet = true; m_tracks.push_back(value); return *this; }
 
   private:
+
+    AudioDurationCorrection m_audioDurationCorrection;
+    bool m_audioDurationCorrectionHasBeenSet;
 
     Aws::String m_customLanguageCode;
     bool m_customLanguageCodeHasBeenSet;
