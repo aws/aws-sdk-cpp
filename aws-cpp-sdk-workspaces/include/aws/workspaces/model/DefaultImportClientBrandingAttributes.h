@@ -43,38 +43,38 @@ namespace Model
 
 
     /**
-     * <p>The logo. This is the link where users can download the logo image. The only
-     * image format accepted is <code>.png</code>.</p>
+     * <p>The logo. The only image format accepted is a binary data object that is
+     * converted from a <code>.png</code> file.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetLogo() const{ return m_logo; }
 
     /**
-     * <p>The logo. This is the link where users can download the logo image. The only
-     * image format accepted is <code>.png</code>.</p>
+     * <p>The logo. The only image format accepted is a binary data object that is
+     * converted from a <code>.png</code> file.</p>
      */
     inline bool LogoHasBeenSet() const { return m_logoHasBeenSet; }
 
     /**
-     * <p>The logo. This is the link where users can download the logo image. The only
-     * image format accepted is <code>.png</code>.</p>
+     * <p>The logo. The only image format accepted is a binary data object that is
+     * converted from a <code>.png</code> file.</p>
      */
     inline void SetLogo(const Aws::Utils::ByteBuffer& value) { m_logoHasBeenSet = true; m_logo = value; }
 
     /**
-     * <p>The logo. This is the link where users can download the logo image. The only
-     * image format accepted is <code>.png</code>.</p>
+     * <p>The logo. The only image format accepted is a binary data object that is
+     * converted from a <code>.png</code> file.</p>
      */
     inline void SetLogo(Aws::Utils::ByteBuffer&& value) { m_logoHasBeenSet = true; m_logo = std::move(value); }
 
     /**
-     * <p>The logo. This is the link where users can download the logo image. The only
-     * image format accepted is <code>.png</code>.</p>
+     * <p>The logo. The only image format accepted is a binary data object that is
+     * converted from a <code>.png</code> file.</p>
      */
     inline DefaultImportClientBrandingAttributes& WithLogo(const Aws::Utils::ByteBuffer& value) { SetLogo(value); return *this;}
 
     /**
-     * <p>The logo. This is the link where users can download the logo image. The only
-     * image format accepted is <code>.png</code>.</p>
+     * <p>The logo. The only image format accepted is a binary data object that is
+     * converted from a <code>.png</code> file.</p>
      */
     inline DefaultImportClientBrandingAttributes& WithLogo(Aws::Utils::ByteBuffer&& value) { SetLogo(std::move(value)); return *this;}
 

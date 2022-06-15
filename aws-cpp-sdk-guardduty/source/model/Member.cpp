@@ -25,7 +25,8 @@ Member::Member() :
     m_emailHasBeenSet(false),
     m_relationshipStatusHasBeenSet(false),
     m_invitedAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+    m_updatedAtHasBeenSet(false),
+    m_administratorIdHasBeenSet(false)
 {
 }
 
@@ -36,7 +37,8 @@ Member::Member(JsonView jsonValue) :
     m_emailHasBeenSet(false),
     m_relationshipStatusHasBeenSet(false),
     m_invitedAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+    m_updatedAtHasBeenSet(false),
+    m_administratorIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -92,6 +94,13 @@ Member& Member::operator =(JsonView jsonValue)
     m_updatedAtHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("administratorId"))
+  {
+    m_administratorId = jsonValue.GetString("administratorId");
+
+    m_administratorIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -138,6 +147,12 @@ JsonValue Member::Jsonize() const
   if(m_updatedAtHasBeenSet)
   {
    payload.WithString("updatedAt", m_updatedAt);
+
+  }
+
+  if(m_administratorIdHasBeenSet)
+  {
+   payload.WithString("administratorId", m_administratorId);
 
   }
 

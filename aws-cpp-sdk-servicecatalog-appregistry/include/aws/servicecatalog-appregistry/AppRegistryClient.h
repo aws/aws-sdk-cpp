@@ -26,6 +26,7 @@
 #include <aws/servicecatalog-appregistry/model/ListAssociatedAttributeGroupsResult.h>
 #include <aws/servicecatalog-appregistry/model/ListAssociatedResourcesResult.h>
 #include <aws/servicecatalog-appregistry/model/ListAttributeGroupsResult.h>
+#include <aws/servicecatalog-appregistry/model/ListAttributeGroupsForApplicationResult.h>
 #include <aws/servicecatalog-appregistry/model/ListTagsForResourceResult.h>
 #include <aws/servicecatalog-appregistry/model/SyncResourceResult.h>
 #include <aws/servicecatalog-appregistry/model/TagResourceResult.h>
@@ -86,6 +87,7 @@ namespace Model
         class ListAssociatedAttributeGroupsRequest;
         class ListAssociatedResourcesRequest;
         class ListAttributeGroupsRequest;
+        class ListAttributeGroupsForApplicationRequest;
         class ListTagsForResourceRequest;
         class SyncResourceRequest;
         class TagResourceRequest;
@@ -108,6 +110,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListAssociatedAttributeGroupsResult, AppRegistryError> ListAssociatedAttributeGroupsOutcome;
         typedef Aws::Utils::Outcome<ListAssociatedResourcesResult, AppRegistryError> ListAssociatedResourcesOutcome;
         typedef Aws::Utils::Outcome<ListAttributeGroupsResult, AppRegistryError> ListAttributeGroupsOutcome;
+        typedef Aws::Utils::Outcome<ListAttributeGroupsForApplicationResult, AppRegistryError> ListAttributeGroupsForApplicationOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, AppRegistryError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<SyncResourceResult, AppRegistryError> SyncResourceOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, AppRegistryError> TagResourceOutcome;
@@ -130,6 +133,7 @@ namespace Model
         typedef std::future<ListAssociatedAttributeGroupsOutcome> ListAssociatedAttributeGroupsOutcomeCallable;
         typedef std::future<ListAssociatedResourcesOutcome> ListAssociatedResourcesOutcomeCallable;
         typedef std::future<ListAttributeGroupsOutcome> ListAttributeGroupsOutcomeCallable;
+        typedef std::future<ListAttributeGroupsForApplicationOutcome> ListAttributeGroupsForApplicationOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<SyncResourceOutcome> SyncResourceOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
@@ -155,6 +159,7 @@ namespace Model
     typedef std::function<void(const AppRegistryClient*, const Model::ListAssociatedAttributeGroupsRequest&, const Model::ListAssociatedAttributeGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssociatedAttributeGroupsResponseReceivedHandler;
     typedef std::function<void(const AppRegistryClient*, const Model::ListAssociatedResourcesRequest&, const Model::ListAssociatedResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssociatedResourcesResponseReceivedHandler;
     typedef std::function<void(const AppRegistryClient*, const Model::ListAttributeGroupsRequest&, const Model::ListAttributeGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAttributeGroupsResponseReceivedHandler;
+    typedef std::function<void(const AppRegistryClient*, const Model::ListAttributeGroupsForApplicationRequest&, const Model::ListAttributeGroupsForApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAttributeGroupsForApplicationResponseReceivedHandler;
     typedef std::function<void(const AppRegistryClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const AppRegistryClient*, const Model::SyncResourceRequest&, const Model::SyncResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SyncResourceResponseReceivedHandler;
     typedef std::function<void(const AppRegistryClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
@@ -479,6 +484,24 @@ namespace Model
         virtual void ListAttributeGroupsAsync(const Model::ListAttributeGroupsRequest& request, const ListAttributeGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists the details of all attribute groups associated with a specific
+         * application. The results display in pages.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListAttributeGroupsForApplication">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAttributeGroupsForApplicationOutcome ListAttributeGroupsForApplication(const Model::ListAttributeGroupsForApplicationRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListAttributeGroupsForApplication that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListAttributeGroupsForApplicationOutcomeCallable ListAttributeGroupsForApplicationCallable(const Model::ListAttributeGroupsForApplicationRequest& request) const;
+
+        /**
+         * An Async wrapper for ListAttributeGroupsForApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListAttributeGroupsForApplicationAsync(const Model::ListAttributeGroupsForApplicationRequest& request, const ListAttributeGroupsForApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists all of the tags on the resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListTagsForResource">AWS
          * API Reference</a></p>
@@ -610,6 +633,7 @@ namespace Model
         void ListAssociatedAttributeGroupsAsyncHelper(const Model::ListAssociatedAttributeGroupsRequest& request, const ListAssociatedAttributeGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAssociatedResourcesAsyncHelper(const Model::ListAssociatedResourcesRequest& request, const ListAssociatedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAttributeGroupsAsyncHelper(const Model::ListAttributeGroupsRequest& request, const ListAttributeGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListAttributeGroupsForApplicationAsyncHelper(const Model::ListAttributeGroupsForApplicationRequest& request, const ListAttributeGroupsForApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SyncResourceAsyncHelper(const Model::SyncResourceRequest& request, const SyncResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

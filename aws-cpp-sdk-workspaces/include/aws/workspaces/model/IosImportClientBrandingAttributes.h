@@ -43,52 +43,59 @@ namespace Model
 
 
     /**
-     * <p>The logo. This is the link where users can download the logo image. This is
-     * the standard-resolution display that has a 1:1 pixel density (or @1x), where one
-     * pixel is equal to one point.</p>
+     * <p>The logo. This is the standard-resolution display that has a 1:1 pixel
+     * density (or @1x), where one pixel is equal to one point. The only image format
+     * accepted is a binary data object that is converted from a <code>.png</code>
+     * file.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetLogo() const{ return m_logo; }
 
     /**
-     * <p>The logo. This is the link where users can download the logo image. This is
-     * the standard-resolution display that has a 1:1 pixel density (or @1x), where one
-     * pixel is equal to one point.</p>
+     * <p>The logo. This is the standard-resolution display that has a 1:1 pixel
+     * density (or @1x), where one pixel is equal to one point. The only image format
+     * accepted is a binary data object that is converted from a <code>.png</code>
+     * file.</p>
      */
     inline bool LogoHasBeenSet() const { return m_logoHasBeenSet; }
 
     /**
-     * <p>The logo. This is the link where users can download the logo image. This is
-     * the standard-resolution display that has a 1:1 pixel density (or @1x), where one
-     * pixel is equal to one point.</p>
+     * <p>The logo. This is the standard-resolution display that has a 1:1 pixel
+     * density (or @1x), where one pixel is equal to one point. The only image format
+     * accepted is a binary data object that is converted from a <code>.png</code>
+     * file.</p>
      */
     inline void SetLogo(const Aws::Utils::ByteBuffer& value) { m_logoHasBeenSet = true; m_logo = value; }
 
     /**
-     * <p>The logo. This is the link where users can download the logo image. This is
-     * the standard-resolution display that has a 1:1 pixel density (or @1x), where one
-     * pixel is equal to one point.</p>
+     * <p>The logo. This is the standard-resolution display that has a 1:1 pixel
+     * density (or @1x), where one pixel is equal to one point. The only image format
+     * accepted is a binary data object that is converted from a <code>.png</code>
+     * file.</p>
      */
     inline void SetLogo(Aws::Utils::ByteBuffer&& value) { m_logoHasBeenSet = true; m_logo = std::move(value); }
 
     /**
-     * <p>The logo. This is the link where users can download the logo image. This is
-     * the standard-resolution display that has a 1:1 pixel density (or @1x), where one
-     * pixel is equal to one point.</p>
+     * <p>The logo. This is the standard-resolution display that has a 1:1 pixel
+     * density (or @1x), where one pixel is equal to one point. The only image format
+     * accepted is a binary data object that is converted from a <code>.png</code>
+     * file.</p>
      */
     inline IosImportClientBrandingAttributes& WithLogo(const Aws::Utils::ByteBuffer& value) { SetLogo(value); return *this;}
 
     /**
-     * <p>The logo. This is the link where users can download the logo image. This is
-     * the standard-resolution display that has a 1:1 pixel density (or @1x), where one
-     * pixel is equal to one point.</p>
+     * <p>The logo. This is the standard-resolution display that has a 1:1 pixel
+     * density (or @1x), where one pixel is equal to one point. The only image format
+     * accepted is a binary data object that is converted from a <code>.png</code>
+     * file.</p>
      */
     inline IosImportClientBrandingAttributes& WithLogo(Aws::Utils::ByteBuffer&& value) { SetLogo(std::move(value)); return *this;}
 
 
     /**
      * <p>The @2x version of the logo. This is the higher resolution display that
-     * offers a scale factor of 2.0 (or @2x).</p>  <p> For more information about
-     * iOS image size and resolution, see <a
+     * offers a scale factor of 2.0 (or @2x). The only image format accepted is a
+     * binary data object that is converted from a <code>.png</code> file.</p> 
+     * <p> For more information about iOS image size and resolution, see <a
      * href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image
      * Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
      * 
@@ -97,8 +104,9 @@ namespace Model
 
     /**
      * <p>The @2x version of the logo. This is the higher resolution display that
-     * offers a scale factor of 2.0 (or @2x).</p>  <p> For more information about
-     * iOS image size and resolution, see <a
+     * offers a scale factor of 2.0 (or @2x). The only image format accepted is a
+     * binary data object that is converted from a <code>.png</code> file.</p> 
+     * <p> For more information about iOS image size and resolution, see <a
      * href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image
      * Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
      * 
@@ -107,8 +115,9 @@ namespace Model
 
     /**
      * <p>The @2x version of the logo. This is the higher resolution display that
-     * offers a scale factor of 2.0 (or @2x).</p>  <p> For more information about
-     * iOS image size and resolution, see <a
+     * offers a scale factor of 2.0 (or @2x). The only image format accepted is a
+     * binary data object that is converted from a <code>.png</code> file.</p> 
+     * <p> For more information about iOS image size and resolution, see <a
      * href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image
      * Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
      * 
@@ -117,8 +126,9 @@ namespace Model
 
     /**
      * <p>The @2x version of the logo. This is the higher resolution display that
-     * offers a scale factor of 2.0 (or @2x).</p>  <p> For more information about
-     * iOS image size and resolution, see <a
+     * offers a scale factor of 2.0 (or @2x). The only image format accepted is a
+     * binary data object that is converted from a <code>.png</code> file.</p> 
+     * <p> For more information about iOS image size and resolution, see <a
      * href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image
      * Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
      * 
@@ -127,8 +137,9 @@ namespace Model
 
     /**
      * <p>The @2x version of the logo. This is the higher resolution display that
-     * offers a scale factor of 2.0 (or @2x).</p>  <p> For more information about
-     * iOS image size and resolution, see <a
+     * offers a scale factor of 2.0 (or @2x). The only image format accepted is a
+     * binary data object that is converted from a <code>.png</code> file.</p> 
+     * <p> For more information about iOS image size and resolution, see <a
      * href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image
      * Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
      * 
@@ -137,8 +148,9 @@ namespace Model
 
     /**
      * <p>The @2x version of the logo. This is the higher resolution display that
-     * offers a scale factor of 2.0 (or @2x).</p>  <p> For more information about
-     * iOS image size and resolution, see <a
+     * offers a scale factor of 2.0 (or @2x). The only image format accepted is a
+     * binary data object that is converted from a <code>.png</code> file.</p> 
+     * <p> For more information about iOS image size and resolution, see <a
      * href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image
      * Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
      * 
@@ -148,8 +160,9 @@ namespace Model
 
     /**
      * <p>The @3x version of the logo. This is the higher resolution display that
-     * offers a scale factor of 3.0 (or @3x).</p>  <p> For more information about
-     * iOS image size and resolution, see <a
+     * offers a scale factor of 3.0 (or @3x). The only image format accepted is a
+     * binary data object that is converted from a <code>.png</code> file.</p> 
+     * <p> For more information about iOS image size and resolution, see <a
      * href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image
      * Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
      * 
@@ -158,8 +171,9 @@ namespace Model
 
     /**
      * <p>The @3x version of the logo. This is the higher resolution display that
-     * offers a scale factor of 3.0 (or @3x).</p>  <p> For more information about
-     * iOS image size and resolution, see <a
+     * offers a scale factor of 3.0 (or @3x). The only image format accepted is a
+     * binary data object that is converted from a <code>.png</code> file.</p> 
+     * <p> For more information about iOS image size and resolution, see <a
      * href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image
      * Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
      * 
@@ -168,8 +182,9 @@ namespace Model
 
     /**
      * <p>The @3x version of the logo. This is the higher resolution display that
-     * offers a scale factor of 3.0 (or @3x).</p>  <p> For more information about
-     * iOS image size and resolution, see <a
+     * offers a scale factor of 3.0 (or @3x). The only image format accepted is a
+     * binary data object that is converted from a <code>.png</code> file.</p> 
+     * <p> For more information about iOS image size and resolution, see <a
      * href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image
      * Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
      * 
@@ -178,8 +193,9 @@ namespace Model
 
     /**
      * <p>The @3x version of the logo. This is the higher resolution display that
-     * offers a scale factor of 3.0 (or @3x).</p>  <p> For more information about
-     * iOS image size and resolution, see <a
+     * offers a scale factor of 3.0 (or @3x). The only image format accepted is a
+     * binary data object that is converted from a <code>.png</code> file.</p> 
+     * <p> For more information about iOS image size and resolution, see <a
      * href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image
      * Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
      * 
@@ -188,8 +204,9 @@ namespace Model
 
     /**
      * <p>The @3x version of the logo. This is the higher resolution display that
-     * offers a scale factor of 3.0 (or @3x).</p>  <p> For more information about
-     * iOS image size and resolution, see <a
+     * offers a scale factor of 3.0 (or @3x). The only image format accepted is a
+     * binary data object that is converted from a <code>.png</code> file.</p> 
+     * <p> For more information about iOS image size and resolution, see <a
      * href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image
      * Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
      * 
@@ -198,8 +215,9 @@ namespace Model
 
     /**
      * <p>The @3x version of the logo. This is the higher resolution display that
-     * offers a scale factor of 3.0 (or @3x).</p>  <p> For more information about
-     * iOS image size and resolution, see <a
+     * offers a scale factor of 3.0 (or @3x). The only image format accepted is a
+     * binary data object that is converted from a <code>.png</code> file.</p> 
+     * <p> For more information about iOS image size and resolution, see <a
      * href="https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/">Image
      * Size and Resolution </a> in the <i>Apple Human Interface Guidelines</i>.</p>
      * 

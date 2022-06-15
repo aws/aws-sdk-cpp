@@ -26,7 +26,9 @@ PermissionGroup::PermissionGroup() :
     m_createTime(0),
     m_createTimeHasBeenSet(false),
     m_lastModifiedTime(0),
-    m_lastModifiedTimeHasBeenSet(false)
+    m_lastModifiedTimeHasBeenSet(false),
+    m_membershipStatus(PermissionGroupMembershipStatus::NOT_SET),
+    m_membershipStatusHasBeenSet(false)
 {
 }
 
@@ -38,7 +40,9 @@ PermissionGroup::PermissionGroup(JsonView jsonValue) :
     m_createTime(0),
     m_createTimeHasBeenSet(false),
     m_lastModifiedTime(0),
-    m_lastModifiedTimeHasBeenSet(false)
+    m_lastModifiedTimeHasBeenSet(false),
+    m_membershipStatus(PermissionGroupMembershipStatus::NOT_SET),
+    m_membershipStatusHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -90,6 +94,13 @@ PermissionGroup& PermissionGroup::operator =(JsonView jsonValue)
     m_lastModifiedTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("membershipStatus"))
+  {
+    m_membershipStatus = PermissionGroupMembershipStatusMapper::GetPermissionGroupMembershipStatusForName(jsonValue.GetString("membershipStatus"));
+
+    m_membershipStatusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -136,6 +147,11 @@ JsonValue PermissionGroup::Jsonize() const
   {
    payload.WithInt64("lastModifiedTime", m_lastModifiedTime);
 
+  }
+
+  if(m_membershipStatusHasBeenSet)
+  {
+   payload.WithString("membershipStatus", PermissionGroupMembershipStatusMapper::GetNameForPermissionGroupMembershipStatus(m_membershipStatus));
   }
 
   return payload;

@@ -35,6 +35,7 @@
 #include <aws/servicecatalog-appregistry/model/ListAssociatedAttributeGroupsRequest.h>
 #include <aws/servicecatalog-appregistry/model/ListAssociatedResourcesRequest.h>
 #include <aws/servicecatalog-appregistry/model/ListAttributeGroupsRequest.h>
+#include <aws/servicecatalog-appregistry/model/ListAttributeGroupsForApplicationRequest.h>
 #include <aws/servicecatalog-appregistry/model/ListTagsForResourceRequest.h>
 #include <aws/servicecatalog-appregistry/model/SyncResourceRequest.h>
 #include <aws/servicecatalog-appregistry/model/TagResourceRequest.h>
@@ -609,6 +610,38 @@ void AppRegistryClient::ListAttributeGroupsAsync(const ListAttributeGroupsReques
 void AppRegistryClient::ListAttributeGroupsAsyncHelper(const ListAttributeGroupsRequest& request, const ListAttributeGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListAttributeGroups(request), context);
+}
+
+ListAttributeGroupsForApplicationOutcome AppRegistryClient::ListAttributeGroupsForApplication(const ListAttributeGroupsForApplicationRequest& request) const
+{
+  if (!request.ApplicationHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListAttributeGroupsForApplication", "Required field: Application, is not set");
+    return ListAttributeGroupsForApplicationOutcome(Aws::Client::AWSError<AppRegistryErrors>(AppRegistryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Application]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/applications/");
+  uri.AddPathSegment(request.GetApplication());
+  uri.AddPathSegments("/attribute-group-details");
+  return ListAttributeGroupsForApplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListAttributeGroupsForApplicationOutcomeCallable AppRegistryClient::ListAttributeGroupsForApplicationCallable(const ListAttributeGroupsForApplicationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListAttributeGroupsForApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAttributeGroupsForApplication(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppRegistryClient::ListAttributeGroupsForApplicationAsync(const ListAttributeGroupsForApplicationRequest& request, const ListAttributeGroupsForApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListAttributeGroupsForApplicationAsyncHelper( request, handler, context ); } );
+}
+
+void AppRegistryClient::ListAttributeGroupsForApplicationAsyncHelper(const ListAttributeGroupsForApplicationRequest& request, const ListAttributeGroupsForApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListAttributeGroupsForApplication(request), context);
 }
 
 ListTagsForResourceOutcome AppRegistryClient::ListTagsForResource(const ListTagsForResourceRequest& request) const

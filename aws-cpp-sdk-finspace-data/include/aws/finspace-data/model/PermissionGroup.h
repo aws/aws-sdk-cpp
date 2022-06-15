@@ -7,6 +7,7 @@
 #include <aws/finspace-data/FinSpaceData_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/finspace-data/model/PermissionGroupMembershipStatus.h>
 #include <aws/finspace-data/model/ApplicationPermission.h>
 #include <utility>
 
@@ -332,6 +333,67 @@ namespace Model
      */
     inline PermissionGroup& WithLastModifiedTime(long long value) { SetLastModifiedTime(value); return *this;}
 
+
+    /**
+     * <p>Indicates the status of the user account within a permission group.</p> <ul>
+     * <li> <p> <code>ADDITION_IN_PROGRESS</code> – The user account is currently being
+     * added to the permission group.</p> </li> <li> <p> <code>ADDITION_SUCCESS</code>
+     * – The user account is successfully added to the permission group.</p> </li> <li>
+     * <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from
+     * the permission group.</p> </li> </ul>
+     */
+    inline const PermissionGroupMembershipStatus& GetMembershipStatus() const{ return m_membershipStatus; }
+
+    /**
+     * <p>Indicates the status of the user account within a permission group.</p> <ul>
+     * <li> <p> <code>ADDITION_IN_PROGRESS</code> – The user account is currently being
+     * added to the permission group.</p> </li> <li> <p> <code>ADDITION_SUCCESS</code>
+     * – The user account is successfully added to the permission group.</p> </li> <li>
+     * <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from
+     * the permission group.</p> </li> </ul>
+     */
+    inline bool MembershipStatusHasBeenSet() const { return m_membershipStatusHasBeenSet; }
+
+    /**
+     * <p>Indicates the status of the user account within a permission group.</p> <ul>
+     * <li> <p> <code>ADDITION_IN_PROGRESS</code> – The user account is currently being
+     * added to the permission group.</p> </li> <li> <p> <code>ADDITION_SUCCESS</code>
+     * – The user account is successfully added to the permission group.</p> </li> <li>
+     * <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from
+     * the permission group.</p> </li> </ul>
+     */
+    inline void SetMembershipStatus(const PermissionGroupMembershipStatus& value) { m_membershipStatusHasBeenSet = true; m_membershipStatus = value; }
+
+    /**
+     * <p>Indicates the status of the user account within a permission group.</p> <ul>
+     * <li> <p> <code>ADDITION_IN_PROGRESS</code> – The user account is currently being
+     * added to the permission group.</p> </li> <li> <p> <code>ADDITION_SUCCESS</code>
+     * – The user account is successfully added to the permission group.</p> </li> <li>
+     * <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from
+     * the permission group.</p> </li> </ul>
+     */
+    inline void SetMembershipStatus(PermissionGroupMembershipStatus&& value) { m_membershipStatusHasBeenSet = true; m_membershipStatus = std::move(value); }
+
+    /**
+     * <p>Indicates the status of the user account within a permission group.</p> <ul>
+     * <li> <p> <code>ADDITION_IN_PROGRESS</code> – The user account is currently being
+     * added to the permission group.</p> </li> <li> <p> <code>ADDITION_SUCCESS</code>
+     * – The user account is successfully added to the permission group.</p> </li> <li>
+     * <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from
+     * the permission group.</p> </li> </ul>
+     */
+    inline PermissionGroup& WithMembershipStatus(const PermissionGroupMembershipStatus& value) { SetMembershipStatus(value); return *this;}
+
+    /**
+     * <p>Indicates the status of the user account within a permission group.</p> <ul>
+     * <li> <p> <code>ADDITION_IN_PROGRESS</code> – The user account is currently being
+     * added to the permission group.</p> </li> <li> <p> <code>ADDITION_SUCCESS</code>
+     * – The user account is successfully added to the permission group.</p> </li> <li>
+     * <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from
+     * the permission group.</p> </li> </ul>
+     */
+    inline PermissionGroup& WithMembershipStatus(PermissionGroupMembershipStatus&& value) { SetMembershipStatus(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_permissionGroupId;
@@ -351,6 +413,9 @@ namespace Model
 
     long long m_lastModifiedTime;
     bool m_lastModifiedTimeHasBeenSet;
+
+    PermissionGroupMembershipStatus m_membershipStatus;
+    bool m_membershipStatusHasBeenSet;
   };
 
 } // namespace Model

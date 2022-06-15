@@ -30,7 +30,8 @@ Service::Service() :
     m_eventLastSeenHasBeenSet(false),
     m_resourceRoleHasBeenSet(false),
     m_serviceNameHasBeenSet(false),
-    m_userFeedbackHasBeenSet(false)
+    m_userFeedbackHasBeenSet(false),
+    m_additionalInfoHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ Service::Service(JsonView jsonValue) :
     m_eventLastSeenHasBeenSet(false),
     m_resourceRoleHasBeenSet(false),
     m_serviceNameHasBeenSet(false),
-    m_userFeedbackHasBeenSet(false)
+    m_userFeedbackHasBeenSet(false),
+    m_additionalInfoHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -123,6 +125,13 @@ Service& Service::operator =(JsonView jsonValue)
     m_userFeedbackHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("additionalInfo"))
+  {
+    m_additionalInfo = jsonValue.GetObject("additionalInfo");
+
+    m_additionalInfoHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -187,6 +196,12 @@ JsonValue Service::Jsonize() const
   if(m_userFeedbackHasBeenSet)
   {
    payload.WithString("userFeedback", m_userFeedback);
+
+  }
+
+  if(m_additionalInfoHasBeenSet)
+  {
+   payload.WithObject("additionalInfo", m_additionalInfo.Jsonize());
 
   }
 

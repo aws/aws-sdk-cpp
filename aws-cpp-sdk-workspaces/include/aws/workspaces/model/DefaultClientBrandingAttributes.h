@@ -42,50 +42,50 @@ namespace Model
 
 
     /**
-     * <p>The logo URL. This is the link where users can download the logo image. The
-     * only supported image format is <code>.png</code>.</p>
+     * <p>The logo URL. The only image format accepted is a binary data object that is
+     * converted from a <code>.png</code> file.</p>
      */
     inline const Aws::String& GetLogoUrl() const{ return m_logoUrl; }
 
     /**
-     * <p>The logo URL. This is the link where users can download the logo image. The
-     * only supported image format is <code>.png</code>.</p>
+     * <p>The logo URL. The only image format accepted is a binary data object that is
+     * converted from a <code>.png</code> file.</p>
      */
     inline bool LogoUrlHasBeenSet() const { return m_logoUrlHasBeenSet; }
 
     /**
-     * <p>The logo URL. This is the link where users can download the logo image. The
-     * only supported image format is <code>.png</code>.</p>
+     * <p>The logo URL. The only image format accepted is a binary data object that is
+     * converted from a <code>.png</code> file.</p>
      */
     inline void SetLogoUrl(const Aws::String& value) { m_logoUrlHasBeenSet = true; m_logoUrl = value; }
 
     /**
-     * <p>The logo URL. This is the link where users can download the logo image. The
-     * only supported image format is <code>.png</code>.</p>
+     * <p>The logo URL. The only image format accepted is a binary data object that is
+     * converted from a <code>.png</code> file.</p>
      */
     inline void SetLogoUrl(Aws::String&& value) { m_logoUrlHasBeenSet = true; m_logoUrl = std::move(value); }
 
     /**
-     * <p>The logo URL. This is the link where users can download the logo image. The
-     * only supported image format is <code>.png</code>.</p>
+     * <p>The logo URL. The only image format accepted is a binary data object that is
+     * converted from a <code>.png</code> file.</p>
      */
     inline void SetLogoUrl(const char* value) { m_logoUrlHasBeenSet = true; m_logoUrl.assign(value); }
 
     /**
-     * <p>The logo URL. This is the link where users can download the logo image. The
-     * only supported image format is <code>.png</code>.</p>
+     * <p>The logo URL. The only image format accepted is a binary data object that is
+     * converted from a <code>.png</code> file.</p>
      */
     inline DefaultClientBrandingAttributes& WithLogoUrl(const Aws::String& value) { SetLogoUrl(value); return *this;}
 
     /**
-     * <p>The logo URL. This is the link where users can download the logo image. The
-     * only supported image format is <code>.png</code>.</p>
+     * <p>The logo URL. The only image format accepted is a binary data object that is
+     * converted from a <code>.png</code> file.</p>
      */
     inline DefaultClientBrandingAttributes& WithLogoUrl(Aws::String&& value) { SetLogoUrl(std::move(value)); return *this;}
 
     /**
-     * <p>The logo URL. This is the link where users can download the logo image. The
-     * only supported image format is <code>.png</code>.</p>
+     * <p>The logo URL. The only image format accepted is a binary data object that is
+     * converted from a <code>.png</code> file.</p>
      */
     inline DefaultClientBrandingAttributes& WithLogoUrl(const char* value) { SetLogoUrl(value); return *this;}
 

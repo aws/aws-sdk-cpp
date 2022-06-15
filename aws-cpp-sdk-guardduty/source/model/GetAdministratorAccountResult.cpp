@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/guardduty/model/GetMasterAccountResult.h>
+#include <aws/guardduty/model/GetAdministratorAccountResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
@@ -16,21 +16,21 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetMasterAccountResult::GetMasterAccountResult()
+GetAdministratorAccountResult::GetAdministratorAccountResult()
 {
 }
 
-GetMasterAccountResult::GetMasterAccountResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+GetAdministratorAccountResult::GetAdministratorAccountResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetMasterAccountResult& GetMasterAccountResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
+GetAdministratorAccountResult& GetAdministratorAccountResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("master"))
+  if(jsonValue.ValueExists("administrator"))
   {
-    m_master = jsonValue.GetObject("master");
+    m_administrator = jsonValue.GetObject("administrator");
 
   }
 

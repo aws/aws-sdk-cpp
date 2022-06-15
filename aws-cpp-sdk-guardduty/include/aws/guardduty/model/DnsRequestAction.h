@@ -78,10 +78,86 @@ namespace Model
      */
     inline DnsRequestAction& WithDomain(const char* value) { SetDomain(value); return *this;}
 
+
+    /**
+     * <p>The network connection protocol observed in the activity that prompted
+     * GuardDuty to generate the finding.</p>
+     */
+    inline const Aws::String& GetProtocol() const{ return m_protocol; }
+
+    /**
+     * <p>The network connection protocol observed in the activity that prompted
+     * GuardDuty to generate the finding.</p>
+     */
+    inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
+
+    /**
+     * <p>The network connection protocol observed in the activity that prompted
+     * GuardDuty to generate the finding.</p>
+     */
+    inline void SetProtocol(const Aws::String& value) { m_protocolHasBeenSet = true; m_protocol = value; }
+
+    /**
+     * <p>The network connection protocol observed in the activity that prompted
+     * GuardDuty to generate the finding.</p>
+     */
+    inline void SetProtocol(Aws::String&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
+
+    /**
+     * <p>The network connection protocol observed in the activity that prompted
+     * GuardDuty to generate the finding.</p>
+     */
+    inline void SetProtocol(const char* value) { m_protocolHasBeenSet = true; m_protocol.assign(value); }
+
+    /**
+     * <p>The network connection protocol observed in the activity that prompted
+     * GuardDuty to generate the finding.</p>
+     */
+    inline DnsRequestAction& WithProtocol(const Aws::String& value) { SetProtocol(value); return *this;}
+
+    /**
+     * <p>The network connection protocol observed in the activity that prompted
+     * GuardDuty to generate the finding.</p>
+     */
+    inline DnsRequestAction& WithProtocol(Aws::String&& value) { SetProtocol(std::move(value)); return *this;}
+
+    /**
+     * <p>The network connection protocol observed in the activity that prompted
+     * GuardDuty to generate the finding.</p>
+     */
+    inline DnsRequestAction& WithProtocol(const char* value) { SetProtocol(value); return *this;}
+
+
+    /**
+     * <p>Indicates whether the targeted port is blocked.</p>
+     */
+    inline bool GetBlocked() const{ return m_blocked; }
+
+    /**
+     * <p>Indicates whether the targeted port is blocked.</p>
+     */
+    inline bool BlockedHasBeenSet() const { return m_blockedHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the targeted port is blocked.</p>
+     */
+    inline void SetBlocked(bool value) { m_blockedHasBeenSet = true; m_blocked = value; }
+
+    /**
+     * <p>Indicates whether the targeted port is blocked.</p>
+     */
+    inline DnsRequestAction& WithBlocked(bool value) { SetBlocked(value); return *this;}
+
   private:
 
     Aws::String m_domain;
     bool m_domainHasBeenSet;
+
+    Aws::String m_protocol;
+    bool m_protocolHasBeenSet;
+
+    bool m_blocked;
+    bool m_blockedHasBeenSet;
   };
 
 } // namespace Model

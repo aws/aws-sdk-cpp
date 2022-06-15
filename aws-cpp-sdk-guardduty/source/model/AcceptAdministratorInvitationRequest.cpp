@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/guardduty/model/AcceptInvitationRequest.h>
+#include <aws/guardduty/model/AcceptAdministratorInvitationRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -12,20 +12,20 @@ using namespace Aws::GuardDuty::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AcceptInvitationRequest::AcceptInvitationRequest() : 
+AcceptAdministratorInvitationRequest::AcceptAdministratorInvitationRequest() : 
     m_detectorIdHasBeenSet(false),
-    m_masterIdHasBeenSet(false),
+    m_administratorIdHasBeenSet(false),
     m_invitationIdHasBeenSet(false)
 {
 }
 
-Aws::String AcceptInvitationRequest::SerializePayload() const
+Aws::String AcceptAdministratorInvitationRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_masterIdHasBeenSet)
+  if(m_administratorIdHasBeenSet)
   {
-   payload.WithString("masterId", m_masterId);
+   payload.WithString("administratorId", m_administratorId);
 
   }
 
