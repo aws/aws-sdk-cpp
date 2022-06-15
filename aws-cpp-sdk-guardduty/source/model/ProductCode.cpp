@@ -33,16 +33,16 @@ ProductCode::ProductCode(JsonView jsonValue) :
 
 ProductCode& ProductCode::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("code"))
+  if(jsonValue.ValueExists("productCodeId"))
   {
-    m_code = jsonValue.GetString("code");
+    m_code = jsonValue.GetString("productCodeId");
 
     m_codeHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("productType"))
+  if(jsonValue.ValueExists("productCodeType"))
   {
-    m_productType = jsonValue.GetString("productType");
+    m_productType = jsonValue.GetString("productCodeType");
 
     m_productTypeHasBeenSet = true;
   }
@@ -56,13 +56,13 @@ JsonValue ProductCode::Jsonize() const
 
   if(m_codeHasBeenSet)
   {
-   payload.WithString("code", m_code);
+   payload.WithString("productCodeId", m_code);
 
   }
 
   if(m_productTypeHasBeenSet)
   {
-   payload.WithString("productType", m_productType);
+   payload.WithString("productCodeType", m_productType);
 
   }
 

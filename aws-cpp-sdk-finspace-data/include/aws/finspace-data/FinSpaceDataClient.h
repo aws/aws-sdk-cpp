@@ -11,6 +11,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/finspace-data/model/AssociateUserToPermissionGroupResult.h>
 #include <aws/finspace-data/model/CreateChangesetResult.h>
 #include <aws/finspace-data/model/CreateDataViewResult.h>
 #include <aws/finspace-data/model/CreateDatasetResult.h>
@@ -19,10 +20,12 @@
 #include <aws/finspace-data/model/DeleteDatasetResult.h>
 #include <aws/finspace-data/model/DeletePermissionGroupResult.h>
 #include <aws/finspace-data/model/DisableUserResult.h>
+#include <aws/finspace-data/model/DisassociateUserFromPermissionGroupResult.h>
 #include <aws/finspace-data/model/EnableUserResult.h>
 #include <aws/finspace-data/model/GetChangesetResult.h>
 #include <aws/finspace-data/model/GetDataViewResult.h>
 #include <aws/finspace-data/model/GetDatasetResult.h>
+#include <aws/finspace-data/model/GetPermissionGroupResult.h>
 #include <aws/finspace-data/model/GetProgrammaticAccessCredentialsResult.h>
 #include <aws/finspace-data/model/GetUserResult.h>
 #include <aws/finspace-data/model/GetWorkingLocationResult.h>
@@ -30,7 +33,9 @@
 #include <aws/finspace-data/model/ListDataViewsResult.h>
 #include <aws/finspace-data/model/ListDatasetsResult.h>
 #include <aws/finspace-data/model/ListPermissionGroupsResult.h>
+#include <aws/finspace-data/model/ListPermissionGroupsByUserResult.h>
 #include <aws/finspace-data/model/ListUsersResult.h>
+#include <aws/finspace-data/model/ListUsersByPermissionGroupResult.h>
 #include <aws/finspace-data/model/ResetUserPasswordResult.h>
 #include <aws/finspace-data/model/UpdateChangesetResult.h>
 #include <aws/finspace-data/model/UpdateDatasetResult.h>
@@ -75,6 +80,7 @@ namespace FinSpaceData
 
 namespace Model
 {
+        class AssociateUserToPermissionGroupRequest;
         class CreateChangesetRequest;
         class CreateDataViewRequest;
         class CreateDatasetRequest;
@@ -83,10 +89,12 @@ namespace Model
         class DeleteDatasetRequest;
         class DeletePermissionGroupRequest;
         class DisableUserRequest;
+        class DisassociateUserFromPermissionGroupRequest;
         class EnableUserRequest;
         class GetChangesetRequest;
         class GetDataViewRequest;
         class GetDatasetRequest;
+        class GetPermissionGroupRequest;
         class GetProgrammaticAccessCredentialsRequest;
         class GetUserRequest;
         class GetWorkingLocationRequest;
@@ -94,13 +102,16 @@ namespace Model
         class ListDataViewsRequest;
         class ListDatasetsRequest;
         class ListPermissionGroupsRequest;
+        class ListPermissionGroupsByUserRequest;
         class ListUsersRequest;
+        class ListUsersByPermissionGroupRequest;
         class ResetUserPasswordRequest;
         class UpdateChangesetRequest;
         class UpdateDatasetRequest;
         class UpdatePermissionGroupRequest;
         class UpdateUserRequest;
 
+        typedef Aws::Utils::Outcome<AssociateUserToPermissionGroupResult, FinSpaceDataError> AssociateUserToPermissionGroupOutcome;
         typedef Aws::Utils::Outcome<CreateChangesetResult, FinSpaceDataError> CreateChangesetOutcome;
         typedef Aws::Utils::Outcome<CreateDataViewResult, FinSpaceDataError> CreateDataViewOutcome;
         typedef Aws::Utils::Outcome<CreateDatasetResult, FinSpaceDataError> CreateDatasetOutcome;
@@ -109,10 +120,12 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteDatasetResult, FinSpaceDataError> DeleteDatasetOutcome;
         typedef Aws::Utils::Outcome<DeletePermissionGroupResult, FinSpaceDataError> DeletePermissionGroupOutcome;
         typedef Aws::Utils::Outcome<DisableUserResult, FinSpaceDataError> DisableUserOutcome;
+        typedef Aws::Utils::Outcome<DisassociateUserFromPermissionGroupResult, FinSpaceDataError> DisassociateUserFromPermissionGroupOutcome;
         typedef Aws::Utils::Outcome<EnableUserResult, FinSpaceDataError> EnableUserOutcome;
         typedef Aws::Utils::Outcome<GetChangesetResult, FinSpaceDataError> GetChangesetOutcome;
         typedef Aws::Utils::Outcome<GetDataViewResult, FinSpaceDataError> GetDataViewOutcome;
         typedef Aws::Utils::Outcome<GetDatasetResult, FinSpaceDataError> GetDatasetOutcome;
+        typedef Aws::Utils::Outcome<GetPermissionGroupResult, FinSpaceDataError> GetPermissionGroupOutcome;
         typedef Aws::Utils::Outcome<GetProgrammaticAccessCredentialsResult, FinSpaceDataError> GetProgrammaticAccessCredentialsOutcome;
         typedef Aws::Utils::Outcome<GetUserResult, FinSpaceDataError> GetUserOutcome;
         typedef Aws::Utils::Outcome<GetWorkingLocationResult, FinSpaceDataError> GetWorkingLocationOutcome;
@@ -120,13 +133,16 @@ namespace Model
         typedef Aws::Utils::Outcome<ListDataViewsResult, FinSpaceDataError> ListDataViewsOutcome;
         typedef Aws::Utils::Outcome<ListDatasetsResult, FinSpaceDataError> ListDatasetsOutcome;
         typedef Aws::Utils::Outcome<ListPermissionGroupsResult, FinSpaceDataError> ListPermissionGroupsOutcome;
+        typedef Aws::Utils::Outcome<ListPermissionGroupsByUserResult, FinSpaceDataError> ListPermissionGroupsByUserOutcome;
         typedef Aws::Utils::Outcome<ListUsersResult, FinSpaceDataError> ListUsersOutcome;
+        typedef Aws::Utils::Outcome<ListUsersByPermissionGroupResult, FinSpaceDataError> ListUsersByPermissionGroupOutcome;
         typedef Aws::Utils::Outcome<ResetUserPasswordResult, FinSpaceDataError> ResetUserPasswordOutcome;
         typedef Aws::Utils::Outcome<UpdateChangesetResult, FinSpaceDataError> UpdateChangesetOutcome;
         typedef Aws::Utils::Outcome<UpdateDatasetResult, FinSpaceDataError> UpdateDatasetOutcome;
         typedef Aws::Utils::Outcome<UpdatePermissionGroupResult, FinSpaceDataError> UpdatePermissionGroupOutcome;
         typedef Aws::Utils::Outcome<UpdateUserResult, FinSpaceDataError> UpdateUserOutcome;
 
+        typedef std::future<AssociateUserToPermissionGroupOutcome> AssociateUserToPermissionGroupOutcomeCallable;
         typedef std::future<CreateChangesetOutcome> CreateChangesetOutcomeCallable;
         typedef std::future<CreateDataViewOutcome> CreateDataViewOutcomeCallable;
         typedef std::future<CreateDatasetOutcome> CreateDatasetOutcomeCallable;
@@ -135,10 +151,12 @@ namespace Model
         typedef std::future<DeleteDatasetOutcome> DeleteDatasetOutcomeCallable;
         typedef std::future<DeletePermissionGroupOutcome> DeletePermissionGroupOutcomeCallable;
         typedef std::future<DisableUserOutcome> DisableUserOutcomeCallable;
+        typedef std::future<DisassociateUserFromPermissionGroupOutcome> DisassociateUserFromPermissionGroupOutcomeCallable;
         typedef std::future<EnableUserOutcome> EnableUserOutcomeCallable;
         typedef std::future<GetChangesetOutcome> GetChangesetOutcomeCallable;
         typedef std::future<GetDataViewOutcome> GetDataViewOutcomeCallable;
         typedef std::future<GetDatasetOutcome> GetDatasetOutcomeCallable;
+        typedef std::future<GetPermissionGroupOutcome> GetPermissionGroupOutcomeCallable;
         typedef std::future<GetProgrammaticAccessCredentialsOutcome> GetProgrammaticAccessCredentialsOutcomeCallable;
         typedef std::future<GetUserOutcome> GetUserOutcomeCallable;
         typedef std::future<GetWorkingLocationOutcome> GetWorkingLocationOutcomeCallable;
@@ -146,7 +164,9 @@ namespace Model
         typedef std::future<ListDataViewsOutcome> ListDataViewsOutcomeCallable;
         typedef std::future<ListDatasetsOutcome> ListDatasetsOutcomeCallable;
         typedef std::future<ListPermissionGroupsOutcome> ListPermissionGroupsOutcomeCallable;
+        typedef std::future<ListPermissionGroupsByUserOutcome> ListPermissionGroupsByUserOutcomeCallable;
         typedef std::future<ListUsersOutcome> ListUsersOutcomeCallable;
+        typedef std::future<ListUsersByPermissionGroupOutcome> ListUsersByPermissionGroupOutcomeCallable;
         typedef std::future<ResetUserPasswordOutcome> ResetUserPasswordOutcomeCallable;
         typedef std::future<UpdateChangesetOutcome> UpdateChangesetOutcomeCallable;
         typedef std::future<UpdateDatasetOutcome> UpdateDatasetOutcomeCallable;
@@ -156,6 +176,7 @@ namespace Model
 
   class FinSpaceDataClient;
 
+    typedef std::function<void(const FinSpaceDataClient*, const Model::AssociateUserToPermissionGroupRequest&, const Model::AssociateUserToPermissionGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateUserToPermissionGroupResponseReceivedHandler;
     typedef std::function<void(const FinSpaceDataClient*, const Model::CreateChangesetRequest&, const Model::CreateChangesetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateChangesetResponseReceivedHandler;
     typedef std::function<void(const FinSpaceDataClient*, const Model::CreateDataViewRequest&, const Model::CreateDataViewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataViewResponseReceivedHandler;
     typedef std::function<void(const FinSpaceDataClient*, const Model::CreateDatasetRequest&, const Model::CreateDatasetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDatasetResponseReceivedHandler;
@@ -164,10 +185,12 @@ namespace Model
     typedef std::function<void(const FinSpaceDataClient*, const Model::DeleteDatasetRequest&, const Model::DeleteDatasetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDatasetResponseReceivedHandler;
     typedef std::function<void(const FinSpaceDataClient*, const Model::DeletePermissionGroupRequest&, const Model::DeletePermissionGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePermissionGroupResponseReceivedHandler;
     typedef std::function<void(const FinSpaceDataClient*, const Model::DisableUserRequest&, const Model::DisableUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableUserResponseReceivedHandler;
+    typedef std::function<void(const FinSpaceDataClient*, const Model::DisassociateUserFromPermissionGroupRequest&, const Model::DisassociateUserFromPermissionGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateUserFromPermissionGroupResponseReceivedHandler;
     typedef std::function<void(const FinSpaceDataClient*, const Model::EnableUserRequest&, const Model::EnableUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableUserResponseReceivedHandler;
     typedef std::function<void(const FinSpaceDataClient*, const Model::GetChangesetRequest&, const Model::GetChangesetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetChangesetResponseReceivedHandler;
     typedef std::function<void(const FinSpaceDataClient*, const Model::GetDataViewRequest&, const Model::GetDataViewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDataViewResponseReceivedHandler;
     typedef std::function<void(const FinSpaceDataClient*, const Model::GetDatasetRequest&, const Model::GetDatasetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDatasetResponseReceivedHandler;
+    typedef std::function<void(const FinSpaceDataClient*, const Model::GetPermissionGroupRequest&, const Model::GetPermissionGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPermissionGroupResponseReceivedHandler;
     typedef std::function<void(const FinSpaceDataClient*, const Model::GetProgrammaticAccessCredentialsRequest&, const Model::GetProgrammaticAccessCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetProgrammaticAccessCredentialsResponseReceivedHandler;
     typedef std::function<void(const FinSpaceDataClient*, const Model::GetUserRequest&, const Model::GetUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUserResponseReceivedHandler;
     typedef std::function<void(const FinSpaceDataClient*, const Model::GetWorkingLocationRequest&, const Model::GetWorkingLocationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetWorkingLocationResponseReceivedHandler;
@@ -175,7 +198,9 @@ namespace Model
     typedef std::function<void(const FinSpaceDataClient*, const Model::ListDataViewsRequest&, const Model::ListDataViewsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataViewsResponseReceivedHandler;
     typedef std::function<void(const FinSpaceDataClient*, const Model::ListDatasetsRequest&, const Model::ListDatasetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDatasetsResponseReceivedHandler;
     typedef std::function<void(const FinSpaceDataClient*, const Model::ListPermissionGroupsRequest&, const Model::ListPermissionGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPermissionGroupsResponseReceivedHandler;
+    typedef std::function<void(const FinSpaceDataClient*, const Model::ListPermissionGroupsByUserRequest&, const Model::ListPermissionGroupsByUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPermissionGroupsByUserResponseReceivedHandler;
     typedef std::function<void(const FinSpaceDataClient*, const Model::ListUsersRequest&, const Model::ListUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUsersResponseReceivedHandler;
+    typedef std::function<void(const FinSpaceDataClient*, const Model::ListUsersByPermissionGroupRequest&, const Model::ListUsersByPermissionGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUsersByPermissionGroupResponseReceivedHandler;
     typedef std::function<void(const FinSpaceDataClient*, const Model::ResetUserPasswordRequest&, const Model::ResetUserPasswordOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResetUserPasswordResponseReceivedHandler;
     typedef std::function<void(const FinSpaceDataClient*, const Model::UpdateChangesetRequest&, const Model::UpdateChangesetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateChangesetResponseReceivedHandler;
     typedef std::function<void(const FinSpaceDataClient*, const Model::UpdateDatasetRequest&, const Model::UpdateDatasetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDatasetResponseReceivedHandler;
@@ -211,6 +236,24 @@ namespace Model
 
         virtual ~FinSpaceDataClient();
 
+
+        /**
+         * <p>Adds a user account to a permission group to grant permissions for actions a
+         * user can perform in FinSpace.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/AssociateUserToPermissionGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateUserToPermissionGroupOutcome AssociateUserToPermissionGroup(const Model::AssociateUserToPermissionGroupRequest& request) const;
+
+        /**
+         * A Callable wrapper for AssociateUserToPermissionGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AssociateUserToPermissionGroupOutcomeCallable AssociateUserToPermissionGroupCallable(const Model::AssociateUserToPermissionGroupRequest& request) const;
+
+        /**
+         * An Async wrapper for AssociateUserToPermissionGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AssociateUserToPermissionGroupAsync(const Model::AssociateUserToPermissionGroupRequest& request, const AssociateUserToPermissionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new Changeset in a FinSpace Dataset.</p><p><h3>See Also:</h3>   <a
@@ -352,6 +395,23 @@ namespace Model
         virtual void DisableUserAsync(const Model::DisableUserRequest& request, const DisableUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Removes a user account from a permission group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/DisassociateUserFromPermissionGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateUserFromPermissionGroupOutcome DisassociateUserFromPermissionGroup(const Model::DisassociateUserFromPermissionGroupRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisassociateUserFromPermissionGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DisassociateUserFromPermissionGroupOutcomeCallable DisassociateUserFromPermissionGroupCallable(const Model::DisassociateUserFromPermissionGroupRequest& request) const;
+
+        /**
+         * An Async wrapper for DisassociateUserFromPermissionGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DisassociateUserFromPermissionGroupAsync(const Model::DisassociateUserFromPermissionGroupRequest& request, const DisassociateUserFromPermissionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p> Allows the specified user to access the FinSpace web application and
          * API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/EnableUser">AWS
@@ -419,6 +479,24 @@ namespace Model
          * An Async wrapper for GetDataset that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetDatasetAsync(const Model::GetDatasetRequest& request, const GetDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves the details of a specific permission group.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetPermissionGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetPermissionGroupOutcome GetPermissionGroup(const Model::GetPermissionGroupRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetPermissionGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetPermissionGroupOutcomeCallable GetPermissionGroupCallable(const Model::GetPermissionGroupRequest& request) const;
+
+        /**
+         * An Async wrapper for GetPermissionGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetPermissionGroupAsync(const Model::GetPermissionGroupRequest& request, const GetPermissionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Request programmatic credentials to use with FinSpace SDK.</p><p><h3>See
@@ -545,6 +623,24 @@ namespace Model
         virtual void ListPermissionGroupsAsync(const Model::ListPermissionGroupsRequest& request, const ListPermissionGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists all the permission groups that are associated with a specific user
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListPermissionGroupsByUser">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListPermissionGroupsByUserOutcome ListPermissionGroupsByUser(const Model::ListPermissionGroupsByUserRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListPermissionGroupsByUser that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListPermissionGroupsByUserOutcomeCallable ListPermissionGroupsByUserCallable(const Model::ListPermissionGroupsByUserRequest& request) const;
+
+        /**
+         * An Async wrapper for ListPermissionGroupsByUser that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListPermissionGroupsByUserAsync(const Model::ListPermissionGroupsByUserRequest& request, const ListPermissionGroupsByUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists all available user accounts in FinSpace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListUsers">AWS
          * API Reference</a></p>
@@ -560,6 +656,24 @@ namespace Model
          * An Async wrapper for ListUsers that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListUsersAsync(const Model::ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists details of all the users in a specific permission group.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListUsersByPermissionGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListUsersByPermissionGroupOutcome ListUsersByPermissionGroup(const Model::ListUsersByPermissionGroupRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListUsersByPermissionGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListUsersByPermissionGroupOutcomeCallable ListUsersByPermissionGroupCallable(const Model::ListUsersByPermissionGroupRequest& request) const;
+
+        /**
+         * An Async wrapper for ListUsersByPermissionGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListUsersByPermissionGroupAsync(const Model::ListUsersByPermissionGroupRequest& request, const ListUsersByPermissionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Resets the password for a specified user ID and generates a temporary one.
@@ -655,6 +769,7 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+        void AssociateUserToPermissionGroupAsyncHelper(const Model::AssociateUserToPermissionGroupRequest& request, const AssociateUserToPermissionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateChangesetAsyncHelper(const Model::CreateChangesetRequest& request, const CreateChangesetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDataViewAsyncHelper(const Model::CreateDataViewRequest& request, const CreateDataViewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDatasetAsyncHelper(const Model::CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -663,10 +778,12 @@ namespace Model
         void DeleteDatasetAsyncHelper(const Model::DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeletePermissionGroupAsyncHelper(const Model::DeletePermissionGroupRequest& request, const DeletePermissionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableUserAsyncHelper(const Model::DisableUserRequest& request, const DisableUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DisassociateUserFromPermissionGroupAsyncHelper(const Model::DisassociateUserFromPermissionGroupRequest& request, const DisassociateUserFromPermissionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EnableUserAsyncHelper(const Model::EnableUserRequest& request, const EnableUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetChangesetAsyncHelper(const Model::GetChangesetRequest& request, const GetChangesetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDataViewAsyncHelper(const Model::GetDataViewRequest& request, const GetDataViewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDatasetAsyncHelper(const Model::GetDatasetRequest& request, const GetDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetPermissionGroupAsyncHelper(const Model::GetPermissionGroupRequest& request, const GetPermissionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetProgrammaticAccessCredentialsAsyncHelper(const Model::GetProgrammaticAccessCredentialsRequest& request, const GetProgrammaticAccessCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetUserAsyncHelper(const Model::GetUserRequest& request, const GetUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetWorkingLocationAsyncHelper(const Model::GetWorkingLocationRequest& request, const GetWorkingLocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -674,7 +791,9 @@ namespace Model
         void ListDataViewsAsyncHelper(const Model::ListDataViewsRequest& request, const ListDataViewsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDatasetsAsyncHelper(const Model::ListDatasetsRequest& request, const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPermissionGroupsAsyncHelper(const Model::ListPermissionGroupsRequest& request, const ListPermissionGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListPermissionGroupsByUserAsyncHelper(const Model::ListPermissionGroupsByUserRequest& request, const ListPermissionGroupsByUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListUsersAsyncHelper(const Model::ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListUsersByPermissionGroupAsyncHelper(const Model::ListUsersByPermissionGroupRequest& request, const ListUsersByPermissionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ResetUserPasswordAsyncHelper(const Model::ResetUserPasswordRequest& request, const ResetUserPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateChangesetAsyncHelper(const Model::UpdateChangesetRequest& request, const UpdateChangesetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDatasetAsyncHelper(const Model::UpdateDatasetRequest& request, const UpdateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -18,16 +18,16 @@ namespace Model
 
   /**
    */
-  class AWS_GUARDDUTY_API GetMasterAccountRequest : public GuardDutyRequest
+  class AWS_GUARDDUTY_API GetAdministratorAccountRequest : public GuardDutyRequest
   {
   public:
-    GetMasterAccountRequest();
+    GetAdministratorAccountRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
     // Note: this is not true for response, multiple operations may have the same response name,
     // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "GetMasterAccount"; }
+    inline virtual const char* GetServiceRequestName() const override { return "GetAdministratorAccount"; }
 
     Aws::String SerializePayload() const override;
 
@@ -60,17 +60,17 @@ namespace Model
     /**
      * <p>The unique ID of the detector of the GuardDuty member account.</p>
      */
-    inline GetMasterAccountRequest& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
+    inline GetAdministratorAccountRequest& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
 
     /**
      * <p>The unique ID of the detector of the GuardDuty member account.</p>
      */
-    inline GetMasterAccountRequest& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
+    inline GetAdministratorAccountRequest& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
 
     /**
      * <p>The unique ID of the detector of the GuardDuty member account.</p>
      */
-    inline GetMasterAccountRequest& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
+    inline GetAdministratorAccountRequest& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
 
   private:
 

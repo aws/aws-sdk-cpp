@@ -8,6 +8,7 @@
 #include <aws/guardduty/model/Action.h>
 #include <aws/guardduty/model/Evidence.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/guardduty/model/ServiceAdditionalInfo.h>
 #include <utility>
 
 namespace Aws
@@ -413,6 +414,37 @@ namespace Model
      */
     inline Service& WithUserFeedback(const char* value) { SetUserFeedback(value); return *this;}
 
+
+    /**
+     * <p>Contains additional information about the generated finding.</p>
+     */
+    inline const ServiceAdditionalInfo& GetAdditionalInfo() const{ return m_additionalInfo; }
+
+    /**
+     * <p>Contains additional information about the generated finding.</p>
+     */
+    inline bool AdditionalInfoHasBeenSet() const { return m_additionalInfoHasBeenSet; }
+
+    /**
+     * <p>Contains additional information about the generated finding.</p>
+     */
+    inline void SetAdditionalInfo(const ServiceAdditionalInfo& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = value; }
+
+    /**
+     * <p>Contains additional information about the generated finding.</p>
+     */
+    inline void SetAdditionalInfo(ServiceAdditionalInfo&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = std::move(value); }
+
+    /**
+     * <p>Contains additional information about the generated finding.</p>
+     */
+    inline Service& WithAdditionalInfo(const ServiceAdditionalInfo& value) { SetAdditionalInfo(value); return *this;}
+
+    /**
+     * <p>Contains additional information about the generated finding.</p>
+     */
+    inline Service& WithAdditionalInfo(ServiceAdditionalInfo&& value) { SetAdditionalInfo(std::move(value)); return *this;}
+
   private:
 
     Action m_action;
@@ -444,6 +476,9 @@ namespace Model
 
     Aws::String m_userFeedback;
     bool m_userFeedbackHasBeenSet;
+
+    ServiceAdditionalInfo m_additionalInfo;
+    bool m_additionalInfoHasBeenSet;
   };
 
 } // namespace Model

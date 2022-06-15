@@ -81,7 +81,7 @@ namespace Model
      * <code>SUPER_USER</code>– A user with permission to all the functionality and
      * data in FinSpace.</p> </li> <li> <p> <code>APP_USER</code> – A user with
      * specific permissions in FinSpace. The users are assigned permissions by adding
-     * them to a permissions group.</p> </li> </ul>
+     * them to a permission group.</p> </li> </ul>
      */
     inline const UserType& GetType() const{ return m_type; }
 
@@ -90,7 +90,7 @@ namespace Model
      * <code>SUPER_USER</code>– A user with permission to all the functionality and
      * data in FinSpace.</p> </li> <li> <p> <code>APP_USER</code> – A user with
      * specific permissions in FinSpace. The users are assigned permissions by adding
-     * them to a permissions group.</p> </li> </ul>
+     * them to a permission group.</p> </li> </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
@@ -99,7 +99,7 @@ namespace Model
      * <code>SUPER_USER</code>– A user with permission to all the functionality and
      * data in FinSpace.</p> </li> <li> <p> <code>APP_USER</code> – A user with
      * specific permissions in FinSpace. The users are assigned permissions by adding
-     * them to a permissions group.</p> </li> </ul>
+     * them to a permission group.</p> </li> </ul>
      */
     inline void SetType(const UserType& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -108,7 +108,7 @@ namespace Model
      * <code>SUPER_USER</code>– A user with permission to all the functionality and
      * data in FinSpace.</p> </li> <li> <p> <code>APP_USER</code> – A user with
      * specific permissions in FinSpace. The users are assigned permissions by adding
-     * them to a permissions group.</p> </li> </ul>
+     * them to a permission group.</p> </li> </ul>
      */
     inline void SetType(UserType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -117,7 +117,7 @@ namespace Model
      * <code>SUPER_USER</code>– A user with permission to all the functionality and
      * data in FinSpace.</p> </li> <li> <p> <code>APP_USER</code> – A user with
      * specific permissions in FinSpace. The users are assigned permissions by adding
-     * them to a permissions group.</p> </li> </ul>
+     * them to a permission group.</p> </li> </ul>
      */
     inline UpdateUserRequest& WithType(const UserType& value) { SetType(value); return *this;}
 
@@ -126,7 +126,7 @@ namespace Model
      * <code>SUPER_USER</code>– A user with permission to all the functionality and
      * data in FinSpace.</p> </li> <li> <p> <code>APP_USER</code> – A user with
      * specific permissions in FinSpace. The users are assigned permissions by adding
-     * them to a permissions group.</p> </li> </ul>
+     * them to a permission group.</p> </li> </ul>
      */
     inline UpdateUserRequest& WithType(UserType&& value) { SetType(std::move(value)); return *this;}
 

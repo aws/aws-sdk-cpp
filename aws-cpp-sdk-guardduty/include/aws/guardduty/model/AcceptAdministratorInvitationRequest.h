@@ -18,16 +18,16 @@ namespace Model
 
   /**
    */
-  class AWS_GUARDDUTY_API AcceptInvitationRequest : public GuardDutyRequest
+  class AWS_GUARDDUTY_API AcceptAdministratorInvitationRequest : public GuardDutyRequest
   {
   public:
-    AcceptInvitationRequest();
+    AcceptAdministratorInvitationRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
     // Note: this is not true for response, multiple operations may have the same response name,
     // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "AcceptInvitation"; }
+    inline virtual const char* GetServiceRequestName() const override { return "AcceptAdministratorInvitation"; }
 
     Aws::String SerializePayload() const override;
 
@@ -60,66 +60,66 @@ namespace Model
     /**
      * <p>The unique ID of the detector of the GuardDuty member account.</p>
      */
-    inline AcceptInvitationRequest& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
+    inline AcceptAdministratorInvitationRequest& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
 
     /**
      * <p>The unique ID of the detector of the GuardDuty member account.</p>
      */
-    inline AcceptInvitationRequest& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
+    inline AcceptAdministratorInvitationRequest& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
 
     /**
      * <p>The unique ID of the detector of the GuardDuty member account.</p>
      */
-    inline AcceptInvitationRequest& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
+    inline AcceptAdministratorInvitationRequest& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
 
 
     /**
      * <p>The account ID of the GuardDuty administrator account whose invitation you're
      * accepting.</p>
      */
-    inline const Aws::String& GetMasterId() const{ return m_masterId; }
+    inline const Aws::String& GetAdministratorId() const{ return m_administratorId; }
 
     /**
      * <p>The account ID of the GuardDuty administrator account whose invitation you're
      * accepting.</p>
      */
-    inline bool MasterIdHasBeenSet() const { return m_masterIdHasBeenSet; }
+    inline bool AdministratorIdHasBeenSet() const { return m_administratorIdHasBeenSet; }
 
     /**
      * <p>The account ID of the GuardDuty administrator account whose invitation you're
      * accepting.</p>
      */
-    inline void SetMasterId(const Aws::String& value) { m_masterIdHasBeenSet = true; m_masterId = value; }
+    inline void SetAdministratorId(const Aws::String& value) { m_administratorIdHasBeenSet = true; m_administratorId = value; }
 
     /**
      * <p>The account ID of the GuardDuty administrator account whose invitation you're
      * accepting.</p>
      */
-    inline void SetMasterId(Aws::String&& value) { m_masterIdHasBeenSet = true; m_masterId = std::move(value); }
+    inline void SetAdministratorId(Aws::String&& value) { m_administratorIdHasBeenSet = true; m_administratorId = std::move(value); }
 
     /**
      * <p>The account ID of the GuardDuty administrator account whose invitation you're
      * accepting.</p>
      */
-    inline void SetMasterId(const char* value) { m_masterIdHasBeenSet = true; m_masterId.assign(value); }
+    inline void SetAdministratorId(const char* value) { m_administratorIdHasBeenSet = true; m_administratorId.assign(value); }
 
     /**
      * <p>The account ID of the GuardDuty administrator account whose invitation you're
      * accepting.</p>
      */
-    inline AcceptInvitationRequest& WithMasterId(const Aws::String& value) { SetMasterId(value); return *this;}
+    inline AcceptAdministratorInvitationRequest& WithAdministratorId(const Aws::String& value) { SetAdministratorId(value); return *this;}
 
     /**
      * <p>The account ID of the GuardDuty administrator account whose invitation you're
      * accepting.</p>
      */
-    inline AcceptInvitationRequest& WithMasterId(Aws::String&& value) { SetMasterId(std::move(value)); return *this;}
+    inline AcceptAdministratorInvitationRequest& WithAdministratorId(Aws::String&& value) { SetAdministratorId(std::move(value)); return *this;}
 
     /**
      * <p>The account ID of the GuardDuty administrator account whose invitation you're
      * accepting.</p>
      */
-    inline AcceptInvitationRequest& WithMasterId(const char* value) { SetMasterId(value); return *this;}
+    inline AcceptAdministratorInvitationRequest& WithAdministratorId(const char* value) { SetAdministratorId(value); return *this;}
 
 
     /**
@@ -156,27 +156,27 @@ namespace Model
      * <p>The value that is used to validate the administrator account to the member
      * account.</p>
      */
-    inline AcceptInvitationRequest& WithInvitationId(const Aws::String& value) { SetInvitationId(value); return *this;}
+    inline AcceptAdministratorInvitationRequest& WithInvitationId(const Aws::String& value) { SetInvitationId(value); return *this;}
 
     /**
      * <p>The value that is used to validate the administrator account to the member
      * account.</p>
      */
-    inline AcceptInvitationRequest& WithInvitationId(Aws::String&& value) { SetInvitationId(std::move(value)); return *this;}
+    inline AcceptAdministratorInvitationRequest& WithInvitationId(Aws::String&& value) { SetInvitationId(std::move(value)); return *this;}
 
     /**
      * <p>The value that is used to validate the administrator account to the member
      * account.</p>
      */
-    inline AcceptInvitationRequest& WithInvitationId(const char* value) { SetInvitationId(value); return *this;}
+    inline AcceptAdministratorInvitationRequest& WithInvitationId(const char* value) { SetInvitationId(value); return *this;}
 
   private:
 
     Aws::String m_detectorId;
     bool m_detectorIdHasBeenSet;
 
-    Aws::String m_masterId;
-    bool m_masterIdHasBeenSet;
+    Aws::String m_administratorId;
+    bool m_administratorIdHasBeenSet;
 
     Aws::String m_invitationId;
     bool m_invitationIdHasBeenSet;

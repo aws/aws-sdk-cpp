@@ -98,44 +98,44 @@ namespace Model
 
 
     /**
-     * <p>Data view export file format.</p> <ul> <li> <p> <code>PARQUET</code> –
-     * Parquet export file format.</p> </li> <li> <p> <code>DELIMITED_TEXT</code> –
-     * Delimited text export file format.</p> </li> </ul>
+     * <p>Dataview export file format.</p> <ul> <li> <p> <code>PARQUET</code> – Parquet
+     * export file format.</p> </li> <li> <p> <code>DELIMITED_TEXT</code> – Delimited
+     * text export file format.</p> </li> </ul>
      */
     inline const ExportFileFormat& GetS3DestinationExportFileFormat() const{ return m_s3DestinationExportFileFormat; }
 
     /**
-     * <p>Data view export file format.</p> <ul> <li> <p> <code>PARQUET</code> –
-     * Parquet export file format.</p> </li> <li> <p> <code>DELIMITED_TEXT</code> –
-     * Delimited text export file format.</p> </li> </ul>
+     * <p>Dataview export file format.</p> <ul> <li> <p> <code>PARQUET</code> – Parquet
+     * export file format.</p> </li> <li> <p> <code>DELIMITED_TEXT</code> – Delimited
+     * text export file format.</p> </li> </ul>
      */
     inline bool S3DestinationExportFileFormatHasBeenSet() const { return m_s3DestinationExportFileFormatHasBeenSet; }
 
     /**
-     * <p>Data view export file format.</p> <ul> <li> <p> <code>PARQUET</code> –
-     * Parquet export file format.</p> </li> <li> <p> <code>DELIMITED_TEXT</code> –
-     * Delimited text export file format.</p> </li> </ul>
+     * <p>Dataview export file format.</p> <ul> <li> <p> <code>PARQUET</code> – Parquet
+     * export file format.</p> </li> <li> <p> <code>DELIMITED_TEXT</code> – Delimited
+     * text export file format.</p> </li> </ul>
      */
     inline void SetS3DestinationExportFileFormat(const ExportFileFormat& value) { m_s3DestinationExportFileFormatHasBeenSet = true; m_s3DestinationExportFileFormat = value; }
 
     /**
-     * <p>Data view export file format.</p> <ul> <li> <p> <code>PARQUET</code> –
-     * Parquet export file format.</p> </li> <li> <p> <code>DELIMITED_TEXT</code> –
-     * Delimited text export file format.</p> </li> </ul>
+     * <p>Dataview export file format.</p> <ul> <li> <p> <code>PARQUET</code> – Parquet
+     * export file format.</p> </li> <li> <p> <code>DELIMITED_TEXT</code> – Delimited
+     * text export file format.</p> </li> </ul>
      */
     inline void SetS3DestinationExportFileFormat(ExportFileFormat&& value) { m_s3DestinationExportFileFormatHasBeenSet = true; m_s3DestinationExportFileFormat = std::move(value); }
 
     /**
-     * <p>Data view export file format.</p> <ul> <li> <p> <code>PARQUET</code> –
-     * Parquet export file format.</p> </li> <li> <p> <code>DELIMITED_TEXT</code> –
-     * Delimited text export file format.</p> </li> </ul>
+     * <p>Dataview export file format.</p> <ul> <li> <p> <code>PARQUET</code> – Parquet
+     * export file format.</p> </li> <li> <p> <code>DELIMITED_TEXT</code> – Delimited
+     * text export file format.</p> </li> </ul>
      */
     inline DataViewDestinationTypeParams& WithS3DestinationExportFileFormat(const ExportFileFormat& value) { SetS3DestinationExportFileFormat(value); return *this;}
 
     /**
-     * <p>Data view export file format.</p> <ul> <li> <p> <code>PARQUET</code> –
-     * Parquet export file format.</p> </li> <li> <p> <code>DELIMITED_TEXT</code> –
-     * Delimited text export file format.</p> </li> </ul>
+     * <p>Dataview export file format.</p> <ul> <li> <p> <code>PARQUET</code> – Parquet
+     * export file format.</p> </li> <li> <p> <code>DELIMITED_TEXT</code> – Delimited
+     * text export file format.</p> </li> </ul>
      */
     inline DataViewDestinationTypeParams& WithS3DestinationExportFileFormat(ExportFileFormat&& value) { SetS3DestinationExportFileFormat(std::move(value)); return *this;}
 

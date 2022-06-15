@@ -9,6 +9,7 @@
 #include <aws/guardduty/model/DomainDetails.h>
 #include <aws/guardduty/model/RemoteIpDetails.h>
 #include <aws/guardduty/model/RemoteAccountDetails.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -349,6 +350,85 @@ namespace Model
      */
     inline AwsApiCallAction& WithRemoteAccountDetails(RemoteAccountDetails&& value) { SetRemoteAccountDetails(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The details of the Amazon Web Services account that made the API call. This
+     * field identifies the resources that were affected by this API call.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetAffectedResources() const{ return m_affectedResources; }
+
+    /**
+     * <p>The details of the Amazon Web Services account that made the API call. This
+     * field identifies the resources that were affected by this API call.</p>
+     */
+    inline bool AffectedResourcesHasBeenSet() const { return m_affectedResourcesHasBeenSet; }
+
+    /**
+     * <p>The details of the Amazon Web Services account that made the API call. This
+     * field identifies the resources that were affected by this API call.</p>
+     */
+    inline void SetAffectedResources(const Aws::Map<Aws::String, Aws::String>& value) { m_affectedResourcesHasBeenSet = true; m_affectedResources = value; }
+
+    /**
+     * <p>The details of the Amazon Web Services account that made the API call. This
+     * field identifies the resources that were affected by this API call.</p>
+     */
+    inline void SetAffectedResources(Aws::Map<Aws::String, Aws::String>&& value) { m_affectedResourcesHasBeenSet = true; m_affectedResources = std::move(value); }
+
+    /**
+     * <p>The details of the Amazon Web Services account that made the API call. This
+     * field identifies the resources that were affected by this API call.</p>
+     */
+    inline AwsApiCallAction& WithAffectedResources(const Aws::Map<Aws::String, Aws::String>& value) { SetAffectedResources(value); return *this;}
+
+    /**
+     * <p>The details of the Amazon Web Services account that made the API call. This
+     * field identifies the resources that were affected by this API call.</p>
+     */
+    inline AwsApiCallAction& WithAffectedResources(Aws::Map<Aws::String, Aws::String>&& value) { SetAffectedResources(std::move(value)); return *this;}
+
+    /**
+     * <p>The details of the Amazon Web Services account that made the API call. This
+     * field identifies the resources that were affected by this API call.</p>
+     */
+    inline AwsApiCallAction& AddAffectedResources(const Aws::String& key, const Aws::String& value) { m_affectedResourcesHasBeenSet = true; m_affectedResources.emplace(key, value); return *this; }
+
+    /**
+     * <p>The details of the Amazon Web Services account that made the API call. This
+     * field identifies the resources that were affected by this API call.</p>
+     */
+    inline AwsApiCallAction& AddAffectedResources(Aws::String&& key, const Aws::String& value) { m_affectedResourcesHasBeenSet = true; m_affectedResources.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The details of the Amazon Web Services account that made the API call. This
+     * field identifies the resources that were affected by this API call.</p>
+     */
+    inline AwsApiCallAction& AddAffectedResources(const Aws::String& key, Aws::String&& value) { m_affectedResourcesHasBeenSet = true; m_affectedResources.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The details of the Amazon Web Services account that made the API call. This
+     * field identifies the resources that were affected by this API call.</p>
+     */
+    inline AwsApiCallAction& AddAffectedResources(Aws::String&& key, Aws::String&& value) { m_affectedResourcesHasBeenSet = true; m_affectedResources.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The details of the Amazon Web Services account that made the API call. This
+     * field identifies the resources that were affected by this API call.</p>
+     */
+    inline AwsApiCallAction& AddAffectedResources(const char* key, Aws::String&& value) { m_affectedResourcesHasBeenSet = true; m_affectedResources.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The details of the Amazon Web Services account that made the API call. This
+     * field identifies the resources that were affected by this API call.</p>
+     */
+    inline AwsApiCallAction& AddAffectedResources(Aws::String&& key, const char* value) { m_affectedResourcesHasBeenSet = true; m_affectedResources.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The details of the Amazon Web Services account that made the API call. This
+     * field identifies the resources that were affected by this API call.</p>
+     */
+    inline AwsApiCallAction& AddAffectedResources(const char* key, const char* value) { m_affectedResourcesHasBeenSet = true; m_affectedResources.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_api;
@@ -374,6 +454,9 @@ namespace Model
 
     RemoteAccountDetails m_remoteAccountDetails;
     bool m_remoteAccountDetailsHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_affectedResources;
+    bool m_affectedResourcesHasBeenSet;
   };
 
 } // namespace Model
