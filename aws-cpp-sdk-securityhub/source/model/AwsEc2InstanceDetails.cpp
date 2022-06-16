@@ -28,7 +28,9 @@ AwsEc2InstanceDetails::AwsEc2InstanceDetails() :
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_launchedAtHasBeenSet(false),
-    m_networkInterfacesHasBeenSet(false)
+    m_networkInterfacesHasBeenSet(false),
+    m_virtualizationTypeHasBeenSet(false),
+    m_metadataOptionsHasBeenSet(false)
 {
 }
 
@@ -42,7 +44,9 @@ AwsEc2InstanceDetails::AwsEc2InstanceDetails(JsonView jsonValue) :
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_launchedAtHasBeenSet(false),
-    m_networkInterfacesHasBeenSet(false)
+    m_networkInterfacesHasBeenSet(false),
+    m_virtualizationTypeHasBeenSet(false),
+    m_metadataOptionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -128,6 +132,20 @@ AwsEc2InstanceDetails& AwsEc2InstanceDetails::operator =(JsonView jsonValue)
     m_networkInterfacesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("VirtualizationType"))
+  {
+    m_virtualizationType = jsonValue.GetString("VirtualizationType");
+
+    m_virtualizationTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MetadataOptions"))
+  {
+    m_metadataOptions = jsonValue.GetObject("MetadataOptions");
+
+    m_metadataOptionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -207,6 +225,18 @@ JsonValue AwsEc2InstanceDetails::Jsonize() const
      networkInterfacesJsonList[networkInterfacesIndex].AsObject(m_networkInterfaces[networkInterfacesIndex].Jsonize());
    }
    payload.WithArray("NetworkInterfaces", std::move(networkInterfacesJsonList));
+
+  }
+
+  if(m_virtualizationTypeHasBeenSet)
+  {
+   payload.WithString("VirtualizationType", m_virtualizationType);
+
+  }
+
+  if(m_metadataOptionsHasBeenSet)
+  {
+   payload.WithObject("MetadataOptions", m_metadataOptions.Jsonize());
 
   }
 

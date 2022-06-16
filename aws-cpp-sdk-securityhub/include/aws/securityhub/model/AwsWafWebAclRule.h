@@ -28,7 +28,7 @@ namespace Model
 {
 
   /**
-   * <p>Details for a rule in an WAF WebACL.</p><p><h3>See Also:</h3>   <a
+   * <p>Details for a rule in an WAF web ACL.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsWafWebAclRule">AWS
    * API Reference</a></p>
    */
@@ -120,137 +120,149 @@ namespace Model
 
 
     /**
-     * <p>Use the <code>OverrideAction</code> to test your RuleGroup.</p> <p>Any rule
-     * in a RuleGroup can potentially block a request. If you set the
-     * <code>OverrideAction</code> to <code>None</code>, the RuleGroup blocks a request
-     * if any individual rule in the RuleGroup matches the request and is configured to
-     * block that request.</p> <p>However, if you first want to test the RuleGroup, set
-     * the <code>OverrideAction</code> to <code>Count</code>. The RuleGroup then
-     * overrides any block action specified by individual rules contained within the
-     * group. Instead of blocking matching requests, those requests are counted.</p>
-     * <p> <code>ActivatedRule</code>|<code>OverrideAction</code> applies only when
-     * updating or adding a RuleGroup to a WebACL. In this case you do not use
-     * <code>ActivatedRule</code>|<code>Action</code>. For all other update requests,
-     * <code>ActivatedRule</code>|<code>Action</code> is used instead of
-     * <code>ActivatedRule</code>|<code>OverrideAction</code>. </p>
+     * <p>Use the <code>OverrideAction</code> to test your <code>RuleGroup</code>.</p>
+     * <p>Any rule in a <code>RuleGroup</code> can potentially block a request. If you
+     * set the <code>OverrideAction</code> to <code>None</code>, the
+     * <code>RuleGroup</code> blocks a request if any individual rule in the
+     * <code>RuleGroup</code> matches the request and is configured to block that
+     * request.</p> <p>However, if you first want to test the <code>RuleGroup</code>,
+     * set the <code>OverrideAction</code> to <code>Count</code>. The
+     * <code>RuleGroup</code> then overrides any block action specified by individual
+     * rules contained within the group. Instead of blocking matching requests, those
+     * requests are counted.</p> <p>
+     * <code>ActivatedRule</code>|<code>OverrideAction</code> applies only when
+     * updating or adding a <code>RuleGroup</code> to a web ACL. In this case you do
+     * not use <code>ActivatedRule</code> <code>Action</code>. For all other update
+     * requests, <code>ActivatedRule</code> <code>Action</code> is used instead of
+     * <code>ActivatedRule</code> <code>OverrideAction</code>.</p>
      */
     inline const WafOverrideAction& GetOverrideAction() const{ return m_overrideAction; }
 
     /**
-     * <p>Use the <code>OverrideAction</code> to test your RuleGroup.</p> <p>Any rule
-     * in a RuleGroup can potentially block a request. If you set the
-     * <code>OverrideAction</code> to <code>None</code>, the RuleGroup blocks a request
-     * if any individual rule in the RuleGroup matches the request and is configured to
-     * block that request.</p> <p>However, if you first want to test the RuleGroup, set
-     * the <code>OverrideAction</code> to <code>Count</code>. The RuleGroup then
-     * overrides any block action specified by individual rules contained within the
-     * group. Instead of blocking matching requests, those requests are counted.</p>
-     * <p> <code>ActivatedRule</code>|<code>OverrideAction</code> applies only when
-     * updating or adding a RuleGroup to a WebACL. In this case you do not use
-     * <code>ActivatedRule</code>|<code>Action</code>. For all other update requests,
-     * <code>ActivatedRule</code>|<code>Action</code> is used instead of
-     * <code>ActivatedRule</code>|<code>OverrideAction</code>. </p>
+     * <p>Use the <code>OverrideAction</code> to test your <code>RuleGroup</code>.</p>
+     * <p>Any rule in a <code>RuleGroup</code> can potentially block a request. If you
+     * set the <code>OverrideAction</code> to <code>None</code>, the
+     * <code>RuleGroup</code> blocks a request if any individual rule in the
+     * <code>RuleGroup</code> matches the request and is configured to block that
+     * request.</p> <p>However, if you first want to test the <code>RuleGroup</code>,
+     * set the <code>OverrideAction</code> to <code>Count</code>. The
+     * <code>RuleGroup</code> then overrides any block action specified by individual
+     * rules contained within the group. Instead of blocking matching requests, those
+     * requests are counted.</p> <p>
+     * <code>ActivatedRule</code>|<code>OverrideAction</code> applies only when
+     * updating or adding a <code>RuleGroup</code> to a web ACL. In this case you do
+     * not use <code>ActivatedRule</code> <code>Action</code>. For all other update
+     * requests, <code>ActivatedRule</code> <code>Action</code> is used instead of
+     * <code>ActivatedRule</code> <code>OverrideAction</code>.</p>
      */
     inline bool OverrideActionHasBeenSet() const { return m_overrideActionHasBeenSet; }
 
     /**
-     * <p>Use the <code>OverrideAction</code> to test your RuleGroup.</p> <p>Any rule
-     * in a RuleGroup can potentially block a request. If you set the
-     * <code>OverrideAction</code> to <code>None</code>, the RuleGroup blocks a request
-     * if any individual rule in the RuleGroup matches the request and is configured to
-     * block that request.</p> <p>However, if you first want to test the RuleGroup, set
-     * the <code>OverrideAction</code> to <code>Count</code>. The RuleGroup then
-     * overrides any block action specified by individual rules contained within the
-     * group. Instead of blocking matching requests, those requests are counted.</p>
-     * <p> <code>ActivatedRule</code>|<code>OverrideAction</code> applies only when
-     * updating or adding a RuleGroup to a WebACL. In this case you do not use
-     * <code>ActivatedRule</code>|<code>Action</code>. For all other update requests,
-     * <code>ActivatedRule</code>|<code>Action</code> is used instead of
-     * <code>ActivatedRule</code>|<code>OverrideAction</code>. </p>
+     * <p>Use the <code>OverrideAction</code> to test your <code>RuleGroup</code>.</p>
+     * <p>Any rule in a <code>RuleGroup</code> can potentially block a request. If you
+     * set the <code>OverrideAction</code> to <code>None</code>, the
+     * <code>RuleGroup</code> blocks a request if any individual rule in the
+     * <code>RuleGroup</code> matches the request and is configured to block that
+     * request.</p> <p>However, if you first want to test the <code>RuleGroup</code>,
+     * set the <code>OverrideAction</code> to <code>Count</code>. The
+     * <code>RuleGroup</code> then overrides any block action specified by individual
+     * rules contained within the group. Instead of blocking matching requests, those
+     * requests are counted.</p> <p>
+     * <code>ActivatedRule</code>|<code>OverrideAction</code> applies only when
+     * updating or adding a <code>RuleGroup</code> to a web ACL. In this case you do
+     * not use <code>ActivatedRule</code> <code>Action</code>. For all other update
+     * requests, <code>ActivatedRule</code> <code>Action</code> is used instead of
+     * <code>ActivatedRule</code> <code>OverrideAction</code>.</p>
      */
     inline void SetOverrideAction(const WafOverrideAction& value) { m_overrideActionHasBeenSet = true; m_overrideAction = value; }
 
     /**
-     * <p>Use the <code>OverrideAction</code> to test your RuleGroup.</p> <p>Any rule
-     * in a RuleGroup can potentially block a request. If you set the
-     * <code>OverrideAction</code> to <code>None</code>, the RuleGroup blocks a request
-     * if any individual rule in the RuleGroup matches the request and is configured to
-     * block that request.</p> <p>However, if you first want to test the RuleGroup, set
-     * the <code>OverrideAction</code> to <code>Count</code>. The RuleGroup then
-     * overrides any block action specified by individual rules contained within the
-     * group. Instead of blocking matching requests, those requests are counted.</p>
-     * <p> <code>ActivatedRule</code>|<code>OverrideAction</code> applies only when
-     * updating or adding a RuleGroup to a WebACL. In this case you do not use
-     * <code>ActivatedRule</code>|<code>Action</code>. For all other update requests,
-     * <code>ActivatedRule</code>|<code>Action</code> is used instead of
-     * <code>ActivatedRule</code>|<code>OverrideAction</code>. </p>
+     * <p>Use the <code>OverrideAction</code> to test your <code>RuleGroup</code>.</p>
+     * <p>Any rule in a <code>RuleGroup</code> can potentially block a request. If you
+     * set the <code>OverrideAction</code> to <code>None</code>, the
+     * <code>RuleGroup</code> blocks a request if any individual rule in the
+     * <code>RuleGroup</code> matches the request and is configured to block that
+     * request.</p> <p>However, if you first want to test the <code>RuleGroup</code>,
+     * set the <code>OverrideAction</code> to <code>Count</code>. The
+     * <code>RuleGroup</code> then overrides any block action specified by individual
+     * rules contained within the group. Instead of blocking matching requests, those
+     * requests are counted.</p> <p>
+     * <code>ActivatedRule</code>|<code>OverrideAction</code> applies only when
+     * updating or adding a <code>RuleGroup</code> to a web ACL. In this case you do
+     * not use <code>ActivatedRule</code> <code>Action</code>. For all other update
+     * requests, <code>ActivatedRule</code> <code>Action</code> is used instead of
+     * <code>ActivatedRule</code> <code>OverrideAction</code>.</p>
      */
     inline void SetOverrideAction(WafOverrideAction&& value) { m_overrideActionHasBeenSet = true; m_overrideAction = std::move(value); }
 
     /**
-     * <p>Use the <code>OverrideAction</code> to test your RuleGroup.</p> <p>Any rule
-     * in a RuleGroup can potentially block a request. If you set the
-     * <code>OverrideAction</code> to <code>None</code>, the RuleGroup blocks a request
-     * if any individual rule in the RuleGroup matches the request and is configured to
-     * block that request.</p> <p>However, if you first want to test the RuleGroup, set
-     * the <code>OverrideAction</code> to <code>Count</code>. The RuleGroup then
-     * overrides any block action specified by individual rules contained within the
-     * group. Instead of blocking matching requests, those requests are counted.</p>
-     * <p> <code>ActivatedRule</code>|<code>OverrideAction</code> applies only when
-     * updating or adding a RuleGroup to a WebACL. In this case you do not use
-     * <code>ActivatedRule</code>|<code>Action</code>. For all other update requests,
-     * <code>ActivatedRule</code>|<code>Action</code> is used instead of
-     * <code>ActivatedRule</code>|<code>OverrideAction</code>. </p>
+     * <p>Use the <code>OverrideAction</code> to test your <code>RuleGroup</code>.</p>
+     * <p>Any rule in a <code>RuleGroup</code> can potentially block a request. If you
+     * set the <code>OverrideAction</code> to <code>None</code>, the
+     * <code>RuleGroup</code> blocks a request if any individual rule in the
+     * <code>RuleGroup</code> matches the request and is configured to block that
+     * request.</p> <p>However, if you first want to test the <code>RuleGroup</code>,
+     * set the <code>OverrideAction</code> to <code>Count</code>. The
+     * <code>RuleGroup</code> then overrides any block action specified by individual
+     * rules contained within the group. Instead of blocking matching requests, those
+     * requests are counted.</p> <p>
+     * <code>ActivatedRule</code>|<code>OverrideAction</code> applies only when
+     * updating or adding a <code>RuleGroup</code> to a web ACL. In this case you do
+     * not use <code>ActivatedRule</code> <code>Action</code>. For all other update
+     * requests, <code>ActivatedRule</code> <code>Action</code> is used instead of
+     * <code>ActivatedRule</code> <code>OverrideAction</code>.</p>
      */
     inline AwsWafWebAclRule& WithOverrideAction(const WafOverrideAction& value) { SetOverrideAction(value); return *this;}
 
     /**
-     * <p>Use the <code>OverrideAction</code> to test your RuleGroup.</p> <p>Any rule
-     * in a RuleGroup can potentially block a request. If you set the
-     * <code>OverrideAction</code> to <code>None</code>, the RuleGroup blocks a request
-     * if any individual rule in the RuleGroup matches the request and is configured to
-     * block that request.</p> <p>However, if you first want to test the RuleGroup, set
-     * the <code>OverrideAction</code> to <code>Count</code>. The RuleGroup then
-     * overrides any block action specified by individual rules contained within the
-     * group. Instead of blocking matching requests, those requests are counted.</p>
-     * <p> <code>ActivatedRule</code>|<code>OverrideAction</code> applies only when
-     * updating or adding a RuleGroup to a WebACL. In this case you do not use
-     * <code>ActivatedRule</code>|<code>Action</code>. For all other update requests,
-     * <code>ActivatedRule</code>|<code>Action</code> is used instead of
-     * <code>ActivatedRule</code>|<code>OverrideAction</code>. </p>
+     * <p>Use the <code>OverrideAction</code> to test your <code>RuleGroup</code>.</p>
+     * <p>Any rule in a <code>RuleGroup</code> can potentially block a request. If you
+     * set the <code>OverrideAction</code> to <code>None</code>, the
+     * <code>RuleGroup</code> blocks a request if any individual rule in the
+     * <code>RuleGroup</code> matches the request and is configured to block that
+     * request.</p> <p>However, if you first want to test the <code>RuleGroup</code>,
+     * set the <code>OverrideAction</code> to <code>Count</code>. The
+     * <code>RuleGroup</code> then overrides any block action specified by individual
+     * rules contained within the group. Instead of blocking matching requests, those
+     * requests are counted.</p> <p>
+     * <code>ActivatedRule</code>|<code>OverrideAction</code> applies only when
+     * updating or adding a <code>RuleGroup</code> to a web ACL. In this case you do
+     * not use <code>ActivatedRule</code> <code>Action</code>. For all other update
+     * requests, <code>ActivatedRule</code> <code>Action</code> is used instead of
+     * <code>ActivatedRule</code> <code>OverrideAction</code>.</p>
      */
     inline AwsWafWebAclRule& WithOverrideAction(WafOverrideAction&& value) { SetOverrideAction(std::move(value)); return *this;}
 
 
     /**
-     * <p>Specifies the order in which the rules in a WebACL are evaluated. Rules with
+     * <p>Specifies the order in which the rules in a web ACL are evaluated. Rules with
      * a lower value for <code>Priority</code> are evaluated before rules with a higher
-     * value. The value must be a unique integer. If you add multiple rules to a
-     * WebACL, the values do not need to be consecutive.</p>
+     * value. The value must be a unique integer. If you add multiple rules to a web
+     * ACL, the values do not need to be consecutive.</p>
      */
     inline int GetPriority() const{ return m_priority; }
 
     /**
-     * <p>Specifies the order in which the rules in a WebACL are evaluated. Rules with
+     * <p>Specifies the order in which the rules in a web ACL are evaluated. Rules with
      * a lower value for <code>Priority</code> are evaluated before rules with a higher
-     * value. The value must be a unique integer. If you add multiple rules to a
-     * WebACL, the values do not need to be consecutive.</p>
+     * value. The value must be a unique integer. If you add multiple rules to a web
+     * ACL, the values do not need to be consecutive.</p>
      */
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
 
     /**
-     * <p>Specifies the order in which the rules in a WebACL are evaluated. Rules with
+     * <p>Specifies the order in which the rules in a web ACL are evaluated. Rules with
      * a lower value for <code>Priority</code> are evaluated before rules with a higher
-     * value. The value must be a unique integer. If you add multiple rules to a
-     * WebACL, the values do not need to be consecutive.</p>
+     * value. The value must be a unique integer. If you add multiple rules to a web
+     * ACL, the values do not need to be consecutive.</p>
      */
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
 
     /**
-     * <p>Specifies the order in which the rules in a WebACL are evaluated. Rules with
+     * <p>Specifies the order in which the rules in a web ACL are evaluated. Rules with
      * a lower value for <code>Priority</code> are evaluated before rules with a higher
-     * value. The value must be a unique integer. If you add multiple rules to a
-     * WebACL, the values do not need to be consecutive.</p>
+     * value. The value must be a unique integer. If you add multiple rules to a web
+     * ACL, the values do not need to be consecutive.</p>
      */
     inline AwsWafWebAclRule& WithPriority(int value) { SetPriority(value); return *this;}
 

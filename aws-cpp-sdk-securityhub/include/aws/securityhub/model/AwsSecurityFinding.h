@@ -23,6 +23,7 @@
 #include <aws/securityhub/model/FindingProviderFields.h>
 #include <aws/securityhub/model/Malware.h>
 #include <aws/securityhub/model/NetworkPathComponent.h>
+#include <aws/securityhub/model/Threat.h>
 #include <aws/securityhub/model/ThreatIntelIndicator.h>
 #include <aws/securityhub/model/Resource.h>
 #include <aws/securityhub/model/RelatedFinding.h>
@@ -1522,6 +1523,55 @@ namespace Model
 
 
     /**
+     * <p>Details about the threat detected in a security finding and the file paths
+     * that were affected by the threat. </p>
+     */
+    inline const Aws::Vector<Threat>& GetThreats() const{ return m_threats; }
+
+    /**
+     * <p>Details about the threat detected in a security finding and the file paths
+     * that were affected by the threat. </p>
+     */
+    inline bool ThreatsHasBeenSet() const { return m_threatsHasBeenSet; }
+
+    /**
+     * <p>Details about the threat detected in a security finding and the file paths
+     * that were affected by the threat. </p>
+     */
+    inline void SetThreats(const Aws::Vector<Threat>& value) { m_threatsHasBeenSet = true; m_threats = value; }
+
+    /**
+     * <p>Details about the threat detected in a security finding and the file paths
+     * that were affected by the threat. </p>
+     */
+    inline void SetThreats(Aws::Vector<Threat>&& value) { m_threatsHasBeenSet = true; m_threats = std::move(value); }
+
+    /**
+     * <p>Details about the threat detected in a security finding and the file paths
+     * that were affected by the threat. </p>
+     */
+    inline AwsSecurityFinding& WithThreats(const Aws::Vector<Threat>& value) { SetThreats(value); return *this;}
+
+    /**
+     * <p>Details about the threat detected in a security finding and the file paths
+     * that were affected by the threat. </p>
+     */
+    inline AwsSecurityFinding& WithThreats(Aws::Vector<Threat>&& value) { SetThreats(std::move(value)); return *this;}
+
+    /**
+     * <p>Details about the threat detected in a security finding and the file paths
+     * that were affected by the threat. </p>
+     */
+    inline AwsSecurityFinding& AddThreats(const Threat& value) { m_threatsHasBeenSet = true; m_threats.push_back(value); return *this; }
+
+    /**
+     * <p>Details about the threat detected in a security finding and the file paths
+     * that were affected by the threat. </p>
+     */
+    inline AwsSecurityFinding& AddThreats(Threat&& value) { m_threatsHasBeenSet = true; m_threats.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>Threat intelligence details related to a finding.</p>
      */
     inline const Aws::Vector<ThreatIntelIndicator>& GetThreatIntelIndicators() const{ return m_threatIntelIndicators; }
@@ -2119,6 +2169,9 @@ namespace Model
 
     ProcessDetails m_process;
     bool m_processHasBeenSet;
+
+    Aws::Vector<Threat> m_threats;
+    bool m_threatsHasBeenSet;
 
     Aws::Vector<ThreatIntelIndicator> m_threatIntelIndicators;
     bool m_threatIntelIndicatorsHasBeenSet;

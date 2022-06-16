@@ -47,6 +47,7 @@ AwsSecurityFinding::AwsSecurityFinding() :
     m_networkHasBeenSet(false),
     m_networkPathHasBeenSet(false),
     m_processHasBeenSet(false),
+    m_threatsHasBeenSet(false),
     m_threatIntelIndicatorsHasBeenSet(false),
     m_resourcesHasBeenSet(false),
     m_complianceHasBeenSet(false),
@@ -97,6 +98,7 @@ AwsSecurityFinding::AwsSecurityFinding(JsonView jsonValue) :
     m_networkHasBeenSet(false),
     m_networkPathHasBeenSet(false),
     m_processHasBeenSet(false),
+    m_threatsHasBeenSet(false),
     m_threatIntelIndicatorsHasBeenSet(false),
     m_resourcesHasBeenSet(false),
     m_complianceHasBeenSet(false),
@@ -316,6 +318,16 @@ AwsSecurityFinding& AwsSecurityFinding::operator =(JsonView jsonValue)
     m_process = jsonValue.GetObject("Process");
 
     m_processHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Threats"))
+  {
+    Array<JsonView> threatsJsonList = jsonValue.GetArray("Threats");
+    for(unsigned threatsIndex = 0; threatsIndex < threatsJsonList.GetLength(); ++threatsIndex)
+    {
+      m_threats.push_back(threatsJsonList[threatsIndex].AsObject());
+    }
+    m_threatsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ThreatIntelIndicators"))
@@ -613,6 +625,17 @@ JsonValue AwsSecurityFinding::Jsonize() const
   if(m_processHasBeenSet)
   {
    payload.WithObject("Process", m_process.Jsonize());
+
+  }
+
+  if(m_threatsHasBeenSet)
+  {
+   Array<JsonValue> threatsJsonList(m_threats.size());
+   for(unsigned threatsIndex = 0; threatsIndex < threatsJsonList.GetLength(); ++threatsIndex)
+   {
+     threatsJsonList[threatsIndex].AsObject(m_threats[threatsIndex].Jsonize());
+   }
+   payload.WithArray("Threats", std::move(threatsJsonList));
 
   }
 

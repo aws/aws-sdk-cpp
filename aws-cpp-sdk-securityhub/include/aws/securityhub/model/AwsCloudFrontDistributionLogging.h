@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>A complex type that controls whether access logs are written for the
-   * distribution.</p><p><h3>See Also:</h3>   <a
+   * CloudFront distribution.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsCloudFrontDistributionLogging">AWS
    * API Reference</a></p>
    */

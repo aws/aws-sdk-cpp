@@ -19,7 +19,8 @@ ListDatabasesRequest::ListDatabasesRequest() :
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
-    m_secretArnHasBeenSet(false)
+    m_secretArnHasBeenSet(false),
+    m_workgroupNameHasBeenSet(false)
 {
 }
 
@@ -60,6 +61,12 @@ Aws::String ListDatabasesRequest::SerializePayload() const
   if(m_secretArnHasBeenSet)
   {
    payload.WithString("SecretArn", m_secretArn);
+
+  }
+
+  if(m_workgroupNameHasBeenSet)
+  {
+   payload.WithString("WorkgroupName", m_workgroupName);
 
   }
 

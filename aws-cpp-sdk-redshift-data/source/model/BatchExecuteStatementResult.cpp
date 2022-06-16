@@ -64,6 +64,12 @@ BatchExecuteStatementResult& BatchExecuteStatementResult::operator =(const Aws::
 
   }
 
+  if(jsonValue.ValueExists("WorkgroupName"))
+  {
+    m_workgroupName = jsonValue.GetString("WorkgroupName");
+
+  }
+
 
 
   return *this;

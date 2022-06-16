@@ -156,6 +156,12 @@ DescribeStatementResult& DescribeStatementResult::operator =(const Aws::AmazonWe
 
   }
 
+  if(jsonValue.ValueExists("WorkgroupName"))
+  {
+    m_workgroupName = jsonValue.GetString("WorkgroupName");
+
+  }
+
 
 
   return *this;

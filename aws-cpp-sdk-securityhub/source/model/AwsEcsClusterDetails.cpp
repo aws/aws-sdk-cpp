@@ -19,24 +19,56 @@ namespace Model
 {
 
 AwsEcsClusterDetails::AwsEcsClusterDetails() : 
+    m_clusterArnHasBeenSet(false),
+    m_activeServicesCount(0),
+    m_activeServicesCountHasBeenSet(false),
     m_capacityProvidersHasBeenSet(false),
     m_clusterSettingsHasBeenSet(false),
     m_configurationHasBeenSet(false),
-    m_defaultCapacityProviderStrategyHasBeenSet(false)
+    m_defaultCapacityProviderStrategyHasBeenSet(false),
+    m_clusterNameHasBeenSet(false),
+    m_registeredContainerInstancesCount(0),
+    m_registeredContainerInstancesCountHasBeenSet(false),
+    m_runningTasksCount(0),
+    m_runningTasksCountHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
 AwsEcsClusterDetails::AwsEcsClusterDetails(JsonView jsonValue) : 
+    m_clusterArnHasBeenSet(false),
+    m_activeServicesCount(0),
+    m_activeServicesCountHasBeenSet(false),
     m_capacityProvidersHasBeenSet(false),
     m_clusterSettingsHasBeenSet(false),
     m_configurationHasBeenSet(false),
-    m_defaultCapacityProviderStrategyHasBeenSet(false)
+    m_defaultCapacityProviderStrategyHasBeenSet(false),
+    m_clusterNameHasBeenSet(false),
+    m_registeredContainerInstancesCount(0),
+    m_registeredContainerInstancesCountHasBeenSet(false),
+    m_runningTasksCount(0),
+    m_runningTasksCountHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 AwsEcsClusterDetails& AwsEcsClusterDetails::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("ClusterArn"))
+  {
+    m_clusterArn = jsonValue.GetString("ClusterArn");
+
+    m_clusterArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ActiveServicesCount"))
+  {
+    m_activeServicesCount = jsonValue.GetInteger("ActiveServicesCount");
+
+    m_activeServicesCountHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("CapacityProviders"))
   {
     Array<JsonView> capacityProvidersJsonList = jsonValue.GetArray("CapacityProviders");
@@ -74,12 +106,52 @@ AwsEcsClusterDetails& AwsEcsClusterDetails::operator =(JsonView jsonValue)
     m_defaultCapacityProviderStrategyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ClusterName"))
+  {
+    m_clusterName = jsonValue.GetString("ClusterName");
+
+    m_clusterNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RegisteredContainerInstancesCount"))
+  {
+    m_registeredContainerInstancesCount = jsonValue.GetInteger("RegisteredContainerInstancesCount");
+
+    m_registeredContainerInstancesCountHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RunningTasksCount"))
+  {
+    m_runningTasksCount = jsonValue.GetInteger("RunningTasksCount");
+
+    m_runningTasksCountHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Status"))
+  {
+    m_status = jsonValue.GetString("Status");
+
+    m_statusHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue AwsEcsClusterDetails::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_clusterArnHasBeenSet)
+  {
+   payload.WithString("ClusterArn", m_clusterArn);
+
+  }
+
+  if(m_activeServicesCountHasBeenSet)
+  {
+   payload.WithInteger("ActiveServicesCount", m_activeServicesCount);
+
+  }
 
   if(m_capacityProvidersHasBeenSet)
   {
@@ -117,6 +189,30 @@ JsonValue AwsEcsClusterDetails::Jsonize() const
      defaultCapacityProviderStrategyJsonList[defaultCapacityProviderStrategyIndex].AsObject(m_defaultCapacityProviderStrategy[defaultCapacityProviderStrategyIndex].Jsonize());
    }
    payload.WithArray("DefaultCapacityProviderStrategy", std::move(defaultCapacityProviderStrategyJsonList));
+
+  }
+
+  if(m_clusterNameHasBeenSet)
+  {
+   payload.WithString("ClusterName", m_clusterName);
+
+  }
+
+  if(m_registeredContainerInstancesCountHasBeenSet)
+  {
+   payload.WithInteger("RegisteredContainerInstancesCount", m_registeredContainerInstancesCount);
+
+  }
+
+  if(m_runningTasksCountHasBeenSet)
+  {
+   payload.WithInteger("RunningTasksCount", m_runningTasksCount);
+
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("Status", m_status);
 
   }
 

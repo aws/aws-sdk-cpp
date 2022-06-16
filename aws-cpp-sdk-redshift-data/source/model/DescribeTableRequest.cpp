@@ -22,7 +22,8 @@ DescribeTableRequest::DescribeTableRequest() :
     m_nextTokenHasBeenSet(false),
     m_schemaHasBeenSet(false),
     m_secretArnHasBeenSet(false),
-    m_tableHasBeenSet(false)
+    m_tableHasBeenSet(false),
+    m_workgroupNameHasBeenSet(false)
 {
 }
 
@@ -81,6 +82,12 @@ Aws::String DescribeTableRequest::SerializePayload() const
   if(m_tableHasBeenSet)
   {
    payload.WithString("Table", m_table);
+
+  }
+
+  if(m_workgroupNameHasBeenSet)
+  {
+   payload.WithString("WorkgroupName", m_workgroupName);
 
   }
 

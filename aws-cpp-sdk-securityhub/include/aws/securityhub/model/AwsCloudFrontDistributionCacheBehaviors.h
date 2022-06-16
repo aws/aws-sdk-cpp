@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Provides information about caching for the distribution.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Provides information about caching for the CloudFront
+   * distribution.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsCloudFrontDistributionCacheBehaviors">AWS
    * API Reference</a></p>
    */

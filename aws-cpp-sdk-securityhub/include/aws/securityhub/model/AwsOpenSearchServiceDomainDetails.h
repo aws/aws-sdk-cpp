@@ -14,6 +14,7 @@
 #include <aws/securityhub/model/AwsOpenSearchServiceDomainVpcOptionsDetails.h>
 #include <aws/securityhub/model/AwsOpenSearchServiceDomainLogPublishingOptionsDetails.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/securityhub/model/AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails.h>
 #include <utility>
 
 namespace Aws
@@ -620,6 +621,37 @@ namespace Model
      */
     inline AwsOpenSearchServiceDomainDetails& AddDomainEndpoints(const char* key, const char* value) { m_domainEndpointsHasBeenSet = true; m_domainEndpoints.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>Specifies options for fine-grained access control. </p>
+     */
+    inline const AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails& GetAdvancedSecurityOptions() const{ return m_advancedSecurityOptions; }
+
+    /**
+     * <p>Specifies options for fine-grained access control. </p>
+     */
+    inline bool AdvancedSecurityOptionsHasBeenSet() const { return m_advancedSecurityOptionsHasBeenSet; }
+
+    /**
+     * <p>Specifies options for fine-grained access control. </p>
+     */
+    inline void SetAdvancedSecurityOptions(const AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails& value) { m_advancedSecurityOptionsHasBeenSet = true; m_advancedSecurityOptions = value; }
+
+    /**
+     * <p>Specifies options for fine-grained access control. </p>
+     */
+    inline void SetAdvancedSecurityOptions(AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails&& value) { m_advancedSecurityOptionsHasBeenSet = true; m_advancedSecurityOptions = std::move(value); }
+
+    /**
+     * <p>Specifies options for fine-grained access control. </p>
+     */
+    inline AwsOpenSearchServiceDomainDetails& WithAdvancedSecurityOptions(const AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails& value) { SetAdvancedSecurityOptions(value); return *this;}
+
+    /**
+     * <p>Specifies options for fine-grained access control. </p>
+     */
+    inline AwsOpenSearchServiceDomainDetails& WithAdvancedSecurityOptions(AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails&& value) { SetAdvancedSecurityOptions(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -663,6 +695,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_domainEndpoints;
     bool m_domainEndpointsHasBeenSet;
+
+    AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails m_advancedSecurityOptions;
+    bool m_advancedSecurityOptionsHasBeenSet;
   };
 
 } // namespace Model

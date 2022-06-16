@@ -21,7 +21,8 @@ ListSchemasRequest::ListSchemasRequest() :
     m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_schemaPatternHasBeenSet(false),
-    m_secretArnHasBeenSet(false)
+    m_secretArnHasBeenSet(false),
+    m_workgroupNameHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,12 @@ Aws::String ListSchemasRequest::SerializePayload() const
   if(m_secretArnHasBeenSet)
   {
    payload.WithString("SecretArn", m_secretArn);
+
+  }
+
+  if(m_workgroupNameHasBeenSet)
+  {
+   payload.WithString("WorkgroupName", m_workgroupName);
 
   }
 

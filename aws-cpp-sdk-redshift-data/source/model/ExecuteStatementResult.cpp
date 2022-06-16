@@ -64,6 +64,12 @@ ExecuteStatementResult& ExecuteStatementResult::operator =(const Aws::AmazonWebS
 
   }
 
+  if(jsonValue.ValueExists("WorkgroupName"))
+  {
+    m_workgroupName = jsonValue.GetString("WorkgroupName");
+
+  }
+
 
 
   return *this;

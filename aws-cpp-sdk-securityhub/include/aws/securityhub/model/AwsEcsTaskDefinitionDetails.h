@@ -30,7 +30,7 @@ namespace Model
 {
 
   /**
-   * <p>details about a task definition. A task definition describes the container
+   * <p>Details about a task definition. A task definition describes the container
    * and volume definitions of an Amazon Elastic Container Service
    * task.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEcsTaskDefinitionDetails">AWS
