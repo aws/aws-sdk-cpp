@@ -336,42 +336,42 @@ namespace Model
 
 
     /**
-     * <p>A description of the key.</p>
+     * <p>A description of the KMS key.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>A description of the key.</p>
+     * <p>A description of the KMS key.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>A description of the key.</p>
+     * <p>A description of the KMS key.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>A description of the key.</p>
+     * <p>A description of the KMS key.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>A description of the key.</p>
+     * <p>A description of the KMS key.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>A description of the key.</p>
+     * <p>A description of the KMS key.</p>
      */
     inline AwsKmsKeyDetails& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>A description of the key.</p>
+     * <p>A description of the KMS key.</p>
      */
     inline AwsKmsKeyDetails& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>A description of the key.</p>
+     * <p>A description of the KMS key.</p>
      */
     inline AwsKmsKeyDetails& WithDescription(const char* value) { SetDescription(value); return *this;}
 

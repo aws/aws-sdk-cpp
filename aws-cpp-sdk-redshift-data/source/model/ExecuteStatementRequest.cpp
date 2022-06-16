@@ -21,7 +21,8 @@ ExecuteStatementRequest::ExecuteStatementRequest() :
     m_sqlHasBeenSet(false),
     m_statementNameHasBeenSet(false),
     m_withEvent(false),
-    m_withEventHasBeenSet(false)
+    m_withEventHasBeenSet(false),
+    m_workgroupNameHasBeenSet(false)
 {
 }
 
@@ -79,6 +80,12 @@ Aws::String ExecuteStatementRequest::SerializePayload() const
   if(m_withEventHasBeenSet)
   {
    payload.WithBool("WithEvent", m_withEvent);
+
+  }
+
+  if(m_workgroupNameHasBeenSet)
+  {
+   payload.WithString("WorkgroupName", m_workgroupName);
 
   }
 

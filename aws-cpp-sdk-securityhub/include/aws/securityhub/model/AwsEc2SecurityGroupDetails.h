@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>Details about an EC2 security group.</p><p><h3>See Also:</h3>   <a
+   * <p>Details about an Amazon EC2 security group.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEc2SecurityGroupDetails">AWS
    * API Reference</a></p>
    */

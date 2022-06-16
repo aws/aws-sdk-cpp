@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/securityhub/model/AwsEcsClusterConfigurationDetails.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/securityhub/model/AwsEcsClusterClusterSettingsDetails.h>
 #include <aws/securityhub/model/AwsEcsClusterDefaultCapacityProviderStrategyDetails.h>
 #include <utility>
@@ -28,7 +28,7 @@ namespace Model
 {
 
   /**
-   * <p>provides details about an ECS cluster.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides details about an Amazon ECS cluster.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEcsClusterDetails">AWS
    * API Reference</a></p>
    */
@@ -39,6 +39,80 @@ namespace Model
     AwsEcsClusterDetails(Aws::Utils::Json::JsonView jsonValue);
     AwsEcsClusterDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies the cluster. </p>
+     */
+    inline const Aws::String& GetClusterArn() const{ return m_clusterArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies the cluster. </p>
+     */
+    inline bool ClusterArnHasBeenSet() const { return m_clusterArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies the cluster. </p>
+     */
+    inline void SetClusterArn(const Aws::String& value) { m_clusterArnHasBeenSet = true; m_clusterArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies the cluster. </p>
+     */
+    inline void SetClusterArn(Aws::String&& value) { m_clusterArnHasBeenSet = true; m_clusterArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies the cluster. </p>
+     */
+    inline void SetClusterArn(const char* value) { m_clusterArnHasBeenSet = true; m_clusterArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies the cluster. </p>
+     */
+    inline AwsEcsClusterDetails& WithClusterArn(const Aws::String& value) { SetClusterArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies the cluster. </p>
+     */
+    inline AwsEcsClusterDetails& WithClusterArn(Aws::String&& value) { SetClusterArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies the cluster. </p>
+     */
+    inline AwsEcsClusterDetails& WithClusterArn(const char* value) { SetClusterArn(value); return *this;}
+
+
+    /**
+     * <p>The number of services that are running on the cluster in an
+     * <code>ACTIVE</code> state. You can view these services with the Amazon ECS <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html">
+     * <code>ListServices</code> </a> API operation. </p>
+     */
+    inline int GetActiveServicesCount() const{ return m_activeServicesCount; }
+
+    /**
+     * <p>The number of services that are running on the cluster in an
+     * <code>ACTIVE</code> state. You can view these services with the Amazon ECS <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html">
+     * <code>ListServices</code> </a> API operation. </p>
+     */
+    inline bool ActiveServicesCountHasBeenSet() const { return m_activeServicesCountHasBeenSet; }
+
+    /**
+     * <p>The number of services that are running on the cluster in an
+     * <code>ACTIVE</code> state. You can view these services with the Amazon ECS <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html">
+     * <code>ListServices</code> </a> API operation. </p>
+     */
+    inline void SetActiveServicesCount(int value) { m_activeServicesCountHasBeenSet = true; m_activeServicesCount = value; }
+
+    /**
+     * <p>The number of services that are running on the cluster in an
+     * <code>ACTIVE</code> state. You can view these services with the Amazon ECS <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html">
+     * <code>ListServices</code> </a> API operation. </p>
+     */
+    inline AwsEcsClusterDetails& WithActiveServicesCount(int value) { SetActiveServicesCount(value); return *this;}
 
 
     /**
@@ -232,7 +306,149 @@ namespace Model
      */
     inline AwsEcsClusterDetails& AddDefaultCapacityProviderStrategy(AwsEcsClusterDefaultCapacityProviderStrategyDetails&& value) { m_defaultCapacityProviderStrategyHasBeenSet = true; m_defaultCapacityProviderStrategy.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>A name that you use to identify your cluster. </p>
+     */
+    inline const Aws::String& GetClusterName() const{ return m_clusterName; }
+
+    /**
+     * <p>A name that you use to identify your cluster. </p>
+     */
+    inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
+
+    /**
+     * <p>A name that you use to identify your cluster. </p>
+     */
+    inline void SetClusterName(const Aws::String& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
+
+    /**
+     * <p>A name that you use to identify your cluster. </p>
+     */
+    inline void SetClusterName(Aws::String&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::move(value); }
+
+    /**
+     * <p>A name that you use to identify your cluster. </p>
+     */
+    inline void SetClusterName(const char* value) { m_clusterNameHasBeenSet = true; m_clusterName.assign(value); }
+
+    /**
+     * <p>A name that you use to identify your cluster. </p>
+     */
+    inline AwsEcsClusterDetails& WithClusterName(const Aws::String& value) { SetClusterName(value); return *this;}
+
+    /**
+     * <p>A name that you use to identify your cluster. </p>
+     */
+    inline AwsEcsClusterDetails& WithClusterName(Aws::String&& value) { SetClusterName(std::move(value)); return *this;}
+
+    /**
+     * <p>A name that you use to identify your cluster. </p>
+     */
+    inline AwsEcsClusterDetails& WithClusterName(const char* value) { SetClusterName(value); return *this;}
+
+
+    /**
+     * <p>The number of container instances registered into the cluster. This includes
+     * container instances in both <code>ACTIVE</code> and <code>DRAINING</code>
+     * status. </p>
+     */
+    inline int GetRegisteredContainerInstancesCount() const{ return m_registeredContainerInstancesCount; }
+
+    /**
+     * <p>The number of container instances registered into the cluster. This includes
+     * container instances in both <code>ACTIVE</code> and <code>DRAINING</code>
+     * status. </p>
+     */
+    inline bool RegisteredContainerInstancesCountHasBeenSet() const { return m_registeredContainerInstancesCountHasBeenSet; }
+
+    /**
+     * <p>The number of container instances registered into the cluster. This includes
+     * container instances in both <code>ACTIVE</code> and <code>DRAINING</code>
+     * status. </p>
+     */
+    inline void SetRegisteredContainerInstancesCount(int value) { m_registeredContainerInstancesCountHasBeenSet = true; m_registeredContainerInstancesCount = value; }
+
+    /**
+     * <p>The number of container instances registered into the cluster. This includes
+     * container instances in both <code>ACTIVE</code> and <code>DRAINING</code>
+     * status. </p>
+     */
+    inline AwsEcsClusterDetails& WithRegisteredContainerInstancesCount(int value) { SetRegisteredContainerInstancesCount(value); return *this;}
+
+
+    /**
+     * <p>The number of tasks in the cluster that are in the <code>RUNNING</code>
+     * state. </p>
+     */
+    inline int GetRunningTasksCount() const{ return m_runningTasksCount; }
+
+    /**
+     * <p>The number of tasks in the cluster that are in the <code>RUNNING</code>
+     * state. </p>
+     */
+    inline bool RunningTasksCountHasBeenSet() const { return m_runningTasksCountHasBeenSet; }
+
+    /**
+     * <p>The number of tasks in the cluster that are in the <code>RUNNING</code>
+     * state. </p>
+     */
+    inline void SetRunningTasksCount(int value) { m_runningTasksCountHasBeenSet = true; m_runningTasksCount = value; }
+
+    /**
+     * <p>The number of tasks in the cluster that are in the <code>RUNNING</code>
+     * state. </p>
+     */
+    inline AwsEcsClusterDetails& WithRunningTasksCount(int value) { SetRunningTasksCount(value); return *this;}
+
+
+    /**
+     * <p>The status of the cluster. </p>
+     */
+    inline const Aws::String& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the cluster. </p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the cluster. </p>
+     */
+    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /**
+     * <p>The status of the cluster. </p>
+     */
+    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+
+    /**
+     * <p>The status of the cluster. </p>
+     */
+    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
+
+    /**
+     * <p>The status of the cluster. </p>
+     */
+    inline AwsEcsClusterDetails& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
+
+    /**
+     * <p>The status of the cluster. </p>
+     */
+    inline AwsEcsClusterDetails& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
+
+    /**
+     * <p>The status of the cluster. </p>
+     */
+    inline AwsEcsClusterDetails& WithStatus(const char* value) { SetStatus(value); return *this;}
+
   private:
+
+    Aws::String m_clusterArn;
+    bool m_clusterArnHasBeenSet;
+
+    int m_activeServicesCount;
+    bool m_activeServicesCountHasBeenSet;
 
     Aws::Vector<Aws::String> m_capacityProviders;
     bool m_capacityProvidersHasBeenSet;
@@ -245,6 +461,18 @@ namespace Model
 
     Aws::Vector<AwsEcsClusterDefaultCapacityProviderStrategyDetails> m_defaultCapacityProviderStrategy;
     bool m_defaultCapacityProviderStrategyHasBeenSet;
+
+    Aws::String m_clusterName;
+    bool m_clusterNameHasBeenSet;
+
+    int m_registeredContainerInstancesCount;
+    bool m_registeredContainerInstancesCountHasBeenSet;
+
+    int m_runningTasksCount;
+    bool m_runningTasksCountHasBeenSet;
+
+    Aws::String m_status;
+    bool m_statusHasBeenSet;
   };
 
 } // namespace Model

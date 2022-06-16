@@ -45,104 +45,104 @@ namespace Model
     /**
      * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>,
      * <code>icmpv6</code>) or number.</p> <p>[VPC only] Use <code>-1</code> to specify
-     * all protocols.</p> <p>When authorizing security group rules, specifying -1 or a
-     * protocol number other than <code>tcp</code>, <code>udp</code>,
-     * <code>icmp</code>, or <code>icmpv6</code> allows traffic on all ports,
-     * regardless of any port range you specify.</p> <p>For <code>tcp</code>,
-     * <code>udp</code>, and <code>icmp</code>, you must specify a port range.</p>
-     * <p>For <code>icmpv6</code>, the port range is optional. If you omit the port
-     * range, traffic for all types and codes is allowed. </p>
+     * all protocols.</p> <p>When authorizing security group rules, specifying
+     * <code>-1</code> or a protocol number other than <code>tcp</code>,
+     * <code>udp</code>, <code>icmp</code>, or <code>icmpv6</code> allows traffic on
+     * all ports, regardless of any port range you specify.</p> <p>For
+     * <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you must specify a
+     * port range.</p> <p>For <code>icmpv6</code>, the port range is optional. If you
+     * omit the port range, traffic for all types and codes is allowed. </p>
      */
     inline const Aws::String& GetIpProtocol() const{ return m_ipProtocol; }
 
     /**
      * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>,
      * <code>icmpv6</code>) or number.</p> <p>[VPC only] Use <code>-1</code> to specify
-     * all protocols.</p> <p>When authorizing security group rules, specifying -1 or a
-     * protocol number other than <code>tcp</code>, <code>udp</code>,
-     * <code>icmp</code>, or <code>icmpv6</code> allows traffic on all ports,
-     * regardless of any port range you specify.</p> <p>For <code>tcp</code>,
-     * <code>udp</code>, and <code>icmp</code>, you must specify a port range.</p>
-     * <p>For <code>icmpv6</code>, the port range is optional. If you omit the port
-     * range, traffic for all types and codes is allowed. </p>
+     * all protocols.</p> <p>When authorizing security group rules, specifying
+     * <code>-1</code> or a protocol number other than <code>tcp</code>,
+     * <code>udp</code>, <code>icmp</code>, or <code>icmpv6</code> allows traffic on
+     * all ports, regardless of any port range you specify.</p> <p>For
+     * <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you must specify a
+     * port range.</p> <p>For <code>icmpv6</code>, the port range is optional. If you
+     * omit the port range, traffic for all types and codes is allowed. </p>
      */
     inline bool IpProtocolHasBeenSet() const { return m_ipProtocolHasBeenSet; }
 
     /**
      * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>,
      * <code>icmpv6</code>) or number.</p> <p>[VPC only] Use <code>-1</code> to specify
-     * all protocols.</p> <p>When authorizing security group rules, specifying -1 or a
-     * protocol number other than <code>tcp</code>, <code>udp</code>,
-     * <code>icmp</code>, or <code>icmpv6</code> allows traffic on all ports,
-     * regardless of any port range you specify.</p> <p>For <code>tcp</code>,
-     * <code>udp</code>, and <code>icmp</code>, you must specify a port range.</p>
-     * <p>For <code>icmpv6</code>, the port range is optional. If you omit the port
-     * range, traffic for all types and codes is allowed. </p>
+     * all protocols.</p> <p>When authorizing security group rules, specifying
+     * <code>-1</code> or a protocol number other than <code>tcp</code>,
+     * <code>udp</code>, <code>icmp</code>, or <code>icmpv6</code> allows traffic on
+     * all ports, regardless of any port range you specify.</p> <p>For
+     * <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you must specify a
+     * port range.</p> <p>For <code>icmpv6</code>, the port range is optional. If you
+     * omit the port range, traffic for all types and codes is allowed. </p>
      */
     inline void SetIpProtocol(const Aws::String& value) { m_ipProtocolHasBeenSet = true; m_ipProtocol = value; }
 
     /**
      * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>,
      * <code>icmpv6</code>) or number.</p> <p>[VPC only] Use <code>-1</code> to specify
-     * all protocols.</p> <p>When authorizing security group rules, specifying -1 or a
-     * protocol number other than <code>tcp</code>, <code>udp</code>,
-     * <code>icmp</code>, or <code>icmpv6</code> allows traffic on all ports,
-     * regardless of any port range you specify.</p> <p>For <code>tcp</code>,
-     * <code>udp</code>, and <code>icmp</code>, you must specify a port range.</p>
-     * <p>For <code>icmpv6</code>, the port range is optional. If you omit the port
-     * range, traffic for all types and codes is allowed. </p>
+     * all protocols.</p> <p>When authorizing security group rules, specifying
+     * <code>-1</code> or a protocol number other than <code>tcp</code>,
+     * <code>udp</code>, <code>icmp</code>, or <code>icmpv6</code> allows traffic on
+     * all ports, regardless of any port range you specify.</p> <p>For
+     * <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you must specify a
+     * port range.</p> <p>For <code>icmpv6</code>, the port range is optional. If you
+     * omit the port range, traffic for all types and codes is allowed. </p>
      */
     inline void SetIpProtocol(Aws::String&& value) { m_ipProtocolHasBeenSet = true; m_ipProtocol = std::move(value); }
 
     /**
      * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>,
      * <code>icmpv6</code>) or number.</p> <p>[VPC only] Use <code>-1</code> to specify
-     * all protocols.</p> <p>When authorizing security group rules, specifying -1 or a
-     * protocol number other than <code>tcp</code>, <code>udp</code>,
-     * <code>icmp</code>, or <code>icmpv6</code> allows traffic on all ports,
-     * regardless of any port range you specify.</p> <p>For <code>tcp</code>,
-     * <code>udp</code>, and <code>icmp</code>, you must specify a port range.</p>
-     * <p>For <code>icmpv6</code>, the port range is optional. If you omit the port
-     * range, traffic for all types and codes is allowed. </p>
+     * all protocols.</p> <p>When authorizing security group rules, specifying
+     * <code>-1</code> or a protocol number other than <code>tcp</code>,
+     * <code>udp</code>, <code>icmp</code>, or <code>icmpv6</code> allows traffic on
+     * all ports, regardless of any port range you specify.</p> <p>For
+     * <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you must specify a
+     * port range.</p> <p>For <code>icmpv6</code>, the port range is optional. If you
+     * omit the port range, traffic for all types and codes is allowed. </p>
      */
     inline void SetIpProtocol(const char* value) { m_ipProtocolHasBeenSet = true; m_ipProtocol.assign(value); }
 
     /**
      * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>,
      * <code>icmpv6</code>) or number.</p> <p>[VPC only] Use <code>-1</code> to specify
-     * all protocols.</p> <p>When authorizing security group rules, specifying -1 or a
-     * protocol number other than <code>tcp</code>, <code>udp</code>,
-     * <code>icmp</code>, or <code>icmpv6</code> allows traffic on all ports,
-     * regardless of any port range you specify.</p> <p>For <code>tcp</code>,
-     * <code>udp</code>, and <code>icmp</code>, you must specify a port range.</p>
-     * <p>For <code>icmpv6</code>, the port range is optional. If you omit the port
-     * range, traffic for all types and codes is allowed. </p>
+     * all protocols.</p> <p>When authorizing security group rules, specifying
+     * <code>-1</code> or a protocol number other than <code>tcp</code>,
+     * <code>udp</code>, <code>icmp</code>, or <code>icmpv6</code> allows traffic on
+     * all ports, regardless of any port range you specify.</p> <p>For
+     * <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you must specify a
+     * port range.</p> <p>For <code>icmpv6</code>, the port range is optional. If you
+     * omit the port range, traffic for all types and codes is allowed. </p>
      */
     inline AwsEc2SecurityGroupIpPermission& WithIpProtocol(const Aws::String& value) { SetIpProtocol(value); return *this;}
 
     /**
      * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>,
      * <code>icmpv6</code>) or number.</p> <p>[VPC only] Use <code>-1</code> to specify
-     * all protocols.</p> <p>When authorizing security group rules, specifying -1 or a
-     * protocol number other than <code>tcp</code>, <code>udp</code>,
-     * <code>icmp</code>, or <code>icmpv6</code> allows traffic on all ports,
-     * regardless of any port range you specify.</p> <p>For <code>tcp</code>,
-     * <code>udp</code>, and <code>icmp</code>, you must specify a port range.</p>
-     * <p>For <code>icmpv6</code>, the port range is optional. If you omit the port
-     * range, traffic for all types and codes is allowed. </p>
+     * all protocols.</p> <p>When authorizing security group rules, specifying
+     * <code>-1</code> or a protocol number other than <code>tcp</code>,
+     * <code>udp</code>, <code>icmp</code>, or <code>icmpv6</code> allows traffic on
+     * all ports, regardless of any port range you specify.</p> <p>For
+     * <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you must specify a
+     * port range.</p> <p>For <code>icmpv6</code>, the port range is optional. If you
+     * omit the port range, traffic for all types and codes is allowed. </p>
      */
     inline AwsEc2SecurityGroupIpPermission& WithIpProtocol(Aws::String&& value) { SetIpProtocol(std::move(value)); return *this;}
 
     /**
      * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>,
      * <code>icmpv6</code>) or number.</p> <p>[VPC only] Use <code>-1</code> to specify
-     * all protocols.</p> <p>When authorizing security group rules, specifying -1 or a
-     * protocol number other than <code>tcp</code>, <code>udp</code>,
-     * <code>icmp</code>, or <code>icmpv6</code> allows traffic on all ports,
-     * regardless of any port range you specify.</p> <p>For <code>tcp</code>,
-     * <code>udp</code>, and <code>icmp</code>, you must specify a port range.</p>
-     * <p>For <code>icmpv6</code>, the port range is optional. If you omit the port
-     * range, traffic for all types and codes is allowed. </p>
+     * all protocols.</p> <p>When authorizing security group rules, specifying
+     * <code>-1</code> or a protocol number other than <code>tcp</code>,
+     * <code>udp</code>, <code>icmp</code>, or <code>icmpv6</code> allows traffic on
+     * all ports, regardless of any port range you specify.</p> <p>For
+     * <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you must specify a
+     * port range.</p> <p>For <code>icmpv6</code>, the port range is optional. If you
+     * omit the port range, traffic for all types and codes is allowed. </p>
      */
     inline AwsEc2SecurityGroupIpPermission& WithIpProtocol(const char* value) { SetIpProtocol(value); return *this;}
 
@@ -178,29 +178,29 @@ namespace Model
 
     /**
      * <p>The end of the port range for the TCP and UDP protocols, or an ICMP/ICMPv6
-     * code.</p> <p>A value of -1 indicates all ICMP/ICMPv6 codes. If you specify all
-     * ICMP/ICMPv6 types, you must specify all codes.</p>
+     * code.</p> <p>A value of <code>-1</code> indicates all ICMP/ICMPv6 codes. If you
+     * specify all ICMP/ICMPv6 types, you must specify all codes.</p>
      */
     inline int GetToPort() const{ return m_toPort; }
 
     /**
      * <p>The end of the port range for the TCP and UDP protocols, or an ICMP/ICMPv6
-     * code.</p> <p>A value of -1 indicates all ICMP/ICMPv6 codes. If you specify all
-     * ICMP/ICMPv6 types, you must specify all codes.</p>
+     * code.</p> <p>A value of <code>-1</code> indicates all ICMP/ICMPv6 codes. If you
+     * specify all ICMP/ICMPv6 types, you must specify all codes.</p>
      */
     inline bool ToPortHasBeenSet() const { return m_toPortHasBeenSet; }
 
     /**
      * <p>The end of the port range for the TCP and UDP protocols, or an ICMP/ICMPv6
-     * code.</p> <p>A value of -1 indicates all ICMP/ICMPv6 codes. If you specify all
-     * ICMP/ICMPv6 types, you must specify all codes.</p>
+     * code.</p> <p>A value of <code>-1</code> indicates all ICMP/ICMPv6 codes. If you
+     * specify all ICMP/ICMPv6 types, you must specify all codes.</p>
      */
     inline void SetToPort(int value) { m_toPortHasBeenSet = true; m_toPort = value; }
 
     /**
      * <p>The end of the port range for the TCP and UDP protocols, or an ICMP/ICMPv6
-     * code.</p> <p>A value of -1 indicates all ICMP/ICMPv6 codes. If you specify all
-     * ICMP/ICMPv6 types, you must specify all codes.</p>
+     * code.</p> <p>A value of <code>-1</code> indicates all ICMP/ICMPv6 codes. If you
+     * specify all ICMP/ICMPv6 types, you must specify all codes.</p>
      */
     inline AwsEc2SecurityGroupIpPermission& WithToPort(int value) { SetToPort(value); return *this;}
 

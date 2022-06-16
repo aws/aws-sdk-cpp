@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Information about an origin that is an S3 bucket that is not configured with
-   * static website hosting.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about an origin that is an Amazon S3 bucket that is not
+   * configured with static website hosting.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsCloudFrontDistributionOriginS3OriginConfig">AWS
    * API Reference</a></p>
    */

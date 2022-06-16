@@ -30,7 +30,7 @@ namespace Model
 {
 
   /**
-   * <p>A distribution configuration.</p><p><h3>See Also:</h3>   <a
+   * <p>A CloudFront distribution configuration.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsCloudFrontDistributionDetails">AWS
    * API Reference</a></p>
    */

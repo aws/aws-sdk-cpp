@@ -88,33 +88,33 @@ namespace Model
 
     /**
      * <p>The number of days that manual snapshots are retained in the destination
-     * region after they are copied from a source region.</p> <p>If the value is -1,
-     * then the manual snapshot is retained indefinitely.</p> <p>Valid values: Either
-     * -1 or an integer between 1 and 3,653</p>
+     * region after they are copied from a source region.</p> <p>If the value is
+     * <code>-1</code>, then the manual snapshot is retained indefinitely.</p> <p>Valid
+     * values: Either <code>-1</code> or an integer between 1 and 3,653</p>
      */
     inline int GetManualSnapshotRetentionPeriod() const{ return m_manualSnapshotRetentionPeriod; }
 
     /**
      * <p>The number of days that manual snapshots are retained in the destination
-     * region after they are copied from a source region.</p> <p>If the value is -1,
-     * then the manual snapshot is retained indefinitely.</p> <p>Valid values: Either
-     * -1 or an integer between 1 and 3,653</p>
+     * region after they are copied from a source region.</p> <p>If the value is
+     * <code>-1</code>, then the manual snapshot is retained indefinitely.</p> <p>Valid
+     * values: Either <code>-1</code> or an integer between 1 and 3,653</p>
      */
     inline bool ManualSnapshotRetentionPeriodHasBeenSet() const { return m_manualSnapshotRetentionPeriodHasBeenSet; }
 
     /**
      * <p>The number of days that manual snapshots are retained in the destination
-     * region after they are copied from a source region.</p> <p>If the value is -1,
-     * then the manual snapshot is retained indefinitely.</p> <p>Valid values: Either
-     * -1 or an integer between 1 and 3,653</p>
+     * region after they are copied from a source region.</p> <p>If the value is
+     * <code>-1</code>, then the manual snapshot is retained indefinitely.</p> <p>Valid
+     * values: Either <code>-1</code> or an integer between 1 and 3,653</p>
      */
     inline void SetManualSnapshotRetentionPeriod(int value) { m_manualSnapshotRetentionPeriodHasBeenSet = true; m_manualSnapshotRetentionPeriod = value; }
 
     /**
      * <p>The number of days that manual snapshots are retained in the destination
-     * region after they are copied from a source region.</p> <p>If the value is -1,
-     * then the manual snapshot is retained indefinitely.</p> <p>Valid values: Either
-     * -1 or an integer between 1 and 3,653</p>
+     * region after they are copied from a source region.</p> <p>If the value is
+     * <code>-1</code>, then the manual snapshot is retained indefinitely.</p> <p>Valid
+     * values: Either <code>-1</code> or an integer between 1 and 3,653</p>
      */
     inline AwsRedshiftClusterClusterSnapshotCopyStatus& WithManualSnapshotRetentionPeriod(int value) { SetManualSnapshotRetentionPeriod(value); return *this;}
 

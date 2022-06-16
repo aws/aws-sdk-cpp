@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains details about an EC2 network access control list
+   * <p>Contains details about an Amazon EC2 network access control list
    * (ACL).</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEc2NetworkAclDetails">AWS
    * API Reference</a></p>

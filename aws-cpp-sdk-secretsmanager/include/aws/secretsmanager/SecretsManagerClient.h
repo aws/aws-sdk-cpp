@@ -516,9 +516,12 @@ namespace Model
         /**
          * <p>Lists the secrets that are stored by Secrets Manager in the Amazon Web
          * Services account, not including secrets that are marked for deletion. To see
-         * secrets marked for deletion, use the Secrets Manager console.</p> <p>To list the
-         * versions of a secret, use <a>ListSecretVersionIds</a>.</p> <p>To get the secret
-         * value from <code>SecretString</code> or <code>SecretBinary</code>, call
+         * secrets marked for deletion, use the Secrets Manager console.</p> <p>ListSecrets
+         * is eventually consistent, however it might not reflect changes from the last
+         * five minutes. To get the latest information for a specific secret, use
+         * <a>DescribeSecret</a>.</p> <p>To list the versions of a secret, use
+         * <a>ListSecretVersionIds</a>.</p> <p>To get the secret value from
+         * <code>SecretString</code> or <code>SecretBinary</code>, call
          * <a>GetSecretValue</a>.</p> <p>For information about finding secrets in the
          * console, see <a
          * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage_search-secret.html">Find
@@ -590,13 +593,13 @@ namespace Model
          * staging label <code>AWSCURRENT</code> from another version to this version, then
          * Secrets Manager also automatically moves the staging label
          * <code>AWSPREVIOUS</code> to the version that <code>AWSCURRENT</code> was removed
-         * from.</p> <p>This operation is idempotent. If a version with a
-         * <code>VersionId</code> with the same value as the
-         * <code>ClientRequestToken</code> parameter already exists, and you specify the
-         * same secret data, the operation succeeds but does nothing. However, if the
-         * secret data is different, then the operation fails because you can't modify an
-         * existing version; you can only create new ones.</p> <p> <b>Required permissions:
-         * </b> <code>secretsmanager:PutSecretValue</code>. For more information, see <a
+         * from.</p> <p>This operation is idempotent. If you call this operation with a
+         * <code>ClientRequestToken</code> that matches an existing version's VersionId,
+         * and you specify the same secret data, the operation succeeds but does nothing.
+         * However, if the secret data is different, then the operation fails because you
+         * can't modify an existing version; you can only create new ones.</p> <p>
+         * <b>Required permissions: </b> <code>secretsmanager:PutSecretValue</code>. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
          * IAM policy actions for Secrets Manager</a> and <a
          * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
@@ -857,22 +860,22 @@ namespace Model
          * secret versions.</p> <p>If you include <code>SecretString</code> or
          * <code>SecretBinary</code> to create a new secret version, Secrets Manager
          * automatically attaches the staging label <code>AWSCURRENT</code> to the new
-         * version. </p> <p>If you call this operation with a <code>VersionId</code> that
-         * matches an existing version's <code>ClientRequestToken</code>, the operation
-         * results in an error. You can't modify an existing version, you can only create a
-         * new version. To remove a version, remove all staging labels from it. See
-         * <a>UpdateSecretVersionStage</a>.</p> <p>If you don't specify an KMS encryption
-         * key, Secrets Manager uses the Amazon Web Services managed key
-         * <code>aws/secretsmanager</code>. If this key doesn't already exist in your
-         * account, then Secrets Manager creates it for you automatically. All users and
-         * roles in the Amazon Web Services account automatically have access to use
-         * <code>aws/secretsmanager</code>. Creating <code>aws/secretsmanager</code> can
-         * result in a one-time significant delay in returning the result. </p> <p>If the
-         * secret is in a different Amazon Web Services account from the credentials
-         * calling the API, then you can't use <code>aws/secretsmanager</code> to encrypt
-         * the secret, and you must create and use a customer managed key. </p> <p>
-         * <b>Required permissions: </b> <code>secretsmanager:UpdateSecret</code>. For more
-         * information, see <a
+         * version. </p> <p>If you call this operation with a
+         * <code>ClientRequestToken</code> that matches an existing version's
+         * <code>VersionId</code>, the operation results in an error. You can't modify an
+         * existing version, you can only create a new version. To remove a version, remove
+         * all staging labels from it. See <a>UpdateSecretVersionStage</a>.</p> <p>If you
+         * don't specify an KMS encryption key, Secrets Manager uses the Amazon Web
+         * Services managed key <code>aws/secretsmanager</code>. If this key doesn't
+         * already exist in your account, then Secrets Manager creates it for you
+         * automatically. All users and roles in the Amazon Web Services account
+         * automatically have access to use <code>aws/secretsmanager</code>. Creating
+         * <code>aws/secretsmanager</code> can result in a one-time significant delay in
+         * returning the result. </p> <p>If the secret is in a different Amazon Web
+         * Services account from the credentials calling the API, then you can't use
+         * <code>aws/secretsmanager</code> to encrypt the secret, and you must create and
+         * use a customer managed key. </p> <p> <b>Required permissions: </b>
+         * <code>secretsmanager:UpdateSecret</code>. For more information, see <a
          * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
          * IAM policy actions for Secrets Manager</a> and <a
          * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication

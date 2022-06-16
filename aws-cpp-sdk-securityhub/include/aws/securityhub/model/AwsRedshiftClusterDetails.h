@@ -1388,33 +1388,33 @@ namespace Model
 
     /**
      * <p>The default number of days to retain a manual snapshot.</p> <p>If the value
-     * is -1, the snapshot is retained indefinitely.</p> <p>This setting doesn't change
-     * the retention period of existing snapshots.</p> <p>Valid values: Either -1 or an
-     * integer between 1 and 3,653</p>
+     * is <code>-1</code>, the snapshot is retained indefinitely.</p> <p>This setting
+     * doesn't change the retention period of existing snapshots.</p> <p>Valid values:
+     * Either <code>-1</code> or an integer between 1 and 3,653</p>
      */
     inline int GetManualSnapshotRetentionPeriod() const{ return m_manualSnapshotRetentionPeriod; }
 
     /**
      * <p>The default number of days to retain a manual snapshot.</p> <p>If the value
-     * is -1, the snapshot is retained indefinitely.</p> <p>This setting doesn't change
-     * the retention period of existing snapshots.</p> <p>Valid values: Either -1 or an
-     * integer between 1 and 3,653</p>
+     * is <code>-1</code>, the snapshot is retained indefinitely.</p> <p>This setting
+     * doesn't change the retention period of existing snapshots.</p> <p>Valid values:
+     * Either <code>-1</code> or an integer between 1 and 3,653</p>
      */
     inline bool ManualSnapshotRetentionPeriodHasBeenSet() const { return m_manualSnapshotRetentionPeriodHasBeenSet; }
 
     /**
      * <p>The default number of days to retain a manual snapshot.</p> <p>If the value
-     * is -1, the snapshot is retained indefinitely.</p> <p>This setting doesn't change
-     * the retention period of existing snapshots.</p> <p>Valid values: Either -1 or an
-     * integer between 1 and 3,653</p>
+     * is <code>-1</code>, the snapshot is retained indefinitely.</p> <p>This setting
+     * doesn't change the retention period of existing snapshots.</p> <p>Valid values:
+     * Either <code>-1</code> or an integer between 1 and 3,653</p>
      */
     inline void SetManualSnapshotRetentionPeriod(int value) { m_manualSnapshotRetentionPeriodHasBeenSet = true; m_manualSnapshotRetentionPeriod = value; }
 
     /**
      * <p>The default number of days to retain a manual snapshot.</p> <p>If the value
-     * is -1, the snapshot is retained indefinitely.</p> <p>This setting doesn't change
-     * the retention period of existing snapshots.</p> <p>Valid values: Either -1 or an
-     * integer between 1 and 3,653</p>
+     * is <code>-1</code>, the snapshot is retained indefinitely.</p> <p>This setting
+     * doesn't change the retention period of existing snapshots.</p> <p>Valid values:
+     * Either <code>-1</code> or an integer between 1 and 3,653</p>
      */
     inline AwsRedshiftClusterDetails& WithManualSnapshotRetentionPeriod(int value) { SetManualSnapshotRetentionPeriod(value); return *this;}
 

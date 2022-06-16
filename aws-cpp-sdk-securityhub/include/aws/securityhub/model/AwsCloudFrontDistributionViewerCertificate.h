@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Provides information about the TLS/SSL configuration that the distribution
-   * uses to communicate with viewers.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides information about the TLS/SSL configuration that the CloudFront
+   * distribution uses to communicate with viewers.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsCloudFrontDistributionViewerCertificate">AWS
    * API Reference</a></p>
    */

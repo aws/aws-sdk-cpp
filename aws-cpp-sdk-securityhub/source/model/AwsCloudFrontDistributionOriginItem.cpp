@@ -22,7 +22,8 @@ AwsCloudFrontDistributionOriginItem::AwsCloudFrontDistributionOriginItem() :
     m_domainNameHasBeenSet(false),
     m_idHasBeenSet(false),
     m_originPathHasBeenSet(false),
-    m_s3OriginConfigHasBeenSet(false)
+    m_s3OriginConfigHasBeenSet(false),
+    m_customOriginConfigHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ AwsCloudFrontDistributionOriginItem::AwsCloudFrontDistributionOriginItem(JsonVie
     m_domainNameHasBeenSet(false),
     m_idHasBeenSet(false),
     m_originPathHasBeenSet(false),
-    m_s3OriginConfigHasBeenSet(false)
+    m_s3OriginConfigHasBeenSet(false),
+    m_customOriginConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -65,6 +67,13 @@ AwsCloudFrontDistributionOriginItem& AwsCloudFrontDistributionOriginItem::operat
     m_s3OriginConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CustomOriginConfig"))
+  {
+    m_customOriginConfig = jsonValue.GetObject("CustomOriginConfig");
+
+    m_customOriginConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -93,6 +102,12 @@ JsonValue AwsCloudFrontDistributionOriginItem::Jsonize() const
   if(m_s3OriginConfigHasBeenSet)
   {
    payload.WithObject("S3OriginConfig", m_s3OriginConfig.Jsonize());
+
+  }
+
+  if(m_customOriginConfigHasBeenSet)
+  {
+   payload.WithObject("CustomOriginConfig", m_customOriginConfig.Jsonize());
 
   }
 
