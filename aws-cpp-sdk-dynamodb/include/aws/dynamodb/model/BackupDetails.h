@@ -124,22 +124,26 @@ namespace Model
 
 
     /**
-     * <p>Size of the backup in bytes.</p>
+     * <p>Size of the backup in bytes. DynamoDB updates this value approximately every
+     * six hours. Recent changes might not be reflected in this value.</p>
      */
     inline long long GetBackupSizeBytes() const{ return m_backupSizeBytes; }
 
     /**
-     * <p>Size of the backup in bytes.</p>
+     * <p>Size of the backup in bytes. DynamoDB updates this value approximately every
+     * six hours. Recent changes might not be reflected in this value.</p>
      */
     inline bool BackupSizeBytesHasBeenSet() const { return m_backupSizeBytesHasBeenSet; }
 
     /**
-     * <p>Size of the backup in bytes.</p>
+     * <p>Size of the backup in bytes. DynamoDB updates this value approximately every
+     * six hours. Recent changes might not be reflected in this value.</p>
      */
     inline void SetBackupSizeBytes(long long value) { m_backupSizeBytesHasBeenSet = true; m_backupSizeBytes = value; }
 
     /**
-     * <p>Size of the backup in bytes.</p>
+     * <p>Size of the backup in bytes. DynamoDB updates this value approximately every
+     * six hours. Recent changes might not be reflected in this value.</p>
      */
     inline BackupDetails& WithBackupSizeBytes(long long value) { SetBackupSizeBytes(value); return *this;}
 

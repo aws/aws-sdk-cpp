@@ -256,60 +256,66 @@ namespace Model
     /**
      * <p>The backups from the table specified by <code>BackupType</code> are
      * listed.</p> <p>Where <code>BackupType</code> can be:</p> <ul> <li> <p>
-     * <code>USER</code> - On-demand backup created by you.</p> </li> <li> <p>
-     * <code>SYSTEM</code> - On-demand backup automatically created by DynamoDB.</p>
-     * </li> <li> <p> <code>ALL</code> - All types of on-demand backups (USER and
-     * SYSTEM).</p> </li> </ul>
+     * <code>USER</code> - On-demand backup created by you. (The default setting if no
+     * other backup types are specified.)</p> </li> <li> <p> <code>SYSTEM</code> -
+     * On-demand backup automatically created by DynamoDB.</p> </li> <li> <p>
+     * <code>ALL</code> - All types of on-demand backups (USER and SYSTEM).</p> </li>
+     * </ul>
      */
     inline const BackupTypeFilter& GetBackupType() const{ return m_backupType; }
 
     /**
      * <p>The backups from the table specified by <code>BackupType</code> are
      * listed.</p> <p>Where <code>BackupType</code> can be:</p> <ul> <li> <p>
-     * <code>USER</code> - On-demand backup created by you.</p> </li> <li> <p>
-     * <code>SYSTEM</code> - On-demand backup automatically created by DynamoDB.</p>
-     * </li> <li> <p> <code>ALL</code> - All types of on-demand backups (USER and
-     * SYSTEM).</p> </li> </ul>
+     * <code>USER</code> - On-demand backup created by you. (The default setting if no
+     * other backup types are specified.)</p> </li> <li> <p> <code>SYSTEM</code> -
+     * On-demand backup automatically created by DynamoDB.</p> </li> <li> <p>
+     * <code>ALL</code> - All types of on-demand backups (USER and SYSTEM).</p> </li>
+     * </ul>
      */
     inline bool BackupTypeHasBeenSet() const { return m_backupTypeHasBeenSet; }
 
     /**
      * <p>The backups from the table specified by <code>BackupType</code> are
      * listed.</p> <p>Where <code>BackupType</code> can be:</p> <ul> <li> <p>
-     * <code>USER</code> - On-demand backup created by you.</p> </li> <li> <p>
-     * <code>SYSTEM</code> - On-demand backup automatically created by DynamoDB.</p>
-     * </li> <li> <p> <code>ALL</code> - All types of on-demand backups (USER and
-     * SYSTEM).</p> </li> </ul>
+     * <code>USER</code> - On-demand backup created by you. (The default setting if no
+     * other backup types are specified.)</p> </li> <li> <p> <code>SYSTEM</code> -
+     * On-demand backup automatically created by DynamoDB.</p> </li> <li> <p>
+     * <code>ALL</code> - All types of on-demand backups (USER and SYSTEM).</p> </li>
+     * </ul>
      */
     inline void SetBackupType(const BackupTypeFilter& value) { m_backupTypeHasBeenSet = true; m_backupType = value; }
 
     /**
      * <p>The backups from the table specified by <code>BackupType</code> are
      * listed.</p> <p>Where <code>BackupType</code> can be:</p> <ul> <li> <p>
-     * <code>USER</code> - On-demand backup created by you.</p> </li> <li> <p>
-     * <code>SYSTEM</code> - On-demand backup automatically created by DynamoDB.</p>
-     * </li> <li> <p> <code>ALL</code> - All types of on-demand backups (USER and
-     * SYSTEM).</p> </li> </ul>
+     * <code>USER</code> - On-demand backup created by you. (The default setting if no
+     * other backup types are specified.)</p> </li> <li> <p> <code>SYSTEM</code> -
+     * On-demand backup automatically created by DynamoDB.</p> </li> <li> <p>
+     * <code>ALL</code> - All types of on-demand backups (USER and SYSTEM).</p> </li>
+     * </ul>
      */
     inline void SetBackupType(BackupTypeFilter&& value) { m_backupTypeHasBeenSet = true; m_backupType = std::move(value); }
 
     /**
      * <p>The backups from the table specified by <code>BackupType</code> are
      * listed.</p> <p>Where <code>BackupType</code> can be:</p> <ul> <li> <p>
-     * <code>USER</code> - On-demand backup created by you.</p> </li> <li> <p>
-     * <code>SYSTEM</code> - On-demand backup automatically created by DynamoDB.</p>
-     * </li> <li> <p> <code>ALL</code> - All types of on-demand backups (USER and
-     * SYSTEM).</p> </li> </ul>
+     * <code>USER</code> - On-demand backup created by you. (The default setting if no
+     * other backup types are specified.)</p> </li> <li> <p> <code>SYSTEM</code> -
+     * On-demand backup automatically created by DynamoDB.</p> </li> <li> <p>
+     * <code>ALL</code> - All types of on-demand backups (USER and SYSTEM).</p> </li>
+     * </ul>
      */
     inline ListBackupsRequest& WithBackupType(const BackupTypeFilter& value) { SetBackupType(value); return *this;}
 
     /**
      * <p>The backups from the table specified by <code>BackupType</code> are
      * listed.</p> <p>Where <code>BackupType</code> can be:</p> <ul> <li> <p>
-     * <code>USER</code> - On-demand backup created by you.</p> </li> <li> <p>
-     * <code>SYSTEM</code> - On-demand backup automatically created by DynamoDB.</p>
-     * </li> <li> <p> <code>ALL</code> - All types of on-demand backups (USER and
-     * SYSTEM).</p> </li> </ul>
+     * <code>USER</code> - On-demand backup created by you. (The default setting if no
+     * other backup types are specified.)</p> </li> <li> <p> <code>SYSTEM</code> -
+     * On-demand backup automatically created by DynamoDB.</p> </li> <li> <p>
+     * <code>ALL</code> - All types of on-demand backups (USER and SYSTEM).</p> </li>
+     * </ul>
      */
     inline ListBackupsRequest& WithBackupType(BackupTypeFilter&& value) { SetBackupType(std::move(value)); return *this;}
 

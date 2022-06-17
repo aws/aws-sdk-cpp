@@ -80,38 +80,44 @@ namespace Model
 
 
     /**
-     * <p>Time in the past from which to export table data. The table export will be a
-     * snapshot of the table's state at this point in time.</p>
+     * <p>Time in the past from which to export table data, counted in seconds from the
+     * start of the Unix epoch. The table export will be a snapshot of the table's
+     * state at this point in time.</p>
      */
     inline const Aws::Utils::DateTime& GetExportTime() const{ return m_exportTime; }
 
     /**
-     * <p>Time in the past from which to export table data. The table export will be a
-     * snapshot of the table's state at this point in time.</p>
+     * <p>Time in the past from which to export table data, counted in seconds from the
+     * start of the Unix epoch. The table export will be a snapshot of the table's
+     * state at this point in time.</p>
      */
     inline bool ExportTimeHasBeenSet() const { return m_exportTimeHasBeenSet; }
 
     /**
-     * <p>Time in the past from which to export table data. The table export will be a
-     * snapshot of the table's state at this point in time.</p>
+     * <p>Time in the past from which to export table data, counted in seconds from the
+     * start of the Unix epoch. The table export will be a snapshot of the table's
+     * state at this point in time.</p>
      */
     inline void SetExportTime(const Aws::Utils::DateTime& value) { m_exportTimeHasBeenSet = true; m_exportTime = value; }
 
     /**
-     * <p>Time in the past from which to export table data. The table export will be a
-     * snapshot of the table's state at this point in time.</p>
+     * <p>Time in the past from which to export table data, counted in seconds from the
+     * start of the Unix epoch. The table export will be a snapshot of the table's
+     * state at this point in time.</p>
      */
     inline void SetExportTime(Aws::Utils::DateTime&& value) { m_exportTimeHasBeenSet = true; m_exportTime = std::move(value); }
 
     /**
-     * <p>Time in the past from which to export table data. The table export will be a
-     * snapshot of the table's state at this point in time.</p>
+     * <p>Time in the past from which to export table data, counted in seconds from the
+     * start of the Unix epoch. The table export will be a snapshot of the table's
+     * state at this point in time.</p>
      */
     inline ExportTableToPointInTimeRequest& WithExportTime(const Aws::Utils::DateTime& value) { SetExportTime(value); return *this;}
 
     /**
-     * <p>Time in the past from which to export table data. The table export will be a
-     * snapshot of the table's state at this point in time.</p>
+     * <p>Time in the past from which to export table data, counted in seconds from the
+     * start of the Unix epoch. The table export will be a snapshot of the table's
+     * state at this point in time.</p>
      */
     inline ExportTableToPointInTimeRequest& WithExportTime(Aws::Utils::DateTime&& value) { SetExportTime(std::move(value)); return *this;}
 

@@ -421,9 +421,12 @@ namespace Model
      * <code>ReturnValues</code>.)</p> </li> <li> <p> <code>ALL_OLD</code> - If
      * <code>PutItem</code> overwrote an attribute name-value pair, then the content of
      * the old item is returned.</p> </li> </ul> <p>The values returned are strongly
-     * consistent.</p>  <p>The <code>ReturnValues</code> parameter is used by
-     * several DynamoDB operations; however, <code>PutItem</code> does not recognize
-     * any values other than <code>NONE</code> or <code>ALL_OLD</code>.</p> 
+     * consistent.</p> <p>There is no additional cost associated with requesting a
+     * return value aside from the small network and processing overhead of receiving a
+     * larger response. No read capacity units are consumed.</p>  <p>The
+     * <code>ReturnValues</code> parameter is used by several DynamoDB operations;
+     * however, <code>PutItem</code> does not recognize any values other than
+     * <code>NONE</code> or <code>ALL_OLD</code>.</p> 
      */
     inline const ReturnValue& GetReturnValues() const{ return m_returnValues; }
 
@@ -436,9 +439,12 @@ namespace Model
      * <code>ReturnValues</code>.)</p> </li> <li> <p> <code>ALL_OLD</code> - If
      * <code>PutItem</code> overwrote an attribute name-value pair, then the content of
      * the old item is returned.</p> </li> </ul> <p>The values returned are strongly
-     * consistent.</p>  <p>The <code>ReturnValues</code> parameter is used by
-     * several DynamoDB operations; however, <code>PutItem</code> does not recognize
-     * any values other than <code>NONE</code> or <code>ALL_OLD</code>.</p> 
+     * consistent.</p> <p>There is no additional cost associated with requesting a
+     * return value aside from the small network and processing overhead of receiving a
+     * larger response. No read capacity units are consumed.</p>  <p>The
+     * <code>ReturnValues</code> parameter is used by several DynamoDB operations;
+     * however, <code>PutItem</code> does not recognize any values other than
+     * <code>NONE</code> or <code>ALL_OLD</code>.</p> 
      */
     inline bool ReturnValuesHasBeenSet() const { return m_returnValuesHasBeenSet; }
 
@@ -451,9 +457,12 @@ namespace Model
      * <code>ReturnValues</code>.)</p> </li> <li> <p> <code>ALL_OLD</code> - If
      * <code>PutItem</code> overwrote an attribute name-value pair, then the content of
      * the old item is returned.</p> </li> </ul> <p>The values returned are strongly
-     * consistent.</p>  <p>The <code>ReturnValues</code> parameter is used by
-     * several DynamoDB operations; however, <code>PutItem</code> does not recognize
-     * any values other than <code>NONE</code> or <code>ALL_OLD</code>.</p> 
+     * consistent.</p> <p>There is no additional cost associated with requesting a
+     * return value aside from the small network and processing overhead of receiving a
+     * larger response. No read capacity units are consumed.</p>  <p>The
+     * <code>ReturnValues</code> parameter is used by several DynamoDB operations;
+     * however, <code>PutItem</code> does not recognize any values other than
+     * <code>NONE</code> or <code>ALL_OLD</code>.</p> 
      */
     inline void SetReturnValues(const ReturnValue& value) { m_returnValuesHasBeenSet = true; m_returnValues = value; }
 
@@ -466,9 +475,12 @@ namespace Model
      * <code>ReturnValues</code>.)</p> </li> <li> <p> <code>ALL_OLD</code> - If
      * <code>PutItem</code> overwrote an attribute name-value pair, then the content of
      * the old item is returned.</p> </li> </ul> <p>The values returned are strongly
-     * consistent.</p>  <p>The <code>ReturnValues</code> parameter is used by
-     * several DynamoDB operations; however, <code>PutItem</code> does not recognize
-     * any values other than <code>NONE</code> or <code>ALL_OLD</code>.</p> 
+     * consistent.</p> <p>There is no additional cost associated with requesting a
+     * return value aside from the small network and processing overhead of receiving a
+     * larger response. No read capacity units are consumed.</p>  <p>The
+     * <code>ReturnValues</code> parameter is used by several DynamoDB operations;
+     * however, <code>PutItem</code> does not recognize any values other than
+     * <code>NONE</code> or <code>ALL_OLD</code>.</p> 
      */
     inline void SetReturnValues(ReturnValue&& value) { m_returnValuesHasBeenSet = true; m_returnValues = std::move(value); }
 
@@ -481,9 +493,12 @@ namespace Model
      * <code>ReturnValues</code>.)</p> </li> <li> <p> <code>ALL_OLD</code> - If
      * <code>PutItem</code> overwrote an attribute name-value pair, then the content of
      * the old item is returned.</p> </li> </ul> <p>The values returned are strongly
-     * consistent.</p>  <p>The <code>ReturnValues</code> parameter is used by
-     * several DynamoDB operations; however, <code>PutItem</code> does not recognize
-     * any values other than <code>NONE</code> or <code>ALL_OLD</code>.</p> 
+     * consistent.</p> <p>There is no additional cost associated with requesting a
+     * return value aside from the small network and processing overhead of receiving a
+     * larger response. No read capacity units are consumed.</p>  <p>The
+     * <code>ReturnValues</code> parameter is used by several DynamoDB operations;
+     * however, <code>PutItem</code> does not recognize any values other than
+     * <code>NONE</code> or <code>ALL_OLD</code>.</p> 
      */
     inline PutItemRequest& WithReturnValues(const ReturnValue& value) { SetReturnValues(value); return *this;}
 
@@ -496,9 +511,12 @@ namespace Model
      * <code>ReturnValues</code>.)</p> </li> <li> <p> <code>ALL_OLD</code> - If
      * <code>PutItem</code> overwrote an attribute name-value pair, then the content of
      * the old item is returned.</p> </li> </ul> <p>The values returned are strongly
-     * consistent.</p>  <p>The <code>ReturnValues</code> parameter is used by
-     * several DynamoDB operations; however, <code>PutItem</code> does not recognize
-     * any values other than <code>NONE</code> or <code>ALL_OLD</code>.</p> 
+     * consistent.</p> <p>There is no additional cost associated with requesting a
+     * return value aside from the small network and processing overhead of receiving a
+     * larger response. No read capacity units are consumed.</p>  <p>The
+     * <code>ReturnValues</code> parameter is used by several DynamoDB operations;
+     * however, <code>PutItem</code> does not recognize any values other than
+     * <code>NONE</code> or <code>ALL_OLD</code>.</p> 
      */
     inline PutItemRequest& WithReturnValues(ReturnValue&& value) { SetReturnValues(std::move(value)); return *this;}
 
