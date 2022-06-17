@@ -106,7 +106,7 @@ namespace Model
      * <p>Represents the non-key attribute names which will be projected into the
      * index.</p> <p>For local secondary indexes, the total count of
      * <code>NonKeyAttributes</code> summed across all of the local secondary indexes,
-     * must not exceed 20. If you project the same attribute into two different
+     * must not exceed 100. If you project the same attribute into two different
      * indexes, this counts as two distinct attributes when determining the total.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNonKeyAttributes() const{ return m_nonKeyAttributes; }
@@ -115,7 +115,7 @@ namespace Model
      * <p>Represents the non-key attribute names which will be projected into the
      * index.</p> <p>For local secondary indexes, the total count of
      * <code>NonKeyAttributes</code> summed across all of the local secondary indexes,
-     * must not exceed 20. If you project the same attribute into two different
+     * must not exceed 100. If you project the same attribute into two different
      * indexes, this counts as two distinct attributes when determining the total.</p>
      */
     inline bool NonKeyAttributesHasBeenSet() const { return m_nonKeyAttributesHasBeenSet; }
@@ -124,7 +124,7 @@ namespace Model
      * <p>Represents the non-key attribute names which will be projected into the
      * index.</p> <p>For local secondary indexes, the total count of
      * <code>NonKeyAttributes</code> summed across all of the local secondary indexes,
-     * must not exceed 20. If you project the same attribute into two different
+     * must not exceed 100. If you project the same attribute into two different
      * indexes, this counts as two distinct attributes when determining the total.</p>
      */
     inline void SetNonKeyAttributes(const Aws::Vector<Aws::String>& value) { m_nonKeyAttributesHasBeenSet = true; m_nonKeyAttributes = value; }
@@ -133,7 +133,7 @@ namespace Model
      * <p>Represents the non-key attribute names which will be projected into the
      * index.</p> <p>For local secondary indexes, the total count of
      * <code>NonKeyAttributes</code> summed across all of the local secondary indexes,
-     * must not exceed 20. If you project the same attribute into two different
+     * must not exceed 100. If you project the same attribute into two different
      * indexes, this counts as two distinct attributes when determining the total.</p>
      */
     inline void SetNonKeyAttributes(Aws::Vector<Aws::String>&& value) { m_nonKeyAttributesHasBeenSet = true; m_nonKeyAttributes = std::move(value); }
@@ -142,7 +142,7 @@ namespace Model
      * <p>Represents the non-key attribute names which will be projected into the
      * index.</p> <p>For local secondary indexes, the total count of
      * <code>NonKeyAttributes</code> summed across all of the local secondary indexes,
-     * must not exceed 20. If you project the same attribute into two different
+     * must not exceed 100. If you project the same attribute into two different
      * indexes, this counts as two distinct attributes when determining the total.</p>
      */
     inline Projection& WithNonKeyAttributes(const Aws::Vector<Aws::String>& value) { SetNonKeyAttributes(value); return *this;}
@@ -151,7 +151,7 @@ namespace Model
      * <p>Represents the non-key attribute names which will be projected into the
      * index.</p> <p>For local secondary indexes, the total count of
      * <code>NonKeyAttributes</code> summed across all of the local secondary indexes,
-     * must not exceed 20. If you project the same attribute into two different
+     * must not exceed 100. If you project the same attribute into two different
      * indexes, this counts as two distinct attributes when determining the total.</p>
      */
     inline Projection& WithNonKeyAttributes(Aws::Vector<Aws::String>&& value) { SetNonKeyAttributes(std::move(value)); return *this;}
@@ -160,7 +160,7 @@ namespace Model
      * <p>Represents the non-key attribute names which will be projected into the
      * index.</p> <p>For local secondary indexes, the total count of
      * <code>NonKeyAttributes</code> summed across all of the local secondary indexes,
-     * must not exceed 20. If you project the same attribute into two different
+     * must not exceed 100. If you project the same attribute into two different
      * indexes, this counts as two distinct attributes when determining the total.</p>
      */
     inline Projection& AddNonKeyAttributes(const Aws::String& value) { m_nonKeyAttributesHasBeenSet = true; m_nonKeyAttributes.push_back(value); return *this; }
@@ -169,7 +169,7 @@ namespace Model
      * <p>Represents the non-key attribute names which will be projected into the
      * index.</p> <p>For local secondary indexes, the total count of
      * <code>NonKeyAttributes</code> summed across all of the local secondary indexes,
-     * must not exceed 20. If you project the same attribute into two different
+     * must not exceed 100. If you project the same attribute into two different
      * indexes, this counts as two distinct attributes when determining the total.</p>
      */
     inline Projection& AddNonKeyAttributes(Aws::String&& value) { m_nonKeyAttributesHasBeenSet = true; m_nonKeyAttributes.push_back(std::move(value)); return *this; }
@@ -178,7 +178,7 @@ namespace Model
      * <p>Represents the non-key attribute names which will be projected into the
      * index.</p> <p>For local secondary indexes, the total count of
      * <code>NonKeyAttributes</code> summed across all of the local secondary indexes,
-     * must not exceed 20. If you project the same attribute into two different
+     * must not exceed 100. If you project the same attribute into two different
      * indexes, this counts as two distinct attributes when determining the total.</p>
      */
     inline Projection& AddNonKeyAttributes(const char* value) { m_nonKeyAttributesHasBeenSet = true; m_nonKeyAttributes.push_back(value); return *this; }

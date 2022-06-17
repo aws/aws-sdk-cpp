@@ -354,8 +354,16 @@ namespace Model
 
         /**
          * <p>This operation allows you to perform batch reads or writes on data stored in
-         * DynamoDB, using PartiQL.</p>  <p>The entire batch must consist of either
-         * read statements or write statements, you cannot mix both in one batch.</p>
+         * DynamoDB, using PartiQL. Each read statement in a
+         * <code>BatchExecuteStatement</code> must specify an equality condition on all key
+         * attributes. This enforces that each <code>SELECT</code> statement in a batch
+         * returns at most a single item.</p>  <p>The entire batch must consist of
+         * either read statements or write statements, you cannot mix both in one
+         * batch.</p>   <p>A HTTP 200 response does not mean that all
+         * statements in the BatchExecuteStatement succeeded. Error details for individual
+         * statements can be found under the <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_BatchStatementResponse.html#DDB-Type-BatchStatementResponse-Error">Error</a>
+         * field of the <code>BatchStatementResponse</code> for each statement.</p>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchExecuteStatement">AWS
          * API Reference</a></p>
@@ -1238,40 +1246,19 @@ namespace Model
          * conditional put operation (add a new item if one with the specified primary key
          * doesn't exist), or replace an existing item if it has certain attribute values.
          * You can return the item's attribute values in the same operation, using the
-         * <code>ReturnValues</code> parameter.</p>  <p>This topic provides
-         * general information about the <code>PutItem</code> API.</p> <p>For information
-         * on how to call the <code>PutItem</code> API using the Amazon Web Services SDK in
-         * specific languages, see the following:</p> <ul> <li> <p> <a
-         * href="http://docs.aws.amazon.com/goto/aws-cli/dynamodb-2012-08-10/PutItem">
-         * PutItem in the Command Line Interface</a> </p> </li> <li> <p> <a
-         * href="http://docs.aws.amazon.com/goto/DotNetSDKV3/dynamodb-2012-08-10/PutItem">
-         * PutItem in the SDK for .NET</a> </p> </li> <li> <p> <a
-         * href="http://docs.aws.amazon.com/goto/SdkForCpp/dynamodb-2012-08-10/PutItem">
-         * PutItem in the SDK for C++</a> </p> </li> <li> <p> <a
-         * href="http://docs.aws.amazon.com/goto/SdkForGoV1/dynamodb-2012-08-10/PutItem">
-         * PutItem in the SDK for Go</a> </p> </li> <li> <p> <a
-         * href="http://docs.aws.amazon.com/goto/SdkForJava/dynamodb-2012-08-10/PutItem">
-         * PutItem in the SDK for Java</a> </p> </li> <li> <p> <a
-         * href="http://docs.aws.amazon.com/goto/AWSJavaScriptSDK/dynamodb-2012-08-10/PutItem">
-         * PutItem in the SDK for JavaScript</a> </p> </li> <li> <p> <a
-         * href="http://docs.aws.amazon.com/goto/SdkForPHPV3/dynamodb-2012-08-10/PutItem">
-         * PutItem in the SDK for PHP V3</a> </p> </li> <li> <p> <a
-         * href="http://docs.aws.amazon.com/goto/boto3/dynamodb-2012-08-10/PutItem">
-         * PutItem in the SDK for Python (Boto)</a> </p> </li> <li> <p> <a
-         * href="http://docs.aws.amazon.com/goto/SdkForRubyV2/dynamodb-2012-08-10/PutItem">
-         * PutItem in the SDK for Ruby V2</a> </p> </li> </ul>  <p>When you add
-         * an item, the primary key attributes are the only required attributes. Attribute
-         * values cannot be null.</p> <p>Empty String and Binary attribute values are
-         * allowed. Attribute values of type String and Binary must have a length greater
-         * than zero if the attribute is used as a key attribute for a table or index. Set
-         * type attributes cannot be empty. </p> <p>Invalid Requests with empty values will
-         * be rejected with a <code>ValidationException</code> exception.</p>  <p>To
-         * prevent a new item from replacing an existing item, use a conditional expression
-         * that contains the <code>attribute_not_exists</code> function with the name of
-         * the attribute being used as the partition key for the table. Since every record
-         * must contain that attribute, the <code>attribute_not_exists</code> function will
-         * only succeed if no matching item exists.</p>  <p>For more information
-         * about <code>PutItem</code>, see <a
+         * <code>ReturnValues</code> parameter.</p> <p>When you add an item, the primary
+         * key attributes are the only required attributes. Attribute values cannot be
+         * null.</p> <p>Empty String and Binary attribute values are allowed. Attribute
+         * values of type String and Binary must have a length greater than zero if the
+         * attribute is used as a key attribute for a table or index. Set type attributes
+         * cannot be empty. </p> <p>Invalid Requests with empty values will be rejected
+         * with a <code>ValidationException</code> exception.</p>  <p>To prevent a
+         * new item from replacing an existing item, use a conditional expression that
+         * contains the <code>attribute_not_exists</code> function with the name of the
+         * attribute being used as the partition key for the table. Since every record must
+         * contain that attribute, the <code>attribute_not_exists</code> function will only
+         * succeed if no matching item exists.</p>  <p>For more information about
+         * <code>PutItem</code>, see <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html">Working
          * with Items</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -1710,16 +1697,16 @@ namespace Model
          * <p>Modifies the provisioned throughput settings, global secondary indexes, or
          * DynamoDB Streams settings for a given table.</p> <p>You can only perform one of
          * the following operations at once:</p> <ul> <li> <p>Modify the provisioned
-         * throughput settings of the table.</p> </li> <li> <p>Enable or disable DynamoDB
-         * Streams on the table.</p> </li> <li> <p>Remove a global secondary index from the
-         * table.</p> </li> <li> <p>Create a new global secondary index on the table. After
-         * the index begins backfilling, you can use <code>UpdateTable</code> to perform
-         * other operations.</p> </li> </ul> <p> <code>UpdateTable</code> is an
-         * asynchronous operation; while it is executing, the table status changes from
-         * <code>ACTIVE</code> to <code>UPDATING</code>. While it is <code>UPDATING</code>,
-         * you cannot issue another <code>UpdateTable</code> request. When the table
-         * returns to the <code>ACTIVE</code> state, the <code>UpdateTable</code> operation
-         * is complete.</p><p><h3>See Also:</h3>   <a
+         * throughput settings of the table.</p> </li> <li> <p>Remove a global secondary
+         * index from the table.</p> </li> <li> <p>Create a new global secondary index on
+         * the table. After the index begins backfilling, you can use
+         * <code>UpdateTable</code> to perform other operations.</p> </li> </ul> <p>
+         * <code>UpdateTable</code> is an asynchronous operation; while it is executing,
+         * the table status changes from <code>ACTIVE</code> to <code>UPDATING</code>.
+         * While it is <code>UPDATING</code>, you cannot issue another
+         * <code>UpdateTable</code> request. When the table returns to the
+         * <code>ACTIVE</code> state, the <code>UpdateTable</code> operation is
+         * complete.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTable">AWS
          * API Reference</a></p>
          */

@@ -457,49 +457,49 @@ namespace Model
 
     /**
      * <p>An attribute of type List. For example:</p> <p> <code>"L": [ {"S": "Cookies"}
-     * , {"S": "Coffee"}, {"N", "3.14159"}]</code> </p>
+     * , {"S": "Coffee"}, {"N": "3.14159"}]</code> </p>
      */
     inline const Aws::Vector<AttributeValue>& GetL() const{ return m_l; }
 
     /**
      * <p>An attribute of type List. For example:</p> <p> <code>"L": [ {"S": "Cookies"}
-     * , {"S": "Coffee"}, {"N", "3.14159"}]</code> </p>
+     * , {"S": "Coffee"}, {"N": "3.14159"}]</code> </p>
      */
     inline bool LHasBeenSet() const { return m_lHasBeenSet; }
 
     /**
      * <p>An attribute of type List. For example:</p> <p> <code>"L": [ {"S": "Cookies"}
-     * , {"S": "Coffee"}, {"N", "3.14159"}]</code> </p>
+     * , {"S": "Coffee"}, {"N": "3.14159"}]</code> </p>
      */
     inline void SetL(const Aws::Vector<AttributeValue>& value) { m_lHasBeenSet = true; m_l = value; }
 
     /**
      * <p>An attribute of type List. For example:</p> <p> <code>"L": [ {"S": "Cookies"}
-     * , {"S": "Coffee"}, {"N", "3.14159"}]</code> </p>
+     * , {"S": "Coffee"}, {"N": "3.14159"}]</code> </p>
      */
     inline void SetL(Aws::Vector<AttributeValue>&& value) { m_lHasBeenSet = true; m_l = std::move(value); }
 
     /**
      * <p>An attribute of type List. For example:</p> <p> <code>"L": [ {"S": "Cookies"}
-     * , {"S": "Coffee"}, {"N", "3.14159"}]</code> </p>
+     * , {"S": "Coffee"}, {"N": "3.14159"}]</code> </p>
      */
     inline AttributeValue& WithL(const Aws::Vector<AttributeValue>& value) { SetL(value); return *this;}
 
     /**
      * <p>An attribute of type List. For example:</p> <p> <code>"L": [ {"S": "Cookies"}
-     * , {"S": "Coffee"}, {"N", "3.14159"}]</code> </p>
+     * , {"S": "Coffee"}, {"N": "3.14159"}]</code> </p>
      */
     inline AttributeValue& WithL(Aws::Vector<AttributeValue>&& value) { SetL(std::move(value)); return *this;}
 
     /**
      * <p>An attribute of type List. For example:</p> <p> <code>"L": [ {"S": "Cookies"}
-     * , {"S": "Coffee"}, {"N", "3.14159"}]</code> </p>
+     * , {"S": "Coffee"}, {"N": "3.14159"}]</code> </p>
      */
     inline AttributeValue& AddL(const AttributeValue& value) { m_lHasBeenSet = true; m_l.push_back(value); return *this; }
 
     /**
      * <p>An attribute of type List. For example:</p> <p> <code>"L": [ {"S": "Cookies"}
-     * , {"S": "Coffee"}, {"N", "3.14159"}]</code> </p>
+     * , {"S": "Coffee"}, {"N": "3.14159"}]</code> </p>
      */
     inline AttributeValue& AddL(AttributeValue&& value) { m_lHasBeenSet = true; m_l.push_back(std::move(value)); return *this; }
 

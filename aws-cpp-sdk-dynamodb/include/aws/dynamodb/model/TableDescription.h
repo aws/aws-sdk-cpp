@@ -683,7 +683,7 @@ namespace Model
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names
      * that are projected into the secondary index. The total count of attributes
      * provided in <code>NonKeyAttributes</code>, summed across all of the secondary
-     * indexes, must not exceed 20. If you project the same attribute into two
+     * indexes, must not exceed 100. If you project the same attribute into two
      * different indexes, this counts as two distinct attributes when determining the
      * total.</p> </li> </ul> </li> <li> <p> <code>IndexSizeBytes</code> - Represents
      * the total size of the index, in bytes. DynamoDB updates this value approximately
@@ -717,7 +717,7 @@ namespace Model
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names
      * that are projected into the secondary index. The total count of attributes
      * provided in <code>NonKeyAttributes</code>, summed across all of the secondary
-     * indexes, must not exceed 20. If you project the same attribute into two
+     * indexes, must not exceed 100. If you project the same attribute into two
      * different indexes, this counts as two distinct attributes when determining the
      * total.</p> </li> </ul> </li> <li> <p> <code>IndexSizeBytes</code> - Represents
      * the total size of the index, in bytes. DynamoDB updates this value approximately
@@ -751,7 +751,7 @@ namespace Model
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names
      * that are projected into the secondary index. The total count of attributes
      * provided in <code>NonKeyAttributes</code>, summed across all of the secondary
-     * indexes, must not exceed 20. If you project the same attribute into two
+     * indexes, must not exceed 100. If you project the same attribute into two
      * different indexes, this counts as two distinct attributes when determining the
      * total.</p> </li> </ul> </li> <li> <p> <code>IndexSizeBytes</code> - Represents
      * the total size of the index, in bytes. DynamoDB updates this value approximately
@@ -785,7 +785,7 @@ namespace Model
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names
      * that are projected into the secondary index. The total count of attributes
      * provided in <code>NonKeyAttributes</code>, summed across all of the secondary
-     * indexes, must not exceed 20. If you project the same attribute into two
+     * indexes, must not exceed 100. If you project the same attribute into two
      * different indexes, this counts as two distinct attributes when determining the
      * total.</p> </li> </ul> </li> <li> <p> <code>IndexSizeBytes</code> - Represents
      * the total size of the index, in bytes. DynamoDB updates this value approximately
@@ -819,7 +819,7 @@ namespace Model
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names
      * that are projected into the secondary index. The total count of attributes
      * provided in <code>NonKeyAttributes</code>, summed across all of the secondary
-     * indexes, must not exceed 20. If you project the same attribute into two
+     * indexes, must not exceed 100. If you project the same attribute into two
      * different indexes, this counts as two distinct attributes when determining the
      * total.</p> </li> </ul> </li> <li> <p> <code>IndexSizeBytes</code> - Represents
      * the total size of the index, in bytes. DynamoDB updates this value approximately
@@ -853,7 +853,7 @@ namespace Model
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names
      * that are projected into the secondary index. The total count of attributes
      * provided in <code>NonKeyAttributes</code>, summed across all of the secondary
-     * indexes, must not exceed 20. If you project the same attribute into two
+     * indexes, must not exceed 100. If you project the same attribute into two
      * different indexes, this counts as two distinct attributes when determining the
      * total.</p> </li> </ul> </li> <li> <p> <code>IndexSizeBytes</code> - Represents
      * the total size of the index, in bytes. DynamoDB updates this value approximately
@@ -887,7 +887,7 @@ namespace Model
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names
      * that are projected into the secondary index. The total count of attributes
      * provided in <code>NonKeyAttributes</code>, summed across all of the secondary
-     * indexes, must not exceed 20. If you project the same attribute into two
+     * indexes, must not exceed 100. If you project the same attribute into two
      * different indexes, this counts as two distinct attributes when determining the
      * total.</p> </li> </ul> </li> <li> <p> <code>IndexSizeBytes</code> - Represents
      * the total size of the index, in bytes. DynamoDB updates this value approximately
@@ -921,7 +921,7 @@ namespace Model
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names
      * that are projected into the secondary index. The total count of attributes
      * provided in <code>NonKeyAttributes</code>, summed across all of the secondary
-     * indexes, must not exceed 20. If you project the same attribute into two
+     * indexes, must not exceed 100. If you project the same attribute into two
      * different indexes, this counts as two distinct attributes when determining the
      * total.</p> </li> </ul> </li> <li> <p> <code>IndexSizeBytes</code> - Represents
      * the total size of the index, in bytes. DynamoDB updates this value approximately
@@ -975,7 +975,7 @@ namespace Model
      * </li> </ul> </li> <li> <p> <code>NonKeyAttributes</code> - A list of one or more
      * non-key attribute names that are projected into the secondary index. The total
      * count of attributes provided in <code>NonKeyAttributes</code>, summed across all
-     * of the secondary indexes, must not exceed 20. If you project the same attribute
+     * of the secondary indexes, must not exceed 100. If you project the same attribute
      * into two different indexes, this counts as two distinct attributes when
      * determining the total.</p> </li> </ul> </li> <li> <p>
      * <code>ProvisionedThroughput</code> - The provisioned throughput settings for the
@@ -1026,7 +1026,7 @@ namespace Model
      * </li> </ul> </li> <li> <p> <code>NonKeyAttributes</code> - A list of one or more
      * non-key attribute names that are projected into the secondary index. The total
      * count of attributes provided in <code>NonKeyAttributes</code>, summed across all
-     * of the secondary indexes, must not exceed 20. If you project the same attribute
+     * of the secondary indexes, must not exceed 100. If you project the same attribute
      * into two different indexes, this counts as two distinct attributes when
      * determining the total.</p> </li> </ul> </li> <li> <p>
      * <code>ProvisionedThroughput</code> - The provisioned throughput settings for the
@@ -1077,7 +1077,7 @@ namespace Model
      * </li> </ul> </li> <li> <p> <code>NonKeyAttributes</code> - A list of one or more
      * non-key attribute names that are projected into the secondary index. The total
      * count of attributes provided in <code>NonKeyAttributes</code>, summed across all
-     * of the secondary indexes, must not exceed 20. If you project the same attribute
+     * of the secondary indexes, must not exceed 100. If you project the same attribute
      * into two different indexes, this counts as two distinct attributes when
      * determining the total.</p> </li> </ul> </li> <li> <p>
      * <code>ProvisionedThroughput</code> - The provisioned throughput settings for the
@@ -1128,7 +1128,7 @@ namespace Model
      * </li> </ul> </li> <li> <p> <code>NonKeyAttributes</code> - A list of one or more
      * non-key attribute names that are projected into the secondary index. The total
      * count of attributes provided in <code>NonKeyAttributes</code>, summed across all
-     * of the secondary indexes, must not exceed 20. If you project the same attribute
+     * of the secondary indexes, must not exceed 100. If you project the same attribute
      * into two different indexes, this counts as two distinct attributes when
      * determining the total.</p> </li> </ul> </li> <li> <p>
      * <code>ProvisionedThroughput</code> - The provisioned throughput settings for the
@@ -1179,7 +1179,7 @@ namespace Model
      * </li> </ul> </li> <li> <p> <code>NonKeyAttributes</code> - A list of one or more
      * non-key attribute names that are projected into the secondary index. The total
      * count of attributes provided in <code>NonKeyAttributes</code>, summed across all
-     * of the secondary indexes, must not exceed 20. If you project the same attribute
+     * of the secondary indexes, must not exceed 100. If you project the same attribute
      * into two different indexes, this counts as two distinct attributes when
      * determining the total.</p> </li> </ul> </li> <li> <p>
      * <code>ProvisionedThroughput</code> - The provisioned throughput settings for the
@@ -1230,7 +1230,7 @@ namespace Model
      * </li> </ul> </li> <li> <p> <code>NonKeyAttributes</code> - A list of one or more
      * non-key attribute names that are projected into the secondary index. The total
      * count of attributes provided in <code>NonKeyAttributes</code>, summed across all
-     * of the secondary indexes, must not exceed 20. If you project the same attribute
+     * of the secondary indexes, must not exceed 100. If you project the same attribute
      * into two different indexes, this counts as two distinct attributes when
      * determining the total.</p> </li> </ul> </li> <li> <p>
      * <code>ProvisionedThroughput</code> - The provisioned throughput settings for the
@@ -1281,7 +1281,7 @@ namespace Model
      * </li> </ul> </li> <li> <p> <code>NonKeyAttributes</code> - A list of one or more
      * non-key attribute names that are projected into the secondary index. The total
      * count of attributes provided in <code>NonKeyAttributes</code>, summed across all
-     * of the secondary indexes, must not exceed 20. If you project the same attribute
+     * of the secondary indexes, must not exceed 100. If you project the same attribute
      * into two different indexes, this counts as two distinct attributes when
      * determining the total.</p> </li> </ul> </li> <li> <p>
      * <code>ProvisionedThroughput</code> - The provisioned throughput settings for the
@@ -1332,7 +1332,7 @@ namespace Model
      * </li> </ul> </li> <li> <p> <code>NonKeyAttributes</code> - A list of one or more
      * non-key attribute names that are projected into the secondary index. The total
      * count of attributes provided in <code>NonKeyAttributes</code>, summed across all
-     * of the secondary indexes, must not exceed 20. If you project the same attribute
+     * of the secondary indexes, must not exceed 100. If you project the same attribute
      * into two different indexes, this counts as two distinct attributes when
      * determining the total.</p> </li> </ul> </li> <li> <p>
      * <code>ProvisionedThroughput</code> - The provisioned throughput settings for the
