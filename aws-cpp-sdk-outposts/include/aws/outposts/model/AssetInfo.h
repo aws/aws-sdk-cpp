@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/outposts/model/AssetType.h>
 #include <aws/outposts/model/ComputeAttributes.h>
+#include <aws/outposts/model/AssetLocation.h>
 #include <utility>
 
 namespace Aws
@@ -182,6 +183,37 @@ namespace Model
      */
     inline AssetInfo& WithComputeAttributes(ComputeAttributes&& value) { SetComputeAttributes(std::move(value)); return *this;}
 
+
+    /**
+     * <p> The position of an asset in a rack. </p>
+     */
+    inline const AssetLocation& GetAssetLocation() const{ return m_assetLocation; }
+
+    /**
+     * <p> The position of an asset in a rack. </p>
+     */
+    inline bool AssetLocationHasBeenSet() const { return m_assetLocationHasBeenSet; }
+
+    /**
+     * <p> The position of an asset in a rack. </p>
+     */
+    inline void SetAssetLocation(const AssetLocation& value) { m_assetLocationHasBeenSet = true; m_assetLocation = value; }
+
+    /**
+     * <p> The position of an asset in a rack. </p>
+     */
+    inline void SetAssetLocation(AssetLocation&& value) { m_assetLocationHasBeenSet = true; m_assetLocation = std::move(value); }
+
+    /**
+     * <p> The position of an asset in a rack. </p>
+     */
+    inline AssetInfo& WithAssetLocation(const AssetLocation& value) { SetAssetLocation(value); return *this;}
+
+    /**
+     * <p> The position of an asset in a rack. </p>
+     */
+    inline AssetInfo& WithAssetLocation(AssetLocation&& value) { SetAssetLocation(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_assetId;
@@ -195,6 +227,9 @@ namespace Model
 
     ComputeAttributes m_computeAttributes;
     bool m_computeAttributesHasBeenSet;
+
+    AssetLocation m_assetLocation;
+    bool m_assetLocationHasBeenSet;
   };
 
 } // namespace Model
