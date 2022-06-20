@@ -128,7 +128,7 @@ namespace Model
             <p>The list of subnets to connect to in the client virtual private
      * cloud (VPC). AWS creates elastic network interfaces inside these subnets. Client
      * applications use elastic network interfaces to produce and consume data. Client
-     * subnets can't be in Availability Zone us-east-1e.</p>
+     * subnets can't occupy the Availability Zone with ID use use1-az3.</p>
          
      */
     inline const Aws::Vector<Aws::String>& GetClientSubnets() const{ return m_clientSubnets; }
@@ -138,7 +138,7 @@ namespace Model
             <p>The list of subnets to connect to in the client virtual private
      * cloud (VPC). AWS creates elastic network interfaces inside these subnets. Client
      * applications use elastic network interfaces to produce and consume data. Client
-     * subnets can't be in Availability Zone us-east-1e.</p>
+     * subnets can't occupy the Availability Zone with ID use use1-az3.</p>
          
      */
     inline bool ClientSubnetsHasBeenSet() const { return m_clientSubnetsHasBeenSet; }
@@ -148,7 +148,7 @@ namespace Model
             <p>The list of subnets to connect to in the client virtual private
      * cloud (VPC). AWS creates elastic network interfaces inside these subnets. Client
      * applications use elastic network interfaces to produce and consume data. Client
-     * subnets can't be in Availability Zone us-east-1e.</p>
+     * subnets can't occupy the Availability Zone with ID use use1-az3.</p>
          
      */
     inline void SetClientSubnets(const Aws::Vector<Aws::String>& value) { m_clientSubnetsHasBeenSet = true; m_clientSubnets = value; }
@@ -158,7 +158,7 @@ namespace Model
             <p>The list of subnets to connect to in the client virtual private
      * cloud (VPC). AWS creates elastic network interfaces inside these subnets. Client
      * applications use elastic network interfaces to produce and consume data. Client
-     * subnets can't be in Availability Zone us-east-1e.</p>
+     * subnets can't occupy the Availability Zone with ID use use1-az3.</p>
          
      */
     inline void SetClientSubnets(Aws::Vector<Aws::String>&& value) { m_clientSubnetsHasBeenSet = true; m_clientSubnets = std::move(value); }
@@ -168,7 +168,7 @@ namespace Model
             <p>The list of subnets to connect to in the client virtual private
      * cloud (VPC). AWS creates elastic network interfaces inside these subnets. Client
      * applications use elastic network interfaces to produce and consume data. Client
-     * subnets can't be in Availability Zone us-east-1e.</p>
+     * subnets can't occupy the Availability Zone with ID use use1-az3.</p>
          
      */
     inline BrokerNodeGroupInfo& WithClientSubnets(const Aws::Vector<Aws::String>& value) { SetClientSubnets(value); return *this;}
@@ -178,7 +178,7 @@ namespace Model
             <p>The list of subnets to connect to in the client virtual private
      * cloud (VPC). AWS creates elastic network interfaces inside these subnets. Client
      * applications use elastic network interfaces to produce and consume data. Client
-     * subnets can't be in Availability Zone us-east-1e.</p>
+     * subnets can't occupy the Availability Zone with ID use use1-az3.</p>
          
      */
     inline BrokerNodeGroupInfo& WithClientSubnets(Aws::Vector<Aws::String>&& value) { SetClientSubnets(std::move(value)); return *this;}
@@ -188,7 +188,7 @@ namespace Model
             <p>The list of subnets to connect to in the client virtual private
      * cloud (VPC). AWS creates elastic network interfaces inside these subnets. Client
      * applications use elastic network interfaces to produce and consume data. Client
-     * subnets can't be in Availability Zone us-east-1e.</p>
+     * subnets can't occupy the Availability Zone with ID use use1-az3.</p>
          
      */
     inline BrokerNodeGroupInfo& AddClientSubnets(const Aws::String& value) { m_clientSubnetsHasBeenSet = true; m_clientSubnets.push_back(value); return *this; }
@@ -198,7 +198,7 @@ namespace Model
             <p>The list of subnets to connect to in the client virtual private
      * cloud (VPC). AWS creates elastic network interfaces inside these subnets. Client
      * applications use elastic network interfaces to produce and consume data. Client
-     * subnets can't be in Availability Zone us-east-1e.</p>
+     * subnets can't occupy the Availability Zone with ID use use1-az3.</p>
          
      */
     inline BrokerNodeGroupInfo& AddClientSubnets(Aws::String&& value) { m_clientSubnetsHasBeenSet = true; m_clientSubnets.push_back(std::move(value)); return *this; }
@@ -208,7 +208,7 @@ namespace Model
             <p>The list of subnets to connect to in the client virtual private
      * cloud (VPC). AWS creates elastic network interfaces inside these subnets. Client
      * applications use elastic network interfaces to produce and consume data. Client
-     * subnets can't be in Availability Zone us-east-1e.</p>
+     * subnets can't occupy the Availability Zone with ID use use1-az3.</p>
          
      */
     inline BrokerNodeGroupInfo& AddClientSubnets(const char* value) { m_clientSubnetsHasBeenSet = true; m_clientSubnets.push_back(value); return *this; }

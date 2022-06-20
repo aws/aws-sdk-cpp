@@ -40,6 +40,7 @@
 #include <aws/ds/model/DescribeEventTopicsResult.h>
 #include <aws/ds/model/DescribeLDAPSSettingsResult.h>
 #include <aws/ds/model/DescribeRegionsResult.h>
+#include <aws/ds/model/DescribeSettingsResult.h>
 #include <aws/ds/model/DescribeSharedDirectoriesResult.h>
 #include <aws/ds/model/DescribeSnapshotsResult.h>
 #include <aws/ds/model/DescribeTrustsResult.h>
@@ -72,6 +73,7 @@
 #include <aws/ds/model/UpdateConditionalForwarderResult.h>
 #include <aws/ds/model/UpdateNumberOfDomainControllersResult.h>
 #include <aws/ds/model/UpdateRadiusResult.h>
+#include <aws/ds/model/UpdateSettingsResult.h>
 #include <aws/ds/model/UpdateTrustResult.h>
 #include <aws/ds/model/VerifyTrustResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -142,6 +144,7 @@ namespace Model
         class DescribeEventTopicsRequest;
         class DescribeLDAPSSettingsRequest;
         class DescribeRegionsRequest;
+        class DescribeSettingsRequest;
         class DescribeSharedDirectoriesRequest;
         class DescribeSnapshotsRequest;
         class DescribeTrustsRequest;
@@ -174,6 +177,7 @@ namespace Model
         class UpdateConditionalForwarderRequest;
         class UpdateNumberOfDomainControllersRequest;
         class UpdateRadiusRequest;
+        class UpdateSettingsRequest;
         class UpdateTrustRequest;
         class VerifyTrustRequest;
 
@@ -206,6 +210,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeEventTopicsResult, DirectoryServiceError> DescribeEventTopicsOutcome;
         typedef Aws::Utils::Outcome<DescribeLDAPSSettingsResult, DirectoryServiceError> DescribeLDAPSSettingsOutcome;
         typedef Aws::Utils::Outcome<DescribeRegionsResult, DirectoryServiceError> DescribeRegionsOutcome;
+        typedef Aws::Utils::Outcome<DescribeSettingsResult, DirectoryServiceError> DescribeSettingsOutcome;
         typedef Aws::Utils::Outcome<DescribeSharedDirectoriesResult, DirectoryServiceError> DescribeSharedDirectoriesOutcome;
         typedef Aws::Utils::Outcome<DescribeSnapshotsResult, DirectoryServiceError> DescribeSnapshotsOutcome;
         typedef Aws::Utils::Outcome<DescribeTrustsResult, DirectoryServiceError> DescribeTrustsOutcome;
@@ -238,6 +243,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateConditionalForwarderResult, DirectoryServiceError> UpdateConditionalForwarderOutcome;
         typedef Aws::Utils::Outcome<UpdateNumberOfDomainControllersResult, DirectoryServiceError> UpdateNumberOfDomainControllersOutcome;
         typedef Aws::Utils::Outcome<UpdateRadiusResult, DirectoryServiceError> UpdateRadiusOutcome;
+        typedef Aws::Utils::Outcome<UpdateSettingsResult, DirectoryServiceError> UpdateSettingsOutcome;
         typedef Aws::Utils::Outcome<UpdateTrustResult, DirectoryServiceError> UpdateTrustOutcome;
         typedef Aws::Utils::Outcome<VerifyTrustResult, DirectoryServiceError> VerifyTrustOutcome;
 
@@ -270,6 +276,7 @@ namespace Model
         typedef std::future<DescribeEventTopicsOutcome> DescribeEventTopicsOutcomeCallable;
         typedef std::future<DescribeLDAPSSettingsOutcome> DescribeLDAPSSettingsOutcomeCallable;
         typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
+        typedef std::future<DescribeSettingsOutcome> DescribeSettingsOutcomeCallable;
         typedef std::future<DescribeSharedDirectoriesOutcome> DescribeSharedDirectoriesOutcomeCallable;
         typedef std::future<DescribeSnapshotsOutcome> DescribeSnapshotsOutcomeCallable;
         typedef std::future<DescribeTrustsOutcome> DescribeTrustsOutcomeCallable;
@@ -302,6 +309,7 @@ namespace Model
         typedef std::future<UpdateConditionalForwarderOutcome> UpdateConditionalForwarderOutcomeCallable;
         typedef std::future<UpdateNumberOfDomainControllersOutcome> UpdateNumberOfDomainControllersOutcomeCallable;
         typedef std::future<UpdateRadiusOutcome> UpdateRadiusOutcomeCallable;
+        typedef std::future<UpdateSettingsOutcome> UpdateSettingsOutcomeCallable;
         typedef std::future<UpdateTrustOutcome> UpdateTrustOutcomeCallable;
         typedef std::future<VerifyTrustOutcome> VerifyTrustOutcomeCallable;
 } // namespace Model
@@ -337,6 +345,7 @@ namespace Model
     typedef std::function<void(const DirectoryServiceClient*, const Model::DescribeEventTopicsRequest&, const Model::DescribeEventTopicsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEventTopicsResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::DescribeLDAPSSettingsRequest&, const Model::DescribeLDAPSSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLDAPSSettingsResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::DescribeRegionsRequest&, const Model::DescribeRegionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRegionsResponseReceivedHandler;
+    typedef std::function<void(const DirectoryServiceClient*, const Model::DescribeSettingsRequest&, const Model::DescribeSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSettingsResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::DescribeSharedDirectoriesRequest&, const Model::DescribeSharedDirectoriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSharedDirectoriesResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::DescribeSnapshotsRequest&, const Model::DescribeSnapshotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSnapshotsResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::DescribeTrustsRequest&, const Model::DescribeTrustsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTrustsResponseReceivedHandler;
@@ -369,6 +378,7 @@ namespace Model
     typedef std::function<void(const DirectoryServiceClient*, const Model::UpdateConditionalForwarderRequest&, const Model::UpdateConditionalForwarderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateConditionalForwarderResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::UpdateNumberOfDomainControllersRequest&, const Model::UpdateNumberOfDomainControllersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateNumberOfDomainControllersResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::UpdateRadiusRequest&, const Model::UpdateRadiusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRadiusResponseReceivedHandler;
+    typedef std::function<void(const DirectoryServiceClient*, const Model::UpdateSettingsRequest&, const Model::UpdateSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSettingsResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::UpdateTrustRequest&, const Model::UpdateTrustOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTrustResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::VerifyTrustRequest&, const Model::VerifyTrustOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > VerifyTrustResponseReceivedHandler;
 
@@ -1007,6 +1017,24 @@ namespace Model
         virtual void DescribeRegionsAsync(const Model::DescribeRegionsRequest& request, const DescribeRegionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves information about the configurable settings for the specified
+         * directory.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeSettingsOutcome DescribeSettings(const Model::DescribeSettingsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeSettings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeSettingsOutcomeCallable DescribeSettingsCallable(const Model::DescribeSettingsRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeSettingsAsync(const Model::DescribeSettingsRequest& request, const DescribeSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns the shared directories in your account. </p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeSharedDirectories">AWS
@@ -1631,6 +1659,24 @@ namespace Model
         virtual void UpdateRadiusAsync(const Model::UpdateRadiusRequest& request, const UpdateRadiusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates the configurable settings for the specified directory.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateSettingsOutcome UpdateSettings(const Model::UpdateSettingsRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateSettings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateSettingsOutcomeCallable UpdateSettingsCallable(const Model::UpdateSettingsRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateSettingsAsync(const Model::UpdateSettingsRequest& request, const UpdateSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates the trust that has been set up between your Managed Microsoft AD
          * directory and an self-managed Active Directory.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateTrust">AWS API
@@ -1701,6 +1747,7 @@ namespace Model
         void DescribeEventTopicsAsyncHelper(const Model::DescribeEventTopicsRequest& request, const DescribeEventTopicsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeLDAPSSettingsAsyncHelper(const Model::DescribeLDAPSSettingsRequest& request, const DescribeLDAPSSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeRegionsAsyncHelper(const Model::DescribeRegionsRequest& request, const DescribeRegionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeSettingsAsyncHelper(const Model::DescribeSettingsRequest& request, const DescribeSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeSharedDirectoriesAsyncHelper(const Model::DescribeSharedDirectoriesRequest& request, const DescribeSharedDirectoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeSnapshotsAsyncHelper(const Model::DescribeSnapshotsRequest& request, const DescribeSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTrustsAsyncHelper(const Model::DescribeTrustsRequest& request, const DescribeTrustsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1733,6 +1780,7 @@ namespace Model
         void UpdateConditionalForwarderAsyncHelper(const Model::UpdateConditionalForwarderRequest& request, const UpdateConditionalForwarderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateNumberOfDomainControllersAsyncHelper(const Model::UpdateNumberOfDomainControllersRequest& request, const UpdateNumberOfDomainControllersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateRadiusAsyncHelper(const Model::UpdateRadiusRequest& request, const UpdateRadiusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateSettingsAsyncHelper(const Model::UpdateSettingsRequest& request, const UpdateSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateTrustAsyncHelper(const Model::UpdateTrustRequest& request, const UpdateTrustResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void VerifyTrustAsyncHelper(const Model::VerifyTrustRequest& request, const VerifyTrustResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 

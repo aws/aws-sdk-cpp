@@ -16,7 +16,8 @@ namespace Model
   enum class ClientAuthenticationType
   {
     NOT_SET,
-    SmartCard
+    SmartCard,
+    SmartCardOrPassword
   };
 
 namespace ClientAuthenticationTypeMapper

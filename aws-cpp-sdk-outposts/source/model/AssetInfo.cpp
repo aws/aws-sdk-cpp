@@ -23,7 +23,8 @@ AssetInfo::AssetInfo() :
     m_rackIdHasBeenSet(false),
     m_assetType(AssetType::NOT_SET),
     m_assetTypeHasBeenSet(false),
-    m_computeAttributesHasBeenSet(false)
+    m_computeAttributesHasBeenSet(false),
+    m_assetLocationHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ AssetInfo::AssetInfo(JsonView jsonValue) :
     m_rackIdHasBeenSet(false),
     m_assetType(AssetType::NOT_SET),
     m_assetTypeHasBeenSet(false),
-    m_computeAttributesHasBeenSet(false)
+    m_computeAttributesHasBeenSet(false),
+    m_assetLocationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -67,6 +69,13 @@ AssetInfo& AssetInfo::operator =(JsonView jsonValue)
     m_computeAttributesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AssetLocation"))
+  {
+    m_assetLocation = jsonValue.GetObject("AssetLocation");
+
+    m_assetLocationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -94,6 +103,12 @@ JsonValue AssetInfo::Jsonize() const
   if(m_computeAttributesHasBeenSet)
   {
    payload.WithObject("ComputeAttributes", m_computeAttributes.Jsonize());
+
+  }
+
+  if(m_assetLocationHasBeenSet)
+  {
+   payload.WithObject("AssetLocation", m_assetLocation.Jsonize());
 
   }
 

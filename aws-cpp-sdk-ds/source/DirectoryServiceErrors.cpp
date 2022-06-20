@@ -8,6 +8,7 @@
 #include <aws/ds/DirectoryServiceErrors.h>
 #include <aws/ds/model/ClientException.h>
 #include <aws/ds/model/EntityAlreadyExistsException.h>
+#include <aws/ds/model/UnsupportedSettingsException.h>
 #include <aws/ds/model/DirectoryAlreadySharedException.h>
 #include <aws/ds/model/DirectoryAlreadyInRegionException.h>
 #include <aws/ds/model/InvalidLDAPSStatusException.h>
@@ -25,6 +26,7 @@
 #include <aws/ds/model/CertificateDoesNotExistException.h>
 #include <aws/ds/model/CertificateAlreadyExistsException.h>
 #include <aws/ds/model/InvalidPasswordException.h>
+#include <aws/ds/model/IncompatibleSettingsException.h>
 #include <aws/ds/model/DirectoryLimitExceededException.h>
 #include <aws/ds/model/DirectoryNotSharedException.h>
 #include <aws/ds/model/CertificateInUseException.h>
@@ -60,6 +62,12 @@ template<> AWS_DIRECTORYSERVICE_API EntityAlreadyExistsException DirectoryServic
 {
   assert(this->GetErrorType() == DirectoryServiceErrors::ENTITY_ALREADY_EXISTS);
   return EntityAlreadyExistsException(this->GetJsonPayload().View());
+}
+
+template<> AWS_DIRECTORYSERVICE_API UnsupportedSettingsException DirectoryServiceError::GetModeledError()
+{
+  assert(this->GetErrorType() == DirectoryServiceErrors::UNSUPPORTED_SETTINGS);
+  return UnsupportedSettingsException(this->GetJsonPayload().View());
 }
 
 template<> AWS_DIRECTORYSERVICE_API DirectoryAlreadySharedException DirectoryServiceError::GetModeledError()
@@ -164,6 +172,12 @@ template<> AWS_DIRECTORYSERVICE_API InvalidPasswordException DirectoryServiceErr
   return InvalidPasswordException(this->GetJsonPayload().View());
 }
 
+template<> AWS_DIRECTORYSERVICE_API IncompatibleSettingsException DirectoryServiceError::GetModeledError()
+{
+  assert(this->GetErrorType() == DirectoryServiceErrors::INCOMPATIBLE_SETTINGS);
+  return IncompatibleSettingsException(this->GetJsonPayload().View());
+}
+
 template<> AWS_DIRECTORYSERVICE_API DirectoryLimitExceededException DirectoryServiceError::GetModeledError()
 {
   assert(this->GetErrorType() == DirectoryServiceErrors::DIRECTORY_LIMIT_EXCEEDED);
@@ -259,6 +273,7 @@ namespace DirectoryServiceErrorMapper
 
 static const int CLIENT_HASH = HashingUtils::HashString("ClientException");
 static const int ENTITY_ALREADY_EXISTS_HASH = HashingUtils::HashString("EntityAlreadyExistsException");
+static const int UNSUPPORTED_SETTINGS_HASH = HashingUtils::HashString("UnsupportedSettingsException");
 static const int DIRECTORY_ALREADY_SHARED_HASH = HashingUtils::HashString("DirectoryAlreadySharedException");
 static const int DIRECTORY_ALREADY_IN_REGION_HASH = HashingUtils::HashString("DirectoryAlreadyInRegionException");
 static const int INVALID_L_D_A_P_S_STATUS_HASH = HashingUtils::HashString("InvalidLDAPSStatusException");
@@ -275,6 +290,7 @@ static const int UNSUPPORTED_OPERATION_HASH = HashingUtils::HashString("Unsuppor
 static const int CERTIFICATE_DOES_NOT_EXIST_HASH = HashingUtils::HashString("CertificateDoesNotExistException");
 static const int CERTIFICATE_ALREADY_EXISTS_HASH = HashingUtils::HashString("CertificateAlreadyExistsException");
 static const int INVALID_PASSWORD_HASH = HashingUtils::HashString("InvalidPasswordException");
+static const int INCOMPATIBLE_SETTINGS_HASH = HashingUtils::HashString("IncompatibleSettingsException");
 static const int DIRECTORY_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("DirectoryLimitExceededException");
 static const int DIRECTORY_NOT_SHARED_HASH = HashingUtils::HashString("DirectoryNotSharedException");
 static const int CERTIFICATE_IN_USE_HASH = HashingUtils::HashString("CertificateInUseException");
@@ -303,6 +319,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == ENTITY_ALREADY_EXISTS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::ENTITY_ALREADY_EXISTS), false);
+  }
+  else if (hashCode == UNSUPPORTED_SETTINGS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::UNSUPPORTED_SETTINGS), false);
   }
   else if (hashCode == DIRECTORY_ALREADY_SHARED_HASH)
   {
@@ -367,6 +387,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_PASSWORD_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::INVALID_PASSWORD), false);
+  }
+  else if (hashCode == INCOMPATIBLE_SETTINGS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::INCOMPATIBLE_SETTINGS), false);
   }
   else if (hashCode == DIRECTORY_LIMIT_EXCEEDED_HASH)
   {

@@ -49,6 +49,7 @@
 #include <aws/ds/model/DescribeEventTopicsRequest.h>
 #include <aws/ds/model/DescribeLDAPSSettingsRequest.h>
 #include <aws/ds/model/DescribeRegionsRequest.h>
+#include <aws/ds/model/DescribeSettingsRequest.h>
 #include <aws/ds/model/DescribeSharedDirectoriesRequest.h>
 #include <aws/ds/model/DescribeSnapshotsRequest.h>
 #include <aws/ds/model/DescribeTrustsRequest.h>
@@ -81,6 +82,7 @@
 #include <aws/ds/model/UpdateConditionalForwarderRequest.h>
 #include <aws/ds/model/UpdateNumberOfDomainControllersRequest.h>
 #include <aws/ds/model/UpdateRadiusRequest.h>
+#include <aws/ds/model/UpdateSettingsRequest.h>
 #include <aws/ds/model/UpdateTrustRequest.h>
 #include <aws/ds/model/VerifyTrustRequest.h>
 
@@ -853,6 +855,30 @@ void DirectoryServiceClient::DescribeRegionsAsyncHelper(const DescribeRegionsReq
   handler(this, request, DescribeRegions(request), context);
 }
 
+DescribeSettingsOutcome DirectoryServiceClient::DescribeSettings(const DescribeSettingsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeSettingsOutcomeCallable DirectoryServiceClient::DescribeSettingsCallable(const DescribeSettingsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeSettings(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DirectoryServiceClient::DescribeSettingsAsync(const DescribeSettingsRequest& request, const DescribeSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeSettingsAsyncHelper( request, handler, context ); } );
+}
+
+void DirectoryServiceClient::DescribeSettingsAsyncHelper(const DescribeSettingsRequest& request, const DescribeSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeSettings(request), context);
+}
+
 DescribeSharedDirectoriesOutcome DirectoryServiceClient::DescribeSharedDirectories(const DescribeSharedDirectoriesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1619,6 +1645,30 @@ void DirectoryServiceClient::UpdateRadiusAsync(const UpdateRadiusRequest& reques
 void DirectoryServiceClient::UpdateRadiusAsyncHelper(const UpdateRadiusRequest& request, const UpdateRadiusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateRadius(request), context);
+}
+
+UpdateSettingsOutcome DirectoryServiceClient::UpdateSettings(const UpdateSettingsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateSettingsOutcomeCallable DirectoryServiceClient::UpdateSettingsCallable(const UpdateSettingsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateSettings(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DirectoryServiceClient::UpdateSettingsAsync(const UpdateSettingsRequest& request, const UpdateSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateSettingsAsyncHelper( request, handler, context ); } );
+}
+
+void DirectoryServiceClient::UpdateSettingsAsyncHelper(const UpdateSettingsRequest& request, const UpdateSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateSettings(request), context);
 }
 
 UpdateTrustOutcome DirectoryServiceClient::UpdateTrust(const UpdateTrustRequest& request) const
