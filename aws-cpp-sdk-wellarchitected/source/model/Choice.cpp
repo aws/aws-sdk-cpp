@@ -23,7 +23,8 @@ Choice::Choice() :
     m_titleHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_helpfulResourceHasBeenSet(false),
-    m_improvementPlanHasBeenSet(false)
+    m_improvementPlanHasBeenSet(false),
+    m_additionalResourcesHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ Choice::Choice(JsonView jsonValue) :
     m_titleHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_helpfulResourceHasBeenSet(false),
-    m_improvementPlanHasBeenSet(false)
+    m_improvementPlanHasBeenSet(false),
+    m_additionalResourcesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -74,6 +76,16 @@ Choice& Choice::operator =(JsonView jsonValue)
     m_improvementPlanHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AdditionalResources"))
+  {
+    Array<JsonView> additionalResourcesJsonList = jsonValue.GetArray("AdditionalResources");
+    for(unsigned additionalResourcesIndex = 0; additionalResourcesIndex < additionalResourcesJsonList.GetLength(); ++additionalResourcesIndex)
+    {
+      m_additionalResources.push_back(additionalResourcesJsonList[additionalResourcesIndex].AsObject());
+    }
+    m_additionalResourcesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -108,6 +120,17 @@ JsonValue Choice::Jsonize() const
   if(m_improvementPlanHasBeenSet)
   {
    payload.WithObject("ImprovementPlan", m_improvementPlan.Jsonize());
+
+  }
+
+  if(m_additionalResourcesHasBeenSet)
+  {
+   Array<JsonValue> additionalResourcesJsonList(m_additionalResources.size());
+   for(unsigned additionalResourcesIndex = 0; additionalResourcesIndex < additionalResourcesJsonList.GetLength(); ++additionalResourcesIndex)
+   {
+     additionalResourcesJsonList[additionalResourcesIndex].AsObject(m_additionalResources[additionalResourcesIndex].Jsonize());
+   }
+   payload.WithArray("AdditionalResources", std::move(additionalResourcesJsonList));
 
   }
 

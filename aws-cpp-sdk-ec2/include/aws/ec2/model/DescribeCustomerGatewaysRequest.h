@@ -102,7 +102,7 @@ namespace Model
      * gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN).</p>
      * </li> <li> <p> <code>customer-gateway-id</code> - The ID of the customer
      * gateway.</p> </li> <li> <p> <code>ip-address</code> - The IP address of the
-     * customer gateway's Internet-routable external interface.</p> </li> <li> <p>
+     * customer gateway device's external interface.</p> </li> <li> <p>
      * <code>state</code> - The state of the customer gateway (<code>pending</code> |
      * <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p>
      * </li> <li> <p> <code>type</code> - The type of customer gateway. Currently, the
@@ -123,7 +123,7 @@ namespace Model
      * gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN).</p>
      * </li> <li> <p> <code>customer-gateway-id</code> - The ID of the customer
      * gateway.</p> </li> <li> <p> <code>ip-address</code> - The IP address of the
-     * customer gateway's Internet-routable external interface.</p> </li> <li> <p>
+     * customer gateway device's external interface.</p> </li> <li> <p>
      * <code>state</code> - The state of the customer gateway (<code>pending</code> |
      * <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p>
      * </li> <li> <p> <code>type</code> - The type of customer gateway. Currently, the
@@ -144,7 +144,7 @@ namespace Model
      * gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN).</p>
      * </li> <li> <p> <code>customer-gateway-id</code> - The ID of the customer
      * gateway.</p> </li> <li> <p> <code>ip-address</code> - The IP address of the
-     * customer gateway's Internet-routable external interface.</p> </li> <li> <p>
+     * customer gateway device's external interface.</p> </li> <li> <p>
      * <code>state</code> - The state of the customer gateway (<code>pending</code> |
      * <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p>
      * </li> <li> <p> <code>type</code> - The type of customer gateway. Currently, the
@@ -165,7 +165,7 @@ namespace Model
      * gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN).</p>
      * </li> <li> <p> <code>customer-gateway-id</code> - The ID of the customer
      * gateway.</p> </li> <li> <p> <code>ip-address</code> - The IP address of the
-     * customer gateway's Internet-routable external interface.</p> </li> <li> <p>
+     * customer gateway device's external interface.</p> </li> <li> <p>
      * <code>state</code> - The state of the customer gateway (<code>pending</code> |
      * <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p>
      * </li> <li> <p> <code>type</code> - The type of customer gateway. Currently, the
@@ -186,7 +186,7 @@ namespace Model
      * gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN).</p>
      * </li> <li> <p> <code>customer-gateway-id</code> - The ID of the customer
      * gateway.</p> </li> <li> <p> <code>ip-address</code> - The IP address of the
-     * customer gateway's Internet-routable external interface.</p> </li> <li> <p>
+     * customer gateway device's external interface.</p> </li> <li> <p>
      * <code>state</code> - The state of the customer gateway (<code>pending</code> |
      * <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p>
      * </li> <li> <p> <code>type</code> - The type of customer gateway. Currently, the
@@ -207,7 +207,7 @@ namespace Model
      * gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN).</p>
      * </li> <li> <p> <code>customer-gateway-id</code> - The ID of the customer
      * gateway.</p> </li> <li> <p> <code>ip-address</code> - The IP address of the
-     * customer gateway's Internet-routable external interface.</p> </li> <li> <p>
+     * customer gateway device's external interface.</p> </li> <li> <p>
      * <code>state</code> - The state of the customer gateway (<code>pending</code> |
      * <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p>
      * </li> <li> <p> <code>type</code> - The type of customer gateway. Currently, the
@@ -228,7 +228,7 @@ namespace Model
      * gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN).</p>
      * </li> <li> <p> <code>customer-gateway-id</code> - The ID of the customer
      * gateway.</p> </li> <li> <p> <code>ip-address</code> - The IP address of the
-     * customer gateway's Internet-routable external interface.</p> </li> <li> <p>
+     * customer gateway device's external interface.</p> </li> <li> <p>
      * <code>state</code> - The state of the customer gateway (<code>pending</code> |
      * <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p>
      * </li> <li> <p> <code>type</code> - The type of customer gateway. Currently, the
@@ -249,7 +249,7 @@ namespace Model
      * gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN).</p>
      * </li> <li> <p> <code>customer-gateway-id</code> - The ID of the customer
      * gateway.</p> </li> <li> <p> <code>ip-address</code> - The IP address of the
-     * customer gateway's Internet-routable external interface.</p> </li> <li> <p>
+     * customer gateway device's external interface.</p> </li> <li> <p>
      * <code>state</code> - The state of the customer gateway (<code>pending</code> |
      * <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p>
      * </li> <li> <p> <code>type</code> - The type of customer gateway. Currently, the

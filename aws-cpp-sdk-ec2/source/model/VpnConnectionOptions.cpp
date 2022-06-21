@@ -29,6 +29,8 @@ VpnConnectionOptions::VpnConnectionOptions() :
     m_remoteIpv4NetworkCidrHasBeenSet(false),
     m_localIpv6NetworkCidrHasBeenSet(false),
     m_remoteIpv6NetworkCidrHasBeenSet(false),
+    m_outsideIpAddressTypeHasBeenSet(false),
+    m_transportTransitGatewayAttachmentIdHasBeenSet(false),
     m_tunnelInsideIpVersion(TunnelInsideIpVersion::NOT_SET),
     m_tunnelInsideIpVersionHasBeenSet(false),
     m_tunnelOptionsHasBeenSet(false)
@@ -44,6 +46,8 @@ VpnConnectionOptions::VpnConnectionOptions(const XmlNode& xmlNode) :
     m_remoteIpv4NetworkCidrHasBeenSet(false),
     m_localIpv6NetworkCidrHasBeenSet(false),
     m_remoteIpv6NetworkCidrHasBeenSet(false),
+    m_outsideIpAddressTypeHasBeenSet(false),
+    m_transportTransitGatewayAttachmentIdHasBeenSet(false),
     m_tunnelInsideIpVersion(TunnelInsideIpVersion::NOT_SET),
     m_tunnelInsideIpVersionHasBeenSet(false),
     m_tunnelOptionsHasBeenSet(false)
@@ -92,6 +96,18 @@ VpnConnectionOptions& VpnConnectionOptions::operator =(const XmlNode& xmlNode)
     {
       m_remoteIpv6NetworkCidr = Aws::Utils::Xml::DecodeEscapedXmlText(remoteIpv6NetworkCidrNode.GetText());
       m_remoteIpv6NetworkCidrHasBeenSet = true;
+    }
+    XmlNode outsideIpAddressTypeNode = resultNode.FirstChild("outsideIpAddressType");
+    if(!outsideIpAddressTypeNode.IsNull())
+    {
+      m_outsideIpAddressType = Aws::Utils::Xml::DecodeEscapedXmlText(outsideIpAddressTypeNode.GetText());
+      m_outsideIpAddressTypeHasBeenSet = true;
+    }
+    XmlNode transportTransitGatewayAttachmentIdNode = resultNode.FirstChild("transportTransitGatewayAttachmentId");
+    if(!transportTransitGatewayAttachmentIdNode.IsNull())
+    {
+      m_transportTransitGatewayAttachmentId = Aws::Utils::Xml::DecodeEscapedXmlText(transportTransitGatewayAttachmentIdNode.GetText());
+      m_transportTransitGatewayAttachmentIdHasBeenSet = true;
     }
     XmlNode tunnelInsideIpVersionNode = resultNode.FirstChild("tunnelInsideIpVersion");
     if(!tunnelInsideIpVersionNode.IsNull())
@@ -148,6 +164,16 @@ void VpnConnectionOptions::OutputToStream(Aws::OStream& oStream, const char* loc
       oStream << location << index << locationValue << ".RemoteIpv6NetworkCidr=" << StringUtils::URLEncode(m_remoteIpv6NetworkCidr.c_str()) << "&";
   }
 
+  if(m_outsideIpAddressTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".OutsideIpAddressType=" << StringUtils::URLEncode(m_outsideIpAddressType.c_str()) << "&";
+  }
+
+  if(m_transportTransitGatewayAttachmentIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".TransportTransitGatewayAttachmentId=" << StringUtils::URLEncode(m_transportTransitGatewayAttachmentId.c_str()) << "&";
+  }
+
   if(m_tunnelInsideIpVersionHasBeenSet)
   {
       oStream << location << index << locationValue << ".TunnelInsideIpVersion=" << TunnelInsideIpVersionMapper::GetNameForTunnelInsideIpVersion(m_tunnelInsideIpVersion) << "&";
@@ -191,6 +217,14 @@ void VpnConnectionOptions::OutputToStream(Aws::OStream& oStream, const char* loc
   if(m_remoteIpv6NetworkCidrHasBeenSet)
   {
       oStream << location << ".RemoteIpv6NetworkCidr=" << StringUtils::URLEncode(m_remoteIpv6NetworkCidr.c_str()) << "&";
+  }
+  if(m_outsideIpAddressTypeHasBeenSet)
+  {
+      oStream << location << ".OutsideIpAddressType=" << StringUtils::URLEncode(m_outsideIpAddressType.c_str()) << "&";
+  }
+  if(m_transportTransitGatewayAttachmentIdHasBeenSet)
+  {
+      oStream << location << ".TransportTransitGatewayAttachmentId=" << StringUtils::URLEncode(m_transportTransitGatewayAttachmentId.c_str()) << "&";
   }
   if(m_tunnelInsideIpVersionHasBeenSet)
   {

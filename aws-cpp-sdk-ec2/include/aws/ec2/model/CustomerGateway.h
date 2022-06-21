@@ -132,50 +132,42 @@ namespace Model
 
 
     /**
-     * <p>The Internet-routable IP address of the customer gateway's outside
-     * interface.</p>
+     * <p>The IP address of the customer gateway device's outside interface.</p>
      */
     inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
 
     /**
-     * <p>The Internet-routable IP address of the customer gateway's outside
-     * interface.</p>
+     * <p>The IP address of the customer gateway device's outside interface.</p>
      */
     inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
 
     /**
-     * <p>The Internet-routable IP address of the customer gateway's outside
-     * interface.</p>
+     * <p>The IP address of the customer gateway device's outside interface.</p>
      */
     inline void SetIpAddress(const Aws::String& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
 
     /**
-     * <p>The Internet-routable IP address of the customer gateway's outside
-     * interface.</p>
+     * <p>The IP address of the customer gateway device's outside interface.</p>
      */
     inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::move(value); }
 
     /**
-     * <p>The Internet-routable IP address of the customer gateway's outside
-     * interface.</p>
+     * <p>The IP address of the customer gateway device's outside interface.</p>
      */
     inline void SetIpAddress(const char* value) { m_ipAddressHasBeenSet = true; m_ipAddress.assign(value); }
 
     /**
-     * <p>The Internet-routable IP address of the customer gateway's outside
-     * interface.</p>
+     * <p>The IP address of the customer gateway device's outside interface.</p>
      */
     inline CustomerGateway& WithIpAddress(const Aws::String& value) { SetIpAddress(value); return *this;}
 
     /**
-     * <p>The Internet-routable IP address of the customer gateway's outside
-     * interface.</p>
+     * <p>The IP address of the customer gateway device's outside interface.</p>
      */
     inline CustomerGateway& WithIpAddress(Aws::String&& value) { SetIpAddress(std::move(value)); return *this;}
 
     /**
-     * <p>The Internet-routable IP address of the customer gateway's outside
-     * interface.</p>
+     * <p>The IP address of the customer gateway device's outside interface.</p>
      */
     inline CustomerGateway& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
 

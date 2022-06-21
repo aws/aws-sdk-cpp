@@ -69,50 +69,50 @@ namespace Model
 
 
     /**
-     * <p>The Internet-routable IP address for the customer gateway's outside
-     * interface. The address must be static.</p>
+     * <p> <i>This member has been deprecated.</i> The Internet-routable IP address for
+     * the customer gateway's outside interface. The address must be static.</p>
      */
     inline const Aws::String& GetPublicIp() const{ return m_publicIp; }
 
     /**
-     * <p>The Internet-routable IP address for the customer gateway's outside
-     * interface. The address must be static.</p>
+     * <p> <i>This member has been deprecated.</i> The Internet-routable IP address for
+     * the customer gateway's outside interface. The address must be static.</p>
      */
     inline bool PublicIpHasBeenSet() const { return m_publicIpHasBeenSet; }
 
     /**
-     * <p>The Internet-routable IP address for the customer gateway's outside
-     * interface. The address must be static.</p>
+     * <p> <i>This member has been deprecated.</i> The Internet-routable IP address for
+     * the customer gateway's outside interface. The address must be static.</p>
      */
     inline void SetPublicIp(const Aws::String& value) { m_publicIpHasBeenSet = true; m_publicIp = value; }
 
     /**
-     * <p>The Internet-routable IP address for the customer gateway's outside
-     * interface. The address must be static.</p>
+     * <p> <i>This member has been deprecated.</i> The Internet-routable IP address for
+     * the customer gateway's outside interface. The address must be static.</p>
      */
     inline void SetPublicIp(Aws::String&& value) { m_publicIpHasBeenSet = true; m_publicIp = std::move(value); }
 
     /**
-     * <p>The Internet-routable IP address for the customer gateway's outside
-     * interface. The address must be static.</p>
+     * <p> <i>This member has been deprecated.</i> The Internet-routable IP address for
+     * the customer gateway's outside interface. The address must be static.</p>
      */
     inline void SetPublicIp(const char* value) { m_publicIpHasBeenSet = true; m_publicIp.assign(value); }
 
     /**
-     * <p>The Internet-routable IP address for the customer gateway's outside
-     * interface. The address must be static.</p>
+     * <p> <i>This member has been deprecated.</i> The Internet-routable IP address for
+     * the customer gateway's outside interface. The address must be static.</p>
      */
     inline CreateCustomerGatewayRequest& WithPublicIp(const Aws::String& value) { SetPublicIp(value); return *this;}
 
     /**
-     * <p>The Internet-routable IP address for the customer gateway's outside
-     * interface. The address must be static.</p>
+     * <p> <i>This member has been deprecated.</i> The Internet-routable IP address for
+     * the customer gateway's outside interface. The address must be static.</p>
      */
     inline CreateCustomerGatewayRequest& WithPublicIp(Aws::String&& value) { SetPublicIp(std::move(value)); return *this;}
 
     /**
-     * <p>The Internet-routable IP address for the customer gateway's outside
-     * interface. The address must be static.</p>
+     * <p> <i>This member has been deprecated.</i> The Internet-routable IP address for
+     * the customer gateway's outside interface. The address must be static.</p>
      */
     inline CreateCustomerGatewayRequest& WithPublicIp(const char* value) { SetPublicIp(value); return *this;}
 
@@ -286,6 +286,55 @@ namespace Model
 
 
     /**
+     * <p> IPv4 address for the customer gateway device's outside interface. The
+     * address must be static. </p>
+     */
+    inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
+
+    /**
+     * <p> IPv4 address for the customer gateway device's outside interface. The
+     * address must be static. </p>
+     */
+    inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
+
+    /**
+     * <p> IPv4 address for the customer gateway device's outside interface. The
+     * address must be static. </p>
+     */
+    inline void SetIpAddress(const Aws::String& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
+
+    /**
+     * <p> IPv4 address for the customer gateway device's outside interface. The
+     * address must be static. </p>
+     */
+    inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::move(value); }
+
+    /**
+     * <p> IPv4 address for the customer gateway device's outside interface. The
+     * address must be static. </p>
+     */
+    inline void SetIpAddress(const char* value) { m_ipAddressHasBeenSet = true; m_ipAddress.assign(value); }
+
+    /**
+     * <p> IPv4 address for the customer gateway device's outside interface. The
+     * address must be static. </p>
+     */
+    inline CreateCustomerGatewayRequest& WithIpAddress(const Aws::String& value) { SetIpAddress(value); return *this;}
+
+    /**
+     * <p> IPv4 address for the customer gateway device's outside interface. The
+     * address must be static. </p>
+     */
+    inline CreateCustomerGatewayRequest& WithIpAddress(Aws::String&& value) { SetIpAddress(std::move(value)); return *this;}
+
+    /**
+     * <p> IPv4 address for the customer gateway device's outside interface. The
+     * address must be static. </p>
+     */
+    inline CreateCustomerGatewayRequest& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
+
+
+    /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
      * required permissions, the error response is <code>DryRunOperation</code>.
@@ -336,6 +385,9 @@ namespace Model
 
     Aws::String m_deviceName;
     bool m_deviceNameHasBeenSet;
+
+    Aws::String m_ipAddress;
+    bool m_ipAddressHasBeenSet;
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet;

@@ -665,11 +665,10 @@ namespace Model
      * specify <code>memoryReservation</code>, then that value is subtracted from the
      * available memory resources for the container instance where the container is
      * placed. Otherwise, the value of <code>memory</code> is used.</p> <p>The Docker
-     * 20.10.0 or later daemon reserves a minimum of 6 MiB of memory for a container,
-     * so you should not specify fewer than 6 MiB of memory for your containers.</p>
-     * <p>The Docker 19.03.13-ce or earlier daemon reserves a minimum of 4 MiB of
-     * memory for a container, so you should not specify fewer than 4 MiB of memory for
-     * your containers.</p>
+     * 20.10.0 or later daemon reserves a minimum of 6 MiB of memory for a container.
+     * So, don't specify less than 6 MiB of memory for your containers. </p> <p>The
+     * Docker 19.03.13-ce or earlier daemon reserves a minimum of 4 MiB of memory for a
+     * container. So, don't specify less than 4 MiB of memory for your containers.</p>
      */
     inline int GetMemory() const{ return m_memory; }
 
@@ -692,11 +691,10 @@ namespace Model
      * specify <code>memoryReservation</code>, then that value is subtracted from the
      * available memory resources for the container instance where the container is
      * placed. Otherwise, the value of <code>memory</code> is used.</p> <p>The Docker
-     * 20.10.0 or later daemon reserves a minimum of 6 MiB of memory for a container,
-     * so you should not specify fewer than 6 MiB of memory for your containers.</p>
-     * <p>The Docker 19.03.13-ce or earlier daemon reserves a minimum of 4 MiB of
-     * memory for a container, so you should not specify fewer than 4 MiB of memory for
-     * your containers.</p>
+     * 20.10.0 or later daemon reserves a minimum of 6 MiB of memory for a container.
+     * So, don't specify less than 6 MiB of memory for your containers. </p> <p>The
+     * Docker 19.03.13-ce or earlier daemon reserves a minimum of 4 MiB of memory for a
+     * container. So, don't specify less than 4 MiB of memory for your containers.</p>
      */
     inline bool MemoryHasBeenSet() const { return m_memoryHasBeenSet; }
 
@@ -719,11 +717,10 @@ namespace Model
      * specify <code>memoryReservation</code>, then that value is subtracted from the
      * available memory resources for the container instance where the container is
      * placed. Otherwise, the value of <code>memory</code> is used.</p> <p>The Docker
-     * 20.10.0 or later daemon reserves a minimum of 6 MiB of memory for a container,
-     * so you should not specify fewer than 6 MiB of memory for your containers.</p>
-     * <p>The Docker 19.03.13-ce or earlier daemon reserves a minimum of 4 MiB of
-     * memory for a container, so you should not specify fewer than 4 MiB of memory for
-     * your containers.</p>
+     * 20.10.0 or later daemon reserves a minimum of 6 MiB of memory for a container.
+     * So, don't specify less than 6 MiB of memory for your containers. </p> <p>The
+     * Docker 19.03.13-ce or earlier daemon reserves a minimum of 4 MiB of memory for a
+     * container. So, don't specify less than 4 MiB of memory for your containers.</p>
      */
     inline void SetMemory(int value) { m_memoryHasBeenSet = true; m_memory = value; }
 
@@ -746,11 +743,10 @@ namespace Model
      * specify <code>memoryReservation</code>, then that value is subtracted from the
      * available memory resources for the container instance where the container is
      * placed. Otherwise, the value of <code>memory</code> is used.</p> <p>The Docker
-     * 20.10.0 or later daemon reserves a minimum of 6 MiB of memory for a container,
-     * so you should not specify fewer than 6 MiB of memory for your containers.</p>
-     * <p>The Docker 19.03.13-ce or earlier daemon reserves a minimum of 4 MiB of
-     * memory for a container, so you should not specify fewer than 4 MiB of memory for
-     * your containers.</p>
+     * 20.10.0 or later daemon reserves a minimum of 6 MiB of memory for a container.
+     * So, don't specify less than 6 MiB of memory for your containers. </p> <p>The
+     * Docker 19.03.13-ce or earlier daemon reserves a minimum of 4 MiB of memory for a
+     * container. So, don't specify less than 4 MiB of memory for your containers.</p>
      */
     inline ContainerDefinition& WithMemory(int value) { SetMemory(value); return *this;}
 
