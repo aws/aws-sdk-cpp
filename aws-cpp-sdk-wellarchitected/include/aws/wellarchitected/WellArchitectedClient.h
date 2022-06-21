@@ -836,7 +836,9 @@ namespace Model
         virtual void ListShareInvitationsAsync(const Model::ListShareInvitationsRequest& request, const ListShareInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>List the tags for a resource.</p><p><h3>See Also:</h3>   <a
+         * <p>List the tags for a resource.</p>  <p>The WorkloadArn parameter can be
+         * either a workload ARN or a custom lens ARN.</p> <p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListTagsForResource">AWS
          * API Reference</a></p>
          */
@@ -888,8 +890,9 @@ namespace Model
         virtual void ListWorkloadsAsync(const Model::ListWorkloadsRequest& request, const ListWorkloadsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds one or more tags to the specified resource.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Adds one or more tags to the specified resource.</p>  <p>The
+         * WorkloadArn parameter can be either a workload ARN or a custom lens ARN.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/TagResource">AWS
          * API Reference</a></p>
          */
@@ -906,10 +909,11 @@ namespace Model
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes specified tags from a resource.</p> <p>To specify multiple tags, use
-         * separate <b>tagKeys</b> parameters, for example:</p> <p> <code>DELETE
-         * /tags/WorkloadArn?tagKeys=key1&amp;tagKeys=key2</code> </p><p><h3>See Also:</h3>
-         * <a
+         * <p>Deletes specified tags from a resource.</p>  <p>The WorkloadArn
+         * parameter can be either a workload ARN or a custom lens ARN.</p>  <p>To
+         * specify multiple tags, use separate <b>tagKeys</b> parameters, for example:</p>
+         * <p> <code>DELETE /tags/WorkloadArn?tagKeys=key1&amp;tagKeys=key2</code>
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UntagResource">AWS
          * API Reference</a></p>
          */

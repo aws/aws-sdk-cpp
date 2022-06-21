@@ -254,7 +254,7 @@ namespace Model
      * <p>A load balancer object representing the load balancers to use with your
      * service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
-     * Load Balancing</a> in the <i>Amazon Elastic Container Service Developer
+     * load balancing</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If the service uses the rolling update (<code>ECS</code>)
      * deployment controller and using either an Application Load Balancer or Network
      * Load Balancer, you must specify one or more target group ARNs to attach to the
@@ -300,7 +300,7 @@ namespace Model
      * <p>A load balancer object representing the load balancers to use with your
      * service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
-     * Load Balancing</a> in the <i>Amazon Elastic Container Service Developer
+     * load balancing</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If the service uses the rolling update (<code>ECS</code>)
      * deployment controller and using either an Application Load Balancer or Network
      * Load Balancer, you must specify one or more target group ARNs to attach to the
@@ -346,7 +346,7 @@ namespace Model
      * <p>A load balancer object representing the load balancers to use with your
      * service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
-     * Load Balancing</a> in the <i>Amazon Elastic Container Service Developer
+     * load balancing</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If the service uses the rolling update (<code>ECS</code>)
      * deployment controller and using either an Application Load Balancer or Network
      * Load Balancer, you must specify one or more target group ARNs to attach to the
@@ -392,7 +392,7 @@ namespace Model
      * <p>A load balancer object representing the load balancers to use with your
      * service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
-     * Load Balancing</a> in the <i>Amazon Elastic Container Service Developer
+     * load balancing</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If the service uses the rolling update (<code>ECS</code>)
      * deployment controller and using either an Application Load Balancer or Network
      * Load Balancer, you must specify one or more target group ARNs to attach to the
@@ -438,7 +438,7 @@ namespace Model
      * <p>A load balancer object representing the load balancers to use with your
      * service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
-     * Load Balancing</a> in the <i>Amazon Elastic Container Service Developer
+     * load balancing</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If the service uses the rolling update (<code>ECS</code>)
      * deployment controller and using either an Application Load Balancer or Network
      * Load Balancer, you must specify one or more target group ARNs to attach to the
@@ -484,7 +484,7 @@ namespace Model
      * <p>A load balancer object representing the load balancers to use with your
      * service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
-     * Load Balancing</a> in the <i>Amazon Elastic Container Service Developer
+     * load balancing</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If the service uses the rolling update (<code>ECS</code>)
      * deployment controller and using either an Application Load Balancer or Network
      * Load Balancer, you must specify one or more target group ARNs to attach to the
@@ -530,7 +530,7 @@ namespace Model
      * <p>A load balancer object representing the load balancers to use with your
      * service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
-     * Load Balancing</a> in the <i>Amazon Elastic Container Service Developer
+     * load balancing</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If the service uses the rolling update (<code>ECS</code>)
      * deployment controller and using either an Application Load Balancer or Network
      * Load Balancer, you must specify one or more target group ARNs to attach to the
@@ -576,7 +576,7 @@ namespace Model
      * <p>A load balancer object representing the load balancers to use with your
      * service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
-     * Load Balancing</a> in the <i>Amazon Elastic Container Service Developer
+     * load balancing</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If the service uses the rolling update (<code>ECS</code>)
      * deployment controller and using either an Application Load Balancer or Network
      * Load Balancer, you must specify one or more target group ARNs to attach to the
@@ -1916,7 +1916,7 @@ namespace Model
      * <p>Specifies whether to turn on Amazon ECS managed tags for the tasks within the
      * service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
-     * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
+     * your Amazon ECS resources</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
     inline bool GetEnableECSManagedTags() const{ return m_enableECSManagedTags; }
@@ -1925,7 +1925,7 @@ namespace Model
      * <p>Specifies whether to turn on Amazon ECS managed tags for the tasks within the
      * service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
-     * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
+     * your Amazon ECS resources</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
     inline bool EnableECSManagedTagsHasBeenSet() const { return m_enableECSManagedTagsHasBeenSet; }
@@ -1934,7 +1934,7 @@ namespace Model
      * <p>Specifies whether to turn on Amazon ECS managed tags for the tasks within the
      * service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
-     * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
+     * your Amazon ECS resources</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
     inline void SetEnableECSManagedTags(bool value) { m_enableECSManagedTagsHasBeenSet = true; m_enableECSManagedTags = value; }
@@ -1943,7 +1943,7 @@ namespace Model
      * <p>Specifies whether to turn on Amazon ECS managed tags for the tasks within the
      * service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
-     * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
+     * your Amazon ECS resources</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
     inline CreateServiceRequest& WithEnableECSManagedTags(bool value) { SetEnableECSManagedTags(value); return *this;}

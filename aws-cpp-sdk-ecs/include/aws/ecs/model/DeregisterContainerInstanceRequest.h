@@ -93,81 +93,65 @@ namespace Model
 
     /**
      * <p>The container instance ID or full ARN of the container instance to
-     * deregister. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by
-     * the Region of the container instance, the Amazon Web Services account ID of the
-     * container instance owner, the <code>container-instance</code> namespace, and
-     * then the container instance ID. For example,
-     * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
+     * deregister. For more information about the ARN format, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon
+     * Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
      */
     inline const Aws::String& GetContainerInstance() const{ return m_containerInstance; }
 
     /**
      * <p>The container instance ID or full ARN of the container instance to
-     * deregister. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by
-     * the Region of the container instance, the Amazon Web Services account ID of the
-     * container instance owner, the <code>container-instance</code> namespace, and
-     * then the container instance ID. For example,
-     * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
+     * deregister. For more information about the ARN format, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon
+     * Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
      */
     inline bool ContainerInstanceHasBeenSet() const { return m_containerInstanceHasBeenSet; }
 
     /**
      * <p>The container instance ID or full ARN of the container instance to
-     * deregister. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by
-     * the Region of the container instance, the Amazon Web Services account ID of the
-     * container instance owner, the <code>container-instance</code> namespace, and
-     * then the container instance ID. For example,
-     * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
+     * deregister. For more information about the ARN format, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon
+     * Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
      */
     inline void SetContainerInstance(const Aws::String& value) { m_containerInstanceHasBeenSet = true; m_containerInstance = value; }
 
     /**
      * <p>The container instance ID or full ARN of the container instance to
-     * deregister. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by
-     * the Region of the container instance, the Amazon Web Services account ID of the
-     * container instance owner, the <code>container-instance</code> namespace, and
-     * then the container instance ID. For example,
-     * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
+     * deregister. For more information about the ARN format, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon
+     * Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
      */
     inline void SetContainerInstance(Aws::String&& value) { m_containerInstanceHasBeenSet = true; m_containerInstance = std::move(value); }
 
     /**
      * <p>The container instance ID or full ARN of the container instance to
-     * deregister. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by
-     * the Region of the container instance, the Amazon Web Services account ID of the
-     * container instance owner, the <code>container-instance</code> namespace, and
-     * then the container instance ID. For example,
-     * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
+     * deregister. For more information about the ARN format, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon
+     * Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
      */
     inline void SetContainerInstance(const char* value) { m_containerInstanceHasBeenSet = true; m_containerInstance.assign(value); }
 
     /**
      * <p>The container instance ID or full ARN of the container instance to
-     * deregister. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by
-     * the Region of the container instance, the Amazon Web Services account ID of the
-     * container instance owner, the <code>container-instance</code> namespace, and
-     * then the container instance ID. For example,
-     * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
+     * deregister. For more information about the ARN format, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon
+     * Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
      */
     inline DeregisterContainerInstanceRequest& WithContainerInstance(const Aws::String& value) { SetContainerInstance(value); return *this;}
 
     /**
      * <p>The container instance ID or full ARN of the container instance to
-     * deregister. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by
-     * the Region of the container instance, the Amazon Web Services account ID of the
-     * container instance owner, the <code>container-instance</code> namespace, and
-     * then the container instance ID. For example,
-     * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
+     * deregister. For more information about the ARN format, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon
+     * Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
      */
     inline DeregisterContainerInstanceRequest& WithContainerInstance(Aws::String&& value) { SetContainerInstance(std::move(value)); return *this;}
 
     /**
      * <p>The container instance ID or full ARN of the container instance to
-     * deregister. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by
-     * the Region of the container instance, the Amazon Web Services account ID of the
-     * container instance owner, the <code>container-instance</code> namespace, and
-     * then the container instance ID. For example,
-     * <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
+     * deregister. For more information about the ARN format, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon
+     * Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
      */
     inline DeregisterContainerInstanceRequest& WithContainerInstance(const char* value) { SetContainerInstance(value); return *this;}
 

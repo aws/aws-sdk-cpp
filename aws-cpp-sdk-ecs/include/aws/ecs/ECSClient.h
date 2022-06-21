@@ -320,18 +320,18 @@ namespace Model
   /**
    * <fullname>Amazon Elastic Container Service</fullname> <p>Amazon Elastic
    * Container Service (Amazon ECS) is a highly scalable, fast, container management
-   * service. It makes it easy to run, stop, and manage Docker containers on a
-   * cluster. You can host your cluster on a serverless infrastructure that's managed
-   * by Amazon ECS by launching your services or tasks on Fargate. For more control,
-   * you can host your tasks on a cluster of Amazon Elastic Compute Cloud (Amazon
-   * EC2) instances that you manage.</p> <p>Amazon ECS makes it easy to launch and
-   * stop container-based applications with simple API calls. This makes it easy to
-   * get the state of your cluster from a centralized service, and gives you access
-   * to many familiar Amazon EC2 features.</p> <p>You can use Amazon ECS to schedule
-   * the placement of containers across your cluster based on your resource needs,
-   * isolation policies, and availability requirements. With Amazon ECS, you don't
-   * need to operate your own cluster management and configuration management
-   * systems. You also don't need to worry about scaling your management
+   * service. It makes it easy to run, stop, and manage Docker containers. You can
+   * host your cluster on a serverless infrastructure that's managed by Amazon ECS by
+   * launching your services or tasks on Fargate. For more control, you can host your
+   * tasks on a cluster of Amazon Elastic Compute Cloud (Amazon EC2) or External
+   * (on-premises) instances that you manage.</p> <p>Amazon ECS makes it easy to
+   * launch and stop container-based applications with simple API calls. This makes
+   * it easy to get the state of your cluster from a centralized service, and gives
+   * you access to many familiar Amazon EC2 features.</p> <p>You can use Amazon ECS
+   * to schedule the placement of containers across your cluster based on your
+   * resource needs, isolation policies, and availability requirements. With Amazon
+   * ECS, you don't need to operate your own cluster management and configuration
+   * management systems. You also don't need to worry about scaling your management
    * infrastructure.</p>
    */
   class AWS_ECS_API ECSClient : public Aws::Client::AWSJsonClient
@@ -395,7 +395,7 @@ namespace Model
          * IAM user that makes the call doesn't have permissions to create the
          * service-linked role, it isn't created. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
-         * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
+         * service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container
          * Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCluster">AWS
          * API Reference</a></p>
@@ -416,13 +416,13 @@ namespace Model
          * <p>Runs and maintains your desired number of tasks from a specified task
          * definition. If the number of tasks running in a service drops below the
          * <code>desiredCount</code>, Amazon ECS runs another copy of the task in the
-         * specified cluster. To update an existing service, see the UpdateService
+         * specified cluster. To update an existing service, see the <a>UpdateService</a>
          * action.</p> <p>In addition to maintaining the desired count of tasks in your
          * service, you can optionally run your service behind one or more load balancers.
          * The load balancers distribute traffic across the tasks that are associated with
          * the service. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
-         * Load Balancing</a> in the <i>Amazon Elastic Container Service Developer
+         * load balancing</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p> <p>Tasks for services that don't use a load balancer are
          * considered healthy if they're in the <code>RUNNING</code> state. Tasks for
          * services that use a load balancer are considered healthy if they're in the
@@ -434,7 +434,7 @@ namespace Model
          * and constraints to customize task placement decisions. For more information, see
          * <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Service
-         * Scheduler Concepts</a> in the <i>Amazon Elastic Container Service Developer
+         * scheduler concepts</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p> </li> <li> <p> <code>DAEMON</code> - The daemon scheduling
          * strategy deploys exactly one task on each active container instance that meets
          * all of the task placement constraints that you specify in your cluster. The
@@ -444,7 +444,7 @@ namespace Model
          * placement strategy, or use Service Auto Scaling policies. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Service
-         * Scheduler Concepts</a> in the <i>Amazon Elastic Container Service Developer
+         * scheduler concepts</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p> </li> </ul> <p>You can optionally specify a deployment
          * configuration for your service. The deployment is initiated by changing
          * properties. For example, the deployment might be initiated by the task
@@ -492,7 +492,7 @@ namespace Model
          * service name. You control your services using the <a>CreateTaskSet</a>
          * operation. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
-         * ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer
+         * ECS deployment types</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p> <p>When the service scheduler launches new tasks, it determines
          * task placement in your cluster using the following logic:</p> <ul> <li>
          * <p>Determine which of the container instances in your cluster can support the
@@ -529,7 +529,7 @@ namespace Model
          * service uses the <code>EXTERNAL</code> deployment controller type. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
-         * ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer
+         * ECS deployment types</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateTaskSet">AWS
          * API Reference</a></p>
@@ -678,7 +678,7 @@ namespace Model
          * uses the <code>EXTERNAL</code> deployment controller type. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
-         * ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer
+         * ECS deployment types</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteTaskSet">AWS
          * API Reference</a></p>
@@ -870,7 +870,8 @@ namespace Model
         virtual void DescribeTaskSetsAsync(const Model::DescribeTaskSetsRequest& request, const DescribeTaskSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes a specified task or tasks.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes a specified task or tasks.</p> <p>Currently, stopped tasks appear
+         * in the returned results for at least one hour.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTasks">AWS
          * API Reference</a></p>
          */
@@ -906,7 +907,11 @@ namespace Model
         virtual void DiscoverPollEndpointAsync(const Model::DiscoverPollEndpointRequest& request, const DiscoverPollEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Runs a command remotely on a container within a task.</p><p><h3>See
+         * <p>Runs a command remotely on a container within a task.</p> <p>If you use a
+         * condition key in your IAM policy to refine the conditions for the policy
+         * statement, for example limit the actions to a specific cluster, you recevie an
+         * <code>AccessDeniedException</code> when there is a mismatch between the
+         * condition key value and the corresponding parameter value.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ExecuteCommand">AWS
          * API Reference</a></p>
@@ -1609,23 +1614,18 @@ namespace Model
         virtual void UpdateContainerInstancesStateAsync(const Model::UpdateContainerInstancesStateRequest& request, const UpdateContainerInstancesStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         *  <p>Updating the task placement strategies and constraints on an
-         * Amazon ECS service remains in preview and is a Beta Service as defined by and
-         * subject to the Beta Service Participation Service Terms located at <a
-         * href="https://aws.amazon.com/service-terms">https://aws.amazon.com/service-terms</a>
-         * ("Beta Terms"). These Beta Terms apply to your participation in this
-         * preview.</p>  <p>Modifies the parameters of a service.</p> <p>For
-         * services using the rolling update (<code>ECS</code>) you can update the desired
-         * count, deployment configuration, network configuration, load balancers, service
-         * registries, enable ECS managed tags option, propagate tags option, task
-         * placement constraints and strategies, and task definition. When you update any
-         * of these parameters, Amazon ECS starts new tasks with the new configuration.
-         * </p> <p>For services using the blue/green (<code>CODE_DEPLOY</code>) deployment
-         * controller, only the desired count, deployment configuration, health check grace
-         * period, task placement constraints and strategies, enable ECS managed tags
-         * option, and propagate tags can be updated using this API. If the network
-         * configuration, platform version, task definition, or load balancer need to be
-         * updated, create a new CodeDeploy deployment. For more information, see <a
+         * <p>Modifies the parameters of a service.</p> <p>For services using the rolling
+         * update (<code>ECS</code>) you can update the desired count, deployment
+         * configuration, network configuration, load balancers, service registries, enable
+         * ECS managed tags option, propagate tags option, task placement constraints and
+         * strategies, and task definition. When you update any of these parameters, Amazon
+         * ECS starts new tasks with the new configuration. </p> <p>For services using the
+         * blue/green (<code>CODE_DEPLOY</code>) deployment controller, only the desired
+         * count, deployment configuration, health check grace period, task placement
+         * constraints and strategies, enable ECS managed tags option, and propagate tags
+         * can be updated using this API. If the network configuration, platform version,
+         * task definition, or load balancer need to be updated, create a new CodeDeploy
+         * deployment. For more information, see <a
          * href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeployment.html">CreateDeployment</a>
          * in the <i>CodeDeploy API Reference</i>.</p> <p>For services using an external
          * deployment controller, you can update only the desired count, task placement

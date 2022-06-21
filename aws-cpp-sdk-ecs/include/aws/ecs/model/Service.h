@@ -55,74 +55,66 @@ namespace Model
 
 
     /**
-     * <p>The ARN that identifies the service. The ARN contains the
-     * <code>arn:aws:ecs</code> namespace, followed by the Region of the service, the
-     * Amazon Web Services account ID of the service owner, the <code>service</code>
-     * namespace, and then the service name. For example,
-     * <code>arn:aws:ecs:region:012345678910:service/my-service</code>.</p>
+     * <p>The ARN that identifies the service. For more information about the ARN
+     * format, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon
+     * Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
      */
     inline const Aws::String& GetServiceArn() const{ return m_serviceArn; }
 
     /**
-     * <p>The ARN that identifies the service. The ARN contains the
-     * <code>arn:aws:ecs</code> namespace, followed by the Region of the service, the
-     * Amazon Web Services account ID of the service owner, the <code>service</code>
-     * namespace, and then the service name. For example,
-     * <code>arn:aws:ecs:region:012345678910:service/my-service</code>.</p>
+     * <p>The ARN that identifies the service. For more information about the ARN
+     * format, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon
+     * Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
      */
     inline bool ServiceArnHasBeenSet() const { return m_serviceArnHasBeenSet; }
 
     /**
-     * <p>The ARN that identifies the service. The ARN contains the
-     * <code>arn:aws:ecs</code> namespace, followed by the Region of the service, the
-     * Amazon Web Services account ID of the service owner, the <code>service</code>
-     * namespace, and then the service name. For example,
-     * <code>arn:aws:ecs:region:012345678910:service/my-service</code>.</p>
+     * <p>The ARN that identifies the service. For more information about the ARN
+     * format, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon
+     * Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
      */
     inline void SetServiceArn(const Aws::String& value) { m_serviceArnHasBeenSet = true; m_serviceArn = value; }
 
     /**
-     * <p>The ARN that identifies the service. The ARN contains the
-     * <code>arn:aws:ecs</code> namespace, followed by the Region of the service, the
-     * Amazon Web Services account ID of the service owner, the <code>service</code>
-     * namespace, and then the service name. For example,
-     * <code>arn:aws:ecs:region:012345678910:service/my-service</code>.</p>
+     * <p>The ARN that identifies the service. For more information about the ARN
+     * format, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon
+     * Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
      */
     inline void SetServiceArn(Aws::String&& value) { m_serviceArnHasBeenSet = true; m_serviceArn = std::move(value); }
 
     /**
-     * <p>The ARN that identifies the service. The ARN contains the
-     * <code>arn:aws:ecs</code> namespace, followed by the Region of the service, the
-     * Amazon Web Services account ID of the service owner, the <code>service</code>
-     * namespace, and then the service name. For example,
-     * <code>arn:aws:ecs:region:012345678910:service/my-service</code>.</p>
+     * <p>The ARN that identifies the service. For more information about the ARN
+     * format, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon
+     * Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
      */
     inline void SetServiceArn(const char* value) { m_serviceArnHasBeenSet = true; m_serviceArn.assign(value); }
 
     /**
-     * <p>The ARN that identifies the service. The ARN contains the
-     * <code>arn:aws:ecs</code> namespace, followed by the Region of the service, the
-     * Amazon Web Services account ID of the service owner, the <code>service</code>
-     * namespace, and then the service name. For example,
-     * <code>arn:aws:ecs:region:012345678910:service/my-service</code>.</p>
+     * <p>The ARN that identifies the service. For more information about the ARN
+     * format, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon
+     * Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
      */
     inline Service& WithServiceArn(const Aws::String& value) { SetServiceArn(value); return *this;}
 
     /**
-     * <p>The ARN that identifies the service. The ARN contains the
-     * <code>arn:aws:ecs</code> namespace, followed by the Region of the service, the
-     * Amazon Web Services account ID of the service owner, the <code>service</code>
-     * namespace, and then the service name. For example,
-     * <code>arn:aws:ecs:region:012345678910:service/my-service</code>.</p>
+     * <p>The ARN that identifies the service. For more information about the ARN
+     * format, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon
+     * Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
      */
     inline Service& WithServiceArn(Aws::String&& value) { SetServiceArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN that identifies the service. The ARN contains the
-     * <code>arn:aws:ecs</code> namespace, followed by the Region of the service, the
-     * Amazon Web Services account ID of the service owner, the <code>service</code>
-     * namespace, and then the service name. For example,
-     * <code>arn:aws:ecs:region:012345678910:service/my-service</code>.</p>
+     * <p>The ARN that identifies the service. For more information about the ARN
+     * format, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon
+     * Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
      */
     inline Service& WithServiceArn(const char* value) { SetServiceArn(value); return *this;}
 

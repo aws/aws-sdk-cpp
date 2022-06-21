@@ -373,6 +373,112 @@ namespace Model
      */
     inline VpnConnectionOptionsSpecification& WithRemoteIpv6NetworkCidr(const char* value) { SetRemoteIpv6NetworkCidr(value); return *this;}
 
+
+    /**
+     * <p>The type of IPv4 address assigned to the outside interface of the customer
+     * gateway device.</p> <p>Valid values: <code>PrivateIpv4</code> |
+     * <code>PublicIpv4</code> </p> <p>Default: <code>PublicIpv4</code> </p>
+     */
+    inline const Aws::String& GetOutsideIpAddressType() const{ return m_outsideIpAddressType; }
+
+    /**
+     * <p>The type of IPv4 address assigned to the outside interface of the customer
+     * gateway device.</p> <p>Valid values: <code>PrivateIpv4</code> |
+     * <code>PublicIpv4</code> </p> <p>Default: <code>PublicIpv4</code> </p>
+     */
+    inline bool OutsideIpAddressTypeHasBeenSet() const { return m_outsideIpAddressTypeHasBeenSet; }
+
+    /**
+     * <p>The type of IPv4 address assigned to the outside interface of the customer
+     * gateway device.</p> <p>Valid values: <code>PrivateIpv4</code> |
+     * <code>PublicIpv4</code> </p> <p>Default: <code>PublicIpv4</code> </p>
+     */
+    inline void SetOutsideIpAddressType(const Aws::String& value) { m_outsideIpAddressTypeHasBeenSet = true; m_outsideIpAddressType = value; }
+
+    /**
+     * <p>The type of IPv4 address assigned to the outside interface of the customer
+     * gateway device.</p> <p>Valid values: <code>PrivateIpv4</code> |
+     * <code>PublicIpv4</code> </p> <p>Default: <code>PublicIpv4</code> </p>
+     */
+    inline void SetOutsideIpAddressType(Aws::String&& value) { m_outsideIpAddressTypeHasBeenSet = true; m_outsideIpAddressType = std::move(value); }
+
+    /**
+     * <p>The type of IPv4 address assigned to the outside interface of the customer
+     * gateway device.</p> <p>Valid values: <code>PrivateIpv4</code> |
+     * <code>PublicIpv4</code> </p> <p>Default: <code>PublicIpv4</code> </p>
+     */
+    inline void SetOutsideIpAddressType(const char* value) { m_outsideIpAddressTypeHasBeenSet = true; m_outsideIpAddressType.assign(value); }
+
+    /**
+     * <p>The type of IPv4 address assigned to the outside interface of the customer
+     * gateway device.</p> <p>Valid values: <code>PrivateIpv4</code> |
+     * <code>PublicIpv4</code> </p> <p>Default: <code>PublicIpv4</code> </p>
+     */
+    inline VpnConnectionOptionsSpecification& WithOutsideIpAddressType(const Aws::String& value) { SetOutsideIpAddressType(value); return *this;}
+
+    /**
+     * <p>The type of IPv4 address assigned to the outside interface of the customer
+     * gateway device.</p> <p>Valid values: <code>PrivateIpv4</code> |
+     * <code>PublicIpv4</code> </p> <p>Default: <code>PublicIpv4</code> </p>
+     */
+    inline VpnConnectionOptionsSpecification& WithOutsideIpAddressType(Aws::String&& value) { SetOutsideIpAddressType(std::move(value)); return *this;}
+
+    /**
+     * <p>The type of IPv4 address assigned to the outside interface of the customer
+     * gateway device.</p> <p>Valid values: <code>PrivateIpv4</code> |
+     * <code>PublicIpv4</code> </p> <p>Default: <code>PublicIpv4</code> </p>
+     */
+    inline VpnConnectionOptionsSpecification& WithOutsideIpAddressType(const char* value) { SetOutsideIpAddressType(value); return *this;}
+
+
+    /**
+     * <p>The transit gateway attachment ID to use for the VPN tunnel.</p> <p>Required
+     * if <code>OutsideIpAddressType</code> is set to <code>PrivateIpv4</code>.</p>
+     */
+    inline const Aws::String& GetTransportTransitGatewayAttachmentId() const{ return m_transportTransitGatewayAttachmentId; }
+
+    /**
+     * <p>The transit gateway attachment ID to use for the VPN tunnel.</p> <p>Required
+     * if <code>OutsideIpAddressType</code> is set to <code>PrivateIpv4</code>.</p>
+     */
+    inline bool TransportTransitGatewayAttachmentIdHasBeenSet() const { return m_transportTransitGatewayAttachmentIdHasBeenSet; }
+
+    /**
+     * <p>The transit gateway attachment ID to use for the VPN tunnel.</p> <p>Required
+     * if <code>OutsideIpAddressType</code> is set to <code>PrivateIpv4</code>.</p>
+     */
+    inline void SetTransportTransitGatewayAttachmentId(const Aws::String& value) { m_transportTransitGatewayAttachmentIdHasBeenSet = true; m_transportTransitGatewayAttachmentId = value; }
+
+    /**
+     * <p>The transit gateway attachment ID to use for the VPN tunnel.</p> <p>Required
+     * if <code>OutsideIpAddressType</code> is set to <code>PrivateIpv4</code>.</p>
+     */
+    inline void SetTransportTransitGatewayAttachmentId(Aws::String&& value) { m_transportTransitGatewayAttachmentIdHasBeenSet = true; m_transportTransitGatewayAttachmentId = std::move(value); }
+
+    /**
+     * <p>The transit gateway attachment ID to use for the VPN tunnel.</p> <p>Required
+     * if <code>OutsideIpAddressType</code> is set to <code>PrivateIpv4</code>.</p>
+     */
+    inline void SetTransportTransitGatewayAttachmentId(const char* value) { m_transportTransitGatewayAttachmentIdHasBeenSet = true; m_transportTransitGatewayAttachmentId.assign(value); }
+
+    /**
+     * <p>The transit gateway attachment ID to use for the VPN tunnel.</p> <p>Required
+     * if <code>OutsideIpAddressType</code> is set to <code>PrivateIpv4</code>.</p>
+     */
+    inline VpnConnectionOptionsSpecification& WithTransportTransitGatewayAttachmentId(const Aws::String& value) { SetTransportTransitGatewayAttachmentId(value); return *this;}
+
+    /**
+     * <p>The transit gateway attachment ID to use for the VPN tunnel.</p> <p>Required
+     * if <code>OutsideIpAddressType</code> is set to <code>PrivateIpv4</code>.</p>
+     */
+    inline VpnConnectionOptionsSpecification& WithTransportTransitGatewayAttachmentId(Aws::String&& value) { SetTransportTransitGatewayAttachmentId(std::move(value)); return *this;}
+
+    /**
+     * <p>The transit gateway attachment ID to use for the VPN tunnel.</p> <p>Required
+     * if <code>OutsideIpAddressType</code> is set to <code>PrivateIpv4</code>.</p>
+     */
+    inline VpnConnectionOptionsSpecification& WithTransportTransitGatewayAttachmentId(const char* value) { SetTransportTransitGatewayAttachmentId(value); return *this;}
+
   private:
 
     bool m_enableAcceleration;
@@ -398,6 +504,12 @@ namespace Model
 
     Aws::String m_remoteIpv6NetworkCidr;
     bool m_remoteIpv6NetworkCidrHasBeenSet;
+
+    Aws::String m_outsideIpAddressType;
+    bool m_outsideIpAddressTypeHasBeenSet;
+
+    Aws::String m_transportTransitGatewayAttachmentId;
+    bool m_transportTransitGatewayAttachmentIdHasBeenSet;
   };
 
 } // namespace Model

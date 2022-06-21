@@ -57,11 +57,11 @@ namespace Model
    * <ul> <li> <p>Container health checks require version 1.17.0 or greater of the
    * Amazon ECS container agent. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
-   * the Amazon ECS Container Agent</a>.</p> </li> <li> <p>Container health checks
-   * are supported for Fargate tasks if you're using platform version 1.1.0 or
-   * greater. For more information, see <a
+   * the Amazon ECS container agent</a>.</p> </li> <li> <p>Container health checks
+   * are supported for Fargate tasks if you're using platform version
+   * <code>1.1.0</code> or greater. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
-   * Platform Versions</a>.</p> </li> <li> <p>Container health checks aren't
+   * platform versions</a>.</p> </li> <li> <p>Container health checks aren't
    * supported for tasks that are part of a service that's configured to use a
    * Classic Load Balancer.</p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/HealthCheck">AWS API
