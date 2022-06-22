@@ -76,49 +76,57 @@ namespace Model
 
     /**
      * <p>Specifies the content of the SSH public key as specified by the
-     * <code>PublicKeyId</code>.</p>
+     * <code>PublicKeyId</code>.</p> <p>Transfer Family accepts RSA, ECDSA, and ED25519
+     * keys.</p>
      */
     inline const Aws::String& GetSshPublicKeyBody() const{ return m_sshPublicKeyBody; }
 
     /**
      * <p>Specifies the content of the SSH public key as specified by the
-     * <code>PublicKeyId</code>.</p>
+     * <code>PublicKeyId</code>.</p> <p>Transfer Family accepts RSA, ECDSA, and ED25519
+     * keys.</p>
      */
     inline bool SshPublicKeyBodyHasBeenSet() const { return m_sshPublicKeyBodyHasBeenSet; }
 
     /**
      * <p>Specifies the content of the SSH public key as specified by the
-     * <code>PublicKeyId</code>.</p>
+     * <code>PublicKeyId</code>.</p> <p>Transfer Family accepts RSA, ECDSA, and ED25519
+     * keys.</p>
      */
     inline void SetSshPublicKeyBody(const Aws::String& value) { m_sshPublicKeyBodyHasBeenSet = true; m_sshPublicKeyBody = value; }
 
     /**
      * <p>Specifies the content of the SSH public key as specified by the
-     * <code>PublicKeyId</code>.</p>
+     * <code>PublicKeyId</code>.</p> <p>Transfer Family accepts RSA, ECDSA, and ED25519
+     * keys.</p>
      */
     inline void SetSshPublicKeyBody(Aws::String&& value) { m_sshPublicKeyBodyHasBeenSet = true; m_sshPublicKeyBody = std::move(value); }
 
     /**
      * <p>Specifies the content of the SSH public key as specified by the
-     * <code>PublicKeyId</code>.</p>
+     * <code>PublicKeyId</code>.</p> <p>Transfer Family accepts RSA, ECDSA, and ED25519
+     * keys.</p>
      */
     inline void SetSshPublicKeyBody(const char* value) { m_sshPublicKeyBodyHasBeenSet = true; m_sshPublicKeyBody.assign(value); }
 
     /**
      * <p>Specifies the content of the SSH public key as specified by the
-     * <code>PublicKeyId</code>.</p>
+     * <code>PublicKeyId</code>.</p> <p>Transfer Family accepts RSA, ECDSA, and ED25519
+     * keys.</p>
      */
     inline SshPublicKey& WithSshPublicKeyBody(const Aws::String& value) { SetSshPublicKeyBody(value); return *this;}
 
     /**
      * <p>Specifies the content of the SSH public key as specified by the
-     * <code>PublicKeyId</code>.</p>
+     * <code>PublicKeyId</code>.</p> <p>Transfer Family accepts RSA, ECDSA, and ED25519
+     * keys.</p>
      */
     inline SshPublicKey& WithSshPublicKeyBody(Aws::String&& value) { SetSshPublicKeyBody(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the content of the SSH public key as specified by the
-     * <code>PublicKeyId</code>.</p>
+     * <code>PublicKeyId</code>.</p> <p>Transfer Family accepts RSA, ECDSA, and ED25519
+     * keys.</p>
      */
     inline SshPublicKey& WithSshPublicKeyBody(const char* value) { SetSshPublicKeyBody(value); return *this;}
 

@@ -149,49 +149,49 @@ namespace Model
 
     /**
      * <p> The protocol settings that are configured for your server. </p> <p> Use the
-     * <code>PassiveIp</code> parameter to indicate passive mode. Enter a single
-     * dotted-quad IPv4 address, such as the external IP address of a firewall, router,
-     * or load balancer. </p>
+     * <code>PassiveIp</code> parameter to indicate passive mode. Enter a single IPv4
+     * address, such as the public IP address of a firewall, router, or load balancer.
+     * </p>
      */
     inline const ProtocolDetails& GetProtocolDetails() const{ return m_protocolDetails; }
 
     /**
      * <p> The protocol settings that are configured for your server. </p> <p> Use the
-     * <code>PassiveIp</code> parameter to indicate passive mode. Enter a single
-     * dotted-quad IPv4 address, such as the external IP address of a firewall, router,
-     * or load balancer. </p>
+     * <code>PassiveIp</code> parameter to indicate passive mode. Enter a single IPv4
+     * address, such as the public IP address of a firewall, router, or load balancer.
+     * </p>
      */
     inline bool ProtocolDetailsHasBeenSet() const { return m_protocolDetailsHasBeenSet; }
 
     /**
      * <p> The protocol settings that are configured for your server. </p> <p> Use the
-     * <code>PassiveIp</code> parameter to indicate passive mode. Enter a single
-     * dotted-quad IPv4 address, such as the external IP address of a firewall, router,
-     * or load balancer. </p>
+     * <code>PassiveIp</code> parameter to indicate passive mode. Enter a single IPv4
+     * address, such as the public IP address of a firewall, router, or load balancer.
+     * </p>
      */
     inline void SetProtocolDetails(const ProtocolDetails& value) { m_protocolDetailsHasBeenSet = true; m_protocolDetails = value; }
 
     /**
      * <p> The protocol settings that are configured for your server. </p> <p> Use the
-     * <code>PassiveIp</code> parameter to indicate passive mode. Enter a single
-     * dotted-quad IPv4 address, such as the external IP address of a firewall, router,
-     * or load balancer. </p>
+     * <code>PassiveIp</code> parameter to indicate passive mode. Enter a single IPv4
+     * address, such as the public IP address of a firewall, router, or load balancer.
+     * </p>
      */
     inline void SetProtocolDetails(ProtocolDetails&& value) { m_protocolDetailsHasBeenSet = true; m_protocolDetails = std::move(value); }
 
     /**
      * <p> The protocol settings that are configured for your server. </p> <p> Use the
-     * <code>PassiveIp</code> parameter to indicate passive mode. Enter a single
-     * dotted-quad IPv4 address, such as the external IP address of a firewall, router,
-     * or load balancer. </p>
+     * <code>PassiveIp</code> parameter to indicate passive mode. Enter a single IPv4
+     * address, such as the public IP address of a firewall, router, or load balancer.
+     * </p>
      */
     inline DescribedServer& WithProtocolDetails(const ProtocolDetails& value) { SetProtocolDetails(value); return *this;}
 
     /**
      * <p> The protocol settings that are configured for your server. </p> <p> Use the
-     * <code>PassiveIp</code> parameter to indicate passive mode. Enter a single
-     * dotted-quad IPv4 address, such as the external IP address of a firewall, router,
-     * or load balancer. </p>
+     * <code>PassiveIp</code> parameter to indicate passive mode. Enter a single IPv4
+     * address, such as the public IP address of a firewall, router, or load balancer.
+     * </p>
      */
     inline DescribedServer& WithProtocolDetails(ProtocolDetails&& value) { SetProtocolDetails(std::move(value)); return *this;}
 
