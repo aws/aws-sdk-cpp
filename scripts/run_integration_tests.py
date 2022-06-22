@@ -30,7 +30,7 @@ def Main():
     testHasParentDir = platform.system() != "Windows"
     exeExtension = ".exe" if platform.system() == "Windows" else ""
 
-    testList = [ "aws-cpp-sdk-transcribestreaming-integration-tests",
+    testList = [ #"aws-cpp-sdk-transcribestreaming-integration-tests", # Temporarily disabled while investigated
                  "aws-cpp-sdk-dynamodb-integration-tests",
                  "aws-cpp-sdk-sqs-integration-tests",
                  "aws-cpp-sdk-s3-integration-tests",
