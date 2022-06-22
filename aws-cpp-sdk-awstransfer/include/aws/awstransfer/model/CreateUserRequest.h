@@ -680,57 +680,57 @@ namespace Model
 
     /**
      * <p>The public portion of the Secure Shell (SSH) key used to authenticate the
-     * user to the server.</p>  <p> Currently, Transfer Family does not accept
-     * elliptical curve keys (keys beginning with <code>ecdsa</code>). </p> 
+     * user to the server.</p> <p>Transfer Family accepts RSA, ECDSA, and ED25519
+     * keys.</p>
      */
     inline const Aws::String& GetSshPublicKeyBody() const{ return m_sshPublicKeyBody; }
 
     /**
      * <p>The public portion of the Secure Shell (SSH) key used to authenticate the
-     * user to the server.</p>  <p> Currently, Transfer Family does not accept
-     * elliptical curve keys (keys beginning with <code>ecdsa</code>). </p> 
+     * user to the server.</p> <p>Transfer Family accepts RSA, ECDSA, and ED25519
+     * keys.</p>
      */
     inline bool SshPublicKeyBodyHasBeenSet() const { return m_sshPublicKeyBodyHasBeenSet; }
 
     /**
      * <p>The public portion of the Secure Shell (SSH) key used to authenticate the
-     * user to the server.</p>  <p> Currently, Transfer Family does not accept
-     * elliptical curve keys (keys beginning with <code>ecdsa</code>). </p> 
+     * user to the server.</p> <p>Transfer Family accepts RSA, ECDSA, and ED25519
+     * keys.</p>
      */
     inline void SetSshPublicKeyBody(const Aws::String& value) { m_sshPublicKeyBodyHasBeenSet = true; m_sshPublicKeyBody = value; }
 
     /**
      * <p>The public portion of the Secure Shell (SSH) key used to authenticate the
-     * user to the server.</p>  <p> Currently, Transfer Family does not accept
-     * elliptical curve keys (keys beginning with <code>ecdsa</code>). </p> 
+     * user to the server.</p> <p>Transfer Family accepts RSA, ECDSA, and ED25519
+     * keys.</p>
      */
     inline void SetSshPublicKeyBody(Aws::String&& value) { m_sshPublicKeyBodyHasBeenSet = true; m_sshPublicKeyBody = std::move(value); }
 
     /**
      * <p>The public portion of the Secure Shell (SSH) key used to authenticate the
-     * user to the server.</p>  <p> Currently, Transfer Family does not accept
-     * elliptical curve keys (keys beginning with <code>ecdsa</code>). </p> 
+     * user to the server.</p> <p>Transfer Family accepts RSA, ECDSA, and ED25519
+     * keys.</p>
      */
     inline void SetSshPublicKeyBody(const char* value) { m_sshPublicKeyBodyHasBeenSet = true; m_sshPublicKeyBody.assign(value); }
 
     /**
      * <p>The public portion of the Secure Shell (SSH) key used to authenticate the
-     * user to the server.</p>  <p> Currently, Transfer Family does not accept
-     * elliptical curve keys (keys beginning with <code>ecdsa</code>). </p> 
+     * user to the server.</p> <p>Transfer Family accepts RSA, ECDSA, and ED25519
+     * keys.</p>
      */
     inline CreateUserRequest& WithSshPublicKeyBody(const Aws::String& value) { SetSshPublicKeyBody(value); return *this;}
 
     /**
      * <p>The public portion of the Secure Shell (SSH) key used to authenticate the
-     * user to the server.</p>  <p> Currently, Transfer Family does not accept
-     * elliptical curve keys (keys beginning with <code>ecdsa</code>). </p> 
+     * user to the server.</p> <p>Transfer Family accepts RSA, ECDSA, and ED25519
+     * keys.</p>
      */
     inline CreateUserRequest& WithSshPublicKeyBody(Aws::String&& value) { SetSshPublicKeyBody(std::move(value)); return *this;}
 
     /**
      * <p>The public portion of the Secure Shell (SSH) key used to authenticate the
-     * user to the server.</p>  <p> Currently, Transfer Family does not accept
-     * elliptical curve keys (keys beginning with <code>ecdsa</code>). </p> 
+     * user to the server.</p> <p>Transfer Family accepts RSA, ECDSA, and ED25519
+     * keys.</p>
      */
     inline CreateUserRequest& WithSshPublicKeyBody(const char* value) { SetSshPublicKeyBody(value); return *this;}
 
