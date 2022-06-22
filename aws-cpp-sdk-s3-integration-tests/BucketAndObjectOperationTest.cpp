@@ -47,6 +47,7 @@
 #include <aws/testing/TestingEnvironment.h>
 #include <aws/testing/mocks/monitoring/TestingMonitoring.h>
 #include <fstream>
+#include <thread>
 
 #ifdef _WIN32
 #pragma warning(disable: 4127)
@@ -462,8 +463,18 @@ namespace
             Aws::String fullBucketName = CalculateBucketName(BASE_PUT_OBJECTS_PRESIGNED_URLS_BUCKET_NAME.c_str());
             Aws::String presignedUrlDelete = Client->GeneratePresignedUrl(fullBucketName, TEST_OBJ_KEY, HttpMethod::HTTP_DELETE);
             std::shared_ptr<HttpRequest> deleteRequest = CreateHttpRequest(presignedUrlDelete, HttpMethod::HTTP_DELETE, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-            std::shared_ptr<HttpResponse> deleteResponse = m_HttpClient->MakeRequest(deleteRequest);
-            ASSERT_EQ(HttpResponseCode::NO_CONTENT, deleteResponse->GetResponseCode());
+            static const size_t RETRIES = 5;
+            size_t deleteAttempt = 0;
+            Aws::Http::HttpResponseCode deleteResponseCode = Aws::Http::HttpResponseCode::REQUEST_NOT_MADE;
+            while(deleteAttempt < RETRIES && deleteResponseCode == Aws::Http::HttpResponseCode::REQUEST_NOT_MADE)
+            {
+                deleteResponseCode = m_HttpClient->MakeRequest(deleteRequest)->GetResponseCode();
+                deleteAttempt++;
+                if(deleteResponseCode == Aws::Http::HttpResponseCode::REQUEST_NOT_MADE) {
+                    std::this_thread::sleep_for(std::chrono::milliseconds(500));
+                }
+            }
+            ASSERT_EQ(HttpResponseCode::NO_CONTENT, deleteResponseCode);
             WaitForBucketToEmpty(fullBucketName);
         }
 
