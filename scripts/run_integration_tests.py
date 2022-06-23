@@ -40,7 +40,7 @@ def Main():
                  "aws-cpp-sdk-cognitoidentity-integration-tests",
                  "aws-cpp-sdk-transfer-tests",
                  "aws-cpp-sdk-s3-encryption-integration-tests",
-                 "aws-cpp-sdk-mediastore-data-integration-tests",
+                 #"aws-cpp-sdk-mediastore-data-integration-tests", # Temporarily disabled while investigated
                  "aws-cpp-sdk-kinesis-integration-tests",
                  "aws-cpp-sdk-logs-integration-tests",
                  "aws-cpp-sdk-elasticfilesystem-integration-tests",
