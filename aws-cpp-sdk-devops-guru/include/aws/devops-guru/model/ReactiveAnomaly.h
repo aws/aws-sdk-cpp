@@ -9,8 +9,12 @@
 #include <aws/devops-guru/model/AnomalySeverity.h>
 #include <aws/devops-guru/model/AnomalyStatus.h>
 #include <aws/devops-guru/model/AnomalyTimeRange.h>
+#include <aws/devops-guru/model/AnomalyReportedTimeRange.h>
 #include <aws/devops-guru/model/AnomalySourceDetails.h>
 #include <aws/devops-guru/model/ResourceCollection.h>
+#include <aws/devops-guru/model/AnomalyType.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/devops-guru/model/AnomalyResource.h>
 #include <utility>
 
 namespace Aws
@@ -85,32 +89,50 @@ namespace Model
 
 
     /**
-     * <p>The severity of the anomaly. </p>
+     * <p>The severity of the anomaly. The severity of anomalies that generate an
+     * insight determine that insight's severity. For more information, see <a
+     * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding
+     * insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
      */
     inline const AnomalySeverity& GetSeverity() const{ return m_severity; }
 
     /**
-     * <p>The severity of the anomaly. </p>
+     * <p>The severity of the anomaly. The severity of anomalies that generate an
+     * insight determine that insight's severity. For more information, see <a
+     * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding
+     * insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
      */
     inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }
 
     /**
-     * <p>The severity of the anomaly. </p>
+     * <p>The severity of the anomaly. The severity of anomalies that generate an
+     * insight determine that insight's severity. For more information, see <a
+     * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding
+     * insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
      */
     inline void SetSeverity(const AnomalySeverity& value) { m_severityHasBeenSet = true; m_severity = value; }
 
     /**
-     * <p>The severity of the anomaly. </p>
+     * <p>The severity of the anomaly. The severity of anomalies that generate an
+     * insight determine that insight's severity. For more information, see <a
+     * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding
+     * insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
      */
     inline void SetSeverity(AnomalySeverity&& value) { m_severityHasBeenSet = true; m_severity = std::move(value); }
 
     /**
-     * <p>The severity of the anomaly. </p>
+     * <p>The severity of the anomaly. The severity of anomalies that generate an
+     * insight determine that insight's severity. For more information, see <a
+     * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding
+     * insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
      */
     inline ReactiveAnomaly& WithSeverity(const AnomalySeverity& value) { SetSeverity(value); return *this;}
 
     /**
-     * <p>The severity of the anomaly. </p>
+     * <p>The severity of the anomaly. The severity of anomalies that generate an
+     * insight determine that insight's severity. For more information, see <a
+     * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding
+     * insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
      */
     inline ReactiveAnomaly& WithSeverity(AnomalySeverity&& value) { SetSeverity(std::move(value)); return *this;}
 
@@ -163,6 +185,43 @@ namespace Model
 
     
     inline ReactiveAnomaly& WithAnomalyTimeRange(AnomalyTimeRange&& value) { SetAnomalyTimeRange(std::move(value)); return *this;}
+
+
+    /**
+     * <p> An <code>AnomalyReportedTimeRange</code> object that specifies the time
+     * range between when the anomaly is opened and the time when it is closed. </p>
+     */
+    inline const AnomalyReportedTimeRange& GetAnomalyReportedTimeRange() const{ return m_anomalyReportedTimeRange; }
+
+    /**
+     * <p> An <code>AnomalyReportedTimeRange</code> object that specifies the time
+     * range between when the anomaly is opened and the time when it is closed. </p>
+     */
+    inline bool AnomalyReportedTimeRangeHasBeenSet() const { return m_anomalyReportedTimeRangeHasBeenSet; }
+
+    /**
+     * <p> An <code>AnomalyReportedTimeRange</code> object that specifies the time
+     * range between when the anomaly is opened and the time when it is closed. </p>
+     */
+    inline void SetAnomalyReportedTimeRange(const AnomalyReportedTimeRange& value) { m_anomalyReportedTimeRangeHasBeenSet = true; m_anomalyReportedTimeRange = value; }
+
+    /**
+     * <p> An <code>AnomalyReportedTimeRange</code> object that specifies the time
+     * range between when the anomaly is opened and the time when it is closed. </p>
+     */
+    inline void SetAnomalyReportedTimeRange(AnomalyReportedTimeRange&& value) { m_anomalyReportedTimeRangeHasBeenSet = true; m_anomalyReportedTimeRange = std::move(value); }
+
+    /**
+     * <p> An <code>AnomalyReportedTimeRange</code> object that specifies the time
+     * range between when the anomaly is opened and the time when it is closed. </p>
+     */
+    inline ReactiveAnomaly& WithAnomalyReportedTimeRange(const AnomalyReportedTimeRange& value) { SetAnomalyReportedTimeRange(value); return *this;}
+
+    /**
+     * <p> An <code>AnomalyReportedTimeRange</code> object that specifies the time
+     * range between when the anomaly is opened and the time when it is closed. </p>
+     */
+    inline ReactiveAnomaly& WithAnomalyReportedTimeRange(AnomalyReportedTimeRange&& value) { SetAnomalyReportedTimeRange(std::move(value)); return *this;}
 
 
     /**
@@ -269,6 +328,235 @@ namespace Model
     
     inline ReactiveAnomaly& WithResourceCollection(ResourceCollection&& value) { SetResourceCollection(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The type of the reactive anomaly. It can be one of the following types.</p>
+     * <ul> <li> <p> <code>CAUSAL</code> - the anomaly can cause a new insight.</p>
+     * </li> <li> <p> <code>CONTEXTUAL</code> - the anomaly contains additional
+     * information about an insight or its causal anomaly.</p> </li> </ul>
+     */
+    inline const AnomalyType& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of the reactive anomaly. It can be one of the following types.</p>
+     * <ul> <li> <p> <code>CAUSAL</code> - the anomaly can cause a new insight.</p>
+     * </li> <li> <p> <code>CONTEXTUAL</code> - the anomaly contains additional
+     * information about an insight or its causal anomaly.</p> </li> </ul>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of the reactive anomaly. It can be one of the following types.</p>
+     * <ul> <li> <p> <code>CAUSAL</code> - the anomaly can cause a new insight.</p>
+     * </li> <li> <p> <code>CONTEXTUAL</code> - the anomaly contains additional
+     * information about an insight or its causal anomaly.</p> </li> </ul>
+     */
+    inline void SetType(const AnomalyType& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p>The type of the reactive anomaly. It can be one of the following types.</p>
+     * <ul> <li> <p> <code>CAUSAL</code> - the anomaly can cause a new insight.</p>
+     * </li> <li> <p> <code>CONTEXTUAL</code> - the anomaly contains additional
+     * information about an insight or its causal anomaly.</p> </li> </ul>
+     */
+    inline void SetType(AnomalyType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+
+    /**
+     * <p>The type of the reactive anomaly. It can be one of the following types.</p>
+     * <ul> <li> <p> <code>CAUSAL</code> - the anomaly can cause a new insight.</p>
+     * </li> <li> <p> <code>CONTEXTUAL</code> - the anomaly contains additional
+     * information about an insight or its causal anomaly.</p> </li> </ul>
+     */
+    inline ReactiveAnomaly& WithType(const AnomalyType& value) { SetType(value); return *this;}
+
+    /**
+     * <p>The type of the reactive anomaly. It can be one of the following types.</p>
+     * <ul> <li> <p> <code>CAUSAL</code> - the anomaly can cause a new insight.</p>
+     * </li> <li> <p> <code>CONTEXTUAL</code> - the anomaly contains additional
+     * information about an insight or its causal anomaly.</p> </li> </ul>
+     */
+    inline ReactiveAnomaly& WithType(AnomalyType&& value) { SetType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The name of the reactive anomaly.</p>
+     */
+    inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the reactive anomaly.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the reactive anomaly.</p>
+     */
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /**
+     * <p>The name of the reactive anomaly.</p>
+     */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
+
+    /**
+     * <p>The name of the reactive anomaly.</p>
+     */
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+
+    /**
+     * <p>The name of the reactive anomaly.</p>
+     */
+    inline ReactiveAnomaly& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /**
+     * <p>The name of the reactive anomaly.</p>
+     */
+    inline ReactiveAnomaly& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the reactive anomaly.</p>
+     */
+    inline ReactiveAnomaly& WithName(const char* value) { SetName(value); return *this;}
+
+
+    /**
+     * <p>A description of the reactive anomaly.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description of the reactive anomaly.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A description of the reactive anomaly.</p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /**
+     * <p>A description of the reactive anomaly.</p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+
+    /**
+     * <p>A description of the reactive anomaly.</p>
+     */
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+
+    /**
+     * <p>A description of the reactive anomaly.</p>
+     */
+    inline ReactiveAnomaly& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>A description of the reactive anomaly.</p>
+     */
+    inline ReactiveAnomaly& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>A description of the reactive anomaly.</p>
+     */
+    inline ReactiveAnomaly& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+
+    /**
+     * <p>The ID of the causal anomaly that is associated with this reactive anomaly.
+     * The ID of a `CAUSAL` anomaly is always `NULL`.</p>
+     */
+    inline const Aws::String& GetCausalAnomalyId() const{ return m_causalAnomalyId; }
+
+    /**
+     * <p>The ID of the causal anomaly that is associated with this reactive anomaly.
+     * The ID of a `CAUSAL` anomaly is always `NULL`.</p>
+     */
+    inline bool CausalAnomalyIdHasBeenSet() const { return m_causalAnomalyIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the causal anomaly that is associated with this reactive anomaly.
+     * The ID of a `CAUSAL` anomaly is always `NULL`.</p>
+     */
+    inline void SetCausalAnomalyId(const Aws::String& value) { m_causalAnomalyIdHasBeenSet = true; m_causalAnomalyId = value; }
+
+    /**
+     * <p>The ID of the causal anomaly that is associated with this reactive anomaly.
+     * The ID of a `CAUSAL` anomaly is always `NULL`.</p>
+     */
+    inline void SetCausalAnomalyId(Aws::String&& value) { m_causalAnomalyIdHasBeenSet = true; m_causalAnomalyId = std::move(value); }
+
+    /**
+     * <p>The ID of the causal anomaly that is associated with this reactive anomaly.
+     * The ID of a `CAUSAL` anomaly is always `NULL`.</p>
+     */
+    inline void SetCausalAnomalyId(const char* value) { m_causalAnomalyIdHasBeenSet = true; m_causalAnomalyId.assign(value); }
+
+    /**
+     * <p>The ID of the causal anomaly that is associated with this reactive anomaly.
+     * The ID of a `CAUSAL` anomaly is always `NULL`.</p>
+     */
+    inline ReactiveAnomaly& WithCausalAnomalyId(const Aws::String& value) { SetCausalAnomalyId(value); return *this;}
+
+    /**
+     * <p>The ID of the causal anomaly that is associated with this reactive anomaly.
+     * The ID of a `CAUSAL` anomaly is always `NULL`.</p>
+     */
+    inline ReactiveAnomaly& WithCausalAnomalyId(Aws::String&& value) { SetCausalAnomalyId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the causal anomaly that is associated with this reactive anomaly.
+     * The ID of a `CAUSAL` anomaly is always `NULL`.</p>
+     */
+    inline ReactiveAnomaly& WithCausalAnomalyId(const char* value) { SetCausalAnomalyId(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Web Services resources in which anomalous behavior was detected by
+     * DevOps Guru.</p>
+     */
+    inline const Aws::Vector<AnomalyResource>& GetAnomalyResources() const{ return m_anomalyResources; }
+
+    /**
+     * <p>The Amazon Web Services resources in which anomalous behavior was detected by
+     * DevOps Guru.</p>
+     */
+    inline bool AnomalyResourcesHasBeenSet() const { return m_anomalyResourcesHasBeenSet; }
+
+    /**
+     * <p>The Amazon Web Services resources in which anomalous behavior was detected by
+     * DevOps Guru.</p>
+     */
+    inline void SetAnomalyResources(const Aws::Vector<AnomalyResource>& value) { m_anomalyResourcesHasBeenSet = true; m_anomalyResources = value; }
+
+    /**
+     * <p>The Amazon Web Services resources in which anomalous behavior was detected by
+     * DevOps Guru.</p>
+     */
+    inline void SetAnomalyResources(Aws::Vector<AnomalyResource>&& value) { m_anomalyResourcesHasBeenSet = true; m_anomalyResources = std::move(value); }
+
+    /**
+     * <p>The Amazon Web Services resources in which anomalous behavior was detected by
+     * DevOps Guru.</p>
+     */
+    inline ReactiveAnomaly& WithAnomalyResources(const Aws::Vector<AnomalyResource>& value) { SetAnomalyResources(value); return *this;}
+
+    /**
+     * <p>The Amazon Web Services resources in which anomalous behavior was detected by
+     * DevOps Guru.</p>
+     */
+    inline ReactiveAnomaly& WithAnomalyResources(Aws::Vector<AnomalyResource>&& value) { SetAnomalyResources(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Web Services resources in which anomalous behavior was detected by
+     * DevOps Guru.</p>
+     */
+    inline ReactiveAnomaly& AddAnomalyResources(const AnomalyResource& value) { m_anomalyResourcesHasBeenSet = true; m_anomalyResources.push_back(value); return *this; }
+
+    /**
+     * <p>The Amazon Web Services resources in which anomalous behavior was detected by
+     * DevOps Guru.</p>
+     */
+    inline ReactiveAnomaly& AddAnomalyResources(AnomalyResource&& value) { m_anomalyResourcesHasBeenSet = true; m_anomalyResources.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_id;
@@ -283,6 +571,9 @@ namespace Model
     AnomalyTimeRange m_anomalyTimeRange;
     bool m_anomalyTimeRangeHasBeenSet;
 
+    AnomalyReportedTimeRange m_anomalyReportedTimeRange;
+    bool m_anomalyReportedTimeRangeHasBeenSet;
+
     AnomalySourceDetails m_sourceDetails;
     bool m_sourceDetailsHasBeenSet;
 
@@ -291,6 +582,21 @@ namespace Model
 
     ResourceCollection m_resourceCollection;
     bool m_resourceCollectionHasBeenSet;
+
+    AnomalyType m_type;
+    bool m_typeHasBeenSet;
+
+    Aws::String m_name;
+    bool m_nameHasBeenSet;
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet;
+
+    Aws::String m_causalAnomalyId;
+    bool m_causalAnomalyIdHasBeenSet;
+
+    Aws::Vector<AnomalyResource> m_anomalyResources;
+    bool m_anomalyResourcesHasBeenSet;
   };
 
 } // namespace Model

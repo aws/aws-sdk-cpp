@@ -25,9 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>Encryption configuration of the export job. Includes the encryption type as
-   * well as the AWS KMS key. The KMS key is only necessary if you chose the KMS
-   * encryption type.</p><p><h3>See Also:</h3>   <a
+   * <p>Encryption configuration of the export job. Includes the encryption type in
+   * addition to the AWS KMS key. The KMS key is only necessary if you chose the KMS
+   * encryption. type.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ExportServerSideEncryption">AWS
    * API Reference</a></p>
    */
@@ -41,58 +41,58 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the the AWS KMS key you want to use to
-     * encrypt the Amazon S3 objects. This parameter is required if you choose aws:kms
-     * as an encryption type.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS KMS key you want to use to encrypt
+     * the Amazon S3 objects. This parameter is required if you choose aws:kms as an
+     * encryption type.</p>
      */
     inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the the AWS KMS key you want to use to
-     * encrypt the Amazon S3 objects. This parameter is required if you choose aws:kms
-     * as an encryption type.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS KMS key you want to use to encrypt
+     * the Amazon S3 objects. This parameter is required if you choose aws:kms as an
+     * encryption type.</p>
      */
     inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the the AWS KMS key you want to use to
-     * encrypt the Amazon S3 objects. This parameter is required if you choose aws:kms
-     * as an encryption type.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS KMS key you want to use to encrypt
+     * the Amazon S3 objects. This parameter is required if you choose aws:kms as an
+     * encryption type.</p>
      */
     inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the the AWS KMS key you want to use to
-     * encrypt the Amazon S3 objects. This parameter is required if you choose aws:kms
-     * as an encryption type.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS KMS key you want to use to encrypt
+     * the Amazon S3 objects. This parameter is required if you choose aws:kms as an
+     * encryption type.</p>
      */
     inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the the AWS KMS key you want to use to
-     * encrypt the Amazon S3 objects. This parameter is required if you choose aws:kms
-     * as an encryption type.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS KMS key you want to use to encrypt
+     * the Amazon S3 objects. This parameter is required if you choose aws:kms as an
+     * encryption type.</p>
      */
     inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the the AWS KMS key you want to use to
-     * encrypt the Amazon S3 objects. This parameter is required if you choose aws:kms
-     * as an encryption type.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS KMS key you want to use to encrypt
+     * the Amazon S3 objects. This parameter is required if you choose aws:kms as an
+     * encryption type.</p>
      */
     inline ExportServerSideEncryption& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the the AWS KMS key you want to use to
-     * encrypt the Amazon S3 objects. This parameter is required if you choose aws:kms
-     * as an encryption type.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS KMS key you want to use to encrypt
+     * the Amazon S3 objects. This parameter is required if you choose aws:kms as an
+     * encryption type.</p>
      */
     inline ExportServerSideEncryption& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the the AWS KMS key you want to use to
-     * encrypt the Amazon S3 objects. This parameter is required if you choose aws:kms
-     * as an encryption type.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS KMS key you want to use to encrypt
+     * the Amazon S3 objects. This parameter is required if you choose aws:kms as an
+     * encryption type.</p>
      */
     inline ExportServerSideEncryption& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
 

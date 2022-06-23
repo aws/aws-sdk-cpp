@@ -23,7 +23,8 @@ GetResourcesRequest::GetResourcesRequest() :
     m_includeComplianceDetails(false),
     m_includeComplianceDetailsHasBeenSet(false),
     m_excludeCompliantResources(false),
-    m_excludeCompliantResourcesHasBeenSet(false)
+    m_excludeCompliantResourcesHasBeenSet(false),
+    m_resourceARNListHasBeenSet(false)
 {
 }
 
@@ -80,6 +81,17 @@ Aws::String GetResourcesRequest::SerializePayload() const
   if(m_excludeCompliantResourcesHasBeenSet)
   {
    payload.WithBool("ExcludeCompliantResources", m_excludeCompliantResources);
+
+  }
+
+  if(m_resourceARNListHasBeenSet)
+  {
+   Array<JsonValue> resourceARNListJsonList(m_resourceARNList.size());
+   for(unsigned resourceARNListIndex = 0; resourceARNListIndex < resourceARNListJsonList.GetLength(); ++resourceARNListIndex)
+   {
+     resourceARNListJsonList[resourceARNListIndex].AsString(m_resourceARNList[resourceARNListIndex]);
+   }
+   payload.WithArray("ResourceARNList", std::move(resourceARNListJsonList));
 
   }
 

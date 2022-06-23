@@ -23,6 +23,7 @@ namespace Aws
         static const int SCRATCH_1_HASH = HashingUtils::HashString("SCRATCH_1");
         static const int SCRATCH_2_HASH = HashingUtils::HashString("SCRATCH_2");
         static const int PERSISTENT_1_HASH = HashingUtils::HashString("PERSISTENT_1");
+        static const int PERSISTENT_2_HASH = HashingUtils::HashString("PERSISTENT_2");
 
 
         LustreDeploymentType GetLustreDeploymentTypeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == PERSISTENT_1_HASH)
           {
             return LustreDeploymentType::PERSISTENT_1;
+          }
+          else if (hashCode == PERSISTENT_2_HASH)
+          {
+            return LustreDeploymentType::PERSISTENT_2;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "SCRATCH_2";
           case LustreDeploymentType::PERSISTENT_1:
             return "PERSISTENT_1";
+          case LustreDeploymentType::PERSISTENT_2:
+            return "PERSISTENT_2";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

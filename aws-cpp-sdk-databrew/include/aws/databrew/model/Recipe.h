@@ -28,7 +28,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents one or more actions to be performed on an AWS Glue DataBrew
+   * <p>Represents one or more actions to be performed on a DataBrew
    * dataset.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/Recipe">AWS API
    * Reference</a></p>
@@ -43,42 +43,42 @@ namespace Model
 
 
     /**
-     * <p>The identifier (the user name) of the user who created the recipe.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who created the recipe.</p>
      */
     inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
 
     /**
-     * <p>The identifier (the user name) of the user who created the recipe.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who created the recipe.</p>
      */
     inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
 
     /**
-     * <p>The identifier (the user name) of the user who created the recipe.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who created the recipe.</p>
      */
     inline void SetCreatedBy(const Aws::String& value) { m_createdByHasBeenSet = true; m_createdBy = value; }
 
     /**
-     * <p>The identifier (the user name) of the user who created the recipe.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who created the recipe.</p>
      */
     inline void SetCreatedBy(Aws::String&& value) { m_createdByHasBeenSet = true; m_createdBy = std::move(value); }
 
     /**
-     * <p>The identifier (the user name) of the user who created the recipe.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who created the recipe.</p>
      */
     inline void SetCreatedBy(const char* value) { m_createdByHasBeenSet = true; m_createdBy.assign(value); }
 
     /**
-     * <p>The identifier (the user name) of the user who created the recipe.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who created the recipe.</p>
      */
     inline Recipe& WithCreatedBy(const Aws::String& value) { SetCreatedBy(value); return *this;}
 
     /**
-     * <p>The identifier (the user name) of the user who created the recipe.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who created the recipe.</p>
      */
     inline Recipe& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier (the user name) of the user who created the recipe.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who created the recipe.</p>
      */
     inline Recipe& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
 
@@ -115,42 +115,42 @@ namespace Model
 
 
     /**
-     * <p>The identifier (user name) of the user who last modified the recipe.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who last modified the recipe.</p>
      */
     inline const Aws::String& GetLastModifiedBy() const{ return m_lastModifiedBy; }
 
     /**
-     * <p>The identifier (user name) of the user who last modified the recipe.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who last modified the recipe.</p>
      */
     inline bool LastModifiedByHasBeenSet() const { return m_lastModifiedByHasBeenSet; }
 
     /**
-     * <p>The identifier (user name) of the user who last modified the recipe.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who last modified the recipe.</p>
      */
     inline void SetLastModifiedBy(const Aws::String& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = value; }
 
     /**
-     * <p>The identifier (user name) of the user who last modified the recipe.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who last modified the recipe.</p>
      */
     inline void SetLastModifiedBy(Aws::String&& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = std::move(value); }
 
     /**
-     * <p>The identifier (user name) of the user who last modified the recipe.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who last modified the recipe.</p>
      */
     inline void SetLastModifiedBy(const char* value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy.assign(value); }
 
     /**
-     * <p>The identifier (user name) of the user who last modified the recipe.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who last modified the recipe.</p>
      */
     inline Recipe& WithLastModifiedBy(const Aws::String& value) { SetLastModifiedBy(value); return *this;}
 
     /**
-     * <p>The identifier (user name) of the user who last modified the recipe.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who last modified the recipe.</p>
      */
     inline Recipe& WithLastModifiedBy(Aws::String&& value) { SetLastModifiedBy(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier (user name) of the user who last modified the recipe.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who last modified the recipe.</p>
      */
     inline Recipe& WithLastModifiedBy(const char* value) { SetLastModifiedBy(value); return *this;}
 
@@ -228,42 +228,42 @@ namespace Model
 
 
     /**
-     * <p>The identifier (the user name) of the user who published the recipe.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who published the recipe.</p>
      */
     inline const Aws::String& GetPublishedBy() const{ return m_publishedBy; }
 
     /**
-     * <p>The identifier (the user name) of the user who published the recipe.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who published the recipe.</p>
      */
     inline bool PublishedByHasBeenSet() const { return m_publishedByHasBeenSet; }
 
     /**
-     * <p>The identifier (the user name) of the user who published the recipe.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who published the recipe.</p>
      */
     inline void SetPublishedBy(const Aws::String& value) { m_publishedByHasBeenSet = true; m_publishedBy = value; }
 
     /**
-     * <p>The identifier (the user name) of the user who published the recipe.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who published the recipe.</p>
      */
     inline void SetPublishedBy(Aws::String&& value) { m_publishedByHasBeenSet = true; m_publishedBy = std::move(value); }
 
     /**
-     * <p>The identifier (the user name) of the user who published the recipe.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who published the recipe.</p>
      */
     inline void SetPublishedBy(const char* value) { m_publishedByHasBeenSet = true; m_publishedBy.assign(value); }
 
     /**
-     * <p>The identifier (the user name) of the user who published the recipe.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who published the recipe.</p>
      */
     inline Recipe& WithPublishedBy(const Aws::String& value) { SetPublishedBy(value); return *this;}
 
     /**
-     * <p>The identifier (the user name) of the user who published the recipe.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who published the recipe.</p>
      */
     inline Recipe& WithPublishedBy(Aws::String&& value) { SetPublishedBy(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier (the user name) of the user who published the recipe.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who published the recipe.</p>
      */
     inline Recipe& WithPublishedBy(const char* value) { SetPublishedBy(value); return *this;}
 
@@ -530,42 +530,98 @@ namespace Model
 
 
     /**
-     * <p>The identifier for the version for the recipe. </p>
+     * <p>The identifier for the version for the recipe. Must be one of the
+     * following:</p> <ul> <li> <p>Numeric version (<code>X.Y</code>) - <code>X</code>
+     * and <code>Y</code> stand for major and minor version numbers. The maximum length
+     * of each is 6 digits, and neither can be negative values. Both <code>X</code> and
+     * <code>Y</code> are required, and "0.0" isn't a valid version.</p> </li> <li> <p>
+     * <code>LATEST_WORKING</code> - the most recent valid version being developed in a
+     * DataBrew project.</p> </li> <li> <p> <code>LATEST_PUBLISHED</code> - the most
+     * recent published version.</p> </li> </ul>
      */
     inline const Aws::String& GetRecipeVersion() const{ return m_recipeVersion; }
 
     /**
-     * <p>The identifier for the version for the recipe. </p>
+     * <p>The identifier for the version for the recipe. Must be one of the
+     * following:</p> <ul> <li> <p>Numeric version (<code>X.Y</code>) - <code>X</code>
+     * and <code>Y</code> stand for major and minor version numbers. The maximum length
+     * of each is 6 digits, and neither can be negative values. Both <code>X</code> and
+     * <code>Y</code> are required, and "0.0" isn't a valid version.</p> </li> <li> <p>
+     * <code>LATEST_WORKING</code> - the most recent valid version being developed in a
+     * DataBrew project.</p> </li> <li> <p> <code>LATEST_PUBLISHED</code> - the most
+     * recent published version.</p> </li> </ul>
      */
     inline bool RecipeVersionHasBeenSet() const { return m_recipeVersionHasBeenSet; }
 
     /**
-     * <p>The identifier for the version for the recipe. </p>
+     * <p>The identifier for the version for the recipe. Must be one of the
+     * following:</p> <ul> <li> <p>Numeric version (<code>X.Y</code>) - <code>X</code>
+     * and <code>Y</code> stand for major and minor version numbers. The maximum length
+     * of each is 6 digits, and neither can be negative values. Both <code>X</code> and
+     * <code>Y</code> are required, and "0.0" isn't a valid version.</p> </li> <li> <p>
+     * <code>LATEST_WORKING</code> - the most recent valid version being developed in a
+     * DataBrew project.</p> </li> <li> <p> <code>LATEST_PUBLISHED</code> - the most
+     * recent published version.</p> </li> </ul>
      */
     inline void SetRecipeVersion(const Aws::String& value) { m_recipeVersionHasBeenSet = true; m_recipeVersion = value; }
 
     /**
-     * <p>The identifier for the version for the recipe. </p>
+     * <p>The identifier for the version for the recipe. Must be one of the
+     * following:</p> <ul> <li> <p>Numeric version (<code>X.Y</code>) - <code>X</code>
+     * and <code>Y</code> stand for major and minor version numbers. The maximum length
+     * of each is 6 digits, and neither can be negative values. Both <code>X</code> and
+     * <code>Y</code> are required, and "0.0" isn't a valid version.</p> </li> <li> <p>
+     * <code>LATEST_WORKING</code> - the most recent valid version being developed in a
+     * DataBrew project.</p> </li> <li> <p> <code>LATEST_PUBLISHED</code> - the most
+     * recent published version.</p> </li> </ul>
      */
     inline void SetRecipeVersion(Aws::String&& value) { m_recipeVersionHasBeenSet = true; m_recipeVersion = std::move(value); }
 
     /**
-     * <p>The identifier for the version for the recipe. </p>
+     * <p>The identifier for the version for the recipe. Must be one of the
+     * following:</p> <ul> <li> <p>Numeric version (<code>X.Y</code>) - <code>X</code>
+     * and <code>Y</code> stand for major and minor version numbers. The maximum length
+     * of each is 6 digits, and neither can be negative values. Both <code>X</code> and
+     * <code>Y</code> are required, and "0.0" isn't a valid version.</p> </li> <li> <p>
+     * <code>LATEST_WORKING</code> - the most recent valid version being developed in a
+     * DataBrew project.</p> </li> <li> <p> <code>LATEST_PUBLISHED</code> - the most
+     * recent published version.</p> </li> </ul>
      */
     inline void SetRecipeVersion(const char* value) { m_recipeVersionHasBeenSet = true; m_recipeVersion.assign(value); }
 
     /**
-     * <p>The identifier for the version for the recipe. </p>
+     * <p>The identifier for the version for the recipe. Must be one of the
+     * following:</p> <ul> <li> <p>Numeric version (<code>X.Y</code>) - <code>X</code>
+     * and <code>Y</code> stand for major and minor version numbers. The maximum length
+     * of each is 6 digits, and neither can be negative values. Both <code>X</code> and
+     * <code>Y</code> are required, and "0.0" isn't a valid version.</p> </li> <li> <p>
+     * <code>LATEST_WORKING</code> - the most recent valid version being developed in a
+     * DataBrew project.</p> </li> <li> <p> <code>LATEST_PUBLISHED</code> - the most
+     * recent published version.</p> </li> </ul>
      */
     inline Recipe& WithRecipeVersion(const Aws::String& value) { SetRecipeVersion(value); return *this;}
 
     /**
-     * <p>The identifier for the version for the recipe. </p>
+     * <p>The identifier for the version for the recipe. Must be one of the
+     * following:</p> <ul> <li> <p>Numeric version (<code>X.Y</code>) - <code>X</code>
+     * and <code>Y</code> stand for major and minor version numbers. The maximum length
+     * of each is 6 digits, and neither can be negative values. Both <code>X</code> and
+     * <code>Y</code> are required, and "0.0" isn't a valid version.</p> </li> <li> <p>
+     * <code>LATEST_WORKING</code> - the most recent valid version being developed in a
+     * DataBrew project.</p> </li> <li> <p> <code>LATEST_PUBLISHED</code> - the most
+     * recent published version.</p> </li> </ul>
      */
     inline Recipe& WithRecipeVersion(Aws::String&& value) { SetRecipeVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier for the version for the recipe. </p>
+     * <p>The identifier for the version for the recipe. Must be one of the
+     * following:</p> <ul> <li> <p>Numeric version (<code>X.Y</code>) - <code>X</code>
+     * and <code>Y</code> stand for major and minor version numbers. The maximum length
+     * of each is 6 digits, and neither can be negative values. Both <code>X</code> and
+     * <code>Y</code> are required, and "0.0" isn't a valid version.</p> </li> <li> <p>
+     * <code>LATEST_WORKING</code> - the most recent valid version being developed in a
+     * DataBrew project.</p> </li> <li> <p> <code>LATEST_PUBLISHED</code> - the most
+     * recent published version.</p> </li> </ul>
      */
     inline Recipe& WithRecipeVersion(const char* value) { SetRecipeVersion(value); return *this;}
 

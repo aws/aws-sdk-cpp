@@ -42,73 +42,49 @@ namespace Model
 
     /**
      * <p>The Amazon Chime SDK external user ID. An idempotency token. Links the
-     * attendee to an identity managed by a builder application. If you create an
-     * attendee with the same external user id, the service returns the existing
-     * record.</p> <p>The Amazon Chime SDK external user ID. Links the attendee to an
-     * identity managed by a builder application.</p>
+     * attendee to an identity managed by a builder application.</p>
      */
     inline const Aws::String& GetExternalUserId() const{ return m_externalUserId; }
 
     /**
      * <p>The Amazon Chime SDK external user ID. An idempotency token. Links the
-     * attendee to an identity managed by a builder application. If you create an
-     * attendee with the same external user id, the service returns the existing
-     * record.</p> <p>The Amazon Chime SDK external user ID. Links the attendee to an
-     * identity managed by a builder application.</p>
+     * attendee to an identity managed by a builder application.</p>
      */
     inline bool ExternalUserIdHasBeenSet() const { return m_externalUserIdHasBeenSet; }
 
     /**
      * <p>The Amazon Chime SDK external user ID. An idempotency token. Links the
-     * attendee to an identity managed by a builder application. If you create an
-     * attendee with the same external user id, the service returns the existing
-     * record.</p> <p>The Amazon Chime SDK external user ID. Links the attendee to an
-     * identity managed by a builder application.</p>
+     * attendee to an identity managed by a builder application.</p>
      */
     inline void SetExternalUserId(const Aws::String& value) { m_externalUserIdHasBeenSet = true; m_externalUserId = value; }
 
     /**
      * <p>The Amazon Chime SDK external user ID. An idempotency token. Links the
-     * attendee to an identity managed by a builder application. If you create an
-     * attendee with the same external user id, the service returns the existing
-     * record.</p> <p>The Amazon Chime SDK external user ID. Links the attendee to an
-     * identity managed by a builder application.</p>
+     * attendee to an identity managed by a builder application.</p>
      */
     inline void SetExternalUserId(Aws::String&& value) { m_externalUserIdHasBeenSet = true; m_externalUserId = std::move(value); }
 
     /**
      * <p>The Amazon Chime SDK external user ID. An idempotency token. Links the
-     * attendee to an identity managed by a builder application. If you create an
-     * attendee with the same external user id, the service returns the existing
-     * record.</p> <p>The Amazon Chime SDK external user ID. Links the attendee to an
-     * identity managed by a builder application.</p>
+     * attendee to an identity managed by a builder application.</p>
      */
     inline void SetExternalUserId(const char* value) { m_externalUserIdHasBeenSet = true; m_externalUserId.assign(value); }
 
     /**
      * <p>The Amazon Chime SDK external user ID. An idempotency token. Links the
-     * attendee to an identity managed by a builder application. If you create an
-     * attendee with the same external user id, the service returns the existing
-     * record.</p> <p>The Amazon Chime SDK external user ID. Links the attendee to an
-     * identity managed by a builder application.</p>
+     * attendee to an identity managed by a builder application.</p>
      */
     inline CreateAttendeeRequestItem& WithExternalUserId(const Aws::String& value) { SetExternalUserId(value); return *this;}
 
     /**
      * <p>The Amazon Chime SDK external user ID. An idempotency token. Links the
-     * attendee to an identity managed by a builder application. If you create an
-     * attendee with the same external user id, the service returns the existing
-     * record.</p> <p>The Amazon Chime SDK external user ID. Links the attendee to an
-     * identity managed by a builder application.</p>
+     * attendee to an identity managed by a builder application.</p>
      */
     inline CreateAttendeeRequestItem& WithExternalUserId(Aws::String&& value) { SetExternalUserId(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Chime SDK external user ID. An idempotency token. Links the
-     * attendee to an identity managed by a builder application. If you create an
-     * attendee with the same external user id, the service returns the existing
-     * record.</p> <p>The Amazon Chime SDK external user ID. Links the attendee to an
-     * identity managed by a builder application.</p>
+     * attendee to an identity managed by a builder application.</p>
      */
     inline CreateAttendeeRequestItem& WithExternalUserId(const char* value) { SetExternalUserId(value); return *this;}
 

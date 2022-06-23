@@ -12,6 +12,7 @@
 #include <aws/acm-pca/model/FailureReason.h>
 #include <aws/acm-pca/model/CertificateAuthorityConfiguration.h>
 #include <aws/acm-pca/model/RevocationConfiguration.h>
+#include <aws/acm-pca/model/KeyStorageSecurityStandard.h>
 #include <utility>
 
 namespace Aws
@@ -42,7 +43,7 @@ namespace Model
    * with your ACM Private CA-hosted or on-premises root or subordinate CA
    * certificate. Call the <a
    * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ImportCertificateAuthorityCertificate.html">ImportCertificateAuthorityCertificate</a>
-   * action to import the signed certificate into AWS Certificate Manager (ACM).
+   * action to import the signed certificate into Certificate Manager (ACM).
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/CertificateAuthority">AWS
    * API Reference</a></p>
@@ -106,42 +107,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID that owns the certificate authority.</p>
+     * <p>The Amazon Web Services account ID that owns the certificate authority.</p>
      */
     inline const Aws::String& GetOwnerAccount() const{ return m_ownerAccount; }
 
     /**
-     * <p>The AWS account ID that owns the certificate authority.</p>
+     * <p>The Amazon Web Services account ID that owns the certificate authority.</p>
      */
     inline bool OwnerAccountHasBeenSet() const { return m_ownerAccountHasBeenSet; }
 
     /**
-     * <p>The AWS account ID that owns the certificate authority.</p>
+     * <p>The Amazon Web Services account ID that owns the certificate authority.</p>
      */
     inline void SetOwnerAccount(const Aws::String& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = value; }
 
     /**
-     * <p>The AWS account ID that owns the certificate authority.</p>
+     * <p>The Amazon Web Services account ID that owns the certificate authority.</p>
      */
     inline void SetOwnerAccount(Aws::String&& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = std::move(value); }
 
     /**
-     * <p>The AWS account ID that owns the certificate authority.</p>
+     * <p>The Amazon Web Services account ID that owns the certificate authority.</p>
      */
     inline void SetOwnerAccount(const char* value) { m_ownerAccountHasBeenSet = true; m_ownerAccount.assign(value); }
 
     /**
-     * <p>The AWS account ID that owns the certificate authority.</p>
+     * <p>The Amazon Web Services account ID that owns the certificate authority.</p>
      */
     inline CertificateAuthority& WithOwnerAccount(const Aws::String& value) { SetOwnerAccount(value); return *this;}
 
     /**
-     * <p>The AWS account ID that owns the certificate authority.</p>
+     * <p>The Amazon Web Services account ID that owns the certificate authority.</p>
      */
     inline CertificateAuthority& WithOwnerAccount(Aws::String&& value) { SetOwnerAccount(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID that owns the certificate authority.</p>
+     * <p>The Amazon Web Services account ID that owns the certificate authority.</p>
      */
     inline CertificateAuthority& WithOwnerAccount(const char* value) { SetOwnerAccount(value); return *this;}
 
@@ -436,38 +437,44 @@ namespace Model
 
 
     /**
-     * <p>Information about the certificate revocation list (CRL) created and
-     * maintained by your private CA. </p>
+     * <p>Information about the Online Certificate Status Protocol (OCSP) configuration
+     * or certificate revocation list (CRL) created and maintained by your private CA.
+     * </p>
      */
     inline const RevocationConfiguration& GetRevocationConfiguration() const{ return m_revocationConfiguration; }
 
     /**
-     * <p>Information about the certificate revocation list (CRL) created and
-     * maintained by your private CA. </p>
+     * <p>Information about the Online Certificate Status Protocol (OCSP) configuration
+     * or certificate revocation list (CRL) created and maintained by your private CA.
+     * </p>
      */
     inline bool RevocationConfigurationHasBeenSet() const { return m_revocationConfigurationHasBeenSet; }
 
     /**
-     * <p>Information about the certificate revocation list (CRL) created and
-     * maintained by your private CA. </p>
+     * <p>Information about the Online Certificate Status Protocol (OCSP) configuration
+     * or certificate revocation list (CRL) created and maintained by your private CA.
+     * </p>
      */
     inline void SetRevocationConfiguration(const RevocationConfiguration& value) { m_revocationConfigurationHasBeenSet = true; m_revocationConfiguration = value; }
 
     /**
-     * <p>Information about the certificate revocation list (CRL) created and
-     * maintained by your private CA. </p>
+     * <p>Information about the Online Certificate Status Protocol (OCSP) configuration
+     * or certificate revocation list (CRL) created and maintained by your private CA.
+     * </p>
      */
     inline void SetRevocationConfiguration(RevocationConfiguration&& value) { m_revocationConfigurationHasBeenSet = true; m_revocationConfiguration = std::move(value); }
 
     /**
-     * <p>Information about the certificate revocation list (CRL) created and
-     * maintained by your private CA. </p>
+     * <p>Information about the Online Certificate Status Protocol (OCSP) configuration
+     * or certificate revocation list (CRL) created and maintained by your private CA.
+     * </p>
      */
     inline CertificateAuthority& WithRevocationConfiguration(const RevocationConfiguration& value) { SetRevocationConfiguration(value); return *this;}
 
     /**
-     * <p>Information about the certificate revocation list (CRL) created and
-     * maintained by your private CA. </p>
+     * <p>Information about the Online Certificate Status Protocol (OCSP) configuration
+     * or certificate revocation list (CRL) created and maintained by your private CA.
+     * </p>
      */
     inline CertificateAuthority& WithRevocationConfiguration(RevocationConfiguration&& value) { SetRevocationConfiguration(std::move(value)); return *this;}
 
@@ -520,6 +527,73 @@ namespace Model
      */
     inline CertificateAuthority& WithRestorableUntil(Aws::Utils::DateTime&& value) { SetRestorableUntil(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Defines a cryptographic key management compliance standard used for handling
+     * CA keys. </p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>Note: Amazon Web
+     * Services Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You
+     * must explicitly specify this parameter and value when creating a CA in that
+     * Region. Specifying a different value (or no value) results in an
+     * <code>InvalidArgsException</code> with the message "A certificate authority
+     * cannot be created in this region with the specified security standard."</p>
+     */
+    inline const KeyStorageSecurityStandard& GetKeyStorageSecurityStandard() const{ return m_keyStorageSecurityStandard; }
+
+    /**
+     * <p>Defines a cryptographic key management compliance standard used for handling
+     * CA keys. </p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>Note: Amazon Web
+     * Services Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You
+     * must explicitly specify this parameter and value when creating a CA in that
+     * Region. Specifying a different value (or no value) results in an
+     * <code>InvalidArgsException</code> with the message "A certificate authority
+     * cannot be created in this region with the specified security standard."</p>
+     */
+    inline bool KeyStorageSecurityStandardHasBeenSet() const { return m_keyStorageSecurityStandardHasBeenSet; }
+
+    /**
+     * <p>Defines a cryptographic key management compliance standard used for handling
+     * CA keys. </p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>Note: Amazon Web
+     * Services Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You
+     * must explicitly specify this parameter and value when creating a CA in that
+     * Region. Specifying a different value (or no value) results in an
+     * <code>InvalidArgsException</code> with the message "A certificate authority
+     * cannot be created in this region with the specified security standard."</p>
+     */
+    inline void SetKeyStorageSecurityStandard(const KeyStorageSecurityStandard& value) { m_keyStorageSecurityStandardHasBeenSet = true; m_keyStorageSecurityStandard = value; }
+
+    /**
+     * <p>Defines a cryptographic key management compliance standard used for handling
+     * CA keys. </p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>Note: Amazon Web
+     * Services Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You
+     * must explicitly specify this parameter and value when creating a CA in that
+     * Region. Specifying a different value (or no value) results in an
+     * <code>InvalidArgsException</code> with the message "A certificate authority
+     * cannot be created in this region with the specified security standard."</p>
+     */
+    inline void SetKeyStorageSecurityStandard(KeyStorageSecurityStandard&& value) { m_keyStorageSecurityStandardHasBeenSet = true; m_keyStorageSecurityStandard = std::move(value); }
+
+    /**
+     * <p>Defines a cryptographic key management compliance standard used for handling
+     * CA keys. </p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>Note: Amazon Web
+     * Services Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You
+     * must explicitly specify this parameter and value when creating a CA in that
+     * Region. Specifying a different value (or no value) results in an
+     * <code>InvalidArgsException</code> with the message "A certificate authority
+     * cannot be created in this region with the specified security standard."</p>
+     */
+    inline CertificateAuthority& WithKeyStorageSecurityStandard(const KeyStorageSecurityStandard& value) { SetKeyStorageSecurityStandard(value); return *this;}
+
+    /**
+     * <p>Defines a cryptographic key management compliance standard used for handling
+     * CA keys. </p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>Note: Amazon Web
+     * Services Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You
+     * must explicitly specify this parameter and value when creating a CA in that
+     * Region. Specifying a different value (or no value) results in an
+     * <code>InvalidArgsException</code> with the message "A certificate authority
+     * cannot be created in this region with the specified security standard."</p>
+     */
+    inline CertificateAuthority& WithKeyStorageSecurityStandard(KeyStorageSecurityStandard&& value) { SetKeyStorageSecurityStandard(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -560,6 +634,9 @@ namespace Model
 
     Aws::Utils::DateTime m_restorableUntil;
     bool m_restorableUntilHasBeenSet;
+
+    KeyStorageSecurityStandard m_keyStorageSecurityStandard;
+    bool m_keyStorageSecurityStandardHasBeenSet;
   };
 
 } // namespace Model

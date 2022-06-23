@@ -76,7 +76,7 @@ PinpointSMSVoiceClient::~PinpointSMSVoiceClient()
 {
 }
 
-void PinpointSMSVoiceClient::init(const ClientConfiguration& config)
+void PinpointSMSVoiceClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Pinpoint SMS Voice");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -105,9 +105,7 @@ void PinpointSMSVoiceClient::OverrideEndpoint(const Aws::String& endpoint)
 CreateConfigurationSetOutcome PinpointSMSVoiceClient::CreateConfigurationSet(const CreateConfigurationSetRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/sms-voice/configuration-sets";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/sms-voice/configuration-sets");
   return CreateConfigurationSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -137,11 +135,9 @@ CreateConfigurationSetEventDestinationOutcome PinpointSMSVoiceClient::CreateConf
     return CreateConfigurationSetEventDestinationOutcome(Aws::Client::AWSError<PinpointSMSVoiceErrors>(PinpointSMSVoiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigurationSetName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/sms-voice/configuration-sets/";
-  ss << request.GetConfigurationSetName();
-  ss << "/event-destinations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/sms-voice/configuration-sets/");
+  uri.AddPathSegment(request.GetConfigurationSetName());
+  uri.AddPathSegments("/event-destinations");
   return CreateConfigurationSetEventDestinationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -171,10 +167,8 @@ DeleteConfigurationSetOutcome PinpointSMSVoiceClient::DeleteConfigurationSet(con
     return DeleteConfigurationSetOutcome(Aws::Client::AWSError<PinpointSMSVoiceErrors>(PinpointSMSVoiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigurationSetName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/sms-voice/configuration-sets/";
-  ss << request.GetConfigurationSetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/sms-voice/configuration-sets/");
+  uri.AddPathSegment(request.GetConfigurationSetName());
   return DeleteConfigurationSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -209,12 +203,10 @@ DeleteConfigurationSetEventDestinationOutcome PinpointSMSVoiceClient::DeleteConf
     return DeleteConfigurationSetEventDestinationOutcome(Aws::Client::AWSError<PinpointSMSVoiceErrors>(PinpointSMSVoiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EventDestinationName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/sms-voice/configuration-sets/";
-  ss << request.GetConfigurationSetName();
-  ss << "/event-destinations/";
-  ss << request.GetEventDestinationName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/sms-voice/configuration-sets/");
+  uri.AddPathSegment(request.GetConfigurationSetName());
+  uri.AddPathSegments("/event-destinations/");
+  uri.AddPathSegment(request.GetEventDestinationName());
   return DeleteConfigurationSetEventDestinationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -244,11 +236,9 @@ GetConfigurationSetEventDestinationsOutcome PinpointSMSVoiceClient::GetConfigura
     return GetConfigurationSetEventDestinationsOutcome(Aws::Client::AWSError<PinpointSMSVoiceErrors>(PinpointSMSVoiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigurationSetName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/sms-voice/configuration-sets/";
-  ss << request.GetConfigurationSetName();
-  ss << "/event-destinations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/sms-voice/configuration-sets/");
+  uri.AddPathSegment(request.GetConfigurationSetName());
+  uri.AddPathSegments("/event-destinations");
   return GetConfigurationSetEventDestinationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -273,9 +263,7 @@ void PinpointSMSVoiceClient::GetConfigurationSetEventDestinationsAsyncHelper(con
 ListConfigurationSetsOutcome PinpointSMSVoiceClient::ListConfigurationSets(const ListConfigurationSetsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/sms-voice/configuration-sets";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/sms-voice/configuration-sets");
   return ListConfigurationSetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -300,9 +288,7 @@ void PinpointSMSVoiceClient::ListConfigurationSetsAsyncHelper(const ListConfigur
 SendVoiceMessageOutcome PinpointSMSVoiceClient::SendVoiceMessage(const SendVoiceMessageRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/sms-voice/voice/message";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/sms-voice/voice/message");
   return SendVoiceMessageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -337,12 +323,10 @@ UpdateConfigurationSetEventDestinationOutcome PinpointSMSVoiceClient::UpdateConf
     return UpdateConfigurationSetEventDestinationOutcome(Aws::Client::AWSError<PinpointSMSVoiceErrors>(PinpointSMSVoiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EventDestinationName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/sms-voice/configuration-sets/";
-  ss << request.GetConfigurationSetName();
-  ss << "/event-destinations/";
-  ss << request.GetEventDestinationName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/sms-voice/configuration-sets/");
+  uri.AddPathSegment(request.GetConfigurationSetName());
+  uri.AddPathSegments("/event-destinations/");
+  uri.AddPathSegment(request.GetEventDestinationName());
   return UpdateConfigurationSetEventDestinationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 

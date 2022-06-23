@@ -20,13 +20,15 @@ namespace Model
 
 MetadataInfo::MetadataInfo() : 
     m_metadataValueHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+    m_createdTimeHasBeenSet(false),
+    m_otherMetadataValueListHasBeenSet(false)
 {
 }
 
 MetadataInfo::MetadataInfo(JsonView jsonValue) : 
     m_metadataValueHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+    m_createdTimeHasBeenSet(false),
+    m_otherMetadataValueListHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,16 @@ MetadataInfo& MetadataInfo::operator =(JsonView jsonValue)
     m_createdTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("OtherMetadataValueList"))
+  {
+    Array<JsonView> otherMetadataValueListJsonList = jsonValue.GetArray("OtherMetadataValueList");
+    for(unsigned otherMetadataValueListIndex = 0; otherMetadataValueListIndex < otherMetadataValueListJsonList.GetLength(); ++otherMetadataValueListIndex)
+    {
+      m_otherMetadataValueList.push_back(otherMetadataValueListJsonList[otherMetadataValueListIndex].AsObject());
+    }
+    m_otherMetadataValueListHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +75,17 @@ JsonValue MetadataInfo::Jsonize() const
   if(m_createdTimeHasBeenSet)
   {
    payload.WithString("CreatedTime", m_createdTime);
+
+  }
+
+  if(m_otherMetadataValueListHasBeenSet)
+  {
+   Array<JsonValue> otherMetadataValueListJsonList(m_otherMetadataValueList.size());
+   for(unsigned otherMetadataValueListIndex = 0; otherMetadataValueListIndex < otherMetadataValueListJsonList.GetLength(); ++otherMetadataValueListIndex)
+   {
+     otherMetadataValueListJsonList[otherMetadataValueListIndex].AsObject(m_otherMetadataValueList[otherMetadataValueListIndex].Jsonize());
+   }
+   payload.WithArray("OtherMetadataValueList", std::move(otherMetadataValueListJsonList));
 
   }
 

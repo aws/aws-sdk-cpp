@@ -21,6 +21,8 @@ namespace Model
 Av1Settings::Av1Settings() : 
     m_adaptiveQuantization(Av1AdaptiveQuantization::NOT_SET),
     m_adaptiveQuantizationHasBeenSet(false),
+    m_bitDepth(Av1BitDepth::NOT_SET),
+    m_bitDepthHasBeenSet(false),
     m_framerateControl(Av1FramerateControl::NOT_SET),
     m_framerateControlHasBeenSet(false),
     m_framerateConversionAlgorithm(Av1FramerateConversionAlgorithm::NOT_SET),
@@ -48,6 +50,8 @@ Av1Settings::Av1Settings() :
 Av1Settings::Av1Settings(JsonView jsonValue) : 
     m_adaptiveQuantization(Av1AdaptiveQuantization::NOT_SET),
     m_adaptiveQuantizationHasBeenSet(false),
+    m_bitDepth(Av1BitDepth::NOT_SET),
+    m_bitDepthHasBeenSet(false),
     m_framerateControl(Av1FramerateControl::NOT_SET),
     m_framerateControlHasBeenSet(false),
     m_framerateConversionAlgorithm(Av1FramerateConversionAlgorithm::NOT_SET),
@@ -80,6 +84,13 @@ Av1Settings& Av1Settings::operator =(JsonView jsonValue)
     m_adaptiveQuantization = Av1AdaptiveQuantizationMapper::GetAv1AdaptiveQuantizationForName(jsonValue.GetString("adaptiveQuantization"));
 
     m_adaptiveQuantizationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("bitDepth"))
+  {
+    m_bitDepth = Av1BitDepthMapper::GetAv1BitDepthForName(jsonValue.GetString("bitDepth"));
+
+    m_bitDepthHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("framerateControl"))
@@ -169,6 +180,11 @@ JsonValue Av1Settings::Jsonize() const
   if(m_adaptiveQuantizationHasBeenSet)
   {
    payload.WithString("adaptiveQuantization", Av1AdaptiveQuantizationMapper::GetNameForAv1AdaptiveQuantization(m_adaptiveQuantization));
+  }
+
+  if(m_bitDepthHasBeenSet)
+  {
+   payload.WithString("bitDepth", Av1BitDepthMapper::GetNameForAv1BitDepth(m_bitDepth));
   }
 
   if(m_framerateControlHasBeenSet)

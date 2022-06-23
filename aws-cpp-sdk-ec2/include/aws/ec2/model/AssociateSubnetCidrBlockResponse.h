@@ -35,27 +35,27 @@ namespace Model
 
 
     /**
-     * <p>Information about the IPv6 CIDR block association.</p>
+     * <p>Information about the IPv6 association.</p>
      */
     inline const SubnetIpv6CidrBlockAssociation& GetIpv6CidrBlockAssociation() const{ return m_ipv6CidrBlockAssociation; }
 
     /**
-     * <p>Information about the IPv6 CIDR block association.</p>
+     * <p>Information about the IPv6 association.</p>
      */
     inline void SetIpv6CidrBlockAssociation(const SubnetIpv6CidrBlockAssociation& value) { m_ipv6CidrBlockAssociation = value; }
 
     /**
-     * <p>Information about the IPv6 CIDR block association.</p>
+     * <p>Information about the IPv6 association.</p>
      */
     inline void SetIpv6CidrBlockAssociation(SubnetIpv6CidrBlockAssociation&& value) { m_ipv6CidrBlockAssociation = std::move(value); }
 
     /**
-     * <p>Information about the IPv6 CIDR block association.</p>
+     * <p>Information about the IPv6 association.</p>
      */
     inline AssociateSubnetCidrBlockResponse& WithIpv6CidrBlockAssociation(const SubnetIpv6CidrBlockAssociation& value) { SetIpv6CidrBlockAssociation(value); return *this;}
 
     /**
-     * <p>Information about the IPv6 CIDR block association.</p>
+     * <p>Information about the IPv6 association.</p>
      */
     inline AssociateSubnetCidrBlockResponse& WithIpv6CidrBlockAssociation(SubnetIpv6CidrBlockAssociation&& value) { SetIpv6CidrBlockAssociation(std::move(value)); return *this;}
 

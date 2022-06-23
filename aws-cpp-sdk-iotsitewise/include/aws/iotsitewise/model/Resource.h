@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains an AWS IoT SiteWise Monitor resource ID for a portal or
+   * <p>Contains an IoT SiteWise Monitor resource ID for a portal or
    * project.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/Resource">AWS
    * API Reference</a></p>

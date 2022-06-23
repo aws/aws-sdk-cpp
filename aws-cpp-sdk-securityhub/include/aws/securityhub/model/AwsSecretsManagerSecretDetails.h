@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Details about an AWS Secrets Manager secret.</p><p><h3>See Also:</h3>   <a
+   * <p>Details about an Secrets Manager secret.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsSecretsManagerSecretDetails">AWS
    * API Reference</a></p>
    */
@@ -91,58 +91,58 @@ namespace Model
 
 
     /**
-     * <p>The ARN, Key ID, or alias of the AWS KMS customer master key (CMK) used to
-     * encrypt the <code>SecretString</code> or <code>SecretBinary</code> values for
-     * versions of this secret.</p>
+     * <p>The ARN, Key ID, or alias of the KMS key used to encrypt the
+     * <code>SecretString</code> or <code>SecretBinary</code> values for versions of
+     * this secret.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The ARN, Key ID, or alias of the AWS KMS customer master key (CMK) used to
-     * encrypt the <code>SecretString</code> or <code>SecretBinary</code> values for
-     * versions of this secret.</p>
+     * <p>The ARN, Key ID, or alias of the KMS key used to encrypt the
+     * <code>SecretString</code> or <code>SecretBinary</code> values for versions of
+     * this secret.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The ARN, Key ID, or alias of the AWS KMS customer master key (CMK) used to
-     * encrypt the <code>SecretString</code> or <code>SecretBinary</code> values for
-     * versions of this secret.</p>
+     * <p>The ARN, Key ID, or alias of the KMS key used to encrypt the
+     * <code>SecretString</code> or <code>SecretBinary</code> values for versions of
+     * this secret.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The ARN, Key ID, or alias of the AWS KMS customer master key (CMK) used to
-     * encrypt the <code>SecretString</code> or <code>SecretBinary</code> values for
-     * versions of this secret.</p>
+     * <p>The ARN, Key ID, or alias of the KMS key used to encrypt the
+     * <code>SecretString</code> or <code>SecretBinary</code> values for versions of
+     * this secret.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The ARN, Key ID, or alias of the AWS KMS customer master key (CMK) used to
-     * encrypt the <code>SecretString</code> or <code>SecretBinary</code> values for
-     * versions of this secret.</p>
+     * <p>The ARN, Key ID, or alias of the KMS key used to encrypt the
+     * <code>SecretString</code> or <code>SecretBinary</code> values for versions of
+     * this secret.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The ARN, Key ID, or alias of the AWS KMS customer master key (CMK) used to
-     * encrypt the <code>SecretString</code> or <code>SecretBinary</code> values for
-     * versions of this secret.</p>
+     * <p>The ARN, Key ID, or alias of the KMS key used to encrypt the
+     * <code>SecretString</code> or <code>SecretBinary</code> values for versions of
+     * this secret.</p>
      */
     inline AwsSecretsManagerSecretDetails& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The ARN, Key ID, or alias of the AWS KMS customer master key (CMK) used to
-     * encrypt the <code>SecretString</code> or <code>SecretBinary</code> values for
-     * versions of this secret.</p>
+     * <p>The ARN, Key ID, or alias of the KMS key used to encrypt the
+     * <code>SecretString</code> or <code>SecretBinary</code> values for versions of
+     * this secret.</p>
      */
     inline AwsSecretsManagerSecretDetails& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN, Key ID, or alias of the AWS KMS customer master key (CMK) used to
-     * encrypt the <code>SecretString</code> or <code>SecretBinary</code> values for
-     * versions of this secret.</p>
+     * <p>The ARN, Key ID, or alias of the KMS key used to encrypt the
+     * <code>SecretString</code> or <code>SecretBinary</code> values for versions of
+     * this secret.</p>
      */
     inline AwsSecretsManagerSecretDetails& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

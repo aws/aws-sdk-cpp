@@ -41,27 +41,32 @@ namespace Model
 
 
     /**
-     * <p>The email identity type.</p>
+     * <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> identity type
+     * is not supported.</p>
      */
     inline const IdentityType& GetIdentityType() const{ return m_identityType; }
 
     /**
-     * <p>The email identity type.</p>
+     * <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> identity type
+     * is not supported.</p>
      */
     inline void SetIdentityType(const IdentityType& value) { m_identityType = value; }
 
     /**
-     * <p>The email identity type.</p>
+     * <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> identity type
+     * is not supported.</p>
      */
     inline void SetIdentityType(IdentityType&& value) { m_identityType = std::move(value); }
 
     /**
-     * <p>The email identity type.</p>
+     * <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> identity type
+     * is not supported.</p>
      */
     inline CreateEmailIdentityResult& WithIdentityType(const IdentityType& value) { SetIdentityType(value); return *this;}
 
     /**
-     * <p>The email identity type.</p>
+     * <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> identity type
+     * is not supported.</p>
      */
     inline CreateEmailIdentityResult& WithIdentityType(IdentityType&& value) { SetIdentityType(std::move(value)); return *this;}
 

@@ -72,7 +72,7 @@ MarketplaceMeteringClient::~MarketplaceMeteringClient()
 {
 }
 
-void MarketplaceMeteringClient::init(const ClientConfiguration& config)
+void MarketplaceMeteringClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Marketplace Metering");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -101,9 +101,6 @@ void MarketplaceMeteringClient::OverrideEndpoint(const Aws::String& endpoint)
 BatchMeterUsageOutcome MarketplaceMeteringClient::BatchMeterUsage(const BatchMeterUsageRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return BatchMeterUsageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -128,9 +125,6 @@ void MarketplaceMeteringClient::BatchMeterUsageAsyncHelper(const BatchMeterUsage
 MeterUsageOutcome MarketplaceMeteringClient::MeterUsage(const MeterUsageRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return MeterUsageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -155,9 +149,6 @@ void MarketplaceMeteringClient::MeterUsageAsyncHelper(const MeterUsageRequest& r
 RegisterUsageOutcome MarketplaceMeteringClient::RegisterUsage(const RegisterUsageRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return RegisterUsageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -182,9 +173,6 @@ void MarketplaceMeteringClient::RegisterUsageAsyncHelper(const RegisterUsageRequ
 ResolveCustomerOutcome MarketplaceMeteringClient::ResolveCustomer(const ResolveCustomerRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ResolveCustomerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

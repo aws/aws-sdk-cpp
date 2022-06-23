@@ -95,7 +95,7 @@ XRayClient::~XRayClient()
 {
 }
 
-void XRayClient::init(const ClientConfiguration& config)
+void XRayClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("XRay");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -124,9 +124,7 @@ void XRayClient::OverrideEndpoint(const Aws::String& endpoint)
 BatchGetTracesOutcome XRayClient::BatchGetTraces(const BatchGetTracesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/Traces";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/Traces");
   return BatchGetTracesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -151,9 +149,7 @@ void XRayClient::BatchGetTracesAsyncHelper(const BatchGetTracesRequest& request,
 CreateGroupOutcome XRayClient::CreateGroup(const CreateGroupRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/CreateGroup";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/CreateGroup");
   return CreateGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -178,9 +174,7 @@ void XRayClient::CreateGroupAsyncHelper(const CreateGroupRequest& request, const
 CreateSamplingRuleOutcome XRayClient::CreateSamplingRule(const CreateSamplingRuleRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/CreateSamplingRule";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/CreateSamplingRule");
   return CreateSamplingRuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -205,9 +199,7 @@ void XRayClient::CreateSamplingRuleAsyncHelper(const CreateSamplingRuleRequest& 
 DeleteGroupOutcome XRayClient::DeleteGroup(const DeleteGroupRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/DeleteGroup";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/DeleteGroup");
   return DeleteGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -232,9 +224,7 @@ void XRayClient::DeleteGroupAsyncHelper(const DeleteGroupRequest& request, const
 DeleteSamplingRuleOutcome XRayClient::DeleteSamplingRule(const DeleteSamplingRuleRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/DeleteSamplingRule";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/DeleteSamplingRule");
   return DeleteSamplingRuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -259,9 +249,7 @@ void XRayClient::DeleteSamplingRuleAsyncHelper(const DeleteSamplingRuleRequest& 
 GetEncryptionConfigOutcome XRayClient::GetEncryptionConfig(const GetEncryptionConfigRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/EncryptionConfig";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/EncryptionConfig");
   return GetEncryptionConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -286,9 +274,7 @@ void XRayClient::GetEncryptionConfigAsyncHelper(const GetEncryptionConfigRequest
 GetGroupOutcome XRayClient::GetGroup(const GetGroupRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/GetGroup";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/GetGroup");
   return GetGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -313,9 +299,7 @@ void XRayClient::GetGroupAsyncHelper(const GetGroupRequest& request, const GetGr
 GetGroupsOutcome XRayClient::GetGroups(const GetGroupsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/Groups";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/Groups");
   return GetGroupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -340,9 +324,7 @@ void XRayClient::GetGroupsAsyncHelper(const GetGroupsRequest& request, const Get
 GetInsightOutcome XRayClient::GetInsight(const GetInsightRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/Insight";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/Insight");
   return GetInsightOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -367,9 +349,7 @@ void XRayClient::GetInsightAsyncHelper(const GetInsightRequest& request, const G
 GetInsightEventsOutcome XRayClient::GetInsightEvents(const GetInsightEventsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/InsightEvents";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/InsightEvents");
   return GetInsightEventsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -394,9 +374,7 @@ void XRayClient::GetInsightEventsAsyncHelper(const GetInsightEventsRequest& requ
 GetInsightImpactGraphOutcome XRayClient::GetInsightImpactGraph(const GetInsightImpactGraphRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/InsightImpactGraph";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/InsightImpactGraph");
   return GetInsightImpactGraphOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -421,9 +399,7 @@ void XRayClient::GetInsightImpactGraphAsyncHelper(const GetInsightImpactGraphReq
 GetInsightSummariesOutcome XRayClient::GetInsightSummaries(const GetInsightSummariesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/InsightSummaries";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/InsightSummaries");
   return GetInsightSummariesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -448,9 +424,7 @@ void XRayClient::GetInsightSummariesAsyncHelper(const GetInsightSummariesRequest
 GetSamplingRulesOutcome XRayClient::GetSamplingRules(const GetSamplingRulesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/GetSamplingRules";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/GetSamplingRules");
   return GetSamplingRulesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -475,9 +449,7 @@ void XRayClient::GetSamplingRulesAsyncHelper(const GetSamplingRulesRequest& requ
 GetSamplingStatisticSummariesOutcome XRayClient::GetSamplingStatisticSummaries(const GetSamplingStatisticSummariesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/SamplingStatisticSummaries";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/SamplingStatisticSummaries");
   return GetSamplingStatisticSummariesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -502,9 +474,7 @@ void XRayClient::GetSamplingStatisticSummariesAsyncHelper(const GetSamplingStati
 GetSamplingTargetsOutcome XRayClient::GetSamplingTargets(const GetSamplingTargetsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/SamplingTargets";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/SamplingTargets");
   return GetSamplingTargetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -529,9 +499,7 @@ void XRayClient::GetSamplingTargetsAsyncHelper(const GetSamplingTargetsRequest& 
 GetServiceGraphOutcome XRayClient::GetServiceGraph(const GetServiceGraphRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/ServiceGraph";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/ServiceGraph");
   return GetServiceGraphOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -556,9 +524,7 @@ void XRayClient::GetServiceGraphAsyncHelper(const GetServiceGraphRequest& reques
 GetTimeSeriesServiceStatisticsOutcome XRayClient::GetTimeSeriesServiceStatistics(const GetTimeSeriesServiceStatisticsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/TimeSeriesServiceStatistics";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/TimeSeriesServiceStatistics");
   return GetTimeSeriesServiceStatisticsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -583,9 +549,7 @@ void XRayClient::GetTimeSeriesServiceStatisticsAsyncHelper(const GetTimeSeriesSe
 GetTraceGraphOutcome XRayClient::GetTraceGraph(const GetTraceGraphRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/TraceGraph";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/TraceGraph");
   return GetTraceGraphOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -610,9 +574,7 @@ void XRayClient::GetTraceGraphAsyncHelper(const GetTraceGraphRequest& request, c
 GetTraceSummariesOutcome XRayClient::GetTraceSummaries(const GetTraceSummariesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/TraceSummaries";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/TraceSummaries");
   return GetTraceSummariesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -637,9 +599,7 @@ void XRayClient::GetTraceSummariesAsyncHelper(const GetTraceSummariesRequest& re
 ListTagsForResourceOutcome XRayClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/ListTagsForResource";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/ListTagsForResource");
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -664,9 +624,7 @@ void XRayClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest
 PutEncryptionConfigOutcome XRayClient::PutEncryptionConfig(const PutEncryptionConfigRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/PutEncryptionConfig";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/PutEncryptionConfig");
   return PutEncryptionConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -691,9 +649,7 @@ void XRayClient::PutEncryptionConfigAsyncHelper(const PutEncryptionConfigRequest
 PutTelemetryRecordsOutcome XRayClient::PutTelemetryRecords(const PutTelemetryRecordsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/TelemetryRecords";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/TelemetryRecords");
   return PutTelemetryRecordsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -718,9 +674,7 @@ void XRayClient::PutTelemetryRecordsAsyncHelper(const PutTelemetryRecordsRequest
 PutTraceSegmentsOutcome XRayClient::PutTraceSegments(const PutTraceSegmentsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/TraceSegments";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/TraceSegments");
   return PutTraceSegmentsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -745,9 +699,7 @@ void XRayClient::PutTraceSegmentsAsyncHelper(const PutTraceSegmentsRequest& requ
 TagResourceOutcome XRayClient::TagResource(const TagResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/TagResource";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/TagResource");
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -772,9 +724,7 @@ void XRayClient::TagResourceAsyncHelper(const TagResourceRequest& request, const
 UntagResourceOutcome XRayClient::UntagResource(const UntagResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/UntagResource";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/UntagResource");
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -799,9 +749,7 @@ void XRayClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, c
 UpdateGroupOutcome XRayClient::UpdateGroup(const UpdateGroupRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/UpdateGroup";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/UpdateGroup");
   return UpdateGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -826,9 +774,7 @@ void XRayClient::UpdateGroupAsyncHelper(const UpdateGroupRequest& request, const
 UpdateSamplingRuleOutcome XRayClient::UpdateSamplingRule(const UpdateSamplingRuleRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/UpdateSamplingRule";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/UpdateSamplingRule");
   return UpdateSamplingRuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

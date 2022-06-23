@@ -335,58 +335,58 @@ namespace Model
 
 
     /**
-     * <p>The AWS resource to be copied; for example, an Amazon Elastic Block Store
-     * (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS)
-     * database.</p>
+     * <p>The Amazon Web Services resource to be copied; for example, an Amazon Elastic
+     * Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon
+     * RDS) database.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
 
     /**
-     * <p>The AWS resource to be copied; for example, an Amazon Elastic Block Store
-     * (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS)
-     * database.</p>
+     * <p>The Amazon Web Services resource to be copied; for example, an Amazon Elastic
+     * Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon
+     * RDS) database.</p>
      */
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
 
     /**
-     * <p>The AWS resource to be copied; for example, an Amazon Elastic Block Store
-     * (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS)
-     * database.</p>
+     * <p>The Amazon Web Services resource to be copied; for example, an Amazon Elastic
+     * Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon
+     * RDS) database.</p>
      */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
-     * <p>The AWS resource to be copied; for example, an Amazon Elastic Block Store
-     * (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS)
-     * database.</p>
+     * <p>The Amazon Web Services resource to be copied; for example, an Amazon Elastic
+     * Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon
+     * RDS) database.</p>
      */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
 
     /**
-     * <p>The AWS resource to be copied; for example, an Amazon Elastic Block Store
-     * (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS)
-     * database.</p>
+     * <p>The Amazon Web Services resource to be copied; for example, an Amazon Elastic
+     * Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon
+     * RDS) database.</p>
      */
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
 
     /**
-     * <p>The AWS resource to be copied; for example, an Amazon Elastic Block Store
-     * (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS)
-     * database.</p>
+     * <p>The Amazon Web Services resource to be copied; for example, an Amazon Elastic
+     * Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon
+     * RDS) database.</p>
      */
     inline CopyJob& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
 
     /**
-     * <p>The AWS resource to be copied; for example, an Amazon Elastic Block Store
-     * (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS)
-     * database.</p>
+     * <p>The Amazon Web Services resource to be copied; for example, an Amazon Elastic
+     * Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon
+     * RDS) database.</p>
      */
     inline CopyJob& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS resource to be copied; for example, an Amazon Elastic Block Store
-     * (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS)
-     * database.</p>
+     * <p>The Amazon Web Services resource to be copied; for example, an Amazon Elastic
+     * Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon
+     * RDS) database.</p>
      */
     inline CopyJob& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 
@@ -651,58 +651,58 @@ namespace Model
 
 
     /**
-     * <p>The type of AWS resource to be copied; for example, an Amazon Elastic Block
-     * Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS)
-     * database. </p>
+     * <p>The type of Amazon Web Services resource to be copied; for example, an Amazon
+     * Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service
+     * (Amazon RDS) database.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The type of AWS resource to be copied; for example, an Amazon Elastic Block
-     * Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS)
-     * database. </p>
+     * <p>The type of Amazon Web Services resource to be copied; for example, an Amazon
+     * Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service
+     * (Amazon RDS) database.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>The type of AWS resource to be copied; for example, an Amazon Elastic Block
-     * Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS)
-     * database. </p>
+     * <p>The type of Amazon Web Services resource to be copied; for example, an Amazon
+     * Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service
+     * (Amazon RDS) database.</p>
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The type of AWS resource to be copied; for example, an Amazon Elastic Block
-     * Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS)
-     * database. </p>
+     * <p>The type of Amazon Web Services resource to be copied; for example, an Amazon
+     * Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service
+     * (Amazon RDS) database.</p>
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The type of AWS resource to be copied; for example, an Amazon Elastic Block
-     * Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS)
-     * database. </p>
+     * <p>The type of Amazon Web Services resource to be copied; for example, an Amazon
+     * Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service
+     * (Amazon RDS) database.</p>
      */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
 
     /**
-     * <p>The type of AWS resource to be copied; for example, an Amazon Elastic Block
-     * Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS)
-     * database. </p>
+     * <p>The type of Amazon Web Services resource to be copied; for example, an Amazon
+     * Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service
+     * (Amazon RDS) database.</p>
      */
     inline CopyJob& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The type of AWS resource to be copied; for example, an Amazon Elastic Block
-     * Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS)
-     * database. </p>
+     * <p>The type of Amazon Web Services resource to be copied; for example, an Amazon
+     * Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service
+     * (Amazon RDS) database.</p>
      */
     inline CopyJob& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of AWS resource to be copied; for example, an Amazon Elastic Block
-     * Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS)
-     * database. </p>
+     * <p>The type of Amazon Web Services resource to be copied; for example, an Amazon
+     * Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service
+     * (Amazon RDS) database.</p>
      */
     inline CopyJob& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 

@@ -84,6 +84,18 @@ DescribeProjectResult& DescribeProjectResult::operator =(const Aws::AmazonWebSer
 
   }
 
+  if(jsonValue.ValueExists("LastModifiedTime"))
+  {
+    m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
+
+  }
+
+  if(jsonValue.ValueExists("LastModifiedBy"))
+  {
+    m_lastModifiedBy = jsonValue.GetObject("LastModifiedBy");
+
+  }
+
 
 
   return *this;

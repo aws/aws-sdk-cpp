@@ -15,6 +15,8 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/iot/model/JobProcessDetails.h>
 #include <aws/iot/model/TimeoutConfig.h>
+#include <aws/iot/model/JobExecutionsRetryConfig.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -143,7 +145,10 @@ namespace Model
      * (SNAPSHOT). If continuous, the job may also be run on a thing when a change is
      * detected in a target. For example, a job will run on a device when the thing
      * representing the device is added to a target group, even after the job was
-     * completed by all things originally in the group. </p>
+     * completed by all things originally in the group. </p>  <p>We recommend
+     * that you use continuous jobs instead of snapshot jobs for dynamic thing group
+     * targets. By using continuous jobs, devices that join the group receive the job
+     * execution even after the job has been created.</p> 
      */
     inline const TargetSelection& GetTargetSelection() const{ return m_targetSelection; }
 
@@ -153,7 +158,10 @@ namespace Model
      * (SNAPSHOT). If continuous, the job may also be run on a thing when a change is
      * detected in a target. For example, a job will run on a device when the thing
      * representing the device is added to a target group, even after the job was
-     * completed by all things originally in the group. </p>
+     * completed by all things originally in the group. </p>  <p>We recommend
+     * that you use continuous jobs instead of snapshot jobs for dynamic thing group
+     * targets. By using continuous jobs, devices that join the group receive the job
+     * execution even after the job has been created.</p> 
      */
     inline bool TargetSelectionHasBeenSet() const { return m_targetSelectionHasBeenSet; }
 
@@ -163,7 +171,10 @@ namespace Model
      * (SNAPSHOT). If continuous, the job may also be run on a thing when a change is
      * detected in a target. For example, a job will run on a device when the thing
      * representing the device is added to a target group, even after the job was
-     * completed by all things originally in the group. </p>
+     * completed by all things originally in the group. </p>  <p>We recommend
+     * that you use continuous jobs instead of snapshot jobs for dynamic thing group
+     * targets. By using continuous jobs, devices that join the group receive the job
+     * execution even after the job has been created.</p> 
      */
     inline void SetTargetSelection(const TargetSelection& value) { m_targetSelectionHasBeenSet = true; m_targetSelection = value; }
 
@@ -173,7 +184,10 @@ namespace Model
      * (SNAPSHOT). If continuous, the job may also be run on a thing when a change is
      * detected in a target. For example, a job will run on a device when the thing
      * representing the device is added to a target group, even after the job was
-     * completed by all things originally in the group. </p>
+     * completed by all things originally in the group. </p>  <p>We recommend
+     * that you use continuous jobs instead of snapshot jobs for dynamic thing group
+     * targets. By using continuous jobs, devices that join the group receive the job
+     * execution even after the job has been created.</p> 
      */
     inline void SetTargetSelection(TargetSelection&& value) { m_targetSelectionHasBeenSet = true; m_targetSelection = std::move(value); }
 
@@ -183,7 +197,10 @@ namespace Model
      * (SNAPSHOT). If continuous, the job may also be run on a thing when a change is
      * detected in a target. For example, a job will run on a device when the thing
      * representing the device is added to a target group, even after the job was
-     * completed by all things originally in the group. </p>
+     * completed by all things originally in the group. </p>  <p>We recommend
+     * that you use continuous jobs instead of snapshot jobs for dynamic thing group
+     * targets. By using continuous jobs, devices that join the group receive the job
+     * execution even after the job has been created.</p> 
      */
     inline Job& WithTargetSelection(const TargetSelection& value) { SetTargetSelection(value); return *this;}
 
@@ -193,7 +210,10 @@ namespace Model
      * (SNAPSHOT). If continuous, the job may also be run on a thing when a change is
      * detected in a target. For example, a job will run on a device when the thing
      * representing the device is added to a target group, even after the job was
-     * completed by all things originally in the group. </p>
+     * completed by all things originally in the group. </p>  <p>We recommend
+     * that you use continuous jobs instead of snapshot jobs for dynamic thing group
+     * targets. By using continuous jobs, devices that join the group receive the job
+     * execution even after the job has been created.</p> 
      */
     inline Job& WithTargetSelection(TargetSelection&& value) { SetTargetSelection(std::move(value)); return *this;}
 
@@ -709,9 +729,9 @@ namespace Model
 
     /**
      * <p>The namespace used to indicate that a job is a customer-managed job.</p>
-     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
-     * notifications to MQTT topics that contain the value in the following format.</p>
-     * <p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
      * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
      * 
@@ -720,9 +740,9 @@ namespace Model
 
     /**
      * <p>The namespace used to indicate that a job is a customer-managed job.</p>
-     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
-     * notifications to MQTT topics that contain the value in the following format.</p>
-     * <p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
      * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
      * 
@@ -731,9 +751,9 @@ namespace Model
 
     /**
      * <p>The namespace used to indicate that a job is a customer-managed job.</p>
-     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
-     * notifications to MQTT topics that contain the value in the following format.</p>
-     * <p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
      * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
      * 
@@ -742,9 +762,9 @@ namespace Model
 
     /**
      * <p>The namespace used to indicate that a job is a customer-managed job.</p>
-     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
-     * notifications to MQTT topics that contain the value in the following format.</p>
-     * <p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
      * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
      * 
@@ -753,9 +773,9 @@ namespace Model
 
     /**
      * <p>The namespace used to indicate that a job is a customer-managed job.</p>
-     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
-     * notifications to MQTT topics that contain the value in the following format.</p>
-     * <p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
      * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
      * 
@@ -764,9 +784,9 @@ namespace Model
 
     /**
      * <p>The namespace used to indicate that a job is a customer-managed job.</p>
-     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
-     * notifications to MQTT topics that contain the value in the following format.</p>
-     * <p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
      * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
      * 
@@ -775,9 +795,9 @@ namespace Model
 
     /**
      * <p>The namespace used to indicate that a job is a customer-managed job.</p>
-     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
-     * notifications to MQTT topics that contain the value in the following format.</p>
-     * <p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
      * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
      * 
@@ -786,14 +806,230 @@ namespace Model
 
     /**
      * <p>The namespace used to indicate that a job is a customer-managed job.</p>
-     * <p>When you specify a value for this parameter, AWS IoT Core sends jobs
-     * notifications to MQTT topics that contain the value in the following format.</p>
-     * <p>
+     * <p>When you specify a value for this parameter, Amazon Web Services IoT Core
+     * sends jobs notifications to MQTT topics that contain the value in the following
+     * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
      * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
      * 
      */
     inline Job& WithNamespaceId(const char* value) { SetNamespaceId(value); return *this;}
+
+
+    /**
+     * <p>The ARN of the job template used to create the job.</p>
+     */
+    inline const Aws::String& GetJobTemplateArn() const{ return m_jobTemplateArn; }
+
+    /**
+     * <p>The ARN of the job template used to create the job.</p>
+     */
+    inline bool JobTemplateArnHasBeenSet() const { return m_jobTemplateArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the job template used to create the job.</p>
+     */
+    inline void SetJobTemplateArn(const Aws::String& value) { m_jobTemplateArnHasBeenSet = true; m_jobTemplateArn = value; }
+
+    /**
+     * <p>The ARN of the job template used to create the job.</p>
+     */
+    inline void SetJobTemplateArn(Aws::String&& value) { m_jobTemplateArnHasBeenSet = true; m_jobTemplateArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the job template used to create the job.</p>
+     */
+    inline void SetJobTemplateArn(const char* value) { m_jobTemplateArnHasBeenSet = true; m_jobTemplateArn.assign(value); }
+
+    /**
+     * <p>The ARN of the job template used to create the job.</p>
+     */
+    inline Job& WithJobTemplateArn(const Aws::String& value) { SetJobTemplateArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the job template used to create the job.</p>
+     */
+    inline Job& WithJobTemplateArn(Aws::String&& value) { SetJobTemplateArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the job template used to create the job.</p>
+     */
+    inline Job& WithJobTemplateArn(const char* value) { SetJobTemplateArn(value); return *this;}
+
+
+    /**
+     * <p>The configuration for the criteria to retry the job.</p>
+     */
+    inline const JobExecutionsRetryConfig& GetJobExecutionsRetryConfig() const{ return m_jobExecutionsRetryConfig; }
+
+    /**
+     * <p>The configuration for the criteria to retry the job.</p>
+     */
+    inline bool JobExecutionsRetryConfigHasBeenSet() const { return m_jobExecutionsRetryConfigHasBeenSet; }
+
+    /**
+     * <p>The configuration for the criteria to retry the job.</p>
+     */
+    inline void SetJobExecutionsRetryConfig(const JobExecutionsRetryConfig& value) { m_jobExecutionsRetryConfigHasBeenSet = true; m_jobExecutionsRetryConfig = value; }
+
+    /**
+     * <p>The configuration for the criteria to retry the job.</p>
+     */
+    inline void SetJobExecutionsRetryConfig(JobExecutionsRetryConfig&& value) { m_jobExecutionsRetryConfigHasBeenSet = true; m_jobExecutionsRetryConfig = std::move(value); }
+
+    /**
+     * <p>The configuration for the criteria to retry the job.</p>
+     */
+    inline Job& WithJobExecutionsRetryConfig(const JobExecutionsRetryConfig& value) { SetJobExecutionsRetryConfig(value); return *this;}
+
+    /**
+     * <p>The configuration for the criteria to retry the job.</p>
+     */
+    inline Job& WithJobExecutionsRetryConfig(JobExecutionsRetryConfig&& value) { SetJobExecutionsRetryConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A key-value map that pairs the patterns that need to be replaced in a managed
+     * template job document schema. You can use the description of each key as a
+     * guidance to specify the inputs during runtime when creating a job.</p> 
+     * <p> <code>documentParameters</code> can only be used when creating jobs from
+     * Amazon Web Services managed templates. This parameter can't be used with custom
+     * job templates or to create jobs from them.</p> 
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetDocumentParameters() const{ return m_documentParameters; }
+
+    /**
+     * <p>A key-value map that pairs the patterns that need to be replaced in a managed
+     * template job document schema. You can use the description of each key as a
+     * guidance to specify the inputs during runtime when creating a job.</p> 
+     * <p> <code>documentParameters</code> can only be used when creating jobs from
+     * Amazon Web Services managed templates. This parameter can't be used with custom
+     * job templates or to create jobs from them.</p> 
+     */
+    inline bool DocumentParametersHasBeenSet() const { return m_documentParametersHasBeenSet; }
+
+    /**
+     * <p>A key-value map that pairs the patterns that need to be replaced in a managed
+     * template job document schema. You can use the description of each key as a
+     * guidance to specify the inputs during runtime when creating a job.</p> 
+     * <p> <code>documentParameters</code> can only be used when creating jobs from
+     * Amazon Web Services managed templates. This parameter can't be used with custom
+     * job templates or to create jobs from them.</p> 
+     */
+    inline void SetDocumentParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_documentParametersHasBeenSet = true; m_documentParameters = value; }
+
+    /**
+     * <p>A key-value map that pairs the patterns that need to be replaced in a managed
+     * template job document schema. You can use the description of each key as a
+     * guidance to specify the inputs during runtime when creating a job.</p> 
+     * <p> <code>documentParameters</code> can only be used when creating jobs from
+     * Amazon Web Services managed templates. This parameter can't be used with custom
+     * job templates or to create jobs from them.</p> 
+     */
+    inline void SetDocumentParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_documentParametersHasBeenSet = true; m_documentParameters = std::move(value); }
+
+    /**
+     * <p>A key-value map that pairs the patterns that need to be replaced in a managed
+     * template job document schema. You can use the description of each key as a
+     * guidance to specify the inputs during runtime when creating a job.</p> 
+     * <p> <code>documentParameters</code> can only be used when creating jobs from
+     * Amazon Web Services managed templates. This parameter can't be used with custom
+     * job templates or to create jobs from them.</p> 
+     */
+    inline Job& WithDocumentParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetDocumentParameters(value); return *this;}
+
+    /**
+     * <p>A key-value map that pairs the patterns that need to be replaced in a managed
+     * template job document schema. You can use the description of each key as a
+     * guidance to specify the inputs during runtime when creating a job.</p> 
+     * <p> <code>documentParameters</code> can only be used when creating jobs from
+     * Amazon Web Services managed templates. This parameter can't be used with custom
+     * job templates or to create jobs from them.</p> 
+     */
+    inline Job& WithDocumentParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetDocumentParameters(std::move(value)); return *this;}
+
+    /**
+     * <p>A key-value map that pairs the patterns that need to be replaced in a managed
+     * template job document schema. You can use the description of each key as a
+     * guidance to specify the inputs during runtime when creating a job.</p> 
+     * <p> <code>documentParameters</code> can only be used when creating jobs from
+     * Amazon Web Services managed templates. This parameter can't be used with custom
+     * job templates or to create jobs from them.</p> 
+     */
+    inline Job& AddDocumentParameters(const Aws::String& key, const Aws::String& value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(key, value); return *this; }
+
+    /**
+     * <p>A key-value map that pairs the patterns that need to be replaced in a managed
+     * template job document schema. You can use the description of each key as a
+     * guidance to specify the inputs during runtime when creating a job.</p> 
+     * <p> <code>documentParameters</code> can only be used when creating jobs from
+     * Amazon Web Services managed templates. This parameter can't be used with custom
+     * job templates or to create jobs from them.</p> 
+     */
+    inline Job& AddDocumentParameters(Aws::String&& key, const Aws::String& value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A key-value map that pairs the patterns that need to be replaced in a managed
+     * template job document schema. You can use the description of each key as a
+     * guidance to specify the inputs during runtime when creating a job.</p> 
+     * <p> <code>documentParameters</code> can only be used when creating jobs from
+     * Amazon Web Services managed templates. This parameter can't be used with custom
+     * job templates or to create jobs from them.</p> 
+     */
+    inline Job& AddDocumentParameters(const Aws::String& key, Aws::String&& value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A key-value map that pairs the patterns that need to be replaced in a managed
+     * template job document schema. You can use the description of each key as a
+     * guidance to specify the inputs during runtime when creating a job.</p> 
+     * <p> <code>documentParameters</code> can only be used when creating jobs from
+     * Amazon Web Services managed templates. This parameter can't be used with custom
+     * job templates or to create jobs from them.</p> 
+     */
+    inline Job& AddDocumentParameters(Aws::String&& key, Aws::String&& value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>A key-value map that pairs the patterns that need to be replaced in a managed
+     * template job document schema. You can use the description of each key as a
+     * guidance to specify the inputs during runtime when creating a job.</p> 
+     * <p> <code>documentParameters</code> can only be used when creating jobs from
+     * Amazon Web Services managed templates. This parameter can't be used with custom
+     * job templates or to create jobs from them.</p> 
+     */
+    inline Job& AddDocumentParameters(const char* key, Aws::String&& value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A key-value map that pairs the patterns that need to be replaced in a managed
+     * template job document schema. You can use the description of each key as a
+     * guidance to specify the inputs during runtime when creating a job.</p> 
+     * <p> <code>documentParameters</code> can only be used when creating jobs from
+     * Amazon Web Services managed templates. This parameter can't be used with custom
+     * job templates or to create jobs from them.</p> 
+     */
+    inline Job& AddDocumentParameters(Aws::String&& key, const char* value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A key-value map that pairs the patterns that need to be replaced in a managed
+     * template job document schema. You can use the description of each key as a
+     * guidance to specify the inputs during runtime when creating a job.</p> 
+     * <p> <code>documentParameters</code> can only be used when creating jobs from
+     * Amazon Web Services managed templates. This parameter can't be used with custom
+     * job templates or to create jobs from them.</p> 
+     */
+    inline Job& AddDocumentParameters(const char* key, const char* value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(key, value); return *this; }
+
+
+    
+    inline bool GetIsConcurrent() const{ return m_isConcurrent; }
+
+    
+    inline bool IsConcurrentHasBeenSet() const { return m_isConcurrentHasBeenSet; }
+
+    
+    inline void SetIsConcurrent(bool value) { m_isConcurrentHasBeenSet = true; m_isConcurrent = value; }
+
+    
+    inline Job& WithIsConcurrent(bool value) { SetIsConcurrent(value); return *this;}
 
   private:
 
@@ -850,6 +1086,18 @@ namespace Model
 
     Aws::String m_namespaceId;
     bool m_namespaceIdHasBeenSet;
+
+    Aws::String m_jobTemplateArn;
+    bool m_jobTemplateArnHasBeenSet;
+
+    JobExecutionsRetryConfig m_jobExecutionsRetryConfig;
+    bool m_jobExecutionsRetryConfigHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_documentParameters;
+    bool m_documentParametersHasBeenSet;
+
+    bool m_isConcurrent;
+    bool m_isConcurrentHasBeenSet;
   };
 
 } // namespace Model

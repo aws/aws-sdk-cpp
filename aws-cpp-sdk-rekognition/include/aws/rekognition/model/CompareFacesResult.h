@@ -246,7 +246,7 @@ namespace Model
      * image correction. The bounding box coordinates are translated to represent
      * object locations after the orientation information in the Exif metadata is used
      * to correct the image orientation. Images in .png format don't contain Exif
-     * metadata.</p> <p>Amazon Rekognition doesn’t perform image correction for images
+     * metadata.</p> <p>Amazon Rekognition doesn��t perform image correction for images
      * in .png format and .jpeg images without orientation information in the image
      * Exif metadata. The bounding box coordinates aren't translated and represent the
      * object locations before the image is rotated. </p>
@@ -261,7 +261,7 @@ namespace Model
      * image correction. The bounding box coordinates are translated to represent
      * object locations after the orientation information in the Exif metadata is used
      * to correct the image orientation. Images in .png format don't contain Exif
-     * metadata.</p> <p>Amazon Rekognition doesn’t perform image correction for images
+     * metadata.</p> <p>Amazon Rekognition doesn��t perform image correction for images
      * in .png format and .jpeg images without orientation information in the image
      * Exif metadata. The bounding box coordinates aren't translated and represent the
      * object locations before the image is rotated. </p>
@@ -276,7 +276,7 @@ namespace Model
      * image correction. The bounding box coordinates are translated to represent
      * object locations after the orientation information in the Exif metadata is used
      * to correct the image orientation. Images in .png format don't contain Exif
-     * metadata.</p> <p>Amazon Rekognition doesn’t perform image correction for images
+     * metadata.</p> <p>Amazon Rekognition doesn��t perform image correction for images
      * in .png format and .jpeg images without orientation information in the image
      * Exif metadata. The bounding box coordinates aren't translated and represent the
      * object locations before the image is rotated. </p>
@@ -291,7 +291,7 @@ namespace Model
      * image correction. The bounding box coordinates are translated to represent
      * object locations after the orientation information in the Exif metadata is used
      * to correct the image orientation. Images in .png format don't contain Exif
-     * metadata.</p> <p>Amazon Rekognition doesn’t perform image correction for images
+     * metadata.</p> <p>Amazon Rekognition doesn��t perform image correction for images
      * in .png format and .jpeg images without orientation information in the image
      * Exif metadata. The bounding box coordinates aren't translated and represent the
      * object locations before the image is rotated. </p>
@@ -306,7 +306,7 @@ namespace Model
      * image correction. The bounding box coordinates are translated to represent
      * object locations after the orientation information in the Exif metadata is used
      * to correct the image orientation. Images in .png format don't contain Exif
-     * metadata.</p> <p>Amazon Rekognition doesn’t perform image correction for images
+     * metadata.</p> <p>Amazon Rekognition doesn��t perform image correction for images
      * in .png format and .jpeg images without orientation information in the image
      * Exif metadata. The bounding box coordinates aren't translated and represent the
      * object locations before the image is rotated. </p>

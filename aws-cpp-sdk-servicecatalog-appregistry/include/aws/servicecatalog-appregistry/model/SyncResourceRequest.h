@@ -66,49 +66,57 @@ namespace Model
 
     /**
      * <p>An entity you can work with and specify with a name or ID. Examples include
-     * an Amazon EC2 instance, an AWS CloudFormation stack, or an Amazon S3 bucket.</p>
+     * an Amazon EC2 instance, an Amazon Web Services CloudFormation stack, or an
+     * Amazon S3 bucket.</p>
      */
     inline const Aws::String& GetResource() const{ return m_resource; }
 
     /**
      * <p>An entity you can work with and specify with a name or ID. Examples include
-     * an Amazon EC2 instance, an AWS CloudFormation stack, or an Amazon S3 bucket.</p>
+     * an Amazon EC2 instance, an Amazon Web Services CloudFormation stack, or an
+     * Amazon S3 bucket.</p>
      */
     inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
 
     /**
      * <p>An entity you can work with and specify with a name or ID. Examples include
-     * an Amazon EC2 instance, an AWS CloudFormation stack, or an Amazon S3 bucket.</p>
+     * an Amazon EC2 instance, an Amazon Web Services CloudFormation stack, or an
+     * Amazon S3 bucket.</p>
      */
     inline void SetResource(const Aws::String& value) { m_resourceHasBeenSet = true; m_resource = value; }
 
     /**
      * <p>An entity you can work with and specify with a name or ID. Examples include
-     * an Amazon EC2 instance, an AWS CloudFormation stack, or an Amazon S3 bucket.</p>
+     * an Amazon EC2 instance, an Amazon Web Services CloudFormation stack, or an
+     * Amazon S3 bucket.</p>
      */
     inline void SetResource(Aws::String&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
 
     /**
      * <p>An entity you can work with and specify with a name or ID. Examples include
-     * an Amazon EC2 instance, an AWS CloudFormation stack, or an Amazon S3 bucket.</p>
+     * an Amazon EC2 instance, an Amazon Web Services CloudFormation stack, or an
+     * Amazon S3 bucket.</p>
      */
     inline void SetResource(const char* value) { m_resourceHasBeenSet = true; m_resource.assign(value); }
 
     /**
      * <p>An entity you can work with and specify with a name or ID. Examples include
-     * an Amazon EC2 instance, an AWS CloudFormation stack, or an Amazon S3 bucket.</p>
+     * an Amazon EC2 instance, an Amazon Web Services CloudFormation stack, or an
+     * Amazon S3 bucket.</p>
      */
     inline SyncResourceRequest& WithResource(const Aws::String& value) { SetResource(value); return *this;}
 
     /**
      * <p>An entity you can work with and specify with a name or ID. Examples include
-     * an Amazon EC2 instance, an AWS CloudFormation stack, or an Amazon S3 bucket.</p>
+     * an Amazon EC2 instance, an Amazon Web Services CloudFormation stack, or an
+     * Amazon S3 bucket.</p>
      */
     inline SyncResourceRequest& WithResource(Aws::String&& value) { SetResource(std::move(value)); return *this;}
 
     /**
      * <p>An entity you can work with and specify with a name or ID. Examples include
-     * an Amazon EC2 instance, an AWS CloudFormation stack, or an Amazon S3 bucket.</p>
+     * an Amazon EC2 instance, an Amazon Web Services CloudFormation stack, or an
+     * Amazon S3 bucket.</p>
      */
     inline SyncResourceRequest& WithResource(const char* value) { SetResource(value); return *this;}
 

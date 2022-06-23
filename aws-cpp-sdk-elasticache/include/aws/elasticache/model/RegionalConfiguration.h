@@ -83,42 +83,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS region where the cluster is stored</p>
+     * <p>The Amazon region where the cluster is stored</p>
      */
     inline const Aws::String& GetReplicationGroupRegion() const{ return m_replicationGroupRegion; }
 
     /**
-     * <p>The AWS region where the cluster is stored</p>
+     * <p>The Amazon region where the cluster is stored</p>
      */
     inline bool ReplicationGroupRegionHasBeenSet() const { return m_replicationGroupRegionHasBeenSet; }
 
     /**
-     * <p>The AWS region where the cluster is stored</p>
+     * <p>The Amazon region where the cluster is stored</p>
      */
     inline void SetReplicationGroupRegion(const Aws::String& value) { m_replicationGroupRegionHasBeenSet = true; m_replicationGroupRegion = value; }
 
     /**
-     * <p>The AWS region where the cluster is stored</p>
+     * <p>The Amazon region where the cluster is stored</p>
      */
     inline void SetReplicationGroupRegion(Aws::String&& value) { m_replicationGroupRegionHasBeenSet = true; m_replicationGroupRegion = std::move(value); }
 
     /**
-     * <p>The AWS region where the cluster is stored</p>
+     * <p>The Amazon region where the cluster is stored</p>
      */
     inline void SetReplicationGroupRegion(const char* value) { m_replicationGroupRegionHasBeenSet = true; m_replicationGroupRegion.assign(value); }
 
     /**
-     * <p>The AWS region where the cluster is stored</p>
+     * <p>The Amazon region where the cluster is stored</p>
      */
     inline RegionalConfiguration& WithReplicationGroupRegion(const Aws::String& value) { SetReplicationGroupRegion(value); return *this;}
 
     /**
-     * <p>The AWS region where the cluster is stored</p>
+     * <p>The Amazon region where the cluster is stored</p>
      */
     inline RegionalConfiguration& WithReplicationGroupRegion(Aws::String&& value) { SetReplicationGroupRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS region where the cluster is stored</p>
+     * <p>The Amazon region where the cluster is stored</p>
      */
     inline RegionalConfiguration& WithReplicationGroupRegion(const char* value) { SetReplicationGroupRegion(value); return *this;}
 

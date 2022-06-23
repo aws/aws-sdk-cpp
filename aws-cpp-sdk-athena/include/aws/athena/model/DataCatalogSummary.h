@@ -40,42 +40,66 @@ namespace Model
 
 
     /**
-     * <p>The name of the data catalog.</p>
+     * <p>The name of the data catalog. The catalog name is unique for the Amazon Web
+     * Services account and can use a maximum of 127 alphanumeric, underscore, at sign,
+     * or hyphen characters. The remainder of the length constraint of 256 is reserved
+     * for use by Athena.</p>
      */
     inline const Aws::String& GetCatalogName() const{ return m_catalogName; }
 
     /**
-     * <p>The name of the data catalog.</p>
+     * <p>The name of the data catalog. The catalog name is unique for the Amazon Web
+     * Services account and can use a maximum of 127 alphanumeric, underscore, at sign,
+     * or hyphen characters. The remainder of the length constraint of 256 is reserved
+     * for use by Athena.</p>
      */
     inline bool CatalogNameHasBeenSet() const { return m_catalogNameHasBeenSet; }
 
     /**
-     * <p>The name of the data catalog.</p>
+     * <p>The name of the data catalog. The catalog name is unique for the Amazon Web
+     * Services account and can use a maximum of 127 alphanumeric, underscore, at sign,
+     * or hyphen characters. The remainder of the length constraint of 256 is reserved
+     * for use by Athena.</p>
      */
     inline void SetCatalogName(const Aws::String& value) { m_catalogNameHasBeenSet = true; m_catalogName = value; }
 
     /**
-     * <p>The name of the data catalog.</p>
+     * <p>The name of the data catalog. The catalog name is unique for the Amazon Web
+     * Services account and can use a maximum of 127 alphanumeric, underscore, at sign,
+     * or hyphen characters. The remainder of the length constraint of 256 is reserved
+     * for use by Athena.</p>
      */
     inline void SetCatalogName(Aws::String&& value) { m_catalogNameHasBeenSet = true; m_catalogName = std::move(value); }
 
     /**
-     * <p>The name of the data catalog.</p>
+     * <p>The name of the data catalog. The catalog name is unique for the Amazon Web
+     * Services account and can use a maximum of 127 alphanumeric, underscore, at sign,
+     * or hyphen characters. The remainder of the length constraint of 256 is reserved
+     * for use by Athena.</p>
      */
     inline void SetCatalogName(const char* value) { m_catalogNameHasBeenSet = true; m_catalogName.assign(value); }
 
     /**
-     * <p>The name of the data catalog.</p>
+     * <p>The name of the data catalog. The catalog name is unique for the Amazon Web
+     * Services account and can use a maximum of 127 alphanumeric, underscore, at sign,
+     * or hyphen characters. The remainder of the length constraint of 256 is reserved
+     * for use by Athena.</p>
      */
     inline DataCatalogSummary& WithCatalogName(const Aws::String& value) { SetCatalogName(value); return *this;}
 
     /**
-     * <p>The name of the data catalog.</p>
+     * <p>The name of the data catalog. The catalog name is unique for the Amazon Web
+     * Services account and can use a maximum of 127 alphanumeric, underscore, at sign,
+     * or hyphen characters. The remainder of the length constraint of 256 is reserved
+     * for use by Athena.</p>
      */
     inline DataCatalogSummary& WithCatalogName(Aws::String&& value) { SetCatalogName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the data catalog.</p>
+     * <p>The name of the data catalog. The catalog name is unique for the Amazon Web
+     * Services account and can use a maximum of 127 alphanumeric, underscore, at sign,
+     * or hyphen characters. The remainder of the length constraint of 256 is reserved
+     * for use by Athena.</p>
      */
     inline DataCatalogSummary& WithCatalogName(const char* value) { SetCatalogName(value); return *this;}
 

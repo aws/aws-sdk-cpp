@@ -24,6 +24,9 @@ EventType::EventType() :
     m_eventVariablesHasBeenSet(false),
     m_labelsHasBeenSet(false),
     m_entityTypesHasBeenSet(false),
+    m_eventIngestion(EventIngestion::NOT_SET),
+    m_eventIngestionHasBeenSet(false),
+    m_ingestedEventStatisticsHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
     m_arnHasBeenSet(false)
@@ -36,6 +39,9 @@ EventType::EventType(JsonView jsonValue) :
     m_eventVariablesHasBeenSet(false),
     m_labelsHasBeenSet(false),
     m_entityTypesHasBeenSet(false),
+    m_eventIngestion(EventIngestion::NOT_SET),
+    m_eventIngestionHasBeenSet(false),
+    m_ingestedEventStatisticsHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
     m_arnHasBeenSet(false)
@@ -87,6 +93,20 @@ EventType& EventType::operator =(JsonView jsonValue)
       m_entityTypes.push_back(entityTypesJsonList[entityTypesIndex].AsString());
     }
     m_entityTypesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("eventIngestion"))
+  {
+    m_eventIngestion = EventIngestionMapper::GetEventIngestionForName(jsonValue.GetString("eventIngestion"));
+
+    m_eventIngestionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ingestedEventStatistics"))
+  {
+    m_ingestedEventStatistics = jsonValue.GetObject("ingestedEventStatistics");
+
+    m_ingestedEventStatisticsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("lastUpdatedTime"))
@@ -159,6 +179,17 @@ JsonValue EventType::Jsonize() const
      entityTypesJsonList[entityTypesIndex].AsString(m_entityTypes[entityTypesIndex]);
    }
    payload.WithArray("entityTypes", std::move(entityTypesJsonList));
+
+  }
+
+  if(m_eventIngestionHasBeenSet)
+  {
+   payload.WithString("eventIngestion", EventIngestionMapper::GetNameForEventIngestion(m_eventIngestion));
+  }
+
+  if(m_ingestedEventStatisticsHasBeenSet)
+  {
+   payload.WithObject("ingestedEventStatistics", m_ingestedEventStatistics.Jsonize());
 
   }
 

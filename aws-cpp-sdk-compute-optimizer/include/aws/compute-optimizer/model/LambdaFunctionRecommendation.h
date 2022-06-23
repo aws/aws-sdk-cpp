@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/compute-optimizer/model/LambdaFunctionRecommendationFinding.h>
+#include <aws/compute-optimizer/model/CurrentPerformanceRisk.h>
 #include <aws/compute-optimizer/model/LambdaFunctionUtilizationMetric.h>
 #include <aws/compute-optimizer/model/LambdaFunctionRecommendationFindingReasonCode.h>
 #include <aws/compute-optimizer/model/LambdaFunctionMemoryRecommendationOption.h>
@@ -30,8 +31,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes an AWS Lambda function recommendation.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Describes an Lambda function recommendation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/LambdaFunctionRecommendation">AWS
    * API Reference</a></p>
    */
@@ -127,42 +127,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID of the function.</p>
+     * <p>The Amazon Web Services account ID of the function.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The AWS account ID of the function.</p>
+     * <p>The Amazon Web Services account ID of the function.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID of the function.</p>
+     * <p>The Amazon Web Services account ID of the function.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The AWS account ID of the function.</p>
+     * <p>The Amazon Web Services account ID of the function.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The AWS account ID of the function.</p>
+     * <p>The Amazon Web Services account ID of the function.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The AWS account ID of the function.</p>
+     * <p>The Amazon Web Services account ID of the function.</p>
      */
     inline LambdaFunctionRecommendation& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The AWS account ID of the function.</p>
+     * <p>The Amazon Web Services account ID of the function.</p>
      */
     inline LambdaFunctionRecommendation& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID of the function.</p>
+     * <p>The Amazon Web Services account ID of the function.</p>
      */
     inline LambdaFunctionRecommendation& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
@@ -189,25 +189,25 @@ namespace Model
 
 
     /**
-     * <p>The number of times your function code was executed during the look-back
+     * <p>The number of times your function code was applied during the look-back
      * period.</p>
      */
     inline long long GetNumberOfInvocations() const{ return m_numberOfInvocations; }
 
     /**
-     * <p>The number of times your function code was executed during the look-back
+     * <p>The number of times your function code was applied during the look-back
      * period.</p>
      */
     inline bool NumberOfInvocationsHasBeenSet() const { return m_numberOfInvocationsHasBeenSet; }
 
     /**
-     * <p>The number of times your function code was executed during the look-back
+     * <p>The number of times your function code was applied during the look-back
      * period.</p>
      */
     inline void SetNumberOfInvocations(long long value) { m_numberOfInvocationsHasBeenSet = true; m_numberOfInvocations = value; }
 
     /**
-     * <p>The number of times your function code was executed during the look-back
+     * <p>The number of times your function code was applied during the look-back
      * period.</p>
      */
     inline LambdaFunctionRecommendation& WithNumberOfInvocations(long long value) { SetNumberOfInvocations(value); return *this;}
@@ -288,38 +288,38 @@ namespace Model
 
 
     /**
-     * <p>The time stamp of when the function recommendation was last refreshed.</p>
+     * <p>The timestamp of when the function recommendation was last generated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastRefreshTimestamp() const{ return m_lastRefreshTimestamp; }
 
     /**
-     * <p>The time stamp of when the function recommendation was last refreshed.</p>
+     * <p>The timestamp of when the function recommendation was last generated.</p>
      */
     inline bool LastRefreshTimestampHasBeenSet() const { return m_lastRefreshTimestampHasBeenSet; }
 
     /**
-     * <p>The time stamp of when the function recommendation was last refreshed.</p>
+     * <p>The timestamp of when the function recommendation was last generated.</p>
      */
     inline void SetLastRefreshTimestamp(const Aws::Utils::DateTime& value) { m_lastRefreshTimestampHasBeenSet = true; m_lastRefreshTimestamp = value; }
 
     /**
-     * <p>The time stamp of when the function recommendation was last refreshed.</p>
+     * <p>The timestamp of when the function recommendation was last generated.</p>
      */
     inline void SetLastRefreshTimestamp(Aws::Utils::DateTime&& value) { m_lastRefreshTimestampHasBeenSet = true; m_lastRefreshTimestamp = std::move(value); }
 
     /**
-     * <p>The time stamp of when the function recommendation was last refreshed.</p>
+     * <p>The timestamp of when the function recommendation was last generated.</p>
      */
     inline LambdaFunctionRecommendation& WithLastRefreshTimestamp(const Aws::Utils::DateTime& value) { SetLastRefreshTimestamp(value); return *this;}
 
     /**
-     * <p>The time stamp of when the function recommendation was last refreshed.</p>
+     * <p>The timestamp of when the function recommendation was last generated.</p>
      */
     inline LambdaFunctionRecommendation& WithLastRefreshTimestamp(Aws::Utils::DateTime&& value) { SetLastRefreshTimestamp(std::move(value)); return *this;}
 
 
     /**
-     * <p>The finding classification for the function.</p> <p>Findings for functions
+     * <p>The finding classification of the function.</p> <p>Findings for functions
      * include:</p> <ul> <li> <p> <b> <code>Optimized</code> </b> — The function is
      * correctly provisioned to run your workload based on its current configuration
      * and its utilization history. This finding classification does not include
@@ -343,7 +343,7 @@ namespace Model
     inline const LambdaFunctionRecommendationFinding& GetFinding() const{ return m_finding; }
 
     /**
-     * <p>The finding classification for the function.</p> <p>Findings for functions
+     * <p>The finding classification of the function.</p> <p>Findings for functions
      * include:</p> <ul> <li> <p> <b> <code>Optimized</code> </b> — The function is
      * correctly provisioned to run your workload based on its current configuration
      * and its utilization history. This finding classification does not include
@@ -367,7 +367,7 @@ namespace Model
     inline bool FindingHasBeenSet() const { return m_findingHasBeenSet; }
 
     /**
-     * <p>The finding classification for the function.</p> <p>Findings for functions
+     * <p>The finding classification of the function.</p> <p>Findings for functions
      * include:</p> <ul> <li> <p> <b> <code>Optimized</code> </b> — The function is
      * correctly provisioned to run your workload based on its current configuration
      * and its utilization history. This finding classification does not include
@@ -391,7 +391,7 @@ namespace Model
     inline void SetFinding(const LambdaFunctionRecommendationFinding& value) { m_findingHasBeenSet = true; m_finding = value; }
 
     /**
-     * <p>The finding classification for the function.</p> <p>Findings for functions
+     * <p>The finding classification of the function.</p> <p>Findings for functions
      * include:</p> <ul> <li> <p> <b> <code>Optimized</code> </b> — The function is
      * correctly provisioned to run your workload based on its current configuration
      * and its utilization history. This finding classification does not include
@@ -415,7 +415,7 @@ namespace Model
     inline void SetFinding(LambdaFunctionRecommendationFinding&& value) { m_findingHasBeenSet = true; m_finding = std::move(value); }
 
     /**
-     * <p>The finding classification for the function.</p> <p>Findings for functions
+     * <p>The finding classification of the function.</p> <p>Findings for functions
      * include:</p> <ul> <li> <p> <b> <code>Optimized</code> </b> — The function is
      * correctly provisioned to run your workload based on its current configuration
      * and its utilization history. This finding classification does not include
@@ -439,7 +439,7 @@ namespace Model
     inline LambdaFunctionRecommendation& WithFinding(const LambdaFunctionRecommendationFinding& value) { SetFinding(value); return *this;}
 
     /**
-     * <p>The finding classification for the function.</p> <p>Findings for functions
+     * <p>The finding classification of the function.</p> <p>Findings for functions
      * include:</p> <ul> <li> <p> <b> <code>Optimized</code> </b> — The function is
      * correctly provisioned to run your workload based on its current configuration
      * and its utilization history. This finding classification does not include
@@ -466,216 +466,224 @@ namespace Model
     /**
      * <p>The reason for the finding classification of the function.</p> 
      * <p>Functions that have a finding classification of <code>Optimized</code> don't
-     * have a finding reason code.</p>  <p>Reason codes include:</p> <ul> <li>
-     * <p> <b> <code>MemoryOverprovisioned</code> </b> — The function is
-     * over-provisioned when its memory configuration can be sized down while still
-     * meeting the performance requirements of your workload. An over-provisioned
-     * function might lead to unnecessary infrastructure cost. This finding reason code
-     * is part of the <code>NotOptimized</code> finding classification.</p> </li> <li>
-     * <p> <b> <code>MemoryUnderprovisioned</code> </b> — The function is
-     * under-provisioned when its memory configuration doesn't meet the performance
-     * requirements of the workload. An under-provisioned function might lead to poor
-     * application performance. This finding reason code is part of the
-     * <code>NotOptimized</code> finding classification.</p> </li> <li> <p> <b>
+     * have a finding reason code.</p>  <p>Finding reason codes for functions
+     * include:</p> <ul> <li> <p> <b> <code>MemoryOverprovisioned</code> </b> — The
+     * function is over-provisioned when its memory configuration can be sized down
+     * while still meeting the performance requirements of your workload. An
+     * over-provisioned function might lead to unnecessary infrastructure cost. This
+     * finding reason code is part of the <code>NotOptimized</code> finding
+     * classification.</p> </li> <li> <p> <b> <code>MemoryUnderprovisioned</code> </b>
+     * — The function is under-provisioned when its memory configuration doesn't meet
+     * the performance requirements of the workload. An under-provisioned function
+     * might lead to poor application performance. This finding reason code is part of
+     * the <code>NotOptimized</code> finding classification.</p> </li> <li> <p> <b>
      * <code>InsufficientData</code> </b> — The function does not have sufficient
      * metric data for Compute Optimizer to generate a recommendation. For more
      * information, see the <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
-     * resources and requirements</a> in the <i>AWS Compute Optimizer User Guide</i>.
-     * This finding reason code is part of the <code>Unavailable</code> finding
+     * resources and requirements</a> in the <i>Compute Optimizer User Guide</i>. This
+     * finding reason code is part of the <code>Unavailable</code> finding
      * classification.</p> </li> <li> <p> <b> <code>Inconclusive</code> </b> — The
-     * function does not qualify for a recommendation, or there was an internal error.
-     * This finding reason code is part of the <code>Unavailable</code> finding
-     * classification.</p> </li> </ul>
+     * function does not qualify for a recommendation because Compute Optimizer cannot
+     * generate a recommendation with a high degree of confidence. This finding reason
+     * code is part of the <code>Unavailable</code> finding classification.</p> </li>
+     * </ul>
      */
     inline const Aws::Vector<LambdaFunctionRecommendationFindingReasonCode>& GetFindingReasonCodes() const{ return m_findingReasonCodes; }
 
     /**
      * <p>The reason for the finding classification of the function.</p> 
      * <p>Functions that have a finding classification of <code>Optimized</code> don't
-     * have a finding reason code.</p>  <p>Reason codes include:</p> <ul> <li>
-     * <p> <b> <code>MemoryOverprovisioned</code> </b> — The function is
-     * over-provisioned when its memory configuration can be sized down while still
-     * meeting the performance requirements of your workload. An over-provisioned
-     * function might lead to unnecessary infrastructure cost. This finding reason code
-     * is part of the <code>NotOptimized</code> finding classification.</p> </li> <li>
-     * <p> <b> <code>MemoryUnderprovisioned</code> </b> — The function is
-     * under-provisioned when its memory configuration doesn't meet the performance
-     * requirements of the workload. An under-provisioned function might lead to poor
-     * application performance. This finding reason code is part of the
-     * <code>NotOptimized</code> finding classification.</p> </li> <li> <p> <b>
+     * have a finding reason code.</p>  <p>Finding reason codes for functions
+     * include:</p> <ul> <li> <p> <b> <code>MemoryOverprovisioned</code> </b> — The
+     * function is over-provisioned when its memory configuration can be sized down
+     * while still meeting the performance requirements of your workload. An
+     * over-provisioned function might lead to unnecessary infrastructure cost. This
+     * finding reason code is part of the <code>NotOptimized</code> finding
+     * classification.</p> </li> <li> <p> <b> <code>MemoryUnderprovisioned</code> </b>
+     * — The function is under-provisioned when its memory configuration doesn't meet
+     * the performance requirements of the workload. An under-provisioned function
+     * might lead to poor application performance. This finding reason code is part of
+     * the <code>NotOptimized</code> finding classification.</p> </li> <li> <p> <b>
      * <code>InsufficientData</code> </b> — The function does not have sufficient
      * metric data for Compute Optimizer to generate a recommendation. For more
      * information, see the <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
-     * resources and requirements</a> in the <i>AWS Compute Optimizer User Guide</i>.
-     * This finding reason code is part of the <code>Unavailable</code> finding
+     * resources and requirements</a> in the <i>Compute Optimizer User Guide</i>. This
+     * finding reason code is part of the <code>Unavailable</code> finding
      * classification.</p> </li> <li> <p> <b> <code>Inconclusive</code> </b> — The
-     * function does not qualify for a recommendation, or there was an internal error.
-     * This finding reason code is part of the <code>Unavailable</code> finding
-     * classification.</p> </li> </ul>
+     * function does not qualify for a recommendation because Compute Optimizer cannot
+     * generate a recommendation with a high degree of confidence. This finding reason
+     * code is part of the <code>Unavailable</code> finding classification.</p> </li>
+     * </ul>
      */
     inline bool FindingReasonCodesHasBeenSet() const { return m_findingReasonCodesHasBeenSet; }
 
     /**
      * <p>The reason for the finding classification of the function.</p> 
      * <p>Functions that have a finding classification of <code>Optimized</code> don't
-     * have a finding reason code.</p>  <p>Reason codes include:</p> <ul> <li>
-     * <p> <b> <code>MemoryOverprovisioned</code> </b> — The function is
-     * over-provisioned when its memory configuration can be sized down while still
-     * meeting the performance requirements of your workload. An over-provisioned
-     * function might lead to unnecessary infrastructure cost. This finding reason code
-     * is part of the <code>NotOptimized</code> finding classification.</p> </li> <li>
-     * <p> <b> <code>MemoryUnderprovisioned</code> </b> — The function is
-     * under-provisioned when its memory configuration doesn't meet the performance
-     * requirements of the workload. An under-provisioned function might lead to poor
-     * application performance. This finding reason code is part of the
-     * <code>NotOptimized</code> finding classification.</p> </li> <li> <p> <b>
+     * have a finding reason code.</p>  <p>Finding reason codes for functions
+     * include:</p> <ul> <li> <p> <b> <code>MemoryOverprovisioned</code> </b> — The
+     * function is over-provisioned when its memory configuration can be sized down
+     * while still meeting the performance requirements of your workload. An
+     * over-provisioned function might lead to unnecessary infrastructure cost. This
+     * finding reason code is part of the <code>NotOptimized</code> finding
+     * classification.</p> </li> <li> <p> <b> <code>MemoryUnderprovisioned</code> </b>
+     * — The function is under-provisioned when its memory configuration doesn't meet
+     * the performance requirements of the workload. An under-provisioned function
+     * might lead to poor application performance. This finding reason code is part of
+     * the <code>NotOptimized</code> finding classification.</p> </li> <li> <p> <b>
      * <code>InsufficientData</code> </b> — The function does not have sufficient
      * metric data for Compute Optimizer to generate a recommendation. For more
      * information, see the <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
-     * resources and requirements</a> in the <i>AWS Compute Optimizer User Guide</i>.
-     * This finding reason code is part of the <code>Unavailable</code> finding
+     * resources and requirements</a> in the <i>Compute Optimizer User Guide</i>. This
+     * finding reason code is part of the <code>Unavailable</code> finding
      * classification.</p> </li> <li> <p> <b> <code>Inconclusive</code> </b> — The
-     * function does not qualify for a recommendation, or there was an internal error.
-     * This finding reason code is part of the <code>Unavailable</code> finding
-     * classification.</p> </li> </ul>
+     * function does not qualify for a recommendation because Compute Optimizer cannot
+     * generate a recommendation with a high degree of confidence. This finding reason
+     * code is part of the <code>Unavailable</code> finding classification.</p> </li>
+     * </ul>
      */
     inline void SetFindingReasonCodes(const Aws::Vector<LambdaFunctionRecommendationFindingReasonCode>& value) { m_findingReasonCodesHasBeenSet = true; m_findingReasonCodes = value; }
 
     /**
      * <p>The reason for the finding classification of the function.</p> 
      * <p>Functions that have a finding classification of <code>Optimized</code> don't
-     * have a finding reason code.</p>  <p>Reason codes include:</p> <ul> <li>
-     * <p> <b> <code>MemoryOverprovisioned</code> </b> — The function is
-     * over-provisioned when its memory configuration can be sized down while still
-     * meeting the performance requirements of your workload. An over-provisioned
-     * function might lead to unnecessary infrastructure cost. This finding reason code
-     * is part of the <code>NotOptimized</code> finding classification.</p> </li> <li>
-     * <p> <b> <code>MemoryUnderprovisioned</code> </b> — The function is
-     * under-provisioned when its memory configuration doesn't meet the performance
-     * requirements of the workload. An under-provisioned function might lead to poor
-     * application performance. This finding reason code is part of the
-     * <code>NotOptimized</code> finding classification.</p> </li> <li> <p> <b>
+     * have a finding reason code.</p>  <p>Finding reason codes for functions
+     * include:</p> <ul> <li> <p> <b> <code>MemoryOverprovisioned</code> </b> — The
+     * function is over-provisioned when its memory configuration can be sized down
+     * while still meeting the performance requirements of your workload. An
+     * over-provisioned function might lead to unnecessary infrastructure cost. This
+     * finding reason code is part of the <code>NotOptimized</code> finding
+     * classification.</p> </li> <li> <p> <b> <code>MemoryUnderprovisioned</code> </b>
+     * — The function is under-provisioned when its memory configuration doesn't meet
+     * the performance requirements of the workload. An under-provisioned function
+     * might lead to poor application performance. This finding reason code is part of
+     * the <code>NotOptimized</code> finding classification.</p> </li> <li> <p> <b>
      * <code>InsufficientData</code> </b> — The function does not have sufficient
      * metric data for Compute Optimizer to generate a recommendation. For more
      * information, see the <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
-     * resources and requirements</a> in the <i>AWS Compute Optimizer User Guide</i>.
-     * This finding reason code is part of the <code>Unavailable</code> finding
+     * resources and requirements</a> in the <i>Compute Optimizer User Guide</i>. This
+     * finding reason code is part of the <code>Unavailable</code> finding
      * classification.</p> </li> <li> <p> <b> <code>Inconclusive</code> </b> — The
-     * function does not qualify for a recommendation, or there was an internal error.
-     * This finding reason code is part of the <code>Unavailable</code> finding
-     * classification.</p> </li> </ul>
+     * function does not qualify for a recommendation because Compute Optimizer cannot
+     * generate a recommendation with a high degree of confidence. This finding reason
+     * code is part of the <code>Unavailable</code> finding classification.</p> </li>
+     * </ul>
      */
     inline void SetFindingReasonCodes(Aws::Vector<LambdaFunctionRecommendationFindingReasonCode>&& value) { m_findingReasonCodesHasBeenSet = true; m_findingReasonCodes = std::move(value); }
 
     /**
      * <p>The reason for the finding classification of the function.</p> 
      * <p>Functions that have a finding classification of <code>Optimized</code> don't
-     * have a finding reason code.</p>  <p>Reason codes include:</p> <ul> <li>
-     * <p> <b> <code>MemoryOverprovisioned</code> </b> — The function is
-     * over-provisioned when its memory configuration can be sized down while still
-     * meeting the performance requirements of your workload. An over-provisioned
-     * function might lead to unnecessary infrastructure cost. This finding reason code
-     * is part of the <code>NotOptimized</code> finding classification.</p> </li> <li>
-     * <p> <b> <code>MemoryUnderprovisioned</code> </b> — The function is
-     * under-provisioned when its memory configuration doesn't meet the performance
-     * requirements of the workload. An under-provisioned function might lead to poor
-     * application performance. This finding reason code is part of the
-     * <code>NotOptimized</code> finding classification.</p> </li> <li> <p> <b>
+     * have a finding reason code.</p>  <p>Finding reason codes for functions
+     * include:</p> <ul> <li> <p> <b> <code>MemoryOverprovisioned</code> </b> — The
+     * function is over-provisioned when its memory configuration can be sized down
+     * while still meeting the performance requirements of your workload. An
+     * over-provisioned function might lead to unnecessary infrastructure cost. This
+     * finding reason code is part of the <code>NotOptimized</code> finding
+     * classification.</p> </li> <li> <p> <b> <code>MemoryUnderprovisioned</code> </b>
+     * — The function is under-provisioned when its memory configuration doesn't meet
+     * the performance requirements of the workload. An under-provisioned function
+     * might lead to poor application performance. This finding reason code is part of
+     * the <code>NotOptimized</code> finding classification.</p> </li> <li> <p> <b>
      * <code>InsufficientData</code> </b> — The function does not have sufficient
      * metric data for Compute Optimizer to generate a recommendation. For more
      * information, see the <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
-     * resources and requirements</a> in the <i>AWS Compute Optimizer User Guide</i>.
-     * This finding reason code is part of the <code>Unavailable</code> finding
+     * resources and requirements</a> in the <i>Compute Optimizer User Guide</i>. This
+     * finding reason code is part of the <code>Unavailable</code> finding
      * classification.</p> </li> <li> <p> <b> <code>Inconclusive</code> </b> — The
-     * function does not qualify for a recommendation, or there was an internal error.
-     * This finding reason code is part of the <code>Unavailable</code> finding
-     * classification.</p> </li> </ul>
+     * function does not qualify for a recommendation because Compute Optimizer cannot
+     * generate a recommendation with a high degree of confidence. This finding reason
+     * code is part of the <code>Unavailable</code> finding classification.</p> </li>
+     * </ul>
      */
     inline LambdaFunctionRecommendation& WithFindingReasonCodes(const Aws::Vector<LambdaFunctionRecommendationFindingReasonCode>& value) { SetFindingReasonCodes(value); return *this;}
 
     /**
      * <p>The reason for the finding classification of the function.</p> 
      * <p>Functions that have a finding classification of <code>Optimized</code> don't
-     * have a finding reason code.</p>  <p>Reason codes include:</p> <ul> <li>
-     * <p> <b> <code>MemoryOverprovisioned</code> </b> — The function is
-     * over-provisioned when its memory configuration can be sized down while still
-     * meeting the performance requirements of your workload. An over-provisioned
-     * function might lead to unnecessary infrastructure cost. This finding reason code
-     * is part of the <code>NotOptimized</code> finding classification.</p> </li> <li>
-     * <p> <b> <code>MemoryUnderprovisioned</code> </b> — The function is
-     * under-provisioned when its memory configuration doesn't meet the performance
-     * requirements of the workload. An under-provisioned function might lead to poor
-     * application performance. This finding reason code is part of the
-     * <code>NotOptimized</code> finding classification.</p> </li> <li> <p> <b>
+     * have a finding reason code.</p>  <p>Finding reason codes for functions
+     * include:</p> <ul> <li> <p> <b> <code>MemoryOverprovisioned</code> </b> — The
+     * function is over-provisioned when its memory configuration can be sized down
+     * while still meeting the performance requirements of your workload. An
+     * over-provisioned function might lead to unnecessary infrastructure cost. This
+     * finding reason code is part of the <code>NotOptimized</code> finding
+     * classification.</p> </li> <li> <p> <b> <code>MemoryUnderprovisioned</code> </b>
+     * — The function is under-provisioned when its memory configuration doesn't meet
+     * the performance requirements of the workload. An under-provisioned function
+     * might lead to poor application performance. This finding reason code is part of
+     * the <code>NotOptimized</code> finding classification.</p> </li> <li> <p> <b>
      * <code>InsufficientData</code> </b> — The function does not have sufficient
      * metric data for Compute Optimizer to generate a recommendation. For more
      * information, see the <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
-     * resources and requirements</a> in the <i>AWS Compute Optimizer User Guide</i>.
-     * This finding reason code is part of the <code>Unavailable</code> finding
+     * resources and requirements</a> in the <i>Compute Optimizer User Guide</i>. This
+     * finding reason code is part of the <code>Unavailable</code> finding
      * classification.</p> </li> <li> <p> <b> <code>Inconclusive</code> </b> — The
-     * function does not qualify for a recommendation, or there was an internal error.
-     * This finding reason code is part of the <code>Unavailable</code> finding
-     * classification.</p> </li> </ul>
+     * function does not qualify for a recommendation because Compute Optimizer cannot
+     * generate a recommendation with a high degree of confidence. This finding reason
+     * code is part of the <code>Unavailable</code> finding classification.</p> </li>
+     * </ul>
      */
     inline LambdaFunctionRecommendation& WithFindingReasonCodes(Aws::Vector<LambdaFunctionRecommendationFindingReasonCode>&& value) { SetFindingReasonCodes(std::move(value)); return *this;}
 
     /**
      * <p>The reason for the finding classification of the function.</p> 
      * <p>Functions that have a finding classification of <code>Optimized</code> don't
-     * have a finding reason code.</p>  <p>Reason codes include:</p> <ul> <li>
-     * <p> <b> <code>MemoryOverprovisioned</code> </b> — The function is
-     * over-provisioned when its memory configuration can be sized down while still
-     * meeting the performance requirements of your workload. An over-provisioned
-     * function might lead to unnecessary infrastructure cost. This finding reason code
-     * is part of the <code>NotOptimized</code> finding classification.</p> </li> <li>
-     * <p> <b> <code>MemoryUnderprovisioned</code> </b> — The function is
-     * under-provisioned when its memory configuration doesn't meet the performance
-     * requirements of the workload. An under-provisioned function might lead to poor
-     * application performance. This finding reason code is part of the
-     * <code>NotOptimized</code> finding classification.</p> </li> <li> <p> <b>
+     * have a finding reason code.</p>  <p>Finding reason codes for functions
+     * include:</p> <ul> <li> <p> <b> <code>MemoryOverprovisioned</code> </b> — The
+     * function is over-provisioned when its memory configuration can be sized down
+     * while still meeting the performance requirements of your workload. An
+     * over-provisioned function might lead to unnecessary infrastructure cost. This
+     * finding reason code is part of the <code>NotOptimized</code> finding
+     * classification.</p> </li> <li> <p> <b> <code>MemoryUnderprovisioned</code> </b>
+     * — The function is under-provisioned when its memory configuration doesn't meet
+     * the performance requirements of the workload. An under-provisioned function
+     * might lead to poor application performance. This finding reason code is part of
+     * the <code>NotOptimized</code> finding classification.</p> </li> <li> <p> <b>
      * <code>InsufficientData</code> </b> — The function does not have sufficient
      * metric data for Compute Optimizer to generate a recommendation. For more
      * information, see the <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
-     * resources and requirements</a> in the <i>AWS Compute Optimizer User Guide</i>.
-     * This finding reason code is part of the <code>Unavailable</code> finding
+     * resources and requirements</a> in the <i>Compute Optimizer User Guide</i>. This
+     * finding reason code is part of the <code>Unavailable</code> finding
      * classification.</p> </li> <li> <p> <b> <code>Inconclusive</code> </b> — The
-     * function does not qualify for a recommendation, or there was an internal error.
-     * This finding reason code is part of the <code>Unavailable</code> finding
-     * classification.</p> </li> </ul>
+     * function does not qualify for a recommendation because Compute Optimizer cannot
+     * generate a recommendation with a high degree of confidence. This finding reason
+     * code is part of the <code>Unavailable</code> finding classification.</p> </li>
+     * </ul>
      */
     inline LambdaFunctionRecommendation& AddFindingReasonCodes(const LambdaFunctionRecommendationFindingReasonCode& value) { m_findingReasonCodesHasBeenSet = true; m_findingReasonCodes.push_back(value); return *this; }
 
     /**
      * <p>The reason for the finding classification of the function.</p> 
      * <p>Functions that have a finding classification of <code>Optimized</code> don't
-     * have a finding reason code.</p>  <p>Reason codes include:</p> <ul> <li>
-     * <p> <b> <code>MemoryOverprovisioned</code> </b> — The function is
-     * over-provisioned when its memory configuration can be sized down while still
-     * meeting the performance requirements of your workload. An over-provisioned
-     * function might lead to unnecessary infrastructure cost. This finding reason code
-     * is part of the <code>NotOptimized</code> finding classification.</p> </li> <li>
-     * <p> <b> <code>MemoryUnderprovisioned</code> </b> — The function is
-     * under-provisioned when its memory configuration doesn't meet the performance
-     * requirements of the workload. An under-provisioned function might lead to poor
-     * application performance. This finding reason code is part of the
-     * <code>NotOptimized</code> finding classification.</p> </li> <li> <p> <b>
+     * have a finding reason code.</p>  <p>Finding reason codes for functions
+     * include:</p> <ul> <li> <p> <b> <code>MemoryOverprovisioned</code> </b> — The
+     * function is over-provisioned when its memory configuration can be sized down
+     * while still meeting the performance requirements of your workload. An
+     * over-provisioned function might lead to unnecessary infrastructure cost. This
+     * finding reason code is part of the <code>NotOptimized</code> finding
+     * classification.</p> </li> <li> <p> <b> <code>MemoryUnderprovisioned</code> </b>
+     * — The function is under-provisioned when its memory configuration doesn't meet
+     * the performance requirements of the workload. An under-provisioned function
+     * might lead to poor application performance. This finding reason code is part of
+     * the <code>NotOptimized</code> finding classification.</p> </li> <li> <p> <b>
      * <code>InsufficientData</code> </b> — The function does not have sufficient
      * metric data for Compute Optimizer to generate a recommendation. For more
      * information, see the <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
-     * resources and requirements</a> in the <i>AWS Compute Optimizer User Guide</i>.
-     * This finding reason code is part of the <code>Unavailable</code> finding
+     * resources and requirements</a> in the <i>Compute Optimizer User Guide</i>. This
+     * finding reason code is part of the <code>Unavailable</code> finding
      * classification.</p> </li> <li> <p> <b> <code>Inconclusive</code> </b> — The
-     * function does not qualify for a recommendation, or there was an internal error.
-     * This finding reason code is part of the <code>Unavailable</code> finding
-     * classification.</p> </li> </ul>
+     * function does not qualify for a recommendation because Compute Optimizer cannot
+     * generate a recommendation with a high degree of confidence. This finding reason
+     * code is part of the <code>Unavailable</code> finding classification.</p> </li>
+     * </ul>
      */
     inline LambdaFunctionRecommendation& AddFindingReasonCodes(LambdaFunctionRecommendationFindingReasonCode&& value) { m_findingReasonCodesHasBeenSet = true; m_findingReasonCodes.push_back(std::move(value)); return *this; }
 
@@ -728,6 +736,49 @@ namespace Model
      */
     inline LambdaFunctionRecommendation& AddMemorySizeRecommendationOptions(LambdaFunctionMemoryRecommendationOption&& value) { m_memorySizeRecommendationOptionsHasBeenSet = true; m_memorySizeRecommendationOptions.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The risk of the current Lambda function not meeting the performance needs of
+     * its workloads. The higher the risk, the more likely the current Lambda function
+     * requires more memory.</p>
+     */
+    inline const CurrentPerformanceRisk& GetCurrentPerformanceRisk() const{ return m_currentPerformanceRisk; }
+
+    /**
+     * <p>The risk of the current Lambda function not meeting the performance needs of
+     * its workloads. The higher the risk, the more likely the current Lambda function
+     * requires more memory.</p>
+     */
+    inline bool CurrentPerformanceRiskHasBeenSet() const { return m_currentPerformanceRiskHasBeenSet; }
+
+    /**
+     * <p>The risk of the current Lambda function not meeting the performance needs of
+     * its workloads. The higher the risk, the more likely the current Lambda function
+     * requires more memory.</p>
+     */
+    inline void SetCurrentPerformanceRisk(const CurrentPerformanceRisk& value) { m_currentPerformanceRiskHasBeenSet = true; m_currentPerformanceRisk = value; }
+
+    /**
+     * <p>The risk of the current Lambda function not meeting the performance needs of
+     * its workloads. The higher the risk, the more likely the current Lambda function
+     * requires more memory.</p>
+     */
+    inline void SetCurrentPerformanceRisk(CurrentPerformanceRisk&& value) { m_currentPerformanceRiskHasBeenSet = true; m_currentPerformanceRisk = std::move(value); }
+
+    /**
+     * <p>The risk of the current Lambda function not meeting the performance needs of
+     * its workloads. The higher the risk, the more likely the current Lambda function
+     * requires more memory.</p>
+     */
+    inline LambdaFunctionRecommendation& WithCurrentPerformanceRisk(const CurrentPerformanceRisk& value) { SetCurrentPerformanceRisk(value); return *this;}
+
+    /**
+     * <p>The risk of the current Lambda function not meeting the performance needs of
+     * its workloads. The higher the risk, the more likely the current Lambda function
+     * requires more memory.</p>
+     */
+    inline LambdaFunctionRecommendation& WithCurrentPerformanceRisk(CurrentPerformanceRisk&& value) { SetCurrentPerformanceRisk(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_functionArn;
@@ -762,6 +813,9 @@ namespace Model
 
     Aws::Vector<LambdaFunctionMemoryRecommendationOption> m_memorySizeRecommendationOptions;
     bool m_memorySizeRecommendationOptionsHasBeenSet;
+
+    CurrentPerformanceRisk m_currentPerformanceRisk;
+    bool m_currentPerformanceRiskHasBeenSet;
   };
 
 } // namespace Model

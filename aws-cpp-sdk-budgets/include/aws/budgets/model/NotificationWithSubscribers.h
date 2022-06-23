@@ -42,32 +42,32 @@ namespace Model
 
 
     /**
-     * <p>The notification that is associated with a budget.</p>
+     * <p>The notification that's associated with a budget.</p>
      */
     inline const Notification& GetNotification() const{ return m_notification; }
 
     /**
-     * <p>The notification that is associated with a budget.</p>
+     * <p>The notification that's associated with a budget.</p>
      */
     inline bool NotificationHasBeenSet() const { return m_notificationHasBeenSet; }
 
     /**
-     * <p>The notification that is associated with a budget.</p>
+     * <p>The notification that's associated with a budget.</p>
      */
     inline void SetNotification(const Notification& value) { m_notificationHasBeenSet = true; m_notification = value; }
 
     /**
-     * <p>The notification that is associated with a budget.</p>
+     * <p>The notification that's associated with a budget.</p>
      */
     inline void SetNotification(Notification&& value) { m_notificationHasBeenSet = true; m_notification = std::move(value); }
 
     /**
-     * <p>The notification that is associated with a budget.</p>
+     * <p>The notification that's associated with a budget.</p>
      */
     inline NotificationWithSubscribers& WithNotification(const Notification& value) { SetNotification(value); return *this;}
 
     /**
-     * <p>The notification that is associated with a budget.</p>
+     * <p>The notification that's associated with a budget.</p>
      */
     inline NotificationWithSubscribers& WithNotification(Notification&& value) { SetNotification(std::move(value)); return *this;}
 

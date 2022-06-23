@@ -174,8 +174,8 @@ namespace Model
      * <li> <p>Cannot be null, empty, or blank.</p> </li> <li> <p>Must contain from 1
      * to 255 alphanumeric characters or hyphens.</p> </li> <li> <p>First character
      * must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
-     * consecutive hyphens.</p> </li> <li> <p>Must be unique for the AWS account that
-     * is making the request.</p> </li> </ul>
+     * consecutive hyphens.</p> </li> <li> <p>Must be unique for the Amazon Web
+     * Services account that is making the request.</p> </li> </ul>
      */
     inline const Aws::String& GetTargetSnapshotIdentifier() const{ return m_targetSnapshotIdentifier; }
 
@@ -184,8 +184,8 @@ namespace Model
      * <li> <p>Cannot be null, empty, or blank.</p> </li> <li> <p>Must contain from 1
      * to 255 alphanumeric characters or hyphens.</p> </li> <li> <p>First character
      * must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
-     * consecutive hyphens.</p> </li> <li> <p>Must be unique for the AWS account that
-     * is making the request.</p> </li> </ul>
+     * consecutive hyphens.</p> </li> <li> <p>Must be unique for the Amazon Web
+     * Services account that is making the request.</p> </li> </ul>
      */
     inline bool TargetSnapshotIdentifierHasBeenSet() const { return m_targetSnapshotIdentifierHasBeenSet; }
 
@@ -194,8 +194,8 @@ namespace Model
      * <li> <p>Cannot be null, empty, or blank.</p> </li> <li> <p>Must contain from 1
      * to 255 alphanumeric characters or hyphens.</p> </li> <li> <p>First character
      * must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
-     * consecutive hyphens.</p> </li> <li> <p>Must be unique for the AWS account that
-     * is making the request.</p> </li> </ul>
+     * consecutive hyphens.</p> </li> <li> <p>Must be unique for the Amazon Web
+     * Services account that is making the request.</p> </li> </ul>
      */
     inline void SetTargetSnapshotIdentifier(const Aws::String& value) { m_targetSnapshotIdentifierHasBeenSet = true; m_targetSnapshotIdentifier = value; }
 
@@ -204,8 +204,8 @@ namespace Model
      * <li> <p>Cannot be null, empty, or blank.</p> </li> <li> <p>Must contain from 1
      * to 255 alphanumeric characters or hyphens.</p> </li> <li> <p>First character
      * must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
-     * consecutive hyphens.</p> </li> <li> <p>Must be unique for the AWS account that
-     * is making the request.</p> </li> </ul>
+     * consecutive hyphens.</p> </li> <li> <p>Must be unique for the Amazon Web
+     * Services account that is making the request.</p> </li> </ul>
      */
     inline void SetTargetSnapshotIdentifier(Aws::String&& value) { m_targetSnapshotIdentifierHasBeenSet = true; m_targetSnapshotIdentifier = std::move(value); }
 
@@ -214,8 +214,8 @@ namespace Model
      * <li> <p>Cannot be null, empty, or blank.</p> </li> <li> <p>Must contain from 1
      * to 255 alphanumeric characters or hyphens.</p> </li> <li> <p>First character
      * must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
-     * consecutive hyphens.</p> </li> <li> <p>Must be unique for the AWS account that
-     * is making the request.</p> </li> </ul>
+     * consecutive hyphens.</p> </li> <li> <p>Must be unique for the Amazon Web
+     * Services account that is making the request.</p> </li> </ul>
      */
     inline void SetTargetSnapshotIdentifier(const char* value) { m_targetSnapshotIdentifierHasBeenSet = true; m_targetSnapshotIdentifier.assign(value); }
 
@@ -224,8 +224,8 @@ namespace Model
      * <li> <p>Cannot be null, empty, or blank.</p> </li> <li> <p>Must contain from 1
      * to 255 alphanumeric characters or hyphens.</p> </li> <li> <p>First character
      * must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
-     * consecutive hyphens.</p> </li> <li> <p>Must be unique for the AWS account that
-     * is making the request.</p> </li> </ul>
+     * consecutive hyphens.</p> </li> <li> <p>Must be unique for the Amazon Web
+     * Services account that is making the request.</p> </li> </ul>
      */
     inline CopyClusterSnapshotRequest& WithTargetSnapshotIdentifier(const Aws::String& value) { SetTargetSnapshotIdentifier(value); return *this;}
 
@@ -234,8 +234,8 @@ namespace Model
      * <li> <p>Cannot be null, empty, or blank.</p> </li> <li> <p>Must contain from 1
      * to 255 alphanumeric characters or hyphens.</p> </li> <li> <p>First character
      * must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
-     * consecutive hyphens.</p> </li> <li> <p>Must be unique for the AWS account that
-     * is making the request.</p> </li> </ul>
+     * consecutive hyphens.</p> </li> <li> <p>Must be unique for the Amazon Web
+     * Services account that is making the request.</p> </li> </ul>
      */
     inline CopyClusterSnapshotRequest& WithTargetSnapshotIdentifier(Aws::String&& value) { SetTargetSnapshotIdentifier(std::move(value)); return *this;}
 
@@ -244,8 +244,8 @@ namespace Model
      * <li> <p>Cannot be null, empty, or blank.</p> </li> <li> <p>Must contain from 1
      * to 255 alphanumeric characters or hyphens.</p> </li> <li> <p>First character
      * must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
-     * consecutive hyphens.</p> </li> <li> <p>Must be unique for the AWS account that
-     * is making the request.</p> </li> </ul>
+     * consecutive hyphens.</p> </li> <li> <p>Must be unique for the Amazon Web
+     * Services account that is making the request.</p> </li> </ul>
      */
     inline CopyClusterSnapshotRequest& WithTargetSnapshotIdentifier(const char* value) { SetTargetSnapshotIdentifier(value); return *this;}
 

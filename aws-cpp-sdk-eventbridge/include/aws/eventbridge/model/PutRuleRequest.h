@@ -129,57 +129,57 @@ namespace Model
 
     /**
      * <p>The event pattern. For more information, see <a
-     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events
-     * and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html.html">EventBridge
+     * event patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
     inline const Aws::String& GetEventPattern() const{ return m_eventPattern; }
 
     /**
      * <p>The event pattern. For more information, see <a
-     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events
-     * and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html.html">EventBridge
+     * event patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
     inline bool EventPatternHasBeenSet() const { return m_eventPatternHasBeenSet; }
 
     /**
      * <p>The event pattern. For more information, see <a
-     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events
-     * and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html.html">EventBridge
+     * event patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
     inline void SetEventPattern(const Aws::String& value) { m_eventPatternHasBeenSet = true; m_eventPattern = value; }
 
     /**
      * <p>The event pattern. For more information, see <a
-     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events
-     * and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html.html">EventBridge
+     * event patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
     inline void SetEventPattern(Aws::String&& value) { m_eventPatternHasBeenSet = true; m_eventPattern = std::move(value); }
 
     /**
      * <p>The event pattern. For more information, see <a
-     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events
-     * and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html.html">EventBridge
+     * event patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
     inline void SetEventPattern(const char* value) { m_eventPatternHasBeenSet = true; m_eventPattern.assign(value); }
 
     /**
      * <p>The event pattern. For more information, see <a
-     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events
-     * and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html.html">EventBridge
+     * event patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
     inline PutRuleRequest& WithEventPattern(const Aws::String& value) { SetEventPattern(value); return *this;}
 
     /**
      * <p>The event pattern. For more information, see <a
-     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events
-     * and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html.html">EventBridge
+     * event patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
     inline PutRuleRequest& WithEventPattern(Aws::String&& value) { SetEventPattern(std::move(value)); return *this;}
 
     /**
      * <p>The event pattern. For more information, see <a
-     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events
-     * and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html.html">EventBridge
+     * event patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
     inline PutRuleRequest& WithEventPattern(const char* value) { SetEventPattern(value); return *this;}
 
@@ -258,41 +258,81 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>
+     * <p>If you're setting an event bus in another account as the target and that
+     * account granted permission to your account through an organization instead of
+     * directly by the account ID, you must specify a <code>RoleArn</code> with proper
+     * permissions in the <code>Target</code> structure, instead of here in this
+     * parameter.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>
+     * <p>If you're setting an event bus in another account as the target and that
+     * account granted permission to your account through an organization instead of
+     * directly by the account ID, you must specify a <code>RoleArn</code> with proper
+     * permissions in the <code>Target</code> structure, instead of here in this
+     * parameter.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>
+     * <p>If you're setting an event bus in another account as the target and that
+     * account granted permission to your account through an organization instead of
+     * directly by the account ID, you must specify a <code>RoleArn</code> with proper
+     * permissions in the <code>Target</code> structure, instead of here in this
+     * parameter.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>
+     * <p>If you're setting an event bus in another account as the target and that
+     * account granted permission to your account through an organization instead of
+     * directly by the account ID, you must specify a <code>RoleArn</code> with proper
+     * permissions in the <code>Target</code> structure, instead of here in this
+     * parameter.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>
+     * <p>If you're setting an event bus in another account as the target and that
+     * account granted permission to your account through an organization instead of
+     * directly by the account ID, you must specify a <code>RoleArn</code> with proper
+     * permissions in the <code>Target</code> structure, instead of here in this
+     * parameter.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>
+     * <p>If you're setting an event bus in another account as the target and that
+     * account granted permission to your account through an organization instead of
+     * directly by the account ID, you must specify a <code>RoleArn</code> with proper
+     * permissions in the <code>Target</code> structure, instead of here in this
+     * parameter.</p>
      */
     inline PutRuleRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>
+     * <p>If you're setting an event bus in another account as the target and that
+     * account granted permission to your account through an organization instead of
+     * directly by the account ID, you must specify a <code>RoleArn</code> with proper
+     * permissions in the <code>Target</code> structure, instead of here in this
+     * parameter.</p>
      */
     inline PutRuleRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>
+     * <p>If you're setting an event bus in another account as the target and that
+     * account granted permission to your account through an organization instead of
+     * directly by the account ID, you must specify a <code>RoleArn</code> with proper
+     * permissions in the <code>Target</code> structure, instead of here in this
+     * parameter.</p>
      */
     inline PutRuleRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

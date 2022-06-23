@@ -90,50 +90,50 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID for the account that created the query logging
-     * configuration. </p>
+     * <p>The Amazon Web Services account ID for the account that created the query
+     * logging configuration. </p>
      */
     inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
 
     /**
-     * <p>The AWS account ID for the account that created the query logging
-     * configuration. </p>
+     * <p>The Amazon Web Services account ID for the account that created the query
+     * logging configuration. </p>
      */
     inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID for the account that created the query logging
-     * configuration. </p>
+     * <p>The Amazon Web Services account ID for the account that created the query
+     * logging configuration. </p>
      */
     inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
 
     /**
-     * <p>The AWS account ID for the account that created the query logging
-     * configuration. </p>
+     * <p>The Amazon Web Services account ID for the account that created the query
+     * logging configuration. </p>
      */
     inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
 
     /**
-     * <p>The AWS account ID for the account that created the query logging
-     * configuration. </p>
+     * <p>The Amazon Web Services account ID for the account that created the query
+     * logging configuration. </p>
      */
     inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
 
     /**
-     * <p>The AWS account ID for the account that created the query logging
-     * configuration. </p>
+     * <p>The Amazon Web Services account ID for the account that created the query
+     * logging configuration. </p>
      */
     inline ResolverQueryLogConfig& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
 
     /**
-     * <p>The AWS account ID for the account that created the query logging
-     * configuration. </p>
+     * <p>The Amazon Web Services account ID for the account that created the query
+     * logging configuration. </p>
      */
     inline ResolverQueryLogConfig& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID for the account that created the query logging
-     * configuration. </p>
+     * <p>The Amazon Web Services account ID for the account that created the query
+     * logging configuration. </p>
      */
     inline ResolverQueryLogConfig& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
 
@@ -231,43 +231,49 @@ namespace Model
 
     /**
      * <p>An indication of whether the query logging configuration is shared with other
-     * AWS accounts, or was shared with the current account by another AWS account.
-     * Sharing is configured through AWS Resource Access Manager (AWS RAM).</p>
+     * Amazon Web Services accounts, or was shared with the current account by another
+     * Amazon Web Services account. Sharing is configured through Resource Access
+     * Manager (RAM).</p>
      */
     inline const ShareStatus& GetShareStatus() const{ return m_shareStatus; }
 
     /**
      * <p>An indication of whether the query logging configuration is shared with other
-     * AWS accounts, or was shared with the current account by another AWS account.
-     * Sharing is configured through AWS Resource Access Manager (AWS RAM).</p>
+     * Amazon Web Services accounts, or was shared with the current account by another
+     * Amazon Web Services account. Sharing is configured through Resource Access
+     * Manager (RAM).</p>
      */
     inline bool ShareStatusHasBeenSet() const { return m_shareStatusHasBeenSet; }
 
     /**
      * <p>An indication of whether the query logging configuration is shared with other
-     * AWS accounts, or was shared with the current account by another AWS account.
-     * Sharing is configured through AWS Resource Access Manager (AWS RAM).</p>
+     * Amazon Web Services accounts, or was shared with the current account by another
+     * Amazon Web Services account. Sharing is configured through Resource Access
+     * Manager (RAM).</p>
      */
     inline void SetShareStatus(const ShareStatus& value) { m_shareStatusHasBeenSet = true; m_shareStatus = value; }
 
     /**
      * <p>An indication of whether the query logging configuration is shared with other
-     * AWS accounts, or was shared with the current account by another AWS account.
-     * Sharing is configured through AWS Resource Access Manager (AWS RAM).</p>
+     * Amazon Web Services accounts, or was shared with the current account by another
+     * Amazon Web Services account. Sharing is configured through Resource Access
+     * Manager (RAM).</p>
      */
     inline void SetShareStatus(ShareStatus&& value) { m_shareStatusHasBeenSet = true; m_shareStatus = std::move(value); }
 
     /**
      * <p>An indication of whether the query logging configuration is shared with other
-     * AWS accounts, or was shared with the current account by another AWS account.
-     * Sharing is configured through AWS Resource Access Manager (AWS RAM).</p>
+     * Amazon Web Services accounts, or was shared with the current account by another
+     * Amazon Web Services account. Sharing is configured through Resource Access
+     * Manager (RAM).</p>
      */
     inline ResolverQueryLogConfig& WithShareStatus(const ShareStatus& value) { SetShareStatus(value); return *this;}
 
     /**
      * <p>An indication of whether the query logging configuration is shared with other
-     * AWS accounts, or was shared with the current account by another AWS account.
-     * Sharing is configured through AWS Resource Access Manager (AWS RAM).</p>
+     * Amazon Web Services accounts, or was shared with the current account by another
+     * Amazon Web Services account. Sharing is configured through Resource Access
+     * Manager (RAM).</p>
      */
     inline ResolverQueryLogConfig& WithShareStatus(ShareStatus&& value) { SetShareStatus(std::move(value)); return *this;}
 
@@ -439,56 +445,56 @@ namespace Model
     /**
      * <p>A unique string that identifies the request that created the query logging
      * configuration. The <code>CreatorRequestId</code> allows failed requests to be
-     * retried without the risk of executing the operation twice.</p>
+     * retried without the risk of running the operation twice.</p>
      */
     inline const Aws::String& GetCreatorRequestId() const{ return m_creatorRequestId; }
 
     /**
      * <p>A unique string that identifies the request that created the query logging
      * configuration. The <code>CreatorRequestId</code> allows failed requests to be
-     * retried without the risk of executing the operation twice.</p>
+     * retried without the risk of running the operation twice.</p>
      */
     inline bool CreatorRequestIdHasBeenSet() const { return m_creatorRequestIdHasBeenSet; }
 
     /**
      * <p>A unique string that identifies the request that created the query logging
      * configuration. The <code>CreatorRequestId</code> allows failed requests to be
-     * retried without the risk of executing the operation twice.</p>
+     * retried without the risk of running the operation twice.</p>
      */
     inline void SetCreatorRequestId(const Aws::String& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = value; }
 
     /**
      * <p>A unique string that identifies the request that created the query logging
      * configuration. The <code>CreatorRequestId</code> allows failed requests to be
-     * retried without the risk of executing the operation twice.</p>
+     * retried without the risk of running the operation twice.</p>
      */
     inline void SetCreatorRequestId(Aws::String&& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = std::move(value); }
 
     /**
      * <p>A unique string that identifies the request that created the query logging
      * configuration. The <code>CreatorRequestId</code> allows failed requests to be
-     * retried without the risk of executing the operation twice.</p>
+     * retried without the risk of running the operation twice.</p>
      */
     inline void SetCreatorRequestId(const char* value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId.assign(value); }
 
     /**
      * <p>A unique string that identifies the request that created the query logging
      * configuration. The <code>CreatorRequestId</code> allows failed requests to be
-     * retried without the risk of executing the operation twice.</p>
+     * retried without the risk of running the operation twice.</p>
      */
     inline ResolverQueryLogConfig& WithCreatorRequestId(const Aws::String& value) { SetCreatorRequestId(value); return *this;}
 
     /**
      * <p>A unique string that identifies the request that created the query logging
      * configuration. The <code>CreatorRequestId</code> allows failed requests to be
-     * retried without the risk of executing the operation twice.</p>
+     * retried without the risk of running the operation twice.</p>
      */
     inline ResolverQueryLogConfig& WithCreatorRequestId(Aws::String&& value) { SetCreatorRequestId(std::move(value)); return *this;}
 
     /**
      * <p>A unique string that identifies the request that created the query logging
      * configuration. The <code>CreatorRequestId</code> allows failed requests to be
-     * retried without the risk of executing the operation twice.</p>
+     * retried without the risk of running the operation twice.</p>
      */
     inline ResolverQueryLogConfig& WithCreatorRequestId(const char* value) { SetCreatorRequestId(value); return *this;}
 

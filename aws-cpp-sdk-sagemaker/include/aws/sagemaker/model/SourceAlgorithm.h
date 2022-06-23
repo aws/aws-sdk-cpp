@@ -25,9 +25,9 @@ namespace Model
 
   /**
    * <p>Specifies an algorithm that was used to create the model package. The
-   * algorithm must be either an algorithm resource in your Amazon SageMaker account
-   * or an algorithm in AWS Marketplace that you are subscribed to.</p><p><h3>See
-   * Also:</h3>   <a
+   * algorithm must be either an algorithm resource in your SageMaker account or an
+   * algorithm in Amazon Web Services Marketplace that you are subscribed
+   * to.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/SourceAlgorithm">AWS
    * API Reference</a></p>
    */
@@ -115,57 +115,57 @@ namespace Model
 
     /**
      * <p>The name of an algorithm that was used to create the model package. The
-     * algorithm must be either an algorithm resource in your Amazon SageMaker account
-     * or an algorithm in AWS Marketplace that you are subscribed to.</p>
+     * algorithm must be either an algorithm resource in your SageMaker account or an
+     * algorithm in Amazon Web Services Marketplace that you are subscribed to.</p>
      */
     inline const Aws::String& GetAlgorithmName() const{ return m_algorithmName; }
 
     /**
      * <p>The name of an algorithm that was used to create the model package. The
-     * algorithm must be either an algorithm resource in your Amazon SageMaker account
-     * or an algorithm in AWS Marketplace that you are subscribed to.</p>
+     * algorithm must be either an algorithm resource in your SageMaker account or an
+     * algorithm in Amazon Web Services Marketplace that you are subscribed to.</p>
      */
     inline bool AlgorithmNameHasBeenSet() const { return m_algorithmNameHasBeenSet; }
 
     /**
      * <p>The name of an algorithm that was used to create the model package. The
-     * algorithm must be either an algorithm resource in your Amazon SageMaker account
-     * or an algorithm in AWS Marketplace that you are subscribed to.</p>
+     * algorithm must be either an algorithm resource in your SageMaker account or an
+     * algorithm in Amazon Web Services Marketplace that you are subscribed to.</p>
      */
     inline void SetAlgorithmName(const Aws::String& value) { m_algorithmNameHasBeenSet = true; m_algorithmName = value; }
 
     /**
      * <p>The name of an algorithm that was used to create the model package. The
-     * algorithm must be either an algorithm resource in your Amazon SageMaker account
-     * or an algorithm in AWS Marketplace that you are subscribed to.</p>
+     * algorithm must be either an algorithm resource in your SageMaker account or an
+     * algorithm in Amazon Web Services Marketplace that you are subscribed to.</p>
      */
     inline void SetAlgorithmName(Aws::String&& value) { m_algorithmNameHasBeenSet = true; m_algorithmName = std::move(value); }
 
     /**
      * <p>The name of an algorithm that was used to create the model package. The
-     * algorithm must be either an algorithm resource in your Amazon SageMaker account
-     * or an algorithm in AWS Marketplace that you are subscribed to.</p>
+     * algorithm must be either an algorithm resource in your SageMaker account or an
+     * algorithm in Amazon Web Services Marketplace that you are subscribed to.</p>
      */
     inline void SetAlgorithmName(const char* value) { m_algorithmNameHasBeenSet = true; m_algorithmName.assign(value); }
 
     /**
      * <p>The name of an algorithm that was used to create the model package. The
-     * algorithm must be either an algorithm resource in your Amazon SageMaker account
-     * or an algorithm in AWS Marketplace that you are subscribed to.</p>
+     * algorithm must be either an algorithm resource in your SageMaker account or an
+     * algorithm in Amazon Web Services Marketplace that you are subscribed to.</p>
      */
     inline SourceAlgorithm& WithAlgorithmName(const Aws::String& value) { SetAlgorithmName(value); return *this;}
 
     /**
      * <p>The name of an algorithm that was used to create the model package. The
-     * algorithm must be either an algorithm resource in your Amazon SageMaker account
-     * or an algorithm in AWS Marketplace that you are subscribed to.</p>
+     * algorithm must be either an algorithm resource in your SageMaker account or an
+     * algorithm in Amazon Web Services Marketplace that you are subscribed to.</p>
      */
     inline SourceAlgorithm& WithAlgorithmName(Aws::String&& value) { SetAlgorithmName(std::move(value)); return *this;}
 
     /**
      * <p>The name of an algorithm that was used to create the model package. The
-     * algorithm must be either an algorithm resource in your Amazon SageMaker account
-     * or an algorithm in AWS Marketplace that you are subscribed to.</p>
+     * algorithm must be either an algorithm resource in your SageMaker account or an
+     * algorithm in Amazon Web Services Marketplace that you are subscribed to.</p>
      */
     inline SourceAlgorithm& WithAlgorithmName(const char* value) { SetAlgorithmName(value); return *this;}
 

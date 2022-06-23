@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/codeguru-reviewer/CodeGuruReviewer_EXPORTS.h>
 #include <aws/codeguru-reviewer/model/RepositoryAnalysis.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/codeguru-reviewer/model/AnalysisType.h>
 #include <utility>
 
 namespace Aws
@@ -26,12 +28,9 @@ namespace Model
   /**
    * <p> The type of a code review. There are two code review types: </p> <ul> <li>
    * <p> <code>PullRequest</code> - A code review that is automatically triggered by
-   * a pull request on an assocaited repository. Because this type of code review is
-   * automatically generated, you cannot specify this code review type using <a
-   * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
-   * <code>CreateCodeReview</code> </a>. </p> </li> <li> <p>
+   * a pull request on an associated repository. </p> </li> <li> <p>
    * <code>RepositoryAnalysis</code> - A code review that analyzes all code under a
-   * specified branch in an associated respository. The assocated repository is
+   * specified branch in an associated repository. The associated repository is
    * specified using its ARN in <a
    * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
    * <code>CreateCodeReview</code> </a>. </p> </li> </ul><p><h3>See Also:</h3>   <a
@@ -49,7 +48,7 @@ namespace Model
 
     /**
      * <p> A code review that analyzes all code under a specified branch in an
-     * associated respository. The assocated repository is specified using its ARN in
+     * associated repository. The associated repository is specified using its ARN in
      * <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
      * <code>CreateCodeReview</code> </a>. </p>
@@ -58,7 +57,7 @@ namespace Model
 
     /**
      * <p> A code review that analyzes all code under a specified branch in an
-     * associated respository. The assocated repository is specified using its ARN in
+     * associated repository. The associated repository is specified using its ARN in
      * <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
      * <code>CreateCodeReview</code> </a>. </p>
@@ -67,7 +66,7 @@ namespace Model
 
     /**
      * <p> A code review that analyzes all code under a specified branch in an
-     * associated respository. The assocated repository is specified using its ARN in
+     * associated repository. The associated repository is specified using its ARN in
      * <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
      * <code>CreateCodeReview</code> </a>. </p>
@@ -76,7 +75,7 @@ namespace Model
 
     /**
      * <p> A code review that analyzes all code under a specified branch in an
-     * associated respository. The assocated repository is specified using its ARN in
+     * associated repository. The associated repository is specified using its ARN in
      * <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
      * <code>CreateCodeReview</code> </a>. </p>
@@ -85,7 +84,7 @@ namespace Model
 
     /**
      * <p> A code review that analyzes all code under a specified branch in an
-     * associated respository. The assocated repository is specified using its ARN in
+     * associated repository. The associated repository is specified using its ARN in
      * <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
      * <code>CreateCodeReview</code> </a>. </p>
@@ -94,17 +93,77 @@ namespace Model
 
     /**
      * <p> A code review that analyzes all code under a specified branch in an
-     * associated respository. The assocated repository is specified using its ARN in
+     * associated repository. The associated repository is specified using its ARN in
      * <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
      * <code>CreateCodeReview</code> </a>. </p>
      */
     inline CodeReviewType& WithRepositoryAnalysis(RepositoryAnalysis&& value) { SetRepositoryAnalysis(std::move(value)); return *this;}
 
+
+    /**
+     * <p>They types of analysis performed during a repository analysis or a pull
+     * request review. You can specify either <code>Security</code>,
+     * <code>CodeQuality</code>, or both.</p>
+     */
+    inline const Aws::Vector<AnalysisType>& GetAnalysisTypes() const{ return m_analysisTypes; }
+
+    /**
+     * <p>They types of analysis performed during a repository analysis or a pull
+     * request review. You can specify either <code>Security</code>,
+     * <code>CodeQuality</code>, or both.</p>
+     */
+    inline bool AnalysisTypesHasBeenSet() const { return m_analysisTypesHasBeenSet; }
+
+    /**
+     * <p>They types of analysis performed during a repository analysis or a pull
+     * request review. You can specify either <code>Security</code>,
+     * <code>CodeQuality</code>, or both.</p>
+     */
+    inline void SetAnalysisTypes(const Aws::Vector<AnalysisType>& value) { m_analysisTypesHasBeenSet = true; m_analysisTypes = value; }
+
+    /**
+     * <p>They types of analysis performed during a repository analysis or a pull
+     * request review. You can specify either <code>Security</code>,
+     * <code>CodeQuality</code>, or both.</p>
+     */
+    inline void SetAnalysisTypes(Aws::Vector<AnalysisType>&& value) { m_analysisTypesHasBeenSet = true; m_analysisTypes = std::move(value); }
+
+    /**
+     * <p>They types of analysis performed during a repository analysis or a pull
+     * request review. You can specify either <code>Security</code>,
+     * <code>CodeQuality</code>, or both.</p>
+     */
+    inline CodeReviewType& WithAnalysisTypes(const Aws::Vector<AnalysisType>& value) { SetAnalysisTypes(value); return *this;}
+
+    /**
+     * <p>They types of analysis performed during a repository analysis or a pull
+     * request review. You can specify either <code>Security</code>,
+     * <code>CodeQuality</code>, or both.</p>
+     */
+    inline CodeReviewType& WithAnalysisTypes(Aws::Vector<AnalysisType>&& value) { SetAnalysisTypes(std::move(value)); return *this;}
+
+    /**
+     * <p>They types of analysis performed during a repository analysis or a pull
+     * request review. You can specify either <code>Security</code>,
+     * <code>CodeQuality</code>, or both.</p>
+     */
+    inline CodeReviewType& AddAnalysisTypes(const AnalysisType& value) { m_analysisTypesHasBeenSet = true; m_analysisTypes.push_back(value); return *this; }
+
+    /**
+     * <p>They types of analysis performed during a repository analysis or a pull
+     * request review. You can specify either <code>Security</code>,
+     * <code>CodeQuality</code>, or both.</p>
+     */
+    inline CodeReviewType& AddAnalysisTypes(AnalysisType&& value) { m_analysisTypesHasBeenSet = true; m_analysisTypes.push_back(std::move(value)); return *this; }
+
   private:
 
     RepositoryAnalysis m_repositoryAnalysis;
     bool m_repositoryAnalysisHasBeenSet;
+
+    Aws::Vector<AnalysisType> m_analysisTypes;
+    bool m_analysisTypesHasBeenSet;
   };
 
 } // namespace Model

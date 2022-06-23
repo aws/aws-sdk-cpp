@@ -121,42 +121,42 @@ namespace Model
 
 
     /**
-     * <p>Additional metadata that may be applicable to the recommendation.</p>
+     * <p>Additional metadata that might be applicable to the recommendation.</p>
      */
     inline const Aws::String& GetAdditionalMetadata() const{ return m_additionalMetadata; }
 
     /**
-     * <p>Additional metadata that may be applicable to the recommendation.</p>
+     * <p>Additional metadata that might be applicable to the recommendation.</p>
      */
     inline bool AdditionalMetadataHasBeenSet() const { return m_additionalMetadataHasBeenSet; }
 
     /**
-     * <p>Additional metadata that may be applicable to the recommendation.</p>
+     * <p>Additional metadata that might be applicable to the recommendation.</p>
      */
     inline void SetAdditionalMetadata(const Aws::String& value) { m_additionalMetadataHasBeenSet = true; m_additionalMetadata = value; }
 
     /**
-     * <p>Additional metadata that may be applicable to the recommendation.</p>
+     * <p>Additional metadata that might be applicable to the recommendation.</p>
      */
     inline void SetAdditionalMetadata(Aws::String&& value) { m_additionalMetadataHasBeenSet = true; m_additionalMetadata = std::move(value); }
 
     /**
-     * <p>Additional metadata that may be applicable to the recommendation.</p>
+     * <p>Additional metadata that might be applicable to the recommendation.</p>
      */
     inline void SetAdditionalMetadata(const char* value) { m_additionalMetadataHasBeenSet = true; m_additionalMetadata.assign(value); }
 
     /**
-     * <p>Additional metadata that may be applicable to the recommendation.</p>
+     * <p>Additional metadata that might be applicable to the recommendation.</p>
      */
     inline SavingsPlansPurchaseRecommendationMetadata& WithAdditionalMetadata(const Aws::String& value) { SetAdditionalMetadata(value); return *this;}
 
     /**
-     * <p>Additional metadata that may be applicable to the recommendation.</p>
+     * <p>Additional metadata that might be applicable to the recommendation.</p>
      */
     inline SavingsPlansPurchaseRecommendationMetadata& WithAdditionalMetadata(Aws::String&& value) { SetAdditionalMetadata(std::move(value)); return *this;}
 
     /**
-     * <p>Additional metadata that may be applicable to the recommendation.</p>
+     * <p>Additional metadata that might be applicable to the recommendation.</p>
      */
     inline SavingsPlansPurchaseRecommendationMetadata& WithAdditionalMetadata(const char* value) { SetAdditionalMetadata(value); return *this;}
 

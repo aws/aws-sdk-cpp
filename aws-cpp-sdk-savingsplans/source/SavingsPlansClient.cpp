@@ -77,7 +77,7 @@ SavingsPlansClient::~SavingsPlansClient()
 {
 }
 
-void SavingsPlansClient::init(const ClientConfiguration& config)
+void SavingsPlansClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("savingsplans");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -106,9 +106,7 @@ void SavingsPlansClient::OverrideEndpoint(const Aws::String& endpoint)
 CreateSavingsPlanOutcome SavingsPlansClient::CreateSavingsPlan(const CreateSavingsPlanRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/CreateSavingsPlan";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/CreateSavingsPlan");
   return CreateSavingsPlanOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -133,9 +131,7 @@ void SavingsPlansClient::CreateSavingsPlanAsyncHelper(const CreateSavingsPlanReq
 DeleteQueuedSavingsPlanOutcome SavingsPlansClient::DeleteQueuedSavingsPlan(const DeleteQueuedSavingsPlanRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/DeleteQueuedSavingsPlan";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/DeleteQueuedSavingsPlan");
   return DeleteQueuedSavingsPlanOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -160,9 +156,7 @@ void SavingsPlansClient::DeleteQueuedSavingsPlanAsyncHelper(const DeleteQueuedSa
 DescribeSavingsPlanRatesOutcome SavingsPlansClient::DescribeSavingsPlanRates(const DescribeSavingsPlanRatesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/DescribeSavingsPlanRates";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/DescribeSavingsPlanRates");
   return DescribeSavingsPlanRatesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -187,9 +181,7 @@ void SavingsPlansClient::DescribeSavingsPlanRatesAsyncHelper(const DescribeSavin
 DescribeSavingsPlansOutcome SavingsPlansClient::DescribeSavingsPlans(const DescribeSavingsPlansRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/DescribeSavingsPlans";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/DescribeSavingsPlans");
   return DescribeSavingsPlansOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -214,9 +206,7 @@ void SavingsPlansClient::DescribeSavingsPlansAsyncHelper(const DescribeSavingsPl
 DescribeSavingsPlansOfferingRatesOutcome SavingsPlansClient::DescribeSavingsPlansOfferingRates(const DescribeSavingsPlansOfferingRatesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/DescribeSavingsPlansOfferingRates";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/DescribeSavingsPlansOfferingRates");
   return DescribeSavingsPlansOfferingRatesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -241,9 +231,7 @@ void SavingsPlansClient::DescribeSavingsPlansOfferingRatesAsyncHelper(const Desc
 DescribeSavingsPlansOfferingsOutcome SavingsPlansClient::DescribeSavingsPlansOfferings(const DescribeSavingsPlansOfferingsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/DescribeSavingsPlansOfferings";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/DescribeSavingsPlansOfferings");
   return DescribeSavingsPlansOfferingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -268,9 +256,7 @@ void SavingsPlansClient::DescribeSavingsPlansOfferingsAsyncHelper(const Describe
 ListTagsForResourceOutcome SavingsPlansClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/ListTagsForResource";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/ListTagsForResource");
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -295,9 +281,7 @@ void SavingsPlansClient::ListTagsForResourceAsyncHelper(const ListTagsForResourc
 TagResourceOutcome SavingsPlansClient::TagResource(const TagResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/TagResource";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/TagResource");
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -322,9 +306,7 @@ void SavingsPlansClient::TagResourceAsyncHelper(const TagResourceRequest& reques
 UntagResourceOutcome SavingsPlansClient::UntagResource(const UntagResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/UntagResource";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/UntagResource");
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

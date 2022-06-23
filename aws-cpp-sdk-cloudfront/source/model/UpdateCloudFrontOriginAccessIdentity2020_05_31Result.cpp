@@ -20,12 +20,12 @@ UpdateCloudFrontOriginAccessIdentity2020_05_31Result::UpdateCloudFrontOriginAcce
 {
 }
 
-UpdateCloudFrontOriginAccessIdentity2020_05_31Result::UpdateCloudFrontOriginAccessIdentity2020_05_31Result(const AmazonWebServiceResult<XmlDocument>& result)
+UpdateCloudFrontOriginAccessIdentity2020_05_31Result::UpdateCloudFrontOriginAccessIdentity2020_05_31Result(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-UpdateCloudFrontOriginAccessIdentity2020_05_31Result& UpdateCloudFrontOriginAccessIdentity2020_05_31Result::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+UpdateCloudFrontOriginAccessIdentity2020_05_31Result& UpdateCloudFrontOriginAccessIdentity2020_05_31Result::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

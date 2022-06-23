@@ -84,11 +84,11 @@ namespace Model
 
 
     /**
-     * <p>An AWS Identity and Access Management policy statement that lists the rules
-     * that you want to share with another AWS account and the operations that you want
-     * the account to be able to perform. You can specify the following operations in
-     * the <code>Action</code> section of the statement:</p> <ul> <li> <p>
-     * <code>route53resolver:GetResolverRule</code> </p> </li> <li> <p>
+     * <p>An Identity and Access Management policy statement that lists the rules that
+     * you want to share with another Amazon Web Services account and the operations
+     * that you want the account to be able to perform. You can specify the following
+     * operations in the <code>Action</code> section of the statement:</p> <ul> <li>
+     * <p> <code>route53resolver:GetResolverRule</code> </p> </li> <li> <p>
      * <code>route53resolver:AssociateResolverRule</code> </p> </li> <li> <p>
      * <code>route53resolver:DisassociateResolverRule</code> </p> </li> <li> <p>
      * <code>route53resolver:ListResolverRules</code> </p> </li> <li> <p>
@@ -100,11 +100,11 @@ namespace Model
     inline const Aws::String& GetResolverRulePolicy() const{ return m_resolverRulePolicy; }
 
     /**
-     * <p>An AWS Identity and Access Management policy statement that lists the rules
-     * that you want to share with another AWS account and the operations that you want
-     * the account to be able to perform. You can specify the following operations in
-     * the <code>Action</code> section of the statement:</p> <ul> <li> <p>
-     * <code>route53resolver:GetResolverRule</code> </p> </li> <li> <p>
+     * <p>An Identity and Access Management policy statement that lists the rules that
+     * you want to share with another Amazon Web Services account and the operations
+     * that you want the account to be able to perform. You can specify the following
+     * operations in the <code>Action</code> section of the statement:</p> <ul> <li>
+     * <p> <code>route53resolver:GetResolverRule</code> </p> </li> <li> <p>
      * <code>route53resolver:AssociateResolverRule</code> </p> </li> <li> <p>
      * <code>route53resolver:DisassociateResolverRule</code> </p> </li> <li> <p>
      * <code>route53resolver:ListResolverRules</code> </p> </li> <li> <p>
@@ -116,11 +116,11 @@ namespace Model
     inline bool ResolverRulePolicyHasBeenSet() const { return m_resolverRulePolicyHasBeenSet; }
 
     /**
-     * <p>An AWS Identity and Access Management policy statement that lists the rules
-     * that you want to share with another AWS account and the operations that you want
-     * the account to be able to perform. You can specify the following operations in
-     * the <code>Action</code> section of the statement:</p> <ul> <li> <p>
-     * <code>route53resolver:GetResolverRule</code> </p> </li> <li> <p>
+     * <p>An Identity and Access Management policy statement that lists the rules that
+     * you want to share with another Amazon Web Services account and the operations
+     * that you want the account to be able to perform. You can specify the following
+     * operations in the <code>Action</code> section of the statement:</p> <ul> <li>
+     * <p> <code>route53resolver:GetResolverRule</code> </p> </li> <li> <p>
      * <code>route53resolver:AssociateResolverRule</code> </p> </li> <li> <p>
      * <code>route53resolver:DisassociateResolverRule</code> </p> </li> <li> <p>
      * <code>route53resolver:ListResolverRules</code> </p> </li> <li> <p>
@@ -132,11 +132,11 @@ namespace Model
     inline void SetResolverRulePolicy(const Aws::String& value) { m_resolverRulePolicyHasBeenSet = true; m_resolverRulePolicy = value; }
 
     /**
-     * <p>An AWS Identity and Access Management policy statement that lists the rules
-     * that you want to share with another AWS account and the operations that you want
-     * the account to be able to perform. You can specify the following operations in
-     * the <code>Action</code> section of the statement:</p> <ul> <li> <p>
-     * <code>route53resolver:GetResolverRule</code> </p> </li> <li> <p>
+     * <p>An Identity and Access Management policy statement that lists the rules that
+     * you want to share with another Amazon Web Services account and the operations
+     * that you want the account to be able to perform. You can specify the following
+     * operations in the <code>Action</code> section of the statement:</p> <ul> <li>
+     * <p> <code>route53resolver:GetResolverRule</code> </p> </li> <li> <p>
      * <code>route53resolver:AssociateResolverRule</code> </p> </li> <li> <p>
      * <code>route53resolver:DisassociateResolverRule</code> </p> </li> <li> <p>
      * <code>route53resolver:ListResolverRules</code> </p> </li> <li> <p>
@@ -148,11 +148,11 @@ namespace Model
     inline void SetResolverRulePolicy(Aws::String&& value) { m_resolverRulePolicyHasBeenSet = true; m_resolverRulePolicy = std::move(value); }
 
     /**
-     * <p>An AWS Identity and Access Management policy statement that lists the rules
-     * that you want to share with another AWS account and the operations that you want
-     * the account to be able to perform. You can specify the following operations in
-     * the <code>Action</code> section of the statement:</p> <ul> <li> <p>
-     * <code>route53resolver:GetResolverRule</code> </p> </li> <li> <p>
+     * <p>An Identity and Access Management policy statement that lists the rules that
+     * you want to share with another Amazon Web Services account and the operations
+     * that you want the account to be able to perform. You can specify the following
+     * operations in the <code>Action</code> section of the statement:</p> <ul> <li>
+     * <p> <code>route53resolver:GetResolverRule</code> </p> </li> <li> <p>
      * <code>route53resolver:AssociateResolverRule</code> </p> </li> <li> <p>
      * <code>route53resolver:DisassociateResolverRule</code> </p> </li> <li> <p>
      * <code>route53resolver:ListResolverRules</code> </p> </li> <li> <p>
@@ -164,11 +164,11 @@ namespace Model
     inline void SetResolverRulePolicy(const char* value) { m_resolverRulePolicyHasBeenSet = true; m_resolverRulePolicy.assign(value); }
 
     /**
-     * <p>An AWS Identity and Access Management policy statement that lists the rules
-     * that you want to share with another AWS account and the operations that you want
-     * the account to be able to perform. You can specify the following operations in
-     * the <code>Action</code> section of the statement:</p> <ul> <li> <p>
-     * <code>route53resolver:GetResolverRule</code> </p> </li> <li> <p>
+     * <p>An Identity and Access Management policy statement that lists the rules that
+     * you want to share with another Amazon Web Services account and the operations
+     * that you want the account to be able to perform. You can specify the following
+     * operations in the <code>Action</code> section of the statement:</p> <ul> <li>
+     * <p> <code>route53resolver:GetResolverRule</code> </p> </li> <li> <p>
      * <code>route53resolver:AssociateResolverRule</code> </p> </li> <li> <p>
      * <code>route53resolver:DisassociateResolverRule</code> </p> </li> <li> <p>
      * <code>route53resolver:ListResolverRules</code> </p> </li> <li> <p>
@@ -180,11 +180,11 @@ namespace Model
     inline PutResolverRulePolicyRequest& WithResolverRulePolicy(const Aws::String& value) { SetResolverRulePolicy(value); return *this;}
 
     /**
-     * <p>An AWS Identity and Access Management policy statement that lists the rules
-     * that you want to share with another AWS account and the operations that you want
-     * the account to be able to perform. You can specify the following operations in
-     * the <code>Action</code> section of the statement:</p> <ul> <li> <p>
-     * <code>route53resolver:GetResolverRule</code> </p> </li> <li> <p>
+     * <p>An Identity and Access Management policy statement that lists the rules that
+     * you want to share with another Amazon Web Services account and the operations
+     * that you want the account to be able to perform. You can specify the following
+     * operations in the <code>Action</code> section of the statement:</p> <ul> <li>
+     * <p> <code>route53resolver:GetResolverRule</code> </p> </li> <li> <p>
      * <code>route53resolver:AssociateResolverRule</code> </p> </li> <li> <p>
      * <code>route53resolver:DisassociateResolverRule</code> </p> </li> <li> <p>
      * <code>route53resolver:ListResolverRules</code> </p> </li> <li> <p>
@@ -196,11 +196,11 @@ namespace Model
     inline PutResolverRulePolicyRequest& WithResolverRulePolicy(Aws::String&& value) { SetResolverRulePolicy(std::move(value)); return *this;}
 
     /**
-     * <p>An AWS Identity and Access Management policy statement that lists the rules
-     * that you want to share with another AWS account and the operations that you want
-     * the account to be able to perform. You can specify the following operations in
-     * the <code>Action</code> section of the statement:</p> <ul> <li> <p>
-     * <code>route53resolver:GetResolverRule</code> </p> </li> <li> <p>
+     * <p>An Identity and Access Management policy statement that lists the rules that
+     * you want to share with another Amazon Web Services account and the operations
+     * that you want the account to be able to perform. You can specify the following
+     * operations in the <code>Action</code> section of the statement:</p> <ul> <li>
+     * <p> <code>route53resolver:GetResolverRule</code> </p> </li> <li> <p>
      * <code>route53resolver:AssociateResolverRule</code> </p> </li> <li> <p>
      * <code>route53resolver:DisassociateResolverRule</code> </p> </li> <li> <p>
      * <code>route53resolver:ListResolverRules</code> </p> </li> <li> <p>

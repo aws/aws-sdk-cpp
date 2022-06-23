@@ -20,6 +20,7 @@ namespace Model
 
 Member::Member() : 
     m_accountIdHasBeenSet(false),
+    m_administratorAccountIdHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_emailHasBeenSet(false),
     m_invitedAtHasBeenSet(false),
@@ -33,6 +34,7 @@ Member::Member() :
 
 Member::Member(JsonView jsonValue) : 
     m_accountIdHasBeenSet(false),
+    m_administratorAccountIdHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_emailHasBeenSet(false),
     m_invitedAtHasBeenSet(false),
@@ -52,6 +54,13 @@ Member& Member::operator =(JsonView jsonValue)
     m_accountId = jsonValue.GetString("accountId");
 
     m_accountIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("administratorAccountId"))
+  {
+    m_administratorAccountId = jsonValue.GetString("administratorAccountId");
+
+    m_administratorAccountIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("arn"))
@@ -116,6 +125,12 @@ JsonValue Member::Jsonize() const
   if(m_accountIdHasBeenSet)
   {
    payload.WithString("accountId", m_accountId);
+
+  }
+
+  if(m_administratorAccountIdHasBeenSet)
+  {
+   payload.WithString("administratorAccountId", m_administratorAccountId);
 
   }
 

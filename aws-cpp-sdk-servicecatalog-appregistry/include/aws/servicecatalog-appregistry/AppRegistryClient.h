@@ -20,6 +20,7 @@
 #include <aws/servicecatalog-appregistry/model/DisassociateAttributeGroupResult.h>
 #include <aws/servicecatalog-appregistry/model/DisassociateResourceResult.h>
 #include <aws/servicecatalog-appregistry/model/GetApplicationResult.h>
+#include <aws/servicecatalog-appregistry/model/GetAssociatedResourceResult.h>
 #include <aws/servicecatalog-appregistry/model/GetAttributeGroupResult.h>
 #include <aws/servicecatalog-appregistry/model/ListApplicationsResult.h>
 #include <aws/servicecatalog-appregistry/model/ListAssociatedAttributeGroupsResult.h>
@@ -79,6 +80,7 @@ namespace Model
         class DisassociateAttributeGroupRequest;
         class DisassociateResourceRequest;
         class GetApplicationRequest;
+        class GetAssociatedResourceRequest;
         class GetAttributeGroupRequest;
         class ListApplicationsRequest;
         class ListAssociatedAttributeGroupsRequest;
@@ -100,6 +102,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DisassociateAttributeGroupResult, AppRegistryError> DisassociateAttributeGroupOutcome;
         typedef Aws::Utils::Outcome<DisassociateResourceResult, AppRegistryError> DisassociateResourceOutcome;
         typedef Aws::Utils::Outcome<GetApplicationResult, AppRegistryError> GetApplicationOutcome;
+        typedef Aws::Utils::Outcome<GetAssociatedResourceResult, AppRegistryError> GetAssociatedResourceOutcome;
         typedef Aws::Utils::Outcome<GetAttributeGroupResult, AppRegistryError> GetAttributeGroupOutcome;
         typedef Aws::Utils::Outcome<ListApplicationsResult, AppRegistryError> ListApplicationsOutcome;
         typedef Aws::Utils::Outcome<ListAssociatedAttributeGroupsResult, AppRegistryError> ListAssociatedAttributeGroupsOutcome;
@@ -121,6 +124,7 @@ namespace Model
         typedef std::future<DisassociateAttributeGroupOutcome> DisassociateAttributeGroupOutcomeCallable;
         typedef std::future<DisassociateResourceOutcome> DisassociateResourceOutcomeCallable;
         typedef std::future<GetApplicationOutcome> GetApplicationOutcomeCallable;
+        typedef std::future<GetAssociatedResourceOutcome> GetAssociatedResourceOutcomeCallable;
         typedef std::future<GetAttributeGroupOutcome> GetAttributeGroupOutcomeCallable;
         typedef std::future<ListApplicationsOutcome> ListApplicationsOutcomeCallable;
         typedef std::future<ListAssociatedAttributeGroupsOutcome> ListAssociatedAttributeGroupsOutcomeCallable;
@@ -145,6 +149,7 @@ namespace Model
     typedef std::function<void(const AppRegistryClient*, const Model::DisassociateAttributeGroupRequest&, const Model::DisassociateAttributeGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateAttributeGroupResponseReceivedHandler;
     typedef std::function<void(const AppRegistryClient*, const Model::DisassociateResourceRequest&, const Model::DisassociateResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateResourceResponseReceivedHandler;
     typedef std::function<void(const AppRegistryClient*, const Model::GetApplicationRequest&, const Model::GetApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApplicationResponseReceivedHandler;
+    typedef std::function<void(const AppRegistryClient*, const Model::GetAssociatedResourceRequest&, const Model::GetAssociatedResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAssociatedResourceResponseReceivedHandler;
     typedef std::function<void(const AppRegistryClient*, const Model::GetAttributeGroupRequest&, const Model::GetAttributeGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAttributeGroupResponseReceivedHandler;
     typedef std::function<void(const AppRegistryClient*, const Model::ListApplicationsRequest&, const Model::ListApplicationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApplicationsResponseReceivedHandler;
     typedef std::function<void(const AppRegistryClient*, const Model::ListAssociatedAttributeGroupsRequest&, const Model::ListAssociatedAttributeGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssociatedAttributeGroupsResponseReceivedHandler;
@@ -158,10 +163,10 @@ namespace Model
     typedef std::function<void(const AppRegistryClient*, const Model::UpdateAttributeGroupRequest&, const Model::UpdateAttributeGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAttributeGroupResponseReceivedHandler;
 
   /**
-   * <p> AWS Service Catalog AppRegistry enables organizations to understand the
-   * application context of their AWS resources. AppRegistry provides a repository of
-   * your applications, their resources, and the application metadata that you use
-   * within your enterprise.</p>
+   * <p> Amazon Web Services Service Catalog AppRegistry enables organizations to
+   * understand the application context of their Amazon Web Services resources.
+   * AppRegistry provides a repository of your applications, their resources, and the
+   * application metadata that you use within your enterprise.</p>
    */
   class AWS_APPREGISTRY_API AppRegistryClient : public Aws::Client::AWSJsonClient
   {
@@ -202,28 +207,12 @@ namespace Model
         virtual Model::AssociateAttributeGroupOutcome AssociateAttributeGroup(const Model::AssociateAttributeGroupRequest& request) const;
 
         /**
-         * <p>Associates an attribute group with an application to augment the
-         * application's metadata with the group's attributes. This feature enables
-         * applications to be described with user-defined details that are
-         * machine-readable, such as third-party integrations.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/AssociateAttributeGroup">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for AssociateAttributeGroup that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::AssociateAttributeGroupOutcomeCallable AssociateAttributeGroupCallable(const Model::AssociateAttributeGroupRequest& request) const;
 
         /**
-         * <p>Associates an attribute group with an application to augment the
-         * application's metadata with the group's attributes. This feature enables
-         * applications to be described with user-defined details that are
-         * machine-readable, such as third-party integrations.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/AssociateAttributeGroup">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for AssociateAttributeGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AssociateAttributeGroupAsync(const Model::AssociateAttributeGroupRequest& request, const AssociateAttributeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -236,22 +225,12 @@ namespace Model
         virtual Model::AssociateResourceOutcome AssociateResource(const Model::AssociateResourceRequest& request) const;
 
         /**
-         * <p>Associates a resource with an application. Both the resource and the
-         * application can be specified either by ID or name.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/AssociateResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for AssociateResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::AssociateResourceOutcomeCallable AssociateResourceCallable(const Model::AssociateResourceRequest& request) const;
 
         /**
-         * <p>Associates a resource with an application. Both the resource and the
-         * application can be specified either by ID or name.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/AssociateResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for AssociateResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AssociateResourceAsync(const Model::AssociateResourceRequest& request, const AssociateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -264,22 +243,12 @@ namespace Model
         virtual Model::CreateApplicationOutcome CreateApplication(const Model::CreateApplicationRequest& request) const;
 
         /**
-         * <p>Creates a new application that is the top-level node in a hierarchy of
-         * related cloud resource abstractions.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/CreateApplication">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateApplication that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateApplicationOutcomeCallable CreateApplicationCallable(const Model::CreateApplicationRequest& request) const;
 
         /**
-         * <p>Creates a new application that is the top-level node in a hierarchy of
-         * related cloud resource abstractions.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/CreateApplication">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateApplicationAsync(const Model::CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -294,26 +263,12 @@ namespace Model
         virtual Model::CreateAttributeGroupOutcome CreateAttributeGroup(const Model::CreateAttributeGroupRequest& request) const;
 
         /**
-         * <p>Creates a new attribute group as a container for user-defined attributes.
-         * This feature enables users to have full control over their cloud application's
-         * metadata in a rich machine-readable format to facilitate integration with
-         * automated workflows and third-party tools.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/CreateAttributeGroup">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateAttributeGroup that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateAttributeGroupOutcomeCallable CreateAttributeGroupCallable(const Model::CreateAttributeGroupRequest& request) const;
 
         /**
-         * <p>Creates a new attribute group as a container for user-defined attributes.
-         * This feature enables users to have full control over their cloud application's
-         * metadata in a rich machine-readable format to facilitate integration with
-         * automated workflows and third-party tools.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/CreateAttributeGroup">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateAttributeGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateAttributeGroupAsync(const Model::CreateAttributeGroupRequest& request, const CreateAttributeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -327,24 +282,12 @@ namespace Model
         virtual Model::DeleteApplicationOutcome DeleteApplication(const Model::DeleteApplicationRequest& request) const;
 
         /**
-         * <p>Deletes an application that is specified either by its application ID or
-         * name. All associated attribute groups and resources must be disassociated from
-         * it before deleting an application.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/DeleteApplication">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteApplication that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteApplicationOutcomeCallable DeleteApplicationCallable(const Model::DeleteApplicationRequest& request) const;
 
         /**
-         * <p>Deletes an application that is specified either by its application ID or
-         * name. All associated attribute groups and resources must be disassociated from
-         * it before deleting an application.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/DeleteApplication">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteApplicationAsync(const Model::DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -357,22 +300,12 @@ namespace Model
         virtual Model::DeleteAttributeGroupOutcome DeleteAttributeGroup(const Model::DeleteAttributeGroupRequest& request) const;
 
         /**
-         * <p>Deletes an attribute group, specified either by its attribute group ID or
-         * name.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/DeleteAttributeGroup">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteAttributeGroup that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteAttributeGroupOutcomeCallable DeleteAttributeGroupCallable(const Model::DeleteAttributeGroupRequest& request) const;
 
         /**
-         * <p>Deletes an attribute group, specified either by its attribute group ID or
-         * name.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/DeleteAttributeGroup">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteAttributeGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteAttributeGroupAsync(const Model::DeleteAttributeGroupRequest& request, const DeleteAttributeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -387,26 +320,12 @@ namespace Model
         virtual Model::DisassociateAttributeGroupOutcome DisassociateAttributeGroup(const Model::DisassociateAttributeGroupRequest& request) const;
 
         /**
-         * <p>Disassociates an attribute group from an application to remove the extra
-         * attributes contained in the attribute group from the application's metadata.
-         * This operation reverts <code>AssociateAttributeGroup</code>.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/DisassociateAttributeGroup">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DisassociateAttributeGroup that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DisassociateAttributeGroupOutcomeCallable DisassociateAttributeGroupCallable(const Model::DisassociateAttributeGroupRequest& request) const;
 
         /**
-         * <p>Disassociates an attribute group from an application to remove the extra
-         * attributes contained in the attribute group from the application's metadata.
-         * This operation reverts <code>AssociateAttributeGroup</code>.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/DisassociateAttributeGroup">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DisassociateAttributeGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DisassociateAttributeGroupAsync(const Model::DisassociateAttributeGroupRequest& request, const DisassociateAttributeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -419,22 +338,12 @@ namespace Model
         virtual Model::DisassociateResourceOutcome DisassociateResource(const Model::DisassociateResourceRequest& request) const;
 
         /**
-         * <p>Disassociates a resource from application. Both the resource and the
-         * application can be specified either by ID or name.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/DisassociateResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DisassociateResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DisassociateResourceOutcomeCallable DisassociateResourceCallable(const Model::DisassociateResourceRequest& request) const;
 
         /**
-         * <p>Disassociates a resource from application. Both the resource and the
-         * application can be specified either by ID or name.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/DisassociateResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DisassociateResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DisassociateResourceAsync(const Model::DisassociateResourceRequest& request, const DisassociateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -451,32 +360,32 @@ namespace Model
         virtual Model::GetApplicationOutcome GetApplication(const Model::GetApplicationRequest& request) const;
 
         /**
-         * <p>Retrieves metadata information about one of your applications. The
-         * application can be specified either by its unique ID or by its name (which is
-         * unique within one account in one region at a given point in time). Specify by ID
-         * in automated workflows if you want to make sure that the exact same application
-         * is returned or a <code>ResourceNotFoundException</code> is thrown, avoiding the
-         * ABA addressing problem.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/GetApplication">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetApplication that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetApplicationOutcomeCallable GetApplicationCallable(const Model::GetApplicationRequest& request) const;
 
         /**
-         * <p>Retrieves metadata information about one of your applications. The
-         * application can be specified either by its unique ID or by its name (which is
-         * unique within one account in one region at a given point in time). Specify by ID
-         * in automated workflows if you want to make sure that the exact same application
-         * is returned or a <code>ResourceNotFoundException</code> is thrown, avoiding the
-         * ABA addressing problem.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/GetApplication">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetApplicationAsync(const Model::GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets the resource associated with the application.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/GetAssociatedResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAssociatedResourceOutcome GetAssociatedResource(const Model::GetAssociatedResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetAssociatedResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetAssociatedResourceOutcomeCallable GetAssociatedResourceCallable(const Model::GetAssociatedResourceRequest& request) const;
+
+        /**
+         * An Async wrapper for GetAssociatedResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetAssociatedResourceAsync(const Model::GetAssociatedResourceRequest& request, const GetAssociatedResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves an attribute group, either by its name or its ID. The attribute
@@ -488,24 +397,12 @@ namespace Model
         virtual Model::GetAttributeGroupOutcome GetAttributeGroup(const Model::GetAttributeGroupRequest& request) const;
 
         /**
-         * <p>Retrieves an attribute group, either by its name or its ID. The attribute
-         * group can be specified either by its unique ID or by its name.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/GetAttributeGroup">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetAttributeGroup that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetAttributeGroupOutcomeCallable GetAttributeGroupCallable(const Model::GetAttributeGroupRequest& request) const;
 
         /**
-         * <p>Retrieves an attribute group, either by its name or its ID. The attribute
-         * group can be specified either by its unique ID or by its name.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/GetAttributeGroup">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetAttributeGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetAttributeGroupAsync(const Model::GetAttributeGroupRequest& request, const GetAttributeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -518,22 +415,12 @@ namespace Model
         virtual Model::ListApplicationsOutcome ListApplications(const Model::ListApplicationsRequest& request) const;
 
         /**
-         * <p>Retrieves a list of all of your applications. Results are
-         * paginated.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListApplications">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListApplications that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListApplicationsOutcomeCallable ListApplicationsCallable(const Model::ListApplicationsRequest& request) const;
 
         /**
-         * <p>Retrieves a list of all of your applications. Results are
-         * paginated.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListApplications">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListApplications that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListApplicationsAsync(const Model::ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -546,22 +433,12 @@ namespace Model
         virtual Model::ListAssociatedAttributeGroupsOutcome ListAssociatedAttributeGroups(const Model::ListAssociatedAttributeGroupsRequest& request) const;
 
         /**
-         * <p>Lists all attribute groups that are associated with specified application.
-         * Results are paginated.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListAssociatedAttributeGroups">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListAssociatedAttributeGroups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListAssociatedAttributeGroupsOutcomeCallable ListAssociatedAttributeGroupsCallable(const Model::ListAssociatedAttributeGroupsRequest& request) const;
 
         /**
-         * <p>Lists all attribute groups that are associated with specified application.
-         * Results are paginated.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListAssociatedAttributeGroups">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListAssociatedAttributeGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListAssociatedAttributeGroupsAsync(const Model::ListAssociatedAttributeGroupsRequest& request, const ListAssociatedAttributeGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -574,22 +451,12 @@ namespace Model
         virtual Model::ListAssociatedResourcesOutcome ListAssociatedResources(const Model::ListAssociatedResourcesRequest& request) const;
 
         /**
-         * <p>Lists all resources that are associated with specified application. Results
-         * are paginated.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListAssociatedResources">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListAssociatedResources that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListAssociatedResourcesOutcomeCallable ListAssociatedResourcesCallable(const Model::ListAssociatedResourcesRequest& request) const;
 
         /**
-         * <p>Lists all resources that are associated with specified application. Results
-         * are paginated.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListAssociatedResources">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListAssociatedResources that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListAssociatedResourcesAsync(const Model::ListAssociatedResourcesRequest& request, const ListAssociatedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -602,22 +469,12 @@ namespace Model
         virtual Model::ListAttributeGroupsOutcome ListAttributeGroups(const Model::ListAttributeGroupsRequest& request) const;
 
         /**
-         * <p>Lists all attribute groups which you have access to. Results are
-         * paginated.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListAttributeGroups">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListAttributeGroups that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListAttributeGroupsOutcomeCallable ListAttributeGroupsCallable(const Model::ListAttributeGroupsRequest& request) const;
 
         /**
-         * <p>Lists all attribute groups which you have access to. Results are
-         * paginated.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListAttributeGroups">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListAttributeGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListAttributeGroupsAsync(const Model::ListAttributeGroupsRequest& request, const ListAttributeGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -629,27 +486,19 @@ namespace Model
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Lists all of the tags on the resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListTagsForResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Lists all of the tags on the resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListTagsForResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Syncs the resource with what is currently recorded in App registry.
-         * Specifically, the resource’s App registry system tags are synced with its
-         * associated application. The resource is removed if it is not associated with the
+         * <p>Syncs the resource with current AppRegistry records.</p> <p>Specifically, the
+         * resource’s AppRegistry system tags sync with its associated application. We
+         * remove the resource's AppRegistry system tags if it does not associate with the
          * application. The caller must have permissions to read and update the
          * resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/SyncResource">AWS
@@ -658,28 +507,12 @@ namespace Model
         virtual Model::SyncResourceOutcome SyncResource(const Model::SyncResourceRequest& request) const;
 
         /**
-         * <p>Syncs the resource with what is currently recorded in App registry.
-         * Specifically, the resource’s App registry system tags are synced with its
-         * associated application. The resource is removed if it is not associated with the
-         * application. The caller must have permissions to read and update the
-         * resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/SyncResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for SyncResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::SyncResourceOutcomeCallable SyncResourceCallable(const Model::SyncResourceRequest& request) const;
 
         /**
-         * <p>Syncs the resource with what is currently recorded in App registry.
-         * Specifically, the resource’s App registry system tags are synced with its
-         * associated application. The resource is removed if it is not associated with the
-         * application. The caller must have permissions to read and update the
-         * resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/SyncResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for SyncResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void SyncResourceAsync(const Model::SyncResourceRequest& request, const SyncResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -695,28 +528,12 @@ namespace Model
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Assigns one or more tags (key-value pairs) to the specified resource.</p>
-         * <p>Each tag consists of a key and an optional value. If a tag with the same key
-         * is already associated with the resource, this action updates its value.</p>
-         * <p>This operation returns an empty response if the call was
-         * successful.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/TagResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Assigns one or more tags (key-value pairs) to the specified resource.</p>
-         * <p>Each tag consists of a key and an optional value. If a tag with the same key
-         * is already associated with the resource, this action updates its value.</p>
-         * <p>This operation returns an empty response if the call was
-         * successful.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/TagResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -729,22 +546,12 @@ namespace Model
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes tags from a resource.</p> <p>This operation returns an empty response
-         * if the call was successful.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/UntagResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes tags from a resource.</p> <p>This operation returns an empty response
-         * if the call was successful.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/UntagResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -757,22 +564,12 @@ namespace Model
         virtual Model::UpdateApplicationOutcome UpdateApplication(const Model::UpdateApplicationRequest& request) const;
 
         /**
-         * <p>Updates an existing application with new attributes.</p><p><h3>See Also:</h3>
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/UpdateApplication">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateApplication that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateApplicationOutcomeCallable UpdateApplicationCallable(const Model::UpdateApplicationRequest& request) const;
 
         /**
-         * <p>Updates an existing application with new attributes.</p><p><h3>See Also:</h3>
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/UpdateApplication">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateApplicationAsync(const Model::UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -785,22 +582,12 @@ namespace Model
         virtual Model::UpdateAttributeGroupOutcome UpdateAttributeGroup(const Model::UpdateAttributeGroupRequest& request) const;
 
         /**
-         * <p>Updates an existing attribute group with new details. </p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/UpdateAttributeGroup">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateAttributeGroup that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateAttributeGroupOutcomeCallable UpdateAttributeGroupCallable(const Model::UpdateAttributeGroupRequest& request) const;
 
         /**
-         * <p>Updates an existing attribute group with new details. </p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/UpdateAttributeGroup">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateAttributeGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateAttributeGroupAsync(const Model::UpdateAttributeGroupRequest& request, const UpdateAttributeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -817,6 +604,7 @@ namespace Model
         void DisassociateAttributeGroupAsyncHelper(const Model::DisassociateAttributeGroupRequest& request, const DisassociateAttributeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateResourceAsyncHelper(const Model::DisassociateResourceRequest& request, const DisassociateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetApplicationAsyncHelper(const Model::GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetAssociatedResourceAsyncHelper(const Model::GetAssociatedResourceRequest& request, const GetAssociatedResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAttributeGroupAsyncHelper(const Model::GetAttributeGroupRequest& request, const GetAttributeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListApplicationsAsyncHelper(const Model::ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAssociatedAttributeGroupsAsyncHelper(const Model::ListAssociatedAttributeGroupsRequest& request, const ListAssociatedAttributeGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

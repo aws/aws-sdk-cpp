@@ -6,6 +6,9 @@
 #pragma once
 #include <aws/codeguru-reviewer/CodeGuruReviewer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/codeguru-reviewer/model/RecommendationCategory.h>
+#include <aws/codeguru-reviewer/model/RuleMetadata.h>
+#include <aws/codeguru-reviewer/model/Severity.h>
 #include <utility>
 
 namespace Aws
@@ -229,6 +232,117 @@ namespace Model
      */
     inline RecommendationSummary& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
+    /**
+     * <p>The type of a recommendation.</p>
+     */
+    inline const RecommendationCategory& GetRecommendationCategory() const{ return m_recommendationCategory; }
+
+    /**
+     * <p>The type of a recommendation.</p>
+     */
+    inline bool RecommendationCategoryHasBeenSet() const { return m_recommendationCategoryHasBeenSet; }
+
+    /**
+     * <p>The type of a recommendation.</p>
+     */
+    inline void SetRecommendationCategory(const RecommendationCategory& value) { m_recommendationCategoryHasBeenSet = true; m_recommendationCategory = value; }
+
+    /**
+     * <p>The type of a recommendation.</p>
+     */
+    inline void SetRecommendationCategory(RecommendationCategory&& value) { m_recommendationCategoryHasBeenSet = true; m_recommendationCategory = std::move(value); }
+
+    /**
+     * <p>The type of a recommendation.</p>
+     */
+    inline RecommendationSummary& WithRecommendationCategory(const RecommendationCategory& value) { SetRecommendationCategory(value); return *this;}
+
+    /**
+     * <p>The type of a recommendation.</p>
+     */
+    inline RecommendationSummary& WithRecommendationCategory(RecommendationCategory&& value) { SetRecommendationCategory(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Metadata about a rule. Rule metadata includes an ID, a name, a list of tags,
+     * and a short and long description. CodeGuru Reviewer uses rules to analyze code.
+     * A rule's recommendation is included in analysis results if code is detected that
+     * violates the rule.</p>
+     */
+    inline const RuleMetadata& GetRuleMetadata() const{ return m_ruleMetadata; }
+
+    /**
+     * <p>Metadata about a rule. Rule metadata includes an ID, a name, a list of tags,
+     * and a short and long description. CodeGuru Reviewer uses rules to analyze code.
+     * A rule's recommendation is included in analysis results if code is detected that
+     * violates the rule.</p>
+     */
+    inline bool RuleMetadataHasBeenSet() const { return m_ruleMetadataHasBeenSet; }
+
+    /**
+     * <p>Metadata about a rule. Rule metadata includes an ID, a name, a list of tags,
+     * and a short and long description. CodeGuru Reviewer uses rules to analyze code.
+     * A rule's recommendation is included in analysis results if code is detected that
+     * violates the rule.</p>
+     */
+    inline void SetRuleMetadata(const RuleMetadata& value) { m_ruleMetadataHasBeenSet = true; m_ruleMetadata = value; }
+
+    /**
+     * <p>Metadata about a rule. Rule metadata includes an ID, a name, a list of tags,
+     * and a short and long description. CodeGuru Reviewer uses rules to analyze code.
+     * A rule's recommendation is included in analysis results if code is detected that
+     * violates the rule.</p>
+     */
+    inline void SetRuleMetadata(RuleMetadata&& value) { m_ruleMetadataHasBeenSet = true; m_ruleMetadata = std::move(value); }
+
+    /**
+     * <p>Metadata about a rule. Rule metadata includes an ID, a name, a list of tags,
+     * and a short and long description. CodeGuru Reviewer uses rules to analyze code.
+     * A rule's recommendation is included in analysis results if code is detected that
+     * violates the rule.</p>
+     */
+    inline RecommendationSummary& WithRuleMetadata(const RuleMetadata& value) { SetRuleMetadata(value); return *this;}
+
+    /**
+     * <p>Metadata about a rule. Rule metadata includes an ID, a name, a list of tags,
+     * and a short and long description. CodeGuru Reviewer uses rules to analyze code.
+     * A rule's recommendation is included in analysis results if code is detected that
+     * violates the rule.</p>
+     */
+    inline RecommendationSummary& WithRuleMetadata(RuleMetadata&& value) { SetRuleMetadata(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The severity of the issue in the code that generated this recommendation.</p>
+     */
+    inline const Severity& GetSeverity() const{ return m_severity; }
+
+    /**
+     * <p>The severity of the issue in the code that generated this recommendation.</p>
+     */
+    inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }
+
+    /**
+     * <p>The severity of the issue in the code that generated this recommendation.</p>
+     */
+    inline void SetSeverity(const Severity& value) { m_severityHasBeenSet = true; m_severity = value; }
+
+    /**
+     * <p>The severity of the issue in the code that generated this recommendation.</p>
+     */
+    inline void SetSeverity(Severity&& value) { m_severityHasBeenSet = true; m_severity = std::move(value); }
+
+    /**
+     * <p>The severity of the issue in the code that generated this recommendation.</p>
+     */
+    inline RecommendationSummary& WithSeverity(const Severity& value) { SetSeverity(value); return *this;}
+
+    /**
+     * <p>The severity of the issue in the code that generated this recommendation.</p>
+     */
+    inline RecommendationSummary& WithSeverity(Severity&& value) { SetSeverity(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_filePath;
@@ -245,6 +359,15 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
+    RecommendationCategory m_recommendationCategory;
+    bool m_recommendationCategoryHasBeenSet;
+
+    RuleMetadata m_ruleMetadata;
+    bool m_ruleMetadataHasBeenSet;
+
+    Severity m_severity;
+    bool m_severityHasBeenSet;
   };
 
 } // namespace Model

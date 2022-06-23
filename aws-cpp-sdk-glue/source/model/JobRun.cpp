@@ -46,7 +46,9 @@ JobRun::JobRun() :
     m_securityConfigurationHasBeenSet(false),
     m_logGroupNameHasBeenSet(false),
     m_notificationPropertyHasBeenSet(false),
-    m_glueVersionHasBeenSet(false)
+    m_glueVersionHasBeenSet(false),
+    m_dPUSeconds(0.0),
+    m_dPUSecondsHasBeenSet(false)
 {
 }
 
@@ -78,7 +80,9 @@ JobRun::JobRun(JsonView jsonValue) :
     m_securityConfigurationHasBeenSet(false),
     m_logGroupNameHasBeenSet(false),
     m_notificationPropertyHasBeenSet(false),
-    m_glueVersionHasBeenSet(false)
+    m_glueVersionHasBeenSet(false),
+    m_dPUSeconds(0.0),
+    m_dPUSecondsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -238,6 +242,13 @@ JobRun& JobRun::operator =(JsonView jsonValue)
     m_glueVersionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DPUSeconds"))
+  {
+    m_dPUSeconds = jsonValue.GetDouble("DPUSeconds");
+
+    m_dPUSecondsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -373,6 +384,12 @@ JsonValue JobRun::Jsonize() const
   if(m_glueVersionHasBeenSet)
   {
    payload.WithString("GlueVersion", m_glueVersion);
+
+  }
+
+  if(m_dPUSecondsHasBeenSet)
+  {
+   payload.WithDouble("DPUSeconds", m_dPUSeconds);
 
   }
 

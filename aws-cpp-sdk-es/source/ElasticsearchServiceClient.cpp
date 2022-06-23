@@ -31,6 +31,8 @@
 #include <aws/es/model/DeleteInboundCrossClusterSearchConnectionRequest.h>
 #include <aws/es/model/DeleteOutboundCrossClusterSearchConnectionRequest.h>
 #include <aws/es/model/DeletePackageRequest.h>
+#include <aws/es/model/DescribeDomainAutoTunesRequest.h>
+#include <aws/es/model/DescribeDomainChangeProgressRequest.h>
 #include <aws/es/model/DescribeElasticsearchDomainRequest.h>
 #include <aws/es/model/DescribeElasticsearchDomainConfigRequest.h>
 #include <aws/es/model/DescribeElasticsearchDomainsRequest.h>
@@ -45,6 +47,7 @@
 #include <aws/es/model/GetPackageVersionHistoryRequest.h>
 #include <aws/es/model/GetUpgradeHistoryRequest.h>
 #include <aws/es/model/GetUpgradeStatusRequest.h>
+#include <aws/es/model/ListDomainNamesRequest.h>
 #include <aws/es/model/ListDomainsForPackageRequest.h>
 #include <aws/es/model/ListElasticsearchInstanceTypesRequest.h>
 #include <aws/es/model/ListElasticsearchVersionsRequest.h>
@@ -105,7 +108,7 @@ ElasticsearchServiceClient::~ElasticsearchServiceClient()
 {
 }
 
-void ElasticsearchServiceClient::init(const ClientConfiguration& config)
+void ElasticsearchServiceClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Elasticsearch Service");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -139,11 +142,9 @@ AcceptInboundCrossClusterSearchConnectionOutcome ElasticsearchServiceClient::Acc
     return AcceptInboundCrossClusterSearchConnectionOutcome(Aws::Client::AWSError<ElasticsearchServiceErrors>(ElasticsearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CrossClusterSearchConnectionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-01-01/es/ccs/inboundConnection/";
-  ss << request.GetCrossClusterSearchConnectionId();
-  ss << "/accept";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-01-01/es/ccs/inboundConnection/");
+  uri.AddPathSegment(request.GetCrossClusterSearchConnectionId());
+  uri.AddPathSegments("/accept");
   return AcceptInboundCrossClusterSearchConnectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -168,9 +169,7 @@ void ElasticsearchServiceClient::AcceptInboundCrossClusterSearchConnectionAsyncH
 AddTagsOutcome ElasticsearchServiceClient::AddTags(const AddTagsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-01-01/tags";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-01-01/tags");
   return AddTagsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -205,12 +204,9 @@ AssociatePackageOutcome ElasticsearchServiceClient::AssociatePackage(const Assoc
     return AssociatePackageOutcome(Aws::Client::AWSError<ElasticsearchServiceErrors>(ElasticsearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-01-01/packages/associate/";
-  ss << request.GetPackageID();
-  ss << "/";
-  ss << request.GetDomainName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-01-01/packages/associate/");
+  uri.AddPathSegment(request.GetPackageID());
+  uri.AddPathSegment(request.GetDomainName());
   return AssociatePackageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -235,9 +231,7 @@ void ElasticsearchServiceClient::AssociatePackageAsyncHelper(const AssociatePack
 CancelElasticsearchServiceSoftwareUpdateOutcome ElasticsearchServiceClient::CancelElasticsearchServiceSoftwareUpdate(const CancelElasticsearchServiceSoftwareUpdateRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-01-01/es/serviceSoftwareUpdate/cancel";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-01-01/es/serviceSoftwareUpdate/cancel");
   return CancelElasticsearchServiceSoftwareUpdateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -262,9 +256,7 @@ void ElasticsearchServiceClient::CancelElasticsearchServiceSoftwareUpdateAsyncHe
 CreateElasticsearchDomainOutcome ElasticsearchServiceClient::CreateElasticsearchDomain(const CreateElasticsearchDomainRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-01-01/es/domain";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-01-01/es/domain");
   return CreateElasticsearchDomainOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -289,9 +281,7 @@ void ElasticsearchServiceClient::CreateElasticsearchDomainAsyncHelper(const Crea
 CreateOutboundCrossClusterSearchConnectionOutcome ElasticsearchServiceClient::CreateOutboundCrossClusterSearchConnection(const CreateOutboundCrossClusterSearchConnectionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-01-01/es/ccs/outboundConnection";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-01-01/es/ccs/outboundConnection");
   return CreateOutboundCrossClusterSearchConnectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -316,9 +306,7 @@ void ElasticsearchServiceClient::CreateOutboundCrossClusterSearchConnectionAsync
 CreatePackageOutcome ElasticsearchServiceClient::CreatePackage(const CreatePackageRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-01-01/packages";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-01-01/packages");
   return CreatePackageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -348,10 +336,8 @@ DeleteElasticsearchDomainOutcome ElasticsearchServiceClient::DeleteElasticsearch
     return DeleteElasticsearchDomainOutcome(Aws::Client::AWSError<ElasticsearchServiceErrors>(ElasticsearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-01-01/es/domain/";
-  ss << request.GetDomainName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-01-01/es/domain/");
+  uri.AddPathSegment(request.GetDomainName());
   return DeleteElasticsearchDomainOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -406,10 +392,8 @@ DeleteInboundCrossClusterSearchConnectionOutcome ElasticsearchServiceClient::Del
     return DeleteInboundCrossClusterSearchConnectionOutcome(Aws::Client::AWSError<ElasticsearchServiceErrors>(ElasticsearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CrossClusterSearchConnectionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-01-01/es/ccs/inboundConnection/";
-  ss << request.GetCrossClusterSearchConnectionId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-01-01/es/ccs/inboundConnection/");
+  uri.AddPathSegment(request.GetCrossClusterSearchConnectionId());
   return DeleteInboundCrossClusterSearchConnectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -439,10 +423,8 @@ DeleteOutboundCrossClusterSearchConnectionOutcome ElasticsearchServiceClient::De
     return DeleteOutboundCrossClusterSearchConnectionOutcome(Aws::Client::AWSError<ElasticsearchServiceErrors>(ElasticsearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CrossClusterSearchConnectionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-01-01/es/ccs/outboundConnection/";
-  ss << request.GetCrossClusterSearchConnectionId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-01-01/es/ccs/outboundConnection/");
+  uri.AddPathSegment(request.GetCrossClusterSearchConnectionId());
   return DeleteOutboundCrossClusterSearchConnectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -472,10 +454,8 @@ DeletePackageOutcome ElasticsearchServiceClient::DeletePackage(const DeletePacka
     return DeletePackageOutcome(Aws::Client::AWSError<ElasticsearchServiceErrors>(ElasticsearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PackageID]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-01-01/packages/";
-  ss << request.GetPackageID();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-01-01/packages/");
+  uri.AddPathSegment(request.GetPackageID());
   return DeletePackageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -497,6 +477,70 @@ void ElasticsearchServiceClient::DeletePackageAsyncHelper(const DeletePackageReq
   handler(this, request, DeletePackage(request), context);
 }
 
+DescribeDomainAutoTunesOutcome ElasticsearchServiceClient::DescribeDomainAutoTunes(const DescribeDomainAutoTunesRequest& request) const
+{
+  if (!request.DomainNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeDomainAutoTunes", "Required field: DomainName, is not set");
+    return DescribeDomainAutoTunesOutcome(Aws::Client::AWSError<ElasticsearchServiceErrors>(ElasticsearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/2015-01-01/es/domain/");
+  uri.AddPathSegment(request.GetDomainName());
+  uri.AddPathSegments("/autoTunes");
+  return DescribeDomainAutoTunesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeDomainAutoTunesOutcomeCallable ElasticsearchServiceClient::DescribeDomainAutoTunesCallable(const DescribeDomainAutoTunesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeDomainAutoTunesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDomainAutoTunes(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElasticsearchServiceClient::DescribeDomainAutoTunesAsync(const DescribeDomainAutoTunesRequest& request, const DescribeDomainAutoTunesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeDomainAutoTunesAsyncHelper( request, handler, context ); } );
+}
+
+void ElasticsearchServiceClient::DescribeDomainAutoTunesAsyncHelper(const DescribeDomainAutoTunesRequest& request, const DescribeDomainAutoTunesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeDomainAutoTunes(request), context);
+}
+
+DescribeDomainChangeProgressOutcome ElasticsearchServiceClient::DescribeDomainChangeProgress(const DescribeDomainChangeProgressRequest& request) const
+{
+  if (!request.DomainNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeDomainChangeProgress", "Required field: DomainName, is not set");
+    return DescribeDomainChangeProgressOutcome(Aws::Client::AWSError<ElasticsearchServiceErrors>(ElasticsearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/2015-01-01/es/domain/");
+  uri.AddPathSegment(request.GetDomainName());
+  uri.AddPathSegments("/progress");
+  return DescribeDomainChangeProgressOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeDomainChangeProgressOutcomeCallable ElasticsearchServiceClient::DescribeDomainChangeProgressCallable(const DescribeDomainChangeProgressRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeDomainChangeProgressOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDomainChangeProgress(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElasticsearchServiceClient::DescribeDomainChangeProgressAsync(const DescribeDomainChangeProgressRequest& request, const DescribeDomainChangeProgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeDomainChangeProgressAsyncHelper( request, handler, context ); } );
+}
+
+void ElasticsearchServiceClient::DescribeDomainChangeProgressAsyncHelper(const DescribeDomainChangeProgressRequest& request, const DescribeDomainChangeProgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeDomainChangeProgress(request), context);
+}
+
 DescribeElasticsearchDomainOutcome ElasticsearchServiceClient::DescribeElasticsearchDomain(const DescribeElasticsearchDomainRequest& request) const
 {
   if (!request.DomainNameHasBeenSet())
@@ -505,10 +549,8 @@ DescribeElasticsearchDomainOutcome ElasticsearchServiceClient::DescribeElasticse
     return DescribeElasticsearchDomainOutcome(Aws::Client::AWSError<ElasticsearchServiceErrors>(ElasticsearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-01-01/es/domain/";
-  ss << request.GetDomainName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-01-01/es/domain/");
+  uri.AddPathSegment(request.GetDomainName());
   return DescribeElasticsearchDomainOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -538,11 +580,9 @@ DescribeElasticsearchDomainConfigOutcome ElasticsearchServiceClient::DescribeEla
     return DescribeElasticsearchDomainConfigOutcome(Aws::Client::AWSError<ElasticsearchServiceErrors>(ElasticsearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-01-01/es/domain/";
-  ss << request.GetDomainName();
-  ss << "/config";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-01-01/es/domain/");
+  uri.AddPathSegment(request.GetDomainName());
+  uri.AddPathSegments("/config");
   return DescribeElasticsearchDomainConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -567,9 +607,7 @@ void ElasticsearchServiceClient::DescribeElasticsearchDomainConfigAsyncHelper(co
 DescribeElasticsearchDomainsOutcome ElasticsearchServiceClient::DescribeElasticsearchDomains(const DescribeElasticsearchDomainsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-01-01/es/domain-info";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-01-01/es/domain-info");
   return DescribeElasticsearchDomainsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -604,12 +642,9 @@ DescribeElasticsearchInstanceTypeLimitsOutcome ElasticsearchServiceClient::Descr
     return DescribeElasticsearchInstanceTypeLimitsOutcome(Aws::Client::AWSError<ElasticsearchServiceErrors>(ElasticsearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ElasticsearchVersion]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-01-01/es/instanceTypeLimits/";
-  ss << request.GetElasticsearchVersion();
-  ss << "/";
-  ss << ESPartitionInstanceTypeMapper::GetNameForESPartitionInstanceType(request.GetInstanceType());
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-01-01/es/instanceTypeLimits/");
+  uri.AddPathSegment(request.GetElasticsearchVersion());
+  uri.AddPathSegment(ESPartitionInstanceTypeMapper::GetNameForESPartitionInstanceType(request.GetInstanceType()));
   return DescribeElasticsearchInstanceTypeLimitsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -634,9 +669,7 @@ void ElasticsearchServiceClient::DescribeElasticsearchInstanceTypeLimitsAsyncHel
 DescribeInboundCrossClusterSearchConnectionsOutcome ElasticsearchServiceClient::DescribeInboundCrossClusterSearchConnections(const DescribeInboundCrossClusterSearchConnectionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-01-01/es/ccs/inboundConnection/search";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-01-01/es/ccs/inboundConnection/search");
   return DescribeInboundCrossClusterSearchConnectionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -661,9 +694,7 @@ void ElasticsearchServiceClient::DescribeInboundCrossClusterSearchConnectionsAsy
 DescribeOutboundCrossClusterSearchConnectionsOutcome ElasticsearchServiceClient::DescribeOutboundCrossClusterSearchConnections(const DescribeOutboundCrossClusterSearchConnectionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-01-01/es/ccs/outboundConnection/search";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-01-01/es/ccs/outboundConnection/search");
   return DescribeOutboundCrossClusterSearchConnectionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -688,9 +719,7 @@ void ElasticsearchServiceClient::DescribeOutboundCrossClusterSearchConnectionsAs
 DescribePackagesOutcome ElasticsearchServiceClient::DescribePackages(const DescribePackagesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-01-01/packages/describe";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-01-01/packages/describe");
   return DescribePackagesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -715,9 +744,7 @@ void ElasticsearchServiceClient::DescribePackagesAsyncHelper(const DescribePacka
 DescribeReservedElasticsearchInstanceOfferingsOutcome ElasticsearchServiceClient::DescribeReservedElasticsearchInstanceOfferings(const DescribeReservedElasticsearchInstanceOfferingsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-01-01/es/reservedInstanceOfferings";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-01-01/es/reservedInstanceOfferings");
   return DescribeReservedElasticsearchInstanceOfferingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -742,9 +769,7 @@ void ElasticsearchServiceClient::DescribeReservedElasticsearchInstanceOfferingsA
 DescribeReservedElasticsearchInstancesOutcome ElasticsearchServiceClient::DescribeReservedElasticsearchInstances(const DescribeReservedElasticsearchInstancesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-01-01/es/reservedInstances";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-01-01/es/reservedInstances");
   return DescribeReservedElasticsearchInstancesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -779,12 +804,9 @@ DissociatePackageOutcome ElasticsearchServiceClient::DissociatePackage(const Dis
     return DissociatePackageOutcome(Aws::Client::AWSError<ElasticsearchServiceErrors>(ElasticsearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-01-01/packages/dissociate/";
-  ss << request.GetPackageID();
-  ss << "/";
-  ss << request.GetDomainName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-01-01/packages/dissociate/");
+  uri.AddPathSegment(request.GetPackageID());
+  uri.AddPathSegment(request.GetDomainName());
   return DissociatePackageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -809,9 +831,7 @@ void ElasticsearchServiceClient::DissociatePackageAsyncHelper(const DissociatePa
 GetCompatibleElasticsearchVersionsOutcome ElasticsearchServiceClient::GetCompatibleElasticsearchVersions(const GetCompatibleElasticsearchVersionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-01-01/es/compatibleVersions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-01-01/es/compatibleVersions");
   return GetCompatibleElasticsearchVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -841,11 +861,9 @@ GetPackageVersionHistoryOutcome ElasticsearchServiceClient::GetPackageVersionHis
     return GetPackageVersionHistoryOutcome(Aws::Client::AWSError<ElasticsearchServiceErrors>(ElasticsearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PackageID]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-01-01/packages/";
-  ss << request.GetPackageID();
-  ss << "/history";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-01-01/packages/");
+  uri.AddPathSegment(request.GetPackageID());
+  uri.AddPathSegments("/history");
   return GetPackageVersionHistoryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -875,11 +893,9 @@ GetUpgradeHistoryOutcome ElasticsearchServiceClient::GetUpgradeHistory(const Get
     return GetUpgradeHistoryOutcome(Aws::Client::AWSError<ElasticsearchServiceErrors>(ElasticsearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-01-01/es/upgradeDomain/";
-  ss << request.GetDomainName();
-  ss << "/history";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-01-01/es/upgradeDomain/");
+  uri.AddPathSegment(request.GetDomainName());
+  uri.AddPathSegments("/history");
   return GetUpgradeHistoryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -909,11 +925,9 @@ GetUpgradeStatusOutcome ElasticsearchServiceClient::GetUpgradeStatus(const GetUp
     return GetUpgradeStatusOutcome(Aws::Client::AWSError<ElasticsearchServiceErrors>(ElasticsearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-01-01/es/upgradeDomain/";
-  ss << request.GetDomainName();
-  ss << "/status";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-01-01/es/upgradeDomain/");
+  uri.AddPathSegment(request.GetDomainName());
+  uri.AddPathSegments("/status");
   return GetUpgradeStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -935,29 +949,29 @@ void ElasticsearchServiceClient::GetUpgradeStatusAsyncHelper(const GetUpgradeSta
   handler(this, request, GetUpgradeStatus(request), context);
 }
 
-ListDomainNamesOutcome ElasticsearchServiceClient::ListDomainNames() const
+ListDomainNamesOutcome ElasticsearchServiceClient::ListDomainNames(const ListDomainNamesRequest& request) const
 {
-  Aws::StringStream ss;
-  ss << m_uri << "/2015-01-01/domain";
-  return ListDomainNamesOutcome(MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, "ListDomainNames"));
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/2015-01-01/domain");
+  return ListDomainNamesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
-ListDomainNamesOutcomeCallable ElasticsearchServiceClient::ListDomainNamesCallable() const
+ListDomainNamesOutcomeCallable ElasticsearchServiceClient::ListDomainNamesCallable(const ListDomainNamesRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDomainNamesOutcome() > >(ALLOCATION_TAG, [this](){ return this->ListDomainNames(); } );
+  auto task = Aws::MakeShared< std::packaged_task< ListDomainNamesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDomainNames(request); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
 
-void ElasticsearchServiceClient::ListDomainNamesAsync(const ListDomainNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClient::ListDomainNamesAsync(const ListDomainNamesRequest& request, const ListDomainNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, handler, context](){ this->ListDomainNamesAsyncHelper( handler, context ); } );
+  m_executor->Submit( [this, request, handler, context](){ this->ListDomainNamesAsyncHelper( request, handler, context ); } );
 }
 
-void ElasticsearchServiceClient::ListDomainNamesAsyncHelper(const ListDomainNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ElasticsearchServiceClient::ListDomainNamesAsyncHelper(const ListDomainNamesRequest& request, const ListDomainNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, ListDomainNames(), context);
+  handler(this, request, ListDomainNames(request), context);
 }
 
 ListDomainsForPackageOutcome ElasticsearchServiceClient::ListDomainsForPackage(const ListDomainsForPackageRequest& request) const
@@ -968,11 +982,9 @@ ListDomainsForPackageOutcome ElasticsearchServiceClient::ListDomainsForPackage(c
     return ListDomainsForPackageOutcome(Aws::Client::AWSError<ElasticsearchServiceErrors>(ElasticsearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PackageID]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-01-01/packages/";
-  ss << request.GetPackageID();
-  ss << "/domains";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-01-01/packages/");
+  uri.AddPathSegment(request.GetPackageID());
+  uri.AddPathSegments("/domains");
   return ListDomainsForPackageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1002,10 +1014,8 @@ ListElasticsearchInstanceTypesOutcome ElasticsearchServiceClient::ListElasticsea
     return ListElasticsearchInstanceTypesOutcome(Aws::Client::AWSError<ElasticsearchServiceErrors>(ElasticsearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ElasticsearchVersion]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-01-01/es/instanceTypes/";
-  ss << request.GetElasticsearchVersion();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-01-01/es/instanceTypes/");
+  uri.AddPathSegment(request.GetElasticsearchVersion());
   return ListElasticsearchInstanceTypesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1030,9 +1040,7 @@ void ElasticsearchServiceClient::ListElasticsearchInstanceTypesAsyncHelper(const
 ListElasticsearchVersionsOutcome ElasticsearchServiceClient::ListElasticsearchVersions(const ListElasticsearchVersionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-01-01/es/versions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-01-01/es/versions");
   return ListElasticsearchVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1062,11 +1070,9 @@ ListPackagesForDomainOutcome ElasticsearchServiceClient::ListPackagesForDomain(c
     return ListPackagesForDomainOutcome(Aws::Client::AWSError<ElasticsearchServiceErrors>(ElasticsearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-01-01/domain/";
-  ss << request.GetDomainName();
-  ss << "/packages";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-01-01/domain/");
+  uri.AddPathSegment(request.GetDomainName());
+  uri.AddPathSegments("/packages");
   return ListPackagesForDomainOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1096,9 +1102,7 @@ ListTagsOutcome ElasticsearchServiceClient::ListTags(const ListTagsRequest& requ
     return ListTagsOutcome(Aws::Client::AWSError<ElasticsearchServiceErrors>(ElasticsearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ARN]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-01-01/tags/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-01-01/tags/");
   return ListTagsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1123,9 +1127,7 @@ void ElasticsearchServiceClient::ListTagsAsyncHelper(const ListTagsRequest& requ
 PurchaseReservedElasticsearchInstanceOfferingOutcome ElasticsearchServiceClient::PurchaseReservedElasticsearchInstanceOffering(const PurchaseReservedElasticsearchInstanceOfferingRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-01-01/es/purchaseReservedInstanceOffering";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-01-01/es/purchaseReservedInstanceOffering");
   return PurchaseReservedElasticsearchInstanceOfferingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1155,11 +1157,9 @@ RejectInboundCrossClusterSearchConnectionOutcome ElasticsearchServiceClient::Rej
     return RejectInboundCrossClusterSearchConnectionOutcome(Aws::Client::AWSError<ElasticsearchServiceErrors>(ElasticsearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CrossClusterSearchConnectionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-01-01/es/ccs/inboundConnection/";
-  ss << request.GetCrossClusterSearchConnectionId();
-  ss << "/reject";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-01-01/es/ccs/inboundConnection/");
+  uri.AddPathSegment(request.GetCrossClusterSearchConnectionId());
+  uri.AddPathSegments("/reject");
   return RejectInboundCrossClusterSearchConnectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1184,9 +1184,7 @@ void ElasticsearchServiceClient::RejectInboundCrossClusterSearchConnectionAsyncH
 RemoveTagsOutcome ElasticsearchServiceClient::RemoveTags(const RemoveTagsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-01-01/tags-removal";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-01-01/tags-removal");
   return RemoveTagsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1211,9 +1209,7 @@ void ElasticsearchServiceClient::RemoveTagsAsyncHelper(const RemoveTagsRequest& 
 StartElasticsearchServiceSoftwareUpdateOutcome ElasticsearchServiceClient::StartElasticsearchServiceSoftwareUpdate(const StartElasticsearchServiceSoftwareUpdateRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-01-01/es/serviceSoftwareUpdate/start";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-01-01/es/serviceSoftwareUpdate/start");
   return StartElasticsearchServiceSoftwareUpdateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1243,11 +1239,9 @@ UpdateElasticsearchDomainConfigOutcome ElasticsearchServiceClient::UpdateElastic
     return UpdateElasticsearchDomainConfigOutcome(Aws::Client::AWSError<ElasticsearchServiceErrors>(ElasticsearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-01-01/es/domain/";
-  ss << request.GetDomainName();
-  ss << "/config";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-01-01/es/domain/");
+  uri.AddPathSegment(request.GetDomainName());
+  uri.AddPathSegments("/config");
   return UpdateElasticsearchDomainConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1272,9 +1266,7 @@ void ElasticsearchServiceClient::UpdateElasticsearchDomainConfigAsyncHelper(cons
 UpdatePackageOutcome ElasticsearchServiceClient::UpdatePackage(const UpdatePackageRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-01-01/packages/update";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-01-01/packages/update");
   return UpdatePackageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1299,9 +1291,7 @@ void ElasticsearchServiceClient::UpdatePackageAsyncHelper(const UpdatePackageReq
 UpgradeElasticsearchDomainOutcome ElasticsearchServiceClient::UpgradeElasticsearchDomain(const UpgradeElasticsearchDomainRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-01-01/es/upgradeDomain";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-01-01/es/upgradeDomain");
   return UpgradeElasticsearchDomainOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

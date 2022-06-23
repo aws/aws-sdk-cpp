@@ -39,50 +39,58 @@ namespace Model
 
 
     /**
-     * <p>The ID for the AWS account that the group is in. Currently, you use the ID
-     * for the AWS account that contains your Amazon QuickSight account.</p>
+     * <p>The ID for the Amazon Web Services account that the group is in. Currently,
+     * you use the ID for the Amazon Web Services account that contains your Amazon
+     * QuickSight account.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p>The ID for the AWS account that the group is in. Currently, you use the ID
-     * for the AWS account that contains your Amazon QuickSight account.</p>
+     * <p>The ID for the Amazon Web Services account that the group is in. Currently,
+     * you use the ID for the Amazon Web Services account that contains your Amazon
+     * QuickSight account.</p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p>The ID for the AWS account that the group is in. Currently, you use the ID
-     * for the AWS account that contains your Amazon QuickSight account.</p>
+     * <p>The ID for the Amazon Web Services account that the group is in. Currently,
+     * you use the ID for the Amazon Web Services account that contains your Amazon
+     * QuickSight account.</p>
      */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p>The ID for the AWS account that the group is in. Currently, you use the ID
-     * for the AWS account that contains your Amazon QuickSight account.</p>
+     * <p>The ID for the Amazon Web Services account that the group is in. Currently,
+     * you use the ID for the Amazon Web Services account that contains your Amazon
+     * QuickSight account.</p>
      */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p>The ID for the AWS account that the group is in. Currently, you use the ID
-     * for the AWS account that contains your Amazon QuickSight account.</p>
+     * <p>The ID for the Amazon Web Services account that the group is in. Currently,
+     * you use the ID for the Amazon Web Services account that contains your Amazon
+     * QuickSight account.</p>
      */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
 
     /**
-     * <p>The ID for the AWS account that the group is in. Currently, you use the ID
-     * for the AWS account that contains your Amazon QuickSight account.</p>
+     * <p>The ID for the Amazon Web Services account that the group is in. Currently,
+     * you use the ID for the Amazon Web Services account that contains your Amazon
+     * QuickSight account.</p>
      */
     inline ListGroupsRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p>The ID for the AWS account that the group is in. Currently, you use the ID
-     * for the AWS account that contains your Amazon QuickSight account.</p>
+     * <p>The ID for the Amazon Web Services account that the group is in. Currently,
+     * you use the ID for the Amazon Web Services account that contains your Amazon
+     * QuickSight account.</p>
      */
     inline ListGroupsRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID for the AWS account that the group is in. Currently, you use the ID
-     * for the AWS account that contains your Amazon QuickSight account.</p>
+     * <p>The ID for the Amazon Web Services account that the group is in. Currently,
+     * you use the ID for the Amazon Web Services account that contains your Amazon
+     * QuickSight account.</p>
      */
     inline ListGroupsRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
 
@@ -150,42 +158,42 @@ namespace Model
 
 
     /**
-     * <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+     * <p>The namespace that you want a list of groups from.</p>
      */
     inline const Aws::String& GetNamespace() const{ return m_namespace; }
 
     /**
-     * <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+     * <p>The namespace that you want a list of groups from.</p>
      */
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
 
     /**
-     * <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+     * <p>The namespace that you want a list of groups from.</p>
      */
     inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
 
     /**
-     * <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+     * <p>The namespace that you want a list of groups from.</p>
      */
     inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
 
     /**
-     * <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+     * <p>The namespace that you want a list of groups from.</p>
      */
     inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
 
     /**
-     * <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+     * <p>The namespace that you want a list of groups from.</p>
      */
     inline ListGroupsRequest& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
 
     /**
-     * <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+     * <p>The namespace that you want a list of groups from.</p>
      */
     inline ListGroupsRequest& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
 
     /**
-     * <p>The namespace. Currently, you should set this to <code>default</code>.</p>
+     * <p>The namespace that you want a list of groups from.</p>
      */
     inline ListGroupsRequest& WithNamespace(const char* value) { SetNamespace(value); return *this;}
 

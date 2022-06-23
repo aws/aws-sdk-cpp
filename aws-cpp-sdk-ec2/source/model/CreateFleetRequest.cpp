@@ -28,7 +28,8 @@ CreateFleetRequest::CreateFleetRequest() :
     m_validUntilHasBeenSet(false),
     m_replaceUnhealthyInstances(false),
     m_replaceUnhealthyInstancesHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false)
+    m_tagSpecificationsHasBeenSet(false),
+    m_contextHasBeenSet(false)
 {
 }
 
@@ -109,6 +110,11 @@ Aws::String CreateFleetRequest::SerializePayload() const
       item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
       tagSpecificationsCount++;
     }
+  }
+
+  if(m_contextHasBeenSet)
+  {
+    ss << "Context=" << StringUtils::URLEncode(m_context.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

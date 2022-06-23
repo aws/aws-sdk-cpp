@@ -28,7 +28,9 @@ VolumeRecommendation::VolumeRecommendation() :
     m_lookBackPeriodInDays(0.0),
     m_lookBackPeriodInDaysHasBeenSet(false),
     m_volumeRecommendationOptionsHasBeenSet(false),
-    m_lastRefreshTimestampHasBeenSet(false)
+    m_lastRefreshTimestampHasBeenSet(false),
+    m_currentPerformanceRisk(CurrentPerformanceRisk::NOT_SET),
+    m_currentPerformanceRiskHasBeenSet(false)
 {
 }
 
@@ -42,7 +44,9 @@ VolumeRecommendation::VolumeRecommendation(JsonView jsonValue) :
     m_lookBackPeriodInDays(0.0),
     m_lookBackPeriodInDaysHasBeenSet(false),
     m_volumeRecommendationOptionsHasBeenSet(false),
-    m_lastRefreshTimestampHasBeenSet(false)
+    m_lastRefreshTimestampHasBeenSet(false),
+    m_currentPerformanceRisk(CurrentPerformanceRisk::NOT_SET),
+    m_currentPerformanceRiskHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -111,6 +115,13 @@ VolumeRecommendation& VolumeRecommendation::operator =(JsonView jsonValue)
     m_lastRefreshTimestampHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("currentPerformanceRisk"))
+  {
+    m_currentPerformanceRisk = CurrentPerformanceRiskMapper::GetCurrentPerformanceRiskForName(jsonValue.GetString("currentPerformanceRisk"));
+
+    m_currentPerformanceRiskHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -172,6 +183,11 @@ JsonValue VolumeRecommendation::Jsonize() const
   if(m_lastRefreshTimestampHasBeenSet)
   {
    payload.WithDouble("lastRefreshTimestamp", m_lastRefreshTimestamp.SecondsWithMSPrecision());
+  }
+
+  if(m_currentPerformanceRiskHasBeenSet)
+  {
+   payload.WithString("currentPerformanceRisk", CurrentPerformanceRiskMapper::GetNameForCurrentPerformanceRisk(m_currentPerformanceRisk));
   }
 
   return payload;

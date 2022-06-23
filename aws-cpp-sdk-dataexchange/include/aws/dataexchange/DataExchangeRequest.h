@@ -8,6 +8,7 @@
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>
+#include <aws/core/AmazonStreamingWebServiceRequest.h>
 
 namespace Aws
 {
@@ -26,7 +27,7 @@ namespace DataExchange
 
       if(headers.size() == 0 || (headers.size() > 0 && headers.count(Aws::Http::CONTENT_TYPE_HEADER) == 0))
       {
-        headers.emplace(Aws::Http::HeaderValuePair(Aws::Http::CONTENT_TYPE_HEADER, Aws::AMZN_JSON_CONTENT_TYPE_1_1 ));
+        headers.emplace(Aws::Http::HeaderValuePair(Aws::Http::CONTENT_TYPE_HEADER, Aws::JSON_CONTENT_TYPE ));
       }
       headers.emplace(Aws::Http::HeaderValuePair(Aws::Http::API_VERSION_HEADER, "2017-07-25"));
       return headers;
@@ -37,6 +38,7 @@ namespace DataExchange
 
   };
 
+  typedef Aws::AmazonStreamingWebServiceRequest StreamingDataExchangeRequest;
 
 } // namespace DataExchange
 } // namespace Aws

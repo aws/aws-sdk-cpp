@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/kafka/Kafka_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/kafka/model/ProvisionedThroughput.h>
 #include <utility>
 
 namespace Aws
@@ -99,6 +100,37 @@ namespace Model
 
 
     /**
+     * EBS volume provisioned throughput information.
+     */
+    inline const ProvisionedThroughput& GetProvisionedThroughput() const{ return m_provisionedThroughput; }
+
+    /**
+     * EBS volume provisioned throughput information.
+     */
+    inline bool ProvisionedThroughputHasBeenSet() const { return m_provisionedThroughputHasBeenSet; }
+
+    /**
+     * EBS volume provisioned throughput information.
+     */
+    inline void SetProvisionedThroughput(const ProvisionedThroughput& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = value; }
+
+    /**
+     * EBS volume provisioned throughput information.
+     */
+    inline void SetProvisionedThroughput(ProvisionedThroughput&& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = std::move(value); }
+
+    /**
+     * EBS volume provisioned throughput information.
+     */
+    inline BrokerEBSVolumeInfo& WithProvisionedThroughput(const ProvisionedThroughput& value) { SetProvisionedThroughput(value); return *this;}
+
+    /**
+     * EBS volume provisioned throughput information.
+     */
+    inline BrokerEBSVolumeInfo& WithProvisionedThroughput(ProvisionedThroughput&& value) { SetProvisionedThroughput(std::move(value)); return *this;}
+
+
+    /**
      * 
             <p>Size of the EBS volume to update.</p>
          
@@ -130,6 +162,9 @@ namespace Model
 
     Aws::String m_kafkaBrokerNodeId;
     bool m_kafkaBrokerNodeIdHasBeenSet;
+
+    ProvisionedThroughput m_provisionedThroughput;
+    bool m_provisionedThroughputHasBeenSet;
 
     int m_volumeSizeGB;
     bool m_volumeSizeGBHasBeenSet;

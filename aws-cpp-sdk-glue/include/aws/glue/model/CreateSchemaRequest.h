@@ -145,38 +145,38 @@ namespace Model
 
 
     /**
-     * <p>The data format of the schema definition. Currently only <code>AVRO</code> is
-     * supported.</p>
+     * <p>The data format of the schema definition. Currently <code>AVRO</code>,
+     * <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
      */
     inline const DataFormat& GetDataFormat() const{ return m_dataFormat; }
 
     /**
-     * <p>The data format of the schema definition. Currently only <code>AVRO</code> is
-     * supported.</p>
+     * <p>The data format of the schema definition. Currently <code>AVRO</code>,
+     * <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
      */
     inline bool DataFormatHasBeenSet() const { return m_dataFormatHasBeenSet; }
 
     /**
-     * <p>The data format of the schema definition. Currently only <code>AVRO</code> is
-     * supported.</p>
+     * <p>The data format of the schema definition. Currently <code>AVRO</code>,
+     * <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
      */
     inline void SetDataFormat(const DataFormat& value) { m_dataFormatHasBeenSet = true; m_dataFormat = value; }
 
     /**
-     * <p>The data format of the schema definition. Currently only <code>AVRO</code> is
-     * supported.</p>
+     * <p>The data format of the schema definition. Currently <code>AVRO</code>,
+     * <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
      */
     inline void SetDataFormat(DataFormat&& value) { m_dataFormatHasBeenSet = true; m_dataFormat = std::move(value); }
 
     /**
-     * <p>The data format of the schema definition. Currently only <code>AVRO</code> is
-     * supported.</p>
+     * <p>The data format of the schema definition. Currently <code>AVRO</code>,
+     * <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
      */
     inline CreateSchemaRequest& WithDataFormat(const DataFormat& value) { SetDataFormat(value); return *this;}
 
     /**
-     * <p>The data format of the schema definition. Currently only <code>AVRO</code> is
-     * supported.</p>
+     * <p>The data format of the schema definition. Currently <code>AVRO</code>,
+     * <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
      */
     inline CreateSchemaRequest& WithDataFormat(DataFormat&& value) { SetDataFormat(std::move(value)); return *this;}
 
@@ -442,80 +442,93 @@ namespace Model
 
 
     /**
-     * <p>AWS tags that contain a key value pair and may be searched by console,
-     * command line, or API. If specified, follows the AWS tags-on-create pattern.</p>
+     * <p>Amazon Web Services tags that contain a key value pair and may be searched by
+     * console, command line, or API. If specified, follows the Amazon Web Services
+     * tags-on-create pattern.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>AWS tags that contain a key value pair and may be searched by console,
-     * command line, or API. If specified, follows the AWS tags-on-create pattern.</p>
+     * <p>Amazon Web Services tags that contain a key value pair and may be searched by
+     * console, command line, or API. If specified, follows the Amazon Web Services
+     * tags-on-create pattern.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>AWS tags that contain a key value pair and may be searched by console,
-     * command line, or API. If specified, follows the AWS tags-on-create pattern.</p>
+     * <p>Amazon Web Services tags that contain a key value pair and may be searched by
+     * console, command line, or API. If specified, follows the Amazon Web Services
+     * tags-on-create pattern.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>AWS tags that contain a key value pair and may be searched by console,
-     * command line, or API. If specified, follows the AWS tags-on-create pattern.</p>
+     * <p>Amazon Web Services tags that contain a key value pair and may be searched by
+     * console, command line, or API. If specified, follows the Amazon Web Services
+     * tags-on-create pattern.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>AWS tags that contain a key value pair and may be searched by console,
-     * command line, or API. If specified, follows the AWS tags-on-create pattern.</p>
+     * <p>Amazon Web Services tags that contain a key value pair and may be searched by
+     * console, command line, or API. If specified, follows the Amazon Web Services
+     * tags-on-create pattern.</p>
      */
     inline CreateSchemaRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>AWS tags that contain a key value pair and may be searched by console,
-     * command line, or API. If specified, follows the AWS tags-on-create pattern.</p>
+     * <p>Amazon Web Services tags that contain a key value pair and may be searched by
+     * console, command line, or API. If specified, follows the Amazon Web Services
+     * tags-on-create pattern.</p>
      */
     inline CreateSchemaRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>AWS tags that contain a key value pair and may be searched by console,
-     * command line, or API. If specified, follows the AWS tags-on-create pattern.</p>
+     * <p>Amazon Web Services tags that contain a key value pair and may be searched by
+     * console, command line, or API. If specified, follows the Amazon Web Services
+     * tags-on-create pattern.</p>
      */
     inline CreateSchemaRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>AWS tags that contain a key value pair and may be searched by console,
-     * command line, or API. If specified, follows the AWS tags-on-create pattern.</p>
+     * <p>Amazon Web Services tags that contain a key value pair and may be searched by
+     * console, command line, or API. If specified, follows the Amazon Web Services
+     * tags-on-create pattern.</p>
      */
     inline CreateSchemaRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>AWS tags that contain a key value pair and may be searched by console,
-     * command line, or API. If specified, follows the AWS tags-on-create pattern.</p>
+     * <p>Amazon Web Services tags that contain a key value pair and may be searched by
+     * console, command line, or API. If specified, follows the Amazon Web Services
+     * tags-on-create pattern.</p>
      */
     inline CreateSchemaRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>AWS tags that contain a key value pair and may be searched by console,
-     * command line, or API. If specified, follows the AWS tags-on-create pattern.</p>
+     * <p>Amazon Web Services tags that contain a key value pair and may be searched by
+     * console, command line, or API. If specified, follows the Amazon Web Services
+     * tags-on-create pattern.</p>
      */
     inline CreateSchemaRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>AWS tags that contain a key value pair and may be searched by console,
-     * command line, or API. If specified, follows the AWS tags-on-create pattern.</p>
+     * <p>Amazon Web Services tags that contain a key value pair and may be searched by
+     * console, command line, or API. If specified, follows the Amazon Web Services
+     * tags-on-create pattern.</p>
      */
     inline CreateSchemaRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>AWS tags that contain a key value pair and may be searched by console,
-     * command line, or API. If specified, follows the AWS tags-on-create pattern.</p>
+     * <p>Amazon Web Services tags that contain a key value pair and may be searched by
+     * console, command line, or API. If specified, follows the Amazon Web Services
+     * tags-on-create pattern.</p>
      */
     inline CreateSchemaRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>AWS tags that contain a key value pair and may be searched by console,
-     * command line, or API. If specified, follows the AWS tags-on-create pattern.</p>
+     * <p>Amazon Web Services tags that contain a key value pair and may be searched by
+     * console, command line, or API. If specified, follows the Amazon Web Services
+     * tags-on-create pattern.</p>
      */
     inline CreateSchemaRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 

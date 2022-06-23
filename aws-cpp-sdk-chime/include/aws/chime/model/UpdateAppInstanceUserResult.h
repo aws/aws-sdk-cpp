@@ -33,37 +33,37 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the app instance user.</p>
+     * <p>The ARN of the <code>AppInstanceUser</code>.</p>
      */
     inline const Aws::String& GetAppInstanceUserArn() const{ return m_appInstanceUserArn; }
 
     /**
-     * <p>The ARN of the app instance user.</p>
+     * <p>The ARN of the <code>AppInstanceUser</code>.</p>
      */
     inline void SetAppInstanceUserArn(const Aws::String& value) { m_appInstanceUserArn = value; }
 
     /**
-     * <p>The ARN of the app instance user.</p>
+     * <p>The ARN of the <code>AppInstanceUser</code>.</p>
      */
     inline void SetAppInstanceUserArn(Aws::String&& value) { m_appInstanceUserArn = std::move(value); }
 
     /**
-     * <p>The ARN of the app instance user.</p>
+     * <p>The ARN of the <code>AppInstanceUser</code>.</p>
      */
     inline void SetAppInstanceUserArn(const char* value) { m_appInstanceUserArn.assign(value); }
 
     /**
-     * <p>The ARN of the app instance user.</p>
+     * <p>The ARN of the <code>AppInstanceUser</code>.</p>
      */
     inline UpdateAppInstanceUserResult& WithAppInstanceUserArn(const Aws::String& value) { SetAppInstanceUserArn(value); return *this;}
 
     /**
-     * <p>The ARN of the app instance user.</p>
+     * <p>The ARN of the <code>AppInstanceUser</code>.</p>
      */
     inline UpdateAppInstanceUserResult& WithAppInstanceUserArn(Aws::String&& value) { SetAppInstanceUserArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the app instance user.</p>
+     * <p>The ARN of the <code>AppInstanceUser</code>.</p>
      */
     inline UpdateAppInstanceUserResult& WithAppInstanceUserArn(const char* value) { SetAppInstanceUserArn(value); return *this;}
 

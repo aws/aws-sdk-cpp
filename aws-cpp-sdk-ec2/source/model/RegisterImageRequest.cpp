@@ -26,7 +26,12 @@ RegisterImageRequest::RegisterImageRequest() :
     m_ramdiskIdHasBeenSet(false),
     m_rootDeviceNameHasBeenSet(false),
     m_sriovNetSupportHasBeenSet(false),
-    m_virtualizationTypeHasBeenSet(false)
+    m_virtualizationTypeHasBeenSet(false),
+    m_bootMode(BootModeValues::NOT_SET),
+    m_bootModeHasBeenSet(false),
+    m_tpmSupport(TpmSupportValues::NOT_SET),
+    m_tpmSupportHasBeenSet(false),
+    m_uefiDataHasBeenSet(false)
 {
 }
 
@@ -108,6 +113,21 @@ Aws::String RegisterImageRequest::SerializePayload() const
   if(m_virtualizationTypeHasBeenSet)
   {
     ss << "VirtualizationType=" << StringUtils::URLEncode(m_virtualizationType.c_str()) << "&";
+  }
+
+  if(m_bootModeHasBeenSet)
+  {
+    ss << "BootMode=" << BootModeValuesMapper::GetNameForBootModeValues(m_bootMode) << "&";
+  }
+
+  if(m_tpmSupportHasBeenSet)
+  {
+    ss << "TpmSupport=" << TpmSupportValuesMapper::GetNameForTpmSupportValues(m_tpmSupport) << "&";
+  }
+
+  if(m_uefiDataHasBeenSet)
+  {
+    ss << "UefiData=" << StringUtils::URLEncode(m_uefiData.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

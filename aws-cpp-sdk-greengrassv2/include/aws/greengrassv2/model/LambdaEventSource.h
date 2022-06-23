@@ -25,9 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about an event source for an AWS Lambda function. The
-   * event source defines the topics on which this Lambda function subscribes to
-   * receive messages that run the function.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains information about an event source for an Lambda function. The event
+   * source defines the topics on which this Lambda function subscribes to receive
+   * messages that run the function.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/LambdaEventSource">AWS
    * API Reference</a></p>
    */
@@ -86,9 +86,9 @@ namespace Model
      * <p> <code>PUB_SUB</code> – Subscribe to local publish/subscribe messages. This
      * event source type doesn't support MQTT wildcards (<code>+</code> and
      * <code>#</code>) in the event source topic.</p> </li> <li> <p>
-     * <code>IOT_CORE</code> – Subscribe to AWS IoT Core MQTT messages. This event
-     * source type supports MQTT wildcards (<code>+</code> and <code>#</code>) in the
-     * event source topic.</p> </li> </ul>
+     * <code>IOT_CORE</code> – Subscribe to Amazon Web Services IoT Core MQTT messages.
+     * This event source type supports MQTT wildcards (<code>+</code> and
+     * <code>#</code>) in the event source topic.</p> </li> </ul>
      */
     inline const LambdaEventSourceType& GetType() const{ return m_type; }
 
@@ -97,9 +97,9 @@ namespace Model
      * <p> <code>PUB_SUB</code> – Subscribe to local publish/subscribe messages. This
      * event source type doesn't support MQTT wildcards (<code>+</code> and
      * <code>#</code>) in the event source topic.</p> </li> <li> <p>
-     * <code>IOT_CORE</code> – Subscribe to AWS IoT Core MQTT messages. This event
-     * source type supports MQTT wildcards (<code>+</code> and <code>#</code>) in the
-     * event source topic.</p> </li> </ul>
+     * <code>IOT_CORE</code> – Subscribe to Amazon Web Services IoT Core MQTT messages.
+     * This event source type supports MQTT wildcards (<code>+</code> and
+     * <code>#</code>) in the event source topic.</p> </li> </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
@@ -108,9 +108,9 @@ namespace Model
      * <p> <code>PUB_SUB</code> – Subscribe to local publish/subscribe messages. This
      * event source type doesn't support MQTT wildcards (<code>+</code> and
      * <code>#</code>) in the event source topic.</p> </li> <li> <p>
-     * <code>IOT_CORE</code> – Subscribe to AWS IoT Core MQTT messages. This event
-     * source type supports MQTT wildcards (<code>+</code> and <code>#</code>) in the
-     * event source topic.</p> </li> </ul>
+     * <code>IOT_CORE</code> – Subscribe to Amazon Web Services IoT Core MQTT messages.
+     * This event source type supports MQTT wildcards (<code>+</code> and
+     * <code>#</code>) in the event source topic.</p> </li> </ul>
      */
     inline void SetType(const LambdaEventSourceType& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -119,9 +119,9 @@ namespace Model
      * <p> <code>PUB_SUB</code> – Subscribe to local publish/subscribe messages. This
      * event source type doesn't support MQTT wildcards (<code>+</code> and
      * <code>#</code>) in the event source topic.</p> </li> <li> <p>
-     * <code>IOT_CORE</code> – Subscribe to AWS IoT Core MQTT messages. This event
-     * source type supports MQTT wildcards (<code>+</code> and <code>#</code>) in the
-     * event source topic.</p> </li> </ul>
+     * <code>IOT_CORE</code> – Subscribe to Amazon Web Services IoT Core MQTT messages.
+     * This event source type supports MQTT wildcards (<code>+</code> and
+     * <code>#</code>) in the event source topic.</p> </li> </ul>
      */
     inline void SetType(LambdaEventSourceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -130,9 +130,9 @@ namespace Model
      * <p> <code>PUB_SUB</code> – Subscribe to local publish/subscribe messages. This
      * event source type doesn't support MQTT wildcards (<code>+</code> and
      * <code>#</code>) in the event source topic.</p> </li> <li> <p>
-     * <code>IOT_CORE</code> – Subscribe to AWS IoT Core MQTT messages. This event
-     * source type supports MQTT wildcards (<code>+</code> and <code>#</code>) in the
-     * event source topic.</p> </li> </ul>
+     * <code>IOT_CORE</code> – Subscribe to Amazon Web Services IoT Core MQTT messages.
+     * This event source type supports MQTT wildcards (<code>+</code> and
+     * <code>#</code>) in the event source topic.</p> </li> </ul>
      */
     inline LambdaEventSource& WithType(const LambdaEventSourceType& value) { SetType(value); return *this;}
 
@@ -141,9 +141,9 @@ namespace Model
      * <p> <code>PUB_SUB</code> – Subscribe to local publish/subscribe messages. This
      * event source type doesn't support MQTT wildcards (<code>+</code> and
      * <code>#</code>) in the event source topic.</p> </li> <li> <p>
-     * <code>IOT_CORE</code> – Subscribe to AWS IoT Core MQTT messages. This event
-     * source type supports MQTT wildcards (<code>+</code> and <code>#</code>) in the
-     * event source topic.</p> </li> </ul>
+     * <code>IOT_CORE</code> – Subscribe to Amazon Web Services IoT Core MQTT messages.
+     * This event source type supports MQTT wildcards (<code>+</code> and
+     * <code>#</code>) in the event source topic.</p> </li> </ul>
      */
     inline LambdaEventSource& WithType(LambdaEventSourceType&& value) { SetType(std::move(value)); return *this;}
 

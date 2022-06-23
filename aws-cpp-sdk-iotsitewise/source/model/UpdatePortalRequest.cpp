@@ -20,7 +20,9 @@ UpdatePortalRequest::UpdatePortalRequest() :
     m_portalLogoImageHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
-    m_clientTokenHasBeenSet(true)
+    m_clientTokenHasBeenSet(true),
+    m_notificationSenderEmailHasBeenSet(false),
+    m_alarmsHasBeenSet(false)
 {
 }
 
@@ -61,6 +63,18 @@ Aws::String UpdatePortalRequest::SerializePayload() const
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("clientToken", m_clientToken);
+
+  }
+
+  if(m_notificationSenderEmailHasBeenSet)
+  {
+   payload.WithString("notificationSenderEmail", m_notificationSenderEmail);
+
+  }
+
+  if(m_alarmsHasBeenSet)
+  {
+   payload.WithObject("alarms", m_alarms.Jsonize());
 
   }
 

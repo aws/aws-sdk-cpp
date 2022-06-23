@@ -54,7 +54,15 @@ namespace Model
     ml_c5n_2xlarge,
     ml_c5n_4xlarge,
     ml_c5n_9xlarge,
-    ml_c5n_18xlarge
+    ml_c5n_18xlarge,
+    ml_g5_xlarge,
+    ml_g5_2xlarge,
+    ml_g5_4xlarge,
+    ml_g5_8xlarge,
+    ml_g5_16xlarge,
+    ml_g5_12xlarge,
+    ml_g5_24xlarge,
+    ml_g5_48xlarge
   };
 
 namespace TrainingInstanceTypeMapper

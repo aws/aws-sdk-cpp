@@ -20,7 +20,8 @@ namespace Model
     CREATION_FAILED,
     DELETION_IN_PROGRESS,
     RUNNING,
-    REBOOT_IN_PROGRESS
+    REBOOT_IN_PROGRESS,
+    CRITICAL_ACTION_REQUIRED
   };
 
 namespace BrokerStateMapper

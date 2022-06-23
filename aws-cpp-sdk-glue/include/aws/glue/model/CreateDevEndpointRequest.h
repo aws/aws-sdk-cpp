@@ -382,25 +382,25 @@ namespace Model
 
 
     /**
-     * <p>The number of AWS Glue Data Processing Units (DPUs) to allocate to this
+     * <p>The number of Glue Data Processing Units (DPUs) to allocate to this
      * <code>DevEndpoint</code>.</p>
      */
     inline int GetNumberOfNodes() const{ return m_numberOfNodes; }
 
     /**
-     * <p>The number of AWS Glue Data Processing Units (DPUs) to allocate to this
+     * <p>The number of Glue Data Processing Units (DPUs) to allocate to this
      * <code>DevEndpoint</code>.</p>
      */
     inline bool NumberOfNodesHasBeenSet() const { return m_numberOfNodesHasBeenSet; }
 
     /**
-     * <p>The number of AWS Glue Data Processing Units (DPUs) to allocate to this
+     * <p>The number of Glue Data Processing Units (DPUs) to allocate to this
      * <code>DevEndpoint</code>.</p>
      */
     inline void SetNumberOfNodes(int value) { m_numberOfNodesHasBeenSet = true; m_numberOfNodes = value; }
 
     /**
-     * <p>The number of AWS Glue Data Processing Units (DPUs) to allocate to this
+     * <p>The number of Glue Data Processing Units (DPUs) to allocate to this
      * <code>DevEndpoint</code>.</p>
      */
     inline CreateDevEndpointRequest& WithNumberOfNodes(int value) { SetNumberOfNodes(value); return *this;}
@@ -510,10 +510,10 @@ namespace Model
 
 
     /**
-     * <p>Glue version determines the versions of Apache Spark and Python that AWS Glue
+     * <p>Glue version determines the versions of Apache Spark and Python that Glue
      * supports. The Python version indicates the version supported for running your
      * ETL scripts on development endpoints. </p> <p>For more information about the
-     * available AWS Glue versions and corresponding Spark and Python versions, see <a
+     * available Glue versions and corresponding Spark and Python versions, see <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
      * in the developer guide.</p> <p>Development endpoints that are created without
      * specifying a Glue version default to Glue 0.9.</p> <p>You can specify a version
@@ -525,10 +525,10 @@ namespace Model
     inline const Aws::String& GetGlueVersion() const{ return m_glueVersion; }
 
     /**
-     * <p>Glue version determines the versions of Apache Spark and Python that AWS Glue
+     * <p>Glue version determines the versions of Apache Spark and Python that Glue
      * supports. The Python version indicates the version supported for running your
      * ETL scripts on development endpoints. </p> <p>For more information about the
-     * available AWS Glue versions and corresponding Spark and Python versions, see <a
+     * available Glue versions and corresponding Spark and Python versions, see <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
      * in the developer guide.</p> <p>Development endpoints that are created without
      * specifying a Glue version default to Glue 0.9.</p> <p>You can specify a version
@@ -540,10 +540,10 @@ namespace Model
     inline bool GlueVersionHasBeenSet() const { return m_glueVersionHasBeenSet; }
 
     /**
-     * <p>Glue version determines the versions of Apache Spark and Python that AWS Glue
+     * <p>Glue version determines the versions of Apache Spark and Python that Glue
      * supports. The Python version indicates the version supported for running your
      * ETL scripts on development endpoints. </p> <p>For more information about the
-     * available AWS Glue versions and corresponding Spark and Python versions, see <a
+     * available Glue versions and corresponding Spark and Python versions, see <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
      * in the developer guide.</p> <p>Development endpoints that are created without
      * specifying a Glue version default to Glue 0.9.</p> <p>You can specify a version
@@ -555,10 +555,10 @@ namespace Model
     inline void SetGlueVersion(const Aws::String& value) { m_glueVersionHasBeenSet = true; m_glueVersion = value; }
 
     /**
-     * <p>Glue version determines the versions of Apache Spark and Python that AWS Glue
+     * <p>Glue version determines the versions of Apache Spark and Python that Glue
      * supports. The Python version indicates the version supported for running your
      * ETL scripts on development endpoints. </p> <p>For more information about the
-     * available AWS Glue versions and corresponding Spark and Python versions, see <a
+     * available Glue versions and corresponding Spark and Python versions, see <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
      * in the developer guide.</p> <p>Development endpoints that are created without
      * specifying a Glue version default to Glue 0.9.</p> <p>You can specify a version
@@ -570,10 +570,10 @@ namespace Model
     inline void SetGlueVersion(Aws::String&& value) { m_glueVersionHasBeenSet = true; m_glueVersion = std::move(value); }
 
     /**
-     * <p>Glue version determines the versions of Apache Spark and Python that AWS Glue
+     * <p>Glue version determines the versions of Apache Spark and Python that Glue
      * supports. The Python version indicates the version supported for running your
      * ETL scripts on development endpoints. </p> <p>For more information about the
-     * available AWS Glue versions and corresponding Spark and Python versions, see <a
+     * available Glue versions and corresponding Spark and Python versions, see <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
      * in the developer guide.</p> <p>Development endpoints that are created without
      * specifying a Glue version default to Glue 0.9.</p> <p>You can specify a version
@@ -585,10 +585,10 @@ namespace Model
     inline void SetGlueVersion(const char* value) { m_glueVersionHasBeenSet = true; m_glueVersion.assign(value); }
 
     /**
-     * <p>Glue version determines the versions of Apache Spark and Python that AWS Glue
+     * <p>Glue version determines the versions of Apache Spark and Python that Glue
      * supports. The Python version indicates the version supported for running your
      * ETL scripts on development endpoints. </p> <p>For more information about the
-     * available AWS Glue versions and corresponding Spark and Python versions, see <a
+     * available Glue versions and corresponding Spark and Python versions, see <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
      * in the developer guide.</p> <p>Development endpoints that are created without
      * specifying a Glue version default to Glue 0.9.</p> <p>You can specify a version
@@ -600,10 +600,10 @@ namespace Model
     inline CreateDevEndpointRequest& WithGlueVersion(const Aws::String& value) { SetGlueVersion(value); return *this;}
 
     /**
-     * <p>Glue version determines the versions of Apache Spark and Python that AWS Glue
+     * <p>Glue version determines the versions of Apache Spark and Python that Glue
      * supports. The Python version indicates the version supported for running your
      * ETL scripts on development endpoints. </p> <p>For more information about the
-     * available AWS Glue versions and corresponding Spark and Python versions, see <a
+     * available Glue versions and corresponding Spark and Python versions, see <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
      * in the developer guide.</p> <p>Development endpoints that are created without
      * specifying a Glue version default to Glue 0.9.</p> <p>You can specify a version
@@ -615,10 +615,10 @@ namespace Model
     inline CreateDevEndpointRequest& WithGlueVersion(Aws::String&& value) { SetGlueVersion(std::move(value)); return *this;}
 
     /**
-     * <p>Glue version determines the versions of Apache Spark and Python that AWS Glue
+     * <p>Glue version determines the versions of Apache Spark and Python that Glue
      * supports. The Python version indicates the version supported for running your
      * ETL scripts on development endpoints. </p> <p>For more information about the
-     * available AWS Glue versions and corresponding Spark and Python versions, see <a
+     * available Glue versions and corresponding Spark and Python versions, see <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
      * in the developer guide.</p> <p>Development endpoints that are created without
      * specifying a Glue version default to Glue 0.9.</p> <p>You can specify a version
@@ -840,105 +840,105 @@ namespace Model
 
     /**
      * <p>The tags to use with this DevEndpoint. You may use tags to limit access to
-     * the DevEndpoint. For more information about tags in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.</p>
+     * the DevEndpoint. For more information about tags in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
      * <p>The tags to use with this DevEndpoint. You may use tags to limit access to
-     * the DevEndpoint. For more information about tags in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.</p>
+     * the DevEndpoint. For more information about tags in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tags to use with this DevEndpoint. You may use tags to limit access to
-     * the DevEndpoint. For more information about tags in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.</p>
+     * the DevEndpoint. For more information about tags in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>The tags to use with this DevEndpoint. You may use tags to limit access to
-     * the DevEndpoint. For more information about tags in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.</p>
+     * the DevEndpoint. For more information about tags in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>The tags to use with this DevEndpoint. You may use tags to limit access to
-     * the DevEndpoint. For more information about tags in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.</p>
+     * the DevEndpoint. For more information about tags in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.</p>
      */
     inline CreateDevEndpointRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
      * <p>The tags to use with this DevEndpoint. You may use tags to limit access to
-     * the DevEndpoint. For more information about tags in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.</p>
+     * the DevEndpoint. For more information about tags in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.</p>
      */
     inline CreateDevEndpointRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>The tags to use with this DevEndpoint. You may use tags to limit access to
-     * the DevEndpoint. For more information about tags in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.</p>
+     * the DevEndpoint. For more information about tags in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.</p>
      */
     inline CreateDevEndpointRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
      * <p>The tags to use with this DevEndpoint. You may use tags to limit access to
-     * the DevEndpoint. For more information about tags in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.</p>
+     * the DevEndpoint. For more information about tags in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.</p>
      */
     inline CreateDevEndpointRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The tags to use with this DevEndpoint. You may use tags to limit access to
-     * the DevEndpoint. For more information about tags in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.</p>
+     * the DevEndpoint. For more information about tags in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.</p>
      */
     inline CreateDevEndpointRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The tags to use with this DevEndpoint. You may use tags to limit access to
-     * the DevEndpoint. For more information about tags in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.</p>
+     * the DevEndpoint. For more information about tags in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.</p>
      */
     inline CreateDevEndpointRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>The tags to use with this DevEndpoint. You may use tags to limit access to
-     * the DevEndpoint. For more information about tags in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.</p>
+     * the DevEndpoint. For more information about tags in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.</p>
      */
     inline CreateDevEndpointRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The tags to use with this DevEndpoint. You may use tags to limit access to
-     * the DevEndpoint. For more information about tags in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.</p>
+     * the DevEndpoint. For more information about tags in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.</p>
      */
     inline CreateDevEndpointRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The tags to use with this DevEndpoint. You may use tags to limit access to
-     * the DevEndpoint. For more information about tags in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.</p>
+     * the DevEndpoint. For more information about tags in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.</p>
      */
     inline CreateDevEndpointRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 

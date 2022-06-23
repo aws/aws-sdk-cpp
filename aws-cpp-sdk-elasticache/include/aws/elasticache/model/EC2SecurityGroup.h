@@ -123,42 +123,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID of the Amazon EC2 security group owner.</p>
+     * <p>The Amazon account ID of the Amazon EC2 security group owner.</p>
      */
     inline const Aws::String& GetEC2SecurityGroupOwnerId() const{ return m_eC2SecurityGroupOwnerId; }
 
     /**
-     * <p>The AWS account ID of the Amazon EC2 security group owner.</p>
+     * <p>The Amazon account ID of the Amazon EC2 security group owner.</p>
      */
     inline bool EC2SecurityGroupOwnerIdHasBeenSet() const { return m_eC2SecurityGroupOwnerIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID of the Amazon EC2 security group owner.</p>
+     * <p>The Amazon account ID of the Amazon EC2 security group owner.</p>
      */
     inline void SetEC2SecurityGroupOwnerId(const Aws::String& value) { m_eC2SecurityGroupOwnerIdHasBeenSet = true; m_eC2SecurityGroupOwnerId = value; }
 
     /**
-     * <p>The AWS account ID of the Amazon EC2 security group owner.</p>
+     * <p>The Amazon account ID of the Amazon EC2 security group owner.</p>
      */
     inline void SetEC2SecurityGroupOwnerId(Aws::String&& value) { m_eC2SecurityGroupOwnerIdHasBeenSet = true; m_eC2SecurityGroupOwnerId = std::move(value); }
 
     /**
-     * <p>The AWS account ID of the Amazon EC2 security group owner.</p>
+     * <p>The Amazon account ID of the Amazon EC2 security group owner.</p>
      */
     inline void SetEC2SecurityGroupOwnerId(const char* value) { m_eC2SecurityGroupOwnerIdHasBeenSet = true; m_eC2SecurityGroupOwnerId.assign(value); }
 
     /**
-     * <p>The AWS account ID of the Amazon EC2 security group owner.</p>
+     * <p>The Amazon account ID of the Amazon EC2 security group owner.</p>
      */
     inline EC2SecurityGroup& WithEC2SecurityGroupOwnerId(const Aws::String& value) { SetEC2SecurityGroupOwnerId(value); return *this;}
 
     /**
-     * <p>The AWS account ID of the Amazon EC2 security group owner.</p>
+     * <p>The Amazon account ID of the Amazon EC2 security group owner.</p>
      */
     inline EC2SecurityGroup& WithEC2SecurityGroupOwnerId(Aws::String&& value) { SetEC2SecurityGroupOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID of the Amazon EC2 security group owner.</p>
+     * <p>The Amazon account ID of the Amazon EC2 security group owner.</p>
      */
     inline EC2SecurityGroup& WithEC2SecurityGroupOwnerId(const char* value) { SetEC2SecurityGroupOwnerId(value); return *this;}
 

@@ -38,22 +38,26 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of requests that can be made in a given time period.</p>
+     * <p>The target maximum number of requests that can be made in a given time
+     * period.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
-     * <p>The maximum number of requests that can be made in a given time period.</p>
+     * <p>The target maximum number of requests that can be made in a given time
+     * period.</p>
      */
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
-     * <p>The maximum number of requests that can be made in a given time period.</p>
+     * <p>The target maximum number of requests that can be made in a given time
+     * period.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
-     * <p>The maximum number of requests that can be made in a given time period.</p>
+     * <p>The target maximum number of requests that can be made in a given time
+     * period.</p>
      */
     inline QuotaSettings& WithLimit(int value) { SetLimit(value); return *this;}
 

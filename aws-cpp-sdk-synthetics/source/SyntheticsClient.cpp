@@ -81,7 +81,7 @@ SyntheticsClient::~SyntheticsClient()
 {
 }
 
-void SyntheticsClient::init(const ClientConfiguration& config)
+void SyntheticsClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("synthetics");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -110,9 +110,7 @@ void SyntheticsClient::OverrideEndpoint(const Aws::String& endpoint)
 CreateCanaryOutcome SyntheticsClient::CreateCanary(const CreateCanaryRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/canary";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/canary");
   return CreateCanaryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -142,10 +140,8 @@ DeleteCanaryOutcome SyntheticsClient::DeleteCanary(const DeleteCanaryRequest& re
     return DeleteCanaryOutcome(Aws::Client::AWSError<SyntheticsErrors>(SyntheticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/canary/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/canary/");
+  uri.AddPathSegment(request.GetName());
   return DeleteCanaryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -170,9 +166,7 @@ void SyntheticsClient::DeleteCanaryAsyncHelper(const DeleteCanaryRequest& reques
 DescribeCanariesOutcome SyntheticsClient::DescribeCanaries(const DescribeCanariesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/canaries";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/canaries");
   return DescribeCanariesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -197,9 +191,7 @@ void SyntheticsClient::DescribeCanariesAsyncHelper(const DescribeCanariesRequest
 DescribeCanariesLastRunOutcome SyntheticsClient::DescribeCanariesLastRun(const DescribeCanariesLastRunRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/canaries/last-run";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/canaries/last-run");
   return DescribeCanariesLastRunOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -224,9 +216,7 @@ void SyntheticsClient::DescribeCanariesLastRunAsyncHelper(const DescribeCanaries
 DescribeRuntimeVersionsOutcome SyntheticsClient::DescribeRuntimeVersions(const DescribeRuntimeVersionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/runtime-versions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/runtime-versions");
   return DescribeRuntimeVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -256,10 +246,8 @@ GetCanaryOutcome SyntheticsClient::GetCanary(const GetCanaryRequest& request) co
     return GetCanaryOutcome(Aws::Client::AWSError<SyntheticsErrors>(SyntheticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/canary/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/canary/");
+  uri.AddPathSegment(request.GetName());
   return GetCanaryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -289,11 +277,9 @@ GetCanaryRunsOutcome SyntheticsClient::GetCanaryRuns(const GetCanaryRunsRequest&
     return GetCanaryRunsOutcome(Aws::Client::AWSError<SyntheticsErrors>(SyntheticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/canary/";
-  ss << request.GetName();
-  ss << "/runs";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/canary/");
+  uri.AddPathSegment(request.GetName());
+  uri.AddPathSegments("/runs");
   return GetCanaryRunsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -323,10 +309,8 @@ ListTagsForResourceOutcome SyntheticsClient::ListTagsForResource(const ListTagsF
     return ListTagsForResourceOutcome(Aws::Client::AWSError<SyntheticsErrors>(SyntheticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -356,11 +340,9 @@ StartCanaryOutcome SyntheticsClient::StartCanary(const StartCanaryRequest& reque
     return StartCanaryOutcome(Aws::Client::AWSError<SyntheticsErrors>(SyntheticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/canary/";
-  ss << request.GetName();
-  ss << "/start";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/canary/");
+  uri.AddPathSegment(request.GetName());
+  uri.AddPathSegments("/start");
   return StartCanaryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -390,11 +372,9 @@ StopCanaryOutcome SyntheticsClient::StopCanary(const StopCanaryRequest& request)
     return StopCanaryOutcome(Aws::Client::AWSError<SyntheticsErrors>(SyntheticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/canary/";
-  ss << request.GetName();
-  ss << "/stop";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/canary/");
+  uri.AddPathSegment(request.GetName());
+  uri.AddPathSegments("/stop");
   return StopCanaryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -424,10 +404,8 @@ TagResourceOutcome SyntheticsClient::TagResource(const TagResourceRequest& reque
     return TagResourceOutcome(Aws::Client::AWSError<SyntheticsErrors>(SyntheticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -462,10 +440,8 @@ UntagResourceOutcome SyntheticsClient::UntagResource(const UntagResourceRequest&
     return UntagResourceOutcome(Aws::Client::AWSError<SyntheticsErrors>(SyntheticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -495,10 +471,8 @@ UpdateCanaryOutcome SyntheticsClient::UpdateCanary(const UpdateCanaryRequest& re
     return UpdateCanaryOutcome(Aws::Client::AWSError<SyntheticsErrors>(SyntheticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/canary/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/canary/");
+  uri.AddPathSegment(request.GetName());
   return UpdateCanaryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 

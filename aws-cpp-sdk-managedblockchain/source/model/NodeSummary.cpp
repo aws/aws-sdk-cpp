@@ -24,7 +24,8 @@ NodeSummary::NodeSummary() :
     m_statusHasBeenSet(false),
     m_creationDateHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false)
+    m_instanceTypeHasBeenSet(false),
+    m_arnHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ NodeSummary::NodeSummary(JsonView jsonValue) :
     m_statusHasBeenSet(false),
     m_creationDateHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false)
+    m_instanceTypeHasBeenSet(false),
+    m_arnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -76,6 +78,13 @@ NodeSummary& NodeSummary::operator =(JsonView jsonValue)
     m_instanceTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Arn"))
+  {
+    m_arn = jsonValue.GetString("Arn");
+
+    m_arnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -108,6 +117,12 @@ JsonValue NodeSummary::Jsonize() const
   if(m_instanceTypeHasBeenSet)
   {
    payload.WithString("InstanceType", m_instanceType);
+
+  }
+
+  if(m_arnHasBeenSet)
+  {
+   payload.WithString("Arn", m_arn);
 
   }
 

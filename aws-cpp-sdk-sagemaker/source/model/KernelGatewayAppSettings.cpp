@@ -20,13 +20,15 @@ namespace Model
 
 KernelGatewayAppSettings::KernelGatewayAppSettings() : 
     m_defaultResourceSpecHasBeenSet(false),
-    m_customImagesHasBeenSet(false)
+    m_customImagesHasBeenSet(false),
+    m_lifecycleConfigArnsHasBeenSet(false)
 {
 }
 
 KernelGatewayAppSettings::KernelGatewayAppSettings(JsonView jsonValue) : 
     m_defaultResourceSpecHasBeenSet(false),
-    m_customImagesHasBeenSet(false)
+    m_customImagesHasBeenSet(false),
+    m_lifecycleConfigArnsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -50,6 +52,16 @@ KernelGatewayAppSettings& KernelGatewayAppSettings::operator =(JsonView jsonValu
     m_customImagesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LifecycleConfigArns"))
+  {
+    Array<JsonView> lifecycleConfigArnsJsonList = jsonValue.GetArray("LifecycleConfigArns");
+    for(unsigned lifecycleConfigArnsIndex = 0; lifecycleConfigArnsIndex < lifecycleConfigArnsJsonList.GetLength(); ++lifecycleConfigArnsIndex)
+    {
+      m_lifecycleConfigArns.push_back(lifecycleConfigArnsJsonList[lifecycleConfigArnsIndex].AsString());
+    }
+    m_lifecycleConfigArnsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -71,6 +83,17 @@ JsonValue KernelGatewayAppSettings::Jsonize() const
      customImagesJsonList[customImagesIndex].AsObject(m_customImages[customImagesIndex].Jsonize());
    }
    payload.WithArray("CustomImages", std::move(customImagesJsonList));
+
+  }
+
+  if(m_lifecycleConfigArnsHasBeenSet)
+  {
+   Array<JsonValue> lifecycleConfigArnsJsonList(m_lifecycleConfigArns.size());
+   for(unsigned lifecycleConfigArnsIndex = 0; lifecycleConfigArnsIndex < lifecycleConfigArnsJsonList.GetLength(); ++lifecycleConfigArnsIndex)
+   {
+     lifecycleConfigArnsJsonList[lifecycleConfigArnsIndex].AsString(m_lifecycleConfigArns[lifecycleConfigArnsIndex]);
+   }
+   payload.WithArray("LifecycleConfigArns", std::move(lifecycleConfigArnsJsonList));
 
   }
 

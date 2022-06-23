@@ -39,32 +39,32 @@ namespace Model
 
 
     /**
-     * <p>Used to store channel data in an S3 bucket managed by AWS IoT Analytics.</p>
+     * <p>Used to store channel data in an S3 bucket managed by IoT Analytics.</p>
      */
     inline const ServiceManagedChannelS3StorageSummary& GetServiceManagedS3() const{ return m_serviceManagedS3; }
 
     /**
-     * <p>Used to store channel data in an S3 bucket managed by AWS IoT Analytics.</p>
+     * <p>Used to store channel data in an S3 bucket managed by IoT Analytics.</p>
      */
     inline bool ServiceManagedS3HasBeenSet() const { return m_serviceManagedS3HasBeenSet; }
 
     /**
-     * <p>Used to store channel data in an S3 bucket managed by AWS IoT Analytics.</p>
+     * <p>Used to store channel data in an S3 bucket managed by IoT Analytics.</p>
      */
     inline void SetServiceManagedS3(const ServiceManagedChannelS3StorageSummary& value) { m_serviceManagedS3HasBeenSet = true; m_serviceManagedS3 = value; }
 
     /**
-     * <p>Used to store channel data in an S3 bucket managed by AWS IoT Analytics.</p>
+     * <p>Used to store channel data in an S3 bucket managed by IoT Analytics.</p>
      */
     inline void SetServiceManagedS3(ServiceManagedChannelS3StorageSummary&& value) { m_serviceManagedS3HasBeenSet = true; m_serviceManagedS3 = std::move(value); }
 
     /**
-     * <p>Used to store channel data in an S3 bucket managed by AWS IoT Analytics.</p>
+     * <p>Used to store channel data in an S3 bucket managed by IoT Analytics.</p>
      */
     inline ChannelStorageSummary& WithServiceManagedS3(const ServiceManagedChannelS3StorageSummary& value) { SetServiceManagedS3(value); return *this;}
 
     /**
-     * <p>Used to store channel data in an S3 bucket managed by AWS IoT Analytics.</p>
+     * <p>Used to store channel data in an S3 bucket managed by IoT Analytics.</p>
      */
     inline ChannelStorageSummary& WithServiceManagedS3(ServiceManagedChannelS3StorageSummary&& value) { SetServiceManagedS3(std::move(value)); return *this;}
 

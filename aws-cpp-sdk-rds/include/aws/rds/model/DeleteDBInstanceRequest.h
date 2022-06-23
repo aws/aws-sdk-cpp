@@ -98,150 +98,162 @@ namespace Model
 
     /**
      * <p>A value that indicates whether to skip the creation of a final DB snapshot
-     * before the DB instance is deleted. If skip is specified, no DB snapshot is
-     * created. If skip isn't specified, a DB snapshot is created before the DB
-     * instance is deleted. By default, skip isn't specified, and the DB snapshot is
-     * created.</p> <p>When a DB instance is in a failure state and has a status of
-     * 'failed', 'incompatible-restore', or 'incompatible-network', it can only be
-     * deleted when skip is specified.</p> <p>Specify skip when deleting a read
-     * replica.</p>  <p>The FinalDBSnapshotIdentifier parameter must be specified
-     * if skip isn't specified.</p> 
+     * before deleting the instance. If you enable this parameter, RDS doesn't create a
+     * DB snapshot. If you don't enable this parameter, RDS creates a DB snapshot
+     * before the DB instance is deleted. By default, skip isn't enabled, and the DB
+     * snapshot is created.</p>  <p>If you don't enable this parameter, you must
+     * specify the <code>FinalDBSnapshotIdentifier</code> parameter.</p> 
+     * <p>When a DB instance is in a failure state and has a status of
+     * <code>failed</code>, <code>incompatible-restore</code>, or
+     * <code>incompatible-network</code>, RDS can delete the instance only if you
+     * enable this parameter.</p> <p>If you delete a read replica or an RDS Custom
+     * instance, you must enable this setting.</p> <p>This setting is required for RDS
+     * Custom.</p>
      */
     inline bool GetSkipFinalSnapshot() const{ return m_skipFinalSnapshot; }
 
     /**
      * <p>A value that indicates whether to skip the creation of a final DB snapshot
-     * before the DB instance is deleted. If skip is specified, no DB snapshot is
-     * created. If skip isn't specified, a DB snapshot is created before the DB
-     * instance is deleted. By default, skip isn't specified, and the DB snapshot is
-     * created.</p> <p>When a DB instance is in a failure state and has a status of
-     * 'failed', 'incompatible-restore', or 'incompatible-network', it can only be
-     * deleted when skip is specified.</p> <p>Specify skip when deleting a read
-     * replica.</p>  <p>The FinalDBSnapshotIdentifier parameter must be specified
-     * if skip isn't specified.</p> 
+     * before deleting the instance. If you enable this parameter, RDS doesn't create a
+     * DB snapshot. If you don't enable this parameter, RDS creates a DB snapshot
+     * before the DB instance is deleted. By default, skip isn't enabled, and the DB
+     * snapshot is created.</p>  <p>If you don't enable this parameter, you must
+     * specify the <code>FinalDBSnapshotIdentifier</code> parameter.</p> 
+     * <p>When a DB instance is in a failure state and has a status of
+     * <code>failed</code>, <code>incompatible-restore</code>, or
+     * <code>incompatible-network</code>, RDS can delete the instance only if you
+     * enable this parameter.</p> <p>If you delete a read replica or an RDS Custom
+     * instance, you must enable this setting.</p> <p>This setting is required for RDS
+     * Custom.</p>
      */
     inline bool SkipFinalSnapshotHasBeenSet() const { return m_skipFinalSnapshotHasBeenSet; }
 
     /**
      * <p>A value that indicates whether to skip the creation of a final DB snapshot
-     * before the DB instance is deleted. If skip is specified, no DB snapshot is
-     * created. If skip isn't specified, a DB snapshot is created before the DB
-     * instance is deleted. By default, skip isn't specified, and the DB snapshot is
-     * created.</p> <p>When a DB instance is in a failure state and has a status of
-     * 'failed', 'incompatible-restore', or 'incompatible-network', it can only be
-     * deleted when skip is specified.</p> <p>Specify skip when deleting a read
-     * replica.</p>  <p>The FinalDBSnapshotIdentifier parameter must be specified
-     * if skip isn't specified.</p> 
+     * before deleting the instance. If you enable this parameter, RDS doesn't create a
+     * DB snapshot. If you don't enable this parameter, RDS creates a DB snapshot
+     * before the DB instance is deleted. By default, skip isn't enabled, and the DB
+     * snapshot is created.</p>  <p>If you don't enable this parameter, you must
+     * specify the <code>FinalDBSnapshotIdentifier</code> parameter.</p> 
+     * <p>When a DB instance is in a failure state and has a status of
+     * <code>failed</code>, <code>incompatible-restore</code>, or
+     * <code>incompatible-network</code>, RDS can delete the instance only if you
+     * enable this parameter.</p> <p>If you delete a read replica or an RDS Custom
+     * instance, you must enable this setting.</p> <p>This setting is required for RDS
+     * Custom.</p>
      */
     inline void SetSkipFinalSnapshot(bool value) { m_skipFinalSnapshotHasBeenSet = true; m_skipFinalSnapshot = value; }
 
     /**
      * <p>A value that indicates whether to skip the creation of a final DB snapshot
-     * before the DB instance is deleted. If skip is specified, no DB snapshot is
-     * created. If skip isn't specified, a DB snapshot is created before the DB
-     * instance is deleted. By default, skip isn't specified, and the DB snapshot is
-     * created.</p> <p>When a DB instance is in a failure state and has a status of
-     * 'failed', 'incompatible-restore', or 'incompatible-network', it can only be
-     * deleted when skip is specified.</p> <p>Specify skip when deleting a read
-     * replica.</p>  <p>The FinalDBSnapshotIdentifier parameter must be specified
-     * if skip isn't specified.</p> 
+     * before deleting the instance. If you enable this parameter, RDS doesn't create a
+     * DB snapshot. If you don't enable this parameter, RDS creates a DB snapshot
+     * before the DB instance is deleted. By default, skip isn't enabled, and the DB
+     * snapshot is created.</p>  <p>If you don't enable this parameter, you must
+     * specify the <code>FinalDBSnapshotIdentifier</code> parameter.</p> 
+     * <p>When a DB instance is in a failure state and has a status of
+     * <code>failed</code>, <code>incompatible-restore</code>, or
+     * <code>incompatible-network</code>, RDS can delete the instance only if you
+     * enable this parameter.</p> <p>If you delete a read replica or an RDS Custom
+     * instance, you must enable this setting.</p> <p>This setting is required for RDS
+     * Custom.</p>
      */
     inline DeleteDBInstanceRequest& WithSkipFinalSnapshot(bool value) { SetSkipFinalSnapshot(value); return *this;}
 
 
     /**
-     * <p> The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code>
-     * created when the <code>SkipFinalSnapshot</code> parameter is disabled. </p>
-     *  <p>Specifying this parameter and also specifying to skip final DB
-     * snapshot creation in SkipFinalShapshot results in an error.</p> 
-     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
-     * <li> <p>First character must be a letter.</p> </li> <li> <p>Can't end with a
-     * hyphen or contain two consecutive hyphens.</p> </li> <li> <p>Can't be specified
-     * when deleting a read replica.</p> </li> </ul>
+     * <p>The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code>
+     * created when the <code>SkipFinalSnapshot</code> parameter is disabled.</p>
+     *  <p>If you enable this parameter and also enable SkipFinalShapshot, the
+     * command results in an error.</p>  <p>This setting doesn't apply to RDS
+     * Custom.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or
+     * numbers.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li> <li>
+     * <p>Can't be specified when deleting a read replica.</p> </li> </ul>
      */
     inline const Aws::String& GetFinalDBSnapshotIdentifier() const{ return m_finalDBSnapshotIdentifier; }
 
     /**
-     * <p> The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code>
-     * created when the <code>SkipFinalSnapshot</code> parameter is disabled. </p>
-     *  <p>Specifying this parameter and also specifying to skip final DB
-     * snapshot creation in SkipFinalShapshot results in an error.</p> 
-     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
-     * <li> <p>First character must be a letter.</p> </li> <li> <p>Can't end with a
-     * hyphen or contain two consecutive hyphens.</p> </li> <li> <p>Can't be specified
-     * when deleting a read replica.</p> </li> </ul>
+     * <p>The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code>
+     * created when the <code>SkipFinalSnapshot</code> parameter is disabled.</p>
+     *  <p>If you enable this parameter and also enable SkipFinalShapshot, the
+     * command results in an error.</p>  <p>This setting doesn't apply to RDS
+     * Custom.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or
+     * numbers.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li> <li>
+     * <p>Can't be specified when deleting a read replica.</p> </li> </ul>
      */
     inline bool FinalDBSnapshotIdentifierHasBeenSet() const { return m_finalDBSnapshotIdentifierHasBeenSet; }
 
     /**
-     * <p> The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code>
-     * created when the <code>SkipFinalSnapshot</code> parameter is disabled. </p>
-     *  <p>Specifying this parameter and also specifying to skip final DB
-     * snapshot creation in SkipFinalShapshot results in an error.</p> 
-     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
-     * <li> <p>First character must be a letter.</p> </li> <li> <p>Can't end with a
-     * hyphen or contain two consecutive hyphens.</p> </li> <li> <p>Can't be specified
-     * when deleting a read replica.</p> </li> </ul>
+     * <p>The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code>
+     * created when the <code>SkipFinalSnapshot</code> parameter is disabled.</p>
+     *  <p>If you enable this parameter and also enable SkipFinalShapshot, the
+     * command results in an error.</p>  <p>This setting doesn't apply to RDS
+     * Custom.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or
+     * numbers.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li> <li>
+     * <p>Can't be specified when deleting a read replica.</p> </li> </ul>
      */
     inline void SetFinalDBSnapshotIdentifier(const Aws::String& value) { m_finalDBSnapshotIdentifierHasBeenSet = true; m_finalDBSnapshotIdentifier = value; }
 
     /**
-     * <p> The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code>
-     * created when the <code>SkipFinalSnapshot</code> parameter is disabled. </p>
-     *  <p>Specifying this parameter and also specifying to skip final DB
-     * snapshot creation in SkipFinalShapshot results in an error.</p> 
-     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
-     * <li> <p>First character must be a letter.</p> </li> <li> <p>Can't end with a
-     * hyphen or contain two consecutive hyphens.</p> </li> <li> <p>Can't be specified
-     * when deleting a read replica.</p> </li> </ul>
+     * <p>The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code>
+     * created when the <code>SkipFinalSnapshot</code> parameter is disabled.</p>
+     *  <p>If you enable this parameter and also enable SkipFinalShapshot, the
+     * command results in an error.</p>  <p>This setting doesn't apply to RDS
+     * Custom.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or
+     * numbers.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li> <li>
+     * <p>Can't be specified when deleting a read replica.</p> </li> </ul>
      */
     inline void SetFinalDBSnapshotIdentifier(Aws::String&& value) { m_finalDBSnapshotIdentifierHasBeenSet = true; m_finalDBSnapshotIdentifier = std::move(value); }
 
     /**
-     * <p> The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code>
-     * created when the <code>SkipFinalSnapshot</code> parameter is disabled. </p>
-     *  <p>Specifying this parameter and also specifying to skip final DB
-     * snapshot creation in SkipFinalShapshot results in an error.</p> 
-     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
-     * <li> <p>First character must be a letter.</p> </li> <li> <p>Can't end with a
-     * hyphen or contain two consecutive hyphens.</p> </li> <li> <p>Can't be specified
-     * when deleting a read replica.</p> </li> </ul>
+     * <p>The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code>
+     * created when the <code>SkipFinalSnapshot</code> parameter is disabled.</p>
+     *  <p>If you enable this parameter and also enable SkipFinalShapshot, the
+     * command results in an error.</p>  <p>This setting doesn't apply to RDS
+     * Custom.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or
+     * numbers.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li> <li>
+     * <p>Can't be specified when deleting a read replica.</p> </li> </ul>
      */
     inline void SetFinalDBSnapshotIdentifier(const char* value) { m_finalDBSnapshotIdentifierHasBeenSet = true; m_finalDBSnapshotIdentifier.assign(value); }
 
     /**
-     * <p> The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code>
-     * created when the <code>SkipFinalSnapshot</code> parameter is disabled. </p>
-     *  <p>Specifying this parameter and also specifying to skip final DB
-     * snapshot creation in SkipFinalShapshot results in an error.</p> 
-     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
-     * <li> <p>First character must be a letter.</p> </li> <li> <p>Can't end with a
-     * hyphen or contain two consecutive hyphens.</p> </li> <li> <p>Can't be specified
-     * when deleting a read replica.</p> </li> </ul>
+     * <p>The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code>
+     * created when the <code>SkipFinalSnapshot</code> parameter is disabled.</p>
+     *  <p>If you enable this parameter and also enable SkipFinalShapshot, the
+     * command results in an error.</p>  <p>This setting doesn't apply to RDS
+     * Custom.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or
+     * numbers.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li> <li>
+     * <p>Can't be specified when deleting a read replica.</p> </li> </ul>
      */
     inline DeleteDBInstanceRequest& WithFinalDBSnapshotIdentifier(const Aws::String& value) { SetFinalDBSnapshotIdentifier(value); return *this;}
 
     /**
-     * <p> The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code>
-     * created when the <code>SkipFinalSnapshot</code> parameter is disabled. </p>
-     *  <p>Specifying this parameter and also specifying to skip final DB
-     * snapshot creation in SkipFinalShapshot results in an error.</p> 
-     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
-     * <li> <p>First character must be a letter.</p> </li> <li> <p>Can't end with a
-     * hyphen or contain two consecutive hyphens.</p> </li> <li> <p>Can't be specified
-     * when deleting a read replica.</p> </li> </ul>
+     * <p>The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code>
+     * created when the <code>SkipFinalSnapshot</code> parameter is disabled.</p>
+     *  <p>If you enable this parameter and also enable SkipFinalShapshot, the
+     * command results in an error.</p>  <p>This setting doesn't apply to RDS
+     * Custom.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or
+     * numbers.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li> <li>
+     * <p>Can't be specified when deleting a read replica.</p> </li> </ul>
      */
     inline DeleteDBInstanceRequest& WithFinalDBSnapshotIdentifier(Aws::String&& value) { SetFinalDBSnapshotIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p> The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code>
-     * created when the <code>SkipFinalSnapshot</code> parameter is disabled. </p>
-     *  <p>Specifying this parameter and also specifying to skip final DB
-     * snapshot creation in SkipFinalShapshot results in an error.</p> 
-     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
-     * <li> <p>First character must be a letter.</p> </li> <li> <p>Can't end with a
-     * hyphen or contain two consecutive hyphens.</p> </li> <li> <p>Can't be specified
-     * when deleting a read replica.</p> </li> </ul>
+     * <p>The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code>
+     * created when the <code>SkipFinalSnapshot</code> parameter is disabled.</p>
+     *  <p>If you enable this parameter and also enable SkipFinalShapshot, the
+     * command results in an error.</p>  <p>This setting doesn't apply to RDS
+     * Custom.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or
+     * numbers.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li> <li>
+     * <p>Can't be specified when deleting a read replica.</p> </li> </ul>
      */
     inline DeleteDBInstanceRequest& WithFinalDBSnapshotIdentifier(const char* value) { SetFinalDBSnapshotIdentifier(value); return *this;}
 

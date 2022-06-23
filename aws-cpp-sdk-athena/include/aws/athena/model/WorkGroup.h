@@ -34,7 +34,8 @@ namespace Model
    * configuration (known as workgroup settings), to enable sending query metrics to
    * Amazon CloudWatch, and to establish per-query data usage control limits for all
    * queries in a workgroup. The workgroup settings override is specified in
-   * EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See
+   * <code>EnforceWorkGroupConfiguration</code> (true/false) in the
+   * <code>WorkGroupConfiguration</code>. See
    * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/WorkGroup">AWS
@@ -127,8 +128,9 @@ namespace Model
      * query results; whether the Amazon CloudWatch Metrics are enabled for the
      * workgroup; whether workgroup settings override client-side settings; and the
      * data usage limits for the amount of data scanned per query or per workgroup. The
-     * workgroup settings override is specified in EnforceWorkGroupConfiguration
-     * (true/false) in the WorkGroupConfiguration. See
+     * workgroup settings override is specified in
+     * <code>EnforceWorkGroupConfiguration</code> (true/false) in the
+     * <code>WorkGroupConfiguration</code>. See
      * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
      */
     inline const WorkGroupConfiguration& GetConfiguration() const{ return m_configuration; }
@@ -139,8 +141,9 @@ namespace Model
      * query results; whether the Amazon CloudWatch Metrics are enabled for the
      * workgroup; whether workgroup settings override client-side settings; and the
      * data usage limits for the amount of data scanned per query or per workgroup. The
-     * workgroup settings override is specified in EnforceWorkGroupConfiguration
-     * (true/false) in the WorkGroupConfiguration. See
+     * workgroup settings override is specified in
+     * <code>EnforceWorkGroupConfiguration</code> (true/false) in the
+     * <code>WorkGroupConfiguration</code>. See
      * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
      */
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
@@ -151,8 +154,9 @@ namespace Model
      * query results; whether the Amazon CloudWatch Metrics are enabled for the
      * workgroup; whether workgroup settings override client-side settings; and the
      * data usage limits for the amount of data scanned per query or per workgroup. The
-     * workgroup settings override is specified in EnforceWorkGroupConfiguration
-     * (true/false) in the WorkGroupConfiguration. See
+     * workgroup settings override is specified in
+     * <code>EnforceWorkGroupConfiguration</code> (true/false) in the
+     * <code>WorkGroupConfiguration</code>. See
      * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
      */
     inline void SetConfiguration(const WorkGroupConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
@@ -163,8 +167,9 @@ namespace Model
      * query results; whether the Amazon CloudWatch Metrics are enabled for the
      * workgroup; whether workgroup settings override client-side settings; and the
      * data usage limits for the amount of data scanned per query or per workgroup. The
-     * workgroup settings override is specified in EnforceWorkGroupConfiguration
-     * (true/false) in the WorkGroupConfiguration. See
+     * workgroup settings override is specified in
+     * <code>EnforceWorkGroupConfiguration</code> (true/false) in the
+     * <code>WorkGroupConfiguration</code>. See
      * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
      */
     inline void SetConfiguration(WorkGroupConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
@@ -175,8 +180,9 @@ namespace Model
      * query results; whether the Amazon CloudWatch Metrics are enabled for the
      * workgroup; whether workgroup settings override client-side settings; and the
      * data usage limits for the amount of data scanned per query or per workgroup. The
-     * workgroup settings override is specified in EnforceWorkGroupConfiguration
-     * (true/false) in the WorkGroupConfiguration. See
+     * workgroup settings override is specified in
+     * <code>EnforceWorkGroupConfiguration</code> (true/false) in the
+     * <code>WorkGroupConfiguration</code>. See
      * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
      */
     inline WorkGroup& WithConfiguration(const WorkGroupConfiguration& value) { SetConfiguration(value); return *this;}
@@ -187,8 +193,9 @@ namespace Model
      * query results; whether the Amazon CloudWatch Metrics are enabled for the
      * workgroup; whether workgroup settings override client-side settings; and the
      * data usage limits for the amount of data scanned per query or per workgroup. The
-     * workgroup settings override is specified in EnforceWorkGroupConfiguration
-     * (true/false) in the WorkGroupConfiguration. See
+     * workgroup settings override is specified in
+     * <code>EnforceWorkGroupConfiguration</code> (true/false) in the
+     * <code>WorkGroupConfiguration</code>. See
      * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
      */
     inline WorkGroup& WithConfiguration(WorkGroupConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}

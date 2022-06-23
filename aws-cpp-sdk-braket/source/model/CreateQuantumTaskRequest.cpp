@@ -18,6 +18,7 @@ CreateQuantumTaskRequest::CreateQuantumTaskRequest() :
     m_clientTokenHasBeenSet(true),
     m_deviceArnHasBeenSet(false),
     m_deviceParametersHasBeenSet(false),
+    m_jobTokenHasBeenSet(false),
     m_outputS3BucketHasBeenSet(false),
     m_outputS3KeyPrefixHasBeenSet(false),
     m_shots(0),
@@ -51,6 +52,12 @@ Aws::String CreateQuantumTaskRequest::SerializePayload() const
   if(m_deviceParametersHasBeenSet)
   {
    payload.WithString("deviceParameters", m_deviceParameters);
+
+  }
+
+  if(m_jobTokenHasBeenSet)
+  {
+   payload.WithString("jobToken", m_jobToken);
 
   }
 

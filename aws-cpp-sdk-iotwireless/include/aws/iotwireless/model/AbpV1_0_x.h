@@ -110,6 +110,27 @@ namespace Model
      */
     inline AbpV1_0_x& WithSessionKeys(SessionKeysAbpV1_0_x&& value) { SetSessionKeys(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The FCnt init value.</p>
+     */
+    inline int GetFCntStart() const{ return m_fCntStart; }
+
+    /**
+     * <p>The FCnt init value.</p>
+     */
+    inline bool FCntStartHasBeenSet() const { return m_fCntStartHasBeenSet; }
+
+    /**
+     * <p>The FCnt init value.</p>
+     */
+    inline void SetFCntStart(int value) { m_fCntStartHasBeenSet = true; m_fCntStart = value; }
+
+    /**
+     * <p>The FCnt init value.</p>
+     */
+    inline AbpV1_0_x& WithFCntStart(int value) { SetFCntStart(value); return *this;}
+
   private:
 
     Aws::String m_devAddr;
@@ -117,6 +138,9 @@ namespace Model
 
     SessionKeysAbpV1_0_x m_sessionKeys;
     bool m_sessionKeysHasBeenSet;
+
+    int m_fCntStart;
+    bool m_fCntStartHasBeenSet;
   };
 
 } // namespace Model

@@ -30,6 +30,8 @@ namespace Aws
         static const int ORACLE_LINUX_HASH = HashingUtils::HashString("ORACLE_LINUX");
         static const int DEBIAN_HASH = HashingUtils::HashString("DEBIAN");
         static const int MACOS_HASH = HashingUtils::HashString("MACOS");
+        static const int RASPBIAN_HASH = HashingUtils::HashString("RASPBIAN");
+        static const int ROCKY_LINUX_HASH = HashingUtils::HashString("ROCKY_LINUX");
 
 
         OperatingSystem GetOperatingSystemForName(const Aws::String& name)
@@ -75,6 +77,14 @@ namespace Aws
           {
             return OperatingSystem::MACOS;
           }
+          else if (hashCode == RASPBIAN_HASH)
+          {
+            return OperatingSystem::RASPBIAN;
+          }
+          else if (hashCode == ROCKY_LINUX_HASH)
+          {
+            return OperatingSystem::ROCKY_LINUX;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -109,6 +119,10 @@ namespace Aws
             return "DEBIAN";
           case OperatingSystem::MACOS:
             return "MACOS";
+          case OperatingSystem::RASPBIAN:
+            return "RASPBIAN";
+          case OperatingSystem::ROCKY_LINUX:
+            return "ROCKY_LINUX";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

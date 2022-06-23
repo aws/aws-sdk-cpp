@@ -46,7 +46,9 @@ CampaignResponse::CampaignResponse() :
     m_treatmentDescriptionHasBeenSet(false),
     m_treatmentNameHasBeenSet(false),
     m_version(0),
-    m_versionHasBeenSet(false)
+    m_versionHasBeenSet(false),
+    m_priority(0),
+    m_priorityHasBeenSet(false)
 {
 }
 
@@ -78,7 +80,9 @@ CampaignResponse::CampaignResponse(JsonView jsonValue) :
     m_treatmentDescriptionHasBeenSet(false),
     m_treatmentNameHasBeenSet(false),
     m_version(0),
-    m_versionHasBeenSet(false)
+    m_versionHasBeenSet(false),
+    m_priority(0),
+    m_priorityHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -259,6 +263,13 @@ CampaignResponse& CampaignResponse::operator =(JsonView jsonValue)
     m_versionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Priority"))
+  {
+    m_priority = jsonValue.GetInteger("Priority");
+
+    m_priorityHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -417,6 +428,12 @@ JsonValue CampaignResponse::Jsonize() const
   if(m_versionHasBeenSet)
   {
    payload.WithInteger("Version", m_version);
+
+  }
+
+  if(m_priorityHasBeenSet)
+  {
+   payload.WithInteger("Priority", m_priority);
 
   }
 

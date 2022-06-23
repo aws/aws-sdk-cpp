@@ -34,42 +34,42 @@ namespace Model
 
 
     /**
-     * <p>Updates a Device Advisor test suite with suite definition id.</p>
+     * <p>Suite definition ID of the test suite to be updated.</p>
      */
     inline const Aws::String& GetSuiteDefinitionId() const{ return m_suiteDefinitionId; }
 
     /**
-     * <p>Updates a Device Advisor test suite with suite definition id.</p>
+     * <p>Suite definition ID of the test suite to be updated.</p>
      */
     inline bool SuiteDefinitionIdHasBeenSet() const { return m_suiteDefinitionIdHasBeenSet; }
 
     /**
-     * <p>Updates a Device Advisor test suite with suite definition id.</p>
+     * <p>Suite definition ID of the test suite to be updated.</p>
      */
     inline void SetSuiteDefinitionId(const Aws::String& value) { m_suiteDefinitionIdHasBeenSet = true; m_suiteDefinitionId = value; }
 
     /**
-     * <p>Updates a Device Advisor test suite with suite definition id.</p>
+     * <p>Suite definition ID of the test suite to be updated.</p>
      */
     inline void SetSuiteDefinitionId(Aws::String&& value) { m_suiteDefinitionIdHasBeenSet = true; m_suiteDefinitionId = std::move(value); }
 
     /**
-     * <p>Updates a Device Advisor test suite with suite definition id.</p>
+     * <p>Suite definition ID of the test suite to be updated.</p>
      */
     inline void SetSuiteDefinitionId(const char* value) { m_suiteDefinitionIdHasBeenSet = true; m_suiteDefinitionId.assign(value); }
 
     /**
-     * <p>Updates a Device Advisor test suite with suite definition id.</p>
+     * <p>Suite definition ID of the test suite to be updated.</p>
      */
     inline UpdateSuiteDefinitionRequest& WithSuiteDefinitionId(const Aws::String& value) { SetSuiteDefinitionId(value); return *this;}
 
     /**
-     * <p>Updates a Device Advisor test suite with suite definition id.</p>
+     * <p>Suite definition ID of the test suite to be updated.</p>
      */
     inline UpdateSuiteDefinitionRequest& WithSuiteDefinitionId(Aws::String&& value) { SetSuiteDefinitionId(std::move(value)); return *this;}
 
     /**
-     * <p>Updates a Device Advisor test suite with suite definition id.</p>
+     * <p>Suite definition ID of the test suite to be updated.</p>
      */
     inline UpdateSuiteDefinitionRequest& WithSuiteDefinitionId(const char* value) { SetSuiteDefinitionId(value); return *this;}
 

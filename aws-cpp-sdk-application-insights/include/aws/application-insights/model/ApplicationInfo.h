@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/application-insights/ApplicationInsights_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/application-insights/model/DiscoveryType.h>
 #include <utility>
 
 namespace Aws
@@ -286,6 +287,38 @@ namespace Model
      */
     inline ApplicationInfo& WithRemarks(const char* value) { SetRemarks(value); return *this;}
 
+
+    
+    inline bool GetAutoConfigEnabled() const{ return m_autoConfigEnabled; }
+
+    
+    inline bool AutoConfigEnabledHasBeenSet() const { return m_autoConfigEnabledHasBeenSet; }
+
+    
+    inline void SetAutoConfigEnabled(bool value) { m_autoConfigEnabledHasBeenSet = true; m_autoConfigEnabled = value; }
+
+    
+    inline ApplicationInfo& WithAutoConfigEnabled(bool value) { SetAutoConfigEnabled(value); return *this;}
+
+
+    
+    inline const DiscoveryType& GetDiscoveryType() const{ return m_discoveryType; }
+
+    
+    inline bool DiscoveryTypeHasBeenSet() const { return m_discoveryTypeHasBeenSet; }
+
+    
+    inline void SetDiscoveryType(const DiscoveryType& value) { m_discoveryTypeHasBeenSet = true; m_discoveryType = value; }
+
+    
+    inline void SetDiscoveryType(DiscoveryType&& value) { m_discoveryTypeHasBeenSet = true; m_discoveryType = std::move(value); }
+
+    
+    inline ApplicationInfo& WithDiscoveryType(const DiscoveryType& value) { SetDiscoveryType(value); return *this;}
+
+    
+    inline ApplicationInfo& WithDiscoveryType(DiscoveryType&& value) { SetDiscoveryType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_resourceGroupName;
@@ -305,6 +338,12 @@ namespace Model
 
     Aws::String m_remarks;
     bool m_remarksHasBeenSet;
+
+    bool m_autoConfigEnabled;
+    bool m_autoConfigEnabledHasBeenSet;
+
+    DiscoveryType m_discoveryType;
+    bool m_discoveryTypeHasBeenSet;
   };
 
 } // namespace Model

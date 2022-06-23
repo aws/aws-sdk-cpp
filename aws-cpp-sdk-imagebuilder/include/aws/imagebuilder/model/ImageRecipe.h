@@ -10,6 +10,7 @@
 #include <aws/imagebuilder/model/Platform.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/imagebuilder/model/AdditionalInstanceConfiguration.h>
 #include <aws/imagebuilder/model/ComponentConfiguration.h>
 #include <aws/imagebuilder/model/InstanceBlockDeviceMapping.h>
 #include <utility>
@@ -358,42 +359,42 @@ namespace Model
 
 
     /**
-     * <p>The parent image of the image recipe.</p>
+     * <p>The base image of the image recipe.</p>
      */
     inline const Aws::String& GetParentImage() const{ return m_parentImage; }
 
     /**
-     * <p>The parent image of the image recipe.</p>
+     * <p>The base image of the image recipe.</p>
      */
     inline bool ParentImageHasBeenSet() const { return m_parentImageHasBeenSet; }
 
     /**
-     * <p>The parent image of the image recipe.</p>
+     * <p>The base image of the image recipe.</p>
      */
     inline void SetParentImage(const Aws::String& value) { m_parentImageHasBeenSet = true; m_parentImage = value; }
 
     /**
-     * <p>The parent image of the image recipe.</p>
+     * <p>The base image of the image recipe.</p>
      */
     inline void SetParentImage(Aws::String&& value) { m_parentImageHasBeenSet = true; m_parentImage = std::move(value); }
 
     /**
-     * <p>The parent image of the image recipe.</p>
+     * <p>The base image of the image recipe.</p>
      */
     inline void SetParentImage(const char* value) { m_parentImageHasBeenSet = true; m_parentImage.assign(value); }
 
     /**
-     * <p>The parent image of the image recipe.</p>
+     * <p>The base image of the image recipe.</p>
      */
     inline ImageRecipe& WithParentImage(const Aws::String& value) { SetParentImage(value); return *this;}
 
     /**
-     * <p>The parent image of the image recipe.</p>
+     * <p>The base image of the image recipe.</p>
      */
     inline ImageRecipe& WithParentImage(Aws::String&& value) { SetParentImage(std::move(value)); return *this;}
 
     /**
-     * <p>The parent image of the image recipe.</p>
+     * <p>The base image of the image recipe.</p>
      */
     inline ImageRecipe& WithParentImage(const char* value) { SetParentImage(value); return *this;}
 
@@ -586,6 +587,55 @@ namespace Model
      */
     inline ImageRecipe& WithWorkingDirectory(const char* value) { SetWorkingDirectory(value); return *this;}
 
+
+    /**
+     * <p>Before you create a new AMI, Image Builder launches temporary Amazon EC2
+     * instances to build and test your image configuration. Instance configuration
+     * adds a layer of control over those instances. You can define settings and add
+     * scripts to run when an instance is launched from your AMI.</p>
+     */
+    inline const AdditionalInstanceConfiguration& GetAdditionalInstanceConfiguration() const{ return m_additionalInstanceConfiguration; }
+
+    /**
+     * <p>Before you create a new AMI, Image Builder launches temporary Amazon EC2
+     * instances to build and test your image configuration. Instance configuration
+     * adds a layer of control over those instances. You can define settings and add
+     * scripts to run when an instance is launched from your AMI.</p>
+     */
+    inline bool AdditionalInstanceConfigurationHasBeenSet() const { return m_additionalInstanceConfigurationHasBeenSet; }
+
+    /**
+     * <p>Before you create a new AMI, Image Builder launches temporary Amazon EC2
+     * instances to build and test your image configuration. Instance configuration
+     * adds a layer of control over those instances. You can define settings and add
+     * scripts to run when an instance is launched from your AMI.</p>
+     */
+    inline void SetAdditionalInstanceConfiguration(const AdditionalInstanceConfiguration& value) { m_additionalInstanceConfigurationHasBeenSet = true; m_additionalInstanceConfiguration = value; }
+
+    /**
+     * <p>Before you create a new AMI, Image Builder launches temporary Amazon EC2
+     * instances to build and test your image configuration. Instance configuration
+     * adds a layer of control over those instances. You can define settings and add
+     * scripts to run when an instance is launched from your AMI.</p>
+     */
+    inline void SetAdditionalInstanceConfiguration(AdditionalInstanceConfiguration&& value) { m_additionalInstanceConfigurationHasBeenSet = true; m_additionalInstanceConfiguration = std::move(value); }
+
+    /**
+     * <p>Before you create a new AMI, Image Builder launches temporary Amazon EC2
+     * instances to build and test your image configuration. Instance configuration
+     * adds a layer of control over those instances. You can define settings and add
+     * scripts to run when an instance is launched from your AMI.</p>
+     */
+    inline ImageRecipe& WithAdditionalInstanceConfiguration(const AdditionalInstanceConfiguration& value) { SetAdditionalInstanceConfiguration(value); return *this;}
+
+    /**
+     * <p>Before you create a new AMI, Image Builder launches temporary Amazon EC2
+     * instances to build and test your image configuration. Instance configuration
+     * adds a layer of control over those instances. You can define settings and add
+     * scripts to run when an instance is launched from your AMI.</p>
+     */
+    inline ImageRecipe& WithAdditionalInstanceConfiguration(AdditionalInstanceConfiguration&& value) { SetAdditionalInstanceConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -626,6 +676,9 @@ namespace Model
 
     Aws::String m_workingDirectory;
     bool m_workingDirectoryHasBeenSet;
+
+    AdditionalInstanceConfiguration m_additionalInstanceConfiguration;
+    bool m_additionalInstanceConfigurationHasBeenSet;
   };
 
 } // namespace Model

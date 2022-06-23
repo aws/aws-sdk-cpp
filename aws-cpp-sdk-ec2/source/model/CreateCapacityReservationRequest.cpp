@@ -32,7 +32,9 @@ CreateCapacityReservationRequest::CreateCapacityReservationRequest() :
     m_instanceMatchCriteriaHasBeenSet(false),
     m_tagSpecificationsHasBeenSet(false),
     m_dryRun(false),
-    m_dryRunHasBeenSet(false)
+    m_dryRunHasBeenSet(false),
+    m_outpostArnHasBeenSet(false),
+    m_placementGroupArnHasBeenSet(false)
 {
 }
 
@@ -113,6 +115,16 @@ Aws::String CreateCapacityReservationRequest::SerializePayload() const
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+  }
+
+  if(m_outpostArnHasBeenSet)
+  {
+    ss << "OutpostArn=" << StringUtils::URLEncode(m_outpostArn.c_str()) << "&";
+  }
+
+  if(m_placementGroupArnHasBeenSet)
+  {
+    ss << "PlacementGroupArn=" << StringUtils::URLEncode(m_placementGroupArn.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

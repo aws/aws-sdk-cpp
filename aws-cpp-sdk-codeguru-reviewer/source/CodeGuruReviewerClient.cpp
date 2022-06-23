@@ -82,7 +82,7 @@ CodeGuruReviewerClient::~CodeGuruReviewerClient()
 {
 }
 
-void CodeGuruReviewerClient::init(const ClientConfiguration& config)
+void CodeGuruReviewerClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("CodeGuru Reviewer");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -111,9 +111,7 @@ void CodeGuruReviewerClient::OverrideEndpoint(const Aws::String& endpoint)
 AssociateRepositoryOutcome CodeGuruReviewerClient::AssociateRepository(const AssociateRepositoryRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/associations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/associations");
   return AssociateRepositoryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -138,9 +136,7 @@ void CodeGuruReviewerClient::AssociateRepositoryAsyncHelper(const AssociateRepos
 CreateCodeReviewOutcome CodeGuruReviewerClient::CreateCodeReview(const CreateCodeReviewRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/codereviews";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/codereviews");
   return CreateCodeReviewOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -170,10 +166,8 @@ DescribeCodeReviewOutcome CodeGuruReviewerClient::DescribeCodeReview(const Descr
     return DescribeCodeReviewOutcome(Aws::Client::AWSError<CodeGuruReviewerErrors>(CodeGuruReviewerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CodeReviewArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/codereviews/";
-  ss << request.GetCodeReviewArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/codereviews/");
+  uri.AddPathSegment(request.GetCodeReviewArn());
   return DescribeCodeReviewOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -208,10 +202,8 @@ DescribeRecommendationFeedbackOutcome CodeGuruReviewerClient::DescribeRecommenda
     return DescribeRecommendationFeedbackOutcome(Aws::Client::AWSError<CodeGuruReviewerErrors>(CodeGuruReviewerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RecommendationId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/feedback/";
-  ss << request.GetCodeReviewArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/feedback/");
+  uri.AddPathSegment(request.GetCodeReviewArn());
   return DescribeRecommendationFeedbackOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -241,10 +233,8 @@ DescribeRepositoryAssociationOutcome CodeGuruReviewerClient::DescribeRepositoryA
     return DescribeRepositoryAssociationOutcome(Aws::Client::AWSError<CodeGuruReviewerErrors>(CodeGuruReviewerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssociationArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/associations/";
-  ss << request.GetAssociationArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/associations/");
+  uri.AddPathSegment(request.GetAssociationArn());
   return DescribeRepositoryAssociationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -274,10 +264,8 @@ DisassociateRepositoryOutcome CodeGuruReviewerClient::DisassociateRepository(con
     return DisassociateRepositoryOutcome(Aws::Client::AWSError<CodeGuruReviewerErrors>(CodeGuruReviewerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssociationArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/associations/";
-  ss << request.GetAssociationArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/associations/");
+  uri.AddPathSegment(request.GetAssociationArn());
   return DisassociateRepositoryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -307,9 +295,7 @@ ListCodeReviewsOutcome CodeGuruReviewerClient::ListCodeReviews(const ListCodeRev
     return ListCodeReviewsOutcome(Aws::Client::AWSError<CodeGuruReviewerErrors>(CodeGuruReviewerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Type]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/codereviews";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/codereviews");
   return ListCodeReviewsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -339,11 +325,9 @@ ListRecommendationFeedbackOutcome CodeGuruReviewerClient::ListRecommendationFeed
     return ListRecommendationFeedbackOutcome(Aws::Client::AWSError<CodeGuruReviewerErrors>(CodeGuruReviewerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CodeReviewArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/feedback/";
-  ss << request.GetCodeReviewArn();
-  ss << "/RecommendationFeedback";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/feedback/");
+  uri.AddPathSegment(request.GetCodeReviewArn());
+  uri.AddPathSegments("/RecommendationFeedback");
   return ListRecommendationFeedbackOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -373,11 +357,9 @@ ListRecommendationsOutcome CodeGuruReviewerClient::ListRecommendations(const Lis
     return ListRecommendationsOutcome(Aws::Client::AWSError<CodeGuruReviewerErrors>(CodeGuruReviewerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CodeReviewArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/codereviews/";
-  ss << request.GetCodeReviewArn();
-  ss << "/Recommendations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/codereviews/");
+  uri.AddPathSegment(request.GetCodeReviewArn());
+  uri.AddPathSegments("/Recommendations");
   return ListRecommendationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -402,9 +384,7 @@ void CodeGuruReviewerClient::ListRecommendationsAsyncHelper(const ListRecommenda
 ListRepositoryAssociationsOutcome CodeGuruReviewerClient::ListRepositoryAssociations(const ListRepositoryAssociationsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/associations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/associations");
   return ListRepositoryAssociationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -434,10 +414,8 @@ ListTagsForResourceOutcome CodeGuruReviewerClient::ListTagsForResource(const Lis
     return ListTagsForResourceOutcome(Aws::Client::AWSError<CodeGuruReviewerErrors>(CodeGuruReviewerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -462,9 +440,7 @@ void CodeGuruReviewerClient::ListTagsForResourceAsyncHelper(const ListTagsForRes
 PutRecommendationFeedbackOutcome CodeGuruReviewerClient::PutRecommendationFeedback(const PutRecommendationFeedbackRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/feedback";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/feedback");
   return PutRecommendationFeedbackOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -494,10 +470,8 @@ TagResourceOutcome CodeGuruReviewerClient::TagResource(const TagResourceRequest&
     return TagResourceOutcome(Aws::Client::AWSError<CodeGuruReviewerErrors>(CodeGuruReviewerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -532,10 +506,8 @@ UntagResourceOutcome CodeGuruReviewerClient::UntagResource(const UntagResourceRe
     return UntagResourceOutcome(Aws::Client::AWSError<CodeGuruReviewerErrors>(CodeGuruReviewerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 

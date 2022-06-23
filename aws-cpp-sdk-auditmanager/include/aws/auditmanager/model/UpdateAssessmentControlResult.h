@@ -33,32 +33,32 @@ namespace Model
 
 
     /**
-     * <p> The name of the updated control set returned by the
-     * <code>UpdateAssessmentControl</code> API. </p>
+     * <p> The name of the updated control set that the
+     * <code>UpdateAssessmentControl</code> API returned. </p>
      */
     inline const AssessmentControl& GetControl() const{ return m_control; }
 
     /**
-     * <p> The name of the updated control set returned by the
-     * <code>UpdateAssessmentControl</code> API. </p>
+     * <p> The name of the updated control set that the
+     * <code>UpdateAssessmentControl</code> API returned. </p>
      */
     inline void SetControl(const AssessmentControl& value) { m_control = value; }
 
     /**
-     * <p> The name of the updated control set returned by the
-     * <code>UpdateAssessmentControl</code> API. </p>
+     * <p> The name of the updated control set that the
+     * <code>UpdateAssessmentControl</code> API returned. </p>
      */
     inline void SetControl(AssessmentControl&& value) { m_control = std::move(value); }
 
     /**
-     * <p> The name of the updated control set returned by the
-     * <code>UpdateAssessmentControl</code> API. </p>
+     * <p> The name of the updated control set that the
+     * <code>UpdateAssessmentControl</code> API returned. </p>
      */
     inline UpdateAssessmentControlResult& WithControl(const AssessmentControl& value) { SetControl(value); return *this;}
 
     /**
-     * <p> The name of the updated control set returned by the
-     * <code>UpdateAssessmentControl</code> API. </p>
+     * <p> The name of the updated control set that the
+     * <code>UpdateAssessmentControl</code> API returned. </p>
      */
     inline UpdateAssessmentControlResult& WithControl(AssessmentControl&& value) { SetControl(std::move(value)); return *this;}
 

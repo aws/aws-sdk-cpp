@@ -21,6 +21,8 @@ namespace Aws
       {
 
         static const int FOLLOW_HASH = HashingUtils::HashString("FOLLOW");
+        static const int HDR10_HASH = HashingUtils::HashString("HDR10");
+        static const int HLG_2020_HASH = HashingUtils::HashString("HLG_2020");
         static const int REC_601_HASH = HashingUtils::HashString("REC_601");
         static const int REC_709_HASH = HashingUtils::HashString("REC_709");
 
@@ -31,6 +33,14 @@ namespace Aws
           if (hashCode == FOLLOW_HASH)
           {
             return VideoSelectorColorSpace::FOLLOW;
+          }
+          else if (hashCode == HDR10_HASH)
+          {
+            return VideoSelectorColorSpace::HDR10;
+          }
+          else if (hashCode == HLG_2020_HASH)
+          {
+            return VideoSelectorColorSpace::HLG_2020;
           }
           else if (hashCode == REC_601_HASH)
           {
@@ -56,6 +66,10 @@ namespace Aws
           {
           case VideoSelectorColorSpace::FOLLOW:
             return "FOLLOW";
+          case VideoSelectorColorSpace::HDR10:
+            return "HDR10";
+          case VideoSelectorColorSpace::HLG_2020:
+            return "HLG_2020";
           case VideoSelectorColorSpace::REC_601:
             return "REC_601";
           case VideoSelectorColorSpace::REC_709:

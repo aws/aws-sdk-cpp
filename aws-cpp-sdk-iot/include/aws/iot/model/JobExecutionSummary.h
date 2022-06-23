@@ -196,6 +196,31 @@ namespace Model
      */
     inline JobExecutionSummary& WithExecutionNumber(long long value) { SetExecutionNumber(value); return *this;}
 
+
+    /**
+     * <p>The number that indicates how many retry attempts have been completed for
+     * this job on this device.</p>
+     */
+    inline int GetRetryAttempt() const{ return m_retryAttempt; }
+
+    /**
+     * <p>The number that indicates how many retry attempts have been completed for
+     * this job on this device.</p>
+     */
+    inline bool RetryAttemptHasBeenSet() const { return m_retryAttemptHasBeenSet; }
+
+    /**
+     * <p>The number that indicates how many retry attempts have been completed for
+     * this job on this device.</p>
+     */
+    inline void SetRetryAttempt(int value) { m_retryAttemptHasBeenSet = true; m_retryAttempt = value; }
+
+    /**
+     * <p>The number that indicates how many retry attempts have been completed for
+     * this job on this device.</p>
+     */
+    inline JobExecutionSummary& WithRetryAttempt(int value) { SetRetryAttempt(value); return *this;}
+
   private:
 
     JobExecutionStatus m_status;
@@ -212,6 +237,9 @@ namespace Model
 
     long long m_executionNumber;
     bool m_executionNumberHasBeenSet;
+
+    int m_retryAttempt;
+    bool m_retryAttemptHasBeenSet;
   };
 
 } // namespace Model

@@ -92,50 +92,58 @@ namespace Model
 
 
     /**
-     * <p>A token returned from the previous call to <code>ListCampaigns</code> for
-     * getting the next set of campaigns (if they exist).</p>
+     * <p>A token returned from the previous call to <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListCampaigns.html">ListCampaigns</a>
+     * for getting the next set of campaigns (if they exist).</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>A token returned from the previous call to <code>ListCampaigns</code> for
-     * getting the next set of campaigns (if they exist).</p>
+     * <p>A token returned from the previous call to <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListCampaigns.html">ListCampaigns</a>
+     * for getting the next set of campaigns (if they exist).</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>A token returned from the previous call to <code>ListCampaigns</code> for
-     * getting the next set of campaigns (if they exist).</p>
+     * <p>A token returned from the previous call to <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListCampaigns.html">ListCampaigns</a>
+     * for getting the next set of campaigns (if they exist).</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>A token returned from the previous call to <code>ListCampaigns</code> for
-     * getting the next set of campaigns (if they exist).</p>
+     * <p>A token returned from the previous call to <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListCampaigns.html">ListCampaigns</a>
+     * for getting the next set of campaigns (if they exist).</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>A token returned from the previous call to <code>ListCampaigns</code> for
-     * getting the next set of campaigns (if they exist).</p>
+     * <p>A token returned from the previous call to <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListCampaigns.html">ListCampaigns</a>
+     * for getting the next set of campaigns (if they exist).</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>A token returned from the previous call to <code>ListCampaigns</code> for
-     * getting the next set of campaigns (if they exist).</p>
+     * <p>A token returned from the previous call to <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListCampaigns.html">ListCampaigns</a>
+     * for getting the next set of campaigns (if they exist).</p>
      */
     inline ListCampaignsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>A token returned from the previous call to <code>ListCampaigns</code> for
-     * getting the next set of campaigns (if they exist).</p>
+     * <p>A token returned from the previous call to <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListCampaigns.html">ListCampaigns</a>
+     * for getting the next set of campaigns (if they exist).</p>
      */
     inline ListCampaignsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>A token returned from the previous call to <code>ListCampaigns</code> for
-     * getting the next set of campaigns (if they exist).</p>
+     * <p>A token returned from the previous call to <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListCampaigns.html">ListCampaigns</a>
+     * for getting the next set of campaigns (if they exist).</p>
      */
     inline ListCampaignsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

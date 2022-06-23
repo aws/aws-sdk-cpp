@@ -85,29 +85,33 @@ namespace Model
 
 
     /**
-     * <p>The current version of your application. You can use the
-     * <a>DescribeApplication</a> operation to find the current application
+     * <p>The current version of your application. You must provide the
+     * <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>.You can
+     * use the <a>DescribeApplication</a> operation to find the current application
      * version.</p>
      */
     inline long long GetCurrentApplicationVersionId() const{ return m_currentApplicationVersionId; }
 
     /**
-     * <p>The current version of your application. You can use the
-     * <a>DescribeApplication</a> operation to find the current application
+     * <p>The current version of your application. You must provide the
+     * <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>.You can
+     * use the <a>DescribeApplication</a> operation to find the current application
      * version.</p>
      */
     inline bool CurrentApplicationVersionIdHasBeenSet() const { return m_currentApplicationVersionIdHasBeenSet; }
 
     /**
-     * <p>The current version of your application. You can use the
-     * <a>DescribeApplication</a> operation to find the current application
+     * <p>The current version of your application. You must provide the
+     * <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>.You can
+     * use the <a>DescribeApplication</a> operation to find the current application
      * version.</p>
      */
     inline void SetCurrentApplicationVersionId(long long value) { m_currentApplicationVersionIdHasBeenSet = true; m_currentApplicationVersionId = value; }
 
     /**
-     * <p>The current version of your application. You can use the
-     * <a>DescribeApplication</a> operation to find the current application
+     * <p>The current version of your application. You must provide the
+     * <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>.You can
+     * use the <a>DescribeApplication</a> operation to find the current application
      * version.</p>
      */
     inline AddApplicationInputRequest& WithCurrentApplicationVersionId(long long value) { SetCurrentApplicationVersionId(value); return *this;}

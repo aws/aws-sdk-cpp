@@ -5,6 +5,8 @@
 
 #pragma once
 #include <aws/opsworkscm/OpsWorksCM_EXPORTS.h>
+#include <aws/opsworkscm/model/Server.h>
+#include <utility>
 
 namespace Aws
 {
@@ -29,6 +31,25 @@ namespace Model
     RestoreServerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     RestoreServerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
+
+    
+    inline const Server& GetServer() const{ return m_server; }
+
+    
+    inline void SetServer(const Server& value) { m_server = value; }
+
+    
+    inline void SetServer(Server&& value) { m_server = std::move(value); }
+
+    
+    inline RestoreServerResult& WithServer(const Server& value) { SetServer(value); return *this;}
+
+    
+    inline RestoreServerResult& WithServer(Server&& value) { SetServer(std::move(value)); return *this;}
+
+  private:
+
+    Server m_server;
   };
 
 } // namespace Model

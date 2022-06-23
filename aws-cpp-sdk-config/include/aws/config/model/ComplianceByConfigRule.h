@@ -25,9 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>Indicates whether an AWS Config rule is compliant. A rule is compliant if all
-   * of the resources that the rule evaluated comply with it. A rule is noncompliant
-   * if any of these resources do not comply.</p><p><h3>See Also:</h3>   <a
+   * <p>Indicates whether an Config rule is compliant. A rule is compliant if all of
+   * the resources that the rule evaluated comply with it. A rule is noncompliant if
+   * any of these resources do not comply.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ComplianceByConfigRule">AWS
    * API Reference</a></p>
    */
@@ -41,73 +41,73 @@ namespace Model
 
 
     /**
-     * <p>The name of the AWS Config rule.</p>
+     * <p>The name of the Config rule.</p>
      */
     inline const Aws::String& GetConfigRuleName() const{ return m_configRuleName; }
 
     /**
-     * <p>The name of the AWS Config rule.</p>
+     * <p>The name of the Config rule.</p>
      */
     inline bool ConfigRuleNameHasBeenSet() const { return m_configRuleNameHasBeenSet; }
 
     /**
-     * <p>The name of the AWS Config rule.</p>
+     * <p>The name of the Config rule.</p>
      */
     inline void SetConfigRuleName(const Aws::String& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = value; }
 
     /**
-     * <p>The name of the AWS Config rule.</p>
+     * <p>The name of the Config rule.</p>
      */
     inline void SetConfigRuleName(Aws::String&& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = std::move(value); }
 
     /**
-     * <p>The name of the AWS Config rule.</p>
+     * <p>The name of the Config rule.</p>
      */
     inline void SetConfigRuleName(const char* value) { m_configRuleNameHasBeenSet = true; m_configRuleName.assign(value); }
 
     /**
-     * <p>The name of the AWS Config rule.</p>
+     * <p>The name of the Config rule.</p>
      */
     inline ComplianceByConfigRule& WithConfigRuleName(const Aws::String& value) { SetConfigRuleName(value); return *this;}
 
     /**
-     * <p>The name of the AWS Config rule.</p>
+     * <p>The name of the Config rule.</p>
      */
     inline ComplianceByConfigRule& WithConfigRuleName(Aws::String&& value) { SetConfigRuleName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the AWS Config rule.</p>
+     * <p>The name of the Config rule.</p>
      */
     inline ComplianceByConfigRule& WithConfigRuleName(const char* value) { SetConfigRuleName(value); return *this;}
 
 
     /**
-     * <p>Indicates whether the AWS Config rule is compliant.</p>
+     * <p>Indicates whether the Config rule is compliant.</p>
      */
     inline const Compliance& GetCompliance() const{ return m_compliance; }
 
     /**
-     * <p>Indicates whether the AWS Config rule is compliant.</p>
+     * <p>Indicates whether the Config rule is compliant.</p>
      */
     inline bool ComplianceHasBeenSet() const { return m_complianceHasBeenSet; }
 
     /**
-     * <p>Indicates whether the AWS Config rule is compliant.</p>
+     * <p>Indicates whether the Config rule is compliant.</p>
      */
     inline void SetCompliance(const Compliance& value) { m_complianceHasBeenSet = true; m_compliance = value; }
 
     /**
-     * <p>Indicates whether the AWS Config rule is compliant.</p>
+     * <p>Indicates whether the Config rule is compliant.</p>
      */
     inline void SetCompliance(Compliance&& value) { m_complianceHasBeenSet = true; m_compliance = std::move(value); }
 
     /**
-     * <p>Indicates whether the AWS Config rule is compliant.</p>
+     * <p>Indicates whether the Config rule is compliant.</p>
      */
     inline ComplianceByConfigRule& WithCompliance(const Compliance& value) { SetCompliance(value); return *this;}
 
     /**
-     * <p>Indicates whether the AWS Config rule is compliant.</p>
+     * <p>Indicates whether the Config rule is compliant.</p>
      */
     inline ComplianceByConfigRule& WithCompliance(Compliance&& value) { SetCompliance(std::move(value)); return *this;}
 

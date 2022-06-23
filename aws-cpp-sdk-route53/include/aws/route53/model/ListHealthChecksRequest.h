@@ -22,7 +22,7 @@ namespace Model
 
   /**
    * <p>A request to retrieve a list of the health checks that are associated with
-   * the current AWS account.</p><p><h3>See Also:</h3>   <a
+   * the current Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHealthChecksRequest">AWS
    * API Reference</a></p>
    */

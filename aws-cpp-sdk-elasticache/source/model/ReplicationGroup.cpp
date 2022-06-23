@@ -50,7 +50,11 @@ ReplicationGroup::ReplicationGroup() :
     m_memberClustersOutpostArnsHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
     m_aRNHasBeenSet(false),
-    m_userGroupIdsHasBeenSet(false)
+    m_userGroupIdsHasBeenSet(false),
+    m_logDeliveryConfigurationsHasBeenSet(false),
+    m_replicationGroupCreateTimeHasBeenSet(false),
+    m_dataTiering(DataTieringStatus::NOT_SET),
+    m_dataTieringHasBeenSet(false)
 {
 }
 
@@ -84,7 +88,11 @@ ReplicationGroup::ReplicationGroup(const XmlNode& xmlNode) :
     m_memberClustersOutpostArnsHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
     m_aRNHasBeenSet(false),
-    m_userGroupIdsHasBeenSet(false)
+    m_userGroupIdsHasBeenSet(false),
+    m_logDeliveryConfigurationsHasBeenSet(false),
+    m_replicationGroupCreateTimeHasBeenSet(false),
+    m_dataTiering(DataTieringStatus::NOT_SET),
+    m_dataTieringHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -257,6 +265,30 @@ ReplicationGroup& ReplicationGroup::operator =(const XmlNode& xmlNode)
 
       m_userGroupIdsHasBeenSet = true;
     }
+    XmlNode logDeliveryConfigurationsNode = resultNode.FirstChild("LogDeliveryConfigurations");
+    if(!logDeliveryConfigurationsNode.IsNull())
+    {
+      XmlNode logDeliveryConfigurationsMember = logDeliveryConfigurationsNode.FirstChild("LogDeliveryConfiguration");
+      while(!logDeliveryConfigurationsMember.IsNull())
+      {
+        m_logDeliveryConfigurations.push_back(logDeliveryConfigurationsMember);
+        logDeliveryConfigurationsMember = logDeliveryConfigurationsMember.NextNode("LogDeliveryConfiguration");
+      }
+
+      m_logDeliveryConfigurationsHasBeenSet = true;
+    }
+    XmlNode replicationGroupCreateTimeNode = resultNode.FirstChild("ReplicationGroupCreateTime");
+    if(!replicationGroupCreateTimeNode.IsNull())
+    {
+      m_replicationGroupCreateTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(replicationGroupCreateTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_replicationGroupCreateTimeHasBeenSet = true;
+    }
+    XmlNode dataTieringNode = resultNode.FirstChild("DataTiering");
+    if(!dataTieringNode.IsNull())
+    {
+      m_dataTiering = DataTieringStatusMapper::GetDataTieringStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dataTieringNode.GetText()).c_str()).c_str());
+      m_dataTieringHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -403,6 +435,27 @@ void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       }
   }
 
+  if(m_logDeliveryConfigurationsHasBeenSet)
+  {
+      unsigned logDeliveryConfigurationsIdx = 1;
+      for(auto& item : m_logDeliveryConfigurations)
+      {
+        Aws::StringStream logDeliveryConfigurationsSs;
+        logDeliveryConfigurationsSs << location << index << locationValue << ".LogDeliveryConfiguration." << logDeliveryConfigurationsIdx++;
+        item.OutputToStream(oStream, logDeliveryConfigurationsSs.str().c_str());
+      }
+  }
+
+  if(m_replicationGroupCreateTimeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ReplicationGroupCreateTime=" << StringUtils::URLEncode(m_replicationGroupCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+
+  if(m_dataTieringHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DataTiering=" << DataTieringStatusMapper::GetNameForDataTieringStatus(m_dataTiering) << "&";
+  }
+
 }
 
 void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -522,6 +575,24 @@ void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       {
         oStream << location << ".UserGroupIds.member." << userGroupIdsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
+  }
+  if(m_logDeliveryConfigurationsHasBeenSet)
+  {
+      unsigned logDeliveryConfigurationsIdx = 1;
+      for(auto& item : m_logDeliveryConfigurations)
+      {
+        Aws::StringStream logDeliveryConfigurationsSs;
+        logDeliveryConfigurationsSs << location <<  ".LogDeliveryConfiguration." << logDeliveryConfigurationsIdx++;
+        item.OutputToStream(oStream, logDeliveryConfigurationsSs.str().c_str());
+      }
+  }
+  if(m_replicationGroupCreateTimeHasBeenSet)
+  {
+      oStream << location << ".ReplicationGroupCreateTime=" << StringUtils::URLEncode(m_replicationGroupCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if(m_dataTieringHasBeenSet)
+  {
+      oStream << location << ".DataTiering=" << DataTieringStatusMapper::GetNameForDataTieringStatus(m_dataTiering) << "&";
   }
 }
 

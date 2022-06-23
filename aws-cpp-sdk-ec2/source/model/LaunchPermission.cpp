@@ -23,14 +23,18 @@ namespace Model
 LaunchPermission::LaunchPermission() : 
     m_group(PermissionGroup::NOT_SET),
     m_groupHasBeenSet(false),
-    m_userIdHasBeenSet(false)
+    m_userIdHasBeenSet(false),
+    m_organizationArnHasBeenSet(false),
+    m_organizationalUnitArnHasBeenSet(false)
 {
 }
 
 LaunchPermission::LaunchPermission(const XmlNode& xmlNode) : 
     m_group(PermissionGroup::NOT_SET),
     m_groupHasBeenSet(false),
-    m_userIdHasBeenSet(false)
+    m_userIdHasBeenSet(false),
+    m_organizationArnHasBeenSet(false),
+    m_organizationalUnitArnHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -53,6 +57,18 @@ LaunchPermission& LaunchPermission::operator =(const XmlNode& xmlNode)
       m_userId = Aws::Utils::Xml::DecodeEscapedXmlText(userIdNode.GetText());
       m_userIdHasBeenSet = true;
     }
+    XmlNode organizationArnNode = resultNode.FirstChild("organizationArn");
+    if(!organizationArnNode.IsNull())
+    {
+      m_organizationArn = Aws::Utils::Xml::DecodeEscapedXmlText(organizationArnNode.GetText());
+      m_organizationArnHasBeenSet = true;
+    }
+    XmlNode organizationalUnitArnNode = resultNode.FirstChild("organizationalUnitArn");
+    if(!organizationalUnitArnNode.IsNull())
+    {
+      m_organizationalUnitArn = Aws::Utils::Xml::DecodeEscapedXmlText(organizationalUnitArnNode.GetText());
+      m_organizationalUnitArnHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -70,6 +86,16 @@ void LaunchPermission::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << index << locationValue << ".UserId=" << StringUtils::URLEncode(m_userId.c_str()) << "&";
   }
 
+  if(m_organizationArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".OrganizationArn=" << StringUtils::URLEncode(m_organizationArn.c_str()) << "&";
+  }
+
+  if(m_organizationalUnitArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".OrganizationalUnitArn=" << StringUtils::URLEncode(m_organizationalUnitArn.c_str()) << "&";
+  }
+
 }
 
 void LaunchPermission::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -81,6 +107,14 @@ void LaunchPermission::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_userIdHasBeenSet)
   {
       oStream << location << ".UserId=" << StringUtils::URLEncode(m_userId.c_str()) << "&";
+  }
+  if(m_organizationArnHasBeenSet)
+  {
+      oStream << location << ".OrganizationArn=" << StringUtils::URLEncode(m_organizationArn.c_str()) << "&";
+  }
+  if(m_organizationalUnitArnHasBeenSet)
+  {
+      oStream << location << ".OrganizationalUnitArn=" << StringUtils::URLEncode(m_organizationalUnitArn.c_str()) << "&";
   }
 }
 

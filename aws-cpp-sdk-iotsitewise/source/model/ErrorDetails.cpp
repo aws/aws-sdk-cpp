@@ -21,14 +21,16 @@ namespace Model
 ErrorDetails::ErrorDetails() : 
     m_code(ErrorCode::NOT_SET),
     m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+    m_messageHasBeenSet(false),
+    m_detailsHasBeenSet(false)
 {
 }
 
 ErrorDetails::ErrorDetails(JsonView jsonValue) : 
     m_code(ErrorCode::NOT_SET),
     m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+    m_messageHasBeenSet(false),
+    m_detailsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -49,6 +51,16 @@ ErrorDetails& ErrorDetails::operator =(JsonView jsonValue)
     m_messageHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("details"))
+  {
+    Array<JsonView> detailsJsonList = jsonValue.GetArray("details");
+    for(unsigned detailsIndex = 0; detailsIndex < detailsJsonList.GetLength(); ++detailsIndex)
+    {
+      m_details.push_back(detailsJsonList[detailsIndex].AsObject());
+    }
+    m_detailsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -64,6 +76,17 @@ JsonValue ErrorDetails::Jsonize() const
   if(m_messageHasBeenSet)
   {
    payload.WithString("message", m_message);
+
+  }
+
+  if(m_detailsHasBeenSet)
+  {
+   Array<JsonValue> detailsJsonList(m_details.size());
+   for(unsigned detailsIndex = 0; detailsIndex < detailsJsonList.GetLength(); ++detailsIndex)
+   {
+     detailsJsonList[detailsIndex].AsObject(m_details[detailsIndex].Jsonize());
+   }
+   payload.WithArray("details", std::move(detailsJsonList));
 
   }
 

@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>AWS IoT Greengrass can't process your request right now. Try again
+   * <p>IoT Greengrass can't process your request right now. Try again
    * later.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/InternalServerException">AWS
    * API Reference</a></p>

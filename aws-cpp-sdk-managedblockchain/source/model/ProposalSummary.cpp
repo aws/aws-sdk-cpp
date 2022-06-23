@@ -26,7 +26,8 @@ ProposalSummary::ProposalSummary() :
     m_status(ProposalStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_creationDateHasBeenSet(false),
-    m_expirationDateHasBeenSet(false)
+    m_expirationDateHasBeenSet(false),
+    m_arnHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ ProposalSummary::ProposalSummary(JsonView jsonValue) :
     m_status(ProposalStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_creationDateHasBeenSet(false),
-    m_expirationDateHasBeenSet(false)
+    m_expirationDateHasBeenSet(false),
+    m_arnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -94,6 +96,13 @@ ProposalSummary& ProposalSummary::operator =(JsonView jsonValue)
     m_expirationDateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Arn"))
+  {
+    m_arn = jsonValue.GetString("Arn");
+
+    m_arnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -138,6 +147,12 @@ JsonValue ProposalSummary::Jsonize() const
   if(m_expirationDateHasBeenSet)
   {
    payload.WithString("ExpirationDate", m_expirationDate.ToGmtString(DateFormat::ISO_8601));
+  }
+
+  if(m_arnHasBeenSet)
+  {
+   payload.WithString("Arn", m_arn);
+
   }
 
   return payload;

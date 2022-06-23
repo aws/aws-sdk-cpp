@@ -21,6 +21,8 @@ namespace Model
 ManagedRuleGroupSummary::ManagedRuleGroupSummary() : 
     m_vendorNameHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_versioningSupported(false),
+    m_versioningSupportedHasBeenSet(false),
     m_descriptionHasBeenSet(false)
 {
 }
@@ -28,6 +30,8 @@ ManagedRuleGroupSummary::ManagedRuleGroupSummary() :
 ManagedRuleGroupSummary::ManagedRuleGroupSummary(JsonView jsonValue) : 
     m_vendorNameHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_versioningSupported(false),
+    m_versioningSupportedHasBeenSet(false),
     m_descriptionHasBeenSet(false)
 {
   *this = jsonValue;
@@ -47,6 +51,13 @@ ManagedRuleGroupSummary& ManagedRuleGroupSummary::operator =(JsonView jsonValue)
     m_name = jsonValue.GetString("Name");
 
     m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("VersioningSupported"))
+  {
+    m_versioningSupported = jsonValue.GetBool("VersioningSupported");
+
+    m_versioningSupportedHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Description"))
@@ -72,6 +83,12 @@ JsonValue ManagedRuleGroupSummary::Jsonize() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_versioningSupportedHasBeenSet)
+  {
+   payload.WithBool("VersioningSupported", m_versioningSupported);
 
   }
 

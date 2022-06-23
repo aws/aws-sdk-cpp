@@ -16,11 +16,17 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetAccuracyMetricsResult::GetAccuracyMetricsResult()
+GetAccuracyMetricsResult::GetAccuracyMetricsResult() : 
+    m_isAutoPredictor(false),
+    m_autoMLOverrideStrategy(AutoMLOverrideStrategy::NOT_SET),
+    m_optimizationMetric(OptimizationMetric::NOT_SET)
 {
 }
 
-GetAccuracyMetricsResult::GetAccuracyMetricsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+GetAccuracyMetricsResult::GetAccuracyMetricsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_isAutoPredictor(false),
+    m_autoMLOverrideStrategy(AutoMLOverrideStrategy::NOT_SET),
+    m_optimizationMetric(OptimizationMetric::NOT_SET)
 {
   *this = result;
 }
@@ -35,6 +41,24 @@ GetAccuracyMetricsResult& GetAccuracyMetricsResult::operator =(const Aws::Amazon
     {
       m_predictorEvaluationResults.push_back(predictorEvaluationResultsJsonList[predictorEvaluationResultsIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("IsAutoPredictor"))
+  {
+    m_isAutoPredictor = jsonValue.GetBool("IsAutoPredictor");
+
+  }
+
+  if(jsonValue.ValueExists("AutoMLOverrideStrategy"))
+  {
+    m_autoMLOverrideStrategy = AutoMLOverrideStrategyMapper::GetAutoMLOverrideStrategyForName(jsonValue.GetString("AutoMLOverrideStrategy"));
+
+  }
+
+  if(jsonValue.ValueExists("OptimizationMetric"))
+  {
+    m_optimizationMetric = OptimizationMetricMapper::GetOptimizationMetricForName(jsonValue.GetString("OptimizationMetric"));
+
   }
 
 

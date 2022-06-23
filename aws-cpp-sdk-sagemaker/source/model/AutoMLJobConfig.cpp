@@ -20,13 +20,15 @@ namespace Model
 
 AutoMLJobConfig::AutoMLJobConfig() : 
     m_completionCriteriaHasBeenSet(false),
-    m_securityConfigHasBeenSet(false)
+    m_securityConfigHasBeenSet(false),
+    m_dataSplitConfigHasBeenSet(false)
 {
 }
 
 AutoMLJobConfig::AutoMLJobConfig(JsonView jsonValue) : 
     m_completionCriteriaHasBeenSet(false),
-    m_securityConfigHasBeenSet(false)
+    m_securityConfigHasBeenSet(false),
+    m_dataSplitConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,13 @@ AutoMLJobConfig& AutoMLJobConfig::operator =(JsonView jsonValue)
     m_securityConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DataSplitConfig"))
+  {
+    m_dataSplitConfig = jsonValue.GetObject("DataSplitConfig");
+
+    m_dataSplitConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,12 @@ JsonValue AutoMLJobConfig::Jsonize() const
   if(m_securityConfigHasBeenSet)
   {
    payload.WithObject("SecurityConfig", m_securityConfig.Jsonize());
+
+  }
+
+  if(m_dataSplitConfigHasBeenSet)
+  {
+   payload.WithObject("DataSplitConfig", m_dataSplitConfig.Jsonize());
 
   }
 

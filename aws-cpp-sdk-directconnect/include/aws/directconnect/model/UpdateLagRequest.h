@@ -140,6 +140,55 @@ namespace Model
      */
     inline UpdateLagRequest& WithMinimumLinks(int value) { SetMinimumLinks(value); return *this;}
 
+
+    /**
+     * <p>The LAG MAC Security (MACsec) encryption mode.</p> <p>Amazon Web Services
+     * applies the value to all connections which are part of the LAG.</p>
+     */
+    inline const Aws::String& GetEncryptionMode() const{ return m_encryptionMode; }
+
+    /**
+     * <p>The LAG MAC Security (MACsec) encryption mode.</p> <p>Amazon Web Services
+     * applies the value to all connections which are part of the LAG.</p>
+     */
+    inline bool EncryptionModeHasBeenSet() const { return m_encryptionModeHasBeenSet; }
+
+    /**
+     * <p>The LAG MAC Security (MACsec) encryption mode.</p> <p>Amazon Web Services
+     * applies the value to all connections which are part of the LAG.</p>
+     */
+    inline void SetEncryptionMode(const Aws::String& value) { m_encryptionModeHasBeenSet = true; m_encryptionMode = value; }
+
+    /**
+     * <p>The LAG MAC Security (MACsec) encryption mode.</p> <p>Amazon Web Services
+     * applies the value to all connections which are part of the LAG.</p>
+     */
+    inline void SetEncryptionMode(Aws::String&& value) { m_encryptionModeHasBeenSet = true; m_encryptionMode = std::move(value); }
+
+    /**
+     * <p>The LAG MAC Security (MACsec) encryption mode.</p> <p>Amazon Web Services
+     * applies the value to all connections which are part of the LAG.</p>
+     */
+    inline void SetEncryptionMode(const char* value) { m_encryptionModeHasBeenSet = true; m_encryptionMode.assign(value); }
+
+    /**
+     * <p>The LAG MAC Security (MACsec) encryption mode.</p> <p>Amazon Web Services
+     * applies the value to all connections which are part of the LAG.</p>
+     */
+    inline UpdateLagRequest& WithEncryptionMode(const Aws::String& value) { SetEncryptionMode(value); return *this;}
+
+    /**
+     * <p>The LAG MAC Security (MACsec) encryption mode.</p> <p>Amazon Web Services
+     * applies the value to all connections which are part of the LAG.</p>
+     */
+    inline UpdateLagRequest& WithEncryptionMode(Aws::String&& value) { SetEncryptionMode(std::move(value)); return *this;}
+
+    /**
+     * <p>The LAG MAC Security (MACsec) encryption mode.</p> <p>Amazon Web Services
+     * applies the value to all connections which are part of the LAG.</p>
+     */
+    inline UpdateLagRequest& WithEncryptionMode(const char* value) { SetEncryptionMode(value); return *this;}
+
   private:
 
     Aws::String m_lagId;
@@ -150,6 +199,9 @@ namespace Model
 
     int m_minimumLinks;
     bool m_minimumLinksHasBeenSet;
+
+    Aws::String m_encryptionMode;
+    bool m_encryptionModeHasBeenSet;
   };
 
 } // namespace Model

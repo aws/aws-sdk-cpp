@@ -40,38 +40,38 @@ namespace Model
 
 
     /**
-     * <p>The source of the event. Currently only managed AWS CloudWatch Events rules
-     * are supported.</p>
+     * <p>The source of the event. Currently only managed CloudWatch Events rules are
+     * supported.</p>
      */
     inline const EventSourceValues& GetType() const{ return m_type; }
 
     /**
-     * <p>The source of the event. Currently only managed AWS CloudWatch Events rules
-     * are supported.</p>
+     * <p>The source of the event. Currently only managed CloudWatch Events rules are
+     * supported.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The source of the event. Currently only managed AWS CloudWatch Events rules
-     * are supported.</p>
+     * <p>The source of the event. Currently only managed CloudWatch Events rules are
+     * supported.</p>
      */
     inline void SetType(const EventSourceValues& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The source of the event. Currently only managed AWS CloudWatch Events rules
-     * are supported.</p>
+     * <p>The source of the event. Currently only managed CloudWatch Events rules are
+     * supported.</p>
      */
     inline void SetType(EventSourceValues&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The source of the event. Currently only managed AWS CloudWatch Events rules
-     * are supported.</p>
+     * <p>The source of the event. Currently only managed CloudWatch Events rules are
+     * supported.</p>
      */
     inline EventSource& WithType(const EventSourceValues& value) { SetType(value); return *this;}
 
     /**
-     * <p>The source of the event. Currently only managed AWS CloudWatch Events rules
-     * are supported.</p>
+     * <p>The source of the event. Currently only managed CloudWatch Events rules are
+     * supported.</p>
      */
     inline EventSource& WithType(EventSourceValues&& value) { SetType(std::move(value)); return *this;}
 

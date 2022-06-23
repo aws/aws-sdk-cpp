@@ -29,10 +29,10 @@ namespace Model
    * Fleet is of type <code>instant</code>.</p>  <p>For more information about
    * Capacity Reservations, see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html">On-Demand
-   * Capacity Reservations</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-   * For examples of using Capacity Reservations in an EC2 Fleet, see <a
+   * Capacity Reservations</a> in the <i>Amazon EC2 User Guide</i>. For examples of
+   * using Capacity Reservations in an EC2 Fleet, see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-examples.html">EC2
-   * Fleet example configurations</a> in the <i>Amazon Elastic Compute Cloud User
+   * Fleet example configurations</a> in the <i>Amazon EC2 User
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CapacityReservationOptionsRequest">AWS
    * API Reference</a></p>

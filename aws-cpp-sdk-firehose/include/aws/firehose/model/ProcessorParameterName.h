@@ -18,9 +18,13 @@ namespace Model
     NOT_SET,
     LambdaArn,
     NumberOfRetries,
+    MetadataExtractionQuery,
+    JsonParsingEngine,
     RoleArn,
     BufferSizeInMBs,
-    BufferIntervalInSeconds
+    BufferIntervalInSeconds,
+    SubRecordType,
+    Delimiter
   };
 
 namespace ProcessorParameterNameMapper

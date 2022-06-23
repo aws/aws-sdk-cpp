@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The AWS Organizations organizational unit data source for the
-   * sync.</p><p><h3>See Also:</h3>   <a
+   * <p>The Organizations organizational unit data source for the sync.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResourceDataSyncOrganizationalUnit">AWS
    * API Reference</a></p>
    */
@@ -39,42 +39,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS Organization unit ID data source for the sync.</p>
+     * <p>The Organizations unit ID data source for the sync.</p>
      */
     inline const Aws::String& GetOrganizationalUnitId() const{ return m_organizationalUnitId; }
 
     /**
-     * <p>The AWS Organization unit ID data source for the sync.</p>
+     * <p>The Organizations unit ID data source for the sync.</p>
      */
     inline bool OrganizationalUnitIdHasBeenSet() const { return m_organizationalUnitIdHasBeenSet; }
 
     /**
-     * <p>The AWS Organization unit ID data source for the sync.</p>
+     * <p>The Organizations unit ID data source for the sync.</p>
      */
     inline void SetOrganizationalUnitId(const Aws::String& value) { m_organizationalUnitIdHasBeenSet = true; m_organizationalUnitId = value; }
 
     /**
-     * <p>The AWS Organization unit ID data source for the sync.</p>
+     * <p>The Organizations unit ID data source for the sync.</p>
      */
     inline void SetOrganizationalUnitId(Aws::String&& value) { m_organizationalUnitIdHasBeenSet = true; m_organizationalUnitId = std::move(value); }
 
     /**
-     * <p>The AWS Organization unit ID data source for the sync.</p>
+     * <p>The Organizations unit ID data source for the sync.</p>
      */
     inline void SetOrganizationalUnitId(const char* value) { m_organizationalUnitIdHasBeenSet = true; m_organizationalUnitId.assign(value); }
 
     /**
-     * <p>The AWS Organization unit ID data source for the sync.</p>
+     * <p>The Organizations unit ID data source for the sync.</p>
      */
     inline ResourceDataSyncOrganizationalUnit& WithOrganizationalUnitId(const Aws::String& value) { SetOrganizationalUnitId(value); return *this;}
 
     /**
-     * <p>The AWS Organization unit ID data source for the sync.</p>
+     * <p>The Organizations unit ID data source for the sync.</p>
      */
     inline ResourceDataSyncOrganizationalUnit& WithOrganizationalUnitId(Aws::String&& value) { SetOrganizationalUnitId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Organization unit ID data source for the sync.</p>
+     * <p>The Organizations unit ID data source for the sync.</p>
      */
     inline ResourceDataSyncOrganizationalUnit& WithOrganizationalUnitId(const char* value) { SetOrganizationalUnitId(value); return *this;}
 

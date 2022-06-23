@@ -39,50 +39,42 @@ namespace Model
 
 
     /**
-     * <p>Specify an ID for this resource. For a managed instance, this is the instance
-     * ID.</p>
+     * <p>Specify an ID for this resource. For a managed node, this is the node ID.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
 
     /**
-     * <p>Specify an ID for this resource. For a managed instance, this is the instance
-     * ID.</p>
+     * <p>Specify an ID for this resource. For a managed node, this is the node ID.</p>
      */
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
     /**
-     * <p>Specify an ID for this resource. For a managed instance, this is the instance
-     * ID.</p>
+     * <p>Specify an ID for this resource. For a managed node, this is the node ID.</p>
      */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
-     * <p>Specify an ID for this resource. For a managed instance, this is the instance
-     * ID.</p>
+     * <p>Specify an ID for this resource. For a managed node, this is the node ID.</p>
      */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
-     * <p>Specify an ID for this resource. For a managed instance, this is the instance
-     * ID.</p>
+     * <p>Specify an ID for this resource. For a managed node, this is the node ID.</p>
      */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
 
     /**
-     * <p>Specify an ID for this resource. For a managed instance, this is the instance
-     * ID.</p>
+     * <p>Specify an ID for this resource. For a managed node, this is the node ID.</p>
      */
     inline PutComplianceItemsRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
 
     /**
-     * <p>Specify an ID for this resource. For a managed instance, this is the instance
-     * ID.</p>
+     * <p>Specify an ID for this resource. For a managed node, this is the node ID.</p>
      */
     inline PutComplianceItemsRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
-     * <p>Specify an ID for this resource. For a managed instance, this is the instance
-     * ID.</p>
+     * <p>Specify an ID for this resource. For a managed node, this is the node ID.</p>
      */
     inline PutComplianceItemsRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 

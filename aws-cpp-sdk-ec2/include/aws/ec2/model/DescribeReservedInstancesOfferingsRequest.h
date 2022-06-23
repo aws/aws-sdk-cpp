@@ -99,23 +99,25 @@ namespace Model
      * reservation.</p> </li> <li> <p> <code>marketplace</code> - Set to
      * <code>true</code> to show only Reserved Instance Marketplace offerings. When
      * this filter is not used, which is the default behavior, all offerings from both
-     * AWS and the Reserved Instance Marketplace are listed.</p> </li> <li> <p>
-     * <code>product-description</code> - The Reserved Instance product platform
-     * description. Instances that include <code>(Amazon VPC)</code> in the product
-     * platform description will only be displayed to EC2-Classic account holders and
-     * are for use with Amazon VPC. (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon
-     * VPC)</code> | <code>SUSE Linux</code> | <code>SUSE Linux (Amazon VPC)</code> |
-     * <code>Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux (Amazon
-     * VPC)</code> | <code>Windows</code> | <code>Windows (Amazon VPC)</code> |
-     * <code>Windows with SQL Server Standard</code> | <code>Windows with SQL Server
-     * Standard (Amazon VPC)</code> | <code>Windows with SQL Server Web</code> | <code>
-     * Windows with SQL Server Web (Amazon VPC)</code> | <code>Windows with SQL Server
-     * Enterprise</code> | <code>Windows with SQL Server Enterprise (Amazon
-     * VPC)</code>) </p> </li> <li> <p> <code>reserved-instances-offering-id</code> -
-     * The Reserved Instances offering ID.</p> </li> <li> <p> <code>scope</code> - The
-     * scope of the Reserved Instance (<code>Availability Zone</code> or
-     * <code>Region</code>).</p> </li> <li> <p> <code>usage-price</code> - The usage
-     * price of the Reserved Instance, per hour (for example, 0.84).</p> </li> </ul>
+     * Amazon Web Services and the Reserved Instance Marketplace are listed.</p> </li>
+     * <li> <p> <code>product-description</code> - The Reserved Instance product
+     * platform description. Instances that include <code>(Amazon VPC)</code> in the
+     * product platform description will only be displayed to EC2-Classic account
+     * holders and are for use with Amazon VPC. (<code>Linux/UNIX</code> |
+     * <code>Linux/UNIX (Amazon VPC)</code> | <code>SUSE Linux</code> | <code>SUSE
+     * Linux (Amazon VPC)</code> | <code>Red Hat Enterprise Linux</code> | <code>Red
+     * Hat Enterprise Linux (Amazon VPC)</code> | <code>Red Hat Enterprise Linux with
+     * HA (Amazon VPC)</code> | <code>Windows</code> | <code>Windows (Amazon
+     * VPC)</code> | <code>Windows with SQL Server Standard</code> | <code>Windows with
+     * SQL Server Standard (Amazon VPC)</code> | <code>Windows with SQL Server
+     * Web</code> | <code> Windows with SQL Server Web (Amazon VPC)</code> |
+     * <code>Windows with SQL Server Enterprise</code> | <code>Windows with SQL Server
+     * Enterprise (Amazon VPC)</code>) </p> </li> <li> <p>
+     * <code>reserved-instances-offering-id</code> - The Reserved Instances offering
+     * ID.</p> </li> <li> <p> <code>scope</code> - The scope of the Reserved Instance
+     * (<code>Availability Zone</code> or <code>Region</code>).</p> </li> <li> <p>
+     * <code>usage-price</code> - The usage price of the Reserved Instance, per hour
+     * (for example, 0.84).</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
@@ -130,23 +132,25 @@ namespace Model
      * reservation.</p> </li> <li> <p> <code>marketplace</code> - Set to
      * <code>true</code> to show only Reserved Instance Marketplace offerings. When
      * this filter is not used, which is the default behavior, all offerings from both
-     * AWS and the Reserved Instance Marketplace are listed.</p> </li> <li> <p>
-     * <code>product-description</code> - The Reserved Instance product platform
-     * description. Instances that include <code>(Amazon VPC)</code> in the product
-     * platform description will only be displayed to EC2-Classic account holders and
-     * are for use with Amazon VPC. (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon
-     * VPC)</code> | <code>SUSE Linux</code> | <code>SUSE Linux (Amazon VPC)</code> |
-     * <code>Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux (Amazon
-     * VPC)</code> | <code>Windows</code> | <code>Windows (Amazon VPC)</code> |
-     * <code>Windows with SQL Server Standard</code> | <code>Windows with SQL Server
-     * Standard (Amazon VPC)</code> | <code>Windows with SQL Server Web</code> | <code>
-     * Windows with SQL Server Web (Amazon VPC)</code> | <code>Windows with SQL Server
-     * Enterprise</code> | <code>Windows with SQL Server Enterprise (Amazon
-     * VPC)</code>) </p> </li> <li> <p> <code>reserved-instances-offering-id</code> -
-     * The Reserved Instances offering ID.</p> </li> <li> <p> <code>scope</code> - The
-     * scope of the Reserved Instance (<code>Availability Zone</code> or
-     * <code>Region</code>).</p> </li> <li> <p> <code>usage-price</code> - The usage
-     * price of the Reserved Instance, per hour (for example, 0.84).</p> </li> </ul>
+     * Amazon Web Services and the Reserved Instance Marketplace are listed.</p> </li>
+     * <li> <p> <code>product-description</code> - The Reserved Instance product
+     * platform description. Instances that include <code>(Amazon VPC)</code> in the
+     * product platform description will only be displayed to EC2-Classic account
+     * holders and are for use with Amazon VPC. (<code>Linux/UNIX</code> |
+     * <code>Linux/UNIX (Amazon VPC)</code> | <code>SUSE Linux</code> | <code>SUSE
+     * Linux (Amazon VPC)</code> | <code>Red Hat Enterprise Linux</code> | <code>Red
+     * Hat Enterprise Linux (Amazon VPC)</code> | <code>Red Hat Enterprise Linux with
+     * HA (Amazon VPC)</code> | <code>Windows</code> | <code>Windows (Amazon
+     * VPC)</code> | <code>Windows with SQL Server Standard</code> | <code>Windows with
+     * SQL Server Standard (Amazon VPC)</code> | <code>Windows with SQL Server
+     * Web</code> | <code> Windows with SQL Server Web (Amazon VPC)</code> |
+     * <code>Windows with SQL Server Enterprise</code> | <code>Windows with SQL Server
+     * Enterprise (Amazon VPC)</code>) </p> </li> <li> <p>
+     * <code>reserved-instances-offering-id</code> - The Reserved Instances offering
+     * ID.</p> </li> <li> <p> <code>scope</code> - The scope of the Reserved Instance
+     * (<code>Availability Zone</code> or <code>Region</code>).</p> </li> <li> <p>
+     * <code>usage-price</code> - The usage price of the Reserved Instance, per hour
+     * (for example, 0.84).</p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
@@ -161,23 +165,25 @@ namespace Model
      * reservation.</p> </li> <li> <p> <code>marketplace</code> - Set to
      * <code>true</code> to show only Reserved Instance Marketplace offerings. When
      * this filter is not used, which is the default behavior, all offerings from both
-     * AWS and the Reserved Instance Marketplace are listed.</p> </li> <li> <p>
-     * <code>product-description</code> - The Reserved Instance product platform
-     * description. Instances that include <code>(Amazon VPC)</code> in the product
-     * platform description will only be displayed to EC2-Classic account holders and
-     * are for use with Amazon VPC. (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon
-     * VPC)</code> | <code>SUSE Linux</code> | <code>SUSE Linux (Amazon VPC)</code> |
-     * <code>Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux (Amazon
-     * VPC)</code> | <code>Windows</code> | <code>Windows (Amazon VPC)</code> |
-     * <code>Windows with SQL Server Standard</code> | <code>Windows with SQL Server
-     * Standard (Amazon VPC)</code> | <code>Windows with SQL Server Web</code> | <code>
-     * Windows with SQL Server Web (Amazon VPC)</code> | <code>Windows with SQL Server
-     * Enterprise</code> | <code>Windows with SQL Server Enterprise (Amazon
-     * VPC)</code>) </p> </li> <li> <p> <code>reserved-instances-offering-id</code> -
-     * The Reserved Instances offering ID.</p> </li> <li> <p> <code>scope</code> - The
-     * scope of the Reserved Instance (<code>Availability Zone</code> or
-     * <code>Region</code>).</p> </li> <li> <p> <code>usage-price</code> - The usage
-     * price of the Reserved Instance, per hour (for example, 0.84).</p> </li> </ul>
+     * Amazon Web Services and the Reserved Instance Marketplace are listed.</p> </li>
+     * <li> <p> <code>product-description</code> - The Reserved Instance product
+     * platform description. Instances that include <code>(Amazon VPC)</code> in the
+     * product platform description will only be displayed to EC2-Classic account
+     * holders and are for use with Amazon VPC. (<code>Linux/UNIX</code> |
+     * <code>Linux/UNIX (Amazon VPC)</code> | <code>SUSE Linux</code> | <code>SUSE
+     * Linux (Amazon VPC)</code> | <code>Red Hat Enterprise Linux</code> | <code>Red
+     * Hat Enterprise Linux (Amazon VPC)</code> | <code>Red Hat Enterprise Linux with
+     * HA (Amazon VPC)</code> | <code>Windows</code> | <code>Windows (Amazon
+     * VPC)</code> | <code>Windows with SQL Server Standard</code> | <code>Windows with
+     * SQL Server Standard (Amazon VPC)</code> | <code>Windows with SQL Server
+     * Web</code> | <code> Windows with SQL Server Web (Amazon VPC)</code> |
+     * <code>Windows with SQL Server Enterprise</code> | <code>Windows with SQL Server
+     * Enterprise (Amazon VPC)</code>) </p> </li> <li> <p>
+     * <code>reserved-instances-offering-id</code> - The Reserved Instances offering
+     * ID.</p> </li> <li> <p> <code>scope</code> - The scope of the Reserved Instance
+     * (<code>Availability Zone</code> or <code>Region</code>).</p> </li> <li> <p>
+     * <code>usage-price</code> - The usage price of the Reserved Instance, per hour
+     * (for example, 0.84).</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
@@ -192,23 +198,25 @@ namespace Model
      * reservation.</p> </li> <li> <p> <code>marketplace</code> - Set to
      * <code>true</code> to show only Reserved Instance Marketplace offerings. When
      * this filter is not used, which is the default behavior, all offerings from both
-     * AWS and the Reserved Instance Marketplace are listed.</p> </li> <li> <p>
-     * <code>product-description</code> - The Reserved Instance product platform
-     * description. Instances that include <code>(Amazon VPC)</code> in the product
-     * platform description will only be displayed to EC2-Classic account holders and
-     * are for use with Amazon VPC. (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon
-     * VPC)</code> | <code>SUSE Linux</code> | <code>SUSE Linux (Amazon VPC)</code> |
-     * <code>Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux (Amazon
-     * VPC)</code> | <code>Windows</code> | <code>Windows (Amazon VPC)</code> |
-     * <code>Windows with SQL Server Standard</code> | <code>Windows with SQL Server
-     * Standard (Amazon VPC)</code> | <code>Windows with SQL Server Web</code> | <code>
-     * Windows with SQL Server Web (Amazon VPC)</code> | <code>Windows with SQL Server
-     * Enterprise</code> | <code>Windows with SQL Server Enterprise (Amazon
-     * VPC)</code>) </p> </li> <li> <p> <code>reserved-instances-offering-id</code> -
-     * The Reserved Instances offering ID.</p> </li> <li> <p> <code>scope</code> - The
-     * scope of the Reserved Instance (<code>Availability Zone</code> or
-     * <code>Region</code>).</p> </li> <li> <p> <code>usage-price</code> - The usage
-     * price of the Reserved Instance, per hour (for example, 0.84).</p> </li> </ul>
+     * Amazon Web Services and the Reserved Instance Marketplace are listed.</p> </li>
+     * <li> <p> <code>product-description</code> - The Reserved Instance product
+     * platform description. Instances that include <code>(Amazon VPC)</code> in the
+     * product platform description will only be displayed to EC2-Classic account
+     * holders and are for use with Amazon VPC. (<code>Linux/UNIX</code> |
+     * <code>Linux/UNIX (Amazon VPC)</code> | <code>SUSE Linux</code> | <code>SUSE
+     * Linux (Amazon VPC)</code> | <code>Red Hat Enterprise Linux</code> | <code>Red
+     * Hat Enterprise Linux (Amazon VPC)</code> | <code>Red Hat Enterprise Linux with
+     * HA (Amazon VPC)</code> | <code>Windows</code> | <code>Windows (Amazon
+     * VPC)</code> | <code>Windows with SQL Server Standard</code> | <code>Windows with
+     * SQL Server Standard (Amazon VPC)</code> | <code>Windows with SQL Server
+     * Web</code> | <code> Windows with SQL Server Web (Amazon VPC)</code> |
+     * <code>Windows with SQL Server Enterprise</code> | <code>Windows with SQL Server
+     * Enterprise (Amazon VPC)</code>) </p> </li> <li> <p>
+     * <code>reserved-instances-offering-id</code> - The Reserved Instances offering
+     * ID.</p> </li> <li> <p> <code>scope</code> - The scope of the Reserved Instance
+     * (<code>Availability Zone</code> or <code>Region</code>).</p> </li> <li> <p>
+     * <code>usage-price</code> - The usage price of the Reserved Instance, per hour
+     * (for example, 0.84).</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
@@ -223,23 +231,25 @@ namespace Model
      * reservation.</p> </li> <li> <p> <code>marketplace</code> - Set to
      * <code>true</code> to show only Reserved Instance Marketplace offerings. When
      * this filter is not used, which is the default behavior, all offerings from both
-     * AWS and the Reserved Instance Marketplace are listed.</p> </li> <li> <p>
-     * <code>product-description</code> - The Reserved Instance product platform
-     * description. Instances that include <code>(Amazon VPC)</code> in the product
-     * platform description will only be displayed to EC2-Classic account holders and
-     * are for use with Amazon VPC. (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon
-     * VPC)</code> | <code>SUSE Linux</code> | <code>SUSE Linux (Amazon VPC)</code> |
-     * <code>Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux (Amazon
-     * VPC)</code> | <code>Windows</code> | <code>Windows (Amazon VPC)</code> |
-     * <code>Windows with SQL Server Standard</code> | <code>Windows with SQL Server
-     * Standard (Amazon VPC)</code> | <code>Windows with SQL Server Web</code> | <code>
-     * Windows with SQL Server Web (Amazon VPC)</code> | <code>Windows with SQL Server
-     * Enterprise</code> | <code>Windows with SQL Server Enterprise (Amazon
-     * VPC)</code>) </p> </li> <li> <p> <code>reserved-instances-offering-id</code> -
-     * The Reserved Instances offering ID.</p> </li> <li> <p> <code>scope</code> - The
-     * scope of the Reserved Instance (<code>Availability Zone</code> or
-     * <code>Region</code>).</p> </li> <li> <p> <code>usage-price</code> - The usage
-     * price of the Reserved Instance, per hour (for example, 0.84).</p> </li> </ul>
+     * Amazon Web Services and the Reserved Instance Marketplace are listed.</p> </li>
+     * <li> <p> <code>product-description</code> - The Reserved Instance product
+     * platform description. Instances that include <code>(Amazon VPC)</code> in the
+     * product platform description will only be displayed to EC2-Classic account
+     * holders and are for use with Amazon VPC. (<code>Linux/UNIX</code> |
+     * <code>Linux/UNIX (Amazon VPC)</code> | <code>SUSE Linux</code> | <code>SUSE
+     * Linux (Amazon VPC)</code> | <code>Red Hat Enterprise Linux</code> | <code>Red
+     * Hat Enterprise Linux (Amazon VPC)</code> | <code>Red Hat Enterprise Linux with
+     * HA (Amazon VPC)</code> | <code>Windows</code> | <code>Windows (Amazon
+     * VPC)</code> | <code>Windows with SQL Server Standard</code> | <code>Windows with
+     * SQL Server Standard (Amazon VPC)</code> | <code>Windows with SQL Server
+     * Web</code> | <code> Windows with SQL Server Web (Amazon VPC)</code> |
+     * <code>Windows with SQL Server Enterprise</code> | <code>Windows with SQL Server
+     * Enterprise (Amazon VPC)</code>) </p> </li> <li> <p>
+     * <code>reserved-instances-offering-id</code> - The Reserved Instances offering
+     * ID.</p> </li> <li> <p> <code>scope</code> - The scope of the Reserved Instance
+     * (<code>Availability Zone</code> or <code>Region</code>).</p> </li> <li> <p>
+     * <code>usage-price</code> - The usage price of the Reserved Instance, per hour
+     * (for example, 0.84).</p> </li> </ul>
      */
     inline DescribeReservedInstancesOfferingsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
@@ -254,23 +264,25 @@ namespace Model
      * reservation.</p> </li> <li> <p> <code>marketplace</code> - Set to
      * <code>true</code> to show only Reserved Instance Marketplace offerings. When
      * this filter is not used, which is the default behavior, all offerings from both
-     * AWS and the Reserved Instance Marketplace are listed.</p> </li> <li> <p>
-     * <code>product-description</code> - The Reserved Instance product platform
-     * description. Instances that include <code>(Amazon VPC)</code> in the product
-     * platform description will only be displayed to EC2-Classic account holders and
-     * are for use with Amazon VPC. (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon
-     * VPC)</code> | <code>SUSE Linux</code> | <code>SUSE Linux (Amazon VPC)</code> |
-     * <code>Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux (Amazon
-     * VPC)</code> | <code>Windows</code> | <code>Windows (Amazon VPC)</code> |
-     * <code>Windows with SQL Server Standard</code> | <code>Windows with SQL Server
-     * Standard (Amazon VPC)</code> | <code>Windows with SQL Server Web</code> | <code>
-     * Windows with SQL Server Web (Amazon VPC)</code> | <code>Windows with SQL Server
-     * Enterprise</code> | <code>Windows with SQL Server Enterprise (Amazon
-     * VPC)</code>) </p> </li> <li> <p> <code>reserved-instances-offering-id</code> -
-     * The Reserved Instances offering ID.</p> </li> <li> <p> <code>scope</code> - The
-     * scope of the Reserved Instance (<code>Availability Zone</code> or
-     * <code>Region</code>).</p> </li> <li> <p> <code>usage-price</code> - The usage
-     * price of the Reserved Instance, per hour (for example, 0.84).</p> </li> </ul>
+     * Amazon Web Services and the Reserved Instance Marketplace are listed.</p> </li>
+     * <li> <p> <code>product-description</code> - The Reserved Instance product
+     * platform description. Instances that include <code>(Amazon VPC)</code> in the
+     * product platform description will only be displayed to EC2-Classic account
+     * holders and are for use with Amazon VPC. (<code>Linux/UNIX</code> |
+     * <code>Linux/UNIX (Amazon VPC)</code> | <code>SUSE Linux</code> | <code>SUSE
+     * Linux (Amazon VPC)</code> | <code>Red Hat Enterprise Linux</code> | <code>Red
+     * Hat Enterprise Linux (Amazon VPC)</code> | <code>Red Hat Enterprise Linux with
+     * HA (Amazon VPC)</code> | <code>Windows</code> | <code>Windows (Amazon
+     * VPC)</code> | <code>Windows with SQL Server Standard</code> | <code>Windows with
+     * SQL Server Standard (Amazon VPC)</code> | <code>Windows with SQL Server
+     * Web</code> | <code> Windows with SQL Server Web (Amazon VPC)</code> |
+     * <code>Windows with SQL Server Enterprise</code> | <code>Windows with SQL Server
+     * Enterprise (Amazon VPC)</code>) </p> </li> <li> <p>
+     * <code>reserved-instances-offering-id</code> - The Reserved Instances offering
+     * ID.</p> </li> <li> <p> <code>scope</code> - The scope of the Reserved Instance
+     * (<code>Availability Zone</code> or <code>Region</code>).</p> </li> <li> <p>
+     * <code>usage-price</code> - The usage price of the Reserved Instance, per hour
+     * (for example, 0.84).</p> </li> </ul>
      */
     inline DescribeReservedInstancesOfferingsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
@@ -285,23 +297,25 @@ namespace Model
      * reservation.</p> </li> <li> <p> <code>marketplace</code> - Set to
      * <code>true</code> to show only Reserved Instance Marketplace offerings. When
      * this filter is not used, which is the default behavior, all offerings from both
-     * AWS and the Reserved Instance Marketplace are listed.</p> </li> <li> <p>
-     * <code>product-description</code> - The Reserved Instance product platform
-     * description. Instances that include <code>(Amazon VPC)</code> in the product
-     * platform description will only be displayed to EC2-Classic account holders and
-     * are for use with Amazon VPC. (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon
-     * VPC)</code> | <code>SUSE Linux</code> | <code>SUSE Linux (Amazon VPC)</code> |
-     * <code>Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux (Amazon
-     * VPC)</code> | <code>Windows</code> | <code>Windows (Amazon VPC)</code> |
-     * <code>Windows with SQL Server Standard</code> | <code>Windows with SQL Server
-     * Standard (Amazon VPC)</code> | <code>Windows with SQL Server Web</code> | <code>
-     * Windows with SQL Server Web (Amazon VPC)</code> | <code>Windows with SQL Server
-     * Enterprise</code> | <code>Windows with SQL Server Enterprise (Amazon
-     * VPC)</code>) </p> </li> <li> <p> <code>reserved-instances-offering-id</code> -
-     * The Reserved Instances offering ID.</p> </li> <li> <p> <code>scope</code> - The
-     * scope of the Reserved Instance (<code>Availability Zone</code> or
-     * <code>Region</code>).</p> </li> <li> <p> <code>usage-price</code> - The usage
-     * price of the Reserved Instance, per hour (for example, 0.84).</p> </li> </ul>
+     * Amazon Web Services and the Reserved Instance Marketplace are listed.</p> </li>
+     * <li> <p> <code>product-description</code> - The Reserved Instance product
+     * platform description. Instances that include <code>(Amazon VPC)</code> in the
+     * product platform description will only be displayed to EC2-Classic account
+     * holders and are for use with Amazon VPC. (<code>Linux/UNIX</code> |
+     * <code>Linux/UNIX (Amazon VPC)</code> | <code>SUSE Linux</code> | <code>SUSE
+     * Linux (Amazon VPC)</code> | <code>Red Hat Enterprise Linux</code> | <code>Red
+     * Hat Enterprise Linux (Amazon VPC)</code> | <code>Red Hat Enterprise Linux with
+     * HA (Amazon VPC)</code> | <code>Windows</code> | <code>Windows (Amazon
+     * VPC)</code> | <code>Windows with SQL Server Standard</code> | <code>Windows with
+     * SQL Server Standard (Amazon VPC)</code> | <code>Windows with SQL Server
+     * Web</code> | <code> Windows with SQL Server Web (Amazon VPC)</code> |
+     * <code>Windows with SQL Server Enterprise</code> | <code>Windows with SQL Server
+     * Enterprise (Amazon VPC)</code>) </p> </li> <li> <p>
+     * <code>reserved-instances-offering-id</code> - The Reserved Instances offering
+     * ID.</p> </li> <li> <p> <code>scope</code> - The scope of the Reserved Instance
+     * (<code>Availability Zone</code> or <code>Region</code>).</p> </li> <li> <p>
+     * <code>usage-price</code> - The usage price of the Reserved Instance, per hour
+     * (for example, 0.84).</p> </li> </ul>
      */
     inline DescribeReservedInstancesOfferingsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
@@ -316,23 +330,25 @@ namespace Model
      * reservation.</p> </li> <li> <p> <code>marketplace</code> - Set to
      * <code>true</code> to show only Reserved Instance Marketplace offerings. When
      * this filter is not used, which is the default behavior, all offerings from both
-     * AWS and the Reserved Instance Marketplace are listed.</p> </li> <li> <p>
-     * <code>product-description</code> - The Reserved Instance product platform
-     * description. Instances that include <code>(Amazon VPC)</code> in the product
-     * platform description will only be displayed to EC2-Classic account holders and
-     * are for use with Amazon VPC. (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon
-     * VPC)</code> | <code>SUSE Linux</code> | <code>SUSE Linux (Amazon VPC)</code> |
-     * <code>Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux (Amazon
-     * VPC)</code> | <code>Windows</code> | <code>Windows (Amazon VPC)</code> |
-     * <code>Windows with SQL Server Standard</code> | <code>Windows with SQL Server
-     * Standard (Amazon VPC)</code> | <code>Windows with SQL Server Web</code> | <code>
-     * Windows with SQL Server Web (Amazon VPC)</code> | <code>Windows with SQL Server
-     * Enterprise</code> | <code>Windows with SQL Server Enterprise (Amazon
-     * VPC)</code>) </p> </li> <li> <p> <code>reserved-instances-offering-id</code> -
-     * The Reserved Instances offering ID.</p> </li> <li> <p> <code>scope</code> - The
-     * scope of the Reserved Instance (<code>Availability Zone</code> or
-     * <code>Region</code>).</p> </li> <li> <p> <code>usage-price</code> - The usage
-     * price of the Reserved Instance, per hour (for example, 0.84).</p> </li> </ul>
+     * Amazon Web Services and the Reserved Instance Marketplace are listed.</p> </li>
+     * <li> <p> <code>product-description</code> - The Reserved Instance product
+     * platform description. Instances that include <code>(Amazon VPC)</code> in the
+     * product platform description will only be displayed to EC2-Classic account
+     * holders and are for use with Amazon VPC. (<code>Linux/UNIX</code> |
+     * <code>Linux/UNIX (Amazon VPC)</code> | <code>SUSE Linux</code> | <code>SUSE
+     * Linux (Amazon VPC)</code> | <code>Red Hat Enterprise Linux</code> | <code>Red
+     * Hat Enterprise Linux (Amazon VPC)</code> | <code>Red Hat Enterprise Linux with
+     * HA (Amazon VPC)</code> | <code>Windows</code> | <code>Windows (Amazon
+     * VPC)</code> | <code>Windows with SQL Server Standard</code> | <code>Windows with
+     * SQL Server Standard (Amazon VPC)</code> | <code>Windows with SQL Server
+     * Web</code> | <code> Windows with SQL Server Web (Amazon VPC)</code> |
+     * <code>Windows with SQL Server Enterprise</code> | <code>Windows with SQL Server
+     * Enterprise (Amazon VPC)</code>) </p> </li> <li> <p>
+     * <code>reserved-instances-offering-id</code> - The Reserved Instances offering
+     * ID.</p> </li> <li> <p> <code>scope</code> - The scope of the Reserved Instance
+     * (<code>Availability Zone</code> or <code>Region</code>).</p> </li> <li> <p>
+     * <code>usage-price</code> - The usage price of the Reserved Instance, per hour
+     * (for example, 0.84).</p> </li> </ul>
      */
     inline DescribeReservedInstancesOfferingsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
@@ -362,7 +378,7 @@ namespace Model
      * <p>The instance type that the reservation will cover (for example,
      * <code>m1.small</code>). For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline const InstanceType& GetInstanceType() const{ return m_instanceType; }
 
@@ -370,7 +386,7 @@ namespace Model
      * <p>The instance type that the reservation will cover (for example,
      * <code>m1.small</code>). For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
@@ -378,7 +394,7 @@ namespace Model
      * <p>The instance type that the reservation will cover (for example,
      * <code>m1.small</code>). For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetInstanceType(const InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
@@ -386,7 +402,7 @@ namespace Model
      * <p>The instance type that the reservation will cover (for example,
      * <code>m1.small</code>). For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
@@ -394,7 +410,7 @@ namespace Model
      * <p>The instance type that the reservation will cover (for example,
      * <code>m1.small</code>). For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline DescribeReservedInstancesOfferingsRequest& WithInstanceType(const InstanceType& value) { SetInstanceType(value); return *this;}
 
@@ -402,7 +418,7 @@ namespace Model
      * <p>The instance type that the reservation will cover (for example,
      * <code>m1.small</code>). For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline DescribeReservedInstancesOfferingsRequest& WithInstanceType(InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
 

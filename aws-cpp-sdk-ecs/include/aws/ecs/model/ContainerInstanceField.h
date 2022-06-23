@@ -16,7 +16,8 @@ namespace Model
   enum class ContainerInstanceField
   {
     NOT_SET,
-    TAGS
+    TAGS,
+    CONTAINER_INSTANCE_HEALTH
   };
 
 namespace ContainerInstanceFieldMapper

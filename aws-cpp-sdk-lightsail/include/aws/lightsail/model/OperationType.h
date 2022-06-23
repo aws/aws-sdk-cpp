@@ -78,6 +78,7 @@ namespace Model
     AttachCertificateToDistribution,
     DetachCertificateFromDistribution,
     UpdateDistributionBundle,
+    SetIpAddressType,
     CreateCertificate,
     DeleteCertificate,
     CreateContainerService,
@@ -86,7 +87,14 @@ namespace Model
     CreateContainerServiceDeployment,
     CreateContainerServiceRegistryLogin,
     RegisterContainerImage,
-    DeleteContainerImage
+    DeleteContainerImage,
+    CreateBucket,
+    DeleteBucket,
+    CreateBucketAccessKey,
+    DeleteBucketAccessKey,
+    UpdateBucketBundle,
+    UpdateBucket,
+    SetResourceAccessForBucket
   };
 
 namespace OperationTypeMapper

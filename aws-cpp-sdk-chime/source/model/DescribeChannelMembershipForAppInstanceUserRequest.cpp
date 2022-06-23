@@ -17,13 +17,29 @@ using namespace Aws::Http;
 
 DescribeChannelMembershipForAppInstanceUserRequest::DescribeChannelMembershipForAppInstanceUserRequest() : 
     m_channelArnHasBeenSet(false),
-    m_appInstanceUserArnHasBeenSet(false)
+    m_appInstanceUserArnHasBeenSet(false),
+    m_chimeBearerHasBeenSet(false)
 {
 }
 
 Aws::String DescribeChannelMembershipForAppInstanceUserRequest::SerializePayload() const
 {
   return {};
+}
+
+Aws::Http::HeaderValueCollection DescribeChannelMembershipForAppInstanceUserRequest::GetRequestSpecificHeaders() const
+{
+  Aws::Http::HeaderValueCollection headers;
+  Aws::StringStream ss;
+  if(m_chimeBearerHasBeenSet)
+  {
+    ss << m_chimeBearer;
+    headers.emplace("x-amz-chime-bearer",  ss.str());
+    ss.str("");
+  }
+
+  return headers;
+
 }
 
 void DescribeChannelMembershipForAppInstanceUserRequest::AddQueryStringParameters(URI& uri) const

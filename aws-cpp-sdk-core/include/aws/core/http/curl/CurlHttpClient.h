@@ -60,19 +60,13 @@ private:
     Aws::String m_proxySSLKeyType;
     Aws::String m_proxyKeyPasswd;
     unsigned m_proxyPort;
+    Aws::String m_nonProxyHosts;
     bool m_verifySSL;
     Aws::String m_caPath;
     Aws::String m_caFile;
     bool m_disableExpectHeader;
     bool m_allowRedirects;
     static std::atomic<bool> isInit;
-
-    std::function<Aws::Client::ClientConfigurationPerRequest(const HttpRequest &)> m_perRequestConfiguration;
-
-    void MakeRequestInternal(HttpRequest& request, std::shared_ptr<Standard::StandardHttpResponse>& response,
-        Aws::Utils::RateLimits::RateLimiterInterface* readLimiter,
-        Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const;
-
 };
 
 using PlatformHttpClient = CurlHttpClient;

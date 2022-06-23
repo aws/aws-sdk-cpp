@@ -820,99 +820,99 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the AWS KMS master key that is used to encrypt the database
-     * instances in the DB cluster.</p>
+     * <p>The ARN of the KMS master key that is used to encrypt the database instances
+     * in the DB cluster.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The ARN of the AWS KMS master key that is used to encrypt the database
-     * instances in the DB cluster.</p>
+     * <p>The ARN of the KMS master key that is used to encrypt the database instances
+     * in the DB cluster.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The ARN of the AWS KMS master key that is used to encrypt the database
-     * instances in the DB cluster.</p>
+     * <p>The ARN of the KMS master key that is used to encrypt the database instances
+     * in the DB cluster.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The ARN of the AWS KMS master key that is used to encrypt the database
-     * instances in the DB cluster.</p>
+     * <p>The ARN of the KMS master key that is used to encrypt the database instances
+     * in the DB cluster.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The ARN of the AWS KMS master key that is used to encrypt the database
-     * instances in the DB cluster.</p>
+     * <p>The ARN of the KMS master key that is used to encrypt the database instances
+     * in the DB cluster.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The ARN of the AWS KMS master key that is used to encrypt the database
-     * instances in the DB cluster.</p>
+     * <p>The ARN of the KMS master key that is used to encrypt the database instances
+     * in the DB cluster.</p>
      */
     inline AwsRdsDbClusterDetails& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The ARN of the AWS KMS master key that is used to encrypt the database
-     * instances in the DB cluster.</p>
+     * <p>The ARN of the KMS master key that is used to encrypt the database instances
+     * in the DB cluster.</p>
      */
     inline AwsRdsDbClusterDetails& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the AWS KMS master key that is used to encrypt the database
-     * instances in the DB cluster.</p>
+     * <p>The ARN of the KMS master key that is used to encrypt the database instances
+     * in the DB cluster.</p>
      */
     inline AwsRdsDbClusterDetails& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
 
     /**
      * <p>The identifier of the DB cluster. The identifier must be unique within each
-     * AWS Region and is immutable.</p>
+     * Amazon Web Services Region and is immutable.</p>
      */
     inline const Aws::String& GetDbClusterResourceId() const{ return m_dbClusterResourceId; }
 
     /**
      * <p>The identifier of the DB cluster. The identifier must be unique within each
-     * AWS Region and is immutable.</p>
+     * Amazon Web Services Region and is immutable.</p>
      */
     inline bool DbClusterResourceIdHasBeenSet() const { return m_dbClusterResourceIdHasBeenSet; }
 
     /**
      * <p>The identifier of the DB cluster. The identifier must be unique within each
-     * AWS Region and is immutable.</p>
+     * Amazon Web Services Region and is immutable.</p>
      */
     inline void SetDbClusterResourceId(const Aws::String& value) { m_dbClusterResourceIdHasBeenSet = true; m_dbClusterResourceId = value; }
 
     /**
      * <p>The identifier of the DB cluster. The identifier must be unique within each
-     * AWS Region and is immutable.</p>
+     * Amazon Web Services Region and is immutable.</p>
      */
     inline void SetDbClusterResourceId(Aws::String&& value) { m_dbClusterResourceIdHasBeenSet = true; m_dbClusterResourceId = std::move(value); }
 
     /**
      * <p>The identifier of the DB cluster. The identifier must be unique within each
-     * AWS Region and is immutable.</p>
+     * Amazon Web Services Region and is immutable.</p>
      */
     inline void SetDbClusterResourceId(const char* value) { m_dbClusterResourceIdHasBeenSet = true; m_dbClusterResourceId.assign(value); }
 
     /**
      * <p>The identifier of the DB cluster. The identifier must be unique within each
-     * AWS Region and is immutable.</p>
+     * Amazon Web Services Region and is immutable.</p>
      */
     inline AwsRdsDbClusterDetails& WithDbClusterResourceId(const Aws::String& value) { SetDbClusterResourceId(value); return *this;}
 
     /**
      * <p>The identifier of the DB cluster. The identifier must be unique within each
-     * AWS Region and is immutable.</p>
+     * Amazon Web Services Region and is immutable.</p>
      */
     inline AwsRdsDbClusterDetails& WithDbClusterResourceId(Aws::String&& value) { SetDbClusterResourceId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the DB cluster. The identifier must be unique within each
-     * AWS Region and is immutable.</p>
+     * Amazon Web Services Region and is immutable.</p>
      */
     inline AwsRdsDbClusterDetails& WithDbClusterResourceId(const char* value) { SetDbClusterResourceId(value); return *this;}
 
@@ -1236,26 +1236,26 @@ namespace Model
 
 
     /**
-     * <p>Whether the DB cluster is a clone of a DB cluster owned by a different AWS
-     * account.</p>
+     * <p>Whether the DB cluster is a clone of a DB cluster owned by a different Amazon
+     * Web Services account.</p>
      */
     inline bool GetCrossAccountClone() const{ return m_crossAccountClone; }
 
     /**
-     * <p>Whether the DB cluster is a clone of a DB cluster owned by a different AWS
-     * account.</p>
+     * <p>Whether the DB cluster is a clone of a DB cluster owned by a different Amazon
+     * Web Services account.</p>
      */
     inline bool CrossAccountCloneHasBeenSet() const { return m_crossAccountCloneHasBeenSet; }
 
     /**
-     * <p>Whether the DB cluster is a clone of a DB cluster owned by a different AWS
-     * account.</p>
+     * <p>Whether the DB cluster is a clone of a DB cluster owned by a different Amazon
+     * Web Services account.</p>
      */
     inline void SetCrossAccountClone(bool value) { m_crossAccountCloneHasBeenSet = true; m_crossAccountClone = value; }
 
     /**
-     * <p>Whether the DB cluster is a clone of a DB cluster owned by a different AWS
-     * account.</p>
+     * <p>Whether the DB cluster is a clone of a DB cluster owned by a different Amazon
+     * Web Services account.</p>
      */
     inline AwsRdsDbClusterDetails& WithCrossAccountClone(bool value) { SetCrossAccountClone(value); return *this;}
 

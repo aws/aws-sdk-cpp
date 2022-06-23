@@ -21,7 +21,8 @@ CreateSolutionRequest::CreateSolutionRequest() :
     m_recipeArnHasBeenSet(false),
     m_datasetGroupArnHasBeenSet(false),
     m_eventTypeHasBeenSet(false),
-    m_solutionConfigHasBeenSet(false)
+    m_solutionConfigHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,17 @@ Aws::String CreateSolutionRequest::SerializePayload() const
   if(m_solutionConfigHasBeenSet)
   {
    payload.WithObject("solutionConfig", m_solutionConfig.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
 
   }
 

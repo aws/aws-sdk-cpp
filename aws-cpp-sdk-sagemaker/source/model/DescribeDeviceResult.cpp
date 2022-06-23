@@ -93,6 +93,12 @@ DescribeDeviceResult& DescribeDeviceResult::operator =(const Aws::AmazonWebServi
 
   }
 
+  if(jsonValue.ValueExists("AgentVersion"))
+  {
+    m_agentVersion = jsonValue.GetString("AgentVersion");
+
+  }
+
 
 
   return *this;

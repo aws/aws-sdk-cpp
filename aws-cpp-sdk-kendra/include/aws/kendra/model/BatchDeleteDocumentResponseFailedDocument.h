@@ -26,7 +26,7 @@ namespace Model
 
   /**
    * <p>Provides information about documents that could not be removed from an index
-   * by the <a>BatchDeleteDocument</a> operation.</p><p><h3>See Also:</h3>   <a
+   * by the <code>BatchDeleteDocument</code> API.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/BatchDeleteDocumentResponseFailedDocument">AWS
    * API Reference</a></p>
    */

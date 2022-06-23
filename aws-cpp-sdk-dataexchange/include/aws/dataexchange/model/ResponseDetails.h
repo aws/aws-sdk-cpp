@@ -7,8 +7,11 @@
 #include <aws/dataexchange/DataExchange_EXPORTS.h>
 #include <aws/dataexchange/model/ExportAssetToSignedUrlResponseDetails.h>
 #include <aws/dataexchange/model/ExportAssetsToS3ResponseDetails.h>
+#include <aws/dataexchange/model/ExportRevisionsToS3ResponseDetails.h>
 #include <aws/dataexchange/model/ImportAssetFromSignedUrlResponseDetails.h>
 #include <aws/dataexchange/model/ImportAssetsFromS3ResponseDetails.h>
+#include <aws/dataexchange/model/ImportAssetsFromRedshiftDataSharesResponseDetails.h>
+#include <aws/dataexchange/model/ImportAssetFromApiGatewayApiResponseDetails.h>
 #include <utility>
 
 namespace Aws
@@ -103,6 +106,37 @@ namespace Model
 
 
     /**
+     * <p>Details for the export revisions to Amazon S3 response.</p>
+     */
+    inline const ExportRevisionsToS3ResponseDetails& GetExportRevisionsToS3() const{ return m_exportRevisionsToS3; }
+
+    /**
+     * <p>Details for the export revisions to Amazon S3 response.</p>
+     */
+    inline bool ExportRevisionsToS3HasBeenSet() const { return m_exportRevisionsToS3HasBeenSet; }
+
+    /**
+     * <p>Details for the export revisions to Amazon S3 response.</p>
+     */
+    inline void SetExportRevisionsToS3(const ExportRevisionsToS3ResponseDetails& value) { m_exportRevisionsToS3HasBeenSet = true; m_exportRevisionsToS3 = value; }
+
+    /**
+     * <p>Details for the export revisions to Amazon S3 response.</p>
+     */
+    inline void SetExportRevisionsToS3(ExportRevisionsToS3ResponseDetails&& value) { m_exportRevisionsToS3HasBeenSet = true; m_exportRevisionsToS3 = std::move(value); }
+
+    /**
+     * <p>Details for the export revisions to Amazon S3 response.</p>
+     */
+    inline ResponseDetails& WithExportRevisionsToS3(const ExportRevisionsToS3ResponseDetails& value) { SetExportRevisionsToS3(value); return *this;}
+
+    /**
+     * <p>Details for the export revisions to Amazon S3 response.</p>
+     */
+    inline ResponseDetails& WithExportRevisionsToS3(ExportRevisionsToS3ResponseDetails&& value) { SetExportRevisionsToS3(std::move(value)); return *this;}
+
+
+    /**
      * <p>Details for the import from signed URL response.</p>
      */
     inline const ImportAssetFromSignedUrlResponseDetails& GetImportAssetFromSignedUrl() const{ return m_importAssetFromSignedUrl; }
@@ -163,6 +197,68 @@ namespace Model
      */
     inline ResponseDetails& WithImportAssetsFromS3(ImportAssetsFromS3ResponseDetails&& value) { SetImportAssetsFromS3(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Details from an import from Amazon Redshift datashare response.</p>
+     */
+    inline const ImportAssetsFromRedshiftDataSharesResponseDetails& GetImportAssetsFromRedshiftDataShares() const{ return m_importAssetsFromRedshiftDataShares; }
+
+    /**
+     * <p>Details from an import from Amazon Redshift datashare response.</p>
+     */
+    inline bool ImportAssetsFromRedshiftDataSharesHasBeenSet() const { return m_importAssetsFromRedshiftDataSharesHasBeenSet; }
+
+    /**
+     * <p>Details from an import from Amazon Redshift datashare response.</p>
+     */
+    inline void SetImportAssetsFromRedshiftDataShares(const ImportAssetsFromRedshiftDataSharesResponseDetails& value) { m_importAssetsFromRedshiftDataSharesHasBeenSet = true; m_importAssetsFromRedshiftDataShares = value; }
+
+    /**
+     * <p>Details from an import from Amazon Redshift datashare response.</p>
+     */
+    inline void SetImportAssetsFromRedshiftDataShares(ImportAssetsFromRedshiftDataSharesResponseDetails&& value) { m_importAssetsFromRedshiftDataSharesHasBeenSet = true; m_importAssetsFromRedshiftDataShares = std::move(value); }
+
+    /**
+     * <p>Details from an import from Amazon Redshift datashare response.</p>
+     */
+    inline ResponseDetails& WithImportAssetsFromRedshiftDataShares(const ImportAssetsFromRedshiftDataSharesResponseDetails& value) { SetImportAssetsFromRedshiftDataShares(value); return *this;}
+
+    /**
+     * <p>Details from an import from Amazon Redshift datashare response.</p>
+     */
+    inline ResponseDetails& WithImportAssetsFromRedshiftDataShares(ImportAssetsFromRedshiftDataSharesResponseDetails&& value) { SetImportAssetsFromRedshiftDataShares(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The response details.</p>
+     */
+    inline const ImportAssetFromApiGatewayApiResponseDetails& GetImportAssetFromApiGatewayApi() const{ return m_importAssetFromApiGatewayApi; }
+
+    /**
+     * <p>The response details.</p>
+     */
+    inline bool ImportAssetFromApiGatewayApiHasBeenSet() const { return m_importAssetFromApiGatewayApiHasBeenSet; }
+
+    /**
+     * <p>The response details.</p>
+     */
+    inline void SetImportAssetFromApiGatewayApi(const ImportAssetFromApiGatewayApiResponseDetails& value) { m_importAssetFromApiGatewayApiHasBeenSet = true; m_importAssetFromApiGatewayApi = value; }
+
+    /**
+     * <p>The response details.</p>
+     */
+    inline void SetImportAssetFromApiGatewayApi(ImportAssetFromApiGatewayApiResponseDetails&& value) { m_importAssetFromApiGatewayApiHasBeenSet = true; m_importAssetFromApiGatewayApi = std::move(value); }
+
+    /**
+     * <p>The response details.</p>
+     */
+    inline ResponseDetails& WithImportAssetFromApiGatewayApi(const ImportAssetFromApiGatewayApiResponseDetails& value) { SetImportAssetFromApiGatewayApi(value); return *this;}
+
+    /**
+     * <p>The response details.</p>
+     */
+    inline ResponseDetails& WithImportAssetFromApiGatewayApi(ImportAssetFromApiGatewayApiResponseDetails&& value) { SetImportAssetFromApiGatewayApi(std::move(value)); return *this;}
+
   private:
 
     ExportAssetToSignedUrlResponseDetails m_exportAssetToSignedUrl;
@@ -171,11 +267,20 @@ namespace Model
     ExportAssetsToS3ResponseDetails m_exportAssetsToS3;
     bool m_exportAssetsToS3HasBeenSet;
 
+    ExportRevisionsToS3ResponseDetails m_exportRevisionsToS3;
+    bool m_exportRevisionsToS3HasBeenSet;
+
     ImportAssetFromSignedUrlResponseDetails m_importAssetFromSignedUrl;
     bool m_importAssetFromSignedUrlHasBeenSet;
 
     ImportAssetsFromS3ResponseDetails m_importAssetsFromS3;
     bool m_importAssetsFromS3HasBeenSet;
+
+    ImportAssetsFromRedshiftDataSharesResponseDetails m_importAssetsFromRedshiftDataShares;
+    bool m_importAssetsFromRedshiftDataSharesHasBeenSet;
+
+    ImportAssetFromApiGatewayApiResponseDetails m_importAssetFromApiGatewayApi;
+    bool m_importAssetFromApiGatewayApiHasBeenSet;
   };
 
 } // namespace Model

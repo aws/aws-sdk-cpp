@@ -94,56 +94,56 @@ namespace Model
     /**
      * <p>The ARN (Amazon Resource Name) for the distribution. For example:
      * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>,
-     * where <code>123456789012</code> is your AWS account ID.</p>
+     * where <code>123456789012</code> is your Amazon Web Services account ID.</p>
      */
     inline const Aws::String& GetARN() const{ return m_aRN; }
 
     /**
      * <p>The ARN (Amazon Resource Name) for the distribution. For example:
      * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>,
-     * where <code>123456789012</code> is your AWS account ID.</p>
+     * where <code>123456789012</code> is your Amazon Web Services account ID.</p>
      */
     inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
 
     /**
      * <p>The ARN (Amazon Resource Name) for the distribution. For example:
      * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>,
-     * where <code>123456789012</code> is your AWS account ID.</p>
+     * where <code>123456789012</code> is your Amazon Web Services account ID.</p>
      */
     inline void SetARN(const Aws::String& value) { m_aRNHasBeenSet = true; m_aRN = value; }
 
     /**
      * <p>The ARN (Amazon Resource Name) for the distribution. For example:
      * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>,
-     * where <code>123456789012</code> is your AWS account ID.</p>
+     * where <code>123456789012</code> is your Amazon Web Services account ID.</p>
      */
     inline void SetARN(Aws::String&& value) { m_aRNHasBeenSet = true; m_aRN = std::move(value); }
 
     /**
      * <p>The ARN (Amazon Resource Name) for the distribution. For example:
      * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>,
-     * where <code>123456789012</code> is your AWS account ID.</p>
+     * where <code>123456789012</code> is your Amazon Web Services account ID.</p>
      */
     inline void SetARN(const char* value) { m_aRNHasBeenSet = true; m_aRN.assign(value); }
 
     /**
      * <p>The ARN (Amazon Resource Name) for the distribution. For example:
      * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>,
-     * where <code>123456789012</code> is your AWS account ID.</p>
+     * where <code>123456789012</code> is your Amazon Web Services account ID.</p>
      */
     inline StreamingDistribution& WithARN(const Aws::String& value) { SetARN(value); return *this;}
 
     /**
      * <p>The ARN (Amazon Resource Name) for the distribution. For example:
      * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>,
-     * where <code>123456789012</code> is your AWS account ID.</p>
+     * where <code>123456789012</code> is your Amazon Web Services account ID.</p>
      */
     inline StreamingDistribution& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
 
     /**
      * <p>The ARN (Amazon Resource Name) for the distribution. For example:
      * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>,
-     * where <code>123456789012</code> is your AWS account ID.</p>
+     * where <code>123456789012</code> is your Amazon Web Services account ID.</p>
      */
     inline StreamingDistribution& WithARN(const char* value) { SetARN(value); return *this;}
 
@@ -286,16 +286,16 @@ namespace Model
 
 
     /**
-     * <p>A complex type that lists the AWS accounts, if any, that you included in the
-     * <code>TrustedSigners</code> complex type for this distribution. These are the
-     * accounts that you want to allow to create signed URLs for private content.</p>
-     * <p>The <code>Signer</code> complex type lists the AWS account number of the
-     * trusted signer or <code>self</code> if the signer is the AWS account that
-     * created the distribution. The <code>Signer</code> element also includes the IDs
-     * of any active CloudFront key pairs that are associated with the trusted signer's
-     * AWS account. If no <code>KeyPairId</code> element appears for a
-     * <code>Signer</code>, that signer can't create signed URLs.</p> <p>For more
-     * information, see <a
+     * <p>A complex type that lists the Amazon Web Services accounts, if any, that you
+     * included in the <code>TrustedSigners</code> complex type for this distribution.
+     * These are the accounts that you want to allow to create signed URLs for private
+     * content.</p> <p>The <code>Signer</code> complex type lists the Amazon Web
+     * Services account number of the trusted signer or <code>self</code> if the signer
+     * is the Amazon Web Services account that created the distribution. The
+     * <code>Signer</code> element also includes the IDs of any active CloudFront key
+     * pairs that are associated with the trusted signer's Amazon Web Services account.
+     * If no <code>KeyPairId</code> element appears for a <code>Signer</code>, that
+     * signer can't create signed URLs.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
      * Guide</i>. </p>
@@ -303,16 +303,16 @@ namespace Model
     inline const ActiveTrustedSigners& GetActiveTrustedSigners() const{ return m_activeTrustedSigners; }
 
     /**
-     * <p>A complex type that lists the AWS accounts, if any, that you included in the
-     * <code>TrustedSigners</code> complex type for this distribution. These are the
-     * accounts that you want to allow to create signed URLs for private content.</p>
-     * <p>The <code>Signer</code> complex type lists the AWS account number of the
-     * trusted signer or <code>self</code> if the signer is the AWS account that
-     * created the distribution. The <code>Signer</code> element also includes the IDs
-     * of any active CloudFront key pairs that are associated with the trusted signer's
-     * AWS account. If no <code>KeyPairId</code> element appears for a
-     * <code>Signer</code>, that signer can't create signed URLs.</p> <p>For more
-     * information, see <a
+     * <p>A complex type that lists the Amazon Web Services accounts, if any, that you
+     * included in the <code>TrustedSigners</code> complex type for this distribution.
+     * These are the accounts that you want to allow to create signed URLs for private
+     * content.</p> <p>The <code>Signer</code> complex type lists the Amazon Web
+     * Services account number of the trusted signer or <code>self</code> if the signer
+     * is the Amazon Web Services account that created the distribution. The
+     * <code>Signer</code> element also includes the IDs of any active CloudFront key
+     * pairs that are associated with the trusted signer's Amazon Web Services account.
+     * If no <code>KeyPairId</code> element appears for a <code>Signer</code>, that
+     * signer can't create signed URLs.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
      * Guide</i>. </p>
@@ -320,16 +320,16 @@ namespace Model
     inline bool ActiveTrustedSignersHasBeenSet() const { return m_activeTrustedSignersHasBeenSet; }
 
     /**
-     * <p>A complex type that lists the AWS accounts, if any, that you included in the
-     * <code>TrustedSigners</code> complex type for this distribution. These are the
-     * accounts that you want to allow to create signed URLs for private content.</p>
-     * <p>The <code>Signer</code> complex type lists the AWS account number of the
-     * trusted signer or <code>self</code> if the signer is the AWS account that
-     * created the distribution. The <code>Signer</code> element also includes the IDs
-     * of any active CloudFront key pairs that are associated with the trusted signer's
-     * AWS account. If no <code>KeyPairId</code> element appears for a
-     * <code>Signer</code>, that signer can't create signed URLs.</p> <p>For more
-     * information, see <a
+     * <p>A complex type that lists the Amazon Web Services accounts, if any, that you
+     * included in the <code>TrustedSigners</code> complex type for this distribution.
+     * These are the accounts that you want to allow to create signed URLs for private
+     * content.</p> <p>The <code>Signer</code> complex type lists the Amazon Web
+     * Services account number of the trusted signer or <code>self</code> if the signer
+     * is the Amazon Web Services account that created the distribution. The
+     * <code>Signer</code> element also includes the IDs of any active CloudFront key
+     * pairs that are associated with the trusted signer's Amazon Web Services account.
+     * If no <code>KeyPairId</code> element appears for a <code>Signer</code>, that
+     * signer can't create signed URLs.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
      * Guide</i>. </p>
@@ -337,16 +337,16 @@ namespace Model
     inline void SetActiveTrustedSigners(const ActiveTrustedSigners& value) { m_activeTrustedSignersHasBeenSet = true; m_activeTrustedSigners = value; }
 
     /**
-     * <p>A complex type that lists the AWS accounts, if any, that you included in the
-     * <code>TrustedSigners</code> complex type for this distribution. These are the
-     * accounts that you want to allow to create signed URLs for private content.</p>
-     * <p>The <code>Signer</code> complex type lists the AWS account number of the
-     * trusted signer or <code>self</code> if the signer is the AWS account that
-     * created the distribution. The <code>Signer</code> element also includes the IDs
-     * of any active CloudFront key pairs that are associated with the trusted signer's
-     * AWS account. If no <code>KeyPairId</code> element appears for a
-     * <code>Signer</code>, that signer can't create signed URLs.</p> <p>For more
-     * information, see <a
+     * <p>A complex type that lists the Amazon Web Services accounts, if any, that you
+     * included in the <code>TrustedSigners</code> complex type for this distribution.
+     * These are the accounts that you want to allow to create signed URLs for private
+     * content.</p> <p>The <code>Signer</code> complex type lists the Amazon Web
+     * Services account number of the trusted signer or <code>self</code> if the signer
+     * is the Amazon Web Services account that created the distribution. The
+     * <code>Signer</code> element also includes the IDs of any active CloudFront key
+     * pairs that are associated with the trusted signer's Amazon Web Services account.
+     * If no <code>KeyPairId</code> element appears for a <code>Signer</code>, that
+     * signer can't create signed URLs.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
      * Guide</i>. </p>
@@ -354,16 +354,16 @@ namespace Model
     inline void SetActiveTrustedSigners(ActiveTrustedSigners&& value) { m_activeTrustedSignersHasBeenSet = true; m_activeTrustedSigners = std::move(value); }
 
     /**
-     * <p>A complex type that lists the AWS accounts, if any, that you included in the
-     * <code>TrustedSigners</code> complex type for this distribution. These are the
-     * accounts that you want to allow to create signed URLs for private content.</p>
-     * <p>The <code>Signer</code> complex type lists the AWS account number of the
-     * trusted signer or <code>self</code> if the signer is the AWS account that
-     * created the distribution. The <code>Signer</code> element also includes the IDs
-     * of any active CloudFront key pairs that are associated with the trusted signer's
-     * AWS account. If no <code>KeyPairId</code> element appears for a
-     * <code>Signer</code>, that signer can't create signed URLs.</p> <p>For more
-     * information, see <a
+     * <p>A complex type that lists the Amazon Web Services accounts, if any, that you
+     * included in the <code>TrustedSigners</code> complex type for this distribution.
+     * These are the accounts that you want to allow to create signed URLs for private
+     * content.</p> <p>The <code>Signer</code> complex type lists the Amazon Web
+     * Services account number of the trusted signer or <code>self</code> if the signer
+     * is the Amazon Web Services account that created the distribution. The
+     * <code>Signer</code> element also includes the IDs of any active CloudFront key
+     * pairs that are associated with the trusted signer's Amazon Web Services account.
+     * If no <code>KeyPairId</code> element appears for a <code>Signer</code>, that
+     * signer can't create signed URLs.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
      * Guide</i>. </p>
@@ -371,16 +371,16 @@ namespace Model
     inline StreamingDistribution& WithActiveTrustedSigners(const ActiveTrustedSigners& value) { SetActiveTrustedSigners(value); return *this;}
 
     /**
-     * <p>A complex type that lists the AWS accounts, if any, that you included in the
-     * <code>TrustedSigners</code> complex type for this distribution. These are the
-     * accounts that you want to allow to create signed URLs for private content.</p>
-     * <p>The <code>Signer</code> complex type lists the AWS account number of the
-     * trusted signer or <code>self</code> if the signer is the AWS account that
-     * created the distribution. The <code>Signer</code> element also includes the IDs
-     * of any active CloudFront key pairs that are associated with the trusted signer's
-     * AWS account. If no <code>KeyPairId</code> element appears for a
-     * <code>Signer</code>, that signer can't create signed URLs.</p> <p>For more
-     * information, see <a
+     * <p>A complex type that lists the Amazon Web Services accounts, if any, that you
+     * included in the <code>TrustedSigners</code> complex type for this distribution.
+     * These are the accounts that you want to allow to create signed URLs for private
+     * content.</p> <p>The <code>Signer</code> complex type lists the Amazon Web
+     * Services account number of the trusted signer or <code>self</code> if the signer
+     * is the Amazon Web Services account that created the distribution. The
+     * <code>Signer</code> element also includes the IDs of any active CloudFront key
+     * pairs that are associated with the trusted signer's Amazon Web Services account.
+     * If no <code>KeyPairId</code> element appears for a <code>Signer</code>, that
+     * signer can't create signed URLs.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
      * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
      * Guide</i>. </p>

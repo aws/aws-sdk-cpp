@@ -84,42 +84,50 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS account that owns the associated gateway.</p>
+     * <p>The ID of the Amazon Web Services account that owns the associated
+     * gateway.</p>
      */
     inline const Aws::String& GetDirectConnectGatewayOwnerAccount() const{ return m_directConnectGatewayOwnerAccount; }
 
     /**
-     * <p>The ID of the AWS account that owns the associated gateway.</p>
+     * <p>The ID of the Amazon Web Services account that owns the associated
+     * gateway.</p>
      */
     inline bool DirectConnectGatewayOwnerAccountHasBeenSet() const { return m_directConnectGatewayOwnerAccountHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS account that owns the associated gateway.</p>
+     * <p>The ID of the Amazon Web Services account that owns the associated
+     * gateway.</p>
      */
     inline void SetDirectConnectGatewayOwnerAccount(const Aws::String& value) { m_directConnectGatewayOwnerAccountHasBeenSet = true; m_directConnectGatewayOwnerAccount = value; }
 
     /**
-     * <p>The ID of the AWS account that owns the associated gateway.</p>
+     * <p>The ID of the Amazon Web Services account that owns the associated
+     * gateway.</p>
      */
     inline void SetDirectConnectGatewayOwnerAccount(Aws::String&& value) { m_directConnectGatewayOwnerAccountHasBeenSet = true; m_directConnectGatewayOwnerAccount = std::move(value); }
 
     /**
-     * <p>The ID of the AWS account that owns the associated gateway.</p>
+     * <p>The ID of the Amazon Web Services account that owns the associated
+     * gateway.</p>
      */
     inline void SetDirectConnectGatewayOwnerAccount(const char* value) { m_directConnectGatewayOwnerAccountHasBeenSet = true; m_directConnectGatewayOwnerAccount.assign(value); }
 
     /**
-     * <p>The ID of the AWS account that owns the associated gateway.</p>
+     * <p>The ID of the Amazon Web Services account that owns the associated
+     * gateway.</p>
      */
     inline DirectConnectGatewayAssociation& WithDirectConnectGatewayOwnerAccount(const Aws::String& value) { SetDirectConnectGatewayOwnerAccount(value); return *this;}
 
     /**
-     * <p>The ID of the AWS account that owns the associated gateway.</p>
+     * <p>The ID of the Amazon Web Services account that owns the associated
+     * gateway.</p>
      */
     inline DirectConnectGatewayAssociation& WithDirectConnectGatewayOwnerAccount(Aws::String&& value) { SetDirectConnectGatewayOwnerAccount(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS account that owns the associated gateway.</p>
+     * <p>The ID of the Amazon Web Services account that owns the associated
+     * gateway.</p>
      */
     inline DirectConnectGatewayAssociation& WithDirectConnectGatewayOwnerAccount(const char* value) { SetDirectConnectGatewayOwnerAccount(value); return *this;}
 
@@ -419,83 +427,99 @@ namespace Model
 
 
     /**
-     * <p>The AWS Region where the virtual private gateway is located.</p>
+     * <p>The Amazon Web Services Region where the virtual private gateway is
+     * located.</p>
      */
     inline const Aws::String& GetVirtualGatewayRegion() const{ return m_virtualGatewayRegion; }
 
     /**
-     * <p>The AWS Region where the virtual private gateway is located.</p>
+     * <p>The Amazon Web Services Region where the virtual private gateway is
+     * located.</p>
      */
     inline bool VirtualGatewayRegionHasBeenSet() const { return m_virtualGatewayRegionHasBeenSet; }
 
     /**
-     * <p>The AWS Region where the virtual private gateway is located.</p>
+     * <p>The Amazon Web Services Region where the virtual private gateway is
+     * located.</p>
      */
     inline void SetVirtualGatewayRegion(const Aws::String& value) { m_virtualGatewayRegionHasBeenSet = true; m_virtualGatewayRegion = value; }
 
     /**
-     * <p>The AWS Region where the virtual private gateway is located.</p>
+     * <p>The Amazon Web Services Region where the virtual private gateway is
+     * located.</p>
      */
     inline void SetVirtualGatewayRegion(Aws::String&& value) { m_virtualGatewayRegionHasBeenSet = true; m_virtualGatewayRegion = std::move(value); }
 
     /**
-     * <p>The AWS Region where the virtual private gateway is located.</p>
+     * <p>The Amazon Web Services Region where the virtual private gateway is
+     * located.</p>
      */
     inline void SetVirtualGatewayRegion(const char* value) { m_virtualGatewayRegionHasBeenSet = true; m_virtualGatewayRegion.assign(value); }
 
     /**
-     * <p>The AWS Region where the virtual private gateway is located.</p>
+     * <p>The Amazon Web Services Region where the virtual private gateway is
+     * located.</p>
      */
     inline DirectConnectGatewayAssociation& WithVirtualGatewayRegion(const Aws::String& value) { SetVirtualGatewayRegion(value); return *this;}
 
     /**
-     * <p>The AWS Region where the virtual private gateway is located.</p>
+     * <p>The Amazon Web Services Region where the virtual private gateway is
+     * located.</p>
      */
     inline DirectConnectGatewayAssociation& WithVirtualGatewayRegion(Aws::String&& value) { SetVirtualGatewayRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Region where the virtual private gateway is located.</p>
+     * <p>The Amazon Web Services Region where the virtual private gateway is
+     * located.</p>
      */
     inline DirectConnectGatewayAssociation& WithVirtualGatewayRegion(const char* value) { SetVirtualGatewayRegion(value); return *this;}
 
 
     /**
-     * <p>The ID of the AWS account that owns the virtual private gateway.</p>
+     * <p>The ID of the Amazon Web Services account that owns the virtual private
+     * gateway.</p>
      */
     inline const Aws::String& GetVirtualGatewayOwnerAccount() const{ return m_virtualGatewayOwnerAccount; }
 
     /**
-     * <p>The ID of the AWS account that owns the virtual private gateway.</p>
+     * <p>The ID of the Amazon Web Services account that owns the virtual private
+     * gateway.</p>
      */
     inline bool VirtualGatewayOwnerAccountHasBeenSet() const { return m_virtualGatewayOwnerAccountHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS account that owns the virtual private gateway.</p>
+     * <p>The ID of the Amazon Web Services account that owns the virtual private
+     * gateway.</p>
      */
     inline void SetVirtualGatewayOwnerAccount(const Aws::String& value) { m_virtualGatewayOwnerAccountHasBeenSet = true; m_virtualGatewayOwnerAccount = value; }
 
     /**
-     * <p>The ID of the AWS account that owns the virtual private gateway.</p>
+     * <p>The ID of the Amazon Web Services account that owns the virtual private
+     * gateway.</p>
      */
     inline void SetVirtualGatewayOwnerAccount(Aws::String&& value) { m_virtualGatewayOwnerAccountHasBeenSet = true; m_virtualGatewayOwnerAccount = std::move(value); }
 
     /**
-     * <p>The ID of the AWS account that owns the virtual private gateway.</p>
+     * <p>The ID of the Amazon Web Services account that owns the virtual private
+     * gateway.</p>
      */
     inline void SetVirtualGatewayOwnerAccount(const char* value) { m_virtualGatewayOwnerAccountHasBeenSet = true; m_virtualGatewayOwnerAccount.assign(value); }
 
     /**
-     * <p>The ID of the AWS account that owns the virtual private gateway.</p>
+     * <p>The ID of the Amazon Web Services account that owns the virtual private
+     * gateway.</p>
      */
     inline DirectConnectGatewayAssociation& WithVirtualGatewayOwnerAccount(const Aws::String& value) { SetVirtualGatewayOwnerAccount(value); return *this;}
 
     /**
-     * <p>The ID of the AWS account that owns the virtual private gateway.</p>
+     * <p>The ID of the Amazon Web Services account that owns the virtual private
+     * gateway.</p>
      */
     inline DirectConnectGatewayAssociation& WithVirtualGatewayOwnerAccount(Aws::String&& value) { SetVirtualGatewayOwnerAccount(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS account that owns the virtual private gateway.</p>
+     * <p>The ID of the Amazon Web Services account that owns the virtual private
+     * gateway.</p>
      */
     inline DirectConnectGatewayAssociation& WithVirtualGatewayOwnerAccount(const char* value) { SetVirtualGatewayOwnerAccount(value); return *this;}
 

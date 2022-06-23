@@ -7,6 +7,7 @@
 #include <aws/frauddetector/FraudDetector_EXPORTS.h>
 #include <aws/frauddetector/model/DataValidationMetrics.h>
 #include <aws/frauddetector/model/TrainingMetrics.h>
+#include <aws/frauddetector/model/VariableImportanceMetrics.h>
 #include <utility>
 
 namespace Aws
@@ -99,6 +100,37 @@ namespace Model
      */
     inline TrainingResult& WithTrainingMetrics(TrainingMetrics&& value) { SetTrainingMetrics(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The variable importance metrics.</p>
+     */
+    inline const VariableImportanceMetrics& GetVariableImportanceMetrics() const{ return m_variableImportanceMetrics; }
+
+    /**
+     * <p>The variable importance metrics.</p>
+     */
+    inline bool VariableImportanceMetricsHasBeenSet() const { return m_variableImportanceMetricsHasBeenSet; }
+
+    /**
+     * <p>The variable importance metrics.</p>
+     */
+    inline void SetVariableImportanceMetrics(const VariableImportanceMetrics& value) { m_variableImportanceMetricsHasBeenSet = true; m_variableImportanceMetrics = value; }
+
+    /**
+     * <p>The variable importance metrics.</p>
+     */
+    inline void SetVariableImportanceMetrics(VariableImportanceMetrics&& value) { m_variableImportanceMetricsHasBeenSet = true; m_variableImportanceMetrics = std::move(value); }
+
+    /**
+     * <p>The variable importance metrics.</p>
+     */
+    inline TrainingResult& WithVariableImportanceMetrics(const VariableImportanceMetrics& value) { SetVariableImportanceMetrics(value); return *this;}
+
+    /**
+     * <p>The variable importance metrics.</p>
+     */
+    inline TrainingResult& WithVariableImportanceMetrics(VariableImportanceMetrics&& value) { SetVariableImportanceMetrics(std::move(value)); return *this;}
+
   private:
 
     DataValidationMetrics m_dataValidationMetrics;
@@ -106,6 +138,9 @@ namespace Model
 
     TrainingMetrics m_trainingMetrics;
     bool m_trainingMetricsHasBeenSet;
+
+    VariableImportanceMetrics m_variableImportanceMetrics;
+    bool m_variableImportanceMetricsHasBeenSet;
   };
 
 } // namespace Model

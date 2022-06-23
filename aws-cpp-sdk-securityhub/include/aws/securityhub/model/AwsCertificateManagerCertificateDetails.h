@@ -30,7 +30,7 @@ namespace Model
 {
 
   /**
-   * <p>Provides details about an AWS Certificate Manager certificate.</p><p><h3>See
+   * <p>Provides details about an Certificate Manager certificate.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsCertificateManagerCertificateDetails">AWS
    * API Reference</a></p>
@@ -516,47 +516,56 @@ namespace Model
 
 
     /**
-     * <p>The list of ARNs for the AWS resources that use the certificate.</p>
+     * <p>The list of ARNs for the Amazon Web Services resources that use the
+     * certificate.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInUseBy() const{ return m_inUseBy; }
 
     /**
-     * <p>The list of ARNs for the AWS resources that use the certificate.</p>
+     * <p>The list of ARNs for the Amazon Web Services resources that use the
+     * certificate.</p>
      */
     inline bool InUseByHasBeenSet() const { return m_inUseByHasBeenSet; }
 
     /**
-     * <p>The list of ARNs for the AWS resources that use the certificate.</p>
+     * <p>The list of ARNs for the Amazon Web Services resources that use the
+     * certificate.</p>
      */
     inline void SetInUseBy(const Aws::Vector<Aws::String>& value) { m_inUseByHasBeenSet = true; m_inUseBy = value; }
 
     /**
-     * <p>The list of ARNs for the AWS resources that use the certificate.</p>
+     * <p>The list of ARNs for the Amazon Web Services resources that use the
+     * certificate.</p>
      */
     inline void SetInUseBy(Aws::Vector<Aws::String>&& value) { m_inUseByHasBeenSet = true; m_inUseBy = std::move(value); }
 
     /**
-     * <p>The list of ARNs for the AWS resources that use the certificate.</p>
+     * <p>The list of ARNs for the Amazon Web Services resources that use the
+     * certificate.</p>
      */
     inline AwsCertificateManagerCertificateDetails& WithInUseBy(const Aws::Vector<Aws::String>& value) { SetInUseBy(value); return *this;}
 
     /**
-     * <p>The list of ARNs for the AWS resources that use the certificate.</p>
+     * <p>The list of ARNs for the Amazon Web Services resources that use the
+     * certificate.</p>
      */
     inline AwsCertificateManagerCertificateDetails& WithInUseBy(Aws::Vector<Aws::String>&& value) { SetInUseBy(std::move(value)); return *this;}
 
     /**
-     * <p>The list of ARNs for the AWS resources that use the certificate.</p>
+     * <p>The list of ARNs for the Amazon Web Services resources that use the
+     * certificate.</p>
      */
     inline AwsCertificateManagerCertificateDetails& AddInUseBy(const Aws::String& value) { m_inUseByHasBeenSet = true; m_inUseBy.push_back(value); return *this; }
 
     /**
-     * <p>The list of ARNs for the AWS resources that use the certificate.</p>
+     * <p>The list of ARNs for the Amazon Web Services resources that use the
+     * certificate.</p>
      */
     inline AwsCertificateManagerCertificateDetails& AddInUseBy(Aws::String&& value) { m_inUseByHasBeenSet = true; m_inUseBy.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The list of ARNs for the AWS resources that use the certificate.</p>
+     * <p>The list of ARNs for the Amazon Web Services resources that use the
+     * certificate.</p>
      */
     inline AwsCertificateManagerCertificateDetails& AddInUseBy(const char* value) { m_inUseByHasBeenSet = true; m_inUseBy.push_back(value); return *this; }
 
@@ -1022,43 +1031,43 @@ namespace Model
 
 
     /**
-     * <p>Information about the status of the AWS Certificate Manager managed renewal
-     * for the certificate. Provided only when the certificate type is
+     * <p>Information about the status of the Certificate Manager managed renewal for
+     * the certificate. Provided only when the certificate type is
      * <code>AMAZON_ISSUED</code>.</p>
      */
     inline const AwsCertificateManagerCertificateRenewalSummary& GetRenewalSummary() const{ return m_renewalSummary; }
 
     /**
-     * <p>Information about the status of the AWS Certificate Manager managed renewal
-     * for the certificate. Provided only when the certificate type is
+     * <p>Information about the status of the Certificate Manager managed renewal for
+     * the certificate. Provided only when the certificate type is
      * <code>AMAZON_ISSUED</code>.</p>
      */
     inline bool RenewalSummaryHasBeenSet() const { return m_renewalSummaryHasBeenSet; }
 
     /**
-     * <p>Information about the status of the AWS Certificate Manager managed renewal
-     * for the certificate. Provided only when the certificate type is
+     * <p>Information about the status of the Certificate Manager managed renewal for
+     * the certificate. Provided only when the certificate type is
      * <code>AMAZON_ISSUED</code>.</p>
      */
     inline void SetRenewalSummary(const AwsCertificateManagerCertificateRenewalSummary& value) { m_renewalSummaryHasBeenSet = true; m_renewalSummary = value; }
 
     /**
-     * <p>Information about the status of the AWS Certificate Manager managed renewal
-     * for the certificate. Provided only when the certificate type is
+     * <p>Information about the status of the Certificate Manager managed renewal for
+     * the certificate. Provided only when the certificate type is
      * <code>AMAZON_ISSUED</code>.</p>
      */
     inline void SetRenewalSummary(AwsCertificateManagerCertificateRenewalSummary&& value) { m_renewalSummaryHasBeenSet = true; m_renewalSummary = std::move(value); }
 
     /**
-     * <p>Information about the status of the AWS Certificate Manager managed renewal
-     * for the certificate. Provided only when the certificate type is
+     * <p>Information about the status of the Certificate Manager managed renewal for
+     * the certificate. Provided only when the certificate type is
      * <code>AMAZON_ISSUED</code>.</p>
      */
     inline AwsCertificateManagerCertificateDetails& WithRenewalSummary(const AwsCertificateManagerCertificateRenewalSummary& value) { SetRenewalSummary(value); return *this;}
 
     /**
-     * <p>Information about the status of the AWS Certificate Manager managed renewal
-     * for the certificate. Provided only when the certificate type is
+     * <p>Information about the status of the Certificate Manager managed renewal for
+     * the certificate. Provided only when the certificate type is
      * <code>AMAZON_ISSUED</code>.</p>
      */
     inline AwsCertificateManagerCertificateDetails& WithRenewalSummary(AwsCertificateManagerCertificateRenewalSummary&& value) { SetRenewalSummary(std::move(value)); return *this;}
@@ -1343,7 +1352,7 @@ namespace Model
 
 
     /**
-     * <p>The source of the certificate. For certificates that AWS Certificate Manager
+     * <p>The source of the certificate. For certificates that Certificate Manager
      * provides, <code>Type</code> is <code>AMAZON_ISSUED</code>. For certificates that
      * are imported with <code>ImportCertificate</code>, <code>Type</code> is
      * <code>IMPORTED</code>.</p> <p>Valid values: <code>IMPORTED</code> |
@@ -1352,7 +1361,7 @@ namespace Model
     inline const Aws::String& GetType() const{ return m_type; }
 
     /**
-     * <p>The source of the certificate. For certificates that AWS Certificate Manager
+     * <p>The source of the certificate. For certificates that Certificate Manager
      * provides, <code>Type</code> is <code>AMAZON_ISSUED</code>. For certificates that
      * are imported with <code>ImportCertificate</code>, <code>Type</code> is
      * <code>IMPORTED</code>.</p> <p>Valid values: <code>IMPORTED</code> |
@@ -1361,7 +1370,7 @@ namespace Model
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The source of the certificate. For certificates that AWS Certificate Manager
+     * <p>The source of the certificate. For certificates that Certificate Manager
      * provides, <code>Type</code> is <code>AMAZON_ISSUED</code>. For certificates that
      * are imported with <code>ImportCertificate</code>, <code>Type</code> is
      * <code>IMPORTED</code>.</p> <p>Valid values: <code>IMPORTED</code> |
@@ -1370,7 +1379,7 @@ namespace Model
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The source of the certificate. For certificates that AWS Certificate Manager
+     * <p>The source of the certificate. For certificates that Certificate Manager
      * provides, <code>Type</code> is <code>AMAZON_ISSUED</code>. For certificates that
      * are imported with <code>ImportCertificate</code>, <code>Type</code> is
      * <code>IMPORTED</code>.</p> <p>Valid values: <code>IMPORTED</code> |
@@ -1379,7 +1388,7 @@ namespace Model
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The source of the certificate. For certificates that AWS Certificate Manager
+     * <p>The source of the certificate. For certificates that Certificate Manager
      * provides, <code>Type</code> is <code>AMAZON_ISSUED</code>. For certificates that
      * are imported with <code>ImportCertificate</code>, <code>Type</code> is
      * <code>IMPORTED</code>.</p> <p>Valid values: <code>IMPORTED</code> |
@@ -1388,7 +1397,7 @@ namespace Model
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
     /**
-     * <p>The source of the certificate. For certificates that AWS Certificate Manager
+     * <p>The source of the certificate. For certificates that Certificate Manager
      * provides, <code>Type</code> is <code>AMAZON_ISSUED</code>. For certificates that
      * are imported with <code>ImportCertificate</code>, <code>Type</code> is
      * <code>IMPORTED</code>.</p> <p>Valid values: <code>IMPORTED</code> |
@@ -1397,7 +1406,7 @@ namespace Model
     inline AwsCertificateManagerCertificateDetails& WithType(const Aws::String& value) { SetType(value); return *this;}
 
     /**
-     * <p>The source of the certificate. For certificates that AWS Certificate Manager
+     * <p>The source of the certificate. For certificates that Certificate Manager
      * provides, <code>Type</code> is <code>AMAZON_ISSUED</code>. For certificates that
      * are imported with <code>ImportCertificate</code>, <code>Type</code> is
      * <code>IMPORTED</code>.</p> <p>Valid values: <code>IMPORTED</code> |
@@ -1406,7 +1415,7 @@ namespace Model
     inline AwsCertificateManagerCertificateDetails& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
-     * <p>The source of the certificate. For certificates that AWS Certificate Manager
+     * <p>The source of the certificate. For certificates that Certificate Manager
      * provides, <code>Type</code> is <code>AMAZON_ISSUED</code>. For certificates that
      * are imported with <code>ImportCertificate</code>, <code>Type</code> is
      * <code>IMPORTED</code>.</p> <p>Valid values: <code>IMPORTED</code> |

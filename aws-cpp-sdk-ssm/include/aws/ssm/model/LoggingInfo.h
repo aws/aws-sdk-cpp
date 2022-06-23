@@ -24,14 +24,16 @@ namespace Model
 {
 
   /**
-   * <p>Information about an S3 bucket to write instance-level logs to.</p> 
-   * <p> <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to
-   * contain logs, instead use the <code>OutputS3BucketName</code> and
+   * <p>Information about an Amazon Simple Storage Service (Amazon S3) bucket to
+   * write managed node-level logs to.</p>  <p> <code>LoggingInfo</code> has
+   * been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket
+   * to contain logs, instead use the <code>OutputS3BucketName</code> and
    * <code>OutputS3KeyPrefix</code> options in the
    * <code>TaskInvocationParameters</code> structure. For information about how
-   * Systems Manager handles these options for the supported maintenance window task
-   * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>
-   * <p><h3>See Also:</h3>   <a
+   * Amazon Web Services Systems Manager handles these options for the supported
+   * maintenance window task types, see
+   * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/LoggingInfo">AWS API
    * Reference</a></p>
    */
@@ -127,42 +129,42 @@ namespace Model
 
 
     /**
-     * <p>The Region where the S3 bucket is located.</p>
+     * <p>The Amazon Web Services Region where the S3 bucket is located.</p>
      */
     inline const Aws::String& GetS3Region() const{ return m_s3Region; }
 
     /**
-     * <p>The Region where the S3 bucket is located.</p>
+     * <p>The Amazon Web Services Region where the S3 bucket is located.</p>
      */
     inline bool S3RegionHasBeenSet() const { return m_s3RegionHasBeenSet; }
 
     /**
-     * <p>The Region where the S3 bucket is located.</p>
+     * <p>The Amazon Web Services Region where the S3 bucket is located.</p>
      */
     inline void SetS3Region(const Aws::String& value) { m_s3RegionHasBeenSet = true; m_s3Region = value; }
 
     /**
-     * <p>The Region where the S3 bucket is located.</p>
+     * <p>The Amazon Web Services Region where the S3 bucket is located.</p>
      */
     inline void SetS3Region(Aws::String&& value) { m_s3RegionHasBeenSet = true; m_s3Region = std::move(value); }
 
     /**
-     * <p>The Region where the S3 bucket is located.</p>
+     * <p>The Amazon Web Services Region where the S3 bucket is located.</p>
      */
     inline void SetS3Region(const char* value) { m_s3RegionHasBeenSet = true; m_s3Region.assign(value); }
 
     /**
-     * <p>The Region where the S3 bucket is located.</p>
+     * <p>The Amazon Web Services Region where the S3 bucket is located.</p>
      */
     inline LoggingInfo& WithS3Region(const Aws::String& value) { SetS3Region(value); return *this;}
 
     /**
-     * <p>The Region where the S3 bucket is located.</p>
+     * <p>The Amazon Web Services Region where the S3 bucket is located.</p>
      */
     inline LoggingInfo& WithS3Region(Aws::String&& value) { SetS3Region(std::move(value)); return *this;}
 
     /**
-     * <p>The Region where the S3 bucket is located.</p>
+     * <p>The Amazon Web Services Region where the S3 bucket is located.</p>
      */
     inline LoggingInfo& WithS3Region(const char* value) { SetS3Region(value); return *this;}
 

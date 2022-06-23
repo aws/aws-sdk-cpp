@@ -157,7 +157,7 @@ namespace Model
      * </p> <p> <code> &lt;/ResponseMetadata&gt;</code> </p> <p>
      * <code>&lt;/GetMetricWidgetImageResponse&gt;</code> </p> <p>The
      * <code>image/png</code> setting is intended only for custom HTTP requests. For
-     * most use cases, and all actions using an AWS SDK, you should use
+     * most use cases, and all actions using an Amazon Web Services SDK, you should use
      * <code>png</code>. If you specify <code>image/png</code>, the HTTP response has a
      * content-type set to <code>image/png</code>, and the body of the response is a
      * PNG image. </p>
@@ -180,7 +180,7 @@ namespace Model
      * </p> <p> <code> &lt;/ResponseMetadata&gt;</code> </p> <p>
      * <code>&lt;/GetMetricWidgetImageResponse&gt;</code> </p> <p>The
      * <code>image/png</code> setting is intended only for custom HTTP requests. For
-     * most use cases, and all actions using an AWS SDK, you should use
+     * most use cases, and all actions using an Amazon Web Services SDK, you should use
      * <code>png</code>. If you specify <code>image/png</code>, the HTTP response has a
      * content-type set to <code>image/png</code>, and the body of the response is a
      * PNG image. </p>
@@ -203,7 +203,7 @@ namespace Model
      * </p> <p> <code> &lt;/ResponseMetadata&gt;</code> </p> <p>
      * <code>&lt;/GetMetricWidgetImageResponse&gt;</code> </p> <p>The
      * <code>image/png</code> setting is intended only for custom HTTP requests. For
-     * most use cases, and all actions using an AWS SDK, you should use
+     * most use cases, and all actions using an Amazon Web Services SDK, you should use
      * <code>png</code>. If you specify <code>image/png</code>, the HTTP response has a
      * content-type set to <code>image/png</code>, and the body of the response is a
      * PNG image. </p>
@@ -226,7 +226,7 @@ namespace Model
      * </p> <p> <code> &lt;/ResponseMetadata&gt;</code> </p> <p>
      * <code>&lt;/GetMetricWidgetImageResponse&gt;</code> </p> <p>The
      * <code>image/png</code> setting is intended only for custom HTTP requests. For
-     * most use cases, and all actions using an AWS SDK, you should use
+     * most use cases, and all actions using an Amazon Web Services SDK, you should use
      * <code>png</code>. If you specify <code>image/png</code>, the HTTP response has a
      * content-type set to <code>image/png</code>, and the body of the response is a
      * PNG image. </p>
@@ -249,7 +249,7 @@ namespace Model
      * </p> <p> <code> &lt;/ResponseMetadata&gt;</code> </p> <p>
      * <code>&lt;/GetMetricWidgetImageResponse&gt;</code> </p> <p>The
      * <code>image/png</code> setting is intended only for custom HTTP requests. For
-     * most use cases, and all actions using an AWS SDK, you should use
+     * most use cases, and all actions using an Amazon Web Services SDK, you should use
      * <code>png</code>. If you specify <code>image/png</code>, the HTTP response has a
      * content-type set to <code>image/png</code>, and the body of the response is a
      * PNG image. </p>
@@ -272,7 +272,7 @@ namespace Model
      * </p> <p> <code> &lt;/ResponseMetadata&gt;</code> </p> <p>
      * <code>&lt;/GetMetricWidgetImageResponse&gt;</code> </p> <p>The
      * <code>image/png</code> setting is intended only for custom HTTP requests. For
-     * most use cases, and all actions using an AWS SDK, you should use
+     * most use cases, and all actions using an Amazon Web Services SDK, you should use
      * <code>png</code>. If you specify <code>image/png</code>, the HTTP response has a
      * content-type set to <code>image/png</code>, and the body of the response is a
      * PNG image. </p>
@@ -295,7 +295,7 @@ namespace Model
      * </p> <p> <code> &lt;/ResponseMetadata&gt;</code> </p> <p>
      * <code>&lt;/GetMetricWidgetImageResponse&gt;</code> </p> <p>The
      * <code>image/png</code> setting is intended only for custom HTTP requests. For
-     * most use cases, and all actions using an AWS SDK, you should use
+     * most use cases, and all actions using an Amazon Web Services SDK, you should use
      * <code>png</code>. If you specify <code>image/png</code>, the HTTP response has a
      * content-type set to <code>image/png</code>, and the body of the response is a
      * PNG image. </p>
@@ -318,7 +318,7 @@ namespace Model
      * </p> <p> <code> &lt;/ResponseMetadata&gt;</code> </p> <p>
      * <code>&lt;/GetMetricWidgetImageResponse&gt;</code> </p> <p>The
      * <code>image/png</code> setting is intended only for custom HTTP requests. For
-     * most use cases, and all actions using an AWS SDK, you should use
+     * most use cases, and all actions using an Amazon Web Services SDK, you should use
      * <code>png</code>. If you specify <code>image/png</code>, the HTTP response has a
      * content-type set to <code>image/png</code>, and the body of the response is a
      * PNG image. </p>

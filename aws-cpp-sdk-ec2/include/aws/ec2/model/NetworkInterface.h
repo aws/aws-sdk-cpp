@@ -15,6 +15,8 @@
 #include <aws/ec2/model/GroupIdentifier.h>
 #include <aws/ec2/model/NetworkInterfaceIpv6Address.h>
 #include <aws/ec2/model/NetworkInterfacePrivateIpAddress.h>
+#include <aws/ec2/model/Ipv4PrefixSpecification.h>
+#include <aws/ec2/model/Ipv6PrefixSpecification.h>
 #include <aws/ec2/model/Tag.h>
 #include <utility>
 
@@ -435,42 +437,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID of the owner of the network interface.</p>
+     * <p>The Amazon Web Services account ID of the owner of the network interface.</p>
      */
     inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
 
     /**
-     * <p>The AWS account ID of the owner of the network interface.</p>
+     * <p>The Amazon Web Services account ID of the owner of the network interface.</p>
      */
     inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID of the owner of the network interface.</p>
+     * <p>The Amazon Web Services account ID of the owner of the network interface.</p>
      */
     inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
 
     /**
-     * <p>The AWS account ID of the owner of the network interface.</p>
+     * <p>The Amazon Web Services account ID of the owner of the network interface.</p>
      */
     inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
 
     /**
-     * <p>The AWS account ID of the owner of the network interface.</p>
+     * <p>The Amazon Web Services account ID of the owner of the network interface.</p>
      */
     inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
 
     /**
-     * <p>The AWS account ID of the owner of the network interface.</p>
+     * <p>The Amazon Web Services account ID of the owner of the network interface.</p>
      */
     inline NetworkInterface& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
 
     /**
-     * <p>The AWS account ID of the owner of the network interface.</p>
+     * <p>The Amazon Web Services account ID of the owner of the network interface.</p>
      */
     inline NetworkInterface& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID of the owner of the network interface.</p>
+     * <p>The Amazon Web Services account ID of the owner of the network interface.</p>
      */
     inline NetworkInterface& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
 
@@ -599,92 +601,178 @@ namespace Model
 
 
     /**
-     * <p>The ID of the entity that launched the instance on your behalf (for example,
-     * AWS Management Console or Auto Scaling).</p>
+     * <p>The IPv4 prefixes that are assigned to the network interface.</p>
+     */
+    inline const Aws::Vector<Ipv4PrefixSpecification>& GetIpv4Prefixes() const{ return m_ipv4Prefixes; }
+
+    /**
+     * <p>The IPv4 prefixes that are assigned to the network interface.</p>
+     */
+    inline bool Ipv4PrefixesHasBeenSet() const { return m_ipv4PrefixesHasBeenSet; }
+
+    /**
+     * <p>The IPv4 prefixes that are assigned to the network interface.</p>
+     */
+    inline void SetIpv4Prefixes(const Aws::Vector<Ipv4PrefixSpecification>& value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes = value; }
+
+    /**
+     * <p>The IPv4 prefixes that are assigned to the network interface.</p>
+     */
+    inline void SetIpv4Prefixes(Aws::Vector<Ipv4PrefixSpecification>&& value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes = std::move(value); }
+
+    /**
+     * <p>The IPv4 prefixes that are assigned to the network interface.</p>
+     */
+    inline NetworkInterface& WithIpv4Prefixes(const Aws::Vector<Ipv4PrefixSpecification>& value) { SetIpv4Prefixes(value); return *this;}
+
+    /**
+     * <p>The IPv4 prefixes that are assigned to the network interface.</p>
+     */
+    inline NetworkInterface& WithIpv4Prefixes(Aws::Vector<Ipv4PrefixSpecification>&& value) { SetIpv4Prefixes(std::move(value)); return *this;}
+
+    /**
+     * <p>The IPv4 prefixes that are assigned to the network interface.</p>
+     */
+    inline NetworkInterface& AddIpv4Prefixes(const Ipv4PrefixSpecification& value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes.push_back(value); return *this; }
+
+    /**
+     * <p>The IPv4 prefixes that are assigned to the network interface.</p>
+     */
+    inline NetworkInterface& AddIpv4Prefixes(Ipv4PrefixSpecification&& value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The IPv6 prefixes that are assigned to the network interface.</p>
+     */
+    inline const Aws::Vector<Ipv6PrefixSpecification>& GetIpv6Prefixes() const{ return m_ipv6Prefixes; }
+
+    /**
+     * <p>The IPv6 prefixes that are assigned to the network interface.</p>
+     */
+    inline bool Ipv6PrefixesHasBeenSet() const { return m_ipv6PrefixesHasBeenSet; }
+
+    /**
+     * <p>The IPv6 prefixes that are assigned to the network interface.</p>
+     */
+    inline void SetIpv6Prefixes(const Aws::Vector<Ipv6PrefixSpecification>& value) { m_ipv6PrefixesHasBeenSet = true; m_ipv6Prefixes = value; }
+
+    /**
+     * <p>The IPv6 prefixes that are assigned to the network interface.</p>
+     */
+    inline void SetIpv6Prefixes(Aws::Vector<Ipv6PrefixSpecification>&& value) { m_ipv6PrefixesHasBeenSet = true; m_ipv6Prefixes = std::move(value); }
+
+    /**
+     * <p>The IPv6 prefixes that are assigned to the network interface.</p>
+     */
+    inline NetworkInterface& WithIpv6Prefixes(const Aws::Vector<Ipv6PrefixSpecification>& value) { SetIpv6Prefixes(value); return *this;}
+
+    /**
+     * <p>The IPv6 prefixes that are assigned to the network interface.</p>
+     */
+    inline NetworkInterface& WithIpv6Prefixes(Aws::Vector<Ipv6PrefixSpecification>&& value) { SetIpv6Prefixes(std::move(value)); return *this;}
+
+    /**
+     * <p>The IPv6 prefixes that are assigned to the network interface.</p>
+     */
+    inline NetworkInterface& AddIpv6Prefixes(const Ipv6PrefixSpecification& value) { m_ipv6PrefixesHasBeenSet = true; m_ipv6Prefixes.push_back(value); return *this; }
+
+    /**
+     * <p>The IPv6 prefixes that are assigned to the network interface.</p>
+     */
+    inline NetworkInterface& AddIpv6Prefixes(Ipv6PrefixSpecification&& value) { m_ipv6PrefixesHasBeenSet = true; m_ipv6Prefixes.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The alias or Amazon Web Services account ID of the principal or service that
+     * created the network interface.</p>
      */
     inline const Aws::String& GetRequesterId() const{ return m_requesterId; }
 
     /**
-     * <p>The ID of the entity that launched the instance on your behalf (for example,
-     * AWS Management Console or Auto Scaling).</p>
+     * <p>The alias or Amazon Web Services account ID of the principal or service that
+     * created the network interface.</p>
      */
     inline bool RequesterIdHasBeenSet() const { return m_requesterIdHasBeenSet; }
 
     /**
-     * <p>The ID of the entity that launched the instance on your behalf (for example,
-     * AWS Management Console or Auto Scaling).</p>
+     * <p>The alias or Amazon Web Services account ID of the principal or service that
+     * created the network interface.</p>
      */
     inline void SetRequesterId(const Aws::String& value) { m_requesterIdHasBeenSet = true; m_requesterId = value; }
 
     /**
-     * <p>The ID of the entity that launched the instance on your behalf (for example,
-     * AWS Management Console or Auto Scaling).</p>
+     * <p>The alias or Amazon Web Services account ID of the principal or service that
+     * created the network interface.</p>
      */
     inline void SetRequesterId(Aws::String&& value) { m_requesterIdHasBeenSet = true; m_requesterId = std::move(value); }
 
     /**
-     * <p>The ID of the entity that launched the instance on your behalf (for example,
-     * AWS Management Console or Auto Scaling).</p>
+     * <p>The alias or Amazon Web Services account ID of the principal or service that
+     * created the network interface.</p>
      */
     inline void SetRequesterId(const char* value) { m_requesterIdHasBeenSet = true; m_requesterId.assign(value); }
 
     /**
-     * <p>The ID of the entity that launched the instance on your behalf (for example,
-     * AWS Management Console or Auto Scaling).</p>
+     * <p>The alias or Amazon Web Services account ID of the principal or service that
+     * created the network interface.</p>
      */
     inline NetworkInterface& WithRequesterId(const Aws::String& value) { SetRequesterId(value); return *this;}
 
     /**
-     * <p>The ID of the entity that launched the instance on your behalf (for example,
-     * AWS Management Console or Auto Scaling).</p>
+     * <p>The alias or Amazon Web Services account ID of the principal or service that
+     * created the network interface.</p>
      */
     inline NetworkInterface& WithRequesterId(Aws::String&& value) { SetRequesterId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the entity that launched the instance on your behalf (for example,
-     * AWS Management Console or Auto Scaling).</p>
+     * <p>The alias or Amazon Web Services account ID of the principal or service that
+     * created the network interface.</p>
      */
     inline NetworkInterface& WithRequesterId(const char* value) { SetRequesterId(value); return *this;}
 
 
     /**
-     * <p>Indicates whether the network interface is being managed by AWS.</p>
+     * <p>Indicates whether the network interface is being managed by Amazon Web
+     * Services.</p>
      */
     inline bool GetRequesterManaged() const{ return m_requesterManaged; }
 
     /**
-     * <p>Indicates whether the network interface is being managed by AWS.</p>
+     * <p>Indicates whether the network interface is being managed by Amazon Web
+     * Services.</p>
      */
     inline bool RequesterManagedHasBeenSet() const { return m_requesterManagedHasBeenSet; }
 
     /**
-     * <p>Indicates whether the network interface is being managed by AWS.</p>
+     * <p>Indicates whether the network interface is being managed by Amazon Web
+     * Services.</p>
      */
     inline void SetRequesterManaged(bool value) { m_requesterManagedHasBeenSet = true; m_requesterManaged = value; }
 
     /**
-     * <p>Indicates whether the network interface is being managed by AWS.</p>
+     * <p>Indicates whether the network interface is being managed by Amazon Web
+     * Services.</p>
      */
     inline NetworkInterface& WithRequesterManaged(bool value) { SetRequesterManaged(value); return *this;}
 
 
     /**
-     * <p>Indicates whether traffic to or from the instance is validated.</p>
+     * <p>Indicates whether source/destination checking is enabled.</p>
      */
     inline bool GetSourceDestCheck() const{ return m_sourceDestCheck; }
 
     /**
-     * <p>Indicates whether traffic to or from the instance is validated.</p>
+     * <p>Indicates whether source/destination checking is enabled.</p>
      */
     inline bool SourceDestCheckHasBeenSet() const { return m_sourceDestCheckHasBeenSet; }
 
     /**
-     * <p>Indicates whether traffic to or from the instance is validated.</p>
+     * <p>Indicates whether source/destination checking is enabled.</p>
      */
     inline void SetSourceDestCheck(bool value) { m_sourceDestCheckHasBeenSet = true; m_sourceDestCheck = value; }
 
     /**
-     * <p>Indicates whether traffic to or from the instance is validated.</p>
+     * <p>Indicates whether source/destination checking is enabled.</p>
      */
     inline NetworkInterface& WithSourceDestCheck(bool value) { SetSourceDestCheck(value); return *this;}
 
@@ -842,6 +930,109 @@ namespace Model
      */
     inline NetworkInterface& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether a network interface with an IPv6 address is unreachable
+     * from the public internet. If the value is <code>true</code>, inbound traffic
+     * from the internet is dropped and you cannot assign an elastic IP address to the
+     * network interface. The network interface is reachable from peered VPCs and
+     * resources connected through a transit gateway, including on-premises
+     * networks.</p>
+     */
+    inline bool GetDenyAllIgwTraffic() const{ return m_denyAllIgwTraffic; }
+
+    /**
+     * <p>Indicates whether a network interface with an IPv6 address is unreachable
+     * from the public internet. If the value is <code>true</code>, inbound traffic
+     * from the internet is dropped and you cannot assign an elastic IP address to the
+     * network interface. The network interface is reachable from peered VPCs and
+     * resources connected through a transit gateway, including on-premises
+     * networks.</p>
+     */
+    inline bool DenyAllIgwTrafficHasBeenSet() const { return m_denyAllIgwTrafficHasBeenSet; }
+
+    /**
+     * <p>Indicates whether a network interface with an IPv6 address is unreachable
+     * from the public internet. If the value is <code>true</code>, inbound traffic
+     * from the internet is dropped and you cannot assign an elastic IP address to the
+     * network interface. The network interface is reachable from peered VPCs and
+     * resources connected through a transit gateway, including on-premises
+     * networks.</p>
+     */
+    inline void SetDenyAllIgwTraffic(bool value) { m_denyAllIgwTrafficHasBeenSet = true; m_denyAllIgwTraffic = value; }
+
+    /**
+     * <p>Indicates whether a network interface with an IPv6 address is unreachable
+     * from the public internet. If the value is <code>true</code>, inbound traffic
+     * from the internet is dropped and you cannot assign an elastic IP address to the
+     * network interface. The network interface is reachable from peered VPCs and
+     * resources connected through a transit gateway, including on-premises
+     * networks.</p>
+     */
+    inline NetworkInterface& WithDenyAllIgwTraffic(bool value) { SetDenyAllIgwTraffic(value); return *this;}
+
+
+    /**
+     * <p>Indicates whether this is an IPv6 only network interface.</p>
+     */
+    inline bool GetIpv6Native() const{ return m_ipv6Native; }
+
+    /**
+     * <p>Indicates whether this is an IPv6 only network interface.</p>
+     */
+    inline bool Ipv6NativeHasBeenSet() const { return m_ipv6NativeHasBeenSet; }
+
+    /**
+     * <p>Indicates whether this is an IPv6 only network interface.</p>
+     */
+    inline void SetIpv6Native(bool value) { m_ipv6NativeHasBeenSet = true; m_ipv6Native = value; }
+
+    /**
+     * <p>Indicates whether this is an IPv6 only network interface.</p>
+     */
+    inline NetworkInterface& WithIpv6Native(bool value) { SetIpv6Native(value); return *this;}
+
+
+    /**
+     * <p>The IPv6 globally unique address associated with the network interface.</p>
+     */
+    inline const Aws::String& GetIpv6Address() const{ return m_ipv6Address; }
+
+    /**
+     * <p>The IPv6 globally unique address associated with the network interface.</p>
+     */
+    inline bool Ipv6AddressHasBeenSet() const { return m_ipv6AddressHasBeenSet; }
+
+    /**
+     * <p>The IPv6 globally unique address associated with the network interface.</p>
+     */
+    inline void SetIpv6Address(const Aws::String& value) { m_ipv6AddressHasBeenSet = true; m_ipv6Address = value; }
+
+    /**
+     * <p>The IPv6 globally unique address associated with the network interface.</p>
+     */
+    inline void SetIpv6Address(Aws::String&& value) { m_ipv6AddressHasBeenSet = true; m_ipv6Address = std::move(value); }
+
+    /**
+     * <p>The IPv6 globally unique address associated with the network interface.</p>
+     */
+    inline void SetIpv6Address(const char* value) { m_ipv6AddressHasBeenSet = true; m_ipv6Address.assign(value); }
+
+    /**
+     * <p>The IPv6 globally unique address associated with the network interface.</p>
+     */
+    inline NetworkInterface& WithIpv6Address(const Aws::String& value) { SetIpv6Address(value); return *this;}
+
+    /**
+     * <p>The IPv6 globally unique address associated with the network interface.</p>
+     */
+    inline NetworkInterface& WithIpv6Address(Aws::String&& value) { SetIpv6Address(std::move(value)); return *this;}
+
+    /**
+     * <p>The IPv6 globally unique address associated with the network interface.</p>
+     */
+    inline NetworkInterface& WithIpv6Address(const char* value) { SetIpv6Address(value); return *this;}
+
   private:
 
     NetworkInterfaceAssociation m_association;
@@ -886,6 +1077,12 @@ namespace Model
     Aws::Vector<NetworkInterfacePrivateIpAddress> m_privateIpAddresses;
     bool m_privateIpAddressesHasBeenSet;
 
+    Aws::Vector<Ipv4PrefixSpecification> m_ipv4Prefixes;
+    bool m_ipv4PrefixesHasBeenSet;
+
+    Aws::Vector<Ipv6PrefixSpecification> m_ipv6Prefixes;
+    bool m_ipv6PrefixesHasBeenSet;
+
     Aws::String m_requesterId;
     bool m_requesterIdHasBeenSet;
 
@@ -906,6 +1103,15 @@ namespace Model
 
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
+
+    bool m_denyAllIgwTraffic;
+    bool m_denyAllIgwTrafficHasBeenSet;
+
+    bool m_ipv6Native;
+    bool m_ipv6NativeHasBeenSet;
+
+    Aws::String m_ipv6Address;
+    bool m_ipv6AddressHasBeenSet;
   };
 
 } // namespace Model

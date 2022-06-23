@@ -11,6 +11,9 @@
 #include <aws/ec2/model/AnalysisPacketHeader.h>
 #include <aws/ec2/model/AnalysisRouteTableRoute.h>
 #include <aws/ec2/model/AnalysisSecurityGroupRule.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/TransitGatewayRouteTableRoute.h>
+#include <aws/ec2/model/AdditionalDetail.h>
 #include <utility>
 
 namespace Aws
@@ -93,6 +96,37 @@ namespace Model
      * <p>The network ACL rule.</p>
      */
     inline PathComponent& WithAclRule(AnalysisAclRule&& value) { SetAclRule(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The resource to which the path component is attached.</p>
+     */
+    inline const AnalysisComponent& GetAttachedTo() const{ return m_attachedTo; }
+
+    /**
+     * <p>The resource to which the path component is attached.</p>
+     */
+    inline bool AttachedToHasBeenSet() const { return m_attachedToHasBeenSet; }
+
+    /**
+     * <p>The resource to which the path component is attached.</p>
+     */
+    inline void SetAttachedTo(const AnalysisComponent& value) { m_attachedToHasBeenSet = true; m_attachedTo = value; }
+
+    /**
+     * <p>The resource to which the path component is attached.</p>
+     */
+    inline void SetAttachedTo(AnalysisComponent&& value) { m_attachedToHasBeenSet = true; m_attachedTo = std::move(value); }
+
+    /**
+     * <p>The resource to which the path component is attached.</p>
+     */
+    inline PathComponent& WithAttachedTo(const AnalysisComponent& value) { SetAttachedTo(value); return *this;}
+
+    /**
+     * <p>The resource to which the path component is attached.</p>
+     */
+    inline PathComponent& WithAttachedTo(AnalysisComponent&& value) { SetAttachedTo(std::move(value)); return *this;}
 
 
     /**
@@ -373,6 +407,97 @@ namespace Model
      */
     inline PathComponent& WithVpc(AnalysisComponent&& value) { SetVpc(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The additional details.</p>
+     */
+    inline const Aws::Vector<AdditionalDetail>& GetAdditionalDetails() const{ return m_additionalDetails; }
+
+    /**
+     * <p>The additional details.</p>
+     */
+    inline bool AdditionalDetailsHasBeenSet() const { return m_additionalDetailsHasBeenSet; }
+
+    /**
+     * <p>The additional details.</p>
+     */
+    inline void SetAdditionalDetails(const Aws::Vector<AdditionalDetail>& value) { m_additionalDetailsHasBeenSet = true; m_additionalDetails = value; }
+
+    /**
+     * <p>The additional details.</p>
+     */
+    inline void SetAdditionalDetails(Aws::Vector<AdditionalDetail>&& value) { m_additionalDetailsHasBeenSet = true; m_additionalDetails = std::move(value); }
+
+    /**
+     * <p>The additional details.</p>
+     */
+    inline PathComponent& WithAdditionalDetails(const Aws::Vector<AdditionalDetail>& value) { SetAdditionalDetails(value); return *this;}
+
+    /**
+     * <p>The additional details.</p>
+     */
+    inline PathComponent& WithAdditionalDetails(Aws::Vector<AdditionalDetail>&& value) { SetAdditionalDetails(std::move(value)); return *this;}
+
+    /**
+     * <p>The additional details.</p>
+     */
+    inline PathComponent& AddAdditionalDetails(const AdditionalDetail& value) { m_additionalDetailsHasBeenSet = true; m_additionalDetails.push_back(value); return *this; }
+
+    /**
+     * <p>The additional details.</p>
+     */
+    inline PathComponent& AddAdditionalDetails(AdditionalDetail&& value) { m_additionalDetailsHasBeenSet = true; m_additionalDetails.push_back(std::move(value)); return *this; }
+
+
+    
+    inline const AnalysisComponent& GetTransitGateway() const{ return m_transitGateway; }
+
+    
+    inline bool TransitGatewayHasBeenSet() const { return m_transitGatewayHasBeenSet; }
+
+    
+    inline void SetTransitGateway(const AnalysisComponent& value) { m_transitGatewayHasBeenSet = true; m_transitGateway = value; }
+
+    
+    inline void SetTransitGateway(AnalysisComponent&& value) { m_transitGatewayHasBeenSet = true; m_transitGateway = std::move(value); }
+
+    
+    inline PathComponent& WithTransitGateway(const AnalysisComponent& value) { SetTransitGateway(value); return *this;}
+
+    
+    inline PathComponent& WithTransitGateway(AnalysisComponent&& value) { SetTransitGateway(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The route in a transit gateway route table.</p>
+     */
+    inline const TransitGatewayRouteTableRoute& GetTransitGatewayRouteTableRoute() const{ return m_transitGatewayRouteTableRoute; }
+
+    /**
+     * <p>The route in a transit gateway route table.</p>
+     */
+    inline bool TransitGatewayRouteTableRouteHasBeenSet() const { return m_transitGatewayRouteTableRouteHasBeenSet; }
+
+    /**
+     * <p>The route in a transit gateway route table.</p>
+     */
+    inline void SetTransitGatewayRouteTableRoute(const TransitGatewayRouteTableRoute& value) { m_transitGatewayRouteTableRouteHasBeenSet = true; m_transitGatewayRouteTableRoute = value; }
+
+    /**
+     * <p>The route in a transit gateway route table.</p>
+     */
+    inline void SetTransitGatewayRouteTableRoute(TransitGatewayRouteTableRoute&& value) { m_transitGatewayRouteTableRouteHasBeenSet = true; m_transitGatewayRouteTableRoute = std::move(value); }
+
+    /**
+     * <p>The route in a transit gateway route table.</p>
+     */
+    inline PathComponent& WithTransitGatewayRouteTableRoute(const TransitGatewayRouteTableRoute& value) { SetTransitGatewayRouteTableRoute(value); return *this;}
+
+    /**
+     * <p>The route in a transit gateway route table.</p>
+     */
+    inline PathComponent& WithTransitGatewayRouteTableRoute(TransitGatewayRouteTableRoute&& value) { SetTransitGatewayRouteTableRoute(std::move(value)); return *this;}
+
   private:
 
     int m_sequenceNumber;
@@ -380,6 +505,9 @@ namespace Model
 
     AnalysisAclRule m_aclRule;
     bool m_aclRuleHasBeenSet;
+
+    AnalysisComponent m_attachedTo;
+    bool m_attachedToHasBeenSet;
 
     AnalysisComponent m_component;
     bool m_componentHasBeenSet;
@@ -407,6 +535,15 @@ namespace Model
 
     AnalysisComponent m_vpc;
     bool m_vpcHasBeenSet;
+
+    Aws::Vector<AdditionalDetail> m_additionalDetails;
+    bool m_additionalDetailsHasBeenSet;
+
+    AnalysisComponent m_transitGateway;
+    bool m_transitGatewayHasBeenSet;
+
+    TransitGatewayRouteTableRoute m_transitGatewayRouteTableRoute;
+    bool m_transitGatewayRouteTableRouteHasBeenSet;
   };
 
 } // namespace Model

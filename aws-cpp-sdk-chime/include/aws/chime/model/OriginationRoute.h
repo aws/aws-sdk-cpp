@@ -27,8 +27,9 @@ namespace Model
   /**
    * <p>Origination routes define call distribution properties for your SIP hosts to
    * receive inbound calls using your Amazon Chime Voice Connector. Limit: Ten
-   * origination routes for each Amazon Chime Voice Connector.</p><p><h3>See
-   * Also:</h3>   <a
+   * origination routes for each Amazon Chime Voice Connector.</p>  <p>The
+   * parameters listed below are not required, but you must use at least one. </p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/OriginationRoute">AWS
    * API Reference</a></p>
    */
@@ -167,25 +168,25 @@ namespace Model
 
     /**
      * <p>The weight associated with the host. If hosts are equal in priority, calls
-     * are distributed among them based on their relative weight.</p>
+     * are redistributed among them based on their relative weight.</p>
      */
     inline int GetWeight() const{ return m_weight; }
 
     /**
      * <p>The weight associated with the host. If hosts are equal in priority, calls
-     * are distributed among them based on their relative weight.</p>
+     * are redistributed among them based on their relative weight.</p>
      */
     inline bool WeightHasBeenSet() const { return m_weightHasBeenSet; }
 
     /**
      * <p>The weight associated with the host. If hosts are equal in priority, calls
-     * are distributed among them based on their relative weight.</p>
+     * are redistributed among them based on their relative weight.</p>
      */
     inline void SetWeight(int value) { m_weightHasBeenSet = true; m_weight = value; }
 
     /**
      * <p>The weight associated with the host. If hosts are equal in priority, calls
-     * are distributed among them based on their relative weight.</p>
+     * are redistributed among them based on their relative weight.</p>
      */
     inline OriginationRoute& WithWeight(int value) { SetWeight(value); return *this;}
 

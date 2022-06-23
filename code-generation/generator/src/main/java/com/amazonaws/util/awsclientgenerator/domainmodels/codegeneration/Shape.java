@@ -10,8 +10,10 @@ import lombok.Data;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.HashSet;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Data
 public class Shape {
@@ -47,6 +49,7 @@ public class Shape {
     private boolean exception;
     private boolean sensitive;
     private boolean hasPreSignedUrl;
+    private boolean document;
 
     public boolean isMap() {
         return "map".equals(type.toLowerCase());
@@ -80,6 +83,10 @@ public class Shape {
 
     public boolean isBoolean() {
         return "boolean".equals(type.toLowerCase());
+    }
+
+    public boolean isDocument() {
+        return "structure".equals(type.toLowerCase()) && document;
     }
 
     public boolean isPrimitive() {
@@ -196,17 +203,21 @@ public class Shape {
     }
 
     // Some shapes are mutually referenced with each other, e.g. Statement and NotStatement in wafv2.
-    public boolean isMutuallyReferencedWith(Shape shape) {
-        if (shape == null || shape.members == null || members == null || !isStructure() || !shape.isStructure() || name.equals(shape.getName())) return false;
-        return members.values().parallelStream().anyMatch(member -> member.getShape().getName().equals(shape.getName()))
-            && shape.getMembers().values().parallelStream().anyMatch(member -> member.getShape().getName().equals(name));
-    }
+    public boolean isMutuallyReferencedWith(Shape otherShape) {
+        if (otherShape == null || otherShape.members == null || members == null || !isStructure() || !otherShape.isStructure() || name.equals(otherShape.getName())) return false;
 
-    // e.g. "StructValue" has a list of "Value"s as its member, and "StructValue" itself is a member of "Value".
-    // Then "Value".isListMemberAndMutuallyReferencedWith("StructValue") = true
-    public boolean isListMemberAndMutuallyReferencedWith(Shape shape) {
-        if (shape == null || shape.members == null || members == null || !isStructure() || !shape.isStructure() || name.equals(shape.getName())) return false;
-        return members.values().parallelStream().anyMatch(member -> member.getShape().getName().equals(shape.getName()))
-            && shape.getMembers().values().parallelStream().anyMatch(member -> member.getShape().isList() && member.getShape().getListMember().getShape().getName().equals(name));
+        // Get this and other member type names, if member is a list then get underlying type in this list
+        Set<String> thisMemberShapeNames = members.values().parallelStream()
+                .map(value -> value.getShape())
+                .map(memberShape -> memberShape.isList() ? memberShape.getListMember().getShape() : memberShape) //if references through a list container
+                .map(memberShape -> memberShape.getName())
+                .collect(Collectors.toSet());
+        Set<String> otherMemberShapeNames = otherShape.getMembers().values().parallelStream()
+                .map(value -> value.getShape())
+                .map(memberShape -> memberShape.isList() ? memberShape.getListMember().getShape() : memberShape)
+                .map(memberShape -> memberShape.getName())
+                .collect(Collectors.toSet());
+
+        return thisMemberShapeNames.contains(otherShape.getName()) && otherMemberShapeNames.contains(this.getName());
     }
 }

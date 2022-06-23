@@ -5,7 +5,7 @@
 
 #pragma once
 #include <aws/healthlake/HealthLake_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/healthlake/model/S3Configuration.h>
 #include <utility>
 
 namespace Aws
@@ -39,57 +39,45 @@ namespace Model
 
 
     /**
-     * <p>The S3Uri is the user specified S3 location to which data will be exported
-     * from a FHIR Data Store.</p>
+     * <p> The output data configuration that was supplied when the export job was
+     * created. </p>
      */
-    inline const Aws::String& GetS3Uri() const{ return m_s3Uri; }
+    inline const S3Configuration& GetS3Configuration() const{ return m_s3Configuration; }
 
     /**
-     * <p>The S3Uri is the user specified S3 location to which data will be exported
-     * from a FHIR Data Store.</p>
+     * <p> The output data configuration that was supplied when the export job was
+     * created. </p>
      */
-    inline bool S3UriHasBeenSet() const { return m_s3UriHasBeenSet; }
+    inline bool S3ConfigurationHasBeenSet() const { return m_s3ConfigurationHasBeenSet; }
 
     /**
-     * <p>The S3Uri is the user specified S3 location to which data will be exported
-     * from a FHIR Data Store.</p>
+     * <p> The output data configuration that was supplied when the export job was
+     * created. </p>
      */
-    inline void SetS3Uri(const Aws::String& value) { m_s3UriHasBeenSet = true; m_s3Uri = value; }
+    inline void SetS3Configuration(const S3Configuration& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = value; }
 
     /**
-     * <p>The S3Uri is the user specified S3 location to which data will be exported
-     * from a FHIR Data Store.</p>
+     * <p> The output data configuration that was supplied when the export job was
+     * created. </p>
      */
-    inline void SetS3Uri(Aws::String&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::move(value); }
+    inline void SetS3Configuration(S3Configuration&& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = std::move(value); }
 
     /**
-     * <p>The S3Uri is the user specified S3 location to which data will be exported
-     * from a FHIR Data Store.</p>
+     * <p> The output data configuration that was supplied when the export job was
+     * created. </p>
      */
-    inline void SetS3Uri(const char* value) { m_s3UriHasBeenSet = true; m_s3Uri.assign(value); }
+    inline OutputDataConfig& WithS3Configuration(const S3Configuration& value) { SetS3Configuration(value); return *this;}
 
     /**
-     * <p>The S3Uri is the user specified S3 location to which data will be exported
-     * from a FHIR Data Store.</p>
+     * <p> The output data configuration that was supplied when the export job was
+     * created. </p>
      */
-    inline OutputDataConfig& WithS3Uri(const Aws::String& value) { SetS3Uri(value); return *this;}
-
-    /**
-     * <p>The S3Uri is the user specified S3 location to which data will be exported
-     * from a FHIR Data Store.</p>
-     */
-    inline OutputDataConfig& WithS3Uri(Aws::String&& value) { SetS3Uri(std::move(value)); return *this;}
-
-    /**
-     * <p>The S3Uri is the user specified S3 location to which data will be exported
-     * from a FHIR Data Store.</p>
-     */
-    inline OutputDataConfig& WithS3Uri(const char* value) { SetS3Uri(value); return *this;}
+    inline OutputDataConfig& WithS3Configuration(S3Configuration&& value) { SetS3Configuration(std::move(value)); return *this;}
 
   private:
 
-    Aws::String m_s3Uri;
-    bool m_s3UriHasBeenSet;
+    S3Configuration m_s3Configuration;
+    bool m_s3ConfigurationHasBeenSet;
   };
 
 } // namespace Model

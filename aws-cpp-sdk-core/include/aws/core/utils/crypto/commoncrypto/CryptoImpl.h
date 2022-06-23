@@ -9,6 +9,7 @@
 #include <aws/core/utils/crypto/HMAC.h>
 #include <aws/core/utils/crypto/SecureRandom.h>
 #include <aws/core/utils/crypto/Cipher.h>
+#include <CommonCrypto/CommonDigest.h>
 
 #if defined(__MAC_OS_X_VERSION_MAX_ALLOWED)
 #if defined(__MAC_10_13) && (__MAC_OS_X_VERSION_MAX_ALLOWED >= __MAC_10_13)
@@ -56,25 +57,59 @@ namespace Aws
             {
             public:
 
-                MD5CommonCryptoImpl() {}
+                MD5CommonCryptoImpl();
                 virtual ~MD5CommonCryptoImpl() {}
 
                 virtual HashResult Calculate(const Aws::String& str) override;
 
                 virtual HashResult Calculate(Aws::IStream& stream) override;
 
+                virtual void Update(unsigned char* buffer, size_t bufferSize) override;
+
+                virtual HashResult GetHash() override;
+
+            private:
+// AWS_SUPPRESS_DEPRECATION(
+                CC_MD5_CTX m_ctx;
+                // )
+            };
+
+            class Sha1CommonCryptoImpl : public Hash
+            {
+            public:
+
+                Sha1CommonCryptoImpl();
+                virtual ~Sha1CommonCryptoImpl() {}
+
+                virtual HashResult Calculate(const Aws::String& str) override;
+
+                virtual HashResult Calculate(Aws::IStream& stream) override;
+
+                virtual void Update(unsigned char* buffer, size_t bufferSize) override;
+
+                virtual HashResult GetHash() override;
+
+            private:
+                CC_SHA1_CTX m_ctx;
             };
 
             class Sha256CommonCryptoImpl : public Hash
             {
             public:
 
-                Sha256CommonCryptoImpl() {}
+                Sha256CommonCryptoImpl();
                 virtual ~Sha256CommonCryptoImpl() {}
 
                 virtual HashResult Calculate(const Aws::String& str) override;
 
                 virtual HashResult Calculate(Aws::IStream& stream) override;
+
+                virtual void Update(unsigned char* buffer, size_t bufferSize) override;
+
+                virtual HashResult GetHash() override;
+
+            private:
+                CC_SHA256_CTX m_ctx;
             };
 
             class Sha256HMACCommonCryptoImpl : public HMAC

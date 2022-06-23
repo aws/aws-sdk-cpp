@@ -32,19 +32,39 @@ namespace Model
     UpdateDistributionBundleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>An object that describes the result of the action, such as the status of the
+     * request, the timestamp of the request, and the resources affected by the
+     * request.</p>
+     */
     inline const Operation& GetOperation() const{ return m_operation; }
 
-    
+    /**
+     * <p>An object that describes the result of the action, such as the status of the
+     * request, the timestamp of the request, and the resources affected by the
+     * request.</p>
+     */
     inline void SetOperation(const Operation& value) { m_operation = value; }
 
-    
+    /**
+     * <p>An object that describes the result of the action, such as the status of the
+     * request, the timestamp of the request, and the resources affected by the
+     * request.</p>
+     */
     inline void SetOperation(Operation&& value) { m_operation = std::move(value); }
 
-    
+    /**
+     * <p>An object that describes the result of the action, such as the status of the
+     * request, the timestamp of the request, and the resources affected by the
+     * request.</p>
+     */
     inline UpdateDistributionBundleResult& WithOperation(const Operation& value) { SetOperation(value); return *this;}
 
-    
+    /**
+     * <p>An object that describes the result of the action, such as the status of the
+     * request, the timestamp of the request, and the resources affected by the
+     * request.</p>
+     */
     inline UpdateDistributionBundleResult& WithOperation(Operation&& value) { SetOperation(std::move(value)); return *this;}
 
   private:

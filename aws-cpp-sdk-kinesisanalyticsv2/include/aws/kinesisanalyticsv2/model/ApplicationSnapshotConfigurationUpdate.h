@@ -37,26 +37,22 @@ namespace Model
 
 
     /**
-     * <p>Describes updates to whether snapshots are enabled for a Flink-based Kinesis
-     * Data Analytics application.</p>
+     * <p>Describes updates to whether snapshots are enabled for an application.</p>
      */
     inline bool GetSnapshotsEnabledUpdate() const{ return m_snapshotsEnabledUpdate; }
 
     /**
-     * <p>Describes updates to whether snapshots are enabled for a Flink-based Kinesis
-     * Data Analytics application.</p>
+     * <p>Describes updates to whether snapshots are enabled for an application.</p>
      */
     inline bool SnapshotsEnabledUpdateHasBeenSet() const { return m_snapshotsEnabledUpdateHasBeenSet; }
 
     /**
-     * <p>Describes updates to whether snapshots are enabled for a Flink-based Kinesis
-     * Data Analytics application.</p>
+     * <p>Describes updates to whether snapshots are enabled for an application.</p>
      */
     inline void SetSnapshotsEnabledUpdate(bool value) { m_snapshotsEnabledUpdateHasBeenSet = true; m_snapshotsEnabledUpdate = value; }
 
     /**
-     * <p>Describes updates to whether snapshots are enabled for a Flink-based Kinesis
-     * Data Analytics application.</p>
+     * <p>Describes updates to whether snapshots are enabled for an application.</p>
      */
     inline ApplicationSnapshotConfigurationUpdate& WithSnapshotsEnabledUpdate(bool value) { SetSnapshotsEnabledUpdate(value); return *this;}
 

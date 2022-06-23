@@ -9,6 +9,7 @@
 #include <aws/healthlake/model/DatastoreStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/healthlake/model/FHIRVersion.h>
+#include <aws/healthlake/model/SseConfiguration.h>
 #include <aws/healthlake/model/PreloadDataConfig.h>
 #include <utility>
 
@@ -314,6 +315,43 @@ namespace Model
 
 
     /**
+     * <p> The server-side encryption key configuration for a customer provided
+     * encryption key (CMK). </p>
+     */
+    inline const SseConfiguration& GetSseConfiguration() const{ return m_sseConfiguration; }
+
+    /**
+     * <p> The server-side encryption key configuration for a customer provided
+     * encryption key (CMK). </p>
+     */
+    inline bool SseConfigurationHasBeenSet() const { return m_sseConfigurationHasBeenSet; }
+
+    /**
+     * <p> The server-side encryption key configuration for a customer provided
+     * encryption key (CMK). </p>
+     */
+    inline void SetSseConfiguration(const SseConfiguration& value) { m_sseConfigurationHasBeenSet = true; m_sseConfiguration = value; }
+
+    /**
+     * <p> The server-side encryption key configuration for a customer provided
+     * encryption key (CMK). </p>
+     */
+    inline void SetSseConfiguration(SseConfiguration&& value) { m_sseConfigurationHasBeenSet = true; m_sseConfiguration = std::move(value); }
+
+    /**
+     * <p> The server-side encryption key configuration for a customer provided
+     * encryption key (CMK). </p>
+     */
+    inline DatastoreProperties& WithSseConfiguration(const SseConfiguration& value) { SetSseConfiguration(value); return *this;}
+
+    /**
+     * <p> The server-side encryption key configuration for a customer provided
+     * encryption key (CMK). </p>
+     */
+    inline DatastoreProperties& WithSseConfiguration(SseConfiguration&& value) { SetSseConfiguration(std::move(value)); return *this;}
+
+
+    /**
      * <p>The preloaded data configuration for the Data Store. Only data preloaded from
      * Synthea is supported.</p>
      */
@@ -371,6 +409,9 @@ namespace Model
 
     Aws::String m_datastoreEndpoint;
     bool m_datastoreEndpointHasBeenSet;
+
+    SseConfiguration m_sseConfiguration;
+    bool m_sseConfigurationHasBeenSet;
 
     PreloadDataConfig m_preloadDataConfig;
     bool m_preloadDataConfigHasBeenSet;

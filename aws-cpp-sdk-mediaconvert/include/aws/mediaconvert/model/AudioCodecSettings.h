@@ -34,14 +34,8 @@ namespace Model
 {
 
   /**
-   * Audio codec settings (CodecSettings) under (AudioDescriptions) contains the
-   * group of settings related to audio encoding. The settings in this group vary
-   * depending on the value that you choose for Audio codec (Codec). For each codec
-   * enum that you choose, define the corresponding settings object. The following
-   * lists the codec enum, settings object pairs. * AAC, AacSettings * MP2,
-   * Mp2Settings * MP3, Mp3Settings * WAV, WavSettings * AIFF, AiffSettings * AC3,
-   * Ac3Settings * EAC3, Eac3Settings * EAC3_ATMOS, Eac3AtmosSettings * VORBIS,
-   * VorbisSettings * OPUS, OpusSettings<p><h3>See Also:</h3>   <a
+   * Settings related to audio encoding. The settings in this group vary depending on
+   * the value that you choose for your audio codec.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/AudioCodecSettings">AWS
    * API Reference</a></p>
    */
@@ -196,32 +190,92 @@ namespace Model
 
 
     /**
-     * Type of Audio codec.
+     * Choose the audio codec for this output. Note that the option Dolby Digital
+     * passthrough (PASSTHROUGH) applies only to Dolby Digital and Dolby Digital Plus
+     * audio inputs. Make sure that you choose a codec that's supported with your
+     * output container:
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#reference-codecs-containers-output-audio
+     * For audio-only outputs, make sure that both your input audio codec and your
+     * output audio codec are supported for audio-only workflows. For more information,
+     * see:
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers-input.html#reference-codecs-containers-input-audio-only
+     * and
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#audio-only-output
      */
     inline const AudioCodec& GetCodec() const{ return m_codec; }
 
     /**
-     * Type of Audio codec.
+     * Choose the audio codec for this output. Note that the option Dolby Digital
+     * passthrough (PASSTHROUGH) applies only to Dolby Digital and Dolby Digital Plus
+     * audio inputs. Make sure that you choose a codec that's supported with your
+     * output container:
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#reference-codecs-containers-output-audio
+     * For audio-only outputs, make sure that both your input audio codec and your
+     * output audio codec are supported for audio-only workflows. For more information,
+     * see:
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers-input.html#reference-codecs-containers-input-audio-only
+     * and
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#audio-only-output
      */
     inline bool CodecHasBeenSet() const { return m_codecHasBeenSet; }
 
     /**
-     * Type of Audio codec.
+     * Choose the audio codec for this output. Note that the option Dolby Digital
+     * passthrough (PASSTHROUGH) applies only to Dolby Digital and Dolby Digital Plus
+     * audio inputs. Make sure that you choose a codec that's supported with your
+     * output container:
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#reference-codecs-containers-output-audio
+     * For audio-only outputs, make sure that both your input audio codec and your
+     * output audio codec are supported for audio-only workflows. For more information,
+     * see:
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers-input.html#reference-codecs-containers-input-audio-only
+     * and
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#audio-only-output
      */
     inline void SetCodec(const AudioCodec& value) { m_codecHasBeenSet = true; m_codec = value; }
 
     /**
-     * Type of Audio codec.
+     * Choose the audio codec for this output. Note that the option Dolby Digital
+     * passthrough (PASSTHROUGH) applies only to Dolby Digital and Dolby Digital Plus
+     * audio inputs. Make sure that you choose a codec that's supported with your
+     * output container:
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#reference-codecs-containers-output-audio
+     * For audio-only outputs, make sure that both your input audio codec and your
+     * output audio codec are supported for audio-only workflows. For more information,
+     * see:
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers-input.html#reference-codecs-containers-input-audio-only
+     * and
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#audio-only-output
      */
     inline void SetCodec(AudioCodec&& value) { m_codecHasBeenSet = true; m_codec = std::move(value); }
 
     /**
-     * Type of Audio codec.
+     * Choose the audio codec for this output. Note that the option Dolby Digital
+     * passthrough (PASSTHROUGH) applies only to Dolby Digital and Dolby Digital Plus
+     * audio inputs. Make sure that you choose a codec that's supported with your
+     * output container:
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#reference-codecs-containers-output-audio
+     * For audio-only outputs, make sure that both your input audio codec and your
+     * output audio codec are supported for audio-only workflows. For more information,
+     * see:
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers-input.html#reference-codecs-containers-input-audio-only
+     * and
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#audio-only-output
      */
     inline AudioCodecSettings& WithCodec(const AudioCodec& value) { SetCodec(value); return *this;}
 
     /**
-     * Type of Audio codec.
+     * Choose the audio codec for this output. Note that the option Dolby Digital
+     * passthrough (PASSTHROUGH) applies only to Dolby Digital and Dolby Digital Plus
+     * audio inputs. Make sure that you choose a codec that's supported with your
+     * output container:
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#reference-codecs-containers-output-audio
+     * For audio-only outputs, make sure that both your input audio codec and your
+     * output audio codec are supported for audio-only workflows. For more information,
+     * see:
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers-input.html#reference-codecs-containers-input-audio-only
+     * and
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#audio-only-output
      */
     inline AudioCodecSettings& WithCodec(AudioCodec&& value) { SetCodec(std::move(value)); return *this;}
 

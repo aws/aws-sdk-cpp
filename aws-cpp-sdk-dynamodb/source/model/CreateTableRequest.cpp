@@ -23,7 +23,9 @@ CreateTableRequest::CreateTableRequest() :
     m_provisionedThroughputHasBeenSet(false),
     m_streamSpecificationHasBeenSet(false),
     m_sSESpecificationHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_tableClass(TableClass::NOT_SET),
+    m_tableClassHasBeenSet(false)
 {
 }
 
@@ -113,6 +115,11 @@ Aws::String CreateTableRequest::SerializePayload() const
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
 
+  }
+
+  if(m_tableClassHasBeenSet)
+  {
+   payload.WithString("TableClass", TableClassMapper::GetNameForTableClass(m_tableClass));
   }
 
   return payload.View().WriteReadable();

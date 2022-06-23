@@ -111,82 +111,74 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can
-     * assume to access the notebook instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
-     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> 
+     * <p>The Amazon Resource Name (ARN) of the IAM role that SageMaker can assume to
+     * access the notebook instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker
+     * Roles</a>. </p>  <p>To be able to pass this role to SageMaker, the caller
+     * of this API must have the <code>iam:PassRole</code> permission.</p> 
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can
-     * assume to access the notebook instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
-     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> 
+     * <p>The Amazon Resource Name (ARN) of the IAM role that SageMaker can assume to
+     * access the notebook instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker
+     * Roles</a>. </p>  <p>To be able to pass this role to SageMaker, the caller
+     * of this API must have the <code>iam:PassRole</code> permission.</p> 
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can
-     * assume to access the notebook instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
-     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> 
+     * <p>The Amazon Resource Name (ARN) of the IAM role that SageMaker can assume to
+     * access the notebook instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker
+     * Roles</a>. </p>  <p>To be able to pass this role to SageMaker, the caller
+     * of this API must have the <code>iam:PassRole</code> permission.</p> 
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can
-     * assume to access the notebook instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
-     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> 
+     * <p>The Amazon Resource Name (ARN) of the IAM role that SageMaker can assume to
+     * access the notebook instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker
+     * Roles</a>. </p>  <p>To be able to pass this role to SageMaker, the caller
+     * of this API must have the <code>iam:PassRole</code> permission.</p> 
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can
-     * assume to access the notebook instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
-     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> 
+     * <p>The Amazon Resource Name (ARN) of the IAM role that SageMaker can assume to
+     * access the notebook instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker
+     * Roles</a>. </p>  <p>To be able to pass this role to SageMaker, the caller
+     * of this API must have the <code>iam:PassRole</code> permission.</p> 
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can
-     * assume to access the notebook instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
-     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> 
+     * <p>The Amazon Resource Name (ARN) of the IAM role that SageMaker can assume to
+     * access the notebook instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker
+     * Roles</a>. </p>  <p>To be able to pass this role to SageMaker, the caller
+     * of this API must have the <code>iam:PassRole</code> permission.</p> 
      */
     inline UpdateNotebookInstanceRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can
-     * assume to access the notebook instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
-     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> 
+     * <p>The Amazon Resource Name (ARN) of the IAM role that SageMaker can assume to
+     * access the notebook instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker
+     * Roles</a>. </p>  <p>To be able to pass this role to SageMaker, the caller
+     * of this API must have the <code>iam:PassRole</code> permission.</p> 
      */
     inline UpdateNotebookInstanceRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can
-     * assume to access the notebook instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p>  <p>To be able to pass this role to Amazon
-     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
-     * permission.</p> 
+     * <p>The Amazon Resource Name (ARN) of the IAM role that SageMaker can assume to
+     * access the notebook instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker
+     * Roles</a>. </p>  <p>To be able to pass this role to SageMaker, the caller
+     * of this API must have the <code>iam:PassRole</code> permission.</p> 
      */
     inline UpdateNotebookInstanceRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
@@ -291,41 +283,41 @@ namespace Model
 
     /**
      * <p>The size, in GB, of the ML storage volume to attach to the notebook instance.
-     * The default value is 5 GB. ML storage volumes are encrypted, so Amazon SageMaker
-     * can't determine the amount of available free space on the volume. Because of
-     * this, you can increase the volume size when you update a notebook instance, but
-     * you can't decrease the volume size. If you want to decrease the size of the ML
-     * storage volume in use, create a new notebook instance with the desired size.</p>
+     * The default value is 5 GB. ML storage volumes are encrypted, so SageMaker can't
+     * determine the amount of available free space on the volume. Because of this, you
+     * can increase the volume size when you update a notebook instance, but you can't
+     * decrease the volume size. If you want to decrease the size of the ML storage
+     * volume in use, create a new notebook instance with the desired size.</p>
      */
     inline int GetVolumeSizeInGB() const{ return m_volumeSizeInGB; }
 
     /**
      * <p>The size, in GB, of the ML storage volume to attach to the notebook instance.
-     * The default value is 5 GB. ML storage volumes are encrypted, so Amazon SageMaker
-     * can't determine the amount of available free space on the volume. Because of
-     * this, you can increase the volume size when you update a notebook instance, but
-     * you can't decrease the volume size. If you want to decrease the size of the ML
-     * storage volume in use, create a new notebook instance with the desired size.</p>
+     * The default value is 5 GB. ML storage volumes are encrypted, so SageMaker can't
+     * determine the amount of available free space on the volume. Because of this, you
+     * can increase the volume size when you update a notebook instance, but you can't
+     * decrease the volume size. If you want to decrease the size of the ML storage
+     * volume in use, create a new notebook instance with the desired size.</p>
      */
     inline bool VolumeSizeInGBHasBeenSet() const { return m_volumeSizeInGBHasBeenSet; }
 
     /**
      * <p>The size, in GB, of the ML storage volume to attach to the notebook instance.
-     * The default value is 5 GB. ML storage volumes are encrypted, so Amazon SageMaker
-     * can't determine the amount of available free space on the volume. Because of
-     * this, you can increase the volume size when you update a notebook instance, but
-     * you can't decrease the volume size. If you want to decrease the size of the ML
-     * storage volume in use, create a new notebook instance with the desired size.</p>
+     * The default value is 5 GB. ML storage volumes are encrypted, so SageMaker can't
+     * determine the amount of available free space on the volume. Because of this, you
+     * can increase the volume size when you update a notebook instance, but you can't
+     * decrease the volume size. If you want to decrease the size of the ML storage
+     * volume in use, create a new notebook instance with the desired size.</p>
      */
     inline void SetVolumeSizeInGB(int value) { m_volumeSizeInGBHasBeenSet = true; m_volumeSizeInGB = value; }
 
     /**
      * <p>The size, in GB, of the ML storage volume to attach to the notebook instance.
-     * The default value is 5 GB. ML storage volumes are encrypted, so Amazon SageMaker
-     * can't determine the amount of available free space on the volume. Because of
-     * this, you can increase the volume size when you update a notebook instance, but
-     * you can't decrease the volume size. If you want to decrease the size of the ML
-     * storage volume in use, create a new notebook instance with the desired size.</p>
+     * The default value is 5 GB. ML storage volumes are encrypted, so SageMaker can't
+     * determine the amount of available free space on the volume. Because of this, you
+     * can increase the volume size when you update a notebook instance, but you can't
+     * decrease the volume size. If you want to decrease the size of the ML storage
+     * volume in use, create a new notebook instance with the desired size.</p>
      */
     inline UpdateNotebookInstanceRequest& WithVolumeSizeInGB(int value) { SetVolumeSizeInGB(value); return *this;}
 
@@ -334,12 +326,12 @@ namespace Model
      * <p>The Git repository to associate with the notebook instance as its default
      * code repository. This can be either the name of a Git repository stored as a
      * resource in your account, or the URL of a Git repository in <a
-     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
-     * CodeCommit</a> or in any other Git repository. When you open a notebook
-     * instance, it opens in the directory that contains this repository. For more
-     * information, see <a
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon
+     * Web Services CodeCommit</a> or in any other Git repository. When you open a
+     * notebook instance, it opens in the directory that contains this repository. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     * Git Repositories with SageMaker Notebook Instances</a>.</p>
      */
     inline const Aws::String& GetDefaultCodeRepository() const{ return m_defaultCodeRepository; }
 
@@ -347,12 +339,12 @@ namespace Model
      * <p>The Git repository to associate with the notebook instance as its default
      * code repository. This can be either the name of a Git repository stored as a
      * resource in your account, or the URL of a Git repository in <a
-     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
-     * CodeCommit</a> or in any other Git repository. When you open a notebook
-     * instance, it opens in the directory that contains this repository. For more
-     * information, see <a
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon
+     * Web Services CodeCommit</a> or in any other Git repository. When you open a
+     * notebook instance, it opens in the directory that contains this repository. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     * Git Repositories with SageMaker Notebook Instances</a>.</p>
      */
     inline bool DefaultCodeRepositoryHasBeenSet() const { return m_defaultCodeRepositoryHasBeenSet; }
 
@@ -360,12 +352,12 @@ namespace Model
      * <p>The Git repository to associate with the notebook instance as its default
      * code repository. This can be either the name of a Git repository stored as a
      * resource in your account, or the URL of a Git repository in <a
-     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
-     * CodeCommit</a> or in any other Git repository. When you open a notebook
-     * instance, it opens in the directory that contains this repository. For more
-     * information, see <a
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon
+     * Web Services CodeCommit</a> or in any other Git repository. When you open a
+     * notebook instance, it opens in the directory that contains this repository. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     * Git Repositories with SageMaker Notebook Instances</a>.</p>
      */
     inline void SetDefaultCodeRepository(const Aws::String& value) { m_defaultCodeRepositoryHasBeenSet = true; m_defaultCodeRepository = value; }
 
@@ -373,12 +365,12 @@ namespace Model
      * <p>The Git repository to associate with the notebook instance as its default
      * code repository. This can be either the name of a Git repository stored as a
      * resource in your account, or the URL of a Git repository in <a
-     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
-     * CodeCommit</a> or in any other Git repository. When you open a notebook
-     * instance, it opens in the directory that contains this repository. For more
-     * information, see <a
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon
+     * Web Services CodeCommit</a> or in any other Git repository. When you open a
+     * notebook instance, it opens in the directory that contains this repository. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     * Git Repositories with SageMaker Notebook Instances</a>.</p>
      */
     inline void SetDefaultCodeRepository(Aws::String&& value) { m_defaultCodeRepositoryHasBeenSet = true; m_defaultCodeRepository = std::move(value); }
 
@@ -386,12 +378,12 @@ namespace Model
      * <p>The Git repository to associate with the notebook instance as its default
      * code repository. This can be either the name of a Git repository stored as a
      * resource in your account, or the URL of a Git repository in <a
-     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
-     * CodeCommit</a> or in any other Git repository. When you open a notebook
-     * instance, it opens in the directory that contains this repository. For more
-     * information, see <a
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon
+     * Web Services CodeCommit</a> or in any other Git repository. When you open a
+     * notebook instance, it opens in the directory that contains this repository. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     * Git Repositories with SageMaker Notebook Instances</a>.</p>
      */
     inline void SetDefaultCodeRepository(const char* value) { m_defaultCodeRepositoryHasBeenSet = true; m_defaultCodeRepository.assign(value); }
 
@@ -399,12 +391,12 @@ namespace Model
      * <p>The Git repository to associate with the notebook instance as its default
      * code repository. This can be either the name of a Git repository stored as a
      * resource in your account, or the URL of a Git repository in <a
-     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
-     * CodeCommit</a> or in any other Git repository. When you open a notebook
-     * instance, it opens in the directory that contains this repository. For more
-     * information, see <a
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon
+     * Web Services CodeCommit</a> or in any other Git repository. When you open a
+     * notebook instance, it opens in the directory that contains this repository. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     * Git Repositories with SageMaker Notebook Instances</a>.</p>
      */
     inline UpdateNotebookInstanceRequest& WithDefaultCodeRepository(const Aws::String& value) { SetDefaultCodeRepository(value); return *this;}
 
@@ -412,12 +404,12 @@ namespace Model
      * <p>The Git repository to associate with the notebook instance as its default
      * code repository. This can be either the name of a Git repository stored as a
      * resource in your account, or the URL of a Git repository in <a
-     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
-     * CodeCommit</a> or in any other Git repository. When you open a notebook
-     * instance, it opens in the directory that contains this repository. For more
-     * information, see <a
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon
+     * Web Services CodeCommit</a> or in any other Git repository. When you open a
+     * notebook instance, it opens in the directory that contains this repository. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     * Git Repositories with SageMaker Notebook Instances</a>.</p>
      */
     inline UpdateNotebookInstanceRequest& WithDefaultCodeRepository(Aws::String&& value) { SetDefaultCodeRepository(std::move(value)); return *this;}
 
@@ -425,12 +417,12 @@ namespace Model
      * <p>The Git repository to associate with the notebook instance as its default
      * code repository. This can be either the name of a Git repository stored as a
      * resource in your account, or the URL of a Git repository in <a
-     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
-     * CodeCommit</a> or in any other Git repository. When you open a notebook
-     * instance, it opens in the directory that contains this repository. For more
-     * information, see <a
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon
+     * Web Services CodeCommit</a> or in any other Git repository. When you open a
+     * notebook instance, it opens in the directory that contains this repository. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     * Git Repositories with SageMaker Notebook Instances</a>.</p>
      */
     inline UpdateNotebookInstanceRequest& WithDefaultCodeRepository(const char* value) { SetDefaultCodeRepository(value); return *this;}
 
@@ -439,12 +431,12 @@ namespace Model
      * <p>An array of up to three Git repositories to associate with the notebook
      * instance. These can be either the names of Git repositories stored as resources
      * in your account, or the URL of Git repositories in <a
-     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
-     * CodeCommit</a> or in any other Git repository. These repositories are cloned at
-     * the same level as the default repository of your notebook instance. For more
-     * information, see <a
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon
+     * Web Services CodeCommit</a> or in any other Git repository. These repositories
+     * are cloned at the same level as the default repository of your notebook
+     * instance. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     * Git Repositories with SageMaker Notebook Instances</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAdditionalCodeRepositories() const{ return m_additionalCodeRepositories; }
 
@@ -452,12 +444,12 @@ namespace Model
      * <p>An array of up to three Git repositories to associate with the notebook
      * instance. These can be either the names of Git repositories stored as resources
      * in your account, or the URL of Git repositories in <a
-     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
-     * CodeCommit</a> or in any other Git repository. These repositories are cloned at
-     * the same level as the default repository of your notebook instance. For more
-     * information, see <a
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon
+     * Web Services CodeCommit</a> or in any other Git repository. These repositories
+     * are cloned at the same level as the default repository of your notebook
+     * instance. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     * Git Repositories with SageMaker Notebook Instances</a>.</p>
      */
     inline bool AdditionalCodeRepositoriesHasBeenSet() const { return m_additionalCodeRepositoriesHasBeenSet; }
 
@@ -465,12 +457,12 @@ namespace Model
      * <p>An array of up to three Git repositories to associate with the notebook
      * instance. These can be either the names of Git repositories stored as resources
      * in your account, or the URL of Git repositories in <a
-     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
-     * CodeCommit</a> or in any other Git repository. These repositories are cloned at
-     * the same level as the default repository of your notebook instance. For more
-     * information, see <a
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon
+     * Web Services CodeCommit</a> or in any other Git repository. These repositories
+     * are cloned at the same level as the default repository of your notebook
+     * instance. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     * Git Repositories with SageMaker Notebook Instances</a>.</p>
      */
     inline void SetAdditionalCodeRepositories(const Aws::Vector<Aws::String>& value) { m_additionalCodeRepositoriesHasBeenSet = true; m_additionalCodeRepositories = value; }
 
@@ -478,12 +470,12 @@ namespace Model
      * <p>An array of up to three Git repositories to associate with the notebook
      * instance. These can be either the names of Git repositories stored as resources
      * in your account, or the URL of Git repositories in <a
-     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
-     * CodeCommit</a> or in any other Git repository. These repositories are cloned at
-     * the same level as the default repository of your notebook instance. For more
-     * information, see <a
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon
+     * Web Services CodeCommit</a> or in any other Git repository. These repositories
+     * are cloned at the same level as the default repository of your notebook
+     * instance. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     * Git Repositories with SageMaker Notebook Instances</a>.</p>
      */
     inline void SetAdditionalCodeRepositories(Aws::Vector<Aws::String>&& value) { m_additionalCodeRepositoriesHasBeenSet = true; m_additionalCodeRepositories = std::move(value); }
 
@@ -491,12 +483,12 @@ namespace Model
      * <p>An array of up to three Git repositories to associate with the notebook
      * instance. These can be either the names of Git repositories stored as resources
      * in your account, or the URL of Git repositories in <a
-     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
-     * CodeCommit</a> or in any other Git repository. These repositories are cloned at
-     * the same level as the default repository of your notebook instance. For more
-     * information, see <a
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon
+     * Web Services CodeCommit</a> or in any other Git repository. These repositories
+     * are cloned at the same level as the default repository of your notebook
+     * instance. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     * Git Repositories with SageMaker Notebook Instances</a>.</p>
      */
     inline UpdateNotebookInstanceRequest& WithAdditionalCodeRepositories(const Aws::Vector<Aws::String>& value) { SetAdditionalCodeRepositories(value); return *this;}
 
@@ -504,12 +496,12 @@ namespace Model
      * <p>An array of up to three Git repositories to associate with the notebook
      * instance. These can be either the names of Git repositories stored as resources
      * in your account, or the URL of Git repositories in <a
-     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
-     * CodeCommit</a> or in any other Git repository. These repositories are cloned at
-     * the same level as the default repository of your notebook instance. For more
-     * information, see <a
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon
+     * Web Services CodeCommit</a> or in any other Git repository. These repositories
+     * are cloned at the same level as the default repository of your notebook
+     * instance. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     * Git Repositories with SageMaker Notebook Instances</a>.</p>
      */
     inline UpdateNotebookInstanceRequest& WithAdditionalCodeRepositories(Aws::Vector<Aws::String>&& value) { SetAdditionalCodeRepositories(std::move(value)); return *this;}
 
@@ -517,12 +509,12 @@ namespace Model
      * <p>An array of up to three Git repositories to associate with the notebook
      * instance. These can be either the names of Git repositories stored as resources
      * in your account, or the URL of Git repositories in <a
-     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
-     * CodeCommit</a> or in any other Git repository. These repositories are cloned at
-     * the same level as the default repository of your notebook instance. For more
-     * information, see <a
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon
+     * Web Services CodeCommit</a> or in any other Git repository. These repositories
+     * are cloned at the same level as the default repository of your notebook
+     * instance. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     * Git Repositories with SageMaker Notebook Instances</a>.</p>
      */
     inline UpdateNotebookInstanceRequest& AddAdditionalCodeRepositories(const Aws::String& value) { m_additionalCodeRepositoriesHasBeenSet = true; m_additionalCodeRepositories.push_back(value); return *this; }
 
@@ -530,12 +522,12 @@ namespace Model
      * <p>An array of up to three Git repositories to associate with the notebook
      * instance. These can be either the names of Git repositories stored as resources
      * in your account, or the URL of Git repositories in <a
-     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
-     * CodeCommit</a> or in any other Git repository. These repositories are cloned at
-     * the same level as the default repository of your notebook instance. For more
-     * information, see <a
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon
+     * Web Services CodeCommit</a> or in any other Git repository. These repositories
+     * are cloned at the same level as the default repository of your notebook
+     * instance. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     * Git Repositories with SageMaker Notebook Instances</a>.</p>
      */
     inline UpdateNotebookInstanceRequest& AddAdditionalCodeRepositories(Aws::String&& value) { m_additionalCodeRepositoriesHasBeenSet = true; m_additionalCodeRepositories.push_back(std::move(value)); return *this; }
 
@@ -543,12 +535,12 @@ namespace Model
      * <p>An array of up to three Git repositories to associate with the notebook
      * instance. These can be either the names of Git repositories stored as resources
      * in your account, or the URL of Git repositories in <a
-     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
-     * CodeCommit</a> or in any other Git repository. These repositories are cloned at
-     * the same level as the default repository of your notebook instance. For more
-     * information, see <a
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon
+     * Web Services CodeCommit</a> or in any other Git repository. These repositories
+     * are cloned at the same level as the default repository of your notebook
+     * instance. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     * Git Repositories with SageMaker Notebook Instances</a>.</p>
      */
     inline UpdateNotebookInstanceRequest& AddAdditionalCodeRepositories(const char* value) { m_additionalCodeRepositoriesHasBeenSet = true; m_additionalCodeRepositories.push_back(value); return *this; }
 

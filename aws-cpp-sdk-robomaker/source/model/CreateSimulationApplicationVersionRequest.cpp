@@ -14,7 +14,9 @@ using namespace Aws::Utils;
 
 CreateSimulationApplicationVersionRequest::CreateSimulationApplicationVersionRequest() : 
     m_applicationHasBeenSet(false),
-    m_currentRevisionIdHasBeenSet(false)
+    m_currentRevisionIdHasBeenSet(false),
+    m_s3EtagsHasBeenSet(false),
+    m_imageDigestHasBeenSet(false)
 {
 }
 
@@ -31,6 +33,23 @@ Aws::String CreateSimulationApplicationVersionRequest::SerializePayload() const
   if(m_currentRevisionIdHasBeenSet)
   {
    payload.WithString("currentRevisionId", m_currentRevisionId);
+
+  }
+
+  if(m_s3EtagsHasBeenSet)
+  {
+   Array<JsonValue> s3EtagsJsonList(m_s3Etags.size());
+   for(unsigned s3EtagsIndex = 0; s3EtagsIndex < s3EtagsJsonList.GetLength(); ++s3EtagsIndex)
+   {
+     s3EtagsJsonList[s3EtagsIndex].AsString(m_s3Etags[s3EtagsIndex]);
+   }
+   payload.WithArray("s3Etags", std::move(s3EtagsJsonList));
+
+  }
+
+  if(m_imageDigestHasBeenSet)
+  {
+   payload.WithString("imageDigest", m_imageDigest);
 
   }
 

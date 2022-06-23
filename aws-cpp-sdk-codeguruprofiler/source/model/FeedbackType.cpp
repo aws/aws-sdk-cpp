@@ -20,20 +20,20 @@ namespace Aws
       namespace FeedbackTypeMapper
       {
 
-        static const int Negative_HASH = HashingUtils::HashString("Negative");
         static const int Positive_HASH = HashingUtils::HashString("Positive");
+        static const int Negative_HASH = HashingUtils::HashString("Negative");
 
 
         FeedbackType GetFeedbackTypeForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == Negative_HASH)
-          {
-            return FeedbackType::Negative;
-          }
-          else if (hashCode == Positive_HASH)
+          if (hashCode == Positive_HASH)
           {
             return FeedbackType::Positive;
+          }
+          else if (hashCode == Negative_HASH)
+          {
+            return FeedbackType::Negative;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -49,10 +49,10 @@ namespace Aws
         {
           switch(enumValue)
           {
-          case FeedbackType::Negative:
-            return "Negative";
           case FeedbackType::Positive:
             return "Positive";
+          case FeedbackType::Negative:
+            return "Negative";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

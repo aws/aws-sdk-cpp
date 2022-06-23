@@ -43,42 +43,58 @@ namespace Model
 
 
     /**
-     * <p>The name of the configuration set.</p>
+     * <p>The name of the configuration set. The name can contain up to 64 alphanumeric
+     * characters, including letters, numbers, hyphens (-) and underscores (_)
+     * only.</p>
      */
     inline const Aws::String& GetConfigurationSetName() const{ return m_configurationSetName; }
 
     /**
-     * <p>The name of the configuration set.</p>
+     * <p>The name of the configuration set. The name can contain up to 64 alphanumeric
+     * characters, including letters, numbers, hyphens (-) and underscores (_)
+     * only.</p>
      */
     inline bool ConfigurationSetNameHasBeenSet() const { return m_configurationSetNameHasBeenSet; }
 
     /**
-     * <p>The name of the configuration set.</p>
+     * <p>The name of the configuration set. The name can contain up to 64 alphanumeric
+     * characters, including letters, numbers, hyphens (-) and underscores (_)
+     * only.</p>
      */
     inline void SetConfigurationSetName(const Aws::String& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = value; }
 
     /**
-     * <p>The name of the configuration set.</p>
+     * <p>The name of the configuration set. The name can contain up to 64 alphanumeric
+     * characters, including letters, numbers, hyphens (-) and underscores (_)
+     * only.</p>
      */
     inline void SetConfigurationSetName(Aws::String&& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = std::move(value); }
 
     /**
-     * <p>The name of the configuration set.</p>
+     * <p>The name of the configuration set. The name can contain up to 64 alphanumeric
+     * characters, including letters, numbers, hyphens (-) and underscores (_)
+     * only.</p>
      */
     inline void SetConfigurationSetName(const char* value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName.assign(value); }
 
     /**
-     * <p>The name of the configuration set.</p>
+     * <p>The name of the configuration set. The name can contain up to 64 alphanumeric
+     * characters, including letters, numbers, hyphens (-) and underscores (_)
+     * only.</p>
      */
     inline CreateConfigurationSetRequest& WithConfigurationSetName(const Aws::String& value) { SetConfigurationSetName(value); return *this;}
 
     /**
-     * <p>The name of the configuration set.</p>
+     * <p>The name of the configuration set. The name can contain up to 64 alphanumeric
+     * characters, including letters, numbers, hyphens (-) and underscores (_)
+     * only.</p>
      */
     inline CreateConfigurationSetRequest& WithConfigurationSetName(Aws::String&& value) { SetConfigurationSetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the configuration set.</p>
+     * <p>The name of the configuration set. The name can contain up to 64 alphanumeric
+     * characters, including letters, numbers, hyphens (-) and underscores (_)
+     * only.</p>
      */
     inline CreateConfigurationSetRequest& WithConfigurationSetName(const char* value) { SetConfigurationSetName(value); return *this;}
 
@@ -232,50 +248,50 @@ namespace Model
 
 
     /**
-     * <p>An array of objects that define the tags (keys and values) that you want to
-     * associate with the configuration set.</p>
+     * <p>An array of objects that define the tags (keys and values) to associate with
+     * the configuration set.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>An array of objects that define the tags (keys and values) that you want to
-     * associate with the configuration set.</p>
+     * <p>An array of objects that define the tags (keys and values) to associate with
+     * the configuration set.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>An array of objects that define the tags (keys and values) that you want to
-     * associate with the configuration set.</p>
+     * <p>An array of objects that define the tags (keys and values) to associate with
+     * the configuration set.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>An array of objects that define the tags (keys and values) that you want to
-     * associate with the configuration set.</p>
+     * <p>An array of objects that define the tags (keys and values) to associate with
+     * the configuration set.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>An array of objects that define the tags (keys and values) that you want to
-     * associate with the configuration set.</p>
+     * <p>An array of objects that define the tags (keys and values) to associate with
+     * the configuration set.</p>
      */
     inline CreateConfigurationSetRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>An array of objects that define the tags (keys and values) that you want to
-     * associate with the configuration set.</p>
+     * <p>An array of objects that define the tags (keys and values) to associate with
+     * the configuration set.</p>
      */
     inline CreateConfigurationSetRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>An array of objects that define the tags (keys and values) that you want to
-     * associate with the configuration set.</p>
+     * <p>An array of objects that define the tags (keys and values) to associate with
+     * the configuration set.</p>
      */
     inline CreateConfigurationSetRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>An array of objects that define the tags (keys and values) that you want to
-     * associate with the configuration set.</p>
+     * <p>An array of objects that define the tags (keys and values) to associate with
+     * the configuration set.</p>
      */
     inline CreateConfigurationSetRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

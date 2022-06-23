@@ -11,6 +11,10 @@
 
 namespace Aws
 {
+namespace Http
+{
+    class URI;
+} //namespace Http
 namespace EKS
 {
 namespace Model
@@ -30,6 +34,8 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "DeleteAddon"; }
 
     Aws::String SerializePayload() const override;
+
+    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -129,6 +135,35 @@ namespace Model
      */
     inline DeleteAddonRequest& WithAddonName(const char* value) { SetAddonName(value); return *this;}
 
+
+    /**
+     * <p>Specifying this option preserves the add-on software on your cluster but
+     * Amazon EKS stops managing any settings for the add-on. If an IAM account is
+     * associated with the add-on, it is not removed.</p>
+     */
+    inline bool GetPreserve() const{ return m_preserve; }
+
+    /**
+     * <p>Specifying this option preserves the add-on software on your cluster but
+     * Amazon EKS stops managing any settings for the add-on. If an IAM account is
+     * associated with the add-on, it is not removed.</p>
+     */
+    inline bool PreserveHasBeenSet() const { return m_preserveHasBeenSet; }
+
+    /**
+     * <p>Specifying this option preserves the add-on software on your cluster but
+     * Amazon EKS stops managing any settings for the add-on. If an IAM account is
+     * associated with the add-on, it is not removed.</p>
+     */
+    inline void SetPreserve(bool value) { m_preserveHasBeenSet = true; m_preserve = value; }
+
+    /**
+     * <p>Specifying this option preserves the add-on software on your cluster but
+     * Amazon EKS stops managing any settings for the add-on. If an IAM account is
+     * associated with the add-on, it is not removed.</p>
+     */
+    inline DeleteAddonRequest& WithPreserve(bool value) { SetPreserve(value); return *this;}
+
   private:
 
     Aws::String m_clusterName;
@@ -136,6 +171,9 @@ namespace Model
 
     Aws::String m_addonName;
     bool m_addonNameHasBeenSet;
+
+    bool m_preserve;
+    bool m_preserveHasBeenSet;
   };
 
 } // namespace Model

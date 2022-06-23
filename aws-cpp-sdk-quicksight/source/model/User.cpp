@@ -29,7 +29,10 @@ User::User() :
     m_active(false),
     m_activeHasBeenSet(false),
     m_principalIdHasBeenSet(false),
-    m_customPermissionsNameHasBeenSet(false)
+    m_customPermissionsNameHasBeenSet(false),
+    m_externalLoginFederationProviderTypeHasBeenSet(false),
+    m_externalLoginFederationProviderUrlHasBeenSet(false),
+    m_externalLoginIdHasBeenSet(false)
 {
 }
 
@@ -44,7 +47,10 @@ User::User(JsonView jsonValue) :
     m_active(false),
     m_activeHasBeenSet(false),
     m_principalIdHasBeenSet(false),
-    m_customPermissionsNameHasBeenSet(false)
+    m_customPermissionsNameHasBeenSet(false),
+    m_externalLoginFederationProviderTypeHasBeenSet(false),
+    m_externalLoginFederationProviderUrlHasBeenSet(false),
+    m_externalLoginIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -107,6 +113,27 @@ User& User::operator =(JsonView jsonValue)
     m_customPermissionsNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ExternalLoginFederationProviderType"))
+  {
+    m_externalLoginFederationProviderType = jsonValue.GetString("ExternalLoginFederationProviderType");
+
+    m_externalLoginFederationProviderTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ExternalLoginFederationProviderUrl"))
+  {
+    m_externalLoginFederationProviderUrl = jsonValue.GetString("ExternalLoginFederationProviderUrl");
+
+    m_externalLoginFederationProviderUrlHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ExternalLoginId"))
+  {
+    m_externalLoginId = jsonValue.GetString("ExternalLoginId");
+
+    m_externalLoginIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -157,6 +184,24 @@ JsonValue User::Jsonize() const
   if(m_customPermissionsNameHasBeenSet)
   {
    payload.WithString("CustomPermissionsName", m_customPermissionsName);
+
+  }
+
+  if(m_externalLoginFederationProviderTypeHasBeenSet)
+  {
+   payload.WithString("ExternalLoginFederationProviderType", m_externalLoginFederationProviderType);
+
+  }
+
+  if(m_externalLoginFederationProviderUrlHasBeenSet)
+  {
+   payload.WithString("ExternalLoginFederationProviderUrl", m_externalLoginFederationProviderUrl);
+
+  }
+
+  if(m_externalLoginIdHasBeenSet)
+  {
+   payload.WithString("ExternalLoginId", m_externalLoginId);
 
   }
 

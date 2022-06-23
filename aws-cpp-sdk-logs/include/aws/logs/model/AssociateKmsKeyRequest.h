@@ -79,7 +79,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
      * This must be a symmetric CMK. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
-     * Resource Names - AWS Key Management Service (AWS KMS)</a> and <a
+     * Resource Names - Key Management Service</a> and <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
      * Symmetric and Asymmetric Keys</a>.</p>
      */
@@ -89,7 +89,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
      * This must be a symmetric CMK. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
-     * Resource Names - AWS Key Management Service (AWS KMS)</a> and <a
+     * Resource Names - Key Management Service</a> and <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
      * Symmetric and Asymmetric Keys</a>.</p>
      */
@@ -99,7 +99,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
      * This must be a symmetric CMK. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
-     * Resource Names - AWS Key Management Service (AWS KMS)</a> and <a
+     * Resource Names - Key Management Service</a> and <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
      * Symmetric and Asymmetric Keys</a>.</p>
      */
@@ -109,7 +109,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
      * This must be a symmetric CMK. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
-     * Resource Names - AWS Key Management Service (AWS KMS)</a> and <a
+     * Resource Names - Key Management Service</a> and <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
      * Symmetric and Asymmetric Keys</a>.</p>
      */
@@ -119,7 +119,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
      * This must be a symmetric CMK. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
-     * Resource Names - AWS Key Management Service (AWS KMS)</a> and <a
+     * Resource Names - Key Management Service</a> and <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
      * Symmetric and Asymmetric Keys</a>.</p>
      */
@@ -129,7 +129,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
      * This must be a symmetric CMK. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
-     * Resource Names - AWS Key Management Service (AWS KMS)</a> and <a
+     * Resource Names - Key Management Service</a> and <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
      * Symmetric and Asymmetric Keys</a>.</p>
      */
@@ -139,7 +139,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
      * This must be a symmetric CMK. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
-     * Resource Names - AWS Key Management Service (AWS KMS)</a> and <a
+     * Resource Names - Key Management Service</a> and <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
      * Symmetric and Asymmetric Keys</a>.</p>
      */
@@ -149,7 +149,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
      * This must be a symmetric CMK. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
-     * Resource Names - AWS Key Management Service (AWS KMS)</a> and <a
+     * Resource Names - Key Management Service</a> and <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
      * Symmetric and Asymmetric Keys</a>.</p>
      */

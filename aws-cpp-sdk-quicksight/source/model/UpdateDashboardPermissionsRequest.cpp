@@ -16,7 +16,9 @@ UpdateDashboardPermissionsRequest::UpdateDashboardPermissionsRequest() :
     m_awsAccountIdHasBeenSet(false),
     m_dashboardIdHasBeenSet(false),
     m_grantPermissionsHasBeenSet(false),
-    m_revokePermissionsHasBeenSet(false)
+    m_revokePermissionsHasBeenSet(false),
+    m_grantLinkPermissionsHasBeenSet(false),
+    m_revokeLinkPermissionsHasBeenSet(false)
 {
 }
 
@@ -43,6 +45,28 @@ Aws::String UpdateDashboardPermissionsRequest::SerializePayload() const
      revokePermissionsJsonList[revokePermissionsIndex].AsObject(m_revokePermissions[revokePermissionsIndex].Jsonize());
    }
    payload.WithArray("RevokePermissions", std::move(revokePermissionsJsonList));
+
+  }
+
+  if(m_grantLinkPermissionsHasBeenSet)
+  {
+   Array<JsonValue> grantLinkPermissionsJsonList(m_grantLinkPermissions.size());
+   for(unsigned grantLinkPermissionsIndex = 0; grantLinkPermissionsIndex < grantLinkPermissionsJsonList.GetLength(); ++grantLinkPermissionsIndex)
+   {
+     grantLinkPermissionsJsonList[grantLinkPermissionsIndex].AsObject(m_grantLinkPermissions[grantLinkPermissionsIndex].Jsonize());
+   }
+   payload.WithArray("GrantLinkPermissions", std::move(grantLinkPermissionsJsonList));
+
+  }
+
+  if(m_revokeLinkPermissionsHasBeenSet)
+  {
+   Array<JsonValue> revokeLinkPermissionsJsonList(m_revokeLinkPermissions.size());
+   for(unsigned revokeLinkPermissionsIndex = 0; revokeLinkPermissionsIndex < revokeLinkPermissionsJsonList.GetLength(); ++revokeLinkPermissionsIndex)
+   {
+     revokeLinkPermissionsJsonList[revokeLinkPermissionsIndex].AsObject(m_revokeLinkPermissions[revokeLinkPermissionsIndex].Jsonize());
+   }
+   payload.WithArray("RevokeLinkPermissions", std::move(revokeLinkPermissionsJsonList));
 
   }
 

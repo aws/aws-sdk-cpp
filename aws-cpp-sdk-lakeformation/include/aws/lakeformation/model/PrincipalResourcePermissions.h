@@ -196,43 +196,43 @@ namespace Model
 
     /**
      * <p>This attribute can be used to return any additional details of
-     * <code>PrincipalResourcePermissions</code>. Currently returns only as a RAM share
-     * resource ARN.</p>
+     * <code>PrincipalResourcePermissions</code>. Currently returns only as a RAM
+     * resource share ARN.</p>
      */
     inline const DetailsMap& GetAdditionalDetails() const{ return m_additionalDetails; }
 
     /**
      * <p>This attribute can be used to return any additional details of
-     * <code>PrincipalResourcePermissions</code>. Currently returns only as a RAM share
-     * resource ARN.</p>
+     * <code>PrincipalResourcePermissions</code>. Currently returns only as a RAM
+     * resource share ARN.</p>
      */
     inline bool AdditionalDetailsHasBeenSet() const { return m_additionalDetailsHasBeenSet; }
 
     /**
      * <p>This attribute can be used to return any additional details of
-     * <code>PrincipalResourcePermissions</code>. Currently returns only as a RAM share
-     * resource ARN.</p>
+     * <code>PrincipalResourcePermissions</code>. Currently returns only as a RAM
+     * resource share ARN.</p>
      */
     inline void SetAdditionalDetails(const DetailsMap& value) { m_additionalDetailsHasBeenSet = true; m_additionalDetails = value; }
 
     /**
      * <p>This attribute can be used to return any additional details of
-     * <code>PrincipalResourcePermissions</code>. Currently returns only as a RAM share
-     * resource ARN.</p>
+     * <code>PrincipalResourcePermissions</code>. Currently returns only as a RAM
+     * resource share ARN.</p>
      */
     inline void SetAdditionalDetails(DetailsMap&& value) { m_additionalDetailsHasBeenSet = true; m_additionalDetails = std::move(value); }
 
     /**
      * <p>This attribute can be used to return any additional details of
-     * <code>PrincipalResourcePermissions</code>. Currently returns only as a RAM share
-     * resource ARN.</p>
+     * <code>PrincipalResourcePermissions</code>. Currently returns only as a RAM
+     * resource share ARN.</p>
      */
     inline PrincipalResourcePermissions& WithAdditionalDetails(const DetailsMap& value) { SetAdditionalDetails(value); return *this;}
 
     /**
      * <p>This attribute can be used to return any additional details of
-     * <code>PrincipalResourcePermissions</code>. Currently returns only as a RAM share
-     * resource ARN.</p>
+     * <code>PrincipalResourcePermissions</code>. Currently returns only as a RAM
+     * resource share ARN.</p>
      */
     inline PrincipalResourcePermissions& WithAdditionalDetails(DetailsMap&& value) { SetAdditionalDetails(std::move(value)); return *this;}
 

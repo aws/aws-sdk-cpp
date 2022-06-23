@@ -24,6 +24,7 @@ namespace Aws
         static const int DATASET_HASH = HashingUtils::HashString("DATASET");
         static const int MODEL_HASH = HashingUtils::HashString("MODEL");
         static const int TRIAL_HASH = HashingUtils::HashString("TRIAL");
+        static const int MODEL_PACKAGE_JOB_HASH = HashingUtils::HashString("MODEL_PACKAGE_JOB");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == TRIAL_HASH)
           {
             return ResourceType::TRIAL;
+          }
+          else if (hashCode == MODEL_PACKAGE_JOB_HASH)
+          {
+            return ResourceType::MODEL_PACKAGE_JOB;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -67,6 +72,8 @@ namespace Aws
             return "MODEL";
           case ResourceType::TRIAL:
             return "TRIAL";
+          case ResourceType::MODEL_PACKAGE_JOB:
+            return "MODEL_PACKAGE_JOB";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

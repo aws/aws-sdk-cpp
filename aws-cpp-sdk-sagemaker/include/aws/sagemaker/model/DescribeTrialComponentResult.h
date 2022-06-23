@@ -298,27 +298,27 @@ namespace Model
 
 
     /**
-     * <p>Who created the component.</p>
+     * <p>Who created the trial component.</p>
      */
     inline const UserContext& GetCreatedBy() const{ return m_createdBy; }
 
     /**
-     * <p>Who created the component.</p>
+     * <p>Who created the trial component.</p>
      */
     inline void SetCreatedBy(const UserContext& value) { m_createdBy = value; }
 
     /**
-     * <p>Who created the component.</p>
+     * <p>Who created the trial component.</p>
      */
     inline void SetCreatedBy(UserContext&& value) { m_createdBy = std::move(value); }
 
     /**
-     * <p>Who created the component.</p>
+     * <p>Who created the trial component.</p>
      */
     inline DescribeTrialComponentResult& WithCreatedBy(const UserContext& value) { SetCreatedBy(value); return *this;}
 
     /**
-     * <p>Who created the component.</p>
+     * <p>Who created the trial component.</p>
      */
     inline DescribeTrialComponentResult& WithCreatedBy(UserContext&& value) { SetCreatedBy(std::move(value)); return *this;}
 
@@ -594,6 +594,42 @@ namespace Model
      */
     inline DescribeTrialComponentResult& AddMetrics(TrialComponentMetricSummary&& value) { m_metrics.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the lineage group.</p>
+     */
+    inline const Aws::String& GetLineageGroupArn() const{ return m_lineageGroupArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the lineage group.</p>
+     */
+    inline void SetLineageGroupArn(const Aws::String& value) { m_lineageGroupArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the lineage group.</p>
+     */
+    inline void SetLineageGroupArn(Aws::String&& value) { m_lineageGroupArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the lineage group.</p>
+     */
+    inline void SetLineageGroupArn(const char* value) { m_lineageGroupArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the lineage group.</p>
+     */
+    inline DescribeTrialComponentResult& WithLineageGroupArn(const Aws::String& value) { SetLineageGroupArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the lineage group.</p>
+     */
+    inline DescribeTrialComponentResult& WithLineageGroupArn(Aws::String&& value) { SetLineageGroupArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the lineage group.</p>
+     */
+    inline DescribeTrialComponentResult& WithLineageGroupArn(const char* value) { SetLineageGroupArn(value); return *this;}
+
   private:
 
     Aws::String m_trialComponentName;
@@ -627,6 +663,8 @@ namespace Model
     MetadataProperties m_metadataProperties;
 
     Aws::Vector<TrialComponentMetricSummary> m_metrics;
+
+    Aws::String m_lineageGroupArn;
   };
 
 } // namespace Model

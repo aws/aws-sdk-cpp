@@ -735,7 +735,7 @@ namespace Model
     /**
      * <p>This parameter applies only to FIFO (first-in-first-out) topics. The
      * <code>MessageDeduplicationId</code> can contain up to 128 alphanumeric
-     * characters (a-z, A-Z, 0-9) and punctuation
+     * characters <code>(a-z, A-Z, 0-9)</code> and punctuation
      * <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p> <p>Every message
      * must have a unique <code>MessageDeduplicationId</code>, which is a token used
      * for deduplication of sent messages. If a message with a particular
@@ -751,7 +751,7 @@ namespace Model
     /**
      * <p>This parameter applies only to FIFO (first-in-first-out) topics. The
      * <code>MessageDeduplicationId</code> can contain up to 128 alphanumeric
-     * characters (a-z, A-Z, 0-9) and punctuation
+     * characters <code>(a-z, A-Z, 0-9)</code> and punctuation
      * <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p> <p>Every message
      * must have a unique <code>MessageDeduplicationId</code>, which is a token used
      * for deduplication of sent messages. If a message with a particular
@@ -767,7 +767,7 @@ namespace Model
     /**
      * <p>This parameter applies only to FIFO (first-in-first-out) topics. The
      * <code>MessageDeduplicationId</code> can contain up to 128 alphanumeric
-     * characters (a-z, A-Z, 0-9) and punctuation
+     * characters <code>(a-z, A-Z, 0-9)</code> and punctuation
      * <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p> <p>Every message
      * must have a unique <code>MessageDeduplicationId</code>, which is a token used
      * for deduplication of sent messages. If a message with a particular
@@ -783,7 +783,7 @@ namespace Model
     /**
      * <p>This parameter applies only to FIFO (first-in-first-out) topics. The
      * <code>MessageDeduplicationId</code> can contain up to 128 alphanumeric
-     * characters (a-z, A-Z, 0-9) and punctuation
+     * characters <code>(a-z, A-Z, 0-9)</code> and punctuation
      * <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p> <p>Every message
      * must have a unique <code>MessageDeduplicationId</code>, which is a token used
      * for deduplication of sent messages. If a message with a particular
@@ -799,7 +799,7 @@ namespace Model
     /**
      * <p>This parameter applies only to FIFO (first-in-first-out) topics. The
      * <code>MessageDeduplicationId</code> can contain up to 128 alphanumeric
-     * characters (a-z, A-Z, 0-9) and punctuation
+     * characters <code>(a-z, A-Z, 0-9)</code> and punctuation
      * <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p> <p>Every message
      * must have a unique <code>MessageDeduplicationId</code>, which is a token used
      * for deduplication of sent messages. If a message with a particular
@@ -815,7 +815,7 @@ namespace Model
     /**
      * <p>This parameter applies only to FIFO (first-in-first-out) topics. The
      * <code>MessageDeduplicationId</code> can contain up to 128 alphanumeric
-     * characters (a-z, A-Z, 0-9) and punctuation
+     * characters <code>(a-z, A-Z, 0-9)</code> and punctuation
      * <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p> <p>Every message
      * must have a unique <code>MessageDeduplicationId</code>, which is a token used
      * for deduplication of sent messages. If a message with a particular
@@ -831,7 +831,7 @@ namespace Model
     /**
      * <p>This parameter applies only to FIFO (first-in-first-out) topics. The
      * <code>MessageDeduplicationId</code> can contain up to 128 alphanumeric
-     * characters (a-z, A-Z, 0-9) and punctuation
+     * characters <code>(a-z, A-Z, 0-9)</code> and punctuation
      * <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p> <p>Every message
      * must have a unique <code>MessageDeduplicationId</code>, which is a token used
      * for deduplication of sent messages. If a message with a particular
@@ -847,7 +847,7 @@ namespace Model
     /**
      * <p>This parameter applies only to FIFO (first-in-first-out) topics. The
      * <code>MessageDeduplicationId</code> can contain up to 128 alphanumeric
-     * characters (a-z, A-Z, 0-9) and punctuation
+     * characters <code>(a-z, A-Z, 0-9)</code> and punctuation
      * <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p> <p>Every message
      * must have a unique <code>MessageDeduplicationId</code>, which is a token used
      * for deduplication of sent messages. If a message with a particular
@@ -863,8 +863,8 @@ namespace Model
 
     /**
      * <p>This parameter applies only to FIFO (first-in-first-out) topics. The
-     * <code>MessageGroupId</code> can contain up to 128 alphanumeric characters (a-z,
-     * A-Z, 0-9) and punctuation
+     * <code>MessageGroupId</code> can contain up to 128 alphanumeric characters
+     * <code>(a-z, A-Z, 0-9)</code> and punctuation
      * <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p> <p>The
      * <code>MessageGroupId</code> is a tag that specifies that a message belongs to a
      * specific message group. Messages that belong to the same message group are
@@ -876,8 +876,8 @@ namespace Model
 
     /**
      * <p>This parameter applies only to FIFO (first-in-first-out) topics. The
-     * <code>MessageGroupId</code> can contain up to 128 alphanumeric characters (a-z,
-     * A-Z, 0-9) and punctuation
+     * <code>MessageGroupId</code> can contain up to 128 alphanumeric characters
+     * <code>(a-z, A-Z, 0-9)</code> and punctuation
      * <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p> <p>The
      * <code>MessageGroupId</code> is a tag that specifies that a message belongs to a
      * specific message group. Messages that belong to the same message group are
@@ -889,8 +889,8 @@ namespace Model
 
     /**
      * <p>This parameter applies only to FIFO (first-in-first-out) topics. The
-     * <code>MessageGroupId</code> can contain up to 128 alphanumeric characters (a-z,
-     * A-Z, 0-9) and punctuation
+     * <code>MessageGroupId</code> can contain up to 128 alphanumeric characters
+     * <code>(a-z, A-Z, 0-9)</code> and punctuation
      * <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p> <p>The
      * <code>MessageGroupId</code> is a tag that specifies that a message belongs to a
      * specific message group. Messages that belong to the same message group are
@@ -902,8 +902,8 @@ namespace Model
 
     /**
      * <p>This parameter applies only to FIFO (first-in-first-out) topics. The
-     * <code>MessageGroupId</code> can contain up to 128 alphanumeric characters (a-z,
-     * A-Z, 0-9) and punctuation
+     * <code>MessageGroupId</code> can contain up to 128 alphanumeric characters
+     * <code>(a-z, A-Z, 0-9)</code> and punctuation
      * <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p> <p>The
      * <code>MessageGroupId</code> is a tag that specifies that a message belongs to a
      * specific message group. Messages that belong to the same message group are
@@ -915,8 +915,8 @@ namespace Model
 
     /**
      * <p>This parameter applies only to FIFO (first-in-first-out) topics. The
-     * <code>MessageGroupId</code> can contain up to 128 alphanumeric characters (a-z,
-     * A-Z, 0-9) and punctuation
+     * <code>MessageGroupId</code> can contain up to 128 alphanumeric characters
+     * <code>(a-z, A-Z, 0-9)</code> and punctuation
      * <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p> <p>The
      * <code>MessageGroupId</code> is a tag that specifies that a message belongs to a
      * specific message group. Messages that belong to the same message group are
@@ -928,8 +928,8 @@ namespace Model
 
     /**
      * <p>This parameter applies only to FIFO (first-in-first-out) topics. The
-     * <code>MessageGroupId</code> can contain up to 128 alphanumeric characters (a-z,
-     * A-Z, 0-9) and punctuation
+     * <code>MessageGroupId</code> can contain up to 128 alphanumeric characters
+     * <code>(a-z, A-Z, 0-9)</code> and punctuation
      * <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p> <p>The
      * <code>MessageGroupId</code> is a tag that specifies that a message belongs to a
      * specific message group. Messages that belong to the same message group are
@@ -941,8 +941,8 @@ namespace Model
 
     /**
      * <p>This parameter applies only to FIFO (first-in-first-out) topics. The
-     * <code>MessageGroupId</code> can contain up to 128 alphanumeric characters (a-z,
-     * A-Z, 0-9) and punctuation
+     * <code>MessageGroupId</code> can contain up to 128 alphanumeric characters
+     * <code>(a-z, A-Z, 0-9)</code> and punctuation
      * <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p> <p>The
      * <code>MessageGroupId</code> is a tag that specifies that a message belongs to a
      * specific message group. Messages that belong to the same message group are
@@ -954,8 +954,8 @@ namespace Model
 
     /**
      * <p>This parameter applies only to FIFO (first-in-first-out) topics. The
-     * <code>MessageGroupId</code> can contain up to 128 alphanumeric characters (a-z,
-     * A-Z, 0-9) and punctuation
+     * <code>MessageGroupId</code> can contain up to 128 alphanumeric characters
+     * <code>(a-z, A-Z, 0-9)</code> and punctuation
      * <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.</p> <p>The
      * <code>MessageGroupId</code> is a tag that specifies that a message belongs to a
      * specific message group. Messages that belong to the same message group are

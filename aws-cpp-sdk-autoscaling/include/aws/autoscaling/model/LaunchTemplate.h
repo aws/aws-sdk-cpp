@@ -26,12 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes a launch template and overrides. </p> <p>You specify these
-   * parameters as part of a mixed instances policy. </p> <p>When you update the
-   * launch template or overrides, existing Amazon EC2 instances continue to run.
-   * When scale out occurs, Amazon EC2 Auto Scaling launches instances to match the
-   * new settings. When scale in occurs, Amazon EC2 Auto Scaling terminates instances
-   * according to the group's termination policies.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes a launch template and overrides. You specify these properties as
+   * part of a mixed instances policy. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/LaunchTemplate">AWS
    * API Reference</a></p>
    */
@@ -78,58 +74,74 @@ namespace Model
 
 
     /**
-     * <p>Any parameters that you specify override the same parameters in the launch
-     * template. If not provided, Amazon EC2 Auto Scaling uses the instance type
-     * specified in the launch template when it launches an instance. </p>
+     * <p>Any properties that you specify override the same properties in the launch
+     * template. If not provided, Amazon EC2 Auto Scaling uses the instance type or
+     * instance type requirements specified in the launch template when it launches an
+     * instance.</p> <p>The overrides can include either one or more instance types or
+     * a set of instance requirements, but not both.</p>
      */
     inline const Aws::Vector<LaunchTemplateOverrides>& GetOverrides() const{ return m_overrides; }
 
     /**
-     * <p>Any parameters that you specify override the same parameters in the launch
-     * template. If not provided, Amazon EC2 Auto Scaling uses the instance type
-     * specified in the launch template when it launches an instance. </p>
+     * <p>Any properties that you specify override the same properties in the launch
+     * template. If not provided, Amazon EC2 Auto Scaling uses the instance type or
+     * instance type requirements specified in the launch template when it launches an
+     * instance.</p> <p>The overrides can include either one or more instance types or
+     * a set of instance requirements, but not both.</p>
      */
     inline bool OverridesHasBeenSet() const { return m_overridesHasBeenSet; }
 
     /**
-     * <p>Any parameters that you specify override the same parameters in the launch
-     * template. If not provided, Amazon EC2 Auto Scaling uses the instance type
-     * specified in the launch template when it launches an instance. </p>
+     * <p>Any properties that you specify override the same properties in the launch
+     * template. If not provided, Amazon EC2 Auto Scaling uses the instance type or
+     * instance type requirements specified in the launch template when it launches an
+     * instance.</p> <p>The overrides can include either one or more instance types or
+     * a set of instance requirements, but not both.</p>
      */
     inline void SetOverrides(const Aws::Vector<LaunchTemplateOverrides>& value) { m_overridesHasBeenSet = true; m_overrides = value; }
 
     /**
-     * <p>Any parameters that you specify override the same parameters in the launch
-     * template. If not provided, Amazon EC2 Auto Scaling uses the instance type
-     * specified in the launch template when it launches an instance. </p>
+     * <p>Any properties that you specify override the same properties in the launch
+     * template. If not provided, Amazon EC2 Auto Scaling uses the instance type or
+     * instance type requirements specified in the launch template when it launches an
+     * instance.</p> <p>The overrides can include either one or more instance types or
+     * a set of instance requirements, but not both.</p>
      */
     inline void SetOverrides(Aws::Vector<LaunchTemplateOverrides>&& value) { m_overridesHasBeenSet = true; m_overrides = std::move(value); }
 
     /**
-     * <p>Any parameters that you specify override the same parameters in the launch
-     * template. If not provided, Amazon EC2 Auto Scaling uses the instance type
-     * specified in the launch template when it launches an instance. </p>
+     * <p>Any properties that you specify override the same properties in the launch
+     * template. If not provided, Amazon EC2 Auto Scaling uses the instance type or
+     * instance type requirements specified in the launch template when it launches an
+     * instance.</p> <p>The overrides can include either one or more instance types or
+     * a set of instance requirements, but not both.</p>
      */
     inline LaunchTemplate& WithOverrides(const Aws::Vector<LaunchTemplateOverrides>& value) { SetOverrides(value); return *this;}
 
     /**
-     * <p>Any parameters that you specify override the same parameters in the launch
-     * template. If not provided, Amazon EC2 Auto Scaling uses the instance type
-     * specified in the launch template when it launches an instance. </p>
+     * <p>Any properties that you specify override the same properties in the launch
+     * template. If not provided, Amazon EC2 Auto Scaling uses the instance type or
+     * instance type requirements specified in the launch template when it launches an
+     * instance.</p> <p>The overrides can include either one or more instance types or
+     * a set of instance requirements, but not both.</p>
      */
     inline LaunchTemplate& WithOverrides(Aws::Vector<LaunchTemplateOverrides>&& value) { SetOverrides(std::move(value)); return *this;}
 
     /**
-     * <p>Any parameters that you specify override the same parameters in the launch
-     * template. If not provided, Amazon EC2 Auto Scaling uses the instance type
-     * specified in the launch template when it launches an instance. </p>
+     * <p>Any properties that you specify override the same properties in the launch
+     * template. If not provided, Amazon EC2 Auto Scaling uses the instance type or
+     * instance type requirements specified in the launch template when it launches an
+     * instance.</p> <p>The overrides can include either one or more instance types or
+     * a set of instance requirements, but not both.</p>
      */
     inline LaunchTemplate& AddOverrides(const LaunchTemplateOverrides& value) { m_overridesHasBeenSet = true; m_overrides.push_back(value); return *this; }
 
     /**
-     * <p>Any parameters that you specify override the same parameters in the launch
-     * template. If not provided, Amazon EC2 Auto Scaling uses the instance type
-     * specified in the launch template when it launches an instance. </p>
+     * <p>Any properties that you specify override the same properties in the launch
+     * template. If not provided, Amazon EC2 Auto Scaling uses the instance type or
+     * instance type requirements specified in the launch template when it launches an
+     * instance.</p> <p>The overrides can include either one or more instance types or
+     * a set of instance requirements, but not both.</p>
      */
     inline LaunchTemplate& AddOverrides(LaunchTemplateOverrides&& value) { m_overridesHasBeenSet = true; m_overrides.push_back(std::move(value)); return *this; }
 

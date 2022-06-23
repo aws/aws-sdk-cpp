@@ -166,56 +166,56 @@ namespace Model
     /**
      * <p>An array of objects that map database column names to the corresponding
      * fields in an index. You must first create the fields in the index using the
-     * <a>UpdateIndex</a> operation.</p>
+     * <code>UpdateIndex</code> API.</p>
      */
     inline const Aws::Vector<DataSourceToIndexFieldMapping>& GetFieldMappings() const{ return m_fieldMappings; }
 
     /**
      * <p>An array of objects that map database column names to the corresponding
      * fields in an index. You must first create the fields in the index using the
-     * <a>UpdateIndex</a> operation.</p>
+     * <code>UpdateIndex</code> API.</p>
      */
     inline bool FieldMappingsHasBeenSet() const { return m_fieldMappingsHasBeenSet; }
 
     /**
      * <p>An array of objects that map database column names to the corresponding
      * fields in an index. You must first create the fields in the index using the
-     * <a>UpdateIndex</a> operation.</p>
+     * <code>UpdateIndex</code> API.</p>
      */
     inline void SetFieldMappings(const Aws::Vector<DataSourceToIndexFieldMapping>& value) { m_fieldMappingsHasBeenSet = true; m_fieldMappings = value; }
 
     /**
      * <p>An array of objects that map database column names to the corresponding
      * fields in an index. You must first create the fields in the index using the
-     * <a>UpdateIndex</a> operation.</p>
+     * <code>UpdateIndex</code> API.</p>
      */
     inline void SetFieldMappings(Aws::Vector<DataSourceToIndexFieldMapping>&& value) { m_fieldMappingsHasBeenSet = true; m_fieldMappings = std::move(value); }
 
     /**
      * <p>An array of objects that map database column names to the corresponding
      * fields in an index. You must first create the fields in the index using the
-     * <a>UpdateIndex</a> operation.</p>
+     * <code>UpdateIndex</code> API.</p>
      */
     inline ColumnConfiguration& WithFieldMappings(const Aws::Vector<DataSourceToIndexFieldMapping>& value) { SetFieldMappings(value); return *this;}
 
     /**
      * <p>An array of objects that map database column names to the corresponding
      * fields in an index. You must first create the fields in the index using the
-     * <a>UpdateIndex</a> operation.</p>
+     * <code>UpdateIndex</code> API.</p>
      */
     inline ColumnConfiguration& WithFieldMappings(Aws::Vector<DataSourceToIndexFieldMapping>&& value) { SetFieldMappings(std::move(value)); return *this;}
 
     /**
      * <p>An array of objects that map database column names to the corresponding
      * fields in an index. You must first create the fields in the index using the
-     * <a>UpdateIndex</a> operation.</p>
+     * <code>UpdateIndex</code> API.</p>
      */
     inline ColumnConfiguration& AddFieldMappings(const DataSourceToIndexFieldMapping& value) { m_fieldMappingsHasBeenSet = true; m_fieldMappings.push_back(value); return *this; }
 
     /**
      * <p>An array of objects that map database column names to the corresponding
      * fields in an index. You must first create the fields in the index using the
-     * <a>UpdateIndex</a> operation.</p>
+     * <code>UpdateIndex</code> API.</p>
      */
     inline ColumnConfiguration& AddFieldMappings(DataSourceToIndexFieldMapping&& value) { m_fieldMappingsHasBeenSet = true; m_fieldMappings.push_back(std::move(value)); return *this; }
 

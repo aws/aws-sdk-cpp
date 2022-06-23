@@ -20,12 +20,12 @@ GetDistributionConfig2020_05_31Result::GetDistributionConfig2020_05_31Result()
 {
 }
 
-GetDistributionConfig2020_05_31Result::GetDistributionConfig2020_05_31Result(const AmazonWebServiceResult<XmlDocument>& result)
+GetDistributionConfig2020_05_31Result::GetDistributionConfig2020_05_31Result(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-GetDistributionConfig2020_05_31Result& GetDistributionConfig2020_05_31Result::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+GetDistributionConfig2020_05_31Result& GetDistributionConfig2020_05_31Result::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

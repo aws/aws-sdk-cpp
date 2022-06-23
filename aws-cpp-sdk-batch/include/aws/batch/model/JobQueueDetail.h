@@ -29,7 +29,7 @@ namespace Model
 {
 
   /**
-   * <p>An object representing the details of an AWS Batch job queue.</p><p><h3>See
+   * <p>An object representing the details of an Batch job queue.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/JobQueueDetail">AWS
    * API Reference</a></p>
@@ -175,6 +175,71 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is
+     * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
+     * </code>. For example,
+     * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+     */
+    inline const Aws::String& GetSchedulingPolicyArn() const{ return m_schedulingPolicyArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is
+     * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
+     * </code>. For example,
+     * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+     */
+    inline bool SchedulingPolicyArnHasBeenSet() const { return m_schedulingPolicyArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is
+     * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
+     * </code>. For example,
+     * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+     */
+    inline void SetSchedulingPolicyArn(const Aws::String& value) { m_schedulingPolicyArnHasBeenSet = true; m_schedulingPolicyArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is
+     * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
+     * </code>. For example,
+     * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+     */
+    inline void SetSchedulingPolicyArn(Aws::String&& value) { m_schedulingPolicyArnHasBeenSet = true; m_schedulingPolicyArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is
+     * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
+     * </code>. For example,
+     * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+     */
+    inline void SetSchedulingPolicyArn(const char* value) { m_schedulingPolicyArnHasBeenSet = true; m_schedulingPolicyArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is
+     * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
+     * </code>. For example,
+     * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+     */
+    inline JobQueueDetail& WithSchedulingPolicyArn(const Aws::String& value) { SetSchedulingPolicyArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is
+     * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
+     * </code>. For example,
+     * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+     */
+    inline JobQueueDetail& WithSchedulingPolicyArn(Aws::String&& value) { SetSchedulingPolicyArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the scheduling policy. The format is
+     * <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i>
+     * </code>. For example,
+     * <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
+     */
+    inline JobQueueDetail& WithSchedulingPolicyArn(const char* value) { SetSchedulingPolicyArn(value); return *this;}
+
+
+    /**
      * <p>The status of the job queue (for example, <code>CREATING</code> or
      * <code>VALID</code>).</p>
      */
@@ -268,7 +333,7 @@ namespace Model
      * <code>10</code> is given scheduling preference over a job queue with a priority
      * value of <code>1</code>. All of the compute environments must be either EC2
      * (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments cannot be
+     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be
      * mixed.</p>
      */
     inline int GetPriority() const{ return m_priority; }
@@ -281,7 +346,7 @@ namespace Model
      * <code>10</code> is given scheduling preference over a job queue with a priority
      * value of <code>1</code>. All of the compute environments must be either EC2
      * (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments cannot be
+     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be
      * mixed.</p>
      */
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
@@ -294,7 +359,7 @@ namespace Model
      * <code>10</code> is given scheduling preference over a job queue with a priority
      * value of <code>1</code>. All of the compute environments must be either EC2
      * (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments cannot be
+     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be
      * mixed.</p>
      */
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
@@ -307,7 +372,7 @@ namespace Model
      * <code>10</code> is given scheduling preference over a job queue with a priority
      * value of <code>1</code>. All of the compute environments must be either EC2
      * (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments cannot be
+     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be
      * mixed.</p>
      */
     inline JobQueueDetail& WithPriority(int value) { SetPriority(value); return *this;}
@@ -373,91 +438,91 @@ namespace Model
     /**
      * <p>The tags applied to the job queue. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
-     * your AWS Batch resources</a> in <i>AWS Batch User Guide</i>.</p>
+     * your Batch resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
      * <p>The tags applied to the job queue. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
-     * your AWS Batch resources</a> in <i>AWS Batch User Guide</i>.</p>
+     * your Batch resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tags applied to the job queue. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
-     * your AWS Batch resources</a> in <i>AWS Batch User Guide</i>.</p>
+     * your Batch resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>The tags applied to the job queue. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
-     * your AWS Batch resources</a> in <i>AWS Batch User Guide</i>.</p>
+     * your Batch resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>The tags applied to the job queue. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
-     * your AWS Batch resources</a> in <i>AWS Batch User Guide</i>.</p>
+     * your Batch resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline JobQueueDetail& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
      * <p>The tags applied to the job queue. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
-     * your AWS Batch resources</a> in <i>AWS Batch User Guide</i>.</p>
+     * your Batch resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline JobQueueDetail& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>The tags applied to the job queue. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
-     * your AWS Batch resources</a> in <i>AWS Batch User Guide</i>.</p>
+     * your Batch resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline JobQueueDetail& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
      * <p>The tags applied to the job queue. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
-     * your AWS Batch resources</a> in <i>AWS Batch User Guide</i>.</p>
+     * your Batch resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline JobQueueDetail& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The tags applied to the job queue. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
-     * your AWS Batch resources</a> in <i>AWS Batch User Guide</i>.</p>
+     * your Batch resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline JobQueueDetail& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The tags applied to the job queue. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
-     * your AWS Batch resources</a> in <i>AWS Batch User Guide</i>.</p>
+     * your Batch resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline JobQueueDetail& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>The tags applied to the job queue. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
-     * your AWS Batch resources</a> in <i>AWS Batch User Guide</i>.</p>
+     * your Batch resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline JobQueueDetail& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The tags applied to the job queue. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
-     * your AWS Batch resources</a> in <i>AWS Batch User Guide</i>.</p>
+     * your Batch resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline JobQueueDetail& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The tags applied to the job queue. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
-     * your AWS Batch resources</a> in <i>AWS Batch User Guide</i>.</p>
+     * your Batch resources</a> in <i>Batch User Guide</i>.</p>
      */
     inline JobQueueDetail& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
@@ -471,6 +536,9 @@ namespace Model
 
     JQState m_state;
     bool m_stateHasBeenSet;
+
+    Aws::String m_schedulingPolicyArn;
+    bool m_schedulingPolicyArnHasBeenSet;
 
     JQStatus m_status;
     bool m_statusHasBeenSet;

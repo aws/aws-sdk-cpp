@@ -593,48 +593,42 @@ namespace Model
     /**
      * <p>The type of IP addresses used by the subnets for your load balancer. The
      * possible values are <code>ipv4</code> (for IPv4 addresses) and
-     * <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers
-     * must use <code>ipv4</code>.</p>
+     * <code>dualstack</code> (for IPv4 and IPv6 addresses). </p>
      */
     inline const IpAddressType& GetIpAddressType() const{ return m_ipAddressType; }
 
     /**
      * <p>The type of IP addresses used by the subnets for your load balancer. The
      * possible values are <code>ipv4</code> (for IPv4 addresses) and
-     * <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers
-     * must use <code>ipv4</code>.</p>
+     * <code>dualstack</code> (for IPv4 and IPv6 addresses). </p>
      */
     inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
 
     /**
      * <p>The type of IP addresses used by the subnets for your load balancer. The
      * possible values are <code>ipv4</code> (for IPv4 addresses) and
-     * <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers
-     * must use <code>ipv4</code>.</p>
+     * <code>dualstack</code> (for IPv4 and IPv6 addresses). </p>
      */
     inline void SetIpAddressType(const IpAddressType& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
 
     /**
      * <p>The type of IP addresses used by the subnets for your load balancer. The
      * possible values are <code>ipv4</code> (for IPv4 addresses) and
-     * <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers
-     * must use <code>ipv4</code>.</p>
+     * <code>dualstack</code> (for IPv4 and IPv6 addresses). </p>
      */
     inline void SetIpAddressType(IpAddressType&& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = std::move(value); }
 
     /**
      * <p>The type of IP addresses used by the subnets for your load balancer. The
      * possible values are <code>ipv4</code> (for IPv4 addresses) and
-     * <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers
-     * must use <code>ipv4</code>.</p>
+     * <code>dualstack</code> (for IPv4 and IPv6 addresses). </p>
      */
     inline CreateLoadBalancerRequest& WithIpAddressType(const IpAddressType& value) { SetIpAddressType(value); return *this;}
 
     /**
      * <p>The type of IP addresses used by the subnets for your load balancer. The
      * possible values are <code>ipv4</code> (for IPv4 addresses) and
-     * <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers
-     * must use <code>ipv4</code>.</p>
+     * <code>dualstack</code> (for IPv4 and IPv6 addresses). </p>
      */
     inline CreateLoadBalancerRequest& WithIpAddressType(IpAddressType&& value) { SetIpAddressType(std::move(value)); return *this;}
 

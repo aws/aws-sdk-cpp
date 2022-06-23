@@ -23,7 +23,8 @@ namespace Model
     UPDATING,
     DELETING,
     DELETED,
-    FAILED
+    FAILED,
+    INACCESSIBLE_ENCRYPTION_KEY
   };
 
 namespace NodeStatusMapper

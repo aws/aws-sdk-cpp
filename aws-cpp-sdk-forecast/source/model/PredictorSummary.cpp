@@ -22,6 +22,9 @@ PredictorSummary::PredictorSummary() :
     m_predictorArnHasBeenSet(false),
     m_predictorNameHasBeenSet(false),
     m_datasetGroupArnHasBeenSet(false),
+    m_isAutoPredictor(false),
+    m_isAutoPredictorHasBeenSet(false),
+    m_referencePredictorSummaryHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
@@ -33,6 +36,9 @@ PredictorSummary::PredictorSummary(JsonView jsonValue) :
     m_predictorArnHasBeenSet(false),
     m_predictorNameHasBeenSet(false),
     m_datasetGroupArnHasBeenSet(false),
+    m_isAutoPredictor(false),
+    m_isAutoPredictorHasBeenSet(false),
+    m_referencePredictorSummaryHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
@@ -62,6 +68,20 @@ PredictorSummary& PredictorSummary::operator =(JsonView jsonValue)
     m_datasetGroupArn = jsonValue.GetString("DatasetGroupArn");
 
     m_datasetGroupArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("IsAutoPredictor"))
+  {
+    m_isAutoPredictor = jsonValue.GetBool("IsAutoPredictor");
+
+    m_isAutoPredictorHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ReferencePredictorSummary"))
+  {
+    m_referencePredictorSummary = jsonValue.GetObject("ReferencePredictorSummary");
+
+    m_referencePredictorSummaryHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Status"))
@@ -114,6 +134,18 @@ JsonValue PredictorSummary::Jsonize() const
   if(m_datasetGroupArnHasBeenSet)
   {
    payload.WithString("DatasetGroupArn", m_datasetGroupArn);
+
+  }
+
+  if(m_isAutoPredictorHasBeenSet)
+  {
+   payload.WithBool("IsAutoPredictor", m_isAutoPredictor);
+
+  }
+
+  if(m_referencePredictorSummaryHasBeenSet)
+  {
+   payload.WithObject("ReferencePredictorSummary", m_referencePredictorSummary.Jsonize());
 
   }
 

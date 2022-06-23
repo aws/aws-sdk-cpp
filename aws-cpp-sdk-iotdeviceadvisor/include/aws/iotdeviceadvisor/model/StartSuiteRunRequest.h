@@ -35,114 +35,114 @@ namespace Model
 
 
     /**
-     * <p>Request to start suite run based on suite definition Id.</p>
+     * <p>Suite definition ID of the test suite.</p>
      */
     inline const Aws::String& GetSuiteDefinitionId() const{ return m_suiteDefinitionId; }
 
     /**
-     * <p>Request to start suite run based on suite definition Id.</p>
+     * <p>Suite definition ID of the test suite.</p>
      */
     inline bool SuiteDefinitionIdHasBeenSet() const { return m_suiteDefinitionIdHasBeenSet; }
 
     /**
-     * <p>Request to start suite run based on suite definition Id.</p>
+     * <p>Suite definition ID of the test suite.</p>
      */
     inline void SetSuiteDefinitionId(const Aws::String& value) { m_suiteDefinitionIdHasBeenSet = true; m_suiteDefinitionId = value; }
 
     /**
-     * <p>Request to start suite run based on suite definition Id.</p>
+     * <p>Suite definition ID of the test suite.</p>
      */
     inline void SetSuiteDefinitionId(Aws::String&& value) { m_suiteDefinitionIdHasBeenSet = true; m_suiteDefinitionId = std::move(value); }
 
     /**
-     * <p>Request to start suite run based on suite definition Id.</p>
+     * <p>Suite definition ID of the test suite.</p>
      */
     inline void SetSuiteDefinitionId(const char* value) { m_suiteDefinitionIdHasBeenSet = true; m_suiteDefinitionId.assign(value); }
 
     /**
-     * <p>Request to start suite run based on suite definition Id.</p>
+     * <p>Suite definition ID of the test suite.</p>
      */
     inline StartSuiteRunRequest& WithSuiteDefinitionId(const Aws::String& value) { SetSuiteDefinitionId(value); return *this;}
 
     /**
-     * <p>Request to start suite run based on suite definition Id.</p>
+     * <p>Suite definition ID of the test suite.</p>
      */
     inline StartSuiteRunRequest& WithSuiteDefinitionId(Aws::String&& value) { SetSuiteDefinitionId(std::move(value)); return *this;}
 
     /**
-     * <p>Request to start suite run based on suite definition Id.</p>
+     * <p>Suite definition ID of the test suite.</p>
      */
     inline StartSuiteRunRequest& WithSuiteDefinitionId(const char* value) { SetSuiteDefinitionId(value); return *this;}
 
 
     /**
-     * <p>Request to start suite run based on suite definition version.</p>
+     * <p>Suite definition version of the test suite.</p>
      */
     inline const Aws::String& GetSuiteDefinitionVersion() const{ return m_suiteDefinitionVersion; }
 
     /**
-     * <p>Request to start suite run based on suite definition version.</p>
+     * <p>Suite definition version of the test suite.</p>
      */
     inline bool SuiteDefinitionVersionHasBeenSet() const { return m_suiteDefinitionVersionHasBeenSet; }
 
     /**
-     * <p>Request to start suite run based on suite definition version.</p>
+     * <p>Suite definition version of the test suite.</p>
      */
     inline void SetSuiteDefinitionVersion(const Aws::String& value) { m_suiteDefinitionVersionHasBeenSet = true; m_suiteDefinitionVersion = value; }
 
     /**
-     * <p>Request to start suite run based on suite definition version.</p>
+     * <p>Suite definition version of the test suite.</p>
      */
     inline void SetSuiteDefinitionVersion(Aws::String&& value) { m_suiteDefinitionVersionHasBeenSet = true; m_suiteDefinitionVersion = std::move(value); }
 
     /**
-     * <p>Request to start suite run based on suite definition version.</p>
+     * <p>Suite definition version of the test suite.</p>
      */
     inline void SetSuiteDefinitionVersion(const char* value) { m_suiteDefinitionVersionHasBeenSet = true; m_suiteDefinitionVersion.assign(value); }
 
     /**
-     * <p>Request to start suite run based on suite definition version.</p>
+     * <p>Suite definition version of the test suite.</p>
      */
     inline StartSuiteRunRequest& WithSuiteDefinitionVersion(const Aws::String& value) { SetSuiteDefinitionVersion(value); return *this;}
 
     /**
-     * <p>Request to start suite run based on suite definition version.</p>
+     * <p>Suite definition version of the test suite.</p>
      */
     inline StartSuiteRunRequest& WithSuiteDefinitionVersion(Aws::String&& value) { SetSuiteDefinitionVersion(std::move(value)); return *this;}
 
     /**
-     * <p>Request to start suite run based on suite definition version.</p>
+     * <p>Suite definition version of the test suite.</p>
      */
     inline StartSuiteRunRequest& WithSuiteDefinitionVersion(const char* value) { SetSuiteDefinitionVersion(value); return *this;}
 
 
     /**
-     * <p>Request to start suite run based on suite configuration.</p>
+     * <p>Suite run configuration.</p>
      */
     inline const SuiteRunConfiguration& GetSuiteRunConfiguration() const{ return m_suiteRunConfiguration; }
 
     /**
-     * <p>Request to start suite run based on suite configuration.</p>
+     * <p>Suite run configuration.</p>
      */
     inline bool SuiteRunConfigurationHasBeenSet() const { return m_suiteRunConfigurationHasBeenSet; }
 
     /**
-     * <p>Request to start suite run based on suite configuration.</p>
+     * <p>Suite run configuration.</p>
      */
     inline void SetSuiteRunConfiguration(const SuiteRunConfiguration& value) { m_suiteRunConfigurationHasBeenSet = true; m_suiteRunConfiguration = value; }
 
     /**
-     * <p>Request to start suite run based on suite configuration.</p>
+     * <p>Suite run configuration.</p>
      */
     inline void SetSuiteRunConfiguration(SuiteRunConfiguration&& value) { m_suiteRunConfigurationHasBeenSet = true; m_suiteRunConfiguration = std::move(value); }
 
     /**
-     * <p>Request to start suite run based on suite configuration.</p>
+     * <p>Suite run configuration.</p>
      */
     inline StartSuiteRunRequest& WithSuiteRunConfiguration(const SuiteRunConfiguration& value) { SetSuiteRunConfiguration(value); return *this;}
 
     /**
-     * <p>Request to start suite run based on suite configuration.</p>
+     * <p>Suite run configuration.</p>
      */
     inline StartSuiteRunRequest& WithSuiteRunConfiguration(SuiteRunConfiguration&& value) { SetSuiteRunConfiguration(std::move(value)); return *this;}
 

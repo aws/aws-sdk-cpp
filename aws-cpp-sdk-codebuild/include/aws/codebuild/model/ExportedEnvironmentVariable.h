@@ -24,8 +24,17 @@ namespace Model
 {
 
   /**
-   * <p> Information about an exported environment variable. </p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Contains information about an exported environment variable. </p> <p>Exported
+   * environment variables are used in conjunction with CodePipeline to export
+   * environment variables from the current build stage to subsequent stages in the
+   * pipeline. For more information, see <a
+   * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/actions-variables.html">Working
+   * with variables</a> in the <i>CodePipeline User Guide</i>.</p>  <p> During
+   * a build, the value of a variable is available starting with the
+   * <code>install</code> phase. It can be updated between the start of the
+   * <code>install</code> phase and the end of the <code>post_build</code> phase.
+   * After the <code>post_build</code> phase ends, the value of exported variables
+   * cannot change.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ExportedEnvironmentVariable">AWS
    * API Reference</a></p>
    */
@@ -39,123 +48,83 @@ namespace Model
 
 
     /**
-     * <p> The name of this exported environment variable. </p>
+     * <p>The name of the exported environment variable.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p> The name of this exported environment variable. </p>
+     * <p>The name of the exported environment variable.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p> The name of this exported environment variable. </p>
+     * <p>The name of the exported environment variable.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p> The name of this exported environment variable. </p>
+     * <p>The name of the exported environment variable.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p> The name of this exported environment variable. </p>
+     * <p>The name of the exported environment variable.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p> The name of this exported environment variable. </p>
+     * <p>The name of the exported environment variable.</p>
      */
     inline ExportedEnvironmentVariable& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p> The name of this exported environment variable. </p>
+     * <p>The name of the exported environment variable.</p>
      */
     inline ExportedEnvironmentVariable& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p> The name of this exported environment variable. </p>
+     * <p>The name of the exported environment variable.</p>
      */
     inline ExportedEnvironmentVariable& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p> The value assigned to this exported environment variable. </p>  <p>
-     * During a build, the value of a variable is available starting with the
-     * <code>install</code> phase. It can be updated between the start of the
-     * <code>install</code> phase and the end of the <code>post_build</code> phase.
-     * After the <code>post_build</code> phase ends, the value of exported variables
-     * cannot change.</p> 
+     * <p>The value assigned to the exported environment variable.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
-     * <p> The value assigned to this exported environment variable. </p>  <p>
-     * During a build, the value of a variable is available starting with the
-     * <code>install</code> phase. It can be updated between the start of the
-     * <code>install</code> phase and the end of the <code>post_build</code> phase.
-     * After the <code>post_build</code> phase ends, the value of exported variables
-     * cannot change.</p> 
+     * <p>The value assigned to the exported environment variable.</p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
-     * <p> The value assigned to this exported environment variable. </p>  <p>
-     * During a build, the value of a variable is available starting with the
-     * <code>install</code> phase. It can be updated between the start of the
-     * <code>install</code> phase and the end of the <code>post_build</code> phase.
-     * After the <code>post_build</code> phase ends, the value of exported variables
-     * cannot change.</p> 
+     * <p>The value assigned to the exported environment variable.</p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p> The value assigned to this exported environment variable. </p>  <p>
-     * During a build, the value of a variable is available starting with the
-     * <code>install</code> phase. It can be updated between the start of the
-     * <code>install</code> phase and the end of the <code>post_build</code> phase.
-     * After the <code>post_build</code> phase ends, the value of exported variables
-     * cannot change.</p> 
+     * <p>The value assigned to the exported environment variable.</p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
-     * <p> The value assigned to this exported environment variable. </p>  <p>
-     * During a build, the value of a variable is available starting with the
-     * <code>install</code> phase. It can be updated between the start of the
-     * <code>install</code> phase and the end of the <code>post_build</code> phase.
-     * After the <code>post_build</code> phase ends, the value of exported variables
-     * cannot change.</p> 
+     * <p>The value assigned to the exported environment variable.</p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
-     * <p> The value assigned to this exported environment variable. </p>  <p>
-     * During a build, the value of a variable is available starting with the
-     * <code>install</code> phase. It can be updated between the start of the
-     * <code>install</code> phase and the end of the <code>post_build</code> phase.
-     * After the <code>post_build</code> phase ends, the value of exported variables
-     * cannot change.</p> 
+     * <p>The value assigned to the exported environment variable.</p>
      */
     inline ExportedEnvironmentVariable& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
-     * <p> The value assigned to this exported environment variable. </p>  <p>
-     * During a build, the value of a variable is available starting with the
-     * <code>install</code> phase. It can be updated between the start of the
-     * <code>install</code> phase and the end of the <code>post_build</code> phase.
-     * After the <code>post_build</code> phase ends, the value of exported variables
-     * cannot change.</p> 
+     * <p>The value assigned to the exported environment variable.</p>
      */
     inline ExportedEnvironmentVariable& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
-     * <p> The value assigned to this exported environment variable. </p>  <p>
-     * During a build, the value of a variable is available starting with the
-     * <code>install</code> phase. It can be updated between the start of the
-     * <code>install</code> phase and the end of the <code>post_build</code> phase.
-     * After the <code>post_build</code> phase ends, the value of exported variables
-     * cannot change.</p> 
+     * <p>The value assigned to the exported environment variable.</p>
      */
     inline ExportedEnvironmentVariable& WithValue(const char* value) { SetValue(value); return *this;}
 

@@ -20,12 +20,12 @@ UpdateStreamingDistribution2020_05_31Result::UpdateStreamingDistribution2020_05_
 {
 }
 
-UpdateStreamingDistribution2020_05_31Result::UpdateStreamingDistribution2020_05_31Result(const AmazonWebServiceResult<XmlDocument>& result)
+UpdateStreamingDistribution2020_05_31Result::UpdateStreamingDistribution2020_05_31Result(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-UpdateStreamingDistribution2020_05_31Result& UpdateStreamingDistribution2020_05_31Result::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+UpdateStreamingDistribution2020_05_31Result& UpdateStreamingDistribution2020_05_31Result::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

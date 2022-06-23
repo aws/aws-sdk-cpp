@@ -22,7 +22,9 @@ ModifyImageAttributeRequest::ModifyImageAttributeRequest() :
     m_userIdsHasBeenSet(false),
     m_valueHasBeenSet(false),
     m_dryRun(false),
-    m_dryRunHasBeenSet(false)
+    m_dryRunHasBeenSet(false),
+    m_organizationArnsHasBeenSet(false),
+    m_organizationalUnitArnsHasBeenSet(false)
 {
 }
 
@@ -96,6 +98,28 @@ Aws::String ModifyImageAttributeRequest::SerializePayload() const
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+  }
+
+  if(m_organizationArnsHasBeenSet)
+  {
+    unsigned organizationArnsCount = 1;
+    for(auto& item : m_organizationArns)
+    {
+      ss << "OrganizationArn." << organizationArnsCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      organizationArnsCount++;
+    }
+  }
+
+  if(m_organizationalUnitArnsHasBeenSet)
+  {
+    unsigned organizationalUnitArnsCount = 1;
+    for(auto& item : m_organizationalUnitArns)
+    {
+      ss << "OrganizationalUnitArn." << organizationalUnitArnsCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      organizationalUnitArnsCount++;
+    }
   }
 
   ss << "Version=2016-11-15";

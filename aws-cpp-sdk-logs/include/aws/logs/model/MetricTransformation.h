@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/logs/model/StandardUnit.h>
 #include <utility>
 
 namespace Aws
@@ -209,6 +211,278 @@ namespace Model
      */
     inline MetricTransformation& WithDefaultValue(double value) { SetDefaultValue(value); return *this;}
 
+
+    /**
+     * <p>The fields to use as dimensions for the metric. One metric filter can include
+     * as many as three dimensions.</p>  <p>Metrics extracted from log
+     * events are charged as custom metrics. To prevent unexpected high charges, do not
+     * specify high-cardinality fields such as <code>IPAddress</code> or
+     * <code>requestID</code> as dimensions. Each different value found for a dimension
+     * is treated as a separate metric and accrues charges as a separate custom metric.
+     * </p> <p>To help prevent accidental high charges, Amazon disables a metric filter
+     * if it generates 1000 different name/value pairs for the dimensions that you have
+     * specified within a certain amount of time.</p> <p>You can also set up a billing
+     * alarm to alert you if your charges are higher than expected. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">
+     * Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services
+     * Charges</a>. </p> 
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetDimensions() const{ return m_dimensions; }
+
+    /**
+     * <p>The fields to use as dimensions for the metric. One metric filter can include
+     * as many as three dimensions.</p>  <p>Metrics extracted from log
+     * events are charged as custom metrics. To prevent unexpected high charges, do not
+     * specify high-cardinality fields such as <code>IPAddress</code> or
+     * <code>requestID</code> as dimensions. Each different value found for a dimension
+     * is treated as a separate metric and accrues charges as a separate custom metric.
+     * </p> <p>To help prevent accidental high charges, Amazon disables a metric filter
+     * if it generates 1000 different name/value pairs for the dimensions that you have
+     * specified within a certain amount of time.</p> <p>You can also set up a billing
+     * alarm to alert you if your charges are higher than expected. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">
+     * Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services
+     * Charges</a>. </p> 
+     */
+    inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
+
+    /**
+     * <p>The fields to use as dimensions for the metric. One metric filter can include
+     * as many as three dimensions.</p>  <p>Metrics extracted from log
+     * events are charged as custom metrics. To prevent unexpected high charges, do not
+     * specify high-cardinality fields such as <code>IPAddress</code> or
+     * <code>requestID</code> as dimensions. Each different value found for a dimension
+     * is treated as a separate metric and accrues charges as a separate custom metric.
+     * </p> <p>To help prevent accidental high charges, Amazon disables a metric filter
+     * if it generates 1000 different name/value pairs for the dimensions that you have
+     * specified within a certain amount of time.</p> <p>You can also set up a billing
+     * alarm to alert you if your charges are higher than expected. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">
+     * Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services
+     * Charges</a>. </p> 
+     */
+    inline void SetDimensions(const Aws::Map<Aws::String, Aws::String>& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
+
+    /**
+     * <p>The fields to use as dimensions for the metric. One metric filter can include
+     * as many as three dimensions.</p>  <p>Metrics extracted from log
+     * events are charged as custom metrics. To prevent unexpected high charges, do not
+     * specify high-cardinality fields such as <code>IPAddress</code> or
+     * <code>requestID</code> as dimensions. Each different value found for a dimension
+     * is treated as a separate metric and accrues charges as a separate custom metric.
+     * </p> <p>To help prevent accidental high charges, Amazon disables a metric filter
+     * if it generates 1000 different name/value pairs for the dimensions that you have
+     * specified within a certain amount of time.</p> <p>You can also set up a billing
+     * alarm to alert you if your charges are higher than expected. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">
+     * Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services
+     * Charges</a>. </p> 
+     */
+    inline void SetDimensions(Aws::Map<Aws::String, Aws::String>&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::move(value); }
+
+    /**
+     * <p>The fields to use as dimensions for the metric. One metric filter can include
+     * as many as three dimensions.</p>  <p>Metrics extracted from log
+     * events are charged as custom metrics. To prevent unexpected high charges, do not
+     * specify high-cardinality fields such as <code>IPAddress</code> or
+     * <code>requestID</code> as dimensions. Each different value found for a dimension
+     * is treated as a separate metric and accrues charges as a separate custom metric.
+     * </p> <p>To help prevent accidental high charges, Amazon disables a metric filter
+     * if it generates 1000 different name/value pairs for the dimensions that you have
+     * specified within a certain amount of time.</p> <p>You can also set up a billing
+     * alarm to alert you if your charges are higher than expected. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">
+     * Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services
+     * Charges</a>. </p> 
+     */
+    inline MetricTransformation& WithDimensions(const Aws::Map<Aws::String, Aws::String>& value) { SetDimensions(value); return *this;}
+
+    /**
+     * <p>The fields to use as dimensions for the metric. One metric filter can include
+     * as many as three dimensions.</p>  <p>Metrics extracted from log
+     * events are charged as custom metrics. To prevent unexpected high charges, do not
+     * specify high-cardinality fields such as <code>IPAddress</code> or
+     * <code>requestID</code> as dimensions. Each different value found for a dimension
+     * is treated as a separate metric and accrues charges as a separate custom metric.
+     * </p> <p>To help prevent accidental high charges, Amazon disables a metric filter
+     * if it generates 1000 different name/value pairs for the dimensions that you have
+     * specified within a certain amount of time.</p> <p>You can also set up a billing
+     * alarm to alert you if your charges are higher than expected. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">
+     * Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services
+     * Charges</a>. </p> 
+     */
+    inline MetricTransformation& WithDimensions(Aws::Map<Aws::String, Aws::String>&& value) { SetDimensions(std::move(value)); return *this;}
+
+    /**
+     * <p>The fields to use as dimensions for the metric. One metric filter can include
+     * as many as three dimensions.</p>  <p>Metrics extracted from log
+     * events are charged as custom metrics. To prevent unexpected high charges, do not
+     * specify high-cardinality fields such as <code>IPAddress</code> or
+     * <code>requestID</code> as dimensions. Each different value found for a dimension
+     * is treated as a separate metric and accrues charges as a separate custom metric.
+     * </p> <p>To help prevent accidental high charges, Amazon disables a metric filter
+     * if it generates 1000 different name/value pairs for the dimensions that you have
+     * specified within a certain amount of time.</p> <p>You can also set up a billing
+     * alarm to alert you if your charges are higher than expected. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">
+     * Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services
+     * Charges</a>. </p> 
+     */
+    inline MetricTransformation& AddDimensions(const Aws::String& key, const Aws::String& value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace(key, value); return *this; }
+
+    /**
+     * <p>The fields to use as dimensions for the metric. One metric filter can include
+     * as many as three dimensions.</p>  <p>Metrics extracted from log
+     * events are charged as custom metrics. To prevent unexpected high charges, do not
+     * specify high-cardinality fields such as <code>IPAddress</code> or
+     * <code>requestID</code> as dimensions. Each different value found for a dimension
+     * is treated as a separate metric and accrues charges as a separate custom metric.
+     * </p> <p>To help prevent accidental high charges, Amazon disables a metric filter
+     * if it generates 1000 different name/value pairs for the dimensions that you have
+     * specified within a certain amount of time.</p> <p>You can also set up a billing
+     * alarm to alert you if your charges are higher than expected. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">
+     * Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services
+     * Charges</a>. </p> 
+     */
+    inline MetricTransformation& AddDimensions(Aws::String&& key, const Aws::String& value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The fields to use as dimensions for the metric. One metric filter can include
+     * as many as three dimensions.</p>  <p>Metrics extracted from log
+     * events are charged as custom metrics. To prevent unexpected high charges, do not
+     * specify high-cardinality fields such as <code>IPAddress</code> or
+     * <code>requestID</code> as dimensions. Each different value found for a dimension
+     * is treated as a separate metric and accrues charges as a separate custom metric.
+     * </p> <p>To help prevent accidental high charges, Amazon disables a metric filter
+     * if it generates 1000 different name/value pairs for the dimensions that you have
+     * specified within a certain amount of time.</p> <p>You can also set up a billing
+     * alarm to alert you if your charges are higher than expected. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">
+     * Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services
+     * Charges</a>. </p> 
+     */
+    inline MetricTransformation& AddDimensions(const Aws::String& key, Aws::String&& value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The fields to use as dimensions for the metric. One metric filter can include
+     * as many as three dimensions.</p>  <p>Metrics extracted from log
+     * events are charged as custom metrics. To prevent unexpected high charges, do not
+     * specify high-cardinality fields such as <code>IPAddress</code> or
+     * <code>requestID</code> as dimensions. Each different value found for a dimension
+     * is treated as a separate metric and accrues charges as a separate custom metric.
+     * </p> <p>To help prevent accidental high charges, Amazon disables a metric filter
+     * if it generates 1000 different name/value pairs for the dimensions that you have
+     * specified within a certain amount of time.</p> <p>You can also set up a billing
+     * alarm to alert you if your charges are higher than expected. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">
+     * Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services
+     * Charges</a>. </p> 
+     */
+    inline MetricTransformation& AddDimensions(Aws::String&& key, Aws::String&& value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The fields to use as dimensions for the metric. One metric filter can include
+     * as many as three dimensions.</p>  <p>Metrics extracted from log
+     * events are charged as custom metrics. To prevent unexpected high charges, do not
+     * specify high-cardinality fields such as <code>IPAddress</code> or
+     * <code>requestID</code> as dimensions. Each different value found for a dimension
+     * is treated as a separate metric and accrues charges as a separate custom metric.
+     * </p> <p>To help prevent accidental high charges, Amazon disables a metric filter
+     * if it generates 1000 different name/value pairs for the dimensions that you have
+     * specified within a certain amount of time.</p> <p>You can also set up a billing
+     * alarm to alert you if your charges are higher than expected. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">
+     * Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services
+     * Charges</a>. </p> 
+     */
+    inline MetricTransformation& AddDimensions(const char* key, Aws::String&& value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The fields to use as dimensions for the metric. One metric filter can include
+     * as many as three dimensions.</p>  <p>Metrics extracted from log
+     * events are charged as custom metrics. To prevent unexpected high charges, do not
+     * specify high-cardinality fields such as <code>IPAddress</code> or
+     * <code>requestID</code> as dimensions. Each different value found for a dimension
+     * is treated as a separate metric and accrues charges as a separate custom metric.
+     * </p> <p>To help prevent accidental high charges, Amazon disables a metric filter
+     * if it generates 1000 different name/value pairs for the dimensions that you have
+     * specified within a certain amount of time.</p> <p>You can also set up a billing
+     * alarm to alert you if your charges are higher than expected. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">
+     * Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services
+     * Charges</a>. </p> 
+     */
+    inline MetricTransformation& AddDimensions(Aws::String&& key, const char* value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The fields to use as dimensions for the metric. One metric filter can include
+     * as many as three dimensions.</p>  <p>Metrics extracted from log
+     * events are charged as custom metrics. To prevent unexpected high charges, do not
+     * specify high-cardinality fields such as <code>IPAddress</code> or
+     * <code>requestID</code> as dimensions. Each different value found for a dimension
+     * is treated as a separate metric and accrues charges as a separate custom metric.
+     * </p> <p>To help prevent accidental high charges, Amazon disables a metric filter
+     * if it generates 1000 different name/value pairs for the dimensions that you have
+     * specified within a certain amount of time.</p> <p>You can also set up a billing
+     * alarm to alert you if your charges are higher than expected. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">
+     * Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services
+     * Charges</a>. </p> 
+     */
+    inline MetricTransformation& AddDimensions(const char* key, const char* value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace(key, value); return *this; }
+
+
+    /**
+     * <p>The unit to assign to the metric. If you omit this, the unit is set as
+     * <code>None</code>.</p>
+     */
+    inline const StandardUnit& GetUnit() const{ return m_unit; }
+
+    /**
+     * <p>The unit to assign to the metric. If you omit this, the unit is set as
+     * <code>None</code>.</p>
+     */
+    inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
+
+    /**
+     * <p>The unit to assign to the metric. If you omit this, the unit is set as
+     * <code>None</code>.</p>
+     */
+    inline void SetUnit(const StandardUnit& value) { m_unitHasBeenSet = true; m_unit = value; }
+
+    /**
+     * <p>The unit to assign to the metric. If you omit this, the unit is set as
+     * <code>None</code>.</p>
+     */
+    inline void SetUnit(StandardUnit&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
+
+    /**
+     * <p>The unit to assign to the metric. If you omit this, the unit is set as
+     * <code>None</code>.</p>
+     */
+    inline MetricTransformation& WithUnit(const StandardUnit& value) { SetUnit(value); return *this;}
+
+    /**
+     * <p>The unit to assign to the metric. If you omit this, the unit is set as
+     * <code>None</code>.</p>
+     */
+    inline MetricTransformation& WithUnit(StandardUnit&& value) { SetUnit(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_metricName;
@@ -222,6 +496,12 @@ namespace Model
 
     double m_defaultValue;
     bool m_defaultValueHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_dimensions;
+    bool m_dimensionsHasBeenSet;
+
+    StandardUnit m_unit;
+    bool m_unitHasBeenSet;
   };
 
 } // namespace Model

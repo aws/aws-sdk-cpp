@@ -24,9 +24,9 @@ namespace Model
 {
 
   /**
-   * <p> This data type is used as a response element in the
+   * <p>This data type is used as a response element in the
    * <code>DescribeReservedDBInstances</code> and
-   * <code>DescribeReservedDBInstancesOfferings</code> actions. </p><p><h3>See
+   * <code>DescribeReservedDBInstancesOfferings</code> actions.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RecurringCharge">AWS
    * API Reference</a></p>

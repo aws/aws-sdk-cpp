@@ -20,7 +20,9 @@ using namespace Aws;
 PublishRequest::PublishRequest() : 
     m_topicHasBeenSet(false),
     m_qos(0),
-    m_qosHasBeenSet(false)
+    m_qosHasBeenSet(false),
+    m_retain(false),
+    m_retainHasBeenSet(false)
 {
 }
 
@@ -32,6 +34,13 @@ void PublishRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_qos;
       uri.AddQueryStringParameter("qos", ss.str());
+      ss.str("");
+    }
+
+    if(m_retainHasBeenSet)
+    {
+      ss << m_retain;
+      uri.AddQueryStringParameter("retain", ss.str());
       ss.str("");
     }
 

@@ -41,8 +41,8 @@ namespace Model
    * passing image bytes using the Bytes property is not supported. You must first
    * upload the image to an Amazon S3 bucket and then call the operation using the
    * S3Object property.</p> <p>For Amazon Rekognition to process an S3 object, the
-   * user must have permission to access the S3 object. For more information, see
-   * Resource Based Policies in the Amazon Rekognition Developer Guide.
+   * user must have permission to access the S3 object. For more information, see How
+   * Amazon Rekognition works with IAM in the Amazon Rekognition Developer Guide.
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/Image">AWS
    * API Reference</a></p>

@@ -40,42 +40,42 @@ namespace Model
 
 
     /**
-     * <p>The code for the AWS service.</p>
+     * <p>The code for the Amazon Web Services service.</p>
      */
     inline const Aws::String& GetServiceCode() const{ return m_serviceCode; }
 
     /**
-     * <p>The code for the AWS service.</p>
+     * <p>The code for the Amazon Web Services service.</p>
      */
     inline bool ServiceCodeHasBeenSet() const { return m_serviceCodeHasBeenSet; }
 
     /**
-     * <p>The code for the AWS service.</p>
+     * <p>The code for the Amazon Web Services service.</p>
      */
     inline void SetServiceCode(const Aws::String& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = value; }
 
     /**
-     * <p>The code for the AWS service.</p>
+     * <p>The code for the Amazon Web Services service.</p>
      */
     inline void SetServiceCode(Aws::String&& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = std::move(value); }
 
     /**
-     * <p>The code for the AWS service.</p>
+     * <p>The code for the Amazon Web Services service.</p>
      */
     inline void SetServiceCode(const char* value) { m_serviceCodeHasBeenSet = true; m_serviceCode.assign(value); }
 
     /**
-     * <p>The code for the AWS service.</p>
+     * <p>The code for the Amazon Web Services service.</p>
      */
     inline Service& WithServiceCode(const Aws::String& value) { SetServiceCode(value); return *this;}
 
     /**
-     * <p>The code for the AWS service.</p>
+     * <p>The code for the Amazon Web Services service.</p>
      */
     inline Service& WithServiceCode(Aws::String&& value) { SetServiceCode(std::move(value)); return *this;}
 
     /**
-     * <p>The code for the AWS service.</p>
+     * <p>The code for the Amazon Web Services service.</p>
      */
     inline Service& WithServiceCode(const char* value) { SetServiceCode(value); return *this;}
 

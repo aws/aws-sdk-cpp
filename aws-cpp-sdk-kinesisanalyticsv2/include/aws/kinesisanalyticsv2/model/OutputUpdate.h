@@ -202,32 +202,32 @@ namespace Model
 
 
     /**
-     * <p>Describes an AWS Lambda function as the destination for the output.</p>
+     * <p>Describes an Amazon Lambda function as the destination for the output.</p>
      */
     inline const LambdaOutputUpdate& GetLambdaOutputUpdate() const{ return m_lambdaOutputUpdate; }
 
     /**
-     * <p>Describes an AWS Lambda function as the destination for the output.</p>
+     * <p>Describes an Amazon Lambda function as the destination for the output.</p>
      */
     inline bool LambdaOutputUpdateHasBeenSet() const { return m_lambdaOutputUpdateHasBeenSet; }
 
     /**
-     * <p>Describes an AWS Lambda function as the destination for the output.</p>
+     * <p>Describes an Amazon Lambda function as the destination for the output.</p>
      */
     inline void SetLambdaOutputUpdate(const LambdaOutputUpdate& value) { m_lambdaOutputUpdateHasBeenSet = true; m_lambdaOutputUpdate = value; }
 
     /**
-     * <p>Describes an AWS Lambda function as the destination for the output.</p>
+     * <p>Describes an Amazon Lambda function as the destination for the output.</p>
      */
     inline void SetLambdaOutputUpdate(LambdaOutputUpdate&& value) { m_lambdaOutputUpdateHasBeenSet = true; m_lambdaOutputUpdate = std::move(value); }
 
     /**
-     * <p>Describes an AWS Lambda function as the destination for the output.</p>
+     * <p>Describes an Amazon Lambda function as the destination for the output.</p>
      */
     inline OutputUpdate& WithLambdaOutputUpdate(const LambdaOutputUpdate& value) { SetLambdaOutputUpdate(value); return *this;}
 
     /**
-     * <p>Describes an AWS Lambda function as the destination for the output.</p>
+     * <p>Describes an Amazon Lambda function as the destination for the output.</p>
      */
     inline OutputUpdate& WithLambdaOutputUpdate(LambdaOutputUpdate&& value) { SetLambdaOutputUpdate(std::move(value)); return *this;}
 

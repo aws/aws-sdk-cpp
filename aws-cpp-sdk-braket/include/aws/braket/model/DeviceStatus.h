@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     ONLINE,
-    OFFLINE
+    OFFLINE,
+    RETIRED
   };
 
 namespace DeviceStatusMapper

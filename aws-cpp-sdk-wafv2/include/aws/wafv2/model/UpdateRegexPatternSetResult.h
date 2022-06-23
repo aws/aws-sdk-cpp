@@ -33,51 +33,51 @@ namespace Model
 
 
     /**
-     * <p>A token used for optimistic locking. AWS WAF returns this token to your
-     * update requests. You use <code>NextLockToken</code> in the same manner as you
-     * use <code>LockToken</code>. </p>
+     * <p>A token used for optimistic locking. WAF returns this token to your
+     * <code>update</code> requests. You use <code>NextLockToken</code> in the same
+     * manner as you use <code>LockToken</code>. </p>
      */
     inline const Aws::String& GetNextLockToken() const{ return m_nextLockToken; }
 
     /**
-     * <p>A token used for optimistic locking. AWS WAF returns this token to your
-     * update requests. You use <code>NextLockToken</code> in the same manner as you
-     * use <code>LockToken</code>. </p>
+     * <p>A token used for optimistic locking. WAF returns this token to your
+     * <code>update</code> requests. You use <code>NextLockToken</code> in the same
+     * manner as you use <code>LockToken</code>. </p>
      */
     inline void SetNextLockToken(const Aws::String& value) { m_nextLockToken = value; }
 
     /**
-     * <p>A token used for optimistic locking. AWS WAF returns this token to your
-     * update requests. You use <code>NextLockToken</code> in the same manner as you
-     * use <code>LockToken</code>. </p>
+     * <p>A token used for optimistic locking. WAF returns this token to your
+     * <code>update</code> requests. You use <code>NextLockToken</code> in the same
+     * manner as you use <code>LockToken</code>. </p>
      */
     inline void SetNextLockToken(Aws::String&& value) { m_nextLockToken = std::move(value); }
 
     /**
-     * <p>A token used for optimistic locking. AWS WAF returns this token to your
-     * update requests. You use <code>NextLockToken</code> in the same manner as you
-     * use <code>LockToken</code>. </p>
+     * <p>A token used for optimistic locking. WAF returns this token to your
+     * <code>update</code> requests. You use <code>NextLockToken</code> in the same
+     * manner as you use <code>LockToken</code>. </p>
      */
     inline void SetNextLockToken(const char* value) { m_nextLockToken.assign(value); }
 
     /**
-     * <p>A token used for optimistic locking. AWS WAF returns this token to your
-     * update requests. You use <code>NextLockToken</code> in the same manner as you
-     * use <code>LockToken</code>. </p>
+     * <p>A token used for optimistic locking. WAF returns this token to your
+     * <code>update</code> requests. You use <code>NextLockToken</code> in the same
+     * manner as you use <code>LockToken</code>. </p>
      */
     inline UpdateRegexPatternSetResult& WithNextLockToken(const Aws::String& value) { SetNextLockToken(value); return *this;}
 
     /**
-     * <p>A token used for optimistic locking. AWS WAF returns this token to your
-     * update requests. You use <code>NextLockToken</code> in the same manner as you
-     * use <code>LockToken</code>. </p>
+     * <p>A token used for optimistic locking. WAF returns this token to your
+     * <code>update</code> requests. You use <code>NextLockToken</code> in the same
+     * manner as you use <code>LockToken</code>. </p>
      */
     inline UpdateRegexPatternSetResult& WithNextLockToken(Aws::String&& value) { SetNextLockToken(std::move(value)); return *this;}
 
     /**
-     * <p>A token used for optimistic locking. AWS WAF returns this token to your
-     * update requests. You use <code>NextLockToken</code> in the same manner as you
-     * use <code>LockToken</code>. </p>
+     * <p>A token used for optimistic locking. WAF returns this token to your
+     * <code>update</code> requests. You use <code>NextLockToken</code> in the same
+     * manner as you use <code>LockToken</code>. </p>
      */
     inline UpdateRegexPatternSetResult& WithNextLockToken(const char* value) { SetNextLockToken(value); return *this;}
 

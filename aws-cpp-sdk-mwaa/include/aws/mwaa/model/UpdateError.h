@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Error information of update, if applicable.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the error(s) encountered with the last update of the
+   * environment.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/UpdateError">AWS
    * API Reference</a></p>
    */
@@ -38,83 +39,83 @@ namespace Model
 
 
     /**
-     * <p>Error code of update.</p>
+     * <p>The error code that corresponds to the error with the last update.</p>
      */
     inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
 
     /**
-     * <p>Error code of update.</p>
+     * <p>The error code that corresponds to the error with the last update.</p>
      */
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
 
     /**
-     * <p>Error code of update.</p>
+     * <p>The error code that corresponds to the error with the last update.</p>
      */
     inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
 
     /**
-     * <p>Error code of update.</p>
+     * <p>The error code that corresponds to the error with the last update.</p>
      */
     inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
 
     /**
-     * <p>Error code of update.</p>
+     * <p>The error code that corresponds to the error with the last update.</p>
      */
     inline void SetErrorCode(const char* value) { m_errorCodeHasBeenSet = true; m_errorCode.assign(value); }
 
     /**
-     * <p>Error code of update.</p>
+     * <p>The error code that corresponds to the error with the last update.</p>
      */
     inline UpdateError& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
 
     /**
-     * <p>Error code of update.</p>
+     * <p>The error code that corresponds to the error with the last update.</p>
      */
     inline UpdateError& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
 
     /**
-     * <p>Error code of update.</p>
+     * <p>The error code that corresponds to the error with the last update.</p>
      */
     inline UpdateError& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
 
 
     /**
-     * <p>Error message of update.</p>
+     * <p>The error message that corresponds to the error code.</p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
 
     /**
-     * <p>Error message of update.</p>
+     * <p>The error message that corresponds to the error code.</p>
      */
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
 
     /**
-     * <p>Error message of update.</p>
+     * <p>The error message that corresponds to the error code.</p>
      */
     inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
 
     /**
-     * <p>Error message of update.</p>
+     * <p>The error message that corresponds to the error code.</p>
      */
     inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
 
     /**
-     * <p>Error message of update.</p>
+     * <p>The error message that corresponds to the error code.</p>
      */
     inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
 
     /**
-     * <p>Error message of update.</p>
+     * <p>The error message that corresponds to the error code.</p>
      */
     inline UpdateError& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
 
     /**
-     * <p>Error message of update.</p>
+     * <p>The error message that corresponds to the error code.</p>
      */
     inline UpdateError& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
 
     /**
-     * <p>Error message of update.</p>
+     * <p>The error message that corresponds to the error code.</p>
      */
     inline UpdateError& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
 

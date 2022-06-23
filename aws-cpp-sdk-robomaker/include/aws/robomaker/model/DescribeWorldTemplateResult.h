@@ -283,6 +283,42 @@ namespace Model
      */
     inline DescribeWorldTemplateResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The version of the world template that you're using.</p>
+     */
+    inline const Aws::String& GetVersion() const{ return m_version; }
+
+    /**
+     * <p>The version of the world template that you're using.</p>
+     */
+    inline void SetVersion(const Aws::String& value) { m_version = value; }
+
+    /**
+     * <p>The version of the world template that you're using.</p>
+     */
+    inline void SetVersion(Aws::String&& value) { m_version = std::move(value); }
+
+    /**
+     * <p>The version of the world template that you're using.</p>
+     */
+    inline void SetVersion(const char* value) { m_version.assign(value); }
+
+    /**
+     * <p>The version of the world template that you're using.</p>
+     */
+    inline DescribeWorldTemplateResult& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
+
+    /**
+     * <p>The version of the world template that you're using.</p>
+     */
+    inline DescribeWorldTemplateResult& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The version of the world template that you're using.</p>
+     */
+    inline DescribeWorldTemplateResult& WithVersion(const char* value) { SetVersion(value); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -296,6 +332,8 @@ namespace Model
     Aws::Utils::DateTime m_lastUpdatedAt;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+
+    Aws::String m_version;
   };
 
 } // namespace Model

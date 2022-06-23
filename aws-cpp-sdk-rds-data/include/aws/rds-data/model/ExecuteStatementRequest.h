@@ -7,6 +7,7 @@
 #include <aws/rds-data/RDSDataService_EXPORTS.h>
 #include <aws/rds-data/RDSDataServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/rds-data/model/RecordsFormatType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds-data/model/ResultSetOptions.h>
 #include <aws/rds-data/model/SqlParameter.h>
@@ -119,6 +120,79 @@ namespace Model
      * <p>The name of the database.</p>
      */
     inline ExecuteStatementRequest& WithDatabase(const char* value) { SetDatabase(value); return *this;}
+
+
+    /**
+     * <p>A value that indicates whether to format the result set as a single JSON
+     * string. This parameter only applies to <code>SELECT</code> statements and is
+     * ignored for other types of statements. Allowed values are <code>NONE</code> and
+     * <code>JSON</code>. The default value is <code>NONE</code>. The result is
+     * returned in the <code>formattedRecords</code> field.</p> <p>For usage
+     * information about the JSON format for result sets, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
+     * the Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>
+     */
+    inline const RecordsFormatType& GetFormatRecordsAs() const{ return m_formatRecordsAs; }
+
+    /**
+     * <p>A value that indicates whether to format the result set as a single JSON
+     * string. This parameter only applies to <code>SELECT</code> statements and is
+     * ignored for other types of statements. Allowed values are <code>NONE</code> and
+     * <code>JSON</code>. The default value is <code>NONE</code>. The result is
+     * returned in the <code>formattedRecords</code> field.</p> <p>For usage
+     * information about the JSON format for result sets, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
+     * the Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>
+     */
+    inline bool FormatRecordsAsHasBeenSet() const { return m_formatRecordsAsHasBeenSet; }
+
+    /**
+     * <p>A value that indicates whether to format the result set as a single JSON
+     * string. This parameter only applies to <code>SELECT</code> statements and is
+     * ignored for other types of statements. Allowed values are <code>NONE</code> and
+     * <code>JSON</code>. The default value is <code>NONE</code>. The result is
+     * returned in the <code>formattedRecords</code> field.</p> <p>For usage
+     * information about the JSON format for result sets, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
+     * the Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>
+     */
+    inline void SetFormatRecordsAs(const RecordsFormatType& value) { m_formatRecordsAsHasBeenSet = true; m_formatRecordsAs = value; }
+
+    /**
+     * <p>A value that indicates whether to format the result set as a single JSON
+     * string. This parameter only applies to <code>SELECT</code> statements and is
+     * ignored for other types of statements. Allowed values are <code>NONE</code> and
+     * <code>JSON</code>. The default value is <code>NONE</code>. The result is
+     * returned in the <code>formattedRecords</code> field.</p> <p>For usage
+     * information about the JSON format for result sets, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
+     * the Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>
+     */
+    inline void SetFormatRecordsAs(RecordsFormatType&& value) { m_formatRecordsAsHasBeenSet = true; m_formatRecordsAs = std::move(value); }
+
+    /**
+     * <p>A value that indicates whether to format the result set as a single JSON
+     * string. This parameter only applies to <code>SELECT</code> statements and is
+     * ignored for other types of statements. Allowed values are <code>NONE</code> and
+     * <code>JSON</code>. The default value is <code>NONE</code>. The result is
+     * returned in the <code>formattedRecords</code> field.</p> <p>For usage
+     * information about the JSON format for result sets, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
+     * the Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>
+     */
+    inline ExecuteStatementRequest& WithFormatRecordsAs(const RecordsFormatType& value) { SetFormatRecordsAs(value); return *this;}
+
+    /**
+     * <p>A value that indicates whether to format the result set as a single JSON
+     * string. This parameter only applies to <code>SELECT</code> statements and is
+     * ignored for other types of statements. Allowed values are <code>NONE</code> and
+     * <code>JSON</code>. The default value is <code>NONE</code>. The result is
+     * returned in the <code>formattedRecords</code> field.</p> <p>For usage
+     * information about the JSON format for result sets, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
+     * the Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>
+     */
+    inline ExecuteStatementRequest& WithFormatRecordsAs(RecordsFormatType&& value) { SetFormatRecordsAs(std::move(value)); return *this;}
 
 
     /**
@@ -264,42 +338,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the database schema.</p>
+     * <p>The name of the database schema.</p>  <p>Currently, the
+     * <code>schema</code> parameter isn't supported.</p> 
      */
     inline const Aws::String& GetSchema() const{ return m_schema; }
 
     /**
-     * <p>The name of the database schema.</p>
+     * <p>The name of the database schema.</p>  <p>Currently, the
+     * <code>schema</code> parameter isn't supported.</p> 
      */
     inline bool SchemaHasBeenSet() const { return m_schemaHasBeenSet; }
 
     /**
-     * <p>The name of the database schema.</p>
+     * <p>The name of the database schema.</p>  <p>Currently, the
+     * <code>schema</code> parameter isn't supported.</p> 
      */
     inline void SetSchema(const Aws::String& value) { m_schemaHasBeenSet = true; m_schema = value; }
 
     /**
-     * <p>The name of the database schema.</p>
+     * <p>The name of the database schema.</p>  <p>Currently, the
+     * <code>schema</code> parameter isn't supported.</p> 
      */
     inline void SetSchema(Aws::String&& value) { m_schemaHasBeenSet = true; m_schema = std::move(value); }
 
     /**
-     * <p>The name of the database schema.</p>
+     * <p>The name of the database schema.</p>  <p>Currently, the
+     * <code>schema</code> parameter isn't supported.</p> 
      */
     inline void SetSchema(const char* value) { m_schemaHasBeenSet = true; m_schema.assign(value); }
 
     /**
-     * <p>The name of the database schema.</p>
+     * <p>The name of the database schema.</p>  <p>Currently, the
+     * <code>schema</code> parameter isn't supported.</p> 
      */
     inline ExecuteStatementRequest& WithSchema(const Aws::String& value) { SetSchema(value); return *this;}
 
     /**
-     * <p>The name of the database schema.</p>
+     * <p>The name of the database schema.</p>  <p>Currently, the
+     * <code>schema</code> parameter isn't supported.</p> 
      */
     inline ExecuteStatementRequest& WithSchema(Aws::String&& value) { SetSchema(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the database schema.</p>
+     * <p>The name of the database schema.</p>  <p>Currently, the
+     * <code>schema</code> parameter isn't supported.</p> 
      */
     inline ExecuteStatementRequest& WithSchema(const char* value) { SetSchema(value); return *this;}
 
@@ -457,6 +539,9 @@ namespace Model
 
     Aws::String m_database;
     bool m_databaseHasBeenSet;
+
+    RecordsFormatType m_formatRecordsAs;
+    bool m_formatRecordsAsHasBeenSet;
 
     bool m_includeResultMetadata;
     bool m_includeResultMetadataHasBeenSet;

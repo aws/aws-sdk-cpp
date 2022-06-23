@@ -311,7 +311,8 @@ namespace Model
      * <p>This field is only used when SortBy is provided in the request. The maximum
      * number of objects that to be returned for this request. If MaxResults is not
      * specified with SortBy, the request will return 1000 results as the default value
-     * for this parameter.</p>
+     * for this parameter.</p> <p>For <code>GetTags</code>, MaxResults has an upper
+     * limit of 1000.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
@@ -319,7 +320,8 @@ namespace Model
      * <p>This field is only used when SortBy is provided in the request. The maximum
      * number of objects that to be returned for this request. If MaxResults is not
      * specified with SortBy, the request will return 1000 results as the default value
-     * for this parameter.</p>
+     * for this parameter.</p> <p>For <code>GetTags</code>, MaxResults has an upper
+     * limit of 1000.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
@@ -327,7 +329,8 @@ namespace Model
      * <p>This field is only used when SortBy is provided in the request. The maximum
      * number of objects that to be returned for this request. If MaxResults is not
      * specified with SortBy, the request will return 1000 results as the default value
-     * for this parameter.</p>
+     * for this parameter.</p> <p>For <code>GetTags</code>, MaxResults has an upper
+     * limit of 1000.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
@@ -335,64 +338,65 @@ namespace Model
      * <p>This field is only used when SortBy is provided in the request. The maximum
      * number of objects that to be returned for this request. If MaxResults is not
      * specified with SortBy, the request will return 1000 results as the default value
-     * for this parameter.</p>
+     * for this parameter.</p> <p>For <code>GetTags</code>, MaxResults has an upper
+     * limit of 1000.</p>
      */
     inline GetTagsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline bool NextPageTokenHasBeenSet() const { return m_nextPageTokenHasBeenSet; }
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline void SetNextPageToken(const Aws::String& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = value; }
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline void SetNextPageToken(Aws::String&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::move(value); }
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline void SetNextPageToken(const char* value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken.assign(value); }
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline GetTagsRequest& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline GetTagsRequest& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
 
     /**
-     * <p>The token to retrieve the next set of results. AWS provides the token when
-     * the response from a previous call has more results than the maximum page
-     * size.</p>
+     * <p>The token to retrieve the next set of results. Amazon Web Services provides
+     * the token when the response from a previous call has more results than the
+     * maximum page size.</p>
      */
     inline GetTagsRequest& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 

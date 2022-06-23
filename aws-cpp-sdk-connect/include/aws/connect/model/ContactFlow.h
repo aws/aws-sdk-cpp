@@ -7,6 +7,7 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/connect/model/ContactFlowType.h>
+#include <aws/connect/model/ContactFlowState.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -206,6 +207,37 @@ namespace Model
 
 
     /**
+     * <p>The type of contact flow.</p>
+     */
+    inline const ContactFlowState& GetState() const{ return m_state; }
+
+    /**
+     * <p>The type of contact flow.</p>
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>The type of contact flow.</p>
+     */
+    inline void SetState(const ContactFlowState& value) { m_stateHasBeenSet = true; m_state = value; }
+
+    /**
+     * <p>The type of contact flow.</p>
+     */
+    inline void SetState(ContactFlowState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
+
+    /**
+     * <p>The type of contact flow.</p>
+     */
+    inline ContactFlow& WithState(const ContactFlowState& value) { SetState(value); return *this;}
+
+    /**
+     * <p>The type of contact flow.</p>
+     */
+    inline ContactFlow& WithState(ContactFlowState&& value) { SetState(std::move(value)); return *this;}
+
+
+    /**
      * <p>The description of the contact flow.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
@@ -365,6 +397,9 @@ namespace Model
 
     ContactFlowType m_type;
     bool m_typeHasBeenSet;
+
+    ContactFlowState m_state;
+    bool m_stateHasBeenSet;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;

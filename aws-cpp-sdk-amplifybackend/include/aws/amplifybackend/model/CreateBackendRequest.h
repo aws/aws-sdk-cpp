@@ -160,32 +160,32 @@ namespace Model
 
 
     /**
-     * <p>The resource configuration for the backend creation request.</p>
+     * <p>The resource configuration for creating a backend.</p>
      */
     inline const ResourceConfig& GetResourceConfig() const{ return m_resourceConfig; }
 
     /**
-     * <p>The resource configuration for the backend creation request.</p>
+     * <p>The resource configuration for creating a backend.</p>
      */
     inline bool ResourceConfigHasBeenSet() const { return m_resourceConfigHasBeenSet; }
 
     /**
-     * <p>The resource configuration for the backend creation request.</p>
+     * <p>The resource configuration for creating a backend.</p>
      */
     inline void SetResourceConfig(const ResourceConfig& value) { m_resourceConfigHasBeenSet = true; m_resourceConfig = value; }
 
     /**
-     * <p>The resource configuration for the backend creation request.</p>
+     * <p>The resource configuration for creating a backend.</p>
      */
     inline void SetResourceConfig(ResourceConfig&& value) { m_resourceConfigHasBeenSet = true; m_resourceConfig = std::move(value); }
 
     /**
-     * <p>The resource configuration for the backend creation request.</p>
+     * <p>The resource configuration for creating a backend.</p>
      */
     inline CreateBackendRequest& WithResourceConfig(const ResourceConfig& value) { SetResourceConfig(value); return *this;}
 
     /**
-     * <p>The resource configuration for the backend creation request.</p>
+     * <p>The resource configuration for creating a backend.</p>
      */
     inline CreateBackendRequest& WithResourceConfig(ResourceConfig&& value) { SetResourceConfig(std::move(value)); return *this;}
 

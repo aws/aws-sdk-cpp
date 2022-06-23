@@ -19,6 +19,7 @@ namespace Model
 {
 
 CmafEncryption::CmafEncryption() : 
+    m_constantInitializationVectorHasBeenSet(false),
     m_keyRotationIntervalSeconds(0),
     m_keyRotationIntervalSecondsHasBeenSet(false),
     m_spekeKeyProviderHasBeenSet(false)
@@ -26,6 +27,7 @@ CmafEncryption::CmafEncryption() :
 }
 
 CmafEncryption::CmafEncryption(JsonView jsonValue) : 
+    m_constantInitializationVectorHasBeenSet(false),
     m_keyRotationIntervalSeconds(0),
     m_keyRotationIntervalSecondsHasBeenSet(false),
     m_spekeKeyProviderHasBeenSet(false)
@@ -35,6 +37,13 @@ CmafEncryption::CmafEncryption(JsonView jsonValue) :
 
 CmafEncryption& CmafEncryption::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("constantInitializationVector"))
+  {
+    m_constantInitializationVector = jsonValue.GetString("constantInitializationVector");
+
+    m_constantInitializationVectorHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("keyRotationIntervalSeconds"))
   {
     m_keyRotationIntervalSeconds = jsonValue.GetInteger("keyRotationIntervalSeconds");
@@ -55,6 +64,12 @@ CmafEncryption& CmafEncryption::operator =(JsonView jsonValue)
 JsonValue CmafEncryption::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_constantInitializationVectorHasBeenSet)
+  {
+   payload.WithString("constantInitializationVector", m_constantInitializationVector);
+
+  }
 
   if(m_keyRotationIntervalSecondsHasBeenSet)
   {

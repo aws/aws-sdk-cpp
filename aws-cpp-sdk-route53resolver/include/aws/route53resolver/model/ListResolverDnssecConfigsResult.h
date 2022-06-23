@@ -36,9 +36,9 @@ namespace Model
 
     /**
      * <p>If a response includes the last of the DNSSEC configurations that are
-     * associated with the current AWS account, <code>NextToken</code> doesn't appear
-     * in the response.</p> <p>If a response doesn't include the last of the
-     * configurations, you can get more configurations by submitting another <a
+     * associated with the current Amazon Web Services account, <code>NextToken</code>
+     * doesn't appear in the response.</p> <p>If a response doesn't include the last of
+     * the configurations, you can get more configurations by submitting another <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListResolverDnssecConfigs.html">ListResolverDnssecConfigs</a>
      * request. Get the value of <code>NextToken</code> that Amazon Route 53 returned
      * in the previous response and include it in <code>NextToken</code> in the next
@@ -48,9 +48,9 @@ namespace Model
 
     /**
      * <p>If a response includes the last of the DNSSEC configurations that are
-     * associated with the current AWS account, <code>NextToken</code> doesn't appear
-     * in the response.</p> <p>If a response doesn't include the last of the
-     * configurations, you can get more configurations by submitting another <a
+     * associated with the current Amazon Web Services account, <code>NextToken</code>
+     * doesn't appear in the response.</p> <p>If a response doesn't include the last of
+     * the configurations, you can get more configurations by submitting another <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListResolverDnssecConfigs.html">ListResolverDnssecConfigs</a>
      * request. Get the value of <code>NextToken</code> that Amazon Route 53 returned
      * in the previous response and include it in <code>NextToken</code> in the next
@@ -60,9 +60,9 @@ namespace Model
 
     /**
      * <p>If a response includes the last of the DNSSEC configurations that are
-     * associated with the current AWS account, <code>NextToken</code> doesn't appear
-     * in the response.</p> <p>If a response doesn't include the last of the
-     * configurations, you can get more configurations by submitting another <a
+     * associated with the current Amazon Web Services account, <code>NextToken</code>
+     * doesn't appear in the response.</p> <p>If a response doesn't include the last of
+     * the configurations, you can get more configurations by submitting another <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListResolverDnssecConfigs.html">ListResolverDnssecConfigs</a>
      * request. Get the value of <code>NextToken</code> that Amazon Route 53 returned
      * in the previous response and include it in <code>NextToken</code> in the next
@@ -72,9 +72,9 @@ namespace Model
 
     /**
      * <p>If a response includes the last of the DNSSEC configurations that are
-     * associated with the current AWS account, <code>NextToken</code> doesn't appear
-     * in the response.</p> <p>If a response doesn't include the last of the
-     * configurations, you can get more configurations by submitting another <a
+     * associated with the current Amazon Web Services account, <code>NextToken</code>
+     * doesn't appear in the response.</p> <p>If a response doesn't include the last of
+     * the configurations, you can get more configurations by submitting another <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListResolverDnssecConfigs.html">ListResolverDnssecConfigs</a>
      * request. Get the value of <code>NextToken</code> that Amazon Route 53 returned
      * in the previous response and include it in <code>NextToken</code> in the next
@@ -84,9 +84,9 @@ namespace Model
 
     /**
      * <p>If a response includes the last of the DNSSEC configurations that are
-     * associated with the current AWS account, <code>NextToken</code> doesn't appear
-     * in the response.</p> <p>If a response doesn't include the last of the
-     * configurations, you can get more configurations by submitting another <a
+     * associated with the current Amazon Web Services account, <code>NextToken</code>
+     * doesn't appear in the response.</p> <p>If a response doesn't include the last of
+     * the configurations, you can get more configurations by submitting another <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListResolverDnssecConfigs.html">ListResolverDnssecConfigs</a>
      * request. Get the value of <code>NextToken</code> that Amazon Route 53 returned
      * in the previous response and include it in <code>NextToken</code> in the next
@@ -96,9 +96,9 @@ namespace Model
 
     /**
      * <p>If a response includes the last of the DNSSEC configurations that are
-     * associated with the current AWS account, <code>NextToken</code> doesn't appear
-     * in the response.</p> <p>If a response doesn't include the last of the
-     * configurations, you can get more configurations by submitting another <a
+     * associated with the current Amazon Web Services account, <code>NextToken</code>
+     * doesn't appear in the response.</p> <p>If a response doesn't include the last of
+     * the configurations, you can get more configurations by submitting another <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListResolverDnssecConfigs.html">ListResolverDnssecConfigs</a>
      * request. Get the value of <code>NextToken</code> that Amazon Route 53 returned
      * in the previous response and include it in <code>NextToken</code> in the next
@@ -108,9 +108,9 @@ namespace Model
 
     /**
      * <p>If a response includes the last of the DNSSEC configurations that are
-     * associated with the current AWS account, <code>NextToken</code> doesn't appear
-     * in the response.</p> <p>If a response doesn't include the last of the
-     * configurations, you can get more configurations by submitting another <a
+     * associated with the current Amazon Web Services account, <code>NextToken</code>
+     * doesn't appear in the response.</p> <p>If a response doesn't include the last of
+     * the configurations, you can get more configurations by submitting another <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListResolverDnssecConfigs.html">ListResolverDnssecConfigs</a>
      * request. Get the value of <code>NextToken</code> that Amazon Route 53 returned
      * in the previous response and include it in <code>NextToken</code> in the next
@@ -123,7 +123,7 @@ namespace Model
      * <p>An array that contains one <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResolverDnssecConfig.html">ResolverDnssecConfig</a>
      * element for each configuration for DNSSEC validation that is associated with the
-     * current AWS account.</p>
+     * current Amazon Web Services account.</p>
      */
     inline const Aws::Vector<ResolverDnssecConfig>& GetResolverDnssecConfigs() const{ return m_resolverDnssecConfigs; }
 
@@ -131,7 +131,7 @@ namespace Model
      * <p>An array that contains one <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResolverDnssecConfig.html">ResolverDnssecConfig</a>
      * element for each configuration for DNSSEC validation that is associated with the
-     * current AWS account.</p>
+     * current Amazon Web Services account.</p>
      */
     inline void SetResolverDnssecConfigs(const Aws::Vector<ResolverDnssecConfig>& value) { m_resolverDnssecConfigs = value; }
 
@@ -139,7 +139,7 @@ namespace Model
      * <p>An array that contains one <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResolverDnssecConfig.html">ResolverDnssecConfig</a>
      * element for each configuration for DNSSEC validation that is associated with the
-     * current AWS account.</p>
+     * current Amazon Web Services account.</p>
      */
     inline void SetResolverDnssecConfigs(Aws::Vector<ResolverDnssecConfig>&& value) { m_resolverDnssecConfigs = std::move(value); }
 
@@ -147,7 +147,7 @@ namespace Model
      * <p>An array that contains one <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResolverDnssecConfig.html">ResolverDnssecConfig</a>
      * element for each configuration for DNSSEC validation that is associated with the
-     * current AWS account.</p>
+     * current Amazon Web Services account.</p>
      */
     inline ListResolverDnssecConfigsResult& WithResolverDnssecConfigs(const Aws::Vector<ResolverDnssecConfig>& value) { SetResolverDnssecConfigs(value); return *this;}
 
@@ -155,7 +155,7 @@ namespace Model
      * <p>An array that contains one <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResolverDnssecConfig.html">ResolverDnssecConfig</a>
      * element for each configuration for DNSSEC validation that is associated with the
-     * current AWS account.</p>
+     * current Amazon Web Services account.</p>
      */
     inline ListResolverDnssecConfigsResult& WithResolverDnssecConfigs(Aws::Vector<ResolverDnssecConfig>&& value) { SetResolverDnssecConfigs(std::move(value)); return *this;}
 
@@ -163,7 +163,7 @@ namespace Model
      * <p>An array that contains one <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResolverDnssecConfig.html">ResolverDnssecConfig</a>
      * element for each configuration for DNSSEC validation that is associated with the
-     * current AWS account.</p>
+     * current Amazon Web Services account.</p>
      */
     inline ListResolverDnssecConfigsResult& AddResolverDnssecConfigs(const ResolverDnssecConfig& value) { m_resolverDnssecConfigs.push_back(value); return *this; }
 
@@ -171,7 +171,7 @@ namespace Model
      * <p>An array that contains one <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResolverDnssecConfig.html">ResolverDnssecConfig</a>
      * element for each configuration for DNSSEC validation that is associated with the
-     * current AWS account.</p>
+     * current Amazon Web Services account.</p>
      */
     inline ListResolverDnssecConfigsResult& AddResolverDnssecConfigs(ResolverDnssecConfig&& value) { m_resolverDnssecConfigs.push_back(std::move(value)); return *this; }
 

@@ -113,6 +113,31 @@ namespace Model
      */
     inline UpdateDiscovererRequest& WithDiscovererId(const char* value) { SetDiscovererId(value); return *this;}
 
+
+    /**
+     * <p>Support discovery of schemas in events sent to the bus from another account.
+     * (default: true)</p>
+     */
+    inline bool GetCrossAccount() const{ return m_crossAccount; }
+
+    /**
+     * <p>Support discovery of schemas in events sent to the bus from another account.
+     * (default: true)</p>
+     */
+    inline bool CrossAccountHasBeenSet() const { return m_crossAccountHasBeenSet; }
+
+    /**
+     * <p>Support discovery of schemas in events sent to the bus from another account.
+     * (default: true)</p>
+     */
+    inline void SetCrossAccount(bool value) { m_crossAccountHasBeenSet = true; m_crossAccount = value; }
+
+    /**
+     * <p>Support discovery of schemas in events sent to the bus from another account.
+     * (default: true)</p>
+     */
+    inline UpdateDiscovererRequest& WithCrossAccount(bool value) { SetCrossAccount(value); return *this;}
+
   private:
 
     Aws::String m_description;
@@ -120,6 +145,9 @@ namespace Model
 
     Aws::String m_discovererId;
     bool m_discovererIdHasBeenSet;
+
+    bool m_crossAccount;
+    bool m_crossAccountHasBeenSet;
   };
 
 } // namespace Model

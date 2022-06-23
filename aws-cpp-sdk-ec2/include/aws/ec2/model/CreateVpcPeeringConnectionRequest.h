@@ -72,50 +72,50 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID of the owner of the accepter VPC.</p> <p>Default: Your AWS
-     * account ID</p>
+     * <p>The Amazon Web Services account ID of the owner of the accepter VPC.</p>
+     * <p>Default: Your Amazon Web Services account ID</p>
      */
     inline const Aws::String& GetPeerOwnerId() const{ return m_peerOwnerId; }
 
     /**
-     * <p>The AWS account ID of the owner of the accepter VPC.</p> <p>Default: Your AWS
-     * account ID</p>
+     * <p>The Amazon Web Services account ID of the owner of the accepter VPC.</p>
+     * <p>Default: Your Amazon Web Services account ID</p>
      */
     inline bool PeerOwnerIdHasBeenSet() const { return m_peerOwnerIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID of the owner of the accepter VPC.</p> <p>Default: Your AWS
-     * account ID</p>
+     * <p>The Amazon Web Services account ID of the owner of the accepter VPC.</p>
+     * <p>Default: Your Amazon Web Services account ID</p>
      */
     inline void SetPeerOwnerId(const Aws::String& value) { m_peerOwnerIdHasBeenSet = true; m_peerOwnerId = value; }
 
     /**
-     * <p>The AWS account ID of the owner of the accepter VPC.</p> <p>Default: Your AWS
-     * account ID</p>
+     * <p>The Amazon Web Services account ID of the owner of the accepter VPC.</p>
+     * <p>Default: Your Amazon Web Services account ID</p>
      */
     inline void SetPeerOwnerId(Aws::String&& value) { m_peerOwnerIdHasBeenSet = true; m_peerOwnerId = std::move(value); }
 
     /**
-     * <p>The AWS account ID of the owner of the accepter VPC.</p> <p>Default: Your AWS
-     * account ID</p>
+     * <p>The Amazon Web Services account ID of the owner of the accepter VPC.</p>
+     * <p>Default: Your Amazon Web Services account ID</p>
      */
     inline void SetPeerOwnerId(const char* value) { m_peerOwnerIdHasBeenSet = true; m_peerOwnerId.assign(value); }
 
     /**
-     * <p>The AWS account ID of the owner of the accepter VPC.</p> <p>Default: Your AWS
-     * account ID</p>
+     * <p>The Amazon Web Services account ID of the owner of the accepter VPC.</p>
+     * <p>Default: Your Amazon Web Services account ID</p>
      */
     inline CreateVpcPeeringConnectionRequest& WithPeerOwnerId(const Aws::String& value) { SetPeerOwnerId(value); return *this;}
 
     /**
-     * <p>The AWS account ID of the owner of the accepter VPC.</p> <p>Default: Your AWS
-     * account ID</p>
+     * <p>The Amazon Web Services account ID of the owner of the accepter VPC.</p>
+     * <p>Default: Your Amazon Web Services account ID</p>
      */
     inline CreateVpcPeeringConnectionRequest& WithPeerOwnerId(Aws::String&& value) { SetPeerOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID of the owner of the accepter VPC.</p> <p>Default: Your AWS
-     * account ID</p>
+     * <p>The Amazon Web Services account ID of the owner of the accepter VPC.</p>
+     * <p>Default: Your Amazon Web Services account ID</p>
      */
     inline CreateVpcPeeringConnectionRequest& WithPeerOwnerId(const char* value) { SetPeerOwnerId(value); return *this;}
 

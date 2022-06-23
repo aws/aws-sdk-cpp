@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>An object with identifying information for an Amazon ECR image.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>An object with identifying information for an image in an Amazon ECR
+   * repository.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ImageIdentifier">AWS
    * API Reference</a></p>
    */

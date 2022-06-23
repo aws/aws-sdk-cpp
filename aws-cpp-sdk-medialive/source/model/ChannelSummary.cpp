@@ -30,13 +30,15 @@ ChannelSummary::ChannelSummary() :
     m_inputSpecificationHasBeenSet(false),
     m_logLevel(LogLevel::NOT_SET),
     m_logLevelHasBeenSet(false),
+    m_maintenanceHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_pipelinesRunningCount(0),
     m_pipelinesRunningCountHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_state(ChannelState::NOT_SET),
     m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_vpcHasBeenSet(false)
 {
 }
 
@@ -52,13 +54,15 @@ ChannelSummary::ChannelSummary(JsonView jsonValue) :
     m_inputSpecificationHasBeenSet(false),
     m_logLevel(LogLevel::NOT_SET),
     m_logLevelHasBeenSet(false),
+    m_maintenanceHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_pipelinesRunningCount(0),
     m_pipelinesRunningCountHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_state(ChannelState::NOT_SET),
     m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_vpcHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -137,6 +141,13 @@ ChannelSummary& ChannelSummary::operator =(JsonView jsonValue)
     m_logLevelHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("maintenance"))
+  {
+    m_maintenance = jsonValue.GetObject("maintenance");
+
+    m_maintenanceHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
@@ -173,6 +184,13 @@ ChannelSummary& ChannelSummary::operator =(JsonView jsonValue)
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("vpc"))
+  {
+    m_vpc = jsonValue.GetObject("vpc");
+
+    m_vpcHasBeenSet = true;
   }
 
   return *this;
@@ -249,6 +267,12 @@ JsonValue ChannelSummary::Jsonize() const
    payload.WithString("logLevel", LogLevelMapper::GetNameForLogLevel(m_logLevel));
   }
 
+  if(m_maintenanceHasBeenSet)
+  {
+   payload.WithObject("maintenance", m_maintenance.Jsonize());
+
+  }
+
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
@@ -280,6 +304,12 @@ JsonValue ChannelSummary::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_vpcHasBeenSet)
+  {
+   payload.WithObject("vpc", m_vpc.Jsonize());
 
   }
 

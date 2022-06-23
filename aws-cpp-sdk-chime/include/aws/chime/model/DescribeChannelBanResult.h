@@ -33,27 +33,27 @@ namespace Model
 
 
     /**
-     * <p>The the details of the ban.</p>
+     * <p>The details of the ban.</p>
      */
     inline const ChannelBan& GetChannelBan() const{ return m_channelBan; }
 
     /**
-     * <p>The the details of the ban.</p>
+     * <p>The details of the ban.</p>
      */
     inline void SetChannelBan(const ChannelBan& value) { m_channelBan = value; }
 
     /**
-     * <p>The the details of the ban.</p>
+     * <p>The details of the ban.</p>
      */
     inline void SetChannelBan(ChannelBan&& value) { m_channelBan = std::move(value); }
 
     /**
-     * <p>The the details of the ban.</p>
+     * <p>The details of the ban.</p>
      */
     inline DescribeChannelBanResult& WithChannelBan(const ChannelBan& value) { SetChannelBan(value); return *this;}
 
     /**
-     * <p>The the details of the ban.</p>
+     * <p>The details of the ban.</p>
      */
     inline DescribeChannelBanResult& WithChannelBan(ChannelBan&& value) { SetChannelBan(std::move(value)); return *this;}
 

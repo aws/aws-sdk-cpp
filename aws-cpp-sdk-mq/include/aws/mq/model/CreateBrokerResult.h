@@ -33,73 +33,73 @@ namespace Model
 
 
     /**
-     * The Amazon Resource Name (ARN) of the broker.
+     * <p>The broker's Amazon Resource Name (ARN).</p>
      */
     inline const Aws::String& GetBrokerArn() const{ return m_brokerArn; }
 
     /**
-     * The Amazon Resource Name (ARN) of the broker.
+     * <p>The broker's Amazon Resource Name (ARN).</p>
      */
     inline void SetBrokerArn(const Aws::String& value) { m_brokerArn = value; }
 
     /**
-     * The Amazon Resource Name (ARN) of the broker.
+     * <p>The broker's Amazon Resource Name (ARN).</p>
      */
     inline void SetBrokerArn(Aws::String&& value) { m_brokerArn = std::move(value); }
 
     /**
-     * The Amazon Resource Name (ARN) of the broker.
+     * <p>The broker's Amazon Resource Name (ARN).</p>
      */
     inline void SetBrokerArn(const char* value) { m_brokerArn.assign(value); }
 
     /**
-     * The Amazon Resource Name (ARN) of the broker.
+     * <p>The broker's Amazon Resource Name (ARN).</p>
      */
     inline CreateBrokerResult& WithBrokerArn(const Aws::String& value) { SetBrokerArn(value); return *this;}
 
     /**
-     * The Amazon Resource Name (ARN) of the broker.
+     * <p>The broker's Amazon Resource Name (ARN).</p>
      */
     inline CreateBrokerResult& WithBrokerArn(Aws::String&& value) { SetBrokerArn(std::move(value)); return *this;}
 
     /**
-     * The Amazon Resource Name (ARN) of the broker.
+     * <p>The broker's Amazon Resource Name (ARN).</p>
      */
     inline CreateBrokerResult& WithBrokerArn(const char* value) { SetBrokerArn(value); return *this;}
 
 
     /**
-     * The unique ID that Amazon MQ generates for the broker.
+     * <p>The unique ID that Amazon MQ generates for the broker.</p>
      */
     inline const Aws::String& GetBrokerId() const{ return m_brokerId; }
 
     /**
-     * The unique ID that Amazon MQ generates for the broker.
+     * <p>The unique ID that Amazon MQ generates for the broker.</p>
      */
     inline void SetBrokerId(const Aws::String& value) { m_brokerId = value; }
 
     /**
-     * The unique ID that Amazon MQ generates for the broker.
+     * <p>The unique ID that Amazon MQ generates for the broker.</p>
      */
     inline void SetBrokerId(Aws::String&& value) { m_brokerId = std::move(value); }
 
     /**
-     * The unique ID that Amazon MQ generates for the broker.
+     * <p>The unique ID that Amazon MQ generates for the broker.</p>
      */
     inline void SetBrokerId(const char* value) { m_brokerId.assign(value); }
 
     /**
-     * The unique ID that Amazon MQ generates for the broker.
+     * <p>The unique ID that Amazon MQ generates for the broker.</p>
      */
     inline CreateBrokerResult& WithBrokerId(const Aws::String& value) { SetBrokerId(value); return *this;}
 
     /**
-     * The unique ID that Amazon MQ generates for the broker.
+     * <p>The unique ID that Amazon MQ generates for the broker.</p>
      */
     inline CreateBrokerResult& WithBrokerId(Aws::String&& value) { SetBrokerId(std::move(value)); return *this;}
 
     /**
-     * The unique ID that Amazon MQ generates for the broker.
+     * <p>The unique ID that Amazon MQ generates for the broker.</p>
      */
     inline CreateBrokerResult& WithBrokerId(const char* value) { SetBrokerId(value); return *this;}
 

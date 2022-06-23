@@ -23,13 +23,12 @@ AwsSecurityFindingFilters::AwsSecurityFindingFilters() :
     m_awsAccountIdHasBeenSet(false),
     m_idHasBeenSet(false),
     m_generatorIdHasBeenSet(false),
+    m_regionHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_firstObservedAtHasBeenSet(false),
     m_lastObservedAtHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_updatedAtHasBeenSet(false),
-    m_severityProductHasBeenSet(false),
-    m_severityNormalizedHasBeenSet(false),
     m_severityLabelHasBeenSet(false),
     m_confidenceHasBeenSet(false),
     m_criticalityHasBeenSet(false),
@@ -84,9 +83,10 @@ AwsSecurityFindingFilters::AwsSecurityFindingFilters() :
     m_resourceAwsEc2InstanceLaunchedAtHasBeenSet(false),
     m_resourceAwsS3BucketOwnerIdHasBeenSet(false),
     m_resourceAwsS3BucketOwnerNameHasBeenSet(false),
-    m_resourceAwsIamAccessKeyUserNameHasBeenSet(false),
+    m_resourceAwsIamAccessKeyPrincipalNameHasBeenSet(false),
     m_resourceAwsIamAccessKeyStatusHasBeenSet(false),
     m_resourceAwsIamAccessKeyCreatedAtHasBeenSet(false),
+    m_resourceAwsIamUserUserNameHasBeenSet(false),
     m_resourceContainerNameHasBeenSet(false),
     m_resourceContainerImageIdHasBeenSet(false),
     m_resourceContainerImageNameHasBeenSet(false),
@@ -102,7 +102,14 @@ AwsSecurityFindingFilters::AwsSecurityFindingFilters() :
     m_noteTextHasBeenSet(false),
     m_noteUpdatedAtHasBeenSet(false),
     m_noteUpdatedByHasBeenSet(false),
-    m_keywordHasBeenSet(false)
+    m_findingProviderFieldsConfidenceHasBeenSet(false),
+    m_findingProviderFieldsCriticalityHasBeenSet(false),
+    m_findingProviderFieldsRelatedFindingsIdHasBeenSet(false),
+    m_findingProviderFieldsRelatedFindingsProductArnHasBeenSet(false),
+    m_findingProviderFieldsSeverityLabelHasBeenSet(false),
+    m_findingProviderFieldsSeverityOriginalHasBeenSet(false),
+    m_findingProviderFieldsTypesHasBeenSet(false),
+    m_sampleHasBeenSet(false)
 {
 }
 
@@ -111,13 +118,12 @@ AwsSecurityFindingFilters::AwsSecurityFindingFilters(JsonView jsonValue) :
     m_awsAccountIdHasBeenSet(false),
     m_idHasBeenSet(false),
     m_generatorIdHasBeenSet(false),
+    m_regionHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_firstObservedAtHasBeenSet(false),
     m_lastObservedAtHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_updatedAtHasBeenSet(false),
-    m_severityProductHasBeenSet(false),
-    m_severityNormalizedHasBeenSet(false),
     m_severityLabelHasBeenSet(false),
     m_confidenceHasBeenSet(false),
     m_criticalityHasBeenSet(false),
@@ -172,9 +178,10 @@ AwsSecurityFindingFilters::AwsSecurityFindingFilters(JsonView jsonValue) :
     m_resourceAwsEc2InstanceLaunchedAtHasBeenSet(false),
     m_resourceAwsS3BucketOwnerIdHasBeenSet(false),
     m_resourceAwsS3BucketOwnerNameHasBeenSet(false),
-    m_resourceAwsIamAccessKeyUserNameHasBeenSet(false),
+    m_resourceAwsIamAccessKeyPrincipalNameHasBeenSet(false),
     m_resourceAwsIamAccessKeyStatusHasBeenSet(false),
     m_resourceAwsIamAccessKeyCreatedAtHasBeenSet(false),
+    m_resourceAwsIamUserUserNameHasBeenSet(false),
     m_resourceContainerNameHasBeenSet(false),
     m_resourceContainerImageIdHasBeenSet(false),
     m_resourceContainerImageNameHasBeenSet(false),
@@ -190,7 +197,14 @@ AwsSecurityFindingFilters::AwsSecurityFindingFilters(JsonView jsonValue) :
     m_noteTextHasBeenSet(false),
     m_noteUpdatedAtHasBeenSet(false),
     m_noteUpdatedByHasBeenSet(false),
-    m_keywordHasBeenSet(false)
+    m_findingProviderFieldsConfidenceHasBeenSet(false),
+    m_findingProviderFieldsCriticalityHasBeenSet(false),
+    m_findingProviderFieldsRelatedFindingsIdHasBeenSet(false),
+    m_findingProviderFieldsRelatedFindingsProductArnHasBeenSet(false),
+    m_findingProviderFieldsSeverityLabelHasBeenSet(false),
+    m_findingProviderFieldsSeverityOriginalHasBeenSet(false),
+    m_findingProviderFieldsTypesHasBeenSet(false),
+    m_sampleHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -235,6 +249,16 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
       m_generatorId.push_back(generatorIdJsonList[generatorIdIndex].AsObject());
     }
     m_generatorIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Region"))
+  {
+    Array<JsonView> regionJsonList = jsonValue.GetArray("Region");
+    for(unsigned regionIndex = 0; regionIndex < regionJsonList.GetLength(); ++regionIndex)
+    {
+      m_region.push_back(regionJsonList[regionIndex].AsObject());
+    }
+    m_regionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Type"))
@@ -285,26 +309,6 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
       m_updatedAt.push_back(updatedAtJsonList[updatedAtIndex].AsObject());
     }
     m_updatedAtHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("SeverityProduct"))
-  {
-    Array<JsonView> severityProductJsonList = jsonValue.GetArray("SeverityProduct");
-    for(unsigned severityProductIndex = 0; severityProductIndex < severityProductJsonList.GetLength(); ++severityProductIndex)
-    {
-      m_severityProduct.push_back(severityProductJsonList[severityProductIndex].AsObject());
-    }
-    m_severityProductHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("SeverityNormalized"))
-  {
-    Array<JsonView> severityNormalizedJsonList = jsonValue.GetArray("SeverityNormalized");
-    for(unsigned severityNormalizedIndex = 0; severityNormalizedIndex < severityNormalizedJsonList.GetLength(); ++severityNormalizedIndex)
-    {
-      m_severityNormalized.push_back(severityNormalizedJsonList[severityNormalizedIndex].AsObject());
-    }
-    m_severityNormalizedHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("SeverityLabel"))
@@ -847,14 +851,14 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
     m_resourceAwsS3BucketOwnerNameHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("ResourceAwsIamAccessKeyUserName"))
+  if(jsonValue.ValueExists("ResourceAwsIamAccessKeyPrincipalName"))
   {
-    Array<JsonView> resourceAwsIamAccessKeyUserNameJsonList = jsonValue.GetArray("ResourceAwsIamAccessKeyUserName");
-    for(unsigned resourceAwsIamAccessKeyUserNameIndex = 0; resourceAwsIamAccessKeyUserNameIndex < resourceAwsIamAccessKeyUserNameJsonList.GetLength(); ++resourceAwsIamAccessKeyUserNameIndex)
+    Array<JsonView> resourceAwsIamAccessKeyPrincipalNameJsonList = jsonValue.GetArray("ResourceAwsIamAccessKeyPrincipalName");
+    for(unsigned resourceAwsIamAccessKeyPrincipalNameIndex = 0; resourceAwsIamAccessKeyPrincipalNameIndex < resourceAwsIamAccessKeyPrincipalNameJsonList.GetLength(); ++resourceAwsIamAccessKeyPrincipalNameIndex)
     {
-      m_resourceAwsIamAccessKeyUserName.push_back(resourceAwsIamAccessKeyUserNameJsonList[resourceAwsIamAccessKeyUserNameIndex].AsObject());
+      m_resourceAwsIamAccessKeyPrincipalName.push_back(resourceAwsIamAccessKeyPrincipalNameJsonList[resourceAwsIamAccessKeyPrincipalNameIndex].AsObject());
     }
-    m_resourceAwsIamAccessKeyUserNameHasBeenSet = true;
+    m_resourceAwsIamAccessKeyPrincipalNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ResourceAwsIamAccessKeyStatus"))
@@ -875,6 +879,16 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
       m_resourceAwsIamAccessKeyCreatedAt.push_back(resourceAwsIamAccessKeyCreatedAtJsonList[resourceAwsIamAccessKeyCreatedAtIndex].AsObject());
     }
     m_resourceAwsIamAccessKeyCreatedAtHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ResourceAwsIamUserUserName"))
+  {
+    Array<JsonView> resourceAwsIamUserUserNameJsonList = jsonValue.GetArray("ResourceAwsIamUserUserName");
+    for(unsigned resourceAwsIamUserUserNameIndex = 0; resourceAwsIamUserUserNameIndex < resourceAwsIamUserUserNameJsonList.GetLength(); ++resourceAwsIamUserUserNameIndex)
+    {
+      m_resourceAwsIamUserUserName.push_back(resourceAwsIamUserUserNameJsonList[resourceAwsIamUserUserNameIndex].AsObject());
+    }
+    m_resourceAwsIamUserUserNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ResourceContainerName"))
@@ -1027,14 +1041,84 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
     m_noteUpdatedByHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("Keyword"))
+  if(jsonValue.ValueExists("FindingProviderFieldsConfidence"))
   {
-    Array<JsonView> keywordJsonList = jsonValue.GetArray("Keyword");
-    for(unsigned keywordIndex = 0; keywordIndex < keywordJsonList.GetLength(); ++keywordIndex)
+    Array<JsonView> findingProviderFieldsConfidenceJsonList = jsonValue.GetArray("FindingProviderFieldsConfidence");
+    for(unsigned findingProviderFieldsConfidenceIndex = 0; findingProviderFieldsConfidenceIndex < findingProviderFieldsConfidenceJsonList.GetLength(); ++findingProviderFieldsConfidenceIndex)
     {
-      m_keyword.push_back(keywordJsonList[keywordIndex].AsObject());
+      m_findingProviderFieldsConfidence.push_back(findingProviderFieldsConfidenceJsonList[findingProviderFieldsConfidenceIndex].AsObject());
     }
-    m_keywordHasBeenSet = true;
+    m_findingProviderFieldsConfidenceHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FindingProviderFieldsCriticality"))
+  {
+    Array<JsonView> findingProviderFieldsCriticalityJsonList = jsonValue.GetArray("FindingProviderFieldsCriticality");
+    for(unsigned findingProviderFieldsCriticalityIndex = 0; findingProviderFieldsCriticalityIndex < findingProviderFieldsCriticalityJsonList.GetLength(); ++findingProviderFieldsCriticalityIndex)
+    {
+      m_findingProviderFieldsCriticality.push_back(findingProviderFieldsCriticalityJsonList[findingProviderFieldsCriticalityIndex].AsObject());
+    }
+    m_findingProviderFieldsCriticalityHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FindingProviderFieldsRelatedFindingsId"))
+  {
+    Array<JsonView> findingProviderFieldsRelatedFindingsIdJsonList = jsonValue.GetArray("FindingProviderFieldsRelatedFindingsId");
+    for(unsigned findingProviderFieldsRelatedFindingsIdIndex = 0; findingProviderFieldsRelatedFindingsIdIndex < findingProviderFieldsRelatedFindingsIdJsonList.GetLength(); ++findingProviderFieldsRelatedFindingsIdIndex)
+    {
+      m_findingProviderFieldsRelatedFindingsId.push_back(findingProviderFieldsRelatedFindingsIdJsonList[findingProviderFieldsRelatedFindingsIdIndex].AsObject());
+    }
+    m_findingProviderFieldsRelatedFindingsIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FindingProviderFieldsRelatedFindingsProductArn"))
+  {
+    Array<JsonView> findingProviderFieldsRelatedFindingsProductArnJsonList = jsonValue.GetArray("FindingProviderFieldsRelatedFindingsProductArn");
+    for(unsigned findingProviderFieldsRelatedFindingsProductArnIndex = 0; findingProviderFieldsRelatedFindingsProductArnIndex < findingProviderFieldsRelatedFindingsProductArnJsonList.GetLength(); ++findingProviderFieldsRelatedFindingsProductArnIndex)
+    {
+      m_findingProviderFieldsRelatedFindingsProductArn.push_back(findingProviderFieldsRelatedFindingsProductArnJsonList[findingProviderFieldsRelatedFindingsProductArnIndex].AsObject());
+    }
+    m_findingProviderFieldsRelatedFindingsProductArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FindingProviderFieldsSeverityLabel"))
+  {
+    Array<JsonView> findingProviderFieldsSeverityLabelJsonList = jsonValue.GetArray("FindingProviderFieldsSeverityLabel");
+    for(unsigned findingProviderFieldsSeverityLabelIndex = 0; findingProviderFieldsSeverityLabelIndex < findingProviderFieldsSeverityLabelJsonList.GetLength(); ++findingProviderFieldsSeverityLabelIndex)
+    {
+      m_findingProviderFieldsSeverityLabel.push_back(findingProviderFieldsSeverityLabelJsonList[findingProviderFieldsSeverityLabelIndex].AsObject());
+    }
+    m_findingProviderFieldsSeverityLabelHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FindingProviderFieldsSeverityOriginal"))
+  {
+    Array<JsonView> findingProviderFieldsSeverityOriginalJsonList = jsonValue.GetArray("FindingProviderFieldsSeverityOriginal");
+    for(unsigned findingProviderFieldsSeverityOriginalIndex = 0; findingProviderFieldsSeverityOriginalIndex < findingProviderFieldsSeverityOriginalJsonList.GetLength(); ++findingProviderFieldsSeverityOriginalIndex)
+    {
+      m_findingProviderFieldsSeverityOriginal.push_back(findingProviderFieldsSeverityOriginalJsonList[findingProviderFieldsSeverityOriginalIndex].AsObject());
+    }
+    m_findingProviderFieldsSeverityOriginalHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FindingProviderFieldsTypes"))
+  {
+    Array<JsonView> findingProviderFieldsTypesJsonList = jsonValue.GetArray("FindingProviderFieldsTypes");
+    for(unsigned findingProviderFieldsTypesIndex = 0; findingProviderFieldsTypesIndex < findingProviderFieldsTypesJsonList.GetLength(); ++findingProviderFieldsTypesIndex)
+    {
+      m_findingProviderFieldsTypes.push_back(findingProviderFieldsTypesJsonList[findingProviderFieldsTypesIndex].AsObject());
+    }
+    m_findingProviderFieldsTypesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Sample"))
+  {
+    Array<JsonView> sampleJsonList = jsonValue.GetArray("Sample");
+    for(unsigned sampleIndex = 0; sampleIndex < sampleJsonList.GetLength(); ++sampleIndex)
+    {
+      m_sample.push_back(sampleJsonList[sampleIndex].AsObject());
+    }
+    m_sampleHasBeenSet = true;
   }
 
   return *this;
@@ -1085,6 +1169,17 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
      generatorIdJsonList[generatorIdIndex].AsObject(m_generatorId[generatorIdIndex].Jsonize());
    }
    payload.WithArray("GeneratorId", std::move(generatorIdJsonList));
+
+  }
+
+  if(m_regionHasBeenSet)
+  {
+   Array<JsonValue> regionJsonList(m_region.size());
+   for(unsigned regionIndex = 0; regionIndex < regionJsonList.GetLength(); ++regionIndex)
+   {
+     regionJsonList[regionIndex].AsObject(m_region[regionIndex].Jsonize());
+   }
+   payload.WithArray("Region", std::move(regionJsonList));
 
   }
 
@@ -1140,28 +1235,6 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
      updatedAtJsonList[updatedAtIndex].AsObject(m_updatedAt[updatedAtIndex].Jsonize());
    }
    payload.WithArray("UpdatedAt", std::move(updatedAtJsonList));
-
-  }
-
-  if(m_severityProductHasBeenSet)
-  {
-   Array<JsonValue> severityProductJsonList(m_severityProduct.size());
-   for(unsigned severityProductIndex = 0; severityProductIndex < severityProductJsonList.GetLength(); ++severityProductIndex)
-   {
-     severityProductJsonList[severityProductIndex].AsObject(m_severityProduct[severityProductIndex].Jsonize());
-   }
-   payload.WithArray("SeverityProduct", std::move(severityProductJsonList));
-
-  }
-
-  if(m_severityNormalizedHasBeenSet)
-  {
-   Array<JsonValue> severityNormalizedJsonList(m_severityNormalized.size());
-   for(unsigned severityNormalizedIndex = 0; severityNormalizedIndex < severityNormalizedJsonList.GetLength(); ++severityNormalizedIndex)
-   {
-     severityNormalizedJsonList[severityNormalizedIndex].AsObject(m_severityNormalized[severityNormalizedIndex].Jsonize());
-   }
-   payload.WithArray("SeverityNormalized", std::move(severityNormalizedJsonList));
 
   }
 
@@ -1759,14 +1832,14 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   }
 
-  if(m_resourceAwsIamAccessKeyUserNameHasBeenSet)
+  if(m_resourceAwsIamAccessKeyPrincipalNameHasBeenSet)
   {
-   Array<JsonValue> resourceAwsIamAccessKeyUserNameJsonList(m_resourceAwsIamAccessKeyUserName.size());
-   for(unsigned resourceAwsIamAccessKeyUserNameIndex = 0; resourceAwsIamAccessKeyUserNameIndex < resourceAwsIamAccessKeyUserNameJsonList.GetLength(); ++resourceAwsIamAccessKeyUserNameIndex)
+   Array<JsonValue> resourceAwsIamAccessKeyPrincipalNameJsonList(m_resourceAwsIamAccessKeyPrincipalName.size());
+   for(unsigned resourceAwsIamAccessKeyPrincipalNameIndex = 0; resourceAwsIamAccessKeyPrincipalNameIndex < resourceAwsIamAccessKeyPrincipalNameJsonList.GetLength(); ++resourceAwsIamAccessKeyPrincipalNameIndex)
    {
-     resourceAwsIamAccessKeyUserNameJsonList[resourceAwsIamAccessKeyUserNameIndex].AsObject(m_resourceAwsIamAccessKeyUserName[resourceAwsIamAccessKeyUserNameIndex].Jsonize());
+     resourceAwsIamAccessKeyPrincipalNameJsonList[resourceAwsIamAccessKeyPrincipalNameIndex].AsObject(m_resourceAwsIamAccessKeyPrincipalName[resourceAwsIamAccessKeyPrincipalNameIndex].Jsonize());
    }
-   payload.WithArray("ResourceAwsIamAccessKeyUserName", std::move(resourceAwsIamAccessKeyUserNameJsonList));
+   payload.WithArray("ResourceAwsIamAccessKeyPrincipalName", std::move(resourceAwsIamAccessKeyPrincipalNameJsonList));
 
   }
 
@@ -1789,6 +1862,17 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
      resourceAwsIamAccessKeyCreatedAtJsonList[resourceAwsIamAccessKeyCreatedAtIndex].AsObject(m_resourceAwsIamAccessKeyCreatedAt[resourceAwsIamAccessKeyCreatedAtIndex].Jsonize());
    }
    payload.WithArray("ResourceAwsIamAccessKeyCreatedAt", std::move(resourceAwsIamAccessKeyCreatedAtJsonList));
+
+  }
+
+  if(m_resourceAwsIamUserUserNameHasBeenSet)
+  {
+   Array<JsonValue> resourceAwsIamUserUserNameJsonList(m_resourceAwsIamUserUserName.size());
+   for(unsigned resourceAwsIamUserUserNameIndex = 0; resourceAwsIamUserUserNameIndex < resourceAwsIamUserUserNameJsonList.GetLength(); ++resourceAwsIamUserUserNameIndex)
+   {
+     resourceAwsIamUserUserNameJsonList[resourceAwsIamUserUserNameIndex].AsObject(m_resourceAwsIamUserUserName[resourceAwsIamUserUserNameIndex].Jsonize());
+   }
+   payload.WithArray("ResourceAwsIamUserUserName", std::move(resourceAwsIamUserUserNameJsonList));
 
   }
 
@@ -1957,14 +2041,91 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
 
   }
 
-  if(m_keywordHasBeenSet)
+  if(m_findingProviderFieldsConfidenceHasBeenSet)
   {
-   Array<JsonValue> keywordJsonList(m_keyword.size());
-   for(unsigned keywordIndex = 0; keywordIndex < keywordJsonList.GetLength(); ++keywordIndex)
+   Array<JsonValue> findingProviderFieldsConfidenceJsonList(m_findingProviderFieldsConfidence.size());
+   for(unsigned findingProviderFieldsConfidenceIndex = 0; findingProviderFieldsConfidenceIndex < findingProviderFieldsConfidenceJsonList.GetLength(); ++findingProviderFieldsConfidenceIndex)
    {
-     keywordJsonList[keywordIndex].AsObject(m_keyword[keywordIndex].Jsonize());
+     findingProviderFieldsConfidenceJsonList[findingProviderFieldsConfidenceIndex].AsObject(m_findingProviderFieldsConfidence[findingProviderFieldsConfidenceIndex].Jsonize());
    }
-   payload.WithArray("Keyword", std::move(keywordJsonList));
+   payload.WithArray("FindingProviderFieldsConfidence", std::move(findingProviderFieldsConfidenceJsonList));
+
+  }
+
+  if(m_findingProviderFieldsCriticalityHasBeenSet)
+  {
+   Array<JsonValue> findingProviderFieldsCriticalityJsonList(m_findingProviderFieldsCriticality.size());
+   for(unsigned findingProviderFieldsCriticalityIndex = 0; findingProviderFieldsCriticalityIndex < findingProviderFieldsCriticalityJsonList.GetLength(); ++findingProviderFieldsCriticalityIndex)
+   {
+     findingProviderFieldsCriticalityJsonList[findingProviderFieldsCriticalityIndex].AsObject(m_findingProviderFieldsCriticality[findingProviderFieldsCriticalityIndex].Jsonize());
+   }
+   payload.WithArray("FindingProviderFieldsCriticality", std::move(findingProviderFieldsCriticalityJsonList));
+
+  }
+
+  if(m_findingProviderFieldsRelatedFindingsIdHasBeenSet)
+  {
+   Array<JsonValue> findingProviderFieldsRelatedFindingsIdJsonList(m_findingProviderFieldsRelatedFindingsId.size());
+   for(unsigned findingProviderFieldsRelatedFindingsIdIndex = 0; findingProviderFieldsRelatedFindingsIdIndex < findingProviderFieldsRelatedFindingsIdJsonList.GetLength(); ++findingProviderFieldsRelatedFindingsIdIndex)
+   {
+     findingProviderFieldsRelatedFindingsIdJsonList[findingProviderFieldsRelatedFindingsIdIndex].AsObject(m_findingProviderFieldsRelatedFindingsId[findingProviderFieldsRelatedFindingsIdIndex].Jsonize());
+   }
+   payload.WithArray("FindingProviderFieldsRelatedFindingsId", std::move(findingProviderFieldsRelatedFindingsIdJsonList));
+
+  }
+
+  if(m_findingProviderFieldsRelatedFindingsProductArnHasBeenSet)
+  {
+   Array<JsonValue> findingProviderFieldsRelatedFindingsProductArnJsonList(m_findingProviderFieldsRelatedFindingsProductArn.size());
+   for(unsigned findingProviderFieldsRelatedFindingsProductArnIndex = 0; findingProviderFieldsRelatedFindingsProductArnIndex < findingProviderFieldsRelatedFindingsProductArnJsonList.GetLength(); ++findingProviderFieldsRelatedFindingsProductArnIndex)
+   {
+     findingProviderFieldsRelatedFindingsProductArnJsonList[findingProviderFieldsRelatedFindingsProductArnIndex].AsObject(m_findingProviderFieldsRelatedFindingsProductArn[findingProviderFieldsRelatedFindingsProductArnIndex].Jsonize());
+   }
+   payload.WithArray("FindingProviderFieldsRelatedFindingsProductArn", std::move(findingProviderFieldsRelatedFindingsProductArnJsonList));
+
+  }
+
+  if(m_findingProviderFieldsSeverityLabelHasBeenSet)
+  {
+   Array<JsonValue> findingProviderFieldsSeverityLabelJsonList(m_findingProviderFieldsSeverityLabel.size());
+   for(unsigned findingProviderFieldsSeverityLabelIndex = 0; findingProviderFieldsSeverityLabelIndex < findingProviderFieldsSeverityLabelJsonList.GetLength(); ++findingProviderFieldsSeverityLabelIndex)
+   {
+     findingProviderFieldsSeverityLabelJsonList[findingProviderFieldsSeverityLabelIndex].AsObject(m_findingProviderFieldsSeverityLabel[findingProviderFieldsSeverityLabelIndex].Jsonize());
+   }
+   payload.WithArray("FindingProviderFieldsSeverityLabel", std::move(findingProviderFieldsSeverityLabelJsonList));
+
+  }
+
+  if(m_findingProviderFieldsSeverityOriginalHasBeenSet)
+  {
+   Array<JsonValue> findingProviderFieldsSeverityOriginalJsonList(m_findingProviderFieldsSeverityOriginal.size());
+   for(unsigned findingProviderFieldsSeverityOriginalIndex = 0; findingProviderFieldsSeverityOriginalIndex < findingProviderFieldsSeverityOriginalJsonList.GetLength(); ++findingProviderFieldsSeverityOriginalIndex)
+   {
+     findingProviderFieldsSeverityOriginalJsonList[findingProviderFieldsSeverityOriginalIndex].AsObject(m_findingProviderFieldsSeverityOriginal[findingProviderFieldsSeverityOriginalIndex].Jsonize());
+   }
+   payload.WithArray("FindingProviderFieldsSeverityOriginal", std::move(findingProviderFieldsSeverityOriginalJsonList));
+
+  }
+
+  if(m_findingProviderFieldsTypesHasBeenSet)
+  {
+   Array<JsonValue> findingProviderFieldsTypesJsonList(m_findingProviderFieldsTypes.size());
+   for(unsigned findingProviderFieldsTypesIndex = 0; findingProviderFieldsTypesIndex < findingProviderFieldsTypesJsonList.GetLength(); ++findingProviderFieldsTypesIndex)
+   {
+     findingProviderFieldsTypesJsonList[findingProviderFieldsTypesIndex].AsObject(m_findingProviderFieldsTypes[findingProviderFieldsTypesIndex].Jsonize());
+   }
+   payload.WithArray("FindingProviderFieldsTypes", std::move(findingProviderFieldsTypesJsonList));
+
+  }
+
+  if(m_sampleHasBeenSet)
+  {
+   Array<JsonValue> sampleJsonList(m_sample.size());
+   for(unsigned sampleIndex = 0; sampleIndex < sampleJsonList.GetLength(); ++sampleIndex)
+   {
+     sampleJsonList[sampleIndex].AsObject(m_sample[sampleIndex].Jsonize());
+   }
+   payload.WithArray("Sample", std::move(sampleJsonList));
 
   }
 

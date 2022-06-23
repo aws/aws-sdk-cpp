@@ -20,13 +20,15 @@ namespace Model
 
 OtaaV1_0_x::OtaaV1_0_x() : 
     m_appKeyHasBeenSet(false),
-    m_appEuiHasBeenSet(false)
+    m_appEuiHasBeenSet(false),
+    m_genAppKeyHasBeenSet(false)
 {
 }
 
 OtaaV1_0_x::OtaaV1_0_x(JsonView jsonValue) : 
     m_appKeyHasBeenSet(false),
-    m_appEuiHasBeenSet(false)
+    m_appEuiHasBeenSet(false),
+    m_genAppKeyHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,13 @@ OtaaV1_0_x& OtaaV1_0_x::operator =(JsonView jsonValue)
     m_appEuiHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("GenAppKey"))
+  {
+    m_genAppKey = jsonValue.GetString("GenAppKey");
+
+    m_genAppKeyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,12 @@ JsonValue OtaaV1_0_x::Jsonize() const
   if(m_appEuiHasBeenSet)
   {
    payload.WithString("AppEui", m_appEui);
+
+  }
+
+  if(m_genAppKeyHasBeenSet)
+  {
+   payload.WithString("GenAppKey", m_genAppKey);
 
   }
 

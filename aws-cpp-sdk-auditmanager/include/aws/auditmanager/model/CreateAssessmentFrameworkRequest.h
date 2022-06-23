@@ -8,6 +8,7 @@
 #include <aws/auditmanager/AuditManagerRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/auditmanager/model/CreateAssessmentFrameworkControlSet.h>
 #include <utility>
 
@@ -166,44 +167,110 @@ namespace Model
 
 
     /**
-     * <p> The control sets to be associated with the framework. </p>
+     * <p> The control sets that are associated with the framework. </p>
      */
     inline const Aws::Vector<CreateAssessmentFrameworkControlSet>& GetControlSets() const{ return m_controlSets; }
 
     /**
-     * <p> The control sets to be associated with the framework. </p>
+     * <p> The control sets that are associated with the framework. </p>
      */
     inline bool ControlSetsHasBeenSet() const { return m_controlSetsHasBeenSet; }
 
     /**
-     * <p> The control sets to be associated with the framework. </p>
+     * <p> The control sets that are associated with the framework. </p>
      */
     inline void SetControlSets(const Aws::Vector<CreateAssessmentFrameworkControlSet>& value) { m_controlSetsHasBeenSet = true; m_controlSets = value; }
 
     /**
-     * <p> The control sets to be associated with the framework. </p>
+     * <p> The control sets that are associated with the framework. </p>
      */
     inline void SetControlSets(Aws::Vector<CreateAssessmentFrameworkControlSet>&& value) { m_controlSetsHasBeenSet = true; m_controlSets = std::move(value); }
 
     /**
-     * <p> The control sets to be associated with the framework. </p>
+     * <p> The control sets that are associated with the framework. </p>
      */
     inline CreateAssessmentFrameworkRequest& WithControlSets(const Aws::Vector<CreateAssessmentFrameworkControlSet>& value) { SetControlSets(value); return *this;}
 
     /**
-     * <p> The control sets to be associated with the framework. </p>
+     * <p> The control sets that are associated with the framework. </p>
      */
     inline CreateAssessmentFrameworkRequest& WithControlSets(Aws::Vector<CreateAssessmentFrameworkControlSet>&& value) { SetControlSets(std::move(value)); return *this;}
 
     /**
-     * <p> The control sets to be associated with the framework. </p>
+     * <p> The control sets that are associated with the framework. </p>
      */
     inline CreateAssessmentFrameworkRequest& AddControlSets(const CreateAssessmentFrameworkControlSet& value) { m_controlSetsHasBeenSet = true; m_controlSets.push_back(value); return *this; }
 
     /**
-     * <p> The control sets to be associated with the framework. </p>
+     * <p> The control sets that are associated with the framework. </p>
      */
     inline CreateAssessmentFrameworkRequest& AddControlSets(CreateAssessmentFrameworkControlSet&& value) { m_controlSetsHasBeenSet = true; m_controlSets.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p> The tags that are associated with the framework. </p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p> The tags that are associated with the framework. </p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p> The tags that are associated with the framework. </p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p> The tags that are associated with the framework. </p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p> The tags that are associated with the framework. </p>
+     */
+    inline CreateAssessmentFrameworkRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p> The tags that are associated with the framework. </p>
+     */
+    inline CreateAssessmentFrameworkRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p> The tags that are associated with the framework. </p>
+     */
+    inline CreateAssessmentFrameworkRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p> The tags that are associated with the framework. </p>
+     */
+    inline CreateAssessmentFrameworkRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p> The tags that are associated with the framework. </p>
+     */
+    inline CreateAssessmentFrameworkRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p> The tags that are associated with the framework. </p>
+     */
+    inline CreateAssessmentFrameworkRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p> The tags that are associated with the framework. </p>
+     */
+    inline CreateAssessmentFrameworkRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p> The tags that are associated with the framework. </p>
+     */
+    inline CreateAssessmentFrameworkRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p> The tags that are associated with the framework. </p>
+     */
+    inline CreateAssessmentFrameworkRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
   private:
 
@@ -218,6 +285,9 @@ namespace Model
 
     Aws::Vector<CreateAssessmentFrameworkControlSet> m_controlSets;
     bool m_controlSetsHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

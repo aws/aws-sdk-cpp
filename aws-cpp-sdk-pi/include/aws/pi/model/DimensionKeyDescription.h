@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>An array of descriptions and aggregated values for each dimension within a
-   * dimension group.</p><p><h3>See Also:</h3>   <a
+   * <p>An object that includes the requested dimension key values and aggregated
+   * metric values within a dimension group.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/DimensionKeyDescription">AWS
    * API Reference</a></p>
    */
@@ -107,28 +107,74 @@ namespace Model
 
 
     /**
-     * <p>The aggregated metric value for the dimension(s), over the requested time
+     * <p>The aggregated metric value for the dimensions, over the requested time
      * range.</p>
      */
     inline double GetTotal() const{ return m_total; }
 
     /**
-     * <p>The aggregated metric value for the dimension(s), over the requested time
+     * <p>The aggregated metric value for the dimensions, over the requested time
      * range.</p>
      */
     inline bool TotalHasBeenSet() const { return m_totalHasBeenSet; }
 
     /**
-     * <p>The aggregated metric value for the dimension(s), over the requested time
+     * <p>The aggregated metric value for the dimensions, over the requested time
      * range.</p>
      */
     inline void SetTotal(double value) { m_totalHasBeenSet = true; m_total = value; }
 
     /**
-     * <p>The aggregated metric value for the dimension(s), over the requested time
+     * <p>The aggregated metric value for the dimensions, over the requested time
      * range.</p>
      */
     inline DimensionKeyDescription& WithTotal(double value) { SetTotal(value); return *this;}
+
+
+    /**
+     * <p>A map that contains the value for each additional metric.</p>
+     */
+    inline const Aws::Map<Aws::String, double>& GetAdditionalMetrics() const{ return m_additionalMetrics; }
+
+    /**
+     * <p>A map that contains the value for each additional metric.</p>
+     */
+    inline bool AdditionalMetricsHasBeenSet() const { return m_additionalMetricsHasBeenSet; }
+
+    /**
+     * <p>A map that contains the value for each additional metric.</p>
+     */
+    inline void SetAdditionalMetrics(const Aws::Map<Aws::String, double>& value) { m_additionalMetricsHasBeenSet = true; m_additionalMetrics = value; }
+
+    /**
+     * <p>A map that contains the value for each additional metric.</p>
+     */
+    inline void SetAdditionalMetrics(Aws::Map<Aws::String, double>&& value) { m_additionalMetricsHasBeenSet = true; m_additionalMetrics = std::move(value); }
+
+    /**
+     * <p>A map that contains the value for each additional metric.</p>
+     */
+    inline DimensionKeyDescription& WithAdditionalMetrics(const Aws::Map<Aws::String, double>& value) { SetAdditionalMetrics(value); return *this;}
+
+    /**
+     * <p>A map that contains the value for each additional metric.</p>
+     */
+    inline DimensionKeyDescription& WithAdditionalMetrics(Aws::Map<Aws::String, double>&& value) { SetAdditionalMetrics(std::move(value)); return *this;}
+
+    /**
+     * <p>A map that contains the value for each additional metric.</p>
+     */
+    inline DimensionKeyDescription& AddAdditionalMetrics(const Aws::String& key, double value) { m_additionalMetricsHasBeenSet = true; m_additionalMetrics.emplace(key, value); return *this; }
+
+    /**
+     * <p>A map that contains the value for each additional metric.</p>
+     */
+    inline DimensionKeyDescription& AddAdditionalMetrics(Aws::String&& key, double value) { m_additionalMetricsHasBeenSet = true; m_additionalMetrics.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A map that contains the value for each additional metric.</p>
+     */
+    inline DimensionKeyDescription& AddAdditionalMetrics(const char* key, double value) { m_additionalMetricsHasBeenSet = true; m_additionalMetrics.emplace(key, value); return *this; }
 
 
     /**
@@ -180,6 +226,9 @@ namespace Model
 
     double m_total;
     bool m_totalHasBeenSet;
+
+    Aws::Map<Aws::String, double> m_additionalMetrics;
+    bool m_additionalMetricsHasBeenSet;
 
     Aws::Vector<double> m_partitions;
     bool m_partitionsHasBeenSet;

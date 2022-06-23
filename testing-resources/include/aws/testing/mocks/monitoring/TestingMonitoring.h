@@ -22,6 +22,7 @@ struct TestingMonitoringMetrics
     static std::string s_lastSigningRegion;
     static std::string s_lastSigningServiceName;
     static std::string s_lastPayload;
+    static std::map<std::string, std::string> s_lastRequestHeaders;
 };
 
 bool TestingMonitoringMetrics::Config::s_enablePayload;
@@ -30,6 +31,7 @@ std::string TestingMonitoringMetrics::s_lastUriString;
 std::string TestingMonitoringMetrics::s_lastSigningRegion;
 std::string TestingMonitoringMetrics::s_lastSigningServiceName;
 std::string TestingMonitoringMetrics::s_lastPayload;
+std::map<std::string, std::string> TestingMonitoringMetrics::s_lastRequestHeaders;
 
 class TestingMonitoring : public Aws::Monitoring::MonitoringInterface
 {
@@ -84,11 +86,29 @@ public:
         Aws::Vector<Aws::String> authComponents = Aws::Utils::StringUtils::Split(request->GetAwsAuthorization(), '/');
         if (authComponents.size() > 3)
         {
-            TestingMonitoringMetrics::s_lastSigningServiceName = authComponents[3].c_str();
+            if (authComponents[0].find("AWS4-HMAC-SHA256") == 0)
+            {
+                // For SigV4
+                TestingMonitoringMetrics::s_lastSigningServiceName = authComponents[3].c_str();
+            }
+            else if (authComponents[0].find("AWS4-ECDSA-P256-SHA256") == 0)
+            {
+                // For SigV4A
+                TestingMonitoringMetrics::s_lastSigningServiceName = authComponents[2].c_str();
+            }
+            else
+            {
+                TestingMonitoringMetrics::s_lastSigningServiceName = "";
+            }
         }
         else
         {
             TestingMonitoringMetrics::s_lastSigningServiceName = "";
+        }
+        TestingMonitoringMetrics::s_lastRequestHeaders.clear();
+        for (const auto& header : request->GetHeaders())
+        {
+            TestingMonitoringMetrics::s_lastRequestHeaders[header.first.c_str()] = header.second.c_str();
         }
         if (TestingMonitoringMetrics::Config::s_enablePayload)
         {
@@ -138,5 +158,6 @@ private:
         TestingMonitoringMetrics::s_lastSigningRegion = "";
         TestingMonitoringMetrics::s_lastSigningServiceName = "";
         TestingMonitoringMetrics::s_lastPayload = "";
+        TestingMonitoringMetrics::s_lastRequestHeaders.clear();
     }
 };

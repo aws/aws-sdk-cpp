@@ -25,7 +25,9 @@ InstanceStorageInfo::InstanceStorageInfo() :
     m_totalSizeInGBHasBeenSet(false),
     m_disksHasBeenSet(false),
     m_nvmeSupport(EphemeralNvmeSupport::NOT_SET),
-    m_nvmeSupportHasBeenSet(false)
+    m_nvmeSupportHasBeenSet(false),
+    m_encryptionSupport(InstanceStorageEncryptionSupport::NOT_SET),
+    m_encryptionSupportHasBeenSet(false)
 {
 }
 
@@ -34,7 +36,9 @@ InstanceStorageInfo::InstanceStorageInfo(const XmlNode& xmlNode) :
     m_totalSizeInGBHasBeenSet(false),
     m_disksHasBeenSet(false),
     m_nvmeSupport(EphemeralNvmeSupport::NOT_SET),
-    m_nvmeSupportHasBeenSet(false)
+    m_nvmeSupportHasBeenSet(false),
+    m_encryptionSupport(InstanceStorageEncryptionSupport::NOT_SET),
+    m_encryptionSupportHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -69,6 +73,12 @@ InstanceStorageInfo& InstanceStorageInfo::operator =(const XmlNode& xmlNode)
       m_nvmeSupport = EphemeralNvmeSupportMapper::GetEphemeralNvmeSupportForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nvmeSupportNode.GetText()).c_str()).c_str());
       m_nvmeSupportHasBeenSet = true;
     }
+    XmlNode encryptionSupportNode = resultNode.FirstChild("encryptionSupport");
+    if(!encryptionSupportNode.IsNull())
+    {
+      m_encryptionSupport = InstanceStorageEncryptionSupportMapper::GetInstanceStorageEncryptionSupportForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(encryptionSupportNode.GetText()).c_str()).c_str());
+      m_encryptionSupportHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -97,6 +107,11 @@ void InstanceStorageInfo::OutputToStream(Aws::OStream& oStream, const char* loca
       oStream << location << index << locationValue << ".NvmeSupport=" << EphemeralNvmeSupportMapper::GetNameForEphemeralNvmeSupport(m_nvmeSupport) << "&";
   }
 
+  if(m_encryptionSupportHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".EncryptionSupport=" << InstanceStorageEncryptionSupportMapper::GetNameForInstanceStorageEncryptionSupport(m_encryptionSupport) << "&";
+  }
+
 }
 
 void InstanceStorageInfo::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -118,6 +133,10 @@ void InstanceStorageInfo::OutputToStream(Aws::OStream& oStream, const char* loca
   if(m_nvmeSupportHasBeenSet)
   {
       oStream << location << ".NvmeSupport=" << EphemeralNvmeSupportMapper::GetNameForEphemeralNvmeSupport(m_nvmeSupport) << "&";
+  }
+  if(m_encryptionSupportHasBeenSet)
+  {
+      oStream << location << ".EncryptionSupport=" << InstanceStorageEncryptionSupportMapper::GetNameForInstanceStorageEncryptionSupport(m_encryptionSupport) << "&";
   }
 }
 

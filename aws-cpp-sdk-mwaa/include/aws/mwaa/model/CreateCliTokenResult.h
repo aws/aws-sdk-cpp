@@ -33,80 +33,73 @@ namespace Model
 
 
     /**
-     * <p>Create an Airflow CLI login token response for the provided JWT token.</p>
+     * <p>An Airflow CLI login token.</p>
      */
     inline const Aws::String& GetCliToken() const{ return m_cliToken; }
 
     /**
-     * <p>Create an Airflow CLI login token response for the provided JWT token.</p>
+     * <p>An Airflow CLI login token.</p>
      */
     inline void SetCliToken(const Aws::String& value) { m_cliToken = value; }
 
     /**
-     * <p>Create an Airflow CLI login token response for the provided JWT token.</p>
+     * <p>An Airflow CLI login token.</p>
      */
     inline void SetCliToken(Aws::String&& value) { m_cliToken = std::move(value); }
 
     /**
-     * <p>Create an Airflow CLI login token response for the provided JWT token.</p>
+     * <p>An Airflow CLI login token.</p>
      */
     inline void SetCliToken(const char* value) { m_cliToken.assign(value); }
 
     /**
-     * <p>Create an Airflow CLI login token response for the provided JWT token.</p>
+     * <p>An Airflow CLI login token.</p>
      */
     inline CreateCliTokenResult& WithCliToken(const Aws::String& value) { SetCliToken(value); return *this;}
 
     /**
-     * <p>Create an Airflow CLI login token response for the provided JWT token.</p>
+     * <p>An Airflow CLI login token.</p>
      */
     inline CreateCliTokenResult& WithCliToken(Aws::String&& value) { SetCliToken(std::move(value)); return *this;}
 
     /**
-     * <p>Create an Airflow CLI login token response for the provided JWT token.</p>
+     * <p>An Airflow CLI login token.</p>
      */
     inline CreateCliTokenResult& WithCliToken(const char* value) { SetCliToken(value); return *this;}
 
 
     /**
-     * <p>Create an Airflow CLI login token response for the provided webserver
-     * hostname.</p>
+     * <p>The Airflow web server hostname for the environment.</p>
      */
     inline const Aws::String& GetWebServerHostname() const{ return m_webServerHostname; }
 
     /**
-     * <p>Create an Airflow CLI login token response for the provided webserver
-     * hostname.</p>
+     * <p>The Airflow web server hostname for the environment.</p>
      */
     inline void SetWebServerHostname(const Aws::String& value) { m_webServerHostname = value; }
 
     /**
-     * <p>Create an Airflow CLI login token response for the provided webserver
-     * hostname.</p>
+     * <p>The Airflow web server hostname for the environment.</p>
      */
     inline void SetWebServerHostname(Aws::String&& value) { m_webServerHostname = std::move(value); }
 
     /**
-     * <p>Create an Airflow CLI login token response for the provided webserver
-     * hostname.</p>
+     * <p>The Airflow web server hostname for the environment.</p>
      */
     inline void SetWebServerHostname(const char* value) { m_webServerHostname.assign(value); }
 
     /**
-     * <p>Create an Airflow CLI login token response for the provided webserver
-     * hostname.</p>
+     * <p>The Airflow web server hostname for the environment.</p>
      */
     inline CreateCliTokenResult& WithWebServerHostname(const Aws::String& value) { SetWebServerHostname(value); return *this;}
 
     /**
-     * <p>Create an Airflow CLI login token response for the provided webserver
-     * hostname.</p>
+     * <p>The Airflow web server hostname for the environment.</p>
      */
     inline CreateCliTokenResult& WithWebServerHostname(Aws::String&& value) { SetWebServerHostname(std::move(value)); return *this;}
 
     /**
-     * <p>Create an Airflow CLI login token response for the provided webserver
-     * hostname.</p>
+     * <p>The Airflow web server hostname for the environment.</p>
      */
     inline CreateCliTokenResult& WithWebServerHostname(const char* value) { SetWebServerHostname(value); return *this;}
 

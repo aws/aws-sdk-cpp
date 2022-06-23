@@ -40,50 +40,58 @@ namespace Model
 
 
     /**
-     * <p>The pre-signed URL using which file would be downloaded from Amazon S3 by the
-     * API caller.</p>
+     * <p>This is the pre-signed URL that can be used for uploading the file to Amazon
+     * S3 when used in response to <a
+     * href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_StartAttachmentUpload.html">StartAttachmentUpload</a>.</p>
      */
     inline const Aws::String& GetUrl() const{ return m_url; }
 
     /**
-     * <p>The pre-signed URL using which file would be downloaded from Amazon S3 by the
-     * API caller.</p>
+     * <p>This is the pre-signed URL that can be used for uploading the file to Amazon
+     * S3 when used in response to <a
+     * href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_StartAttachmentUpload.html">StartAttachmentUpload</a>.</p>
      */
     inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
 
     /**
-     * <p>The pre-signed URL using which file would be downloaded from Amazon S3 by the
-     * API caller.</p>
+     * <p>This is the pre-signed URL that can be used for uploading the file to Amazon
+     * S3 when used in response to <a
+     * href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_StartAttachmentUpload.html">StartAttachmentUpload</a>.</p>
      */
     inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
 
     /**
-     * <p>The pre-signed URL using which file would be downloaded from Amazon S3 by the
-     * API caller.</p>
+     * <p>This is the pre-signed URL that can be used for uploading the file to Amazon
+     * S3 when used in response to <a
+     * href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_StartAttachmentUpload.html">StartAttachmentUpload</a>.</p>
      */
     inline void SetUrl(Aws::String&& value) { m_urlHasBeenSet = true; m_url = std::move(value); }
 
     /**
-     * <p>The pre-signed URL using which file would be downloaded from Amazon S3 by the
-     * API caller.</p>
+     * <p>This is the pre-signed URL that can be used for uploading the file to Amazon
+     * S3 when used in response to <a
+     * href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_StartAttachmentUpload.html">StartAttachmentUpload</a>.</p>
      */
     inline void SetUrl(const char* value) { m_urlHasBeenSet = true; m_url.assign(value); }
 
     /**
-     * <p>The pre-signed URL using which file would be downloaded from Amazon S3 by the
-     * API caller.</p>
+     * <p>This is the pre-signed URL that can be used for uploading the file to Amazon
+     * S3 when used in response to <a
+     * href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_StartAttachmentUpload.html">StartAttachmentUpload</a>.</p>
      */
     inline UploadMetadata& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
 
     /**
-     * <p>The pre-signed URL using which file would be downloaded from Amazon S3 by the
-     * API caller.</p>
+     * <p>This is the pre-signed URL that can be used for uploading the file to Amazon
+     * S3 when used in response to <a
+     * href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_StartAttachmentUpload.html">StartAttachmentUpload</a>.</p>
      */
     inline UploadMetadata& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
 
     /**
-     * <p>The pre-signed URL using which file would be downloaded from Amazon S3 by the
-     * API caller.</p>
+     * <p>This is the pre-signed URL that can be used for uploading the file to Amazon
+     * S3 when used in response to <a
+     * href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_StartAttachmentUpload.html">StartAttachmentUpload</a>.</p>
      */
     inline UploadMetadata& WithUrl(const char* value) { SetUrl(value); return *this;}
 

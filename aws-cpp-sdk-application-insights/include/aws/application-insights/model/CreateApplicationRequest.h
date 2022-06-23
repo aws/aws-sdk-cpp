@@ -244,6 +244,32 @@ namespace Model
      */
     inline CreateApplicationRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    
+    inline bool GetAutoConfigEnabled() const{ return m_autoConfigEnabled; }
+
+    
+    inline bool AutoConfigEnabledHasBeenSet() const { return m_autoConfigEnabledHasBeenSet; }
+
+    
+    inline void SetAutoConfigEnabled(bool value) { m_autoConfigEnabledHasBeenSet = true; m_autoConfigEnabled = value; }
+
+    
+    inline CreateApplicationRequest& WithAutoConfigEnabled(bool value) { SetAutoConfigEnabled(value); return *this;}
+
+
+    
+    inline bool GetAutoCreate() const{ return m_autoCreate; }
+
+    
+    inline bool AutoCreateHasBeenSet() const { return m_autoCreateHasBeenSet; }
+
+    
+    inline void SetAutoCreate(bool value) { m_autoCreateHasBeenSet = true; m_autoCreate = value; }
+
+    
+    inline CreateApplicationRequest& WithAutoCreate(bool value) { SetAutoCreate(value); return *this;}
+
   private:
 
     Aws::String m_resourceGroupName;
@@ -260,6 +286,12 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    bool m_autoConfigEnabled;
+    bool m_autoConfigEnabledHasBeenSet;
+
+    bool m_autoCreate;
+    bool m_autoCreateHasBeenSet;
   };
 
 } // namespace Model

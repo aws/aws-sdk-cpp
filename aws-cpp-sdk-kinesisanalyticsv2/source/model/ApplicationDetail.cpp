@@ -32,7 +32,17 @@ ApplicationDetail::ApplicationDetail() :
     m_createTimestampHasBeenSet(false),
     m_lastUpdateTimestampHasBeenSet(false),
     m_applicationConfigurationDescriptionHasBeenSet(false),
-    m_cloudWatchLoggingOptionDescriptionsHasBeenSet(false)
+    m_cloudWatchLoggingOptionDescriptionsHasBeenSet(false),
+    m_applicationMaintenanceConfigurationDescriptionHasBeenSet(false),
+    m_applicationVersionUpdatedFrom(0),
+    m_applicationVersionUpdatedFromHasBeenSet(false),
+    m_applicationVersionRolledBackFrom(0),
+    m_applicationVersionRolledBackFromHasBeenSet(false),
+    m_conditionalTokenHasBeenSet(false),
+    m_applicationVersionRolledBackTo(0),
+    m_applicationVersionRolledBackToHasBeenSet(false),
+    m_applicationMode(ApplicationMode::NOT_SET),
+    m_applicationModeHasBeenSet(false)
 {
 }
 
@@ -50,7 +60,17 @@ ApplicationDetail::ApplicationDetail(JsonView jsonValue) :
     m_createTimestampHasBeenSet(false),
     m_lastUpdateTimestampHasBeenSet(false),
     m_applicationConfigurationDescriptionHasBeenSet(false),
-    m_cloudWatchLoggingOptionDescriptionsHasBeenSet(false)
+    m_cloudWatchLoggingOptionDescriptionsHasBeenSet(false),
+    m_applicationMaintenanceConfigurationDescriptionHasBeenSet(false),
+    m_applicationVersionUpdatedFrom(0),
+    m_applicationVersionUpdatedFromHasBeenSet(false),
+    m_applicationVersionRolledBackFrom(0),
+    m_applicationVersionRolledBackFromHasBeenSet(false),
+    m_conditionalTokenHasBeenSet(false),
+    m_applicationVersionRolledBackTo(0),
+    m_applicationVersionRolledBackToHasBeenSet(false),
+    m_applicationMode(ApplicationMode::NOT_SET),
+    m_applicationModeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -137,6 +157,48 @@ ApplicationDetail& ApplicationDetail::operator =(JsonView jsonValue)
     m_cloudWatchLoggingOptionDescriptionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ApplicationMaintenanceConfigurationDescription"))
+  {
+    m_applicationMaintenanceConfigurationDescription = jsonValue.GetObject("ApplicationMaintenanceConfigurationDescription");
+
+    m_applicationMaintenanceConfigurationDescriptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ApplicationVersionUpdatedFrom"))
+  {
+    m_applicationVersionUpdatedFrom = jsonValue.GetInt64("ApplicationVersionUpdatedFrom");
+
+    m_applicationVersionUpdatedFromHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ApplicationVersionRolledBackFrom"))
+  {
+    m_applicationVersionRolledBackFrom = jsonValue.GetInt64("ApplicationVersionRolledBackFrom");
+
+    m_applicationVersionRolledBackFromHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ConditionalToken"))
+  {
+    m_conditionalToken = jsonValue.GetString("ConditionalToken");
+
+    m_conditionalTokenHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ApplicationVersionRolledBackTo"))
+  {
+    m_applicationVersionRolledBackTo = jsonValue.GetInt64("ApplicationVersionRolledBackTo");
+
+    m_applicationVersionRolledBackToHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ApplicationMode"))
+  {
+    m_applicationMode = ApplicationModeMapper::GetApplicationModeForName(jsonValue.GetString("ApplicationMode"));
+
+    m_applicationModeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -209,6 +271,41 @@ JsonValue ApplicationDetail::Jsonize() const
    }
    payload.WithArray("CloudWatchLoggingOptionDescriptions", std::move(cloudWatchLoggingOptionDescriptionsJsonList));
 
+  }
+
+  if(m_applicationMaintenanceConfigurationDescriptionHasBeenSet)
+  {
+   payload.WithObject("ApplicationMaintenanceConfigurationDescription", m_applicationMaintenanceConfigurationDescription.Jsonize());
+
+  }
+
+  if(m_applicationVersionUpdatedFromHasBeenSet)
+  {
+   payload.WithInt64("ApplicationVersionUpdatedFrom", m_applicationVersionUpdatedFrom);
+
+  }
+
+  if(m_applicationVersionRolledBackFromHasBeenSet)
+  {
+   payload.WithInt64("ApplicationVersionRolledBackFrom", m_applicationVersionRolledBackFrom);
+
+  }
+
+  if(m_conditionalTokenHasBeenSet)
+  {
+   payload.WithString("ConditionalToken", m_conditionalToken);
+
+  }
+
+  if(m_applicationVersionRolledBackToHasBeenSet)
+  {
+   payload.WithInt64("ApplicationVersionRolledBackTo", m_applicationVersionRolledBackTo);
+
+  }
+
+  if(m_applicationModeHasBeenSet)
+  {
+   payload.WithString("ApplicationMode", ApplicationModeMapper::GetNameForApplicationMode(m_applicationMode));
   }
 
   return payload;

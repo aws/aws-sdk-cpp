@@ -32,7 +32,8 @@ ExtendedS3DestinationUpdate::ExtendedS3DestinationUpdate() :
     m_s3BackupMode(S3BackupMode::NOT_SET),
     m_s3BackupModeHasBeenSet(false),
     m_s3BackupUpdateHasBeenSet(false),
-    m_dataFormatConversionConfigurationHasBeenSet(false)
+    m_dataFormatConversionConfigurationHasBeenSet(false),
+    m_dynamicPartitioningConfigurationHasBeenSet(false)
 {
 }
 
@@ -50,7 +51,8 @@ ExtendedS3DestinationUpdate::ExtendedS3DestinationUpdate(JsonView jsonValue) :
     m_s3BackupMode(S3BackupMode::NOT_SET),
     m_s3BackupModeHasBeenSet(false),
     m_s3BackupUpdateHasBeenSet(false),
-    m_dataFormatConversionConfigurationHasBeenSet(false)
+    m_dataFormatConversionConfigurationHasBeenSet(false),
+    m_dynamicPartitioningConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -141,6 +143,13 @@ ExtendedS3DestinationUpdate& ExtendedS3DestinationUpdate::operator =(JsonView js
     m_dataFormatConversionConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DynamicPartitioningConfiguration"))
+  {
+    m_dynamicPartitioningConfiguration = jsonValue.GetObject("DynamicPartitioningConfiguration");
+
+    m_dynamicPartitioningConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -215,6 +224,12 @@ JsonValue ExtendedS3DestinationUpdate::Jsonize() const
   if(m_dataFormatConversionConfigurationHasBeenSet)
   {
    payload.WithObject("DataFormatConversionConfiguration", m_dataFormatConversionConfiguration.Jsonize());
+
+  }
+
+  if(m_dynamicPartitioningConfigurationHasBeenSet)
+  {
+   payload.WithObject("DynamicPartitioningConfiguration", m_dynamicPartitioningConfiguration.Jsonize());
 
   }
 

@@ -122,34 +122,101 @@ namespace Model
 
 
     /**
-     * <p>The instance type that the image version runs on.</p>
+     * <p>The instance type that the image version runs on.</p>  <p>JupyterServer
+     * Apps only support the <code>system</code> value. KernelGateway Apps do not
+     * support the <code>system</code> value, but support all other values for
+     * available instance types.</p> 
      */
     inline const AppInstanceType& GetInstanceType() const{ return m_instanceType; }
 
     /**
-     * <p>The instance type that the image version runs on.</p>
+     * <p>The instance type that the image version runs on.</p>  <p>JupyterServer
+     * Apps only support the <code>system</code> value. KernelGateway Apps do not
+     * support the <code>system</code> value, but support all other values for
+     * available instance types.</p> 
      */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
-     * <p>The instance type that the image version runs on.</p>
+     * <p>The instance type that the image version runs on.</p>  <p>JupyterServer
+     * Apps only support the <code>system</code> value. KernelGateway Apps do not
+     * support the <code>system</code> value, but support all other values for
+     * available instance types.</p> 
      */
     inline void SetInstanceType(const AppInstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
-     * <p>The instance type that the image version runs on.</p>
+     * <p>The instance type that the image version runs on.</p>  <p>JupyterServer
+     * Apps only support the <code>system</code> value. KernelGateway Apps do not
+     * support the <code>system</code> value, but support all other values for
+     * available instance types.</p> 
      */
     inline void SetInstanceType(AppInstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
-     * <p>The instance type that the image version runs on.</p>
+     * <p>The instance type that the image version runs on.</p>  <p>JupyterServer
+     * Apps only support the <code>system</code> value. KernelGateway Apps do not
+     * support the <code>system</code> value, but support all other values for
+     * available instance types.</p> 
      */
     inline ResourceSpec& WithInstanceType(const AppInstanceType& value) { SetInstanceType(value); return *this;}
 
     /**
-     * <p>The instance type that the image version runs on.</p>
+     * <p>The instance type that the image version runs on.</p>  <p>JupyterServer
+     * Apps only support the <code>system</code> value. KernelGateway Apps do not
+     * support the <code>system</code> value, but support all other values for
+     * available instance types.</p> 
      */
     inline ResourceSpec& WithInstanceType(AppInstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
+
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configuration attached to
+     * the Resource.</p>
+     */
+    inline const Aws::String& GetLifecycleConfigArn() const{ return m_lifecycleConfigArn; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configuration attached to
+     * the Resource.</p>
+     */
+    inline bool LifecycleConfigArnHasBeenSet() const { return m_lifecycleConfigArnHasBeenSet; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configuration attached to
+     * the Resource.</p>
+     */
+    inline void SetLifecycleConfigArn(const Aws::String& value) { m_lifecycleConfigArnHasBeenSet = true; m_lifecycleConfigArn = value; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configuration attached to
+     * the Resource.</p>
+     */
+    inline void SetLifecycleConfigArn(Aws::String&& value) { m_lifecycleConfigArnHasBeenSet = true; m_lifecycleConfigArn = std::move(value); }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configuration attached to
+     * the Resource.</p>
+     */
+    inline void SetLifecycleConfigArn(const char* value) { m_lifecycleConfigArnHasBeenSet = true; m_lifecycleConfigArn.assign(value); }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configuration attached to
+     * the Resource.</p>
+     */
+    inline ResourceSpec& WithLifecycleConfigArn(const Aws::String& value) { SetLifecycleConfigArn(value); return *this;}
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configuration attached to
+     * the Resource.</p>
+     */
+    inline ResourceSpec& WithLifecycleConfigArn(Aws::String&& value) { SetLifecycleConfigArn(std::move(value)); return *this;}
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Lifecycle Configuration attached to
+     * the Resource.</p>
+     */
+    inline ResourceSpec& WithLifecycleConfigArn(const char* value) { SetLifecycleConfigArn(value); return *this;}
 
   private:
 
@@ -161,6 +228,9 @@ namespace Model
 
     AppInstanceType m_instanceType;
     bool m_instanceTypeHasBeenSet;
+
+    Aws::String m_lifecycleConfigArn;
+    bool m_lifecycleConfigArnHasBeenSet;
   };
 
 } // namespace Model

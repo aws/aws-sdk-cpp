@@ -25,8 +25,11 @@ namespace Model
 {
 
   /**
-   * <p>Provide the security group and subnet IDs for the workers and
-   * scheduler.</p><p><h3>See Also:</h3>   <a
+   * <p>Defines the VPC networking components used to secure and enable network
+   * traffic between the Amazon Web Services resources for your environment. To learn
+   * more, see <a
+   * href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About
+   * networking on Amazon MWAA</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/UpdateNetworkConfigurationInput">AWS
    * API Reference</a></p>
    */
@@ -40,56 +43,74 @@ namespace Model
 
 
     /**
-     * <p>Provide a JSON list of 1 or more security groups IDs by name, in the same VPC
-     * as the subnets.</p>
+     * <p>A list of security group IDs. A security group must be attached to the same
+     * VPC as the subnets. To learn more, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security
+     * in your VPC on Amazon MWAA</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
 
     /**
-     * <p>Provide a JSON list of 1 or more security groups IDs by name, in the same VPC
-     * as the subnets.</p>
+     * <p>A list of security group IDs. A security group must be attached to the same
+     * VPC as the subnets. To learn more, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security
+     * in your VPC on Amazon MWAA</a>.</p>
      */
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
 
     /**
-     * <p>Provide a JSON list of 1 or more security groups IDs by name, in the same VPC
-     * as the subnets.</p>
+     * <p>A list of security group IDs. A security group must be attached to the same
+     * VPC as the subnets. To learn more, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security
+     * in your VPC on Amazon MWAA</a>.</p>
      */
     inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
 
     /**
-     * <p>Provide a JSON list of 1 or more security groups IDs by name, in the same VPC
-     * as the subnets.</p>
+     * <p>A list of security group IDs. A security group must be attached to the same
+     * VPC as the subnets. To learn more, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security
+     * in your VPC on Amazon MWAA</a>.</p>
      */
     inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
 
     /**
-     * <p>Provide a JSON list of 1 or more security groups IDs by name, in the same VPC
-     * as the subnets.</p>
+     * <p>A list of security group IDs. A security group must be attached to the same
+     * VPC as the subnets. To learn more, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security
+     * in your VPC on Amazon MWAA</a>.</p>
      */
     inline UpdateNetworkConfigurationInput& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
 
     /**
-     * <p>Provide a JSON list of 1 or more security groups IDs by name, in the same VPC
-     * as the subnets.</p>
+     * <p>A list of security group IDs. A security group must be attached to the same
+     * VPC as the subnets. To learn more, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security
+     * in your VPC on Amazon MWAA</a>.</p>
      */
     inline UpdateNetworkConfigurationInput& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
 
     /**
-     * <p>Provide a JSON list of 1 or more security groups IDs by name, in the same VPC
-     * as the subnets.</p>
+     * <p>A list of security group IDs. A security group must be attached to the same
+     * VPC as the subnets. To learn more, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security
+     * in your VPC on Amazon MWAA</a>.</p>
      */
     inline UpdateNetworkConfigurationInput& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
     /**
-     * <p>Provide a JSON list of 1 or more security groups IDs by name, in the same VPC
-     * as the subnets.</p>
+     * <p>A list of security group IDs. A security group must be attached to the same
+     * VPC as the subnets. To learn more, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security
+     * in your VPC on Amazon MWAA</a>.</p>
      */
     inline UpdateNetworkConfigurationInput& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Provide a JSON list of 1 or more security groups IDs by name, in the same VPC
-     * as the subnets.</p>
+     * <p>A list of security group IDs. A security group must be attached to the same
+     * VPC as the subnets. To learn more, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security
+     * in your VPC on Amazon MWAA</a>.</p>
      */
     inline UpdateNetworkConfigurationInput& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 

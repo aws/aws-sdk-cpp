@@ -26,7 +26,8 @@ CreateRouteRequest::CreateRouteRequest() :
     m_carrierGatewayIdHasBeenSet(false),
     m_networkInterfaceIdHasBeenSet(false),
     m_routeTableIdHasBeenSet(false),
-    m_vpcPeeringConnectionIdHasBeenSet(false)
+    m_vpcPeeringConnectionIdHasBeenSet(false),
+    m_coreNetworkArnHasBeenSet(false)
 {
 }
 
@@ -107,6 +108,11 @@ Aws::String CreateRouteRequest::SerializePayload() const
   if(m_vpcPeeringConnectionIdHasBeenSet)
   {
     ss << "VpcPeeringConnectionId=" << StringUtils::URLEncode(m_vpcPeeringConnectionId.c_str()) << "&";
+  }
+
+  if(m_coreNetworkArnHasBeenSet)
+  {
+    ss << "CoreNetworkArn=" << StringUtils::URLEncode(m_coreNetworkArn.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

@@ -31,7 +31,8 @@ UpdateFunctionConfigurationRequest::UpdateFunctionConfigurationRequest() :
     m_revisionIdHasBeenSet(false),
     m_layersHasBeenSet(false),
     m_fileSystemConfigsHasBeenSet(false),
-    m_imageConfigHasBeenSet(false)
+    m_imageConfigHasBeenSet(false),
+    m_ephemeralStorageHasBeenSet(false)
 {
 }
 
@@ -135,6 +136,12 @@ Aws::String UpdateFunctionConfigurationRequest::SerializePayload() const
   if(m_imageConfigHasBeenSet)
   {
    payload.WithObject("ImageConfig", m_imageConfig.Jsonize());
+
+  }
+
+  if(m_ephemeralStorageHasBeenSet)
+  {
+   payload.WithObject("EphemeralStorage", m_ephemeralStorage.Jsonize());
 
   }
 

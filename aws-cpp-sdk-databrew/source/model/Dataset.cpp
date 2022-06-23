@@ -23,12 +23,15 @@ Dataset::Dataset() :
     m_createdByHasBeenSet(false),
     m_createDateHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_format(InputFormat::NOT_SET),
+    m_formatHasBeenSet(false),
     m_formatOptionsHasBeenSet(false),
     m_inputHasBeenSet(false),
     m_lastModifiedDateHasBeenSet(false),
     m_lastModifiedByHasBeenSet(false),
     m_source(Source::NOT_SET),
     m_sourceHasBeenSet(false),
+    m_pathOptionsHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_resourceArnHasBeenSet(false)
 {
@@ -39,12 +42,15 @@ Dataset::Dataset(JsonView jsonValue) :
     m_createdByHasBeenSet(false),
     m_createDateHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_format(InputFormat::NOT_SET),
+    m_formatHasBeenSet(false),
     m_formatOptionsHasBeenSet(false),
     m_inputHasBeenSet(false),
     m_lastModifiedDateHasBeenSet(false),
     m_lastModifiedByHasBeenSet(false),
     m_source(Source::NOT_SET),
     m_sourceHasBeenSet(false),
+    m_pathOptionsHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_resourceArnHasBeenSet(false)
 {
@@ -81,6 +87,13 @@ Dataset& Dataset::operator =(JsonView jsonValue)
     m_nameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Format"))
+  {
+    m_format = InputFormatMapper::GetInputFormatForName(jsonValue.GetString("Format"));
+
+    m_formatHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("FormatOptions"))
   {
     m_formatOptions = jsonValue.GetObject("FormatOptions");
@@ -114,6 +127,13 @@ Dataset& Dataset::operator =(JsonView jsonValue)
     m_source = SourceMapper::GetSourceForName(jsonValue.GetString("Source"));
 
     m_sourceHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PathOptions"))
+  {
+    m_pathOptions = jsonValue.GetObject("PathOptions");
+
+    m_pathOptionsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Tags"))
@@ -163,6 +183,11 @@ JsonValue Dataset::Jsonize() const
 
   }
 
+  if(m_formatHasBeenSet)
+  {
+   payload.WithString("Format", InputFormatMapper::GetNameForInputFormat(m_format));
+  }
+
   if(m_formatOptionsHasBeenSet)
   {
    payload.WithObject("FormatOptions", m_formatOptions.Jsonize());
@@ -189,6 +214,12 @@ JsonValue Dataset::Jsonize() const
   if(m_sourceHasBeenSet)
   {
    payload.WithString("Source", SourceMapper::GetNameForSource(m_source));
+  }
+
+  if(m_pathOptionsHasBeenSet)
+  {
+   payload.WithObject("PathOptions", m_pathOptions.Jsonize());
+
   }
 
   if(m_tagsHasBeenSet)

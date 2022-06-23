@@ -13,6 +13,7 @@
 #include <aws/firehose/model/ExtendedS3DestinationConfiguration.h>
 #include <aws/firehose/model/RedshiftDestinationConfiguration.h>
 #include <aws/firehose/model/ElasticsearchDestinationConfiguration.h>
+#include <aws/firehose/model/AmazonopensearchserviceDestinationConfiguration.h>
 #include <aws/firehose/model/SplunkDestinationConfiguration.h>
 #include <aws/firehose/model/HttpEndpointDestinationConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -337,6 +338,25 @@ namespace Model
     inline CreateDeliveryStreamRequest& WithElasticsearchDestinationConfiguration(ElasticsearchDestinationConfiguration&& value) { SetElasticsearchDestinationConfiguration(std::move(value)); return *this;}
 
 
+    
+    inline const AmazonopensearchserviceDestinationConfiguration& GetAmazonopensearchserviceDestinationConfiguration() const{ return m_amazonopensearchserviceDestinationConfiguration; }
+
+    
+    inline bool AmazonopensearchserviceDestinationConfigurationHasBeenSet() const { return m_amazonopensearchserviceDestinationConfigurationHasBeenSet; }
+
+    
+    inline void SetAmazonopensearchserviceDestinationConfiguration(const AmazonopensearchserviceDestinationConfiguration& value) { m_amazonopensearchserviceDestinationConfigurationHasBeenSet = true; m_amazonopensearchserviceDestinationConfiguration = value; }
+
+    
+    inline void SetAmazonopensearchserviceDestinationConfiguration(AmazonopensearchserviceDestinationConfiguration&& value) { m_amazonopensearchserviceDestinationConfigurationHasBeenSet = true; m_amazonopensearchserviceDestinationConfiguration = std::move(value); }
+
+    
+    inline CreateDeliveryStreamRequest& WithAmazonopensearchserviceDestinationConfiguration(const AmazonopensearchserviceDestinationConfiguration& value) { SetAmazonopensearchserviceDestinationConfiguration(value); return *this;}
+
+    
+    inline CreateDeliveryStreamRequest& WithAmazonopensearchserviceDestinationConfiguration(AmazonopensearchserviceDestinationConfiguration&& value) { SetAmazonopensearchserviceDestinationConfiguration(std::move(value)); return *this;}
+
+
     /**
      * <p>The destination in Splunk. You can specify only one destination.</p>
      */
@@ -523,6 +543,9 @@ namespace Model
 
     ElasticsearchDestinationConfiguration m_elasticsearchDestinationConfiguration;
     bool m_elasticsearchDestinationConfigurationHasBeenSet;
+
+    AmazonopensearchserviceDestinationConfiguration m_amazonopensearchserviceDestinationConfiguration;
+    bool m_amazonopensearchserviceDestinationConfigurationHasBeenSet;
 
     SplunkDestinationConfiguration m_splunkDestinationConfiguration;
     bool m_splunkDestinationConfigurationHasBeenSet;

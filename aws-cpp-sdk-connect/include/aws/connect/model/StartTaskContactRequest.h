@@ -8,6 +8,7 @@
 #include <aws/connect/ConnectRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/connect/model/Reference.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -36,42 +37,50 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline StartTaskContactRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline StartTaskContactRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline StartTaskContactRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
@@ -551,6 +560,49 @@ namespace Model
      */
     inline StartTaskContactRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
+
+    /**
+     * <p>The timestamp, in Unix Epoch seconds format, at which to start running the
+     * inbound contact flow. The scheduled time cannot be in the past. It must be
+     * within up to 6 days in future. </p>
+     */
+    inline const Aws::Utils::DateTime& GetScheduledTime() const{ return m_scheduledTime; }
+
+    /**
+     * <p>The timestamp, in Unix Epoch seconds format, at which to start running the
+     * inbound contact flow. The scheduled time cannot be in the past. It must be
+     * within up to 6 days in future. </p>
+     */
+    inline bool ScheduledTimeHasBeenSet() const { return m_scheduledTimeHasBeenSet; }
+
+    /**
+     * <p>The timestamp, in Unix Epoch seconds format, at which to start running the
+     * inbound contact flow. The scheduled time cannot be in the past. It must be
+     * within up to 6 days in future. </p>
+     */
+    inline void SetScheduledTime(const Aws::Utils::DateTime& value) { m_scheduledTimeHasBeenSet = true; m_scheduledTime = value; }
+
+    /**
+     * <p>The timestamp, in Unix Epoch seconds format, at which to start running the
+     * inbound contact flow. The scheduled time cannot be in the past. It must be
+     * within up to 6 days in future. </p>
+     */
+    inline void SetScheduledTime(Aws::Utils::DateTime&& value) { m_scheduledTimeHasBeenSet = true; m_scheduledTime = std::move(value); }
+
+    /**
+     * <p>The timestamp, in Unix Epoch seconds format, at which to start running the
+     * inbound contact flow. The scheduled time cannot be in the past. It must be
+     * within up to 6 days in future. </p>
+     */
+    inline StartTaskContactRequest& WithScheduledTime(const Aws::Utils::DateTime& value) { SetScheduledTime(value); return *this;}
+
+    /**
+     * <p>The timestamp, in Unix Epoch seconds format, at which to start running the
+     * inbound contact flow. The scheduled time cannot be in the past. It must be
+     * within up to 6 days in future. </p>
+     */
+    inline StartTaskContactRequest& WithScheduledTime(Aws::Utils::DateTime&& value) { SetScheduledTime(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_instanceId;
@@ -576,6 +628,9 @@ namespace Model
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
+
+    Aws::Utils::DateTime m_scheduledTime;
+    bool m_scheduledTimeHasBeenSet;
   };
 
 } // namespace Model

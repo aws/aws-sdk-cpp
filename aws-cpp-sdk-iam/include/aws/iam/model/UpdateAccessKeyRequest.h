@@ -177,43 +177,43 @@ namespace Model
 
     /**
      * <p> The status you want to assign to the secret access key. <code>Active</code>
-     * means that the key can be used for API calls to AWS, while <code>Inactive</code>
-     * means that the key cannot be used.</p>
+     * means that the key can be used for programmatic calls to Amazon Web Services,
+     * while <code>Inactive</code> means that the key cannot be used.</p>
      */
     inline const StatusType& GetStatus() const{ return m_status; }
 
     /**
      * <p> The status you want to assign to the secret access key. <code>Active</code>
-     * means that the key can be used for API calls to AWS, while <code>Inactive</code>
-     * means that the key cannot be used.</p>
+     * means that the key can be used for programmatic calls to Amazon Web Services,
+     * while <code>Inactive</code> means that the key cannot be used.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p> The status you want to assign to the secret access key. <code>Active</code>
-     * means that the key can be used for API calls to AWS, while <code>Inactive</code>
-     * means that the key cannot be used.</p>
+     * means that the key can be used for programmatic calls to Amazon Web Services,
+     * while <code>Inactive</code> means that the key cannot be used.</p>
      */
     inline void SetStatus(const StatusType& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p> The status you want to assign to the secret access key. <code>Active</code>
-     * means that the key can be used for API calls to AWS, while <code>Inactive</code>
-     * means that the key cannot be used.</p>
+     * means that the key can be used for programmatic calls to Amazon Web Services,
+     * while <code>Inactive</code> means that the key cannot be used.</p>
      */
     inline void SetStatus(StatusType&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p> The status you want to assign to the secret access key. <code>Active</code>
-     * means that the key can be used for API calls to AWS, while <code>Inactive</code>
-     * means that the key cannot be used.</p>
+     * means that the key can be used for programmatic calls to Amazon Web Services,
+     * while <code>Inactive</code> means that the key cannot be used.</p>
      */
     inline UpdateAccessKeyRequest& WithStatus(const StatusType& value) { SetStatus(value); return *this;}
 
     /**
      * <p> The status you want to assign to the secret access key. <code>Active</code>
-     * means that the key can be used for API calls to AWS, while <code>Inactive</code>
-     * means that the key cannot be used.</p>
+     * means that the key can be used for programmatic calls to Amazon Web Services,
+     * while <code>Inactive</code> means that the key cannot be used.</p>
      */
     inline UpdateAccessKeyRequest& WithStatus(StatusType&& value) { SetStatus(std::move(value)); return *this;}
 

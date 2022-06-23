@@ -136,32 +136,32 @@ namespace Model
 
 
     /**
-     * <p>The type of the ML object to tag. </p>
+     * <p>The type of the ML object to tag.</p>
      */
     inline const TaggableResourceType& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The type of the ML object to tag. </p>
+     * <p>The type of the ML object to tag.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>The type of the ML object to tag. </p>
+     * <p>The type of the ML object to tag.</p>
      */
     inline void SetResourceType(const TaggableResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The type of the ML object to tag. </p>
+     * <p>The type of the ML object to tag.</p>
      */
     inline void SetResourceType(TaggableResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The type of the ML object to tag. </p>
+     * <p>The type of the ML object to tag.</p>
      */
     inline AddTagsRequest& WithResourceType(const TaggableResourceType& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The type of the ML object to tag. </p>
+     * <p>The type of the ML object to tag.</p>
      */
     inline AddTagsRequest& WithResourceType(TaggableResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 

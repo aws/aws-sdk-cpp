@@ -8,6 +8,7 @@
 #include <aws/lightsail/LightsailRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lightsail/model/IpAddressType.h>
 #include <aws/lightsail/model/Tag.h>
 #include <aws/lightsail/model/AddOnRequest.h>
 #include <utility>
@@ -335,8 +336,8 @@ namespace Model
      * on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian
      * and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a
      * complete list, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image">Dev
-     * Guide</a>.</p> 
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon
+     * Lightsail Developer Guide</a>.</p> 
      */
     inline const Aws::String& GetUserData() const{ return m_userData; }
 
@@ -347,8 +348,8 @@ namespace Model
      * on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian
      * and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a
      * complete list, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image">Dev
-     * Guide</a>.</p> 
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon
+     * Lightsail Developer Guide</a>.</p> 
      */
     inline bool UserDataHasBeenSet() const { return m_userDataHasBeenSet; }
 
@@ -359,8 +360,8 @@ namespace Model
      * on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian
      * and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a
      * complete list, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image">Dev
-     * Guide</a>.</p> 
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon
+     * Lightsail Developer Guide</a>.</p> 
      */
     inline void SetUserData(const Aws::String& value) { m_userDataHasBeenSet = true; m_userData = value; }
 
@@ -371,8 +372,8 @@ namespace Model
      * on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian
      * and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a
      * complete list, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image">Dev
-     * Guide</a>.</p> 
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon
+     * Lightsail Developer Guide</a>.</p> 
      */
     inline void SetUserData(Aws::String&& value) { m_userDataHasBeenSet = true; m_userData = std::move(value); }
 
@@ -383,8 +384,8 @@ namespace Model
      * on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian
      * and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a
      * complete list, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image">Dev
-     * Guide</a>.</p> 
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon
+     * Lightsail Developer Guide</a>.</p> 
      */
     inline void SetUserData(const char* value) { m_userDataHasBeenSet = true; m_userData.assign(value); }
 
@@ -395,8 +396,8 @@ namespace Model
      * on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian
      * and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a
      * complete list, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image">Dev
-     * Guide</a>.</p> 
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon
+     * Lightsail Developer Guide</a>.</p> 
      */
     inline CreateInstancesRequest& WithUserData(const Aws::String& value) { SetUserData(value); return *this;}
 
@@ -407,8 +408,8 @@ namespace Model
      * on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian
      * and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a
      * complete list, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image">Dev
-     * Guide</a>.</p> 
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon
+     * Lightsail Developer Guide</a>.</p> 
      */
     inline CreateInstancesRequest& WithUserData(Aws::String&& value) { SetUserData(std::move(value)); return *this;}
 
@@ -419,8 +420,8 @@ namespace Model
      * on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian
      * and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a
      * complete list, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image">Dev
-     * Guide</a>.</p> 
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon
+     * Lightsail Developer Guide</a>.</p> 
      */
     inline CreateInstancesRequest& WithUserData(const char* value) { SetUserData(value); return *this;}
 
@@ -571,6 +572,49 @@ namespace Model
      */
     inline CreateInstancesRequest& AddAddOns(AddOnRequest&& value) { m_addOnsHasBeenSet = true; m_addOns.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The IP address type for the instance.</p> <p>The possible values are
+     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
+     * IPv6.</p> <p>The default value is <code>dualstack</code>.</p>
+     */
+    inline const IpAddressType& GetIpAddressType() const{ return m_ipAddressType; }
+
+    /**
+     * <p>The IP address type for the instance.</p> <p>The possible values are
+     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
+     * IPv6.</p> <p>The default value is <code>dualstack</code>.</p>
+     */
+    inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
+
+    /**
+     * <p>The IP address type for the instance.</p> <p>The possible values are
+     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
+     * IPv6.</p> <p>The default value is <code>dualstack</code>.</p>
+     */
+    inline void SetIpAddressType(const IpAddressType& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
+
+    /**
+     * <p>The IP address type for the instance.</p> <p>The possible values are
+     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
+     * IPv6.</p> <p>The default value is <code>dualstack</code>.</p>
+     */
+    inline void SetIpAddressType(IpAddressType&& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = std::move(value); }
+
+    /**
+     * <p>The IP address type for the instance.</p> <p>The possible values are
+     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
+     * IPv6.</p> <p>The default value is <code>dualstack</code>.</p>
+     */
+    inline CreateInstancesRequest& WithIpAddressType(const IpAddressType& value) { SetIpAddressType(value); return *this;}
+
+    /**
+     * <p>The IP address type for the instance.</p> <p>The possible values are
+     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
+     * IPv6.</p> <p>The default value is <code>dualstack</code>.</p>
+     */
+    inline CreateInstancesRequest& WithIpAddressType(IpAddressType&& value) { SetIpAddressType(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_instanceNames;
@@ -596,6 +640,9 @@ namespace Model
 
     Aws::Vector<AddOnRequest> m_addOns;
     bool m_addOnsHasBeenSet;
+
+    IpAddressType m_ipAddressType;
+    bool m_ipAddressTypeHasBeenSet;
   };
 
 } // namespace Model

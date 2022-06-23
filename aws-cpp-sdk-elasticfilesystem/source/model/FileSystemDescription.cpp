@@ -39,6 +39,8 @@ FileSystemDescription::FileSystemDescription() :
     m_throughputModeHasBeenSet(false),
     m_provisionedThroughputInMibps(0.0),
     m_provisionedThroughputInMibpsHasBeenSet(false),
+    m_availabilityZoneNameHasBeenSet(false),
+    m_availabilityZoneIdHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -64,6 +66,8 @@ FileSystemDescription::FileSystemDescription(JsonView jsonValue) :
     m_throughputModeHasBeenSet(false),
     m_provisionedThroughputInMibps(0.0),
     m_provisionedThroughputInMibpsHasBeenSet(false),
+    m_availabilityZoneNameHasBeenSet(false),
+    m_availabilityZoneIdHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -169,6 +173,20 @@ FileSystemDescription& FileSystemDescription::operator =(JsonView jsonValue)
     m_provisionedThroughputInMibpsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AvailabilityZoneName"))
+  {
+    m_availabilityZoneName = jsonValue.GetString("AvailabilityZoneName");
+
+    m_availabilityZoneNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AvailabilityZoneId"))
+  {
+    m_availabilityZoneId = jsonValue.GetString("AvailabilityZoneId");
+
+    m_availabilityZoneIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Tags"))
   {
     Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -263,6 +281,18 @@ JsonValue FileSystemDescription::Jsonize() const
   if(m_provisionedThroughputInMibpsHasBeenSet)
   {
    payload.WithDouble("ProvisionedThroughputInMibps", m_provisionedThroughputInMibps);
+
+  }
+
+  if(m_availabilityZoneNameHasBeenSet)
+  {
+   payload.WithString("AvailabilityZoneName", m_availabilityZoneName);
+
+  }
+
+  if(m_availabilityZoneIdHasBeenSet)
+  {
+   payload.WithString("AvailabilityZoneId", m_availabilityZoneId);
 
   }
 

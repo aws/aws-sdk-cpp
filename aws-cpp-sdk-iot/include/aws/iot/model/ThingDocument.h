@@ -276,73 +276,168 @@ namespace Model
 
 
     /**
-     * <p>The shadow.</p>
+     * <p>The unnamed shadow and named shadow.</p> <p>For more information about
+     * shadows, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT
+     * Device Shadow service.</a> </p>
      */
     inline const Aws::String& GetShadow() const{ return m_shadow; }
 
     /**
-     * <p>The shadow.</p>
+     * <p>The unnamed shadow and named shadow.</p> <p>For more information about
+     * shadows, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT
+     * Device Shadow service.</a> </p>
      */
     inline bool ShadowHasBeenSet() const { return m_shadowHasBeenSet; }
 
     /**
-     * <p>The shadow.</p>
+     * <p>The unnamed shadow and named shadow.</p> <p>For more information about
+     * shadows, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT
+     * Device Shadow service.</a> </p>
      */
     inline void SetShadow(const Aws::String& value) { m_shadowHasBeenSet = true; m_shadow = value; }
 
     /**
-     * <p>The shadow.</p>
+     * <p>The unnamed shadow and named shadow.</p> <p>For more information about
+     * shadows, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT
+     * Device Shadow service.</a> </p>
      */
     inline void SetShadow(Aws::String&& value) { m_shadowHasBeenSet = true; m_shadow = std::move(value); }
 
     /**
-     * <p>The shadow.</p>
+     * <p>The unnamed shadow and named shadow.</p> <p>For more information about
+     * shadows, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT
+     * Device Shadow service.</a> </p>
      */
     inline void SetShadow(const char* value) { m_shadowHasBeenSet = true; m_shadow.assign(value); }
 
     /**
-     * <p>The shadow.</p>
+     * <p>The unnamed shadow and named shadow.</p> <p>For more information about
+     * shadows, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT
+     * Device Shadow service.</a> </p>
      */
     inline ThingDocument& WithShadow(const Aws::String& value) { SetShadow(value); return *this;}
 
     /**
-     * <p>The shadow.</p>
+     * <p>The unnamed shadow and named shadow.</p> <p>For more information about
+     * shadows, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT
+     * Device Shadow service.</a> </p>
      */
     inline ThingDocument& WithShadow(Aws::String&& value) { SetShadow(std::move(value)); return *this;}
 
     /**
-     * <p>The shadow.</p>
+     * <p>The unnamed shadow and named shadow.</p> <p>For more information about
+     * shadows, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html">IoT
+     * Device Shadow service.</a> </p>
      */
     inline ThingDocument& WithShadow(const char* value) { SetShadow(value); return *this;}
 
 
     /**
-     * <p>Indicates whether the thing is connected to the AWS IoT service.</p>
+     * <p>Contains Device Defender data.</p> <p>For more information about Device
+     * Defender, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender.html">Device
+     * Defender</a>. </p>
+     */
+    inline const Aws::String& GetDeviceDefender() const{ return m_deviceDefender; }
+
+    /**
+     * <p>Contains Device Defender data.</p> <p>For more information about Device
+     * Defender, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender.html">Device
+     * Defender</a>. </p>
+     */
+    inline bool DeviceDefenderHasBeenSet() const { return m_deviceDefenderHasBeenSet; }
+
+    /**
+     * <p>Contains Device Defender data.</p> <p>For more information about Device
+     * Defender, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender.html">Device
+     * Defender</a>. </p>
+     */
+    inline void SetDeviceDefender(const Aws::String& value) { m_deviceDefenderHasBeenSet = true; m_deviceDefender = value; }
+
+    /**
+     * <p>Contains Device Defender data.</p> <p>For more information about Device
+     * Defender, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender.html">Device
+     * Defender</a>. </p>
+     */
+    inline void SetDeviceDefender(Aws::String&& value) { m_deviceDefenderHasBeenSet = true; m_deviceDefender = std::move(value); }
+
+    /**
+     * <p>Contains Device Defender data.</p> <p>For more information about Device
+     * Defender, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender.html">Device
+     * Defender</a>. </p>
+     */
+    inline void SetDeviceDefender(const char* value) { m_deviceDefenderHasBeenSet = true; m_deviceDefender.assign(value); }
+
+    /**
+     * <p>Contains Device Defender data.</p> <p>For more information about Device
+     * Defender, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender.html">Device
+     * Defender</a>. </p>
+     */
+    inline ThingDocument& WithDeviceDefender(const Aws::String& value) { SetDeviceDefender(value); return *this;}
+
+    /**
+     * <p>Contains Device Defender data.</p> <p>For more information about Device
+     * Defender, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender.html">Device
+     * Defender</a>. </p>
+     */
+    inline ThingDocument& WithDeviceDefender(Aws::String&& value) { SetDeviceDefender(std::move(value)); return *this;}
+
+    /**
+     * <p>Contains Device Defender data.</p> <p>For more information about Device
+     * Defender, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender.html">Device
+     * Defender</a>. </p>
+     */
+    inline ThingDocument& WithDeviceDefender(const char* value) { SetDeviceDefender(value); return *this;}
+
+
+    /**
+     * <p>Indicates whether the thing is connected to the Amazon Web Services IoT Core
+     * service.</p>
      */
     inline const ThingConnectivity& GetConnectivity() const{ return m_connectivity; }
 
     /**
-     * <p>Indicates whether the thing is connected to the AWS IoT service.</p>
+     * <p>Indicates whether the thing is connected to the Amazon Web Services IoT Core
+     * service.</p>
      */
     inline bool ConnectivityHasBeenSet() const { return m_connectivityHasBeenSet; }
 
     /**
-     * <p>Indicates whether the thing is connected to the AWS IoT service.</p>
+     * <p>Indicates whether the thing is connected to the Amazon Web Services IoT Core
+     * service.</p>
      */
     inline void SetConnectivity(const ThingConnectivity& value) { m_connectivityHasBeenSet = true; m_connectivity = value; }
 
     /**
-     * <p>Indicates whether the thing is connected to the AWS IoT service.</p>
+     * <p>Indicates whether the thing is connected to the Amazon Web Services IoT Core
+     * service.</p>
      */
     inline void SetConnectivity(ThingConnectivity&& value) { m_connectivityHasBeenSet = true; m_connectivity = std::move(value); }
 
     /**
-     * <p>Indicates whether the thing is connected to the AWS IoT service.</p>
+     * <p>Indicates whether the thing is connected to the Amazon Web Services IoT Core
+     * service.</p>
      */
     inline ThingDocument& WithConnectivity(const ThingConnectivity& value) { SetConnectivity(value); return *this;}
 
     /**
-     * <p>Indicates whether the thing is connected to the AWS IoT service.</p>
+     * <p>Indicates whether the thing is connected to the Amazon Web Services IoT Core
+     * service.</p>
      */
     inline ThingDocument& WithConnectivity(ThingConnectivity&& value) { SetConnectivity(std::move(value)); return *this;}
 
@@ -365,6 +460,9 @@ namespace Model
 
     Aws::String m_shadow;
     bool m_shadowHasBeenSet;
+
+    Aws::String m_deviceDefender;
+    bool m_deviceDefenderHasBeenSet;
 
     ThingConnectivity m_connectivity;
     bool m_connectivityHasBeenSet;

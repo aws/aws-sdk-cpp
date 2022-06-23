@@ -12,6 +12,7 @@
 #include <aws/ec2/model/InstanceType.h>
 #include <aws/ec2/model/SpotFleetMonitoring.h>
 #include <aws/ec2/model/SpotPlacement.h>
+#include <aws/ec2/model/InstanceRequirements.h>
 #include <aws/ec2/model/GroupIdentifier.h>
 #include <aws/ec2/model/BlockDeviceMapping.h>
 #include <aws/ec2/model/InstanceNetworkInterfaceSpecification.h>
@@ -592,64 +593,64 @@ namespace Model
     /**
      * <p>The ID of the RAM disk. Some kernels require additional drivers at launch.
      * Check the kernel requirements for information about whether you need to specify
-     * a RAM disk. To find kernel requirements, refer to the AWS Resource Center and
-     * search for the kernel ID.</p>
+     * a RAM disk. To find kernel requirements, refer to the Amazon Web Services
+     * Resource Center and search for the kernel ID.</p>
      */
     inline const Aws::String& GetRamdiskId() const{ return m_ramdiskId; }
 
     /**
      * <p>The ID of the RAM disk. Some kernels require additional drivers at launch.
      * Check the kernel requirements for information about whether you need to specify
-     * a RAM disk. To find kernel requirements, refer to the AWS Resource Center and
-     * search for the kernel ID.</p>
+     * a RAM disk. To find kernel requirements, refer to the Amazon Web Services
+     * Resource Center and search for the kernel ID.</p>
      */
     inline bool RamdiskIdHasBeenSet() const { return m_ramdiskIdHasBeenSet; }
 
     /**
      * <p>The ID of the RAM disk. Some kernels require additional drivers at launch.
      * Check the kernel requirements for information about whether you need to specify
-     * a RAM disk. To find kernel requirements, refer to the AWS Resource Center and
-     * search for the kernel ID.</p>
+     * a RAM disk. To find kernel requirements, refer to the Amazon Web Services
+     * Resource Center and search for the kernel ID.</p>
      */
     inline void SetRamdiskId(const Aws::String& value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId = value; }
 
     /**
      * <p>The ID of the RAM disk. Some kernels require additional drivers at launch.
      * Check the kernel requirements for information about whether you need to specify
-     * a RAM disk. To find kernel requirements, refer to the AWS Resource Center and
-     * search for the kernel ID.</p>
+     * a RAM disk. To find kernel requirements, refer to the Amazon Web Services
+     * Resource Center and search for the kernel ID.</p>
      */
     inline void SetRamdiskId(Aws::String&& value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId = std::move(value); }
 
     /**
      * <p>The ID of the RAM disk. Some kernels require additional drivers at launch.
      * Check the kernel requirements for information about whether you need to specify
-     * a RAM disk. To find kernel requirements, refer to the AWS Resource Center and
-     * search for the kernel ID.</p>
+     * a RAM disk. To find kernel requirements, refer to the Amazon Web Services
+     * Resource Center and search for the kernel ID.</p>
      */
     inline void SetRamdiskId(const char* value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId.assign(value); }
 
     /**
      * <p>The ID of the RAM disk. Some kernels require additional drivers at launch.
      * Check the kernel requirements for information about whether you need to specify
-     * a RAM disk. To find kernel requirements, refer to the AWS Resource Center and
-     * search for the kernel ID.</p>
+     * a RAM disk. To find kernel requirements, refer to the Amazon Web Services
+     * Resource Center and search for the kernel ID.</p>
      */
     inline SpotFleetLaunchSpecification& WithRamdiskId(const Aws::String& value) { SetRamdiskId(value); return *this;}
 
     /**
      * <p>The ID of the RAM disk. Some kernels require additional drivers at launch.
      * Check the kernel requirements for information about whether you need to specify
-     * a RAM disk. To find kernel requirements, refer to the AWS Resource Center and
-     * search for the kernel ID.</p>
+     * a RAM disk. To find kernel requirements, refer to the Amazon Web Services
+     * Resource Center and search for the kernel ID.</p>
      */
     inline SpotFleetLaunchSpecification& WithRamdiskId(Aws::String&& value) { SetRamdiskId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the RAM disk. Some kernels require additional drivers at launch.
      * Check the kernel requirements for information about whether you need to specify
-     * a RAM disk. To find kernel requirements, refer to the AWS Resource Center and
-     * search for the kernel ID.</p>
+     * a RAM disk. To find kernel requirements, refer to the Amazon Web Services
+     * Resource Center and search for the kernel ID.</p>
      */
     inline SpotFleetLaunchSpecification& WithRamdiskId(const char* value) { SetRamdiskId(value); return *this;}
 
@@ -898,6 +899,55 @@ namespace Model
      */
     inline SpotFleetLaunchSpecification& AddTagSpecifications(SpotFleetTagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The attributes for the instance types. When you specify instance attributes,
+     * Amazon EC2 will identify instance types with those attributes.</p>  <p>If
+     * you specify <code>InstanceRequirements</code>, you can't specify
+     * <code>InstanceTypes</code>.</p> 
+     */
+    inline const InstanceRequirements& GetInstanceRequirements() const{ return m_instanceRequirements; }
+
+    /**
+     * <p>The attributes for the instance types. When you specify instance attributes,
+     * Amazon EC2 will identify instance types with those attributes.</p>  <p>If
+     * you specify <code>InstanceRequirements</code>, you can't specify
+     * <code>InstanceTypes</code>.</p> 
+     */
+    inline bool InstanceRequirementsHasBeenSet() const { return m_instanceRequirementsHasBeenSet; }
+
+    /**
+     * <p>The attributes for the instance types. When you specify instance attributes,
+     * Amazon EC2 will identify instance types with those attributes.</p>  <p>If
+     * you specify <code>InstanceRequirements</code>, you can't specify
+     * <code>InstanceTypes</code>.</p> 
+     */
+    inline void SetInstanceRequirements(const InstanceRequirements& value) { m_instanceRequirementsHasBeenSet = true; m_instanceRequirements = value; }
+
+    /**
+     * <p>The attributes for the instance types. When you specify instance attributes,
+     * Amazon EC2 will identify instance types with those attributes.</p>  <p>If
+     * you specify <code>InstanceRequirements</code>, you can't specify
+     * <code>InstanceTypes</code>.</p> 
+     */
+    inline void SetInstanceRequirements(InstanceRequirements&& value) { m_instanceRequirementsHasBeenSet = true; m_instanceRequirements = std::move(value); }
+
+    /**
+     * <p>The attributes for the instance types. When you specify instance attributes,
+     * Amazon EC2 will identify instance types with those attributes.</p>  <p>If
+     * you specify <code>InstanceRequirements</code>, you can't specify
+     * <code>InstanceTypes</code>.</p> 
+     */
+    inline SpotFleetLaunchSpecification& WithInstanceRequirements(const InstanceRequirements& value) { SetInstanceRequirements(value); return *this;}
+
+    /**
+     * <p>The attributes for the instance types. When you specify instance attributes,
+     * Amazon EC2 will identify instance types with those attributes.</p>  <p>If
+     * you specify <code>InstanceRequirements</code>, you can't specify
+     * <code>InstanceTypes</code>.</p> 
+     */
+    inline SpotFleetLaunchSpecification& WithInstanceRequirements(InstanceRequirements&& value) { SetInstanceRequirements(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<GroupIdentifier> m_securityGroups;
@@ -953,6 +1003,9 @@ namespace Model
 
     Aws::Vector<SpotFleetTagSpecification> m_tagSpecifications;
     bool m_tagSpecificationsHasBeenSet;
+
+    InstanceRequirements m_instanceRequirements;
+    bool m_instanceRequirementsHasBeenSet;
   };
 
 } // namespace Model

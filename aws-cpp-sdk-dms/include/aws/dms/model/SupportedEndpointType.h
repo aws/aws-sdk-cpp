@@ -139,22 +139,22 @@ namespace Model
 
 
     /**
-     * <p>Indicates if Change Data Capture (CDC) is supported.</p>
+     * <p>Indicates if change data capture (CDC) is supported.</p>
      */
     inline bool GetSupportsCDC() const{ return m_supportsCDC; }
 
     /**
-     * <p>Indicates if Change Data Capture (CDC) is supported.</p>
+     * <p>Indicates if change data capture (CDC) is supported.</p>
      */
     inline bool SupportsCDCHasBeenSet() const { return m_supportsCDCHasBeenSet; }
 
     /**
-     * <p>Indicates if Change Data Capture (CDC) is supported.</p>
+     * <p>Indicates if change data capture (CDC) is supported.</p>
      */
     inline void SetSupportsCDC(bool value) { m_supportsCDCHasBeenSet = true; m_supportsCDC = value; }
 
     /**
-     * <p>Indicates if Change Data Capture (CDC) is supported.</p>
+     * <p>Indicates if change data capture (CDC) is supported.</p>
      */
     inline SupportedEndpointType& WithSupportsCDC(bool value) { SetSupportsCDC(value); return *this;}
 
@@ -197,58 +197,58 @@ namespace Model
 
 
     /**
-     * <p>The earliest AWS DMS engine version that supports this endpoint engine. Note
-     * that endpoint engines released with AWS DMS versions earlier than 3.1.1 do not
-     * return a value for this parameter.</p>
+     * <p>The earliest DMS engine version that supports this endpoint engine. Note that
+     * endpoint engines released with DMS versions earlier than 3.1.1 do not return a
+     * value for this parameter.</p>
      */
     inline const Aws::String& GetReplicationInstanceEngineMinimumVersion() const{ return m_replicationInstanceEngineMinimumVersion; }
 
     /**
-     * <p>The earliest AWS DMS engine version that supports this endpoint engine. Note
-     * that endpoint engines released with AWS DMS versions earlier than 3.1.1 do not
-     * return a value for this parameter.</p>
+     * <p>The earliest DMS engine version that supports this endpoint engine. Note that
+     * endpoint engines released with DMS versions earlier than 3.1.1 do not return a
+     * value for this parameter.</p>
      */
     inline bool ReplicationInstanceEngineMinimumVersionHasBeenSet() const { return m_replicationInstanceEngineMinimumVersionHasBeenSet; }
 
     /**
-     * <p>The earliest AWS DMS engine version that supports this endpoint engine. Note
-     * that endpoint engines released with AWS DMS versions earlier than 3.1.1 do not
-     * return a value for this parameter.</p>
+     * <p>The earliest DMS engine version that supports this endpoint engine. Note that
+     * endpoint engines released with DMS versions earlier than 3.1.1 do not return a
+     * value for this parameter.</p>
      */
     inline void SetReplicationInstanceEngineMinimumVersion(const Aws::String& value) { m_replicationInstanceEngineMinimumVersionHasBeenSet = true; m_replicationInstanceEngineMinimumVersion = value; }
 
     /**
-     * <p>The earliest AWS DMS engine version that supports this endpoint engine. Note
-     * that endpoint engines released with AWS DMS versions earlier than 3.1.1 do not
-     * return a value for this parameter.</p>
+     * <p>The earliest DMS engine version that supports this endpoint engine. Note that
+     * endpoint engines released with DMS versions earlier than 3.1.1 do not return a
+     * value for this parameter.</p>
      */
     inline void SetReplicationInstanceEngineMinimumVersion(Aws::String&& value) { m_replicationInstanceEngineMinimumVersionHasBeenSet = true; m_replicationInstanceEngineMinimumVersion = std::move(value); }
 
     /**
-     * <p>The earliest AWS DMS engine version that supports this endpoint engine. Note
-     * that endpoint engines released with AWS DMS versions earlier than 3.1.1 do not
-     * return a value for this parameter.</p>
+     * <p>The earliest DMS engine version that supports this endpoint engine. Note that
+     * endpoint engines released with DMS versions earlier than 3.1.1 do not return a
+     * value for this parameter.</p>
      */
     inline void SetReplicationInstanceEngineMinimumVersion(const char* value) { m_replicationInstanceEngineMinimumVersionHasBeenSet = true; m_replicationInstanceEngineMinimumVersion.assign(value); }
 
     /**
-     * <p>The earliest AWS DMS engine version that supports this endpoint engine. Note
-     * that endpoint engines released with AWS DMS versions earlier than 3.1.1 do not
-     * return a value for this parameter.</p>
+     * <p>The earliest DMS engine version that supports this endpoint engine. Note that
+     * endpoint engines released with DMS versions earlier than 3.1.1 do not return a
+     * value for this parameter.</p>
      */
     inline SupportedEndpointType& WithReplicationInstanceEngineMinimumVersion(const Aws::String& value) { SetReplicationInstanceEngineMinimumVersion(value); return *this;}
 
     /**
-     * <p>The earliest AWS DMS engine version that supports this endpoint engine. Note
-     * that endpoint engines released with AWS DMS versions earlier than 3.1.1 do not
-     * return a value for this parameter.</p>
+     * <p>The earliest DMS engine version that supports this endpoint engine. Note that
+     * endpoint engines released with DMS versions earlier than 3.1.1 do not return a
+     * value for this parameter.</p>
      */
     inline SupportedEndpointType& WithReplicationInstanceEngineMinimumVersion(Aws::String&& value) { SetReplicationInstanceEngineMinimumVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The earliest AWS DMS engine version that supports this endpoint engine. Note
-     * that endpoint engines released with AWS DMS versions earlier than 3.1.1 do not
-     * return a value for this parameter.</p>
+     * <p>The earliest DMS engine version that supports this endpoint engine. Note that
+     * endpoint engines released with DMS versions earlier than 3.1.1 do not return a
+     * value for this parameter.</p>
      */
     inline SupportedEndpointType& WithReplicationInstanceEngineMinimumVersion(const char* value) { SetReplicationInstanceEngineMinimumVersion(value); return *this;}
 

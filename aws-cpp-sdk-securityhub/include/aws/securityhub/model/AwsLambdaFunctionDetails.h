@@ -261,50 +261,58 @@ namespace Model
 
 
     /**
-     * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is only returned if you've configured a customer managed CMK.</p>
+     * <p>The KMS key that is used to encrypt the function's environment variables.
+     * This key is only returned if you've configured a customer managed customer
+     * managed key.</p>
      */
     inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
 
     /**
-     * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is only returned if you've configured a customer managed CMK.</p>
+     * <p>The KMS key that is used to encrypt the function's environment variables.
+     * This key is only returned if you've configured a customer managed customer
+     * managed key.</p>
      */
     inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
 
     /**
-     * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is only returned if you've configured a customer managed CMK.</p>
+     * <p>The KMS key that is used to encrypt the function's environment variables.
+     * This key is only returned if you've configured a customer managed customer
+     * managed key.</p>
      */
     inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
 
     /**
-     * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is only returned if you've configured a customer managed CMK.</p>
+     * <p>The KMS key that is used to encrypt the function's environment variables.
+     * This key is only returned if you've configured a customer managed customer
+     * managed key.</p>
      */
     inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::move(value); }
 
     /**
-     * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is only returned if you've configured a customer managed CMK.</p>
+     * <p>The KMS key that is used to encrypt the function's environment variables.
+     * This key is only returned if you've configured a customer managed customer
+     * managed key.</p>
      */
     inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
 
     /**
-     * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is only returned if you've configured a customer managed CMK.</p>
+     * <p>The KMS key that is used to encrypt the function's environment variables.
+     * This key is only returned if you've configured a customer managed customer
+     * managed key.</p>
      */
     inline AwsLambdaFunctionDetails& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
 
     /**
-     * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is only returned if you've configured a customer managed CMK.</p>
+     * <p>The KMS key that is used to encrypt the function's environment variables.
+     * This key is only returned if you've configured a customer managed customer
+     * managed key.</p>
      */
     inline AwsLambdaFunctionDetails& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
 
     /**
-     * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is only returned if you've configured a customer managed CMK.</p>
+     * <p>The KMS key that is used to encrypt the function's environment variables.
+     * This key is only returned if you've configured a customer managed customer
+     * managed key.</p>
      */
     inline AwsLambdaFunctionDetails& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
 
@@ -465,22 +473,22 @@ namespace Model
 
 
     /**
-     * <p>The memory that's allocated to the function.</p>
+     * <p>The memory that is allocated to the function.</p>
      */
     inline int GetMemorySize() const{ return m_memorySize; }
 
     /**
-     * <p>The memory that's allocated to the function.</p>
+     * <p>The memory that is allocated to the function.</p>
      */
     inline bool MemorySizeHasBeenSet() const { return m_memorySizeHasBeenSet; }
 
     /**
-     * <p>The memory that's allocated to the function.</p>
+     * <p>The memory that is allocated to the function.</p>
      */
     inline void SetMemorySize(int value) { m_memorySizeHasBeenSet = true; m_memorySize = value; }
 
     /**
-     * <p>The memory that's allocated to the function.</p>
+     * <p>The memory that is allocated to the function.</p>
      */
     inline AwsLambdaFunctionDetails& WithMemorySize(int value) { SetMemorySize(value); return *this;}
 
@@ -634,32 +642,32 @@ namespace Model
 
 
     /**
-     * <p>The function's AWS X-Ray tracing configuration.</p>
+     * <p>The function's X-Ray tracing configuration.</p>
      */
     inline const AwsLambdaFunctionTracingConfig& GetTracingConfig() const{ return m_tracingConfig; }
 
     /**
-     * <p>The function's AWS X-Ray tracing configuration.</p>
+     * <p>The function's X-Ray tracing configuration.</p>
      */
     inline bool TracingConfigHasBeenSet() const { return m_tracingConfigHasBeenSet; }
 
     /**
-     * <p>The function's AWS X-Ray tracing configuration.</p>
+     * <p>The function's X-Ray tracing configuration.</p>
      */
     inline void SetTracingConfig(const AwsLambdaFunctionTracingConfig& value) { m_tracingConfigHasBeenSet = true; m_tracingConfig = value; }
 
     /**
-     * <p>The function's AWS X-Ray tracing configuration.</p>
+     * <p>The function's X-Ray tracing configuration.</p>
      */
     inline void SetTracingConfig(AwsLambdaFunctionTracingConfig&& value) { m_tracingConfigHasBeenSet = true; m_tracingConfig = std::move(value); }
 
     /**
-     * <p>The function's AWS X-Ray tracing configuration.</p>
+     * <p>The function's X-Ray tracing configuration.</p>
      */
     inline AwsLambdaFunctionDetails& WithTracingConfig(const AwsLambdaFunctionTracingConfig& value) { SetTracingConfig(value); return *this;}
 
     /**
-     * <p>The function's AWS X-Ray tracing configuration.</p>
+     * <p>The function's X-Ray tracing configuration.</p>
      */
     inline AwsLambdaFunctionDetails& WithTracingConfig(AwsLambdaFunctionTracingConfig&& value) { SetTracingConfig(std::move(value)); return *this;}
 

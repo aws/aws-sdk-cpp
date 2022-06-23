@@ -19,11 +19,13 @@ namespace Model
 {
 
 HttpGatewayRouteAction::HttpGatewayRouteAction() : 
+    m_rewriteHasBeenSet(false),
     m_targetHasBeenSet(false)
 {
 }
 
 HttpGatewayRouteAction::HttpGatewayRouteAction(JsonView jsonValue) : 
+    m_rewriteHasBeenSet(false),
     m_targetHasBeenSet(false)
 {
   *this = jsonValue;
@@ -31,6 +33,13 @@ HttpGatewayRouteAction::HttpGatewayRouteAction(JsonView jsonValue) :
 
 HttpGatewayRouteAction& HttpGatewayRouteAction::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("rewrite"))
+  {
+    m_rewrite = jsonValue.GetObject("rewrite");
+
+    m_rewriteHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("target"))
   {
     m_target = jsonValue.GetObject("target");
@@ -44,6 +53,12 @@ HttpGatewayRouteAction& HttpGatewayRouteAction::operator =(JsonView jsonValue)
 JsonValue HttpGatewayRouteAction::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_rewriteHasBeenSet)
+  {
+   payload.WithObject("rewrite", m_rewrite.Jsonize());
+
+  }
 
   if(m_targetHasBeenSet)
   {

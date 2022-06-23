@@ -26,7 +26,8 @@ UpdateInfrastructureConfigurationRequest::UpdateInfrastructureConfigurationReque
     m_snsTopicArnHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
     m_clientTokenHasBeenSet(true),
-    m_resourceTagsHasBeenSet(false)
+    m_resourceTagsHasBeenSet(false),
+    m_instanceMetadataOptionsHasBeenSet(false)
 {
 }
 
@@ -118,6 +119,12 @@ Aws::String UpdateInfrastructureConfigurationRequest::SerializePayload() const
      resourceTagsJsonMap.WithString(resourceTagsItem.first, resourceTagsItem.second);
    }
    payload.WithObject("resourceTags", std::move(resourceTagsJsonMap));
+
+  }
+
+  if(m_instanceMetadataOptionsHasBeenSet)
+  {
+   payload.WithObject("instanceMetadataOptions", m_instanceMetadataOptions.Jsonize());
 
   }
 

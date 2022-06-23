@@ -81,50 +81,50 @@ namespace Model
 
 
     /**
-     * <p>&gt;The type of action that you want to perform on the addresses. Acceptable
-     * values:</p> <ul> <li> <p>PUT: add the addresses to the contact list. If the
-     * record already exists, it will override it with the new value.</p> </li> <li>
-     * <p>DELETE: remove the addresses from the contact list.</p> </li> </ul>
+     * <p>&gt;The type of action to perform on the addresses. The following are the
+     * possible values:</p> <ul> <li> <p>PUT: add the addresses to the contact list. If
+     * the record already exists, it will override it with the new value.</p> </li>
+     * <li> <p>DELETE: remove the addresses from the contact list.</p> </li> </ul>
      */
     inline const ContactListImportAction& GetContactListImportAction() const{ return m_contactListImportAction; }
 
     /**
-     * <p>&gt;The type of action that you want to perform on the addresses. Acceptable
-     * values:</p> <ul> <li> <p>PUT: add the addresses to the contact list. If the
-     * record already exists, it will override it with the new value.</p> </li> <li>
-     * <p>DELETE: remove the addresses from the contact list.</p> </li> </ul>
+     * <p>&gt;The type of action to perform on the addresses. The following are the
+     * possible values:</p> <ul> <li> <p>PUT: add the addresses to the contact list. If
+     * the record already exists, it will override it with the new value.</p> </li>
+     * <li> <p>DELETE: remove the addresses from the contact list.</p> </li> </ul>
      */
     inline bool ContactListImportActionHasBeenSet() const { return m_contactListImportActionHasBeenSet; }
 
     /**
-     * <p>&gt;The type of action that you want to perform on the addresses. Acceptable
-     * values:</p> <ul> <li> <p>PUT: add the addresses to the contact list. If the
-     * record already exists, it will override it with the new value.</p> </li> <li>
-     * <p>DELETE: remove the addresses from the contact list.</p> </li> </ul>
+     * <p>&gt;The type of action to perform on the addresses. The following are the
+     * possible values:</p> <ul> <li> <p>PUT: add the addresses to the contact list. If
+     * the record already exists, it will override it with the new value.</p> </li>
+     * <li> <p>DELETE: remove the addresses from the contact list.</p> </li> </ul>
      */
     inline void SetContactListImportAction(const ContactListImportAction& value) { m_contactListImportActionHasBeenSet = true; m_contactListImportAction = value; }
 
     /**
-     * <p>&gt;The type of action that you want to perform on the addresses. Acceptable
-     * values:</p> <ul> <li> <p>PUT: add the addresses to the contact list. If the
-     * record already exists, it will override it with the new value.</p> </li> <li>
-     * <p>DELETE: remove the addresses from the contact list.</p> </li> </ul>
+     * <p>&gt;The type of action to perform on the addresses. The following are the
+     * possible values:</p> <ul> <li> <p>PUT: add the addresses to the contact list. If
+     * the record already exists, it will override it with the new value.</p> </li>
+     * <li> <p>DELETE: remove the addresses from the contact list.</p> </li> </ul>
      */
     inline void SetContactListImportAction(ContactListImportAction&& value) { m_contactListImportActionHasBeenSet = true; m_contactListImportAction = std::move(value); }
 
     /**
-     * <p>&gt;The type of action that you want to perform on the addresses. Acceptable
-     * values:</p> <ul> <li> <p>PUT: add the addresses to the contact list. If the
-     * record already exists, it will override it with the new value.</p> </li> <li>
-     * <p>DELETE: remove the addresses from the contact list.</p> </li> </ul>
+     * <p>&gt;The type of action to perform on the addresses. The following are the
+     * possible values:</p> <ul> <li> <p>PUT: add the addresses to the contact list. If
+     * the record already exists, it will override it with the new value.</p> </li>
+     * <li> <p>DELETE: remove the addresses from the contact list.</p> </li> </ul>
      */
     inline ContactListDestination& WithContactListImportAction(const ContactListImportAction& value) { SetContactListImportAction(value); return *this;}
 
     /**
-     * <p>&gt;The type of action that you want to perform on the addresses. Acceptable
-     * values:</p> <ul> <li> <p>PUT: add the addresses to the contact list. If the
-     * record already exists, it will override it with the new value.</p> </li> <li>
-     * <p>DELETE: remove the addresses from the contact list.</p> </li> </ul>
+     * <p>&gt;The type of action to perform on the addresses. The following are the
+     * possible values:</p> <ul> <li> <p>PUT: add the addresses to the contact list. If
+     * the record already exists, it will override it with the new value.</p> </li>
+     * <li> <p>DELETE: remove the addresses from the contact list.</p> </li> </ul>
      */
     inline ContactListDestination& WithContactListImportAction(ContactListImportAction&& value) { SetContactListImportAction(std::move(value)); return *this;}
 

@@ -8,6 +8,9 @@
 #include <aws/wellarchitected/WellArchitectedRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/wellarchitected/model/AnswerReason.h>
+#include <aws/wellarchitected/model/ChoiceUpdate.h>
 #include <utility>
 
 namespace Aws
@@ -139,6 +142,79 @@ namespace Model
     inline UpdateAnswerRequest& AddSelectedChoices(const char* value) { m_selectedChoicesHasBeenSet = true; m_selectedChoices.push_back(value); return *this; }
 
 
+    /**
+     * <p>A list of choices to update on a question in your workload. The String key
+     * corresponds to the choice ID to be updated.</p>
+     */
+    inline const Aws::Map<Aws::String, ChoiceUpdate>& GetChoiceUpdates() const{ return m_choiceUpdates; }
+
+    /**
+     * <p>A list of choices to update on a question in your workload. The String key
+     * corresponds to the choice ID to be updated.</p>
+     */
+    inline bool ChoiceUpdatesHasBeenSet() const { return m_choiceUpdatesHasBeenSet; }
+
+    /**
+     * <p>A list of choices to update on a question in your workload. The String key
+     * corresponds to the choice ID to be updated.</p>
+     */
+    inline void SetChoiceUpdates(const Aws::Map<Aws::String, ChoiceUpdate>& value) { m_choiceUpdatesHasBeenSet = true; m_choiceUpdates = value; }
+
+    /**
+     * <p>A list of choices to update on a question in your workload. The String key
+     * corresponds to the choice ID to be updated.</p>
+     */
+    inline void SetChoiceUpdates(Aws::Map<Aws::String, ChoiceUpdate>&& value) { m_choiceUpdatesHasBeenSet = true; m_choiceUpdates = std::move(value); }
+
+    /**
+     * <p>A list of choices to update on a question in your workload. The String key
+     * corresponds to the choice ID to be updated.</p>
+     */
+    inline UpdateAnswerRequest& WithChoiceUpdates(const Aws::Map<Aws::String, ChoiceUpdate>& value) { SetChoiceUpdates(value); return *this;}
+
+    /**
+     * <p>A list of choices to update on a question in your workload. The String key
+     * corresponds to the choice ID to be updated.</p>
+     */
+    inline UpdateAnswerRequest& WithChoiceUpdates(Aws::Map<Aws::String, ChoiceUpdate>&& value) { SetChoiceUpdates(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of choices to update on a question in your workload. The String key
+     * corresponds to the choice ID to be updated.</p>
+     */
+    inline UpdateAnswerRequest& AddChoiceUpdates(const Aws::String& key, const ChoiceUpdate& value) { m_choiceUpdatesHasBeenSet = true; m_choiceUpdates.emplace(key, value); return *this; }
+
+    /**
+     * <p>A list of choices to update on a question in your workload. The String key
+     * corresponds to the choice ID to be updated.</p>
+     */
+    inline UpdateAnswerRequest& AddChoiceUpdates(Aws::String&& key, const ChoiceUpdate& value) { m_choiceUpdatesHasBeenSet = true; m_choiceUpdates.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A list of choices to update on a question in your workload. The String key
+     * corresponds to the choice ID to be updated.</p>
+     */
+    inline UpdateAnswerRequest& AddChoiceUpdates(const Aws::String& key, ChoiceUpdate&& value) { m_choiceUpdatesHasBeenSet = true; m_choiceUpdates.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A list of choices to update on a question in your workload. The String key
+     * corresponds to the choice ID to be updated.</p>
+     */
+    inline UpdateAnswerRequest& AddChoiceUpdates(Aws::String&& key, ChoiceUpdate&& value) { m_choiceUpdatesHasBeenSet = true; m_choiceUpdates.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>A list of choices to update on a question in your workload. The String key
+     * corresponds to the choice ID to be updated.</p>
+     */
+    inline UpdateAnswerRequest& AddChoiceUpdates(const char* key, ChoiceUpdate&& value) { m_choiceUpdatesHasBeenSet = true; m_choiceUpdates.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A list of choices to update on a question in your workload. The String key
+     * corresponds to the choice ID to be updated.</p>
+     */
+    inline UpdateAnswerRequest& AddChoiceUpdates(const char* key, const ChoiceUpdate& value) { m_choiceUpdatesHasBeenSet = true; m_choiceUpdates.emplace(key, value); return *this; }
+
+
     
     inline const Aws::String& GetNotes() const{ return m_notes; }
 
@@ -176,6 +252,37 @@ namespace Model
     
     inline UpdateAnswerRequest& WithIsApplicable(bool value) { SetIsApplicable(value); return *this;}
 
+
+    /**
+     * <p>The reason why a question is not applicable to your workload.</p>
+     */
+    inline const AnswerReason& GetReason() const{ return m_reason; }
+
+    /**
+     * <p>The reason why a question is not applicable to your workload.</p>
+     */
+    inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
+
+    /**
+     * <p>The reason why a question is not applicable to your workload.</p>
+     */
+    inline void SetReason(const AnswerReason& value) { m_reasonHasBeenSet = true; m_reason = value; }
+
+    /**
+     * <p>The reason why a question is not applicable to your workload.</p>
+     */
+    inline void SetReason(AnswerReason&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
+
+    /**
+     * <p>The reason why a question is not applicable to your workload.</p>
+     */
+    inline UpdateAnswerRequest& WithReason(const AnswerReason& value) { SetReason(value); return *this;}
+
+    /**
+     * <p>The reason why a question is not applicable to your workload.</p>
+     */
+    inline UpdateAnswerRequest& WithReason(AnswerReason&& value) { SetReason(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_workloadId;
@@ -190,11 +297,17 @@ namespace Model
     Aws::Vector<Aws::String> m_selectedChoices;
     bool m_selectedChoicesHasBeenSet;
 
+    Aws::Map<Aws::String, ChoiceUpdate> m_choiceUpdates;
+    bool m_choiceUpdatesHasBeenSet;
+
     Aws::String m_notes;
     bool m_notesHasBeenSet;
 
     bool m_isApplicable;
     bool m_isApplicableHasBeenSet;
+
+    AnswerReason m_reason;
+    bool m_reasonHasBeenSet;
   };
 
 } // namespace Model

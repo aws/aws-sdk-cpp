@@ -26,7 +26,8 @@ VirtualMFADevice::VirtualMFADevice() :
     m_base32StringSeedHasBeenSet(false),
     m_qRCodePNGHasBeenSet(false),
     m_userHasBeenSet(false),
-    m_enableDateHasBeenSet(false)
+    m_enableDateHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -35,7 +36,8 @@ VirtualMFADevice::VirtualMFADevice(const XmlNode& xmlNode) :
     m_base32StringSeedHasBeenSet(false),
     m_qRCodePNGHasBeenSet(false),
     m_userHasBeenSet(false),
-    m_enableDateHasBeenSet(false)
+    m_enableDateHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -76,6 +78,18 @@ VirtualMFADevice& VirtualMFADevice::operator =(const XmlNode& xmlNode)
       m_enableDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enableDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_enableDateHasBeenSet = true;
     }
+    XmlNode tagsNode = resultNode.FirstChild("Tags");
+    if(!tagsNode.IsNull())
+    {
+      XmlNode tagsMember = tagsNode.FirstChild("member");
+      while(!tagsMember.IsNull())
+      {
+        m_tags.push_back(tagsMember);
+        tagsMember = tagsMember.NextNode("member");
+      }
+
+      m_tagsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -110,6 +124,17 @@ void VirtualMFADevice::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << index << locationValue << ".EnableDate=" << StringUtils::URLEncode(m_enableDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 
+  if(m_tagsHasBeenSet)
+  {
+      unsigned tagsIdx = 1;
+      for(auto& item : m_tags)
+      {
+        Aws::StringStream tagsSs;
+        tagsSs << location << index << locationValue << ".Tags.member." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
+      }
+  }
+
 }
 
 void VirtualMFADevice::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -135,6 +160,16 @@ void VirtualMFADevice::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_enableDateHasBeenSet)
   {
       oStream << location << ".EnableDate=" << StringUtils::URLEncode(m_enableDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if(m_tagsHasBeenSet)
+  {
+      unsigned tagsIdx = 1;
+      for(auto& item : m_tags)
+      {
+        Aws::StringStream tagsSs;
+        tagsSs << location <<  ".Tags.member." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
+      }
   }
 }
 

@@ -145,6 +145,52 @@ namespace Model
      */
     inline UnassignPrivateIpAddressesRequest& AddPrivateIpAddresses(const char* value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses.push_back(value); return *this; }
 
+
+    /**
+     * <p>The IPv4 prefixes to unassign from the network interface.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetIpv4Prefixes() const{ return m_ipv4Prefixes; }
+
+    /**
+     * <p>The IPv4 prefixes to unassign from the network interface.</p>
+     */
+    inline bool Ipv4PrefixesHasBeenSet() const { return m_ipv4PrefixesHasBeenSet; }
+
+    /**
+     * <p>The IPv4 prefixes to unassign from the network interface.</p>
+     */
+    inline void SetIpv4Prefixes(const Aws::Vector<Aws::String>& value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes = value; }
+
+    /**
+     * <p>The IPv4 prefixes to unassign from the network interface.</p>
+     */
+    inline void SetIpv4Prefixes(Aws::Vector<Aws::String>&& value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes = std::move(value); }
+
+    /**
+     * <p>The IPv4 prefixes to unassign from the network interface.</p>
+     */
+    inline UnassignPrivateIpAddressesRequest& WithIpv4Prefixes(const Aws::Vector<Aws::String>& value) { SetIpv4Prefixes(value); return *this;}
+
+    /**
+     * <p>The IPv4 prefixes to unassign from the network interface.</p>
+     */
+    inline UnassignPrivateIpAddressesRequest& WithIpv4Prefixes(Aws::Vector<Aws::String>&& value) { SetIpv4Prefixes(std::move(value)); return *this;}
+
+    /**
+     * <p>The IPv4 prefixes to unassign from the network interface.</p>
+     */
+    inline UnassignPrivateIpAddressesRequest& AddIpv4Prefixes(const Aws::String& value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes.push_back(value); return *this; }
+
+    /**
+     * <p>The IPv4 prefixes to unassign from the network interface.</p>
+     */
+    inline UnassignPrivateIpAddressesRequest& AddIpv4Prefixes(Aws::String&& value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The IPv4 prefixes to unassign from the network interface.</p>
+     */
+    inline UnassignPrivateIpAddressesRequest& AddIpv4Prefixes(const char* value) { m_ipv4PrefixesHasBeenSet = true; m_ipv4Prefixes.push_back(value); return *this; }
+
   private:
 
     Aws::String m_networkInterfaceId;
@@ -152,6 +198,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_privateIpAddresses;
     bool m_privateIpAddressesHasBeenSet;
+
+    Aws::Vector<Aws::String> m_ipv4Prefixes;
+    bool m_ipv4PrefixesHasBeenSet;
   };
 
 } // namespace Model

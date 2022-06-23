@@ -33,10 +33,12 @@ CacheBehavior::CacheBehavior() :
     m_compress(false),
     m_compressHasBeenSet(false),
     m_lambdaFunctionAssociationsHasBeenSet(false),
+    m_functionAssociationsHasBeenSet(false),
     m_fieldLevelEncryptionIdHasBeenSet(false),
     m_realtimeLogConfigArnHasBeenSet(false),
     m_cachePolicyIdHasBeenSet(false),
-    m_originRequestPolicyIdHasBeenSet(false)
+    m_originRequestPolicyIdHasBeenSet(false),
+    m_responseHeadersPolicyIdHasBeenSet(false)
 {
 }
 
@@ -53,10 +55,12 @@ CacheBehavior::CacheBehavior(const XmlNode& xmlNode) :
     m_compress(false),
     m_compressHasBeenSet(false),
     m_lambdaFunctionAssociationsHasBeenSet(false),
+    m_functionAssociationsHasBeenSet(false),
     m_fieldLevelEncryptionIdHasBeenSet(false),
     m_realtimeLogConfigArnHasBeenSet(false),
     m_cachePolicyIdHasBeenSet(false),
-    m_originRequestPolicyIdHasBeenSet(false)
+    m_originRequestPolicyIdHasBeenSet(false),
+    m_responseHeadersPolicyIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -121,6 +125,12 @@ CacheBehavior& CacheBehavior::operator =(const XmlNode& xmlNode)
       m_lambdaFunctionAssociations = lambdaFunctionAssociationsNode;
       m_lambdaFunctionAssociationsHasBeenSet = true;
     }
+    XmlNode functionAssociationsNode = resultNode.FirstChild("FunctionAssociations");
+    if(!functionAssociationsNode.IsNull())
+    {
+      m_functionAssociations = functionAssociationsNode;
+      m_functionAssociationsHasBeenSet = true;
+    }
     XmlNode fieldLevelEncryptionIdNode = resultNode.FirstChild("FieldLevelEncryptionId");
     if(!fieldLevelEncryptionIdNode.IsNull())
     {
@@ -144,6 +154,12 @@ CacheBehavior& CacheBehavior::operator =(const XmlNode& xmlNode)
     {
       m_originRequestPolicyId = Aws::Utils::Xml::DecodeEscapedXmlText(originRequestPolicyIdNode.GetText());
       m_originRequestPolicyIdHasBeenSet = true;
+    }
+    XmlNode responseHeadersPolicyIdNode = resultNode.FirstChild("ResponseHeadersPolicyId");
+    if(!responseHeadersPolicyIdNode.IsNull())
+    {
+      m_responseHeadersPolicyId = Aws::Utils::Xml::DecodeEscapedXmlText(responseHeadersPolicyIdNode.GetText());
+      m_responseHeadersPolicyIdHasBeenSet = true;
     }
   }
 
@@ -211,6 +227,12 @@ void CacheBehavior::AddToNode(XmlNode& parentNode) const
    m_lambdaFunctionAssociations.AddToNode(lambdaFunctionAssociationsNode);
   }
 
+  if(m_functionAssociationsHasBeenSet)
+  {
+   XmlNode functionAssociationsNode = parentNode.CreateChildElement("FunctionAssociations");
+   m_functionAssociations.AddToNode(functionAssociationsNode);
+  }
+
   if(m_fieldLevelEncryptionIdHasBeenSet)
   {
    XmlNode fieldLevelEncryptionIdNode = parentNode.CreateChildElement("FieldLevelEncryptionId");
@@ -233,6 +255,12 @@ void CacheBehavior::AddToNode(XmlNode& parentNode) const
   {
    XmlNode originRequestPolicyIdNode = parentNode.CreateChildElement("OriginRequestPolicyId");
    originRequestPolicyIdNode.SetText(m_originRequestPolicyId);
+  }
+
+  if(m_responseHeadersPolicyIdHasBeenSet)
+  {
+   XmlNode responseHeadersPolicyIdNode = parentNode.CreateChildElement("ResponseHeadersPolicyId");
+   responseHeadersPolicyIdNode.SetText(m_responseHeadersPolicyId);
   }
 
 }

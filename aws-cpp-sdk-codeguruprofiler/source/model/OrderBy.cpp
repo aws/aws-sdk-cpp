@@ -20,20 +20,20 @@ namespace Aws
       namespace OrderByMapper
       {
 
-        static const int TimestampAscending_HASH = HashingUtils::HashString("TimestampAscending");
         static const int TimestampDescending_HASH = HashingUtils::HashString("TimestampDescending");
+        static const int TimestampAscending_HASH = HashingUtils::HashString("TimestampAscending");
 
 
         OrderBy GetOrderByForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == TimestampAscending_HASH)
-          {
-            return OrderBy::TimestampAscending;
-          }
-          else if (hashCode == TimestampDescending_HASH)
+          if (hashCode == TimestampDescending_HASH)
           {
             return OrderBy::TimestampDescending;
+          }
+          else if (hashCode == TimestampAscending_HASH)
+          {
+            return OrderBy::TimestampAscending;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -49,10 +49,10 @@ namespace Aws
         {
           switch(enumValue)
           {
-          case OrderBy::TimestampAscending:
-            return "TimestampAscending";
           case OrderBy::TimestampDescending:
             return "TimestampDescending";
+          case OrderBy::TimestampAscending:
+            return "TimestampAscending";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

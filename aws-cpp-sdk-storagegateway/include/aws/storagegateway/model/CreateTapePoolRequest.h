@@ -130,55 +130,55 @@ namespace Model
 
     /**
      * <p>Tape retention lock can be configured in two modes. When configured in
-     * governance mode, AWS accounts with specific IAM permissions are authorized to
-     * remove the tape retention lock from archived virtual tapes. When configured in
-     * compliance mode, the tape retention lock cannot be removed by any user,
-     * including the root AWS account.</p>
+     * governance mode, Amazon Web Services accounts with specific IAM permissions are
+     * authorized to remove the tape retention lock from archived virtual tapes. When
+     * configured in compliance mode, the tape retention lock cannot be removed by any
+     * user, including the root Amazon Web Services account.</p>
      */
     inline const RetentionLockType& GetRetentionLockType() const{ return m_retentionLockType; }
 
     /**
      * <p>Tape retention lock can be configured in two modes. When configured in
-     * governance mode, AWS accounts with specific IAM permissions are authorized to
-     * remove the tape retention lock from archived virtual tapes. When configured in
-     * compliance mode, the tape retention lock cannot be removed by any user,
-     * including the root AWS account.</p>
+     * governance mode, Amazon Web Services accounts with specific IAM permissions are
+     * authorized to remove the tape retention lock from archived virtual tapes. When
+     * configured in compliance mode, the tape retention lock cannot be removed by any
+     * user, including the root Amazon Web Services account.</p>
      */
     inline bool RetentionLockTypeHasBeenSet() const { return m_retentionLockTypeHasBeenSet; }
 
     /**
      * <p>Tape retention lock can be configured in two modes. When configured in
-     * governance mode, AWS accounts with specific IAM permissions are authorized to
-     * remove the tape retention lock from archived virtual tapes. When configured in
-     * compliance mode, the tape retention lock cannot be removed by any user,
-     * including the root AWS account.</p>
+     * governance mode, Amazon Web Services accounts with specific IAM permissions are
+     * authorized to remove the tape retention lock from archived virtual tapes. When
+     * configured in compliance mode, the tape retention lock cannot be removed by any
+     * user, including the root Amazon Web Services account.</p>
      */
     inline void SetRetentionLockType(const RetentionLockType& value) { m_retentionLockTypeHasBeenSet = true; m_retentionLockType = value; }
 
     /**
      * <p>Tape retention lock can be configured in two modes. When configured in
-     * governance mode, AWS accounts with specific IAM permissions are authorized to
-     * remove the tape retention lock from archived virtual tapes. When configured in
-     * compliance mode, the tape retention lock cannot be removed by any user,
-     * including the root AWS account.</p>
+     * governance mode, Amazon Web Services accounts with specific IAM permissions are
+     * authorized to remove the tape retention lock from archived virtual tapes. When
+     * configured in compliance mode, the tape retention lock cannot be removed by any
+     * user, including the root Amazon Web Services account.</p>
      */
     inline void SetRetentionLockType(RetentionLockType&& value) { m_retentionLockTypeHasBeenSet = true; m_retentionLockType = std::move(value); }
 
     /**
      * <p>Tape retention lock can be configured in two modes. When configured in
-     * governance mode, AWS accounts with specific IAM permissions are authorized to
-     * remove the tape retention lock from archived virtual tapes. When configured in
-     * compliance mode, the tape retention lock cannot be removed by any user,
-     * including the root AWS account.</p>
+     * governance mode, Amazon Web Services accounts with specific IAM permissions are
+     * authorized to remove the tape retention lock from archived virtual tapes. When
+     * configured in compliance mode, the tape retention lock cannot be removed by any
+     * user, including the root Amazon Web Services account.</p>
      */
     inline CreateTapePoolRequest& WithRetentionLockType(const RetentionLockType& value) { SetRetentionLockType(value); return *this;}
 
     /**
      * <p>Tape retention lock can be configured in two modes. When configured in
-     * governance mode, AWS accounts with specific IAM permissions are authorized to
-     * remove the tape retention lock from archived virtual tapes. When configured in
-     * compliance mode, the tape retention lock cannot be removed by any user,
-     * including the root AWS account.</p>
+     * governance mode, Amazon Web Services accounts with specific IAM permissions are
+     * authorized to remove the tape retention lock from archived virtual tapes. When
+     * configured in compliance mode, the tape retention lock cannot be removed by any
+     * user, including the root Amazon Web Services account.</p>
      */
     inline CreateTapePoolRequest& WithRetentionLockType(RetentionLockType&& value) { SetRetentionLockType(std::move(value)); return *this;}
 

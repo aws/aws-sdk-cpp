@@ -82,7 +82,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a>
      * and <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a>
-     * in the <i>AWS SSO Identity Store API Reference</i>. Either
+     * in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either
      * <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
      */
     inline const Aws::String& GetIdentityId() const{ return m_identityId; }
@@ -93,7 +93,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a>
      * and <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a>
-     * in the <i>AWS SSO Identity Store API Reference</i>. Either
+     * in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either
      * <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
      */
     inline bool IdentityIdHasBeenSet() const { return m_identityIdHasBeenSet; }
@@ -104,7 +104,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a>
      * and <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a>
-     * in the <i>AWS SSO Identity Store API Reference</i>. Either
+     * in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either
      * <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
      */
     inline void SetIdentityId(const Aws::String& value) { m_identityIdHasBeenSet = true; m_identityId = value; }
@@ -115,7 +115,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a>
      * and <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a>
-     * in the <i>AWS SSO Identity Store API Reference</i>. Either
+     * in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either
      * <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
      */
     inline void SetIdentityId(Aws::String&& value) { m_identityIdHasBeenSet = true; m_identityId = std::move(value); }
@@ -126,7 +126,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a>
      * and <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a>
-     * in the <i>AWS SSO Identity Store API Reference</i>. Either
+     * in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either
      * <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
      */
     inline void SetIdentityId(const char* value) { m_identityIdHasBeenSet = true; m_identityId.assign(value); }
@@ -137,7 +137,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a>
      * and <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a>
-     * in the <i>AWS SSO Identity Store API Reference</i>. Either
+     * in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either
      * <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
      */
     inline GetStudioSessionMappingRequest& WithIdentityId(const Aws::String& value) { SetIdentityId(value); return *this;}
@@ -148,7 +148,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a>
      * and <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a>
-     * in the <i>AWS SSO Identity Store API Reference</i>. Either
+     * in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either
      * <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
      */
     inline GetStudioSessionMappingRequest& WithIdentityId(Aws::String&& value) { SetIdentityId(std::move(value)); return *this;}
@@ -159,7 +159,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a>
      * and <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a>
-     * in the <i>AWS SSO Identity Store API Reference</i>. Either
+     * in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either
      * <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
      */
     inline GetStudioSessionMappingRequest& WithIdentityId(const char* value) { SetIdentityId(value); return *this;}
@@ -167,80 +167,80 @@ namespace Model
 
     /**
      * <p>The name of the user or group to fetch. For more information, see <a
-     * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserName</a>
+     * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a>
      * and <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a>
-     * in the <i>AWS SSO Identity Store API Reference</i>. Either
+     * in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either
      * <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
      */
     inline const Aws::String& GetIdentityName() const{ return m_identityName; }
 
     /**
      * <p>The name of the user or group to fetch. For more information, see <a
-     * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserName</a>
+     * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a>
      * and <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a>
-     * in the <i>AWS SSO Identity Store API Reference</i>. Either
+     * in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either
      * <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
      */
     inline bool IdentityNameHasBeenSet() const { return m_identityNameHasBeenSet; }
 
     /**
      * <p>The name of the user or group to fetch. For more information, see <a
-     * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserName</a>
+     * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a>
      * and <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a>
-     * in the <i>AWS SSO Identity Store API Reference</i>. Either
+     * in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either
      * <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
      */
     inline void SetIdentityName(const Aws::String& value) { m_identityNameHasBeenSet = true; m_identityName = value; }
 
     /**
      * <p>The name of the user or group to fetch. For more information, see <a
-     * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserName</a>
+     * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a>
      * and <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a>
-     * in the <i>AWS SSO Identity Store API Reference</i>. Either
+     * in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either
      * <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
      */
     inline void SetIdentityName(Aws::String&& value) { m_identityNameHasBeenSet = true; m_identityName = std::move(value); }
 
     /**
      * <p>The name of the user or group to fetch. For more information, see <a
-     * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserName</a>
+     * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a>
      * and <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a>
-     * in the <i>AWS SSO Identity Store API Reference</i>. Either
+     * in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either
      * <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
      */
     inline void SetIdentityName(const char* value) { m_identityNameHasBeenSet = true; m_identityName.assign(value); }
 
     /**
      * <p>The name of the user or group to fetch. For more information, see <a
-     * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserName</a>
+     * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a>
      * and <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a>
-     * in the <i>AWS SSO Identity Store API Reference</i>. Either
+     * in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either
      * <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
      */
     inline GetStudioSessionMappingRequest& WithIdentityName(const Aws::String& value) { SetIdentityName(value); return *this;}
 
     /**
      * <p>The name of the user or group to fetch. For more information, see <a
-     * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserName</a>
+     * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a>
      * and <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a>
-     * in the <i>AWS SSO Identity Store API Reference</i>. Either
+     * in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either
      * <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
      */
     inline GetStudioSessionMappingRequest& WithIdentityName(Aws::String&& value) { SetIdentityName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the user or group to fetch. For more information, see <a
-     * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserName</a>
+     * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a>
      * and <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a>
-     * in the <i>AWS SSO Identity Store API Reference</i>. Either
+     * in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either
      * <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
      */
     inline GetStudioSessionMappingRequest& WithIdentityName(const char* value) { SetIdentityName(value); return *this;}

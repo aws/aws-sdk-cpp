@@ -205,6 +205,25 @@ namespace Model
 
 
     /**
+     * <p>The Status if the discoverer will discover schemas from events sent from
+     * another account.</p>
+     */
+    inline bool GetCrossAccount() const{ return m_crossAccount; }
+
+    /**
+     * <p>The Status if the discoverer will discover schemas from events sent from
+     * another account.</p>
+     */
+    inline void SetCrossAccount(bool value) { m_crossAccount = value; }
+
+    /**
+     * <p>The Status if the discoverer will discover schemas from events sent from
+     * another account.</p>
+     */
+    inline UpdateDiscovererResult& WithCrossAccount(bool value) { SetCrossAccount(value); return *this;}
+
+
+    /**
      * <p>Tags associated with the resource.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
@@ -275,6 +294,8 @@ namespace Model
     Aws::String m_sourceArn;
 
     DiscovererState m_state;
+
+    bool m_crossAccount;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
   };

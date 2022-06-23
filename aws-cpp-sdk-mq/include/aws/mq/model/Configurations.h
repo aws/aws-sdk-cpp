@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * Broker configuration information<p><h3>See Also:</h3>   <a
+   * <p>Broker configuration information</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/Configurations">AWS
    * API Reference</a></p>
    */
@@ -39,104 +39,104 @@ namespace Model
 
 
     /**
-     * The current configuration of the broker.
+     * <p>The broker's current configuration.</p>
      */
     inline const ConfigurationId& GetCurrent() const{ return m_current; }
 
     /**
-     * The current configuration of the broker.
+     * <p>The broker's current configuration.</p>
      */
     inline bool CurrentHasBeenSet() const { return m_currentHasBeenSet; }
 
     /**
-     * The current configuration of the broker.
+     * <p>The broker's current configuration.</p>
      */
     inline void SetCurrent(const ConfigurationId& value) { m_currentHasBeenSet = true; m_current = value; }
 
     /**
-     * The current configuration of the broker.
+     * <p>The broker's current configuration.</p>
      */
     inline void SetCurrent(ConfigurationId&& value) { m_currentHasBeenSet = true; m_current = std::move(value); }
 
     /**
-     * The current configuration of the broker.
+     * <p>The broker's current configuration.</p>
      */
     inline Configurations& WithCurrent(const ConfigurationId& value) { SetCurrent(value); return *this;}
 
     /**
-     * The current configuration of the broker.
+     * <p>The broker's current configuration.</p>
      */
     inline Configurations& WithCurrent(ConfigurationId&& value) { SetCurrent(std::move(value)); return *this;}
 
 
     /**
-     * The history of configurations applied to the broker.
+     * <p>The history of configurations applied to the broker.</p>
      */
     inline const Aws::Vector<ConfigurationId>& GetHistory() const{ return m_history; }
 
     /**
-     * The history of configurations applied to the broker.
+     * <p>The history of configurations applied to the broker.</p>
      */
     inline bool HistoryHasBeenSet() const { return m_historyHasBeenSet; }
 
     /**
-     * The history of configurations applied to the broker.
+     * <p>The history of configurations applied to the broker.</p>
      */
     inline void SetHistory(const Aws::Vector<ConfigurationId>& value) { m_historyHasBeenSet = true; m_history = value; }
 
     /**
-     * The history of configurations applied to the broker.
+     * <p>The history of configurations applied to the broker.</p>
      */
     inline void SetHistory(Aws::Vector<ConfigurationId>&& value) { m_historyHasBeenSet = true; m_history = std::move(value); }
 
     /**
-     * The history of configurations applied to the broker.
+     * <p>The history of configurations applied to the broker.</p>
      */
     inline Configurations& WithHistory(const Aws::Vector<ConfigurationId>& value) { SetHistory(value); return *this;}
 
     /**
-     * The history of configurations applied to the broker.
+     * <p>The history of configurations applied to the broker.</p>
      */
     inline Configurations& WithHistory(Aws::Vector<ConfigurationId>&& value) { SetHistory(std::move(value)); return *this;}
 
     /**
-     * The history of configurations applied to the broker.
+     * <p>The history of configurations applied to the broker.</p>
      */
     inline Configurations& AddHistory(const ConfigurationId& value) { m_historyHasBeenSet = true; m_history.push_back(value); return *this; }
 
     /**
-     * The history of configurations applied to the broker.
+     * <p>The history of configurations applied to the broker.</p>
      */
     inline Configurations& AddHistory(ConfigurationId&& value) { m_historyHasBeenSet = true; m_history.push_back(std::move(value)); return *this; }
 
 
     /**
-     * The pending configuration of the broker.
+     * <p>The broker's pending configuration.</p>
      */
     inline const ConfigurationId& GetPending() const{ return m_pending; }
 
     /**
-     * The pending configuration of the broker.
+     * <p>The broker's pending configuration.</p>
      */
     inline bool PendingHasBeenSet() const { return m_pendingHasBeenSet; }
 
     /**
-     * The pending configuration of the broker.
+     * <p>The broker's pending configuration.</p>
      */
     inline void SetPending(const ConfigurationId& value) { m_pendingHasBeenSet = true; m_pending = value; }
 
     /**
-     * The pending configuration of the broker.
+     * <p>The broker's pending configuration.</p>
      */
     inline void SetPending(ConfigurationId&& value) { m_pendingHasBeenSet = true; m_pending = std::move(value); }
 
     /**
-     * The pending configuration of the broker.
+     * <p>The broker's pending configuration.</p>
      */
     inline Configurations& WithPending(const ConfigurationId& value) { SetPending(value); return *this;}
 
     /**
-     * The pending configuration of the broker.
+     * <p>The broker's pending configuration.</p>
      */
     inline Configurations& WithPending(ConfigurationId&& value) { SetPending(std::move(value)); return *this;}
 

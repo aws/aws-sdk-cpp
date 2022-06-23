@@ -21,6 +21,7 @@ namespace Model
 DescribedServer::DescribedServer() : 
     m_arnHasBeenSet(false),
     m_certificateHasBeenSet(false),
+    m_protocolDetailsHasBeenSet(false),
     m_domain(Domain::NOT_SET),
     m_domainHasBeenSet(false),
     m_endpointDetailsHasBeenSet(false),
@@ -31,6 +32,8 @@ DescribedServer::DescribedServer() :
     m_identityProviderType(IdentityProviderType::NOT_SET),
     m_identityProviderTypeHasBeenSet(false),
     m_loggingRoleHasBeenSet(false),
+    m_postAuthenticationLoginBannerHasBeenSet(false),
+    m_preAuthenticationLoginBannerHasBeenSet(false),
     m_protocolsHasBeenSet(false),
     m_securityPolicyNameHasBeenSet(false),
     m_serverIdHasBeenSet(false),
@@ -38,13 +41,15 @@ DescribedServer::DescribedServer() :
     m_stateHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_userCount(0),
-    m_userCountHasBeenSet(false)
+    m_userCountHasBeenSet(false),
+    m_workflowDetailsHasBeenSet(false)
 {
 }
 
 DescribedServer::DescribedServer(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_certificateHasBeenSet(false),
+    m_protocolDetailsHasBeenSet(false),
     m_domain(Domain::NOT_SET),
     m_domainHasBeenSet(false),
     m_endpointDetailsHasBeenSet(false),
@@ -55,6 +60,8 @@ DescribedServer::DescribedServer(JsonView jsonValue) :
     m_identityProviderType(IdentityProviderType::NOT_SET),
     m_identityProviderTypeHasBeenSet(false),
     m_loggingRoleHasBeenSet(false),
+    m_postAuthenticationLoginBannerHasBeenSet(false),
+    m_preAuthenticationLoginBannerHasBeenSet(false),
     m_protocolsHasBeenSet(false),
     m_securityPolicyNameHasBeenSet(false),
     m_serverIdHasBeenSet(false),
@@ -62,7 +69,8 @@ DescribedServer::DescribedServer(JsonView jsonValue) :
     m_stateHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_userCount(0),
-    m_userCountHasBeenSet(false)
+    m_userCountHasBeenSet(false),
+    m_workflowDetailsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -81,6 +89,13 @@ DescribedServer& DescribedServer::operator =(JsonView jsonValue)
     m_certificate = jsonValue.GetString("Certificate");
 
     m_certificateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ProtocolDetails"))
+  {
+    m_protocolDetails = jsonValue.GetObject("ProtocolDetails");
+
+    m_protocolDetailsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Domain"))
@@ -132,6 +147,20 @@ DescribedServer& DescribedServer::operator =(JsonView jsonValue)
     m_loggingRoleHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PostAuthenticationLoginBanner"))
+  {
+    m_postAuthenticationLoginBanner = jsonValue.GetString("PostAuthenticationLoginBanner");
+
+    m_postAuthenticationLoginBannerHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PreAuthenticationLoginBanner"))
+  {
+    m_preAuthenticationLoginBanner = jsonValue.GetString("PreAuthenticationLoginBanner");
+
+    m_preAuthenticationLoginBannerHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Protocols"))
   {
     Array<JsonView> protocolsJsonList = jsonValue.GetArray("Protocols");
@@ -180,6 +209,13 @@ DescribedServer& DescribedServer::operator =(JsonView jsonValue)
     m_userCountHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("WorkflowDetails"))
+  {
+    m_workflowDetails = jsonValue.GetObject("WorkflowDetails");
+
+    m_workflowDetailsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -196,6 +232,12 @@ JsonValue DescribedServer::Jsonize() const
   if(m_certificateHasBeenSet)
   {
    payload.WithString("Certificate", m_certificate);
+
+  }
+
+  if(m_protocolDetailsHasBeenSet)
+  {
+   payload.WithObject("ProtocolDetails", m_protocolDetails.Jsonize());
 
   }
 
@@ -235,6 +277,18 @@ JsonValue DescribedServer::Jsonize() const
   if(m_loggingRoleHasBeenSet)
   {
    payload.WithString("LoggingRole", m_loggingRole);
+
+  }
+
+  if(m_postAuthenticationLoginBannerHasBeenSet)
+  {
+   payload.WithString("PostAuthenticationLoginBanner", m_postAuthenticationLoginBanner);
+
+  }
+
+  if(m_preAuthenticationLoginBannerHasBeenSet)
+  {
+   payload.WithString("PreAuthenticationLoginBanner", m_preAuthenticationLoginBanner);
 
   }
 
@@ -280,6 +334,12 @@ JsonValue DescribedServer::Jsonize() const
   if(m_userCountHasBeenSet)
   {
    payload.WithInteger("UserCount", m_userCount);
+
+  }
+
+  if(m_workflowDetailsHasBeenSet)
+  {
+   payload.WithObject("WorkflowDetails", m_workflowDetails.Jsonize());
 
   }
 

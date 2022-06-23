@@ -14,15 +14,19 @@ using namespace Aws::Utils;
 
 UpdateServerRequest::UpdateServerRequest() : 
     m_certificateHasBeenSet(false),
+    m_protocolDetailsHasBeenSet(false),
     m_endpointDetailsHasBeenSet(false),
     m_endpointType(EndpointType::NOT_SET),
     m_endpointTypeHasBeenSet(false),
     m_hostKeyHasBeenSet(false),
     m_identityProviderDetailsHasBeenSet(false),
     m_loggingRoleHasBeenSet(false),
+    m_postAuthenticationLoginBannerHasBeenSet(false),
+    m_preAuthenticationLoginBannerHasBeenSet(false),
     m_protocolsHasBeenSet(false),
     m_securityPolicyNameHasBeenSet(false),
-    m_serverIdHasBeenSet(false)
+    m_serverIdHasBeenSet(false),
+    m_workflowDetailsHasBeenSet(false)
 {
 }
 
@@ -33,6 +37,12 @@ Aws::String UpdateServerRequest::SerializePayload() const
   if(m_certificateHasBeenSet)
   {
    payload.WithString("Certificate", m_certificate);
+
+  }
+
+  if(m_protocolDetailsHasBeenSet)
+  {
+   payload.WithObject("ProtocolDetails", m_protocolDetails.Jsonize());
 
   }
 
@@ -65,6 +75,18 @@ Aws::String UpdateServerRequest::SerializePayload() const
 
   }
 
+  if(m_postAuthenticationLoginBannerHasBeenSet)
+  {
+   payload.WithString("PostAuthenticationLoginBanner", m_postAuthenticationLoginBanner);
+
+  }
+
+  if(m_preAuthenticationLoginBannerHasBeenSet)
+  {
+   payload.WithString("PreAuthenticationLoginBanner", m_preAuthenticationLoginBanner);
+
+  }
+
   if(m_protocolsHasBeenSet)
   {
    Array<JsonValue> protocolsJsonList(m_protocols.size());
@@ -85,6 +107,12 @@ Aws::String UpdateServerRequest::SerializePayload() const
   if(m_serverIdHasBeenSet)
   {
    payload.WithString("ServerId", m_serverId);
+
+  }
+
+  if(m_workflowDetailsHasBeenSet)
+  {
+   payload.WithObject("WorkflowDetails", m_workflowDetails.Jsonize());
 
   }
 

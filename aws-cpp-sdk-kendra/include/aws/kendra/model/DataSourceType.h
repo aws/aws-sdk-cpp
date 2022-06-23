@@ -24,7 +24,14 @@ namespace Model
     SERVICENOW,
     CUSTOM,
     CONFLUENCE,
-    GOOGLEDRIVE
+    GOOGLEDRIVE,
+    WEBCRAWLER,
+    WORKDOCS,
+    FSX,
+    SLACK,
+    BOX,
+    QUIP,
+    JIRA
   };
 
 namespace DataSourceTypeMapper

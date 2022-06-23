@@ -265,22 +265,34 @@ namespace Model
     inline Experiment& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>Who created the experiment.</p>
+     */
     inline const UserContext& GetCreatedBy() const{ return m_createdBy; }
 
-    
+    /**
+     * <p>Who created the experiment.</p>
+     */
     inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
 
-    
+    /**
+     * <p>Who created the experiment.</p>
+     */
     inline void SetCreatedBy(const UserContext& value) { m_createdByHasBeenSet = true; m_createdBy = value; }
 
-    
+    /**
+     * <p>Who created the experiment.</p>
+     */
     inline void SetCreatedBy(UserContext&& value) { m_createdByHasBeenSet = true; m_createdBy = std::move(value); }
 
-    
+    /**
+     * <p>Who created the experiment.</p>
+     */
     inline Experiment& WithCreatedBy(const UserContext& value) { SetCreatedBy(value); return *this;}
 
-    
+    /**
+     * <p>Who created the experiment.</p>
+     */
     inline Experiment& WithCreatedBy(UserContext&& value) { SetCreatedBy(std::move(value)); return *this;}
 
 

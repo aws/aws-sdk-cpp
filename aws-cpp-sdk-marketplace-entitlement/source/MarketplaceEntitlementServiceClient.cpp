@@ -69,7 +69,7 @@ MarketplaceEntitlementServiceClient::~MarketplaceEntitlementServiceClient()
 {
 }
 
-void MarketplaceEntitlementServiceClient::init(const ClientConfiguration& config)
+void MarketplaceEntitlementServiceClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("entitlement.marketplace");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -98,9 +98,6 @@ void MarketplaceEntitlementServiceClient::OverrideEndpoint(const Aws::String& en
 GetEntitlementsOutcome MarketplaceEntitlementServiceClient::GetEntitlements(const GetEntitlementsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetEntitlementsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

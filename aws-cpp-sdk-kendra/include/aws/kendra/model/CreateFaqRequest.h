@@ -376,59 +376,132 @@ namespace Model
 
     /**
      * <p>A token that you provide to identify the request to create a FAQ. Multiple
-     * calls to the <code>CreateFaqRequest</code> operation with the same client token
-     * will create only one FAQ. </p>
+     * calls to the <code>CreateFaqRequest</code> API with the same client token will
+     * create only one FAQ. </p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
      * <p>A token that you provide to identify the request to create a FAQ. Multiple
-     * calls to the <code>CreateFaqRequest</code> operation with the same client token
-     * will create only one FAQ. </p>
+     * calls to the <code>CreateFaqRequest</code> API with the same client token will
+     * create only one FAQ. </p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
      * <p>A token that you provide to identify the request to create a FAQ. Multiple
-     * calls to the <code>CreateFaqRequest</code> operation with the same client token
-     * will create only one FAQ. </p>
+     * calls to the <code>CreateFaqRequest</code> API with the same client token will
+     * create only one FAQ. </p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
      * <p>A token that you provide to identify the request to create a FAQ. Multiple
-     * calls to the <code>CreateFaqRequest</code> operation with the same client token
-     * will create only one FAQ. </p>
+     * calls to the <code>CreateFaqRequest</code> API with the same client token will
+     * create only one FAQ. </p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
      * <p>A token that you provide to identify the request to create a FAQ. Multiple
-     * calls to the <code>CreateFaqRequest</code> operation with the same client token
-     * will create only one FAQ. </p>
+     * calls to the <code>CreateFaqRequest</code> API with the same client token will
+     * create only one FAQ. </p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
      * <p>A token that you provide to identify the request to create a FAQ. Multiple
-     * calls to the <code>CreateFaqRequest</code> operation with the same client token
-     * will create only one FAQ. </p>
+     * calls to the <code>CreateFaqRequest</code> API with the same client token will
+     * create only one FAQ. </p>
      */
     inline CreateFaqRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
      * <p>A token that you provide to identify the request to create a FAQ. Multiple
-     * calls to the <code>CreateFaqRequest</code> operation with the same client token
-     * will create only one FAQ. </p>
+     * calls to the <code>CreateFaqRequest</code> API with the same client token will
+     * create only one FAQ. </p>
      */
     inline CreateFaqRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
      * <p>A token that you provide to identify the request to create a FAQ. Multiple
-     * calls to the <code>CreateFaqRequest</code> operation with the same client token
-     * will create only one FAQ. </p>
+     * calls to the <code>CreateFaqRequest</code> API with the same client token will
+     * create only one FAQ. </p>
      */
     inline CreateFaqRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+
+
+    /**
+     * <p>The code for a language. This allows you to support a language for the FAQ
+     * document. English is supported by default. For more information on supported
+     * languages, including their codes, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+     * documents in languages other than English</a>.</p>
+     */
+    inline const Aws::String& GetLanguageCode() const{ return m_languageCode; }
+
+    /**
+     * <p>The code for a language. This allows you to support a language for the FAQ
+     * document. English is supported by default. For more information on supported
+     * languages, including their codes, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+     * documents in languages other than English</a>.</p>
+     */
+    inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
+
+    /**
+     * <p>The code for a language. This allows you to support a language for the FAQ
+     * document. English is supported by default. For more information on supported
+     * languages, including their codes, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+     * documents in languages other than English</a>.</p>
+     */
+    inline void SetLanguageCode(const Aws::String& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
+
+    /**
+     * <p>The code for a language. This allows you to support a language for the FAQ
+     * document. English is supported by default. For more information on supported
+     * languages, including their codes, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+     * documents in languages other than English</a>.</p>
+     */
+    inline void SetLanguageCode(Aws::String&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
+
+    /**
+     * <p>The code for a language. This allows you to support a language for the FAQ
+     * document. English is supported by default. For more information on supported
+     * languages, including their codes, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+     * documents in languages other than English</a>.</p>
+     */
+    inline void SetLanguageCode(const char* value) { m_languageCodeHasBeenSet = true; m_languageCode.assign(value); }
+
+    /**
+     * <p>The code for a language. This allows you to support a language for the FAQ
+     * document. English is supported by default. For more information on supported
+     * languages, including their codes, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+     * documents in languages other than English</a>.</p>
+     */
+    inline CreateFaqRequest& WithLanguageCode(const Aws::String& value) { SetLanguageCode(value); return *this;}
+
+    /**
+     * <p>The code for a language. This allows you to support a language for the FAQ
+     * document. English is supported by default. For more information on supported
+     * languages, including their codes, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+     * documents in languages other than English</a>.</p>
+     */
+    inline CreateFaqRequest& WithLanguageCode(Aws::String&& value) { SetLanguageCode(std::move(value)); return *this;}
+
+    /**
+     * <p>The code for a language. This allows you to support a language for the FAQ
+     * document. English is supported by default. For more information on supported
+     * languages, including their codes, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+     * documents in languages other than English</a>.</p>
+     */
+    inline CreateFaqRequest& WithLanguageCode(const char* value) { SetLanguageCode(value); return *this;}
 
   private:
 
@@ -455,6 +528,9 @@ namespace Model
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
+
+    Aws::String m_languageCode;
+    bool m_languageCodeHasBeenSet;
   };
 
 } // namespace Model

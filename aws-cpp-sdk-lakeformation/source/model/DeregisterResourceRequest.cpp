@@ -30,14 +30,6 @@ Aws::String DeregisterResourceRequest::SerializePayload() const
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DeregisterResourceRequest::GetRequestSpecificHeaders() const
-{
-  Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSLakeFormation.DeregisterResource"));
-  return headers;
-
-}
-
 
 
 

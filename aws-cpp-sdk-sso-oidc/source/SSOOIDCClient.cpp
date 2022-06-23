@@ -71,7 +71,7 @@ SSOOIDCClient::~SSOOIDCClient()
 {
 }
 
-void SSOOIDCClient::init(const ClientConfiguration& config)
+void SSOOIDCClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("SSO OIDC");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -100,9 +100,7 @@ void SSOOIDCClient::OverrideEndpoint(const Aws::String& endpoint)
 CreateTokenOutcome SSOOIDCClient::CreateToken(const CreateTokenRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/token";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/token");
   return CreateTokenOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
 }
 
@@ -127,9 +125,7 @@ void SSOOIDCClient::CreateTokenAsyncHelper(const CreateTokenRequest& request, co
 RegisterClientOutcome SSOOIDCClient::RegisterClient(const RegisterClientRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/client/register";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/client/register");
   return RegisterClientOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
 }
 
@@ -154,9 +150,7 @@ void SSOOIDCClient::RegisterClientAsyncHelper(const RegisterClientRequest& reque
 StartDeviceAuthorizationOutcome SSOOIDCClient::StartDeviceAuthorization(const StartDeviceAuthorizationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/device_authorization";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/device_authorization");
   return StartDeviceAuthorizationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
 }
 

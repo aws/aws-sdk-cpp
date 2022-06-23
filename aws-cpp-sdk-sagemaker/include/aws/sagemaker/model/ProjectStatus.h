@@ -22,7 +22,10 @@ namespace Model
     CreateFailed,
     DeleteInProgress,
     DeleteFailed,
-    DeleteCompleted
+    DeleteCompleted,
+    UpdateInProgress,
+    UpdateCompleted,
+    UpdateFailed
   };
 
 namespace ProjectStatusMapper

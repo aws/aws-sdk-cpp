@@ -92,10 +92,10 @@ namespace Model
      * <code>Effect</code> must specify <code>Allow</code>.</p> </li> <li> <p>
      * <code>Action</code> must specify <code>wafv2:CreateWebACL</code>,
      * <code>wafv2:UpdateWebACL</code>, and
-     * <code>wafv2:PutFirewallManagerRuleGroups</code>. AWS WAF rejects any extra
-     * actions or wildcard actions in the policy.</p> </li> <li> <p>The policy must not
-     * include a <code>Resource</code> parameter.</p> </li> </ul> <p>For more
-     * information, see <a
+     * <code>wafv2:PutFirewallManagerRuleGroups</code> and may optionally specify
+     * <code>wafv2:GetRuleGroup</code>. WAF rejects any extra actions or wildcard
+     * actions in the policy.</p> </li> <li> <p>The policy must not include a
+     * <code>Resource</code> parameter.</p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM
      * Policies</a>. </p>
      */
@@ -110,10 +110,10 @@ namespace Model
      * <code>Effect</code> must specify <code>Allow</code>.</p> </li> <li> <p>
      * <code>Action</code> must specify <code>wafv2:CreateWebACL</code>,
      * <code>wafv2:UpdateWebACL</code>, and
-     * <code>wafv2:PutFirewallManagerRuleGroups</code>. AWS WAF rejects any extra
-     * actions or wildcard actions in the policy.</p> </li> <li> <p>The policy must not
-     * include a <code>Resource</code> parameter.</p> </li> </ul> <p>For more
-     * information, see <a
+     * <code>wafv2:PutFirewallManagerRuleGroups</code> and may optionally specify
+     * <code>wafv2:GetRuleGroup</code>. WAF rejects any extra actions or wildcard
+     * actions in the policy.</p> </li> <li> <p>The policy must not include a
+     * <code>Resource</code> parameter.</p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM
      * Policies</a>. </p>
      */
@@ -128,10 +128,10 @@ namespace Model
      * <code>Effect</code> must specify <code>Allow</code>.</p> </li> <li> <p>
      * <code>Action</code> must specify <code>wafv2:CreateWebACL</code>,
      * <code>wafv2:UpdateWebACL</code>, and
-     * <code>wafv2:PutFirewallManagerRuleGroups</code>. AWS WAF rejects any extra
-     * actions or wildcard actions in the policy.</p> </li> <li> <p>The policy must not
-     * include a <code>Resource</code> parameter.</p> </li> </ul> <p>For more
-     * information, see <a
+     * <code>wafv2:PutFirewallManagerRuleGroups</code> and may optionally specify
+     * <code>wafv2:GetRuleGroup</code>. WAF rejects any extra actions or wildcard
+     * actions in the policy.</p> </li> <li> <p>The policy must not include a
+     * <code>Resource</code> parameter.</p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM
      * Policies</a>. </p>
      */
@@ -146,10 +146,10 @@ namespace Model
      * <code>Effect</code> must specify <code>Allow</code>.</p> </li> <li> <p>
      * <code>Action</code> must specify <code>wafv2:CreateWebACL</code>,
      * <code>wafv2:UpdateWebACL</code>, and
-     * <code>wafv2:PutFirewallManagerRuleGroups</code>. AWS WAF rejects any extra
-     * actions or wildcard actions in the policy.</p> </li> <li> <p>The policy must not
-     * include a <code>Resource</code> parameter.</p> </li> </ul> <p>For more
-     * information, see <a
+     * <code>wafv2:PutFirewallManagerRuleGroups</code> and may optionally specify
+     * <code>wafv2:GetRuleGroup</code>. WAF rejects any extra actions or wildcard
+     * actions in the policy.</p> </li> <li> <p>The policy must not include a
+     * <code>Resource</code> parameter.</p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM
      * Policies</a>. </p>
      */
@@ -164,10 +164,10 @@ namespace Model
      * <code>Effect</code> must specify <code>Allow</code>.</p> </li> <li> <p>
      * <code>Action</code> must specify <code>wafv2:CreateWebACL</code>,
      * <code>wafv2:UpdateWebACL</code>, and
-     * <code>wafv2:PutFirewallManagerRuleGroups</code>. AWS WAF rejects any extra
-     * actions or wildcard actions in the policy.</p> </li> <li> <p>The policy must not
-     * include a <code>Resource</code> parameter.</p> </li> </ul> <p>For more
-     * information, see <a
+     * <code>wafv2:PutFirewallManagerRuleGroups</code> and may optionally specify
+     * <code>wafv2:GetRuleGroup</code>. WAF rejects any extra actions or wildcard
+     * actions in the policy.</p> </li> <li> <p>The policy must not include a
+     * <code>Resource</code> parameter.</p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM
      * Policies</a>. </p>
      */
@@ -182,10 +182,10 @@ namespace Model
      * <code>Effect</code> must specify <code>Allow</code>.</p> </li> <li> <p>
      * <code>Action</code> must specify <code>wafv2:CreateWebACL</code>,
      * <code>wafv2:UpdateWebACL</code>, and
-     * <code>wafv2:PutFirewallManagerRuleGroups</code>. AWS WAF rejects any extra
-     * actions or wildcard actions in the policy.</p> </li> <li> <p>The policy must not
-     * include a <code>Resource</code> parameter.</p> </li> </ul> <p>For more
-     * information, see <a
+     * <code>wafv2:PutFirewallManagerRuleGroups</code> and may optionally specify
+     * <code>wafv2:GetRuleGroup</code>. WAF rejects any extra actions or wildcard
+     * actions in the policy.</p> </li> <li> <p>The policy must not include a
+     * <code>Resource</code> parameter.</p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM
      * Policies</a>. </p>
      */
@@ -200,10 +200,10 @@ namespace Model
      * <code>Effect</code> must specify <code>Allow</code>.</p> </li> <li> <p>
      * <code>Action</code> must specify <code>wafv2:CreateWebACL</code>,
      * <code>wafv2:UpdateWebACL</code>, and
-     * <code>wafv2:PutFirewallManagerRuleGroups</code>. AWS WAF rejects any extra
-     * actions or wildcard actions in the policy.</p> </li> <li> <p>The policy must not
-     * include a <code>Resource</code> parameter.</p> </li> </ul> <p>For more
-     * information, see <a
+     * <code>wafv2:PutFirewallManagerRuleGroups</code> and may optionally specify
+     * <code>wafv2:GetRuleGroup</code>. WAF rejects any extra actions or wildcard
+     * actions in the policy.</p> </li> <li> <p>The policy must not include a
+     * <code>Resource</code> parameter.</p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM
      * Policies</a>. </p>
      */
@@ -218,10 +218,10 @@ namespace Model
      * <code>Effect</code> must specify <code>Allow</code>.</p> </li> <li> <p>
      * <code>Action</code> must specify <code>wafv2:CreateWebACL</code>,
      * <code>wafv2:UpdateWebACL</code>, and
-     * <code>wafv2:PutFirewallManagerRuleGroups</code>. AWS WAF rejects any extra
-     * actions or wildcard actions in the policy.</p> </li> <li> <p>The policy must not
-     * include a <code>Resource</code> parameter.</p> </li> </ul> <p>For more
-     * information, see <a
+     * <code>wafv2:PutFirewallManagerRuleGroups</code> and may optionally specify
+     * <code>wafv2:GetRuleGroup</code>. WAF rejects any extra actions or wildcard
+     * actions in the policy.</p> </li> <li> <p>The policy must not include a
+     * <code>Resource</code> parameter.</p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM
      * Policies</a>. </p>
      */

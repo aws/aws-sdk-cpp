@@ -125,8 +125,8 @@ namespace Model
      * export jobs that match the statement, specify <code>IS</code>. To exclude
      * matching predictor backtest export jobs, specify <code>IS_NOT</code>.</p> </li>
      * <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values
-     * are <code>PredictorBacktestExportJobArn</code> and <code>Status</code>.</p>
-     * </li> <li> <p> <code>Value</code> - The value to match.</p> </li> </ul>
+     * are <code>PredictorArn</code> and <code>Status</code>.</p> </li> <li> <p>
+     * <code>Value</code> - The value to match.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
@@ -141,8 +141,8 @@ namespace Model
      * export jobs that match the statement, specify <code>IS</code>. To exclude
      * matching predictor backtest export jobs, specify <code>IS_NOT</code>.</p> </li>
      * <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values
-     * are <code>PredictorBacktestExportJobArn</code> and <code>Status</code>.</p>
-     * </li> <li> <p> <code>Value</code> - The value to match.</p> </li> </ul>
+     * are <code>PredictorArn</code> and <code>Status</code>.</p> </li> <li> <p>
+     * <code>Value</code> - The value to match.</p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
@@ -157,8 +157,8 @@ namespace Model
      * export jobs that match the statement, specify <code>IS</code>. To exclude
      * matching predictor backtest export jobs, specify <code>IS_NOT</code>.</p> </li>
      * <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values
-     * are <code>PredictorBacktestExportJobArn</code> and <code>Status</code>.</p>
-     * </li> <li> <p> <code>Value</code> - The value to match.</p> </li> </ul>
+     * are <code>PredictorArn</code> and <code>Status</code>.</p> </li> <li> <p>
+     * <code>Value</code> - The value to match.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
@@ -173,8 +173,8 @@ namespace Model
      * export jobs that match the statement, specify <code>IS</code>. To exclude
      * matching predictor backtest export jobs, specify <code>IS_NOT</code>.</p> </li>
      * <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values
-     * are <code>PredictorBacktestExportJobArn</code> and <code>Status</code>.</p>
-     * </li> <li> <p> <code>Value</code> - The value to match.</p> </li> </ul>
+     * are <code>PredictorArn</code> and <code>Status</code>.</p> </li> <li> <p>
+     * <code>Value</code> - The value to match.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
@@ -189,8 +189,8 @@ namespace Model
      * export jobs that match the statement, specify <code>IS</code>. To exclude
      * matching predictor backtest export jobs, specify <code>IS_NOT</code>.</p> </li>
      * <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values
-     * are <code>PredictorBacktestExportJobArn</code> and <code>Status</code>.</p>
-     * </li> <li> <p> <code>Value</code> - The value to match.</p> </li> </ul>
+     * are <code>PredictorArn</code> and <code>Status</code>.</p> </li> <li> <p>
+     * <code>Value</code> - The value to match.</p> </li> </ul>
      */
     inline ListPredictorBacktestExportJobsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
@@ -205,8 +205,8 @@ namespace Model
      * export jobs that match the statement, specify <code>IS</code>. To exclude
      * matching predictor backtest export jobs, specify <code>IS_NOT</code>.</p> </li>
      * <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values
-     * are <code>PredictorBacktestExportJobArn</code> and <code>Status</code>.</p>
-     * </li> <li> <p> <code>Value</code> - The value to match.</p> </li> </ul>
+     * are <code>PredictorArn</code> and <code>Status</code>.</p> </li> <li> <p>
+     * <code>Value</code> - The value to match.</p> </li> </ul>
      */
     inline ListPredictorBacktestExportJobsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
@@ -221,8 +221,8 @@ namespace Model
      * export jobs that match the statement, specify <code>IS</code>. To exclude
      * matching predictor backtest export jobs, specify <code>IS_NOT</code>.</p> </li>
      * <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values
-     * are <code>PredictorBacktestExportJobArn</code> and <code>Status</code>.</p>
-     * </li> <li> <p> <code>Value</code> - The value to match.</p> </li> </ul>
+     * are <code>PredictorArn</code> and <code>Status</code>.</p> </li> <li> <p>
+     * <code>Value</code> - The value to match.</p> </li> </ul>
      */
     inline ListPredictorBacktestExportJobsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
@@ -237,8 +237,8 @@ namespace Model
      * export jobs that match the statement, specify <code>IS</code>. To exclude
      * matching predictor backtest export jobs, specify <code>IS_NOT</code>.</p> </li>
      * <li> <p> <code>Key</code> - The name of the parameter to filter on. Valid values
-     * are <code>PredictorBacktestExportJobArn</code> and <code>Status</code>.</p>
-     * </li> <li> <p> <code>Value</code> - The value to match.</p> </li> </ul>
+     * are <code>PredictorArn</code> and <code>Status</code>.</p> </li> <li> <p>
+     * <code>Value</code> - The value to match.</p> </li> </ul>
      */
     inline ListPredictorBacktestExportJobsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

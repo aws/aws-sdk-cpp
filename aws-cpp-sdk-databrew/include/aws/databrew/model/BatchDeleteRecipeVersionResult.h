@@ -71,37 +71,44 @@ namespace Model
 
 
     /**
-     * <p>Errors, if any, that were encountered when deleting the recipe versions.</p>
+     * <p>Errors, if any, that occurred while attempting to delete the recipe
+     * versions.</p>
      */
     inline const Aws::Vector<RecipeVersionErrorDetail>& GetErrors() const{ return m_errors; }
 
     /**
-     * <p>Errors, if any, that were encountered when deleting the recipe versions.</p>
+     * <p>Errors, if any, that occurred while attempting to delete the recipe
+     * versions.</p>
      */
     inline void SetErrors(const Aws::Vector<RecipeVersionErrorDetail>& value) { m_errors = value; }
 
     /**
-     * <p>Errors, if any, that were encountered when deleting the recipe versions.</p>
+     * <p>Errors, if any, that occurred while attempting to delete the recipe
+     * versions.</p>
      */
     inline void SetErrors(Aws::Vector<RecipeVersionErrorDetail>&& value) { m_errors = std::move(value); }
 
     /**
-     * <p>Errors, if any, that were encountered when deleting the recipe versions.</p>
+     * <p>Errors, if any, that occurred while attempting to delete the recipe
+     * versions.</p>
      */
     inline BatchDeleteRecipeVersionResult& WithErrors(const Aws::Vector<RecipeVersionErrorDetail>& value) { SetErrors(value); return *this;}
 
     /**
-     * <p>Errors, if any, that were encountered when deleting the recipe versions.</p>
+     * <p>Errors, if any, that occurred while attempting to delete the recipe
+     * versions.</p>
      */
     inline BatchDeleteRecipeVersionResult& WithErrors(Aws::Vector<RecipeVersionErrorDetail>&& value) { SetErrors(std::move(value)); return *this;}
 
     /**
-     * <p>Errors, if any, that were encountered when deleting the recipe versions.</p>
+     * <p>Errors, if any, that occurred while attempting to delete the recipe
+     * versions.</p>
      */
     inline BatchDeleteRecipeVersionResult& AddErrors(const RecipeVersionErrorDetail& value) { m_errors.push_back(value); return *this; }
 
     /**
-     * <p>Errors, if any, that were encountered when deleting the recipe versions.</p>
+     * <p>Errors, if any, that occurred while attempting to delete the recipe
+     * versions.</p>
      */
     inline BatchDeleteRecipeVersionResult& AddErrors(RecipeVersionErrorDetail&& value) { m_errors.push_back(std::move(value)); return *this; }
 

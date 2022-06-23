@@ -23,6 +23,7 @@ JobQueueDetail::JobQueueDetail() :
     m_jobQueueArnHasBeenSet(false),
     m_state(JQState::NOT_SET),
     m_stateHasBeenSet(false),
+    m_schedulingPolicyArnHasBeenSet(false),
     m_status(JQStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_statusReasonHasBeenSet(false),
@@ -38,6 +39,7 @@ JobQueueDetail::JobQueueDetail(JsonView jsonValue) :
     m_jobQueueArnHasBeenSet(false),
     m_state(JQState::NOT_SET),
     m_stateHasBeenSet(false),
+    m_schedulingPolicyArnHasBeenSet(false),
     m_status(JQStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_statusReasonHasBeenSet(false),
@@ -70,6 +72,13 @@ JobQueueDetail& JobQueueDetail::operator =(JsonView jsonValue)
     m_state = JQStateMapper::GetJQStateForName(jsonValue.GetString("state"));
 
     m_stateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("schedulingPolicyArn"))
+  {
+    m_schedulingPolicyArn = jsonValue.GetString("schedulingPolicyArn");
+
+    m_schedulingPolicyArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("status"))
@@ -135,6 +144,12 @@ JsonValue JobQueueDetail::Jsonize() const
   if(m_stateHasBeenSet)
   {
    payload.WithString("state", JQStateMapper::GetNameForJQState(m_state));
+  }
+
+  if(m_schedulingPolicyArnHasBeenSet)
+  {
+   payload.WithString("schedulingPolicyArn", m_schedulingPolicyArn);
+
   }
 
   if(m_statusHasBeenSet)

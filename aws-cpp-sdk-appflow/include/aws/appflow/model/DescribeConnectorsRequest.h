@@ -76,6 +76,31 @@ namespace Model
 
 
     /**
+     * <p>The maximum number of items that should be returned in the result set. The
+     * default is 20.</p>
+     */
+    inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of items that should be returned in the result set. The
+     * default is 20.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of items that should be returned in the result set. The
+     * default is 20.</p>
+     */
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+
+    /**
+     * <p>The maximum number of items that should be returned in the result set. The
+     * default is 20.</p>
+     */
+    inline DescribeConnectorsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
+
+    /**
      * <p> The pagination token for the next page of data. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
@@ -119,6 +144,9 @@ namespace Model
 
     Aws::Vector<ConnectorType> m_connectorTypes;
     bool m_connectorTypesHasBeenSet;
+
+    int m_maxResults;
+    bool m_maxResultsHasBeenSet;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;

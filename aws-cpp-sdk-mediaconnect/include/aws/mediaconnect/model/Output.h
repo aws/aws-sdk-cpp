@@ -7,8 +7,10 @@
 #include <aws/mediaconnect/MediaConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconnect/model/Encryption.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediaconnect/model/Transport.h>
 #include <aws/mediaconnect/model/VpcInterfaceAttachment.h>
+#include <aws/mediaconnect/model/MediaStreamOutputConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -230,6 +232,79 @@ namespace Model
 
 
     /**
+     * The IP address that the receiver requires in order to establish a connection
+     * with the flow. For public networking, the ListenerAddress is represented by the
+     * elastic IP address of the flow. For private networking, the ListenerAddress is
+     * represented by the elastic network interface IP address of the VPC. This field
+     * applies only to outputs that use the Zixi pull or SRT listener protocol.
+     */
+    inline const Aws::String& GetListenerAddress() const{ return m_listenerAddress; }
+
+    /**
+     * The IP address that the receiver requires in order to establish a connection
+     * with the flow. For public networking, the ListenerAddress is represented by the
+     * elastic IP address of the flow. For private networking, the ListenerAddress is
+     * represented by the elastic network interface IP address of the VPC. This field
+     * applies only to outputs that use the Zixi pull or SRT listener protocol.
+     */
+    inline bool ListenerAddressHasBeenSet() const { return m_listenerAddressHasBeenSet; }
+
+    /**
+     * The IP address that the receiver requires in order to establish a connection
+     * with the flow. For public networking, the ListenerAddress is represented by the
+     * elastic IP address of the flow. For private networking, the ListenerAddress is
+     * represented by the elastic network interface IP address of the VPC. This field
+     * applies only to outputs that use the Zixi pull or SRT listener protocol.
+     */
+    inline void SetListenerAddress(const Aws::String& value) { m_listenerAddressHasBeenSet = true; m_listenerAddress = value; }
+
+    /**
+     * The IP address that the receiver requires in order to establish a connection
+     * with the flow. For public networking, the ListenerAddress is represented by the
+     * elastic IP address of the flow. For private networking, the ListenerAddress is
+     * represented by the elastic network interface IP address of the VPC. This field
+     * applies only to outputs that use the Zixi pull or SRT listener protocol.
+     */
+    inline void SetListenerAddress(Aws::String&& value) { m_listenerAddressHasBeenSet = true; m_listenerAddress = std::move(value); }
+
+    /**
+     * The IP address that the receiver requires in order to establish a connection
+     * with the flow. For public networking, the ListenerAddress is represented by the
+     * elastic IP address of the flow. For private networking, the ListenerAddress is
+     * represented by the elastic network interface IP address of the VPC. This field
+     * applies only to outputs that use the Zixi pull or SRT listener protocol.
+     */
+    inline void SetListenerAddress(const char* value) { m_listenerAddressHasBeenSet = true; m_listenerAddress.assign(value); }
+
+    /**
+     * The IP address that the receiver requires in order to establish a connection
+     * with the flow. For public networking, the ListenerAddress is represented by the
+     * elastic IP address of the flow. For private networking, the ListenerAddress is
+     * represented by the elastic network interface IP address of the VPC. This field
+     * applies only to outputs that use the Zixi pull or SRT listener protocol.
+     */
+    inline Output& WithListenerAddress(const Aws::String& value) { SetListenerAddress(value); return *this;}
+
+    /**
+     * The IP address that the receiver requires in order to establish a connection
+     * with the flow. For public networking, the ListenerAddress is represented by the
+     * elastic IP address of the flow. For private networking, the ListenerAddress is
+     * represented by the elastic network interface IP address of the VPC. This field
+     * applies only to outputs that use the Zixi pull or SRT listener protocol.
+     */
+    inline Output& WithListenerAddress(Aws::String&& value) { SetListenerAddress(std::move(value)); return *this;}
+
+    /**
+     * The IP address that the receiver requires in order to establish a connection
+     * with the flow. For public networking, the ListenerAddress is represented by the
+     * elastic IP address of the flow. For private networking, the ListenerAddress is
+     * represented by the elastic network interface IP address of the VPC. This field
+     * applies only to outputs that use the Zixi pull or SRT listener protocol.
+     */
+    inline Output& WithListenerAddress(const char* value) { SetListenerAddress(value); return *this;}
+
+
+    /**
      * The input ARN of the AWS Elemental MediaLive channel. This parameter is relevant
      * only for outputs that were added by creating a MediaLive input.
      */
@@ -276,6 +351,47 @@ namespace Model
      * only for outputs that were added by creating a MediaLive input.
      */
     inline Output& WithMediaLiveInputArn(const char* value) { SetMediaLiveInputArn(value); return *this;}
+
+
+    /**
+     * The configuration for each media stream that is associated with the output.
+     */
+    inline const Aws::Vector<MediaStreamOutputConfiguration>& GetMediaStreamOutputConfigurations() const{ return m_mediaStreamOutputConfigurations; }
+
+    /**
+     * The configuration for each media stream that is associated with the output.
+     */
+    inline bool MediaStreamOutputConfigurationsHasBeenSet() const { return m_mediaStreamOutputConfigurationsHasBeenSet; }
+
+    /**
+     * The configuration for each media stream that is associated with the output.
+     */
+    inline void SetMediaStreamOutputConfigurations(const Aws::Vector<MediaStreamOutputConfiguration>& value) { m_mediaStreamOutputConfigurationsHasBeenSet = true; m_mediaStreamOutputConfigurations = value; }
+
+    /**
+     * The configuration for each media stream that is associated with the output.
+     */
+    inline void SetMediaStreamOutputConfigurations(Aws::Vector<MediaStreamOutputConfiguration>&& value) { m_mediaStreamOutputConfigurationsHasBeenSet = true; m_mediaStreamOutputConfigurations = std::move(value); }
+
+    /**
+     * The configuration for each media stream that is associated with the output.
+     */
+    inline Output& WithMediaStreamOutputConfigurations(const Aws::Vector<MediaStreamOutputConfiguration>& value) { SetMediaStreamOutputConfigurations(value); return *this;}
+
+    /**
+     * The configuration for each media stream that is associated with the output.
+     */
+    inline Output& WithMediaStreamOutputConfigurations(Aws::Vector<MediaStreamOutputConfiguration>&& value) { SetMediaStreamOutputConfigurations(std::move(value)); return *this;}
+
+    /**
+     * The configuration for each media stream that is associated with the output.
+     */
+    inline Output& AddMediaStreamOutputConfigurations(const MediaStreamOutputConfiguration& value) { m_mediaStreamOutputConfigurationsHasBeenSet = true; m_mediaStreamOutputConfigurations.push_back(value); return *this; }
+
+    /**
+     * The configuration for each media stream that is associated with the output.
+     */
+    inline Output& AddMediaStreamOutputConfigurations(MediaStreamOutputConfiguration&& value) { m_mediaStreamOutputConfigurationsHasBeenSet = true; m_mediaStreamOutputConfigurations.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -459,8 +575,14 @@ namespace Model
     Aws::String m_entitlementArn;
     bool m_entitlementArnHasBeenSet;
 
+    Aws::String m_listenerAddress;
+    bool m_listenerAddressHasBeenSet;
+
     Aws::String m_mediaLiveInputArn;
     bool m_mediaLiveInputArnHasBeenSet;
+
+    Aws::Vector<MediaStreamOutputConfiguration> m_mediaStreamOutputConfigurations;
+    bool m_mediaStreamOutputConfigurationsHasBeenSet;
 
     Aws::String m_name;
     bool m_nameHasBeenSet;

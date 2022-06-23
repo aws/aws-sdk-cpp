@@ -21,6 +21,8 @@ namespace Model
 ComputeEnvironmentDetail::ComputeEnvironmentDetail() : 
     m_computeEnvironmentNameHasBeenSet(false),
     m_computeEnvironmentArnHasBeenSet(false),
+    m_unmanagedvCpus(0),
+    m_unmanagedvCpusHasBeenSet(false),
     m_ecsClusterArnHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_type(CEType::NOT_SET),
@@ -31,13 +33,16 @@ ComputeEnvironmentDetail::ComputeEnvironmentDetail() :
     m_statusHasBeenSet(false),
     m_statusReasonHasBeenSet(false),
     m_computeResourcesHasBeenSet(false),
-    m_serviceRoleHasBeenSet(false)
+    m_serviceRoleHasBeenSet(false),
+    m_updatePolicyHasBeenSet(false)
 {
 }
 
 ComputeEnvironmentDetail::ComputeEnvironmentDetail(JsonView jsonValue) : 
     m_computeEnvironmentNameHasBeenSet(false),
     m_computeEnvironmentArnHasBeenSet(false),
+    m_unmanagedvCpus(0),
+    m_unmanagedvCpusHasBeenSet(false),
     m_ecsClusterArnHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_type(CEType::NOT_SET),
@@ -48,7 +53,8 @@ ComputeEnvironmentDetail::ComputeEnvironmentDetail(JsonView jsonValue) :
     m_statusHasBeenSet(false),
     m_statusReasonHasBeenSet(false),
     m_computeResourcesHasBeenSet(false),
-    m_serviceRoleHasBeenSet(false)
+    m_serviceRoleHasBeenSet(false),
+    m_updatePolicyHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -67,6 +73,13 @@ ComputeEnvironmentDetail& ComputeEnvironmentDetail::operator =(JsonView jsonValu
     m_computeEnvironmentArn = jsonValue.GetString("computeEnvironmentArn");
 
     m_computeEnvironmentArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("unmanagedvCpus"))
+  {
+    m_unmanagedvCpus = jsonValue.GetInteger("unmanagedvCpus");
+
+    m_unmanagedvCpusHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ecsClusterArn"))
@@ -128,6 +141,13 @@ ComputeEnvironmentDetail& ComputeEnvironmentDetail::operator =(JsonView jsonValu
     m_serviceRoleHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("updatePolicy"))
+  {
+    m_updatePolicy = jsonValue.GetObject("updatePolicy");
+
+    m_updatePolicyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -144,6 +164,12 @@ JsonValue ComputeEnvironmentDetail::Jsonize() const
   if(m_computeEnvironmentArnHasBeenSet)
   {
    payload.WithString("computeEnvironmentArn", m_computeEnvironmentArn);
+
+  }
+
+  if(m_unmanagedvCpusHasBeenSet)
+  {
+   payload.WithInteger("unmanagedvCpus", m_unmanagedvCpus);
 
   }
 
@@ -194,6 +220,12 @@ JsonValue ComputeEnvironmentDetail::Jsonize() const
   if(m_serviceRoleHasBeenSet)
   {
    payload.WithString("serviceRole", m_serviceRole);
+
+  }
+
+  if(m_updatePolicyHasBeenSet)
+  {
+   payload.WithObject("updatePolicy", m_updatePolicy.Jsonize());
 
   }
 

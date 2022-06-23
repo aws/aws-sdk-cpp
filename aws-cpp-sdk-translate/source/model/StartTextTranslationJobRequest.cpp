@@ -22,7 +22,8 @@ StartTextTranslationJobRequest::StartTextTranslationJobRequest() :
     m_terminologyNamesHasBeenSet(false),
     m_parallelDataNamesHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
-    m_clientTokenHasBeenSet(true)
+    m_clientTokenHasBeenSet(true),
+    m_settingsHasBeenSet(false)
 {
 }
 
@@ -96,6 +97,12 @@ Aws::String StartTextTranslationJobRequest::SerializePayload() const
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("ClientToken", m_clientToken);
+
+  }
+
+  if(m_settingsHasBeenSet)
+  {
+   payload.WithObject("Settings", m_settings.Jsonize());
 
   }
 

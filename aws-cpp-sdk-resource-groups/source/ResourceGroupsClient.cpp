@@ -84,7 +84,7 @@ ResourceGroupsClient::~ResourceGroupsClient()
 {
 }
 
-void ResourceGroupsClient::init(const ClientConfiguration& config)
+void ResourceGroupsClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Resource Groups");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -113,9 +113,7 @@ void ResourceGroupsClient::OverrideEndpoint(const Aws::String& endpoint)
 CreateGroupOutcome ResourceGroupsClient::CreateGroup(const CreateGroupRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/groups";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/groups");
   return CreateGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -140,9 +138,7 @@ void ResourceGroupsClient::CreateGroupAsyncHelper(const CreateGroupRequest& requ
 DeleteGroupOutcome ResourceGroupsClient::DeleteGroup(const DeleteGroupRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/delete-group";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/delete-group");
   return DeleteGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -167,9 +163,7 @@ void ResourceGroupsClient::DeleteGroupAsyncHelper(const DeleteGroupRequest& requ
 GetGroupOutcome ResourceGroupsClient::GetGroup(const GetGroupRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/get-group";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/get-group");
   return GetGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -194,9 +188,7 @@ void ResourceGroupsClient::GetGroupAsyncHelper(const GetGroupRequest& request, c
 GetGroupConfigurationOutcome ResourceGroupsClient::GetGroupConfiguration(const GetGroupConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/get-group-configuration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/get-group-configuration");
   return GetGroupConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -221,9 +213,7 @@ void ResourceGroupsClient::GetGroupConfigurationAsyncHelper(const GetGroupConfig
 GetGroupQueryOutcome ResourceGroupsClient::GetGroupQuery(const GetGroupQueryRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/get-group-query";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/get-group-query");
   return GetGroupQueryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -253,11 +243,9 @@ GetTagsOutcome ResourceGroupsClient::GetTags(const GetTagsRequest& request) cons
     return GetTagsOutcome(Aws::Client::AWSError<ResourceGroupsErrors>(ResourceGroupsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Arn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/resources/";
-  ss << request.GetArn();
-  ss << "/tags";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/resources/");
+  uri.AddPathSegment(request.GetArn());
+  uri.AddPathSegments("/tags");
   return GetTagsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -282,9 +270,7 @@ void ResourceGroupsClient::GetTagsAsyncHelper(const GetTagsRequest& request, con
 GroupResourcesOutcome ResourceGroupsClient::GroupResources(const GroupResourcesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/group-resources";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/group-resources");
   return GroupResourcesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -309,9 +295,7 @@ void ResourceGroupsClient::GroupResourcesAsyncHelper(const GroupResourcesRequest
 ListGroupResourcesOutcome ResourceGroupsClient::ListGroupResources(const ListGroupResourcesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/list-group-resources";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/list-group-resources");
   return ListGroupResourcesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -336,9 +320,7 @@ void ResourceGroupsClient::ListGroupResourcesAsyncHelper(const ListGroupResource
 ListGroupsOutcome ResourceGroupsClient::ListGroups(const ListGroupsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/groups-list";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/groups-list");
   return ListGroupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -363,9 +345,7 @@ void ResourceGroupsClient::ListGroupsAsyncHelper(const ListGroupsRequest& reques
 PutGroupConfigurationOutcome ResourceGroupsClient::PutGroupConfiguration(const PutGroupConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/put-group-configuration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/put-group-configuration");
   return PutGroupConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -390,9 +370,7 @@ void ResourceGroupsClient::PutGroupConfigurationAsyncHelper(const PutGroupConfig
 SearchResourcesOutcome ResourceGroupsClient::SearchResources(const SearchResourcesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/resources/search";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/resources/search");
   return SearchResourcesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -422,11 +400,9 @@ TagOutcome ResourceGroupsClient::Tag(const TagRequest& request) const
     return TagOutcome(Aws::Client::AWSError<ResourceGroupsErrors>(ResourceGroupsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Arn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/resources/";
-  ss << request.GetArn();
-  ss << "/tags";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/resources/");
+  uri.AddPathSegment(request.GetArn());
+  uri.AddPathSegments("/tags");
   return TagOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -451,9 +427,7 @@ void ResourceGroupsClient::TagAsyncHelper(const TagRequest& request, const TagRe
 UngroupResourcesOutcome ResourceGroupsClient::UngroupResources(const UngroupResourcesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/ungroup-resources";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/ungroup-resources");
   return UngroupResourcesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -483,11 +457,9 @@ UntagOutcome ResourceGroupsClient::Untag(const UntagRequest& request) const
     return UntagOutcome(Aws::Client::AWSError<ResourceGroupsErrors>(ResourceGroupsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Arn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/resources/";
-  ss << request.GetArn();
-  ss << "/tags";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/resources/");
+  uri.AddPathSegment(request.GetArn());
+  uri.AddPathSegments("/tags");
   return UntagOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -512,9 +484,7 @@ void ResourceGroupsClient::UntagAsyncHelper(const UntagRequest& request, const U
 UpdateGroupOutcome ResourceGroupsClient::UpdateGroup(const UpdateGroupRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/update-group";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/update-group");
   return UpdateGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -539,9 +509,7 @@ void ResourceGroupsClient::UpdateGroupAsyncHelper(const UpdateGroupRequest& requ
 UpdateGroupQueryOutcome ResourceGroupsClient::UpdateGroupQuery(const UpdateGroupQueryRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/update-group-query";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/update-group-query");
   return UpdateGroupQueryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

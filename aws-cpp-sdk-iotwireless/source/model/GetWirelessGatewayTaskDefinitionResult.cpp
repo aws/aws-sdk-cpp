@@ -48,6 +48,12 @@ GetWirelessGatewayTaskDefinitionResult& GetWirelessGatewayTaskDefinitionResult::
 
   }
 
+  if(jsonValue.ValueExists("Arn"))
+  {
+    m_arn = jsonValue.GetString("Arn");
+
+  }
+
 
 
   return *this;

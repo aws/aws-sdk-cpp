@@ -24,6 +24,8 @@ namespace Aws
         static const int CANNOT_PARSE_HASH = HashingUtils::HashString("CANNOT_PARSE");
         static const int FIELD_VALIDATION_FAILED_HASH = HashingUtils::HashString("FIELD_VALIDATION_FAILED");
         static const int OTHER_HASH = HashingUtils::HashString("OTHER");
+        static const int INVALID_PARAMETER_COMBINATION_HASH = HashingUtils::HashString("INVALID_PARAMETER_COMBINATION");
+        static const int PARAMETER_INCONSISTENT_WITH_SERVICE_STATE_HASH = HashingUtils::HashString("PARAMETER_INCONSISTENT_WITH_SERVICE_STATE");
 
 
         ValidationExceptionReason GetValidationExceptionReasonForName(const Aws::String& name)
@@ -44,6 +46,14 @@ namespace Aws
           else if (hashCode == OTHER_HASH)
           {
             return ValidationExceptionReason::OTHER;
+          }
+          else if (hashCode == INVALID_PARAMETER_COMBINATION_HASH)
+          {
+            return ValidationExceptionReason::INVALID_PARAMETER_COMBINATION;
+          }
+          else if (hashCode == PARAMETER_INCONSISTENT_WITH_SERVICE_STATE_HASH)
+          {
+            return ValidationExceptionReason::PARAMETER_INCONSISTENT_WITH_SERVICE_STATE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -67,6 +77,10 @@ namespace Aws
             return "FIELD_VALIDATION_FAILED";
           case ValidationExceptionReason::OTHER:
             return "OTHER";
+          case ValidationExceptionReason::INVALID_PARAMETER_COMBINATION:
+            return "INVALID_PARAMETER_COMBINATION";
+          case ValidationExceptionReason::PARAMETER_INCONSISTENT_WITH_SERVICE_STATE:
+            return "PARAMETER_INCONSISTENT_WITH_SERVICE_STATE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

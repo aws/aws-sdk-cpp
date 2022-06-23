@@ -14,6 +14,7 @@
 #include <aws/kendra/model/IndexStatistics.h>
 #include <aws/kendra/model/CapacityUnitsConfiguration.h>
 #include <aws/kendra/model/UserContextPolicy.h>
+#include <aws/kendra/model/UserGroupResolutionConfiguration.h>
 #include <aws/kendra/model/DocumentMetadataConfiguration.h>
 #include <aws/kendra/model/UserTokenConfiguration.h>
 #include <utility>
@@ -79,37 +80,37 @@ namespace Model
 
 
     /**
-     * <p>The name of the index.</p>
+     * <p>The identifier of the index.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The name of the index.</p>
+     * <p>The identifier of the index.</p>
      */
     inline void SetId(const Aws::String& value) { m_id = value; }
 
     /**
-     * <p>The name of the index.</p>
+     * <p>The identifier of the index.</p>
      */
     inline void SetId(Aws::String&& value) { m_id = std::move(value); }
 
     /**
-     * <p>The name of the index.</p>
+     * <p>The identifier of the index.</p>
      */
     inline void SetId(const char* value) { m_id.assign(value); }
 
     /**
-     * <p>The name of the index.</p>
+     * <p>The identifier of the index.</p>
      */
     inline DescribeIndexResult& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The name of the index.</p>
+     * <p>The identifier of the index.</p>
      */
     inline DescribeIndexResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the index.</p>
+     * <p>The identifier of the index.</p>
      */
     inline DescribeIndexResult& WithId(const char* value) { SetId(value); return *this;}
 
@@ -189,32 +190,32 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the AWS KMS customer master key (CMK) used to encrypt your
-     * data. Amazon Kendra doesn't support asymmetric CMKs.</p>
+     * <p>The identifier of the KMScustomer master key (CMK) that is used to encrypt
+     * your data. Amazon Kendra doesn't support asymmetric CMKs.</p>
      */
     inline const ServerSideEncryptionConfiguration& GetServerSideEncryptionConfiguration() const{ return m_serverSideEncryptionConfiguration; }
 
     /**
-     * <p>The identifier of the AWS KMS customer master key (CMK) used to encrypt your
-     * data. Amazon Kendra doesn't support asymmetric CMKs.</p>
+     * <p>The identifier of the KMScustomer master key (CMK) that is used to encrypt
+     * your data. Amazon Kendra doesn't support asymmetric CMKs.</p>
      */
     inline void SetServerSideEncryptionConfiguration(const ServerSideEncryptionConfiguration& value) { m_serverSideEncryptionConfiguration = value; }
 
     /**
-     * <p>The identifier of the AWS KMS customer master key (CMK) used to encrypt your
-     * data. Amazon Kendra doesn't support asymmetric CMKs.</p>
+     * <p>The identifier of the KMScustomer master key (CMK) that is used to encrypt
+     * your data. Amazon Kendra doesn't support asymmetric CMKs.</p>
      */
     inline void SetServerSideEncryptionConfiguration(ServerSideEncryptionConfiguration&& value) { m_serverSideEncryptionConfiguration = std::move(value); }
 
     /**
-     * <p>The identifier of the AWS KMS customer master key (CMK) used to encrypt your
-     * data. Amazon Kendra doesn't support asymmetric CMKs.</p>
+     * <p>The identifier of the KMScustomer master key (CMK) that is used to encrypt
+     * your data. Amazon Kendra doesn't support asymmetric CMKs.</p>
      */
     inline DescribeIndexResult& WithServerSideEncryptionConfiguration(const ServerSideEncryptionConfiguration& value) { SetServerSideEncryptionConfiguration(value); return *this;}
 
     /**
-     * <p>The identifier of the AWS KMS customer master key (CMK) used to encrypt your
-     * data. Amazon Kendra doesn't support asymmetric CMKs.</p>
+     * <p>The identifier of the KMScustomer master key (CMK) that is used to encrypt
+     * your data. Amazon Kendra doesn't support asymmetric CMKs.</p>
      */
     inline DescribeIndexResult& WithServerSideEncryptionConfiguration(ServerSideEncryptionConfiguration&& value) { SetServerSideEncryptionConfiguration(std::move(value)); return *this;}
 
@@ -261,37 +262,37 @@ namespace Model
 
 
     /**
-     * <p>The description of the index.</p>
+     * <p>The description for the index.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The description of the index.</p>
+     * <p>The description for the index.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_description = value; }
 
     /**
-     * <p>The description of the index.</p>
+     * <p>The description for the index.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
 
     /**
-     * <p>The description of the index.</p>
+     * <p>The description for the index.</p>
      */
     inline void SetDescription(const char* value) { m_description.assign(value); }
 
     /**
-     * <p>The description of the index.</p>
+     * <p>The description for the index.</p>
      */
     inline DescribeIndexResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The description of the index.</p>
+     * <p>The description for the index.</p>
      */
     inline DescribeIndexResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The description of the index.</p>
+     * <p>The description for the index.</p>
      */
     inline DescribeIndexResult& WithDescription(const char* value) { SetDescription(value); return *this;}
 
@@ -423,85 +424,100 @@ namespace Model
 
 
     /**
-     * <p>When th e<code>Status</code> field value is <code>FAILED</code>, the
+     * <p>When the <code>Status</code> field value is <code>FAILED</code>, the
      * <code>ErrorMessage</code> field contains a message that explains why.</p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
 
     /**
-     * <p>When th e<code>Status</code> field value is <code>FAILED</code>, the
+     * <p>When the <code>Status</code> field value is <code>FAILED</code>, the
      * <code>ErrorMessage</code> field contains a message that explains why.</p>
      */
     inline void SetErrorMessage(const Aws::String& value) { m_errorMessage = value; }
 
     /**
-     * <p>When th e<code>Status</code> field value is <code>FAILED</code>, the
+     * <p>When the <code>Status</code> field value is <code>FAILED</code>, the
      * <code>ErrorMessage</code> field contains a message that explains why.</p>
      */
     inline void SetErrorMessage(Aws::String&& value) { m_errorMessage = std::move(value); }
 
     /**
-     * <p>When th e<code>Status</code> field value is <code>FAILED</code>, the
+     * <p>When the <code>Status</code> field value is <code>FAILED</code>, the
      * <code>ErrorMessage</code> field contains a message that explains why.</p>
      */
     inline void SetErrorMessage(const char* value) { m_errorMessage.assign(value); }
 
     /**
-     * <p>When th e<code>Status</code> field value is <code>FAILED</code>, the
+     * <p>When the <code>Status</code> field value is <code>FAILED</code>, the
      * <code>ErrorMessage</code> field contains a message that explains why.</p>
      */
     inline DescribeIndexResult& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
 
     /**
-     * <p>When th e<code>Status</code> field value is <code>FAILED</code>, the
+     * <p>When the <code>Status</code> field value is <code>FAILED</code>, the
      * <code>ErrorMessage</code> field contains a message that explains why.</p>
      */
     inline DescribeIndexResult& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
 
     /**
-     * <p>When th e<code>Status</code> field value is <code>FAILED</code>, the
+     * <p>When the <code>Status</code> field value is <code>FAILED</code>, the
      * <code>ErrorMessage</code> field contains a message that explains why.</p>
      */
     inline DescribeIndexResult& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
 
 
     /**
-     * <p>For enterprise edtion indexes, you can choose to use additional capacity to
+     * <p>For Enterprise Edition indexes, you can choose to use additional capacity to
      * meet the needs of your application. This contains the capacity units used for
-     * the index. A 0 for the query capacity or the storage capacity indicates that the
-     * index is using the default capacity for the index.</p>
+     * the index. A query or document storage capacity of zero indicates that the index
+     * is using the default capacity. For more information on the default capacity for
+     * an index and adjusting this, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting
+     * capacity</a>.</p>
      */
     inline const CapacityUnitsConfiguration& GetCapacityUnits() const{ return m_capacityUnits; }
 
     /**
-     * <p>For enterprise edtion indexes, you can choose to use additional capacity to
+     * <p>For Enterprise Edition indexes, you can choose to use additional capacity to
      * meet the needs of your application. This contains the capacity units used for
-     * the index. A 0 for the query capacity or the storage capacity indicates that the
-     * index is using the default capacity for the index.</p>
+     * the index. A query or document storage capacity of zero indicates that the index
+     * is using the default capacity. For more information on the default capacity for
+     * an index and adjusting this, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting
+     * capacity</a>.</p>
      */
     inline void SetCapacityUnits(const CapacityUnitsConfiguration& value) { m_capacityUnits = value; }
 
     /**
-     * <p>For enterprise edtion indexes, you can choose to use additional capacity to
+     * <p>For Enterprise Edition indexes, you can choose to use additional capacity to
      * meet the needs of your application. This contains the capacity units used for
-     * the index. A 0 for the query capacity or the storage capacity indicates that the
-     * index is using the default capacity for the index.</p>
+     * the index. A query or document storage capacity of zero indicates that the index
+     * is using the default capacity. For more information on the default capacity for
+     * an index and adjusting this, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting
+     * capacity</a>.</p>
      */
     inline void SetCapacityUnits(CapacityUnitsConfiguration&& value) { m_capacityUnits = std::move(value); }
 
     /**
-     * <p>For enterprise edtion indexes, you can choose to use additional capacity to
+     * <p>For Enterprise Edition indexes, you can choose to use additional capacity to
      * meet the needs of your application. This contains the capacity units used for
-     * the index. A 0 for the query capacity or the storage capacity indicates that the
-     * index is using the default capacity for the index.</p>
+     * the index. A query or document storage capacity of zero indicates that the index
+     * is using the default capacity. For more information on the default capacity for
+     * an index and adjusting this, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting
+     * capacity</a>.</p>
      */
     inline DescribeIndexResult& WithCapacityUnits(const CapacityUnitsConfiguration& value) { SetCapacityUnits(value); return *this;}
 
     /**
-     * <p>For enterprise edtion indexes, you can choose to use additional capacity to
+     * <p>For Enterprise Edition indexes, you can choose to use additional capacity to
      * meet the needs of your application. This contains the capacity units used for
-     * the index. A 0 for the query capacity or the storage capacity indicates that the
-     * index is using the default capacity for the index.</p>
+     * the index. A query or document storage capacity of zero indicates that the index
+     * is using the default capacity. For more information on the default capacity for
+     * an index and adjusting this, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting
+     * capacity</a>.</p>
      */
     inline DescribeIndexResult& WithCapacityUnits(CapacityUnitsConfiguration&& value) { SetCapacityUnits(std::move(value)); return *this;}
 
@@ -567,6 +583,42 @@ namespace Model
      */
     inline DescribeIndexResult& WithUserContextPolicy(UserContextPolicy&& value) { SetUserContextPolicy(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Shows whether you have enabled the configuration for fetching access levels
+     * of groups and users from an Amazon Web Services Single Sign On identity
+     * source.</p>
+     */
+    inline const UserGroupResolutionConfiguration& GetUserGroupResolutionConfiguration() const{ return m_userGroupResolutionConfiguration; }
+
+    /**
+     * <p>Shows whether you have enabled the configuration for fetching access levels
+     * of groups and users from an Amazon Web Services Single Sign On identity
+     * source.</p>
+     */
+    inline void SetUserGroupResolutionConfiguration(const UserGroupResolutionConfiguration& value) { m_userGroupResolutionConfiguration = value; }
+
+    /**
+     * <p>Shows whether you have enabled the configuration for fetching access levels
+     * of groups and users from an Amazon Web Services Single Sign On identity
+     * source.</p>
+     */
+    inline void SetUserGroupResolutionConfiguration(UserGroupResolutionConfiguration&& value) { m_userGroupResolutionConfiguration = std::move(value); }
+
+    /**
+     * <p>Shows whether you have enabled the configuration for fetching access levels
+     * of groups and users from an Amazon Web Services Single Sign On identity
+     * source.</p>
+     */
+    inline DescribeIndexResult& WithUserGroupResolutionConfiguration(const UserGroupResolutionConfiguration& value) { SetUserGroupResolutionConfiguration(value); return *this;}
+
+    /**
+     * <p>Shows whether you have enabled the configuration for fetching access levels
+     * of groups and users from an Amazon Web Services Single Sign On identity
+     * source.</p>
+     */
+    inline DescribeIndexResult& WithUserGroupResolutionConfiguration(UserGroupResolutionConfiguration&& value) { SetUserGroupResolutionConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -598,6 +650,8 @@ namespace Model
     Aws::Vector<UserTokenConfiguration> m_userTokenConfigurations;
 
     UserContextPolicy m_userContextPolicy;
+
+    UserGroupResolutionConfiguration m_userGroupResolutionConfiguration;
   };
 
 } // namespace Model

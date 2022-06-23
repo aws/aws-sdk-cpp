@@ -33,65 +33,65 @@ namespace Model
 
 
     /**
-     * <p>Contains the user’s username value. The length limit is 128 characters. This
-     * value can consist of letters, accented characters, symbols, numbers and
-     * punctuation. The characters “&lt;&gt;;:%” are excluded. This value is specified
-     * at the time the user is created and stored as an attribute of the user object in
-     * the identity store.</p>
+     * <p>Contains the user’s user name value. The length limit is 128 characters. This
+     * value can consist of letters, accented characters, symbols, numbers, and
+     * punctuation. The characters <code>&lt;&gt;;:%</code> are excluded. This value is
+     * specified at the time the user is created and stored as an attribute of the user
+     * object in the identity store.</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
 
     /**
-     * <p>Contains the user’s username value. The length limit is 128 characters. This
-     * value can consist of letters, accented characters, symbols, numbers and
-     * punctuation. The characters “&lt;&gt;;:%” are excluded. This value is specified
-     * at the time the user is created and stored as an attribute of the user object in
-     * the identity store.</p>
+     * <p>Contains the user’s user name value. The length limit is 128 characters. This
+     * value can consist of letters, accented characters, symbols, numbers, and
+     * punctuation. The characters <code>&lt;&gt;;:%</code> are excluded. This value is
+     * specified at the time the user is created and stored as an attribute of the user
+     * object in the identity store.</p>
      */
     inline void SetUserName(const Aws::String& value) { m_userName = value; }
 
     /**
-     * <p>Contains the user’s username value. The length limit is 128 characters. This
-     * value can consist of letters, accented characters, symbols, numbers and
-     * punctuation. The characters “&lt;&gt;;:%” are excluded. This value is specified
-     * at the time the user is created and stored as an attribute of the user object in
-     * the identity store.</p>
+     * <p>Contains the user’s user name value. The length limit is 128 characters. This
+     * value can consist of letters, accented characters, symbols, numbers, and
+     * punctuation. The characters <code>&lt;&gt;;:%</code> are excluded. This value is
+     * specified at the time the user is created and stored as an attribute of the user
+     * object in the identity store.</p>
      */
     inline void SetUserName(Aws::String&& value) { m_userName = std::move(value); }
 
     /**
-     * <p>Contains the user’s username value. The length limit is 128 characters. This
-     * value can consist of letters, accented characters, symbols, numbers and
-     * punctuation. The characters “&lt;&gt;;:%” are excluded. This value is specified
-     * at the time the user is created and stored as an attribute of the user object in
-     * the identity store.</p>
+     * <p>Contains the user’s user name value. The length limit is 128 characters. This
+     * value can consist of letters, accented characters, symbols, numbers, and
+     * punctuation. The characters <code>&lt;&gt;;:%</code> are excluded. This value is
+     * specified at the time the user is created and stored as an attribute of the user
+     * object in the identity store.</p>
      */
     inline void SetUserName(const char* value) { m_userName.assign(value); }
 
     /**
-     * <p>Contains the user’s username value. The length limit is 128 characters. This
-     * value can consist of letters, accented characters, symbols, numbers and
-     * punctuation. The characters “&lt;&gt;;:%” are excluded. This value is specified
-     * at the time the user is created and stored as an attribute of the user object in
-     * the identity store.</p>
+     * <p>Contains the user’s user name value. The length limit is 128 characters. This
+     * value can consist of letters, accented characters, symbols, numbers, and
+     * punctuation. The characters <code>&lt;&gt;;:%</code> are excluded. This value is
+     * specified at the time the user is created and stored as an attribute of the user
+     * object in the identity store.</p>
      */
     inline DescribeUserResult& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
 
     /**
-     * <p>Contains the user’s username value. The length limit is 128 characters. This
-     * value can consist of letters, accented characters, symbols, numbers and
-     * punctuation. The characters “&lt;&gt;;:%” are excluded. This value is specified
-     * at the time the user is created and stored as an attribute of the user object in
-     * the identity store.</p>
+     * <p>Contains the user’s user name value. The length limit is 128 characters. This
+     * value can consist of letters, accented characters, symbols, numbers, and
+     * punctuation. The characters <code>&lt;&gt;;:%</code> are excluded. This value is
+     * specified at the time the user is created and stored as an attribute of the user
+     * object in the identity store.</p>
      */
     inline DescribeUserResult& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
-     * <p>Contains the user’s username value. The length limit is 128 characters. This
-     * value can consist of letters, accented characters, symbols, numbers and
-     * punctuation. The characters “&lt;&gt;;:%” are excluded. This value is specified
-     * at the time the user is created and stored as an attribute of the user object in
-     * the identity store.</p>
+     * <p>Contains the user’s user name value. The length limit is 128 characters. This
+     * value can consist of letters, accented characters, symbols, numbers, and
+     * punctuation. The characters <code>&lt;&gt;;:%</code> are excluded. This value is
+     * specified at the time the user is created and stored as an attribute of the user
+     * object in the identity store.</p>
      */
     inline DescribeUserResult& WithUserName(const char* value) { SetUserName(value); return *this;}
 

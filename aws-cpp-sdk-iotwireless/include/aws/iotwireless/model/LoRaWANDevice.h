@@ -10,6 +10,7 @@
 #include <aws/iotwireless/model/OtaaV1_0_x.h>
 #include <aws/iotwireless/model/AbpV1_1.h>
 #include <aws/iotwireless/model/AbpV1_0_x.h>
+#include <aws/iotwireless/model/FPorts.h>
 #include <utility>
 
 namespace Aws
@@ -287,6 +288,25 @@ namespace Model
      */
     inline LoRaWANDevice& WithAbpV1_0_x(AbpV1_0_x&& value) { SetAbpV1_0_x(std::move(value)); return *this;}
 
+
+    
+    inline const FPorts& GetFPorts() const{ return m_fPorts; }
+
+    
+    inline bool FPortsHasBeenSet() const { return m_fPortsHasBeenSet; }
+
+    
+    inline void SetFPorts(const FPorts& value) { m_fPortsHasBeenSet = true; m_fPorts = value; }
+
+    
+    inline void SetFPorts(FPorts&& value) { m_fPortsHasBeenSet = true; m_fPorts = std::move(value); }
+
+    
+    inline LoRaWANDevice& WithFPorts(const FPorts& value) { SetFPorts(value); return *this;}
+
+    
+    inline LoRaWANDevice& WithFPorts(FPorts&& value) { SetFPorts(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_devEui;
@@ -309,6 +329,9 @@ namespace Model
 
     AbpV1_0_x m_abpV1_0_x;
     bool m_abpV1_0_xHasBeenSet;
+
+    FPorts m_fPorts;
+    bool m_fPortsHasBeenSet;
   };
 
 } // namespace Model

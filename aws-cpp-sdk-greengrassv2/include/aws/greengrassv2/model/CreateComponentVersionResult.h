@@ -188,31 +188,31 @@ namespace Model
 
 
     /**
-     * <p>The status of the component version in AWS IoT Greengrass V2. This status is
+     * <p>The status of the component version in IoT Greengrass V2. This status is
      * different from the status of the component on a core device.</p>
      */
     inline const CloudComponentStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the component version in AWS IoT Greengrass V2. This status is
+     * <p>The status of the component version in IoT Greengrass V2. This status is
      * different from the status of the component on a core device.</p>
      */
     inline void SetStatus(const CloudComponentStatus& value) { m_status = value; }
 
     /**
-     * <p>The status of the component version in AWS IoT Greengrass V2. This status is
+     * <p>The status of the component version in IoT Greengrass V2. This status is
      * different from the status of the component on a core device.</p>
      */
     inline void SetStatus(CloudComponentStatus&& value) { m_status = std::move(value); }
 
     /**
-     * <p>The status of the component version in AWS IoT Greengrass V2. This status is
+     * <p>The status of the component version in IoT Greengrass V2. This status is
      * different from the status of the component on a core device.</p>
      */
     inline CreateComponentVersionResult& WithStatus(const CloudComponentStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the component version in AWS IoT Greengrass V2. This status is
+     * <p>The status of the component version in IoT Greengrass V2. This status is
      * different from the status of the component on a core device.</p>
      */
     inline CreateComponentVersionResult& WithStatus(CloudComponentStatus&& value) { SetStatus(std::move(value)); return *this;}

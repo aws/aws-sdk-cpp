@@ -297,44 +297,51 @@ namespace Model
 
 
     /**
-     * <p>If this is a managed rule, created by an AWS service on your behalf, this
-     * field displays the principal name of the AWS service that created the rule.</p>
+     * <p>If this is a managed rule, created by an Amazon Web Services service on your
+     * behalf, this field displays the principal name of the Amazon Web Services
+     * service that created the rule.</p>
      */
     inline const Aws::String& GetManagedBy() const{ return m_managedBy; }
 
     /**
-     * <p>If this is a managed rule, created by an AWS service on your behalf, this
-     * field displays the principal name of the AWS service that created the rule.</p>
+     * <p>If this is a managed rule, created by an Amazon Web Services service on your
+     * behalf, this field displays the principal name of the Amazon Web Services
+     * service that created the rule.</p>
      */
     inline void SetManagedBy(const Aws::String& value) { m_managedBy = value; }
 
     /**
-     * <p>If this is a managed rule, created by an AWS service on your behalf, this
-     * field displays the principal name of the AWS service that created the rule.</p>
+     * <p>If this is a managed rule, created by an Amazon Web Services service on your
+     * behalf, this field displays the principal name of the Amazon Web Services
+     * service that created the rule.</p>
      */
     inline void SetManagedBy(Aws::String&& value) { m_managedBy = std::move(value); }
 
     /**
-     * <p>If this is a managed rule, created by an AWS service on your behalf, this
-     * field displays the principal name of the AWS service that created the rule.</p>
+     * <p>If this is a managed rule, created by an Amazon Web Services service on your
+     * behalf, this field displays the principal name of the Amazon Web Services
+     * service that created the rule.</p>
      */
     inline void SetManagedBy(const char* value) { m_managedBy.assign(value); }
 
     /**
-     * <p>If this is a managed rule, created by an AWS service on your behalf, this
-     * field displays the principal name of the AWS service that created the rule.</p>
+     * <p>If this is a managed rule, created by an Amazon Web Services service on your
+     * behalf, this field displays the principal name of the Amazon Web Services
+     * service that created the rule.</p>
      */
     inline DescribeRuleResult& WithManagedBy(const Aws::String& value) { SetManagedBy(value); return *this;}
 
     /**
-     * <p>If this is a managed rule, created by an AWS service on your behalf, this
-     * field displays the principal name of the AWS service that created the rule.</p>
+     * <p>If this is a managed rule, created by an Amazon Web Services service on your
+     * behalf, this field displays the principal name of the Amazon Web Services
+     * service that created the rule.</p>
      */
     inline DescribeRuleResult& WithManagedBy(Aws::String&& value) { SetManagedBy(std::move(value)); return *this;}
 
     /**
-     * <p>If this is a managed rule, created by an AWS service on your behalf, this
-     * field displays the principal name of the AWS service that created the rule.</p>
+     * <p>If this is a managed rule, created by an Amazon Web Services service on your
+     * behalf, this field displays the principal name of the Amazon Web Services
+     * service that created the rule.</p>
      */
     inline DescribeRuleResult& WithManagedBy(const char* value) { SetManagedBy(value); return *this;}
 

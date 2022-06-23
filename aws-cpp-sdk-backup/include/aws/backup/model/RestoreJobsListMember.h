@@ -269,38 +269,38 @@ namespace Model
 
 
     /**
-     * <p>A status code specifying the state of the job initiated by AWS Backup to
-     * restore a recovery point.</p>
+     * <p>A status code specifying the state of the job initiated by Backup to restore
+     * a recovery point.</p>
      */
     inline const RestoreJobStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>A status code specifying the state of the job initiated by AWS Backup to
-     * restore a recovery point.</p>
+     * <p>A status code specifying the state of the job initiated by Backup to restore
+     * a recovery point.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>A status code specifying the state of the job initiated by AWS Backup to
-     * restore a recovery point.</p>
+     * <p>A status code specifying the state of the job initiated by Backup to restore
+     * a recovery point.</p>
      */
     inline void SetStatus(const RestoreJobStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>A status code specifying the state of the job initiated by AWS Backup to
-     * restore a recovery point.</p>
+     * <p>A status code specifying the state of the job initiated by Backup to restore
+     * a recovery point.</p>
      */
     inline void SetStatus(RestoreJobStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>A status code specifying the state of the job initiated by AWS Backup to
-     * restore a recovery point.</p>
+     * <p>A status code specifying the state of the job initiated by Backup to restore
+     * a recovery point.</p>
      */
     inline RestoreJobsListMember& WithStatus(const RestoreJobStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>A status code specifying the state of the job initiated by AWS Backup to
-     * restore a recovery point.</p>
+     * <p>A status code specifying the state of the job initiated by Backup to restore
+     * a recovery point.</p>
      */
     inline RestoreJobsListMember& WithStatus(RestoreJobStatus&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -550,64 +550,64 @@ namespace Model
     /**
      * <p>The resource type of the listed restore jobs; for example, an Amazon Elastic
      * Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon
-     * RDS) database. For VSS Windows backups, the only supported resource type is
-     * Amazon EC2.</p>
+     * RDS) database. For Windows Volume Shadow Copy Service (VSS) backups, the only
+     * supported resource type is Amazon EC2.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
     /**
      * <p>The resource type of the listed restore jobs; for example, an Amazon Elastic
      * Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon
-     * RDS) database. For VSS Windows backups, the only supported resource type is
-     * Amazon EC2.</p>
+     * RDS) database. For Windows Volume Shadow Copy Service (VSS) backups, the only
+     * supported resource type is Amazon EC2.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
      * <p>The resource type of the listed restore jobs; for example, an Amazon Elastic
      * Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon
-     * RDS) database. For VSS Windows backups, the only supported resource type is
-     * Amazon EC2.</p>
+     * RDS) database. For Windows Volume Shadow Copy Service (VSS) backups, the only
+     * supported resource type is Amazon EC2.</p>
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
      * <p>The resource type of the listed restore jobs; for example, an Amazon Elastic
      * Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon
-     * RDS) database. For VSS Windows backups, the only supported resource type is
-     * Amazon EC2.</p>
+     * RDS) database. For Windows Volume Shadow Copy Service (VSS) backups, the only
+     * supported resource type is Amazon EC2.</p>
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
      * <p>The resource type of the listed restore jobs; for example, an Amazon Elastic
      * Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon
-     * RDS) database. For VSS Windows backups, the only supported resource type is
-     * Amazon EC2.</p>
+     * RDS) database. For Windows Volume Shadow Copy Service (VSS) backups, the only
+     * supported resource type is Amazon EC2.</p>
      */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
 
     /**
      * <p>The resource type of the listed restore jobs; for example, an Amazon Elastic
      * Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon
-     * RDS) database. For VSS Windows backups, the only supported resource type is
-     * Amazon EC2.</p>
+     * RDS) database. For Windows Volume Shadow Copy Service (VSS) backups, the only
+     * supported resource type is Amazon EC2.</p>
      */
     inline RestoreJobsListMember& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
     /**
      * <p>The resource type of the listed restore jobs; for example, an Amazon Elastic
      * Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon
-     * RDS) database. For VSS Windows backups, the only supported resource type is
-     * Amazon EC2.</p>
+     * RDS) database. For Windows Volume Shadow Copy Service (VSS) backups, the only
+     * supported resource type is Amazon EC2.</p>
      */
     inline RestoreJobsListMember& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
      * <p>The resource type of the listed restore jobs; for example, an Amazon Elastic
      * Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon
-     * RDS) database. For VSS Windows backups, the only supported resource type is
-     * Amazon EC2.</p>
+     * RDS) database. For Windows Volume Shadow Copy Service (VSS) backups, the only
+     * supported resource type is Amazon EC2.</p>
      */
     inline RestoreJobsListMember& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 

@@ -21,7 +21,8 @@ StartTaskContactRequest::StartTaskContactRequest() :
     m_referencesHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
-    m_clientTokenHasBeenSet(true)
+    m_clientTokenHasBeenSet(true),
+    m_scheduledTimeHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,11 @@ Aws::String StartTaskContactRequest::SerializePayload() const
   {
    payload.WithString("ClientToken", m_clientToken);
 
+  }
+
+  if(m_scheduledTimeHasBeenSet)
+  {
+   payload.WithDouble("ScheduledTime", m_scheduledTime.SecondsWithMSPrecision());
   }
 
   return payload.View().WriteReadable();

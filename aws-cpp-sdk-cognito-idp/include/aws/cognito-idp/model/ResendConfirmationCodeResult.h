@@ -25,8 +25,8 @@ namespace CognitoIdentityProvider
 namespace Model
 {
   /**
-   * <p>The response from the server when the Amazon Cognito Your User Pools service
-   * makes the request to resend a confirmation code.</p><p><h3>See Also:</h3>   <a
+   * <p>The response from the server when Amazon Cognito makes the request to resend
+   * a confirmation code.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ResendConfirmationCodeResponse">AWS
    * API Reference</a></p>
    */

@@ -101,29 +101,29 @@ namespace Model
 
     /**
      * <p>The maximum number of tags returned on each page. The limit maximum is 50.
-     * You cannot specify a number greater than 50. If you specify 0, AWS Config uses
-     * the default. </p>
+     * You cannot specify a number greater than 50. If you specify 0, Config uses the
+     * default. </p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
      * <p>The maximum number of tags returned on each page. The limit maximum is 50.
-     * You cannot specify a number greater than 50. If you specify 0, AWS Config uses
-     * the default. </p>
+     * You cannot specify a number greater than 50. If you specify 0, Config uses the
+     * default. </p>
      */
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
      * <p>The maximum number of tags returned on each page. The limit maximum is 50.
-     * You cannot specify a number greater than 50. If you specify 0, AWS Config uses
-     * the default. </p>
+     * You cannot specify a number greater than 50. If you specify 0, Config uses the
+     * default. </p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
      * <p>The maximum number of tags returned on each page. The limit maximum is 50.
-     * You cannot specify a number greater than 50. If you specify 0, AWS Config uses
-     * the default. </p>
+     * You cannot specify a number greater than 50. If you specify 0, Config uses the
+     * default. </p>
      */
     inline ListTagsForResourceRequest& WithLimit(int value) { SetLimit(value); return *this;}
 

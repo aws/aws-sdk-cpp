@@ -42,6 +42,18 @@ GetDocumentResult& GetDocumentResult::operator =(const Aws::AmazonWebServiceResu
 
   }
 
+  if(jsonValue.ValueExists("CreatedDate"))
+  {
+    m_createdDate = jsonValue.GetDouble("CreatedDate");
+
+  }
+
+  if(jsonValue.ValueExists("DisplayName"))
+  {
+    m_displayName = jsonValue.GetString("DisplayName");
+
+  }
+
   if(jsonValue.ValueExists("VersionName"))
   {
     m_versionName = jsonValue.GetString("VersionName");

@@ -24,6 +24,8 @@ DiscovererSummary::DiscovererSummary() :
     m_sourceArnHasBeenSet(false),
     m_state(DiscovererState::NOT_SET),
     m_stateHasBeenSet(false),
+    m_crossAccount(false),
+    m_crossAccountHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -34,6 +36,8 @@ DiscovererSummary::DiscovererSummary(JsonView jsonValue) :
     m_sourceArnHasBeenSet(false),
     m_state(DiscovererState::NOT_SET),
     m_stateHasBeenSet(false),
+    m_crossAccount(false),
+    m_crossAccountHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -67,6 +71,13 @@ DiscovererSummary& DiscovererSummary::operator =(JsonView jsonValue)
     m_state = DiscovererStateMapper::GetDiscovererStateForName(jsonValue.GetString("State"));
 
     m_stateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CrossAccount"))
+  {
+    m_crossAccount = jsonValue.GetBool("CrossAccount");
+
+    m_crossAccountHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("tags"))
@@ -107,6 +118,12 @@ JsonValue DiscovererSummary::Jsonize() const
   if(m_stateHasBeenSet)
   {
    payload.WithString("State", DiscovererStateMapper::GetNameForDiscovererState(m_state));
+  }
+
+  if(m_crossAccountHasBeenSet)
+  {
+   payload.WithBool("CrossAccount", m_crossAccount);
+
   }
 
   if(m_tagsHasBeenSet)

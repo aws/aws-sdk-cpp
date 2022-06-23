@@ -48,6 +48,7 @@ enum class NetworkManagerErrors
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CORE_NETWORK_POLICY,
   INTERNAL_SERVER,
   SERVICE_QUOTA_EXCEEDED
 };

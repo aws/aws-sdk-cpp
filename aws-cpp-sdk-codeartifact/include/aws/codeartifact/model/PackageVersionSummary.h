@@ -27,9 +27,9 @@ namespace Model
   /**
    * <p> Details about a package version, including its status, version, and
    * revision. The <a
-   * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">
-   * <code>ListPackageVersions</code> </a> operation returns a list of
-   * <code>PackageVersionSummary</code> objects. </p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListPackageVersions</a>
+   * operation returns a list of <code>PackageVersionSummary</code> objects.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/PackageVersionSummary">AWS
    * API Reference</a></p>
    */

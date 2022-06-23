@@ -120,42 +120,42 @@ namespace Model
 
 
     /**
-     * <p>AWS Internet of Things (IoT) object name.</p>
+     * <p>Amazon Web Services Internet of Things (IoT) object name.</p>
      */
     inline const Aws::String& GetIotThingName() const{ return m_iotThingName; }
 
     /**
-     * <p>AWS Internet of Things (IoT) object name.</p>
+     * <p>Amazon Web Services Internet of Things (IoT) object name.</p>
      */
     inline bool IotThingNameHasBeenSet() const { return m_iotThingNameHasBeenSet; }
 
     /**
-     * <p>AWS Internet of Things (IoT) object name.</p>
+     * <p>Amazon Web Services Internet of Things (IoT) object name.</p>
      */
     inline void SetIotThingName(const Aws::String& value) { m_iotThingNameHasBeenSet = true; m_iotThingName = value; }
 
     /**
-     * <p>AWS Internet of Things (IoT) object name.</p>
+     * <p>Amazon Web Services Internet of Things (IoT) object name.</p>
      */
     inline void SetIotThingName(Aws::String&& value) { m_iotThingNameHasBeenSet = true; m_iotThingName = std::move(value); }
 
     /**
-     * <p>AWS Internet of Things (IoT) object name.</p>
+     * <p>Amazon Web Services Internet of Things (IoT) object name.</p>
      */
     inline void SetIotThingName(const char* value) { m_iotThingNameHasBeenSet = true; m_iotThingName.assign(value); }
 
     /**
-     * <p>AWS Internet of Things (IoT) object name.</p>
+     * <p>Amazon Web Services Internet of Things (IoT) object name.</p>
      */
     inline Device& WithIotThingName(const Aws::String& value) { SetIotThingName(value); return *this;}
 
     /**
-     * <p>AWS Internet of Things (IoT) object name.</p>
+     * <p>Amazon Web Services Internet of Things (IoT) object name.</p>
      */
     inline Device& WithIotThingName(Aws::String&& value) { SetIotThingName(std::move(value)); return *this;}
 
     /**
-     * <p>AWS Internet of Things (IoT) object name.</p>
+     * <p>Amazon Web Services Internet of Things (IoT) object name.</p>
      */
     inline Device& WithIotThingName(const char* value) { SetIotThingName(value); return *this;}
 

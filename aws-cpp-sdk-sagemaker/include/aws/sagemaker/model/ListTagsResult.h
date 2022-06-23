@@ -71,51 +71,44 @@ namespace Model
 
 
     /**
-     * <p> If response is truncated, Amazon SageMaker includes a token in the response.
-     * You can use this token in your subsequent request to fetch next set of tokens.
-     * </p>
+     * <p> If response is truncated, SageMaker includes a token in the response. You
+     * can use this token in your subsequent request to fetch next set of tokens. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p> If response is truncated, Amazon SageMaker includes a token in the response.
-     * You can use this token in your subsequent request to fetch next set of tokens.
-     * </p>
+     * <p> If response is truncated, SageMaker includes a token in the response. You
+     * can use this token in your subsequent request to fetch next set of tokens. </p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p> If response is truncated, Amazon SageMaker includes a token in the response.
-     * You can use this token in your subsequent request to fetch next set of tokens.
-     * </p>
+     * <p> If response is truncated, SageMaker includes a token in the response. You
+     * can use this token in your subsequent request to fetch next set of tokens. </p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p> If response is truncated, Amazon SageMaker includes a token in the response.
-     * You can use this token in your subsequent request to fetch next set of tokens.
-     * </p>
+     * <p> If response is truncated, SageMaker includes a token in the response. You
+     * can use this token in your subsequent request to fetch next set of tokens. </p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p> If response is truncated, Amazon SageMaker includes a token in the response.
-     * You can use this token in your subsequent request to fetch next set of tokens.
-     * </p>
+     * <p> If response is truncated, SageMaker includes a token in the response. You
+     * can use this token in your subsequent request to fetch next set of tokens. </p>
      */
     inline ListTagsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p> If response is truncated, Amazon SageMaker includes a token in the response.
-     * You can use this token in your subsequent request to fetch next set of tokens.
-     * </p>
+     * <p> If response is truncated, SageMaker includes a token in the response. You
+     * can use this token in your subsequent request to fetch next set of tokens. </p>
      */
     inline ListTagsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p> If response is truncated, Amazon SageMaker includes a token in the response.
-     * You can use this token in your subsequent request to fetch next set of tokens.
-     * </p>
+     * <p> If response is truncated, SageMaker includes a token in the response. You
+     * can use this token in your subsequent request to fetch next set of tokens. </p>
      */
     inline ListTagsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

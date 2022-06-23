@@ -36,37 +36,37 @@ namespace Model
 
 
     /**
-     * <p>A list of certificates for this AWS account.</p>
+     * <p>A list of certificates for this Amazon Web Services account.</p>
      */
     inline const Aws::Vector<Certificate>& GetCertificates() const{ return m_certificates; }
 
     /**
-     * <p>A list of certificates for this AWS account.</p>
+     * <p>A list of certificates for this Amazon Web Services account.</p>
      */
     inline void SetCertificates(const Aws::Vector<Certificate>& value) { m_certificates = value; }
 
     /**
-     * <p>A list of certificates for this AWS account.</p>
+     * <p>A list of certificates for this Amazon Web Services account.</p>
      */
     inline void SetCertificates(Aws::Vector<Certificate>&& value) { m_certificates = std::move(value); }
 
     /**
-     * <p>A list of certificates for this AWS account.</p>
+     * <p>A list of certificates for this Amazon Web Services account.</p>
      */
     inline DescribeCertificatesResult& WithCertificates(const Aws::Vector<Certificate>& value) { SetCertificates(value); return *this;}
 
     /**
-     * <p>A list of certificates for this AWS account.</p>
+     * <p>A list of certificates for this Amazon Web Services account.</p>
      */
     inline DescribeCertificatesResult& WithCertificates(Aws::Vector<Certificate>&& value) { SetCertificates(std::move(value)); return *this;}
 
     /**
-     * <p>A list of certificates for this AWS account.</p>
+     * <p>A list of certificates for this Amazon Web Services account.</p>
      */
     inline DescribeCertificatesResult& AddCertificates(const Certificate& value) { m_certificates.push_back(value); return *this; }
 
     /**
-     * <p>A list of certificates for this AWS account.</p>
+     * <p>A list of certificates for this Amazon Web Services account.</p>
      */
     inline DescribeCertificatesResult& AddCertificates(Certificate&& value) { m_certificates.push_back(std::move(value)); return *this; }
 

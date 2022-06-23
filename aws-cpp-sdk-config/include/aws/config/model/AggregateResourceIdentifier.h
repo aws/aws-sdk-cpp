@@ -25,9 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>The details that identify a resource that is collected by AWS Config
-   * aggregator, including the resource type, ID, (if available) the custom resource
-   * name, the source account, and source region.</p><p><h3>See Also:</h3>   <a
+   * <p>The details that identify a resource that is collected by Config aggregator,
+   * including the resource type, ID, (if available) the custom resource name, the
+   * source account, and source region.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/AggregateResourceIdentifier">AWS
    * API Reference</a></p>
    */
@@ -123,114 +123,114 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS resource.</p>
+     * <p>The ID of the Amazon Web Services resource.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
 
     /**
-     * <p>The ID of the AWS resource.</p>
+     * <p>The ID of the Amazon Web Services resource.</p>
      */
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS resource.</p>
+     * <p>The ID of the Amazon Web Services resource.</p>
      */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
-     * <p>The ID of the AWS resource.</p>
+     * <p>The ID of the Amazon Web Services resource.</p>
      */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS resource.</p>
+     * <p>The ID of the Amazon Web Services resource.</p>
      */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
 
     /**
-     * <p>The ID of the AWS resource.</p>
+     * <p>The ID of the Amazon Web Services resource.</p>
      */
     inline AggregateResourceIdentifier& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS resource.</p>
+     * <p>The ID of the Amazon Web Services resource.</p>
      */
     inline AggregateResourceIdentifier& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS resource.</p>
+     * <p>The ID of the Amazon Web Services resource.</p>
      */
     inline AggregateResourceIdentifier& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
 
     /**
-     * <p>The type of the AWS resource.</p>
+     * <p>The type of the Amazon Web Services resource.</p>
      */
     inline const ResourceType& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The type of the AWS resource.</p>
+     * <p>The type of the Amazon Web Services resource.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>The type of the AWS resource.</p>
+     * <p>The type of the Amazon Web Services resource.</p>
      */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The type of the AWS resource.</p>
+     * <p>The type of the Amazon Web Services resource.</p>
      */
     inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The type of the AWS resource.</p>
+     * <p>The type of the Amazon Web Services resource.</p>
      */
     inline AggregateResourceIdentifier& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The type of the AWS resource.</p>
+     * <p>The type of the Amazon Web Services resource.</p>
      */
     inline AggregateResourceIdentifier& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The name of the AWS resource.</p>
+     * <p>The name of the Amazon Web Services resource.</p>
      */
     inline const Aws::String& GetResourceName() const{ return m_resourceName; }
 
     /**
-     * <p>The name of the AWS resource.</p>
+     * <p>The name of the Amazon Web Services resource.</p>
      */
     inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
 
     /**
-     * <p>The name of the AWS resource.</p>
+     * <p>The name of the Amazon Web Services resource.</p>
      */
     inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
 
     /**
-     * <p>The name of the AWS resource.</p>
+     * <p>The name of the Amazon Web Services resource.</p>
      */
     inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::move(value); }
 
     /**
-     * <p>The name of the AWS resource.</p>
+     * <p>The name of the Amazon Web Services resource.</p>
      */
     inline void SetResourceName(const char* value) { m_resourceNameHasBeenSet = true; m_resourceName.assign(value); }
 
     /**
-     * <p>The name of the AWS resource.</p>
+     * <p>The name of the Amazon Web Services resource.</p>
      */
     inline AggregateResourceIdentifier& WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
 
     /**
-     * <p>The name of the AWS resource.</p>
+     * <p>The name of the Amazon Web Services resource.</p>
      */
     inline AggregateResourceIdentifier& WithResourceName(Aws::String&& value) { SetResourceName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the AWS resource.</p>
+     * <p>The name of the Amazon Web Services resource.</p>
      */
     inline AggregateResourceIdentifier& WithResourceName(const char* value) { SetResourceName(value); return *this;}
 

@@ -18,24 +18,38 @@ namespace IoTSiteWise
 namespace Model
 {
 
-Measurement::Measurement()
+Measurement::Measurement() : 
+    m_processingConfigHasBeenSet(false)
 {
 }
 
-Measurement::Measurement(JsonView jsonValue)
+Measurement::Measurement(JsonView jsonValue) : 
+    m_processingConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 Measurement& Measurement::operator =(JsonView jsonValue)
 {
-  AWS_UNREFERENCED_PARAM(jsonValue);
+  if(jsonValue.ValueExists("processingConfig"))
+  {
+    m_processingConfig = jsonValue.GetObject("processingConfig");
+
+    m_processingConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue Measurement::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_processingConfigHasBeenSet)
+  {
+   payload.WithObject("processingConfig", m_processingConfig.Jsonize());
+
+  }
 
   return payload;
 }

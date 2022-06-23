@@ -215,57 +215,57 @@ namespace Model
 
     /**
      * <p>The Amazon EC2 Availability Zone that the instance is created in. </p>
-     * <p>Default: A random, system-chosen Availability Zone in the endpoint's AWS
-     * Region.</p> <p>Example: <code>us-east-1d</code> </p>
+     * <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon
+     * Web Services Region.</p> <p>Example: <code>us-east-1d</code> </p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
 
     /**
      * <p>The Amazon EC2 Availability Zone that the instance is created in. </p>
-     * <p>Default: A random, system-chosen Availability Zone in the endpoint's AWS
-     * Region.</p> <p>Example: <code>us-east-1d</code> </p>
+     * <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon
+     * Web Services Region.</p> <p>Example: <code>us-east-1d</code> </p>
      */
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
 
     /**
      * <p>The Amazon EC2 Availability Zone that the instance is created in. </p>
-     * <p>Default: A random, system-chosen Availability Zone in the endpoint's AWS
-     * Region.</p> <p>Example: <code>us-east-1d</code> </p>
+     * <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon
+     * Web Services Region.</p> <p>Example: <code>us-east-1d</code> </p>
      */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
      * <p>The Amazon EC2 Availability Zone that the instance is created in. </p>
-     * <p>Default: A random, system-chosen Availability Zone in the endpoint's AWS
-     * Region.</p> <p>Example: <code>us-east-1d</code> </p>
+     * <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon
+     * Web Services Region.</p> <p>Example: <code>us-east-1d</code> </p>
      */
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
      * <p>The Amazon EC2 Availability Zone that the instance is created in. </p>
-     * <p>Default: A random, system-chosen Availability Zone in the endpoint's AWS
-     * Region.</p> <p>Example: <code>us-east-1d</code> </p>
+     * <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon
+     * Web Services Region.</p> <p>Example: <code>us-east-1d</code> </p>
      */
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
     /**
      * <p>The Amazon EC2 Availability Zone that the instance is created in. </p>
-     * <p>Default: A random, system-chosen Availability Zone in the endpoint's AWS
-     * Region.</p> <p>Example: <code>us-east-1d</code> </p>
+     * <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon
+     * Web Services Region.</p> <p>Example: <code>us-east-1d</code> </p>
      */
     inline CreateDBInstanceRequest& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
     /**
      * <p>The Amazon EC2 Availability Zone that the instance is created in. </p>
-     * <p>Default: A random, system-chosen Availability Zone in the endpoint's AWS
-     * Region.</p> <p>Example: <code>us-east-1d</code> </p>
+     * <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon
+     * Web Services Region.</p> <p>Example: <code>us-east-1d</code> </p>
      */
     inline CreateDBInstanceRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon EC2 Availability Zone that the instance is created in. </p>
-     * <p>Default: A random, system-chosen Availability Zone in the endpoint's AWS
-     * Region.</p> <p>Example: <code>us-east-1d</code> </p>
+     * <p>Default: A random, system-chosen Availability Zone in the endpoint's Amazon
+     * Web Services Region.</p> <p>Example: <code>us-east-1d</code> </p>
      */
     inline CreateDBInstanceRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
@@ -274,9 +274,9 @@ namespace Model
      * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC).</p> <p> Format:
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
-     * selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week. </p> <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat,
-     * Sun</p> <p>Constraints: Minimum 30-minute window.</p>
+     * selected at random from an 8-hour block of time for each Amazon Web Services
+     * Region, occurring on a random day of the week. </p> <p>Valid days: Mon, Tue,
+     * Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum 30-minute window.</p>
      */
     inline const Aws::String& GetPreferredMaintenanceWindow() const{ return m_preferredMaintenanceWindow; }
 
@@ -284,9 +284,9 @@ namespace Model
      * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC).</p> <p> Format:
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
-     * selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week. </p> <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat,
-     * Sun</p> <p>Constraints: Minimum 30-minute window.</p>
+     * selected at random from an 8-hour block of time for each Amazon Web Services
+     * Region, occurring on a random day of the week. </p> <p>Valid days: Mon, Tue,
+     * Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum 30-minute window.</p>
      */
     inline bool PreferredMaintenanceWindowHasBeenSet() const { return m_preferredMaintenanceWindowHasBeenSet; }
 
@@ -294,9 +294,9 @@ namespace Model
      * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC).</p> <p> Format:
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
-     * selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week. </p> <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat,
-     * Sun</p> <p>Constraints: Minimum 30-minute window.</p>
+     * selected at random from an 8-hour block of time for each Amazon Web Services
+     * Region, occurring on a random day of the week. </p> <p>Valid days: Mon, Tue,
+     * Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum 30-minute window.</p>
      */
     inline void SetPreferredMaintenanceWindow(const Aws::String& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
 
@@ -304,9 +304,9 @@ namespace Model
      * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC).</p> <p> Format:
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
-     * selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week. </p> <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat,
-     * Sun</p> <p>Constraints: Minimum 30-minute window.</p>
+     * selected at random from an 8-hour block of time for each Amazon Web Services
+     * Region, occurring on a random day of the week. </p> <p>Valid days: Mon, Tue,
+     * Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum 30-minute window.</p>
      */
     inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::move(value); }
 
@@ -314,9 +314,9 @@ namespace Model
      * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC).</p> <p> Format:
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
-     * selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week. </p> <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat,
-     * Sun</p> <p>Constraints: Minimum 30-minute window.</p>
+     * selected at random from an 8-hour block of time for each Amazon Web Services
+     * Region, occurring on a random day of the week. </p> <p>Valid days: Mon, Tue,
+     * Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum 30-minute window.</p>
      */
     inline void SetPreferredMaintenanceWindow(const char* value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow.assign(value); }
 
@@ -324,9 +324,9 @@ namespace Model
      * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC).</p> <p> Format:
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
-     * selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week. </p> <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat,
-     * Sun</p> <p>Constraints: Minimum 30-minute window.</p>
+     * selected at random from an 8-hour block of time for each Amazon Web Services
+     * Region, occurring on a random day of the week. </p> <p>Valid days: Mon, Tue,
+     * Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum 30-minute window.</p>
      */
     inline CreateDBInstanceRequest& WithPreferredMaintenanceWindow(const Aws::String& value) { SetPreferredMaintenanceWindow(value); return *this;}
 
@@ -334,9 +334,9 @@ namespace Model
      * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC).</p> <p> Format:
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
-     * selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week. </p> <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat,
-     * Sun</p> <p>Constraints: Minimum 30-minute window.</p>
+     * selected at random from an 8-hour block of time for each Amazon Web Services
+     * Region, occurring on a random day of the week. </p> <p>Valid days: Mon, Tue,
+     * Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum 30-minute window.</p>
      */
     inline CreateDBInstanceRequest& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(std::move(value)); return *this;}
 
@@ -344,34 +344,38 @@ namespace Model
      * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC).</p> <p> Format:
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
-     * selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week. </p> <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat,
-     * Sun</p> <p>Constraints: Minimum 30-minute window.</p>
+     * selected at random from an 8-hour block of time for each Amazon Web Services
+     * Region, occurring on a random day of the week. </p> <p>Valid days: Mon, Tue,
+     * Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum 30-minute window.</p>
      */
     inline CreateDBInstanceRequest& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
 
 
     /**
-     * <p>Indicates that minor engine upgrades are applied automatically to the
-     * instance during the maintenance window.</p> <p>Default: <code>true</code> </p>
+     * <p>This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does
+     * not perform minor version upgrades regardless of the value set.</p> <p>Default:
+     * <code>false</code> </p>
      */
     inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
 
     /**
-     * <p>Indicates that minor engine upgrades are applied automatically to the
-     * instance during the maintenance window.</p> <p>Default: <code>true</code> </p>
+     * <p>This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does
+     * not perform minor version upgrades regardless of the value set.</p> <p>Default:
+     * <code>false</code> </p>
      */
     inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
 
     /**
-     * <p>Indicates that minor engine upgrades are applied automatically to the
-     * instance during the maintenance window.</p> <p>Default: <code>true</code> </p>
+     * <p>This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does
+     * not perform minor version upgrades regardless of the value set.</p> <p>Default:
+     * <code>false</code> </p>
      */
     inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
 
     /**
-     * <p>Indicates that minor engine upgrades are applied automatically to the
-     * instance during the maintenance window.</p> <p>Default: <code>true</code> </p>
+     * <p>This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does
+     * not perform minor version upgrades regardless of the value set.</p> <p>Default:
+     * <code>false</code> </p>
      */
     inline CreateDBInstanceRequest& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
 
@@ -494,6 +498,128 @@ namespace Model
      */
     inline CreateDBInstanceRequest& WithPromotionTier(int value) { SetPromotionTier(value); return *this;}
 
+
+    /**
+     * <p>A value that indicates whether to enable Performance Insights for the DB
+     * Instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/performance-insights.html">Using
+     * Amazon Performance Insights</a>.</p>
+     */
+    inline bool GetEnablePerformanceInsights() const{ return m_enablePerformanceInsights; }
+
+    /**
+     * <p>A value that indicates whether to enable Performance Insights for the DB
+     * Instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/performance-insights.html">Using
+     * Amazon Performance Insights</a>.</p>
+     */
+    inline bool EnablePerformanceInsightsHasBeenSet() const { return m_enablePerformanceInsightsHasBeenSet; }
+
+    /**
+     * <p>A value that indicates whether to enable Performance Insights for the DB
+     * Instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/performance-insights.html">Using
+     * Amazon Performance Insights</a>.</p>
+     */
+    inline void SetEnablePerformanceInsights(bool value) { m_enablePerformanceInsightsHasBeenSet = true; m_enablePerformanceInsights = value; }
+
+    /**
+     * <p>A value that indicates whether to enable Performance Insights for the DB
+     * Instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/performance-insights.html">Using
+     * Amazon Performance Insights</a>.</p>
+     */
+    inline CreateDBInstanceRequest& WithEnablePerformanceInsights(bool value) { SetEnablePerformanceInsights(value); return *this;}
+
+
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data.</p>
+     * <p>The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for
+     * the KMS key.</p> <p>If you do not specify a value for
+     * PerformanceInsightsKMSKeyId, then Amazon DocumentDB uses your default KMS key.
+     * There is a default KMS key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default KMS key for each Amazon Web Services
+     * region.</p>
+     */
+    inline const Aws::String& GetPerformanceInsightsKMSKeyId() const{ return m_performanceInsightsKMSKeyId; }
+
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data.</p>
+     * <p>The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for
+     * the KMS key.</p> <p>If you do not specify a value for
+     * PerformanceInsightsKMSKeyId, then Amazon DocumentDB uses your default KMS key.
+     * There is a default KMS key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default KMS key for each Amazon Web Services
+     * region.</p>
+     */
+    inline bool PerformanceInsightsKMSKeyIdHasBeenSet() const { return m_performanceInsightsKMSKeyIdHasBeenSet; }
+
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data.</p>
+     * <p>The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for
+     * the KMS key.</p> <p>If you do not specify a value for
+     * PerformanceInsightsKMSKeyId, then Amazon DocumentDB uses your default KMS key.
+     * There is a default KMS key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default KMS key for each Amazon Web Services
+     * region.</p>
+     */
+    inline void SetPerformanceInsightsKMSKeyId(const Aws::String& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = value; }
+
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data.</p>
+     * <p>The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for
+     * the KMS key.</p> <p>If you do not specify a value for
+     * PerformanceInsightsKMSKeyId, then Amazon DocumentDB uses your default KMS key.
+     * There is a default KMS key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default KMS key for each Amazon Web Services
+     * region.</p>
+     */
+    inline void SetPerformanceInsightsKMSKeyId(Aws::String&& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = std::move(value); }
+
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data.</p>
+     * <p>The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for
+     * the KMS key.</p> <p>If you do not specify a value for
+     * PerformanceInsightsKMSKeyId, then Amazon DocumentDB uses your default KMS key.
+     * There is a default KMS key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default KMS key for each Amazon Web Services
+     * region.</p>
+     */
+    inline void SetPerformanceInsightsKMSKeyId(const char* value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId.assign(value); }
+
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data.</p>
+     * <p>The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for
+     * the KMS key.</p> <p>If you do not specify a value for
+     * PerformanceInsightsKMSKeyId, then Amazon DocumentDB uses your default KMS key.
+     * There is a default KMS key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default KMS key for each Amazon Web Services
+     * region.</p>
+     */
+    inline CreateDBInstanceRequest& WithPerformanceInsightsKMSKeyId(const Aws::String& value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
+
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data.</p>
+     * <p>The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for
+     * the KMS key.</p> <p>If you do not specify a value for
+     * PerformanceInsightsKMSKeyId, then Amazon DocumentDB uses your default KMS key.
+     * There is a default KMS key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default KMS key for each Amazon Web Services
+     * region.</p>
+     */
+    inline CreateDBInstanceRequest& WithPerformanceInsightsKMSKeyId(Aws::String&& value) { SetPerformanceInsightsKMSKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data.</p>
+     * <p>The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for
+     * the KMS key.</p> <p>If you do not specify a value for
+     * PerformanceInsightsKMSKeyId, then Amazon DocumentDB uses your default KMS key.
+     * There is a default KMS key for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default KMS key for each Amazon Web Services
+     * region.</p>
+     */
+    inline CreateDBInstanceRequest& WithPerformanceInsightsKMSKeyId(const char* value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
+
   private:
 
     Aws::String m_dBInstanceIdentifier;
@@ -522,6 +648,12 @@ namespace Model
 
     int m_promotionTier;
     bool m_promotionTierHasBeenSet;
+
+    bool m_enablePerformanceInsights;
+    bool m_enablePerformanceInsightsHasBeenSet;
+
+    Aws::String m_performanceInsightsKMSKeyId;
+    bool m_performanceInsightsKMSKeyIdHasBeenSet;
   };
 
 } // namespace Model

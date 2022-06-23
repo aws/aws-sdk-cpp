@@ -23,7 +23,7 @@ namespace Model
 
   /**
    * 
-            <p>Indicates whether you want to enable or disable the Node
+            <p>Indicates whether you want to turn on or turn off the Node
    * Exporter.</p>
          <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/NodeExporter">AWS
@@ -40,7 +40,7 @@ namespace Model
 
     /**
      * 
-            <p>Indicates whether you want to enable or disable the Node
+            <p>Indicates whether you want to turn on or turn off the Node
      * Exporter.</p>
          
      */
@@ -48,7 +48,7 @@ namespace Model
 
     /**
      * 
-            <p>Indicates whether you want to enable or disable the Node
+            <p>Indicates whether you want to turn on or turn off the Node
      * Exporter.</p>
          
      */
@@ -56,7 +56,7 @@ namespace Model
 
     /**
      * 
-            <p>Indicates whether you want to enable or disable the Node
+            <p>Indicates whether you want to turn on or turn off the Node
      * Exporter.</p>
          
      */
@@ -64,7 +64,7 @@ namespace Model
 
     /**
      * 
-            <p>Indicates whether you want to enable or disable the Node
+            <p>Indicates whether you want to turn on or turn off the Node
      * Exporter.</p>
          
      */

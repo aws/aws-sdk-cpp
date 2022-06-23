@@ -163,58 +163,66 @@ namespace Model
 
 
     /**
-     * <p>The AWS account number of the owner of the security group specified by the
-     * <i>EC2SecurityGroupName</i> parameter. The AWS Access Key ID is not an
-     * acceptable value. </p> <p>Example: <code>111122223333</code> </p>
+     * <p>The Amazon Web Services account number of the owner of the security group
+     * specified by the <i>EC2SecurityGroupName</i> parameter. The Amazon Web Services
+     * Access Key ID is not an acceptable value. </p> <p>Example:
+     * <code>111122223333</code> </p>
      */
     inline const Aws::String& GetEC2SecurityGroupOwnerId() const{ return m_eC2SecurityGroupOwnerId; }
 
     /**
-     * <p>The AWS account number of the owner of the security group specified by the
-     * <i>EC2SecurityGroupName</i> parameter. The AWS Access Key ID is not an
-     * acceptable value. </p> <p>Example: <code>111122223333</code> </p>
+     * <p>The Amazon Web Services account number of the owner of the security group
+     * specified by the <i>EC2SecurityGroupName</i> parameter. The Amazon Web Services
+     * Access Key ID is not an acceptable value. </p> <p>Example:
+     * <code>111122223333</code> </p>
      */
     inline bool EC2SecurityGroupOwnerIdHasBeenSet() const { return m_eC2SecurityGroupOwnerIdHasBeenSet; }
 
     /**
-     * <p>The AWS account number of the owner of the security group specified by the
-     * <i>EC2SecurityGroupName</i> parameter. The AWS Access Key ID is not an
-     * acceptable value. </p> <p>Example: <code>111122223333</code> </p>
+     * <p>The Amazon Web Services account number of the owner of the security group
+     * specified by the <i>EC2SecurityGroupName</i> parameter. The Amazon Web Services
+     * Access Key ID is not an acceptable value. </p> <p>Example:
+     * <code>111122223333</code> </p>
      */
     inline void SetEC2SecurityGroupOwnerId(const Aws::String& value) { m_eC2SecurityGroupOwnerIdHasBeenSet = true; m_eC2SecurityGroupOwnerId = value; }
 
     /**
-     * <p>The AWS account number of the owner of the security group specified by the
-     * <i>EC2SecurityGroupName</i> parameter. The AWS Access Key ID is not an
-     * acceptable value. </p> <p>Example: <code>111122223333</code> </p>
+     * <p>The Amazon Web Services account number of the owner of the security group
+     * specified by the <i>EC2SecurityGroupName</i> parameter. The Amazon Web Services
+     * Access Key ID is not an acceptable value. </p> <p>Example:
+     * <code>111122223333</code> </p>
      */
     inline void SetEC2SecurityGroupOwnerId(Aws::String&& value) { m_eC2SecurityGroupOwnerIdHasBeenSet = true; m_eC2SecurityGroupOwnerId = std::move(value); }
 
     /**
-     * <p>The AWS account number of the owner of the security group specified by the
-     * <i>EC2SecurityGroupName</i> parameter. The AWS Access Key ID is not an
-     * acceptable value. </p> <p>Example: <code>111122223333</code> </p>
+     * <p>The Amazon Web Services account number of the owner of the security group
+     * specified by the <i>EC2SecurityGroupName</i> parameter. The Amazon Web Services
+     * Access Key ID is not an acceptable value. </p> <p>Example:
+     * <code>111122223333</code> </p>
      */
     inline void SetEC2SecurityGroupOwnerId(const char* value) { m_eC2SecurityGroupOwnerIdHasBeenSet = true; m_eC2SecurityGroupOwnerId.assign(value); }
 
     /**
-     * <p>The AWS account number of the owner of the security group specified by the
-     * <i>EC2SecurityGroupName</i> parameter. The AWS Access Key ID is not an
-     * acceptable value. </p> <p>Example: <code>111122223333</code> </p>
+     * <p>The Amazon Web Services account number of the owner of the security group
+     * specified by the <i>EC2SecurityGroupName</i> parameter. The Amazon Web Services
+     * Access Key ID is not an acceptable value. </p> <p>Example:
+     * <code>111122223333</code> </p>
      */
     inline AuthorizeClusterSecurityGroupIngressRequest& WithEC2SecurityGroupOwnerId(const Aws::String& value) { SetEC2SecurityGroupOwnerId(value); return *this;}
 
     /**
-     * <p>The AWS account number of the owner of the security group specified by the
-     * <i>EC2SecurityGroupName</i> parameter. The AWS Access Key ID is not an
-     * acceptable value. </p> <p>Example: <code>111122223333</code> </p>
+     * <p>The Amazon Web Services account number of the owner of the security group
+     * specified by the <i>EC2SecurityGroupName</i> parameter. The Amazon Web Services
+     * Access Key ID is not an acceptable value. </p> <p>Example:
+     * <code>111122223333</code> </p>
      */
     inline AuthorizeClusterSecurityGroupIngressRequest& WithEC2SecurityGroupOwnerId(Aws::String&& value) { SetEC2SecurityGroupOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account number of the owner of the security group specified by the
-     * <i>EC2SecurityGroupName</i> parameter. The AWS Access Key ID is not an
-     * acceptable value. </p> <p>Example: <code>111122223333</code> </p>
+     * <p>The Amazon Web Services account number of the owner of the security group
+     * specified by the <i>EC2SecurityGroupName</i> parameter. The Amazon Web Services
+     * Access Key ID is not an acceptable value. </p> <p>Example:
+     * <code>111122223333</code> </p>
      */
     inline AuthorizeClusterSecurityGroupIngressRequest& WithEC2SecurityGroupOwnerId(const char* value) { SetEC2SecurityGroupOwnerId(value); return *this;}
 

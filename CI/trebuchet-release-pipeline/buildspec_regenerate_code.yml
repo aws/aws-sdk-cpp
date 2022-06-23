@@ -4,7 +4,7 @@ phases:
   build:
     commands:
       - echo $CODEBUILD_SOURCE_VERSION
-      - git clone https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GITHUB_PRIVATE_REPOSITORY}.git aws-sdk-cpp
+      - git clone --recurse-submodules https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GITHUB_PRIVATE_REPOSITORY}.git aws-sdk-cpp
       - export RELEASE_ID=$(cat $RELEASE_ID_FILENAME)
       - python3 aws-sdk-cpp/CI/trebuchet-release-pipeline/UpdateStatus.py -s RegenerateCode -i "$RELEASE_ID" -m "Step 1 of 4. Regenerating Code with New Models." -b $CODEBUILD_BUILD_SUCCEEDING
       - cp models/*.normal.json aws-sdk-cpp/code-generation/api-descriptions/
@@ -12,6 +12,7 @@ phases:
       - mkdir build
       - cd build
       - cmake .. -DREGENERATE_CLIENTS=ON
+      - cmake .. -DREGENERATE_DEFAULTS=ON
       - cd ..
       - rm -rf build
   post_build:

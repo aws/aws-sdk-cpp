@@ -14,8 +14,11 @@ using namespace Aws::Utils;
 
 CreateDatasetRequest::CreateDatasetRequest() : 
     m_nameHasBeenSet(false),
+    m_format(InputFormat::NOT_SET),
+    m_formatHasBeenSet(false),
     m_formatOptionsHasBeenSet(false),
     m_inputHasBeenSet(false),
+    m_pathOptionsHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -30,6 +33,11 @@ Aws::String CreateDatasetRequest::SerializePayload() const
 
   }
 
+  if(m_formatHasBeenSet)
+  {
+   payload.WithString("Format", InputFormatMapper::GetNameForInputFormat(m_format));
+  }
+
   if(m_formatOptionsHasBeenSet)
   {
    payload.WithObject("FormatOptions", m_formatOptions.Jsonize());
@@ -39,6 +47,12 @@ Aws::String CreateDatasetRequest::SerializePayload() const
   if(m_inputHasBeenSet)
   {
    payload.WithObject("Input", m_input.Jsonize());
+
+  }
+
+  if(m_pathOptionsHasBeenSet)
+  {
+   payload.WithObject("PathOptions", m_pathOptions.Jsonize());
 
   }
 

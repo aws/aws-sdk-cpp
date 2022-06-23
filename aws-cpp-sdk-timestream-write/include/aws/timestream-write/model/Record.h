@@ -10,6 +10,7 @@
 #include <aws/timestream-write/model/MeasureValueType.h>
 #include <aws/timestream-write/model/TimeUnit.h>
 #include <aws/timestream-write/model/Dimension.h>
+#include <aws/timestream-write/model/MeasureValue.h>
 #include <utility>
 
 namespace Aws
@@ -36,7 +37,14 @@ namespace Model
    * instance. A record also contains the measure value and the value type which is
    * the data type of the measure value. In addition, the record contains the
    * timestamp when the measure was collected that the timestamp unit which
-   * represents the granularity of the timestamp. </p><p><h3>See Also:</h3>   <a
+   * represents the granularity of the timestamp. </p> <p> Records have a
+   * <code>Version</code> field, which is a 64-bit <code>long</code> that you can use
+   * for updating data points. Writes of a duplicate record with the same dimension,
+   * timestamp, and measure name but different measure value will only succeed if the
+   * <code>Version</code> attribute of the record in the write request is higher than
+   * that of the existing record. Timestream defaults to a <code>Version</code> of
+   * <code>1</code> for records without the <code>Version</code> field.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/Record">AWS
    * API Reference</a></p>
    */
@@ -190,37 +198,37 @@ namespace Model
 
     /**
      * <p> Contains the data type of the measure value for the time series data point.
-     * </p>
+     * Default type is <code>DOUBLE</code>. </p>
      */
     inline const MeasureValueType& GetMeasureValueType() const{ return m_measureValueType; }
 
     /**
      * <p> Contains the data type of the measure value for the time series data point.
-     * </p>
+     * Default type is <code>DOUBLE</code>. </p>
      */
     inline bool MeasureValueTypeHasBeenSet() const { return m_measureValueTypeHasBeenSet; }
 
     /**
      * <p> Contains the data type of the measure value for the time series data point.
-     * </p>
+     * Default type is <code>DOUBLE</code>. </p>
      */
     inline void SetMeasureValueType(const MeasureValueType& value) { m_measureValueTypeHasBeenSet = true; m_measureValueType = value; }
 
     /**
      * <p> Contains the data type of the measure value for the time series data point.
-     * </p>
+     * Default type is <code>DOUBLE</code>. </p>
      */
     inline void SetMeasureValueType(MeasureValueType&& value) { m_measureValueTypeHasBeenSet = true; m_measureValueType = std::move(value); }
 
     /**
      * <p> Contains the data type of the measure value for the time series data point.
-     * </p>
+     * Default type is <code>DOUBLE</code>. </p>
      */
     inline Record& WithMeasureValueType(const MeasureValueType& value) { SetMeasureValueType(value); return *this;}
 
     /**
      * <p> Contains the data type of the measure value for the time series data point.
-     * </p>
+     * Default type is <code>DOUBLE</code>. </p>
      */
     inline Record& WithMeasureValueType(MeasureValueType&& value) { SetMeasureValueType(std::move(value)); return *this;}
 
@@ -292,37 +300,43 @@ namespace Model
 
     /**
      * <p> The granularity of the timestamp unit. It indicates if the time value is in
-     * seconds, milliseconds, nanoseconds or other supported values. </p>
+     * seconds, milliseconds, nanoseconds or other supported values. Default is
+     * <code>MILLISECONDS</code>. </p>
      */
     inline const TimeUnit& GetTimeUnit() const{ return m_timeUnit; }
 
     /**
      * <p> The granularity of the timestamp unit. It indicates if the time value is in
-     * seconds, milliseconds, nanoseconds or other supported values. </p>
+     * seconds, milliseconds, nanoseconds or other supported values. Default is
+     * <code>MILLISECONDS</code>. </p>
      */
     inline bool TimeUnitHasBeenSet() const { return m_timeUnitHasBeenSet; }
 
     /**
      * <p> The granularity of the timestamp unit. It indicates if the time value is in
-     * seconds, milliseconds, nanoseconds or other supported values. </p>
+     * seconds, milliseconds, nanoseconds or other supported values. Default is
+     * <code>MILLISECONDS</code>. </p>
      */
     inline void SetTimeUnit(const TimeUnit& value) { m_timeUnitHasBeenSet = true; m_timeUnit = value; }
 
     /**
      * <p> The granularity of the timestamp unit. It indicates if the time value is in
-     * seconds, milliseconds, nanoseconds or other supported values. </p>
+     * seconds, milliseconds, nanoseconds or other supported values. Default is
+     * <code>MILLISECONDS</code>. </p>
      */
     inline void SetTimeUnit(TimeUnit&& value) { m_timeUnitHasBeenSet = true; m_timeUnit = std::move(value); }
 
     /**
      * <p> The granularity of the timestamp unit. It indicates if the time value is in
-     * seconds, milliseconds, nanoseconds or other supported values. </p>
+     * seconds, milliseconds, nanoseconds or other supported values. Default is
+     * <code>MILLISECONDS</code>. </p>
      */
     inline Record& WithTimeUnit(const TimeUnit& value) { SetTimeUnit(value); return *this;}
 
     /**
      * <p> The granularity of the timestamp unit. It indicates if the time value is in
-     * seconds, milliseconds, nanoseconds or other supported values. </p>
+     * seconds, milliseconds, nanoseconds or other supported values. Default is
+     * <code>MILLISECONDS</code>. </p>
      */
     inline Record& WithTimeUnit(TimeUnit&& value) { SetTimeUnit(std::move(value)); return *this;}
 
@@ -331,7 +345,9 @@ namespace Model
      * <p>64-bit attribute used for record updates. Write requests for duplicate data
      * with a higher version number will update the existing measure value and version.
      * In cases where the measure value is the same, <code>Version</code> will still be
-     * updated . Default value is to 1.</p>
+     * updated . Default value is <code>1</code>.</p>  <p> <code>Version</code>
+     * must be <code>1</code> or greater, or you will receive a
+     * <code>ValidationException</code> error.</p> 
      */
     inline long long GetVersion() const{ return m_version; }
 
@@ -339,7 +355,9 @@ namespace Model
      * <p>64-bit attribute used for record updates. Write requests for duplicate data
      * with a higher version number will update the existing measure value and version.
      * In cases where the measure value is the same, <code>Version</code> will still be
-     * updated . Default value is to 1.</p>
+     * updated . Default value is <code>1</code>.</p>  <p> <code>Version</code>
+     * must be <code>1</code> or greater, or you will receive a
+     * <code>ValidationException</code> error.</p> 
      */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
@@ -347,7 +365,9 @@ namespace Model
      * <p>64-bit attribute used for record updates. Write requests for duplicate data
      * with a higher version number will update the existing measure value and version.
      * In cases where the measure value is the same, <code>Version</code> will still be
-     * updated . Default value is to 1.</p>
+     * updated . Default value is <code>1</code>.</p>  <p> <code>Version</code>
+     * must be <code>1</code> or greater, or you will receive a
+     * <code>ValidationException</code> error.</p> 
      */
     inline void SetVersion(long long value) { m_versionHasBeenSet = true; m_version = value; }
 
@@ -355,9 +375,68 @@ namespace Model
      * <p>64-bit attribute used for record updates. Write requests for duplicate data
      * with a higher version number will update the existing measure value and version.
      * In cases where the measure value is the same, <code>Version</code> will still be
-     * updated . Default value is to 1.</p>
+     * updated . Default value is <code>1</code>.</p>  <p> <code>Version</code>
+     * must be <code>1</code> or greater, or you will receive a
+     * <code>ValidationException</code> error.</p> 
      */
     inline Record& WithVersion(long long value) { SetVersion(value); return *this;}
+
+
+    /**
+     * <p> Contains the list of MeasureValue for time series data points. </p> <p> This
+     * is only allowed for type <code>MULTI</code>. For scalar values, use
+     * <code>MeasureValue</code> attribute of the Record directly. </p>
+     */
+    inline const Aws::Vector<MeasureValue>& GetMeasureValues() const{ return m_measureValues; }
+
+    /**
+     * <p> Contains the list of MeasureValue for time series data points. </p> <p> This
+     * is only allowed for type <code>MULTI</code>. For scalar values, use
+     * <code>MeasureValue</code> attribute of the Record directly. </p>
+     */
+    inline bool MeasureValuesHasBeenSet() const { return m_measureValuesHasBeenSet; }
+
+    /**
+     * <p> Contains the list of MeasureValue for time series data points. </p> <p> This
+     * is only allowed for type <code>MULTI</code>. For scalar values, use
+     * <code>MeasureValue</code> attribute of the Record directly. </p>
+     */
+    inline void SetMeasureValues(const Aws::Vector<MeasureValue>& value) { m_measureValuesHasBeenSet = true; m_measureValues = value; }
+
+    /**
+     * <p> Contains the list of MeasureValue for time series data points. </p> <p> This
+     * is only allowed for type <code>MULTI</code>. For scalar values, use
+     * <code>MeasureValue</code> attribute of the Record directly. </p>
+     */
+    inline void SetMeasureValues(Aws::Vector<MeasureValue>&& value) { m_measureValuesHasBeenSet = true; m_measureValues = std::move(value); }
+
+    /**
+     * <p> Contains the list of MeasureValue for time series data points. </p> <p> This
+     * is only allowed for type <code>MULTI</code>. For scalar values, use
+     * <code>MeasureValue</code> attribute of the Record directly. </p>
+     */
+    inline Record& WithMeasureValues(const Aws::Vector<MeasureValue>& value) { SetMeasureValues(value); return *this;}
+
+    /**
+     * <p> Contains the list of MeasureValue for time series data points. </p> <p> This
+     * is only allowed for type <code>MULTI</code>. For scalar values, use
+     * <code>MeasureValue</code> attribute of the Record directly. </p>
+     */
+    inline Record& WithMeasureValues(Aws::Vector<MeasureValue>&& value) { SetMeasureValues(std::move(value)); return *this;}
+
+    /**
+     * <p> Contains the list of MeasureValue for time series data points. </p> <p> This
+     * is only allowed for type <code>MULTI</code>. For scalar values, use
+     * <code>MeasureValue</code> attribute of the Record directly. </p>
+     */
+    inline Record& AddMeasureValues(const MeasureValue& value) { m_measureValuesHasBeenSet = true; m_measureValues.push_back(value); return *this; }
+
+    /**
+     * <p> Contains the list of MeasureValue for time series data points. </p> <p> This
+     * is only allowed for type <code>MULTI</code>. For scalar values, use
+     * <code>MeasureValue</code> attribute of the Record directly. </p>
+     */
+    inline Record& AddMeasureValues(MeasureValue&& value) { m_measureValuesHasBeenSet = true; m_measureValues.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -381,6 +460,9 @@ namespace Model
 
     long long m_version;
     bool m_versionHasBeenSet;
+
+    Aws::Vector<MeasureValue> m_measureValues;
+    bool m_measureValuesHasBeenSet;
   };
 
 } // namespace Model

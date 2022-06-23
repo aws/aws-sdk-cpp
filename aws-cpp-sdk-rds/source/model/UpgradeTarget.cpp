@@ -27,7 +27,14 @@ UpgradeTarget::UpgradeTarget() :
     m_autoUpgrade(false),
     m_autoUpgradeHasBeenSet(false),
     m_isMajorVersionUpgrade(false),
-    m_isMajorVersionUpgradeHasBeenSet(false)
+    m_isMajorVersionUpgradeHasBeenSet(false),
+    m_supportedEngineModesHasBeenSet(false),
+    m_supportsParallelQuery(false),
+    m_supportsParallelQueryHasBeenSet(false),
+    m_supportsGlobalDatabases(false),
+    m_supportsGlobalDatabasesHasBeenSet(false),
+    m_supportsBabelfish(false),
+    m_supportsBabelfishHasBeenSet(false)
 {
 }
 
@@ -38,7 +45,14 @@ UpgradeTarget::UpgradeTarget(const XmlNode& xmlNode) :
     m_autoUpgrade(false),
     m_autoUpgradeHasBeenSet(false),
     m_isMajorVersionUpgrade(false),
-    m_isMajorVersionUpgradeHasBeenSet(false)
+    m_isMajorVersionUpgradeHasBeenSet(false),
+    m_supportedEngineModesHasBeenSet(false),
+    m_supportsParallelQuery(false),
+    m_supportsParallelQueryHasBeenSet(false),
+    m_supportsGlobalDatabases(false),
+    m_supportsGlobalDatabasesHasBeenSet(false),
+    m_supportsBabelfish(false),
+    m_supportsBabelfishHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -79,6 +93,36 @@ UpgradeTarget& UpgradeTarget::operator =(const XmlNode& xmlNode)
       m_isMajorVersionUpgrade = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isMajorVersionUpgradeNode.GetText()).c_str()).c_str());
       m_isMajorVersionUpgradeHasBeenSet = true;
     }
+    XmlNode supportedEngineModesNode = resultNode.FirstChild("SupportedEngineModes");
+    if(!supportedEngineModesNode.IsNull())
+    {
+      XmlNode supportedEngineModesMember = supportedEngineModesNode.FirstChild("member");
+      while(!supportedEngineModesMember.IsNull())
+      {
+        m_supportedEngineModes.push_back(supportedEngineModesMember.GetText());
+        supportedEngineModesMember = supportedEngineModesMember.NextNode("member");
+      }
+
+      m_supportedEngineModesHasBeenSet = true;
+    }
+    XmlNode supportsParallelQueryNode = resultNode.FirstChild("SupportsParallelQuery");
+    if(!supportsParallelQueryNode.IsNull())
+    {
+      m_supportsParallelQuery = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsParallelQueryNode.GetText()).c_str()).c_str());
+      m_supportsParallelQueryHasBeenSet = true;
+    }
+    XmlNode supportsGlobalDatabasesNode = resultNode.FirstChild("SupportsGlobalDatabases");
+    if(!supportsGlobalDatabasesNode.IsNull())
+    {
+      m_supportsGlobalDatabases = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsGlobalDatabasesNode.GetText()).c_str()).c_str());
+      m_supportsGlobalDatabasesHasBeenSet = true;
+    }
+    XmlNode supportsBabelfishNode = resultNode.FirstChild("SupportsBabelfish");
+    if(!supportsBabelfishNode.IsNull())
+    {
+      m_supportsBabelfish = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsBabelfishNode.GetText()).c_str()).c_str());
+      m_supportsBabelfishHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -111,6 +155,30 @@ void UpgradeTarget::OutputToStream(Aws::OStream& oStream, const char* location, 
       oStream << location << index << locationValue << ".IsMajorVersionUpgrade=" << std::boolalpha << m_isMajorVersionUpgrade << "&";
   }
 
+  if(m_supportedEngineModesHasBeenSet)
+  {
+      unsigned supportedEngineModesIdx = 1;
+      for(auto& item : m_supportedEngineModes)
+      {
+        oStream << location << index << locationValue << ".SupportedEngineModes.member." << supportedEngineModesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
+  if(m_supportsParallelQueryHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SupportsParallelQuery=" << std::boolalpha << m_supportsParallelQuery << "&";
+  }
+
+  if(m_supportsGlobalDatabasesHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SupportsGlobalDatabases=" << std::boolalpha << m_supportsGlobalDatabases << "&";
+  }
+
+  if(m_supportsBabelfishHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SupportsBabelfish=" << std::boolalpha << m_supportsBabelfish << "&";
+  }
+
 }
 
 void UpgradeTarget::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -134,6 +202,26 @@ void UpgradeTarget::OutputToStream(Aws::OStream& oStream, const char* location) 
   if(m_isMajorVersionUpgradeHasBeenSet)
   {
       oStream << location << ".IsMajorVersionUpgrade=" << std::boolalpha << m_isMajorVersionUpgrade << "&";
+  }
+  if(m_supportedEngineModesHasBeenSet)
+  {
+      unsigned supportedEngineModesIdx = 1;
+      for(auto& item : m_supportedEngineModes)
+      {
+        oStream << location << ".SupportedEngineModes.member." << supportedEngineModesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+  if(m_supportsParallelQueryHasBeenSet)
+  {
+      oStream << location << ".SupportsParallelQuery=" << std::boolalpha << m_supportsParallelQuery << "&";
+  }
+  if(m_supportsGlobalDatabasesHasBeenSet)
+  {
+      oStream << location << ".SupportsGlobalDatabases=" << std::boolalpha << m_supportsGlobalDatabases << "&";
+  }
+  if(m_supportsBabelfishHasBeenSet)
+  {
+      oStream << location << ".SupportsBabelfish=" << std::boolalpha << m_supportsBabelfish << "&";
   }
 }
 

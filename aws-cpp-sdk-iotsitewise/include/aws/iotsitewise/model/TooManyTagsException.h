@@ -27,7 +27,7 @@ namespace Model
    * <p>You've reached the limit for the number of tags allowed for a resource. For
    * more information, see <a
    * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag
-   * naming limits and requirements</a> in the <i>AWS General
+   * naming limits and requirements</a> in the <i>Amazon Web Services General
    * Reference</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/TooManyTagsException">AWS
    * API Reference</a></p>

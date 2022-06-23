@@ -44,8 +44,8 @@ namespace Model
      * <p>Indicates whether the EBS volume is deleted on instance termination. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html#preserving-volumes-on-termination">Preserving
-     * Amazon EBS volumes on instance termination</a> in the Amazon Elastic Compute
-     * Cloud User Guide.</p>
+     * Amazon EBS volumes on instance termination</a> in the <i>Amazon EC2 User
+     * Guide</i>.</p>
      */
     inline bool GetDeleteOnTermination() const{ return m_deleteOnTermination; }
 
@@ -53,8 +53,8 @@ namespace Model
      * <p>Indicates whether the EBS volume is deleted on instance termination. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html#preserving-volumes-on-termination">Preserving
-     * Amazon EBS volumes on instance termination</a> in the Amazon Elastic Compute
-     * Cloud User Guide.</p>
+     * Amazon EBS volumes on instance termination</a> in the <i>Amazon EC2 User
+     * Guide</i>.</p>
      */
     inline bool DeleteOnTerminationHasBeenSet() const { return m_deleteOnTerminationHasBeenSet; }
 
@@ -62,8 +62,8 @@ namespace Model
      * <p>Indicates whether the EBS volume is deleted on instance termination. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html#preserving-volumes-on-termination">Preserving
-     * Amazon EBS volumes on instance termination</a> in the Amazon Elastic Compute
-     * Cloud User Guide.</p>
+     * Amazon EBS volumes on instance termination</a> in the <i>Amazon EC2 User
+     * Guide</i>.</p>
      */
     inline void SetDeleteOnTermination(bool value) { m_deleteOnTerminationHasBeenSet = true; m_deleteOnTermination = value; }
 
@@ -71,8 +71,8 @@ namespace Model
      * <p>Indicates whether the EBS volume is deleted on instance termination. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html#preserving-volumes-on-termination">Preserving
-     * Amazon EBS volumes on instance termination</a> in the Amazon Elastic Compute
-     * Cloud User Guide.</p>
+     * Amazon EBS volumes on instance termination</a> in the <i>Amazon EC2 User
+     * Guide</i>.</p>
      */
     inline EbsBlockDevice& WithDeleteOnTermination(bool value) { SetDeleteOnTermination(value); return *this;}
 
@@ -206,8 +206,8 @@ namespace Model
      * <p>The following are the supported volumes sizes for each volume type:</p> <ul>
      * <li> <p> <code>gp2</code> and <code>gp3</code>:1-16,384</p> </li> <li> <p>
      * <code>io1</code> and <code>io2</code>: 4-16,384</p> </li> <li> <p>
-     * <code>st1</code>: 500-16,384</p> </li> <li> <p> <code>sc1</code>: 500-16,384</p>
-     * </li> <li> <p> <code>standard</code>: 1-1,024</p> </li> </ul>
+     * <code>st1</code> and <code>sc1</code>: 125-16,384</p> </li> <li> <p>
+     * <code>standard</code>: 1-1,024</p> </li> </ul>
      */
     inline int GetVolumeSize() const{ return m_volumeSize; }
 
@@ -218,8 +218,8 @@ namespace Model
      * <p>The following are the supported volumes sizes for each volume type:</p> <ul>
      * <li> <p> <code>gp2</code> and <code>gp3</code>:1-16,384</p> </li> <li> <p>
      * <code>io1</code> and <code>io2</code>: 4-16,384</p> </li> <li> <p>
-     * <code>st1</code>: 500-16,384</p> </li> <li> <p> <code>sc1</code>: 500-16,384</p>
-     * </li> <li> <p> <code>standard</code>: 1-1,024</p> </li> </ul>
+     * <code>st1</code> and <code>sc1</code>: 125-16,384</p> </li> <li> <p>
+     * <code>standard</code>: 1-1,024</p> </li> </ul>
      */
     inline bool VolumeSizeHasBeenSet() const { return m_volumeSizeHasBeenSet; }
 
@@ -230,8 +230,8 @@ namespace Model
      * <p>The following are the supported volumes sizes for each volume type:</p> <ul>
      * <li> <p> <code>gp2</code> and <code>gp3</code>:1-16,384</p> </li> <li> <p>
      * <code>io1</code> and <code>io2</code>: 4-16,384</p> </li> <li> <p>
-     * <code>st1</code>: 500-16,384</p> </li> <li> <p> <code>sc1</code>: 500-16,384</p>
-     * </li> <li> <p> <code>standard</code>: 1-1,024</p> </li> </ul>
+     * <code>st1</code> and <code>sc1</code>: 125-16,384</p> </li> <li> <p>
+     * <code>standard</code>: 1-1,024</p> </li> </ul>
      */
     inline void SetVolumeSize(int value) { m_volumeSizeHasBeenSet = true; m_volumeSize = value; }
 
@@ -242,8 +242,8 @@ namespace Model
      * <p>The following are the supported volumes sizes for each volume type:</p> <ul>
      * <li> <p> <code>gp2</code> and <code>gp3</code>:1-16,384</p> </li> <li> <p>
      * <code>io1</code> and <code>io2</code>: 4-16,384</p> </li> <li> <p>
-     * <code>st1</code>: 500-16,384</p> </li> <li> <p> <code>sc1</code>: 500-16,384</p>
-     * </li> <li> <p> <code>standard</code>: 1-1,024</p> </li> </ul>
+     * <code>st1</code> and <code>sc1</code>: 125-16,384</p> </li> <li> <p>
+     * <code>standard</code>: 1-1,024</p> </li> </ul>
      */
     inline EbsBlockDevice& WithVolumeSize(int value) { SetVolumeSize(value); return *this;}
 
@@ -251,54 +251,54 @@ namespace Model
     /**
      * <p>The volume type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. If
-     * the volume type is <code>io1</code> or <code>io2</code>, you must specify the
-     * IOPS that the volume supports.</p>
+     * EBS volume types</a> in the <i>Amazon EC2 User Guide</i>. If the volume type is
+     * <code>io1</code> or <code>io2</code>, you must specify the IOPS that the volume
+     * supports.</p>
      */
     inline const VolumeType& GetVolumeType() const{ return m_volumeType; }
 
     /**
      * <p>The volume type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. If
-     * the volume type is <code>io1</code> or <code>io2</code>, you must specify the
-     * IOPS that the volume supports.</p>
+     * EBS volume types</a> in the <i>Amazon EC2 User Guide</i>. If the volume type is
+     * <code>io1</code> or <code>io2</code>, you must specify the IOPS that the volume
+     * supports.</p>
      */
     inline bool VolumeTypeHasBeenSet() const { return m_volumeTypeHasBeenSet; }
 
     /**
      * <p>The volume type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. If
-     * the volume type is <code>io1</code> or <code>io2</code>, you must specify the
-     * IOPS that the volume supports.</p>
+     * EBS volume types</a> in the <i>Amazon EC2 User Guide</i>. If the volume type is
+     * <code>io1</code> or <code>io2</code>, you must specify the IOPS that the volume
+     * supports.</p>
      */
     inline void SetVolumeType(const VolumeType& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
 
     /**
      * <p>The volume type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. If
-     * the volume type is <code>io1</code> or <code>io2</code>, you must specify the
-     * IOPS that the volume supports.</p>
+     * EBS volume types</a> in the <i>Amazon EC2 User Guide</i>. If the volume type is
+     * <code>io1</code> or <code>io2</code>, you must specify the IOPS that the volume
+     * supports.</p>
      */
     inline void SetVolumeType(VolumeType&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = std::move(value); }
 
     /**
      * <p>The volume type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. If
-     * the volume type is <code>io1</code> or <code>io2</code>, you must specify the
-     * IOPS that the volume supports.</p>
+     * EBS volume types</a> in the <i>Amazon EC2 User Guide</i>. If the volume type is
+     * <code>io1</code> or <code>io2</code>, you must specify the IOPS that the volume
+     * supports.</p>
      */
     inline EbsBlockDevice& WithVolumeType(const VolumeType& value) { SetVolumeType(value); return *this;}
 
     /**
      * <p>The volume type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. If
-     * the volume type is <code>io1</code> or <code>io2</code>, you must specify the
-     * IOPS that the volume supports.</p>
+     * EBS volume types</a> in the <i>Amazon EC2 User Guide</i>. If the volume type is
+     * <code>io1</code> or <code>io2</code>, you must specify the IOPS that the volume
+     * supports.</p>
      */
     inline EbsBlockDevice& WithVolumeType(VolumeType&& value) { SetVolumeType(std::move(value)); return *this;}
 
@@ -430,18 +430,84 @@ namespace Model
 
 
     /**
+     * <p>The ARN of the Outpost on which the snapshot is stored.</p> <p>This parameter
+     * is only supported on <code>BlockDeviceMapping</code> objects called by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">
+     * CreateImage</a>.</p>
+     */
+    inline const Aws::String& GetOutpostArn() const{ return m_outpostArn; }
+
+    /**
+     * <p>The ARN of the Outpost on which the snapshot is stored.</p> <p>This parameter
+     * is only supported on <code>BlockDeviceMapping</code> objects called by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">
+     * CreateImage</a>.</p>
+     */
+    inline bool OutpostArnHasBeenSet() const { return m_outpostArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the Outpost on which the snapshot is stored.</p> <p>This parameter
+     * is only supported on <code>BlockDeviceMapping</code> objects called by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">
+     * CreateImage</a>.</p>
+     */
+    inline void SetOutpostArn(const Aws::String& value) { m_outpostArnHasBeenSet = true; m_outpostArn = value; }
+
+    /**
+     * <p>The ARN of the Outpost on which the snapshot is stored.</p> <p>This parameter
+     * is only supported on <code>BlockDeviceMapping</code> objects called by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">
+     * CreateImage</a>.</p>
+     */
+    inline void SetOutpostArn(Aws::String&& value) { m_outpostArnHasBeenSet = true; m_outpostArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the Outpost on which the snapshot is stored.</p> <p>This parameter
+     * is only supported on <code>BlockDeviceMapping</code> objects called by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">
+     * CreateImage</a>.</p>
+     */
+    inline void SetOutpostArn(const char* value) { m_outpostArnHasBeenSet = true; m_outpostArn.assign(value); }
+
+    /**
+     * <p>The ARN of the Outpost on which the snapshot is stored.</p> <p>This parameter
+     * is only supported on <code>BlockDeviceMapping</code> objects called by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">
+     * CreateImage</a>.</p>
+     */
+    inline EbsBlockDevice& WithOutpostArn(const Aws::String& value) { SetOutpostArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the Outpost on which the snapshot is stored.</p> <p>This parameter
+     * is only supported on <code>BlockDeviceMapping</code> objects called by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">
+     * CreateImage</a>.</p>
+     */
+    inline EbsBlockDevice& WithOutpostArn(Aws::String&& value) { SetOutpostArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the Outpost on which the snapshot is stored.</p> <p>This parameter
+     * is only supported on <code>BlockDeviceMapping</code> objects called by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">
+     * CreateImage</a>.</p>
+     */
+    inline EbsBlockDevice& WithOutpostArn(const char* value) { SetOutpostArn(value); return *this;}
+
+
+    /**
      * <p>Indicates whether the encryption state of an EBS volume is changed while
      * being restored from a backing snapshot. The effect of setting the encryption
      * state to <code>true</code> depends on the volume origin (new or from a
      * snapshot), starting encryption state, ownership, and whether encryption by
      * default is enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-parameters">Amazon
-     * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>In no case can you remove encryption from an encrypted volume.</p>
-     * <p>Encrypted volumes can only be attached to instances that support Amazon EBS
-     * encryption. For more information, see <a
+     * EBS encryption</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>In no case can
+     * you remove encryption from an encrypted volume.</p> <p>Encrypted volumes can
+     * only be attached to instances that support Amazon EBS encryption. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
-     * instance types</a>.</p> <p>This parameter is not returned by .</p>
+     * instance types</a>.</p> <p>This parameter is not returned by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImageAttribute.html">DescribeImageAttribute</a>.</p>
      */
     inline bool GetEncrypted() const{ return m_encrypted; }
 
@@ -452,12 +518,13 @@ namespace Model
      * snapshot), starting encryption state, ownership, and whether encryption by
      * default is enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-parameters">Amazon
-     * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>In no case can you remove encryption from an encrypted volume.</p>
-     * <p>Encrypted volumes can only be attached to instances that support Amazon EBS
-     * encryption. For more information, see <a
+     * EBS encryption</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>In no case can
+     * you remove encryption from an encrypted volume.</p> <p>Encrypted volumes can
+     * only be attached to instances that support Amazon EBS encryption. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
-     * instance types</a>.</p> <p>This parameter is not returned by .</p>
+     * instance types</a>.</p> <p>This parameter is not returned by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImageAttribute.html">DescribeImageAttribute</a>.</p>
      */
     inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
 
@@ -468,12 +535,13 @@ namespace Model
      * snapshot), starting encryption state, ownership, and whether encryption by
      * default is enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-parameters">Amazon
-     * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>In no case can you remove encryption from an encrypted volume.</p>
-     * <p>Encrypted volumes can only be attached to instances that support Amazon EBS
-     * encryption. For more information, see <a
+     * EBS encryption</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>In no case can
+     * you remove encryption from an encrypted volume.</p> <p>Encrypted volumes can
+     * only be attached to instances that support Amazon EBS encryption. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
-     * instance types</a>.</p> <p>This parameter is not returned by .</p>
+     * instance types</a>.</p> <p>This parameter is not returned by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImageAttribute.html">DescribeImageAttribute</a>.</p>
      */
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
 
@@ -484,12 +552,13 @@ namespace Model
      * snapshot), starting encryption state, ownership, and whether encryption by
      * default is enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-parameters">Amazon
-     * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>In no case can you remove encryption from an encrypted volume.</p>
-     * <p>Encrypted volumes can only be attached to instances that support Amazon EBS
-     * encryption. For more information, see <a
+     * EBS encryption</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>In no case can
+     * you remove encryption from an encrypted volume.</p> <p>Encrypted volumes can
+     * only be attached to instances that support Amazon EBS encryption. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
-     * instance types</a>.</p> <p>This parameter is not returned by .</p>
+     * instance types</a>.</p> <p>This parameter is not returned by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImageAttribute.html">DescribeImageAttribute</a>.</p>
      */
     inline EbsBlockDevice& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
 
@@ -515,6 +584,9 @@ namespace Model
 
     int m_throughput;
     bool m_throughputHasBeenSet;
+
+    Aws::String m_outpostArn;
+    bool m_outpostArnHasBeenSet;
 
     bool m_encrypted;
     bool m_encryptedHasBeenSet;

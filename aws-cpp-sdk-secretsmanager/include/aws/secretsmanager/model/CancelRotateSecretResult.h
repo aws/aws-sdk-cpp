@@ -33,73 +33,73 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the secret for which rotation was canceled.</p>
+     * <p>The ARN of the secret.</p>
      */
     inline const Aws::String& GetARN() const{ return m_aRN; }
 
     /**
-     * <p>The ARN of the secret for which rotation was canceled.</p>
+     * <p>The ARN of the secret.</p>
      */
     inline void SetARN(const Aws::String& value) { m_aRN = value; }
 
     /**
-     * <p>The ARN of the secret for which rotation was canceled.</p>
+     * <p>The ARN of the secret.</p>
      */
     inline void SetARN(Aws::String&& value) { m_aRN = std::move(value); }
 
     /**
-     * <p>The ARN of the secret for which rotation was canceled.</p>
+     * <p>The ARN of the secret.</p>
      */
     inline void SetARN(const char* value) { m_aRN.assign(value); }
 
     /**
-     * <p>The ARN of the secret for which rotation was canceled.</p>
+     * <p>The ARN of the secret.</p>
      */
     inline CancelRotateSecretResult& WithARN(const Aws::String& value) { SetARN(value); return *this;}
 
     /**
-     * <p>The ARN of the secret for which rotation was canceled.</p>
+     * <p>The ARN of the secret.</p>
      */
     inline CancelRotateSecretResult& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the secret for which rotation was canceled.</p>
+     * <p>The ARN of the secret.</p>
      */
     inline CancelRotateSecretResult& WithARN(const char* value) { SetARN(value); return *this;}
 
 
     /**
-     * <p>The friendly name of the secret for which rotation was canceled.</p>
+     * <p>The name of the secret.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The friendly name of the secret for which rotation was canceled.</p>
+     * <p>The name of the secret.</p>
      */
     inline void SetName(const Aws::String& value) { m_name = value; }
 
     /**
-     * <p>The friendly name of the secret for which rotation was canceled.</p>
+     * <p>The name of the secret.</p>
      */
     inline void SetName(Aws::String&& value) { m_name = std::move(value); }
 
     /**
-     * <p>The friendly name of the secret for which rotation was canceled.</p>
+     * <p>The name of the secret.</p>
      */
     inline void SetName(const char* value) { m_name.assign(value); }
 
     /**
-     * <p>The friendly name of the secret for which rotation was canceled.</p>
+     * <p>The name of the secret.</p>
      */
     inline CancelRotateSecretResult& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The friendly name of the secret for which rotation was canceled.</p>
+     * <p>The name of the secret.</p>
      */
     inline CancelRotateSecretResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The friendly name of the secret for which rotation was canceled.</p>
+     * <p>The name of the secret.</p>
      */
     inline CancelRotateSecretResult& WithName(const char* value) { SetName(value); return *this;}
 
@@ -107,70 +107,70 @@ namespace Model
     /**
      * <p>The unique identifier of the version of the secret created during the
      * rotation. This version might not be complete, and should be evaluated for
-     * possible deletion. At the very least, you should remove the
-     * <code>VersionStage</code> value <code>AWSPENDING</code> to enable this version
-     * to be deleted. Failing to clean up a cancelled rotation can block you from
-     * successfully starting future rotations.</p>
+     * possible deletion. We recommend that you remove the <code>VersionStage</code>
+     * value <code>AWSPENDING</code> from this version so that Secrets Manager can
+     * delete it. Failing to clean up a cancelled rotation can block you from starting
+     * future rotations.</p>
      */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
 
     /**
      * <p>The unique identifier of the version of the secret created during the
      * rotation. This version might not be complete, and should be evaluated for
-     * possible deletion. At the very least, you should remove the
-     * <code>VersionStage</code> value <code>AWSPENDING</code> to enable this version
-     * to be deleted. Failing to clean up a cancelled rotation can block you from
-     * successfully starting future rotations.</p>
+     * possible deletion. We recommend that you remove the <code>VersionStage</code>
+     * value <code>AWSPENDING</code> from this version so that Secrets Manager can
+     * delete it. Failing to clean up a cancelled rotation can block you from starting
+     * future rotations.</p>
      */
     inline void SetVersionId(const Aws::String& value) { m_versionId = value; }
 
     /**
      * <p>The unique identifier of the version of the secret created during the
      * rotation. This version might not be complete, and should be evaluated for
-     * possible deletion. At the very least, you should remove the
-     * <code>VersionStage</code> value <code>AWSPENDING</code> to enable this version
-     * to be deleted. Failing to clean up a cancelled rotation can block you from
-     * successfully starting future rotations.</p>
+     * possible deletion. We recommend that you remove the <code>VersionStage</code>
+     * value <code>AWSPENDING</code> from this version so that Secrets Manager can
+     * delete it. Failing to clean up a cancelled rotation can block you from starting
+     * future rotations.</p>
      */
     inline void SetVersionId(Aws::String&& value) { m_versionId = std::move(value); }
 
     /**
      * <p>The unique identifier of the version of the secret created during the
      * rotation. This version might not be complete, and should be evaluated for
-     * possible deletion. At the very least, you should remove the
-     * <code>VersionStage</code> value <code>AWSPENDING</code> to enable this version
-     * to be deleted. Failing to clean up a cancelled rotation can block you from
-     * successfully starting future rotations.</p>
+     * possible deletion. We recommend that you remove the <code>VersionStage</code>
+     * value <code>AWSPENDING</code> from this version so that Secrets Manager can
+     * delete it. Failing to clean up a cancelled rotation can block you from starting
+     * future rotations.</p>
      */
     inline void SetVersionId(const char* value) { m_versionId.assign(value); }
 
     /**
      * <p>The unique identifier of the version of the secret created during the
      * rotation. This version might not be complete, and should be evaluated for
-     * possible deletion. At the very least, you should remove the
-     * <code>VersionStage</code> value <code>AWSPENDING</code> to enable this version
-     * to be deleted. Failing to clean up a cancelled rotation can block you from
-     * successfully starting future rotations.</p>
+     * possible deletion. We recommend that you remove the <code>VersionStage</code>
+     * value <code>AWSPENDING</code> from this version so that Secrets Manager can
+     * delete it. Failing to clean up a cancelled rotation can block you from starting
+     * future rotations.</p>
      */
     inline CancelRotateSecretResult& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
 
     /**
      * <p>The unique identifier of the version of the secret created during the
      * rotation. This version might not be complete, and should be evaluated for
-     * possible deletion. At the very least, you should remove the
-     * <code>VersionStage</code> value <code>AWSPENDING</code> to enable this version
-     * to be deleted. Failing to clean up a cancelled rotation can block you from
-     * successfully starting future rotations.</p>
+     * possible deletion. We recommend that you remove the <code>VersionStage</code>
+     * value <code>AWSPENDING</code> from this version so that Secrets Manager can
+     * delete it. Failing to clean up a cancelled rotation can block you from starting
+     * future rotations.</p>
      */
     inline CancelRotateSecretResult& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier of the version of the secret created during the
      * rotation. This version might not be complete, and should be evaluated for
-     * possible deletion. At the very least, you should remove the
-     * <code>VersionStage</code> value <code>AWSPENDING</code> to enable this version
-     * to be deleted. Failing to clean up a cancelled rotation can block you from
-     * successfully starting future rotations.</p>
+     * possible deletion. We recommend that you remove the <code>VersionStage</code>
+     * value <code>AWSPENDING</code> from this version so that Secrets Manager can
+     * delete it. Failing to clean up a cancelled rotation can block you from starting
+     * future rotations.</p>
      */
     inline CancelRotateSecretResult& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 

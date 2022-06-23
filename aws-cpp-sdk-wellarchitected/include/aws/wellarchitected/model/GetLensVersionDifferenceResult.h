@@ -56,6 +56,42 @@ namespace Model
 
 
     /**
+     * <p>The ARN for the lens.</p>
+     */
+    inline const Aws::String& GetLensArn() const{ return m_lensArn; }
+
+    /**
+     * <p>The ARN for the lens.</p>
+     */
+    inline void SetLensArn(const Aws::String& value) { m_lensArn = value; }
+
+    /**
+     * <p>The ARN for the lens.</p>
+     */
+    inline void SetLensArn(Aws::String&& value) { m_lensArn = std::move(value); }
+
+    /**
+     * <p>The ARN for the lens.</p>
+     */
+    inline void SetLensArn(const char* value) { m_lensArn.assign(value); }
+
+    /**
+     * <p>The ARN for the lens.</p>
+     */
+    inline GetLensVersionDifferenceResult& WithLensArn(const Aws::String& value) { SetLensArn(value); return *this;}
+
+    /**
+     * <p>The ARN for the lens.</p>
+     */
+    inline GetLensVersionDifferenceResult& WithLensArn(Aws::String&& value) { SetLensArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN for the lens.</p>
+     */
+    inline GetLensVersionDifferenceResult& WithLensArn(const char* value) { SetLensArn(value); return *this;}
+
+
+    /**
      * <p>The base version of the lens.</p>
      */
     inline const Aws::String& GetBaseLensVersion() const{ return m_baseLensVersion; }
@@ -89,6 +125,42 @@ namespace Model
      * <p>The base version of the lens.</p>
      */
     inline GetLensVersionDifferenceResult& WithBaseLensVersion(const char* value) { SetBaseLensVersion(value); return *this;}
+
+
+    /**
+     * <p>The target lens version for the lens.</p>
+     */
+    inline const Aws::String& GetTargetLensVersion() const{ return m_targetLensVersion; }
+
+    /**
+     * <p>The target lens version for the lens.</p>
+     */
+    inline void SetTargetLensVersion(const Aws::String& value) { m_targetLensVersion = value; }
+
+    /**
+     * <p>The target lens version for the lens.</p>
+     */
+    inline void SetTargetLensVersion(Aws::String&& value) { m_targetLensVersion = std::move(value); }
+
+    /**
+     * <p>The target lens version for the lens.</p>
+     */
+    inline void SetTargetLensVersion(const char* value) { m_targetLensVersion.assign(value); }
+
+    /**
+     * <p>The target lens version for the lens.</p>
+     */
+    inline GetLensVersionDifferenceResult& WithTargetLensVersion(const Aws::String& value) { SetTargetLensVersion(value); return *this;}
+
+    /**
+     * <p>The target lens version for the lens.</p>
+     */
+    inline GetLensVersionDifferenceResult& WithTargetLensVersion(Aws::String&& value) { SetTargetLensVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The target lens version for the lens.</p>
+     */
+    inline GetLensVersionDifferenceResult& WithTargetLensVersion(const char* value) { SetTargetLensVersion(value); return *this;}
 
 
     /**
@@ -146,7 +218,11 @@ namespace Model
 
     Aws::String m_lensAlias;
 
+    Aws::String m_lensArn;
+
     Aws::String m_baseLensVersion;
+
+    Aws::String m_targetLensVersion;
 
     Aws::String m_latestLensVersion;
 

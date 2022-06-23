@@ -175,49 +175,49 @@ namespace Model
     /**
      * <p>A standard MIME type describing the format of the configuration content. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/https:/www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
+     * href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
      */
     inline const Aws::String& GetContentType() const{ return m_contentType; }
 
     /**
      * <p>A standard MIME type describing the format of the configuration content. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/https:/www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
+     * href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
      */
     inline void SetContentType(const Aws::String& value) { m_contentType = value; }
 
     /**
      * <p>A standard MIME type describing the format of the configuration content. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/https:/www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
+     * href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
      */
     inline void SetContentType(Aws::String&& value) { m_contentType = std::move(value); }
 
     /**
      * <p>A standard MIME type describing the format of the configuration content. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/https:/www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
+     * href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
      */
     inline void SetContentType(const char* value) { m_contentType.assign(value); }
 
     /**
      * <p>A standard MIME type describing the format of the configuration content. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/https:/www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
+     * href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
      */
     inline CreateHostedConfigurationVersionResult& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
 
     /**
      * <p>A standard MIME type describing the format of the configuration content. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/https:/www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
+     * href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
      */
     inline CreateHostedConfigurationVersionResult& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
 
     /**
      * <p>A standard MIME type describing the format of the configuration content. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/https:/www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
+     * href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
      */
     inline CreateHostedConfigurationVersionResult& WithContentType(const char* value) { SetContentType(value); return *this;}
 

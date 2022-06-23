@@ -36,6 +36,12 @@ namespace Aws
         static const int IMPORT_ROLLBACK_IN_PROGRESS_HASH = HashingUtils::HashString("IMPORT_ROLLBACK_IN_PROGRESS");
         static const int IMPORT_ROLLBACK_FAILED_HASH = HashingUtils::HashString("IMPORT_ROLLBACK_FAILED");
         static const int IMPORT_ROLLBACK_COMPLETE_HASH = HashingUtils::HashString("IMPORT_ROLLBACK_COMPLETE");
+        static const int UPDATE_ROLLBACK_IN_PROGRESS_HASH = HashingUtils::HashString("UPDATE_ROLLBACK_IN_PROGRESS");
+        static const int UPDATE_ROLLBACK_COMPLETE_HASH = HashingUtils::HashString("UPDATE_ROLLBACK_COMPLETE");
+        static const int UPDATE_ROLLBACK_FAILED_HASH = HashingUtils::HashString("UPDATE_ROLLBACK_FAILED");
+        static const int ROLLBACK_IN_PROGRESS_HASH = HashingUtils::HashString("ROLLBACK_IN_PROGRESS");
+        static const int ROLLBACK_COMPLETE_HASH = HashingUtils::HashString("ROLLBACK_COMPLETE");
+        static const int ROLLBACK_FAILED_HASH = HashingUtils::HashString("ROLLBACK_FAILED");
 
 
         ResourceStatus GetResourceStatusForName(const Aws::String& name)
@@ -105,6 +111,30 @@ namespace Aws
           {
             return ResourceStatus::IMPORT_ROLLBACK_COMPLETE;
           }
+          else if (hashCode == UPDATE_ROLLBACK_IN_PROGRESS_HASH)
+          {
+            return ResourceStatus::UPDATE_ROLLBACK_IN_PROGRESS;
+          }
+          else if (hashCode == UPDATE_ROLLBACK_COMPLETE_HASH)
+          {
+            return ResourceStatus::UPDATE_ROLLBACK_COMPLETE;
+          }
+          else if (hashCode == UPDATE_ROLLBACK_FAILED_HASH)
+          {
+            return ResourceStatus::UPDATE_ROLLBACK_FAILED;
+          }
+          else if (hashCode == ROLLBACK_IN_PROGRESS_HASH)
+          {
+            return ResourceStatus::ROLLBACK_IN_PROGRESS;
+          }
+          else if (hashCode == ROLLBACK_COMPLETE_HASH)
+          {
+            return ResourceStatus::ROLLBACK_COMPLETE;
+          }
+          else if (hashCode == ROLLBACK_FAILED_HASH)
+          {
+            return ResourceStatus::ROLLBACK_FAILED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -151,6 +181,18 @@ namespace Aws
             return "IMPORT_ROLLBACK_FAILED";
           case ResourceStatus::IMPORT_ROLLBACK_COMPLETE:
             return "IMPORT_ROLLBACK_COMPLETE";
+          case ResourceStatus::UPDATE_ROLLBACK_IN_PROGRESS:
+            return "UPDATE_ROLLBACK_IN_PROGRESS";
+          case ResourceStatus::UPDATE_ROLLBACK_COMPLETE:
+            return "UPDATE_ROLLBACK_COMPLETE";
+          case ResourceStatus::UPDATE_ROLLBACK_FAILED:
+            return "UPDATE_ROLLBACK_FAILED";
+          case ResourceStatus::ROLLBACK_IN_PROGRESS:
+            return "ROLLBACK_IN_PROGRESS";
+          case ResourceStatus::ROLLBACK_COMPLETE:
+            return "ROLLBACK_COMPLETE";
+          case ResourceStatus::ROLLBACK_FAILED:
+            return "ROLLBACK_FAILED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

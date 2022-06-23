@@ -39,22 +39,26 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of streams to list.</p>
+     * <p>The maximum number of streams to list. The default value is 100. If you
+     * specify a value greater than 100, at most 100 results are returned.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
-     * <p>The maximum number of streams to list.</p>
+     * <p>The maximum number of streams to list. The default value is 100. If you
+     * specify a value greater than 100, at most 100 results are returned.</p>
      */
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
-     * <p>The maximum number of streams to list.</p>
+     * <p>The maximum number of streams to list. The default value is 100. If you
+     * specify a value greater than 100, at most 100 results are returned.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
-     * <p>The maximum number of streams to list.</p>
+     * <p>The maximum number of streams to list. The default value is 100. If you
+     * specify a value greater than 100, at most 100 results are returned.</p>
      */
     inline ListStreamsRequest& WithLimit(int value) { SetLimit(value); return *this;}
 

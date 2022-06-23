@@ -16,8 +16,8 @@ namespace Model
   enum class OrderBy
   {
     NOT_SET,
-    TimestampAscending,
-    TimestampDescending
+    TimestampDescending,
+    TimestampAscending
   };
 
 namespace OrderByMapper

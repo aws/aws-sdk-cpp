@@ -238,42 +238,42 @@ namespace Model
 
     /**
      * <p>Information about the destination Amazon S3 bucket. The bucket must exist and
-     * grant WRITE and READ_ACP permissions to the AWS account
+     * grant WRITE and READ_ACP permissions to the Amazon Web Services account
      * vm-import-export@amazon.com.</p>
      */
     inline const ExportTaskS3LocationRequest& GetS3ExportLocation() const{ return m_s3ExportLocation; }
 
     /**
      * <p>Information about the destination Amazon S3 bucket. The bucket must exist and
-     * grant WRITE and READ_ACP permissions to the AWS account
+     * grant WRITE and READ_ACP permissions to the Amazon Web Services account
      * vm-import-export@amazon.com.</p>
      */
     inline bool S3ExportLocationHasBeenSet() const { return m_s3ExportLocationHasBeenSet; }
 
     /**
      * <p>Information about the destination Amazon S3 bucket. The bucket must exist and
-     * grant WRITE and READ_ACP permissions to the AWS account
+     * grant WRITE and READ_ACP permissions to the Amazon Web Services account
      * vm-import-export@amazon.com.</p>
      */
     inline void SetS3ExportLocation(const ExportTaskS3LocationRequest& value) { m_s3ExportLocationHasBeenSet = true; m_s3ExportLocation = value; }
 
     /**
      * <p>Information about the destination Amazon S3 bucket. The bucket must exist and
-     * grant WRITE and READ_ACP permissions to the AWS account
+     * grant WRITE and READ_ACP permissions to the Amazon Web Services account
      * vm-import-export@amazon.com.</p>
      */
     inline void SetS3ExportLocation(ExportTaskS3LocationRequest&& value) { m_s3ExportLocationHasBeenSet = true; m_s3ExportLocation = std::move(value); }
 
     /**
      * <p>Information about the destination Amazon S3 bucket. The bucket must exist and
-     * grant WRITE and READ_ACP permissions to the AWS account
+     * grant WRITE and READ_ACP permissions to the Amazon Web Services account
      * vm-import-export@amazon.com.</p>
      */
     inline ExportImageRequest& WithS3ExportLocation(const ExportTaskS3LocationRequest& value) { SetS3ExportLocation(value); return *this;}
 
     /**
      * <p>Information about the destination Amazon S3 bucket. The bucket must exist and
-     * grant WRITE and READ_ACP permissions to the AWS account
+     * grant WRITE and READ_ACP permissions to the Amazon Web Services account
      * vm-import-export@amazon.com.</p>
      */
     inline ExportImageRequest& WithS3ExportLocation(ExportTaskS3LocationRequest&& value) { SetS3ExportLocation(std::move(value)); return *this;}
@@ -337,42 +337,42 @@ namespace Model
 
 
     /**
-     * <p>The tags to apply to the image being exported.</p>
+     * <p>The tags to apply to the export image task during creation.</p>
      */
     inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
 
     /**
-     * <p>The tags to apply to the image being exported.</p>
+     * <p>The tags to apply to the export image task during creation.</p>
      */
     inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
 
     /**
-     * <p>The tags to apply to the image being exported.</p>
+     * <p>The tags to apply to the export image task during creation.</p>
      */
     inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
 
     /**
-     * <p>The tags to apply to the image being exported.</p>
+     * <p>The tags to apply to the export image task during creation.</p>
      */
     inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
 
     /**
-     * <p>The tags to apply to the image being exported.</p>
+     * <p>The tags to apply to the export image task during creation.</p>
      */
     inline ExportImageRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
 
     /**
-     * <p>The tags to apply to the image being exported.</p>
+     * <p>The tags to apply to the export image task during creation.</p>
      */
     inline ExportImageRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
 
     /**
-     * <p>The tags to apply to the image being exported.</p>
+     * <p>The tags to apply to the export image task during creation.</p>
      */
     inline ExportImageRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
 
     /**
-     * <p>The tags to apply to the image being exported.</p>
+     * <p>The tags to apply to the export image task during creation.</p>
      */
     inline ExportImageRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
 

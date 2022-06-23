@@ -25,8 +25,8 @@ namespace Model
 
   /**
    * <p>Describes an Electronic Data Interchange (EDI) entity as described in as
-   * defined in <a href="https://tools.ietf.org/html/rfc5280">Subject Alternative
-   * Name</a> in RFC 5280.</p><p><h3>See Also:</h3>   <a
+   * defined in <a href="https://datatracker.ietf.org/doc/html/rfc5280">Subject
+   * Alternative Name</a> in RFC 5280.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/EdiPartyName">AWS
    * API Reference</a></p>
    */

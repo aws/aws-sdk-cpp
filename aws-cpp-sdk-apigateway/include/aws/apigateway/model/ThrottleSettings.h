@@ -36,51 +36,47 @@ namespace Model
 
 
     /**
-     * <p>The API request burst limit, the maximum rate limit over a time ranging from
-     * one to a few seconds, depending upon whether the underlying token bucket is at
-     * its full capacity.</p>
+     * <p>The API target request burst rate limit. This allows more requests through
+     * for a period of time than the target rate limit.</p>
      */
     inline int GetBurstLimit() const{ return m_burstLimit; }
 
     /**
-     * <p>The API request burst limit, the maximum rate limit over a time ranging from
-     * one to a few seconds, depending upon whether the underlying token bucket is at
-     * its full capacity.</p>
+     * <p>The API target request burst rate limit. This allows more requests through
+     * for a period of time than the target rate limit.</p>
      */
     inline bool BurstLimitHasBeenSet() const { return m_burstLimitHasBeenSet; }
 
     /**
-     * <p>The API request burst limit, the maximum rate limit over a time ranging from
-     * one to a few seconds, depending upon whether the underlying token bucket is at
-     * its full capacity.</p>
+     * <p>The API target request burst rate limit. This allows more requests through
+     * for a period of time than the target rate limit.</p>
      */
     inline void SetBurstLimit(int value) { m_burstLimitHasBeenSet = true; m_burstLimit = value; }
 
     /**
-     * <p>The API request burst limit, the maximum rate limit over a time ranging from
-     * one to a few seconds, depending upon whether the underlying token bucket is at
-     * its full capacity.</p>
+     * <p>The API target request burst rate limit. This allows more requests through
+     * for a period of time than the target rate limit.</p>
      */
     inline ThrottleSettings& WithBurstLimit(int value) { SetBurstLimit(value); return *this;}
 
 
     /**
-     * <p>The API request steady-state rate limit.</p>
+     * <p>The API target request rate limit.</p>
      */
     inline double GetRateLimit() const{ return m_rateLimit; }
 
     /**
-     * <p>The API request steady-state rate limit.</p>
+     * <p>The API target request rate limit.</p>
      */
     inline bool RateLimitHasBeenSet() const { return m_rateLimitHasBeenSet; }
 
     /**
-     * <p>The API request steady-state rate limit.</p>
+     * <p>The API target request rate limit.</p>
      */
     inline void SetRateLimit(double value) { m_rateLimitHasBeenSet = true; m_rateLimit = value; }
 
     /**
-     * <p>The API request steady-state rate limit.</p>
+     * <p>The API target request rate limit.</p>
      */
     inline ThrottleSettings& WithRateLimit(double value) { SetRateLimit(value); return *this;}
 

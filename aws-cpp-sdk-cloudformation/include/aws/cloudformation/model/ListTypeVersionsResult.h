@@ -37,43 +37,43 @@ namespace Model
 
     /**
      * <p>A list of <code>TypeVersionSummary</code> structures that contain information
-     * about the specified type's versions.</p>
+     * about the specified extension's versions.</p>
      */
     inline const Aws::Vector<TypeVersionSummary>& GetTypeVersionSummaries() const{ return m_typeVersionSummaries; }
 
     /**
      * <p>A list of <code>TypeVersionSummary</code> structures that contain information
-     * about the specified type's versions.</p>
+     * about the specified extension's versions.</p>
      */
     inline void SetTypeVersionSummaries(const Aws::Vector<TypeVersionSummary>& value) { m_typeVersionSummaries = value; }
 
     /**
      * <p>A list of <code>TypeVersionSummary</code> structures that contain information
-     * about the specified type's versions.</p>
+     * about the specified extension's versions.</p>
      */
     inline void SetTypeVersionSummaries(Aws::Vector<TypeVersionSummary>&& value) { m_typeVersionSummaries = std::move(value); }
 
     /**
      * <p>A list of <code>TypeVersionSummary</code> structures that contain information
-     * about the specified type's versions.</p>
+     * about the specified extension's versions.</p>
      */
     inline ListTypeVersionsResult& WithTypeVersionSummaries(const Aws::Vector<TypeVersionSummary>& value) { SetTypeVersionSummaries(value); return *this;}
 
     /**
      * <p>A list of <code>TypeVersionSummary</code> structures that contain information
-     * about the specified type's versions.</p>
+     * about the specified extension's versions.</p>
      */
     inline ListTypeVersionsResult& WithTypeVersionSummaries(Aws::Vector<TypeVersionSummary>&& value) { SetTypeVersionSummaries(std::move(value)); return *this;}
 
     /**
      * <p>A list of <code>TypeVersionSummary</code> structures that contain information
-     * about the specified type's versions.</p>
+     * about the specified extension's versions.</p>
      */
     inline ListTypeVersionsResult& AddTypeVersionSummaries(const TypeVersionSummary& value) { m_typeVersionSummaries.push_back(value); return *this; }
 
     /**
      * <p>A list of <code>TypeVersionSummary</code> structures that contain information
-     * about the specified type's versions.</p>
+     * about the specified extension's versions.</p>
      */
     inline ListTypeVersionsResult& AddTypeVersionSummaries(TypeVersionSummary&& value) { m_typeVersionSummaries.push_back(std::move(value)); return *this; }
 

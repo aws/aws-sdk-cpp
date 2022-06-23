@@ -81,42 +81,58 @@ namespace Model
 
 
     /**
-     * <p>The user's user name.</p>
+     * <p>The user's user name. In the output, the value for <code>UserName</code> is
+     * <code>N/A</code> when the value for <code>IdentityType</code> is
+     * <code>IAM</code> and the corresponding IAM user is deleted.</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
 
     /**
-     * <p>The user's user name.</p>
+     * <p>The user's user name. In the output, the value for <code>UserName</code> is
+     * <code>N/A</code> when the value for <code>IdentityType</code> is
+     * <code>IAM</code> and the corresponding IAM user is deleted.</p>
      */
     inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
 
     /**
-     * <p>The user's user name.</p>
+     * <p>The user's user name. In the output, the value for <code>UserName</code> is
+     * <code>N/A</code> when the value for <code>IdentityType</code> is
+     * <code>IAM</code> and the corresponding IAM user is deleted.</p>
      */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
-     * <p>The user's user name.</p>
+     * <p>The user's user name. In the output, the value for <code>UserName</code> is
+     * <code>N/A</code> when the value for <code>IdentityType</code> is
+     * <code>IAM</code> and the corresponding IAM user is deleted.</p>
      */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
     /**
-     * <p>The user's user name.</p>
+     * <p>The user's user name. In the output, the value for <code>UserName</code> is
+     * <code>N/A</code> when the value for <code>IdentityType</code> is
+     * <code>IAM</code> and the corresponding IAM user is deleted.</p>
      */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
     /**
-     * <p>The user's user name.</p>
+     * <p>The user's user name. In the output, the value for <code>UserName</code> is
+     * <code>N/A</code> when the value for <code>IdentityType</code> is
+     * <code>IAM</code> and the corresponding IAM user is deleted.</p>
      */
     inline User& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
 
     /**
-     * <p>The user's user name.</p>
+     * <p>The user's user name. In the output, the value for <code>UserName</code> is
+     * <code>N/A</code> when the value for <code>IdentityType</code> is
+     * <code>IAM</code> and the corresponding IAM user is deleted.</p>
      */
     inline User& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
-     * <p>The user's user name.</p>
+     * <p>The user's user name. In the output, the value for <code>UserName</code> is
+     * <code>N/A</code> when the value for <code>IdentityType</code> is
+     * <code>IAM</code> and the corresponding IAM user is deleted.</p>
      */
     inline User& WithUserName(const char* value) { SetUserName(value); return *this;}
 
@@ -167,7 +183,7 @@ namespace Model
      * following:.</p> <ul> <li> <p> <code>READER</code>: A user who has read-only
      * access to dashboards.</p> </li> <li> <p> <code>AUTHOR</code>: A user who can
      * create data sources, datasets, analyses, and dashboards.</p> </li> <li> <p>
-     * <code>ADMIN</code>: A user who is an author, who can also manage Amazon
+     * <code>ADMIN</code>: A user who is an author, who can also manage Amazon Amazon
      * QuickSight settings.</p> </li> <li> <p> <code>RESTRICTED_READER</code>: This
      * role isn't currently available for use.</p> </li> <li> <p>
      * <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p>
@@ -180,7 +196,7 @@ namespace Model
      * following:.</p> <ul> <li> <p> <code>READER</code>: A user who has read-only
      * access to dashboards.</p> </li> <li> <p> <code>AUTHOR</code>: A user who can
      * create data sources, datasets, analyses, and dashboards.</p> </li> <li> <p>
-     * <code>ADMIN</code>: A user who is an author, who can also manage Amazon
+     * <code>ADMIN</code>: A user who is an author, who can also manage Amazon Amazon
      * QuickSight settings.</p> </li> <li> <p> <code>RESTRICTED_READER</code>: This
      * role isn't currently available for use.</p> </li> <li> <p>
      * <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p>
@@ -193,7 +209,7 @@ namespace Model
      * following:.</p> <ul> <li> <p> <code>READER</code>: A user who has read-only
      * access to dashboards.</p> </li> <li> <p> <code>AUTHOR</code>: A user who can
      * create data sources, datasets, analyses, and dashboards.</p> </li> <li> <p>
-     * <code>ADMIN</code>: A user who is an author, who can also manage Amazon
+     * <code>ADMIN</code>: A user who is an author, who can also manage Amazon Amazon
      * QuickSight settings.</p> </li> <li> <p> <code>RESTRICTED_READER</code>: This
      * role isn't currently available for use.</p> </li> <li> <p>
      * <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p>
@@ -206,7 +222,7 @@ namespace Model
      * following:.</p> <ul> <li> <p> <code>READER</code>: A user who has read-only
      * access to dashboards.</p> </li> <li> <p> <code>AUTHOR</code>: A user who can
      * create data sources, datasets, analyses, and dashboards.</p> </li> <li> <p>
-     * <code>ADMIN</code>: A user who is an author, who can also manage Amazon
+     * <code>ADMIN</code>: A user who is an author, who can also manage Amazon Amazon
      * QuickSight settings.</p> </li> <li> <p> <code>RESTRICTED_READER</code>: This
      * role isn't currently available for use.</p> </li> <li> <p>
      * <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p>
@@ -219,7 +235,7 @@ namespace Model
      * following:.</p> <ul> <li> <p> <code>READER</code>: A user who has read-only
      * access to dashboards.</p> </li> <li> <p> <code>AUTHOR</code>: A user who can
      * create data sources, datasets, analyses, and dashboards.</p> </li> <li> <p>
-     * <code>ADMIN</code>: A user who is an author, who can also manage Amazon
+     * <code>ADMIN</code>: A user who is an author, who can also manage Amazon Amazon
      * QuickSight settings.</p> </li> <li> <p> <code>RESTRICTED_READER</code>: This
      * role isn't currently available for use.</p> </li> <li> <p>
      * <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p>
@@ -232,7 +248,7 @@ namespace Model
      * following:.</p> <ul> <li> <p> <code>READER</code>: A user who has read-only
      * access to dashboards.</p> </li> <li> <p> <code>AUTHOR</code>: A user who can
      * create data sources, datasets, analyses, and dashboards.</p> </li> <li> <p>
-     * <code>ADMIN</code>: A user who is an author, who can also manage Amazon
+     * <code>ADMIN</code>: A user who is an author, who can also manage Amazon Amazon
      * QuickSight settings.</p> </li> <li> <p> <code>RESTRICTED_READER</code>: This
      * role isn't currently available for use.</p> </li> <li> <p>
      * <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p>
@@ -382,6 +398,161 @@ namespace Model
      */
     inline User& WithCustomPermissionsName(const char* value) { SetCustomPermissionsName(value); return *this;}
 
+
+    /**
+     * <p>The type of supported external login provider that provides identity to let
+     * the user federate into Amazon QuickSight with an associated IAM role. The type
+     * can be one of the following.</p> <ul> <li> <p> <code>COGNITO</code>: Amazon
+     * Cognito. The provider URL is cognito-identity.amazonaws.com.</p> </li> <li> <p>
+     * <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider.</p> </li> </ul>
+     */
+    inline const Aws::String& GetExternalLoginFederationProviderType() const{ return m_externalLoginFederationProviderType; }
+
+    /**
+     * <p>The type of supported external login provider that provides identity to let
+     * the user federate into Amazon QuickSight with an associated IAM role. The type
+     * can be one of the following.</p> <ul> <li> <p> <code>COGNITO</code>: Amazon
+     * Cognito. The provider URL is cognito-identity.amazonaws.com.</p> </li> <li> <p>
+     * <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider.</p> </li> </ul>
+     */
+    inline bool ExternalLoginFederationProviderTypeHasBeenSet() const { return m_externalLoginFederationProviderTypeHasBeenSet; }
+
+    /**
+     * <p>The type of supported external login provider that provides identity to let
+     * the user federate into Amazon QuickSight with an associated IAM role. The type
+     * can be one of the following.</p> <ul> <li> <p> <code>COGNITO</code>: Amazon
+     * Cognito. The provider URL is cognito-identity.amazonaws.com.</p> </li> <li> <p>
+     * <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider.</p> </li> </ul>
+     */
+    inline void SetExternalLoginFederationProviderType(const Aws::String& value) { m_externalLoginFederationProviderTypeHasBeenSet = true; m_externalLoginFederationProviderType = value; }
+
+    /**
+     * <p>The type of supported external login provider that provides identity to let
+     * the user federate into Amazon QuickSight with an associated IAM role. The type
+     * can be one of the following.</p> <ul> <li> <p> <code>COGNITO</code>: Amazon
+     * Cognito. The provider URL is cognito-identity.amazonaws.com.</p> </li> <li> <p>
+     * <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider.</p> </li> </ul>
+     */
+    inline void SetExternalLoginFederationProviderType(Aws::String&& value) { m_externalLoginFederationProviderTypeHasBeenSet = true; m_externalLoginFederationProviderType = std::move(value); }
+
+    /**
+     * <p>The type of supported external login provider that provides identity to let
+     * the user federate into Amazon QuickSight with an associated IAM role. The type
+     * can be one of the following.</p> <ul> <li> <p> <code>COGNITO</code>: Amazon
+     * Cognito. The provider URL is cognito-identity.amazonaws.com.</p> </li> <li> <p>
+     * <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider.</p> </li> </ul>
+     */
+    inline void SetExternalLoginFederationProviderType(const char* value) { m_externalLoginFederationProviderTypeHasBeenSet = true; m_externalLoginFederationProviderType.assign(value); }
+
+    /**
+     * <p>The type of supported external login provider that provides identity to let
+     * the user federate into Amazon QuickSight with an associated IAM role. The type
+     * can be one of the following.</p> <ul> <li> <p> <code>COGNITO</code>: Amazon
+     * Cognito. The provider URL is cognito-identity.amazonaws.com.</p> </li> <li> <p>
+     * <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider.</p> </li> </ul>
+     */
+    inline User& WithExternalLoginFederationProviderType(const Aws::String& value) { SetExternalLoginFederationProviderType(value); return *this;}
+
+    /**
+     * <p>The type of supported external login provider that provides identity to let
+     * the user federate into Amazon QuickSight with an associated IAM role. The type
+     * can be one of the following.</p> <ul> <li> <p> <code>COGNITO</code>: Amazon
+     * Cognito. The provider URL is cognito-identity.amazonaws.com.</p> </li> <li> <p>
+     * <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider.</p> </li> </ul>
+     */
+    inline User& WithExternalLoginFederationProviderType(Aws::String&& value) { SetExternalLoginFederationProviderType(std::move(value)); return *this;}
+
+    /**
+     * <p>The type of supported external login provider that provides identity to let
+     * the user federate into Amazon QuickSight with an associated IAM role. The type
+     * can be one of the following.</p> <ul> <li> <p> <code>COGNITO</code>: Amazon
+     * Cognito. The provider URL is cognito-identity.amazonaws.com.</p> </li> <li> <p>
+     * <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider.</p> </li> </ul>
+     */
+    inline User& WithExternalLoginFederationProviderType(const char* value) { SetExternalLoginFederationProviderType(value); return *this;}
+
+
+    /**
+     * <p>The URL of the external login provider.</p>
+     */
+    inline const Aws::String& GetExternalLoginFederationProviderUrl() const{ return m_externalLoginFederationProviderUrl; }
+
+    /**
+     * <p>The URL of the external login provider.</p>
+     */
+    inline bool ExternalLoginFederationProviderUrlHasBeenSet() const { return m_externalLoginFederationProviderUrlHasBeenSet; }
+
+    /**
+     * <p>The URL of the external login provider.</p>
+     */
+    inline void SetExternalLoginFederationProviderUrl(const Aws::String& value) { m_externalLoginFederationProviderUrlHasBeenSet = true; m_externalLoginFederationProviderUrl = value; }
+
+    /**
+     * <p>The URL of the external login provider.</p>
+     */
+    inline void SetExternalLoginFederationProviderUrl(Aws::String&& value) { m_externalLoginFederationProviderUrlHasBeenSet = true; m_externalLoginFederationProviderUrl = std::move(value); }
+
+    /**
+     * <p>The URL of the external login provider.</p>
+     */
+    inline void SetExternalLoginFederationProviderUrl(const char* value) { m_externalLoginFederationProviderUrlHasBeenSet = true; m_externalLoginFederationProviderUrl.assign(value); }
+
+    /**
+     * <p>The URL of the external login provider.</p>
+     */
+    inline User& WithExternalLoginFederationProviderUrl(const Aws::String& value) { SetExternalLoginFederationProviderUrl(value); return *this;}
+
+    /**
+     * <p>The URL of the external login provider.</p>
+     */
+    inline User& WithExternalLoginFederationProviderUrl(Aws::String&& value) { SetExternalLoginFederationProviderUrl(std::move(value)); return *this;}
+
+    /**
+     * <p>The URL of the external login provider.</p>
+     */
+    inline User& WithExternalLoginFederationProviderUrl(const char* value) { SetExternalLoginFederationProviderUrl(value); return *this;}
+
+
+    /**
+     * <p>The identity ID for the user in the external login provider.</p>
+     */
+    inline const Aws::String& GetExternalLoginId() const{ return m_externalLoginId; }
+
+    /**
+     * <p>The identity ID for the user in the external login provider.</p>
+     */
+    inline bool ExternalLoginIdHasBeenSet() const { return m_externalLoginIdHasBeenSet; }
+
+    /**
+     * <p>The identity ID for the user in the external login provider.</p>
+     */
+    inline void SetExternalLoginId(const Aws::String& value) { m_externalLoginIdHasBeenSet = true; m_externalLoginId = value; }
+
+    /**
+     * <p>The identity ID for the user in the external login provider.</p>
+     */
+    inline void SetExternalLoginId(Aws::String&& value) { m_externalLoginIdHasBeenSet = true; m_externalLoginId = std::move(value); }
+
+    /**
+     * <p>The identity ID for the user in the external login provider.</p>
+     */
+    inline void SetExternalLoginId(const char* value) { m_externalLoginIdHasBeenSet = true; m_externalLoginId.assign(value); }
+
+    /**
+     * <p>The identity ID for the user in the external login provider.</p>
+     */
+    inline User& WithExternalLoginId(const Aws::String& value) { SetExternalLoginId(value); return *this;}
+
+    /**
+     * <p>The identity ID for the user in the external login provider.</p>
+     */
+    inline User& WithExternalLoginId(Aws::String&& value) { SetExternalLoginId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identity ID for the user in the external login provider.</p>
+     */
+    inline User& WithExternalLoginId(const char* value) { SetExternalLoginId(value); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -407,6 +578,15 @@ namespace Model
 
     Aws::String m_customPermissionsName;
     bool m_customPermissionsNameHasBeenSet;
+
+    Aws::String m_externalLoginFederationProviderType;
+    bool m_externalLoginFederationProviderTypeHasBeenSet;
+
+    Aws::String m_externalLoginFederationProviderUrl;
+    bool m_externalLoginFederationProviderUrlHasBeenSet;
+
+    Aws::String m_externalLoginId;
+    bool m_externalLoginIdHasBeenSet;
   };
 
 } // namespace Model

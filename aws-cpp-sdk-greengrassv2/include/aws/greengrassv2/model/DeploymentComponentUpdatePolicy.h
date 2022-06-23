@@ -81,10 +81,10 @@ namespace Model
      * IPC operation to receive these notifications. Then, components can respond with
      * the <a
      * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-operation-defercomponentupdate">DeferComponentUpdate</a>
-     * IPC operation. For more information, see the <a
-     * href="https://docs.aws.amazon.com/greengrass/v2/latest/developerguide/create-deployments.html">Create
-     * deployments</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p> </li>
-     * <li> <p> <code>SKIP_NOTIFY_COMPONENTS</code> – The deployment doesn't notify
+     * IPC operation. For more information, see <a
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/create-deployments.html">Create
+     * deployments</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p> </li> <li>
+     * <p> <code>SKIP_NOTIFY_COMPONENTS</code> – The deployment doesn't notify
      * components or wait for them to be safe to update.</p> </li> </ul> <p>Default:
      * <code>NOTIFY_COMPONENTS</code> </p>
      */
@@ -99,10 +99,10 @@ namespace Model
      * IPC operation to receive these notifications. Then, components can respond with
      * the <a
      * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-operation-defercomponentupdate">DeferComponentUpdate</a>
-     * IPC operation. For more information, see the <a
-     * href="https://docs.aws.amazon.com/greengrass/v2/latest/developerguide/create-deployments.html">Create
-     * deployments</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p> </li>
-     * <li> <p> <code>SKIP_NOTIFY_COMPONENTS</code> – The deployment doesn't notify
+     * IPC operation. For more information, see <a
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/create-deployments.html">Create
+     * deployments</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p> </li> <li>
+     * <p> <code>SKIP_NOTIFY_COMPONENTS</code> – The deployment doesn't notify
      * components or wait for them to be safe to update.</p> </li> </ul> <p>Default:
      * <code>NOTIFY_COMPONENTS</code> </p>
      */
@@ -117,10 +117,10 @@ namespace Model
      * IPC operation to receive these notifications. Then, components can respond with
      * the <a
      * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-operation-defercomponentupdate">DeferComponentUpdate</a>
-     * IPC operation. For more information, see the <a
-     * href="https://docs.aws.amazon.com/greengrass/v2/latest/developerguide/create-deployments.html">Create
-     * deployments</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p> </li>
-     * <li> <p> <code>SKIP_NOTIFY_COMPONENTS</code> – The deployment doesn't notify
+     * IPC operation. For more information, see <a
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/create-deployments.html">Create
+     * deployments</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p> </li> <li>
+     * <p> <code>SKIP_NOTIFY_COMPONENTS</code> – The deployment doesn't notify
      * components or wait for them to be safe to update.</p> </li> </ul> <p>Default:
      * <code>NOTIFY_COMPONENTS</code> </p>
      */
@@ -135,10 +135,10 @@ namespace Model
      * IPC operation to receive these notifications. Then, components can respond with
      * the <a
      * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-operation-defercomponentupdate">DeferComponentUpdate</a>
-     * IPC operation. For more information, see the <a
-     * href="https://docs.aws.amazon.com/greengrass/v2/latest/developerguide/create-deployments.html">Create
-     * deployments</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p> </li>
-     * <li> <p> <code>SKIP_NOTIFY_COMPONENTS</code> – The deployment doesn't notify
+     * IPC operation. For more information, see <a
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/create-deployments.html">Create
+     * deployments</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p> </li> <li>
+     * <p> <code>SKIP_NOTIFY_COMPONENTS</code> – The deployment doesn't notify
      * components or wait for them to be safe to update.</p> </li> </ul> <p>Default:
      * <code>NOTIFY_COMPONENTS</code> </p>
      */
@@ -153,10 +153,10 @@ namespace Model
      * IPC operation to receive these notifications. Then, components can respond with
      * the <a
      * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-operation-defercomponentupdate">DeferComponentUpdate</a>
-     * IPC operation. For more information, see the <a
-     * href="https://docs.aws.amazon.com/greengrass/v2/latest/developerguide/create-deployments.html">Create
-     * deployments</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p> </li>
-     * <li> <p> <code>SKIP_NOTIFY_COMPONENTS</code> – The deployment doesn't notify
+     * IPC operation. For more information, see <a
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/create-deployments.html">Create
+     * deployments</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p> </li> <li>
+     * <p> <code>SKIP_NOTIFY_COMPONENTS</code> – The deployment doesn't notify
      * components or wait for them to be safe to update.</p> </li> </ul> <p>Default:
      * <code>NOTIFY_COMPONENTS</code> </p>
      */
@@ -171,10 +171,10 @@ namespace Model
      * IPC operation to receive these notifications. Then, components can respond with
      * the <a
      * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-operation-defercomponentupdate">DeferComponentUpdate</a>
-     * IPC operation. For more information, see the <a
-     * href="https://docs.aws.amazon.com/greengrass/v2/latest/developerguide/create-deployments.html">Create
-     * deployments</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p> </li>
-     * <li> <p> <code>SKIP_NOTIFY_COMPONENTS</code> – The deployment doesn't notify
+     * IPC operation. For more information, see <a
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/create-deployments.html">Create
+     * deployments</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p> </li> <li>
+     * <p> <code>SKIP_NOTIFY_COMPONENTS</code> – The deployment doesn't notify
      * components or wait for them to be safe to update.</p> </li> </ul> <p>Default:
      * <code>NOTIFY_COMPONENTS</code> </p>
      */

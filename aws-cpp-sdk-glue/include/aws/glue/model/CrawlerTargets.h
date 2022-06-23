@@ -11,6 +11,7 @@
 #include <aws/glue/model/MongoDBTarget.h>
 #include <aws/glue/model/DynamoDBTarget.h>
 #include <aws/glue/model/CatalogTarget.h>
+#include <aws/glue/model/DeltaTarget.h>
 #include <utility>
 
 namespace Aws
@@ -207,44 +208,85 @@ namespace Model
 
 
     /**
-     * <p>Specifies AWS Glue Data Catalog targets.</p>
+     * <p>Specifies Glue Data Catalog targets.</p>
      */
     inline const Aws::Vector<CatalogTarget>& GetCatalogTargets() const{ return m_catalogTargets; }
 
     /**
-     * <p>Specifies AWS Glue Data Catalog targets.</p>
+     * <p>Specifies Glue Data Catalog targets.</p>
      */
     inline bool CatalogTargetsHasBeenSet() const { return m_catalogTargetsHasBeenSet; }
 
     /**
-     * <p>Specifies AWS Glue Data Catalog targets.</p>
+     * <p>Specifies Glue Data Catalog targets.</p>
      */
     inline void SetCatalogTargets(const Aws::Vector<CatalogTarget>& value) { m_catalogTargetsHasBeenSet = true; m_catalogTargets = value; }
 
     /**
-     * <p>Specifies AWS Glue Data Catalog targets.</p>
+     * <p>Specifies Glue Data Catalog targets.</p>
      */
     inline void SetCatalogTargets(Aws::Vector<CatalogTarget>&& value) { m_catalogTargetsHasBeenSet = true; m_catalogTargets = std::move(value); }
 
     /**
-     * <p>Specifies AWS Glue Data Catalog targets.</p>
+     * <p>Specifies Glue Data Catalog targets.</p>
      */
     inline CrawlerTargets& WithCatalogTargets(const Aws::Vector<CatalogTarget>& value) { SetCatalogTargets(value); return *this;}
 
     /**
-     * <p>Specifies AWS Glue Data Catalog targets.</p>
+     * <p>Specifies Glue Data Catalog targets.</p>
      */
     inline CrawlerTargets& WithCatalogTargets(Aws::Vector<CatalogTarget>&& value) { SetCatalogTargets(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies AWS Glue Data Catalog targets.</p>
+     * <p>Specifies Glue Data Catalog targets.</p>
      */
     inline CrawlerTargets& AddCatalogTargets(const CatalogTarget& value) { m_catalogTargetsHasBeenSet = true; m_catalogTargets.push_back(value); return *this; }
 
     /**
-     * <p>Specifies AWS Glue Data Catalog targets.</p>
+     * <p>Specifies Glue Data Catalog targets.</p>
      */
     inline CrawlerTargets& AddCatalogTargets(CatalogTarget&& value) { m_catalogTargetsHasBeenSet = true; m_catalogTargets.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Specifies Delta data store targets.</p>
+     */
+    inline const Aws::Vector<DeltaTarget>& GetDeltaTargets() const{ return m_deltaTargets; }
+
+    /**
+     * <p>Specifies Delta data store targets.</p>
+     */
+    inline bool DeltaTargetsHasBeenSet() const { return m_deltaTargetsHasBeenSet; }
+
+    /**
+     * <p>Specifies Delta data store targets.</p>
+     */
+    inline void SetDeltaTargets(const Aws::Vector<DeltaTarget>& value) { m_deltaTargetsHasBeenSet = true; m_deltaTargets = value; }
+
+    /**
+     * <p>Specifies Delta data store targets.</p>
+     */
+    inline void SetDeltaTargets(Aws::Vector<DeltaTarget>&& value) { m_deltaTargetsHasBeenSet = true; m_deltaTargets = std::move(value); }
+
+    /**
+     * <p>Specifies Delta data store targets.</p>
+     */
+    inline CrawlerTargets& WithDeltaTargets(const Aws::Vector<DeltaTarget>& value) { SetDeltaTargets(value); return *this;}
+
+    /**
+     * <p>Specifies Delta data store targets.</p>
+     */
+    inline CrawlerTargets& WithDeltaTargets(Aws::Vector<DeltaTarget>&& value) { SetDeltaTargets(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies Delta data store targets.</p>
+     */
+    inline CrawlerTargets& AddDeltaTargets(const DeltaTarget& value) { m_deltaTargetsHasBeenSet = true; m_deltaTargets.push_back(value); return *this; }
+
+    /**
+     * <p>Specifies Delta data store targets.</p>
+     */
+    inline CrawlerTargets& AddDeltaTargets(DeltaTarget&& value) { m_deltaTargetsHasBeenSet = true; m_deltaTargets.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -262,6 +304,9 @@ namespace Model
 
     Aws::Vector<CatalogTarget> m_catalogTargets;
     bool m_catalogTargetsHasBeenSet;
+
+    Aws::Vector<DeltaTarget> m_deltaTargets;
+    bool m_deltaTargetsHasBeenSet;
   };
 
 } // namespace Model

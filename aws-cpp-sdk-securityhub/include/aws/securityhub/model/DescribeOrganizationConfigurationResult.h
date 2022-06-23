@@ -5,6 +5,8 @@
 
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
+#include <aws/securityhub/model/AutoEnableStandards.h>
+#include <utility>
 
 namespace Aws
 {
@@ -73,11 +75,69 @@ namespace Model
      */
     inline DescribeOrganizationConfigurationResult& WithMemberAccountLimitReached(bool value) { SetMemberAccountLimitReached(value); return *this;}
 
+
+    /**
+     * <p>Whether to automatically enable Security Hub <a
+     * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-enable-disable.html">default
+     * standards</a> for new member accounts in the organization.</p> <p>The default
+     * value of this parameter is equal to <code>DEFAULT</code>.</p> <p>If equal to
+     * <code>DEFAULT</code>, then Security Hub default standards are automatically
+     * enabled for new member accounts. If equal to <code>NONE</code>, then default
+     * standards are not automatically enabled for new member accounts.</p>
+     */
+    inline const AutoEnableStandards& GetAutoEnableStandards() const{ return m_autoEnableStandards; }
+
+    /**
+     * <p>Whether to automatically enable Security Hub <a
+     * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-enable-disable.html">default
+     * standards</a> for new member accounts in the organization.</p> <p>The default
+     * value of this parameter is equal to <code>DEFAULT</code>.</p> <p>If equal to
+     * <code>DEFAULT</code>, then Security Hub default standards are automatically
+     * enabled for new member accounts. If equal to <code>NONE</code>, then default
+     * standards are not automatically enabled for new member accounts.</p>
+     */
+    inline void SetAutoEnableStandards(const AutoEnableStandards& value) { m_autoEnableStandards = value; }
+
+    /**
+     * <p>Whether to automatically enable Security Hub <a
+     * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-enable-disable.html">default
+     * standards</a> for new member accounts in the organization.</p> <p>The default
+     * value of this parameter is equal to <code>DEFAULT</code>.</p> <p>If equal to
+     * <code>DEFAULT</code>, then Security Hub default standards are automatically
+     * enabled for new member accounts. If equal to <code>NONE</code>, then default
+     * standards are not automatically enabled for new member accounts.</p>
+     */
+    inline void SetAutoEnableStandards(AutoEnableStandards&& value) { m_autoEnableStandards = std::move(value); }
+
+    /**
+     * <p>Whether to automatically enable Security Hub <a
+     * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-enable-disable.html">default
+     * standards</a> for new member accounts in the organization.</p> <p>The default
+     * value of this parameter is equal to <code>DEFAULT</code>.</p> <p>If equal to
+     * <code>DEFAULT</code>, then Security Hub default standards are automatically
+     * enabled for new member accounts. If equal to <code>NONE</code>, then default
+     * standards are not automatically enabled for new member accounts.</p>
+     */
+    inline DescribeOrganizationConfigurationResult& WithAutoEnableStandards(const AutoEnableStandards& value) { SetAutoEnableStandards(value); return *this;}
+
+    /**
+     * <p>Whether to automatically enable Security Hub <a
+     * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-enable-disable.html">default
+     * standards</a> for new member accounts in the organization.</p> <p>The default
+     * value of this parameter is equal to <code>DEFAULT</code>.</p> <p>If equal to
+     * <code>DEFAULT</code>, then Security Hub default standards are automatically
+     * enabled for new member accounts. If equal to <code>NONE</code>, then default
+     * standards are not automatically enabled for new member accounts.</p>
+     */
+    inline DescribeOrganizationConfigurationResult& WithAutoEnableStandards(AutoEnableStandards&& value) { SetAutoEnableStandards(std::move(value)); return *this;}
+
   private:
 
     bool m_autoEnable;
 
     bool m_memberAccountLimitReached;
+
+    AutoEnableStandards m_autoEnableStandards;
   };
 
 } // namespace Model

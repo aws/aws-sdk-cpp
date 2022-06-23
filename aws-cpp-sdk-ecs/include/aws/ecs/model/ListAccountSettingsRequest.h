@@ -67,49 +67,49 @@ namespace Model
 
 
     /**
-     * <p>The value of the account settings with which to filter results. You must also
+     * <p>The value of the account settings to filter results with. You must also
      * specify an account setting name to use this parameter.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
-     * <p>The value of the account settings with which to filter results. You must also
+     * <p>The value of the account settings to filter results with. You must also
      * specify an account setting name to use this parameter.</p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
-     * <p>The value of the account settings with which to filter results. You must also
+     * <p>The value of the account settings to filter results with. You must also
      * specify an account setting name to use this parameter.</p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>The value of the account settings with which to filter results. You must also
+     * <p>The value of the account settings to filter results with. You must also
      * specify an account setting name to use this parameter.</p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
-     * <p>The value of the account settings with which to filter results. You must also
+     * <p>The value of the account settings to filter results with. You must also
      * specify an account setting name to use this parameter.</p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
-     * <p>The value of the account settings with which to filter results. You must also
+     * <p>The value of the account settings to filter results with. You must also
      * specify an account setting name to use this parameter.</p>
      */
     inline ListAccountSettingsRequest& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
-     * <p>The value of the account settings with which to filter results. You must also
+     * <p>The value of the account settings to filter results with. You must also
      * specify an account setting name to use this parameter.</p>
      */
     inline ListAccountSettingsRequest& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
-     * <p>The value of the account settings with which to filter results. You must also
+     * <p>The value of the account settings to filter results with. You must also
      * specify an account setting name to use this parameter.</p>
      */
     inline ListAccountSettingsRequest& WithValue(const char* value) { SetValue(value); return *this;}
@@ -118,92 +118,100 @@ namespace Model
     /**
      * <p>The ARN of the principal, which can be an IAM user, IAM role, or the root
      * user. If this field is omitted, the account settings are listed only for the
-     * authenticated user.</p>
+     * authenticated user.</p>  <p>Federated users assume the account setting of
+     * the root user and can't have explicit account settings set for them.</p> 
      */
     inline const Aws::String& GetPrincipalArn() const{ return m_principalArn; }
 
     /**
      * <p>The ARN of the principal, which can be an IAM user, IAM role, or the root
      * user. If this field is omitted, the account settings are listed only for the
-     * authenticated user.</p>
+     * authenticated user.</p>  <p>Federated users assume the account setting of
+     * the root user and can't have explicit account settings set for them.</p> 
      */
     inline bool PrincipalArnHasBeenSet() const { return m_principalArnHasBeenSet; }
 
     /**
      * <p>The ARN of the principal, which can be an IAM user, IAM role, or the root
      * user. If this field is omitted, the account settings are listed only for the
-     * authenticated user.</p>
+     * authenticated user.</p>  <p>Federated users assume the account setting of
+     * the root user and can't have explicit account settings set for them.</p> 
      */
     inline void SetPrincipalArn(const Aws::String& value) { m_principalArnHasBeenSet = true; m_principalArn = value; }
 
     /**
      * <p>The ARN of the principal, which can be an IAM user, IAM role, or the root
      * user. If this field is omitted, the account settings are listed only for the
-     * authenticated user.</p>
+     * authenticated user.</p>  <p>Federated users assume the account setting of
+     * the root user and can't have explicit account settings set for them.</p> 
      */
     inline void SetPrincipalArn(Aws::String&& value) { m_principalArnHasBeenSet = true; m_principalArn = std::move(value); }
 
     /**
      * <p>The ARN of the principal, which can be an IAM user, IAM role, or the root
      * user. If this field is omitted, the account settings are listed only for the
-     * authenticated user.</p>
+     * authenticated user.</p>  <p>Federated users assume the account setting of
+     * the root user and can't have explicit account settings set for them.</p> 
      */
     inline void SetPrincipalArn(const char* value) { m_principalArnHasBeenSet = true; m_principalArn.assign(value); }
 
     /**
      * <p>The ARN of the principal, which can be an IAM user, IAM role, or the root
      * user. If this field is omitted, the account settings are listed only for the
-     * authenticated user.</p>
+     * authenticated user.</p>  <p>Federated users assume the account setting of
+     * the root user and can't have explicit account settings set for them.</p> 
      */
     inline ListAccountSettingsRequest& WithPrincipalArn(const Aws::String& value) { SetPrincipalArn(value); return *this;}
 
     /**
      * <p>The ARN of the principal, which can be an IAM user, IAM role, or the root
      * user. If this field is omitted, the account settings are listed only for the
-     * authenticated user.</p>
+     * authenticated user.</p>  <p>Federated users assume the account setting of
+     * the root user and can't have explicit account settings set for them.</p> 
      */
     inline ListAccountSettingsRequest& WithPrincipalArn(Aws::String&& value) { SetPrincipalArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the principal, which can be an IAM user, IAM role, or the root
      * user. If this field is omitted, the account settings are listed only for the
-     * authenticated user.</p>
+     * authenticated user.</p>  <p>Federated users assume the account setting of
+     * the root user and can't have explicit account settings set for them.</p> 
      */
     inline ListAccountSettingsRequest& WithPrincipalArn(const char* value) { SetPrincipalArn(value); return *this;}
 
 
     /**
-     * <p>Specifies whether to return the effective settings. If <code>true</code>, the
-     * account settings for the root user or the default setting for the
+     * <p>Determines whether to return the effective settings. If <code>true</code>,
+     * the account settings for the root user or the default setting for the
      * <code>principalArn</code> are returned. If <code>false</code>, the account
-     * settings for the <code>principalArn</code> are returned if they are set.
+     * settings for the <code>principalArn</code> are returned if they're set.
      * Otherwise, no account settings are returned.</p>
      */
     inline bool GetEffectiveSettings() const{ return m_effectiveSettings; }
 
     /**
-     * <p>Specifies whether to return the effective settings. If <code>true</code>, the
-     * account settings for the root user or the default setting for the
+     * <p>Determines whether to return the effective settings. If <code>true</code>,
+     * the account settings for the root user or the default setting for the
      * <code>principalArn</code> are returned. If <code>false</code>, the account
-     * settings for the <code>principalArn</code> are returned if they are set.
+     * settings for the <code>principalArn</code> are returned if they're set.
      * Otherwise, no account settings are returned.</p>
      */
     inline bool EffectiveSettingsHasBeenSet() const { return m_effectiveSettingsHasBeenSet; }
 
     /**
-     * <p>Specifies whether to return the effective settings. If <code>true</code>, the
-     * account settings for the root user or the default setting for the
+     * <p>Determines whether to return the effective settings. If <code>true</code>,
+     * the account settings for the root user or the default setting for the
      * <code>principalArn</code> are returned. If <code>false</code>, the account
-     * settings for the <code>principalArn</code> are returned if they are set.
+     * settings for the <code>principalArn</code> are returned if they're set.
      * Otherwise, no account settings are returned.</p>
      */
     inline void SetEffectiveSettings(bool value) { m_effectiveSettingsHasBeenSet = true; m_effectiveSettings = value; }
 
     /**
-     * <p>Specifies whether to return the effective settings. If <code>true</code>, the
-     * account settings for the root user or the default setting for the
+     * <p>Determines whether to return the effective settings. If <code>true</code>,
+     * the account settings for the root user or the default setting for the
      * <code>principalArn</code> are returned. If <code>false</code>, the account
-     * settings for the <code>principalArn</code> are returned if they are set.
+     * settings for the <code>principalArn</code> are returned if they're set.
      * Otherwise, no account settings are returned.</p>
      */
     inline ListAccountSettingsRequest& WithEffectiveSettings(bool value) { SetEffectiveSettings(value); return *this;}
@@ -213,7 +221,7 @@ namespace Model
      * <p>The <code>nextToken</code> value returned from a
      * <code>ListAccountSettings</code> request indicating that more results are
      * available to fulfill the request and further calls will be needed. If
-     * <code>maxResults</code> was provided, it is possible the number of results to be
+     * <code>maxResults</code> was provided, it's possible the number of results to be
      * fewer than <code>maxResults</code>.</p>  <p>This token should be treated
      * as an opaque identifier that is only used to retrieve the next items in a list
      * and not for other programmatic purposes.</p> 
@@ -224,7 +232,7 @@ namespace Model
      * <p>The <code>nextToken</code> value returned from a
      * <code>ListAccountSettings</code> request indicating that more results are
      * available to fulfill the request and further calls will be needed. If
-     * <code>maxResults</code> was provided, it is possible the number of results to be
+     * <code>maxResults</code> was provided, it's possible the number of results to be
      * fewer than <code>maxResults</code>.</p>  <p>This token should be treated
      * as an opaque identifier that is only used to retrieve the next items in a list
      * and not for other programmatic purposes.</p> 
@@ -235,7 +243,7 @@ namespace Model
      * <p>The <code>nextToken</code> value returned from a
      * <code>ListAccountSettings</code> request indicating that more results are
      * available to fulfill the request and further calls will be needed. If
-     * <code>maxResults</code> was provided, it is possible the number of results to be
+     * <code>maxResults</code> was provided, it's possible the number of results to be
      * fewer than <code>maxResults</code>.</p>  <p>This token should be treated
      * as an opaque identifier that is only used to retrieve the next items in a list
      * and not for other programmatic purposes.</p> 
@@ -246,7 +254,7 @@ namespace Model
      * <p>The <code>nextToken</code> value returned from a
      * <code>ListAccountSettings</code> request indicating that more results are
      * available to fulfill the request and further calls will be needed. If
-     * <code>maxResults</code> was provided, it is possible the number of results to be
+     * <code>maxResults</code> was provided, it's possible the number of results to be
      * fewer than <code>maxResults</code>.</p>  <p>This token should be treated
      * as an opaque identifier that is only used to retrieve the next items in a list
      * and not for other programmatic purposes.</p> 
@@ -257,7 +265,7 @@ namespace Model
      * <p>The <code>nextToken</code> value returned from a
      * <code>ListAccountSettings</code> request indicating that more results are
      * available to fulfill the request and further calls will be needed. If
-     * <code>maxResults</code> was provided, it is possible the number of results to be
+     * <code>maxResults</code> was provided, it's possible the number of results to be
      * fewer than <code>maxResults</code>.</p>  <p>This token should be treated
      * as an opaque identifier that is only used to retrieve the next items in a list
      * and not for other programmatic purposes.</p> 
@@ -268,7 +276,7 @@ namespace Model
      * <p>The <code>nextToken</code> value returned from a
      * <code>ListAccountSettings</code> request indicating that more results are
      * available to fulfill the request and further calls will be needed. If
-     * <code>maxResults</code> was provided, it is possible the number of results to be
+     * <code>maxResults</code> was provided, it's possible the number of results to be
      * fewer than <code>maxResults</code>.</p>  <p>This token should be treated
      * as an opaque identifier that is only used to retrieve the next items in a list
      * and not for other programmatic purposes.</p> 
@@ -279,7 +287,7 @@ namespace Model
      * <p>The <code>nextToken</code> value returned from a
      * <code>ListAccountSettings</code> request indicating that more results are
      * available to fulfill the request and further calls will be needed. If
-     * <code>maxResults</code> was provided, it is possible the number of results to be
+     * <code>maxResults</code> was provided, it's possible the number of results to be
      * fewer than <code>maxResults</code>.</p>  <p>This token should be treated
      * as an opaque identifier that is only used to retrieve the next items in a list
      * and not for other programmatic purposes.</p> 
@@ -290,7 +298,7 @@ namespace Model
      * <p>The <code>nextToken</code> value returned from a
      * <code>ListAccountSettings</code> request indicating that more results are
      * available to fulfill the request and further calls will be needed. If
-     * <code>maxResults</code> was provided, it is possible the number of results to be
+     * <code>maxResults</code> was provided, it's possible the number of results to be
      * fewer than <code>maxResults</code>.</p>  <p>This token should be treated
      * as an opaque identifier that is only used to retrieve the next items in a list
      * and not for other programmatic purposes.</p> 
@@ -306,7 +314,7 @@ namespace Model
      * The remaining results of the initial request can be seen by sending another
      * <code>ListAccountSettings</code> request with the returned
      * <code>nextToken</code> value. This value can be between 1 and 10. If this
-     * parameter is not used, then <code>ListAccountSettings</code> returns up to 10
+     * parameter isn't used, then <code>ListAccountSettings</code> returns up to 10
      * results and a <code>nextToken</code> value if applicable.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
@@ -319,7 +327,7 @@ namespace Model
      * The remaining results of the initial request can be seen by sending another
      * <code>ListAccountSettings</code> request with the returned
      * <code>nextToken</code> value. This value can be between 1 and 10. If this
-     * parameter is not used, then <code>ListAccountSettings</code> returns up to 10
+     * parameter isn't used, then <code>ListAccountSettings</code> returns up to 10
      * results and a <code>nextToken</code> value if applicable.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
@@ -332,7 +340,7 @@ namespace Model
      * The remaining results of the initial request can be seen by sending another
      * <code>ListAccountSettings</code> request with the returned
      * <code>nextToken</code> value. This value can be between 1 and 10. If this
-     * parameter is not used, then <code>ListAccountSettings</code> returns up to 10
+     * parameter isn't used, then <code>ListAccountSettings</code> returns up to 10
      * results and a <code>nextToken</code> value if applicable.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
@@ -345,7 +353,7 @@ namespace Model
      * The remaining results of the initial request can be seen by sending another
      * <code>ListAccountSettings</code> request with the returned
      * <code>nextToken</code> value. This value can be between 1 and 10. If this
-     * parameter is not used, then <code>ListAccountSettings</code> returns up to 10
+     * parameter isn't used, then <code>ListAccountSettings</code> returns up to 10
      * results and a <code>nextToken</code> value if applicable.</p>
      */
     inline ListAccountSettingsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}

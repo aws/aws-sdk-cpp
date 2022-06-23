@@ -86,97 +86,137 @@ namespace Model
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>local-gateway-id</code> - The ID
-     * of a local gateway.</p> </li> <li> <p> <code>local-gateway-route-table-id</code>
-     * - The ID of the local gateway route table.</p> </li> <li> <p>
+     * of a local gateway.</p> </li> <li> <p>
+     * <code>local-gateway-route-table-arn</code> - The Amazon Resource Name (ARN) of
+     * the local gateway route table for the virtual interface group.</p> </li> <li>
+     * <p> <code>local-gateway-route-table-id</code> - The ID of the local gateway
+     * route table.</p> </li> <li> <p>
      * <code>local-gateway-route-table-virtual-interface-group-association-id</code> -
      * The ID of the association.</p> </li> <li> <p>
      * <code>local-gateway-route-table-virtual-interface-group-id</code> - The ID of
-     * the virtual interface group.</p> </li> <li> <p> <code>state</code> - The state
-     * of the association.</p> </li> </ul>
+     * the virtual interface group.</p> </li> <li> <p> <code>owner-id</code> - The ID
+     * of the Amazon Web Services account that owns the local gateway virtual interface
+     * group association.</p> </li> <li> <p> <code>state</code> - The state of the
+     * association.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>local-gateway-id</code> - The ID
-     * of a local gateway.</p> </li> <li> <p> <code>local-gateway-route-table-id</code>
-     * - The ID of the local gateway route table.</p> </li> <li> <p>
+     * of a local gateway.</p> </li> <li> <p>
+     * <code>local-gateway-route-table-arn</code> - The Amazon Resource Name (ARN) of
+     * the local gateway route table for the virtual interface group.</p> </li> <li>
+     * <p> <code>local-gateway-route-table-id</code> - The ID of the local gateway
+     * route table.</p> </li> <li> <p>
      * <code>local-gateway-route-table-virtual-interface-group-association-id</code> -
      * The ID of the association.</p> </li> <li> <p>
      * <code>local-gateway-route-table-virtual-interface-group-id</code> - The ID of
-     * the virtual interface group.</p> </li> <li> <p> <code>state</code> - The state
-     * of the association.</p> </li> </ul>
+     * the virtual interface group.</p> </li> <li> <p> <code>owner-id</code> - The ID
+     * of the Amazon Web Services account that owns the local gateway virtual interface
+     * group association.</p> </li> <li> <p> <code>state</code> - The state of the
+     * association.</p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>local-gateway-id</code> - The ID
-     * of a local gateway.</p> </li> <li> <p> <code>local-gateway-route-table-id</code>
-     * - The ID of the local gateway route table.</p> </li> <li> <p>
+     * of a local gateway.</p> </li> <li> <p>
+     * <code>local-gateway-route-table-arn</code> - The Amazon Resource Name (ARN) of
+     * the local gateway route table for the virtual interface group.</p> </li> <li>
+     * <p> <code>local-gateway-route-table-id</code> - The ID of the local gateway
+     * route table.</p> </li> <li> <p>
      * <code>local-gateway-route-table-virtual-interface-group-association-id</code> -
      * The ID of the association.</p> </li> <li> <p>
      * <code>local-gateway-route-table-virtual-interface-group-id</code> - The ID of
-     * the virtual interface group.</p> </li> <li> <p> <code>state</code> - The state
-     * of the association.</p> </li> </ul>
+     * the virtual interface group.</p> </li> <li> <p> <code>owner-id</code> - The ID
+     * of the Amazon Web Services account that owns the local gateway virtual interface
+     * group association.</p> </li> <li> <p> <code>state</code> - The state of the
+     * association.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>local-gateway-id</code> - The ID
-     * of a local gateway.</p> </li> <li> <p> <code>local-gateway-route-table-id</code>
-     * - The ID of the local gateway route table.</p> </li> <li> <p>
+     * of a local gateway.</p> </li> <li> <p>
+     * <code>local-gateway-route-table-arn</code> - The Amazon Resource Name (ARN) of
+     * the local gateway route table for the virtual interface group.</p> </li> <li>
+     * <p> <code>local-gateway-route-table-id</code> - The ID of the local gateway
+     * route table.</p> </li> <li> <p>
      * <code>local-gateway-route-table-virtual-interface-group-association-id</code> -
      * The ID of the association.</p> </li> <li> <p>
      * <code>local-gateway-route-table-virtual-interface-group-id</code> - The ID of
-     * the virtual interface group.</p> </li> <li> <p> <code>state</code> - The state
-     * of the association.</p> </li> </ul>
+     * the virtual interface group.</p> </li> <li> <p> <code>owner-id</code> - The ID
+     * of the Amazon Web Services account that owns the local gateway virtual interface
+     * group association.</p> </li> <li> <p> <code>state</code> - The state of the
+     * association.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>local-gateway-id</code> - The ID
-     * of a local gateway.</p> </li> <li> <p> <code>local-gateway-route-table-id</code>
-     * - The ID of the local gateway route table.</p> </li> <li> <p>
+     * of a local gateway.</p> </li> <li> <p>
+     * <code>local-gateway-route-table-arn</code> - The Amazon Resource Name (ARN) of
+     * the local gateway route table for the virtual interface group.</p> </li> <li>
+     * <p> <code>local-gateway-route-table-id</code> - The ID of the local gateway
+     * route table.</p> </li> <li> <p>
      * <code>local-gateway-route-table-virtual-interface-group-association-id</code> -
      * The ID of the association.</p> </li> <li> <p>
      * <code>local-gateway-route-table-virtual-interface-group-id</code> - The ID of
-     * the virtual interface group.</p> </li> <li> <p> <code>state</code> - The state
-     * of the association.</p> </li> </ul>
+     * the virtual interface group.</p> </li> <li> <p> <code>owner-id</code> - The ID
+     * of the Amazon Web Services account that owns the local gateway virtual interface
+     * group association.</p> </li> <li> <p> <code>state</code> - The state of the
+     * association.</p> </li> </ul>
      */
     inline DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>local-gateway-id</code> - The ID
-     * of a local gateway.</p> </li> <li> <p> <code>local-gateway-route-table-id</code>
-     * - The ID of the local gateway route table.</p> </li> <li> <p>
+     * of a local gateway.</p> </li> <li> <p>
+     * <code>local-gateway-route-table-arn</code> - The Amazon Resource Name (ARN) of
+     * the local gateway route table for the virtual interface group.</p> </li> <li>
+     * <p> <code>local-gateway-route-table-id</code> - The ID of the local gateway
+     * route table.</p> </li> <li> <p>
      * <code>local-gateway-route-table-virtual-interface-group-association-id</code> -
      * The ID of the association.</p> </li> <li> <p>
      * <code>local-gateway-route-table-virtual-interface-group-id</code> - The ID of
-     * the virtual interface group.</p> </li> <li> <p> <code>state</code> - The state
-     * of the association.</p> </li> </ul>
+     * the virtual interface group.</p> </li> <li> <p> <code>owner-id</code> - The ID
+     * of the Amazon Web Services account that owns the local gateway virtual interface
+     * group association.</p> </li> <li> <p> <code>state</code> - The state of the
+     * association.</p> </li> </ul>
      */
     inline DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>local-gateway-id</code> - The ID
-     * of a local gateway.</p> </li> <li> <p> <code>local-gateway-route-table-id</code>
-     * - The ID of the local gateway route table.</p> </li> <li> <p>
+     * of a local gateway.</p> </li> <li> <p>
+     * <code>local-gateway-route-table-arn</code> - The Amazon Resource Name (ARN) of
+     * the local gateway route table for the virtual interface group.</p> </li> <li>
+     * <p> <code>local-gateway-route-table-id</code> - The ID of the local gateway
+     * route table.</p> </li> <li> <p>
      * <code>local-gateway-route-table-virtual-interface-group-association-id</code> -
      * The ID of the association.</p> </li> <li> <p>
      * <code>local-gateway-route-table-virtual-interface-group-id</code> - The ID of
-     * the virtual interface group.</p> </li> <li> <p> <code>state</code> - The state
-     * of the association.</p> </li> </ul>
+     * the virtual interface group.</p> </li> <li> <p> <code>owner-id</code> - The ID
+     * of the Amazon Web Services account that owns the local gateway virtual interface
+     * group association.</p> </li> <li> <p> <code>state</code> - The state of the
+     * association.</p> </li> </ul>
      */
     inline DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>local-gateway-id</code> - The ID
-     * of a local gateway.</p> </li> <li> <p> <code>local-gateway-route-table-id</code>
-     * - The ID of the local gateway route table.</p> </li> <li> <p>
+     * of a local gateway.</p> </li> <li> <p>
+     * <code>local-gateway-route-table-arn</code> - The Amazon Resource Name (ARN) of
+     * the local gateway route table for the virtual interface group.</p> </li> <li>
+     * <p> <code>local-gateway-route-table-id</code> - The ID of the local gateway
+     * route table.</p> </li> <li> <p>
      * <code>local-gateway-route-table-virtual-interface-group-association-id</code> -
      * The ID of the association.</p> </li> <li> <p>
      * <code>local-gateway-route-table-virtual-interface-group-id</code> - The ID of
-     * the virtual interface group.</p> </li> <li> <p> <code>state</code> - The state
-     * of the association.</p> </li> </ul>
+     * the virtual interface group.</p> </li> <li> <p> <code>owner-id</code> - The ID
+     * of the Amazon Web Services account that owns the local gateway virtual interface
+     * group association.</p> </li> <li> <p> <code>state</code> - The state of the
+     * association.</p> </li> </ul>
      */
     inline DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

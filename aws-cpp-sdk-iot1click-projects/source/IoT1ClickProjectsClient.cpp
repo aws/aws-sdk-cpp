@@ -84,7 +84,7 @@ IoT1ClickProjectsClient::~IoT1ClickProjectsClient()
 {
 }
 
-void IoT1ClickProjectsClient::init(const ClientConfiguration& config)
+void IoT1ClickProjectsClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("IoT 1Click Projects");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -128,14 +128,12 @@ AssociateDeviceWithPlacementOutcome IoT1ClickProjectsClient::AssociateDeviceWith
     return AssociateDeviceWithPlacementOutcome(Aws::Client::AWSError<IoT1ClickProjectsErrors>(IoT1ClickProjectsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeviceTemplateName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/projects/";
-  ss << request.GetProjectName();
-  ss << "/placements/";
-  ss << request.GetPlacementName();
-  ss << "/devices/";
-  ss << request.GetDeviceTemplateName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/projects/");
+  uri.AddPathSegment(request.GetProjectName());
+  uri.AddPathSegments("/placements/");
+  uri.AddPathSegment(request.GetPlacementName());
+  uri.AddPathSegments("/devices/");
+  uri.AddPathSegment(request.GetDeviceTemplateName());
   return AssociateDeviceWithPlacementOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -165,11 +163,9 @@ CreatePlacementOutcome IoT1ClickProjectsClient::CreatePlacement(const CreatePlac
     return CreatePlacementOutcome(Aws::Client::AWSError<IoT1ClickProjectsErrors>(IoT1ClickProjectsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProjectName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/projects/";
-  ss << request.GetProjectName();
-  ss << "/placements";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/projects/");
+  uri.AddPathSegment(request.GetProjectName());
+  uri.AddPathSegments("/placements");
   return CreatePlacementOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -194,9 +190,7 @@ void IoT1ClickProjectsClient::CreatePlacementAsyncHelper(const CreatePlacementRe
 CreateProjectOutcome IoT1ClickProjectsClient::CreateProject(const CreateProjectRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/projects";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/projects");
   return CreateProjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -231,12 +225,10 @@ DeletePlacementOutcome IoT1ClickProjectsClient::DeletePlacement(const DeletePlac
     return DeletePlacementOutcome(Aws::Client::AWSError<IoT1ClickProjectsErrors>(IoT1ClickProjectsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProjectName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/projects/";
-  ss << request.GetProjectName();
-  ss << "/placements/";
-  ss << request.GetPlacementName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/projects/");
+  uri.AddPathSegment(request.GetProjectName());
+  uri.AddPathSegments("/placements/");
+  uri.AddPathSegment(request.GetPlacementName());
   return DeletePlacementOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -266,10 +258,8 @@ DeleteProjectOutcome IoT1ClickProjectsClient::DeleteProject(const DeleteProjectR
     return DeleteProjectOutcome(Aws::Client::AWSError<IoT1ClickProjectsErrors>(IoT1ClickProjectsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProjectName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/projects/";
-  ss << request.GetProjectName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/projects/");
+  uri.AddPathSegment(request.GetProjectName());
   return DeleteProjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -304,12 +294,10 @@ DescribePlacementOutcome IoT1ClickProjectsClient::DescribePlacement(const Descri
     return DescribePlacementOutcome(Aws::Client::AWSError<IoT1ClickProjectsErrors>(IoT1ClickProjectsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProjectName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/projects/";
-  ss << request.GetProjectName();
-  ss << "/placements/";
-  ss << request.GetPlacementName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/projects/");
+  uri.AddPathSegment(request.GetProjectName());
+  uri.AddPathSegments("/placements/");
+  uri.AddPathSegment(request.GetPlacementName());
   return DescribePlacementOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -339,10 +327,8 @@ DescribeProjectOutcome IoT1ClickProjectsClient::DescribeProject(const DescribePr
     return DescribeProjectOutcome(Aws::Client::AWSError<IoT1ClickProjectsErrors>(IoT1ClickProjectsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProjectName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/projects/";
-  ss << request.GetProjectName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/projects/");
+  uri.AddPathSegment(request.GetProjectName());
   return DescribeProjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -382,14 +368,12 @@ DisassociateDeviceFromPlacementOutcome IoT1ClickProjectsClient::DisassociateDevi
     return DisassociateDeviceFromPlacementOutcome(Aws::Client::AWSError<IoT1ClickProjectsErrors>(IoT1ClickProjectsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeviceTemplateName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/projects/";
-  ss << request.GetProjectName();
-  ss << "/placements/";
-  ss << request.GetPlacementName();
-  ss << "/devices/";
-  ss << request.GetDeviceTemplateName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/projects/");
+  uri.AddPathSegment(request.GetProjectName());
+  uri.AddPathSegments("/placements/");
+  uri.AddPathSegment(request.GetPlacementName());
+  uri.AddPathSegments("/devices/");
+  uri.AddPathSegment(request.GetDeviceTemplateName());
   return DisassociateDeviceFromPlacementOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -424,13 +408,11 @@ GetDevicesInPlacementOutcome IoT1ClickProjectsClient::GetDevicesInPlacement(cons
     return GetDevicesInPlacementOutcome(Aws::Client::AWSError<IoT1ClickProjectsErrors>(IoT1ClickProjectsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PlacementName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/projects/";
-  ss << request.GetProjectName();
-  ss << "/placements/";
-  ss << request.GetPlacementName();
-  ss << "/devices";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/projects/");
+  uri.AddPathSegment(request.GetProjectName());
+  uri.AddPathSegments("/placements/");
+  uri.AddPathSegment(request.GetPlacementName());
+  uri.AddPathSegments("/devices");
   return GetDevicesInPlacementOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -460,11 +442,9 @@ ListPlacementsOutcome IoT1ClickProjectsClient::ListPlacements(const ListPlacemen
     return ListPlacementsOutcome(Aws::Client::AWSError<IoT1ClickProjectsErrors>(IoT1ClickProjectsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProjectName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/projects/";
-  ss << request.GetProjectName();
-  ss << "/placements";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/projects/");
+  uri.AddPathSegment(request.GetProjectName());
+  uri.AddPathSegments("/placements");
   return ListPlacementsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -489,9 +469,7 @@ void IoT1ClickProjectsClient::ListPlacementsAsyncHelper(const ListPlacementsRequ
 ListProjectsOutcome IoT1ClickProjectsClient::ListProjects(const ListProjectsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/projects";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/projects");
   return ListProjectsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -521,10 +499,8 @@ ListTagsForResourceOutcome IoT1ClickProjectsClient::ListTagsForResource(const Li
     return ListTagsForResourceOutcome(Aws::Client::AWSError<IoT1ClickProjectsErrors>(IoT1ClickProjectsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -554,10 +530,8 @@ TagResourceOutcome IoT1ClickProjectsClient::TagResource(const TagResourceRequest
     return TagResourceOutcome(Aws::Client::AWSError<IoT1ClickProjectsErrors>(IoT1ClickProjectsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -592,10 +566,8 @@ UntagResourceOutcome IoT1ClickProjectsClient::UntagResource(const UntagResourceR
     return UntagResourceOutcome(Aws::Client::AWSError<IoT1ClickProjectsErrors>(IoT1ClickProjectsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -630,12 +602,10 @@ UpdatePlacementOutcome IoT1ClickProjectsClient::UpdatePlacement(const UpdatePlac
     return UpdatePlacementOutcome(Aws::Client::AWSError<IoT1ClickProjectsErrors>(IoT1ClickProjectsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProjectName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/projects/";
-  ss << request.GetProjectName();
-  ss << "/placements/";
-  ss << request.GetPlacementName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/projects/");
+  uri.AddPathSegment(request.GetProjectName());
+  uri.AddPathSegments("/placements/");
+  uri.AddPathSegment(request.GetPlacementName());
   return UpdatePlacementOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -665,10 +635,8 @@ UpdateProjectOutcome IoT1ClickProjectsClient::UpdateProject(const UpdateProjectR
     return UpdateProjectOutcome(Aws::Client::AWSError<IoT1ClickProjectsErrors>(IoT1ClickProjectsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProjectName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/projects/";
-  ss << request.GetProjectName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/projects/");
+  uri.AddPathSegment(request.GetProjectName());
   return UpdateProjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 

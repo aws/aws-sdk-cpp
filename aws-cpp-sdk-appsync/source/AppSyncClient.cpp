@@ -20,9 +20,11 @@
 #include <aws/appsync/AppSyncClient.h>
 #include <aws/appsync/AppSyncEndpoint.h>
 #include <aws/appsync/AppSyncErrorMarshaller.h>
+#include <aws/appsync/model/AssociateApiRequest.h>
 #include <aws/appsync/model/CreateApiCacheRequest.h>
 #include <aws/appsync/model/CreateApiKeyRequest.h>
 #include <aws/appsync/model/CreateDataSourceRequest.h>
+#include <aws/appsync/model/CreateDomainNameRequest.h>
 #include <aws/appsync/model/CreateFunctionRequest.h>
 #include <aws/appsync/model/CreateGraphqlApiRequest.h>
 #include <aws/appsync/model/CreateResolverRequest.h>
@@ -30,13 +32,17 @@
 #include <aws/appsync/model/DeleteApiCacheRequest.h>
 #include <aws/appsync/model/DeleteApiKeyRequest.h>
 #include <aws/appsync/model/DeleteDataSourceRequest.h>
+#include <aws/appsync/model/DeleteDomainNameRequest.h>
 #include <aws/appsync/model/DeleteFunctionRequest.h>
 #include <aws/appsync/model/DeleteGraphqlApiRequest.h>
 #include <aws/appsync/model/DeleteResolverRequest.h>
 #include <aws/appsync/model/DeleteTypeRequest.h>
+#include <aws/appsync/model/DisassociateApiRequest.h>
 #include <aws/appsync/model/FlushApiCacheRequest.h>
+#include <aws/appsync/model/GetApiAssociationRequest.h>
 #include <aws/appsync/model/GetApiCacheRequest.h>
 #include <aws/appsync/model/GetDataSourceRequest.h>
+#include <aws/appsync/model/GetDomainNameRequest.h>
 #include <aws/appsync/model/GetFunctionRequest.h>
 #include <aws/appsync/model/GetGraphqlApiRequest.h>
 #include <aws/appsync/model/GetIntrospectionSchemaRequest.h>
@@ -45,6 +51,7 @@
 #include <aws/appsync/model/GetTypeRequest.h>
 #include <aws/appsync/model/ListApiKeysRequest.h>
 #include <aws/appsync/model/ListDataSourcesRequest.h>
+#include <aws/appsync/model/ListDomainNamesRequest.h>
 #include <aws/appsync/model/ListFunctionsRequest.h>
 #include <aws/appsync/model/ListGraphqlApisRequest.h>
 #include <aws/appsync/model/ListResolversRequest.h>
@@ -57,6 +64,7 @@
 #include <aws/appsync/model/UpdateApiCacheRequest.h>
 #include <aws/appsync/model/UpdateApiKeyRequest.h>
 #include <aws/appsync/model/UpdateDataSourceRequest.h>
+#include <aws/appsync/model/UpdateDomainNameRequest.h>
 #include <aws/appsync/model/UpdateFunctionRequest.h>
 #include <aws/appsync/model/UpdateGraphqlApiRequest.h>
 #include <aws/appsync/model/UpdateResolverRequest.h>
@@ -109,7 +117,7 @@ AppSyncClient::~AppSyncClient()
 {
 }
 
-void AppSyncClient::init(const ClientConfiguration& config)
+void AppSyncClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("AppSync");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -135,6 +143,38 @@ void AppSyncClient::OverrideEndpoint(const Aws::String& endpoint)
   }
 }
 
+AssociateApiOutcome AppSyncClient::AssociateApi(const AssociateApiRequest& request) const
+{
+  if (!request.DomainNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociateApi", "Required field: DomainName, is not set");
+    return AssociateApiOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/v1/domainnames/");
+  uri.AddPathSegment(request.GetDomainName());
+  uri.AddPathSegments("/apiassociation");
+  return AssociateApiOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+AssociateApiOutcomeCallable AppSyncClient::AssociateApiCallable(const AssociateApiRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociateApiOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateApi(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppSyncClient::AssociateApiAsync(const AssociateApiRequest& request, const AssociateApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AssociateApiAsyncHelper( request, handler, context ); } );
+}
+
+void AppSyncClient::AssociateApiAsyncHelper(const AssociateApiRequest& request, const AssociateApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AssociateApi(request), context);
+}
+
 CreateApiCacheOutcome AppSyncClient::CreateApiCache(const CreateApiCacheRequest& request) const
 {
   if (!request.ApiIdHasBeenSet())
@@ -143,11 +183,9 @@ CreateApiCacheOutcome AppSyncClient::CreateApiCache(const CreateApiCacheRequest&
     return CreateApiCacheOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApiId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/apis/";
-  ss << request.GetApiId();
-  ss << "/ApiCaches";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/ApiCaches");
   return CreateApiCacheOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -177,11 +215,9 @@ CreateApiKeyOutcome AppSyncClient::CreateApiKey(const CreateApiKeyRequest& reque
     return CreateApiKeyOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApiId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/apis/";
-  ss << request.GetApiId();
-  ss << "/apikeys";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/apikeys");
   return CreateApiKeyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -211,11 +247,9 @@ CreateDataSourceOutcome AppSyncClient::CreateDataSource(const CreateDataSourceRe
     return CreateDataSourceOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApiId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/apis/";
-  ss << request.GetApiId();
-  ss << "/datasources";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/datasources");
   return CreateDataSourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -237,6 +271,31 @@ void AppSyncClient::CreateDataSourceAsyncHelper(const CreateDataSourceRequest& r
   handler(this, request, CreateDataSource(request), context);
 }
 
+CreateDomainNameOutcome AppSyncClient::CreateDomainName(const CreateDomainNameRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/v1/domainnames");
+  return CreateDomainNameOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateDomainNameOutcomeCallable AppSyncClient::CreateDomainNameCallable(const CreateDomainNameRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateDomainNameOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDomainName(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppSyncClient::CreateDomainNameAsync(const CreateDomainNameRequest& request, const CreateDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateDomainNameAsyncHelper( request, handler, context ); } );
+}
+
+void AppSyncClient::CreateDomainNameAsyncHelper(const CreateDomainNameRequest& request, const CreateDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateDomainName(request), context);
+}
+
 CreateFunctionOutcome AppSyncClient::CreateFunction(const CreateFunctionRequest& request) const
 {
   if (!request.ApiIdHasBeenSet())
@@ -245,11 +304,9 @@ CreateFunctionOutcome AppSyncClient::CreateFunction(const CreateFunctionRequest&
     return CreateFunctionOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApiId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/apis/";
-  ss << request.GetApiId();
-  ss << "/functions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/functions");
   return CreateFunctionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -274,9 +331,7 @@ void AppSyncClient::CreateFunctionAsyncHelper(const CreateFunctionRequest& reque
 CreateGraphqlApiOutcome AppSyncClient::CreateGraphqlApi(const CreateGraphqlApiRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/apis";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/apis");
   return CreateGraphqlApiOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -311,13 +366,11 @@ CreateResolverOutcome AppSyncClient::CreateResolver(const CreateResolverRequest&
     return CreateResolverOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TypeName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/apis/";
-  ss << request.GetApiId();
-  ss << "/types/";
-  ss << request.GetTypeName();
-  ss << "/resolvers";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/types/");
+  uri.AddPathSegment(request.GetTypeName());
+  uri.AddPathSegments("/resolvers");
   return CreateResolverOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -347,11 +400,9 @@ CreateTypeOutcome AppSyncClient::CreateType(const CreateTypeRequest& request) co
     return CreateTypeOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApiId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/apis/";
-  ss << request.GetApiId();
-  ss << "/types";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/types");
   return CreateTypeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -381,11 +432,9 @@ DeleteApiCacheOutcome AppSyncClient::DeleteApiCache(const DeleteApiCacheRequest&
     return DeleteApiCacheOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApiId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/apis/";
-  ss << request.GetApiId();
-  ss << "/ApiCaches";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/ApiCaches");
   return DeleteApiCacheOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -420,12 +469,10 @@ DeleteApiKeyOutcome AppSyncClient::DeleteApiKey(const DeleteApiKeyRequest& reque
     return DeleteApiKeyOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/apis/";
-  ss << request.GetApiId();
-  ss << "/apikeys/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/apikeys/");
+  uri.AddPathSegment(request.GetId());
   return DeleteApiKeyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -460,12 +507,10 @@ DeleteDataSourceOutcome AppSyncClient::DeleteDataSource(const DeleteDataSourceRe
     return DeleteDataSourceOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/apis/";
-  ss << request.GetApiId();
-  ss << "/datasources/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/datasources/");
+  uri.AddPathSegment(request.GetName());
   return DeleteDataSourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -487,6 +532,37 @@ void AppSyncClient::DeleteDataSourceAsyncHelper(const DeleteDataSourceRequest& r
   handler(this, request, DeleteDataSource(request), context);
 }
 
+DeleteDomainNameOutcome AppSyncClient::DeleteDomainName(const DeleteDomainNameRequest& request) const
+{
+  if (!request.DomainNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteDomainName", "Required field: DomainName, is not set");
+    return DeleteDomainNameOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/v1/domainnames/");
+  uri.AddPathSegment(request.GetDomainName());
+  return DeleteDomainNameOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteDomainNameOutcomeCallable AppSyncClient::DeleteDomainNameCallable(const DeleteDomainNameRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteDomainNameOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDomainName(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppSyncClient::DeleteDomainNameAsync(const DeleteDomainNameRequest& request, const DeleteDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteDomainNameAsyncHelper( request, handler, context ); } );
+}
+
+void AppSyncClient::DeleteDomainNameAsyncHelper(const DeleteDomainNameRequest& request, const DeleteDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteDomainName(request), context);
+}
+
 DeleteFunctionOutcome AppSyncClient::DeleteFunction(const DeleteFunctionRequest& request) const
 {
   if (!request.ApiIdHasBeenSet())
@@ -500,12 +576,10 @@ DeleteFunctionOutcome AppSyncClient::DeleteFunction(const DeleteFunctionRequest&
     return DeleteFunctionOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/apis/";
-  ss << request.GetApiId();
-  ss << "/functions/";
-  ss << request.GetFunctionId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/functions/");
+  uri.AddPathSegment(request.GetFunctionId());
   return DeleteFunctionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -535,10 +609,8 @@ DeleteGraphqlApiOutcome AppSyncClient::DeleteGraphqlApi(const DeleteGraphqlApiRe
     return DeleteGraphqlApiOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApiId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/apis/";
-  ss << request.GetApiId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/apis/");
+  uri.AddPathSegment(request.GetApiId());
   return DeleteGraphqlApiOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -578,14 +650,12 @@ DeleteResolverOutcome AppSyncClient::DeleteResolver(const DeleteResolverRequest&
     return DeleteResolverOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FieldName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/apis/";
-  ss << request.GetApiId();
-  ss << "/types/";
-  ss << request.GetTypeName();
-  ss << "/resolvers/";
-  ss << request.GetFieldName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/types/");
+  uri.AddPathSegment(request.GetTypeName());
+  uri.AddPathSegments("/resolvers/");
+  uri.AddPathSegment(request.GetFieldName());
   return DeleteResolverOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -620,12 +690,10 @@ DeleteTypeOutcome AppSyncClient::DeleteType(const DeleteTypeRequest& request) co
     return DeleteTypeOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TypeName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/apis/";
-  ss << request.GetApiId();
-  ss << "/types/";
-  ss << request.GetTypeName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/types/");
+  uri.AddPathSegment(request.GetTypeName());
   return DeleteTypeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -647,6 +715,38 @@ void AppSyncClient::DeleteTypeAsyncHelper(const DeleteTypeRequest& request, cons
   handler(this, request, DeleteType(request), context);
 }
 
+DisassociateApiOutcome AppSyncClient::DisassociateApi(const DisassociateApiRequest& request) const
+{
+  if (!request.DomainNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisassociateApi", "Required field: DomainName, is not set");
+    return DisassociateApiOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/v1/domainnames/");
+  uri.AddPathSegment(request.GetDomainName());
+  uri.AddPathSegments("/apiassociation");
+  return DisassociateApiOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DisassociateApiOutcomeCallable AppSyncClient::DisassociateApiCallable(const DisassociateApiRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateApiOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateApi(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppSyncClient::DisassociateApiAsync(const DisassociateApiRequest& request, const DisassociateApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisassociateApiAsyncHelper( request, handler, context ); } );
+}
+
+void AppSyncClient::DisassociateApiAsyncHelper(const DisassociateApiRequest& request, const DisassociateApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisassociateApi(request), context);
+}
+
 FlushApiCacheOutcome AppSyncClient::FlushApiCache(const FlushApiCacheRequest& request) const
 {
   if (!request.ApiIdHasBeenSet())
@@ -655,11 +755,9 @@ FlushApiCacheOutcome AppSyncClient::FlushApiCache(const FlushApiCacheRequest& re
     return FlushApiCacheOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApiId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/apis/";
-  ss << request.GetApiId();
-  ss << "/FlushCache";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/FlushCache");
   return FlushApiCacheOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -681,6 +779,38 @@ void AppSyncClient::FlushApiCacheAsyncHelper(const FlushApiCacheRequest& request
   handler(this, request, FlushApiCache(request), context);
 }
 
+GetApiAssociationOutcome AppSyncClient::GetApiAssociation(const GetApiAssociationRequest& request) const
+{
+  if (!request.DomainNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetApiAssociation", "Required field: DomainName, is not set");
+    return GetApiAssociationOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/v1/domainnames/");
+  uri.AddPathSegment(request.GetDomainName());
+  uri.AddPathSegments("/apiassociation");
+  return GetApiAssociationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetApiAssociationOutcomeCallable AppSyncClient::GetApiAssociationCallable(const GetApiAssociationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetApiAssociationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetApiAssociation(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppSyncClient::GetApiAssociationAsync(const GetApiAssociationRequest& request, const GetApiAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetApiAssociationAsyncHelper( request, handler, context ); } );
+}
+
+void AppSyncClient::GetApiAssociationAsyncHelper(const GetApiAssociationRequest& request, const GetApiAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetApiAssociation(request), context);
+}
+
 GetApiCacheOutcome AppSyncClient::GetApiCache(const GetApiCacheRequest& request) const
 {
   if (!request.ApiIdHasBeenSet())
@@ -689,11 +819,9 @@ GetApiCacheOutcome AppSyncClient::GetApiCache(const GetApiCacheRequest& request)
     return GetApiCacheOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApiId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/apis/";
-  ss << request.GetApiId();
-  ss << "/ApiCaches";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/ApiCaches");
   return GetApiCacheOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -728,12 +856,10 @@ GetDataSourceOutcome AppSyncClient::GetDataSource(const GetDataSourceRequest& re
     return GetDataSourceOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/apis/";
-  ss << request.GetApiId();
-  ss << "/datasources/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/datasources/");
+  uri.AddPathSegment(request.GetName());
   return GetDataSourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -755,6 +881,37 @@ void AppSyncClient::GetDataSourceAsyncHelper(const GetDataSourceRequest& request
   handler(this, request, GetDataSource(request), context);
 }
 
+GetDomainNameOutcome AppSyncClient::GetDomainName(const GetDomainNameRequest& request) const
+{
+  if (!request.DomainNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetDomainName", "Required field: DomainName, is not set");
+    return GetDomainNameOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/v1/domainnames/");
+  uri.AddPathSegment(request.GetDomainName());
+  return GetDomainNameOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetDomainNameOutcomeCallable AppSyncClient::GetDomainNameCallable(const GetDomainNameRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetDomainNameOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDomainName(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppSyncClient::GetDomainNameAsync(const GetDomainNameRequest& request, const GetDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetDomainNameAsyncHelper( request, handler, context ); } );
+}
+
+void AppSyncClient::GetDomainNameAsyncHelper(const GetDomainNameRequest& request, const GetDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetDomainName(request), context);
+}
+
 GetFunctionOutcome AppSyncClient::GetFunction(const GetFunctionRequest& request) const
 {
   if (!request.ApiIdHasBeenSet())
@@ -768,12 +925,10 @@ GetFunctionOutcome AppSyncClient::GetFunction(const GetFunctionRequest& request)
     return GetFunctionOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/apis/";
-  ss << request.GetApiId();
-  ss << "/functions/";
-  ss << request.GetFunctionId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/functions/");
+  uri.AddPathSegment(request.GetFunctionId());
   return GetFunctionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -803,10 +958,8 @@ GetGraphqlApiOutcome AppSyncClient::GetGraphqlApi(const GetGraphqlApiRequest& re
     return GetGraphqlApiOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApiId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/apis/";
-  ss << request.GetApiId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/apis/");
+  uri.AddPathSegment(request.GetApiId());
   return GetGraphqlApiOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -841,11 +994,9 @@ GetIntrospectionSchemaOutcome AppSyncClient::GetIntrospectionSchema(const GetInt
     return GetIntrospectionSchemaOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Format]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/apis/";
-  ss << request.GetApiId();
-  ss << "/schema";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/schema");
   return GetIntrospectionSchemaOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -885,14 +1036,12 @@ GetResolverOutcome AppSyncClient::GetResolver(const GetResolverRequest& request)
     return GetResolverOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FieldName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/apis/";
-  ss << request.GetApiId();
-  ss << "/types/";
-  ss << request.GetTypeName();
-  ss << "/resolvers/";
-  ss << request.GetFieldName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/types/");
+  uri.AddPathSegment(request.GetTypeName());
+  uri.AddPathSegments("/resolvers/");
+  uri.AddPathSegment(request.GetFieldName());
   return GetResolverOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -922,11 +1071,9 @@ GetSchemaCreationStatusOutcome AppSyncClient::GetSchemaCreationStatus(const GetS
     return GetSchemaCreationStatusOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApiId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/apis/";
-  ss << request.GetApiId();
-  ss << "/schemacreation";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/schemacreation");
   return GetSchemaCreationStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -966,12 +1113,10 @@ GetTypeOutcome AppSyncClient::GetType(const GetTypeRequest& request) const
     return GetTypeOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Format]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/apis/";
-  ss << request.GetApiId();
-  ss << "/types/";
-  ss << request.GetTypeName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/types/");
+  uri.AddPathSegment(request.GetTypeName());
   return GetTypeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1001,11 +1146,9 @@ ListApiKeysOutcome AppSyncClient::ListApiKeys(const ListApiKeysRequest& request)
     return ListApiKeysOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApiId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/apis/";
-  ss << request.GetApiId();
-  ss << "/apikeys";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/apikeys");
   return ListApiKeysOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1035,11 +1178,9 @@ ListDataSourcesOutcome AppSyncClient::ListDataSources(const ListDataSourcesReque
     return ListDataSourcesOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApiId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/apis/";
-  ss << request.GetApiId();
-  ss << "/datasources";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/datasources");
   return ListDataSourcesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1061,6 +1202,31 @@ void AppSyncClient::ListDataSourcesAsyncHelper(const ListDataSourcesRequest& req
   handler(this, request, ListDataSources(request), context);
 }
 
+ListDomainNamesOutcome AppSyncClient::ListDomainNames(const ListDomainNamesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/v1/domainnames");
+  return ListDomainNamesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListDomainNamesOutcomeCallable AppSyncClient::ListDomainNamesCallable(const ListDomainNamesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListDomainNamesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDomainNames(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppSyncClient::ListDomainNamesAsync(const ListDomainNamesRequest& request, const ListDomainNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListDomainNamesAsyncHelper( request, handler, context ); } );
+}
+
+void AppSyncClient::ListDomainNamesAsyncHelper(const ListDomainNamesRequest& request, const ListDomainNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListDomainNames(request), context);
+}
+
 ListFunctionsOutcome AppSyncClient::ListFunctions(const ListFunctionsRequest& request) const
 {
   if (!request.ApiIdHasBeenSet())
@@ -1069,11 +1235,9 @@ ListFunctionsOutcome AppSyncClient::ListFunctions(const ListFunctionsRequest& re
     return ListFunctionsOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApiId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/apis/";
-  ss << request.GetApiId();
-  ss << "/functions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/functions");
   return ListFunctionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1098,9 +1262,7 @@ void AppSyncClient::ListFunctionsAsyncHelper(const ListFunctionsRequest& request
 ListGraphqlApisOutcome AppSyncClient::ListGraphqlApis(const ListGraphqlApisRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/apis";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/apis");
   return ListGraphqlApisOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1135,13 +1297,11 @@ ListResolversOutcome AppSyncClient::ListResolvers(const ListResolversRequest& re
     return ListResolversOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TypeName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/apis/";
-  ss << request.GetApiId();
-  ss << "/types/";
-  ss << request.GetTypeName();
-  ss << "/resolvers";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/types/");
+  uri.AddPathSegment(request.GetTypeName());
+  uri.AddPathSegments("/resolvers");
   return ListResolversOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1176,13 +1336,11 @@ ListResolversByFunctionOutcome AppSyncClient::ListResolversByFunction(const List
     return ListResolversByFunctionOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/apis/";
-  ss << request.GetApiId();
-  ss << "/functions/";
-  ss << request.GetFunctionId();
-  ss << "/resolvers";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/functions/");
+  uri.AddPathSegment(request.GetFunctionId());
+  uri.AddPathSegments("/resolvers");
   return ListResolversByFunctionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1212,10 +1370,8 @@ ListTagsForResourceOutcome AppSyncClient::ListTagsForResource(const ListTagsForR
     return ListTagsForResourceOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1250,11 +1406,9 @@ ListTypesOutcome AppSyncClient::ListTypes(const ListTypesRequest& request) const
     return ListTypesOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Format]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/apis/";
-  ss << request.GetApiId();
-  ss << "/types";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/types");
   return ListTypesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1284,11 +1438,9 @@ StartSchemaCreationOutcome AppSyncClient::StartSchemaCreation(const StartSchemaC
     return StartSchemaCreationOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApiId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/apis/";
-  ss << request.GetApiId();
-  ss << "/schemacreation";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/schemacreation");
   return StartSchemaCreationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1318,10 +1470,8 @@ TagResourceOutcome AppSyncClient::TagResource(const TagResourceRequest& request)
     return TagResourceOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1356,10 +1506,8 @@ UntagResourceOutcome AppSyncClient::UntagResource(const UntagResourceRequest& re
     return UntagResourceOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1389,11 +1537,9 @@ UpdateApiCacheOutcome AppSyncClient::UpdateApiCache(const UpdateApiCacheRequest&
     return UpdateApiCacheOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApiId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/apis/";
-  ss << request.GetApiId();
-  ss << "/ApiCaches/update";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/ApiCaches/update");
   return UpdateApiCacheOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1428,12 +1574,10 @@ UpdateApiKeyOutcome AppSyncClient::UpdateApiKey(const UpdateApiKeyRequest& reque
     return UpdateApiKeyOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/apis/";
-  ss << request.GetApiId();
-  ss << "/apikeys/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/apikeys/");
+  uri.AddPathSegment(request.GetId());
   return UpdateApiKeyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1468,12 +1612,10 @@ UpdateDataSourceOutcome AppSyncClient::UpdateDataSource(const UpdateDataSourceRe
     return UpdateDataSourceOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/apis/";
-  ss << request.GetApiId();
-  ss << "/datasources/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/datasources/");
+  uri.AddPathSegment(request.GetName());
   return UpdateDataSourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1495,6 +1637,37 @@ void AppSyncClient::UpdateDataSourceAsyncHelper(const UpdateDataSourceRequest& r
   handler(this, request, UpdateDataSource(request), context);
 }
 
+UpdateDomainNameOutcome AppSyncClient::UpdateDomainName(const UpdateDomainNameRequest& request) const
+{
+  if (!request.DomainNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateDomainName", "Required field: DomainName, is not set");
+    return UpdateDomainNameOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/v1/domainnames/");
+  uri.AddPathSegment(request.GetDomainName());
+  return UpdateDomainNameOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateDomainNameOutcomeCallable AppSyncClient::UpdateDomainNameCallable(const UpdateDomainNameRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateDomainNameOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDomainName(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppSyncClient::UpdateDomainNameAsync(const UpdateDomainNameRequest& request, const UpdateDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateDomainNameAsyncHelper( request, handler, context ); } );
+}
+
+void AppSyncClient::UpdateDomainNameAsyncHelper(const UpdateDomainNameRequest& request, const UpdateDomainNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateDomainName(request), context);
+}
+
 UpdateFunctionOutcome AppSyncClient::UpdateFunction(const UpdateFunctionRequest& request) const
 {
   if (!request.ApiIdHasBeenSet())
@@ -1508,12 +1681,10 @@ UpdateFunctionOutcome AppSyncClient::UpdateFunction(const UpdateFunctionRequest&
     return UpdateFunctionOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/apis/";
-  ss << request.GetApiId();
-  ss << "/functions/";
-  ss << request.GetFunctionId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/functions/");
+  uri.AddPathSegment(request.GetFunctionId());
   return UpdateFunctionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1543,10 +1714,8 @@ UpdateGraphqlApiOutcome AppSyncClient::UpdateGraphqlApi(const UpdateGraphqlApiRe
     return UpdateGraphqlApiOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApiId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/apis/";
-  ss << request.GetApiId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/apis/");
+  uri.AddPathSegment(request.GetApiId());
   return UpdateGraphqlApiOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1586,14 +1755,12 @@ UpdateResolverOutcome AppSyncClient::UpdateResolver(const UpdateResolverRequest&
     return UpdateResolverOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FieldName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/apis/";
-  ss << request.GetApiId();
-  ss << "/types/";
-  ss << request.GetTypeName();
-  ss << "/resolvers/";
-  ss << request.GetFieldName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/types/");
+  uri.AddPathSegment(request.GetTypeName());
+  uri.AddPathSegments("/resolvers/");
+  uri.AddPathSegment(request.GetFieldName());
   return UpdateResolverOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1628,12 +1795,10 @@ UpdateTypeOutcome AppSyncClient::UpdateType(const UpdateTypeRequest& request) co
     return UpdateTypeOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TypeName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/apis/";
-  ss << request.GetApiId();
-  ss << "/types/";
-  ss << request.GetTypeName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/apis/");
+  uri.AddPathSegment(request.GetApiId());
+  uri.AddPathSegments("/types/");
+  uri.AddPathSegment(request.GetTypeName());
   return UpdateTypeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

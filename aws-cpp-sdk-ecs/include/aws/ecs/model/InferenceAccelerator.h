@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Details on a Elastic Inference accelerator. For more information, see <a
-   * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-eia.html">Working
+   * <p>Details on an Elastic Inference accelerator. For more information, see <a
+   * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-inference.html">Working
    * with Amazon Elastic Inference on Amazon ECS</a> in the <i>Amazon Elastic
    * Container Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/InferenceAccelerator">AWS

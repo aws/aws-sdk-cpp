@@ -24,10 +24,11 @@ namespace Model
 {
 
   /**
-   * <p>Provides information about a single type of unsafe content found in an image
-   * or video. Each type of moderated content has a label within a hierarchical
-   * taxonomy. For more information, see Detecting Unsafe Content in the Amazon
-   * Rekognition Developer Guide.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides information about a single type of inappropriate, unwanted, or
+   * offensive content found in an image or video. Each type of moderated content has
+   * a label within a hierarchical taxonomy. For more information, see Content
+   * moderation in the Amazon Rekognition Developer Guide.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ModerationLabel">AWS
    * API Reference</a></p>
    */

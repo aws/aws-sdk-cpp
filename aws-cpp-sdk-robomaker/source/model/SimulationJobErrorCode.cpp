@@ -23,6 +23,8 @@ namespace Aws
         static const int InternalServiceError_HASH = HashingUtils::HashString("InternalServiceError");
         static const int RobotApplicationCrash_HASH = HashingUtils::HashString("RobotApplicationCrash");
         static const int SimulationApplicationCrash_HASH = HashingUtils::HashString("SimulationApplicationCrash");
+        static const int RobotApplicationHealthCheckFailure_HASH = HashingUtils::HashString("RobotApplicationHealthCheckFailure");
+        static const int SimulationApplicationHealthCheckFailure_HASH = HashingUtils::HashString("SimulationApplicationHealthCheckFailure");
         static const int BadPermissionsRobotApplication_HASH = HashingUtils::HashString("BadPermissionsRobotApplication");
         static const int BadPermissionsSimulationApplication_HASH = HashingUtils::HashString("BadPermissionsSimulationApplication");
         static const int BadPermissionsS3Object_HASH = HashingUtils::HashString("BadPermissionsS3Object");
@@ -34,6 +36,7 @@ namespace Aws
         static const int InvalidBundleRobotApplication_HASH = HashingUtils::HashString("InvalidBundleRobotApplication");
         static const int InvalidBundleSimulationApplication_HASH = HashingUtils::HashString("InvalidBundleSimulationApplication");
         static const int InvalidS3Resource_HASH = HashingUtils::HashString("InvalidS3Resource");
+        static const int ThrottlingError_HASH = HashingUtils::HashString("ThrottlingError");
         static const int LimitExceeded_HASH = HashingUtils::HashString("LimitExceeded");
         static const int MismatchedEtag_HASH = HashingUtils::HashString("MismatchedEtag");
         static const int RobotApplicationVersionMismatchedEtag_HASH = HashingUtils::HashString("RobotApplicationVersionMismatchedEtag");
@@ -47,6 +50,7 @@ namespace Aws
         static const int WrongRegionS3Output_HASH = HashingUtils::HashString("WrongRegionS3Output");
         static const int WrongRegionRobotApplication_HASH = HashingUtils::HashString("WrongRegionRobotApplication");
         static const int WrongRegionSimulationApplication_HASH = HashingUtils::HashString("WrongRegionSimulationApplication");
+        static const int UploadContentMismatchError_HASH = HashingUtils::HashString("UploadContentMismatchError");
 
 
         SimulationJobErrorCode GetSimulationJobErrorCodeForName(const Aws::String& name)
@@ -63,6 +67,14 @@ namespace Aws
           else if (hashCode == SimulationApplicationCrash_HASH)
           {
             return SimulationJobErrorCode::SimulationApplicationCrash;
+          }
+          else if (hashCode == RobotApplicationHealthCheckFailure_HASH)
+          {
+            return SimulationJobErrorCode::RobotApplicationHealthCheckFailure;
+          }
+          else if (hashCode == SimulationApplicationHealthCheckFailure_HASH)
+          {
+            return SimulationJobErrorCode::SimulationApplicationHealthCheckFailure;
           }
           else if (hashCode == BadPermissionsRobotApplication_HASH)
           {
@@ -107,6 +119,10 @@ namespace Aws
           else if (hashCode == InvalidS3Resource_HASH)
           {
             return SimulationJobErrorCode::InvalidS3Resource;
+          }
+          else if (hashCode == ThrottlingError_HASH)
+          {
+            return SimulationJobErrorCode::ThrottlingError;
           }
           else if (hashCode == LimitExceeded_HASH)
           {
@@ -160,6 +176,10 @@ namespace Aws
           {
             return SimulationJobErrorCode::WrongRegionSimulationApplication;
           }
+          else if (hashCode == UploadContentMismatchError_HASH)
+          {
+            return SimulationJobErrorCode::UploadContentMismatchError;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -180,6 +200,10 @@ namespace Aws
             return "RobotApplicationCrash";
           case SimulationJobErrorCode::SimulationApplicationCrash:
             return "SimulationApplicationCrash";
+          case SimulationJobErrorCode::RobotApplicationHealthCheckFailure:
+            return "RobotApplicationHealthCheckFailure";
+          case SimulationJobErrorCode::SimulationApplicationHealthCheckFailure:
+            return "SimulationApplicationHealthCheckFailure";
           case SimulationJobErrorCode::BadPermissionsRobotApplication:
             return "BadPermissionsRobotApplication";
           case SimulationJobErrorCode::BadPermissionsSimulationApplication:
@@ -202,6 +226,8 @@ namespace Aws
             return "InvalidBundleSimulationApplication";
           case SimulationJobErrorCode::InvalidS3Resource:
             return "InvalidS3Resource";
+          case SimulationJobErrorCode::ThrottlingError:
+            return "ThrottlingError";
           case SimulationJobErrorCode::LimitExceeded:
             return "LimitExceeded";
           case SimulationJobErrorCode::MismatchedEtag:
@@ -228,6 +254,8 @@ namespace Aws
             return "WrongRegionRobotApplication";
           case SimulationJobErrorCode::WrongRegionSimulationApplication:
             return "WrongRegionSimulationApplication";
+          case SimulationJobErrorCode::UploadContentMismatchError:
+            return "UploadContentMismatchError";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

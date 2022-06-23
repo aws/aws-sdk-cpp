@@ -26,7 +26,7 @@ namespace Model
 {
   /**
    * <p>The response to a request to list the distributions that are associated with
-   * a specified AWS WAF web ACL. </p><p><h3>See Also:</h3>   <a
+   * a specified WAF web ACL.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByWebACLIdResult">AWS
    * API Reference</a></p>
    */

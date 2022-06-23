@@ -129,42 +129,50 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID of the owner of the peer transit gateway.</p>
+     * <p>The ID of the Amazon Web Services account that owns the peer transit
+     * gateway.</p>
      */
     inline const Aws::String& GetPeerAccountId() const{ return m_peerAccountId; }
 
     /**
-     * <p>The AWS account ID of the owner of the peer transit gateway.</p>
+     * <p>The ID of the Amazon Web Services account that owns the peer transit
+     * gateway.</p>
      */
     inline bool PeerAccountIdHasBeenSet() const { return m_peerAccountIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID of the owner of the peer transit gateway.</p>
+     * <p>The ID of the Amazon Web Services account that owns the peer transit
+     * gateway.</p>
      */
     inline void SetPeerAccountId(const Aws::String& value) { m_peerAccountIdHasBeenSet = true; m_peerAccountId = value; }
 
     /**
-     * <p>The AWS account ID of the owner of the peer transit gateway.</p>
+     * <p>The ID of the Amazon Web Services account that owns the peer transit
+     * gateway.</p>
      */
     inline void SetPeerAccountId(Aws::String&& value) { m_peerAccountIdHasBeenSet = true; m_peerAccountId = std::move(value); }
 
     /**
-     * <p>The AWS account ID of the owner of the peer transit gateway.</p>
+     * <p>The ID of the Amazon Web Services account that owns the peer transit
+     * gateway.</p>
      */
     inline void SetPeerAccountId(const char* value) { m_peerAccountIdHasBeenSet = true; m_peerAccountId.assign(value); }
 
     /**
-     * <p>The AWS account ID of the owner of the peer transit gateway.</p>
+     * <p>The ID of the Amazon Web Services account that owns the peer transit
+     * gateway.</p>
      */
     inline CreateTransitGatewayPeeringAttachmentRequest& WithPeerAccountId(const Aws::String& value) { SetPeerAccountId(value); return *this;}
 
     /**
-     * <p>The AWS account ID of the owner of the peer transit gateway.</p>
+     * <p>The ID of the Amazon Web Services account that owns the peer transit
+     * gateway.</p>
      */
     inline CreateTransitGatewayPeeringAttachmentRequest& WithPeerAccountId(Aws::String&& value) { SetPeerAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID of the owner of the peer transit gateway.</p>
+     * <p>The ID of the Amazon Web Services account that owns the peer transit
+     * gateway.</p>
      */
     inline CreateTransitGatewayPeeringAttachmentRequest& WithPeerAccountId(const char* value) { SetPeerAccountId(value); return *this;}
 

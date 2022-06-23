@@ -34,49 +34,49 @@ namespace Model
 
     /**
      * <p>A value that you can use to determine whether the request completed
-     * successfully. For more information, see <a
+     * successfully. To get the status of the operation, see <a
      * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
      */
     inline const Aws::String& GetOperationId() const{ return m_operationId; }
 
     /**
      * <p>A value that you can use to determine whether the request completed
-     * successfully. For more information, see <a
+     * successfully. To get the status of the operation, see <a
      * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
      */
     inline void SetOperationId(const Aws::String& value) { m_operationId = value; }
 
     /**
      * <p>A value that you can use to determine whether the request completed
-     * successfully. For more information, see <a
+     * successfully. To get the status of the operation, see <a
      * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
      */
     inline void SetOperationId(Aws::String&& value) { m_operationId = std::move(value); }
 
     /**
      * <p>A value that you can use to determine whether the request completed
-     * successfully. For more information, see <a
+     * successfully. To get the status of the operation, see <a
      * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
      */
     inline void SetOperationId(const char* value) { m_operationId.assign(value); }
 
     /**
      * <p>A value that you can use to determine whether the request completed
-     * successfully. For more information, see <a
+     * successfully. To get the status of the operation, see <a
      * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
      */
     inline DeregisterInstanceResult& WithOperationId(const Aws::String& value) { SetOperationId(value); return *this;}
 
     /**
      * <p>A value that you can use to determine whether the request completed
-     * successfully. For more information, see <a
+     * successfully. To get the status of the operation, see <a
      * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
      */
     inline DeregisterInstanceResult& WithOperationId(Aws::String&& value) { SetOperationId(std::move(value)); return *this;}
 
     /**
      * <p>A value that you can use to determine whether the request completed
-     * successfully. For more information, see <a
+     * successfully. To get the status of the operation, see <a
      * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html">GetOperation</a>.</p>
      */
     inline DeregisterInstanceResult& WithOperationId(const char* value) { SetOperationId(value); return *this;}

@@ -27,9 +27,9 @@ namespace Model
 
   /**
    * <p>A partner event source is created by an SaaS partner. If a customer creates a
-   * partner event bus that matches this event source, that AWS account can receive
-   * events from the partner's applications or services.</p><p><h3>See Also:</h3>  
-   * <a
+   * partner event bus that matches this event source, that Amazon Web Services
+   * account can receive events from the partner's applications or
+   * services.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/EventSource">AWS
    * API Reference</a></p>
    */
@@ -156,38 +156,38 @@ namespace Model
 
 
     /**
-     * <p>The date and time that the event source will expire, if the AWS account
-     * doesn't create a matching event bus for it.</p>
+     * <p>The date and time that the event source will expire, if the Amazon Web
+     * Services account doesn't create a matching event bus for it.</p>
      */
     inline const Aws::Utils::DateTime& GetExpirationTime() const{ return m_expirationTime; }
 
     /**
-     * <p>The date and time that the event source will expire, if the AWS account
-     * doesn't create a matching event bus for it.</p>
+     * <p>The date and time that the event source will expire, if the Amazon Web
+     * Services account doesn't create a matching event bus for it.</p>
      */
     inline bool ExpirationTimeHasBeenSet() const { return m_expirationTimeHasBeenSet; }
 
     /**
-     * <p>The date and time that the event source will expire, if the AWS account
-     * doesn't create a matching event bus for it.</p>
+     * <p>The date and time that the event source will expire, if the Amazon Web
+     * Services account doesn't create a matching event bus for it.</p>
      */
     inline void SetExpirationTime(const Aws::Utils::DateTime& value) { m_expirationTimeHasBeenSet = true; m_expirationTime = value; }
 
     /**
-     * <p>The date and time that the event source will expire, if the AWS account
-     * doesn't create a matching event bus for it.</p>
+     * <p>The date and time that the event source will expire, if the Amazon Web
+     * Services account doesn't create a matching event bus for it.</p>
      */
     inline void SetExpirationTime(Aws::Utils::DateTime&& value) { m_expirationTimeHasBeenSet = true; m_expirationTime = std::move(value); }
 
     /**
-     * <p>The date and time that the event source will expire, if the AWS account
-     * doesn't create a matching event bus for it.</p>
+     * <p>The date and time that the event source will expire, if the Amazon Web
+     * Services account doesn't create a matching event bus for it.</p>
      */
     inline EventSource& WithExpirationTime(const Aws::Utils::DateTime& value) { SetExpirationTime(value); return *this;}
 
     /**
-     * <p>The date and time that the event source will expire, if the AWS account
-     * doesn't create a matching event bus for it.</p>
+     * <p>The date and time that the event source will expire, if the Amazon Web
+     * Services account doesn't create a matching event bus for it.</p>
      */
     inline EventSource& WithExpirationTime(Aws::Utils::DateTime&& value) { SetExpirationTime(std::move(value)); return *this;}
 

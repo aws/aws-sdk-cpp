@@ -39,161 +39,161 @@ namespace Model
 
 
     /**
-     * <p>Lists the runs of the specified Device Advisor test suite based on suite
-     * definition Id.</p>
+     * <p>Lists the test suite runs of the specified test suite based on suite
+     * definition ID.</p>
      */
     inline const Aws::String& GetSuiteDefinitionId() const{ return m_suiteDefinitionId; }
 
     /**
-     * <p>Lists the runs of the specified Device Advisor test suite based on suite
-     * definition Id.</p>
+     * <p>Lists the test suite runs of the specified test suite based on suite
+     * definition ID.</p>
      */
     inline bool SuiteDefinitionIdHasBeenSet() const { return m_suiteDefinitionIdHasBeenSet; }
 
     /**
-     * <p>Lists the runs of the specified Device Advisor test suite based on suite
-     * definition Id.</p>
+     * <p>Lists the test suite runs of the specified test suite based on suite
+     * definition ID.</p>
      */
     inline void SetSuiteDefinitionId(const Aws::String& value) { m_suiteDefinitionIdHasBeenSet = true; m_suiteDefinitionId = value; }
 
     /**
-     * <p>Lists the runs of the specified Device Advisor test suite based on suite
-     * definition Id.</p>
+     * <p>Lists the test suite runs of the specified test suite based on suite
+     * definition ID.</p>
      */
     inline void SetSuiteDefinitionId(Aws::String&& value) { m_suiteDefinitionIdHasBeenSet = true; m_suiteDefinitionId = std::move(value); }
 
     /**
-     * <p>Lists the runs of the specified Device Advisor test suite based on suite
-     * definition Id.</p>
+     * <p>Lists the test suite runs of the specified test suite based on suite
+     * definition ID.</p>
      */
     inline void SetSuiteDefinitionId(const char* value) { m_suiteDefinitionIdHasBeenSet = true; m_suiteDefinitionId.assign(value); }
 
     /**
-     * <p>Lists the runs of the specified Device Advisor test suite based on suite
-     * definition Id.</p>
+     * <p>Lists the test suite runs of the specified test suite based on suite
+     * definition ID.</p>
      */
     inline ListSuiteRunsRequest& WithSuiteDefinitionId(const Aws::String& value) { SetSuiteDefinitionId(value); return *this;}
 
     /**
-     * <p>Lists the runs of the specified Device Advisor test suite based on suite
-     * definition Id.</p>
+     * <p>Lists the test suite runs of the specified test suite based on suite
+     * definition ID.</p>
      */
     inline ListSuiteRunsRequest& WithSuiteDefinitionId(Aws::String&& value) { SetSuiteDefinitionId(std::move(value)); return *this;}
 
     /**
-     * <p>Lists the runs of the specified Device Advisor test suite based on suite
-     * definition Id.</p>
+     * <p>Lists the test suite runs of the specified test suite based on suite
+     * definition ID.</p>
      */
     inline ListSuiteRunsRequest& WithSuiteDefinitionId(const char* value) { SetSuiteDefinitionId(value); return *this;}
 
 
     /**
-     * <p>Lists the runs of the specified Device Advisor test suite based on suite
-     * definition version.</p>
+     * <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test
+     * suite runs of the specified test suite based on suite definition version.</p>
      */
     inline const Aws::String& GetSuiteDefinitionVersion() const{ return m_suiteDefinitionVersion; }
 
     /**
-     * <p>Lists the runs of the specified Device Advisor test suite based on suite
-     * definition version.</p>
+     * <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test
+     * suite runs of the specified test suite based on suite definition version.</p>
      */
     inline bool SuiteDefinitionVersionHasBeenSet() const { return m_suiteDefinitionVersionHasBeenSet; }
 
     /**
-     * <p>Lists the runs of the specified Device Advisor test suite based on suite
-     * definition version.</p>
+     * <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test
+     * suite runs of the specified test suite based on suite definition version.</p>
      */
     inline void SetSuiteDefinitionVersion(const Aws::String& value) { m_suiteDefinitionVersionHasBeenSet = true; m_suiteDefinitionVersion = value; }
 
     /**
-     * <p>Lists the runs of the specified Device Advisor test suite based on suite
-     * definition version.</p>
+     * <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test
+     * suite runs of the specified test suite based on suite definition version.</p>
      */
     inline void SetSuiteDefinitionVersion(Aws::String&& value) { m_suiteDefinitionVersionHasBeenSet = true; m_suiteDefinitionVersion = std::move(value); }
 
     /**
-     * <p>Lists the runs of the specified Device Advisor test suite based on suite
-     * definition version.</p>
+     * <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test
+     * suite runs of the specified test suite based on suite definition version.</p>
      */
     inline void SetSuiteDefinitionVersion(const char* value) { m_suiteDefinitionVersionHasBeenSet = true; m_suiteDefinitionVersion.assign(value); }
 
     /**
-     * <p>Lists the runs of the specified Device Advisor test suite based on suite
-     * definition version.</p>
+     * <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test
+     * suite runs of the specified test suite based on suite definition version.</p>
      */
     inline ListSuiteRunsRequest& WithSuiteDefinitionVersion(const Aws::String& value) { SetSuiteDefinitionVersion(value); return *this;}
 
     /**
-     * <p>Lists the runs of the specified Device Advisor test suite based on suite
-     * definition version.</p>
+     * <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test
+     * suite runs of the specified test suite based on suite definition version.</p>
      */
     inline ListSuiteRunsRequest& WithSuiteDefinitionVersion(Aws::String&& value) { SetSuiteDefinitionVersion(std::move(value)); return *this;}
 
     /**
-     * <p>Lists the runs of the specified Device Advisor test suite based on suite
-     * definition version.</p>
+     * <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test
+     * suite runs of the specified test suite based on suite definition version.</p>
      */
     inline ListSuiteRunsRequest& WithSuiteDefinitionVersion(const char* value) { SetSuiteDefinitionVersion(value); return *this;}
 
 
     /**
-     * <p>MaxResults for list suite run API request.</p>
+     * <p>The maximum number of results to return at once.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>MaxResults for list suite run API request.</p>
+     * <p>The maximum number of results to return at once.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>MaxResults for list suite run API request.</p>
+     * <p>The maximum number of results to return at once.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>MaxResults for list suite run API request.</p>
+     * <p>The maximum number of results to return at once.</p>
      */
     inline ListSuiteRunsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
-     * <p>Next pagination token for list suite run request.</p>
+     * <p>A token to retrieve the next set of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>Next pagination token for list suite run request.</p>
+     * <p>A token to retrieve the next set of results.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>Next pagination token for list suite run request.</p>
+     * <p>A token to retrieve the next set of results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>Next pagination token for list suite run request.</p>
+     * <p>A token to retrieve the next set of results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>Next pagination token for list suite run request.</p>
+     * <p>A token to retrieve the next set of results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>Next pagination token for list suite run request.</p>
+     * <p>A token to retrieve the next set of results.</p>
      */
     inline ListSuiteRunsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Next pagination token for list suite run request.</p>
+     * <p>A token to retrieve the next set of results.</p>
      */
     inline ListSuiteRunsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>Next pagination token for list suite run request.</p>
+     * <p>A token to retrieve the next set of results.</p>
      */
     inline ListSuiteRunsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

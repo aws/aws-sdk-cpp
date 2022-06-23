@@ -42,48 +42,54 @@ namespace Model
     /**
      * <p>A filter to return only the specified kinds of cache policies. Valid values
      * are:</p> <ul> <li> <p> <code>managed</code> – Returns only the managed policies
-     * created by AWS.</p> </li> <li> <p> <code>custom</code> – Returns only the custom
-     * policies created in your AWS account.</p> </li> </ul>
+     * created by Amazon Web Services.</p> </li> <li> <p> <code>custom</code> – Returns
+     * only the custom policies created in your Amazon Web Services account.</p> </li>
+     * </ul>
      */
     inline const CachePolicyType& GetType() const{ return m_type; }
 
     /**
      * <p>A filter to return only the specified kinds of cache policies. Valid values
      * are:</p> <ul> <li> <p> <code>managed</code> – Returns only the managed policies
-     * created by AWS.</p> </li> <li> <p> <code>custom</code> – Returns only the custom
-     * policies created in your AWS account.</p> </li> </ul>
+     * created by Amazon Web Services.</p> </li> <li> <p> <code>custom</code> – Returns
+     * only the custom policies created in your Amazon Web Services account.</p> </li>
+     * </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>A filter to return only the specified kinds of cache policies. Valid values
      * are:</p> <ul> <li> <p> <code>managed</code> – Returns only the managed policies
-     * created by AWS.</p> </li> <li> <p> <code>custom</code> – Returns only the custom
-     * policies created in your AWS account.</p> </li> </ul>
+     * created by Amazon Web Services.</p> </li> <li> <p> <code>custom</code> – Returns
+     * only the custom policies created in your Amazon Web Services account.</p> </li>
+     * </ul>
      */
     inline void SetType(const CachePolicyType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p>A filter to return only the specified kinds of cache policies. Valid values
      * are:</p> <ul> <li> <p> <code>managed</code> – Returns only the managed policies
-     * created by AWS.</p> </li> <li> <p> <code>custom</code> – Returns only the custom
-     * policies created in your AWS account.</p> </li> </ul>
+     * created by Amazon Web Services.</p> </li> <li> <p> <code>custom</code> – Returns
+     * only the custom policies created in your Amazon Web Services account.</p> </li>
+     * </ul>
      */
     inline void SetType(CachePolicyType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>A filter to return only the specified kinds of cache policies. Valid values
      * are:</p> <ul> <li> <p> <code>managed</code> – Returns only the managed policies
-     * created by AWS.</p> </li> <li> <p> <code>custom</code> – Returns only the custom
-     * policies created in your AWS account.</p> </li> </ul>
+     * created by Amazon Web Services.</p> </li> <li> <p> <code>custom</code> – Returns
+     * only the custom policies created in your Amazon Web Services account.</p> </li>
+     * </ul>
      */
     inline ListCachePolicies2020_05_31Request& WithType(const CachePolicyType& value) { SetType(value); return *this;}
 
     /**
      * <p>A filter to return only the specified kinds of cache policies. Valid values
      * are:</p> <ul> <li> <p> <code>managed</code> – Returns only the managed policies
-     * created by AWS.</p> </li> <li> <p> <code>custom</code> – Returns only the custom
-     * policies created in your AWS account.</p> </li> </ul>
+     * created by Amazon Web Services.</p> </li> <li> <p> <code>custom</code> – Returns
+     * only the custom policies created in your Amazon Web Services account.</p> </li>
+     * </ul>
      */
     inline ListCachePolicies2020_05_31Request& WithType(CachePolicyType&& value) { SetType(std::move(value)); return *this;}
 

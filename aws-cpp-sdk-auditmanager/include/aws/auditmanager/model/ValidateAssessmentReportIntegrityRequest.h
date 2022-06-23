@@ -33,50 +33,50 @@ namespace Model
 
 
     /**
-     * <p> The relative path of the specified Amazon S3 bucket in which the assessment
-     * report is stored. </p>
+     * <p> The relative path of the Amazon S3 bucket that the assessment report is
+     * stored in. </p>
      */
     inline const Aws::String& GetS3RelativePath() const{ return m_s3RelativePath; }
 
     /**
-     * <p> The relative path of the specified Amazon S3 bucket in which the assessment
-     * report is stored. </p>
+     * <p> The relative path of the Amazon S3 bucket that the assessment report is
+     * stored in. </p>
      */
     inline bool S3RelativePathHasBeenSet() const { return m_s3RelativePathHasBeenSet; }
 
     /**
-     * <p> The relative path of the specified Amazon S3 bucket in which the assessment
-     * report is stored. </p>
+     * <p> The relative path of the Amazon S3 bucket that the assessment report is
+     * stored in. </p>
      */
     inline void SetS3RelativePath(const Aws::String& value) { m_s3RelativePathHasBeenSet = true; m_s3RelativePath = value; }
 
     /**
-     * <p> The relative path of the specified Amazon S3 bucket in which the assessment
-     * report is stored. </p>
+     * <p> The relative path of the Amazon S3 bucket that the assessment report is
+     * stored in. </p>
      */
     inline void SetS3RelativePath(Aws::String&& value) { m_s3RelativePathHasBeenSet = true; m_s3RelativePath = std::move(value); }
 
     /**
-     * <p> The relative path of the specified Amazon S3 bucket in which the assessment
-     * report is stored. </p>
+     * <p> The relative path of the Amazon S3 bucket that the assessment report is
+     * stored in. </p>
      */
     inline void SetS3RelativePath(const char* value) { m_s3RelativePathHasBeenSet = true; m_s3RelativePath.assign(value); }
 
     /**
-     * <p> The relative path of the specified Amazon S3 bucket in which the assessment
-     * report is stored. </p>
+     * <p> The relative path of the Amazon S3 bucket that the assessment report is
+     * stored in. </p>
      */
     inline ValidateAssessmentReportIntegrityRequest& WithS3RelativePath(const Aws::String& value) { SetS3RelativePath(value); return *this;}
 
     /**
-     * <p> The relative path of the specified Amazon S3 bucket in which the assessment
-     * report is stored. </p>
+     * <p> The relative path of the Amazon S3 bucket that the assessment report is
+     * stored in. </p>
      */
     inline ValidateAssessmentReportIntegrityRequest& WithS3RelativePath(Aws::String&& value) { SetS3RelativePath(std::move(value)); return *this;}
 
     /**
-     * <p> The relative path of the specified Amazon S3 bucket in which the assessment
-     * report is stored. </p>
+     * <p> The relative path of the Amazon S3 bucket that the assessment report is
+     * stored in. </p>
      */
     inline ValidateAssessmentReportIntegrityRequest& WithS3RelativePath(const char* value) { SetS3RelativePath(value); return *this;}
 

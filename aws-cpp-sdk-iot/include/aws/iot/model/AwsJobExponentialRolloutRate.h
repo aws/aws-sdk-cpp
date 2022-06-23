@@ -94,43 +94,43 @@ namespace Model
 
     /**
      * <p>The criteria to initiate the increase in rate of rollout for a job.</p>
-     * <p>AWS IoT supports up to one digit after the decimal (for example, 1.5, but not
-     * 1.55).</p>
+     * <p>Amazon Web Services IoT Core supports up to one digit after the decimal (for
+     * example, 1.5, but not 1.55).</p>
      */
     inline const AwsJobRateIncreaseCriteria& GetRateIncreaseCriteria() const{ return m_rateIncreaseCriteria; }
 
     /**
      * <p>The criteria to initiate the increase in rate of rollout for a job.</p>
-     * <p>AWS IoT supports up to one digit after the decimal (for example, 1.5, but not
-     * 1.55).</p>
+     * <p>Amazon Web Services IoT Core supports up to one digit after the decimal (for
+     * example, 1.5, but not 1.55).</p>
      */
     inline bool RateIncreaseCriteriaHasBeenSet() const { return m_rateIncreaseCriteriaHasBeenSet; }
 
     /**
      * <p>The criteria to initiate the increase in rate of rollout for a job.</p>
-     * <p>AWS IoT supports up to one digit after the decimal (for example, 1.5, but not
-     * 1.55).</p>
+     * <p>Amazon Web Services IoT Core supports up to one digit after the decimal (for
+     * example, 1.5, but not 1.55).</p>
      */
     inline void SetRateIncreaseCriteria(const AwsJobRateIncreaseCriteria& value) { m_rateIncreaseCriteriaHasBeenSet = true; m_rateIncreaseCriteria = value; }
 
     /**
      * <p>The criteria to initiate the increase in rate of rollout for a job.</p>
-     * <p>AWS IoT supports up to one digit after the decimal (for example, 1.5, but not
-     * 1.55).</p>
+     * <p>Amazon Web Services IoT Core supports up to one digit after the decimal (for
+     * example, 1.5, but not 1.55).</p>
      */
     inline void SetRateIncreaseCriteria(AwsJobRateIncreaseCriteria&& value) { m_rateIncreaseCriteriaHasBeenSet = true; m_rateIncreaseCriteria = std::move(value); }
 
     /**
      * <p>The criteria to initiate the increase in rate of rollout for a job.</p>
-     * <p>AWS IoT supports up to one digit after the decimal (for example, 1.5, but not
-     * 1.55).</p>
+     * <p>Amazon Web Services IoT Core supports up to one digit after the decimal (for
+     * example, 1.5, but not 1.55).</p>
      */
     inline AwsJobExponentialRolloutRate& WithRateIncreaseCriteria(const AwsJobRateIncreaseCriteria& value) { SetRateIncreaseCriteria(value); return *this;}
 
     /**
      * <p>The criteria to initiate the increase in rate of rollout for a job.</p>
-     * <p>AWS IoT supports up to one digit after the decimal (for example, 1.5, but not
-     * 1.55).</p>
+     * <p>Amazon Web Services IoT Core supports up to one digit after the decimal (for
+     * example, 1.5, but not 1.55).</p>
      */
     inline AwsJobExponentialRolloutRate& WithRateIncreaseCriteria(AwsJobRateIncreaseCriteria&& value) { SetRateIncreaseCriteria(std::move(value)); return *this;}
 

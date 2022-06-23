@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     IN_SYNC,
     OUT_OF_SYNC,
-    SYNC_FAILED
+    SYNC_FAILED,
+    UNKNOWN
   };
 
 namespace CapabilitySyncStatusMapper

@@ -11,6 +11,7 @@
 #include <aws/elasticloadbalancingv2/model/Matcher.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticloadbalancingv2/model/TargetTypeEnum.h>
+#include <aws/elasticloadbalancingv2/model/TargetGroupIpAddressTypeEnum.h>
 #include <utility>
 
 namespace Aws
@@ -557,48 +558,54 @@ namespace Model
     /**
      * <p>The type of target that you must specify when registering targets with this
      * target group. The possible values are <code>instance</code> (register targets by
-     * instance ID), <code>ip</code> (register targets by IP address), or
-     * <code>lambda</code> (register a single Lambda function as a target).</p>
+     * instance ID), <code>ip</code> (register targets by IP address),
+     * <code>lambda</code> (register a single Lambda function as a target), or
+     * <code>alb</code> (register a single Application Load Balancer as a target).</p>
      */
     inline const TargetTypeEnum& GetTargetType() const{ return m_targetType; }
 
     /**
      * <p>The type of target that you must specify when registering targets with this
      * target group. The possible values are <code>instance</code> (register targets by
-     * instance ID), <code>ip</code> (register targets by IP address), or
-     * <code>lambda</code> (register a single Lambda function as a target).</p>
+     * instance ID), <code>ip</code> (register targets by IP address),
+     * <code>lambda</code> (register a single Lambda function as a target), or
+     * <code>alb</code> (register a single Application Load Balancer as a target).</p>
      */
     inline bool TargetTypeHasBeenSet() const { return m_targetTypeHasBeenSet; }
 
     /**
      * <p>The type of target that you must specify when registering targets with this
      * target group. The possible values are <code>instance</code> (register targets by
-     * instance ID), <code>ip</code> (register targets by IP address), or
-     * <code>lambda</code> (register a single Lambda function as a target).</p>
+     * instance ID), <code>ip</code> (register targets by IP address),
+     * <code>lambda</code> (register a single Lambda function as a target), or
+     * <code>alb</code> (register a single Application Load Balancer as a target).</p>
      */
     inline void SetTargetType(const TargetTypeEnum& value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
 
     /**
      * <p>The type of target that you must specify when registering targets with this
      * target group. The possible values are <code>instance</code> (register targets by
-     * instance ID), <code>ip</code> (register targets by IP address), or
-     * <code>lambda</code> (register a single Lambda function as a target).</p>
+     * instance ID), <code>ip</code> (register targets by IP address),
+     * <code>lambda</code> (register a single Lambda function as a target), or
+     * <code>alb</code> (register a single Application Load Balancer as a target).</p>
      */
     inline void SetTargetType(TargetTypeEnum&& value) { m_targetTypeHasBeenSet = true; m_targetType = std::move(value); }
 
     /**
      * <p>The type of target that you must specify when registering targets with this
      * target group. The possible values are <code>instance</code> (register targets by
-     * instance ID), <code>ip</code> (register targets by IP address), or
-     * <code>lambda</code> (register a single Lambda function as a target).</p>
+     * instance ID), <code>ip</code> (register targets by IP address),
+     * <code>lambda</code> (register a single Lambda function as a target), or
+     * <code>alb</code> (register a single Application Load Balancer as a target).</p>
      */
     inline TargetGroup& WithTargetType(const TargetTypeEnum& value) { SetTargetType(value); return *this;}
 
     /**
      * <p>The type of target that you must specify when registering targets with this
      * target group. The possible values are <code>instance</code> (register targets by
-     * instance ID), <code>ip</code> (register targets by IP address), or
-     * <code>lambda</code> (register a single Lambda function as a target).</p>
+     * instance ID), <code>ip</code> (register targets by IP address),
+     * <code>lambda</code> (register a single Lambda function as a target), or
+     * <code>alb</code> (register a single Application Load Balancer as a target).</p>
      */
     inline TargetGroup& WithTargetType(TargetTypeEnum&& value) { SetTargetType(std::move(value)); return *this;}
 
@@ -650,6 +657,49 @@ namespace Model
      * <code>GRPC</code>, <code>HTTP1</code>, and <code>HTTP2</code>.</p>
      */
     inline TargetGroup& WithProtocolVersion(const char* value) { SetProtocolVersion(value); return *this;}
+
+
+    /**
+     * <p>The type of IP address used for this target group. The possible values are
+     * <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not
+     * specified, the IP address type defaults to <code>ipv4</code>.</p>
+     */
+    inline const TargetGroupIpAddressTypeEnum& GetIpAddressType() const{ return m_ipAddressType; }
+
+    /**
+     * <p>The type of IP address used for this target group. The possible values are
+     * <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not
+     * specified, the IP address type defaults to <code>ipv4</code>.</p>
+     */
+    inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
+
+    /**
+     * <p>The type of IP address used for this target group. The possible values are
+     * <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not
+     * specified, the IP address type defaults to <code>ipv4</code>.</p>
+     */
+    inline void SetIpAddressType(const TargetGroupIpAddressTypeEnum& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
+
+    /**
+     * <p>The type of IP address used for this target group. The possible values are
+     * <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not
+     * specified, the IP address type defaults to <code>ipv4</code>.</p>
+     */
+    inline void SetIpAddressType(TargetGroupIpAddressTypeEnum&& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = std::move(value); }
+
+    /**
+     * <p>The type of IP address used for this target group. The possible values are
+     * <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not
+     * specified, the IP address type defaults to <code>ipv4</code>.</p>
+     */
+    inline TargetGroup& WithIpAddressType(const TargetGroupIpAddressTypeEnum& value) { SetIpAddressType(value); return *this;}
+
+    /**
+     * <p>The type of IP address used for this target group. The possible values are
+     * <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not
+     * specified, the IP address type defaults to <code>ipv4</code>.</p>
+     */
+    inline TargetGroup& WithIpAddressType(TargetGroupIpAddressTypeEnum&& value) { SetIpAddressType(std::move(value)); return *this;}
 
   private:
 
@@ -703,6 +753,9 @@ namespace Model
 
     Aws::String m_protocolVersion;
     bool m_protocolVersionHasBeenSet;
+
+    TargetGroupIpAddressTypeEnum m_ipAddressType;
+    bool m_ipAddressTypeHasBeenSet;
   };
 
 } // namespace Model

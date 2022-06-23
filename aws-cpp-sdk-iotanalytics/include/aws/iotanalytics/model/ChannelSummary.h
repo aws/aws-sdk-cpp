@@ -206,8 +206,8 @@ namespace Model
 
 
     /**
-     * <p>The last time when a new message arrived in the channel.</p> <p>AWS IoT
-     * Analytics updates this value at most once per minute for one channel. Hence, the
+     * <p>The last time when a new message arrived in the channel.</p> <p>IoT Analytics
+     * updates this value at most once per minute for one channel. Hence, the
      * <code>lastMessageArrivalTime</code> value is an approximation.</p> <p>This
      * feature only applies to messages that arrived in the data store after October
      * 23, 2020. </p>
@@ -215,8 +215,8 @@ namespace Model
     inline const Aws::Utils::DateTime& GetLastMessageArrivalTime() const{ return m_lastMessageArrivalTime; }
 
     /**
-     * <p>The last time when a new message arrived in the channel.</p> <p>AWS IoT
-     * Analytics updates this value at most once per minute for one channel. Hence, the
+     * <p>The last time when a new message arrived in the channel.</p> <p>IoT Analytics
+     * updates this value at most once per minute for one channel. Hence, the
      * <code>lastMessageArrivalTime</code> value is an approximation.</p> <p>This
      * feature only applies to messages that arrived in the data store after October
      * 23, 2020. </p>
@@ -224,8 +224,8 @@ namespace Model
     inline bool LastMessageArrivalTimeHasBeenSet() const { return m_lastMessageArrivalTimeHasBeenSet; }
 
     /**
-     * <p>The last time when a new message arrived in the channel.</p> <p>AWS IoT
-     * Analytics updates this value at most once per minute for one channel. Hence, the
+     * <p>The last time when a new message arrived in the channel.</p> <p>IoT Analytics
+     * updates this value at most once per minute for one channel. Hence, the
      * <code>lastMessageArrivalTime</code> value is an approximation.</p> <p>This
      * feature only applies to messages that arrived in the data store after October
      * 23, 2020. </p>
@@ -233,8 +233,8 @@ namespace Model
     inline void SetLastMessageArrivalTime(const Aws::Utils::DateTime& value) { m_lastMessageArrivalTimeHasBeenSet = true; m_lastMessageArrivalTime = value; }
 
     /**
-     * <p>The last time when a new message arrived in the channel.</p> <p>AWS IoT
-     * Analytics updates this value at most once per minute for one channel. Hence, the
+     * <p>The last time when a new message arrived in the channel.</p> <p>IoT Analytics
+     * updates this value at most once per minute for one channel. Hence, the
      * <code>lastMessageArrivalTime</code> value is an approximation.</p> <p>This
      * feature only applies to messages that arrived in the data store after October
      * 23, 2020. </p>
@@ -242,8 +242,8 @@ namespace Model
     inline void SetLastMessageArrivalTime(Aws::Utils::DateTime&& value) { m_lastMessageArrivalTimeHasBeenSet = true; m_lastMessageArrivalTime = std::move(value); }
 
     /**
-     * <p>The last time when a new message arrived in the channel.</p> <p>AWS IoT
-     * Analytics updates this value at most once per minute for one channel. Hence, the
+     * <p>The last time when a new message arrived in the channel.</p> <p>IoT Analytics
+     * updates this value at most once per minute for one channel. Hence, the
      * <code>lastMessageArrivalTime</code> value is an approximation.</p> <p>This
      * feature only applies to messages that arrived in the data store after October
      * 23, 2020. </p>
@@ -251,8 +251,8 @@ namespace Model
     inline ChannelSummary& WithLastMessageArrivalTime(const Aws::Utils::DateTime& value) { SetLastMessageArrivalTime(value); return *this;}
 
     /**
-     * <p>The last time when a new message arrived in the channel.</p> <p>AWS IoT
-     * Analytics updates this value at most once per minute for one channel. Hence, the
+     * <p>The last time when a new message arrived in the channel.</p> <p>IoT Analytics
+     * updates this value at most once per minute for one channel. Hence, the
      * <code>lastMessageArrivalTime</code> value is an approximation.</p> <p>This
      * feature only applies to messages that arrived in the data store after October
      * 23, 2020. </p>

@@ -32,7 +32,9 @@ Activity::Activity() :
     m_statusMessageHasBeenSet(false),
     m_progress(0),
     m_progressHasBeenSet(false),
-    m_detailsHasBeenSet(false)
+    m_detailsHasBeenSet(false),
+    m_autoScalingGroupStateHasBeenSet(false),
+    m_autoScalingGroupARNHasBeenSet(false)
 {
 }
 
@@ -48,7 +50,9 @@ Activity::Activity(const XmlNode& xmlNode) :
     m_statusMessageHasBeenSet(false),
     m_progress(0),
     m_progressHasBeenSet(false),
-    m_detailsHasBeenSet(false)
+    m_detailsHasBeenSet(false),
+    m_autoScalingGroupStateHasBeenSet(false),
+    m_autoScalingGroupARNHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -119,6 +123,18 @@ Activity& Activity::operator =(const XmlNode& xmlNode)
       m_details = Aws::Utils::Xml::DecodeEscapedXmlText(detailsNode.GetText());
       m_detailsHasBeenSet = true;
     }
+    XmlNode autoScalingGroupStateNode = resultNode.FirstChild("AutoScalingGroupState");
+    if(!autoScalingGroupStateNode.IsNull())
+    {
+      m_autoScalingGroupState = Aws::Utils::Xml::DecodeEscapedXmlText(autoScalingGroupStateNode.GetText());
+      m_autoScalingGroupStateHasBeenSet = true;
+    }
+    XmlNode autoScalingGroupARNNode = resultNode.FirstChild("AutoScalingGroupARN");
+    if(!autoScalingGroupARNNode.IsNull())
+    {
+      m_autoScalingGroupARN = Aws::Utils::Xml::DecodeEscapedXmlText(autoScalingGroupARNNode.GetText());
+      m_autoScalingGroupARNHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -176,6 +192,16 @@ void Activity::OutputToStream(Aws::OStream& oStream, const char* location, unsig
       oStream << location << index << locationValue << ".Details=" << StringUtils::URLEncode(m_details.c_str()) << "&";
   }
 
+  if(m_autoScalingGroupStateHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AutoScalingGroupState=" << StringUtils::URLEncode(m_autoScalingGroupState.c_str()) << "&";
+  }
+
+  if(m_autoScalingGroupARNHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AutoScalingGroupARN=" << StringUtils::URLEncode(m_autoScalingGroupARN.c_str()) << "&";
+  }
+
 }
 
 void Activity::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -219,6 +245,14 @@ void Activity::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_detailsHasBeenSet)
   {
       oStream << location << ".Details=" << StringUtils::URLEncode(m_details.c_str()) << "&";
+  }
+  if(m_autoScalingGroupStateHasBeenSet)
+  {
+      oStream << location << ".AutoScalingGroupState=" << StringUtils::URLEncode(m_autoScalingGroupState.c_str()) << "&";
+  }
+  if(m_autoScalingGroupARNHasBeenSet)
+  {
+      oStream << location << ".AutoScalingGroupARN=" << StringUtils::URLEncode(m_autoScalingGroupARN.c_str()) << "&";
   }
 }
 

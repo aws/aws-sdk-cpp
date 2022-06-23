@@ -57,6 +57,12 @@ UpdateDashboardPermissionsResult& UpdateDashboardPermissionsResult::operator =(c
 
   }
 
+  if(jsonValue.ValueExists("LinkSharingConfiguration"))
+  {
+    m_linkSharingConfiguration = jsonValue.GetObject("LinkSharingConfiguration");
+
+  }
+
 
 
   m_status = static_cast<int>(result.GetResponseCode());

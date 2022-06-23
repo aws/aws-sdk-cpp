@@ -36,50 +36,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the monitoring schedule. The name must be unique within an AWS
-     * Region within an AWS account.</p>
+     * <p>The name of the monitoring schedule. The name must be unique within an Amazon
+     * Web Services Region within an Amazon Web Services account.</p>
      */
     inline const Aws::String& GetMonitoringScheduleName() const{ return m_monitoringScheduleName; }
 
     /**
-     * <p>The name of the monitoring schedule. The name must be unique within an AWS
-     * Region within an AWS account.</p>
+     * <p>The name of the monitoring schedule. The name must be unique within an Amazon
+     * Web Services Region within an Amazon Web Services account.</p>
      */
     inline bool MonitoringScheduleNameHasBeenSet() const { return m_monitoringScheduleNameHasBeenSet; }
 
     /**
-     * <p>The name of the monitoring schedule. The name must be unique within an AWS
-     * Region within an AWS account.</p>
+     * <p>The name of the monitoring schedule. The name must be unique within an Amazon
+     * Web Services Region within an Amazon Web Services account.</p>
      */
     inline void SetMonitoringScheduleName(const Aws::String& value) { m_monitoringScheduleNameHasBeenSet = true; m_monitoringScheduleName = value; }
 
     /**
-     * <p>The name of the monitoring schedule. The name must be unique within an AWS
-     * Region within an AWS account.</p>
+     * <p>The name of the monitoring schedule. The name must be unique within an Amazon
+     * Web Services Region within an Amazon Web Services account.</p>
      */
     inline void SetMonitoringScheduleName(Aws::String&& value) { m_monitoringScheduleNameHasBeenSet = true; m_monitoringScheduleName = std::move(value); }
 
     /**
-     * <p>The name of the monitoring schedule. The name must be unique within an AWS
-     * Region within an AWS account.</p>
+     * <p>The name of the monitoring schedule. The name must be unique within an Amazon
+     * Web Services Region within an Amazon Web Services account.</p>
      */
     inline void SetMonitoringScheduleName(const char* value) { m_monitoringScheduleNameHasBeenSet = true; m_monitoringScheduleName.assign(value); }
 
     /**
-     * <p>The name of the monitoring schedule. The name must be unique within an AWS
-     * Region within an AWS account.</p>
+     * <p>The name of the monitoring schedule. The name must be unique within an Amazon
+     * Web Services Region within an Amazon Web Services account.</p>
      */
     inline UpdateMonitoringScheduleRequest& WithMonitoringScheduleName(const Aws::String& value) { SetMonitoringScheduleName(value); return *this;}
 
     /**
-     * <p>The name of the monitoring schedule. The name must be unique within an AWS
-     * Region within an AWS account.</p>
+     * <p>The name of the monitoring schedule. The name must be unique within an Amazon
+     * Web Services Region within an Amazon Web Services account.</p>
      */
     inline UpdateMonitoringScheduleRequest& WithMonitoringScheduleName(Aws::String&& value) { SetMonitoringScheduleName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the monitoring schedule. The name must be unique within an AWS
-     * Region within an AWS account.</p>
+     * <p>The name of the monitoring schedule. The name must be unique within an Amazon
+     * Web Services Region within an Amazon Web Services account.</p>
      */
     inline UpdateMonitoringScheduleRequest& WithMonitoringScheduleName(const char* value) { SetMonitoringScheduleName(value); return *this;}
 

@@ -90,7 +90,7 @@ MQClient::~MQClient()
 {
 }
 
-void MQClient::init(const ClientConfiguration& config)
+void MQClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("mq");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -119,9 +119,7 @@ void MQClient::OverrideEndpoint(const Aws::String& endpoint)
 CreateBrokerOutcome MQClient::CreateBroker(const CreateBrokerRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/brokers";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/brokers");
   return CreateBrokerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -146,9 +144,7 @@ void MQClient::CreateBrokerAsyncHelper(const CreateBrokerRequest& request, const
 CreateConfigurationOutcome MQClient::CreateConfiguration(const CreateConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/configurations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/configurations");
   return CreateConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -178,10 +174,8 @@ CreateTagsOutcome MQClient::CreateTags(const CreateTagsRequest& request) const
     return CreateTagsOutcome(Aws::Client::AWSError<MQErrors>(MQErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return CreateTagsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -216,12 +210,10 @@ CreateUserOutcome MQClient::CreateUser(const CreateUserRequest& request) const
     return CreateUserOutcome(Aws::Client::AWSError<MQErrors>(MQErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Username]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/brokers/";
-  ss << request.GetBrokerId();
-  ss << "/users/";
-  ss << request.GetUsername();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/brokers/");
+  uri.AddPathSegment(request.GetBrokerId());
+  uri.AddPathSegments("/users/");
+  uri.AddPathSegment(request.GetUsername());
   return CreateUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -251,10 +243,8 @@ DeleteBrokerOutcome MQClient::DeleteBroker(const DeleteBrokerRequest& request) c
     return DeleteBrokerOutcome(Aws::Client::AWSError<MQErrors>(MQErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BrokerId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/brokers/";
-  ss << request.GetBrokerId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/brokers/");
+  uri.AddPathSegment(request.GetBrokerId());
   return DeleteBrokerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -289,10 +279,8 @@ DeleteTagsOutcome MQClient::DeleteTags(const DeleteTagsRequest& request) const
     return DeleteTagsOutcome(Aws::Client::AWSError<MQErrors>(MQErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return DeleteTagsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -327,12 +315,10 @@ DeleteUserOutcome MQClient::DeleteUser(const DeleteUserRequest& request) const
     return DeleteUserOutcome(Aws::Client::AWSError<MQErrors>(MQErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Username]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/brokers/";
-  ss << request.GetBrokerId();
-  ss << "/users/";
-  ss << request.GetUsername();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/brokers/");
+  uri.AddPathSegment(request.GetBrokerId());
+  uri.AddPathSegments("/users/");
+  uri.AddPathSegment(request.GetUsername());
   return DeleteUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -362,10 +348,8 @@ DescribeBrokerOutcome MQClient::DescribeBroker(const DescribeBrokerRequest& requ
     return DescribeBrokerOutcome(Aws::Client::AWSError<MQErrors>(MQErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BrokerId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/brokers/";
-  ss << request.GetBrokerId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/brokers/");
+  uri.AddPathSegment(request.GetBrokerId());
   return DescribeBrokerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -390,9 +374,7 @@ void MQClient::DescribeBrokerAsyncHelper(const DescribeBrokerRequest& request, c
 DescribeBrokerEngineTypesOutcome MQClient::DescribeBrokerEngineTypes(const DescribeBrokerEngineTypesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/broker-engine-types";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/broker-engine-types");
   return DescribeBrokerEngineTypesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -417,9 +399,7 @@ void MQClient::DescribeBrokerEngineTypesAsyncHelper(const DescribeBrokerEngineTy
 DescribeBrokerInstanceOptionsOutcome MQClient::DescribeBrokerInstanceOptions(const DescribeBrokerInstanceOptionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/broker-instance-options";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/broker-instance-options");
   return DescribeBrokerInstanceOptionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -449,10 +429,8 @@ DescribeConfigurationOutcome MQClient::DescribeConfiguration(const DescribeConfi
     return DescribeConfigurationOutcome(Aws::Client::AWSError<MQErrors>(MQErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigurationId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/configurations/";
-  ss << request.GetConfigurationId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/configurations/");
+  uri.AddPathSegment(request.GetConfigurationId());
   return DescribeConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -487,12 +465,10 @@ DescribeConfigurationRevisionOutcome MQClient::DescribeConfigurationRevision(con
     return DescribeConfigurationRevisionOutcome(Aws::Client::AWSError<MQErrors>(MQErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigurationRevision]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/configurations/";
-  ss << request.GetConfigurationId();
-  ss << "/revisions/";
-  ss << request.GetConfigurationRevision();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/configurations/");
+  uri.AddPathSegment(request.GetConfigurationId());
+  uri.AddPathSegments("/revisions/");
+  uri.AddPathSegment(request.GetConfigurationRevision());
   return DescribeConfigurationRevisionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -527,12 +503,10 @@ DescribeUserOutcome MQClient::DescribeUser(const DescribeUserRequest& request) c
     return DescribeUserOutcome(Aws::Client::AWSError<MQErrors>(MQErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Username]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/brokers/";
-  ss << request.GetBrokerId();
-  ss << "/users/";
-  ss << request.GetUsername();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/brokers/");
+  uri.AddPathSegment(request.GetBrokerId());
+  uri.AddPathSegments("/users/");
+  uri.AddPathSegment(request.GetUsername());
   return DescribeUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -557,9 +531,7 @@ void MQClient::DescribeUserAsyncHelper(const DescribeUserRequest& request, const
 ListBrokersOutcome MQClient::ListBrokers(const ListBrokersRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/brokers";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/brokers");
   return ListBrokersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -589,11 +561,9 @@ ListConfigurationRevisionsOutcome MQClient::ListConfigurationRevisions(const Lis
     return ListConfigurationRevisionsOutcome(Aws::Client::AWSError<MQErrors>(MQErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigurationId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/configurations/";
-  ss << request.GetConfigurationId();
-  ss << "/revisions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/configurations/");
+  uri.AddPathSegment(request.GetConfigurationId());
+  uri.AddPathSegments("/revisions");
   return ListConfigurationRevisionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -618,9 +588,7 @@ void MQClient::ListConfigurationRevisionsAsyncHelper(const ListConfigurationRevi
 ListConfigurationsOutcome MQClient::ListConfigurations(const ListConfigurationsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/configurations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/configurations");
   return ListConfigurationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -650,10 +618,8 @@ ListTagsOutcome MQClient::ListTags(const ListTagsRequest& request) const
     return ListTagsOutcome(Aws::Client::AWSError<MQErrors>(MQErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return ListTagsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -683,11 +649,9 @@ ListUsersOutcome MQClient::ListUsers(const ListUsersRequest& request) const
     return ListUsersOutcome(Aws::Client::AWSError<MQErrors>(MQErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BrokerId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/brokers/";
-  ss << request.GetBrokerId();
-  ss << "/users";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/brokers/");
+  uri.AddPathSegment(request.GetBrokerId());
+  uri.AddPathSegments("/users");
   return ListUsersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -717,11 +681,9 @@ RebootBrokerOutcome MQClient::RebootBroker(const RebootBrokerRequest& request) c
     return RebootBrokerOutcome(Aws::Client::AWSError<MQErrors>(MQErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BrokerId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/brokers/";
-  ss << request.GetBrokerId();
-  ss << "/reboot";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/brokers/");
+  uri.AddPathSegment(request.GetBrokerId());
+  uri.AddPathSegments("/reboot");
   return RebootBrokerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -751,10 +713,8 @@ UpdateBrokerOutcome MQClient::UpdateBroker(const UpdateBrokerRequest& request) c
     return UpdateBrokerOutcome(Aws::Client::AWSError<MQErrors>(MQErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BrokerId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/brokers/";
-  ss << request.GetBrokerId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/brokers/");
+  uri.AddPathSegment(request.GetBrokerId());
   return UpdateBrokerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -784,10 +744,8 @@ UpdateConfigurationOutcome MQClient::UpdateConfiguration(const UpdateConfigurati
     return UpdateConfigurationOutcome(Aws::Client::AWSError<MQErrors>(MQErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigurationId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/configurations/";
-  ss << request.GetConfigurationId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/configurations/");
+  uri.AddPathSegment(request.GetConfigurationId());
   return UpdateConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -822,12 +780,10 @@ UpdateUserOutcome MQClient::UpdateUser(const UpdateUserRequest& request) const
     return UpdateUserOutcome(Aws::Client::AWSError<MQErrors>(MQErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Username]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/brokers/";
-  ss << request.GetBrokerId();
-  ss << "/users/";
-  ss << request.GetUsername();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/brokers/");
+  uri.AddPathSegment(request.GetBrokerId());
+  uri.AddPathSegments("/users/");
+  uri.AddPathSegment(request.GetUsername());
   return UpdateUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 

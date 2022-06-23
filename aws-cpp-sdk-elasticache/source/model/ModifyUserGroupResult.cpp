@@ -64,6 +64,11 @@ ModifyUserGroupResult& ModifyUserGroupResult::operator =(const Aws::AmazonWebSer
       }
 
     }
+    XmlNode minimumEngineVersionNode = resultNode.FirstChild("MinimumEngineVersion");
+    if(!minimumEngineVersionNode.IsNull())
+    {
+      m_minimumEngineVersion = Aws::Utils::Xml::DecodeEscapedXmlText(minimumEngineVersionNode.GetText());
+    }
     XmlNode pendingChangesNode = resultNode.FirstChild("PendingChanges");
     if(!pendingChangesNode.IsNull())
     {

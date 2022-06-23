@@ -49,6 +49,7 @@ enum class BraketErrors
 
   CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   DEVICE_OFFLINE,
+  DEVICE_RETIRED,
   INTERNAL_SERVICE,
   SERVICE_QUOTA_EXCEEDED
 };

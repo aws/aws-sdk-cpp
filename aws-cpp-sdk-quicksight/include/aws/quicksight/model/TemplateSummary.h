@@ -80,50 +80,50 @@ namespace Model
 
 
     /**
-     * <p>The ID of the template. This ID is unique per AWS Region for each AWS
-     * account.</p>
+     * <p>The ID of the template. This ID is unique per Amazon Web Services Region for
+     * each Amazon Web Services account.</p>
      */
     inline const Aws::String& GetTemplateId() const{ return m_templateId; }
 
     /**
-     * <p>The ID of the template. This ID is unique per AWS Region for each AWS
-     * account.</p>
+     * <p>The ID of the template. This ID is unique per Amazon Web Services Region for
+     * each Amazon Web Services account.</p>
      */
     inline bool TemplateIdHasBeenSet() const { return m_templateIdHasBeenSet; }
 
     /**
-     * <p>The ID of the template. This ID is unique per AWS Region for each AWS
-     * account.</p>
+     * <p>The ID of the template. This ID is unique per Amazon Web Services Region for
+     * each Amazon Web Services account.</p>
      */
     inline void SetTemplateId(const Aws::String& value) { m_templateIdHasBeenSet = true; m_templateId = value; }
 
     /**
-     * <p>The ID of the template. This ID is unique per AWS Region for each AWS
-     * account.</p>
+     * <p>The ID of the template. This ID is unique per Amazon Web Services Region for
+     * each Amazon Web Services account.</p>
      */
     inline void SetTemplateId(Aws::String&& value) { m_templateIdHasBeenSet = true; m_templateId = std::move(value); }
 
     /**
-     * <p>The ID of the template. This ID is unique per AWS Region for each AWS
-     * account.</p>
+     * <p>The ID of the template. This ID is unique per Amazon Web Services Region for
+     * each Amazon Web Services account.</p>
      */
     inline void SetTemplateId(const char* value) { m_templateIdHasBeenSet = true; m_templateId.assign(value); }
 
     /**
-     * <p>The ID of the template. This ID is unique per AWS Region for each AWS
-     * account.</p>
+     * <p>The ID of the template. This ID is unique per Amazon Web Services Region for
+     * each Amazon Web Services account.</p>
      */
     inline TemplateSummary& WithTemplateId(const Aws::String& value) { SetTemplateId(value); return *this;}
 
     /**
-     * <p>The ID of the template. This ID is unique per AWS Region for each AWS
-     * account.</p>
+     * <p>The ID of the template. This ID is unique per Amazon Web Services Region for
+     * each Amazon Web Services account.</p>
      */
     inline TemplateSummary& WithTemplateId(Aws::String&& value) { SetTemplateId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the template. This ID is unique per AWS Region for each AWS
-     * account.</p>
+     * <p>The ID of the template. This ID is unique per Amazon Web Services Region for
+     * each Amazon Web Services account.</p>
      */
     inline TemplateSummary& WithTemplateId(const char* value) { SetTemplateId(value); return *this;}
 

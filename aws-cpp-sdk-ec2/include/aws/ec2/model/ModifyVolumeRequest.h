@@ -118,8 +118,7 @@ namespace Model
      * and <code>gp3</code>: 1-16,384</p> </li> <li> <p> <code>io1</code> and
      * <code>io2</code>: 4-16,384</p> </li> <li> <p> <code>st1</code> and
      * <code>sc1</code>: 125-16,384</p> </li> <li> <p> <code>standard</code>:
-     * 1-1,024</p> </li> </ul> <p>Default: If no size is specified, the existing size
-     * is retained.</p>
+     * 1-1,024</p> </li> </ul> <p>Default: The existing size is retained.</p>
      */
     inline int GetSize() const{ return m_size; }
 
@@ -130,8 +129,7 @@ namespace Model
      * and <code>gp3</code>: 1-16,384</p> </li> <li> <p> <code>io1</code> and
      * <code>io2</code>: 4-16,384</p> </li> <li> <p> <code>st1</code> and
      * <code>sc1</code>: 125-16,384</p> </li> <li> <p> <code>standard</code>:
-     * 1-1,024</p> </li> </ul> <p>Default: If no size is specified, the existing size
-     * is retained.</p>
+     * 1-1,024</p> </li> </ul> <p>Default: The existing size is retained.</p>
      */
     inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
 
@@ -142,8 +140,7 @@ namespace Model
      * and <code>gp3</code>: 1-16,384</p> </li> <li> <p> <code>io1</code> and
      * <code>io2</code>: 4-16,384</p> </li> <li> <p> <code>st1</code> and
      * <code>sc1</code>: 125-16,384</p> </li> <li> <p> <code>standard</code>:
-     * 1-1,024</p> </li> </ul> <p>Default: If no size is specified, the existing size
-     * is retained.</p>
+     * 1-1,024</p> </li> </ul> <p>Default: The existing size is retained.</p>
      */
     inline void SetSize(int value) { m_sizeHasBeenSet = true; m_size = value; }
 
@@ -154,8 +151,7 @@ namespace Model
      * and <code>gp3</code>: 1-16,384</p> </li> <li> <p> <code>io1</code> and
      * <code>io2</code>: 4-16,384</p> </li> <li> <p> <code>st1</code> and
      * <code>sc1</code>: 125-16,384</p> </li> <li> <p> <code>standard</code>:
-     * 1-1,024</p> </li> </ul> <p>Default: If no size is specified, the existing size
-     * is retained.</p>
+     * 1-1,024</p> </li> </ul> <p>Default: The existing size is retained.</p>
      */
     inline ModifyVolumeRequest& WithSize(int value) { SetSize(value); return *this;}
 
@@ -164,7 +160,7 @@ namespace Model
      * <p>The target EBS volume type of the volume. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>Default: If no type is specified, the existing type is retained.</p>
+     * <p>Default: The existing type is retained.</p>
      */
     inline const VolumeType& GetVolumeType() const{ return m_volumeType; }
 
@@ -172,7 +168,7 @@ namespace Model
      * <p>The target EBS volume type of the volume. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>Default: If no type is specified, the existing type is retained.</p>
+     * <p>Default: The existing type is retained.</p>
      */
     inline bool VolumeTypeHasBeenSet() const { return m_volumeTypeHasBeenSet; }
 
@@ -180,7 +176,7 @@ namespace Model
      * <p>The target EBS volume type of the volume. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>Default: If no type is specified, the existing type is retained.</p>
+     * <p>Default: The existing type is retained.</p>
      */
     inline void SetVolumeType(const VolumeType& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
 
@@ -188,7 +184,7 @@ namespace Model
      * <p>The target EBS volume type of the volume. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>Default: If no type is specified, the existing type is retained.</p>
+     * <p>Default: The existing type is retained.</p>
      */
     inline void SetVolumeType(VolumeType&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = std::move(value); }
 
@@ -196,7 +192,7 @@ namespace Model
      * <p>The target EBS volume type of the volume. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>Default: If no type is specified, the existing type is retained.</p>
+     * <p>Default: The existing type is retained.</p>
      */
     inline ModifyVolumeRequest& WithVolumeType(const VolumeType& value) { SetVolumeType(value); return *this;}
 
@@ -204,7 +200,7 @@ namespace Model
      * <p>The target EBS volume type of the volume. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>Default: If no type is specified, the existing type is retained.</p>
+     * <p>Default: The existing type is retained.</p>
      */
     inline ModifyVolumeRequest& WithVolumeType(VolumeType&& value) { SetVolumeType(std::move(value)); return *this;}
 
@@ -215,8 +211,9 @@ namespace Model
      * following are the supported values for each volume type:</p> <ul> <li> <p>
      * <code>gp3</code>: 3,000-16,000 IOPS</p> </li> <li> <p> <code>io1</code>:
      * 100-64,000 IOPS</p> </li> <li> <p> <code>io2</code>: 100-64,000 IOPS</p> </li>
-     * </ul> <p>Default: If no IOPS value is specified, the existing value is
-     * retained.</p>
+     * </ul> <p>Default: The existing value is retained if you keep the same volume
+     * type. If you change the volume type to <code>io1</code>, <code>io2</code>, or
+     * <code>gp3</code>, the default is 3,000.</p>
      */
     inline int GetIops() const{ return m_iops; }
 
@@ -226,8 +223,9 @@ namespace Model
      * following are the supported values for each volume type:</p> <ul> <li> <p>
      * <code>gp3</code>: 3,000-16,000 IOPS</p> </li> <li> <p> <code>io1</code>:
      * 100-64,000 IOPS</p> </li> <li> <p> <code>io2</code>: 100-64,000 IOPS</p> </li>
-     * </ul> <p>Default: If no IOPS value is specified, the existing value is
-     * retained.</p>
+     * </ul> <p>Default: The existing value is retained if you keep the same volume
+     * type. If you change the volume type to <code>io1</code>, <code>io2</code>, or
+     * <code>gp3</code>, the default is 3,000.</p>
      */
     inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
 
@@ -237,8 +235,9 @@ namespace Model
      * following are the supported values for each volume type:</p> <ul> <li> <p>
      * <code>gp3</code>: 3,000-16,000 IOPS</p> </li> <li> <p> <code>io1</code>:
      * 100-64,000 IOPS</p> </li> <li> <p> <code>io2</code>: 100-64,000 IOPS</p> </li>
-     * </ul> <p>Default: If no IOPS value is specified, the existing value is
-     * retained.</p>
+     * </ul> <p>Default: The existing value is retained if you keep the same volume
+     * type. If you change the volume type to <code>io1</code>, <code>io2</code>, or
+     * <code>gp3</code>, the default is 3,000.</p>
      */
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
@@ -248,41 +247,46 @@ namespace Model
      * following are the supported values for each volume type:</p> <ul> <li> <p>
      * <code>gp3</code>: 3,000-16,000 IOPS</p> </li> <li> <p> <code>io1</code>:
      * 100-64,000 IOPS</p> </li> <li> <p> <code>io2</code>: 100-64,000 IOPS</p> </li>
-     * </ul> <p>Default: If no IOPS value is specified, the existing value is
-     * retained.</p>
+     * </ul> <p>Default: The existing value is retained if you keep the same volume
+     * type. If you change the volume type to <code>io1</code>, <code>io2</code>, or
+     * <code>gp3</code>, the default is 3,000.</p>
      */
     inline ModifyVolumeRequest& WithIops(int value) { SetIops(value); return *this;}
 
 
     /**
      * <p>The target throughput of the volume, in MiB/s. This parameter is valid only
-     * for <code>gp3</code> volumes. The maximum value is 1,000.</p> <p>Default: If no
-     * throughput value is specified, the existing value is retained.</p> <p>Valid
-     * Range: Minimum value of 125. Maximum value of 1000.</p>
+     * for <code>gp3</code> volumes. The maximum value is 1,000.</p> <p>Default: The
+     * existing value is retained if the source and target volume type is
+     * <code>gp3</code>. Otherwise, the default value is 125.</p> <p>Valid Range:
+     * Minimum value of 125. Maximum value of 1000.</p>
      */
     inline int GetThroughput() const{ return m_throughput; }
 
     /**
      * <p>The target throughput of the volume, in MiB/s. This parameter is valid only
-     * for <code>gp3</code> volumes. The maximum value is 1,000.</p> <p>Default: If no
-     * throughput value is specified, the existing value is retained.</p> <p>Valid
-     * Range: Minimum value of 125. Maximum value of 1000.</p>
+     * for <code>gp3</code> volumes. The maximum value is 1,000.</p> <p>Default: The
+     * existing value is retained if the source and target volume type is
+     * <code>gp3</code>. Otherwise, the default value is 125.</p> <p>Valid Range:
+     * Minimum value of 125. Maximum value of 1000.</p>
      */
     inline bool ThroughputHasBeenSet() const { return m_throughputHasBeenSet; }
 
     /**
      * <p>The target throughput of the volume, in MiB/s. This parameter is valid only
-     * for <code>gp3</code> volumes. The maximum value is 1,000.</p> <p>Default: If no
-     * throughput value is specified, the existing value is retained.</p> <p>Valid
-     * Range: Minimum value of 125. Maximum value of 1000.</p>
+     * for <code>gp3</code> volumes. The maximum value is 1,000.</p> <p>Default: The
+     * existing value is retained if the source and target volume type is
+     * <code>gp3</code>. Otherwise, the default value is 125.</p> <p>Valid Range:
+     * Minimum value of 125. Maximum value of 1000.</p>
      */
     inline void SetThroughput(int value) { m_throughputHasBeenSet = true; m_throughput = value; }
 
     /**
      * <p>The target throughput of the volume, in MiB/s. This parameter is valid only
-     * for <code>gp3</code> volumes. The maximum value is 1,000.</p> <p>Default: If no
-     * throughput value is specified, the existing value is retained.</p> <p>Valid
-     * Range: Minimum value of 125. Maximum value of 1000.</p>
+     * for <code>gp3</code> volumes. The maximum value is 1,000.</p> <p>Default: The
+     * existing value is retained if the source and target volume type is
+     * <code>gp3</code>. Otherwise, the default value is 125.</p> <p>Valid Range:
+     * Minimum value of 125. Maximum value of 1000.</p>
      */
     inline ModifyVolumeRequest& WithThroughput(int value) { SetThroughput(value); return *this;}
 

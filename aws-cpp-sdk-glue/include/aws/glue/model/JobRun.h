@@ -333,48 +333,48 @@ namespace Model
     /**
      * <p>The current state of the job run. For more information about the statuses of
      * jobs that have terminated abnormally, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/job-run-statuses.html">AWS Glue
-     * Job Run Statuses</a>.</p>
+     * href="https://docs.aws.amazon.com/glue/latest/dg/job-run-statuses.html">Glue Job
+     * Run Statuses</a>.</p>
      */
     inline const JobRunState& GetJobRunState() const{ return m_jobRunState; }
 
     /**
      * <p>The current state of the job run. For more information about the statuses of
      * jobs that have terminated abnormally, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/job-run-statuses.html">AWS Glue
-     * Job Run Statuses</a>.</p>
+     * href="https://docs.aws.amazon.com/glue/latest/dg/job-run-statuses.html">Glue Job
+     * Run Statuses</a>.</p>
      */
     inline bool JobRunStateHasBeenSet() const { return m_jobRunStateHasBeenSet; }
 
     /**
      * <p>The current state of the job run. For more information about the statuses of
      * jobs that have terminated abnormally, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/job-run-statuses.html">AWS Glue
-     * Job Run Statuses</a>.</p>
+     * href="https://docs.aws.amazon.com/glue/latest/dg/job-run-statuses.html">Glue Job
+     * Run Statuses</a>.</p>
      */
     inline void SetJobRunState(const JobRunState& value) { m_jobRunStateHasBeenSet = true; m_jobRunState = value; }
 
     /**
      * <p>The current state of the job run. For more information about the statuses of
      * jobs that have terminated abnormally, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/job-run-statuses.html">AWS Glue
-     * Job Run Statuses</a>.</p>
+     * href="https://docs.aws.amazon.com/glue/latest/dg/job-run-statuses.html">Glue Job
+     * Run Statuses</a>.</p>
      */
     inline void SetJobRunState(JobRunState&& value) { m_jobRunStateHasBeenSet = true; m_jobRunState = std::move(value); }
 
     /**
      * <p>The current state of the job run. For more information about the statuses of
      * jobs that have terminated abnormally, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/job-run-statuses.html">AWS Glue
-     * Job Run Statuses</a>.</p>
+     * href="https://docs.aws.amazon.com/glue/latest/dg/job-run-statuses.html">Glue Job
+     * Run Statuses</a>.</p>
      */
     inline JobRun& WithJobRunState(const JobRunState& value) { SetJobRunState(value); return *this;}
 
     /**
      * <p>The current state of the job run. For more information about the statuses of
      * jobs that have terminated abnormally, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/job-run-statuses.html">AWS Glue
-     * Job Run Statuses</a>.</p>
+     * href="https://docs.aws.amazon.com/glue/latest/dg/job-run-statuses.html">Glue Job
+     * Run Statuses</a>.</p>
      */
     inline JobRun& WithJobRunState(JobRunState&& value) { SetJobRunState(std::move(value)); return *this;}
 
@@ -383,13 +383,13 @@ namespace Model
      * <p>The job arguments associated with this run. For this job run, they replace
      * the default arguments set in the job definition itself.</p> <p>You can specify
      * arguments here that your own job-execution script consumes, as well as arguments
-     * that AWS Glue itself consumes.</p> <p>For information about how to specify and
+     * that Glue itself consumes.</p> <p>For information about how to specify and
      * consume your own job arguments, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
-     * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
-     * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
+     * Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
+     * about the key-value pairs that Glue consumes to set up your job, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
-     * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
+     * Parameters Used by Glue</a> topic in the developer guide.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetArguments() const{ return m_arguments; }
 
@@ -397,13 +397,13 @@ namespace Model
      * <p>The job arguments associated with this run. For this job run, they replace
      * the default arguments set in the job definition itself.</p> <p>You can specify
      * arguments here that your own job-execution script consumes, as well as arguments
-     * that AWS Glue itself consumes.</p> <p>For information about how to specify and
+     * that Glue itself consumes.</p> <p>For information about how to specify and
      * consume your own job arguments, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
-     * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
-     * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
+     * Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
+     * about the key-value pairs that Glue consumes to set up your job, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
-     * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
+     * Parameters Used by Glue</a> topic in the developer guide.</p>
      */
     inline bool ArgumentsHasBeenSet() const { return m_argumentsHasBeenSet; }
 
@@ -411,13 +411,13 @@ namespace Model
      * <p>The job arguments associated with this run. For this job run, they replace
      * the default arguments set in the job definition itself.</p> <p>You can specify
      * arguments here that your own job-execution script consumes, as well as arguments
-     * that AWS Glue itself consumes.</p> <p>For information about how to specify and
+     * that Glue itself consumes.</p> <p>For information about how to specify and
      * consume your own job arguments, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
-     * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
-     * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
+     * Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
+     * about the key-value pairs that Glue consumes to set up your job, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
-     * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
+     * Parameters Used by Glue</a> topic in the developer guide.</p>
      */
     inline void SetArguments(const Aws::Map<Aws::String, Aws::String>& value) { m_argumentsHasBeenSet = true; m_arguments = value; }
 
@@ -425,13 +425,13 @@ namespace Model
      * <p>The job arguments associated with this run. For this job run, they replace
      * the default arguments set in the job definition itself.</p> <p>You can specify
      * arguments here that your own job-execution script consumes, as well as arguments
-     * that AWS Glue itself consumes.</p> <p>For information about how to specify and
+     * that Glue itself consumes.</p> <p>For information about how to specify and
      * consume your own job arguments, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
-     * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
-     * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
+     * Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
+     * about the key-value pairs that Glue consumes to set up your job, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
-     * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
+     * Parameters Used by Glue</a> topic in the developer guide.</p>
      */
     inline void SetArguments(Aws::Map<Aws::String, Aws::String>&& value) { m_argumentsHasBeenSet = true; m_arguments = std::move(value); }
 
@@ -439,13 +439,13 @@ namespace Model
      * <p>The job arguments associated with this run. For this job run, they replace
      * the default arguments set in the job definition itself.</p> <p>You can specify
      * arguments here that your own job-execution script consumes, as well as arguments
-     * that AWS Glue itself consumes.</p> <p>For information about how to specify and
+     * that Glue itself consumes.</p> <p>For information about how to specify and
      * consume your own job arguments, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
-     * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
-     * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
+     * Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
+     * about the key-value pairs that Glue consumes to set up your job, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
-     * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
+     * Parameters Used by Glue</a> topic in the developer guide.</p>
      */
     inline JobRun& WithArguments(const Aws::Map<Aws::String, Aws::String>& value) { SetArguments(value); return *this;}
 
@@ -453,13 +453,13 @@ namespace Model
      * <p>The job arguments associated with this run. For this job run, they replace
      * the default arguments set in the job definition itself.</p> <p>You can specify
      * arguments here that your own job-execution script consumes, as well as arguments
-     * that AWS Glue itself consumes.</p> <p>For information about how to specify and
+     * that Glue itself consumes.</p> <p>For information about how to specify and
      * consume your own job arguments, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
-     * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
-     * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
+     * Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
+     * about the key-value pairs that Glue consumes to set up your job, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
-     * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
+     * Parameters Used by Glue</a> topic in the developer guide.</p>
      */
     inline JobRun& WithArguments(Aws::Map<Aws::String, Aws::String>&& value) { SetArguments(std::move(value)); return *this;}
 
@@ -467,13 +467,13 @@ namespace Model
      * <p>The job arguments associated with this run. For this job run, they replace
      * the default arguments set in the job definition itself.</p> <p>You can specify
      * arguments here that your own job-execution script consumes, as well as arguments
-     * that AWS Glue itself consumes.</p> <p>For information about how to specify and
+     * that Glue itself consumes.</p> <p>For information about how to specify and
      * consume your own job arguments, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
-     * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
-     * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
+     * Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
+     * about the key-value pairs that Glue consumes to set up your job, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
-     * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
+     * Parameters Used by Glue</a> topic in the developer guide.</p>
      */
     inline JobRun& AddArguments(const Aws::String& key, const Aws::String& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(key, value); return *this; }
 
@@ -481,13 +481,13 @@ namespace Model
      * <p>The job arguments associated with this run. For this job run, they replace
      * the default arguments set in the job definition itself.</p> <p>You can specify
      * arguments here that your own job-execution script consumes, as well as arguments
-     * that AWS Glue itself consumes.</p> <p>For information about how to specify and
+     * that Glue itself consumes.</p> <p>For information about how to specify and
      * consume your own job arguments, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
-     * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
-     * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
+     * Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
+     * about the key-value pairs that Glue consumes to set up your job, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
-     * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
+     * Parameters Used by Glue</a> topic in the developer guide.</p>
      */
     inline JobRun& AddArguments(Aws::String&& key, const Aws::String& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(std::move(key), value); return *this; }
 
@@ -495,13 +495,13 @@ namespace Model
      * <p>The job arguments associated with this run. For this job run, they replace
      * the default arguments set in the job definition itself.</p> <p>You can specify
      * arguments here that your own job-execution script consumes, as well as arguments
-     * that AWS Glue itself consumes.</p> <p>For information about how to specify and
+     * that Glue itself consumes.</p> <p>For information about how to specify and
      * consume your own job arguments, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
-     * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
-     * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
+     * Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
+     * about the key-value pairs that Glue consumes to set up your job, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
-     * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
+     * Parameters Used by Glue</a> topic in the developer guide.</p>
      */
     inline JobRun& AddArguments(const Aws::String& key, Aws::String&& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(key, std::move(value)); return *this; }
 
@@ -509,13 +509,13 @@ namespace Model
      * <p>The job arguments associated with this run. For this job run, they replace
      * the default arguments set in the job definition itself.</p> <p>You can specify
      * arguments here that your own job-execution script consumes, as well as arguments
-     * that AWS Glue itself consumes.</p> <p>For information about how to specify and
+     * that Glue itself consumes.</p> <p>For information about how to specify and
      * consume your own job arguments, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
-     * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
-     * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
+     * Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
+     * about the key-value pairs that Glue consumes to set up your job, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
-     * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
+     * Parameters Used by Glue</a> topic in the developer guide.</p>
      */
     inline JobRun& AddArguments(Aws::String&& key, Aws::String&& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -523,13 +523,13 @@ namespace Model
      * <p>The job arguments associated with this run. For this job run, they replace
      * the default arguments set in the job definition itself.</p> <p>You can specify
      * arguments here that your own job-execution script consumes, as well as arguments
-     * that AWS Glue itself consumes.</p> <p>For information about how to specify and
+     * that Glue itself consumes.</p> <p>For information about how to specify and
      * consume your own job arguments, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
-     * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
-     * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
+     * Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
+     * about the key-value pairs that Glue consumes to set up your job, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
-     * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
+     * Parameters Used by Glue</a> topic in the developer guide.</p>
      */
     inline JobRun& AddArguments(const char* key, Aws::String&& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(key, std::move(value)); return *this; }
 
@@ -537,13 +537,13 @@ namespace Model
      * <p>The job arguments associated with this run. For this job run, they replace
      * the default arguments set in the job definition itself.</p> <p>You can specify
      * arguments here that your own job-execution script consumes, as well as arguments
-     * that AWS Glue itself consumes.</p> <p>For information about how to specify and
+     * that Glue itself consumes.</p> <p>For information about how to specify and
      * consume your own job arguments, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
-     * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
-     * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
+     * Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
+     * about the key-value pairs that Glue consumes to set up your job, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
-     * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
+     * Parameters Used by Glue</a> topic in the developer guide.</p>
      */
     inline JobRun& AddArguments(Aws::String&& key, const char* value) { m_argumentsHasBeenSet = true; m_arguments.emplace(std::move(key), value); return *this; }
 
@@ -551,13 +551,13 @@ namespace Model
      * <p>The job arguments associated with this run. For this job run, they replace
      * the default arguments set in the job definition itself.</p> <p>You can specify
      * arguments here that your own job-execution script consumes, as well as arguments
-     * that AWS Glue itself consumes.</p> <p>For information about how to specify and
+     * that Glue itself consumes.</p> <p>For information about how to specify and
      * consume your own job arguments, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
-     * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
-     * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
+     * Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
+     * about the key-value pairs that Glue consumes to set up your job, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
-     * Parameters Used by AWS Glue</a> topic in the developer guide.</p>
+     * Parameters Used by Glue</a> topic in the developer guide.</p>
      */
     inline JobRun& AddArguments(const char* key, const char* value) { m_argumentsHasBeenSet = true; m_arguments.emplace(key, value); return *this; }
 
@@ -699,77 +699,69 @@ namespace Model
 
 
     /**
-     * <p>The number of AWS Glue data processing units (DPUs) that can be allocated
-     * when this job runs. A DPU is a relative measure of processing power that
-     * consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
-     * information, see the <a
-     * href="https://docs.aws.amazon.com/https:/aws.amazon.com/glue/pricing/">AWS Glue
-     * pricing page</a>.</p> <p>Do not set <code>Max Capacity</code> if using
-     * <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p> <p>The value that
-     * can be allocated for <code>MaxCapacity</code> depends on whether you are running
-     * a Python shell job or an Apache Spark ETL job:</p> <ul> <li> <p>When you specify
-     * a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
-     * allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li> <li>
-     * <p>When you specify an Apache Spark ETL job
-     * (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100 DPUs.
-     * The default is 10 DPUs. This job type cannot have a fractional DPU
+     * <p>The number of Glue data processing units (DPUs) that can be allocated when
+     * this job runs. A DPU is a relative measure of processing power that consists of
+     * 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the
+     * <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p> <p>Do
+     * not set <code>Max Capacity</code> if using <code>WorkerType</code> and
+     * <code>NumberOfWorkers</code>.</p> <p>The value that can be allocated for
+     * <code>MaxCapacity</code> depends on whether you are running a Python shell job
+     * or an Apache Spark ETL job:</p> <ul> <li> <p>When you specify a Python shell job
+     * (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or
+     * 1 DPU. The default is 0.0625 DPU.</p> </li> <li> <p>When you specify an Apache
+     * Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2
+     * to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU
      * allocation.</p> </li> </ul>
      */
     inline double GetMaxCapacity() const{ return m_maxCapacity; }
 
     /**
-     * <p>The number of AWS Glue data processing units (DPUs) that can be allocated
-     * when this job runs. A DPU is a relative measure of processing power that
-     * consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
-     * information, see the <a
-     * href="https://docs.aws.amazon.com/https:/aws.amazon.com/glue/pricing/">AWS Glue
-     * pricing page</a>.</p> <p>Do not set <code>Max Capacity</code> if using
-     * <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p> <p>The value that
-     * can be allocated for <code>MaxCapacity</code> depends on whether you are running
-     * a Python shell job or an Apache Spark ETL job:</p> <ul> <li> <p>When you specify
-     * a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
-     * allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li> <li>
-     * <p>When you specify an Apache Spark ETL job
-     * (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100 DPUs.
-     * The default is 10 DPUs. This job type cannot have a fractional DPU
+     * <p>The number of Glue data processing units (DPUs) that can be allocated when
+     * this job runs. A DPU is a relative measure of processing power that consists of
+     * 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the
+     * <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p> <p>Do
+     * not set <code>Max Capacity</code> if using <code>WorkerType</code> and
+     * <code>NumberOfWorkers</code>.</p> <p>The value that can be allocated for
+     * <code>MaxCapacity</code> depends on whether you are running a Python shell job
+     * or an Apache Spark ETL job:</p> <ul> <li> <p>When you specify a Python shell job
+     * (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or
+     * 1 DPU. The default is 0.0625 DPU.</p> </li> <li> <p>When you specify an Apache
+     * Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2
+     * to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU
      * allocation.</p> </li> </ul>
      */
     inline bool MaxCapacityHasBeenSet() const { return m_maxCapacityHasBeenSet; }
 
     /**
-     * <p>The number of AWS Glue data processing units (DPUs) that can be allocated
-     * when this job runs. A DPU is a relative measure of processing power that
-     * consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
-     * information, see the <a
-     * href="https://docs.aws.amazon.com/https:/aws.amazon.com/glue/pricing/">AWS Glue
-     * pricing page</a>.</p> <p>Do not set <code>Max Capacity</code> if using
-     * <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p> <p>The value that
-     * can be allocated for <code>MaxCapacity</code> depends on whether you are running
-     * a Python shell job or an Apache Spark ETL job:</p> <ul> <li> <p>When you specify
-     * a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
-     * allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li> <li>
-     * <p>When you specify an Apache Spark ETL job
-     * (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100 DPUs.
-     * The default is 10 DPUs. This job type cannot have a fractional DPU
+     * <p>The number of Glue data processing units (DPUs) that can be allocated when
+     * this job runs. A DPU is a relative measure of processing power that consists of
+     * 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the
+     * <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p> <p>Do
+     * not set <code>Max Capacity</code> if using <code>WorkerType</code> and
+     * <code>NumberOfWorkers</code>.</p> <p>The value that can be allocated for
+     * <code>MaxCapacity</code> depends on whether you are running a Python shell job
+     * or an Apache Spark ETL job:</p> <ul> <li> <p>When you specify a Python shell job
+     * (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or
+     * 1 DPU. The default is 0.0625 DPU.</p> </li> <li> <p>When you specify an Apache
+     * Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2
+     * to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU
      * allocation.</p> </li> </ul>
      */
     inline void SetMaxCapacity(double value) { m_maxCapacityHasBeenSet = true; m_maxCapacity = value; }
 
     /**
-     * <p>The number of AWS Glue data processing units (DPUs) that can be allocated
-     * when this job runs. A DPU is a relative measure of processing power that
-     * consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
-     * information, see the <a
-     * href="https://docs.aws.amazon.com/https:/aws.amazon.com/glue/pricing/">AWS Glue
-     * pricing page</a>.</p> <p>Do not set <code>Max Capacity</code> if using
-     * <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p> <p>The value that
-     * can be allocated for <code>MaxCapacity</code> depends on whether you are running
-     * a Python shell job or an Apache Spark ETL job:</p> <ul> <li> <p>When you specify
-     * a Python shell job (<code>JobCommand.Name</code>="pythonshell"), you can
-     * allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li> <li>
-     * <p>When you specify an Apache Spark ETL job
-     * (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100 DPUs.
-     * The default is 10 DPUs. This job type cannot have a fractional DPU
+     * <p>The number of Glue data processing units (DPUs) that can be allocated when
+     * this job runs. A DPU is a relative measure of processing power that consists of
+     * 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the
+     * <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p> <p>Do
+     * not set <code>Max Capacity</code> if using <code>WorkerType</code> and
+     * <code>NumberOfWorkers</code>.</p> <p>The value that can be allocated for
+     * <code>MaxCapacity</code> depends on whether you are running a Python shell job
+     * or an Apache Spark ETL job:</p> <ul> <li> <p>When you specify a Python shell job
+     * (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or
+     * 1 DPU. The default is 0.0625 DPU.</p> </li> <li> <p>When you specify an Apache
+     * Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2
+     * to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU
      * allocation.</p> </li> </ul>
      */
     inline JobRun& WithMaxCapacity(double value) { SetMaxCapacity(value); return *this;}
@@ -928,7 +920,7 @@ namespace Model
 
     /**
      * <p>The name of the log group for secure logging that can be server-side
-     * encrypted in Amazon CloudWatch using AWS KMS. This name can be
+     * encrypted in Amazon CloudWatch using KMS. This name can be
      * <code>/aws-glue/jobs/</code>, in which case the default encryption is
      * <code>NONE</code>. If you add a role name and <code>SecurityConfiguration</code>
      * name (in other words,
@@ -939,7 +931,7 @@ namespace Model
 
     /**
      * <p>The name of the log group for secure logging that can be server-side
-     * encrypted in Amazon CloudWatch using AWS KMS. This name can be
+     * encrypted in Amazon CloudWatch using KMS. This name can be
      * <code>/aws-glue/jobs/</code>, in which case the default encryption is
      * <code>NONE</code>. If you add a role name and <code>SecurityConfiguration</code>
      * name (in other words,
@@ -950,7 +942,7 @@ namespace Model
 
     /**
      * <p>The name of the log group for secure logging that can be server-side
-     * encrypted in Amazon CloudWatch using AWS KMS. This name can be
+     * encrypted in Amazon CloudWatch using KMS. This name can be
      * <code>/aws-glue/jobs/</code>, in which case the default encryption is
      * <code>NONE</code>. If you add a role name and <code>SecurityConfiguration</code>
      * name (in other words,
@@ -961,7 +953,7 @@ namespace Model
 
     /**
      * <p>The name of the log group for secure logging that can be server-side
-     * encrypted in Amazon CloudWatch using AWS KMS. This name can be
+     * encrypted in Amazon CloudWatch using KMS. This name can be
      * <code>/aws-glue/jobs/</code>, in which case the default encryption is
      * <code>NONE</code>. If you add a role name and <code>SecurityConfiguration</code>
      * name (in other words,
@@ -972,7 +964,7 @@ namespace Model
 
     /**
      * <p>The name of the log group for secure logging that can be server-side
-     * encrypted in Amazon CloudWatch using AWS KMS. This name can be
+     * encrypted in Amazon CloudWatch using KMS. This name can be
      * <code>/aws-glue/jobs/</code>, in which case the default encryption is
      * <code>NONE</code>. If you add a role name and <code>SecurityConfiguration</code>
      * name (in other words,
@@ -983,7 +975,7 @@ namespace Model
 
     /**
      * <p>The name of the log group for secure logging that can be server-side
-     * encrypted in Amazon CloudWatch using AWS KMS. This name can be
+     * encrypted in Amazon CloudWatch using KMS. This name can be
      * <code>/aws-glue/jobs/</code>, in which case the default encryption is
      * <code>NONE</code>. If you add a role name and <code>SecurityConfiguration</code>
      * name (in other words,
@@ -994,7 +986,7 @@ namespace Model
 
     /**
      * <p>The name of the log group for secure logging that can be server-side
-     * encrypted in Amazon CloudWatch using AWS KMS. This name can be
+     * encrypted in Amazon CloudWatch using KMS. This name can be
      * <code>/aws-glue/jobs/</code>, in which case the default encryption is
      * <code>NONE</code>. If you add a role name and <code>SecurityConfiguration</code>
      * name (in other words,
@@ -1005,7 +997,7 @@ namespace Model
 
     /**
      * <p>The name of the log group for secure logging that can be server-side
-     * encrypted in Amazon CloudWatch using AWS KMS. This name can be
+     * encrypted in Amazon CloudWatch using KMS. This name can be
      * <code>/aws-glue/jobs/</code>, in which case the default encryption is
      * <code>NONE</code>. If you add a role name and <code>SecurityConfiguration</code>
      * name (in other words,
@@ -1047,9 +1039,9 @@ namespace Model
 
 
     /**
-     * <p>Glue version determines the versions of Apache Spark and Python that AWS Glue
+     * <p>Glue version determines the versions of Apache Spark and Python that Glue
      * supports. The Python version indicates the version supported for jobs of type
-     * Spark. </p> <p>For more information about the available AWS Glue versions and
+     * Spark. </p> <p>For more information about the available Glue versions and
      * corresponding Spark and Python versions, see <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
      * in the developer guide.</p> <p>Jobs that are created without specifying a Glue
@@ -1058,9 +1050,9 @@ namespace Model
     inline const Aws::String& GetGlueVersion() const{ return m_glueVersion; }
 
     /**
-     * <p>Glue version determines the versions of Apache Spark and Python that AWS Glue
+     * <p>Glue version determines the versions of Apache Spark and Python that Glue
      * supports. The Python version indicates the version supported for jobs of type
-     * Spark. </p> <p>For more information about the available AWS Glue versions and
+     * Spark. </p> <p>For more information about the available Glue versions and
      * corresponding Spark and Python versions, see <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
      * in the developer guide.</p> <p>Jobs that are created without specifying a Glue
@@ -1069,9 +1061,9 @@ namespace Model
     inline bool GlueVersionHasBeenSet() const { return m_glueVersionHasBeenSet; }
 
     /**
-     * <p>Glue version determines the versions of Apache Spark and Python that AWS Glue
+     * <p>Glue version determines the versions of Apache Spark and Python that Glue
      * supports. The Python version indicates the version supported for jobs of type
-     * Spark. </p> <p>For more information about the available AWS Glue versions and
+     * Spark. </p> <p>For more information about the available Glue versions and
      * corresponding Spark and Python versions, see <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
      * in the developer guide.</p> <p>Jobs that are created without specifying a Glue
@@ -1080,9 +1072,9 @@ namespace Model
     inline void SetGlueVersion(const Aws::String& value) { m_glueVersionHasBeenSet = true; m_glueVersion = value; }
 
     /**
-     * <p>Glue version determines the versions of Apache Spark and Python that AWS Glue
+     * <p>Glue version determines the versions of Apache Spark and Python that Glue
      * supports. The Python version indicates the version supported for jobs of type
-     * Spark. </p> <p>For more information about the available AWS Glue versions and
+     * Spark. </p> <p>For more information about the available Glue versions and
      * corresponding Spark and Python versions, see <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
      * in the developer guide.</p> <p>Jobs that are created without specifying a Glue
@@ -1091,9 +1083,9 @@ namespace Model
     inline void SetGlueVersion(Aws::String&& value) { m_glueVersionHasBeenSet = true; m_glueVersion = std::move(value); }
 
     /**
-     * <p>Glue version determines the versions of Apache Spark and Python that AWS Glue
+     * <p>Glue version determines the versions of Apache Spark and Python that Glue
      * supports. The Python version indicates the version supported for jobs of type
-     * Spark. </p> <p>For more information about the available AWS Glue versions and
+     * Spark. </p> <p>For more information about the available Glue versions and
      * corresponding Spark and Python versions, see <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
      * in the developer guide.</p> <p>Jobs that are created without specifying a Glue
@@ -1102,9 +1094,9 @@ namespace Model
     inline void SetGlueVersion(const char* value) { m_glueVersionHasBeenSet = true; m_glueVersion.assign(value); }
 
     /**
-     * <p>Glue version determines the versions of Apache Spark and Python that AWS Glue
+     * <p>Glue version determines the versions of Apache Spark and Python that Glue
      * supports. The Python version indicates the version supported for jobs of type
-     * Spark. </p> <p>For more information about the available AWS Glue versions and
+     * Spark. </p> <p>For more information about the available Glue versions and
      * corresponding Spark and Python versions, see <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
      * in the developer guide.</p> <p>Jobs that are created without specifying a Glue
@@ -1113,9 +1105,9 @@ namespace Model
     inline JobRun& WithGlueVersion(const Aws::String& value) { SetGlueVersion(value); return *this;}
 
     /**
-     * <p>Glue version determines the versions of Apache Spark and Python that AWS Glue
+     * <p>Glue version determines the versions of Apache Spark and Python that Glue
      * supports. The Python version indicates the version supported for jobs of type
-     * Spark. </p> <p>For more information about the available AWS Glue versions and
+     * Spark. </p> <p>For more information about the available Glue versions and
      * corresponding Spark and Python versions, see <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
      * in the developer guide.</p> <p>Jobs that are created without specifying a Glue
@@ -1124,15 +1116,68 @@ namespace Model
     inline JobRun& WithGlueVersion(Aws::String&& value) { SetGlueVersion(std::move(value)); return *this;}
 
     /**
-     * <p>Glue version determines the versions of Apache Spark and Python that AWS Glue
+     * <p>Glue version determines the versions of Apache Spark and Python that Glue
      * supports. The Python version indicates the version supported for jobs of type
-     * Spark. </p> <p>For more information about the available AWS Glue versions and
+     * Spark. </p> <p>For more information about the available Glue versions and
      * corresponding Spark and Python versions, see <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
      * in the developer guide.</p> <p>Jobs that are created without specifying a Glue
      * version default to Glue 0.9.</p>
      */
     inline JobRun& WithGlueVersion(const char* value) { SetGlueVersion(value); return *this;}
+
+
+    /**
+     * <p>This field populates only when an Auto Scaling job run completes, and
+     * represents the total time each executor ran during the lifecycle of a job run in
+     * seconds, multiplied by a DPU factor (1 for <code>G.1X</code> and 2 for
+     * <code>G.2X</code> workers). This value may be different than the
+     * <code>executionEngineRuntime</code> * <code>MaxCapacity</code> as in the case of
+     * Auto Scaling jobs, as the number of executors running at a given time may be
+     * less than the <code>MaxCapacity</code>. Therefore, it is possible that the value
+     * of <code>DPUSeconds</code> is less than <code>executionEngineRuntime</code> *
+     * <code>MaxCapacity</code>.</p>
+     */
+    inline double GetDPUSeconds() const{ return m_dPUSeconds; }
+
+    /**
+     * <p>This field populates only when an Auto Scaling job run completes, and
+     * represents the total time each executor ran during the lifecycle of a job run in
+     * seconds, multiplied by a DPU factor (1 for <code>G.1X</code> and 2 for
+     * <code>G.2X</code> workers). This value may be different than the
+     * <code>executionEngineRuntime</code> * <code>MaxCapacity</code> as in the case of
+     * Auto Scaling jobs, as the number of executors running at a given time may be
+     * less than the <code>MaxCapacity</code>. Therefore, it is possible that the value
+     * of <code>DPUSeconds</code> is less than <code>executionEngineRuntime</code> *
+     * <code>MaxCapacity</code>.</p>
+     */
+    inline bool DPUSecondsHasBeenSet() const { return m_dPUSecondsHasBeenSet; }
+
+    /**
+     * <p>This field populates only when an Auto Scaling job run completes, and
+     * represents the total time each executor ran during the lifecycle of a job run in
+     * seconds, multiplied by a DPU factor (1 for <code>G.1X</code> and 2 for
+     * <code>G.2X</code> workers). This value may be different than the
+     * <code>executionEngineRuntime</code> * <code>MaxCapacity</code> as in the case of
+     * Auto Scaling jobs, as the number of executors running at a given time may be
+     * less than the <code>MaxCapacity</code>. Therefore, it is possible that the value
+     * of <code>DPUSeconds</code> is less than <code>executionEngineRuntime</code> *
+     * <code>MaxCapacity</code>.</p>
+     */
+    inline void SetDPUSeconds(double value) { m_dPUSecondsHasBeenSet = true; m_dPUSeconds = value; }
+
+    /**
+     * <p>This field populates only when an Auto Scaling job run completes, and
+     * represents the total time each executor ran during the lifecycle of a job run in
+     * seconds, multiplied by a DPU factor (1 for <code>G.1X</code> and 2 for
+     * <code>G.2X</code> workers). This value may be different than the
+     * <code>executionEngineRuntime</code> * <code>MaxCapacity</code> as in the case of
+     * Auto Scaling jobs, as the number of executors running at a given time may be
+     * less than the <code>MaxCapacity</code>. Therefore, it is possible that the value
+     * of <code>DPUSeconds</code> is less than <code>executionEngineRuntime</code> *
+     * <code>MaxCapacity</code>.</p>
+     */
+    inline JobRun& WithDPUSeconds(double value) { SetDPUSeconds(value); return *this;}
 
   private:
 
@@ -1198,6 +1243,9 @@ namespace Model
 
     Aws::String m_glueVersion;
     bool m_glueVersionHasBeenSet;
+
+    double m_dPUSeconds;
+    bool m_dPUSecondsHasBeenSet;
   };
 
 } // namespace Model

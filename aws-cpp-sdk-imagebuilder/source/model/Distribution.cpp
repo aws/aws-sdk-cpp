@@ -22,7 +22,10 @@ Distribution::Distribution() :
     m_regionHasBeenSet(false),
     m_amiDistributionConfigurationHasBeenSet(false),
     m_containerDistributionConfigurationHasBeenSet(false),
-    m_licenseConfigurationArnsHasBeenSet(false)
+    m_licenseConfigurationArnsHasBeenSet(false),
+    m_launchTemplateConfigurationsHasBeenSet(false),
+    m_s3ExportConfigurationHasBeenSet(false),
+    m_fastLaunchConfigurationsHasBeenSet(false)
 {
 }
 
@@ -30,7 +33,10 @@ Distribution::Distribution(JsonView jsonValue) :
     m_regionHasBeenSet(false),
     m_amiDistributionConfigurationHasBeenSet(false),
     m_containerDistributionConfigurationHasBeenSet(false),
-    m_licenseConfigurationArnsHasBeenSet(false)
+    m_licenseConfigurationArnsHasBeenSet(false),
+    m_launchTemplateConfigurationsHasBeenSet(false),
+    m_s3ExportConfigurationHasBeenSet(false),
+    m_fastLaunchConfigurationsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -68,6 +74,33 @@ Distribution& Distribution::operator =(JsonView jsonValue)
     m_licenseConfigurationArnsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("launchTemplateConfigurations"))
+  {
+    Array<JsonView> launchTemplateConfigurationsJsonList = jsonValue.GetArray("launchTemplateConfigurations");
+    for(unsigned launchTemplateConfigurationsIndex = 0; launchTemplateConfigurationsIndex < launchTemplateConfigurationsJsonList.GetLength(); ++launchTemplateConfigurationsIndex)
+    {
+      m_launchTemplateConfigurations.push_back(launchTemplateConfigurationsJsonList[launchTemplateConfigurationsIndex].AsObject());
+    }
+    m_launchTemplateConfigurationsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("s3ExportConfiguration"))
+  {
+    m_s3ExportConfiguration = jsonValue.GetObject("s3ExportConfiguration");
+
+    m_s3ExportConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("fastLaunchConfigurations"))
+  {
+    Array<JsonView> fastLaunchConfigurationsJsonList = jsonValue.GetArray("fastLaunchConfigurations");
+    for(unsigned fastLaunchConfigurationsIndex = 0; fastLaunchConfigurationsIndex < fastLaunchConfigurationsJsonList.GetLength(); ++fastLaunchConfigurationsIndex)
+    {
+      m_fastLaunchConfigurations.push_back(fastLaunchConfigurationsJsonList[fastLaunchConfigurationsIndex].AsObject());
+    }
+    m_fastLaunchConfigurationsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -101,6 +134,34 @@ JsonValue Distribution::Jsonize() const
      licenseConfigurationArnsJsonList[licenseConfigurationArnsIndex].AsString(m_licenseConfigurationArns[licenseConfigurationArnsIndex]);
    }
    payload.WithArray("licenseConfigurationArns", std::move(licenseConfigurationArnsJsonList));
+
+  }
+
+  if(m_launchTemplateConfigurationsHasBeenSet)
+  {
+   Array<JsonValue> launchTemplateConfigurationsJsonList(m_launchTemplateConfigurations.size());
+   for(unsigned launchTemplateConfigurationsIndex = 0; launchTemplateConfigurationsIndex < launchTemplateConfigurationsJsonList.GetLength(); ++launchTemplateConfigurationsIndex)
+   {
+     launchTemplateConfigurationsJsonList[launchTemplateConfigurationsIndex].AsObject(m_launchTemplateConfigurations[launchTemplateConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("launchTemplateConfigurations", std::move(launchTemplateConfigurationsJsonList));
+
+  }
+
+  if(m_s3ExportConfigurationHasBeenSet)
+  {
+   payload.WithObject("s3ExportConfiguration", m_s3ExportConfiguration.Jsonize());
+
+  }
+
+  if(m_fastLaunchConfigurationsHasBeenSet)
+  {
+   Array<JsonValue> fastLaunchConfigurationsJsonList(m_fastLaunchConfigurations.size());
+   for(unsigned fastLaunchConfigurationsIndex = 0; fastLaunchConfigurationsIndex < fastLaunchConfigurationsJsonList.GetLength(); ++fastLaunchConfigurationsIndex)
+   {
+     fastLaunchConfigurationsJsonList[fastLaunchConfigurationsIndex].AsObject(m_fastLaunchConfigurations[fastLaunchConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("fastLaunchConfigurations", std::move(fastLaunchConfigurationsJsonList));
 
   }
 

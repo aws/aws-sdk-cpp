@@ -31,6 +31,12 @@ namespace Aws
         static const int Linux_with_SQL_Server_Standard_HASH = HashingUtils::HashString("Linux with SQL Server Standard");
         static const int Linux_with_SQL_Server_Web_HASH = HashingUtils::HashString("Linux with SQL Server Web");
         static const int Linux_with_SQL_Server_Enterprise_HASH = HashingUtils::HashString("Linux with SQL Server Enterprise");
+        static const int RHEL_with_SQL_Server_Standard_HASH = HashingUtils::HashString("RHEL with SQL Server Standard");
+        static const int RHEL_with_SQL_Server_Enterprise_HASH = HashingUtils::HashString("RHEL with SQL Server Enterprise");
+        static const int RHEL_with_SQL_Server_Web_HASH = HashingUtils::HashString("RHEL with SQL Server Web");
+        static const int RHEL_with_HA_HASH = HashingUtils::HashString("RHEL with HA");
+        static const int RHEL_with_HA_and_SQL_Server_Standard_HASH = HashingUtils::HashString("RHEL with HA and SQL Server Standard");
+        static const int RHEL_with_HA_and_SQL_Server_Enterprise_HASH = HashingUtils::HashString("RHEL with HA and SQL Server Enterprise");
 
 
         CapacityReservationInstancePlatform GetCapacityReservationInstancePlatformForName(const Aws::String& name)
@@ -80,6 +86,30 @@ namespace Aws
           {
             return CapacityReservationInstancePlatform::Linux_with_SQL_Server_Enterprise;
           }
+          else if (hashCode == RHEL_with_SQL_Server_Standard_HASH)
+          {
+            return CapacityReservationInstancePlatform::RHEL_with_SQL_Server_Standard;
+          }
+          else if (hashCode == RHEL_with_SQL_Server_Enterprise_HASH)
+          {
+            return CapacityReservationInstancePlatform::RHEL_with_SQL_Server_Enterprise;
+          }
+          else if (hashCode == RHEL_with_SQL_Server_Web_HASH)
+          {
+            return CapacityReservationInstancePlatform::RHEL_with_SQL_Server_Web;
+          }
+          else if (hashCode == RHEL_with_HA_HASH)
+          {
+            return CapacityReservationInstancePlatform::RHEL_with_HA;
+          }
+          else if (hashCode == RHEL_with_HA_and_SQL_Server_Standard_HASH)
+          {
+            return CapacityReservationInstancePlatform::RHEL_with_HA_and_SQL_Server_Standard;
+          }
+          else if (hashCode == RHEL_with_HA_and_SQL_Server_Enterprise_HASH)
+          {
+            return CapacityReservationInstancePlatform::RHEL_with_HA_and_SQL_Server_Enterprise;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -116,6 +146,18 @@ namespace Aws
             return "Linux with SQL Server Web";
           case CapacityReservationInstancePlatform::Linux_with_SQL_Server_Enterprise:
             return "Linux with SQL Server Enterprise";
+          case CapacityReservationInstancePlatform::RHEL_with_SQL_Server_Standard:
+            return "RHEL with SQL Server Standard";
+          case CapacityReservationInstancePlatform::RHEL_with_SQL_Server_Enterprise:
+            return "RHEL with SQL Server Enterprise";
+          case CapacityReservationInstancePlatform::RHEL_with_SQL_Server_Web:
+            return "RHEL with SQL Server Web";
+          case CapacityReservationInstancePlatform::RHEL_with_HA:
+            return "RHEL with HA";
+          case CapacityReservationInstancePlatform::RHEL_with_HA_and_SQL_Server_Standard:
+            return "RHEL with HA and SQL Server Standard";
+          case CapacityReservationInstancePlatform::RHEL_with_HA_and_SQL_Server_Enterprise:
+            return "RHEL with HA and SQL Server Enterprise";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

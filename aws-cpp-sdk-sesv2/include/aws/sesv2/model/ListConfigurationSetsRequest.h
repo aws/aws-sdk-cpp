@@ -22,7 +22,7 @@ namespace Model
 
   /**
    * <p>A request to obtain a list of configuration sets for your Amazon SES account
-   * in the current AWS Region.</p><p><h3>See Also:</h3>   <a
+   * in the current Amazon Web Services Region.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListConfigurationSetsRequest">AWS
    * API Reference</a></p>
    */

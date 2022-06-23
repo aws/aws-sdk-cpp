@@ -10,6 +10,8 @@
 #include <aws/core/Region.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/core/utils/Array.h>
+#include <aws/crt/Optional.h>
 #include <memory>
 
 namespace Aws
@@ -26,10 +28,6 @@ namespace Aws
             class RateLimiterInterface;
         } // namespace RateLimits
     } // namespace Utils
-    namespace Http
-    {
-        class HttpRequest; // forward declare
-    }
     namespace Client
     {
         class RetryStrategy; // forward declare
@@ -48,27 +46,6 @@ namespace Aws
         };
 
         /**
-        * Dynamic configuration per each request.
-        */
-        struct AWS_CORE_API ClientConfigurationPerRequest
-        {
-            ClientConfigurationPerRequest() : proxyScheme(Aws::Http::Scheme::HTTPS), proxyPort(0) {}
-
-            /**
-            * If you have users going through a proxy, set the proxy scheme here. Default HTTP
-            */
-            Aws::Http::Scheme proxyScheme;
-            /**
-             * If you have users going through a proxy, set the host here.
-             */
-            Aws::String proxyHost;
-            /**
-             * If you have users going through a proxy, set the port here.
-             */
-            unsigned proxyPort;
-        };
-
-        /**
          * This mutable structure is used to configure any of the AWS clients.
          * Default values can only be overwritten prior to passing to the client constructors.
          */
@@ -81,6 +58,13 @@ namespace Aws
              * The configuration file location can be set via the environment variable AWS_CONFIG_FILE
              */
             ClientConfiguration(const char* profileName);
+
+            /**
+             * Create a configuration with a predefined smart defaults
+             * @param useSmartDefaults, required to differentiate c-tors
+             * @param defaultMode, default mode to use
+             */
+            explicit ClientConfiguration(bool useSmartDefaults, const char* defaultMode = "legacy");
 
             /**
              * User Agent string user for http calls. This is filled in for you in the constructor. Don't override this unless you have a really good reason.
@@ -137,7 +121,7 @@ namespace Aws
              */
             unsigned long lowSpeedLimit;
             /**
-             * Strategy to use in case of failed requests. Default is DefaultRetryStrategy (e.g. exponential backoff)
+             * Strategy to use in case of failed requests. Default is DefaultRetryStrategy (i.e. exponential backoff)
              */
             std::shared_ptr<RetryStrategy> retryStrategy;
             /**
@@ -189,6 +173,10 @@ namespace Aws
             * Used to set CURLOPT_PROXY_KEYPASSWD in libcurl. Example: password1
             */
             Aws::String proxySSLKeyPassword;
+            /**
+            * Calls to hosts in this vector will not use proxy configuration
+            */
+            Aws::Utils::Array<Aws::String> nonProxyHosts;
             /**
             * Threading Executor implementation. Default uses std::thread::detach()
             */
@@ -253,25 +241,25 @@ namespace Aws
             /**
              * Enable endpoint discovery
              * For some services to dynamically set up their endpoints for different requests.
-             * Defaults to false, it's an opt-in feature.
-             * If disabled, regional or overriden endpoint will be used instead.
+             * By default, service clients will decide if endpoint discovery is enabled or not.
+             * If disabled, regional or overridden endpoint will be used instead.
              * If a request requires endpoint discovery but you disabled it. The request will never succeed.
+             * A boolean value is either true of false, use Optional here to have an instance does not contain a value,
+             * such that SDK will decide the default behavior as stated before, if no value specified.
              */
-            bool enableEndpointDiscovery;
+            Aws::Crt::Optional<bool> enableEndpointDiscovery;
 
             /**
-             * profileName in config file that will be used by this object to reslove more configurations.
+             * profileName in config file that will be used by this object to resolve more configurations.
              */
             Aws::String profileName;
-
-            /**
-             * Only works for Curl http client.
-             * Supplier for per-request client configuration. Invoked on each request.
-             * Per-request configuration parameter overrides parameter from initial configuration in case of difference.
-             * Default supplier returns empty configuration that overrides nothing.
-             */
-            std::function<Aws::Client::ClientConfigurationPerRequest(const Aws::Http::HttpRequest &)> perRequestConfiguration;
         };
+
+        /**
+         * A helper function to initialize a retry strategy.
+         * Default is DefaultRetryStrategy (i.e. exponential backoff)
+         */
+        std::shared_ptr<RetryStrategy> InitRetryStrategy(Aws::String retryMode = "");
 
     } // namespace Client
 } // namespace Aws

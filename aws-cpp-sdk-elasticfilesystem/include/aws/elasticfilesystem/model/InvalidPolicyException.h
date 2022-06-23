@@ -24,10 +24,10 @@ namespace Model
 {
 
   /**
-   * <p>Returned if the <code>FileSystemPolicy</code> is is malformed or contains an
-   * error such as an invalid parameter value or a missing required parameter.
-   * Returned in the case of a policy lockout safety check error.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Returned if the <code>FileSystemPolicy</code> is malformed or contains an
+   * error such as a parameter value that is not valid or a missing required
+   * parameter. Returned in the case of a policy lockout safety check
+   * error.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/InvalidPolicyException">AWS
    * API Reference</a></p>
    */

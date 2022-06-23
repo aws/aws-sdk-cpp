@@ -24,7 +24,9 @@ FileSourceSettings::FileSourceSettings() :
     m_framerateHasBeenSet(false),
     m_sourceFileHasBeenSet(false),
     m_timeDelta(0),
-    m_timeDeltaHasBeenSet(false)
+    m_timeDeltaHasBeenSet(false),
+    m_timeDeltaUnits(FileSourceTimeDeltaUnits::NOT_SET),
+    m_timeDeltaUnitsHasBeenSet(false)
 {
 }
 
@@ -34,7 +36,9 @@ FileSourceSettings::FileSourceSettings(JsonView jsonValue) :
     m_framerateHasBeenSet(false),
     m_sourceFileHasBeenSet(false),
     m_timeDelta(0),
-    m_timeDeltaHasBeenSet(false)
+    m_timeDeltaHasBeenSet(false),
+    m_timeDeltaUnits(FileSourceTimeDeltaUnits::NOT_SET),
+    m_timeDeltaUnitsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -69,6 +73,13 @@ FileSourceSettings& FileSourceSettings::operator =(JsonView jsonValue)
     m_timeDeltaHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("timeDeltaUnits"))
+  {
+    m_timeDeltaUnits = FileSourceTimeDeltaUnitsMapper::GetFileSourceTimeDeltaUnitsForName(jsonValue.GetString("timeDeltaUnits"));
+
+    m_timeDeltaUnitsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -97,6 +108,11 @@ JsonValue FileSourceSettings::Jsonize() const
   {
    payload.WithInteger("timeDelta", m_timeDelta);
 
+  }
+
+  if(m_timeDeltaUnitsHasBeenSet)
+  {
+   payload.WithString("timeDeltaUnits", FileSourceTimeDeltaUnitsMapper::GetNameForFileSourceTimeDeltaUnits(m_timeDeltaUnits));
   }
 
   return payload;

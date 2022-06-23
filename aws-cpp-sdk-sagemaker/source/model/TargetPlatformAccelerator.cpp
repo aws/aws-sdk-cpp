@@ -23,6 +23,7 @@ namespace Aws
         static const int INTEL_GRAPHICS_HASH = HashingUtils::HashString("INTEL_GRAPHICS");
         static const int MALI_HASH = HashingUtils::HashString("MALI");
         static const int NVIDIA_HASH = HashingUtils::HashString("NVIDIA");
+        static const int NNA_HASH = HashingUtils::HashString("NNA");
 
 
         TargetPlatformAccelerator GetTargetPlatformAcceleratorForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == NVIDIA_HASH)
           {
             return TargetPlatformAccelerator::NVIDIA;
+          }
+          else if (hashCode == NNA_HASH)
+          {
+            return TargetPlatformAccelerator::NNA;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "MALI";
           case TargetPlatformAccelerator::NVIDIA:
             return "NVIDIA";
+          case TargetPlatformAccelerator::NNA:
+            return "NNA";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

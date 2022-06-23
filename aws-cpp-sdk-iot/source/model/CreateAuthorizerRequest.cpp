@@ -21,7 +21,9 @@ CreateAuthorizerRequest::CreateAuthorizerRequest() :
     m_statusHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_signingDisabled(false),
-    m_signingDisabledHasBeenSet(false)
+    m_signingDisabledHasBeenSet(false),
+    m_enableCachingForHttp(false),
+    m_enableCachingForHttpHasBeenSet(false)
 {
 }
 
@@ -71,6 +73,12 @@ Aws::String CreateAuthorizerRequest::SerializePayload() const
   if(m_signingDisabledHasBeenSet)
   {
    payload.WithBool("signingDisabled", m_signingDisabled);
+
+  }
+
+  if(m_enableCachingForHttpHasBeenSet)
+  {
+   payload.WithBool("enableCachingForHttp", m_enableCachingForHttp);
 
   }
 

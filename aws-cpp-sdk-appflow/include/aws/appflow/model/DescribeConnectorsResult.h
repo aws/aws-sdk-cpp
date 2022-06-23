@@ -6,9 +6,11 @@
 #pragma once
 #include <aws/appflow/Appflow_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/appflow/model/ConnectorType.h>
 #include <aws/appflow/model/ConnectorConfiguration.h>
+#include <aws/appflow/model/ConnectorDetail.h>
 #include <utility>
 
 namespace Aws
@@ -82,6 +84,42 @@ namespace Model
 
 
     /**
+     * <p>Information about the connectors supported in Amazon AppFlow.</p>
+     */
+    inline const Aws::Vector<ConnectorDetail>& GetConnectors() const{ return m_connectors; }
+
+    /**
+     * <p>Information about the connectors supported in Amazon AppFlow.</p>
+     */
+    inline void SetConnectors(const Aws::Vector<ConnectorDetail>& value) { m_connectors = value; }
+
+    /**
+     * <p>Information about the connectors supported in Amazon AppFlow.</p>
+     */
+    inline void SetConnectors(Aws::Vector<ConnectorDetail>&& value) { m_connectors = std::move(value); }
+
+    /**
+     * <p>Information about the connectors supported in Amazon AppFlow.</p>
+     */
+    inline DescribeConnectorsResult& WithConnectors(const Aws::Vector<ConnectorDetail>& value) { SetConnectors(value); return *this;}
+
+    /**
+     * <p>Information about the connectors supported in Amazon AppFlow.</p>
+     */
+    inline DescribeConnectorsResult& WithConnectors(Aws::Vector<ConnectorDetail>&& value) { SetConnectors(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about the connectors supported in Amazon AppFlow.</p>
+     */
+    inline DescribeConnectorsResult& AddConnectors(const ConnectorDetail& value) { m_connectors.push_back(value); return *this; }
+
+    /**
+     * <p>Information about the connectors supported in Amazon AppFlow.</p>
+     */
+    inline DescribeConnectorsResult& AddConnectors(ConnectorDetail&& value) { m_connectors.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p> The pagination token for the next page of data. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
@@ -119,6 +157,8 @@ namespace Model
   private:
 
     Aws::Map<ConnectorType, ConnectorConfiguration> m_connectorConfigurations;
+
+    Aws::Vector<ConnectorDetail> m_connectors;
 
     Aws::String m_nextToken;
   };

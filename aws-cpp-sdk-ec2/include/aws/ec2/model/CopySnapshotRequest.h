@@ -80,14 +80,119 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost to which to copy the snapshot.
+     * Only specify this parameter when copying a snapshot from an Amazon Web Services
+     * Region to an Outpost. The snapshot must be in the Region for the destination
+     * Outpost. You cannot copy a snapshot from an Outpost to a Region, from one
+     * Outpost to another, or within the same Outpost.</p> <p>For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-snapshots">
+     * Copy snapshots from an Amazon Web Services Region to an Outpost</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline const Aws::String& GetDestinationOutpostArn() const{ return m_destinationOutpostArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost to which to copy the snapshot.
+     * Only specify this parameter when copying a snapshot from an Amazon Web Services
+     * Region to an Outpost. The snapshot must be in the Region for the destination
+     * Outpost. You cannot copy a snapshot from an Outpost to a Region, from one
+     * Outpost to another, or within the same Outpost.</p> <p>For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-snapshots">
+     * Copy snapshots from an Amazon Web Services Region to an Outpost</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline bool DestinationOutpostArnHasBeenSet() const { return m_destinationOutpostArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost to which to copy the snapshot.
+     * Only specify this parameter when copying a snapshot from an Amazon Web Services
+     * Region to an Outpost. The snapshot must be in the Region for the destination
+     * Outpost. You cannot copy a snapshot from an Outpost to a Region, from one
+     * Outpost to another, or within the same Outpost.</p> <p>For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-snapshots">
+     * Copy snapshots from an Amazon Web Services Region to an Outpost</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline void SetDestinationOutpostArn(const Aws::String& value) { m_destinationOutpostArnHasBeenSet = true; m_destinationOutpostArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost to which to copy the snapshot.
+     * Only specify this parameter when copying a snapshot from an Amazon Web Services
+     * Region to an Outpost. The snapshot must be in the Region for the destination
+     * Outpost. You cannot copy a snapshot from an Outpost to a Region, from one
+     * Outpost to another, or within the same Outpost.</p> <p>For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-snapshots">
+     * Copy snapshots from an Amazon Web Services Region to an Outpost</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline void SetDestinationOutpostArn(Aws::String&& value) { m_destinationOutpostArnHasBeenSet = true; m_destinationOutpostArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost to which to copy the snapshot.
+     * Only specify this parameter when copying a snapshot from an Amazon Web Services
+     * Region to an Outpost. The snapshot must be in the Region for the destination
+     * Outpost. You cannot copy a snapshot from an Outpost to a Region, from one
+     * Outpost to another, or within the same Outpost.</p> <p>For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-snapshots">
+     * Copy snapshots from an Amazon Web Services Region to an Outpost</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline void SetDestinationOutpostArn(const char* value) { m_destinationOutpostArnHasBeenSet = true; m_destinationOutpostArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost to which to copy the snapshot.
+     * Only specify this parameter when copying a snapshot from an Amazon Web Services
+     * Region to an Outpost. The snapshot must be in the Region for the destination
+     * Outpost. You cannot copy a snapshot from an Outpost to a Region, from one
+     * Outpost to another, or within the same Outpost.</p> <p>For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-snapshots">
+     * Copy snapshots from an Amazon Web Services Region to an Outpost</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline CopySnapshotRequest& WithDestinationOutpostArn(const Aws::String& value) { SetDestinationOutpostArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost to which to copy the snapshot.
+     * Only specify this parameter when copying a snapshot from an Amazon Web Services
+     * Region to an Outpost. The snapshot must be in the Region for the destination
+     * Outpost. You cannot copy a snapshot from an Outpost to a Region, from one
+     * Outpost to another, or within the same Outpost.</p> <p>For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-snapshots">
+     * Copy snapshots from an Amazon Web Services Region to an Outpost</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline CopySnapshotRequest& WithDestinationOutpostArn(Aws::String&& value) { SetDestinationOutpostArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost to which to copy the snapshot.
+     * Only specify this parameter when copying a snapshot from an Amazon Web Services
+     * Region to an Outpost. The snapshot must be in the Region for the destination
+     * Outpost. You cannot copy a snapshot from an Outpost to a Region, from one
+     * Outpost to another, or within the same Outpost.</p> <p>For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-snapshots">
+     * Copy snapshots from an Amazon Web Services Region to an Outpost</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline CopySnapshotRequest& WithDestinationOutpostArn(const char* value) { SetDestinationOutpostArn(value); return *this;}
+
+
+    /**
      * <p>The destination Region to use in the <code>PresignedUrl</code> parameter of a
      * snapshot copy operation. This parameter is only valid for specifying the
      * destination Region in a <code>PresignedUrl</code> parameter, where it is
      * required.</p> <p>The snapshot copy is sent to the regional endpoint that you
      * sent the HTTP request to (for example,
-     * <code>ec2.us-east-1.amazonaws.com</code>). With the AWS CLI, this is specified
-     * using the <code>--region</code> parameter or the default Region in your AWS
-     * configuration file.</p>
+     * <code>ec2.us-east-1.amazonaws.com</code>). With the CLI, this is specified using
+     * the <code>--region</code> parameter or the default Region in your Amazon Web
+     * Services configuration file.</p>
      */
     inline const Aws::String& GetDestinationRegion() const{ return m_destinationRegion; }
 
@@ -97,9 +202,9 @@ namespace Model
      * destination Region in a <code>PresignedUrl</code> parameter, where it is
      * required.</p> <p>The snapshot copy is sent to the regional endpoint that you
      * sent the HTTP request to (for example,
-     * <code>ec2.us-east-1.amazonaws.com</code>). With the AWS CLI, this is specified
-     * using the <code>--region</code> parameter or the default Region in your AWS
-     * configuration file.</p>
+     * <code>ec2.us-east-1.amazonaws.com</code>). With the CLI, this is specified using
+     * the <code>--region</code> parameter or the default Region in your Amazon Web
+     * Services configuration file.</p>
      */
     inline bool DestinationRegionHasBeenSet() const { return m_destinationRegionHasBeenSet; }
 
@@ -109,9 +214,9 @@ namespace Model
      * destination Region in a <code>PresignedUrl</code> parameter, where it is
      * required.</p> <p>The snapshot copy is sent to the regional endpoint that you
      * sent the HTTP request to (for example,
-     * <code>ec2.us-east-1.amazonaws.com</code>). With the AWS CLI, this is specified
-     * using the <code>--region</code> parameter or the default Region in your AWS
-     * configuration file.</p>
+     * <code>ec2.us-east-1.amazonaws.com</code>). With the CLI, this is specified using
+     * the <code>--region</code> parameter or the default Region in your Amazon Web
+     * Services configuration file.</p>
      */
     inline void SetDestinationRegion(const Aws::String& value) { m_destinationRegionHasBeenSet = true; m_destinationRegion = value; }
 
@@ -121,9 +226,9 @@ namespace Model
      * destination Region in a <code>PresignedUrl</code> parameter, where it is
      * required.</p> <p>The snapshot copy is sent to the regional endpoint that you
      * sent the HTTP request to (for example,
-     * <code>ec2.us-east-1.amazonaws.com</code>). With the AWS CLI, this is specified
-     * using the <code>--region</code> parameter or the default Region in your AWS
-     * configuration file.</p>
+     * <code>ec2.us-east-1.amazonaws.com</code>). With the CLI, this is specified using
+     * the <code>--region</code> parameter or the default Region in your Amazon Web
+     * Services configuration file.</p>
      */
     inline void SetDestinationRegion(Aws::String&& value) { m_destinationRegionHasBeenSet = true; m_destinationRegion = std::move(value); }
 
@@ -133,9 +238,9 @@ namespace Model
      * destination Region in a <code>PresignedUrl</code> parameter, where it is
      * required.</p> <p>The snapshot copy is sent to the regional endpoint that you
      * sent the HTTP request to (for example,
-     * <code>ec2.us-east-1.amazonaws.com</code>). With the AWS CLI, this is specified
-     * using the <code>--region</code> parameter or the default Region in your AWS
-     * configuration file.</p>
+     * <code>ec2.us-east-1.amazonaws.com</code>). With the CLI, this is specified using
+     * the <code>--region</code> parameter or the default Region in your Amazon Web
+     * Services configuration file.</p>
      */
     inline void SetDestinationRegion(const char* value) { m_destinationRegionHasBeenSet = true; m_destinationRegion.assign(value); }
 
@@ -145,9 +250,9 @@ namespace Model
      * destination Region in a <code>PresignedUrl</code> parameter, where it is
      * required.</p> <p>The snapshot copy is sent to the regional endpoint that you
      * sent the HTTP request to (for example,
-     * <code>ec2.us-east-1.amazonaws.com</code>). With the AWS CLI, this is specified
-     * using the <code>--region</code> parameter or the default Region in your AWS
-     * configuration file.</p>
+     * <code>ec2.us-east-1.amazonaws.com</code>). With the CLI, this is specified using
+     * the <code>--region</code> parameter or the default Region in your Amazon Web
+     * Services configuration file.</p>
      */
     inline CopySnapshotRequest& WithDestinationRegion(const Aws::String& value) { SetDestinationRegion(value); return *this;}
 
@@ -157,9 +262,9 @@ namespace Model
      * destination Region in a <code>PresignedUrl</code> parameter, where it is
      * required.</p> <p>The snapshot copy is sent to the regional endpoint that you
      * sent the HTTP request to (for example,
-     * <code>ec2.us-east-1.amazonaws.com</code>). With the AWS CLI, this is specified
-     * using the <code>--region</code> parameter or the default Region in your AWS
-     * configuration file.</p>
+     * <code>ec2.us-east-1.amazonaws.com</code>). With the CLI, this is specified using
+     * the <code>--region</code> parameter or the default Region in your Amazon Web
+     * Services configuration file.</p>
      */
     inline CopySnapshotRequest& WithDestinationRegion(Aws::String&& value) { SetDestinationRegion(std::move(value)); return *this;}
 
@@ -169,9 +274,9 @@ namespace Model
      * destination Region in a <code>PresignedUrl</code> parameter, where it is
      * required.</p> <p>The snapshot copy is sent to the regional endpoint that you
      * sent the HTTP request to (for example,
-     * <code>ec2.us-east-1.amazonaws.com</code>). With the AWS CLI, this is specified
-     * using the <code>--region</code> parameter or the default Region in your AWS
-     * configuration file.</p>
+     * <code>ec2.us-east-1.amazonaws.com</code>). With the CLI, this is specified using
+     * the <code>--region</code> parameter or the default Region in your Amazon Web
+     * Services configuration file.</p>
      */
     inline CopySnapshotRequest& WithDestinationRegion(const char* value) { SetDestinationRegion(value); return *this;}
 
@@ -222,138 +327,138 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) to use for Amazon EBS encryption. If this parameter is not specified,
-     * your AWS managed CMK for EBS is used. If <code>KmsKeyId</code> is specified, the
-     * encrypted state must be <code>true</code>.</p> <p>You can specify the CMK using
-     * any of the following:</p> <ul> <li> <p>Key ID. For example,
+     * <p>The identifier of the Key Management Service (KMS) KMS key to use for Amazon
+     * EBS encryption. If this parameter is not specified, your KMS key for Amazon EBS
+     * is used. If <code>KmsKeyId</code> is specified, the encrypted state must be
+     * <code>true</code>.</p> <p>You can specify the KMS key using any of the
+     * following:</p> <ul> <li> <p>Key ID. For example,
      * 1234abcd-12ab-34cd-56ef-1234567890ab.</p> </li> <li> <p>Key alias. For example,
      * alias/ExampleAlias.</p> </li> <li> <p>Key ARN. For example,
      * arn:aws:kms:us-east-1:012345678910:key/1234abcd-12ab-34cd-56ef-1234567890ab.</p>
      * </li> <li> <p>Alias ARN. For example,
-     * arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.</p> </li> </ul> <p>AWS
-     * authenticates the CMK asynchronously. Therefore, if you specify an ID, alias, or
-     * ARN that is not valid, the action can appear to complete, but eventually
-     * fails.</p>
+     * arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.</p> </li> </ul> <p>Amazon
+     * Web Services authenticates the KMS key asynchronously. Therefore, if you specify
+     * an ID, alias, or ARN that is not valid, the action can appear to complete, but
+     * eventually fails.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The identifier of the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) to use for Amazon EBS encryption. If this parameter is not specified,
-     * your AWS managed CMK for EBS is used. If <code>KmsKeyId</code> is specified, the
-     * encrypted state must be <code>true</code>.</p> <p>You can specify the CMK using
-     * any of the following:</p> <ul> <li> <p>Key ID. For example,
+     * <p>The identifier of the Key Management Service (KMS) KMS key to use for Amazon
+     * EBS encryption. If this parameter is not specified, your KMS key for Amazon EBS
+     * is used. If <code>KmsKeyId</code> is specified, the encrypted state must be
+     * <code>true</code>.</p> <p>You can specify the KMS key using any of the
+     * following:</p> <ul> <li> <p>Key ID. For example,
      * 1234abcd-12ab-34cd-56ef-1234567890ab.</p> </li> <li> <p>Key alias. For example,
      * alias/ExampleAlias.</p> </li> <li> <p>Key ARN. For example,
      * arn:aws:kms:us-east-1:012345678910:key/1234abcd-12ab-34cd-56ef-1234567890ab.</p>
      * </li> <li> <p>Alias ARN. For example,
-     * arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.</p> </li> </ul> <p>AWS
-     * authenticates the CMK asynchronously. Therefore, if you specify an ID, alias, or
-     * ARN that is not valid, the action can appear to complete, but eventually
-     * fails.</p>
+     * arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.</p> </li> </ul> <p>Amazon
+     * Web Services authenticates the KMS key asynchronously. Therefore, if you specify
+     * an ID, alias, or ARN that is not valid, the action can appear to complete, but
+     * eventually fails.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) to use for Amazon EBS encryption. If this parameter is not specified,
-     * your AWS managed CMK for EBS is used. If <code>KmsKeyId</code> is specified, the
-     * encrypted state must be <code>true</code>.</p> <p>You can specify the CMK using
-     * any of the following:</p> <ul> <li> <p>Key ID. For example,
+     * <p>The identifier of the Key Management Service (KMS) KMS key to use for Amazon
+     * EBS encryption. If this parameter is not specified, your KMS key for Amazon EBS
+     * is used. If <code>KmsKeyId</code> is specified, the encrypted state must be
+     * <code>true</code>.</p> <p>You can specify the KMS key using any of the
+     * following:</p> <ul> <li> <p>Key ID. For example,
      * 1234abcd-12ab-34cd-56ef-1234567890ab.</p> </li> <li> <p>Key alias. For example,
      * alias/ExampleAlias.</p> </li> <li> <p>Key ARN. For example,
      * arn:aws:kms:us-east-1:012345678910:key/1234abcd-12ab-34cd-56ef-1234567890ab.</p>
      * </li> <li> <p>Alias ARN. For example,
-     * arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.</p> </li> </ul> <p>AWS
-     * authenticates the CMK asynchronously. Therefore, if you specify an ID, alias, or
-     * ARN that is not valid, the action can appear to complete, but eventually
-     * fails.</p>
+     * arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.</p> </li> </ul> <p>Amazon
+     * Web Services authenticates the KMS key asynchronously. Therefore, if you specify
+     * an ID, alias, or ARN that is not valid, the action can appear to complete, but
+     * eventually fails.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The identifier of the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) to use for Amazon EBS encryption. If this parameter is not specified,
-     * your AWS managed CMK for EBS is used. If <code>KmsKeyId</code> is specified, the
-     * encrypted state must be <code>true</code>.</p> <p>You can specify the CMK using
-     * any of the following:</p> <ul> <li> <p>Key ID. For example,
+     * <p>The identifier of the Key Management Service (KMS) KMS key to use for Amazon
+     * EBS encryption. If this parameter is not specified, your KMS key for Amazon EBS
+     * is used. If <code>KmsKeyId</code> is specified, the encrypted state must be
+     * <code>true</code>.</p> <p>You can specify the KMS key using any of the
+     * following:</p> <ul> <li> <p>Key ID. For example,
      * 1234abcd-12ab-34cd-56ef-1234567890ab.</p> </li> <li> <p>Key alias. For example,
      * alias/ExampleAlias.</p> </li> <li> <p>Key ARN. For example,
      * arn:aws:kms:us-east-1:012345678910:key/1234abcd-12ab-34cd-56ef-1234567890ab.</p>
      * </li> <li> <p>Alias ARN. For example,
-     * arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.</p> </li> </ul> <p>AWS
-     * authenticates the CMK asynchronously. Therefore, if you specify an ID, alias, or
-     * ARN that is not valid, the action can appear to complete, but eventually
-     * fails.</p>
+     * arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.</p> </li> </ul> <p>Amazon
+     * Web Services authenticates the KMS key asynchronously. Therefore, if you specify
+     * an ID, alias, or ARN that is not valid, the action can appear to complete, but
+     * eventually fails.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The identifier of the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) to use for Amazon EBS encryption. If this parameter is not specified,
-     * your AWS managed CMK for EBS is used. If <code>KmsKeyId</code> is specified, the
-     * encrypted state must be <code>true</code>.</p> <p>You can specify the CMK using
-     * any of the following:</p> <ul> <li> <p>Key ID. For example,
+     * <p>The identifier of the Key Management Service (KMS) KMS key to use for Amazon
+     * EBS encryption. If this parameter is not specified, your KMS key for Amazon EBS
+     * is used. If <code>KmsKeyId</code> is specified, the encrypted state must be
+     * <code>true</code>.</p> <p>You can specify the KMS key using any of the
+     * following:</p> <ul> <li> <p>Key ID. For example,
      * 1234abcd-12ab-34cd-56ef-1234567890ab.</p> </li> <li> <p>Key alias. For example,
      * alias/ExampleAlias.</p> </li> <li> <p>Key ARN. For example,
      * arn:aws:kms:us-east-1:012345678910:key/1234abcd-12ab-34cd-56ef-1234567890ab.</p>
      * </li> <li> <p>Alias ARN. For example,
-     * arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.</p> </li> </ul> <p>AWS
-     * authenticates the CMK asynchronously. Therefore, if you specify an ID, alias, or
-     * ARN that is not valid, the action can appear to complete, but eventually
-     * fails.</p>
+     * arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.</p> </li> </ul> <p>Amazon
+     * Web Services authenticates the KMS key asynchronously. Therefore, if you specify
+     * an ID, alias, or ARN that is not valid, the action can appear to complete, but
+     * eventually fails.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The identifier of the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) to use for Amazon EBS encryption. If this parameter is not specified,
-     * your AWS managed CMK for EBS is used. If <code>KmsKeyId</code> is specified, the
-     * encrypted state must be <code>true</code>.</p> <p>You can specify the CMK using
-     * any of the following:</p> <ul> <li> <p>Key ID. For example,
+     * <p>The identifier of the Key Management Service (KMS) KMS key to use for Amazon
+     * EBS encryption. If this parameter is not specified, your KMS key for Amazon EBS
+     * is used. If <code>KmsKeyId</code> is specified, the encrypted state must be
+     * <code>true</code>.</p> <p>You can specify the KMS key using any of the
+     * following:</p> <ul> <li> <p>Key ID. For example,
      * 1234abcd-12ab-34cd-56ef-1234567890ab.</p> </li> <li> <p>Key alias. For example,
      * alias/ExampleAlias.</p> </li> <li> <p>Key ARN. For example,
      * arn:aws:kms:us-east-1:012345678910:key/1234abcd-12ab-34cd-56ef-1234567890ab.</p>
      * </li> <li> <p>Alias ARN. For example,
-     * arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.</p> </li> </ul> <p>AWS
-     * authenticates the CMK asynchronously. Therefore, if you specify an ID, alias, or
-     * ARN that is not valid, the action can appear to complete, but eventually
-     * fails.</p>
+     * arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.</p> </li> </ul> <p>Amazon
+     * Web Services authenticates the KMS key asynchronously. Therefore, if you specify
+     * an ID, alias, or ARN that is not valid, the action can appear to complete, but
+     * eventually fails.</p>
      */
     inline CopySnapshotRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The identifier of the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) to use for Amazon EBS encryption. If this parameter is not specified,
-     * your AWS managed CMK for EBS is used. If <code>KmsKeyId</code> is specified, the
-     * encrypted state must be <code>true</code>.</p> <p>You can specify the CMK using
-     * any of the following:</p> <ul> <li> <p>Key ID. For example,
+     * <p>The identifier of the Key Management Service (KMS) KMS key to use for Amazon
+     * EBS encryption. If this parameter is not specified, your KMS key for Amazon EBS
+     * is used. If <code>KmsKeyId</code> is specified, the encrypted state must be
+     * <code>true</code>.</p> <p>You can specify the KMS key using any of the
+     * following:</p> <ul> <li> <p>Key ID. For example,
      * 1234abcd-12ab-34cd-56ef-1234567890ab.</p> </li> <li> <p>Key alias. For example,
      * alias/ExampleAlias.</p> </li> <li> <p>Key ARN. For example,
      * arn:aws:kms:us-east-1:012345678910:key/1234abcd-12ab-34cd-56ef-1234567890ab.</p>
      * </li> <li> <p>Alias ARN. For example,
-     * arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.</p> </li> </ul> <p>AWS
-     * authenticates the CMK asynchronously. Therefore, if you specify an ID, alias, or
-     * ARN that is not valid, the action can appear to complete, but eventually
-     * fails.</p>
+     * arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.</p> </li> </ul> <p>Amazon
+     * Web Services authenticates the KMS key asynchronously. Therefore, if you specify
+     * an ID, alias, or ARN that is not valid, the action can appear to complete, but
+     * eventually fails.</p>
      */
     inline CopySnapshotRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) to use for Amazon EBS encryption. If this parameter is not specified,
-     * your AWS managed CMK for EBS is used. If <code>KmsKeyId</code> is specified, the
-     * encrypted state must be <code>true</code>.</p> <p>You can specify the CMK using
-     * any of the following:</p> <ul> <li> <p>Key ID. For example,
+     * <p>The identifier of the Key Management Service (KMS) KMS key to use for Amazon
+     * EBS encryption. If this parameter is not specified, your KMS key for Amazon EBS
+     * is used. If <code>KmsKeyId</code> is specified, the encrypted state must be
+     * <code>true</code>.</p> <p>You can specify the KMS key using any of the
+     * following:</p> <ul> <li> <p>Key ID. For example,
      * 1234abcd-12ab-34cd-56ef-1234567890ab.</p> </li> <li> <p>Key alias. For example,
      * alias/ExampleAlias.</p> </li> <li> <p>Key ARN. For example,
      * arn:aws:kms:us-east-1:012345678910:key/1234abcd-12ab-34cd-56ef-1234567890ab.</p>
      * </li> <li> <p>Alias ARN. For example,
-     * arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.</p> </li> </ul> <p>AWS
-     * authenticates the CMK asynchronously. Therefore, if you specify an ID, alias, or
-     * ARN that is not valid, the action can appear to complete, but eventually
-     * fails.</p>
+     * arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.</p> </li> </ul> <p>Amazon
+     * Web Services authenticates the KMS key asynchronously. Therefore, if you specify
+     * an ID, alias, or ARN that is not valid, the action can appear to complete, but
+     * eventually fails.</p>
      */
     inline CopySnapshotRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -367,14 +472,15 @@ namespace Model
      * source endpoint, the <code>CopySnapshot</code> action, and include the
      * <code>SourceRegion</code>, <code>SourceSnapshotId</code>, and
      * <code>DestinationRegion</code> parameters. The <code>PresignedUrl</code> must be
-     * signed using AWS Signature Version 4. Because EBS snapshots are stored in Amazon
-     * S3, the signing algorithm for this parameter uses the same logic that is
-     * described in <a
+     * signed using Amazon Web Services Signature Version 4. Because EBS snapshots are
+     * stored in Amazon S3, the signing algorithm for this parameter uses the same
+     * logic that is described in <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
-     * Requests: Using Query Parameters (AWS Signature Version 4)</a> in the <i>Amazon
-     * Simple Storage Service API Reference</i>. An invalid or improperly signed
-     * <code>PresignedUrl</code> will cause the copy operation to fail asynchronously,
-     * and the snapshot will move to an <code>error</code> state.</p>
+     * Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a>
+     * in the <i>Amazon Simple Storage Service API Reference</i>. An invalid or
+     * improperly signed <code>PresignedUrl</code> will cause the copy operation to
+     * fail asynchronously, and the snapshot will move to an <code>error</code>
+     * state.</p>
      */
     inline const Aws::String& GetPresignedUrl() const{ return m_presignedUrl; }
 
@@ -387,14 +493,15 @@ namespace Model
      * source endpoint, the <code>CopySnapshot</code> action, and include the
      * <code>SourceRegion</code>, <code>SourceSnapshotId</code>, and
      * <code>DestinationRegion</code> parameters. The <code>PresignedUrl</code> must be
-     * signed using AWS Signature Version 4. Because EBS snapshots are stored in Amazon
-     * S3, the signing algorithm for this parameter uses the same logic that is
-     * described in <a
+     * signed using Amazon Web Services Signature Version 4. Because EBS snapshots are
+     * stored in Amazon S3, the signing algorithm for this parameter uses the same
+     * logic that is described in <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
-     * Requests: Using Query Parameters (AWS Signature Version 4)</a> in the <i>Amazon
-     * Simple Storage Service API Reference</i>. An invalid or improperly signed
-     * <code>PresignedUrl</code> will cause the copy operation to fail asynchronously,
-     * and the snapshot will move to an <code>error</code> state.</p>
+     * Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a>
+     * in the <i>Amazon Simple Storage Service API Reference</i>. An invalid or
+     * improperly signed <code>PresignedUrl</code> will cause the copy operation to
+     * fail asynchronously, and the snapshot will move to an <code>error</code>
+     * state.</p>
      */
     inline bool PresignedUrlHasBeenSet() const { return m_presignedUrlHasBeenSet; }
 
@@ -407,14 +514,15 @@ namespace Model
      * source endpoint, the <code>CopySnapshot</code> action, and include the
      * <code>SourceRegion</code>, <code>SourceSnapshotId</code>, and
      * <code>DestinationRegion</code> parameters. The <code>PresignedUrl</code> must be
-     * signed using AWS Signature Version 4. Because EBS snapshots are stored in Amazon
-     * S3, the signing algorithm for this parameter uses the same logic that is
-     * described in <a
+     * signed using Amazon Web Services Signature Version 4. Because EBS snapshots are
+     * stored in Amazon S3, the signing algorithm for this parameter uses the same
+     * logic that is described in <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
-     * Requests: Using Query Parameters (AWS Signature Version 4)</a> in the <i>Amazon
-     * Simple Storage Service API Reference</i>. An invalid or improperly signed
-     * <code>PresignedUrl</code> will cause the copy operation to fail asynchronously,
-     * and the snapshot will move to an <code>error</code> state.</p>
+     * Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a>
+     * in the <i>Amazon Simple Storage Service API Reference</i>. An invalid or
+     * improperly signed <code>PresignedUrl</code> will cause the copy operation to
+     * fail asynchronously, and the snapshot will move to an <code>error</code>
+     * state.</p>
      */
     inline void SetPresignedUrl(const Aws::String& value) { m_presignedUrlHasBeenSet = true; m_presignedUrl = value; }
 
@@ -427,14 +535,15 @@ namespace Model
      * source endpoint, the <code>CopySnapshot</code> action, and include the
      * <code>SourceRegion</code>, <code>SourceSnapshotId</code>, and
      * <code>DestinationRegion</code> parameters. The <code>PresignedUrl</code> must be
-     * signed using AWS Signature Version 4. Because EBS snapshots are stored in Amazon
-     * S3, the signing algorithm for this parameter uses the same logic that is
-     * described in <a
+     * signed using Amazon Web Services Signature Version 4. Because EBS snapshots are
+     * stored in Amazon S3, the signing algorithm for this parameter uses the same
+     * logic that is described in <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
-     * Requests: Using Query Parameters (AWS Signature Version 4)</a> in the <i>Amazon
-     * Simple Storage Service API Reference</i>. An invalid or improperly signed
-     * <code>PresignedUrl</code> will cause the copy operation to fail asynchronously,
-     * and the snapshot will move to an <code>error</code> state.</p>
+     * Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a>
+     * in the <i>Amazon Simple Storage Service API Reference</i>. An invalid or
+     * improperly signed <code>PresignedUrl</code> will cause the copy operation to
+     * fail asynchronously, and the snapshot will move to an <code>error</code>
+     * state.</p>
      */
     inline void SetPresignedUrl(Aws::String&& value) { m_presignedUrlHasBeenSet = true; m_presignedUrl = std::move(value); }
 
@@ -447,14 +556,15 @@ namespace Model
      * source endpoint, the <code>CopySnapshot</code> action, and include the
      * <code>SourceRegion</code>, <code>SourceSnapshotId</code>, and
      * <code>DestinationRegion</code> parameters. The <code>PresignedUrl</code> must be
-     * signed using AWS Signature Version 4. Because EBS snapshots are stored in Amazon
-     * S3, the signing algorithm for this parameter uses the same logic that is
-     * described in <a
+     * signed using Amazon Web Services Signature Version 4. Because EBS snapshots are
+     * stored in Amazon S3, the signing algorithm for this parameter uses the same
+     * logic that is described in <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
-     * Requests: Using Query Parameters (AWS Signature Version 4)</a> in the <i>Amazon
-     * Simple Storage Service API Reference</i>. An invalid or improperly signed
-     * <code>PresignedUrl</code> will cause the copy operation to fail asynchronously,
-     * and the snapshot will move to an <code>error</code> state.</p>
+     * Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a>
+     * in the <i>Amazon Simple Storage Service API Reference</i>. An invalid or
+     * improperly signed <code>PresignedUrl</code> will cause the copy operation to
+     * fail asynchronously, and the snapshot will move to an <code>error</code>
+     * state.</p>
      */
     inline void SetPresignedUrl(const char* value) { m_presignedUrlHasBeenSet = true; m_presignedUrl.assign(value); }
 
@@ -467,14 +577,15 @@ namespace Model
      * source endpoint, the <code>CopySnapshot</code> action, and include the
      * <code>SourceRegion</code>, <code>SourceSnapshotId</code>, and
      * <code>DestinationRegion</code> parameters. The <code>PresignedUrl</code> must be
-     * signed using AWS Signature Version 4. Because EBS snapshots are stored in Amazon
-     * S3, the signing algorithm for this parameter uses the same logic that is
-     * described in <a
+     * signed using Amazon Web Services Signature Version 4. Because EBS snapshots are
+     * stored in Amazon S3, the signing algorithm for this parameter uses the same
+     * logic that is described in <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
-     * Requests: Using Query Parameters (AWS Signature Version 4)</a> in the <i>Amazon
-     * Simple Storage Service API Reference</i>. An invalid or improperly signed
-     * <code>PresignedUrl</code> will cause the copy operation to fail asynchronously,
-     * and the snapshot will move to an <code>error</code> state.</p>
+     * Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a>
+     * in the <i>Amazon Simple Storage Service API Reference</i>. An invalid or
+     * improperly signed <code>PresignedUrl</code> will cause the copy operation to
+     * fail asynchronously, and the snapshot will move to an <code>error</code>
+     * state.</p>
      */
     inline CopySnapshotRequest& WithPresignedUrl(const Aws::String& value) { SetPresignedUrl(value); return *this;}
 
@@ -487,14 +598,15 @@ namespace Model
      * source endpoint, the <code>CopySnapshot</code> action, and include the
      * <code>SourceRegion</code>, <code>SourceSnapshotId</code>, and
      * <code>DestinationRegion</code> parameters. The <code>PresignedUrl</code> must be
-     * signed using AWS Signature Version 4. Because EBS snapshots are stored in Amazon
-     * S3, the signing algorithm for this parameter uses the same logic that is
-     * described in <a
+     * signed using Amazon Web Services Signature Version 4. Because EBS snapshots are
+     * stored in Amazon S3, the signing algorithm for this parameter uses the same
+     * logic that is described in <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
-     * Requests: Using Query Parameters (AWS Signature Version 4)</a> in the <i>Amazon
-     * Simple Storage Service API Reference</i>. An invalid or improperly signed
-     * <code>PresignedUrl</code> will cause the copy operation to fail asynchronously,
-     * and the snapshot will move to an <code>error</code> state.</p>
+     * Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a>
+     * in the <i>Amazon Simple Storage Service API Reference</i>. An invalid or
+     * improperly signed <code>PresignedUrl</code> will cause the copy operation to
+     * fail asynchronously, and the snapshot will move to an <code>error</code>
+     * state.</p>
      */
     inline CopySnapshotRequest& WithPresignedUrl(Aws::String&& value) { SetPresignedUrl(std::move(value)); return *this;}
 
@@ -507,14 +619,15 @@ namespace Model
      * source endpoint, the <code>CopySnapshot</code> action, and include the
      * <code>SourceRegion</code>, <code>SourceSnapshotId</code>, and
      * <code>DestinationRegion</code> parameters. The <code>PresignedUrl</code> must be
-     * signed using AWS Signature Version 4. Because EBS snapshots are stored in Amazon
-     * S3, the signing algorithm for this parameter uses the same logic that is
-     * described in <a
+     * signed using Amazon Web Services Signature Version 4. Because EBS snapshots are
+     * stored in Amazon S3, the signing algorithm for this parameter uses the same
+     * logic that is described in <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
-     * Requests: Using Query Parameters (AWS Signature Version 4)</a> in the <i>Amazon
-     * Simple Storage Service API Reference</i>. An invalid or improperly signed
-     * <code>PresignedUrl</code> will cause the copy operation to fail asynchronously,
-     * and the snapshot will move to an <code>error</code> state.</p>
+     * Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a>
+     * in the <i>Amazon Simple Storage Service API Reference</i>. An invalid or
+     * improperly signed <code>PresignedUrl</code> will cause the copy operation to
+     * fail asynchronously, and the snapshot will move to an <code>error</code>
+     * state.</p>
      */
     inline CopySnapshotRequest& WithPresignedUrl(const char* value) { SetPresignedUrl(value); return *this;}
 
@@ -678,6 +791,9 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
+    Aws::String m_destinationOutpostArn;
+    bool m_destinationOutpostArnHasBeenSet;
 
     Aws::String m_destinationRegion;
     bool m_destinationRegionHasBeenSet;

@@ -18,6 +18,8 @@
 #include <aws/redshift/model/ElasticIpStatus.h>
 #include <aws/redshift/model/ScheduleState.h>
 #include <aws/redshift/model/ResizeInfo.h>
+#include <aws/redshift/model/AquaConfiguration.h>
+#include <aws/redshift/model/ReservedNodeExchangeStatus.h>
 #include <aws/redshift/model/ClusterSecurityGroupMembership.h>
 #include <aws/redshift/model/VpcSecurityGroupMembership.h>
 #include <aws/redshift/model/ClusterParameterGroupStatus.h>
@@ -431,49 +433,49 @@ namespace Model
 
 
     /**
-     * <p>The master user name for the cluster. This name is used to connect to the
+     * <p>The admin user name for the cluster. This name is used to connect to the
      * database that is specified in the <b>DBName</b> parameter. </p>
      */
     inline const Aws::String& GetMasterUsername() const{ return m_masterUsername; }
 
     /**
-     * <p>The master user name for the cluster. This name is used to connect to the
+     * <p>The admin user name for the cluster. This name is used to connect to the
      * database that is specified in the <b>DBName</b> parameter. </p>
      */
     inline bool MasterUsernameHasBeenSet() const { return m_masterUsernameHasBeenSet; }
 
     /**
-     * <p>The master user name for the cluster. This name is used to connect to the
+     * <p>The admin user name for the cluster. This name is used to connect to the
      * database that is specified in the <b>DBName</b> parameter. </p>
      */
     inline void SetMasterUsername(const Aws::String& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = value; }
 
     /**
-     * <p>The master user name for the cluster. This name is used to connect to the
+     * <p>The admin user name for the cluster. This name is used to connect to the
      * database that is specified in the <b>DBName</b> parameter. </p>
      */
     inline void SetMasterUsername(Aws::String&& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = std::move(value); }
 
     /**
-     * <p>The master user name for the cluster. This name is used to connect to the
+     * <p>The admin user name for the cluster. This name is used to connect to the
      * database that is specified in the <b>DBName</b> parameter. </p>
      */
     inline void SetMasterUsername(const char* value) { m_masterUsernameHasBeenSet = true; m_masterUsername.assign(value); }
 
     /**
-     * <p>The master user name for the cluster. This name is used to connect to the
+     * <p>The admin user name for the cluster. This name is used to connect to the
      * database that is specified in the <b>DBName</b> parameter. </p>
      */
     inline Cluster& WithMasterUsername(const Aws::String& value) { SetMasterUsername(value); return *this;}
 
     /**
-     * <p>The master user name for the cluster. This name is used to connect to the
+     * <p>The admin user name for the cluster. This name is used to connect to the
      * database that is specified in the <b>DBName</b> parameter. </p>
      */
     inline Cluster& WithMasterUsername(Aws::String&& value) { SetMasterUsername(std::move(value)); return *this;}
 
     /**
-     * <p>The master user name for the cluster. This name is used to connect to the
+     * <p>The admin user name for the cluster. This name is used to connect to the
      * database that is specified in the <b>DBName</b> parameter. </p>
      */
     inline Cluster& WithMasterUsername(const char* value) { SetMasterUsername(value); return *this;}
@@ -1565,50 +1567,50 @@ namespace Model
 
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key ID of the encryption key used to
-     * encrypt data in the cluster.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key used to encrypt
+     * data in the cluster.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key ID of the encryption key used to
-     * encrypt data in the cluster.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key used to encrypt
+     * data in the cluster.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key ID of the encryption key used to
-     * encrypt data in the cluster.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key used to encrypt
+     * data in the cluster.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key ID of the encryption key used to
-     * encrypt data in the cluster.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key used to encrypt
+     * data in the cluster.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key ID of the encryption key used to
-     * encrypt data in the cluster.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key used to encrypt
+     * data in the cluster.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key ID of the encryption key used to
-     * encrypt data in the cluster.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key used to encrypt
+     * data in the cluster.</p>
      */
     inline Cluster& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key ID of the encryption key used to
-     * encrypt data in the cluster.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key used to encrypt
+     * data in the cluster.</p>
      */
     inline Cluster& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key ID of the encryption key used to
-     * encrypt data in the cluster.</p>
+     * <p>The Key Management Service (KMS) key ID of the encryption key used to encrypt
+     * data in the cluster.</p>
      */
     inline Cluster& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -1659,50 +1661,50 @@ namespace Model
 
 
     /**
-     * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
-     * the cluster to access other AWS services.</p>
+     * <p>A list of Identity and Access Management (IAM) roles that can be used by the
+     * cluster to access other Amazon Web Services services.</p>
      */
     inline const Aws::Vector<ClusterIamRole>& GetIamRoles() const{ return m_iamRoles; }
 
     /**
-     * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
-     * the cluster to access other AWS services.</p>
+     * <p>A list of Identity and Access Management (IAM) roles that can be used by the
+     * cluster to access other Amazon Web Services services.</p>
      */
     inline bool IamRolesHasBeenSet() const { return m_iamRolesHasBeenSet; }
 
     /**
-     * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
-     * the cluster to access other AWS services.</p>
+     * <p>A list of Identity and Access Management (IAM) roles that can be used by the
+     * cluster to access other Amazon Web Services services.</p>
      */
     inline void SetIamRoles(const Aws::Vector<ClusterIamRole>& value) { m_iamRolesHasBeenSet = true; m_iamRoles = value; }
 
     /**
-     * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
-     * the cluster to access other AWS services.</p>
+     * <p>A list of Identity and Access Management (IAM) roles that can be used by the
+     * cluster to access other Amazon Web Services services.</p>
      */
     inline void SetIamRoles(Aws::Vector<ClusterIamRole>&& value) { m_iamRolesHasBeenSet = true; m_iamRoles = std::move(value); }
 
     /**
-     * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
-     * the cluster to access other AWS services.</p>
+     * <p>A list of Identity and Access Management (IAM) roles that can be used by the
+     * cluster to access other Amazon Web Services services.</p>
      */
     inline Cluster& WithIamRoles(const Aws::Vector<ClusterIamRole>& value) { SetIamRoles(value); return *this;}
 
     /**
-     * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
-     * the cluster to access other AWS services.</p>
+     * <p>A list of Identity and Access Management (IAM) roles that can be used by the
+     * cluster to access other Amazon Web Services services.</p>
      */
     inline Cluster& WithIamRoles(Aws::Vector<ClusterIamRole>&& value) { SetIamRoles(std::move(value)); return *this;}
 
     /**
-     * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
-     * the cluster to access other AWS services.</p>
+     * <p>A list of Identity and Access Management (IAM) roles that can be used by the
+     * cluster to access other Amazon Web Services services.</p>
      */
     inline Cluster& AddIamRoles(const ClusterIamRole& value) { m_iamRolesHasBeenSet = true; m_iamRoles.push_back(value); return *this; }
 
     /**
-     * <p>A list of AWS Identity and Access Management (IAM) roles that can be used by
-     * the cluster to access other AWS services.</p>
+     * <p>A list of Identity and Access Management (IAM) roles that can be used by the
+     * cluster to access other Amazon Web Services services.</p>
      */
     inline Cluster& AddIamRoles(ClusterIamRole&& value) { m_iamRolesHasBeenSet = true; m_iamRoles.push_back(std::move(value)); return *this; }
 
@@ -2213,6 +2215,144 @@ namespace Model
      */
     inline Cluster& WithClusterNamespaceArn(const char* value) { SetClusterNamespaceArn(value); return *this;}
 
+
+    /**
+     * <p>The total storage capacity of the cluster in megabytes. </p>
+     */
+    inline long long GetTotalStorageCapacityInMegaBytes() const{ return m_totalStorageCapacityInMegaBytes; }
+
+    /**
+     * <p>The total storage capacity of the cluster in megabytes. </p>
+     */
+    inline bool TotalStorageCapacityInMegaBytesHasBeenSet() const { return m_totalStorageCapacityInMegaBytesHasBeenSet; }
+
+    /**
+     * <p>The total storage capacity of the cluster in megabytes. </p>
+     */
+    inline void SetTotalStorageCapacityInMegaBytes(long long value) { m_totalStorageCapacityInMegaBytesHasBeenSet = true; m_totalStorageCapacityInMegaBytes = value; }
+
+    /**
+     * <p>The total storage capacity of the cluster in megabytes. </p>
+     */
+    inline Cluster& WithTotalStorageCapacityInMegaBytes(long long value) { SetTotalStorageCapacityInMegaBytes(value); return *this;}
+
+
+    /**
+     * <p>The AQUA (Advanced Query Accelerator) configuration of the cluster.</p>
+     */
+    inline const AquaConfiguration& GetAquaConfiguration() const{ return m_aquaConfiguration; }
+
+    /**
+     * <p>The AQUA (Advanced Query Accelerator) configuration of the cluster.</p>
+     */
+    inline bool AquaConfigurationHasBeenSet() const { return m_aquaConfigurationHasBeenSet; }
+
+    /**
+     * <p>The AQUA (Advanced Query Accelerator) configuration of the cluster.</p>
+     */
+    inline void SetAquaConfiguration(const AquaConfiguration& value) { m_aquaConfigurationHasBeenSet = true; m_aquaConfiguration = value; }
+
+    /**
+     * <p>The AQUA (Advanced Query Accelerator) configuration of the cluster.</p>
+     */
+    inline void SetAquaConfiguration(AquaConfiguration&& value) { m_aquaConfigurationHasBeenSet = true; m_aquaConfiguration = std::move(value); }
+
+    /**
+     * <p>The AQUA (Advanced Query Accelerator) configuration of the cluster.</p>
+     */
+    inline Cluster& WithAquaConfiguration(const AquaConfiguration& value) { SetAquaConfiguration(value); return *this;}
+
+    /**
+     * <p>The AQUA (Advanced Query Accelerator) configuration of the cluster.</p>
+     */
+    inline Cluster& WithAquaConfiguration(AquaConfiguration&& value) { SetAquaConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM role set as default for the
+     * cluster.</p>
+     */
+    inline const Aws::String& GetDefaultIamRoleArn() const{ return m_defaultIamRoleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM role set as default for the
+     * cluster.</p>
+     */
+    inline bool DefaultIamRoleArnHasBeenSet() const { return m_defaultIamRoleArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM role set as default for the
+     * cluster.</p>
+     */
+    inline void SetDefaultIamRoleArn(const Aws::String& value) { m_defaultIamRoleArnHasBeenSet = true; m_defaultIamRoleArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM role set as default for the
+     * cluster.</p>
+     */
+    inline void SetDefaultIamRoleArn(Aws::String&& value) { m_defaultIamRoleArnHasBeenSet = true; m_defaultIamRoleArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM role set as default for the
+     * cluster.</p>
+     */
+    inline void SetDefaultIamRoleArn(const char* value) { m_defaultIamRoleArnHasBeenSet = true; m_defaultIamRoleArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM role set as default for the
+     * cluster.</p>
+     */
+    inline Cluster& WithDefaultIamRoleArn(const Aws::String& value) { SetDefaultIamRoleArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM role set as default for the
+     * cluster.</p>
+     */
+    inline Cluster& WithDefaultIamRoleArn(Aws::String&& value) { SetDefaultIamRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM role set as default for the
+     * cluster.</p>
+     */
+    inline Cluster& WithDefaultIamRoleArn(const char* value) { SetDefaultIamRoleArn(value); return *this;}
+
+
+    /**
+     * <p>The status of the reserved-node exchange request. Statuses include
+     * in-progress and requested.</p>
+     */
+    inline const ReservedNodeExchangeStatus& GetReservedNodeExchangeStatus() const{ return m_reservedNodeExchangeStatus; }
+
+    /**
+     * <p>The status of the reserved-node exchange request. Statuses include
+     * in-progress and requested.</p>
+     */
+    inline bool ReservedNodeExchangeStatusHasBeenSet() const { return m_reservedNodeExchangeStatusHasBeenSet; }
+
+    /**
+     * <p>The status of the reserved-node exchange request. Statuses include
+     * in-progress and requested.</p>
+     */
+    inline void SetReservedNodeExchangeStatus(const ReservedNodeExchangeStatus& value) { m_reservedNodeExchangeStatusHasBeenSet = true; m_reservedNodeExchangeStatus = value; }
+
+    /**
+     * <p>The status of the reserved-node exchange request. Statuses include
+     * in-progress and requested.</p>
+     */
+    inline void SetReservedNodeExchangeStatus(ReservedNodeExchangeStatus&& value) { m_reservedNodeExchangeStatusHasBeenSet = true; m_reservedNodeExchangeStatus = std::move(value); }
+
+    /**
+     * <p>The status of the reserved-node exchange request. Statuses include
+     * in-progress and requested.</p>
+     */
+    inline Cluster& WithReservedNodeExchangeStatus(const ReservedNodeExchangeStatus& value) { SetReservedNodeExchangeStatus(value); return *this;}
+
+    /**
+     * <p>The status of the reserved-node exchange request. Statuses include
+     * in-progress and requested.</p>
+     */
+    inline Cluster& WithReservedNodeExchangeStatus(ReservedNodeExchangeStatus&& value) { SetReservedNodeExchangeStatus(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_clusterIdentifier;
@@ -2358,6 +2498,18 @@ namespace Model
 
     Aws::String m_clusterNamespaceArn;
     bool m_clusterNamespaceArnHasBeenSet;
+
+    long long m_totalStorageCapacityInMegaBytes;
+    bool m_totalStorageCapacityInMegaBytesHasBeenSet;
+
+    AquaConfiguration m_aquaConfiguration;
+    bool m_aquaConfigurationHasBeenSet;
+
+    Aws::String m_defaultIamRoleArn;
+    bool m_defaultIamRoleArnHasBeenSet;
+
+    ReservedNodeExchangeStatus m_reservedNodeExchangeStatus;
+    bool m_reservedNodeExchangeStatusHasBeenSet;
   };
 
 } // namespace Model

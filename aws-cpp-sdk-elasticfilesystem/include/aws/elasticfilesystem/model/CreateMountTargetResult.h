@@ -39,37 +39,37 @@ namespace Model
 
 
     /**
-     * <p>AWS account ID that owns the resource.</p>
+     * <p>Amazon Web Services account ID that owns the resource.</p>
      */
     inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
 
     /**
-     * <p>AWS account ID that owns the resource.</p>
+     * <p>Amazon Web Services account ID that owns the resource.</p>
      */
     inline void SetOwnerId(const Aws::String& value) { m_ownerId = value; }
 
     /**
-     * <p>AWS account ID that owns the resource.</p>
+     * <p>Amazon Web Services account ID that owns the resource.</p>
      */
     inline void SetOwnerId(Aws::String&& value) { m_ownerId = std::move(value); }
 
     /**
-     * <p>AWS account ID that owns the resource.</p>
+     * <p>Amazon Web Services account ID that owns the resource.</p>
      */
     inline void SetOwnerId(const char* value) { m_ownerId.assign(value); }
 
     /**
-     * <p>AWS account ID that owns the resource.</p>
+     * <p>Amazon Web Services account ID that owns the resource.</p>
      */
     inline CreateMountTargetResult& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
 
     /**
-     * <p>AWS account ID that owns the resource.</p>
+     * <p>Amazon Web Services account ID that owns the resource.</p>
      */
     inline CreateMountTargetResult& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>AWS account ID that owns the resource.</p>
+     * <p>Amazon Web Services account ID that owns the resource.</p>
      */
     inline CreateMountTargetResult& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
 
@@ -295,150 +295,164 @@ namespace Model
 
 
     /**
-     * <p>The unique and consistent identifier of the Availability Zone (AZ) that the
-     * mount target resides in. For example, <code>use1-az1</code> is an AZ ID for the
-     * us-east-1 Region and it has the same location in every AWS account.</p>
+     * <p>The unique and consistent identifier of the Availability Zone that the mount
+     * target resides in. For example, <code>use1-az1</code> is an AZ ID for the
+     * us-east-1 Region and it has the same location in every Amazon Web Services
+     * account.</p>
      */
     inline const Aws::String& GetAvailabilityZoneId() const{ return m_availabilityZoneId; }
 
     /**
-     * <p>The unique and consistent identifier of the Availability Zone (AZ) that the
-     * mount target resides in. For example, <code>use1-az1</code> is an AZ ID for the
-     * us-east-1 Region and it has the same location in every AWS account.</p>
+     * <p>The unique and consistent identifier of the Availability Zone that the mount
+     * target resides in. For example, <code>use1-az1</code> is an AZ ID for the
+     * us-east-1 Region and it has the same location in every Amazon Web Services
+     * account.</p>
      */
     inline void SetAvailabilityZoneId(const Aws::String& value) { m_availabilityZoneId = value; }
 
     /**
-     * <p>The unique and consistent identifier of the Availability Zone (AZ) that the
-     * mount target resides in. For example, <code>use1-az1</code> is an AZ ID for the
-     * us-east-1 Region and it has the same location in every AWS account.</p>
+     * <p>The unique and consistent identifier of the Availability Zone that the mount
+     * target resides in. For example, <code>use1-az1</code> is an AZ ID for the
+     * us-east-1 Region and it has the same location in every Amazon Web Services
+     * account.</p>
      */
     inline void SetAvailabilityZoneId(Aws::String&& value) { m_availabilityZoneId = std::move(value); }
 
     /**
-     * <p>The unique and consistent identifier of the Availability Zone (AZ) that the
-     * mount target resides in. For example, <code>use1-az1</code> is an AZ ID for the
-     * us-east-1 Region and it has the same location in every AWS account.</p>
+     * <p>The unique and consistent identifier of the Availability Zone that the mount
+     * target resides in. For example, <code>use1-az1</code> is an AZ ID for the
+     * us-east-1 Region and it has the same location in every Amazon Web Services
+     * account.</p>
      */
     inline void SetAvailabilityZoneId(const char* value) { m_availabilityZoneId.assign(value); }
 
     /**
-     * <p>The unique and consistent identifier of the Availability Zone (AZ) that the
-     * mount target resides in. For example, <code>use1-az1</code> is an AZ ID for the
-     * us-east-1 Region and it has the same location in every AWS account.</p>
+     * <p>The unique and consistent identifier of the Availability Zone that the mount
+     * target resides in. For example, <code>use1-az1</code> is an AZ ID for the
+     * us-east-1 Region and it has the same location in every Amazon Web Services
+     * account.</p>
      */
     inline CreateMountTargetResult& WithAvailabilityZoneId(const Aws::String& value) { SetAvailabilityZoneId(value); return *this;}
 
     /**
-     * <p>The unique and consistent identifier of the Availability Zone (AZ) that the
-     * mount target resides in. For example, <code>use1-az1</code> is an AZ ID for the
-     * us-east-1 Region and it has the same location in every AWS account.</p>
+     * <p>The unique and consistent identifier of the Availability Zone that the mount
+     * target resides in. For example, <code>use1-az1</code> is an AZ ID for the
+     * us-east-1 Region and it has the same location in every Amazon Web Services
+     * account.</p>
      */
     inline CreateMountTargetResult& WithAvailabilityZoneId(Aws::String&& value) { SetAvailabilityZoneId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique and consistent identifier of the Availability Zone (AZ) that the
-     * mount target resides in. For example, <code>use1-az1</code> is an AZ ID for the
-     * us-east-1 Region and it has the same location in every AWS account.</p>
+     * <p>The unique and consistent identifier of the Availability Zone that the mount
+     * target resides in. For example, <code>use1-az1</code> is an AZ ID for the
+     * us-east-1 Region and it has the same location in every Amazon Web Services
+     * account.</p>
      */
     inline CreateMountTargetResult& WithAvailabilityZoneId(const char* value) { SetAvailabilityZoneId(value); return *this;}
 
 
     /**
-     * <p>The name of the Availability Zone (AZ) that the mount target resides in. AZs
-     * are independently mapped to names for each AWS account. For example, the
-     * Availability Zone <code>us-east-1a</code> for your AWS account might not be the
-     * same location as <code>us-east-1a</code> for another AWS account.</p>
+     * <p>The name of the Availability Zone in which the mount target is located.
+     * Availability Zones are independently mapped to names for each Amazon Web
+     * Services account. For example, the Availability Zone <code>us-east-1a</code> for
+     * your Amazon Web Services account might not be the same location as
+     * <code>us-east-1a</code> for another Amazon Web Services account.</p>
      */
     inline const Aws::String& GetAvailabilityZoneName() const{ return m_availabilityZoneName; }
 
     /**
-     * <p>The name of the Availability Zone (AZ) that the mount target resides in. AZs
-     * are independently mapped to names for each AWS account. For example, the
-     * Availability Zone <code>us-east-1a</code> for your AWS account might not be the
-     * same location as <code>us-east-1a</code> for another AWS account.</p>
+     * <p>The name of the Availability Zone in which the mount target is located.
+     * Availability Zones are independently mapped to names for each Amazon Web
+     * Services account. For example, the Availability Zone <code>us-east-1a</code> for
+     * your Amazon Web Services account might not be the same location as
+     * <code>us-east-1a</code> for another Amazon Web Services account.</p>
      */
     inline void SetAvailabilityZoneName(const Aws::String& value) { m_availabilityZoneName = value; }
 
     /**
-     * <p>The name of the Availability Zone (AZ) that the mount target resides in. AZs
-     * are independently mapped to names for each AWS account. For example, the
-     * Availability Zone <code>us-east-1a</code> for your AWS account might not be the
-     * same location as <code>us-east-1a</code> for another AWS account.</p>
+     * <p>The name of the Availability Zone in which the mount target is located.
+     * Availability Zones are independently mapped to names for each Amazon Web
+     * Services account. For example, the Availability Zone <code>us-east-1a</code> for
+     * your Amazon Web Services account might not be the same location as
+     * <code>us-east-1a</code> for another Amazon Web Services account.</p>
      */
     inline void SetAvailabilityZoneName(Aws::String&& value) { m_availabilityZoneName = std::move(value); }
 
     /**
-     * <p>The name of the Availability Zone (AZ) that the mount target resides in. AZs
-     * are independently mapped to names for each AWS account. For example, the
-     * Availability Zone <code>us-east-1a</code> for your AWS account might not be the
-     * same location as <code>us-east-1a</code> for another AWS account.</p>
+     * <p>The name of the Availability Zone in which the mount target is located.
+     * Availability Zones are independently mapped to names for each Amazon Web
+     * Services account. For example, the Availability Zone <code>us-east-1a</code> for
+     * your Amazon Web Services account might not be the same location as
+     * <code>us-east-1a</code> for another Amazon Web Services account.</p>
      */
     inline void SetAvailabilityZoneName(const char* value) { m_availabilityZoneName.assign(value); }
 
     /**
-     * <p>The name of the Availability Zone (AZ) that the mount target resides in. AZs
-     * are independently mapped to names for each AWS account. For example, the
-     * Availability Zone <code>us-east-1a</code> for your AWS account might not be the
-     * same location as <code>us-east-1a</code> for another AWS account.</p>
+     * <p>The name of the Availability Zone in which the mount target is located.
+     * Availability Zones are independently mapped to names for each Amazon Web
+     * Services account. For example, the Availability Zone <code>us-east-1a</code> for
+     * your Amazon Web Services account might not be the same location as
+     * <code>us-east-1a</code> for another Amazon Web Services account.</p>
      */
     inline CreateMountTargetResult& WithAvailabilityZoneName(const Aws::String& value) { SetAvailabilityZoneName(value); return *this;}
 
     /**
-     * <p>The name of the Availability Zone (AZ) that the mount target resides in. AZs
-     * are independently mapped to names for each AWS account. For example, the
-     * Availability Zone <code>us-east-1a</code> for your AWS account might not be the
-     * same location as <code>us-east-1a</code> for another AWS account.</p>
+     * <p>The name of the Availability Zone in which the mount target is located.
+     * Availability Zones are independently mapped to names for each Amazon Web
+     * Services account. For example, the Availability Zone <code>us-east-1a</code> for
+     * your Amazon Web Services account might not be the same location as
+     * <code>us-east-1a</code> for another Amazon Web Services account.</p>
      */
     inline CreateMountTargetResult& WithAvailabilityZoneName(Aws::String&& value) { SetAvailabilityZoneName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Availability Zone (AZ) that the mount target resides in. AZs
-     * are independently mapped to names for each AWS account. For example, the
-     * Availability Zone <code>us-east-1a</code> for your AWS account might not be the
-     * same location as <code>us-east-1a</code> for another AWS account.</p>
+     * <p>The name of the Availability Zone in which the mount target is located.
+     * Availability Zones are independently mapped to names for each Amazon Web
+     * Services account. For example, the Availability Zone <code>us-east-1a</code> for
+     * your Amazon Web Services account might not be the same location as
+     * <code>us-east-1a</code> for another Amazon Web Services account.</p>
      */
     inline CreateMountTargetResult& WithAvailabilityZoneName(const char* value) { SetAvailabilityZoneName(value); return *this;}
 
 
     /**
-     * <p>The Virtual Private Cloud (VPC) ID that the mount target is configured
+     * <p>The virtual private cloud (VPC) ID that the mount target is configured
      * in.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
 
     /**
-     * <p>The Virtual Private Cloud (VPC) ID that the mount target is configured
+     * <p>The virtual private cloud (VPC) ID that the mount target is configured
      * in.</p>
      */
     inline void SetVpcId(const Aws::String& value) { m_vpcId = value; }
 
     /**
-     * <p>The Virtual Private Cloud (VPC) ID that the mount target is configured
+     * <p>The virtual private cloud (VPC) ID that the mount target is configured
      * in.</p>
      */
     inline void SetVpcId(Aws::String&& value) { m_vpcId = std::move(value); }
 
     /**
-     * <p>The Virtual Private Cloud (VPC) ID that the mount target is configured
+     * <p>The virtual private cloud (VPC) ID that the mount target is configured
      * in.</p>
      */
     inline void SetVpcId(const char* value) { m_vpcId.assign(value); }
 
     /**
-     * <p>The Virtual Private Cloud (VPC) ID that the mount target is configured
+     * <p>The virtual private cloud (VPC) ID that the mount target is configured
      * in.</p>
      */
     inline CreateMountTargetResult& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
 
     /**
-     * <p>The Virtual Private Cloud (VPC) ID that the mount target is configured
+     * <p>The virtual private cloud (VPC) ID that the mount target is configured
      * in.</p>
      */
     inline CreateMountTargetResult& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
 
     /**
-     * <p>The Virtual Private Cloud (VPC) ID that the mount target is configured
+     * <p>The virtual private cloud (VPC) ID that the mount target is configured
      * in.</p>
      */
     inline CreateMountTargetResult& WithVpcId(const char* value) { SetVpcId(value); return *this;}

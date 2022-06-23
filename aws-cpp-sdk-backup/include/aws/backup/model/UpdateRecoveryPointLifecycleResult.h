@@ -129,56 +129,86 @@ namespace Model
 
     /**
      * <p>The lifecycle defines when a protected resource is transitioned to cold
-     * storage and when it expires. AWS Backup transitions and expires backups
-     * automatically according to the lifecycle that you define. </p> <p>Backups
+     * storage and when it expires. Backup transitions and expires backups
+     * automatically according to the lifecycle that you define.</p> <p>Backups
      * transitioned to cold storage must be stored in cold storage for a minimum of 90
-     * days. Therefore, the “expire after days” setting must be 90 days greater than
-     * the “transition to cold after days” setting. The “transition to cold after days”
-     * setting cannot be changed after a backup has been transitioned to cold. </p>
+     * days. Therefore, the “retention” setting must be 90 days greater than the
+     * “transition to cold after days” setting. The “transition to cold after days”
+     * setting cannot be changed after a backup has been transitioned to cold.</p>
+     * <p>Only resource types that support full Backup management can transition their
+     * backups to cold storage. Those resource types are listed in the "Full Backup
+     * management" section of the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
+     * Feature availability by resource</a> table. Backup ignores this expression for
+     * other resource types.</p>
      */
     inline const Lifecycle& GetLifecycle() const{ return m_lifecycle; }
 
     /**
      * <p>The lifecycle defines when a protected resource is transitioned to cold
-     * storage and when it expires. AWS Backup transitions and expires backups
-     * automatically according to the lifecycle that you define. </p> <p>Backups
+     * storage and when it expires. Backup transitions and expires backups
+     * automatically according to the lifecycle that you define.</p> <p>Backups
      * transitioned to cold storage must be stored in cold storage for a minimum of 90
-     * days. Therefore, the “expire after days” setting must be 90 days greater than
-     * the “transition to cold after days” setting. The “transition to cold after days”
-     * setting cannot be changed after a backup has been transitioned to cold. </p>
+     * days. Therefore, the “retention” setting must be 90 days greater than the
+     * “transition to cold after days” setting. The “transition to cold after days”
+     * setting cannot be changed after a backup has been transitioned to cold.</p>
+     * <p>Only resource types that support full Backup management can transition their
+     * backups to cold storage. Those resource types are listed in the "Full Backup
+     * management" section of the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
+     * Feature availability by resource</a> table. Backup ignores this expression for
+     * other resource types.</p>
      */
     inline void SetLifecycle(const Lifecycle& value) { m_lifecycle = value; }
 
     /**
      * <p>The lifecycle defines when a protected resource is transitioned to cold
-     * storage and when it expires. AWS Backup transitions and expires backups
-     * automatically according to the lifecycle that you define. </p> <p>Backups
+     * storage and when it expires. Backup transitions and expires backups
+     * automatically according to the lifecycle that you define.</p> <p>Backups
      * transitioned to cold storage must be stored in cold storage for a minimum of 90
-     * days. Therefore, the “expire after days” setting must be 90 days greater than
-     * the “transition to cold after days” setting. The “transition to cold after days”
-     * setting cannot be changed after a backup has been transitioned to cold. </p>
+     * days. Therefore, the “retention” setting must be 90 days greater than the
+     * “transition to cold after days” setting. The “transition to cold after days”
+     * setting cannot be changed after a backup has been transitioned to cold.</p>
+     * <p>Only resource types that support full Backup management can transition their
+     * backups to cold storage. Those resource types are listed in the "Full Backup
+     * management" section of the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
+     * Feature availability by resource</a> table. Backup ignores this expression for
+     * other resource types.</p>
      */
     inline void SetLifecycle(Lifecycle&& value) { m_lifecycle = std::move(value); }
 
     /**
      * <p>The lifecycle defines when a protected resource is transitioned to cold
-     * storage and when it expires. AWS Backup transitions and expires backups
-     * automatically according to the lifecycle that you define. </p> <p>Backups
+     * storage and when it expires. Backup transitions and expires backups
+     * automatically according to the lifecycle that you define.</p> <p>Backups
      * transitioned to cold storage must be stored in cold storage for a minimum of 90
-     * days. Therefore, the “expire after days” setting must be 90 days greater than
-     * the “transition to cold after days” setting. The “transition to cold after days”
-     * setting cannot be changed after a backup has been transitioned to cold. </p>
+     * days. Therefore, the “retention” setting must be 90 days greater than the
+     * “transition to cold after days” setting. The “transition to cold after days”
+     * setting cannot be changed after a backup has been transitioned to cold.</p>
+     * <p>Only resource types that support full Backup management can transition their
+     * backups to cold storage. Those resource types are listed in the "Full Backup
+     * management" section of the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
+     * Feature availability by resource</a> table. Backup ignores this expression for
+     * other resource types.</p>
      */
     inline UpdateRecoveryPointLifecycleResult& WithLifecycle(const Lifecycle& value) { SetLifecycle(value); return *this;}
 
     /**
      * <p>The lifecycle defines when a protected resource is transitioned to cold
-     * storage and when it expires. AWS Backup transitions and expires backups
-     * automatically according to the lifecycle that you define. </p> <p>Backups
+     * storage and when it expires. Backup transitions and expires backups
+     * automatically according to the lifecycle that you define.</p> <p>Backups
      * transitioned to cold storage must be stored in cold storage for a minimum of 90
-     * days. Therefore, the “expire after days” setting must be 90 days greater than
-     * the “transition to cold after days” setting. The “transition to cold after days”
-     * setting cannot be changed after a backup has been transitioned to cold. </p>
+     * days. Therefore, the “retention” setting must be 90 days greater than the
+     * “transition to cold after days” setting. The “transition to cold after days”
+     * setting cannot be changed after a backup has been transitioned to cold.</p>
+     * <p>Only resource types that support full Backup management can transition their
+     * backups to cold storage. Those resource types are listed in the "Full Backup
+     * management" section of the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
+     * Feature availability by resource</a> table. Backup ignores this expression for
+     * other resource types.</p>
      */
     inline UpdateRecoveryPointLifecycleResult& WithLifecycle(Lifecycle&& value) { SetLifecycle(std::move(value)); return *this;}
 

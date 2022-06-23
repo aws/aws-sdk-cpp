@@ -137,42 +137,42 @@ namespace Model
 
 
     /**
-     * <p>The Docker version running on the container instance.</p>
+     * <p>The Docker version that's running on the container instance.</p>
      */
     inline const Aws::String& GetDockerVersion() const{ return m_dockerVersion; }
 
     /**
-     * <p>The Docker version running on the container instance.</p>
+     * <p>The Docker version that's running on the container instance.</p>
      */
     inline bool DockerVersionHasBeenSet() const { return m_dockerVersionHasBeenSet; }
 
     /**
-     * <p>The Docker version running on the container instance.</p>
+     * <p>The Docker version that's running on the container instance.</p>
      */
     inline void SetDockerVersion(const Aws::String& value) { m_dockerVersionHasBeenSet = true; m_dockerVersion = value; }
 
     /**
-     * <p>The Docker version running on the container instance.</p>
+     * <p>The Docker version that's running on the container instance.</p>
      */
     inline void SetDockerVersion(Aws::String&& value) { m_dockerVersionHasBeenSet = true; m_dockerVersion = std::move(value); }
 
     /**
-     * <p>The Docker version running on the container instance.</p>
+     * <p>The Docker version that's running on the container instance.</p>
      */
     inline void SetDockerVersion(const char* value) { m_dockerVersionHasBeenSet = true; m_dockerVersion.assign(value); }
 
     /**
-     * <p>The Docker version running on the container instance.</p>
+     * <p>The Docker version that's running on the container instance.</p>
      */
     inline VersionInfo& WithDockerVersion(const Aws::String& value) { SetDockerVersion(value); return *this;}
 
     /**
-     * <p>The Docker version running on the container instance.</p>
+     * <p>The Docker version that's running on the container instance.</p>
      */
     inline VersionInfo& WithDockerVersion(Aws::String&& value) { SetDockerVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The Docker version running on the container instance.</p>
+     * <p>The Docker version that's running on the container instance.</p>
      */
     inline VersionInfo& WithDockerVersion(const char* value) { SetDockerVersion(value); return *this;}
 

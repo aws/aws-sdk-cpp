@@ -25,7 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes a file share.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes a file share. Only supported S3 File Gateway.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/FileShareInfo">AWS
    * API Reference</a></p>
    */

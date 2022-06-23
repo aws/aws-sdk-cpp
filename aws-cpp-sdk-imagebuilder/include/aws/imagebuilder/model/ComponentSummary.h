@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/imagebuilder/model/Platform.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/imagebuilder/model/ComponentState.h>
 #include <aws/imagebuilder/model/ComponentType.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
@@ -197,66 +198,97 @@ namespace Model
 
     /**
      * <p>The operating system (OS) version supported by the component. If the OS
-     * information is available, a prefix match is performed against the parent image
-     * OS version during image recipe creation. </p>
+     * information is available, a prefix match is performed against the base image OS
+     * version during image recipe creation.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSupportedOsVersions() const{ return m_supportedOsVersions; }
 
     /**
      * <p>The operating system (OS) version supported by the component. If the OS
-     * information is available, a prefix match is performed against the parent image
-     * OS version during image recipe creation. </p>
+     * information is available, a prefix match is performed against the base image OS
+     * version during image recipe creation.</p>
      */
     inline bool SupportedOsVersionsHasBeenSet() const { return m_supportedOsVersionsHasBeenSet; }
 
     /**
      * <p>The operating system (OS) version supported by the component. If the OS
-     * information is available, a prefix match is performed against the parent image
-     * OS version during image recipe creation. </p>
+     * information is available, a prefix match is performed against the base image OS
+     * version during image recipe creation.</p>
      */
     inline void SetSupportedOsVersions(const Aws::Vector<Aws::String>& value) { m_supportedOsVersionsHasBeenSet = true; m_supportedOsVersions = value; }
 
     /**
      * <p>The operating system (OS) version supported by the component. If the OS
-     * information is available, a prefix match is performed against the parent image
-     * OS version during image recipe creation. </p>
+     * information is available, a prefix match is performed against the base image OS
+     * version during image recipe creation.</p>
      */
     inline void SetSupportedOsVersions(Aws::Vector<Aws::String>&& value) { m_supportedOsVersionsHasBeenSet = true; m_supportedOsVersions = std::move(value); }
 
     /**
      * <p>The operating system (OS) version supported by the component. If the OS
-     * information is available, a prefix match is performed against the parent image
-     * OS version during image recipe creation. </p>
+     * information is available, a prefix match is performed against the base image OS
+     * version during image recipe creation.</p>
      */
     inline ComponentSummary& WithSupportedOsVersions(const Aws::Vector<Aws::String>& value) { SetSupportedOsVersions(value); return *this;}
 
     /**
      * <p>The operating system (OS) version supported by the component. If the OS
-     * information is available, a prefix match is performed against the parent image
-     * OS version during image recipe creation. </p>
+     * information is available, a prefix match is performed against the base image OS
+     * version during image recipe creation.</p>
      */
     inline ComponentSummary& WithSupportedOsVersions(Aws::Vector<Aws::String>&& value) { SetSupportedOsVersions(std::move(value)); return *this;}
 
     /**
      * <p>The operating system (OS) version supported by the component. If the OS
-     * information is available, a prefix match is performed against the parent image
-     * OS version during image recipe creation. </p>
+     * information is available, a prefix match is performed against the base image OS
+     * version during image recipe creation.</p>
      */
     inline ComponentSummary& AddSupportedOsVersions(const Aws::String& value) { m_supportedOsVersionsHasBeenSet = true; m_supportedOsVersions.push_back(value); return *this; }
 
     /**
      * <p>The operating system (OS) version supported by the component. If the OS
-     * information is available, a prefix match is performed against the parent image
-     * OS version during image recipe creation. </p>
+     * information is available, a prefix match is performed against the base image OS
+     * version during image recipe creation.</p>
      */
     inline ComponentSummary& AddSupportedOsVersions(Aws::String&& value) { m_supportedOsVersionsHasBeenSet = true; m_supportedOsVersions.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The operating system (OS) version supported by the component. If the OS
-     * information is available, a prefix match is performed against the parent image
-     * OS version during image recipe creation. </p>
+     * information is available, a prefix match is performed against the base image OS
+     * version during image recipe creation.</p>
      */
     inline ComponentSummary& AddSupportedOsVersions(const char* value) { m_supportedOsVersionsHasBeenSet = true; m_supportedOsVersions.push_back(value); return *this; }
+
+
+    /**
+     * <p>Describes the current status of the component.</p>
+     */
+    inline const ComponentState& GetState() const{ return m_state; }
+
+    /**
+     * <p>Describes the current status of the component.</p>
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>Describes the current status of the component.</p>
+     */
+    inline void SetState(const ComponentState& value) { m_stateHasBeenSet = true; m_state = value; }
+
+    /**
+     * <p>Describes the current status of the component.</p>
+     */
+    inline void SetState(ComponentState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
+
+    /**
+     * <p>Describes the current status of the component.</p>
+     */
+    inline ComponentSummary& WithState(const ComponentState& value) { SetState(value); return *this;}
+
+    /**
+     * <p>Describes the current status of the component.</p>
+     */
+    inline ComponentSummary& WithState(ComponentState&& value) { SetState(std::move(value)); return *this;}
 
 
     /**
@@ -541,6 +573,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_supportedOsVersions;
     bool m_supportedOsVersionsHasBeenSet;
+
+    ComponentState m_state;
+    bool m_stateHasBeenSet;
 
     ComponentType m_type;
     bool m_typeHasBeenSet;

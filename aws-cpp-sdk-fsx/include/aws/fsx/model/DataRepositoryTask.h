@@ -33,7 +33,7 @@ namespace Model
 
   /**
    * <p>A description of the data repository task. You use data repository tasks to
-   * perform bulk transfer operations between your Amazon FSx file system and its
+   * perform bulk transfer operations between your Amazon FSx file system and a
    * linked data repository.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DataRepositoryTask">AWS
    * API Reference</a></p>
@@ -216,38 +216,62 @@ namespace Model
 
 
     /**
-     * <p>The type of data repository task; EXPORT_TO_REPOSITORY is the only type
-     * currently supported.</p>
+     * <p>The type of data repository task.</p> <ul> <li> <p>The
+     * <code>EXPORT_TO_REPOSITORY</code> data repository task exports from your Lustre
+     * file system from to a linked S3 bucket.</p> </li> <li> <p>The
+     * <code>IMPORT_METADATA_FROM_REPOSITORY</code> data repository task imports
+     * metadata changes from a linked S3 bucket to your Lustre file system.</p> </li>
+     * </ul>
      */
     inline const DataRepositoryTaskType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of data repository task; EXPORT_TO_REPOSITORY is the only type
-     * currently supported.</p>
+     * <p>The type of data repository task.</p> <ul> <li> <p>The
+     * <code>EXPORT_TO_REPOSITORY</code> data repository task exports from your Lustre
+     * file system from to a linked S3 bucket.</p> </li> <li> <p>The
+     * <code>IMPORT_METADATA_FROM_REPOSITORY</code> data repository task imports
+     * metadata changes from a linked S3 bucket to your Lustre file system.</p> </li>
+     * </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of data repository task; EXPORT_TO_REPOSITORY is the only type
-     * currently supported.</p>
+     * <p>The type of data repository task.</p> <ul> <li> <p>The
+     * <code>EXPORT_TO_REPOSITORY</code> data repository task exports from your Lustre
+     * file system from to a linked S3 bucket.</p> </li> <li> <p>The
+     * <code>IMPORT_METADATA_FROM_REPOSITORY</code> data repository task imports
+     * metadata changes from a linked S3 bucket to your Lustre file system.</p> </li>
+     * </ul>
      */
     inline void SetType(const DataRepositoryTaskType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of data repository task; EXPORT_TO_REPOSITORY is the only type
-     * currently supported.</p>
+     * <p>The type of data repository task.</p> <ul> <li> <p>The
+     * <code>EXPORT_TO_REPOSITORY</code> data repository task exports from your Lustre
+     * file system from to a linked S3 bucket.</p> </li> <li> <p>The
+     * <code>IMPORT_METADATA_FROM_REPOSITORY</code> data repository task imports
+     * metadata changes from a linked S3 bucket to your Lustre file system.</p> </li>
+     * </ul>
      */
     inline void SetType(DataRepositoryTaskType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of data repository task; EXPORT_TO_REPOSITORY is the only type
-     * currently supported.</p>
+     * <p>The type of data repository task.</p> <ul> <li> <p>The
+     * <code>EXPORT_TO_REPOSITORY</code> data repository task exports from your Lustre
+     * file system from to a linked S3 bucket.</p> </li> <li> <p>The
+     * <code>IMPORT_METADATA_FROM_REPOSITORY</code> data repository task imports
+     * metadata changes from a linked S3 bucket to your Lustre file system.</p> </li>
+     * </ul>
      */
     inline DataRepositoryTask& WithType(const DataRepositoryTaskType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of data repository task; EXPORT_TO_REPOSITORY is the only type
-     * currently supported.</p>
+     * <p>The type of data repository task.</p> <ul> <li> <p>The
+     * <code>EXPORT_TO_REPOSITORY</code> data repository task exports from your Lustre
+     * file system from to a linked S3 bucket.</p> </li> <li> <p>The
+     * <code>IMPORT_METADATA_FROM_REPOSITORY</code> data repository task imports
+     * metadata changes from a linked S3 bucket to your Lustre file system.</p> </li>
+     * </ul>
      */
     inline DataRepositoryTask& WithType(DataRepositoryTaskType&& value) { SetType(std::move(value)); return *this;}
 

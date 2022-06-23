@@ -23,8 +23,8 @@ namespace Model
 
   /**
    * <p>Lists all the private hosted zones that a specified VPC is associated with,
-   * regardless of which AWS account created the hosted zones.</p><p><h3>See
-   * Also:</h3>   <a
+   * regardless of which Amazon Web Services account created the hosted
+   * zones.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZonesByVPCRequest">AWS
    * API Reference</a></p>
    */
@@ -86,38 +86,38 @@ namespace Model
 
 
     /**
-     * <p>For the Amazon VPC that you specified for <code>VPCId</code>, the AWS Region
-     * that you created the VPC in. </p>
+     * <p>For the Amazon VPC that you specified for <code>VPCId</code>, the Amazon Web
+     * Services Region that you created the VPC in. </p>
      */
     inline const VPCRegion& GetVPCRegion() const{ return m_vPCRegion; }
 
     /**
-     * <p>For the Amazon VPC that you specified for <code>VPCId</code>, the AWS Region
-     * that you created the VPC in. </p>
+     * <p>For the Amazon VPC that you specified for <code>VPCId</code>, the Amazon Web
+     * Services Region that you created the VPC in. </p>
      */
     inline bool VPCRegionHasBeenSet() const { return m_vPCRegionHasBeenSet; }
 
     /**
-     * <p>For the Amazon VPC that you specified for <code>VPCId</code>, the AWS Region
-     * that you created the VPC in. </p>
+     * <p>For the Amazon VPC that you specified for <code>VPCId</code>, the Amazon Web
+     * Services Region that you created the VPC in. </p>
      */
     inline void SetVPCRegion(const VPCRegion& value) { m_vPCRegionHasBeenSet = true; m_vPCRegion = value; }
 
     /**
-     * <p>For the Amazon VPC that you specified for <code>VPCId</code>, the AWS Region
-     * that you created the VPC in. </p>
+     * <p>For the Amazon VPC that you specified for <code>VPCId</code>, the Amazon Web
+     * Services Region that you created the VPC in. </p>
      */
     inline void SetVPCRegion(VPCRegion&& value) { m_vPCRegionHasBeenSet = true; m_vPCRegion = std::move(value); }
 
     /**
-     * <p>For the Amazon VPC that you specified for <code>VPCId</code>, the AWS Region
-     * that you created the VPC in. </p>
+     * <p>For the Amazon VPC that you specified for <code>VPCId</code>, the Amazon Web
+     * Services Region that you created the VPC in. </p>
      */
     inline ListHostedZonesByVPCRequest& WithVPCRegion(const VPCRegion& value) { SetVPCRegion(value); return *this;}
 
     /**
-     * <p>For the Amazon VPC that you specified for <code>VPCId</code>, the AWS Region
-     * that you created the VPC in. </p>
+     * <p>For the Amazon VPC that you specified for <code>VPCId</code>, the Amazon Web
+     * Services Region that you created the VPC in. </p>
      */
     inline ListHostedZonesByVPCRequest& WithVPCRegion(VPCRegion&& value) { SetVPCRegion(std::move(value)); return *this;}
 

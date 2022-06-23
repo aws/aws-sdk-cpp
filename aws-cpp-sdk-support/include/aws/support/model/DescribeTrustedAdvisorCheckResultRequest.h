@@ -79,58 +79,66 @@ namespace Model
 
 
     /**
-     * <p>The ISO 639-1 code for the language in which AWS provides support. AWS
-     * Support currently supports English ("en") and Japanese ("ja"). Language
-     * parameters must be passed explicitly for operations that take them.</p>
+     * <p>The ISO 639-1 code for the language in which Amazon Web Services provides
+     * support. Amazon Web Services Support currently supports English ("en") and
+     * Japanese ("ja"). Language parameters must be passed explicitly for operations
+     * that take them.</p>
      */
     inline const Aws::String& GetLanguage() const{ return m_language; }
 
     /**
-     * <p>The ISO 639-1 code for the language in which AWS provides support. AWS
-     * Support currently supports English ("en") and Japanese ("ja"). Language
-     * parameters must be passed explicitly for operations that take them.</p>
+     * <p>The ISO 639-1 code for the language in which Amazon Web Services provides
+     * support. Amazon Web Services Support currently supports English ("en") and
+     * Japanese ("ja"). Language parameters must be passed explicitly for operations
+     * that take them.</p>
      */
     inline bool LanguageHasBeenSet() const { return m_languageHasBeenSet; }
 
     /**
-     * <p>The ISO 639-1 code for the language in which AWS provides support. AWS
-     * Support currently supports English ("en") and Japanese ("ja"). Language
-     * parameters must be passed explicitly for operations that take them.</p>
+     * <p>The ISO 639-1 code for the language in which Amazon Web Services provides
+     * support. Amazon Web Services Support currently supports English ("en") and
+     * Japanese ("ja"). Language parameters must be passed explicitly for operations
+     * that take them.</p>
      */
     inline void SetLanguage(const Aws::String& value) { m_languageHasBeenSet = true; m_language = value; }
 
     /**
-     * <p>The ISO 639-1 code for the language in which AWS provides support. AWS
-     * Support currently supports English ("en") and Japanese ("ja"). Language
-     * parameters must be passed explicitly for operations that take them.</p>
+     * <p>The ISO 639-1 code for the language in which Amazon Web Services provides
+     * support. Amazon Web Services Support currently supports English ("en") and
+     * Japanese ("ja"). Language parameters must be passed explicitly for operations
+     * that take them.</p>
      */
     inline void SetLanguage(Aws::String&& value) { m_languageHasBeenSet = true; m_language = std::move(value); }
 
     /**
-     * <p>The ISO 639-1 code for the language in which AWS provides support. AWS
-     * Support currently supports English ("en") and Japanese ("ja"). Language
-     * parameters must be passed explicitly for operations that take them.</p>
+     * <p>The ISO 639-1 code for the language in which Amazon Web Services provides
+     * support. Amazon Web Services Support currently supports English ("en") and
+     * Japanese ("ja"). Language parameters must be passed explicitly for operations
+     * that take them.</p>
      */
     inline void SetLanguage(const char* value) { m_languageHasBeenSet = true; m_language.assign(value); }
 
     /**
-     * <p>The ISO 639-1 code for the language in which AWS provides support. AWS
-     * Support currently supports English ("en") and Japanese ("ja"). Language
-     * parameters must be passed explicitly for operations that take them.</p>
+     * <p>The ISO 639-1 code for the language in which Amazon Web Services provides
+     * support. Amazon Web Services Support currently supports English ("en") and
+     * Japanese ("ja"). Language parameters must be passed explicitly for operations
+     * that take them.</p>
      */
     inline DescribeTrustedAdvisorCheckResultRequest& WithLanguage(const Aws::String& value) { SetLanguage(value); return *this;}
 
     /**
-     * <p>The ISO 639-1 code for the language in which AWS provides support. AWS
-     * Support currently supports English ("en") and Japanese ("ja"). Language
-     * parameters must be passed explicitly for operations that take them.</p>
+     * <p>The ISO 639-1 code for the language in which Amazon Web Services provides
+     * support. Amazon Web Services Support currently supports English ("en") and
+     * Japanese ("ja"). Language parameters must be passed explicitly for operations
+     * that take them.</p>
      */
     inline DescribeTrustedAdvisorCheckResultRequest& WithLanguage(Aws::String&& value) { SetLanguage(std::move(value)); return *this;}
 
     /**
-     * <p>The ISO 639-1 code for the language in which AWS provides support. AWS
-     * Support currently supports English ("en") and Japanese ("ja"). Language
-     * parameters must be passed explicitly for operations that take them.</p>
+     * <p>The ISO 639-1 code for the language in which Amazon Web Services provides
+     * support. Amazon Web Services Support currently supports English ("en") and
+     * Japanese ("ja"). Language parameters must be passed explicitly for operations
+     * that take them.</p>
      */
     inline DescribeTrustedAdvisorCheckResultRequest& WithLanguage(const char* value) { SetLanguage(value); return *this;}
 

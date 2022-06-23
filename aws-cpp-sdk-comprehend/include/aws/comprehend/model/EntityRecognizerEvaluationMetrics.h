@@ -93,32 +93,40 @@ namespace Model
     /**
      * <p>A measure of how accurate the recognizer results are for the test data. It is
      * derived from the <code>Precision</code> and <code>Recall</code> values. The
-     * <code>F1Score</code> is the harmonic average of the two scores. The highest
-     * score is 1, and the worst score is 0. </p>
+     * <code>F1Score</code> is the harmonic average of the two scores. For plain text
+     * entity recognizer models, the range is 0 to 100, where 100 is the best score.
+     * For PDF/Word entity recognizer models, the range is 0 to 1, where 1 is the best
+     * score. </p>
      */
     inline double GetF1Score() const{ return m_f1Score; }
 
     /**
      * <p>A measure of how accurate the recognizer results are for the test data. It is
      * derived from the <code>Precision</code> and <code>Recall</code> values. The
-     * <code>F1Score</code> is the harmonic average of the two scores. The highest
-     * score is 1, and the worst score is 0. </p>
+     * <code>F1Score</code> is the harmonic average of the two scores. For plain text
+     * entity recognizer models, the range is 0 to 100, where 100 is the best score.
+     * For PDF/Word entity recognizer models, the range is 0 to 1, where 1 is the best
+     * score. </p>
      */
     inline bool F1ScoreHasBeenSet() const { return m_f1ScoreHasBeenSet; }
 
     /**
      * <p>A measure of how accurate the recognizer results are for the test data. It is
      * derived from the <code>Precision</code> and <code>Recall</code> values. The
-     * <code>F1Score</code> is the harmonic average of the two scores. The highest
-     * score is 1, and the worst score is 0. </p>
+     * <code>F1Score</code> is the harmonic average of the two scores. For plain text
+     * entity recognizer models, the range is 0 to 100, where 100 is the best score.
+     * For PDF/Word entity recognizer models, the range is 0 to 1, where 1 is the best
+     * score. </p>
      */
     inline void SetF1Score(double value) { m_f1ScoreHasBeenSet = true; m_f1Score = value; }
 
     /**
      * <p>A measure of how accurate the recognizer results are for the test data. It is
      * derived from the <code>Precision</code> and <code>Recall</code> values. The
-     * <code>F1Score</code> is the harmonic average of the two scores. The highest
-     * score is 1, and the worst score is 0. </p>
+     * <code>F1Score</code> is the harmonic average of the two scores. For plain text
+     * entity recognizer models, the range is 0 to 100, where 100 is the best score.
+     * For PDF/Word entity recognizer models, the range is 0 to 1, where 1 is the best
+     * score. </p>
      */
     inline EntityRecognizerEvaluationMetrics& WithF1Score(double value) { SetF1Score(value); return *this;}
 

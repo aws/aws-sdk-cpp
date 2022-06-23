@@ -236,6 +236,70 @@ namespace Model
 
 
     /**
+     * <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was
+     * previously set up in fields that were parsed using <a
+     * href="https://docs.oracle.com/javase/10/docs/api/java/text/SimpleDateFormat.html">SimpleDateFormat</a>.
+     * If you have <code>sourceLastUpdatedTimestamp</code> in your field, you must set
+     * up <code>sourceLastUpdatedTimestampFormat</code>.</p>
+     */
+    inline const Aws::String& GetSourceLastUpdatedTimestampFormat() const{ return m_sourceLastUpdatedTimestampFormat; }
+
+    /**
+     * <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was
+     * previously set up in fields that were parsed using <a
+     * href="https://docs.oracle.com/javase/10/docs/api/java/text/SimpleDateFormat.html">SimpleDateFormat</a>.
+     * If you have <code>sourceLastUpdatedTimestamp</code> in your field, you must set
+     * up <code>sourceLastUpdatedTimestampFormat</code>.</p>
+     */
+    inline void SetSourceLastUpdatedTimestampFormat(const Aws::String& value) { m_sourceLastUpdatedTimestampFormat = value; }
+
+    /**
+     * <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was
+     * previously set up in fields that were parsed using <a
+     * href="https://docs.oracle.com/javase/10/docs/api/java/text/SimpleDateFormat.html">SimpleDateFormat</a>.
+     * If you have <code>sourceLastUpdatedTimestamp</code> in your field, you must set
+     * up <code>sourceLastUpdatedTimestampFormat</code>.</p>
+     */
+    inline void SetSourceLastUpdatedTimestampFormat(Aws::String&& value) { m_sourceLastUpdatedTimestampFormat = std::move(value); }
+
+    /**
+     * <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was
+     * previously set up in fields that were parsed using <a
+     * href="https://docs.oracle.com/javase/10/docs/api/java/text/SimpleDateFormat.html">SimpleDateFormat</a>.
+     * If you have <code>sourceLastUpdatedTimestamp</code> in your field, you must set
+     * up <code>sourceLastUpdatedTimestampFormat</code>.</p>
+     */
+    inline void SetSourceLastUpdatedTimestampFormat(const char* value) { m_sourceLastUpdatedTimestampFormat.assign(value); }
+
+    /**
+     * <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was
+     * previously set up in fields that were parsed using <a
+     * href="https://docs.oracle.com/javase/10/docs/api/java/text/SimpleDateFormat.html">SimpleDateFormat</a>.
+     * If you have <code>sourceLastUpdatedTimestamp</code> in your field, you must set
+     * up <code>sourceLastUpdatedTimestampFormat</code>.</p>
+     */
+    inline PutProfileObjectTypeResult& WithSourceLastUpdatedTimestampFormat(const Aws::String& value) { SetSourceLastUpdatedTimestampFormat(value); return *this;}
+
+    /**
+     * <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was
+     * previously set up in fields that were parsed using <a
+     * href="https://docs.oracle.com/javase/10/docs/api/java/text/SimpleDateFormat.html">SimpleDateFormat</a>.
+     * If you have <code>sourceLastUpdatedTimestamp</code> in your field, you must set
+     * up <code>sourceLastUpdatedTimestampFormat</code>.</p>
+     */
+    inline PutProfileObjectTypeResult& WithSourceLastUpdatedTimestampFormat(Aws::String&& value) { SetSourceLastUpdatedTimestampFormat(std::move(value)); return *this;}
+
+    /**
+     * <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was
+     * previously set up in fields that were parsed using <a
+     * href="https://docs.oracle.com/javase/10/docs/api/java/text/SimpleDateFormat.html">SimpleDateFormat</a>.
+     * If you have <code>sourceLastUpdatedTimestamp</code> in your field, you must set
+     * up <code>sourceLastUpdatedTimestampFormat</code>.</p>
+     */
+    inline PutProfileObjectTypeResult& WithSourceLastUpdatedTimestampFormat(const char* value) { SetSourceLastUpdatedTimestampFormat(value); return *this;}
+
+
+    /**
      * <p>A map of the name and ObjectType field.</p>
      */
     inline const Aws::Map<Aws::String, ObjectTypeField>& GetFields() const{ return m_fields; }
@@ -472,6 +536,8 @@ namespace Model
     Aws::String m_encryptionKey;
 
     bool m_allowProfileCreation;
+
+    Aws::String m_sourceLastUpdatedTimestampFormat;
 
     Aws::Map<Aws::String, ObjectTypeField> m_fields;
 

@@ -88,22 +88,22 @@ namespace Model
 
 
     /**
-     * <p>The maximimum number of results to return per page.</p>
+     * <p>The maximum number of results to return per page.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximimum number of results to return per page.</p>
+     * <p>The maximum number of results to return per page.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximimum number of results to return per page.</p>
+     * <p>The maximum number of results to return per page.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximimum number of results to return per page.</p>
+     * <p>The maximum number of results to return per page.</p>
      */
     inline ListInstancesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

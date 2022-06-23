@@ -28,7 +28,8 @@ TrafficMirrorTarget::TrafficMirrorTarget() :
     m_typeHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_ownerIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_gatewayLoadBalancerEndpointIdHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,8 @@ TrafficMirrorTarget::TrafficMirrorTarget(const XmlNode& xmlNode) :
     m_typeHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_ownerIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_gatewayLoadBalancerEndpointIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -99,6 +101,12 @@ TrafficMirrorTarget& TrafficMirrorTarget::operator =(const XmlNode& xmlNode)
 
       m_tagsHasBeenSet = true;
     }
+    XmlNode gatewayLoadBalancerEndpointIdNode = resultNode.FirstChild("gatewayLoadBalancerEndpointId");
+    if(!gatewayLoadBalancerEndpointIdNode.IsNull())
+    {
+      m_gatewayLoadBalancerEndpointId = Aws::Utils::Xml::DecodeEscapedXmlText(gatewayLoadBalancerEndpointIdNode.GetText());
+      m_gatewayLoadBalancerEndpointIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -147,6 +155,11 @@ void TrafficMirrorTarget::OutputToStream(Aws::OStream& oStream, const char* loca
       }
   }
 
+  if(m_gatewayLoadBalancerEndpointIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".GatewayLoadBalancerEndpointId=" << StringUtils::URLEncode(m_gatewayLoadBalancerEndpointId.c_str()) << "&";
+  }
+
 }
 
 void TrafficMirrorTarget::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -184,6 +197,10 @@ void TrafficMirrorTarget::OutputToStream(Aws::OStream& oStream, const char* loca
         tagsSs << location <<  ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
+  }
+  if(m_gatewayLoadBalancerEndpointIdHasBeenSet)
+  {
+      oStream << location << ".GatewayLoadBalancerEndpointId=" << StringUtils::URLEncode(m_gatewayLoadBalancerEndpointId.c_str()) << "&";
   }
 }
 

@@ -38,7 +38,7 @@ namespace Model
      * <p> The collection of PHI entities extracted from the input text and their
      * associated information. For each entity, the response provides the entity text,
      * the entity category, where the entity text begins and ends, and the level of
-     * confidence that Amazon Comprehend Medical has in its detection. </p>
+     * confidence that Comprehend Medical; has in its detection. </p>
      */
     inline const Aws::Vector<Entity>& GetEntities() const{ return m_entities; }
 
@@ -46,7 +46,7 @@ namespace Model
      * <p> The collection of PHI entities extracted from the input text and their
      * associated information. For each entity, the response provides the entity text,
      * the entity category, where the entity text begins and ends, and the level of
-     * confidence that Amazon Comprehend Medical has in its detection. </p>
+     * confidence that Comprehend Medical; has in its detection. </p>
      */
     inline void SetEntities(const Aws::Vector<Entity>& value) { m_entities = value; }
 
@@ -54,7 +54,7 @@ namespace Model
      * <p> The collection of PHI entities extracted from the input text and their
      * associated information. For each entity, the response provides the entity text,
      * the entity category, where the entity text begins and ends, and the level of
-     * confidence that Amazon Comprehend Medical has in its detection. </p>
+     * confidence that Comprehend Medical; has in its detection. </p>
      */
     inline void SetEntities(Aws::Vector<Entity>&& value) { m_entities = std::move(value); }
 
@@ -62,7 +62,7 @@ namespace Model
      * <p> The collection of PHI entities extracted from the input text and their
      * associated information. For each entity, the response provides the entity text,
      * the entity category, where the entity text begins and ends, and the level of
-     * confidence that Amazon Comprehend Medical has in its detection. </p>
+     * confidence that Comprehend Medical; has in its detection. </p>
      */
     inline DetectPHIResult& WithEntities(const Aws::Vector<Entity>& value) { SetEntities(value); return *this;}
 
@@ -70,7 +70,7 @@ namespace Model
      * <p> The collection of PHI entities extracted from the input text and their
      * associated information. For each entity, the response provides the entity text,
      * the entity category, where the entity text begins and ends, and the level of
-     * confidence that Amazon Comprehend Medical has in its detection. </p>
+     * confidence that Comprehend Medical; has in its detection. </p>
      */
     inline DetectPHIResult& WithEntities(Aws::Vector<Entity>&& value) { SetEntities(std::move(value)); return *this;}
 
@@ -78,7 +78,7 @@ namespace Model
      * <p> The collection of PHI entities extracted from the input text and their
      * associated information. For each entity, the response provides the entity text,
      * the entity category, where the entity text begins and ends, and the level of
-     * confidence that Amazon Comprehend Medical has in its detection. </p>
+     * confidence that Comprehend Medical; has in its detection. </p>
      */
     inline DetectPHIResult& AddEntities(const Entity& value) { m_entities.push_back(value); return *this; }
 
@@ -86,7 +86,7 @@ namespace Model
      * <p> The collection of PHI entities extracted from the input text and their
      * associated information. For each entity, the response provides the entity text,
      * the entity category, where the entity text begins and ends, and the level of
-     * confidence that Amazon Comprehend Medical has in its detection. </p>
+     * confidence that Comprehend Medical; has in its detection. </p>
      */
     inline DetectPHIResult& AddEntities(Entity&& value) { m_entities.push_back(std::move(value)); return *this; }
 

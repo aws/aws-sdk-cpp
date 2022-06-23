@@ -7,6 +7,7 @@
 #include <aws/customer-profiles/CustomerProfiles_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/customer-profiles/model/DomainStats.h>
+#include <aws/customer-profiles/model/MatchingResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
@@ -207,6 +208,77 @@ namespace Model
 
 
     /**
+     * <p>The process of matching duplicate profiles. If <code>Matching</code> =
+     * <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch
+     * process called Identity Resolution Job. If you do not specify a date and time
+     * for Identity Resolution Job to run, by default it runs every Saturday at 12AM
+     * UTC to detect duplicate profiles in your domains. </p> <p>After the Identity
+     * Resolution Job completes, use the <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
+     * API to return and review the results. Or, if you have configured
+     * <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can
+     * download the results from S3.</p>
+     */
+    inline const MatchingResponse& GetMatching() const{ return m_matching; }
+
+    /**
+     * <p>The process of matching duplicate profiles. If <code>Matching</code> =
+     * <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch
+     * process called Identity Resolution Job. If you do not specify a date and time
+     * for Identity Resolution Job to run, by default it runs every Saturday at 12AM
+     * UTC to detect duplicate profiles in your domains. </p> <p>After the Identity
+     * Resolution Job completes, use the <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
+     * API to return and review the results. Or, if you have configured
+     * <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can
+     * download the results from S3.</p>
+     */
+    inline void SetMatching(const MatchingResponse& value) { m_matching = value; }
+
+    /**
+     * <p>The process of matching duplicate profiles. If <code>Matching</code> =
+     * <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch
+     * process called Identity Resolution Job. If you do not specify a date and time
+     * for Identity Resolution Job to run, by default it runs every Saturday at 12AM
+     * UTC to detect duplicate profiles in your domains. </p> <p>After the Identity
+     * Resolution Job completes, use the <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
+     * API to return and review the results. Or, if you have configured
+     * <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can
+     * download the results from S3.</p>
+     */
+    inline void SetMatching(MatchingResponse&& value) { m_matching = std::move(value); }
+
+    /**
+     * <p>The process of matching duplicate profiles. If <code>Matching</code> =
+     * <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch
+     * process called Identity Resolution Job. If you do not specify a date and time
+     * for Identity Resolution Job to run, by default it runs every Saturday at 12AM
+     * UTC to detect duplicate profiles in your domains. </p> <p>After the Identity
+     * Resolution Job completes, use the <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
+     * API to return and review the results. Or, if you have configured
+     * <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can
+     * download the results from S3.</p>
+     */
+    inline GetDomainResult& WithMatching(const MatchingResponse& value) { SetMatching(value); return *this;}
+
+    /**
+     * <p>The process of matching duplicate profiles. If <code>Matching</code> =
+     * <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch
+     * process called Identity Resolution Job. If you do not specify a date and time
+     * for Identity Resolution Job to run, by default it runs every Saturday at 12AM
+     * UTC to detect duplicate profiles in your domains. </p> <p>After the Identity
+     * Resolution Job completes, use the <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
+     * API to return and review the results. Or, if you have configured
+     * <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can
+     * download the results from S3.</p>
+     */
+    inline GetDomainResult& WithMatching(MatchingResponse&& value) { SetMatching(std::move(value)); return *this;}
+
+
+    /**
      * <p>The timestamp of when the domain was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
@@ -329,6 +401,8 @@ namespace Model
     Aws::String m_deadLetterQueueUrl;
 
     DomainStats m_stats;
+
+    MatchingResponse m_matching;
 
     Aws::Utils::DateTime m_createdAt;
 

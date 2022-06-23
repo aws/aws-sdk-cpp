@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p> The metadata associated with a standard or custom framework. </p><p><h3>See
-   * Also:</h3>   <a
+   * <p> The metadata that's associated with a standard framework or a custom
+   * framework. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/AssessmentFrameworkMetadata">AWS
    * API Reference</a></p>
    */
@@ -41,196 +41,237 @@ namespace Model
 
 
     /**
-     * <p> The unique identified for the specified framework. </p>
+     * <p> The Amazon Resource Name (ARN) of the framework. </p>
+     */
+    inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the framework. </p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the framework. </p>
+     */
+    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the framework. </p>
+     */
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the framework. </p>
+     */
+    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the framework. </p>
+     */
+    inline AssessmentFrameworkMetadata& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the framework. </p>
+     */
+    inline AssessmentFrameworkMetadata& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the framework. </p>
+     */
+    inline AssessmentFrameworkMetadata& WithArn(const char* value) { SetArn(value); return *this;}
+
+
+    /**
+     * <p> The unique identifier for the framework. </p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p> The unique identified for the specified framework. </p>
+     * <p> The unique identifier for the framework. </p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * <p> The unique identified for the specified framework. </p>
+     * <p> The unique identifier for the framework. </p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p> The unique identified for the specified framework. </p>
+     * <p> The unique identifier for the framework. </p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p> The unique identified for the specified framework. </p>
+     * <p> The unique identifier for the framework. </p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p> The unique identified for the specified framework. </p>
+     * <p> The unique identifier for the framework. </p>
      */
     inline AssessmentFrameworkMetadata& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p> The unique identified for the specified framework. </p>
+     * <p> The unique identifier for the framework. </p>
      */
     inline AssessmentFrameworkMetadata& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p> The unique identified for the specified framework. </p>
+     * <p> The unique identifier for the framework. </p>
      */
     inline AssessmentFrameworkMetadata& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
-     * <p> The framework type, such as standard or custom. </p>
+     * <p> The framework type, such as a standard framework or a custom framework. </p>
      */
     inline const FrameworkType& GetType() const{ return m_type; }
 
     /**
-     * <p> The framework type, such as standard or custom. </p>
+     * <p> The framework type, such as a standard framework or a custom framework. </p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p> The framework type, such as standard or custom. </p>
+     * <p> The framework type, such as a standard framework or a custom framework. </p>
      */
     inline void SetType(const FrameworkType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p> The framework type, such as standard or custom. </p>
+     * <p> The framework type, such as a standard framework or a custom framework. </p>
      */
     inline void SetType(FrameworkType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p> The framework type, such as standard or custom. </p>
+     * <p> The framework type, such as a standard framework or a custom framework. </p>
      */
     inline AssessmentFrameworkMetadata& WithType(const FrameworkType& value) { SetType(value); return *this;}
 
     /**
-     * <p> The framework type, such as standard or custom. </p>
+     * <p> The framework type, such as a standard framework or a custom framework. </p>
      */
     inline AssessmentFrameworkMetadata& WithType(FrameworkType&& value) { SetType(std::move(value)); return *this;}
 
 
     /**
-     * <p> The name of the specified framework. </p>
+     * <p> The name of the framework. </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p> The name of the specified framework. </p>
+     * <p> The name of the framework. </p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p> The name of the specified framework. </p>
+     * <p> The name of the framework. </p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p> The name of the specified framework. </p>
+     * <p> The name of the framework. </p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p> The name of the specified framework. </p>
+     * <p> The name of the framework. </p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p> The name of the specified framework. </p>
+     * <p> The name of the framework. </p>
      */
     inline AssessmentFrameworkMetadata& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p> The name of the specified framework. </p>
+     * <p> The name of the framework. </p>
      */
     inline AssessmentFrameworkMetadata& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p> The name of the specified framework. </p>
+     * <p> The name of the framework. </p>
      */
     inline AssessmentFrameworkMetadata& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p> The description of the specified framework. </p>
+     * <p> The description of the framework. </p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p> The description of the specified framework. </p>
+     * <p> The description of the framework. </p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p> The description of the specified framework. </p>
+     * <p> The description of the framework. </p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p> The description of the specified framework. </p>
+     * <p> The description of the framework. </p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p> The description of the specified framework. </p>
+     * <p> The description of the framework. </p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p> The description of the specified framework. </p>
+     * <p> The description of the framework. </p>
      */
     inline AssessmentFrameworkMetadata& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p> The description of the specified framework. </p>
+     * <p> The description of the framework. </p>
      */
     inline AssessmentFrameworkMetadata& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p> The description of the specified framework. </p>
+     * <p> The description of the framework. </p>
      */
     inline AssessmentFrameworkMetadata& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * <p> The logo associated with the framework. </p>
+     * <p> The logo that's associated with the framework. </p>
      */
     inline const Aws::String& GetLogo() const{ return m_logo; }
 
     /**
-     * <p> The logo associated with the framework. </p>
+     * <p> The logo that's associated with the framework. </p>
      */
     inline bool LogoHasBeenSet() const { return m_logoHasBeenSet; }
 
     /**
-     * <p> The logo associated with the framework. </p>
+     * <p> The logo that's associated with the framework. </p>
      */
     inline void SetLogo(const Aws::String& value) { m_logoHasBeenSet = true; m_logo = value; }
 
     /**
-     * <p> The logo associated with the framework. </p>
+     * <p> The logo that's associated with the framework. </p>
      */
     inline void SetLogo(Aws::String&& value) { m_logoHasBeenSet = true; m_logo = std::move(value); }
 
     /**
-     * <p> The logo associated with the framework. </p>
+     * <p> The logo that's associated with the framework. </p>
      */
     inline void SetLogo(const char* value) { m_logoHasBeenSet = true; m_logo.assign(value); }
 
     /**
-     * <p> The logo associated with the framework. </p>
+     * <p> The logo that's associated with the framework. </p>
      */
     inline AssessmentFrameworkMetadata& WithLogo(const Aws::String& value) { SetLogo(value); return *this;}
 
     /**
-     * <p> The logo associated with the framework. </p>
+     * <p> The logo that's associated with the framework. </p>
      */
     inline AssessmentFrameworkMetadata& WithLogo(Aws::String&& value) { SetLogo(std::move(value)); return *this;}
 
     /**
-     * <p> The logo associated with the framework. </p>
+     * <p> The logo that's associated with the framework. </p>
      */
     inline AssessmentFrameworkMetadata& WithLogo(const char* value) { SetLogo(value); return *this;}
 
@@ -285,43 +326,43 @@ namespace Model
 
 
     /**
-     * <p> The number of controls associated with the specified framework. </p>
+     * <p> The number of controls that are associated with the framework. </p>
      */
     inline int GetControlsCount() const{ return m_controlsCount; }
 
     /**
-     * <p> The number of controls associated with the specified framework. </p>
+     * <p> The number of controls that are associated with the framework. </p>
      */
     inline bool ControlsCountHasBeenSet() const { return m_controlsCountHasBeenSet; }
 
     /**
-     * <p> The number of controls associated with the specified framework. </p>
+     * <p> The number of controls that are associated with the framework. </p>
      */
     inline void SetControlsCount(int value) { m_controlsCountHasBeenSet = true; m_controlsCount = value; }
 
     /**
-     * <p> The number of controls associated with the specified framework. </p>
+     * <p> The number of controls that are associated with the framework. </p>
      */
     inline AssessmentFrameworkMetadata& WithControlsCount(int value) { SetControlsCount(value); return *this;}
 
 
     /**
-     * <p> The number of control sets associated with the specified framework. </p>
+     * <p> The number of control sets that are associated with the framework. </p>
      */
     inline int GetControlSetsCount() const{ return m_controlSetsCount; }
 
     /**
-     * <p> The number of control sets associated with the specified framework. </p>
+     * <p> The number of control sets that are associated with the framework. </p>
      */
     inline bool ControlSetsCountHasBeenSet() const { return m_controlSetsCountHasBeenSet; }
 
     /**
-     * <p> The number of control sets associated with the specified framework. </p>
+     * <p> The number of control sets that are associated with the framework. </p>
      */
     inline void SetControlSetsCount(int value) { m_controlSetsCountHasBeenSet = true; m_controlSetsCount = value; }
 
     /**
-     * <p> The number of control sets associated with the specified framework. </p>
+     * <p> The number of control sets that are associated with the framework. </p>
      */
     inline AssessmentFrameworkMetadata& WithControlSetsCount(int value) { SetControlSetsCount(value); return *this;}
 
@@ -388,6 +429,9 @@ namespace Model
     inline AssessmentFrameworkMetadata& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(std::move(value)); return *this;}
 
   private:
+
+    Aws::String m_arn;
+    bool m_arnHasBeenSet;
 
     Aws::String m_id;
     bool m_idHasBeenSet;

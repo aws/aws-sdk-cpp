@@ -21,6 +21,7 @@ DescribeClassificationJobResult::DescribeClassificationJobResult() :
     m_initialRun(false),
     m_jobStatus(JobStatus::NOT_SET),
     m_jobType(JobType::NOT_SET),
+    m_managedDataIdentifierSelector(ManagedDataIdentifierSelector::NOT_SET),
     m_samplingPercentage(0)
 {
 }
@@ -30,6 +31,7 @@ DescribeClassificationJobResult::DescribeClassificationJobResult(const Aws::Amaz
     m_initialRun(false),
     m_jobStatus(JobStatus::NOT_SET),
     m_jobType(JobType::NOT_SET),
+    m_managedDataIdentifierSelector(ManagedDataIdentifierSelector::NOT_SET),
     m_samplingPercentage(0)
 {
   *this = result;
@@ -104,6 +106,21 @@ DescribeClassificationJobResult& DescribeClassificationJobResult::operator =(con
   if(jsonValue.ValueExists("lastRunTime"))
   {
     m_lastRunTime = jsonValue.GetString("lastRunTime");
+
+  }
+
+  if(jsonValue.ValueExists("managedDataIdentifierIds"))
+  {
+    Array<JsonView> managedDataIdentifierIdsJsonList = jsonValue.GetArray("managedDataIdentifierIds");
+    for(unsigned managedDataIdentifierIdsIndex = 0; managedDataIdentifierIdsIndex < managedDataIdentifierIdsJsonList.GetLength(); ++managedDataIdentifierIdsIndex)
+    {
+      m_managedDataIdentifierIds.push_back(managedDataIdentifierIdsJsonList[managedDataIdentifierIdsIndex].AsString());
+    }
+  }
+
+  if(jsonValue.ValueExists("managedDataIdentifierSelector"))
+  {
+    m_managedDataIdentifierSelector = ManagedDataIdentifierSelectorMapper::GetManagedDataIdentifierSelectorForName(jsonValue.GetString("managedDataIdentifierSelector"));
 
   }
 

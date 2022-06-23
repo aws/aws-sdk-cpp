@@ -36,7 +36,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the geofence collection to be
      * disassociated from the tracker resource. Used when you need to specify a
      * resource across all AWS. </p> <ul> <li> <p>Format example:
-     * <code>arn:partition:service:region:account-id:resource-type:resource-id</code>
+     * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
      * </p> </li> </ul>
      */
     inline const Aws::String& GetConsumerArn() const{ return m_consumerArn; }
@@ -45,7 +45,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the geofence collection to be
      * disassociated from the tracker resource. Used when you need to specify a
      * resource across all AWS. </p> <ul> <li> <p>Format example:
-     * <code>arn:partition:service:region:account-id:resource-type:resource-id</code>
+     * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
      * </p> </li> </ul>
      */
     inline bool ConsumerArnHasBeenSet() const { return m_consumerArnHasBeenSet; }
@@ -54,7 +54,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the geofence collection to be
      * disassociated from the tracker resource. Used when you need to specify a
      * resource across all AWS. </p> <ul> <li> <p>Format example:
-     * <code>arn:partition:service:region:account-id:resource-type:resource-id</code>
+     * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
      * </p> </li> </ul>
      */
     inline void SetConsumerArn(const Aws::String& value) { m_consumerArnHasBeenSet = true; m_consumerArn = value; }
@@ -63,7 +63,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the geofence collection to be
      * disassociated from the tracker resource. Used when you need to specify a
      * resource across all AWS. </p> <ul> <li> <p>Format example:
-     * <code>arn:partition:service:region:account-id:resource-type:resource-id</code>
+     * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
      * </p> </li> </ul>
      */
     inline void SetConsumerArn(Aws::String&& value) { m_consumerArnHasBeenSet = true; m_consumerArn = std::move(value); }
@@ -72,7 +72,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the geofence collection to be
      * disassociated from the tracker resource. Used when you need to specify a
      * resource across all AWS. </p> <ul> <li> <p>Format example:
-     * <code>arn:partition:service:region:account-id:resource-type:resource-id</code>
+     * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
      * </p> </li> </ul>
      */
     inline void SetConsumerArn(const char* value) { m_consumerArnHasBeenSet = true; m_consumerArn.assign(value); }
@@ -81,7 +81,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the geofence collection to be
      * disassociated from the tracker resource. Used when you need to specify a
      * resource across all AWS. </p> <ul> <li> <p>Format example:
-     * <code>arn:partition:service:region:account-id:resource-type:resource-id</code>
+     * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
      * </p> </li> </ul>
      */
     inline DisassociateTrackerConsumerRequest& WithConsumerArn(const Aws::String& value) { SetConsumerArn(value); return *this;}
@@ -90,7 +90,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the geofence collection to be
      * disassociated from the tracker resource. Used when you need to specify a
      * resource across all AWS. </p> <ul> <li> <p>Format example:
-     * <code>arn:partition:service:region:account-id:resource-type:resource-id</code>
+     * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
      * </p> </li> </ul>
      */
     inline DisassociateTrackerConsumerRequest& WithConsumerArn(Aws::String&& value) { SetConsumerArn(std::move(value)); return *this;}
@@ -99,7 +99,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the geofence collection to be
      * disassociated from the tracker resource. Used when you need to specify a
      * resource across all AWS. </p> <ul> <li> <p>Format example:
-     * <code>arn:partition:service:region:account-id:resource-type:resource-id</code>
+     * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
      * </p> </li> </ul>
      */
     inline DisassociateTrackerConsumerRequest& WithConsumerArn(const char* value) { SetConsumerArn(value); return *this;}

@@ -77,32 +77,32 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier of the instance fleet.</p>
+     * <p>The configuration parameters of the instance fleet.</p>
      */
     inline const InstanceFleetModifyConfig& GetInstanceFleet() const{ return m_instanceFleet; }
 
     /**
-     * <p>The unique identifier of the instance fleet.</p>
+     * <p>The configuration parameters of the instance fleet.</p>
      */
     inline bool InstanceFleetHasBeenSet() const { return m_instanceFleetHasBeenSet; }
 
     /**
-     * <p>The unique identifier of the instance fleet.</p>
+     * <p>The configuration parameters of the instance fleet.</p>
      */
     inline void SetInstanceFleet(const InstanceFleetModifyConfig& value) { m_instanceFleetHasBeenSet = true; m_instanceFleet = value; }
 
     /**
-     * <p>The unique identifier of the instance fleet.</p>
+     * <p>The configuration parameters of the instance fleet.</p>
      */
     inline void SetInstanceFleet(InstanceFleetModifyConfig&& value) { m_instanceFleetHasBeenSet = true; m_instanceFleet = std::move(value); }
 
     /**
-     * <p>The unique identifier of the instance fleet.</p>
+     * <p>The configuration parameters of the instance fleet.</p>
      */
     inline ModifyInstanceFleetRequest& WithInstanceFleet(const InstanceFleetModifyConfig& value) { SetInstanceFleet(value); return *this;}
 
     /**
-     * <p>The unique identifier of the instance fleet.</p>
+     * <p>The configuration parameters of the instance fleet.</p>
      */
     inline ModifyInstanceFleetRequest& WithInstanceFleet(InstanceFleetModifyConfig&& value) { SetInstanceFleet(std::move(value)); return *this;}
 

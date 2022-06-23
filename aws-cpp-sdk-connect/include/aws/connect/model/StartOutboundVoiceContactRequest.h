@@ -8,6 +8,8 @@
 #include <aws/connect/ConnectRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/connect/model/AnswerMachineDetectionConfig.h>
+#include <aws/connect/model/TrafficType.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -173,42 +175,50 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline StartOutboundVoiceContactRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline StartOutboundVoiceContactRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline StartOutboundVoiceContactRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
@@ -216,64 +226,56 @@ namespace Model
     /**
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the request. The token is valid for 7 days after creation. If a
-     * contact is already started, the contact ID is returned. If the contact is
-     * disconnected, a new contact is started.</p>
+     * contact is already started, the contact ID is returned. </p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the request. The token is valid for 7 days after creation. If a
-     * contact is already started, the contact ID is returned. If the contact is
-     * disconnected, a new contact is started.</p>
+     * contact is already started, the contact ID is returned. </p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the request. The token is valid for 7 days after creation. If a
-     * contact is already started, the contact ID is returned. If the contact is
-     * disconnected, a new contact is started.</p>
+     * contact is already started, the contact ID is returned. </p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the request. The token is valid for 7 days after creation. If a
-     * contact is already started, the contact ID is returned. If the contact is
-     * disconnected, a new contact is started.</p>
+     * contact is already started, the contact ID is returned. </p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the request. The token is valid for 7 days after creation. If a
-     * contact is already started, the contact ID is returned. If the contact is
-     * disconnected, a new contact is started.</p>
+     * contact is already started, the contact ID is returned. </p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the request. The token is valid for 7 days after creation. If a
-     * contact is already started, the contact ID is returned. If the contact is
-     * disconnected, a new contact is started.</p>
+     * contact is already started, the contact ID is returned. </p>
      */
     inline StartOutboundVoiceContactRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the request. The token is valid for 7 days after creation. If a
-     * contact is already started, the contact ID is returned. If the contact is
-     * disconnected, a new contact is started.</p>
+     * contact is already started, the contact ID is returned. </p>
      */
     inline StartOutboundVoiceContactRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the request. The token is valid for 7 days after creation. If a
-     * contact is already started, the contact ID is returned. If the contact is
-     * disconnected, a new contact is started.</p>
+     * contact is already started, the contact ID is returned. </p>
      */
     inline StartOutboundVoiceContactRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
@@ -517,6 +519,127 @@ namespace Model
      */
     inline StartOutboundVoiceContactRequest& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>Configuration of the answering machine detection for this outbound call. </p>
+     */
+    inline const AnswerMachineDetectionConfig& GetAnswerMachineDetectionConfig() const{ return m_answerMachineDetectionConfig; }
+
+    /**
+     * <p>Configuration of the answering machine detection for this outbound call. </p>
+     */
+    inline bool AnswerMachineDetectionConfigHasBeenSet() const { return m_answerMachineDetectionConfigHasBeenSet; }
+
+    /**
+     * <p>Configuration of the answering machine detection for this outbound call. </p>
+     */
+    inline void SetAnswerMachineDetectionConfig(const AnswerMachineDetectionConfig& value) { m_answerMachineDetectionConfigHasBeenSet = true; m_answerMachineDetectionConfig = value; }
+
+    /**
+     * <p>Configuration of the answering machine detection for this outbound call. </p>
+     */
+    inline void SetAnswerMachineDetectionConfig(AnswerMachineDetectionConfig&& value) { m_answerMachineDetectionConfigHasBeenSet = true; m_answerMachineDetectionConfig = std::move(value); }
+
+    /**
+     * <p>Configuration of the answering machine detection for this outbound call. </p>
+     */
+    inline StartOutboundVoiceContactRequest& WithAnswerMachineDetectionConfig(const AnswerMachineDetectionConfig& value) { SetAnswerMachineDetectionConfig(value); return *this;}
+
+    /**
+     * <p>Configuration of the answering machine detection for this outbound call. </p>
+     */
+    inline StartOutboundVoiceContactRequest& WithAnswerMachineDetectionConfig(AnswerMachineDetectionConfig&& value) { SetAnswerMachineDetectionConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The campaign identifier of the outbound communication.</p>
+     */
+    inline const Aws::String& GetCampaignId() const{ return m_campaignId; }
+
+    /**
+     * <p>The campaign identifier of the outbound communication.</p>
+     */
+    inline bool CampaignIdHasBeenSet() const { return m_campaignIdHasBeenSet; }
+
+    /**
+     * <p>The campaign identifier of the outbound communication.</p>
+     */
+    inline void SetCampaignId(const Aws::String& value) { m_campaignIdHasBeenSet = true; m_campaignId = value; }
+
+    /**
+     * <p>The campaign identifier of the outbound communication.</p>
+     */
+    inline void SetCampaignId(Aws::String&& value) { m_campaignIdHasBeenSet = true; m_campaignId = std::move(value); }
+
+    /**
+     * <p>The campaign identifier of the outbound communication.</p>
+     */
+    inline void SetCampaignId(const char* value) { m_campaignIdHasBeenSet = true; m_campaignId.assign(value); }
+
+    /**
+     * <p>The campaign identifier of the outbound communication.</p>
+     */
+    inline StartOutboundVoiceContactRequest& WithCampaignId(const Aws::String& value) { SetCampaignId(value); return *this;}
+
+    /**
+     * <p>The campaign identifier of the outbound communication.</p>
+     */
+    inline StartOutboundVoiceContactRequest& WithCampaignId(Aws::String&& value) { SetCampaignId(std::move(value)); return *this;}
+
+    /**
+     * <p>The campaign identifier of the outbound communication.</p>
+     */
+    inline StartOutboundVoiceContactRequest& WithCampaignId(const char* value) { SetCampaignId(value); return *this;}
+
+
+    /**
+     * <p>Denotes the class of traffic. Calls with different traffic types are handled
+     * differently by Amazon Connect. The default value is <code>GENERAL</code>. Use
+     * <code>CAMPAIGN</code> if <code>EnableAnswerMachineDetection</code> is set to
+     * <code>true</code>. For all other cases, use <code>GENERAL</code>. </p>
+     */
+    inline const TrafficType& GetTrafficType() const{ return m_trafficType; }
+
+    /**
+     * <p>Denotes the class of traffic. Calls with different traffic types are handled
+     * differently by Amazon Connect. The default value is <code>GENERAL</code>. Use
+     * <code>CAMPAIGN</code> if <code>EnableAnswerMachineDetection</code> is set to
+     * <code>true</code>. For all other cases, use <code>GENERAL</code>. </p>
+     */
+    inline bool TrafficTypeHasBeenSet() const { return m_trafficTypeHasBeenSet; }
+
+    /**
+     * <p>Denotes the class of traffic. Calls with different traffic types are handled
+     * differently by Amazon Connect. The default value is <code>GENERAL</code>. Use
+     * <code>CAMPAIGN</code> if <code>EnableAnswerMachineDetection</code> is set to
+     * <code>true</code>. For all other cases, use <code>GENERAL</code>. </p>
+     */
+    inline void SetTrafficType(const TrafficType& value) { m_trafficTypeHasBeenSet = true; m_trafficType = value; }
+
+    /**
+     * <p>Denotes the class of traffic. Calls with different traffic types are handled
+     * differently by Amazon Connect. The default value is <code>GENERAL</code>. Use
+     * <code>CAMPAIGN</code> if <code>EnableAnswerMachineDetection</code> is set to
+     * <code>true</code>. For all other cases, use <code>GENERAL</code>. </p>
+     */
+    inline void SetTrafficType(TrafficType&& value) { m_trafficTypeHasBeenSet = true; m_trafficType = std::move(value); }
+
+    /**
+     * <p>Denotes the class of traffic. Calls with different traffic types are handled
+     * differently by Amazon Connect. The default value is <code>GENERAL</code>. Use
+     * <code>CAMPAIGN</code> if <code>EnableAnswerMachineDetection</code> is set to
+     * <code>true</code>. For all other cases, use <code>GENERAL</code>. </p>
+     */
+    inline StartOutboundVoiceContactRequest& WithTrafficType(const TrafficType& value) { SetTrafficType(value); return *this;}
+
+    /**
+     * <p>Denotes the class of traffic. Calls with different traffic types are handled
+     * differently by Amazon Connect. The default value is <code>GENERAL</code>. Use
+     * <code>CAMPAIGN</code> if <code>EnableAnswerMachineDetection</code> is set to
+     * <code>true</code>. For all other cases, use <code>GENERAL</code>. </p>
+     */
+    inline StartOutboundVoiceContactRequest& WithTrafficType(TrafficType&& value) { SetTrafficType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_destinationPhoneNumber;
@@ -539,6 +662,15 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
     bool m_attributesHasBeenSet;
+
+    AnswerMachineDetectionConfig m_answerMachineDetectionConfig;
+    bool m_answerMachineDetectionConfigHasBeenSet;
+
+    Aws::String m_campaignId;
+    bool m_campaignIdHasBeenSet;
+
+    TrafficType m_trafficType;
+    bool m_trafficTypeHasBeenSet;
   };
 
 } // namespace Model

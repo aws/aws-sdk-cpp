@@ -72,43 +72,43 @@ namespace Model
 
     /**
      * <p>A pagination token indicating there are additional pages available. You can
-     * use the token in a following request to fetch the next set of results. </p>
+     * use the token in a following request to fetch the next set of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
      * <p>A pagination token indicating there are additional pages available. You can
-     * use the token in a following request to fetch the next set of results. </p>
+     * use the token in a following request to fetch the next set of results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
      * <p>A pagination token indicating there are additional pages available. You can
-     * use the token in a following request to fetch the next set of results. </p>
+     * use the token in a following request to fetch the next set of results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>A pagination token indicating there are additional pages available. You can
-     * use the token in a following request to fetch the next set of results. </p>
+     * use the token in a following request to fetch the next set of results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
      * <p>A pagination token indicating there are additional pages available. You can
-     * use the token in a following request to fetch the next set of results. </p>
+     * use the token in a following request to fetch the next set of results.</p>
      */
     inline GetDevicePositionHistoryResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>A pagination token indicating there are additional pages available. You can
-     * use the token in a following request to fetch the next set of results. </p>
+     * use the token in a following request to fetch the next set of results.</p>
      */
     inline GetDevicePositionHistoryResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>A pagination token indicating there are additional pages available. You can
-     * use the token in a following request to fetch the next set of results. </p>
+     * use the token in a following request to fetch the next set of results.</p>
      */
     inline GetDevicePositionHistoryResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

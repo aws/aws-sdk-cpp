@@ -28,8 +28,8 @@ namespace Model
 
   /**
    * <p>Describes an ASN.1 X.400 <code>GeneralName</code> as defined in <a
-   * href="https://tools.ietf.org/html/rfc5280">RFC 5280</a>. Only one of the
-   * following naming options should be providied. Providing more than one option
+   * href="https://datatracker.ietf.org/doc/html/rfc5280">RFC 5280</a>. Only one of
+   * the following naming options should be provided. Providing more than one option
    * results in an <code>InvalidArgsException</code> error.</p><p><h3>See Also:</h3> 
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/GeneralName">AWS
@@ -83,49 +83,57 @@ namespace Model
 
     /**
      * <p>Represents <code>GeneralName</code> as an <a
-     * href="https://tools.ietf.org/html/rfc822">RFC 822</a> email address.</p>
+     * href="https://datatracker.ietf.org/doc/html/rfc822">RFC 822</a> email
+     * address.</p>
      */
     inline const Aws::String& GetRfc822Name() const{ return m_rfc822Name; }
 
     /**
      * <p>Represents <code>GeneralName</code> as an <a
-     * href="https://tools.ietf.org/html/rfc822">RFC 822</a> email address.</p>
+     * href="https://datatracker.ietf.org/doc/html/rfc822">RFC 822</a> email
+     * address.</p>
      */
     inline bool Rfc822NameHasBeenSet() const { return m_rfc822NameHasBeenSet; }
 
     /**
      * <p>Represents <code>GeneralName</code> as an <a
-     * href="https://tools.ietf.org/html/rfc822">RFC 822</a> email address.</p>
+     * href="https://datatracker.ietf.org/doc/html/rfc822">RFC 822</a> email
+     * address.</p>
      */
     inline void SetRfc822Name(const Aws::String& value) { m_rfc822NameHasBeenSet = true; m_rfc822Name = value; }
 
     /**
      * <p>Represents <code>GeneralName</code> as an <a
-     * href="https://tools.ietf.org/html/rfc822">RFC 822</a> email address.</p>
+     * href="https://datatracker.ietf.org/doc/html/rfc822">RFC 822</a> email
+     * address.</p>
      */
     inline void SetRfc822Name(Aws::String&& value) { m_rfc822NameHasBeenSet = true; m_rfc822Name = std::move(value); }
 
     /**
      * <p>Represents <code>GeneralName</code> as an <a
-     * href="https://tools.ietf.org/html/rfc822">RFC 822</a> email address.</p>
+     * href="https://datatracker.ietf.org/doc/html/rfc822">RFC 822</a> email
+     * address.</p>
      */
     inline void SetRfc822Name(const char* value) { m_rfc822NameHasBeenSet = true; m_rfc822Name.assign(value); }
 
     /**
      * <p>Represents <code>GeneralName</code> as an <a
-     * href="https://tools.ietf.org/html/rfc822">RFC 822</a> email address.</p>
+     * href="https://datatracker.ietf.org/doc/html/rfc822">RFC 822</a> email
+     * address.</p>
      */
     inline GeneralName& WithRfc822Name(const Aws::String& value) { SetRfc822Name(value); return *this;}
 
     /**
      * <p>Represents <code>GeneralName</code> as an <a
-     * href="https://tools.ietf.org/html/rfc822">RFC 822</a> email address.</p>
+     * href="https://datatracker.ietf.org/doc/html/rfc822">RFC 822</a> email
+     * address.</p>
      */
     inline GeneralName& WithRfc822Name(Aws::String&& value) { SetRfc822Name(std::move(value)); return *this;}
 
     /**
      * <p>Represents <code>GeneralName</code> as an <a
-     * href="https://tools.ietf.org/html/rfc822">RFC 822</a> email address.</p>
+     * href="https://datatracker.ietf.org/doc/html/rfc822">RFC 822</a> email
+     * address.</p>
      */
     inline GeneralName& WithRfc822Name(const char* value) { SetRfc822Name(value); return *this;}
 

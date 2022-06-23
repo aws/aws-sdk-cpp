@@ -8,12 +8,14 @@
 #include <aws/forecast/ForecastServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/forecast/model/AutoMLOverrideStrategy.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/forecast/model/EvaluationParameters.h>
 #include <aws/forecast/model/HyperParameterTuningJobConfig.h>
 #include <aws/forecast/model/InputDataConfig.h>
 #include <aws/forecast/model/FeaturizationConfig.h>
 #include <aws/forecast/model/EncryptionConfig.h>
+#include <aws/forecast/model/OptimizationMetric.h>
 #include <aws/forecast/model/Tag.h>
 #include <utility>
 
@@ -358,6 +360,67 @@ namespace Model
      * your training data. In this case, <code>PerformHPO</code> must be false.</p>
      */
     inline CreatePredictorRequest& WithPerformAutoML(bool value) { SetPerformAutoML(value); return *this;}
+
+
+    /**
+     *  <p> The <code>LatencyOptimized</code> AutoML override strategy is only
+     * available in private beta. Contact AWS Support or your account manager to learn
+     * more about access privileges. </p>  <p>Used to overide the default AutoML
+     * strategy, which is to optimize predictor accuracy. To apply an AutoML strategy
+     * that minimizes training time, use <code>LatencyOptimized</code>.</p> <p>This
+     * parameter is only valid for predictors trained using AutoML.</p>
+     */
+    inline const AutoMLOverrideStrategy& GetAutoMLOverrideStrategy() const{ return m_autoMLOverrideStrategy; }
+
+    /**
+     *  <p> The <code>LatencyOptimized</code> AutoML override strategy is only
+     * available in private beta. Contact AWS Support or your account manager to learn
+     * more about access privileges. </p>  <p>Used to overide the default AutoML
+     * strategy, which is to optimize predictor accuracy. To apply an AutoML strategy
+     * that minimizes training time, use <code>LatencyOptimized</code>.</p> <p>This
+     * parameter is only valid for predictors trained using AutoML.</p>
+     */
+    inline bool AutoMLOverrideStrategyHasBeenSet() const { return m_autoMLOverrideStrategyHasBeenSet; }
+
+    /**
+     *  <p> The <code>LatencyOptimized</code> AutoML override strategy is only
+     * available in private beta. Contact AWS Support or your account manager to learn
+     * more about access privileges. </p>  <p>Used to overide the default AutoML
+     * strategy, which is to optimize predictor accuracy. To apply an AutoML strategy
+     * that minimizes training time, use <code>LatencyOptimized</code>.</p> <p>This
+     * parameter is only valid for predictors trained using AutoML.</p>
+     */
+    inline void SetAutoMLOverrideStrategy(const AutoMLOverrideStrategy& value) { m_autoMLOverrideStrategyHasBeenSet = true; m_autoMLOverrideStrategy = value; }
+
+    /**
+     *  <p> The <code>LatencyOptimized</code> AutoML override strategy is only
+     * available in private beta. Contact AWS Support or your account manager to learn
+     * more about access privileges. </p>  <p>Used to overide the default AutoML
+     * strategy, which is to optimize predictor accuracy. To apply an AutoML strategy
+     * that minimizes training time, use <code>LatencyOptimized</code>.</p> <p>This
+     * parameter is only valid for predictors trained using AutoML.</p>
+     */
+    inline void SetAutoMLOverrideStrategy(AutoMLOverrideStrategy&& value) { m_autoMLOverrideStrategyHasBeenSet = true; m_autoMLOverrideStrategy = std::move(value); }
+
+    /**
+     *  <p> The <code>LatencyOptimized</code> AutoML override strategy is only
+     * available in private beta. Contact AWS Support or your account manager to learn
+     * more about access privileges. </p>  <p>Used to overide the default AutoML
+     * strategy, which is to optimize predictor accuracy. To apply an AutoML strategy
+     * that minimizes training time, use <code>LatencyOptimized</code>.</p> <p>This
+     * parameter is only valid for predictors trained using AutoML.</p>
+     */
+    inline CreatePredictorRequest& WithAutoMLOverrideStrategy(const AutoMLOverrideStrategy& value) { SetAutoMLOverrideStrategy(value); return *this;}
+
+    /**
+     *  <p> The <code>LatencyOptimized</code> AutoML override strategy is only
+     * available in private beta. Contact AWS Support or your account manager to learn
+     * more about access privileges. </p>  <p>Used to overide the default AutoML
+     * strategy, which is to optimize predictor accuracy. To apply an AutoML strategy
+     * that minimizes training time, use <code>LatencyOptimized</code>.</p> <p>This
+     * parameter is only valid for predictors trained using AutoML.</p>
+     */
+    inline CreatePredictorRequest& WithAutoMLOverrideStrategy(AutoMLOverrideStrategy&& value) { SetAutoMLOverrideStrategy(std::move(value)); return *this;}
 
 
     /**
@@ -916,6 +979,37 @@ namespace Model
      */
     inline CreatePredictorRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The accuracy metric used to optimize the predictor.</p>
+     */
+    inline const OptimizationMetric& GetOptimizationMetric() const{ return m_optimizationMetric; }
+
+    /**
+     * <p>The accuracy metric used to optimize the predictor.</p>
+     */
+    inline bool OptimizationMetricHasBeenSet() const { return m_optimizationMetricHasBeenSet; }
+
+    /**
+     * <p>The accuracy metric used to optimize the predictor.</p>
+     */
+    inline void SetOptimizationMetric(const OptimizationMetric& value) { m_optimizationMetricHasBeenSet = true; m_optimizationMetric = value; }
+
+    /**
+     * <p>The accuracy metric used to optimize the predictor.</p>
+     */
+    inline void SetOptimizationMetric(OptimizationMetric&& value) { m_optimizationMetricHasBeenSet = true; m_optimizationMetric = std::move(value); }
+
+    /**
+     * <p>The accuracy metric used to optimize the predictor.</p>
+     */
+    inline CreatePredictorRequest& WithOptimizationMetric(const OptimizationMetric& value) { SetOptimizationMetric(value); return *this;}
+
+    /**
+     * <p>The accuracy metric used to optimize the predictor.</p>
+     */
+    inline CreatePredictorRequest& WithOptimizationMetric(OptimizationMetric&& value) { SetOptimizationMetric(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_predictorName;
@@ -932,6 +1026,9 @@ namespace Model
 
     bool m_performAutoML;
     bool m_performAutoMLHasBeenSet;
+
+    AutoMLOverrideStrategy m_autoMLOverrideStrategy;
+    bool m_autoMLOverrideStrategyHasBeenSet;
 
     bool m_performHPO;
     bool m_performHPOHasBeenSet;
@@ -956,6 +1053,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    OptimizationMetric m_optimizationMetric;
+    bool m_optimizationMetricHasBeenSet;
   };
 
 } // namespace Model

@@ -209,64 +209,64 @@ namespace Model
     /**
      * <p>Returns only backup jobs that will be stored in the specified backup vault.
      * Backup vaults are identified by names that are unique to the account used to
-     * create them and the AWS Region where they are created. They consist of lowercase
-     * letters, numbers, and hyphens.</p>
+     * create them and the Amazon Web Services Region where they are created. They
+     * consist of lowercase letters, numbers, and hyphens.</p>
      */
     inline const Aws::String& GetByBackupVaultName() const{ return m_byBackupVaultName; }
 
     /**
      * <p>Returns only backup jobs that will be stored in the specified backup vault.
      * Backup vaults are identified by names that are unique to the account used to
-     * create them and the AWS Region where they are created. They consist of lowercase
-     * letters, numbers, and hyphens.</p>
+     * create them and the Amazon Web Services Region where they are created. They
+     * consist of lowercase letters, numbers, and hyphens.</p>
      */
     inline bool ByBackupVaultNameHasBeenSet() const { return m_byBackupVaultNameHasBeenSet; }
 
     /**
      * <p>Returns only backup jobs that will be stored in the specified backup vault.
      * Backup vaults are identified by names that are unique to the account used to
-     * create them and the AWS Region where they are created. They consist of lowercase
-     * letters, numbers, and hyphens.</p>
+     * create them and the Amazon Web Services Region where they are created. They
+     * consist of lowercase letters, numbers, and hyphens.</p>
      */
     inline void SetByBackupVaultName(const Aws::String& value) { m_byBackupVaultNameHasBeenSet = true; m_byBackupVaultName = value; }
 
     /**
      * <p>Returns only backup jobs that will be stored in the specified backup vault.
      * Backup vaults are identified by names that are unique to the account used to
-     * create them and the AWS Region where they are created. They consist of lowercase
-     * letters, numbers, and hyphens.</p>
+     * create them and the Amazon Web Services Region where they are created. They
+     * consist of lowercase letters, numbers, and hyphens.</p>
      */
     inline void SetByBackupVaultName(Aws::String&& value) { m_byBackupVaultNameHasBeenSet = true; m_byBackupVaultName = std::move(value); }
 
     /**
      * <p>Returns only backup jobs that will be stored in the specified backup vault.
      * Backup vaults are identified by names that are unique to the account used to
-     * create them and the AWS Region where they are created. They consist of lowercase
-     * letters, numbers, and hyphens.</p>
+     * create them and the Amazon Web Services Region where they are created. They
+     * consist of lowercase letters, numbers, and hyphens.</p>
      */
     inline void SetByBackupVaultName(const char* value) { m_byBackupVaultNameHasBeenSet = true; m_byBackupVaultName.assign(value); }
 
     /**
      * <p>Returns only backup jobs that will be stored in the specified backup vault.
      * Backup vaults are identified by names that are unique to the account used to
-     * create them and the AWS Region where they are created. They consist of lowercase
-     * letters, numbers, and hyphens.</p>
+     * create them and the Amazon Web Services Region where they are created. They
+     * consist of lowercase letters, numbers, and hyphens.</p>
      */
     inline ListBackupJobsRequest& WithByBackupVaultName(const Aws::String& value) { SetByBackupVaultName(value); return *this;}
 
     /**
      * <p>Returns only backup jobs that will be stored in the specified backup vault.
      * Backup vaults are identified by names that are unique to the account used to
-     * create them and the AWS Region where they are created. They consist of lowercase
-     * letters, numbers, and hyphens.</p>
+     * create them and the Amazon Web Services Region where they are created. They
+     * consist of lowercase letters, numbers, and hyphens.</p>
      */
     inline ListBackupJobsRequest& WithByBackupVaultName(Aws::String&& value) { SetByBackupVaultName(std::move(value)); return *this;}
 
     /**
      * <p>Returns only backup jobs that will be stored in the specified backup vault.
      * Backup vaults are identified by names that are unique to the account used to
-     * create them and the AWS Region where they are created. They consist of lowercase
-     * letters, numbers, and hyphens.</p>
+     * create them and the Amazon Web Services Region where they are created. They
+     * consist of lowercase letters, numbers, and hyphens.</p>
      */
     inline ListBackupJobsRequest& WithByBackupVaultName(const char* value) { SetByBackupVaultName(value); return *this;}
 
@@ -335,140 +335,262 @@ namespace Model
 
     /**
      * <p>Returns only backup jobs for the specified resources:</p> <ul> <li> <p>
+     * <code>Aurora</code> for Amazon Aurora</p> </li> <li> <p> <code>DocumentDB</code>
+     * for Amazon DocumentDB (with MongoDB compatibility)</p> </li> <li> <p>
      * <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EBS</code>
      * for Amazon Elastic Block Store</p> </li> <li> <p> <code>EC2</code> for Amazon
      * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
-     * File System</p> </li> <li> <p> <code>RDS</code> for Amazon Relational Database
-     * Service</p> </li> <li> <p> <code>Storage Gateway</code> for AWS Storage
-     * Gateway</p> </li> </ul>
+     * File System</p> </li> <li> <p> <code>FSx</code> for Amazon FSx</p> </li> <li>
+     * <p> <code>Neptune</code> for Amazon Neptune</p> </li> <li> <p> <code>RDS</code>
+     * for Amazon Relational Database Service</p> </li> <li> <p> <code>Storage
+     * Gateway</code> for Storage Gateway</p> </li> <li> <p> <code>S3</code> for Amazon
+     * S3</p> </li> <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
+     * </ul>
      */
     inline const Aws::String& GetByResourceType() const{ return m_byResourceType; }
 
     /**
      * <p>Returns only backup jobs for the specified resources:</p> <ul> <li> <p>
+     * <code>Aurora</code> for Amazon Aurora</p> </li> <li> <p> <code>DocumentDB</code>
+     * for Amazon DocumentDB (with MongoDB compatibility)</p> </li> <li> <p>
      * <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EBS</code>
      * for Amazon Elastic Block Store</p> </li> <li> <p> <code>EC2</code> for Amazon
      * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
-     * File System</p> </li> <li> <p> <code>RDS</code> for Amazon Relational Database
-     * Service</p> </li> <li> <p> <code>Storage Gateway</code> for AWS Storage
-     * Gateway</p> </li> </ul>
+     * File System</p> </li> <li> <p> <code>FSx</code> for Amazon FSx</p> </li> <li>
+     * <p> <code>Neptune</code> for Amazon Neptune</p> </li> <li> <p> <code>RDS</code>
+     * for Amazon Relational Database Service</p> </li> <li> <p> <code>Storage
+     * Gateway</code> for Storage Gateway</p> </li> <li> <p> <code>S3</code> for Amazon
+     * S3</p> </li> <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
+     * </ul>
      */
     inline bool ByResourceTypeHasBeenSet() const { return m_byResourceTypeHasBeenSet; }
 
     /**
      * <p>Returns only backup jobs for the specified resources:</p> <ul> <li> <p>
+     * <code>Aurora</code> for Amazon Aurora</p> </li> <li> <p> <code>DocumentDB</code>
+     * for Amazon DocumentDB (with MongoDB compatibility)</p> </li> <li> <p>
      * <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EBS</code>
      * for Amazon Elastic Block Store</p> </li> <li> <p> <code>EC2</code> for Amazon
      * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
-     * File System</p> </li> <li> <p> <code>RDS</code> for Amazon Relational Database
-     * Service</p> </li> <li> <p> <code>Storage Gateway</code> for AWS Storage
-     * Gateway</p> </li> </ul>
+     * File System</p> </li> <li> <p> <code>FSx</code> for Amazon FSx</p> </li> <li>
+     * <p> <code>Neptune</code> for Amazon Neptune</p> </li> <li> <p> <code>RDS</code>
+     * for Amazon Relational Database Service</p> </li> <li> <p> <code>Storage
+     * Gateway</code> for Storage Gateway</p> </li> <li> <p> <code>S3</code> for Amazon
+     * S3</p> </li> <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
+     * </ul>
      */
     inline void SetByResourceType(const Aws::String& value) { m_byResourceTypeHasBeenSet = true; m_byResourceType = value; }
 
     /**
      * <p>Returns only backup jobs for the specified resources:</p> <ul> <li> <p>
+     * <code>Aurora</code> for Amazon Aurora</p> </li> <li> <p> <code>DocumentDB</code>
+     * for Amazon DocumentDB (with MongoDB compatibility)</p> </li> <li> <p>
      * <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EBS</code>
      * for Amazon Elastic Block Store</p> </li> <li> <p> <code>EC2</code> for Amazon
      * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
-     * File System</p> </li> <li> <p> <code>RDS</code> for Amazon Relational Database
-     * Service</p> </li> <li> <p> <code>Storage Gateway</code> for AWS Storage
-     * Gateway</p> </li> </ul>
+     * File System</p> </li> <li> <p> <code>FSx</code> for Amazon FSx</p> </li> <li>
+     * <p> <code>Neptune</code> for Amazon Neptune</p> </li> <li> <p> <code>RDS</code>
+     * for Amazon Relational Database Service</p> </li> <li> <p> <code>Storage
+     * Gateway</code> for Storage Gateway</p> </li> <li> <p> <code>S3</code> for Amazon
+     * S3</p> </li> <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
+     * </ul>
      */
     inline void SetByResourceType(Aws::String&& value) { m_byResourceTypeHasBeenSet = true; m_byResourceType = std::move(value); }
 
     /**
      * <p>Returns only backup jobs for the specified resources:</p> <ul> <li> <p>
+     * <code>Aurora</code> for Amazon Aurora</p> </li> <li> <p> <code>DocumentDB</code>
+     * for Amazon DocumentDB (with MongoDB compatibility)</p> </li> <li> <p>
      * <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EBS</code>
      * for Amazon Elastic Block Store</p> </li> <li> <p> <code>EC2</code> for Amazon
      * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
-     * File System</p> </li> <li> <p> <code>RDS</code> for Amazon Relational Database
-     * Service</p> </li> <li> <p> <code>Storage Gateway</code> for AWS Storage
-     * Gateway</p> </li> </ul>
+     * File System</p> </li> <li> <p> <code>FSx</code> for Amazon FSx</p> </li> <li>
+     * <p> <code>Neptune</code> for Amazon Neptune</p> </li> <li> <p> <code>RDS</code>
+     * for Amazon Relational Database Service</p> </li> <li> <p> <code>Storage
+     * Gateway</code> for Storage Gateway</p> </li> <li> <p> <code>S3</code> for Amazon
+     * S3</p> </li> <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
+     * </ul>
      */
     inline void SetByResourceType(const char* value) { m_byResourceTypeHasBeenSet = true; m_byResourceType.assign(value); }
 
     /**
      * <p>Returns only backup jobs for the specified resources:</p> <ul> <li> <p>
+     * <code>Aurora</code> for Amazon Aurora</p> </li> <li> <p> <code>DocumentDB</code>
+     * for Amazon DocumentDB (with MongoDB compatibility)</p> </li> <li> <p>
      * <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EBS</code>
      * for Amazon Elastic Block Store</p> </li> <li> <p> <code>EC2</code> for Amazon
      * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
-     * File System</p> </li> <li> <p> <code>RDS</code> for Amazon Relational Database
-     * Service</p> </li> <li> <p> <code>Storage Gateway</code> for AWS Storage
-     * Gateway</p> </li> </ul>
+     * File System</p> </li> <li> <p> <code>FSx</code> for Amazon FSx</p> </li> <li>
+     * <p> <code>Neptune</code> for Amazon Neptune</p> </li> <li> <p> <code>RDS</code>
+     * for Amazon Relational Database Service</p> </li> <li> <p> <code>Storage
+     * Gateway</code> for Storage Gateway</p> </li> <li> <p> <code>S3</code> for Amazon
+     * S3</p> </li> <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
+     * </ul>
      */
     inline ListBackupJobsRequest& WithByResourceType(const Aws::String& value) { SetByResourceType(value); return *this;}
 
     /**
      * <p>Returns only backup jobs for the specified resources:</p> <ul> <li> <p>
+     * <code>Aurora</code> for Amazon Aurora</p> </li> <li> <p> <code>DocumentDB</code>
+     * for Amazon DocumentDB (with MongoDB compatibility)</p> </li> <li> <p>
      * <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EBS</code>
      * for Amazon Elastic Block Store</p> </li> <li> <p> <code>EC2</code> for Amazon
      * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
-     * File System</p> </li> <li> <p> <code>RDS</code> for Amazon Relational Database
-     * Service</p> </li> <li> <p> <code>Storage Gateway</code> for AWS Storage
-     * Gateway</p> </li> </ul>
+     * File System</p> </li> <li> <p> <code>FSx</code> for Amazon FSx</p> </li> <li>
+     * <p> <code>Neptune</code> for Amazon Neptune</p> </li> <li> <p> <code>RDS</code>
+     * for Amazon Relational Database Service</p> </li> <li> <p> <code>Storage
+     * Gateway</code> for Storage Gateway</p> </li> <li> <p> <code>S3</code> for Amazon
+     * S3</p> </li> <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
+     * </ul>
      */
     inline ListBackupJobsRequest& WithByResourceType(Aws::String&& value) { SetByResourceType(std::move(value)); return *this;}
 
     /**
      * <p>Returns only backup jobs for the specified resources:</p> <ul> <li> <p>
+     * <code>Aurora</code> for Amazon Aurora</p> </li> <li> <p> <code>DocumentDB</code>
+     * for Amazon DocumentDB (with MongoDB compatibility)</p> </li> <li> <p>
      * <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EBS</code>
      * for Amazon Elastic Block Store</p> </li> <li> <p> <code>EC2</code> for Amazon
      * Elastic Compute Cloud</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic
-     * File System</p> </li> <li> <p> <code>RDS</code> for Amazon Relational Database
-     * Service</p> </li> <li> <p> <code>Storage Gateway</code> for AWS Storage
-     * Gateway</p> </li> </ul>
+     * File System</p> </li> <li> <p> <code>FSx</code> for Amazon FSx</p> </li> <li>
+     * <p> <code>Neptune</code> for Amazon Neptune</p> </li> <li> <p> <code>RDS</code>
+     * for Amazon Relational Database Service</p> </li> <li> <p> <code>Storage
+     * Gateway</code> for Storage Gateway</p> </li> <li> <p> <code>S3</code> for Amazon
+     * S3</p> </li> <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
+     * </ul>
      */
     inline ListBackupJobsRequest& WithByResourceType(const char* value) { SetByResourceType(value); return *this;}
 
 
     /**
      * <p>The account ID to list the jobs from. Returns only backup jobs associated
-     * with the specified account ID.</p>
+     * with the specified account ID.</p> <p>If used from an Organizations management
+     * account, passing <code>*</code> returns all jobs across the organization.</p>
      */
     inline const Aws::String& GetByAccountId() const{ return m_byAccountId; }
 
     /**
      * <p>The account ID to list the jobs from. Returns only backup jobs associated
-     * with the specified account ID.</p>
+     * with the specified account ID.</p> <p>If used from an Organizations management
+     * account, passing <code>*</code> returns all jobs across the organization.</p>
      */
     inline bool ByAccountIdHasBeenSet() const { return m_byAccountIdHasBeenSet; }
 
     /**
      * <p>The account ID to list the jobs from. Returns only backup jobs associated
-     * with the specified account ID.</p>
+     * with the specified account ID.</p> <p>If used from an Organizations management
+     * account, passing <code>*</code> returns all jobs across the organization.</p>
      */
     inline void SetByAccountId(const Aws::String& value) { m_byAccountIdHasBeenSet = true; m_byAccountId = value; }
 
     /**
      * <p>The account ID to list the jobs from. Returns only backup jobs associated
-     * with the specified account ID.</p>
+     * with the specified account ID.</p> <p>If used from an Organizations management
+     * account, passing <code>*</code> returns all jobs across the organization.</p>
      */
     inline void SetByAccountId(Aws::String&& value) { m_byAccountIdHasBeenSet = true; m_byAccountId = std::move(value); }
 
     /**
      * <p>The account ID to list the jobs from. Returns only backup jobs associated
-     * with the specified account ID.</p>
+     * with the specified account ID.</p> <p>If used from an Organizations management
+     * account, passing <code>*</code> returns all jobs across the organization.</p>
      */
     inline void SetByAccountId(const char* value) { m_byAccountIdHasBeenSet = true; m_byAccountId.assign(value); }
 
     /**
      * <p>The account ID to list the jobs from. Returns only backup jobs associated
-     * with the specified account ID.</p>
+     * with the specified account ID.</p> <p>If used from an Organizations management
+     * account, passing <code>*</code> returns all jobs across the organization.</p>
      */
     inline ListBackupJobsRequest& WithByAccountId(const Aws::String& value) { SetByAccountId(value); return *this;}
 
     /**
      * <p>The account ID to list the jobs from. Returns only backup jobs associated
-     * with the specified account ID.</p>
+     * with the specified account ID.</p> <p>If used from an Organizations management
+     * account, passing <code>*</code> returns all jobs across the organization.</p>
      */
     inline ListBackupJobsRequest& WithByAccountId(Aws::String&& value) { SetByAccountId(std::move(value)); return *this;}
 
     /**
      * <p>The account ID to list the jobs from. Returns only backup jobs associated
-     * with the specified account ID.</p>
+     * with the specified account ID.</p> <p>If used from an Organizations management
+     * account, passing <code>*</code> returns all jobs across the organization.</p>
      */
     inline ListBackupJobsRequest& WithByAccountId(const char* value) { SetByAccountId(value); return *this;}
+
+
+    /**
+     * <p>Returns only backup jobs completed after a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline const Aws::Utils::DateTime& GetByCompleteAfter() const{ return m_byCompleteAfter; }
+
+    /**
+     * <p>Returns only backup jobs completed after a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline bool ByCompleteAfterHasBeenSet() const { return m_byCompleteAfterHasBeenSet; }
+
+    /**
+     * <p>Returns only backup jobs completed after a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline void SetByCompleteAfter(const Aws::Utils::DateTime& value) { m_byCompleteAfterHasBeenSet = true; m_byCompleteAfter = value; }
+
+    /**
+     * <p>Returns only backup jobs completed after a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline void SetByCompleteAfter(Aws::Utils::DateTime&& value) { m_byCompleteAfterHasBeenSet = true; m_byCompleteAfter = std::move(value); }
+
+    /**
+     * <p>Returns only backup jobs completed after a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline ListBackupJobsRequest& WithByCompleteAfter(const Aws::Utils::DateTime& value) { SetByCompleteAfter(value); return *this;}
+
+    /**
+     * <p>Returns only backup jobs completed after a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline ListBackupJobsRequest& WithByCompleteAfter(Aws::Utils::DateTime&& value) { SetByCompleteAfter(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Returns only backup jobs completed before a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline const Aws::Utils::DateTime& GetByCompleteBefore() const{ return m_byCompleteBefore; }
+
+    /**
+     * <p>Returns only backup jobs completed before a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline bool ByCompleteBeforeHasBeenSet() const { return m_byCompleteBeforeHasBeenSet; }
+
+    /**
+     * <p>Returns only backup jobs completed before a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline void SetByCompleteBefore(const Aws::Utils::DateTime& value) { m_byCompleteBeforeHasBeenSet = true; m_byCompleteBefore = value; }
+
+    /**
+     * <p>Returns only backup jobs completed before a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline void SetByCompleteBefore(Aws::Utils::DateTime&& value) { m_byCompleteBeforeHasBeenSet = true; m_byCompleteBefore = std::move(value); }
+
+    /**
+     * <p>Returns only backup jobs completed before a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline ListBackupJobsRequest& WithByCompleteBefore(const Aws::Utils::DateTime& value) { SetByCompleteBefore(value); return *this;}
+
+    /**
+     * <p>Returns only backup jobs completed before a date expressed in Unix format and
+     * Coordinated Universal Time (UTC).</p>
+     */
+    inline ListBackupJobsRequest& WithByCompleteBefore(Aws::Utils::DateTime&& value) { SetByCompleteBefore(std::move(value)); return *this;}
 
   private:
 
@@ -498,6 +620,12 @@ namespace Model
 
     Aws::String m_byAccountId;
     bool m_byAccountIdHasBeenSet;
+
+    Aws::Utils::DateTime m_byCompleteAfter;
+    bool m_byCompleteAfterHasBeenSet;
+
+    Aws::Utils::DateTime m_byCompleteBefore;
+    bool m_byCompleteBeforeHasBeenSet;
   };
 
 } // namespace Model

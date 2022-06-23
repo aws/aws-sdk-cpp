@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>A metadata error structure for an analysis.</p><p><h3>See Also:</h3>   <a
+   * <p>Analysis error.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/AnalysisError">AWS
    * API Reference</a></p>
    */

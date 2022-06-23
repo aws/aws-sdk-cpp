@@ -46,7 +46,7 @@ namespace Model
      * lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain no more than
      * 255 alphanumeric characters or hyphens.</p> </li> <li> <p>Must not be
      * "Default".</p> </li> <li> <p>Must be unique for all security groups that are
-     * created by your AWS account.</p> </li> </ul> <p>Example:
+     * created by your Amazon Web Services account.</p> </li> </ul> <p>Example:
      * <code>examplesecuritygroup</code> </p>
      */
     inline const Aws::String& GetClusterSecurityGroupName() const{ return m_clusterSecurityGroupName; }
@@ -56,7 +56,7 @@ namespace Model
      * lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain no more than
      * 255 alphanumeric characters or hyphens.</p> </li> <li> <p>Must not be
      * "Default".</p> </li> <li> <p>Must be unique for all security groups that are
-     * created by your AWS account.</p> </li> </ul> <p>Example:
+     * created by your Amazon Web Services account.</p> </li> </ul> <p>Example:
      * <code>examplesecuritygroup</code> </p>
      */
     inline bool ClusterSecurityGroupNameHasBeenSet() const { return m_clusterSecurityGroupNameHasBeenSet; }
@@ -66,7 +66,7 @@ namespace Model
      * lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain no more than
      * 255 alphanumeric characters or hyphens.</p> </li> <li> <p>Must not be
      * "Default".</p> </li> <li> <p>Must be unique for all security groups that are
-     * created by your AWS account.</p> </li> </ul> <p>Example:
+     * created by your Amazon Web Services account.</p> </li> </ul> <p>Example:
      * <code>examplesecuritygroup</code> </p>
      */
     inline void SetClusterSecurityGroupName(const Aws::String& value) { m_clusterSecurityGroupNameHasBeenSet = true; m_clusterSecurityGroupName = value; }
@@ -76,7 +76,7 @@ namespace Model
      * lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain no more than
      * 255 alphanumeric characters or hyphens.</p> </li> <li> <p>Must not be
      * "Default".</p> </li> <li> <p>Must be unique for all security groups that are
-     * created by your AWS account.</p> </li> </ul> <p>Example:
+     * created by your Amazon Web Services account.</p> </li> </ul> <p>Example:
      * <code>examplesecuritygroup</code> </p>
      */
     inline void SetClusterSecurityGroupName(Aws::String&& value) { m_clusterSecurityGroupNameHasBeenSet = true; m_clusterSecurityGroupName = std::move(value); }
@@ -86,7 +86,7 @@ namespace Model
      * lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain no more than
      * 255 alphanumeric characters or hyphens.</p> </li> <li> <p>Must not be
      * "Default".</p> </li> <li> <p>Must be unique for all security groups that are
-     * created by your AWS account.</p> </li> </ul> <p>Example:
+     * created by your Amazon Web Services account.</p> </li> </ul> <p>Example:
      * <code>examplesecuritygroup</code> </p>
      */
     inline void SetClusterSecurityGroupName(const char* value) { m_clusterSecurityGroupNameHasBeenSet = true; m_clusterSecurityGroupName.assign(value); }
@@ -96,7 +96,7 @@ namespace Model
      * lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain no more than
      * 255 alphanumeric characters or hyphens.</p> </li> <li> <p>Must not be
      * "Default".</p> </li> <li> <p>Must be unique for all security groups that are
-     * created by your AWS account.</p> </li> </ul> <p>Example:
+     * created by your Amazon Web Services account.</p> </li> </ul> <p>Example:
      * <code>examplesecuritygroup</code> </p>
      */
     inline CreateClusterSecurityGroupRequest& WithClusterSecurityGroupName(const Aws::String& value) { SetClusterSecurityGroupName(value); return *this;}
@@ -106,7 +106,7 @@ namespace Model
      * lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain no more than
      * 255 alphanumeric characters or hyphens.</p> </li> <li> <p>Must not be
      * "Default".</p> </li> <li> <p>Must be unique for all security groups that are
-     * created by your AWS account.</p> </li> </ul> <p>Example:
+     * created by your Amazon Web Services account.</p> </li> </ul> <p>Example:
      * <code>examplesecuritygroup</code> </p>
      */
     inline CreateClusterSecurityGroupRequest& WithClusterSecurityGroupName(Aws::String&& value) { SetClusterSecurityGroupName(std::move(value)); return *this;}
@@ -116,7 +116,7 @@ namespace Model
      * lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain no more than
      * 255 alphanumeric characters or hyphens.</p> </li> <li> <p>Must not be
      * "Default".</p> </li> <li> <p>Must be unique for all security groups that are
-     * created by your AWS account.</p> </li> </ul> <p>Example:
+     * created by your Amazon Web Services account.</p> </li> </ul> <p>Example:
      * <code>examplesecuritygroup</code> </p>
      */
     inline CreateClusterSecurityGroupRequest& WithClusterSecurityGroupName(const char* value) { SetClusterSecurityGroupName(value); return *this;}

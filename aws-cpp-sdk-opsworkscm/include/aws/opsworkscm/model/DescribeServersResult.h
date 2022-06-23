@@ -41,11 +41,17 @@ namespace Model
      * CHEF_MAJOR_UPGRADE_AVAILABLE, you can upgrade the Chef Automate server to Chef
      * Automate 2. To be eligible for upgrade, a server running Chef Automate 1 must
      * have had at least one successful maintenance run after November 1, 2019.</p> <p>
-     * <i>For Puppet Server:</i>
-     * <code>DescribeServersResponse$Servers$EngineAttributes</code> contains
-     * PUPPET_API_CA_CERT. This is the PEM-encoded CA certificate that is used by the
-     * Puppet API over TCP port number 8140. The CA certificate is also used to sign
-     * node certificates.</p>
+     * <i>For Puppet servers:</i>
+     * <code>DescribeServersResponse$Servers$EngineAttributes</code> contains the
+     * following two responses:</p> <ul> <li> <p> <code>PUPPET_API_CA_CERT</code>, the
+     * PEM-encoded CA certificate that is used by the Puppet API over TCP port number
+     * 8140. The CA certificate is also used to sign node certificates.</p> </li> <li>
+     * <p> <code>PUPPET_API_CRL</code>, a certificate revocation list. The certificate
+     * revocation list is for internal maintenance purposes only. For more information
+     * about the Puppet certificate revocation list, see <a
+     * href="https://puppet.com/docs/puppet/5.5/man/certificate_revocation_list.html">Man
+     * Page: puppet certificate_revocation_list</a> in the Puppet documentation.</p>
+     * </li> </ul>
      */
     inline const Aws::Vector<Server>& GetServers() const{ return m_servers; }
 
@@ -56,11 +62,17 @@ namespace Model
      * CHEF_MAJOR_UPGRADE_AVAILABLE, you can upgrade the Chef Automate server to Chef
      * Automate 2. To be eligible for upgrade, a server running Chef Automate 1 must
      * have had at least one successful maintenance run after November 1, 2019.</p> <p>
-     * <i>For Puppet Server:</i>
-     * <code>DescribeServersResponse$Servers$EngineAttributes</code> contains
-     * PUPPET_API_CA_CERT. This is the PEM-encoded CA certificate that is used by the
-     * Puppet API over TCP port number 8140. The CA certificate is also used to sign
-     * node certificates.</p>
+     * <i>For Puppet servers:</i>
+     * <code>DescribeServersResponse$Servers$EngineAttributes</code> contains the
+     * following two responses:</p> <ul> <li> <p> <code>PUPPET_API_CA_CERT</code>, the
+     * PEM-encoded CA certificate that is used by the Puppet API over TCP port number
+     * 8140. The CA certificate is also used to sign node certificates.</p> </li> <li>
+     * <p> <code>PUPPET_API_CRL</code>, a certificate revocation list. The certificate
+     * revocation list is for internal maintenance purposes only. For more information
+     * about the Puppet certificate revocation list, see <a
+     * href="https://puppet.com/docs/puppet/5.5/man/certificate_revocation_list.html">Man
+     * Page: puppet certificate_revocation_list</a> in the Puppet documentation.</p>
+     * </li> </ul>
      */
     inline void SetServers(const Aws::Vector<Server>& value) { m_servers = value; }
 
@@ -71,11 +83,17 @@ namespace Model
      * CHEF_MAJOR_UPGRADE_AVAILABLE, you can upgrade the Chef Automate server to Chef
      * Automate 2. To be eligible for upgrade, a server running Chef Automate 1 must
      * have had at least one successful maintenance run after November 1, 2019.</p> <p>
-     * <i>For Puppet Server:</i>
-     * <code>DescribeServersResponse$Servers$EngineAttributes</code> contains
-     * PUPPET_API_CA_CERT. This is the PEM-encoded CA certificate that is used by the
-     * Puppet API over TCP port number 8140. The CA certificate is also used to sign
-     * node certificates.</p>
+     * <i>For Puppet servers:</i>
+     * <code>DescribeServersResponse$Servers$EngineAttributes</code> contains the
+     * following two responses:</p> <ul> <li> <p> <code>PUPPET_API_CA_CERT</code>, the
+     * PEM-encoded CA certificate that is used by the Puppet API over TCP port number
+     * 8140. The CA certificate is also used to sign node certificates.</p> </li> <li>
+     * <p> <code>PUPPET_API_CRL</code>, a certificate revocation list. The certificate
+     * revocation list is for internal maintenance purposes only. For more information
+     * about the Puppet certificate revocation list, see <a
+     * href="https://puppet.com/docs/puppet/5.5/man/certificate_revocation_list.html">Man
+     * Page: puppet certificate_revocation_list</a> in the Puppet documentation.</p>
+     * </li> </ul>
      */
     inline void SetServers(Aws::Vector<Server>&& value) { m_servers = std::move(value); }
 
@@ -86,11 +104,17 @@ namespace Model
      * CHEF_MAJOR_UPGRADE_AVAILABLE, you can upgrade the Chef Automate server to Chef
      * Automate 2. To be eligible for upgrade, a server running Chef Automate 1 must
      * have had at least one successful maintenance run after November 1, 2019.</p> <p>
-     * <i>For Puppet Server:</i>
-     * <code>DescribeServersResponse$Servers$EngineAttributes</code> contains
-     * PUPPET_API_CA_CERT. This is the PEM-encoded CA certificate that is used by the
-     * Puppet API over TCP port number 8140. The CA certificate is also used to sign
-     * node certificates.</p>
+     * <i>For Puppet servers:</i>
+     * <code>DescribeServersResponse$Servers$EngineAttributes</code> contains the
+     * following two responses:</p> <ul> <li> <p> <code>PUPPET_API_CA_CERT</code>, the
+     * PEM-encoded CA certificate that is used by the Puppet API over TCP port number
+     * 8140. The CA certificate is also used to sign node certificates.</p> </li> <li>
+     * <p> <code>PUPPET_API_CRL</code>, a certificate revocation list. The certificate
+     * revocation list is for internal maintenance purposes only. For more information
+     * about the Puppet certificate revocation list, see <a
+     * href="https://puppet.com/docs/puppet/5.5/man/certificate_revocation_list.html">Man
+     * Page: puppet certificate_revocation_list</a> in the Puppet documentation.</p>
+     * </li> </ul>
      */
     inline DescribeServersResult& WithServers(const Aws::Vector<Server>& value) { SetServers(value); return *this;}
 
@@ -101,11 +125,17 @@ namespace Model
      * CHEF_MAJOR_UPGRADE_AVAILABLE, you can upgrade the Chef Automate server to Chef
      * Automate 2. To be eligible for upgrade, a server running Chef Automate 1 must
      * have had at least one successful maintenance run after November 1, 2019.</p> <p>
-     * <i>For Puppet Server:</i>
-     * <code>DescribeServersResponse$Servers$EngineAttributes</code> contains
-     * PUPPET_API_CA_CERT. This is the PEM-encoded CA certificate that is used by the
-     * Puppet API over TCP port number 8140. The CA certificate is also used to sign
-     * node certificates.</p>
+     * <i>For Puppet servers:</i>
+     * <code>DescribeServersResponse$Servers$EngineAttributes</code> contains the
+     * following two responses:</p> <ul> <li> <p> <code>PUPPET_API_CA_CERT</code>, the
+     * PEM-encoded CA certificate that is used by the Puppet API over TCP port number
+     * 8140. The CA certificate is also used to sign node certificates.</p> </li> <li>
+     * <p> <code>PUPPET_API_CRL</code>, a certificate revocation list. The certificate
+     * revocation list is for internal maintenance purposes only. For more information
+     * about the Puppet certificate revocation list, see <a
+     * href="https://puppet.com/docs/puppet/5.5/man/certificate_revocation_list.html">Man
+     * Page: puppet certificate_revocation_list</a> in the Puppet documentation.</p>
+     * </li> </ul>
      */
     inline DescribeServersResult& WithServers(Aws::Vector<Server>&& value) { SetServers(std::move(value)); return *this;}
 
@@ -116,11 +146,17 @@ namespace Model
      * CHEF_MAJOR_UPGRADE_AVAILABLE, you can upgrade the Chef Automate server to Chef
      * Automate 2. To be eligible for upgrade, a server running Chef Automate 1 must
      * have had at least one successful maintenance run after November 1, 2019.</p> <p>
-     * <i>For Puppet Server:</i>
-     * <code>DescribeServersResponse$Servers$EngineAttributes</code> contains
-     * PUPPET_API_CA_CERT. This is the PEM-encoded CA certificate that is used by the
-     * Puppet API over TCP port number 8140. The CA certificate is also used to sign
-     * node certificates.</p>
+     * <i>For Puppet servers:</i>
+     * <code>DescribeServersResponse$Servers$EngineAttributes</code> contains the
+     * following two responses:</p> <ul> <li> <p> <code>PUPPET_API_CA_CERT</code>, the
+     * PEM-encoded CA certificate that is used by the Puppet API over TCP port number
+     * 8140. The CA certificate is also used to sign node certificates.</p> </li> <li>
+     * <p> <code>PUPPET_API_CRL</code>, a certificate revocation list. The certificate
+     * revocation list is for internal maintenance purposes only. For more information
+     * about the Puppet certificate revocation list, see <a
+     * href="https://puppet.com/docs/puppet/5.5/man/certificate_revocation_list.html">Man
+     * Page: puppet certificate_revocation_list</a> in the Puppet documentation.</p>
+     * </li> </ul>
      */
     inline DescribeServersResult& AddServers(const Server& value) { m_servers.push_back(value); return *this; }
 
@@ -131,11 +167,17 @@ namespace Model
      * CHEF_MAJOR_UPGRADE_AVAILABLE, you can upgrade the Chef Automate server to Chef
      * Automate 2. To be eligible for upgrade, a server running Chef Automate 1 must
      * have had at least one successful maintenance run after November 1, 2019.</p> <p>
-     * <i>For Puppet Server:</i>
-     * <code>DescribeServersResponse$Servers$EngineAttributes</code> contains
-     * PUPPET_API_CA_CERT. This is the PEM-encoded CA certificate that is used by the
-     * Puppet API over TCP port number 8140. The CA certificate is also used to sign
-     * node certificates.</p>
+     * <i>For Puppet servers:</i>
+     * <code>DescribeServersResponse$Servers$EngineAttributes</code> contains the
+     * following two responses:</p> <ul> <li> <p> <code>PUPPET_API_CA_CERT</code>, the
+     * PEM-encoded CA certificate that is used by the Puppet API over TCP port number
+     * 8140. The CA certificate is also used to sign node certificates.</p> </li> <li>
+     * <p> <code>PUPPET_API_CRL</code>, a certificate revocation list. The certificate
+     * revocation list is for internal maintenance purposes only. For more information
+     * about the Puppet certificate revocation list, see <a
+     * href="https://puppet.com/docs/puppet/5.5/man/certificate_revocation_list.html">Man
+     * Page: puppet certificate_revocation_list</a> in the Puppet documentation.</p>
+     * </li> </ul>
      */
     inline DescribeServersResult& AddServers(Server&& value) { m_servers.push_back(std::move(value)); return *this; }
 

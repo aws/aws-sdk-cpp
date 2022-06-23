@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>MySQL parameters.</p><p><h3>See Also:</h3>   <a
+   * <p>The parameters for MySQL.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/MySqlParameters">AWS
    * API Reference</a></p>
    */

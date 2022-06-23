@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     ROS,
-    ROS2
+    ROS2,
+    General
   };
 
 namespace RobotSoftwareSuiteTypeMapper

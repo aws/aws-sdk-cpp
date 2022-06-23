@@ -20,13 +20,15 @@ namespace Model
 
 InvalidRequestException::InvalidRequestException() : 
     m_messageHasBeenSet(false),
-    m_errorCodeHasBeenSet(false)
+    m_errorCodeHasBeenSet(false),
+    m_datasyncErrorCodeHasBeenSet(false)
 {
 }
 
 InvalidRequestException::InvalidRequestException(JsonView jsonValue) : 
     m_messageHasBeenSet(false),
-    m_errorCodeHasBeenSet(false)
+    m_errorCodeHasBeenSet(false),
+    m_datasyncErrorCodeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,13 @@ InvalidRequestException& InvalidRequestException::operator =(JsonView jsonValue)
     m_errorCodeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("datasyncErrorCode"))
+  {
+    m_datasyncErrorCode = jsonValue.GetString("datasyncErrorCode");
+
+    m_datasyncErrorCodeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,12 @@ JsonValue InvalidRequestException::Jsonize() const
   if(m_errorCodeHasBeenSet)
   {
    payload.WithString("errorCode", m_errorCode);
+
+  }
+
+  if(m_datasyncErrorCodeHasBeenSet)
+  {
+   payload.WithString("datasyncErrorCode", m_datasyncErrorCode);
 
   }
 

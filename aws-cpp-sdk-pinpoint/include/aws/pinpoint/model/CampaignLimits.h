@@ -160,6 +160,31 @@ namespace Model
      */
     inline CampaignLimits& WithTotal(int value) { SetTotal(value); return *this;}
 
+
+    /**
+     * <p>The maximum total number of messages that the campaign can send per user
+     * session.</p>
+     */
+    inline int GetSession() const{ return m_session; }
+
+    /**
+     * <p>The maximum total number of messages that the campaign can send per user
+     * session.</p>
+     */
+    inline bool SessionHasBeenSet() const { return m_sessionHasBeenSet; }
+
+    /**
+     * <p>The maximum total number of messages that the campaign can send per user
+     * session.</p>
+     */
+    inline void SetSession(int value) { m_sessionHasBeenSet = true; m_session = value; }
+
+    /**
+     * <p>The maximum total number of messages that the campaign can send per user
+     * session.</p>
+     */
+    inline CampaignLimits& WithSession(int value) { SetSession(value); return *this;}
+
   private:
 
     int m_daily;
@@ -173,6 +198,9 @@ namespace Model
 
     int m_total;
     bool m_totalHasBeenSet;
+
+    int m_session;
+    bool m_sessionHasBeenSet;
   };
 
 } // namespace Model

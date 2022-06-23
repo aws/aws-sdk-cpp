@@ -41,37 +41,37 @@ namespace Model
 
 
     /**
-     * <p>The CA certificates registered in your AWS account.</p>
+     * <p>The CA certificates registered in your Amazon Web Services account.</p>
      */
     inline const Aws::Vector<CACertificate>& GetCertificates() const{ return m_certificates; }
 
     /**
-     * <p>The CA certificates registered in your AWS account.</p>
+     * <p>The CA certificates registered in your Amazon Web Services account.</p>
      */
     inline void SetCertificates(const Aws::Vector<CACertificate>& value) { m_certificates = value; }
 
     /**
-     * <p>The CA certificates registered in your AWS account.</p>
+     * <p>The CA certificates registered in your Amazon Web Services account.</p>
      */
     inline void SetCertificates(Aws::Vector<CACertificate>&& value) { m_certificates = std::move(value); }
 
     /**
-     * <p>The CA certificates registered in your AWS account.</p>
+     * <p>The CA certificates registered in your Amazon Web Services account.</p>
      */
     inline ListCACertificatesResult& WithCertificates(const Aws::Vector<CACertificate>& value) { SetCertificates(value); return *this;}
 
     /**
-     * <p>The CA certificates registered in your AWS account.</p>
+     * <p>The CA certificates registered in your Amazon Web Services account.</p>
      */
     inline ListCACertificatesResult& WithCertificates(Aws::Vector<CACertificate>&& value) { SetCertificates(std::move(value)); return *this;}
 
     /**
-     * <p>The CA certificates registered in your AWS account.</p>
+     * <p>The CA certificates registered in your Amazon Web Services account.</p>
      */
     inline ListCACertificatesResult& AddCertificates(const CACertificate& value) { m_certificates.push_back(value); return *this; }
 
     /**
-     * <p>The CA certificates registered in your AWS account.</p>
+     * <p>The CA certificates registered in your Amazon Web Services account.</p>
      */
     inline ListCACertificatesResult& AddCertificates(CACertificate&& value) { m_certificates.push_back(std::move(value)); return *this; }
 

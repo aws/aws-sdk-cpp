@@ -19,12 +19,16 @@ namespace Model
 {
 
 KubernetesNetworkConfigRequest::KubernetesNetworkConfigRequest() : 
-    m_serviceIpv4CidrHasBeenSet(false)
+    m_serviceIpv4CidrHasBeenSet(false),
+    m_ipFamily(IpFamily::NOT_SET),
+    m_ipFamilyHasBeenSet(false)
 {
 }
 
 KubernetesNetworkConfigRequest::KubernetesNetworkConfigRequest(JsonView jsonValue) : 
-    m_serviceIpv4CidrHasBeenSet(false)
+    m_serviceIpv4CidrHasBeenSet(false),
+    m_ipFamily(IpFamily::NOT_SET),
+    m_ipFamilyHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +42,13 @@ KubernetesNetworkConfigRequest& KubernetesNetworkConfigRequest::operator =(JsonV
     m_serviceIpv4CidrHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ipFamily"))
+  {
+    m_ipFamily = IpFamilyMapper::GetIpFamilyForName(jsonValue.GetString("ipFamily"));
+
+    m_ipFamilyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -49,6 +60,11 @@ JsonValue KubernetesNetworkConfigRequest::Jsonize() const
   {
    payload.WithString("serviceIpv4Cidr", m_serviceIpv4Cidr);
 
+  }
+
+  if(m_ipFamilyHasBeenSet)
+  {
+   payload.WithString("ipFamily", IpFamilyMapper::GetNameForIpFamily(m_ipFamily));
   }
 
   return payload;

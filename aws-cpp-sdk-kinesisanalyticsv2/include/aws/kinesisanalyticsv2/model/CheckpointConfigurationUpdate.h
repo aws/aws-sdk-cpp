@@ -158,7 +158,7 @@ namespace Model
      * <p>Describes updates to the interval in milliseconds between checkpoint
      * operations.</p>  <p>If
      * <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>,
-     * the application will use a <code>CheckpointInterval</code> vaue of 60000, even
+     * the application will use a <code>CheckpointInterval</code> value of 60000, even
      * if this value is set to another value using this API or in application code.</p>
      * 
      */
@@ -168,7 +168,7 @@ namespace Model
      * <p>Describes updates to the interval in milliseconds between checkpoint
      * operations.</p>  <p>If
      * <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>,
-     * the application will use a <code>CheckpointInterval</code> vaue of 60000, even
+     * the application will use a <code>CheckpointInterval</code> value of 60000, even
      * if this value is set to another value using this API or in application code.</p>
      * 
      */
@@ -178,7 +178,7 @@ namespace Model
      * <p>Describes updates to the interval in milliseconds between checkpoint
      * operations.</p>  <p>If
      * <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>,
-     * the application will use a <code>CheckpointInterval</code> vaue of 60000, even
+     * the application will use a <code>CheckpointInterval</code> value of 60000, even
      * if this value is set to another value using this API or in application code.</p>
      * 
      */
@@ -188,7 +188,7 @@ namespace Model
      * <p>Describes updates to the interval in milliseconds between checkpoint
      * operations.</p>  <p>If
      * <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>,
-     * the application will use a <code>CheckpointInterval</code> vaue of 60000, even
+     * the application will use a <code>CheckpointInterval</code> value of 60000, even
      * if this value is set to another value using this API or in application code.</p>
      * 
      */

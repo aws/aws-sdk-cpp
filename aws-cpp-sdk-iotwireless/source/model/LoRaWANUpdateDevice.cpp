@@ -20,13 +20,17 @@ namespace Model
 
 LoRaWANUpdateDevice::LoRaWANUpdateDevice() : 
     m_deviceProfileIdHasBeenSet(false),
-    m_serviceProfileIdHasBeenSet(false)
+    m_serviceProfileIdHasBeenSet(false),
+    m_abpV1_1HasBeenSet(false),
+    m_abpV1_0_xHasBeenSet(false)
 {
 }
 
 LoRaWANUpdateDevice::LoRaWANUpdateDevice(JsonView jsonValue) : 
     m_deviceProfileIdHasBeenSet(false),
-    m_serviceProfileIdHasBeenSet(false)
+    m_serviceProfileIdHasBeenSet(false),
+    m_abpV1_1HasBeenSet(false),
+    m_abpV1_0_xHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +51,20 @@ LoRaWANUpdateDevice& LoRaWANUpdateDevice::operator =(JsonView jsonValue)
     m_serviceProfileIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AbpV1_1"))
+  {
+    m_abpV1_1 = jsonValue.GetObject("AbpV1_1");
+
+    m_abpV1_1HasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AbpV1_0_x"))
+  {
+    m_abpV1_0_x = jsonValue.GetObject("AbpV1_0_x");
+
+    m_abpV1_0_xHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +81,18 @@ JsonValue LoRaWANUpdateDevice::Jsonize() const
   if(m_serviceProfileIdHasBeenSet)
   {
    payload.WithString("ServiceProfileId", m_serviceProfileId);
+
+  }
+
+  if(m_abpV1_1HasBeenSet)
+  {
+   payload.WithObject("AbpV1_1", m_abpV1_1.Jsonize());
+
+  }
+
+  if(m_abpV1_0_xHasBeenSet)
+  {
+   payload.WithObject("AbpV1_0_x", m_abpV1_0_x.Jsonize());
 
   }
 

@@ -7,8 +7,10 @@
 #include <aws/databrew/GlueDataBrew_EXPORTS.h>
 #include <aws/databrew/GlueDataBrewRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/databrew/model/InputFormat.h>
 #include <aws/databrew/model/FormatOptions.h>
 #include <aws/databrew/model/Input.h>
+#include <aws/databrew/model/PathOptions.h>
 #include <utility>
 
 namespace Aws
@@ -75,6 +77,43 @@ namespace Model
     inline UpdateDatasetRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
+    /**
+     * <p>The file format of a dataset that is created from an Amazon S3 file or
+     * folder.</p>
+     */
+    inline const InputFormat& GetFormat() const{ return m_format; }
+
+    /**
+     * <p>The file format of a dataset that is created from an Amazon S3 file or
+     * folder.</p>
+     */
+    inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
+
+    /**
+     * <p>The file format of a dataset that is created from an Amazon S3 file or
+     * folder.</p>
+     */
+    inline void SetFormat(const InputFormat& value) { m_formatHasBeenSet = true; m_format = value; }
+
+    /**
+     * <p>The file format of a dataset that is created from an Amazon S3 file or
+     * folder.</p>
+     */
+    inline void SetFormat(InputFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
+
+    /**
+     * <p>The file format of a dataset that is created from an Amazon S3 file or
+     * folder.</p>
+     */
+    inline UpdateDatasetRequest& WithFormat(const InputFormat& value) { SetFormat(value); return *this;}
+
+    /**
+     * <p>The file format of a dataset that is created from an Amazon S3 file or
+     * folder.</p>
+     */
+    inline UpdateDatasetRequest& WithFormat(InputFormat&& value) { SetFormat(std::move(value)); return *this;}
+
+
     
     inline const FormatOptions& GetFormatOptions() const{ return m_formatOptions; }
 
@@ -112,16 +151,59 @@ namespace Model
     
     inline UpdateDatasetRequest& WithInput(Input&& value) { SetInput(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A set of options that defines how DataBrew interprets an Amazon S3 path of
+     * the dataset.</p>
+     */
+    inline const PathOptions& GetPathOptions() const{ return m_pathOptions; }
+
+    /**
+     * <p>A set of options that defines how DataBrew interprets an Amazon S3 path of
+     * the dataset.</p>
+     */
+    inline bool PathOptionsHasBeenSet() const { return m_pathOptionsHasBeenSet; }
+
+    /**
+     * <p>A set of options that defines how DataBrew interprets an Amazon S3 path of
+     * the dataset.</p>
+     */
+    inline void SetPathOptions(const PathOptions& value) { m_pathOptionsHasBeenSet = true; m_pathOptions = value; }
+
+    /**
+     * <p>A set of options that defines how DataBrew interprets an Amazon S3 path of
+     * the dataset.</p>
+     */
+    inline void SetPathOptions(PathOptions&& value) { m_pathOptionsHasBeenSet = true; m_pathOptions = std::move(value); }
+
+    /**
+     * <p>A set of options that defines how DataBrew interprets an Amazon S3 path of
+     * the dataset.</p>
+     */
+    inline UpdateDatasetRequest& WithPathOptions(const PathOptions& value) { SetPathOptions(value); return *this;}
+
+    /**
+     * <p>A set of options that defines how DataBrew interprets an Amazon S3 path of
+     * the dataset.</p>
+     */
+    inline UpdateDatasetRequest& WithPathOptions(PathOptions&& value) { SetPathOptions(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    InputFormat m_format;
+    bool m_formatHasBeenSet;
 
     FormatOptions m_formatOptions;
     bool m_formatOptionsHasBeenSet;
 
     Input m_input;
     bool m_inputHasBeenSet;
+
+    PathOptions m_pathOptions;
+    bool m_pathOptionsHasBeenSet;
   };
 
 } // namespace Model

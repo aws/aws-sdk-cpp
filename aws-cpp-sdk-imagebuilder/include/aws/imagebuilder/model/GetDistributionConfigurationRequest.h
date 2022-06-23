@@ -40,49 +40,49 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the distribution configuration that you
-     * want to retrieve. </p>
+     * want to retrieve.</p>
      */
     inline const Aws::String& GetDistributionConfigurationArn() const{ return m_distributionConfigurationArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the distribution configuration that you
-     * want to retrieve. </p>
+     * want to retrieve.</p>
      */
     inline bool DistributionConfigurationArnHasBeenSet() const { return m_distributionConfigurationArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the distribution configuration that you
-     * want to retrieve. </p>
+     * want to retrieve.</p>
      */
     inline void SetDistributionConfigurationArn(const Aws::String& value) { m_distributionConfigurationArnHasBeenSet = true; m_distributionConfigurationArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the distribution configuration that you
-     * want to retrieve. </p>
+     * want to retrieve.</p>
      */
     inline void SetDistributionConfigurationArn(Aws::String&& value) { m_distributionConfigurationArnHasBeenSet = true; m_distributionConfigurationArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the distribution configuration that you
-     * want to retrieve. </p>
+     * want to retrieve.</p>
      */
     inline void SetDistributionConfigurationArn(const char* value) { m_distributionConfigurationArnHasBeenSet = true; m_distributionConfigurationArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the distribution configuration that you
-     * want to retrieve. </p>
+     * want to retrieve.</p>
      */
     inline GetDistributionConfigurationRequest& WithDistributionConfigurationArn(const Aws::String& value) { SetDistributionConfigurationArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the distribution configuration that you
-     * want to retrieve. </p>
+     * want to retrieve.</p>
      */
     inline GetDistributionConfigurationRequest& WithDistributionConfigurationArn(Aws::String&& value) { SetDistributionConfigurationArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the distribution configuration that you
-     * want to retrieve. </p>
+     * want to retrieve.</p>
      */
     inline GetDistributionConfigurationRequest& WithDistributionConfigurationArn(const char* value) { SetDistributionConfigurationArn(value); return *this;}
 

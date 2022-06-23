@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Defines how AWS Network Firewall performs logging for a <a>Firewall</a>.
+   * <p>Defines how Network Firewall performs logging for a <a>Firewall</a>.
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/LoggingConfiguration">AWS
    * API Reference</a></p>

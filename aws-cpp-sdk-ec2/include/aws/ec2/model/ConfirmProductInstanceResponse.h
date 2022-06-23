@@ -34,44 +34,44 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID of the instance owner. This is only present if the product
-     * code is attached to the instance.</p>
+     * <p>The Amazon Web Services account ID of the instance owner. This is only
+     * present if the product code is attached to the instance.</p>
      */
     inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
 
     /**
-     * <p>The AWS account ID of the instance owner. This is only present if the product
-     * code is attached to the instance.</p>
+     * <p>The Amazon Web Services account ID of the instance owner. This is only
+     * present if the product code is attached to the instance.</p>
      */
     inline void SetOwnerId(const Aws::String& value) { m_ownerId = value; }
 
     /**
-     * <p>The AWS account ID of the instance owner. This is only present if the product
-     * code is attached to the instance.</p>
+     * <p>The Amazon Web Services account ID of the instance owner. This is only
+     * present if the product code is attached to the instance.</p>
      */
     inline void SetOwnerId(Aws::String&& value) { m_ownerId = std::move(value); }
 
     /**
-     * <p>The AWS account ID of the instance owner. This is only present if the product
-     * code is attached to the instance.</p>
+     * <p>The Amazon Web Services account ID of the instance owner. This is only
+     * present if the product code is attached to the instance.</p>
      */
     inline void SetOwnerId(const char* value) { m_ownerId.assign(value); }
 
     /**
-     * <p>The AWS account ID of the instance owner. This is only present if the product
-     * code is attached to the instance.</p>
+     * <p>The Amazon Web Services account ID of the instance owner. This is only
+     * present if the product code is attached to the instance.</p>
      */
     inline ConfirmProductInstanceResponse& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
 
     /**
-     * <p>The AWS account ID of the instance owner. This is only present if the product
-     * code is attached to the instance.</p>
+     * <p>The Amazon Web Services account ID of the instance owner. This is only
+     * present if the product code is attached to the instance.</p>
      */
     inline ConfirmProductInstanceResponse& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID of the instance owner. This is only present if the product
-     * code is attached to the instance.</p>
+     * <p>The Amazon Web Services account ID of the instance owner. This is only
+     * present if the product code is attached to the instance.</p>
      */
     inline ConfirmProductInstanceResponse& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
 

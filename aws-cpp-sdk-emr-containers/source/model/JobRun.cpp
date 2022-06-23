@@ -137,7 +137,7 @@ JobRun& JobRun::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("createdAt"))
   {
-    m_createdAt = jsonValue.GetDouble("createdAt");
+    m_createdAt = jsonValue.GetString("createdAt");
 
     m_createdAtHasBeenSet = true;
   }
@@ -151,7 +151,7 @@ JobRun& JobRun::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("finishedAt"))
   {
-    m_finishedAt = jsonValue.GetDouble("finishedAt");
+    m_finishedAt = jsonValue.GetString("finishedAt");
 
     m_finishedAtHasBeenSet = true;
   }
@@ -248,7 +248,7 @@ JsonValue JobRun::Jsonize() const
 
   if(m_createdAtHasBeenSet)
   {
-   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
+   payload.WithString("createdAt", m_createdAt.ToGmtString(DateFormat::ISO_8601));
   }
 
   if(m_createdByHasBeenSet)
@@ -259,7 +259,7 @@ JsonValue JobRun::Jsonize() const
 
   if(m_finishedAtHasBeenSet)
   {
-   payload.WithDouble("finishedAt", m_finishedAt.SecondsWithMSPrecision());
+   payload.WithString("finishedAt", m_finishedAt.ToGmtString(DateFormat::ISO_8601));
   }
 
   if(m_stateDetailsHasBeenSet)

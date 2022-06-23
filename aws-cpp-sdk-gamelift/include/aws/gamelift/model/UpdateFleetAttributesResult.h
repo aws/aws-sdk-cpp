@@ -39,44 +39,37 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier for a fleet that was updated. Use either the fleet ID or
-     * ARN value.</p>
+     * <p>A unique identifier for the fleet that was updated.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
 
     /**
-     * <p>A unique identifier for a fleet that was updated. Use either the fleet ID or
-     * ARN value.</p>
+     * <p>A unique identifier for the fleet that was updated.</p>
      */
     inline void SetFleetId(const Aws::String& value) { m_fleetId = value; }
 
     /**
-     * <p>A unique identifier for a fleet that was updated. Use either the fleet ID or
-     * ARN value.</p>
+     * <p>A unique identifier for the fleet that was updated.</p>
      */
     inline void SetFleetId(Aws::String&& value) { m_fleetId = std::move(value); }
 
     /**
-     * <p>A unique identifier for a fleet that was updated. Use either the fleet ID or
-     * ARN value.</p>
+     * <p>A unique identifier for the fleet that was updated.</p>
      */
     inline void SetFleetId(const char* value) { m_fleetId.assign(value); }
 
     /**
-     * <p>A unique identifier for a fleet that was updated. Use either the fleet ID or
-     * ARN value.</p>
+     * <p>A unique identifier for the fleet that was updated.</p>
      */
     inline UpdateFleetAttributesResult& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>A unique identifier for a fleet that was updated. Use either the fleet ID or
-     * ARN value.</p>
+     * <p>A unique identifier for the fleet that was updated.</p>
      */
     inline UpdateFleetAttributesResult& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for a fleet that was updated. Use either the fleet ID or
-     * ARN value.</p>
+     * <p>A unique identifier for the fleet that was updated.</p>
      */
     inline UpdateFleetAttributesResult& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 

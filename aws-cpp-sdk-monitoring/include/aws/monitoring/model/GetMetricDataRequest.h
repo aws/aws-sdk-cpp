@@ -10,6 +10,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/monitoring/model/ScanBy.h>
+#include <aws/monitoring/model/LabelOptions.h>
 #include <aws/monitoring/model/MetricDataQuery.h>
 #include <utility>
 
@@ -43,64 +44,64 @@ namespace Model
     /**
      * <p>The metric queries to be returned. A single <code>GetMetricData</code> call
      * can include as many as 500 <code>MetricDataQuery</code> structures. Each of
-     * these structures can specify either a metric to retrieve, or a math expression
-     * to perform on retrieved data. </p>
+     * these structures can specify either a metric to retrieve, a Metrics Insights
+     * query, or a math expression to perform on retrieved data. </p>
      */
     inline const Aws::Vector<MetricDataQuery>& GetMetricDataQueries() const{ return m_metricDataQueries; }
 
     /**
      * <p>The metric queries to be returned. A single <code>GetMetricData</code> call
      * can include as many as 500 <code>MetricDataQuery</code> structures. Each of
-     * these structures can specify either a metric to retrieve, or a math expression
-     * to perform on retrieved data. </p>
+     * these structures can specify either a metric to retrieve, a Metrics Insights
+     * query, or a math expression to perform on retrieved data. </p>
      */
     inline bool MetricDataQueriesHasBeenSet() const { return m_metricDataQueriesHasBeenSet; }
 
     /**
      * <p>The metric queries to be returned. A single <code>GetMetricData</code> call
      * can include as many as 500 <code>MetricDataQuery</code> structures. Each of
-     * these structures can specify either a metric to retrieve, or a math expression
-     * to perform on retrieved data. </p>
+     * these structures can specify either a metric to retrieve, a Metrics Insights
+     * query, or a math expression to perform on retrieved data. </p>
      */
     inline void SetMetricDataQueries(const Aws::Vector<MetricDataQuery>& value) { m_metricDataQueriesHasBeenSet = true; m_metricDataQueries = value; }
 
     /**
      * <p>The metric queries to be returned. A single <code>GetMetricData</code> call
      * can include as many as 500 <code>MetricDataQuery</code> structures. Each of
-     * these structures can specify either a metric to retrieve, or a math expression
-     * to perform on retrieved data. </p>
+     * these structures can specify either a metric to retrieve, a Metrics Insights
+     * query, or a math expression to perform on retrieved data. </p>
      */
     inline void SetMetricDataQueries(Aws::Vector<MetricDataQuery>&& value) { m_metricDataQueriesHasBeenSet = true; m_metricDataQueries = std::move(value); }
 
     /**
      * <p>The metric queries to be returned. A single <code>GetMetricData</code> call
      * can include as many as 500 <code>MetricDataQuery</code> structures. Each of
-     * these structures can specify either a metric to retrieve, or a math expression
-     * to perform on retrieved data. </p>
+     * these structures can specify either a metric to retrieve, a Metrics Insights
+     * query, or a math expression to perform on retrieved data. </p>
      */
     inline GetMetricDataRequest& WithMetricDataQueries(const Aws::Vector<MetricDataQuery>& value) { SetMetricDataQueries(value); return *this;}
 
     /**
      * <p>The metric queries to be returned. A single <code>GetMetricData</code> call
      * can include as many as 500 <code>MetricDataQuery</code> structures. Each of
-     * these structures can specify either a metric to retrieve, or a math expression
-     * to perform on retrieved data. </p>
+     * these structures can specify either a metric to retrieve, a Metrics Insights
+     * query, or a math expression to perform on retrieved data. </p>
      */
     inline GetMetricDataRequest& WithMetricDataQueries(Aws::Vector<MetricDataQuery>&& value) { SetMetricDataQueries(std::move(value)); return *this;}
 
     /**
      * <p>The metric queries to be returned. A single <code>GetMetricData</code> call
      * can include as many as 500 <code>MetricDataQuery</code> structures. Each of
-     * these structures can specify either a metric to retrieve, or a math expression
-     * to perform on retrieved data. </p>
+     * these structures can specify either a metric to retrieve, a Metrics Insights
+     * query, or a math expression to perform on retrieved data. </p>
      */
     inline GetMetricDataRequest& AddMetricDataQueries(const MetricDataQuery& value) { m_metricDataQueriesHasBeenSet = true; m_metricDataQueries.push_back(value); return *this; }
 
     /**
      * <p>The metric queries to be returned. A single <code>GetMetricData</code> call
      * can include as many as 500 <code>MetricDataQuery</code> structures. Each of
-     * these structures can specify either a metric to retrieve, or a math expression
-     * to perform on retrieved data. </p>
+     * these structures can specify either a metric to retrieve, a Metrics Insights
+     * query, or a math expression to perform on retrieved data. </p>
      */
     inline GetMetricDataRequest& AddMetricDataQueries(MetricDataQuery&& value) { m_metricDataQueriesHasBeenSet = true; m_metricDataQueries.push_back(std::move(value)); return *this; }
 
@@ -463,6 +464,49 @@ namespace Model
      */
     inline GetMetricDataRequest& WithMaxDatapoints(int value) { SetMaxDatapoints(value); return *this;}
 
+
+    /**
+     * <p>This structure includes the <code>Timezone</code> parameter, which you can
+     * use to specify your time zone so that the labels of returned data display the
+     * correct time for your time zone. </p>
+     */
+    inline const LabelOptions& GetLabelOptions() const{ return m_labelOptions; }
+
+    /**
+     * <p>This structure includes the <code>Timezone</code> parameter, which you can
+     * use to specify your time zone so that the labels of returned data display the
+     * correct time for your time zone. </p>
+     */
+    inline bool LabelOptionsHasBeenSet() const { return m_labelOptionsHasBeenSet; }
+
+    /**
+     * <p>This structure includes the <code>Timezone</code> parameter, which you can
+     * use to specify your time zone so that the labels of returned data display the
+     * correct time for your time zone. </p>
+     */
+    inline void SetLabelOptions(const LabelOptions& value) { m_labelOptionsHasBeenSet = true; m_labelOptions = value; }
+
+    /**
+     * <p>This structure includes the <code>Timezone</code> parameter, which you can
+     * use to specify your time zone so that the labels of returned data display the
+     * correct time for your time zone. </p>
+     */
+    inline void SetLabelOptions(LabelOptions&& value) { m_labelOptionsHasBeenSet = true; m_labelOptions = std::move(value); }
+
+    /**
+     * <p>This structure includes the <code>Timezone</code> parameter, which you can
+     * use to specify your time zone so that the labels of returned data display the
+     * correct time for your time zone. </p>
+     */
+    inline GetMetricDataRequest& WithLabelOptions(const LabelOptions& value) { SetLabelOptions(value); return *this;}
+
+    /**
+     * <p>This structure includes the <code>Timezone</code> parameter, which you can
+     * use to specify your time zone so that the labels of returned data display the
+     * correct time for your time zone. </p>
+     */
+    inline GetMetricDataRequest& WithLabelOptions(LabelOptions&& value) { SetLabelOptions(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<MetricDataQuery> m_metricDataQueries;
@@ -482,6 +526,9 @@ namespace Model
 
     int m_maxDatapoints;
     bool m_maxDatapointsHasBeenSet;
+
+    LabelOptions m_labelOptions;
+    bool m_labelOptionsHasBeenSet;
   };
 
 } // namespace Model

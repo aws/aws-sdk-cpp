@@ -238,50 +238,50 @@ namespace Model
 
 
     /**
-     * <p> The ID of the AWS account that owns the transit gateway multicast domain
-     * group resource.</p>
+     * <p> The ID of the Amazon Web Services account that owns the transit gateway
+     * multicast domain group resource.</p>
      */
     inline const Aws::String& GetResourceOwnerId() const{ return m_resourceOwnerId; }
 
     /**
-     * <p> The ID of the AWS account that owns the transit gateway multicast domain
-     * group resource.</p>
+     * <p> The ID of the Amazon Web Services account that owns the transit gateway
+     * multicast domain group resource.</p>
      */
     inline bool ResourceOwnerIdHasBeenSet() const { return m_resourceOwnerIdHasBeenSet; }
 
     /**
-     * <p> The ID of the AWS account that owns the transit gateway multicast domain
-     * group resource.</p>
+     * <p> The ID of the Amazon Web Services account that owns the transit gateway
+     * multicast domain group resource.</p>
      */
     inline void SetResourceOwnerId(const Aws::String& value) { m_resourceOwnerIdHasBeenSet = true; m_resourceOwnerId = value; }
 
     /**
-     * <p> The ID of the AWS account that owns the transit gateway multicast domain
-     * group resource.</p>
+     * <p> The ID of the Amazon Web Services account that owns the transit gateway
+     * multicast domain group resource.</p>
      */
     inline void SetResourceOwnerId(Aws::String&& value) { m_resourceOwnerIdHasBeenSet = true; m_resourceOwnerId = std::move(value); }
 
     /**
-     * <p> The ID of the AWS account that owns the transit gateway multicast domain
-     * group resource.</p>
+     * <p> The ID of the Amazon Web Services account that owns the transit gateway
+     * multicast domain group resource.</p>
      */
     inline void SetResourceOwnerId(const char* value) { m_resourceOwnerIdHasBeenSet = true; m_resourceOwnerId.assign(value); }
 
     /**
-     * <p> The ID of the AWS account that owns the transit gateway multicast domain
-     * group resource.</p>
+     * <p> The ID of the Amazon Web Services account that owns the transit gateway
+     * multicast domain group resource.</p>
      */
     inline TransitGatewayMulticastGroup& WithResourceOwnerId(const Aws::String& value) { SetResourceOwnerId(value); return *this;}
 
     /**
-     * <p> The ID of the AWS account that owns the transit gateway multicast domain
-     * group resource.</p>
+     * <p> The ID of the Amazon Web Services account that owns the transit gateway
+     * multicast domain group resource.</p>
      */
     inline TransitGatewayMulticastGroup& WithResourceOwnerId(Aws::String&& value) { SetResourceOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p> The ID of the AWS account that owns the transit gateway multicast domain
-     * group resource.</p>
+     * <p> The ID of the Amazon Web Services account that owns the transit gateway
+     * multicast domain group resource.</p>
      */
     inline TransitGatewayMulticastGroup& WithResourceOwnerId(const char* value) { SetResourceOwnerId(value); return *this;}
 

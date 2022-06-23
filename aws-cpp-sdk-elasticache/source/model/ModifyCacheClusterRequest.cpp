@@ -35,7 +35,8 @@ ModifyCacheClusterRequest::ModifyCacheClusterRequest() :
     m_cacheNodeTypeHasBeenSet(false),
     m_authTokenHasBeenSet(false),
     m_authTokenUpdateStrategy(AuthTokenUpdateStrategyType::NOT_SET),
-    m_authTokenUpdateStrategyHasBeenSet(false)
+    m_authTokenUpdateStrategyHasBeenSet(false),
+    m_logDeliveryConfigurationsHasBeenSet(false)
 {
 }
 
@@ -160,6 +161,16 @@ Aws::String ModifyCacheClusterRequest::SerializePayload() const
   if(m_authTokenUpdateStrategyHasBeenSet)
   {
     ss << "AuthTokenUpdateStrategy=" << AuthTokenUpdateStrategyTypeMapper::GetNameForAuthTokenUpdateStrategyType(m_authTokenUpdateStrategy) << "&";
+  }
+
+  if(m_logDeliveryConfigurationsHasBeenSet)
+  {
+    unsigned logDeliveryConfigurationsCount = 1;
+    for(auto& item : m_logDeliveryConfigurations)
+    {
+      item.OutputToStream(ss, "LogDeliveryConfigurations.member.", logDeliveryConfigurationsCount, "");
+      logDeliveryConfigurationsCount++;
+    }
   }
 
   ss << "Version=2015-02-02";

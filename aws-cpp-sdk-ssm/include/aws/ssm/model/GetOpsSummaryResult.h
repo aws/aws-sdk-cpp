@@ -35,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>The list of aggregated and filtered OpsItems.</p>
+     * <p>The list of aggregated details and filtered OpsData.</p>
      */
     inline const Aws::Vector<OpsEntity>& GetEntities() const{ return m_entities; }
 
     /**
-     * <p>The list of aggregated and filtered OpsItems.</p>
+     * <p>The list of aggregated details and filtered OpsData.</p>
      */
     inline void SetEntities(const Aws::Vector<OpsEntity>& value) { m_entities = value; }
 
     /**
-     * <p>The list of aggregated and filtered OpsItems.</p>
+     * <p>The list of aggregated details and filtered OpsData.</p>
      */
     inline void SetEntities(Aws::Vector<OpsEntity>&& value) { m_entities = std::move(value); }
 
     /**
-     * <p>The list of aggregated and filtered OpsItems.</p>
+     * <p>The list of aggregated details and filtered OpsData.</p>
      */
     inline GetOpsSummaryResult& WithEntities(const Aws::Vector<OpsEntity>& value) { SetEntities(value); return *this;}
 
     /**
-     * <p>The list of aggregated and filtered OpsItems.</p>
+     * <p>The list of aggregated details and filtered OpsData.</p>
      */
     inline GetOpsSummaryResult& WithEntities(Aws::Vector<OpsEntity>&& value) { SetEntities(std::move(value)); return *this;}
 
     /**
-     * <p>The list of aggregated and filtered OpsItems.</p>
+     * <p>The list of aggregated details and filtered OpsData.</p>
      */
     inline GetOpsSummaryResult& AddEntities(const OpsEntity& value) { m_entities.push_back(value); return *this; }
 
     /**
-     * <p>The list of aggregated and filtered OpsItems.</p>
+     * <p>The list of aggregated details and filtered OpsData.</p>
      */
     inline GetOpsSummaryResult& AddEntities(OpsEntity&& value) { m_entities.push_back(std::move(value)); return *this; }
 

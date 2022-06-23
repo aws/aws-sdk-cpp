@@ -26,7 +26,9 @@ ApplicationSummary::ApplicationSummary() :
     m_applicationVersionId(0),
     m_applicationVersionIdHasBeenSet(false),
     m_runtimeEnvironment(RuntimeEnvironment::NOT_SET),
-    m_runtimeEnvironmentHasBeenSet(false)
+    m_runtimeEnvironmentHasBeenSet(false),
+    m_applicationMode(ApplicationMode::NOT_SET),
+    m_applicationModeHasBeenSet(false)
 {
 }
 
@@ -38,7 +40,9 @@ ApplicationSummary::ApplicationSummary(JsonView jsonValue) :
     m_applicationVersionId(0),
     m_applicationVersionIdHasBeenSet(false),
     m_runtimeEnvironment(RuntimeEnvironment::NOT_SET),
-    m_runtimeEnvironmentHasBeenSet(false)
+    m_runtimeEnvironmentHasBeenSet(false),
+    m_applicationMode(ApplicationMode::NOT_SET),
+    m_applicationModeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -80,6 +84,13 @@ ApplicationSummary& ApplicationSummary::operator =(JsonView jsonValue)
     m_runtimeEnvironmentHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ApplicationMode"))
+  {
+    m_applicationMode = ApplicationModeMapper::GetApplicationModeForName(jsonValue.GetString("ApplicationMode"));
+
+    m_applicationModeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -113,6 +124,11 @@ JsonValue ApplicationSummary::Jsonize() const
   if(m_runtimeEnvironmentHasBeenSet)
   {
    payload.WithString("RuntimeEnvironment", RuntimeEnvironmentMapper::GetNameForRuntimeEnvironment(m_runtimeEnvironment));
+  }
+
+  if(m_applicationModeHasBeenSet)
+  {
+   payload.WithString("ApplicationMode", ApplicationModeMapper::GetNameForApplicationMode(m_applicationMode));
   }
 
   return payload;

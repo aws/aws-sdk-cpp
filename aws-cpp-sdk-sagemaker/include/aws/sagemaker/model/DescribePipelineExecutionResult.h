@@ -7,8 +7,10 @@
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/PipelineExecutionStatus.h>
+#include <aws/sagemaker/model/PipelineExperimentConfig.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/UserContext.h>
+#include <aws/sagemaker/model/ParallelismConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -205,6 +207,58 @@ namespace Model
     inline DescribePipelineExecutionResult& WithPipelineExecutionDescription(const char* value) { SetPipelineExecutionDescription(value); return *this;}
 
 
+    
+    inline const PipelineExperimentConfig& GetPipelineExperimentConfig() const{ return m_pipelineExperimentConfig; }
+
+    
+    inline void SetPipelineExperimentConfig(const PipelineExperimentConfig& value) { m_pipelineExperimentConfig = value; }
+
+    
+    inline void SetPipelineExperimentConfig(PipelineExperimentConfig&& value) { m_pipelineExperimentConfig = std::move(value); }
+
+    
+    inline DescribePipelineExecutionResult& WithPipelineExperimentConfig(const PipelineExperimentConfig& value) { SetPipelineExperimentConfig(value); return *this;}
+
+    
+    inline DescribePipelineExecutionResult& WithPipelineExperimentConfig(PipelineExperimentConfig&& value) { SetPipelineExperimentConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>If the execution failed, a message describing why.</p>
+     */
+    inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
+
+    /**
+     * <p>If the execution failed, a message describing why.</p>
+     */
+    inline void SetFailureReason(const Aws::String& value) { m_failureReason = value; }
+
+    /**
+     * <p>If the execution failed, a message describing why.</p>
+     */
+    inline void SetFailureReason(Aws::String&& value) { m_failureReason = std::move(value); }
+
+    /**
+     * <p>If the execution failed, a message describing why.</p>
+     */
+    inline void SetFailureReason(const char* value) { m_failureReason.assign(value); }
+
+    /**
+     * <p>If the execution failed, a message describing why.</p>
+     */
+    inline DescribePipelineExecutionResult& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
+
+    /**
+     * <p>If the execution failed, a message describing why.</p>
+     */
+    inline DescribePipelineExecutionResult& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
+
+    /**
+     * <p>If the execution failed, a message describing why.</p>
+     */
+    inline DescribePipelineExecutionResult& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
+
+
     /**
      * <p>The time when the pipeline execution was created.</p>
      */
@@ -288,6 +342,32 @@ namespace Model
     
     inline DescribePipelineExecutionResult& WithLastModifiedBy(UserContext&& value) { SetLastModifiedBy(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The parallelism configuration applied to the pipeline.</p>
+     */
+    inline const ParallelismConfiguration& GetParallelismConfiguration() const{ return m_parallelismConfiguration; }
+
+    /**
+     * <p>The parallelism configuration applied to the pipeline.</p>
+     */
+    inline void SetParallelismConfiguration(const ParallelismConfiguration& value) { m_parallelismConfiguration = value; }
+
+    /**
+     * <p>The parallelism configuration applied to the pipeline.</p>
+     */
+    inline void SetParallelismConfiguration(ParallelismConfiguration&& value) { m_parallelismConfiguration = std::move(value); }
+
+    /**
+     * <p>The parallelism configuration applied to the pipeline.</p>
+     */
+    inline DescribePipelineExecutionResult& WithParallelismConfiguration(const ParallelismConfiguration& value) { SetParallelismConfiguration(value); return *this;}
+
+    /**
+     * <p>The parallelism configuration applied to the pipeline.</p>
+     */
+    inline DescribePipelineExecutionResult& WithParallelismConfiguration(ParallelismConfiguration&& value) { SetParallelismConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_pipelineArn;
@@ -300,6 +380,10 @@ namespace Model
 
     Aws::String m_pipelineExecutionDescription;
 
+    PipelineExperimentConfig m_pipelineExperimentConfig;
+
+    Aws::String m_failureReason;
+
     Aws::Utils::DateTime m_creationTime;
 
     Aws::Utils::DateTime m_lastModifiedTime;
@@ -307,6 +391,8 @@ namespace Model
     UserContext m_createdBy;
 
     UserContext m_lastModifiedBy;
+
+    ParallelismConfiguration m_parallelismConfiguration;
   };
 
 } // namespace Model

@@ -321,44 +321,44 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the AWS Identity and Access Management (IAM) role that was assumed
-     * for this request.</p>
+     * <p>The ARN of the Identity and Access Management (IAM) role to be assumed when
+     * DataBrew runs the job.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The ARN of the AWS Identity and Access Management (IAM) role that was assumed
-     * for this request.</p>
+     * <p>The ARN of the Identity and Access Management (IAM) role to be assumed when
+     * DataBrew runs the job.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
 
     /**
-     * <p>The ARN of the AWS Identity and Access Management (IAM) role that was assumed
-     * for this request.</p>
+     * <p>The ARN of the Identity and Access Management (IAM) role to be assumed when
+     * DataBrew runs the job.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
 
     /**
-     * <p>The ARN of the AWS Identity and Access Management (IAM) role that was assumed
-     * for this request.</p>
+     * <p>The ARN of the Identity and Access Management (IAM) role to be assumed when
+     * DataBrew runs the job.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
 
     /**
-     * <p>The ARN of the AWS Identity and Access Management (IAM) role that was assumed
-     * for this request.</p>
+     * <p>The ARN of the Identity and Access Management (IAM) role to be assumed when
+     * DataBrew runs the job.</p>
      */
     inline DescribeProjectResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The ARN of the AWS Identity and Access Management (IAM) role that was assumed
-     * for this request.</p>
+     * <p>The ARN of the Identity and Access Management (IAM) role to be assumed when
+     * DataBrew runs the job.</p>
      */
     inline DescribeProjectResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the AWS Identity and Access Management (IAM) role that was assumed
-     * for this request.</p>
+     * <p>The ARN of the Identity and Access Management (IAM) role to be assumed when
+     * DataBrew runs the job.</p>
      */
     inline DescribeProjectResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

@@ -25,7 +25,10 @@ CreateJobRequest::CreateJobRequest() :
     m_abortConfigHasBeenSet(false),
     m_timeoutConfigHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_namespaceIdHasBeenSet(false)
+    m_namespaceIdHasBeenSet(false),
+    m_jobTemplateArnHasBeenSet(false),
+    m_jobExecutionsRetryConfigHasBeenSet(false),
+    m_documentParametersHasBeenSet(false)
 {
 }
 
@@ -105,6 +108,29 @@ Aws::String CreateJobRequest::SerializePayload() const
   if(m_namespaceIdHasBeenSet)
   {
    payload.WithString("namespaceId", m_namespaceId);
+
+  }
+
+  if(m_jobTemplateArnHasBeenSet)
+  {
+   payload.WithString("jobTemplateArn", m_jobTemplateArn);
+
+  }
+
+  if(m_jobExecutionsRetryConfigHasBeenSet)
+  {
+   payload.WithObject("jobExecutionsRetryConfig", m_jobExecutionsRetryConfig.Jsonize());
+
+  }
+
+  if(m_documentParametersHasBeenSet)
+  {
+   JsonValue documentParametersJsonMap;
+   for(auto& documentParametersItem : m_documentParameters)
+   {
+     documentParametersJsonMap.WithString(documentParametersItem.first, documentParametersItem.second);
+   }
+   payload.WithObject("documentParameters", std::move(documentParametersJsonMap));
 
   }
 

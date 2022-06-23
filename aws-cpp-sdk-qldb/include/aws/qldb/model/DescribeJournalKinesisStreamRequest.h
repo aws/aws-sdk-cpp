@@ -74,42 +74,50 @@ namespace Model
 
 
     /**
-     * <p>The unique ID that QLDB assigns to each QLDB journal stream.</p>
+     * <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to
+     * describe.</p>
      */
     inline const Aws::String& GetStreamId() const{ return m_streamId; }
 
     /**
-     * <p>The unique ID that QLDB assigns to each QLDB journal stream.</p>
+     * <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to
+     * describe.</p>
      */
     inline bool StreamIdHasBeenSet() const { return m_streamIdHasBeenSet; }
 
     /**
-     * <p>The unique ID that QLDB assigns to each QLDB journal stream.</p>
+     * <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to
+     * describe.</p>
      */
     inline void SetStreamId(const Aws::String& value) { m_streamIdHasBeenSet = true; m_streamId = value; }
 
     /**
-     * <p>The unique ID that QLDB assigns to each QLDB journal stream.</p>
+     * <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to
+     * describe.</p>
      */
     inline void SetStreamId(Aws::String&& value) { m_streamIdHasBeenSet = true; m_streamId = std::move(value); }
 
     /**
-     * <p>The unique ID that QLDB assigns to each QLDB journal stream.</p>
+     * <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to
+     * describe.</p>
      */
     inline void SetStreamId(const char* value) { m_streamIdHasBeenSet = true; m_streamId.assign(value); }
 
     /**
-     * <p>The unique ID that QLDB assigns to each QLDB journal stream.</p>
+     * <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to
+     * describe.</p>
      */
     inline DescribeJournalKinesisStreamRequest& WithStreamId(const Aws::String& value) { SetStreamId(value); return *this;}
 
     /**
-     * <p>The unique ID that QLDB assigns to each QLDB journal stream.</p>
+     * <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to
+     * describe.</p>
      */
     inline DescribeJournalKinesisStreamRequest& WithStreamId(Aws::String&& value) { SetStreamId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique ID that QLDB assigns to each QLDB journal stream.</p>
+     * <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to
+     * describe.</p>
      */
     inline DescribeJournalKinesisStreamRequest& WithStreamId(const char* value) { SetStreamId(value); return *this;}
 

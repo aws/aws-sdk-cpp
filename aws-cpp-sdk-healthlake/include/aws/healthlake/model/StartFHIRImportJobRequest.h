@@ -8,6 +8,7 @@
 #include <aws/healthlake/HealthLakeRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/healthlake/model/InputDataConfig.h>
+#include <aws/healthlake/model/OutputDataConfig.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -112,6 +113,25 @@ namespace Model
      * request.</p>
      */
     inline StartFHIRImportJobRequest& WithInputDataConfig(InputDataConfig&& value) { SetInputDataConfig(std::move(value)); return *this;}
+
+
+    
+    inline const OutputDataConfig& GetJobOutputDataConfig() const{ return m_jobOutputDataConfig; }
+
+    
+    inline bool JobOutputDataConfigHasBeenSet() const { return m_jobOutputDataConfigHasBeenSet; }
+
+    
+    inline void SetJobOutputDataConfig(const OutputDataConfig& value) { m_jobOutputDataConfigHasBeenSet = true; m_jobOutputDataConfig = value; }
+
+    
+    inline void SetJobOutputDataConfig(OutputDataConfig&& value) { m_jobOutputDataConfigHasBeenSet = true; m_jobOutputDataConfig = std::move(value); }
+
+    
+    inline StartFHIRImportJobRequest& WithJobOutputDataConfig(const OutputDataConfig& value) { SetJobOutputDataConfig(value); return *this;}
+
+    
+    inline StartFHIRImportJobRequest& WithJobOutputDataConfig(OutputDataConfig&& value) { SetJobOutputDataConfig(std::move(value)); return *this;}
 
 
     /**
@@ -251,6 +271,9 @@ namespace Model
 
     InputDataConfig m_inputDataConfig;
     bool m_inputDataConfigHasBeenSet;
+
+    OutputDataConfig m_jobOutputDataConfig;
+    bool m_jobOutputDataConfigHasBeenSet;
 
     Aws::String m_datastoreId;
     bool m_datastoreIdHasBeenSet;

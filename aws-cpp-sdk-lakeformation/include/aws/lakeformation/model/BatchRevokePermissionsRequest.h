@@ -33,70 +33,68 @@ namespace Model
 
     Aws::String SerializePayload() const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
-
 
     /**
      * <p>The identifier for the Data Catalog. By default, the account ID. The Data
      * Catalog is the persistent metadata store. It contains database definitions,
-     * table definitions, and other control information to manage your AWS Lake
-     * Formation environment. </p>
+     * table definitions, and other control information to manage your Lake Formation
+     * environment. </p>
      */
     inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
 
     /**
      * <p>The identifier for the Data Catalog. By default, the account ID. The Data
      * Catalog is the persistent metadata store. It contains database definitions,
-     * table definitions, and other control information to manage your AWS Lake
-     * Formation environment. </p>
+     * table definitions, and other control information to manage your Lake Formation
+     * environment. </p>
      */
     inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
 
     /**
      * <p>The identifier for the Data Catalog. By default, the account ID. The Data
      * Catalog is the persistent metadata store. It contains database definitions,
-     * table definitions, and other control information to manage your AWS Lake
-     * Formation environment. </p>
+     * table definitions, and other control information to manage your Lake Formation
+     * environment. </p>
      */
     inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
 
     /**
      * <p>The identifier for the Data Catalog. By default, the account ID. The Data
      * Catalog is the persistent metadata store. It contains database definitions,
-     * table definitions, and other control information to manage your AWS Lake
-     * Formation environment. </p>
+     * table definitions, and other control information to manage your Lake Formation
+     * environment. </p>
      */
     inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
 
     /**
      * <p>The identifier for the Data Catalog. By default, the account ID. The Data
      * Catalog is the persistent metadata store. It contains database definitions,
-     * table definitions, and other control information to manage your AWS Lake
-     * Formation environment. </p>
+     * table definitions, and other control information to manage your Lake Formation
+     * environment. </p>
      */
     inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
 
     /**
      * <p>The identifier for the Data Catalog. By default, the account ID. The Data
      * Catalog is the persistent metadata store. It contains database definitions,
-     * table definitions, and other control information to manage your AWS Lake
-     * Formation environment. </p>
+     * table definitions, and other control information to manage your Lake Formation
+     * environment. </p>
      */
     inline BatchRevokePermissionsRequest& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
 
     /**
      * <p>The identifier for the Data Catalog. By default, the account ID. The Data
      * Catalog is the persistent metadata store. It contains database definitions,
-     * table definitions, and other control information to manage your AWS Lake
-     * Formation environment. </p>
+     * table definitions, and other control information to manage your Lake Formation
+     * environment. </p>
      */
     inline BatchRevokePermissionsRequest& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier for the Data Catalog. By default, the account ID. The Data
      * Catalog is the persistent metadata store. It contains database definitions,
-     * table definitions, and other control information to manage your AWS Lake
-     * Formation environment. </p>
+     * table definitions, and other control information to manage your Lake Formation
+     * environment. </p>
      */
     inline BatchRevokePermissionsRequest& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
 

@@ -27,7 +27,19 @@ StartFleetActionsResult::StartFleetActionsResult(const Aws::AmazonWebServiceResu
 
 StartFleetActionsResult& StartFleetActionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  AWS_UNREFERENCED_PARAM(result);
+  JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("FleetId"))
+  {
+    m_fleetId = jsonValue.GetString("FleetId");
+
+  }
+
+  if(jsonValue.ValueExists("FleetArn"))
+  {
+    m_fleetArn = jsonValue.GetString("FleetArn");
+
+  }
+
 
 
   return *this;

@@ -29,7 +29,9 @@ CreateVolumeRequest::CreateVolumeRequest() :
     m_multiAttachEnabled(false),
     m_multiAttachEnabledHasBeenSet(false),
     m_throughput(0),
-    m_throughputHasBeenSet(false)
+    m_throughputHasBeenSet(false),
+    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientTokenHasBeenSet(true)
 {
 }
 
@@ -100,6 +102,11 @@ Aws::String CreateVolumeRequest::SerializePayload() const
   if(m_throughputHasBeenSet)
   {
     ss << "Throughput=" << m_throughput << "&";
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+    ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

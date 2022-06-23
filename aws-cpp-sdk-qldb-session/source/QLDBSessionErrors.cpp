@@ -36,6 +36,7 @@ namespace QLDBSessionErrorMapper
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int INVALID_SESSION_HASH = HashingUtils::HashString("InvalidSessionException");
 static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
+static const int CAPACITY_EXCEEDED_HASH = HashingUtils::HashString("CapacityExceededException");
 static const int OCC_CONFLICT_HASH = HashingUtils::HashString("OccConflictException");
 static const int RATE_EXCEEDED_HASH = HashingUtils::HashString("RateExceededException");
 
@@ -55,6 +56,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == BAD_REQUEST_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(QLDBSessionErrors::BAD_REQUEST), false);
+  }
+  else if (hashCode == CAPACITY_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(QLDBSessionErrors::CAPACITY_EXCEEDED), false);
   }
   else if (hashCode == OCC_CONFLICT_HASH)
   {

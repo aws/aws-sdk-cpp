@@ -24,7 +24,8 @@ LaunchConfig::LaunchConfig() :
     m_environmentVariablesHasBeenSet(false),
     m_portForwardingConfigHasBeenSet(false),
     m_streamUI(false),
-    m_streamUIHasBeenSet(false)
+    m_streamUIHasBeenSet(false),
+    m_commandHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ LaunchConfig::LaunchConfig(JsonView jsonValue) :
     m_environmentVariablesHasBeenSet(false),
     m_portForwardingConfigHasBeenSet(false),
     m_streamUI(false),
-    m_streamUIHasBeenSet(false)
+    m_streamUIHasBeenSet(false),
+    m_commandHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -79,6 +81,16 @@ LaunchConfig& LaunchConfig::operator =(JsonView jsonValue)
     m_streamUIHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("command"))
+  {
+    Array<JsonView> commandJsonList = jsonValue.GetArray("command");
+    for(unsigned commandIndex = 0; commandIndex < commandJsonList.GetLength(); ++commandIndex)
+    {
+      m_command.push_back(commandJsonList[commandIndex].AsString());
+    }
+    m_commandHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -118,6 +130,17 @@ JsonValue LaunchConfig::Jsonize() const
   if(m_streamUIHasBeenSet)
   {
    payload.WithBool("streamUI", m_streamUI);
+
+  }
+
+  if(m_commandHasBeenSet)
+  {
+   Array<JsonValue> commandJsonList(m_command.size());
+   for(unsigned commandIndex = 0; commandIndex < commandJsonList.GetLength(); ++commandIndex)
+   {
+     commandJsonList[commandIndex].AsString(m_command[commandIndex]);
+   }
+   payload.WithArray("command", std::move(commandJsonList));
 
   }
 

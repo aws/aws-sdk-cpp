@@ -33,7 +33,7 @@ namespace Model
    * (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
    * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be
    * mixed.</p>  <p>All compute environments that are associated with a job
-   * queue must share the same architecture. AWS Batch doesn't support mixing compute
+   * queue must share the same architecture. Batch doesn't support mixing compute
    * environment architecture types in a single job queue.</p> <p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ComputeEnvironmentOrder">AWS

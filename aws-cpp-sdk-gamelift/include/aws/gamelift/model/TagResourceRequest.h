@@ -122,7 +122,7 @@ namespace Model
      * are developer-defined and structured as key-value pairs. The maximum tag limit
      * may be lower than stated. See <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
-     * AWS Resources</a> for actual tagging limits.</p>
+     * Amazon Web Services Resources</a> for actual tagging limits.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -131,7 +131,7 @@ namespace Model
      * are developer-defined and structured as key-value pairs. The maximum tag limit
      * may be lower than stated. See <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
-     * AWS Resources</a> for actual tagging limits.</p>
+     * Amazon Web Services Resources</a> for actual tagging limits.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -140,7 +140,7 @@ namespace Model
      * are developer-defined and structured as key-value pairs. The maximum tag limit
      * may be lower than stated. See <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
-     * AWS Resources</a> for actual tagging limits.</p>
+     * Amazon Web Services Resources</a> for actual tagging limits.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -149,7 +149,7 @@ namespace Model
      * are developer-defined and structured as key-value pairs. The maximum tag limit
      * may be lower than stated. See <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
-     * AWS Resources</a> for actual tagging limits.</p>
+     * Amazon Web Services Resources</a> for actual tagging limits.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -158,7 +158,7 @@ namespace Model
      * are developer-defined and structured as key-value pairs. The maximum tag limit
      * may be lower than stated. See <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
-     * AWS Resources</a> for actual tagging limits.</p>
+     * Amazon Web Services Resources</a> for actual tagging limits.</p>
      */
     inline TagResourceRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
@@ -167,7 +167,7 @@ namespace Model
      * are developer-defined and structured as key-value pairs. The maximum tag limit
      * may be lower than stated. See <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
-     * AWS Resources</a> for actual tagging limits.</p>
+     * Amazon Web Services Resources</a> for actual tagging limits.</p>
      */
     inline TagResourceRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -176,7 +176,7 @@ namespace Model
      * are developer-defined and structured as key-value pairs. The maximum tag limit
      * may be lower than stated. See <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
-     * AWS Resources</a> for actual tagging limits.</p>
+     * Amazon Web Services Resources</a> for actual tagging limits.</p>
      */
     inline TagResourceRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
@@ -185,7 +185,7 @@ namespace Model
      * are developer-defined and structured as key-value pairs. The maximum tag limit
      * may be lower than stated. See <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
-     * AWS Resources</a> for actual tagging limits.</p>
+     * Amazon Web Services Resources</a> for actual tagging limits.</p>
      */
     inline TagResourceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

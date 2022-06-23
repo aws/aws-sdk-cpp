@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>An attachment to an AWS EC2 volume.</p><p><h3>See Also:</h3>   <a
+   * <p>An attachment to an Amazon EC2 volume.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEc2VolumeAttachment">AWS
    * API Reference</a></p>
    */

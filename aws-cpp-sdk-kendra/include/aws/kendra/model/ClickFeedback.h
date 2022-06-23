@@ -26,7 +26,7 @@ namespace Model
 
   /**
    * <p>Gathers information about when a particular result was clicked by a user.
-   * Your application uses the <a>SubmitFeedback</a> operation to provide click
+   * Your application uses the <code>SubmitFeedback</code> API to provide click
    * information.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ClickFeedback">AWS
    * API Reference</a></p>

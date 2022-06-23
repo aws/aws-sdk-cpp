@@ -27,7 +27,8 @@ ReplicationGroupPendingModifiedValues::ReplicationGroupPendingModifiedValues() :
     m_reshardingHasBeenSet(false),
     m_authTokenStatus(AuthTokenUpdateStatus::NOT_SET),
     m_authTokenStatusHasBeenSet(false),
-    m_userGroupsHasBeenSet(false)
+    m_userGroupsHasBeenSet(false),
+    m_logDeliveryConfigurationsHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ ReplicationGroupPendingModifiedValues::ReplicationGroupPendingModifiedValues(con
     m_reshardingHasBeenSet(false),
     m_authTokenStatus(AuthTokenUpdateStatus::NOT_SET),
     m_authTokenStatusHasBeenSet(false),
-    m_userGroupsHasBeenSet(false)
+    m_userGroupsHasBeenSet(false),
+    m_logDeliveryConfigurationsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -79,6 +81,18 @@ ReplicationGroupPendingModifiedValues& ReplicationGroupPendingModifiedValues::op
       m_userGroups = userGroupsNode;
       m_userGroupsHasBeenSet = true;
     }
+    XmlNode logDeliveryConfigurationsNode = resultNode.FirstChild("LogDeliveryConfigurations");
+    if(!logDeliveryConfigurationsNode.IsNull())
+    {
+      XmlNode logDeliveryConfigurationsMember = logDeliveryConfigurationsNode.FirstChild("member");
+      while(!logDeliveryConfigurationsMember.IsNull())
+      {
+        m_logDeliveryConfigurations.push_back(logDeliveryConfigurationsMember);
+        logDeliveryConfigurationsMember = logDeliveryConfigurationsMember.NextNode("member");
+      }
+
+      m_logDeliveryConfigurationsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -115,6 +129,17 @@ void ReplicationGroupPendingModifiedValues::OutputToStream(Aws::OStream& oStream
       m_userGroups.OutputToStream(oStream, userGroupsLocationAndMemberSs.str().c_str());
   }
 
+  if(m_logDeliveryConfigurationsHasBeenSet)
+  {
+      unsigned logDeliveryConfigurationsIdx = 1;
+      for(auto& item : m_logDeliveryConfigurations)
+      {
+        Aws::StringStream logDeliveryConfigurationsSs;
+        logDeliveryConfigurationsSs << location << index << locationValue << ".LogDeliveryConfigurations.member." << logDeliveryConfigurationsIdx++;
+        item.OutputToStream(oStream, logDeliveryConfigurationsSs.str().c_str());
+      }
+  }
+
 }
 
 void ReplicationGroupPendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -142,6 +167,16 @@ void ReplicationGroupPendingModifiedValues::OutputToStream(Aws::OStream& oStream
       Aws::String userGroupsLocationAndMember(location);
       userGroupsLocationAndMember += ".UserGroups";
       m_userGroups.OutputToStream(oStream, userGroupsLocationAndMember.c_str());
+  }
+  if(m_logDeliveryConfigurationsHasBeenSet)
+  {
+      unsigned logDeliveryConfigurationsIdx = 1;
+      for(auto& item : m_logDeliveryConfigurations)
+      {
+        Aws::StringStream logDeliveryConfigurationsSs;
+        logDeliveryConfigurationsSs << location <<  ".LogDeliveryConfigurations.member." << logDeliveryConfigurationsIdx++;
+        item.OutputToStream(oStream, logDeliveryConfigurationsSs.str().c_str());
+      }
   }
 }
 

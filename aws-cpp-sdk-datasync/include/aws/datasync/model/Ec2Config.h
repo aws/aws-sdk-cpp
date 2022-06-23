@@ -25,11 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>The subnet and the security group that DataSync uses to access target EFS
-   * file system. The subnet must have at least one mount target for that file
-   * system. The security group that you provide needs to be able to communicate with
-   * the security group on the mount target in the subnet specified. </p><p><h3>See
-   * Also:</h3>   <a
+   * <p>The subnet that DataSync uses to access target EFS file system. The subnet
+   * must have at least one mount target for that file system. The security group
+   * that you provide needs to be able to communicate with the security group on the
+   * mount target in the subnet specified. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/Ec2Config">AWS
    * API Reference</a></p>
    */
@@ -43,50 +42,50 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the subnet and the security group that DataSync uses to access the
-     * target EFS file system.</p>
+     * <p>The ARN of the subnet that DataSync uses to access the target EFS file
+     * system.</p>
      */
     inline const Aws::String& GetSubnetArn() const{ return m_subnetArn; }
 
     /**
-     * <p>The ARN of the subnet and the security group that DataSync uses to access the
-     * target EFS file system.</p>
+     * <p>The ARN of the subnet that DataSync uses to access the target EFS file
+     * system.</p>
      */
     inline bool SubnetArnHasBeenSet() const { return m_subnetArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the subnet and the security group that DataSync uses to access the
-     * target EFS file system.</p>
+     * <p>The ARN of the subnet that DataSync uses to access the target EFS file
+     * system.</p>
      */
     inline void SetSubnetArn(const Aws::String& value) { m_subnetArnHasBeenSet = true; m_subnetArn = value; }
 
     /**
-     * <p>The ARN of the subnet and the security group that DataSync uses to access the
-     * target EFS file system.</p>
+     * <p>The ARN of the subnet that DataSync uses to access the target EFS file
+     * system.</p>
      */
     inline void SetSubnetArn(Aws::String&& value) { m_subnetArnHasBeenSet = true; m_subnetArn = std::move(value); }
 
     /**
-     * <p>The ARN of the subnet and the security group that DataSync uses to access the
-     * target EFS file system.</p>
+     * <p>The ARN of the subnet that DataSync uses to access the target EFS file
+     * system.</p>
      */
     inline void SetSubnetArn(const char* value) { m_subnetArnHasBeenSet = true; m_subnetArn.assign(value); }
 
     /**
-     * <p>The ARN of the subnet and the security group that DataSync uses to access the
-     * target EFS file system.</p>
+     * <p>The ARN of the subnet that DataSync uses to access the target EFS file
+     * system.</p>
      */
     inline Ec2Config& WithSubnetArn(const Aws::String& value) { SetSubnetArn(value); return *this;}
 
     /**
-     * <p>The ARN of the subnet and the security group that DataSync uses to access the
-     * target EFS file system.</p>
+     * <p>The ARN of the subnet that DataSync uses to access the target EFS file
+     * system.</p>
      */
     inline Ec2Config& WithSubnetArn(Aws::String&& value) { SetSubnetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the subnet and the security group that DataSync uses to access the
-     * target EFS file system.</p>
+     * <p>The ARN of the subnet that DataSync uses to access the target EFS file
+     * system.</p>
      */
     inline Ec2Config& WithSubnetArn(const char* value) { SetSubnetArn(value); return *this;}
 

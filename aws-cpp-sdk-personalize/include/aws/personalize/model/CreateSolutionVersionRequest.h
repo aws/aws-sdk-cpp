@@ -8,6 +8,8 @@
 #include <aws/personalize/PersonalizeRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/personalize/model/TrainingMode.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/personalize/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -93,8 +95,11 @@ namespace Model
      * version instead of creating an entirely new one.</p>  <p>The
      * <code>UPDATE</code> option can only be used when you already have an active
      * solution version created from the input solution using the <code>FULL</code>
-     * option and the input solution was trained with the
-     * <a>native-recipe-hrnn-coldstart</a> recipe.</p> 
+     * option and the input solution was trained with the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>
+     * recipe or the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a>
+     * recipe.</p> 
      */
     inline const TrainingMode& GetTrainingMode() const{ return m_trainingMode; }
 
@@ -107,8 +112,11 @@ namespace Model
      * version instead of creating an entirely new one.</p>  <p>The
      * <code>UPDATE</code> option can only be used when you already have an active
      * solution version created from the input solution using the <code>FULL</code>
-     * option and the input solution was trained with the
-     * <a>native-recipe-hrnn-coldstart</a> recipe.</p> 
+     * option and the input solution was trained with the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>
+     * recipe or the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a>
+     * recipe.</p> 
      */
     inline bool TrainingModeHasBeenSet() const { return m_trainingModeHasBeenSet; }
 
@@ -121,8 +129,11 @@ namespace Model
      * version instead of creating an entirely new one.</p>  <p>The
      * <code>UPDATE</code> option can only be used when you already have an active
      * solution version created from the input solution using the <code>FULL</code>
-     * option and the input solution was trained with the
-     * <a>native-recipe-hrnn-coldstart</a> recipe.</p> 
+     * option and the input solution was trained with the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>
+     * recipe or the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a>
+     * recipe.</p> 
      */
     inline void SetTrainingMode(const TrainingMode& value) { m_trainingModeHasBeenSet = true; m_trainingMode = value; }
 
@@ -135,8 +146,11 @@ namespace Model
      * version instead of creating an entirely new one.</p>  <p>The
      * <code>UPDATE</code> option can only be used when you already have an active
      * solution version created from the input solution using the <code>FULL</code>
-     * option and the input solution was trained with the
-     * <a>native-recipe-hrnn-coldstart</a> recipe.</p> 
+     * option and the input solution was trained with the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>
+     * recipe or the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a>
+     * recipe.</p> 
      */
     inline void SetTrainingMode(TrainingMode&& value) { m_trainingModeHasBeenSet = true; m_trainingMode = std::move(value); }
 
@@ -149,8 +163,11 @@ namespace Model
      * version instead of creating an entirely new one.</p>  <p>The
      * <code>UPDATE</code> option can only be used when you already have an active
      * solution version created from the input solution using the <code>FULL</code>
-     * option and the input solution was trained with the
-     * <a>native-recipe-hrnn-coldstart</a> recipe.</p> 
+     * option and the input solution was trained with the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>
+     * recipe or the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a>
+     * recipe.</p> 
      */
     inline CreateSolutionVersionRequest& WithTrainingMode(const TrainingMode& value) { SetTrainingMode(value); return *this;}
 
@@ -163,10 +180,70 @@ namespace Model
      * version instead of creating an entirely new one.</p>  <p>The
      * <code>UPDATE</code> option can only be used when you already have an active
      * solution version created from the input solution using the <code>FULL</code>
-     * option and the input solution was trained with the
-     * <a>native-recipe-hrnn-coldstart</a> recipe.</p> 
+     * option and the input solution was trained with the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>
+     * recipe or the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a>
+     * recipe.</p> 
      */
     inline CreateSolutionVersionRequest& WithTrainingMode(TrainingMode&& value) { SetTrainingMode(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A list of <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * to apply to the solution version.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * to apply to the solution version.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>A list of <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * to apply to the solution version.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>A list of <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * to apply to the solution version.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>A list of <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * to apply to the solution version.</p>
+     */
+    inline CreateSolutionVersionRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A list of <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * to apply to the solution version.</p>
+     */
+    inline CreateSolutionVersionRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * to apply to the solution version.</p>
+     */
+    inline CreateSolutionVersionRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>A list of <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * to apply to the solution version.</p>
+     */
+    inline CreateSolutionVersionRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -175,6 +252,9 @@ namespace Model
 
     TrainingMode m_trainingMode;
     bool m_trainingModeHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

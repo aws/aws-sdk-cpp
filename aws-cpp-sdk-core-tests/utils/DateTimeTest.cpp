@@ -185,6 +185,7 @@ TEST(DateTimeTest, TestMillisParsing)
     ASSERT_EQ(8, gmtDate.GetHour());
     ASSERT_EQ(5, gmtDate.GetMinute());
     ASSERT_EQ(9, gmtDate.GetSecond());
+    ASSERT_EQ(gmtDateMillis/1000, gmtDate.Seconds());
     ASSERT_EQ(gmtDateMillis, gmtDate.Millis());
     ASSERT_EQ("2002-10-02T08:05:09Z", gmtDate.ToGmtString(DateFormat::ISO_8601));
     ASSERT_EQ("20021002T080509Z", gmtDate.ToGmtString(DateFormat::ISO_8601_BASIC));

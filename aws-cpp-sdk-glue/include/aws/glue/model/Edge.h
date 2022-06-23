@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>An edge represents a directed connection between two AWS Glue components that
-   * are part of the workflow the edge belongs to.</p><p><h3>See Also:</h3>   <a
+   * <p>An edge represents a directed connection between two components on a workflow
+   * graph.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Edge">AWS API
    * Reference</a></p>
    */

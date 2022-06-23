@@ -6,9 +6,8 @@
 #pragma once
 #include <aws/timestream-query/TimestreamQuery_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/timestream-query/model/TimeSeriesDataPoint.h>
-#include <aws/timestream-query/model/Datum.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 #include <memory>
 
@@ -27,6 +26,7 @@ namespace TimestreamQuery
 namespace Model
 {
   class Row;
+  class TimeSeriesDataPoint;
 
   /**
    * <p> Datum represents a single data point in a query result. </p><p><h3>See
@@ -45,90 +45,90 @@ namespace Model
 
     /**
      * <p> Indicates if the data point is a scalar value such as integer, string,
-     * double, or boolean. </p>
+     * double, or Boolean. </p>
      */
     inline const Aws::String& GetScalarValue() const{ return m_scalarValue; }
 
     /**
      * <p> Indicates if the data point is a scalar value such as integer, string,
-     * double, or boolean. </p>
+     * double, or Boolean. </p>
      */
     inline bool ScalarValueHasBeenSet() const { return m_scalarValueHasBeenSet; }
 
     /**
      * <p> Indicates if the data point is a scalar value such as integer, string,
-     * double, or boolean. </p>
+     * double, or Boolean. </p>
      */
     inline void SetScalarValue(const Aws::String& value) { m_scalarValueHasBeenSet = true; m_scalarValue = value; }
 
     /**
      * <p> Indicates if the data point is a scalar value such as integer, string,
-     * double, or boolean. </p>
+     * double, or Boolean. </p>
      */
     inline void SetScalarValue(Aws::String&& value) { m_scalarValueHasBeenSet = true; m_scalarValue = std::move(value); }
 
     /**
      * <p> Indicates if the data point is a scalar value such as integer, string,
-     * double, or boolean. </p>
+     * double, or Boolean. </p>
      */
     inline void SetScalarValue(const char* value) { m_scalarValueHasBeenSet = true; m_scalarValue.assign(value); }
 
     /**
      * <p> Indicates if the data point is a scalar value such as integer, string,
-     * double, or boolean. </p>
+     * double, or Boolean. </p>
      */
     inline Datum& WithScalarValue(const Aws::String& value) { SetScalarValue(value); return *this;}
 
     /**
      * <p> Indicates if the data point is a scalar value such as integer, string,
-     * double, or boolean. </p>
+     * double, or Boolean. </p>
      */
     inline Datum& WithScalarValue(Aws::String&& value) { SetScalarValue(std::move(value)); return *this;}
 
     /**
      * <p> Indicates if the data point is a scalar value such as integer, string,
-     * double, or boolean. </p>
+     * double, or Boolean. </p>
      */
     inline Datum& WithScalarValue(const char* value) { SetScalarValue(value); return *this;}
 
 
     /**
-     * <p> Indicates if the data point is of timeseries data type. </p>
+     * <p> Indicates if the data point is a timeseries data type. </p>
      */
     inline const Aws::Vector<TimeSeriesDataPoint>& GetTimeSeriesValue() const{ return m_timeSeriesValue; }
 
     /**
-     * <p> Indicates if the data point is of timeseries data type. </p>
+     * <p> Indicates if the data point is a timeseries data type. </p>
      */
     inline bool TimeSeriesValueHasBeenSet() const { return m_timeSeriesValueHasBeenSet; }
 
     /**
-     * <p> Indicates if the data point is of timeseries data type. </p>
+     * <p> Indicates if the data point is a timeseries data type. </p>
      */
     inline void SetTimeSeriesValue(const Aws::Vector<TimeSeriesDataPoint>& value) { m_timeSeriesValueHasBeenSet = true; m_timeSeriesValue = value; }
 
     /**
-     * <p> Indicates if the data point is of timeseries data type. </p>
+     * <p> Indicates if the data point is a timeseries data type. </p>
      */
     inline void SetTimeSeriesValue(Aws::Vector<TimeSeriesDataPoint>&& value) { m_timeSeriesValueHasBeenSet = true; m_timeSeriesValue = std::move(value); }
 
     /**
-     * <p> Indicates if the data point is of timeseries data type. </p>
+     * <p> Indicates if the data point is a timeseries data type. </p>
      */
     inline Datum& WithTimeSeriesValue(const Aws::Vector<TimeSeriesDataPoint>& value) { SetTimeSeriesValue(value); return *this;}
 
     /**
-     * <p> Indicates if the data point is of timeseries data type. </p>
+     * <p> Indicates if the data point is a timeseries data type. </p>
      */
     inline Datum& WithTimeSeriesValue(Aws::Vector<TimeSeriesDataPoint>&& value) { SetTimeSeriesValue(std::move(value)); return *this;}
 
     /**
-     * <p> Indicates if the data point is of timeseries data type. </p>
+     * <p> Indicates if the data point is a timeseries data type. </p>
      */
     inline Datum& AddTimeSeriesValue(const TimeSeriesDataPoint& value) { m_timeSeriesValueHasBeenSet = true; m_timeSeriesValue.push_back(value); return *this; }
 
     /**
-     * <p> Indicates if the data point is of timeseries data type. </p>
+     * <p> Indicates if the data point is a timeseries data type. </p>
      */
     inline Datum& AddTimeSeriesValue(TimeSeriesDataPoint&& value) { m_timeSeriesValueHasBeenSet = true; m_timeSeriesValue.push_back(std::move(value)); return *this; }
 

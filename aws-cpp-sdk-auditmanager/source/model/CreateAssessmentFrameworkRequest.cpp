@@ -16,7 +16,8 @@ CreateAssessmentFrameworkRequest::CreateAssessmentFrameworkRequest() :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_complianceTypeHasBeenSet(false),
-    m_controlSetsHasBeenSet(false)
+    m_controlSetsHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,17 @@ Aws::String CreateAssessmentFrameworkRequest::SerializePayload() const
      controlSetsJsonList[controlSetsIndex].AsObject(m_controlSets[controlSetsIndex].Jsonize());
    }
    payload.WithArray("controlSets", std::move(controlSetsJsonList));
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

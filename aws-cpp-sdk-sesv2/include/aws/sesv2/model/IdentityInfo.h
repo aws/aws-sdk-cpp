@@ -39,56 +39,38 @@ namespace Model
 
 
     /**
-     * <p>The email identity type. The identity type can be one of the following:</p>
-     * <ul> <li> <p> <code>EMAIL_ADDRESS</code> – The identity is an email address.</p>
-     * </li> <li> <p> <code>DOMAIN</code> – The identity is a domain.</p> </li> <li>
-     * <p> <code>MANAGED_DOMAIN</code> – The identity is a domain that is managed by
-     * AWS.</p> </li> </ul>
+     * <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> type is not
+     * supported for email identity types.</p>
      */
     inline const IdentityType& GetIdentityType() const{ return m_identityType; }
 
     /**
-     * <p>The email identity type. The identity type can be one of the following:</p>
-     * <ul> <li> <p> <code>EMAIL_ADDRESS</code> – The identity is an email address.</p>
-     * </li> <li> <p> <code>DOMAIN</code> – The identity is a domain.</p> </li> <li>
-     * <p> <code>MANAGED_DOMAIN</code> – The identity is a domain that is managed by
-     * AWS.</p> </li> </ul>
+     * <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> type is not
+     * supported for email identity types.</p>
      */
     inline bool IdentityTypeHasBeenSet() const { return m_identityTypeHasBeenSet; }
 
     /**
-     * <p>The email identity type. The identity type can be one of the following:</p>
-     * <ul> <li> <p> <code>EMAIL_ADDRESS</code> – The identity is an email address.</p>
-     * </li> <li> <p> <code>DOMAIN</code> – The identity is a domain.</p> </li> <li>
-     * <p> <code>MANAGED_DOMAIN</code> – The identity is a domain that is managed by
-     * AWS.</p> </li> </ul>
+     * <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> type is not
+     * supported for email identity types.</p>
      */
     inline void SetIdentityType(const IdentityType& value) { m_identityTypeHasBeenSet = true; m_identityType = value; }
 
     /**
-     * <p>The email identity type. The identity type can be one of the following:</p>
-     * <ul> <li> <p> <code>EMAIL_ADDRESS</code> – The identity is an email address.</p>
-     * </li> <li> <p> <code>DOMAIN</code> – The identity is a domain.</p> </li> <li>
-     * <p> <code>MANAGED_DOMAIN</code> – The identity is a domain that is managed by
-     * AWS.</p> </li> </ul>
+     * <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> type is not
+     * supported for email identity types.</p>
      */
     inline void SetIdentityType(IdentityType&& value) { m_identityTypeHasBeenSet = true; m_identityType = std::move(value); }
 
     /**
-     * <p>The email identity type. The identity type can be one of the following:</p>
-     * <ul> <li> <p> <code>EMAIL_ADDRESS</code> – The identity is an email address.</p>
-     * </li> <li> <p> <code>DOMAIN</code> – The identity is a domain.</p> </li> <li>
-     * <p> <code>MANAGED_DOMAIN</code> – The identity is a domain that is managed by
-     * AWS.</p> </li> </ul>
+     * <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> type is not
+     * supported for email identity types.</p>
      */
     inline IdentityInfo& WithIdentityType(const IdentityType& value) { SetIdentityType(value); return *this;}
 
     /**
-     * <p>The email identity type. The identity type can be one of the following:</p>
-     * <ul> <li> <p> <code>EMAIL_ADDRESS</code> – The identity is an email address.</p>
-     * </li> <li> <p> <code>DOMAIN</code> – The identity is a domain.</p> </li> <li>
-     * <p> <code>MANAGED_DOMAIN</code> – The identity is a domain that is managed by
-     * AWS.</p> </li> </ul>
+     * <p>The email identity type. Note: the <code>MANAGED_DOMAIN</code> type is not
+     * supported for email identity types.</p>
      */
     inline IdentityInfo& WithIdentityType(IdentityType&& value) { SetIdentityType(std::move(value)); return *this;}
 

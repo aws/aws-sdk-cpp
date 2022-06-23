@@ -42,65 +42,73 @@ namespace Model
 
     /**
      * <p>The identifier for the proxy. This name must be unique for all proxies owned
-     * by your AWS account in the specified AWS Region. An identifier must begin with a
-     * letter and must contain only ASCII letters, digits, and hyphens; it can't end
-     * with a hyphen or contain two consecutive hyphens.</p>
+     * by your Amazon Web Services account in the specified Amazon Web Services Region.
+     * An identifier must begin with a letter and must contain only ASCII letters,
+     * digits, and hyphens; it can't end with a hyphen or contain two consecutive
+     * hyphens.</p>
      */
     inline const Aws::String& GetDBProxyName() const{ return m_dBProxyName; }
 
     /**
      * <p>The identifier for the proxy. This name must be unique for all proxies owned
-     * by your AWS account in the specified AWS Region. An identifier must begin with a
-     * letter and must contain only ASCII letters, digits, and hyphens; it can't end
-     * with a hyphen or contain two consecutive hyphens.</p>
+     * by your Amazon Web Services account in the specified Amazon Web Services Region.
+     * An identifier must begin with a letter and must contain only ASCII letters,
+     * digits, and hyphens; it can't end with a hyphen or contain two consecutive
+     * hyphens.</p>
      */
     inline bool DBProxyNameHasBeenSet() const { return m_dBProxyNameHasBeenSet; }
 
     /**
      * <p>The identifier for the proxy. This name must be unique for all proxies owned
-     * by your AWS account in the specified AWS Region. An identifier must begin with a
-     * letter and must contain only ASCII letters, digits, and hyphens; it can't end
-     * with a hyphen or contain two consecutive hyphens.</p>
+     * by your Amazon Web Services account in the specified Amazon Web Services Region.
+     * An identifier must begin with a letter and must contain only ASCII letters,
+     * digits, and hyphens; it can't end with a hyphen or contain two consecutive
+     * hyphens.</p>
      */
     inline void SetDBProxyName(const Aws::String& value) { m_dBProxyNameHasBeenSet = true; m_dBProxyName = value; }
 
     /**
      * <p>The identifier for the proxy. This name must be unique for all proxies owned
-     * by your AWS account in the specified AWS Region. An identifier must begin with a
-     * letter and must contain only ASCII letters, digits, and hyphens; it can't end
-     * with a hyphen or contain two consecutive hyphens.</p>
+     * by your Amazon Web Services account in the specified Amazon Web Services Region.
+     * An identifier must begin with a letter and must contain only ASCII letters,
+     * digits, and hyphens; it can't end with a hyphen or contain two consecutive
+     * hyphens.</p>
      */
     inline void SetDBProxyName(Aws::String&& value) { m_dBProxyNameHasBeenSet = true; m_dBProxyName = std::move(value); }
 
     /**
      * <p>The identifier for the proxy. This name must be unique for all proxies owned
-     * by your AWS account in the specified AWS Region. An identifier must begin with a
-     * letter and must contain only ASCII letters, digits, and hyphens; it can't end
-     * with a hyphen or contain two consecutive hyphens.</p>
+     * by your Amazon Web Services account in the specified Amazon Web Services Region.
+     * An identifier must begin with a letter and must contain only ASCII letters,
+     * digits, and hyphens; it can't end with a hyphen or contain two consecutive
+     * hyphens.</p>
      */
     inline void SetDBProxyName(const char* value) { m_dBProxyNameHasBeenSet = true; m_dBProxyName.assign(value); }
 
     /**
      * <p>The identifier for the proxy. This name must be unique for all proxies owned
-     * by your AWS account in the specified AWS Region. An identifier must begin with a
-     * letter and must contain only ASCII letters, digits, and hyphens; it can't end
-     * with a hyphen or contain two consecutive hyphens.</p>
+     * by your Amazon Web Services account in the specified Amazon Web Services Region.
+     * An identifier must begin with a letter and must contain only ASCII letters,
+     * digits, and hyphens; it can't end with a hyphen or contain two consecutive
+     * hyphens.</p>
      */
     inline CreateDBProxyRequest& WithDBProxyName(const Aws::String& value) { SetDBProxyName(value); return *this;}
 
     /**
      * <p>The identifier for the proxy. This name must be unique for all proxies owned
-     * by your AWS account in the specified AWS Region. An identifier must begin with a
-     * letter and must contain only ASCII letters, digits, and hyphens; it can't end
-     * with a hyphen or contain two consecutive hyphens.</p>
+     * by your Amazon Web Services account in the specified Amazon Web Services Region.
+     * An identifier must begin with a letter and must contain only ASCII letters,
+     * digits, and hyphens; it can't end with a hyphen or contain two consecutive
+     * hyphens.</p>
      */
     inline CreateDBProxyRequest& WithDBProxyName(Aws::String&& value) { SetDBProxyName(std::move(value)); return *this;}
 
     /**
      * <p>The identifier for the proxy. This name must be unique for all proxies owned
-     * by your AWS account in the specified AWS Region. An identifier must begin with a
-     * letter and must contain only ASCII letters, digits, and hyphens; it can't end
-     * with a hyphen or contain two consecutive hyphens.</p>
+     * by your Amazon Web Services account in the specified Amazon Web Services Region.
+     * An identifier must begin with a letter and must contain only ASCII letters,
+     * digits, and hyphens; it can't end with a hyphen or contain two consecutive
+     * hyphens.</p>
      */
     inline CreateDBProxyRequest& WithDBProxyName(const char* value) { SetDBProxyName(value); return *this;}
 
@@ -197,49 +205,49 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access
-     * secrets in AWS Secrets Manager.</p>
+     * secrets in Amazon Web Services Secrets Manager.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access
-     * secrets in AWS Secrets Manager.</p>
+     * secrets in Amazon Web Services Secrets Manager.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access
-     * secrets in AWS Secrets Manager.</p>
+     * secrets in Amazon Web Services Secrets Manager.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access
-     * secrets in AWS Secrets Manager.</p>
+     * secrets in Amazon Web Services Secrets Manager.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access
-     * secrets in AWS Secrets Manager.</p>
+     * secrets in Amazon Web Services Secrets Manager.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access
-     * secrets in AWS Secrets Manager.</p>
+     * secrets in Amazon Web Services Secrets Manager.</p>
      */
     inline CreateDBProxyRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access
-     * secrets in AWS Secrets Manager.</p>
+     * secrets in Amazon Web Services Secrets Manager.</p>
      */
     inline CreateDBProxyRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access
-     * secrets in AWS Secrets Manager.</p>
+     * secrets in Amazon Web Services Secrets Manager.</p>
      */
     inline CreateDBProxyRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

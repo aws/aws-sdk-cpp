@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/autoscaling/model/TargetTrackingConfiguration.h>
+#include <aws/autoscaling/model/PredictiveScalingConfiguration.h>
 #include <aws/autoscaling/model/StepAdjustment.h>
 #include <utility>
 
@@ -124,56 +125,64 @@ namespace Model
     /**
      * <p>One of the following policy types: </p> <ul> <li> <p>
      * <code>TargetTrackingScaling</code> </p> </li> <li> <p> <code>StepScaling</code>
-     * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> </ul>
+     * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> <li> <p>
+     * <code>PredictiveScaling</code> </p> </li> </ul>
      */
     inline const Aws::String& GetPolicyType() const{ return m_policyType; }
 
     /**
      * <p>One of the following policy types: </p> <ul> <li> <p>
      * <code>TargetTrackingScaling</code> </p> </li> <li> <p> <code>StepScaling</code>
-     * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> </ul>
+     * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> <li> <p>
+     * <code>PredictiveScaling</code> </p> </li> </ul>
      */
     inline bool PolicyTypeHasBeenSet() const { return m_policyTypeHasBeenSet; }
 
     /**
      * <p>One of the following policy types: </p> <ul> <li> <p>
      * <code>TargetTrackingScaling</code> </p> </li> <li> <p> <code>StepScaling</code>
-     * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> </ul>
+     * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> <li> <p>
+     * <code>PredictiveScaling</code> </p> </li> </ul>
      */
     inline void SetPolicyType(const Aws::String& value) { m_policyTypeHasBeenSet = true; m_policyType = value; }
 
     /**
      * <p>One of the following policy types: </p> <ul> <li> <p>
      * <code>TargetTrackingScaling</code> </p> </li> <li> <p> <code>StepScaling</code>
-     * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> </ul>
+     * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> <li> <p>
+     * <code>PredictiveScaling</code> </p> </li> </ul>
      */
     inline void SetPolicyType(Aws::String&& value) { m_policyTypeHasBeenSet = true; m_policyType = std::move(value); }
 
     /**
      * <p>One of the following policy types: </p> <ul> <li> <p>
      * <code>TargetTrackingScaling</code> </p> </li> <li> <p> <code>StepScaling</code>
-     * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> </ul>
+     * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> <li> <p>
+     * <code>PredictiveScaling</code> </p> </li> </ul>
      */
     inline void SetPolicyType(const char* value) { m_policyTypeHasBeenSet = true; m_policyType.assign(value); }
 
     /**
      * <p>One of the following policy types: </p> <ul> <li> <p>
      * <code>TargetTrackingScaling</code> </p> </li> <li> <p> <code>StepScaling</code>
-     * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> </ul>
+     * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> <li> <p>
+     * <code>PredictiveScaling</code> </p> </li> </ul>
      */
     inline PutScalingPolicyRequest& WithPolicyType(const Aws::String& value) { SetPolicyType(value); return *this;}
 
     /**
      * <p>One of the following policy types: </p> <ul> <li> <p>
      * <code>TargetTrackingScaling</code> </p> </li> <li> <p> <code>StepScaling</code>
-     * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> </ul>
+     * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> <li> <p>
+     * <code>PredictiveScaling</code> </p> </li> </ul>
      */
     inline PutScalingPolicyRequest& WithPolicyType(Aws::String&& value) { SetPolicyType(std::move(value)); return *this;}
 
     /**
      * <p>One of the following policy types: </p> <ul> <li> <p>
      * <code>TargetTrackingScaling</code> </p> </li> <li> <p> <code>StepScaling</code>
-     * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> </ul>
+     * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> <li> <p>
+     * <code>PredictiveScaling</code> </p> </li> </ul>
      */
     inline PutScalingPolicyRequest& WithPolicyType(const char* value) { SetPolicyType(value); return *this;}
 
@@ -403,46 +412,46 @@ namespace Model
 
 
     /**
-     * <p>The duration of the policy's cooldown period, in seconds. When a cooldown
-     * period is specified here, it overrides the default cooldown period defined for
-     * the Auto Scaling group.</p> <p>Valid only if the policy type is
-     * <code>SimpleScaling</code>. For more information, see <a
+     * <p>A cooldown period, in seconds, that applies to a specific simple scaling
+     * policy. When a cooldown period is specified here, it overrides the default
+     * cooldown.</p> <p>Valid only if the policy type is <code>SimpleScaling</code>.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
      * cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>Default: None</p>
      */
     inline int GetCooldown() const{ return m_cooldown; }
 
     /**
-     * <p>The duration of the policy's cooldown period, in seconds. When a cooldown
-     * period is specified here, it overrides the default cooldown period defined for
-     * the Auto Scaling group.</p> <p>Valid only if the policy type is
-     * <code>SimpleScaling</code>. For more information, see <a
+     * <p>A cooldown period, in seconds, that applies to a specific simple scaling
+     * policy. When a cooldown period is specified here, it overrides the default
+     * cooldown.</p> <p>Valid only if the policy type is <code>SimpleScaling</code>.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
      * cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>Default: None</p>
      */
     inline bool CooldownHasBeenSet() const { return m_cooldownHasBeenSet; }
 
     /**
-     * <p>The duration of the policy's cooldown period, in seconds. When a cooldown
-     * period is specified here, it overrides the default cooldown period defined for
-     * the Auto Scaling group.</p> <p>Valid only if the policy type is
-     * <code>SimpleScaling</code>. For more information, see <a
+     * <p>A cooldown period, in seconds, that applies to a specific simple scaling
+     * policy. When a cooldown period is specified here, it overrides the default
+     * cooldown.</p> <p>Valid only if the policy type is <code>SimpleScaling</code>.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
      * cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>Default: None</p>
      */
     inline void SetCooldown(int value) { m_cooldownHasBeenSet = true; m_cooldown = value; }
 
     /**
-     * <p>The duration of the policy's cooldown period, in seconds. When a cooldown
-     * period is specified here, it overrides the default cooldown period defined for
-     * the Auto Scaling group.</p> <p>Valid only if the policy type is
-     * <code>SimpleScaling</code>. For more information, see <a
+     * <p>A cooldown period, in seconds, that applies to a specific simple scaling
+     * policy. When a cooldown period is specified here, it overrides the default
+     * cooldown.</p> <p>Valid only if the policy type is <code>SimpleScaling</code>.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
      * cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>Default: None</p>
      */
     inline PutScalingPolicyRequest& WithCooldown(int value) { SetCooldown(value); return *this;}
 
@@ -570,46 +579,66 @@ namespace Model
 
 
     /**
-     * <p>The estimated time, in seconds, until a newly launched instance can
-     * contribute to the CloudWatch metrics. If not provided, the default is to use the
-     * value from the default cooldown period for the Auto Scaling group.</p> <p>Valid
-     * only if the policy type is <code>TargetTrackingScaling</code> or
-     * <code>StepScaling</code>.</p>
+     * <p> <i>Not needed if the default instance warmup is defined for the group.</i>
+     * </p> <p>The estimated time, in seconds, until a newly launched instance can
+     * contribute to the CloudWatch metrics. This warm-up period applies to instances
+     * launched due to a specific target tracking or step scaling policy. When a
+     * warm-up period is specified here, it overrides the default instance warmup.</p>
+     * <p>Valid only if the policy type is <code>TargetTrackingScaling</code> or
+     * <code>StepScaling</code>.</p>  <p>The default is to use the value for the
+     * default instance warmup defined for the group. If default instance warmup is
+     * null, then <code>EstimatedInstanceWarmup</code> falls back to the value of
+     * default cooldown.</p> 
      */
     inline int GetEstimatedInstanceWarmup() const{ return m_estimatedInstanceWarmup; }
 
     /**
-     * <p>The estimated time, in seconds, until a newly launched instance can
-     * contribute to the CloudWatch metrics. If not provided, the default is to use the
-     * value from the default cooldown period for the Auto Scaling group.</p> <p>Valid
-     * only if the policy type is <code>TargetTrackingScaling</code> or
-     * <code>StepScaling</code>.</p>
+     * <p> <i>Not needed if the default instance warmup is defined for the group.</i>
+     * </p> <p>The estimated time, in seconds, until a newly launched instance can
+     * contribute to the CloudWatch metrics. This warm-up period applies to instances
+     * launched due to a specific target tracking or step scaling policy. When a
+     * warm-up period is specified here, it overrides the default instance warmup.</p>
+     * <p>Valid only if the policy type is <code>TargetTrackingScaling</code> or
+     * <code>StepScaling</code>.</p>  <p>The default is to use the value for the
+     * default instance warmup defined for the group. If default instance warmup is
+     * null, then <code>EstimatedInstanceWarmup</code> falls back to the value of
+     * default cooldown.</p> 
      */
     inline bool EstimatedInstanceWarmupHasBeenSet() const { return m_estimatedInstanceWarmupHasBeenSet; }
 
     /**
-     * <p>The estimated time, in seconds, until a newly launched instance can
-     * contribute to the CloudWatch metrics. If not provided, the default is to use the
-     * value from the default cooldown period for the Auto Scaling group.</p> <p>Valid
-     * only if the policy type is <code>TargetTrackingScaling</code> or
-     * <code>StepScaling</code>.</p>
+     * <p> <i>Not needed if the default instance warmup is defined for the group.</i>
+     * </p> <p>The estimated time, in seconds, until a newly launched instance can
+     * contribute to the CloudWatch metrics. This warm-up period applies to instances
+     * launched due to a specific target tracking or step scaling policy. When a
+     * warm-up period is specified here, it overrides the default instance warmup.</p>
+     * <p>Valid only if the policy type is <code>TargetTrackingScaling</code> or
+     * <code>StepScaling</code>.</p>  <p>The default is to use the value for the
+     * default instance warmup defined for the group. If default instance warmup is
+     * null, then <code>EstimatedInstanceWarmup</code> falls back to the value of
+     * default cooldown.</p> 
      */
     inline void SetEstimatedInstanceWarmup(int value) { m_estimatedInstanceWarmupHasBeenSet = true; m_estimatedInstanceWarmup = value; }
 
     /**
-     * <p>The estimated time, in seconds, until a newly launched instance can
-     * contribute to the CloudWatch metrics. If not provided, the default is to use the
-     * value from the default cooldown period for the Auto Scaling group.</p> <p>Valid
-     * only if the policy type is <code>TargetTrackingScaling</code> or
-     * <code>StepScaling</code>.</p>
+     * <p> <i>Not needed if the default instance warmup is defined for the group.</i>
+     * </p> <p>The estimated time, in seconds, until a newly launched instance can
+     * contribute to the CloudWatch metrics. This warm-up period applies to instances
+     * launched due to a specific target tracking or step scaling policy. When a
+     * warm-up period is specified here, it overrides the default instance warmup.</p>
+     * <p>Valid only if the policy type is <code>TargetTrackingScaling</code> or
+     * <code>StepScaling</code>.</p>  <p>The default is to use the value for the
+     * default instance warmup defined for the group. If default instance warmup is
+     * null, then <code>EstimatedInstanceWarmup</code> falls back to the value of
+     * default cooldown.</p> 
      */
     inline PutScalingPolicyRequest& WithEstimatedInstanceWarmup(int value) { SetEstimatedInstanceWarmup(value); return *this;}
 
 
     /**
-     * <p>A target tracking scaling policy. Includes support for predefined or
-     * customized metrics.</p> <p>The following predefined metrics are available:</p>
-     * <ul> <li> <p> <code>ASGAverageCPUUtilization</code> </p> </li> <li> <p>
+     * <p>A target tracking scaling policy. Provides support for predefined or custom
+     * metrics.</p> <p>The following predefined metrics are available:</p> <ul> <li>
+     * <p> <code>ASGAverageCPUUtilization</code> </p> </li> <li> <p>
      * <code>ASGAverageNetworkIn</code> </p> </li> <li> <p>
      * <code>ASGAverageNetworkOut</code> </p> </li> <li> <p>
      * <code>ALBRequestCountPerTarget</code> </p> </li> </ul> <p>If you specify
@@ -623,9 +652,9 @@ namespace Model
     inline const TargetTrackingConfiguration& GetTargetTrackingConfiguration() const{ return m_targetTrackingConfiguration; }
 
     /**
-     * <p>A target tracking scaling policy. Includes support for predefined or
-     * customized metrics.</p> <p>The following predefined metrics are available:</p>
-     * <ul> <li> <p> <code>ASGAverageCPUUtilization</code> </p> </li> <li> <p>
+     * <p>A target tracking scaling policy. Provides support for predefined or custom
+     * metrics.</p> <p>The following predefined metrics are available:</p> <ul> <li>
+     * <p> <code>ASGAverageCPUUtilization</code> </p> </li> <li> <p>
      * <code>ASGAverageNetworkIn</code> </p> </li> <li> <p>
      * <code>ASGAverageNetworkOut</code> </p> </li> <li> <p>
      * <code>ALBRequestCountPerTarget</code> </p> </li> </ul> <p>If you specify
@@ -639,9 +668,9 @@ namespace Model
     inline bool TargetTrackingConfigurationHasBeenSet() const { return m_targetTrackingConfigurationHasBeenSet; }
 
     /**
-     * <p>A target tracking scaling policy. Includes support for predefined or
-     * customized metrics.</p> <p>The following predefined metrics are available:</p>
-     * <ul> <li> <p> <code>ASGAverageCPUUtilization</code> </p> </li> <li> <p>
+     * <p>A target tracking scaling policy. Provides support for predefined or custom
+     * metrics.</p> <p>The following predefined metrics are available:</p> <ul> <li>
+     * <p> <code>ASGAverageCPUUtilization</code> </p> </li> <li> <p>
      * <code>ASGAverageNetworkIn</code> </p> </li> <li> <p>
      * <code>ASGAverageNetworkOut</code> </p> </li> <li> <p>
      * <code>ALBRequestCountPerTarget</code> </p> </li> </ul> <p>If you specify
@@ -655,9 +684,9 @@ namespace Model
     inline void SetTargetTrackingConfiguration(const TargetTrackingConfiguration& value) { m_targetTrackingConfigurationHasBeenSet = true; m_targetTrackingConfiguration = value; }
 
     /**
-     * <p>A target tracking scaling policy. Includes support for predefined or
-     * customized metrics.</p> <p>The following predefined metrics are available:</p>
-     * <ul> <li> <p> <code>ASGAverageCPUUtilization</code> </p> </li> <li> <p>
+     * <p>A target tracking scaling policy. Provides support for predefined or custom
+     * metrics.</p> <p>The following predefined metrics are available:</p> <ul> <li>
+     * <p> <code>ASGAverageCPUUtilization</code> </p> </li> <li> <p>
      * <code>ASGAverageNetworkIn</code> </p> </li> <li> <p>
      * <code>ASGAverageNetworkOut</code> </p> </li> <li> <p>
      * <code>ALBRequestCountPerTarget</code> </p> </li> </ul> <p>If you specify
@@ -671,9 +700,9 @@ namespace Model
     inline void SetTargetTrackingConfiguration(TargetTrackingConfiguration&& value) { m_targetTrackingConfigurationHasBeenSet = true; m_targetTrackingConfiguration = std::move(value); }
 
     /**
-     * <p>A target tracking scaling policy. Includes support for predefined or
-     * customized metrics.</p> <p>The following predefined metrics are available:</p>
-     * <ul> <li> <p> <code>ASGAverageCPUUtilization</code> </p> </li> <li> <p>
+     * <p>A target tracking scaling policy. Provides support for predefined or custom
+     * metrics.</p> <p>The following predefined metrics are available:</p> <ul> <li>
+     * <p> <code>ASGAverageCPUUtilization</code> </p> </li> <li> <p>
      * <code>ASGAverageNetworkIn</code> </p> </li> <li> <p>
      * <code>ASGAverageNetworkOut</code> </p> </li> <li> <p>
      * <code>ALBRequestCountPerTarget</code> </p> </li> </ul> <p>If you specify
@@ -687,9 +716,9 @@ namespace Model
     inline PutScalingPolicyRequest& WithTargetTrackingConfiguration(const TargetTrackingConfiguration& value) { SetTargetTrackingConfiguration(value); return *this;}
 
     /**
-     * <p>A target tracking scaling policy. Includes support for predefined or
-     * customized metrics.</p> <p>The following predefined metrics are available:</p>
-     * <ul> <li> <p> <code>ASGAverageCPUUtilization</code> </p> </li> <li> <p>
+     * <p>A target tracking scaling policy. Provides support for predefined or custom
+     * metrics.</p> <p>The following predefined metrics are available:</p> <ul> <li>
+     * <p> <code>ASGAverageCPUUtilization</code> </p> </li> <li> <p>
      * <code>ASGAverageNetworkIn</code> </p> </li> <li> <p>
      * <code>ASGAverageNetworkOut</code> </p> </li> <li> <p>
      * <code>ALBRequestCountPerTarget</code> </p> </li> </ul> <p>If you specify
@@ -739,6 +768,67 @@ namespace Model
      */
     inline PutScalingPolicyRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
+
+    /**
+     * <p>A predictive scaling policy. Provides support for predefined and custom
+     * metrics.</p> <p>Predefined metrics include CPU utilization, network in/out, and
+     * the Application Load Balancer request count.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PredictiveScalingConfiguration.html">PredictiveScalingConfiguration</a>
+     * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p> <p>Required if the
+     * policy type is <code>PredictiveScaling</code>.</p>
+     */
+    inline const PredictiveScalingConfiguration& GetPredictiveScalingConfiguration() const{ return m_predictiveScalingConfiguration; }
+
+    /**
+     * <p>A predictive scaling policy. Provides support for predefined and custom
+     * metrics.</p> <p>Predefined metrics include CPU utilization, network in/out, and
+     * the Application Load Balancer request count.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PredictiveScalingConfiguration.html">PredictiveScalingConfiguration</a>
+     * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p> <p>Required if the
+     * policy type is <code>PredictiveScaling</code>.</p>
+     */
+    inline bool PredictiveScalingConfigurationHasBeenSet() const { return m_predictiveScalingConfigurationHasBeenSet; }
+
+    /**
+     * <p>A predictive scaling policy. Provides support for predefined and custom
+     * metrics.</p> <p>Predefined metrics include CPU utilization, network in/out, and
+     * the Application Load Balancer request count.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PredictiveScalingConfiguration.html">PredictiveScalingConfiguration</a>
+     * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p> <p>Required if the
+     * policy type is <code>PredictiveScaling</code>.</p>
+     */
+    inline void SetPredictiveScalingConfiguration(const PredictiveScalingConfiguration& value) { m_predictiveScalingConfigurationHasBeenSet = true; m_predictiveScalingConfiguration = value; }
+
+    /**
+     * <p>A predictive scaling policy. Provides support for predefined and custom
+     * metrics.</p> <p>Predefined metrics include CPU utilization, network in/out, and
+     * the Application Load Balancer request count.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PredictiveScalingConfiguration.html">PredictiveScalingConfiguration</a>
+     * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p> <p>Required if the
+     * policy type is <code>PredictiveScaling</code>.</p>
+     */
+    inline void SetPredictiveScalingConfiguration(PredictiveScalingConfiguration&& value) { m_predictiveScalingConfigurationHasBeenSet = true; m_predictiveScalingConfiguration = std::move(value); }
+
+    /**
+     * <p>A predictive scaling policy. Provides support for predefined and custom
+     * metrics.</p> <p>Predefined metrics include CPU utilization, network in/out, and
+     * the Application Load Balancer request count.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PredictiveScalingConfiguration.html">PredictiveScalingConfiguration</a>
+     * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p> <p>Required if the
+     * policy type is <code>PredictiveScaling</code>.</p>
+     */
+    inline PutScalingPolicyRequest& WithPredictiveScalingConfiguration(const PredictiveScalingConfiguration& value) { SetPredictiveScalingConfiguration(value); return *this;}
+
+    /**
+     * <p>A predictive scaling policy. Provides support for predefined and custom
+     * metrics.</p> <p>Predefined metrics include CPU utilization, network in/out, and
+     * the Application Load Balancer request count.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PredictiveScalingConfiguration.html">PredictiveScalingConfiguration</a>
+     * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p> <p>Required if the
+     * policy type is <code>PredictiveScaling</code>.</p>
+     */
+    inline PutScalingPolicyRequest& WithPredictiveScalingConfiguration(PredictiveScalingConfiguration&& value) { SetPredictiveScalingConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_autoScalingGroupName;
@@ -779,6 +869,9 @@ namespace Model
 
     bool m_enabled;
     bool m_enabledHasBeenSet;
+
+    PredictiveScalingConfiguration m_predictiveScalingConfiguration;
+    bool m_predictiveScalingConfigurationHasBeenSet;
   };
 
 } // namespace Model

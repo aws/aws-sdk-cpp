@@ -118,7 +118,9 @@ namespace Model
      * location is used as a task destination. For more information about S3 storage
      * classes, see <a href="http://aws.amazon.com/s3/storage-classes/">Amazon S3
      * Storage Classes</a>. Some storage classes have behaviors that can affect your S3
-     * storage cost. For detailed information, see <a>using-storage-classes</a>.</p>
+     * storage cost. For detailed information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations
+     * when working with S3 storage classes in DataSync</a>.</p>
      */
     inline const S3StorageClass& GetS3StorageClass() const{ return m_s3StorageClass; }
 
@@ -127,7 +129,9 @@ namespace Model
      * location is used as a task destination. For more information about S3 storage
      * classes, see <a href="http://aws.amazon.com/s3/storage-classes/">Amazon S3
      * Storage Classes</a>. Some storage classes have behaviors that can affect your S3
-     * storage cost. For detailed information, see <a>using-storage-classes</a>.</p>
+     * storage cost. For detailed information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations
+     * when working with S3 storage classes in DataSync</a>.</p>
      */
     inline void SetS3StorageClass(const S3StorageClass& value) { m_s3StorageClass = value; }
 
@@ -136,7 +140,9 @@ namespace Model
      * location is used as a task destination. For more information about S3 storage
      * classes, see <a href="http://aws.amazon.com/s3/storage-classes/">Amazon S3
      * Storage Classes</a>. Some storage classes have behaviors that can affect your S3
-     * storage cost. For detailed information, see <a>using-storage-classes</a>.</p>
+     * storage cost. For detailed information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations
+     * when working with S3 storage classes in DataSync</a>.</p>
      */
     inline void SetS3StorageClass(S3StorageClass&& value) { m_s3StorageClass = std::move(value); }
 
@@ -145,7 +151,9 @@ namespace Model
      * location is used as a task destination. For more information about S3 storage
      * classes, see <a href="http://aws.amazon.com/s3/storage-classes/">Amazon S3
      * Storage Classes</a>. Some storage classes have behaviors that can affect your S3
-     * storage cost. For detailed information, see <a>using-storage-classes</a>.</p>
+     * storage cost. For detailed information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations
+     * when working with S3 storage classes in DataSync</a>.</p>
      */
     inline DescribeLocationS3Result& WithS3StorageClass(const S3StorageClass& value) { SetS3StorageClass(value); return *this;}
 
@@ -154,7 +162,9 @@ namespace Model
      * location is used as a task destination. For more information about S3 storage
      * classes, see <a href="http://aws.amazon.com/s3/storage-classes/">Amazon S3
      * Storage Classes</a>. Some storage classes have behaviors that can affect your S3
-     * storage cost. For detailed information, see <a>using-storage-classes</a>.</p>
+     * storage cost. For detailed information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations
+     * when working with S3 storage classes in DataSync</a>.</p>
      */
     inline DescribeLocationS3Result& WithS3StorageClass(S3StorageClass&& value) { SetS3StorageClass(std::move(value)); return *this;}
 
@@ -176,58 +186,82 @@ namespace Model
 
 
     /**
-     * <p>If you are using DataSync on an AWS Outpost, the Amazon Resource Name (ARNs)
-     * of the EC2 agents deployed on your Outpost. For more information about launching
-     * a DataSync agent on an AWS Outpost, see <a>outposts-agent</a>.</p>
+     * <p>If you are using DataSync on an Amazon Web Services Outpost, the Amazon
+     * Resource Name (ARNs) of the EC2 agents deployed on your Outpost. For more
+     * information about launching a DataSync agent on an Amazon Web Services Outpost,
+     * see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy
+     * your DataSync agent on Outposts</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAgentArns() const{ return m_agentArns; }
 
     /**
-     * <p>If you are using DataSync on an AWS Outpost, the Amazon Resource Name (ARNs)
-     * of the EC2 agents deployed on your Outpost. For more information about launching
-     * a DataSync agent on an AWS Outpost, see <a>outposts-agent</a>.</p>
+     * <p>If you are using DataSync on an Amazon Web Services Outpost, the Amazon
+     * Resource Name (ARNs) of the EC2 agents deployed on your Outpost. For more
+     * information about launching a DataSync agent on an Amazon Web Services Outpost,
+     * see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy
+     * your DataSync agent on Outposts</a>.</p>
      */
     inline void SetAgentArns(const Aws::Vector<Aws::String>& value) { m_agentArns = value; }
 
     /**
-     * <p>If you are using DataSync on an AWS Outpost, the Amazon Resource Name (ARNs)
-     * of the EC2 agents deployed on your Outpost. For more information about launching
-     * a DataSync agent on an AWS Outpost, see <a>outposts-agent</a>.</p>
+     * <p>If you are using DataSync on an Amazon Web Services Outpost, the Amazon
+     * Resource Name (ARNs) of the EC2 agents deployed on your Outpost. For more
+     * information about launching a DataSync agent on an Amazon Web Services Outpost,
+     * see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy
+     * your DataSync agent on Outposts</a>.</p>
      */
     inline void SetAgentArns(Aws::Vector<Aws::String>&& value) { m_agentArns = std::move(value); }
 
     /**
-     * <p>If you are using DataSync on an AWS Outpost, the Amazon Resource Name (ARNs)
-     * of the EC2 agents deployed on your Outpost. For more information about launching
-     * a DataSync agent on an AWS Outpost, see <a>outposts-agent</a>.</p>
+     * <p>If you are using DataSync on an Amazon Web Services Outpost, the Amazon
+     * Resource Name (ARNs) of the EC2 agents deployed on your Outpost. For more
+     * information about launching a DataSync agent on an Amazon Web Services Outpost,
+     * see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy
+     * your DataSync agent on Outposts</a>.</p>
      */
     inline DescribeLocationS3Result& WithAgentArns(const Aws::Vector<Aws::String>& value) { SetAgentArns(value); return *this;}
 
     /**
-     * <p>If you are using DataSync on an AWS Outpost, the Amazon Resource Name (ARNs)
-     * of the EC2 agents deployed on your Outpost. For more information about launching
-     * a DataSync agent on an AWS Outpost, see <a>outposts-agent</a>.</p>
+     * <p>If you are using DataSync on an Amazon Web Services Outpost, the Amazon
+     * Resource Name (ARNs) of the EC2 agents deployed on your Outpost. For more
+     * information about launching a DataSync agent on an Amazon Web Services Outpost,
+     * see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy
+     * your DataSync agent on Outposts</a>.</p>
      */
     inline DescribeLocationS3Result& WithAgentArns(Aws::Vector<Aws::String>&& value) { SetAgentArns(std::move(value)); return *this;}
 
     /**
-     * <p>If you are using DataSync on an AWS Outpost, the Amazon Resource Name (ARNs)
-     * of the EC2 agents deployed on your Outpost. For more information about launching
-     * a DataSync agent on an AWS Outpost, see <a>outposts-agent</a>.</p>
+     * <p>If you are using DataSync on an Amazon Web Services Outpost, the Amazon
+     * Resource Name (ARNs) of the EC2 agents deployed on your Outpost. For more
+     * information about launching a DataSync agent on an Amazon Web Services Outpost,
+     * see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy
+     * your DataSync agent on Outposts</a>.</p>
      */
     inline DescribeLocationS3Result& AddAgentArns(const Aws::String& value) { m_agentArns.push_back(value); return *this; }
 
     /**
-     * <p>If you are using DataSync on an AWS Outpost, the Amazon Resource Name (ARNs)
-     * of the EC2 agents deployed on your Outpost. For more information about launching
-     * a DataSync agent on an AWS Outpost, see <a>outposts-agent</a>.</p>
+     * <p>If you are using DataSync on an Amazon Web Services Outpost, the Amazon
+     * Resource Name (ARNs) of the EC2 agents deployed on your Outpost. For more
+     * information about launching a DataSync agent on an Amazon Web Services Outpost,
+     * see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy
+     * your DataSync agent on Outposts</a>.</p>
      */
     inline DescribeLocationS3Result& AddAgentArns(Aws::String&& value) { m_agentArns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>If you are using DataSync on an AWS Outpost, the Amazon Resource Name (ARNs)
-     * of the EC2 agents deployed on your Outpost. For more information about launching
-     * a DataSync agent on an AWS Outpost, see <a>outposts-agent</a>.</p>
+     * <p>If you are using DataSync on an Amazon Web Services Outpost, the Amazon
+     * Resource Name (ARNs) of the EC2 agents deployed on your Outpost. For more
+     * information about launching a DataSync agent on an Amazon Web Services Outpost,
+     * see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy
+     * your DataSync agent on Outposts</a>.</p>
      */
     inline DescribeLocationS3Result& AddAgentArns(const char* value) { m_agentArns.push_back(value); return *this; }
 

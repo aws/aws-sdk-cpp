@@ -14,6 +14,7 @@ using namespace Aws::Utils;
 
 DeleteGrantRequest::DeleteGrantRequest() : 
     m_grantArnHasBeenSet(false),
+    m_statusReasonHasBeenSet(false),
     m_versionHasBeenSet(false)
 {
 }
@@ -25,6 +26,12 @@ Aws::String DeleteGrantRequest::SerializePayload() const
   if(m_grantArnHasBeenSet)
   {
    payload.WithString("GrantArn", m_grantArn);
+
+  }
+
+  if(m_statusReasonHasBeenSet)
+  {
+   payload.WithString("StatusReason", m_statusReason);
 
   }
 

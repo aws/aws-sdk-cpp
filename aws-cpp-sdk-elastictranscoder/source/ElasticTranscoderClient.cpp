@@ -84,7 +84,7 @@ ElasticTranscoderClient::~ElasticTranscoderClient()
 {
 }
 
-void ElasticTranscoderClient::init(const ClientConfiguration& config)
+void ElasticTranscoderClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Elastic Transcoder");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -118,10 +118,8 @@ CancelJobOutcome ElasticTranscoderClient::CancelJob(const CancelJobRequest& requ
     return CancelJobOutcome(Aws::Client::AWSError<ElasticTranscoderErrors>(ElasticTranscoderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2012-09-25/jobs/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2012-09-25/jobs/");
+  uri.AddPathSegment(request.GetId());
   return CancelJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -146,9 +144,7 @@ void ElasticTranscoderClient::CancelJobAsyncHelper(const CancelJobRequest& reque
 CreateJobOutcome ElasticTranscoderClient::CreateJob(const CreateJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2012-09-25/jobs";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2012-09-25/jobs");
   return CreateJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -173,9 +169,7 @@ void ElasticTranscoderClient::CreateJobAsyncHelper(const CreateJobRequest& reque
 CreatePipelineOutcome ElasticTranscoderClient::CreatePipeline(const CreatePipelineRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2012-09-25/pipelines";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2012-09-25/pipelines");
   return CreatePipelineOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -200,9 +194,7 @@ void ElasticTranscoderClient::CreatePipelineAsyncHelper(const CreatePipelineRequ
 CreatePresetOutcome ElasticTranscoderClient::CreatePreset(const CreatePresetRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2012-09-25/presets";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2012-09-25/presets");
   return CreatePresetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -232,10 +224,8 @@ DeletePipelineOutcome ElasticTranscoderClient::DeletePipeline(const DeletePipeli
     return DeletePipelineOutcome(Aws::Client::AWSError<ElasticTranscoderErrors>(ElasticTranscoderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2012-09-25/pipelines/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2012-09-25/pipelines/");
+  uri.AddPathSegment(request.GetId());
   return DeletePipelineOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -265,10 +255,8 @@ DeletePresetOutcome ElasticTranscoderClient::DeletePreset(const DeletePresetRequ
     return DeletePresetOutcome(Aws::Client::AWSError<ElasticTranscoderErrors>(ElasticTranscoderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2012-09-25/presets/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2012-09-25/presets/");
+  uri.AddPathSegment(request.GetId());
   return DeletePresetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -298,10 +286,8 @@ ListJobsByPipelineOutcome ElasticTranscoderClient::ListJobsByPipeline(const List
     return ListJobsByPipelineOutcome(Aws::Client::AWSError<ElasticTranscoderErrors>(ElasticTranscoderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PipelineId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2012-09-25/jobsByPipeline/";
-  ss << request.GetPipelineId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2012-09-25/jobsByPipeline/");
+  uri.AddPathSegment(request.GetPipelineId());
   return ListJobsByPipelineOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -331,10 +317,8 @@ ListJobsByStatusOutcome ElasticTranscoderClient::ListJobsByStatus(const ListJobs
     return ListJobsByStatusOutcome(Aws::Client::AWSError<ElasticTranscoderErrors>(ElasticTranscoderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Status]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2012-09-25/jobsByStatus/";
-  ss << request.GetStatus();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2012-09-25/jobsByStatus/");
+  uri.AddPathSegment(request.GetStatus());
   return ListJobsByStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -359,9 +343,7 @@ void ElasticTranscoderClient::ListJobsByStatusAsyncHelper(const ListJobsByStatus
 ListPipelinesOutcome ElasticTranscoderClient::ListPipelines(const ListPipelinesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2012-09-25/pipelines";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2012-09-25/pipelines");
   return ListPipelinesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -386,9 +368,7 @@ void ElasticTranscoderClient::ListPipelinesAsyncHelper(const ListPipelinesReques
 ListPresetsOutcome ElasticTranscoderClient::ListPresets(const ListPresetsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2012-09-25/presets";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2012-09-25/presets");
   return ListPresetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -418,10 +398,8 @@ ReadJobOutcome ElasticTranscoderClient::ReadJob(const ReadJobRequest& request) c
     return ReadJobOutcome(Aws::Client::AWSError<ElasticTranscoderErrors>(ElasticTranscoderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2012-09-25/jobs/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2012-09-25/jobs/");
+  uri.AddPathSegment(request.GetId());
   return ReadJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -451,10 +429,8 @@ ReadPipelineOutcome ElasticTranscoderClient::ReadPipeline(const ReadPipelineRequ
     return ReadPipelineOutcome(Aws::Client::AWSError<ElasticTranscoderErrors>(ElasticTranscoderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2012-09-25/pipelines/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2012-09-25/pipelines/");
+  uri.AddPathSegment(request.GetId());
   return ReadPipelineOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -484,10 +460,8 @@ ReadPresetOutcome ElasticTranscoderClient::ReadPreset(const ReadPresetRequest& r
     return ReadPresetOutcome(Aws::Client::AWSError<ElasticTranscoderErrors>(ElasticTranscoderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2012-09-25/presets/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2012-09-25/presets/");
+  uri.AddPathSegment(request.GetId());
   return ReadPresetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -517,10 +491,8 @@ UpdatePipelineOutcome ElasticTranscoderClient::UpdatePipeline(const UpdatePipeli
     return UpdatePipelineOutcome(Aws::Client::AWSError<ElasticTranscoderErrors>(ElasticTranscoderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2012-09-25/pipelines/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2012-09-25/pipelines/");
+  uri.AddPathSegment(request.GetId());
   return UpdatePipelineOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -550,11 +522,9 @@ UpdatePipelineNotificationsOutcome ElasticTranscoderClient::UpdatePipelineNotifi
     return UpdatePipelineNotificationsOutcome(Aws::Client::AWSError<ElasticTranscoderErrors>(ElasticTranscoderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2012-09-25/pipelines/";
-  ss << request.GetId();
-  ss << "/notifications";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2012-09-25/pipelines/");
+  uri.AddPathSegment(request.GetId());
+  uri.AddPathSegments("/notifications");
   return UpdatePipelineNotificationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -584,11 +554,9 @@ UpdatePipelineStatusOutcome ElasticTranscoderClient::UpdatePipelineStatus(const 
     return UpdatePipelineStatusOutcome(Aws::Client::AWSError<ElasticTranscoderErrors>(ElasticTranscoderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2012-09-25/pipelines/";
-  ss << request.GetId();
-  ss << "/status";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2012-09-25/pipelines/");
+  uri.AddPathSegment(request.GetId());
+  uri.AddPathSegments("/status");
   return UpdatePipelineStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

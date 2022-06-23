@@ -80,7 +80,7 @@ CodeStarconnectionsClient::~CodeStarconnectionsClient()
 {
 }
 
-void CodeStarconnectionsClient::init(const ClientConfiguration& config)
+void CodeStarconnectionsClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("CodeStar connections");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -109,9 +109,6 @@ void CodeStarconnectionsClient::OverrideEndpoint(const Aws::String& endpoint)
 CreateConnectionOutcome CodeStarconnectionsClient::CreateConnection(const CreateConnectionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateConnectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -136,9 +133,6 @@ void CodeStarconnectionsClient::CreateConnectionAsyncHelper(const CreateConnecti
 CreateHostOutcome CodeStarconnectionsClient::CreateHost(const CreateHostRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateHostOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -163,9 +157,6 @@ void CodeStarconnectionsClient::CreateHostAsyncHelper(const CreateHostRequest& r
 DeleteConnectionOutcome CodeStarconnectionsClient::DeleteConnection(const DeleteConnectionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteConnectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -190,9 +181,6 @@ void CodeStarconnectionsClient::DeleteConnectionAsyncHelper(const DeleteConnecti
 DeleteHostOutcome CodeStarconnectionsClient::DeleteHost(const DeleteHostRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteHostOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -217,9 +205,6 @@ void CodeStarconnectionsClient::DeleteHostAsyncHelper(const DeleteHostRequest& r
 GetConnectionOutcome CodeStarconnectionsClient::GetConnection(const GetConnectionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetConnectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -244,9 +229,6 @@ void CodeStarconnectionsClient::GetConnectionAsyncHelper(const GetConnectionRequ
 GetHostOutcome CodeStarconnectionsClient::GetHost(const GetHostRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetHostOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -271,9 +253,6 @@ void CodeStarconnectionsClient::GetHostAsyncHelper(const GetHostRequest& request
 ListConnectionsOutcome CodeStarconnectionsClient::ListConnections(const ListConnectionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListConnectionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -298,9 +277,6 @@ void CodeStarconnectionsClient::ListConnectionsAsyncHelper(const ListConnections
 ListHostsOutcome CodeStarconnectionsClient::ListHosts(const ListHostsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListHostsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -325,9 +301,6 @@ void CodeStarconnectionsClient::ListHostsAsyncHelper(const ListHostsRequest& req
 ListTagsForResourceOutcome CodeStarconnectionsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -352,9 +325,6 @@ void CodeStarconnectionsClient::ListTagsForResourceAsyncHelper(const ListTagsFor
 TagResourceOutcome CodeStarconnectionsClient::TagResource(const TagResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -379,9 +349,6 @@ void CodeStarconnectionsClient::TagResourceAsyncHelper(const TagResourceRequest&
 UntagResourceOutcome CodeStarconnectionsClient::UntagResource(const UntagResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -406,9 +373,6 @@ void CodeStarconnectionsClient::UntagResourceAsyncHelper(const UntagResourceRequ
 UpdateHostOutcome CodeStarconnectionsClient::UpdateHost(const UpdateHostRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return UpdateHostOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

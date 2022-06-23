@@ -10,8 +10,11 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/compute-optimizer/model/AutoScalingGroupConfiguration.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/compute-optimizer/model/CurrentPerformanceRisk.h>
+#include <aws/compute-optimizer/model/EffectiveRecommendationPreferences.h>
 #include <aws/compute-optimizer/model/UtilizationMetric.h>
 #include <aws/compute-optimizer/model/AutoScalingGroupRecommendationOption.h>
+#include <aws/compute-optimizer/model/InferredWorkloadType.h>
 #include <utility>
 
 namespace Aws
@@ -44,42 +47,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID of the Auto Scaling group.</p>
+     * <p>The Amazon Web Services account ID of the Auto Scaling group.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The AWS account ID of the Auto Scaling group.</p>
+     * <p>The Amazon Web Services account ID of the Auto Scaling group.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID of the Auto Scaling group.</p>
+     * <p>The Amazon Web Services account ID of the Auto Scaling group.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The AWS account ID of the Auto Scaling group.</p>
+     * <p>The Amazon Web Services account ID of the Auto Scaling group.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The AWS account ID of the Auto Scaling group.</p>
+     * <p>The Amazon Web Services account ID of the Auto Scaling group.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The AWS account ID of the Auto Scaling group.</p>
+     * <p>The Amazon Web Services account ID of the Auto Scaling group.</p>
      */
     inline AutoScalingGroupRecommendation& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The AWS account ID of the Auto Scaling group.</p>
+     * <p>The Amazon Web Services account ID of the Auto Scaling group.</p>
      */
     inline AutoScalingGroupRecommendation& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID of the Auto Scaling group.</p>
+     * <p>The Amazon Web Services account ID of the Auto Scaling group.</p>
      */
     inline AutoScalingGroupRecommendation& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
@@ -167,80 +170,80 @@ namespace Model
 
 
     /**
-     * <p>The finding classification for the Auto Scaling group.</p> <p>Findings for
+     * <p>The finding classification of the Auto Scaling group.</p> <p>Findings for
      * Auto Scaling groups include:</p> <ul> <li> <p> <b> <code>NotOptimized</code>
-     * </b>—An Auto Scaling group is considered not optimized when AWS Compute
-     * Optimizer identifies a recommendation that can provide better performance for
-     * your workload.</p> </li> <li> <p> <b> <code>Optimized</code> </b>—An Auto
-     * Scaling group is considered optimized when Compute Optimizer determines that the
-     * group is correctly provisioned to run your workload based on the chosen instance
-     * type. For optimized resources, Compute Optimizer might recommend a new
-     * generation instance type.</p> </li> </ul>
+     * </b>—An Auto Scaling group is considered not optimized when Compute Optimizer
+     * identifies a recommendation that can provide better performance for your
+     * workload.</p> </li> <li> <p> <b> <code>Optimized</code> </b>—An Auto Scaling
+     * group is considered optimized when Compute Optimizer determines that the group
+     * is correctly provisioned to run your workload based on the chosen instance type.
+     * For optimized resources, Compute Optimizer might recommend a new generation
+     * instance type.</p> </li> </ul>
      */
     inline const Finding& GetFinding() const{ return m_finding; }
 
     /**
-     * <p>The finding classification for the Auto Scaling group.</p> <p>Findings for
+     * <p>The finding classification of the Auto Scaling group.</p> <p>Findings for
      * Auto Scaling groups include:</p> <ul> <li> <p> <b> <code>NotOptimized</code>
-     * </b>—An Auto Scaling group is considered not optimized when AWS Compute
-     * Optimizer identifies a recommendation that can provide better performance for
-     * your workload.</p> </li> <li> <p> <b> <code>Optimized</code> </b>—An Auto
-     * Scaling group is considered optimized when Compute Optimizer determines that the
-     * group is correctly provisioned to run your workload based on the chosen instance
-     * type. For optimized resources, Compute Optimizer might recommend a new
-     * generation instance type.</p> </li> </ul>
+     * </b>—An Auto Scaling group is considered not optimized when Compute Optimizer
+     * identifies a recommendation that can provide better performance for your
+     * workload.</p> </li> <li> <p> <b> <code>Optimized</code> </b>—An Auto Scaling
+     * group is considered optimized when Compute Optimizer determines that the group
+     * is correctly provisioned to run your workload based on the chosen instance type.
+     * For optimized resources, Compute Optimizer might recommend a new generation
+     * instance type.</p> </li> </ul>
      */
     inline bool FindingHasBeenSet() const { return m_findingHasBeenSet; }
 
     /**
-     * <p>The finding classification for the Auto Scaling group.</p> <p>Findings for
+     * <p>The finding classification of the Auto Scaling group.</p> <p>Findings for
      * Auto Scaling groups include:</p> <ul> <li> <p> <b> <code>NotOptimized</code>
-     * </b>—An Auto Scaling group is considered not optimized when AWS Compute
-     * Optimizer identifies a recommendation that can provide better performance for
-     * your workload.</p> </li> <li> <p> <b> <code>Optimized</code> </b>—An Auto
-     * Scaling group is considered optimized when Compute Optimizer determines that the
-     * group is correctly provisioned to run your workload based on the chosen instance
-     * type. For optimized resources, Compute Optimizer might recommend a new
-     * generation instance type.</p> </li> </ul>
+     * </b>—An Auto Scaling group is considered not optimized when Compute Optimizer
+     * identifies a recommendation that can provide better performance for your
+     * workload.</p> </li> <li> <p> <b> <code>Optimized</code> </b>—An Auto Scaling
+     * group is considered optimized when Compute Optimizer determines that the group
+     * is correctly provisioned to run your workload based on the chosen instance type.
+     * For optimized resources, Compute Optimizer might recommend a new generation
+     * instance type.</p> </li> </ul>
      */
     inline void SetFinding(const Finding& value) { m_findingHasBeenSet = true; m_finding = value; }
 
     /**
-     * <p>The finding classification for the Auto Scaling group.</p> <p>Findings for
+     * <p>The finding classification of the Auto Scaling group.</p> <p>Findings for
      * Auto Scaling groups include:</p> <ul> <li> <p> <b> <code>NotOptimized</code>
-     * </b>—An Auto Scaling group is considered not optimized when AWS Compute
-     * Optimizer identifies a recommendation that can provide better performance for
-     * your workload.</p> </li> <li> <p> <b> <code>Optimized</code> </b>—An Auto
-     * Scaling group is considered optimized when Compute Optimizer determines that the
-     * group is correctly provisioned to run your workload based on the chosen instance
-     * type. For optimized resources, Compute Optimizer might recommend a new
-     * generation instance type.</p> </li> </ul>
+     * </b>—An Auto Scaling group is considered not optimized when Compute Optimizer
+     * identifies a recommendation that can provide better performance for your
+     * workload.</p> </li> <li> <p> <b> <code>Optimized</code> </b>—An Auto Scaling
+     * group is considered optimized when Compute Optimizer determines that the group
+     * is correctly provisioned to run your workload based on the chosen instance type.
+     * For optimized resources, Compute Optimizer might recommend a new generation
+     * instance type.</p> </li> </ul>
      */
     inline void SetFinding(Finding&& value) { m_findingHasBeenSet = true; m_finding = std::move(value); }
 
     /**
-     * <p>The finding classification for the Auto Scaling group.</p> <p>Findings for
+     * <p>The finding classification of the Auto Scaling group.</p> <p>Findings for
      * Auto Scaling groups include:</p> <ul> <li> <p> <b> <code>NotOptimized</code>
-     * </b>—An Auto Scaling group is considered not optimized when AWS Compute
-     * Optimizer identifies a recommendation that can provide better performance for
-     * your workload.</p> </li> <li> <p> <b> <code>Optimized</code> </b>—An Auto
-     * Scaling group is considered optimized when Compute Optimizer determines that the
-     * group is correctly provisioned to run your workload based on the chosen instance
-     * type. For optimized resources, Compute Optimizer might recommend a new
-     * generation instance type.</p> </li> </ul>
+     * </b>—An Auto Scaling group is considered not optimized when Compute Optimizer
+     * identifies a recommendation that can provide better performance for your
+     * workload.</p> </li> <li> <p> <b> <code>Optimized</code> </b>—An Auto Scaling
+     * group is considered optimized when Compute Optimizer determines that the group
+     * is correctly provisioned to run your workload based on the chosen instance type.
+     * For optimized resources, Compute Optimizer might recommend a new generation
+     * instance type.</p> </li> </ul>
      */
     inline AutoScalingGroupRecommendation& WithFinding(const Finding& value) { SetFinding(value); return *this;}
 
     /**
-     * <p>The finding classification for the Auto Scaling group.</p> <p>Findings for
+     * <p>The finding classification of the Auto Scaling group.</p> <p>Findings for
      * Auto Scaling groups include:</p> <ul> <li> <p> <b> <code>NotOptimized</code>
-     * </b>—An Auto Scaling group is considered not optimized when AWS Compute
-     * Optimizer identifies a recommendation that can provide better performance for
-     * your workload.</p> </li> <li> <p> <b> <code>Optimized</code> </b>—An Auto
-     * Scaling group is considered optimized when Compute Optimizer determines that the
-     * group is correctly provisioned to run your workload based on the chosen instance
-     * type. For optimized resources, Compute Optimizer might recommend a new
-     * generation instance type.</p> </li> </ul>
+     * </b>—An Auto Scaling group is considered not optimized when Compute Optimizer
+     * identifies a recommendation that can provide better performance for your
+     * workload.</p> </li> <li> <p> <b> <code>Optimized</code> </b>—An Auto Scaling
+     * group is considered optimized when Compute Optimizer determines that the group
+     * is correctly provisioned to run your workload based on the chosen instance type.
+     * For optimized resources, Compute Optimizer might recommend a new generation
+     * instance type.</p> </li> </ul>
      */
     inline AutoScalingGroupRecommendation& WithFinding(Finding&& value) { SetFinding(std::move(value)); return *this;}
 
@@ -406,40 +409,263 @@ namespace Model
 
 
     /**
-     * <p>The time stamp of when the Auto Scaling group recommendation was last
-     * refreshed.</p>
+     * <p>The timestamp of when the Auto Scaling group recommendation was last
+     * generated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastRefreshTimestamp() const{ return m_lastRefreshTimestamp; }
 
     /**
-     * <p>The time stamp of when the Auto Scaling group recommendation was last
-     * refreshed.</p>
+     * <p>The timestamp of when the Auto Scaling group recommendation was last
+     * generated.</p>
      */
     inline bool LastRefreshTimestampHasBeenSet() const { return m_lastRefreshTimestampHasBeenSet; }
 
     /**
-     * <p>The time stamp of when the Auto Scaling group recommendation was last
-     * refreshed.</p>
+     * <p>The timestamp of when the Auto Scaling group recommendation was last
+     * generated.</p>
      */
     inline void SetLastRefreshTimestamp(const Aws::Utils::DateTime& value) { m_lastRefreshTimestampHasBeenSet = true; m_lastRefreshTimestamp = value; }
 
     /**
-     * <p>The time stamp of when the Auto Scaling group recommendation was last
-     * refreshed.</p>
+     * <p>The timestamp of when the Auto Scaling group recommendation was last
+     * generated.</p>
      */
     inline void SetLastRefreshTimestamp(Aws::Utils::DateTime&& value) { m_lastRefreshTimestampHasBeenSet = true; m_lastRefreshTimestamp = std::move(value); }
 
     /**
-     * <p>The time stamp of when the Auto Scaling group recommendation was last
-     * refreshed.</p>
+     * <p>The timestamp of when the Auto Scaling group recommendation was last
+     * generated.</p>
      */
     inline AutoScalingGroupRecommendation& WithLastRefreshTimestamp(const Aws::Utils::DateTime& value) { SetLastRefreshTimestamp(value); return *this;}
 
     /**
-     * <p>The time stamp of when the Auto Scaling group recommendation was last
-     * refreshed.</p>
+     * <p>The timestamp of when the Auto Scaling group recommendation was last
+     * generated.</p>
      */
     inline AutoScalingGroupRecommendation& WithLastRefreshTimestamp(Aws::Utils::DateTime&& value) { SetLastRefreshTimestamp(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The risk of the current Auto Scaling group not meeting the performance needs
+     * of its workloads. The higher the risk, the more likely the current Auto Scaling
+     * group configuration has insufficient capacity and cannot meet workload
+     * requirements.</p>
+     */
+    inline const CurrentPerformanceRisk& GetCurrentPerformanceRisk() const{ return m_currentPerformanceRisk; }
+
+    /**
+     * <p>The risk of the current Auto Scaling group not meeting the performance needs
+     * of its workloads. The higher the risk, the more likely the current Auto Scaling
+     * group configuration has insufficient capacity and cannot meet workload
+     * requirements.</p>
+     */
+    inline bool CurrentPerformanceRiskHasBeenSet() const { return m_currentPerformanceRiskHasBeenSet; }
+
+    /**
+     * <p>The risk of the current Auto Scaling group not meeting the performance needs
+     * of its workloads. The higher the risk, the more likely the current Auto Scaling
+     * group configuration has insufficient capacity and cannot meet workload
+     * requirements.</p>
+     */
+    inline void SetCurrentPerformanceRisk(const CurrentPerformanceRisk& value) { m_currentPerformanceRiskHasBeenSet = true; m_currentPerformanceRisk = value; }
+
+    /**
+     * <p>The risk of the current Auto Scaling group not meeting the performance needs
+     * of its workloads. The higher the risk, the more likely the current Auto Scaling
+     * group configuration has insufficient capacity and cannot meet workload
+     * requirements.</p>
+     */
+    inline void SetCurrentPerformanceRisk(CurrentPerformanceRisk&& value) { m_currentPerformanceRiskHasBeenSet = true; m_currentPerformanceRisk = std::move(value); }
+
+    /**
+     * <p>The risk of the current Auto Scaling group not meeting the performance needs
+     * of its workloads. The higher the risk, the more likely the current Auto Scaling
+     * group configuration has insufficient capacity and cannot meet workload
+     * requirements.</p>
+     */
+    inline AutoScalingGroupRecommendation& WithCurrentPerformanceRisk(const CurrentPerformanceRisk& value) { SetCurrentPerformanceRisk(value); return *this;}
+
+    /**
+     * <p>The risk of the current Auto Scaling group not meeting the performance needs
+     * of its workloads. The higher the risk, the more likely the current Auto Scaling
+     * group configuration has insufficient capacity and cannot meet workload
+     * requirements.</p>
+     */
+    inline AutoScalingGroupRecommendation& WithCurrentPerformanceRisk(CurrentPerformanceRisk&& value) { SetCurrentPerformanceRisk(std::move(value)); return *this;}
+
+
+    /**
+     * <p>An object that describes the effective recommendation preferences for the
+     * Auto Scaling group.</p>
+     */
+    inline const EffectiveRecommendationPreferences& GetEffectiveRecommendationPreferences() const{ return m_effectiveRecommendationPreferences; }
+
+    /**
+     * <p>An object that describes the effective recommendation preferences for the
+     * Auto Scaling group.</p>
+     */
+    inline bool EffectiveRecommendationPreferencesHasBeenSet() const { return m_effectiveRecommendationPreferencesHasBeenSet; }
+
+    /**
+     * <p>An object that describes the effective recommendation preferences for the
+     * Auto Scaling group.</p>
+     */
+    inline void SetEffectiveRecommendationPreferences(const EffectiveRecommendationPreferences& value) { m_effectiveRecommendationPreferencesHasBeenSet = true; m_effectiveRecommendationPreferences = value; }
+
+    /**
+     * <p>An object that describes the effective recommendation preferences for the
+     * Auto Scaling group.</p>
+     */
+    inline void SetEffectiveRecommendationPreferences(EffectiveRecommendationPreferences&& value) { m_effectiveRecommendationPreferencesHasBeenSet = true; m_effectiveRecommendationPreferences = std::move(value); }
+
+    /**
+     * <p>An object that describes the effective recommendation preferences for the
+     * Auto Scaling group.</p>
+     */
+    inline AutoScalingGroupRecommendation& WithEffectiveRecommendationPreferences(const EffectiveRecommendationPreferences& value) { SetEffectiveRecommendationPreferences(value); return *this;}
+
+    /**
+     * <p>An object that describes the effective recommendation preferences for the
+     * Auto Scaling group.</p>
+     */
+    inline AutoScalingGroupRecommendation& WithEffectiveRecommendationPreferences(EffectiveRecommendationPreferences&& value) { SetEffectiveRecommendationPreferences(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The applications that might be running on the instances in the Auto Scaling
+     * group as inferred by Compute Optimizer.</p> <p>Compute Optimizer can infer if
+     * one of the following applications might be running on the instances:</p> <ul>
+     * <li> <p> <code>AmazonEmr</code> - Infers that Amazon EMR might be running on the
+     * instances.</p> </li> <li> <p> <code>ApacheCassandra</code> - Infers that Apache
+     * Cassandra might be running on the instances.</p> </li> <li> <p>
+     * <code>ApacheHadoop</code> - Infers that Apache Hadoop might be running on the
+     * instances.</p> </li> <li> <p> <code>Memcached</code> - Infers that Memcached
+     * might be running on the instances.</p> </li> <li> <p> <code>NGINX</code> -
+     * Infers that NGINX might be running on the instances.</p> </li> <li> <p>
+     * <code>PostgreSql</code> - Infers that PostgreSQL might be running on the
+     * instances.</p> </li> <li> <p> <code>Redis</code> - Infers that Redis might be
+     * running on the instances.</p> </li> </ul>
+     */
+    inline const Aws::Vector<InferredWorkloadType>& GetInferredWorkloadTypes() const{ return m_inferredWorkloadTypes; }
+
+    /**
+     * <p>The applications that might be running on the instances in the Auto Scaling
+     * group as inferred by Compute Optimizer.</p> <p>Compute Optimizer can infer if
+     * one of the following applications might be running on the instances:</p> <ul>
+     * <li> <p> <code>AmazonEmr</code> - Infers that Amazon EMR might be running on the
+     * instances.</p> </li> <li> <p> <code>ApacheCassandra</code> - Infers that Apache
+     * Cassandra might be running on the instances.</p> </li> <li> <p>
+     * <code>ApacheHadoop</code> - Infers that Apache Hadoop might be running on the
+     * instances.</p> </li> <li> <p> <code>Memcached</code> - Infers that Memcached
+     * might be running on the instances.</p> </li> <li> <p> <code>NGINX</code> -
+     * Infers that NGINX might be running on the instances.</p> </li> <li> <p>
+     * <code>PostgreSql</code> - Infers that PostgreSQL might be running on the
+     * instances.</p> </li> <li> <p> <code>Redis</code> - Infers that Redis might be
+     * running on the instances.</p> </li> </ul>
+     */
+    inline bool InferredWorkloadTypesHasBeenSet() const { return m_inferredWorkloadTypesHasBeenSet; }
+
+    /**
+     * <p>The applications that might be running on the instances in the Auto Scaling
+     * group as inferred by Compute Optimizer.</p> <p>Compute Optimizer can infer if
+     * one of the following applications might be running on the instances:</p> <ul>
+     * <li> <p> <code>AmazonEmr</code> - Infers that Amazon EMR might be running on the
+     * instances.</p> </li> <li> <p> <code>ApacheCassandra</code> - Infers that Apache
+     * Cassandra might be running on the instances.</p> </li> <li> <p>
+     * <code>ApacheHadoop</code> - Infers that Apache Hadoop might be running on the
+     * instances.</p> </li> <li> <p> <code>Memcached</code> - Infers that Memcached
+     * might be running on the instances.</p> </li> <li> <p> <code>NGINX</code> -
+     * Infers that NGINX might be running on the instances.</p> </li> <li> <p>
+     * <code>PostgreSql</code> - Infers that PostgreSQL might be running on the
+     * instances.</p> </li> <li> <p> <code>Redis</code> - Infers that Redis might be
+     * running on the instances.</p> </li> </ul>
+     */
+    inline void SetInferredWorkloadTypes(const Aws::Vector<InferredWorkloadType>& value) { m_inferredWorkloadTypesHasBeenSet = true; m_inferredWorkloadTypes = value; }
+
+    /**
+     * <p>The applications that might be running on the instances in the Auto Scaling
+     * group as inferred by Compute Optimizer.</p> <p>Compute Optimizer can infer if
+     * one of the following applications might be running on the instances:</p> <ul>
+     * <li> <p> <code>AmazonEmr</code> - Infers that Amazon EMR might be running on the
+     * instances.</p> </li> <li> <p> <code>ApacheCassandra</code> - Infers that Apache
+     * Cassandra might be running on the instances.</p> </li> <li> <p>
+     * <code>ApacheHadoop</code> - Infers that Apache Hadoop might be running on the
+     * instances.</p> </li> <li> <p> <code>Memcached</code> - Infers that Memcached
+     * might be running on the instances.</p> </li> <li> <p> <code>NGINX</code> -
+     * Infers that NGINX might be running on the instances.</p> </li> <li> <p>
+     * <code>PostgreSql</code> - Infers that PostgreSQL might be running on the
+     * instances.</p> </li> <li> <p> <code>Redis</code> - Infers that Redis might be
+     * running on the instances.</p> </li> </ul>
+     */
+    inline void SetInferredWorkloadTypes(Aws::Vector<InferredWorkloadType>&& value) { m_inferredWorkloadTypesHasBeenSet = true; m_inferredWorkloadTypes = std::move(value); }
+
+    /**
+     * <p>The applications that might be running on the instances in the Auto Scaling
+     * group as inferred by Compute Optimizer.</p> <p>Compute Optimizer can infer if
+     * one of the following applications might be running on the instances:</p> <ul>
+     * <li> <p> <code>AmazonEmr</code> - Infers that Amazon EMR might be running on the
+     * instances.</p> </li> <li> <p> <code>ApacheCassandra</code> - Infers that Apache
+     * Cassandra might be running on the instances.</p> </li> <li> <p>
+     * <code>ApacheHadoop</code> - Infers that Apache Hadoop might be running on the
+     * instances.</p> </li> <li> <p> <code>Memcached</code> - Infers that Memcached
+     * might be running on the instances.</p> </li> <li> <p> <code>NGINX</code> -
+     * Infers that NGINX might be running on the instances.</p> </li> <li> <p>
+     * <code>PostgreSql</code> - Infers that PostgreSQL might be running on the
+     * instances.</p> </li> <li> <p> <code>Redis</code> - Infers that Redis might be
+     * running on the instances.</p> </li> </ul>
+     */
+    inline AutoScalingGroupRecommendation& WithInferredWorkloadTypes(const Aws::Vector<InferredWorkloadType>& value) { SetInferredWorkloadTypes(value); return *this;}
+
+    /**
+     * <p>The applications that might be running on the instances in the Auto Scaling
+     * group as inferred by Compute Optimizer.</p> <p>Compute Optimizer can infer if
+     * one of the following applications might be running on the instances:</p> <ul>
+     * <li> <p> <code>AmazonEmr</code> - Infers that Amazon EMR might be running on the
+     * instances.</p> </li> <li> <p> <code>ApacheCassandra</code> - Infers that Apache
+     * Cassandra might be running on the instances.</p> </li> <li> <p>
+     * <code>ApacheHadoop</code> - Infers that Apache Hadoop might be running on the
+     * instances.</p> </li> <li> <p> <code>Memcached</code> - Infers that Memcached
+     * might be running on the instances.</p> </li> <li> <p> <code>NGINX</code> -
+     * Infers that NGINX might be running on the instances.</p> </li> <li> <p>
+     * <code>PostgreSql</code> - Infers that PostgreSQL might be running on the
+     * instances.</p> </li> <li> <p> <code>Redis</code> - Infers that Redis might be
+     * running on the instances.</p> </li> </ul>
+     */
+    inline AutoScalingGroupRecommendation& WithInferredWorkloadTypes(Aws::Vector<InferredWorkloadType>&& value) { SetInferredWorkloadTypes(std::move(value)); return *this;}
+
+    /**
+     * <p>The applications that might be running on the instances in the Auto Scaling
+     * group as inferred by Compute Optimizer.</p> <p>Compute Optimizer can infer if
+     * one of the following applications might be running on the instances:</p> <ul>
+     * <li> <p> <code>AmazonEmr</code> - Infers that Amazon EMR might be running on the
+     * instances.</p> </li> <li> <p> <code>ApacheCassandra</code> - Infers that Apache
+     * Cassandra might be running on the instances.</p> </li> <li> <p>
+     * <code>ApacheHadoop</code> - Infers that Apache Hadoop might be running on the
+     * instances.</p> </li> <li> <p> <code>Memcached</code> - Infers that Memcached
+     * might be running on the instances.</p> </li> <li> <p> <code>NGINX</code> -
+     * Infers that NGINX might be running on the instances.</p> </li> <li> <p>
+     * <code>PostgreSql</code> - Infers that PostgreSQL might be running on the
+     * instances.</p> </li> <li> <p> <code>Redis</code> - Infers that Redis might be
+     * running on the instances.</p> </li> </ul>
+     */
+    inline AutoScalingGroupRecommendation& AddInferredWorkloadTypes(const InferredWorkloadType& value) { m_inferredWorkloadTypesHasBeenSet = true; m_inferredWorkloadTypes.push_back(value); return *this; }
+
+    /**
+     * <p>The applications that might be running on the instances in the Auto Scaling
+     * group as inferred by Compute Optimizer.</p> <p>Compute Optimizer can infer if
+     * one of the following applications might be running on the instances:</p> <ul>
+     * <li> <p> <code>AmazonEmr</code> - Infers that Amazon EMR might be running on the
+     * instances.</p> </li> <li> <p> <code>ApacheCassandra</code> - Infers that Apache
+     * Cassandra might be running on the instances.</p> </li> <li> <p>
+     * <code>ApacheHadoop</code> - Infers that Apache Hadoop might be running on the
+     * instances.</p> </li> <li> <p> <code>Memcached</code> - Infers that Memcached
+     * might be running on the instances.</p> </li> <li> <p> <code>NGINX</code> -
+     * Infers that NGINX might be running on the instances.</p> </li> <li> <p>
+     * <code>PostgreSql</code> - Infers that PostgreSQL might be running on the
+     * instances.</p> </li> <li> <p> <code>Redis</code> - Infers that Redis might be
+     * running on the instances.</p> </li> </ul>
+     */
+    inline AutoScalingGroupRecommendation& AddInferredWorkloadTypes(InferredWorkloadType&& value) { m_inferredWorkloadTypesHasBeenSet = true; m_inferredWorkloadTypes.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -469,6 +695,15 @@ namespace Model
 
     Aws::Utils::DateTime m_lastRefreshTimestamp;
     bool m_lastRefreshTimestampHasBeenSet;
+
+    CurrentPerformanceRisk m_currentPerformanceRisk;
+    bool m_currentPerformanceRiskHasBeenSet;
+
+    EffectiveRecommendationPreferences m_effectiveRecommendationPreferences;
+    bool m_effectiveRecommendationPreferencesHasBeenSet;
+
+    Aws::Vector<InferredWorkloadType> m_inferredWorkloadTypes;
+    bool m_inferredWorkloadTypesHasBeenSet;
   };
 
 } // namespace Model

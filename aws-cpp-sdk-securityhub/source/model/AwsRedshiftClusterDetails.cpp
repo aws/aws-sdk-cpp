@@ -68,7 +68,8 @@ AwsRedshiftClusterDetails::AwsRedshiftClusterDetails() :
     m_snapshotScheduleIdentifierHasBeenSet(false),
     m_snapshotScheduleStateHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
-    m_vpcSecurityGroupsHasBeenSet(false)
+    m_vpcSecurityGroupsHasBeenSet(false),
+    m_loggingStatusHasBeenSet(false)
 {
 }
 
@@ -122,7 +123,8 @@ AwsRedshiftClusterDetails::AwsRedshiftClusterDetails(JsonView jsonValue) :
     m_snapshotScheduleIdentifierHasBeenSet(false),
     m_snapshotScheduleStateHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
-    m_vpcSecurityGroupsHasBeenSet(false)
+    m_vpcSecurityGroupsHasBeenSet(false),
+    m_loggingStatusHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -451,6 +453,13 @@ AwsRedshiftClusterDetails& AwsRedshiftClusterDetails::operator =(JsonView jsonVa
     m_vpcSecurityGroupsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LoggingStatus"))
+  {
+    m_loggingStatus = jsonValue.GetObject("LoggingStatus");
+
+    m_loggingStatusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -748,6 +757,12 @@ JsonValue AwsRedshiftClusterDetails::Jsonize() const
      vpcSecurityGroupsJsonList[vpcSecurityGroupsIndex].AsObject(m_vpcSecurityGroups[vpcSecurityGroupsIndex].Jsonize());
    }
    payload.WithArray("VpcSecurityGroups", std::move(vpcSecurityGroupsJsonList));
+
+  }
+
+  if(m_loggingStatusHasBeenSet)
+  {
+   payload.WithObject("LoggingStatus", m_loggingStatus.Jsonize());
 
   }
 

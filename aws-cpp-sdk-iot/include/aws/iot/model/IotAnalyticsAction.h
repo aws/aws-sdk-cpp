@@ -24,8 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Sends message data to an AWS IoT Analytics channel.</p><p><h3>See Also:</h3> 
-   * <a
+   * <p>Sends message data to an IoT Analytics channel.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/IotAnalyticsAction">AWS
    * API Reference</a></p>
    */
@@ -134,8 +133,8 @@ namespace Model
      * the rule SQL statement evaluates to an Array, each Array element is delivered as
      * a separate message when passed by <a
      * href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_BatchPutMessage.html">
-     * <code>BatchPutMessage</code> </a> to the AWS IoT Analytics channel. The
-     * resulting array can't have more than 100 messages.</p>
+     * <code>BatchPutMessage</code> </a> to the IoT Analytics channel. The resulting
+     * array can't have more than 100 messages.</p>
      */
     inline bool GetBatchMode() const{ return m_batchMode; }
 
@@ -145,8 +144,8 @@ namespace Model
      * the rule SQL statement evaluates to an Array, each Array element is delivered as
      * a separate message when passed by <a
      * href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_BatchPutMessage.html">
-     * <code>BatchPutMessage</code> </a> to the AWS IoT Analytics channel. The
-     * resulting array can't have more than 100 messages.</p>
+     * <code>BatchPutMessage</code> </a> to the IoT Analytics channel. The resulting
+     * array can't have more than 100 messages.</p>
      */
     inline bool BatchModeHasBeenSet() const { return m_batchModeHasBeenSet; }
 
@@ -156,8 +155,8 @@ namespace Model
      * the rule SQL statement evaluates to an Array, each Array element is delivered as
      * a separate message when passed by <a
      * href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_BatchPutMessage.html">
-     * <code>BatchPutMessage</code> </a> to the AWS IoT Analytics channel. The
-     * resulting array can't have more than 100 messages.</p>
+     * <code>BatchPutMessage</code> </a> to the IoT Analytics channel. The resulting
+     * array can't have more than 100 messages.</p>
      */
     inline void SetBatchMode(bool value) { m_batchModeHasBeenSet = true; m_batchMode = value; }
 
@@ -167,8 +166,8 @@ namespace Model
      * the rule SQL statement evaluates to an Array, each Array element is delivered as
      * a separate message when passed by <a
      * href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_BatchPutMessage.html">
-     * <code>BatchPutMessage</code> </a> to the AWS IoT Analytics channel. The
-     * resulting array can't have more than 100 messages.</p>
+     * <code>BatchPutMessage</code> </a> to the IoT Analytics channel. The resulting
+     * array can't have more than 100 messages.</p>
      */
     inline IotAnalyticsAction& WithBatchMode(bool value) { SetBatchMode(value); return *this;}
 

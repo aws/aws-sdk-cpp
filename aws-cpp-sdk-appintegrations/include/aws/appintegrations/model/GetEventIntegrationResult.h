@@ -143,37 +143,37 @@ namespace Model
 
 
     /**
-     * <p>The Eventbridge bus.</p>
+     * <p>The EventBridge bus.</p>
      */
     inline const Aws::String& GetEventBridgeBus() const{ return m_eventBridgeBus; }
 
     /**
-     * <p>The Eventbridge bus.</p>
+     * <p>The EventBridge bus.</p>
      */
     inline void SetEventBridgeBus(const Aws::String& value) { m_eventBridgeBus = value; }
 
     /**
-     * <p>The Eventbridge bus.</p>
+     * <p>The EventBridge bus.</p>
      */
     inline void SetEventBridgeBus(Aws::String&& value) { m_eventBridgeBus = std::move(value); }
 
     /**
-     * <p>The Eventbridge bus.</p>
+     * <p>The EventBridge bus.</p>
      */
     inline void SetEventBridgeBus(const char* value) { m_eventBridgeBus.assign(value); }
 
     /**
-     * <p>The Eventbridge bus.</p>
+     * <p>The EventBridge bus.</p>
      */
     inline GetEventIntegrationResult& WithEventBridgeBus(const Aws::String& value) { SetEventBridgeBus(value); return *this;}
 
     /**
-     * <p>The Eventbridge bus.</p>
+     * <p>The EventBridge bus.</p>
      */
     inline GetEventIntegrationResult& WithEventBridgeBus(Aws::String&& value) { SetEventBridgeBus(std::move(value)); return *this;}
 
     /**
-     * <p>The Eventbridge bus.</p>
+     * <p>The EventBridge bus.</p>
      */
     inline GetEventIntegrationResult& WithEventBridgeBus(const char* value) { SetEventBridgeBus(value); return *this;}
 

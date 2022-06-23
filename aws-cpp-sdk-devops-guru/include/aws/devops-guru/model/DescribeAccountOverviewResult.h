@@ -31,39 +31,45 @@ namespace Model
 
 
     /**
-     * <p> An integer that specifies the number of open reactive insights in your AWS
-     * account that were created during the time range passed in. </p>
+     * <p> An integer that specifies the number of open reactive insights in your
+     * Amazon Web Services account that were created during the time range passed in.
+     * </p>
      */
     inline int GetReactiveInsights() const{ return m_reactiveInsights; }
 
     /**
-     * <p> An integer that specifies the number of open reactive insights in your AWS
-     * account that were created during the time range passed in. </p>
+     * <p> An integer that specifies the number of open reactive insights in your
+     * Amazon Web Services account that were created during the time range passed in.
+     * </p>
      */
     inline void SetReactiveInsights(int value) { m_reactiveInsights = value; }
 
     /**
-     * <p> An integer that specifies the number of open reactive insights in your AWS
-     * account that were created during the time range passed in. </p>
+     * <p> An integer that specifies the number of open reactive insights in your
+     * Amazon Web Services account that were created during the time range passed in.
+     * </p>
      */
     inline DescribeAccountOverviewResult& WithReactiveInsights(int value) { SetReactiveInsights(value); return *this;}
 
 
     /**
-     * <p> An integer that specifies the number of open proactive insights in your AWS
-     * account that were created during the time range passed in. </p>
+     * <p> An integer that specifies the number of open proactive insights in your
+     * Amazon Web Services account that were created during the time range passed in.
+     * </p>
      */
     inline int GetProactiveInsights() const{ return m_proactiveInsights; }
 
     /**
-     * <p> An integer that specifies the number of open proactive insights in your AWS
-     * account that were created during the time range passed in. </p>
+     * <p> An integer that specifies the number of open proactive insights in your
+     * Amazon Web Services account that were created during the time range passed in.
+     * </p>
      */
     inline void SetProactiveInsights(int value) { m_proactiveInsights = value; }
 
     /**
-     * <p> An integer that specifies the number of open proactive insights in your AWS
-     * account that were created during the time range passed in. </p>
+     * <p> An integer that specifies the number of open proactive insights in your
+     * Amazon Web Services account that were created during the time range passed in.
+     * </p>
      */
     inline DescribeAccountOverviewResult& WithProactiveInsights(int value) { SetProactiveInsights(value); return *this;}
 

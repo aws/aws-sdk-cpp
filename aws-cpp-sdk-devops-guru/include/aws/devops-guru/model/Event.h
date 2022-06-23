@@ -30,9 +30,10 @@ namespace Model
 {
 
   /**
-   * <p> An AWS resource event. AWS resource events and metrics are analyzed by
-   * DevOps Guru to find anomalous behavior and provide recommendations to improve
-   * your operational solutions. </p><p><h3>See Also:</h3>   <a
+   * <p> An Amazon Web Services resource event. Amazon Web Services resource events
+   * and metrics are analyzed by DevOps Guru to find anomalous behavior and provide
+   * recommendations to improve your operational solutions. </p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/Event">AWS
    * API Reference</a></p>
    */
@@ -137,42 +138,42 @@ namespace Model
 
 
     /**
-     * <p> The AWS source that emitted the event. </p>
+     * <p> The Amazon Web Services source that emitted the event. </p>
      */
     inline const Aws::String& GetEventSource() const{ return m_eventSource; }
 
     /**
-     * <p> The AWS source that emitted the event. </p>
+     * <p> The Amazon Web Services source that emitted the event. </p>
      */
     inline bool EventSourceHasBeenSet() const { return m_eventSourceHasBeenSet; }
 
     /**
-     * <p> The AWS source that emitted the event. </p>
+     * <p> The Amazon Web Services source that emitted the event. </p>
      */
     inline void SetEventSource(const Aws::String& value) { m_eventSourceHasBeenSet = true; m_eventSource = value; }
 
     /**
-     * <p> The AWS source that emitted the event. </p>
+     * <p> The Amazon Web Services source that emitted the event. </p>
      */
     inline void SetEventSource(Aws::String&& value) { m_eventSourceHasBeenSet = true; m_eventSource = std::move(value); }
 
     /**
-     * <p> The AWS source that emitted the event. </p>
+     * <p> The Amazon Web Services source that emitted the event. </p>
      */
     inline void SetEventSource(const char* value) { m_eventSourceHasBeenSet = true; m_eventSource.assign(value); }
 
     /**
-     * <p> The AWS source that emitted the event. </p>
+     * <p> The Amazon Web Services source that emitted the event. </p>
      */
     inline Event& WithEventSource(const Aws::String& value) { SetEventSource(value); return *this;}
 
     /**
-     * <p> The AWS source that emitted the event. </p>
+     * <p> The Amazon Web Services source that emitted the event. </p>
      */
     inline Event& WithEventSource(Aws::String&& value) { SetEventSource(std::move(value)); return *this;}
 
     /**
-     * <p> The AWS source that emitted the event. </p>
+     * <p> The Amazon Web Services source that emitted the event. </p>
      */
     inline Event& WithEventSource(const char* value) { SetEventSource(value); return *this;}
 

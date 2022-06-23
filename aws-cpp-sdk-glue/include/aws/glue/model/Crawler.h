@@ -15,6 +15,7 @@
 #include <aws/glue/model/Schedule.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/glue/model/LastCrawlInfo.h>
+#include <aws/glue/model/LakeFormationConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -35,9 +36,8 @@ namespace Model
   /**
    * <p>Specifies a crawler program that examines a data source and uses classifiers
    * to try to determine its schema. If successful, the crawler records metadata
-   * concerning the data source in the AWS Glue Data Catalog.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Crawler">AWS API
+   * concerning the data source in the Glue Data Catalog.</p><p><h3>See Also:</h3>  
+   * <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Crawler">AWS API
    * Reference</a></p>
    */
   class AWS_GLUE_API Crawler
@@ -663,64 +663,64 @@ namespace Model
     /**
      * <p>Crawler configuration information. This versioned JSON string allows users to
      * specify aspects of a crawler's behavior. For more information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
-     * a Crawler</a>.</p>
+     * href="https://docs.aws.amazon.com/glue/latest/dg/define-crawler.html#crawler-data-stores-exclude">Include
+     * and Exclude Patterns</a>.</p>
      */
     inline const Aws::String& GetConfiguration() const{ return m_configuration; }
 
     /**
      * <p>Crawler configuration information. This versioned JSON string allows users to
      * specify aspects of a crawler's behavior. For more information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
-     * a Crawler</a>.</p>
+     * href="https://docs.aws.amazon.com/glue/latest/dg/define-crawler.html#crawler-data-stores-exclude">Include
+     * and Exclude Patterns</a>.</p>
      */
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
 
     /**
      * <p>Crawler configuration information. This versioned JSON string allows users to
      * specify aspects of a crawler's behavior. For more information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
-     * a Crawler</a>.</p>
+     * href="https://docs.aws.amazon.com/glue/latest/dg/define-crawler.html#crawler-data-stores-exclude">Include
+     * and Exclude Patterns</a>.</p>
      */
     inline void SetConfiguration(const Aws::String& value) { m_configurationHasBeenSet = true; m_configuration = value; }
 
     /**
      * <p>Crawler configuration information. This versioned JSON string allows users to
      * specify aspects of a crawler's behavior. For more information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
-     * a Crawler</a>.</p>
+     * href="https://docs.aws.amazon.com/glue/latest/dg/define-crawler.html#crawler-data-stores-exclude">Include
+     * and Exclude Patterns</a>.</p>
      */
     inline void SetConfiguration(Aws::String&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
 
     /**
      * <p>Crawler configuration information. This versioned JSON string allows users to
      * specify aspects of a crawler's behavior. For more information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
-     * a Crawler</a>.</p>
+     * href="https://docs.aws.amazon.com/glue/latest/dg/define-crawler.html#crawler-data-stores-exclude">Include
+     * and Exclude Patterns</a>.</p>
      */
     inline void SetConfiguration(const char* value) { m_configurationHasBeenSet = true; m_configuration.assign(value); }
 
     /**
      * <p>Crawler configuration information. This versioned JSON string allows users to
      * specify aspects of a crawler's behavior. For more information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
-     * a Crawler</a>.</p>
+     * href="https://docs.aws.amazon.com/glue/latest/dg/define-crawler.html#crawler-data-stores-exclude">Include
+     * and Exclude Patterns</a>.</p>
      */
     inline Crawler& WithConfiguration(const Aws::String& value) { SetConfiguration(value); return *this;}
 
     /**
      * <p>Crawler configuration information. This versioned JSON string allows users to
      * specify aspects of a crawler's behavior. For more information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
-     * a Crawler</a>.</p>
+     * href="https://docs.aws.amazon.com/glue/latest/dg/define-crawler.html#crawler-data-stores-exclude">Include
+     * and Exclude Patterns</a>.</p>
      */
     inline Crawler& WithConfiguration(Aws::String&& value) { SetConfiguration(std::move(value)); return *this;}
 
     /**
      * <p>Crawler configuration information. This versioned JSON string allows users to
      * specify aspects of a crawler's behavior. For more information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
-     * a Crawler</a>.</p>
+     * href="https://docs.aws.amazon.com/glue/latest/dg/define-crawler.html#crawler-data-stores-exclude">Include
+     * and Exclude Patterns</a>.</p>
      */
     inline Crawler& WithConfiguration(const char* value) { SetConfiguration(value); return *this;}
 
@@ -772,6 +772,43 @@ namespace Model
      * this crawler.</p>
      */
     inline Crawler& WithCrawlerSecurityConfiguration(const char* value) { SetCrawlerSecurityConfiguration(value); return *this;}
+
+
+    /**
+     * <p>Specifies whether the crawler should use AWS Lake Formation credentials for
+     * the crawler instead of the IAM role credentials.</p>
+     */
+    inline const LakeFormationConfiguration& GetLakeFormationConfiguration() const{ return m_lakeFormationConfiguration; }
+
+    /**
+     * <p>Specifies whether the crawler should use AWS Lake Formation credentials for
+     * the crawler instead of the IAM role credentials.</p>
+     */
+    inline bool LakeFormationConfigurationHasBeenSet() const { return m_lakeFormationConfigurationHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the crawler should use AWS Lake Formation credentials for
+     * the crawler instead of the IAM role credentials.</p>
+     */
+    inline void SetLakeFormationConfiguration(const LakeFormationConfiguration& value) { m_lakeFormationConfigurationHasBeenSet = true; m_lakeFormationConfiguration = value; }
+
+    /**
+     * <p>Specifies whether the crawler should use AWS Lake Formation credentials for
+     * the crawler instead of the IAM role credentials.</p>
+     */
+    inline void SetLakeFormationConfiguration(LakeFormationConfiguration&& value) { m_lakeFormationConfigurationHasBeenSet = true; m_lakeFormationConfiguration = std::move(value); }
+
+    /**
+     * <p>Specifies whether the crawler should use AWS Lake Formation credentials for
+     * the crawler instead of the IAM role credentials.</p>
+     */
+    inline Crawler& WithLakeFormationConfiguration(const LakeFormationConfiguration& value) { SetLakeFormationConfiguration(value); return *this;}
+
+    /**
+     * <p>Specifies whether the crawler should use AWS Lake Formation credentials for
+     * the crawler instead of the IAM role credentials.</p>
+     */
+    inline Crawler& WithLakeFormationConfiguration(LakeFormationConfiguration&& value) { SetLakeFormationConfiguration(std::move(value)); return *this;}
 
   private:
 
@@ -831,6 +868,9 @@ namespace Model
 
     Aws::String m_crawlerSecurityConfiguration;
     bool m_crawlerSecurityConfigurationHasBeenSet;
+
+    LakeFormationConfiguration m_lakeFormationConfiguration;
+    bool m_lakeFormationConfigurationHasBeenSet;
   };
 
 } // namespace Model

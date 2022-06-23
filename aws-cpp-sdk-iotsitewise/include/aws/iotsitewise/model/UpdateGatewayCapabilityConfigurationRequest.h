@@ -75,7 +75,7 @@ namespace Model
 
     /**
      * <p>The namespace of the gateway capability configuration to be updated. For
-     * example, if you configure OPC-UA sources from the AWS IoT SiteWise console, your
+     * example, if you configure OPC-UA sources from the IoT SiteWise console, your
      * OPC-UA capability configuration has the namespace
      * <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a
      * number such as <code>1</code>.</p>
@@ -84,7 +84,7 @@ namespace Model
 
     /**
      * <p>The namespace of the gateway capability configuration to be updated. For
-     * example, if you configure OPC-UA sources from the AWS IoT SiteWise console, your
+     * example, if you configure OPC-UA sources from the IoT SiteWise console, your
      * OPC-UA capability configuration has the namespace
      * <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a
      * number such as <code>1</code>.</p>
@@ -93,7 +93,7 @@ namespace Model
 
     /**
      * <p>The namespace of the gateway capability configuration to be updated. For
-     * example, if you configure OPC-UA sources from the AWS IoT SiteWise console, your
+     * example, if you configure OPC-UA sources from the IoT SiteWise console, your
      * OPC-UA capability configuration has the namespace
      * <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a
      * number such as <code>1</code>.</p>
@@ -102,7 +102,7 @@ namespace Model
 
     /**
      * <p>The namespace of the gateway capability configuration to be updated. For
-     * example, if you configure OPC-UA sources from the AWS IoT SiteWise console, your
+     * example, if you configure OPC-UA sources from the IoT SiteWise console, your
      * OPC-UA capability configuration has the namespace
      * <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a
      * number such as <code>1</code>.</p>
@@ -111,7 +111,7 @@ namespace Model
 
     /**
      * <p>The namespace of the gateway capability configuration to be updated. For
-     * example, if you configure OPC-UA sources from the AWS IoT SiteWise console, your
+     * example, if you configure OPC-UA sources from the IoT SiteWise console, your
      * OPC-UA capability configuration has the namespace
      * <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a
      * number such as <code>1</code>.</p>
@@ -120,7 +120,7 @@ namespace Model
 
     /**
      * <p>The namespace of the gateway capability configuration to be updated. For
-     * example, if you configure OPC-UA sources from the AWS IoT SiteWise console, your
+     * example, if you configure OPC-UA sources from the IoT SiteWise console, your
      * OPC-UA capability configuration has the namespace
      * <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a
      * number such as <code>1</code>.</p>
@@ -129,7 +129,7 @@ namespace Model
 
     /**
      * <p>The namespace of the gateway capability configuration to be updated. For
-     * example, if you configure OPC-UA sources from the AWS IoT SiteWise console, your
+     * example, if you configure OPC-UA sources from the IoT SiteWise console, your
      * OPC-UA capability configuration has the namespace
      * <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a
      * number such as <code>1</code>.</p>
@@ -138,7 +138,7 @@ namespace Model
 
     /**
      * <p>The namespace of the gateway capability configuration to be updated. For
-     * example, if you configure OPC-UA sources from the AWS IoT SiteWise console, your
+     * example, if you configure OPC-UA sources from the IoT SiteWise console, your
      * OPC-UA capability configuration has the namespace
      * <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a
      * number such as <code>1</code>.</p>
@@ -150,7 +150,7 @@ namespace Model
      * <p>The JSON document that defines the configuration for the gateway capability.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring
-     * data sources (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline const Aws::String& GetCapabilityConfiguration() const{ return m_capabilityConfiguration; }
 
@@ -158,7 +158,7 @@ namespace Model
      * <p>The JSON document that defines the configuration for the gateway capability.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring
-     * data sources (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline bool CapabilityConfigurationHasBeenSet() const { return m_capabilityConfigurationHasBeenSet; }
 
@@ -166,7 +166,7 @@ namespace Model
      * <p>The JSON document that defines the configuration for the gateway capability.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring
-     * data sources (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline void SetCapabilityConfiguration(const Aws::String& value) { m_capabilityConfigurationHasBeenSet = true; m_capabilityConfiguration = value; }
 
@@ -174,7 +174,7 @@ namespace Model
      * <p>The JSON document that defines the configuration for the gateway capability.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring
-     * data sources (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline void SetCapabilityConfiguration(Aws::String&& value) { m_capabilityConfigurationHasBeenSet = true; m_capabilityConfiguration = std::move(value); }
 
@@ -182,7 +182,7 @@ namespace Model
      * <p>The JSON document that defines the configuration for the gateway capability.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring
-     * data sources (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline void SetCapabilityConfiguration(const char* value) { m_capabilityConfigurationHasBeenSet = true; m_capabilityConfiguration.assign(value); }
 
@@ -190,7 +190,7 @@ namespace Model
      * <p>The JSON document that defines the configuration for the gateway capability.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring
-     * data sources (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline UpdateGatewayCapabilityConfigurationRequest& WithCapabilityConfiguration(const Aws::String& value) { SetCapabilityConfiguration(value); return *this;}
 
@@ -198,7 +198,7 @@ namespace Model
      * <p>The JSON document that defines the configuration for the gateway capability.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring
-     * data sources (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline UpdateGatewayCapabilityConfigurationRequest& WithCapabilityConfiguration(Aws::String&& value) { SetCapabilityConfiguration(std::move(value)); return *this;}
 
@@ -206,7 +206,7 @@ namespace Model
      * <p>The JSON document that defines the configuration for the gateway capability.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring
-     * data sources (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline UpdateGatewayCapabilityConfigurationRequest& WithCapabilityConfiguration(const char* value) { SetCapabilityConfiguration(value); return *this;}
 

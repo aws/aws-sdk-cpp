@@ -87,18 +87,19 @@ namespace Model
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
      * <code>transit-gateway-attachment-id</code> - The ID of the transit gateway
-     * attachment.</p> </li> <li> <p> <code>local-owner-id</code> - The ID of your AWS
-     * account.</p> </li> <li> <p> <code>remote-owner-id</code> - The ID of the AWS
-     * account in the remote Region that owns the transit gateway.</p> </li> <li> <p>
-     * <code>state</code> - The state of the peering attachment. Valid values are
-     * <code>available</code> | <code>deleted</code> | <code>deleting</code> |
-     * <code>failed</code> | <code>failing</code> | <code>initiatingRequest</code> |
-     * <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> |
-     * <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).</p>
-     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
-     * assigned to the resource. Use the tag key in the filter name and the tag value
-     * as the filter value. For example, to find all resources that have a tag with the
-     * key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * attachment.</p> </li> <li> <p> <code>local-owner-id</code> - The ID of your
+     * Amazon Web Services account.</p> </li> <li> <p> <code>remote-owner-id</code> -
+     * The ID of the Amazon Web Services account in the remote Region that owns the
+     * transit gateway.</p> </li> <li> <p> <code>state</code> - The state of the
+     * peering attachment. Valid values are <code>available</code> |
+     * <code>deleted</code> | <code>deleting</code> | <code>failed</code> |
+     * <code>failing</code> | <code>initiatingRequest</code> | <code>modifying</code> |
+     * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
+     * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
+     * the resource. Use the tag key in the filter name and the tag value as the filter
+     * value. For example, to find all resources that have a tag with the key
+     * <code>Owner</code> and the value <code>TeamA</code>, specify
      * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
      * the resource. Use this filter to find all resources that have a tag with a
@@ -110,18 +111,19 @@ namespace Model
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
      * <code>transit-gateway-attachment-id</code> - The ID of the transit gateway
-     * attachment.</p> </li> <li> <p> <code>local-owner-id</code> - The ID of your AWS
-     * account.</p> </li> <li> <p> <code>remote-owner-id</code> - The ID of the AWS
-     * account in the remote Region that owns the transit gateway.</p> </li> <li> <p>
-     * <code>state</code> - The state of the peering attachment. Valid values are
-     * <code>available</code> | <code>deleted</code> | <code>deleting</code> |
-     * <code>failed</code> | <code>failing</code> | <code>initiatingRequest</code> |
-     * <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> |
-     * <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).</p>
-     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
-     * assigned to the resource. Use the tag key in the filter name and the tag value
-     * as the filter value. For example, to find all resources that have a tag with the
-     * key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * attachment.</p> </li> <li> <p> <code>local-owner-id</code> - The ID of your
+     * Amazon Web Services account.</p> </li> <li> <p> <code>remote-owner-id</code> -
+     * The ID of the Amazon Web Services account in the remote Region that owns the
+     * transit gateway.</p> </li> <li> <p> <code>state</code> - The state of the
+     * peering attachment. Valid values are <code>available</code> |
+     * <code>deleted</code> | <code>deleting</code> | <code>failed</code> |
+     * <code>failing</code> | <code>initiatingRequest</code> | <code>modifying</code> |
+     * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
+     * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
+     * the resource. Use the tag key in the filter name and the tag value as the filter
+     * value. For example, to find all resources that have a tag with the key
+     * <code>Owner</code> and the value <code>TeamA</code>, specify
      * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
      * the resource. Use this filter to find all resources that have a tag with a
@@ -133,18 +135,19 @@ namespace Model
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
      * <code>transit-gateway-attachment-id</code> - The ID of the transit gateway
-     * attachment.</p> </li> <li> <p> <code>local-owner-id</code> - The ID of your AWS
-     * account.</p> </li> <li> <p> <code>remote-owner-id</code> - The ID of the AWS
-     * account in the remote Region that owns the transit gateway.</p> </li> <li> <p>
-     * <code>state</code> - The state of the peering attachment. Valid values are
-     * <code>available</code> | <code>deleted</code> | <code>deleting</code> |
-     * <code>failed</code> | <code>failing</code> | <code>initiatingRequest</code> |
-     * <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> |
-     * <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).</p>
-     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
-     * assigned to the resource. Use the tag key in the filter name and the tag value
-     * as the filter value. For example, to find all resources that have a tag with the
-     * key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * attachment.</p> </li> <li> <p> <code>local-owner-id</code> - The ID of your
+     * Amazon Web Services account.</p> </li> <li> <p> <code>remote-owner-id</code> -
+     * The ID of the Amazon Web Services account in the remote Region that owns the
+     * transit gateway.</p> </li> <li> <p> <code>state</code> - The state of the
+     * peering attachment. Valid values are <code>available</code> |
+     * <code>deleted</code> | <code>deleting</code> | <code>failed</code> |
+     * <code>failing</code> | <code>initiatingRequest</code> | <code>modifying</code> |
+     * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
+     * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
+     * the resource. Use the tag key in the filter name and the tag value as the filter
+     * value. For example, to find all resources that have a tag with the key
+     * <code>Owner</code> and the value <code>TeamA</code>, specify
      * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
      * the resource. Use this filter to find all resources that have a tag with a
@@ -156,18 +159,19 @@ namespace Model
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
      * <code>transit-gateway-attachment-id</code> - The ID of the transit gateway
-     * attachment.</p> </li> <li> <p> <code>local-owner-id</code> - The ID of your AWS
-     * account.</p> </li> <li> <p> <code>remote-owner-id</code> - The ID of the AWS
-     * account in the remote Region that owns the transit gateway.</p> </li> <li> <p>
-     * <code>state</code> - The state of the peering attachment. Valid values are
-     * <code>available</code> | <code>deleted</code> | <code>deleting</code> |
-     * <code>failed</code> | <code>failing</code> | <code>initiatingRequest</code> |
-     * <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> |
-     * <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).</p>
-     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
-     * assigned to the resource. Use the tag key in the filter name and the tag value
-     * as the filter value. For example, to find all resources that have a tag with the
-     * key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * attachment.</p> </li> <li> <p> <code>local-owner-id</code> - The ID of your
+     * Amazon Web Services account.</p> </li> <li> <p> <code>remote-owner-id</code> -
+     * The ID of the Amazon Web Services account in the remote Region that owns the
+     * transit gateway.</p> </li> <li> <p> <code>state</code> - The state of the
+     * peering attachment. Valid values are <code>available</code> |
+     * <code>deleted</code> | <code>deleting</code> | <code>failed</code> |
+     * <code>failing</code> | <code>initiatingRequest</code> | <code>modifying</code> |
+     * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
+     * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
+     * the resource. Use the tag key in the filter name and the tag value as the filter
+     * value. For example, to find all resources that have a tag with the key
+     * <code>Owner</code> and the value <code>TeamA</code>, specify
      * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
      * the resource. Use this filter to find all resources that have a tag with a
@@ -179,18 +183,19 @@ namespace Model
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
      * <code>transit-gateway-attachment-id</code> - The ID of the transit gateway
-     * attachment.</p> </li> <li> <p> <code>local-owner-id</code> - The ID of your AWS
-     * account.</p> </li> <li> <p> <code>remote-owner-id</code> - The ID of the AWS
-     * account in the remote Region that owns the transit gateway.</p> </li> <li> <p>
-     * <code>state</code> - The state of the peering attachment. Valid values are
-     * <code>available</code> | <code>deleted</code> | <code>deleting</code> |
-     * <code>failed</code> | <code>failing</code> | <code>initiatingRequest</code> |
-     * <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> |
-     * <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).</p>
-     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
-     * assigned to the resource. Use the tag key in the filter name and the tag value
-     * as the filter value. For example, to find all resources that have a tag with the
-     * key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * attachment.</p> </li> <li> <p> <code>local-owner-id</code> - The ID of your
+     * Amazon Web Services account.</p> </li> <li> <p> <code>remote-owner-id</code> -
+     * The ID of the Amazon Web Services account in the remote Region that owns the
+     * transit gateway.</p> </li> <li> <p> <code>state</code> - The state of the
+     * peering attachment. Valid values are <code>available</code> |
+     * <code>deleted</code> | <code>deleting</code> | <code>failed</code> |
+     * <code>failing</code> | <code>initiatingRequest</code> | <code>modifying</code> |
+     * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
+     * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
+     * the resource. Use the tag key in the filter name and the tag value as the filter
+     * value. For example, to find all resources that have a tag with the key
+     * <code>Owner</code> and the value <code>TeamA</code>, specify
      * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
      * the resource. Use this filter to find all resources that have a tag with a
@@ -202,18 +207,19 @@ namespace Model
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
      * <code>transit-gateway-attachment-id</code> - The ID of the transit gateway
-     * attachment.</p> </li> <li> <p> <code>local-owner-id</code> - The ID of your AWS
-     * account.</p> </li> <li> <p> <code>remote-owner-id</code> - The ID of the AWS
-     * account in the remote Region that owns the transit gateway.</p> </li> <li> <p>
-     * <code>state</code> - The state of the peering attachment. Valid values are
-     * <code>available</code> | <code>deleted</code> | <code>deleting</code> |
-     * <code>failed</code> | <code>failing</code> | <code>initiatingRequest</code> |
-     * <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> |
-     * <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).</p>
-     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
-     * assigned to the resource. Use the tag key in the filter name and the tag value
-     * as the filter value. For example, to find all resources that have a tag with the
-     * key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * attachment.</p> </li> <li> <p> <code>local-owner-id</code> - The ID of your
+     * Amazon Web Services account.</p> </li> <li> <p> <code>remote-owner-id</code> -
+     * The ID of the Amazon Web Services account in the remote Region that owns the
+     * transit gateway.</p> </li> <li> <p> <code>state</code> - The state of the
+     * peering attachment. Valid values are <code>available</code> |
+     * <code>deleted</code> | <code>deleting</code> | <code>failed</code> |
+     * <code>failing</code> | <code>initiatingRequest</code> | <code>modifying</code> |
+     * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
+     * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
+     * the resource. Use the tag key in the filter name and the tag value as the filter
+     * value. For example, to find all resources that have a tag with the key
+     * <code>Owner</code> and the value <code>TeamA</code>, specify
      * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
      * the resource. Use this filter to find all resources that have a tag with a
@@ -225,18 +231,19 @@ namespace Model
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
      * <code>transit-gateway-attachment-id</code> - The ID of the transit gateway
-     * attachment.</p> </li> <li> <p> <code>local-owner-id</code> - The ID of your AWS
-     * account.</p> </li> <li> <p> <code>remote-owner-id</code> - The ID of the AWS
-     * account in the remote Region that owns the transit gateway.</p> </li> <li> <p>
-     * <code>state</code> - The state of the peering attachment. Valid values are
-     * <code>available</code> | <code>deleted</code> | <code>deleting</code> |
-     * <code>failed</code> | <code>failing</code> | <code>initiatingRequest</code> |
-     * <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> |
-     * <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).</p>
-     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
-     * assigned to the resource. Use the tag key in the filter name and the tag value
-     * as the filter value. For example, to find all resources that have a tag with the
-     * key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * attachment.</p> </li> <li> <p> <code>local-owner-id</code> - The ID of your
+     * Amazon Web Services account.</p> </li> <li> <p> <code>remote-owner-id</code> -
+     * The ID of the Amazon Web Services account in the remote Region that owns the
+     * transit gateway.</p> </li> <li> <p> <code>state</code> - The state of the
+     * peering attachment. Valid values are <code>available</code> |
+     * <code>deleted</code> | <code>deleting</code> | <code>failed</code> |
+     * <code>failing</code> | <code>initiatingRequest</code> | <code>modifying</code> |
+     * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
+     * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
+     * the resource. Use the tag key in the filter name and the tag value as the filter
+     * value. For example, to find all resources that have a tag with the key
+     * <code>Owner</code> and the value <code>TeamA</code>, specify
      * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
      * the resource. Use this filter to find all resources that have a tag with a
@@ -248,18 +255,19 @@ namespace Model
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
      * <code>transit-gateway-attachment-id</code> - The ID of the transit gateway
-     * attachment.</p> </li> <li> <p> <code>local-owner-id</code> - The ID of your AWS
-     * account.</p> </li> <li> <p> <code>remote-owner-id</code> - The ID of the AWS
-     * account in the remote Region that owns the transit gateway.</p> </li> <li> <p>
-     * <code>state</code> - The state of the peering attachment. Valid values are
-     * <code>available</code> | <code>deleted</code> | <code>deleting</code> |
-     * <code>failed</code> | <code>failing</code> | <code>initiatingRequest</code> |
-     * <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> |
-     * <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).</p>
-     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
-     * assigned to the resource. Use the tag key in the filter name and the tag value
-     * as the filter value. For example, to find all resources that have a tag with the
-     * key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * attachment.</p> </li> <li> <p> <code>local-owner-id</code> - The ID of your
+     * Amazon Web Services account.</p> </li> <li> <p> <code>remote-owner-id</code> -
+     * The ID of the Amazon Web Services account in the remote Region that owns the
+     * transit gateway.</p> </li> <li> <p> <code>state</code> - The state of the
+     * peering attachment. Valid values are <code>available</code> |
+     * <code>deleted</code> | <code>deleting</code> | <code>failed</code> |
+     * <code>failing</code> | <code>initiatingRequest</code> | <code>modifying</code> |
+     * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
+     * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
+     * the resource. Use the tag key in the filter name and the tag value as the filter
+     * value. For example, to find all resources that have a tag with the key
+     * <code>Owner</code> and the value <code>TeamA</code>, specify
      * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
      * the resource. Use this filter to find all resources that have a tag with a

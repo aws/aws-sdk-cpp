@@ -10,6 +10,7 @@
 #include <aws/s3control/model/VpcConfiguration.h>
 #include <aws/s3control/model/PublicAccessBlockConfiguration.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -166,31 +167,41 @@ namespace Model
 
     /**
      * <p>Contains the virtual private cloud (VPC) configuration for the specified
-     * access point.</p>
+     * access point.</p>  <p>This element is empty if this access point is an
+     * Amazon S3 on Outposts access point that is used by other Amazon Web
+     * Services.</p> 
      */
     inline const VpcConfiguration& GetVpcConfiguration() const{ return m_vpcConfiguration; }
 
     /**
      * <p>Contains the virtual private cloud (VPC) configuration for the specified
-     * access point.</p>
+     * access point.</p>  <p>This element is empty if this access point is an
+     * Amazon S3 on Outposts access point that is used by other Amazon Web
+     * Services.</p> 
      */
     inline void SetVpcConfiguration(const VpcConfiguration& value) { m_vpcConfiguration = value; }
 
     /**
      * <p>Contains the virtual private cloud (VPC) configuration for the specified
-     * access point.</p>
+     * access point.</p>  <p>This element is empty if this access point is an
+     * Amazon S3 on Outposts access point that is used by other Amazon Web
+     * Services.</p> 
      */
     inline void SetVpcConfiguration(VpcConfiguration&& value) { m_vpcConfiguration = std::move(value); }
 
     /**
      * <p>Contains the virtual private cloud (VPC) configuration for the specified
-     * access point.</p>
+     * access point.</p>  <p>This element is empty if this access point is an
+     * Amazon S3 on Outposts access point that is used by other Amazon Web
+     * Services.</p> 
      */
     inline GetAccessPointResult& WithVpcConfiguration(const VpcConfiguration& value) { SetVpcConfiguration(value); return *this;}
 
     /**
      * <p>Contains the virtual private cloud (VPC) configuration for the specified
-     * access point.</p>
+     * access point.</p>  <p>This element is empty if this access point is an
+     * Amazon S3 on Outposts access point that is used by other Amazon Web
+     * Services.</p> 
      */
     inline GetAccessPointResult& WithVpcConfiguration(VpcConfiguration&& value) { SetVpcConfiguration(std::move(value)); return *this;}
 
@@ -236,6 +247,139 @@ namespace Model
      */
     inline GetAccessPointResult& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The name or alias of the access point.</p>
+     */
+    inline const Aws::String& GetAlias() const{ return m_alias; }
+
+    /**
+     * <p>The name or alias of the access point.</p>
+     */
+    inline void SetAlias(const Aws::String& value) { m_alias = value; }
+
+    /**
+     * <p>The name or alias of the access point.</p>
+     */
+    inline void SetAlias(Aws::String&& value) { m_alias = std::move(value); }
+
+    /**
+     * <p>The name or alias of the access point.</p>
+     */
+    inline void SetAlias(const char* value) { m_alias.assign(value); }
+
+    /**
+     * <p>The name or alias of the access point.</p>
+     */
+    inline GetAccessPointResult& WithAlias(const Aws::String& value) { SetAlias(value); return *this;}
+
+    /**
+     * <p>The name or alias of the access point.</p>
+     */
+    inline GetAccessPointResult& WithAlias(Aws::String&& value) { SetAlias(std::move(value)); return *this;}
+
+    /**
+     * <p>The name or alias of the access point.</p>
+     */
+    inline GetAccessPointResult& WithAlias(const char* value) { SetAlias(value); return *this;}
+
+
+    /**
+     * <p>The ARN of the access point.</p>
+     */
+    inline const Aws::String& GetAccessPointArn() const{ return m_accessPointArn; }
+
+    /**
+     * <p>The ARN of the access point.</p>
+     */
+    inline void SetAccessPointArn(const Aws::String& value) { m_accessPointArn = value; }
+
+    /**
+     * <p>The ARN of the access point.</p>
+     */
+    inline void SetAccessPointArn(Aws::String&& value) { m_accessPointArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the access point.</p>
+     */
+    inline void SetAccessPointArn(const char* value) { m_accessPointArn.assign(value); }
+
+    /**
+     * <p>The ARN of the access point.</p>
+     */
+    inline GetAccessPointResult& WithAccessPointArn(const Aws::String& value) { SetAccessPointArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the access point.</p>
+     */
+    inline GetAccessPointResult& WithAccessPointArn(Aws::String&& value) { SetAccessPointArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the access point.</p>
+     */
+    inline GetAccessPointResult& WithAccessPointArn(const char* value) { SetAccessPointArn(value); return *this;}
+
+
+    /**
+     * <p>The VPC endpoint for the access point.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetEndpoints() const{ return m_endpoints; }
+
+    /**
+     * <p>The VPC endpoint for the access point.</p>
+     */
+    inline void SetEndpoints(const Aws::Map<Aws::String, Aws::String>& value) { m_endpoints = value; }
+
+    /**
+     * <p>The VPC endpoint for the access point.</p>
+     */
+    inline void SetEndpoints(Aws::Map<Aws::String, Aws::String>&& value) { m_endpoints = std::move(value); }
+
+    /**
+     * <p>The VPC endpoint for the access point.</p>
+     */
+    inline GetAccessPointResult& WithEndpoints(const Aws::Map<Aws::String, Aws::String>& value) { SetEndpoints(value); return *this;}
+
+    /**
+     * <p>The VPC endpoint for the access point.</p>
+     */
+    inline GetAccessPointResult& WithEndpoints(Aws::Map<Aws::String, Aws::String>&& value) { SetEndpoints(std::move(value)); return *this;}
+
+    /**
+     * <p>The VPC endpoint for the access point.</p>
+     */
+    inline GetAccessPointResult& AddEndpoints(const Aws::String& key, const Aws::String& value) { m_endpoints.emplace(key, value); return *this; }
+
+    /**
+     * <p>The VPC endpoint for the access point.</p>
+     */
+    inline GetAccessPointResult& AddEndpoints(Aws::String&& key, const Aws::String& value) { m_endpoints.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The VPC endpoint for the access point.</p>
+     */
+    inline GetAccessPointResult& AddEndpoints(const Aws::String& key, Aws::String&& value) { m_endpoints.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The VPC endpoint for the access point.</p>
+     */
+    inline GetAccessPointResult& AddEndpoints(Aws::String&& key, Aws::String&& value) { m_endpoints.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The VPC endpoint for the access point.</p>
+     */
+    inline GetAccessPointResult& AddEndpoints(const char* key, Aws::String&& value) { m_endpoints.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The VPC endpoint for the access point.</p>
+     */
+    inline GetAccessPointResult& AddEndpoints(Aws::String&& key, const char* value) { m_endpoints.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The VPC endpoint for the access point.</p>
+     */
+    inline GetAccessPointResult& AddEndpoints(const char* key, const char* value) { m_endpoints.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_name;
@@ -249,6 +393,12 @@ namespace Model
     PublicAccessBlockConfiguration m_publicAccessBlockConfiguration;
 
     Aws::Utils::DateTime m_creationDate;
+
+    Aws::String m_alias;
+
+    Aws::String m_accessPointArn;
+
+    Aws::Map<Aws::String, Aws::String> m_endpoints;
   };
 
 } // namespace Model

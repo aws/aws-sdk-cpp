@@ -25,10 +25,9 @@ namespace Model
 
   /**
    * <p>A structure that represents user-provided metadata that can be associated
-   * with a resource such as an IAM user or role. For more information about tagging,
-   * see <a
+   * with an IAM resource. For more information about tagging, see <a
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
-   * Identities</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * resources</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/Tag">AWS API
    * Reference</a></p>
    */
@@ -106,10 +105,10 @@ namespace Model
      * <code>Accounting</code>, and <code>Support</code>. Tags with a key name of
      * <code>Cost Center</code> might have values that consist of the number associated
      * with the different cost centers in your company. Typically, many resources have
-     * tags with the same key name but with different values.</p>  <p>AWS always
-     * interprets the tag <code>Value</code> as a single string. If you need to store
-     * an array, you can store comma-separated values in the string. However, you must
-     * interpret the value in your code.</p> 
+     * tags with the same key name but with different values.</p>  <p>Amazon Web
+     * Services always interprets the tag <code>Value</code> as a single string. If you
+     * need to store an array, you can store comma-separated values in the string.
+     * However, you must interpret the value in your code.</p> 
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
@@ -119,10 +118,10 @@ namespace Model
      * <code>Accounting</code>, and <code>Support</code>. Tags with a key name of
      * <code>Cost Center</code> might have values that consist of the number associated
      * with the different cost centers in your company. Typically, many resources have
-     * tags with the same key name but with different values.</p>  <p>AWS always
-     * interprets the tag <code>Value</code> as a single string. If you need to store
-     * an array, you can store comma-separated values in the string. However, you must
-     * interpret the value in your code.</p> 
+     * tags with the same key name but with different values.</p>  <p>Amazon Web
+     * Services always interprets the tag <code>Value</code> as a single string. If you
+     * need to store an array, you can store comma-separated values in the string.
+     * However, you must interpret the value in your code.</p> 
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
@@ -132,10 +131,10 @@ namespace Model
      * <code>Accounting</code>, and <code>Support</code>. Tags with a key name of
      * <code>Cost Center</code> might have values that consist of the number associated
      * with the different cost centers in your company. Typically, many resources have
-     * tags with the same key name but with different values.</p>  <p>AWS always
-     * interprets the tag <code>Value</code> as a single string. If you need to store
-     * an array, you can store comma-separated values in the string. However, you must
-     * interpret the value in your code.</p> 
+     * tags with the same key name but with different values.</p>  <p>Amazon Web
+     * Services always interprets the tag <code>Value</code> as a single string. If you
+     * need to store an array, you can store comma-separated values in the string.
+     * However, you must interpret the value in your code.</p> 
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
@@ -145,10 +144,10 @@ namespace Model
      * <code>Accounting</code>, and <code>Support</code>. Tags with a key name of
      * <code>Cost Center</code> might have values that consist of the number associated
      * with the different cost centers in your company. Typically, many resources have
-     * tags with the same key name but with different values.</p>  <p>AWS always
-     * interprets the tag <code>Value</code> as a single string. If you need to store
-     * an array, you can store comma-separated values in the string. However, you must
-     * interpret the value in your code.</p> 
+     * tags with the same key name but with different values.</p>  <p>Amazon Web
+     * Services always interprets the tag <code>Value</code> as a single string. If you
+     * need to store an array, you can store comma-separated values in the string.
+     * However, you must interpret the value in your code.</p> 
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
@@ -158,10 +157,10 @@ namespace Model
      * <code>Accounting</code>, and <code>Support</code>. Tags with a key name of
      * <code>Cost Center</code> might have values that consist of the number associated
      * with the different cost centers in your company. Typically, many resources have
-     * tags with the same key name but with different values.</p>  <p>AWS always
-     * interprets the tag <code>Value</code> as a single string. If you need to store
-     * an array, you can store comma-separated values in the string. However, you must
-     * interpret the value in your code.</p> 
+     * tags with the same key name but with different values.</p>  <p>Amazon Web
+     * Services always interprets the tag <code>Value</code> as a single string. If you
+     * need to store an array, you can store comma-separated values in the string.
+     * However, you must interpret the value in your code.</p> 
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
@@ -171,10 +170,10 @@ namespace Model
      * <code>Accounting</code>, and <code>Support</code>. Tags with a key name of
      * <code>Cost Center</code> might have values that consist of the number associated
      * with the different cost centers in your company. Typically, many resources have
-     * tags with the same key name but with different values.</p>  <p>AWS always
-     * interprets the tag <code>Value</code> as a single string. If you need to store
-     * an array, you can store comma-separated values in the string. However, you must
-     * interpret the value in your code.</p> 
+     * tags with the same key name but with different values.</p>  <p>Amazon Web
+     * Services always interprets the tag <code>Value</code> as a single string. If you
+     * need to store an array, you can store comma-separated values in the string.
+     * However, you must interpret the value in your code.</p> 
      */
     inline Tag& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
@@ -184,10 +183,10 @@ namespace Model
      * <code>Accounting</code>, and <code>Support</code>. Tags with a key name of
      * <code>Cost Center</code> might have values that consist of the number associated
      * with the different cost centers in your company. Typically, many resources have
-     * tags with the same key name but with different values.</p>  <p>AWS always
-     * interprets the tag <code>Value</code> as a single string. If you need to store
-     * an array, you can store comma-separated values in the string. However, you must
-     * interpret the value in your code.</p> 
+     * tags with the same key name but with different values.</p>  <p>Amazon Web
+     * Services always interprets the tag <code>Value</code> as a single string. If you
+     * need to store an array, you can store comma-separated values in the string.
+     * However, you must interpret the value in your code.</p> 
      */
     inline Tag& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
@@ -197,10 +196,10 @@ namespace Model
      * <code>Accounting</code>, and <code>Support</code>. Tags with a key name of
      * <code>Cost Center</code> might have values that consist of the number associated
      * with the different cost centers in your company. Typically, many resources have
-     * tags with the same key name but with different values.</p>  <p>AWS always
-     * interprets the tag <code>Value</code> as a single string. If you need to store
-     * an array, you can store comma-separated values in the string. However, you must
-     * interpret the value in your code.</p> 
+     * tags with the same key name but with different values.</p>  <p>Amazon Web
+     * Services always interprets the tag <code>Value</code> as a single string. If you
+     * need to store an array, you can store comma-separated values in the string.
+     * However, you must interpret the value in your code.</p> 
      */
     inline Tag& WithValue(const char* value) { SetValue(value); return *this;}
 

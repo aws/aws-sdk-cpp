@@ -26,8 +26,10 @@ namespace Model
 {
 
   /**
-   * <p>Provides aggregated data for a usage metric. The value for the metric reports
-   * usage data for an account during the past 30 days.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides aggregated data for an Amazon Macie usage metric. The value for the
+   * metric reports estimated usage data for an account for the preceding 30 days or
+   * the current calendar month to date, depending on the time period (timeRange)
+   * specified in the request.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UsageTotal">AWS
    * API Reference</a></p>
    */
@@ -120,43 +122,43 @@ namespace Model
 
     /**
      * <p>The name of the metric. Possible values are: DATA_INVENTORY_EVALUATION, for
-     * monitoring S3 buckets; and, SENSITIVE_DATA_DISCOVERY, for analyzing sensitive
-     * data.</p>
+     * monitoring S3 buckets; and, SENSITIVE_DATA_DISCOVERY, for analyzing S3 objects
+     * to detect sensitive data.</p>
      */
     inline const UsageType& GetType() const{ return m_type; }
 
     /**
      * <p>The name of the metric. Possible values are: DATA_INVENTORY_EVALUATION, for
-     * monitoring S3 buckets; and, SENSITIVE_DATA_DISCOVERY, for analyzing sensitive
-     * data.</p>
+     * monitoring S3 buckets; and, SENSITIVE_DATA_DISCOVERY, for analyzing S3 objects
+     * to detect sensitive data.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The name of the metric. Possible values are: DATA_INVENTORY_EVALUATION, for
-     * monitoring S3 buckets; and, SENSITIVE_DATA_DISCOVERY, for analyzing sensitive
-     * data.</p>
+     * monitoring S3 buckets; and, SENSITIVE_DATA_DISCOVERY, for analyzing S3 objects
+     * to detect sensitive data.</p>
      */
     inline void SetType(const UsageType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p>The name of the metric. Possible values are: DATA_INVENTORY_EVALUATION, for
-     * monitoring S3 buckets; and, SENSITIVE_DATA_DISCOVERY, for analyzing sensitive
-     * data.</p>
+     * monitoring S3 buckets; and, SENSITIVE_DATA_DISCOVERY, for analyzing S3 objects
+     * to detect sensitive data.</p>
      */
     inline void SetType(UsageType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The name of the metric. Possible values are: DATA_INVENTORY_EVALUATION, for
-     * monitoring S3 buckets; and, SENSITIVE_DATA_DISCOVERY, for analyzing sensitive
-     * data.</p>
+     * monitoring S3 buckets; and, SENSITIVE_DATA_DISCOVERY, for analyzing S3 objects
+     * to detect sensitive data.</p>
      */
     inline UsageTotal& WithType(const UsageType& value) { SetType(value); return *this;}
 
     /**
      * <p>The name of the metric. Possible values are: DATA_INVENTORY_EVALUATION, for
-     * monitoring S3 buckets; and, SENSITIVE_DATA_DISCOVERY, for analyzing sensitive
-     * data.</p>
+     * monitoring S3 buckets; and, SENSITIVE_DATA_DISCOVERY, for analyzing S3 objects
+     * to detect sensitive data.</p>
      */
     inline UsageTotal& WithType(UsageType&& value) { SetType(std::move(value)); return *this;}
 

@@ -74,42 +74,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the environment you wnat to get.</p>
+     * <p>The ID of the environment that you want to get.</p>
      */
     inline const Aws::String& GetEnvironmentId() const{ return m_environmentId; }
 
     /**
-     * <p>The ID of the environment you wnat to get.</p>
+     * <p>The ID of the environment that you want to get.</p>
      */
     inline bool EnvironmentIdHasBeenSet() const { return m_environmentIdHasBeenSet; }
 
     /**
-     * <p>The ID of the environment you wnat to get.</p>
+     * <p>The ID of the environment that you want to get.</p>
      */
     inline void SetEnvironmentId(const Aws::String& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
 
     /**
-     * <p>The ID of the environment you wnat to get.</p>
+     * <p>The ID of the environment that you want to get.</p>
      */
     inline void SetEnvironmentId(Aws::String&& value) { m_environmentIdHasBeenSet = true; m_environmentId = std::move(value); }
 
     /**
-     * <p>The ID of the environment you wnat to get.</p>
+     * <p>The ID of the environment that you want to get.</p>
      */
     inline void SetEnvironmentId(const char* value) { m_environmentIdHasBeenSet = true; m_environmentId.assign(value); }
 
     /**
-     * <p>The ID of the environment you wnat to get.</p>
+     * <p>The ID of the environment that you want to get.</p>
      */
     inline GetEnvironmentRequest& WithEnvironmentId(const Aws::String& value) { SetEnvironmentId(value); return *this;}
 
     /**
-     * <p>The ID of the environment you wnat to get.</p>
+     * <p>The ID of the environment that you want to get.</p>
      */
     inline GetEnvironmentRequest& WithEnvironmentId(Aws::String&& value) { SetEnvironmentId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the environment you wnat to get.</p>
+     * <p>The ID of the environment that you want to get.</p>
      */
     inline GetEnvironmentRequest& WithEnvironmentId(const char* value) { SetEnvironmentId(value); return *this;}
 

@@ -35,32 +35,32 @@ namespace Model
 
 
     /**
-     * <p>The details for the account to associate with the master account.</p>
+     * <p>The details of the account to associate with the administrator account.</p>
      */
     inline const AccountDetail& GetAccount() const{ return m_account; }
 
     /**
-     * <p>The details for the account to associate with the master account.</p>
+     * <p>The details of the account to associate with the administrator account.</p>
      */
     inline bool AccountHasBeenSet() const { return m_accountHasBeenSet; }
 
     /**
-     * <p>The details for the account to associate with the master account.</p>
+     * <p>The details of the account to associate with the administrator account.</p>
      */
     inline void SetAccount(const AccountDetail& value) { m_accountHasBeenSet = true; m_account = value; }
 
     /**
-     * <p>The details for the account to associate with the master account.</p>
+     * <p>The details of the account to associate with the administrator account.</p>
      */
     inline void SetAccount(AccountDetail&& value) { m_accountHasBeenSet = true; m_account = std::move(value); }
 
     /**
-     * <p>The details for the account to associate with the master account.</p>
+     * <p>The details of the account to associate with the administrator account.</p>
      */
     inline CreateMemberRequest& WithAccount(const AccountDetail& value) { SetAccount(value); return *this;}
 
     /**
-     * <p>The details for the account to associate with the master account.</p>
+     * <p>The details of the account to associate with the administrator account.</p>
      */
     inline CreateMemberRequest& WithAccount(AccountDetail&& value) { SetAccount(std::move(value)); return *this;}
 

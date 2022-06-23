@@ -35,44 +35,44 @@ namespace Model
 
 
     /**
-     * <p>The list of workgroups, including their names, descriptions, creation times,
-     * and states.</p>
+     * <p>A list of <a>WorkGroupSummary</a> objects that include the names,
+     * descriptions, creation times, and states for each workgroup.</p>
      */
     inline const Aws::Vector<WorkGroupSummary>& GetWorkGroups() const{ return m_workGroups; }
 
     /**
-     * <p>The list of workgroups, including their names, descriptions, creation times,
-     * and states.</p>
+     * <p>A list of <a>WorkGroupSummary</a> objects that include the names,
+     * descriptions, creation times, and states for each workgroup.</p>
      */
     inline void SetWorkGroups(const Aws::Vector<WorkGroupSummary>& value) { m_workGroups = value; }
 
     /**
-     * <p>The list of workgroups, including their names, descriptions, creation times,
-     * and states.</p>
+     * <p>A list of <a>WorkGroupSummary</a> objects that include the names,
+     * descriptions, creation times, and states for each workgroup.</p>
      */
     inline void SetWorkGroups(Aws::Vector<WorkGroupSummary>&& value) { m_workGroups = std::move(value); }
 
     /**
-     * <p>The list of workgroups, including their names, descriptions, creation times,
-     * and states.</p>
+     * <p>A list of <a>WorkGroupSummary</a> objects that include the names,
+     * descriptions, creation times, and states for each workgroup.</p>
      */
     inline ListWorkGroupsResult& WithWorkGroups(const Aws::Vector<WorkGroupSummary>& value) { SetWorkGroups(value); return *this;}
 
     /**
-     * <p>The list of workgroups, including their names, descriptions, creation times,
-     * and states.</p>
+     * <p>A list of <a>WorkGroupSummary</a> objects that include the names,
+     * descriptions, creation times, and states for each workgroup.</p>
      */
     inline ListWorkGroupsResult& WithWorkGroups(Aws::Vector<WorkGroupSummary>&& value) { SetWorkGroups(std::move(value)); return *this;}
 
     /**
-     * <p>The list of workgroups, including their names, descriptions, creation times,
-     * and states.</p>
+     * <p>A list of <a>WorkGroupSummary</a> objects that include the names,
+     * descriptions, creation times, and states for each workgroup.</p>
      */
     inline ListWorkGroupsResult& AddWorkGroups(const WorkGroupSummary& value) { m_workGroups.push_back(value); return *this; }
 
     /**
-     * <p>The list of workgroups, including their names, descriptions, creation times,
-     * and states.</p>
+     * <p>A list of <a>WorkGroupSummary</a> objects that include the names,
+     * descriptions, creation times, and states for each workgroup.</p>
      */
     inline ListWorkGroupsResult& AddWorkGroups(WorkGroupSummary&& value) { m_workGroups.push_back(std::move(value)); return *this; }
 

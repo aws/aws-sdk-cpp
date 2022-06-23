@@ -14,7 +14,6 @@ using namespace Aws::Utils;
 
 UpdateAttributeGroupRequest::UpdateAttributeGroupRequest() : 
     m_attributeGroupHasBeenSet(false),
-    m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_attributesHasBeenSet(false)
 {
@@ -23,12 +22,6 @@ UpdateAttributeGroupRequest::UpdateAttributeGroupRequest() :
 Aws::String UpdateAttributeGroupRequest::SerializePayload() const
 {
   JsonValue payload;
-
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
-  }
 
   if(m_descriptionHasBeenSet)
   {

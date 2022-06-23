@@ -69,80 +69,80 @@ namespace Model
 
 
     /**
-     * <p>The ID for the dataset that you want to create. This ID is unique per AWS
-     * Region for each AWS account.</p>
+     * <p>The ID for the dataset that you want to create. This ID is unique per Amazon
+     * Web Services Region for each Amazon Web Services account.</p>
      */
     inline const Aws::String& GetDataSetId() const{ return m_dataSetId; }
 
     /**
-     * <p>The ID for the dataset that you want to create. This ID is unique per AWS
-     * Region for each AWS account.</p>
+     * <p>The ID for the dataset that you want to create. This ID is unique per Amazon
+     * Web Services Region for each Amazon Web Services account.</p>
      */
     inline void SetDataSetId(const Aws::String& value) { m_dataSetId = value; }
 
     /**
-     * <p>The ID for the dataset that you want to create. This ID is unique per AWS
-     * Region for each AWS account.</p>
+     * <p>The ID for the dataset that you want to create. This ID is unique per Amazon
+     * Web Services Region for each Amazon Web Services account.</p>
      */
     inline void SetDataSetId(Aws::String&& value) { m_dataSetId = std::move(value); }
 
     /**
-     * <p>The ID for the dataset that you want to create. This ID is unique per AWS
-     * Region for each AWS account.</p>
+     * <p>The ID for the dataset that you want to create. This ID is unique per Amazon
+     * Web Services Region for each Amazon Web Services account.</p>
      */
     inline void SetDataSetId(const char* value) { m_dataSetId.assign(value); }
 
     /**
-     * <p>The ID for the dataset that you want to create. This ID is unique per AWS
-     * Region for each AWS account.</p>
+     * <p>The ID for the dataset that you want to create. This ID is unique per Amazon
+     * Web Services Region for each Amazon Web Services account.</p>
      */
     inline DeleteDataSetResult& WithDataSetId(const Aws::String& value) { SetDataSetId(value); return *this;}
 
     /**
-     * <p>The ID for the dataset that you want to create. This ID is unique per AWS
-     * Region for each AWS account.</p>
+     * <p>The ID for the dataset that you want to create. This ID is unique per Amazon
+     * Web Services Region for each Amazon Web Services account.</p>
      */
     inline DeleteDataSetResult& WithDataSetId(Aws::String&& value) { SetDataSetId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID for the dataset that you want to create. This ID is unique per AWS
-     * Region for each AWS account.</p>
+     * <p>The ID for the dataset that you want to create. This ID is unique per Amazon
+     * Web Services Region for each Amazon Web Services account.</p>
      */
     inline DeleteDataSetResult& WithDataSetId(const char* value) { SetDataSetId(value); return *this;}
 
 
     /**
-     * <p>The AWS request ID for this operation.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
     /**
-     * <p>The AWS request ID for this operation.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
 
     /**
-     * <p>The AWS request ID for this operation.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
 
     /**
-     * <p>The AWS request ID for this operation.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
 
     /**
-     * <p>The AWS request ID for this operation.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline DeleteDataSetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
 
     /**
-     * <p>The AWS request ID for this operation.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline DeleteDataSetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS request ID for this operation.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline DeleteDataSetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
 

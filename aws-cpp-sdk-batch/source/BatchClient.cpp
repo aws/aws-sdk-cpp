@@ -23,14 +23,18 @@
 #include <aws/batch/model/CancelJobRequest.h>
 #include <aws/batch/model/CreateComputeEnvironmentRequest.h>
 #include <aws/batch/model/CreateJobQueueRequest.h>
+#include <aws/batch/model/CreateSchedulingPolicyRequest.h>
 #include <aws/batch/model/DeleteComputeEnvironmentRequest.h>
 #include <aws/batch/model/DeleteJobQueueRequest.h>
+#include <aws/batch/model/DeleteSchedulingPolicyRequest.h>
 #include <aws/batch/model/DeregisterJobDefinitionRequest.h>
 #include <aws/batch/model/DescribeComputeEnvironmentsRequest.h>
 #include <aws/batch/model/DescribeJobDefinitionsRequest.h>
 #include <aws/batch/model/DescribeJobQueuesRequest.h>
 #include <aws/batch/model/DescribeJobsRequest.h>
+#include <aws/batch/model/DescribeSchedulingPoliciesRequest.h>
 #include <aws/batch/model/ListJobsRequest.h>
+#include <aws/batch/model/ListSchedulingPoliciesRequest.h>
 #include <aws/batch/model/ListTagsForResourceRequest.h>
 #include <aws/batch/model/RegisterJobDefinitionRequest.h>
 #include <aws/batch/model/SubmitJobRequest.h>
@@ -39,6 +43,7 @@
 #include <aws/batch/model/UntagResourceRequest.h>
 #include <aws/batch/model/UpdateComputeEnvironmentRequest.h>
 #include <aws/batch/model/UpdateJobQueueRequest.h>
+#include <aws/batch/model/UpdateSchedulingPolicyRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -87,7 +92,7 @@ BatchClient::~BatchClient()
 {
 }
 
-void BatchClient::init(const ClientConfiguration& config)
+void BatchClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Batch");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -116,9 +121,7 @@ void BatchClient::OverrideEndpoint(const Aws::String& endpoint)
 CancelJobOutcome BatchClient::CancelJob(const CancelJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/canceljob";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/canceljob");
   return CancelJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -143,9 +146,7 @@ void BatchClient::CancelJobAsyncHelper(const CancelJobRequest& request, const Ca
 CreateComputeEnvironmentOutcome BatchClient::CreateComputeEnvironment(const CreateComputeEnvironmentRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/createcomputeenvironment";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/createcomputeenvironment");
   return CreateComputeEnvironmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -170,9 +171,7 @@ void BatchClient::CreateComputeEnvironmentAsyncHelper(const CreateComputeEnviron
 CreateJobQueueOutcome BatchClient::CreateJobQueue(const CreateJobQueueRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/createjobqueue";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/createjobqueue");
   return CreateJobQueueOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -194,12 +193,35 @@ void BatchClient::CreateJobQueueAsyncHelper(const CreateJobQueueRequest& request
   handler(this, request, CreateJobQueue(request), context);
 }
 
+CreateSchedulingPolicyOutcome BatchClient::CreateSchedulingPolicy(const CreateSchedulingPolicyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/v1/createschedulingpolicy");
+  return CreateSchedulingPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateSchedulingPolicyOutcomeCallable BatchClient::CreateSchedulingPolicyCallable(const CreateSchedulingPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateSchedulingPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateSchedulingPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BatchClient::CreateSchedulingPolicyAsync(const CreateSchedulingPolicyRequest& request, const CreateSchedulingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateSchedulingPolicyAsyncHelper( request, handler, context ); } );
+}
+
+void BatchClient::CreateSchedulingPolicyAsyncHelper(const CreateSchedulingPolicyRequest& request, const CreateSchedulingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateSchedulingPolicy(request), context);
+}
+
 DeleteComputeEnvironmentOutcome BatchClient::DeleteComputeEnvironment(const DeleteComputeEnvironmentRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/deletecomputeenvironment";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/deletecomputeenvironment");
   return DeleteComputeEnvironmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -224,9 +246,7 @@ void BatchClient::DeleteComputeEnvironmentAsyncHelper(const DeleteComputeEnviron
 DeleteJobQueueOutcome BatchClient::DeleteJobQueue(const DeleteJobQueueRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/deletejobqueue";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/deletejobqueue");
   return DeleteJobQueueOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -248,12 +268,35 @@ void BatchClient::DeleteJobQueueAsyncHelper(const DeleteJobQueueRequest& request
   handler(this, request, DeleteJobQueue(request), context);
 }
 
+DeleteSchedulingPolicyOutcome BatchClient::DeleteSchedulingPolicy(const DeleteSchedulingPolicyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/v1/deleteschedulingpolicy");
+  return DeleteSchedulingPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteSchedulingPolicyOutcomeCallable BatchClient::DeleteSchedulingPolicyCallable(const DeleteSchedulingPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteSchedulingPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteSchedulingPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BatchClient::DeleteSchedulingPolicyAsync(const DeleteSchedulingPolicyRequest& request, const DeleteSchedulingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteSchedulingPolicyAsyncHelper( request, handler, context ); } );
+}
+
+void BatchClient::DeleteSchedulingPolicyAsyncHelper(const DeleteSchedulingPolicyRequest& request, const DeleteSchedulingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteSchedulingPolicy(request), context);
+}
+
 DeregisterJobDefinitionOutcome BatchClient::DeregisterJobDefinition(const DeregisterJobDefinitionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/deregisterjobdefinition";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/deregisterjobdefinition");
   return DeregisterJobDefinitionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -278,9 +321,7 @@ void BatchClient::DeregisterJobDefinitionAsyncHelper(const DeregisterJobDefiniti
 DescribeComputeEnvironmentsOutcome BatchClient::DescribeComputeEnvironments(const DescribeComputeEnvironmentsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/describecomputeenvironments";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/describecomputeenvironments");
   return DescribeComputeEnvironmentsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -305,9 +346,7 @@ void BatchClient::DescribeComputeEnvironmentsAsyncHelper(const DescribeComputeEn
 DescribeJobDefinitionsOutcome BatchClient::DescribeJobDefinitions(const DescribeJobDefinitionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/describejobdefinitions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/describejobdefinitions");
   return DescribeJobDefinitionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -332,9 +371,7 @@ void BatchClient::DescribeJobDefinitionsAsyncHelper(const DescribeJobDefinitions
 DescribeJobQueuesOutcome BatchClient::DescribeJobQueues(const DescribeJobQueuesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/describejobqueues";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/describejobqueues");
   return DescribeJobQueuesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -359,9 +396,7 @@ void BatchClient::DescribeJobQueuesAsyncHelper(const DescribeJobQueuesRequest& r
 DescribeJobsOutcome BatchClient::DescribeJobs(const DescribeJobsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/describejobs";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/describejobs");
   return DescribeJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -383,12 +418,35 @@ void BatchClient::DescribeJobsAsyncHelper(const DescribeJobsRequest& request, co
   handler(this, request, DescribeJobs(request), context);
 }
 
+DescribeSchedulingPoliciesOutcome BatchClient::DescribeSchedulingPolicies(const DescribeSchedulingPoliciesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/v1/describeschedulingpolicies");
+  return DescribeSchedulingPoliciesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeSchedulingPoliciesOutcomeCallable BatchClient::DescribeSchedulingPoliciesCallable(const DescribeSchedulingPoliciesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeSchedulingPoliciesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeSchedulingPolicies(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BatchClient::DescribeSchedulingPoliciesAsync(const DescribeSchedulingPoliciesRequest& request, const DescribeSchedulingPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeSchedulingPoliciesAsyncHelper( request, handler, context ); } );
+}
+
+void BatchClient::DescribeSchedulingPoliciesAsyncHelper(const DescribeSchedulingPoliciesRequest& request, const DescribeSchedulingPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeSchedulingPolicies(request), context);
+}
+
 ListJobsOutcome BatchClient::ListJobs(const ListJobsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/listjobs";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/listjobs");
   return ListJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -410,6 +468,31 @@ void BatchClient::ListJobsAsyncHelper(const ListJobsRequest& request, const List
   handler(this, request, ListJobs(request), context);
 }
 
+ListSchedulingPoliciesOutcome BatchClient::ListSchedulingPolicies(const ListSchedulingPoliciesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/v1/listschedulingpolicies");
+  return ListSchedulingPoliciesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListSchedulingPoliciesOutcomeCallable BatchClient::ListSchedulingPoliciesCallable(const ListSchedulingPoliciesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListSchedulingPoliciesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSchedulingPolicies(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BatchClient::ListSchedulingPoliciesAsync(const ListSchedulingPoliciesRequest& request, const ListSchedulingPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListSchedulingPoliciesAsyncHelper( request, handler, context ); } );
+}
+
+void BatchClient::ListSchedulingPoliciesAsyncHelper(const ListSchedulingPoliciesRequest& request, const ListSchedulingPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListSchedulingPolicies(request), context);
+}
+
 ListTagsForResourceOutcome BatchClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
   if (!request.ResourceArnHasBeenSet())
@@ -418,10 +501,8 @@ ListTagsForResourceOutcome BatchClient::ListTagsForResource(const ListTagsForRes
     return ListTagsForResourceOutcome(Aws::Client::AWSError<BatchErrors>(BatchErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -446,9 +527,7 @@ void BatchClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceReques
 RegisterJobDefinitionOutcome BatchClient::RegisterJobDefinition(const RegisterJobDefinitionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/registerjobdefinition";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/registerjobdefinition");
   return RegisterJobDefinitionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -473,9 +552,7 @@ void BatchClient::RegisterJobDefinitionAsyncHelper(const RegisterJobDefinitionRe
 SubmitJobOutcome BatchClient::SubmitJob(const SubmitJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/submitjob";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/submitjob");
   return SubmitJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -505,10 +582,8 @@ TagResourceOutcome BatchClient::TagResource(const TagResourceRequest& request) c
     return TagResourceOutcome(Aws::Client::AWSError<BatchErrors>(BatchErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -533,9 +608,7 @@ void BatchClient::TagResourceAsyncHelper(const TagResourceRequest& request, cons
 TerminateJobOutcome BatchClient::TerminateJob(const TerminateJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/terminatejob";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/terminatejob");
   return TerminateJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -570,10 +643,8 @@ UntagResourceOutcome BatchClient::UntagResource(const UntagResourceRequest& requ
     return UntagResourceOutcome(Aws::Client::AWSError<BatchErrors>(BatchErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -598,9 +669,7 @@ void BatchClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, 
 UpdateComputeEnvironmentOutcome BatchClient::UpdateComputeEnvironment(const UpdateComputeEnvironmentRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/updatecomputeenvironment";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/updatecomputeenvironment");
   return UpdateComputeEnvironmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -625,9 +694,7 @@ void BatchClient::UpdateComputeEnvironmentAsyncHelper(const UpdateComputeEnviron
 UpdateJobQueueOutcome BatchClient::UpdateJobQueue(const UpdateJobQueueRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/updatejobqueue";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/updatejobqueue");
   return UpdateJobQueueOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -647,5 +714,30 @@ void BatchClient::UpdateJobQueueAsync(const UpdateJobQueueRequest& request, cons
 void BatchClient::UpdateJobQueueAsyncHelper(const UpdateJobQueueRequest& request, const UpdateJobQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateJobQueue(request), context);
+}
+
+UpdateSchedulingPolicyOutcome BatchClient::UpdateSchedulingPolicy(const UpdateSchedulingPolicyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/v1/updateschedulingpolicy");
+  return UpdateSchedulingPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateSchedulingPolicyOutcomeCallable BatchClient::UpdateSchedulingPolicyCallable(const UpdateSchedulingPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateSchedulingPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateSchedulingPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BatchClient::UpdateSchedulingPolicyAsync(const UpdateSchedulingPolicyRequest& request, const UpdateSchedulingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateSchedulingPolicyAsyncHelper( request, handler, context ); } );
+}
+
+void BatchClient::UpdateSchedulingPolicyAsyncHelper(const UpdateSchedulingPolicyRequest& request, const UpdateSchedulingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateSchedulingPolicy(request), context);
 }
 

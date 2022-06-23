@@ -7,6 +7,7 @@
 #include <aws/robomaker/RoboMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/robomaker/model/DataSourceType.h>
 #include <utility>
 
 namespace Aws
@@ -165,6 +166,160 @@ namespace Model
      */
     inline DataSourceConfig& AddS3Keys(const char* value) { m_s3KeysHasBeenSet = true; m_s3Keys.push_back(value); return *this; }
 
+
+    /**
+     * <p>The data type for the data source that you're using for your container image
+     * or simulation job. You can use this field to specify whether your data source is
+     * an Archive, an Amazon S3 prefix, or a file.</p> <p>If you don't specify a field,
+     * the default value is <code>File</code>.</p>
+     */
+    inline const DataSourceType& GetType() const{ return m_type; }
+
+    /**
+     * <p>The data type for the data source that you're using for your container image
+     * or simulation job. You can use this field to specify whether your data source is
+     * an Archive, an Amazon S3 prefix, or a file.</p> <p>If you don't specify a field,
+     * the default value is <code>File</code>.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The data type for the data source that you're using for your container image
+     * or simulation job. You can use this field to specify whether your data source is
+     * an Archive, an Amazon S3 prefix, or a file.</p> <p>If you don't specify a field,
+     * the default value is <code>File</code>.</p>
+     */
+    inline void SetType(const DataSourceType& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p>The data type for the data source that you're using for your container image
+     * or simulation job. You can use this field to specify whether your data source is
+     * an Archive, an Amazon S3 prefix, or a file.</p> <p>If you don't specify a field,
+     * the default value is <code>File</code>.</p>
+     */
+    inline void SetType(DataSourceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+
+    /**
+     * <p>The data type for the data source that you're using for your container image
+     * or simulation job. You can use this field to specify whether your data source is
+     * an Archive, an Amazon S3 prefix, or a file.</p> <p>If you don't specify a field,
+     * the default value is <code>File</code>.</p>
+     */
+    inline DataSourceConfig& WithType(const DataSourceType& value) { SetType(value); return *this;}
+
+    /**
+     * <p>The data type for the data source that you're using for your container image
+     * or simulation job. You can use this field to specify whether your data source is
+     * an Archive, an Amazon S3 prefix, or a file.</p> <p>If you don't specify a field,
+     * the default value is <code>File</code>.</p>
+     */
+    inline DataSourceConfig& WithType(DataSourceType&& value) { SetType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The location where your files are mounted in the container image.</p> <p>If
+     * you've specified the <code>type</code> of the data source as an
+     * <code>Archive</code>, you must provide an Amazon S3 object key to your archive.
+     * The object key must point to either a <code>.zip</code> or <code>.tar.gz</code>
+     * file.</p> <p>If you've specified the <code>type</code> of the data source as a
+     * <code>Prefix</code>, you provide the Amazon S3 prefix that points to the files
+     * that you are using for your data source.</p> <p>If you've specified the
+     * <code>type</code> of the data source as a <code>File</code>, you provide the
+     * Amazon S3 path to the file that you're using as your data source.</p>
+     */
+    inline const Aws::String& GetDestination() const{ return m_destination; }
+
+    /**
+     * <p>The location where your files are mounted in the container image.</p> <p>If
+     * you've specified the <code>type</code> of the data source as an
+     * <code>Archive</code>, you must provide an Amazon S3 object key to your archive.
+     * The object key must point to either a <code>.zip</code> or <code>.tar.gz</code>
+     * file.</p> <p>If you've specified the <code>type</code> of the data source as a
+     * <code>Prefix</code>, you provide the Amazon S3 prefix that points to the files
+     * that you are using for your data source.</p> <p>If you've specified the
+     * <code>type</code> of the data source as a <code>File</code>, you provide the
+     * Amazon S3 path to the file that you're using as your data source.</p>
+     */
+    inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
+
+    /**
+     * <p>The location where your files are mounted in the container image.</p> <p>If
+     * you've specified the <code>type</code> of the data source as an
+     * <code>Archive</code>, you must provide an Amazon S3 object key to your archive.
+     * The object key must point to either a <code>.zip</code> or <code>.tar.gz</code>
+     * file.</p> <p>If you've specified the <code>type</code> of the data source as a
+     * <code>Prefix</code>, you provide the Amazon S3 prefix that points to the files
+     * that you are using for your data source.</p> <p>If you've specified the
+     * <code>type</code> of the data source as a <code>File</code>, you provide the
+     * Amazon S3 path to the file that you're using as your data source.</p>
+     */
+    inline void SetDestination(const Aws::String& value) { m_destinationHasBeenSet = true; m_destination = value; }
+
+    /**
+     * <p>The location where your files are mounted in the container image.</p> <p>If
+     * you've specified the <code>type</code> of the data source as an
+     * <code>Archive</code>, you must provide an Amazon S3 object key to your archive.
+     * The object key must point to either a <code>.zip</code> or <code>.tar.gz</code>
+     * file.</p> <p>If you've specified the <code>type</code> of the data source as a
+     * <code>Prefix</code>, you provide the Amazon S3 prefix that points to the files
+     * that you are using for your data source.</p> <p>If you've specified the
+     * <code>type</code> of the data source as a <code>File</code>, you provide the
+     * Amazon S3 path to the file that you're using as your data source.</p>
+     */
+    inline void SetDestination(Aws::String&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
+
+    /**
+     * <p>The location where your files are mounted in the container image.</p> <p>If
+     * you've specified the <code>type</code> of the data source as an
+     * <code>Archive</code>, you must provide an Amazon S3 object key to your archive.
+     * The object key must point to either a <code>.zip</code> or <code>.tar.gz</code>
+     * file.</p> <p>If you've specified the <code>type</code> of the data source as a
+     * <code>Prefix</code>, you provide the Amazon S3 prefix that points to the files
+     * that you are using for your data source.</p> <p>If you've specified the
+     * <code>type</code> of the data source as a <code>File</code>, you provide the
+     * Amazon S3 path to the file that you're using as your data source.</p>
+     */
+    inline void SetDestination(const char* value) { m_destinationHasBeenSet = true; m_destination.assign(value); }
+
+    /**
+     * <p>The location where your files are mounted in the container image.</p> <p>If
+     * you've specified the <code>type</code> of the data source as an
+     * <code>Archive</code>, you must provide an Amazon S3 object key to your archive.
+     * The object key must point to either a <code>.zip</code> or <code>.tar.gz</code>
+     * file.</p> <p>If you've specified the <code>type</code> of the data source as a
+     * <code>Prefix</code>, you provide the Amazon S3 prefix that points to the files
+     * that you are using for your data source.</p> <p>If you've specified the
+     * <code>type</code> of the data source as a <code>File</code>, you provide the
+     * Amazon S3 path to the file that you're using as your data source.</p>
+     */
+    inline DataSourceConfig& WithDestination(const Aws::String& value) { SetDestination(value); return *this;}
+
+    /**
+     * <p>The location where your files are mounted in the container image.</p> <p>If
+     * you've specified the <code>type</code> of the data source as an
+     * <code>Archive</code>, you must provide an Amazon S3 object key to your archive.
+     * The object key must point to either a <code>.zip</code> or <code>.tar.gz</code>
+     * file.</p> <p>If you've specified the <code>type</code> of the data source as a
+     * <code>Prefix</code>, you provide the Amazon S3 prefix that points to the files
+     * that you are using for your data source.</p> <p>If you've specified the
+     * <code>type</code> of the data source as a <code>File</code>, you provide the
+     * Amazon S3 path to the file that you're using as your data source.</p>
+     */
+    inline DataSourceConfig& WithDestination(Aws::String&& value) { SetDestination(std::move(value)); return *this;}
+
+    /**
+     * <p>The location where your files are mounted in the container image.</p> <p>If
+     * you've specified the <code>type</code> of the data source as an
+     * <code>Archive</code>, you must provide an Amazon S3 object key to your archive.
+     * The object key must point to either a <code>.zip</code> or <code>.tar.gz</code>
+     * file.</p> <p>If you've specified the <code>type</code> of the data source as a
+     * <code>Prefix</code>, you provide the Amazon S3 prefix that points to the files
+     * that you are using for your data source.</p> <p>If you've specified the
+     * <code>type</code> of the data source as a <code>File</code>, you provide the
+     * Amazon S3 path to the file that you're using as your data source.</p>
+     */
+    inline DataSourceConfig& WithDestination(const char* value) { SetDestination(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -175,6 +330,12 @@ namespace Model
 
     Aws::Vector<Aws::String> m_s3Keys;
     bool m_s3KeysHasBeenSet;
+
+    DataSourceType m_type;
+    bool m_typeHasBeenSet;
+
+    Aws::String m_destination;
+    bool m_destinationHasBeenSet;
   };
 
 } // namespace Model

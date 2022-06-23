@@ -14,7 +14,8 @@ using namespace Aws::Utils;
 
 CreateProtectionRequest::CreateProtectionRequest() : 
     m_nameHasBeenSet(false),
-    m_resourceArnHasBeenSet(false)
+    m_resourceArnHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -31,6 +32,17 @@ Aws::String CreateProtectionRequest::SerializePayload() const
   if(m_resourceArnHasBeenSet)
   {
    payload.WithString("ResourceArn", m_resourceArn);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

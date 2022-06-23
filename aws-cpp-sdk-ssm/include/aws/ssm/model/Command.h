@@ -127,42 +127,42 @@ namespace Model
 
 
     /**
-     * <p>The SSM document version.</p>
+     * <p>The Systems Manager document (SSM document) version.</p>
      */
     inline const Aws::String& GetDocumentVersion() const{ return m_documentVersion; }
 
     /**
-     * <p>The SSM document version.</p>
+     * <p>The Systems Manager document (SSM document) version.</p>
      */
     inline bool DocumentVersionHasBeenSet() const { return m_documentVersionHasBeenSet; }
 
     /**
-     * <p>The SSM document version.</p>
+     * <p>The Systems Manager document (SSM document) version.</p>
      */
     inline void SetDocumentVersion(const Aws::String& value) { m_documentVersionHasBeenSet = true; m_documentVersion = value; }
 
     /**
-     * <p>The SSM document version.</p>
+     * <p>The Systems Manager document (SSM document) version.</p>
      */
     inline void SetDocumentVersion(Aws::String&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = std::move(value); }
 
     /**
-     * <p>The SSM document version.</p>
+     * <p>The Systems Manager document (SSM document) version.</p>
      */
     inline void SetDocumentVersion(const char* value) { m_documentVersionHasBeenSet = true; m_documentVersion.assign(value); }
 
     /**
-     * <p>The SSM document version.</p>
+     * <p>The Systems Manager document (SSM document) version.</p>
      */
     inline Command& WithDocumentVersion(const Aws::String& value) { SetDocumentVersion(value); return *this;}
 
     /**
-     * <p>The SSM document version.</p>
+     * <p>The Systems Manager document (SSM document) version.</p>
      */
     inline Command& WithDocumentVersion(Aws::String&& value) { SetDocumentVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The SSM document version.</p>
+     * <p>The Systems Manager document (SSM document) version.</p>
      */
     inline Command& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
 
@@ -217,44 +217,44 @@ namespace Model
 
 
     /**
-     * <p>If this time is reached and the command has not already started running, it
-     * will not run. Calculated based on the ExpiresAfter user input provided as part
-     * of the SendCommand API.</p>
+     * <p>If this time is reached and the command hasn't already started running, it
+     * won't run. Calculated based on the <code>ExpiresAfter</code> user input provided
+     * as part of the <code>SendCommand</code> API operation.</p>
      */
     inline const Aws::Utils::DateTime& GetExpiresAfter() const{ return m_expiresAfter; }
 
     /**
-     * <p>If this time is reached and the command has not already started running, it
-     * will not run. Calculated based on the ExpiresAfter user input provided as part
-     * of the SendCommand API.</p>
+     * <p>If this time is reached and the command hasn't already started running, it
+     * won't run. Calculated based on the <code>ExpiresAfter</code> user input provided
+     * as part of the <code>SendCommand</code> API operation.</p>
      */
     inline bool ExpiresAfterHasBeenSet() const { return m_expiresAfterHasBeenSet; }
 
     /**
-     * <p>If this time is reached and the command has not already started running, it
-     * will not run. Calculated based on the ExpiresAfter user input provided as part
-     * of the SendCommand API.</p>
+     * <p>If this time is reached and the command hasn't already started running, it
+     * won't run. Calculated based on the <code>ExpiresAfter</code> user input provided
+     * as part of the <code>SendCommand</code> API operation.</p>
      */
     inline void SetExpiresAfter(const Aws::Utils::DateTime& value) { m_expiresAfterHasBeenSet = true; m_expiresAfter = value; }
 
     /**
-     * <p>If this time is reached and the command has not already started running, it
-     * will not run. Calculated based on the ExpiresAfter user input provided as part
-     * of the SendCommand API.</p>
+     * <p>If this time is reached and the command hasn't already started running, it
+     * won't run. Calculated based on the <code>ExpiresAfter</code> user input provided
+     * as part of the <code>SendCommand</code> API operation.</p>
      */
     inline void SetExpiresAfter(Aws::Utils::DateTime&& value) { m_expiresAfterHasBeenSet = true; m_expiresAfter = std::move(value); }
 
     /**
-     * <p>If this time is reached and the command has not already started running, it
-     * will not run. Calculated based on the ExpiresAfter user input provided as part
-     * of the SendCommand API.</p>
+     * <p>If this time is reached and the command hasn't already started running, it
+     * won't run. Calculated based on the <code>ExpiresAfter</code> user input provided
+     * as part of the <code>SendCommand</code> API operation.</p>
      */
     inline Command& WithExpiresAfter(const Aws::Utils::DateTime& value) { SetExpiresAfter(value); return *this;}
 
     /**
-     * <p>If this time is reached and the command has not already started running, it
-     * will not run. Calculated based on the ExpiresAfter user input provided as part
-     * of the SendCommand API.</p>
+     * <p>If this time is reached and the command hasn't already started running, it
+     * won't run. Calculated based on the <code>ExpiresAfter</code> user input provided
+     * as part of the <code>SendCommand</code> API operation.</p>
      */
     inline Command& WithExpiresAfter(Aws::Utils::DateTime&& value) { SetExpiresAfter(std::move(value)); return *this;}
 
@@ -333,104 +333,104 @@ namespace Model
 
 
     /**
-     * <p>The instance IDs against which this command was requested.</p>
+     * <p>The managed node IDs against which this command was requested.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInstanceIds() const{ return m_instanceIds; }
 
     /**
-     * <p>The instance IDs against which this command was requested.</p>
+     * <p>The managed node IDs against which this command was requested.</p>
      */
     inline bool InstanceIdsHasBeenSet() const { return m_instanceIdsHasBeenSet; }
 
     /**
-     * <p>The instance IDs against which this command was requested.</p>
+     * <p>The managed node IDs against which this command was requested.</p>
      */
     inline void SetInstanceIds(const Aws::Vector<Aws::String>& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
 
     /**
-     * <p>The instance IDs against which this command was requested.</p>
+     * <p>The managed node IDs against which this command was requested.</p>
      */
     inline void SetInstanceIds(Aws::Vector<Aws::String>&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = std::move(value); }
 
     /**
-     * <p>The instance IDs against which this command was requested.</p>
+     * <p>The managed node IDs against which this command was requested.</p>
      */
     inline Command& WithInstanceIds(const Aws::Vector<Aws::String>& value) { SetInstanceIds(value); return *this;}
 
     /**
-     * <p>The instance IDs against which this command was requested.</p>
+     * <p>The managed node IDs against which this command was requested.</p>
      */
     inline Command& WithInstanceIds(Aws::Vector<Aws::String>&& value) { SetInstanceIds(std::move(value)); return *this;}
 
     /**
-     * <p>The instance IDs against which this command was requested.</p>
+     * <p>The managed node IDs against which this command was requested.</p>
      */
     inline Command& AddInstanceIds(const Aws::String& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
     /**
-     * <p>The instance IDs against which this command was requested.</p>
+     * <p>The managed node IDs against which this command was requested.</p>
      */
     inline Command& AddInstanceIds(Aws::String&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The instance IDs against which this command was requested.</p>
+     * <p>The managed node IDs against which this command was requested.</p>
      */
     inline Command& AddInstanceIds(const char* value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
 
     /**
-     * <p>An array of search criteria that targets instances using a Key,Value
+     * <p>An array of search criteria that targets managed nodes using a Key,Value
      * combination that you specify. Targets is required if you don't provide one or
-     * more instance IDs in the call.</p>
+     * more managed node IDs in the call.</p>
      */
     inline const Aws::Vector<Target>& GetTargets() const{ return m_targets; }
 
     /**
-     * <p>An array of search criteria that targets instances using a Key,Value
+     * <p>An array of search criteria that targets managed nodes using a Key,Value
      * combination that you specify. Targets is required if you don't provide one or
-     * more instance IDs in the call.</p>
+     * more managed node IDs in the call.</p>
      */
     inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
 
     /**
-     * <p>An array of search criteria that targets instances using a Key,Value
+     * <p>An array of search criteria that targets managed nodes using a Key,Value
      * combination that you specify. Targets is required if you don't provide one or
-     * more instance IDs in the call.</p>
+     * more managed node IDs in the call.</p>
      */
     inline void SetTargets(const Aws::Vector<Target>& value) { m_targetsHasBeenSet = true; m_targets = value; }
 
     /**
-     * <p>An array of search criteria that targets instances using a Key,Value
+     * <p>An array of search criteria that targets managed nodes using a Key,Value
      * combination that you specify. Targets is required if you don't provide one or
-     * more instance IDs in the call.</p>
+     * more managed node IDs in the call.</p>
      */
     inline void SetTargets(Aws::Vector<Target>&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
 
     /**
-     * <p>An array of search criteria that targets instances using a Key,Value
+     * <p>An array of search criteria that targets managed nodes using a Key,Value
      * combination that you specify. Targets is required if you don't provide one or
-     * more instance IDs in the call.</p>
+     * more managed node IDs in the call.</p>
      */
     inline Command& WithTargets(const Aws::Vector<Target>& value) { SetTargets(value); return *this;}
 
     /**
-     * <p>An array of search criteria that targets instances using a Key,Value
+     * <p>An array of search criteria that targets managed nodes using a Key,Value
      * combination that you specify. Targets is required if you don't provide one or
-     * more instance IDs in the call.</p>
+     * more managed node IDs in the call.</p>
      */
     inline Command& WithTargets(Aws::Vector<Target>&& value) { SetTargets(std::move(value)); return *this;}
 
     /**
-     * <p>An array of search criteria that targets instances using a Key,Value
+     * <p>An array of search criteria that targets managed nodes using a Key,Value
      * combination that you specify. Targets is required if you don't provide one or
-     * more instance IDs in the call.</p>
+     * more managed node IDs in the call.</p>
      */
     inline Command& AddTargets(const Target& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
 
     /**
-     * <p>An array of search criteria that targets instances using a Key,Value
+     * <p>An array of search criteria that targets managed nodes using a Key,Value
      * combination that you specify. Targets is required if you don't provide one or
-     * more instance IDs in the call.</p>
+     * more managed node IDs in the call.</p>
      */
     inline Command& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
 
@@ -498,283 +498,291 @@ namespace Model
 
 
     /**
-     * <p>A detailed status of the command execution. StatusDetails includes more
-     * information than Status because it includes states resulting from error and
-     * concurrency control parameters. StatusDetails can show different results than
-     * Status. For more information about these statuses, see <a
+     * <p>A detailed status of the command execution. <code>StatusDetails</code>
+     * includes more information than <code>Status</code> because it includes states
+     * resulting from error and concurrency control parameters.
+     * <code>StatusDetails</code> can show different results than Status. For more
+     * information about these statuses, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
-     * command statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails
-     * can be one of the following values:</p> <ul> <li> <p>Pending: The command has
-     * not been sent to any instances.</p> </li> <li> <p>In Progress: The command has
-     * been sent to at least one instance but has not reached a final state on all
-     * instances.</p> </li> <li> <p>Success: The command successfully ran on all
-     * invocations. This is a terminal state.</p> </li> <li> <p>Delivery Timed Out: The
-     * value of MaxErrors or more command invocations shows a status of Delivery Timed
-     * Out. This is a terminal state.</p> </li> <li> <p>Execution Timed Out: The value
-     * of MaxErrors or more command invocations shows a status of Execution Timed Out.
-     * This is a terminal state.</p> </li> <li> <p>Failed: The value of MaxErrors or
-     * more command invocations shows a status of Failed. This is a terminal state.</p>
-     * </li> <li> <p>Incomplete: The command was attempted on all instances and one or
-     * more invocations does not have a value of Success but not enough invocations
-     * failed for the status to be Failed. This is a terminal state.</p> </li> <li>
-     * <p>Canceled: The command was terminated before it was completed. This is a
-     * terminal state.</p> </li> <li> <p>Rate Exceeded: The number of instances
-     * targeted by the command exceeded the account limit for pending invocations. The
-     * system has canceled the command before running it on any instance. This is a
-     * terminal state.</p> </li> </ul>
+     * command statuses</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>. StatusDetails can be one of the following values:</p> <ul> <li>
+     * <p>Pending: The command hasn't been sent to any managed nodes.</p> </li> <li>
+     * <p>In Progress: The command has been sent to at least one managed node but
+     * hasn't reached a final state on all managed nodes.</p> </li> <li> <p>Success:
+     * The command successfully ran on all invocations. This is a terminal state.</p>
+     * </li> <li> <p>Delivery Timed Out: The value of MaxErrors or more command
+     * invocations shows a status of Delivery Timed Out. This is a terminal state.</p>
+     * </li> <li> <p>Execution Timed Out: The value of MaxErrors or more command
+     * invocations shows a status of Execution Timed Out. This is a terminal state.</p>
+     * </li> <li> <p>Failed: The value of MaxErrors or more command invocations shows a
+     * status of Failed. This is a terminal state.</p> </li> <li> <p>Incomplete: The
+     * command was attempted on all managed nodes and one or more invocations doesn't
+     * have a value of Success but not enough invocations failed for the status to be
+     * Failed. This is a terminal state.</p> </li> <li> <p>Cancelled: The command was
+     * terminated before it was completed. This is a terminal state.</p> </li> <li>
+     * <p>Rate Exceeded: The number of managed nodes targeted by the command exceeded
+     * the account limit for pending invocations. The system has canceled the command
+     * before running it on any managed node. This is a terminal state.</p> </li> </ul>
      */
     inline const Aws::String& GetStatusDetails() const{ return m_statusDetails; }
 
     /**
-     * <p>A detailed status of the command execution. StatusDetails includes more
-     * information than Status because it includes states resulting from error and
-     * concurrency control parameters. StatusDetails can show different results than
-     * Status. For more information about these statuses, see <a
+     * <p>A detailed status of the command execution. <code>StatusDetails</code>
+     * includes more information than <code>Status</code> because it includes states
+     * resulting from error and concurrency control parameters.
+     * <code>StatusDetails</code> can show different results than Status. For more
+     * information about these statuses, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
-     * command statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails
-     * can be one of the following values:</p> <ul> <li> <p>Pending: The command has
-     * not been sent to any instances.</p> </li> <li> <p>In Progress: The command has
-     * been sent to at least one instance but has not reached a final state on all
-     * instances.</p> </li> <li> <p>Success: The command successfully ran on all
-     * invocations. This is a terminal state.</p> </li> <li> <p>Delivery Timed Out: The
-     * value of MaxErrors or more command invocations shows a status of Delivery Timed
-     * Out. This is a terminal state.</p> </li> <li> <p>Execution Timed Out: The value
-     * of MaxErrors or more command invocations shows a status of Execution Timed Out.
-     * This is a terminal state.</p> </li> <li> <p>Failed: The value of MaxErrors or
-     * more command invocations shows a status of Failed. This is a terminal state.</p>
-     * </li> <li> <p>Incomplete: The command was attempted on all instances and one or
-     * more invocations does not have a value of Success but not enough invocations
-     * failed for the status to be Failed. This is a terminal state.</p> </li> <li>
-     * <p>Canceled: The command was terminated before it was completed. This is a
-     * terminal state.</p> </li> <li> <p>Rate Exceeded: The number of instances
-     * targeted by the command exceeded the account limit for pending invocations. The
-     * system has canceled the command before running it on any instance. This is a
-     * terminal state.</p> </li> </ul>
+     * command statuses</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>. StatusDetails can be one of the following values:</p> <ul> <li>
+     * <p>Pending: The command hasn't been sent to any managed nodes.</p> </li> <li>
+     * <p>In Progress: The command has been sent to at least one managed node but
+     * hasn't reached a final state on all managed nodes.</p> </li> <li> <p>Success:
+     * The command successfully ran on all invocations. This is a terminal state.</p>
+     * </li> <li> <p>Delivery Timed Out: The value of MaxErrors or more command
+     * invocations shows a status of Delivery Timed Out. This is a terminal state.</p>
+     * </li> <li> <p>Execution Timed Out: The value of MaxErrors or more command
+     * invocations shows a status of Execution Timed Out. This is a terminal state.</p>
+     * </li> <li> <p>Failed: The value of MaxErrors or more command invocations shows a
+     * status of Failed. This is a terminal state.</p> </li> <li> <p>Incomplete: The
+     * command was attempted on all managed nodes and one or more invocations doesn't
+     * have a value of Success but not enough invocations failed for the status to be
+     * Failed. This is a terminal state.</p> </li> <li> <p>Cancelled: The command was
+     * terminated before it was completed. This is a terminal state.</p> </li> <li>
+     * <p>Rate Exceeded: The number of managed nodes targeted by the command exceeded
+     * the account limit for pending invocations. The system has canceled the command
+     * before running it on any managed node. This is a terminal state.</p> </li> </ul>
      */
     inline bool StatusDetailsHasBeenSet() const { return m_statusDetailsHasBeenSet; }
 
     /**
-     * <p>A detailed status of the command execution. StatusDetails includes more
-     * information than Status because it includes states resulting from error and
-     * concurrency control parameters. StatusDetails can show different results than
-     * Status. For more information about these statuses, see <a
+     * <p>A detailed status of the command execution. <code>StatusDetails</code>
+     * includes more information than <code>Status</code> because it includes states
+     * resulting from error and concurrency control parameters.
+     * <code>StatusDetails</code> can show different results than Status. For more
+     * information about these statuses, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
-     * command statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails
-     * can be one of the following values:</p> <ul> <li> <p>Pending: The command has
-     * not been sent to any instances.</p> </li> <li> <p>In Progress: The command has
-     * been sent to at least one instance but has not reached a final state on all
-     * instances.</p> </li> <li> <p>Success: The command successfully ran on all
-     * invocations. This is a terminal state.</p> </li> <li> <p>Delivery Timed Out: The
-     * value of MaxErrors or more command invocations shows a status of Delivery Timed
-     * Out. This is a terminal state.</p> </li> <li> <p>Execution Timed Out: The value
-     * of MaxErrors or more command invocations shows a status of Execution Timed Out.
-     * This is a terminal state.</p> </li> <li> <p>Failed: The value of MaxErrors or
-     * more command invocations shows a status of Failed. This is a terminal state.</p>
-     * </li> <li> <p>Incomplete: The command was attempted on all instances and one or
-     * more invocations does not have a value of Success but not enough invocations
-     * failed for the status to be Failed. This is a terminal state.</p> </li> <li>
-     * <p>Canceled: The command was terminated before it was completed. This is a
-     * terminal state.</p> </li> <li> <p>Rate Exceeded: The number of instances
-     * targeted by the command exceeded the account limit for pending invocations. The
-     * system has canceled the command before running it on any instance. This is a
-     * terminal state.</p> </li> </ul>
+     * command statuses</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>. StatusDetails can be one of the following values:</p> <ul> <li>
+     * <p>Pending: The command hasn't been sent to any managed nodes.</p> </li> <li>
+     * <p>In Progress: The command has been sent to at least one managed node but
+     * hasn't reached a final state on all managed nodes.</p> </li> <li> <p>Success:
+     * The command successfully ran on all invocations. This is a terminal state.</p>
+     * </li> <li> <p>Delivery Timed Out: The value of MaxErrors or more command
+     * invocations shows a status of Delivery Timed Out. This is a terminal state.</p>
+     * </li> <li> <p>Execution Timed Out: The value of MaxErrors or more command
+     * invocations shows a status of Execution Timed Out. This is a terminal state.</p>
+     * </li> <li> <p>Failed: The value of MaxErrors or more command invocations shows a
+     * status of Failed. This is a terminal state.</p> </li> <li> <p>Incomplete: The
+     * command was attempted on all managed nodes and one or more invocations doesn't
+     * have a value of Success but not enough invocations failed for the status to be
+     * Failed. This is a terminal state.</p> </li> <li> <p>Cancelled: The command was
+     * terminated before it was completed. This is a terminal state.</p> </li> <li>
+     * <p>Rate Exceeded: The number of managed nodes targeted by the command exceeded
+     * the account limit for pending invocations. The system has canceled the command
+     * before running it on any managed node. This is a terminal state.</p> </li> </ul>
      */
     inline void SetStatusDetails(const Aws::String& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = value; }
 
     /**
-     * <p>A detailed status of the command execution. StatusDetails includes more
-     * information than Status because it includes states resulting from error and
-     * concurrency control parameters. StatusDetails can show different results than
-     * Status. For more information about these statuses, see <a
+     * <p>A detailed status of the command execution. <code>StatusDetails</code>
+     * includes more information than <code>Status</code> because it includes states
+     * resulting from error and concurrency control parameters.
+     * <code>StatusDetails</code> can show different results than Status. For more
+     * information about these statuses, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
-     * command statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails
-     * can be one of the following values:</p> <ul> <li> <p>Pending: The command has
-     * not been sent to any instances.</p> </li> <li> <p>In Progress: The command has
-     * been sent to at least one instance but has not reached a final state on all
-     * instances.</p> </li> <li> <p>Success: The command successfully ran on all
-     * invocations. This is a terminal state.</p> </li> <li> <p>Delivery Timed Out: The
-     * value of MaxErrors or more command invocations shows a status of Delivery Timed
-     * Out. This is a terminal state.</p> </li> <li> <p>Execution Timed Out: The value
-     * of MaxErrors or more command invocations shows a status of Execution Timed Out.
-     * This is a terminal state.</p> </li> <li> <p>Failed: The value of MaxErrors or
-     * more command invocations shows a status of Failed. This is a terminal state.</p>
-     * </li> <li> <p>Incomplete: The command was attempted on all instances and one or
-     * more invocations does not have a value of Success but not enough invocations
-     * failed for the status to be Failed. This is a terminal state.</p> </li> <li>
-     * <p>Canceled: The command was terminated before it was completed. This is a
-     * terminal state.</p> </li> <li> <p>Rate Exceeded: The number of instances
-     * targeted by the command exceeded the account limit for pending invocations. The
-     * system has canceled the command before running it on any instance. This is a
-     * terminal state.</p> </li> </ul>
+     * command statuses</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>. StatusDetails can be one of the following values:</p> <ul> <li>
+     * <p>Pending: The command hasn't been sent to any managed nodes.</p> </li> <li>
+     * <p>In Progress: The command has been sent to at least one managed node but
+     * hasn't reached a final state on all managed nodes.</p> </li> <li> <p>Success:
+     * The command successfully ran on all invocations. This is a terminal state.</p>
+     * </li> <li> <p>Delivery Timed Out: The value of MaxErrors or more command
+     * invocations shows a status of Delivery Timed Out. This is a terminal state.</p>
+     * </li> <li> <p>Execution Timed Out: The value of MaxErrors or more command
+     * invocations shows a status of Execution Timed Out. This is a terminal state.</p>
+     * </li> <li> <p>Failed: The value of MaxErrors or more command invocations shows a
+     * status of Failed. This is a terminal state.</p> </li> <li> <p>Incomplete: The
+     * command was attempted on all managed nodes and one or more invocations doesn't
+     * have a value of Success but not enough invocations failed for the status to be
+     * Failed. This is a terminal state.</p> </li> <li> <p>Cancelled: The command was
+     * terminated before it was completed. This is a terminal state.</p> </li> <li>
+     * <p>Rate Exceeded: The number of managed nodes targeted by the command exceeded
+     * the account limit for pending invocations. The system has canceled the command
+     * before running it on any managed node. This is a terminal state.</p> </li> </ul>
      */
     inline void SetStatusDetails(Aws::String&& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = std::move(value); }
 
     /**
-     * <p>A detailed status of the command execution. StatusDetails includes more
-     * information than Status because it includes states resulting from error and
-     * concurrency control parameters. StatusDetails can show different results than
-     * Status. For more information about these statuses, see <a
+     * <p>A detailed status of the command execution. <code>StatusDetails</code>
+     * includes more information than <code>Status</code> because it includes states
+     * resulting from error and concurrency control parameters.
+     * <code>StatusDetails</code> can show different results than Status. For more
+     * information about these statuses, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
-     * command statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails
-     * can be one of the following values:</p> <ul> <li> <p>Pending: The command has
-     * not been sent to any instances.</p> </li> <li> <p>In Progress: The command has
-     * been sent to at least one instance but has not reached a final state on all
-     * instances.</p> </li> <li> <p>Success: The command successfully ran on all
-     * invocations. This is a terminal state.</p> </li> <li> <p>Delivery Timed Out: The
-     * value of MaxErrors or more command invocations shows a status of Delivery Timed
-     * Out. This is a terminal state.</p> </li> <li> <p>Execution Timed Out: The value
-     * of MaxErrors or more command invocations shows a status of Execution Timed Out.
-     * This is a terminal state.</p> </li> <li> <p>Failed: The value of MaxErrors or
-     * more command invocations shows a status of Failed. This is a terminal state.</p>
-     * </li> <li> <p>Incomplete: The command was attempted on all instances and one or
-     * more invocations does not have a value of Success but not enough invocations
-     * failed for the status to be Failed. This is a terminal state.</p> </li> <li>
-     * <p>Canceled: The command was terminated before it was completed. This is a
-     * terminal state.</p> </li> <li> <p>Rate Exceeded: The number of instances
-     * targeted by the command exceeded the account limit for pending invocations. The
-     * system has canceled the command before running it on any instance. This is a
-     * terminal state.</p> </li> </ul>
+     * command statuses</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>. StatusDetails can be one of the following values:</p> <ul> <li>
+     * <p>Pending: The command hasn't been sent to any managed nodes.</p> </li> <li>
+     * <p>In Progress: The command has been sent to at least one managed node but
+     * hasn't reached a final state on all managed nodes.</p> </li> <li> <p>Success:
+     * The command successfully ran on all invocations. This is a terminal state.</p>
+     * </li> <li> <p>Delivery Timed Out: The value of MaxErrors or more command
+     * invocations shows a status of Delivery Timed Out. This is a terminal state.</p>
+     * </li> <li> <p>Execution Timed Out: The value of MaxErrors or more command
+     * invocations shows a status of Execution Timed Out. This is a terminal state.</p>
+     * </li> <li> <p>Failed: The value of MaxErrors or more command invocations shows a
+     * status of Failed. This is a terminal state.</p> </li> <li> <p>Incomplete: The
+     * command was attempted on all managed nodes and one or more invocations doesn't
+     * have a value of Success but not enough invocations failed for the status to be
+     * Failed. This is a terminal state.</p> </li> <li> <p>Cancelled: The command was
+     * terminated before it was completed. This is a terminal state.</p> </li> <li>
+     * <p>Rate Exceeded: The number of managed nodes targeted by the command exceeded
+     * the account limit for pending invocations. The system has canceled the command
+     * before running it on any managed node. This is a terminal state.</p> </li> </ul>
      */
     inline void SetStatusDetails(const char* value) { m_statusDetailsHasBeenSet = true; m_statusDetails.assign(value); }
 
     /**
-     * <p>A detailed status of the command execution. StatusDetails includes more
-     * information than Status because it includes states resulting from error and
-     * concurrency control parameters. StatusDetails can show different results than
-     * Status. For more information about these statuses, see <a
+     * <p>A detailed status of the command execution. <code>StatusDetails</code>
+     * includes more information than <code>Status</code> because it includes states
+     * resulting from error and concurrency control parameters.
+     * <code>StatusDetails</code> can show different results than Status. For more
+     * information about these statuses, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
-     * command statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails
-     * can be one of the following values:</p> <ul> <li> <p>Pending: The command has
-     * not been sent to any instances.</p> </li> <li> <p>In Progress: The command has
-     * been sent to at least one instance but has not reached a final state on all
-     * instances.</p> </li> <li> <p>Success: The command successfully ran on all
-     * invocations. This is a terminal state.</p> </li> <li> <p>Delivery Timed Out: The
-     * value of MaxErrors or more command invocations shows a status of Delivery Timed
-     * Out. This is a terminal state.</p> </li> <li> <p>Execution Timed Out: The value
-     * of MaxErrors or more command invocations shows a status of Execution Timed Out.
-     * This is a terminal state.</p> </li> <li> <p>Failed: The value of MaxErrors or
-     * more command invocations shows a status of Failed. This is a terminal state.</p>
-     * </li> <li> <p>Incomplete: The command was attempted on all instances and one or
-     * more invocations does not have a value of Success but not enough invocations
-     * failed for the status to be Failed. This is a terminal state.</p> </li> <li>
-     * <p>Canceled: The command was terminated before it was completed. This is a
-     * terminal state.</p> </li> <li> <p>Rate Exceeded: The number of instances
-     * targeted by the command exceeded the account limit for pending invocations. The
-     * system has canceled the command before running it on any instance. This is a
-     * terminal state.</p> </li> </ul>
+     * command statuses</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>. StatusDetails can be one of the following values:</p> <ul> <li>
+     * <p>Pending: The command hasn't been sent to any managed nodes.</p> </li> <li>
+     * <p>In Progress: The command has been sent to at least one managed node but
+     * hasn't reached a final state on all managed nodes.</p> </li> <li> <p>Success:
+     * The command successfully ran on all invocations. This is a terminal state.</p>
+     * </li> <li> <p>Delivery Timed Out: The value of MaxErrors or more command
+     * invocations shows a status of Delivery Timed Out. This is a terminal state.</p>
+     * </li> <li> <p>Execution Timed Out: The value of MaxErrors or more command
+     * invocations shows a status of Execution Timed Out. This is a terminal state.</p>
+     * </li> <li> <p>Failed: The value of MaxErrors or more command invocations shows a
+     * status of Failed. This is a terminal state.</p> </li> <li> <p>Incomplete: The
+     * command was attempted on all managed nodes and one or more invocations doesn't
+     * have a value of Success but not enough invocations failed for the status to be
+     * Failed. This is a terminal state.</p> </li> <li> <p>Cancelled: The command was
+     * terminated before it was completed. This is a terminal state.</p> </li> <li>
+     * <p>Rate Exceeded: The number of managed nodes targeted by the command exceeded
+     * the account limit for pending invocations. The system has canceled the command
+     * before running it on any managed node. This is a terminal state.</p> </li> </ul>
      */
     inline Command& WithStatusDetails(const Aws::String& value) { SetStatusDetails(value); return *this;}
 
     /**
-     * <p>A detailed status of the command execution. StatusDetails includes more
-     * information than Status because it includes states resulting from error and
-     * concurrency control parameters. StatusDetails can show different results than
-     * Status. For more information about these statuses, see <a
+     * <p>A detailed status of the command execution. <code>StatusDetails</code>
+     * includes more information than <code>Status</code> because it includes states
+     * resulting from error and concurrency control parameters.
+     * <code>StatusDetails</code> can show different results than Status. For more
+     * information about these statuses, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
-     * command statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails
-     * can be one of the following values:</p> <ul> <li> <p>Pending: The command has
-     * not been sent to any instances.</p> </li> <li> <p>In Progress: The command has
-     * been sent to at least one instance but has not reached a final state on all
-     * instances.</p> </li> <li> <p>Success: The command successfully ran on all
-     * invocations. This is a terminal state.</p> </li> <li> <p>Delivery Timed Out: The
-     * value of MaxErrors or more command invocations shows a status of Delivery Timed
-     * Out. This is a terminal state.</p> </li> <li> <p>Execution Timed Out: The value
-     * of MaxErrors or more command invocations shows a status of Execution Timed Out.
-     * This is a terminal state.</p> </li> <li> <p>Failed: The value of MaxErrors or
-     * more command invocations shows a status of Failed. This is a terminal state.</p>
-     * </li> <li> <p>Incomplete: The command was attempted on all instances and one or
-     * more invocations does not have a value of Success but not enough invocations
-     * failed for the status to be Failed. This is a terminal state.</p> </li> <li>
-     * <p>Canceled: The command was terminated before it was completed. This is a
-     * terminal state.</p> </li> <li> <p>Rate Exceeded: The number of instances
-     * targeted by the command exceeded the account limit for pending invocations. The
-     * system has canceled the command before running it on any instance. This is a
-     * terminal state.</p> </li> </ul>
+     * command statuses</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>. StatusDetails can be one of the following values:</p> <ul> <li>
+     * <p>Pending: The command hasn't been sent to any managed nodes.</p> </li> <li>
+     * <p>In Progress: The command has been sent to at least one managed node but
+     * hasn't reached a final state on all managed nodes.</p> </li> <li> <p>Success:
+     * The command successfully ran on all invocations. This is a terminal state.</p>
+     * </li> <li> <p>Delivery Timed Out: The value of MaxErrors or more command
+     * invocations shows a status of Delivery Timed Out. This is a terminal state.</p>
+     * </li> <li> <p>Execution Timed Out: The value of MaxErrors or more command
+     * invocations shows a status of Execution Timed Out. This is a terminal state.</p>
+     * </li> <li> <p>Failed: The value of MaxErrors or more command invocations shows a
+     * status of Failed. This is a terminal state.</p> </li> <li> <p>Incomplete: The
+     * command was attempted on all managed nodes and one or more invocations doesn't
+     * have a value of Success but not enough invocations failed for the status to be
+     * Failed. This is a terminal state.</p> </li> <li> <p>Cancelled: The command was
+     * terminated before it was completed. This is a terminal state.</p> </li> <li>
+     * <p>Rate Exceeded: The number of managed nodes targeted by the command exceeded
+     * the account limit for pending invocations. The system has canceled the command
+     * before running it on any managed node. This is a terminal state.</p> </li> </ul>
      */
     inline Command& WithStatusDetails(Aws::String&& value) { SetStatusDetails(std::move(value)); return *this;}
 
     /**
-     * <p>A detailed status of the command execution. StatusDetails includes more
-     * information than Status because it includes states resulting from error and
-     * concurrency control parameters. StatusDetails can show different results than
-     * Status. For more information about these statuses, see <a
+     * <p>A detailed status of the command execution. <code>StatusDetails</code>
+     * includes more information than <code>Status</code> because it includes states
+     * resulting from error and concurrency control parameters.
+     * <code>StatusDetails</code> can show different results than Status. For more
+     * information about these statuses, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
-     * command statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails
-     * can be one of the following values:</p> <ul> <li> <p>Pending: The command has
-     * not been sent to any instances.</p> </li> <li> <p>In Progress: The command has
-     * been sent to at least one instance but has not reached a final state on all
-     * instances.</p> </li> <li> <p>Success: The command successfully ran on all
-     * invocations. This is a terminal state.</p> </li> <li> <p>Delivery Timed Out: The
-     * value of MaxErrors or more command invocations shows a status of Delivery Timed
-     * Out. This is a terminal state.</p> </li> <li> <p>Execution Timed Out: The value
-     * of MaxErrors or more command invocations shows a status of Execution Timed Out.
-     * This is a terminal state.</p> </li> <li> <p>Failed: The value of MaxErrors or
-     * more command invocations shows a status of Failed. This is a terminal state.</p>
-     * </li> <li> <p>Incomplete: The command was attempted on all instances and one or
-     * more invocations does not have a value of Success but not enough invocations
-     * failed for the status to be Failed. This is a terminal state.</p> </li> <li>
-     * <p>Canceled: The command was terminated before it was completed. This is a
-     * terminal state.</p> </li> <li> <p>Rate Exceeded: The number of instances
-     * targeted by the command exceeded the account limit for pending invocations. The
-     * system has canceled the command before running it on any instance. This is a
-     * terminal state.</p> </li> </ul>
+     * command statuses</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>. StatusDetails can be one of the following values:</p> <ul> <li>
+     * <p>Pending: The command hasn't been sent to any managed nodes.</p> </li> <li>
+     * <p>In Progress: The command has been sent to at least one managed node but
+     * hasn't reached a final state on all managed nodes.</p> </li> <li> <p>Success:
+     * The command successfully ran on all invocations. This is a terminal state.</p>
+     * </li> <li> <p>Delivery Timed Out: The value of MaxErrors or more command
+     * invocations shows a status of Delivery Timed Out. This is a terminal state.</p>
+     * </li> <li> <p>Execution Timed Out: The value of MaxErrors or more command
+     * invocations shows a status of Execution Timed Out. This is a terminal state.</p>
+     * </li> <li> <p>Failed: The value of MaxErrors or more command invocations shows a
+     * status of Failed. This is a terminal state.</p> </li> <li> <p>Incomplete: The
+     * command was attempted on all managed nodes and one or more invocations doesn't
+     * have a value of Success but not enough invocations failed for the status to be
+     * Failed. This is a terminal state.</p> </li> <li> <p>Cancelled: The command was
+     * terminated before it was completed. This is a terminal state.</p> </li> <li>
+     * <p>Rate Exceeded: The number of managed nodes targeted by the command exceeded
+     * the account limit for pending invocations. The system has canceled the command
+     * before running it on any managed node. This is a terminal state.</p> </li> </ul>
      */
     inline Command& WithStatusDetails(const char* value) { SetStatusDetails(value); return *this;}
 
 
     /**
      * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
-     * Instead, Systems Manager automatically determines the Region of the S3
-     * bucket.</p>
+     * Instead, Systems Manager automatically determines the Amazon Web Services Region
+     * of the S3 bucket.</p>
      */
     inline const Aws::String& GetOutputS3Region() const{ return m_outputS3Region; }
 
     /**
      * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
-     * Instead, Systems Manager automatically determines the Region of the S3
-     * bucket.</p>
+     * Instead, Systems Manager automatically determines the Amazon Web Services Region
+     * of the S3 bucket.</p>
      */
     inline bool OutputS3RegionHasBeenSet() const { return m_outputS3RegionHasBeenSet; }
 
     /**
      * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
-     * Instead, Systems Manager automatically determines the Region of the S3
-     * bucket.</p>
+     * Instead, Systems Manager automatically determines the Amazon Web Services Region
+     * of the S3 bucket.</p>
      */
     inline void SetOutputS3Region(const Aws::String& value) { m_outputS3RegionHasBeenSet = true; m_outputS3Region = value; }
 
     /**
      * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
-     * Instead, Systems Manager automatically determines the Region of the S3
-     * bucket.</p>
+     * Instead, Systems Manager automatically determines the Amazon Web Services Region
+     * of the S3 bucket.</p>
      */
     inline void SetOutputS3Region(Aws::String&& value) { m_outputS3RegionHasBeenSet = true; m_outputS3Region = std::move(value); }
 
     /**
      * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
-     * Instead, Systems Manager automatically determines the Region of the S3
-     * bucket.</p>
+     * Instead, Systems Manager automatically determines the Amazon Web Services Region
+     * of the S3 bucket.</p>
      */
     inline void SetOutputS3Region(const char* value) { m_outputS3RegionHasBeenSet = true; m_outputS3Region.assign(value); }
 
     /**
      * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
-     * Instead, Systems Manager automatically determines the Region of the S3
-     * bucket.</p>
+     * Instead, Systems Manager automatically determines the Amazon Web Services Region
+     * of the S3 bucket.</p>
      */
     inline Command& WithOutputS3Region(const Aws::String& value) { SetOutputS3Region(value); return *this;}
 
     /**
      * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
-     * Instead, Systems Manager automatically determines the Region of the S3
-     * bucket.</p>
+     * Instead, Systems Manager automatically determines the Amazon Web Services Region
+     * of the S3 bucket.</p>
      */
     inline Command& WithOutputS3Region(Aws::String&& value) { SetOutputS3Region(std::move(value)); return *this;}
 
     /**
      * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
-     * Instead, Systems Manager automatically determines the Region of the S3
-     * bucket.</p>
+     * Instead, Systems Manager automatically determines the Amazon Web Services Region
+     * of the S3 bucket.</p>
      */
     inline Command& WithOutputS3Region(const char* value) { SetOutputS3Region(value); return *this;}
 
@@ -878,90 +886,90 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of instances that are allowed to run the command at the
-     * same time. You can specify a number of instances, such as 10, or a percentage of
-     * instances, such as 10%. The default value is 50. For more information about how
-     * to use MaxConcurrency, see <a
+     * <p>The maximum number of managed nodes that are allowed to run the command at
+     * the same time. You can specify a number of managed nodes, such as 10, or a
+     * percentage of nodes, such as 10%. The default value is 50. For more information
+     * about how to use <code>MaxConcurrency</code>, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
-     * commands using Systems Manager Run Command</a> in the <i>AWS Systems Manager
-     * User Guide</i>.</p>
+     * commands using Systems Manager Run Command</a> in the <i>Amazon Web Services
+     * Systems Manager User Guide</i>.</p>
      */
     inline const Aws::String& GetMaxConcurrency() const{ return m_maxConcurrency; }
 
     /**
-     * <p>The maximum number of instances that are allowed to run the command at the
-     * same time. You can specify a number of instances, such as 10, or a percentage of
-     * instances, such as 10%. The default value is 50. For more information about how
-     * to use MaxConcurrency, see <a
+     * <p>The maximum number of managed nodes that are allowed to run the command at
+     * the same time. You can specify a number of managed nodes, such as 10, or a
+     * percentage of nodes, such as 10%. The default value is 50. For more information
+     * about how to use <code>MaxConcurrency</code>, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
-     * commands using Systems Manager Run Command</a> in the <i>AWS Systems Manager
-     * User Guide</i>.</p>
+     * commands using Systems Manager Run Command</a> in the <i>Amazon Web Services
+     * Systems Manager User Guide</i>.</p>
      */
     inline bool MaxConcurrencyHasBeenSet() const { return m_maxConcurrencyHasBeenSet; }
 
     /**
-     * <p>The maximum number of instances that are allowed to run the command at the
-     * same time. You can specify a number of instances, such as 10, or a percentage of
-     * instances, such as 10%. The default value is 50. For more information about how
-     * to use MaxConcurrency, see <a
+     * <p>The maximum number of managed nodes that are allowed to run the command at
+     * the same time. You can specify a number of managed nodes, such as 10, or a
+     * percentage of nodes, such as 10%. The default value is 50. For more information
+     * about how to use <code>MaxConcurrency</code>, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
-     * commands using Systems Manager Run Command</a> in the <i>AWS Systems Manager
-     * User Guide</i>.</p>
+     * commands using Systems Manager Run Command</a> in the <i>Amazon Web Services
+     * Systems Manager User Guide</i>.</p>
      */
     inline void SetMaxConcurrency(const Aws::String& value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = value; }
 
     /**
-     * <p>The maximum number of instances that are allowed to run the command at the
-     * same time. You can specify a number of instances, such as 10, or a percentage of
-     * instances, such as 10%. The default value is 50. For more information about how
-     * to use MaxConcurrency, see <a
+     * <p>The maximum number of managed nodes that are allowed to run the command at
+     * the same time. You can specify a number of managed nodes, such as 10, or a
+     * percentage of nodes, such as 10%. The default value is 50. For more information
+     * about how to use <code>MaxConcurrency</code>, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
-     * commands using Systems Manager Run Command</a> in the <i>AWS Systems Manager
-     * User Guide</i>.</p>
+     * commands using Systems Manager Run Command</a> in the <i>Amazon Web Services
+     * Systems Manager User Guide</i>.</p>
      */
     inline void SetMaxConcurrency(Aws::String&& value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = std::move(value); }
 
     /**
-     * <p>The maximum number of instances that are allowed to run the command at the
-     * same time. You can specify a number of instances, such as 10, or a percentage of
-     * instances, such as 10%. The default value is 50. For more information about how
-     * to use MaxConcurrency, see <a
+     * <p>The maximum number of managed nodes that are allowed to run the command at
+     * the same time. You can specify a number of managed nodes, such as 10, or a
+     * percentage of nodes, such as 10%. The default value is 50. For more information
+     * about how to use <code>MaxConcurrency</code>, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
-     * commands using Systems Manager Run Command</a> in the <i>AWS Systems Manager
-     * User Guide</i>.</p>
+     * commands using Systems Manager Run Command</a> in the <i>Amazon Web Services
+     * Systems Manager User Guide</i>.</p>
      */
     inline void SetMaxConcurrency(const char* value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency.assign(value); }
 
     /**
-     * <p>The maximum number of instances that are allowed to run the command at the
-     * same time. You can specify a number of instances, such as 10, or a percentage of
-     * instances, such as 10%. The default value is 50. For more information about how
-     * to use MaxConcurrency, see <a
+     * <p>The maximum number of managed nodes that are allowed to run the command at
+     * the same time. You can specify a number of managed nodes, such as 10, or a
+     * percentage of nodes, such as 10%. The default value is 50. For more information
+     * about how to use <code>MaxConcurrency</code>, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
-     * commands using Systems Manager Run Command</a> in the <i>AWS Systems Manager
-     * User Guide</i>.</p>
+     * commands using Systems Manager Run Command</a> in the <i>Amazon Web Services
+     * Systems Manager User Guide</i>.</p>
      */
     inline Command& WithMaxConcurrency(const Aws::String& value) { SetMaxConcurrency(value); return *this;}
 
     /**
-     * <p>The maximum number of instances that are allowed to run the command at the
-     * same time. You can specify a number of instances, such as 10, or a percentage of
-     * instances, such as 10%. The default value is 50. For more information about how
-     * to use MaxConcurrency, see <a
+     * <p>The maximum number of managed nodes that are allowed to run the command at
+     * the same time. You can specify a number of managed nodes, such as 10, or a
+     * percentage of nodes, such as 10%. The default value is 50. For more information
+     * about how to use <code>MaxConcurrency</code>, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
-     * commands using Systems Manager Run Command</a> in the <i>AWS Systems Manager
-     * User Guide</i>.</p>
+     * commands using Systems Manager Run Command</a> in the <i>Amazon Web Services
+     * Systems Manager User Guide</i>.</p>
      */
     inline Command& WithMaxConcurrency(Aws::String&& value) { SetMaxConcurrency(std::move(value)); return *this;}
 
     /**
-     * <p>The maximum number of instances that are allowed to run the command at the
-     * same time. You can specify a number of instances, such as 10, or a percentage of
-     * instances, such as 10%. The default value is 50. For more information about how
-     * to use MaxConcurrency, see <a
+     * <p>The maximum number of managed nodes that are allowed to run the command at
+     * the same time. You can specify a number of managed nodes, such as 10, or a
+     * percentage of nodes, such as 10%. The default value is 50. For more information
+     * about how to use <code>MaxConcurrency</code>, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
-     * commands using Systems Manager Run Command</a> in the <i>AWS Systems Manager
-     * User Guide</i>.</p>
+     * commands using Systems Manager Run Command</a> in the <i>Amazon Web Services
+     * Systems Manager User Guide</i>.</p>
      */
     inline Command& WithMaxConcurrency(const char* value) { SetMaxConcurrency(value); return *this;}
 
@@ -969,88 +977,88 @@ namespace Model
     /**
      * <p>The maximum number of errors allowed before the system stops sending the
      * command to additional targets. You can specify a number of errors, such as 10,
-     * or a percentage or errors, such as 10%. The default value is 0. For more
-     * information about how to use MaxErrors, see <a
+     * or a percentage or errors, such as 10%. The default value is <code>0</code>. For
+     * more information about how to use <code>MaxErrors</code>, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
-     * commands using Systems Manager Run Command</a> in the <i>AWS Systems Manager
-     * User Guide</i>.</p>
+     * commands using Systems Manager Run Command</a> in the <i>Amazon Web Services
+     * Systems Manager User Guide</i>.</p>
      */
     inline const Aws::String& GetMaxErrors() const{ return m_maxErrors; }
 
     /**
      * <p>The maximum number of errors allowed before the system stops sending the
      * command to additional targets. You can specify a number of errors, such as 10,
-     * or a percentage or errors, such as 10%. The default value is 0. For more
-     * information about how to use MaxErrors, see <a
+     * or a percentage or errors, such as 10%. The default value is <code>0</code>. For
+     * more information about how to use <code>MaxErrors</code>, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
-     * commands using Systems Manager Run Command</a> in the <i>AWS Systems Manager
-     * User Guide</i>.</p>
+     * commands using Systems Manager Run Command</a> in the <i>Amazon Web Services
+     * Systems Manager User Guide</i>.</p>
      */
     inline bool MaxErrorsHasBeenSet() const { return m_maxErrorsHasBeenSet; }
 
     /**
      * <p>The maximum number of errors allowed before the system stops sending the
      * command to additional targets. You can specify a number of errors, such as 10,
-     * or a percentage or errors, such as 10%. The default value is 0. For more
-     * information about how to use MaxErrors, see <a
+     * or a percentage or errors, such as 10%. The default value is <code>0</code>. For
+     * more information about how to use <code>MaxErrors</code>, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
-     * commands using Systems Manager Run Command</a> in the <i>AWS Systems Manager
-     * User Guide</i>.</p>
+     * commands using Systems Manager Run Command</a> in the <i>Amazon Web Services
+     * Systems Manager User Guide</i>.</p>
      */
     inline void SetMaxErrors(const Aws::String& value) { m_maxErrorsHasBeenSet = true; m_maxErrors = value; }
 
     /**
      * <p>The maximum number of errors allowed before the system stops sending the
      * command to additional targets. You can specify a number of errors, such as 10,
-     * or a percentage or errors, such as 10%. The default value is 0. For more
-     * information about how to use MaxErrors, see <a
+     * or a percentage or errors, such as 10%. The default value is <code>0</code>. For
+     * more information about how to use <code>MaxErrors</code>, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
-     * commands using Systems Manager Run Command</a> in the <i>AWS Systems Manager
-     * User Guide</i>.</p>
+     * commands using Systems Manager Run Command</a> in the <i>Amazon Web Services
+     * Systems Manager User Guide</i>.</p>
      */
     inline void SetMaxErrors(Aws::String&& value) { m_maxErrorsHasBeenSet = true; m_maxErrors = std::move(value); }
 
     /**
      * <p>The maximum number of errors allowed before the system stops sending the
      * command to additional targets. You can specify a number of errors, such as 10,
-     * or a percentage or errors, such as 10%. The default value is 0. For more
-     * information about how to use MaxErrors, see <a
+     * or a percentage or errors, such as 10%. The default value is <code>0</code>. For
+     * more information about how to use <code>MaxErrors</code>, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
-     * commands using Systems Manager Run Command</a> in the <i>AWS Systems Manager
-     * User Guide</i>.</p>
+     * commands using Systems Manager Run Command</a> in the <i>Amazon Web Services
+     * Systems Manager User Guide</i>.</p>
      */
     inline void SetMaxErrors(const char* value) { m_maxErrorsHasBeenSet = true; m_maxErrors.assign(value); }
 
     /**
      * <p>The maximum number of errors allowed before the system stops sending the
      * command to additional targets. You can specify a number of errors, such as 10,
-     * or a percentage or errors, such as 10%. The default value is 0. For more
-     * information about how to use MaxErrors, see <a
+     * or a percentage or errors, such as 10%. The default value is <code>0</code>. For
+     * more information about how to use <code>MaxErrors</code>, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
-     * commands using Systems Manager Run Command</a> in the <i>AWS Systems Manager
-     * User Guide</i>.</p>
+     * commands using Systems Manager Run Command</a> in the <i>Amazon Web Services
+     * Systems Manager User Guide</i>.</p>
      */
     inline Command& WithMaxErrors(const Aws::String& value) { SetMaxErrors(value); return *this;}
 
     /**
      * <p>The maximum number of errors allowed before the system stops sending the
      * command to additional targets. You can specify a number of errors, such as 10,
-     * or a percentage or errors, such as 10%. The default value is 0. For more
-     * information about how to use MaxErrors, see <a
+     * or a percentage or errors, such as 10%. The default value is <code>0</code>. For
+     * more information about how to use <code>MaxErrors</code>, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
-     * commands using Systems Manager Run Command</a> in the <i>AWS Systems Manager
-     * User Guide</i>.</p>
+     * commands using Systems Manager Run Command</a> in the <i>Amazon Web Services
+     * Systems Manager User Guide</i>.</p>
      */
     inline Command& WithMaxErrors(Aws::String&& value) { SetMaxErrors(std::move(value)); return *this;}
 
     /**
      * <p>The maximum number of errors allowed before the system stops sending the
      * command to additional targets. You can specify a number of errors, such as 10,
-     * or a percentage or errors, such as 10%. The default value is 0. For more
-     * information about how to use MaxErrors, see <a
+     * or a percentage or errors, such as 10%. The default value is <code>0</code>. For
+     * more information about how to use <code>MaxErrors</code>, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
-     * commands using Systems Manager Run Command</a> in the <i>AWS Systems Manager
-     * User Guide</i>.</p>
+     * commands using Systems Manager Run Command</a> in the <i>Amazon Web Services
+     * Systems Manager User Guide</i>.</p>
      */
     inline Command& WithMaxErrors(const char* value) { SetMaxErrors(value); return *this;}
 
@@ -1079,28 +1087,28 @@ namespace Model
     /**
      * <p>The number of targets for which the command invocation reached a terminal
      * state. Terminal states include the following: Success, Failed, Execution Timed
-     * Out, Delivery Timed Out, Canceled, Terminated, or Undeliverable.</p>
+     * Out, Delivery Timed Out, Cancelled, Terminated, or Undeliverable.</p>
      */
     inline int GetCompletedCount() const{ return m_completedCount; }
 
     /**
      * <p>The number of targets for which the command invocation reached a terminal
      * state. Terminal states include the following: Success, Failed, Execution Timed
-     * Out, Delivery Timed Out, Canceled, Terminated, or Undeliverable.</p>
+     * Out, Delivery Timed Out, Cancelled, Terminated, or Undeliverable.</p>
      */
     inline bool CompletedCountHasBeenSet() const { return m_completedCountHasBeenSet; }
 
     /**
      * <p>The number of targets for which the command invocation reached a terminal
      * state. Terminal states include the following: Success, Failed, Execution Timed
-     * Out, Delivery Timed Out, Canceled, Terminated, or Undeliverable.</p>
+     * Out, Delivery Timed Out, Cancelled, Terminated, or Undeliverable.</p>
      */
     inline void SetCompletedCount(int value) { m_completedCountHasBeenSet = true; m_completedCount = value; }
 
     /**
      * <p>The number of targets for which the command invocation reached a terminal
      * state. Terminal states include the following: Success, Failed, Execution Timed
-     * Out, Delivery Timed Out, Canceled, Terminated, or Undeliverable.</p>
+     * Out, Delivery Timed Out, Cancelled, Terminated, or Undeliverable.</p>
      */
     inline Command& WithCompletedCount(int value) { SetCompletedCount(value); return *this;}
 
@@ -1152,50 +1160,58 @@ namespace Model
 
 
     /**
-     * <p>The IAM service role that Run Command uses to act on your behalf when sending
-     * notifications about command status changes. </p>
+     * <p>The Identity and Access Management (IAM) service role that Run Command, a
+     * capability of Amazon Web Services Systems Manager, uses to act on your behalf
+     * when sending notifications about command status changes. </p>
      */
     inline const Aws::String& GetServiceRole() const{ return m_serviceRole; }
 
     /**
-     * <p>The IAM service role that Run Command uses to act on your behalf when sending
-     * notifications about command status changes. </p>
+     * <p>The Identity and Access Management (IAM) service role that Run Command, a
+     * capability of Amazon Web Services Systems Manager, uses to act on your behalf
+     * when sending notifications about command status changes. </p>
      */
     inline bool ServiceRoleHasBeenSet() const { return m_serviceRoleHasBeenSet; }
 
     /**
-     * <p>The IAM service role that Run Command uses to act on your behalf when sending
-     * notifications about command status changes. </p>
+     * <p>The Identity and Access Management (IAM) service role that Run Command, a
+     * capability of Amazon Web Services Systems Manager, uses to act on your behalf
+     * when sending notifications about command status changes. </p>
      */
     inline void SetServiceRole(const Aws::String& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = value; }
 
     /**
-     * <p>The IAM service role that Run Command uses to act on your behalf when sending
-     * notifications about command status changes. </p>
+     * <p>The Identity and Access Management (IAM) service role that Run Command, a
+     * capability of Amazon Web Services Systems Manager, uses to act on your behalf
+     * when sending notifications about command status changes. </p>
      */
     inline void SetServiceRole(Aws::String&& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = std::move(value); }
 
     /**
-     * <p>The IAM service role that Run Command uses to act on your behalf when sending
-     * notifications about command status changes. </p>
+     * <p>The Identity and Access Management (IAM) service role that Run Command, a
+     * capability of Amazon Web Services Systems Manager, uses to act on your behalf
+     * when sending notifications about command status changes. </p>
      */
     inline void SetServiceRole(const char* value) { m_serviceRoleHasBeenSet = true; m_serviceRole.assign(value); }
 
     /**
-     * <p>The IAM service role that Run Command uses to act on your behalf when sending
-     * notifications about command status changes. </p>
+     * <p>The Identity and Access Management (IAM) service role that Run Command, a
+     * capability of Amazon Web Services Systems Manager, uses to act on your behalf
+     * when sending notifications about command status changes. </p>
      */
     inline Command& WithServiceRole(const Aws::String& value) { SetServiceRole(value); return *this;}
 
     /**
-     * <p>The IAM service role that Run Command uses to act on your behalf when sending
-     * notifications about command status changes. </p>
+     * <p>The Identity and Access Management (IAM) service role that Run Command, a
+     * capability of Amazon Web Services Systems Manager, uses to act on your behalf
+     * when sending notifications about command status changes. </p>
      */
     inline Command& WithServiceRole(Aws::String&& value) { SetServiceRole(std::move(value)); return *this;}
 
     /**
-     * <p>The IAM service role that Run Command uses to act on your behalf when sending
-     * notifications about command status changes. </p>
+     * <p>The Identity and Access Management (IAM) service role that Run Command, a
+     * capability of Amazon Web Services Systems Manager, uses to act on your behalf
+     * when sending notifications about command status changes. </p>
      */
     inline Command& WithServiceRole(const char* value) { SetServiceRole(value); return *this;}
 
@@ -1232,38 +1248,38 @@ namespace Model
 
 
     /**
-     * <p>CloudWatch Logs information where you want Systems Manager to send the
-     * command output.</p>
+     * <p>Amazon CloudWatch Logs information where you want Amazon Web Services Systems
+     * Manager to send the command output.</p>
      */
     inline const CloudWatchOutputConfig& GetCloudWatchOutputConfig() const{ return m_cloudWatchOutputConfig; }
 
     /**
-     * <p>CloudWatch Logs information where you want Systems Manager to send the
-     * command output.</p>
+     * <p>Amazon CloudWatch Logs information where you want Amazon Web Services Systems
+     * Manager to send the command output.</p>
      */
     inline bool CloudWatchOutputConfigHasBeenSet() const { return m_cloudWatchOutputConfigHasBeenSet; }
 
     /**
-     * <p>CloudWatch Logs information where you want Systems Manager to send the
-     * command output.</p>
+     * <p>Amazon CloudWatch Logs information where you want Amazon Web Services Systems
+     * Manager to send the command output.</p>
      */
     inline void SetCloudWatchOutputConfig(const CloudWatchOutputConfig& value) { m_cloudWatchOutputConfigHasBeenSet = true; m_cloudWatchOutputConfig = value; }
 
     /**
-     * <p>CloudWatch Logs information where you want Systems Manager to send the
-     * command output.</p>
+     * <p>Amazon CloudWatch Logs information where you want Amazon Web Services Systems
+     * Manager to send the command output.</p>
      */
     inline void SetCloudWatchOutputConfig(CloudWatchOutputConfig&& value) { m_cloudWatchOutputConfigHasBeenSet = true; m_cloudWatchOutputConfig = std::move(value); }
 
     /**
-     * <p>CloudWatch Logs information where you want Systems Manager to send the
-     * command output.</p>
+     * <p>Amazon CloudWatch Logs information where you want Amazon Web Services Systems
+     * Manager to send the command output.</p>
      */
     inline Command& WithCloudWatchOutputConfig(const CloudWatchOutputConfig& value) { SetCloudWatchOutputConfig(value); return *this;}
 
     /**
-     * <p>CloudWatch Logs information where you want Systems Manager to send the
-     * command output.</p>
+     * <p>Amazon CloudWatch Logs information where you want Amazon Web Services Systems
+     * Manager to send the command output.</p>
      */
     inline Command& WithCloudWatchOutputConfig(CloudWatchOutputConfig&& value) { SetCloudWatchOutputConfig(std::move(value)); return *this;}
 

@@ -24,10 +24,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains the geofence geometry details.</p>  <p>Limitation — Amazon
-   * Location does not currently support polygons with holes, multipolygons, polygons
-   * that are wound clockwise, or that cross the antimeridian. </p> <p><h3>See
-   * Also:</h3>   <a
+   * <p>Contains the geofence geometry details.</p>  <p>Amazon Location doesn't
+   * currently support polygons with holes, multipolygons, polygons that are wound
+   * clockwise, or that cross the antimeridian. </p> <p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/GeofenceGeometry">AWS
    * API Reference</a></p>
    */

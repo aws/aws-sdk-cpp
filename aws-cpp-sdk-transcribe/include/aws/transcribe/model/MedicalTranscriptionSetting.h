@@ -129,7 +129,7 @@ namespace Model
      * also come with confidence scores provided by Amazon Transcribe Medical.</p>
      * <p>You can't set both <code>ShowSpeakerLabels</code> and
      * <code>ChannelIdentification</code> in the same request. If you set both, your
-     * request returns a <code>BadRequestException</code> </p>
+     * request returns a <code>BadRequestException</code>.</p>
      */
     inline bool GetChannelIdentification() const{ return m_channelIdentification; }
 
@@ -142,7 +142,7 @@ namespace Model
      * also come with confidence scores provided by Amazon Transcribe Medical.</p>
      * <p>You can't set both <code>ShowSpeakerLabels</code> and
      * <code>ChannelIdentification</code> in the same request. If you set both, your
-     * request returns a <code>BadRequestException</code> </p>
+     * request returns a <code>BadRequestException</code>.</p>
      */
     inline bool ChannelIdentificationHasBeenSet() const { return m_channelIdentificationHasBeenSet; }
 
@@ -155,7 +155,7 @@ namespace Model
      * also come with confidence scores provided by Amazon Transcribe Medical.</p>
      * <p>You can't set both <code>ShowSpeakerLabels</code> and
      * <code>ChannelIdentification</code> in the same request. If you set both, your
-     * request returns a <code>BadRequestException</code> </p>
+     * request returns a <code>BadRequestException</code>.</p>
      */
     inline void SetChannelIdentification(bool value) { m_channelIdentificationHasBeenSet = true; m_channelIdentification = value; }
 
@@ -168,7 +168,7 @@ namespace Model
      * also come with confidence scores provided by Amazon Transcribe Medical.</p>
      * <p>You can't set both <code>ShowSpeakerLabels</code> and
      * <code>ChannelIdentification</code> in the same request. If you set both, your
-     * request returns a <code>BadRequestException</code> </p>
+     * request returns a <code>BadRequestException</code>.</p>
      */
     inline MedicalTranscriptionSetting& WithChannelIdentification(bool value) { SetChannelIdentification(value); return *this;}
 

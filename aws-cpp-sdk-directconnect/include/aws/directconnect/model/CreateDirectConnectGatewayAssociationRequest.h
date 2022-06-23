@@ -123,7 +123,7 @@ namespace Model
      * <p>This parameter is required when you create an association to a transit
      * gateway.</p> <p>For information about how to set the prefixes, see <a
      * href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes">Allowed
-     * Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.</p>
+     * Prefixes</a> in the <i>Direct Connect User Guide</i>.</p>
      */
     inline const Aws::Vector<RouteFilterPrefix>& GetAddAllowedPrefixesToDirectConnectGateway() const{ return m_addAllowedPrefixesToDirectConnectGateway; }
 
@@ -132,7 +132,7 @@ namespace Model
      * <p>This parameter is required when you create an association to a transit
      * gateway.</p> <p>For information about how to set the prefixes, see <a
      * href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes">Allowed
-     * Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.</p>
+     * Prefixes</a> in the <i>Direct Connect User Guide</i>.</p>
      */
     inline bool AddAllowedPrefixesToDirectConnectGatewayHasBeenSet() const { return m_addAllowedPrefixesToDirectConnectGatewayHasBeenSet; }
 
@@ -141,7 +141,7 @@ namespace Model
      * <p>This parameter is required when you create an association to a transit
      * gateway.</p> <p>For information about how to set the prefixes, see <a
      * href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes">Allowed
-     * Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.</p>
+     * Prefixes</a> in the <i>Direct Connect User Guide</i>.</p>
      */
     inline void SetAddAllowedPrefixesToDirectConnectGateway(const Aws::Vector<RouteFilterPrefix>& value) { m_addAllowedPrefixesToDirectConnectGatewayHasBeenSet = true; m_addAllowedPrefixesToDirectConnectGateway = value; }
 
@@ -150,7 +150,7 @@ namespace Model
      * <p>This parameter is required when you create an association to a transit
      * gateway.</p> <p>For information about how to set the prefixes, see <a
      * href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes">Allowed
-     * Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.</p>
+     * Prefixes</a> in the <i>Direct Connect User Guide</i>.</p>
      */
     inline void SetAddAllowedPrefixesToDirectConnectGateway(Aws::Vector<RouteFilterPrefix>&& value) { m_addAllowedPrefixesToDirectConnectGatewayHasBeenSet = true; m_addAllowedPrefixesToDirectConnectGateway = std::move(value); }
 
@@ -159,7 +159,7 @@ namespace Model
      * <p>This parameter is required when you create an association to a transit
      * gateway.</p> <p>For information about how to set the prefixes, see <a
      * href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes">Allowed
-     * Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.</p>
+     * Prefixes</a> in the <i>Direct Connect User Guide</i>.</p>
      */
     inline CreateDirectConnectGatewayAssociationRequest& WithAddAllowedPrefixesToDirectConnectGateway(const Aws::Vector<RouteFilterPrefix>& value) { SetAddAllowedPrefixesToDirectConnectGateway(value); return *this;}
 
@@ -168,7 +168,7 @@ namespace Model
      * <p>This parameter is required when you create an association to a transit
      * gateway.</p> <p>For information about how to set the prefixes, see <a
      * href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes">Allowed
-     * Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.</p>
+     * Prefixes</a> in the <i>Direct Connect User Guide</i>.</p>
      */
     inline CreateDirectConnectGatewayAssociationRequest& WithAddAllowedPrefixesToDirectConnectGateway(Aws::Vector<RouteFilterPrefix>&& value) { SetAddAllowedPrefixesToDirectConnectGateway(std::move(value)); return *this;}
 
@@ -177,7 +177,7 @@ namespace Model
      * <p>This parameter is required when you create an association to a transit
      * gateway.</p> <p>For information about how to set the prefixes, see <a
      * href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes">Allowed
-     * Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.</p>
+     * Prefixes</a> in the <i>Direct Connect User Guide</i>.</p>
      */
     inline CreateDirectConnectGatewayAssociationRequest& AddAddAllowedPrefixesToDirectConnectGateway(const RouteFilterPrefix& value) { m_addAllowedPrefixesToDirectConnectGatewayHasBeenSet = true; m_addAllowedPrefixesToDirectConnectGateway.push_back(value); return *this; }
 
@@ -186,7 +186,7 @@ namespace Model
      * <p>This parameter is required when you create an association to a transit
      * gateway.</p> <p>For information about how to set the prefixes, see <a
      * href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes">Allowed
-     * Prefixes</a> in the <i>AWS Direct Connect User Guide</i>.</p>
+     * Prefixes</a> in the <i>Direct Connect User Guide</i>.</p>
      */
     inline CreateDirectConnectGatewayAssociationRequest& AddAddAllowedPrefixesToDirectConnectGateway(RouteFilterPrefix&& value) { m_addAllowedPrefixesToDirectConnectGatewayHasBeenSet = true; m_addAllowedPrefixesToDirectConnectGateway.push_back(std::move(value)); return *this; }
 

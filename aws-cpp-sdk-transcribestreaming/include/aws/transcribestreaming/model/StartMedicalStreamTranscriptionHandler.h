@@ -31,7 +31,7 @@ namespace Model
 
     public:
         StartMedicalStreamTranscriptionHandler();
-        StartMedicalStreamTranscriptionHandler& operator=(const StartMedicalStreamTranscriptionHandler& handler) = default;
+        StartMedicalStreamTranscriptionHandler& operator=(const StartMedicalStreamTranscriptionHandler&) = default;
 
         virtual void OnEvent() override;
 

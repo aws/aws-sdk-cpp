@@ -38,7 +38,9 @@ namespace Model
     SQLSERVER,
     TERADATA,
     TWITTER,
-    TIMESTREAM
+    TIMESTREAM,
+    AMAZON_OPENSEARCH,
+    EXASOL
   };
 
 namespace DataSourceTypeMapper

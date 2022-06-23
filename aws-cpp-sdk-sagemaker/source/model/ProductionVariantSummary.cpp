@@ -28,7 +28,10 @@ ProductionVariantSummary::ProductionVariantSummary() :
     m_currentInstanceCount(0),
     m_currentInstanceCountHasBeenSet(false),
     m_desiredInstanceCount(0),
-    m_desiredInstanceCountHasBeenSet(false)
+    m_desiredInstanceCountHasBeenSet(false),
+    m_variantStatusHasBeenSet(false),
+    m_currentServerlessConfigHasBeenSet(false),
+    m_desiredServerlessConfigHasBeenSet(false)
 {
 }
 
@@ -42,7 +45,10 @@ ProductionVariantSummary::ProductionVariantSummary(JsonView jsonValue) :
     m_currentInstanceCount(0),
     m_currentInstanceCountHasBeenSet(false),
     m_desiredInstanceCount(0),
-    m_desiredInstanceCountHasBeenSet(false)
+    m_desiredInstanceCountHasBeenSet(false),
+    m_variantStatusHasBeenSet(false),
+    m_currentServerlessConfigHasBeenSet(false),
+    m_desiredServerlessConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -94,6 +100,30 @@ ProductionVariantSummary& ProductionVariantSummary::operator =(JsonView jsonValu
     m_desiredInstanceCountHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("VariantStatus"))
+  {
+    Array<JsonView> variantStatusJsonList = jsonValue.GetArray("VariantStatus");
+    for(unsigned variantStatusIndex = 0; variantStatusIndex < variantStatusJsonList.GetLength(); ++variantStatusIndex)
+    {
+      m_variantStatus.push_back(variantStatusJsonList[variantStatusIndex].AsObject());
+    }
+    m_variantStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CurrentServerlessConfig"))
+  {
+    m_currentServerlessConfig = jsonValue.GetObject("CurrentServerlessConfig");
+
+    m_currentServerlessConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DesiredServerlessConfig"))
+  {
+    m_desiredServerlessConfig = jsonValue.GetObject("DesiredServerlessConfig");
+
+    m_desiredServerlessConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -139,6 +169,29 @@ JsonValue ProductionVariantSummary::Jsonize() const
   if(m_desiredInstanceCountHasBeenSet)
   {
    payload.WithInteger("DesiredInstanceCount", m_desiredInstanceCount);
+
+  }
+
+  if(m_variantStatusHasBeenSet)
+  {
+   Array<JsonValue> variantStatusJsonList(m_variantStatus.size());
+   for(unsigned variantStatusIndex = 0; variantStatusIndex < variantStatusJsonList.GetLength(); ++variantStatusIndex)
+   {
+     variantStatusJsonList[variantStatusIndex].AsObject(m_variantStatus[variantStatusIndex].Jsonize());
+   }
+   payload.WithArray("VariantStatus", std::move(variantStatusJsonList));
+
+  }
+
+  if(m_currentServerlessConfigHasBeenSet)
+  {
+   payload.WithObject("CurrentServerlessConfig", m_currentServerlessConfig.Jsonize());
+
+  }
+
+  if(m_desiredServerlessConfigHasBeenSet)
+  {
+   payload.WithObject("DesiredServerlessConfig", m_desiredServerlessConfig.Jsonize());
 
   }
 

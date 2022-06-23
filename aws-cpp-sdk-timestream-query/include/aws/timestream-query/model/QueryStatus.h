@@ -23,7 +23,7 @@ namespace Model
 
   /**
    * <p>Information about the status of the query, including progress and bytes
-   * scannned.</p><p><h3>See Also:</h3>   <a
+   * scanned.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/QueryStatus">AWS
    * API Reference</a></p>
    */
@@ -90,7 +90,7 @@ namespace Model
      * <p>The amount of data scanned by the query in bytes that you will be charged
      * for. This is a cumulative sum and represents the total amount of data that you
      * will be charged for since the query was started. The charge is applied only once
-     * and is either applied when the query completes execution or when the query is
+     * and is either applied when the query completes running or when the query is
      * cancelled. </p>
      */
     inline long long GetCumulativeBytesMetered() const{ return m_cumulativeBytesMetered; }
@@ -99,7 +99,7 @@ namespace Model
      * <p>The amount of data scanned by the query in bytes that you will be charged
      * for. This is a cumulative sum and represents the total amount of data that you
      * will be charged for since the query was started. The charge is applied only once
-     * and is either applied when the query completes execution or when the query is
+     * and is either applied when the query completes running or when the query is
      * cancelled. </p>
      */
     inline bool CumulativeBytesMeteredHasBeenSet() const { return m_cumulativeBytesMeteredHasBeenSet; }
@@ -108,7 +108,7 @@ namespace Model
      * <p>The amount of data scanned by the query in bytes that you will be charged
      * for. This is a cumulative sum and represents the total amount of data that you
      * will be charged for since the query was started. The charge is applied only once
-     * and is either applied when the query completes execution or when the query is
+     * and is either applied when the query completes running or when the query is
      * cancelled. </p>
      */
     inline void SetCumulativeBytesMetered(long long value) { m_cumulativeBytesMeteredHasBeenSet = true; m_cumulativeBytesMetered = value; }
@@ -117,7 +117,7 @@ namespace Model
      * <p>The amount of data scanned by the query in bytes that you will be charged
      * for. This is a cumulative sum and represents the total amount of data that you
      * will be charged for since the query was started. The charge is applied only once
-     * and is either applied when the query completes execution or when the query is
+     * and is either applied when the query completes running or when the query is
      * cancelled. </p>
      */
     inline QueryStatus& WithCumulativeBytesMetered(long long value) { SetCumulativeBytesMetered(value); return *this;}

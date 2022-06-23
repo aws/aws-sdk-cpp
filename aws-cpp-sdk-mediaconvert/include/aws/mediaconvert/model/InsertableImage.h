@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * Settings that specify how your still graphic overlay appears.<p><h3>See
-   * Also:</h3>   <a
+   * These settings apply to a specific graphic overlay. You can include multiple
+   * overlays in your job.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/InsertableImage">AWS
    * API Reference</a></p>
    */

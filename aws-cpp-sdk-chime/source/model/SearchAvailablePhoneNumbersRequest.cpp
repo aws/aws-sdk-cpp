@@ -21,6 +21,8 @@ SearchAvailablePhoneNumbersRequest::SearchAvailablePhoneNumbersRequest() :
     m_countryHasBeenSet(false),
     m_stateHasBeenSet(false),
     m_tollFreePrefixHasBeenSet(false),
+    m_phoneNumberType(PhoneNumberType::NOT_SET),
+    m_phoneNumberTypeHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false)
@@ -67,6 +69,13 @@ void SearchAvailablePhoneNumbersRequest::AddQueryStringParameters(URI& uri) cons
     {
       ss << m_tollFreePrefix;
       uri.AddQueryStringParameter("toll-free-prefix", ss.str());
+      ss.str("");
+    }
+
+    if(m_phoneNumberTypeHasBeenSet)
+    {
+      ss << PhoneNumberTypeMapper::GetNameForPhoneNumberType(m_phoneNumberType);
+      uri.AddQueryStringParameter("phone-number-type", ss.str());
       ss.str("");
     }
 

@@ -169,64 +169,74 @@ namespace Model
 
     /**
      * <p>The failure behavior the simulation job.</p> <dl> <dt>Continue</dt> <dd>
-     * <p>Restart the simulation job in the same host instance.</p> </dd> <dt>Fail</dt>
-     * <dd> <p>Stop the simulation job and terminate the instance.</p> </dd> </dl>
+     * <p>Leaves the host running for its maximum timeout duration after a
+     * <code>4XX</code> error code.</p> </dd> <dt>Fail</dt> <dd> <p>Stop the simulation
+     * job and terminate the instance.</p> </dd> </dl>
      */
     inline const FailureBehavior& GetFailureBehavior() const{ return m_failureBehavior; }
 
     /**
      * <p>The failure behavior the simulation job.</p> <dl> <dt>Continue</dt> <dd>
-     * <p>Restart the simulation job in the same host instance.</p> </dd> <dt>Fail</dt>
-     * <dd> <p>Stop the simulation job and terminate the instance.</p> </dd> </dl>
+     * <p>Leaves the host running for its maximum timeout duration after a
+     * <code>4XX</code> error code.</p> </dd> <dt>Fail</dt> <dd> <p>Stop the simulation
+     * job and terminate the instance.</p> </dd> </dl>
      */
     inline bool FailureBehaviorHasBeenSet() const { return m_failureBehaviorHasBeenSet; }
 
     /**
      * <p>The failure behavior the simulation job.</p> <dl> <dt>Continue</dt> <dd>
-     * <p>Restart the simulation job in the same host instance.</p> </dd> <dt>Fail</dt>
-     * <dd> <p>Stop the simulation job and terminate the instance.</p> </dd> </dl>
+     * <p>Leaves the host running for its maximum timeout duration after a
+     * <code>4XX</code> error code.</p> </dd> <dt>Fail</dt> <dd> <p>Stop the simulation
+     * job and terminate the instance.</p> </dd> </dl>
      */
     inline void SetFailureBehavior(const FailureBehavior& value) { m_failureBehaviorHasBeenSet = true; m_failureBehavior = value; }
 
     /**
      * <p>The failure behavior the simulation job.</p> <dl> <dt>Continue</dt> <dd>
-     * <p>Restart the simulation job in the same host instance.</p> </dd> <dt>Fail</dt>
-     * <dd> <p>Stop the simulation job and terminate the instance.</p> </dd> </dl>
+     * <p>Leaves the host running for its maximum timeout duration after a
+     * <code>4XX</code> error code.</p> </dd> <dt>Fail</dt> <dd> <p>Stop the simulation
+     * job and terminate the instance.</p> </dd> </dl>
      */
     inline void SetFailureBehavior(FailureBehavior&& value) { m_failureBehaviorHasBeenSet = true; m_failureBehavior = std::move(value); }
 
     /**
      * <p>The failure behavior the simulation job.</p> <dl> <dt>Continue</dt> <dd>
-     * <p>Restart the simulation job in the same host instance.</p> </dd> <dt>Fail</dt>
-     * <dd> <p>Stop the simulation job and terminate the instance.</p> </dd> </dl>
+     * <p>Leaves the host running for its maximum timeout duration after a
+     * <code>4XX</code> error code.</p> </dd> <dt>Fail</dt> <dd> <p>Stop the simulation
+     * job and terminate the instance.</p> </dd> </dl>
      */
     inline SimulationJobRequest& WithFailureBehavior(const FailureBehavior& value) { SetFailureBehavior(value); return *this;}
 
     /**
      * <p>The failure behavior the simulation job.</p> <dl> <dt>Continue</dt> <dd>
-     * <p>Restart the simulation job in the same host instance.</p> </dd> <dt>Fail</dt>
-     * <dd> <p>Stop the simulation job and terminate the instance.</p> </dd> </dl>
+     * <p>Leaves the host running for its maximum timeout duration after a
+     * <code>4XX</code> error code.</p> </dd> <dt>Fail</dt> <dd> <p>Stop the simulation
+     * job and terminate the instance.</p> </dd> </dl>
      */
     inline SimulationJobRequest& WithFailureBehavior(FailureBehavior&& value) { SetFailureBehavior(std::move(value)); return *this;}
 
 
     /**
-     * <p>Boolean indicating whether to use default simulation tool applications.</p>
+     * <p>A Boolean indicating whether to use default applications in the simulation
+     * job. Default applications include Gazebo, rqt, rviz and terminal access. </p>
      */
     inline bool GetUseDefaultApplications() const{ return m_useDefaultApplications; }
 
     /**
-     * <p>Boolean indicating whether to use default simulation tool applications.</p>
+     * <p>A Boolean indicating whether to use default applications in the simulation
+     * job. Default applications include Gazebo, rqt, rviz and terminal access. </p>
      */
     inline bool UseDefaultApplicationsHasBeenSet() const { return m_useDefaultApplicationsHasBeenSet; }
 
     /**
-     * <p>Boolean indicating whether to use default simulation tool applications.</p>
+     * <p>A Boolean indicating whether to use default applications in the simulation
+     * job. Default applications include Gazebo, rqt, rviz and terminal access. </p>
      */
     inline void SetUseDefaultApplications(bool value) { m_useDefaultApplicationsHasBeenSet = true; m_useDefaultApplications = value; }
 
     /**
-     * <p>Boolean indicating whether to use default simulation tool applications.</p>
+     * <p>A Boolean indicating whether to use default applications in the simulation
+     * job. Default applications include Gazebo, rqt, rviz and terminal access. </p>
      */
     inline SimulationJobRequest& WithUseDefaultApplications(bool value) { SetUseDefaultApplications(value); return *this;}
 

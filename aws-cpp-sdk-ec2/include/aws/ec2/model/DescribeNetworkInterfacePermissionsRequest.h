@@ -94,11 +94,12 @@ namespace Model
      * ID of the permission.</p> </li> <li> <p>
      * <code>network-interface-permission.network-interface-id</code> - The ID of the
      * network interface.</p> </li> <li> <p>
-     * <code>network-interface-permission.aws-account-id</code> - The AWS account
-     * ID.</p> </li> <li> <p> <code>network-interface-permission.aws-service</code> -
-     * The AWS service.</p> </li> <li> <p>
-     * <code>network-interface-permission.permission</code> - The type of permission
-     * (<code>INSTANCE-ATTACH</code> | <code>EIP-ASSOCIATE</code>).</p> </li> </ul>
+     * <code>network-interface-permission.aws-account-id</code> - The Amazon Web
+     * Services account ID.</p> </li> <li> <p>
+     * <code>network-interface-permission.aws-service</code> - The Amazon Web
+     * Service.</p> </li> <li> <p> <code>network-interface-permission.permission</code>
+     * - The type of permission (<code>INSTANCE-ATTACH</code> |
+     * <code>EIP-ASSOCIATE</code>).</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
@@ -108,11 +109,12 @@ namespace Model
      * ID of the permission.</p> </li> <li> <p>
      * <code>network-interface-permission.network-interface-id</code> - The ID of the
      * network interface.</p> </li> <li> <p>
-     * <code>network-interface-permission.aws-account-id</code> - The AWS account
-     * ID.</p> </li> <li> <p> <code>network-interface-permission.aws-service</code> -
-     * The AWS service.</p> </li> <li> <p>
-     * <code>network-interface-permission.permission</code> - The type of permission
-     * (<code>INSTANCE-ATTACH</code> | <code>EIP-ASSOCIATE</code>).</p> </li> </ul>
+     * <code>network-interface-permission.aws-account-id</code> - The Amazon Web
+     * Services account ID.</p> </li> <li> <p>
+     * <code>network-interface-permission.aws-service</code> - The Amazon Web
+     * Service.</p> </li> <li> <p> <code>network-interface-permission.permission</code>
+     * - The type of permission (<code>INSTANCE-ATTACH</code> |
+     * <code>EIP-ASSOCIATE</code>).</p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
@@ -122,11 +124,12 @@ namespace Model
      * ID of the permission.</p> </li> <li> <p>
      * <code>network-interface-permission.network-interface-id</code> - The ID of the
      * network interface.</p> </li> <li> <p>
-     * <code>network-interface-permission.aws-account-id</code> - The AWS account
-     * ID.</p> </li> <li> <p> <code>network-interface-permission.aws-service</code> -
-     * The AWS service.</p> </li> <li> <p>
-     * <code>network-interface-permission.permission</code> - The type of permission
-     * (<code>INSTANCE-ATTACH</code> | <code>EIP-ASSOCIATE</code>).</p> </li> </ul>
+     * <code>network-interface-permission.aws-account-id</code> - The Amazon Web
+     * Services account ID.</p> </li> <li> <p>
+     * <code>network-interface-permission.aws-service</code> - The Amazon Web
+     * Service.</p> </li> <li> <p> <code>network-interface-permission.permission</code>
+     * - The type of permission (<code>INSTANCE-ATTACH</code> |
+     * <code>EIP-ASSOCIATE</code>).</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
@@ -136,11 +139,12 @@ namespace Model
      * ID of the permission.</p> </li> <li> <p>
      * <code>network-interface-permission.network-interface-id</code> - The ID of the
      * network interface.</p> </li> <li> <p>
-     * <code>network-interface-permission.aws-account-id</code> - The AWS account
-     * ID.</p> </li> <li> <p> <code>network-interface-permission.aws-service</code> -
-     * The AWS service.</p> </li> <li> <p>
-     * <code>network-interface-permission.permission</code> - The type of permission
-     * (<code>INSTANCE-ATTACH</code> | <code>EIP-ASSOCIATE</code>).</p> </li> </ul>
+     * <code>network-interface-permission.aws-account-id</code> - The Amazon Web
+     * Services account ID.</p> </li> <li> <p>
+     * <code>network-interface-permission.aws-service</code> - The Amazon Web
+     * Service.</p> </li> <li> <p> <code>network-interface-permission.permission</code>
+     * - The type of permission (<code>INSTANCE-ATTACH</code> |
+     * <code>EIP-ASSOCIATE</code>).</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
@@ -150,11 +154,12 @@ namespace Model
      * ID of the permission.</p> </li> <li> <p>
      * <code>network-interface-permission.network-interface-id</code> - The ID of the
      * network interface.</p> </li> <li> <p>
-     * <code>network-interface-permission.aws-account-id</code> - The AWS account
-     * ID.</p> </li> <li> <p> <code>network-interface-permission.aws-service</code> -
-     * The AWS service.</p> </li> <li> <p>
-     * <code>network-interface-permission.permission</code> - The type of permission
-     * (<code>INSTANCE-ATTACH</code> | <code>EIP-ASSOCIATE</code>).</p> </li> </ul>
+     * <code>network-interface-permission.aws-account-id</code> - The Amazon Web
+     * Services account ID.</p> </li> <li> <p>
+     * <code>network-interface-permission.aws-service</code> - The Amazon Web
+     * Service.</p> </li> <li> <p> <code>network-interface-permission.permission</code>
+     * - The type of permission (<code>INSTANCE-ATTACH</code> |
+     * <code>EIP-ASSOCIATE</code>).</p> </li> </ul>
      */
     inline DescribeNetworkInterfacePermissionsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
@@ -164,11 +169,12 @@ namespace Model
      * ID of the permission.</p> </li> <li> <p>
      * <code>network-interface-permission.network-interface-id</code> - The ID of the
      * network interface.</p> </li> <li> <p>
-     * <code>network-interface-permission.aws-account-id</code> - The AWS account
-     * ID.</p> </li> <li> <p> <code>network-interface-permission.aws-service</code> -
-     * The AWS service.</p> </li> <li> <p>
-     * <code>network-interface-permission.permission</code> - The type of permission
-     * (<code>INSTANCE-ATTACH</code> | <code>EIP-ASSOCIATE</code>).</p> </li> </ul>
+     * <code>network-interface-permission.aws-account-id</code> - The Amazon Web
+     * Services account ID.</p> </li> <li> <p>
+     * <code>network-interface-permission.aws-service</code> - The Amazon Web
+     * Service.</p> </li> <li> <p> <code>network-interface-permission.permission</code>
+     * - The type of permission (<code>INSTANCE-ATTACH</code> |
+     * <code>EIP-ASSOCIATE</code>).</p> </li> </ul>
      */
     inline DescribeNetworkInterfacePermissionsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
@@ -178,11 +184,12 @@ namespace Model
      * ID of the permission.</p> </li> <li> <p>
      * <code>network-interface-permission.network-interface-id</code> - The ID of the
      * network interface.</p> </li> <li> <p>
-     * <code>network-interface-permission.aws-account-id</code> - The AWS account
-     * ID.</p> </li> <li> <p> <code>network-interface-permission.aws-service</code> -
-     * The AWS service.</p> </li> <li> <p>
-     * <code>network-interface-permission.permission</code> - The type of permission
-     * (<code>INSTANCE-ATTACH</code> | <code>EIP-ASSOCIATE</code>).</p> </li> </ul>
+     * <code>network-interface-permission.aws-account-id</code> - The Amazon Web
+     * Services account ID.</p> </li> <li> <p>
+     * <code>network-interface-permission.aws-service</code> - The Amazon Web
+     * Service.</p> </li> <li> <p> <code>network-interface-permission.permission</code>
+     * - The type of permission (<code>INSTANCE-ATTACH</code> |
+     * <code>EIP-ASSOCIATE</code>).</p> </li> </ul>
      */
     inline DescribeNetworkInterfacePermissionsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
@@ -192,11 +199,12 @@ namespace Model
      * ID of the permission.</p> </li> <li> <p>
      * <code>network-interface-permission.network-interface-id</code> - The ID of the
      * network interface.</p> </li> <li> <p>
-     * <code>network-interface-permission.aws-account-id</code> - The AWS account
-     * ID.</p> </li> <li> <p> <code>network-interface-permission.aws-service</code> -
-     * The AWS service.</p> </li> <li> <p>
-     * <code>network-interface-permission.permission</code> - The type of permission
-     * (<code>INSTANCE-ATTACH</code> | <code>EIP-ASSOCIATE</code>).</p> </li> </ul>
+     * <code>network-interface-permission.aws-account-id</code> - The Amazon Web
+     * Services account ID.</p> </li> <li> <p>
+     * <code>network-interface-permission.aws-service</code> - The Amazon Web
+     * Service.</p> </li> <li> <p> <code>network-interface-permission.permission</code>
+     * - The type of permission (<code>INSTANCE-ATTACH</code> |
+     * <code>EIP-ASSOCIATE</code>).</p> </li> </ul>
      */
     inline DescribeNetworkInterfacePermissionsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

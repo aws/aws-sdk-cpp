@@ -24,9 +24,13 @@ CreateServerRequest::CreateServerRequest() :
     m_identityProviderType(IdentityProviderType::NOT_SET),
     m_identityProviderTypeHasBeenSet(false),
     m_loggingRoleHasBeenSet(false),
+    m_postAuthenticationLoginBannerHasBeenSet(false),
+    m_preAuthenticationLoginBannerHasBeenSet(false),
     m_protocolsHasBeenSet(false),
+    m_protocolDetailsHasBeenSet(false),
     m_securityPolicyNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_workflowDetailsHasBeenSet(false)
 {
 }
 
@@ -79,6 +83,18 @@ Aws::String CreateServerRequest::SerializePayload() const
 
   }
 
+  if(m_postAuthenticationLoginBannerHasBeenSet)
+  {
+   payload.WithString("PostAuthenticationLoginBanner", m_postAuthenticationLoginBanner);
+
+  }
+
+  if(m_preAuthenticationLoginBannerHasBeenSet)
+  {
+   payload.WithString("PreAuthenticationLoginBanner", m_preAuthenticationLoginBanner);
+
+  }
+
   if(m_protocolsHasBeenSet)
   {
    Array<JsonValue> protocolsJsonList(m_protocols.size());
@@ -87,6 +103,12 @@ Aws::String CreateServerRequest::SerializePayload() const
      protocolsJsonList[protocolsIndex].AsString(ProtocolMapper::GetNameForProtocol(m_protocols[protocolsIndex]));
    }
    payload.WithArray("Protocols", std::move(protocolsJsonList));
+
+  }
+
+  if(m_protocolDetailsHasBeenSet)
+  {
+   payload.WithObject("ProtocolDetails", m_protocolDetails.Jsonize());
 
   }
 
@@ -104,6 +126,12 @@ Aws::String CreateServerRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_workflowDetailsHasBeenSet)
+  {
+   payload.WithObject("WorkflowDetails", m_workflowDetails.Jsonize());
 
   }
 

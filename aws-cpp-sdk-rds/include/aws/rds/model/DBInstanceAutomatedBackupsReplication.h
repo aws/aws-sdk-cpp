@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Automated backups of a DB instance replicated to another AWS Region. They
-   * consist of system backups, transaction logs, and database instance
+   * <p>Automated backups of a DB instance replicated to another Amazon Web Services
+   * Region. They consist of system backups, transaction logs, and database instance
    * properties.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBInstanceAutomatedBackupsReplication">AWS
    * API Reference</a></p>

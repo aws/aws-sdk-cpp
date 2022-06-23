@@ -28,7 +28,7 @@ namespace Model
 {
 
   /**
-   * <p>A data volume used in a task definition. For tasks that use the Amazon
+   * <p>A data volume that's used in a task definition. For tasks that use the Amazon
    * Elastic File System (Amazon EFS), specify an
    * <code>efsVolumeConfiguration</code>. For Windows tasks that use Amazon FSx for
    * Windows File Server file system, specify a
@@ -52,7 +52,7 @@ namespace Model
 
     /**
      * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
-     * and hyphens are allowed. This name is referenced in the
+     * underscores, and hyphens are allowed. This name is referenced in the
      * <code>sourceVolume</code> parameter of container definition
      * <code>mountPoints</code>.</p>
      */
@@ -60,7 +60,7 @@ namespace Model
 
     /**
      * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
-     * and hyphens are allowed. This name is referenced in the
+     * underscores, and hyphens are allowed. This name is referenced in the
      * <code>sourceVolume</code> parameter of container definition
      * <code>mountPoints</code>.</p>
      */
@@ -68,7 +68,7 @@ namespace Model
 
     /**
      * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
-     * and hyphens are allowed. This name is referenced in the
+     * underscores, and hyphens are allowed. This name is referenced in the
      * <code>sourceVolume</code> parameter of container definition
      * <code>mountPoints</code>.</p>
      */
@@ -76,7 +76,7 @@ namespace Model
 
     /**
      * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
-     * and hyphens are allowed. This name is referenced in the
+     * underscores, and hyphens are allowed. This name is referenced in the
      * <code>sourceVolume</code> parameter of container definition
      * <code>mountPoints</code>.</p>
      */
@@ -84,7 +84,7 @@ namespace Model
 
     /**
      * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
-     * and hyphens are allowed. This name is referenced in the
+     * underscores, and hyphens are allowed. This name is referenced in the
      * <code>sourceVolume</code> parameter of container definition
      * <code>mountPoints</code>.</p>
      */
@@ -92,7 +92,7 @@ namespace Model
 
     /**
      * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
-     * and hyphens are allowed. This name is referenced in the
+     * underscores, and hyphens are allowed. This name is referenced in the
      * <code>sourceVolume</code> parameter of container definition
      * <code>mountPoints</code>.</p>
      */
@@ -100,7 +100,7 @@ namespace Model
 
     /**
      * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
-     * and hyphens are allowed. This name is referenced in the
+     * underscores, and hyphens are allowed. This name is referenced in the
      * <code>sourceVolume</code> parameter of container definition
      * <code>mountPoints</code>.</p>
      */
@@ -108,7 +108,7 @@ namespace Model
 
     /**
      * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
-     * and hyphens are allowed. This name is referenced in the
+     * underscores, and hyphens are allowed. This name is referenced in the
      * <code>sourceVolume</code> parameter of container definition
      * <code>mountPoints</code>.</p>
      */
@@ -116,215 +116,215 @@ namespace Model
 
 
     /**
-     * <p>This parameter is specified when you are using bind mount host volumes. The
+     * <p>This parameter is specified when you use bind mount host volumes. The
      * contents of the <code>host</code> parameter determine whether your bind mount
-     * host volume persists on the host container instance and where it is stored. If
+     * host volume persists on the host container instance and where it's stored. If
      * the <code>host</code> parameter is empty, then the Docker daemon assigns a host
-     * path for your data volume. However, the data is not guaranteed to persist after
-     * the containers associated with it stop running.</p> <p>Windows containers can
-     * mount whole directories on the same drive as <code>$env:ProgramData</code>.
-     * Windows containers cannot mount directories on a different drive, and mount
-     * point cannot be across drives. For example, you can mount
-     * <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not
+     * path for your data volume. However, the data isn't guaranteed to persist after
+     * the containers that are associated with it stop running.</p> <p>Windows
+     * containers can mount whole directories on the same drive as
+     * <code>$env:ProgramData</code>. Windows containers can't mount directories on a
+     * different drive, and mount point can't be across drives. For example, you can
+     * mount <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not
      * <code>D:\my\path:C:\my\path</code> or <code>D:\:C:\my\path</code>.</p>
      */
     inline const HostVolumeProperties& GetHost() const{ return m_host; }
 
     /**
-     * <p>This parameter is specified when you are using bind mount host volumes. The
+     * <p>This parameter is specified when you use bind mount host volumes. The
      * contents of the <code>host</code> parameter determine whether your bind mount
-     * host volume persists on the host container instance and where it is stored. If
+     * host volume persists on the host container instance and where it's stored. If
      * the <code>host</code> parameter is empty, then the Docker daemon assigns a host
-     * path for your data volume. However, the data is not guaranteed to persist after
-     * the containers associated with it stop running.</p> <p>Windows containers can
-     * mount whole directories on the same drive as <code>$env:ProgramData</code>.
-     * Windows containers cannot mount directories on a different drive, and mount
-     * point cannot be across drives. For example, you can mount
-     * <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not
+     * path for your data volume. However, the data isn't guaranteed to persist after
+     * the containers that are associated with it stop running.</p> <p>Windows
+     * containers can mount whole directories on the same drive as
+     * <code>$env:ProgramData</code>. Windows containers can't mount directories on a
+     * different drive, and mount point can't be across drives. For example, you can
+     * mount <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not
      * <code>D:\my\path:C:\my\path</code> or <code>D:\:C:\my\path</code>.</p>
      */
     inline bool HostHasBeenSet() const { return m_hostHasBeenSet; }
 
     /**
-     * <p>This parameter is specified when you are using bind mount host volumes. The
+     * <p>This parameter is specified when you use bind mount host volumes. The
      * contents of the <code>host</code> parameter determine whether your bind mount
-     * host volume persists on the host container instance and where it is stored. If
+     * host volume persists on the host container instance and where it's stored. If
      * the <code>host</code> parameter is empty, then the Docker daemon assigns a host
-     * path for your data volume. However, the data is not guaranteed to persist after
-     * the containers associated with it stop running.</p> <p>Windows containers can
-     * mount whole directories on the same drive as <code>$env:ProgramData</code>.
-     * Windows containers cannot mount directories on a different drive, and mount
-     * point cannot be across drives. For example, you can mount
-     * <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not
+     * path for your data volume. However, the data isn't guaranteed to persist after
+     * the containers that are associated with it stop running.</p> <p>Windows
+     * containers can mount whole directories on the same drive as
+     * <code>$env:ProgramData</code>. Windows containers can't mount directories on a
+     * different drive, and mount point can't be across drives. For example, you can
+     * mount <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not
      * <code>D:\my\path:C:\my\path</code> or <code>D:\:C:\my\path</code>.</p>
      */
     inline void SetHost(const HostVolumeProperties& value) { m_hostHasBeenSet = true; m_host = value; }
 
     /**
-     * <p>This parameter is specified when you are using bind mount host volumes. The
+     * <p>This parameter is specified when you use bind mount host volumes. The
      * contents of the <code>host</code> parameter determine whether your bind mount
-     * host volume persists on the host container instance and where it is stored. If
+     * host volume persists on the host container instance and where it's stored. If
      * the <code>host</code> parameter is empty, then the Docker daemon assigns a host
-     * path for your data volume. However, the data is not guaranteed to persist after
-     * the containers associated with it stop running.</p> <p>Windows containers can
-     * mount whole directories on the same drive as <code>$env:ProgramData</code>.
-     * Windows containers cannot mount directories on a different drive, and mount
-     * point cannot be across drives. For example, you can mount
-     * <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not
+     * path for your data volume. However, the data isn't guaranteed to persist after
+     * the containers that are associated with it stop running.</p> <p>Windows
+     * containers can mount whole directories on the same drive as
+     * <code>$env:ProgramData</code>. Windows containers can't mount directories on a
+     * different drive, and mount point can't be across drives. For example, you can
+     * mount <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not
      * <code>D:\my\path:C:\my\path</code> or <code>D:\:C:\my\path</code>.</p>
      */
     inline void SetHost(HostVolumeProperties&& value) { m_hostHasBeenSet = true; m_host = std::move(value); }
 
     /**
-     * <p>This parameter is specified when you are using bind mount host volumes. The
+     * <p>This parameter is specified when you use bind mount host volumes. The
      * contents of the <code>host</code> parameter determine whether your bind mount
-     * host volume persists on the host container instance and where it is stored. If
+     * host volume persists on the host container instance and where it's stored. If
      * the <code>host</code> parameter is empty, then the Docker daemon assigns a host
-     * path for your data volume. However, the data is not guaranteed to persist after
-     * the containers associated with it stop running.</p> <p>Windows containers can
-     * mount whole directories on the same drive as <code>$env:ProgramData</code>.
-     * Windows containers cannot mount directories on a different drive, and mount
-     * point cannot be across drives. For example, you can mount
-     * <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not
+     * path for your data volume. However, the data isn't guaranteed to persist after
+     * the containers that are associated with it stop running.</p> <p>Windows
+     * containers can mount whole directories on the same drive as
+     * <code>$env:ProgramData</code>. Windows containers can't mount directories on a
+     * different drive, and mount point can't be across drives. For example, you can
+     * mount <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not
      * <code>D:\my\path:C:\my\path</code> or <code>D:\:C:\my\path</code>.</p>
      */
     inline Volume& WithHost(const HostVolumeProperties& value) { SetHost(value); return *this;}
 
     /**
-     * <p>This parameter is specified when you are using bind mount host volumes. The
+     * <p>This parameter is specified when you use bind mount host volumes. The
      * contents of the <code>host</code> parameter determine whether your bind mount
-     * host volume persists on the host container instance and where it is stored. If
+     * host volume persists on the host container instance and where it's stored. If
      * the <code>host</code> parameter is empty, then the Docker daemon assigns a host
-     * path for your data volume. However, the data is not guaranteed to persist after
-     * the containers associated with it stop running.</p> <p>Windows containers can
-     * mount whole directories on the same drive as <code>$env:ProgramData</code>.
-     * Windows containers cannot mount directories on a different drive, and mount
-     * point cannot be across drives. For example, you can mount
-     * <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not
+     * path for your data volume. However, the data isn't guaranteed to persist after
+     * the containers that are associated with it stop running.</p> <p>Windows
+     * containers can mount whole directories on the same drive as
+     * <code>$env:ProgramData</code>. Windows containers can't mount directories on a
+     * different drive, and mount point can't be across drives. For example, you can
+     * mount <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not
      * <code>D:\my\path:C:\my\path</code> or <code>D:\:C:\my\path</code>.</p>
      */
     inline Volume& WithHost(HostVolumeProperties&& value) { SetHost(std::move(value)); return *this;}
 
 
     /**
-     * <p>This parameter is specified when you are using Docker volumes. Docker volumes
-     * are only supported when you are using the EC2 launch type. Windows containers
-     * only support the use of the <code>local</code> driver. To use bind mounts,
-     * specify the <code>host</code> parameter instead.</p>
+     * <p>This parameter is specified when you use Docker volumes.</p> <p>Windows
+     * containers only support the use of the <code>local</code> driver. To use bind
+     * mounts, specify the <code>host</code> parameter instead.</p>  <p>Docker
+     * volumes aren't supported by tasks run on Fargate.</p> 
      */
     inline const DockerVolumeConfiguration& GetDockerVolumeConfiguration() const{ return m_dockerVolumeConfiguration; }
 
     /**
-     * <p>This parameter is specified when you are using Docker volumes. Docker volumes
-     * are only supported when you are using the EC2 launch type. Windows containers
-     * only support the use of the <code>local</code> driver. To use bind mounts,
-     * specify the <code>host</code> parameter instead.</p>
+     * <p>This parameter is specified when you use Docker volumes.</p> <p>Windows
+     * containers only support the use of the <code>local</code> driver. To use bind
+     * mounts, specify the <code>host</code> parameter instead.</p>  <p>Docker
+     * volumes aren't supported by tasks run on Fargate.</p> 
      */
     inline bool DockerVolumeConfigurationHasBeenSet() const { return m_dockerVolumeConfigurationHasBeenSet; }
 
     /**
-     * <p>This parameter is specified when you are using Docker volumes. Docker volumes
-     * are only supported when you are using the EC2 launch type. Windows containers
-     * only support the use of the <code>local</code> driver. To use bind mounts,
-     * specify the <code>host</code> parameter instead.</p>
+     * <p>This parameter is specified when you use Docker volumes.</p> <p>Windows
+     * containers only support the use of the <code>local</code> driver. To use bind
+     * mounts, specify the <code>host</code> parameter instead.</p>  <p>Docker
+     * volumes aren't supported by tasks run on Fargate.</p> 
      */
     inline void SetDockerVolumeConfiguration(const DockerVolumeConfiguration& value) { m_dockerVolumeConfigurationHasBeenSet = true; m_dockerVolumeConfiguration = value; }
 
     /**
-     * <p>This parameter is specified when you are using Docker volumes. Docker volumes
-     * are only supported when you are using the EC2 launch type. Windows containers
-     * only support the use of the <code>local</code> driver. To use bind mounts,
-     * specify the <code>host</code> parameter instead.</p>
+     * <p>This parameter is specified when you use Docker volumes.</p> <p>Windows
+     * containers only support the use of the <code>local</code> driver. To use bind
+     * mounts, specify the <code>host</code> parameter instead.</p>  <p>Docker
+     * volumes aren't supported by tasks run on Fargate.</p> 
      */
     inline void SetDockerVolumeConfiguration(DockerVolumeConfiguration&& value) { m_dockerVolumeConfigurationHasBeenSet = true; m_dockerVolumeConfiguration = std::move(value); }
 
     /**
-     * <p>This parameter is specified when you are using Docker volumes. Docker volumes
-     * are only supported when you are using the EC2 launch type. Windows containers
-     * only support the use of the <code>local</code> driver. To use bind mounts,
-     * specify the <code>host</code> parameter instead.</p>
+     * <p>This parameter is specified when you use Docker volumes.</p> <p>Windows
+     * containers only support the use of the <code>local</code> driver. To use bind
+     * mounts, specify the <code>host</code> parameter instead.</p>  <p>Docker
+     * volumes aren't supported by tasks run on Fargate.</p> 
      */
     inline Volume& WithDockerVolumeConfiguration(const DockerVolumeConfiguration& value) { SetDockerVolumeConfiguration(value); return *this;}
 
     /**
-     * <p>This parameter is specified when you are using Docker volumes. Docker volumes
-     * are only supported when you are using the EC2 launch type. Windows containers
-     * only support the use of the <code>local</code> driver. To use bind mounts,
-     * specify the <code>host</code> parameter instead.</p>
+     * <p>This parameter is specified when you use Docker volumes.</p> <p>Windows
+     * containers only support the use of the <code>local</code> driver. To use bind
+     * mounts, specify the <code>host</code> parameter instead.</p>  <p>Docker
+     * volumes aren't supported by tasks run on Fargate.</p> 
      */
     inline Volume& WithDockerVolumeConfiguration(DockerVolumeConfiguration&& value) { SetDockerVolumeConfiguration(std::move(value)); return *this;}
 
 
     /**
-     * <p>This parameter is specified when you are using an Amazon Elastic File System
-     * file system for task storage.</p>
+     * <p>This parameter is specified when you use an Amazon Elastic File System file
+     * system for task storage.</p>
      */
     inline const EFSVolumeConfiguration& GetEfsVolumeConfiguration() const{ return m_efsVolumeConfiguration; }
 
     /**
-     * <p>This parameter is specified when you are using an Amazon Elastic File System
-     * file system for task storage.</p>
+     * <p>This parameter is specified when you use an Amazon Elastic File System file
+     * system for task storage.</p>
      */
     inline bool EfsVolumeConfigurationHasBeenSet() const { return m_efsVolumeConfigurationHasBeenSet; }
 
     /**
-     * <p>This parameter is specified when you are using an Amazon Elastic File System
-     * file system for task storage.</p>
+     * <p>This parameter is specified when you use an Amazon Elastic File System file
+     * system for task storage.</p>
      */
     inline void SetEfsVolumeConfiguration(const EFSVolumeConfiguration& value) { m_efsVolumeConfigurationHasBeenSet = true; m_efsVolumeConfiguration = value; }
 
     /**
-     * <p>This parameter is specified when you are using an Amazon Elastic File System
-     * file system for task storage.</p>
+     * <p>This parameter is specified when you use an Amazon Elastic File System file
+     * system for task storage.</p>
      */
     inline void SetEfsVolumeConfiguration(EFSVolumeConfiguration&& value) { m_efsVolumeConfigurationHasBeenSet = true; m_efsVolumeConfiguration = std::move(value); }
 
     /**
-     * <p>This parameter is specified when you are using an Amazon Elastic File System
-     * file system for task storage.</p>
+     * <p>This parameter is specified when you use an Amazon Elastic File System file
+     * system for task storage.</p>
      */
     inline Volume& WithEfsVolumeConfiguration(const EFSVolumeConfiguration& value) { SetEfsVolumeConfiguration(value); return *this;}
 
     /**
-     * <p>This parameter is specified when you are using an Amazon Elastic File System
-     * file system for task storage.</p>
+     * <p>This parameter is specified when you use an Amazon Elastic File System file
+     * system for task storage.</p>
      */
     inline Volume& WithEfsVolumeConfiguration(EFSVolumeConfiguration&& value) { SetEfsVolumeConfiguration(std::move(value)); return *this;}
 
 
     /**
-     * <p>This parameter is specified when you are using Amazon FSx for Windows File
-     * Server file system for task storage.</p>
+     * <p>This parameter is specified when you use Amazon FSx for Windows File Server
+     * file system for task storage.</p>
      */
     inline const FSxWindowsFileServerVolumeConfiguration& GetFsxWindowsFileServerVolumeConfiguration() const{ return m_fsxWindowsFileServerVolumeConfiguration; }
 
     /**
-     * <p>This parameter is specified when you are using Amazon FSx for Windows File
-     * Server file system for task storage.</p>
+     * <p>This parameter is specified when you use Amazon FSx for Windows File Server
+     * file system for task storage.</p>
      */
     inline bool FsxWindowsFileServerVolumeConfigurationHasBeenSet() const { return m_fsxWindowsFileServerVolumeConfigurationHasBeenSet; }
 
     /**
-     * <p>This parameter is specified when you are using Amazon FSx for Windows File
-     * Server file system for task storage.</p>
+     * <p>This parameter is specified when you use Amazon FSx for Windows File Server
+     * file system for task storage.</p>
      */
     inline void SetFsxWindowsFileServerVolumeConfiguration(const FSxWindowsFileServerVolumeConfiguration& value) { m_fsxWindowsFileServerVolumeConfigurationHasBeenSet = true; m_fsxWindowsFileServerVolumeConfiguration = value; }
 
     /**
-     * <p>This parameter is specified when you are using Amazon FSx for Windows File
-     * Server file system for task storage.</p>
+     * <p>This parameter is specified when you use Amazon FSx for Windows File Server
+     * file system for task storage.</p>
      */
     inline void SetFsxWindowsFileServerVolumeConfiguration(FSxWindowsFileServerVolumeConfiguration&& value) { m_fsxWindowsFileServerVolumeConfigurationHasBeenSet = true; m_fsxWindowsFileServerVolumeConfiguration = std::move(value); }
 
     /**
-     * <p>This parameter is specified when you are using Amazon FSx for Windows File
-     * Server file system for task storage.</p>
+     * <p>This parameter is specified when you use Amazon FSx for Windows File Server
+     * file system for task storage.</p>
      */
     inline Volume& WithFsxWindowsFileServerVolumeConfiguration(const FSxWindowsFileServerVolumeConfiguration& value) { SetFsxWindowsFileServerVolumeConfiguration(value); return *this;}
 
     /**
-     * <p>This parameter is specified when you are using Amazon FSx for Windows File
-     * Server file system for task storage.</p>
+     * <p>This parameter is specified when you use Amazon FSx for Windows File Server
+     * file system for task storage.</p>
      */
     inline Volume& WithFsxWindowsFileServerVolumeConfiguration(FSxWindowsFileServerVolumeConfiguration&& value) { SetFsxWindowsFileServerVolumeConfiguration(std::move(value)); return *this;}
 

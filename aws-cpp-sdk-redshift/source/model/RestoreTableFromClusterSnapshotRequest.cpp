@@ -18,7 +18,9 @@ RestoreTableFromClusterSnapshotRequest::RestoreTableFromClusterSnapshotRequest()
     m_sourceTableNameHasBeenSet(false),
     m_targetDatabaseNameHasBeenSet(false),
     m_targetSchemaNameHasBeenSet(false),
-    m_newTableNameHasBeenSet(false)
+    m_newTableNameHasBeenSet(false),
+    m_enableCaseSensitiveIdentifier(false),
+    m_enableCaseSensitiveIdentifierHasBeenSet(false)
 {
 }
 
@@ -64,6 +66,11 @@ Aws::String RestoreTableFromClusterSnapshotRequest::SerializePayload() const
   if(m_newTableNameHasBeenSet)
   {
     ss << "NewTableName=" << StringUtils::URLEncode(m_newTableName.c_str()) << "&";
+  }
+
+  if(m_enableCaseSensitiveIdentifierHasBeenSet)
+  {
+    ss << "EnableCaseSensitiveIdentifier=" << std::boolalpha << m_enableCaseSensitiveIdentifier << "&";
   }
 
   ss << "Version=2012-12-01";

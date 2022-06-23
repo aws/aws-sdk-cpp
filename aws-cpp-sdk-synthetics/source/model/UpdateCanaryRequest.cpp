@@ -23,7 +23,10 @@ UpdateCanaryRequest::UpdateCanaryRequest() :
     m_successRetentionPeriodInDaysHasBeenSet(false),
     m_failureRetentionPeriodInDays(0),
     m_failureRetentionPeriodInDaysHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false)
+    m_vpcConfigHasBeenSet(false),
+    m_visualReferenceHasBeenSet(false),
+    m_artifactS3LocationHasBeenSet(false),
+    m_artifactConfigHasBeenSet(false)
 {
 }
 
@@ -76,6 +79,24 @@ Aws::String UpdateCanaryRequest::SerializePayload() const
   if(m_vpcConfigHasBeenSet)
   {
    payload.WithObject("VpcConfig", m_vpcConfig.Jsonize());
+
+  }
+
+  if(m_visualReferenceHasBeenSet)
+  {
+   payload.WithObject("VisualReference", m_visualReference.Jsonize());
+
+  }
+
+  if(m_artifactS3LocationHasBeenSet)
+  {
+   payload.WithString("ArtifactS3Location", m_artifactS3Location);
+
+  }
+
+  if(m_artifactConfigHasBeenSet)
+  {
+   payload.WithObject("ArtifactConfig", m_artifactConfig.Jsonize());
 
   }
 

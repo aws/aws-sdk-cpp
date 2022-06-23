@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>Provides test case run.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides the test case run.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/TestCaseRun">AWS
    * API Reference</a></p>
    */
@@ -40,155 +40,209 @@ namespace Model
 
 
     /**
-     * <p>Provides test case run Id.</p>
+     * <p>Provides the test case run ID.</p>
      */
     inline const Aws::String& GetTestCaseRunId() const{ return m_testCaseRunId; }
 
     /**
-     * <p>Provides test case run Id.</p>
+     * <p>Provides the test case run ID.</p>
      */
     inline bool TestCaseRunIdHasBeenSet() const { return m_testCaseRunIdHasBeenSet; }
 
     /**
-     * <p>Provides test case run Id.</p>
+     * <p>Provides the test case run ID.</p>
      */
     inline void SetTestCaseRunId(const Aws::String& value) { m_testCaseRunIdHasBeenSet = true; m_testCaseRunId = value; }
 
     /**
-     * <p>Provides test case run Id.</p>
+     * <p>Provides the test case run ID.</p>
      */
     inline void SetTestCaseRunId(Aws::String&& value) { m_testCaseRunIdHasBeenSet = true; m_testCaseRunId = std::move(value); }
 
     /**
-     * <p>Provides test case run Id.</p>
+     * <p>Provides the test case run ID.</p>
      */
     inline void SetTestCaseRunId(const char* value) { m_testCaseRunIdHasBeenSet = true; m_testCaseRunId.assign(value); }
 
     /**
-     * <p>Provides test case run Id.</p>
+     * <p>Provides the test case run ID.</p>
      */
     inline TestCaseRun& WithTestCaseRunId(const Aws::String& value) { SetTestCaseRunId(value); return *this;}
 
     /**
-     * <p>Provides test case run Id.</p>
+     * <p>Provides the test case run ID.</p>
      */
     inline TestCaseRun& WithTestCaseRunId(Aws::String&& value) { SetTestCaseRunId(std::move(value)); return *this;}
 
     /**
-     * <p>Provides test case run Id.</p>
+     * <p>Provides the test case run ID.</p>
      */
     inline TestCaseRun& WithTestCaseRunId(const char* value) { SetTestCaseRunId(value); return *this;}
 
 
     /**
-     * <p>Provides test case run definition Id.</p>
+     * <p>Provides the test case run definition ID.</p>
      */
     inline const Aws::String& GetTestCaseDefinitionId() const{ return m_testCaseDefinitionId; }
 
     /**
-     * <p>Provides test case run definition Id.</p>
+     * <p>Provides the test case run definition ID.</p>
      */
     inline bool TestCaseDefinitionIdHasBeenSet() const { return m_testCaseDefinitionIdHasBeenSet; }
 
     /**
-     * <p>Provides test case run definition Id.</p>
+     * <p>Provides the test case run definition ID.</p>
      */
     inline void SetTestCaseDefinitionId(const Aws::String& value) { m_testCaseDefinitionIdHasBeenSet = true; m_testCaseDefinitionId = value; }
 
     /**
-     * <p>Provides test case run definition Id.</p>
+     * <p>Provides the test case run definition ID.</p>
      */
     inline void SetTestCaseDefinitionId(Aws::String&& value) { m_testCaseDefinitionIdHasBeenSet = true; m_testCaseDefinitionId = std::move(value); }
 
     /**
-     * <p>Provides test case run definition Id.</p>
+     * <p>Provides the test case run definition ID.</p>
      */
     inline void SetTestCaseDefinitionId(const char* value) { m_testCaseDefinitionIdHasBeenSet = true; m_testCaseDefinitionId.assign(value); }
 
     /**
-     * <p>Provides test case run definition Id.</p>
+     * <p>Provides the test case run definition ID.</p>
      */
     inline TestCaseRun& WithTestCaseDefinitionId(const Aws::String& value) { SetTestCaseDefinitionId(value); return *this;}
 
     /**
-     * <p>Provides test case run definition Id.</p>
+     * <p>Provides the test case run definition ID.</p>
      */
     inline TestCaseRun& WithTestCaseDefinitionId(Aws::String&& value) { SetTestCaseDefinitionId(std::move(value)); return *this;}
 
     /**
-     * <p>Provides test case run definition Id.</p>
+     * <p>Provides the test case run definition ID.</p>
      */
     inline TestCaseRun& WithTestCaseDefinitionId(const char* value) { SetTestCaseDefinitionId(value); return *this;}
 
 
     /**
-     * <p>Provides test case run definition Name.</p>
+     * <p>Provides the test case run definition name.</p>
      */
     inline const Aws::String& GetTestCaseDefinitionName() const{ return m_testCaseDefinitionName; }
 
     /**
-     * <p>Provides test case run definition Name.</p>
+     * <p>Provides the test case run definition name.</p>
      */
     inline bool TestCaseDefinitionNameHasBeenSet() const { return m_testCaseDefinitionNameHasBeenSet; }
 
     /**
-     * <p>Provides test case run definition Name.</p>
+     * <p>Provides the test case run definition name.</p>
      */
     inline void SetTestCaseDefinitionName(const Aws::String& value) { m_testCaseDefinitionNameHasBeenSet = true; m_testCaseDefinitionName = value; }
 
     /**
-     * <p>Provides test case run definition Name.</p>
+     * <p>Provides the test case run definition name.</p>
      */
     inline void SetTestCaseDefinitionName(Aws::String&& value) { m_testCaseDefinitionNameHasBeenSet = true; m_testCaseDefinitionName = std::move(value); }
 
     /**
-     * <p>Provides test case run definition Name.</p>
+     * <p>Provides the test case run definition name.</p>
      */
     inline void SetTestCaseDefinitionName(const char* value) { m_testCaseDefinitionNameHasBeenSet = true; m_testCaseDefinitionName.assign(value); }
 
     /**
-     * <p>Provides test case run definition Name.</p>
+     * <p>Provides the test case run definition name.</p>
      */
     inline TestCaseRun& WithTestCaseDefinitionName(const Aws::String& value) { SetTestCaseDefinitionName(value); return *this;}
 
     /**
-     * <p>Provides test case run definition Name.</p>
+     * <p>Provides the test case run definition name.</p>
      */
     inline TestCaseRun& WithTestCaseDefinitionName(Aws::String&& value) { SetTestCaseDefinitionName(std::move(value)); return *this;}
 
     /**
-     * <p>Provides test case run definition Name.</p>
+     * <p>Provides the test case run definition name.</p>
      */
     inline TestCaseRun& WithTestCaseDefinitionName(const char* value) { SetTestCaseDefinitionName(value); return *this;}
 
 
     /**
-     * <p>Provides test case run status.</p>
+     * <p>Provides the test case run status. Status is one of the following:</p> <ul>
+     * <li> <p> <code>PASS</code>: Test passed.</p> </li> <li> <p> <code>FAIL</code>:
+     * Test failed.</p> </li> <li> <p> <code>PENDING</code>: Test has not started
+     * running but is scheduled.</p> </li> <li> <p> <code>RUNNING</code>: Test is
+     * running.</p> </li> <li> <p> <code>STOPPING</code>: Test is performing cleanup
+     * steps. You will see this status only if you stop a suite run.</p> </li> <li> <p>
+     * <code>STOPPED</code> Test is stopped. You will see this status only if you stop
+     * a suite run.</p> </li> <li> <p> <code>PASS_WITH_WARNINGS</code>: Test passed
+     * with warnings.</p> </li> <li> <p> <code>ERORR</code>: Test faced an error when
+     * running due to an internal issue.</p> </li> </ul>
      */
     inline const Status& GetStatus() const{ return m_status; }
 
     /**
-     * <p>Provides test case run status.</p>
+     * <p>Provides the test case run status. Status is one of the following:</p> <ul>
+     * <li> <p> <code>PASS</code>: Test passed.</p> </li> <li> <p> <code>FAIL</code>:
+     * Test failed.</p> </li> <li> <p> <code>PENDING</code>: Test has not started
+     * running but is scheduled.</p> </li> <li> <p> <code>RUNNING</code>: Test is
+     * running.</p> </li> <li> <p> <code>STOPPING</code>: Test is performing cleanup
+     * steps. You will see this status only if you stop a suite run.</p> </li> <li> <p>
+     * <code>STOPPED</code> Test is stopped. You will see this status only if you stop
+     * a suite run.</p> </li> <li> <p> <code>PASS_WITH_WARNINGS</code>: Test passed
+     * with warnings.</p> </li> <li> <p> <code>ERORR</code>: Test faced an error when
+     * running due to an internal issue.</p> </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>Provides test case run status.</p>
+     * <p>Provides the test case run status. Status is one of the following:</p> <ul>
+     * <li> <p> <code>PASS</code>: Test passed.</p> </li> <li> <p> <code>FAIL</code>:
+     * Test failed.</p> </li> <li> <p> <code>PENDING</code>: Test has not started
+     * running but is scheduled.</p> </li> <li> <p> <code>RUNNING</code>: Test is
+     * running.</p> </li> <li> <p> <code>STOPPING</code>: Test is performing cleanup
+     * steps. You will see this status only if you stop a suite run.</p> </li> <li> <p>
+     * <code>STOPPED</code> Test is stopped. You will see this status only if you stop
+     * a suite run.</p> </li> <li> <p> <code>PASS_WITH_WARNINGS</code>: Test passed
+     * with warnings.</p> </li> <li> <p> <code>ERORR</code>: Test faced an error when
+     * running due to an internal issue.</p> </li> </ul>
      */
     inline void SetStatus(const Status& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>Provides test case run status.</p>
+     * <p>Provides the test case run status. Status is one of the following:</p> <ul>
+     * <li> <p> <code>PASS</code>: Test passed.</p> </li> <li> <p> <code>FAIL</code>:
+     * Test failed.</p> </li> <li> <p> <code>PENDING</code>: Test has not started
+     * running but is scheduled.</p> </li> <li> <p> <code>RUNNING</code>: Test is
+     * running.</p> </li> <li> <p> <code>STOPPING</code>: Test is performing cleanup
+     * steps. You will see this status only if you stop a suite run.</p> </li> <li> <p>
+     * <code>STOPPED</code> Test is stopped. You will see this status only if you stop
+     * a suite run.</p> </li> <li> <p> <code>PASS_WITH_WARNINGS</code>: Test passed
+     * with warnings.</p> </li> <li> <p> <code>ERORR</code>: Test faced an error when
+     * running due to an internal issue.</p> </li> </ul>
      */
     inline void SetStatus(Status&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>Provides test case run status.</p>
+     * <p>Provides the test case run status. Status is one of the following:</p> <ul>
+     * <li> <p> <code>PASS</code>: Test passed.</p> </li> <li> <p> <code>FAIL</code>:
+     * Test failed.</p> </li> <li> <p> <code>PENDING</code>: Test has not started
+     * running but is scheduled.</p> </li> <li> <p> <code>RUNNING</code>: Test is
+     * running.</p> </li> <li> <p> <code>STOPPING</code>: Test is performing cleanup
+     * steps. You will see this status only if you stop a suite run.</p> </li> <li> <p>
+     * <code>STOPPED</code> Test is stopped. You will see this status only if you stop
+     * a suite run.</p> </li> <li> <p> <code>PASS_WITH_WARNINGS</code>: Test passed
+     * with warnings.</p> </li> <li> <p> <code>ERORR</code>: Test faced an error when
+     * running due to an internal issue.</p> </li> </ul>
      */
     inline TestCaseRun& WithStatus(const Status& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>Provides test case run status.</p>
+     * <p>Provides the test case run status. Status is one of the following:</p> <ul>
+     * <li> <p> <code>PASS</code>: Test passed.</p> </li> <li> <p> <code>FAIL</code>:
+     * Test failed.</p> </li> <li> <p> <code>PENDING</code>: Test has not started
+     * running but is scheduled.</p> </li> <li> <p> <code>RUNNING</code>: Test is
+     * running.</p> </li> <li> <p> <code>STOPPING</code>: Test is performing cleanup
+     * steps. You will see this status only if you stop a suite run.</p> </li> <li> <p>
+     * <code>STOPPED</code> Test is stopped. You will see this status only if you stop
+     * a suite run.</p> </li> <li> <p> <code>PASS_WITH_WARNINGS</code>: Test passed
+     * with warnings.</p> </li> <li> <p> <code>ERORR</code>: Test faced an error when
+     * running due to an internal issue.</p> </li> </ul>
      */
     inline TestCaseRun& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -256,42 +310,42 @@ namespace Model
 
 
     /**
-     * <p>Provides test case run log Url.</p>
+     * <p>Provides test case run log URL.</p>
      */
     inline const Aws::String& GetLogUrl() const{ return m_logUrl; }
 
     /**
-     * <p>Provides test case run log Url.</p>
+     * <p>Provides test case run log URL.</p>
      */
     inline bool LogUrlHasBeenSet() const { return m_logUrlHasBeenSet; }
 
     /**
-     * <p>Provides test case run log Url.</p>
+     * <p>Provides test case run log URL.</p>
      */
     inline void SetLogUrl(const Aws::String& value) { m_logUrlHasBeenSet = true; m_logUrl = value; }
 
     /**
-     * <p>Provides test case run log Url.</p>
+     * <p>Provides test case run log URL.</p>
      */
     inline void SetLogUrl(Aws::String&& value) { m_logUrlHasBeenSet = true; m_logUrl = std::move(value); }
 
     /**
-     * <p>Provides test case run log Url.</p>
+     * <p>Provides test case run log URL.</p>
      */
     inline void SetLogUrl(const char* value) { m_logUrlHasBeenSet = true; m_logUrl.assign(value); }
 
     /**
-     * <p>Provides test case run log Url.</p>
+     * <p>Provides test case run log URL.</p>
      */
     inline TestCaseRun& WithLogUrl(const Aws::String& value) { SetLogUrl(value); return *this;}
 
     /**
-     * <p>Provides test case run log Url.</p>
+     * <p>Provides test case run log URL.</p>
      */
     inline TestCaseRun& WithLogUrl(Aws::String&& value) { SetLogUrl(std::move(value)); return *this;}
 
     /**
-     * <p>Provides test case run log Url.</p>
+     * <p>Provides test case run log URL.</p>
      */
     inline TestCaseRun& WithLogUrl(const char* value) { SetLogUrl(value); return *this;}
 

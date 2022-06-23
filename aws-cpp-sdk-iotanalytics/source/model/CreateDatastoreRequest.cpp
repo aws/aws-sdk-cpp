@@ -17,7 +17,8 @@ CreateDatastoreRequest::CreateDatastoreRequest() :
     m_datastoreStorageHasBeenSet(false),
     m_retentionPeriodHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_fileFormatConfigurationHasBeenSet(false)
+    m_fileFormatConfigurationHasBeenSet(false),
+    m_datastorePartitionsHasBeenSet(false)
 {
 }
 
@@ -57,6 +58,12 @@ Aws::String CreateDatastoreRequest::SerializePayload() const
   if(m_fileFormatConfigurationHasBeenSet)
   {
    payload.WithObject("fileFormatConfiguration", m_fileFormatConfiguration.Jsonize());
+
+  }
+
+  if(m_datastorePartitionsHasBeenSet)
+  {
+   payload.WithObject("datastorePartitions", m_datastorePartitions.Jsonize());
 
   }
 

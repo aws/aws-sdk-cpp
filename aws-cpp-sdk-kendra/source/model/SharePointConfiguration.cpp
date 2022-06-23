@@ -33,7 +33,8 @@ SharePointConfiguration::SharePointConfiguration() :
     m_fieldMappingsHasBeenSet(false),
     m_documentTitleFieldNameHasBeenSet(false),
     m_disableLocalGroups(false),
-    m_disableLocalGroupsHasBeenSet(false)
+    m_disableLocalGroupsHasBeenSet(false),
+    m_sslCertificateS3PathHasBeenSet(false)
 {
 }
 
@@ -52,7 +53,8 @@ SharePointConfiguration::SharePointConfiguration(JsonView jsonValue) :
     m_fieldMappingsHasBeenSet(false),
     m_documentTitleFieldNameHasBeenSet(false),
     m_disableLocalGroups(false),
-    m_disableLocalGroupsHasBeenSet(false)
+    m_disableLocalGroupsHasBeenSet(false),
+    m_sslCertificateS3PathHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -148,6 +150,13 @@ SharePointConfiguration& SharePointConfiguration::operator =(JsonView jsonValue)
     m_disableLocalGroupsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SslCertificateS3Path"))
+  {
+    m_sslCertificateS3Path = jsonValue.GetObject("SslCertificateS3Path");
+
+    m_sslCertificateS3PathHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -237,6 +246,12 @@ JsonValue SharePointConfiguration::Jsonize() const
   if(m_disableLocalGroupsHasBeenSet)
   {
    payload.WithBool("DisableLocalGroups", m_disableLocalGroups);
+
+  }
+
+  if(m_sslCertificateS3PathHasBeenSet)
+  {
+   payload.WithObject("SslCertificateS3Path", m_sslCertificateS3Path.Jsonize());
 
   }
 

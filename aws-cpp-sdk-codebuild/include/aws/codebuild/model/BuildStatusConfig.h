@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains information that defines how the AWS CodeBuild build project reports
-   * the build status to the source provider. </p><p><h3>See Also:</h3>   <a
+   * <p>Contains information that defines how the CodeBuild build project reports the
+   * build status to the source provider. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BuildStatusConfig">AWS
    * API Reference</a></p>
    */

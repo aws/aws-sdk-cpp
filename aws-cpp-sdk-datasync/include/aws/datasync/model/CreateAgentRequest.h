@@ -42,104 +42,104 @@ namespace Model
     /**
      * <p>Your agent activation key. You can get the activation key either by sending
      * an HTTP GET request with redirects that enable you to get the agent IP address
-     * (port 80). Alternatively, you can get it from the AWS DataSync console.</p>
-     * <p>The redirect URL returned in the response provides you the activation key for
-     * your agent in the query string parameter <code>activationKey</code>. It might
-     * also include other activation-related parameters; however, these are merely
-     * defaults. The arguments you pass to this API call determine the actual
-     * configuration of your agent.</p> <p>For more information, see Activating an
-     * Agent in the <i>AWS DataSync User Guide.</i> </p>
+     * (port 80). Alternatively, you can get it from the DataSync console.</p> <p>The
+     * redirect URL returned in the response provides you the activation key for your
+     * agent in the query string parameter <code>activationKey</code>. It might also
+     * include other activation-related parameters; however, these are merely defaults.
+     * The arguments you pass to this API call determine the actual configuration of
+     * your agent.</p> <p>For more information, see Activating an Agent in the
+     * <i>DataSync User Guide.</i> </p>
      */
     inline const Aws::String& GetActivationKey() const{ return m_activationKey; }
 
     /**
      * <p>Your agent activation key. You can get the activation key either by sending
      * an HTTP GET request with redirects that enable you to get the agent IP address
-     * (port 80). Alternatively, you can get it from the AWS DataSync console.</p>
-     * <p>The redirect URL returned in the response provides you the activation key for
-     * your agent in the query string parameter <code>activationKey</code>. It might
-     * also include other activation-related parameters; however, these are merely
-     * defaults. The arguments you pass to this API call determine the actual
-     * configuration of your agent.</p> <p>For more information, see Activating an
-     * Agent in the <i>AWS DataSync User Guide.</i> </p>
+     * (port 80). Alternatively, you can get it from the DataSync console.</p> <p>The
+     * redirect URL returned in the response provides you the activation key for your
+     * agent in the query string parameter <code>activationKey</code>. It might also
+     * include other activation-related parameters; however, these are merely defaults.
+     * The arguments you pass to this API call determine the actual configuration of
+     * your agent.</p> <p>For more information, see Activating an Agent in the
+     * <i>DataSync User Guide.</i> </p>
      */
     inline bool ActivationKeyHasBeenSet() const { return m_activationKeyHasBeenSet; }
 
     /**
      * <p>Your agent activation key. You can get the activation key either by sending
      * an HTTP GET request with redirects that enable you to get the agent IP address
-     * (port 80). Alternatively, you can get it from the AWS DataSync console.</p>
-     * <p>The redirect URL returned in the response provides you the activation key for
-     * your agent in the query string parameter <code>activationKey</code>. It might
-     * also include other activation-related parameters; however, these are merely
-     * defaults. The arguments you pass to this API call determine the actual
-     * configuration of your agent.</p> <p>For more information, see Activating an
-     * Agent in the <i>AWS DataSync User Guide.</i> </p>
+     * (port 80). Alternatively, you can get it from the DataSync console.</p> <p>The
+     * redirect URL returned in the response provides you the activation key for your
+     * agent in the query string parameter <code>activationKey</code>. It might also
+     * include other activation-related parameters; however, these are merely defaults.
+     * The arguments you pass to this API call determine the actual configuration of
+     * your agent.</p> <p>For more information, see Activating an Agent in the
+     * <i>DataSync User Guide.</i> </p>
      */
     inline void SetActivationKey(const Aws::String& value) { m_activationKeyHasBeenSet = true; m_activationKey = value; }
 
     /**
      * <p>Your agent activation key. You can get the activation key either by sending
      * an HTTP GET request with redirects that enable you to get the agent IP address
-     * (port 80). Alternatively, you can get it from the AWS DataSync console.</p>
-     * <p>The redirect URL returned in the response provides you the activation key for
-     * your agent in the query string parameter <code>activationKey</code>. It might
-     * also include other activation-related parameters; however, these are merely
-     * defaults. The arguments you pass to this API call determine the actual
-     * configuration of your agent.</p> <p>For more information, see Activating an
-     * Agent in the <i>AWS DataSync User Guide.</i> </p>
+     * (port 80). Alternatively, you can get it from the DataSync console.</p> <p>The
+     * redirect URL returned in the response provides you the activation key for your
+     * agent in the query string parameter <code>activationKey</code>. It might also
+     * include other activation-related parameters; however, these are merely defaults.
+     * The arguments you pass to this API call determine the actual configuration of
+     * your agent.</p> <p>For more information, see Activating an Agent in the
+     * <i>DataSync User Guide.</i> </p>
      */
     inline void SetActivationKey(Aws::String&& value) { m_activationKeyHasBeenSet = true; m_activationKey = std::move(value); }
 
     /**
      * <p>Your agent activation key. You can get the activation key either by sending
      * an HTTP GET request with redirects that enable you to get the agent IP address
-     * (port 80). Alternatively, you can get it from the AWS DataSync console.</p>
-     * <p>The redirect URL returned in the response provides you the activation key for
-     * your agent in the query string parameter <code>activationKey</code>. It might
-     * also include other activation-related parameters; however, these are merely
-     * defaults. The arguments you pass to this API call determine the actual
-     * configuration of your agent.</p> <p>For more information, see Activating an
-     * Agent in the <i>AWS DataSync User Guide.</i> </p>
+     * (port 80). Alternatively, you can get it from the DataSync console.</p> <p>The
+     * redirect URL returned in the response provides you the activation key for your
+     * agent in the query string parameter <code>activationKey</code>. It might also
+     * include other activation-related parameters; however, these are merely defaults.
+     * The arguments you pass to this API call determine the actual configuration of
+     * your agent.</p> <p>For more information, see Activating an Agent in the
+     * <i>DataSync User Guide.</i> </p>
      */
     inline void SetActivationKey(const char* value) { m_activationKeyHasBeenSet = true; m_activationKey.assign(value); }
 
     /**
      * <p>Your agent activation key. You can get the activation key either by sending
      * an HTTP GET request with redirects that enable you to get the agent IP address
-     * (port 80). Alternatively, you can get it from the AWS DataSync console.</p>
-     * <p>The redirect URL returned in the response provides you the activation key for
-     * your agent in the query string parameter <code>activationKey</code>. It might
-     * also include other activation-related parameters; however, these are merely
-     * defaults. The arguments you pass to this API call determine the actual
-     * configuration of your agent.</p> <p>For more information, see Activating an
-     * Agent in the <i>AWS DataSync User Guide.</i> </p>
+     * (port 80). Alternatively, you can get it from the DataSync console.</p> <p>The
+     * redirect URL returned in the response provides you the activation key for your
+     * agent in the query string parameter <code>activationKey</code>. It might also
+     * include other activation-related parameters; however, these are merely defaults.
+     * The arguments you pass to this API call determine the actual configuration of
+     * your agent.</p> <p>For more information, see Activating an Agent in the
+     * <i>DataSync User Guide.</i> </p>
      */
     inline CreateAgentRequest& WithActivationKey(const Aws::String& value) { SetActivationKey(value); return *this;}
 
     /**
      * <p>Your agent activation key. You can get the activation key either by sending
      * an HTTP GET request with redirects that enable you to get the agent IP address
-     * (port 80). Alternatively, you can get it from the AWS DataSync console.</p>
-     * <p>The redirect URL returned in the response provides you the activation key for
-     * your agent in the query string parameter <code>activationKey</code>. It might
-     * also include other activation-related parameters; however, these are merely
-     * defaults. The arguments you pass to this API call determine the actual
-     * configuration of your agent.</p> <p>For more information, see Activating an
-     * Agent in the <i>AWS DataSync User Guide.</i> </p>
+     * (port 80). Alternatively, you can get it from the DataSync console.</p> <p>The
+     * redirect URL returned in the response provides you the activation key for your
+     * agent in the query string parameter <code>activationKey</code>. It might also
+     * include other activation-related parameters; however, these are merely defaults.
+     * The arguments you pass to this API call determine the actual configuration of
+     * your agent.</p> <p>For more information, see Activating an Agent in the
+     * <i>DataSync User Guide.</i> </p>
      */
     inline CreateAgentRequest& WithActivationKey(Aws::String&& value) { SetActivationKey(std::move(value)); return *this;}
 
     /**
      * <p>Your agent activation key. You can get the activation key either by sending
      * an HTTP GET request with redirects that enable you to get the agent IP address
-     * (port 80). Alternatively, you can get it from the AWS DataSync console.</p>
-     * <p>The redirect URL returned in the response provides you the activation key for
-     * your agent in the query string parameter <code>activationKey</code>. It might
-     * also include other activation-related parameters; however, these are merely
-     * defaults. The arguments you pass to this API call determine the actual
-     * configuration of your agent.</p> <p>For more information, see Activating an
-     * Agent in the <i>AWS DataSync User Guide.</i> </p>
+     * (port 80). Alternatively, you can get it from the DataSync console.</p> <p>The
+     * redirect URL returned in the response provides you the activation key for your
+     * agent in the query string parameter <code>activationKey</code>. It might also
+     * include other activation-related parameters; however, these are merely defaults.
+     * The arguments you pass to this API call determine the actual configuration of
+     * your agent.</p> <p>For more information, see Activating an Agent in the
+     * <i>DataSync User Guide.</i> </p>
      */
     inline CreateAgentRequest& WithActivationKey(const char* value) { SetActivationKey(value); return *this;}
 
@@ -449,55 +449,64 @@ namespace Model
 
     /**
      * <p>The ARNs of the security groups used to protect your data transfer task
-     * subnets. See <a>CreateAgentRequest$SubnetArns</a>.</p>
+     * subnets. See <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Ec2Config.html#DataSync-Type-Ec2Config-SecurityGroupArns">SecurityGroupArns</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupArns() const{ return m_securityGroupArns; }
 
     /**
      * <p>The ARNs of the security groups used to protect your data transfer task
-     * subnets. See <a>CreateAgentRequest$SubnetArns</a>.</p>
+     * subnets. See <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Ec2Config.html#DataSync-Type-Ec2Config-SecurityGroupArns">SecurityGroupArns</a>.</p>
      */
     inline bool SecurityGroupArnsHasBeenSet() const { return m_securityGroupArnsHasBeenSet; }
 
     /**
      * <p>The ARNs of the security groups used to protect your data transfer task
-     * subnets. See <a>CreateAgentRequest$SubnetArns</a>.</p>
+     * subnets. See <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Ec2Config.html#DataSync-Type-Ec2Config-SecurityGroupArns">SecurityGroupArns</a>.</p>
      */
     inline void SetSecurityGroupArns(const Aws::Vector<Aws::String>& value) { m_securityGroupArnsHasBeenSet = true; m_securityGroupArns = value; }
 
     /**
      * <p>The ARNs of the security groups used to protect your data transfer task
-     * subnets. See <a>CreateAgentRequest$SubnetArns</a>.</p>
+     * subnets. See <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Ec2Config.html#DataSync-Type-Ec2Config-SecurityGroupArns">SecurityGroupArns</a>.</p>
      */
     inline void SetSecurityGroupArns(Aws::Vector<Aws::String>&& value) { m_securityGroupArnsHasBeenSet = true; m_securityGroupArns = std::move(value); }
 
     /**
      * <p>The ARNs of the security groups used to protect your data transfer task
-     * subnets. See <a>CreateAgentRequest$SubnetArns</a>.</p>
+     * subnets. See <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Ec2Config.html#DataSync-Type-Ec2Config-SecurityGroupArns">SecurityGroupArns</a>.</p>
      */
     inline CreateAgentRequest& WithSecurityGroupArns(const Aws::Vector<Aws::String>& value) { SetSecurityGroupArns(value); return *this;}
 
     /**
      * <p>The ARNs of the security groups used to protect your data transfer task
-     * subnets. See <a>CreateAgentRequest$SubnetArns</a>.</p>
+     * subnets. See <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Ec2Config.html#DataSync-Type-Ec2Config-SecurityGroupArns">SecurityGroupArns</a>.</p>
      */
     inline CreateAgentRequest& WithSecurityGroupArns(Aws::Vector<Aws::String>&& value) { SetSecurityGroupArns(std::move(value)); return *this;}
 
     /**
      * <p>The ARNs of the security groups used to protect your data transfer task
-     * subnets. See <a>CreateAgentRequest$SubnetArns</a>.</p>
+     * subnets. See <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Ec2Config.html#DataSync-Type-Ec2Config-SecurityGroupArns">SecurityGroupArns</a>.</p>
      */
     inline CreateAgentRequest& AddSecurityGroupArns(const Aws::String& value) { m_securityGroupArnsHasBeenSet = true; m_securityGroupArns.push_back(value); return *this; }
 
     /**
      * <p>The ARNs of the security groups used to protect your data transfer task
-     * subnets. See <a>CreateAgentRequest$SubnetArns</a>.</p>
+     * subnets. See <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Ec2Config.html#DataSync-Type-Ec2Config-SecurityGroupArns">SecurityGroupArns</a>.</p>
      */
     inline CreateAgentRequest& AddSecurityGroupArns(Aws::String&& value) { m_securityGroupArnsHasBeenSet = true; m_securityGroupArns.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The ARNs of the security groups used to protect your data transfer task
-     * subnets. See <a>CreateAgentRequest$SubnetArns</a>.</p>
+     * subnets. See <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Ec2Config.html#DataSync-Type-Ec2Config-SecurityGroupArns">SecurityGroupArns</a>.</p>
      */
     inline CreateAgentRequest& AddSecurityGroupArns(const char* value) { m_securityGroupArnsHasBeenSet = true; m_securityGroupArns.push_back(value); return *this; }
 

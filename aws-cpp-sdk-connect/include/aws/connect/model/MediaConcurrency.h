@@ -72,21 +72,37 @@ namespace Model
 
     /**
      * <p>The number of contacts an agent can have on a channel simultaneously.</p>
+     * <p>Valid Range for <code>VOICE</code>: Minimum value of 1. Maximum value of
+     * 1.</p> <p>Valid Range for <code>CHAT</code>: Minimum value of 1. Maximum value
+     * of 10.</p> <p>Valid Range for <code>TASK</code>: Minimum value of 1. Maximum
+     * value of 10.</p>
      */
     inline int GetConcurrency() const{ return m_concurrency; }
 
     /**
      * <p>The number of contacts an agent can have on a channel simultaneously.</p>
+     * <p>Valid Range for <code>VOICE</code>: Minimum value of 1. Maximum value of
+     * 1.</p> <p>Valid Range for <code>CHAT</code>: Minimum value of 1. Maximum value
+     * of 10.</p> <p>Valid Range for <code>TASK</code>: Minimum value of 1. Maximum
+     * value of 10.</p>
      */
     inline bool ConcurrencyHasBeenSet() const { return m_concurrencyHasBeenSet; }
 
     /**
      * <p>The number of contacts an agent can have on a channel simultaneously.</p>
+     * <p>Valid Range for <code>VOICE</code>: Minimum value of 1. Maximum value of
+     * 1.</p> <p>Valid Range for <code>CHAT</code>: Minimum value of 1. Maximum value
+     * of 10.</p> <p>Valid Range for <code>TASK</code>: Minimum value of 1. Maximum
+     * value of 10.</p>
      */
     inline void SetConcurrency(int value) { m_concurrencyHasBeenSet = true; m_concurrency = value; }
 
     /**
      * <p>The number of contacts an agent can have on a channel simultaneously.</p>
+     * <p>Valid Range for <code>VOICE</code>: Minimum value of 1. Maximum value of
+     * 1.</p> <p>Valid Range for <code>CHAT</code>: Minimum value of 1. Maximum value
+     * of 10.</p> <p>Valid Range for <code>TASK</code>: Minimum value of 1. Maximum
+     * value of 10.</p>
      */
     inline MediaConcurrency& WithConcurrency(int value) { SetConcurrency(value); return *this;}
 

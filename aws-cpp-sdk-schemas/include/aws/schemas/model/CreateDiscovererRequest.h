@@ -119,6 +119,31 @@ namespace Model
 
 
     /**
+     * <p>Support discovery of schemas in events sent to the bus from another account.
+     * (default: true).</p>
+     */
+    inline bool GetCrossAccount() const{ return m_crossAccount; }
+
+    /**
+     * <p>Support discovery of schemas in events sent to the bus from another account.
+     * (default: true).</p>
+     */
+    inline bool CrossAccountHasBeenSet() const { return m_crossAccountHasBeenSet; }
+
+    /**
+     * <p>Support discovery of schemas in events sent to the bus from another account.
+     * (default: true).</p>
+     */
+    inline void SetCrossAccount(bool value) { m_crossAccountHasBeenSet = true; m_crossAccount = value; }
+
+    /**
+     * <p>Support discovery of schemas in events sent to the bus from another account.
+     * (default: true).</p>
+     */
+    inline CreateDiscovererRequest& WithCrossAccount(bool value) { SetCrossAccount(value); return *this;}
+
+
+    /**
      * <p>Tags associated with the resource.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
@@ -190,6 +215,9 @@ namespace Model
 
     Aws::String m_sourceArn;
     bool m_sourceArnHasBeenSet;
+
+    bool m_crossAccount;
+    bool m_crossAccountHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;

@@ -26,7 +26,9 @@ namespace Model
 
   /**
    * <p>Provides a summary of the properties of a solution. For a complete listing,
-   * call the <a>DescribeSolution</a> API.</p><p><h3>See Also:</h3>   <a
+   * call the <a
+   * href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolution.html">DescribeSolution</a>
+   * API.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/SolutionSummary">AWS
    * API Reference</a></p>
    */

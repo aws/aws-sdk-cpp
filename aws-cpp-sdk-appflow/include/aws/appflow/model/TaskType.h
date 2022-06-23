@@ -19,8 +19,10 @@ namespace Model
     Arithmetic,
     Filter,
     Map,
+    Map_all,
     Mask,
     Merge,
+    Passthrough,
     Truncate,
     Validate
   };

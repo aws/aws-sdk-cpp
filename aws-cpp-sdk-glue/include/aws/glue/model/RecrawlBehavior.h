@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     CRAWL_EVERYTHING,
-    CRAWL_NEW_FOLDERS_ONLY
+    CRAWL_NEW_FOLDERS_ONLY,
+    CRAWL_EVENT_MODE
   };
 
 namespace RecrawlBehaviorMapper

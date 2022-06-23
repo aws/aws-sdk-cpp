@@ -689,6 +689,35 @@ namespace Model
      */
     inline WriteCampaignRequest& WithTreatmentName(const char* value) { SetTreatmentName(value); return *this;}
 
+
+    /**
+     * <p>Defines the priority of the campaign, used to decide the order of messages
+     * displayed to user if there are multiple messages scheduled to be displayed at
+     * the same moment.</p>
+     */
+    inline int GetPriority() const{ return m_priority; }
+
+    /**
+     * <p>Defines the priority of the campaign, used to decide the order of messages
+     * displayed to user if there are multiple messages scheduled to be displayed at
+     * the same moment.</p>
+     */
+    inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
+
+    /**
+     * <p>Defines the priority of the campaign, used to decide the order of messages
+     * displayed to user if there are multiple messages scheduled to be displayed at
+     * the same moment.</p>
+     */
+    inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
+
+    /**
+     * <p>Defines the priority of the campaign, used to decide the order of messages
+     * displayed to user if there are multiple messages scheduled to be displayed at
+     * the same moment.</p>
+     */
+    inline WriteCampaignRequest& WithPriority(int value) { SetPriority(value); return *this;}
+
   private:
 
     Aws::Vector<WriteTreatmentResource> m_additionalTreatments;
@@ -738,6 +767,9 @@ namespace Model
 
     Aws::String m_treatmentName;
     bool m_treatmentNameHasBeenSet;
+
+    int m_priority;
+    bool m_priorityHasBeenSet;
   };
 
 } // namespace Model

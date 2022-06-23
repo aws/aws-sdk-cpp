@@ -69,37 +69,37 @@ namespace Model
 
 
     /**
-     * <p>The ARN of an Amazon CloudWatch role for the current <a>Account</a>. </p>
+     * <p>The ARN of an Amazon CloudWatch role for the current <a>Account</a>.</p>
      */
     inline const Aws::String& GetCloudwatchRoleArn() const{ return m_cloudwatchRoleArn; }
 
     /**
-     * <p>The ARN of an Amazon CloudWatch role for the current <a>Account</a>. </p>
+     * <p>The ARN of an Amazon CloudWatch role for the current <a>Account</a>.</p>
      */
     inline void SetCloudwatchRoleArn(const Aws::String& value) { m_cloudwatchRoleArn = value; }
 
     /**
-     * <p>The ARN of an Amazon CloudWatch role for the current <a>Account</a>. </p>
+     * <p>The ARN of an Amazon CloudWatch role for the current <a>Account</a>.</p>
      */
     inline void SetCloudwatchRoleArn(Aws::String&& value) { m_cloudwatchRoleArn = std::move(value); }
 
     /**
-     * <p>The ARN of an Amazon CloudWatch role for the current <a>Account</a>. </p>
+     * <p>The ARN of an Amazon CloudWatch role for the current <a>Account</a>.</p>
      */
     inline void SetCloudwatchRoleArn(const char* value) { m_cloudwatchRoleArn.assign(value); }
 
     /**
-     * <p>The ARN of an Amazon CloudWatch role for the current <a>Account</a>. </p>
+     * <p>The ARN of an Amazon CloudWatch role for the current <a>Account</a>.</p>
      */
     inline UpdateAccountResult& WithCloudwatchRoleArn(const Aws::String& value) { SetCloudwatchRoleArn(value); return *this;}
 
     /**
-     * <p>The ARN of an Amazon CloudWatch role for the current <a>Account</a>. </p>
+     * <p>The ARN of an Amazon CloudWatch role for the current <a>Account</a>.</p>
      */
     inline UpdateAccountResult& WithCloudwatchRoleArn(Aws::String&& value) { SetCloudwatchRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of an Amazon CloudWatch role for the current <a>Account</a>. </p>
+     * <p>The ARN of an Amazon CloudWatch role for the current <a>Account</a>.</p>
      */
     inline UpdateAccountResult& WithCloudwatchRoleArn(const char* value) { SetCloudwatchRoleArn(value); return *this;}
 

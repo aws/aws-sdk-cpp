@@ -19,7 +19,8 @@ namespace Model
     FLOW_LOGS,
     CLOUD_TRAIL,
     DNS_LOGS,
-    S3_LOGS
+    S3_LOGS,
+    KUBERNETES_AUDIT_LOGS
   };
 
 namespace DataSourceMapper

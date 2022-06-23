@@ -17,6 +17,10 @@
 #include <aws/transcribe/model/JobExecutionSettings.h>
 #include <aws/transcribe/model/ContentRedaction.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/transcribe/model/SubtitlesOutput.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/transcribe/model/Tag.h>
+#include <aws/transcribe/model/LanguageIdSettings.h>
 #include <utility>
 
 namespace Aws
@@ -153,22 +157,26 @@ namespace Model
 
 
     /**
-     * <p>The sample rate, in Hertz, of the audio track in the input media file. </p>
+     * <p>The sample rate, in Hertz (Hz), of the audio track in the input media
+     * file.</p>
      */
     inline int GetMediaSampleRateHertz() const{ return m_mediaSampleRateHertz; }
 
     /**
-     * <p>The sample rate, in Hertz, of the audio track in the input media file. </p>
+     * <p>The sample rate, in Hertz (Hz), of the audio track in the input media
+     * file.</p>
      */
     inline bool MediaSampleRateHertzHasBeenSet() const { return m_mediaSampleRateHertzHasBeenSet; }
 
     /**
-     * <p>The sample rate, in Hertz, of the audio track in the input media file. </p>
+     * <p>The sample rate, in Hertz (Hz), of the audio track in the input media
+     * file.</p>
      */
     inline void SetMediaSampleRateHertz(int value) { m_mediaSampleRateHertzHasBeenSet = true; m_mediaSampleRateHertz = value; }
 
     /**
-     * <p>The sample rate, in Hertz, of the audio track in the input media file. </p>
+     * <p>The sample rate, in Hertz (Hz), of the audio track in the input media
+     * file.</p>
      */
     inline TranscriptionJob& WithMediaSampleRateHertz(int value) { SetMediaSampleRateHertz(value); return *this;}
 
@@ -267,32 +275,32 @@ namespace Model
 
 
     /**
-     * <p>A timestamp that shows with the job was started processing.</p>
+     * <p>A timestamp that shows when the job started processing.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
-     * <p>A timestamp that shows with the job was started processing.</p>
+     * <p>A timestamp that shows when the job started processing.</p>
      */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
     /**
-     * <p>A timestamp that shows with the job was started processing.</p>
+     * <p>A timestamp that shows when the job started processing.</p>
      */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
-     * <p>A timestamp that shows with the job was started processing.</p>
+     * <p>A timestamp that shows when the job started processing.</p>
      */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
-     * <p>A timestamp that shows with the job was started processing.</p>
+     * <p>A timestamp that shows when the job started processing.</p>
      */
     inline TranscriptionJob& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
 
     /**
-     * <p>A timestamp that shows with the job was started processing.</p>
+     * <p>A timestamp that shows when the job started processing.</p>
      */
     inline TranscriptionJob& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
@@ -329,32 +337,32 @@ namespace Model
 
 
     /**
-     * <p>A timestamp that shows when the job was completed.</p>
+     * <p>A timestamp that shows when the job completed.</p>
      */
     inline const Aws::Utils::DateTime& GetCompletionTime() const{ return m_completionTime; }
 
     /**
-     * <p>A timestamp that shows when the job was completed.</p>
+     * <p>A timestamp that shows when the job completed.</p>
      */
     inline bool CompletionTimeHasBeenSet() const { return m_completionTimeHasBeenSet; }
 
     /**
-     * <p>A timestamp that shows when the job was completed.</p>
+     * <p>A timestamp that shows when the job completed.</p>
      */
     inline void SetCompletionTime(const Aws::Utils::DateTime& value) { m_completionTimeHasBeenSet = true; m_completionTime = value; }
 
     /**
-     * <p>A timestamp that shows when the job was completed.</p>
+     * <p>A timestamp that shows when the job completed.</p>
      */
     inline void SetCompletionTime(Aws::Utils::DateTime&& value) { m_completionTimeHasBeenSet = true; m_completionTime = std::move(value); }
 
     /**
-     * <p>A timestamp that shows when the job was completed.</p>
+     * <p>A timestamp that shows when the job completed.</p>
      */
     inline TranscriptionJob& WithCompletionTime(const Aws::Utils::DateTime& value) { SetCompletionTime(value); return *this;}
 
     /**
-     * <p>A timestamp that shows when the job was completed.</p>
+     * <p>A timestamp that shows when the job completed.</p>
      */
     inline TranscriptionJob& WithCompletionTime(Aws::Utils::DateTime&& value) { SetCompletionTime(std::move(value)); return *this;}
 
@@ -372,7 +380,7 @@ namespace Model
      * the media format of your media file and make sure that the two values match.</p>
      * </li> <li> <p> <code>Invalid sample rate for audio file</code> - The sample rate
      * specified in the <code>MediaSampleRateHertz</code> of the request isn't valid.
-     * The sample rate must be between 8000 and 48000 Hertz.</p> </li> <li> <p>
+     * The sample rate must be between 8,000 and 48,000 Hertz.</p> </li> <li> <p>
      * <code>The sample rate provided does not match the detected sample rate</code> -
      * The sample rate in the audio file doesn't match the sample rate specified in the
      * <code>MediaSampleRateHertz</code> field in the request. Check the sample rate of
@@ -403,7 +411,7 @@ namespace Model
      * the media format of your media file and make sure that the two values match.</p>
      * </li> <li> <p> <code>Invalid sample rate for audio file</code> - The sample rate
      * specified in the <code>MediaSampleRateHertz</code> of the request isn't valid.
-     * The sample rate must be between 8000 and 48000 Hertz.</p> </li> <li> <p>
+     * The sample rate must be between 8,000 and 48,000 Hertz.</p> </li> <li> <p>
      * <code>The sample rate provided does not match the detected sample rate</code> -
      * The sample rate in the audio file doesn't match the sample rate specified in the
      * <code>MediaSampleRateHertz</code> field in the request. Check the sample rate of
@@ -434,7 +442,7 @@ namespace Model
      * the media format of your media file and make sure that the two values match.</p>
      * </li> <li> <p> <code>Invalid sample rate for audio file</code> - The sample rate
      * specified in the <code>MediaSampleRateHertz</code> of the request isn't valid.
-     * The sample rate must be between 8000 and 48000 Hertz.</p> </li> <li> <p>
+     * The sample rate must be between 8,000 and 48,000 Hertz.</p> </li> <li> <p>
      * <code>The sample rate provided does not match the detected sample rate</code> -
      * The sample rate in the audio file doesn't match the sample rate specified in the
      * <code>MediaSampleRateHertz</code> field in the request. Check the sample rate of
@@ -465,7 +473,7 @@ namespace Model
      * the media format of your media file and make sure that the two values match.</p>
      * </li> <li> <p> <code>Invalid sample rate for audio file</code> - The sample rate
      * specified in the <code>MediaSampleRateHertz</code> of the request isn't valid.
-     * The sample rate must be between 8000 and 48000 Hertz.</p> </li> <li> <p>
+     * The sample rate must be between 8,000 and 48,000 Hertz.</p> </li> <li> <p>
      * <code>The sample rate provided does not match the detected sample rate</code> -
      * The sample rate in the audio file doesn't match the sample rate specified in the
      * <code>MediaSampleRateHertz</code> field in the request. Check the sample rate of
@@ -496,7 +504,7 @@ namespace Model
      * the media format of your media file and make sure that the two values match.</p>
      * </li> <li> <p> <code>Invalid sample rate for audio file</code> - The sample rate
      * specified in the <code>MediaSampleRateHertz</code> of the request isn't valid.
-     * The sample rate must be between 8000 and 48000 Hertz.</p> </li> <li> <p>
+     * The sample rate must be between 8,000 and 48,000 Hertz.</p> </li> <li> <p>
      * <code>The sample rate provided does not match the detected sample rate</code> -
      * The sample rate in the audio file doesn't match the sample rate specified in the
      * <code>MediaSampleRateHertz</code> field in the request. Check the sample rate of
@@ -527,7 +535,7 @@ namespace Model
      * the media format of your media file and make sure that the two values match.</p>
      * </li> <li> <p> <code>Invalid sample rate for audio file</code> - The sample rate
      * specified in the <code>MediaSampleRateHertz</code> of the request isn't valid.
-     * The sample rate must be between 8000 and 48000 Hertz.</p> </li> <li> <p>
+     * The sample rate must be between 8,000 and 48,000 Hertz.</p> </li> <li> <p>
      * <code>The sample rate provided does not match the detected sample rate</code> -
      * The sample rate in the audio file doesn't match the sample rate specified in the
      * <code>MediaSampleRateHertz</code> field in the request. Check the sample rate of
@@ -558,7 +566,7 @@ namespace Model
      * the media format of your media file and make sure that the two values match.</p>
      * </li> <li> <p> <code>Invalid sample rate for audio file</code> - The sample rate
      * specified in the <code>MediaSampleRateHertz</code> of the request isn't valid.
-     * The sample rate must be between 8000 and 48000 Hertz.</p> </li> <li> <p>
+     * The sample rate must be between 8,000 and 48,000 Hertz.</p> </li> <li> <p>
      * <code>The sample rate provided does not match the detected sample rate</code> -
      * The sample rate in the audio file doesn't match the sample rate specified in the
      * <code>MediaSampleRateHertz</code> field in the request. Check the sample rate of
@@ -589,7 +597,7 @@ namespace Model
      * the media format of your media file and make sure that the two values match.</p>
      * </li> <li> <p> <code>Invalid sample rate for audio file</code> - The sample rate
      * specified in the <code>MediaSampleRateHertz</code> of the request isn't valid.
-     * The sample rate must be between 8000 and 48000 Hertz.</p> </li> <li> <p>
+     * The sample rate must be between 8,000 and 48,000 Hertz.</p> </li> <li> <p>
      * <code>The sample rate provided does not match the detected sample rate</code> -
      * The sample rate in the audio file doesn't match the sample rate specified in the
      * <code>MediaSampleRateHertz</code> field in the request. Check the sample rate of
@@ -858,6 +866,159 @@ namespace Model
      */
     inline TranscriptionJob& WithIdentifiedLanguageScore(double value) { SetIdentifiedLanguageScore(value); return *this;}
 
+
+    /**
+     * <p>A key:value pair assigned to a given transcription job.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A key:value pair assigned to a given transcription job.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>A key:value pair assigned to a given transcription job.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>A key:value pair assigned to a given transcription job.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>A key:value pair assigned to a given transcription job.</p>
+     */
+    inline TranscriptionJob& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A key:value pair assigned to a given transcription job.</p>
+     */
+    inline TranscriptionJob& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A key:value pair assigned to a given transcription job.</p>
+     */
+    inline TranscriptionJob& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>A key:value pair assigned to a given transcription job.</p>
+     */
+    inline TranscriptionJob& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Generate subtitles for your batch transcription job.</p>
+     */
+    inline const SubtitlesOutput& GetSubtitles() const{ return m_subtitles; }
+
+    /**
+     * <p>Generate subtitles for your batch transcription job.</p>
+     */
+    inline bool SubtitlesHasBeenSet() const { return m_subtitlesHasBeenSet; }
+
+    /**
+     * <p>Generate subtitles for your batch transcription job.</p>
+     */
+    inline void SetSubtitles(const SubtitlesOutput& value) { m_subtitlesHasBeenSet = true; m_subtitles = value; }
+
+    /**
+     * <p>Generate subtitles for your batch transcription job.</p>
+     */
+    inline void SetSubtitles(SubtitlesOutput&& value) { m_subtitlesHasBeenSet = true; m_subtitles = std::move(value); }
+
+    /**
+     * <p>Generate subtitles for your batch transcription job.</p>
+     */
+    inline TranscriptionJob& WithSubtitles(const SubtitlesOutput& value) { SetSubtitles(value); return *this;}
+
+    /**
+     * <p>Generate subtitles for your batch transcription job.</p>
+     */
+    inline TranscriptionJob& WithSubtitles(SubtitlesOutput&& value) { SetSubtitles(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Language-specific settings that can be specified when language identification
+     * is enabled for your transcription job. These settings include
+     * <code>VocabularyName</code>, <code>VocabularyFilterName</code>, and
+     * <code>LanguageModelName</code>.</p>
+     */
+    inline const Aws::Map<LanguageCode, LanguageIdSettings>& GetLanguageIdSettings() const{ return m_languageIdSettings; }
+
+    /**
+     * <p>Language-specific settings that can be specified when language identification
+     * is enabled for your transcription job. These settings include
+     * <code>VocabularyName</code>, <code>VocabularyFilterName</code>, and
+     * <code>LanguageModelName</code>.</p>
+     */
+    inline bool LanguageIdSettingsHasBeenSet() const { return m_languageIdSettingsHasBeenSet; }
+
+    /**
+     * <p>Language-specific settings that can be specified when language identification
+     * is enabled for your transcription job. These settings include
+     * <code>VocabularyName</code>, <code>VocabularyFilterName</code>, and
+     * <code>LanguageModelName</code>.</p>
+     */
+    inline void SetLanguageIdSettings(const Aws::Map<LanguageCode, LanguageIdSettings>& value) { m_languageIdSettingsHasBeenSet = true; m_languageIdSettings = value; }
+
+    /**
+     * <p>Language-specific settings that can be specified when language identification
+     * is enabled for your transcription job. These settings include
+     * <code>VocabularyName</code>, <code>VocabularyFilterName</code>, and
+     * <code>LanguageModelName</code>.</p>
+     */
+    inline void SetLanguageIdSettings(Aws::Map<LanguageCode, LanguageIdSettings>&& value) { m_languageIdSettingsHasBeenSet = true; m_languageIdSettings = std::move(value); }
+
+    /**
+     * <p>Language-specific settings that can be specified when language identification
+     * is enabled for your transcription job. These settings include
+     * <code>VocabularyName</code>, <code>VocabularyFilterName</code>, and
+     * <code>LanguageModelName</code>.</p>
+     */
+    inline TranscriptionJob& WithLanguageIdSettings(const Aws::Map<LanguageCode, LanguageIdSettings>& value) { SetLanguageIdSettings(value); return *this;}
+
+    /**
+     * <p>Language-specific settings that can be specified when language identification
+     * is enabled for your transcription job. These settings include
+     * <code>VocabularyName</code>, <code>VocabularyFilterName</code>, and
+     * <code>LanguageModelName</code>.</p>
+     */
+    inline TranscriptionJob& WithLanguageIdSettings(Aws::Map<LanguageCode, LanguageIdSettings>&& value) { SetLanguageIdSettings(std::move(value)); return *this;}
+
+    /**
+     * <p>Language-specific settings that can be specified when language identification
+     * is enabled for your transcription job. These settings include
+     * <code>VocabularyName</code>, <code>VocabularyFilterName</code>, and
+     * <code>LanguageModelName</code>.</p>
+     */
+    inline TranscriptionJob& AddLanguageIdSettings(const LanguageCode& key, const LanguageIdSettings& value) { m_languageIdSettingsHasBeenSet = true; m_languageIdSettings.emplace(key, value); return *this; }
+
+    /**
+     * <p>Language-specific settings that can be specified when language identification
+     * is enabled for your transcription job. These settings include
+     * <code>VocabularyName</code>, <code>VocabularyFilterName</code>, and
+     * <code>LanguageModelName</code>.</p>
+     */
+    inline TranscriptionJob& AddLanguageIdSettings(LanguageCode&& key, const LanguageIdSettings& value) { m_languageIdSettingsHasBeenSet = true; m_languageIdSettings.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Language-specific settings that can be specified when language identification
+     * is enabled for your transcription job. These settings include
+     * <code>VocabularyName</code>, <code>VocabularyFilterName</code>, and
+     * <code>LanguageModelName</code>.</p>
+     */
+    inline TranscriptionJob& AddLanguageIdSettings(const LanguageCode& key, LanguageIdSettings&& value) { m_languageIdSettingsHasBeenSet = true; m_languageIdSettings.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Language-specific settings that can be specified when language identification
+     * is enabled for your transcription job. These settings include
+     * <code>VocabularyName</code>, <code>VocabularyFilterName</code>, and
+     * <code>LanguageModelName</code>.</p>
+     */
+    inline TranscriptionJob& AddLanguageIdSettings(LanguageCode&& key, LanguageIdSettings&& value) { m_languageIdSettingsHasBeenSet = true; m_languageIdSettings.emplace(std::move(key), std::move(value)); return *this; }
+
   private:
 
     Aws::String m_transcriptionJobName;
@@ -913,6 +1074,15 @@ namespace Model
 
     double m_identifiedLanguageScore;
     bool m_identifiedLanguageScoreHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
+
+    SubtitlesOutput m_subtitles;
+    bool m_subtitlesHasBeenSet;
+
+    Aws::Map<LanguageCode, LanguageIdSettings> m_languageIdSettings;
+    bool m_languageIdSettingsHasBeenSet;
   };
 
 } // namespace Model

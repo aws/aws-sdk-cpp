@@ -11,6 +11,7 @@
 #include <aws/securityhub/model/AwsCloudFrontDistributionLogging.h>
 #include <aws/securityhub/model/AwsCloudFrontDistributionOrigins.h>
 #include <aws/securityhub/model/AwsCloudFrontDistributionOriginGroups.h>
+#include <aws/securityhub/model/AwsCloudFrontDistributionViewerCertificate.h>
 #include <utility>
 
 namespace Aws
@@ -430,6 +431,43 @@ namespace Model
 
 
     /**
+     * <p>Provides information about the TLS/SSL configuration that the distribution
+     * uses to communicate with viewers.</p>
+     */
+    inline const AwsCloudFrontDistributionViewerCertificate& GetViewerCertificate() const{ return m_viewerCertificate; }
+
+    /**
+     * <p>Provides information about the TLS/SSL configuration that the distribution
+     * uses to communicate with viewers.</p>
+     */
+    inline bool ViewerCertificateHasBeenSet() const { return m_viewerCertificateHasBeenSet; }
+
+    /**
+     * <p>Provides information about the TLS/SSL configuration that the distribution
+     * uses to communicate with viewers.</p>
+     */
+    inline void SetViewerCertificate(const AwsCloudFrontDistributionViewerCertificate& value) { m_viewerCertificateHasBeenSet = true; m_viewerCertificate = value; }
+
+    /**
+     * <p>Provides information about the TLS/SSL configuration that the distribution
+     * uses to communicate with viewers.</p>
+     */
+    inline void SetViewerCertificate(AwsCloudFrontDistributionViewerCertificate&& value) { m_viewerCertificateHasBeenSet = true; m_viewerCertificate = std::move(value); }
+
+    /**
+     * <p>Provides information about the TLS/SSL configuration that the distribution
+     * uses to communicate with viewers.</p>
+     */
+    inline AwsCloudFrontDistributionDetails& WithViewerCertificate(const AwsCloudFrontDistributionViewerCertificate& value) { SetViewerCertificate(value); return *this;}
+
+    /**
+     * <p>Provides information about the TLS/SSL configuration that the distribution
+     * uses to communicate with viewers.</p>
+     */
+    inline AwsCloudFrontDistributionDetails& WithViewerCertificate(AwsCloudFrontDistributionViewerCertificate&& value) { SetViewerCertificate(std::move(value)); return *this;}
+
+
+    /**
      * <p>Indicates the current status of the distribution.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
@@ -471,50 +509,50 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier that specifies the AWS WAF web ACL, if any, to associate
-     * with this distribution.</p>
+     * <p>A unique identifier that specifies the WAF web ACL, if any, to associate with
+     * this distribution.</p>
      */
     inline const Aws::String& GetWebAclId() const{ return m_webAclId; }
 
     /**
-     * <p>A unique identifier that specifies the AWS WAF web ACL, if any, to associate
-     * with this distribution.</p>
+     * <p>A unique identifier that specifies the WAF web ACL, if any, to associate with
+     * this distribution.</p>
      */
     inline bool WebAclIdHasBeenSet() const { return m_webAclIdHasBeenSet; }
 
     /**
-     * <p>A unique identifier that specifies the AWS WAF web ACL, if any, to associate
-     * with this distribution.</p>
+     * <p>A unique identifier that specifies the WAF web ACL, if any, to associate with
+     * this distribution.</p>
      */
     inline void SetWebAclId(const Aws::String& value) { m_webAclIdHasBeenSet = true; m_webAclId = value; }
 
     /**
-     * <p>A unique identifier that specifies the AWS WAF web ACL, if any, to associate
-     * with this distribution.</p>
+     * <p>A unique identifier that specifies the WAF web ACL, if any, to associate with
+     * this distribution.</p>
      */
     inline void SetWebAclId(Aws::String&& value) { m_webAclIdHasBeenSet = true; m_webAclId = std::move(value); }
 
     /**
-     * <p>A unique identifier that specifies the AWS WAF web ACL, if any, to associate
-     * with this distribution.</p>
+     * <p>A unique identifier that specifies the WAF web ACL, if any, to associate with
+     * this distribution.</p>
      */
     inline void SetWebAclId(const char* value) { m_webAclIdHasBeenSet = true; m_webAclId.assign(value); }
 
     /**
-     * <p>A unique identifier that specifies the AWS WAF web ACL, if any, to associate
-     * with this distribution.</p>
+     * <p>A unique identifier that specifies the WAF web ACL, if any, to associate with
+     * this distribution.</p>
      */
     inline AwsCloudFrontDistributionDetails& WithWebAclId(const Aws::String& value) { SetWebAclId(value); return *this;}
 
     /**
-     * <p>A unique identifier that specifies the AWS WAF web ACL, if any, to associate
-     * with this distribution.</p>
+     * <p>A unique identifier that specifies the WAF web ACL, if any, to associate with
+     * this distribution.</p>
      */
     inline AwsCloudFrontDistributionDetails& WithWebAclId(Aws::String&& value) { SetWebAclId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier that specifies the AWS WAF web ACL, if any, to associate
-     * with this distribution.</p>
+     * <p>A unique identifier that specifies the WAF web ACL, if any, to associate with
+     * this distribution.</p>
      */
     inline AwsCloudFrontDistributionDetails& WithWebAclId(const char* value) { SetWebAclId(value); return *this;}
 
@@ -546,6 +584,9 @@ namespace Model
 
     AwsCloudFrontDistributionOriginGroups m_originGroups;
     bool m_originGroupsHasBeenSet;
+
+    AwsCloudFrontDistributionViewerCertificate m_viewerCertificate;
+    bool m_viewerCertificateHasBeenSet;
 
     Aws::String m_status;
     bool m_statusHasBeenSet;

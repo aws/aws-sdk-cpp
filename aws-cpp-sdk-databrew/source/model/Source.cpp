@@ -22,6 +22,7 @@ namespace Aws
 
         static const int S3_HASH = HashingUtils::HashString("S3");
         static const int DATA_CATALOG_HASH = HashingUtils::HashString("DATA-CATALOG");
+        static const int DATABASE_HASH = HashingUtils::HashString("DATABASE");
 
 
         Source GetSourceForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == DATA_CATALOG_HASH)
           {
             return Source::DATA_CATALOG;
+          }
+          else if (hashCode == DATABASE_HASH)
+          {
+            return Source::DATABASE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "S3";
           case Source::DATA_CATALOG:
             return "DATA-CATALOG";
+          case Source::DATABASE:
+            return "DATABASE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

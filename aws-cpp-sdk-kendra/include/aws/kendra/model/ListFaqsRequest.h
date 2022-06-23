@@ -76,50 +76,58 @@ namespace Model
 
 
     /**
-     * <p>If the result of the previous request to <code>ListFaqs</code> was truncated,
-     * include the <code>NextToken</code> to fetch the next set of FAQs.</p>
+     * <p>If the previous response was incomplete (because there is more data to
+     * retrieve), Amazon Kendra returns a pagination token in the response. You can use
+     * this pagination token to retrieve the next set of FAQs.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>If the result of the previous request to <code>ListFaqs</code> was truncated,
-     * include the <code>NextToken</code> to fetch the next set of FAQs.</p>
+     * <p>If the previous response was incomplete (because there is more data to
+     * retrieve), Amazon Kendra returns a pagination token in the response. You can use
+     * this pagination token to retrieve the next set of FAQs.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>If the result of the previous request to <code>ListFaqs</code> was truncated,
-     * include the <code>NextToken</code> to fetch the next set of FAQs.</p>
+     * <p>If the previous response was incomplete (because there is more data to
+     * retrieve), Amazon Kendra returns a pagination token in the response. You can use
+     * this pagination token to retrieve the next set of FAQs.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>If the result of the previous request to <code>ListFaqs</code> was truncated,
-     * include the <code>NextToken</code> to fetch the next set of FAQs.</p>
+     * <p>If the previous response was incomplete (because there is more data to
+     * retrieve), Amazon Kendra returns a pagination token in the response. You can use
+     * this pagination token to retrieve the next set of FAQs.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>If the result of the previous request to <code>ListFaqs</code> was truncated,
-     * include the <code>NextToken</code> to fetch the next set of FAQs.</p>
+     * <p>If the previous response was incomplete (because there is more data to
+     * retrieve), Amazon Kendra returns a pagination token in the response. You can use
+     * this pagination token to retrieve the next set of FAQs.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>If the result of the previous request to <code>ListFaqs</code> was truncated,
-     * include the <code>NextToken</code> to fetch the next set of FAQs.</p>
+     * <p>If the previous response was incomplete (because there is more data to
+     * retrieve), Amazon Kendra returns a pagination token in the response. You can use
+     * this pagination token to retrieve the next set of FAQs.</p>
      */
     inline ListFaqsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>If the result of the previous request to <code>ListFaqs</code> was truncated,
-     * include the <code>NextToken</code> to fetch the next set of FAQs.</p>
+     * <p>If the previous response was incomplete (because there is more data to
+     * retrieve), Amazon Kendra returns a pagination token in the response. You can use
+     * this pagination token to retrieve the next set of FAQs.</p>
      */
     inline ListFaqsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>If the result of the previous request to <code>ListFaqs</code> was truncated,
-     * include the <code>NextToken</code> to fetch the next set of FAQs.</p>
+     * <p>If the previous response was incomplete (because there is more data to
+     * retrieve), Amazon Kendra returns a pagination token in the response. You can use
+     * this pagination token to retrieve the next set of FAQs.</p>
      */
     inline ListFaqsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

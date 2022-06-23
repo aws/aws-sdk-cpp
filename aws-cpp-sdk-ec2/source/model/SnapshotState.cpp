@@ -23,6 +23,8 @@ namespace Aws
         static const int pending_HASH = HashingUtils::HashString("pending");
         static const int completed_HASH = HashingUtils::HashString("completed");
         static const int error_HASH = HashingUtils::HashString("error");
+        static const int recoverable_HASH = HashingUtils::HashString("recoverable");
+        static const int recovering_HASH = HashingUtils::HashString("recovering");
 
 
         SnapshotState GetSnapshotStateForName(const Aws::String& name)
@@ -39,6 +41,14 @@ namespace Aws
           else if (hashCode == error_HASH)
           {
             return SnapshotState::error;
+          }
+          else if (hashCode == recoverable_HASH)
+          {
+            return SnapshotState::recoverable;
+          }
+          else if (hashCode == recovering_HASH)
+          {
+            return SnapshotState::recovering;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +70,10 @@ namespace Aws
             return "completed";
           case SnapshotState::error:
             return "error";
+          case SnapshotState::recoverable:
+            return "recoverable";
+          case SnapshotState::recovering:
+            return "recovering";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

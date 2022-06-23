@@ -89,7 +89,7 @@ SQSClient::~SQSClient()
 {
 }
 
-void SQSClient::init(const ClientConfiguration& config)
+void SQSClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("SQS");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -187,9 +187,6 @@ void SQSClient::ChangeMessageVisibilityBatchAsyncHelper(const ChangeMessageVisib
 CreateQueueOutcome SQSClient::CreateQueue(const CreateQueueRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateQueueOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -306,9 +303,6 @@ void SQSClient::GetQueueAttributesAsyncHelper(const GetQueueAttributesRequest& r
 GetQueueUrlOutcome SQSClient::GetQueueUrl(const GetQueueUrlRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetQueueUrlOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -379,9 +373,6 @@ void SQSClient::ListQueueTagsAsyncHelper(const ListQueueTagsRequest& request, co
 ListQueuesOutcome SQSClient::ListQueues(const ListQueuesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListQueuesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 

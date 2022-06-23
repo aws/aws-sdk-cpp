@@ -36,50 +36,50 @@ namespace Model
 
     /**
      * <p>A list of session mapping summary objects. Each object includes session
-     * mapping details such as creation time, identity type (user or group), and Studio
-     * ID.</p>
+     * mapping details such as creation time, identity type (user or group), and Amazon
+     * EMR Studio ID.</p>
      */
     inline const Aws::Vector<SessionMappingSummary>& GetSessionMappings() const{ return m_sessionMappings; }
 
     /**
      * <p>A list of session mapping summary objects. Each object includes session
-     * mapping details such as creation time, identity type (user or group), and Studio
-     * ID.</p>
+     * mapping details such as creation time, identity type (user or group), and Amazon
+     * EMR Studio ID.</p>
      */
     inline void SetSessionMappings(const Aws::Vector<SessionMappingSummary>& value) { m_sessionMappings = value; }
 
     /**
      * <p>A list of session mapping summary objects. Each object includes session
-     * mapping details such as creation time, identity type (user or group), and Studio
-     * ID.</p>
+     * mapping details such as creation time, identity type (user or group), and Amazon
+     * EMR Studio ID.</p>
      */
     inline void SetSessionMappings(Aws::Vector<SessionMappingSummary>&& value) { m_sessionMappings = std::move(value); }
 
     /**
      * <p>A list of session mapping summary objects. Each object includes session
-     * mapping details such as creation time, identity type (user or group), and Studio
-     * ID.</p>
+     * mapping details such as creation time, identity type (user or group), and Amazon
+     * EMR Studio ID.</p>
      */
     inline ListStudioSessionMappingsResult& WithSessionMappings(const Aws::Vector<SessionMappingSummary>& value) { SetSessionMappings(value); return *this;}
 
     /**
      * <p>A list of session mapping summary objects. Each object includes session
-     * mapping details such as creation time, identity type (user or group), and Studio
-     * ID.</p>
+     * mapping details such as creation time, identity type (user or group), and Amazon
+     * EMR Studio ID.</p>
      */
     inline ListStudioSessionMappingsResult& WithSessionMappings(Aws::Vector<SessionMappingSummary>&& value) { SetSessionMappings(std::move(value)); return *this;}
 
     /**
      * <p>A list of session mapping summary objects. Each object includes session
-     * mapping details such as creation time, identity type (user or group), and Studio
-     * ID.</p>
+     * mapping details such as creation time, identity type (user or group), and Amazon
+     * EMR Studio ID.</p>
      */
     inline ListStudioSessionMappingsResult& AddSessionMappings(const SessionMappingSummary& value) { m_sessionMappings.push_back(value); return *this; }
 
     /**
      * <p>A list of session mapping summary objects. Each object includes session
-     * mapping details such as creation time, identity type (user or group), and Studio
-     * ID.</p>
+     * mapping details such as creation time, identity type (user or group), and Amazon
+     * EMR Studio ID.</p>
      */
     inline ListStudioSessionMappingsResult& AddSessionMappings(SessionMappingSummary&& value) { m_sessionMappings.push_back(std::move(value)); return *this; }
 

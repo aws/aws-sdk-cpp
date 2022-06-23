@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     CENTERED,
-    LEFT
+    LEFT,
+    AUTO
   };
 
 namespace BurninSubtitleAlignmentMapper

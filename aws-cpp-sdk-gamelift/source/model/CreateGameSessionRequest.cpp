@@ -22,7 +22,8 @@ CreateGameSessionRequest::CreateGameSessionRequest() :
     m_creatorIdHasBeenSet(false),
     m_gameSessionIdHasBeenSet(false),
     m_idempotencyTokenHasBeenSet(false),
-    m_gameSessionDataHasBeenSet(false)
+    m_gameSessionDataHasBeenSet(false),
+    m_locationHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,12 @@ Aws::String CreateGameSessionRequest::SerializePayload() const
   if(m_gameSessionDataHasBeenSet)
   {
    payload.WithString("GameSessionData", m_gameSessionData);
+
+  }
+
+  if(m_locationHasBeenSet)
+  {
+   payload.WithString("Location", m_location);
 
   }
 

@@ -22,8 +22,9 @@ namespace Model
 {
 
   /**
-   * <p>The number of AWS resources or AWS Config rules responsible for the current
-   * compliance of the item, up to a maximum number.</p><p><h3>See Also:</h3>   <a
+   * <p>The number of Amazon Web Services resources or Config rules responsible for
+   * the current compliance of the item, up to a maximum number.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ComplianceContributorCount">AWS
    * API Reference</a></p>
    */
@@ -37,26 +38,26 @@ namespace Model
 
 
     /**
-     * <p>The number of AWS resources or AWS Config rules responsible for the current
-     * compliance of the item.</p>
+     * <p>The number of Amazon Web Services resources or Config rules responsible for
+     * the current compliance of the item.</p>
      */
     inline int GetCappedCount() const{ return m_cappedCount; }
 
     /**
-     * <p>The number of AWS resources or AWS Config rules responsible for the current
-     * compliance of the item.</p>
+     * <p>The number of Amazon Web Services resources or Config rules responsible for
+     * the current compliance of the item.</p>
      */
     inline bool CappedCountHasBeenSet() const { return m_cappedCountHasBeenSet; }
 
     /**
-     * <p>The number of AWS resources or AWS Config rules responsible for the current
-     * compliance of the item.</p>
+     * <p>The number of Amazon Web Services resources or Config rules responsible for
+     * the current compliance of the item.</p>
      */
     inline void SetCappedCount(int value) { m_cappedCountHasBeenSet = true; m_cappedCount = value; }
 
     /**
-     * <p>The number of AWS resources or AWS Config rules responsible for the current
-     * compliance of the item.</p>
+     * <p>The number of Amazon Web Services resources or Config rules responsible for
+     * the current compliance of the item.</p>
      */
     inline ComplianceContributorCount& WithCappedCount(int value) { SetCappedCount(value); return *this;}
 

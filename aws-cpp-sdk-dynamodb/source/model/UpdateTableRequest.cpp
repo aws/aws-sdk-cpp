@@ -21,7 +21,9 @@ UpdateTableRequest::UpdateTableRequest() :
     m_globalSecondaryIndexUpdatesHasBeenSet(false),
     m_streamSpecificationHasBeenSet(false),
     m_sSESpecificationHasBeenSet(false),
-    m_replicaUpdatesHasBeenSet(false)
+    m_replicaUpdatesHasBeenSet(false),
+    m_tableClass(TableClass::NOT_SET),
+    m_tableClassHasBeenSet(false)
 {
 }
 
@@ -89,6 +91,11 @@ Aws::String UpdateTableRequest::SerializePayload() const
    }
    payload.WithArray("ReplicaUpdates", std::move(replicaUpdatesJsonList));
 
+  }
+
+  if(m_tableClassHasBeenSet)
+  {
+   payload.WithString("TableClass", TableClassMapper::GetNameForTableClass(m_tableClass));
   }
 
   return payload.View().WriteReadable();

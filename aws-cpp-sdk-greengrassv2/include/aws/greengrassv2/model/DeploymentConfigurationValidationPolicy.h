@@ -28,10 +28,10 @@ namespace Model
    * IPC operation to receive notifications when a deployment specifies a
    * configuration update. Then, components can respond with the <a
    * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-operation-sendconfigurationvalidityreport">SendConfigurationValidityReport</a>
-   * IPC operation. For more information, see the <a
-   * href="https://docs.aws.amazon.com/greengrass/v2/latest/developerguide/create-deployments.html">Create
-   * deployments</a> in the <i>AWS IoT Greengrass V2 Developer
-   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * IPC operation. For more information, see <a
+   * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/create-deployments.html">Create
+   * deployments</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/DeploymentConfigurationValidationPolicy">AWS
    * API Reference</a></p>
    */

@@ -40,37 +40,37 @@ namespace Model
 
 
     /**
-     * <p>List of tags returned by the ListTagsForResource operation.</p>
+     * <p>List of tags returned by the <code>ListTagsForResource</code> operation.</p>
      */
     inline const Aws::Vector<Tag>& GetTagList() const{ return m_tagList; }
 
     /**
-     * <p>List of tags returned by the ListTagsForResource operation.</p>
+     * <p>List of tags returned by the <code>ListTagsForResource</code> operation.</p>
      */
     inline void SetTagList(const Aws::Vector<Tag>& value) { m_tagList = value; }
 
     /**
-     * <p>List of tags returned by the ListTagsForResource operation.</p>
+     * <p>List of tags returned by the <code>ListTagsForResource</code> operation.</p>
      */
     inline void SetTagList(Aws::Vector<Tag>&& value) { m_tagList = std::move(value); }
 
     /**
-     * <p>List of tags returned by the ListTagsForResource operation.</p>
+     * <p>List of tags returned by the <code>ListTagsForResource</code> operation.</p>
      */
     inline ListTagsForResourceResult& WithTagList(const Aws::Vector<Tag>& value) { SetTagList(value); return *this;}
 
     /**
-     * <p>List of tags returned by the ListTagsForResource operation.</p>
+     * <p>List of tags returned by the <code>ListTagsForResource</code> operation.</p>
      */
     inline ListTagsForResourceResult& WithTagList(Aws::Vector<Tag>&& value) { SetTagList(std::move(value)); return *this;}
 
     /**
-     * <p>List of tags returned by the ListTagsForResource operation.</p>
+     * <p>List of tags returned by the <code>ListTagsForResource</code> operation.</p>
      */
     inline ListTagsForResourceResult& AddTagList(const Tag& value) { m_tagList.push_back(value); return *this; }
 
     /**
-     * <p>List of tags returned by the ListTagsForResource operation.</p>
+     * <p>List of tags returned by the <code>ListTagsForResource</code> operation.</p>
      */
     inline ListTagsForResourceResult& AddTagList(Tag&& value) { m_tagList.push_back(std::move(value)); return *this; }
 

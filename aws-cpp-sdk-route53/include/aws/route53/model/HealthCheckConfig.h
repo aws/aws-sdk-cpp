@@ -379,8 +379,12 @@ namespace Model
      * </p> </li> <li> <p> <b>CALCULATED</b>: For health checks that monitor the status
      * of other health checks, Route 53 adds up the number of health checks that Route
      * 53 health checkers consider to be healthy and compares that number with the
-     * value of <code>HealthThreshold</code>. </p> </li> </ul> <p>For more information,
-     * see <a
+     * value of <code>HealthThreshold</code>. </p> </li> <li> <p>
+     * <b>RECOVERY_CONTROL</b>: The health check is assocated with a Route53
+     * Application Recovery Controller routing control. If the routing control state is
+     * <code>ON</code>, the health check is considered healthy. If the state is
+     * <code>OFF</code>, the health check is considered unhealthy. </p> </li> </ul>
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53
      * Developer Guide</i>.</p>
@@ -417,8 +421,12 @@ namespace Model
      * </p> </li> <li> <p> <b>CALCULATED</b>: For health checks that monitor the status
      * of other health checks, Route 53 adds up the number of health checks that Route
      * 53 health checkers consider to be healthy and compares that number with the
-     * value of <code>HealthThreshold</code>. </p> </li> </ul> <p>For more information,
-     * see <a
+     * value of <code>HealthThreshold</code>. </p> </li> <li> <p>
+     * <b>RECOVERY_CONTROL</b>: The health check is assocated with a Route53
+     * Application Recovery Controller routing control. If the routing control state is
+     * <code>ON</code>, the health check is considered healthy. If the state is
+     * <code>OFF</code>, the health check is considered unhealthy. </p> </li> </ul>
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53
      * Developer Guide</i>.</p>
@@ -455,8 +463,12 @@ namespace Model
      * </p> </li> <li> <p> <b>CALCULATED</b>: For health checks that monitor the status
      * of other health checks, Route 53 adds up the number of health checks that Route
      * 53 health checkers consider to be healthy and compares that number with the
-     * value of <code>HealthThreshold</code>. </p> </li> </ul> <p>For more information,
-     * see <a
+     * value of <code>HealthThreshold</code>. </p> </li> <li> <p>
+     * <b>RECOVERY_CONTROL</b>: The health check is assocated with a Route53
+     * Application Recovery Controller routing control. If the routing control state is
+     * <code>ON</code>, the health check is considered healthy. If the state is
+     * <code>OFF</code>, the health check is considered unhealthy. </p> </li> </ul>
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53
      * Developer Guide</i>.</p>
@@ -493,8 +505,12 @@ namespace Model
      * </p> </li> <li> <p> <b>CALCULATED</b>: For health checks that monitor the status
      * of other health checks, Route 53 adds up the number of health checks that Route
      * 53 health checkers consider to be healthy and compares that number with the
-     * value of <code>HealthThreshold</code>. </p> </li> </ul> <p>For more information,
-     * see <a
+     * value of <code>HealthThreshold</code>. </p> </li> <li> <p>
+     * <b>RECOVERY_CONTROL</b>: The health check is assocated with a Route53
+     * Application Recovery Controller routing control. If the routing control state is
+     * <code>ON</code>, the health check is considered healthy. If the state is
+     * <code>OFF</code>, the health check is considered unhealthy. </p> </li> </ul>
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53
      * Developer Guide</i>.</p>
@@ -531,8 +547,12 @@ namespace Model
      * </p> </li> <li> <p> <b>CALCULATED</b>: For health checks that monitor the status
      * of other health checks, Route 53 adds up the number of health checks that Route
      * 53 health checkers consider to be healthy and compares that number with the
-     * value of <code>HealthThreshold</code>. </p> </li> </ul> <p>For more information,
-     * see <a
+     * value of <code>HealthThreshold</code>. </p> </li> <li> <p>
+     * <b>RECOVERY_CONTROL</b>: The health check is assocated with a Route53
+     * Application Recovery Controller routing control. If the routing control state is
+     * <code>ON</code>, the health check is considered healthy. If the state is
+     * <code>OFF</code>, the health check is considered unhealthy. </p> </li> </ul>
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53
      * Developer Guide</i>.</p>
@@ -569,8 +589,12 @@ namespace Model
      * </p> </li> <li> <p> <b>CALCULATED</b>: For health checks that monitor the status
      * of other health checks, Route 53 adds up the number of health checks that Route
      * 53 health checkers consider to be healthy and compares that number with the
-     * value of <code>HealthThreshold</code>. </p> </li> </ul> <p>For more information,
-     * see <a
+     * value of <code>HealthThreshold</code>. </p> </li> <li> <p>
+     * <b>RECOVERY_CONTROL</b>: The health check is assocated with a Route53
+     * Application Recovery Controller routing control. If the routing control state is
+     * <code>ON</code>, the health check is considered healthy. If the state is
+     * <code>OFF</code>, the health check is considered unhealthy. </p> </li> </ul>
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53
      * Developer Guide</i>.</p>
@@ -681,10 +705,10 @@ namespace Model
      * the endpoint in the <code>Host</code> header.</p> </li> </ul> <p>If you don't
      * specify a value for <code>FullyQualifiedDomainName</code>, Route 53 substitutes
      * the value of <code>IPAddress</code> in the <code>Host</code> header in each of
-     * the preceding cases.</p> <p> <b>If you don't specify a value for
-     * <code>IPAddress</code> </b>:</p> <p>Route 53 sends a DNS request to the domain
-     * that you specify for <code>FullyQualifiedDomainName</code> at the interval that
-     * you specify for <code>RequestInterval</code>. Using an IPv4 address that DNS
+     * the preceding cases.</p> <p> <b>If you don't specify a value for</b>
+     * <code>IPAddress</code>:</p> <p>Route 53 sends a DNS request to the domain that
+     * you specify for <code>FullyQualifiedDomainName</code> at the interval that you
+     * specify for <code>RequestInterval</code>. Using an IPv4 address that DNS
      * returns, Route 53 then checks the health of the endpoint.</p>  <p>If you
      * don't specify a value for <code>IPAddress</code>, Route 53 uses only IPv4 to
      * send health checks to the endpoint. If there's no resource record set with a
@@ -734,10 +758,10 @@ namespace Model
      * the endpoint in the <code>Host</code> header.</p> </li> </ul> <p>If you don't
      * specify a value for <code>FullyQualifiedDomainName</code>, Route 53 substitutes
      * the value of <code>IPAddress</code> in the <code>Host</code> header in each of
-     * the preceding cases.</p> <p> <b>If you don't specify a value for
-     * <code>IPAddress</code> </b>:</p> <p>Route 53 sends a DNS request to the domain
-     * that you specify for <code>FullyQualifiedDomainName</code> at the interval that
-     * you specify for <code>RequestInterval</code>. Using an IPv4 address that DNS
+     * the preceding cases.</p> <p> <b>If you don't specify a value for</b>
+     * <code>IPAddress</code>:</p> <p>Route 53 sends a DNS request to the domain that
+     * you specify for <code>FullyQualifiedDomainName</code> at the interval that you
+     * specify for <code>RequestInterval</code>. Using an IPv4 address that DNS
      * returns, Route 53 then checks the health of the endpoint.</p>  <p>If you
      * don't specify a value for <code>IPAddress</code>, Route 53 uses only IPv4 to
      * send health checks to the endpoint. If there's no resource record set with a
@@ -787,10 +811,10 @@ namespace Model
      * the endpoint in the <code>Host</code> header.</p> </li> </ul> <p>If you don't
      * specify a value for <code>FullyQualifiedDomainName</code>, Route 53 substitutes
      * the value of <code>IPAddress</code> in the <code>Host</code> header in each of
-     * the preceding cases.</p> <p> <b>If you don't specify a value for
-     * <code>IPAddress</code> </b>:</p> <p>Route 53 sends a DNS request to the domain
-     * that you specify for <code>FullyQualifiedDomainName</code> at the interval that
-     * you specify for <code>RequestInterval</code>. Using an IPv4 address that DNS
+     * the preceding cases.</p> <p> <b>If you don't specify a value for</b>
+     * <code>IPAddress</code>:</p> <p>Route 53 sends a DNS request to the domain that
+     * you specify for <code>FullyQualifiedDomainName</code> at the interval that you
+     * specify for <code>RequestInterval</code>. Using an IPv4 address that DNS
      * returns, Route 53 then checks the health of the endpoint.</p>  <p>If you
      * don't specify a value for <code>IPAddress</code>, Route 53 uses only IPv4 to
      * send health checks to the endpoint. If there's no resource record set with a
@@ -840,10 +864,10 @@ namespace Model
      * the endpoint in the <code>Host</code> header.</p> </li> </ul> <p>If you don't
      * specify a value for <code>FullyQualifiedDomainName</code>, Route 53 substitutes
      * the value of <code>IPAddress</code> in the <code>Host</code> header in each of
-     * the preceding cases.</p> <p> <b>If you don't specify a value for
-     * <code>IPAddress</code> </b>:</p> <p>Route 53 sends a DNS request to the domain
-     * that you specify for <code>FullyQualifiedDomainName</code> at the interval that
-     * you specify for <code>RequestInterval</code>. Using an IPv4 address that DNS
+     * the preceding cases.</p> <p> <b>If you don't specify a value for</b>
+     * <code>IPAddress</code>:</p> <p>Route 53 sends a DNS request to the domain that
+     * you specify for <code>FullyQualifiedDomainName</code> at the interval that you
+     * specify for <code>RequestInterval</code>. Using an IPv4 address that DNS
      * returns, Route 53 then checks the health of the endpoint.</p>  <p>If you
      * don't specify a value for <code>IPAddress</code>, Route 53 uses only IPv4 to
      * send health checks to the endpoint. If there's no resource record set with a
@@ -893,10 +917,10 @@ namespace Model
      * the endpoint in the <code>Host</code> header.</p> </li> </ul> <p>If you don't
      * specify a value for <code>FullyQualifiedDomainName</code>, Route 53 substitutes
      * the value of <code>IPAddress</code> in the <code>Host</code> header in each of
-     * the preceding cases.</p> <p> <b>If you don't specify a value for
-     * <code>IPAddress</code> </b>:</p> <p>Route 53 sends a DNS request to the domain
-     * that you specify for <code>FullyQualifiedDomainName</code> at the interval that
-     * you specify for <code>RequestInterval</code>. Using an IPv4 address that DNS
+     * the preceding cases.</p> <p> <b>If you don't specify a value for</b>
+     * <code>IPAddress</code>:</p> <p>Route 53 sends a DNS request to the domain that
+     * you specify for <code>FullyQualifiedDomainName</code> at the interval that you
+     * specify for <code>RequestInterval</code>. Using an IPv4 address that DNS
      * returns, Route 53 then checks the health of the endpoint.</p>  <p>If you
      * don't specify a value for <code>IPAddress</code>, Route 53 uses only IPv4 to
      * send health checks to the endpoint. If there's no resource record set with a
@@ -946,10 +970,10 @@ namespace Model
      * the endpoint in the <code>Host</code> header.</p> </li> </ul> <p>If you don't
      * specify a value for <code>FullyQualifiedDomainName</code>, Route 53 substitutes
      * the value of <code>IPAddress</code> in the <code>Host</code> header in each of
-     * the preceding cases.</p> <p> <b>If you don't specify a value for
-     * <code>IPAddress</code> </b>:</p> <p>Route 53 sends a DNS request to the domain
-     * that you specify for <code>FullyQualifiedDomainName</code> at the interval that
-     * you specify for <code>RequestInterval</code>. Using an IPv4 address that DNS
+     * the preceding cases.</p> <p> <b>If you don't specify a value for</b>
+     * <code>IPAddress</code>:</p> <p>Route 53 sends a DNS request to the domain that
+     * you specify for <code>FullyQualifiedDomainName</code> at the interval that you
+     * specify for <code>RequestInterval</code>. Using an IPv4 address that DNS
      * returns, Route 53 then checks the health of the endpoint.</p>  <p>If you
      * don't specify a value for <code>IPAddress</code>, Route 53 uses only IPv4 to
      * send health checks to the endpoint. If there's no resource record set with a
@@ -999,10 +1023,10 @@ namespace Model
      * the endpoint in the <code>Host</code> header.</p> </li> </ul> <p>If you don't
      * specify a value for <code>FullyQualifiedDomainName</code>, Route 53 substitutes
      * the value of <code>IPAddress</code> in the <code>Host</code> header in each of
-     * the preceding cases.</p> <p> <b>If you don't specify a value for
-     * <code>IPAddress</code> </b>:</p> <p>Route 53 sends a DNS request to the domain
-     * that you specify for <code>FullyQualifiedDomainName</code> at the interval that
-     * you specify for <code>RequestInterval</code>. Using an IPv4 address that DNS
+     * the preceding cases.</p> <p> <b>If you don't specify a value for</b>
+     * <code>IPAddress</code>:</p> <p>Route 53 sends a DNS request to the domain that
+     * you specify for <code>FullyQualifiedDomainName</code> at the interval that you
+     * specify for <code>RequestInterval</code>. Using an IPv4 address that DNS
      * returns, Route 53 then checks the health of the endpoint.</p>  <p>If you
      * don't specify a value for <code>IPAddress</code>, Route 53 uses only IPv4 to
      * send health checks to the endpoint. If there's no resource record set with a
@@ -1052,10 +1076,10 @@ namespace Model
      * the endpoint in the <code>Host</code> header.</p> </li> </ul> <p>If you don't
      * specify a value for <code>FullyQualifiedDomainName</code>, Route 53 substitutes
      * the value of <code>IPAddress</code> in the <code>Host</code> header in each of
-     * the preceding cases.</p> <p> <b>If you don't specify a value for
-     * <code>IPAddress</code> </b>:</p> <p>Route 53 sends a DNS request to the domain
-     * that you specify for <code>FullyQualifiedDomainName</code> at the interval that
-     * you specify for <code>RequestInterval</code>. Using an IPv4 address that DNS
+     * the preceding cases.</p> <p> <b>If you don't specify a value for</b>
+     * <code>IPAddress</code>:</p> <p>Route 53 sends a DNS request to the domain that
+     * you specify for <code>FullyQualifiedDomainName</code> at the interval that you
+     * specify for <code>RequestInterval</code>. Using an IPv4 address that DNS
      * returns, Route 53 then checks the health of the endpoint.</p>  <p>If you
      * don't specify a value for <code>IPAddress</code>, Route 53 uses only IPv4 to
      * send health checks to the endpoint. If there's no resource record set with a
@@ -1253,36 +1277,36 @@ namespace Model
 
     /**
      * <p>Specify whether you want Amazon Route 53 to measure the latency between
-     * health checkers in multiple AWS regions and your endpoint, and to display
-     * CloudWatch latency graphs on the <b>Health Checks</b> page in the Route 53
-     * console.</p>  <p>You can't change the value of
+     * health checkers in multiple Amazon Web Services regions and your endpoint, and
+     * to display CloudWatch latency graphs on the <b>Health Checks</b> page in the
+     * Route 53 console.</p>  <p>You can't change the value of
      * <code>MeasureLatency</code> after you create a health check.</p> 
      */
     inline bool GetMeasureLatency() const{ return m_measureLatency; }
 
     /**
      * <p>Specify whether you want Amazon Route 53 to measure the latency between
-     * health checkers in multiple AWS regions and your endpoint, and to display
-     * CloudWatch latency graphs on the <b>Health Checks</b> page in the Route 53
-     * console.</p>  <p>You can't change the value of
+     * health checkers in multiple Amazon Web Services regions and your endpoint, and
+     * to display CloudWatch latency graphs on the <b>Health Checks</b> page in the
+     * Route 53 console.</p>  <p>You can't change the value of
      * <code>MeasureLatency</code> after you create a health check.</p> 
      */
     inline bool MeasureLatencyHasBeenSet() const { return m_measureLatencyHasBeenSet; }
 
     /**
      * <p>Specify whether you want Amazon Route 53 to measure the latency between
-     * health checkers in multiple AWS regions and your endpoint, and to display
-     * CloudWatch latency graphs on the <b>Health Checks</b> page in the Route 53
-     * console.</p>  <p>You can't change the value of
+     * health checkers in multiple Amazon Web Services regions and your endpoint, and
+     * to display CloudWatch latency graphs on the <b>Health Checks</b> page in the
+     * Route 53 console.</p>  <p>You can't change the value of
      * <code>MeasureLatency</code> after you create a health check.</p> 
      */
     inline void SetMeasureLatency(bool value) { m_measureLatencyHasBeenSet = true; m_measureLatency = value; }
 
     /**
      * <p>Specify whether you want Amazon Route 53 to measure the latency between
-     * health checkers in multiple AWS regions and your endpoint, and to display
-     * CloudWatch latency graphs on the <b>Health Checks</b> page in the Route 53
-     * console.</p>  <p>You can't change the value of
+     * health checkers in multiple Amazon Web Services regions and your endpoint, and
+     * to display CloudWatch latency graphs on the <b>Health Checks</b> page in the
+     * Route 53 console.</p>  <p>You can't change the value of
      * <code>MeasureLatency</code> after you create a health check.</p> 
      */
     inline HealthCheckConfig& WithMeasureLatency(bool value) { SetMeasureLatency(value); return *this;}
@@ -1838,6 +1862,79 @@ namespace Model
      */
     inline HealthCheckConfig& WithInsufficientDataHealthStatus(InsufficientDataHealthStatus&& value) { SetInsufficientDataHealthStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the Route 53 Application Recovery
+     * Controller routing control.</p> <p>For more information about Route 53
+     * Application Recovery Controller, see <a
+     * href="https://docs.aws.amazon.com/r53recovery/latest/dg/what-is-route-53-recovery.html">Route
+     * 53 Application Recovery Controller Developer Guide.</a>.</p>
+     */
+    inline const Aws::String& GetRoutingControlArn() const{ return m_routingControlArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the Route 53 Application Recovery
+     * Controller routing control.</p> <p>For more information about Route 53
+     * Application Recovery Controller, see <a
+     * href="https://docs.aws.amazon.com/r53recovery/latest/dg/what-is-route-53-recovery.html">Route
+     * 53 Application Recovery Controller Developer Guide.</a>.</p>
+     */
+    inline bool RoutingControlArnHasBeenSet() const { return m_routingControlArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the Route 53 Application Recovery
+     * Controller routing control.</p> <p>For more information about Route 53
+     * Application Recovery Controller, see <a
+     * href="https://docs.aws.amazon.com/r53recovery/latest/dg/what-is-route-53-recovery.html">Route
+     * 53 Application Recovery Controller Developer Guide.</a>.</p>
+     */
+    inline void SetRoutingControlArn(const Aws::String& value) { m_routingControlArnHasBeenSet = true; m_routingControlArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the Route 53 Application Recovery
+     * Controller routing control.</p> <p>For more information about Route 53
+     * Application Recovery Controller, see <a
+     * href="https://docs.aws.amazon.com/r53recovery/latest/dg/what-is-route-53-recovery.html">Route
+     * 53 Application Recovery Controller Developer Guide.</a>.</p>
+     */
+    inline void SetRoutingControlArn(Aws::String&& value) { m_routingControlArnHasBeenSet = true; m_routingControlArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the Route 53 Application Recovery
+     * Controller routing control.</p> <p>For more information about Route 53
+     * Application Recovery Controller, see <a
+     * href="https://docs.aws.amazon.com/r53recovery/latest/dg/what-is-route-53-recovery.html">Route
+     * 53 Application Recovery Controller Developer Guide.</a>.</p>
+     */
+    inline void SetRoutingControlArn(const char* value) { m_routingControlArnHasBeenSet = true; m_routingControlArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the Route 53 Application Recovery
+     * Controller routing control.</p> <p>For more information about Route 53
+     * Application Recovery Controller, see <a
+     * href="https://docs.aws.amazon.com/r53recovery/latest/dg/what-is-route-53-recovery.html">Route
+     * 53 Application Recovery Controller Developer Guide.</a>.</p>
+     */
+    inline HealthCheckConfig& WithRoutingControlArn(const Aws::String& value) { SetRoutingControlArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the Route 53 Application Recovery
+     * Controller routing control.</p> <p>For more information about Route 53
+     * Application Recovery Controller, see <a
+     * href="https://docs.aws.amazon.com/r53recovery/latest/dg/what-is-route-53-recovery.html">Route
+     * 53 Application Recovery Controller Developer Guide.</a>.</p>
+     */
+    inline HealthCheckConfig& WithRoutingControlArn(Aws::String&& value) { SetRoutingControlArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the Route 53 Application Recovery
+     * Controller routing control.</p> <p>For more information about Route 53
+     * Application Recovery Controller, see <a
+     * href="https://docs.aws.amazon.com/r53recovery/latest/dg/what-is-route-53-recovery.html">Route
+     * 53 Application Recovery Controller Developer Guide.</a>.</p>
+     */
+    inline HealthCheckConfig& WithRoutingControlArn(const char* value) { SetRoutingControlArn(value); return *this;}
+
   private:
 
     Aws::String m_iPAddress;
@@ -1890,6 +1987,9 @@ namespace Model
 
     InsufficientDataHealthStatus m_insufficientDataHealthStatus;
     bool m_insufficientDataHealthStatusHasBeenSet;
+
+    Aws::String m_routingControlArn;
+    bool m_routingControlArnHasBeenSet;
   };
 
 } // namespace Model

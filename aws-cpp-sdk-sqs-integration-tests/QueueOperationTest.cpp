@@ -35,6 +35,10 @@
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/testing/TestingEnvironment.h>
 #include <aws/core/utils/UUID.h>
+#include <aws/core/platform/Environment.h>
+#include <aws/sqs/model/TagQueueRequest.h>
+#include <aws/sqs/model/ListQueueTagsRequest.h>
+#include <thread>
 
 using namespace Aws::Http;
 using namespace Aws;
@@ -55,6 +59,7 @@ static const char BASE_PERMISSIONS_QUEUE_NAME[]                     = TEST_QUEUE
 static const char BASE_DEAD_LETTER_QUEUE_NAME[]                     = TEST_QUEUE_PREFIX "DeadLetter";
 static const char BASE_DEAD_LETTER_SOURCE_QUEUE_NAME[]              = TEST_QUEUE_PREFIX "DeadLetterSource";
 static const char BASE_CHANGE_MESSAGE_VISIBILITY_BATCH_QUEUE_NAME[] = TEST_QUEUE_PREFIX "ChangeMsgVisBatch";
+static const char BASE_TAG_QUEUE_NAME[]                             = TEST_QUEUE_PREFIX "SimpleForTagging";
 static const char ALLOCATION_TAG[]                                  = "QueueOperationTest";
 
 class QueueOperationTest : public ::testing::Test
@@ -78,8 +83,8 @@ protected:
     // the entire reason for this function is workaround the memory-allocator being initialized after static variables.
     static Aws::String GetRandomUUID()
     {
-        static const Aws::Utils::UUID m_resourceUUID = Aws::Utils::UUID::RandomUUID();
-        return m_resourceUUID;
+        static const Aws::Utils::UUID resourceUUID = Aws::Utils::UUID::RandomUUID();
+        return resourceUUID;
     }
 
     static ClientConfiguration GetConfig()
@@ -95,14 +100,21 @@ protected:
         return config;
     }
 
-    static void SetUpTestCase()
+    void SetUp()
     {
         sqsClient = Aws::MakeShared<SQSClient>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG), GetConfig());
     }
 
-    static void TearDownTestCase()
+    void TearDown()
     {
-        DeleteAllTestQueues();
+        DeleteQueueRequest deleteQueueRequest;
+        for(const auto& queueUrl : m_allTestQueues)
+        {
+            deleteQueueRequest.SetQueueUrl(queueUrl);
+            DeleteQueueOutcome deleteQueueOutcome = sqsClient->DeleteQueue(deleteQueueRequest);
+            ASSERT_TRUE(deleteQueueOutcome.IsSuccess());
+            std::this_thread::sleep_for(std::chrono::seconds(1)); // Cheap throttle avoidance
+        }
         sqsClient = nullptr;
     }
 
@@ -117,6 +129,7 @@ protected:
             CreateQueueOutcome outcome = sqsClient->CreateQueue(request);
             if (outcome.IsSuccess())
             {
+                m_allTestQueues.insert(outcome.GetResult().GetQueueUrl());
                 return outcome.GetResult().GetQueueUrl();
             }
             if (outcome.GetError().GetErrorType() != SQSErrors::QUEUE_DELETED_RECENTLY)
@@ -133,6 +146,7 @@ protected:
     {
         ListQueuesRequest listQueueRequest;
         listQueueRequest.WithQueueNamePrefix(BuildResourcePrefix());
+        listQueueRequest.WithMaxResults(10);
 
         ListQueuesOutcome listQueuesOutcome = sqsClient->ListQueues(listQueueRequest);
         ListQueuesResult listQueuesResult = listQueuesOutcome.GetResult();
@@ -148,11 +162,17 @@ protected:
 
     Aws::String GetAwsAccountId()
     {
-        auto cognitoClient = Aws::MakeShared<Aws::CognitoIdentity::CognitoIdentityClient>(ALLOCATION_TAG, GetConfig());
-        auto iamClient = Aws::MakeShared<Aws::IAM::IAMClient>(ALLOCATION_TAG, GetConfig());
-        Aws::AccessManagement::AccessManagementClient accessManagementClient(iamClient, cognitoClient);
-        return accessManagementClient.GetAccountId();
+        auto accountId = Aws::Environment::GetEnv("CATAPULT_TEST_ACCOUNT");
+        if (accountId.empty()) {
+            auto cognitoClient = Aws::MakeShared<Aws::CognitoIdentity::CognitoIdentityClient>(ALLOCATION_TAG, GetConfig());
+            auto iamClient = Aws::MakeShared<Aws::IAM::IAMClient>(ALLOCATION_TAG, GetConfig());
+            Aws::AccessManagement::AccessManagementClient accessManagementClient(iamClient, cognitoClient);
+            accountId = accessManagementClient.GetAccountId();
+        }
+        return accountId;
     }
+
+    Aws::Set<Aws::String> m_allTestQueues;
 };
 
 std::shared_ptr<SQSClient> QueueOperationTest::sqsClient(nullptr);
@@ -169,7 +189,11 @@ TEST_F(QueueOperationTest, TestCreateQueue)
     while (shouldContinue)
     {
         createQueueOutcome = sqsClient->CreateQueue(createQueueRequest);
-        if (createQueueOutcome.IsSuccess()) break;
+        if (createQueueOutcome.IsSuccess())
+        {
+            m_allTestQueues.insert(createQueueOutcome.GetResult().GetQueueUrl());
+            break;
+        }
         if (createQueueOutcome.GetError().GetErrorType() == SQSErrors::QUEUE_DELETED_RECENTLY)
         {
             std::this_thread::sleep_for(std::chrono::seconds(10));
@@ -287,6 +311,7 @@ TEST_F(QueueOperationTest, TestQueueAttributes)
     CreateQueueOutcome createQueueOutcome = sqsClient->CreateQueue(createQueueRequest);
     ASSERT_TRUE(createQueueOutcome.IsSuccess());
     Aws::String queueUrl = createQueueOutcome.GetResult().GetQueueUrl();
+    m_allTestQueues.insert(queueUrl);
     ASSERT_TRUE(queueUrl.find(createQueueRequest.GetQueueName()) != Aws::String::npos);
 
     GetQueueAttributesRequest queueAttributesRequest;
@@ -355,12 +380,14 @@ TEST_F(QueueOperationTest, TestListDeadLetterSourceQueues)
     CreateQueueOutcome createQueueOutcome = sqsClient->CreateQueue(createQueueRequest);
     ASSERT_TRUE(createQueueOutcome.IsSuccess());
     Aws::String queueUrl = createQueueOutcome.GetResult().GetQueueUrl();
+    m_allTestQueues.insert(queueUrl);
 
     Aws::String queueName = BuildResourceName(BASE_DEAD_LETTER_QUEUE_NAME);
     createQueueRequest.SetQueueName(queueName);
     createQueueOutcome = sqsClient->CreateQueue(createQueueRequest);
     ASSERT_TRUE(createQueueOutcome.IsSuccess());
     Aws::String deadLetterQueueUrl = createQueueOutcome.GetResult().GetQueueUrl();
+    m_allTestQueues.insert(deadLetterQueueUrl);
 
     GetQueueAttributesRequest queueAttributesRequest;
     queueAttributesRequest.AddAttributeNames(QueueAttributeName::QueueArn).WithQueueUrl(deadLetterQueueUrl);
@@ -405,6 +432,7 @@ TEST_F(QueueOperationTest, ChangeMessageVisibilityBatch)
   auto createQueueOutcome = sqsClient->CreateQueue(createQueueRequest);
   ASSERT_TRUE(createQueueOutcome.IsSuccess());
   auto queueUrl = createQueueOutcome.GetResult().GetQueueUrl();
+  m_allTestQueues.insert(queueUrl);
 
   SendMessageBatchRequestEntry sendMessageBatchRequestEntry_1;
   SendMessageBatchRequestEntry sendMessageBatchRequestEntry_2;
@@ -468,5 +496,55 @@ TEST_F(QueueOperationTest, ChangeMessageVisibilityBatch)
   {
     EXPECT_EQ("InvalidParameterValue", batchResultErrorEntry.GetCode());
     EXPECT_TRUE(batchResultErrorEntry.GetSenderFault());
+  }
+}
+
+TEST_F(QueueOperationTest, TagQueueTest)
+{
+  CreateQueueRequest createQueueRequest;
+  createQueueRequest.SetQueueName(BuildResourceName(BASE_TAG_QUEUE_NAME));
+  auto createQueueOutcome = sqsClient->CreateQueue(createQueueRequest);
+  ASSERT_TRUE(createQueueOutcome.IsSuccess());
+  auto queueUrl = createQueueOutcome.GetResult().GetQueueUrl();
+  m_allTestQueues.insert(queueUrl);
+
+  TagQueueRequest tagQueueRequest;
+  tagQueueRequest.SetQueueUrl(queueUrl);
+  Aws::Map<Aws::String, Aws::String> tagsToSet;
+  tagsToSet["MyCustomTag1"] = "MyCustomTag1Value";
+
+  tagQueueRequest.SetTags(tagsToSet);
+  TagQueueOutcome tagQueueOutcome = sqsClient->TagQueue(tagQueueRequest);
+  ASSERT_TRUE(tagQueueOutcome.IsSuccess());
+
+  ListQueueTagsRequest listQueuesTagsRequest;
+  listQueuesTagsRequest.SetQueueUrl(queueUrl);
+  const ListQueueTagsOutcome listQueueTagsOutcome = sqsClient->ListQueueTags(listQueuesTagsRequest);
+  ASSERT_TRUE(listQueueTagsOutcome.IsSuccess());
+
+  const Aws::Map<Aws::String, Aws::String>& listQueueTags = listQueueTagsOutcome.GetResult().GetTags();
+  for(const auto& expectedTag : tagsToSet)
+  {
+      const auto& foundExpectedTagIt = listQueueTags.find(expectedTag.first);
+      ASSERT_TRUE(foundExpectedTagIt != listQueueTags.end());
+      ASSERT_EQ(foundExpectedTagIt->second, expectedTag.second);
+  }
+
+  // Set tags second time
+  tagsToSet["MyCustomTag2"] = "MyCustomTag2Value";
+  tagsToSet["MyAnotherCustomTag2"] = "MyCustomTag2Value";
+  tagQueueRequest.SetTags(tagsToSet);
+  TagQueueOutcome tagQueueOutcome2 = sqsClient->TagQueue(tagQueueRequest);
+  ASSERT_TRUE(tagQueueOutcome2.IsSuccess());
+
+  const ListQueueTagsOutcome listQueueTagsOutcome2 = sqsClient->ListQueueTags(listQueuesTagsRequest);
+  ASSERT_TRUE(listQueueTagsOutcome2.IsSuccess());
+
+  const Aws::Map<Aws::String, Aws::String>& listQueueTags2 = listQueueTagsOutcome2.GetResult().GetTags();
+  for(const auto& expectedTag : tagsToSet)
+  {
+    const auto& foundExpectedTagIt = listQueueTags2.find(expectedTag.first);
+    ASSERT_TRUE(foundExpectedTagIt != listQueueTags2.end());
+    ASSERT_EQ(foundExpectedTagIt->second, expectedTag.second);
   }
 }

@@ -6,7 +6,9 @@
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/securityhub/model/AwsCodeBuildProjectEnvironmentRegistryCredential.h>
+#include <aws/securityhub/model/AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails.h>
 #include <utility>
 
 namespace Aws
@@ -81,106 +83,172 @@ namespace Model
 
 
     /**
-     * <p>The type of credentials AWS CodeBuild uses to pull images in your build.</p>
-     * <p>Valid values:</p> <ul> <li> <p> <code>CODEBUILD</code> specifies that AWS
+     * <p>A set of environment variables to make available to builds for the build
+     * project.</p>
+     */
+    inline const Aws::Vector<AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails>& GetEnvironmentVariables() const{ return m_environmentVariables; }
+
+    /**
+     * <p>A set of environment variables to make available to builds for the build
+     * project.</p>
+     */
+    inline bool EnvironmentVariablesHasBeenSet() const { return m_environmentVariablesHasBeenSet; }
+
+    /**
+     * <p>A set of environment variables to make available to builds for the build
+     * project.</p>
+     */
+    inline void SetEnvironmentVariables(const Aws::Vector<AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails>& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables = value; }
+
+    /**
+     * <p>A set of environment variables to make available to builds for the build
+     * project.</p>
+     */
+    inline void SetEnvironmentVariables(Aws::Vector<AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails>&& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables = std::move(value); }
+
+    /**
+     * <p>A set of environment variables to make available to builds for the build
+     * project.</p>
+     */
+    inline AwsCodeBuildProjectEnvironment& WithEnvironmentVariables(const Aws::Vector<AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails>& value) { SetEnvironmentVariables(value); return *this;}
+
+    /**
+     * <p>A set of environment variables to make available to builds for the build
+     * project.</p>
+     */
+    inline AwsCodeBuildProjectEnvironment& WithEnvironmentVariables(Aws::Vector<AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails>&& value) { SetEnvironmentVariables(std::move(value)); return *this;}
+
+    /**
+     * <p>A set of environment variables to make available to builds for the build
+     * project.</p>
+     */
+    inline AwsCodeBuildProjectEnvironment& AddEnvironmentVariables(const AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.push_back(value); return *this; }
+
+    /**
+     * <p>A set of environment variables to make available to builds for the build
+     * project.</p>
+     */
+    inline AwsCodeBuildProjectEnvironment& AddEnvironmentVariables(AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails&& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Whether to allow the Docker daemon to run inside a Docker container. Set to
+     * <code>true</code> if the build project is used to build Docker images.</p>
+     */
+    inline bool GetPrivilegedMode() const{ return m_privilegedMode; }
+
+    /**
+     * <p>Whether to allow the Docker daemon to run inside a Docker container. Set to
+     * <code>true</code> if the build project is used to build Docker images.</p>
+     */
+    inline bool PrivilegedModeHasBeenSet() const { return m_privilegedModeHasBeenSet; }
+
+    /**
+     * <p>Whether to allow the Docker daemon to run inside a Docker container. Set to
+     * <code>true</code> if the build project is used to build Docker images.</p>
+     */
+    inline void SetPrivilegedMode(bool value) { m_privilegedModeHasBeenSet = true; m_privilegedMode = value; }
+
+    /**
+     * <p>Whether to allow the Docker daemon to run inside a Docker container. Set to
+     * <code>true</code> if the build project is used to build Docker images.</p>
+     */
+    inline AwsCodeBuildProjectEnvironment& WithPrivilegedMode(bool value) { SetPrivilegedMode(value); return *this;}
+
+
+    /**
+     * <p>The type of credentials CodeBuild uses to pull images in your build.</p>
+     * <p>Valid values:</p> <ul> <li> <p> <code>CODEBUILD</code> specifies that
      * CodeBuild uses its own credentials. This requires that you modify your ECR
-     * repository policy to trust the AWS CodeBuild service principal.</p> </li> <li>
-     * <p> <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build
-     * project's service role.</p> </li> </ul> <p>When you use a cross-account or
-     * private registry image, you must use <code>SERVICE_ROLE</code> credentials. When
-     * you use an AWS CodeBuild curated image, you must use <code>CODEBUILD</code>
-     * credentials.</p>
+     * repository policy to trust the CodeBuild service principal.</p> </li> <li> <p>
+     * <code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's
+     * service role.</p> </li> </ul> <p>When you use a cross-account or private
+     * registry image, you must use <code>SERVICE_ROLE</code> credentials. When you use
+     * an CodeBuild curated image, you must use <code>CODEBUILD</code> credentials.</p>
      */
     inline const Aws::String& GetImagePullCredentialsType() const{ return m_imagePullCredentialsType; }
 
     /**
-     * <p>The type of credentials AWS CodeBuild uses to pull images in your build.</p>
-     * <p>Valid values:</p> <ul> <li> <p> <code>CODEBUILD</code> specifies that AWS
+     * <p>The type of credentials CodeBuild uses to pull images in your build.</p>
+     * <p>Valid values:</p> <ul> <li> <p> <code>CODEBUILD</code> specifies that
      * CodeBuild uses its own credentials. This requires that you modify your ECR
-     * repository policy to trust the AWS CodeBuild service principal.</p> </li> <li>
-     * <p> <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build
-     * project's service role.</p> </li> </ul> <p>When you use a cross-account or
-     * private registry image, you must use <code>SERVICE_ROLE</code> credentials. When
-     * you use an AWS CodeBuild curated image, you must use <code>CODEBUILD</code>
-     * credentials.</p>
+     * repository policy to trust the CodeBuild service principal.</p> </li> <li> <p>
+     * <code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's
+     * service role.</p> </li> </ul> <p>When you use a cross-account or private
+     * registry image, you must use <code>SERVICE_ROLE</code> credentials. When you use
+     * an CodeBuild curated image, you must use <code>CODEBUILD</code> credentials.</p>
      */
     inline bool ImagePullCredentialsTypeHasBeenSet() const { return m_imagePullCredentialsTypeHasBeenSet; }
 
     /**
-     * <p>The type of credentials AWS CodeBuild uses to pull images in your build.</p>
-     * <p>Valid values:</p> <ul> <li> <p> <code>CODEBUILD</code> specifies that AWS
+     * <p>The type of credentials CodeBuild uses to pull images in your build.</p>
+     * <p>Valid values:</p> <ul> <li> <p> <code>CODEBUILD</code> specifies that
      * CodeBuild uses its own credentials. This requires that you modify your ECR
-     * repository policy to trust the AWS CodeBuild service principal.</p> </li> <li>
-     * <p> <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build
-     * project's service role.</p> </li> </ul> <p>When you use a cross-account or
-     * private registry image, you must use <code>SERVICE_ROLE</code> credentials. When
-     * you use an AWS CodeBuild curated image, you must use <code>CODEBUILD</code>
-     * credentials.</p>
+     * repository policy to trust the CodeBuild service principal.</p> </li> <li> <p>
+     * <code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's
+     * service role.</p> </li> </ul> <p>When you use a cross-account or private
+     * registry image, you must use <code>SERVICE_ROLE</code> credentials. When you use
+     * an CodeBuild curated image, you must use <code>CODEBUILD</code> credentials.</p>
      */
     inline void SetImagePullCredentialsType(const Aws::String& value) { m_imagePullCredentialsTypeHasBeenSet = true; m_imagePullCredentialsType = value; }
 
     /**
-     * <p>The type of credentials AWS CodeBuild uses to pull images in your build.</p>
-     * <p>Valid values:</p> <ul> <li> <p> <code>CODEBUILD</code> specifies that AWS
+     * <p>The type of credentials CodeBuild uses to pull images in your build.</p>
+     * <p>Valid values:</p> <ul> <li> <p> <code>CODEBUILD</code> specifies that
      * CodeBuild uses its own credentials. This requires that you modify your ECR
-     * repository policy to trust the AWS CodeBuild service principal.</p> </li> <li>
-     * <p> <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build
-     * project's service role.</p> </li> </ul> <p>When you use a cross-account or
-     * private registry image, you must use <code>SERVICE_ROLE</code> credentials. When
-     * you use an AWS CodeBuild curated image, you must use <code>CODEBUILD</code>
-     * credentials.</p>
+     * repository policy to trust the CodeBuild service principal.</p> </li> <li> <p>
+     * <code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's
+     * service role.</p> </li> </ul> <p>When you use a cross-account or private
+     * registry image, you must use <code>SERVICE_ROLE</code> credentials. When you use
+     * an CodeBuild curated image, you must use <code>CODEBUILD</code> credentials.</p>
      */
     inline void SetImagePullCredentialsType(Aws::String&& value) { m_imagePullCredentialsTypeHasBeenSet = true; m_imagePullCredentialsType = std::move(value); }
 
     /**
-     * <p>The type of credentials AWS CodeBuild uses to pull images in your build.</p>
-     * <p>Valid values:</p> <ul> <li> <p> <code>CODEBUILD</code> specifies that AWS
+     * <p>The type of credentials CodeBuild uses to pull images in your build.</p>
+     * <p>Valid values:</p> <ul> <li> <p> <code>CODEBUILD</code> specifies that
      * CodeBuild uses its own credentials. This requires that you modify your ECR
-     * repository policy to trust the AWS CodeBuild service principal.</p> </li> <li>
-     * <p> <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build
-     * project's service role.</p> </li> </ul> <p>When you use a cross-account or
-     * private registry image, you must use <code>SERVICE_ROLE</code> credentials. When
-     * you use an AWS CodeBuild curated image, you must use <code>CODEBUILD</code>
-     * credentials.</p>
+     * repository policy to trust the CodeBuild service principal.</p> </li> <li> <p>
+     * <code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's
+     * service role.</p> </li> </ul> <p>When you use a cross-account or private
+     * registry image, you must use <code>SERVICE_ROLE</code> credentials. When you use
+     * an CodeBuild curated image, you must use <code>CODEBUILD</code> credentials.</p>
      */
     inline void SetImagePullCredentialsType(const char* value) { m_imagePullCredentialsTypeHasBeenSet = true; m_imagePullCredentialsType.assign(value); }
 
     /**
-     * <p>The type of credentials AWS CodeBuild uses to pull images in your build.</p>
-     * <p>Valid values:</p> <ul> <li> <p> <code>CODEBUILD</code> specifies that AWS
+     * <p>The type of credentials CodeBuild uses to pull images in your build.</p>
+     * <p>Valid values:</p> <ul> <li> <p> <code>CODEBUILD</code> specifies that
      * CodeBuild uses its own credentials. This requires that you modify your ECR
-     * repository policy to trust the AWS CodeBuild service principal.</p> </li> <li>
-     * <p> <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build
-     * project's service role.</p> </li> </ul> <p>When you use a cross-account or
-     * private registry image, you must use <code>SERVICE_ROLE</code> credentials. When
-     * you use an AWS CodeBuild curated image, you must use <code>CODEBUILD</code>
-     * credentials.</p>
+     * repository policy to trust the CodeBuild service principal.</p> </li> <li> <p>
+     * <code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's
+     * service role.</p> </li> </ul> <p>When you use a cross-account or private
+     * registry image, you must use <code>SERVICE_ROLE</code> credentials. When you use
+     * an CodeBuild curated image, you must use <code>CODEBUILD</code> credentials.</p>
      */
     inline AwsCodeBuildProjectEnvironment& WithImagePullCredentialsType(const Aws::String& value) { SetImagePullCredentialsType(value); return *this;}
 
     /**
-     * <p>The type of credentials AWS CodeBuild uses to pull images in your build.</p>
-     * <p>Valid values:</p> <ul> <li> <p> <code>CODEBUILD</code> specifies that AWS
+     * <p>The type of credentials CodeBuild uses to pull images in your build.</p>
+     * <p>Valid values:</p> <ul> <li> <p> <code>CODEBUILD</code> specifies that
      * CodeBuild uses its own credentials. This requires that you modify your ECR
-     * repository policy to trust the AWS CodeBuild service principal.</p> </li> <li>
-     * <p> <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build
-     * project's service role.</p> </li> </ul> <p>When you use a cross-account or
-     * private registry image, you must use <code>SERVICE_ROLE</code> credentials. When
-     * you use an AWS CodeBuild curated image, you must use <code>CODEBUILD</code>
-     * credentials.</p>
+     * repository policy to trust the CodeBuild service principal.</p> </li> <li> <p>
+     * <code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's
+     * service role.</p> </li> </ul> <p>When you use a cross-account or private
+     * registry image, you must use <code>SERVICE_ROLE</code> credentials. When you use
+     * an CodeBuild curated image, you must use <code>CODEBUILD</code> credentials.</p>
      */
     inline AwsCodeBuildProjectEnvironment& WithImagePullCredentialsType(Aws::String&& value) { SetImagePullCredentialsType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of credentials AWS CodeBuild uses to pull images in your build.</p>
-     * <p>Valid values:</p> <ul> <li> <p> <code>CODEBUILD</code> specifies that AWS
+     * <p>The type of credentials CodeBuild uses to pull images in your build.</p>
+     * <p>Valid values:</p> <ul> <li> <p> <code>CODEBUILD</code> specifies that
      * CodeBuild uses its own credentials. This requires that you modify your ECR
-     * repository policy to trust the AWS CodeBuild service principal.</p> </li> <li>
-     * <p> <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build
-     * project's service role.</p> </li> </ul> <p>When you use a cross-account or
-     * private registry image, you must use <code>SERVICE_ROLE</code> credentials. When
-     * you use an AWS CodeBuild curated image, you must use <code>CODEBUILD</code>
-     * credentials.</p>
+     * repository policy to trust the CodeBuild service principal.</p> </li> <li> <p>
+     * <code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's
+     * service role.</p> </li> </ul> <p>When you use a cross-account or private
+     * registry image, you must use <code>SERVICE_ROLE</code> credentials. When you use
+     * an CodeBuild curated image, you must use <code>CODEBUILD</code> credentials.</p>
      */
     inline AwsCodeBuildProjectEnvironment& WithImagePullCredentialsType(const char* value) { SetImagePullCredentialsType(value); return *this;}
 
@@ -388,6 +456,12 @@ namespace Model
 
     Aws::String m_certificate;
     bool m_certificateHasBeenSet;
+
+    Aws::Vector<AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails> m_environmentVariables;
+    bool m_environmentVariablesHasBeenSet;
+
+    bool m_privilegedMode;
+    bool m_privilegedModeHasBeenSet;
 
     Aws::String m_imagePullCredentialsType;
     bool m_imagePullCredentialsTypeHasBeenSet;

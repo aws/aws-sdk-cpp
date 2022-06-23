@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The tax documents required in your AWS Region.</p><p><h3>See Also:</h3>   <a
+   * <p>The tax documents required in your Amazon Web Services Region.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/TaxDocuments">AWS
    * API Reference</a></p>
    */

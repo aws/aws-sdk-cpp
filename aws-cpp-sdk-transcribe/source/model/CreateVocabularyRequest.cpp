@@ -17,7 +17,8 @@ CreateVocabularyRequest::CreateVocabularyRequest() :
     m_languageCode(LanguageCode::NOT_SET),
     m_languageCodeHasBeenSet(false),
     m_phrasesHasBeenSet(false),
-    m_vocabularyFileUriHasBeenSet(false)
+    m_vocabularyFileUriHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,17 @@ Aws::String CreateVocabularyRequest::SerializePayload() const
   if(m_vocabularyFileUriHasBeenSet)
   {
    payload.WithString("VocabularyFileUri", m_vocabularyFileUri);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

@@ -83,42 +83,42 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the AWS Directory Service directory for the WorkSpace.</p>
+     * <p>The identifier of the Directory Service directory for the WorkSpace.</p>
      */
     inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
 
     /**
-     * <p>The identifier of the AWS Directory Service directory for the WorkSpace.</p>
+     * <p>The identifier of the Directory Service directory for the WorkSpace.</p>
      */
     inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the AWS Directory Service directory for the WorkSpace.</p>
+     * <p>The identifier of the Directory Service directory for the WorkSpace.</p>
      */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
 
     /**
-     * <p>The identifier of the AWS Directory Service directory for the WorkSpace.</p>
+     * <p>The identifier of the Directory Service directory for the WorkSpace.</p>
      */
     inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
 
     /**
-     * <p>The identifier of the AWS Directory Service directory for the WorkSpace.</p>
+     * <p>The identifier of the Directory Service directory for the WorkSpace.</p>
      */
     inline void SetDirectoryId(const char* value) { m_directoryIdHasBeenSet = true; m_directoryId.assign(value); }
 
     /**
-     * <p>The identifier of the AWS Directory Service directory for the WorkSpace.</p>
+     * <p>The identifier of the Directory Service directory for the WorkSpace.</p>
      */
     inline Workspace& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
 
     /**
-     * <p>The identifier of the AWS Directory Service directory for the WorkSpace.</p>
+     * <p>The identifier of the Directory Service directory for the WorkSpace.</p>
      */
     inline Workspace& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the AWS Directory Service directory for the WorkSpace.</p>
+     * <p>The identifier of the Directory Service directory for the WorkSpace.</p>
      */
     inline Workspace& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
 
@@ -516,50 +516,50 @@ namespace Model
 
 
     /**
-     * <p>The symmetric AWS KMS customer master key (CMK) used to encrypt data stored
-     * on your WorkSpace. Amazon WorkSpaces does not support asymmetric CMKs.</p>
+     * <p>The symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon
+     * WorkSpaces does not support asymmetric KMS keys.</p>
      */
     inline const Aws::String& GetVolumeEncryptionKey() const{ return m_volumeEncryptionKey; }
 
     /**
-     * <p>The symmetric AWS KMS customer master key (CMK) used to encrypt data stored
-     * on your WorkSpace. Amazon WorkSpaces does not support asymmetric CMKs.</p>
+     * <p>The symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon
+     * WorkSpaces does not support asymmetric KMS keys.</p>
      */
     inline bool VolumeEncryptionKeyHasBeenSet() const { return m_volumeEncryptionKeyHasBeenSet; }
 
     /**
-     * <p>The symmetric AWS KMS customer master key (CMK) used to encrypt data stored
-     * on your WorkSpace. Amazon WorkSpaces does not support asymmetric CMKs.</p>
+     * <p>The symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon
+     * WorkSpaces does not support asymmetric KMS keys.</p>
      */
     inline void SetVolumeEncryptionKey(const Aws::String& value) { m_volumeEncryptionKeyHasBeenSet = true; m_volumeEncryptionKey = value; }
 
     /**
-     * <p>The symmetric AWS KMS customer master key (CMK) used to encrypt data stored
-     * on your WorkSpace. Amazon WorkSpaces does not support asymmetric CMKs.</p>
+     * <p>The symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon
+     * WorkSpaces does not support asymmetric KMS keys.</p>
      */
     inline void SetVolumeEncryptionKey(Aws::String&& value) { m_volumeEncryptionKeyHasBeenSet = true; m_volumeEncryptionKey = std::move(value); }
 
     /**
-     * <p>The symmetric AWS KMS customer master key (CMK) used to encrypt data stored
-     * on your WorkSpace. Amazon WorkSpaces does not support asymmetric CMKs.</p>
+     * <p>The symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon
+     * WorkSpaces does not support asymmetric KMS keys.</p>
      */
     inline void SetVolumeEncryptionKey(const char* value) { m_volumeEncryptionKeyHasBeenSet = true; m_volumeEncryptionKey.assign(value); }
 
     /**
-     * <p>The symmetric AWS KMS customer master key (CMK) used to encrypt data stored
-     * on your WorkSpace. Amazon WorkSpaces does not support asymmetric CMKs.</p>
+     * <p>The symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon
+     * WorkSpaces does not support asymmetric KMS keys.</p>
      */
     inline Workspace& WithVolumeEncryptionKey(const Aws::String& value) { SetVolumeEncryptionKey(value); return *this;}
 
     /**
-     * <p>The symmetric AWS KMS customer master key (CMK) used to encrypt data stored
-     * on your WorkSpace. Amazon WorkSpaces does not support asymmetric CMKs.</p>
+     * <p>The symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon
+     * WorkSpaces does not support asymmetric KMS keys.</p>
      */
     inline Workspace& WithVolumeEncryptionKey(Aws::String&& value) { SetVolumeEncryptionKey(std::move(value)); return *this;}
 
     /**
-     * <p>The symmetric AWS KMS customer master key (CMK) used to encrypt data stored
-     * on your WorkSpace. Amazon WorkSpaces does not support asymmetric CMKs.</p>
+     * <p>The symmetric KMS key used to encrypt data stored on your WorkSpace. Amazon
+     * WorkSpaces does not support asymmetric KMS keys.</p>
      */
     inline Workspace& WithVolumeEncryptionKey(const char* value) { SetVolumeEncryptionKey(value); return *this;}
 

@@ -131,6 +131,12 @@ GetDomainNameResult& GetDomainNameResult::operator =(const Aws::AmazonWebService
 
   }
 
+  if(jsonValue.ValueExists("ownershipVerificationCertificateArn"))
+  {
+    m_ownershipVerificationCertificateArn = jsonValue.GetString("ownershipVerificationCertificateArn");
+
+  }
+
 
 
   return *this;

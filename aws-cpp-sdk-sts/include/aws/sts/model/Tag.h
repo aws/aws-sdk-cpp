@@ -28,7 +28,8 @@ namespace Model
    * federate a user. These are called session tags. You can then use the session
    * tags to control access to resources. For more information, see <a
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging
-   * AWS STS Sessions</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * Amazon Web Services STS Sessions</a> in the <i>IAM User Guide</i>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/Tag">AWS API
    * Reference</a></p>
    */

@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p> The metadata associated with the specified standard or custom control.
+   * <p> The metadata that's associated with the standard control or custom control.
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/ControlMetadata">AWS
    * API Reference</a></p>
@@ -40,173 +40,173 @@ namespace Model
 
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the specified control. </p>
+     * <p> The Amazon Resource Name (ARN) of the control. </p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the specified control. </p>
+     * <p> The Amazon Resource Name (ARN) of the control. </p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the specified control. </p>
+     * <p> The Amazon Resource Name (ARN) of the control. </p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the specified control. </p>
+     * <p> The Amazon Resource Name (ARN) of the control. </p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the specified control. </p>
+     * <p> The Amazon Resource Name (ARN) of the control. </p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the specified control. </p>
+     * <p> The Amazon Resource Name (ARN) of the control. </p>
      */
     inline ControlMetadata& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the specified control. </p>
+     * <p> The Amazon Resource Name (ARN) of the control. </p>
      */
     inline ControlMetadata& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the specified control. </p>
+     * <p> The Amazon Resource Name (ARN) of the control. </p>
      */
     inline ControlMetadata& WithArn(const char* value) { SetArn(value); return *this;}
 
 
     /**
-     * <p> The unique identifier for the specified control. </p>
+     * <p> The unique identifier for the control. </p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p> The unique identifier for the specified control. </p>
+     * <p> The unique identifier for the control. </p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * <p> The unique identifier for the specified control. </p>
+     * <p> The unique identifier for the control. </p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p> The unique identifier for the specified control. </p>
+     * <p> The unique identifier for the control. </p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p> The unique identifier for the specified control. </p>
+     * <p> The unique identifier for the control. </p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p> The unique identifier for the specified control. </p>
+     * <p> The unique identifier for the control. </p>
      */
     inline ControlMetadata& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p> The unique identifier for the specified control. </p>
+     * <p> The unique identifier for the control. </p>
      */
     inline ControlMetadata& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p> The unique identifier for the specified control. </p>
+     * <p> The unique identifier for the control. </p>
      */
     inline ControlMetadata& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
-     * <p> The name of the specified control. </p>
+     * <p> The name of the control. </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p> The name of the specified control. </p>
+     * <p> The name of the control. </p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p> The name of the specified control. </p>
+     * <p> The name of the control. </p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p> The name of the specified control. </p>
+     * <p> The name of the control. </p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p> The name of the specified control. </p>
+     * <p> The name of the control. </p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p> The name of the specified control. </p>
+     * <p> The name of the control. </p>
      */
     inline ControlMetadata& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p> The name of the specified control. </p>
+     * <p> The name of the control. </p>
      */
     inline ControlMetadata& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p> The name of the specified control. </p>
+     * <p> The name of the control. </p>
      */
     inline ControlMetadata& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p> The data source that determines from where AWS Audit Manager collects
-     * evidence for the control. </p>
+     * <p> The data source that determines where Audit Manager collects evidence from
+     * for the control. </p>
      */
     inline const Aws::String& GetControlSources() const{ return m_controlSources; }
 
     /**
-     * <p> The data source that determines from where AWS Audit Manager collects
-     * evidence for the control. </p>
+     * <p> The data source that determines where Audit Manager collects evidence from
+     * for the control. </p>
      */
     inline bool ControlSourcesHasBeenSet() const { return m_controlSourcesHasBeenSet; }
 
     /**
-     * <p> The data source that determines from where AWS Audit Manager collects
-     * evidence for the control. </p>
+     * <p> The data source that determines where Audit Manager collects evidence from
+     * for the control. </p>
      */
     inline void SetControlSources(const Aws::String& value) { m_controlSourcesHasBeenSet = true; m_controlSources = value; }
 
     /**
-     * <p> The data source that determines from where AWS Audit Manager collects
-     * evidence for the control. </p>
+     * <p> The data source that determines where Audit Manager collects evidence from
+     * for the control. </p>
      */
     inline void SetControlSources(Aws::String&& value) { m_controlSourcesHasBeenSet = true; m_controlSources = std::move(value); }
 
     /**
-     * <p> The data source that determines from where AWS Audit Manager collects
-     * evidence for the control. </p>
+     * <p> The data source that determines where Audit Manager collects evidence from
+     * for the control. </p>
      */
     inline void SetControlSources(const char* value) { m_controlSourcesHasBeenSet = true; m_controlSources.assign(value); }
 
     /**
-     * <p> The data source that determines from where AWS Audit Manager collects
-     * evidence for the control. </p>
+     * <p> The data source that determines where Audit Manager collects evidence from
+     * for the control. </p>
      */
     inline ControlMetadata& WithControlSources(const Aws::String& value) { SetControlSources(value); return *this;}
 
     /**
-     * <p> The data source that determines from where AWS Audit Manager collects
-     * evidence for the control. </p>
+     * <p> The data source that determines where Audit Manager collects evidence from
+     * for the control. </p>
      */
     inline ControlMetadata& WithControlSources(Aws::String&& value) { SetControlSources(std::move(value)); return *this;}
 
     /**
-     * <p> The data source that determines from where AWS Audit Manager collects
-     * evidence for the control. </p>
+     * <p> The data source that determines where Audit Manager collects evidence from
+     * for the control. </p>
      */
     inline ControlMetadata& WithControlSources(const char* value) { SetControlSources(value); return *this;}
 

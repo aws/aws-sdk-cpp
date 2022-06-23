@@ -16,7 +16,11 @@ namespace Model
   enum class CLMLanguageCode
   {
     NOT_SET,
-    en_US
+    en_US,
+    hi_IN,
+    es_US,
+    en_GB,
+    en_AU
   };
 
 namespace CLMLanguageCodeMapper

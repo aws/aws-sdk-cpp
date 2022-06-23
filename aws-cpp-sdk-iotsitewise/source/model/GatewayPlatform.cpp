@@ -19,12 +19,14 @@ namespace Model
 {
 
 GatewayPlatform::GatewayPlatform() : 
-    m_greengrassHasBeenSet(false)
+    m_greengrassHasBeenSet(false),
+    m_greengrassV2HasBeenSet(false)
 {
 }
 
 GatewayPlatform::GatewayPlatform(JsonView jsonValue) : 
-    m_greengrassHasBeenSet(false)
+    m_greengrassHasBeenSet(false),
+    m_greengrassV2HasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ GatewayPlatform& GatewayPlatform::operator =(JsonView jsonValue)
     m_greengrassHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("greengrassV2"))
+  {
+    m_greengrassV2 = jsonValue.GetObject("greengrassV2");
+
+    m_greengrassV2HasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +57,12 @@ JsonValue GatewayPlatform::Jsonize() const
   if(m_greengrassHasBeenSet)
   {
    payload.WithObject("greengrass", m_greengrass.Jsonize());
+
+  }
+
+  if(m_greengrassV2HasBeenSet)
+  {
+   payload.WithObject("greengrassV2", m_greengrassV2.Jsonize());
 
   }
 

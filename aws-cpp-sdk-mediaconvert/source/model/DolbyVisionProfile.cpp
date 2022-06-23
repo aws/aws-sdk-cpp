@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int PROFILE_5_HASH = HashingUtils::HashString("PROFILE_5");
+        static const int PROFILE_8_1_HASH = HashingUtils::HashString("PROFILE_8_1");
 
 
         DolbyVisionProfile GetDolbyVisionProfileForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == PROFILE_5_HASH)
           {
             return DolbyVisionProfile::PROFILE_5;
+          }
+          else if (hashCode == PROFILE_8_1_HASH)
+          {
+            return DolbyVisionProfile::PROFILE_8_1;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +51,8 @@ namespace Aws
           {
           case DolbyVisionProfile::PROFILE_5:
             return "PROFILE_5";
+          case DolbyVisionProfile::PROFILE_8_1:
+            return "PROFILE_8_1";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

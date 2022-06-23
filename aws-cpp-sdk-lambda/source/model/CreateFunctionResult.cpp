@@ -238,6 +238,21 @@ CreateFunctionResult& CreateFunctionResult::operator =(const Aws::AmazonWebServi
 
   }
 
+  if(jsonValue.ValueExists("Architectures"))
+  {
+    Array<JsonView> architecturesJsonList = jsonValue.GetArray("Architectures");
+    for(unsigned architecturesIndex = 0; architecturesIndex < architecturesJsonList.GetLength(); ++architecturesIndex)
+    {
+      m_architectures.push_back(ArchitectureMapper::GetArchitectureForName(architecturesJsonList[architecturesIndex].AsString()));
+    }
+  }
+
+  if(jsonValue.ValueExists("EphemeralStorage"))
+  {
+    m_ephemeralStorage = jsonValue.GetObject("EphemeralStorage");
+
+  }
+
 
 
   return *this;

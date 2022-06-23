@@ -167,32 +167,32 @@ namespace Model
 
 
     /**
-     * <p>The AWS location of the device.</p>
+     * <p>The Amazon Web Services location of the device.</p>
      */
     inline const AWSLocation& GetAWSLocation() const{ return m_aWSLocation; }
 
     /**
-     * <p>The AWS location of the device.</p>
+     * <p>The Amazon Web Services location of the device.</p>
      */
     inline bool AWSLocationHasBeenSet() const { return m_aWSLocationHasBeenSet; }
 
     /**
-     * <p>The AWS location of the device.</p>
+     * <p>The Amazon Web Services location of the device.</p>
      */
     inline void SetAWSLocation(const AWSLocation& value) { m_aWSLocationHasBeenSet = true; m_aWSLocation = value; }
 
     /**
-     * <p>The AWS location of the device.</p>
+     * <p>The Amazon Web Services location of the device.</p>
      */
     inline void SetAWSLocation(AWSLocation&& value) { m_aWSLocationHasBeenSet = true; m_aWSLocation = std::move(value); }
 
     /**
-     * <p>The AWS location of the device.</p>
+     * <p>The Amazon Web Services location of the device.</p>
      */
     inline Device& WithAWSLocation(const AWSLocation& value) { SetAWSLocation(value); return *this;}
 
     /**
-     * <p>The AWS location of the device.</p>
+     * <p>The Amazon Web Services location of the device.</p>
      */
     inline Device& WithAWSLocation(AWSLocation&& value) { SetAWSLocation(std::move(value)); return *this;}
 

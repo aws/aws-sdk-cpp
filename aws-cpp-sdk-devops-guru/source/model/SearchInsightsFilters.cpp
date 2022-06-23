@@ -21,14 +21,16 @@ namespace Model
 SearchInsightsFilters::SearchInsightsFilters() : 
     m_severitiesHasBeenSet(false),
     m_statusesHasBeenSet(false),
-    m_resourceCollectionHasBeenSet(false)
+    m_resourceCollectionHasBeenSet(false),
+    m_serviceCollectionHasBeenSet(false)
 {
 }
 
 SearchInsightsFilters::SearchInsightsFilters(JsonView jsonValue) : 
     m_severitiesHasBeenSet(false),
     m_statusesHasBeenSet(false),
-    m_resourceCollectionHasBeenSet(false)
+    m_resourceCollectionHasBeenSet(false),
+    m_serviceCollectionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -60,6 +62,13 @@ SearchInsightsFilters& SearchInsightsFilters::operator =(JsonView jsonValue)
     m_resourceCollection = jsonValue.GetObject("ResourceCollection");
 
     m_resourceCollectionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ServiceCollection"))
+  {
+    m_serviceCollection = jsonValue.GetObject("ServiceCollection");
+
+    m_serviceCollectionHasBeenSet = true;
   }
 
   return *this;
@@ -94,6 +103,12 @@ JsonValue SearchInsightsFilters::Jsonize() const
   if(m_resourceCollectionHasBeenSet)
   {
    payload.WithObject("ResourceCollection", m_resourceCollection.Jsonize());
+
+  }
+
+  if(m_serviceCollectionHasBeenSet)
+  {
+   payload.WithObject("ServiceCollection", m_serviceCollection.Jsonize());
 
   }
 

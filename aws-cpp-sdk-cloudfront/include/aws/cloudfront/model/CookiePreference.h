@@ -180,7 +180,7 @@ namespace Model
      * current limit on the number of cookie names that you can whitelist for each
      * cache behavior, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/xrefaws_service_limits.html#limits_cloudfront">
-     * CloudFront Limits</a> in the <i>AWS General Reference</i>.</p>
+     * CloudFront Limits</a> in the <i>Amazon Web Services General Reference</i>.</p>
      */
     inline const CookieNames& GetWhitelistedNames() const{ return m_whitelistedNames; }
 
@@ -206,7 +206,7 @@ namespace Model
      * current limit on the number of cookie names that you can whitelist for each
      * cache behavior, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/xrefaws_service_limits.html#limits_cloudfront">
-     * CloudFront Limits</a> in the <i>AWS General Reference</i>.</p>
+     * CloudFront Limits</a> in the <i>Amazon Web Services General Reference</i>.</p>
      */
     inline bool WhitelistedNamesHasBeenSet() const { return m_whitelistedNamesHasBeenSet; }
 
@@ -232,7 +232,7 @@ namespace Model
      * current limit on the number of cookie names that you can whitelist for each
      * cache behavior, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/xrefaws_service_limits.html#limits_cloudfront">
-     * CloudFront Limits</a> in the <i>AWS General Reference</i>.</p>
+     * CloudFront Limits</a> in the <i>Amazon Web Services General Reference</i>.</p>
      */
     inline void SetWhitelistedNames(const CookieNames& value) { m_whitelistedNamesHasBeenSet = true; m_whitelistedNames = value; }
 
@@ -258,7 +258,7 @@ namespace Model
      * current limit on the number of cookie names that you can whitelist for each
      * cache behavior, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/xrefaws_service_limits.html#limits_cloudfront">
-     * CloudFront Limits</a> in the <i>AWS General Reference</i>.</p>
+     * CloudFront Limits</a> in the <i>Amazon Web Services General Reference</i>.</p>
      */
     inline void SetWhitelistedNames(CookieNames&& value) { m_whitelistedNamesHasBeenSet = true; m_whitelistedNames = std::move(value); }
 
@@ -284,7 +284,7 @@ namespace Model
      * current limit on the number of cookie names that you can whitelist for each
      * cache behavior, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/xrefaws_service_limits.html#limits_cloudfront">
-     * CloudFront Limits</a> in the <i>AWS General Reference</i>.</p>
+     * CloudFront Limits</a> in the <i>Amazon Web Services General Reference</i>.</p>
      */
     inline CookiePreference& WithWhitelistedNames(const CookieNames& value) { SetWhitelistedNames(value); return *this;}
 
@@ -310,7 +310,7 @@ namespace Model
      * current limit on the number of cookie names that you can whitelist for each
      * cache behavior, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/xrefaws_service_limits.html#limits_cloudfront">
-     * CloudFront Limits</a> in the <i>AWS General Reference</i>.</p>
+     * CloudFront Limits</a> in the <i>Amazon Web Services General Reference</i>.</p>
      */
     inline CookiePreference& WithWhitelistedNames(CookieNames&& value) { SetWhitelistedNames(std::move(value)); return *this;}
 

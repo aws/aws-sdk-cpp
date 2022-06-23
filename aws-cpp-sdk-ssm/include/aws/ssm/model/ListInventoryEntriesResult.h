@@ -71,145 +71,159 @@ namespace Model
 
 
     /**
-     * <p>The instance ID targeted by the request to query inventory information.</p>
+     * <p>The managed node ID targeted by the request to query inventory
+     * information.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
-     * <p>The instance ID targeted by the request to query inventory information.</p>
+     * <p>The managed node ID targeted by the request to query inventory
+     * information.</p>
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceId = value; }
 
     /**
-     * <p>The instance ID targeted by the request to query inventory information.</p>
+     * <p>The managed node ID targeted by the request to query inventory
+     * information.</p>
      */
     inline void SetInstanceId(Aws::String&& value) { m_instanceId = std::move(value); }
 
     /**
-     * <p>The instance ID targeted by the request to query inventory information.</p>
+     * <p>The managed node ID targeted by the request to query inventory
+     * information.</p>
      */
     inline void SetInstanceId(const char* value) { m_instanceId.assign(value); }
 
     /**
-     * <p>The instance ID targeted by the request to query inventory information.</p>
+     * <p>The managed node ID targeted by the request to query inventory
+     * information.</p>
      */
     inline ListInventoryEntriesResult& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>The instance ID targeted by the request to query inventory information.</p>
+     * <p>The managed node ID targeted by the request to query inventory
+     * information.</p>
      */
     inline ListInventoryEntriesResult& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
-     * <p>The instance ID targeted by the request to query inventory information.</p>
+     * <p>The managed node ID targeted by the request to query inventory
+     * information.</p>
      */
     inline ListInventoryEntriesResult& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
 
     /**
-     * <p>The inventory schema version used by the instance(s).</p>
+     * <p>The inventory schema version used by the managed node(s).</p>
      */
     inline const Aws::String& GetSchemaVersion() const{ return m_schemaVersion; }
 
     /**
-     * <p>The inventory schema version used by the instance(s).</p>
+     * <p>The inventory schema version used by the managed node(s).</p>
      */
     inline void SetSchemaVersion(const Aws::String& value) { m_schemaVersion = value; }
 
     /**
-     * <p>The inventory schema version used by the instance(s).</p>
+     * <p>The inventory schema version used by the managed node(s).</p>
      */
     inline void SetSchemaVersion(Aws::String&& value) { m_schemaVersion = std::move(value); }
 
     /**
-     * <p>The inventory schema version used by the instance(s).</p>
+     * <p>The inventory schema version used by the managed node(s).</p>
      */
     inline void SetSchemaVersion(const char* value) { m_schemaVersion.assign(value); }
 
     /**
-     * <p>The inventory schema version used by the instance(s).</p>
+     * <p>The inventory schema version used by the managed node(s).</p>
      */
     inline ListInventoryEntriesResult& WithSchemaVersion(const Aws::String& value) { SetSchemaVersion(value); return *this;}
 
     /**
-     * <p>The inventory schema version used by the instance(s).</p>
+     * <p>The inventory schema version used by the managed node(s).</p>
      */
     inline ListInventoryEntriesResult& WithSchemaVersion(Aws::String&& value) { SetSchemaVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The inventory schema version used by the instance(s).</p>
+     * <p>The inventory schema version used by the managed node(s).</p>
      */
     inline ListInventoryEntriesResult& WithSchemaVersion(const char* value) { SetSchemaVersion(value); return *this;}
 
 
     /**
-     * <p>The time that inventory information was collected for the instance(s).</p>
+     * <p>The time that inventory information was collected for the managed
+     * node(s).</p>
      */
     inline const Aws::String& GetCaptureTime() const{ return m_captureTime; }
 
     /**
-     * <p>The time that inventory information was collected for the instance(s).</p>
+     * <p>The time that inventory information was collected for the managed
+     * node(s).</p>
      */
     inline void SetCaptureTime(const Aws::String& value) { m_captureTime = value; }
 
     /**
-     * <p>The time that inventory information was collected for the instance(s).</p>
+     * <p>The time that inventory information was collected for the managed
+     * node(s).</p>
      */
     inline void SetCaptureTime(Aws::String&& value) { m_captureTime = std::move(value); }
 
     /**
-     * <p>The time that inventory information was collected for the instance(s).</p>
+     * <p>The time that inventory information was collected for the managed
+     * node(s).</p>
      */
     inline void SetCaptureTime(const char* value) { m_captureTime.assign(value); }
 
     /**
-     * <p>The time that inventory information was collected for the instance(s).</p>
+     * <p>The time that inventory information was collected for the managed
+     * node(s).</p>
      */
     inline ListInventoryEntriesResult& WithCaptureTime(const Aws::String& value) { SetCaptureTime(value); return *this;}
 
     /**
-     * <p>The time that inventory information was collected for the instance(s).</p>
+     * <p>The time that inventory information was collected for the managed
+     * node(s).</p>
      */
     inline ListInventoryEntriesResult& WithCaptureTime(Aws::String&& value) { SetCaptureTime(std::move(value)); return *this;}
 
     /**
-     * <p>The time that inventory information was collected for the instance(s).</p>
+     * <p>The time that inventory information was collected for the managed
+     * node(s).</p>
      */
     inline ListInventoryEntriesResult& WithCaptureTime(const char* value) { SetCaptureTime(value); return *this;}
 
 
     /**
-     * <p>A list of inventory items on the instance(s).</p>
+     * <p>A list of inventory items on the managed node(s).</p>
      */
     inline const Aws::Vector<Aws::Map<Aws::String, Aws::String>>& GetEntries() const{ return m_entries; }
 
     /**
-     * <p>A list of inventory items on the instance(s).</p>
+     * <p>A list of inventory items on the managed node(s).</p>
      */
     inline void SetEntries(const Aws::Vector<Aws::Map<Aws::String, Aws::String>>& value) { m_entries = value; }
 
     /**
-     * <p>A list of inventory items on the instance(s).</p>
+     * <p>A list of inventory items on the managed node(s).</p>
      */
     inline void SetEntries(Aws::Vector<Aws::Map<Aws::String, Aws::String>>&& value) { m_entries = std::move(value); }
 
     /**
-     * <p>A list of inventory items on the instance(s).</p>
+     * <p>A list of inventory items on the managed node(s).</p>
      */
     inline ListInventoryEntriesResult& WithEntries(const Aws::Vector<Aws::Map<Aws::String, Aws::String>>& value) { SetEntries(value); return *this;}
 
     /**
-     * <p>A list of inventory items on the instance(s).</p>
+     * <p>A list of inventory items on the managed node(s).</p>
      */
     inline ListInventoryEntriesResult& WithEntries(Aws::Vector<Aws::Map<Aws::String, Aws::String>>&& value) { SetEntries(std::move(value)); return *this;}
 
     /**
-     * <p>A list of inventory items on the instance(s).</p>
+     * <p>A list of inventory items on the managed node(s).</p>
      */
     inline ListInventoryEntriesResult& AddEntries(const Aws::Map<Aws::String, Aws::String>& value) { m_entries.push_back(value); return *this; }
 
     /**
-     * <p>A list of inventory items on the instance(s).</p>
+     * <p>A list of inventory items on the managed node(s).</p>
      */
     inline ListInventoryEntriesResult& AddEntries(Aws::Map<Aws::String, Aws::String>&& value) { m_entries.push_back(std::move(value)); return *this; }
 

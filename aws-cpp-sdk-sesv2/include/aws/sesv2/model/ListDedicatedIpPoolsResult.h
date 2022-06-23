@@ -39,50 +39,50 @@ namespace Model
 
 
     /**
-     * <p>A list of all of the dedicated IP pools that are associated with your AWS
-     * account in the current Region.</p>
+     * <p>A list of all of the dedicated IP pools that are associated with your Amazon
+     * Web Services account in the current Region.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDedicatedIpPools() const{ return m_dedicatedIpPools; }
 
     /**
-     * <p>A list of all of the dedicated IP pools that are associated with your AWS
-     * account in the current Region.</p>
+     * <p>A list of all of the dedicated IP pools that are associated with your Amazon
+     * Web Services account in the current Region.</p>
      */
     inline void SetDedicatedIpPools(const Aws::Vector<Aws::String>& value) { m_dedicatedIpPools = value; }
 
     /**
-     * <p>A list of all of the dedicated IP pools that are associated with your AWS
-     * account in the current Region.</p>
+     * <p>A list of all of the dedicated IP pools that are associated with your Amazon
+     * Web Services account in the current Region.</p>
      */
     inline void SetDedicatedIpPools(Aws::Vector<Aws::String>&& value) { m_dedicatedIpPools = std::move(value); }
 
     /**
-     * <p>A list of all of the dedicated IP pools that are associated with your AWS
-     * account in the current Region.</p>
+     * <p>A list of all of the dedicated IP pools that are associated with your Amazon
+     * Web Services account in the current Region.</p>
      */
     inline ListDedicatedIpPoolsResult& WithDedicatedIpPools(const Aws::Vector<Aws::String>& value) { SetDedicatedIpPools(value); return *this;}
 
     /**
-     * <p>A list of all of the dedicated IP pools that are associated with your AWS
-     * account in the current Region.</p>
+     * <p>A list of all of the dedicated IP pools that are associated with your Amazon
+     * Web Services account in the current Region.</p>
      */
     inline ListDedicatedIpPoolsResult& WithDedicatedIpPools(Aws::Vector<Aws::String>&& value) { SetDedicatedIpPools(std::move(value)); return *this;}
 
     /**
-     * <p>A list of all of the dedicated IP pools that are associated with your AWS
-     * account in the current Region.</p>
+     * <p>A list of all of the dedicated IP pools that are associated with your Amazon
+     * Web Services account in the current Region.</p>
      */
     inline ListDedicatedIpPoolsResult& AddDedicatedIpPools(const Aws::String& value) { m_dedicatedIpPools.push_back(value); return *this; }
 
     /**
-     * <p>A list of all of the dedicated IP pools that are associated with your AWS
-     * account in the current Region.</p>
+     * <p>A list of all of the dedicated IP pools that are associated with your Amazon
+     * Web Services account in the current Region.</p>
      */
     inline ListDedicatedIpPoolsResult& AddDedicatedIpPools(Aws::String&& value) { m_dedicatedIpPools.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of all of the dedicated IP pools that are associated with your AWS
-     * account in the current Region.</p>
+     * <p>A list of all of the dedicated IP pools that are associated with your Amazon
+     * Web Services account in the current Region.</p>
      */
     inline ListDedicatedIpPoolsResult& AddDedicatedIpPools(const char* value) { m_dedicatedIpPools.push_back(value); return *this; }
 

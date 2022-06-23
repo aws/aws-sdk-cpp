@@ -133,37 +133,37 @@ namespace Model
 
 
     /**
-     * <p>An array of information about the file gateway's file shares.</p>
+     * <p>An array of information about the S3 File Gateway's file shares.</p>
      */
     inline const Aws::Vector<FileShareInfo>& GetFileShareInfoList() const{ return m_fileShareInfoList; }
 
     /**
-     * <p>An array of information about the file gateway's file shares.</p>
+     * <p>An array of information about the S3 File Gateway's file shares.</p>
      */
     inline void SetFileShareInfoList(const Aws::Vector<FileShareInfo>& value) { m_fileShareInfoList = value; }
 
     /**
-     * <p>An array of information about the file gateway's file shares.</p>
+     * <p>An array of information about the S3 File Gateway's file shares.</p>
      */
     inline void SetFileShareInfoList(Aws::Vector<FileShareInfo>&& value) { m_fileShareInfoList = std::move(value); }
 
     /**
-     * <p>An array of information about the file gateway's file shares.</p>
+     * <p>An array of information about the S3 File Gateway's file shares.</p>
      */
     inline ListFileSharesResult& WithFileShareInfoList(const Aws::Vector<FileShareInfo>& value) { SetFileShareInfoList(value); return *this;}
 
     /**
-     * <p>An array of information about the file gateway's file shares.</p>
+     * <p>An array of information about the S3 File Gateway's file shares.</p>
      */
     inline ListFileSharesResult& WithFileShareInfoList(Aws::Vector<FileShareInfo>&& value) { SetFileShareInfoList(std::move(value)); return *this;}
 
     /**
-     * <p>An array of information about the file gateway's file shares.</p>
+     * <p>An array of information about the S3 File Gateway's file shares.</p>
      */
     inline ListFileSharesResult& AddFileShareInfoList(const FileShareInfo& value) { m_fileShareInfoList.push_back(value); return *this; }
 
     /**
-     * <p>An array of information about the file gateway's file shares.</p>
+     * <p>An array of information about the S3 File Gateway's file shares.</p>
      */
     inline ListFileSharesResult& AddFileShareInfoList(FileShareInfo&& value) { m_fileShareInfoList.push_back(std::move(value)); return *this; }
 

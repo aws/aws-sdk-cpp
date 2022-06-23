@@ -17,7 +17,8 @@ CreateHostRequest::CreateHostRequest() :
     m_providerType(ProviderType::NOT_SET),
     m_providerTypeHasBeenSet(false),
     m_providerEndpointHasBeenSet(false),
-    m_vpcConfigurationHasBeenSet(false)
+    m_vpcConfigurationHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -45,6 +46,17 @@ Aws::String CreateHostRequest::SerializePayload() const
   if(m_vpcConfigurationHasBeenSet)
   {
    payload.WithObject("VpcConfiguration", m_vpcConfiguration.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

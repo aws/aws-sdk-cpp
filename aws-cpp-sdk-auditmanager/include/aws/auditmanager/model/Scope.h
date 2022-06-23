@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p> The wrapper that contains the AWS accounts and AWS services in scope for the
-   * assessment. </p><p><h3>See Also:</h3>   <a
+   * <p> The wrapper that contains the Amazon Web Services accounts and services that
+   * are in scope for the assessment. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/Scope">AWS
    * API Reference</a></p>
    */
@@ -41,83 +41,99 @@ namespace Model
 
 
     /**
-     * <p> The AWS accounts included in the scope of the assessment. </p>
+     * <p> The Amazon Web Services accounts that are included in the scope of the
+     * assessment. </p>
      */
     inline const Aws::Vector<AWSAccount>& GetAwsAccounts() const{ return m_awsAccounts; }
 
     /**
-     * <p> The AWS accounts included in the scope of the assessment. </p>
+     * <p> The Amazon Web Services accounts that are included in the scope of the
+     * assessment. </p>
      */
     inline bool AwsAccountsHasBeenSet() const { return m_awsAccountsHasBeenSet; }
 
     /**
-     * <p> The AWS accounts included in the scope of the assessment. </p>
+     * <p> The Amazon Web Services accounts that are included in the scope of the
+     * assessment. </p>
      */
     inline void SetAwsAccounts(const Aws::Vector<AWSAccount>& value) { m_awsAccountsHasBeenSet = true; m_awsAccounts = value; }
 
     /**
-     * <p> The AWS accounts included in the scope of the assessment. </p>
+     * <p> The Amazon Web Services accounts that are included in the scope of the
+     * assessment. </p>
      */
     inline void SetAwsAccounts(Aws::Vector<AWSAccount>&& value) { m_awsAccountsHasBeenSet = true; m_awsAccounts = std::move(value); }
 
     /**
-     * <p> The AWS accounts included in the scope of the assessment. </p>
+     * <p> The Amazon Web Services accounts that are included in the scope of the
+     * assessment. </p>
      */
     inline Scope& WithAwsAccounts(const Aws::Vector<AWSAccount>& value) { SetAwsAccounts(value); return *this;}
 
     /**
-     * <p> The AWS accounts included in the scope of the assessment. </p>
+     * <p> The Amazon Web Services accounts that are included in the scope of the
+     * assessment. </p>
      */
     inline Scope& WithAwsAccounts(Aws::Vector<AWSAccount>&& value) { SetAwsAccounts(std::move(value)); return *this;}
 
     /**
-     * <p> The AWS accounts included in the scope of the assessment. </p>
+     * <p> The Amazon Web Services accounts that are included in the scope of the
+     * assessment. </p>
      */
     inline Scope& AddAwsAccounts(const AWSAccount& value) { m_awsAccountsHasBeenSet = true; m_awsAccounts.push_back(value); return *this; }
 
     /**
-     * <p> The AWS accounts included in the scope of the assessment. </p>
+     * <p> The Amazon Web Services accounts that are included in the scope of the
+     * assessment. </p>
      */
     inline Scope& AddAwsAccounts(AWSAccount&& value) { m_awsAccountsHasBeenSet = true; m_awsAccounts.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p> The AWS services included in the scope of the assessment. </p>
+     * <p> The Amazon Web Services services that are included in the scope of the
+     * assessment. </p>
      */
     inline const Aws::Vector<AWSService>& GetAwsServices() const{ return m_awsServices; }
 
     /**
-     * <p> The AWS services included in the scope of the assessment. </p>
+     * <p> The Amazon Web Services services that are included in the scope of the
+     * assessment. </p>
      */
     inline bool AwsServicesHasBeenSet() const { return m_awsServicesHasBeenSet; }
 
     /**
-     * <p> The AWS services included in the scope of the assessment. </p>
+     * <p> The Amazon Web Services services that are included in the scope of the
+     * assessment. </p>
      */
     inline void SetAwsServices(const Aws::Vector<AWSService>& value) { m_awsServicesHasBeenSet = true; m_awsServices = value; }
 
     /**
-     * <p> The AWS services included in the scope of the assessment. </p>
+     * <p> The Amazon Web Services services that are included in the scope of the
+     * assessment. </p>
      */
     inline void SetAwsServices(Aws::Vector<AWSService>&& value) { m_awsServicesHasBeenSet = true; m_awsServices = std::move(value); }
 
     /**
-     * <p> The AWS services included in the scope of the assessment. </p>
+     * <p> The Amazon Web Services services that are included in the scope of the
+     * assessment. </p>
      */
     inline Scope& WithAwsServices(const Aws::Vector<AWSService>& value) { SetAwsServices(value); return *this;}
 
     /**
-     * <p> The AWS services included in the scope of the assessment. </p>
+     * <p> The Amazon Web Services services that are included in the scope of the
+     * assessment. </p>
      */
     inline Scope& WithAwsServices(Aws::Vector<AWSService>&& value) { SetAwsServices(std::move(value)); return *this;}
 
     /**
-     * <p> The AWS services included in the scope of the assessment. </p>
+     * <p> The Amazon Web Services services that are included in the scope of the
+     * assessment. </p>
      */
     inline Scope& AddAwsServices(const AWSService& value) { m_awsServicesHasBeenSet = true; m_awsServices.push_back(value); return *this; }
 
     /**
-     * <p> The AWS services included in the scope of the assessment. </p>
+     * <p> The Amazon Web Services services that are included in the scope of the
+     * assessment. </p>
      */
     inline Scope& AddAwsServices(AWSService&& value) { m_awsServicesHasBeenSet = true; m_awsServices.push_back(std::move(value)); return *this; }
 

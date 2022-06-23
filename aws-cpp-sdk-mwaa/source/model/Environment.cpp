@@ -31,12 +31,16 @@ Environment::Environment() :
     m_loggingConfigurationHasBeenSet(false),
     m_maxWorkers(0),
     m_maxWorkersHasBeenSet(false),
+    m_minWorkers(0),
+    m_minWorkersHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_networkConfigurationHasBeenSet(false),
     m_pluginsS3ObjectVersionHasBeenSet(false),
     m_pluginsS3PathHasBeenSet(false),
     m_requirementsS3ObjectVersionHasBeenSet(false),
     m_requirementsS3PathHasBeenSet(false),
+    m_schedulers(0),
+    m_schedulersHasBeenSet(false),
     m_serviceRoleArnHasBeenSet(false),
     m_sourceBucketArnHasBeenSet(false),
     m_status(EnvironmentStatus::NOT_SET),
@@ -62,12 +66,16 @@ Environment::Environment(JsonView jsonValue) :
     m_loggingConfigurationHasBeenSet(false),
     m_maxWorkers(0),
     m_maxWorkersHasBeenSet(false),
+    m_minWorkers(0),
+    m_minWorkersHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_networkConfigurationHasBeenSet(false),
     m_pluginsS3ObjectVersionHasBeenSet(false),
     m_pluginsS3PathHasBeenSet(false),
     m_requirementsS3ObjectVersionHasBeenSet(false),
     m_requirementsS3PathHasBeenSet(false),
+    m_schedulers(0),
+    m_schedulersHasBeenSet(false),
     m_serviceRoleArnHasBeenSet(false),
     m_sourceBucketArnHasBeenSet(false),
     m_status(EnvironmentStatus::NOT_SET),
@@ -163,6 +171,13 @@ Environment& Environment::operator =(JsonView jsonValue)
     m_maxWorkersHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MinWorkers"))
+  {
+    m_minWorkers = jsonValue.GetInteger("MinWorkers");
+
+    m_minWorkersHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
@@ -203,6 +218,13 @@ Environment& Environment::operator =(JsonView jsonValue)
     m_requirementsS3Path = jsonValue.GetString("RequirementsS3Path");
 
     m_requirementsS3PathHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Schedulers"))
+  {
+    m_schedulers = jsonValue.GetInteger("Schedulers");
+
+    m_schedulersHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ServiceRoleArn"))
@@ -334,6 +356,12 @@ JsonValue Environment::Jsonize() const
 
   }
 
+  if(m_minWorkersHasBeenSet)
+  {
+   payload.WithInteger("MinWorkers", m_minWorkers);
+
+  }
+
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
@@ -367,6 +395,12 @@ JsonValue Environment::Jsonize() const
   if(m_requirementsS3PathHasBeenSet)
   {
    payload.WithString("RequirementsS3Path", m_requirementsS3Path);
+
+  }
+
+  if(m_schedulersHasBeenSet)
+  {
+   payload.WithInteger("Schedulers", m_schedulers);
 
   }
 

@@ -177,56 +177,56 @@ namespace Model
 
 
     /**
-     * <p>The AWS account IDs. This parameter is valid only when modifying the
-     * <code>loadPermission</code> attribute.</p>
+     * <p>The Amazon Web Services account IDs. This parameter is valid only when
+     * modifying the <code>loadPermission</code> attribute.</p>
      */
     inline const Aws::Vector<Aws::String>& GetUserIds() const{ return m_userIds; }
 
     /**
-     * <p>The AWS account IDs. This parameter is valid only when modifying the
-     * <code>loadPermission</code> attribute.</p>
+     * <p>The Amazon Web Services account IDs. This parameter is valid only when
+     * modifying the <code>loadPermission</code> attribute.</p>
      */
     inline bool UserIdsHasBeenSet() const { return m_userIdsHasBeenSet; }
 
     /**
-     * <p>The AWS account IDs. This parameter is valid only when modifying the
-     * <code>loadPermission</code> attribute.</p>
+     * <p>The Amazon Web Services account IDs. This parameter is valid only when
+     * modifying the <code>loadPermission</code> attribute.</p>
      */
     inline void SetUserIds(const Aws::Vector<Aws::String>& value) { m_userIdsHasBeenSet = true; m_userIds = value; }
 
     /**
-     * <p>The AWS account IDs. This parameter is valid only when modifying the
-     * <code>loadPermission</code> attribute.</p>
+     * <p>The Amazon Web Services account IDs. This parameter is valid only when
+     * modifying the <code>loadPermission</code> attribute.</p>
      */
     inline void SetUserIds(Aws::Vector<Aws::String>&& value) { m_userIdsHasBeenSet = true; m_userIds = std::move(value); }
 
     /**
-     * <p>The AWS account IDs. This parameter is valid only when modifying the
-     * <code>loadPermission</code> attribute.</p>
+     * <p>The Amazon Web Services account IDs. This parameter is valid only when
+     * modifying the <code>loadPermission</code> attribute.</p>
      */
     inline ModifyFpgaImageAttributeRequest& WithUserIds(const Aws::Vector<Aws::String>& value) { SetUserIds(value); return *this;}
 
     /**
-     * <p>The AWS account IDs. This parameter is valid only when modifying the
-     * <code>loadPermission</code> attribute.</p>
+     * <p>The Amazon Web Services account IDs. This parameter is valid only when
+     * modifying the <code>loadPermission</code> attribute.</p>
      */
     inline ModifyFpgaImageAttributeRequest& WithUserIds(Aws::Vector<Aws::String>&& value) { SetUserIds(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account IDs. This parameter is valid only when modifying the
-     * <code>loadPermission</code> attribute.</p>
+     * <p>The Amazon Web Services account IDs. This parameter is valid only when
+     * modifying the <code>loadPermission</code> attribute.</p>
      */
     inline ModifyFpgaImageAttributeRequest& AddUserIds(const Aws::String& value) { m_userIdsHasBeenSet = true; m_userIds.push_back(value); return *this; }
 
     /**
-     * <p>The AWS account IDs. This parameter is valid only when modifying the
-     * <code>loadPermission</code> attribute.</p>
+     * <p>The Amazon Web Services account IDs. This parameter is valid only when
+     * modifying the <code>loadPermission</code> attribute.</p>
      */
     inline ModifyFpgaImageAttributeRequest& AddUserIds(Aws::String&& value) { m_userIdsHasBeenSet = true; m_userIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The AWS account IDs. This parameter is valid only when modifying the
-     * <code>loadPermission</code> attribute.</p>
+     * <p>The Amazon Web Services account IDs. This parameter is valid only when
+     * modifying the <code>loadPermission</code> attribute.</p>
      */
     inline ModifyFpgaImageAttributeRequest& AddUserIds(const char* value) { m_userIdsHasBeenSet = true; m_userIds.push_back(value); return *this; }
 

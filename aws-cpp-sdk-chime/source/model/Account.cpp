@@ -28,6 +28,8 @@ Account::Account() :
     m_defaultLicense(License::NOT_SET),
     m_defaultLicenseHasBeenSet(false),
     m_supportedLicensesHasBeenSet(false),
+    m_accountStatus(AccountStatus::NOT_SET),
+    m_accountStatusHasBeenSet(false),
     m_signinDelegateGroupsHasBeenSet(false)
 {
 }
@@ -42,6 +44,8 @@ Account::Account(JsonView jsonValue) :
     m_defaultLicense(License::NOT_SET),
     m_defaultLicenseHasBeenSet(false),
     m_supportedLicensesHasBeenSet(false),
+    m_accountStatus(AccountStatus::NOT_SET),
+    m_accountStatusHasBeenSet(false),
     m_signinDelegateGroupsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -99,6 +103,13 @@ Account& Account::operator =(JsonView jsonValue)
       m_supportedLicenses.push_back(LicenseMapper::GetLicenseForName(supportedLicensesJsonList[supportedLicensesIndex].AsString()));
     }
     m_supportedLicensesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AccountStatus"))
+  {
+    m_accountStatus = AccountStatusMapper::GetAccountStatusForName(jsonValue.GetString("AccountStatus"));
+
+    m_accountStatusHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("SigninDelegateGroups"))
@@ -160,6 +171,11 @@ JsonValue Account::Jsonize() const
    }
    payload.WithArray("SupportedLicenses", std::move(supportedLicensesJsonList));
 
+  }
+
+  if(m_accountStatusHasBeenSet)
+  {
+   payload.WithString("AccountStatus", AccountStatusMapper::GetNameForAccountStatus(m_accountStatus));
   }
 
   if(m_signinDelegateGroupsHasBeenSet)

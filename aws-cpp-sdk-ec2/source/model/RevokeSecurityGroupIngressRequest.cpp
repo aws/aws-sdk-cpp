@@ -23,7 +23,8 @@ RevokeSecurityGroupIngressRequest::RevokeSecurityGroupIngressRequest() :
     m_toPort(0),
     m_toPortHasBeenSet(false),
     m_dryRun(false),
-    m_dryRunHasBeenSet(false)
+    m_dryRunHasBeenSet(false),
+    m_securityGroupRuleIdsHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,17 @@ Aws::String RevokeSecurityGroupIngressRequest::SerializePayload() const
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+  }
+
+  if(m_securityGroupRuleIdsHasBeenSet)
+  {
+    unsigned securityGroupRuleIdsCount = 1;
+    for(auto& item : m_securityGroupRuleIds)
+    {
+      ss << "SecurityGroupRuleId." << securityGroupRuleIdsCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      securityGroupRuleIdsCount++;
+    }
   }
 
   ss << "Version=2016-11-15";

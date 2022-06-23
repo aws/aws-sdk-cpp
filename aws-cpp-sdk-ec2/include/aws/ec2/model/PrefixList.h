@@ -25,9 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes prefixes for AWS services.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PrefixList">AWS API
-   * Reference</a></p>
+   * <p>Describes prefixes for Amazon Web Services services.</p><p><h3>See Also:</h3>
+   * <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PrefixList">AWS
+   * API Reference</a></p>
    */
   class AWS_EC2_API PrefixList
   {
@@ -41,47 +41,47 @@ namespace Model
 
 
     /**
-     * <p>The IP address range of the AWS service.</p>
+     * <p>The IP address range of the Amazon Web Service.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCidrs() const{ return m_cidrs; }
 
     /**
-     * <p>The IP address range of the AWS service.</p>
+     * <p>The IP address range of the Amazon Web Service.</p>
      */
     inline bool CidrsHasBeenSet() const { return m_cidrsHasBeenSet; }
 
     /**
-     * <p>The IP address range of the AWS service.</p>
+     * <p>The IP address range of the Amazon Web Service.</p>
      */
     inline void SetCidrs(const Aws::Vector<Aws::String>& value) { m_cidrsHasBeenSet = true; m_cidrs = value; }
 
     /**
-     * <p>The IP address range of the AWS service.</p>
+     * <p>The IP address range of the Amazon Web Service.</p>
      */
     inline void SetCidrs(Aws::Vector<Aws::String>&& value) { m_cidrsHasBeenSet = true; m_cidrs = std::move(value); }
 
     /**
-     * <p>The IP address range of the AWS service.</p>
+     * <p>The IP address range of the Amazon Web Service.</p>
      */
     inline PrefixList& WithCidrs(const Aws::Vector<Aws::String>& value) { SetCidrs(value); return *this;}
 
     /**
-     * <p>The IP address range of the AWS service.</p>
+     * <p>The IP address range of the Amazon Web Service.</p>
      */
     inline PrefixList& WithCidrs(Aws::Vector<Aws::String>&& value) { SetCidrs(std::move(value)); return *this;}
 
     /**
-     * <p>The IP address range of the AWS service.</p>
+     * <p>The IP address range of the Amazon Web Service.</p>
      */
     inline PrefixList& AddCidrs(const Aws::String& value) { m_cidrsHasBeenSet = true; m_cidrs.push_back(value); return *this; }
 
     /**
-     * <p>The IP address range of the AWS service.</p>
+     * <p>The IP address range of the Amazon Web Service.</p>
      */
     inline PrefixList& AddCidrs(Aws::String&& value) { m_cidrsHasBeenSet = true; m_cidrs.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The IP address range of the AWS service.</p>
+     * <p>The IP address range of the Amazon Web Service.</p>
      */
     inline PrefixList& AddCidrs(const char* value) { m_cidrsHasBeenSet = true; m_cidrs.push_back(value); return *this; }
 

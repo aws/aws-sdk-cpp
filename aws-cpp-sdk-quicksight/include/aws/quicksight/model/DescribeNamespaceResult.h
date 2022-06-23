@@ -35,82 +35,87 @@ namespace Model
 
     /**
      * <p>The information about the namespace that you're describing. The response
-     * includes the namespace ARN, name, AWS Region, creation status, and identity
-     * store. <code>DescribeNamespace</code> also works for namespaces that are in the
-     * process of being created. For incomplete namespaces, this API operation lists
-     * the namespace error types and messages associated with the creation process.</p>
+     * includes the namespace ARN, name, Amazon Web Services Region, creation status,
+     * and identity store. <code>DescribeNamespace</code> also works for namespaces
+     * that are in the process of being created. For incomplete namespaces, this API
+     * operation lists the namespace error types and messages associated with the
+     * creation process.</p>
      */
     inline const NamespaceInfoV2& GetNamespace() const{ return m_namespace; }
 
     /**
      * <p>The information about the namespace that you're describing. The response
-     * includes the namespace ARN, name, AWS Region, creation status, and identity
-     * store. <code>DescribeNamespace</code> also works for namespaces that are in the
-     * process of being created. For incomplete namespaces, this API operation lists
-     * the namespace error types and messages associated with the creation process.</p>
+     * includes the namespace ARN, name, Amazon Web Services Region, creation status,
+     * and identity store. <code>DescribeNamespace</code> also works for namespaces
+     * that are in the process of being created. For incomplete namespaces, this API
+     * operation lists the namespace error types and messages associated with the
+     * creation process.</p>
      */
     inline void SetNamespace(const NamespaceInfoV2& value) { m_namespace = value; }
 
     /**
      * <p>The information about the namespace that you're describing. The response
-     * includes the namespace ARN, name, AWS Region, creation status, and identity
-     * store. <code>DescribeNamespace</code> also works for namespaces that are in the
-     * process of being created. For incomplete namespaces, this API operation lists
-     * the namespace error types and messages associated with the creation process.</p>
+     * includes the namespace ARN, name, Amazon Web Services Region, creation status,
+     * and identity store. <code>DescribeNamespace</code> also works for namespaces
+     * that are in the process of being created. For incomplete namespaces, this API
+     * operation lists the namespace error types and messages associated with the
+     * creation process.</p>
      */
     inline void SetNamespace(NamespaceInfoV2&& value) { m_namespace = std::move(value); }
 
     /**
      * <p>The information about the namespace that you're describing. The response
-     * includes the namespace ARN, name, AWS Region, creation status, and identity
-     * store. <code>DescribeNamespace</code> also works for namespaces that are in the
-     * process of being created. For incomplete namespaces, this API operation lists
-     * the namespace error types and messages associated with the creation process.</p>
+     * includes the namespace ARN, name, Amazon Web Services Region, creation status,
+     * and identity store. <code>DescribeNamespace</code> also works for namespaces
+     * that are in the process of being created. For incomplete namespaces, this API
+     * operation lists the namespace error types and messages associated with the
+     * creation process.</p>
      */
     inline DescribeNamespaceResult& WithNamespace(const NamespaceInfoV2& value) { SetNamespace(value); return *this;}
 
     /**
      * <p>The information about the namespace that you're describing. The response
-     * includes the namespace ARN, name, AWS Region, creation status, and identity
-     * store. <code>DescribeNamespace</code> also works for namespaces that are in the
-     * process of being created. For incomplete namespaces, this API operation lists
-     * the namespace error types and messages associated with the creation process.</p>
+     * includes the namespace ARN, name, Amazon Web Services Region, creation status,
+     * and identity store. <code>DescribeNamespace</code> also works for namespaces
+     * that are in the process of being created. For incomplete namespaces, this API
+     * operation lists the namespace error types and messages associated with the
+     * creation process.</p>
      */
     inline DescribeNamespaceResult& WithNamespace(NamespaceInfoV2&& value) { SetNamespace(std::move(value)); return *this;}
 
 
     /**
-     * <p>The AWS request ID for this operation.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
     /**
-     * <p>The AWS request ID for this operation.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
 
     /**
-     * <p>The AWS request ID for this operation.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
 
     /**
-     * <p>The AWS request ID for this operation.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
 
     /**
-     * <p>The AWS request ID for this operation.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline DescribeNamespaceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
 
     /**
-     * <p>The AWS request ID for this operation.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline DescribeNamespaceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS request ID for this operation.</p>
+     * <p>The Amazon Web Services request ID for this operation.</p>
      */
     inline DescribeNamespaceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
 

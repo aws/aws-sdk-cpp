@@ -9,6 +9,7 @@
 TEST(RegionTest, TestComputeSignerRegionFromPseudoRegion)
 {
     ASSERT_STREQ("us-east-1", Aws::Region::ComputeSignerRegion("aws-global").c_str());
+    ASSERT_STREQ("us-east-1", Aws::Region::ComputeSignerRegion("fips-aws-global").c_str());
     ASSERT_STREQ("us-east-1", Aws::Region::ComputeSignerRegion("us-east-1-fips").c_str());
     ASSERT_STREQ("us-east-1", Aws::Region::ComputeSignerRegion("s3-external-1").c_str());
     ASSERT_STREQ("us-west-2", Aws::Region::ComputeSignerRegion("fips-us-west-2").c_str());

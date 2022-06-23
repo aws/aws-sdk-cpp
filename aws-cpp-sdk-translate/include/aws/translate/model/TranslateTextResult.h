@@ -7,6 +7,7 @@
 #include <aws/translate/Translate_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/translate/model/TranslationSettings.h>
 #include <aws/translate/model/AppliedTerminology.h>
 #include <utility>
 
@@ -184,6 +185,32 @@ namespace Model
      */
     inline TranslateTextResult& AddAppliedTerminologies(AppliedTerminology&& value) { m_appliedTerminologies.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Settings that configure the translation output.</p>
+     */
+    inline const TranslationSettings& GetAppliedSettings() const{ return m_appliedSettings; }
+
+    /**
+     * <p>Settings that configure the translation output.</p>
+     */
+    inline void SetAppliedSettings(const TranslationSettings& value) { m_appliedSettings = value; }
+
+    /**
+     * <p>Settings that configure the translation output.</p>
+     */
+    inline void SetAppliedSettings(TranslationSettings&& value) { m_appliedSettings = std::move(value); }
+
+    /**
+     * <p>Settings that configure the translation output.</p>
+     */
+    inline TranslateTextResult& WithAppliedSettings(const TranslationSettings& value) { SetAppliedSettings(value); return *this;}
+
+    /**
+     * <p>Settings that configure the translation output.</p>
+     */
+    inline TranslateTextResult& WithAppliedSettings(TranslationSettings&& value) { SetAppliedSettings(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_translatedText;
@@ -193,6 +220,8 @@ namespace Model
     Aws::String m_targetLanguageCode;
 
     Aws::Vector<AppliedTerminology> m_appliedTerminologies;
+
+    TranslationSettings m_appliedSettings;
   };
 
 } // namespace Model

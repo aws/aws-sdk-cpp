@@ -117,32 +117,32 @@ namespace Model
     /**
      * <p>LimitExceeded is set to true when the trace has exceeded one of the defined
      * quotas. For more information about quotas, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/xray.html">AWS X-Ray
-     * endpoints and quotas</a>.</p>
+     * href="https://docs.aws.amazon.com/general/latest/gr/xray.html">Amazon Web
+     * Services X-Ray endpoints and quotas</a>.</p>
      */
     inline bool GetLimitExceeded() const{ return m_limitExceeded; }
 
     /**
      * <p>LimitExceeded is set to true when the trace has exceeded one of the defined
      * quotas. For more information about quotas, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/xray.html">AWS X-Ray
-     * endpoints and quotas</a>.</p>
+     * href="https://docs.aws.amazon.com/general/latest/gr/xray.html">Amazon Web
+     * Services X-Ray endpoints and quotas</a>.</p>
      */
     inline bool LimitExceededHasBeenSet() const { return m_limitExceededHasBeenSet; }
 
     /**
      * <p>LimitExceeded is set to true when the trace has exceeded one of the defined
      * quotas. For more information about quotas, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/xray.html">AWS X-Ray
-     * endpoints and quotas</a>.</p>
+     * href="https://docs.aws.amazon.com/general/latest/gr/xray.html">Amazon Web
+     * Services X-Ray endpoints and quotas</a>.</p>
      */
     inline void SetLimitExceeded(bool value) { m_limitExceededHasBeenSet = true; m_limitExceeded = value; }
 
     /**
      * <p>LimitExceeded is set to true when the trace has exceeded one of the defined
      * quotas. For more information about quotas, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/xray.html">AWS X-Ray
-     * endpoints and quotas</a>.</p>
+     * href="https://docs.aws.amazon.com/general/latest/gr/xray.html">Amazon Web
+     * Services X-Ray endpoints and quotas</a>.</p>
      */
     inline Trace& WithLimitExceeded(bool value) { SetLimitExceeded(value); return *this;}
 

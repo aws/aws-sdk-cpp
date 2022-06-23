@@ -330,42 +330,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the IAM role to be used by AWS SMS.</p>
+     * <p>The name of the IAM role to be used by Server Migration Service.</p>
      */
     inline const Aws::String& GetRoleName() const{ return m_roleName; }
 
     /**
-     * <p>The name of the IAM role to be used by AWS SMS.</p>
+     * <p>The name of the IAM role to be used by Server Migration Service.</p>
      */
     inline bool RoleNameHasBeenSet() const { return m_roleNameHasBeenSet; }
 
     /**
-     * <p>The name of the IAM role to be used by AWS SMS.</p>
+     * <p>The name of the IAM role to be used by Server Migration Service.</p>
      */
     inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
 
     /**
-     * <p>The name of the IAM role to be used by AWS SMS.</p>
+     * <p>The name of the IAM role to be used by Server Migration Service.</p>
      */
     inline void SetRoleName(Aws::String&& value) { m_roleNameHasBeenSet = true; m_roleName = std::move(value); }
 
     /**
-     * <p>The name of the IAM role to be used by AWS SMS.</p>
+     * <p>The name of the IAM role to be used by Server Migration Service.</p>
      */
     inline void SetRoleName(const char* value) { m_roleNameHasBeenSet = true; m_roleName.assign(value); }
 
     /**
-     * <p>The name of the IAM role to be used by AWS SMS.</p>
+     * <p>The name of the IAM role to be used by Server Migration Service.</p>
      */
     inline ReplicationJob& WithRoleName(const Aws::String& value) { SetRoleName(value); return *this;}
 
     /**
-     * <p>The name of the IAM role to be used by AWS SMS.</p>
+     * <p>The name of the IAM role to be used by Server Migration Service.</p>
      */
     inline ReplicationJob& WithRoleName(Aws::String&& value) { SetRoleName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the IAM role to be used by AWS SMS.</p>
+     * <p>The name of the IAM role to be used by Server Migration Service.</p>
      */
     inline ReplicationJob& WithRoleName(const char* value) { SetRoleName(value); return *this;}
 

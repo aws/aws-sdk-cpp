@@ -192,50 +192,50 @@ namespace Model
 
 
     /**
-     * <p>Suppresses the specified device included in the block device mapping of the
-     * AMI.</p>
+     * <p>To omit the device from the block device mapping, specify an empty
+     * string.</p>
      */
     inline const Aws::String& GetNoDevice() const{ return m_noDevice; }
 
     /**
-     * <p>Suppresses the specified device included in the block device mapping of the
-     * AMI.</p>
+     * <p>To omit the device from the block device mapping, specify an empty
+     * string.</p>
      */
     inline bool NoDeviceHasBeenSet() const { return m_noDeviceHasBeenSet; }
 
     /**
-     * <p>Suppresses the specified device included in the block device mapping of the
-     * AMI.</p>
+     * <p>To omit the device from the block device mapping, specify an empty
+     * string.</p>
      */
     inline void SetNoDevice(const Aws::String& value) { m_noDeviceHasBeenSet = true; m_noDevice = value; }
 
     /**
-     * <p>Suppresses the specified device included in the block device mapping of the
-     * AMI.</p>
+     * <p>To omit the device from the block device mapping, specify an empty
+     * string.</p>
      */
     inline void SetNoDevice(Aws::String&& value) { m_noDeviceHasBeenSet = true; m_noDevice = std::move(value); }
 
     /**
-     * <p>Suppresses the specified device included in the block device mapping of the
-     * AMI.</p>
+     * <p>To omit the device from the block device mapping, specify an empty
+     * string.</p>
      */
     inline void SetNoDevice(const char* value) { m_noDeviceHasBeenSet = true; m_noDevice.assign(value); }
 
     /**
-     * <p>Suppresses the specified device included in the block device mapping of the
-     * AMI.</p>
+     * <p>To omit the device from the block device mapping, specify an empty
+     * string.</p>
      */
     inline LaunchTemplateBlockDeviceMappingRequest& WithNoDevice(const Aws::String& value) { SetNoDevice(value); return *this;}
 
     /**
-     * <p>Suppresses the specified device included in the block device mapping of the
-     * AMI.</p>
+     * <p>To omit the device from the block device mapping, specify an empty
+     * string.</p>
      */
     inline LaunchTemplateBlockDeviceMappingRequest& WithNoDevice(Aws::String&& value) { SetNoDevice(std::move(value)); return *this;}
 
     /**
-     * <p>Suppresses the specified device included in the block device mapping of the
-     * AMI.</p>
+     * <p>To omit the device from the block device mapping, specify an empty
+     * string.</p>
      */
     inline LaunchTemplateBlockDeviceMappingRequest& WithNoDevice(const char* value) { SetNoDevice(value); return *this;}
 

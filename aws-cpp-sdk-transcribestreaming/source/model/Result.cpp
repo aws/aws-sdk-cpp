@@ -27,7 +27,10 @@ Result::Result() :
     m_isPartial(false),
     m_isPartialHasBeenSet(false),
     m_alternativesHasBeenSet(false),
-    m_channelIdHasBeenSet(false)
+    m_channelIdHasBeenSet(false),
+    m_languageCode(LanguageCode::NOT_SET),
+    m_languageCodeHasBeenSet(false),
+    m_languageIdentificationHasBeenSet(false)
 {
 }
 
@@ -40,7 +43,10 @@ Result::Result(JsonView jsonValue) :
     m_isPartial(false),
     m_isPartialHasBeenSet(false),
     m_alternativesHasBeenSet(false),
-    m_channelIdHasBeenSet(false)
+    m_channelIdHasBeenSet(false),
+    m_languageCode(LanguageCode::NOT_SET),
+    m_languageCodeHasBeenSet(false),
+    m_languageIdentificationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -92,6 +98,23 @@ Result& Result::operator =(JsonView jsonValue)
     m_channelIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LanguageCode"))
+  {
+    m_languageCode = LanguageCodeMapper::GetLanguageCodeForName(jsonValue.GetString("LanguageCode"));
+
+    m_languageCodeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LanguageIdentification"))
+  {
+    Array<JsonView> languageIdentificationJsonList = jsonValue.GetArray("LanguageIdentification");
+    for(unsigned languageIdentificationIndex = 0; languageIdentificationIndex < languageIdentificationJsonList.GetLength(); ++languageIdentificationIndex)
+    {
+      m_languageIdentification.push_back(languageIdentificationJsonList[languageIdentificationIndex].AsObject());
+    }
+    m_languageIdentificationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -137,6 +160,22 @@ JsonValue Result::Jsonize() const
   if(m_channelIdHasBeenSet)
   {
    payload.WithString("ChannelId", m_channelId);
+
+  }
+
+  if(m_languageCodeHasBeenSet)
+  {
+   payload.WithString("LanguageCode", LanguageCodeMapper::GetNameForLanguageCode(m_languageCode));
+  }
+
+  if(m_languageIdentificationHasBeenSet)
+  {
+   Array<JsonValue> languageIdentificationJsonList(m_languageIdentification.size());
+   for(unsigned languageIdentificationIndex = 0; languageIdentificationIndex < languageIdentificationJsonList.GetLength(); ++languageIdentificationIndex)
+   {
+     languageIdentificationJsonList[languageIdentificationIndex].AsObject(m_languageIdentification[languageIdentificationIndex].Jsonize());
+   }
+   payload.WithArray("LanguageIdentification", std::move(languageIdentificationJsonList));
 
   }
 

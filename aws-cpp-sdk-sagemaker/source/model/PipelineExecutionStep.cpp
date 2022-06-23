@@ -20,11 +20,15 @@ namespace Model
 
 PipelineExecutionStep::PipelineExecutionStep() : 
     m_stepNameHasBeenSet(false),
+    m_stepDisplayNameHasBeenSet(false),
+    m_stepDescriptionHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_stepStatus(StepStatus::NOT_SET),
     m_stepStatusHasBeenSet(false),
     m_cacheHitResultHasBeenSet(false),
+    m_attemptCount(0),
+    m_attemptCountHasBeenSet(false),
     m_failureReasonHasBeenSet(false),
     m_metadataHasBeenSet(false)
 {
@@ -32,11 +36,15 @@ PipelineExecutionStep::PipelineExecutionStep() :
 
 PipelineExecutionStep::PipelineExecutionStep(JsonView jsonValue) : 
     m_stepNameHasBeenSet(false),
+    m_stepDisplayNameHasBeenSet(false),
+    m_stepDescriptionHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_stepStatus(StepStatus::NOT_SET),
     m_stepStatusHasBeenSet(false),
     m_cacheHitResultHasBeenSet(false),
+    m_attemptCount(0),
+    m_attemptCountHasBeenSet(false),
     m_failureReasonHasBeenSet(false),
     m_metadataHasBeenSet(false)
 {
@@ -50,6 +58,20 @@ PipelineExecutionStep& PipelineExecutionStep::operator =(JsonView jsonValue)
     m_stepName = jsonValue.GetString("StepName");
 
     m_stepNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StepDisplayName"))
+  {
+    m_stepDisplayName = jsonValue.GetString("StepDisplayName");
+
+    m_stepDisplayNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StepDescription"))
+  {
+    m_stepDescription = jsonValue.GetString("StepDescription");
+
+    m_stepDescriptionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("StartTime"))
@@ -80,6 +102,13 @@ PipelineExecutionStep& PipelineExecutionStep::operator =(JsonView jsonValue)
     m_cacheHitResultHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AttemptCount"))
+  {
+    m_attemptCount = jsonValue.GetInteger("AttemptCount");
+
+    m_attemptCountHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("FailureReason"))
   {
     m_failureReason = jsonValue.GetString("FailureReason");
@@ -107,6 +136,18 @@ JsonValue PipelineExecutionStep::Jsonize() const
 
   }
 
+  if(m_stepDisplayNameHasBeenSet)
+  {
+   payload.WithString("StepDisplayName", m_stepDisplayName);
+
+  }
+
+  if(m_stepDescriptionHasBeenSet)
+  {
+   payload.WithString("StepDescription", m_stepDescription);
+
+  }
+
   if(m_startTimeHasBeenSet)
   {
    payload.WithDouble("StartTime", m_startTime.SecondsWithMSPrecision());
@@ -125,6 +166,12 @@ JsonValue PipelineExecutionStep::Jsonize() const
   if(m_cacheHitResultHasBeenSet)
   {
    payload.WithObject("CacheHitResult", m_cacheHitResult.Jsonize());
+
+  }
+
+  if(m_attemptCountHasBeenSet)
+  {
+   payload.WithInteger("AttemptCount", m_attemptCount);
 
   }
 

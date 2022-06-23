@@ -20,6 +20,7 @@ namespace Model
     InstanceArn,
     InstanceName,
     Finding,
+    FindingReasonCodes,
     LookbackPeriodInDays,
     CurrentInstanceType,
     UtilizationMetricsCpuMaximum,
@@ -28,6 +29,14 @@ namespace Model
     UtilizationMetricsEbsWriteOpsPerSecondMaximum,
     UtilizationMetricsEbsReadBytesPerSecondMaximum,
     UtilizationMetricsEbsWriteBytesPerSecondMaximum,
+    UtilizationMetricsDiskReadOpsPerSecondMaximum,
+    UtilizationMetricsDiskWriteOpsPerSecondMaximum,
+    UtilizationMetricsDiskReadBytesPerSecondMaximum,
+    UtilizationMetricsDiskWriteBytesPerSecondMaximum,
+    UtilizationMetricsNetworkInBytesPerSecondMaximum,
+    UtilizationMetricsNetworkOutBytesPerSecondMaximum,
+    UtilizationMetricsNetworkPacketsInPerSecondMaximum,
+    UtilizationMetricsNetworkPacketsOutPerSecondMaximum,
     CurrentOnDemandPrice,
     CurrentStandardOneYearNoUpfrontReservedPrice,
     CurrentStandardThreeYearNoUpfrontReservedPrice,
@@ -38,6 +47,7 @@ namespace Model
     RecommendationOptionsInstanceType,
     RecommendationOptionsProjectedUtilizationMetricsCpuMaximum,
     RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum,
+    RecommendationOptionsPlatformDifferences,
     RecommendationOptionsPerformanceRisk,
     RecommendationOptionsVcpus,
     RecommendationOptionsMemory,
@@ -48,7 +58,16 @@ namespace Model
     RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice,
     RecommendationsSourcesRecommendationSourceArn,
     RecommendationsSourcesRecommendationSourceType,
-    LastRefreshTimestamp
+    LastRefreshTimestamp,
+    CurrentPerformanceRisk,
+    RecommendationOptionsSavingsOpportunityPercentage,
+    RecommendationOptionsEstimatedMonthlySavingsCurrency,
+    RecommendationOptionsEstimatedMonthlySavingsValue,
+    EffectiveRecommendationPreferencesCpuVendorArchitectures,
+    EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics,
+    EffectiveRecommendationPreferencesInferredWorkloadTypes,
+    InferredWorkloadTypes,
+    RecommendationOptionsMigrationEffort
   };
 
 namespace ExportableInstanceFieldMapper

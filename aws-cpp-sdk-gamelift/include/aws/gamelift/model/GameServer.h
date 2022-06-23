@@ -27,16 +27,17 @@ namespace Model
 {
 
   /**
-   * <p> <b>This data type is used with the Amazon GameLift FleetIQ and game server
+   * <p> <b>This data type is used with the GameLift FleetIQ and game server
    * groups.</b> </p> <p>Properties describing a game server that is running on an
    * instance in a <a>GameServerGroup</a>. </p> <p>A game server is created by a
    * successful call to <code>RegisterGameServer</code> and deleted by calling
    * <code>DeregisterGameServer</code>. A game server is claimed to host a game
-   * session by calling <code>ClaimGameServer</code>. </p> <ul> <li> <p>
-   * <a>RegisterGameServer</a> </p> </li> <li> <p> <a>ListGameServers</a> </p> </li>
-   * <li> <p> <a>ClaimGameServer</a> </p> </li> <li> <p> <a>DescribeGameServer</a>
-   * </p> </li> <li> <p> <a>UpdateGameServer</a> </p> </li> <li> <p>
-   * <a>DeregisterGameServer</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * session by calling <code>ClaimGameServer</code>. </p> <p> <b>Related actions</b>
+   * </p> <p> <a>RegisterGameServer</a> | <a>ListGameServers</a> |
+   * <a>ClaimGameServer</a> | <a>DescribeGameServer</a> | <a>UpdateGameServer</a> |
+   * <a>DeregisterGameServer</a> | <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All
+   * APIs by task</a> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameServer">AWS
    * API Reference</a></p>
    */
@@ -149,57 +150,57 @@ namespace Model
 
     /**
      * <p>A custom string that uniquely identifies the game server. Game server IDs are
-     * developer-defined and are unique across all game server groups in an AWS
-     * account.</p>
+     * developer-defined and are unique across all game server groups in an Amazon Web
+     * Services account.</p>
      */
     inline const Aws::String& GetGameServerId() const{ return m_gameServerId; }
 
     /**
      * <p>A custom string that uniquely identifies the game server. Game server IDs are
-     * developer-defined and are unique across all game server groups in an AWS
-     * account.</p>
+     * developer-defined and are unique across all game server groups in an Amazon Web
+     * Services account.</p>
      */
     inline bool GameServerIdHasBeenSet() const { return m_gameServerIdHasBeenSet; }
 
     /**
      * <p>A custom string that uniquely identifies the game server. Game server IDs are
-     * developer-defined and are unique across all game server groups in an AWS
-     * account.</p>
+     * developer-defined and are unique across all game server groups in an Amazon Web
+     * Services account.</p>
      */
     inline void SetGameServerId(const Aws::String& value) { m_gameServerIdHasBeenSet = true; m_gameServerId = value; }
 
     /**
      * <p>A custom string that uniquely identifies the game server. Game server IDs are
-     * developer-defined and are unique across all game server groups in an AWS
-     * account.</p>
+     * developer-defined and are unique across all game server groups in an Amazon Web
+     * Services account.</p>
      */
     inline void SetGameServerId(Aws::String&& value) { m_gameServerIdHasBeenSet = true; m_gameServerId = std::move(value); }
 
     /**
      * <p>A custom string that uniquely identifies the game server. Game server IDs are
-     * developer-defined and are unique across all game server groups in an AWS
-     * account.</p>
+     * developer-defined and are unique across all game server groups in an Amazon Web
+     * Services account.</p>
      */
     inline void SetGameServerId(const char* value) { m_gameServerIdHasBeenSet = true; m_gameServerId.assign(value); }
 
     /**
      * <p>A custom string that uniquely identifies the game server. Game server IDs are
-     * developer-defined and are unique across all game server groups in an AWS
-     * account.</p>
+     * developer-defined and are unique across all game server groups in an Amazon Web
+     * Services account.</p>
      */
     inline GameServer& WithGameServerId(const Aws::String& value) { SetGameServerId(value); return *this;}
 
     /**
      * <p>A custom string that uniquely identifies the game server. Game server IDs are
-     * developer-defined and are unique across all game server groups in an AWS
-     * account.</p>
+     * developer-defined and are unique across all game server groups in an Amazon Web
+     * Services account.</p>
      */
     inline GameServer& WithGameServerId(Aws::String&& value) { SetGameServerId(std::move(value)); return *this;}
 
     /**
      * <p>A custom string that uniquely identifies the game server. Game server IDs are
-     * developer-defined and are unique across all game server groups in an AWS
-     * account.</p>
+     * developer-defined and are unique across all game server groups in an Amazon Web
+     * Services account.</p>
      */
     inline GameServer& WithGameServerId(const char* value) { SetGameServerId(value); return *this;}
 

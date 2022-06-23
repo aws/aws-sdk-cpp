@@ -34,31 +34,31 @@ namespace Model
 
     /**
      * <p>Describes the file system's backup policy, indicating whether automatic
-     * backups are turned on or off..</p>
+     * backups are turned on or off.</p>
      */
     inline const BackupPolicy& GetBackupPolicy() const{ return m_backupPolicy; }
 
     /**
      * <p>Describes the file system's backup policy, indicating whether automatic
-     * backups are turned on or off..</p>
+     * backups are turned on or off.</p>
      */
     inline void SetBackupPolicy(const BackupPolicy& value) { m_backupPolicy = value; }
 
     /**
      * <p>Describes the file system's backup policy, indicating whether automatic
-     * backups are turned on or off..</p>
+     * backups are turned on or off.</p>
      */
     inline void SetBackupPolicy(BackupPolicy&& value) { m_backupPolicy = std::move(value); }
 
     /**
      * <p>Describes the file system's backup policy, indicating whether automatic
-     * backups are turned on or off..</p>
+     * backups are turned on or off.</p>
      */
     inline PutBackupPolicyResult& WithBackupPolicy(const BackupPolicy& value) { SetBackupPolicy(value); return *this;}
 
     /**
      * <p>Describes the file system's backup policy, indicating whether automatic
-     * backups are turned on or off..</p>
+     * backups are turned on or off.</p>
      */
     inline PutBackupPolicyResult& WithBackupPolicy(BackupPolicy&& value) { SetBackupPolicy(std::move(value)); return *this;}
 

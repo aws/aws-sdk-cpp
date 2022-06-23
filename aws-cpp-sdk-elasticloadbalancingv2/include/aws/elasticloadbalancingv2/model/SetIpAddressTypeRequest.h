@@ -80,49 +80,49 @@ namespace Model
 
     /**
      * <p>The IP address type. The possible values are <code>ipv4</code> (for IPv4
-     * addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal
-     * load balancers must use <code>ipv4</code>. You can’t specify
-     * <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener.</p>
+     * addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t
+     * specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP
+     * listener.</p>
      */
     inline const IpAddressType& GetIpAddressType() const{ return m_ipAddressType; }
 
     /**
      * <p>The IP address type. The possible values are <code>ipv4</code> (for IPv4
-     * addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal
-     * load balancers must use <code>ipv4</code>. You can’t specify
-     * <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener.</p>
+     * addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t
+     * specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP
+     * listener.</p>
      */
     inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
 
     /**
      * <p>The IP address type. The possible values are <code>ipv4</code> (for IPv4
-     * addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal
-     * load balancers must use <code>ipv4</code>. You can’t specify
-     * <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener.</p>
+     * addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t
+     * specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP
+     * listener.</p>
      */
     inline void SetIpAddressType(const IpAddressType& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
 
     /**
      * <p>The IP address type. The possible values are <code>ipv4</code> (for IPv4
-     * addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal
-     * load balancers must use <code>ipv4</code>. You can’t specify
-     * <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener.</p>
+     * addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t
+     * specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP
+     * listener.</p>
      */
     inline void SetIpAddressType(IpAddressType&& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = std::move(value); }
 
     /**
      * <p>The IP address type. The possible values are <code>ipv4</code> (for IPv4
-     * addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal
-     * load balancers must use <code>ipv4</code>. You can’t specify
-     * <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener.</p>
+     * addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t
+     * specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP
+     * listener.</p>
      */
     inline SetIpAddressTypeRequest& WithIpAddressType(const IpAddressType& value) { SetIpAddressType(value); return *this;}
 
     /**
      * <p>The IP address type. The possible values are <code>ipv4</code> (for IPv4
-     * addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal
-     * load balancers must use <code>ipv4</code>. You can’t specify
-     * <code>dualstack</code> for a load balancer with a UDP or TCP_UDP listener.</p>
+     * addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t
+     * specify <code>dualstack</code> for a load balancer with a UDP or TCP_UDP
+     * listener.</p>
      */
     inline SetIpAddressTypeRequest& WithIpAddressType(IpAddressType&& value) { SetIpAddressType(std::move(value)); return *this;}
 

@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Summary of a Service Catalog AppRegistry application.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Summary of a Amazon Web Services Service Catalog AppRegistry
+   * application.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ApplicationSummary">AWS
    * API Reference</a></p>
    */

@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p> A collection of attributes used to create a delegation for an assessment in
-   * AWS Audit Manager. </p><p><h3>See Also:</h3>   <a
+   * <p> A collection of attributes that's used to create a delegation for an
+   * assessment in Audit Manager. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/CreateDelegationRequest">AWS
    * API Reference</a></p>
    */
@@ -40,42 +40,42 @@ namespace Model
 
 
     /**
-     * <p> A comment related to the delegation request. </p>
+     * <p> A comment that's related to the delegation request. </p>
      */
     inline const Aws::String& GetComment() const{ return m_comment; }
 
     /**
-     * <p> A comment related to the delegation request. </p>
+     * <p> A comment that's related to the delegation request. </p>
      */
     inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
 
     /**
-     * <p> A comment related to the delegation request. </p>
+     * <p> A comment that's related to the delegation request. </p>
      */
     inline void SetComment(const Aws::String& value) { m_commentHasBeenSet = true; m_comment = value; }
 
     /**
-     * <p> A comment related to the delegation request. </p>
+     * <p> A comment that's related to the delegation request. </p>
      */
     inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = std::move(value); }
 
     /**
-     * <p> A comment related to the delegation request. </p>
+     * <p> A comment that's related to the delegation request. </p>
      */
     inline void SetComment(const char* value) { m_commentHasBeenSet = true; m_comment.assign(value); }
 
     /**
-     * <p> A comment related to the delegation request. </p>
+     * <p> A comment that's related to the delegation request. </p>
      */
     inline CreateDelegationRequest& WithComment(const Aws::String& value) { SetComment(value); return *this;}
 
     /**
-     * <p> A comment related to the delegation request. </p>
+     * <p> A comment that's related to the delegation request. </p>
      */
     inline CreateDelegationRequest& WithComment(Aws::String&& value) { SetComment(std::move(value)); return *this;}
 
     /**
-     * <p> A comment related to the delegation request. </p>
+     * <p> A comment that's related to the delegation request. </p>
      */
     inline CreateDelegationRequest& WithComment(const char* value) { SetComment(value); return *this;}
 

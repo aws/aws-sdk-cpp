@@ -21,6 +21,8 @@ CopyObjectRequest::CopyObjectRequest() :
     m_aCLHasBeenSet(false),
     m_bucketHasBeenSet(false),
     m_cacheControlHasBeenSet(false),
+    m_checksumAlgorithm(ChecksumAlgorithm::NOT_SET),
+    m_checksumAlgorithmHasBeenSet(false),
     m_contentDispositionHasBeenSet(false),
     m_contentEncodingHasBeenSet(false),
     m_contentLanguageHasBeenSet(false),
@@ -111,6 +113,11 @@ Aws::Http::HeaderValueCollection CopyObjectRequest::GetRequestSpecificHeaders() 
     ss << m_cacheControl;
     headers.emplace("cache-control",  ss.str());
     ss.str("");
+  }
+
+  if(m_checksumAlgorithmHasBeenSet)
+  {
+    headers.emplace("x-amz-checksum-algorithm", ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm));
   }
 
   if(m_contentDispositionHasBeenSet)
@@ -279,8 +286,8 @@ Aws::Http::HeaderValueCollection CopyObjectRequest::GetRequestSpecificHeaders() 
 
   if(m_bucketKeyEnabledHasBeenSet)
   {
-    ss << m_bucketKeyEnabled;
-    headers.emplace("x-amz-server-side-encryption-bucket-key-enabled",  ss.str());
+    ss << std::boolalpha << m_bucketKeyEnabled;
+    headers.emplace("x-amz-server-side-encryption-bucket-key-enabled", ss.str());
     ss.str("");
   }
 
@@ -324,7 +331,7 @@ Aws::Http::HeaderValueCollection CopyObjectRequest::GetRequestSpecificHeaders() 
 
   if(m_objectLockRetainUntilDateHasBeenSet)
   {
-    headers.emplace("x-amz-object-lock-retain-until-date", m_objectLockRetainUntilDate.ToGmtString(DateFormat::RFC822));
+    headers.emplace("x-amz-object-lock-retain-until-date", m_objectLockRetainUntilDate.ToGmtString(DateFormat::ISO_8601));
   }
 
   if(m_objectLockLegalHoldStatusHasBeenSet)

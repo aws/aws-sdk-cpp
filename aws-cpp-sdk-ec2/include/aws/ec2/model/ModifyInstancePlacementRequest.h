@@ -225,53 +225,81 @@ namespace Model
 
 
     /**
-     * <p>The tenancy for the instance.</p>
+     * <p>The tenancy for the instance.</p>  <p>For T3 instances, you can't
+     * change the tenancy from <code>dedicated</code> to <code>host</code>, or from
+     * <code>host</code> to <code>dedicated</code>. Attempting to make one of these
+     * unsupported tenancy changes results in the <code>InvalidTenancy</code> error
+     * code.</p> 
      */
     inline const HostTenancy& GetTenancy() const{ return m_tenancy; }
 
     /**
-     * <p>The tenancy for the instance.</p>
+     * <p>The tenancy for the instance.</p>  <p>For T3 instances, you can't
+     * change the tenancy from <code>dedicated</code> to <code>host</code>, or from
+     * <code>host</code> to <code>dedicated</code>. Attempting to make one of these
+     * unsupported tenancy changes results in the <code>InvalidTenancy</code> error
+     * code.</p> 
      */
     inline bool TenancyHasBeenSet() const { return m_tenancyHasBeenSet; }
 
     /**
-     * <p>The tenancy for the instance.</p>
+     * <p>The tenancy for the instance.</p>  <p>For T3 instances, you can't
+     * change the tenancy from <code>dedicated</code> to <code>host</code>, or from
+     * <code>host</code> to <code>dedicated</code>. Attempting to make one of these
+     * unsupported tenancy changes results in the <code>InvalidTenancy</code> error
+     * code.</p> 
      */
     inline void SetTenancy(const HostTenancy& value) { m_tenancyHasBeenSet = true; m_tenancy = value; }
 
     /**
-     * <p>The tenancy for the instance.</p>
+     * <p>The tenancy for the instance.</p>  <p>For T3 instances, you can't
+     * change the tenancy from <code>dedicated</code> to <code>host</code>, or from
+     * <code>host</code> to <code>dedicated</code>. Attempting to make one of these
+     * unsupported tenancy changes results in the <code>InvalidTenancy</code> error
+     * code.</p> 
      */
     inline void SetTenancy(HostTenancy&& value) { m_tenancyHasBeenSet = true; m_tenancy = std::move(value); }
 
     /**
-     * <p>The tenancy for the instance.</p>
+     * <p>The tenancy for the instance.</p>  <p>For T3 instances, you can't
+     * change the tenancy from <code>dedicated</code> to <code>host</code>, or from
+     * <code>host</code> to <code>dedicated</code>. Attempting to make one of these
+     * unsupported tenancy changes results in the <code>InvalidTenancy</code> error
+     * code.</p> 
      */
     inline ModifyInstancePlacementRequest& WithTenancy(const HostTenancy& value) { SetTenancy(value); return *this;}
 
     /**
-     * <p>The tenancy for the instance.</p>
+     * <p>The tenancy for the instance.</p>  <p>For T3 instances, you can't
+     * change the tenancy from <code>dedicated</code> to <code>host</code>, or from
+     * <code>host</code> to <code>dedicated</code>. Attempting to make one of these
+     * unsupported tenancy changes results in the <code>InvalidTenancy</code> error
+     * code.</p> 
      */
     inline ModifyInstancePlacementRequest& WithTenancy(HostTenancy&& value) { SetTenancy(std::move(value)); return *this;}
 
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The number of the partition in which to place the instance. Valid only if the
+     * placement group strategy is set to <code>partition</code>.</p>
      */
     inline int GetPartitionNumber() const{ return m_partitionNumber; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The number of the partition in which to place the instance. Valid only if the
+     * placement group strategy is set to <code>partition</code>.</p>
      */
     inline bool PartitionNumberHasBeenSet() const { return m_partitionNumberHasBeenSet; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The number of the partition in which to place the instance. Valid only if the
+     * placement group strategy is set to <code>partition</code>.</p>
      */
     inline void SetPartitionNumber(int value) { m_partitionNumberHasBeenSet = true; m_partitionNumber = value; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The number of the partition in which to place the instance. Valid only if the
+     * placement group strategy is set to <code>partition</code>.</p>
      */
     inline ModifyInstancePlacementRequest& WithPartitionNumber(int value) { SetPartitionNumber(value); return *this;}
 

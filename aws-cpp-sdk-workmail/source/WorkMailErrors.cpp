@@ -25,12 +25,14 @@ static const int ORGANIZATION_NOT_FOUND_HASH = HashingUtils::HashString("Organiz
 static const int DIRECTORY_UNAVAILABLE_HASH = HashingUtils::HashString("DirectoryUnavailableException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int MAIL_DOMAIN_NOT_FOUND_HASH = HashingUtils::HashString("MailDomainNotFoundException");
+static const int INVALID_CUSTOM_SES_CONFIGURATION_HASH = HashingUtils::HashString("InvalidCustomSesConfigurationException");
 static const int EMAIL_ADDRESS_IN_USE_HASH = HashingUtils::HashString("EmailAddressInUseException");
 static const int RESERVED_NAME_HASH = HashingUtils::HashString("ReservedNameException");
 static const int ORGANIZATION_STATE_HASH = HashingUtils::HashString("OrganizationStateException");
 static const int ENTITY_NOT_FOUND_HASH = HashingUtils::HashString("EntityNotFoundException");
 static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
 static const int INVALID_CONFIGURATION_HASH = HashingUtils::HashString("InvalidConfigurationException");
+static const int MAIL_DOMAIN_IN_USE_HASH = HashingUtils::HashString("MailDomainInUseException");
 static const int ENTITY_ALREADY_REGISTERED_HASH = HashingUtils::HashString("EntityAlreadyRegisteredException");
 static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
 static const int UNSUPPORTED_OPERATION_HASH = HashingUtils::HashString("UnsupportedOperationException");
@@ -71,6 +73,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailErrors::MAIL_DOMAIN_NOT_FOUND), false);
   }
+  else if (hashCode == INVALID_CUSTOM_SES_CONFIGURATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailErrors::INVALID_CUSTOM_SES_CONFIGURATION), false);
+  }
   else if (hashCode == EMAIL_ADDRESS_IN_USE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailErrors::EMAIL_ADDRESS_IN_USE), false);
@@ -94,6 +100,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_CONFIGURATION_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailErrors::INVALID_CONFIGURATION), false);
+  }
+  else if (hashCode == MAIL_DOMAIN_IN_USE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailErrors::MAIL_DOMAIN_IN_USE), false);
   }
   else if (hashCode == ENTITY_ALREADY_REGISTERED_HASH)
   {

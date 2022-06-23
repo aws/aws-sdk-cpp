@@ -50,58 +50,42 @@ namespace Model
 
 
     /**
-     * <p>If you specified a duration and your Spot Instance request was fulfilled,
-     * this is the fixed hourly price in effect for the Spot Instance while it
-     * runs.</p>
+     * <p>Deprecated.</p>
      */
     inline const Aws::String& GetActualBlockHourlyPrice() const{ return m_actualBlockHourlyPrice; }
 
     /**
-     * <p>If you specified a duration and your Spot Instance request was fulfilled,
-     * this is the fixed hourly price in effect for the Spot Instance while it
-     * runs.</p>
+     * <p>Deprecated.</p>
      */
     inline bool ActualBlockHourlyPriceHasBeenSet() const { return m_actualBlockHourlyPriceHasBeenSet; }
 
     /**
-     * <p>If you specified a duration and your Spot Instance request was fulfilled,
-     * this is the fixed hourly price in effect for the Spot Instance while it
-     * runs.</p>
+     * <p>Deprecated.</p>
      */
     inline void SetActualBlockHourlyPrice(const Aws::String& value) { m_actualBlockHourlyPriceHasBeenSet = true; m_actualBlockHourlyPrice = value; }
 
     /**
-     * <p>If you specified a duration and your Spot Instance request was fulfilled,
-     * this is the fixed hourly price in effect for the Spot Instance while it
-     * runs.</p>
+     * <p>Deprecated.</p>
      */
     inline void SetActualBlockHourlyPrice(Aws::String&& value) { m_actualBlockHourlyPriceHasBeenSet = true; m_actualBlockHourlyPrice = std::move(value); }
 
     /**
-     * <p>If you specified a duration and your Spot Instance request was fulfilled,
-     * this is the fixed hourly price in effect for the Spot Instance while it
-     * runs.</p>
+     * <p>Deprecated.</p>
      */
     inline void SetActualBlockHourlyPrice(const char* value) { m_actualBlockHourlyPriceHasBeenSet = true; m_actualBlockHourlyPrice.assign(value); }
 
     /**
-     * <p>If you specified a duration and your Spot Instance request was fulfilled,
-     * this is the fixed hourly price in effect for the Spot Instance while it
-     * runs.</p>
+     * <p>Deprecated.</p>
      */
     inline SpotInstanceRequest& WithActualBlockHourlyPrice(const Aws::String& value) { SetActualBlockHourlyPrice(value); return *this;}
 
     /**
-     * <p>If you specified a duration and your Spot Instance request was fulfilled,
-     * this is the fixed hourly price in effect for the Spot Instance while it
-     * runs.</p>
+     * <p>Deprecated.</p>
      */
     inline SpotInstanceRequest& WithActualBlockHourlyPrice(Aws::String&& value) { SetActualBlockHourlyPrice(std::move(value)); return *this;}
 
     /**
-     * <p>If you specified a duration and your Spot Instance request was fulfilled,
-     * this is the fixed hourly price in effect for the Spot Instance while it
-     * runs.</p>
+     * <p>Deprecated.</p>
      */
     inline SpotInstanceRequest& WithActualBlockHourlyPrice(const char* value) { SetActualBlockHourlyPrice(value); return *this;}
 
@@ -164,22 +148,22 @@ namespace Model
 
 
     /**
-     * <p>The duration for the Spot Instance, in minutes.</p>
+     * <p>Deprecated.</p>
      */
     inline int GetBlockDurationMinutes() const{ return m_blockDurationMinutes; }
 
     /**
-     * <p>The duration for the Spot Instance, in minutes.</p>
+     * <p>Deprecated.</p>
      */
     inline bool BlockDurationMinutesHasBeenSet() const { return m_blockDurationMinutesHasBeenSet; }
 
     /**
-     * <p>The duration for the Spot Instance, in minutes.</p>
+     * <p>Deprecated.</p>
      */
     inline void SetBlockDurationMinutes(int value) { m_blockDurationMinutesHasBeenSet = true; m_blockDurationMinutes = value; }
 
     /**
-     * <p>The duration for the Spot Instance, in minutes.</p>
+     * <p>Deprecated.</p>
      */
     inline SpotInstanceRequest& WithBlockDurationMinutes(int value) { SetBlockDurationMinutes(value); return *this;}
 
@@ -550,50 +534,50 @@ namespace Model
 
 
     /**
-     * <p>The state of the Spot Instance request. Spot status information helps track
-     * your Spot Instance requests. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     * status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * <p>The state of the Spot Instance request. Spot request status information helps
+     * track your Spot Instance requests. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-request-status.html">Spot
+     * request status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline const SpotInstanceState& GetState() const{ return m_state; }
 
     /**
-     * <p>The state of the Spot Instance request. Spot status information helps track
-     * your Spot Instance requests. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     * status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * <p>The state of the Spot Instance request. Spot request status information helps
+     * track your Spot Instance requests. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-request-status.html">Spot
+     * request status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
-     * <p>The state of the Spot Instance request. Spot status information helps track
-     * your Spot Instance requests. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     * status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * <p>The state of the Spot Instance request. Spot request status information helps
+     * track your Spot Instance requests. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-request-status.html">Spot
+     * request status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline void SetState(const SpotInstanceState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>The state of the Spot Instance request. Spot status information helps track
-     * your Spot Instance requests. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     * status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * <p>The state of the Spot Instance request. Spot request status information helps
+     * track your Spot Instance requests. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-request-status.html">Spot
+     * request status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline void SetState(SpotInstanceState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
-     * <p>The state of the Spot Instance request. Spot status information helps track
-     * your Spot Instance requests. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     * status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * <p>The state of the Spot Instance request. Spot request status information helps
+     * track your Spot Instance requests. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-request-status.html">Spot
+     * request status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline SpotInstanceRequest& WithState(const SpotInstanceState& value) { SetState(value); return *this;}
 
     /**
-     * <p>The state of the Spot Instance request. Spot status information helps track
-     * your Spot Instance requests. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     * status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * <p>The state of the Spot Instance request. Spot request status information helps
+     * track your Spot Instance requests. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-request-status.html">Spot
+     * request status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline SpotInstanceRequest& WithState(SpotInstanceState&& value) { SetState(std::move(value)); return *this;}
 

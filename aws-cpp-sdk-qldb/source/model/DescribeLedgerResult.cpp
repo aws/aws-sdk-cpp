@@ -18,12 +18,14 @@ using namespace Aws;
 
 DescribeLedgerResult::DescribeLedgerResult() : 
     m_state(LedgerState::NOT_SET),
+    m_permissionsMode(PermissionsMode::NOT_SET),
     m_deletionProtection(false)
 {
 }
 
 DescribeLedgerResult::DescribeLedgerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_state(LedgerState::NOT_SET),
+    m_permissionsMode(PermissionsMode::NOT_SET),
     m_deletionProtection(false)
 {
   *this = result;
@@ -56,9 +58,21 @@ DescribeLedgerResult& DescribeLedgerResult::operator =(const Aws::AmazonWebServi
 
   }
 
+  if(jsonValue.ValueExists("PermissionsMode"))
+  {
+    m_permissionsMode = PermissionsModeMapper::GetPermissionsModeForName(jsonValue.GetString("PermissionsMode"));
+
+  }
+
   if(jsonValue.ValueExists("DeletionProtection"))
   {
     m_deletionProtection = jsonValue.GetBool("DeletionProtection");
+
+  }
+
+  if(jsonValue.ValueExists("EncryptionDescription"))
+  {
+    m_encryptionDescription = jsonValue.GetObject("EncryptionDescription");
 
   }
 

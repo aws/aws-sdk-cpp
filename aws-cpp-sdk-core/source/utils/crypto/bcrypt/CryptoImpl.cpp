@@ -11,6 +11,7 @@
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/utils/crypto/Hash.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/StringUtils.h>
 #include <atomic>
 #include <bcrypt.h>
 #include <winternl.h>
@@ -117,6 +118,7 @@ namespace Aws
 
             BCryptHashImpl::BCryptHashImpl(LPCWSTR algorithmName, bool isHMAC) :
                 m_algorithmHandle(nullptr),
+                m_hashHandle(nullptr),
                 m_hashBufferLength(0),
                 m_hashBuffer(nullptr),
                 m_hashObjectLength(0),
@@ -126,7 +128,7 @@ namespace Aws
                 NTSTATUS status = BCryptOpenAlgorithmProvider(&m_algorithmHandle, algorithmName, MS_PRIMITIVE_PROVIDER, isHMAC ? BCRYPT_ALG_HANDLE_HMAC_FLAG : 0);
                 if (!NT_SUCCESS(status))
                 {
-                    AWS_LOGSTREAM_ERROR(logTag, "Failed initializing BCryptOpenAlgorithmProvider for " << algorithmName);
+                    AWS_LOGSTREAM_ERROR(logTag, "Failed initializing BCryptOpenAlgorithmProvider for " << Aws::Utils::StringUtils::FromWString(algorithmName));
                     return;
                 }
 
@@ -157,6 +159,18 @@ namespace Aws
                 if (!m_hashObject)
                 {
                     AWS_LOGSTREAM_ERROR(logTag, "Error allocating hash object.");
+                    return;
+                }
+
+                status = BCryptCreateHash(m_algorithmHandle, &m_hashHandle, m_hashObject, m_hashObjectLength, nullptr, 0, 0);
+                if (!NT_SUCCESS(status))
+                {
+                    AWS_LOGSTREAM_ERROR(logTag, "Error creating hash handle.");
+                    if (m_hashHandle)
+                    {
+                        BCryptDestroyHash(m_hashHandle);
+                        m_hashHandle = nullptr;
+                    }
                     return;
                 }
             }
@@ -229,9 +243,56 @@ namespace Aws
                 return HashData(context, static_cast<PBYTE>(toHash.GetUnderlyingData()), static_cast<ULONG>(toHash.GetLength()));
             }
 
+            void BCryptHashImpl::Update(unsigned char* buffer, size_t bufferSize)
+            {
+                if (!IsValid())
+                {
+                    return;
+                }
+
+                std::lock_guard<std::mutex> locker(m_algorithmMutex);
+
+                NTSTATUS status = 0;
+                status = BCryptHashData(m_hashHandle, (PBYTE)buffer, (ULONG)bufferSize, 0);
+                if (!NT_SUCCESS(status))
+                {
+                    AWS_LOGSTREAM_ERROR(logTag, "Error computing hash:" << static_cast<int>(status));
+                    if (m_hashHandle)
+                    {
+                        BCryptDestroyHash(m_hashHandle);
+                        m_hashHandle = nullptr;
+                    }
+                    return;
+                }
+            }
+
+            HashResult BCryptHashImpl::GetHash()
+            {
+                if (!IsValid())
+                {
+                    return HashResult();
+                }
+
+                std::lock_guard<std::mutex> locker(m_algorithmMutex);
+
+                NTSTATUS status = BCryptFinishHash(m_hashHandle, m_hashBuffer, m_hashBufferLength, 0);
+                if (!NT_SUCCESS(status))
+                {
+                    AWS_LOGSTREAM_ERROR(logTag, "Error obtaining computed hash");
+                    if (m_hashHandle)
+                    {
+                        BCryptDestroyHash(m_hashHandle);
+                        m_hashHandle = nullptr;
+                    }
+                    return HashResult();
+                }
+
+                return HashResult(ByteBuffer(m_hashBuffer, m_hashBufferLength));
+            }
+
             bool BCryptHashImpl::IsValid() const
             {
-                return m_hashBuffer != nullptr && m_hashBufferLength > 0 && m_hashObject != nullptr && m_hashObjectLength > 0;
+                return m_hashBuffer != nullptr && m_hashBufferLength > 0 && m_hashObject != nullptr && m_hashObjectLength > 0 && m_hashHandle != nullptr;
             }
 
             bool BCryptHashImpl::HashStream(Aws::IStream& stream)
@@ -318,6 +379,41 @@ namespace Aws
                 return m_impl.Calculate(stream);
             }
 
+            void MD5BcryptImpl::Update(unsigned char* buffer, size_t bufferSize)
+            {
+                m_impl.Update(buffer, bufferSize);
+            }
+
+            HashResult MD5BcryptImpl::GetHash()
+            {
+                return m_impl.GetHash();
+            }
+
+            Sha1BcryptImpl::Sha1BcryptImpl() :
+                    m_impl(BCRYPT_SHA1_ALGORITHM, false)
+            {
+            }
+
+            HashResult Sha1BcryptImpl::Calculate(const Aws::String& str)
+            {
+                return m_impl.Calculate(str);
+            }
+
+            HashResult Sha1BcryptImpl::Calculate(Aws::IStream& stream)
+            {
+                return m_impl.Calculate(stream);
+            }
+
+            void Sha1BcryptImpl::Update(unsigned char* buffer, size_t bufferSize)
+            {
+                m_impl.Update(buffer, bufferSize);
+            }
+
+            HashResult Sha1BcryptImpl::GetHash()
+            {
+                return m_impl.GetHash();
+            }
+
             Sha256BcryptImpl::Sha256BcryptImpl() :
                 m_impl(BCRYPT_SHA256_ALGORITHM, false)
             {
@@ -331,6 +427,16 @@ namespace Aws
             HashResult Sha256BcryptImpl::Calculate(Aws::IStream& stream)
             {
                 return m_impl.Calculate(stream);
+            }
+
+            void Sha256BcryptImpl::Update(unsigned char* buffer, size_t bufferSize)
+            {
+                m_impl.Update(buffer, bufferSize);
+            }
+
+            HashResult Sha256BcryptImpl::GetHash()
+            {
+                return m_impl.GetHash();
             }
 
             Sha256HMACBcryptImpl::Sha256HMACBcryptImpl() :

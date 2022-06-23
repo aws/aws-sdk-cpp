@@ -119,42 +119,42 @@ namespace Model
 
 
     /**
-     * <p>The timestamp for when a position sample was attempted in <a
+     * <p>The timestamp at which the device position was determined. Uses <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */
     inline const Aws::Utils::DateTime& GetSampleTime() const{ return m_sampleTime; }
 
     /**
-     * <p>The timestamp for when a position sample was attempted in <a
+     * <p>The timestamp at which the device position was determined. Uses <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */
     inline bool SampleTimeHasBeenSet() const { return m_sampleTimeHasBeenSet; }
 
     /**
-     * <p>The timestamp for when a position sample was attempted in <a
+     * <p>The timestamp at which the device position was determined. Uses <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */
     inline void SetSampleTime(const Aws::Utils::DateTime& value) { m_sampleTimeHasBeenSet = true; m_sampleTime = value; }
 
     /**
-     * <p>The timestamp for when a position sample was attempted in <a
+     * <p>The timestamp at which the device position was determined. Uses <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */
     inline void SetSampleTime(Aws::Utils::DateTime&& value) { m_sampleTimeHasBeenSet = true; m_sampleTime = std::move(value); }
 
     /**
-     * <p>The timestamp for when a position sample was attempted in <a
+     * <p>The timestamp at which the device position was determined. Uses <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */
     inline BatchUpdateDevicePositionError& WithSampleTime(const Aws::Utils::DateTime& value) { SetSampleTime(value); return *this;}
 
     /**
-     * <p>The timestamp for when a position sample was attempted in <a
+     * <p>The timestamp at which the device position was determined. Uses <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */

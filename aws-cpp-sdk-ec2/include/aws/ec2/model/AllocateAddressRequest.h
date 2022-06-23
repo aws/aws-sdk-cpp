@@ -196,121 +196,97 @@ namespace Model
 
     /**
      * <p> A unique set of Availability Zones, Local Zones, or Wavelength Zones from
-     * which AWS advertises IP addresses. Use this parameter to limit the IP address to
-     * this location. IP addresses cannot move between network border groups.</p>
-     * <p>Use <a
+     * which Amazon Web Services advertises IP addresses. Use this parameter to limit
+     * the IP address to this location. IP addresses cannot move between network border
+     * groups.</p> <p>Use <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">DescribeAvailabilityZones</a>
-     * to view the network border groups.</p>  <p>You cannot use a network border
-     * group with EC2 Classic. If you attempt this operation on EC2 classic, you will
-     * receive an <code>InvalidParameterCombination</code> error. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
-     * Codes</a>.</p> 
+     * to view the network border groups.</p> <p>You cannot use a network border group
+     * with EC2 Classic. If you attempt this operation on EC2 Classic, you receive an
+     * <code>InvalidParameterCombination</code> error.</p>
      */
     inline const Aws::String& GetNetworkBorderGroup() const{ return m_networkBorderGroup; }
 
     /**
      * <p> A unique set of Availability Zones, Local Zones, or Wavelength Zones from
-     * which AWS advertises IP addresses. Use this parameter to limit the IP address to
-     * this location. IP addresses cannot move between network border groups.</p>
-     * <p>Use <a
+     * which Amazon Web Services advertises IP addresses. Use this parameter to limit
+     * the IP address to this location. IP addresses cannot move between network border
+     * groups.</p> <p>Use <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">DescribeAvailabilityZones</a>
-     * to view the network border groups.</p>  <p>You cannot use a network border
-     * group with EC2 Classic. If you attempt this operation on EC2 classic, you will
-     * receive an <code>InvalidParameterCombination</code> error. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
-     * Codes</a>.</p> 
+     * to view the network border groups.</p> <p>You cannot use a network border group
+     * with EC2 Classic. If you attempt this operation on EC2 Classic, you receive an
+     * <code>InvalidParameterCombination</code> error.</p>
      */
     inline bool NetworkBorderGroupHasBeenSet() const { return m_networkBorderGroupHasBeenSet; }
 
     /**
      * <p> A unique set of Availability Zones, Local Zones, or Wavelength Zones from
-     * which AWS advertises IP addresses. Use this parameter to limit the IP address to
-     * this location. IP addresses cannot move between network border groups.</p>
-     * <p>Use <a
+     * which Amazon Web Services advertises IP addresses. Use this parameter to limit
+     * the IP address to this location. IP addresses cannot move between network border
+     * groups.</p> <p>Use <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">DescribeAvailabilityZones</a>
-     * to view the network border groups.</p>  <p>You cannot use a network border
-     * group with EC2 Classic. If you attempt this operation on EC2 classic, you will
-     * receive an <code>InvalidParameterCombination</code> error. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
-     * Codes</a>.</p> 
+     * to view the network border groups.</p> <p>You cannot use a network border group
+     * with EC2 Classic. If you attempt this operation on EC2 Classic, you receive an
+     * <code>InvalidParameterCombination</code> error.</p>
      */
     inline void SetNetworkBorderGroup(const Aws::String& value) { m_networkBorderGroupHasBeenSet = true; m_networkBorderGroup = value; }
 
     /**
      * <p> A unique set of Availability Zones, Local Zones, or Wavelength Zones from
-     * which AWS advertises IP addresses. Use this parameter to limit the IP address to
-     * this location. IP addresses cannot move between network border groups.</p>
-     * <p>Use <a
+     * which Amazon Web Services advertises IP addresses. Use this parameter to limit
+     * the IP address to this location. IP addresses cannot move between network border
+     * groups.</p> <p>Use <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">DescribeAvailabilityZones</a>
-     * to view the network border groups.</p>  <p>You cannot use a network border
-     * group with EC2 Classic. If you attempt this operation on EC2 classic, you will
-     * receive an <code>InvalidParameterCombination</code> error. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
-     * Codes</a>.</p> 
+     * to view the network border groups.</p> <p>You cannot use a network border group
+     * with EC2 Classic. If you attempt this operation on EC2 Classic, you receive an
+     * <code>InvalidParameterCombination</code> error.</p>
      */
     inline void SetNetworkBorderGroup(Aws::String&& value) { m_networkBorderGroupHasBeenSet = true; m_networkBorderGroup = std::move(value); }
 
     /**
      * <p> A unique set of Availability Zones, Local Zones, or Wavelength Zones from
-     * which AWS advertises IP addresses. Use this parameter to limit the IP address to
-     * this location. IP addresses cannot move between network border groups.</p>
-     * <p>Use <a
+     * which Amazon Web Services advertises IP addresses. Use this parameter to limit
+     * the IP address to this location. IP addresses cannot move between network border
+     * groups.</p> <p>Use <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">DescribeAvailabilityZones</a>
-     * to view the network border groups.</p>  <p>You cannot use a network border
-     * group with EC2 Classic. If you attempt this operation on EC2 classic, you will
-     * receive an <code>InvalidParameterCombination</code> error. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
-     * Codes</a>.</p> 
+     * to view the network border groups.</p> <p>You cannot use a network border group
+     * with EC2 Classic. If you attempt this operation on EC2 Classic, you receive an
+     * <code>InvalidParameterCombination</code> error.</p>
      */
     inline void SetNetworkBorderGroup(const char* value) { m_networkBorderGroupHasBeenSet = true; m_networkBorderGroup.assign(value); }
 
     /**
      * <p> A unique set of Availability Zones, Local Zones, or Wavelength Zones from
-     * which AWS advertises IP addresses. Use this parameter to limit the IP address to
-     * this location. IP addresses cannot move between network border groups.</p>
-     * <p>Use <a
+     * which Amazon Web Services advertises IP addresses. Use this parameter to limit
+     * the IP address to this location. IP addresses cannot move between network border
+     * groups.</p> <p>Use <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">DescribeAvailabilityZones</a>
-     * to view the network border groups.</p>  <p>You cannot use a network border
-     * group with EC2 Classic. If you attempt this operation on EC2 classic, you will
-     * receive an <code>InvalidParameterCombination</code> error. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
-     * Codes</a>.</p> 
+     * to view the network border groups.</p> <p>You cannot use a network border group
+     * with EC2 Classic. If you attempt this operation on EC2 Classic, you receive an
+     * <code>InvalidParameterCombination</code> error.</p>
      */
     inline AllocateAddressRequest& WithNetworkBorderGroup(const Aws::String& value) { SetNetworkBorderGroup(value); return *this;}
 
     /**
      * <p> A unique set of Availability Zones, Local Zones, or Wavelength Zones from
-     * which AWS advertises IP addresses. Use this parameter to limit the IP address to
-     * this location. IP addresses cannot move between network border groups.</p>
-     * <p>Use <a
+     * which Amazon Web Services advertises IP addresses. Use this parameter to limit
+     * the IP address to this location. IP addresses cannot move between network border
+     * groups.</p> <p>Use <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">DescribeAvailabilityZones</a>
-     * to view the network border groups.</p>  <p>You cannot use a network border
-     * group with EC2 Classic. If you attempt this operation on EC2 classic, you will
-     * receive an <code>InvalidParameterCombination</code> error. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
-     * Codes</a>.</p> 
+     * to view the network border groups.</p> <p>You cannot use a network border group
+     * with EC2 Classic. If you attempt this operation on EC2 Classic, you receive an
+     * <code>InvalidParameterCombination</code> error.</p>
      */
     inline AllocateAddressRequest& WithNetworkBorderGroup(Aws::String&& value) { SetNetworkBorderGroup(std::move(value)); return *this;}
 
     /**
      * <p> A unique set of Availability Zones, Local Zones, or Wavelength Zones from
-     * which AWS advertises IP addresses. Use this parameter to limit the IP address to
-     * this location. IP addresses cannot move between network border groups.</p>
-     * <p>Use <a
+     * which Amazon Web Services advertises IP addresses. Use this parameter to limit
+     * the IP address to this location. IP addresses cannot move between network border
+     * groups.</p> <p>Use <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">DescribeAvailabilityZones</a>
-     * to view the network border groups.</p>  <p>You cannot use a network border
-     * group with EC2 Classic. If you attempt this operation on EC2 classic, you will
-     * receive an <code>InvalidParameterCombination</code> error. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
-     * Codes</a>.</p> 
+     * to view the network border groups.</p> <p>You cannot use a network border group
+     * with EC2 Classic. If you attempt this operation on EC2 Classic, you receive an
+     * <code>InvalidParameterCombination</code> error.</p>
      */
     inline AllocateAddressRequest& WithNetworkBorderGroup(const char* value) { SetNetworkBorderGroup(value); return *this;}
 

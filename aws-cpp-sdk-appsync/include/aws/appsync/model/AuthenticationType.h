@@ -19,7 +19,8 @@ namespace Model
     API_KEY,
     AWS_IAM,
     AMAZON_COGNITO_USER_POOLS,
-    OPENID_CONNECT
+    OPENID_CONNECT,
+    AWS_LAMBDA
   };
 
 namespace AuthenticationTypeMapper

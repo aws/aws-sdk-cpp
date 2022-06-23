@@ -8,8 +8,11 @@
 #include <aws/mediaconvert/model/AlphaBehavior.h>
 #include <aws/mediaconvert/model/ColorSpace.h>
 #include <aws/mediaconvert/model/ColorSpaceUsage.h>
+#include <aws/mediaconvert/model/EmbeddedTimecodeOverride.h>
 #include <aws/mediaconvert/model/Hdr10Metadata.h>
+#include <aws/mediaconvert/model/PadVideo.h>
 #include <aws/mediaconvert/model/InputRotate.h>
+#include <aws/mediaconvert/model/InputSampleRange.h>
 #include <utility>
 
 namespace Aws
@@ -28,7 +31,8 @@ namespace Model
 {
 
   /**
-   * Selector for video.<p><h3>See Also:</h3>   <a
+   * Input video selectors contain the video settings for the input. Each of your
+   * inputs can have up to one video selector.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/VideoSelector">AWS
    * API Reference</a></p>
    */
@@ -267,6 +271,61 @@ namespace Model
 
 
     /**
+     * Set Embedded timecode override (embeddedTimecodeOverride) to Use MDPM (USE_MDPM)
+     * when your AVCHD input contains timecode tag data in the Modified Digital Video
+     * Pack Metadata (MDPM). When you do, we recommend you also set Timecode source
+     * (inputTimecodeSource) to Embedded (EMBEDDED). Leave Embedded timecode override
+     * blank, or set to None (NONE), when your input does not contain MDPM timecode.
+     */
+    inline const EmbeddedTimecodeOverride& GetEmbeddedTimecodeOverride() const{ return m_embeddedTimecodeOverride; }
+
+    /**
+     * Set Embedded timecode override (embeddedTimecodeOverride) to Use MDPM (USE_MDPM)
+     * when your AVCHD input contains timecode tag data in the Modified Digital Video
+     * Pack Metadata (MDPM). When you do, we recommend you also set Timecode source
+     * (inputTimecodeSource) to Embedded (EMBEDDED). Leave Embedded timecode override
+     * blank, or set to None (NONE), when your input does not contain MDPM timecode.
+     */
+    inline bool EmbeddedTimecodeOverrideHasBeenSet() const { return m_embeddedTimecodeOverrideHasBeenSet; }
+
+    /**
+     * Set Embedded timecode override (embeddedTimecodeOverride) to Use MDPM (USE_MDPM)
+     * when your AVCHD input contains timecode tag data in the Modified Digital Video
+     * Pack Metadata (MDPM). When you do, we recommend you also set Timecode source
+     * (inputTimecodeSource) to Embedded (EMBEDDED). Leave Embedded timecode override
+     * blank, or set to None (NONE), when your input does not contain MDPM timecode.
+     */
+    inline void SetEmbeddedTimecodeOverride(const EmbeddedTimecodeOverride& value) { m_embeddedTimecodeOverrideHasBeenSet = true; m_embeddedTimecodeOverride = value; }
+
+    /**
+     * Set Embedded timecode override (embeddedTimecodeOverride) to Use MDPM (USE_MDPM)
+     * when your AVCHD input contains timecode tag data in the Modified Digital Video
+     * Pack Metadata (MDPM). When you do, we recommend you also set Timecode source
+     * (inputTimecodeSource) to Embedded (EMBEDDED). Leave Embedded timecode override
+     * blank, or set to None (NONE), when your input does not contain MDPM timecode.
+     */
+    inline void SetEmbeddedTimecodeOverride(EmbeddedTimecodeOverride&& value) { m_embeddedTimecodeOverrideHasBeenSet = true; m_embeddedTimecodeOverride = std::move(value); }
+
+    /**
+     * Set Embedded timecode override (embeddedTimecodeOverride) to Use MDPM (USE_MDPM)
+     * when your AVCHD input contains timecode tag data in the Modified Digital Video
+     * Pack Metadata (MDPM). When you do, we recommend you also set Timecode source
+     * (inputTimecodeSource) to Embedded (EMBEDDED). Leave Embedded timecode override
+     * blank, or set to None (NONE), when your input does not contain MDPM timecode.
+     */
+    inline VideoSelector& WithEmbeddedTimecodeOverride(const EmbeddedTimecodeOverride& value) { SetEmbeddedTimecodeOverride(value); return *this;}
+
+    /**
+     * Set Embedded timecode override (embeddedTimecodeOverride) to Use MDPM (USE_MDPM)
+     * when your AVCHD input contains timecode tag data in the Modified Digital Video
+     * Pack Metadata (MDPM). When you do, we recommend you also set Timecode source
+     * (inputTimecodeSource) to Embedded (EMBEDDED). Leave Embedded timecode override
+     * blank, or set to None (NONE), when your input does not contain MDPM timecode.
+     */
+    inline VideoSelector& WithEmbeddedTimecodeOverride(EmbeddedTimecodeOverride&& value) { SetEmbeddedTimecodeOverride(std::move(value)); return *this;}
+
+
+    /**
      * Use these settings to provide HDR 10 metadata that is missing or inaccurate in
      * your input video. Appropriate values vary depending on the input video and must
      * be provided by a color grader. The color grader generates these values during
@@ -361,6 +420,79 @@ namespace Model
      * https://docs.aws.amazon.com/console/mediaconvert/hdr.
      */
     inline VideoSelector& WithHdr10Metadata(Hdr10Metadata&& value) { SetHdr10Metadata(std::move(value)); return *this;}
+
+
+    /**
+     * Use this setting if your input has video and audio durations that don't align,
+     * and your output or player has strict alignment requirements. Examples: Input
+     * audio track has a delayed start. Input video track ends before audio ends. When
+     * you set Pad video (padVideo) to Black (BLACK), MediaConvert generates black
+     * video frames so that output video and audio durations match. Black video frames
+     * are added at the beginning or end, depending on your input. To keep the default
+     * behavior and not generate black video, set Pad video to Disabled (DISABLED) or
+     * leave blank.
+     */
+    inline const PadVideo& GetPadVideo() const{ return m_padVideo; }
+
+    /**
+     * Use this setting if your input has video and audio durations that don't align,
+     * and your output or player has strict alignment requirements. Examples: Input
+     * audio track has a delayed start. Input video track ends before audio ends. When
+     * you set Pad video (padVideo) to Black (BLACK), MediaConvert generates black
+     * video frames so that output video and audio durations match. Black video frames
+     * are added at the beginning or end, depending on your input. To keep the default
+     * behavior and not generate black video, set Pad video to Disabled (DISABLED) or
+     * leave blank.
+     */
+    inline bool PadVideoHasBeenSet() const { return m_padVideoHasBeenSet; }
+
+    /**
+     * Use this setting if your input has video and audio durations that don't align,
+     * and your output or player has strict alignment requirements. Examples: Input
+     * audio track has a delayed start. Input video track ends before audio ends. When
+     * you set Pad video (padVideo) to Black (BLACK), MediaConvert generates black
+     * video frames so that output video and audio durations match. Black video frames
+     * are added at the beginning or end, depending on your input. To keep the default
+     * behavior and not generate black video, set Pad video to Disabled (DISABLED) or
+     * leave blank.
+     */
+    inline void SetPadVideo(const PadVideo& value) { m_padVideoHasBeenSet = true; m_padVideo = value; }
+
+    /**
+     * Use this setting if your input has video and audio durations that don't align,
+     * and your output or player has strict alignment requirements. Examples: Input
+     * audio track has a delayed start. Input video track ends before audio ends. When
+     * you set Pad video (padVideo) to Black (BLACK), MediaConvert generates black
+     * video frames so that output video and audio durations match. Black video frames
+     * are added at the beginning or end, depending on your input. To keep the default
+     * behavior and not generate black video, set Pad video to Disabled (DISABLED) or
+     * leave blank.
+     */
+    inline void SetPadVideo(PadVideo&& value) { m_padVideoHasBeenSet = true; m_padVideo = std::move(value); }
+
+    /**
+     * Use this setting if your input has video and audio durations that don't align,
+     * and your output or player has strict alignment requirements. Examples: Input
+     * audio track has a delayed start. Input video track ends before audio ends. When
+     * you set Pad video (padVideo) to Black (BLACK), MediaConvert generates black
+     * video frames so that output video and audio durations match. Black video frames
+     * are added at the beginning or end, depending on your input. To keep the default
+     * behavior and not generate black video, set Pad video to Disabled (DISABLED) or
+     * leave blank.
+     */
+    inline VideoSelector& WithPadVideo(const PadVideo& value) { SetPadVideo(value); return *this;}
+
+    /**
+     * Use this setting if your input has video and audio durations that don't align,
+     * and your output or player has strict alignment requirements. Examples: Input
+     * audio track has a delayed start. Input video track ends before audio ends. When
+     * you set Pad video (padVideo) to Black (BLACK), MediaConvert generates black
+     * video frames so that output video and audio durations match. Black video frames
+     * are added at the beginning or end, depending on your input. To keep the default
+     * behavior and not generate black video, set Pad video to Disabled (DISABLED) or
+     * leave blank.
+     */
+    inline VideoSelector& WithPadVideo(PadVideo&& value) { SetPadVideo(std::move(value)); return *this;}
 
 
     /**
@@ -499,6 +631,79 @@ namespace Model
      */
     inline VideoSelector& WithRotate(InputRotate&& value) { SetRotate(std::move(value)); return *this;}
 
+
+    /**
+     * If the sample range metadata in your input video is accurate, or if you don't
+     * know about sample range, keep the default value, Follow (FOLLOW), for this
+     * setting. When you do, the service automatically detects your input sample range.
+     * If your input video has metadata indicating the wrong sample range, specify the
+     * accurate sample range here. When you do, MediaConvert ignores any sample range
+     * information in the input metadata. Regardless of whether MediaConvert uses the
+     * input sample range or the sample range that you specify, MediaConvert uses the
+     * sample range for transcoding and also writes it to the output metadata.
+     */
+    inline const InputSampleRange& GetSampleRange() const{ return m_sampleRange; }
+
+    /**
+     * If the sample range metadata in your input video is accurate, or if you don't
+     * know about sample range, keep the default value, Follow (FOLLOW), for this
+     * setting. When you do, the service automatically detects your input sample range.
+     * If your input video has metadata indicating the wrong sample range, specify the
+     * accurate sample range here. When you do, MediaConvert ignores any sample range
+     * information in the input metadata. Regardless of whether MediaConvert uses the
+     * input sample range or the sample range that you specify, MediaConvert uses the
+     * sample range for transcoding and also writes it to the output metadata.
+     */
+    inline bool SampleRangeHasBeenSet() const { return m_sampleRangeHasBeenSet; }
+
+    /**
+     * If the sample range metadata in your input video is accurate, or if you don't
+     * know about sample range, keep the default value, Follow (FOLLOW), for this
+     * setting. When you do, the service automatically detects your input sample range.
+     * If your input video has metadata indicating the wrong sample range, specify the
+     * accurate sample range here. When you do, MediaConvert ignores any sample range
+     * information in the input metadata. Regardless of whether MediaConvert uses the
+     * input sample range or the sample range that you specify, MediaConvert uses the
+     * sample range for transcoding and also writes it to the output metadata.
+     */
+    inline void SetSampleRange(const InputSampleRange& value) { m_sampleRangeHasBeenSet = true; m_sampleRange = value; }
+
+    /**
+     * If the sample range metadata in your input video is accurate, or if you don't
+     * know about sample range, keep the default value, Follow (FOLLOW), for this
+     * setting. When you do, the service automatically detects your input sample range.
+     * If your input video has metadata indicating the wrong sample range, specify the
+     * accurate sample range here. When you do, MediaConvert ignores any sample range
+     * information in the input metadata. Regardless of whether MediaConvert uses the
+     * input sample range or the sample range that you specify, MediaConvert uses the
+     * sample range for transcoding and also writes it to the output metadata.
+     */
+    inline void SetSampleRange(InputSampleRange&& value) { m_sampleRangeHasBeenSet = true; m_sampleRange = std::move(value); }
+
+    /**
+     * If the sample range metadata in your input video is accurate, or if you don't
+     * know about sample range, keep the default value, Follow (FOLLOW), for this
+     * setting. When you do, the service automatically detects your input sample range.
+     * If your input video has metadata indicating the wrong sample range, specify the
+     * accurate sample range here. When you do, MediaConvert ignores any sample range
+     * information in the input metadata. Regardless of whether MediaConvert uses the
+     * input sample range or the sample range that you specify, MediaConvert uses the
+     * sample range for transcoding and also writes it to the output metadata.
+     */
+    inline VideoSelector& WithSampleRange(const InputSampleRange& value) { SetSampleRange(value); return *this;}
+
+    /**
+     * If the sample range metadata in your input video is accurate, or if you don't
+     * know about sample range, keep the default value, Follow (FOLLOW), for this
+     * setting. When you do, the service automatically detects your input sample range.
+     * If your input video has metadata indicating the wrong sample range, specify the
+     * accurate sample range here. When you do, MediaConvert ignores any sample range
+     * information in the input metadata. Regardless of whether MediaConvert uses the
+     * input sample range or the sample range that you specify, MediaConvert uses the
+     * sample range for transcoding and also writes it to the output metadata.
+     */
+    inline VideoSelector& WithSampleRange(InputSampleRange&& value) { SetSampleRange(std::move(value)); return *this;}
+
   private:
 
     AlphaBehavior m_alphaBehavior;
@@ -510,8 +715,14 @@ namespace Model
     ColorSpaceUsage m_colorSpaceUsage;
     bool m_colorSpaceUsageHasBeenSet;
 
+    EmbeddedTimecodeOverride m_embeddedTimecodeOverride;
+    bool m_embeddedTimecodeOverrideHasBeenSet;
+
     Hdr10Metadata m_hdr10Metadata;
     bool m_hdr10MetadataHasBeenSet;
+
+    PadVideo m_padVideo;
+    bool m_padVideoHasBeenSet;
 
     int m_pid;
     bool m_pidHasBeenSet;
@@ -521,6 +732,9 @@ namespace Model
 
     InputRotate m_rotate;
     bool m_rotateHasBeenSet;
+
+    InputSampleRange m_sampleRange;
+    bool m_sampleRangeHasBeenSet;
   };
 
 } // namespace Model

@@ -5,6 +5,8 @@
 
 #pragma once
 #include <aws/kafka/Kafka_EXPORTS.h>
+#include <aws/kafka/model/ProvisionedThroughput.h>
+#include <utility>
 
 namespace Aws
 {
@@ -24,7 +26,7 @@ namespace Model
   /**
    * 
             <p>Contains information about the EBS storage volumes attached to
-   * Kafka broker nodes.</p>
+   * Apache Kafka broker nodes.</p>
          <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/EBSStorageInfo">AWS
    * API Reference</a></p>
@@ -36,6 +38,37 @@ namespace Model
     EBSStorageInfo(Aws::Utils::Json::JsonView jsonValue);
     EBSStorageInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * EBS volume provisioned throughput information.
+     */
+    inline const ProvisionedThroughput& GetProvisionedThroughput() const{ return m_provisionedThroughput; }
+
+    /**
+     * EBS volume provisioned throughput information.
+     */
+    inline bool ProvisionedThroughputHasBeenSet() const { return m_provisionedThroughputHasBeenSet; }
+
+    /**
+     * EBS volume provisioned throughput information.
+     */
+    inline void SetProvisionedThroughput(const ProvisionedThroughput& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = value; }
+
+    /**
+     * EBS volume provisioned throughput information.
+     */
+    inline void SetProvisionedThroughput(ProvisionedThroughput&& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = std::move(value); }
+
+    /**
+     * EBS volume provisioned throughput information.
+     */
+    inline EBSStorageInfo& WithProvisionedThroughput(const ProvisionedThroughput& value) { SetProvisionedThroughput(value); return *this;}
+
+    /**
+     * EBS volume provisioned throughput information.
+     */
+    inline EBSStorageInfo& WithProvisionedThroughput(ProvisionedThroughput&& value) { SetProvisionedThroughput(std::move(value)); return *this;}
 
 
     /**
@@ -71,6 +104,9 @@ namespace Model
     inline EBSStorageInfo& WithVolumeSize(int value) { SetVolumeSize(value); return *this;}
 
   private:
+
+    ProvisionedThroughput m_provisionedThroughput;
+    bool m_provisionedThroughputHasBeenSet;
 
     int m_volumeSize;
     bool m_volumeSizeHasBeenSet;

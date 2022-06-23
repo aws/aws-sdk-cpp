@@ -27,6 +27,9 @@ namespace Aws
         static const int DeleteInProgress_HASH = HashingUtils::HashString("DeleteInProgress");
         static const int DeleteFailed_HASH = HashingUtils::HashString("DeleteFailed");
         static const int DeleteCompleted_HASH = HashingUtils::HashString("DeleteCompleted");
+        static const int UpdateInProgress_HASH = HashingUtils::HashString("UpdateInProgress");
+        static const int UpdateCompleted_HASH = HashingUtils::HashString("UpdateCompleted");
+        static const int UpdateFailed_HASH = HashingUtils::HashString("UpdateFailed");
 
 
         ProjectStatus GetProjectStatusForName(const Aws::String& name)
@@ -60,6 +63,18 @@ namespace Aws
           {
             return ProjectStatus::DeleteCompleted;
           }
+          else if (hashCode == UpdateInProgress_HASH)
+          {
+            return ProjectStatus::UpdateInProgress;
+          }
+          else if (hashCode == UpdateCompleted_HASH)
+          {
+            return ProjectStatus::UpdateCompleted;
+          }
+          else if (hashCode == UpdateFailed_HASH)
+          {
+            return ProjectStatus::UpdateFailed;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -88,6 +103,12 @@ namespace Aws
             return "DeleteFailed";
           case ProjectStatus::DeleteCompleted:
             return "DeleteCompleted";
+          case ProjectStatus::UpdateInProgress:
+            return "UpdateInProgress";
+          case ProjectStatus::UpdateCompleted:
+            return "UpdateCompleted";
+          case ProjectStatus::UpdateFailed:
+            return "UpdateFailed";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

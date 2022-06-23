@@ -251,155 +251,211 @@ namespace Model
 
     /**
      * <p>The types of integration that the product supports. Available values are the
-     * following.</p> <ul> <li> <p> <code>SEND_FINDINGS_TO_SECURITY_HUB</code> -
-     * Indicates that the integration sends findings to Security Hub.</p> </li> <li>
-     * <p> <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - Indicates that the
-     * integration receives findings from Security Hub.</p> </li> </ul>
+     * following.</p> <ul> <li> <p> <code>SEND_FINDINGS_TO_SECURITY_HUB</code> - The
+     * integration sends findings to Security Hub.</p> </li> <li> <p>
+     * <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - The integration receives
+     * findings from Security Hub.</p> </li> <li> <p>
+     * <code>UPDATE_FINDINGS_IN_SECURITY_HUB</code> - The integration does not send new
+     * findings to Security Hub, but does make updates to the findings that it receives
+     * from Security Hub.</p> </li> </ul>
      */
     inline const Aws::Vector<IntegrationType>& GetIntegrationTypes() const{ return m_integrationTypes; }
 
     /**
      * <p>The types of integration that the product supports. Available values are the
-     * following.</p> <ul> <li> <p> <code>SEND_FINDINGS_TO_SECURITY_HUB</code> -
-     * Indicates that the integration sends findings to Security Hub.</p> </li> <li>
-     * <p> <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - Indicates that the
-     * integration receives findings from Security Hub.</p> </li> </ul>
+     * following.</p> <ul> <li> <p> <code>SEND_FINDINGS_TO_SECURITY_HUB</code> - The
+     * integration sends findings to Security Hub.</p> </li> <li> <p>
+     * <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - The integration receives
+     * findings from Security Hub.</p> </li> <li> <p>
+     * <code>UPDATE_FINDINGS_IN_SECURITY_HUB</code> - The integration does not send new
+     * findings to Security Hub, but does make updates to the findings that it receives
+     * from Security Hub.</p> </li> </ul>
      */
     inline bool IntegrationTypesHasBeenSet() const { return m_integrationTypesHasBeenSet; }
 
     /**
      * <p>The types of integration that the product supports. Available values are the
-     * following.</p> <ul> <li> <p> <code>SEND_FINDINGS_TO_SECURITY_HUB</code> -
-     * Indicates that the integration sends findings to Security Hub.</p> </li> <li>
-     * <p> <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - Indicates that the
-     * integration receives findings from Security Hub.</p> </li> </ul>
+     * following.</p> <ul> <li> <p> <code>SEND_FINDINGS_TO_SECURITY_HUB</code> - The
+     * integration sends findings to Security Hub.</p> </li> <li> <p>
+     * <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - The integration receives
+     * findings from Security Hub.</p> </li> <li> <p>
+     * <code>UPDATE_FINDINGS_IN_SECURITY_HUB</code> - The integration does not send new
+     * findings to Security Hub, but does make updates to the findings that it receives
+     * from Security Hub.</p> </li> </ul>
      */
     inline void SetIntegrationTypes(const Aws::Vector<IntegrationType>& value) { m_integrationTypesHasBeenSet = true; m_integrationTypes = value; }
 
     /**
      * <p>The types of integration that the product supports. Available values are the
-     * following.</p> <ul> <li> <p> <code>SEND_FINDINGS_TO_SECURITY_HUB</code> -
-     * Indicates that the integration sends findings to Security Hub.</p> </li> <li>
-     * <p> <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - Indicates that the
-     * integration receives findings from Security Hub.</p> </li> </ul>
+     * following.</p> <ul> <li> <p> <code>SEND_FINDINGS_TO_SECURITY_HUB</code> - The
+     * integration sends findings to Security Hub.</p> </li> <li> <p>
+     * <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - The integration receives
+     * findings from Security Hub.</p> </li> <li> <p>
+     * <code>UPDATE_FINDINGS_IN_SECURITY_HUB</code> - The integration does not send new
+     * findings to Security Hub, but does make updates to the findings that it receives
+     * from Security Hub.</p> </li> </ul>
      */
     inline void SetIntegrationTypes(Aws::Vector<IntegrationType>&& value) { m_integrationTypesHasBeenSet = true; m_integrationTypes = std::move(value); }
 
     /**
      * <p>The types of integration that the product supports. Available values are the
-     * following.</p> <ul> <li> <p> <code>SEND_FINDINGS_TO_SECURITY_HUB</code> -
-     * Indicates that the integration sends findings to Security Hub.</p> </li> <li>
-     * <p> <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - Indicates that the
-     * integration receives findings from Security Hub.</p> </li> </ul>
+     * following.</p> <ul> <li> <p> <code>SEND_FINDINGS_TO_SECURITY_HUB</code> - The
+     * integration sends findings to Security Hub.</p> </li> <li> <p>
+     * <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - The integration receives
+     * findings from Security Hub.</p> </li> <li> <p>
+     * <code>UPDATE_FINDINGS_IN_SECURITY_HUB</code> - The integration does not send new
+     * findings to Security Hub, but does make updates to the findings that it receives
+     * from Security Hub.</p> </li> </ul>
      */
     inline Product& WithIntegrationTypes(const Aws::Vector<IntegrationType>& value) { SetIntegrationTypes(value); return *this;}
 
     /**
      * <p>The types of integration that the product supports. Available values are the
-     * following.</p> <ul> <li> <p> <code>SEND_FINDINGS_TO_SECURITY_HUB</code> -
-     * Indicates that the integration sends findings to Security Hub.</p> </li> <li>
-     * <p> <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - Indicates that the
-     * integration receives findings from Security Hub.</p> </li> </ul>
+     * following.</p> <ul> <li> <p> <code>SEND_FINDINGS_TO_SECURITY_HUB</code> - The
+     * integration sends findings to Security Hub.</p> </li> <li> <p>
+     * <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - The integration receives
+     * findings from Security Hub.</p> </li> <li> <p>
+     * <code>UPDATE_FINDINGS_IN_SECURITY_HUB</code> - The integration does not send new
+     * findings to Security Hub, but does make updates to the findings that it receives
+     * from Security Hub.</p> </li> </ul>
      */
     inline Product& WithIntegrationTypes(Aws::Vector<IntegrationType>&& value) { SetIntegrationTypes(std::move(value)); return *this;}
 
     /**
      * <p>The types of integration that the product supports. Available values are the
-     * following.</p> <ul> <li> <p> <code>SEND_FINDINGS_TO_SECURITY_HUB</code> -
-     * Indicates that the integration sends findings to Security Hub.</p> </li> <li>
-     * <p> <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - Indicates that the
-     * integration receives findings from Security Hub.</p> </li> </ul>
+     * following.</p> <ul> <li> <p> <code>SEND_FINDINGS_TO_SECURITY_HUB</code> - The
+     * integration sends findings to Security Hub.</p> </li> <li> <p>
+     * <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - The integration receives
+     * findings from Security Hub.</p> </li> <li> <p>
+     * <code>UPDATE_FINDINGS_IN_SECURITY_HUB</code> - The integration does not send new
+     * findings to Security Hub, but does make updates to the findings that it receives
+     * from Security Hub.</p> </li> </ul>
      */
     inline Product& AddIntegrationTypes(const IntegrationType& value) { m_integrationTypesHasBeenSet = true; m_integrationTypes.push_back(value); return *this; }
 
     /**
      * <p>The types of integration that the product supports. Available values are the
-     * following.</p> <ul> <li> <p> <code>SEND_FINDINGS_TO_SECURITY_HUB</code> -
-     * Indicates that the integration sends findings to Security Hub.</p> </li> <li>
-     * <p> <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - Indicates that the
-     * integration receives findings from Security Hub.</p> </li> </ul>
+     * following.</p> <ul> <li> <p> <code>SEND_FINDINGS_TO_SECURITY_HUB</code> - The
+     * integration sends findings to Security Hub.</p> </li> <li> <p>
+     * <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - The integration receives
+     * findings from Security Hub.</p> </li> <li> <p>
+     * <code>UPDATE_FINDINGS_IN_SECURITY_HUB</code> - The integration does not send new
+     * findings to Security Hub, but does make updates to the findings that it receives
+     * from Security Hub.</p> </li> </ul>
      */
     inline Product& AddIntegrationTypes(IntegrationType&& value) { m_integrationTypesHasBeenSet = true; m_integrationTypes.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The URL for the page that contains more information about the product.</p>
+     * <p>For integrations with Amazon Web Services services, the Amazon Web Services
+     * Console URL from which to activate the service.</p> <p>For integrations with
+     * third-party products, the Amazon Web Services Marketplace URL from which to
+     * subscribe to or purchase the product.</p>
      */
     inline const Aws::String& GetMarketplaceUrl() const{ return m_marketplaceUrl; }
 
     /**
-     * <p>The URL for the page that contains more information about the product.</p>
+     * <p>For integrations with Amazon Web Services services, the Amazon Web Services
+     * Console URL from which to activate the service.</p> <p>For integrations with
+     * third-party products, the Amazon Web Services Marketplace URL from which to
+     * subscribe to or purchase the product.</p>
      */
     inline bool MarketplaceUrlHasBeenSet() const { return m_marketplaceUrlHasBeenSet; }
 
     /**
-     * <p>The URL for the page that contains more information about the product.</p>
+     * <p>For integrations with Amazon Web Services services, the Amazon Web Services
+     * Console URL from which to activate the service.</p> <p>For integrations with
+     * third-party products, the Amazon Web Services Marketplace URL from which to
+     * subscribe to or purchase the product.</p>
      */
     inline void SetMarketplaceUrl(const Aws::String& value) { m_marketplaceUrlHasBeenSet = true; m_marketplaceUrl = value; }
 
     /**
-     * <p>The URL for the page that contains more information about the product.</p>
+     * <p>For integrations with Amazon Web Services services, the Amazon Web Services
+     * Console URL from which to activate the service.</p> <p>For integrations with
+     * third-party products, the Amazon Web Services Marketplace URL from which to
+     * subscribe to or purchase the product.</p>
      */
     inline void SetMarketplaceUrl(Aws::String&& value) { m_marketplaceUrlHasBeenSet = true; m_marketplaceUrl = std::move(value); }
 
     /**
-     * <p>The URL for the page that contains more information about the product.</p>
+     * <p>For integrations with Amazon Web Services services, the Amazon Web Services
+     * Console URL from which to activate the service.</p> <p>For integrations with
+     * third-party products, the Amazon Web Services Marketplace URL from which to
+     * subscribe to or purchase the product.</p>
      */
     inline void SetMarketplaceUrl(const char* value) { m_marketplaceUrlHasBeenSet = true; m_marketplaceUrl.assign(value); }
 
     /**
-     * <p>The URL for the page that contains more information about the product.</p>
+     * <p>For integrations with Amazon Web Services services, the Amazon Web Services
+     * Console URL from which to activate the service.</p> <p>For integrations with
+     * third-party products, the Amazon Web Services Marketplace URL from which to
+     * subscribe to or purchase the product.</p>
      */
     inline Product& WithMarketplaceUrl(const Aws::String& value) { SetMarketplaceUrl(value); return *this;}
 
     /**
-     * <p>The URL for the page that contains more information about the product.</p>
+     * <p>For integrations with Amazon Web Services services, the Amazon Web Services
+     * Console URL from which to activate the service.</p> <p>For integrations with
+     * third-party products, the Amazon Web Services Marketplace URL from which to
+     * subscribe to or purchase the product.</p>
      */
     inline Product& WithMarketplaceUrl(Aws::String&& value) { SetMarketplaceUrl(std::move(value)); return *this;}
 
     /**
-     * <p>The URL for the page that contains more information about the product.</p>
+     * <p>For integrations with Amazon Web Services services, the Amazon Web Services
+     * Console URL from which to activate the service.</p> <p>For integrations with
+     * third-party products, the Amazon Web Services Marketplace URL from which to
+     * subscribe to or purchase the product.</p>
      */
     inline Product& WithMarketplaceUrl(const char* value) { SetMarketplaceUrl(value); return *this;}
 
 
     /**
-     * <p>The URL used to activate the product.</p>
+     * <p>The URL to the service or product documentation about the integration with
+     * Security Hub, including how to activate the integration.</p>
      */
     inline const Aws::String& GetActivationUrl() const{ return m_activationUrl; }
 
     /**
-     * <p>The URL used to activate the product.</p>
+     * <p>The URL to the service or product documentation about the integration with
+     * Security Hub, including how to activate the integration.</p>
      */
     inline bool ActivationUrlHasBeenSet() const { return m_activationUrlHasBeenSet; }
 
     /**
-     * <p>The URL used to activate the product.</p>
+     * <p>The URL to the service or product documentation about the integration with
+     * Security Hub, including how to activate the integration.</p>
      */
     inline void SetActivationUrl(const Aws::String& value) { m_activationUrlHasBeenSet = true; m_activationUrl = value; }
 
     /**
-     * <p>The URL used to activate the product.</p>
+     * <p>The URL to the service or product documentation about the integration with
+     * Security Hub, including how to activate the integration.</p>
      */
     inline void SetActivationUrl(Aws::String&& value) { m_activationUrlHasBeenSet = true; m_activationUrl = std::move(value); }
 
     /**
-     * <p>The URL used to activate the product.</p>
+     * <p>The URL to the service or product documentation about the integration with
+     * Security Hub, including how to activate the integration.</p>
      */
     inline void SetActivationUrl(const char* value) { m_activationUrlHasBeenSet = true; m_activationUrl.assign(value); }
 
     /**
-     * <p>The URL used to activate the product.</p>
+     * <p>The URL to the service or product documentation about the integration with
+     * Security Hub, including how to activate the integration.</p>
      */
     inline Product& WithActivationUrl(const Aws::String& value) { SetActivationUrl(value); return *this;}
 
     /**
-     * <p>The URL used to activate the product.</p>
+     * <p>The URL to the service or product documentation about the integration with
+     * Security Hub, including how to activate the integration.</p>
      */
     inline Product& WithActivationUrl(Aws::String&& value) { SetActivationUrl(std::move(value)); return *this;}
 
     /**
-     * <p>The URL used to activate the product.</p>
+     * <p>The URL to the service or product documentation about the integration with
+     * Security Hub, including how to activate the integration.</p>
      */
     inline Product& WithActivationUrl(const char* value) { SetActivationUrl(value); return *this;}
 

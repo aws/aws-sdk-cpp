@@ -213,6 +213,7 @@ namespace Model
      * <p>The status of the forecast export job. States include:</p> <ul> <li> <p>
      * <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
      * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> <li> <p>
+     * <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li> <li> <p>
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
      * <code>DELETE_FAILED</code> </p> </li> </ul>  <p>The <code>Status</code> of
      * the forecast export job must be <code>ACTIVE</code> before you can access the
@@ -224,6 +225,7 @@ namespace Model
      * <p>The status of the forecast export job. States include:</p> <ul> <li> <p>
      * <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
      * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> <li> <p>
+     * <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li> <li> <p>
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
      * <code>DELETE_FAILED</code> </p> </li> </ul>  <p>The <code>Status</code> of
      * the forecast export job must be <code>ACTIVE</code> before you can access the
@@ -235,6 +237,7 @@ namespace Model
      * <p>The status of the forecast export job. States include:</p> <ul> <li> <p>
      * <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
      * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> <li> <p>
+     * <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li> <li> <p>
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
      * <code>DELETE_FAILED</code> </p> </li> </ul>  <p>The <code>Status</code> of
      * the forecast export job must be <code>ACTIVE</code> before you can access the
@@ -246,6 +249,7 @@ namespace Model
      * <p>The status of the forecast export job. States include:</p> <ul> <li> <p>
      * <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
      * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> <li> <p>
+     * <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li> <li> <p>
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
      * <code>DELETE_FAILED</code> </p> </li> </ul>  <p>The <code>Status</code> of
      * the forecast export job must be <code>ACTIVE</code> before you can access the
@@ -257,6 +261,7 @@ namespace Model
      * <p>The status of the forecast export job. States include:</p> <ul> <li> <p>
      * <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
      * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> <li> <p>
+     * <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li> <li> <p>
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
      * <code>DELETE_FAILED</code> </p> </li> </ul>  <p>The <code>Status</code> of
      * the forecast export job must be <code>ACTIVE</code> before you can access the
@@ -268,6 +273,7 @@ namespace Model
      * <p>The status of the forecast export job. States include:</p> <ul> <li> <p>
      * <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
      * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> <li> <p>
+     * <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li> <li> <p>
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
      * <code>DELETE_FAILED</code> </p> </li> </ul>  <p>The <code>Status</code> of
      * the forecast export job must be <code>ACTIVE</code> before you can access the
@@ -279,6 +285,7 @@ namespace Model
      * <p>The status of the forecast export job. States include:</p> <ul> <li> <p>
      * <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
      * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> <li> <p>
+     * <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li> <li> <p>
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
      * <code>DELETE_FAILED</code> </p> </li> </ul>  <p>The <code>Status</code> of
      * the forecast export job must be <code>ACTIVE</code> before you can access the
@@ -314,27 +321,57 @@ namespace Model
 
 
     /**
-     * <p>When the last successful export job finished.</p>
+     * <p>The last time the resource was modified. The timestamp depends on the status
+     * of the job:</p> <ul> <li> <p> <code>CREATE_PENDING</code> - The
+     * <code>CreationTime</code>.</p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> -
+     * The current timestamp.</p> </li> <li> <p> <code>CREATE_STOPPING</code> - The
+     * current timestamp.</p> </li> <li> <p> <code>CREATE_STOPPED</code> - When the job
+     * stopped.</p> </li> <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> -
+     * When the job finished or failed.</p> </li> </ul>
      */
     inline const Aws::Utils::DateTime& GetLastModificationTime() const{ return m_lastModificationTime; }
 
     /**
-     * <p>When the last successful export job finished.</p>
+     * <p>The last time the resource was modified. The timestamp depends on the status
+     * of the job:</p> <ul> <li> <p> <code>CREATE_PENDING</code> - The
+     * <code>CreationTime</code>.</p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> -
+     * The current timestamp.</p> </li> <li> <p> <code>CREATE_STOPPING</code> - The
+     * current timestamp.</p> </li> <li> <p> <code>CREATE_STOPPED</code> - When the job
+     * stopped.</p> </li> <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> -
+     * When the job finished or failed.</p> </li> </ul>
      */
     inline void SetLastModificationTime(const Aws::Utils::DateTime& value) { m_lastModificationTime = value; }
 
     /**
-     * <p>When the last successful export job finished.</p>
+     * <p>The last time the resource was modified. The timestamp depends on the status
+     * of the job:</p> <ul> <li> <p> <code>CREATE_PENDING</code> - The
+     * <code>CreationTime</code>.</p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> -
+     * The current timestamp.</p> </li> <li> <p> <code>CREATE_STOPPING</code> - The
+     * current timestamp.</p> </li> <li> <p> <code>CREATE_STOPPED</code> - When the job
+     * stopped.</p> </li> <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> -
+     * When the job finished or failed.</p> </li> </ul>
      */
     inline void SetLastModificationTime(Aws::Utils::DateTime&& value) { m_lastModificationTime = std::move(value); }
 
     /**
-     * <p>When the last successful export job finished.</p>
+     * <p>The last time the resource was modified. The timestamp depends on the status
+     * of the job:</p> <ul> <li> <p> <code>CREATE_PENDING</code> - The
+     * <code>CreationTime</code>.</p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> -
+     * The current timestamp.</p> </li> <li> <p> <code>CREATE_STOPPING</code> - The
+     * current timestamp.</p> </li> <li> <p> <code>CREATE_STOPPED</code> - When the job
+     * stopped.</p> </li> <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> -
+     * When the job finished or failed.</p> </li> </ul>
      */
     inline DescribeForecastExportJobResult& WithLastModificationTime(const Aws::Utils::DateTime& value) { SetLastModificationTime(value); return *this;}
 
     /**
-     * <p>When the last successful export job finished.</p>
+     * <p>The last time the resource was modified. The timestamp depends on the status
+     * of the job:</p> <ul> <li> <p> <code>CREATE_PENDING</code> - The
+     * <code>CreationTime</code>.</p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> -
+     * The current timestamp.</p> </li> <li> <p> <code>CREATE_STOPPING</code> - The
+     * current timestamp.</p> </li> <li> <p> <code>CREATE_STOPPED</code> - When the job
+     * stopped.</p> </li> <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> -
+     * When the job finished or failed.</p> </li> </ul>
      */
     inline DescribeForecastExportJobResult& WithLastModificationTime(Aws::Utils::DateTime&& value) { SetLastModificationTime(std::move(value)); return *this;}
 

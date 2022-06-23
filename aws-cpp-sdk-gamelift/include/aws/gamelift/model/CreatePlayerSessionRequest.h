@@ -120,50 +120,50 @@ namespace Model
 
 
     /**
-     * <p>Developer-defined information related to a player. Amazon GameLift does not
-     * use this data, so it can be formatted as needed for use in the game.</p>
+     * <p>Developer-defined information related to a player. GameLift does not use this
+     * data, so it can be formatted as needed for use in the game.</p>
      */
     inline const Aws::String& GetPlayerData() const{ return m_playerData; }
 
     /**
-     * <p>Developer-defined information related to a player. Amazon GameLift does not
-     * use this data, so it can be formatted as needed for use in the game.</p>
+     * <p>Developer-defined information related to a player. GameLift does not use this
+     * data, so it can be formatted as needed for use in the game.</p>
      */
     inline bool PlayerDataHasBeenSet() const { return m_playerDataHasBeenSet; }
 
     /**
-     * <p>Developer-defined information related to a player. Amazon GameLift does not
-     * use this data, so it can be formatted as needed for use in the game.</p>
+     * <p>Developer-defined information related to a player. GameLift does not use this
+     * data, so it can be formatted as needed for use in the game.</p>
      */
     inline void SetPlayerData(const Aws::String& value) { m_playerDataHasBeenSet = true; m_playerData = value; }
 
     /**
-     * <p>Developer-defined information related to a player. Amazon GameLift does not
-     * use this data, so it can be formatted as needed for use in the game.</p>
+     * <p>Developer-defined information related to a player. GameLift does not use this
+     * data, so it can be formatted as needed for use in the game.</p>
      */
     inline void SetPlayerData(Aws::String&& value) { m_playerDataHasBeenSet = true; m_playerData = std::move(value); }
 
     /**
-     * <p>Developer-defined information related to a player. Amazon GameLift does not
-     * use this data, so it can be formatted as needed for use in the game.</p>
+     * <p>Developer-defined information related to a player. GameLift does not use this
+     * data, so it can be formatted as needed for use in the game.</p>
      */
     inline void SetPlayerData(const char* value) { m_playerDataHasBeenSet = true; m_playerData.assign(value); }
 
     /**
-     * <p>Developer-defined information related to a player. Amazon GameLift does not
-     * use this data, so it can be formatted as needed for use in the game.</p>
+     * <p>Developer-defined information related to a player. GameLift does not use this
+     * data, so it can be formatted as needed for use in the game.</p>
      */
     inline CreatePlayerSessionRequest& WithPlayerData(const Aws::String& value) { SetPlayerData(value); return *this;}
 
     /**
-     * <p>Developer-defined information related to a player. Amazon GameLift does not
-     * use this data, so it can be formatted as needed for use in the game.</p>
+     * <p>Developer-defined information related to a player. GameLift does not use this
+     * data, so it can be formatted as needed for use in the game.</p>
      */
     inline CreatePlayerSessionRequest& WithPlayerData(Aws::String&& value) { SetPlayerData(std::move(value)); return *this;}
 
     /**
-     * <p>Developer-defined information related to a player. Amazon GameLift does not
-     * use this data, so it can be formatted as needed for use in the game.</p>
+     * <p>Developer-defined information related to a player. GameLift does not use this
+     * data, so it can be formatted as needed for use in the game.</p>
      */
     inline CreatePlayerSessionRequest& WithPlayerData(const char* value) { SetPlayerData(value); return *this;}
 

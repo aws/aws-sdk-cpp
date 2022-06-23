@@ -80,42 +80,42 @@ namespace Model
 
 
     /**
-     * <p>The Function ID.</p>
+     * <p>The function ID.</p>
      */
     inline const Aws::String& GetFunctionId() const{ return m_functionId; }
 
     /**
-     * <p>The Function ID.</p>
+     * <p>The function ID.</p>
      */
     inline bool FunctionIdHasBeenSet() const { return m_functionIdHasBeenSet; }
 
     /**
-     * <p>The Function ID.</p>
+     * <p>The function ID.</p>
      */
     inline void SetFunctionId(const Aws::String& value) { m_functionIdHasBeenSet = true; m_functionId = value; }
 
     /**
-     * <p>The Function ID.</p>
+     * <p>The function ID.</p>
      */
     inline void SetFunctionId(Aws::String&& value) { m_functionIdHasBeenSet = true; m_functionId = std::move(value); }
 
     /**
-     * <p>The Function ID.</p>
+     * <p>The function ID.</p>
      */
     inline void SetFunctionId(const char* value) { m_functionIdHasBeenSet = true; m_functionId.assign(value); }
 
     /**
-     * <p>The Function ID.</p>
+     * <p>The function ID.</p>
      */
     inline ListResolversByFunctionRequest& WithFunctionId(const Aws::String& value) { SetFunctionId(value); return *this;}
 
     /**
-     * <p>The Function ID.</p>
+     * <p>The function ID.</p>
      */
     inline ListResolversByFunctionRequest& WithFunctionId(Aws::String&& value) { SetFunctionId(std::move(value)); return *this;}
 
     /**
-     * <p>The Function ID.</p>
+     * <p>The function ID.</p>
      */
     inline ListResolversByFunctionRequest& WithFunctionId(const char* value) { SetFunctionId(value); return *this;}
 
@@ -170,22 +170,22 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of results you want the request to return.</p>
+     * <p>The maximum number of results that you want the request to return.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of results you want the request to return.</p>
+     * <p>The maximum number of results that you want the request to return.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of results you want the request to return.</p>
+     * <p>The maximum number of results that you want the request to return.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of results you want the request to return.</p>
+     * <p>The maximum number of results that you want the request to return.</p>
      */
     inline ListResolversByFunctionRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

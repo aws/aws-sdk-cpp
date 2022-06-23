@@ -22,6 +22,7 @@ namespace Aws
 
         static const int ACCOUNT_THROTTLED_HASH = HashingUtils::HashString("ACCOUNT_THROTTLED");
         static const int DEPENDENCY_REQUEST_THROTTLED_HASH = HashingUtils::HashString("DEPENDENCY_REQUEST_THROTTLED");
+        static const int RESOURCE_LEVEL_THROTTLE_HASH = HashingUtils::HashString("RESOURCE_LEVEL_THROTTLE");
 
 
         RequestThrottledExceptionReason GetRequestThrottledExceptionReasonForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == DEPENDENCY_REQUEST_THROTTLED_HASH)
           {
             return RequestThrottledExceptionReason::DEPENDENCY_REQUEST_THROTTLED;
+          }
+          else if (hashCode == RESOURCE_LEVEL_THROTTLE_HASH)
+          {
+            return RequestThrottledExceptionReason::RESOURCE_LEVEL_THROTTLE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "ACCOUNT_THROTTLED";
           case RequestThrottledExceptionReason::DEPENDENCY_REQUEST_THROTTLED:
             return "DEPENDENCY_REQUEST_THROTTLED";
+          case RequestThrottledExceptionReason::RESOURCE_LEVEL_THROTTLE:
+            return "RESOURCE_LEVEL_THROTTLE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

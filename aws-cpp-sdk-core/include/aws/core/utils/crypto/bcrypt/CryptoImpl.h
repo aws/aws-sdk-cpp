@@ -69,6 +69,10 @@ namespace Aws
                  */
                 HashResult Calculate(Aws::IStream& stream);
 
+                void Update(unsigned char* buffer, size_t bufferSize);
+
+                HashResult GetHash();
+
             private:
 
                 bool IsValid() const;
@@ -77,6 +81,7 @@ namespace Aws
                 bool HashStream(Aws::IStream& stream);
 
                 void* m_algorithmHandle;
+                void* m_hashHandle;
 
                 DWORD m_hashBufferLength;
                 PBYTE m_hashBuffer;
@@ -110,6 +115,29 @@ namespace Aws
                  */
                 virtual HashResult Calculate(Aws::IStream& stream) override;
 
+                virtual void Update(unsigned char* buffer, size_t bufferSize) override;
+
+                virtual HashResult GetHash() override;
+
+            private:
+                BCryptHashImpl m_impl;
+            };
+
+            class Sha1BcryptImpl : public Hash
+            {
+            public:
+
+                Sha1BcryptImpl();
+                virtual ~Sha1BcryptImpl() {}
+
+                virtual HashResult Calculate(const Aws::String& str) override;
+
+                virtual HashResult Calculate(Aws::IStream& stream) override;
+
+                virtual void Update(unsigned char* buffer, size_t bufferSize) override;
+
+                virtual HashResult GetHash() override;
+
             private:
                 BCryptHashImpl m_impl;
             };
@@ -134,6 +162,10 @@ namespace Aws
                  * Calculates a sha256 hash on the stream without loading the entire stream into memory at once.
                  */
                 virtual HashResult Calculate(Aws::IStream& stream) override;
+
+                virtual void Update(unsigned char* buffer, size_t bufferSize) override;
+
+                virtual HashResult GetHash() override;
 
             private:
                 BCryptHashImpl m_impl;

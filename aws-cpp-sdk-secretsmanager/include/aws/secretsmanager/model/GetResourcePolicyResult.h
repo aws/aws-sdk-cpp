@@ -69,129 +69,94 @@ namespace Model
 
 
     /**
-     * <p>The friendly name of the secret that the resource-based policy was retrieved
-     * for.</p>
+     * <p>The name of the secret that the resource-based policy was retrieved for.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The friendly name of the secret that the resource-based policy was retrieved
-     * for.</p>
+     * <p>The name of the secret that the resource-based policy was retrieved for.</p>
      */
     inline void SetName(const Aws::String& value) { m_name = value; }
 
     /**
-     * <p>The friendly name of the secret that the resource-based policy was retrieved
-     * for.</p>
+     * <p>The name of the secret that the resource-based policy was retrieved for.</p>
      */
     inline void SetName(Aws::String&& value) { m_name = std::move(value); }
 
     /**
-     * <p>The friendly name of the secret that the resource-based policy was retrieved
-     * for.</p>
+     * <p>The name of the secret that the resource-based policy was retrieved for.</p>
      */
     inline void SetName(const char* value) { m_name.assign(value); }
 
     /**
-     * <p>The friendly name of the secret that the resource-based policy was retrieved
-     * for.</p>
+     * <p>The name of the secret that the resource-based policy was retrieved for.</p>
      */
     inline GetResourcePolicyResult& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The friendly name of the secret that the resource-based policy was retrieved
-     * for.</p>
+     * <p>The name of the secret that the resource-based policy was retrieved for.</p>
      */
     inline GetResourcePolicyResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The friendly name of the secret that the resource-based policy was retrieved
-     * for.</p>
+     * <p>The name of the secret that the resource-based policy was retrieved for.</p>
      */
     inline GetResourcePolicyResult& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>A JSON-formatted string that describes the permissions that are associated
-     * with the attached secret. These permissions are combined with any permissions
-     * that are associated with the user or role that attempts to access this secret.
-     * The combined permissions specify who can access the secret and what actions they
-     * can perform. For more information, see <a
-     * href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
-     * and Access Control for AWS Secrets Manager</a> in the <i>AWS Secrets Manager
-     * User Guide</i>.</p>
+     * <p>A JSON-formatted string that contains the permissions policy attached to the
+     * secret. For more information about permissions policies, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+     * and access control for Secrets Manager</a>.</p>
      */
     inline const Aws::String& GetResourcePolicy() const{ return m_resourcePolicy; }
 
     /**
-     * <p>A JSON-formatted string that describes the permissions that are associated
-     * with the attached secret. These permissions are combined with any permissions
-     * that are associated with the user or role that attempts to access this secret.
-     * The combined permissions specify who can access the secret and what actions they
-     * can perform. For more information, see <a
-     * href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
-     * and Access Control for AWS Secrets Manager</a> in the <i>AWS Secrets Manager
-     * User Guide</i>.</p>
+     * <p>A JSON-formatted string that contains the permissions policy attached to the
+     * secret. For more information about permissions policies, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+     * and access control for Secrets Manager</a>.</p>
      */
     inline void SetResourcePolicy(const Aws::String& value) { m_resourcePolicy = value; }
 
     /**
-     * <p>A JSON-formatted string that describes the permissions that are associated
-     * with the attached secret. These permissions are combined with any permissions
-     * that are associated with the user or role that attempts to access this secret.
-     * The combined permissions specify who can access the secret and what actions they
-     * can perform. For more information, see <a
-     * href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
-     * and Access Control for AWS Secrets Manager</a> in the <i>AWS Secrets Manager
-     * User Guide</i>.</p>
+     * <p>A JSON-formatted string that contains the permissions policy attached to the
+     * secret. For more information about permissions policies, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+     * and access control for Secrets Manager</a>.</p>
      */
     inline void SetResourcePolicy(Aws::String&& value) { m_resourcePolicy = std::move(value); }
 
     /**
-     * <p>A JSON-formatted string that describes the permissions that are associated
-     * with the attached secret. These permissions are combined with any permissions
-     * that are associated with the user or role that attempts to access this secret.
-     * The combined permissions specify who can access the secret and what actions they
-     * can perform. For more information, see <a
-     * href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
-     * and Access Control for AWS Secrets Manager</a> in the <i>AWS Secrets Manager
-     * User Guide</i>.</p>
+     * <p>A JSON-formatted string that contains the permissions policy attached to the
+     * secret. For more information about permissions policies, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+     * and access control for Secrets Manager</a>.</p>
      */
     inline void SetResourcePolicy(const char* value) { m_resourcePolicy.assign(value); }
 
     /**
-     * <p>A JSON-formatted string that describes the permissions that are associated
-     * with the attached secret. These permissions are combined with any permissions
-     * that are associated with the user or role that attempts to access this secret.
-     * The combined permissions specify who can access the secret and what actions they
-     * can perform. For more information, see <a
-     * href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
-     * and Access Control for AWS Secrets Manager</a> in the <i>AWS Secrets Manager
-     * User Guide</i>.</p>
+     * <p>A JSON-formatted string that contains the permissions policy attached to the
+     * secret. For more information about permissions policies, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+     * and access control for Secrets Manager</a>.</p>
      */
     inline GetResourcePolicyResult& WithResourcePolicy(const Aws::String& value) { SetResourcePolicy(value); return *this;}
 
     /**
-     * <p>A JSON-formatted string that describes the permissions that are associated
-     * with the attached secret. These permissions are combined with any permissions
-     * that are associated with the user or role that attempts to access this secret.
-     * The combined permissions specify who can access the secret and what actions they
-     * can perform. For more information, see <a
-     * href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
-     * and Access Control for AWS Secrets Manager</a> in the <i>AWS Secrets Manager
-     * User Guide</i>.</p>
+     * <p>A JSON-formatted string that contains the permissions policy attached to the
+     * secret. For more information about permissions policies, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+     * and access control for Secrets Manager</a>.</p>
      */
     inline GetResourcePolicyResult& WithResourcePolicy(Aws::String&& value) { SetResourcePolicy(std::move(value)); return *this;}
 
     /**
-     * <p>A JSON-formatted string that describes the permissions that are associated
-     * with the attached secret. These permissions are combined with any permissions
-     * that are associated with the user or role that attempts to access this secret.
-     * The combined permissions specify who can access the secret and what actions they
-     * can perform. For more information, see <a
-     * href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
-     * and Access Control for AWS Secrets Manager</a> in the <i>AWS Secrets Manager
-     * User Guide</i>.</p>
+     * <p>A JSON-formatted string that contains the permissions policy attached to the
+     * secret. For more information about permissions policies, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+     * and access control for Secrets Manager</a>.</p>
      */
     inline GetResourcePolicyResult& WithResourcePolicy(const char* value) { SetResourcePolicy(value); return *this;}
 

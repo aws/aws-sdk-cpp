@@ -196,26 +196,12 @@ namespace Model
         virtual Model::CreateConnectionOutcome CreateConnection(const Model::CreateConnectionRequest& request) const;
 
         /**
-         * <p>Creates a connection that can then be given to other AWS services like
-         * CodePipeline so that it can access third-party code repositories. The connection
-         * is in pending status until the third-party connection handshake is completed
-         * from the console.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/CreateConnection">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateConnection that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateConnectionOutcomeCallable CreateConnectionCallable(const Model::CreateConnectionRequest& request) const;
 
         /**
-         * <p>Creates a connection that can then be given to other AWS services like
-         * CodePipeline so that it can access third-party code repositories. The connection
-         * is in pending status until the third-party connection handshake is completed
-         * from the console.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/CreateConnection">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateConnectionAsync(const Model::CreateConnectionRequest& request, const CreateConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -233,32 +219,12 @@ namespace Model
         virtual Model::CreateHostOutcome CreateHost(const Model::CreateHostRequest& request) const;
 
         /**
-         * <p>Creates a resource that represents the infrastructure where a third-party
-         * provider is installed. The host is used when you create connections to an
-         * installed third-party provider type, such as GitHub Enterprise Server. You
-         * create one host for all connections to that provider.</p>  <p>A host
-         * created through the CLI or the SDK is in `PENDING` status by default. You can
-         * make its status `AVAILABLE` by setting up the host in the console.</p>
-         * <p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/CreateHost">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for CreateHost that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateHostOutcomeCallable CreateHostCallable(const Model::CreateHostRequest& request) const;
 
         /**
-         * <p>Creates a resource that represents the infrastructure where a third-party
-         * provider is installed. The host is used when you create connections to an
-         * installed third-party provider type, such as GitHub Enterprise Server. You
-         * create one host for all connections to that provider.</p>  <p>A host
-         * created through the CLI or the SDK is in `PENDING` status by default. You can
-         * make its status `AVAILABLE` by setting up the host in the console.</p>
-         * <p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/CreateHost">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for CreateHost that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateHostAsync(const Model::CreateHostRequest& request, const CreateHostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -270,20 +236,12 @@ namespace Model
         virtual Model::DeleteConnectionOutcome DeleteConnection(const Model::DeleteConnectionRequest& request) const;
 
         /**
-         * <p>The connection to be deleted.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/DeleteConnection">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteConnection that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteConnectionOutcomeCallable DeleteConnectionCallable(const Model::DeleteConnectionRequest& request) const;
 
         /**
-         * <p>The connection to be deleted.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/DeleteConnection">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteConnectionAsync(const Model::DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -298,26 +256,12 @@ namespace Model
         virtual Model::DeleteHostOutcome DeleteHost(const Model::DeleteHostRequest& request) const;
 
         /**
-         * <p>The host to be deleted. Before you delete a host, all connections associated
-         * to the host must be deleted.</p>  <p>A host cannot be deleted if it is in
-         * the VPC_CONFIG_INITIALIZING or VPC_CONFIG_DELETING state.</p> <p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/DeleteHost">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteHost that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteHostOutcomeCallable DeleteHostCallable(const Model::DeleteHostRequest& request) const;
 
         /**
-         * <p>The host to be deleted. Before you delete a host, all connections associated
-         * to the host must be deleted.</p>  <p>A host cannot be deleted if it is in
-         * the VPC_CONFIG_INITIALIZING or VPC_CONFIG_DELETING state.</p> <p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/DeleteHost">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteHost that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteHostAsync(const Model::DeleteHostRequest& request, const DeleteHostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -330,22 +274,12 @@ namespace Model
         virtual Model::GetConnectionOutcome GetConnection(const Model::GetConnectionRequest& request) const;
 
         /**
-         * <p>Returns the connection ARN and details such as status, owner, and provider
-         * type.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetConnection">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetConnection that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetConnectionOutcomeCallable GetConnectionCallable(const Model::GetConnectionRequest& request) const;
 
         /**
-         * <p>Returns the connection ARN and details such as status, owner, and provider
-         * type.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetConnection">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetConnectionAsync(const Model::GetConnectionRequest& request, const GetConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -358,22 +292,12 @@ namespace Model
         virtual Model::GetHostOutcome GetHost(const Model::GetHostRequest& request) const;
 
         /**
-         * <p>Returns the host ARN and details such as status, provider type, endpoint,
-         * and, if applicable, the VPC configuration.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetHost">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetHost that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetHostOutcomeCallable GetHostCallable(const Model::GetHostRequest& request) const;
 
         /**
-         * <p>Returns the host ARN and details such as status, provider type, endpoint,
-         * and, if applicable, the VPC configuration.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetHost">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetHost that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetHostAsync(const Model::GetHostRequest& request, const GetHostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -386,22 +310,12 @@ namespace Model
         virtual Model::ListConnectionsOutcome ListConnections(const Model::ListConnectionsRequest& request) const;
 
         /**
-         * <p>Lists the connections associated with your account.</p><p><h3>See Also:</h3> 
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/ListConnections">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListConnections that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListConnectionsOutcomeCallable ListConnectionsCallable(const Model::ListConnectionsRequest& request) const;
 
         /**
-         * <p>Lists the connections associated with your account.</p><p><h3>See Also:</h3> 
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/ListConnections">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListConnections that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListConnectionsAsync(const Model::ListConnectionsRequest& request, const ListConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -413,20 +327,12 @@ namespace Model
         virtual Model::ListHostsOutcome ListHosts(const Model::ListHostsRequest& request) const;
 
         /**
-         * <p>Lists the hosts associated with your account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/ListHosts">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListHosts that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListHostsOutcomeCallable ListHostsCallable(const Model::ListHostsRequest& request) const;
 
         /**
-         * <p>Lists the hosts associated with your account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/ListHosts">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListHosts that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListHostsAsync(const Model::ListHostsRequest& request, const ListHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -439,22 +345,12 @@ namespace Model
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Gets the set of key-value pairs (metadata) that are used to manage the
-         * resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/ListTagsForResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Gets the set of key-value pairs (metadata) that are used to manage the
-         * resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/ListTagsForResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -467,22 +363,12 @@ namespace Model
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Adds to or modifies the tags of the given resource. Tags are metadata that
-         * can be used to manage a resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/TagResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Adds to or modifies the tags of the given resource. Tags are metadata that
-         * can be used to manage a resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/TagResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -494,20 +380,12 @@ namespace Model
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes tags from an AWS resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/UntagResource">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes tags from an AWS resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/UntagResource">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -520,22 +398,12 @@ namespace Model
         virtual Model::UpdateHostOutcome UpdateHost(const Model::UpdateHostRequest& request) const;
 
         /**
-         * <p>Updates a specified host with the provided configurations.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/UpdateHost">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for UpdateHost that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateHostOutcomeCallable UpdateHostCallable(const Model::UpdateHostRequest& request) const;
 
         /**
-         * <p>Updates a specified host with the provided configurations.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/UpdateHost">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for UpdateHost that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateHostAsync(const Model::UpdateHostRequest& request, const UpdateHostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 

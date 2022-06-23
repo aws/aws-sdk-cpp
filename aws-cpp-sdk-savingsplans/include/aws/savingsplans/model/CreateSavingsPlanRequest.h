@@ -78,49 +78,49 @@ namespace Model
 
     /**
      * <p>The hourly commitment, in USD. This is a value between 0.001 and 1 million.
-     * You cannot specify more than three digits after the decimal point.</p>
+     * You cannot specify more than five digits after the decimal point.</p>
      */
     inline const Aws::String& GetCommitment() const{ return m_commitment; }
 
     /**
      * <p>The hourly commitment, in USD. This is a value between 0.001 and 1 million.
-     * You cannot specify more than three digits after the decimal point.</p>
+     * You cannot specify more than five digits after the decimal point.</p>
      */
     inline bool CommitmentHasBeenSet() const { return m_commitmentHasBeenSet; }
 
     /**
      * <p>The hourly commitment, in USD. This is a value between 0.001 and 1 million.
-     * You cannot specify more than three digits after the decimal point.</p>
+     * You cannot specify more than five digits after the decimal point.</p>
      */
     inline void SetCommitment(const Aws::String& value) { m_commitmentHasBeenSet = true; m_commitment = value; }
 
     /**
      * <p>The hourly commitment, in USD. This is a value between 0.001 and 1 million.
-     * You cannot specify more than three digits after the decimal point.</p>
+     * You cannot specify more than five digits after the decimal point.</p>
      */
     inline void SetCommitment(Aws::String&& value) { m_commitmentHasBeenSet = true; m_commitment = std::move(value); }
 
     /**
      * <p>The hourly commitment, in USD. This is a value between 0.001 and 1 million.
-     * You cannot specify more than three digits after the decimal point.</p>
+     * You cannot specify more than five digits after the decimal point.</p>
      */
     inline void SetCommitment(const char* value) { m_commitmentHasBeenSet = true; m_commitment.assign(value); }
 
     /**
      * <p>The hourly commitment, in USD. This is a value between 0.001 and 1 million.
-     * You cannot specify more than three digits after the decimal point.</p>
+     * You cannot specify more than five digits after the decimal point.</p>
      */
     inline CreateSavingsPlanRequest& WithCommitment(const Aws::String& value) { SetCommitment(value); return *this;}
 
     /**
      * <p>The hourly commitment, in USD. This is a value between 0.001 and 1 million.
-     * You cannot specify more than three digits after the decimal point.</p>
+     * You cannot specify more than five digits after the decimal point.</p>
      */
     inline CreateSavingsPlanRequest& WithCommitment(Aws::String&& value) { SetCommitment(std::move(value)); return *this;}
 
     /**
      * <p>The hourly commitment, in USD. This is a value between 0.001 and 1 million.
-     * You cannot specify more than three digits after the decimal point.</p>
+     * You cannot specify more than five digits after the decimal point.</p>
      */
     inline CreateSavingsPlanRequest& WithCommitment(const char* value) { SetCommitment(value); return *this;}
 

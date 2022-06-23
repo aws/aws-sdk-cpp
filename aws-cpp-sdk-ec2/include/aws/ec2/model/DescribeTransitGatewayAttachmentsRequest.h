@@ -92,7 +92,7 @@ namespace Model
      * <code>association.transit-gateway-route-table-id</code> - The ID of the route
      * table for the transit gateway.</p> </li> <li> <p> <code>resource-id</code> - The
      * ID of the resource.</p> </li> <li> <p> <code>resource-owner-id</code> - The ID
-     * of the AWS account that owns the resource.</p> </li> <li> <p>
+     * of the Amazon Web Services account that owns the resource.</p> </li> <li> <p>
      * <code>resource-type</code> - The resource type. Valid values are
      * <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> |
      * <code>peering</code> | <code>connect</code>.</p> </li> <li> <p>
@@ -104,7 +104,8 @@ namespace Model
      * </li> <li> <p> <code>transit-gateway-attachment-id</code> - The ID of the
      * attachment.</p> </li> <li> <p> <code>transit-gateway-id</code> - The ID of the
      * transit gateway.</p> </li> <li> <p> <code>transit-gateway-owner-id</code> - The
-     * ID of the AWS account that owns the transit gateway.</p> </li> </ul>
+     * ID of the Amazon Web Services account that owns the transit gateway.</p> </li>
+     * </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
@@ -116,7 +117,7 @@ namespace Model
      * <code>association.transit-gateway-route-table-id</code> - The ID of the route
      * table for the transit gateway.</p> </li> <li> <p> <code>resource-id</code> - The
      * ID of the resource.</p> </li> <li> <p> <code>resource-owner-id</code> - The ID
-     * of the AWS account that owns the resource.</p> </li> <li> <p>
+     * of the Amazon Web Services account that owns the resource.</p> </li> <li> <p>
      * <code>resource-type</code> - The resource type. Valid values are
      * <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> |
      * <code>peering</code> | <code>connect</code>.</p> </li> <li> <p>
@@ -128,7 +129,8 @@ namespace Model
      * </li> <li> <p> <code>transit-gateway-attachment-id</code> - The ID of the
      * attachment.</p> </li> <li> <p> <code>transit-gateway-id</code> - The ID of the
      * transit gateway.</p> </li> <li> <p> <code>transit-gateway-owner-id</code> - The
-     * ID of the AWS account that owns the transit gateway.</p> </li> </ul>
+     * ID of the Amazon Web Services account that owns the transit gateway.</p> </li>
+     * </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
@@ -140,7 +142,7 @@ namespace Model
      * <code>association.transit-gateway-route-table-id</code> - The ID of the route
      * table for the transit gateway.</p> </li> <li> <p> <code>resource-id</code> - The
      * ID of the resource.</p> </li> <li> <p> <code>resource-owner-id</code> - The ID
-     * of the AWS account that owns the resource.</p> </li> <li> <p>
+     * of the Amazon Web Services account that owns the resource.</p> </li> <li> <p>
      * <code>resource-type</code> - The resource type. Valid values are
      * <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> |
      * <code>peering</code> | <code>connect</code>.</p> </li> <li> <p>
@@ -152,7 +154,8 @@ namespace Model
      * </li> <li> <p> <code>transit-gateway-attachment-id</code> - The ID of the
      * attachment.</p> </li> <li> <p> <code>transit-gateway-id</code> - The ID of the
      * transit gateway.</p> </li> <li> <p> <code>transit-gateway-owner-id</code> - The
-     * ID of the AWS account that owns the transit gateway.</p> </li> </ul>
+     * ID of the Amazon Web Services account that owns the transit gateway.</p> </li>
+     * </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
@@ -164,7 +167,7 @@ namespace Model
      * <code>association.transit-gateway-route-table-id</code> - The ID of the route
      * table for the transit gateway.</p> </li> <li> <p> <code>resource-id</code> - The
      * ID of the resource.</p> </li> <li> <p> <code>resource-owner-id</code> - The ID
-     * of the AWS account that owns the resource.</p> </li> <li> <p>
+     * of the Amazon Web Services account that owns the resource.</p> </li> <li> <p>
      * <code>resource-type</code> - The resource type. Valid values are
      * <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> |
      * <code>peering</code> | <code>connect</code>.</p> </li> <li> <p>
@@ -176,7 +179,8 @@ namespace Model
      * </li> <li> <p> <code>transit-gateway-attachment-id</code> - The ID of the
      * attachment.</p> </li> <li> <p> <code>transit-gateway-id</code> - The ID of the
      * transit gateway.</p> </li> <li> <p> <code>transit-gateway-owner-id</code> - The
-     * ID of the AWS account that owns the transit gateway.</p> </li> </ul>
+     * ID of the Amazon Web Services account that owns the transit gateway.</p> </li>
+     * </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
@@ -188,7 +192,7 @@ namespace Model
      * <code>association.transit-gateway-route-table-id</code> - The ID of the route
      * table for the transit gateway.</p> </li> <li> <p> <code>resource-id</code> - The
      * ID of the resource.</p> </li> <li> <p> <code>resource-owner-id</code> - The ID
-     * of the AWS account that owns the resource.</p> </li> <li> <p>
+     * of the Amazon Web Services account that owns the resource.</p> </li> <li> <p>
      * <code>resource-type</code> - The resource type. Valid values are
      * <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> |
      * <code>peering</code> | <code>connect</code>.</p> </li> <li> <p>
@@ -200,7 +204,8 @@ namespace Model
      * </li> <li> <p> <code>transit-gateway-attachment-id</code> - The ID of the
      * attachment.</p> </li> <li> <p> <code>transit-gateway-id</code> - The ID of the
      * transit gateway.</p> </li> <li> <p> <code>transit-gateway-owner-id</code> - The
-     * ID of the AWS account that owns the transit gateway.</p> </li> </ul>
+     * ID of the Amazon Web Services account that owns the transit gateway.</p> </li>
+     * </ul>
      */
     inline DescribeTransitGatewayAttachmentsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
@@ -212,7 +217,7 @@ namespace Model
      * <code>association.transit-gateway-route-table-id</code> - The ID of the route
      * table for the transit gateway.</p> </li> <li> <p> <code>resource-id</code> - The
      * ID of the resource.</p> </li> <li> <p> <code>resource-owner-id</code> - The ID
-     * of the AWS account that owns the resource.</p> </li> <li> <p>
+     * of the Amazon Web Services account that owns the resource.</p> </li> <li> <p>
      * <code>resource-type</code> - The resource type. Valid values are
      * <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> |
      * <code>peering</code> | <code>connect</code>.</p> </li> <li> <p>
@@ -224,7 +229,8 @@ namespace Model
      * </li> <li> <p> <code>transit-gateway-attachment-id</code> - The ID of the
      * attachment.</p> </li> <li> <p> <code>transit-gateway-id</code> - The ID of the
      * transit gateway.</p> </li> <li> <p> <code>transit-gateway-owner-id</code> - The
-     * ID of the AWS account that owns the transit gateway.</p> </li> </ul>
+     * ID of the Amazon Web Services account that owns the transit gateway.</p> </li>
+     * </ul>
      */
     inline DescribeTransitGatewayAttachmentsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
@@ -236,7 +242,7 @@ namespace Model
      * <code>association.transit-gateway-route-table-id</code> - The ID of the route
      * table for the transit gateway.</p> </li> <li> <p> <code>resource-id</code> - The
      * ID of the resource.</p> </li> <li> <p> <code>resource-owner-id</code> - The ID
-     * of the AWS account that owns the resource.</p> </li> <li> <p>
+     * of the Amazon Web Services account that owns the resource.</p> </li> <li> <p>
      * <code>resource-type</code> - The resource type. Valid values are
      * <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> |
      * <code>peering</code> | <code>connect</code>.</p> </li> <li> <p>
@@ -248,7 +254,8 @@ namespace Model
      * </li> <li> <p> <code>transit-gateway-attachment-id</code> - The ID of the
      * attachment.</p> </li> <li> <p> <code>transit-gateway-id</code> - The ID of the
      * transit gateway.</p> </li> <li> <p> <code>transit-gateway-owner-id</code> - The
-     * ID of the AWS account that owns the transit gateway.</p> </li> </ul>
+     * ID of the Amazon Web Services account that owns the transit gateway.</p> </li>
+     * </ul>
      */
     inline DescribeTransitGatewayAttachmentsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
@@ -260,7 +267,7 @@ namespace Model
      * <code>association.transit-gateway-route-table-id</code> - The ID of the route
      * table for the transit gateway.</p> </li> <li> <p> <code>resource-id</code> - The
      * ID of the resource.</p> </li> <li> <p> <code>resource-owner-id</code> - The ID
-     * of the AWS account that owns the resource.</p> </li> <li> <p>
+     * of the Amazon Web Services account that owns the resource.</p> </li> <li> <p>
      * <code>resource-type</code> - The resource type. Valid values are
      * <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> |
      * <code>peering</code> | <code>connect</code>.</p> </li> <li> <p>
@@ -272,7 +279,8 @@ namespace Model
      * </li> <li> <p> <code>transit-gateway-attachment-id</code> - The ID of the
      * attachment.</p> </li> <li> <p> <code>transit-gateway-id</code> - The ID of the
      * transit gateway.</p> </li> <li> <p> <code>transit-gateway-owner-id</code> - The
-     * ID of the AWS account that owns the transit gateway.</p> </li> </ul>
+     * ID of the Amazon Web Services account that owns the transit gateway.</p> </li>
+     * </ul>
      */
     inline DescribeTransitGatewayAttachmentsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

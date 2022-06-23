@@ -37,22 +37,22 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether software token MFA is enabled.</p>
+     * <p>Specifies whether software token MFA is activated.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
 
     /**
-     * <p>Specifies whether software token MFA is enabled.</p>
+     * <p>Specifies whether software token MFA is activated.</p>
      */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
 
     /**
-     * <p>Specifies whether software token MFA is enabled.</p>
+     * <p>Specifies whether software token MFA is activated.</p>
      */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
-     * <p>Specifies whether software token MFA is enabled.</p>
+     * <p>Specifies whether software token MFA is activated.</p>
      */
     inline SoftwareTokenMfaConfigType& WithEnabled(bool value) { SetEnabled(value); return *this;}
 

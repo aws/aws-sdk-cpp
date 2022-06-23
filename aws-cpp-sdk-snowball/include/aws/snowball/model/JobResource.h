@@ -27,10 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains an array of AWS resource objects. Each object represents an Amazon
-   * S3 bucket, an AWS Lambda function, or an Amazon Machine Image (AMI) based on
-   * Amazon EC2 that is associated with a particular job.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Contains an array of Amazon Web Services resource objects. Each object
+   * represents an Amazon S3 bucket, an Lambda function, or an Amazon Machine Image
+   * (AMI) based on Amazon EC2 that is associated with a particular
+   * job.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/JobResource">AWS
    * API Reference</a></p>
    */

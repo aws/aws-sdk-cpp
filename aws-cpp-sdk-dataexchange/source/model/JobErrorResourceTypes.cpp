@@ -22,6 +22,7 @@ namespace Aws
 
         static const int REVISION_HASH = HashingUtils::HashString("REVISION");
         static const int ASSET_HASH = HashingUtils::HashString("ASSET");
+        static const int DATA_SET_HASH = HashingUtils::HashString("DATA_SET");
 
 
         JobErrorResourceTypes GetJobErrorResourceTypesForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == ASSET_HASH)
           {
             return JobErrorResourceTypes::ASSET;
+          }
+          else if (hashCode == DATA_SET_HASH)
+          {
+            return JobErrorResourceTypes::DATA_SET;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "REVISION";
           case JobErrorResourceTypes::ASSET:
             return "ASSET";
+          case JobErrorResourceTypes::DATA_SET:
+            return "DATA_SET";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

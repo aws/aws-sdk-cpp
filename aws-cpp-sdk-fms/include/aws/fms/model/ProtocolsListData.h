@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>An AWS Firewall Manager protocols list.</p><p><h3>See Also:</h3>   <a
+   * <p>An Firewall Manager protocols list.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ProtocolsListData">AWS
    * API Reference</a></p>
    */
@@ -41,83 +41,83 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS Firewall Manager protocols list.</p>
+     * <p>The ID of the Firewall Manager protocols list.</p>
      */
     inline const Aws::String& GetListId() const{ return m_listId; }
 
     /**
-     * <p>The ID of the AWS Firewall Manager protocols list.</p>
+     * <p>The ID of the Firewall Manager protocols list.</p>
      */
     inline bool ListIdHasBeenSet() const { return m_listIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS Firewall Manager protocols list.</p>
+     * <p>The ID of the Firewall Manager protocols list.</p>
      */
     inline void SetListId(const Aws::String& value) { m_listIdHasBeenSet = true; m_listId = value; }
 
     /**
-     * <p>The ID of the AWS Firewall Manager protocols list.</p>
+     * <p>The ID of the Firewall Manager protocols list.</p>
      */
     inline void SetListId(Aws::String&& value) { m_listIdHasBeenSet = true; m_listId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS Firewall Manager protocols list.</p>
+     * <p>The ID of the Firewall Manager protocols list.</p>
      */
     inline void SetListId(const char* value) { m_listIdHasBeenSet = true; m_listId.assign(value); }
 
     /**
-     * <p>The ID of the AWS Firewall Manager protocols list.</p>
+     * <p>The ID of the Firewall Manager protocols list.</p>
      */
     inline ProtocolsListData& WithListId(const Aws::String& value) { SetListId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS Firewall Manager protocols list.</p>
+     * <p>The ID of the Firewall Manager protocols list.</p>
      */
     inline ProtocolsListData& WithListId(Aws::String&& value) { SetListId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS Firewall Manager protocols list.</p>
+     * <p>The ID of the Firewall Manager protocols list.</p>
      */
     inline ProtocolsListData& WithListId(const char* value) { SetListId(value); return *this;}
 
 
     /**
-     * <p>The name of the AWS Firewall Manager protocols list.</p>
+     * <p>The name of the Firewall Manager protocols list.</p>
      */
     inline const Aws::String& GetListName() const{ return m_listName; }
 
     /**
-     * <p>The name of the AWS Firewall Manager protocols list.</p>
+     * <p>The name of the Firewall Manager protocols list.</p>
      */
     inline bool ListNameHasBeenSet() const { return m_listNameHasBeenSet; }
 
     /**
-     * <p>The name of the AWS Firewall Manager protocols list.</p>
+     * <p>The name of the Firewall Manager protocols list.</p>
      */
     inline void SetListName(const Aws::String& value) { m_listNameHasBeenSet = true; m_listName = value; }
 
     /**
-     * <p>The name of the AWS Firewall Manager protocols list.</p>
+     * <p>The name of the Firewall Manager protocols list.</p>
      */
     inline void SetListName(Aws::String&& value) { m_listNameHasBeenSet = true; m_listName = std::move(value); }
 
     /**
-     * <p>The name of the AWS Firewall Manager protocols list.</p>
+     * <p>The name of the Firewall Manager protocols list.</p>
      */
     inline void SetListName(const char* value) { m_listNameHasBeenSet = true; m_listName.assign(value); }
 
     /**
-     * <p>The name of the AWS Firewall Manager protocols list.</p>
+     * <p>The name of the Firewall Manager protocols list.</p>
      */
     inline ProtocolsListData& WithListName(const Aws::String& value) { SetListName(value); return *this;}
 
     /**
-     * <p>The name of the AWS Firewall Manager protocols list.</p>
+     * <p>The name of the Firewall Manager protocols list.</p>
      */
     inline ProtocolsListData& WithListName(Aws::String&& value) { SetListName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the AWS Firewall Manager protocols list.</p>
+     * <p>The name of the Firewall Manager protocols list.</p>
      */
     inline ProtocolsListData& WithListName(const char* value) { SetListName(value); return *this;}
 
@@ -180,109 +180,109 @@ namespace Model
 
 
     /**
-     * <p>The time that the AWS Firewall Manager protocols list was created.</p>
+     * <p>The time that the Firewall Manager protocols list was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
 
     /**
-     * <p>The time that the AWS Firewall Manager protocols list was created.</p>
+     * <p>The time that the Firewall Manager protocols list was created.</p>
      */
     inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
 
     /**
-     * <p>The time that the AWS Firewall Manager protocols list was created.</p>
+     * <p>The time that the Firewall Manager protocols list was created.</p>
      */
     inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
 
     /**
-     * <p>The time that the AWS Firewall Manager protocols list was created.</p>
+     * <p>The time that the Firewall Manager protocols list was created.</p>
      */
     inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTimeHasBeenSet = true; m_createTime = std::move(value); }
 
     /**
-     * <p>The time that the AWS Firewall Manager protocols list was created.</p>
+     * <p>The time that the Firewall Manager protocols list was created.</p>
      */
     inline ProtocolsListData& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
 
     /**
-     * <p>The time that the AWS Firewall Manager protocols list was created.</p>
+     * <p>The time that the Firewall Manager protocols list was created.</p>
      */
     inline ProtocolsListData& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The time that the AWS Firewall Manager protocols list was last updated.</p>
+     * <p>The time that the Firewall Manager protocols list was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdateTime() const{ return m_lastUpdateTime; }
 
     /**
-     * <p>The time that the AWS Firewall Manager protocols list was last updated.</p>
+     * <p>The time that the Firewall Manager protocols list was last updated.</p>
      */
     inline bool LastUpdateTimeHasBeenSet() const { return m_lastUpdateTimeHasBeenSet; }
 
     /**
-     * <p>The time that the AWS Firewall Manager protocols list was last updated.</p>
+     * <p>The time that the Firewall Manager protocols list was last updated.</p>
      */
     inline void SetLastUpdateTime(const Aws::Utils::DateTime& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = value; }
 
     /**
-     * <p>The time that the AWS Firewall Manager protocols list was last updated.</p>
+     * <p>The time that the Firewall Manager protocols list was last updated.</p>
      */
     inline void SetLastUpdateTime(Aws::Utils::DateTime&& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = std::move(value); }
 
     /**
-     * <p>The time that the AWS Firewall Manager protocols list was last updated.</p>
+     * <p>The time that the Firewall Manager protocols list was last updated.</p>
      */
     inline ProtocolsListData& WithLastUpdateTime(const Aws::Utils::DateTime& value) { SetLastUpdateTime(value); return *this;}
 
     /**
-     * <p>The time that the AWS Firewall Manager protocols list was last updated.</p>
+     * <p>The time that the Firewall Manager protocols list was last updated.</p>
      */
     inline ProtocolsListData& WithLastUpdateTime(Aws::Utils::DateTime&& value) { SetLastUpdateTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>An array of protocols in the AWS Firewall Manager protocols list.</p>
+     * <p>An array of protocols in the Firewall Manager protocols list.</p>
      */
     inline const Aws::Vector<Aws::String>& GetProtocolsList() const{ return m_protocolsList; }
 
     /**
-     * <p>An array of protocols in the AWS Firewall Manager protocols list.</p>
+     * <p>An array of protocols in the Firewall Manager protocols list.</p>
      */
     inline bool ProtocolsListHasBeenSet() const { return m_protocolsListHasBeenSet; }
 
     /**
-     * <p>An array of protocols in the AWS Firewall Manager protocols list.</p>
+     * <p>An array of protocols in the Firewall Manager protocols list.</p>
      */
     inline void SetProtocolsList(const Aws::Vector<Aws::String>& value) { m_protocolsListHasBeenSet = true; m_protocolsList = value; }
 
     /**
-     * <p>An array of protocols in the AWS Firewall Manager protocols list.</p>
+     * <p>An array of protocols in the Firewall Manager protocols list.</p>
      */
     inline void SetProtocolsList(Aws::Vector<Aws::String>&& value) { m_protocolsListHasBeenSet = true; m_protocolsList = std::move(value); }
 
     /**
-     * <p>An array of protocols in the AWS Firewall Manager protocols list.</p>
+     * <p>An array of protocols in the Firewall Manager protocols list.</p>
      */
     inline ProtocolsListData& WithProtocolsList(const Aws::Vector<Aws::String>& value) { SetProtocolsList(value); return *this;}
 
     /**
-     * <p>An array of protocols in the AWS Firewall Manager protocols list.</p>
+     * <p>An array of protocols in the Firewall Manager protocols list.</p>
      */
     inline ProtocolsListData& WithProtocolsList(Aws::Vector<Aws::String>&& value) { SetProtocolsList(std::move(value)); return *this;}
 
     /**
-     * <p>An array of protocols in the AWS Firewall Manager protocols list.</p>
+     * <p>An array of protocols in the Firewall Manager protocols list.</p>
      */
     inline ProtocolsListData& AddProtocolsList(const Aws::String& value) { m_protocolsListHasBeenSet = true; m_protocolsList.push_back(value); return *this; }
 
     /**
-     * <p>An array of protocols in the AWS Firewall Manager protocols list.</p>
+     * <p>An array of protocols in the Firewall Manager protocols list.</p>
      */
     inline ProtocolsListData& AddProtocolsList(Aws::String&& value) { m_protocolsListHasBeenSet = true; m_protocolsList.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>An array of protocols in the AWS Firewall Manager protocols list.</p>
+     * <p>An array of protocols in the Firewall Manager protocols list.</p>
      */
     inline ProtocolsListData& AddProtocolsList(const char* value) { m_protocolsListHasBeenSet = true; m_protocolsList.push_back(value); return *this; }
 

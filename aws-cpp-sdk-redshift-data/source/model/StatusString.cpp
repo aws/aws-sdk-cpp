@@ -20,33 +20,21 @@ namespace Aws
       namespace StatusStringMapper
       {
 
-        static const int ABORTED_HASH = HashingUtils::HashString("ABORTED");
-        static const int ALL_HASH = HashingUtils::HashString("ALL");
-        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
-        static const int FINISHED_HASH = HashingUtils::HashString("FINISHED");
+        static const int SUBMITTED_HASH = HashingUtils::HashString("SUBMITTED");
         static const int PICKED_HASH = HashingUtils::HashString("PICKED");
         static const int STARTED_HASH = HashingUtils::HashString("STARTED");
-        static const int SUBMITTED_HASH = HashingUtils::HashString("SUBMITTED");
+        static const int FINISHED_HASH = HashingUtils::HashString("FINISHED");
+        static const int ABORTED_HASH = HashingUtils::HashString("ABORTED");
+        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static const int ALL_HASH = HashingUtils::HashString("ALL");
 
 
         StatusString GetStatusStringForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == ABORTED_HASH)
+          if (hashCode == SUBMITTED_HASH)
           {
-            return StatusString::ABORTED;
-          }
-          else if (hashCode == ALL_HASH)
-          {
-            return StatusString::ALL;
-          }
-          else if (hashCode == FAILED_HASH)
-          {
-            return StatusString::FAILED;
-          }
-          else if (hashCode == FINISHED_HASH)
-          {
-            return StatusString::FINISHED;
+            return StatusString::SUBMITTED;
           }
           else if (hashCode == PICKED_HASH)
           {
@@ -56,9 +44,21 @@ namespace Aws
           {
             return StatusString::STARTED;
           }
-          else if (hashCode == SUBMITTED_HASH)
+          else if (hashCode == FINISHED_HASH)
           {
-            return StatusString::SUBMITTED;
+            return StatusString::FINISHED;
+          }
+          else if (hashCode == ABORTED_HASH)
+          {
+            return StatusString::ABORTED;
+          }
+          else if (hashCode == FAILED_HASH)
+          {
+            return StatusString::FAILED;
+          }
+          else if (hashCode == ALL_HASH)
+          {
+            return StatusString::ALL;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -74,20 +74,20 @@ namespace Aws
         {
           switch(enumValue)
           {
-          case StatusString::ABORTED:
-            return "ABORTED";
-          case StatusString::ALL:
-            return "ALL";
-          case StatusString::FAILED:
-            return "FAILED";
-          case StatusString::FINISHED:
-            return "FINISHED";
+          case StatusString::SUBMITTED:
+            return "SUBMITTED";
           case StatusString::PICKED:
             return "PICKED";
           case StatusString::STARTED:
             return "STARTED";
-          case StatusString::SUBMITTED:
-            return "SUBMITTED";
+          case StatusString::FINISHED:
+            return "FINISHED";
+          case StatusString::ABORTED:
+            return "ABORTED";
+          case StatusString::FAILED:
+            return "FAILED";
+          case StatusString::ALL:
+            return "ALL";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

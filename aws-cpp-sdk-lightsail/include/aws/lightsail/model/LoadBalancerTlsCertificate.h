@@ -355,64 +355,64 @@ namespace Model
     /**
      * <p>The tag keys and optional values for the resource. For more information about
      * tags in Lightsail, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
-     * Dev Guide</a>.</p>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon
+     * Lightsail Developer Guide</a>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
      * <p>The tag keys and optional values for the resource. For more information about
      * tags in Lightsail, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
-     * Dev Guide</a>.</p>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon
+     * Lightsail Developer Guide</a>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tag keys and optional values for the resource. For more information about
      * tags in Lightsail, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
-     * Dev Guide</a>.</p>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon
+     * Lightsail Developer Guide</a>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>The tag keys and optional values for the resource. For more information about
      * tags in Lightsail, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
-     * Dev Guide</a>.</p>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon
+     * Lightsail Developer Guide</a>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>The tag keys and optional values for the resource. For more information about
      * tags in Lightsail, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
-     * Dev Guide</a>.</p>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon
+     * Lightsail Developer Guide</a>.</p>
      */
     inline LoadBalancerTlsCertificate& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
      * <p>The tag keys and optional values for the resource. For more information about
      * tags in Lightsail, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
-     * Dev Guide</a>.</p>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon
+     * Lightsail Developer Guide</a>.</p>
      */
     inline LoadBalancerTlsCertificate& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>The tag keys and optional values for the resource. For more information about
      * tags in Lightsail, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
-     * Dev Guide</a>.</p>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon
+     * Lightsail Developer Guide</a>.</p>
      */
     inline LoadBalancerTlsCertificate& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
      * <p>The tag keys and optional values for the resource. For more information about
      * tags in Lightsail, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
-     * Dev Guide</a>.</p>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon
+     * Lightsail Developer Guide</a>.</p>
      */
     inline LoadBalancerTlsCertificate& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
@@ -623,16 +623,17 @@ namespace Model
      * problem, search for your domain name on the <a
      * href="https://www.virustotal.com/gui/home/url">VirusTotal</a> website. If your
      * domain is reported as suspicious, see <a
-     * href="https://www.google.com/webmasters/hacked/?hl=en">Google Help for Hacked
-     * Websites</a> to learn what you can do.</p> <p>If you believe that the result is
-     * a false positive, notify the organization that is reporting the domain.
-     * VirusTotal is an aggregate of several antivirus and URL scanners and cannot
-     * remove your domain from a block list itself. After you correct the problem and
-     * the VirusTotal registry has been updated, request a new certificate.</p> <p>If
-     * you see this error and your domain is not included in the VirusTotal list, visit
-     * the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a>
-     * and create a case.</p> </li> <li> <p> <b> <code>INVALID_PUBLIC_DOMAIN</code>
-     * </b> - One or more of the domain names in the certificate request is not valid.
+     * href="https://developers.google.com/web/fundamentals/security/hacked">Google
+     * Help for Hacked Websites</a> to learn what you can do.</p> <p>If you believe
+     * that the result is a false positive, notify the organization that is reporting
+     * the domain. VirusTotal is an aggregate of several antivirus and URL scanners and
+     * cannot remove your domain from a block list itself. After you correct the
+     * problem and the VirusTotal registry has been updated, request a new
+     * certificate.</p> <p>If you see this error and your domain is not included in the
+     * VirusTotal list, visit the <a
+     * href="https://console.aws.amazon.com/support/home">AWS Support Center</a> and
+     * create a case.</p> </li> <li> <p> <b> <code>INVALID_PUBLIC_DOMAIN</code> </b> -
+     * One or more of the domain names in the certificate request is not valid.
      * Typically, this is because a domain name in the request is not a valid top-level
      * domain. Try to request a certificate again, correcting any spelling errors or
      * typos that were in the failed request, and ensure that all domain names in the
@@ -665,16 +666,17 @@ namespace Model
      * problem, search for your domain name on the <a
      * href="https://www.virustotal.com/gui/home/url">VirusTotal</a> website. If your
      * domain is reported as suspicious, see <a
-     * href="https://www.google.com/webmasters/hacked/?hl=en">Google Help for Hacked
-     * Websites</a> to learn what you can do.</p> <p>If you believe that the result is
-     * a false positive, notify the organization that is reporting the domain.
-     * VirusTotal is an aggregate of several antivirus and URL scanners and cannot
-     * remove your domain from a block list itself. After you correct the problem and
-     * the VirusTotal registry has been updated, request a new certificate.</p> <p>If
-     * you see this error and your domain is not included in the VirusTotal list, visit
-     * the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a>
-     * and create a case.</p> </li> <li> <p> <b> <code>INVALID_PUBLIC_DOMAIN</code>
-     * </b> - One or more of the domain names in the certificate request is not valid.
+     * href="https://developers.google.com/web/fundamentals/security/hacked">Google
+     * Help for Hacked Websites</a> to learn what you can do.</p> <p>If you believe
+     * that the result is a false positive, notify the organization that is reporting
+     * the domain. VirusTotal is an aggregate of several antivirus and URL scanners and
+     * cannot remove your domain from a block list itself. After you correct the
+     * problem and the VirusTotal registry has been updated, request a new
+     * certificate.</p> <p>If you see this error and your domain is not included in the
+     * VirusTotal list, visit the <a
+     * href="https://console.aws.amazon.com/support/home">AWS Support Center</a> and
+     * create a case.</p> </li> <li> <p> <b> <code>INVALID_PUBLIC_DOMAIN</code> </b> -
+     * One or more of the domain names in the certificate request is not valid.
      * Typically, this is because a domain name in the request is not a valid top-level
      * domain. Try to request a certificate again, correcting any spelling errors or
      * typos that were in the failed request, and ensure that all domain names in the
@@ -707,16 +709,17 @@ namespace Model
      * problem, search for your domain name on the <a
      * href="https://www.virustotal.com/gui/home/url">VirusTotal</a> website. If your
      * domain is reported as suspicious, see <a
-     * href="https://www.google.com/webmasters/hacked/?hl=en">Google Help for Hacked
-     * Websites</a> to learn what you can do.</p> <p>If you believe that the result is
-     * a false positive, notify the organization that is reporting the domain.
-     * VirusTotal is an aggregate of several antivirus and URL scanners and cannot
-     * remove your domain from a block list itself. After you correct the problem and
-     * the VirusTotal registry has been updated, request a new certificate.</p> <p>If
-     * you see this error and your domain is not included in the VirusTotal list, visit
-     * the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a>
-     * and create a case.</p> </li> <li> <p> <b> <code>INVALID_PUBLIC_DOMAIN</code>
-     * </b> - One or more of the domain names in the certificate request is not valid.
+     * href="https://developers.google.com/web/fundamentals/security/hacked">Google
+     * Help for Hacked Websites</a> to learn what you can do.</p> <p>If you believe
+     * that the result is a false positive, notify the organization that is reporting
+     * the domain. VirusTotal is an aggregate of several antivirus and URL scanners and
+     * cannot remove your domain from a block list itself. After you correct the
+     * problem and the VirusTotal registry has been updated, request a new
+     * certificate.</p> <p>If you see this error and your domain is not included in the
+     * VirusTotal list, visit the <a
+     * href="https://console.aws.amazon.com/support/home">AWS Support Center</a> and
+     * create a case.</p> </li> <li> <p> <b> <code>INVALID_PUBLIC_DOMAIN</code> </b> -
+     * One or more of the domain names in the certificate request is not valid.
      * Typically, this is because a domain name in the request is not a valid top-level
      * domain. Try to request a certificate again, correcting any spelling errors or
      * typos that were in the failed request, and ensure that all domain names in the
@@ -749,16 +752,17 @@ namespace Model
      * problem, search for your domain name on the <a
      * href="https://www.virustotal.com/gui/home/url">VirusTotal</a> website. If your
      * domain is reported as suspicious, see <a
-     * href="https://www.google.com/webmasters/hacked/?hl=en">Google Help for Hacked
-     * Websites</a> to learn what you can do.</p> <p>If you believe that the result is
-     * a false positive, notify the organization that is reporting the domain.
-     * VirusTotal is an aggregate of several antivirus and URL scanners and cannot
-     * remove your domain from a block list itself. After you correct the problem and
-     * the VirusTotal registry has been updated, request a new certificate.</p> <p>If
-     * you see this error and your domain is not included in the VirusTotal list, visit
-     * the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a>
-     * and create a case.</p> </li> <li> <p> <b> <code>INVALID_PUBLIC_DOMAIN</code>
-     * </b> - One or more of the domain names in the certificate request is not valid.
+     * href="https://developers.google.com/web/fundamentals/security/hacked">Google
+     * Help for Hacked Websites</a> to learn what you can do.</p> <p>If you believe
+     * that the result is a false positive, notify the organization that is reporting
+     * the domain. VirusTotal is an aggregate of several antivirus and URL scanners and
+     * cannot remove your domain from a block list itself. After you correct the
+     * problem and the VirusTotal registry has been updated, request a new
+     * certificate.</p> <p>If you see this error and your domain is not included in the
+     * VirusTotal list, visit the <a
+     * href="https://console.aws.amazon.com/support/home">AWS Support Center</a> and
+     * create a case.</p> </li> <li> <p> <b> <code>INVALID_PUBLIC_DOMAIN</code> </b> -
+     * One or more of the domain names in the certificate request is not valid.
      * Typically, this is because a domain name in the request is not a valid top-level
      * domain. Try to request a certificate again, correcting any spelling errors or
      * typos that were in the failed request, and ensure that all domain names in the
@@ -791,16 +795,17 @@ namespace Model
      * problem, search for your domain name on the <a
      * href="https://www.virustotal.com/gui/home/url">VirusTotal</a> website. If your
      * domain is reported as suspicious, see <a
-     * href="https://www.google.com/webmasters/hacked/?hl=en">Google Help for Hacked
-     * Websites</a> to learn what you can do.</p> <p>If you believe that the result is
-     * a false positive, notify the organization that is reporting the domain.
-     * VirusTotal is an aggregate of several antivirus and URL scanners and cannot
-     * remove your domain from a block list itself. After you correct the problem and
-     * the VirusTotal registry has been updated, request a new certificate.</p> <p>If
-     * you see this error and your domain is not included in the VirusTotal list, visit
-     * the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a>
-     * and create a case.</p> </li> <li> <p> <b> <code>INVALID_PUBLIC_DOMAIN</code>
-     * </b> - One or more of the domain names in the certificate request is not valid.
+     * href="https://developers.google.com/web/fundamentals/security/hacked">Google
+     * Help for Hacked Websites</a> to learn what you can do.</p> <p>If you believe
+     * that the result is a false positive, notify the organization that is reporting
+     * the domain. VirusTotal is an aggregate of several antivirus and URL scanners and
+     * cannot remove your domain from a block list itself. After you correct the
+     * problem and the VirusTotal registry has been updated, request a new
+     * certificate.</p> <p>If you see this error and your domain is not included in the
+     * VirusTotal list, visit the <a
+     * href="https://console.aws.amazon.com/support/home">AWS Support Center</a> and
+     * create a case.</p> </li> <li> <p> <b> <code>INVALID_PUBLIC_DOMAIN</code> </b> -
+     * One or more of the domain names in the certificate request is not valid.
      * Typically, this is because a domain name in the request is not a valid top-level
      * domain. Try to request a certificate again, correcting any spelling errors or
      * typos that were in the failed request, and ensure that all domain names in the
@@ -833,16 +838,17 @@ namespace Model
      * problem, search for your domain name on the <a
      * href="https://www.virustotal.com/gui/home/url">VirusTotal</a> website. If your
      * domain is reported as suspicious, see <a
-     * href="https://www.google.com/webmasters/hacked/?hl=en">Google Help for Hacked
-     * Websites</a> to learn what you can do.</p> <p>If you believe that the result is
-     * a false positive, notify the organization that is reporting the domain.
-     * VirusTotal is an aggregate of several antivirus and URL scanners and cannot
-     * remove your domain from a block list itself. After you correct the problem and
-     * the VirusTotal registry has been updated, request a new certificate.</p> <p>If
-     * you see this error and your domain is not included in the VirusTotal list, visit
-     * the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a>
-     * and create a case.</p> </li> <li> <p> <b> <code>INVALID_PUBLIC_DOMAIN</code>
-     * </b> - One or more of the domain names in the certificate request is not valid.
+     * href="https://developers.google.com/web/fundamentals/security/hacked">Google
+     * Help for Hacked Websites</a> to learn what you can do.</p> <p>If you believe
+     * that the result is a false positive, notify the organization that is reporting
+     * the domain. VirusTotal is an aggregate of several antivirus and URL scanners and
+     * cannot remove your domain from a block list itself. After you correct the
+     * problem and the VirusTotal registry has been updated, request a new
+     * certificate.</p> <p>If you see this error and your domain is not included in the
+     * VirusTotal list, visit the <a
+     * href="https://console.aws.amazon.com/support/home">AWS Support Center</a> and
+     * create a case.</p> </li> <li> <p> <b> <code>INVALID_PUBLIC_DOMAIN</code> </b> -
+     * One or more of the domain names in the certificate request is not valid.
      * Typically, this is because a domain name in the request is not a valid top-level
      * domain. Try to request a certificate again, correcting any spelling errors or
      * typos that were in the failed request, and ensure that all domain names in the

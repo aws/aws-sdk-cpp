@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>An error occured when reading from or writing to a connected file
+   * <p>An error occurred when reading from or writing to a connected file
    * system.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/EFSIOException">AWS
    * API Reference</a></p>

@@ -13,6 +13,7 @@
 #include <aws/lightsail/model/Origin.h>
 #include <aws/lightsail/model/CacheBehavior.h>
 #include <aws/lightsail/model/CacheSettings.h>
+#include <aws/lightsail/model/IpAddressType.h>
 #include <aws/lightsail/model/CacheBehaviorPerPath.h>
 #include <aws/lightsail/model/Tag.h>
 #include <utility>
@@ -218,56 +219,56 @@ namespace Model
 
 
     /**
-     * <p>An object that describes the location of the distribution, such as the AWS
-     * Region and Availability Zone.</p>  <p>Lightsail distributions are global
-     * resources that can reference an origin in any AWS Region, and distribute its
-     * content globally. However, all distributions are located in the
-     * <code>us-east-1</code> Region.</p> 
+     * <p>An object that describes the location of the distribution, such as the Amazon
+     * Web Services Region and Availability Zone.</p>  <p>Lightsail distributions
+     * are global resources that can reference an origin in any Amazon Web Services
+     * Region, and distribute its content globally. However, all distributions are
+     * located in the <code>us-east-1</code> Region.</p> 
      */
     inline const ResourceLocation& GetLocation() const{ return m_location; }
 
     /**
-     * <p>An object that describes the location of the distribution, such as the AWS
-     * Region and Availability Zone.</p>  <p>Lightsail distributions are global
-     * resources that can reference an origin in any AWS Region, and distribute its
-     * content globally. However, all distributions are located in the
-     * <code>us-east-1</code> Region.</p> 
+     * <p>An object that describes the location of the distribution, such as the Amazon
+     * Web Services Region and Availability Zone.</p>  <p>Lightsail distributions
+     * are global resources that can reference an origin in any Amazon Web Services
+     * Region, and distribute its content globally. However, all distributions are
+     * located in the <code>us-east-1</code> Region.</p> 
      */
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
 
     /**
-     * <p>An object that describes the location of the distribution, such as the AWS
-     * Region and Availability Zone.</p>  <p>Lightsail distributions are global
-     * resources that can reference an origin in any AWS Region, and distribute its
-     * content globally. However, all distributions are located in the
-     * <code>us-east-1</code> Region.</p> 
+     * <p>An object that describes the location of the distribution, such as the Amazon
+     * Web Services Region and Availability Zone.</p>  <p>Lightsail distributions
+     * are global resources that can reference an origin in any Amazon Web Services
+     * Region, and distribute its content globally. However, all distributions are
+     * located in the <code>us-east-1</code> Region.</p> 
      */
     inline void SetLocation(const ResourceLocation& value) { m_locationHasBeenSet = true; m_location = value; }
 
     /**
-     * <p>An object that describes the location of the distribution, such as the AWS
-     * Region and Availability Zone.</p>  <p>Lightsail distributions are global
-     * resources that can reference an origin in any AWS Region, and distribute its
-     * content globally. However, all distributions are located in the
-     * <code>us-east-1</code> Region.</p> 
+     * <p>An object that describes the location of the distribution, such as the Amazon
+     * Web Services Region and Availability Zone.</p>  <p>Lightsail distributions
+     * are global resources that can reference an origin in any Amazon Web Services
+     * Region, and distribute its content globally. However, all distributions are
+     * located in the <code>us-east-1</code> Region.</p> 
      */
     inline void SetLocation(ResourceLocation&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
     /**
-     * <p>An object that describes the location of the distribution, such as the AWS
-     * Region and Availability Zone.</p>  <p>Lightsail distributions are global
-     * resources that can reference an origin in any AWS Region, and distribute its
-     * content globally. However, all distributions are located in the
-     * <code>us-east-1</code> Region.</p> 
+     * <p>An object that describes the location of the distribution, such as the Amazon
+     * Web Services Region and Availability Zone.</p>  <p>Lightsail distributions
+     * are global resources that can reference an origin in any Amazon Web Services
+     * Region, and distribute its content globally. However, all distributions are
+     * located in the <code>us-east-1</code> Region.</p> 
      */
     inline LightsailDistribution& WithLocation(const ResourceLocation& value) { SetLocation(value); return *this;}
 
     /**
-     * <p>An object that describes the location of the distribution, such as the AWS
-     * Region and Availability Zone.</p>  <p>Lightsail distributions are global
-     * resources that can reference an origin in any AWS Region, and distribute its
-     * content globally. However, all distributions are located in the
-     * <code>us-east-1</code> Region.</p> 
+     * <p>An object that describes the location of the distribution, such as the Amazon
+     * Web Services Region and Availability Zone.</p>  <p>Lightsail distributions
+     * are global resources that can reference an origin in any Amazon Web Services
+     * Region, and distribute its content globally. However, all distributions are
+     * located in the <code>us-east-1</code> Region.</p> 
      */
     inline LightsailDistribution& WithLocation(ResourceLocation&& value) { SetLocation(std::move(value)); return *this;}
 
@@ -536,43 +537,43 @@ namespace Model
 
     /**
      * <p>An object that describes the origin resource of the distribution, such as a
-     * Lightsail instance or load balancer.</p> <p>The distribution pulls, caches, and
-     * serves content from the origin.</p>
+     * Lightsail instance, bucket, or load balancer.</p> <p>The distribution pulls,
+     * caches, and serves content from the origin.</p>
      */
     inline const Origin& GetOrigin() const{ return m_origin; }
 
     /**
      * <p>An object that describes the origin resource of the distribution, such as a
-     * Lightsail instance or load balancer.</p> <p>The distribution pulls, caches, and
-     * serves content from the origin.</p>
+     * Lightsail instance, bucket, or load balancer.</p> <p>The distribution pulls,
+     * caches, and serves content from the origin.</p>
      */
     inline bool OriginHasBeenSet() const { return m_originHasBeenSet; }
 
     /**
      * <p>An object that describes the origin resource of the distribution, such as a
-     * Lightsail instance or load balancer.</p> <p>The distribution pulls, caches, and
-     * serves content from the origin.</p>
+     * Lightsail instance, bucket, or load balancer.</p> <p>The distribution pulls,
+     * caches, and serves content from the origin.</p>
      */
     inline void SetOrigin(const Origin& value) { m_originHasBeenSet = true; m_origin = value; }
 
     /**
      * <p>An object that describes the origin resource of the distribution, such as a
-     * Lightsail instance or load balancer.</p> <p>The distribution pulls, caches, and
-     * serves content from the origin.</p>
+     * Lightsail instance, bucket, or load balancer.</p> <p>The distribution pulls,
+     * caches, and serves content from the origin.</p>
      */
     inline void SetOrigin(Origin&& value) { m_originHasBeenSet = true; m_origin = std::move(value); }
 
     /**
      * <p>An object that describes the origin resource of the distribution, such as a
-     * Lightsail instance or load balancer.</p> <p>The distribution pulls, caches, and
-     * serves content from the origin.</p>
+     * Lightsail instance, bucket, or load balancer.</p> <p>The distribution pulls,
+     * caches, and serves content from the origin.</p>
      */
     inline LightsailDistribution& WithOrigin(const Origin& value) { SetOrigin(value); return *this;}
 
     /**
      * <p>An object that describes the origin resource of the distribution, such as a
-     * Lightsail instance or load balancer.</p> <p>The distribution pulls, caches, and
-     * serves content from the origin.</p>
+     * Lightsail instance, bucket, or load balancer.</p> <p>The distribution pulls,
+     * caches, and serves content from the origin.</p>
      */
     inline LightsailDistribution& WithOrigin(Origin&& value) { SetOrigin(std::move(value)); return *this;}
 
@@ -763,66 +764,109 @@ namespace Model
 
 
     /**
+     * <p>The IP address type of the distribution.</p> <p>The possible values are
+     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
+     * IPv6.</p>
+     */
+    inline const IpAddressType& GetIpAddressType() const{ return m_ipAddressType; }
+
+    /**
+     * <p>The IP address type of the distribution.</p> <p>The possible values are
+     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
+     * IPv6.</p>
+     */
+    inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
+
+    /**
+     * <p>The IP address type of the distribution.</p> <p>The possible values are
+     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
+     * IPv6.</p>
+     */
+    inline void SetIpAddressType(const IpAddressType& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
+
+    /**
+     * <p>The IP address type of the distribution.</p> <p>The possible values are
+     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
+     * IPv6.</p>
+     */
+    inline void SetIpAddressType(IpAddressType&& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = std::move(value); }
+
+    /**
+     * <p>The IP address type of the distribution.</p> <p>The possible values are
+     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
+     * IPv6.</p>
+     */
+    inline LightsailDistribution& WithIpAddressType(const IpAddressType& value) { SetIpAddressType(value); return *this;}
+
+    /**
+     * <p>The IP address type of the distribution.</p> <p>The possible values are
+     * <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and
+     * IPv6.</p>
+     */
+    inline LightsailDistribution& WithIpAddressType(IpAddressType&& value) { SetIpAddressType(std::move(value)); return *this;}
+
+
+    /**
      * <p>The tag keys and optional values for the resource. For more information about
      * tags in Lightsail, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
-     * Dev Guide</a>.</p>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon
+     * Lightsail Developer Guide</a>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
      * <p>The tag keys and optional values for the resource. For more information about
      * tags in Lightsail, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
-     * Dev Guide</a>.</p>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon
+     * Lightsail Developer Guide</a>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tag keys and optional values for the resource. For more information about
      * tags in Lightsail, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
-     * Dev Guide</a>.</p>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon
+     * Lightsail Developer Guide</a>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>The tag keys and optional values for the resource. For more information about
      * tags in Lightsail, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
-     * Dev Guide</a>.</p>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon
+     * Lightsail Developer Guide</a>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>The tag keys and optional values for the resource. For more information about
      * tags in Lightsail, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
-     * Dev Guide</a>.</p>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon
+     * Lightsail Developer Guide</a>.</p>
      */
     inline LightsailDistribution& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
      * <p>The tag keys and optional values for the resource. For more information about
      * tags in Lightsail, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
-     * Dev Guide</a>.</p>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon
+     * Lightsail Developer Guide</a>.</p>
      */
     inline LightsailDistribution& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>The tag keys and optional values for the resource. For more information about
      * tags in Lightsail, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
-     * Dev Guide</a>.</p>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon
+     * Lightsail Developer Guide</a>.</p>
      */
     inline LightsailDistribution& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
      * <p>The tag keys and optional values for the resource. For more information about
      * tags in Lightsail, see the <a
-     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
-     * Dev Guide</a>.</p>
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon
+     * Lightsail Developer Guide</a>.</p>
      */
     inline LightsailDistribution& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
@@ -881,6 +925,9 @@ namespace Model
 
     bool m_ableToUpdateBundle;
     bool m_ableToUpdateBundleHasBeenSet;
+
+    IpAddressType m_ipAddressType;
+    bool m_ipAddressTypeHasBeenSet;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;

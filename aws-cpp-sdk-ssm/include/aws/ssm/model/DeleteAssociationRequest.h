@@ -35,83 +35,155 @@ namespace Model
 
 
     /**
-     * <p>The name of the Systems Manager document.</p>
+     * <p>The name of the SSM document.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the Systems Manager document.</p>
+     * <p>The name of the SSM document.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the Systems Manager document.</p>
+     * <p>The name of the SSM document.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the Systems Manager document.</p>
+     * <p>The name of the SSM document.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the Systems Manager document.</p>
+     * <p>The name of the SSM document.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the Systems Manager document.</p>
+     * <p>The name of the SSM document.</p>
      */
     inline DeleteAssociationRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the Systems Manager document.</p>
+     * <p>The name of the SSM document.</p>
      */
     inline DeleteAssociationRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Systems Manager document.</p>
+     * <p>The name of the SSM document.</p>
      */
     inline DeleteAssociationRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>The ID of the instance.</p>
+     * <p>The managed node ID.</p>  <p> <code>InstanceId</code> has been
+     * deprecated. To specify a managed node ID for an association, use the
+     * <code>Targets</code> parameter. Requests that include the parameter
+     * <code>InstanceID</code> with Systems Manager documents (SSM documents) that use
+     * schema version 2.0 or later will fail. In addition, if you use the parameter
+     * <code>InstanceId</code>, you can't use the parameters
+     * <code>AssociationName</code>, <code>DocumentVersion</code>,
+     * <code>MaxErrors</code>, <code>MaxConcurrency</code>,
+     * <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these
+     * parameters, you must use the <code>Targets</code> parameter.</p> 
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
-     * <p>The ID of the instance.</p>
+     * <p>The managed node ID.</p>  <p> <code>InstanceId</code> has been
+     * deprecated. To specify a managed node ID for an association, use the
+     * <code>Targets</code> parameter. Requests that include the parameter
+     * <code>InstanceID</code> with Systems Manager documents (SSM documents) that use
+     * schema version 2.0 or later will fail. In addition, if you use the parameter
+     * <code>InstanceId</code>, you can't use the parameters
+     * <code>AssociationName</code>, <code>DocumentVersion</code>,
+     * <code>MaxErrors</code>, <code>MaxConcurrency</code>,
+     * <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these
+     * parameters, you must use the <code>Targets</code> parameter.</p> 
      */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
-     * <p>The ID of the instance.</p>
+     * <p>The managed node ID.</p>  <p> <code>InstanceId</code> has been
+     * deprecated. To specify a managed node ID for an association, use the
+     * <code>Targets</code> parameter. Requests that include the parameter
+     * <code>InstanceID</code> with Systems Manager documents (SSM documents) that use
+     * schema version 2.0 or later will fail. In addition, if you use the parameter
+     * <code>InstanceId</code>, you can't use the parameters
+     * <code>AssociationName</code>, <code>DocumentVersion</code>,
+     * <code>MaxErrors</code>, <code>MaxConcurrency</code>,
+     * <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these
+     * parameters, you must use the <code>Targets</code> parameter.</p> 
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * <p>The ID of the instance.</p>
+     * <p>The managed node ID.</p>  <p> <code>InstanceId</code> has been
+     * deprecated. To specify a managed node ID for an association, use the
+     * <code>Targets</code> parameter. Requests that include the parameter
+     * <code>InstanceID</code> with Systems Manager documents (SSM documents) that use
+     * schema version 2.0 or later will fail. In addition, if you use the parameter
+     * <code>InstanceId</code>, you can't use the parameters
+     * <code>AssociationName</code>, <code>DocumentVersion</code>,
+     * <code>MaxErrors</code>, <code>MaxConcurrency</code>,
+     * <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these
+     * parameters, you must use the <code>Targets</code> parameter.</p> 
      */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
-     * <p>The ID of the instance.</p>
+     * <p>The managed node ID.</p>  <p> <code>InstanceId</code> has been
+     * deprecated. To specify a managed node ID for an association, use the
+     * <code>Targets</code> parameter. Requests that include the parameter
+     * <code>InstanceID</code> with Systems Manager documents (SSM documents) that use
+     * schema version 2.0 or later will fail. In addition, if you use the parameter
+     * <code>InstanceId</code>, you can't use the parameters
+     * <code>AssociationName</code>, <code>DocumentVersion</code>,
+     * <code>MaxErrors</code>, <code>MaxConcurrency</code>,
+     * <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these
+     * parameters, you must use the <code>Targets</code> parameter.</p> 
      */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /**
-     * <p>The ID of the instance.</p>
+     * <p>The managed node ID.</p>  <p> <code>InstanceId</code> has been
+     * deprecated. To specify a managed node ID for an association, use the
+     * <code>Targets</code> parameter. Requests that include the parameter
+     * <code>InstanceID</code> with Systems Manager documents (SSM documents) that use
+     * schema version 2.0 or later will fail. In addition, if you use the parameter
+     * <code>InstanceId</code>, you can't use the parameters
+     * <code>AssociationName</code>, <code>DocumentVersion</code>,
+     * <code>MaxErrors</code>, <code>MaxConcurrency</code>,
+     * <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these
+     * parameters, you must use the <code>Targets</code> parameter.</p> 
      */
     inline DeleteAssociationRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>The ID of the instance.</p>
+     * <p>The managed node ID.</p>  <p> <code>InstanceId</code> has been
+     * deprecated. To specify a managed node ID for an association, use the
+     * <code>Targets</code> parameter. Requests that include the parameter
+     * <code>InstanceID</code> with Systems Manager documents (SSM documents) that use
+     * schema version 2.0 or later will fail. In addition, if you use the parameter
+     * <code>InstanceId</code>, you can't use the parameters
+     * <code>AssociationName</code>, <code>DocumentVersion</code>,
+     * <code>MaxErrors</code>, <code>MaxConcurrency</code>,
+     * <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these
+     * parameters, you must use the <code>Targets</code> parameter.</p> 
      */
     inline DeleteAssociationRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the instance.</p>
+     * <p>The managed node ID.</p>  <p> <code>InstanceId</code> has been
+     * deprecated. To specify a managed node ID for an association, use the
+     * <code>Targets</code> parameter. Requests that include the parameter
+     * <code>InstanceID</code> with Systems Manager documents (SSM documents) that use
+     * schema version 2.0 or later will fail. In addition, if you use the parameter
+     * <code>InstanceId</code>, you can't use the parameters
+     * <code>AssociationName</code>, <code>DocumentVersion</code>,
+     * <code>MaxErrors</code>, <code>MaxConcurrency</code>,
+     * <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these
+     * parameters, you must use the <code>Targets</code> parameter.</p> 
      */
     inline DeleteAssociationRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 

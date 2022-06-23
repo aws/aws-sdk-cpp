@@ -236,7 +236,7 @@ namespace Model
      * not allowed in the <code>s3 key</code> portion of the <code>outputURI</code>
      * field: ':', '//', '/./', '/../'.</p> <p>Amazon ML needs permissions to store and
      * retrieve the logs on your behalf. For information about how to set permissions,
-     * see the <a href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
+     * see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
      * Machine Learning Developer Guide</a>.</p>
      */
     inline const Aws::String& GetOutputUri() const{ return m_outputUri; }
@@ -247,7 +247,7 @@ namespace Model
      * not allowed in the <code>s3 key</code> portion of the <code>outputURI</code>
      * field: ':', '//', '/./', '/../'.</p> <p>Amazon ML needs permissions to store and
      * retrieve the logs on your behalf. For information about how to set permissions,
-     * see the <a href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
+     * see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
      * Machine Learning Developer Guide</a>.</p>
      */
     inline bool OutputUriHasBeenSet() const { return m_outputUriHasBeenSet; }
@@ -258,7 +258,7 @@ namespace Model
      * not allowed in the <code>s3 key</code> portion of the <code>outputURI</code>
      * field: ':', '//', '/./', '/../'.</p> <p>Amazon ML needs permissions to store and
      * retrieve the logs on your behalf. For information about how to set permissions,
-     * see the <a href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
+     * see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
      * Machine Learning Developer Guide</a>.</p>
      */
     inline void SetOutputUri(const Aws::String& value) { m_outputUriHasBeenSet = true; m_outputUri = value; }
@@ -269,7 +269,7 @@ namespace Model
      * not allowed in the <code>s3 key</code> portion of the <code>outputURI</code>
      * field: ':', '//', '/./', '/../'.</p> <p>Amazon ML needs permissions to store and
      * retrieve the logs on your behalf. For information about how to set permissions,
-     * see the <a href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
+     * see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
      * Machine Learning Developer Guide</a>.</p>
      */
     inline void SetOutputUri(Aws::String&& value) { m_outputUriHasBeenSet = true; m_outputUri = std::move(value); }
@@ -280,7 +280,7 @@ namespace Model
      * not allowed in the <code>s3 key</code> portion of the <code>outputURI</code>
      * field: ':', '//', '/./', '/../'.</p> <p>Amazon ML needs permissions to store and
      * retrieve the logs on your behalf. For information about how to set permissions,
-     * see the <a href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
+     * see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
      * Machine Learning Developer Guide</a>.</p>
      */
     inline void SetOutputUri(const char* value) { m_outputUriHasBeenSet = true; m_outputUri.assign(value); }
@@ -291,7 +291,7 @@ namespace Model
      * not allowed in the <code>s3 key</code> portion of the <code>outputURI</code>
      * field: ':', '//', '/./', '/../'.</p> <p>Amazon ML needs permissions to store and
      * retrieve the logs on your behalf. For information about how to set permissions,
-     * see the <a href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
+     * see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
      * Machine Learning Developer Guide</a>.</p>
      */
     inline CreateBatchPredictionRequest& WithOutputUri(const Aws::String& value) { SetOutputUri(value); return *this;}
@@ -302,7 +302,7 @@ namespace Model
      * not allowed in the <code>s3 key</code> portion of the <code>outputURI</code>
      * field: ':', '//', '/./', '/../'.</p> <p>Amazon ML needs permissions to store and
      * retrieve the logs on your behalf. For information about how to set permissions,
-     * see the <a href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
+     * see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
      * Machine Learning Developer Guide</a>.</p>
      */
     inline CreateBatchPredictionRequest& WithOutputUri(Aws::String&& value) { SetOutputUri(std::move(value)); return *this;}
@@ -313,7 +313,7 @@ namespace Model
      * not allowed in the <code>s3 key</code> portion of the <code>outputURI</code>
      * field: ':', '//', '/./', '/../'.</p> <p>Amazon ML needs permissions to store and
      * retrieve the logs on your behalf. For information about how to set permissions,
-     * see the <a href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
+     * see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
      * Machine Learning Developer Guide</a>.</p>
      */
     inline CreateBatchPredictionRequest& WithOutputUri(const char* value) { SetOutputUri(value); return *this;}

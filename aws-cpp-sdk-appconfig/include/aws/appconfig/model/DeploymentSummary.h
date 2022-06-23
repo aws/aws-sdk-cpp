@@ -221,26 +221,26 @@ namespace Model
 
 
     /**
-     * <p>The amount of time AppConfig monitors for alarms before considering the
-     * deployment to be complete and no longer eligible for automatic roll back.</p>
+     * <p>The amount of time that AppConfig monitors for alarms before considering the
+     * deployment to be complete and no longer eligible for automatic rollback.</p>
      */
     inline int GetFinalBakeTimeInMinutes() const{ return m_finalBakeTimeInMinutes; }
 
     /**
-     * <p>The amount of time AppConfig monitors for alarms before considering the
-     * deployment to be complete and no longer eligible for automatic roll back.</p>
+     * <p>The amount of time that AppConfig monitors for alarms before considering the
+     * deployment to be complete and no longer eligible for automatic rollback.</p>
      */
     inline bool FinalBakeTimeInMinutesHasBeenSet() const { return m_finalBakeTimeInMinutesHasBeenSet; }
 
     /**
-     * <p>The amount of time AppConfig monitors for alarms before considering the
-     * deployment to be complete and no longer eligible for automatic roll back.</p>
+     * <p>The amount of time that AppConfig monitors for alarms before considering the
+     * deployment to be complete and no longer eligible for automatic rollback.</p>
      */
     inline void SetFinalBakeTimeInMinutes(int value) { m_finalBakeTimeInMinutesHasBeenSet = true; m_finalBakeTimeInMinutes = value; }
 
     /**
-     * <p>The amount of time AppConfig monitors for alarms before considering the
-     * deployment to be complete and no longer eligible for automatic roll back.</p>
+     * <p>The amount of time that AppConfig monitors for alarms before considering the
+     * deployment to be complete and no longer eligible for automatic rollback.</p>
      */
     inline DeploymentSummary& WithFinalBakeTimeInMinutes(int value) { SetFinalBakeTimeInMinutes(value); return *this;}
 

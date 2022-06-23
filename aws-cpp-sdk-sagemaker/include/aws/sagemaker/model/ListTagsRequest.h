@@ -85,57 +85,57 @@ namespace Model
 
     /**
      * <p> If the response to the previous <code>ListTags</code> request is truncated,
-     * Amazon SageMaker returns this token. To retrieve the next set of tags, use it in
-     * the subsequent request. </p>
+     * SageMaker returns this token. To retrieve the next set of tags, use it in the
+     * subsequent request. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
      * <p> If the response to the previous <code>ListTags</code> request is truncated,
-     * Amazon SageMaker returns this token. To retrieve the next set of tags, use it in
-     * the subsequent request. </p>
+     * SageMaker returns this token. To retrieve the next set of tags, use it in the
+     * subsequent request. </p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p> If the response to the previous <code>ListTags</code> request is truncated,
-     * Amazon SageMaker returns this token. To retrieve the next set of tags, use it in
-     * the subsequent request. </p>
+     * SageMaker returns this token. To retrieve the next set of tags, use it in the
+     * subsequent request. </p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
      * <p> If the response to the previous <code>ListTags</code> request is truncated,
-     * Amazon SageMaker returns this token. To retrieve the next set of tags, use it in
-     * the subsequent request. </p>
+     * SageMaker returns this token. To retrieve the next set of tags, use it in the
+     * subsequent request. </p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p> If the response to the previous <code>ListTags</code> request is truncated,
-     * Amazon SageMaker returns this token. To retrieve the next set of tags, use it in
-     * the subsequent request. </p>
+     * SageMaker returns this token. To retrieve the next set of tags, use it in the
+     * subsequent request. </p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
      * <p> If the response to the previous <code>ListTags</code> request is truncated,
-     * Amazon SageMaker returns this token. To retrieve the next set of tags, use it in
-     * the subsequent request. </p>
+     * SageMaker returns this token. To retrieve the next set of tags, use it in the
+     * subsequent request. </p>
      */
     inline ListTagsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p> If the response to the previous <code>ListTags</code> request is truncated,
-     * Amazon SageMaker returns this token. To retrieve the next set of tags, use it in
-     * the subsequent request. </p>
+     * SageMaker returns this token. To retrieve the next set of tags, use it in the
+     * subsequent request. </p>
      */
     inline ListTagsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p> If the response to the previous <code>ListTags</code> request is truncated,
-     * Amazon SageMaker returns this token. To retrieve the next set of tags, use it in
-     * the subsequent request. </p>
+     * SageMaker returns this token. To retrieve the next set of tags, use it in the
+     * subsequent request. </p>
      */
     inline ListTagsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

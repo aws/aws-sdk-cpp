@@ -73,6 +73,18 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 #end
+#if($operation.requestAlgorithmMember)
+    Aws::String GetChecksumAlgorithmName() const override;
+
+#end
+#if($operation.requestValidationModeMember)
+    bool ShouldValidateResponseChecksum() const override;
+
+#end
+#if($operation.responseAlgorithms)
+    Aws::Vector<Aws::String> GetResponseChecksumAlgorithmNames() const override;
+
+#end
 #if($shape.computeContentMd5)
     inline bool ShouldComputeContentMd5() const override { return true; }
 
@@ -81,8 +93,12 @@ namespace Model
     bool SignBody() const override { return false; }
 
 #end
-## MediaStore Data is the only service supporting chunked transfer encoding.
-#if($shape.hasStreamMembers() && !$shape.signBody && $shape.members.size() > 0 && $metadata.serviceId.equals("MediaStore Data"))
+#if ($metadata.serviceId.equals("MediaStore Data") || $operation.supportsChunkedEncoding)
+#set($supportsChunkedEncoding = true)
+#else
+#set($supportsChunkedEncoding = false)
+#end
+#if($shape.hasStreamMembers() && !$shape.signBody && $shape.members.size() > 0 && $supportsChunkedEncoding)
     bool IsChunked() const override { return true; }
 
 #end

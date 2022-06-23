@@ -27,11 +27,11 @@ namespace Model
 {
 
   /**
-   * <p>Information about agents or connectors associated with the user’s AWS
-   * account. Information includes agent or connector IDs, IP addresses, media access
-   * control (MAC) addresses, agent or connector health, hostname where the agent or
-   * connector resides, and agent version for each agent.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Information about agents or connectors associated with the user’s Amazon Web
+   * Services account. Information includes agent or connector IDs, IP addresses,
+   * media access control (MAC) addresses, agent or connector health, hostname where
+   * the agent or connector resides, and agent version for each agent.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/AgentInfo">AWS
    * API Reference</a></p>
    */

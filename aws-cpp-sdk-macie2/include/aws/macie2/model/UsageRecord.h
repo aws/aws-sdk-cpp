@@ -27,8 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>Provides quota and aggregated usage data for an account.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Provides quota and aggregated usage data for an Amazon Macie
+   * account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UsageRecord">AWS
    * API Reference</a></p>
    */
@@ -42,42 +42,50 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier for the AWS account that the data applies to.</p>
+     * <p>The unique identifier for the Amazon Web Services account that the data
+     * applies to.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The unique identifier for the AWS account that the data applies to.</p>
+     * <p>The unique identifier for the Amazon Web Services account that the data
+     * applies to.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>The unique identifier for the AWS account that the data applies to.</p>
+     * <p>The unique identifier for the Amazon Web Services account that the data
+     * applies to.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The unique identifier for the AWS account that the data applies to.</p>
+     * <p>The unique identifier for the Amazon Web Services account that the data
+     * applies to.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The unique identifier for the AWS account that the data applies to.</p>
+     * <p>The unique identifier for the Amazon Web Services account that the data
+     * applies to.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The unique identifier for the AWS account that the data applies to.</p>
+     * <p>The unique identifier for the Amazon Web Services account that the data
+     * applies to.</p>
      */
     inline UsageRecord& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The unique identifier for the AWS account that the data applies to.</p>
+     * <p>The unique identifier for the Amazon Web Services account that the data
+     * applies to.</p>
      */
     inline UsageRecord& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier for the AWS account that the data applies to.</p>
+     * <p>The unique identifier for the Amazon Web Services account that the data
+     * applies to.</p>
      */
     inline UsageRecord& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 

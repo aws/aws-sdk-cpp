@@ -22,7 +22,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents an amount of money in United States dollars/</p><p><h3>See
+   * <p>Represents an amount of money in United States dollars.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/USD">AWS API
    * Reference</a></p>

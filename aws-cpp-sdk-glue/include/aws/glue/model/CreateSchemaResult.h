@@ -218,32 +218,32 @@ namespace Model
 
 
     /**
-     * <p>The data format of the schema definition. Currently only <code>AVRO</code> is
-     * supported.</p>
+     * <p>The data format of the schema definition. Currently <code>AVRO</code>,
+     * <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
      */
     inline const DataFormat& GetDataFormat() const{ return m_dataFormat; }
 
     /**
-     * <p>The data format of the schema definition. Currently only <code>AVRO</code> is
-     * supported.</p>
+     * <p>The data format of the schema definition. Currently <code>AVRO</code>,
+     * <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
      */
     inline void SetDataFormat(const DataFormat& value) { m_dataFormat = value; }
 
     /**
-     * <p>The data format of the schema definition. Currently only <code>AVRO</code> is
-     * supported.</p>
+     * <p>The data format of the schema definition. Currently <code>AVRO</code>,
+     * <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
      */
     inline void SetDataFormat(DataFormat&& value) { m_dataFormat = std::move(value); }
 
     /**
-     * <p>The data format of the schema definition. Currently only <code>AVRO</code> is
-     * supported.</p>
+     * <p>The data format of the schema definition. Currently <code>AVRO</code>,
+     * <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
      */
     inline CreateSchemaResult& WithDataFormat(const DataFormat& value) { SetDataFormat(value); return *this;}
 
     /**
-     * <p>The data format of the schema definition. Currently only <code>AVRO</code> is
-     * supported.</p>
+     * <p>The data format of the schema definition. Currently <code>AVRO</code>,
+     * <code>JSON</code> and <code>PROTOBUF</code> are supported.</p>
      */
     inline CreateSchemaResult& WithDataFormat(DataFormat&& value) { SetDataFormat(std::move(value)); return *this;}
 

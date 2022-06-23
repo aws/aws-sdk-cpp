@@ -189,31 +189,31 @@ namespace Model
 
     /**
      * <p>Information about the status of the query, including progress and bytes
-     * scannned.</p>
+     * scanned.</p>
      */
     inline const QueryStatus& GetQueryStatus() const{ return m_queryStatus; }
 
     /**
      * <p>Information about the status of the query, including progress and bytes
-     * scannned.</p>
+     * scanned.</p>
      */
     inline void SetQueryStatus(const QueryStatus& value) { m_queryStatus = value; }
 
     /**
      * <p>Information about the status of the query, including progress and bytes
-     * scannned.</p>
+     * scanned.</p>
      */
     inline void SetQueryStatus(QueryStatus&& value) { m_queryStatus = std::move(value); }
 
     /**
      * <p>Information about the status of the query, including progress and bytes
-     * scannned.</p>
+     * scanned.</p>
      */
     inline QueryResult& WithQueryStatus(const QueryStatus& value) { SetQueryStatus(value); return *this;}
 
     /**
      * <p>Information about the status of the query, including progress and bytes
-     * scannned.</p>
+     * scanned.</p>
      */
     inline QueryResult& WithQueryStatus(QueryStatus&& value) { SetQueryStatus(std::move(value)); return *this;}
 

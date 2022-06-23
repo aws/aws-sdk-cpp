@@ -288,6 +288,27 @@ namespace Model
 
 
     /**
+     * <p>Whether or not the row level permission tags are applied.</p>
+     */
+    inline bool GetRowLevelPermissionTagConfigurationApplied() const{ return m_rowLevelPermissionTagConfigurationApplied; }
+
+    /**
+     * <p>Whether or not the row level permission tags are applied.</p>
+     */
+    inline bool RowLevelPermissionTagConfigurationAppliedHasBeenSet() const { return m_rowLevelPermissionTagConfigurationAppliedHasBeenSet; }
+
+    /**
+     * <p>Whether or not the row level permission tags are applied.</p>
+     */
+    inline void SetRowLevelPermissionTagConfigurationApplied(bool value) { m_rowLevelPermissionTagConfigurationAppliedHasBeenSet = true; m_rowLevelPermissionTagConfigurationApplied = value; }
+
+    /**
+     * <p>Whether or not the row level permission tags are applied.</p>
+     */
+    inline DataSetSummary& WithRowLevelPermissionTagConfigurationApplied(bool value) { SetRowLevelPermissionTagConfigurationApplied(value); return *this;}
+
+
+    /**
      * <p>A value that indicates if the dataset has column level permission
      * configured.</p>
      */
@@ -333,6 +354,9 @@ namespace Model
 
     RowLevelPermissionDataSet m_rowLevelPermissionDataSet;
     bool m_rowLevelPermissionDataSetHasBeenSet;
+
+    bool m_rowLevelPermissionTagConfigurationApplied;
+    bool m_rowLevelPermissionTagConfigurationAppliedHasBeenSet;
 
     bool m_columnLevelPermissionRulesApplied;
     bool m_columnLevelPermissionRulesAppliedHasBeenSet;

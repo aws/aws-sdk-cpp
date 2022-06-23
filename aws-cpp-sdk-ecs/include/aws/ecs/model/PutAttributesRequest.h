@@ -95,56 +95,56 @@ namespace Model
 
     /**
      * <p>The attributes to apply to your resource. You can specify up to 10 custom
-     * attributes per resource. You can specify up to 10 attributes in a single
+     * attributes for each resource. You can specify up to 10 attributes in a single
      * call.</p>
      */
     inline const Aws::Vector<Attribute>& GetAttributes() const{ return m_attributes; }
 
     /**
      * <p>The attributes to apply to your resource. You can specify up to 10 custom
-     * attributes per resource. You can specify up to 10 attributes in a single
+     * attributes for each resource. You can specify up to 10 attributes in a single
      * call.</p>
      */
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
     /**
      * <p>The attributes to apply to your resource. You can specify up to 10 custom
-     * attributes per resource. You can specify up to 10 attributes in a single
+     * attributes for each resource. You can specify up to 10 attributes in a single
      * call.</p>
      */
     inline void SetAttributes(const Aws::Vector<Attribute>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**
      * <p>The attributes to apply to your resource. You can specify up to 10 custom
-     * attributes per resource. You can specify up to 10 attributes in a single
+     * attributes for each resource. You can specify up to 10 attributes in a single
      * call.</p>
      */
     inline void SetAttributes(Aws::Vector<Attribute>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
     /**
      * <p>The attributes to apply to your resource. You can specify up to 10 custom
-     * attributes per resource. You can specify up to 10 attributes in a single
+     * attributes for each resource. You can specify up to 10 attributes in a single
      * call.</p>
      */
     inline PutAttributesRequest& WithAttributes(const Aws::Vector<Attribute>& value) { SetAttributes(value); return *this;}
 
     /**
      * <p>The attributes to apply to your resource. You can specify up to 10 custom
-     * attributes per resource. You can specify up to 10 attributes in a single
+     * attributes for each resource. You can specify up to 10 attributes in a single
      * call.</p>
      */
     inline PutAttributesRequest& WithAttributes(Aws::Vector<Attribute>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
      * <p>The attributes to apply to your resource. You can specify up to 10 custom
-     * attributes per resource. You can specify up to 10 attributes in a single
+     * attributes for each resource. You can specify up to 10 attributes in a single
      * call.</p>
      */
     inline PutAttributesRequest& AddAttributes(const Attribute& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
 
     /**
      * <p>The attributes to apply to your resource. You can specify up to 10 custom
-     * attributes per resource. You can specify up to 10 attributes in a single
+     * attributes for each resource. You can specify up to 10 attributes in a single
      * call.</p>
      */
     inline PutAttributesRequest& AddAttributes(Attribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }

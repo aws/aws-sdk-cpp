@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>PostgreSQL parameters.</p><p><h3>See Also:</h3>   <a
+   * <p>The parameters for PostgreSQL.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/PostgreSqlParameters">AWS
    * API Reference</a></p>
    */

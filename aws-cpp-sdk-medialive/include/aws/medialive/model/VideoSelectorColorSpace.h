@@ -17,6 +17,8 @@ namespace Model
   {
     NOT_SET,
     FOLLOW,
+    HDR10,
+    HLG_2020,
     REC_601,
     REC_709
   };

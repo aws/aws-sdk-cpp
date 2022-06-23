@@ -25,7 +25,15 @@ FirewallPolicyResponse::FirewallPolicyResponse() :
     m_descriptionHasBeenSet(false),
     m_firewallPolicyStatus(ResourceStatus::NOT_SET),
     m_firewallPolicyStatusHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_consumedStatelessRuleCapacity(0),
+    m_consumedStatelessRuleCapacityHasBeenSet(false),
+    m_consumedStatefulRuleCapacity(0),
+    m_consumedStatefulRuleCapacityHasBeenSet(false),
+    m_numberOfAssociations(0),
+    m_numberOfAssociationsHasBeenSet(false),
+    m_encryptionConfigurationHasBeenSet(false),
+    m_lastModifiedTimeHasBeenSet(false)
 {
 }
 
@@ -36,7 +44,15 @@ FirewallPolicyResponse::FirewallPolicyResponse(JsonView jsonValue) :
     m_descriptionHasBeenSet(false),
     m_firewallPolicyStatus(ResourceStatus::NOT_SET),
     m_firewallPolicyStatusHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_consumedStatelessRuleCapacity(0),
+    m_consumedStatelessRuleCapacityHasBeenSet(false),
+    m_consumedStatefulRuleCapacity(0),
+    m_consumedStatefulRuleCapacityHasBeenSet(false),
+    m_numberOfAssociations(0),
+    m_numberOfAssociationsHasBeenSet(false),
+    m_encryptionConfigurationHasBeenSet(false),
+    m_lastModifiedTimeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -88,6 +104,41 @@ FirewallPolicyResponse& FirewallPolicyResponse::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ConsumedStatelessRuleCapacity"))
+  {
+    m_consumedStatelessRuleCapacity = jsonValue.GetInteger("ConsumedStatelessRuleCapacity");
+
+    m_consumedStatelessRuleCapacityHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ConsumedStatefulRuleCapacity"))
+  {
+    m_consumedStatefulRuleCapacity = jsonValue.GetInteger("ConsumedStatefulRuleCapacity");
+
+    m_consumedStatefulRuleCapacityHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("NumberOfAssociations"))
+  {
+    m_numberOfAssociations = jsonValue.GetInteger("NumberOfAssociations");
+
+    m_numberOfAssociationsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EncryptionConfiguration"))
+  {
+    m_encryptionConfiguration = jsonValue.GetObject("EncryptionConfiguration");
+
+    m_encryptionConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LastModifiedTime"))
+  {
+    m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
+
+    m_lastModifiedTimeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -133,6 +184,35 @@ JsonValue FirewallPolicyResponse::Jsonize() const
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
 
+  }
+
+  if(m_consumedStatelessRuleCapacityHasBeenSet)
+  {
+   payload.WithInteger("ConsumedStatelessRuleCapacity", m_consumedStatelessRuleCapacity);
+
+  }
+
+  if(m_consumedStatefulRuleCapacityHasBeenSet)
+  {
+   payload.WithInteger("ConsumedStatefulRuleCapacity", m_consumedStatefulRuleCapacity);
+
+  }
+
+  if(m_numberOfAssociationsHasBeenSet)
+  {
+   payload.WithInteger("NumberOfAssociations", m_numberOfAssociations);
+
+  }
+
+  if(m_encryptionConfigurationHasBeenSet)
+  {
+   payload.WithObject("EncryptionConfiguration", m_encryptionConfiguration.Jsonize());
+
+  }
+
+  if(m_lastModifiedTimeHasBeenSet)
+  {
+   payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
   }
 
   return payload;

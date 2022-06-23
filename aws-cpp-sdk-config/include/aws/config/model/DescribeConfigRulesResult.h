@@ -40,37 +40,37 @@ namespace Model
 
 
     /**
-     * <p>The details about your AWS Config rules.</p>
+     * <p>The details about your Config rules.</p>
      */
     inline const Aws::Vector<ConfigRule>& GetConfigRules() const{ return m_configRules; }
 
     /**
-     * <p>The details about your AWS Config rules.</p>
+     * <p>The details about your Config rules.</p>
      */
     inline void SetConfigRules(const Aws::Vector<ConfigRule>& value) { m_configRules = value; }
 
     /**
-     * <p>The details about your AWS Config rules.</p>
+     * <p>The details about your Config rules.</p>
      */
     inline void SetConfigRules(Aws::Vector<ConfigRule>&& value) { m_configRules = std::move(value); }
 
     /**
-     * <p>The details about your AWS Config rules.</p>
+     * <p>The details about your Config rules.</p>
      */
     inline DescribeConfigRulesResult& WithConfigRules(const Aws::Vector<ConfigRule>& value) { SetConfigRules(value); return *this;}
 
     /**
-     * <p>The details about your AWS Config rules.</p>
+     * <p>The details about your Config rules.</p>
      */
     inline DescribeConfigRulesResult& WithConfigRules(Aws::Vector<ConfigRule>&& value) { SetConfigRules(std::move(value)); return *this;}
 
     /**
-     * <p>The details about your AWS Config rules.</p>
+     * <p>The details about your Config rules.</p>
      */
     inline DescribeConfigRulesResult& AddConfigRules(const ConfigRule& value) { m_configRules.push_back(value); return *this; }
 
     /**
-     * <p>The details about your AWS Config rules.</p>
+     * <p>The details about your Config rules.</p>
      */
     inline DescribeConfigRulesResult& AddConfigRules(ConfigRule&& value) { m_configRules.push_back(std::move(value)); return *this; }
 

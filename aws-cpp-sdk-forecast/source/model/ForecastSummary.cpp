@@ -22,6 +22,8 @@ ForecastSummary::ForecastSummary() :
     m_forecastArnHasBeenSet(false),
     m_forecastNameHasBeenSet(false),
     m_predictorArnHasBeenSet(false),
+    m_createdUsingAutoPredictor(false),
+    m_createdUsingAutoPredictorHasBeenSet(false),
     m_datasetGroupArnHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_messageHasBeenSet(false),
@@ -34,6 +36,8 @@ ForecastSummary::ForecastSummary(JsonView jsonValue) :
     m_forecastArnHasBeenSet(false),
     m_forecastNameHasBeenSet(false),
     m_predictorArnHasBeenSet(false),
+    m_createdUsingAutoPredictor(false),
+    m_createdUsingAutoPredictorHasBeenSet(false),
     m_datasetGroupArnHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_messageHasBeenSet(false),
@@ -64,6 +68,13 @@ ForecastSummary& ForecastSummary::operator =(JsonView jsonValue)
     m_predictorArn = jsonValue.GetString("PredictorArn");
 
     m_predictorArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CreatedUsingAutoPredictor"))
+  {
+    m_createdUsingAutoPredictor = jsonValue.GetBool("CreatedUsingAutoPredictor");
+
+    m_createdUsingAutoPredictorHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("DatasetGroupArn"))
@@ -123,6 +134,12 @@ JsonValue ForecastSummary::Jsonize() const
   if(m_predictorArnHasBeenSet)
   {
    payload.WithString("PredictorArn", m_predictorArn);
+
+  }
+
+  if(m_createdUsingAutoPredictorHasBeenSet)
+  {
+   payload.WithBool("CreatedUsingAutoPredictor", m_createdUsingAutoPredictor);
 
   }
 

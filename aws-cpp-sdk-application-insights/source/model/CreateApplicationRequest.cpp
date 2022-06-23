@@ -19,7 +19,11 @@ CreateApplicationRequest::CreateApplicationRequest() :
     m_cWEMonitorEnabled(false),
     m_cWEMonitorEnabledHasBeenSet(false),
     m_opsItemSNSTopicArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_autoConfigEnabled(false),
+    m_autoConfigEnabledHasBeenSet(false),
+    m_autoCreate(false),
+    m_autoCreateHasBeenSet(false)
 {
 }
 
@@ -59,6 +63,18 @@ Aws::String CreateApplicationRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_autoConfigEnabledHasBeenSet)
+  {
+   payload.WithBool("AutoConfigEnabled", m_autoConfigEnabled);
+
+  }
+
+  if(m_autoCreateHasBeenSet)
+  {
+   payload.WithBool("AutoCreate", m_autoCreate);
 
   }
 

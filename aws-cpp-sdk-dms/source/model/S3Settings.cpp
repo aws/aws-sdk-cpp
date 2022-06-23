@@ -64,7 +64,25 @@ S3Settings::S3Settings() :
     m_csvNoSupValueHasBeenSet(false),
     m_preserveTransactions(false),
     m_preserveTransactionsHasBeenSet(false),
-    m_cdcPathHasBeenSet(false)
+    m_cdcPathHasBeenSet(false),
+    m_useTaskStartTimeForFullLoadTimestamp(false),
+    m_useTaskStartTimeForFullLoadTimestampHasBeenSet(false),
+    m_cannedAclForObjects(CannedAclForObjectsValue::NOT_SET),
+    m_cannedAclForObjectsHasBeenSet(false),
+    m_addColumnName(false),
+    m_addColumnNameHasBeenSet(false),
+    m_cdcMaxBatchInterval(0),
+    m_cdcMaxBatchIntervalHasBeenSet(false),
+    m_cdcMinFileSize(0),
+    m_cdcMinFileSizeHasBeenSet(false),
+    m_csvNullValueHasBeenSet(false),
+    m_ignoreHeaderRows(0),
+    m_ignoreHeaderRowsHasBeenSet(false),
+    m_maxFileSize(0),
+    m_maxFileSizeHasBeenSet(false),
+    m_rfc4180(false),
+    m_rfc4180HasBeenSet(false),
+    m_datePartitionTimezoneHasBeenSet(false)
 {
 }
 
@@ -114,7 +132,25 @@ S3Settings::S3Settings(JsonView jsonValue) :
     m_csvNoSupValueHasBeenSet(false),
     m_preserveTransactions(false),
     m_preserveTransactionsHasBeenSet(false),
-    m_cdcPathHasBeenSet(false)
+    m_cdcPathHasBeenSet(false),
+    m_useTaskStartTimeForFullLoadTimestamp(false),
+    m_useTaskStartTimeForFullLoadTimestampHasBeenSet(false),
+    m_cannedAclForObjects(CannedAclForObjectsValue::NOT_SET),
+    m_cannedAclForObjectsHasBeenSet(false),
+    m_addColumnName(false),
+    m_addColumnNameHasBeenSet(false),
+    m_cdcMaxBatchInterval(0),
+    m_cdcMaxBatchIntervalHasBeenSet(false),
+    m_cdcMinFileSize(0),
+    m_cdcMinFileSizeHasBeenSet(false),
+    m_csvNullValueHasBeenSet(false),
+    m_ignoreHeaderRows(0),
+    m_ignoreHeaderRowsHasBeenSet(false),
+    m_maxFileSize(0),
+    m_maxFileSizeHasBeenSet(false),
+    m_rfc4180(false),
+    m_rfc4180HasBeenSet(false),
+    m_datePartitionTimezoneHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -317,6 +353,76 @@ S3Settings& S3Settings::operator =(JsonView jsonValue)
     m_cdcPathHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("UseTaskStartTimeForFullLoadTimestamp"))
+  {
+    m_useTaskStartTimeForFullLoadTimestamp = jsonValue.GetBool("UseTaskStartTimeForFullLoadTimestamp");
+
+    m_useTaskStartTimeForFullLoadTimestampHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CannedAclForObjects"))
+  {
+    m_cannedAclForObjects = CannedAclForObjectsValueMapper::GetCannedAclForObjectsValueForName(jsonValue.GetString("CannedAclForObjects"));
+
+    m_cannedAclForObjectsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AddColumnName"))
+  {
+    m_addColumnName = jsonValue.GetBool("AddColumnName");
+
+    m_addColumnNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CdcMaxBatchInterval"))
+  {
+    m_cdcMaxBatchInterval = jsonValue.GetInteger("CdcMaxBatchInterval");
+
+    m_cdcMaxBatchIntervalHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CdcMinFileSize"))
+  {
+    m_cdcMinFileSize = jsonValue.GetInteger("CdcMinFileSize");
+
+    m_cdcMinFileSizeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CsvNullValue"))
+  {
+    m_csvNullValue = jsonValue.GetString("CsvNullValue");
+
+    m_csvNullValueHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("IgnoreHeaderRows"))
+  {
+    m_ignoreHeaderRows = jsonValue.GetInteger("IgnoreHeaderRows");
+
+    m_ignoreHeaderRowsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MaxFileSize"))
+  {
+    m_maxFileSize = jsonValue.GetInteger("MaxFileSize");
+
+    m_maxFileSizeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Rfc4180"))
+  {
+    m_rfc4180 = jsonValue.GetBool("Rfc4180");
+
+    m_rfc4180HasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DatePartitionTimezone"))
+  {
+    m_datePartitionTimezone = jsonValue.GetString("DatePartitionTimezone");
+
+    m_datePartitionTimezoneHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -482,6 +588,65 @@ JsonValue S3Settings::Jsonize() const
   if(m_cdcPathHasBeenSet)
   {
    payload.WithString("CdcPath", m_cdcPath);
+
+  }
+
+  if(m_useTaskStartTimeForFullLoadTimestampHasBeenSet)
+  {
+   payload.WithBool("UseTaskStartTimeForFullLoadTimestamp", m_useTaskStartTimeForFullLoadTimestamp);
+
+  }
+
+  if(m_cannedAclForObjectsHasBeenSet)
+  {
+   payload.WithString("CannedAclForObjects", CannedAclForObjectsValueMapper::GetNameForCannedAclForObjectsValue(m_cannedAclForObjects));
+  }
+
+  if(m_addColumnNameHasBeenSet)
+  {
+   payload.WithBool("AddColumnName", m_addColumnName);
+
+  }
+
+  if(m_cdcMaxBatchIntervalHasBeenSet)
+  {
+   payload.WithInteger("CdcMaxBatchInterval", m_cdcMaxBatchInterval);
+
+  }
+
+  if(m_cdcMinFileSizeHasBeenSet)
+  {
+   payload.WithInteger("CdcMinFileSize", m_cdcMinFileSize);
+
+  }
+
+  if(m_csvNullValueHasBeenSet)
+  {
+   payload.WithString("CsvNullValue", m_csvNullValue);
+
+  }
+
+  if(m_ignoreHeaderRowsHasBeenSet)
+  {
+   payload.WithInteger("IgnoreHeaderRows", m_ignoreHeaderRows);
+
+  }
+
+  if(m_maxFileSizeHasBeenSet)
+  {
+   payload.WithInteger("MaxFileSize", m_maxFileSize);
+
+  }
+
+  if(m_rfc4180HasBeenSet)
+  {
+   payload.WithBool("Rfc4180", m_rfc4180);
+
+  }
+
+  if(m_datePartitionTimezoneHasBeenSet)
+  {
+   payload.WithString("DatePartitionTimezone", m_datePartitionTimezone);
 
   }
 

@@ -220,33 +220,33 @@ namespace Model
 
 
     /**
-     * <p>The number of the partition the instance is in. Valid only if the placement
-     * group strategy is set to <code>partition</code>.</p> <p>This parameter is not
-     * supported by <a
+     * <p>The number of the partition that the instance is in. Valid only if the
+     * placement group strategy is set to <code>partition</code>.</p> <p>This parameter
+     * is not supported by <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.</p>
      */
     inline int GetPartitionNumber() const{ return m_partitionNumber; }
 
     /**
-     * <p>The number of the partition the instance is in. Valid only if the placement
-     * group strategy is set to <code>partition</code>.</p> <p>This parameter is not
-     * supported by <a
+     * <p>The number of the partition that the instance is in. Valid only if the
+     * placement group strategy is set to <code>partition</code>.</p> <p>This parameter
+     * is not supported by <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.</p>
      */
     inline bool PartitionNumberHasBeenSet() const { return m_partitionNumberHasBeenSet; }
 
     /**
-     * <p>The number of the partition the instance is in. Valid only if the placement
-     * group strategy is set to <code>partition</code>.</p> <p>This parameter is not
-     * supported by <a
+     * <p>The number of the partition that the instance is in. Valid only if the
+     * placement group strategy is set to <code>partition</code>.</p> <p>This parameter
+     * is not supported by <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.</p>
      */
     inline void SetPartitionNumber(int value) { m_partitionNumberHasBeenSet = true; m_partitionNumber = value; }
 
     /**
-     * <p>The number of the partition the instance is in. Valid only if the placement
-     * group strategy is set to <code>partition</code>.</p> <p>This parameter is not
-     * supported by <a
+     * <p>The number of the partition that the instance is in. Valid only if the
+     * placement group strategy is set to <code>partition</code>.</p> <p>This parameter
+     * is not supported by <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.</p>
      */
     inline Placement& WithPartitionNumber(int value) { SetPartitionNumber(value); return *this;}
@@ -332,6 +332,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>
      * command.</p> <p>This parameter is not supported by <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.</p>
+     * <p>T3 instances that use the <code>unlimited</code> CPU credit option do not
+     * support <code>host</code> tenancy.</p>
      */
     inline const Tenancy& GetTenancy() const{ return m_tenancy; }
 
@@ -342,6 +344,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>
      * command.</p> <p>This parameter is not supported by <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.</p>
+     * <p>T3 instances that use the <code>unlimited</code> CPU credit option do not
+     * support <code>host</code> tenancy.</p>
      */
     inline bool TenancyHasBeenSet() const { return m_tenancyHasBeenSet; }
 
@@ -352,6 +356,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>
      * command.</p> <p>This parameter is not supported by <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.</p>
+     * <p>T3 instances that use the <code>unlimited</code> CPU credit option do not
+     * support <code>host</code> tenancy.</p>
      */
     inline void SetTenancy(const Tenancy& value) { m_tenancyHasBeenSet = true; m_tenancy = value; }
 
@@ -362,6 +368,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>
      * command.</p> <p>This parameter is not supported by <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.</p>
+     * <p>T3 instances that use the <code>unlimited</code> CPU credit option do not
+     * support <code>host</code> tenancy.</p>
      */
     inline void SetTenancy(Tenancy&& value) { m_tenancyHasBeenSet = true; m_tenancy = std::move(value); }
 
@@ -372,6 +380,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>
      * command.</p> <p>This parameter is not supported by <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.</p>
+     * <p>T3 instances that use the <code>unlimited</code> CPU credit option do not
+     * support <code>host</code> tenancy.</p>
      */
     inline Placement& WithTenancy(const Tenancy& value) { SetTenancy(value); return *this;}
 
@@ -382,6 +392,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>
      * command.</p> <p>This parameter is not supported by <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.</p>
+     * <p>T3 instances that use the <code>unlimited</code> CPU credit option do not
+     * support <code>host</code> tenancy.</p>
      */
     inline Placement& WithTenancy(Tenancy&& value) { SetTenancy(std::move(value)); return *this;}
 

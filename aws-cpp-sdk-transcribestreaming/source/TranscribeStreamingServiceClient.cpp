@@ -71,7 +71,7 @@ TranscribeStreamingServiceClient::~TranscribeStreamingServiceClient()
 {
 }
 
-void TranscribeStreamingServiceClient::init(const ClientConfiguration& config)
+void TranscribeStreamingServiceClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Transcribe Streaming");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -133,9 +133,7 @@ void TranscribeStreamingServiceClient::StartMedicalStreamTranscriptionAsync(Mode
     responseHandler(this, request, StartMedicalStreamTranscriptionOutcome(Aws::Client::AWSError<TranscribeStreamingServiceErrors>(TranscribeStreamingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Type]", false)), handlerContext);
     return;
   }
-  Aws::StringStream ss;
-  ss << "/medical-stream-transcription";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/medical-stream-transcription");
   request.SetResponseStreamFactory(
       [&] { request.GetEventStreamDecoder().Reset(); return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
   );
@@ -168,12 +166,6 @@ void TranscribeStreamingServiceClient::StartStreamTranscriptionAsync(Model::Star
                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
 {
   Aws::Http::URI uri = m_uri;
-  if (!request.LanguageCodeHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("StartStreamTranscription", "Required field: LanguageCode, is not set");
-    responseHandler(this, request, StartStreamTranscriptionOutcome(Aws::Client::AWSError<TranscribeStreamingServiceErrors>(TranscribeStreamingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LanguageCode]", false)), handlerContext);
-    return;
-  }
   if (!request.MediaSampleRateHertzHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("StartStreamTranscription", "Required field: MediaSampleRateHertz, is not set");
@@ -186,9 +178,7 @@ void TranscribeStreamingServiceClient::StartStreamTranscriptionAsync(Model::Star
     responseHandler(this, request, StartStreamTranscriptionOutcome(Aws::Client::AWSError<TranscribeStreamingServiceErrors>(TranscribeStreamingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MediaEncoding]", false)), handlerContext);
     return;
   }
-  Aws::StringStream ss;
-  ss << "/stream-transcription";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/stream-transcription");
   request.SetResponseStreamFactory(
       [&] { request.GetEventStreamDecoder().Reset(); return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
   );

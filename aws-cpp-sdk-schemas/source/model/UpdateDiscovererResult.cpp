@@ -17,12 +17,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 UpdateDiscovererResult::UpdateDiscovererResult() : 
-    m_state(DiscovererState::NOT_SET)
+    m_state(DiscovererState::NOT_SET),
+    m_crossAccount(false)
 {
 }
 
 UpdateDiscovererResult::UpdateDiscovererResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_state(DiscovererState::NOT_SET)
+    m_state(DiscovererState::NOT_SET),
+    m_crossAccount(false)
 {
   *this = result;
 }
@@ -57,6 +59,12 @@ UpdateDiscovererResult& UpdateDiscovererResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("State"))
   {
     m_state = DiscovererStateMapper::GetDiscovererStateForName(jsonValue.GetString("State"));
+
+  }
+
+  if(jsonValue.ValueExists("CrossAccount"))
+  {
+    m_crossAccount = jsonValue.GetBool("CrossAccount");
 
   }
 

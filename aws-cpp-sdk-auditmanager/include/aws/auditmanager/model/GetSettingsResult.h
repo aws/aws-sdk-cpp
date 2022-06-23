@@ -33,32 +33,27 @@ namespace Model
 
 
     /**
-     * <p> The settings object that holds all supported AWS Audit Manager settings.
-     * </p>
+     * <p> The settings object that holds all supported Audit Manager settings. </p>
      */
     inline const Settings& GetSettings() const{ return m_settings; }
 
     /**
-     * <p> The settings object that holds all supported AWS Audit Manager settings.
-     * </p>
+     * <p> The settings object that holds all supported Audit Manager settings. </p>
      */
     inline void SetSettings(const Settings& value) { m_settings = value; }
 
     /**
-     * <p> The settings object that holds all supported AWS Audit Manager settings.
-     * </p>
+     * <p> The settings object that holds all supported Audit Manager settings. </p>
      */
     inline void SetSettings(Settings&& value) { m_settings = std::move(value); }
 
     /**
-     * <p> The settings object that holds all supported AWS Audit Manager settings.
-     * </p>
+     * <p> The settings object that holds all supported Audit Manager settings. </p>
      */
     inline GetSettingsResult& WithSettings(const Settings& value) { SetSettings(value); return *this;}
 
     /**
-     * <p> The settings object that holds all supported AWS Audit Manager settings.
-     * </p>
+     * <p> The settings object that holds all supported Audit Manager settings. </p>
      */
     inline GetSettingsResult& WithSettings(Settings&& value) { SetSettings(std::move(value)); return *this;}
 

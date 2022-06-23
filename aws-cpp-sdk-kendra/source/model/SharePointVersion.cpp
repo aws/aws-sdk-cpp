@@ -20,13 +20,23 @@ namespace Aws
       namespace SharePointVersionMapper
       {
 
+        static const int SHAREPOINT_2013_HASH = HashingUtils::HashString("SHAREPOINT_2013");
+        static const int SHAREPOINT_2016_HASH = HashingUtils::HashString("SHAREPOINT_2016");
         static const int SHAREPOINT_ONLINE_HASH = HashingUtils::HashString("SHAREPOINT_ONLINE");
 
 
         SharePointVersion GetSharePointVersionForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == SHAREPOINT_ONLINE_HASH)
+          if (hashCode == SHAREPOINT_2013_HASH)
+          {
+            return SharePointVersion::SHAREPOINT_2013;
+          }
+          else if (hashCode == SHAREPOINT_2016_HASH)
+          {
+            return SharePointVersion::SHAREPOINT_2016;
+          }
+          else if (hashCode == SHAREPOINT_ONLINE_HASH)
           {
             return SharePointVersion::SHAREPOINT_ONLINE;
           }
@@ -44,6 +54,10 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SharePointVersion::SHAREPOINT_2013:
+            return "SHAREPOINT_2013";
+          case SharePointVersion::SHAREPOINT_2016:
+            return "SHAREPOINT_2016";
           case SharePointVersion::SHAREPOINT_ONLINE:
             return "SHAREPOINT_ONLINE";
           default:

@@ -4,8 +4,6 @@
  */
 #define AWS_DISABLE_DEPRECATION
 #include <aws/external/gtest.h>
-#include <aws/s3-encryption/S3EncryptionClient.h>
-#include <aws/s3/S3Client.h>
 #include <aws/s3-encryption/materials/SimpleEncryptionMaterials.h>
 #include <aws/s3-encryption/materials/KMSEncryptionMaterials.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
@@ -22,6 +20,19 @@
 #include <aws/testing/ProxyConfig.h>
 #include <aws/testing/TestingEnvironment.h>
 #include <aws/core/utils/memory/AWSMemory.h>
+
+// TODO: temporary fix for naming conflicts on Windows.
+#if _WIN32
+#ifdef GetMessage
+#undef GetMessage
+#endif
+#ifdef GetObject
+#undef GetObject
+#endif
+#endif
+
+#include <aws/s3-encryption/S3EncryptionClient.h>
+#include <aws/s3/S3Client.h>
 
 using namespace Aws::S3;
 using namespace Aws::S3Encryption;

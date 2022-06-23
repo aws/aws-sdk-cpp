@@ -77,44 +77,44 @@ namespace Model
 
 
     /**
-     * <p>The type of AWS resource saved as a recovery point; for example, an EBS
-     * volume or an Amazon RDS database.</p>
+     * <p>The type of Amazon Web Services resource saved as a recovery point; for
+     * example, an Amazon EBS volume or an Amazon RDS database.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The type of AWS resource saved as a recovery point; for example, an EBS
-     * volume or an Amazon RDS database.</p>
+     * <p>The type of Amazon Web Services resource saved as a recovery point; for
+     * example, an Amazon EBS volume or an Amazon RDS database.</p>
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceType = value; }
 
     /**
-     * <p>The type of AWS resource saved as a recovery point; for example, an EBS
-     * volume or an Amazon RDS database.</p>
+     * <p>The type of Amazon Web Services resource saved as a recovery point; for
+     * example, an Amazon EBS volume or an Amazon RDS database.</p>
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceType = std::move(value); }
 
     /**
-     * <p>The type of AWS resource saved as a recovery point; for example, an EBS
-     * volume or an Amazon RDS database.</p>
+     * <p>The type of Amazon Web Services resource saved as a recovery point; for
+     * example, an Amazon EBS volume or an Amazon RDS database.</p>
      */
     inline void SetResourceType(const char* value) { m_resourceType.assign(value); }
 
     /**
-     * <p>The type of AWS resource saved as a recovery point; for example, an EBS
-     * volume or an Amazon RDS database.</p>
+     * <p>The type of Amazon Web Services resource saved as a recovery point; for
+     * example, an Amazon EBS volume or an Amazon RDS database.</p>
      */
     inline DescribeProtectedResourceResult& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The type of AWS resource saved as a recovery point; for example, an EBS
-     * volume or an Amazon RDS database.</p>
+     * <p>The type of Amazon Web Services resource saved as a recovery point; for
+     * example, an Amazon EBS volume or an Amazon RDS database.</p>
      */
     inline DescribeProtectedResourceResult& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of AWS resource saved as a recovery point; for example, an EBS
-     * volume or an Amazon RDS database.</p>
+     * <p>The type of Amazon Web Services resource saved as a recovery point; for
+     * example, an Amazon EBS volume or an Amazon RDS database.</p>
      */
     inline DescribeProtectedResourceResult& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 

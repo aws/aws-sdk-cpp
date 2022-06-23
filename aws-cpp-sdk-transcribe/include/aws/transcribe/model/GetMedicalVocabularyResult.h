@@ -100,35 +100,35 @@ namespace Model
     /**
      * <p>The processing state of the vocabulary. If the <code>VocabularyState</code>
      * is <code>READY</code> then you can use it in the
-     * <code>StartMedicalTranscriptionJob</code> operation. </p>
+     * <code>StartMedicalTranscriptionJob</code> operation.</p>
      */
     inline const VocabularyState& GetVocabularyState() const{ return m_vocabularyState; }
 
     /**
      * <p>The processing state of the vocabulary. If the <code>VocabularyState</code>
      * is <code>READY</code> then you can use it in the
-     * <code>StartMedicalTranscriptionJob</code> operation. </p>
+     * <code>StartMedicalTranscriptionJob</code> operation.</p>
      */
     inline void SetVocabularyState(const VocabularyState& value) { m_vocabularyState = value; }
 
     /**
      * <p>The processing state of the vocabulary. If the <code>VocabularyState</code>
      * is <code>READY</code> then you can use it in the
-     * <code>StartMedicalTranscriptionJob</code> operation. </p>
+     * <code>StartMedicalTranscriptionJob</code> operation.</p>
      */
     inline void SetVocabularyState(VocabularyState&& value) { m_vocabularyState = std::move(value); }
 
     /**
      * <p>The processing state of the vocabulary. If the <code>VocabularyState</code>
      * is <code>READY</code> then you can use it in the
-     * <code>StartMedicalTranscriptionJob</code> operation. </p>
+     * <code>StartMedicalTranscriptionJob</code> operation.</p>
      */
     inline GetMedicalVocabularyResult& WithVocabularyState(const VocabularyState& value) { SetVocabularyState(value); return *this;}
 
     /**
      * <p>The processing state of the vocabulary. If the <code>VocabularyState</code>
      * is <code>READY</code> then you can use it in the
-     * <code>StartMedicalTranscriptionJob</code> operation. </p>
+     * <code>StartMedicalTranscriptionJob</code> operation.</p>
      */
     inline GetMedicalVocabularyResult& WithVocabularyState(VocabularyState&& value) { SetVocabularyState(std::move(value)); return *this;}
 
@@ -165,94 +165,108 @@ namespace Model
 
 
     /**
-     * <p>If the <code>VocabularyState</code> is <code>FAILED</code>, this field
-     * contains information about why the job failed.</p>
+     * <p>If your request returns a <code>VocabularyState</code> that is
+     * <code>FAILED</code>, the <code>FailureReason</code> field contains information
+     * about why the request failed.</p> <p>For more information, refer to the <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common
+     * Errors</a> section.</p>
      */
     inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
 
     /**
-     * <p>If the <code>VocabularyState</code> is <code>FAILED</code>, this field
-     * contains information about why the job failed.</p>
+     * <p>If your request returns a <code>VocabularyState</code> that is
+     * <code>FAILED</code>, the <code>FailureReason</code> field contains information
+     * about why the request failed.</p> <p>For more information, refer to the <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common
+     * Errors</a> section.</p>
      */
     inline void SetFailureReason(const Aws::String& value) { m_failureReason = value; }
 
     /**
-     * <p>If the <code>VocabularyState</code> is <code>FAILED</code>, this field
-     * contains information about why the job failed.</p>
+     * <p>If your request returns a <code>VocabularyState</code> that is
+     * <code>FAILED</code>, the <code>FailureReason</code> field contains information
+     * about why the request failed.</p> <p>For more information, refer to the <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common
+     * Errors</a> section.</p>
      */
     inline void SetFailureReason(Aws::String&& value) { m_failureReason = std::move(value); }
 
     /**
-     * <p>If the <code>VocabularyState</code> is <code>FAILED</code>, this field
-     * contains information about why the job failed.</p>
+     * <p>If your request returns a <code>VocabularyState</code> that is
+     * <code>FAILED</code>, the <code>FailureReason</code> field contains information
+     * about why the request failed.</p> <p>For more information, refer to the <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common
+     * Errors</a> section.</p>
      */
     inline void SetFailureReason(const char* value) { m_failureReason.assign(value); }
 
     /**
-     * <p>If the <code>VocabularyState</code> is <code>FAILED</code>, this field
-     * contains information about why the job failed.</p>
+     * <p>If your request returns a <code>VocabularyState</code> that is
+     * <code>FAILED</code>, the <code>FailureReason</code> field contains information
+     * about why the request failed.</p> <p>For more information, refer to the <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common
+     * Errors</a> section.</p>
      */
     inline GetMedicalVocabularyResult& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
 
     /**
-     * <p>If the <code>VocabularyState</code> is <code>FAILED</code>, this field
-     * contains information about why the job failed.</p>
+     * <p>If your request returns a <code>VocabularyState</code> that is
+     * <code>FAILED</code>, the <code>FailureReason</code> field contains information
+     * about why the request failed.</p> <p>For more information, refer to the <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common
+     * Errors</a> section.</p>
      */
     inline GetMedicalVocabularyResult& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
 
     /**
-     * <p>If the <code>VocabularyState</code> is <code>FAILED</code>, this field
-     * contains information about why the job failed.</p>
+     * <p>If your request returns a <code>VocabularyState</code> that is
+     * <code>FAILED</code>, the <code>FailureReason</code> field contains information
+     * about why the request failed.</p> <p>For more information, refer to the <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common
+     * Errors</a> section.</p>
      */
     inline GetMedicalVocabularyResult& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
 
 
     /**
-     * <p>The location in Amazon S3 where the vocabulary is stored. Use this URI to get
-     * the contents of the vocabulary. You can download your vocabulary from the URI
-     * for a limited time.</p>
+     * <p>The S3 location where the vocabulary is stored; use this URI to view or
+     * download the vocabulary.</p>
      */
     inline const Aws::String& GetDownloadUri() const{ return m_downloadUri; }
 
     /**
-     * <p>The location in Amazon S3 where the vocabulary is stored. Use this URI to get
-     * the contents of the vocabulary. You can download your vocabulary from the URI
-     * for a limited time.</p>
+     * <p>The S3 location where the vocabulary is stored; use this URI to view or
+     * download the vocabulary.</p>
      */
     inline void SetDownloadUri(const Aws::String& value) { m_downloadUri = value; }
 
     /**
-     * <p>The location in Amazon S3 where the vocabulary is stored. Use this URI to get
-     * the contents of the vocabulary. You can download your vocabulary from the URI
-     * for a limited time.</p>
+     * <p>The S3 location where the vocabulary is stored; use this URI to view or
+     * download the vocabulary.</p>
      */
     inline void SetDownloadUri(Aws::String&& value) { m_downloadUri = std::move(value); }
 
     /**
-     * <p>The location in Amazon S3 where the vocabulary is stored. Use this URI to get
-     * the contents of the vocabulary. You can download your vocabulary from the URI
-     * for a limited time.</p>
+     * <p>The S3 location where the vocabulary is stored; use this URI to view or
+     * download the vocabulary.</p>
      */
     inline void SetDownloadUri(const char* value) { m_downloadUri.assign(value); }
 
     /**
-     * <p>The location in Amazon S3 where the vocabulary is stored. Use this URI to get
-     * the contents of the vocabulary. You can download your vocabulary from the URI
-     * for a limited time.</p>
+     * <p>The S3 location where the vocabulary is stored; use this URI to view or
+     * download the vocabulary.</p>
      */
     inline GetMedicalVocabularyResult& WithDownloadUri(const Aws::String& value) { SetDownloadUri(value); return *this;}
 
     /**
-     * <p>The location in Amazon S3 where the vocabulary is stored. Use this URI to get
-     * the contents of the vocabulary. You can download your vocabulary from the URI
-     * for a limited time.</p>
+     * <p>The S3 location where the vocabulary is stored; use this URI to view or
+     * download the vocabulary.</p>
      */
     inline GetMedicalVocabularyResult& WithDownloadUri(Aws::String&& value) { SetDownloadUri(std::move(value)); return *this;}
 
     /**
-     * <p>The location in Amazon S3 where the vocabulary is stored. Use this URI to get
-     * the contents of the vocabulary. You can download your vocabulary from the URI
-     * for a limited time.</p>
+     * <p>The S3 location where the vocabulary is stored; use this URI to view or
+     * download the vocabulary.</p>
      */
     inline GetMedicalVocabularyResult& WithDownloadUri(const char* value) { SetDownloadUri(value); return *this;}
 

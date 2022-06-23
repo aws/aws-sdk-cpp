@@ -36,49 +36,49 @@ namespace Model
 
     /**
      * <p>Specify the delete inventory ID for which you want information. This ID was
-     * returned by the <code>DeleteInventory</code> action.</p>
+     * returned by the <code>DeleteInventory</code> operation.</p>
      */
     inline const Aws::String& GetDeletionId() const{ return m_deletionId; }
 
     /**
      * <p>Specify the delete inventory ID for which you want information. This ID was
-     * returned by the <code>DeleteInventory</code> action.</p>
+     * returned by the <code>DeleteInventory</code> operation.</p>
      */
     inline bool DeletionIdHasBeenSet() const { return m_deletionIdHasBeenSet; }
 
     /**
      * <p>Specify the delete inventory ID for which you want information. This ID was
-     * returned by the <code>DeleteInventory</code> action.</p>
+     * returned by the <code>DeleteInventory</code> operation.</p>
      */
     inline void SetDeletionId(const Aws::String& value) { m_deletionIdHasBeenSet = true; m_deletionId = value; }
 
     /**
      * <p>Specify the delete inventory ID for which you want information. This ID was
-     * returned by the <code>DeleteInventory</code> action.</p>
+     * returned by the <code>DeleteInventory</code> operation.</p>
      */
     inline void SetDeletionId(Aws::String&& value) { m_deletionIdHasBeenSet = true; m_deletionId = std::move(value); }
 
     /**
      * <p>Specify the delete inventory ID for which you want information. This ID was
-     * returned by the <code>DeleteInventory</code> action.</p>
+     * returned by the <code>DeleteInventory</code> operation.</p>
      */
     inline void SetDeletionId(const char* value) { m_deletionIdHasBeenSet = true; m_deletionId.assign(value); }
 
     /**
      * <p>Specify the delete inventory ID for which you want information. This ID was
-     * returned by the <code>DeleteInventory</code> action.</p>
+     * returned by the <code>DeleteInventory</code> operation.</p>
      */
     inline DescribeInventoryDeletionsRequest& WithDeletionId(const Aws::String& value) { SetDeletionId(value); return *this;}
 
     /**
      * <p>Specify the delete inventory ID for which you want information. This ID was
-     * returned by the <code>DeleteInventory</code> action.</p>
+     * returned by the <code>DeleteInventory</code> operation.</p>
      */
     inline DescribeInventoryDeletionsRequest& WithDeletionId(Aws::String&& value) { SetDeletionId(std::move(value)); return *this;}
 
     /**
      * <p>Specify the delete inventory ID for which you want information. This ID was
-     * returned by the <code>DeleteInventory</code> action.</p>
+     * returned by the <code>DeleteInventory</code> operation.</p>
      */
     inline DescribeInventoryDeletionsRequest& WithDeletionId(const char* value) { SetDeletionId(value); return *this;}
 

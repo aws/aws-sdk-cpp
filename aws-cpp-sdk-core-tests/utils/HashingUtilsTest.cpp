@@ -92,7 +92,7 @@ TEST(HashingUtilsTest, TestSHA256HMAC)
     Aws::String computedHashAsHex = HashingUtils::HexEncode(digest);
 
     ASSERT_EQ(32uL, digest.GetLength());
-    EXPECT_STREQ("43cf04fa24b873a456670d34ef9af2cb7870483327b5767509336fa66fb7986c", computedHashAsHex.c_str());    
+    EXPECT_STREQ("43cf04fa24b873a456670d34ef9af2cb7870483327b5767509336fa66fb7986c", computedHashAsHex.c_str());
 }
 
 TEST(HashingUtilsTest, TestSHA256FromString)
@@ -103,18 +103,65 @@ TEST(HashingUtilsTest, TestSHA256FromString)
     ASSERT_EQ(32uL, digest.GetLength());
 
     Aws::String base64Hash = HashingUtils::Base64Encode(digest);
-    EXPECT_STREQ("No9GqyFhBA5QWj9+YUchjN83IByaCH5Lqji0McSOKyg=", base64Hash.c_str()); 
+    EXPECT_STREQ("No9GqyFhBA5QWj9+YUchjN83IByaCH5Lqji0McSOKyg=", base64Hash.c_str());
 
     // SHA256 results come from https://www.di-mgt.com.au/sha_testvectors.html
-    EXPECT_STREQ(HashingUtils::HexEncode(HashingUtils::CalculateSHA256("")).c_str(), 
+    EXPECT_STREQ(HashingUtils::HexEncode(HashingUtils::CalculateSHA256("")).c_str(),
             "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855");
 
-    EXPECT_STREQ(HashingUtils::HexEncode(HashingUtils::CalculateSHA256("abc")).c_str(), 
+    EXPECT_STREQ(HashingUtils::HexEncode(HashingUtils::CalculateSHA256("abc")).c_str(),
             "ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad");
 
     EXPECT_STREQ(HashingUtils::HexEncode(HashingUtils::CalculateSHA256(
             "abcdefghbcdefghicdefghijdefghijkefghijklfghijklmghijklmnhijklmnoijklmnopjklmnopqklmnopqrlmnopqrsmnopqrstnopqrstu")).c_str(),
             "cf5b16a778af8380036ce59e7b0492370b249b11e8f07a51afac45037afee9d1");
+}
+
+TEST(HashingUtilsTest, TestSHA1FromString)
+{
+    Aws::String toHash = "TestToHash";
+
+    ByteBuffer digest = HashingUtils::CalculateSHA1(toHash);
+    ASSERT_EQ(20uL, digest.GetLength());
+
+    // SHA1 results come from https://www.di-mgt.com.au/sha_testvectors.html
+    EXPECT_STREQ(HashingUtils::HexEncode(HashingUtils::CalculateSHA1("")).c_str(),
+                 "da39a3ee5e6b4b0d3255bfef95601890afd80709");
+
+    EXPECT_STREQ(HashingUtils::HexEncode(HashingUtils::CalculateSHA1("abc")).c_str(),
+                 "a9993e364706816aba3e25717850c26c9cd0d89d");
+
+    EXPECT_STREQ(HashingUtils::HexEncode(HashingUtils::CalculateSHA1(
+            "abcdefghbcdefghicdefghijdefghijkefghijklfghijklmghijklmnhijklmnoijklmnopjklmnopqklmnopqrlmnopqrsmnopqrstnopqrstu")).c_str(),
+                 "a49b2446a02c645bf419f995b67091253a04a259");
+}
+
+TEST(HashingUtilsTest, TestSHA1FromStream)
+{
+    Aws::StringStream toHash;
+    toHash << "TestToHash";
+
+    ByteBuffer digest = HashingUtils::CalculateSHA1(toHash);
+    ASSERT_EQ(20uL, digest.GetLength());
+
+    // SHA1 results come from https://www.di-mgt.com.au/sha_testvectors.html
+    toHash.str("");
+    toHash.clear();
+    toHash << "";
+    EXPECT_STREQ(HashingUtils::HexEncode(HashingUtils::CalculateSHA1(toHash)).c_str(),
+            "da39a3ee5e6b4b0d3255bfef95601890afd80709");
+
+    toHash.str("");
+    toHash.clear();
+    toHash << "abc";
+    EXPECT_STREQ(HashingUtils::HexEncode(HashingUtils::CalculateSHA1(toHash)).c_str(),
+            "a9993e364706816aba3e25717850c26c9cd0d89d");
+
+    toHash.str("");
+    toHash.clear();
+    toHash << "abcdefghbcdefghicdefghijdefghijkefghijklfghijklmghijklmnhijklmnoijklmnopjklmnopqklmnopqrlmnopqrsmnopqrstnopqrstu";
+    EXPECT_STREQ(HashingUtils::HexEncode(HashingUtils::CalculateSHA1(toHash)).c_str(),
+            "a49b2446a02c645bf419f995b67091253a04a259");
 }
 
 TEST(HashingUtilsTest, TestSHA256FromStream)
@@ -131,13 +178,13 @@ TEST(HashingUtilsTest, TestSHA256FromStream)
     // SHA256 results come from https://www.di-mgt.com.au/sha_testvectors.html
     toHash.str("");
     toHash.clear();
-    EXPECT_STREQ(HashingUtils::HexEncode(HashingUtils::CalculateSHA256(toHash)).c_str(), 
+    EXPECT_STREQ(HashingUtils::HexEncode(HashingUtils::CalculateSHA256(toHash)).c_str(),
             "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855");
 
     toHash.str("");
     toHash.clear();
     toHash << "abc";
-    EXPECT_STREQ(HashingUtils::HexEncode(HashingUtils::CalculateSHA256(toHash)).c_str(), 
+    EXPECT_STREQ(HashingUtils::HexEncode(HashingUtils::CalculateSHA256(toHash)).c_str(),
             "ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad");
 
     toHash.str("");
@@ -311,3 +358,130 @@ TEST(HashingUtilsTest, TestMD5FromStream)
     TestMD5FromStream( "12345678901234567890123456789012345678901234567890123456789012345678901234567890", "V+30oivjyVWsSdouIQe2eg==" );
 }
 
+static void TestCRC32FromString(const uint8_t* value, size_t length, const char* expectedHexHash)
+{
+    Aws::String source(reinterpret_cast<const char*>(value), length);
+
+    ByteBuffer digest = HashingUtils::CalculateCRC32(source);
+    ASSERT_EQ(4uL, digest.GetLength());
+
+    Aws::String hexHash = HashingUtils::HexEncode(digest);
+    ASSERT_STREQ(expectedHexHash, hexHash.c_str());
+}
+
+TEST(HashingUtilsTest, TestCRC32FromString)
+{
+    uint8_t value[32];
+    memset(value, 0, 32);
+    TestCRC32FromString(value, 32, "190a55ad");
+
+    for (uint8_t i = 0; i < 32; i++)
+    {
+        value[i] = i;
+    }
+    TestCRC32FromString(value, 32, "91267e8a");
+
+    ByteBuffer largeValue(26214400);
+    for (size_t i = 0; i < 26214400; i++)
+    {
+        largeValue[i] = 0;
+    }
+    TestCRC32FromString(largeValue.GetUnderlyingData(), 26214400, "72103906");
+}
+
+static void TestCRC32FromStream(const uint8_t* value, size_t length, const char* expectedHexHash)
+{
+    Aws::StringStream stream;
+
+    stream.write(reinterpret_cast<const char*>(value), length);
+    stream.clear();
+    ByteBuffer digest = HashingUtils::CalculateCRC32(stream);
+    ASSERT_EQ(4uL, digest.GetLength());
+
+    Aws::String hexHash = HashingUtils::HexEncode(digest);
+    ASSERT_STREQ(expectedHexHash, hexHash.c_str());
+}
+
+TEST(HashingUtilsTest, TestCRC32FromStream)
+{
+    uint8_t value[32];
+    memset(value, 0, 32);
+    TestCRC32FromStream(value, 32, "190a55ad");
+
+    for (uint8_t i = 0; i < 32; i++)
+    {
+        value[i] = i;
+    }
+    TestCRC32FromStream(value, 32, "91267e8a");
+
+    ByteBuffer largeValue(26214400);
+    for (size_t i = 0; i < 26214400; i++)
+    {
+        largeValue[i] = 0;
+    }
+    TestCRC32FromStream(largeValue.GetUnderlyingData(), 26214400, "72103906");
+}
+
+static void TestCRC32CFromString(const uint8_t* value, size_t length, const char* expectedHexHash)
+{
+    Aws::String source(reinterpret_cast<const char*>(value), length);
+
+    ByteBuffer digest = HashingUtils::CalculateCRC32C(source);
+    ASSERT_EQ(4uL, digest.GetLength());
+
+    Aws::String hexHash = HashingUtils::HexEncode(digest);
+    ASSERT_STREQ(expectedHexHash, hexHash.c_str());
+}
+
+TEST(HashingUtilsTest, TestCRC32CFromString)
+{
+    uint8_t value[32];
+    memset(value, 0, 32);
+    TestCRC32CFromString(value, 32, "8a9136aa");
+
+    for (uint8_t i = 0; i < 32; i++)
+    {
+        value[i] = i;
+    }
+    TestCRC32CFromString(value, 32, "46dd794e");
+
+    ByteBuffer largeValue(26214400);
+    for (size_t i = 0; i < 26214400; i++)
+    {
+        largeValue[i] = 0;
+    }
+    TestCRC32CFromString(largeValue.GetUnderlyingData(), 26214400, "fb5b991d");
+}
+
+static void TestCRC32CFromStream(const uint8_t* value, size_t length, const char* expectedHexHash)
+{
+    Aws::StringStream stream;
+
+    stream.write(reinterpret_cast<const char*>(value), length);
+    stream.clear();
+    ByteBuffer digest = HashingUtils::CalculateCRC32C(stream);
+    ASSERT_EQ(4uL, digest.GetLength());
+
+    Aws::String hexHash = HashingUtils::HexEncode(digest);
+    ASSERT_STREQ(expectedHexHash, hexHash.c_str());
+}
+
+TEST(HashingUtilsTest, TestCRC32CFromStream)
+{
+    uint8_t value[32];
+    memset(value, 0, 32);
+    TestCRC32CFromStream(value, 32, "8a9136aa");
+
+    for (uint8_t i = 0; i < 32; i++)
+    {
+        value[i] = i;
+    }
+    TestCRC32CFromStream(value, 32, "46dd794e");
+
+    ByteBuffer largeValue(26214400);
+    for (size_t i = 0; i < 26214400; i++)
+    {
+        largeValue[i] = 0;
+    }
+    TestCRC32CFromStream(largeValue.GetUnderlyingData(), 26214400, "fb5b991d");
+}

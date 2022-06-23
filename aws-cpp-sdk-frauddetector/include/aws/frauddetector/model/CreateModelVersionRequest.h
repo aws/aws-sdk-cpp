@@ -11,6 +11,7 @@
 #include <aws/frauddetector/model/TrainingDataSourceEnum.h>
 #include <aws/frauddetector/model/TrainingDataSchema.h>
 #include <aws/frauddetector/model/ExternalEventsDetail.h>
+#include <aws/frauddetector/model/IngestedEventsDetail.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/frauddetector/model/Tag.h>
 #include <utility>
@@ -175,40 +176,77 @@ namespace Model
 
 
     /**
-     * <p>Details for the external events data used for model version training.
-     * Required if <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>.</p>
+     * <p>Details of the external events data used for model version training. Required
+     * if <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>.</p>
      */
     inline const ExternalEventsDetail& GetExternalEventsDetail() const{ return m_externalEventsDetail; }
 
     /**
-     * <p>Details for the external events data used for model version training.
-     * Required if <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>.</p>
+     * <p>Details of the external events data used for model version training. Required
+     * if <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>.</p>
      */
     inline bool ExternalEventsDetailHasBeenSet() const { return m_externalEventsDetailHasBeenSet; }
 
     /**
-     * <p>Details for the external events data used for model version training.
-     * Required if <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>.</p>
+     * <p>Details of the external events data used for model version training. Required
+     * if <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>.</p>
      */
     inline void SetExternalEventsDetail(const ExternalEventsDetail& value) { m_externalEventsDetailHasBeenSet = true; m_externalEventsDetail = value; }
 
     /**
-     * <p>Details for the external events data used for model version training.
-     * Required if <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>.</p>
+     * <p>Details of the external events data used for model version training. Required
+     * if <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>.</p>
      */
     inline void SetExternalEventsDetail(ExternalEventsDetail&& value) { m_externalEventsDetailHasBeenSet = true; m_externalEventsDetail = std::move(value); }
 
     /**
-     * <p>Details for the external events data used for model version training.
-     * Required if <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>.</p>
+     * <p>Details of the external events data used for model version training. Required
+     * if <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>.</p>
      */
     inline CreateModelVersionRequest& WithExternalEventsDetail(const ExternalEventsDetail& value) { SetExternalEventsDetail(value); return *this;}
 
     /**
-     * <p>Details for the external events data used for model version training.
-     * Required if <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>.</p>
+     * <p>Details of the external events data used for model version training. Required
+     * if <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>.</p>
      */
     inline CreateModelVersionRequest& WithExternalEventsDetail(ExternalEventsDetail&& value) { SetExternalEventsDetail(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Details of the ingested events data used for model version training. Required
+     * if <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
+     */
+    inline const IngestedEventsDetail& GetIngestedEventsDetail() const{ return m_ingestedEventsDetail; }
+
+    /**
+     * <p>Details of the ingested events data used for model version training. Required
+     * if <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
+     */
+    inline bool IngestedEventsDetailHasBeenSet() const { return m_ingestedEventsDetailHasBeenSet; }
+
+    /**
+     * <p>Details of the ingested events data used for model version training. Required
+     * if <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
+     */
+    inline void SetIngestedEventsDetail(const IngestedEventsDetail& value) { m_ingestedEventsDetailHasBeenSet = true; m_ingestedEventsDetail = value; }
+
+    /**
+     * <p>Details of the ingested events data used for model version training. Required
+     * if <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
+     */
+    inline void SetIngestedEventsDetail(IngestedEventsDetail&& value) { m_ingestedEventsDetailHasBeenSet = true; m_ingestedEventsDetail = std::move(value); }
+
+    /**
+     * <p>Details of the ingested events data used for model version training. Required
+     * if <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
+     */
+    inline CreateModelVersionRequest& WithIngestedEventsDetail(const IngestedEventsDetail& value) { SetIngestedEventsDetail(value); return *this;}
+
+    /**
+     * <p>Details of the ingested events data used for model version training. Required
+     * if <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
+     */
+    inline CreateModelVersionRequest& WithIngestedEventsDetail(IngestedEventsDetail&& value) { SetIngestedEventsDetail(std::move(value)); return *this;}
 
 
     /**
@@ -267,6 +305,9 @@ namespace Model
 
     ExternalEventsDetail m_externalEventsDetail;
     bool m_externalEventsDetailHasBeenSet;
+
+    IngestedEventsDetail m_ingestedEventsDetail;
+    bool m_ingestedEventsDetailHasBeenSet;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;

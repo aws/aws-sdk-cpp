@@ -7,6 +7,9 @@
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 #include <aws/network-firewall/NetworkFirewallRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/network-firewall/model/ResourceManagedStatus.h>
+#include <aws/network-firewall/model/ResourceManagedType.h>
+#include <aws/network-firewall/model/RuleGroupType.h>
 #include <utility>
 
 namespace Aws
@@ -139,6 +142,129 @@ namespace Model
      */
     inline ListRuleGroupsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
+
+    /**
+     * <p>The scope of the request. The default setting of <code>ACCOUNT</code> or a
+     * setting of <code>NULL</code> returns all of the rule groups in your account. A
+     * setting of <code>MANAGED</code> returns all available managed rule groups.</p>
+     */
+    inline const ResourceManagedStatus& GetScope() const{ return m_scope; }
+
+    /**
+     * <p>The scope of the request. The default setting of <code>ACCOUNT</code> or a
+     * setting of <code>NULL</code> returns all of the rule groups in your account. A
+     * setting of <code>MANAGED</code> returns all available managed rule groups.</p>
+     */
+    inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
+
+    /**
+     * <p>The scope of the request. The default setting of <code>ACCOUNT</code> or a
+     * setting of <code>NULL</code> returns all of the rule groups in your account. A
+     * setting of <code>MANAGED</code> returns all available managed rule groups.</p>
+     */
+    inline void SetScope(const ResourceManagedStatus& value) { m_scopeHasBeenSet = true; m_scope = value; }
+
+    /**
+     * <p>The scope of the request. The default setting of <code>ACCOUNT</code> or a
+     * setting of <code>NULL</code> returns all of the rule groups in your account. A
+     * setting of <code>MANAGED</code> returns all available managed rule groups.</p>
+     */
+    inline void SetScope(ResourceManagedStatus&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
+
+    /**
+     * <p>The scope of the request. The default setting of <code>ACCOUNT</code> or a
+     * setting of <code>NULL</code> returns all of the rule groups in your account. A
+     * setting of <code>MANAGED</code> returns all available managed rule groups.</p>
+     */
+    inline ListRuleGroupsRequest& WithScope(const ResourceManagedStatus& value) { SetScope(value); return *this;}
+
+    /**
+     * <p>The scope of the request. The default setting of <code>ACCOUNT</code> or a
+     * setting of <code>NULL</code> returns all of the rule groups in your account. A
+     * setting of <code>MANAGED</code> returns all available managed rule groups.</p>
+     */
+    inline ListRuleGroupsRequest& WithScope(ResourceManagedStatus&& value) { SetScope(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Indicates the general category of the Amazon Web Services managed rule
+     * group.</p>
+     */
+    inline const ResourceManagedType& GetManagedType() const{ return m_managedType; }
+
+    /**
+     * <p>Indicates the general category of the Amazon Web Services managed rule
+     * group.</p>
+     */
+    inline bool ManagedTypeHasBeenSet() const { return m_managedTypeHasBeenSet; }
+
+    /**
+     * <p>Indicates the general category of the Amazon Web Services managed rule
+     * group.</p>
+     */
+    inline void SetManagedType(const ResourceManagedType& value) { m_managedTypeHasBeenSet = true; m_managedType = value; }
+
+    /**
+     * <p>Indicates the general category of the Amazon Web Services managed rule
+     * group.</p>
+     */
+    inline void SetManagedType(ResourceManagedType&& value) { m_managedTypeHasBeenSet = true; m_managedType = std::move(value); }
+
+    /**
+     * <p>Indicates the general category of the Amazon Web Services managed rule
+     * group.</p>
+     */
+    inline ListRuleGroupsRequest& WithManagedType(const ResourceManagedType& value) { SetManagedType(value); return *this;}
+
+    /**
+     * <p>Indicates the general category of the Amazon Web Services managed rule
+     * group.</p>
+     */
+    inline ListRuleGroupsRequest& WithManagedType(ResourceManagedType&& value) { SetManagedType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Indicates whether the rule group is stateless or stateful. If the rule group
+     * is stateless, it contains stateless rules. If it is stateful, it contains
+     * stateful rules.</p>
+     */
+    inline const RuleGroupType& GetType() const{ return m_type; }
+
+    /**
+     * <p>Indicates whether the rule group is stateless or stateful. If the rule group
+     * is stateless, it contains stateless rules. If it is stateful, it contains
+     * stateful rules.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the rule group is stateless or stateful. If the rule group
+     * is stateless, it contains stateless rules. If it is stateful, it contains
+     * stateful rules.</p>
+     */
+    inline void SetType(const RuleGroupType& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p>Indicates whether the rule group is stateless or stateful. If the rule group
+     * is stateless, it contains stateless rules. If it is stateful, it contains
+     * stateful rules.</p>
+     */
+    inline void SetType(RuleGroupType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+
+    /**
+     * <p>Indicates whether the rule group is stateless or stateful. If the rule group
+     * is stateless, it contains stateless rules. If it is stateful, it contains
+     * stateful rules.</p>
+     */
+    inline ListRuleGroupsRequest& WithType(const RuleGroupType& value) { SetType(value); return *this;}
+
+    /**
+     * <p>Indicates whether the rule group is stateless or stateful. If the rule group
+     * is stateless, it contains stateless rules. If it is stateful, it contains
+     * stateful rules.</p>
+     */
+    inline ListRuleGroupsRequest& WithType(RuleGroupType&& value) { SetType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_nextToken;
@@ -146,6 +272,15 @@ namespace Model
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
+    ResourceManagedStatus m_scope;
+    bool m_scopeHasBeenSet;
+
+    ResourceManagedType m_managedType;
+    bool m_managedTypeHasBeenSet;
+
+    RuleGroupType m_type;
+    bool m_typeHasBeenSet;
   };
 
 } // namespace Model

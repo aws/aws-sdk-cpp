@@ -321,50 +321,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Outpost. Only applicable to AWS
-     * Outposts instances.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost. Only
+     * applicable to Amazon Web Services Outposts instances.</p>
      */
     inline const Aws::String& GetOutpostArn() const{ return m_outpostArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Outpost. Only applicable to AWS
-     * Outposts instances.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost. Only
+     * applicable to Amazon Web Services Outposts instances.</p>
      */
     inline bool OutpostArnHasBeenSet() const { return m_outpostArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Outpost. Only applicable to AWS
-     * Outposts instances.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost. Only
+     * applicable to Amazon Web Services Outposts instances.</p>
      */
     inline void SetOutpostArn(const Aws::String& value) { m_outpostArnHasBeenSet = true; m_outpostArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Outpost. Only applicable to AWS
-     * Outposts instances.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost. Only
+     * applicable to Amazon Web Services Outposts instances.</p>
      */
     inline void SetOutpostArn(Aws::String&& value) { m_outpostArnHasBeenSet = true; m_outpostArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Outpost. Only applicable to AWS
-     * Outposts instances.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost. Only
+     * applicable to Amazon Web Services Outposts instances.</p>
      */
     inline void SetOutpostArn(const char* value) { m_outpostArnHasBeenSet = true; m_outpostArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Outpost. Only applicable to AWS
-     * Outposts instances.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost. Only
+     * applicable to Amazon Web Services Outposts instances.</p>
      */
     inline InstanceDetails& WithOutpostArn(const Aws::String& value) { SetOutpostArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Outpost. Only applicable to AWS
-     * Outposts instances.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost. Only
+     * applicable to Amazon Web Services Outposts instances.</p>
      */
     inline InstanceDetails& WithOutpostArn(Aws::String&& value) { SetOutpostArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Outpost. Only applicable to AWS
-     * Outposts instances.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost. Only
+     * applicable to Amazon Web Services Outposts instances.</p>
      */
     inline InstanceDetails& WithOutpostArn(const char* value) { SetOutpostArn(value); return *this;}
 

@@ -41,50 +41,50 @@ namespace Model
 
 
     /**
-     * <p>A cron expression that specifies when AWS DataSync initiates a scheduled
-     * transfer from a source to a destination location. </p>
+     * <p>A cron expression that specifies when DataSync initiates a scheduled transfer
+     * from a source to a destination location. </p>
      */
     inline const Aws::String& GetScheduleExpression() const{ return m_scheduleExpression; }
 
     /**
-     * <p>A cron expression that specifies when AWS DataSync initiates a scheduled
-     * transfer from a source to a destination location. </p>
+     * <p>A cron expression that specifies when DataSync initiates a scheduled transfer
+     * from a source to a destination location. </p>
      */
     inline bool ScheduleExpressionHasBeenSet() const { return m_scheduleExpressionHasBeenSet; }
 
     /**
-     * <p>A cron expression that specifies when AWS DataSync initiates a scheduled
-     * transfer from a source to a destination location. </p>
+     * <p>A cron expression that specifies when DataSync initiates a scheduled transfer
+     * from a source to a destination location. </p>
      */
     inline void SetScheduleExpression(const Aws::String& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = value; }
 
     /**
-     * <p>A cron expression that specifies when AWS DataSync initiates a scheduled
-     * transfer from a source to a destination location. </p>
+     * <p>A cron expression that specifies when DataSync initiates a scheduled transfer
+     * from a source to a destination location. </p>
      */
     inline void SetScheduleExpression(Aws::String&& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = std::move(value); }
 
     /**
-     * <p>A cron expression that specifies when AWS DataSync initiates a scheduled
-     * transfer from a source to a destination location. </p>
+     * <p>A cron expression that specifies when DataSync initiates a scheduled transfer
+     * from a source to a destination location. </p>
      */
     inline void SetScheduleExpression(const char* value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression.assign(value); }
 
     /**
-     * <p>A cron expression that specifies when AWS DataSync initiates a scheduled
-     * transfer from a source to a destination location. </p>
+     * <p>A cron expression that specifies when DataSync initiates a scheduled transfer
+     * from a source to a destination location. </p>
      */
     inline TaskSchedule& WithScheduleExpression(const Aws::String& value) { SetScheduleExpression(value); return *this;}
 
     /**
-     * <p>A cron expression that specifies when AWS DataSync initiates a scheduled
-     * transfer from a source to a destination location. </p>
+     * <p>A cron expression that specifies when DataSync initiates a scheduled transfer
+     * from a source to a destination location. </p>
      */
     inline TaskSchedule& WithScheduleExpression(Aws::String&& value) { SetScheduleExpression(std::move(value)); return *this;}
 
     /**
-     * <p>A cron expression that specifies when AWS DataSync initiates a scheduled
-     * transfer from a source to a destination location. </p>
+     * <p>A cron expression that specifies when DataSync initiates a scheduled transfer
+     * from a source to a destination location. </p>
      */
     inline TaskSchedule& WithScheduleExpression(const char* value) { SetScheduleExpression(value); return *this;}
 

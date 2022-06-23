@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/NetworkInterface.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <utility>
 
@@ -64,6 +65,49 @@ namespace Model
     inline CreateNetworkInterfaceResponse& WithNetworkInterface(NetworkInterface&& value) { SetNetworkInterface(std::move(value)); return *this;}
 
 
+    /**
+     * <p>The token to use to retrieve the next page of results. This value is
+     * <code>null</code> when there are no more results to return.</p>
+     */
+    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+
+    /**
+     * <p>The token to use to retrieve the next page of results. This value is
+     * <code>null</code> when there are no more results to return.</p>
+     */
+    inline void SetClientToken(const Aws::String& value) { m_clientToken = value; }
+
+    /**
+     * <p>The token to use to retrieve the next page of results. This value is
+     * <code>null</code> when there are no more results to return.</p>
+     */
+    inline void SetClientToken(Aws::String&& value) { m_clientToken = std::move(value); }
+
+    /**
+     * <p>The token to use to retrieve the next page of results. This value is
+     * <code>null</code> when there are no more results to return.</p>
+     */
+    inline void SetClientToken(const char* value) { m_clientToken.assign(value); }
+
+    /**
+     * <p>The token to use to retrieve the next page of results. This value is
+     * <code>null</code> when there are no more results to return.</p>
+     */
+    inline CreateNetworkInterfaceResponse& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
+
+    /**
+     * <p>The token to use to retrieve the next page of results. This value is
+     * <code>null</code> when there are no more results to return.</p>
+     */
+    inline CreateNetworkInterfaceResponse& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
+
+    /**
+     * <p>The token to use to retrieve the next page of results. This value is
+     * <code>null</code> when there are no more results to return.</p>
+     */
+    inline CreateNetworkInterfaceResponse& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -82,6 +126,8 @@ namespace Model
   private:
 
     NetworkInterface m_networkInterface;
+
+    Aws::String m_clientToken;
 
     ResponseMetadata m_responseMetadata;
   };

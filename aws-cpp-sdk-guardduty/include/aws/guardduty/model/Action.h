@@ -10,6 +10,7 @@
 #include <aws/guardduty/model/DnsRequestAction.h>
 #include <aws/guardduty/model/NetworkConnectionAction.h>
 #include <aws/guardduty/model/PortProbeAction.h>
+#include <aws/guardduty/model/KubernetesApiCallAction.h>
 #include <utility>
 
 namespace Aws
@@ -211,6 +212,43 @@ namespace Model
      */
     inline Action& WithPortProbeAction(PortProbeAction&& value) { SetPortProbeAction(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Information about the Kubernetes API call action described in this
+     * finding.</p>
+     */
+    inline const KubernetesApiCallAction& GetKubernetesApiCallAction() const{ return m_kubernetesApiCallAction; }
+
+    /**
+     * <p>Information about the Kubernetes API call action described in this
+     * finding.</p>
+     */
+    inline bool KubernetesApiCallActionHasBeenSet() const { return m_kubernetesApiCallActionHasBeenSet; }
+
+    /**
+     * <p>Information about the Kubernetes API call action described in this
+     * finding.</p>
+     */
+    inline void SetKubernetesApiCallAction(const KubernetesApiCallAction& value) { m_kubernetesApiCallActionHasBeenSet = true; m_kubernetesApiCallAction = value; }
+
+    /**
+     * <p>Information about the Kubernetes API call action described in this
+     * finding.</p>
+     */
+    inline void SetKubernetesApiCallAction(KubernetesApiCallAction&& value) { m_kubernetesApiCallActionHasBeenSet = true; m_kubernetesApiCallAction = std::move(value); }
+
+    /**
+     * <p>Information about the Kubernetes API call action described in this
+     * finding.</p>
+     */
+    inline Action& WithKubernetesApiCallAction(const KubernetesApiCallAction& value) { SetKubernetesApiCallAction(value); return *this;}
+
+    /**
+     * <p>Information about the Kubernetes API call action described in this
+     * finding.</p>
+     */
+    inline Action& WithKubernetesApiCallAction(KubernetesApiCallAction&& value) { SetKubernetesApiCallAction(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_actionType;
@@ -227,6 +265,9 @@ namespace Model
 
     PortProbeAction m_portProbeAction;
     bool m_portProbeActionHasBeenSet;
+
+    KubernetesApiCallAction m_kubernetesApiCallAction;
+    bool m_kubernetesApiCallActionHasBeenSet;
   };
 
 } // namespace Model

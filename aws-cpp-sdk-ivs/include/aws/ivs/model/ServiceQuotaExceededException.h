@@ -23,6 +23,11 @@ namespace IVS
 namespace Model
 {
 
+  /**
+   * <p/><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ServiceQuotaExceededException">AWS
+   * API Reference</a></p>
+   */
   class AWS_IVS_API ServiceQuotaExceededException
   {
   public:

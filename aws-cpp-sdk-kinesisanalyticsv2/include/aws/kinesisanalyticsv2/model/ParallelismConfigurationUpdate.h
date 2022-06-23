@@ -24,9 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes updates to parameters for how a Flink-based Kinesis Data Analytics
-   * application executes multiple tasks simultaneously.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Describes updates to parameters for how an application executes multiple
+   * tasks simultaneously.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ParallelismConfigurationUpdate">AWS
    * API Reference</a></p>
    */
@@ -174,25 +173,29 @@ namespace Model
 
     /**
      * <p>Describes updates to whether the Kinesis Data Analytics service can increase
-     * the parallelism of the application in response to increased throughput.</p>
+     * the parallelism of a Flink-based Kinesis Data Analytics application in response
+     * to increased throughput.</p>
      */
     inline bool GetAutoScalingEnabledUpdate() const{ return m_autoScalingEnabledUpdate; }
 
     /**
      * <p>Describes updates to whether the Kinesis Data Analytics service can increase
-     * the parallelism of the application in response to increased throughput.</p>
+     * the parallelism of a Flink-based Kinesis Data Analytics application in response
+     * to increased throughput.</p>
      */
     inline bool AutoScalingEnabledUpdateHasBeenSet() const { return m_autoScalingEnabledUpdateHasBeenSet; }
 
     /**
      * <p>Describes updates to whether the Kinesis Data Analytics service can increase
-     * the parallelism of the application in response to increased throughput.</p>
+     * the parallelism of a Flink-based Kinesis Data Analytics application in response
+     * to increased throughput.</p>
      */
     inline void SetAutoScalingEnabledUpdate(bool value) { m_autoScalingEnabledUpdateHasBeenSet = true; m_autoScalingEnabledUpdate = value; }
 
     /**
      * <p>Describes updates to whether the Kinesis Data Analytics service can increase
-     * the parallelism of the application in response to increased throughput.</p>
+     * the parallelism of a Flink-based Kinesis Data Analytics application in response
+     * to increased throughput.</p>
      */
     inline ParallelismConfigurationUpdate& WithAutoScalingEnabledUpdate(bool value) { SetAutoScalingEnabledUpdate(value); return *this;}
 

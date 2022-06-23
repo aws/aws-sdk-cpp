@@ -84,49 +84,49 @@ namespace Model
 
     /**
      * <p>Filters to scope the results. The following filter is supported:</p> <ul>
-     * <li> <p> <code>licenseArns</code> </p> </li> </ul>
+     * <li> <p> <code>LicenseArns</code> </p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
      * <p>Filters to scope the results. The following filter is supported:</p> <ul>
-     * <li> <p> <code>licenseArns</code> </p> </li> </ul>
+     * <li> <p> <code>LicenseArns</code> </p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>Filters to scope the results. The following filter is supported:</p> <ul>
-     * <li> <p> <code>licenseArns</code> </p> </li> </ul>
+     * <li> <p> <code>LicenseArns</code> </p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
      * <p>Filters to scope the results. The following filter is supported:</p> <ul>
-     * <li> <p> <code>licenseArns</code> </p> </li> </ul>
+     * <li> <p> <code>LicenseArns</code> </p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>Filters to scope the results. The following filter is supported:</p> <ul>
-     * <li> <p> <code>licenseArns</code> </p> </li> </ul>
+     * <li> <p> <code>LicenseArns</code> </p> </li> </ul>
      */
     inline ListTokensRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
      * <p>Filters to scope the results. The following filter is supported:</p> <ul>
-     * <li> <p> <code>licenseArns</code> </p> </li> </ul>
+     * <li> <p> <code>LicenseArns</code> </p> </li> </ul>
      */
     inline ListTokensRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>Filters to scope the results. The following filter is supported:</p> <ul>
-     * <li> <p> <code>licenseArns</code> </p> </li> </ul>
+     * <li> <p> <code>LicenseArns</code> </p> </li> </ul>
      */
     inline ListTokensRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
      * <p>Filters to scope the results. The following filter is supported:</p> <ul>
-     * <li> <p> <code>licenseArns</code> </p> </li> </ul>
+     * <li> <p> <code>LicenseArns</code> </p> </li> </ul>
      */
     inline ListTokensRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

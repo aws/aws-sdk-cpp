@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains parameters for a Linux process that contains an AWS Lambda
+   * <p>Contains parameters for a Linux process that contains an Lambda
    * function.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/LambdaLinuxProcessParams">AWS
    * API Reference</a></p>
@@ -41,7 +41,7 @@ namespace Model
 
     /**
      * <p>The isolation mode for the process that contains the Lambda function. The
-     * process can run in an isolated runtime environment inside the AWS IoT Greengrass
+     * process can run in an isolated runtime environment inside the IoT Greengrass
      * container, or as a regular process outside any container.</p> <p>Default:
      * <code>GreengrassContainer</code> </p>
      */
@@ -49,7 +49,7 @@ namespace Model
 
     /**
      * <p>The isolation mode for the process that contains the Lambda function. The
-     * process can run in an isolated runtime environment inside the AWS IoT Greengrass
+     * process can run in an isolated runtime environment inside the IoT Greengrass
      * container, or as a regular process outside any container.</p> <p>Default:
      * <code>GreengrassContainer</code> </p>
      */
@@ -57,7 +57,7 @@ namespace Model
 
     /**
      * <p>The isolation mode for the process that contains the Lambda function. The
-     * process can run in an isolated runtime environment inside the AWS IoT Greengrass
+     * process can run in an isolated runtime environment inside the IoT Greengrass
      * container, or as a regular process outside any container.</p> <p>Default:
      * <code>GreengrassContainer</code> </p>
      */
@@ -65,7 +65,7 @@ namespace Model
 
     /**
      * <p>The isolation mode for the process that contains the Lambda function. The
-     * process can run in an isolated runtime environment inside the AWS IoT Greengrass
+     * process can run in an isolated runtime environment inside the IoT Greengrass
      * container, or as a regular process outside any container.</p> <p>Default:
      * <code>GreengrassContainer</code> </p>
      */
@@ -73,7 +73,7 @@ namespace Model
 
     /**
      * <p>The isolation mode for the process that contains the Lambda function. The
-     * process can run in an isolated runtime environment inside the AWS IoT Greengrass
+     * process can run in an isolated runtime environment inside the IoT Greengrass
      * container, or as a regular process outside any container.</p> <p>Default:
      * <code>GreengrassContainer</code> </p>
      */
@@ -81,7 +81,7 @@ namespace Model
 
     /**
      * <p>The isolation mode for the process that contains the Lambda function. The
-     * process can run in an isolated runtime environment inside the AWS IoT Greengrass
+     * process can run in an isolated runtime environment inside the IoT Greengrass
      * container, or as a regular process outside any container.</p> <p>Default:
      * <code>GreengrassContainer</code> </p>
      */

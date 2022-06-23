@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int ApiCallRateInsight_HASH = HashingUtils::HashString("ApiCallRateInsight");
+        static const int ApiErrorRateInsight_HASH = HashingUtils::HashString("ApiErrorRateInsight");
 
 
         InsightType GetInsightTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == ApiCallRateInsight_HASH)
           {
             return InsightType::ApiCallRateInsight;
+          }
+          else if (hashCode == ApiErrorRateInsight_HASH)
+          {
+            return InsightType::ApiErrorRateInsight;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +51,8 @@ namespace Aws
           {
           case InsightType::ApiCallRateInsight:
             return "ApiCallRateInsight";
+          case InsightType::ApiErrorRateInsight:
+            return "ApiErrorRateInsight";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

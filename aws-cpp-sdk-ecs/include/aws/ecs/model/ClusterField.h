@@ -17,6 +17,7 @@ namespace Model
   {
     NOT_SET,
     ATTACHMENTS,
+    CONFIGURATIONS,
     SETTINGS,
     STATISTICS,
     TAGS

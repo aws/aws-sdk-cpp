@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/storagegateway/model/ActiveDirectoryStatus.h>
 #include <aws/storagegateway/model/SMBSecurityStrategy.h>
+#include <aws/storagegateway/model/SMBLocalGroups.h>
 #include <utility>
 
 namespace Aws
@@ -180,22 +181,25 @@ namespace Model
 
     /**
      * <p>This value is <code>true</code> if a password for the guest user
-     * <code>smbguest</code> is set, otherwise <code>false</code>.</p> <p>Valid Values:
-     * <code>true</code> | <code>false</code> </p>
+     * <code>smbguest</code> is set, otherwise <code>false</code>. Only supported for
+     * S3 File Gateways.</p> <p>Valid Values: <code>true</code> | <code>false</code>
+     * </p>
      */
     inline bool GetSMBGuestPasswordSet() const{ return m_sMBGuestPasswordSet; }
 
     /**
      * <p>This value is <code>true</code> if a password for the guest user
-     * <code>smbguest</code> is set, otherwise <code>false</code>.</p> <p>Valid Values:
-     * <code>true</code> | <code>false</code> </p>
+     * <code>smbguest</code> is set, otherwise <code>false</code>. Only supported for
+     * S3 File Gateways.</p> <p>Valid Values: <code>true</code> | <code>false</code>
+     * </p>
      */
     inline void SetSMBGuestPasswordSet(bool value) { m_sMBGuestPasswordSet = value; }
 
     /**
      * <p>This value is <code>true</code> if a password for the guest user
-     * <code>smbguest</code> is set, otherwise <code>false</code>.</p> <p>Valid Values:
-     * <code>true</code> | <code>false</code> </p>
+     * <code>smbguest</code> is set, otherwise <code>false</code>. Only supported for
+     * S3 File Gateways.</p> <p>Valid Values: <code>true</code> | <code>false</code>
+     * </p>
      */
     inline DescribeSMBSettingsResult& WithSMBGuestPasswordSet(bool value) { SetSMBGuestPasswordSet(value); return *this;}
 
@@ -205,15 +209,15 @@ namespace Model
      * <li> <p> <code>ClientSpecified</code>: If you use this option, requests are
      * established based on what is negotiated by the client. This option is
      * recommended when you want to maximize compatibility across different clients in
-     * your environment.</p> </li> <li> <p> <code>MandatorySigning</code>: If you use
-     * this option, file gateway only allows connections from SMBv2 or SMBv3 clients
-     * that have signing enabled. This option works with SMB clients on Microsoft
-     * Windows Vista, Windows Server 2008 or newer.</p> </li> <li> <p>
-     * <code>MandatoryEncryption</code>: If you use this option, file gateway only
-     * allows connections from SMBv3 clients that have encryption enabled. This option
-     * is highly recommended for environments that handle sensitive data. This option
-     * works with SMB clients on Microsoft Windows 8, Windows Server 2012 or newer.</p>
-     * </li> </ul>
+     * your environment. Only supported for S3 File Gateways.</p> </li> <li> <p>
+     * <code>MandatorySigning</code>: If you use this option, file gateway only allows
+     * connections from SMBv2 or SMBv3 clients that have signing enabled. This option
+     * works with SMB clients on Microsoft Windows Vista, Windows Server 2008 or
+     * newer.</p> </li> <li> <p> <code>MandatoryEncryption</code>: If you use this
+     * option, file gateway only allows connections from SMBv3 clients that have
+     * encryption enabled. This option is highly recommended for environments that
+     * handle sensitive data. This option works with SMB clients on Microsoft Windows
+     * 8, Windows Server 2012 or newer.</p> </li> </ul>
      */
     inline const SMBSecurityStrategy& GetSMBSecurityStrategy() const{ return m_sMBSecurityStrategy; }
 
@@ -222,15 +226,15 @@ namespace Model
      * <li> <p> <code>ClientSpecified</code>: If you use this option, requests are
      * established based on what is negotiated by the client. This option is
      * recommended when you want to maximize compatibility across different clients in
-     * your environment.</p> </li> <li> <p> <code>MandatorySigning</code>: If you use
-     * this option, file gateway only allows connections from SMBv2 or SMBv3 clients
-     * that have signing enabled. This option works with SMB clients on Microsoft
-     * Windows Vista, Windows Server 2008 or newer.</p> </li> <li> <p>
-     * <code>MandatoryEncryption</code>: If you use this option, file gateway only
-     * allows connections from SMBv3 clients that have encryption enabled. This option
-     * is highly recommended for environments that handle sensitive data. This option
-     * works with SMB clients on Microsoft Windows 8, Windows Server 2012 or newer.</p>
-     * </li> </ul>
+     * your environment. Only supported for S3 File Gateways.</p> </li> <li> <p>
+     * <code>MandatorySigning</code>: If you use this option, file gateway only allows
+     * connections from SMBv2 or SMBv3 clients that have signing enabled. This option
+     * works with SMB clients on Microsoft Windows Vista, Windows Server 2008 or
+     * newer.</p> </li> <li> <p> <code>MandatoryEncryption</code>: If you use this
+     * option, file gateway only allows connections from SMBv3 clients that have
+     * encryption enabled. This option is highly recommended for environments that
+     * handle sensitive data. This option works with SMB clients on Microsoft Windows
+     * 8, Windows Server 2012 or newer.</p> </li> </ul>
      */
     inline void SetSMBSecurityStrategy(const SMBSecurityStrategy& value) { m_sMBSecurityStrategy = value; }
 
@@ -239,15 +243,15 @@ namespace Model
      * <li> <p> <code>ClientSpecified</code>: If you use this option, requests are
      * established based on what is negotiated by the client. This option is
      * recommended when you want to maximize compatibility across different clients in
-     * your environment.</p> </li> <li> <p> <code>MandatorySigning</code>: If you use
-     * this option, file gateway only allows connections from SMBv2 or SMBv3 clients
-     * that have signing enabled. This option works with SMB clients on Microsoft
-     * Windows Vista, Windows Server 2008 or newer.</p> </li> <li> <p>
-     * <code>MandatoryEncryption</code>: If you use this option, file gateway only
-     * allows connections from SMBv3 clients that have encryption enabled. This option
-     * is highly recommended for environments that handle sensitive data. This option
-     * works with SMB clients on Microsoft Windows 8, Windows Server 2012 or newer.</p>
-     * </li> </ul>
+     * your environment. Only supported for S3 File Gateways.</p> </li> <li> <p>
+     * <code>MandatorySigning</code>: If you use this option, file gateway only allows
+     * connections from SMBv2 or SMBv3 clients that have signing enabled. This option
+     * works with SMB clients on Microsoft Windows Vista, Windows Server 2008 or
+     * newer.</p> </li> <li> <p> <code>MandatoryEncryption</code>: If you use this
+     * option, file gateway only allows connections from SMBv3 clients that have
+     * encryption enabled. This option is highly recommended for environments that
+     * handle sensitive data. This option works with SMB clients on Microsoft Windows
+     * 8, Windows Server 2012 or newer.</p> </li> </ul>
      */
     inline void SetSMBSecurityStrategy(SMBSecurityStrategy&& value) { m_sMBSecurityStrategy = std::move(value); }
 
@@ -256,15 +260,15 @@ namespace Model
      * <li> <p> <code>ClientSpecified</code>: If you use this option, requests are
      * established based on what is negotiated by the client. This option is
      * recommended when you want to maximize compatibility across different clients in
-     * your environment.</p> </li> <li> <p> <code>MandatorySigning</code>: If you use
-     * this option, file gateway only allows connections from SMBv2 or SMBv3 clients
-     * that have signing enabled. This option works with SMB clients on Microsoft
-     * Windows Vista, Windows Server 2008 or newer.</p> </li> <li> <p>
-     * <code>MandatoryEncryption</code>: If you use this option, file gateway only
-     * allows connections from SMBv3 clients that have encryption enabled. This option
-     * is highly recommended for environments that handle sensitive data. This option
-     * works with SMB clients on Microsoft Windows 8, Windows Server 2012 or newer.</p>
-     * </li> </ul>
+     * your environment. Only supported for S3 File Gateways.</p> </li> <li> <p>
+     * <code>MandatorySigning</code>: If you use this option, file gateway only allows
+     * connections from SMBv2 or SMBv3 clients that have signing enabled. This option
+     * works with SMB clients on Microsoft Windows Vista, Windows Server 2008 or
+     * newer.</p> </li> <li> <p> <code>MandatoryEncryption</code>: If you use this
+     * option, file gateway only allows connections from SMBv3 clients that have
+     * encryption enabled. This option is highly recommended for environments that
+     * handle sensitive data. This option works with SMB clients on Microsoft Windows
+     * 8, Windows Server 2012 or newer.</p> </li> </ul>
      */
     inline DescribeSMBSettingsResult& WithSMBSecurityStrategy(const SMBSecurityStrategy& value) { SetSMBSecurityStrategy(value); return *this;}
 
@@ -273,33 +277,67 @@ namespace Model
      * <li> <p> <code>ClientSpecified</code>: If you use this option, requests are
      * established based on what is negotiated by the client. This option is
      * recommended when you want to maximize compatibility across different clients in
-     * your environment.</p> </li> <li> <p> <code>MandatorySigning</code>: If you use
-     * this option, file gateway only allows connections from SMBv2 or SMBv3 clients
-     * that have signing enabled. This option works with SMB clients on Microsoft
-     * Windows Vista, Windows Server 2008 or newer.</p> </li> <li> <p>
-     * <code>MandatoryEncryption</code>: If you use this option, file gateway only
-     * allows connections from SMBv3 clients that have encryption enabled. This option
-     * is highly recommended for environments that handle sensitive data. This option
-     * works with SMB clients on Microsoft Windows 8, Windows Server 2012 or newer.</p>
-     * </li> </ul>
+     * your environment. Only supported for S3 File Gateways.</p> </li> <li> <p>
+     * <code>MandatorySigning</code>: If you use this option, file gateway only allows
+     * connections from SMBv2 or SMBv3 clients that have signing enabled. This option
+     * works with SMB clients on Microsoft Windows Vista, Windows Server 2008 or
+     * newer.</p> </li> <li> <p> <code>MandatoryEncryption</code>: If you use this
+     * option, file gateway only allows connections from SMBv3 clients that have
+     * encryption enabled. This option is highly recommended for environments that
+     * handle sensitive data. This option works with SMB clients on Microsoft Windows
+     * 8, Windows Server 2012 or newer.</p> </li> </ul>
      */
     inline DescribeSMBSettingsResult& WithSMBSecurityStrategy(SMBSecurityStrategy&& value) { SetSMBSecurityStrategy(std::move(value)); return *this;}
 
 
     /**
-     * <p>The shares on this gateway appear when listing shares.</p>
+     * <p>The shares on this gateway appear when listing shares. Only supported for S3
+     * File Gateways. </p>
      */
     inline bool GetFileSharesVisible() const{ return m_fileSharesVisible; }
 
     /**
-     * <p>The shares on this gateway appear when listing shares.</p>
+     * <p>The shares on this gateway appear when listing shares. Only supported for S3
+     * File Gateways. </p>
      */
     inline void SetFileSharesVisible(bool value) { m_fileSharesVisible = value; }
 
     /**
-     * <p>The shares on this gateway appear when listing shares.</p>
+     * <p>The shares on this gateway appear when listing shares. Only supported for S3
+     * File Gateways. </p>
      */
     inline DescribeSMBSettingsResult& WithFileSharesVisible(bool value) { SetFileSharesVisible(value); return *this;}
+
+
+    /**
+     * <p>A list of Active Directory users and groups that have special permissions for
+     * SMB file shares on the gateway.</p>
+     */
+    inline const SMBLocalGroups& GetSMBLocalGroups() const{ return m_sMBLocalGroups; }
+
+    /**
+     * <p>A list of Active Directory users and groups that have special permissions for
+     * SMB file shares on the gateway.</p>
+     */
+    inline void SetSMBLocalGroups(const SMBLocalGroups& value) { m_sMBLocalGroups = value; }
+
+    /**
+     * <p>A list of Active Directory users and groups that have special permissions for
+     * SMB file shares on the gateway.</p>
+     */
+    inline void SetSMBLocalGroups(SMBLocalGroups&& value) { m_sMBLocalGroups = std::move(value); }
+
+    /**
+     * <p>A list of Active Directory users and groups that have special permissions for
+     * SMB file shares on the gateway.</p>
+     */
+    inline DescribeSMBSettingsResult& WithSMBLocalGroups(const SMBLocalGroups& value) { SetSMBLocalGroups(value); return *this;}
+
+    /**
+     * <p>A list of Active Directory users and groups that have special permissions for
+     * SMB file shares on the gateway.</p>
+     */
+    inline DescribeSMBSettingsResult& WithSMBLocalGroups(SMBLocalGroups&& value) { SetSMBLocalGroups(std::move(value)); return *this;}
 
   private:
 
@@ -314,6 +352,8 @@ namespace Model
     SMBSecurityStrategy m_sMBSecurityStrategy;
 
     bool m_fileSharesVisible;
+
+    SMBLocalGroups m_sMBLocalGroups;
   };
 
 } // namespace Model

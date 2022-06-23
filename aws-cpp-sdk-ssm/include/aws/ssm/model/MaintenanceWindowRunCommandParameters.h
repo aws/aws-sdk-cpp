@@ -29,21 +29,23 @@ namespace Model
 {
 
   /**
-   * <p>The parameters for a RUN_COMMAND task type.</p> <p>For information about
-   * specifying and updating task parameters, see
+   * <p>The parameters for a <code>RUN_COMMAND</code> task type.</p> <p>For
+   * information about specifying and updating task parameters, see
    * <a>RegisterTaskWithMaintenanceWindow</a> and
    * <a>UpdateMaintenanceWindowTask</a>.</p>  <p> <code>LoggingInfo</code> has
-   * been deprecated. To specify an S3 bucket to contain logs, instead use the
-   * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in
-   * the <code>TaskInvocationParameters</code> structure. For information about how
-   * Systems Manager handles these options for the supported maintenance window task
-   * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> <p>
+   * been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket
+   * to contain logs, instead use the <code>OutputS3BucketName</code> and
+   * <code>OutputS3KeyPrefix</code> options in the
+   * <code>TaskInvocationParameters</code> structure. For information about how
+   * Amazon Web Services Systems Manager handles these options for the supported
+   * maintenance window task types, see
+   * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> <p>
    * <code>TaskParameters</code> has been deprecated. To specify parameters to pass
    * to a task when it runs, instead use the <code>Parameters</code> option in the
    * <code>TaskInvocationParameters</code> structure. For information about how
    * Systems Manager handles these options for the supported maintenance window task
-   * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> <p>For Run
-   * Command tasks, Systems Manager uses specified values for
+   * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> <p>For
+   * <code>RUN_COMMAND</code> tasks, Systems Manager uses specified values for
    * <code>TaskParameters</code> and <code>LoggingInfo</code> only if no values are
    * specified for <code>TaskInvocationParameters</code>. </p> <p><h3>See
    * Also:</h3>   <a
@@ -200,160 +202,176 @@ namespace Model
 
 
     /**
-     * <p>The SSM document version to use in the request. You can specify $DEFAULT,
-     * $LATEST, or a specific version number. If you run commands by using the AWS CLI,
-     * then you must escape the first two options by using a backslash. If you specify
-     * a version number, then you don't need to use the backslash. For example:</p>
-     * <p>--document-version "\$DEFAULT"</p> <p>--document-version "\$LATEST"</p>
-     * <p>--document-version "3"</p>
+     * <p>The Amazon Web Services Systems Manager document (SSM document) version to
+     * use in the request. You can specify <code>$DEFAULT</code>, <code>$LATEST</code>,
+     * or a specific version number. If you run commands by using the Amazon Web
+     * Services CLI, then you must escape the first two options by using a backslash.
+     * If you specify a version number, then you don't need to use the backslash. For
+     * example:</p> <p> <code>--document-version "\$DEFAULT"</code> </p> <p>
+     * <code>--document-version "\$LATEST"</code> </p> <p> <code>--document-version
+     * "3"</code> </p>
      */
     inline const Aws::String& GetDocumentVersion() const{ return m_documentVersion; }
 
     /**
-     * <p>The SSM document version to use in the request. You can specify $DEFAULT,
-     * $LATEST, or a specific version number. If you run commands by using the AWS CLI,
-     * then you must escape the first two options by using a backslash. If you specify
-     * a version number, then you don't need to use the backslash. For example:</p>
-     * <p>--document-version "\$DEFAULT"</p> <p>--document-version "\$LATEST"</p>
-     * <p>--document-version "3"</p>
+     * <p>The Amazon Web Services Systems Manager document (SSM document) version to
+     * use in the request. You can specify <code>$DEFAULT</code>, <code>$LATEST</code>,
+     * or a specific version number. If you run commands by using the Amazon Web
+     * Services CLI, then you must escape the first two options by using a backslash.
+     * If you specify a version number, then you don't need to use the backslash. For
+     * example:</p> <p> <code>--document-version "\$DEFAULT"</code> </p> <p>
+     * <code>--document-version "\$LATEST"</code> </p> <p> <code>--document-version
+     * "3"</code> </p>
      */
     inline bool DocumentVersionHasBeenSet() const { return m_documentVersionHasBeenSet; }
 
     /**
-     * <p>The SSM document version to use in the request. You can specify $DEFAULT,
-     * $LATEST, or a specific version number. If you run commands by using the AWS CLI,
-     * then you must escape the first two options by using a backslash. If you specify
-     * a version number, then you don't need to use the backslash. For example:</p>
-     * <p>--document-version "\$DEFAULT"</p> <p>--document-version "\$LATEST"</p>
-     * <p>--document-version "3"</p>
+     * <p>The Amazon Web Services Systems Manager document (SSM document) version to
+     * use in the request. You can specify <code>$DEFAULT</code>, <code>$LATEST</code>,
+     * or a specific version number. If you run commands by using the Amazon Web
+     * Services CLI, then you must escape the first two options by using a backslash.
+     * If you specify a version number, then you don't need to use the backslash. For
+     * example:</p> <p> <code>--document-version "\$DEFAULT"</code> </p> <p>
+     * <code>--document-version "\$LATEST"</code> </p> <p> <code>--document-version
+     * "3"</code> </p>
      */
     inline void SetDocumentVersion(const Aws::String& value) { m_documentVersionHasBeenSet = true; m_documentVersion = value; }
 
     /**
-     * <p>The SSM document version to use in the request. You can specify $DEFAULT,
-     * $LATEST, or a specific version number. If you run commands by using the AWS CLI,
-     * then you must escape the first two options by using a backslash. If you specify
-     * a version number, then you don't need to use the backslash. For example:</p>
-     * <p>--document-version "\$DEFAULT"</p> <p>--document-version "\$LATEST"</p>
-     * <p>--document-version "3"</p>
+     * <p>The Amazon Web Services Systems Manager document (SSM document) version to
+     * use in the request. You can specify <code>$DEFAULT</code>, <code>$LATEST</code>,
+     * or a specific version number. If you run commands by using the Amazon Web
+     * Services CLI, then you must escape the first two options by using a backslash.
+     * If you specify a version number, then you don't need to use the backslash. For
+     * example:</p> <p> <code>--document-version "\$DEFAULT"</code> </p> <p>
+     * <code>--document-version "\$LATEST"</code> </p> <p> <code>--document-version
+     * "3"</code> </p>
      */
     inline void SetDocumentVersion(Aws::String&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = std::move(value); }
 
     /**
-     * <p>The SSM document version to use in the request. You can specify $DEFAULT,
-     * $LATEST, or a specific version number. If you run commands by using the AWS CLI,
-     * then you must escape the first two options by using a backslash. If you specify
-     * a version number, then you don't need to use the backslash. For example:</p>
-     * <p>--document-version "\$DEFAULT"</p> <p>--document-version "\$LATEST"</p>
-     * <p>--document-version "3"</p>
+     * <p>The Amazon Web Services Systems Manager document (SSM document) version to
+     * use in the request. You can specify <code>$DEFAULT</code>, <code>$LATEST</code>,
+     * or a specific version number. If you run commands by using the Amazon Web
+     * Services CLI, then you must escape the first two options by using a backslash.
+     * If you specify a version number, then you don't need to use the backslash. For
+     * example:</p> <p> <code>--document-version "\$DEFAULT"</code> </p> <p>
+     * <code>--document-version "\$LATEST"</code> </p> <p> <code>--document-version
+     * "3"</code> </p>
      */
     inline void SetDocumentVersion(const char* value) { m_documentVersionHasBeenSet = true; m_documentVersion.assign(value); }
 
     /**
-     * <p>The SSM document version to use in the request. You can specify $DEFAULT,
-     * $LATEST, or a specific version number. If you run commands by using the AWS CLI,
-     * then you must escape the first two options by using a backslash. If you specify
-     * a version number, then you don't need to use the backslash. For example:</p>
-     * <p>--document-version "\$DEFAULT"</p> <p>--document-version "\$LATEST"</p>
-     * <p>--document-version "3"</p>
+     * <p>The Amazon Web Services Systems Manager document (SSM document) version to
+     * use in the request. You can specify <code>$DEFAULT</code>, <code>$LATEST</code>,
+     * or a specific version number. If you run commands by using the Amazon Web
+     * Services CLI, then you must escape the first two options by using a backslash.
+     * If you specify a version number, then you don't need to use the backslash. For
+     * example:</p> <p> <code>--document-version "\$DEFAULT"</code> </p> <p>
+     * <code>--document-version "\$LATEST"</code> </p> <p> <code>--document-version
+     * "3"</code> </p>
      */
     inline MaintenanceWindowRunCommandParameters& WithDocumentVersion(const Aws::String& value) { SetDocumentVersion(value); return *this;}
 
     /**
-     * <p>The SSM document version to use in the request. You can specify $DEFAULT,
-     * $LATEST, or a specific version number. If you run commands by using the AWS CLI,
-     * then you must escape the first two options by using a backslash. If you specify
-     * a version number, then you don't need to use the backslash. For example:</p>
-     * <p>--document-version "\$DEFAULT"</p> <p>--document-version "\$LATEST"</p>
-     * <p>--document-version "3"</p>
+     * <p>The Amazon Web Services Systems Manager document (SSM document) version to
+     * use in the request. You can specify <code>$DEFAULT</code>, <code>$LATEST</code>,
+     * or a specific version number. If you run commands by using the Amazon Web
+     * Services CLI, then you must escape the first two options by using a backslash.
+     * If you specify a version number, then you don't need to use the backslash. For
+     * example:</p> <p> <code>--document-version "\$DEFAULT"</code> </p> <p>
+     * <code>--document-version "\$LATEST"</code> </p> <p> <code>--document-version
+     * "3"</code> </p>
      */
     inline MaintenanceWindowRunCommandParameters& WithDocumentVersion(Aws::String&& value) { SetDocumentVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The SSM document version to use in the request. You can specify $DEFAULT,
-     * $LATEST, or a specific version number. If you run commands by using the AWS CLI,
-     * then you must escape the first two options by using a backslash. If you specify
-     * a version number, then you don't need to use the backslash. For example:</p>
-     * <p>--document-version "\$DEFAULT"</p> <p>--document-version "\$LATEST"</p>
-     * <p>--document-version "3"</p>
+     * <p>The Amazon Web Services Systems Manager document (SSM document) version to
+     * use in the request. You can specify <code>$DEFAULT</code>, <code>$LATEST</code>,
+     * or a specific version number. If you run commands by using the Amazon Web
+     * Services CLI, then you must escape the first two options by using a backslash.
+     * If you specify a version number, then you don't need to use the backslash. For
+     * example:</p> <p> <code>--document-version "\$DEFAULT"</code> </p> <p>
+     * <code>--document-version "\$LATEST"</code> </p> <p> <code>--document-version
+     * "3"</code> </p>
      */
     inline MaintenanceWindowRunCommandParameters& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
 
 
     /**
      * <p>Configurations for sending notifications about command status changes on a
-     * per-instance basis.</p>
+     * per-managed node basis.</p>
      */
     inline const NotificationConfig& GetNotificationConfig() const{ return m_notificationConfig; }
 
     /**
      * <p>Configurations for sending notifications about command status changes on a
-     * per-instance basis.</p>
+     * per-managed node basis.</p>
      */
     inline bool NotificationConfigHasBeenSet() const { return m_notificationConfigHasBeenSet; }
 
     /**
      * <p>Configurations for sending notifications about command status changes on a
-     * per-instance basis.</p>
+     * per-managed node basis.</p>
      */
     inline void SetNotificationConfig(const NotificationConfig& value) { m_notificationConfigHasBeenSet = true; m_notificationConfig = value; }
 
     /**
      * <p>Configurations for sending notifications about command status changes on a
-     * per-instance basis.</p>
+     * per-managed node basis.</p>
      */
     inline void SetNotificationConfig(NotificationConfig&& value) { m_notificationConfigHasBeenSet = true; m_notificationConfig = std::move(value); }
 
     /**
      * <p>Configurations for sending notifications about command status changes on a
-     * per-instance basis.</p>
+     * per-managed node basis.</p>
      */
     inline MaintenanceWindowRunCommandParameters& WithNotificationConfig(const NotificationConfig& value) { SetNotificationConfig(value); return *this;}
 
     /**
      * <p>Configurations for sending notifications about command status changes on a
-     * per-instance basis.</p>
+     * per-managed node basis.</p>
      */
     inline MaintenanceWindowRunCommandParameters& WithNotificationConfig(NotificationConfig&& value) { SetNotificationConfig(std::move(value)); return *this;}
 
 
     /**
-     * <p>The name of the S3 bucket.</p>
+     * <p>The name of the Amazon Simple Storage Service (Amazon S3) bucket.</p>
      */
     inline const Aws::String& GetOutputS3BucketName() const{ return m_outputS3BucketName; }
 
     /**
-     * <p>The name of the S3 bucket.</p>
+     * <p>The name of the Amazon Simple Storage Service (Amazon S3) bucket.</p>
      */
     inline bool OutputS3BucketNameHasBeenSet() const { return m_outputS3BucketNameHasBeenSet; }
 
     /**
-     * <p>The name of the S3 bucket.</p>
+     * <p>The name of the Amazon Simple Storage Service (Amazon S3) bucket.</p>
      */
     inline void SetOutputS3BucketName(const Aws::String& value) { m_outputS3BucketNameHasBeenSet = true; m_outputS3BucketName = value; }
 
     /**
-     * <p>The name of the S3 bucket.</p>
+     * <p>The name of the Amazon Simple Storage Service (Amazon S3) bucket.</p>
      */
     inline void SetOutputS3BucketName(Aws::String&& value) { m_outputS3BucketNameHasBeenSet = true; m_outputS3BucketName = std::move(value); }
 
     /**
-     * <p>The name of the S3 bucket.</p>
+     * <p>The name of the Amazon Simple Storage Service (Amazon S3) bucket.</p>
      */
     inline void SetOutputS3BucketName(const char* value) { m_outputS3BucketNameHasBeenSet = true; m_outputS3BucketName.assign(value); }
 
     /**
-     * <p>The name of the S3 bucket.</p>
+     * <p>The name of the Amazon Simple Storage Service (Amazon S3) bucket.</p>
      */
     inline MaintenanceWindowRunCommandParameters& WithOutputS3BucketName(const Aws::String& value) { SetOutputS3BucketName(value); return *this;}
 
     /**
-     * <p>The name of the S3 bucket.</p>
+     * <p>The name of the Amazon Simple Storage Service (Amazon S3) bucket.</p>
      */
     inline MaintenanceWindowRunCommandParameters& WithOutputS3BucketName(Aws::String&& value) { SetOutputS3BucketName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the S3 bucket.</p>
+     * <p>The name of the Amazon Simple Storage Service (Amazon S3) bucket.</p>
      */
     inline MaintenanceWindowRunCommandParameters& WithOutputS3BucketName(const char* value) { SetOutputS3BucketName(value); return *this;}
 
@@ -400,135 +418,143 @@ namespace Model
 
 
     /**
-     * <p>The parameters for the RUN_COMMAND task execution.</p>
+     * <p>The parameters for the <code>RUN_COMMAND</code> task execution.</p>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetParameters() const{ return m_parameters; }
 
     /**
-     * <p>The parameters for the RUN_COMMAND task execution.</p>
+     * <p>The parameters for the <code>RUN_COMMAND</code> task execution.</p>
      */
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
-     * <p>The parameters for the RUN_COMMAND task execution.</p>
+     * <p>The parameters for the <code>RUN_COMMAND</code> task execution.</p>
      */
     inline void SetParameters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
-     * <p>The parameters for the RUN_COMMAND task execution.</p>
+     * <p>The parameters for the <code>RUN_COMMAND</code> task execution.</p>
      */
     inline void SetParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
-     * <p>The parameters for the RUN_COMMAND task execution.</p>
+     * <p>The parameters for the <code>RUN_COMMAND</code> task execution.</p>
      */
     inline MaintenanceWindowRunCommandParameters& WithParameters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetParameters(value); return *this;}
 
     /**
-     * <p>The parameters for the RUN_COMMAND task execution.</p>
+     * <p>The parameters for the <code>RUN_COMMAND</code> task execution.</p>
      */
     inline MaintenanceWindowRunCommandParameters& WithParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
-     * <p>The parameters for the RUN_COMMAND task execution.</p>
+     * <p>The parameters for the <code>RUN_COMMAND</code> task execution.</p>
      */
     inline MaintenanceWindowRunCommandParameters& AddParameters(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
     /**
-     * <p>The parameters for the RUN_COMMAND task execution.</p>
+     * <p>The parameters for the <code>RUN_COMMAND</code> task execution.</p>
      */
     inline MaintenanceWindowRunCommandParameters& AddParameters(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The parameters for the RUN_COMMAND task execution.</p>
+     * <p>The parameters for the <code>RUN_COMMAND</code> task execution.</p>
      */
     inline MaintenanceWindowRunCommandParameters& AddParameters(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The parameters for the RUN_COMMAND task execution.</p>
+     * <p>The parameters for the <code>RUN_COMMAND</code> task execution.</p>
      */
     inline MaintenanceWindowRunCommandParameters& AddParameters(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The parameters for the RUN_COMMAND task execution.</p>
+     * <p>The parameters for the <code>RUN_COMMAND</code> task execution.</p>
      */
     inline MaintenanceWindowRunCommandParameters& AddParameters(const char* key, Aws::Vector<Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The parameters for the RUN_COMMAND task execution.</p>
+     * <p>The parameters for the <code>RUN_COMMAND</code> task execution.</p>
      */
     inline MaintenanceWindowRunCommandParameters& AddParameters(const char* key, const Aws::Vector<Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
 
     /**
-     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
-     * Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * service role to use to publish Amazon Simple Notification Service (Amazon SNS)
+     * notifications for maintenance window Run Command tasks.</p>
      */
     inline const Aws::String& GetServiceRoleArn() const{ return m_serviceRoleArn; }
 
     /**
-     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
-     * Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * service role to use to publish Amazon Simple Notification Service (Amazon SNS)
+     * notifications for maintenance window Run Command tasks.</p>
      */
     inline bool ServiceRoleArnHasBeenSet() const { return m_serviceRoleArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
-     * Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * service role to use to publish Amazon Simple Notification Service (Amazon SNS)
+     * notifications for maintenance window Run Command tasks.</p>
      */
     inline void SetServiceRoleArn(const Aws::String& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = value; }
 
     /**
-     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
-     * Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * service role to use to publish Amazon Simple Notification Service (Amazon SNS)
+     * notifications for maintenance window Run Command tasks.</p>
      */
     inline void SetServiceRoleArn(Aws::String&& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = std::move(value); }
 
     /**
-     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
-     * Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * service role to use to publish Amazon Simple Notification Service (Amazon SNS)
+     * notifications for maintenance window Run Command tasks.</p>
      */
     inline void SetServiceRoleArn(const char* value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn.assign(value); }
 
     /**
-     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
-     * Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * service role to use to publish Amazon Simple Notification Service (Amazon SNS)
+     * notifications for maintenance window Run Command tasks.</p>
      */
     inline MaintenanceWindowRunCommandParameters& WithServiceRoleArn(const Aws::String& value) { SetServiceRoleArn(value); return *this;}
 
     /**
-     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
-     * Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * service role to use to publish Amazon Simple Notification Service (Amazon SNS)
+     * notifications for maintenance window Run Command tasks.</p>
      */
     inline MaintenanceWindowRunCommandParameters& WithServiceRoleArn(Aws::String&& value) { SetServiceRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the IAM service role to use to publish Amazon Simple Notification
-     * Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * service role to use to publish Amazon Simple Notification Service (Amazon SNS)
+     * notifications for maintenance window Run Command tasks.</p>
      */
     inline MaintenanceWindowRunCommandParameters& WithServiceRoleArn(const char* value) { SetServiceRoleArn(value); return *this;}
 
 
     /**
-     * <p>If this time is reached and the command has not already started running, it
+     * <p>If this time is reached and the command hasn't already started running, it
      * doesn't run.</p>
      */
     inline int GetTimeoutSeconds() const{ return m_timeoutSeconds; }
 
     /**
-     * <p>If this time is reached and the command has not already started running, it
+     * <p>If this time is reached and the command hasn't already started running, it
      * doesn't run.</p>
      */
     inline bool TimeoutSecondsHasBeenSet() const { return m_timeoutSecondsHasBeenSet; }
 
     /**
-     * <p>If this time is reached and the command has not already started running, it
+     * <p>If this time is reached and the command hasn't already started running, it
      * doesn't run.</p>
      */
     inline void SetTimeoutSeconds(int value) { m_timeoutSecondsHasBeenSet = true; m_timeoutSeconds = value; }
 
     /**
-     * <p>If this time is reached and the command has not already started running, it
+     * <p>If this time is reached and the command hasn't already started running, it
      * doesn't run.</p>
      */
     inline MaintenanceWindowRunCommandParameters& WithTimeoutSeconds(int value) { SetTimeoutSeconds(value); return *this;}

@@ -20,7 +20,8 @@ AssociateConnectionWithLagResult::AssociateConnectionWithLagResult() :
     m_connectionState(ConnectionState::NOT_SET),
     m_vlan(0),
     m_jumboFrameCapable(false),
-    m_hasLogicalRedundancy(HasLogicalRedundancy::NOT_SET)
+    m_hasLogicalRedundancy(HasLogicalRedundancy::NOT_SET),
+    m_macSecCapable(false)
 {
 }
 
@@ -28,7 +29,8 @@ AssociateConnectionWithLagResult::AssociateConnectionWithLagResult(const Aws::Am
     m_connectionState(ConnectionState::NOT_SET),
     m_vlan(0),
     m_jumboFrameCapable(false),
-    m_hasLogicalRedundancy(HasLogicalRedundancy::NOT_SET)
+    m_hasLogicalRedundancy(HasLogicalRedundancy::NOT_SET),
+    m_macSecCapable(false)
 {
   *this = result;
 }
@@ -120,6 +122,12 @@ AssociateConnectionWithLagResult& AssociateConnectionWithLagResult::operator =(c
 
   }
 
+  if(jsonValue.ValueExists("awsLogicalDeviceId"))
+  {
+    m_awsLogicalDeviceId = jsonValue.GetString("awsLogicalDeviceId");
+
+  }
+
   if(jsonValue.ValueExists("hasLogicalRedundancy"))
   {
     m_hasLogicalRedundancy = HasLogicalRedundancyMapper::GetHasLogicalRedundancyForName(jsonValue.GetString("hasLogicalRedundancy"));
@@ -139,6 +147,33 @@ AssociateConnectionWithLagResult& AssociateConnectionWithLagResult::operator =(c
   {
     m_providerName = jsonValue.GetString("providerName");
 
+  }
+
+  if(jsonValue.ValueExists("macSecCapable"))
+  {
+    m_macSecCapable = jsonValue.GetBool("macSecCapable");
+
+  }
+
+  if(jsonValue.ValueExists("portEncryptionStatus"))
+  {
+    m_portEncryptionStatus = jsonValue.GetString("portEncryptionStatus");
+
+  }
+
+  if(jsonValue.ValueExists("encryptionMode"))
+  {
+    m_encryptionMode = jsonValue.GetString("encryptionMode");
+
+  }
+
+  if(jsonValue.ValueExists("macSecKeys"))
+  {
+    Array<JsonView> macSecKeysJsonList = jsonValue.GetArray("macSecKeys");
+    for(unsigned macSecKeysIndex = 0; macSecKeysIndex < macSecKeysJsonList.GetLength(); ++macSecKeysIndex)
+    {
+      m_macSecKeys.push_back(macSecKeysJsonList[macSecKeysIndex].AsObject());
+    }
   }
 
 

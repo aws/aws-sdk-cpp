@@ -120,38 +120,38 @@ namespace Model
 
 
     /**
-     * <p> The assessment report storage destination for the specified assessment that
-     * is being created. </p>
+     * <p> The assessment report storage destination for the assessment that's being
+     * created. </p>
      */
     inline const AssessmentReportsDestination& GetAssessmentReportsDestination() const{ return m_assessmentReportsDestination; }
 
     /**
-     * <p> The assessment report storage destination for the specified assessment that
-     * is being created. </p>
+     * <p> The assessment report storage destination for the assessment that's being
+     * created. </p>
      */
     inline bool AssessmentReportsDestinationHasBeenSet() const { return m_assessmentReportsDestinationHasBeenSet; }
 
     /**
-     * <p> The assessment report storage destination for the specified assessment that
-     * is being created. </p>
+     * <p> The assessment report storage destination for the assessment that's being
+     * created. </p>
      */
     inline void SetAssessmentReportsDestination(const AssessmentReportsDestination& value) { m_assessmentReportsDestinationHasBeenSet = true; m_assessmentReportsDestination = value; }
 
     /**
-     * <p> The assessment report storage destination for the specified assessment that
-     * is being created. </p>
+     * <p> The assessment report storage destination for the assessment that's being
+     * created. </p>
      */
     inline void SetAssessmentReportsDestination(AssessmentReportsDestination&& value) { m_assessmentReportsDestinationHasBeenSet = true; m_assessmentReportsDestination = std::move(value); }
 
     /**
-     * <p> The assessment report storage destination for the specified assessment that
-     * is being created. </p>
+     * <p> The assessment report storage destination for the assessment that's being
+     * created. </p>
      */
     inline CreateAssessmentRequest& WithAssessmentReportsDestination(const AssessmentReportsDestination& value) { SetAssessmentReportsDestination(value); return *this;}
 
     /**
-     * <p> The assessment report storage destination for the specified assessment that
-     * is being created. </p>
+     * <p> The assessment report storage destination for the assessment that's being
+     * created. </p>
      */
     inline CreateAssessmentRequest& WithAssessmentReportsDestination(AssessmentReportsDestination&& value) { SetAssessmentReportsDestination(std::move(value)); return *this;}
 
@@ -176,149 +176,157 @@ namespace Model
 
 
     /**
-     * <p> The list of roles for the specified assessment. </p>
+     * <p> The list of roles for the assessment. </p>
      */
     inline const Aws::Vector<Role>& GetRoles() const{ return m_roles; }
 
     /**
-     * <p> The list of roles for the specified assessment. </p>
+     * <p> The list of roles for the assessment. </p>
      */
     inline bool RolesHasBeenSet() const { return m_rolesHasBeenSet; }
 
     /**
-     * <p> The list of roles for the specified assessment. </p>
+     * <p> The list of roles for the assessment. </p>
      */
     inline void SetRoles(const Aws::Vector<Role>& value) { m_rolesHasBeenSet = true; m_roles = value; }
 
     /**
-     * <p> The list of roles for the specified assessment. </p>
+     * <p> The list of roles for the assessment. </p>
      */
     inline void SetRoles(Aws::Vector<Role>&& value) { m_rolesHasBeenSet = true; m_roles = std::move(value); }
 
     /**
-     * <p> The list of roles for the specified assessment. </p>
+     * <p> The list of roles for the assessment. </p>
      */
     inline CreateAssessmentRequest& WithRoles(const Aws::Vector<Role>& value) { SetRoles(value); return *this;}
 
     /**
-     * <p> The list of roles for the specified assessment. </p>
+     * <p> The list of roles for the assessment. </p>
      */
     inline CreateAssessmentRequest& WithRoles(Aws::Vector<Role>&& value) { SetRoles(std::move(value)); return *this;}
 
     /**
-     * <p> The list of roles for the specified assessment. </p>
+     * <p> The list of roles for the assessment. </p>
      */
     inline CreateAssessmentRequest& AddRoles(const Role& value) { m_rolesHasBeenSet = true; m_roles.push_back(value); return *this; }
 
     /**
-     * <p> The list of roles for the specified assessment. </p>
+     * <p> The list of roles for the assessment. </p>
      */
     inline CreateAssessmentRequest& AddRoles(Role&& value) { m_rolesHasBeenSet = true; m_roles.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p> The identifier for the specified framework. </p>
+     * <p> The identifier for the framework that the assessment will be created from.
+     * </p>
      */
     inline const Aws::String& GetFrameworkId() const{ return m_frameworkId; }
 
     /**
-     * <p> The identifier for the specified framework. </p>
+     * <p> The identifier for the framework that the assessment will be created from.
+     * </p>
      */
     inline bool FrameworkIdHasBeenSet() const { return m_frameworkIdHasBeenSet; }
 
     /**
-     * <p> The identifier for the specified framework. </p>
+     * <p> The identifier for the framework that the assessment will be created from.
+     * </p>
      */
     inline void SetFrameworkId(const Aws::String& value) { m_frameworkIdHasBeenSet = true; m_frameworkId = value; }
 
     /**
-     * <p> The identifier for the specified framework. </p>
+     * <p> The identifier for the framework that the assessment will be created from.
+     * </p>
      */
     inline void SetFrameworkId(Aws::String&& value) { m_frameworkIdHasBeenSet = true; m_frameworkId = std::move(value); }
 
     /**
-     * <p> The identifier for the specified framework. </p>
+     * <p> The identifier for the framework that the assessment will be created from.
+     * </p>
      */
     inline void SetFrameworkId(const char* value) { m_frameworkIdHasBeenSet = true; m_frameworkId.assign(value); }
 
     /**
-     * <p> The identifier for the specified framework. </p>
+     * <p> The identifier for the framework that the assessment will be created from.
+     * </p>
      */
     inline CreateAssessmentRequest& WithFrameworkId(const Aws::String& value) { SetFrameworkId(value); return *this;}
 
     /**
-     * <p> The identifier for the specified framework. </p>
+     * <p> The identifier for the framework that the assessment will be created from.
+     * </p>
      */
     inline CreateAssessmentRequest& WithFrameworkId(Aws::String&& value) { SetFrameworkId(std::move(value)); return *this;}
 
     /**
-     * <p> The identifier for the specified framework. </p>
+     * <p> The identifier for the framework that the assessment will be created from.
+     * </p>
      */
     inline CreateAssessmentRequest& WithFrameworkId(const char* value) { SetFrameworkId(value); return *this;}
 
 
     /**
-     * <p> The tags associated with the assessment. </p>
+     * <p> The tags that are associated with the assessment. </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p> The tags associated with the assessment. </p>
+     * <p> The tags that are associated with the assessment. </p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p> The tags associated with the assessment. </p>
+     * <p> The tags that are associated with the assessment. </p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p> The tags associated with the assessment. </p>
+     * <p> The tags that are associated with the assessment. </p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p> The tags associated with the assessment. </p>
+     * <p> The tags that are associated with the assessment. </p>
      */
     inline CreateAssessmentRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p> The tags associated with the assessment. </p>
+     * <p> The tags that are associated with the assessment. </p>
      */
     inline CreateAssessmentRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p> The tags associated with the assessment. </p>
+     * <p> The tags that are associated with the assessment. </p>
      */
     inline CreateAssessmentRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p> The tags associated with the assessment. </p>
+     * <p> The tags that are associated with the assessment. </p>
      */
     inline CreateAssessmentRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p> The tags associated with the assessment. </p>
+     * <p> The tags that are associated with the assessment. </p>
      */
     inline CreateAssessmentRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p> The tags associated with the assessment. </p>
+     * <p> The tags that are associated with the assessment. </p>
      */
     inline CreateAssessmentRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p> The tags associated with the assessment. </p>
+     * <p> The tags that are associated with the assessment. </p>
      */
     inline CreateAssessmentRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p> The tags associated with the assessment. </p>
+     * <p> The tags that are associated with the assessment. </p>
      */
     inline CreateAssessmentRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p> The tags associated with the assessment. </p>
+     * <p> The tags that are associated with the assessment. </p>
      */
     inline CreateAssessmentRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 

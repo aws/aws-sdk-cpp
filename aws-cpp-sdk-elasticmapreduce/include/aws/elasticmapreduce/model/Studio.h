@@ -43,243 +43,243 @@ namespace Model
 
 
     /**
-     * <p>The ID of the EMR Studio.</p>
+     * <p>The ID of the Amazon EMR Studio.</p>
      */
     inline const Aws::String& GetStudioId() const{ return m_studioId; }
 
     /**
-     * <p>The ID of the EMR Studio.</p>
+     * <p>The ID of the Amazon EMR Studio.</p>
      */
     inline bool StudioIdHasBeenSet() const { return m_studioIdHasBeenSet; }
 
     /**
-     * <p>The ID of the EMR Studio.</p>
+     * <p>The ID of the Amazon EMR Studio.</p>
      */
     inline void SetStudioId(const Aws::String& value) { m_studioIdHasBeenSet = true; m_studioId = value; }
 
     /**
-     * <p>The ID of the EMR Studio.</p>
+     * <p>The ID of the Amazon EMR Studio.</p>
      */
     inline void SetStudioId(Aws::String&& value) { m_studioIdHasBeenSet = true; m_studioId = std::move(value); }
 
     /**
-     * <p>The ID of the EMR Studio.</p>
+     * <p>The ID of the Amazon EMR Studio.</p>
      */
     inline void SetStudioId(const char* value) { m_studioIdHasBeenSet = true; m_studioId.assign(value); }
 
     /**
-     * <p>The ID of the EMR Studio.</p>
+     * <p>The ID of the Amazon EMR Studio.</p>
      */
     inline Studio& WithStudioId(const Aws::String& value) { SetStudioId(value); return *this;}
 
     /**
-     * <p>The ID of the EMR Studio.</p>
+     * <p>The ID of the Amazon EMR Studio.</p>
      */
     inline Studio& WithStudioId(Aws::String&& value) { SetStudioId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the EMR Studio.</p>
+     * <p>The ID of the Amazon EMR Studio.</p>
      */
     inline Studio& WithStudioId(const char* value) { SetStudioId(value); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the EMR Studio.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon EMR Studio.</p>
      */
     inline const Aws::String& GetStudioArn() const{ return m_studioArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the EMR Studio.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon EMR Studio.</p>
      */
     inline bool StudioArnHasBeenSet() const { return m_studioArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the EMR Studio.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon EMR Studio.</p>
      */
     inline void SetStudioArn(const Aws::String& value) { m_studioArnHasBeenSet = true; m_studioArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the EMR Studio.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon EMR Studio.</p>
      */
     inline void SetStudioArn(Aws::String&& value) { m_studioArnHasBeenSet = true; m_studioArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the EMR Studio.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon EMR Studio.</p>
      */
     inline void SetStudioArn(const char* value) { m_studioArnHasBeenSet = true; m_studioArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the EMR Studio.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon EMR Studio.</p>
      */
     inline Studio& WithStudioArn(const Aws::String& value) { SetStudioArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the EMR Studio.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon EMR Studio.</p>
      */
     inline Studio& WithStudioArn(Aws::String&& value) { SetStudioArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the EMR Studio.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon EMR Studio.</p>
      */
     inline Studio& WithStudioArn(const char* value) { SetStudioArn(value); return *this;}
 
 
     /**
-     * <p>The name of the EMR Studio.</p>
+     * <p>The name of the Amazon EMR Studio.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the EMR Studio.</p>
+     * <p>The name of the Amazon EMR Studio.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the EMR Studio.</p>
+     * <p>The name of the Amazon EMR Studio.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the EMR Studio.</p>
+     * <p>The name of the Amazon EMR Studio.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the EMR Studio.</p>
+     * <p>The name of the Amazon EMR Studio.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the EMR Studio.</p>
+     * <p>The name of the Amazon EMR Studio.</p>
      */
     inline Studio& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the EMR Studio.</p>
+     * <p>The name of the Amazon EMR Studio.</p>
      */
     inline Studio& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the EMR Studio.</p>
+     * <p>The name of the Amazon EMR Studio.</p>
      */
     inline Studio& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>The detailed description of the EMR Studio.</p>
+     * <p>The detailed description of the Amazon EMR Studio.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The detailed description of the EMR Studio.</p>
+     * <p>The detailed description of the Amazon EMR Studio.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>The detailed description of the EMR Studio.</p>
+     * <p>The detailed description of the Amazon EMR Studio.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The detailed description of the EMR Studio.</p>
+     * <p>The detailed description of the Amazon EMR Studio.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The detailed description of the EMR Studio.</p>
+     * <p>The detailed description of the Amazon EMR Studio.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The detailed description of the EMR Studio.</p>
+     * <p>The detailed description of the Amazon EMR Studio.</p>
      */
     inline Studio& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The detailed description of the EMR Studio.</p>
+     * <p>The detailed description of the Amazon EMR Studio.</p>
      */
     inline Studio& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The detailed description of the EMR Studio.</p>
+     * <p>The detailed description of the Amazon EMR Studio.</p>
      */
     inline Studio& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * <p>Specifies whether the Studio authenticates users using single sign-on (SSO)
-     * or IAM.</p>
+     * <p>Specifies whether the Amazon EMR Studio authenticates users using IAM or
+     * Amazon Web Services SSO.</p>
      */
     inline const AuthMode& GetAuthMode() const{ return m_authMode; }
 
     /**
-     * <p>Specifies whether the Studio authenticates users using single sign-on (SSO)
-     * or IAM.</p>
+     * <p>Specifies whether the Amazon EMR Studio authenticates users using IAM or
+     * Amazon Web Services SSO.</p>
      */
     inline bool AuthModeHasBeenSet() const { return m_authModeHasBeenSet; }
 
     /**
-     * <p>Specifies whether the Studio authenticates users using single sign-on (SSO)
-     * or IAM.</p>
+     * <p>Specifies whether the Amazon EMR Studio authenticates users using IAM or
+     * Amazon Web Services SSO.</p>
      */
     inline void SetAuthMode(const AuthMode& value) { m_authModeHasBeenSet = true; m_authMode = value; }
 
     /**
-     * <p>Specifies whether the Studio authenticates users using single sign-on (SSO)
-     * or IAM.</p>
+     * <p>Specifies whether the Amazon EMR Studio authenticates users using IAM or
+     * Amazon Web Services SSO.</p>
      */
     inline void SetAuthMode(AuthMode&& value) { m_authModeHasBeenSet = true; m_authMode = std::move(value); }
 
     /**
-     * <p>Specifies whether the Studio authenticates users using single sign-on (SSO)
-     * or IAM.</p>
+     * <p>Specifies whether the Amazon EMR Studio authenticates users using IAM or
+     * Amazon Web Services SSO.</p>
      */
     inline Studio& WithAuthMode(const AuthMode& value) { SetAuthMode(value); return *this;}
 
     /**
-     * <p>Specifies whether the Studio authenticates users using single sign-on (SSO)
-     * or IAM.</p>
+     * <p>Specifies whether the Amazon EMR Studio authenticates users using IAM or
+     * Amazon Web Services SSO.</p>
      */
     inline Studio& WithAuthMode(AuthMode&& value) { SetAuthMode(std::move(value)); return *this;}
 
 
     /**
-     * <p>The ID of the VPC associated with the EMR Studio.</p>
+     * <p>The ID of the VPC associated with the Amazon EMR Studio.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
 
     /**
-     * <p>The ID of the VPC associated with the EMR Studio.</p>
+     * <p>The ID of the VPC associated with the Amazon EMR Studio.</p>
      */
     inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
 
     /**
-     * <p>The ID of the VPC associated with the EMR Studio.</p>
+     * <p>The ID of the VPC associated with the Amazon EMR Studio.</p>
      */
     inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /**
-     * <p>The ID of the VPC associated with the EMR Studio.</p>
+     * <p>The ID of the VPC associated with the Amazon EMR Studio.</p>
      */
     inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
 
     /**
-     * <p>The ID of the VPC associated with the EMR Studio.</p>
+     * <p>The ID of the VPC associated with the Amazon EMR Studio.</p>
      */
     inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
 
     /**
-     * <p>The ID of the VPC associated with the EMR Studio.</p>
+     * <p>The ID of the VPC associated with the Amazon EMR Studio.</p>
      */
     inline Studio& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
 
     /**
-     * <p>The ID of the VPC associated with the EMR Studio.</p>
+     * <p>The ID of the VPC associated with the Amazon EMR Studio.</p>
      */
     inline Studio& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the VPC associated with the EMR Studio.</p>
+     * <p>The ID of the VPC associated with the Amazon EMR Studio.</p>
      */
     inline Studio& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
@@ -372,50 +372,58 @@ namespace Model
 
 
     /**
-     * <p>The name of the IAM role assumed by users logged in to the Amazon EMR
-     * Studio.</p>
+     * <p>The name of the IAM role assumed by users logged in to the Amazon EMR Studio.
+     * A Studio only requires a <code>UserRole</code> when you use IAM
+     * authentication.</p>
      */
     inline const Aws::String& GetUserRole() const{ return m_userRole; }
 
     /**
-     * <p>The name of the IAM role assumed by users logged in to the Amazon EMR
-     * Studio.</p>
+     * <p>The name of the IAM role assumed by users logged in to the Amazon EMR Studio.
+     * A Studio only requires a <code>UserRole</code> when you use IAM
+     * authentication.</p>
      */
     inline bool UserRoleHasBeenSet() const { return m_userRoleHasBeenSet; }
 
     /**
-     * <p>The name of the IAM role assumed by users logged in to the Amazon EMR
-     * Studio.</p>
+     * <p>The name of the IAM role assumed by users logged in to the Amazon EMR Studio.
+     * A Studio only requires a <code>UserRole</code> when you use IAM
+     * authentication.</p>
      */
     inline void SetUserRole(const Aws::String& value) { m_userRoleHasBeenSet = true; m_userRole = value; }
 
     /**
-     * <p>The name of the IAM role assumed by users logged in to the Amazon EMR
-     * Studio.</p>
+     * <p>The name of the IAM role assumed by users logged in to the Amazon EMR Studio.
+     * A Studio only requires a <code>UserRole</code> when you use IAM
+     * authentication.</p>
      */
     inline void SetUserRole(Aws::String&& value) { m_userRoleHasBeenSet = true; m_userRole = std::move(value); }
 
     /**
-     * <p>The name of the IAM role assumed by users logged in to the Amazon EMR
-     * Studio.</p>
+     * <p>The name of the IAM role assumed by users logged in to the Amazon EMR Studio.
+     * A Studio only requires a <code>UserRole</code> when you use IAM
+     * authentication.</p>
      */
     inline void SetUserRole(const char* value) { m_userRoleHasBeenSet = true; m_userRole.assign(value); }
 
     /**
-     * <p>The name of the IAM role assumed by users logged in to the Amazon EMR
-     * Studio.</p>
+     * <p>The name of the IAM role assumed by users logged in to the Amazon EMR Studio.
+     * A Studio only requires a <code>UserRole</code> when you use IAM
+     * authentication.</p>
      */
     inline Studio& WithUserRole(const Aws::String& value) { SetUserRole(value); return *this;}
 
     /**
-     * <p>The name of the IAM role assumed by users logged in to the Amazon EMR
-     * Studio.</p>
+     * <p>The name of the IAM role assumed by users logged in to the Amazon EMR Studio.
+     * A Studio only requires a <code>UserRole</code> when you use IAM
+     * authentication.</p>
      */
     inline Studio& WithUserRole(Aws::String&& value) { SetUserRole(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the IAM role assumed by users logged in to the Amazon EMR
-     * Studio.</p>
+     * <p>The name of the IAM role assumed by users logged in to the Amazon EMR Studio.
+     * A Studio only requires a <code>UserRole</code> when you use IAM
+     * authentication.</p>
      */
     inline Studio& WithUserRole(const char* value) { SetUserRole(value); return *this;}
 
@@ -607,52 +615,150 @@ namespace Model
 
 
     /**
-     * <p>The default Amazon S3 location to back up Amazon EMR Studio Workspaces and
-     * notebook files.</p>
+     * <p>The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook
+     * files.</p>
      */
     inline const Aws::String& GetDefaultS3Location() const{ return m_defaultS3Location; }
 
     /**
-     * <p>The default Amazon S3 location to back up Amazon EMR Studio Workspaces and
-     * notebook files.</p>
+     * <p>The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook
+     * files.</p>
      */
     inline bool DefaultS3LocationHasBeenSet() const { return m_defaultS3LocationHasBeenSet; }
 
     /**
-     * <p>The default Amazon S3 location to back up Amazon EMR Studio Workspaces and
-     * notebook files.</p>
+     * <p>The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook
+     * files.</p>
      */
     inline void SetDefaultS3Location(const Aws::String& value) { m_defaultS3LocationHasBeenSet = true; m_defaultS3Location = value; }
 
     /**
-     * <p>The default Amazon S3 location to back up Amazon EMR Studio Workspaces and
-     * notebook files.</p>
+     * <p>The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook
+     * files.</p>
      */
     inline void SetDefaultS3Location(Aws::String&& value) { m_defaultS3LocationHasBeenSet = true; m_defaultS3Location = std::move(value); }
 
     /**
-     * <p>The default Amazon S3 location to back up Amazon EMR Studio Workspaces and
-     * notebook files.</p>
+     * <p>The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook
+     * files.</p>
      */
     inline void SetDefaultS3Location(const char* value) { m_defaultS3LocationHasBeenSet = true; m_defaultS3Location.assign(value); }
 
     /**
-     * <p>The default Amazon S3 location to back up Amazon EMR Studio Workspaces and
-     * notebook files.</p>
+     * <p>The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook
+     * files.</p>
      */
     inline Studio& WithDefaultS3Location(const Aws::String& value) { SetDefaultS3Location(value); return *this;}
 
     /**
-     * <p>The default Amazon S3 location to back up Amazon EMR Studio Workspaces and
-     * notebook files.</p>
+     * <p>The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook
+     * files.</p>
      */
     inline Studio& WithDefaultS3Location(Aws::String&& value) { SetDefaultS3Location(std::move(value)); return *this;}
 
     /**
-     * <p>The default Amazon S3 location to back up Amazon EMR Studio Workspaces and
-     * notebook files.</p>
+     * <p>The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook
+     * files.</p>
      */
     inline Studio& WithDefaultS3Location(const char* value) { SetDefaultS3Location(value); return *this;}
+
+
+    /**
+     * <p>Your identity provider's authentication endpoint. Amazon EMR Studio redirects
+     * federated users to this endpoint for authentication when logging in to a Studio
+     * with the Studio URL.</p>
+     */
+    inline const Aws::String& GetIdpAuthUrl() const{ return m_idpAuthUrl; }
+
+    /**
+     * <p>Your identity provider's authentication endpoint. Amazon EMR Studio redirects
+     * federated users to this endpoint for authentication when logging in to a Studio
+     * with the Studio URL.</p>
+     */
+    inline bool IdpAuthUrlHasBeenSet() const { return m_idpAuthUrlHasBeenSet; }
+
+    /**
+     * <p>Your identity provider's authentication endpoint. Amazon EMR Studio redirects
+     * federated users to this endpoint for authentication when logging in to a Studio
+     * with the Studio URL.</p>
+     */
+    inline void SetIdpAuthUrl(const Aws::String& value) { m_idpAuthUrlHasBeenSet = true; m_idpAuthUrl = value; }
+
+    /**
+     * <p>Your identity provider's authentication endpoint. Amazon EMR Studio redirects
+     * federated users to this endpoint for authentication when logging in to a Studio
+     * with the Studio URL.</p>
+     */
+    inline void SetIdpAuthUrl(Aws::String&& value) { m_idpAuthUrlHasBeenSet = true; m_idpAuthUrl = std::move(value); }
+
+    /**
+     * <p>Your identity provider's authentication endpoint. Amazon EMR Studio redirects
+     * federated users to this endpoint for authentication when logging in to a Studio
+     * with the Studio URL.</p>
+     */
+    inline void SetIdpAuthUrl(const char* value) { m_idpAuthUrlHasBeenSet = true; m_idpAuthUrl.assign(value); }
+
+    /**
+     * <p>Your identity provider's authentication endpoint. Amazon EMR Studio redirects
+     * federated users to this endpoint for authentication when logging in to a Studio
+     * with the Studio URL.</p>
+     */
+    inline Studio& WithIdpAuthUrl(const Aws::String& value) { SetIdpAuthUrl(value); return *this;}
+
+    /**
+     * <p>Your identity provider's authentication endpoint. Amazon EMR Studio redirects
+     * federated users to this endpoint for authentication when logging in to a Studio
+     * with the Studio URL.</p>
+     */
+    inline Studio& WithIdpAuthUrl(Aws::String&& value) { SetIdpAuthUrl(std::move(value)); return *this;}
+
+    /**
+     * <p>Your identity provider's authentication endpoint. Amazon EMR Studio redirects
+     * federated users to this endpoint for authentication when logging in to a Studio
+     * with the Studio URL.</p>
+     */
+    inline Studio& WithIdpAuthUrl(const char* value) { SetIdpAuthUrl(value); return *this;}
+
+
+    /**
+     * <p>The name of your identity provider's <code>RelayState</code> parameter.</p>
+     */
+    inline const Aws::String& GetIdpRelayStateParameterName() const{ return m_idpRelayStateParameterName; }
+
+    /**
+     * <p>The name of your identity provider's <code>RelayState</code> parameter.</p>
+     */
+    inline bool IdpRelayStateParameterNameHasBeenSet() const { return m_idpRelayStateParameterNameHasBeenSet; }
+
+    /**
+     * <p>The name of your identity provider's <code>RelayState</code> parameter.</p>
+     */
+    inline void SetIdpRelayStateParameterName(const Aws::String& value) { m_idpRelayStateParameterNameHasBeenSet = true; m_idpRelayStateParameterName = value; }
+
+    /**
+     * <p>The name of your identity provider's <code>RelayState</code> parameter.</p>
+     */
+    inline void SetIdpRelayStateParameterName(Aws::String&& value) { m_idpRelayStateParameterNameHasBeenSet = true; m_idpRelayStateParameterName = std::move(value); }
+
+    /**
+     * <p>The name of your identity provider's <code>RelayState</code> parameter.</p>
+     */
+    inline void SetIdpRelayStateParameterName(const char* value) { m_idpRelayStateParameterNameHasBeenSet = true; m_idpRelayStateParameterName.assign(value); }
+
+    /**
+     * <p>The name of your identity provider's <code>RelayState</code> parameter.</p>
+     */
+    inline Studio& WithIdpRelayStateParameterName(const Aws::String& value) { SetIdpRelayStateParameterName(value); return *this;}
+
+    /**
+     * <p>The name of your identity provider's <code>RelayState</code> parameter.</p>
+     */
+    inline Studio& WithIdpRelayStateParameterName(Aws::String&& value) { SetIdpRelayStateParameterName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of your identity provider's <code>RelayState</code> parameter.</p>
+     */
+    inline Studio& WithIdpRelayStateParameterName(const char* value) { SetIdpRelayStateParameterName(value); return *this;}
 
 
     /**
@@ -738,6 +844,12 @@ namespace Model
 
     Aws::String m_defaultS3Location;
     bool m_defaultS3LocationHasBeenSet;
+
+    Aws::String m_idpAuthUrl;
+    bool m_idpAuthUrlHasBeenSet;
+
+    Aws::String m_idpRelayStateParameterName;
+    bool m_idpRelayStateParameterNameHasBeenSet;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;

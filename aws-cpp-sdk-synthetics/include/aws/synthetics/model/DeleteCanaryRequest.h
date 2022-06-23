@@ -11,6 +11,10 @@
 
 namespace Aws
 {
+namespace Http
+{
+    class URI;
+} //namespace Http
 namespace Synthetics
 {
 namespace Model
@@ -30,6 +34,8 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "DeleteCanary"; }
 
     Aws::String SerializePayload() const override;
+
+    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -88,10 +94,38 @@ namespace Model
      */
     inline DeleteCanaryRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
+    /**
+     * <p>Specifies whether to also delete the Lambda functions and layers used by this
+     * canary. The default is false.</p> <p>Type: Boolean</p>
+     */
+    inline bool GetDeleteLambda() const{ return m_deleteLambda; }
+
+    /**
+     * <p>Specifies whether to also delete the Lambda functions and layers used by this
+     * canary. The default is false.</p> <p>Type: Boolean</p>
+     */
+    inline bool DeleteLambdaHasBeenSet() const { return m_deleteLambdaHasBeenSet; }
+
+    /**
+     * <p>Specifies whether to also delete the Lambda functions and layers used by this
+     * canary. The default is false.</p> <p>Type: Boolean</p>
+     */
+    inline void SetDeleteLambda(bool value) { m_deleteLambdaHasBeenSet = true; m_deleteLambda = value; }
+
+    /**
+     * <p>Specifies whether to also delete the Lambda functions and layers used by this
+     * canary. The default is false.</p> <p>Type: Boolean</p>
+     */
+    inline DeleteCanaryRequest& WithDeleteLambda(bool value) { SetDeleteLambda(value); return *this;}
+
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    bool m_deleteLambda;
+    bool m_deleteLambdaHasBeenSet;
   };
 
 } // namespace Model

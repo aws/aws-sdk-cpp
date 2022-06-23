@@ -8,6 +8,7 @@
 #include <aws/honeycode/model/TableDataImportJobStatus.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/honeycode/model/TableDataImportJobMetadata.h>
+#include <aws/honeycode/model/ErrorCode.h>
 #include <utility>
 
 namespace Aws
@@ -128,6 +129,37 @@ namespace Model
      */
     inline DescribeTableDataImportJobResult& WithJobMetadata(TableDataImportJobMetadata&& value) { SetJobMetadata(std::move(value)); return *this;}
 
+
+    /**
+     * <p> If job status is failed, error code to understand reason for the failure.
+     * </p>
+     */
+    inline const ErrorCode& GetErrorCode() const{ return m_errorCode; }
+
+    /**
+     * <p> If job status is failed, error code to understand reason for the failure.
+     * </p>
+     */
+    inline void SetErrorCode(const ErrorCode& value) { m_errorCode = value; }
+
+    /**
+     * <p> If job status is failed, error code to understand reason for the failure.
+     * </p>
+     */
+    inline void SetErrorCode(ErrorCode&& value) { m_errorCode = std::move(value); }
+
+    /**
+     * <p> If job status is failed, error code to understand reason for the failure.
+     * </p>
+     */
+    inline DescribeTableDataImportJobResult& WithErrorCode(const ErrorCode& value) { SetErrorCode(value); return *this;}
+
+    /**
+     * <p> If job status is failed, error code to understand reason for the failure.
+     * </p>
+     */
+    inline DescribeTableDataImportJobResult& WithErrorCode(ErrorCode&& value) { SetErrorCode(std::move(value)); return *this;}
+
   private:
 
     TableDataImportJobStatus m_jobStatus;
@@ -135,6 +167,8 @@ namespace Model
     Aws::String m_message;
 
     TableDataImportJobMetadata m_jobMetadata;
+
+    ErrorCode m_errorCode;
   };
 
 } // namespace Model

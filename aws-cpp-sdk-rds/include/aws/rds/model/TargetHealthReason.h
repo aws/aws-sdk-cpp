@@ -19,7 +19,8 @@ namespace Model
     UNREACHABLE,
     CONNECTION_FAILED,
     AUTH_FAILURE,
-    PENDING_PROXY_CAPACITY
+    PENDING_PROXY_CAPACITY,
+    INVALID_REPLICATION_STATE
   };
 
 namespace TargetHealthReasonMapper

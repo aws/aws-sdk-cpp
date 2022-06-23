@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p> The location in which AWS Audit Manager saves assessment reports for the
-   * given assessment. </p><p><h3>See Also:</h3>   <a
+   * <p> The location where Audit Manager saves assessment reports for the given
+   * assessment. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/AssessmentReportsDestination">AWS
    * API Reference</a></p>
    */

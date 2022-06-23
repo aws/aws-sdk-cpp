@@ -450,7 +450,9 @@ namespace Model
      * either for Amazon Registrar (for .com, .net, and .org domains) or for our
      * registrar associate, Gandi (for all other TLDs). If you specify
      * <code>false</code>, WHOIS queries return the information that you entered for
-     * the admin contact.</p> <p>Default: <code>true</code> </p>
+     * the admin contact.</p>  <p>You must specify the same privacy setting for
+     * the administrative, registrant, and technical contacts.</p>  <p>Default:
+     * <code>true</code> </p>
      */
     inline bool GetPrivacyProtectAdminContact() const{ return m_privacyProtectAdminContact; }
 
@@ -460,7 +462,9 @@ namespace Model
      * either for Amazon Registrar (for .com, .net, and .org domains) or for our
      * registrar associate, Gandi (for all other TLDs). If you specify
      * <code>false</code>, WHOIS queries return the information that you entered for
-     * the admin contact.</p> <p>Default: <code>true</code> </p>
+     * the admin contact.</p>  <p>You must specify the same privacy setting for
+     * the administrative, registrant, and technical contacts.</p>  <p>Default:
+     * <code>true</code> </p>
      */
     inline bool PrivacyProtectAdminContactHasBeenSet() const { return m_privacyProtectAdminContactHasBeenSet; }
 
@@ -470,7 +474,9 @@ namespace Model
      * either for Amazon Registrar (for .com, .net, and .org domains) or for our
      * registrar associate, Gandi (for all other TLDs). If you specify
      * <code>false</code>, WHOIS queries return the information that you entered for
-     * the admin contact.</p> <p>Default: <code>true</code> </p>
+     * the admin contact.</p>  <p>You must specify the same privacy setting for
+     * the administrative, registrant, and technical contacts.</p>  <p>Default:
+     * <code>true</code> </p>
      */
     inline void SetPrivacyProtectAdminContact(bool value) { m_privacyProtectAdminContactHasBeenSet = true; m_privacyProtectAdminContact = value; }
 
@@ -480,7 +486,9 @@ namespace Model
      * either for Amazon Registrar (for .com, .net, and .org domains) or for our
      * registrar associate, Gandi (for all other TLDs). If you specify
      * <code>false</code>, WHOIS queries return the information that you entered for
-     * the admin contact.</p> <p>Default: <code>true</code> </p>
+     * the admin contact.</p>  <p>You must specify the same privacy setting for
+     * the administrative, registrant, and technical contacts.</p>  <p>Default:
+     * <code>true</code> </p>
      */
     inline TransferDomainRequest& WithPrivacyProtectAdminContact(bool value) { SetPrivacyProtectAdminContact(value); return *this;}
 
@@ -491,7 +499,9 @@ namespace Model
      * either for Amazon Registrar (for .com, .net, and .org domains) or for our
      * registrar associate, Gandi (for all other TLDs). If you specify
      * <code>false</code>, WHOIS queries return the information that you entered for
-     * the registrant contact (domain owner).</p> <p>Default: <code>true</code> </p>
+     * the registrant contact (domain owner).</p>  <p>You must specify the same
+     * privacy setting for the administrative, registrant, and technical contacts.</p>
+     *  <p>Default: <code>true</code> </p>
      */
     inline bool GetPrivacyProtectRegistrantContact() const{ return m_privacyProtectRegistrantContact; }
 
@@ -501,7 +511,9 @@ namespace Model
      * either for Amazon Registrar (for .com, .net, and .org domains) or for our
      * registrar associate, Gandi (for all other TLDs). If you specify
      * <code>false</code>, WHOIS queries return the information that you entered for
-     * the registrant contact (domain owner).</p> <p>Default: <code>true</code> </p>
+     * the registrant contact (domain owner).</p>  <p>You must specify the same
+     * privacy setting for the administrative, registrant, and technical contacts.</p>
+     *  <p>Default: <code>true</code> </p>
      */
     inline bool PrivacyProtectRegistrantContactHasBeenSet() const { return m_privacyProtectRegistrantContactHasBeenSet; }
 
@@ -511,7 +523,9 @@ namespace Model
      * either for Amazon Registrar (for .com, .net, and .org domains) or for our
      * registrar associate, Gandi (for all other TLDs). If you specify
      * <code>false</code>, WHOIS queries return the information that you entered for
-     * the registrant contact (domain owner).</p> <p>Default: <code>true</code> </p>
+     * the registrant contact (domain owner).</p>  <p>You must specify the same
+     * privacy setting for the administrative, registrant, and technical contacts.</p>
+     *  <p>Default: <code>true</code> </p>
      */
     inline void SetPrivacyProtectRegistrantContact(bool value) { m_privacyProtectRegistrantContactHasBeenSet = true; m_privacyProtectRegistrantContact = value; }
 
@@ -521,7 +535,9 @@ namespace Model
      * either for Amazon Registrar (for .com, .net, and .org domains) or for our
      * registrar associate, Gandi (for all other TLDs). If you specify
      * <code>false</code>, WHOIS queries return the information that you entered for
-     * the registrant contact (domain owner).</p> <p>Default: <code>true</code> </p>
+     * the registrant contact (domain owner).</p>  <p>You must specify the same
+     * privacy setting for the administrative, registrant, and technical contacts.</p>
+     *  <p>Default: <code>true</code> </p>
      */
     inline TransferDomainRequest& WithPrivacyProtectRegistrantContact(bool value) { SetPrivacyProtectRegistrantContact(value); return *this;}
 
@@ -532,7 +548,9 @@ namespace Model
      * either for Amazon Registrar (for .com, .net, and .org domains) or for our
      * registrar associate, Gandi (for all other TLDs). If you specify
      * <code>false</code>, WHOIS queries return the information that you entered for
-     * the technical contact.</p> <p>Default: <code>true</code> </p>
+     * the technical contact.</p>  <p>You must specify the same privacy setting
+     * for the administrative, registrant, and technical contacts.</p> 
+     * <p>Default: <code>true</code> </p>
      */
     inline bool GetPrivacyProtectTechContact() const{ return m_privacyProtectTechContact; }
 
@@ -542,7 +560,9 @@ namespace Model
      * either for Amazon Registrar (for .com, .net, and .org domains) or for our
      * registrar associate, Gandi (for all other TLDs). If you specify
      * <code>false</code>, WHOIS queries return the information that you entered for
-     * the technical contact.</p> <p>Default: <code>true</code> </p>
+     * the technical contact.</p>  <p>You must specify the same privacy setting
+     * for the administrative, registrant, and technical contacts.</p> 
+     * <p>Default: <code>true</code> </p>
      */
     inline bool PrivacyProtectTechContactHasBeenSet() const { return m_privacyProtectTechContactHasBeenSet; }
 
@@ -552,7 +572,9 @@ namespace Model
      * either for Amazon Registrar (for .com, .net, and .org domains) or for our
      * registrar associate, Gandi (for all other TLDs). If you specify
      * <code>false</code>, WHOIS queries return the information that you entered for
-     * the technical contact.</p> <p>Default: <code>true</code> </p>
+     * the technical contact.</p>  <p>You must specify the same privacy setting
+     * for the administrative, registrant, and technical contacts.</p> 
+     * <p>Default: <code>true</code> </p>
      */
     inline void SetPrivacyProtectTechContact(bool value) { m_privacyProtectTechContactHasBeenSet = true; m_privacyProtectTechContact = value; }
 
@@ -562,7 +584,9 @@ namespace Model
      * either for Amazon Registrar (for .com, .net, and .org domains) or for our
      * registrar associate, Gandi (for all other TLDs). If you specify
      * <code>false</code>, WHOIS queries return the information that you entered for
-     * the technical contact.</p> <p>Default: <code>true</code> </p>
+     * the technical contact.</p>  <p>You must specify the same privacy setting
+     * for the administrative, registrant, and technical contacts.</p> 
+     * <p>Default: <code>true</code> </p>
      */
     inline TransferDomainRequest& WithPrivacyProtectTechContact(bool value) { SetPrivacyProtectTechContact(value); return *this;}
 

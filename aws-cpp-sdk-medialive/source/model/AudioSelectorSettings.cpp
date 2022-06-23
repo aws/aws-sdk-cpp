@@ -19,6 +19,7 @@ namespace Model
 {
 
 AudioSelectorSettings::AudioSelectorSettings() : 
+    m_audioHlsRenditionSelectionHasBeenSet(false),
     m_audioLanguageSelectionHasBeenSet(false),
     m_audioPidSelectionHasBeenSet(false),
     m_audioTrackSelectionHasBeenSet(false)
@@ -26,6 +27,7 @@ AudioSelectorSettings::AudioSelectorSettings() :
 }
 
 AudioSelectorSettings::AudioSelectorSettings(JsonView jsonValue) : 
+    m_audioHlsRenditionSelectionHasBeenSet(false),
     m_audioLanguageSelectionHasBeenSet(false),
     m_audioPidSelectionHasBeenSet(false),
     m_audioTrackSelectionHasBeenSet(false)
@@ -35,6 +37,13 @@ AudioSelectorSettings::AudioSelectorSettings(JsonView jsonValue) :
 
 AudioSelectorSettings& AudioSelectorSettings::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("audioHlsRenditionSelection"))
+  {
+    m_audioHlsRenditionSelection = jsonValue.GetObject("audioHlsRenditionSelection");
+
+    m_audioHlsRenditionSelectionHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("audioLanguageSelection"))
   {
     m_audioLanguageSelection = jsonValue.GetObject("audioLanguageSelection");
@@ -62,6 +71,12 @@ AudioSelectorSettings& AudioSelectorSettings::operator =(JsonView jsonValue)
 JsonValue AudioSelectorSettings::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_audioHlsRenditionSelectionHasBeenSet)
+  {
+   payload.WithObject("audioHlsRenditionSelection", m_audioHlsRenditionSelection.Jsonize());
+
+  }
 
   if(m_audioLanguageSelectionHasBeenSet)
   {

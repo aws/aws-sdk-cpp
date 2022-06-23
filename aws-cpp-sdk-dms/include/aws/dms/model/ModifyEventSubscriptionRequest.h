@@ -39,42 +39,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the AWS DMS event notification subscription to be modified.</p>
+     * <p>The name of the DMS event notification subscription to be modified.</p>
      */
     inline const Aws::String& GetSubscriptionName() const{ return m_subscriptionName; }
 
     /**
-     * <p>The name of the AWS DMS event notification subscription to be modified.</p>
+     * <p>The name of the DMS event notification subscription to be modified.</p>
      */
     inline bool SubscriptionNameHasBeenSet() const { return m_subscriptionNameHasBeenSet; }
 
     /**
-     * <p>The name of the AWS DMS event notification subscription to be modified.</p>
+     * <p>The name of the DMS event notification subscription to be modified.</p>
      */
     inline void SetSubscriptionName(const Aws::String& value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName = value; }
 
     /**
-     * <p>The name of the AWS DMS event notification subscription to be modified.</p>
+     * <p>The name of the DMS event notification subscription to be modified.</p>
      */
     inline void SetSubscriptionName(Aws::String&& value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName = std::move(value); }
 
     /**
-     * <p>The name of the AWS DMS event notification subscription to be modified.</p>
+     * <p>The name of the DMS event notification subscription to be modified.</p>
      */
     inline void SetSubscriptionName(const char* value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName.assign(value); }
 
     /**
-     * <p>The name of the AWS DMS event notification subscription to be modified.</p>
+     * <p>The name of the DMS event notification subscription to be modified.</p>
      */
     inline ModifyEventSubscriptionRequest& WithSubscriptionName(const Aws::String& value) { SetSubscriptionName(value); return *this;}
 
     /**
-     * <p>The name of the AWS DMS event notification subscription to be modified.</p>
+     * <p>The name of the DMS event notification subscription to be modified.</p>
      */
     inline ModifyEventSubscriptionRequest& WithSubscriptionName(Aws::String&& value) { SetSubscriptionName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the AWS DMS event notification subscription to be modified.</p>
+     * <p>The name of the DMS event notification subscription to be modified.</p>
      */
     inline ModifyEventSubscriptionRequest& WithSubscriptionName(const char* value) { SetSubscriptionName(value); return *this;}
 
@@ -137,50 +137,50 @@ namespace Model
 
 
     /**
-     * <p> The type of AWS DMS resource that generates the events you want to subscribe
-     * to. </p> <p>Valid values: replication-instance | replication-task</p>
+     * <p> The type of DMS resource that generates the events you want to subscribe to.
+     * </p> <p>Valid values: replication-instance | replication-task</p>
      */
     inline const Aws::String& GetSourceType() const{ return m_sourceType; }
 
     /**
-     * <p> The type of AWS DMS resource that generates the events you want to subscribe
-     * to. </p> <p>Valid values: replication-instance | replication-task</p>
+     * <p> The type of DMS resource that generates the events you want to subscribe to.
+     * </p> <p>Valid values: replication-instance | replication-task</p>
      */
     inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
 
     /**
-     * <p> The type of AWS DMS resource that generates the events you want to subscribe
-     * to. </p> <p>Valid values: replication-instance | replication-task</p>
+     * <p> The type of DMS resource that generates the events you want to subscribe to.
+     * </p> <p>Valid values: replication-instance | replication-task</p>
      */
     inline void SetSourceType(const Aws::String& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
     /**
-     * <p> The type of AWS DMS resource that generates the events you want to subscribe
-     * to. </p> <p>Valid values: replication-instance | replication-task</p>
+     * <p> The type of DMS resource that generates the events you want to subscribe to.
+     * </p> <p>Valid values: replication-instance | replication-task</p>
      */
     inline void SetSourceType(Aws::String&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::move(value); }
 
     /**
-     * <p> The type of AWS DMS resource that generates the events you want to subscribe
-     * to. </p> <p>Valid values: replication-instance | replication-task</p>
+     * <p> The type of DMS resource that generates the events you want to subscribe to.
+     * </p> <p>Valid values: replication-instance | replication-task</p>
      */
     inline void SetSourceType(const char* value) { m_sourceTypeHasBeenSet = true; m_sourceType.assign(value); }
 
     /**
-     * <p> The type of AWS DMS resource that generates the events you want to subscribe
-     * to. </p> <p>Valid values: replication-instance | replication-task</p>
+     * <p> The type of DMS resource that generates the events you want to subscribe to.
+     * </p> <p>Valid values: replication-instance | replication-task</p>
      */
     inline ModifyEventSubscriptionRequest& WithSourceType(const Aws::String& value) { SetSourceType(value); return *this;}
 
     /**
-     * <p> The type of AWS DMS resource that generates the events you want to subscribe
-     * to. </p> <p>Valid values: replication-instance | replication-task</p>
+     * <p> The type of DMS resource that generates the events you want to subscribe to.
+     * </p> <p>Valid values: replication-instance | replication-task</p>
      */
     inline ModifyEventSubscriptionRequest& WithSourceType(Aws::String&& value) { SetSourceType(std::move(value)); return *this;}
 
     /**
-     * <p> The type of AWS DMS resource that generates the events you want to subscribe
-     * to. </p> <p>Valid values: replication-instance | replication-task</p>
+     * <p> The type of DMS resource that generates the events you want to subscribe to.
+     * </p> <p>Valid values: replication-instance | replication-task</p>
      */
     inline ModifyEventSubscriptionRequest& WithSourceType(const char* value) { SetSourceType(value); return *this;}
 

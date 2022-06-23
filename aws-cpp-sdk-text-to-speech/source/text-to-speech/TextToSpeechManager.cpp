@@ -72,9 +72,15 @@ namespace Aws
             context->callback = handler;
 
             auto self = shared_from_this();
-            m_pollyClient->SynthesizeSpeechAsync(synthesizeSpeechRequest, [self](const Polly::PollyClient* client, const Polly::Model::SynthesizeSpeechRequest& request,
-                const Polly::Model::SynthesizeSpeechOutcome& speechOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
-            {self -> OnPollySynthSpeechOutcomeRecieved(client, request, speechOutcome, context);}, context);
+            m_pollyClient->SynthesizeSpeechAsync(synthesizeSpeechRequest,
+                                                 [self](const Polly::PollyClient* client,
+                                                        const Polly::Model::SynthesizeSpeechRequest& request,
+                                                        const Polly::Model::SynthesizeSpeechOutcome& speechOutcome,
+                                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& lambdaContext)
+                                                        {
+                                                            self->OnPollySynthSpeechOutcomeRecieved(client, request, speechOutcome, lambdaContext);
+                                                        },
+                                                        context);
         }
 
         OutputDeviceList TextToSpeechManager::EnumerateDevices() const

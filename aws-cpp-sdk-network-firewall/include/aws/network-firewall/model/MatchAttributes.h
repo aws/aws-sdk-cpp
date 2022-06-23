@@ -145,7 +145,7 @@ namespace Model
      * <p>The source ports to inspect for. If not specified, this matches with any
      * source port. This setting is only used for protocols 6 (TCP) and 17 (UDP). </p>
      * <p>You can specify individual ports, for example <code>1994</code> and you can
-     * specify port ranges, for example <code>1990-1994</code>. </p>
+     * specify port ranges, for example <code>1990:1994</code>. </p>
      */
     inline const Aws::Vector<PortRange>& GetSourcePorts() const{ return m_sourcePorts; }
 
@@ -153,7 +153,7 @@ namespace Model
      * <p>The source ports to inspect for. If not specified, this matches with any
      * source port. This setting is only used for protocols 6 (TCP) and 17 (UDP). </p>
      * <p>You can specify individual ports, for example <code>1994</code> and you can
-     * specify port ranges, for example <code>1990-1994</code>. </p>
+     * specify port ranges, for example <code>1990:1994</code>. </p>
      */
     inline bool SourcePortsHasBeenSet() const { return m_sourcePortsHasBeenSet; }
 
@@ -161,7 +161,7 @@ namespace Model
      * <p>The source ports to inspect for. If not specified, this matches with any
      * source port. This setting is only used for protocols 6 (TCP) and 17 (UDP). </p>
      * <p>You can specify individual ports, for example <code>1994</code> and you can
-     * specify port ranges, for example <code>1990-1994</code>. </p>
+     * specify port ranges, for example <code>1990:1994</code>. </p>
      */
     inline void SetSourcePorts(const Aws::Vector<PortRange>& value) { m_sourcePortsHasBeenSet = true; m_sourcePorts = value; }
 
@@ -169,7 +169,7 @@ namespace Model
      * <p>The source ports to inspect for. If not specified, this matches with any
      * source port. This setting is only used for protocols 6 (TCP) and 17 (UDP). </p>
      * <p>You can specify individual ports, for example <code>1994</code> and you can
-     * specify port ranges, for example <code>1990-1994</code>. </p>
+     * specify port ranges, for example <code>1990:1994</code>. </p>
      */
     inline void SetSourcePorts(Aws::Vector<PortRange>&& value) { m_sourcePortsHasBeenSet = true; m_sourcePorts = std::move(value); }
 
@@ -177,7 +177,7 @@ namespace Model
      * <p>The source ports to inspect for. If not specified, this matches with any
      * source port. This setting is only used for protocols 6 (TCP) and 17 (UDP). </p>
      * <p>You can specify individual ports, for example <code>1994</code> and you can
-     * specify port ranges, for example <code>1990-1994</code>. </p>
+     * specify port ranges, for example <code>1990:1994</code>. </p>
      */
     inline MatchAttributes& WithSourcePorts(const Aws::Vector<PortRange>& value) { SetSourcePorts(value); return *this;}
 
@@ -185,7 +185,7 @@ namespace Model
      * <p>The source ports to inspect for. If not specified, this matches with any
      * source port. This setting is only used for protocols 6 (TCP) and 17 (UDP). </p>
      * <p>You can specify individual ports, for example <code>1994</code> and you can
-     * specify port ranges, for example <code>1990-1994</code>. </p>
+     * specify port ranges, for example <code>1990:1994</code>. </p>
      */
     inline MatchAttributes& WithSourcePorts(Aws::Vector<PortRange>&& value) { SetSourcePorts(std::move(value)); return *this;}
 
@@ -193,7 +193,7 @@ namespace Model
      * <p>The source ports to inspect for. If not specified, this matches with any
      * source port. This setting is only used for protocols 6 (TCP) and 17 (UDP). </p>
      * <p>You can specify individual ports, for example <code>1994</code> and you can
-     * specify port ranges, for example <code>1990-1994</code>. </p>
+     * specify port ranges, for example <code>1990:1994</code>. </p>
      */
     inline MatchAttributes& AddSourcePorts(const PortRange& value) { m_sourcePortsHasBeenSet = true; m_sourcePorts.push_back(value); return *this; }
 
@@ -201,7 +201,7 @@ namespace Model
      * <p>The source ports to inspect for. If not specified, this matches with any
      * source port. This setting is only used for protocols 6 (TCP) and 17 (UDP). </p>
      * <p>You can specify individual ports, for example <code>1994</code> and you can
-     * specify port ranges, for example <code>1990-1994</code>. </p>
+     * specify port ranges, for example <code>1990:1994</code>. </p>
      */
     inline MatchAttributes& AddSourcePorts(PortRange&& value) { m_sourcePortsHasBeenSet = true; m_sourcePorts.push_back(std::move(value)); return *this; }
 
@@ -210,7 +210,7 @@ namespace Model
      * <p>The destination ports to inspect for. If not specified, this matches with any
      * destination port. This setting is only used for protocols 6 (TCP) and 17 (UDP).
      * </p> <p>You can specify individual ports, for example <code>1994</code> and you
-     * can specify port ranges, for example <code>1990-1994</code>. </p>
+     * can specify port ranges, for example <code>1990:1994</code>. </p>
      */
     inline const Aws::Vector<PortRange>& GetDestinationPorts() const{ return m_destinationPorts; }
 
@@ -218,7 +218,7 @@ namespace Model
      * <p>The destination ports to inspect for. If not specified, this matches with any
      * destination port. This setting is only used for protocols 6 (TCP) and 17 (UDP).
      * </p> <p>You can specify individual ports, for example <code>1994</code> and you
-     * can specify port ranges, for example <code>1990-1994</code>. </p>
+     * can specify port ranges, for example <code>1990:1994</code>. </p>
      */
     inline bool DestinationPortsHasBeenSet() const { return m_destinationPortsHasBeenSet; }
 
@@ -226,7 +226,7 @@ namespace Model
      * <p>The destination ports to inspect for. If not specified, this matches with any
      * destination port. This setting is only used for protocols 6 (TCP) and 17 (UDP).
      * </p> <p>You can specify individual ports, for example <code>1994</code> and you
-     * can specify port ranges, for example <code>1990-1994</code>. </p>
+     * can specify port ranges, for example <code>1990:1994</code>. </p>
      */
     inline void SetDestinationPorts(const Aws::Vector<PortRange>& value) { m_destinationPortsHasBeenSet = true; m_destinationPorts = value; }
 
@@ -234,7 +234,7 @@ namespace Model
      * <p>The destination ports to inspect for. If not specified, this matches with any
      * destination port. This setting is only used for protocols 6 (TCP) and 17 (UDP).
      * </p> <p>You can specify individual ports, for example <code>1994</code> and you
-     * can specify port ranges, for example <code>1990-1994</code>. </p>
+     * can specify port ranges, for example <code>1990:1994</code>. </p>
      */
     inline void SetDestinationPorts(Aws::Vector<PortRange>&& value) { m_destinationPortsHasBeenSet = true; m_destinationPorts = std::move(value); }
 
@@ -242,7 +242,7 @@ namespace Model
      * <p>The destination ports to inspect for. If not specified, this matches with any
      * destination port. This setting is only used for protocols 6 (TCP) and 17 (UDP).
      * </p> <p>You can specify individual ports, for example <code>1994</code> and you
-     * can specify port ranges, for example <code>1990-1994</code>. </p>
+     * can specify port ranges, for example <code>1990:1994</code>. </p>
      */
     inline MatchAttributes& WithDestinationPorts(const Aws::Vector<PortRange>& value) { SetDestinationPorts(value); return *this;}
 
@@ -250,7 +250,7 @@ namespace Model
      * <p>The destination ports to inspect for. If not specified, this matches with any
      * destination port. This setting is only used for protocols 6 (TCP) and 17 (UDP).
      * </p> <p>You can specify individual ports, for example <code>1994</code> and you
-     * can specify port ranges, for example <code>1990-1994</code>. </p>
+     * can specify port ranges, for example <code>1990:1994</code>. </p>
      */
     inline MatchAttributes& WithDestinationPorts(Aws::Vector<PortRange>&& value) { SetDestinationPorts(std::move(value)); return *this;}
 
@@ -258,7 +258,7 @@ namespace Model
      * <p>The destination ports to inspect for. If not specified, this matches with any
      * destination port. This setting is only used for protocols 6 (TCP) and 17 (UDP).
      * </p> <p>You can specify individual ports, for example <code>1994</code> and you
-     * can specify port ranges, for example <code>1990-1994</code>. </p>
+     * can specify port ranges, for example <code>1990:1994</code>. </p>
      */
     inline MatchAttributes& AddDestinationPorts(const PortRange& value) { m_destinationPortsHasBeenSet = true; m_destinationPorts.push_back(value); return *this; }
 
@@ -266,7 +266,7 @@ namespace Model
      * <p>The destination ports to inspect for. If not specified, this matches with any
      * destination port. This setting is only used for protocols 6 (TCP) and 17 (UDP).
      * </p> <p>You can specify individual ports, for example <code>1994</code> and you
-     * can specify port ranges, for example <code>1990-1994</code>. </p>
+     * can specify port ranges, for example <code>1990:1994</code>. </p>
      */
     inline MatchAttributes& AddDestinationPorts(PortRange&& value) { m_destinationPortsHasBeenSet = true; m_destinationPorts.push_back(std::move(value)); return *this; }
 

@@ -79,115 +79,123 @@ namespace Model
 
 
     /**
-     * <p>The type of policy. Parameter Store supports the following policy types:
-     * Expiration, ExpirationNotification, and NoChangeNotification. </p>
+     * <p>The type of policy. Parameter Store, a capability of Amazon Web Services
+     * Systems Manager, supports the following policy types: Expiration,
+     * ExpirationNotification, and NoChangeNotification. </p>
      */
     inline const Aws::String& GetPolicyType() const{ return m_policyType; }
 
     /**
-     * <p>The type of policy. Parameter Store supports the following policy types:
-     * Expiration, ExpirationNotification, and NoChangeNotification. </p>
+     * <p>The type of policy. Parameter Store, a capability of Amazon Web Services
+     * Systems Manager, supports the following policy types: Expiration,
+     * ExpirationNotification, and NoChangeNotification. </p>
      */
     inline bool PolicyTypeHasBeenSet() const { return m_policyTypeHasBeenSet; }
 
     /**
-     * <p>The type of policy. Parameter Store supports the following policy types:
-     * Expiration, ExpirationNotification, and NoChangeNotification. </p>
+     * <p>The type of policy. Parameter Store, a capability of Amazon Web Services
+     * Systems Manager, supports the following policy types: Expiration,
+     * ExpirationNotification, and NoChangeNotification. </p>
      */
     inline void SetPolicyType(const Aws::String& value) { m_policyTypeHasBeenSet = true; m_policyType = value; }
 
     /**
-     * <p>The type of policy. Parameter Store supports the following policy types:
-     * Expiration, ExpirationNotification, and NoChangeNotification. </p>
+     * <p>The type of policy. Parameter Store, a capability of Amazon Web Services
+     * Systems Manager, supports the following policy types: Expiration,
+     * ExpirationNotification, and NoChangeNotification. </p>
      */
     inline void SetPolicyType(Aws::String&& value) { m_policyTypeHasBeenSet = true; m_policyType = std::move(value); }
 
     /**
-     * <p>The type of policy. Parameter Store supports the following policy types:
-     * Expiration, ExpirationNotification, and NoChangeNotification. </p>
+     * <p>The type of policy. Parameter Store, a capability of Amazon Web Services
+     * Systems Manager, supports the following policy types: Expiration,
+     * ExpirationNotification, and NoChangeNotification. </p>
      */
     inline void SetPolicyType(const char* value) { m_policyTypeHasBeenSet = true; m_policyType.assign(value); }
 
     /**
-     * <p>The type of policy. Parameter Store supports the following policy types:
-     * Expiration, ExpirationNotification, and NoChangeNotification. </p>
+     * <p>The type of policy. Parameter Store, a capability of Amazon Web Services
+     * Systems Manager, supports the following policy types: Expiration,
+     * ExpirationNotification, and NoChangeNotification. </p>
      */
     inline ParameterInlinePolicy& WithPolicyType(const Aws::String& value) { SetPolicyType(value); return *this;}
 
     /**
-     * <p>The type of policy. Parameter Store supports the following policy types:
-     * Expiration, ExpirationNotification, and NoChangeNotification. </p>
+     * <p>The type of policy. Parameter Store, a capability of Amazon Web Services
+     * Systems Manager, supports the following policy types: Expiration,
+     * ExpirationNotification, and NoChangeNotification. </p>
      */
     inline ParameterInlinePolicy& WithPolicyType(Aws::String&& value) { SetPolicyType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of policy. Parameter Store supports the following policy types:
-     * Expiration, ExpirationNotification, and NoChangeNotification. </p>
+     * <p>The type of policy. Parameter Store, a capability of Amazon Web Services
+     * Systems Manager, supports the following policy types: Expiration,
+     * ExpirationNotification, and NoChangeNotification. </p>
      */
     inline ParameterInlinePolicy& WithPolicyType(const char* value) { SetPolicyType(value); return *this;}
 
 
     /**
      * <p>The status of the policy. Policies report the following statuses: Pending
-     * (the policy has not been enforced or applied yet), Finished (the policy was
-     * applied), Failed (the policy was not applied), or InProgress (the policy is
-     * being applied now). </p>
+     * (the policy hasn't been enforced or applied yet), Finished (the policy was
+     * applied), Failed (the policy wasn't applied), or InProgress (the policy is being
+     * applied now). </p>
      */
     inline const Aws::String& GetPolicyStatus() const{ return m_policyStatus; }
 
     /**
      * <p>The status of the policy. Policies report the following statuses: Pending
-     * (the policy has not been enforced or applied yet), Finished (the policy was
-     * applied), Failed (the policy was not applied), or InProgress (the policy is
-     * being applied now). </p>
+     * (the policy hasn't been enforced or applied yet), Finished (the policy was
+     * applied), Failed (the policy wasn't applied), or InProgress (the policy is being
+     * applied now). </p>
      */
     inline bool PolicyStatusHasBeenSet() const { return m_policyStatusHasBeenSet; }
 
     /**
      * <p>The status of the policy. Policies report the following statuses: Pending
-     * (the policy has not been enforced or applied yet), Finished (the policy was
-     * applied), Failed (the policy was not applied), or InProgress (the policy is
-     * being applied now). </p>
+     * (the policy hasn't been enforced or applied yet), Finished (the policy was
+     * applied), Failed (the policy wasn't applied), or InProgress (the policy is being
+     * applied now). </p>
      */
     inline void SetPolicyStatus(const Aws::String& value) { m_policyStatusHasBeenSet = true; m_policyStatus = value; }
 
     /**
      * <p>The status of the policy. Policies report the following statuses: Pending
-     * (the policy has not been enforced or applied yet), Finished (the policy was
-     * applied), Failed (the policy was not applied), or InProgress (the policy is
-     * being applied now). </p>
+     * (the policy hasn't been enforced or applied yet), Finished (the policy was
+     * applied), Failed (the policy wasn't applied), or InProgress (the policy is being
+     * applied now). </p>
      */
     inline void SetPolicyStatus(Aws::String&& value) { m_policyStatusHasBeenSet = true; m_policyStatus = std::move(value); }
 
     /**
      * <p>The status of the policy. Policies report the following statuses: Pending
-     * (the policy has not been enforced or applied yet), Finished (the policy was
-     * applied), Failed (the policy was not applied), or InProgress (the policy is
-     * being applied now). </p>
+     * (the policy hasn't been enforced or applied yet), Finished (the policy was
+     * applied), Failed (the policy wasn't applied), or InProgress (the policy is being
+     * applied now). </p>
      */
     inline void SetPolicyStatus(const char* value) { m_policyStatusHasBeenSet = true; m_policyStatus.assign(value); }
 
     /**
      * <p>The status of the policy. Policies report the following statuses: Pending
-     * (the policy has not been enforced or applied yet), Finished (the policy was
-     * applied), Failed (the policy was not applied), or InProgress (the policy is
-     * being applied now). </p>
+     * (the policy hasn't been enforced or applied yet), Finished (the policy was
+     * applied), Failed (the policy wasn't applied), or InProgress (the policy is being
+     * applied now). </p>
      */
     inline ParameterInlinePolicy& WithPolicyStatus(const Aws::String& value) { SetPolicyStatus(value); return *this;}
 
     /**
      * <p>The status of the policy. Policies report the following statuses: Pending
-     * (the policy has not been enforced or applied yet), Finished (the policy was
-     * applied), Failed (the policy was not applied), or InProgress (the policy is
-     * being applied now). </p>
+     * (the policy hasn't been enforced or applied yet), Finished (the policy was
+     * applied), Failed (the policy wasn't applied), or InProgress (the policy is being
+     * applied now). </p>
      */
     inline ParameterInlinePolicy& WithPolicyStatus(Aws::String&& value) { SetPolicyStatus(std::move(value)); return *this;}
 
     /**
      * <p>The status of the policy. Policies report the following statuses: Pending
-     * (the policy has not been enforced or applied yet), Finished (the policy was
-     * applied), Failed (the policy was not applied), or InProgress (the policy is
-     * being applied now). </p>
+     * (the policy hasn't been enforced or applied yet), Finished (the policy was
+     * applied), Failed (the policy wasn't applied), or InProgress (the policy is being
+     * applied now). </p>
      */
     inline ParameterInlinePolicy& WithPolicyStatus(const char* value) { SetPolicyStatus(value); return *this;}
 

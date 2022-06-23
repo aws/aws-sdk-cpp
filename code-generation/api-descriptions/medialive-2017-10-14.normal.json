@@ -320,6 +320,56 @@
       ],
       "documentation": "Cancel an input device transfer that you have requested."
     },
+    "ClaimDevice": {
+      "name": "ClaimDevice",
+      "http": {
+        "method": "POST",
+        "requestUri": "/prod/claimDevice",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ClaimDeviceRequest"
+      },
+      "output": {
+        "shape": "ClaimDeviceResponse",
+        "documentation": "Your request to claim this device has succeeded."
+      },
+      "errors": [
+        {
+          "shape": "BadRequestException",
+          "documentation": "This request was invalid."
+        },
+        {
+          "shape": "UnprocessableEntityException",
+          "documentation": "Claim operation failed, device id could not be validated."
+        },
+        {
+          "shape": "InternalServerErrorException",
+          "documentation": "Unexpected internal service error."
+        },
+        {
+          "shape": "ForbiddenException",
+          "documentation": "You don't have the IAM access permissions to claim this device. You must have permission for the WriteClaim operation."
+        },
+        {
+          "shape": "BadGatewayException",
+          "documentation": "Bad gateway error."
+        },
+        {
+          "shape": "NotFoundException",
+          "documentation": "Device not found or you called an unsupported region."
+        },
+        {
+          "shape": "GatewayTimeoutException",
+          "documentation": "Bad gateway error. Try again."
+        },
+        {
+          "shape": "TooManyRequestsException",
+          "documentation": "Request limit exceeded. Your have sent this request too many times. There might be a bug in your API client."
+        }
+      ],
+      "documentation": "Send a request to claim an AWS Elemental device that you have purchased from a third-party vendor. After the request succeeds, you will own the device."
+    },
     "CreateChannel": {
       "name": "CreateChannel",
       "http": {
@@ -553,6 +603,48 @@
         }
       ],
       "documentation": "Create a new program in the multiplex."
+    },
+    "CreatePartnerInput": {
+      "name": "CreatePartnerInput",
+      "http": {
+        "method": "POST",
+        "requestUri": "/prod/inputs/{inputId}/partners",
+        "responseCode": 201
+      },
+      "input": {
+        "shape": "CreatePartnerInputRequest"
+      },
+      "output": {
+        "shape": "CreatePartnerInputResponse",
+        "documentation": "Successfully created the input."
+      },
+      "errors": [
+        {
+          "shape": "BadRequestException",
+          "documentation": "This request was invalid"
+        },
+        {
+          "shape": "InternalServerErrorException",
+          "documentation": "Internal Service Error"
+        },
+        {
+          "shape": "ForbiddenException",
+          "documentation": "Access was denied"
+        },
+        {
+          "shape": "BadGatewayException",
+          "documentation": "Bad Gateway Error"
+        },
+        {
+          "shape": "GatewayTimeoutException",
+          "documentation": "Gateway Timeout Error"
+        },
+        {
+          "shape": "TooManyRequestsException",
+          "documentation": "Limit exceeded"
+        }
+      ],
+      "documentation": "Create a partner input"
     },
     "CreateTags": {
       "name": "CreateTags",
@@ -1039,7 +1131,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
+          "documentation": "Gateway Timeout"
         },
         {
           "shape": "TooManyRequestsException",
@@ -1621,7 +1713,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
+          "documentation": "Gateway Timeout"
         },
         {
           "shape": "TooManyRequestsException",
@@ -2841,6 +2933,16 @@
       },
       "documentation": "Ancillary Source Settings"
     },
+    "ArchiveCdnSettings": {
+      "type": "structure",
+      "members": {
+        "ArchiveS3Settings": {
+          "shape": "ArchiveS3Settings",
+          "locationName": "archiveS3Settings"
+        }
+      },
+      "documentation": "Archive Cdn Settings"
+    },
     "ArchiveContainerSettings": {
       "type": "structure",
       "members": {
@@ -2858,6 +2960,11 @@
     "ArchiveGroupSettings": {
       "type": "structure",
       "members": {
+        "ArchiveCdnSettings": {
+          "shape": "ArchiveCdnSettings",
+          "locationName": "archiveCdnSettings",
+          "documentation": "Parameters that control interactions with the CDN."
+        },
         "Destination": {
           "shape": "OutputLocationRef",
           "locationName": "destination",
@@ -2897,6 +3004,25 @@
       "required": [
         "ContainerSettings"
       ]
+    },
+    "ArchiveS3LogUploads": {
+      "type": "string",
+      "documentation": "Archive S3 Log Uploads",
+      "enum": [
+        "DISABLED",
+        "ENABLED"
+      ]
+    },
+    "ArchiveS3Settings": {
+      "type": "structure",
+      "members": {
+        "CannedAcl": {
+          "shape": "S3CannedAcl",
+          "locationName": "cannedAcl",
+          "documentation": "Specify the canned ACL to apply to each S3 request. Defaults to none."
+        }
+      },
+      "documentation": "Archive S3 Settings"
     },
     "AribDestinationSettings": {
       "type": "structure",
@@ -2983,6 +3109,11 @@
           "locationName": "audioTypeControl",
           "documentation": "Determines how audio type is determined.\n  followInput: If the input contains an ISO 639 audioType, then that value is passed through to the output. If the input contains no ISO 639 audioType, the value in Audio Type is included in the output.\n  useConfigured: The value in Audio Type is included in the output.\nNote that this field and audioType are both ignored if inputType is broadcasterMixedAd."
         },
+        "AudioWatermarkingSettings": {
+          "shape": "AudioWatermarkSettings",
+          "locationName": "audioWatermarkingSettings",
+          "documentation": "Settings to configure one or more solutions that insert audio watermarks in the audio encode"
+        },
         "CodecSettings": {
           "shape": "AudioCodecSettings",
           "locationName": "codecSettings",
@@ -3034,6 +3165,26 @@
       "enum": [
         "FOLLOW_INPUT",
         "USE_CONFIGURED"
+      ]
+    },
+    "AudioHlsRenditionSelection": {
+      "type": "structure",
+      "members": {
+        "GroupId": {
+          "shape": "__stringMin1",
+          "locationName": "groupId",
+          "documentation": "Specifies the GROUP-ID in the #EXT-X-MEDIA tag of the target HLS audio rendition."
+        },
+        "Name": {
+          "shape": "__stringMin1",
+          "locationName": "name",
+          "documentation": "Specifies the NAME in the #EXT-X-MEDIA tag of the target HLS audio rendition."
+        }
+      },
+      "documentation": "Audio Hls Rendition Selection",
+      "required": [
+        "Name",
+        "GroupId"
       ]
     },
     "AudioLanguageSelection": {
@@ -3179,6 +3330,10 @@
     "AudioSelectorSettings": {
       "type": "structure",
       "members": {
+        "AudioHlsRenditionSelection": {
+          "shape": "AudioHlsRenditionSelection",
+          "locationName": "audioHlsRenditionSelection"
+        },
         "AudioLanguageSelection": {
           "shape": "AudioLanguageSelection",
           "locationName": "audioLanguageSelection"
@@ -3250,6 +3405,17 @@
         "UNDEFINED",
         "VISUAL_IMPAIRED_COMMENTARY"
       ]
+    },
+    "AudioWatermarkSettings": {
+      "type": "structure",
+      "members": {
+        "NielsenWatermarksSettings": {
+          "shape": "NielsenWatermarksSettings",
+          "locationName": "nielsenWatermarksSettings",
+          "documentation": "Settings to configure Nielsen Watermarks in the audio encode"
+        }
+      },
+      "documentation": "Audio Watermark Settings"
     },
     "AuthenticationScheme": {
       "type": "string",
@@ -4074,6 +4240,38 @@
         "CaptionChannel"
       ]
     },
+    "CaptionRectangle": {
+      "type": "structure",
+      "members": {
+        "Height": {
+          "shape": "__doubleMin0Max100",
+          "locationName": "height",
+          "documentation": "See the description in leftOffset.\nFor height, specify the entire height of the rectangle as a percentage of the underlying frame height. For example, \\\"80\\\" means the rectangle height is 80% of the underlying frame height. The topOffset and rectangleHeight must add up to 100% or less.\nThis field corresponds to tts:extent - Y in the TTML standard."
+        },
+        "LeftOffset": {
+          "shape": "__doubleMin0Max100",
+          "locationName": "leftOffset",
+          "documentation": "Applies only if you plan to convert these source captions to EBU-TT-D or TTML in an output. (Make sure to leave the default if you don't have either of these formats in the output.) You can define a display rectangle for the captions that is smaller than the underlying video frame. You define the rectangle by specifying the position of the left edge, top edge, bottom edge, and right edge of the rectangle, all within the underlying video frame. The units for the measurements are percentages.\nIf you specify a value for one of these fields, you must specify a value for all of them.\nFor leftOffset, specify the position of the left edge of the rectangle, as a percentage of the underlying frame width, and relative to the left edge of the frame. For example, \\\"10\\\" means the measurement is 10% of the underlying frame width. The rectangle left edge starts at that position from the left edge of the frame.\nThis field corresponds to tts:origin - X in the TTML standard."
+        },
+        "TopOffset": {
+          "shape": "__doubleMin0Max100",
+          "locationName": "topOffset",
+          "documentation": "See the description in leftOffset.\nFor topOffset, specify the position of the top edge of the rectangle, as a percentage of the underlying frame height, and relative to the top edge of the frame. For example, \\\"10\\\" means the measurement is 10% of the underlying frame height. The rectangle top edge starts at that position from the top edge of the frame.\nThis field corresponds to tts:origin - Y in the TTML standard."
+        },
+        "Width": {
+          "shape": "__doubleMin0Max100",
+          "locationName": "width",
+          "documentation": "See the description in leftOffset.\nFor width, specify the entire width of the rectangle as a percentage of the underlying frame width. For example, \\\"80\\\" means the rectangle width is 80% of the underlying frame width. The leftOffset and rectangleWidth must add up to 100% or less.\nThis field corresponds to tts:extent - X in the TTML standard."
+        }
+      },
+      "documentation": "Caption Rectangle",
+      "required": [
+        "TopOffset",
+        "Height",
+        "Width",
+        "LeftOffset"
+      ]
+    },
     "CaptionSelector": {
       "type": "structure",
       "members": {
@@ -4205,6 +4403,11 @@
           "locationName": "logLevel",
           "documentation": "The log level being written to CloudWatch Logs."
         },
+        "Maintenance": {
+          "shape": "MaintenanceStatus",
+          "locationName": "maintenance",
+          "documentation": "Maintenance settings for this channel."
+        },
         "Name": {
           "shape": "__string",
           "locationName": "name",
@@ -4233,6 +4436,11 @@
           "shape": "Tags",
           "locationName": "tags",
           "documentation": "A collection of key-value pairs."
+        },
+        "Vpc": {
+          "shape": "VpcOutputSettingsDescription",
+          "locationName": "vpc",
+          "documentation": "Settings for VPC output"
         }
       },
       "documentation": "Placeholder documentation for Channel"
@@ -4336,6 +4544,11 @@
           "locationName": "logLevel",
           "documentation": "The log level being written to CloudWatch Logs."
         },
+        "Maintenance": {
+          "shape": "MaintenanceStatus",
+          "locationName": "maintenance",
+          "documentation": "Maintenance settings for this channel."
+        },
         "Name": {
           "shape": "__string",
           "locationName": "name",
@@ -4359,9 +4572,31 @@
           "shape": "Tags",
           "locationName": "tags",
           "documentation": "A collection of key-value pairs."
+        },
+        "Vpc": {
+          "shape": "VpcOutputSettingsDescription",
+          "locationName": "vpc",
+          "documentation": "Settings for any VPC outputs."
         }
       },
       "documentation": "Placeholder documentation for ChannelSummary"
+    },
+    "ClaimDeviceRequest": {
+      "type": "structure",
+      "members": {
+        "Id": {
+          "shape": "__string",
+          "locationName": "id",
+          "documentation": "The id of the device you want to claim."
+        }
+      },
+      "documentation": "A request to claim an AWS Elemental device that you have purchased from a third-party vendor."
+    },
+    "ClaimDeviceResponse": {
+      "type": "structure",
+      "members": {
+      },
+      "documentation": "Placeholder documentation for ClaimDeviceResponse"
     },
     "ColorSpacePassthroughSettings": {
       "type": "structure",
@@ -4419,6 +4654,11 @@
           "locationName": "logLevel",
           "documentation": "The log level to write to CloudWatch Logs."
         },
+        "Maintenance": {
+          "shape": "MaintenanceCreateSettings",
+          "locationName": "maintenance",
+          "documentation": "Maintenance settings for this channel."
+        },
         "Name": {
           "shape": "__string",
           "locationName": "name",
@@ -4445,6 +4685,11 @@
           "shape": "Tags",
           "locationName": "tags",
           "documentation": "A collection of key-value pairs."
+        },
+        "Vpc": {
+          "shape": "VpcOutputSettings",
+          "locationName": "vpc",
+          "documentation": "Settings for the VPC outputs"
         }
       },
       "documentation": "Placeholder documentation for CreateChannel"
@@ -4485,6 +4730,11 @@
           "locationName": "logLevel",
           "documentation": "The log level to write to CloudWatch Logs."
         },
+        "Maintenance": {
+          "shape": "MaintenanceCreateSettings",
+          "locationName": "maintenance",
+          "documentation": "Maintenance settings for this channel."
+        },
         "Name": {
           "shape": "__string",
           "locationName": "name",
@@ -4511,6 +4761,11 @@
           "shape": "Tags",
           "locationName": "tags",
           "documentation": "A collection of key-value pairs."
+        },
+        "Vpc": {
+          "shape": "VpcOutputSettings",
+          "locationName": "vpc",
+          "documentation": "Settings for the VPC outputs"
         }
       },
       "documentation": "A request to create a channel"
@@ -4892,6 +5147,69 @@
       },
       "documentation": "Placeholder documentation for CreateMultiplexResultModel"
     },
+    "CreatePartnerInput": {
+      "type": "structure",
+      "members": {
+        "RequestId": {
+          "shape": "__string",
+          "locationName": "requestId",
+          "documentation": "Unique identifier of the request to ensure the request is handled\nexactly once in case of retries.\n",
+          "idempotencyToken": true
+        },
+        "Tags": {
+          "shape": "Tags",
+          "locationName": "tags",
+          "documentation": "A collection of key-value pairs."
+        }
+      },
+      "documentation": "Placeholder documentation for CreatePartnerInput"
+    },
+    "CreatePartnerInputRequest": {
+      "type": "structure",
+      "members": {
+        "InputId": {
+          "shape": "__string",
+          "location": "uri",
+          "locationName": "inputId",
+          "documentation": "Unique ID of the input."
+        },
+        "RequestId": {
+          "shape": "__string",
+          "locationName": "requestId",
+          "documentation": "Unique identifier of the request to ensure the request is handled\nexactly once in case of retries.\n",
+          "idempotencyToken": true
+        },
+        "Tags": {
+          "shape": "Tags",
+          "locationName": "tags",
+          "documentation": "A collection of key-value pairs."
+        }
+      },
+      "documentation": "A request to create a partner input",
+      "required": [
+        "InputId"
+      ]
+    },
+    "CreatePartnerInputResponse": {
+      "type": "structure",
+      "members": {
+        "Input": {
+          "shape": "Input",
+          "locationName": "input"
+        }
+      },
+      "documentation": "Placeholder documentation for CreatePartnerInputResponse"
+    },
+    "CreatePartnerInputResultModel": {
+      "type": "structure",
+      "members": {
+        "Input": {
+          "shape": "Input",
+          "locationName": "input"
+        }
+      },
+      "documentation": "Placeholder documentation for CreatePartnerInputResultModel"
+    },
     "CreateTagsRequest": {
       "type": "structure",
       "members": {
@@ -4977,6 +5295,11 @@
           "locationName": "logLevel",
           "documentation": "The log level being written to CloudWatch Logs."
         },
+        "Maintenance": {
+          "shape": "MaintenanceStatus",
+          "locationName": "maintenance",
+          "documentation": "Maintenance settings for this channel."
+        },
         "Name": {
           "shape": "__string",
           "locationName": "name",
@@ -5005,6 +5328,11 @@
           "shape": "Tags",
           "locationName": "tags",
           "documentation": "A collection of key-value pairs."
+        },
+        "Vpc": {
+          "shape": "VpcOutputSettingsDescription",
+          "locationName": "vpc",
+          "documentation": "Settings for VPC output"
         }
       },
       "documentation": "Placeholder documentation for DeleteChannelResponse"
@@ -5395,6 +5723,11 @@
           "locationName": "logLevel",
           "documentation": "The log level being written to CloudWatch Logs."
         },
+        "Maintenance": {
+          "shape": "MaintenanceStatus",
+          "locationName": "maintenance",
+          "documentation": "Maintenance settings for this channel."
+        },
         "Name": {
           "shape": "__string",
           "locationName": "name",
@@ -5423,6 +5756,11 @@
           "shape": "Tags",
           "locationName": "tags",
           "documentation": "A collection of key-value pairs."
+        },
+        "Vpc": {
+          "shape": "VpcOutputSettingsDescription",
+          "locationName": "vpc",
+          "documentation": "Settings for VPC output"
         }
       },
       "documentation": "Placeholder documentation for DescribeChannelResponse"
@@ -5614,10 +5952,15 @@
           "locationName": "inputDevices",
           "documentation": "Settings for the input devices."
         },
+        "InputPartnerIds": {
+          "shape": "__listOf__string",
+          "locationName": "inputPartnerIds",
+          "documentation": "A list of IDs for all Inputs which are partners of this one."
+        },
         "InputSourceType": {
           "shape": "InputSourceType",
           "locationName": "inputSourceType",
-          "documentation": "Certain pull input sources can be dynamic, meaning that they can have their URL's dynamically changes\nduring input switch actions. Presently, this functionality only works with MP4_FILE inputs.\n"
+          "documentation": "Certain pull input sources can be dynamic, meaning that they can have their URL's dynamically changes\nduring input switch actions. Presently, this functionality only works with MP4_FILE and TS_FILE inputs.\n"
         },
         "MediaConnectFlows": {
           "shape": "__listOfMediaConnectFlow",
@@ -6290,9 +6633,26 @@
         "SCALED"
       ]
     },
+    "DvbSubOcrLanguage": {
+      "type": "string",
+      "documentation": "Dvb Sub Ocr Language",
+      "enum": [
+        "DEU",
+        "ENG",
+        "FRA",
+        "NLD",
+        "POR",
+        "SPA"
+      ]
+    },
     "DvbSubSourceSettings": {
       "type": "structure",
       "members": {
+        "OcrLanguage": {
+          "shape": "DvbSubOcrLanguage",
+          "locationName": "ocrLanguage",
+          "documentation": "If you will configure a WebVTT caption description that references this caption selector, use this field to\nprovide the language to consider when translating the image-based source to text."
+        },
         "Pid": {
           "shape": "__integerMin1",
           "locationName": "pid",
@@ -6549,6 +6909,11 @@
     "EbuTtDDestinationSettings": {
       "type": "structure",
       "members": {
+        "CopyrightHolder": {
+          "shape": "__stringMax1000",
+          "locationName": "copyrightHolder",
+          "documentation": "Complete this field if you want to include the name of the copyright holder in the copyright tag in the captions metadata."
+        },
         "FillLineGap": {
           "shape": "EbuTtDFillLineGapControl",
           "locationName": "fillLineGap",
@@ -6679,6 +7044,11 @@
           "shape": "GlobalConfiguration",
           "locationName": "globalConfiguration",
           "documentation": "Configuration settings that apply to the event as a whole."
+        },
+        "MotionGraphicsConfiguration": {
+          "shape": "MotionGraphicsConfiguration",
+          "locationName": "motionGraphicsConfiguration",
+          "documentation": "Settings for motion graphics."
         },
         "NielsenConfiguration": {
           "shape": "NielsenConfiguration",
@@ -6897,6 +7267,16 @@
       },
       "documentation": "Placeholder documentation for ForbiddenException"
     },
+    "FrameCaptureCdnSettings": {
+      "type": "structure",
+      "members": {
+        "FrameCaptureS3Settings": {
+          "shape": "FrameCaptureS3Settings",
+          "locationName": "frameCaptureS3Settings"
+        }
+      },
+      "documentation": "Frame Capture Cdn Settings"
+    },
     "FrameCaptureGroupSettings": {
       "type": "structure",
       "members": {
@@ -6904,12 +7284,23 @@
           "shape": "OutputLocationRef",
           "locationName": "destination",
           "documentation": "The destination for the frame capture files. Either the URI for an Amazon S3 bucket and object, plus a file name prefix (for example, s3ssl://sportsDelivery/highlights/20180820/curling-) or the URI for a MediaStore container, plus a file name prefix (for example, mediastoressl://sportsDelivery/20180820/curling-). The final file names consist of the prefix from the destination field (for example, \"curling-\") + name modifier + the counter (5 digits, starting from 00001) + extension (which is always .jpg).  For example, curling-low.00001.jpg"
+        },
+        "FrameCaptureCdnSettings": {
+          "shape": "FrameCaptureCdnSettings",
+          "locationName": "frameCaptureCdnSettings",
+          "documentation": "Parameters that control interactions with the CDN."
         }
       },
       "documentation": "Frame Capture Group Settings",
       "required": [
         "Destination"
       ]
+    },
+    "FrameCaptureHlsSettings": {
+      "type": "structure",
+      "members": {
+      },
+      "documentation": "Frame Capture Hls Settings"
     },
     "FrameCaptureIntervalUnit": {
       "type": "string",
@@ -6930,6 +7321,25 @@
       },
       "documentation": "Frame Capture Output Settings"
     },
+    "FrameCaptureS3LogUploads": {
+      "type": "string",
+      "documentation": "Frame Capture S3 Log Uploads",
+      "enum": [
+        "DISABLED",
+        "ENABLED"
+      ]
+    },
+    "FrameCaptureS3Settings": {
+      "type": "structure",
+      "members": {
+        "CannedAcl": {
+          "shape": "S3CannedAcl",
+          "locationName": "cannedAcl",
+          "documentation": "Specify the canned ACL to apply to each S3 request. Defaults to none."
+        }
+      },
+      "documentation": "Frame Capture S3 Settings"
+    },
     "FrameCaptureSettings": {
       "type": "structure",
       "members": {
@@ -6944,10 +7354,7 @@
           "documentation": "Unit for the frame capture interval."
         }
       },
-      "documentation": "Frame Capture Settings",
-      "required": [
-        "CaptureInterval"
-      ]
+      "documentation": "Frame Capture Settings"
     },
     "GatewayTimeoutException": {
       "type": "structure",
@@ -7035,6 +7442,7 @@
       "type": "string",
       "documentation": "H264 Adaptive Quantization",
       "enum": [
+        "AUTO",
         "HIGH",
         "HIGHER",
         "LOW",
@@ -7219,7 +7627,7 @@
         "AdaptiveQuantization": {
           "shape": "H264AdaptiveQuantization",
           "locationName": "adaptiveQuantization",
-          "documentation": "Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality."
+          "documentation": "Enables or disables adaptive quantization, which is a technique MediaLive can apply to video on a frame-by-frame basis to produce more compression without losing quality. There are three types of adaptive quantization: flicker, spatial, and temporal. Set the field in one of these ways: Set to Auto. Recommended. For each type of AQ, MediaLive will determine if AQ is needed, and if so, the appropriate strength. Set a strength (a value other than Auto or Disable). This strength will apply to any of the AQ fields that you choose to enable. Set to Disabled to disable all types of adaptive quantization."
         },
         "AfdSignaling": {
           "shape": "AfdSignaling",
@@ -7269,7 +7677,7 @@
         "FlickerAq": {
           "shape": "H264FlickerAq",
           "locationName": "flickerAq",
-          "documentation": "If set to enabled, adjust quantization within each frame to reduce flicker or 'pop' on I-frames."
+          "documentation": "Flicker AQ makes adjustments within each frame to reduce flicker or 'pop' on I-frames. The value to enter in this field depends on the value in the Adaptive quantization field: If you have set the Adaptive quantization field to Auto, MediaLive ignores any value in this field. MediaLive will determine if flicker AQ is appropriate and will apply the appropriate strength. If you have set the Adaptive quantization field to a strength, you can set this field to Enabled or Disabled. Enabled: MediaLive will apply flicker AQ using the specified strength. Disabled: MediaLive won't apply flicker AQ. If you have set the Adaptive quantization to Disabled, MediaLive ignores any value in this field and doesn't apply flicker AQ."
         },
         "ForceFieldPictures": {
           "shape": "H264ForceFieldPictures",
@@ -7369,7 +7777,7 @@
         "QvbrQualityLevel": {
           "shape": "__integerMin1Max10",
           "locationName": "qvbrQualityLevel",
-          "documentation": "Controls the target quality for the video encode. Applies only when the rate control mode is QVBR. Set values for the QVBR quality level field and Max bitrate field that suit your most important viewing devices. Recommended values are:\n- Primary screen: Quality level: 8 to 10. Max bitrate: 4M\n- PC or tablet: Quality level: 7. Max bitrate: 1.5M to 3M\n- Smartphone: Quality level: 6. Max bitrate: 1M to 1.5M"
+          "documentation": "Controls the target quality for the video encode. Applies only when the rate control mode is QVBR. You can set a target quality or you can let MediaLive determine the best quality. To set a target quality, enter values in the QVBR quality level field and the Max bitrate field. Enter values that suit your most important viewing devices. Recommended values are:\n- Primary screen: Quality level: 8 to 10. Max bitrate: 4M\n- PC or tablet: Quality level: 7. Max bitrate: 1.5M to 3M\n- Smartphone: Quality level: 6. Max bitrate: 1M to 1.5M\nTo let MediaLive decide, leave the QVBR quality level field empty, and in Max bitrate enter the maximum rate you want in the video. For more information, see the section called \"Video - rate control mode\" in the MediaLive user guide"
         },
         "RateControlMode": {
           "shape": "H264RateControlMode",
@@ -7394,12 +7802,12 @@
         "Softness": {
           "shape": "__integerMin0Max128",
           "locationName": "softness",
-          "documentation": "Softness. Selects quantizer matrix, larger values reduce high-frequency content in the encoded image."
+          "documentation": "Softness. Selects quantizer matrix, larger values reduce high-frequency content in the encoded image.  If not set to zero, must be greater than 15."
         },
         "SpatialAq": {
           "shape": "H264SpatialAq",
           "locationName": "spatialAq",
-          "documentation": "If set to enabled, adjust quantization within each frame based on spatial variation of content complexity."
+          "documentation": "Spatial AQ makes adjustments within each frame based on spatial variation of content complexity. The value to enter in this field depends on the value in the Adaptive quantization field: If you have set the Adaptive quantization field to Auto, MediaLive ignores any value in this field. MediaLive will determine if spatial AQ is appropriate and will apply the appropriate strength. If you have set the Adaptive quantization field to a strength, you can set this field to Enabled or Disabled. Enabled: MediaLive will apply spatial AQ using the specified strength. Disabled: MediaLive won't apply spatial AQ. If you have set the Adaptive quantization to Disabled, MediaLive ignores any value in this field and doesn't apply spatial AQ."
         },
         "SubgopLength": {
           "shape": "H264SubGopLength",
@@ -7414,7 +7822,7 @@
         "TemporalAq": {
           "shape": "H264TemporalAq",
           "locationName": "temporalAq",
-          "documentation": "If set to enabled, adjust quantization within each frame based on temporal variation of content complexity."
+          "documentation": "Temporal makes adjustments within each frame based on temporal variation of content complexity. The value to enter in this field depends on the value in the Adaptive quantization field: If you have set the Adaptive quantization field to Auto, MediaLive ignores any value in this field. MediaLive will determine if temporal AQ is appropriate and will apply the appropriate strength. If you have set the Adaptive quantization field to a strength, you can set this field to Enabled or Disabled. Enabled: MediaLive will apply temporal AQ using the specified strength. Disabled: MediaLive won't apply temporal AQ. If you have set the Adaptive quantization to Disabled, MediaLive ignores any value in this field and doesn't apply temporal AQ."
         },
         "TimecodeInsertion": {
           "shape": "H264TimecodeInsertionBehavior",
@@ -7468,6 +7876,7 @@
       "type": "string",
       "documentation": "H265 Adaptive Quantization",
       "enum": [
+        "AUTO",
         "HIGH",
         "HIGHER",
         "LOW",
@@ -7897,6 +8306,10 @@
           "shape": "HlsMediaStoreSettings",
           "locationName": "hlsMediaStoreSettings"
         },
+        "HlsS3Settings": {
+          "shape": "HlsS3Settings",
+          "locationName": "hlsS3Settings"
+        },
         "HlsWebdavSettings": {
           "shape": "HlsWebdavSettings",
           "locationName": "hlsWebdavSettings"
@@ -8105,7 +8518,12 @@
         "ProgramDateTime": {
           "shape": "HlsProgramDateTime",
           "locationName": "programDateTime",
-          "documentation": "Includes or excludes EXT-X-PROGRAM-DATE-TIME tag in .m3u8 manifest files. The value is calculated as follows: either the program date and time are initialized using the input timecode source, or the time is initialized using the input timecode source and the date is initialized using the timestampOffset."
+          "documentation": "Includes or excludes EXT-X-PROGRAM-DATE-TIME tag in .m3u8 manifest files. The value is calculated using the program date time clock."
+        },
+        "ProgramDateTimeClock": {
+          "shape": "HlsProgramDateTimeClock",
+          "locationName": "programDateTimeClock",
+          "documentation": "Specifies the algorithm used to drive the HLS EXT-X-PROGRAM-DATE-TIME clock. Options include:\n\nINITIALIZE_FROM_OUTPUT_TIMECODE: The PDT clock is initialized as a function of the first output timecode, then incremented by the EXTINF duration of each encoded segment.\n\nSYSTEM_CLOCK: The PDT clock is initialized as a function of the UTC wall clock, then incremented by the EXTINF duration of each encoded segment. If the PDT clock diverges from the wall clock by more than 500ms, it is resynchronized to the wall clock."
         },
         "ProgramDateTimePeriod": {
           "shape": "__integerMin0Max3600",
@@ -8223,6 +8641,11 @@
           "shape": "__integerMin0",
           "locationName": "retryInterval",
           "documentation": "The number of seconds between retries when an attempt to read a manifest or segment fails."
+        },
+        "Scte35Source": {
+          "shape": "HlsScte35SourceType",
+          "locationName": "scte35Source",
+          "documentation": "Identifies the source for the SCTE-35 messages that MediaLive will ingest. Messages can be ingested from the content segments (in the stream) or from tags in the playlist (the HLS manifest). MediaLive ignores SCTE-35 information in the source that is not selected."
         }
       },
       "documentation": "Hls Input Settings"
@@ -8351,12 +8774,47 @@
         "INCLUDE"
       ]
     },
+    "HlsProgramDateTimeClock": {
+      "type": "string",
+      "documentation": "Hls Program Date Time Clock",
+      "enum": [
+        "INITIALIZE_FROM_OUTPUT_TIMECODE",
+        "SYSTEM_CLOCK"
+      ]
+    },
     "HlsRedundantManifest": {
       "type": "string",
       "documentation": "Hls Redundant Manifest",
       "enum": [
         "DISABLED",
         "ENABLED"
+      ]
+    },
+    "HlsS3LogUploads": {
+      "type": "string",
+      "documentation": "Hls S3 Log Uploads",
+      "enum": [
+        "DISABLED",
+        "ENABLED"
+      ]
+    },
+    "HlsS3Settings": {
+      "type": "structure",
+      "members": {
+        "CannedAcl": {
+          "shape": "S3CannedAcl",
+          "locationName": "cannedAcl",
+          "documentation": "Specify the canned ACL to apply to each S3 request. Defaults to none."
+        }
+      },
+      "documentation": "Hls S3 Settings"
+    },
+    "HlsScte35SourceType": {
+      "type": "string",
+      "documentation": "Hls Scte35 Source Type",
+      "enum": [
+        "MANIFEST",
+        "SEGMENTS"
       ]
     },
     "HlsSegmentationMode": {
@@ -8377,6 +8835,10 @@
         "Fmp4HlsSettings": {
           "shape": "Fmp4HlsSettings",
           "locationName": "fmp4HlsSettings"
+        },
+        "FrameCaptureHlsSettings": {
+          "shape": "FrameCaptureHlsSettings",
+          "locationName": "frameCaptureHlsSettings"
         },
         "StandardHlsSettings": {
           "shape": "StandardHlsSettings",
@@ -8463,6 +8925,12 @@
       },
       "documentation": "Hls Webdav Settings"
     },
+    "HtmlMotionGraphicsSettings": {
+      "type": "structure",
+      "members": {
+      },
+      "documentation": "Html Motion Graphics Settings"
+    },
     "IFrameOnlyPlaylistType": {
       "type": "string",
       "documentation": "When set to \"standard\", an I-Frame only playlist will be written out for each video output in the output group. This I-Frame only playlist will contain byte range offsets pointing to the I-frame(s) in each segment.",
@@ -8510,10 +8978,15 @@
           "locationName": "inputDevices",
           "documentation": "Settings for the input devices."
         },
+        "InputPartnerIds": {
+          "shape": "__listOf__string",
+          "locationName": "inputPartnerIds",
+          "documentation": "A list of IDs for all Inputs which are partners of this one."
+        },
         "InputSourceType": {
           "shape": "InputSourceType",
           "locationName": "inputSourceType",
-          "documentation": "Certain pull input sources can be dynamic, meaning that they can have their URL's dynamically changes\nduring input switch actions. Presently, this functionality only works with MP4_FILE inputs.\n"
+          "documentation": "Certain pull input sources can be dynamic, meaning that they can have their URL's dynamically changes\nduring input switch actions. Presently, this functionality only works with MP4_FILE and TS_FILE inputs.\n"
         },
         "MediaConnectFlows": {
           "shape": "__listOfMediaConnectFlow",
@@ -9347,6 +9820,11 @@
           "locationName": "networkInputSettings",
           "documentation": "Input settings."
         },
+        "Scte35Pid": {
+          "shape": "__integerMin32Max8191",
+          "locationName": "scte35Pid",
+          "documentation": "PID from which to read SCTE-35 messages. If left undefined, EML will select the first SCTE-35 PID found in the input."
+        },
         "Smpte2038DataPreference": {
           "shape": "Smpte2038DataPreference",
           "locationName": "smpte2038DataPreference",
@@ -9417,7 +9895,7 @@
     },
     "InputSourceType": {
       "type": "string",
-      "documentation": "There are two types of input sources, static and dynamic. If an input source is dynamic you can\nchange the source url of the input dynamically using an input switch action. However, the only input type\nto support a dynamic url at this time is MP4_FILE. By default all input sources are static.\n",
+      "documentation": "There are two types of input sources, static and dynamic. If an input source is dynamic you can\nchange the source url of the input dynamically using an input switch action. Currently, two input types\nsupport a dynamic url at this time, MP4_FILE and TS_FILE. By default all input sources are static.\n",
       "enum": [
         "STATIC",
         "DYNAMIC"
@@ -9489,6 +9967,7 @@
     },
     "InputType": {
       "type": "string",
+      "documentation": "The different types of inputs that AWS Elemental MediaLive supports.",
       "enum": [
         "UDP_PUSH",
         "RTP_PUSH",
@@ -9498,9 +9977,9 @@
         "MP4_FILE",
         "MEDIACONNECT",
         "INPUT_DEVICE",
-        "AWS_CDI"
-      ],
-      "documentation": "Placeholder documentation for InputType"
+        "AWS_CDI",
+        "TS_FILE"
+      ]
     },
     "InputVpcRequest": {
       "type": "structure",
@@ -10711,6 +11190,82 @@
         "PASSTHROUGH"
       ]
     },
+    "MaintenanceCreateSettings": {
+      "type": "structure",
+      "members": {
+        "MaintenanceDay": {
+          "shape": "MaintenanceDay",
+          "locationName": "maintenanceDay",
+          "documentation": "Choose one day of the week for maintenance. The chosen day is used for all future maintenance windows."
+        },
+        "MaintenanceStartTime": {
+          "shape": "__stringPattern010920300",
+          "locationName": "maintenanceStartTime",
+          "documentation": "Choose the hour that maintenance will start. The chosen time is used for all future maintenance windows."
+        }
+      },
+      "documentation": "Placeholder documentation for MaintenanceCreateSettings"
+    },
+    "MaintenanceDay": {
+      "type": "string",
+      "documentation": "The currently selected maintenance day.",
+      "enum": [
+        "MONDAY",
+        "TUESDAY",
+        "WEDNESDAY",
+        "THURSDAY",
+        "FRIDAY",
+        "SATURDAY",
+        "SUNDAY"
+      ]
+    },
+    "MaintenanceStatus": {
+      "type": "structure",
+      "members": {
+        "MaintenanceDay": {
+          "shape": "MaintenanceDay",
+          "locationName": "maintenanceDay",
+          "documentation": "The currently selected maintenance day."
+        },
+        "MaintenanceDeadline": {
+          "shape": "__string",
+          "locationName": "maintenanceDeadline",
+          "documentation": "Maintenance is required by the displayed date and time. Date and time is in ISO."
+        },
+        "MaintenanceScheduledDate": {
+          "shape": "__string",
+          "locationName": "maintenanceScheduledDate",
+          "documentation": "The currently scheduled maintenance date and time. Date and time is in ISO."
+        },
+        "MaintenanceStartTime": {
+          "shape": "__string",
+          "locationName": "maintenanceStartTime",
+          "documentation": "The currently selected maintenance start time. Time is in UTC."
+        }
+      },
+      "documentation": "Placeholder documentation for MaintenanceStatus"
+    },
+    "MaintenanceUpdateSettings": {
+      "type": "structure",
+      "members": {
+        "MaintenanceDay": {
+          "shape": "MaintenanceDay",
+          "locationName": "maintenanceDay",
+          "documentation": "Choose one day of the week for maintenance. The chosen day is used for all future maintenance windows."
+        },
+        "MaintenanceScheduledDate": {
+          "shape": "__string",
+          "locationName": "maintenanceScheduledDate",
+          "documentation": "Choose a specific date for maintenance to occur. The chosen date is used for the next maintenance window only."
+        },
+        "MaintenanceStartTime": {
+          "shape": "__stringPattern010920300",
+          "locationName": "maintenanceStartTime",
+          "documentation": "Choose the hour that maintenance will start. The chosen time is used for all future maintenance windows."
+        }
+      },
+      "documentation": "Placeholder documentation for MaintenanceUpdateSettings"
+    },
     "MaxResults": {
       "type": "integer",
       "min": 1,
@@ -10769,6 +11324,74 @@
       "members": {
       },
       "documentation": "Media Package Output Settings"
+    },
+    "MotionGraphicsActivateScheduleActionSettings": {
+      "type": "structure",
+      "members": {
+        "Duration": {
+          "shape": "__longMin0Max86400000",
+          "locationName": "duration",
+          "documentation": "Duration (in milliseconds) that motion graphics should render on to the video stream. Leaving out this property or setting to 0 will result in rendering continuing until a deactivate action is processed."
+        },
+        "PasswordParam": {
+          "shape": "__string",
+          "locationName": "passwordParam",
+          "documentation": "Key used to extract the password from EC2 Parameter store"
+        },
+        "Url": {
+          "shape": "__string",
+          "locationName": "url",
+          "documentation": "URI of the HTML5 content to be rendered into the live stream."
+        },
+        "Username": {
+          "shape": "__string",
+          "locationName": "username",
+          "documentation": "Documentation update needed"
+        }
+      },
+      "documentation": "Settings to specify the rendering of motion graphics into the video stream."
+    },
+    "MotionGraphicsConfiguration": {
+      "type": "structure",
+      "members": {
+        "MotionGraphicsInsertion": {
+          "shape": "MotionGraphicsInsertion",
+          "locationName": "motionGraphicsInsertion"
+        },
+        "MotionGraphicsSettings": {
+          "shape": "MotionGraphicsSettings",
+          "locationName": "motionGraphicsSettings",
+          "documentation": "Motion Graphics Settings"
+        }
+      },
+      "documentation": "Motion Graphics Configuration",
+      "required": [
+        "MotionGraphicsSettings"
+      ]
+    },
+    "MotionGraphicsDeactivateScheduleActionSettings": {
+      "type": "structure",
+      "members": {
+      },
+      "documentation": "Settings to specify the ending of rendering motion graphics into the video stream."
+    },
+    "MotionGraphicsInsertion": {
+      "type": "string",
+      "documentation": "Motion Graphics Insertion",
+      "enum": [
+        "DISABLED",
+        "ENABLED"
+      ]
+    },
+    "MotionGraphicsSettings": {
+      "type": "structure",
+      "members": {
+        "HtmlMotionGraphicsSettings": {
+          "shape": "HtmlMotionGraphicsSettings",
+          "locationName": "htmlMotionGraphicsSettings"
+        }
+      },
+      "documentation": "Motion Graphics Settings"
     },
     "Mp2CodingMode": {
       "type": "string",
@@ -11562,6 +12185,32 @@
       },
       "documentation": "Network source to transcode. Must be accessible to the Elemental Live node that is running the live event through a network connection."
     },
+    "NielsenCBET": {
+      "type": "structure",
+      "members": {
+        "CbetCheckDigitString": {
+          "shape": "__stringMin2Max2",
+          "locationName": "cbetCheckDigitString",
+          "documentation": "Enter the CBET check digits to use in the watermark."
+        },
+        "CbetStepaside": {
+          "shape": "NielsenWatermarksCbetStepaside",
+          "locationName": "cbetStepaside",
+          "documentation": "Determines the method of CBET insertion mode when prior encoding is detected on the same layer."
+        },
+        "Csid": {
+          "shape": "__stringMin1Max7",
+          "locationName": "csid",
+          "documentation": "Enter the CBET Source ID (CSID) to use in the watermark"
+        }
+      },
+      "documentation": "Nielsen CBET",
+      "required": [
+        "CbetCheckDigitString",
+        "CbetStepaside",
+        "Csid"
+      ]
+    },
     "NielsenConfiguration": {
       "type": "structure",
       "members": {
@@ -11578,6 +12227,26 @@
       },
       "documentation": "Nielsen Configuration"
     },
+    "NielsenNaesIiNw": {
+      "type": "structure",
+      "members": {
+        "CheckDigitString": {
+          "shape": "__stringMin2Max2",
+          "locationName": "checkDigitString",
+          "documentation": "Enter the check digit string for the watermark"
+        },
+        "Sid": {
+          "shape": "__doubleMin1Max65535",
+          "locationName": "sid",
+          "documentation": "Enter the Nielsen Source ID (SID) to include in the watermark"
+        }
+      },
+      "documentation": "Nielsen Naes Ii Nw",
+      "required": [
+        "CheckDigitString",
+        "Sid"
+      ]
+    },
     "NielsenPcmToId3TaggingState": {
       "type": "string",
       "documentation": "State of Nielsen PCM to ID3 tagging",
@@ -11585,6 +12254,43 @@
         "DISABLED",
         "ENABLED"
       ]
+    },
+    "NielsenWatermarksCbetStepaside": {
+      "type": "string",
+      "documentation": "Nielsen Watermarks Cbet Stepaside",
+      "enum": [
+        "DISABLED",
+        "ENABLED"
+      ]
+    },
+    "NielsenWatermarksDistributionTypes": {
+      "type": "string",
+      "documentation": "Nielsen Watermarks Distribution Types",
+      "enum": [
+        "FINAL_DISTRIBUTOR",
+        "PROGRAM_CONTENT"
+      ]
+    },
+    "NielsenWatermarksSettings": {
+      "type": "structure",
+      "members": {
+        "NielsenCbetSettings": {
+          "shape": "NielsenCBET",
+          "locationName": "nielsenCbetSettings",
+          "documentation": "Complete these fields only if you want to insert watermarks of type Nielsen CBET"
+        },
+        "NielsenDistributionType": {
+          "shape": "NielsenWatermarksDistributionTypes",
+          "locationName": "nielsenDistributionType",
+          "documentation": "Choose the distribution types that you want to assign to the watermarks:\n- PROGRAM_CONTENT\n- FINAL_DISTRIBUTOR"
+        },
+        "NielsenNaesIiNwSettings": {
+          "shape": "NielsenNaesIiNw",
+          "locationName": "nielsenNaesIiNwSettings",
+          "documentation": "Complete these fields only if you want to insert watermarks of type Nielsen NAES II (N2) and Nielsen NAES VI (NW)."
+        }
+      },
+      "documentation": "Nielsen Watermarks Settings"
     },
     "NotFoundException": {
       "type": "structure",
@@ -11767,7 +12473,7 @@
         "Name": {
           "shape": "__stringMax32",
           "locationName": "name",
-          "documentation": "Custom output group name optionally defined by the user.  Only letters, numbers, and the underscore character allowed; only 32 characters allowed."
+          "documentation": "Custom output group name optionally defined by the user."
         },
         "OutputGroupSettings": {
           "shape": "OutputGroupSettings",
@@ -11899,6 +12605,16 @@
           "shape": "__string",
           "locationName": "activeInputSwitchActionName",
           "documentation": "The name of the input switch schedule action that occurred most recently and that resulted in the switch to the current input attachment for this pipeline."
+        },
+        "ActiveMotionGraphicsActionName": {
+          "shape": "__string",
+          "locationName": "activeMotionGraphicsActionName",
+          "documentation": "The name of the motion graphics activate action that occurred most recently and that resulted in the current graphics URI for this pipeline."
+        },
+        "ActiveMotionGraphicsUri": {
+          "shape": "__string",
+          "locationName": "activeMotionGraphicsUri",
+          "documentation": "The current URI being used for HTML5 motion graphics for this pipeline."
         },
         "PipelineId": {
           "shape": "__string",
@@ -12291,10 +13007,12 @@
     },
     "ReservationSpecialFeature": {
       "type": "string",
-      "documentation": "Special features, 'ADVANCED_AUDIO' or 'AUDIO_NORMALIZATION'",
+      "documentation": "Special features, 'ADVANCED_AUDIO' 'AUDIO_NORMALIZATION' 'MGHD' or 'MGUHD'",
       "enum": [
         "ADVANCED_AUDIO",
-        "AUDIO_NORMALIZATION"
+        "AUDIO_NORMALIZATION",
+        "MGHD",
+        "MGUHD"
       ]
     },
     "ReservationState": {
@@ -12444,6 +13162,16 @@
         "Destination"
       ]
     },
+    "S3CannedAcl": {
+      "type": "string",
+      "documentation": "S3 Canned Acl",
+      "enum": [
+        "AUTHENTICATED_READ",
+        "BUCKET_OWNER_FULL_CONTROL",
+        "BUCKET_OWNER_READ",
+        "PUBLIC_READ"
+      ]
+    },
     "ScheduleAction": {
       "type": "structure",
       "members": {
@@ -12492,6 +13220,16 @@
           "shape": "InputSwitchScheduleActionSettings",
           "locationName": "inputSwitchSettings",
           "documentation": "Action to switch the input"
+        },
+        "MotionGraphicsImageActivateSettings": {
+          "shape": "MotionGraphicsActivateScheduleActionSettings",
+          "locationName": "motionGraphicsImageActivateSettings",
+          "documentation": "Action to activate a motion graphics image overlay"
+        },
+        "MotionGraphicsImageDeactivateSettings": {
+          "shape": "MotionGraphicsDeactivateScheduleActionSettings",
+          "locationName": "motionGraphicsImageDeactivateSettings",
+          "documentation": "Action to deactivate a motion graphics image overlay"
         },
         "PauseStateSettings": {
           "shape": "PauseStateScheduleActionSettings",
@@ -12608,9 +13346,26 @@
       },
       "documentation": "Scte27 Destination Settings"
     },
+    "Scte27OcrLanguage": {
+      "type": "string",
+      "documentation": "Scte27 Ocr Language",
+      "enum": [
+        "DEU",
+        "ENG",
+        "FRA",
+        "NLD",
+        "POR",
+        "SPA"
+      ]
+    },
     "Scte27SourceSettings": {
       "type": "structure",
       "members": {
+        "OcrLanguage": {
+          "shape": "Scte27OcrLanguage",
+          "locationName": "ocrLanguage",
+          "documentation": "If you will configure a WebVTT caption description that references this caption selector, use this field to\nprovide the language to consider when translating the image-based source to text."
+        },
         "Pid": {
           "shape": "__integerMin1",
           "locationName": "pid",
@@ -13072,6 +13827,11 @@
           "locationName": "logLevel",
           "documentation": "The log level being written to CloudWatch Logs."
         },
+        "Maintenance": {
+          "shape": "MaintenanceStatus",
+          "locationName": "maintenance",
+          "documentation": "Maintenance settings for this channel."
+        },
         "Name": {
           "shape": "__string",
           "locationName": "name",
@@ -13100,6 +13860,11 @@
           "shape": "Tags",
           "locationName": "tags",
           "documentation": "A collection of key-value pairs."
+        },
+        "Vpc": {
+          "shape": "VpcOutputSettingsDescription",
+          "locationName": "vpc",
+          "documentation": "Settings for VPC output"
         }
       },
       "documentation": "Placeholder documentation for StartChannelResponse"
@@ -13347,6 +14112,11 @@
           "locationName": "logLevel",
           "documentation": "The log level being written to CloudWatch Logs."
         },
+        "Maintenance": {
+          "shape": "MaintenanceStatus",
+          "locationName": "maintenance",
+          "documentation": "Maintenance settings for this channel."
+        },
         "Name": {
           "shape": "__string",
           "locationName": "name",
@@ -13375,6 +14145,11 @@
           "shape": "Tags",
           "locationName": "tags",
           "documentation": "A collection of key-value pairs."
+        },
+        "Vpc": {
+          "shape": "VpcOutputSettingsDescription",
+          "locationName": "vpc",
+          "documentation": "Settings for VPC output"
         }
       },
       "documentation": "Placeholder documentation for StopChannelResponse"
@@ -13495,6 +14270,11 @@
     "TeletextSourceSettings": {
       "type": "structure",
       "members": {
+        "OutputRectangle": {
+          "shape": "CaptionRectangle",
+          "locationName": "outputRectangle",
+          "documentation": "Optionally defines a region where TTML style captions will be displayed"
+        },
         "PageNumber": {
           "shape": "__string",
           "locationName": "pageNumber",
@@ -13612,6 +14392,11 @@
           "locationName": "targetCustomerId",
           "documentation": "The AWS account ID (12 digits) for the recipient of the device transfer."
         },
+        "TargetRegion": {
+          "shape": "__string",
+          "locationName": "targetRegion",
+          "documentation": "The target AWS region to transfer the device."
+        },
         "TransferMessage": {
           "shape": "__string",
           "locationName": "transferMessage",
@@ -13633,6 +14418,11 @@
           "shape": "__string",
           "locationName": "targetCustomerId",
           "documentation": "The AWS account ID (12 digits) for the recipient of the device transfer."
+        },
+        "TargetRegion": {
+          "shape": "__string",
+          "locationName": "targetRegion",
+          "documentation": "The target AWS region to transfer the device."
         },
         "TransferMessage": {
           "shape": "__string",
@@ -13683,7 +14473,7 @@
         "StyleControl": {
           "shape": "TtmlDestinationStyleControl",
           "locationName": "styleControl",
-          "documentation": "When set to passthrough, passes through style and position information from a TTML-like input source (TTML, SMPTE-TT, CFF-TT) to the CFF-TT output or TTML output."
+          "documentation": "This field is not currently supported and will not affect the output styling. Leave the default value."
         }
       },
       "documentation": "Ttml Destination Settings"
@@ -13817,6 +14607,11 @@
           "locationName": "logLevel",
           "documentation": "The log level to write to CloudWatch Logs."
         },
+        "Maintenance": {
+          "shape": "MaintenanceUpdateSettings",
+          "locationName": "maintenance",
+          "documentation": "Maintenance settings for this channel."
+        },
         "Name": {
           "shape": "__string",
           "locationName": "name",
@@ -13922,6 +14717,11 @@
           "shape": "LogLevel",
           "locationName": "logLevel",
           "documentation": "The log level to write to CloudWatch Logs."
+        },
+        "Maintenance": {
+          "shape": "MaintenanceUpdateSettings",
+          "locationName": "maintenance",
+          "documentation": "Maintenance settings for this channel."
         },
         "Name": {
           "shape": "__string",
@@ -14529,6 +15329,11 @@
           "locationName": "colorSpace",
           "documentation": "Specifies the color space of an input. This setting works in tandem with colorSpaceUsage and a video description's colorSpaceSettingsChoice to determine if any conversion will be performed."
         },
+        "ColorSpaceSettings": {
+          "shape": "VideoSelectorColorSpaceSettings",
+          "locationName": "colorSpaceSettings",
+          "documentation": "Color space settings"
+        },
         "ColorSpaceUsage": {
           "shape": "VideoSelectorColorSpaceUsage",
           "locationName": "colorSpaceUsage",
@@ -14547,9 +15352,21 @@
       "documentation": "Video Selector Color Space",
       "enum": [
         "FOLLOW",
+        "HDR10",
+        "HLG_2020",
         "REC_601",
         "REC_709"
       ]
+    },
+    "VideoSelectorColorSpaceSettings": {
+      "type": "structure",
+      "members": {
+        "Hdr10Settings": {
+          "shape": "Hdr10Settings",
+          "locationName": "hdr10Settings"
+        }
+      },
+      "documentation": "Video Selector Color Space Settings"
     },
     "VideoSelectorColorSpaceUsage": {
       "type": "string",
@@ -14595,6 +15412,56 @@
       },
       "documentation": "Video Selector Settings"
     },
+    "VpcOutputSettings": {
+      "type": "structure",
+      "members": {
+        "PublicAddressAllocationIds": {
+          "shape": "__listOf__string",
+          "locationName": "publicAddressAllocationIds",
+          "documentation": "List of public address allocation ids to associate with ENIs that will be created in Output VPC.\nMust specify one for SINGLE_PIPELINE, two for STANDARD channels\n"
+        },
+        "SecurityGroupIds": {
+          "shape": "__listOf__string",
+          "locationName": "securityGroupIds",
+          "documentation": "A list of up to 5 EC2 VPC security group IDs to attach to the Output VPC network interfaces.\nIf none are specified then the VPC default security group will be used\n"
+        },
+        "SubnetIds": {
+          "shape": "__listOf__string",
+          "locationName": "subnetIds",
+          "documentation": "A list of VPC subnet IDs from the same VPC.\nIf STANDARD channel, subnet IDs must be mapped to two unique availability zones (AZ).\n"
+        }
+      },
+      "documentation": "The properties for a private VPC Output\nWhen this property is specified, the output egress addresses will be created in a user specified VPC\n",
+      "required": [
+        "SubnetIds"
+      ]
+    },
+    "VpcOutputSettingsDescription": {
+      "type": "structure",
+      "members": {
+        "AvailabilityZones": {
+          "shape": "__listOf__string",
+          "locationName": "availabilityZones",
+          "documentation": "The Availability Zones where the vpc subnets are located.\nThe first Availability Zone applies to the first subnet in the list of subnets.\nThe second Availability Zone applies to the second subnet.\n"
+        },
+        "NetworkInterfaceIds": {
+          "shape": "__listOf__string",
+          "locationName": "networkInterfaceIds",
+          "documentation": "A list of Elastic Network Interfaces created by MediaLive in the customer's VPC\n"
+        },
+        "SecurityGroupIds": {
+          "shape": "__listOf__string",
+          "locationName": "securityGroupIds",
+          "documentation": "A list of up EC2 VPC security group IDs attached to the Output VPC network interfaces.\n"
+        },
+        "SubnetIds": {
+          "shape": "__listOf__string",
+          "locationName": "subnetIds",
+          "documentation": "A list of VPC subnet IDs from the same VPC.\nIf STANDARD channel, subnet IDs must be mapped to two unique availability zones (AZ).\n"
+        }
+      },
+      "documentation": "The properties for a private VPC Output\n"
+    },
     "WavCodingMode": {
       "type": "string",
       "documentation": "Wav Coding Mode",
@@ -14629,8 +15496,21 @@
     "WebvttDestinationSettings": {
       "type": "structure",
       "members": {
+        "StyleControl": {
+          "shape": "WebvttDestinationStyleControl",
+          "locationName": "styleControl",
+          "documentation": "Controls whether the color and position of the source captions is passed through to the WebVTT output captions.  PASSTHROUGH - Valid only if the source captions are EMBEDDED or TELETEXT.  NO_STYLE_DATA - Don't pass through the style. The output captions will not contain any font styling information."
+        }
       },
       "documentation": "Webvtt Destination Settings"
+    },
+    "WebvttDestinationStyleControl": {
+      "type": "string",
+      "documentation": "Webvtt Destination Style Control",
+      "enum": [
+        "NO_STYLE_DATA",
+        "PASSTHROUGH"
+      ]
     },
     "__boolean": {
       "type": "boolean",
@@ -14648,9 +15528,17 @@
       "type": "double",
       "documentation": "Placeholder documentation for __doubleMin0Max1"
     },
+    "__doubleMin0Max100": {
+      "type": "double",
+      "documentation": "Placeholder documentation for __doubleMin0Max100"
+    },
     "__doubleMin1": {
       "type": "double",
       "documentation": "Placeholder documentation for __doubleMin1"
+    },
+    "__doubleMin1Max65535": {
+      "type": "double",
+      "documentation": "Placeholder documentation for __doubleMin1Max65535"
     },
     "__doubleMinNegative59Max0": {
       "type": "double",
@@ -14911,6 +15799,12 @@
       "type": "integer",
       "min": 30,
       "documentation": "Placeholder documentation for __integerMin30"
+    },
+    "__integerMin32Max8191": {
+      "type": "integer",
+      "min": 32,
+      "max": 8191,
+      "documentation": "Placeholder documentation for __integerMin32Max8191"
     },
     "__integerMin4Max20": {
       "type": "integer",
@@ -15319,9 +16213,20 @@
       "max": 8589934591,
       "documentation": "Placeholder documentation for __longMin0Max8589934591"
     },
+    "__longMin0Max86400000": {
+      "type": "long",
+      "min": 0,
+      "max": 86400000,
+      "documentation": "Placeholder documentation for __longMin0Max86400000"
+    },
     "__string": {
       "type": "string",
       "documentation": "Placeholder documentation for __string"
+    },
+    "__stringMax1000": {
+      "type": "string",
+      "max": 1000,
+      "documentation": "Placeholder documentation for __stringMax1000"
     },
     "__stringMax256": {
       "type": "string",
@@ -15356,6 +16261,18 @@
       "max": 35,
       "documentation": "Placeholder documentation for __stringMin1Max35"
     },
+    "__stringMin1Max7": {
+      "type": "string",
+      "min": 1,
+      "max": 7,
+      "documentation": "Placeholder documentation for __stringMin1Max7"
+    },
+    "__stringMin2Max2": {
+      "type": "string",
+      "min": 2,
+      "max": 2,
+      "documentation": "Placeholder documentation for __stringMin2Max2"
+    },
     "__stringMin32Max32": {
       "type": "string",
       "min": 32,
@@ -15379,6 +16296,11 @@
       "min": 6,
       "max": 6,
       "documentation": "Placeholder documentation for __stringMin6Max6"
+    },
+    "__stringPattern010920300": {
+      "type": "string",
+      "pattern": "^([0,1]?[0-9]|2[0-3]):00$",
+      "documentation": "Placeholder documentation for __stringPattern010920300"
     },
     "__timestampIso8601": {
       "type": "timestamp",

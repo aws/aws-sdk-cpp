@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>An array of summary information for one or more thesauruses.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>An array of summary information for a thesaurus or multiple
+   * thesauri.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ThesaurusSummary">AWS
    * API Reference</a></p>
    */

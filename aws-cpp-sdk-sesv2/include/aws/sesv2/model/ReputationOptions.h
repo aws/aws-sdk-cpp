@@ -25,8 +25,8 @@ namespace Model
 
   /**
    * <p>Enable or disable collection of reputation metrics for emails that you send
-   * using this configuration set in the current AWS Region. </p><p><h3>See
-   * Also:</h3>   <a
+   * using this configuration set in the current Amazon Web Services Region.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ReputationOptions">AWS
    * API Reference</a></p>
    */

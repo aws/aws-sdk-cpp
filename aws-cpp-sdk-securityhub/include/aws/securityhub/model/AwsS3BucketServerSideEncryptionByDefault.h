@@ -80,42 +80,42 @@ namespace Model
 
 
     /**
-     * <p>AWS KMS customer master key (CMK) ID to use for the default encryption.</p>
+     * <p>KMS key ID to use for the default encryption.</p>
      */
     inline const Aws::String& GetKMSMasterKeyID() const{ return m_kMSMasterKeyID; }
 
     /**
-     * <p>AWS KMS customer master key (CMK) ID to use for the default encryption.</p>
+     * <p>KMS key ID to use for the default encryption.</p>
      */
     inline bool KMSMasterKeyIDHasBeenSet() const { return m_kMSMasterKeyIDHasBeenSet; }
 
     /**
-     * <p>AWS KMS customer master key (CMK) ID to use for the default encryption.</p>
+     * <p>KMS key ID to use for the default encryption.</p>
      */
     inline void SetKMSMasterKeyID(const Aws::String& value) { m_kMSMasterKeyIDHasBeenSet = true; m_kMSMasterKeyID = value; }
 
     /**
-     * <p>AWS KMS customer master key (CMK) ID to use for the default encryption.</p>
+     * <p>KMS key ID to use for the default encryption.</p>
      */
     inline void SetKMSMasterKeyID(Aws::String&& value) { m_kMSMasterKeyIDHasBeenSet = true; m_kMSMasterKeyID = std::move(value); }
 
     /**
-     * <p>AWS KMS customer master key (CMK) ID to use for the default encryption.</p>
+     * <p>KMS key ID to use for the default encryption.</p>
      */
     inline void SetKMSMasterKeyID(const char* value) { m_kMSMasterKeyIDHasBeenSet = true; m_kMSMasterKeyID.assign(value); }
 
     /**
-     * <p>AWS KMS customer master key (CMK) ID to use for the default encryption.</p>
+     * <p>KMS key ID to use for the default encryption.</p>
      */
     inline AwsS3BucketServerSideEncryptionByDefault& WithKMSMasterKeyID(const Aws::String& value) { SetKMSMasterKeyID(value); return *this;}
 
     /**
-     * <p>AWS KMS customer master key (CMK) ID to use for the default encryption.</p>
+     * <p>KMS key ID to use for the default encryption.</p>
      */
     inline AwsS3BucketServerSideEncryptionByDefault& WithKMSMasterKeyID(Aws::String&& value) { SetKMSMasterKeyID(std::move(value)); return *this;}
 
     /**
-     * <p>AWS KMS customer master key (CMK) ID to use for the default encryption.</p>
+     * <p>KMS key ID to use for the default encryption.</p>
      */
     inline AwsS3BucketServerSideEncryptionByDefault& WithKMSMasterKeyID(const char* value) { SetKMSMasterKeyID(value); return *this;}
 

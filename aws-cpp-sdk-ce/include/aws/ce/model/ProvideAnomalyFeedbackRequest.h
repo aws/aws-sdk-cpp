@@ -36,42 +36,42 @@ namespace Model
 
 
     /**
-     * <p> A cost anomaly ID. </p>
+     * <p>A cost anomaly ID. </p>
      */
     inline const Aws::String& GetAnomalyId() const{ return m_anomalyId; }
 
     /**
-     * <p> A cost anomaly ID. </p>
+     * <p>A cost anomaly ID. </p>
      */
     inline bool AnomalyIdHasBeenSet() const { return m_anomalyIdHasBeenSet; }
 
     /**
-     * <p> A cost anomaly ID. </p>
+     * <p>A cost anomaly ID. </p>
      */
     inline void SetAnomalyId(const Aws::String& value) { m_anomalyIdHasBeenSet = true; m_anomalyId = value; }
 
     /**
-     * <p> A cost anomaly ID. </p>
+     * <p>A cost anomaly ID. </p>
      */
     inline void SetAnomalyId(Aws::String&& value) { m_anomalyIdHasBeenSet = true; m_anomalyId = std::move(value); }
 
     /**
-     * <p> A cost anomaly ID. </p>
+     * <p>A cost anomaly ID. </p>
      */
     inline void SetAnomalyId(const char* value) { m_anomalyIdHasBeenSet = true; m_anomalyId.assign(value); }
 
     /**
-     * <p> A cost anomaly ID. </p>
+     * <p>A cost anomaly ID. </p>
      */
     inline ProvideAnomalyFeedbackRequest& WithAnomalyId(const Aws::String& value) { SetAnomalyId(value); return *this;}
 
     /**
-     * <p> A cost anomaly ID. </p>
+     * <p>A cost anomaly ID. </p>
      */
     inline ProvideAnomalyFeedbackRequest& WithAnomalyId(Aws::String&& value) { SetAnomalyId(std::move(value)); return *this;}
 
     /**
-     * <p> A cost anomaly ID. </p>
+     * <p>A cost anomaly ID. </p>
      */
     inline ProvideAnomalyFeedbackRequest& WithAnomalyId(const char* value) { SetAnomalyId(value); return *this;}
 

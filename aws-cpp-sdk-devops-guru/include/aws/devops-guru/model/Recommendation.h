@@ -302,6 +302,47 @@ namespace Model
      */
     inline Recommendation& AddRelatedAnomalies(RecommendationRelatedAnomaly&& value) { m_relatedAnomaliesHasBeenSet = true; m_relatedAnomalies.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The category type of the recommendation.</p>
+     */
+    inline const Aws::String& GetCategory() const{ return m_category; }
+
+    /**
+     * <p>The category type of the recommendation.</p>
+     */
+    inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
+
+    /**
+     * <p>The category type of the recommendation.</p>
+     */
+    inline void SetCategory(const Aws::String& value) { m_categoryHasBeenSet = true; m_category = value; }
+
+    /**
+     * <p>The category type of the recommendation.</p>
+     */
+    inline void SetCategory(Aws::String&& value) { m_categoryHasBeenSet = true; m_category = std::move(value); }
+
+    /**
+     * <p>The category type of the recommendation.</p>
+     */
+    inline void SetCategory(const char* value) { m_categoryHasBeenSet = true; m_category.assign(value); }
+
+    /**
+     * <p>The category type of the recommendation.</p>
+     */
+    inline Recommendation& WithCategory(const Aws::String& value) { SetCategory(value); return *this;}
+
+    /**
+     * <p>The category type of the recommendation.</p>
+     */
+    inline Recommendation& WithCategory(Aws::String&& value) { SetCategory(std::move(value)); return *this;}
+
+    /**
+     * <p>The category type of the recommendation.</p>
+     */
+    inline Recommendation& WithCategory(const char* value) { SetCategory(value); return *this;}
+
   private:
 
     Aws::String m_description;
@@ -321,6 +362,9 @@ namespace Model
 
     Aws::Vector<RecommendationRelatedAnomaly> m_relatedAnomalies;
     bool m_relatedAnomaliesHasBeenSet;
+
+    Aws::String m_category;
+    bool m_categoryHasBeenSet;
   };
 
 } // namespace Model

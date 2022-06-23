@@ -35,99 +35,107 @@ namespace Model
 
 
     /**
-     * <p>The name of your database to update.</p>
+     * <p>The name of your Lightsail database resource to update.</p>
      */
     inline const Aws::String& GetRelationalDatabaseName() const{ return m_relationalDatabaseName; }
 
     /**
-     * <p>The name of your database to update.</p>
+     * <p>The name of your Lightsail database resource to update.</p>
      */
     inline bool RelationalDatabaseNameHasBeenSet() const { return m_relationalDatabaseNameHasBeenSet; }
 
     /**
-     * <p>The name of your database to update.</p>
+     * <p>The name of your Lightsail database resource to update.</p>
      */
     inline void SetRelationalDatabaseName(const Aws::String& value) { m_relationalDatabaseNameHasBeenSet = true; m_relationalDatabaseName = value; }
 
     /**
-     * <p>The name of your database to update.</p>
+     * <p>The name of your Lightsail database resource to update.</p>
      */
     inline void SetRelationalDatabaseName(Aws::String&& value) { m_relationalDatabaseNameHasBeenSet = true; m_relationalDatabaseName = std::move(value); }
 
     /**
-     * <p>The name of your database to update.</p>
+     * <p>The name of your Lightsail database resource to update.</p>
      */
     inline void SetRelationalDatabaseName(const char* value) { m_relationalDatabaseNameHasBeenSet = true; m_relationalDatabaseName.assign(value); }
 
     /**
-     * <p>The name of your database to update.</p>
+     * <p>The name of your Lightsail database resource to update.</p>
      */
     inline UpdateRelationalDatabaseRequest& WithRelationalDatabaseName(const Aws::String& value) { SetRelationalDatabaseName(value); return *this;}
 
     /**
-     * <p>The name of your database to update.</p>
+     * <p>The name of your Lightsail database resource to update.</p>
      */
     inline UpdateRelationalDatabaseRequest& WithRelationalDatabaseName(Aws::String&& value) { SetRelationalDatabaseName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of your database to update.</p>
+     * <p>The name of your Lightsail database resource to update.</p>
      */
     inline UpdateRelationalDatabaseRequest& WithRelationalDatabaseName(const char* value) { SetRelationalDatabaseName(value); return *this;}
 
 
     /**
-     * <p>The password for the master user of your database. The password can include
-     * any printable ASCII character except "/", """, or "@".</p> <p>Constraints: Must
-     * contain 8 to 41 characters.</p>
+     * <p>The password for the master user. The password can include any printable
+     * ASCII character except "/", """, or "@".</p> <p>My<b>SQL</b> </p>
+     * <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>PostgreSQL</b>
+     * </p> <p>Constraints: Must contain from 8 to 128 characters.</p>
      */
     inline const Aws::String& GetMasterUserPassword() const{ return m_masterUserPassword; }
 
     /**
-     * <p>The password for the master user of your database. The password can include
-     * any printable ASCII character except "/", """, or "@".</p> <p>Constraints: Must
-     * contain 8 to 41 characters.</p>
+     * <p>The password for the master user. The password can include any printable
+     * ASCII character except "/", """, or "@".</p> <p>My<b>SQL</b> </p>
+     * <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>PostgreSQL</b>
+     * </p> <p>Constraints: Must contain from 8 to 128 characters.</p>
      */
     inline bool MasterUserPasswordHasBeenSet() const { return m_masterUserPasswordHasBeenSet; }
 
     /**
-     * <p>The password for the master user of your database. The password can include
-     * any printable ASCII character except "/", """, or "@".</p> <p>Constraints: Must
-     * contain 8 to 41 characters.</p>
+     * <p>The password for the master user. The password can include any printable
+     * ASCII character except "/", """, or "@".</p> <p>My<b>SQL</b> </p>
+     * <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>PostgreSQL</b>
+     * </p> <p>Constraints: Must contain from 8 to 128 characters.</p>
      */
     inline void SetMasterUserPassword(const Aws::String& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
 
     /**
-     * <p>The password for the master user of your database. The password can include
-     * any printable ASCII character except "/", """, or "@".</p> <p>Constraints: Must
-     * contain 8 to 41 characters.</p>
+     * <p>The password for the master user. The password can include any printable
+     * ASCII character except "/", """, or "@".</p> <p>My<b>SQL</b> </p>
+     * <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>PostgreSQL</b>
+     * </p> <p>Constraints: Must contain from 8 to 128 characters.</p>
      */
     inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = std::move(value); }
 
     /**
-     * <p>The password for the master user of your database. The password can include
-     * any printable ASCII character except "/", """, or "@".</p> <p>Constraints: Must
-     * contain 8 to 41 characters.</p>
+     * <p>The password for the master user. The password can include any printable
+     * ASCII character except "/", """, or "@".</p> <p>My<b>SQL</b> </p>
+     * <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>PostgreSQL</b>
+     * </p> <p>Constraints: Must contain from 8 to 128 characters.</p>
      */
     inline void SetMasterUserPassword(const char* value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword.assign(value); }
 
     /**
-     * <p>The password for the master user of your database. The password can include
-     * any printable ASCII character except "/", """, or "@".</p> <p>Constraints: Must
-     * contain 8 to 41 characters.</p>
+     * <p>The password for the master user. The password can include any printable
+     * ASCII character except "/", """, or "@".</p> <p>My<b>SQL</b> </p>
+     * <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>PostgreSQL</b>
+     * </p> <p>Constraints: Must contain from 8 to 128 characters.</p>
      */
     inline UpdateRelationalDatabaseRequest& WithMasterUserPassword(const Aws::String& value) { SetMasterUserPassword(value); return *this;}
 
     /**
-     * <p>The password for the master user of your database. The password can include
-     * any printable ASCII character except "/", """, or "@".</p> <p>Constraints: Must
-     * contain 8 to 41 characters.</p>
+     * <p>The password for the master user. The password can include any printable
+     * ASCII character except "/", """, or "@".</p> <p>My<b>SQL</b> </p>
+     * <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>PostgreSQL</b>
+     * </p> <p>Constraints: Must contain from 8 to 128 characters.</p>
      */
     inline UpdateRelationalDatabaseRequest& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(std::move(value)); return *this;}
 
     /**
-     * <p>The password for the master user of your database. The password can include
-     * any printable ASCII character except "/", """, or "@".</p> <p>Constraints: Must
-     * contain 8 to 41 characters.</p>
+     * <p>The password for the master user. The password can include any printable
+     * ASCII character except "/", """, or "@".</p> <p>My<b>SQL</b> </p>
+     * <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>PostgreSQL</b>
+     * </p> <p>Constraints: Must contain from 8 to 128 characters.</p>
      */
     inline UpdateRelationalDatabaseRequest& WithMasterUserPassword(const char* value) { SetMasterUserPassword(value); return *this;}
 

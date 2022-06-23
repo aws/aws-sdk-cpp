@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/TagSpecification.h>
 #include <utility>
+#include <aws/core/utils/UUID.h>
 
 namespace Aws
 {
@@ -145,12 +146,11 @@ namespace Model
      * volume accumulates I/O credits for bursting.</p> <p>The following are the
      * supported values for each volume type:</p> <ul> <li> <p> <code>gp3</code>:
      * 3,000-16,000 IOPS</p> </li> <li> <p> <code>io1</code>: 100-64,000 IOPS</p> </li>
-     * <li> <p> <code>io2</code>: 100-64,000 IOPS</p> </li> </ul> <p>For
-     * <code>io1</code> and <code>io2</code> volumes, we guarantee 64,000 IOPS only for
-     * <a
+     * <li> <p> <code>io2</code>: 100-64,000 IOPS</p> </li> </ul> <p> <code>io1</code>
+     * and <code>io2</code> volumes support up to 64,000 IOPS only on <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
-     * built on the Nitro System</a>. Other instance families guarantee performance up
-     * to 32,000 IOPS.</p> <p>This parameter is required for <code>io1</code> and
+     * built on the Nitro System</a>. Other instance families support performance up to
+     * 32,000 IOPS.</p> <p>This parameter is required for <code>io1</code> and
      * <code>io2</code> volumes. The default for <code>gp3</code> volumes is 3,000
      * IOPS. This parameter is not supported for <code>gp2</code>, <code>st1</code>,
      * <code>sc1</code>, or <code>standard</code> volumes.</p>
@@ -165,12 +165,11 @@ namespace Model
      * volume accumulates I/O credits for bursting.</p> <p>The following are the
      * supported values for each volume type:</p> <ul> <li> <p> <code>gp3</code>:
      * 3,000-16,000 IOPS</p> </li> <li> <p> <code>io1</code>: 100-64,000 IOPS</p> </li>
-     * <li> <p> <code>io2</code>: 100-64,000 IOPS</p> </li> </ul> <p>For
-     * <code>io1</code> and <code>io2</code> volumes, we guarantee 64,000 IOPS only for
-     * <a
+     * <li> <p> <code>io2</code>: 100-64,000 IOPS</p> </li> </ul> <p> <code>io1</code>
+     * and <code>io2</code> volumes support up to 64,000 IOPS only on <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
-     * built on the Nitro System</a>. Other instance families guarantee performance up
-     * to 32,000 IOPS.</p> <p>This parameter is required for <code>io1</code> and
+     * built on the Nitro System</a>. Other instance families support performance up to
+     * 32,000 IOPS.</p> <p>This parameter is required for <code>io1</code> and
      * <code>io2</code> volumes. The default for <code>gp3</code> volumes is 3,000
      * IOPS. This parameter is not supported for <code>gp2</code>, <code>st1</code>,
      * <code>sc1</code>, or <code>standard</code> volumes.</p>
@@ -185,12 +184,11 @@ namespace Model
      * volume accumulates I/O credits for bursting.</p> <p>The following are the
      * supported values for each volume type:</p> <ul> <li> <p> <code>gp3</code>:
      * 3,000-16,000 IOPS</p> </li> <li> <p> <code>io1</code>: 100-64,000 IOPS</p> </li>
-     * <li> <p> <code>io2</code>: 100-64,000 IOPS</p> </li> </ul> <p>For
-     * <code>io1</code> and <code>io2</code> volumes, we guarantee 64,000 IOPS only for
-     * <a
+     * <li> <p> <code>io2</code>: 100-64,000 IOPS</p> </li> </ul> <p> <code>io1</code>
+     * and <code>io2</code> volumes support up to 64,000 IOPS only on <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
-     * built on the Nitro System</a>. Other instance families guarantee performance up
-     * to 32,000 IOPS.</p> <p>This parameter is required for <code>io1</code> and
+     * built on the Nitro System</a>. Other instance families support performance up to
+     * 32,000 IOPS.</p> <p>This parameter is required for <code>io1</code> and
      * <code>io2</code> volumes. The default for <code>gp3</code> volumes is 3,000
      * IOPS. This parameter is not supported for <code>gp2</code>, <code>st1</code>,
      * <code>sc1</code>, or <code>standard</code> volumes.</p>
@@ -205,12 +203,11 @@ namespace Model
      * volume accumulates I/O credits for bursting.</p> <p>The following are the
      * supported values for each volume type:</p> <ul> <li> <p> <code>gp3</code>:
      * 3,000-16,000 IOPS</p> </li> <li> <p> <code>io1</code>: 100-64,000 IOPS</p> </li>
-     * <li> <p> <code>io2</code>: 100-64,000 IOPS</p> </li> </ul> <p>For
-     * <code>io1</code> and <code>io2</code> volumes, we guarantee 64,000 IOPS only for
-     * <a
+     * <li> <p> <code>io2</code>: 100-64,000 IOPS</p> </li> </ul> <p> <code>io1</code>
+     * and <code>io2</code> volumes support up to 64,000 IOPS only on <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
-     * built on the Nitro System</a>. Other instance families guarantee performance up
-     * to 32,000 IOPS.</p> <p>This parameter is required for <code>io1</code> and
+     * built on the Nitro System</a>. Other instance families support performance up to
+     * 32,000 IOPS.</p> <p>This parameter is required for <code>io1</code> and
      * <code>io2</code> volumes. The default for <code>gp3</code> volumes is 3,000
      * IOPS. This parameter is not supported for <code>gp2</code>, <code>st1</code>,
      * <code>sc1</code>, or <code>standard</code> volumes.</p>
@@ -219,138 +216,138 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) to use for Amazon EBS encryption. If this parameter is not specified,
-     * your AWS managed CMK for EBS is used. If <code>KmsKeyId</code> is specified, the
-     * encrypted state must be <code>true</code>.</p> <p>You can specify the CMK using
-     * any of the following:</p> <ul> <li> <p>Key ID. For example,
+     * <p>The identifier of the Key Management Service (KMS) KMS key to use for Amazon
+     * EBS encryption. If this parameter is not specified, your KMS key for Amazon EBS
+     * is used. If <code>KmsKeyId</code> is specified, the encrypted state must be
+     * <code>true</code>.</p> <p>You can specify the KMS key using any of the
+     * following:</p> <ul> <li> <p>Key ID. For example,
      * 1234abcd-12ab-34cd-56ef-1234567890ab.</p> </li> <li> <p>Key alias. For example,
      * alias/ExampleAlias.</p> </li> <li> <p>Key ARN. For example,
      * arn:aws:kms:us-east-1:012345678910:key/1234abcd-12ab-34cd-56ef-1234567890ab.</p>
      * </li> <li> <p>Alias ARN. For example,
-     * arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.</p> </li> </ul> <p>AWS
-     * authenticates the CMK asynchronously. Therefore, if you specify an ID, alias, or
-     * ARN that is not valid, the action can appear to complete, but eventually
-     * fails.</p>
+     * arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.</p> </li> </ul> <p>Amazon
+     * Web Services authenticates the KMS key asynchronously. Therefore, if you specify
+     * an ID, alias, or ARN that is not valid, the action can appear to complete, but
+     * eventually fails.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The identifier of the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) to use for Amazon EBS encryption. If this parameter is not specified,
-     * your AWS managed CMK for EBS is used. If <code>KmsKeyId</code> is specified, the
-     * encrypted state must be <code>true</code>.</p> <p>You can specify the CMK using
-     * any of the following:</p> <ul> <li> <p>Key ID. For example,
+     * <p>The identifier of the Key Management Service (KMS) KMS key to use for Amazon
+     * EBS encryption. If this parameter is not specified, your KMS key for Amazon EBS
+     * is used. If <code>KmsKeyId</code> is specified, the encrypted state must be
+     * <code>true</code>.</p> <p>You can specify the KMS key using any of the
+     * following:</p> <ul> <li> <p>Key ID. For example,
      * 1234abcd-12ab-34cd-56ef-1234567890ab.</p> </li> <li> <p>Key alias. For example,
      * alias/ExampleAlias.</p> </li> <li> <p>Key ARN. For example,
      * arn:aws:kms:us-east-1:012345678910:key/1234abcd-12ab-34cd-56ef-1234567890ab.</p>
      * </li> <li> <p>Alias ARN. For example,
-     * arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.</p> </li> </ul> <p>AWS
-     * authenticates the CMK asynchronously. Therefore, if you specify an ID, alias, or
-     * ARN that is not valid, the action can appear to complete, but eventually
-     * fails.</p>
+     * arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.</p> </li> </ul> <p>Amazon
+     * Web Services authenticates the KMS key asynchronously. Therefore, if you specify
+     * an ID, alias, or ARN that is not valid, the action can appear to complete, but
+     * eventually fails.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) to use for Amazon EBS encryption. If this parameter is not specified,
-     * your AWS managed CMK for EBS is used. If <code>KmsKeyId</code> is specified, the
-     * encrypted state must be <code>true</code>.</p> <p>You can specify the CMK using
-     * any of the following:</p> <ul> <li> <p>Key ID. For example,
+     * <p>The identifier of the Key Management Service (KMS) KMS key to use for Amazon
+     * EBS encryption. If this parameter is not specified, your KMS key for Amazon EBS
+     * is used. If <code>KmsKeyId</code> is specified, the encrypted state must be
+     * <code>true</code>.</p> <p>You can specify the KMS key using any of the
+     * following:</p> <ul> <li> <p>Key ID. For example,
      * 1234abcd-12ab-34cd-56ef-1234567890ab.</p> </li> <li> <p>Key alias. For example,
      * alias/ExampleAlias.</p> </li> <li> <p>Key ARN. For example,
      * arn:aws:kms:us-east-1:012345678910:key/1234abcd-12ab-34cd-56ef-1234567890ab.</p>
      * </li> <li> <p>Alias ARN. For example,
-     * arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.</p> </li> </ul> <p>AWS
-     * authenticates the CMK asynchronously. Therefore, if you specify an ID, alias, or
-     * ARN that is not valid, the action can appear to complete, but eventually
-     * fails.</p>
+     * arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.</p> </li> </ul> <p>Amazon
+     * Web Services authenticates the KMS key asynchronously. Therefore, if you specify
+     * an ID, alias, or ARN that is not valid, the action can appear to complete, but
+     * eventually fails.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The identifier of the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) to use for Amazon EBS encryption. If this parameter is not specified,
-     * your AWS managed CMK for EBS is used. If <code>KmsKeyId</code> is specified, the
-     * encrypted state must be <code>true</code>.</p> <p>You can specify the CMK using
-     * any of the following:</p> <ul> <li> <p>Key ID. For example,
+     * <p>The identifier of the Key Management Service (KMS) KMS key to use for Amazon
+     * EBS encryption. If this parameter is not specified, your KMS key for Amazon EBS
+     * is used. If <code>KmsKeyId</code> is specified, the encrypted state must be
+     * <code>true</code>.</p> <p>You can specify the KMS key using any of the
+     * following:</p> <ul> <li> <p>Key ID. For example,
      * 1234abcd-12ab-34cd-56ef-1234567890ab.</p> </li> <li> <p>Key alias. For example,
      * alias/ExampleAlias.</p> </li> <li> <p>Key ARN. For example,
      * arn:aws:kms:us-east-1:012345678910:key/1234abcd-12ab-34cd-56ef-1234567890ab.</p>
      * </li> <li> <p>Alias ARN. For example,
-     * arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.</p> </li> </ul> <p>AWS
-     * authenticates the CMK asynchronously. Therefore, if you specify an ID, alias, or
-     * ARN that is not valid, the action can appear to complete, but eventually
-     * fails.</p>
+     * arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.</p> </li> </ul> <p>Amazon
+     * Web Services authenticates the KMS key asynchronously. Therefore, if you specify
+     * an ID, alias, or ARN that is not valid, the action can appear to complete, but
+     * eventually fails.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The identifier of the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) to use for Amazon EBS encryption. If this parameter is not specified,
-     * your AWS managed CMK for EBS is used. If <code>KmsKeyId</code> is specified, the
-     * encrypted state must be <code>true</code>.</p> <p>You can specify the CMK using
-     * any of the following:</p> <ul> <li> <p>Key ID. For example,
+     * <p>The identifier of the Key Management Service (KMS) KMS key to use for Amazon
+     * EBS encryption. If this parameter is not specified, your KMS key for Amazon EBS
+     * is used. If <code>KmsKeyId</code> is specified, the encrypted state must be
+     * <code>true</code>.</p> <p>You can specify the KMS key using any of the
+     * following:</p> <ul> <li> <p>Key ID. For example,
      * 1234abcd-12ab-34cd-56ef-1234567890ab.</p> </li> <li> <p>Key alias. For example,
      * alias/ExampleAlias.</p> </li> <li> <p>Key ARN. For example,
      * arn:aws:kms:us-east-1:012345678910:key/1234abcd-12ab-34cd-56ef-1234567890ab.</p>
      * </li> <li> <p>Alias ARN. For example,
-     * arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.</p> </li> </ul> <p>AWS
-     * authenticates the CMK asynchronously. Therefore, if you specify an ID, alias, or
-     * ARN that is not valid, the action can appear to complete, but eventually
-     * fails.</p>
+     * arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.</p> </li> </ul> <p>Amazon
+     * Web Services authenticates the KMS key asynchronously. Therefore, if you specify
+     * an ID, alias, or ARN that is not valid, the action can appear to complete, but
+     * eventually fails.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The identifier of the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) to use for Amazon EBS encryption. If this parameter is not specified,
-     * your AWS managed CMK for EBS is used. If <code>KmsKeyId</code> is specified, the
-     * encrypted state must be <code>true</code>.</p> <p>You can specify the CMK using
-     * any of the following:</p> <ul> <li> <p>Key ID. For example,
+     * <p>The identifier of the Key Management Service (KMS) KMS key to use for Amazon
+     * EBS encryption. If this parameter is not specified, your KMS key for Amazon EBS
+     * is used. If <code>KmsKeyId</code> is specified, the encrypted state must be
+     * <code>true</code>.</p> <p>You can specify the KMS key using any of the
+     * following:</p> <ul> <li> <p>Key ID. For example,
      * 1234abcd-12ab-34cd-56ef-1234567890ab.</p> </li> <li> <p>Key alias. For example,
      * alias/ExampleAlias.</p> </li> <li> <p>Key ARN. For example,
      * arn:aws:kms:us-east-1:012345678910:key/1234abcd-12ab-34cd-56ef-1234567890ab.</p>
      * </li> <li> <p>Alias ARN. For example,
-     * arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.</p> </li> </ul> <p>AWS
-     * authenticates the CMK asynchronously. Therefore, if you specify an ID, alias, or
-     * ARN that is not valid, the action can appear to complete, but eventually
-     * fails.</p>
+     * arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.</p> </li> </ul> <p>Amazon
+     * Web Services authenticates the KMS key asynchronously. Therefore, if you specify
+     * an ID, alias, or ARN that is not valid, the action can appear to complete, but
+     * eventually fails.</p>
      */
     inline CreateVolumeRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The identifier of the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) to use for Amazon EBS encryption. If this parameter is not specified,
-     * your AWS managed CMK for EBS is used. If <code>KmsKeyId</code> is specified, the
-     * encrypted state must be <code>true</code>.</p> <p>You can specify the CMK using
-     * any of the following:</p> <ul> <li> <p>Key ID. For example,
+     * <p>The identifier of the Key Management Service (KMS) KMS key to use for Amazon
+     * EBS encryption. If this parameter is not specified, your KMS key for Amazon EBS
+     * is used. If <code>KmsKeyId</code> is specified, the encrypted state must be
+     * <code>true</code>.</p> <p>You can specify the KMS key using any of the
+     * following:</p> <ul> <li> <p>Key ID. For example,
      * 1234abcd-12ab-34cd-56ef-1234567890ab.</p> </li> <li> <p>Key alias. For example,
      * alias/ExampleAlias.</p> </li> <li> <p>Key ARN. For example,
      * arn:aws:kms:us-east-1:012345678910:key/1234abcd-12ab-34cd-56ef-1234567890ab.</p>
      * </li> <li> <p>Alias ARN. For example,
-     * arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.</p> </li> </ul> <p>AWS
-     * authenticates the CMK asynchronously. Therefore, if you specify an ID, alias, or
-     * ARN that is not valid, the action can appear to complete, but eventually
-     * fails.</p>
+     * arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.</p> </li> </ul> <p>Amazon
+     * Web Services authenticates the KMS key asynchronously. Therefore, if you specify
+     * an ID, alias, or ARN that is not valid, the action can appear to complete, but
+     * eventually fails.</p>
      */
     inline CreateVolumeRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) to use for Amazon EBS encryption. If this parameter is not specified,
-     * your AWS managed CMK for EBS is used. If <code>KmsKeyId</code> is specified, the
-     * encrypted state must be <code>true</code>.</p> <p>You can specify the CMK using
-     * any of the following:</p> <ul> <li> <p>Key ID. For example,
+     * <p>The identifier of the Key Management Service (KMS) KMS key to use for Amazon
+     * EBS encryption. If this parameter is not specified, your KMS key for Amazon EBS
+     * is used. If <code>KmsKeyId</code> is specified, the encrypted state must be
+     * <code>true</code>.</p> <p>You can specify the KMS key using any of the
+     * following:</p> <ul> <li> <p>Key ID. For example,
      * 1234abcd-12ab-34cd-56ef-1234567890ab.</p> </li> <li> <p>Key alias. For example,
      * alias/ExampleAlias.</p> </li> <li> <p>Key ARN. For example,
      * arn:aws:kms:us-east-1:012345678910:key/1234abcd-12ab-34cd-56ef-1234567890ab.</p>
      * </li> <li> <p>Alias ARN. For example,
-     * arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.</p> </li> </ul> <p>AWS
-     * authenticates the CMK asynchronously. Therefore, if you specify an ID, alias, or
-     * ARN that is not valid, the action can appear to complete, but eventually
-     * fails.</p>
+     * arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.</p> </li> </ul> <p>Amazon
+     * Web Services authenticates the KMS key asynchronously. Therefore, if you specify
+     * an ID, alias, or ARN that is not valid, the action can appear to complete, but
+     * eventually fails.</p>
      */
     inline CreateVolumeRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -728,6 +725,71 @@ namespace Model
      */
     inline CreateVolumeRequest& WithThroughput(int value) { SetThroughput(value); return *this;}
 
+
+    /**
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensure
+     * Idempotency</a>.</p>
+     */
+    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+
+    /**
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensure
+     * Idempotency</a>.</p>
+     */
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+
+    /**
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensure
+     * Idempotency</a>.</p>
+     */
+    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+
+    /**
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensure
+     * Idempotency</a>.</p>
+     */
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
+
+    /**
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensure
+     * Idempotency</a>.</p>
+     */
+    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
+
+    /**
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensure
+     * Idempotency</a>.</p>
+     */
+    inline CreateVolumeRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
+
+    /**
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensure
+     * Idempotency</a>.</p>
+     */
+    inline CreateVolumeRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
+
+    /**
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensure
+     * Idempotency</a>.</p>
+     */
+    inline CreateVolumeRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+
   private:
 
     Aws::String m_availabilityZone;
@@ -765,6 +827,9 @@ namespace Model
 
     int m_throughput;
     bool m_throughputHasBeenSet;
+
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet;
   };
 
 } // namespace Model

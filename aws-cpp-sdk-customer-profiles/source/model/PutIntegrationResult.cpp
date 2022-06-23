@@ -67,6 +67,21 @@ PutIntegrationResult& PutIntegrationResult::operator =(const Aws::AmazonWebServi
     }
   }
 
+  if(jsonValue.ValueExists("ObjectTypeNames"))
+  {
+    Aws::Map<Aws::String, JsonView> objectTypeNamesJsonMap = jsonValue.GetObject("ObjectTypeNames").GetAllObjects();
+    for(auto& objectTypeNamesItem : objectTypeNamesJsonMap)
+    {
+      m_objectTypeNames[objectTypeNamesItem.first] = objectTypeNamesItem.second.AsString();
+    }
+  }
+
+  if(jsonValue.ValueExists("WorkflowId"))
+  {
+    m_workflowId = jsonValue.GetString("WorkflowId");
+
+  }
+
 
 
   return *this;

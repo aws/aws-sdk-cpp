@@ -28,9 +28,13 @@ ResourceDetails::ResourceDetails() :
     m_awsEc2VolumeHasBeenSet(false),
     m_awsEc2VpcHasBeenSet(false),
     m_awsEc2EipHasBeenSet(false),
+    m_awsEc2SubnetHasBeenSet(false),
+    m_awsEc2NetworkAclHasBeenSet(false),
     m_awsElbv2LoadBalancerHasBeenSet(false),
+    m_awsElasticBeanstalkEnvironmentHasBeenSet(false),
     m_awsElasticsearchDomainHasBeenSet(false),
     m_awsS3BucketHasBeenSet(false),
+    m_awsS3AccountPublicAccessBlockHasBeenSet(false),
     m_awsS3ObjectHasBeenSet(false),
     m_awsSecretsManagerSecretHasBeenSet(false),
     m_awsIamAccessKeyHasBeenSet(false),
@@ -42,6 +46,7 @@ ResourceDetails::ResourceDetails() :
     m_awsApiGatewayStageHasBeenSet(false),
     m_awsApiGatewayRestApiHasBeenSet(false),
     m_awsCloudTrailTrailHasBeenSet(false),
+    m_awsSsmPatchComplianceHasBeenSet(false),
     m_awsCertificateManagerCertificateHasBeenSet(false),
     m_awsRedshiftClusterHasBeenSet(false),
     m_awsElbLoadBalancerHasBeenSet(false),
@@ -57,8 +62,26 @@ ResourceDetails::ResourceDetails() :
     m_awsRdsDbSnapshotHasBeenSet(false),
     m_awsRdsDbClusterSnapshotHasBeenSet(false),
     m_awsRdsDbClusterHasBeenSet(false),
+    m_awsEcsClusterHasBeenSet(false),
+    m_awsEcsTaskDefinitionHasBeenSet(false),
     m_containerHasBeenSet(false),
-    m_otherHasBeenSet(false)
+    m_otherHasBeenSet(false),
+    m_awsRdsEventSubscriptionHasBeenSet(false),
+    m_awsEcsServiceHasBeenSet(false),
+    m_awsAutoScalingLaunchConfigurationHasBeenSet(false),
+    m_awsEc2VpnConnectionHasBeenSet(false),
+    m_awsEcrContainerImageHasBeenSet(false),
+    m_awsOpenSearchServiceDomainHasBeenSet(false),
+    m_awsEc2VpcEndpointServiceHasBeenSet(false),
+    m_awsXrayEncryptionConfigHasBeenSet(false),
+    m_awsWafRateBasedRuleHasBeenSet(false),
+    m_awsWafRegionalRateBasedRuleHasBeenSet(false),
+    m_awsEcrRepositoryHasBeenSet(false),
+    m_awsEksClusterHasBeenSet(false),
+    m_awsNetworkFirewallFirewallPolicyHasBeenSet(false),
+    m_awsNetworkFirewallFirewallHasBeenSet(false),
+    m_awsNetworkFirewallRuleGroupHasBeenSet(false),
+    m_awsRdsDbSecurityGroupHasBeenSet(false)
 {
 }
 
@@ -72,9 +95,13 @@ ResourceDetails::ResourceDetails(JsonView jsonValue) :
     m_awsEc2VolumeHasBeenSet(false),
     m_awsEc2VpcHasBeenSet(false),
     m_awsEc2EipHasBeenSet(false),
+    m_awsEc2SubnetHasBeenSet(false),
+    m_awsEc2NetworkAclHasBeenSet(false),
     m_awsElbv2LoadBalancerHasBeenSet(false),
+    m_awsElasticBeanstalkEnvironmentHasBeenSet(false),
     m_awsElasticsearchDomainHasBeenSet(false),
     m_awsS3BucketHasBeenSet(false),
+    m_awsS3AccountPublicAccessBlockHasBeenSet(false),
     m_awsS3ObjectHasBeenSet(false),
     m_awsSecretsManagerSecretHasBeenSet(false),
     m_awsIamAccessKeyHasBeenSet(false),
@@ -86,6 +113,7 @@ ResourceDetails::ResourceDetails(JsonView jsonValue) :
     m_awsApiGatewayStageHasBeenSet(false),
     m_awsApiGatewayRestApiHasBeenSet(false),
     m_awsCloudTrailTrailHasBeenSet(false),
+    m_awsSsmPatchComplianceHasBeenSet(false),
     m_awsCertificateManagerCertificateHasBeenSet(false),
     m_awsRedshiftClusterHasBeenSet(false),
     m_awsElbLoadBalancerHasBeenSet(false),
@@ -101,8 +129,26 @@ ResourceDetails::ResourceDetails(JsonView jsonValue) :
     m_awsRdsDbSnapshotHasBeenSet(false),
     m_awsRdsDbClusterSnapshotHasBeenSet(false),
     m_awsRdsDbClusterHasBeenSet(false),
+    m_awsEcsClusterHasBeenSet(false),
+    m_awsEcsTaskDefinitionHasBeenSet(false),
     m_containerHasBeenSet(false),
-    m_otherHasBeenSet(false)
+    m_otherHasBeenSet(false),
+    m_awsRdsEventSubscriptionHasBeenSet(false),
+    m_awsEcsServiceHasBeenSet(false),
+    m_awsAutoScalingLaunchConfigurationHasBeenSet(false),
+    m_awsEc2VpnConnectionHasBeenSet(false),
+    m_awsEcrContainerImageHasBeenSet(false),
+    m_awsOpenSearchServiceDomainHasBeenSet(false),
+    m_awsEc2VpcEndpointServiceHasBeenSet(false),
+    m_awsXrayEncryptionConfigHasBeenSet(false),
+    m_awsWafRateBasedRuleHasBeenSet(false),
+    m_awsWafRegionalRateBasedRuleHasBeenSet(false),
+    m_awsEcrRepositoryHasBeenSet(false),
+    m_awsEksClusterHasBeenSet(false),
+    m_awsNetworkFirewallFirewallPolicyHasBeenSet(false),
+    m_awsNetworkFirewallFirewallHasBeenSet(false),
+    m_awsNetworkFirewallRuleGroupHasBeenSet(false),
+    m_awsRdsDbSecurityGroupHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -172,11 +218,32 @@ ResourceDetails& ResourceDetails::operator =(JsonView jsonValue)
     m_awsEc2EipHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AwsEc2Subnet"))
+  {
+    m_awsEc2Subnet = jsonValue.GetObject("AwsEc2Subnet");
+
+    m_awsEc2SubnetHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsEc2NetworkAcl"))
+  {
+    m_awsEc2NetworkAcl = jsonValue.GetObject("AwsEc2NetworkAcl");
+
+    m_awsEc2NetworkAclHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("AwsElbv2LoadBalancer"))
   {
     m_awsElbv2LoadBalancer = jsonValue.GetObject("AwsElbv2LoadBalancer");
 
     m_awsElbv2LoadBalancerHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsElasticBeanstalkEnvironment"))
+  {
+    m_awsElasticBeanstalkEnvironment = jsonValue.GetObject("AwsElasticBeanstalkEnvironment");
+
+    m_awsElasticBeanstalkEnvironmentHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("AwsElasticsearchDomain"))
@@ -191,6 +258,13 @@ ResourceDetails& ResourceDetails::operator =(JsonView jsonValue)
     m_awsS3Bucket = jsonValue.GetObject("AwsS3Bucket");
 
     m_awsS3BucketHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsS3AccountPublicAccessBlock"))
+  {
+    m_awsS3AccountPublicAccessBlock = jsonValue.GetObject("AwsS3AccountPublicAccessBlock");
+
+    m_awsS3AccountPublicAccessBlockHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("AwsS3Object"))
@@ -268,6 +342,13 @@ ResourceDetails& ResourceDetails::operator =(JsonView jsonValue)
     m_awsCloudTrailTrail = jsonValue.GetObject("AwsCloudTrailTrail");
 
     m_awsCloudTrailTrailHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsSsmPatchCompliance"))
+  {
+    m_awsSsmPatchCompliance = jsonValue.GetObject("AwsSsmPatchCompliance");
+
+    m_awsSsmPatchComplianceHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("AwsCertificateManagerCertificate"))
@@ -375,6 +456,20 @@ ResourceDetails& ResourceDetails::operator =(JsonView jsonValue)
     m_awsRdsDbClusterHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AwsEcsCluster"))
+  {
+    m_awsEcsCluster = jsonValue.GetObject("AwsEcsCluster");
+
+    m_awsEcsClusterHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsEcsTaskDefinition"))
+  {
+    m_awsEcsTaskDefinition = jsonValue.GetObject("AwsEcsTaskDefinition");
+
+    m_awsEcsTaskDefinitionHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Container"))
   {
     m_container = jsonValue.GetObject("Container");
@@ -390,6 +485,118 @@ ResourceDetails& ResourceDetails::operator =(JsonView jsonValue)
       m_other[otherItem.first] = otherItem.second.AsString();
     }
     m_otherHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsRdsEventSubscription"))
+  {
+    m_awsRdsEventSubscription = jsonValue.GetObject("AwsRdsEventSubscription");
+
+    m_awsRdsEventSubscriptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsEcsService"))
+  {
+    m_awsEcsService = jsonValue.GetObject("AwsEcsService");
+
+    m_awsEcsServiceHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsAutoScalingLaunchConfiguration"))
+  {
+    m_awsAutoScalingLaunchConfiguration = jsonValue.GetObject("AwsAutoScalingLaunchConfiguration");
+
+    m_awsAutoScalingLaunchConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsEc2VpnConnection"))
+  {
+    m_awsEc2VpnConnection = jsonValue.GetObject("AwsEc2VpnConnection");
+
+    m_awsEc2VpnConnectionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsEcrContainerImage"))
+  {
+    m_awsEcrContainerImage = jsonValue.GetObject("AwsEcrContainerImage");
+
+    m_awsEcrContainerImageHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsOpenSearchServiceDomain"))
+  {
+    m_awsOpenSearchServiceDomain = jsonValue.GetObject("AwsOpenSearchServiceDomain");
+
+    m_awsOpenSearchServiceDomainHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsEc2VpcEndpointService"))
+  {
+    m_awsEc2VpcEndpointService = jsonValue.GetObject("AwsEc2VpcEndpointService");
+
+    m_awsEc2VpcEndpointServiceHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsXrayEncryptionConfig"))
+  {
+    m_awsXrayEncryptionConfig = jsonValue.GetObject("AwsXrayEncryptionConfig");
+
+    m_awsXrayEncryptionConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsWafRateBasedRule"))
+  {
+    m_awsWafRateBasedRule = jsonValue.GetObject("AwsWafRateBasedRule");
+
+    m_awsWafRateBasedRuleHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsWafRegionalRateBasedRule"))
+  {
+    m_awsWafRegionalRateBasedRule = jsonValue.GetObject("AwsWafRegionalRateBasedRule");
+
+    m_awsWafRegionalRateBasedRuleHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsEcrRepository"))
+  {
+    m_awsEcrRepository = jsonValue.GetObject("AwsEcrRepository");
+
+    m_awsEcrRepositoryHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsEksCluster"))
+  {
+    m_awsEksCluster = jsonValue.GetObject("AwsEksCluster");
+
+    m_awsEksClusterHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsNetworkFirewallFirewallPolicy"))
+  {
+    m_awsNetworkFirewallFirewallPolicy = jsonValue.GetObject("AwsNetworkFirewallFirewallPolicy");
+
+    m_awsNetworkFirewallFirewallPolicyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsNetworkFirewallFirewall"))
+  {
+    m_awsNetworkFirewallFirewall = jsonValue.GetObject("AwsNetworkFirewallFirewall");
+
+    m_awsNetworkFirewallFirewallHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsNetworkFirewallRuleGroup"))
+  {
+    m_awsNetworkFirewallRuleGroup = jsonValue.GetObject("AwsNetworkFirewallRuleGroup");
+
+    m_awsNetworkFirewallRuleGroupHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsRdsDbSecurityGroup"))
+  {
+    m_awsRdsDbSecurityGroup = jsonValue.GetObject("AwsRdsDbSecurityGroup");
+
+    m_awsRdsDbSecurityGroupHasBeenSet = true;
   }
 
   return *this;
@@ -453,9 +660,27 @@ JsonValue ResourceDetails::Jsonize() const
 
   }
 
+  if(m_awsEc2SubnetHasBeenSet)
+  {
+   payload.WithObject("AwsEc2Subnet", m_awsEc2Subnet.Jsonize());
+
+  }
+
+  if(m_awsEc2NetworkAclHasBeenSet)
+  {
+   payload.WithObject("AwsEc2NetworkAcl", m_awsEc2NetworkAcl.Jsonize());
+
+  }
+
   if(m_awsElbv2LoadBalancerHasBeenSet)
   {
    payload.WithObject("AwsElbv2LoadBalancer", m_awsElbv2LoadBalancer.Jsonize());
+
+  }
+
+  if(m_awsElasticBeanstalkEnvironmentHasBeenSet)
+  {
+   payload.WithObject("AwsElasticBeanstalkEnvironment", m_awsElasticBeanstalkEnvironment.Jsonize());
 
   }
 
@@ -468,6 +693,12 @@ JsonValue ResourceDetails::Jsonize() const
   if(m_awsS3BucketHasBeenSet)
   {
    payload.WithObject("AwsS3Bucket", m_awsS3Bucket.Jsonize());
+
+  }
+
+  if(m_awsS3AccountPublicAccessBlockHasBeenSet)
+  {
+   payload.WithObject("AwsS3AccountPublicAccessBlock", m_awsS3AccountPublicAccessBlock.Jsonize());
 
   }
 
@@ -534,6 +765,12 @@ JsonValue ResourceDetails::Jsonize() const
   if(m_awsCloudTrailTrailHasBeenSet)
   {
    payload.WithObject("AwsCloudTrailTrail", m_awsCloudTrailTrail.Jsonize());
+
+  }
+
+  if(m_awsSsmPatchComplianceHasBeenSet)
+  {
+   payload.WithObject("AwsSsmPatchCompliance", m_awsSsmPatchCompliance.Jsonize());
 
   }
 
@@ -627,6 +864,18 @@ JsonValue ResourceDetails::Jsonize() const
 
   }
 
+  if(m_awsEcsClusterHasBeenSet)
+  {
+   payload.WithObject("AwsEcsCluster", m_awsEcsCluster.Jsonize());
+
+  }
+
+  if(m_awsEcsTaskDefinitionHasBeenSet)
+  {
+   payload.WithObject("AwsEcsTaskDefinition", m_awsEcsTaskDefinition.Jsonize());
+
+  }
+
   if(m_containerHasBeenSet)
   {
    payload.WithObject("Container", m_container.Jsonize());
@@ -641,6 +890,102 @@ JsonValue ResourceDetails::Jsonize() const
      otherJsonMap.WithString(otherItem.first, otherItem.second);
    }
    payload.WithObject("Other", std::move(otherJsonMap));
+
+  }
+
+  if(m_awsRdsEventSubscriptionHasBeenSet)
+  {
+   payload.WithObject("AwsRdsEventSubscription", m_awsRdsEventSubscription.Jsonize());
+
+  }
+
+  if(m_awsEcsServiceHasBeenSet)
+  {
+   payload.WithObject("AwsEcsService", m_awsEcsService.Jsonize());
+
+  }
+
+  if(m_awsAutoScalingLaunchConfigurationHasBeenSet)
+  {
+   payload.WithObject("AwsAutoScalingLaunchConfiguration", m_awsAutoScalingLaunchConfiguration.Jsonize());
+
+  }
+
+  if(m_awsEc2VpnConnectionHasBeenSet)
+  {
+   payload.WithObject("AwsEc2VpnConnection", m_awsEc2VpnConnection.Jsonize());
+
+  }
+
+  if(m_awsEcrContainerImageHasBeenSet)
+  {
+   payload.WithObject("AwsEcrContainerImage", m_awsEcrContainerImage.Jsonize());
+
+  }
+
+  if(m_awsOpenSearchServiceDomainHasBeenSet)
+  {
+   payload.WithObject("AwsOpenSearchServiceDomain", m_awsOpenSearchServiceDomain.Jsonize());
+
+  }
+
+  if(m_awsEc2VpcEndpointServiceHasBeenSet)
+  {
+   payload.WithObject("AwsEc2VpcEndpointService", m_awsEc2VpcEndpointService.Jsonize());
+
+  }
+
+  if(m_awsXrayEncryptionConfigHasBeenSet)
+  {
+   payload.WithObject("AwsXrayEncryptionConfig", m_awsXrayEncryptionConfig.Jsonize());
+
+  }
+
+  if(m_awsWafRateBasedRuleHasBeenSet)
+  {
+   payload.WithObject("AwsWafRateBasedRule", m_awsWafRateBasedRule.Jsonize());
+
+  }
+
+  if(m_awsWafRegionalRateBasedRuleHasBeenSet)
+  {
+   payload.WithObject("AwsWafRegionalRateBasedRule", m_awsWafRegionalRateBasedRule.Jsonize());
+
+  }
+
+  if(m_awsEcrRepositoryHasBeenSet)
+  {
+   payload.WithObject("AwsEcrRepository", m_awsEcrRepository.Jsonize());
+
+  }
+
+  if(m_awsEksClusterHasBeenSet)
+  {
+   payload.WithObject("AwsEksCluster", m_awsEksCluster.Jsonize());
+
+  }
+
+  if(m_awsNetworkFirewallFirewallPolicyHasBeenSet)
+  {
+   payload.WithObject("AwsNetworkFirewallFirewallPolicy", m_awsNetworkFirewallFirewallPolicy.Jsonize());
+
+  }
+
+  if(m_awsNetworkFirewallFirewallHasBeenSet)
+  {
+   payload.WithObject("AwsNetworkFirewallFirewall", m_awsNetworkFirewallFirewall.Jsonize());
+
+  }
+
+  if(m_awsNetworkFirewallRuleGroupHasBeenSet)
+  {
+   payload.WithObject("AwsNetworkFirewallRuleGroup", m_awsNetworkFirewallRuleGroup.Jsonize());
+
+  }
+
+  if(m_awsRdsDbSecurityGroupHasBeenSet)
+  {
+   payload.WithObject("AwsRdsDbSecurityGroup", m_awsRdsDbSecurityGroup.Jsonize());
 
   }
 

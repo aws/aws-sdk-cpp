@@ -16,7 +16,8 @@ namespace Model
   enum class DolbyVisionProfile
   {
     NOT_SET,
-    PROFILE_5
+    PROFILE_5,
+    PROFILE_8_1
   };
 
 namespace DolbyVisionProfileMapper

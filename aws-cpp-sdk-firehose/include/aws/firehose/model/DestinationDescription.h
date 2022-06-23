@@ -10,6 +10,7 @@
 #include <aws/firehose/model/ExtendedS3DestinationDescription.h>
 #include <aws/firehose/model/RedshiftDestinationDescription.h>
 #include <aws/firehose/model/ElasticsearchDestinationDescription.h>
+#include <aws/firehose/model/AmazonopensearchserviceDestinationDescription.h>
 #include <aws/firehose/model/SplunkDestinationDescription.h>
 #include <aws/firehose/model/HttpEndpointDestinationDescription.h>
 #include <utility>
@@ -209,6 +210,25 @@ namespace Model
     inline DestinationDescription& WithElasticsearchDestinationDescription(ElasticsearchDestinationDescription&& value) { SetElasticsearchDestinationDescription(std::move(value)); return *this;}
 
 
+    
+    inline const AmazonopensearchserviceDestinationDescription& GetAmazonopensearchserviceDestinationDescription() const{ return m_amazonopensearchserviceDestinationDescription; }
+
+    
+    inline bool AmazonopensearchserviceDestinationDescriptionHasBeenSet() const { return m_amazonopensearchserviceDestinationDescriptionHasBeenSet; }
+
+    
+    inline void SetAmazonopensearchserviceDestinationDescription(const AmazonopensearchserviceDestinationDescription& value) { m_amazonopensearchserviceDestinationDescriptionHasBeenSet = true; m_amazonopensearchserviceDestinationDescription = value; }
+
+    
+    inline void SetAmazonopensearchserviceDestinationDescription(AmazonopensearchserviceDestinationDescription&& value) { m_amazonopensearchserviceDestinationDescriptionHasBeenSet = true; m_amazonopensearchserviceDestinationDescription = std::move(value); }
+
+    
+    inline DestinationDescription& WithAmazonopensearchserviceDestinationDescription(const AmazonopensearchserviceDestinationDescription& value) { SetAmazonopensearchserviceDestinationDescription(value); return *this;}
+
+    
+    inline DestinationDescription& WithAmazonopensearchserviceDestinationDescription(AmazonopensearchserviceDestinationDescription&& value) { SetAmazonopensearchserviceDestinationDescription(std::move(value)); return *this;}
+
+
     /**
      * <p>The destination in Splunk.</p>
      */
@@ -286,6 +306,9 @@ namespace Model
 
     ElasticsearchDestinationDescription m_elasticsearchDestinationDescription;
     bool m_elasticsearchDestinationDescriptionHasBeenSet;
+
+    AmazonopensearchserviceDestinationDescription m_amazonopensearchserviceDestinationDescription;
+    bool m_amazonopensearchserviceDestinationDescriptionHasBeenSet;
 
     SplunkDestinationDescription m_splunkDestinationDescription;
     bool m_splunkDestinationDescriptionHasBeenSet;

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/ivs/IVS_EXPORTS.h>
 #include <aws/ivs/IVSRequest.h>
+#include <aws/ivs/model/StreamFilters.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -30,6 +31,58 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "ListStreams"; }
 
     Aws::String SerializePayload() const override;
+
+
+    /**
+     * <p>Filters the stream list to match the specified criterion.</p>
+     */
+    inline const StreamFilters& GetFilterBy() const{ return m_filterBy; }
+
+    /**
+     * <p>Filters the stream list to match the specified criterion.</p>
+     */
+    inline bool FilterByHasBeenSet() const { return m_filterByHasBeenSet; }
+
+    /**
+     * <p>Filters the stream list to match the specified criterion.</p>
+     */
+    inline void SetFilterBy(const StreamFilters& value) { m_filterByHasBeenSet = true; m_filterBy = value; }
+
+    /**
+     * <p>Filters the stream list to match the specified criterion.</p>
+     */
+    inline void SetFilterBy(StreamFilters&& value) { m_filterByHasBeenSet = true; m_filterBy = std::move(value); }
+
+    /**
+     * <p>Filters the stream list to match the specified criterion.</p>
+     */
+    inline ListStreamsRequest& WithFilterBy(const StreamFilters& value) { SetFilterBy(value); return *this;}
+
+    /**
+     * <p>Filters the stream list to match the specified criterion.</p>
+     */
+    inline ListStreamsRequest& WithFilterBy(StreamFilters&& value) { SetFilterBy(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Maximum number of streams to return. Default: 50.</p>
+     */
+    inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>Maximum number of streams to return. Default: 50.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>Maximum number of streams to return. Default: 50.</p>
+     */
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+
+    /**
+     * <p>Maximum number of streams to return. Default: 50.</p>
+     */
+    inline ListStreamsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
@@ -80,34 +133,16 @@ namespace Model
      */
     inline ListStreamsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
-
-    /**
-     * <p>Maximum number of streams to return.</p>
-     */
-    inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>Maximum number of streams to return.</p>
-     */
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>Maximum number of streams to return.</p>
-     */
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>Maximum number of streams to return.</p>
-     */
-    inline ListStreamsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
   private:
 
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    StreamFilters m_filterBy;
+    bool m_filterByHasBeenSet;
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet;
   };
 
 } // namespace Model

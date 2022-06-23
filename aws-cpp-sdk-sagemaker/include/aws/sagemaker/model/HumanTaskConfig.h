@@ -495,29 +495,29 @@ namespace Model
      * variant of the Expectation Maximization approach to estimate the true class of
      * verification judgement for bounding box labels based on annotations from
      * individual workers.</p> <ul> <li> <p>
-     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-VerificationBoundingBox</code>
      * </p> </li> </ul> <p> <b>Bounding box adjustment</b> - Finds the most similar
      * boxes from different workers based on the Jaccard index of the adjusted
      * annotations.</p> <ul> <li> <p>
@@ -1097,29 +1097,29 @@ namespace Model
      * variant of the Expectation Maximization approach to estimate the true class of
      * verification judgement for bounding box labels based on annotations from
      * individual workers.</p> <ul> <li> <p>
-     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-VerificationBoundingBox</code>
      * </p> </li> </ul> <p> <b>Bounding box adjustment</b> - Finds the most similar
      * boxes from different workers based on the Jaccard index of the adjusted
      * annotations.</p> <ul> <li> <p>
@@ -1699,29 +1699,29 @@ namespace Model
      * variant of the Expectation Maximization approach to estimate the true class of
      * verification judgement for bounding box labels based on annotations from
      * individual workers.</p> <ul> <li> <p>
-     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-VerificationBoundingBox</code>
      * </p> </li> </ul> <p> <b>Bounding box adjustment</b> - Finds the most similar
      * boxes from different workers based on the Jaccard index of the adjusted
      * annotations.</p> <ul> <li> <p>
@@ -2301,29 +2301,29 @@ namespace Model
      * variant of the Expectation Maximization approach to estimate the true class of
      * verification judgement for bounding box labels based on annotations from
      * individual workers.</p> <ul> <li> <p>
-     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-VerificationBoundingBox</code>
      * </p> </li> </ul> <p> <b>Bounding box adjustment</b> - Finds the most similar
      * boxes from different workers based on the Jaccard index of the adjusted
      * annotations.</p> <ul> <li> <p>
@@ -2903,29 +2903,29 @@ namespace Model
      * variant of the Expectation Maximization approach to estimate the true class of
      * verification judgement for bounding box labels based on annotations from
      * individual workers.</p> <ul> <li> <p>
-     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-VerificationBoundingBox</code>
      * </p> </li> </ul> <p> <b>Bounding box adjustment</b> - Finds the most similar
      * boxes from different workers based on the Jaccard index of the adjusted
      * annotations.</p> <ul> <li> <p>
@@ -3505,29 +3505,29 @@ namespace Model
      * variant of the Expectation Maximization approach to estimate the true class of
      * verification judgement for bounding box labels based on annotations from
      * individual workers.</p> <ul> <li> <p>
-     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-VerificationBoundingBox</code>
      * </p> </li> </ul> <p> <b>Bounding box adjustment</b> - Finds the most similar
      * boxes from different workers based on the Jaccard index of the adjusted
      * annotations.</p> <ul> <li> <p>
@@ -4107,29 +4107,29 @@ namespace Model
      * variant of the Expectation Maximization approach to estimate the true class of
      * verification judgement for bounding box labels based on annotations from
      * individual workers.</p> <ul> <li> <p>
-     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-VerificationBoundingBox</code>
      * </p> </li> </ul> <p> <b>Bounding box adjustment</b> - Finds the most similar
      * boxes from different workers based on the Jaccard index of the adjusted
      * annotations.</p> <ul> <li> <p>
@@ -4709,29 +4709,29 @@ namespace Model
      * variant of the Expectation Maximization approach to estimate the true class of
      * verification judgement for bounding box labels based on annotations from
      * individual workers.</p> <ul> <li> <p>
-     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-VerificationBoundingBox</code>
      * </p> </li> <li> <p>
-     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-VerificationBoundingBox</code>
      * </p> </li> </ul> <p> <b>Bounding box adjustment</b> - Finds the most similar
      * boxes from different workers based on the Jaccard index of the adjusted
      * annotations.</p> <ul> <li> <p>
@@ -5104,55 +5104,123 @@ namespace Model
 
 
     /**
-     * <p>The amount of time that a worker has to complete a task.</p>
+     * <p>The amount of time that a worker has to complete a task. </p> <p>If you
+     * create a custom labeling job, the maximum value for this parameter is 8 hours
+     * (28,800 seconds).</p> <p>If you create a labeling job using a <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in
+     * task type</a> the maximum for this parameter depends on the task type you
+     * use:</p> <ul> <li> <p>For <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-label-images.html">image</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-label-text.html">text</a>
+     * labeling jobs, the maximum is 8 hours (28,800 seconds).</p> </li> <li> <p>For <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud.html">3D
+     * point cloud</a> and <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-video.html">video
+     * frame</a> labeling jobs, the maximum is 30 days (2952,000 seconds) for non-AL
+     * mode. For most users, the maximum is also 30 days.</p> </li> </ul>
      */
     inline int GetTaskTimeLimitInSeconds() const{ return m_taskTimeLimitInSeconds; }
 
     /**
-     * <p>The amount of time that a worker has to complete a task.</p>
+     * <p>The amount of time that a worker has to complete a task. </p> <p>If you
+     * create a custom labeling job, the maximum value for this parameter is 8 hours
+     * (28,800 seconds).</p> <p>If you create a labeling job using a <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in
+     * task type</a> the maximum for this parameter depends on the task type you
+     * use:</p> <ul> <li> <p>For <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-label-images.html">image</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-label-text.html">text</a>
+     * labeling jobs, the maximum is 8 hours (28,800 seconds).</p> </li> <li> <p>For <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud.html">3D
+     * point cloud</a> and <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-video.html">video
+     * frame</a> labeling jobs, the maximum is 30 days (2952,000 seconds) for non-AL
+     * mode. For most users, the maximum is also 30 days.</p> </li> </ul>
      */
     inline bool TaskTimeLimitInSecondsHasBeenSet() const { return m_taskTimeLimitInSecondsHasBeenSet; }
 
     /**
-     * <p>The amount of time that a worker has to complete a task.</p>
+     * <p>The amount of time that a worker has to complete a task. </p> <p>If you
+     * create a custom labeling job, the maximum value for this parameter is 8 hours
+     * (28,800 seconds).</p> <p>If you create a labeling job using a <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in
+     * task type</a> the maximum for this parameter depends on the task type you
+     * use:</p> <ul> <li> <p>For <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-label-images.html">image</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-label-text.html">text</a>
+     * labeling jobs, the maximum is 8 hours (28,800 seconds).</p> </li> <li> <p>For <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud.html">3D
+     * point cloud</a> and <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-video.html">video
+     * frame</a> labeling jobs, the maximum is 30 days (2952,000 seconds) for non-AL
+     * mode. For most users, the maximum is also 30 days.</p> </li> </ul>
      */
     inline void SetTaskTimeLimitInSeconds(int value) { m_taskTimeLimitInSecondsHasBeenSet = true; m_taskTimeLimitInSeconds = value; }
 
     /**
-     * <p>The amount of time that a worker has to complete a task.</p>
+     * <p>The amount of time that a worker has to complete a task. </p> <p>If you
+     * create a custom labeling job, the maximum value for this parameter is 8 hours
+     * (28,800 seconds).</p> <p>If you create a labeling job using a <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in
+     * task type</a> the maximum for this parameter depends on the task type you
+     * use:</p> <ul> <li> <p>For <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-label-images.html">image</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-label-text.html">text</a>
+     * labeling jobs, the maximum is 8 hours (28,800 seconds).</p> </li> <li> <p>For <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud.html">3D
+     * point cloud</a> and <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-video.html">video
+     * frame</a> labeling jobs, the maximum is 30 days (2952,000 seconds) for non-AL
+     * mode. For most users, the maximum is also 30 days.</p> </li> </ul>
      */
     inline HumanTaskConfig& WithTaskTimeLimitInSeconds(int value) { SetTaskTimeLimitInSeconds(value); return *this;}
 
 
     /**
      * <p>The length of time that a task remains available for labeling by human
-     * workers. <b>If you choose the Amazon Mechanical Turk workforce, the maximum is
-     * 12 hours (43200)</b>. The default value is 864000 seconds (10 days). For private
-     * and vendor workforces, the maximum is as listed.</p>
+     * workers. The default and maximum values for this parameter depend on the type of
+     * workforce you use.</p> <ul> <li> <p>If you choose the Amazon Mechanical Turk
+     * workforce, the maximum is 12 hours (43,200 seconds). The default is 6 hours
+     * (21,600 seconds).</p> </li> <li> <p>If you choose a private or vendor workforce,
+     * the default value is 30 days (2592,000 seconds) for non-AL mode. For most users,
+     * the maximum is also 30 days.</p> </li> </ul>
      */
     inline int GetTaskAvailabilityLifetimeInSeconds() const{ return m_taskAvailabilityLifetimeInSeconds; }
 
     /**
      * <p>The length of time that a task remains available for labeling by human
-     * workers. <b>If you choose the Amazon Mechanical Turk workforce, the maximum is
-     * 12 hours (43200)</b>. The default value is 864000 seconds (10 days). For private
-     * and vendor workforces, the maximum is as listed.</p>
+     * workers. The default and maximum values for this parameter depend on the type of
+     * workforce you use.</p> <ul> <li> <p>If you choose the Amazon Mechanical Turk
+     * workforce, the maximum is 12 hours (43,200 seconds). The default is 6 hours
+     * (21,600 seconds).</p> </li> <li> <p>If you choose a private or vendor workforce,
+     * the default value is 30 days (2592,000 seconds) for non-AL mode. For most users,
+     * the maximum is also 30 days.</p> </li> </ul>
      */
     inline bool TaskAvailabilityLifetimeInSecondsHasBeenSet() const { return m_taskAvailabilityLifetimeInSecondsHasBeenSet; }
 
     /**
      * <p>The length of time that a task remains available for labeling by human
-     * workers. <b>If you choose the Amazon Mechanical Turk workforce, the maximum is
-     * 12 hours (43200)</b>. The default value is 864000 seconds (10 days). For private
-     * and vendor workforces, the maximum is as listed.</p>
+     * workers. The default and maximum values for this parameter depend on the type of
+     * workforce you use.</p> <ul> <li> <p>If you choose the Amazon Mechanical Turk
+     * workforce, the maximum is 12 hours (43,200 seconds). The default is 6 hours
+     * (21,600 seconds).</p> </li> <li> <p>If you choose a private or vendor workforce,
+     * the default value is 30 days (2592,000 seconds) for non-AL mode. For most users,
+     * the maximum is also 30 days.</p> </li> </ul>
      */
     inline void SetTaskAvailabilityLifetimeInSeconds(int value) { m_taskAvailabilityLifetimeInSecondsHasBeenSet = true; m_taskAvailabilityLifetimeInSeconds = value; }
 
     /**
      * <p>The length of time that a task remains available for labeling by human
-     * workers. <b>If you choose the Amazon Mechanical Turk workforce, the maximum is
-     * 12 hours (43200)</b>. The default value is 864000 seconds (10 days). For private
-     * and vendor workforces, the maximum is as listed.</p>
+     * workers. The default and maximum values for this parameter depend on the type of
+     * workforce you use.</p> <ul> <li> <p>If you choose the Amazon Mechanical Turk
+     * workforce, the maximum is 12 hours (43,200 seconds). The default is 6 hours
+     * (21,600 seconds).</p> </li> <li> <p>If you choose a private or vendor workforce,
+     * the default value is 30 days (2592,000 seconds) for non-AL mode. For most users,
+     * the maximum is also 30 days.</p> </li> </ul>
      */
     inline HumanTaskConfig& WithTaskAvailabilityLifetimeInSeconds(int value) { SetTaskAvailabilityLifetimeInSeconds(value); return *this;}
 

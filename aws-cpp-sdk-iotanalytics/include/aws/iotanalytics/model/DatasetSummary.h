@@ -29,7 +29,7 @@ namespace Model
 {
 
   /**
-   * <p>A summary of information about a data set.</p><p><h3>See Also:</h3>   <a
+   * <p>A summary of information about a dataset.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DatasetSummary">AWS
    * API Reference</a></p>
    */
@@ -43,198 +43,198 @@ namespace Model
 
 
     /**
-     * <p>The name of the data set.</p>
+     * <p>The name of the dataset.</p>
      */
     inline const Aws::String& GetDatasetName() const{ return m_datasetName; }
 
     /**
-     * <p>The name of the data set.</p>
+     * <p>The name of the dataset.</p>
      */
     inline bool DatasetNameHasBeenSet() const { return m_datasetNameHasBeenSet; }
 
     /**
-     * <p>The name of the data set.</p>
+     * <p>The name of the dataset.</p>
      */
     inline void SetDatasetName(const Aws::String& value) { m_datasetNameHasBeenSet = true; m_datasetName = value; }
 
     /**
-     * <p>The name of the data set.</p>
+     * <p>The name of the dataset.</p>
      */
     inline void SetDatasetName(Aws::String&& value) { m_datasetNameHasBeenSet = true; m_datasetName = std::move(value); }
 
     /**
-     * <p>The name of the data set.</p>
+     * <p>The name of the dataset.</p>
      */
     inline void SetDatasetName(const char* value) { m_datasetNameHasBeenSet = true; m_datasetName.assign(value); }
 
     /**
-     * <p>The name of the data set.</p>
+     * <p>The name of the dataset.</p>
      */
     inline DatasetSummary& WithDatasetName(const Aws::String& value) { SetDatasetName(value); return *this;}
 
     /**
-     * <p>The name of the data set.</p>
+     * <p>The name of the dataset.</p>
      */
     inline DatasetSummary& WithDatasetName(Aws::String&& value) { SetDatasetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the data set.</p>
+     * <p>The name of the dataset.</p>
      */
     inline DatasetSummary& WithDatasetName(const char* value) { SetDatasetName(value); return *this;}
 
 
     /**
-     * <p>The status of the data set.</p>
+     * <p>The status of the dataset.</p>
      */
     inline const DatasetStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the data set.</p>
+     * <p>The status of the dataset.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The status of the data set.</p>
+     * <p>The status of the dataset.</p>
      */
     inline void SetStatus(const DatasetStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the data set.</p>
+     * <p>The status of the dataset.</p>
      */
     inline void SetStatus(DatasetStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the data set.</p>
+     * <p>The status of the dataset.</p>
      */
     inline DatasetSummary& WithStatus(const DatasetStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the data set.</p>
+     * <p>The status of the dataset.</p>
      */
     inline DatasetSummary& WithStatus(DatasetStatus&& value) { SetStatus(std::move(value)); return *this;}
 
 
     /**
-     * <p>The time the data set was created.</p>
+     * <p>The time the dataset was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
 
     /**
-     * <p>The time the data set was created.</p>
+     * <p>The time the dataset was created.</p>
      */
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
-     * <p>The time the data set was created.</p>
+     * <p>The time the dataset was created.</p>
      */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
-     * <p>The time the data set was created.</p>
+     * <p>The time the dataset was created.</p>
      */
     inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
 
     /**
-     * <p>The time the data set was created.</p>
+     * <p>The time the dataset was created.</p>
      */
     inline DatasetSummary& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
 
     /**
-     * <p>The time the data set was created.</p>
+     * <p>The time the dataset was created.</p>
      */
     inline DatasetSummary& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The last time the data set was updated.</p>
+     * <p>The last time the dataset was updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdateTime() const{ return m_lastUpdateTime; }
 
     /**
-     * <p>The last time the data set was updated.</p>
+     * <p>The last time the dataset was updated.</p>
      */
     inline bool LastUpdateTimeHasBeenSet() const { return m_lastUpdateTimeHasBeenSet; }
 
     /**
-     * <p>The last time the data set was updated.</p>
+     * <p>The last time the dataset was updated.</p>
      */
     inline void SetLastUpdateTime(const Aws::Utils::DateTime& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = value; }
 
     /**
-     * <p>The last time the data set was updated.</p>
+     * <p>The last time the dataset was updated.</p>
      */
     inline void SetLastUpdateTime(Aws::Utils::DateTime&& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = std::move(value); }
 
     /**
-     * <p>The last time the data set was updated.</p>
+     * <p>The last time the dataset was updated.</p>
      */
     inline DatasetSummary& WithLastUpdateTime(const Aws::Utils::DateTime& value) { SetLastUpdateTime(value); return *this;}
 
     /**
-     * <p>The last time the data set was updated.</p>
+     * <p>The last time the dataset was updated.</p>
      */
     inline DatasetSummary& WithLastUpdateTime(Aws::Utils::DateTime&& value) { SetLastUpdateTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>A list of triggers. A trigger causes data set content to be populated at a
-     * specified time interval or when another data set is populated. The list of
+     * <p>A list of triggers. A trigger causes dataset content to be populated at a
+     * specified time interval or when another dataset is populated. The list of
      * triggers can be empty or contain up to five <code>DataSetTrigger</code>
      * objects</p>
      */
     inline const Aws::Vector<DatasetTrigger>& GetTriggers() const{ return m_triggers; }
 
     /**
-     * <p>A list of triggers. A trigger causes data set content to be populated at a
-     * specified time interval or when another data set is populated. The list of
+     * <p>A list of triggers. A trigger causes dataset content to be populated at a
+     * specified time interval or when another dataset is populated. The list of
      * triggers can be empty or contain up to five <code>DataSetTrigger</code>
      * objects</p>
      */
     inline bool TriggersHasBeenSet() const { return m_triggersHasBeenSet; }
 
     /**
-     * <p>A list of triggers. A trigger causes data set content to be populated at a
-     * specified time interval or when another data set is populated. The list of
+     * <p>A list of triggers. A trigger causes dataset content to be populated at a
+     * specified time interval or when another dataset is populated. The list of
      * triggers can be empty or contain up to five <code>DataSetTrigger</code>
      * objects</p>
      */
     inline void SetTriggers(const Aws::Vector<DatasetTrigger>& value) { m_triggersHasBeenSet = true; m_triggers = value; }
 
     /**
-     * <p>A list of triggers. A trigger causes data set content to be populated at a
-     * specified time interval or when another data set is populated. The list of
+     * <p>A list of triggers. A trigger causes dataset content to be populated at a
+     * specified time interval or when another dataset is populated. The list of
      * triggers can be empty or contain up to five <code>DataSetTrigger</code>
      * objects</p>
      */
     inline void SetTriggers(Aws::Vector<DatasetTrigger>&& value) { m_triggersHasBeenSet = true; m_triggers = std::move(value); }
 
     /**
-     * <p>A list of triggers. A trigger causes data set content to be populated at a
-     * specified time interval or when another data set is populated. The list of
+     * <p>A list of triggers. A trigger causes dataset content to be populated at a
+     * specified time interval or when another dataset is populated. The list of
      * triggers can be empty or contain up to five <code>DataSetTrigger</code>
      * objects</p>
      */
     inline DatasetSummary& WithTriggers(const Aws::Vector<DatasetTrigger>& value) { SetTriggers(value); return *this;}
 
     /**
-     * <p>A list of triggers. A trigger causes data set content to be populated at a
-     * specified time interval or when another data set is populated. The list of
+     * <p>A list of triggers. A trigger causes dataset content to be populated at a
+     * specified time interval or when another dataset is populated. The list of
      * triggers can be empty or contain up to five <code>DataSetTrigger</code>
      * objects</p>
      */
     inline DatasetSummary& WithTriggers(Aws::Vector<DatasetTrigger>&& value) { SetTriggers(std::move(value)); return *this;}
 
     /**
-     * <p>A list of triggers. A trigger causes data set content to be populated at a
-     * specified time interval or when another data set is populated. The list of
+     * <p>A list of triggers. A trigger causes dataset content to be populated at a
+     * specified time interval or when another dataset is populated. The list of
      * triggers can be empty or contain up to five <code>DataSetTrigger</code>
      * objects</p>
      */
     inline DatasetSummary& AddTriggers(const DatasetTrigger& value) { m_triggersHasBeenSet = true; m_triggers.push_back(value); return *this; }
 
     /**
-     * <p>A list of triggers. A trigger causes data set content to be populated at a
-     * specified time interval or when another data set is populated. The list of
+     * <p>A list of triggers. A trigger causes dataset content to be populated at a
+     * specified time interval or when another dataset is populated. The list of
      * triggers can be empty or contain up to five <code>DataSetTrigger</code>
      * objects</p>
      */

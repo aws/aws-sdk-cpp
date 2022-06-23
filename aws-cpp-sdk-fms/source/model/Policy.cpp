@@ -30,6 +30,8 @@ Policy::Policy() :
     m_excludeResourceTagsHasBeenSet(false),
     m_remediationEnabled(false),
     m_remediationEnabledHasBeenSet(false),
+    m_deleteUnusedFMManagedResources(false),
+    m_deleteUnusedFMManagedResourcesHasBeenSet(false),
     m_includeMapHasBeenSet(false),
     m_excludeMapHasBeenSet(false)
 {
@@ -47,6 +49,8 @@ Policy::Policy(JsonView jsonValue) :
     m_excludeResourceTagsHasBeenSet(false),
     m_remediationEnabled(false),
     m_remediationEnabledHasBeenSet(false),
+    m_deleteUnusedFMManagedResources(false),
+    m_deleteUnusedFMManagedResourcesHasBeenSet(false),
     m_includeMapHasBeenSet(false),
     m_excludeMapHasBeenSet(false)
 {
@@ -122,6 +126,13 @@ Policy& Policy::operator =(JsonView jsonValue)
     m_remediationEnabled = jsonValue.GetBool("RemediationEnabled");
 
     m_remediationEnabledHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DeleteUnusedFMManagedResources"))
+  {
+    m_deleteUnusedFMManagedResources = jsonValue.GetBool("DeleteUnusedFMManagedResources");
+
+    m_deleteUnusedFMManagedResourcesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("IncludeMap"))
@@ -226,6 +237,12 @@ JsonValue Policy::Jsonize() const
   if(m_remediationEnabledHasBeenSet)
   {
    payload.WithBool("RemediationEnabled", m_remediationEnabled);
+
+  }
+
+  if(m_deleteUnusedFMManagedResourcesHasBeenSet)
+  {
+   payload.WithBool("DeleteUnusedFMManagedResources", m_deleteUnusedFMManagedResources);
 
   }
 

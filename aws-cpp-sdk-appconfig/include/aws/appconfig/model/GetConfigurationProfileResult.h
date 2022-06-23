@@ -216,43 +216,43 @@ namespace Model
 
     /**
      * <p>The ARN of an IAM role with permission to access the configuration at the
-     * specified LocationUri.</p>
+     * specified <code>LocationUri</code>.</p>
      */
     inline const Aws::String& GetRetrievalRoleArn() const{ return m_retrievalRoleArn; }
 
     /**
      * <p>The ARN of an IAM role with permission to access the configuration at the
-     * specified LocationUri.</p>
+     * specified <code>LocationUri</code>.</p>
      */
     inline void SetRetrievalRoleArn(const Aws::String& value) { m_retrievalRoleArn = value; }
 
     /**
      * <p>The ARN of an IAM role with permission to access the configuration at the
-     * specified LocationUri.</p>
+     * specified <code>LocationUri</code>.</p>
      */
     inline void SetRetrievalRoleArn(Aws::String&& value) { m_retrievalRoleArn = std::move(value); }
 
     /**
      * <p>The ARN of an IAM role with permission to access the configuration at the
-     * specified LocationUri.</p>
+     * specified <code>LocationUri</code>.</p>
      */
     inline void SetRetrievalRoleArn(const char* value) { m_retrievalRoleArn.assign(value); }
 
     /**
      * <p>The ARN of an IAM role with permission to access the configuration at the
-     * specified LocationUri.</p>
+     * specified <code>LocationUri</code>.</p>
      */
     inline GetConfigurationProfileResult& WithRetrievalRoleArn(const Aws::String& value) { SetRetrievalRoleArn(value); return *this;}
 
     /**
      * <p>The ARN of an IAM role with permission to access the configuration at the
-     * specified LocationUri.</p>
+     * specified <code>LocationUri</code>.</p>
      */
     inline GetConfigurationProfileResult& WithRetrievalRoleArn(Aws::String&& value) { SetRetrievalRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of an IAM role with permission to access the configuration at the
-     * specified LocationUri.</p>
+     * specified <code>LocationUri</code>.</p>
      */
     inline GetConfigurationProfileResult& WithRetrievalRoleArn(const char* value) { SetRetrievalRoleArn(value); return *this;}
 
@@ -292,6 +292,84 @@ namespace Model
      */
     inline GetConfigurationProfileResult& AddValidators(Validator&& value) { m_validators.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The type of configurations contained in the profile. AppConfig supports
+     * <code>feature flags</code> and <code>freeform</code> configurations. We
+     * recommend you create feature flag configurations to enable or disable new
+     * features and freeform configurations to distribute configurations to an
+     * application. When calling this API, enter one of the following values for
+     * <code>Type</code>:</p> <p> <code>AWS.AppConfig.FeatureFlags</code> </p> <p>
+     * <code>AWS.Freeform</code> </p>
+     */
+    inline const Aws::String& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of configurations contained in the profile. AppConfig supports
+     * <code>feature flags</code> and <code>freeform</code> configurations. We
+     * recommend you create feature flag configurations to enable or disable new
+     * features and freeform configurations to distribute configurations to an
+     * application. When calling this API, enter one of the following values for
+     * <code>Type</code>:</p> <p> <code>AWS.AppConfig.FeatureFlags</code> </p> <p>
+     * <code>AWS.Freeform</code> </p>
+     */
+    inline void SetType(const Aws::String& value) { m_type = value; }
+
+    /**
+     * <p>The type of configurations contained in the profile. AppConfig supports
+     * <code>feature flags</code> and <code>freeform</code> configurations. We
+     * recommend you create feature flag configurations to enable or disable new
+     * features and freeform configurations to distribute configurations to an
+     * application. When calling this API, enter one of the following values for
+     * <code>Type</code>:</p> <p> <code>AWS.AppConfig.FeatureFlags</code> </p> <p>
+     * <code>AWS.Freeform</code> </p>
+     */
+    inline void SetType(Aws::String&& value) { m_type = std::move(value); }
+
+    /**
+     * <p>The type of configurations contained in the profile. AppConfig supports
+     * <code>feature flags</code> and <code>freeform</code> configurations. We
+     * recommend you create feature flag configurations to enable or disable new
+     * features and freeform configurations to distribute configurations to an
+     * application. When calling this API, enter one of the following values for
+     * <code>Type</code>:</p> <p> <code>AWS.AppConfig.FeatureFlags</code> </p> <p>
+     * <code>AWS.Freeform</code> </p>
+     */
+    inline void SetType(const char* value) { m_type.assign(value); }
+
+    /**
+     * <p>The type of configurations contained in the profile. AppConfig supports
+     * <code>feature flags</code> and <code>freeform</code> configurations. We
+     * recommend you create feature flag configurations to enable or disable new
+     * features and freeform configurations to distribute configurations to an
+     * application. When calling this API, enter one of the following values for
+     * <code>Type</code>:</p> <p> <code>AWS.AppConfig.FeatureFlags</code> </p> <p>
+     * <code>AWS.Freeform</code> </p>
+     */
+    inline GetConfigurationProfileResult& WithType(const Aws::String& value) { SetType(value); return *this;}
+
+    /**
+     * <p>The type of configurations contained in the profile. AppConfig supports
+     * <code>feature flags</code> and <code>freeform</code> configurations. We
+     * recommend you create feature flag configurations to enable or disable new
+     * features and freeform configurations to distribute configurations to an
+     * application. When calling this API, enter one of the following values for
+     * <code>Type</code>:</p> <p> <code>AWS.AppConfig.FeatureFlags</code> </p> <p>
+     * <code>AWS.Freeform</code> </p>
+     */
+    inline GetConfigurationProfileResult& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
+
+    /**
+     * <p>The type of configurations contained in the profile. AppConfig supports
+     * <code>feature flags</code> and <code>freeform</code> configurations. We
+     * recommend you create feature flag configurations to enable or disable new
+     * features and freeform configurations to distribute configurations to an
+     * application. When calling this API, enter one of the following values for
+     * <code>Type</code>:</p> <p> <code>AWS.AppConfig.FeatureFlags</code> </p> <p>
+     * <code>AWS.Freeform</code> </p>
+     */
+    inline GetConfigurationProfileResult& WithType(const char* value) { SetType(value); return *this;}
+
   private:
 
     Aws::String m_applicationId;
@@ -307,6 +385,8 @@ namespace Model
     Aws::String m_retrievalRoleArn;
 
     Aws::Vector<Validator> m_validators;
+
+    Aws::String m_type;
   };
 
 } // namespace Model

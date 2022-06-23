@@ -90,32 +90,32 @@ namespace Model
 
 
     /**
-     * <p>The format and location for an instance export task.</p>
+     * <p>The format and location for an export instance task.</p>
      */
     inline const ExportToS3TaskSpecification& GetExportToS3Task() const{ return m_exportToS3Task; }
 
     /**
-     * <p>The format and location for an instance export task.</p>
+     * <p>The format and location for an export instance task.</p>
      */
     inline bool ExportToS3TaskHasBeenSet() const { return m_exportToS3TaskHasBeenSet; }
 
     /**
-     * <p>The format and location for an instance export task.</p>
+     * <p>The format and location for an export instance task.</p>
      */
     inline void SetExportToS3Task(const ExportToS3TaskSpecification& value) { m_exportToS3TaskHasBeenSet = true; m_exportToS3Task = value; }
 
     /**
-     * <p>The format and location for an instance export task.</p>
+     * <p>The format and location for an export instance task.</p>
      */
     inline void SetExportToS3Task(ExportToS3TaskSpecification&& value) { m_exportToS3TaskHasBeenSet = true; m_exportToS3Task = std::move(value); }
 
     /**
-     * <p>The format and location for an instance export task.</p>
+     * <p>The format and location for an export instance task.</p>
      */
     inline CreateInstanceExportTaskRequest& WithExportToS3Task(const ExportToS3TaskSpecification& value) { SetExportToS3Task(value); return *this;}
 
     /**
-     * <p>The format and location for an instance export task.</p>
+     * <p>The format and location for an export instance task.</p>
      */
     inline CreateInstanceExportTaskRequest& WithExportToS3Task(ExportToS3TaskSpecification&& value) { SetExportToS3Task(std::move(value)); return *this;}
 
@@ -193,42 +193,42 @@ namespace Model
 
 
     /**
-     * <p>The tags to apply to the instance export task during creation.</p>
+     * <p>The tags to apply to the export instance task during creation.</p>
      */
     inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
 
     /**
-     * <p>The tags to apply to the instance export task during creation.</p>
+     * <p>The tags to apply to the export instance task during creation.</p>
      */
     inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
 
     /**
-     * <p>The tags to apply to the instance export task during creation.</p>
+     * <p>The tags to apply to the export instance task during creation.</p>
      */
     inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
 
     /**
-     * <p>The tags to apply to the instance export task during creation.</p>
+     * <p>The tags to apply to the export instance task during creation.</p>
      */
     inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
 
     /**
-     * <p>The tags to apply to the instance export task during creation.</p>
+     * <p>The tags to apply to the export instance task during creation.</p>
      */
     inline CreateInstanceExportTaskRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
 
     /**
-     * <p>The tags to apply to the instance export task during creation.</p>
+     * <p>The tags to apply to the export instance task during creation.</p>
      */
     inline CreateInstanceExportTaskRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
 
     /**
-     * <p>The tags to apply to the instance export task during creation.</p>
+     * <p>The tags to apply to the export instance task during creation.</p>
      */
     inline CreateInstanceExportTaskRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
 
     /**
-     * <p>The tags to apply to the instance export task during creation.</p>
+     * <p>The tags to apply to the export instance task during creation.</p>
      */
     inline CreateInstanceExportTaskRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
 

@@ -25,6 +25,8 @@ HlsPackage::HlsPackage() :
     m_adsOnDeliveryRestrictions(AdsOnDeliveryRestrictions::NOT_SET),
     m_adsOnDeliveryRestrictionsHasBeenSet(false),
     m_encryptionHasBeenSet(false),
+    m_includeDvbSubtitles(false),
+    m_includeDvbSubtitlesHasBeenSet(false),
     m_includeIframeOnlyStream(false),
     m_includeIframeOnlyStreamHasBeenSet(false),
     m_playlistType(PlaylistType::NOT_SET),
@@ -48,6 +50,8 @@ HlsPackage::HlsPackage(JsonView jsonValue) :
     m_adsOnDeliveryRestrictions(AdsOnDeliveryRestrictions::NOT_SET),
     m_adsOnDeliveryRestrictionsHasBeenSet(false),
     m_encryptionHasBeenSet(false),
+    m_includeDvbSubtitles(false),
+    m_includeDvbSubtitlesHasBeenSet(false),
     m_includeIframeOnlyStream(false),
     m_includeIframeOnlyStreamHasBeenSet(false),
     m_playlistType(PlaylistType::NOT_SET),
@@ -96,6 +100,13 @@ HlsPackage& HlsPackage::operator =(JsonView jsonValue)
     m_encryption = jsonValue.GetObject("encryption");
 
     m_encryptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("includeDvbSubtitles"))
+  {
+    m_includeDvbSubtitles = jsonValue.GetBool("includeDvbSubtitles");
+
+    m_includeDvbSubtitlesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("includeIframeOnlyStream"))
@@ -178,6 +189,12 @@ JsonValue HlsPackage::Jsonize() const
   if(m_encryptionHasBeenSet)
   {
    payload.WithObject("encryption", m_encryption.Jsonize());
+
+  }
+
+  if(m_includeDvbSubtitlesHasBeenSet)
+  {
+   payload.WithBool("includeDvbSubtitles", m_includeDvbSubtitles);
 
   }
 

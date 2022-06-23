@@ -38,32 +38,27 @@ namespace Model
 
 
     /**
-     * <p>The AWS DMS resource that the pending maintenance action will be applied
-     * to.</p>
+     * <p>The DMS resource that the pending maintenance action will be applied to.</p>
      */
     inline const ResourcePendingMaintenanceActions& GetResourcePendingMaintenanceActions() const{ return m_resourcePendingMaintenanceActions; }
 
     /**
-     * <p>The AWS DMS resource that the pending maintenance action will be applied
-     * to.</p>
+     * <p>The DMS resource that the pending maintenance action will be applied to.</p>
      */
     inline void SetResourcePendingMaintenanceActions(const ResourcePendingMaintenanceActions& value) { m_resourcePendingMaintenanceActions = value; }
 
     /**
-     * <p>The AWS DMS resource that the pending maintenance action will be applied
-     * to.</p>
+     * <p>The DMS resource that the pending maintenance action will be applied to.</p>
      */
     inline void SetResourcePendingMaintenanceActions(ResourcePendingMaintenanceActions&& value) { m_resourcePendingMaintenanceActions = std::move(value); }
 
     /**
-     * <p>The AWS DMS resource that the pending maintenance action will be applied
-     * to.</p>
+     * <p>The DMS resource that the pending maintenance action will be applied to.</p>
      */
     inline ApplyPendingMaintenanceActionResult& WithResourcePendingMaintenanceActions(const ResourcePendingMaintenanceActions& value) { SetResourcePendingMaintenanceActions(value); return *this;}
 
     /**
-     * <p>The AWS DMS resource that the pending maintenance action will be applied
-     * to.</p>
+     * <p>The DMS resource that the pending maintenance action will be applied to.</p>
      */
     inline ApplyPendingMaintenanceActionResult& WithResourcePendingMaintenanceActions(ResourcePendingMaintenanceActions&& value) { SetResourcePendingMaintenanceActions(std::move(value)); return *this;}
 

@@ -21,7 +21,8 @@ ListProfileObjectsRequest::ListProfileObjectsRequest() :
     m_maxResultsHasBeenSet(false),
     m_domainNameHasBeenSet(false),
     m_objectTypeNameHasBeenSet(false),
-    m_profileIdHasBeenSet(false)
+    m_profileIdHasBeenSet(false),
+    m_objectFilterHasBeenSet(false)
 {
 }
 
@@ -38,6 +39,12 @@ Aws::String ListProfileObjectsRequest::SerializePayload() const
   if(m_profileIdHasBeenSet)
   {
    payload.WithString("ProfileId", m_profileId);
+
+  }
+
+  if(m_objectFilterHasBeenSet)
+  {
+   payload.WithObject("ObjectFilter", m_objectFilter.Jsonize());
 
   }
 

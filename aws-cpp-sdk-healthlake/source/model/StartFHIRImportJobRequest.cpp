@@ -15,6 +15,7 @@ using namespace Aws::Utils;
 StartFHIRImportJobRequest::StartFHIRImportJobRequest() : 
     m_jobNameHasBeenSet(false),
     m_inputDataConfigHasBeenSet(false),
+    m_jobOutputDataConfigHasBeenSet(false),
     m_datastoreIdHasBeenSet(false),
     m_dataAccessRoleArnHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
@@ -35,6 +36,12 @@ Aws::String StartFHIRImportJobRequest::SerializePayload() const
   if(m_inputDataConfigHasBeenSet)
   {
    payload.WithObject("InputDataConfig", m_inputDataConfig.Jsonize());
+
+  }
+
+  if(m_jobOutputDataConfigHasBeenSet)
+  {
+   payload.WithObject("JobOutputDataConfig", m_jobOutputDataConfig.Jsonize());
 
   }
 

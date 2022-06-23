@@ -149,57 +149,57 @@ namespace Model
 
     /**
      * <p> A list of tag key and value pairs associated with this report group. </p>
-     * <p>These tags are available for use by AWS services that support AWS CodeBuild
-     * report group tags.</p>
+     * <p>These tags are available for use by Amazon Web Services services that support
+     * CodeBuild report group tags.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
      * <p> A list of tag key and value pairs associated with this report group. </p>
-     * <p>These tags are available for use by AWS services that support AWS CodeBuild
-     * report group tags.</p>
+     * <p>These tags are available for use by Amazon Web Services services that support
+     * CodeBuild report group tags.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p> A list of tag key and value pairs associated with this report group. </p>
-     * <p>These tags are available for use by AWS services that support AWS CodeBuild
-     * report group tags.</p>
+     * <p>These tags are available for use by Amazon Web Services services that support
+     * CodeBuild report group tags.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p> A list of tag key and value pairs associated with this report group. </p>
-     * <p>These tags are available for use by AWS services that support AWS CodeBuild
-     * report group tags.</p>
+     * <p>These tags are available for use by Amazon Web Services services that support
+     * CodeBuild report group tags.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p> A list of tag key and value pairs associated with this report group. </p>
-     * <p>These tags are available for use by AWS services that support AWS CodeBuild
-     * report group tags.</p>
+     * <p>These tags are available for use by Amazon Web Services services that support
+     * CodeBuild report group tags.</p>
      */
     inline CreateReportGroupRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
      * <p> A list of tag key and value pairs associated with this report group. </p>
-     * <p>These tags are available for use by AWS services that support AWS CodeBuild
-     * report group tags.</p>
+     * <p>These tags are available for use by Amazon Web Services services that support
+     * CodeBuild report group tags.</p>
      */
     inline CreateReportGroupRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p> A list of tag key and value pairs associated with this report group. </p>
-     * <p>These tags are available for use by AWS services that support AWS CodeBuild
-     * report group tags.</p>
+     * <p>These tags are available for use by Amazon Web Services services that support
+     * CodeBuild report group tags.</p>
      */
     inline CreateReportGroupRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
      * <p> A list of tag key and value pairs associated with this report group. </p>
-     * <p>These tags are available for use by AWS services that support AWS CodeBuild
-     * report group tags.</p>
+     * <p>These tags are available for use by Amazon Web Services services that support
+     * CodeBuild report group tags.</p>
      */
     inline CreateReportGroupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

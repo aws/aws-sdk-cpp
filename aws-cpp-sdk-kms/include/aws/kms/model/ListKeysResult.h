@@ -35,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>A list of customer master keys (CMKs).</p>
+     * <p>A list of KMS keys.</p>
      */
     inline const Aws::Vector<KeyListEntry>& GetKeys() const{ return m_keys; }
 
     /**
-     * <p>A list of customer master keys (CMKs).</p>
+     * <p>A list of KMS keys.</p>
      */
     inline void SetKeys(const Aws::Vector<KeyListEntry>& value) { m_keys = value; }
 
     /**
-     * <p>A list of customer master keys (CMKs).</p>
+     * <p>A list of KMS keys.</p>
      */
     inline void SetKeys(Aws::Vector<KeyListEntry>&& value) { m_keys = std::move(value); }
 
     /**
-     * <p>A list of customer master keys (CMKs).</p>
+     * <p>A list of KMS keys.</p>
      */
     inline ListKeysResult& WithKeys(const Aws::Vector<KeyListEntry>& value) { SetKeys(value); return *this;}
 
     /**
-     * <p>A list of customer master keys (CMKs).</p>
+     * <p>A list of KMS keys.</p>
      */
     inline ListKeysResult& WithKeys(Aws::Vector<KeyListEntry>&& value) { SetKeys(std::move(value)); return *this;}
 
     /**
-     * <p>A list of customer master keys (CMKs).</p>
+     * <p>A list of KMS keys.</p>
      */
     inline ListKeysResult& AddKeys(const KeyListEntry& value) { m_keys.push_back(value); return *this; }
 
     /**
-     * <p>A list of customer master keys (CMKs).</p>
+     * <p>A list of KMS keys.</p>
      */
     inline ListKeysResult& AddKeys(KeyListEntry&& value) { m_keys.push_back(std::move(value)); return *this; }
 

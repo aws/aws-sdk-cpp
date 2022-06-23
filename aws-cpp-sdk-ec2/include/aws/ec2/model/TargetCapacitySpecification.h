@@ -7,6 +7,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/ec2/model/DefaultTargetCapacityType.h>
+#include <aws/ec2/model/TargetCapacityUnitType.h>
 #include <utility>
 
 namespace Aws
@@ -38,8 +39,8 @@ namespace Model
    * <code>MaxTotalPrice</code> parameters are located in <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_OnDemandOptions.html">OnDemandOptions</a>
    * and <a
-   * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotOptions">SpotOptions</a>
-   * </p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotOptions">SpotOptions</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TargetCapacitySpecification">AWS
    * API Reference</a></p>
    */
@@ -165,6 +166,43 @@ namespace Model
      */
     inline TargetCapacitySpecification& WithDefaultTargetCapacityType(DefaultTargetCapacityType&& value) { SetDefaultTargetCapacityType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The unit for the target capacity.</p> <p>Default: <code>units</code>
+     * (translates to number of instances)</p>
+     */
+    inline const TargetCapacityUnitType& GetTargetCapacityUnitType() const{ return m_targetCapacityUnitType; }
+
+    /**
+     * <p>The unit for the target capacity.</p> <p>Default: <code>units</code>
+     * (translates to number of instances)</p>
+     */
+    inline bool TargetCapacityUnitTypeHasBeenSet() const { return m_targetCapacityUnitTypeHasBeenSet; }
+
+    /**
+     * <p>The unit for the target capacity.</p> <p>Default: <code>units</code>
+     * (translates to number of instances)</p>
+     */
+    inline void SetTargetCapacityUnitType(const TargetCapacityUnitType& value) { m_targetCapacityUnitTypeHasBeenSet = true; m_targetCapacityUnitType = value; }
+
+    /**
+     * <p>The unit for the target capacity.</p> <p>Default: <code>units</code>
+     * (translates to number of instances)</p>
+     */
+    inline void SetTargetCapacityUnitType(TargetCapacityUnitType&& value) { m_targetCapacityUnitTypeHasBeenSet = true; m_targetCapacityUnitType = std::move(value); }
+
+    /**
+     * <p>The unit for the target capacity.</p> <p>Default: <code>units</code>
+     * (translates to number of instances)</p>
+     */
+    inline TargetCapacitySpecification& WithTargetCapacityUnitType(const TargetCapacityUnitType& value) { SetTargetCapacityUnitType(value); return *this;}
+
+    /**
+     * <p>The unit for the target capacity.</p> <p>Default: <code>units</code>
+     * (translates to number of instances)</p>
+     */
+    inline TargetCapacitySpecification& WithTargetCapacityUnitType(TargetCapacityUnitType&& value) { SetTargetCapacityUnitType(std::move(value)); return *this;}
+
   private:
 
     int m_totalTargetCapacity;
@@ -178,6 +216,9 @@ namespace Model
 
     DefaultTargetCapacityType m_defaultTargetCapacityType;
     bool m_defaultTargetCapacityTypeHasBeenSet;
+
+    TargetCapacityUnitType m_targetCapacityUnitType;
+    bool m_targetCapacityUnitTypeHasBeenSet;
   };
 
 } // namespace Model

@@ -35,44 +35,44 @@ namespace Model
 
 
     /**
-     * <p>Collection of inventory entities such as a collection of instance inventory.
-     * </p>
+     * <p>Collection of inventory entities such as a collection of managed node
+     * inventory. </p>
      */
     inline const Aws::Vector<InventoryResultEntity>& GetEntities() const{ return m_entities; }
 
     /**
-     * <p>Collection of inventory entities such as a collection of instance inventory.
-     * </p>
+     * <p>Collection of inventory entities such as a collection of managed node
+     * inventory. </p>
      */
     inline void SetEntities(const Aws::Vector<InventoryResultEntity>& value) { m_entities = value; }
 
     /**
-     * <p>Collection of inventory entities such as a collection of instance inventory.
-     * </p>
+     * <p>Collection of inventory entities such as a collection of managed node
+     * inventory. </p>
      */
     inline void SetEntities(Aws::Vector<InventoryResultEntity>&& value) { m_entities = std::move(value); }
 
     /**
-     * <p>Collection of inventory entities such as a collection of instance inventory.
-     * </p>
+     * <p>Collection of inventory entities such as a collection of managed node
+     * inventory. </p>
      */
     inline GetInventoryResult& WithEntities(const Aws::Vector<InventoryResultEntity>& value) { SetEntities(value); return *this;}
 
     /**
-     * <p>Collection of inventory entities such as a collection of instance inventory.
-     * </p>
+     * <p>Collection of inventory entities such as a collection of managed node
+     * inventory. </p>
      */
     inline GetInventoryResult& WithEntities(Aws::Vector<InventoryResultEntity>&& value) { SetEntities(std::move(value)); return *this;}
 
     /**
-     * <p>Collection of inventory entities such as a collection of instance inventory.
-     * </p>
+     * <p>Collection of inventory entities such as a collection of managed node
+     * inventory. </p>
      */
     inline GetInventoryResult& AddEntities(const InventoryResultEntity& value) { m_entities.push_back(value); return *this; }
 
     /**
-     * <p>Collection of inventory entities such as a collection of instance inventory.
-     * </p>
+     * <p>Collection of inventory entities such as a collection of managed node
+     * inventory. </p>
      */
     inline GetInventoryResult& AddEntities(InventoryResultEntity&& value) { m_entities.push_back(std::move(value)); return *this; }
 

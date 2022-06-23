@@ -9,6 +9,7 @@
 #include <aws/sagemaker/model/PipelineStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/UserContext.h>
+#include <aws/sagemaker/model/ParallelismConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/Tag.h>
 #include <utility>
@@ -410,6 +411,37 @@ namespace Model
 
 
     /**
+     * <p>The parallelism configuration applied to the pipeline.</p>
+     */
+    inline const ParallelismConfiguration& GetParallelismConfiguration() const{ return m_parallelismConfiguration; }
+
+    /**
+     * <p>The parallelism configuration applied to the pipeline.</p>
+     */
+    inline bool ParallelismConfigurationHasBeenSet() const { return m_parallelismConfigurationHasBeenSet; }
+
+    /**
+     * <p>The parallelism configuration applied to the pipeline.</p>
+     */
+    inline void SetParallelismConfiguration(const ParallelismConfiguration& value) { m_parallelismConfigurationHasBeenSet = true; m_parallelismConfiguration = value; }
+
+    /**
+     * <p>The parallelism configuration applied to the pipeline.</p>
+     */
+    inline void SetParallelismConfiguration(ParallelismConfiguration&& value) { m_parallelismConfigurationHasBeenSet = true; m_parallelismConfiguration = std::move(value); }
+
+    /**
+     * <p>The parallelism configuration applied to the pipeline.</p>
+     */
+    inline Pipeline& WithParallelismConfiguration(const ParallelismConfiguration& value) { SetParallelismConfiguration(value); return *this;}
+
+    /**
+     * <p>The parallelism configuration applied to the pipeline.</p>
+     */
+    inline Pipeline& WithParallelismConfiguration(ParallelismConfiguration&& value) { SetParallelismConfiguration(std::move(value)); return *this;}
+
+
+    /**
      * <p>A list of tags that apply to the pipeline.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
@@ -483,6 +515,9 @@ namespace Model
 
     UserContext m_lastModifiedBy;
     bool m_lastModifiedByHasBeenSet;
+
+    ParallelismConfiguration m_parallelismConfiguration;
+    bool m_parallelismConfigurationHasBeenSet;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;

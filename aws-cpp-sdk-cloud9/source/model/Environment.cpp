@@ -28,7 +28,9 @@ Environment::Environment() :
     m_connectionTypeHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_ownerArnHasBeenSet(false),
-    m_lifecycleHasBeenSet(false)
+    m_lifecycleHasBeenSet(false),
+    m_managedCredentialsStatus(ManagedCredentialsStatus::NOT_SET),
+    m_managedCredentialsStatusHasBeenSet(false)
 {
 }
 
@@ -42,7 +44,9 @@ Environment::Environment(JsonView jsonValue) :
     m_connectionTypeHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_ownerArnHasBeenSet(false),
-    m_lifecycleHasBeenSet(false)
+    m_lifecycleHasBeenSet(false),
+    m_managedCredentialsStatus(ManagedCredentialsStatus::NOT_SET),
+    m_managedCredentialsStatusHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -105,6 +109,13 @@ Environment& Environment::operator =(JsonView jsonValue)
     m_lifecycleHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("managedCredentialsStatus"))
+  {
+    m_managedCredentialsStatus = ManagedCredentialsStatusMapper::GetManagedCredentialsStatusForName(jsonValue.GetString("managedCredentialsStatus"));
+
+    m_managedCredentialsStatusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -156,6 +167,11 @@ JsonValue Environment::Jsonize() const
   {
    payload.WithObject("lifecycle", m_lifecycle.Jsonize());
 
+  }
+
+  if(m_managedCredentialsStatusHasBeenSet)
+  {
+   payload.WithString("managedCredentialsStatus", ManagedCredentialsStatusMapper::GetNameForManagedCredentialsStatus(m_managedCredentialsStatus));
   }
 
   return payload;

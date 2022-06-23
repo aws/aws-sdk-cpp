@@ -21,6 +21,7 @@ namespace Model
 LastUpdate::LastUpdate() : 
     m_createdAtHasBeenSet(false),
     m_errorHasBeenSet(false),
+    m_sourceHasBeenSet(false),
     m_status(UpdateStatus::NOT_SET),
     m_statusHasBeenSet(false)
 {
@@ -29,6 +30,7 @@ LastUpdate::LastUpdate() :
 LastUpdate::LastUpdate(JsonView jsonValue) : 
     m_createdAtHasBeenSet(false),
     m_errorHasBeenSet(false),
+    m_sourceHasBeenSet(false),
     m_status(UpdateStatus::NOT_SET),
     m_statusHasBeenSet(false)
 {
@@ -49,6 +51,13 @@ LastUpdate& LastUpdate::operator =(JsonView jsonValue)
     m_error = jsonValue.GetObject("Error");
 
     m_errorHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Source"))
+  {
+    m_source = jsonValue.GetString("Source");
+
+    m_sourceHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Status"))
@@ -73,6 +82,12 @@ JsonValue LastUpdate::Jsonize() const
   if(m_errorHasBeenSet)
   {
    payload.WithObject("Error", m_error.Jsonize());
+
+  }
+
+  if(m_sourceHasBeenSet)
+  {
+   payload.WithString("Source", m_source);
 
   }
 

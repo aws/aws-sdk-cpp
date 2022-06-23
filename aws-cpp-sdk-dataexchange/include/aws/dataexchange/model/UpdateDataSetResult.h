@@ -73,32 +73,27 @@ namespace Model
 
 
     /**
-     * <p>The type of file your data is stored in. Currently, the supported asset type
-     * is S3_SNAPSHOT.</p>
+     * <p>The type of asset that is added to a data set.</p>
      */
     inline const AssetType& GetAssetType() const{ return m_assetType; }
 
     /**
-     * <p>The type of file your data is stored in. Currently, the supported asset type
-     * is S3_SNAPSHOT.</p>
+     * <p>The type of asset that is added to a data set.</p>
      */
     inline void SetAssetType(const AssetType& value) { m_assetType = value; }
 
     /**
-     * <p>The type of file your data is stored in. Currently, the supported asset type
-     * is S3_SNAPSHOT.</p>
+     * <p>The type of asset that is added to a data set.</p>
      */
     inline void SetAssetType(AssetType&& value) { m_assetType = std::move(value); }
 
     /**
-     * <p>The type of file your data is stored in. Currently, the supported asset type
-     * is S3_SNAPSHOT.</p>
+     * <p>The type of asset that is added to a data set.</p>
      */
     inline UpdateDataSetResult& WithAssetType(const AssetType& value) { SetAssetType(value); return *this;}
 
     /**
-     * <p>The type of file your data is stored in. Currently, the supported asset type
-     * is S3_SNAPSHOT.</p>
+     * <p>The type of asset that is added to a data set.</p>
      */
     inline UpdateDataSetResult& WithAssetType(AssetType&& value) { SetAssetType(std::move(value)); return *this;}
 

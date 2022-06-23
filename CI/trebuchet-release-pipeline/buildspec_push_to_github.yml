@@ -8,9 +8,9 @@ phases:
       - python3 aws-sdk-cpp/CI/trebuchet-release-pipeline/UpdateStatus.py -s PushToGithub -i "$RELEASE_ID" -m "Step 4 of 4. Pushing Code to Public Github." -b $CODEBUILD_BUILD_SUCCEEDING
       - cd aws-sdk-cpp
       # Verify the candidate commit, in case there is new merge without testing during release.
-      - if [ "$(git rev-parse --abbrev-ref HEAD)" != "master" ]; then exit 1; fi;
+      - if [ "$(git rev-parse --abbrev-ref HEAD)" != "main" ]; then exit 1; fi;
       - git fetch --all
-      - if [ -n "$(git diff master origin/master)" ]; then exit 1; fi;
+      - if [ -n "$(git diff main origin/main)" ]; then exit 1; fi;
       # Get highest tag number
       - export VERSION=$(git describe --abbrev=0 --tags)
       # Calculate new version
@@ -22,6 +22,9 @@ phases:
       - echo "Updating $VERSION to $VERSION_BUMP"
       # Write new version to VersionConfig.h
       - sed -i "s/AWS_SDK_VERSION_STRING.*/AWS_SDK_VERSION_STRING \"$VERSION_BUMP\"/" aws-cpp-sdk-core/include/aws/core/VersionConfig.h
+      - sed -i "s/AWS_SDK_VERSION_MAJOR.*/AWS_SDK_VERSION_MAJOR $VERSION_MAJOR/" aws-cpp-sdk-core/include/aws/core/VersionConfig.h
+      - sed -i "s/AWS_SDK_VERSION_MINOR.*/AWS_SDK_VERSION_MINOR $VERSION_MINOR/" aws-cpp-sdk-core/include/aws/core/VersionConfig.h
+      - sed -i "s/AWS_SDK_VERSION_PATCH.*/AWS_SDK_VERSION_PATCH $VERSION_PATCH/" aws-cpp-sdk-core/include/aws/core/VersionConfig.h
       # git add
       - git add --all
       - git status
@@ -32,7 +35,7 @@ phases:
       - git config --global user.email "$GIT_COMMIT_AUTHOR_EMAIL"
       - git commit -m "$COMMIT_MSG"
       - git checkout release-candidate
-      - git merge master
+      - git merge main
       - git push origin release-candidate
       # Get current hash and see if it already has a tag
       - export GIT_COMMIT=$(git rev-parse HEAD)
@@ -52,11 +55,13 @@ phases:
       # - git reset --hard HEAD
       # - git checkout release-candidate
       # - git pull
-      - git checkout master
+      - git checkout main
       - git pull
       - git merge release-candidate
-      - git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GITHUB_PRIVATE_REPOSITORY}.git master
-      - git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GITHUB_PUBLIC_REPOSITORY}.git master
+      - git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GITHUB_PRIVATE_REPOSITORY}.git main
+      - git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GITHUB_PRIVATE_REPOSITORY}.git main:master
+      - git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GITHUB_PUBLIC_REPOSITORY}.git main
+      - git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GITHUB_PUBLIC_REPOSITORY}.git main:master
       - git push --tags https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GITHUB_PUBLIC_REPOSITORY}.git
   post_build:
      commands:

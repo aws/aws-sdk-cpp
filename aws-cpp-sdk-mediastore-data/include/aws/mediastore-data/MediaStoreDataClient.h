@@ -122,20 +122,12 @@ namespace Model
         virtual Model::DeleteObjectOutcome DeleteObject(const Model::DeleteObjectRequest& request) const;
 
         /**
-         * <p>Deletes an object at the specified path.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-data-2017-09-01/DeleteObject">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DeleteObject that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteObjectOutcomeCallable DeleteObjectCallable(const Model::DeleteObjectRequest& request) const;
 
         /**
-         * <p>Deletes an object at the specified path.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-data-2017-09-01/DeleteObject">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DeleteObject that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteObjectAsync(const Model::DeleteObjectRequest& request, const DeleteObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -148,22 +140,12 @@ namespace Model
         virtual Model::DescribeObjectOutcome DescribeObject(const Model::DescribeObjectRequest& request) const;
 
         /**
-         * <p>Gets the headers for an object at the specified path.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-data-2017-09-01/DescribeObject">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for DescribeObject that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeObjectOutcomeCallable DescribeObjectCallable(const Model::DescribeObjectRequest& request) const;
 
         /**
-         * <p>Gets the headers for an object at the specified path.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-data-2017-09-01/DescribeObject">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for DescribeObject that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeObjectAsync(const Model::DescribeObjectRequest& request, const DescribeObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -178,26 +160,12 @@ namespace Model
         virtual Model::GetObjectOutcome GetObject(const Model::GetObjectRequest& request) const;
 
         /**
-         * <p>Downloads the object at the specified path. If the object’s upload
-         * availability is set to <code>streaming</code>, AWS Elemental MediaStore
-         * downloads the object even if it’s still uploading the object.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-data-2017-09-01/GetObject">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for GetObject that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetObjectOutcomeCallable GetObjectCallable(const Model::GetObjectRequest& request) const;
 
         /**
-         * <p>Downloads the object at the specified path. If the object’s upload
-         * availability is set to <code>streaming</code>, AWS Elemental MediaStore
-         * downloads the object even if it’s still uploading the object.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-data-2017-09-01/GetObject">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for GetObject that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetObjectAsync(const Model::GetObjectRequest& request, const GetObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -210,22 +178,12 @@ namespace Model
         virtual Model::ListItemsOutcome ListItems(const Model::ListItemsRequest& request) const;
 
         /**
-         * <p>Provides a list of metadata entries about folders and objects in the
-         * specified folder.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-data-2017-09-01/ListItems">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for ListItems that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListItemsOutcomeCallable ListItemsCallable(const Model::ListItemsRequest& request) const;
 
         /**
-         * <p>Provides a list of metadata entries about folders and objects in the
-         * specified folder.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-data-2017-09-01/ListItems">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for ListItems that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListItemsAsync(const Model::ListItemsRequest& request, const ListItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
@@ -239,24 +197,12 @@ namespace Model
         virtual Model::PutObjectOutcome PutObject(const Model::PutObjectRequest& request) const;
 
         /**
-         * <p>Uploads an object to the specified path. Object sizes are limited to 25 MB
-         * for standard upload availability and 10 MB for streaming upload
-         * availability.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-data-2017-09-01/PutObject">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for PutObject that returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::PutObjectOutcomeCallable PutObjectCallable(const Model::PutObjectRequest& request) const;
 
         /**
-         * <p>Uploads an object to the specified path. Object sizes are limited to 25 MB
-         * for standard upload availability and 10 MB for streaming upload
-         * availability.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-data-2017-09-01/PutObject">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for PutObject that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutObjectAsync(const Model::PutObjectRequest& request, const PutObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 

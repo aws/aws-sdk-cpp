@@ -71,6 +71,8 @@ HlsGroupSettings::HlsGroupSettings() :
     m_outputSelectionHasBeenSet(false),
     m_programDateTime(HlsProgramDateTime::NOT_SET),
     m_programDateTimeHasBeenSet(false),
+    m_programDateTimeClock(HlsProgramDateTimeClock::NOT_SET),
+    m_programDateTimeClockHasBeenSet(false),
     m_programDateTimePeriod(0),
     m_programDateTimePeriodHasBeenSet(false),
     m_redundantManifest(HlsRedundantManifest::NOT_SET),
@@ -147,6 +149,8 @@ HlsGroupSettings::HlsGroupSettings(JsonView jsonValue) :
     m_outputSelectionHasBeenSet(false),
     m_programDateTime(HlsProgramDateTime::NOT_SET),
     m_programDateTimeHasBeenSet(false),
+    m_programDateTimeClock(HlsProgramDateTimeClock::NOT_SET),
+    m_programDateTimeClockHasBeenSet(false),
     m_programDateTimePeriod(0),
     m_programDateTimePeriodHasBeenSet(false),
     m_redundantManifest(HlsRedundantManifest::NOT_SET),
@@ -401,6 +405,13 @@ HlsGroupSettings& HlsGroupSettings::operator =(JsonView jsonValue)
     m_programDateTime = HlsProgramDateTimeMapper::GetHlsProgramDateTimeForName(jsonValue.GetString("programDateTime"));
 
     m_programDateTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("programDateTimeClock"))
+  {
+    m_programDateTimeClock = HlsProgramDateTimeClockMapper::GetHlsProgramDateTimeClockForName(jsonValue.GetString("programDateTimeClock"));
+
+    m_programDateTimeClockHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("programDateTimePeriod"))
@@ -663,6 +674,11 @@ JsonValue HlsGroupSettings::Jsonize() const
   if(m_programDateTimeHasBeenSet)
   {
    payload.WithString("programDateTime", HlsProgramDateTimeMapper::GetNameForHlsProgramDateTime(m_programDateTime));
+  }
+
+  if(m_programDateTimeClockHasBeenSet)
+  {
+   payload.WithString("programDateTimeClock", HlsProgramDateTimeClockMapper::GetNameForHlsProgramDateTimeClock(m_programDateTimeClock));
   }
 
   if(m_programDateTimePeriodHasBeenSet)

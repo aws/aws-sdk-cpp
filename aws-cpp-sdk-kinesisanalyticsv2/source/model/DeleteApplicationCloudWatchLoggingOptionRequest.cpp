@@ -16,7 +16,8 @@ DeleteApplicationCloudWatchLoggingOptionRequest::DeleteApplicationCloudWatchLogg
     m_applicationNameHasBeenSet(false),
     m_currentApplicationVersionId(0),
     m_currentApplicationVersionIdHasBeenSet(false),
-    m_cloudWatchLoggingOptionIdHasBeenSet(false)
+    m_cloudWatchLoggingOptionIdHasBeenSet(false),
+    m_conditionalTokenHasBeenSet(false)
 {
 }
 
@@ -39,6 +40,12 @@ Aws::String DeleteApplicationCloudWatchLoggingOptionRequest::SerializePayload() 
   if(m_cloudWatchLoggingOptionIdHasBeenSet)
   {
    payload.WithString("CloudWatchLoggingOptionId", m_cloudWatchLoggingOptionId);
+
+  }
+
+  if(m_conditionalTokenHasBeenSet)
+  {
+   payload.WithString("ConditionalToken", m_conditionalToken);
 
   }
 

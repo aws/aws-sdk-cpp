@@ -35,63 +35,63 @@ namespace Model
 
     /**
      * <p>When you request a list of objects with a <code>Limit</code> setting, if the
-     * number of objects that are still available for retrieval exceeds the limit, AWS
-     * WAF returns a <code>NextMarker</code> value in the response. To retrieve the
-     * next batch of objects, provide the marker from the prior call in your next
+     * number of objects that are still available for retrieval exceeds the limit, WAF
+     * returns a <code>NextMarker</code> value in the response. To retrieve the next
+     * batch of objects, provide the marker from the prior call in your next
      * request.</p>
      */
     inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
 
     /**
      * <p>When you request a list of objects with a <code>Limit</code> setting, if the
-     * number of objects that are still available for retrieval exceeds the limit, AWS
-     * WAF returns a <code>NextMarker</code> value in the response. To retrieve the
-     * next batch of objects, provide the marker from the prior call in your next
+     * number of objects that are still available for retrieval exceeds the limit, WAF
+     * returns a <code>NextMarker</code> value in the response. To retrieve the next
+     * batch of objects, provide the marker from the prior call in your next
      * request.</p>
      */
     inline void SetNextMarker(const Aws::String& value) { m_nextMarker = value; }
 
     /**
      * <p>When you request a list of objects with a <code>Limit</code> setting, if the
-     * number of objects that are still available for retrieval exceeds the limit, AWS
-     * WAF returns a <code>NextMarker</code> value in the response. To retrieve the
-     * next batch of objects, provide the marker from the prior call in your next
+     * number of objects that are still available for retrieval exceeds the limit, WAF
+     * returns a <code>NextMarker</code> value in the response. To retrieve the next
+     * batch of objects, provide the marker from the prior call in your next
      * request.</p>
      */
     inline void SetNextMarker(Aws::String&& value) { m_nextMarker = std::move(value); }
 
     /**
      * <p>When you request a list of objects with a <code>Limit</code> setting, if the
-     * number of objects that are still available for retrieval exceeds the limit, AWS
-     * WAF returns a <code>NextMarker</code> value in the response. To retrieve the
-     * next batch of objects, provide the marker from the prior call in your next
+     * number of objects that are still available for retrieval exceeds the limit, WAF
+     * returns a <code>NextMarker</code> value in the response. To retrieve the next
+     * batch of objects, provide the marker from the prior call in your next
      * request.</p>
      */
     inline void SetNextMarker(const char* value) { m_nextMarker.assign(value); }
 
     /**
      * <p>When you request a list of objects with a <code>Limit</code> setting, if the
-     * number of objects that are still available for retrieval exceeds the limit, AWS
-     * WAF returns a <code>NextMarker</code> value in the response. To retrieve the
-     * next batch of objects, provide the marker from the prior call in your next
+     * number of objects that are still available for retrieval exceeds the limit, WAF
+     * returns a <code>NextMarker</code> value in the response. To retrieve the next
+     * batch of objects, provide the marker from the prior call in your next
      * request.</p>
      */
     inline ListTagsForResourceResult& WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
 
     /**
      * <p>When you request a list of objects with a <code>Limit</code> setting, if the
-     * number of objects that are still available for retrieval exceeds the limit, AWS
-     * WAF returns a <code>NextMarker</code> value in the response. To retrieve the
-     * next batch of objects, provide the marker from the prior call in your next
+     * number of objects that are still available for retrieval exceeds the limit, WAF
+     * returns a <code>NextMarker</code> value in the response. To retrieve the next
+     * batch of objects, provide the marker from the prior call in your next
      * request.</p>
      */
     inline ListTagsForResourceResult& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
 
     /**
      * <p>When you request a list of objects with a <code>Limit</code> setting, if the
-     * number of objects that are still available for retrieval exceeds the limit, AWS
-     * WAF returns a <code>NextMarker</code> value in the response. To retrieve the
-     * next batch of objects, provide the marker from the prior call in your next
+     * number of objects that are still available for retrieval exceeds the limit, WAF
+     * returns a <code>NextMarker</code> value in the response. To retrieve the next
+     * batch of objects, provide the marker from the prior call in your next
      * request.</p>
      */
     inline ListTagsForResourceResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}

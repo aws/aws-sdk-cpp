@@ -201,6 +201,133 @@ namespace Model
      */
     inline S3Target& WithConnectionName(const char* value) { SetConnectionName(value); return *this;}
 
+
+    /**
+     * <p>Sets the number of files in each leaf folder to be crawled when crawling
+     * sample files in a dataset. If not set, all the files are crawled. A valid value
+     * is an integer between 1 and 249.</p>
+     */
+    inline int GetSampleSize() const{ return m_sampleSize; }
+
+    /**
+     * <p>Sets the number of files in each leaf folder to be crawled when crawling
+     * sample files in a dataset. If not set, all the files are crawled. A valid value
+     * is an integer between 1 and 249.</p>
+     */
+    inline bool SampleSizeHasBeenSet() const { return m_sampleSizeHasBeenSet; }
+
+    /**
+     * <p>Sets the number of files in each leaf folder to be crawled when crawling
+     * sample files in a dataset. If not set, all the files are crawled. A valid value
+     * is an integer between 1 and 249.</p>
+     */
+    inline void SetSampleSize(int value) { m_sampleSizeHasBeenSet = true; m_sampleSize = value; }
+
+    /**
+     * <p>Sets the number of files in each leaf folder to be crawled when crawling
+     * sample files in a dataset. If not set, all the files are crawled. A valid value
+     * is an integer between 1 and 249.</p>
+     */
+    inline S3Target& WithSampleSize(int value) { SetSampleSize(value); return *this;}
+
+
+    /**
+     * <p>A valid Amazon SQS ARN. For example,
+     * <code>arn:aws:sqs:region:account:sqs</code>.</p>
+     */
+    inline const Aws::String& GetEventQueueArn() const{ return m_eventQueueArn; }
+
+    /**
+     * <p>A valid Amazon SQS ARN. For example,
+     * <code>arn:aws:sqs:region:account:sqs</code>.</p>
+     */
+    inline bool EventQueueArnHasBeenSet() const { return m_eventQueueArnHasBeenSet; }
+
+    /**
+     * <p>A valid Amazon SQS ARN. For example,
+     * <code>arn:aws:sqs:region:account:sqs</code>.</p>
+     */
+    inline void SetEventQueueArn(const Aws::String& value) { m_eventQueueArnHasBeenSet = true; m_eventQueueArn = value; }
+
+    /**
+     * <p>A valid Amazon SQS ARN. For example,
+     * <code>arn:aws:sqs:region:account:sqs</code>.</p>
+     */
+    inline void SetEventQueueArn(Aws::String&& value) { m_eventQueueArnHasBeenSet = true; m_eventQueueArn = std::move(value); }
+
+    /**
+     * <p>A valid Amazon SQS ARN. For example,
+     * <code>arn:aws:sqs:region:account:sqs</code>.</p>
+     */
+    inline void SetEventQueueArn(const char* value) { m_eventQueueArnHasBeenSet = true; m_eventQueueArn.assign(value); }
+
+    /**
+     * <p>A valid Amazon SQS ARN. For example,
+     * <code>arn:aws:sqs:region:account:sqs</code>.</p>
+     */
+    inline S3Target& WithEventQueueArn(const Aws::String& value) { SetEventQueueArn(value); return *this;}
+
+    /**
+     * <p>A valid Amazon SQS ARN. For example,
+     * <code>arn:aws:sqs:region:account:sqs</code>.</p>
+     */
+    inline S3Target& WithEventQueueArn(Aws::String&& value) { SetEventQueueArn(std::move(value)); return *this;}
+
+    /**
+     * <p>A valid Amazon SQS ARN. For example,
+     * <code>arn:aws:sqs:region:account:sqs</code>.</p>
+     */
+    inline S3Target& WithEventQueueArn(const char* value) { SetEventQueueArn(value); return *this;}
+
+
+    /**
+     * <p>A valid Amazon dead-letter SQS ARN. For example,
+     * <code>arn:aws:sqs:region:account:deadLetterQueue</code>.</p>
+     */
+    inline const Aws::String& GetDlqEventQueueArn() const{ return m_dlqEventQueueArn; }
+
+    /**
+     * <p>A valid Amazon dead-letter SQS ARN. For example,
+     * <code>arn:aws:sqs:region:account:deadLetterQueue</code>.</p>
+     */
+    inline bool DlqEventQueueArnHasBeenSet() const { return m_dlqEventQueueArnHasBeenSet; }
+
+    /**
+     * <p>A valid Amazon dead-letter SQS ARN. For example,
+     * <code>arn:aws:sqs:region:account:deadLetterQueue</code>.</p>
+     */
+    inline void SetDlqEventQueueArn(const Aws::String& value) { m_dlqEventQueueArnHasBeenSet = true; m_dlqEventQueueArn = value; }
+
+    /**
+     * <p>A valid Amazon dead-letter SQS ARN. For example,
+     * <code>arn:aws:sqs:region:account:deadLetterQueue</code>.</p>
+     */
+    inline void SetDlqEventQueueArn(Aws::String&& value) { m_dlqEventQueueArnHasBeenSet = true; m_dlqEventQueueArn = std::move(value); }
+
+    /**
+     * <p>A valid Amazon dead-letter SQS ARN. For example,
+     * <code>arn:aws:sqs:region:account:deadLetterQueue</code>.</p>
+     */
+    inline void SetDlqEventQueueArn(const char* value) { m_dlqEventQueueArnHasBeenSet = true; m_dlqEventQueueArn.assign(value); }
+
+    /**
+     * <p>A valid Amazon dead-letter SQS ARN. For example,
+     * <code>arn:aws:sqs:region:account:deadLetterQueue</code>.</p>
+     */
+    inline S3Target& WithDlqEventQueueArn(const Aws::String& value) { SetDlqEventQueueArn(value); return *this;}
+
+    /**
+     * <p>A valid Amazon dead-letter SQS ARN. For example,
+     * <code>arn:aws:sqs:region:account:deadLetterQueue</code>.</p>
+     */
+    inline S3Target& WithDlqEventQueueArn(Aws::String&& value) { SetDlqEventQueueArn(std::move(value)); return *this;}
+
+    /**
+     * <p>A valid Amazon dead-letter SQS ARN. For example,
+     * <code>arn:aws:sqs:region:account:deadLetterQueue</code>.</p>
+     */
+    inline S3Target& WithDlqEventQueueArn(const char* value) { SetDlqEventQueueArn(value); return *this;}
+
   private:
 
     Aws::String m_path;
@@ -211,6 +338,15 @@ namespace Model
 
     Aws::String m_connectionName;
     bool m_connectionNameHasBeenSet;
+
+    int m_sampleSize;
+    bool m_sampleSizeHasBeenSet;
+
+    Aws::String m_eventQueueArn;
+    bool m_eventQueueArnHasBeenSet;
+
+    Aws::String m_dlqEventQueueArn;
+    bool m_dlqEventQueueArnHasBeenSet;
   };
 
 } // namespace Model

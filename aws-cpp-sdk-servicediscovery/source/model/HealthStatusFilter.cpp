@@ -23,6 +23,7 @@ namespace Aws
         static const int HEALTHY_HASH = HashingUtils::HashString("HEALTHY");
         static const int UNHEALTHY_HASH = HashingUtils::HashString("UNHEALTHY");
         static const int ALL_HASH = HashingUtils::HashString("ALL");
+        static const int HEALTHY_OR_ELSE_ALL_HASH = HashingUtils::HashString("HEALTHY_OR_ELSE_ALL");
 
 
         HealthStatusFilter GetHealthStatusFilterForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == ALL_HASH)
           {
             return HealthStatusFilter::ALL;
+          }
+          else if (hashCode == HEALTHY_OR_ELSE_ALL_HASH)
+          {
+            return HealthStatusFilter::HEALTHY_OR_ELSE_ALL;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "UNHEALTHY";
           case HealthStatusFilter::ALL:
             return "ALL";
+          case HealthStatusFilter::HEALTHY_OR_ELSE_ALL:
+            return "HEALTHY_OR_ELSE_ALL";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

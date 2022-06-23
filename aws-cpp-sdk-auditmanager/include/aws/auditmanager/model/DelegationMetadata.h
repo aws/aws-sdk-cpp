@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p> The metadata associated with the specified delegation. </p><p><h3>See
+   * <p> The metadata that's associated with the delegation. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/DelegationMetadata">AWS
    * API Reference</a></p>
@@ -123,73 +123,73 @@ namespace Model
 
 
     /**
-     * <p> The unique identifier for the specified assessment. </p>
+     * <p> The unique identifier for the assessment. </p>
      */
     inline const Aws::String& GetAssessmentId() const{ return m_assessmentId; }
 
     /**
-     * <p> The unique identifier for the specified assessment. </p>
+     * <p> The unique identifier for the assessment. </p>
      */
     inline bool AssessmentIdHasBeenSet() const { return m_assessmentIdHasBeenSet; }
 
     /**
-     * <p> The unique identifier for the specified assessment. </p>
+     * <p> The unique identifier for the assessment. </p>
      */
     inline void SetAssessmentId(const Aws::String& value) { m_assessmentIdHasBeenSet = true; m_assessmentId = value; }
 
     /**
-     * <p> The unique identifier for the specified assessment. </p>
+     * <p> The unique identifier for the assessment. </p>
      */
     inline void SetAssessmentId(Aws::String&& value) { m_assessmentIdHasBeenSet = true; m_assessmentId = std::move(value); }
 
     /**
-     * <p> The unique identifier for the specified assessment. </p>
+     * <p> The unique identifier for the assessment. </p>
      */
     inline void SetAssessmentId(const char* value) { m_assessmentIdHasBeenSet = true; m_assessmentId.assign(value); }
 
     /**
-     * <p> The unique identifier for the specified assessment. </p>
+     * <p> The unique identifier for the assessment. </p>
      */
     inline DelegationMetadata& WithAssessmentId(const Aws::String& value) { SetAssessmentId(value); return *this;}
 
     /**
-     * <p> The unique identifier for the specified assessment. </p>
+     * <p> The unique identifier for the assessment. </p>
      */
     inline DelegationMetadata& WithAssessmentId(Aws::String&& value) { SetAssessmentId(std::move(value)); return *this;}
 
     /**
-     * <p> The unique identifier for the specified assessment. </p>
+     * <p> The unique identifier for the assessment. </p>
      */
     inline DelegationMetadata& WithAssessmentId(const char* value) { SetAssessmentId(value); return *this;}
 
 
     /**
-     * <p> The current status of the delgation. </p>
+     * <p> The current status of the delegation. </p>
      */
     inline const DelegationStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p> The current status of the delgation. </p>
+     * <p> The current status of the delegation. </p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p> The current status of the delgation. </p>
+     * <p> The current status of the delegation. </p>
      */
     inline void SetStatus(const DelegationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p> The current status of the delgation. </p>
+     * <p> The current status of the delegation. </p>
      */
     inline void SetStatus(DelegationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p> The current status of the delgation. </p>
+     * <p> The current status of the delegation. </p>
      */
     inline DelegationMetadata& WithStatus(const DelegationStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p> The current status of the delgation. </p>
+     * <p> The current status of the delegation. </p>
      */
     inline DelegationMetadata& WithStatus(DelegationStatus&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -267,42 +267,42 @@ namespace Model
 
 
     /**
-     * <p> Specifies the name of the control set delegated for review. </p>
+     * <p> Specifies the name of the control set that was delegated for review. </p>
      */
     inline const Aws::String& GetControlSetName() const{ return m_controlSetName; }
 
     /**
-     * <p> Specifies the name of the control set delegated for review. </p>
+     * <p> Specifies the name of the control set that was delegated for review. </p>
      */
     inline bool ControlSetNameHasBeenSet() const { return m_controlSetNameHasBeenSet; }
 
     /**
-     * <p> Specifies the name of the control set delegated for review. </p>
+     * <p> Specifies the name of the control set that was delegated for review. </p>
      */
     inline void SetControlSetName(const Aws::String& value) { m_controlSetNameHasBeenSet = true; m_controlSetName = value; }
 
     /**
-     * <p> Specifies the name of the control set delegated for review. </p>
+     * <p> Specifies the name of the control set that was delegated for review. </p>
      */
     inline void SetControlSetName(Aws::String&& value) { m_controlSetNameHasBeenSet = true; m_controlSetName = std::move(value); }
 
     /**
-     * <p> Specifies the name of the control set delegated for review. </p>
+     * <p> Specifies the name of the control set that was delegated for review. </p>
      */
     inline void SetControlSetName(const char* value) { m_controlSetNameHasBeenSet = true; m_controlSetName.assign(value); }
 
     /**
-     * <p> Specifies the name of the control set delegated for review. </p>
+     * <p> Specifies the name of the control set that was delegated for review. </p>
      */
     inline DelegationMetadata& WithControlSetName(const Aws::String& value) { SetControlSetName(value); return *this;}
 
     /**
-     * <p> Specifies the name of the control set delegated for review. </p>
+     * <p> Specifies the name of the control set that was delegated for review. </p>
      */
     inline DelegationMetadata& WithControlSetName(Aws::String&& value) { SetControlSetName(std::move(value)); return *this;}
 
     /**
-     * <p> Specifies the name of the control set delegated for review. </p>
+     * <p> Specifies the name of the control set that was delegated for review. </p>
      */
     inline DelegationMetadata& WithControlSetName(const char* value) { SetControlSetName(value); return *this;}
 

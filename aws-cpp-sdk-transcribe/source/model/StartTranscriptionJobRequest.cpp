@@ -24,13 +24,17 @@ StartTranscriptionJobRequest::StartTranscriptionJobRequest() :
     m_outputBucketNameHasBeenSet(false),
     m_outputKeyHasBeenSet(false),
     m_outputEncryptionKMSKeyIdHasBeenSet(false),
+    m_kMSEncryptionContextHasBeenSet(false),
     m_settingsHasBeenSet(false),
     m_modelSettingsHasBeenSet(false),
     m_jobExecutionSettingsHasBeenSet(false),
     m_contentRedactionHasBeenSet(false),
     m_identifyLanguage(false),
     m_identifyLanguageHasBeenSet(false),
-    m_languageOptionsHasBeenSet(false)
+    m_languageOptionsHasBeenSet(false),
+    m_subtitlesHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_languageIdSettingsHasBeenSet(false)
 {
 }
 
@@ -84,6 +88,17 @@ Aws::String StartTranscriptionJobRequest::SerializePayload() const
 
   }
 
+  if(m_kMSEncryptionContextHasBeenSet)
+  {
+   JsonValue kMSEncryptionContextJsonMap;
+   for(auto& kMSEncryptionContextItem : m_kMSEncryptionContext)
+   {
+     kMSEncryptionContextJsonMap.WithString(kMSEncryptionContextItem.first, kMSEncryptionContextItem.second);
+   }
+   payload.WithObject("KMSEncryptionContext", std::move(kMSEncryptionContextJsonMap));
+
+  }
+
   if(m_settingsHasBeenSet)
   {
    payload.WithObject("Settings", m_settings.Jsonize());
@@ -122,6 +137,34 @@ Aws::String StartTranscriptionJobRequest::SerializePayload() const
      languageOptionsJsonList[languageOptionsIndex].AsString(LanguageCodeMapper::GetNameForLanguageCode(m_languageOptions[languageOptionsIndex]));
    }
    payload.WithArray("LanguageOptions", std::move(languageOptionsJsonList));
+
+  }
+
+  if(m_subtitlesHasBeenSet)
+  {
+   payload.WithObject("Subtitles", m_subtitles.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_languageIdSettingsHasBeenSet)
+  {
+   JsonValue languageIdSettingsJsonMap;
+   for(auto& languageIdSettingsItem : m_languageIdSettings)
+   {
+     languageIdSettingsJsonMap.WithObject(LanguageCodeMapper::GetNameForLanguageCode(languageIdSettingsItem.first), languageIdSettingsItem.second.Jsonize());
+   }
+   payload.WithObject("LanguageIdSettings", std::move(languageIdSettingsJsonMap));
 
   }
 

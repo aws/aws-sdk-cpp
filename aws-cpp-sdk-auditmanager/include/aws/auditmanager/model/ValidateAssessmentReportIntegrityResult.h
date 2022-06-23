@@ -50,37 +50,44 @@ namespace Model
 
 
     /**
-     * <p> The signature algorithm used to code sign the assessment report file. </p>
+     * <p> The signature algorithm that's used to code sign the assessment report file.
+     * </p>
      */
     inline const Aws::String& GetSignatureAlgorithm() const{ return m_signatureAlgorithm; }
 
     /**
-     * <p> The signature algorithm used to code sign the assessment report file. </p>
+     * <p> The signature algorithm that's used to code sign the assessment report file.
+     * </p>
      */
     inline void SetSignatureAlgorithm(const Aws::String& value) { m_signatureAlgorithm = value; }
 
     /**
-     * <p> The signature algorithm used to code sign the assessment report file. </p>
+     * <p> The signature algorithm that's used to code sign the assessment report file.
+     * </p>
      */
     inline void SetSignatureAlgorithm(Aws::String&& value) { m_signatureAlgorithm = std::move(value); }
 
     /**
-     * <p> The signature algorithm used to code sign the assessment report file. </p>
+     * <p> The signature algorithm that's used to code sign the assessment report file.
+     * </p>
      */
     inline void SetSignatureAlgorithm(const char* value) { m_signatureAlgorithm.assign(value); }
 
     /**
-     * <p> The signature algorithm used to code sign the assessment report file. </p>
+     * <p> The signature algorithm that's used to code sign the assessment report file.
+     * </p>
      */
     inline ValidateAssessmentReportIntegrityResult& WithSignatureAlgorithm(const Aws::String& value) { SetSignatureAlgorithm(value); return *this;}
 
     /**
-     * <p> The signature algorithm used to code sign the assessment report file. </p>
+     * <p> The signature algorithm that's used to code sign the assessment report file.
+     * </p>
      */
     inline ValidateAssessmentReportIntegrityResult& WithSignatureAlgorithm(Aws::String&& value) { SetSignatureAlgorithm(std::move(value)); return *this;}
 
     /**
-     * <p> The signature algorithm used to code sign the assessment report file. </p>
+     * <p> The signature algorithm that's used to code sign the assessment report file.
+     * </p>
      */
     inline ValidateAssessmentReportIntegrityResult& WithSignatureAlgorithm(const char* value) { SetSignatureAlgorithm(value); return *this;}
 

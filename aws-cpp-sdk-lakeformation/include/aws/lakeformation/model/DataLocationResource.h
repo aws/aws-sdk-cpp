@@ -39,49 +39,49 @@ namespace Model
 
 
     /**
-     * <p>The identifier for the Data Catalog where the location is registered with AWS
+     * <p>The identifier for the Data Catalog where the location is registered with
      * Lake Formation. By default, it is the account ID of the caller.</p>
      */
     inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
 
     /**
-     * <p>The identifier for the Data Catalog where the location is registered with AWS
+     * <p>The identifier for the Data Catalog where the location is registered with
      * Lake Formation. By default, it is the account ID of the caller.</p>
      */
     inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
 
     /**
-     * <p>The identifier for the Data Catalog where the location is registered with AWS
+     * <p>The identifier for the Data Catalog where the location is registered with
      * Lake Formation. By default, it is the account ID of the caller.</p>
      */
     inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
 
     /**
-     * <p>The identifier for the Data Catalog where the location is registered with AWS
+     * <p>The identifier for the Data Catalog where the location is registered with
      * Lake Formation. By default, it is the account ID of the caller.</p>
      */
     inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
 
     /**
-     * <p>The identifier for the Data Catalog where the location is registered with AWS
+     * <p>The identifier for the Data Catalog where the location is registered with
      * Lake Formation. By default, it is the account ID of the caller.</p>
      */
     inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
 
     /**
-     * <p>The identifier for the Data Catalog where the location is registered with AWS
+     * <p>The identifier for the Data Catalog where the location is registered with
      * Lake Formation. By default, it is the account ID of the caller.</p>
      */
     inline DataLocationResource& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
 
     /**
-     * <p>The identifier for the Data Catalog where the location is registered with AWS
+     * <p>The identifier for the Data Catalog where the location is registered with
      * Lake Formation. By default, it is the account ID of the caller.</p>
      */
     inline DataLocationResource& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier for the Data Catalog where the location is registered with AWS
+     * <p>The identifier for the Data Catalog where the location is registered with
      * Lake Formation. By default, it is the account ID of the caller.</p>
      */
     inline DataLocationResource& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}

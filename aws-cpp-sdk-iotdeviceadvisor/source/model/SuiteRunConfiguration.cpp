@@ -20,15 +20,17 @@ namespace Model
 
 SuiteRunConfiguration::SuiteRunConfiguration() : 
     m_primaryDeviceHasBeenSet(false),
-    m_secondaryDeviceHasBeenSet(false),
-    m_selectedTestListHasBeenSet(false)
+    m_selectedTestListHasBeenSet(false),
+    m_parallelRun(false),
+    m_parallelRunHasBeenSet(false)
 {
 }
 
 SuiteRunConfiguration::SuiteRunConfiguration(JsonView jsonValue) : 
     m_primaryDeviceHasBeenSet(false),
-    m_secondaryDeviceHasBeenSet(false),
-    m_selectedTestListHasBeenSet(false)
+    m_selectedTestListHasBeenSet(false),
+    m_parallelRun(false),
+    m_parallelRunHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -42,13 +44,6 @@ SuiteRunConfiguration& SuiteRunConfiguration::operator =(JsonView jsonValue)
     m_primaryDeviceHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("secondaryDevice"))
-  {
-    m_secondaryDevice = jsonValue.GetObject("secondaryDevice");
-
-    m_secondaryDeviceHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("selectedTestList"))
   {
     Array<JsonView> selectedTestListJsonList = jsonValue.GetArray("selectedTestList");
@@ -57,6 +52,13 @@ SuiteRunConfiguration& SuiteRunConfiguration::operator =(JsonView jsonValue)
       m_selectedTestList.push_back(selectedTestListJsonList[selectedTestListIndex].AsString());
     }
     m_selectedTestListHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("parallelRun"))
+  {
+    m_parallelRun = jsonValue.GetBool("parallelRun");
+
+    m_parallelRunHasBeenSet = true;
   }
 
   return *this;
@@ -72,12 +74,6 @@ JsonValue SuiteRunConfiguration::Jsonize() const
 
   }
 
-  if(m_secondaryDeviceHasBeenSet)
-  {
-   payload.WithObject("secondaryDevice", m_secondaryDevice.Jsonize());
-
-  }
-
   if(m_selectedTestListHasBeenSet)
   {
    Array<JsonValue> selectedTestListJsonList(m_selectedTestList.size());
@@ -86,6 +82,12 @@ JsonValue SuiteRunConfiguration::Jsonize() const
      selectedTestListJsonList[selectedTestListIndex].AsString(m_selectedTestList[selectedTestListIndex]);
    }
    payload.WithArray("selectedTestList", std::move(selectedTestListJsonList));
+
+  }
+
+  if(m_parallelRunHasBeenSet)
+  {
+   payload.WithBool("parallelRun", m_parallelRun);
 
   }
 

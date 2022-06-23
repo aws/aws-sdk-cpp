@@ -35,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>A list of activations for your AWS account.</p>
+     * <p>A list of activations for your Amazon Web Services account.</p>
      */
     inline const Aws::Vector<Activation>& GetActivationList() const{ return m_activationList; }
 
     /**
-     * <p>A list of activations for your AWS account.</p>
+     * <p>A list of activations for your Amazon Web Services account.</p>
      */
     inline void SetActivationList(const Aws::Vector<Activation>& value) { m_activationList = value; }
 
     /**
-     * <p>A list of activations for your AWS account.</p>
+     * <p>A list of activations for your Amazon Web Services account.</p>
      */
     inline void SetActivationList(Aws::Vector<Activation>&& value) { m_activationList = std::move(value); }
 
     /**
-     * <p>A list of activations for your AWS account.</p>
+     * <p>A list of activations for your Amazon Web Services account.</p>
      */
     inline DescribeActivationsResult& WithActivationList(const Aws::Vector<Activation>& value) { SetActivationList(value); return *this;}
 
     /**
-     * <p>A list of activations for your AWS account.</p>
+     * <p>A list of activations for your Amazon Web Services account.</p>
      */
     inline DescribeActivationsResult& WithActivationList(Aws::Vector<Activation>&& value) { SetActivationList(std::move(value)); return *this;}
 
     /**
-     * <p>A list of activations for your AWS account.</p>
+     * <p>A list of activations for your Amazon Web Services account.</p>
      */
     inline DescribeActivationsResult& AddActivationList(const Activation& value) { m_activationList.push_back(value); return *this; }
 
     /**
-     * <p>A list of activations for your AWS account.</p>
+     * <p>A list of activations for your Amazon Web Services account.</p>
      */
     inline DescribeActivationsResult& AddActivationList(Activation&& value) { m_activationList.push_back(std::move(value)); return *this; }
 

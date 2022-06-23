@@ -29,7 +29,16 @@ namespace Model
    * your file transfer protocol-enabled server. With a VPC endpoint, you can
    * restrict access to your server and resources only within your VPC. To control
    * incoming internet traffic, invoke the <code>UpdateServer</code> API and attach
-   * an Elastic IP to your server's endpoint.</p><p><h3>See Also:</h3>   <a
+   * an Elastic IP address to your server's endpoint.</p>  <p> After May 19,
+   * 2021, you won't be able to create a server using
+   * <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Servicesaccount if
+   * your account hasn't already done so before May 19, 2021. If you have already
+   * created servers with <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web
+   * Servicesaccount on or before May 19, 2021, you will not be affected. After this
+   * date, use <code>EndpointType</code>=<code>VPC</code>.</p> <p>For more
+   * information, see
+   * https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
+   * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/EndpointDetails">AWS
    * API Reference</a></p>
    */
@@ -181,49 +190,73 @@ namespace Model
 
     /**
      * <p>The ID of the VPC endpoint.</p>  <p>This property can only be set when
-     * <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.</p> 
+     * <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.</p> <p>For more
+     * information, see
+     * https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
+     * 
      */
     inline const Aws::String& GetVpcEndpointId() const{ return m_vpcEndpointId; }
 
     /**
      * <p>The ID of the VPC endpoint.</p>  <p>This property can only be set when
-     * <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.</p> 
+     * <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.</p> <p>For more
+     * information, see
+     * https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
+     * 
      */
     inline bool VpcEndpointIdHasBeenSet() const { return m_vpcEndpointIdHasBeenSet; }
 
     /**
      * <p>The ID of the VPC endpoint.</p>  <p>This property can only be set when
-     * <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.</p> 
+     * <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.</p> <p>For more
+     * information, see
+     * https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
+     * 
      */
     inline void SetVpcEndpointId(const Aws::String& value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId = value; }
 
     /**
      * <p>The ID of the VPC endpoint.</p>  <p>This property can only be set when
-     * <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.</p> 
+     * <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.</p> <p>For more
+     * information, see
+     * https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
+     * 
      */
     inline void SetVpcEndpointId(Aws::String&& value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId = std::move(value); }
 
     /**
      * <p>The ID of the VPC endpoint.</p>  <p>This property can only be set when
-     * <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.</p> 
+     * <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.</p> <p>For more
+     * information, see
+     * https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
+     * 
      */
     inline void SetVpcEndpointId(const char* value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId.assign(value); }
 
     /**
      * <p>The ID of the VPC endpoint.</p>  <p>This property can only be set when
-     * <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.</p> 
+     * <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.</p> <p>For more
+     * information, see
+     * https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
+     * 
      */
     inline EndpointDetails& WithVpcEndpointId(const Aws::String& value) { SetVpcEndpointId(value); return *this;}
 
     /**
      * <p>The ID of the VPC endpoint.</p>  <p>This property can only be set when
-     * <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.</p> 
+     * <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.</p> <p>For more
+     * information, see
+     * https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
+     * 
      */
     inline EndpointDetails& WithVpcEndpointId(Aws::String&& value) { SetVpcEndpointId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the VPC endpoint.</p>  <p>This property can only be set when
-     * <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.</p> 
+     * <code>EndpointType</code> is set to <code>VPC_ENDPOINT</code>.</p> <p>For more
+     * information, see
+     * https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
+     * 
      */
     inline EndpointDetails& WithVpcEndpointId(const char* value) { SetVpcEndpointId(value); return *this;}
 
@@ -288,99 +321,135 @@ namespace Model
     /**
      * <p>A list of security groups IDs that are available to attach to your server's
      * endpoint.</p>  <p>This property can only be set when
-     * <code>EndpointType</code> is set to <code>VPC</code>.</p> <p>You can only edit
-     * the <code>SecurityGroupIds</code> property in the <code>UpdateServer</code> API
-     * and only if you are changing the <code>EndpointType</code> from
-     * <code>PUBLIC</code> or <code>VPC_ENDPOINT</code> to <code>VPC</code>.</p>
-     * 
+     * <code>EndpointType</code> is set to <code>VPC</code>.</p> <p>You can edit the
+     * <code>SecurityGroupIds</code> property in the <a
+     * href="https://docs.aws.amazon.com/transfer/latest/userguide/API_UpdateServer.html">UpdateServer</a>
+     * API only if you are changing the <code>EndpointType</code> from
+     * <code>PUBLIC</code> or <code>VPC_ENDPOINT</code> to <code>VPC</code>. To change
+     * security groups associated with your server's VPC endpoint after creation, use
+     * the Amazon EC2 <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpcEndpoint.html">ModifyVpcEndpoint</a>
+     * API.</p> 
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
 
     /**
      * <p>A list of security groups IDs that are available to attach to your server's
      * endpoint.</p>  <p>This property can only be set when
-     * <code>EndpointType</code> is set to <code>VPC</code>.</p> <p>You can only edit
-     * the <code>SecurityGroupIds</code> property in the <code>UpdateServer</code> API
-     * and only if you are changing the <code>EndpointType</code> from
-     * <code>PUBLIC</code> or <code>VPC_ENDPOINT</code> to <code>VPC</code>.</p>
-     * 
+     * <code>EndpointType</code> is set to <code>VPC</code>.</p> <p>You can edit the
+     * <code>SecurityGroupIds</code> property in the <a
+     * href="https://docs.aws.amazon.com/transfer/latest/userguide/API_UpdateServer.html">UpdateServer</a>
+     * API only if you are changing the <code>EndpointType</code> from
+     * <code>PUBLIC</code> or <code>VPC_ENDPOINT</code> to <code>VPC</code>. To change
+     * security groups associated with your server's VPC endpoint after creation, use
+     * the Amazon EC2 <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpcEndpoint.html">ModifyVpcEndpoint</a>
+     * API.</p> 
      */
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
 
     /**
      * <p>A list of security groups IDs that are available to attach to your server's
      * endpoint.</p>  <p>This property can only be set when
-     * <code>EndpointType</code> is set to <code>VPC</code>.</p> <p>You can only edit
-     * the <code>SecurityGroupIds</code> property in the <code>UpdateServer</code> API
-     * and only if you are changing the <code>EndpointType</code> from
-     * <code>PUBLIC</code> or <code>VPC_ENDPOINT</code> to <code>VPC</code>.</p>
-     * 
+     * <code>EndpointType</code> is set to <code>VPC</code>.</p> <p>You can edit the
+     * <code>SecurityGroupIds</code> property in the <a
+     * href="https://docs.aws.amazon.com/transfer/latest/userguide/API_UpdateServer.html">UpdateServer</a>
+     * API only if you are changing the <code>EndpointType</code> from
+     * <code>PUBLIC</code> or <code>VPC_ENDPOINT</code> to <code>VPC</code>. To change
+     * security groups associated with your server's VPC endpoint after creation, use
+     * the Amazon EC2 <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpcEndpoint.html">ModifyVpcEndpoint</a>
+     * API.</p> 
      */
     inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
 
     /**
      * <p>A list of security groups IDs that are available to attach to your server's
      * endpoint.</p>  <p>This property can only be set when
-     * <code>EndpointType</code> is set to <code>VPC</code>.</p> <p>You can only edit
-     * the <code>SecurityGroupIds</code> property in the <code>UpdateServer</code> API
-     * and only if you are changing the <code>EndpointType</code> from
-     * <code>PUBLIC</code> or <code>VPC_ENDPOINT</code> to <code>VPC</code>.</p>
-     * 
+     * <code>EndpointType</code> is set to <code>VPC</code>.</p> <p>You can edit the
+     * <code>SecurityGroupIds</code> property in the <a
+     * href="https://docs.aws.amazon.com/transfer/latest/userguide/API_UpdateServer.html">UpdateServer</a>
+     * API only if you are changing the <code>EndpointType</code> from
+     * <code>PUBLIC</code> or <code>VPC_ENDPOINT</code> to <code>VPC</code>. To change
+     * security groups associated with your server's VPC endpoint after creation, use
+     * the Amazon EC2 <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpcEndpoint.html">ModifyVpcEndpoint</a>
+     * API.</p> 
      */
     inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
 
     /**
      * <p>A list of security groups IDs that are available to attach to your server's
      * endpoint.</p>  <p>This property can only be set when
-     * <code>EndpointType</code> is set to <code>VPC</code>.</p> <p>You can only edit
-     * the <code>SecurityGroupIds</code> property in the <code>UpdateServer</code> API
-     * and only if you are changing the <code>EndpointType</code> from
-     * <code>PUBLIC</code> or <code>VPC_ENDPOINT</code> to <code>VPC</code>.</p>
-     * 
+     * <code>EndpointType</code> is set to <code>VPC</code>.</p> <p>You can edit the
+     * <code>SecurityGroupIds</code> property in the <a
+     * href="https://docs.aws.amazon.com/transfer/latest/userguide/API_UpdateServer.html">UpdateServer</a>
+     * API only if you are changing the <code>EndpointType</code> from
+     * <code>PUBLIC</code> or <code>VPC_ENDPOINT</code> to <code>VPC</code>. To change
+     * security groups associated with your server's VPC endpoint after creation, use
+     * the Amazon EC2 <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpcEndpoint.html">ModifyVpcEndpoint</a>
+     * API.</p> 
      */
     inline EndpointDetails& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
 
     /**
      * <p>A list of security groups IDs that are available to attach to your server's
      * endpoint.</p>  <p>This property can only be set when
-     * <code>EndpointType</code> is set to <code>VPC</code>.</p> <p>You can only edit
-     * the <code>SecurityGroupIds</code> property in the <code>UpdateServer</code> API
-     * and only if you are changing the <code>EndpointType</code> from
-     * <code>PUBLIC</code> or <code>VPC_ENDPOINT</code> to <code>VPC</code>.</p>
-     * 
+     * <code>EndpointType</code> is set to <code>VPC</code>.</p> <p>You can edit the
+     * <code>SecurityGroupIds</code> property in the <a
+     * href="https://docs.aws.amazon.com/transfer/latest/userguide/API_UpdateServer.html">UpdateServer</a>
+     * API only if you are changing the <code>EndpointType</code> from
+     * <code>PUBLIC</code> or <code>VPC_ENDPOINT</code> to <code>VPC</code>. To change
+     * security groups associated with your server's VPC endpoint after creation, use
+     * the Amazon EC2 <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpcEndpoint.html">ModifyVpcEndpoint</a>
+     * API.</p> 
      */
     inline EndpointDetails& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
 
     /**
      * <p>A list of security groups IDs that are available to attach to your server's
      * endpoint.</p>  <p>This property can only be set when
-     * <code>EndpointType</code> is set to <code>VPC</code>.</p> <p>You can only edit
-     * the <code>SecurityGroupIds</code> property in the <code>UpdateServer</code> API
-     * and only if you are changing the <code>EndpointType</code> from
-     * <code>PUBLIC</code> or <code>VPC_ENDPOINT</code> to <code>VPC</code>.</p>
-     * 
+     * <code>EndpointType</code> is set to <code>VPC</code>.</p> <p>You can edit the
+     * <code>SecurityGroupIds</code> property in the <a
+     * href="https://docs.aws.amazon.com/transfer/latest/userguide/API_UpdateServer.html">UpdateServer</a>
+     * API only if you are changing the <code>EndpointType</code> from
+     * <code>PUBLIC</code> or <code>VPC_ENDPOINT</code> to <code>VPC</code>. To change
+     * security groups associated with your server's VPC endpoint after creation, use
+     * the Amazon EC2 <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpcEndpoint.html">ModifyVpcEndpoint</a>
+     * API.</p> 
      */
     inline EndpointDetails& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
     /**
      * <p>A list of security groups IDs that are available to attach to your server's
      * endpoint.</p>  <p>This property can only be set when
-     * <code>EndpointType</code> is set to <code>VPC</code>.</p> <p>You can only edit
-     * the <code>SecurityGroupIds</code> property in the <code>UpdateServer</code> API
-     * and only if you are changing the <code>EndpointType</code> from
-     * <code>PUBLIC</code> or <code>VPC_ENDPOINT</code> to <code>VPC</code>.</p>
-     * 
+     * <code>EndpointType</code> is set to <code>VPC</code>.</p> <p>You can edit the
+     * <code>SecurityGroupIds</code> property in the <a
+     * href="https://docs.aws.amazon.com/transfer/latest/userguide/API_UpdateServer.html">UpdateServer</a>
+     * API only if you are changing the <code>EndpointType</code> from
+     * <code>PUBLIC</code> or <code>VPC_ENDPOINT</code> to <code>VPC</code>. To change
+     * security groups associated with your server's VPC endpoint after creation, use
+     * the Amazon EC2 <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpcEndpoint.html">ModifyVpcEndpoint</a>
+     * API.</p> 
      */
     inline EndpointDetails& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of security groups IDs that are available to attach to your server's
      * endpoint.</p>  <p>This property can only be set when
-     * <code>EndpointType</code> is set to <code>VPC</code>.</p> <p>You can only edit
-     * the <code>SecurityGroupIds</code> property in the <code>UpdateServer</code> API
-     * and only if you are changing the <code>EndpointType</code> from
-     * <code>PUBLIC</code> or <code>VPC_ENDPOINT</code> to <code>VPC</code>.</p>
-     * 
+     * <code>EndpointType</code> is set to <code>VPC</code>.</p> <p>You can edit the
+     * <code>SecurityGroupIds</code> property in the <a
+     * href="https://docs.aws.amazon.com/transfer/latest/userguide/API_UpdateServer.html">UpdateServer</a>
+     * API only if you are changing the <code>EndpointType</code> from
+     * <code>PUBLIC</code> or <code>VPC_ENDPOINT</code> to <code>VPC</code>. To change
+     * security groups associated with your server's VPC endpoint after creation, use
+     * the Amazon EC2 <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpcEndpoint.html">ModifyVpcEndpoint</a>
+     * API.</p> 
      */
     inline EndpointDetails& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 

@@ -34,42 +34,50 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS account that contains the theme that you're updating.</p>
+     * <p>The ID of the Amazon Web Services account that contains the theme that you're
+     * updating.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p>The ID of the AWS account that contains the theme that you're updating.</p>
+     * <p>The ID of the Amazon Web Services account that contains the theme that you're
+     * updating.</p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS account that contains the theme that you're updating.</p>
+     * <p>The ID of the Amazon Web Services account that contains the theme that you're
+     * updating.</p>
      */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p>The ID of the AWS account that contains the theme that you're updating.</p>
+     * <p>The ID of the Amazon Web Services account that contains the theme that you're
+     * updating.</p>
      */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS account that contains the theme that you're updating.</p>
+     * <p>The ID of the Amazon Web Services account that contains the theme that you're
+     * updating.</p>
      */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
 
     /**
-     * <p>The ID of the AWS account that contains the theme that you're updating.</p>
+     * <p>The ID of the Amazon Web Services account that contains the theme that you're
+     * updating.</p>
      */
     inline UpdateThemeRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS account that contains the theme that you're updating.</p>
+     * <p>The ID of the Amazon Web Services account that contains the theme that you're
+     * updating.</p>
      */
     inline UpdateThemeRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS account that contains the theme that you're updating.</p>
+     * <p>The ID of the Amazon Web Services account that contains the theme that you're
+     * updating.</p>
      */
     inline UpdateThemeRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
 
@@ -158,49 +166,49 @@ namespace Model
 
     /**
      * <p>The theme ID, defined by Amazon QuickSight, that a custom theme inherits
-     * from. All themes initially inherit from a default QuickSight theme.</p>
+     * from. All themes initially inherit from a default Amazon QuickSight theme.</p>
      */
     inline const Aws::String& GetBaseThemeId() const{ return m_baseThemeId; }
 
     /**
      * <p>The theme ID, defined by Amazon QuickSight, that a custom theme inherits
-     * from. All themes initially inherit from a default QuickSight theme.</p>
+     * from. All themes initially inherit from a default Amazon QuickSight theme.</p>
      */
     inline bool BaseThemeIdHasBeenSet() const { return m_baseThemeIdHasBeenSet; }
 
     /**
      * <p>The theme ID, defined by Amazon QuickSight, that a custom theme inherits
-     * from. All themes initially inherit from a default QuickSight theme.</p>
+     * from. All themes initially inherit from a default Amazon QuickSight theme.</p>
      */
     inline void SetBaseThemeId(const Aws::String& value) { m_baseThemeIdHasBeenSet = true; m_baseThemeId = value; }
 
     /**
      * <p>The theme ID, defined by Amazon QuickSight, that a custom theme inherits
-     * from. All themes initially inherit from a default QuickSight theme.</p>
+     * from. All themes initially inherit from a default Amazon QuickSight theme.</p>
      */
     inline void SetBaseThemeId(Aws::String&& value) { m_baseThemeIdHasBeenSet = true; m_baseThemeId = std::move(value); }
 
     /**
      * <p>The theme ID, defined by Amazon QuickSight, that a custom theme inherits
-     * from. All themes initially inherit from a default QuickSight theme.</p>
+     * from. All themes initially inherit from a default Amazon QuickSight theme.</p>
      */
     inline void SetBaseThemeId(const char* value) { m_baseThemeIdHasBeenSet = true; m_baseThemeId.assign(value); }
 
     /**
      * <p>The theme ID, defined by Amazon QuickSight, that a custom theme inherits
-     * from. All themes initially inherit from a default QuickSight theme.</p>
+     * from. All themes initially inherit from a default Amazon QuickSight theme.</p>
      */
     inline UpdateThemeRequest& WithBaseThemeId(const Aws::String& value) { SetBaseThemeId(value); return *this;}
 
     /**
      * <p>The theme ID, defined by Amazon QuickSight, that a custom theme inherits
-     * from. All themes initially inherit from a default QuickSight theme.</p>
+     * from. All themes initially inherit from a default Amazon QuickSight theme.</p>
      */
     inline UpdateThemeRequest& WithBaseThemeId(Aws::String&& value) { SetBaseThemeId(std::move(value)); return *this;}
 
     /**
      * <p>The theme ID, defined by Amazon QuickSight, that a custom theme inherits
-     * from. All themes initially inherit from a default QuickSight theme.</p>
+     * from. All themes initially inherit from a default Amazon QuickSight theme.</p>
      */
     inline UpdateThemeRequest& WithBaseThemeId(const char* value) { SetBaseThemeId(value); return *this;}
 

@@ -23,6 +23,8 @@ CreateDeploymentGroupRequest::CreateDeploymentGroupRequest() :
     m_triggerConfigurationsHasBeenSet(false),
     m_alarmConfigurationHasBeenSet(false),
     m_autoRollbackConfigurationHasBeenSet(false),
+    m_outdatedInstancesStrategy(OutdatedInstancesStrategy::NOT_SET),
+    m_outdatedInstancesStrategyHasBeenSet(false),
     m_deploymentStyleHasBeenSet(false),
     m_blueGreenDeploymentConfigurationHasBeenSet(false),
     m_loadBalancerInfoHasBeenSet(false),
@@ -115,6 +117,11 @@ Aws::String CreateDeploymentGroupRequest::SerializePayload() const
   {
    payload.WithObject("autoRollbackConfiguration", m_autoRollbackConfiguration.Jsonize());
 
+  }
+
+  if(m_outdatedInstancesStrategyHasBeenSet)
+  {
+   payload.WithString("outdatedInstancesStrategy", OutdatedInstancesStrategyMapper::GetNameForOutdatedInstancesStrategy(m_outdatedInstancesStrategy));
   }
 
   if(m_deploymentStyleHasBeenSet)

@@ -74,6 +74,76 @@ namespace Model
 
 
     /**
+     * <p>Filters the channel list to match the specified recording-configuration
+     * ARN.</p>
+     */
+    inline const Aws::String& GetFilterByRecordingConfigurationArn() const{ return m_filterByRecordingConfigurationArn; }
+
+    /**
+     * <p>Filters the channel list to match the specified recording-configuration
+     * ARN.</p>
+     */
+    inline bool FilterByRecordingConfigurationArnHasBeenSet() const { return m_filterByRecordingConfigurationArnHasBeenSet; }
+
+    /**
+     * <p>Filters the channel list to match the specified recording-configuration
+     * ARN.</p>
+     */
+    inline void SetFilterByRecordingConfigurationArn(const Aws::String& value) { m_filterByRecordingConfigurationArnHasBeenSet = true; m_filterByRecordingConfigurationArn = value; }
+
+    /**
+     * <p>Filters the channel list to match the specified recording-configuration
+     * ARN.</p>
+     */
+    inline void SetFilterByRecordingConfigurationArn(Aws::String&& value) { m_filterByRecordingConfigurationArnHasBeenSet = true; m_filterByRecordingConfigurationArn = std::move(value); }
+
+    /**
+     * <p>Filters the channel list to match the specified recording-configuration
+     * ARN.</p>
+     */
+    inline void SetFilterByRecordingConfigurationArn(const char* value) { m_filterByRecordingConfigurationArnHasBeenSet = true; m_filterByRecordingConfigurationArn.assign(value); }
+
+    /**
+     * <p>Filters the channel list to match the specified recording-configuration
+     * ARN.</p>
+     */
+    inline ListChannelsRequest& WithFilterByRecordingConfigurationArn(const Aws::String& value) { SetFilterByRecordingConfigurationArn(value); return *this;}
+
+    /**
+     * <p>Filters the channel list to match the specified recording-configuration
+     * ARN.</p>
+     */
+    inline ListChannelsRequest& WithFilterByRecordingConfigurationArn(Aws::String&& value) { SetFilterByRecordingConfigurationArn(std::move(value)); return *this;}
+
+    /**
+     * <p>Filters the channel list to match the specified recording-configuration
+     * ARN.</p>
+     */
+    inline ListChannelsRequest& WithFilterByRecordingConfigurationArn(const char* value) { SetFilterByRecordingConfigurationArn(value); return *this;}
+
+
+    /**
+     * <p>Maximum number of channels to return. Default: 50.</p>
+     */
+    inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>Maximum number of channels to return. Default: 50.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>Maximum number of channels to return. Default: 50.</p>
+     */
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+
+    /**
+     * <p>Maximum number of channels to return. Default: 50.</p>
+     */
+    inline ListChannelsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
+
+    /**
      * <p>The first channel to retrieve. This is used for pagination; see the
      * <code>nextToken</code> response field.</p>
      */
@@ -121,37 +191,19 @@ namespace Model
      */
     inline ListChannelsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
-
-    /**
-     * <p>Maximum number of channels to return.</p>
-     */
-    inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>Maximum number of channels to return.</p>
-     */
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>Maximum number of channels to return.</p>
-     */
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>Maximum number of channels to return.</p>
-     */
-    inline ListChannelsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
   private:
 
     Aws::String m_filterByName;
     bool m_filterByNameHasBeenSet;
 
-    Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    Aws::String m_filterByRecordingConfigurationArn;
+    bool m_filterByRecordingConfigurationArnHasBeenSet;
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet;
   };
 
 } // namespace Model

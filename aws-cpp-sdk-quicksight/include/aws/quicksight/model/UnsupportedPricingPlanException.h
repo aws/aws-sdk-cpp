@@ -25,12 +25,14 @@ namespace Model
 
   /**
    * <p>This error indicates that you are calling an embedding operation in Amazon
-   * QuickSight without the required pricing plan on your AWS account. Before you can
-   * use embedding for anonymous users, a QuickSight administrator needs to add
-   * capacity pricing to QuickSight. You can do this on the <b>Manage QuickSight</b>
-   * page. </p> <p>After capacity pricing is added, you can use the
-   * <a>GetDashboardEmbedUrl</a> API operation with the <code>--identity-type
-   * ANONYMOUS</code> option.</p><p><h3>See Also:</h3>   <a
+   * QuickSight without the required pricing plan on your Amazon Web Services
+   * account. Before you can use embedding for anonymous users, a QuickSight
+   * administrator needs to add capacity pricing to Amazon QuickSight. You can do
+   * this on the <b>Manage Amazon QuickSight</b> page. </p> <p>After capacity pricing
+   * is added, you can use the <code> <a
+   * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetDashboardEmbedUrl.html">GetDashboardEmbedUrl</a>
+   * </code> API operation with the <code>--identity-type ANONYMOUS</code>
+   * option.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UnsupportedPricingPlanException">AWS
    * API Reference</a></p>
    */
@@ -69,42 +71,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS request ID for this request.</p>
+     * <p>The Amazon Web Services request ID for this request.</p>
      */
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
     /**
-     * <p>The AWS request ID for this request.</p>
+     * <p>The Amazon Web Services request ID for this request.</p>
      */
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
 
     /**
-     * <p>The AWS request ID for this request.</p>
+     * <p>The Amazon Web Services request ID for this request.</p>
      */
     inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
 
     /**
-     * <p>The AWS request ID for this request.</p>
+     * <p>The Amazon Web Services request ID for this request.</p>
      */
     inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
 
     /**
-     * <p>The AWS request ID for this request.</p>
+     * <p>The Amazon Web Services request ID for this request.</p>
      */
     inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
 
     /**
-     * <p>The AWS request ID for this request.</p>
+     * <p>The Amazon Web Services request ID for this request.</p>
      */
     inline UnsupportedPricingPlanException& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
 
     /**
-     * <p>The AWS request ID for this request.</p>
+     * <p>The Amazon Web Services request ID for this request.</p>
      */
     inline UnsupportedPricingPlanException& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS request ID for this request.</p>
+     * <p>The Amazon Web Services request ID for this request.</p>
      */
     inline UnsupportedPricingPlanException& WithRequestId(const char* value) { SetRequestId(value); return *this;}
 

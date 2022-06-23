@@ -25,7 +25,8 @@ CreateCanaryRequest::CreateCanaryRequest() :
     m_failureRetentionPeriodInDaysHasBeenSet(false),
     m_runtimeVersionHasBeenSet(false),
     m_vpcConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_artifactConfigHasBeenSet(false)
 {
 }
 
@@ -101,6 +102,12 @@ Aws::String CreateCanaryRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("Tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_artifactConfigHasBeenSet)
+  {
+   payload.WithObject("ArtifactConfig", m_artifactConfig.Jsonize());
 
   }
 

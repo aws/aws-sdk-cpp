@@ -16,7 +16,8 @@ namespace Model
   enum class Platform
   {
     NOT_SET,
-    WEB
+    WEB,
+    WEB_DYNAMIC
   };
 
 namespace PlatformMapper

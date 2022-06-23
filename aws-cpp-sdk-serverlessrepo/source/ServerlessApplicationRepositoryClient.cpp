@@ -82,7 +82,7 @@ ServerlessApplicationRepositoryClient::~ServerlessApplicationRepositoryClient()
 {
 }
 
-void ServerlessApplicationRepositoryClient::init(const ClientConfiguration& config)
+void ServerlessApplicationRepositoryClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("ServerlessApplicationRepository");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -111,9 +111,7 @@ void ServerlessApplicationRepositoryClient::OverrideEndpoint(const Aws::String& 
 CreateApplicationOutcome ServerlessApplicationRepositoryClient::CreateApplication(const CreateApplicationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/applications";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/applications");
   return CreateApplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -148,12 +146,10 @@ CreateApplicationVersionOutcome ServerlessApplicationRepositoryClient::CreateApp
     return CreateApplicationVersionOutcome(Aws::Client::AWSError<ServerlessApplicationRepositoryErrors>(ServerlessApplicationRepositoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SemanticVersion]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/applications/";
-  ss << request.GetApplicationId();
-  ss << "/versions/";
-  ss << request.GetSemanticVersion();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/applications/");
+  uri.AddPathSegment(request.GetApplicationId());
+  uri.AddPathSegments("/versions/");
+  uri.AddPathSegment(request.GetSemanticVersion());
   return CreateApplicationVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -183,11 +179,9 @@ CreateCloudFormationChangeSetOutcome ServerlessApplicationRepositoryClient::Crea
     return CreateCloudFormationChangeSetOutcome(Aws::Client::AWSError<ServerlessApplicationRepositoryErrors>(ServerlessApplicationRepositoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/applications/";
-  ss << request.GetApplicationId();
-  ss << "/changesets";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/applications/");
+  uri.AddPathSegment(request.GetApplicationId());
+  uri.AddPathSegments("/changesets");
   return CreateCloudFormationChangeSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -217,11 +211,9 @@ CreateCloudFormationTemplateOutcome ServerlessApplicationRepositoryClient::Creat
     return CreateCloudFormationTemplateOutcome(Aws::Client::AWSError<ServerlessApplicationRepositoryErrors>(ServerlessApplicationRepositoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/applications/";
-  ss << request.GetApplicationId();
-  ss << "/templates";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/applications/");
+  uri.AddPathSegment(request.GetApplicationId());
+  uri.AddPathSegments("/templates");
   return CreateCloudFormationTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -251,10 +243,8 @@ DeleteApplicationOutcome ServerlessApplicationRepositoryClient::DeleteApplicatio
     return DeleteApplicationOutcome(Aws::Client::AWSError<ServerlessApplicationRepositoryErrors>(ServerlessApplicationRepositoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/applications/";
-  ss << request.GetApplicationId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/applications/");
+  uri.AddPathSegment(request.GetApplicationId());
   return DeleteApplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -284,10 +274,8 @@ GetApplicationOutcome ServerlessApplicationRepositoryClient::GetApplication(cons
     return GetApplicationOutcome(Aws::Client::AWSError<ServerlessApplicationRepositoryErrors>(ServerlessApplicationRepositoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/applications/";
-  ss << request.GetApplicationId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/applications/");
+  uri.AddPathSegment(request.GetApplicationId());
   return GetApplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -317,11 +305,9 @@ GetApplicationPolicyOutcome ServerlessApplicationRepositoryClient::GetApplicatio
     return GetApplicationPolicyOutcome(Aws::Client::AWSError<ServerlessApplicationRepositoryErrors>(ServerlessApplicationRepositoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/applications/";
-  ss << request.GetApplicationId();
-  ss << "/policy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/applications/");
+  uri.AddPathSegment(request.GetApplicationId());
+  uri.AddPathSegments("/policy");
   return GetApplicationPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -356,12 +342,10 @@ GetCloudFormationTemplateOutcome ServerlessApplicationRepositoryClient::GetCloud
     return GetCloudFormationTemplateOutcome(Aws::Client::AWSError<ServerlessApplicationRepositoryErrors>(ServerlessApplicationRepositoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TemplateId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/applications/";
-  ss << request.GetApplicationId();
-  ss << "/templates/";
-  ss << request.GetTemplateId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/applications/");
+  uri.AddPathSegment(request.GetApplicationId());
+  uri.AddPathSegments("/templates/");
+  uri.AddPathSegment(request.GetTemplateId());
   return GetCloudFormationTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -391,11 +375,9 @@ ListApplicationDependenciesOutcome ServerlessApplicationRepositoryClient::ListAp
     return ListApplicationDependenciesOutcome(Aws::Client::AWSError<ServerlessApplicationRepositoryErrors>(ServerlessApplicationRepositoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/applications/";
-  ss << request.GetApplicationId();
-  ss << "/dependencies";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/applications/");
+  uri.AddPathSegment(request.GetApplicationId());
+  uri.AddPathSegments("/dependencies");
   return ListApplicationDependenciesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -425,11 +407,9 @@ ListApplicationVersionsOutcome ServerlessApplicationRepositoryClient::ListApplic
     return ListApplicationVersionsOutcome(Aws::Client::AWSError<ServerlessApplicationRepositoryErrors>(ServerlessApplicationRepositoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/applications/";
-  ss << request.GetApplicationId();
-  ss << "/versions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/applications/");
+  uri.AddPathSegment(request.GetApplicationId());
+  uri.AddPathSegments("/versions");
   return ListApplicationVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -454,9 +434,7 @@ void ServerlessApplicationRepositoryClient::ListApplicationVersionsAsyncHelper(c
 ListApplicationsOutcome ServerlessApplicationRepositoryClient::ListApplications(const ListApplicationsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/applications";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/applications");
   return ListApplicationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -486,11 +464,9 @@ PutApplicationPolicyOutcome ServerlessApplicationRepositoryClient::PutApplicatio
     return PutApplicationPolicyOutcome(Aws::Client::AWSError<ServerlessApplicationRepositoryErrors>(ServerlessApplicationRepositoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/applications/";
-  ss << request.GetApplicationId();
-  ss << "/policy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/applications/");
+  uri.AddPathSegment(request.GetApplicationId());
+  uri.AddPathSegments("/policy");
   return PutApplicationPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -520,11 +496,9 @@ UnshareApplicationOutcome ServerlessApplicationRepositoryClient::UnshareApplicat
     return UnshareApplicationOutcome(Aws::Client::AWSError<ServerlessApplicationRepositoryErrors>(ServerlessApplicationRepositoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/applications/";
-  ss << request.GetApplicationId();
-  ss << "/unshare";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/applications/");
+  uri.AddPathSegment(request.GetApplicationId());
+  uri.AddPathSegments("/unshare");
   return UnshareApplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -554,10 +528,8 @@ UpdateApplicationOutcome ServerlessApplicationRepositoryClient::UpdateApplicatio
     return UpdateApplicationOutcome(Aws::Client::AWSError<ServerlessApplicationRepositoryErrors>(ServerlessApplicationRepositoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/applications/";
-  ss << request.GetApplicationId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/applications/");
+  uri.AddPathSegment(request.GetApplicationId());
   return UpdateApplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 

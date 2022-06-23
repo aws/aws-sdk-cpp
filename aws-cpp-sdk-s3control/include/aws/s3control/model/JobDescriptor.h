@@ -13,6 +13,8 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/s3control/model/JobReport.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/s3control/model/JobManifestGenerator.h>
+#include <aws/s3control/model/S3GeneratedManifestDescriptor.h>
 #include <aws/s3control/model/JobFailure.h>
 #include <utility>
 
@@ -559,50 +561,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the AWS Identity and Access Management
-     * (IAM) role assigned to run the tasks for this job.</p>
+     * <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM)
+     * role assigned to run the tasks for this job.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the AWS Identity and Access Management
-     * (IAM) role assigned to run the tasks for this job.</p>
+     * <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM)
+     * role assigned to run the tasks for this job.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the AWS Identity and Access Management
-     * (IAM) role assigned to run the tasks for this job.</p>
+     * <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM)
+     * role assigned to run the tasks for this job.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the AWS Identity and Access Management
-     * (IAM) role assigned to run the tasks for this job.</p>
+     * <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM)
+     * role assigned to run the tasks for this job.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the AWS Identity and Access Management
-     * (IAM) role assigned to run the tasks for this job.</p>
+     * <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM)
+     * role assigned to run the tasks for this job.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the AWS Identity and Access Management
-     * (IAM) role assigned to run the tasks for this job.</p>
+     * <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM)
+     * role assigned to run the tasks for this job.</p>
      */
     inline JobDescriptor& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the AWS Identity and Access Management
-     * (IAM) role assigned to run the tasks for this job.</p>
+     * <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM)
+     * role assigned to run the tasks for this job.</p>
      */
     inline JobDescriptor& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the AWS Identity and Access Management
-     * (IAM) role assigned to run the tasks for this job.</p>
+     * <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM)
+     * role assigned to run the tasks for this job.</p>
      */
     inline JobDescriptor& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
@@ -702,6 +704,80 @@ namespace Model
      */
     inline JobDescriptor& WithSuspendedCause(const char* value) { SetSuspendedCause(value); return *this;}
 
+
+    /**
+     * <p>The manifest generator that was used to generate a job manifest for this
+     * job.</p>
+     */
+    inline const JobManifestGenerator& GetManifestGenerator() const{ return m_manifestGenerator; }
+
+    /**
+     * <p>The manifest generator that was used to generate a job manifest for this
+     * job.</p>
+     */
+    inline bool ManifestGeneratorHasBeenSet() const { return m_manifestGeneratorHasBeenSet; }
+
+    /**
+     * <p>The manifest generator that was used to generate a job manifest for this
+     * job.</p>
+     */
+    inline void SetManifestGenerator(const JobManifestGenerator& value) { m_manifestGeneratorHasBeenSet = true; m_manifestGenerator = value; }
+
+    /**
+     * <p>The manifest generator that was used to generate a job manifest for this
+     * job.</p>
+     */
+    inline void SetManifestGenerator(JobManifestGenerator&& value) { m_manifestGeneratorHasBeenSet = true; m_manifestGenerator = std::move(value); }
+
+    /**
+     * <p>The manifest generator that was used to generate a job manifest for this
+     * job.</p>
+     */
+    inline JobDescriptor& WithManifestGenerator(const JobManifestGenerator& value) { SetManifestGenerator(value); return *this;}
+
+    /**
+     * <p>The manifest generator that was used to generate a job manifest for this
+     * job.</p>
+     */
+    inline JobDescriptor& WithManifestGenerator(JobManifestGenerator&& value) { SetManifestGenerator(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The attribute of the JobDescriptor containing details about the job's
+     * generated manifest.</p>
+     */
+    inline const S3GeneratedManifestDescriptor& GetGeneratedManifestDescriptor() const{ return m_generatedManifestDescriptor; }
+
+    /**
+     * <p>The attribute of the JobDescriptor containing details about the job's
+     * generated manifest.</p>
+     */
+    inline bool GeneratedManifestDescriptorHasBeenSet() const { return m_generatedManifestDescriptorHasBeenSet; }
+
+    /**
+     * <p>The attribute of the JobDescriptor containing details about the job's
+     * generated manifest.</p>
+     */
+    inline void SetGeneratedManifestDescriptor(const S3GeneratedManifestDescriptor& value) { m_generatedManifestDescriptorHasBeenSet = true; m_generatedManifestDescriptor = value; }
+
+    /**
+     * <p>The attribute of the JobDescriptor containing details about the job's
+     * generated manifest.</p>
+     */
+    inline void SetGeneratedManifestDescriptor(S3GeneratedManifestDescriptor&& value) { m_generatedManifestDescriptorHasBeenSet = true; m_generatedManifestDescriptor = std::move(value); }
+
+    /**
+     * <p>The attribute of the JobDescriptor containing details about the job's
+     * generated manifest.</p>
+     */
+    inline JobDescriptor& WithGeneratedManifestDescriptor(const S3GeneratedManifestDescriptor& value) { SetGeneratedManifestDescriptor(value); return *this;}
+
+    /**
+     * <p>The attribute of the JobDescriptor containing details about the job's
+     * generated manifest.</p>
+     */
+    inline JobDescriptor& WithGeneratedManifestDescriptor(S3GeneratedManifestDescriptor&& value) { SetGeneratedManifestDescriptor(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_jobId;
@@ -754,6 +830,12 @@ namespace Model
 
     Aws::String m_suspendedCause;
     bool m_suspendedCauseHasBeenSet;
+
+    JobManifestGenerator m_manifestGenerator;
+    bool m_manifestGeneratorHasBeenSet;
+
+    S3GeneratedManifestDescriptor m_generatedManifestDescriptor;
+    bool m_generatedManifestDescriptorHasBeenSet;
   };
 
 } // namespace Model

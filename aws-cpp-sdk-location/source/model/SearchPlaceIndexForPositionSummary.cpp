@@ -20,6 +20,7 @@ namespace Model
 
 SearchPlaceIndexForPositionSummary::SearchPlaceIndexForPositionSummary() : 
     m_dataSourceHasBeenSet(false),
+    m_languageHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_positionHasBeenSet(false)
@@ -28,6 +29,7 @@ SearchPlaceIndexForPositionSummary::SearchPlaceIndexForPositionSummary() :
 
 SearchPlaceIndexForPositionSummary::SearchPlaceIndexForPositionSummary(JsonView jsonValue) : 
     m_dataSourceHasBeenSet(false),
+    m_languageHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_positionHasBeenSet(false)
@@ -42,6 +44,13 @@ SearchPlaceIndexForPositionSummary& SearchPlaceIndexForPositionSummary::operator
     m_dataSource = jsonValue.GetString("DataSource");
 
     m_dataSourceHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Language"))
+  {
+    m_language = jsonValue.GetString("Language");
+
+    m_languageHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("MaxResults"))
@@ -71,6 +80,12 @@ JsonValue SearchPlaceIndexForPositionSummary::Jsonize() const
   if(m_dataSourceHasBeenSet)
   {
    payload.WithString("DataSource", m_dataSource);
+
+  }
+
+  if(m_languageHasBeenSet)
+  {
+   payload.WithString("Language", m_language);
 
   }
 

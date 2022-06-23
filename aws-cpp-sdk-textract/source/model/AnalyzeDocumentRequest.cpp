@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 AnalyzeDocumentRequest::AnalyzeDocumentRequest() : 
     m_documentHasBeenSet(false),
     m_featureTypesHasBeenSet(false),
-    m_humanLoopConfigHasBeenSet(false)
+    m_humanLoopConfigHasBeenSet(false),
+    m_queriesConfigHasBeenSet(false)
 {
 }
 
@@ -43,6 +44,12 @@ Aws::String AnalyzeDocumentRequest::SerializePayload() const
   if(m_humanLoopConfigHasBeenSet)
   {
    payload.WithObject("HumanLoopConfig", m_humanLoopConfig.Jsonize());
+
+  }
+
+  if(m_queriesConfigHasBeenSet)
+  {
+   payload.WithObject("QueriesConfig", m_queriesConfig.Jsonize());
 
   }
 

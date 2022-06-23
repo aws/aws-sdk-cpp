@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>A certificate authority (CA) certificate for an AWS account.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>A certificate authority (CA) certificate for an Amazon Web Services
+   * account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/Certificate">AWS
    * API Reference</a></p>
    */

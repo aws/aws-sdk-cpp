@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/athena/model/WorkGroupState.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/athena/model/EngineVersion.h>
 #include <utility>
 
 namespace Aws
@@ -183,6 +184,49 @@ namespace Model
      */
     inline WorkGroupSummary& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The engine version setting for all queries on the workgroup. Queries on the
+     * <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview
+     * engine regardless of this setting.</p>
+     */
+    inline const EngineVersion& GetEngineVersion() const{ return m_engineVersion; }
+
+    /**
+     * <p>The engine version setting for all queries on the workgroup. Queries on the
+     * <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview
+     * engine regardless of this setting.</p>
+     */
+    inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
+
+    /**
+     * <p>The engine version setting for all queries on the workgroup. Queries on the
+     * <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview
+     * engine regardless of this setting.</p>
+     */
+    inline void SetEngineVersion(const EngineVersion& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
+
+    /**
+     * <p>The engine version setting for all queries on the workgroup. Queries on the
+     * <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview
+     * engine regardless of this setting.</p>
+     */
+    inline void SetEngineVersion(EngineVersion&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
+
+    /**
+     * <p>The engine version setting for all queries on the workgroup. Queries on the
+     * <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview
+     * engine regardless of this setting.</p>
+     */
+    inline WorkGroupSummary& WithEngineVersion(const EngineVersion& value) { SetEngineVersion(value); return *this;}
+
+    /**
+     * <p>The engine version setting for all queries on the workgroup. Queries on the
+     * <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview
+     * engine regardless of this setting.</p>
+     */
+    inline WorkGroupSummary& WithEngineVersion(EngineVersion&& value) { SetEngineVersion(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -196,6 +240,9 @@ namespace Model
 
     Aws::Utils::DateTime m_creationTime;
     bool m_creationTimeHasBeenSet;
+
+    EngineVersion m_engineVersion;
+    bool m_engineVersionHasBeenSet;
   };
 
 } // namespace Model

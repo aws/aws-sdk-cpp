@@ -104,6 +104,18 @@ DescribeDataSourceResult& DescribeDataSourceResult::operator =(const Aws::Amazon
 
   }
 
+  if(jsonValue.ValueExists("LanguageCode"))
+  {
+    m_languageCode = jsonValue.GetString("LanguageCode");
+
+  }
+
+  if(jsonValue.ValueExists("CustomDocumentEnrichmentConfiguration"))
+  {
+    m_customDocumentEnrichmentConfiguration = jsonValue.GetObject("CustomDocumentEnrichmentConfiguration");
+
+  }
+
 
 
   return *this;

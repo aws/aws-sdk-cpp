@@ -232,29 +232,29 @@ namespace Model
 
     /**
      * <p>The maximum number of configuration items returned on each page. The default
-     * is 10. You cannot specify a number greater than 100. If you specify 0, AWS
-     * Config uses the default.</p>
+     * is 10. You cannot specify a number greater than 100. If you specify 0, Config
+     * uses the default.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
      * <p>The maximum number of configuration items returned on each page. The default
-     * is 10. You cannot specify a number greater than 100. If you specify 0, AWS
-     * Config uses the default.</p>
+     * is 10. You cannot specify a number greater than 100. If you specify 0, Config
+     * uses the default.</p>
      */
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
      * <p>The maximum number of configuration items returned on each page. The default
-     * is 10. You cannot specify a number greater than 100. If you specify 0, AWS
-     * Config uses the default.</p>
+     * is 10. You cannot specify a number greater than 100. If you specify 0, Config
+     * uses the default.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
      * <p>The maximum number of configuration items returned on each page. The default
-     * is 10. You cannot specify a number greater than 100. If you specify 0, AWS
-     * Config uses the default.</p>
+     * is 10. You cannot specify a number greater than 100. If you specify 0, Config
+     * uses the default.</p>
      */
     inline GetResourceConfigHistoryRequest& WithLimit(int value) { SetLimit(value); return *this;}
 

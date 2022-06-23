@@ -285,7 +285,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
      * up a Regional Custom Domain Name</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
-     * Regions and Endpoints for API Gateway</a>. </p>
+     * Regions and Endpoints for API Gateway</a>.</p>
      */
     inline const Aws::String& GetRegionalHostedZoneId() const{ return m_regionalHostedZoneId; }
 
@@ -295,7 +295,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
      * up a Regional Custom Domain Name</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
-     * Regions and Endpoints for API Gateway</a>. </p>
+     * Regions and Endpoints for API Gateway</a>.</p>
      */
     inline void SetRegionalHostedZoneId(const Aws::String& value) { m_regionalHostedZoneId = value; }
 
@@ -305,7 +305,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
      * up a Regional Custom Domain Name</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
-     * Regions and Endpoints for API Gateway</a>. </p>
+     * Regions and Endpoints for API Gateway</a>.</p>
      */
     inline void SetRegionalHostedZoneId(Aws::String&& value) { m_regionalHostedZoneId = std::move(value); }
 
@@ -315,7 +315,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
      * up a Regional Custom Domain Name</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
-     * Regions and Endpoints for API Gateway</a>. </p>
+     * Regions and Endpoints for API Gateway</a>.</p>
      */
     inline void SetRegionalHostedZoneId(const char* value) { m_regionalHostedZoneId.assign(value); }
 
@@ -325,7 +325,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
      * up a Regional Custom Domain Name</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
-     * Regions and Endpoints for API Gateway</a>. </p>
+     * Regions and Endpoints for API Gateway</a>.</p>
      */
     inline UpdateDomainNameResult& WithRegionalHostedZoneId(const Aws::String& value) { SetRegionalHostedZoneId(value); return *this;}
 
@@ -335,7 +335,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
      * up a Regional Custom Domain Name</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
-     * Regions and Endpoints for API Gateway</a>. </p>
+     * Regions and Endpoints for API Gateway</a>.</p>
      */
     inline UpdateDomainNameResult& WithRegionalHostedZoneId(Aws::String&& value) { SetRegionalHostedZoneId(std::move(value)); return *this;}
 
@@ -345,7 +345,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
      * up a Regional Custom Domain Name</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
-     * Regions and Endpoints for API Gateway</a>. </p>
+     * Regions and Endpoints for API Gateway</a>.</p>
      */
     inline UpdateDomainNameResult& WithRegionalHostedZoneId(const char* value) { SetRegionalHostedZoneId(value); return *this;}
 
@@ -521,7 +521,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
      * up a Regional Custom Domain Name</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
-     * Regions and Endpoints for API Gateway</a>. </p>
+     * Regions and Endpoints for API Gateway</a>.</p>
      */
     inline const Aws::String& GetDistributionHostedZoneId() const{ return m_distributionHostedZoneId; }
 
@@ -532,7 +532,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
      * up a Regional Custom Domain Name</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
-     * Regions and Endpoints for API Gateway</a>. </p>
+     * Regions and Endpoints for API Gateway</a>.</p>
      */
     inline void SetDistributionHostedZoneId(const Aws::String& value) { m_distributionHostedZoneId = value; }
 
@@ -543,7 +543,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
      * up a Regional Custom Domain Name</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
-     * Regions and Endpoints for API Gateway</a>. </p>
+     * Regions and Endpoints for API Gateway</a>.</p>
      */
     inline void SetDistributionHostedZoneId(Aws::String&& value) { m_distributionHostedZoneId = std::move(value); }
 
@@ -554,7 +554,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
      * up a Regional Custom Domain Name</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
-     * Regions and Endpoints for API Gateway</a>. </p>
+     * Regions and Endpoints for API Gateway</a>.</p>
      */
     inline void SetDistributionHostedZoneId(const char* value) { m_distributionHostedZoneId.assign(value); }
 
@@ -565,7 +565,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
      * up a Regional Custom Domain Name</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
-     * Regions and Endpoints for API Gateway</a>. </p>
+     * Regions and Endpoints for API Gateway</a>.</p>
      */
     inline UpdateDomainNameResult& WithDistributionHostedZoneId(const Aws::String& value) { SetDistributionHostedZoneId(value); return *this;}
 
@@ -576,7 +576,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
      * up a Regional Custom Domain Name</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
-     * Regions and Endpoints for API Gateway</a>. </p>
+     * Regions and Endpoints for API Gateway</a>.</p>
      */
     inline UpdateDomainNameResult& WithDistributionHostedZoneId(Aws::String&& value) { SetDistributionHostedZoneId(std::move(value)); return *this;}
 
@@ -587,7 +587,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
      * up a Regional Custom Domain Name</a> and <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
-     * Regions and Endpoints for API Gateway</a>. </p>
+     * Regions and Endpoints for API Gateway</a>.</p>
      */
     inline UpdateDomainNameResult& WithDistributionHostedZoneId(const char* value) { SetDistributionHostedZoneId(value); return *this;}
 
@@ -625,7 +625,9 @@ namespace Model
 
     /**
      * <p>The status of the <a>DomainName</a> migration. The valid values are
-     * <code>AVAILABLE</code> and <code>UPDATING</code>. If the status is
+     * <code>AVAILABLE</code>, <code>UPDATING</code>,
+     * <code>PENDING_CERTIFICATE_REIMPORT</code>, and
+     * <code>PENDING_OWNERSHIP_VERIFICATION</code>. If the status is
      * <code>UPDATING</code>, the domain cannot be modified further until the existing
      * operation is complete. If it is <code>AVAILABLE</code>, the domain can be
      * updated.</p>
@@ -634,7 +636,9 @@ namespace Model
 
     /**
      * <p>The status of the <a>DomainName</a> migration. The valid values are
-     * <code>AVAILABLE</code> and <code>UPDATING</code>. If the status is
+     * <code>AVAILABLE</code>, <code>UPDATING</code>,
+     * <code>PENDING_CERTIFICATE_REIMPORT</code>, and
+     * <code>PENDING_OWNERSHIP_VERIFICATION</code>. If the status is
      * <code>UPDATING</code>, the domain cannot be modified further until the existing
      * operation is complete. If it is <code>AVAILABLE</code>, the domain can be
      * updated.</p>
@@ -643,7 +647,9 @@ namespace Model
 
     /**
      * <p>The status of the <a>DomainName</a> migration. The valid values are
-     * <code>AVAILABLE</code> and <code>UPDATING</code>. If the status is
+     * <code>AVAILABLE</code>, <code>UPDATING</code>,
+     * <code>PENDING_CERTIFICATE_REIMPORT</code>, and
+     * <code>PENDING_OWNERSHIP_VERIFICATION</code>. If the status is
      * <code>UPDATING</code>, the domain cannot be modified further until the existing
      * operation is complete. If it is <code>AVAILABLE</code>, the domain can be
      * updated.</p>
@@ -652,7 +658,9 @@ namespace Model
 
     /**
      * <p>The status of the <a>DomainName</a> migration. The valid values are
-     * <code>AVAILABLE</code> and <code>UPDATING</code>. If the status is
+     * <code>AVAILABLE</code>, <code>UPDATING</code>,
+     * <code>PENDING_CERTIFICATE_REIMPORT</code>, and
+     * <code>PENDING_OWNERSHIP_VERIFICATION</code>. If the status is
      * <code>UPDATING</code>, the domain cannot be modified further until the existing
      * operation is complete. If it is <code>AVAILABLE</code>, the domain can be
      * updated.</p>
@@ -661,7 +669,9 @@ namespace Model
 
     /**
      * <p>The status of the <a>DomainName</a> migration. The valid values are
-     * <code>AVAILABLE</code> and <code>UPDATING</code>. If the status is
+     * <code>AVAILABLE</code>, <code>UPDATING</code>,
+     * <code>PENDING_CERTIFICATE_REIMPORT</code>, and
+     * <code>PENDING_OWNERSHIP_VERIFICATION</code>. If the status is
      * <code>UPDATING</code>, the domain cannot be modified further until the existing
      * operation is complete. If it is <code>AVAILABLE</code>, the domain can be
      * updated.</p>
@@ -856,6 +866,56 @@ namespace Model
      */
     inline UpdateDomainNameResult& WithMutualTlsAuthentication(MutualTlsAuthentication&& value) { SetMutualTlsAuthentication(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The ARN of the public certificate issued by ACM to validate ownership of your
+     * custom domain. Only required when configuring mutual TLS and using an ACM
+     * imported or private CA certificate ARN as the regionalCertificateArn.</p>
+     */
+    inline const Aws::String& GetOwnershipVerificationCertificateArn() const{ return m_ownershipVerificationCertificateArn; }
+
+    /**
+     * <p>The ARN of the public certificate issued by ACM to validate ownership of your
+     * custom domain. Only required when configuring mutual TLS and using an ACM
+     * imported or private CA certificate ARN as the regionalCertificateArn.</p>
+     */
+    inline void SetOwnershipVerificationCertificateArn(const Aws::String& value) { m_ownershipVerificationCertificateArn = value; }
+
+    /**
+     * <p>The ARN of the public certificate issued by ACM to validate ownership of your
+     * custom domain. Only required when configuring mutual TLS and using an ACM
+     * imported or private CA certificate ARN as the regionalCertificateArn.</p>
+     */
+    inline void SetOwnershipVerificationCertificateArn(Aws::String&& value) { m_ownershipVerificationCertificateArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the public certificate issued by ACM to validate ownership of your
+     * custom domain. Only required when configuring mutual TLS and using an ACM
+     * imported or private CA certificate ARN as the regionalCertificateArn.</p>
+     */
+    inline void SetOwnershipVerificationCertificateArn(const char* value) { m_ownershipVerificationCertificateArn.assign(value); }
+
+    /**
+     * <p>The ARN of the public certificate issued by ACM to validate ownership of your
+     * custom domain. Only required when configuring mutual TLS and using an ACM
+     * imported or private CA certificate ARN as the regionalCertificateArn.</p>
+     */
+    inline UpdateDomainNameResult& WithOwnershipVerificationCertificateArn(const Aws::String& value) { SetOwnershipVerificationCertificateArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the public certificate issued by ACM to validate ownership of your
+     * custom domain. Only required when configuring mutual TLS and using an ACM
+     * imported or private CA certificate ARN as the regionalCertificateArn.</p>
+     */
+    inline UpdateDomainNameResult& WithOwnershipVerificationCertificateArn(Aws::String&& value) { SetOwnershipVerificationCertificateArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the public certificate issued by ACM to validate ownership of your
+     * custom domain. Only required when configuring mutual TLS and using an ACM
+     * imported or private CA certificate ARN as the regionalCertificateArn.</p>
+     */
+    inline UpdateDomainNameResult& WithOwnershipVerificationCertificateArn(const char* value) { SetOwnershipVerificationCertificateArn(value); return *this;}
+
   private:
 
     Aws::String m_domainName;
@@ -889,6 +949,8 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_tags;
 
     MutualTlsAuthentication m_mutualTlsAuthentication;
+
+    Aws::String m_ownershipVerificationCertificateArn;
   };
 
 } // namespace Model

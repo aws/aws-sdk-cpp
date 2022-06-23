@@ -95,50 +95,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the dedicated IP pool that you want to associate with the
-     * configuration set.</p>
+     * <p>The name of the dedicated IP pool to associate with the configuration
+     * set.</p>
      */
     inline const Aws::String& GetSendingPoolName() const{ return m_sendingPoolName; }
 
     /**
-     * <p>The name of the dedicated IP pool that you want to associate with the
-     * configuration set.</p>
+     * <p>The name of the dedicated IP pool to associate with the configuration
+     * set.</p>
      */
     inline bool SendingPoolNameHasBeenSet() const { return m_sendingPoolNameHasBeenSet; }
 
     /**
-     * <p>The name of the dedicated IP pool that you want to associate with the
-     * configuration set.</p>
+     * <p>The name of the dedicated IP pool to associate with the configuration
+     * set.</p>
      */
     inline void SetSendingPoolName(const Aws::String& value) { m_sendingPoolNameHasBeenSet = true; m_sendingPoolName = value; }
 
     /**
-     * <p>The name of the dedicated IP pool that you want to associate with the
-     * configuration set.</p>
+     * <p>The name of the dedicated IP pool to associate with the configuration
+     * set.</p>
      */
     inline void SetSendingPoolName(Aws::String&& value) { m_sendingPoolNameHasBeenSet = true; m_sendingPoolName = std::move(value); }
 
     /**
-     * <p>The name of the dedicated IP pool that you want to associate with the
-     * configuration set.</p>
+     * <p>The name of the dedicated IP pool to associate with the configuration
+     * set.</p>
      */
     inline void SetSendingPoolName(const char* value) { m_sendingPoolNameHasBeenSet = true; m_sendingPoolName.assign(value); }
 
     /**
-     * <p>The name of the dedicated IP pool that you want to associate with the
-     * configuration set.</p>
+     * <p>The name of the dedicated IP pool to associate with the configuration
+     * set.</p>
      */
     inline DeliveryOptions& WithSendingPoolName(const Aws::String& value) { SetSendingPoolName(value); return *this;}
 
     /**
-     * <p>The name of the dedicated IP pool that you want to associate with the
-     * configuration set.</p>
+     * <p>The name of the dedicated IP pool to associate with the configuration
+     * set.</p>
      */
     inline DeliveryOptions& WithSendingPoolName(Aws::String&& value) { SetSendingPoolName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the dedicated IP pool that you want to associate with the
-     * configuration set.</p>
+     * <p>The name of the dedicated IP pool to associate with the configuration
+     * set.</p>
      */
     inline DeliveryOptions& WithSendingPoolName(const char* value) { SetSendingPoolName(value); return *this;}
 

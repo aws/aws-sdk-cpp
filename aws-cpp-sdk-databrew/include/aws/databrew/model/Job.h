@@ -13,7 +13,11 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/databrew/model/RecipeReference.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/databrew/model/JobSample.h>
 #include <aws/databrew/model/Output.h>
+#include <aws/databrew/model/DataCatalogOutput.h>
+#include <aws/databrew/model/DatabaseOutput.h>
+#include <aws/databrew/model/ValidationConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -32,9 +36,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents all of the attributes of an AWS Glue DataBrew job.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/Job">AWS API
+   * <p>Represents all of the attributes of a DataBrew job.</p><p><h3>See Also:</h3> 
+   * <a href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/Job">AWS API
    * Reference</a></p>
    */
   class AWS_GLUEDATABREW_API Job
@@ -47,83 +50,83 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS account that owns the job.</p>
+     * <p>The ID of the Amazon Web Services account that owns the job.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The ID of the AWS account that owns the job.</p>
+     * <p>The ID of the Amazon Web Services account that owns the job.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS account that owns the job.</p>
+     * <p>The ID of the Amazon Web Services account that owns the job.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The ID of the AWS account that owns the job.</p>
+     * <p>The ID of the Amazon Web Services account that owns the job.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS account that owns the job.</p>
+     * <p>The ID of the Amazon Web Services account that owns the job.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The ID of the AWS account that owns the job.</p>
+     * <p>The ID of the Amazon Web Services account that owns the job.</p>
      */
     inline Job& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS account that owns the job.</p>
+     * <p>The ID of the Amazon Web Services account that owns the job.</p>
      */
     inline Job& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS account that owns the job.</p>
+     * <p>The ID of the Amazon Web Services account that owns the job.</p>
      */
     inline Job& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
 
     /**
-     * <p>The identifier (the user name) of the user who created the job.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who created the job.</p>
      */
     inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
 
     /**
-     * <p>The identifier (the user name) of the user who created the job.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who created the job.</p>
      */
     inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
 
     /**
-     * <p>The identifier (the user name) of the user who created the job.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who created the job.</p>
      */
     inline void SetCreatedBy(const Aws::String& value) { m_createdByHasBeenSet = true; m_createdBy = value; }
 
     /**
-     * <p>The identifier (the user name) of the user who created the job.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who created the job.</p>
      */
     inline void SetCreatedBy(Aws::String&& value) { m_createdByHasBeenSet = true; m_createdBy = std::move(value); }
 
     /**
-     * <p>The identifier (the user name) of the user who created the job.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who created the job.</p>
      */
     inline void SetCreatedBy(const char* value) { m_createdByHasBeenSet = true; m_createdBy.assign(value); }
 
     /**
-     * <p>The identifier (the user name) of the user who created the job.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who created the job.</p>
      */
     inline Job& WithCreatedBy(const Aws::String& value) { SetCreatedBy(value); return *this;}
 
     /**
-     * <p>The identifier (the user name) of the user who created the job.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who created the job.</p>
      */
     inline Job& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier (the user name) of the user who created the job.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who created the job.</p>
      */
     inline Job& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
 
@@ -201,98 +204,114 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect a
-     * job.</p>
+     * <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect
+     * the job output. For more information, see <a
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/encryption-security-configuration.html">Encrypting
+     * data written by DataBrew jobs</a> </p>
      */
     inline const Aws::String& GetEncryptionKeyArn() const{ return m_encryptionKeyArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect a
-     * job.</p>
+     * <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect
+     * the job output. For more information, see <a
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/encryption-security-configuration.html">Encrypting
+     * data written by DataBrew jobs</a> </p>
      */
     inline bool EncryptionKeyArnHasBeenSet() const { return m_encryptionKeyArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect a
-     * job.</p>
+     * <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect
+     * the job output. For more information, see <a
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/encryption-security-configuration.html">Encrypting
+     * data written by DataBrew jobs</a> </p>
      */
     inline void SetEncryptionKeyArn(const Aws::String& value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect a
-     * job.</p>
+     * <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect
+     * the job output. For more information, see <a
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/encryption-security-configuration.html">Encrypting
+     * data written by DataBrew jobs</a> </p>
      */
     inline void SetEncryptionKeyArn(Aws::String&& value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect a
-     * job.</p>
+     * <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect
+     * the job output. For more information, see <a
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/encryption-security-configuration.html">Encrypting
+     * data written by DataBrew jobs</a> </p>
      */
     inline void SetEncryptionKeyArn(const char* value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect a
-     * job.</p>
+     * <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect
+     * the job output. For more information, see <a
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/encryption-security-configuration.html">Encrypting
+     * data written by DataBrew jobs</a> </p>
      */
     inline Job& WithEncryptionKeyArn(const Aws::String& value) { SetEncryptionKeyArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect a
-     * job.</p>
+     * <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect
+     * the job output. For more information, see <a
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/encryption-security-configuration.html">Encrypting
+     * data written by DataBrew jobs</a> </p>
      */
     inline Job& WithEncryptionKeyArn(Aws::String&& value) { SetEncryptionKeyArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect a
-     * job.</p>
+     * <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect
+     * the job output. For more information, see <a
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/encryption-security-configuration.html">Encrypting
+     * data written by DataBrew jobs</a> </p>
      */
     inline Job& WithEncryptionKeyArn(const char* value) { SetEncryptionKeyArn(value); return *this;}
 
 
     /**
      * <p>The encryption mode for the job, which can be one of the following:</p> <ul>
-     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with AWS KMS-managed
-     * keys.</p> </li> <li> <p> <code>SSE-S3</code> - Server-side encryption with keys
+     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by
+     * KMS.</p> </li> <li> <p> <code>SSE-S3</code> - Server-side encryption with keys
      * managed by Amazon S3.</p> </li> </ul>
      */
     inline const EncryptionMode& GetEncryptionMode() const{ return m_encryptionMode; }
 
     /**
      * <p>The encryption mode for the job, which can be one of the following:</p> <ul>
-     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with AWS KMS-managed
-     * keys.</p> </li> <li> <p> <code>SSE-S3</code> - Server-side encryption with keys
+     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by
+     * KMS.</p> </li> <li> <p> <code>SSE-S3</code> - Server-side encryption with keys
      * managed by Amazon S3.</p> </li> </ul>
      */
     inline bool EncryptionModeHasBeenSet() const { return m_encryptionModeHasBeenSet; }
 
     /**
      * <p>The encryption mode for the job, which can be one of the following:</p> <ul>
-     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with AWS KMS-managed
-     * keys.</p> </li> <li> <p> <code>SSE-S3</code> - Server-side encryption with keys
+     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by
+     * KMS.</p> </li> <li> <p> <code>SSE-S3</code> - Server-side encryption with keys
      * managed by Amazon S3.</p> </li> </ul>
      */
     inline void SetEncryptionMode(const EncryptionMode& value) { m_encryptionModeHasBeenSet = true; m_encryptionMode = value; }
 
     /**
      * <p>The encryption mode for the job, which can be one of the following:</p> <ul>
-     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with AWS KMS-managed
-     * keys.</p> </li> <li> <p> <code>SSE-S3</code> - Server-side encryption with keys
+     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by
+     * KMS.</p> </li> <li> <p> <code>SSE-S3</code> - Server-side encryption with keys
      * managed by Amazon S3.</p> </li> </ul>
      */
     inline void SetEncryptionMode(EncryptionMode&& value) { m_encryptionModeHasBeenSet = true; m_encryptionMode = std::move(value); }
 
     /**
      * <p>The encryption mode for the job, which can be one of the following:</p> <ul>
-     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with AWS KMS-managed
-     * keys.</p> </li> <li> <p> <code>SSE-S3</code> - Server-side encryption with keys
+     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by
+     * KMS.</p> </li> <li> <p> <code>SSE-S3</code> - Server-side encryption with keys
      * managed by Amazon S3.</p> </li> </ul>
      */
     inline Job& WithEncryptionMode(const EncryptionMode& value) { SetEncryptionMode(value); return *this;}
 
     /**
      * <p>The encryption mode for the job, which can be one of the following:</p> <ul>
-     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with AWS KMS-managed
-     * keys.</p> </li> <li> <p> <code>SSE-S3</code> - Server-side encryption with keys
+     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by
+     * KMS.</p> </li> <li> <p> <code>SSE-S3</code> - Server-side encryption with keys
      * managed by Amazon S3.</p> </li> </ul>
      */
     inline Job& WithEncryptionMode(EncryptionMode&& value) { SetEncryptionMode(std::move(value)); return *this;}
@@ -389,42 +408,42 @@ namespace Model
 
 
     /**
-     * <p>The identifier (the user name) of the user who last modified the job.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who last modified the job.</p>
      */
     inline const Aws::String& GetLastModifiedBy() const{ return m_lastModifiedBy; }
 
     /**
-     * <p>The identifier (the user name) of the user who last modified the job.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who last modified the job.</p>
      */
     inline bool LastModifiedByHasBeenSet() const { return m_lastModifiedByHasBeenSet; }
 
     /**
-     * <p>The identifier (the user name) of the user who last modified the job.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who last modified the job.</p>
      */
     inline void SetLastModifiedBy(const Aws::String& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = value; }
 
     /**
-     * <p>The identifier (the user name) of the user who last modified the job.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who last modified the job.</p>
      */
     inline void SetLastModifiedBy(Aws::String&& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = std::move(value); }
 
     /**
-     * <p>The identifier (the user name) of the user who last modified the job.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who last modified the job.</p>
      */
     inline void SetLastModifiedBy(const char* value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy.assign(value); }
 
     /**
-     * <p>The identifier (the user name) of the user who last modified the job.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who last modified the job.</p>
      */
     inline Job& WithLastModifiedBy(const Aws::String& value) { SetLastModifiedBy(value); return *this;}
 
     /**
-     * <p>The identifier (the user name) of the user who last modified the job.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who last modified the job.</p>
      */
     inline Job& WithLastModifiedBy(Aws::String&& value) { SetLastModifiedBy(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier (the user name) of the user who last modified the job.</p>
+     * <p>The Amazon Resource Name (ARN) of the user who last modified the job.</p>
      */
     inline Job& WithLastModifiedBy(const char* value) { SetLastModifiedBy(value); return *this;}
 
@@ -579,6 +598,104 @@ namespace Model
 
 
     /**
+     * <p>One or more artifacts that represent the Glue Data Catalog output from
+     * running the job.</p>
+     */
+    inline const Aws::Vector<DataCatalogOutput>& GetDataCatalogOutputs() const{ return m_dataCatalogOutputs; }
+
+    /**
+     * <p>One or more artifacts that represent the Glue Data Catalog output from
+     * running the job.</p>
+     */
+    inline bool DataCatalogOutputsHasBeenSet() const { return m_dataCatalogOutputsHasBeenSet; }
+
+    /**
+     * <p>One or more artifacts that represent the Glue Data Catalog output from
+     * running the job.</p>
+     */
+    inline void SetDataCatalogOutputs(const Aws::Vector<DataCatalogOutput>& value) { m_dataCatalogOutputsHasBeenSet = true; m_dataCatalogOutputs = value; }
+
+    /**
+     * <p>One or more artifacts that represent the Glue Data Catalog output from
+     * running the job.</p>
+     */
+    inline void SetDataCatalogOutputs(Aws::Vector<DataCatalogOutput>&& value) { m_dataCatalogOutputsHasBeenSet = true; m_dataCatalogOutputs = std::move(value); }
+
+    /**
+     * <p>One or more artifacts that represent the Glue Data Catalog output from
+     * running the job.</p>
+     */
+    inline Job& WithDataCatalogOutputs(const Aws::Vector<DataCatalogOutput>& value) { SetDataCatalogOutputs(value); return *this;}
+
+    /**
+     * <p>One or more artifacts that represent the Glue Data Catalog output from
+     * running the job.</p>
+     */
+    inline Job& WithDataCatalogOutputs(Aws::Vector<DataCatalogOutput>&& value) { SetDataCatalogOutputs(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more artifacts that represent the Glue Data Catalog output from
+     * running the job.</p>
+     */
+    inline Job& AddDataCatalogOutputs(const DataCatalogOutput& value) { m_dataCatalogOutputsHasBeenSet = true; m_dataCatalogOutputs.push_back(value); return *this; }
+
+    /**
+     * <p>One or more artifacts that represent the Glue Data Catalog output from
+     * running the job.</p>
+     */
+    inline Job& AddDataCatalogOutputs(DataCatalogOutput&& value) { m_dataCatalogOutputsHasBeenSet = true; m_dataCatalogOutputs.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Represents a list of JDBC database output objects which defines the output
+     * destination for a DataBrew recipe job to write into.</p>
+     */
+    inline const Aws::Vector<DatabaseOutput>& GetDatabaseOutputs() const{ return m_databaseOutputs; }
+
+    /**
+     * <p>Represents a list of JDBC database output objects which defines the output
+     * destination for a DataBrew recipe job to write into.</p>
+     */
+    inline bool DatabaseOutputsHasBeenSet() const { return m_databaseOutputsHasBeenSet; }
+
+    /**
+     * <p>Represents a list of JDBC database output objects which defines the output
+     * destination for a DataBrew recipe job to write into.</p>
+     */
+    inline void SetDatabaseOutputs(const Aws::Vector<DatabaseOutput>& value) { m_databaseOutputsHasBeenSet = true; m_databaseOutputs = value; }
+
+    /**
+     * <p>Represents a list of JDBC database output objects which defines the output
+     * destination for a DataBrew recipe job to write into.</p>
+     */
+    inline void SetDatabaseOutputs(Aws::Vector<DatabaseOutput>&& value) { m_databaseOutputsHasBeenSet = true; m_databaseOutputs = std::move(value); }
+
+    /**
+     * <p>Represents a list of JDBC database output objects which defines the output
+     * destination for a DataBrew recipe job to write into.</p>
+     */
+    inline Job& WithDatabaseOutputs(const Aws::Vector<DatabaseOutput>& value) { SetDatabaseOutputs(value); return *this;}
+
+    /**
+     * <p>Represents a list of JDBC database output objects which defines the output
+     * destination for a DataBrew recipe job to write into.</p>
+     */
+    inline Job& WithDatabaseOutputs(Aws::Vector<DatabaseOutput>&& value) { SetDatabaseOutputs(std::move(value)); return *this;}
+
+    /**
+     * <p>Represents a list of JDBC database output objects which defines the output
+     * destination for a DataBrew recipe job to write into.</p>
+     */
+    inline Job& AddDatabaseOutputs(const DatabaseOutput& value) { m_databaseOutputsHasBeenSet = true; m_databaseOutputs.push_back(value); return *this; }
+
+    /**
+     * <p>Represents a list of JDBC database output objects which defines the output
+     * destination for a DataBrew recipe job to write into.</p>
+     */
+    inline Job& AddDatabaseOutputs(DatabaseOutput&& value) { m_databaseOutputsHasBeenSet = true; m_databaseOutputs.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The name of the project that the job is associated with.</p>
      */
     inline const Aws::String& GetProjectName() const{ return m_projectName; }
@@ -692,50 +809,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the role that will be assumed for this
-     * job.</p>
+     * <p>The Amazon Resource Name (ARN) of the role to be assumed for this job.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the role that will be assumed for this
-     * job.</p>
+     * <p>The Amazon Resource Name (ARN) of the role to be assumed for this job.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the role that will be assumed for this
-     * job.</p>
+     * <p>The Amazon Resource Name (ARN) of the role to be assumed for this job.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the role that will be assumed for this
-     * job.</p>
+     * <p>The Amazon Resource Name (ARN) of the role to be assumed for this job.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the role that will be assumed for this
-     * job.</p>
+     * <p>The Amazon Resource Name (ARN) of the role to be assumed for this job.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the role that will be assumed for this
-     * job.</p>
+     * <p>The Amazon Resource Name (ARN) of the role to be assumed for this job.</p>
      */
     inline Job& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the role that will be assumed for this
-     * job.</p>
+     * <p>The Amazon Resource Name (ARN) of the role to be assumed for this job.</p>
      */
     inline Job& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the role that will be assumed for this
-     * job.</p>
+     * <p>The Amazon Resource Name (ARN) of the role to be assumed for this job.</p>
      */
     inline Job& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
@@ -830,6 +939,96 @@ namespace Model
      */
     inline Job& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>A sample configuration for profile jobs only, which determines the number of
+     * rows on which the profile job is run. If a <code>JobSample</code> value isn't
+     * provided, the default value is used. The default value is CUSTOM_ROWS for the
+     * mode parameter and 20,000 for the size parameter.</p>
+     */
+    inline const JobSample& GetJobSample() const{ return m_jobSample; }
+
+    /**
+     * <p>A sample configuration for profile jobs only, which determines the number of
+     * rows on which the profile job is run. If a <code>JobSample</code> value isn't
+     * provided, the default value is used. The default value is CUSTOM_ROWS for the
+     * mode parameter and 20,000 for the size parameter.</p>
+     */
+    inline bool JobSampleHasBeenSet() const { return m_jobSampleHasBeenSet; }
+
+    /**
+     * <p>A sample configuration for profile jobs only, which determines the number of
+     * rows on which the profile job is run. If a <code>JobSample</code> value isn't
+     * provided, the default value is used. The default value is CUSTOM_ROWS for the
+     * mode parameter and 20,000 for the size parameter.</p>
+     */
+    inline void SetJobSample(const JobSample& value) { m_jobSampleHasBeenSet = true; m_jobSample = value; }
+
+    /**
+     * <p>A sample configuration for profile jobs only, which determines the number of
+     * rows on which the profile job is run. If a <code>JobSample</code> value isn't
+     * provided, the default value is used. The default value is CUSTOM_ROWS for the
+     * mode parameter and 20,000 for the size parameter.</p>
+     */
+    inline void SetJobSample(JobSample&& value) { m_jobSampleHasBeenSet = true; m_jobSample = std::move(value); }
+
+    /**
+     * <p>A sample configuration for profile jobs only, which determines the number of
+     * rows on which the profile job is run. If a <code>JobSample</code> value isn't
+     * provided, the default value is used. The default value is CUSTOM_ROWS for the
+     * mode parameter and 20,000 for the size parameter.</p>
+     */
+    inline Job& WithJobSample(const JobSample& value) { SetJobSample(value); return *this;}
+
+    /**
+     * <p>A sample configuration for profile jobs only, which determines the number of
+     * rows on which the profile job is run. If a <code>JobSample</code> value isn't
+     * provided, the default value is used. The default value is CUSTOM_ROWS for the
+     * mode parameter and 20,000 for the size parameter.</p>
+     */
+    inline Job& WithJobSample(JobSample&& value) { SetJobSample(std::move(value)); return *this;}
+
+
+    /**
+     * <p>List of validation configurations that are applied to the profile job.</p>
+     */
+    inline const Aws::Vector<ValidationConfiguration>& GetValidationConfigurations() const{ return m_validationConfigurations; }
+
+    /**
+     * <p>List of validation configurations that are applied to the profile job.</p>
+     */
+    inline bool ValidationConfigurationsHasBeenSet() const { return m_validationConfigurationsHasBeenSet; }
+
+    /**
+     * <p>List of validation configurations that are applied to the profile job.</p>
+     */
+    inline void SetValidationConfigurations(const Aws::Vector<ValidationConfiguration>& value) { m_validationConfigurationsHasBeenSet = true; m_validationConfigurations = value; }
+
+    /**
+     * <p>List of validation configurations that are applied to the profile job.</p>
+     */
+    inline void SetValidationConfigurations(Aws::Vector<ValidationConfiguration>&& value) { m_validationConfigurationsHasBeenSet = true; m_validationConfigurations = std::move(value); }
+
+    /**
+     * <p>List of validation configurations that are applied to the profile job.</p>
+     */
+    inline Job& WithValidationConfigurations(const Aws::Vector<ValidationConfiguration>& value) { SetValidationConfigurations(value); return *this;}
+
+    /**
+     * <p>List of validation configurations that are applied to the profile job.</p>
+     */
+    inline Job& WithValidationConfigurations(Aws::Vector<ValidationConfiguration>&& value) { SetValidationConfigurations(std::move(value)); return *this;}
+
+    /**
+     * <p>List of validation configurations that are applied to the profile job.</p>
+     */
+    inline Job& AddValidationConfigurations(const ValidationConfiguration& value) { m_validationConfigurationsHasBeenSet = true; m_validationConfigurations.push_back(value); return *this; }
+
+    /**
+     * <p>List of validation configurations that are applied to the profile job.</p>
+     */
+    inline Job& AddValidationConfigurations(ValidationConfiguration&& value) { m_validationConfigurationsHasBeenSet = true; m_validationConfigurations.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_accountId;
@@ -874,6 +1073,12 @@ namespace Model
     Aws::Vector<Output> m_outputs;
     bool m_outputsHasBeenSet;
 
+    Aws::Vector<DataCatalogOutput> m_dataCatalogOutputs;
+    bool m_dataCatalogOutputsHasBeenSet;
+
+    Aws::Vector<DatabaseOutput> m_databaseOutputs;
+    bool m_databaseOutputsHasBeenSet;
+
     Aws::String m_projectName;
     bool m_projectNameHasBeenSet;
 
@@ -891,6 +1096,12 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
+
+    JobSample m_jobSample;
+    bool m_jobSampleHasBeenSet;
+
+    Aws::Vector<ValidationConfiguration> m_validationConfigurations;
+    bool m_validationConfigurationsHasBeenSet;
   };
 
 } // namespace Model

@@ -35,9 +35,12 @@ ServiceDetail::ServiceDetail() :
     m_acceptanceRequiredHasBeenSet(false),
     m_managesVpcEndpoints(false),
     m_managesVpcEndpointsHasBeenSet(false),
+    m_payerResponsibility(PayerResponsibility::NOT_SET),
+    m_payerResponsibilityHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_privateDnsNameVerificationState(DnsNameState::NOT_SET),
-    m_privateDnsNameVerificationStateHasBeenSet(false)
+    m_privateDnsNameVerificationStateHasBeenSet(false),
+    m_supportedIpAddressTypesHasBeenSet(false)
 {
 }
 
@@ -56,9 +59,12 @@ ServiceDetail::ServiceDetail(const XmlNode& xmlNode) :
     m_acceptanceRequiredHasBeenSet(false),
     m_managesVpcEndpoints(false),
     m_managesVpcEndpointsHasBeenSet(false),
+    m_payerResponsibility(PayerResponsibility::NOT_SET),
+    m_payerResponsibilityHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_privateDnsNameVerificationState(DnsNameState::NOT_SET),
-    m_privateDnsNameVerificationStateHasBeenSet(false)
+    m_privateDnsNameVerificationStateHasBeenSet(false),
+    m_supportedIpAddressTypesHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -159,6 +165,12 @@ ServiceDetail& ServiceDetail::operator =(const XmlNode& xmlNode)
       m_managesVpcEndpoints = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(managesVpcEndpointsNode.GetText()).c_str()).c_str());
       m_managesVpcEndpointsHasBeenSet = true;
     }
+    XmlNode payerResponsibilityNode = resultNode.FirstChild("payerResponsibility");
+    if(!payerResponsibilityNode.IsNull())
+    {
+      m_payerResponsibility = PayerResponsibilityMapper::GetPayerResponsibilityForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(payerResponsibilityNode.GetText()).c_str()).c_str());
+      m_payerResponsibilityHasBeenSet = true;
+    }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
@@ -176,6 +188,18 @@ ServiceDetail& ServiceDetail::operator =(const XmlNode& xmlNode)
     {
       m_privateDnsNameVerificationState = DnsNameStateMapper::GetDnsNameStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(privateDnsNameVerificationStateNode.GetText()).c_str()).c_str());
       m_privateDnsNameVerificationStateHasBeenSet = true;
+    }
+    XmlNode supportedIpAddressTypesNode = resultNode.FirstChild("supportedIpAddressTypeSet");
+    if(!supportedIpAddressTypesNode.IsNull())
+    {
+      XmlNode supportedIpAddressTypesMember = supportedIpAddressTypesNode.FirstChild("item");
+      while(!supportedIpAddressTypesMember.IsNull())
+      {
+        m_supportedIpAddressTypes.push_back(ServiceConnectivityTypeMapper::GetServiceConnectivityTypeForName(StringUtils::Trim(supportedIpAddressTypesMember.GetText().c_str())));
+        supportedIpAddressTypesMember = supportedIpAddressTypesMember.NextNode("item");
+      }
+
+      m_supportedIpAddressTypesHasBeenSet = true;
     }
   }
 
@@ -259,6 +283,11 @@ void ServiceDetail::OutputToStream(Aws::OStream& oStream, const char* location, 
       oStream << location << index << locationValue << ".ManagesVpcEndpoints=" << std::boolalpha << m_managesVpcEndpoints << "&";
   }
 
+  if(m_payerResponsibilityHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PayerResponsibility=" << PayerResponsibilityMapper::GetNameForPayerResponsibility(m_payerResponsibility) << "&";
+  }
+
   if(m_tagsHasBeenSet)
   {
       unsigned tagsIdx = 1;
@@ -273,6 +302,15 @@ void ServiceDetail::OutputToStream(Aws::OStream& oStream, const char* location, 
   if(m_privateDnsNameVerificationStateHasBeenSet)
   {
       oStream << location << index << locationValue << ".PrivateDnsNameVerificationState=" << DnsNameStateMapper::GetNameForDnsNameState(m_privateDnsNameVerificationState) << "&";
+  }
+
+  if(m_supportedIpAddressTypesHasBeenSet)
+  {
+      unsigned supportedIpAddressTypesIdx = 1;
+      for(auto& item : m_supportedIpAddressTypes)
+      {
+        oStream << location << index << locationValue << ".SupportedIpAddressTypeSet." << supportedIpAddressTypesIdx++ << "=" << ServiceConnectivityTypeMapper::GetNameForServiceConnectivityType(item) << "&";
+      }
   }
 
 }
@@ -343,6 +381,10 @@ void ServiceDetail::OutputToStream(Aws::OStream& oStream, const char* location) 
   {
       oStream << location << ".ManagesVpcEndpoints=" << std::boolalpha << m_managesVpcEndpoints << "&";
   }
+  if(m_payerResponsibilityHasBeenSet)
+  {
+      oStream << location << ".PayerResponsibility=" << PayerResponsibilityMapper::GetNameForPayerResponsibility(m_payerResponsibility) << "&";
+  }
   if(m_tagsHasBeenSet)
   {
       unsigned tagsIdx = 1;
@@ -356,6 +398,14 @@ void ServiceDetail::OutputToStream(Aws::OStream& oStream, const char* location) 
   if(m_privateDnsNameVerificationStateHasBeenSet)
   {
       oStream << location << ".PrivateDnsNameVerificationState=" << DnsNameStateMapper::GetNameForDnsNameState(m_privateDnsNameVerificationState) << "&";
+  }
+  if(m_supportedIpAddressTypesHasBeenSet)
+  {
+      unsigned supportedIpAddressTypesIdx = 1;
+      for(auto& item : m_supportedIpAddressTypes)
+      {
+        oStream << location << ".SupportedIpAddressTypeSet." << supportedIpAddressTypesIdx++ << "=" << ServiceConnectivityTypeMapper::GetNameForServiceConnectivityType(item) << "&";
+      }
   }
 }
 

@@ -15,6 +15,8 @@ using namespace Aws::Utils;
 CreateMembersRequest::CreateMembersRequest() : 
     m_graphArnHasBeenSet(false),
     m_messageHasBeenSet(false),
+    m_disableEmailNotification(false),
+    m_disableEmailNotificationHasBeenSet(false),
     m_accountsHasBeenSet(false)
 {
 }
@@ -32,6 +34,12 @@ Aws::String CreateMembersRequest::SerializePayload() const
   if(m_messageHasBeenSet)
   {
    payload.WithString("Message", m_message);
+
+  }
+
+  if(m_disableEmailNotificationHasBeenSet)
+  {
+   payload.WithBool("DisableEmailNotification", m_disableEmailNotification);
 
   }
 

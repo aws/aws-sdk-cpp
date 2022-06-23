@@ -47,7 +47,8 @@ enum class ACMErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INVALID_ARGS= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INVALID_ARGS,
   INVALID_ARN,
   INVALID_DOMAIN_VALIDATION_OPTIONS,
   INVALID_PARAMETER,

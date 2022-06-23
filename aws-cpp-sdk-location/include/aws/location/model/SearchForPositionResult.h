@@ -24,9 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Specifies a single point of interest, or Place as a result of a search query
-   * obtained from a dataset configured in the Place index Resource.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Contains a search result from a position search query that is run on a place
+   * index resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/SearchForPositionResult">AWS
    * API Reference</a></p>
    */
@@ -40,36 +39,72 @@ namespace Model
 
 
     /**
-     * <p>Contains details about the relevant point of interest.</p>
+     * <p>The distance in meters of a great-circle arc between the query position and
+     * the result.</p>  <p>A great-circle arc is the shortest path on a sphere,
+     * in this case the Earth. This returns the shortest distance between two
+     * locations.</p> 
+     */
+    inline double GetDistance() const{ return m_distance; }
+
+    /**
+     * <p>The distance in meters of a great-circle arc between the query position and
+     * the result.</p>  <p>A great-circle arc is the shortest path on a sphere,
+     * in this case the Earth. This returns the shortest distance between two
+     * locations.</p> 
+     */
+    inline bool DistanceHasBeenSet() const { return m_distanceHasBeenSet; }
+
+    /**
+     * <p>The distance in meters of a great-circle arc between the query position and
+     * the result.</p>  <p>A great-circle arc is the shortest path on a sphere,
+     * in this case the Earth. This returns the shortest distance between two
+     * locations.</p> 
+     */
+    inline void SetDistance(double value) { m_distanceHasBeenSet = true; m_distance = value; }
+
+    /**
+     * <p>The distance in meters of a great-circle arc between the query position and
+     * the result.</p>  <p>A great-circle arc is the shortest path on a sphere,
+     * in this case the Earth. This returns the shortest distance between two
+     * locations.</p> 
+     */
+    inline SearchForPositionResult& WithDistance(double value) { SetDistance(value); return *this;}
+
+
+    /**
+     * <p>Details about the search result, such as its address and position.</p>
      */
     inline const Place& GetPlace() const{ return m_place; }
 
     /**
-     * <p>Contains details about the relevant point of interest.</p>
+     * <p>Details about the search result, such as its address and position.</p>
      */
     inline bool PlaceHasBeenSet() const { return m_placeHasBeenSet; }
 
     /**
-     * <p>Contains details about the relevant point of interest.</p>
+     * <p>Details about the search result, such as its address and position.</p>
      */
     inline void SetPlace(const Place& value) { m_placeHasBeenSet = true; m_place = value; }
 
     /**
-     * <p>Contains details about the relevant point of interest.</p>
+     * <p>Details about the search result, such as its address and position.</p>
      */
     inline void SetPlace(Place&& value) { m_placeHasBeenSet = true; m_place = std::move(value); }
 
     /**
-     * <p>Contains details about the relevant point of interest.</p>
+     * <p>Details about the search result, such as its address and position.</p>
      */
     inline SearchForPositionResult& WithPlace(const Place& value) { SetPlace(value); return *this;}
 
     /**
-     * <p>Contains details about the relevant point of interest.</p>
+     * <p>Details about the search result, such as its address and position.</p>
      */
     inline SearchForPositionResult& WithPlace(Place&& value) { SetPlace(std::move(value)); return *this;}
 
   private:
+
+    double m_distance;
+    bool m_distanceHasBeenSet;
 
     Place m_place;
     bool m_placeHasBeenSet;

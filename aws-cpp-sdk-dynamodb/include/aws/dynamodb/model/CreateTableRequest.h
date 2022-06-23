@@ -12,6 +12,7 @@
 #include <aws/dynamodb/model/ProvisionedThroughput.h>
 #include <aws/dynamodb/model/StreamSpecification.h>
 #include <aws/dynamodb/model/SSESpecification.h>
+#include <aws/dynamodb/model/TableClass.h>
 #include <aws/dynamodb/model/AttributeDefinition.h>
 #include <aws/dynamodb/model/KeySchemaElement.h>
 #include <aws/dynamodb/model/LocalSecondaryIndex.h>
@@ -1153,6 +1154,43 @@ namespace Model
      */
     inline CreateTableRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The table class of the new table. Valid values are <code>STANDARD</code> and
+     * <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
+     */
+    inline const TableClass& GetTableClass() const{ return m_tableClass; }
+
+    /**
+     * <p>The table class of the new table. Valid values are <code>STANDARD</code> and
+     * <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
+     */
+    inline bool TableClassHasBeenSet() const { return m_tableClassHasBeenSet; }
+
+    /**
+     * <p>The table class of the new table. Valid values are <code>STANDARD</code> and
+     * <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
+     */
+    inline void SetTableClass(const TableClass& value) { m_tableClassHasBeenSet = true; m_tableClass = value; }
+
+    /**
+     * <p>The table class of the new table. Valid values are <code>STANDARD</code> and
+     * <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
+     */
+    inline void SetTableClass(TableClass&& value) { m_tableClassHasBeenSet = true; m_tableClass = std::move(value); }
+
+    /**
+     * <p>The table class of the new table. Valid values are <code>STANDARD</code> and
+     * <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
+     */
+    inline CreateTableRequest& WithTableClass(const TableClass& value) { SetTableClass(value); return *this;}
+
+    /**
+     * <p>The table class of the new table. Valid values are <code>STANDARD</code> and
+     * <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
+     */
+    inline CreateTableRequest& WithTableClass(TableClass&& value) { SetTableClass(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<AttributeDefinition> m_attributeDefinitions;
@@ -1184,6 +1222,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    TableClass m_tableClass;
+    bool m_tableClassHasBeenSet;
   };
 
 } // namespace Model

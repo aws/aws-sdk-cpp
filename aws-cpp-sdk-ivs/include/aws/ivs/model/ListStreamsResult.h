@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/ivs/IVS_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ivs/model/StreamSummary.h>
 #include <utility>
 
@@ -32,42 +32,6 @@ namespace Model
     ListStreamsResult();
     ListStreamsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     ListStreamsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-
-
-    /**
-     * <p>List of streams.</p>
-     */
-    inline const Aws::Vector<StreamSummary>& GetStreams() const{ return m_streams; }
-
-    /**
-     * <p>List of streams.</p>
-     */
-    inline void SetStreams(const Aws::Vector<StreamSummary>& value) { m_streams = value; }
-
-    /**
-     * <p>List of streams.</p>
-     */
-    inline void SetStreams(Aws::Vector<StreamSummary>&& value) { m_streams = std::move(value); }
-
-    /**
-     * <p>List of streams.</p>
-     */
-    inline ListStreamsResult& WithStreams(const Aws::Vector<StreamSummary>& value) { SetStreams(value); return *this;}
-
-    /**
-     * <p>List of streams.</p>
-     */
-    inline ListStreamsResult& WithStreams(Aws::Vector<StreamSummary>&& value) { SetStreams(std::move(value)); return *this;}
-
-    /**
-     * <p>List of streams.</p>
-     */
-    inline ListStreamsResult& AddStreams(const StreamSummary& value) { m_streams.push_back(value); return *this; }
-
-    /**
-     * <p>List of streams.</p>
-     */
-    inline ListStreamsResult& AddStreams(StreamSummary&& value) { m_streams.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -112,11 +76,47 @@ namespace Model
      */
     inline ListStreamsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>List of streams.</p>
+     */
+    inline const Aws::Vector<StreamSummary>& GetStreams() const{ return m_streams; }
+
+    /**
+     * <p>List of streams.</p>
+     */
+    inline void SetStreams(const Aws::Vector<StreamSummary>& value) { m_streams = value; }
+
+    /**
+     * <p>List of streams.</p>
+     */
+    inline void SetStreams(Aws::Vector<StreamSummary>&& value) { m_streams = std::move(value); }
+
+    /**
+     * <p>List of streams.</p>
+     */
+    inline ListStreamsResult& WithStreams(const Aws::Vector<StreamSummary>& value) { SetStreams(value); return *this;}
+
+    /**
+     * <p>List of streams.</p>
+     */
+    inline ListStreamsResult& WithStreams(Aws::Vector<StreamSummary>&& value) { SetStreams(std::move(value)); return *this;}
+
+    /**
+     * <p>List of streams.</p>
+     */
+    inline ListStreamsResult& AddStreams(const StreamSummary& value) { m_streams.push_back(value); return *this; }
+
+    /**
+     * <p>List of streams.</p>
+     */
+    inline ListStreamsResult& AddStreams(StreamSummary&& value) { m_streams.push_back(std::move(value)); return *this; }
+
   private:
 
-    Aws::Vector<StreamSummary> m_streams;
-
     Aws::String m_nextToken;
+
+    Aws::Vector<StreamSummary> m_streams;
   };
 
 } // namespace Model

@@ -9,6 +9,7 @@
 #include <aws/fsx/model/SelfManagedActiveDirectoryAttributes.h>
 #include <aws/fsx/model/WindowsDeploymentType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/fsx/model/WindowsAuditLogConfiguration.h>
 #include <aws/fsx/model/FileSystemMaintenanceOperation.h>
 #include <aws/fsx/model/Alias.h>
 #include <utility>
@@ -44,50 +45,50 @@ namespace Model
 
 
     /**
-     * <p>The ID for an existing Microsoft Active Directory instance that the file
-     * system should join when it's created.</p>
+     * <p>The ID for an existing Amazon Web Services Managed Microsoft Active Directory
+     * instance that the file system is joined to.</p>
      */
     inline const Aws::String& GetActiveDirectoryId() const{ return m_activeDirectoryId; }
 
     /**
-     * <p>The ID for an existing Microsoft Active Directory instance that the file
-     * system should join when it's created.</p>
+     * <p>The ID for an existing Amazon Web Services Managed Microsoft Active Directory
+     * instance that the file system is joined to.</p>
      */
     inline bool ActiveDirectoryIdHasBeenSet() const { return m_activeDirectoryIdHasBeenSet; }
 
     /**
-     * <p>The ID for an existing Microsoft Active Directory instance that the file
-     * system should join when it's created.</p>
+     * <p>The ID for an existing Amazon Web Services Managed Microsoft Active Directory
+     * instance that the file system is joined to.</p>
      */
     inline void SetActiveDirectoryId(const Aws::String& value) { m_activeDirectoryIdHasBeenSet = true; m_activeDirectoryId = value; }
 
     /**
-     * <p>The ID for an existing Microsoft Active Directory instance that the file
-     * system should join when it's created.</p>
+     * <p>The ID for an existing Amazon Web Services Managed Microsoft Active Directory
+     * instance that the file system is joined to.</p>
      */
     inline void SetActiveDirectoryId(Aws::String&& value) { m_activeDirectoryIdHasBeenSet = true; m_activeDirectoryId = std::move(value); }
 
     /**
-     * <p>The ID for an existing Microsoft Active Directory instance that the file
-     * system should join when it's created.</p>
+     * <p>The ID for an existing Amazon Web Services Managed Microsoft Active Directory
+     * instance that the file system is joined to.</p>
      */
     inline void SetActiveDirectoryId(const char* value) { m_activeDirectoryIdHasBeenSet = true; m_activeDirectoryId.assign(value); }
 
     /**
-     * <p>The ID for an existing Microsoft Active Directory instance that the file
-     * system should join when it's created.</p>
+     * <p>The ID for an existing Amazon Web Services Managed Microsoft Active Directory
+     * instance that the file system is joined to.</p>
      */
     inline WindowsFileSystemConfiguration& WithActiveDirectoryId(const Aws::String& value) { SetActiveDirectoryId(value); return *this;}
 
     /**
-     * <p>The ID for an existing Microsoft Active Directory instance that the file
-     * system should join when it's created.</p>
+     * <p>The ID for an existing Amazon Web Services Managed Microsoft Active Directory
+     * instance that the file system is joined to.</p>
      */
     inline WindowsFileSystemConfiguration& WithActiveDirectoryId(Aws::String&& value) { SetActiveDirectoryId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID for an existing Microsoft Active Directory instance that the file
-     * system should join when it's created.</p>
+     * <p>The ID for an existing Amazon Web Services Managed Microsoft Active Directory
+     * instance that the file system is joined to.</p>
      */
     inline WindowsFileSystemConfiguration& WithActiveDirectoryId(const char* value) { SetActiveDirectoryId(value); return *this;}
 
@@ -290,7 +291,7 @@ namespace Model
      * this value is the same as that for <code>SubnetIDs</code>. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html#single-multi-az-resources">Availability
-     * and Durability: Single-AZ and Multi-AZ File Systems</a> </p>
+     * and durability: Single-AZ and Multi-AZ file systems</a>.</p>
      */
     inline const Aws::String& GetPreferredSubnetId() const{ return m_preferredSubnetId; }
 
@@ -303,7 +304,7 @@ namespace Model
      * this value is the same as that for <code>SubnetIDs</code>. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html#single-multi-az-resources">Availability
-     * and Durability: Single-AZ and Multi-AZ File Systems</a> </p>
+     * and durability: Single-AZ and Multi-AZ file systems</a>.</p>
      */
     inline bool PreferredSubnetIdHasBeenSet() const { return m_preferredSubnetIdHasBeenSet; }
 
@@ -316,7 +317,7 @@ namespace Model
      * this value is the same as that for <code>SubnetIDs</code>. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html#single-multi-az-resources">Availability
-     * and Durability: Single-AZ and Multi-AZ File Systems</a> </p>
+     * and durability: Single-AZ and Multi-AZ file systems</a>.</p>
      */
     inline void SetPreferredSubnetId(const Aws::String& value) { m_preferredSubnetIdHasBeenSet = true; m_preferredSubnetId = value; }
 
@@ -329,7 +330,7 @@ namespace Model
      * this value is the same as that for <code>SubnetIDs</code>. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html#single-multi-az-resources">Availability
-     * and Durability: Single-AZ and Multi-AZ File Systems</a> </p>
+     * and durability: Single-AZ and Multi-AZ file systems</a>.</p>
      */
     inline void SetPreferredSubnetId(Aws::String&& value) { m_preferredSubnetIdHasBeenSet = true; m_preferredSubnetId = std::move(value); }
 
@@ -342,7 +343,7 @@ namespace Model
      * this value is the same as that for <code>SubnetIDs</code>. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html#single-multi-az-resources">Availability
-     * and Durability: Single-AZ and Multi-AZ File Systems</a> </p>
+     * and durability: Single-AZ and Multi-AZ file systems</a>.</p>
      */
     inline void SetPreferredSubnetId(const char* value) { m_preferredSubnetIdHasBeenSet = true; m_preferredSubnetId.assign(value); }
 
@@ -355,7 +356,7 @@ namespace Model
      * this value is the same as that for <code>SubnetIDs</code>. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html#single-multi-az-resources">Availability
-     * and Durability: Single-AZ and Multi-AZ File Systems</a> </p>
+     * and durability: Single-AZ and Multi-AZ file systems</a>.</p>
      */
     inline WindowsFileSystemConfiguration& WithPreferredSubnetId(const Aws::String& value) { SetPreferredSubnetId(value); return *this;}
 
@@ -368,7 +369,7 @@ namespace Model
      * this value is the same as that for <code>SubnetIDs</code>. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html#single-multi-az-resources">Availability
-     * and Durability: Single-AZ and Multi-AZ File Systems</a> </p>
+     * and durability: Single-AZ and Multi-AZ file systems</a>.</p>
      */
     inline WindowsFileSystemConfiguration& WithPreferredSubnetId(Aws::String&& value) { SetPreferredSubnetId(std::move(value)); return *this;}
 
@@ -381,7 +382,7 @@ namespace Model
      * this value is the same as that for <code>SubnetIDs</code>. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html#single-multi-az-resources">Availability
-     * and Durability: Single-AZ and Multi-AZ File Systems</a> </p>
+     * and durability: Single-AZ and Multi-AZ file systems</a>.</p>
      */
     inline WindowsFileSystemConfiguration& WithPreferredSubnetId(const char* value) { SetPreferredSubnetId(value); return *this;}
 
@@ -500,25 +501,25 @@ namespace Model
 
 
     /**
-     * <p>The throughput of an Amazon FSx file system, measured in megabytes per
+     * <p>The throughput of the Amazon FSx file system, measured in megabytes per
      * second.</p>
      */
     inline int GetThroughputCapacity() const{ return m_throughputCapacity; }
 
     /**
-     * <p>The throughput of an Amazon FSx file system, measured in megabytes per
+     * <p>The throughput of the Amazon FSx file system, measured in megabytes per
      * second.</p>
      */
     inline bool ThroughputCapacityHasBeenSet() const { return m_throughputCapacityHasBeenSet; }
 
     /**
-     * <p>The throughput of an Amazon FSx file system, measured in megabytes per
+     * <p>The throughput of the Amazon FSx file system, measured in megabytes per
      * second.</p>
      */
     inline void SetThroughputCapacity(int value) { m_throughputCapacityHasBeenSet = true; m_throughputCapacity = value; }
 
     /**
-     * <p>The throughput of an Amazon FSx file system, measured in megabytes per
+     * <p>The throughput of the Amazon FSx file system, measured in megabytes per
      * second.</p>
      */
     inline WindowsFileSystemConfiguration& WithThroughputCapacity(int value) { SetThroughputCapacity(value); return *this;}
@@ -761,6 +762,49 @@ namespace Model
     
     inline WindowsFileSystemConfiguration& AddAliases(Alias&& value) { m_aliasesHasBeenSet = true; m_aliases.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The configuration that Amazon FSx for Windows File Server uses to audit and
+     * log user accesses of files, folders, and file shares on the Amazon FSx for
+     * Windows File Server file system.</p>
+     */
+    inline const WindowsAuditLogConfiguration& GetAuditLogConfiguration() const{ return m_auditLogConfiguration; }
+
+    /**
+     * <p>The configuration that Amazon FSx for Windows File Server uses to audit and
+     * log user accesses of files, folders, and file shares on the Amazon FSx for
+     * Windows File Server file system.</p>
+     */
+    inline bool AuditLogConfigurationHasBeenSet() const { return m_auditLogConfigurationHasBeenSet; }
+
+    /**
+     * <p>The configuration that Amazon FSx for Windows File Server uses to audit and
+     * log user accesses of files, folders, and file shares on the Amazon FSx for
+     * Windows File Server file system.</p>
+     */
+    inline void SetAuditLogConfiguration(const WindowsAuditLogConfiguration& value) { m_auditLogConfigurationHasBeenSet = true; m_auditLogConfiguration = value; }
+
+    /**
+     * <p>The configuration that Amazon FSx for Windows File Server uses to audit and
+     * log user accesses of files, folders, and file shares on the Amazon FSx for
+     * Windows File Server file system.</p>
+     */
+    inline void SetAuditLogConfiguration(WindowsAuditLogConfiguration&& value) { m_auditLogConfigurationHasBeenSet = true; m_auditLogConfiguration = std::move(value); }
+
+    /**
+     * <p>The configuration that Amazon FSx for Windows File Server uses to audit and
+     * log user accesses of files, folders, and file shares on the Amazon FSx for
+     * Windows File Server file system.</p>
+     */
+    inline WindowsFileSystemConfiguration& WithAuditLogConfiguration(const WindowsAuditLogConfiguration& value) { SetAuditLogConfiguration(value); return *this;}
+
+    /**
+     * <p>The configuration that Amazon FSx for Windows File Server uses to audit and
+     * log user accesses of files, folders, and file shares on the Amazon FSx for
+     * Windows File Server file system.</p>
+     */
+    inline WindowsFileSystemConfiguration& WithAuditLogConfiguration(WindowsAuditLogConfiguration&& value) { SetAuditLogConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_activeDirectoryId;
@@ -801,6 +845,9 @@ namespace Model
 
     Aws::Vector<Alias> m_aliases;
     bool m_aliasesHasBeenSet;
+
+    WindowsAuditLogConfiguration m_auditLogConfiguration;
+    bool m_auditLogConfigurationHasBeenSet;
   };
 
 } // namespace Model

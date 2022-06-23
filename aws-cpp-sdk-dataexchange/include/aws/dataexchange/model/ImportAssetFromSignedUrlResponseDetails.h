@@ -40,42 +40,42 @@ namespace Model
 
 
     /**
-     * <p>The name for the asset associated with this import response.</p>
+     * <p>The name for the asset associated with this import job.</p>
      */
     inline const Aws::String& GetAssetName() const{ return m_assetName; }
 
     /**
-     * <p>The name for the asset associated with this import response.</p>
+     * <p>The name for the asset associated with this import job.</p>
      */
     inline bool AssetNameHasBeenSet() const { return m_assetNameHasBeenSet; }
 
     /**
-     * <p>The name for the asset associated with this import response.</p>
+     * <p>The name for the asset associated with this import job.</p>
      */
     inline void SetAssetName(const Aws::String& value) { m_assetNameHasBeenSet = true; m_assetName = value; }
 
     /**
-     * <p>The name for the asset associated with this import response.</p>
+     * <p>The name for the asset associated with this import job.</p>
      */
     inline void SetAssetName(Aws::String&& value) { m_assetNameHasBeenSet = true; m_assetName = std::move(value); }
 
     /**
-     * <p>The name for the asset associated with this import response.</p>
+     * <p>The name for the asset associated with this import job.</p>
      */
     inline void SetAssetName(const char* value) { m_assetNameHasBeenSet = true; m_assetName.assign(value); }
 
     /**
-     * <p>The name for the asset associated with this import response.</p>
+     * <p>The name for the asset associated with this import job.</p>
      */
     inline ImportAssetFromSignedUrlResponseDetails& WithAssetName(const Aws::String& value) { SetAssetName(value); return *this;}
 
     /**
-     * <p>The name for the asset associated with this import response.</p>
+     * <p>The name for the asset associated with this import job.</p>
      */
     inline ImportAssetFromSignedUrlResponseDetails& WithAssetName(Aws::String&& value) { SetAssetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name for the asset associated with this import response.</p>
+     * <p>The name for the asset associated with this import job.</p>
      */
     inline ImportAssetFromSignedUrlResponseDetails& WithAssetName(const char* value) { SetAssetName(value); return *this;}
 

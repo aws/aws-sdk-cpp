@@ -1,0 +1,48 @@
+name: License Scan
+
+on: 
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.9]
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v2
+        with:
+          repository: aws/aws-sdk-cpp
+          path: aws-sdk-cpp
+          ref: main
+      - name: Checkout stable version
+        uses: actions/checkout@v2
+        with:
+          repository: aws/aws-sdk-cpp
+          path: new-ref
+          ref: "1.9.85"
+      - name: Checkout scancode
+        uses: actions/checkout@v2
+        with:
+          repository: nexB/scancode-toolkit
+          path: scancode-toolkit
+          fetch-depth: 1
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+      # ScanCode
+      - name: Self-configure scancode
+        working-directory: ./scancode-toolkit
+        run: ./scancode --help
+      - name: Run Scan code
+        run: |
+          ./scancode-toolkit/scancode -l -n 30 --json-pp - ./aws-sdk-cpp/aws-cpp-sdk-core | grep short_name | sed -e 's/\"short_name\": //' -e 's/\"\,\?//g' | sort | uniq > old-licenses.txt
+          ./scancode-toolkit/scancode -l -n 30 --json-pp - ./new-ref/aws-cpp-sdk-core | grep short_name | sed -e 's/\"short_name\": //' -e 's/\"\,\?//g' | sort | uniq > new-licenses.txt
+      # compare
+      - name: License test
+        run: if ! cmp old-licenses.txt new-licenses.txt; then echo "Licenses differ! Failing."; exit -1; else echo "Licenses are the same. Success."; exit 0; fi

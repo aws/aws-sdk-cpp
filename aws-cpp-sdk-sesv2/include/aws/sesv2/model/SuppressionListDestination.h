@@ -39,7 +39,7 @@ namespace Model
 
 
     /**
-     * <p>The type of action that you want to perform on the address. Acceptable
+     * <p>The type of action to perform on the address. The following are possible
      * values:</p> <ul> <li> <p>PUT: add the addresses to the suppression list. If the
      * record already exists, it will override it with the new value.</p> </li> <li>
      * <p>DELETE: remove the addresses from the suppression list.</p> </li> </ul>
@@ -47,7 +47,7 @@ namespace Model
     inline const SuppressionListImportAction& GetSuppressionListImportAction() const{ return m_suppressionListImportAction; }
 
     /**
-     * <p>The type of action that you want to perform on the address. Acceptable
+     * <p>The type of action to perform on the address. The following are possible
      * values:</p> <ul> <li> <p>PUT: add the addresses to the suppression list. If the
      * record already exists, it will override it with the new value.</p> </li> <li>
      * <p>DELETE: remove the addresses from the suppression list.</p> </li> </ul>
@@ -55,7 +55,7 @@ namespace Model
     inline bool SuppressionListImportActionHasBeenSet() const { return m_suppressionListImportActionHasBeenSet; }
 
     /**
-     * <p>The type of action that you want to perform on the address. Acceptable
+     * <p>The type of action to perform on the address. The following are possible
      * values:</p> <ul> <li> <p>PUT: add the addresses to the suppression list. If the
      * record already exists, it will override it with the new value.</p> </li> <li>
      * <p>DELETE: remove the addresses from the suppression list.</p> </li> </ul>
@@ -63,7 +63,7 @@ namespace Model
     inline void SetSuppressionListImportAction(const SuppressionListImportAction& value) { m_suppressionListImportActionHasBeenSet = true; m_suppressionListImportAction = value; }
 
     /**
-     * <p>The type of action that you want to perform on the address. Acceptable
+     * <p>The type of action to perform on the address. The following are possible
      * values:</p> <ul> <li> <p>PUT: add the addresses to the suppression list. If the
      * record already exists, it will override it with the new value.</p> </li> <li>
      * <p>DELETE: remove the addresses from the suppression list.</p> </li> </ul>
@@ -71,7 +71,7 @@ namespace Model
     inline void SetSuppressionListImportAction(SuppressionListImportAction&& value) { m_suppressionListImportActionHasBeenSet = true; m_suppressionListImportAction = std::move(value); }
 
     /**
-     * <p>The type of action that you want to perform on the address. Acceptable
+     * <p>The type of action to perform on the address. The following are possible
      * values:</p> <ul> <li> <p>PUT: add the addresses to the suppression list. If the
      * record already exists, it will override it with the new value.</p> </li> <li>
      * <p>DELETE: remove the addresses from the suppression list.</p> </li> </ul>
@@ -79,7 +79,7 @@ namespace Model
     inline SuppressionListDestination& WithSuppressionListImportAction(const SuppressionListImportAction& value) { SetSuppressionListImportAction(value); return *this;}
 
     /**
-     * <p>The type of action that you want to perform on the address. Acceptable
+     * <p>The type of action to perform on the address. The following are possible
      * values:</p> <ul> <li> <p>PUT: add the addresses to the suppression list. If the
      * record already exists, it will override it with the new value.</p> </li> <li>
      * <p>DELETE: remove the addresses from the suppression list.</p> </li> </ul>

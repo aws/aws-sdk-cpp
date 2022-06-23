@@ -210,6 +210,19 @@ namespace Model
      */
     inline UpdateApplicationRequest& WithRemoveSNSTopic(bool value) { SetRemoveSNSTopic(value); return *this;}
 
+
+    
+    inline bool GetAutoConfigEnabled() const{ return m_autoConfigEnabled; }
+
+    
+    inline bool AutoConfigEnabledHasBeenSet() const { return m_autoConfigEnabledHasBeenSet; }
+
+    
+    inline void SetAutoConfigEnabled(bool value) { m_autoConfigEnabledHasBeenSet = true; m_autoConfigEnabled = value; }
+
+    
+    inline UpdateApplicationRequest& WithAutoConfigEnabled(bool value) { SetAutoConfigEnabled(value); return *this;}
+
   private:
 
     Aws::String m_resourceGroupName;
@@ -226,6 +239,9 @@ namespace Model
 
     bool m_removeSNSTopic;
     bool m_removeSNSTopicHasBeenSet;
+
+    bool m_autoConfigEnabled;
+    bool m_autoConfigEnabledHasBeenSet;
   };
 
 } // namespace Model

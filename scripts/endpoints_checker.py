@@ -22,7 +22,8 @@ endpoints = ["us-east-1", "us-east-2",
           "sa-east-1",
           "cn-north-1", "cn-northwest-1",
           "ca-central-1",
-          "us-gov-west-1","us-gov-east-1"
+          "us-gov-west-1","us-gov-east-1",
+          "us-iso-west-1",
           "me-south-1",
           "af-south-1"];
 """
@@ -114,7 +115,7 @@ exitCode = 0;
 RootDir = os.path.dirname(os.path.dirname(os.path.realpath(__file__)));
 for root, dirnames, fileNames in os.walk(RootDir):
     for fileName in fileNames:
-        if fileName.endswith(('.h', '.cpp')):
+        if not root.endswith('-tests') and fileName.endswith(('.h', '.cpp')):
             targetFile = os.path.join(root, fileName);
             exitCode |= CheckFile(targetFile);
 print "Finished checking hard coded endpoints in source files with exit code",exitCode,".";

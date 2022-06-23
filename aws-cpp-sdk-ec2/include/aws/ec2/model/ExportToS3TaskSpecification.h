@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes an instance export task.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes an export instance task.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportToS3TaskSpecification">AWS
    * API Reference</a></p>
    */
@@ -111,57 +111,57 @@ namespace Model
 
     /**
      * <p>The Amazon S3 bucket for the destination image. The destination bucket must
-     * exist and grant WRITE and READ_ACP permissions to the AWS account
-     * <code>vm-import-export@amazon.com</code>.</p>
+     * exist and grant WRITE and READ_ACP permissions to the Amazon Web Services
+     * account <code>vm-import-export@amazon.com</code>.</p>
      */
     inline const Aws::String& GetS3Bucket() const{ return m_s3Bucket; }
 
     /**
      * <p>The Amazon S3 bucket for the destination image. The destination bucket must
-     * exist and grant WRITE and READ_ACP permissions to the AWS account
-     * <code>vm-import-export@amazon.com</code>.</p>
+     * exist and grant WRITE and READ_ACP permissions to the Amazon Web Services
+     * account <code>vm-import-export@amazon.com</code>.</p>
      */
     inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
 
     /**
      * <p>The Amazon S3 bucket for the destination image. The destination bucket must
-     * exist and grant WRITE and READ_ACP permissions to the AWS account
-     * <code>vm-import-export@amazon.com</code>.</p>
+     * exist and grant WRITE and READ_ACP permissions to the Amazon Web Services
+     * account <code>vm-import-export@amazon.com</code>.</p>
      */
     inline void SetS3Bucket(const Aws::String& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
 
     /**
      * <p>The Amazon S3 bucket for the destination image. The destination bucket must
-     * exist and grant WRITE and READ_ACP permissions to the AWS account
-     * <code>vm-import-export@amazon.com</code>.</p>
+     * exist and grant WRITE and READ_ACP permissions to the Amazon Web Services
+     * account <code>vm-import-export@amazon.com</code>.</p>
      */
     inline void SetS3Bucket(Aws::String&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::move(value); }
 
     /**
      * <p>The Amazon S3 bucket for the destination image. The destination bucket must
-     * exist and grant WRITE and READ_ACP permissions to the AWS account
-     * <code>vm-import-export@amazon.com</code>.</p>
+     * exist and grant WRITE and READ_ACP permissions to the Amazon Web Services
+     * account <code>vm-import-export@amazon.com</code>.</p>
      */
     inline void SetS3Bucket(const char* value) { m_s3BucketHasBeenSet = true; m_s3Bucket.assign(value); }
 
     /**
      * <p>The Amazon S3 bucket for the destination image. The destination bucket must
-     * exist and grant WRITE and READ_ACP permissions to the AWS account
-     * <code>vm-import-export@amazon.com</code>.</p>
+     * exist and grant WRITE and READ_ACP permissions to the Amazon Web Services
+     * account <code>vm-import-export@amazon.com</code>.</p>
      */
     inline ExportToS3TaskSpecification& WithS3Bucket(const Aws::String& value) { SetS3Bucket(value); return *this;}
 
     /**
      * <p>The Amazon S3 bucket for the destination image. The destination bucket must
-     * exist and grant WRITE and READ_ACP permissions to the AWS account
-     * <code>vm-import-export@amazon.com</code>.</p>
+     * exist and grant WRITE and READ_ACP permissions to the Amazon Web Services
+     * account <code>vm-import-export@amazon.com</code>.</p>
      */
     inline ExportToS3TaskSpecification& WithS3Bucket(Aws::String&& value) { SetS3Bucket(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon S3 bucket for the destination image. The destination bucket must
-     * exist and grant WRITE and READ_ACP permissions to the AWS account
-     * <code>vm-import-export@amazon.com</code>.</p>
+     * exist and grant WRITE and READ_ACP permissions to the Amazon Web Services
+     * account <code>vm-import-export@amazon.com</code>.</p>
      */
     inline ExportToS3TaskSpecification& WithS3Bucket(const char* value) { SetS3Bucket(value); return *this;}
 

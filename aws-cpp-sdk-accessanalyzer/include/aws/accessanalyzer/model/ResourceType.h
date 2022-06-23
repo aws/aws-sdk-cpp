@@ -21,7 +21,8 @@ namespace Model
     AWS_SQS_Queue,
     AWS_Lambda_Function,
     AWS_Lambda_LayerVersion,
-    AWS_KMS_Key
+    AWS_KMS_Key,
+    AWS_SecretsManager_Secret
   };
 
 namespace ResourceTypeMapper

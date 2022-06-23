@@ -33,51 +33,51 @@ namespace Model
 
 
     /**
-     * <p>Information about the status of enabling or disabling AWS Health
-     * Organizational View in your organization.</p> <p>Valid values are <code>ENABLED
-     * | DISABLED | PENDING</code>. </p>
+     * <p>Information about the status of enabling or disabling the Health
+     * organizational view feature in your organization.</p> <p>Valid values are
+     * <code>ENABLED | DISABLED | PENDING</code>. </p>
      */
     inline const Aws::String& GetHealthServiceAccessStatusForOrganization() const{ return m_healthServiceAccessStatusForOrganization; }
 
     /**
-     * <p>Information about the status of enabling or disabling AWS Health
-     * Organizational View in your organization.</p> <p>Valid values are <code>ENABLED
-     * | DISABLED | PENDING</code>. </p>
+     * <p>Information about the status of enabling or disabling the Health
+     * organizational view feature in your organization.</p> <p>Valid values are
+     * <code>ENABLED | DISABLED | PENDING</code>. </p>
      */
     inline void SetHealthServiceAccessStatusForOrganization(const Aws::String& value) { m_healthServiceAccessStatusForOrganization = value; }
 
     /**
-     * <p>Information about the status of enabling or disabling AWS Health
-     * Organizational View in your organization.</p> <p>Valid values are <code>ENABLED
-     * | DISABLED | PENDING</code>. </p>
+     * <p>Information about the status of enabling or disabling the Health
+     * organizational view feature in your organization.</p> <p>Valid values are
+     * <code>ENABLED | DISABLED | PENDING</code>. </p>
      */
     inline void SetHealthServiceAccessStatusForOrganization(Aws::String&& value) { m_healthServiceAccessStatusForOrganization = std::move(value); }
 
     /**
-     * <p>Information about the status of enabling or disabling AWS Health
-     * Organizational View in your organization.</p> <p>Valid values are <code>ENABLED
-     * | DISABLED | PENDING</code>. </p>
+     * <p>Information about the status of enabling or disabling the Health
+     * organizational view feature in your organization.</p> <p>Valid values are
+     * <code>ENABLED | DISABLED | PENDING</code>. </p>
      */
     inline void SetHealthServiceAccessStatusForOrganization(const char* value) { m_healthServiceAccessStatusForOrganization.assign(value); }
 
     /**
-     * <p>Information about the status of enabling or disabling AWS Health
-     * Organizational View in your organization.</p> <p>Valid values are <code>ENABLED
-     * | DISABLED | PENDING</code>. </p>
+     * <p>Information about the status of enabling or disabling the Health
+     * organizational view feature in your organization.</p> <p>Valid values are
+     * <code>ENABLED | DISABLED | PENDING</code>. </p>
      */
     inline DescribeHealthServiceStatusForOrganizationResult& WithHealthServiceAccessStatusForOrganization(const Aws::String& value) { SetHealthServiceAccessStatusForOrganization(value); return *this;}
 
     /**
-     * <p>Information about the status of enabling or disabling AWS Health
-     * Organizational View in your organization.</p> <p>Valid values are <code>ENABLED
-     * | DISABLED | PENDING</code>. </p>
+     * <p>Information about the status of enabling or disabling the Health
+     * organizational view feature in your organization.</p> <p>Valid values are
+     * <code>ENABLED | DISABLED | PENDING</code>. </p>
      */
     inline DescribeHealthServiceStatusForOrganizationResult& WithHealthServiceAccessStatusForOrganization(Aws::String&& value) { SetHealthServiceAccessStatusForOrganization(std::move(value)); return *this;}
 
     /**
-     * <p>Information about the status of enabling or disabling AWS Health
-     * Organizational View in your organization.</p> <p>Valid values are <code>ENABLED
-     * | DISABLED | PENDING</code>. </p>
+     * <p>Information about the status of enabling or disabling the Health
+     * organizational view feature in your organization.</p> <p>Valid values are
+     * <code>ENABLED | DISABLED | PENDING</code>. </p>
      */
     inline DescribeHealthServiceStatusForOrganizationResult& WithHealthServiceAccessStatusForOrganization(const char* value) { SetHealthServiceAccessStatusForOrganization(value); return *this;}
 

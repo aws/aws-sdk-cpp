@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     NONE,
     NEW_,
-    NEW_CHANGED
+    NEW_CHANGED,
+    NEW_CHANGED_DELETED
   };
 
 namespace AutoImportPolicyTypeMapper

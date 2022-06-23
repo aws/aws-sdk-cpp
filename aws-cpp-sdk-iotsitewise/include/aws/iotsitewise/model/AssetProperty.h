@@ -122,89 +122,81 @@ namespace Model
 
 
     /**
-     * <p>The property alias that identifies the property, such as an OPC-UA server
-     * data stream path (for example,
-     * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
-     * see <a
+     * <p>The alias that identifies the property, such as an OPC-UA server data stream
+     * path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User
+     * industrial data streams to asset properties</a> in the <i>IoT SiteWise User
      * Guide</i>.</p>
      */
     inline const Aws::String& GetAlias() const{ return m_alias; }
 
     /**
-     * <p>The property alias that identifies the property, such as an OPC-UA server
-     * data stream path (for example,
-     * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
-     * see <a
+     * <p>The alias that identifies the property, such as an OPC-UA server data stream
+     * path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User
+     * industrial data streams to asset properties</a> in the <i>IoT SiteWise User
      * Guide</i>.</p>
      */
     inline bool AliasHasBeenSet() const { return m_aliasHasBeenSet; }
 
     /**
-     * <p>The property alias that identifies the property, such as an OPC-UA server
-     * data stream path (for example,
-     * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
-     * see <a
+     * <p>The alias that identifies the property, such as an OPC-UA server data stream
+     * path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User
+     * industrial data streams to asset properties</a> in the <i>IoT SiteWise User
      * Guide</i>.</p>
      */
     inline void SetAlias(const Aws::String& value) { m_aliasHasBeenSet = true; m_alias = value; }
 
     /**
-     * <p>The property alias that identifies the property, such as an OPC-UA server
-     * data stream path (for example,
-     * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
-     * see <a
+     * <p>The alias that identifies the property, such as an OPC-UA server data stream
+     * path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User
+     * industrial data streams to asset properties</a> in the <i>IoT SiteWise User
      * Guide</i>.</p>
      */
     inline void SetAlias(Aws::String&& value) { m_aliasHasBeenSet = true; m_alias = std::move(value); }
 
     /**
-     * <p>The property alias that identifies the property, such as an OPC-UA server
-     * data stream path (for example,
-     * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
-     * see <a
+     * <p>The alias that identifies the property, such as an OPC-UA server data stream
+     * path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User
+     * industrial data streams to asset properties</a> in the <i>IoT SiteWise User
      * Guide</i>.</p>
      */
     inline void SetAlias(const char* value) { m_aliasHasBeenSet = true; m_alias.assign(value); }
 
     /**
-     * <p>The property alias that identifies the property, such as an OPC-UA server
-     * data stream path (for example,
-     * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
-     * see <a
+     * <p>The alias that identifies the property, such as an OPC-UA server data stream
+     * path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User
+     * industrial data streams to asset properties</a> in the <i>IoT SiteWise User
      * Guide</i>.</p>
      */
     inline AssetProperty& WithAlias(const Aws::String& value) { SetAlias(value); return *this;}
 
     /**
-     * <p>The property alias that identifies the property, such as an OPC-UA server
-     * data stream path (for example,
-     * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
-     * see <a
+     * <p>The alias that identifies the property, such as an OPC-UA server data stream
+     * path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User
+     * industrial data streams to asset properties</a> in the <i>IoT SiteWise User
      * Guide</i>.</p>
      */
     inline AssetProperty& WithAlias(Aws::String&& value) { SetAlias(std::move(value)); return *this;}
 
     /**
-     * <p>The property alias that identifies the property, such as an OPC-UA server
-     * data stream path (for example,
-     * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
-     * see <a
+     * <p>The alias that identifies the property, such as an OPC-UA server data stream
+     * path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     * industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User
+     * industrial data streams to asset properties</a> in the <i>IoT SiteWise User
      * Guide</i>.</p>
      */
     inline AssetProperty& WithAlias(const char* value) { SetAlias(value); return *this;}

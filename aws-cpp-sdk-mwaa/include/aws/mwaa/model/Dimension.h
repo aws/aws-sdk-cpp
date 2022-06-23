@@ -24,7 +24,10 @@ namespace Model
 {
 
   /**
-   * <p>Internal only API.</p><p><h3>See Also:</h3>   <a
+   * <p> <b>Internal only</b>. Represents the dimensions of a metric. To learn more
+   * about the metrics published to Amazon CloudWatch, see <a
+   * href="https://docs.aws.amazon.com/mwaa/latest/userguide/cw-metrics.html">Amazon
+   * MWAA performance metrics in Amazon CloudWatch</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/Dimension">AWS API
    * Reference</a></p>
    */
@@ -38,83 +41,83 @@ namespace Model
 
 
     /**
-     * <p>Internal only API.</p>
+     * <p> <b>Internal only</b>. The name of the dimension.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Internal only API.</p>
+     * <p> <b>Internal only</b>. The name of the dimension.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>Internal only API.</p>
+     * <p> <b>Internal only</b>. The name of the dimension.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Internal only API.</p>
+     * <p> <b>Internal only</b>. The name of the dimension.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>Internal only API.</p>
+     * <p> <b>Internal only</b>. The name of the dimension.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>Internal only API.</p>
+     * <p> <b>Internal only</b>. The name of the dimension.</p>
      */
     inline Dimension& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Internal only API.</p>
+     * <p> <b>Internal only</b>. The name of the dimension.</p>
      */
     inline Dimension& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>Internal only API.</p>
+     * <p> <b>Internal only</b>. The name of the dimension.</p>
      */
     inline Dimension& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>Internal only API.</p>
+     * <p> <b>Internal only</b>. The value of the dimension.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
-     * <p>Internal only API.</p>
+     * <p> <b>Internal only</b>. The value of the dimension.</p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
-     * <p>Internal only API.</p>
+     * <p> <b>Internal only</b>. The value of the dimension.</p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>Internal only API.</p>
+     * <p> <b>Internal only</b>. The value of the dimension.</p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
-     * <p>Internal only API.</p>
+     * <p> <b>Internal only</b>. The value of the dimension.</p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
-     * <p>Internal only API.</p>
+     * <p> <b>Internal only</b>. The value of the dimension.</p>
      */
     inline Dimension& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
-     * <p>Internal only API.</p>
+     * <p> <b>Internal only</b>. The value of the dimension.</p>
      */
     inline Dimension& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
-     * <p>Internal only API.</p>
+     * <p> <b>Internal only</b>. The value of the dimension.</p>
      */
     inline Dimension& WithValue(const char* value) { SetValue(value); return *this;}
 

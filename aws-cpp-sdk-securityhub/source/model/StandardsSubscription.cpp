@@ -23,7 +23,8 @@ StandardsSubscription::StandardsSubscription() :
     m_standardsArnHasBeenSet(false),
     m_standardsInputHasBeenSet(false),
     m_standardsStatus(StandardsStatus::NOT_SET),
-    m_standardsStatusHasBeenSet(false)
+    m_standardsStatusHasBeenSet(false),
+    m_standardsStatusReasonHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ StandardsSubscription::StandardsSubscription(JsonView jsonValue) :
     m_standardsArnHasBeenSet(false),
     m_standardsInputHasBeenSet(false),
     m_standardsStatus(StandardsStatus::NOT_SET),
-    m_standardsStatusHasBeenSet(false)
+    m_standardsStatusHasBeenSet(false),
+    m_standardsStatusReasonHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -70,6 +72,13 @@ StandardsSubscription& StandardsSubscription::operator =(JsonView jsonValue)
     m_standardsStatusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("StandardsStatusReason"))
+  {
+    m_standardsStatusReason = jsonValue.GetObject("StandardsStatusReason");
+
+    m_standardsStatusReasonHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -103,6 +112,12 @@ JsonValue StandardsSubscription::Jsonize() const
   if(m_standardsStatusHasBeenSet)
   {
    payload.WithString("StandardsStatus", StandardsStatusMapper::GetNameForStandardsStatus(m_standardsStatus));
+  }
+
+  if(m_standardsStatusReasonHasBeenSet)
+  {
+   payload.WithObject("StandardsStatusReason", m_standardsStatusReason.Jsonize());
+
   }
 
   return payload;

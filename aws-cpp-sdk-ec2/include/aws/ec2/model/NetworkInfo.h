@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/EnaSupport.h>
+#include <aws/ec2/model/EfaInfo.h>
 #include <aws/ec2/model/NetworkCardInfo.h>
 #include <utility>
 
@@ -306,6 +307,62 @@ namespace Model
      */
     inline NetworkInfo& WithEfaSupported(bool value) { SetEfaSupported(value); return *this;}
 
+
+    /**
+     * <p>Describes the Elastic Fabric Adapters for the instance type.</p>
+     */
+    inline const EfaInfo& GetEfaInfo() const{ return m_efaInfo; }
+
+    /**
+     * <p>Describes the Elastic Fabric Adapters for the instance type.</p>
+     */
+    inline bool EfaInfoHasBeenSet() const { return m_efaInfoHasBeenSet; }
+
+    /**
+     * <p>Describes the Elastic Fabric Adapters for the instance type.</p>
+     */
+    inline void SetEfaInfo(const EfaInfo& value) { m_efaInfoHasBeenSet = true; m_efaInfo = value; }
+
+    /**
+     * <p>Describes the Elastic Fabric Adapters for the instance type.</p>
+     */
+    inline void SetEfaInfo(EfaInfo&& value) { m_efaInfoHasBeenSet = true; m_efaInfo = std::move(value); }
+
+    /**
+     * <p>Describes the Elastic Fabric Adapters for the instance type.</p>
+     */
+    inline NetworkInfo& WithEfaInfo(const EfaInfo& value) { SetEfaInfo(value); return *this;}
+
+    /**
+     * <p>Describes the Elastic Fabric Adapters for the instance type.</p>
+     */
+    inline NetworkInfo& WithEfaInfo(EfaInfo&& value) { SetEfaInfo(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Indicates whether the instance type automatically encrypts in-transit traffic
+     * between instances.</p>
+     */
+    inline bool GetEncryptionInTransitSupported() const{ return m_encryptionInTransitSupported; }
+
+    /**
+     * <p>Indicates whether the instance type automatically encrypts in-transit traffic
+     * between instances.</p>
+     */
+    inline bool EncryptionInTransitSupportedHasBeenSet() const { return m_encryptionInTransitSupportedHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the instance type automatically encrypts in-transit traffic
+     * between instances.</p>
+     */
+    inline void SetEncryptionInTransitSupported(bool value) { m_encryptionInTransitSupportedHasBeenSet = true; m_encryptionInTransitSupported = value; }
+
+    /**
+     * <p>Indicates whether the instance type automatically encrypts in-transit traffic
+     * between instances.</p>
+     */
+    inline NetworkInfo& WithEncryptionInTransitSupported(bool value) { SetEncryptionInTransitSupported(value); return *this;}
+
   private:
 
     Aws::String m_networkPerformance;
@@ -337,6 +394,12 @@ namespace Model
 
     bool m_efaSupported;
     bool m_efaSupportedHasBeenSet;
+
+    EfaInfo m_efaInfo;
+    bool m_efaInfoHasBeenSet;
+
+    bool m_encryptionInTransitSupported;
+    bool m_encryptionInTransitSupportedHasBeenSet;
   };
 
 } // namespace Model

@@ -31,12 +31,25 @@ namespace Model
 {
 
   /**
-   * <p>Operations engineers and IT professionals use OpsCenter to view, investigate,
-   * and remediate operational issues impacting the performance and health of their
-   * AWS resources. For more information, see <a
-   * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS
-   * Systems Manager OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p>Operations engineers and IT professionals use Amazon Web Services Systems
+   * Manager OpsCenter to view, investigate, and remediate operational work items
+   * (OpsItems) impacting the performance and health of their Amazon Web Services
+   * resources. OpsCenter is integrated with Amazon EventBridge and Amazon
+   * CloudWatch. This means you can configure these services to automatically create
+   * an OpsItem in OpsCenter when a CloudWatch alarm enters the ALARM state or when
+   * EventBridge processes an event from any Amazon Web Services service that
+   * publishes events. Configuring Amazon CloudWatch alarms and EventBridge events to
+   * automatically create OpsItems allows you to quickly diagnose and remediate
+   * issues with Amazon Web Services resources from a single console.</p> <p>To help
+   * you diagnose issues, each OpsItem includes contextually relevant information
+   * such as the name and ID of the Amazon Web Services resource that generated the
+   * OpsItem, alarm or event details, alarm history, and an alarm timeline graph. For
+   * the Amazon Web Services resource, OpsCenter aggregates information from Config,
+   * CloudTrail logs, and EventBridge, so you don't have to navigate across multiple
+   * console pages during your investigation. For more information, see <a
+   * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">OpsCenter</a>
+   * in the <i>Amazon Web Services Systems Manager User Guide</i>. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/OpsItem">AWS API
    * Reference</a></p>
    */
@@ -50,42 +63,42 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the AWS account that created the OpsItem.</p>
+     * <p>The ARN of the Amazon Web Services account that created the OpsItem.</p>
      */
     inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
 
     /**
-     * <p>The ARN of the AWS account that created the OpsItem.</p>
+     * <p>The ARN of the Amazon Web Services account that created the OpsItem.</p>
      */
     inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
 
     /**
-     * <p>The ARN of the AWS account that created the OpsItem.</p>
+     * <p>The ARN of the Amazon Web Services account that created the OpsItem.</p>
      */
     inline void SetCreatedBy(const Aws::String& value) { m_createdByHasBeenSet = true; m_createdBy = value; }
 
     /**
-     * <p>The ARN of the AWS account that created the OpsItem.</p>
+     * <p>The ARN of the Amazon Web Services account that created the OpsItem.</p>
      */
     inline void SetCreatedBy(Aws::String&& value) { m_createdByHasBeenSet = true; m_createdBy = std::move(value); }
 
     /**
-     * <p>The ARN of the AWS account that created the OpsItem.</p>
+     * <p>The ARN of the Amazon Web Services account that created the OpsItem.</p>
      */
     inline void SetCreatedBy(const char* value) { m_createdByHasBeenSet = true; m_createdBy.assign(value); }
 
     /**
-     * <p>The ARN of the AWS account that created the OpsItem.</p>
+     * <p>The ARN of the Amazon Web Services account that created the OpsItem.</p>
      */
     inline OpsItem& WithCreatedBy(const Aws::String& value) { SetCreatedBy(value); return *this;}
 
     /**
-     * <p>The ARN of the AWS account that created the OpsItem.</p>
+     * <p>The ARN of the Amazon Web Services account that created the OpsItem.</p>
      */
     inline OpsItem& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the AWS account that created the OpsItem.</p>
+     * <p>The ARN of the Amazon Web Services account that created the OpsItem.</p>
      */
     inline OpsItem& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
 
@@ -212,42 +225,42 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the AWS account that last updated the OpsItem.</p>
+     * <p>The ARN of the Amazon Web Services account that last updated the OpsItem.</p>
      */
     inline const Aws::String& GetLastModifiedBy() const{ return m_lastModifiedBy; }
 
     /**
-     * <p>The ARN of the AWS account that last updated the OpsItem.</p>
+     * <p>The ARN of the Amazon Web Services account that last updated the OpsItem.</p>
      */
     inline bool LastModifiedByHasBeenSet() const { return m_lastModifiedByHasBeenSet; }
 
     /**
-     * <p>The ARN of the AWS account that last updated the OpsItem.</p>
+     * <p>The ARN of the Amazon Web Services account that last updated the OpsItem.</p>
      */
     inline void SetLastModifiedBy(const Aws::String& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = value; }
 
     /**
-     * <p>The ARN of the AWS account that last updated the OpsItem.</p>
+     * <p>The ARN of the Amazon Web Services account that last updated the OpsItem.</p>
      */
     inline void SetLastModifiedBy(Aws::String&& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = std::move(value); }
 
     /**
-     * <p>The ARN of the AWS account that last updated the OpsItem.</p>
+     * <p>The ARN of the Amazon Web Services account that last updated the OpsItem.</p>
      */
     inline void SetLastModifiedBy(const char* value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy.assign(value); }
 
     /**
-     * <p>The ARN of the AWS account that last updated the OpsItem.</p>
+     * <p>The ARN of the Amazon Web Services account that last updated the OpsItem.</p>
      */
     inline OpsItem& WithLastModifiedBy(const Aws::String& value) { SetLastModifiedBy(value); return *this;}
 
     /**
-     * <p>The ARN of the AWS account that last updated the OpsItem.</p>
+     * <p>The ARN of the Amazon Web Services account that last updated the OpsItem.</p>
      */
     inline OpsItem& WithLastModifiedBy(Aws::String&& value) { SetLastModifiedBy(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the AWS account that last updated the OpsItem.</p>
+     * <p>The ARN of the Amazon Web Services account that last updated the OpsItem.</p>
      */
     inline OpsItem& WithLastModifiedBy(const char* value) { SetLastModifiedBy(value); return *this;}
 
@@ -284,50 +297,58 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an SNS topic where notifications are sent
-     * when this OpsItem is edited or changed.</p>
+     * <p>The Amazon Resource Name (ARN) of an Amazon Simple Notification Service
+     * (Amazon SNS) topic where notifications are sent when this OpsItem is edited or
+     * changed.</p>
      */
     inline const Aws::Vector<OpsItemNotification>& GetNotifications() const{ return m_notifications; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an SNS topic where notifications are sent
-     * when this OpsItem is edited or changed.</p>
+     * <p>The Amazon Resource Name (ARN) of an Amazon Simple Notification Service
+     * (Amazon SNS) topic where notifications are sent when this OpsItem is edited or
+     * changed.</p>
      */
     inline bool NotificationsHasBeenSet() const { return m_notificationsHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an SNS topic where notifications are sent
-     * when this OpsItem is edited or changed.</p>
+     * <p>The Amazon Resource Name (ARN) of an Amazon Simple Notification Service
+     * (Amazon SNS) topic where notifications are sent when this OpsItem is edited or
+     * changed.</p>
      */
     inline void SetNotifications(const Aws::Vector<OpsItemNotification>& value) { m_notificationsHasBeenSet = true; m_notifications = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an SNS topic where notifications are sent
-     * when this OpsItem is edited or changed.</p>
+     * <p>The Amazon Resource Name (ARN) of an Amazon Simple Notification Service
+     * (Amazon SNS) topic where notifications are sent when this OpsItem is edited or
+     * changed.</p>
      */
     inline void SetNotifications(Aws::Vector<OpsItemNotification>&& value) { m_notificationsHasBeenSet = true; m_notifications = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an SNS topic where notifications are sent
-     * when this OpsItem is edited or changed.</p>
+     * <p>The Amazon Resource Name (ARN) of an Amazon Simple Notification Service
+     * (Amazon SNS) topic where notifications are sent when this OpsItem is edited or
+     * changed.</p>
      */
     inline OpsItem& WithNotifications(const Aws::Vector<OpsItemNotification>& value) { SetNotifications(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an SNS topic where notifications are sent
-     * when this OpsItem is edited or changed.</p>
+     * <p>The Amazon Resource Name (ARN) of an Amazon Simple Notification Service
+     * (Amazon SNS) topic where notifications are sent when this OpsItem is edited or
+     * changed.</p>
      */
     inline OpsItem& WithNotifications(Aws::Vector<OpsItemNotification>&& value) { SetNotifications(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an SNS topic where notifications are sent
-     * when this OpsItem is edited or changed.</p>
+     * <p>The Amazon Resource Name (ARN) of an Amazon Simple Notification Service
+     * (Amazon SNS) topic where notifications are sent when this OpsItem is edited or
+     * changed.</p>
      */
     inline OpsItem& AddNotifications(const OpsItemNotification& value) { m_notificationsHasBeenSet = true; m_notifications.push_back(value); return *this; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an SNS topic where notifications are sent
-     * when this OpsItem is edited or changed.</p>
+     * <p>The Amazon Resource Name (ARN) of an Amazon Simple Notification Service
+     * (Amazon SNS) topic where notifications are sent when this OpsItem is edited or
+     * changed.</p>
      */
     inline OpsItem& AddNotifications(OpsItemNotification&& value) { m_notificationsHasBeenSet = true; m_notifications.push_back(std::move(value)); return *this; }
 
@@ -418,7 +439,8 @@ namespace Model
      * <p>The OpsItem status. Status can be <code>Open</code>, <code>In
      * Progress</code>, or <code>Resolved</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html">Editing
-     * OpsItem details</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * OpsItem details</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline const OpsItemStatus& GetStatus() const{ return m_status; }
 
@@ -426,7 +448,8 @@ namespace Model
      * <p>The OpsItem status. Status can be <code>Open</code>, <code>In
      * Progress</code>, or <code>Resolved</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html">Editing
-     * OpsItem details</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * OpsItem details</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
@@ -434,7 +457,8 @@ namespace Model
      * <p>The OpsItem status. Status can be <code>Open</code>, <code>In
      * Progress</code>, or <code>Resolved</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html">Editing
-     * OpsItem details</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * OpsItem details</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline void SetStatus(const OpsItemStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
@@ -442,7 +466,8 @@ namespace Model
      * <p>The OpsItem status. Status can be <code>Open</code>, <code>In
      * Progress</code>, or <code>Resolved</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html">Editing
-     * OpsItem details</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * OpsItem details</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline void SetStatus(OpsItemStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
@@ -450,7 +475,8 @@ namespace Model
      * <p>The OpsItem status. Status can be <code>Open</code>, <code>In
      * Progress</code>, or <code>Resolved</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html">Editing
-     * OpsItem details</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * OpsItem details</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline OpsItem& WithStatus(const OpsItemStatus& value) { SetStatus(value); return *this;}
 
@@ -458,7 +484,8 @@ namespace Model
      * <p>The OpsItem status. Status can be <code>Open</code>, <code>In
      * Progress</code>, or <code>Resolved</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html">Editing
-     * OpsItem details</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * OpsItem details</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline OpsItem& WithStatus(OpsItemStatus&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -657,19 +684,22 @@ namespace Model
      * keys, troubleshooting tips, or other relevant data. You enter operational data
      * as key-value pairs. The key has a maximum length of 128 characters. The value
      * has a maximum size of 20 KB.</p>  <p>Operational data keys
-     * <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws,
-     * /amzn, /ssm.</p>  <p>You can choose to make the data searchable by
-     * other users in the account or you can restrict search access. Searchable data
-     * means that all users with access to the OpsItem Overview page (as provided by
-     * the <a>DescribeOpsItems</a> API action) can view and search on the specified
-     * data. Operational data that is not searchable is only viewable by users who have
-     * access to the OpsItem (as provided by the <a>GetOpsItem</a> API action).</p>
-     * <p>Use the <code>/aws/resources</code> key in OperationalData to specify a
-     * related resource in the request. Use the <code>/aws/automations</code> key in
-     * OperationalData to associate an Automation runbook with the OpsItem. To view AWS
-     * CLI example commands that use these keys, see <a
+     * <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>,
+     * <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>,
+     * <code>/amzn</code>, <code>/ssm</code>.</p>  <p>You can choose to
+     * make the data searchable by other users in the account or you can restrict
+     * search access. Searchable data means that all users with access to the OpsItem
+     * Overview page (as provided by the <a>DescribeOpsItems</a> API operation) can
+     * view and search on the specified data. Operational data that isn't searchable is
+     * only viewable by users who have access to the OpsItem (as provided by the
+     * <a>GetOpsItem</a> API operation).</p> <p>Use the <code>/aws/resources</code> key
+     * in OperationalData to specify a related resource in the request. Use the
+     * <code>/aws/automations</code> key in OperationalData to associate an Automation
+     * runbook with the OpsItem. To view Amazon Web Services CLI example commands that
+     * use these keys, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
-     * OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, OpsItemDataValue>& GetOperationalData() const{ return m_operationalData; }
 
@@ -679,19 +709,22 @@ namespace Model
      * keys, troubleshooting tips, or other relevant data. You enter operational data
      * as key-value pairs. The key has a maximum length of 128 characters. The value
      * has a maximum size of 20 KB.</p>  <p>Operational data keys
-     * <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws,
-     * /amzn, /ssm.</p>  <p>You can choose to make the data searchable by
-     * other users in the account or you can restrict search access. Searchable data
-     * means that all users with access to the OpsItem Overview page (as provided by
-     * the <a>DescribeOpsItems</a> API action) can view and search on the specified
-     * data. Operational data that is not searchable is only viewable by users who have
-     * access to the OpsItem (as provided by the <a>GetOpsItem</a> API action).</p>
-     * <p>Use the <code>/aws/resources</code> key in OperationalData to specify a
-     * related resource in the request. Use the <code>/aws/automations</code> key in
-     * OperationalData to associate an Automation runbook with the OpsItem. To view AWS
-     * CLI example commands that use these keys, see <a
+     * <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>,
+     * <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>,
+     * <code>/amzn</code>, <code>/ssm</code>.</p>  <p>You can choose to
+     * make the data searchable by other users in the account or you can restrict
+     * search access. Searchable data means that all users with access to the OpsItem
+     * Overview page (as provided by the <a>DescribeOpsItems</a> API operation) can
+     * view and search on the specified data. Operational data that isn't searchable is
+     * only viewable by users who have access to the OpsItem (as provided by the
+     * <a>GetOpsItem</a> API operation).</p> <p>Use the <code>/aws/resources</code> key
+     * in OperationalData to specify a related resource in the request. Use the
+     * <code>/aws/automations</code> key in OperationalData to associate an Automation
+     * runbook with the OpsItem. To view Amazon Web Services CLI example commands that
+     * use these keys, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
-     * OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline bool OperationalDataHasBeenSet() const { return m_operationalDataHasBeenSet; }
 
@@ -701,19 +734,22 @@ namespace Model
      * keys, troubleshooting tips, or other relevant data. You enter operational data
      * as key-value pairs. The key has a maximum length of 128 characters. The value
      * has a maximum size of 20 KB.</p>  <p>Operational data keys
-     * <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws,
-     * /amzn, /ssm.</p>  <p>You can choose to make the data searchable by
-     * other users in the account or you can restrict search access. Searchable data
-     * means that all users with access to the OpsItem Overview page (as provided by
-     * the <a>DescribeOpsItems</a> API action) can view and search on the specified
-     * data. Operational data that is not searchable is only viewable by users who have
-     * access to the OpsItem (as provided by the <a>GetOpsItem</a> API action).</p>
-     * <p>Use the <code>/aws/resources</code> key in OperationalData to specify a
-     * related resource in the request. Use the <code>/aws/automations</code> key in
-     * OperationalData to associate an Automation runbook with the OpsItem. To view AWS
-     * CLI example commands that use these keys, see <a
+     * <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>,
+     * <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>,
+     * <code>/amzn</code>, <code>/ssm</code>.</p>  <p>You can choose to
+     * make the data searchable by other users in the account or you can restrict
+     * search access. Searchable data means that all users with access to the OpsItem
+     * Overview page (as provided by the <a>DescribeOpsItems</a> API operation) can
+     * view and search on the specified data. Operational data that isn't searchable is
+     * only viewable by users who have access to the OpsItem (as provided by the
+     * <a>GetOpsItem</a> API operation).</p> <p>Use the <code>/aws/resources</code> key
+     * in OperationalData to specify a related resource in the request. Use the
+     * <code>/aws/automations</code> key in OperationalData to associate an Automation
+     * runbook with the OpsItem. To view Amazon Web Services CLI example commands that
+     * use these keys, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
-     * OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline void SetOperationalData(const Aws::Map<Aws::String, OpsItemDataValue>& value) { m_operationalDataHasBeenSet = true; m_operationalData = value; }
 
@@ -723,19 +759,22 @@ namespace Model
      * keys, troubleshooting tips, or other relevant data. You enter operational data
      * as key-value pairs. The key has a maximum length of 128 characters. The value
      * has a maximum size of 20 KB.</p>  <p>Operational data keys
-     * <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws,
-     * /amzn, /ssm.</p>  <p>You can choose to make the data searchable by
-     * other users in the account or you can restrict search access. Searchable data
-     * means that all users with access to the OpsItem Overview page (as provided by
-     * the <a>DescribeOpsItems</a> API action) can view and search on the specified
-     * data. Operational data that is not searchable is only viewable by users who have
-     * access to the OpsItem (as provided by the <a>GetOpsItem</a> API action).</p>
-     * <p>Use the <code>/aws/resources</code> key in OperationalData to specify a
-     * related resource in the request. Use the <code>/aws/automations</code> key in
-     * OperationalData to associate an Automation runbook with the OpsItem. To view AWS
-     * CLI example commands that use these keys, see <a
+     * <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>,
+     * <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>,
+     * <code>/amzn</code>, <code>/ssm</code>.</p>  <p>You can choose to
+     * make the data searchable by other users in the account or you can restrict
+     * search access. Searchable data means that all users with access to the OpsItem
+     * Overview page (as provided by the <a>DescribeOpsItems</a> API operation) can
+     * view and search on the specified data. Operational data that isn't searchable is
+     * only viewable by users who have access to the OpsItem (as provided by the
+     * <a>GetOpsItem</a> API operation).</p> <p>Use the <code>/aws/resources</code> key
+     * in OperationalData to specify a related resource in the request. Use the
+     * <code>/aws/automations</code> key in OperationalData to associate an Automation
+     * runbook with the OpsItem. To view Amazon Web Services CLI example commands that
+     * use these keys, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
-     * OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline void SetOperationalData(Aws::Map<Aws::String, OpsItemDataValue>&& value) { m_operationalDataHasBeenSet = true; m_operationalData = std::move(value); }
 
@@ -745,19 +784,22 @@ namespace Model
      * keys, troubleshooting tips, or other relevant data. You enter operational data
      * as key-value pairs. The key has a maximum length of 128 characters. The value
      * has a maximum size of 20 KB.</p>  <p>Operational data keys
-     * <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws,
-     * /amzn, /ssm.</p>  <p>You can choose to make the data searchable by
-     * other users in the account or you can restrict search access. Searchable data
-     * means that all users with access to the OpsItem Overview page (as provided by
-     * the <a>DescribeOpsItems</a> API action) can view and search on the specified
-     * data. Operational data that is not searchable is only viewable by users who have
-     * access to the OpsItem (as provided by the <a>GetOpsItem</a> API action).</p>
-     * <p>Use the <code>/aws/resources</code> key in OperationalData to specify a
-     * related resource in the request. Use the <code>/aws/automations</code> key in
-     * OperationalData to associate an Automation runbook with the OpsItem. To view AWS
-     * CLI example commands that use these keys, see <a
+     * <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>,
+     * <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>,
+     * <code>/amzn</code>, <code>/ssm</code>.</p>  <p>You can choose to
+     * make the data searchable by other users in the account or you can restrict
+     * search access. Searchable data means that all users with access to the OpsItem
+     * Overview page (as provided by the <a>DescribeOpsItems</a> API operation) can
+     * view and search on the specified data. Operational data that isn't searchable is
+     * only viewable by users who have access to the OpsItem (as provided by the
+     * <a>GetOpsItem</a> API operation).</p> <p>Use the <code>/aws/resources</code> key
+     * in OperationalData to specify a related resource in the request. Use the
+     * <code>/aws/automations</code> key in OperationalData to associate an Automation
+     * runbook with the OpsItem. To view Amazon Web Services CLI example commands that
+     * use these keys, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
-     * OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline OpsItem& WithOperationalData(const Aws::Map<Aws::String, OpsItemDataValue>& value) { SetOperationalData(value); return *this;}
 
@@ -767,19 +809,22 @@ namespace Model
      * keys, troubleshooting tips, or other relevant data. You enter operational data
      * as key-value pairs. The key has a maximum length of 128 characters. The value
      * has a maximum size of 20 KB.</p>  <p>Operational data keys
-     * <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws,
-     * /amzn, /ssm.</p>  <p>You can choose to make the data searchable by
-     * other users in the account or you can restrict search access. Searchable data
-     * means that all users with access to the OpsItem Overview page (as provided by
-     * the <a>DescribeOpsItems</a> API action) can view and search on the specified
-     * data. Operational data that is not searchable is only viewable by users who have
-     * access to the OpsItem (as provided by the <a>GetOpsItem</a> API action).</p>
-     * <p>Use the <code>/aws/resources</code> key in OperationalData to specify a
-     * related resource in the request. Use the <code>/aws/automations</code> key in
-     * OperationalData to associate an Automation runbook with the OpsItem. To view AWS
-     * CLI example commands that use these keys, see <a
+     * <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>,
+     * <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>,
+     * <code>/amzn</code>, <code>/ssm</code>.</p>  <p>You can choose to
+     * make the data searchable by other users in the account or you can restrict
+     * search access. Searchable data means that all users with access to the OpsItem
+     * Overview page (as provided by the <a>DescribeOpsItems</a> API operation) can
+     * view and search on the specified data. Operational data that isn't searchable is
+     * only viewable by users who have access to the OpsItem (as provided by the
+     * <a>GetOpsItem</a> API operation).</p> <p>Use the <code>/aws/resources</code> key
+     * in OperationalData to specify a related resource in the request. Use the
+     * <code>/aws/automations</code> key in OperationalData to associate an Automation
+     * runbook with the OpsItem. To view Amazon Web Services CLI example commands that
+     * use these keys, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
-     * OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline OpsItem& WithOperationalData(Aws::Map<Aws::String, OpsItemDataValue>&& value) { SetOperationalData(std::move(value)); return *this;}
 
@@ -789,19 +834,22 @@ namespace Model
      * keys, troubleshooting tips, or other relevant data. You enter operational data
      * as key-value pairs. The key has a maximum length of 128 characters. The value
      * has a maximum size of 20 KB.</p>  <p>Operational data keys
-     * <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws,
-     * /amzn, /ssm.</p>  <p>You can choose to make the data searchable by
-     * other users in the account or you can restrict search access. Searchable data
-     * means that all users with access to the OpsItem Overview page (as provided by
-     * the <a>DescribeOpsItems</a> API action) can view and search on the specified
-     * data. Operational data that is not searchable is only viewable by users who have
-     * access to the OpsItem (as provided by the <a>GetOpsItem</a> API action).</p>
-     * <p>Use the <code>/aws/resources</code> key in OperationalData to specify a
-     * related resource in the request. Use the <code>/aws/automations</code> key in
-     * OperationalData to associate an Automation runbook with the OpsItem. To view AWS
-     * CLI example commands that use these keys, see <a
+     * <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>,
+     * <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>,
+     * <code>/amzn</code>, <code>/ssm</code>.</p>  <p>You can choose to
+     * make the data searchable by other users in the account or you can restrict
+     * search access. Searchable data means that all users with access to the OpsItem
+     * Overview page (as provided by the <a>DescribeOpsItems</a> API operation) can
+     * view and search on the specified data. Operational data that isn't searchable is
+     * only viewable by users who have access to the OpsItem (as provided by the
+     * <a>GetOpsItem</a> API operation).</p> <p>Use the <code>/aws/resources</code> key
+     * in OperationalData to specify a related resource in the request. Use the
+     * <code>/aws/automations</code> key in OperationalData to associate an Automation
+     * runbook with the OpsItem. To view Amazon Web Services CLI example commands that
+     * use these keys, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
-     * OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline OpsItem& AddOperationalData(const Aws::String& key, const OpsItemDataValue& value) { m_operationalDataHasBeenSet = true; m_operationalData.emplace(key, value); return *this; }
 
@@ -811,19 +859,22 @@ namespace Model
      * keys, troubleshooting tips, or other relevant data. You enter operational data
      * as key-value pairs. The key has a maximum length of 128 characters. The value
      * has a maximum size of 20 KB.</p>  <p>Operational data keys
-     * <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws,
-     * /amzn, /ssm.</p>  <p>You can choose to make the data searchable by
-     * other users in the account or you can restrict search access. Searchable data
-     * means that all users with access to the OpsItem Overview page (as provided by
-     * the <a>DescribeOpsItems</a> API action) can view and search on the specified
-     * data. Operational data that is not searchable is only viewable by users who have
-     * access to the OpsItem (as provided by the <a>GetOpsItem</a> API action).</p>
-     * <p>Use the <code>/aws/resources</code> key in OperationalData to specify a
-     * related resource in the request. Use the <code>/aws/automations</code> key in
-     * OperationalData to associate an Automation runbook with the OpsItem. To view AWS
-     * CLI example commands that use these keys, see <a
+     * <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>,
+     * <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>,
+     * <code>/amzn</code>, <code>/ssm</code>.</p>  <p>You can choose to
+     * make the data searchable by other users in the account or you can restrict
+     * search access. Searchable data means that all users with access to the OpsItem
+     * Overview page (as provided by the <a>DescribeOpsItems</a> API operation) can
+     * view and search on the specified data. Operational data that isn't searchable is
+     * only viewable by users who have access to the OpsItem (as provided by the
+     * <a>GetOpsItem</a> API operation).</p> <p>Use the <code>/aws/resources</code> key
+     * in OperationalData to specify a related resource in the request. Use the
+     * <code>/aws/automations</code> key in OperationalData to associate an Automation
+     * runbook with the OpsItem. To view Amazon Web Services CLI example commands that
+     * use these keys, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
-     * OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline OpsItem& AddOperationalData(Aws::String&& key, const OpsItemDataValue& value) { m_operationalDataHasBeenSet = true; m_operationalData.emplace(std::move(key), value); return *this; }
 
@@ -833,19 +884,22 @@ namespace Model
      * keys, troubleshooting tips, or other relevant data. You enter operational data
      * as key-value pairs. The key has a maximum length of 128 characters. The value
      * has a maximum size of 20 KB.</p>  <p>Operational data keys
-     * <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws,
-     * /amzn, /ssm.</p>  <p>You can choose to make the data searchable by
-     * other users in the account or you can restrict search access. Searchable data
-     * means that all users with access to the OpsItem Overview page (as provided by
-     * the <a>DescribeOpsItems</a> API action) can view and search on the specified
-     * data. Operational data that is not searchable is only viewable by users who have
-     * access to the OpsItem (as provided by the <a>GetOpsItem</a> API action).</p>
-     * <p>Use the <code>/aws/resources</code> key in OperationalData to specify a
-     * related resource in the request. Use the <code>/aws/automations</code> key in
-     * OperationalData to associate an Automation runbook with the OpsItem. To view AWS
-     * CLI example commands that use these keys, see <a
+     * <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>,
+     * <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>,
+     * <code>/amzn</code>, <code>/ssm</code>.</p>  <p>You can choose to
+     * make the data searchable by other users in the account or you can restrict
+     * search access. Searchable data means that all users with access to the OpsItem
+     * Overview page (as provided by the <a>DescribeOpsItems</a> API operation) can
+     * view and search on the specified data. Operational data that isn't searchable is
+     * only viewable by users who have access to the OpsItem (as provided by the
+     * <a>GetOpsItem</a> API operation).</p> <p>Use the <code>/aws/resources</code> key
+     * in OperationalData to specify a related resource in the request. Use the
+     * <code>/aws/automations</code> key in OperationalData to associate an Automation
+     * runbook with the OpsItem. To view Amazon Web Services CLI example commands that
+     * use these keys, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
-     * OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline OpsItem& AddOperationalData(const Aws::String& key, OpsItemDataValue&& value) { m_operationalDataHasBeenSet = true; m_operationalData.emplace(key, std::move(value)); return *this; }
 
@@ -855,19 +909,22 @@ namespace Model
      * keys, troubleshooting tips, or other relevant data. You enter operational data
      * as key-value pairs. The key has a maximum length of 128 characters. The value
      * has a maximum size of 20 KB.</p>  <p>Operational data keys
-     * <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws,
-     * /amzn, /ssm.</p>  <p>You can choose to make the data searchable by
-     * other users in the account or you can restrict search access. Searchable data
-     * means that all users with access to the OpsItem Overview page (as provided by
-     * the <a>DescribeOpsItems</a> API action) can view and search on the specified
-     * data. Operational data that is not searchable is only viewable by users who have
-     * access to the OpsItem (as provided by the <a>GetOpsItem</a> API action).</p>
-     * <p>Use the <code>/aws/resources</code> key in OperationalData to specify a
-     * related resource in the request. Use the <code>/aws/automations</code> key in
-     * OperationalData to associate an Automation runbook with the OpsItem. To view AWS
-     * CLI example commands that use these keys, see <a
+     * <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>,
+     * <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>,
+     * <code>/amzn</code>, <code>/ssm</code>.</p>  <p>You can choose to
+     * make the data searchable by other users in the account or you can restrict
+     * search access. Searchable data means that all users with access to the OpsItem
+     * Overview page (as provided by the <a>DescribeOpsItems</a> API operation) can
+     * view and search on the specified data. Operational data that isn't searchable is
+     * only viewable by users who have access to the OpsItem (as provided by the
+     * <a>GetOpsItem</a> API operation).</p> <p>Use the <code>/aws/resources</code> key
+     * in OperationalData to specify a related resource in the request. Use the
+     * <code>/aws/automations</code> key in OperationalData to associate an Automation
+     * runbook with the OpsItem. To view Amazon Web Services CLI example commands that
+     * use these keys, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
-     * OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline OpsItem& AddOperationalData(Aws::String&& key, OpsItemDataValue&& value) { m_operationalDataHasBeenSet = true; m_operationalData.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -877,19 +934,22 @@ namespace Model
      * keys, troubleshooting tips, or other relevant data. You enter operational data
      * as key-value pairs. The key has a maximum length of 128 characters. The value
      * has a maximum size of 20 KB.</p>  <p>Operational data keys
-     * <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws,
-     * /amzn, /ssm.</p>  <p>You can choose to make the data searchable by
-     * other users in the account or you can restrict search access. Searchable data
-     * means that all users with access to the OpsItem Overview page (as provided by
-     * the <a>DescribeOpsItems</a> API action) can view and search on the specified
-     * data. Operational data that is not searchable is only viewable by users who have
-     * access to the OpsItem (as provided by the <a>GetOpsItem</a> API action).</p>
-     * <p>Use the <code>/aws/resources</code> key in OperationalData to specify a
-     * related resource in the request. Use the <code>/aws/automations</code> key in
-     * OperationalData to associate an Automation runbook with the OpsItem. To view AWS
-     * CLI example commands that use these keys, see <a
+     * <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>,
+     * <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>,
+     * <code>/amzn</code>, <code>/ssm</code>.</p>  <p>You can choose to
+     * make the data searchable by other users in the account or you can restrict
+     * search access. Searchable data means that all users with access to the OpsItem
+     * Overview page (as provided by the <a>DescribeOpsItems</a> API operation) can
+     * view and search on the specified data. Operational data that isn't searchable is
+     * only viewable by users who have access to the OpsItem (as provided by the
+     * <a>GetOpsItem</a> API operation).</p> <p>Use the <code>/aws/resources</code> key
+     * in OperationalData to specify a related resource in the request. Use the
+     * <code>/aws/automations</code> key in OperationalData to associate an Automation
+     * runbook with the OpsItem. To view Amazon Web Services CLI example commands that
+     * use these keys, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
-     * OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline OpsItem& AddOperationalData(const char* key, OpsItemDataValue&& value) { m_operationalDataHasBeenSet = true; m_operationalData.emplace(key, std::move(value)); return *this; }
 
@@ -899,19 +959,22 @@ namespace Model
      * keys, troubleshooting tips, or other relevant data. You enter operational data
      * as key-value pairs. The key has a maximum length of 128 characters. The value
      * has a maximum size of 20 KB.</p>  <p>Operational data keys
-     * <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws,
-     * /amzn, /ssm.</p>  <p>You can choose to make the data searchable by
-     * other users in the account or you can restrict search access. Searchable data
-     * means that all users with access to the OpsItem Overview page (as provided by
-     * the <a>DescribeOpsItems</a> API action) can view and search on the specified
-     * data. Operational data that is not searchable is only viewable by users who have
-     * access to the OpsItem (as provided by the <a>GetOpsItem</a> API action).</p>
-     * <p>Use the <code>/aws/resources</code> key in OperationalData to specify a
-     * related resource in the request. Use the <code>/aws/automations</code> key in
-     * OperationalData to associate an Automation runbook with the OpsItem. To view AWS
-     * CLI example commands that use these keys, see <a
+     * <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>,
+     * <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>,
+     * <code>/amzn</code>, <code>/ssm</code>.</p>  <p>You can choose to
+     * make the data searchable by other users in the account or you can restrict
+     * search access. Searchable data means that all users with access to the OpsItem
+     * Overview page (as provided by the <a>DescribeOpsItems</a> API operation) can
+     * view and search on the specified data. Operational data that isn't searchable is
+     * only viewable by users who have access to the OpsItem (as provided by the
+     * <a>GetOpsItem</a> API operation).</p> <p>Use the <code>/aws/resources</code> key
+     * in OperationalData to specify a related resource in the request. Use the
+     * <code>/aws/automations</code> key in OperationalData to associate an Automation
+     * runbook with the OpsItem. To view Amazon Web Services CLI example commands that
+     * use these keys, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
-     * OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline OpsItem& AddOperationalData(const char* key, const OpsItemDataValue& value) { m_operationalDataHasBeenSet = true; m_operationalData.emplace(key, value); return *this; }
 

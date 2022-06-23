@@ -156,25 +156,25 @@ namespace Model
 
 
     /**
-     * <p>The time from update time after which the API key expires. The date is
+     * <p>From the update time, the time after which the API key expires. The date is
      * represented as seconds since the epoch. For more information, see .</p>
      */
     inline long long GetExpires() const{ return m_expires; }
 
     /**
-     * <p>The time from update time after which the API key expires. The date is
+     * <p>From the update time, the time after which the API key expires. The date is
      * represented as seconds since the epoch. For more information, see .</p>
      */
     inline bool ExpiresHasBeenSet() const { return m_expiresHasBeenSet; }
 
     /**
-     * <p>The time from update time after which the API key expires. The date is
+     * <p>From the update time, the time after which the API key expires. The date is
      * represented as seconds since the epoch. For more information, see .</p>
      */
     inline void SetExpires(long long value) { m_expiresHasBeenSet = true; m_expires = value; }
 
     /**
-     * <p>The time from update time after which the API key expires. The date is
+     * <p>From the update time, the time after which the API key expires. The date is
      * represented as seconds since the epoch. For more information, see .</p>
      */
     inline UpdateApiKeyRequest& WithExpires(long long value) { SetExpires(value); return *this;}

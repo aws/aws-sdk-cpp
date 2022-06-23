@@ -31,20 +31,20 @@ namespace Model
 
 
     /**
-     * <p>The number of instances of sample text that matched the detection criteria
-     * specified in the custom data identifier.</p>
+     * <p>The number of occurrences of sample text that matched the criteria specified
+     * by the custom data identifier.</p>
      */
     inline int GetMatchCount() const{ return m_matchCount; }
 
     /**
-     * <p>The number of instances of sample text that matched the detection criteria
-     * specified in the custom data identifier.</p>
+     * <p>The number of occurrences of sample text that matched the criteria specified
+     * by the custom data identifier.</p>
      */
     inline void SetMatchCount(int value) { m_matchCount = value; }
 
     /**
-     * <p>The number of instances of sample text that matched the detection criteria
-     * specified in the custom data identifier.</p>
+     * <p>The number of occurrences of sample text that matched the criteria specified
+     * by the custom data identifier.</p>
      */
     inline TestCustomDataIdentifierResult& WithMatchCount(int value) { SetMatchCount(value); return *this;}
 

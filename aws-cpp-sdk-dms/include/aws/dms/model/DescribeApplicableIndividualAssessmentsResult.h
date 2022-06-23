@@ -44,8 +44,8 @@ namespace Model
      * more information on the available individual assessments, including
      * compatibility with different migration task configurations, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Working
-     * with premigration assessment runs</a> in the <i>AWS Database Migration Service
-     * User Guide.</i> </p>
+     * with premigration assessment runs</a> in the <i>Database Migration Service User
+     * Guide.</i> </p>
      */
     inline const Aws::Vector<Aws::String>& GetIndividualAssessmentNames() const{ return m_individualAssessmentNames; }
 
@@ -55,8 +55,8 @@ namespace Model
      * more information on the available individual assessments, including
      * compatibility with different migration task configurations, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Working
-     * with premigration assessment runs</a> in the <i>AWS Database Migration Service
-     * User Guide.</i> </p>
+     * with premigration assessment runs</a> in the <i>Database Migration Service User
+     * Guide.</i> </p>
      */
     inline void SetIndividualAssessmentNames(const Aws::Vector<Aws::String>& value) { m_individualAssessmentNames = value; }
 
@@ -66,8 +66,8 @@ namespace Model
      * more information on the available individual assessments, including
      * compatibility with different migration task configurations, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Working
-     * with premigration assessment runs</a> in the <i>AWS Database Migration Service
-     * User Guide.</i> </p>
+     * with premigration assessment runs</a> in the <i>Database Migration Service User
+     * Guide.</i> </p>
      */
     inline void SetIndividualAssessmentNames(Aws::Vector<Aws::String>&& value) { m_individualAssessmentNames = std::move(value); }
 
@@ -77,8 +77,8 @@ namespace Model
      * more information on the available individual assessments, including
      * compatibility with different migration task configurations, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Working
-     * with premigration assessment runs</a> in the <i>AWS Database Migration Service
-     * User Guide.</i> </p>
+     * with premigration assessment runs</a> in the <i>Database Migration Service User
+     * Guide.</i> </p>
      */
     inline DescribeApplicableIndividualAssessmentsResult& WithIndividualAssessmentNames(const Aws::Vector<Aws::String>& value) { SetIndividualAssessmentNames(value); return *this;}
 
@@ -88,8 +88,8 @@ namespace Model
      * more information on the available individual assessments, including
      * compatibility with different migration task configurations, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Working
-     * with premigration assessment runs</a> in the <i>AWS Database Migration Service
-     * User Guide.</i> </p>
+     * with premigration assessment runs</a> in the <i>Database Migration Service User
+     * Guide.</i> </p>
      */
     inline DescribeApplicableIndividualAssessmentsResult& WithIndividualAssessmentNames(Aws::Vector<Aws::String>&& value) { SetIndividualAssessmentNames(std::move(value)); return *this;}
 
@@ -99,8 +99,8 @@ namespace Model
      * more information on the available individual assessments, including
      * compatibility with different migration task configurations, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Working
-     * with premigration assessment runs</a> in the <i>AWS Database Migration Service
-     * User Guide.</i> </p>
+     * with premigration assessment runs</a> in the <i>Database Migration Service User
+     * Guide.</i> </p>
      */
     inline DescribeApplicableIndividualAssessmentsResult& AddIndividualAssessmentNames(const Aws::String& value) { m_individualAssessmentNames.push_back(value); return *this; }
 
@@ -110,8 +110,8 @@ namespace Model
      * more information on the available individual assessments, including
      * compatibility with different migration task configurations, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Working
-     * with premigration assessment runs</a> in the <i>AWS Database Migration Service
-     * User Guide.</i> </p>
+     * with premigration assessment runs</a> in the <i>Database Migration Service User
+     * Guide.</i> </p>
      */
     inline DescribeApplicableIndividualAssessmentsResult& AddIndividualAssessmentNames(Aws::String&& value) { m_individualAssessmentNames.push_back(std::move(value)); return *this; }
 
@@ -121,8 +121,8 @@ namespace Model
      * more information on the available individual assessments, including
      * compatibility with different migration task configurations, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Working
-     * with premigration assessment runs</a> in the <i>AWS Database Migration Service
-     * User Guide.</i> </p>
+     * with premigration assessment runs</a> in the <i>Database Migration Service User
+     * Guide.</i> </p>
      */
     inline DescribeApplicableIndividualAssessmentsResult& AddIndividualAssessmentNames(const char* value) { m_individualAssessmentNames.push_back(value); return *this; }
 

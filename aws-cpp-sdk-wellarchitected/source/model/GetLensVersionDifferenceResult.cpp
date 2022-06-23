@@ -34,9 +34,21 @@ GetLensVersionDifferenceResult& GetLensVersionDifferenceResult::operator =(const
 
   }
 
+  if(jsonValue.ValueExists("LensArn"))
+  {
+    m_lensArn = jsonValue.GetString("LensArn");
+
+  }
+
   if(jsonValue.ValueExists("BaseLensVersion"))
   {
     m_baseLensVersion = jsonValue.GetString("BaseLensVersion");
+
+  }
+
+  if(jsonValue.ValueExists("TargetLensVersion"))
+  {
+    m_targetLensVersion = jsonValue.GetString("TargetLensVersion");
 
   }
 

@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int EXPORT_TO_REPOSITORY_HASH = HashingUtils::HashString("EXPORT_TO_REPOSITORY");
+        static const int IMPORT_METADATA_FROM_REPOSITORY_HASH = HashingUtils::HashString("IMPORT_METADATA_FROM_REPOSITORY");
 
 
         DataRepositoryTaskType GetDataRepositoryTaskTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == EXPORT_TO_REPOSITORY_HASH)
           {
             return DataRepositoryTaskType::EXPORT_TO_REPOSITORY;
+          }
+          else if (hashCode == IMPORT_METADATA_FROM_REPOSITORY_HASH)
+          {
+            return DataRepositoryTaskType::IMPORT_METADATA_FROM_REPOSITORY;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +51,8 @@ namespace Aws
           {
           case DataRepositoryTaskType::EXPORT_TO_REPOSITORY:
             return "EXPORT_TO_REPOSITORY";
+          case DataRepositoryTaskType::IMPORT_METADATA_FROM_REPOSITORY:
+            return "IMPORT_METADATA_FROM_REPOSITORY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

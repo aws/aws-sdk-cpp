@@ -25,8 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>The combination of AWS Regions and accounts targeted by the current
-   * Automation execution.</p><p><h3>See Also:</h3>   <a
+   * <p>The combination of Amazon Web Services Regions and Amazon Web Services
+   * accounts targeted by the current Automation execution.</p><p><h3>See Also:</h3> 
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/TargetLocation">AWS
    * API Reference</a></p>
    */
@@ -40,142 +41,160 @@ namespace Model
 
 
     /**
-     * <p>The AWS accounts targeted by the current Automation execution.</p>
+     * <p>The Amazon Web Services accounts targeted by the current Automation
+     * execution.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAccounts() const{ return m_accounts; }
 
     /**
-     * <p>The AWS accounts targeted by the current Automation execution.</p>
+     * <p>The Amazon Web Services accounts targeted by the current Automation
+     * execution.</p>
      */
     inline bool AccountsHasBeenSet() const { return m_accountsHasBeenSet; }
 
     /**
-     * <p>The AWS accounts targeted by the current Automation execution.</p>
+     * <p>The Amazon Web Services accounts targeted by the current Automation
+     * execution.</p>
      */
     inline void SetAccounts(const Aws::Vector<Aws::String>& value) { m_accountsHasBeenSet = true; m_accounts = value; }
 
     /**
-     * <p>The AWS accounts targeted by the current Automation execution.</p>
+     * <p>The Amazon Web Services accounts targeted by the current Automation
+     * execution.</p>
      */
     inline void SetAccounts(Aws::Vector<Aws::String>&& value) { m_accountsHasBeenSet = true; m_accounts = std::move(value); }
 
     /**
-     * <p>The AWS accounts targeted by the current Automation execution.</p>
+     * <p>The Amazon Web Services accounts targeted by the current Automation
+     * execution.</p>
      */
     inline TargetLocation& WithAccounts(const Aws::Vector<Aws::String>& value) { SetAccounts(value); return *this;}
 
     /**
-     * <p>The AWS accounts targeted by the current Automation execution.</p>
+     * <p>The Amazon Web Services accounts targeted by the current Automation
+     * execution.</p>
      */
     inline TargetLocation& WithAccounts(Aws::Vector<Aws::String>&& value) { SetAccounts(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS accounts targeted by the current Automation execution.</p>
+     * <p>The Amazon Web Services accounts targeted by the current Automation
+     * execution.</p>
      */
     inline TargetLocation& AddAccounts(const Aws::String& value) { m_accountsHasBeenSet = true; m_accounts.push_back(value); return *this; }
 
     /**
-     * <p>The AWS accounts targeted by the current Automation execution.</p>
+     * <p>The Amazon Web Services accounts targeted by the current Automation
+     * execution.</p>
      */
     inline TargetLocation& AddAccounts(Aws::String&& value) { m_accountsHasBeenSet = true; m_accounts.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The AWS accounts targeted by the current Automation execution.</p>
+     * <p>The Amazon Web Services accounts targeted by the current Automation
+     * execution.</p>
      */
     inline TargetLocation& AddAccounts(const char* value) { m_accountsHasBeenSet = true; m_accounts.push_back(value); return *this; }
 
 
     /**
-     * <p>The AWS Regions targeted by the current Automation execution.</p>
+     * <p>The Amazon Web Services Regions targeted by the current Automation
+     * execution.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRegions() const{ return m_regions; }
 
     /**
-     * <p>The AWS Regions targeted by the current Automation execution.</p>
+     * <p>The Amazon Web Services Regions targeted by the current Automation
+     * execution.</p>
      */
     inline bool RegionsHasBeenSet() const { return m_regionsHasBeenSet; }
 
     /**
-     * <p>The AWS Regions targeted by the current Automation execution.</p>
+     * <p>The Amazon Web Services Regions targeted by the current Automation
+     * execution.</p>
      */
     inline void SetRegions(const Aws::Vector<Aws::String>& value) { m_regionsHasBeenSet = true; m_regions = value; }
 
     /**
-     * <p>The AWS Regions targeted by the current Automation execution.</p>
+     * <p>The Amazon Web Services Regions targeted by the current Automation
+     * execution.</p>
      */
     inline void SetRegions(Aws::Vector<Aws::String>&& value) { m_regionsHasBeenSet = true; m_regions = std::move(value); }
 
     /**
-     * <p>The AWS Regions targeted by the current Automation execution.</p>
+     * <p>The Amazon Web Services Regions targeted by the current Automation
+     * execution.</p>
      */
     inline TargetLocation& WithRegions(const Aws::Vector<Aws::String>& value) { SetRegions(value); return *this;}
 
     /**
-     * <p>The AWS Regions targeted by the current Automation execution.</p>
+     * <p>The Amazon Web Services Regions targeted by the current Automation
+     * execution.</p>
      */
     inline TargetLocation& WithRegions(Aws::Vector<Aws::String>&& value) { SetRegions(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Regions targeted by the current Automation execution.</p>
+     * <p>The Amazon Web Services Regions targeted by the current Automation
+     * execution.</p>
      */
     inline TargetLocation& AddRegions(const Aws::String& value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
 
     /**
-     * <p>The AWS Regions targeted by the current Automation execution.</p>
+     * <p>The Amazon Web Services Regions targeted by the current Automation
+     * execution.</p>
      */
     inline TargetLocation& AddRegions(Aws::String&& value) { m_regionsHasBeenSet = true; m_regions.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The AWS Regions targeted by the current Automation execution.</p>
+     * <p>The Amazon Web Services Regions targeted by the current Automation
+     * execution.</p>
      */
     inline TargetLocation& AddRegions(const char* value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
 
 
     /**
-     * <p>The maximum number of AWS accounts and AWS regions allowed to run the
-     * Automation concurrently.</p>
+     * <p>The maximum number of Amazon Web Services Regions and Amazon Web Services
+     * accounts allowed to run the Automation concurrently.</p>
      */
     inline const Aws::String& GetTargetLocationMaxConcurrency() const{ return m_targetLocationMaxConcurrency; }
 
     /**
-     * <p>The maximum number of AWS accounts and AWS regions allowed to run the
-     * Automation concurrently.</p>
+     * <p>The maximum number of Amazon Web Services Regions and Amazon Web Services
+     * accounts allowed to run the Automation concurrently.</p>
      */
     inline bool TargetLocationMaxConcurrencyHasBeenSet() const { return m_targetLocationMaxConcurrencyHasBeenSet; }
 
     /**
-     * <p>The maximum number of AWS accounts and AWS regions allowed to run the
-     * Automation concurrently.</p>
+     * <p>The maximum number of Amazon Web Services Regions and Amazon Web Services
+     * accounts allowed to run the Automation concurrently.</p>
      */
     inline void SetTargetLocationMaxConcurrency(const Aws::String& value) { m_targetLocationMaxConcurrencyHasBeenSet = true; m_targetLocationMaxConcurrency = value; }
 
     /**
-     * <p>The maximum number of AWS accounts and AWS regions allowed to run the
-     * Automation concurrently.</p>
+     * <p>The maximum number of Amazon Web Services Regions and Amazon Web Services
+     * accounts allowed to run the Automation concurrently.</p>
      */
     inline void SetTargetLocationMaxConcurrency(Aws::String&& value) { m_targetLocationMaxConcurrencyHasBeenSet = true; m_targetLocationMaxConcurrency = std::move(value); }
 
     /**
-     * <p>The maximum number of AWS accounts and AWS regions allowed to run the
-     * Automation concurrently.</p>
+     * <p>The maximum number of Amazon Web Services Regions and Amazon Web Services
+     * accounts allowed to run the Automation concurrently.</p>
      */
     inline void SetTargetLocationMaxConcurrency(const char* value) { m_targetLocationMaxConcurrencyHasBeenSet = true; m_targetLocationMaxConcurrency.assign(value); }
 
     /**
-     * <p>The maximum number of AWS accounts and AWS regions allowed to run the
-     * Automation concurrently.</p>
+     * <p>The maximum number of Amazon Web Services Regions and Amazon Web Services
+     * accounts allowed to run the Automation concurrently.</p>
      */
     inline TargetLocation& WithTargetLocationMaxConcurrency(const Aws::String& value) { SetTargetLocationMaxConcurrency(value); return *this;}
 
     /**
-     * <p>The maximum number of AWS accounts and AWS regions allowed to run the
-     * Automation concurrently.</p>
+     * <p>The maximum number of Amazon Web Services Regions and Amazon Web Services
+     * accounts allowed to run the Automation concurrently.</p>
      */
     inline TargetLocation& WithTargetLocationMaxConcurrency(Aws::String&& value) { SetTargetLocationMaxConcurrency(std::move(value)); return *this;}
 
     /**
-     * <p>The maximum number of AWS accounts and AWS regions allowed to run the
-     * Automation concurrently.</p>
+     * <p>The maximum number of Amazon Web Services Regions and Amazon Web Services
+     * accounts allowed to run the Automation concurrently.</p>
      */
     inline TargetLocation& WithTargetLocationMaxConcurrency(const char* value) { SetTargetLocationMaxConcurrency(value); return *this;}
 

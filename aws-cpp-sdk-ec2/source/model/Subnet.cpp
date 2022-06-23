@@ -28,6 +28,8 @@ Subnet::Subnet() :
     m_cidrBlockHasBeenSet(false),
     m_defaultForAz(false),
     m_defaultForAzHasBeenSet(false),
+    m_enableLniAtDeviceIndex(0),
+    m_enableLniAtDeviceIndexHasBeenSet(false),
     m_mapPublicIpOnLaunch(false),
     m_mapPublicIpOnLaunchHasBeenSet(false),
     m_mapCustomerOwnedIpOnLaunch(false),
@@ -43,7 +45,12 @@ Subnet::Subnet() :
     m_ipv6CidrBlockAssociationSetHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_subnetArnHasBeenSet(false),
-    m_outpostArnHasBeenSet(false)
+    m_outpostArnHasBeenSet(false),
+    m_enableDns64(false),
+    m_enableDns64HasBeenSet(false),
+    m_ipv6Native(false),
+    m_ipv6NativeHasBeenSet(false),
+    m_privateDnsNameOptionsOnLaunchHasBeenSet(false)
 {
 }
 
@@ -55,6 +62,8 @@ Subnet::Subnet(const XmlNode& xmlNode) :
     m_cidrBlockHasBeenSet(false),
     m_defaultForAz(false),
     m_defaultForAzHasBeenSet(false),
+    m_enableLniAtDeviceIndex(0),
+    m_enableLniAtDeviceIndexHasBeenSet(false),
     m_mapPublicIpOnLaunch(false),
     m_mapPublicIpOnLaunchHasBeenSet(false),
     m_mapCustomerOwnedIpOnLaunch(false),
@@ -70,7 +79,12 @@ Subnet::Subnet(const XmlNode& xmlNode) :
     m_ipv6CidrBlockAssociationSetHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_subnetArnHasBeenSet(false),
-    m_outpostArnHasBeenSet(false)
+    m_outpostArnHasBeenSet(false),
+    m_enableDns64(false),
+    m_enableDns64HasBeenSet(false),
+    m_ipv6Native(false),
+    m_ipv6NativeHasBeenSet(false),
+    m_privateDnsNameOptionsOnLaunchHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -110,6 +124,12 @@ Subnet& Subnet::operator =(const XmlNode& xmlNode)
     {
       m_defaultForAz = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(defaultForAzNode.GetText()).c_str()).c_str());
       m_defaultForAzHasBeenSet = true;
+    }
+    XmlNode enableLniAtDeviceIndexNode = resultNode.FirstChild("enableLniAtDeviceIndex");
+    if(!enableLniAtDeviceIndexNode.IsNull())
+    {
+      m_enableLniAtDeviceIndex = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enableLniAtDeviceIndexNode.GetText()).c_str()).c_str());
+      m_enableLniAtDeviceIndexHasBeenSet = true;
     }
     XmlNode mapPublicIpOnLaunchNode = resultNode.FirstChild("mapPublicIpOnLaunch");
     if(!mapPublicIpOnLaunchNode.IsNull())
@@ -195,6 +215,24 @@ Subnet& Subnet::operator =(const XmlNode& xmlNode)
       m_outpostArn = Aws::Utils::Xml::DecodeEscapedXmlText(outpostArnNode.GetText());
       m_outpostArnHasBeenSet = true;
     }
+    XmlNode enableDns64Node = resultNode.FirstChild("enableDns64");
+    if(!enableDns64Node.IsNull())
+    {
+      m_enableDns64 = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enableDns64Node.GetText()).c_str()).c_str());
+      m_enableDns64HasBeenSet = true;
+    }
+    XmlNode ipv6NativeNode = resultNode.FirstChild("ipv6Native");
+    if(!ipv6NativeNode.IsNull())
+    {
+      m_ipv6Native = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipv6NativeNode.GetText()).c_str()).c_str());
+      m_ipv6NativeHasBeenSet = true;
+    }
+    XmlNode privateDnsNameOptionsOnLaunchNode = resultNode.FirstChild("privateDnsNameOptionsOnLaunch");
+    if(!privateDnsNameOptionsOnLaunchNode.IsNull())
+    {
+      m_privateDnsNameOptionsOnLaunch = privateDnsNameOptionsOnLaunchNode;
+      m_privateDnsNameOptionsOnLaunchHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -225,6 +263,11 @@ void Subnet::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
   if(m_defaultForAzHasBeenSet)
   {
       oStream << location << index << locationValue << ".DefaultForAz=" << std::boolalpha << m_defaultForAz << "&";
+  }
+
+  if(m_enableLniAtDeviceIndexHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".EnableLniAtDeviceIndex=" << m_enableLniAtDeviceIndex << "&";
   }
 
   if(m_mapPublicIpOnLaunchHasBeenSet)
@@ -299,6 +342,23 @@ void Subnet::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
       oStream << location << index << locationValue << ".OutpostArn=" << StringUtils::URLEncode(m_outpostArn.c_str()) << "&";
   }
 
+  if(m_enableDns64HasBeenSet)
+  {
+      oStream << location << index << locationValue << ".EnableDns64=" << std::boolalpha << m_enableDns64 << "&";
+  }
+
+  if(m_ipv6NativeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Ipv6Native=" << std::boolalpha << m_ipv6Native << "&";
+  }
+
+  if(m_privateDnsNameOptionsOnLaunchHasBeenSet)
+  {
+      Aws::StringStream privateDnsNameOptionsOnLaunchLocationAndMemberSs;
+      privateDnsNameOptionsOnLaunchLocationAndMemberSs << location << index << locationValue << ".PrivateDnsNameOptionsOnLaunch";
+      m_privateDnsNameOptionsOnLaunch.OutputToStream(oStream, privateDnsNameOptionsOnLaunchLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void Subnet::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -322,6 +382,10 @@ void Subnet::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_defaultForAzHasBeenSet)
   {
       oStream << location << ".DefaultForAz=" << std::boolalpha << m_defaultForAz << "&";
+  }
+  if(m_enableLniAtDeviceIndexHasBeenSet)
+  {
+      oStream << location << ".EnableLniAtDeviceIndex=" << m_enableLniAtDeviceIndex << "&";
   }
   if(m_mapPublicIpOnLaunchHasBeenSet)
   {
@@ -382,6 +446,20 @@ void Subnet::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_outpostArnHasBeenSet)
   {
       oStream << location << ".OutpostArn=" << StringUtils::URLEncode(m_outpostArn.c_str()) << "&";
+  }
+  if(m_enableDns64HasBeenSet)
+  {
+      oStream << location << ".EnableDns64=" << std::boolalpha << m_enableDns64 << "&";
+  }
+  if(m_ipv6NativeHasBeenSet)
+  {
+      oStream << location << ".Ipv6Native=" << std::boolalpha << m_ipv6Native << "&";
+  }
+  if(m_privateDnsNameOptionsOnLaunchHasBeenSet)
+  {
+      Aws::String privateDnsNameOptionsOnLaunchLocationAndMember(location);
+      privateDnsNameOptionsOnLaunchLocationAndMember += ".PrivateDnsNameOptionsOnLaunch";
+      m_privateDnsNameOptionsOnLaunch.OutputToStream(oStream, privateDnsNameOptionsOnLaunchLocationAndMember.c_str());
   }
 }
 

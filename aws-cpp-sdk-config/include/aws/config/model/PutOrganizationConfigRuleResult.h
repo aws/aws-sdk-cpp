@@ -33,37 +33,37 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an organization config rule.</p>
+     * <p>The Amazon Resource Name (ARN) of an organization Config rule.</p>
      */
     inline const Aws::String& GetOrganizationConfigRuleArn() const{ return m_organizationConfigRuleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an organization config rule.</p>
+     * <p>The Amazon Resource Name (ARN) of an organization Config rule.</p>
      */
     inline void SetOrganizationConfigRuleArn(const Aws::String& value) { m_organizationConfigRuleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an organization config rule.</p>
+     * <p>The Amazon Resource Name (ARN) of an organization Config rule.</p>
      */
     inline void SetOrganizationConfigRuleArn(Aws::String&& value) { m_organizationConfigRuleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an organization config rule.</p>
+     * <p>The Amazon Resource Name (ARN) of an organization Config rule.</p>
      */
     inline void SetOrganizationConfigRuleArn(const char* value) { m_organizationConfigRuleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an organization config rule.</p>
+     * <p>The Amazon Resource Name (ARN) of an organization Config rule.</p>
      */
     inline PutOrganizationConfigRuleResult& WithOrganizationConfigRuleArn(const Aws::String& value) { SetOrganizationConfigRuleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an organization config rule.</p>
+     * <p>The Amazon Resource Name (ARN) of an organization Config rule.</p>
      */
     inline PutOrganizationConfigRuleResult& WithOrganizationConfigRuleArn(Aws::String&& value) { SetOrganizationConfigRuleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an organization config rule.</p>
+     * <p>The Amazon Resource Name (ARN) of an organization Config rule.</p>
      */
     inline PutOrganizationConfigRuleResult& WithOrganizationConfigRuleArn(const char* value) { SetOrganizationConfigRuleArn(value); return *this;}
 

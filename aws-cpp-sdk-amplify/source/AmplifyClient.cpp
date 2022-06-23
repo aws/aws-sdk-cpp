@@ -105,7 +105,7 @@ AmplifyClient::~AmplifyClient()
 {
 }
 
-void AmplifyClient::init(const ClientConfiguration& config)
+void AmplifyClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Amplify");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -134,9 +134,7 @@ void AmplifyClient::OverrideEndpoint(const Aws::String& endpoint)
 CreateAppOutcome AmplifyClient::CreateApp(const CreateAppRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/apps";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/apps");
   return CreateAppOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -166,11 +164,9 @@ CreateBackendEnvironmentOutcome AmplifyClient::CreateBackendEnvironment(const Cr
     return CreateBackendEnvironmentOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/apps/";
-  ss << request.GetAppId();
-  ss << "/backendenvironments";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/apps/");
+  uri.AddPathSegment(request.GetAppId());
+  uri.AddPathSegments("/backendenvironments");
   return CreateBackendEnvironmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -200,11 +196,9 @@ CreateBranchOutcome AmplifyClient::CreateBranch(const CreateBranchRequest& reque
     return CreateBranchOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/apps/";
-  ss << request.GetAppId();
-  ss << "/branches";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/apps/");
+  uri.AddPathSegment(request.GetAppId());
+  uri.AddPathSegments("/branches");
   return CreateBranchOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -239,13 +233,11 @@ CreateDeploymentOutcome AmplifyClient::CreateDeployment(const CreateDeploymentRe
     return CreateDeploymentOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BranchName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/apps/";
-  ss << request.GetAppId();
-  ss << "/branches/";
-  ss << request.GetBranchName();
-  ss << "/deployments";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/apps/");
+  uri.AddPathSegment(request.GetAppId());
+  uri.AddPathSegments("/branches/");
+  uri.AddPathSegment(request.GetBranchName());
+  uri.AddPathSegments("/deployments");
   return CreateDeploymentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -275,11 +267,9 @@ CreateDomainAssociationOutcome AmplifyClient::CreateDomainAssociation(const Crea
     return CreateDomainAssociationOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/apps/";
-  ss << request.GetAppId();
-  ss << "/domains";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/apps/");
+  uri.AddPathSegment(request.GetAppId());
+  uri.AddPathSegments("/domains");
   return CreateDomainAssociationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -309,11 +299,9 @@ CreateWebhookOutcome AmplifyClient::CreateWebhook(const CreateWebhookRequest& re
     return CreateWebhookOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/apps/";
-  ss << request.GetAppId();
-  ss << "/webhooks";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/apps/");
+  uri.AddPathSegment(request.GetAppId());
+  uri.AddPathSegments("/webhooks");
   return CreateWebhookOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -343,10 +331,8 @@ DeleteAppOutcome AmplifyClient::DeleteApp(const DeleteAppRequest& request) const
     return DeleteAppOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/apps/";
-  ss << request.GetAppId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/apps/");
+  uri.AddPathSegment(request.GetAppId());
   return DeleteAppOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -381,12 +367,10 @@ DeleteBackendEnvironmentOutcome AmplifyClient::DeleteBackendEnvironment(const De
     return DeleteBackendEnvironmentOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/apps/";
-  ss << request.GetAppId();
-  ss << "/backendenvironments/";
-  ss << request.GetEnvironmentName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/apps/");
+  uri.AddPathSegment(request.GetAppId());
+  uri.AddPathSegments("/backendenvironments/");
+  uri.AddPathSegment(request.GetEnvironmentName());
   return DeleteBackendEnvironmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -421,12 +405,10 @@ DeleteBranchOutcome AmplifyClient::DeleteBranch(const DeleteBranchRequest& reque
     return DeleteBranchOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BranchName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/apps/";
-  ss << request.GetAppId();
-  ss << "/branches/";
-  ss << request.GetBranchName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/apps/");
+  uri.AddPathSegment(request.GetAppId());
+  uri.AddPathSegments("/branches/");
+  uri.AddPathSegment(request.GetBranchName());
   return DeleteBranchOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -461,12 +443,10 @@ DeleteDomainAssociationOutcome AmplifyClient::DeleteDomainAssociation(const Dele
     return DeleteDomainAssociationOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/apps/";
-  ss << request.GetAppId();
-  ss << "/domains/";
-  ss << request.GetDomainName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/apps/");
+  uri.AddPathSegment(request.GetAppId());
+  uri.AddPathSegments("/domains/");
+  uri.AddPathSegment(request.GetDomainName());
   return DeleteDomainAssociationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -506,14 +486,12 @@ DeleteJobOutcome AmplifyClient::DeleteJob(const DeleteJobRequest& request) const
     return DeleteJobOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/apps/";
-  ss << request.GetAppId();
-  ss << "/branches/";
-  ss << request.GetBranchName();
-  ss << "/jobs/";
-  ss << request.GetJobId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/apps/");
+  uri.AddPathSegment(request.GetAppId());
+  uri.AddPathSegments("/branches/");
+  uri.AddPathSegment(request.GetBranchName());
+  uri.AddPathSegments("/jobs/");
+  uri.AddPathSegment(request.GetJobId());
   return DeleteJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -543,10 +521,8 @@ DeleteWebhookOutcome AmplifyClient::DeleteWebhook(const DeleteWebhookRequest& re
     return DeleteWebhookOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WebhookId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/webhooks/";
-  ss << request.GetWebhookId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/webhooks/");
+  uri.AddPathSegment(request.GetWebhookId());
   return DeleteWebhookOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -576,11 +552,9 @@ GenerateAccessLogsOutcome AmplifyClient::GenerateAccessLogs(const GenerateAccess
     return GenerateAccessLogsOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/apps/";
-  ss << request.GetAppId();
-  ss << "/accesslogs";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/apps/");
+  uri.AddPathSegment(request.GetAppId());
+  uri.AddPathSegments("/accesslogs");
   return GenerateAccessLogsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -610,10 +584,8 @@ GetAppOutcome AmplifyClient::GetApp(const GetAppRequest& request) const
     return GetAppOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/apps/";
-  ss << request.GetAppId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/apps/");
+  uri.AddPathSegment(request.GetAppId());
   return GetAppOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -643,10 +615,8 @@ GetArtifactUrlOutcome AmplifyClient::GetArtifactUrl(const GetArtifactUrlRequest&
     return GetArtifactUrlOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ArtifactId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/artifacts/";
-  ss << request.GetArtifactId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/artifacts/");
+  uri.AddPathSegment(request.GetArtifactId());
   return GetArtifactUrlOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -681,12 +651,10 @@ GetBackendEnvironmentOutcome AmplifyClient::GetBackendEnvironment(const GetBacke
     return GetBackendEnvironmentOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/apps/";
-  ss << request.GetAppId();
-  ss << "/backendenvironments/";
-  ss << request.GetEnvironmentName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/apps/");
+  uri.AddPathSegment(request.GetAppId());
+  uri.AddPathSegments("/backendenvironments/");
+  uri.AddPathSegment(request.GetEnvironmentName());
   return GetBackendEnvironmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -721,12 +689,10 @@ GetBranchOutcome AmplifyClient::GetBranch(const GetBranchRequest& request) const
     return GetBranchOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BranchName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/apps/";
-  ss << request.GetAppId();
-  ss << "/branches/";
-  ss << request.GetBranchName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/apps/");
+  uri.AddPathSegment(request.GetAppId());
+  uri.AddPathSegments("/branches/");
+  uri.AddPathSegment(request.GetBranchName());
   return GetBranchOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -761,12 +727,10 @@ GetDomainAssociationOutcome AmplifyClient::GetDomainAssociation(const GetDomainA
     return GetDomainAssociationOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/apps/";
-  ss << request.GetAppId();
-  ss << "/domains/";
-  ss << request.GetDomainName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/apps/");
+  uri.AddPathSegment(request.GetAppId());
+  uri.AddPathSegments("/domains/");
+  uri.AddPathSegment(request.GetDomainName());
   return GetDomainAssociationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -806,14 +770,12 @@ GetJobOutcome AmplifyClient::GetJob(const GetJobRequest& request) const
     return GetJobOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/apps/";
-  ss << request.GetAppId();
-  ss << "/branches/";
-  ss << request.GetBranchName();
-  ss << "/jobs/";
-  ss << request.GetJobId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/apps/");
+  uri.AddPathSegment(request.GetAppId());
+  uri.AddPathSegments("/branches/");
+  uri.AddPathSegment(request.GetBranchName());
+  uri.AddPathSegments("/jobs/");
+  uri.AddPathSegment(request.GetJobId());
   return GetJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -843,10 +805,8 @@ GetWebhookOutcome AmplifyClient::GetWebhook(const GetWebhookRequest& request) co
     return GetWebhookOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WebhookId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/webhooks/";
-  ss << request.GetWebhookId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/webhooks/");
+  uri.AddPathSegment(request.GetWebhookId());
   return GetWebhookOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -871,9 +831,7 @@ void AmplifyClient::GetWebhookAsyncHelper(const GetWebhookRequest& request, cons
 ListAppsOutcome AmplifyClient::ListApps(const ListAppsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/apps";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/apps");
   return ListAppsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -913,15 +871,13 @@ ListArtifactsOutcome AmplifyClient::ListArtifacts(const ListArtifactsRequest& re
     return ListArtifactsOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/apps/";
-  ss << request.GetAppId();
-  ss << "/branches/";
-  ss << request.GetBranchName();
-  ss << "/jobs/";
-  ss << request.GetJobId();
-  ss << "/artifacts";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/apps/");
+  uri.AddPathSegment(request.GetAppId());
+  uri.AddPathSegments("/branches/");
+  uri.AddPathSegment(request.GetBranchName());
+  uri.AddPathSegments("/jobs/");
+  uri.AddPathSegment(request.GetJobId());
+  uri.AddPathSegments("/artifacts");
   return ListArtifactsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -951,11 +907,9 @@ ListBackendEnvironmentsOutcome AmplifyClient::ListBackendEnvironments(const List
     return ListBackendEnvironmentsOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/apps/";
-  ss << request.GetAppId();
-  ss << "/backendenvironments";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/apps/");
+  uri.AddPathSegment(request.GetAppId());
+  uri.AddPathSegments("/backendenvironments");
   return ListBackendEnvironmentsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -985,11 +939,9 @@ ListBranchesOutcome AmplifyClient::ListBranches(const ListBranchesRequest& reque
     return ListBranchesOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/apps/";
-  ss << request.GetAppId();
-  ss << "/branches";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/apps/");
+  uri.AddPathSegment(request.GetAppId());
+  uri.AddPathSegments("/branches");
   return ListBranchesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1019,11 +971,9 @@ ListDomainAssociationsOutcome AmplifyClient::ListDomainAssociations(const ListDo
     return ListDomainAssociationsOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/apps/";
-  ss << request.GetAppId();
-  ss << "/domains";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/apps/");
+  uri.AddPathSegment(request.GetAppId());
+  uri.AddPathSegments("/domains");
   return ListDomainAssociationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1058,13 +1008,11 @@ ListJobsOutcome AmplifyClient::ListJobs(const ListJobsRequest& request) const
     return ListJobsOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BranchName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/apps/";
-  ss << request.GetAppId();
-  ss << "/branches/";
-  ss << request.GetBranchName();
-  ss << "/jobs";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/apps/");
+  uri.AddPathSegment(request.GetAppId());
+  uri.AddPathSegments("/branches/");
+  uri.AddPathSegment(request.GetBranchName());
+  uri.AddPathSegments("/jobs");
   return ListJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1094,10 +1042,8 @@ ListTagsForResourceOutcome AmplifyClient::ListTagsForResource(const ListTagsForR
     return ListTagsForResourceOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1127,11 +1073,9 @@ ListWebhooksOutcome AmplifyClient::ListWebhooks(const ListWebhooksRequest& reque
     return ListWebhooksOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/apps/";
-  ss << request.GetAppId();
-  ss << "/webhooks";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/apps/");
+  uri.AddPathSegment(request.GetAppId());
+  uri.AddPathSegments("/webhooks");
   return ListWebhooksOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1166,13 +1110,11 @@ StartDeploymentOutcome AmplifyClient::StartDeployment(const StartDeploymentReque
     return StartDeploymentOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BranchName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/apps/";
-  ss << request.GetAppId();
-  ss << "/branches/";
-  ss << request.GetBranchName();
-  ss << "/deployments/start";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/apps/");
+  uri.AddPathSegment(request.GetAppId());
+  uri.AddPathSegments("/branches/");
+  uri.AddPathSegment(request.GetBranchName());
+  uri.AddPathSegments("/deployments/start");
   return StartDeploymentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1207,13 +1149,11 @@ StartJobOutcome AmplifyClient::StartJob(const StartJobRequest& request) const
     return StartJobOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BranchName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/apps/";
-  ss << request.GetAppId();
-  ss << "/branches/";
-  ss << request.GetBranchName();
-  ss << "/jobs";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/apps/");
+  uri.AddPathSegment(request.GetAppId());
+  uri.AddPathSegments("/branches/");
+  uri.AddPathSegment(request.GetBranchName());
+  uri.AddPathSegments("/jobs");
   return StartJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1253,15 +1193,13 @@ StopJobOutcome AmplifyClient::StopJob(const StopJobRequest& request) const
     return StopJobOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/apps/";
-  ss << request.GetAppId();
-  ss << "/branches/";
-  ss << request.GetBranchName();
-  ss << "/jobs/";
-  ss << request.GetJobId();
-  ss << "/stop";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/apps/");
+  uri.AddPathSegment(request.GetAppId());
+  uri.AddPathSegments("/branches/");
+  uri.AddPathSegment(request.GetBranchName());
+  uri.AddPathSegments("/jobs/");
+  uri.AddPathSegment(request.GetJobId());
+  uri.AddPathSegments("/stop");
   return StopJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1291,10 +1229,8 @@ TagResourceOutcome AmplifyClient::TagResource(const TagResourceRequest& request)
     return TagResourceOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1329,10 +1265,8 @@ UntagResourceOutcome AmplifyClient::UntagResource(const UntagResourceRequest& re
     return UntagResourceOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1362,10 +1296,8 @@ UpdateAppOutcome AmplifyClient::UpdateApp(const UpdateAppRequest& request) const
     return UpdateAppOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/apps/";
-  ss << request.GetAppId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/apps/");
+  uri.AddPathSegment(request.GetAppId());
   return UpdateAppOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1400,12 +1332,10 @@ UpdateBranchOutcome AmplifyClient::UpdateBranch(const UpdateBranchRequest& reque
     return UpdateBranchOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BranchName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/apps/";
-  ss << request.GetAppId();
-  ss << "/branches/";
-  ss << request.GetBranchName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/apps/");
+  uri.AddPathSegment(request.GetAppId());
+  uri.AddPathSegments("/branches/");
+  uri.AddPathSegment(request.GetBranchName());
   return UpdateBranchOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1440,12 +1370,10 @@ UpdateDomainAssociationOutcome AmplifyClient::UpdateDomainAssociation(const Upda
     return UpdateDomainAssociationOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/apps/";
-  ss << request.GetAppId();
-  ss << "/domains/";
-  ss << request.GetDomainName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/apps/");
+  uri.AddPathSegment(request.GetAppId());
+  uri.AddPathSegments("/domains/");
+  uri.AddPathSegment(request.GetDomainName());
   return UpdateDomainAssociationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1475,10 +1403,8 @@ UpdateWebhookOutcome AmplifyClient::UpdateWebhook(const UpdateWebhookRequest& re
     return UpdateWebhookOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WebhookId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/webhooks/";
-  ss << request.GetWebhookId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/webhooks/");
+  uri.AddPathSegment(request.GetWebhookId());
   return UpdateWebhookOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

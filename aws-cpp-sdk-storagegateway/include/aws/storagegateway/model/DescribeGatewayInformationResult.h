@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/storagegateway/model/HostEnvironment.h>
+#include <aws/storagegateway/model/GatewayCapacity.h>
 #include <aws/storagegateway/model/NetworkInterface.h>
 #include <aws/storagegateway/model/Tag.h>
 #include <utility>
@@ -353,49 +354,56 @@ namespace Model
     /**
      * <p>The date on which the last software update was applied to the gateway. If the
      * gateway has never been updated, this field does not return a value in the
-     * response.</p>
+     * response. This only only exist and returns once it have been chosen and set by
+     * the SGW service, based on the OS version of the gateway VM</p>
      */
     inline const Aws::String& GetLastSoftwareUpdate() const{ return m_lastSoftwareUpdate; }
 
     /**
      * <p>The date on which the last software update was applied to the gateway. If the
      * gateway has never been updated, this field does not return a value in the
-     * response.</p>
+     * response. This only only exist and returns once it have been chosen and set by
+     * the SGW service, based on the OS version of the gateway VM</p>
      */
     inline void SetLastSoftwareUpdate(const Aws::String& value) { m_lastSoftwareUpdate = value; }
 
     /**
      * <p>The date on which the last software update was applied to the gateway. If the
      * gateway has never been updated, this field does not return a value in the
-     * response.</p>
+     * response. This only only exist and returns once it have been chosen and set by
+     * the SGW service, based on the OS version of the gateway VM</p>
      */
     inline void SetLastSoftwareUpdate(Aws::String&& value) { m_lastSoftwareUpdate = std::move(value); }
 
     /**
      * <p>The date on which the last software update was applied to the gateway. If the
      * gateway has never been updated, this field does not return a value in the
-     * response.</p>
+     * response. This only only exist and returns once it have been chosen and set by
+     * the SGW service, based on the OS version of the gateway VM</p>
      */
     inline void SetLastSoftwareUpdate(const char* value) { m_lastSoftwareUpdate.assign(value); }
 
     /**
      * <p>The date on which the last software update was applied to the gateway. If the
      * gateway has never been updated, this field does not return a value in the
-     * response.</p>
+     * response. This only only exist and returns once it have been chosen and set by
+     * the SGW service, based on the OS version of the gateway VM</p>
      */
     inline DescribeGatewayInformationResult& WithLastSoftwareUpdate(const Aws::String& value) { SetLastSoftwareUpdate(value); return *this;}
 
     /**
      * <p>The date on which the last software update was applied to the gateway. If the
      * gateway has never been updated, this field does not return a value in the
-     * response.</p>
+     * response. This only only exist and returns once it have been chosen and set by
+     * the SGW service, based on the OS version of the gateway VM</p>
      */
     inline DescribeGatewayInformationResult& WithLastSoftwareUpdate(Aws::String&& value) { SetLastSoftwareUpdate(std::move(value)); return *this;}
 
     /**
      * <p>The date on which the last software update was applied to the gateway. If the
      * gateway has never been updated, this field does not return a value in the
-     * response.</p>
+     * response. This only only exist and returns once it have been chosen and set by
+     * the SGW service, based on the OS version of the gateway VM</p>
      */
     inline DescribeGatewayInformationResult& WithLastSoftwareUpdate(const char* value) { SetLastSoftwareUpdate(value); return *this;}
 
@@ -437,37 +445,37 @@ namespace Model
 
 
     /**
-     * <p>The AWS Region where the Amazon EC2 instance is located.</p>
+     * <p>The Amazon Web Services Region where the Amazon EC2 instance is located.</p>
      */
     inline const Aws::String& GetEc2InstanceRegion() const{ return m_ec2InstanceRegion; }
 
     /**
-     * <p>The AWS Region where the Amazon EC2 instance is located.</p>
+     * <p>The Amazon Web Services Region where the Amazon EC2 instance is located.</p>
      */
     inline void SetEc2InstanceRegion(const Aws::String& value) { m_ec2InstanceRegion = value; }
 
     /**
-     * <p>The AWS Region where the Amazon EC2 instance is located.</p>
+     * <p>The Amazon Web Services Region where the Amazon EC2 instance is located.</p>
      */
     inline void SetEc2InstanceRegion(Aws::String&& value) { m_ec2InstanceRegion = std::move(value); }
 
     /**
-     * <p>The AWS Region where the Amazon EC2 instance is located.</p>
+     * <p>The Amazon Web Services Region where the Amazon EC2 instance is located.</p>
      */
     inline void SetEc2InstanceRegion(const char* value) { m_ec2InstanceRegion.assign(value); }
 
     /**
-     * <p>The AWS Region where the Amazon EC2 instance is located.</p>
+     * <p>The Amazon Web Services Region where the Amazon EC2 instance is located.</p>
      */
     inline DescribeGatewayInformationResult& WithEc2InstanceRegion(const Aws::String& value) { SetEc2InstanceRegion(value); return *this;}
 
     /**
-     * <p>The AWS Region where the Amazon EC2 instance is located.</p>
+     * <p>The Amazon Web Services Region where the Amazon EC2 instance is located.</p>
      */
     inline DescribeGatewayInformationResult& WithEc2InstanceRegion(Aws::String&& value) { SetEc2InstanceRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Region where the Amazon EC2 instance is located.</p>
+     * <p>The Amazon Web Services Region where the Amazon EC2 instance is located.</p>
      */
     inline DescribeGatewayInformationResult& WithEc2InstanceRegion(const char* value) { SetEc2InstanceRegion(value); return *this;}
 
@@ -574,69 +582,88 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is
-     * used to monitor events in the gateway.</p>
+     * used to monitor events in the gateway. This field only only exist and returns
+     * once it have been chosen and set by the SGW service, based on the OS version of
+     * the gateway VM</p>
      */
     inline const Aws::String& GetCloudWatchLogGroupARN() const{ return m_cloudWatchLogGroupARN; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is
-     * used to monitor events in the gateway.</p>
+     * used to monitor events in the gateway. This field only only exist and returns
+     * once it have been chosen and set by the SGW service, based on the OS version of
+     * the gateway VM</p>
      */
     inline void SetCloudWatchLogGroupARN(const Aws::String& value) { m_cloudWatchLogGroupARN = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is
-     * used to monitor events in the gateway.</p>
+     * used to monitor events in the gateway. This field only only exist and returns
+     * once it have been chosen and set by the SGW service, based on the OS version of
+     * the gateway VM</p>
      */
     inline void SetCloudWatchLogGroupARN(Aws::String&& value) { m_cloudWatchLogGroupARN = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is
-     * used to monitor events in the gateway.</p>
+     * used to monitor events in the gateway. This field only only exist and returns
+     * once it have been chosen and set by the SGW service, based on the OS version of
+     * the gateway VM</p>
      */
     inline void SetCloudWatchLogGroupARN(const char* value) { m_cloudWatchLogGroupARN.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is
-     * used to monitor events in the gateway.</p>
+     * used to monitor events in the gateway. This field only only exist and returns
+     * once it have been chosen and set by the SGW service, based on the OS version of
+     * the gateway VM</p>
      */
     inline DescribeGatewayInformationResult& WithCloudWatchLogGroupARN(const Aws::String& value) { SetCloudWatchLogGroupARN(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is
-     * used to monitor events in the gateway.</p>
+     * used to monitor events in the gateway. This field only only exist and returns
+     * once it have been chosen and set by the SGW service, based on the OS version of
+     * the gateway VM</p>
      */
     inline DescribeGatewayInformationResult& WithCloudWatchLogGroupARN(Aws::String&& value) { SetCloudWatchLogGroupARN(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is
-     * used to monitor events in the gateway.</p>
+     * used to monitor events in the gateway. This field only only exist and returns
+     * once it have been chosen and set by the SGW service, based on the OS version of
+     * the gateway VM</p>
      */
     inline DescribeGatewayInformationResult& WithCloudWatchLogGroupARN(const char* value) { SetCloudWatchLogGroupARN(value); return *this;}
 
 
     /**
-     * <p>The type of hypervisor environment used by the host.</p>
+     * <p>The type of hardware or software platform on which the gateway is
+     * running.</p>
      */
     inline const HostEnvironment& GetHostEnvironment() const{ return m_hostEnvironment; }
 
     /**
-     * <p>The type of hypervisor environment used by the host.</p>
+     * <p>The type of hardware or software platform on which the gateway is
+     * running.</p>
      */
     inline void SetHostEnvironment(const HostEnvironment& value) { m_hostEnvironment = value; }
 
     /**
-     * <p>The type of hypervisor environment used by the host.</p>
+     * <p>The type of hardware or software platform on which the gateway is
+     * running.</p>
      */
     inline void SetHostEnvironment(HostEnvironment&& value) { m_hostEnvironment = std::move(value); }
 
     /**
-     * <p>The type of hypervisor environment used by the host.</p>
+     * <p>The type of hardware or software platform on which the gateway is
+     * running.</p>
      */
     inline DescribeGatewayInformationResult& WithHostEnvironment(const HostEnvironment& value) { SetHostEnvironment(value); return *this;}
 
     /**
-     * <p>The type of hypervisor environment used by the host.</p>
+     * <p>The type of hardware or software platform on which the gateway is
+     * running.</p>
      */
     inline DescribeGatewayInformationResult& WithHostEnvironment(HostEnvironment&& value) { SetHostEnvironment(std::move(value)); return *this;}
 
@@ -769,6 +796,125 @@ namespace Model
      */
     inline DescribeGatewayInformationResult& WithDeprecationDate(const char* value) { SetDeprecationDate(value); return *this;}
 
+
+    /**
+     * <p>Specifies the size of the gateway's metadata cache.</p>
+     */
+    inline const GatewayCapacity& GetGatewayCapacity() const{ return m_gatewayCapacity; }
+
+    /**
+     * <p>Specifies the size of the gateway's metadata cache.</p>
+     */
+    inline void SetGatewayCapacity(const GatewayCapacity& value) { m_gatewayCapacity = value; }
+
+    /**
+     * <p>Specifies the size of the gateway's metadata cache.</p>
+     */
+    inline void SetGatewayCapacity(GatewayCapacity&& value) { m_gatewayCapacity = std::move(value); }
+
+    /**
+     * <p>Specifies the size of the gateway's metadata cache.</p>
+     */
+    inline DescribeGatewayInformationResult& WithGatewayCapacity(const GatewayCapacity& value) { SetGatewayCapacity(value); return *this;}
+
+    /**
+     * <p>Specifies the size of the gateway's metadata cache.</p>
+     */
+    inline DescribeGatewayInformationResult& WithGatewayCapacity(GatewayCapacity&& value) { SetGatewayCapacity(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A list of the metadata cache sizes that the gateway can support based on its
+     * current hardware specifications.</p>
+     */
+    inline const Aws::Vector<GatewayCapacity>& GetSupportedGatewayCapacities() const{ return m_supportedGatewayCapacities; }
+
+    /**
+     * <p>A list of the metadata cache sizes that the gateway can support based on its
+     * current hardware specifications.</p>
+     */
+    inline void SetSupportedGatewayCapacities(const Aws::Vector<GatewayCapacity>& value) { m_supportedGatewayCapacities = value; }
+
+    /**
+     * <p>A list of the metadata cache sizes that the gateway can support based on its
+     * current hardware specifications.</p>
+     */
+    inline void SetSupportedGatewayCapacities(Aws::Vector<GatewayCapacity>&& value) { m_supportedGatewayCapacities = std::move(value); }
+
+    /**
+     * <p>A list of the metadata cache sizes that the gateway can support based on its
+     * current hardware specifications.</p>
+     */
+    inline DescribeGatewayInformationResult& WithSupportedGatewayCapacities(const Aws::Vector<GatewayCapacity>& value) { SetSupportedGatewayCapacities(value); return *this;}
+
+    /**
+     * <p>A list of the metadata cache sizes that the gateway can support based on its
+     * current hardware specifications.</p>
+     */
+    inline DescribeGatewayInformationResult& WithSupportedGatewayCapacities(Aws::Vector<GatewayCapacity>&& value) { SetSupportedGatewayCapacities(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of the metadata cache sizes that the gateway can support based on its
+     * current hardware specifications.</p>
+     */
+    inline DescribeGatewayInformationResult& AddSupportedGatewayCapacities(const GatewayCapacity& value) { m_supportedGatewayCapacities.push_back(value); return *this; }
+
+    /**
+     * <p>A list of the metadata cache sizes that the gateway can support based on its
+     * current hardware specifications.</p>
+     */
+    inline DescribeGatewayInformationResult& AddSupportedGatewayCapacities(GatewayCapacity&& value) { m_supportedGatewayCapacities.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>A unique identifier for the specific instance of the host platform running
+     * the gateway. This value is only available for certain host environments, and its
+     * format depends on the host environment type.</p>
+     */
+    inline const Aws::String& GetHostEnvironmentId() const{ return m_hostEnvironmentId; }
+
+    /**
+     * <p>A unique identifier for the specific instance of the host platform running
+     * the gateway. This value is only available for certain host environments, and its
+     * format depends on the host environment type.</p>
+     */
+    inline void SetHostEnvironmentId(const Aws::String& value) { m_hostEnvironmentId = value; }
+
+    /**
+     * <p>A unique identifier for the specific instance of the host platform running
+     * the gateway. This value is only available for certain host environments, and its
+     * format depends on the host environment type.</p>
+     */
+    inline void SetHostEnvironmentId(Aws::String&& value) { m_hostEnvironmentId = std::move(value); }
+
+    /**
+     * <p>A unique identifier for the specific instance of the host platform running
+     * the gateway. This value is only available for certain host environments, and its
+     * format depends on the host environment type.</p>
+     */
+    inline void SetHostEnvironmentId(const char* value) { m_hostEnvironmentId.assign(value); }
+
+    /**
+     * <p>A unique identifier for the specific instance of the host platform running
+     * the gateway. This value is only available for certain host environments, and its
+     * format depends on the host environment type.</p>
+     */
+    inline DescribeGatewayInformationResult& WithHostEnvironmentId(const Aws::String& value) { SetHostEnvironmentId(value); return *this;}
+
+    /**
+     * <p>A unique identifier for the specific instance of the host platform running
+     * the gateway. This value is only available for certain host environments, and its
+     * format depends on the host environment type.</p>
+     */
+    inline DescribeGatewayInformationResult& WithHostEnvironmentId(Aws::String&& value) { SetHostEnvironmentId(std::move(value)); return *this;}
+
+    /**
+     * <p>A unique identifier for the specific instance of the host platform running
+     * the gateway. This value is only available for certain host environments, and its
+     * format depends on the host environment type.</p>
+     */
+    inline DescribeGatewayInformationResult& WithHostEnvironmentId(const char* value) { SetHostEnvironmentId(value); return *this;}
+
   private:
 
     Aws::String m_gatewayARN;
@@ -806,6 +952,12 @@ namespace Model
     Aws::String m_softwareUpdatesEndDate;
 
     Aws::String m_deprecationDate;
+
+    GatewayCapacity m_gatewayCapacity;
+
+    Aws::Vector<GatewayCapacity> m_supportedGatewayCapacities;
+
+    Aws::String m_hostEnvironmentId;
   };
 
 } // namespace Model

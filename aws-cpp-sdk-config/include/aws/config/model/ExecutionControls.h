@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>The controls that AWS Config uses for executing remediations.</p><p><h3>See
+   * <p>The controls that Config uses for executing remediations.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ExecutionControls">AWS
    * API Reference</a></p>

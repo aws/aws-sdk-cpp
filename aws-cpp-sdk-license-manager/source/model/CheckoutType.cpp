@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int PROVISIONAL_HASH = HashingUtils::HashString("PROVISIONAL");
+        static const int PERPETUAL_HASH = HashingUtils::HashString("PERPETUAL");
 
 
         CheckoutType GetCheckoutTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == PROVISIONAL_HASH)
           {
             return CheckoutType::PROVISIONAL;
+          }
+          else if (hashCode == PERPETUAL_HASH)
+          {
+            return CheckoutType::PERPETUAL;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +51,8 @@ namespace Aws
           {
           case CheckoutType::PROVISIONAL:
             return "PROVISIONAL";
+          case CheckoutType::PERPETUAL:
+            return "PERPETUAL";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

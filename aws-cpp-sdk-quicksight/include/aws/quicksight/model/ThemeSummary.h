@@ -121,50 +121,50 @@ namespace Model
 
 
     /**
-     * <p>The ID of the theme. This ID is unique per AWS Region for each AWS
-     * account.</p>
+     * <p>The ID of the theme. This ID is unique per Amazon Web Services Region for
+     * each Amazon Web Services account.</p>
      */
     inline const Aws::String& GetThemeId() const{ return m_themeId; }
 
     /**
-     * <p>The ID of the theme. This ID is unique per AWS Region for each AWS
-     * account.</p>
+     * <p>The ID of the theme. This ID is unique per Amazon Web Services Region for
+     * each Amazon Web Services account.</p>
      */
     inline bool ThemeIdHasBeenSet() const { return m_themeIdHasBeenSet; }
 
     /**
-     * <p>The ID of the theme. This ID is unique per AWS Region for each AWS
-     * account.</p>
+     * <p>The ID of the theme. This ID is unique per Amazon Web Services Region for
+     * each Amazon Web Services account.</p>
      */
     inline void SetThemeId(const Aws::String& value) { m_themeIdHasBeenSet = true; m_themeId = value; }
 
     /**
-     * <p>The ID of the theme. This ID is unique per AWS Region for each AWS
-     * account.</p>
+     * <p>The ID of the theme. This ID is unique per Amazon Web Services Region for
+     * each Amazon Web Services account.</p>
      */
     inline void SetThemeId(Aws::String&& value) { m_themeIdHasBeenSet = true; m_themeId = std::move(value); }
 
     /**
-     * <p>The ID of the theme. This ID is unique per AWS Region for each AWS
-     * account.</p>
+     * <p>The ID of the theme. This ID is unique per Amazon Web Services Region for
+     * each Amazon Web Services account.</p>
      */
     inline void SetThemeId(const char* value) { m_themeIdHasBeenSet = true; m_themeId.assign(value); }
 
     /**
-     * <p>The ID of the theme. This ID is unique per AWS Region for each AWS
-     * account.</p>
+     * <p>The ID of the theme. This ID is unique per Amazon Web Services Region for
+     * each Amazon Web Services account.</p>
      */
     inline ThemeSummary& WithThemeId(const Aws::String& value) { SetThemeId(value); return *this;}
 
     /**
-     * <p>The ID of the theme. This ID is unique per AWS Region for each AWS
-     * account.</p>
+     * <p>The ID of the theme. This ID is unique per Amazon Web Services Region for
+     * each Amazon Web Services account.</p>
      */
     inline ThemeSummary& WithThemeId(Aws::String&& value) { SetThemeId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the theme. This ID is unique per AWS Region for each AWS
-     * account.</p>
+     * <p>The ID of the theme. This ID is unique per Amazon Web Services Region for
+     * each Amazon Web Services account.</p>
      */
     inline ThemeSummary& WithThemeId(const char* value) { SetThemeId(value); return *this;}
 

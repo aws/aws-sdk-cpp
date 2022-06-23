@@ -7,6 +7,8 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/IAMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/iam/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -39,7 +41,7 @@ namespace Model
     /**
      * <p>The path for the server certificate. For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
+     * identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/). This parameter allows
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of either a forward slash (/) by itself or a
@@ -57,7 +59,7 @@ namespace Model
     /**
      * <p>The path for the server certificate. For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
+     * identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/). This parameter allows
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of either a forward slash (/) by itself or a
@@ -75,7 +77,7 @@ namespace Model
     /**
      * <p>The path for the server certificate. For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
+     * identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/). This parameter allows
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of either a forward slash (/) by itself or a
@@ -93,7 +95,7 @@ namespace Model
     /**
      * <p>The path for the server certificate. For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
+     * identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/). This parameter allows
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of either a forward slash (/) by itself or a
@@ -111,7 +113,7 @@ namespace Model
     /**
      * <p>The path for the server certificate. For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
+     * identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/). This parameter allows
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of either a forward slash (/) by itself or a
@@ -129,7 +131,7 @@ namespace Model
     /**
      * <p>The path for the server certificate. For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
+     * identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/). This parameter allows
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of either a forward slash (/) by itself or a
@@ -147,7 +149,7 @@ namespace Model
     /**
      * <p>The path for the server certificate. For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
+     * identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/). This parameter allows
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of either a forward slash (/) by itself or a
@@ -165,7 +167,7 @@ namespace Model
     /**
      * <p>The path for the server certificate. For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
+     * identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/). This parameter allows
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of either a forward slash (/) by itself or a
@@ -584,6 +586,95 @@ namespace Model
      */
     inline UploadServerCertificateRequest& WithCertificateChain(const char* value) { SetCertificateChain(value); return *this;}
 
+
+    /**
+     * <p>A list of tags that you want to attach to the new IAM server certificate
+     * resource. Each tag consists of a key name and an associated value. For more
+     * information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>  <p>If any one of the tags
+     * is invalid or if you exceed the allowed maximum number of tags, then the entire
+     * request fails and the resource is not created.</p> 
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of tags that you want to attach to the new IAM server certificate
+     * resource. Each tag consists of a key name and an associated value. For more
+     * information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>  <p>If any one of the tags
+     * is invalid or if you exceed the allowed maximum number of tags, then the entire
+     * request fails and the resource is not created.</p> 
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>A list of tags that you want to attach to the new IAM server certificate
+     * resource. Each tag consists of a key name and an associated value. For more
+     * information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>  <p>If any one of the tags
+     * is invalid or if you exceed the allowed maximum number of tags, then the entire
+     * request fails and the resource is not created.</p> 
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>A list of tags that you want to attach to the new IAM server certificate
+     * resource. Each tag consists of a key name and an associated value. For more
+     * information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>  <p>If any one of the tags
+     * is invalid or if you exceed the allowed maximum number of tags, then the entire
+     * request fails and the resource is not created.</p> 
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>A list of tags that you want to attach to the new IAM server certificate
+     * resource. Each tag consists of a key name and an associated value. For more
+     * information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>  <p>If any one of the tags
+     * is invalid or if you exceed the allowed maximum number of tags, then the entire
+     * request fails and the resource is not created.</p> 
+     */
+    inline UploadServerCertificateRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A list of tags that you want to attach to the new IAM server certificate
+     * resource. Each tag consists of a key name and an associated value. For more
+     * information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>  <p>If any one of the tags
+     * is invalid or if you exceed the allowed maximum number of tags, then the entire
+     * request fails and the resource is not created.</p> 
+     */
+    inline UploadServerCertificateRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of tags that you want to attach to the new IAM server certificate
+     * resource. Each tag consists of a key name and an associated value. For more
+     * information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>  <p>If any one of the tags
+     * is invalid or if you exceed the allowed maximum number of tags, then the entire
+     * request fails and the resource is not created.</p> 
+     */
+    inline UploadServerCertificateRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>A list of tags that you want to attach to the new IAM server certificate
+     * resource. Each tag consists of a key name and an associated value. For more
+     * information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>  <p>If any one of the tags
+     * is invalid or if you exceed the allowed maximum number of tags, then the entire
+     * request fails and the resource is not created.</p> 
+     */
+    inline UploadServerCertificateRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_path;
@@ -600,6 +691,9 @@ namespace Model
 
     Aws::String m_certificateChain;
     bool m_certificateChainHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

@@ -124,6 +124,18 @@ CreateFileSystemResult& CreateFileSystemResult::operator =(const Aws::AmazonWebS
 
   }
 
+  if(jsonValue.ValueExists("AvailabilityZoneName"))
+  {
+    m_availabilityZoneName = jsonValue.GetString("AvailabilityZoneName");
+
+  }
+
+  if(jsonValue.ValueExists("AvailabilityZoneId"))
+  {
+    m_availabilityZoneId = jsonValue.GetString("AvailabilityZoneId");
+
+  }
+
   if(jsonValue.ValueExists("Tags"))
   {
     Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");

@@ -122,42 +122,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS account to which the transfer was made.</p>
+     * <p>The Amazon Web Services account to which the transfer was made.</p>
      */
     inline const Aws::String& GetTransferredTo() const{ return m_transferredTo; }
 
     /**
-     * <p>The AWS account to which the transfer was made.</p>
+     * <p>The Amazon Web Services account to which the transfer was made.</p>
      */
     inline bool TransferredToHasBeenSet() const { return m_transferredToHasBeenSet; }
 
     /**
-     * <p>The AWS account to which the transfer was made.</p>
+     * <p>The Amazon Web Services account to which the transfer was made.</p>
      */
     inline void SetTransferredTo(const Aws::String& value) { m_transferredToHasBeenSet = true; m_transferredTo = value; }
 
     /**
-     * <p>The AWS account to which the transfer was made.</p>
+     * <p>The Amazon Web Services account to which the transfer was made.</p>
      */
     inline void SetTransferredTo(Aws::String&& value) { m_transferredToHasBeenSet = true; m_transferredTo = std::move(value); }
 
     /**
-     * <p>The AWS account to which the transfer was made.</p>
+     * <p>The Amazon Web Services account to which the transfer was made.</p>
      */
     inline void SetTransferredTo(const char* value) { m_transferredToHasBeenSet = true; m_transferredTo.assign(value); }
 
     /**
-     * <p>The AWS account to which the transfer was made.</p>
+     * <p>The Amazon Web Services account to which the transfer was made.</p>
      */
     inline OutgoingCertificate& WithTransferredTo(const Aws::String& value) { SetTransferredTo(value); return *this;}
 
     /**
-     * <p>The AWS account to which the transfer was made.</p>
+     * <p>The Amazon Web Services account to which the transfer was made.</p>
      */
     inline OutgoingCertificate& WithTransferredTo(Aws::String&& value) { SetTransferredTo(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account to which the transfer was made.</p>
+     * <p>The Amazon Web Services account to which the transfer was made.</p>
      */
     inline OutgoingCertificate& WithTransferredTo(const char* value) { SetTransferredTo(value); return *this;}
 

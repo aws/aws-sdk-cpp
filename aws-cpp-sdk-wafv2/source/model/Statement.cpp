@@ -9,6 +9,7 @@
 #include <aws/wafv2/model/AndStatement.h>
 #include <aws/wafv2/model/OrStatement.h>
 #include <aws/wafv2/model/NotStatement.h>
+#include <aws/wafv2/model/ManagedRuleGroupStatement.h>
 
 #include <utility>
 
@@ -35,7 +36,9 @@ Statement::Statement() :
     m_andStatementHasBeenSet(false),
     m_orStatementHasBeenSet(false),
     m_notStatementHasBeenSet(false),
-    m_managedRuleGroupStatementHasBeenSet(false)
+    m_managedRuleGroupStatementHasBeenSet(false),
+    m_labelMatchStatementHasBeenSet(false),
+    m_regexMatchStatementHasBeenSet(false)
 {
 }
 
@@ -52,7 +55,9 @@ Statement::Statement(JsonView jsonValue) :
     m_andStatementHasBeenSet(false),
     m_orStatementHasBeenSet(false),
     m_notStatementHasBeenSet(false),
-    m_managedRuleGroupStatementHasBeenSet(false)
+    m_managedRuleGroupStatementHasBeenSet(false),
+    m_labelMatchStatementHasBeenSet(false),
+    m_regexMatchStatementHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -84,6 +89,13 @@ void Statement::SetNotStatement(const NotStatement& value) { m_notStatementHasBe
 void Statement::SetNotStatement(NotStatement&& value) { m_notStatementHasBeenSet = true; m_notStatement = Aws::MakeShared<NotStatement>("Statement", std::move(value)); }
 Statement& Statement::WithNotStatement(const NotStatement& value) { SetNotStatement(value); return *this;}
 Statement& Statement::WithNotStatement(NotStatement&& value) { SetNotStatement(std::move(value)); return *this;}
+
+const ManagedRuleGroupStatement& Statement::GetManagedRuleGroupStatement() const{ return *m_managedRuleGroupStatement; }
+bool Statement::ManagedRuleGroupStatementHasBeenSet() const { return m_managedRuleGroupStatementHasBeenSet; }
+void Statement::SetManagedRuleGroupStatement(const ManagedRuleGroupStatement& value) { m_managedRuleGroupStatementHasBeenSet = true; m_managedRuleGroupStatement = Aws::MakeShared<ManagedRuleGroupStatement>("Statement", value); }
+void Statement::SetManagedRuleGroupStatement(ManagedRuleGroupStatement&& value) { m_managedRuleGroupStatementHasBeenSet = true; m_managedRuleGroupStatement = Aws::MakeShared<ManagedRuleGroupStatement>("Statement", std::move(value)); }
+Statement& Statement::WithManagedRuleGroupStatement(const ManagedRuleGroupStatement& value) { SetManagedRuleGroupStatement(value); return *this;}
+Statement& Statement::WithManagedRuleGroupStatement(ManagedRuleGroupStatement&& value) { SetManagedRuleGroupStatement(std::move(value)); return *this;}
 
 Statement& Statement::operator =(JsonView jsonValue)
 {
@@ -173,9 +185,23 @@ Statement& Statement::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ManagedRuleGroupStatement"))
   {
-    m_managedRuleGroupStatement = jsonValue.GetObject("ManagedRuleGroupStatement");
+    m_managedRuleGroupStatement = Aws::MakeShared<ManagedRuleGroupStatement>("Statement", jsonValue.GetObject("ManagedRuleGroupStatement"));
 
     m_managedRuleGroupStatementHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LabelMatchStatement"))
+  {
+    m_labelMatchStatement = jsonValue.GetObject("LabelMatchStatement");
+
+    m_labelMatchStatementHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RegexMatchStatement"))
+  {
+    m_regexMatchStatement = jsonValue.GetObject("RegexMatchStatement");
+
+    m_regexMatchStatementHasBeenSet = true;
   }
 
   return *this;
@@ -259,7 +285,19 @@ JsonValue Statement::Jsonize() const
 
   if(m_managedRuleGroupStatementHasBeenSet)
   {
-   payload.WithObject("ManagedRuleGroupStatement", m_managedRuleGroupStatement.Jsonize());
+   payload.WithObject("ManagedRuleGroupStatement", m_managedRuleGroupStatement->Jsonize());
+
+  }
+
+  if(m_labelMatchStatementHasBeenSet)
+  {
+   payload.WithObject("LabelMatchStatement", m_labelMatchStatement.Jsonize());
+
+  }
+
+  if(m_regexMatchStatementHasBeenSet)
+  {
+   payload.WithObject("RegexMatchStatement", m_regexMatchStatement.Jsonize());
 
   }
 

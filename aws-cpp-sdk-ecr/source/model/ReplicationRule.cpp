@@ -19,12 +19,14 @@ namespace Model
 {
 
 ReplicationRule::ReplicationRule() : 
-    m_destinationsHasBeenSet(false)
+    m_destinationsHasBeenSet(false),
+    m_repositoryFiltersHasBeenSet(false)
 {
 }
 
 ReplicationRule::ReplicationRule(JsonView jsonValue) : 
-    m_destinationsHasBeenSet(false)
+    m_destinationsHasBeenSet(false),
+    m_repositoryFiltersHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -39,6 +41,16 @@ ReplicationRule& ReplicationRule::operator =(JsonView jsonValue)
       m_destinations.push_back(destinationsJsonList[destinationsIndex].AsObject());
     }
     m_destinationsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("repositoryFilters"))
+  {
+    Array<JsonView> repositoryFiltersJsonList = jsonValue.GetArray("repositoryFilters");
+    for(unsigned repositoryFiltersIndex = 0; repositoryFiltersIndex < repositoryFiltersJsonList.GetLength(); ++repositoryFiltersIndex)
+    {
+      m_repositoryFilters.push_back(repositoryFiltersJsonList[repositoryFiltersIndex].AsObject());
+    }
+    m_repositoryFiltersHasBeenSet = true;
   }
 
   return *this;
@@ -56,6 +68,17 @@ JsonValue ReplicationRule::Jsonize() const
      destinationsJsonList[destinationsIndex].AsObject(m_destinations[destinationsIndex].Jsonize());
    }
    payload.WithArray("destinations", std::move(destinationsJsonList));
+
+  }
+
+  if(m_repositoryFiltersHasBeenSet)
+  {
+   Array<JsonValue> repositoryFiltersJsonList(m_repositoryFilters.size());
+   for(unsigned repositoryFiltersIndex = 0; repositoryFiltersIndex < repositoryFiltersJsonList.GetLength(); ++repositoryFiltersIndex)
+   {
+     repositoryFiltersJsonList[repositoryFiltersIndex].AsObject(m_repositoryFilters[repositoryFiltersIndex].Jsonize());
+   }
+   payload.WithArray("repositoryFilters", std::move(repositoryFiltersJsonList));
 
   }
 

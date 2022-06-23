@@ -216,42 +216,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS Region where the connection is located.</p>
+     * <p>The Amazon Web Services Region where the connection is located.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
 
     /**
-     * <p>The AWS Region where the connection is located.</p>
+     * <p>The Amazon Web Services Region where the connection is located.</p>
      */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
     /**
-     * <p>The AWS Region where the connection is located.</p>
+     * <p>The Amazon Web Services Region where the connection is located.</p>
      */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
-     * <p>The AWS Region where the connection is located.</p>
+     * <p>The Amazon Web Services Region where the connection is located.</p>
      */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
     /**
-     * <p>The AWS Region where the connection is located.</p>
+     * <p>The Amazon Web Services Region where the connection is located.</p>
      */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
 
     /**
-     * <p>The AWS Region where the connection is located.</p>
+     * <p>The Amazon Web Services Region where the connection is located.</p>
      */
     inline Interconnect& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
 
     /**
-     * <p>The AWS Region where the connection is located.</p>
+     * <p>The Amazon Web Services Region where the connection is located.</p>
      */
     inline Interconnect& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Region where the connection is located.</p>
+     * <p>The Amazon Web Services Region where the connection is located.</p>
      */
     inline Interconnect& WithRegion(const char* value) { SetRegion(value); return *this;}
 
@@ -479,44 +479,101 @@ namespace Model
 
 
     /**
-     * <p>The Direct Connect endpoint on which the physical connection terminates.</p>
+     * <p>The Direct Connect endpoint that terminates the physical connection.</p>
      */
     inline const Aws::String& GetAwsDeviceV2() const{ return m_awsDeviceV2; }
 
     /**
-     * <p>The Direct Connect endpoint on which the physical connection terminates.</p>
+     * <p>The Direct Connect endpoint that terminates the physical connection.</p>
      */
     inline bool AwsDeviceV2HasBeenSet() const { return m_awsDeviceV2HasBeenSet; }
 
     /**
-     * <p>The Direct Connect endpoint on which the physical connection terminates.</p>
+     * <p>The Direct Connect endpoint that terminates the physical connection.</p>
      */
     inline void SetAwsDeviceV2(const Aws::String& value) { m_awsDeviceV2HasBeenSet = true; m_awsDeviceV2 = value; }
 
     /**
-     * <p>The Direct Connect endpoint on which the physical connection terminates.</p>
+     * <p>The Direct Connect endpoint that terminates the physical connection.</p>
      */
     inline void SetAwsDeviceV2(Aws::String&& value) { m_awsDeviceV2HasBeenSet = true; m_awsDeviceV2 = std::move(value); }
 
     /**
-     * <p>The Direct Connect endpoint on which the physical connection terminates.</p>
+     * <p>The Direct Connect endpoint that terminates the physical connection.</p>
      */
     inline void SetAwsDeviceV2(const char* value) { m_awsDeviceV2HasBeenSet = true; m_awsDeviceV2.assign(value); }
 
     /**
-     * <p>The Direct Connect endpoint on which the physical connection terminates.</p>
+     * <p>The Direct Connect endpoint that terminates the physical connection.</p>
      */
     inline Interconnect& WithAwsDeviceV2(const Aws::String& value) { SetAwsDeviceV2(value); return *this;}
 
     /**
-     * <p>The Direct Connect endpoint on which the physical connection terminates.</p>
+     * <p>The Direct Connect endpoint that terminates the physical connection.</p>
      */
     inline Interconnect& WithAwsDeviceV2(Aws::String&& value) { SetAwsDeviceV2(std::move(value)); return *this;}
 
     /**
-     * <p>The Direct Connect endpoint on which the physical connection terminates.</p>
+     * <p>The Direct Connect endpoint that terminates the physical connection.</p>
      */
     inline Interconnect& WithAwsDeviceV2(const char* value) { SetAwsDeviceV2(value); return *this;}
+
+
+    /**
+     * <p>The Direct Connect endpoint that terminates the logical connection. This
+     * device might be different than the device that terminates the physical
+     * connection.</p>
+     */
+    inline const Aws::String& GetAwsLogicalDeviceId() const{ return m_awsLogicalDeviceId; }
+
+    /**
+     * <p>The Direct Connect endpoint that terminates the logical connection. This
+     * device might be different than the device that terminates the physical
+     * connection.</p>
+     */
+    inline bool AwsLogicalDeviceIdHasBeenSet() const { return m_awsLogicalDeviceIdHasBeenSet; }
+
+    /**
+     * <p>The Direct Connect endpoint that terminates the logical connection. This
+     * device might be different than the device that terminates the physical
+     * connection.</p>
+     */
+    inline void SetAwsLogicalDeviceId(const Aws::String& value) { m_awsLogicalDeviceIdHasBeenSet = true; m_awsLogicalDeviceId = value; }
+
+    /**
+     * <p>The Direct Connect endpoint that terminates the logical connection. This
+     * device might be different than the device that terminates the physical
+     * connection.</p>
+     */
+    inline void SetAwsLogicalDeviceId(Aws::String&& value) { m_awsLogicalDeviceIdHasBeenSet = true; m_awsLogicalDeviceId = std::move(value); }
+
+    /**
+     * <p>The Direct Connect endpoint that terminates the logical connection. This
+     * device might be different than the device that terminates the physical
+     * connection.</p>
+     */
+    inline void SetAwsLogicalDeviceId(const char* value) { m_awsLogicalDeviceIdHasBeenSet = true; m_awsLogicalDeviceId.assign(value); }
+
+    /**
+     * <p>The Direct Connect endpoint that terminates the logical connection. This
+     * device might be different than the device that terminates the physical
+     * connection.</p>
+     */
+    inline Interconnect& WithAwsLogicalDeviceId(const Aws::String& value) { SetAwsLogicalDeviceId(value); return *this;}
+
+    /**
+     * <p>The Direct Connect endpoint that terminates the logical connection. This
+     * device might be different than the device that terminates the physical
+     * connection.</p>
+     */
+    inline Interconnect& WithAwsLogicalDeviceId(Aws::String&& value) { SetAwsLogicalDeviceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The Direct Connect endpoint that terminates the logical connection. This
+     * device might be different than the device that terminates the physical
+     * connection.</p>
+     */
+    inline Interconnect& WithAwsLogicalDeviceId(const char* value) { SetAwsLogicalDeviceId(value); return *this;}
 
 
     /**
@@ -671,6 +728,9 @@ namespace Model
 
     Aws::String m_awsDeviceV2;
     bool m_awsDeviceV2HasBeenSet;
+
+    Aws::String m_awsLogicalDeviceId;
+    bool m_awsLogicalDeviceIdHasBeenSet;
 
     HasLogicalRedundancy m_hasLogicalRedundancy;
     bool m_hasLogicalRedundancyHasBeenSet;

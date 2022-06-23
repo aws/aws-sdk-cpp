@@ -65,50 +65,50 @@ namespace Model
 
 
     /**
-     * <p>The Key ID of the customer managed customer master key (CMK) used for AWS KMS
-     * encryption. This is required if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
+     * <p>The Key ID of the customer managed key used for KMS encryption. This is
+     * required if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The Key ID of the customer managed customer master key (CMK) used for AWS KMS
-     * encryption. This is required if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
+     * <p>The Key ID of the customer managed key used for KMS encryption. This is
+     * required if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The Key ID of the customer managed customer master key (CMK) used for AWS KMS
-     * encryption. This is required if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
+     * <p>The Key ID of the customer managed key used for KMS encryption. This is
+     * required if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The Key ID of the customer managed customer master key (CMK) used for AWS KMS
-     * encryption. This is required if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
+     * <p>The Key ID of the customer managed key used for KMS encryption. This is
+     * required if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The Key ID of the customer managed customer master key (CMK) used for AWS KMS
-     * encryption. This is required if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
+     * <p>The Key ID of the customer managed key used for KMS encryption. This is
+     * required if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The Key ID of the customer managed customer master key (CMK) used for AWS KMS
-     * encryption. This is required if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
+     * <p>The Key ID of the customer managed key used for KMS encryption. This is
+     * required if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
      */
     inline PutDefaultEncryptionConfigurationRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The Key ID of the customer managed customer master key (CMK) used for AWS KMS
-     * encryption. This is required if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
+     * <p>The Key ID of the customer managed key used for KMS encryption. This is
+     * required if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
      */
     inline PutDefaultEncryptionConfigurationRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The Key ID of the customer managed customer master key (CMK) used for AWS KMS
-     * encryption. This is required if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
+     * <p>The Key ID of the customer managed key used for KMS encryption. This is
+     * required if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
      */
     inline PutDefaultEncryptionConfigurationRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

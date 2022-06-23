@@ -233,42 +233,42 @@ namespace Model
 
 
     /**
-     * <p>Contains the master username for the DB instance.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline const Aws::String& GetMasterUsername() const{ return m_masterUsername; }
 
     /**
-     * <p>Contains the master username for the DB instance.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline bool MasterUsernameHasBeenSet() const { return m_masterUsernameHasBeenSet; }
 
     /**
-     * <p>Contains the master username for the DB instance.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline void SetMasterUsername(const Aws::String& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = value; }
 
     /**
-     * <p>Contains the master username for the DB instance.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline void SetMasterUsername(Aws::String&& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = std::move(value); }
 
     /**
-     * <p>Contains the master username for the DB instance.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline void SetMasterUsername(const char* value) { m_masterUsernameHasBeenSet = true; m_masterUsername.assign(value); }
 
     /**
-     * <p>Contains the master username for the DB instance.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline DBInstance& WithMasterUsername(const Aws::String& value) { SetMasterUsername(value); return *this;}
 
     /**
-     * <p>Contains the master username for the DB instance.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline DBInstance& WithMasterUsername(Aws::String&& value) { SetMasterUsername(std::move(value)); return *this;}
 
     /**
-     * <p>Contains the master username for the DB instance.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline DBInstance& WithMasterUsername(const char* value) { SetMasterUsername(value); return *this;}
 
@@ -346,22 +346,22 @@ namespace Model
 
 
     /**
-     * <p>Specifies the allocated storage size specified in gibibytes.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline int GetAllocatedStorage() const{ return m_allocatedStorage; }
 
     /**
-     * <p>Specifies the allocated storage size specified in gibibytes.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline bool AllocatedStorageHasBeenSet() const { return m_allocatedStorageHasBeenSet; }
 
     /**
-     * <p>Specifies the allocated storage size specified in gibibytes.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
 
     /**
-     * <p>Specifies the allocated storage size specified in gibibytes.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline DBInstance& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
 
@@ -1564,58 +1564,58 @@ namespace Model
 
 
     /**
-     * <p>The AWS Region-unique, immutable identifier for the DB instance. This
-     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS key for
-     * the DB instance is accessed.</p>
+     * <p>The Amazon Region-unique, immutable identifier for the DB instance. This
+     * identifier is found in Amazon CloudTrail log entries whenever the Amazon KMS key
+     * for the DB instance is accessed.</p>
      */
     inline const Aws::String& GetDbiResourceId() const{ return m_dbiResourceId; }
 
     /**
-     * <p>The AWS Region-unique, immutable identifier for the DB instance. This
-     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS key for
-     * the DB instance is accessed.</p>
+     * <p>The Amazon Region-unique, immutable identifier for the DB instance. This
+     * identifier is found in Amazon CloudTrail log entries whenever the Amazon KMS key
+     * for the DB instance is accessed.</p>
      */
     inline bool DbiResourceIdHasBeenSet() const { return m_dbiResourceIdHasBeenSet; }
 
     /**
-     * <p>The AWS Region-unique, immutable identifier for the DB instance. This
-     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS key for
-     * the DB instance is accessed.</p>
+     * <p>The Amazon Region-unique, immutable identifier for the DB instance. This
+     * identifier is found in Amazon CloudTrail log entries whenever the Amazon KMS key
+     * for the DB instance is accessed.</p>
      */
     inline void SetDbiResourceId(const Aws::String& value) { m_dbiResourceIdHasBeenSet = true; m_dbiResourceId = value; }
 
     /**
-     * <p>The AWS Region-unique, immutable identifier for the DB instance. This
-     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS key for
-     * the DB instance is accessed.</p>
+     * <p>The Amazon Region-unique, immutable identifier for the DB instance. This
+     * identifier is found in Amazon CloudTrail log entries whenever the Amazon KMS key
+     * for the DB instance is accessed.</p>
      */
     inline void SetDbiResourceId(Aws::String&& value) { m_dbiResourceIdHasBeenSet = true; m_dbiResourceId = std::move(value); }
 
     /**
-     * <p>The AWS Region-unique, immutable identifier for the DB instance. This
-     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS key for
-     * the DB instance is accessed.</p>
+     * <p>The Amazon Region-unique, immutable identifier for the DB instance. This
+     * identifier is found in Amazon CloudTrail log entries whenever the Amazon KMS key
+     * for the DB instance is accessed.</p>
      */
     inline void SetDbiResourceId(const char* value) { m_dbiResourceIdHasBeenSet = true; m_dbiResourceId.assign(value); }
 
     /**
-     * <p>The AWS Region-unique, immutable identifier for the DB instance. This
-     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS key for
-     * the DB instance is accessed.</p>
+     * <p>The Amazon Region-unique, immutable identifier for the DB instance. This
+     * identifier is found in Amazon CloudTrail log entries whenever the Amazon KMS key
+     * for the DB instance is accessed.</p>
      */
     inline DBInstance& WithDbiResourceId(const Aws::String& value) { SetDbiResourceId(value); return *this;}
 
     /**
-     * <p>The AWS Region-unique, immutable identifier for the DB instance. This
-     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS key for
-     * the DB instance is accessed.</p>
+     * <p>The Amazon Region-unique, immutable identifier for the DB instance. This
+     * identifier is found in Amazon CloudTrail log entries whenever the Amazon KMS key
+     * for the DB instance is accessed.</p>
      */
     inline DBInstance& WithDbiResourceId(Aws::String&& value) { SetDbiResourceId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Region-unique, immutable identifier for the DB instance. This
-     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS key for
-     * the DB instance is accessed.</p>
+     * <p>The Amazon Region-unique, immutable identifier for the DB instance. This
+     * identifier is found in Amazon CloudTrail log entries whenever the Amazon KMS key
+     * for the DB instance is accessed.</p>
      */
     inline DBInstance& WithDbiResourceId(const char* value) { SetDbiResourceId(value); return *this;}
 
@@ -1958,26 +1958,26 @@ namespace Model
 
 
     /**
-     * <p>True if AWS Identity and Access Management (IAM) authentication is enabled,
-     * and otherwise false.</p>
+     * <p>True if Amazon Identity and Access Management (IAM) authentication is
+     * enabled, and otherwise false.</p>
      */
     inline bool GetIAMDatabaseAuthenticationEnabled() const{ return m_iAMDatabaseAuthenticationEnabled; }
 
     /**
-     * <p>True if AWS Identity and Access Management (IAM) authentication is enabled,
-     * and otherwise false.</p>
+     * <p>True if Amazon Identity and Access Management (IAM) authentication is
+     * enabled, and otherwise false.</p>
      */
     inline bool IAMDatabaseAuthenticationEnabledHasBeenSet() const { return m_iAMDatabaseAuthenticationEnabledHasBeenSet; }
 
     /**
-     * <p>True if AWS Identity and Access Management (IAM) authentication is enabled,
-     * and otherwise false.</p>
+     * <p>True if Amazon Identity and Access Management (IAM) authentication is
+     * enabled, and otherwise false.</p>
      */
     inline void SetIAMDatabaseAuthenticationEnabled(bool value) { m_iAMDatabaseAuthenticationEnabledHasBeenSet = true; m_iAMDatabaseAuthenticationEnabled = value; }
 
     /**
-     * <p>True if AWS Identity and Access Management (IAM) authentication is enabled,
-     * and otherwise false.</p>
+     * <p>True if Amazon Identity and Access Management (IAM) authentication is
+     * enabled, and otherwise false.</p>
      */
     inline DBInstance& WithIAMDatabaseAuthenticationEnabled(bool value) { SetIAMDatabaseAuthenticationEnabled(value); return *this;}
 

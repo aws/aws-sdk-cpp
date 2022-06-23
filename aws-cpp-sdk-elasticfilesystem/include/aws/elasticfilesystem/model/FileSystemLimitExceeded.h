@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Returned if the AWS account has already created the maximum number of file
-   * systems allowed per account.</p><p><h3>See Also:</h3>   <a
+   * <p>Returned if the Amazon Web Services account has already created the maximum
+   * number of file systems allowed per account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/FileSystemLimitExceeded">AWS
    * API Reference</a></p>
    */

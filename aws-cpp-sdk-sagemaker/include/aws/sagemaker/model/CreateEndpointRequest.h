@@ -7,6 +7,7 @@
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/SageMakerRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/model/DeploymentConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/Tag.h>
 #include <utility>
@@ -37,58 +38,66 @@ namespace Model
 
 
     /**
-     * <p>The name of the endpoint.The name must be unique within an AWS Region in your
-     * AWS account. The name is case-insensitive in <code>CreateEndpoint</code>, but
-     * the case is preserved and must be matched in .</p>
+     * <p>The name of the endpoint.The name must be unique within an Amazon Web
+     * Services Region in your Amazon Web Services account. The name is
+     * case-insensitive in <code>CreateEndpoint</code>, but the case is preserved and
+     * must be matched in .</p>
      */
     inline const Aws::String& GetEndpointName() const{ return m_endpointName; }
 
     /**
-     * <p>The name of the endpoint.The name must be unique within an AWS Region in your
-     * AWS account. The name is case-insensitive in <code>CreateEndpoint</code>, but
-     * the case is preserved and must be matched in .</p>
+     * <p>The name of the endpoint.The name must be unique within an Amazon Web
+     * Services Region in your Amazon Web Services account. The name is
+     * case-insensitive in <code>CreateEndpoint</code>, but the case is preserved and
+     * must be matched in .</p>
      */
     inline bool EndpointNameHasBeenSet() const { return m_endpointNameHasBeenSet; }
 
     /**
-     * <p>The name of the endpoint.The name must be unique within an AWS Region in your
-     * AWS account. The name is case-insensitive in <code>CreateEndpoint</code>, but
-     * the case is preserved and must be matched in .</p>
+     * <p>The name of the endpoint.The name must be unique within an Amazon Web
+     * Services Region in your Amazon Web Services account. The name is
+     * case-insensitive in <code>CreateEndpoint</code>, but the case is preserved and
+     * must be matched in .</p>
      */
     inline void SetEndpointName(const Aws::String& value) { m_endpointNameHasBeenSet = true; m_endpointName = value; }
 
     /**
-     * <p>The name of the endpoint.The name must be unique within an AWS Region in your
-     * AWS account. The name is case-insensitive in <code>CreateEndpoint</code>, but
-     * the case is preserved and must be matched in .</p>
+     * <p>The name of the endpoint.The name must be unique within an Amazon Web
+     * Services Region in your Amazon Web Services account. The name is
+     * case-insensitive in <code>CreateEndpoint</code>, but the case is preserved and
+     * must be matched in .</p>
      */
     inline void SetEndpointName(Aws::String&& value) { m_endpointNameHasBeenSet = true; m_endpointName = std::move(value); }
 
     /**
-     * <p>The name of the endpoint.The name must be unique within an AWS Region in your
-     * AWS account. The name is case-insensitive in <code>CreateEndpoint</code>, but
-     * the case is preserved and must be matched in .</p>
+     * <p>The name of the endpoint.The name must be unique within an Amazon Web
+     * Services Region in your Amazon Web Services account. The name is
+     * case-insensitive in <code>CreateEndpoint</code>, but the case is preserved and
+     * must be matched in .</p>
      */
     inline void SetEndpointName(const char* value) { m_endpointNameHasBeenSet = true; m_endpointName.assign(value); }
 
     /**
-     * <p>The name of the endpoint.The name must be unique within an AWS Region in your
-     * AWS account. The name is case-insensitive in <code>CreateEndpoint</code>, but
-     * the case is preserved and must be matched in .</p>
+     * <p>The name of the endpoint.The name must be unique within an Amazon Web
+     * Services Region in your Amazon Web Services account. The name is
+     * case-insensitive in <code>CreateEndpoint</code>, but the case is preserved and
+     * must be matched in .</p>
      */
     inline CreateEndpointRequest& WithEndpointName(const Aws::String& value) { SetEndpointName(value); return *this;}
 
     /**
-     * <p>The name of the endpoint.The name must be unique within an AWS Region in your
-     * AWS account. The name is case-insensitive in <code>CreateEndpoint</code>, but
-     * the case is preserved and must be matched in .</p>
+     * <p>The name of the endpoint.The name must be unique within an Amazon Web
+     * Services Region in your Amazon Web Services account. The name is
+     * case-insensitive in <code>CreateEndpoint</code>, but the case is preserved and
+     * must be matched in .</p>
      */
     inline CreateEndpointRequest& WithEndpointName(Aws::String&& value) { SetEndpointName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the endpoint.The name must be unique within an AWS Region in your
-     * AWS account. The name is case-insensitive in <code>CreateEndpoint</code>, but
-     * the case is preserved and must be matched in .</p>
+     * <p>The name of the endpoint.The name must be unique within an Amazon Web
+     * Services Region in your Amazon Web Services account. The name is
+     * case-insensitive in <code>CreateEndpoint</code>, but the case is preserved and
+     * must be matched in .</p>
      */
     inline CreateEndpointRequest& WithEndpointName(const char* value) { SetEndpointName(value); return *this;}
 
@@ -142,75 +151,94 @@ namespace Model
     inline CreateEndpointRequest& WithEndpointConfigName(const char* value) { SetEndpointConfigName(value); return *this;}
 
 
+    
+    inline const DeploymentConfig& GetDeploymentConfig() const{ return m_deploymentConfig; }
+
+    
+    inline bool DeploymentConfigHasBeenSet() const { return m_deploymentConfigHasBeenSet; }
+
+    
+    inline void SetDeploymentConfig(const DeploymentConfig& value) { m_deploymentConfigHasBeenSet = true; m_deploymentConfig = value; }
+
+    
+    inline void SetDeploymentConfig(DeploymentConfig&& value) { m_deploymentConfigHasBeenSet = true; m_deploymentConfig = std::move(value); }
+
+    
+    inline CreateEndpointRequest& WithDeploymentConfig(const DeploymentConfig& value) { SetDeploymentConfig(value); return *this;}
+
+    
+    inline CreateEndpointRequest& WithDeploymentConfig(DeploymentConfig&& value) { SetDeploymentConfig(std::move(value)); return *this;}
+
+
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p>
+     * Amazon Web Services Resources</a>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p>
+     * Amazon Web Services Resources</a>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p>
+     * Amazon Web Services Resources</a>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p>
+     * Amazon Web Services Resources</a>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p>
+     * Amazon Web Services Resources</a>.</p>
      */
     inline CreateEndpointRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p>
+     * Amazon Web Services Resources</a>.</p>
      */
     inline CreateEndpointRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p>
+     * Amazon Web Services Resources</a>.</p>
      */
     inline CreateEndpointRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p>
+     * Amazon Web Services Resources</a>.</p>
      */
     inline CreateEndpointRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
@@ -221,6 +249,9 @@ namespace Model
 
     Aws::String m_endpointConfigName;
     bool m_endpointConfigNameHasBeenSet;
+
+    DeploymentConfig m_deploymentConfig;
+    bool m_deploymentConfigHasBeenSet;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;

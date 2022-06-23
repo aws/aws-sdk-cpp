@@ -72,7 +72,7 @@ DynamoDBStreamsClient::~DynamoDBStreamsClient()
 {
 }
 
-void DynamoDBStreamsClient::init(const ClientConfiguration& config)
+void DynamoDBStreamsClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("DynamoDB Streams");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -101,9 +101,6 @@ void DynamoDBStreamsClient::OverrideEndpoint(const Aws::String& endpoint)
 DescribeStreamOutcome DynamoDBStreamsClient::DescribeStream(const DescribeStreamRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeStreamOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -128,9 +125,6 @@ void DynamoDBStreamsClient::DescribeStreamAsyncHelper(const DescribeStreamReques
 GetRecordsOutcome DynamoDBStreamsClient::GetRecords(const GetRecordsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetRecordsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -155,9 +149,6 @@ void DynamoDBStreamsClient::GetRecordsAsyncHelper(const GetRecordsRequest& reque
 GetShardIteratorOutcome DynamoDBStreamsClient::GetShardIterator(const GetShardIteratorRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetShardIteratorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -182,9 +173,6 @@ void DynamoDBStreamsClient::GetShardIteratorAsyncHelper(const GetShardIteratorRe
 ListStreamsOutcome DynamoDBStreamsClient::ListStreams(const ListStreamsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListStreamsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

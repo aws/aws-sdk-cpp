@@ -20,6 +20,7 @@ namespace Model
 
 LensReview::LensReview() : 
     m_lensAliasHasBeenSet(false),
+    m_lensArnHasBeenSet(false),
     m_lensVersionHasBeenSet(false),
     m_lensNameHasBeenSet(false),
     m_lensStatus(LensStatus::NOT_SET),
@@ -34,6 +35,7 @@ LensReview::LensReview() :
 
 LensReview::LensReview(JsonView jsonValue) : 
     m_lensAliasHasBeenSet(false),
+    m_lensArnHasBeenSet(false),
     m_lensVersionHasBeenSet(false),
     m_lensNameHasBeenSet(false),
     m_lensStatus(LensStatus::NOT_SET),
@@ -54,6 +56,13 @@ LensReview& LensReview::operator =(JsonView jsonValue)
     m_lensAlias = jsonValue.GetString("LensAlias");
 
     m_lensAliasHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LensArn"))
+  {
+    m_lensArn = jsonValue.GetString("LensArn");
+
+    m_lensArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("LensVersion"))
@@ -128,6 +137,12 @@ JsonValue LensReview::Jsonize() const
   if(m_lensAliasHasBeenSet)
   {
    payload.WithString("LensAlias", m_lensAlias);
+
+  }
+
+  if(m_lensArnHasBeenSet)
+  {
+   payload.WithString("LensArn", m_lensArn);
 
   }
 

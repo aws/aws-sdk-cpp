@@ -24,6 +24,7 @@ PathComponent::PathComponent() :
     m_sequenceNumber(0),
     m_sequenceNumberHasBeenSet(false),
     m_aclRuleHasBeenSet(false),
+    m_attachedToHasBeenSet(false),
     m_componentHasBeenSet(false),
     m_destinationVpcHasBeenSet(false),
     m_outboundHeaderHasBeenSet(false),
@@ -32,7 +33,10 @@ PathComponent::PathComponent() :
     m_securityGroupRuleHasBeenSet(false),
     m_sourceVpcHasBeenSet(false),
     m_subnetHasBeenSet(false),
-    m_vpcHasBeenSet(false)
+    m_vpcHasBeenSet(false),
+    m_additionalDetailsHasBeenSet(false),
+    m_transitGatewayHasBeenSet(false),
+    m_transitGatewayRouteTableRouteHasBeenSet(false)
 {
 }
 
@@ -40,6 +44,7 @@ PathComponent::PathComponent(const XmlNode& xmlNode) :
     m_sequenceNumber(0),
     m_sequenceNumberHasBeenSet(false),
     m_aclRuleHasBeenSet(false),
+    m_attachedToHasBeenSet(false),
     m_componentHasBeenSet(false),
     m_destinationVpcHasBeenSet(false),
     m_outboundHeaderHasBeenSet(false),
@@ -48,7 +53,10 @@ PathComponent::PathComponent(const XmlNode& xmlNode) :
     m_securityGroupRuleHasBeenSet(false),
     m_sourceVpcHasBeenSet(false),
     m_subnetHasBeenSet(false),
-    m_vpcHasBeenSet(false)
+    m_vpcHasBeenSet(false),
+    m_additionalDetailsHasBeenSet(false),
+    m_transitGatewayHasBeenSet(false),
+    m_transitGatewayRouteTableRouteHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -70,6 +78,12 @@ PathComponent& PathComponent::operator =(const XmlNode& xmlNode)
     {
       m_aclRule = aclRuleNode;
       m_aclRuleHasBeenSet = true;
+    }
+    XmlNode attachedToNode = resultNode.FirstChild("attachedTo");
+    if(!attachedToNode.IsNull())
+    {
+      m_attachedTo = attachedToNode;
+      m_attachedToHasBeenSet = true;
     }
     XmlNode componentNode = resultNode.FirstChild("component");
     if(!componentNode.IsNull())
@@ -125,6 +139,30 @@ PathComponent& PathComponent::operator =(const XmlNode& xmlNode)
       m_vpc = vpcNode;
       m_vpcHasBeenSet = true;
     }
+    XmlNode additionalDetailsNode = resultNode.FirstChild("additionalDetailSet");
+    if(!additionalDetailsNode.IsNull())
+    {
+      XmlNode additionalDetailsMember = additionalDetailsNode.FirstChild("item");
+      while(!additionalDetailsMember.IsNull())
+      {
+        m_additionalDetails.push_back(additionalDetailsMember);
+        additionalDetailsMember = additionalDetailsMember.NextNode("item");
+      }
+
+      m_additionalDetailsHasBeenSet = true;
+    }
+    XmlNode transitGatewayNode = resultNode.FirstChild("transitGateway");
+    if(!transitGatewayNode.IsNull())
+    {
+      m_transitGateway = transitGatewayNode;
+      m_transitGatewayHasBeenSet = true;
+    }
+    XmlNode transitGatewayRouteTableRouteNode = resultNode.FirstChild("transitGatewayRouteTableRoute");
+    if(!transitGatewayRouteTableRouteNode.IsNull())
+    {
+      m_transitGatewayRouteTableRoute = transitGatewayRouteTableRouteNode;
+      m_transitGatewayRouteTableRouteHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -142,6 +180,13 @@ void PathComponent::OutputToStream(Aws::OStream& oStream, const char* location, 
       Aws::StringStream aclRuleLocationAndMemberSs;
       aclRuleLocationAndMemberSs << location << index << locationValue << ".AclRule";
       m_aclRule.OutputToStream(oStream, aclRuleLocationAndMemberSs.str().c_str());
+  }
+
+  if(m_attachedToHasBeenSet)
+  {
+      Aws::StringStream attachedToLocationAndMemberSs;
+      attachedToLocationAndMemberSs << location << index << locationValue << ".AttachedTo";
+      m_attachedTo.OutputToStream(oStream, attachedToLocationAndMemberSs.str().c_str());
   }
 
   if(m_componentHasBeenSet)
@@ -207,6 +252,31 @@ void PathComponent::OutputToStream(Aws::OStream& oStream, const char* location, 
       m_vpc.OutputToStream(oStream, vpcLocationAndMemberSs.str().c_str());
   }
 
+  if(m_additionalDetailsHasBeenSet)
+  {
+      unsigned additionalDetailsIdx = 1;
+      for(auto& item : m_additionalDetails)
+      {
+        Aws::StringStream additionalDetailsSs;
+        additionalDetailsSs << location << index << locationValue << ".AdditionalDetailSet." << additionalDetailsIdx++;
+        item.OutputToStream(oStream, additionalDetailsSs.str().c_str());
+      }
+  }
+
+  if(m_transitGatewayHasBeenSet)
+  {
+      Aws::StringStream transitGatewayLocationAndMemberSs;
+      transitGatewayLocationAndMemberSs << location << index << locationValue << ".TransitGateway";
+      m_transitGateway.OutputToStream(oStream, transitGatewayLocationAndMemberSs.str().c_str());
+  }
+
+  if(m_transitGatewayRouteTableRouteHasBeenSet)
+  {
+      Aws::StringStream transitGatewayRouteTableRouteLocationAndMemberSs;
+      transitGatewayRouteTableRouteLocationAndMemberSs << location << index << locationValue << ".TransitGatewayRouteTableRoute";
+      m_transitGatewayRouteTableRoute.OutputToStream(oStream, transitGatewayRouteTableRouteLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void PathComponent::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -220,6 +290,12 @@ void PathComponent::OutputToStream(Aws::OStream& oStream, const char* location) 
       Aws::String aclRuleLocationAndMember(location);
       aclRuleLocationAndMember += ".AclRule";
       m_aclRule.OutputToStream(oStream, aclRuleLocationAndMember.c_str());
+  }
+  if(m_attachedToHasBeenSet)
+  {
+      Aws::String attachedToLocationAndMember(location);
+      attachedToLocationAndMember += ".AttachedTo";
+      m_attachedTo.OutputToStream(oStream, attachedToLocationAndMember.c_str());
   }
   if(m_componentHasBeenSet)
   {
@@ -274,6 +350,28 @@ void PathComponent::OutputToStream(Aws::OStream& oStream, const char* location) 
       Aws::String vpcLocationAndMember(location);
       vpcLocationAndMember += ".Vpc";
       m_vpc.OutputToStream(oStream, vpcLocationAndMember.c_str());
+  }
+  if(m_additionalDetailsHasBeenSet)
+  {
+      unsigned additionalDetailsIdx = 1;
+      for(auto& item : m_additionalDetails)
+      {
+        Aws::StringStream additionalDetailsSs;
+        additionalDetailsSs << location <<  ".AdditionalDetailSet." << additionalDetailsIdx++;
+        item.OutputToStream(oStream, additionalDetailsSs.str().c_str());
+      }
+  }
+  if(m_transitGatewayHasBeenSet)
+  {
+      Aws::String transitGatewayLocationAndMember(location);
+      transitGatewayLocationAndMember += ".TransitGateway";
+      m_transitGateway.OutputToStream(oStream, transitGatewayLocationAndMember.c_str());
+  }
+  if(m_transitGatewayRouteTableRouteHasBeenSet)
+  {
+      Aws::String transitGatewayRouteTableRouteLocationAndMember(location);
+      transitGatewayRouteTableRouteLocationAndMember += ".TransitGatewayRouteTableRoute";
+      m_transitGatewayRouteTableRoute.OutputToStream(oStream, transitGatewayRouteTableRouteLocationAndMember.c_str());
   }
 }
 

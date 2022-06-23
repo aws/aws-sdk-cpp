@@ -18,12 +18,15 @@ CreateEnvironmentEC2Request::CreateEnvironmentEC2Request() :
     m_clientRequestTokenHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
+    m_imageIdHasBeenSet(false),
     m_automaticStopTimeMinutes(0),
     m_automaticStopTimeMinutesHasBeenSet(false),
     m_ownerArnHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_connectionType(ConnectionType::NOT_SET),
-    m_connectionTypeHasBeenSet(false)
+    m_connectionTypeHasBeenSet(false),
+    m_dryRun(false),
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -61,6 +64,12 @@ Aws::String CreateEnvironmentEC2Request::SerializePayload() const
 
   }
 
+  if(m_imageIdHasBeenSet)
+  {
+   payload.WithString("imageId", m_imageId);
+
+  }
+
   if(m_automaticStopTimeMinutesHasBeenSet)
   {
    payload.WithInteger("automaticStopTimeMinutes", m_automaticStopTimeMinutes);
@@ -87,6 +96,12 @@ Aws::String CreateEnvironmentEC2Request::SerializePayload() const
   if(m_connectionTypeHasBeenSet)
   {
    payload.WithString("connectionType", ConnectionTypeMapper::GetNameForConnectionType(m_connectionType));
+  }
+
+  if(m_dryRunHasBeenSet)
+  {
+   payload.WithBool("dryRun", m_dryRun);
+
   }
 
   return payload.View().WriteReadable();

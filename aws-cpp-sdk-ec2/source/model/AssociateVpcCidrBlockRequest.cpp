@@ -17,7 +17,13 @@ AssociateVpcCidrBlockRequest::AssociateVpcCidrBlockRequest() :
     m_vpcIdHasBeenSet(false),
     m_ipv6CidrBlockNetworkBorderGroupHasBeenSet(false),
     m_ipv6PoolHasBeenSet(false),
-    m_ipv6CidrBlockHasBeenSet(false)
+    m_ipv6CidrBlockHasBeenSet(false),
+    m_ipv4IpamPoolIdHasBeenSet(false),
+    m_ipv4NetmaskLength(0),
+    m_ipv4NetmaskLengthHasBeenSet(false),
+    m_ipv6IpamPoolIdHasBeenSet(false),
+    m_ipv6NetmaskLength(0),
+    m_ipv6NetmaskLengthHasBeenSet(false)
 {
 }
 
@@ -53,6 +59,26 @@ Aws::String AssociateVpcCidrBlockRequest::SerializePayload() const
   if(m_ipv6CidrBlockHasBeenSet)
   {
     ss << "Ipv6CidrBlock=" << StringUtils::URLEncode(m_ipv6CidrBlock.c_str()) << "&";
+  }
+
+  if(m_ipv4IpamPoolIdHasBeenSet)
+  {
+    ss << "Ipv4IpamPoolId=" << StringUtils::URLEncode(m_ipv4IpamPoolId.c_str()) << "&";
+  }
+
+  if(m_ipv4NetmaskLengthHasBeenSet)
+  {
+    ss << "Ipv4NetmaskLength=" << m_ipv4NetmaskLength << "&";
+  }
+
+  if(m_ipv6IpamPoolIdHasBeenSet)
+  {
+    ss << "Ipv6IpamPoolId=" << StringUtils::URLEncode(m_ipv6IpamPoolId.c_str()) << "&";
+  }
+
+  if(m_ipv6NetmaskLengthHasBeenSet)
+  {
+    ss << "Ipv6NetmaskLength=" << m_ipv6NetmaskLength << "&";
   }
 
   ss << "Version=2016-11-15";

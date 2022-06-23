@@ -16,7 +16,8 @@ namespace Model
   enum class CheckoutType
   {
     NOT_SET,
-    PROVISIONAL
+    PROVISIONAL,
+    PERPETUAL
   };
 
 namespace CheckoutTypeMapper

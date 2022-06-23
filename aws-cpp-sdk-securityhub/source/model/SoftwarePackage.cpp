@@ -23,7 +23,9 @@ SoftwarePackage::SoftwarePackage() :
     m_versionHasBeenSet(false),
     m_epochHasBeenSet(false),
     m_releaseHasBeenSet(false),
-    m_architectureHasBeenSet(false)
+    m_architectureHasBeenSet(false),
+    m_packageManagerHasBeenSet(false),
+    m_filePathHasBeenSet(false)
 {
 }
 
@@ -32,7 +34,9 @@ SoftwarePackage::SoftwarePackage(JsonView jsonValue) :
     m_versionHasBeenSet(false),
     m_epochHasBeenSet(false),
     m_releaseHasBeenSet(false),
-    m_architectureHasBeenSet(false)
+    m_architectureHasBeenSet(false),
+    m_packageManagerHasBeenSet(false),
+    m_filePathHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -74,6 +78,20 @@ SoftwarePackage& SoftwarePackage::operator =(JsonView jsonValue)
     m_architectureHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PackageManager"))
+  {
+    m_packageManager = jsonValue.GetString("PackageManager");
+
+    m_packageManagerHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FilePath"))
+  {
+    m_filePath = jsonValue.GetString("FilePath");
+
+    m_filePathHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -108,6 +126,18 @@ JsonValue SoftwarePackage::Jsonize() const
   if(m_architectureHasBeenSet)
   {
    payload.WithString("Architecture", m_architecture);
+
+  }
+
+  if(m_packageManagerHasBeenSet)
+  {
+   payload.WithString("PackageManager", m_packageManager);
+
+  }
+
+  if(m_filePathHasBeenSet)
+  {
+   payload.WithString("FilePath", m_filePath);
 
   }
 

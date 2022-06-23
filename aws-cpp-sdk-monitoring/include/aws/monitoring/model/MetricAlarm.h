@@ -936,49 +936,81 @@ namespace Model
 
 
     /**
-     * <p>Sets how this alarm is to handle missing data points. If this parameter is
+     * <p>Sets how this alarm is to handle missing data points. The valid values are
+     * <code>breaching</code>, <code>notBreaching</code>, <code>ignore</code>, and
+     * <code>missing</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
+     * how CloudWatch alarms treat missing data</a>.</p> <p>If this parameter is
      * omitted, the default behavior of <code>missing</code> is used.</p>
      */
     inline const Aws::String& GetTreatMissingData() const{ return m_treatMissingData; }
 
     /**
-     * <p>Sets how this alarm is to handle missing data points. If this parameter is
+     * <p>Sets how this alarm is to handle missing data points. The valid values are
+     * <code>breaching</code>, <code>notBreaching</code>, <code>ignore</code>, and
+     * <code>missing</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
+     * how CloudWatch alarms treat missing data</a>.</p> <p>If this parameter is
      * omitted, the default behavior of <code>missing</code> is used.</p>
      */
     inline bool TreatMissingDataHasBeenSet() const { return m_treatMissingDataHasBeenSet; }
 
     /**
-     * <p>Sets how this alarm is to handle missing data points. If this parameter is
+     * <p>Sets how this alarm is to handle missing data points. The valid values are
+     * <code>breaching</code>, <code>notBreaching</code>, <code>ignore</code>, and
+     * <code>missing</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
+     * how CloudWatch alarms treat missing data</a>.</p> <p>If this parameter is
      * omitted, the default behavior of <code>missing</code> is used.</p>
      */
     inline void SetTreatMissingData(const Aws::String& value) { m_treatMissingDataHasBeenSet = true; m_treatMissingData = value; }
 
     /**
-     * <p>Sets how this alarm is to handle missing data points. If this parameter is
+     * <p>Sets how this alarm is to handle missing data points. The valid values are
+     * <code>breaching</code>, <code>notBreaching</code>, <code>ignore</code>, and
+     * <code>missing</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
+     * how CloudWatch alarms treat missing data</a>.</p> <p>If this parameter is
      * omitted, the default behavior of <code>missing</code> is used.</p>
      */
     inline void SetTreatMissingData(Aws::String&& value) { m_treatMissingDataHasBeenSet = true; m_treatMissingData = std::move(value); }
 
     /**
-     * <p>Sets how this alarm is to handle missing data points. If this parameter is
+     * <p>Sets how this alarm is to handle missing data points. The valid values are
+     * <code>breaching</code>, <code>notBreaching</code>, <code>ignore</code>, and
+     * <code>missing</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
+     * how CloudWatch alarms treat missing data</a>.</p> <p>If this parameter is
      * omitted, the default behavior of <code>missing</code> is used.</p>
      */
     inline void SetTreatMissingData(const char* value) { m_treatMissingDataHasBeenSet = true; m_treatMissingData.assign(value); }
 
     /**
-     * <p>Sets how this alarm is to handle missing data points. If this parameter is
+     * <p>Sets how this alarm is to handle missing data points. The valid values are
+     * <code>breaching</code>, <code>notBreaching</code>, <code>ignore</code>, and
+     * <code>missing</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
+     * how CloudWatch alarms treat missing data</a>.</p> <p>If this parameter is
      * omitted, the default behavior of <code>missing</code> is used.</p>
      */
     inline MetricAlarm& WithTreatMissingData(const Aws::String& value) { SetTreatMissingData(value); return *this;}
 
     /**
-     * <p>Sets how this alarm is to handle missing data points. If this parameter is
+     * <p>Sets how this alarm is to handle missing data points. The valid values are
+     * <code>breaching</code>, <code>notBreaching</code>, <code>ignore</code>, and
+     * <code>missing</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
+     * how CloudWatch alarms treat missing data</a>.</p> <p>If this parameter is
      * omitted, the default behavior of <code>missing</code> is used.</p>
      */
     inline MetricAlarm& WithTreatMissingData(Aws::String&& value) { SetTreatMissingData(std::move(value)); return *this;}
 
     /**
-     * <p>Sets how this alarm is to handle missing data points. If this parameter is
+     * <p>Sets how this alarm is to handle missing data points. The valid values are
+     * <code>breaching</code>, <code>notBreaching</code>, <code>ignore</code>, and
+     * <code>missing</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
+     * how CloudWatch alarms treat missing data</a>.</p> <p>If this parameter is
      * omitted, the default behavior of <code>missing</code> is used.</p>
      */
     inline MetricAlarm& WithTreatMissingData(const char* value) { SetTreatMissingData(value); return *this;}

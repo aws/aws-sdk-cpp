@@ -41,13 +41,17 @@ CapacityReservation::CapacityReservation() :
     m_ephemeralStorageHasBeenSet(false),
     m_state(CapacityReservationState::NOT_SET),
     m_stateHasBeenSet(false),
+    m_startDateHasBeenSet(false),
     m_endDateHasBeenSet(false),
     m_endDateType(EndDateType::NOT_SET),
     m_endDateTypeHasBeenSet(false),
     m_instanceMatchCriteria(InstanceMatchCriteria::NOT_SET),
     m_instanceMatchCriteriaHasBeenSet(false),
     m_createDateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_outpostArnHasBeenSet(false),
+    m_capacityReservationFleetIdHasBeenSet(false),
+    m_placementGroupArnHasBeenSet(false)
 {
 }
 
@@ -72,13 +76,17 @@ CapacityReservation::CapacityReservation(const XmlNode& xmlNode) :
     m_ephemeralStorageHasBeenSet(false),
     m_state(CapacityReservationState::NOT_SET),
     m_stateHasBeenSet(false),
+    m_startDateHasBeenSet(false),
     m_endDateHasBeenSet(false),
     m_endDateType(EndDateType::NOT_SET),
     m_endDateTypeHasBeenSet(false),
     m_instanceMatchCriteria(InstanceMatchCriteria::NOT_SET),
     m_instanceMatchCriteriaHasBeenSet(false),
     m_createDateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_outpostArnHasBeenSet(false),
+    m_capacityReservationFleetIdHasBeenSet(false),
+    m_placementGroupArnHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -167,6 +175,12 @@ CapacityReservation& CapacityReservation::operator =(const XmlNode& xmlNode)
       m_state = CapacityReservationStateMapper::GetCapacityReservationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
       m_stateHasBeenSet = true;
     }
+    XmlNode startDateNode = resultNode.FirstChild("startDate");
+    if(!startDateNode.IsNull())
+    {
+      m_startDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(startDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_startDateHasBeenSet = true;
+    }
     XmlNode endDateNode = resultNode.FirstChild("endDate");
     if(!endDateNode.IsNull())
     {
@@ -202,6 +216,24 @@ CapacityReservation& CapacityReservation::operator =(const XmlNode& xmlNode)
       }
 
       m_tagsHasBeenSet = true;
+    }
+    XmlNode outpostArnNode = resultNode.FirstChild("outpostArn");
+    if(!outpostArnNode.IsNull())
+    {
+      m_outpostArn = Aws::Utils::Xml::DecodeEscapedXmlText(outpostArnNode.GetText());
+      m_outpostArnHasBeenSet = true;
+    }
+    XmlNode capacityReservationFleetIdNode = resultNode.FirstChild("capacityReservationFleetId");
+    if(!capacityReservationFleetIdNode.IsNull())
+    {
+      m_capacityReservationFleetId = Aws::Utils::Xml::DecodeEscapedXmlText(capacityReservationFleetIdNode.GetText());
+      m_capacityReservationFleetIdHasBeenSet = true;
+    }
+    XmlNode placementGroupArnNode = resultNode.FirstChild("placementGroupArn");
+    if(!placementGroupArnNode.IsNull())
+    {
+      m_placementGroupArn = Aws::Utils::Xml::DecodeEscapedXmlText(placementGroupArnNode.GetText());
+      m_placementGroupArnHasBeenSet = true;
     }
   }
 
@@ -275,6 +307,11 @@ void CapacityReservation::OutputToStream(Aws::OStream& oStream, const char* loca
       oStream << location << index << locationValue << ".State=" << CapacityReservationStateMapper::GetNameForCapacityReservationState(m_state) << "&";
   }
 
+  if(m_startDateHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".StartDate=" << StringUtils::URLEncode(m_startDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+
   if(m_endDateHasBeenSet)
   {
       oStream << location << index << locationValue << ".EndDate=" << StringUtils::URLEncode(m_endDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
@@ -304,6 +341,21 @@ void CapacityReservation::OutputToStream(Aws::OStream& oStream, const char* loca
         tagsSs << location << index << locationValue << ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
+  }
+
+  if(m_outpostArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".OutpostArn=" << StringUtils::URLEncode(m_outpostArn.c_str()) << "&";
+  }
+
+  if(m_capacityReservationFleetIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CapacityReservationFleetId=" << StringUtils::URLEncode(m_capacityReservationFleetId.c_str()) << "&";
+  }
+
+  if(m_placementGroupArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PlacementGroupArn=" << StringUtils::URLEncode(m_placementGroupArn.c_str()) << "&";
   }
 
 }
@@ -362,6 +414,10 @@ void CapacityReservation::OutputToStream(Aws::OStream& oStream, const char* loca
   {
       oStream << location << ".State=" << CapacityReservationStateMapper::GetNameForCapacityReservationState(m_state) << "&";
   }
+  if(m_startDateHasBeenSet)
+  {
+      oStream << location << ".StartDate=" << StringUtils::URLEncode(m_startDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
   if(m_endDateHasBeenSet)
   {
       oStream << location << ".EndDate=" << StringUtils::URLEncode(m_endDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
@@ -387,6 +443,18 @@ void CapacityReservation::OutputToStream(Aws::OStream& oStream, const char* loca
         tagsSs << location <<  ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
+  }
+  if(m_outpostArnHasBeenSet)
+  {
+      oStream << location << ".OutpostArn=" << StringUtils::URLEncode(m_outpostArn.c_str()) << "&";
+  }
+  if(m_capacityReservationFleetIdHasBeenSet)
+  {
+      oStream << location << ".CapacityReservationFleetId=" << StringUtils::URLEncode(m_capacityReservationFleetId.c_str()) << "&";
+  }
+  if(m_placementGroupArnHasBeenSet)
+  {
+      oStream << location << ".PlacementGroupArn=" << StringUtils::URLEncode(m_placementGroupArn.c_str()) << "&";
   }
 }
 

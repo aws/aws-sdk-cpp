@@ -235,50 +235,50 @@ namespace Model
 
 
     /**
-     * <p>The error code that AWS Config returned when the source account aggregation
-     * last failed.</p>
+     * <p>The error code that Config returned when the source account aggregation last
+     * failed.</p>
      */
     inline const Aws::String& GetLastErrorCode() const{ return m_lastErrorCode; }
 
     /**
-     * <p>The error code that AWS Config returned when the source account aggregation
-     * last failed.</p>
+     * <p>The error code that Config returned when the source account aggregation last
+     * failed.</p>
      */
     inline bool LastErrorCodeHasBeenSet() const { return m_lastErrorCodeHasBeenSet; }
 
     /**
-     * <p>The error code that AWS Config returned when the source account aggregation
-     * last failed.</p>
+     * <p>The error code that Config returned when the source account aggregation last
+     * failed.</p>
      */
     inline void SetLastErrorCode(const Aws::String& value) { m_lastErrorCodeHasBeenSet = true; m_lastErrorCode = value; }
 
     /**
-     * <p>The error code that AWS Config returned when the source account aggregation
-     * last failed.</p>
+     * <p>The error code that Config returned when the source account aggregation last
+     * failed.</p>
      */
     inline void SetLastErrorCode(Aws::String&& value) { m_lastErrorCodeHasBeenSet = true; m_lastErrorCode = std::move(value); }
 
     /**
-     * <p>The error code that AWS Config returned when the source account aggregation
-     * last failed.</p>
+     * <p>The error code that Config returned when the source account aggregation last
+     * failed.</p>
      */
     inline void SetLastErrorCode(const char* value) { m_lastErrorCodeHasBeenSet = true; m_lastErrorCode.assign(value); }
 
     /**
-     * <p>The error code that AWS Config returned when the source account aggregation
-     * last failed.</p>
+     * <p>The error code that Config returned when the source account aggregation last
+     * failed.</p>
      */
     inline AggregatedSourceStatus& WithLastErrorCode(const Aws::String& value) { SetLastErrorCode(value); return *this;}
 
     /**
-     * <p>The error code that AWS Config returned when the source account aggregation
-     * last failed.</p>
+     * <p>The error code that Config returned when the source account aggregation last
+     * failed.</p>
      */
     inline AggregatedSourceStatus& WithLastErrorCode(Aws::String&& value) { SetLastErrorCode(std::move(value)); return *this;}
 
     /**
-     * <p>The error code that AWS Config returned when the source account aggregation
-     * last failed.</p>
+     * <p>The error code that Config returned when the source account aggregation last
+     * failed.</p>
      */
     inline AggregatedSourceStatus& WithLastErrorCode(const char* value) { SetLastErrorCode(value); return *this;}
 

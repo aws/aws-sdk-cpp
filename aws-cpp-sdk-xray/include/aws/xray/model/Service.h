@@ -174,147 +174,155 @@ namespace Model
 
 
     /**
-     * <p>Identifier of the AWS account in which the service runs.</p>
+     * <p>Identifier of the Amazon Web Services account in which the service runs.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>Identifier of the AWS account in which the service runs.</p>
+     * <p>Identifier of the Amazon Web Services account in which the service runs.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>Identifier of the AWS account in which the service runs.</p>
+     * <p>Identifier of the Amazon Web Services account in which the service runs.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>Identifier of the AWS account in which the service runs.</p>
+     * <p>Identifier of the Amazon Web Services account in which the service runs.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>Identifier of the AWS account in which the service runs.</p>
+     * <p>Identifier of the Amazon Web Services account in which the service runs.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>Identifier of the AWS account in which the service runs.</p>
+     * <p>Identifier of the Amazon Web Services account in which the service runs.</p>
      */
     inline Service& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>Identifier of the AWS account in which the service runs.</p>
+     * <p>Identifier of the Amazon Web Services account in which the service runs.</p>
      */
     inline Service& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>Identifier of the AWS account in which the service runs.</p>
+     * <p>Identifier of the Amazon Web Services account in which the service runs.</p>
      */
     inline Service& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
 
     /**
-     * <p>The type of service.</p> <ul> <li> <p>AWS Resource - The type of an AWS
-     * resource. For example, <code>AWS::EC2::Instance</code> for an application
-     * running on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon
-     * DynamoDB table that the application used.</p> </li> <li> <p>AWS Service - The
-     * type of an AWS service. For example, <code>AWS::DynamoDB</code> for downstream
-     * calls to Amazon DynamoDB that didn't target a specific table.</p> </li> <li> <p>
-     * <code>client</code> - Represents the clients that sent requests to a root
-     * service.</p> </li> <li> <p> <code>remote</code> - A downstream service of
-     * indeterminate type.</p> </li> </ul>
+     * <p>The type of service.</p> <ul> <li> <p>Amazon Web Services Resource - The type
+     * of an Amazon Web Services resource. For example, <code>AWS::EC2::Instance</code>
+     * for an application running on Amazon EC2 or <code>AWS::DynamoDB::Table</code>
+     * for an Amazon DynamoDB table that the application used.</p> </li> <li> <p>Amazon
+     * Web Services Service - The type of an Amazon Web Services service. For example,
+     * <code>AWS::DynamoDB</code> for downstream calls to Amazon DynamoDB that didn't
+     * target a specific table.</p> </li> <li> <p> <code>client</code> - Represents the
+     * clients that sent requests to a root service.</p> </li> <li> <p>
+     * <code>remote</code> - A downstream service of indeterminate type.</p> </li>
+     * </ul>
      */
     inline const Aws::String& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of service.</p> <ul> <li> <p>AWS Resource - The type of an AWS
-     * resource. For example, <code>AWS::EC2::Instance</code> for an application
-     * running on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon
-     * DynamoDB table that the application used.</p> </li> <li> <p>AWS Service - The
-     * type of an AWS service. For example, <code>AWS::DynamoDB</code> for downstream
-     * calls to Amazon DynamoDB that didn't target a specific table.</p> </li> <li> <p>
-     * <code>client</code> - Represents the clients that sent requests to a root
-     * service.</p> </li> <li> <p> <code>remote</code> - A downstream service of
-     * indeterminate type.</p> </li> </ul>
+     * <p>The type of service.</p> <ul> <li> <p>Amazon Web Services Resource - The type
+     * of an Amazon Web Services resource. For example, <code>AWS::EC2::Instance</code>
+     * for an application running on Amazon EC2 or <code>AWS::DynamoDB::Table</code>
+     * for an Amazon DynamoDB table that the application used.</p> </li> <li> <p>Amazon
+     * Web Services Service - The type of an Amazon Web Services service. For example,
+     * <code>AWS::DynamoDB</code> for downstream calls to Amazon DynamoDB that didn't
+     * target a specific table.</p> </li> <li> <p> <code>client</code> - Represents the
+     * clients that sent requests to a root service.</p> </li> <li> <p>
+     * <code>remote</code> - A downstream service of indeterminate type.</p> </li>
+     * </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of service.</p> <ul> <li> <p>AWS Resource - The type of an AWS
-     * resource. For example, <code>AWS::EC2::Instance</code> for an application
-     * running on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon
-     * DynamoDB table that the application used.</p> </li> <li> <p>AWS Service - The
-     * type of an AWS service. For example, <code>AWS::DynamoDB</code> for downstream
-     * calls to Amazon DynamoDB that didn't target a specific table.</p> </li> <li> <p>
-     * <code>client</code> - Represents the clients that sent requests to a root
-     * service.</p> </li> <li> <p> <code>remote</code> - A downstream service of
-     * indeterminate type.</p> </li> </ul>
+     * <p>The type of service.</p> <ul> <li> <p>Amazon Web Services Resource - The type
+     * of an Amazon Web Services resource. For example, <code>AWS::EC2::Instance</code>
+     * for an application running on Amazon EC2 or <code>AWS::DynamoDB::Table</code>
+     * for an Amazon DynamoDB table that the application used.</p> </li> <li> <p>Amazon
+     * Web Services Service - The type of an Amazon Web Services service. For example,
+     * <code>AWS::DynamoDB</code> for downstream calls to Amazon DynamoDB that didn't
+     * target a specific table.</p> </li> <li> <p> <code>client</code> - Represents the
+     * clients that sent requests to a root service.</p> </li> <li> <p>
+     * <code>remote</code> - A downstream service of indeterminate type.</p> </li>
+     * </ul>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of service.</p> <ul> <li> <p>AWS Resource - The type of an AWS
-     * resource. For example, <code>AWS::EC2::Instance</code> for an application
-     * running on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon
-     * DynamoDB table that the application used.</p> </li> <li> <p>AWS Service - The
-     * type of an AWS service. For example, <code>AWS::DynamoDB</code> for downstream
-     * calls to Amazon DynamoDB that didn't target a specific table.</p> </li> <li> <p>
-     * <code>client</code> - Represents the clients that sent requests to a root
-     * service.</p> </li> <li> <p> <code>remote</code> - A downstream service of
-     * indeterminate type.</p> </li> </ul>
+     * <p>The type of service.</p> <ul> <li> <p>Amazon Web Services Resource - The type
+     * of an Amazon Web Services resource. For example, <code>AWS::EC2::Instance</code>
+     * for an application running on Amazon EC2 or <code>AWS::DynamoDB::Table</code>
+     * for an Amazon DynamoDB table that the application used.</p> </li> <li> <p>Amazon
+     * Web Services Service - The type of an Amazon Web Services service. For example,
+     * <code>AWS::DynamoDB</code> for downstream calls to Amazon DynamoDB that didn't
+     * target a specific table.</p> </li> <li> <p> <code>client</code> - Represents the
+     * clients that sent requests to a root service.</p> </li> <li> <p>
+     * <code>remote</code> - A downstream service of indeterminate type.</p> </li>
+     * </ul>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of service.</p> <ul> <li> <p>AWS Resource - The type of an AWS
-     * resource. For example, <code>AWS::EC2::Instance</code> for an application
-     * running on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon
-     * DynamoDB table that the application used.</p> </li> <li> <p>AWS Service - The
-     * type of an AWS service. For example, <code>AWS::DynamoDB</code> for downstream
-     * calls to Amazon DynamoDB that didn't target a specific table.</p> </li> <li> <p>
-     * <code>client</code> - Represents the clients that sent requests to a root
-     * service.</p> </li> <li> <p> <code>remote</code> - A downstream service of
-     * indeterminate type.</p> </li> </ul>
+     * <p>The type of service.</p> <ul> <li> <p>Amazon Web Services Resource - The type
+     * of an Amazon Web Services resource. For example, <code>AWS::EC2::Instance</code>
+     * for an application running on Amazon EC2 or <code>AWS::DynamoDB::Table</code>
+     * for an Amazon DynamoDB table that the application used.</p> </li> <li> <p>Amazon
+     * Web Services Service - The type of an Amazon Web Services service. For example,
+     * <code>AWS::DynamoDB</code> for downstream calls to Amazon DynamoDB that didn't
+     * target a specific table.</p> </li> <li> <p> <code>client</code> - Represents the
+     * clients that sent requests to a root service.</p> </li> <li> <p>
+     * <code>remote</code> - A downstream service of indeterminate type.</p> </li>
+     * </ul>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
     /**
-     * <p>The type of service.</p> <ul> <li> <p>AWS Resource - The type of an AWS
-     * resource. For example, <code>AWS::EC2::Instance</code> for an application
-     * running on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon
-     * DynamoDB table that the application used.</p> </li> <li> <p>AWS Service - The
-     * type of an AWS service. For example, <code>AWS::DynamoDB</code> for downstream
-     * calls to Amazon DynamoDB that didn't target a specific table.</p> </li> <li> <p>
-     * <code>client</code> - Represents the clients that sent requests to a root
-     * service.</p> </li> <li> <p> <code>remote</code> - A downstream service of
-     * indeterminate type.</p> </li> </ul>
+     * <p>The type of service.</p> <ul> <li> <p>Amazon Web Services Resource - The type
+     * of an Amazon Web Services resource. For example, <code>AWS::EC2::Instance</code>
+     * for an application running on Amazon EC2 or <code>AWS::DynamoDB::Table</code>
+     * for an Amazon DynamoDB table that the application used.</p> </li> <li> <p>Amazon
+     * Web Services Service - The type of an Amazon Web Services service. For example,
+     * <code>AWS::DynamoDB</code> for downstream calls to Amazon DynamoDB that didn't
+     * target a specific table.</p> </li> <li> <p> <code>client</code> - Represents the
+     * clients that sent requests to a root service.</p> </li> <li> <p>
+     * <code>remote</code> - A downstream service of indeterminate type.</p> </li>
+     * </ul>
      */
     inline Service& WithType(const Aws::String& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of service.</p> <ul> <li> <p>AWS Resource - The type of an AWS
-     * resource. For example, <code>AWS::EC2::Instance</code> for an application
-     * running on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon
-     * DynamoDB table that the application used.</p> </li> <li> <p>AWS Service - The
-     * type of an AWS service. For example, <code>AWS::DynamoDB</code> for downstream
-     * calls to Amazon DynamoDB that didn't target a specific table.</p> </li> <li> <p>
-     * <code>client</code> - Represents the clients that sent requests to a root
-     * service.</p> </li> <li> <p> <code>remote</code> - A downstream service of
-     * indeterminate type.</p> </li> </ul>
+     * <p>The type of service.</p> <ul> <li> <p>Amazon Web Services Resource - The type
+     * of an Amazon Web Services resource. For example, <code>AWS::EC2::Instance</code>
+     * for an application running on Amazon EC2 or <code>AWS::DynamoDB::Table</code>
+     * for an Amazon DynamoDB table that the application used.</p> </li> <li> <p>Amazon
+     * Web Services Service - The type of an Amazon Web Services service. For example,
+     * <code>AWS::DynamoDB</code> for downstream calls to Amazon DynamoDB that didn't
+     * target a specific table.</p> </li> <li> <p> <code>client</code> - Represents the
+     * clients that sent requests to a root service.</p> </li> <li> <p>
+     * <code>remote</code> - A downstream service of indeterminate type.</p> </li>
+     * </ul>
      */
     inline Service& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of service.</p> <ul> <li> <p>AWS Resource - The type of an AWS
-     * resource. For example, <code>AWS::EC2::Instance</code> for an application
-     * running on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon
-     * DynamoDB table that the application used.</p> </li> <li> <p>AWS Service - The
-     * type of an AWS service. For example, <code>AWS::DynamoDB</code> for downstream
-     * calls to Amazon DynamoDB that didn't target a specific table.</p> </li> <li> <p>
-     * <code>client</code> - Represents the clients that sent requests to a root
-     * service.</p> </li> <li> <p> <code>remote</code> - A downstream service of
-     * indeterminate type.</p> </li> </ul>
+     * <p>The type of service.</p> <ul> <li> <p>Amazon Web Services Resource - The type
+     * of an Amazon Web Services resource. For example, <code>AWS::EC2::Instance</code>
+     * for an application running on Amazon EC2 or <code>AWS::DynamoDB::Table</code>
+     * for an Amazon DynamoDB table that the application used.</p> </li> <li> <p>Amazon
+     * Web Services Service - The type of an Amazon Web Services service. For example,
+     * <code>AWS::DynamoDB</code> for downstream calls to Amazon DynamoDB that didn't
+     * target a specific table.</p> </li> <li> <p> <code>client</code> - Represents the
+     * clients that sent requests to a root service.</p> </li> <li> <p>
+     * <code>remote</code> - A downstream service of indeterminate type.</p> </li>
+     * </ul>
      */
     inline Service& WithType(const char* value) { SetType(value); return *this;}
 

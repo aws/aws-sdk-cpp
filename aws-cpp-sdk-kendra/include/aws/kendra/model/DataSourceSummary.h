@@ -27,8 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>Summary information for a Amazon Kendra data source. Returned in a call to
-   * .</p><p><h3>See Also:</h3>   <a
+   * <p>Summary information for an Amazon Kendra data source. Returned in a call to
+   * the <code>DescribeDataSource</code> API.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DataSourceSummary">AWS
    * API Reference</a></p>
    */
@@ -217,40 +217,113 @@ namespace Model
 
 
     /**
-     * <p>The status of the data source. When the status is <code>ATIVE</code> the data
-     * source is ready to use.</p>
+     * <p>The status of the data source. When the status is <code>ACTIVE</code> the
+     * data source is ready to use.</p>
      */
     inline const DataSourceStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the data source. When the status is <code>ATIVE</code> the data
-     * source is ready to use.</p>
+     * <p>The status of the data source. When the status is <code>ACTIVE</code> the
+     * data source is ready to use.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The status of the data source. When the status is <code>ATIVE</code> the data
-     * source is ready to use.</p>
+     * <p>The status of the data source. When the status is <code>ACTIVE</code> the
+     * data source is ready to use.</p>
      */
     inline void SetStatus(const DataSourceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the data source. When the status is <code>ATIVE</code> the data
-     * source is ready to use.</p>
+     * <p>The status of the data source. When the status is <code>ACTIVE</code> the
+     * data source is ready to use.</p>
      */
     inline void SetStatus(DataSourceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the data source. When the status is <code>ATIVE</code> the data
-     * source is ready to use.</p>
+     * <p>The status of the data source. When the status is <code>ACTIVE</code> the
+     * data source is ready to use.</p>
      */
     inline DataSourceSummary& WithStatus(const DataSourceStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the data source. When the status is <code>ATIVE</code> the data
-     * source is ready to use.</p>
+     * <p>The status of the data source. When the status is <code>ACTIVE</code> the
+     * data source is ready to use.</p>
      */
     inline DataSourceSummary& WithStatus(DataSourceStatus&& value) { SetStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The code for a language. This shows a supported language for all documents in
+     * the data source. English is supported by default. For more information on
+     * supported languages, including their codes, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+     * documents in languages other than English</a>.</p>
+     */
+    inline const Aws::String& GetLanguageCode() const{ return m_languageCode; }
+
+    /**
+     * <p>The code for a language. This shows a supported language for all documents in
+     * the data source. English is supported by default. For more information on
+     * supported languages, including their codes, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+     * documents in languages other than English</a>.</p>
+     */
+    inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
+
+    /**
+     * <p>The code for a language. This shows a supported language for all documents in
+     * the data source. English is supported by default. For more information on
+     * supported languages, including their codes, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+     * documents in languages other than English</a>.</p>
+     */
+    inline void SetLanguageCode(const Aws::String& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
+
+    /**
+     * <p>The code for a language. This shows a supported language for all documents in
+     * the data source. English is supported by default. For more information on
+     * supported languages, including their codes, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+     * documents in languages other than English</a>.</p>
+     */
+    inline void SetLanguageCode(Aws::String&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
+
+    /**
+     * <p>The code for a language. This shows a supported language for all documents in
+     * the data source. English is supported by default. For more information on
+     * supported languages, including their codes, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+     * documents in languages other than English</a>.</p>
+     */
+    inline void SetLanguageCode(const char* value) { m_languageCodeHasBeenSet = true; m_languageCode.assign(value); }
+
+    /**
+     * <p>The code for a language. This shows a supported language for all documents in
+     * the data source. English is supported by default. For more information on
+     * supported languages, including their codes, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+     * documents in languages other than English</a>.</p>
+     */
+    inline DataSourceSummary& WithLanguageCode(const Aws::String& value) { SetLanguageCode(value); return *this;}
+
+    /**
+     * <p>The code for a language. This shows a supported language for all documents in
+     * the data source. English is supported by default. For more information on
+     * supported languages, including their codes, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+     * documents in languages other than English</a>.</p>
+     */
+    inline DataSourceSummary& WithLanguageCode(Aws::String&& value) { SetLanguageCode(std::move(value)); return *this;}
+
+    /**
+     * <p>The code for a language. This shows a supported language for all documents in
+     * the data source. English is supported by default. For more information on
+     * supported languages, including their codes, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
+     * documents in languages other than English</a>.</p>
+     */
+    inline DataSourceSummary& WithLanguageCode(const char* value) { SetLanguageCode(value); return *this;}
 
   private:
 
@@ -271,6 +344,9 @@ namespace Model
 
     DataSourceStatus m_status;
     bool m_statusHasBeenSet;
+
+    Aws::String m_languageCode;
+    bool m_languageCodeHasBeenSet;
   };
 
 } // namespace Model

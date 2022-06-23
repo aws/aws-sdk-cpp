@@ -26,6 +26,8 @@ namespace Aws
         static const int nodejs8_10_HASH = HashingUtils::HashString("nodejs8.10");
         static const int nodejs10_x_HASH = HashingUtils::HashString("nodejs10.x");
         static const int nodejs12_x_HASH = HashingUtils::HashString("nodejs12.x");
+        static const int nodejs14_x_HASH = HashingUtils::HashString("nodejs14.x");
+        static const int nodejs16_x_HASH = HashingUtils::HashString("nodejs16.x");
         static const int java8_HASH = HashingUtils::HashString("java8");
         static const int java8_al2_HASH = HashingUtils::HashString("java8.al2");
         static const int java11_HASH = HashingUtils::HashString("java11");
@@ -33,10 +35,12 @@ namespace Aws
         static const int python3_6_HASH = HashingUtils::HashString("python3.6");
         static const int python3_7_HASH = HashingUtils::HashString("python3.7");
         static const int python3_8_HASH = HashingUtils::HashString("python3.8");
+        static const int python3_9_HASH = HashingUtils::HashString("python3.9");
         static const int dotnetcore1_0_HASH = HashingUtils::HashString("dotnetcore1.0");
         static const int dotnetcore2_0_HASH = HashingUtils::HashString("dotnetcore2.0");
         static const int dotnetcore2_1_HASH = HashingUtils::HashString("dotnetcore2.1");
         static const int dotnetcore3_1_HASH = HashingUtils::HashString("dotnetcore3.1");
+        static const int dotnet6_HASH = HashingUtils::HashString("dotnet6");
         static const int nodejs4_3_edge_HASH = HashingUtils::HashString("nodejs4.3-edge");
         static const int go1_x_HASH = HashingUtils::HashString("go1.x");
         static const int ruby2_5_HASH = HashingUtils::HashString("ruby2.5");
@@ -72,6 +76,14 @@ namespace Aws
           {
             return Runtime::nodejs12_x;
           }
+          else if (hashCode == nodejs14_x_HASH)
+          {
+            return Runtime::nodejs14_x;
+          }
+          else if (hashCode == nodejs16_x_HASH)
+          {
+            return Runtime::nodejs16_x;
+          }
           else if (hashCode == java8_HASH)
           {
             return Runtime::java8;
@@ -100,6 +112,10 @@ namespace Aws
           {
             return Runtime::python3_8;
           }
+          else if (hashCode == python3_9_HASH)
+          {
+            return Runtime::python3_9;
+          }
           else if (hashCode == dotnetcore1_0_HASH)
           {
             return Runtime::dotnetcore1_0;
@@ -115,6 +131,10 @@ namespace Aws
           else if (hashCode == dotnetcore3_1_HASH)
           {
             return Runtime::dotnetcore3_1;
+          }
+          else if (hashCode == dotnet6_HASH)
+          {
+            return Runtime::dotnet6;
           }
           else if (hashCode == nodejs4_3_edge_HASH)
           {
@@ -166,6 +186,10 @@ namespace Aws
             return "nodejs10.x";
           case Runtime::nodejs12_x:
             return "nodejs12.x";
+          case Runtime::nodejs14_x:
+            return "nodejs14.x";
+          case Runtime::nodejs16_x:
+            return "nodejs16.x";
           case Runtime::java8:
             return "java8";
           case Runtime::java8_al2:
@@ -180,6 +204,8 @@ namespace Aws
             return "python3.7";
           case Runtime::python3_8:
             return "python3.8";
+          case Runtime::python3_9:
+            return "python3.9";
           case Runtime::dotnetcore1_0:
             return "dotnetcore1.0";
           case Runtime::dotnetcore2_0:
@@ -188,6 +214,8 @@ namespace Aws
             return "dotnetcore2.1";
           case Runtime::dotnetcore3_1:
             return "dotnetcore3.1";
+          case Runtime::dotnet6:
+            return "dotnet6";
           case Runtime::nodejs4_3_edge:
             return "nodejs4.3-edge";
           case Runtime::go1_x:

@@ -19,6 +19,8 @@ namespace Model
 {
 
 ProresSettings::ProresSettings() : 
+    m_chromaSampling(ProresChromaSampling::NOT_SET),
+    m_chromaSamplingHasBeenSet(false),
     m_codecProfile(ProresCodecProfile::NOT_SET),
     m_codecProfileHasBeenSet(false),
     m_framerateControl(ProresFramerateControl::NOT_SET),
@@ -47,6 +49,8 @@ ProresSettings::ProresSettings() :
 }
 
 ProresSettings::ProresSettings(JsonView jsonValue) : 
+    m_chromaSampling(ProresChromaSampling::NOT_SET),
+    m_chromaSamplingHasBeenSet(false),
     m_codecProfile(ProresCodecProfile::NOT_SET),
     m_codecProfileHasBeenSet(false),
     m_framerateControl(ProresFramerateControl::NOT_SET),
@@ -77,6 +81,13 @@ ProresSettings::ProresSettings(JsonView jsonValue) :
 
 ProresSettings& ProresSettings::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("chromaSampling"))
+  {
+    m_chromaSampling = ProresChromaSamplingMapper::GetProresChromaSamplingForName(jsonValue.GetString("chromaSampling"));
+
+    m_chromaSamplingHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("codecProfile"))
   {
     m_codecProfile = ProresCodecProfileMapper::GetProresCodecProfileForName(jsonValue.GetString("codecProfile"));
@@ -167,6 +178,11 @@ ProresSettings& ProresSettings::operator =(JsonView jsonValue)
 JsonValue ProresSettings::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_chromaSamplingHasBeenSet)
+  {
+   payload.WithString("chromaSampling", ProresChromaSamplingMapper::GetNameForProresChromaSampling(m_chromaSampling));
+  }
 
   if(m_codecProfileHasBeenSet)
   {
