@@ -11,6 +11,7 @@
 #include <aws/sagemaker/model/SourceIpConfig.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/WorkforceVpcConfigRequest.h>
 #include <aws/sagemaker/model/Tag.h>
 #include <utility>
 
@@ -253,6 +254,37 @@ namespace Model
      */
     inline CreateWorkforceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Use this parameter to configure a workforce using VPC.</p>
+     */
+    inline const WorkforceVpcConfigRequest& GetWorkforceVpcConfig() const{ return m_workforceVpcConfig; }
+
+    /**
+     * <p>Use this parameter to configure a workforce using VPC.</p>
+     */
+    inline bool WorkforceVpcConfigHasBeenSet() const { return m_workforceVpcConfigHasBeenSet; }
+
+    /**
+     * <p>Use this parameter to configure a workforce using VPC.</p>
+     */
+    inline void SetWorkforceVpcConfig(const WorkforceVpcConfigRequest& value) { m_workforceVpcConfigHasBeenSet = true; m_workforceVpcConfig = value; }
+
+    /**
+     * <p>Use this parameter to configure a workforce using VPC.</p>
+     */
+    inline void SetWorkforceVpcConfig(WorkforceVpcConfigRequest&& value) { m_workforceVpcConfigHasBeenSet = true; m_workforceVpcConfig = std::move(value); }
+
+    /**
+     * <p>Use this parameter to configure a workforce using VPC.</p>
+     */
+    inline CreateWorkforceRequest& WithWorkforceVpcConfig(const WorkforceVpcConfigRequest& value) { SetWorkforceVpcConfig(value); return *this;}
+
+    /**
+     * <p>Use this parameter to configure a workforce using VPC.</p>
+     */
+    inline CreateWorkforceRequest& WithWorkforceVpcConfig(WorkforceVpcConfigRequest&& value) { SetWorkforceVpcConfig(std::move(value)); return *this;}
+
   private:
 
     CognitoConfig m_cognitoConfig;
@@ -269,6 +301,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    WorkforceVpcConfigRequest m_workforceVpcConfig;
+    bool m_workforceVpcConfigHasBeenSet;
   };
 
 } // namespace Model

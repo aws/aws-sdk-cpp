@@ -20,6 +20,7 @@
 #include <aws/lookoutequipment/model/DescribeModelResult.h>
 #include <aws/lookoutequipment/model/ListDataIngestionJobsResult.h>
 #include <aws/lookoutequipment/model/ListDatasetsResult.h>
+#include <aws/lookoutequipment/model/ListInferenceEventsResult.h>
 #include <aws/lookoutequipment/model/ListInferenceExecutionsResult.h>
 #include <aws/lookoutequipment/model/ListInferenceSchedulersResult.h>
 #include <aws/lookoutequipment/model/ListModelsResult.h>
@@ -82,6 +83,7 @@ namespace Model
         class DescribeModelRequest;
         class ListDataIngestionJobsRequest;
         class ListDatasetsRequest;
+        class ListInferenceEventsRequest;
         class ListInferenceExecutionsRequest;
         class ListInferenceSchedulersRequest;
         class ListModelsRequest;
@@ -106,6 +108,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeModelResult, LookoutEquipmentError> DescribeModelOutcome;
         typedef Aws::Utils::Outcome<ListDataIngestionJobsResult, LookoutEquipmentError> ListDataIngestionJobsOutcome;
         typedef Aws::Utils::Outcome<ListDatasetsResult, LookoutEquipmentError> ListDatasetsOutcome;
+        typedef Aws::Utils::Outcome<ListInferenceEventsResult, LookoutEquipmentError> ListInferenceEventsOutcome;
         typedef Aws::Utils::Outcome<ListInferenceExecutionsResult, LookoutEquipmentError> ListInferenceExecutionsOutcome;
         typedef Aws::Utils::Outcome<ListInferenceSchedulersResult, LookoutEquipmentError> ListInferenceSchedulersOutcome;
         typedef Aws::Utils::Outcome<ListModelsResult, LookoutEquipmentError> ListModelsOutcome;
@@ -130,6 +133,7 @@ namespace Model
         typedef std::future<DescribeModelOutcome> DescribeModelOutcomeCallable;
         typedef std::future<ListDataIngestionJobsOutcome> ListDataIngestionJobsOutcomeCallable;
         typedef std::future<ListDatasetsOutcome> ListDatasetsOutcomeCallable;
+        typedef std::future<ListInferenceEventsOutcome> ListInferenceEventsOutcomeCallable;
         typedef std::future<ListInferenceExecutionsOutcome> ListInferenceExecutionsOutcomeCallable;
         typedef std::future<ListInferenceSchedulersOutcome> ListInferenceSchedulersOutcomeCallable;
         typedef std::future<ListModelsOutcome> ListModelsOutcomeCallable;
@@ -157,6 +161,7 @@ namespace Model
     typedef std::function<void(const LookoutEquipmentClient*, const Model::DescribeModelRequest&, const Model::DescribeModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeModelResponseReceivedHandler;
     typedef std::function<void(const LookoutEquipmentClient*, const Model::ListDataIngestionJobsRequest&, const Model::ListDataIngestionJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataIngestionJobsResponseReceivedHandler;
     typedef std::function<void(const LookoutEquipmentClient*, const Model::ListDatasetsRequest&, const Model::ListDatasetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDatasetsResponseReceivedHandler;
+    typedef std::function<void(const LookoutEquipmentClient*, const Model::ListInferenceEventsRequest&, const Model::ListInferenceEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInferenceEventsResponseReceivedHandler;
     typedef std::function<void(const LookoutEquipmentClient*, const Model::ListInferenceExecutionsRequest&, const Model::ListInferenceExecutionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInferenceExecutionsResponseReceivedHandler;
     typedef std::function<void(const LookoutEquipmentClient*, const Model::ListInferenceSchedulersRequest&, const Model::ListInferenceSchedulersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInferenceSchedulersResponseReceivedHandler;
     typedef std::function<void(const LookoutEquipmentClient*, const Model::ListModelsRequest&, const Model::ListModelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListModelsResponseReceivedHandler;
@@ -438,6 +443,24 @@ namespace Model
         virtual void ListDatasetsAsync(const Model::ListDatasetsRequest& request, const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> Lists all inference events that have been found for the specified inference
+         * scheduler. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListInferenceEvents">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListInferenceEventsOutcome ListInferenceEvents(const Model::ListInferenceEventsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListInferenceEvents that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListInferenceEventsOutcomeCallable ListInferenceEventsCallable(const Model::ListInferenceEventsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListInferenceEvents that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListInferenceEventsAsync(const Model::ListInferenceEventsRequest& request, const ListInferenceEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p> Lists all inference executions that have been performed by the specified
          * inference scheduler. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListInferenceExecutions">AWS
@@ -654,6 +677,7 @@ namespace Model
         void DescribeModelAsyncHelper(const Model::DescribeModelRequest& request, const DescribeModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDataIngestionJobsAsyncHelper(const Model::ListDataIngestionJobsRequest& request, const ListDataIngestionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDatasetsAsyncHelper(const Model::ListDatasetsRequest& request, const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListInferenceEventsAsyncHelper(const Model::ListInferenceEventsRequest& request, const ListInferenceEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListInferenceExecutionsAsyncHelper(const Model::ListInferenceExecutionsRequest& request, const ListInferenceExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListInferenceSchedulersAsyncHelper(const Model::ListInferenceSchedulersRequest& request, const ListInferenceSchedulersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListModelsAsyncHelper(const Model::ListModelsRequest& request, const ListModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

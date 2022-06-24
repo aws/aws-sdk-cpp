@@ -16,7 +16,8 @@ namespace Model
   enum class RouteActivationState
   {
     NOT_SET,
-    ACTIVE
+    ACTIVE,
+    INACTIVE
   };
 
 namespace RouteActivationStateMapper

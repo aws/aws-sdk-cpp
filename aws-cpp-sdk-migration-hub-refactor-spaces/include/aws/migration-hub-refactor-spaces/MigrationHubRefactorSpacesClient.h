@@ -34,6 +34,7 @@
 #include <aws/migration-hub-refactor-spaces/model/PutResourcePolicyResult.h>
 #include <aws/migration-hub-refactor-spaces/model/TagResourceResult.h>
 #include <aws/migration-hub-refactor-spaces/model/UntagResourceResult.h>
+#include <aws/migration-hub-refactor-spaces/model/UpdateRouteResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
 #include <future>
@@ -96,6 +97,7 @@ namespace Model
         class PutResourcePolicyRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
+        class UpdateRouteRequest;
 
         typedef Aws::Utils::Outcome<CreateApplicationResult, MigrationHubRefactorSpacesError> CreateApplicationOutcome;
         typedef Aws::Utils::Outcome<CreateEnvironmentResult, MigrationHubRefactorSpacesError> CreateEnvironmentOutcome;
@@ -120,6 +122,7 @@ namespace Model
         typedef Aws::Utils::Outcome<PutResourcePolicyResult, MigrationHubRefactorSpacesError> PutResourcePolicyOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, MigrationHubRefactorSpacesError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, MigrationHubRefactorSpacesError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateRouteResult, MigrationHubRefactorSpacesError> UpdateRouteOutcome;
 
         typedef std::future<CreateApplicationOutcome> CreateApplicationOutcomeCallable;
         typedef std::future<CreateEnvironmentOutcome> CreateEnvironmentOutcomeCallable;
@@ -144,6 +147,7 @@ namespace Model
         typedef std::future<PutResourcePolicyOutcome> PutResourcePolicyOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+        typedef std::future<UpdateRouteOutcome> UpdateRouteOutcomeCallable;
 } // namespace Model
 
   class MigrationHubRefactorSpacesClient;
@@ -171,6 +175,7 @@ namespace Model
     typedef std::function<void(const MigrationHubRefactorSpacesClient*, const Model::PutResourcePolicyRequest&, const Model::PutResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutResourcePolicyResponseReceivedHandler;
     typedef std::function<void(const MigrationHubRefactorSpacesClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const MigrationHubRefactorSpacesClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
+    typedef std::function<void(const MigrationHubRefactorSpacesClient*, const Model::UpdateRouteRequest&, const Model::UpdateRouteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRouteResponseReceivedHandler;
 
   /**
    * <p><fullname>Amazon Web Services Migration Hub Refactor Spaces</fullname></p>
@@ -268,27 +273,36 @@ namespace Model
          * regardless of which account creates the route. Routes target a service in the
          * application. If an application does not have any routes, then the first route
          * must be created as a <code>DEFAULT</code> <code>RouteType</code>.</p> <p>When
-         * you create a route, Refactor Spaces configures the Amazon API Gateway to send
-         * traffic to the target service as follows:</p> <ul> <li> <p>If the service has a
-         * URL endpoint, and the endpoint resolves to a private IP address, Refactor Spaces
-         * routes traffic using the API Gateway VPC link. </p> </li> <li> <p>If the service
-         * has a URL endpoint, and the endpoint resolves to a public IP address, Refactor
-         * Spaces routes traffic over the public internet.</p> </li> <li> <p>If the service
-         * has an Lambda function endpoint, then Refactor Spaces configures the Lambda
-         * function's resource policy to allow the application's API Gateway to invoke the
-         * function.</p> </li> </ul> <p>A one-time health check is performed on the service
-         * when the route is created. If the health check fails, the route transitions to
-         * <code>FAILED</code>, and no traffic is sent to the service.</p> <p>For Lambda
-         * functions, the Lambda function state is checked. If the function is not active,
-         * the function configuration is updated so that Lambda resources are provisioned.
-         * If the Lambda state is <code>Failed</code>, then the route creation fails. For
-         * more information, see the <a
+         * created, the default route defaults to an active state so state is not a
+         * required input. However, like all other state values the state of the default
+         * route can be updated after creation, but only when all other routes are also
+         * inactive. Conversely, no route can be active without the default route also
+         * being active.</p> <p>When you create a route, Refactor Spaces configures the
+         * Amazon API Gateway to send traffic to the target service as follows:</p> <ul>
+         * <li> <p>If the service has a URL endpoint, and the endpoint resolves to a
+         * private IP address, Refactor Spaces routes traffic using the API Gateway VPC
+         * link. </p> </li> <li> <p>If the service has a URL endpoint, and the endpoint
+         * resolves to a public IP address, Refactor Spaces routes traffic over the public
+         * internet.</p> </li> <li> <p>If the service has an Lambda function endpoint, then
+         * Refactor Spaces configures the Lambda function's resource policy to allow the
+         * application's API Gateway to invoke the function.</p> </li> </ul> <p>A one-time
+         * health check is performed on the service when either the route is updated from
+         * inactive to active, or when it is created with an active state. If the health
+         * check fails, the route transitions the route state to <code>FAILED</code>, an
+         * error code of <code>SERVICE_ENDPOINT_HEALTH_CHECK_FAILURE</code> is provided,
+         * and no traffic is sent to the service.</p> <p>For Lambda functions, the Lambda
+         * function state is checked. If the function is not active, the function
+         * configuration is updated so that Lambda resources are provisioned. If the Lambda
+         * state is <code>Failed</code>, then the route creation fails. For more
+         * information, see the <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/API_GetFunctionConfiguration.html#SSS-GetFunctionConfiguration-response-State">GetFunctionConfiguration's
          * State response parameter</a> in the <i>Lambda Developer Guide</i>.</p> <p>For
+         * Lambda endpoints, a check is performed to determine that a Lambda function with
+         * the specified ARN exists. If it does not exist, the health check fails. For
          * public URLs, a connection is opened to the public endpoint. If the URL is not
-         * reachable, the health check fails. For private URLs, a target group is created
-         * and the target group health check is run.</p> <p>The
-         * <code>HealthCheckProtocol</code>, <code>HealthCheckPort</code>, and
+         * reachable, the health check fails. </p> <p>For private URLS, a target group is
+         * created on the Elastic Load Balancing and the target group health check is run.
+         * The <code>HealthCheckProtocol</code>, <code>HealthCheckPort</code>, and
          * <code>HealthCheckPath</code> are the same protocol, port, and path specified in
          * the URL or health URL, if used. All other settings use the default values, as
          * described in <a
@@ -297,7 +311,7 @@ namespace Model
          * at least one target within the target group transitions to a healthy state.</p>
          * <p>Services can have HTTP or HTTPS URL endpoints. For HTTPS URLs,
          * publicly-signed certificates are supported. Private Certificate Authorities
-         * (CAs) are permitted only if the CA's domain is publicly
+         * (CAs) are permitted only if the CA's domain is also publicly
          * resolvable.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/CreateRoute">AWS
          * API Reference</a></p>
@@ -696,6 +710,24 @@ namespace Model
          */
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p> Updates an Amazon Web Services Migration Hub Refactor Spaces route.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/UpdateRoute">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateRouteOutcome UpdateRoute(const Model::UpdateRouteRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateRoute that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateRouteOutcomeCallable UpdateRouteCallable(const Model::UpdateRouteRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateRoute that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateRouteAsync(const Model::UpdateRouteRequest& request, const UpdateRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
@@ -723,6 +755,7 @@ namespace Model
         void PutResourcePolicyAsyncHelper(const Model::PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateRouteAsyncHelper(const Model::UpdateRouteRequest& request, const UpdateRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

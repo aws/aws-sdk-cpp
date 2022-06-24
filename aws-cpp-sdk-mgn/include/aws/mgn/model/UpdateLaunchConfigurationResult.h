@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mgn/model/LaunchDisposition.h>
 #include <aws/mgn/model/Licensing.h>
+#include <aws/mgn/model/PostLaunchActions.h>
 #include <aws/mgn/model/TargetInstanceTypeRightSizingMethod.h>
 #include <utility>
 
@@ -218,6 +219,22 @@ namespace Model
     inline UpdateLaunchConfigurationResult& WithName(const char* value) { SetName(value); return *this;}
 
 
+    
+    inline const PostLaunchActions& GetPostLaunchActions() const{ return m_postLaunchActions; }
+
+    
+    inline void SetPostLaunchActions(const PostLaunchActions& value) { m_postLaunchActions = value; }
+
+    
+    inline void SetPostLaunchActions(PostLaunchActions&& value) { m_postLaunchActions = std::move(value); }
+
+    
+    inline UpdateLaunchConfigurationResult& WithPostLaunchActions(const PostLaunchActions& value) { SetPostLaunchActions(value); return *this;}
+
+    
+    inline UpdateLaunchConfigurationResult& WithPostLaunchActions(PostLaunchActions&& value) { SetPostLaunchActions(std::move(value)); return *this;}
+
+
     /**
      * <p>Launch configuration Source Server ID.</p>
      */
@@ -294,6 +311,8 @@ namespace Model
     Licensing m_licensing;
 
     Aws::String m_name;
+
+    PostLaunchActions m_postLaunchActions;
 
     Aws::String m_sourceServerID;
 

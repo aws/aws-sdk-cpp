@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/SourceIpConfig.h>
 #include <aws/sagemaker/model/OidcConfig.h>
+#include <aws/sagemaker/model/WorkforceVpcConfigRequest.h>
 #include <utility>
 
 namespace Aws
@@ -170,6 +171,37 @@ namespace Model
      */
     inline UpdateWorkforceRequest& WithOidcConfig(OidcConfig&& value) { SetOidcConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Use this parameter to update your VPC configuration for a workforce.</p>
+     */
+    inline const WorkforceVpcConfigRequest& GetWorkforceVpcConfig() const{ return m_workforceVpcConfig; }
+
+    /**
+     * <p>Use this parameter to update your VPC configuration for a workforce.</p>
+     */
+    inline bool WorkforceVpcConfigHasBeenSet() const { return m_workforceVpcConfigHasBeenSet; }
+
+    /**
+     * <p>Use this parameter to update your VPC configuration for a workforce.</p>
+     */
+    inline void SetWorkforceVpcConfig(const WorkforceVpcConfigRequest& value) { m_workforceVpcConfigHasBeenSet = true; m_workforceVpcConfig = value; }
+
+    /**
+     * <p>Use this parameter to update your VPC configuration for a workforce.</p>
+     */
+    inline void SetWorkforceVpcConfig(WorkforceVpcConfigRequest&& value) { m_workforceVpcConfigHasBeenSet = true; m_workforceVpcConfig = std::move(value); }
+
+    /**
+     * <p>Use this parameter to update your VPC configuration for a workforce.</p>
+     */
+    inline UpdateWorkforceRequest& WithWorkforceVpcConfig(const WorkforceVpcConfigRequest& value) { SetWorkforceVpcConfig(value); return *this;}
+
+    /**
+     * <p>Use this parameter to update your VPC configuration for a workforce.</p>
+     */
+    inline UpdateWorkforceRequest& WithWorkforceVpcConfig(WorkforceVpcConfigRequest&& value) { SetWorkforceVpcConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_workforceName;
@@ -180,6 +212,9 @@ namespace Model
 
     OidcConfig m_oidcConfig;
     bool m_oidcConfigHasBeenSet;
+
+    WorkforceVpcConfigRequest m_workforceVpcConfig;
+    bool m_workforceVpcConfigHasBeenSet;
   };
 
 } // namespace Model

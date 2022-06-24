@@ -39,32 +39,74 @@ namespace Model
 
 
     /**
-     * <p>The data type.</p>
+     * <p>The data type.</p> <p>A ManifestFile should have the format shown below:</p>
+     * <p> <code>[ {"prefix":
+     * "s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER/DOC-EXAMPLE-PREFIX/"}, </code> </p>
+     * <p> <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-1",</code> </p> <p>
+     * <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-2",</code> </p> <p>
+     * <code>... "DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-N" ]</code> </p>
+     * <p>An S3Prefix should have the following format: </p> <p>
+     * <code>s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER-OR-FILE</code> </p>
      */
     inline const AutoMLS3DataType& GetS3DataType() const{ return m_s3DataType; }
 
     /**
-     * <p>The data type.</p>
+     * <p>The data type.</p> <p>A ManifestFile should have the format shown below:</p>
+     * <p> <code>[ {"prefix":
+     * "s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER/DOC-EXAMPLE-PREFIX/"}, </code> </p>
+     * <p> <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-1",</code> </p> <p>
+     * <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-2",</code> </p> <p>
+     * <code>... "DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-N" ]</code> </p>
+     * <p>An S3Prefix should have the following format: </p> <p>
+     * <code>s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER-OR-FILE</code> </p>
      */
     inline bool S3DataTypeHasBeenSet() const { return m_s3DataTypeHasBeenSet; }
 
     /**
-     * <p>The data type.</p>
+     * <p>The data type.</p> <p>A ManifestFile should have the format shown below:</p>
+     * <p> <code>[ {"prefix":
+     * "s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER/DOC-EXAMPLE-PREFIX/"}, </code> </p>
+     * <p> <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-1",</code> </p> <p>
+     * <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-2",</code> </p> <p>
+     * <code>... "DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-N" ]</code> </p>
+     * <p>An S3Prefix should have the following format: </p> <p>
+     * <code>s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER-OR-FILE</code> </p>
      */
     inline void SetS3DataType(const AutoMLS3DataType& value) { m_s3DataTypeHasBeenSet = true; m_s3DataType = value; }
 
     /**
-     * <p>The data type.</p>
+     * <p>The data type.</p> <p>A ManifestFile should have the format shown below:</p>
+     * <p> <code>[ {"prefix":
+     * "s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER/DOC-EXAMPLE-PREFIX/"}, </code> </p>
+     * <p> <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-1",</code> </p> <p>
+     * <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-2",</code> </p> <p>
+     * <code>... "DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-N" ]</code> </p>
+     * <p>An S3Prefix should have the following format: </p> <p>
+     * <code>s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER-OR-FILE</code> </p>
      */
     inline void SetS3DataType(AutoMLS3DataType&& value) { m_s3DataTypeHasBeenSet = true; m_s3DataType = std::move(value); }
 
     /**
-     * <p>The data type.</p>
+     * <p>The data type.</p> <p>A ManifestFile should have the format shown below:</p>
+     * <p> <code>[ {"prefix":
+     * "s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER/DOC-EXAMPLE-PREFIX/"}, </code> </p>
+     * <p> <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-1",</code> </p> <p>
+     * <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-2",</code> </p> <p>
+     * <code>... "DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-N" ]</code> </p>
+     * <p>An S3Prefix should have the following format: </p> <p>
+     * <code>s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER-OR-FILE</code> </p>
      */
     inline AutoMLS3DataSource& WithS3DataType(const AutoMLS3DataType& value) { SetS3DataType(value); return *this;}
 
     /**
-     * <p>The data type.</p>
+     * <p>The data type.</p> <p>A ManifestFile should have the format shown below:</p>
+     * <p> <code>[ {"prefix":
+     * "s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER/DOC-EXAMPLE-PREFIX/"}, </code> </p>
+     * <p> <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-1",</code> </p> <p>
+     * <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-2",</code> </p> <p>
+     * <code>... "DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-N" ]</code> </p>
+     * <p>An S3Prefix should have the following format: </p> <p>
+     * <code>s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER-OR-FILE</code> </p>
      */
     inline AutoMLS3DataSource& WithS3DataType(AutoMLS3DataType&& value) { SetS3DataType(std::move(value)); return *this;}
 

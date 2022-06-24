@@ -2075,17 +2075,17 @@ namespace Model
          * then deploys all of the containers that you defined for the model in the hosting
          * environment. </p> <p>For an example that calls this method when deploying a
          * model to SageMaker hosting services, see <a
-         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html#ex1-deploy-model-boto">Deploy
-         * the Model to Amazon SageMaker Hosting Services (Amazon Web Services SDK for
-         * Python (Boto 3)).</a> </p> <p>To run a batch transform using your model, you
-         * start a job with the <code>CreateTransformJob</code> API. SageMaker uses your
-         * model and your dataset to get inferences which are then saved to a specified S3
-         * location.</p> <p>In the request, you also provide an IAM role that SageMaker can
-         * assume to access model artifacts and docker image for deployment on ML compute
-         * hosting instances or for batch transform jobs. In addition, you also use the IAM
-         * role to manage permissions the inference code needs. For example, if the
-         * inference code access any other Amazon Web Services resources, you grant
-         * necessary permissions via this role.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/realtime-endpoints-deployment.html#realtime-endpoints-deployment-create-model">Create
+         * a Model (Amazon Web Services SDK for Python (Boto 3)).</a> </p> <p>To run a
+         * batch transform using your model, you start a job with the
+         * <code>CreateTransformJob</code> API. SageMaker uses your model and your dataset
+         * to get inferences which are then saved to a specified S3 location.</p> <p>In the
+         * request, you also provide an IAM role that SageMaker can assume to access model
+         * artifacts and docker image for deployment on ML compute hosting instances or for
+         * batch transform jobs. In addition, you also use the IAM role to manage
+         * permissions the inference code needs. For example, if the inference code access
+         * any other Amazon Web Services resources, you grant necessary permissions via
+         * this role.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModel">AWS
          * API Reference</a></p>
          */
@@ -6383,14 +6383,18 @@ namespace Model
          * <p>Use this operation to update your workforce. You can use this operation to
          * require that workers use specific IP addresses to work on tasks and to update
          * your OpenID Connect (OIDC) Identity Provider (IdP) workforce configuration.</p>
-         * <p> Use <code>SourceIpConfig</code> to restrict worker access to tasks to a
-         * specific range of IP addresses. You specify allowed IP addresses by creating a
-         * list of up to ten <a
+         * <p>The worker portal is now supported in VPC and public internet.</p> <p> Use
+         * <code>SourceIpConfig</code> to restrict worker access to tasks to a specific
+         * range of IP addresses. You specify allowed IP addresses by creating a list of up
+         * to ten <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>.
          * By default, a workforce isn't restricted to specific IP addresses. If you
          * specify a range of IP addresses, workers who attempt to access tasks using any
          * IP address outside the specified range are denied and get a <code>Not
-         * Found</code> error message on the worker portal.</p> <p>Use
+         * Found</code> error message on the worker portal.</p> <p>To restrict access to
+         * all the workers in public internet, add the <code>SourceIpConfig</code> CIDR
+         * value as "0.0.0.0/0".</p>  <p>Amazon SageMaker does not support
+         * Source Ip restriction for worker portals in VPC.</p>  <p>Use
          * <code>OidcConfig</code> to update the configuration of a workforce created using
          * your own OIDC IdP. </p>  <p>You can only update your OIDC IdP
          * configuration when there are no work teams associated with your workforce. You

@@ -21,6 +21,8 @@ namespace Model
 ParticipatingServer::ParticipatingServer() : 
     m_launchStatus(LaunchStatus::NOT_SET),
     m_launchStatusHasBeenSet(false),
+    m_launchedEc2InstanceIDHasBeenSet(false),
+    m_postLaunchActionsStatusHasBeenSet(false),
     m_sourceServerIDHasBeenSet(false)
 {
 }
@@ -28,6 +30,8 @@ ParticipatingServer::ParticipatingServer() :
 ParticipatingServer::ParticipatingServer(JsonView jsonValue) : 
     m_launchStatus(LaunchStatus::NOT_SET),
     m_launchStatusHasBeenSet(false),
+    m_launchedEc2InstanceIDHasBeenSet(false),
+    m_postLaunchActionsStatusHasBeenSet(false),
     m_sourceServerIDHasBeenSet(false)
 {
   *this = jsonValue;
@@ -40,6 +44,20 @@ ParticipatingServer& ParticipatingServer::operator =(JsonView jsonValue)
     m_launchStatus = LaunchStatusMapper::GetLaunchStatusForName(jsonValue.GetString("launchStatus"));
 
     m_launchStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("launchedEc2InstanceID"))
+  {
+    m_launchedEc2InstanceID = jsonValue.GetString("launchedEc2InstanceID");
+
+    m_launchedEc2InstanceIDHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("postLaunchActionsStatus"))
+  {
+    m_postLaunchActionsStatus = jsonValue.GetObject("postLaunchActionsStatus");
+
+    m_postLaunchActionsStatusHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("sourceServerID"))
@@ -59,6 +77,18 @@ JsonValue ParticipatingServer::Jsonize() const
   if(m_launchStatusHasBeenSet)
   {
    payload.WithString("launchStatus", LaunchStatusMapper::GetNameForLaunchStatus(m_launchStatus));
+  }
+
+  if(m_launchedEc2InstanceIDHasBeenSet)
+  {
+   payload.WithString("launchedEc2InstanceID", m_launchedEc2InstanceID);
+
+  }
+
+  if(m_postLaunchActionsStatusHasBeenSet)
+  {
+   payload.WithObject("postLaunchActionsStatus", m_postLaunchActionsStatus.Jsonize());
+
   }
 
   if(m_sourceServerIDHasBeenSet)
