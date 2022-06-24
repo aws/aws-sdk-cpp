@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
+        static const int INACTIVE_HASH = HashingUtils::HashString("INACTIVE");
 
 
         RouteActivationState GetRouteActivationStateForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == ACTIVE_HASH)
           {
             return RouteActivationState::ACTIVE;
+          }
+          else if (hashCode == INACTIVE_HASH)
+          {
+            return RouteActivationState::INACTIVE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +51,8 @@ namespace Aws
           {
           case RouteActivationState::ACTIVE:
             return "ACTIVE";
+          case RouteActivationState::INACTIVE:
+            return "INACTIVE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

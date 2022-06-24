@@ -21,13 +21,16 @@
 #include <aws/mgn/MgnEndpoint.h>
 #include <aws/mgn/MgnErrorMarshaller.h>
 #include <aws/mgn/model/ChangeServerLifeCycleStateRequest.h>
+#include <aws/mgn/model/CreateLaunchConfigurationTemplateRequest.h>
 #include <aws/mgn/model/CreateReplicationConfigurationTemplateRequest.h>
 #include <aws/mgn/model/DeleteJobRequest.h>
+#include <aws/mgn/model/DeleteLaunchConfigurationTemplateRequest.h>
 #include <aws/mgn/model/DeleteReplicationConfigurationTemplateRequest.h>
 #include <aws/mgn/model/DeleteSourceServerRequest.h>
 #include <aws/mgn/model/DeleteVcenterClientRequest.h>
 #include <aws/mgn/model/DescribeJobLogItemsRequest.h>
 #include <aws/mgn/model/DescribeJobsRequest.h>
+#include <aws/mgn/model/DescribeLaunchConfigurationTemplatesRequest.h>
 #include <aws/mgn/model/DescribeReplicationConfigurationTemplatesRequest.h>
 #include <aws/mgn/model/DescribeSourceServersRequest.h>
 #include <aws/mgn/model/DescribeVcenterClientsRequest.h>
@@ -46,6 +49,7 @@
 #include <aws/mgn/model/TerminateTargetInstancesRequest.h>
 #include <aws/mgn/model/UntagResourceRequest.h>
 #include <aws/mgn/model/UpdateLaunchConfigurationRequest.h>
+#include <aws/mgn/model/UpdateLaunchConfigurationTemplateRequest.h>
 #include <aws/mgn/model/UpdateReplicationConfigurationRequest.h>
 #include <aws/mgn/model/UpdateReplicationConfigurationTemplateRequest.h>
 #include <aws/mgn/model/UpdateSourceServerReplicationTypeRequest.h>
@@ -148,6 +152,31 @@ void MgnClient::ChangeServerLifeCycleStateAsyncHelper(const ChangeServerLifeCycl
   handler(this, request, ChangeServerLifeCycleState(request), context);
 }
 
+CreateLaunchConfigurationTemplateOutcome MgnClient::CreateLaunchConfigurationTemplate(const CreateLaunchConfigurationTemplateRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/CreateLaunchConfigurationTemplate");
+  return CreateLaunchConfigurationTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateLaunchConfigurationTemplateOutcomeCallable MgnClient::CreateLaunchConfigurationTemplateCallable(const CreateLaunchConfigurationTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateLaunchConfigurationTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLaunchConfigurationTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MgnClient::CreateLaunchConfigurationTemplateAsync(const CreateLaunchConfigurationTemplateRequest& request, const CreateLaunchConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateLaunchConfigurationTemplateAsyncHelper( request, handler, context ); } );
+}
+
+void MgnClient::CreateLaunchConfigurationTemplateAsyncHelper(const CreateLaunchConfigurationTemplateRequest& request, const CreateLaunchConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateLaunchConfigurationTemplate(request), context);
+}
+
 CreateReplicationConfigurationTemplateOutcome MgnClient::CreateReplicationConfigurationTemplate(const CreateReplicationConfigurationTemplateRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -196,6 +225,31 @@ void MgnClient::DeleteJobAsync(const DeleteJobRequest& request, const DeleteJobR
 void MgnClient::DeleteJobAsyncHelper(const DeleteJobRequest& request, const DeleteJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteJob(request), context);
+}
+
+DeleteLaunchConfigurationTemplateOutcome MgnClient::DeleteLaunchConfigurationTemplate(const DeleteLaunchConfigurationTemplateRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/DeleteLaunchConfigurationTemplate");
+  return DeleteLaunchConfigurationTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteLaunchConfigurationTemplateOutcomeCallable MgnClient::DeleteLaunchConfigurationTemplateCallable(const DeleteLaunchConfigurationTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteLaunchConfigurationTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteLaunchConfigurationTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MgnClient::DeleteLaunchConfigurationTemplateAsync(const DeleteLaunchConfigurationTemplateRequest& request, const DeleteLaunchConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteLaunchConfigurationTemplateAsyncHelper( request, handler, context ); } );
+}
+
+void MgnClient::DeleteLaunchConfigurationTemplateAsyncHelper(const DeleteLaunchConfigurationTemplateRequest& request, const DeleteLaunchConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteLaunchConfigurationTemplate(request), context);
 }
 
 DeleteReplicationConfigurationTemplateOutcome MgnClient::DeleteReplicationConfigurationTemplate(const DeleteReplicationConfigurationTemplateRequest& request) const
@@ -321,6 +375,31 @@ void MgnClient::DescribeJobsAsync(const DescribeJobsRequest& request, const Desc
 void MgnClient::DescribeJobsAsyncHelper(const DescribeJobsRequest& request, const DescribeJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeJobs(request), context);
+}
+
+DescribeLaunchConfigurationTemplatesOutcome MgnClient::DescribeLaunchConfigurationTemplates(const DescribeLaunchConfigurationTemplatesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/DescribeLaunchConfigurationTemplates");
+  return DescribeLaunchConfigurationTemplatesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeLaunchConfigurationTemplatesOutcomeCallable MgnClient::DescribeLaunchConfigurationTemplatesCallable(const DescribeLaunchConfigurationTemplatesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeLaunchConfigurationTemplatesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeLaunchConfigurationTemplates(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MgnClient::DescribeLaunchConfigurationTemplatesAsync(const DescribeLaunchConfigurationTemplatesRequest& request, const DescribeLaunchConfigurationTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeLaunchConfigurationTemplatesAsyncHelper( request, handler, context ); } );
+}
+
+void MgnClient::DescribeLaunchConfigurationTemplatesAsyncHelper(const DescribeLaunchConfigurationTemplatesRequest& request, const DescribeLaunchConfigurationTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeLaunchConfigurationTemplates(request), context);
 }
 
 DescribeReplicationConfigurationTemplatesOutcome MgnClient::DescribeReplicationConfigurationTemplates(const DescribeReplicationConfigurationTemplatesRequest& request) const
@@ -794,6 +873,31 @@ void MgnClient::UpdateLaunchConfigurationAsync(const UpdateLaunchConfigurationRe
 void MgnClient::UpdateLaunchConfigurationAsyncHelper(const UpdateLaunchConfigurationRequest& request, const UpdateLaunchConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateLaunchConfiguration(request), context);
+}
+
+UpdateLaunchConfigurationTemplateOutcome MgnClient::UpdateLaunchConfigurationTemplate(const UpdateLaunchConfigurationTemplateRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/UpdateLaunchConfigurationTemplate");
+  return UpdateLaunchConfigurationTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateLaunchConfigurationTemplateOutcomeCallable MgnClient::UpdateLaunchConfigurationTemplateCallable(const UpdateLaunchConfigurationTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateLaunchConfigurationTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateLaunchConfigurationTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MgnClient::UpdateLaunchConfigurationTemplateAsync(const UpdateLaunchConfigurationTemplateRequest& request, const UpdateLaunchConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateLaunchConfigurationTemplateAsyncHelper( request, handler, context ); } );
+}
+
+void MgnClient::UpdateLaunchConfigurationTemplateAsyncHelper(const UpdateLaunchConfigurationTemplateRequest& request, const UpdateLaunchConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateLaunchConfigurationTemplate(request), context);
 }
 
 UpdateReplicationConfigurationOutcome MgnClient::UpdateReplicationConfiguration(const UpdateReplicationConfigurationRequest& request) const

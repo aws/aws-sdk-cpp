@@ -16,6 +16,7 @@ CreateRouteRequest::CreateRouteRequest() :
     m_applicationIdentifierHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
     m_clientTokenHasBeenSet(true),
+    m_defaultRouteHasBeenSet(false),
     m_environmentIdentifierHasBeenSet(false),
     m_routeType(RouteType::NOT_SET),
     m_routeTypeHasBeenSet(false),
@@ -32,6 +33,12 @@ Aws::String CreateRouteRequest::SerializePayload() const
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("ClientToken", m_clientToken);
+
+  }
+
+  if(m_defaultRouteHasBeenSet)
+  {
+   payload.WithObject("DefaultRoute", m_defaultRoute.Jsonize());
 
   }
 

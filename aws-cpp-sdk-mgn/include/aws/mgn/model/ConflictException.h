@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/mgn/Mgn_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/mgn/model/ErrorDetails.h>
 #include <utility>
 
 namespace Aws
@@ -61,6 +63,47 @@ namespace Model
 
     
     inline ConflictException& WithCode(const char* value) { SetCode(value); return *this;}
+
+
+    /**
+     * <p>Conflict Exception specific errors.</p>
+     */
+    inline const Aws::Vector<ErrorDetails>& GetErrors() const{ return m_errors; }
+
+    /**
+     * <p>Conflict Exception specific errors.</p>
+     */
+    inline bool ErrorsHasBeenSet() const { return m_errorsHasBeenSet; }
+
+    /**
+     * <p>Conflict Exception specific errors.</p>
+     */
+    inline void SetErrors(const Aws::Vector<ErrorDetails>& value) { m_errorsHasBeenSet = true; m_errors = value; }
+
+    /**
+     * <p>Conflict Exception specific errors.</p>
+     */
+    inline void SetErrors(Aws::Vector<ErrorDetails>&& value) { m_errorsHasBeenSet = true; m_errors = std::move(value); }
+
+    /**
+     * <p>Conflict Exception specific errors.</p>
+     */
+    inline ConflictException& WithErrors(const Aws::Vector<ErrorDetails>& value) { SetErrors(value); return *this;}
+
+    /**
+     * <p>Conflict Exception specific errors.</p>
+     */
+    inline ConflictException& WithErrors(Aws::Vector<ErrorDetails>&& value) { SetErrors(std::move(value)); return *this;}
+
+    /**
+     * <p>Conflict Exception specific errors.</p>
+     */
+    inline ConflictException& AddErrors(const ErrorDetails& value) { m_errorsHasBeenSet = true; m_errors.push_back(value); return *this; }
+
+    /**
+     * <p>Conflict Exception specific errors.</p>
+     */
+    inline ConflictException& AddErrors(ErrorDetails&& value) { m_errorsHasBeenSet = true; m_errors.push_back(std::move(value)); return *this; }
 
 
     
@@ -173,6 +216,9 @@ namespace Model
 
     Aws::String m_code;
     bool m_codeHasBeenSet;
+
+    Aws::Vector<ErrorDetails> m_errors;
+    bool m_errorsHasBeenSet;
 
     Aws::String m_message;
     bool m_messageHasBeenSet;

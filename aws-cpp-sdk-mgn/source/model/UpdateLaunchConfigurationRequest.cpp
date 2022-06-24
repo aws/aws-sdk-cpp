@@ -23,6 +23,7 @@ UpdateLaunchConfigurationRequest::UpdateLaunchConfigurationRequest() :
     m_launchDispositionHasBeenSet(false),
     m_licensingHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_postLaunchActionsHasBeenSet(false),
     m_sourceServerIDHasBeenSet(false),
     m_targetInstanceTypeRightSizingMethod(TargetInstanceTypeRightSizingMethod::NOT_SET),
     m_targetInstanceTypeRightSizingMethodHasBeenSet(false)
@@ -64,6 +65,12 @@ Aws::String UpdateLaunchConfigurationRequest::SerializePayload() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_postLaunchActionsHasBeenSet)
+  {
+   payload.WithObject("postLaunchActions", m_postLaunchActions.Jsonize());
 
   }
 

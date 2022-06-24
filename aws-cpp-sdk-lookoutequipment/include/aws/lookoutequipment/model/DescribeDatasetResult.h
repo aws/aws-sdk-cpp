@@ -110,32 +110,27 @@ namespace Model
 
 
     /**
-     * <p>Specifies the time the dataset was created in Amazon Lookout for Equipment.
-     * </p>
+     * <p>Specifies the time the dataset was created in Lookout for Equipment. </p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>Specifies the time the dataset was created in Amazon Lookout for Equipment.
-     * </p>
+     * <p>Specifies the time the dataset was created in Lookout for Equipment. </p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
 
     /**
-     * <p>Specifies the time the dataset was created in Amazon Lookout for Equipment.
-     * </p>
+     * <p>Specifies the time the dataset was created in Lookout for Equipment. </p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
 
     /**
-     * <p>Specifies the time the dataset was created in Amazon Lookout for Equipment.
-     * </p>
+     * <p>Specifies the time the dataset was created in Lookout for Equipment. </p>
      */
     inline DescribeDatasetResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>Specifies the time the dataset was created in Amazon Lookout for Equipment.
-     * </p>
+     * <p>Specifies the time the dataset was created in Lookout for Equipment. </p>
      */
     inline DescribeDatasetResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 

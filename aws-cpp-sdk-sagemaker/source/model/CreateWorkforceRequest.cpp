@@ -17,7 +17,8 @@ CreateWorkforceRequest::CreateWorkforceRequest() :
     m_oidcConfigHasBeenSet(false),
     m_sourceIpConfigHasBeenSet(false),
     m_workforceNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_workforceVpcConfigHasBeenSet(false)
 {
 }
 
@@ -57,6 +58,12 @@ Aws::String CreateWorkforceRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_workforceVpcConfigHasBeenSet)
+  {
+   payload.WithObject("WorkforceVpcConfig", m_workforceVpcConfig.Jsonize());
 
   }
 

@@ -32,6 +32,7 @@
 #include <aws/lookoutequipment/model/DescribeModelRequest.h>
 #include <aws/lookoutequipment/model/ListDataIngestionJobsRequest.h>
 #include <aws/lookoutequipment/model/ListDatasetsRequest.h>
+#include <aws/lookoutequipment/model/ListInferenceEventsRequest.h>
 #include <aws/lookoutequipment/model/ListInferenceExecutionsRequest.h>
 #include <aws/lookoutequipment/model/ListInferenceSchedulersRequest.h>
 #include <aws/lookoutequipment/model/ListModelsRequest.h>
@@ -403,6 +404,30 @@ void LookoutEquipmentClient::ListDatasetsAsync(const ListDatasetsRequest& reques
 void LookoutEquipmentClient::ListDatasetsAsyncHelper(const ListDatasetsRequest& request, const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListDatasets(request), context);
+}
+
+ListInferenceEventsOutcome LookoutEquipmentClient::ListInferenceEvents(const ListInferenceEventsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListInferenceEventsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListInferenceEventsOutcomeCallable LookoutEquipmentClient::ListInferenceEventsCallable(const ListInferenceEventsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListInferenceEventsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListInferenceEvents(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LookoutEquipmentClient::ListInferenceEventsAsync(const ListInferenceEventsRequest& request, const ListInferenceEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListInferenceEventsAsyncHelper( request, handler, context ); } );
+}
+
+void LookoutEquipmentClient::ListInferenceEventsAsyncHelper(const ListInferenceEventsRequest& request, const ListInferenceEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListInferenceEvents(request), context);
 }
 
 ListInferenceExecutionsOutcome LookoutEquipmentClient::ListInferenceExecutions(const ListInferenceExecutionsRequest& request) const

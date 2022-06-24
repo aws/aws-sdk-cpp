@@ -43,6 +43,7 @@
 #include <aws/migration-hub-refactor-spaces/model/PutResourcePolicyRequest.h>
 #include <aws/migration-hub-refactor-spaces/model/TagResourceRequest.h>
 #include <aws/migration-hub-refactor-spaces/model/UntagResourceRequest.h>
+#include <aws/migration-hub-refactor-spaces/model/UpdateRouteRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -920,5 +921,50 @@ void MigrationHubRefactorSpacesClient::UntagResourceAsync(const UntagResourceReq
 void MigrationHubRefactorSpacesClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UntagResource(request), context);
+}
+
+UpdateRouteOutcome MigrationHubRefactorSpacesClient::UpdateRoute(const UpdateRouteRequest& request) const
+{
+  if (!request.ApplicationIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateRoute", "Required field: ApplicationIdentifier, is not set");
+    return UpdateRouteOutcome(Aws::Client::AWSError<MigrationHubRefactorSpacesErrors>(MigrationHubRefactorSpacesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationIdentifier]", false));
+  }
+  if (!request.EnvironmentIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateRoute", "Required field: EnvironmentIdentifier, is not set");
+    return UpdateRouteOutcome(Aws::Client::AWSError<MigrationHubRefactorSpacesErrors>(MigrationHubRefactorSpacesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentIdentifier]", false));
+  }
+  if (!request.RouteIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateRoute", "Required field: RouteIdentifier, is not set");
+    return UpdateRouteOutcome(Aws::Client::AWSError<MigrationHubRefactorSpacesErrors>(MigrationHubRefactorSpacesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RouteIdentifier]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/environments/");
+  uri.AddPathSegment(request.GetEnvironmentIdentifier());
+  uri.AddPathSegments("/applications/");
+  uri.AddPathSegment(request.GetApplicationIdentifier());
+  uri.AddPathSegments("/routes/");
+  uri.AddPathSegment(request.GetRouteIdentifier());
+  return UpdateRouteOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateRouteOutcomeCallable MigrationHubRefactorSpacesClient::UpdateRouteCallable(const UpdateRouteRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateRouteOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateRoute(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MigrationHubRefactorSpacesClient::UpdateRouteAsync(const UpdateRouteRequest& request, const UpdateRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateRouteAsyncHelper( request, handler, context ); } );
+}
+
+void MigrationHubRefactorSpacesClient::UpdateRouteAsyncHelper(const UpdateRouteRequest& request, const UpdateRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateRoute(request), context);
 }
 

@@ -7,6 +7,7 @@
 #include <aws/migration-hub-refactor-spaces/MigrationHubRefactorSpaces_EXPORTS.h>
 #include <aws/migration-hub-refactor-spaces/MigrationHubRefactorSpacesRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/migration-hub-refactor-spaces/model/DefaultRouteInput.h>
 #include <aws/migration-hub-refactor-spaces/model/RouteType.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/migration-hub-refactor-spaces/model/UriPathRouteInput.h>
@@ -124,6 +125,37 @@ namespace Model
      * idempotency of the request.</p>
      */
     inline CreateRouteRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+
+
+    /**
+     * <p> Configuration for the default route type. </p>
+     */
+    inline const DefaultRouteInput& GetDefaultRoute() const{ return m_defaultRoute; }
+
+    /**
+     * <p> Configuration for the default route type. </p>
+     */
+    inline bool DefaultRouteHasBeenSet() const { return m_defaultRouteHasBeenSet; }
+
+    /**
+     * <p> Configuration for the default route type. </p>
+     */
+    inline void SetDefaultRoute(const DefaultRouteInput& value) { m_defaultRouteHasBeenSet = true; m_defaultRoute = value; }
+
+    /**
+     * <p> Configuration for the default route type. </p>
+     */
+    inline void SetDefaultRoute(DefaultRouteInput&& value) { m_defaultRouteHasBeenSet = true; m_defaultRoute = std::move(value); }
+
+    /**
+     * <p> Configuration for the default route type. </p>
+     */
+    inline CreateRouteRequest& WithDefaultRoute(const DefaultRouteInput& value) { SetDefaultRoute(value); return *this;}
+
+    /**
+     * <p> Configuration for the default route type. </p>
+     */
+    inline CreateRouteRequest& WithDefaultRoute(DefaultRouteInput&& value) { SetDefaultRoute(std::move(value)); return *this;}
 
 
     /**
@@ -381,6 +413,9 @@ namespace Model
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
+
+    DefaultRouteInput m_defaultRoute;
+    bool m_defaultRouteHasBeenSet;
 
     Aws::String m_environmentIdentifier;
     bool m_environmentIdentifierHasBeenSet;
