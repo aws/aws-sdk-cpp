@@ -775,38 +775,38 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the crawler should use AWS Lake Formation credentials for
-     * the crawler instead of the IAM role credentials.</p>
+     * <p>Specifies whether the crawler should use Lake Formation credentials for the
+     * crawler instead of the IAM role credentials.</p>
      */
     inline const LakeFormationConfiguration& GetLakeFormationConfiguration() const{ return m_lakeFormationConfiguration; }
 
     /**
-     * <p>Specifies whether the crawler should use AWS Lake Formation credentials for
-     * the crawler instead of the IAM role credentials.</p>
+     * <p>Specifies whether the crawler should use Lake Formation credentials for the
+     * crawler instead of the IAM role credentials.</p>
      */
     inline bool LakeFormationConfigurationHasBeenSet() const { return m_lakeFormationConfigurationHasBeenSet; }
 
     /**
-     * <p>Specifies whether the crawler should use AWS Lake Formation credentials for
-     * the crawler instead of the IAM role credentials.</p>
+     * <p>Specifies whether the crawler should use Lake Formation credentials for the
+     * crawler instead of the IAM role credentials.</p>
      */
     inline void SetLakeFormationConfiguration(const LakeFormationConfiguration& value) { m_lakeFormationConfigurationHasBeenSet = true; m_lakeFormationConfiguration = value; }
 
     /**
-     * <p>Specifies whether the crawler should use AWS Lake Formation credentials for
-     * the crawler instead of the IAM role credentials.</p>
+     * <p>Specifies whether the crawler should use Lake Formation credentials for the
+     * crawler instead of the IAM role credentials.</p>
      */
     inline void SetLakeFormationConfiguration(LakeFormationConfiguration&& value) { m_lakeFormationConfigurationHasBeenSet = true; m_lakeFormationConfiguration = std::move(value); }
 
     /**
-     * <p>Specifies whether the crawler should use AWS Lake Formation credentials for
-     * the crawler instead of the IAM role credentials.</p>
+     * <p>Specifies whether the crawler should use Lake Formation credentials for the
+     * crawler instead of the IAM role credentials.</p>
      */
     inline Crawler& WithLakeFormationConfiguration(const LakeFormationConfiguration& value) { SetLakeFormationConfiguration(value); return *this;}
 
     /**
-     * <p>Specifies whether the crawler should use AWS Lake Formation credentials for
-     * the crawler instead of the IAM role credentials.</p>
+     * <p>Specifies whether the crawler should use Lake Formation credentials for the
+     * crawler instead of the IAM role credentials.</p>
      */
     inline Crawler& WithLakeFormationConfiguration(LakeFormationConfiguration&& value) { SetLakeFormationConfiguration(std::move(value)); return *this;}
 

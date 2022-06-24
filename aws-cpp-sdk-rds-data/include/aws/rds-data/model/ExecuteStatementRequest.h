@@ -387,42 +387,74 @@ namespace Model
 
 
     /**
-     * <p>The name or ARN of the secret that enables access to the DB cluster.</p>
+     * <p>The ARN of the secret that enables access to the DB cluster. Enter the
+     * database user name and password for the credentials in the secret.</p> <p>For
+     * information about creating the secret, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create
+     * a database secret</a>.</p>
      */
     inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
 
     /**
-     * <p>The name or ARN of the secret that enables access to the DB cluster.</p>
+     * <p>The ARN of the secret that enables access to the DB cluster. Enter the
+     * database user name and password for the credentials in the secret.</p> <p>For
+     * information about creating the secret, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create
+     * a database secret</a>.</p>
      */
     inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
 
     /**
-     * <p>The name or ARN of the secret that enables access to the DB cluster.</p>
+     * <p>The ARN of the secret that enables access to the DB cluster. Enter the
+     * database user name and password for the credentials in the secret.</p> <p>For
+     * information about creating the secret, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create
+     * a database secret</a>.</p>
      */
     inline void SetSecretArn(const Aws::String& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
 
     /**
-     * <p>The name or ARN of the secret that enables access to the DB cluster.</p>
+     * <p>The ARN of the secret that enables access to the DB cluster. Enter the
+     * database user name and password for the credentials in the secret.</p> <p>For
+     * information about creating the secret, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create
+     * a database secret</a>.</p>
      */
     inline void SetSecretArn(Aws::String&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
 
     /**
-     * <p>The name or ARN of the secret that enables access to the DB cluster.</p>
+     * <p>The ARN of the secret that enables access to the DB cluster. Enter the
+     * database user name and password for the credentials in the secret.</p> <p>For
+     * information about creating the secret, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create
+     * a database secret</a>.</p>
      */
     inline void SetSecretArn(const char* value) { m_secretArnHasBeenSet = true; m_secretArn.assign(value); }
 
     /**
-     * <p>The name or ARN of the secret that enables access to the DB cluster.</p>
+     * <p>The ARN of the secret that enables access to the DB cluster. Enter the
+     * database user name and password for the credentials in the secret.</p> <p>For
+     * information about creating the secret, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create
+     * a database secret</a>.</p>
      */
     inline ExecuteStatementRequest& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
 
     /**
-     * <p>The name or ARN of the secret that enables access to the DB cluster.</p>
+     * <p>The ARN of the secret that enables access to the DB cluster. Enter the
+     * database user name and password for the credentials in the secret.</p> <p>For
+     * information about creating the secret, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create
+     * a database secret</a>.</p>
      */
     inline ExecuteStatementRequest& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
 
     /**
-     * <p>The name or ARN of the secret that enables access to the DB cluster.</p>
+     * <p>The ARN of the secret that enables access to the DB cluster. Enter the
+     * database user name and password for the credentials in the secret.</p> <p>For
+     * information about creating the secret, see <a
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create
+     * a database secret</a>.</p>
      */
     inline ExecuteStatementRequest& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}
 

@@ -146,6 +146,7 @@
 #include <aws/glue/model/ImportCatalogToGlueRequest.h>
 #include <aws/glue/model/ListBlueprintsRequest.h>
 #include <aws/glue/model/ListCrawlersRequest.h>
+#include <aws/glue/model/ListCrawlsRequest.h>
 #include <aws/glue/model/ListCustomEntityTypesRequest.h>
 #include <aws/glue/model/ListDevEndpointsRequest.h>
 #include <aws/glue/model/ListJobsRequest.h>
@@ -3299,6 +3300,30 @@ void GlueClient::ListCrawlersAsync(const ListCrawlersRequest& request, const Lis
 void GlueClient::ListCrawlersAsyncHelper(const ListCrawlersRequest& request, const ListCrawlersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListCrawlers(request), context);
+}
+
+ListCrawlsOutcome GlueClient::ListCrawls(const ListCrawlsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListCrawlsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListCrawlsOutcomeCallable GlueClient::ListCrawlsCallable(const ListCrawlsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListCrawlsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListCrawls(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::ListCrawlsAsync(const ListCrawlsRequest& request, const ListCrawlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListCrawlsAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::ListCrawlsAsyncHelper(const ListCrawlsRequest& request, const ListCrawlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListCrawls(request), context);
 }
 
 ListCustomEntityTypesOutcome GlueClient::ListCustomEntityTypes(const ListCustomEntityTypesRequest& request) const
