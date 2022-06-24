@@ -520,22 +520,34 @@ namespace Model
     inline UpdateCrawlerRequest& WithLineageConfiguration(LineageConfiguration&& value) { SetLineageConfiguration(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>Specifies Lake Formation configuration settings for the crawler.</p>
+     */
     inline const LakeFormationConfiguration& GetLakeFormationConfiguration() const{ return m_lakeFormationConfiguration; }
 
-    
+    /**
+     * <p>Specifies Lake Formation configuration settings for the crawler.</p>
+     */
     inline bool LakeFormationConfigurationHasBeenSet() const { return m_lakeFormationConfigurationHasBeenSet; }
 
-    
+    /**
+     * <p>Specifies Lake Formation configuration settings for the crawler.</p>
+     */
     inline void SetLakeFormationConfiguration(const LakeFormationConfiguration& value) { m_lakeFormationConfigurationHasBeenSet = true; m_lakeFormationConfiguration = value; }
 
-    
+    /**
+     * <p>Specifies Lake Formation configuration settings for the crawler.</p>
+     */
     inline void SetLakeFormationConfiguration(LakeFormationConfiguration&& value) { m_lakeFormationConfigurationHasBeenSet = true; m_lakeFormationConfiguration = std::move(value); }
 
-    
+    /**
+     * <p>Specifies Lake Formation configuration settings for the crawler.</p>
+     */
     inline UpdateCrawlerRequest& WithLakeFormationConfiguration(const LakeFormationConfiguration& value) { SetLakeFormationConfiguration(value); return *this;}
 
-    
+    /**
+     * <p>Specifies Lake Formation configuration settings for the crawler.</p>
+     */
     inline UpdateCrawlerRequest& WithLakeFormationConfiguration(LakeFormationConfiguration&& value) { SetLakeFormationConfiguration(std::move(value)); return *this;}
 
 

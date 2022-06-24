@@ -137,6 +137,7 @@
 #include <aws/glue/model/ImportCatalogToGlueResult.h>
 #include <aws/glue/model/ListBlueprintsResult.h>
 #include <aws/glue/model/ListCrawlersResult.h>
+#include <aws/glue/model/ListCrawlsResult.h>
 #include <aws/glue/model/ListCustomEntityTypesResult.h>
 #include <aws/glue/model/ListDevEndpointsResult.h>
 #include <aws/glue/model/ListJobsResult.h>
@@ -359,6 +360,7 @@ namespace Model
         class ImportCatalogToGlueRequest;
         class ListBlueprintsRequest;
         class ListCrawlersRequest;
+        class ListCrawlsRequest;
         class ListCustomEntityTypesRequest;
         class ListDevEndpointsRequest;
         class ListJobsRequest;
@@ -543,6 +545,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ImportCatalogToGlueResult, GlueError> ImportCatalogToGlueOutcome;
         typedef Aws::Utils::Outcome<ListBlueprintsResult, GlueError> ListBlueprintsOutcome;
         typedef Aws::Utils::Outcome<ListCrawlersResult, GlueError> ListCrawlersOutcome;
+        typedef Aws::Utils::Outcome<ListCrawlsResult, GlueError> ListCrawlsOutcome;
         typedef Aws::Utils::Outcome<ListCustomEntityTypesResult, GlueError> ListCustomEntityTypesOutcome;
         typedef Aws::Utils::Outcome<ListDevEndpointsResult, GlueError> ListDevEndpointsOutcome;
         typedef Aws::Utils::Outcome<ListJobsResult, GlueError> ListJobsOutcome;
@@ -727,6 +730,7 @@ namespace Model
         typedef std::future<ImportCatalogToGlueOutcome> ImportCatalogToGlueOutcomeCallable;
         typedef std::future<ListBlueprintsOutcome> ListBlueprintsOutcomeCallable;
         typedef std::future<ListCrawlersOutcome> ListCrawlersOutcomeCallable;
+        typedef std::future<ListCrawlsOutcome> ListCrawlsOutcomeCallable;
         typedef std::future<ListCustomEntityTypesOutcome> ListCustomEntityTypesOutcomeCallable;
         typedef std::future<ListDevEndpointsOutcome> ListDevEndpointsOutcomeCallable;
         typedef std::future<ListJobsOutcome> ListJobsOutcomeCallable;
@@ -914,6 +918,7 @@ namespace Model
     typedef std::function<void(const GlueClient*, const Model::ImportCatalogToGlueRequest&, const Model::ImportCatalogToGlueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportCatalogToGlueResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::ListBlueprintsRequest&, const Model::ListBlueprintsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBlueprintsResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::ListCrawlersRequest&, const Model::ListCrawlersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCrawlersResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::ListCrawlsRequest&, const Model::ListCrawlsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCrawlsResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::ListCustomEntityTypesRequest&, const Model::ListCustomEntityTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCustomEntityTypesResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::ListDevEndpointsRequest&, const Model::ListDevEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDevEndpointsResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::ListJobsRequest&, const Model::ListJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJobsResponseReceivedHandler;
@@ -3360,6 +3365,31 @@ namespace Model
         virtual void ListCrawlersAsync(const Model::ListCrawlersRequest& request, const ListCrawlersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns all the crawls of a specified crawler. Returns only the crawls that
+         * have occurred since the launch date of the crawler history feature, and only
+         * retains up to 12 months of crawls. Older crawls will not be returned.</p> <p>You
+         * may use this API to:</p> <ul> <li> <p>Retrive all the crawls of a specified
+         * crawler.</p> </li> <li> <p>Retrieve all the crawls of a specified crawler within
+         * a limited count.</p> </li> <li> <p>Retrieve all the crawls of a specified
+         * crawler in a specific time range.</p> </li> <li> <p>Retrieve all the crawls of a
+         * specified crawler with a particular state, crawl ID, or DPU hour value.</p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListCrawls">AWS API
+         * Reference</a></p>
+         */
+        virtual Model::ListCrawlsOutcome ListCrawls(const Model::ListCrawlsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListCrawls that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListCrawlsOutcomeCallable ListCrawlsCallable(const Model::ListCrawlsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListCrawls that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListCrawlsAsync(const Model::ListCrawlsRequest& request, const ListCrawlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists all the custom patterns that have been created.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListCustomEntityTypes">AWS
@@ -4617,6 +4647,7 @@ namespace Model
         void ImportCatalogToGlueAsyncHelper(const Model::ImportCatalogToGlueRequest& request, const ImportCatalogToGlueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListBlueprintsAsyncHelper(const Model::ListBlueprintsRequest& request, const ListBlueprintsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListCrawlersAsyncHelper(const Model::ListCrawlersRequest& request, const ListCrawlersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListCrawlsAsyncHelper(const Model::ListCrawlsRequest& request, const ListCrawlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListCustomEntityTypesAsyncHelper(const Model::ListCustomEntityTypesRequest& request, const ListCustomEntityTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDevEndpointsAsyncHelper(const Model::ListDevEndpointsRequest& request, const ListDevEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListJobsAsyncHelper(const Model::ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
