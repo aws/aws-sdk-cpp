@@ -4,7 +4,7 @@
  */
 
 
-#include <aws/external/gtest.h>
+#include <gtest/gtest.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/CoreErrors.h>

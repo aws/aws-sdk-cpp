@@ -6,7 +6,7 @@
 #define AWS_DISABLE_DEPRECATION
 #ifndef NO_SYMMETRIC_ENCRYPTION
 
-#include <aws/external/gtest.h>
+#include <gtest/gtest.h>
 #include <aws/core/Aws.h>
 #include <aws/core/auth/AWSCredentialsProvider.h>
 #include <aws/core/utils/Outcome.h>
