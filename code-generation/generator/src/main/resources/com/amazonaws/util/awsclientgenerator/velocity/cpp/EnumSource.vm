@@ -96,7 +96,7 @@ namespace ${rootNamespace}
           return ${enumModel.name}::NOT_SET;
 #else
 #set($elseText = "")
-#set($maxHelperIndex = $enumModel.members.size() / 122)
+#set($maxHelperIndex = ($enumModel.members.size() - 1) / 122)
           ${enumModel.name} enumValue;
 #foreach($helperIndex in [0..$maxHelperIndex])
           ${elseText}if (GetEnumForNameHelper${helperIndex}(hashCode, enumValue))
@@ -135,7 +135,7 @@ namespace ${rootNamespace}
             return {};
           }
 #else
-#set($maxHelperIndex = $enumModel.members.size() / 122)
+#set($maxHelperIndex = ($enumModel.members.size() - 1) / 122)
           Aws::String value;
 #set($elseText = "")
 #foreach($helperIndex in [0..$maxHelperIndex])
