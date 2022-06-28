@@ -80,85 +80,91 @@ namespace Aws
 
             Aws::Vector<unsigned char> EventStreamEncoder::EncodeAndSign(const Aws::Utils::Event::Message& msg)
             {
-                aws_event_stream_message encoded = Encode(msg);
-                aws_event_stream_message signedMessage = Sign(&encoded);
+                Aws::Vector<unsigned char> outputBits;
 
-                const auto signedMessageBuffer = aws_event_stream_message_buffer(&signedMessage);
-                const auto signedMessageLength = signedMessageBuffer ? aws_event_stream_message_total_length(&signedMessage) : 0;
+                aws_event_stream_message encoded;
+                if (Encode(&encoded, msg))
+                {
+                    aws_event_stream_message signedMessage;
+                    if (Sign(&signedMessage, &encoded))
+                    {
+                        const auto signedMessageBuffer = aws_event_stream_message_buffer(&signedMessage);
+                        const auto signedMessageLength = aws_event_stream_message_total_length(&signedMessage);
+                        outputBits.reserve(signedMessageLength);
+                        outputBits.insert(outputBits.end(), signedMessageBuffer, signedMessageBuffer + signedMessageLength);
 
-                Aws::Vector<unsigned char> outputBits(signedMessageBuffer, signedMessageBuffer + signedMessageLength);
-                aws_event_stream_message_clean_up(&encoded);
-                aws_event_stream_message_clean_up(&signedMessage);
+                        aws_event_stream_message_clean_up(&signedMessage);
+                    }
+                    aws_event_stream_message_clean_up(&encoded);
+                }
+
                 return outputBits;
             }
 
-            aws_event_stream_message EventStreamEncoder::Encode(const Aws::Utils::Event::Message& msg)
+            bool EventStreamEncoder::Encode(aws_event_stream_message* dstMsg, const Aws::Utils::Event::Message& srcMsg)
             {
+                bool success = false;
+
                 aws_array_list headers;
-                EncodeHeaders(msg, &headers);
+                EncodeHeaders(srcMsg, &headers);
 
                 aws_byte_buf payload;
-                payload.len = msg.GetEventPayload().size();
+                payload.len = srcMsg.GetEventPayload().size();
                 // this const_cast is OK because aws_byte_buf will only be "read from" by the following functions.
-                payload.buffer = const_cast<uint8_t*>(msg.GetEventPayload().data());
+                payload.buffer = const_cast<uint8_t*>(srcMsg.GetEventPayload().data());
                 payload.capacity = 0;
                 payload.allocator = nullptr;
 
-                aws_event_stream_message encoded;
-                if(aws_event_stream_message_init(&encoded, get_aws_allocator(), &headers, &payload) == AWS_OP_ERR)
+                if(aws_event_stream_message_init(dstMsg, get_aws_allocator(), &headers, &payload) == AWS_OP_SUCCESS)
+                {
+                    success = true;
+                }
+                else
                 {
                     AWS_LOGSTREAM_ERROR(TAG, "Error creating event-stream message from payload.");
-                    aws_event_stream_headers_list_cleanup(&headers);
-                    // GCC 4.9.4 issues a warning with -Wextra if we simply do
-                    // return {};
-                    aws_event_stream_message empty;
-                    AWS_ZERO_STRUCT(empty);
-                    return empty;
                 }
+
                 aws_event_stream_headers_list_cleanup(&headers);
-                return encoded;
+                return success;
             }
 
-            aws_event_stream_message EventStreamEncoder::Sign(aws_event_stream_message* msg)
+            bool EventStreamEncoder::Sign(aws_event_stream_message* dstMsg, const aws_event_stream_message* srcMsg)
             {
-                const auto msgbuf = aws_event_stream_message_buffer(msg);
-                const auto msglen = msgbuf ? aws_event_stream_message_total_length(msg) : 0;
+                bool success = false;
+
+                const auto msgbuf = aws_event_stream_message_buffer(srcMsg);
+                const auto msglen = aws_event_stream_message_total_length(srcMsg);
                 Event::Message signedMessage;
                 signedMessage.WriteEventPayload(msgbuf, msglen);
 
                 assert(m_signer);
-                if (!m_signer->SignEventMessage(signedMessage, m_signatureSeed))
+                if (m_signer->SignEventMessage(signedMessage, m_signatureSeed))
+                {
+                    aws_array_list headers;
+                    EncodeHeaders(signedMessage, &headers);
+
+                    aws_byte_buf payload;
+                    payload.len = signedMessage.GetEventPayload().size();
+                    payload.buffer = signedMessage.GetEventPayload().data();
+                    payload.capacity = 0;
+                    payload.allocator = nullptr;
+
+                    if(aws_event_stream_message_init(dstMsg, get_aws_allocator(), &headers, &payload) == AWS_OP_SUCCESS)
+                    {
+                        success = true;
+                    }
+                    else
+                    {
+                        AWS_LOGSTREAM_ERROR(TAG, "Error creating event-stream message from payload.");
+                    }
+                    aws_event_stream_headers_list_cleanup(&headers);
+                }
+                else
                 {
                     AWS_LOGSTREAM_ERROR(TAG, "Failed to sign event message frame.");
-                    // GCC 4.9.4 issues a warning with -Wextra if we simply do
-                    // return {};
-                    aws_event_stream_message empty;
-                    AWS_ZERO_STRUCT(empty);
-                    return empty;
                 }
 
-                aws_array_list headers;
-                EncodeHeaders(signedMessage, &headers);
-
-                aws_byte_buf payload;
-                payload.len = signedMessage.GetEventPayload().size();
-                payload.buffer = signedMessage.GetEventPayload().data();
-                payload.capacity = 0;
-                payload.allocator = nullptr;
-
-                aws_event_stream_message signedmsg;
-                if(aws_event_stream_message_init(&signedmsg, get_aws_allocator(), &headers, &payload))
-                {
-                    AWS_LOGSTREAM_ERROR(TAG, "Error creating event-stream message from payload.");
-                    aws_event_stream_headers_list_cleanup(&headers);
-                    // GCC 4.9.4 issues a warning with -Wextra if we simply do
-                    // return {};
-                    aws_event_stream_message empty;
-                    AWS_ZERO_STRUCT(empty);
-                    return empty;
-                }
-                aws_event_stream_headers_list_cleanup(&headers);
-                return signedmsg;
+                return success;
             }
 
         } // namespace Event
