@@ -38,50 +38,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the self-managed object storage server
-     * location that was described.</p>
+     * <p>The Amazon Resource Name (ARN) of the object storage system location that you
+     * want information about.</p>
      */
     inline const Aws::String& GetLocationArn() const{ return m_locationArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the self-managed object storage server
-     * location that was described.</p>
+     * <p>The Amazon Resource Name (ARN) of the object storage system location that you
+     * want information about.</p>
      */
     inline bool LocationArnHasBeenSet() const { return m_locationArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the self-managed object storage server
-     * location that was described.</p>
+     * <p>The Amazon Resource Name (ARN) of the object storage system location that you
+     * want information about.</p>
      */
     inline void SetLocationArn(const Aws::String& value) { m_locationArnHasBeenSet = true; m_locationArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the self-managed object storage server
-     * location that was described.</p>
+     * <p>The Amazon Resource Name (ARN) of the object storage system location that you
+     * want information about.</p>
      */
     inline void SetLocationArn(Aws::String&& value) { m_locationArnHasBeenSet = true; m_locationArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the self-managed object storage server
-     * location that was described.</p>
+     * <p>The Amazon Resource Name (ARN) of the object storage system location that you
+     * want information about.</p>
      */
     inline void SetLocationArn(const char* value) { m_locationArnHasBeenSet = true; m_locationArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the self-managed object storage server
-     * location that was described.</p>
+     * <p>The Amazon Resource Name (ARN) of the object storage system location that you
+     * want information about.</p>
      */
     inline DescribeLocationObjectStorageRequest& WithLocationArn(const Aws::String& value) { SetLocationArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the self-managed object storage server
-     * location that was described.</p>
+     * <p>The Amazon Resource Name (ARN) of the object storage system location that you
+     * want information about.</p>
      */
     inline DescribeLocationObjectStorageRequest& WithLocationArn(Aws::String&& value) { SetLocationArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the self-managed object storage server
-     * location that was described.</p>
+     * <p>The Amazon Resource Name (ARN) of the object storage system location that you
+     * want information about.</p>
      */
     inline DescribeLocationObjectStorageRequest& WithLocationArn(const char* value) { SetLocationArn(value); return *this;}
 

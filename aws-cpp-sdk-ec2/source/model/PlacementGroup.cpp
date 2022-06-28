@@ -30,7 +30,9 @@ PlacementGroup::PlacementGroup() :
     m_partitionCountHasBeenSet(false),
     m_groupIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_groupArnHasBeenSet(false)
+    m_groupArnHasBeenSet(false),
+    m_spreadLevel(SpreadLevel::NOT_SET),
+    m_spreadLevelHasBeenSet(false)
 {
 }
 
@@ -44,7 +46,9 @@ PlacementGroup::PlacementGroup(const XmlNode& xmlNode) :
     m_partitionCountHasBeenSet(false),
     m_groupIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_groupArnHasBeenSet(false)
+    m_groupArnHasBeenSet(false),
+    m_spreadLevel(SpreadLevel::NOT_SET),
+    m_spreadLevelHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -103,6 +107,12 @@ PlacementGroup& PlacementGroup::operator =(const XmlNode& xmlNode)
       m_groupArn = Aws::Utils::Xml::DecodeEscapedXmlText(groupArnNode.GetText());
       m_groupArnHasBeenSet = true;
     }
+    XmlNode spreadLevelNode = resultNode.FirstChild("spreadLevel");
+    if(!spreadLevelNode.IsNull())
+    {
+      m_spreadLevel = SpreadLevelMapper::GetSpreadLevelForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(spreadLevelNode.GetText()).c_str()).c_str());
+      m_spreadLevelHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -151,6 +161,11 @@ void PlacementGroup::OutputToStream(Aws::OStream& oStream, const char* location,
       oStream << location << index << locationValue << ".GroupArn=" << StringUtils::URLEncode(m_groupArn.c_str()) << "&";
   }
 
+  if(m_spreadLevelHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SpreadLevel=" << SpreadLevelMapper::GetNameForSpreadLevel(m_spreadLevel) << "&";
+  }
+
 }
 
 void PlacementGroup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -188,6 +203,10 @@ void PlacementGroup::OutputToStream(Aws::OStream& oStream, const char* location)
   if(m_groupArnHasBeenSet)
   {
       oStream << location << ".GroupArn=" << StringUtils::URLEncode(m_groupArn.c_str()) << "&";
+  }
+  if(m_spreadLevelHasBeenSet)
+  {
+      oStream << location << ".SpreadLevel=" << SpreadLevelMapper::GetNameForSpreadLevel(m_spreadLevel) << "&";
   }
 }
 

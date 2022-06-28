@@ -556,42 +556,50 @@ namespace Model
 
 
     /**
-     * <p>The tags.</p>
+     * <p>The tags that are applied to the resources that are created during instance
+     * launch.</p>
      */
     inline const Aws::Vector<LaunchTemplateTagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
 
     /**
-     * <p>The tags.</p>
+     * <p>The tags that are applied to the resources that are created during instance
+     * launch.</p>
      */
     inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
 
     /**
-     * <p>The tags.</p>
+     * <p>The tags that are applied to the resources that are created during instance
+     * launch.</p>
      */
     inline void SetTagSpecifications(const Aws::Vector<LaunchTemplateTagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
 
     /**
-     * <p>The tags.</p>
+     * <p>The tags that are applied to the resources that are created during instance
+     * launch.</p>
      */
     inline void SetTagSpecifications(Aws::Vector<LaunchTemplateTagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
 
     /**
-     * <p>The tags.</p>
+     * <p>The tags that are applied to the resources that are created during instance
+     * launch.</p>
      */
     inline ResponseLaunchTemplateData& WithTagSpecifications(const Aws::Vector<LaunchTemplateTagSpecification>& value) { SetTagSpecifications(value); return *this;}
 
     /**
-     * <p>The tags.</p>
+     * <p>The tags that are applied to the resources that are created during instance
+     * launch.</p>
      */
     inline ResponseLaunchTemplateData& WithTagSpecifications(Aws::Vector<LaunchTemplateTagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
 
     /**
-     * <p>The tags.</p>
+     * <p>The tags that are applied to the resources that are created during instance
+     * launch.</p>
      */
     inline ResponseLaunchTemplateData& AddTagSpecifications(const LaunchTemplateTagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
 
     /**
-     * <p>The tags.</p>
+     * <p>The tags that are applied to the resources that are created during instance
+     * launch.</p>
      */
     inline ResponseLaunchTemplateData& AddTagSpecifications(LaunchTemplateTagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
 

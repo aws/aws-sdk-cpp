@@ -416,26 +416,22 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the Capacity Reservation supports instances with temporary,
-     * block-level storage.</p>
+     * <p> <i>Deprecated.</i> </p>
      */
     inline bool GetEphemeralStorage() const{ return m_ephemeralStorage; }
 
     /**
-     * <p>Indicates whether the Capacity Reservation supports instances with temporary,
-     * block-level storage.</p>
+     * <p> <i>Deprecated.</i> </p>
      */
     inline bool EphemeralStorageHasBeenSet() const { return m_ephemeralStorageHasBeenSet; }
 
     /**
-     * <p>Indicates whether the Capacity Reservation supports instances with temporary,
-     * block-level storage.</p>
+     * <p> <i>Deprecated.</i> </p>
      */
     inline void SetEphemeralStorage(bool value) { m_ephemeralStorageHasBeenSet = true; m_ephemeralStorage = value; }
 
     /**
-     * <p>Indicates whether the Capacity Reservation supports instances with temporary,
-     * block-level storage.</p>
+     * <p> <i>Deprecated.</i> </p>
      */
     inline CreateCapacityReservationRequest& WithEphemeralStorage(bool value) { SetEphemeralStorage(value); return *this;}
 

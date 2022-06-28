@@ -18,7 +18,9 @@ CreatePlacementGroupRequest::CreatePlacementGroupRequest() :
     m_strategyHasBeenSet(false),
     m_partitionCount(0),
     m_partitionCountHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false)
+    m_tagSpecificationsHasBeenSet(false),
+    m_spreadLevel(SpreadLevel::NOT_SET),
+    m_spreadLevelHasBeenSet(false)
 {
 }
 
@@ -54,6 +56,11 @@ Aws::String CreatePlacementGroupRequest::SerializePayload() const
       item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
       tagSpecificationsCount++;
     }
+  }
+
+  if(m_spreadLevelHasBeenSet)
+  {
+    ss << "SpreadLevel=" << SpreadLevelMapper::GetNameForSpreadLevel(m_spreadLevel) << "&";
   }
 
   ss << "Version=2016-11-15";

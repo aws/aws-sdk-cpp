@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/PlacementStrategy.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/SpreadLevel.h>
 #include <aws/ec2/model/TagSpecification.h>
 #include <utility>
 
@@ -217,6 +218,49 @@ namespace Model
      */
     inline CreatePlacementGroupRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Determines how placement groups spread instances. </p> <ul> <li> <p>Host –
+     * You can use <code>host</code> only with Outpost placement groups.</p> </li> <li>
+     * <p>Rack – No usage restrictions.</p> </li> </ul>
+     */
+    inline const SpreadLevel& GetSpreadLevel() const{ return m_spreadLevel; }
+
+    /**
+     * <p>Determines how placement groups spread instances. </p> <ul> <li> <p>Host –
+     * You can use <code>host</code> only with Outpost placement groups.</p> </li> <li>
+     * <p>Rack – No usage restrictions.</p> </li> </ul>
+     */
+    inline bool SpreadLevelHasBeenSet() const { return m_spreadLevelHasBeenSet; }
+
+    /**
+     * <p>Determines how placement groups spread instances. </p> <ul> <li> <p>Host –
+     * You can use <code>host</code> only with Outpost placement groups.</p> </li> <li>
+     * <p>Rack – No usage restrictions.</p> </li> </ul>
+     */
+    inline void SetSpreadLevel(const SpreadLevel& value) { m_spreadLevelHasBeenSet = true; m_spreadLevel = value; }
+
+    /**
+     * <p>Determines how placement groups spread instances. </p> <ul> <li> <p>Host –
+     * You can use <code>host</code> only with Outpost placement groups.</p> </li> <li>
+     * <p>Rack – No usage restrictions.</p> </li> </ul>
+     */
+    inline void SetSpreadLevel(SpreadLevel&& value) { m_spreadLevelHasBeenSet = true; m_spreadLevel = std::move(value); }
+
+    /**
+     * <p>Determines how placement groups spread instances. </p> <ul> <li> <p>Host –
+     * You can use <code>host</code> only with Outpost placement groups.</p> </li> <li>
+     * <p>Rack – No usage restrictions.</p> </li> </ul>
+     */
+    inline CreatePlacementGroupRequest& WithSpreadLevel(const SpreadLevel& value) { SetSpreadLevel(value); return *this;}
+
+    /**
+     * <p>Determines how placement groups spread instances. </p> <ul> <li> <p>Host –
+     * You can use <code>host</code> only with Outpost placement groups.</p> </li> <li>
+     * <p>Rack – No usage restrictions.</p> </li> </ul>
+     */
+    inline CreatePlacementGroupRequest& WithSpreadLevel(SpreadLevel&& value) { SetSpreadLevel(std::move(value)); return *this;}
+
   private:
 
     bool m_dryRun;
@@ -233,6 +277,9 @@ namespace Model
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
     bool m_tagSpecificationsHasBeenSet;
+
+    SpreadLevel m_spreadLevel;
+    bool m_spreadLevelHasBeenSet;
   };
 
 } // namespace Model

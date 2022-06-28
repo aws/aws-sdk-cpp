@@ -34,6 +34,7 @@
 #include <aws/finspace-data/model/GetChangesetRequest.h>
 #include <aws/finspace-data/model/GetDataViewRequest.h>
 #include <aws/finspace-data/model/GetDatasetRequest.h>
+#include <aws/finspace-data/model/GetExternalDataViewAccessDetailsRequest.h>
 #include <aws/finspace-data/model/GetPermissionGroupRequest.h>
 #include <aws/finspace-data/model/GetProgrammaticAccessCredentialsRequest.h>
 #include <aws/finspace-data/model/GetUserRequest.h>
@@ -570,6 +571,45 @@ void FinSpaceDataClient::GetDatasetAsync(const GetDatasetRequest& request, const
 void FinSpaceDataClient::GetDatasetAsyncHelper(const GetDatasetRequest& request, const GetDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetDataset(request), context);
+}
+
+GetExternalDataViewAccessDetailsOutcome FinSpaceDataClient::GetExternalDataViewAccessDetails(const GetExternalDataViewAccessDetailsRequest& request) const
+{
+  if (!request.DataViewIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetExternalDataViewAccessDetails", "Required field: DataViewId, is not set");
+    return GetExternalDataViewAccessDetailsOutcome(Aws::Client::AWSError<FinSpaceDataErrors>(FinSpaceDataErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataViewId]", false));
+  }
+  if (!request.DatasetIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetExternalDataViewAccessDetails", "Required field: DatasetId, is not set");
+    return GetExternalDataViewAccessDetailsOutcome(Aws::Client::AWSError<FinSpaceDataErrors>(FinSpaceDataErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DatasetId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/datasets/");
+  uri.AddPathSegment(request.GetDatasetId());
+  uri.AddPathSegments("/dataviewsv2/");
+  uri.AddPathSegment(request.GetDataViewId());
+  uri.AddPathSegments("/external-access-details");
+  return GetExternalDataViewAccessDetailsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetExternalDataViewAccessDetailsOutcomeCallable FinSpaceDataClient::GetExternalDataViewAccessDetailsCallable(const GetExternalDataViewAccessDetailsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetExternalDataViewAccessDetailsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetExternalDataViewAccessDetails(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FinSpaceDataClient::GetExternalDataViewAccessDetailsAsync(const GetExternalDataViewAccessDetailsRequest& request, const GetExternalDataViewAccessDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetExternalDataViewAccessDetailsAsyncHelper( request, handler, context ); } );
+}
+
+void FinSpaceDataClient::GetExternalDataViewAccessDetailsAsyncHelper(const GetExternalDataViewAccessDetailsRequest& request, const GetExternalDataViewAccessDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetExternalDataViewAccessDetails(request), context);
 }
 
 GetPermissionGroupOutcome FinSpaceDataClient::GetPermissionGroup(const GetPermissionGroupRequest& request) const

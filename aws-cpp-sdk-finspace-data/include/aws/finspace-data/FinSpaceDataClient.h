@@ -25,6 +25,7 @@
 #include <aws/finspace-data/model/GetChangesetResult.h>
 #include <aws/finspace-data/model/GetDataViewResult.h>
 #include <aws/finspace-data/model/GetDatasetResult.h>
+#include <aws/finspace-data/model/GetExternalDataViewAccessDetailsResult.h>
 #include <aws/finspace-data/model/GetPermissionGroupResult.h>
 #include <aws/finspace-data/model/GetProgrammaticAccessCredentialsResult.h>
 #include <aws/finspace-data/model/GetUserResult.h>
@@ -94,6 +95,7 @@ namespace Model
         class GetChangesetRequest;
         class GetDataViewRequest;
         class GetDatasetRequest;
+        class GetExternalDataViewAccessDetailsRequest;
         class GetPermissionGroupRequest;
         class GetProgrammaticAccessCredentialsRequest;
         class GetUserRequest;
@@ -125,6 +127,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetChangesetResult, FinSpaceDataError> GetChangesetOutcome;
         typedef Aws::Utils::Outcome<GetDataViewResult, FinSpaceDataError> GetDataViewOutcome;
         typedef Aws::Utils::Outcome<GetDatasetResult, FinSpaceDataError> GetDatasetOutcome;
+        typedef Aws::Utils::Outcome<GetExternalDataViewAccessDetailsResult, FinSpaceDataError> GetExternalDataViewAccessDetailsOutcome;
         typedef Aws::Utils::Outcome<GetPermissionGroupResult, FinSpaceDataError> GetPermissionGroupOutcome;
         typedef Aws::Utils::Outcome<GetProgrammaticAccessCredentialsResult, FinSpaceDataError> GetProgrammaticAccessCredentialsOutcome;
         typedef Aws::Utils::Outcome<GetUserResult, FinSpaceDataError> GetUserOutcome;
@@ -156,6 +159,7 @@ namespace Model
         typedef std::future<GetChangesetOutcome> GetChangesetOutcomeCallable;
         typedef std::future<GetDataViewOutcome> GetDataViewOutcomeCallable;
         typedef std::future<GetDatasetOutcome> GetDatasetOutcomeCallable;
+        typedef std::future<GetExternalDataViewAccessDetailsOutcome> GetExternalDataViewAccessDetailsOutcomeCallable;
         typedef std::future<GetPermissionGroupOutcome> GetPermissionGroupOutcomeCallable;
         typedef std::future<GetProgrammaticAccessCredentialsOutcome> GetProgrammaticAccessCredentialsOutcomeCallable;
         typedef std::future<GetUserOutcome> GetUserOutcomeCallable;
@@ -190,6 +194,7 @@ namespace Model
     typedef std::function<void(const FinSpaceDataClient*, const Model::GetChangesetRequest&, const Model::GetChangesetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetChangesetResponseReceivedHandler;
     typedef std::function<void(const FinSpaceDataClient*, const Model::GetDataViewRequest&, const Model::GetDataViewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDataViewResponseReceivedHandler;
     typedef std::function<void(const FinSpaceDataClient*, const Model::GetDatasetRequest&, const Model::GetDatasetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDatasetResponseReceivedHandler;
+    typedef std::function<void(const FinSpaceDataClient*, const Model::GetExternalDataViewAccessDetailsRequest&, const Model::GetExternalDataViewAccessDetailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetExternalDataViewAccessDetailsResponseReceivedHandler;
     typedef std::function<void(const FinSpaceDataClient*, const Model::GetPermissionGroupRequest&, const Model::GetPermissionGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPermissionGroupResponseReceivedHandler;
     typedef std::function<void(const FinSpaceDataClient*, const Model::GetProgrammaticAccessCredentialsRequest&, const Model::GetProgrammaticAccessCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetProgrammaticAccessCredentialsResponseReceivedHandler;
     typedef std::function<void(const FinSpaceDataClient*, const Model::GetUserRequest&, const Model::GetUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUserResponseReceivedHandler;
@@ -479,6 +484,27 @@ namespace Model
          * An Async wrapper for GetDataset that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetDatasetAsync(const Model::GetDatasetRequest& request, const GetDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the credentials to access the external Dataview from an S3 location.
+         * To call this API:</p> <ul> <li> <p>You must retrieve the programmatic
+         * credentials.</p> </li> <li> <p>You must be a member of a FinSpace user group,
+         * where the dataset that you want to access has <code>Read Dataset Data</code>
+         * permissions.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetExternalDataViewAccessDetails">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetExternalDataViewAccessDetailsOutcome GetExternalDataViewAccessDetails(const Model::GetExternalDataViewAccessDetailsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetExternalDataViewAccessDetails that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetExternalDataViewAccessDetailsOutcomeCallable GetExternalDataViewAccessDetailsCallable(const Model::GetExternalDataViewAccessDetailsRequest& request) const;
+
+        /**
+         * An Async wrapper for GetExternalDataViewAccessDetails that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetExternalDataViewAccessDetailsAsync(const Model::GetExternalDataViewAccessDetailsRequest& request, const GetExternalDataViewAccessDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the details of a specific permission group.</p><p><h3>See
@@ -783,6 +809,7 @@ namespace Model
         void GetChangesetAsyncHelper(const Model::GetChangesetRequest& request, const GetChangesetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDataViewAsyncHelper(const Model::GetDataViewRequest& request, const GetDataViewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDatasetAsyncHelper(const Model::GetDatasetRequest& request, const GetDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetExternalDataViewAccessDetailsAsyncHelper(const Model::GetExternalDataViewAccessDetailsRequest& request, const GetExternalDataViewAccessDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPermissionGroupAsyncHelper(const Model::GetPermissionGroupRequest& request, const GetPermissionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetProgrammaticAccessCredentialsAsyncHelper(const Model::GetProgrammaticAccessCredentialsRequest& request, const GetProgrammaticAccessCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetUserAsyncHelper(const Model::GetUserRequest& request, const GetUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
