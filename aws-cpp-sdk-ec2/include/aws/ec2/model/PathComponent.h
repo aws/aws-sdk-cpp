@@ -449,22 +449,34 @@ namespace Model
     inline PathComponent& AddAdditionalDetails(AdditionalDetail&& value) { m_additionalDetailsHasBeenSet = true; m_additionalDetails.push_back(std::move(value)); return *this; }
 
 
-    
+    /**
+     * <p>The transit gateway.</p>
+     */
     inline const AnalysisComponent& GetTransitGateway() const{ return m_transitGateway; }
 
-    
+    /**
+     * <p>The transit gateway.</p>
+     */
     inline bool TransitGatewayHasBeenSet() const { return m_transitGatewayHasBeenSet; }
 
-    
+    /**
+     * <p>The transit gateway.</p>
+     */
     inline void SetTransitGateway(const AnalysisComponent& value) { m_transitGatewayHasBeenSet = true; m_transitGateway = value; }
 
-    
+    /**
+     * <p>The transit gateway.</p>
+     */
     inline void SetTransitGateway(AnalysisComponent&& value) { m_transitGatewayHasBeenSet = true; m_transitGateway = std::move(value); }
 
-    
+    /**
+     * <p>The transit gateway.</p>
+     */
     inline PathComponent& WithTransitGateway(const AnalysisComponent& value) { SetTransitGateway(value); return *this;}
 
-    
+    /**
+     * <p>The transit gateway.</p>
+     */
     inline PathComponent& WithTransitGateway(AnalysisComponent&& value) { SetTransitGateway(std::move(value)); return *this;}
 
 

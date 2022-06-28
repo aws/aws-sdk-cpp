@@ -10,6 +10,7 @@
 #include <aws/ec2/model/PlacementGroupState.h>
 #include <aws/ec2/model/PlacementStrategy.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/SpreadLevel.h>
 #include <aws/ec2/model/Tag.h>
 #include <utility>
 
@@ -293,6 +294,43 @@ namespace Model
      */
     inline PlacementGroup& WithGroupArn(const char* value) { SetGroupArn(value); return *this;}
 
+
+    /**
+     * <p> The spread level for the placement group. <i>Only</i> Outpost placement
+     * groups can be spread across hosts. </p>
+     */
+    inline const SpreadLevel& GetSpreadLevel() const{ return m_spreadLevel; }
+
+    /**
+     * <p> The spread level for the placement group. <i>Only</i> Outpost placement
+     * groups can be spread across hosts. </p>
+     */
+    inline bool SpreadLevelHasBeenSet() const { return m_spreadLevelHasBeenSet; }
+
+    /**
+     * <p> The spread level for the placement group. <i>Only</i> Outpost placement
+     * groups can be spread across hosts. </p>
+     */
+    inline void SetSpreadLevel(const SpreadLevel& value) { m_spreadLevelHasBeenSet = true; m_spreadLevel = value; }
+
+    /**
+     * <p> The spread level for the placement group. <i>Only</i> Outpost placement
+     * groups can be spread across hosts. </p>
+     */
+    inline void SetSpreadLevel(SpreadLevel&& value) { m_spreadLevelHasBeenSet = true; m_spreadLevel = std::move(value); }
+
+    /**
+     * <p> The spread level for the placement group. <i>Only</i> Outpost placement
+     * groups can be spread across hosts. </p>
+     */
+    inline PlacementGroup& WithSpreadLevel(const SpreadLevel& value) { SetSpreadLevel(value); return *this;}
+
+    /**
+     * <p> The spread level for the placement group. <i>Only</i> Outpost placement
+     * groups can be spread across hosts. </p>
+     */
+    inline PlacementGroup& WithSpreadLevel(SpreadLevel&& value) { SetSpreadLevel(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_groupName;
@@ -315,6 +353,9 @@ namespace Model
 
     Aws::String m_groupArn;
     bool m_groupArnHasBeenSet;
+
+    SpreadLevel m_spreadLevel;
+    bool m_spreadLevelHasBeenSet;
   };
 
 } // namespace Model

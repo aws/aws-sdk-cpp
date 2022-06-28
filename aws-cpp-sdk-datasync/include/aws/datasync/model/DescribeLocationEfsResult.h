@@ -241,32 +241,32 @@ namespace Model
 
 
     /**
-     * <p>Whether DataSync uses TLS encryption when transferring data to or from your
-     * Amazon EFS file system.</p>
+     * <p>Describes whether DataSync uses Transport Layer Security (TLS) encryption
+     * when copying data to or from the Amazon EFS file system.</p>
      */
     inline const EfsInTransitEncryption& GetInTransitEncryption() const{ return m_inTransitEncryption; }
 
     /**
-     * <p>Whether DataSync uses TLS encryption when transferring data to or from your
-     * Amazon EFS file system.</p>
+     * <p>Describes whether DataSync uses Transport Layer Security (TLS) encryption
+     * when copying data to or from the Amazon EFS file system.</p>
      */
     inline void SetInTransitEncryption(const EfsInTransitEncryption& value) { m_inTransitEncryption = value; }
 
     /**
-     * <p>Whether DataSync uses TLS encryption when transferring data to or from your
-     * Amazon EFS file system.</p>
+     * <p>Describes whether DataSync uses Transport Layer Security (TLS) encryption
+     * when copying data to or from the Amazon EFS file system.</p>
      */
     inline void SetInTransitEncryption(EfsInTransitEncryption&& value) { m_inTransitEncryption = std::move(value); }
 
     /**
-     * <p>Whether DataSync uses TLS encryption when transferring data to or from your
-     * Amazon EFS file system.</p>
+     * <p>Describes whether DataSync uses Transport Layer Security (TLS) encryption
+     * when copying data to or from the Amazon EFS file system.</p>
      */
     inline DescribeLocationEfsResult& WithInTransitEncryption(const EfsInTransitEncryption& value) { SetInTransitEncryption(value); return *this;}
 
     /**
-     * <p>Whether DataSync uses TLS encryption when transferring data to or from your
-     * Amazon EFS file system.</p>
+     * <p>Describes whether DataSync uses Transport Layer Security (TLS) encryption
+     * when copying data to or from the Amazon EFS file system.</p>
      */
     inline DescribeLocationEfsResult& WithInTransitEncryption(EfsInTransitEncryption&& value) { SetInTransitEncryption(std::move(value)); return *this;}
 

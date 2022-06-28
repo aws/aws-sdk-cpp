@@ -65,13 +65,14 @@ namespace Model
      * performed at the end of a task execution after all data and metadata have been
      * transferred. For more information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task.html">Configure
-     * task settings</a>. </p> <p>Default value: POINT_IN_TIME_CONSISTENT.</p>
-     * <p>ONLY_FILES_TRANSFERRED (recommended): Perform verification only on files that
-     * were transferred. </p> <p>POINT_IN_TIME_CONSISTENT: Scan the entire source and
-     * entire destination at the end of the transfer to verify that source and
-     * destination are fully synchronized. This option isn't supported when
-     * transferring to S3 Glacier Flexible Retrieval or S3 Glacier Deep Archive storage
-     * classes.</p> <p>NONE: No additional verification is done at the end of the
+     * task settings</a>. </p> <p>Default value: <code>POINT_IN_TIME_CONSISTENT</code>
+     * </p> <p> <code>ONLY_FILES_TRANSFERRED</code> (recommended): Perform verification
+     * only on files that were transferred. </p> <p>
+     * <code>POINT_IN_TIME_CONSISTENT</code>: Scan the entire source and entire
+     * destination at the end of the transfer to verify that source and destination are
+     * fully synchronized. This option isn't supported when transferring to S3 Glacier
+     * Flexible Retrieval or S3 Glacier Deep Archive storage classes.</p> <p>
+     * <code>NONE</code>: No additional verification is done at the end of the
      * transfer, but all data transmissions are integrity-checked with checksum
      * verification during the transfer.</p>
      */
@@ -82,13 +83,14 @@ namespace Model
      * performed at the end of a task execution after all data and metadata have been
      * transferred. For more information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task.html">Configure
-     * task settings</a>. </p> <p>Default value: POINT_IN_TIME_CONSISTENT.</p>
-     * <p>ONLY_FILES_TRANSFERRED (recommended): Perform verification only on files that
-     * were transferred. </p> <p>POINT_IN_TIME_CONSISTENT: Scan the entire source and
-     * entire destination at the end of the transfer to verify that source and
-     * destination are fully synchronized. This option isn't supported when
-     * transferring to S3 Glacier Flexible Retrieval or S3 Glacier Deep Archive storage
-     * classes.</p> <p>NONE: No additional verification is done at the end of the
+     * task settings</a>. </p> <p>Default value: <code>POINT_IN_TIME_CONSISTENT</code>
+     * </p> <p> <code>ONLY_FILES_TRANSFERRED</code> (recommended): Perform verification
+     * only on files that were transferred. </p> <p>
+     * <code>POINT_IN_TIME_CONSISTENT</code>: Scan the entire source and entire
+     * destination at the end of the transfer to verify that source and destination are
+     * fully synchronized. This option isn't supported when transferring to S3 Glacier
+     * Flexible Retrieval or S3 Glacier Deep Archive storage classes.</p> <p>
+     * <code>NONE</code>: No additional verification is done at the end of the
      * transfer, but all data transmissions are integrity-checked with checksum
      * verification during the transfer.</p>
      */
@@ -99,13 +101,14 @@ namespace Model
      * performed at the end of a task execution after all data and metadata have been
      * transferred. For more information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task.html">Configure
-     * task settings</a>. </p> <p>Default value: POINT_IN_TIME_CONSISTENT.</p>
-     * <p>ONLY_FILES_TRANSFERRED (recommended): Perform verification only on files that
-     * were transferred. </p> <p>POINT_IN_TIME_CONSISTENT: Scan the entire source and
-     * entire destination at the end of the transfer to verify that source and
-     * destination are fully synchronized. This option isn't supported when
-     * transferring to S3 Glacier Flexible Retrieval or S3 Glacier Deep Archive storage
-     * classes.</p> <p>NONE: No additional verification is done at the end of the
+     * task settings</a>. </p> <p>Default value: <code>POINT_IN_TIME_CONSISTENT</code>
+     * </p> <p> <code>ONLY_FILES_TRANSFERRED</code> (recommended): Perform verification
+     * only on files that were transferred. </p> <p>
+     * <code>POINT_IN_TIME_CONSISTENT</code>: Scan the entire source and entire
+     * destination at the end of the transfer to verify that source and destination are
+     * fully synchronized. This option isn't supported when transferring to S3 Glacier
+     * Flexible Retrieval or S3 Glacier Deep Archive storage classes.</p> <p>
+     * <code>NONE</code>: No additional verification is done at the end of the
      * transfer, but all data transmissions are integrity-checked with checksum
      * verification during the transfer.</p>
      */
@@ -116,13 +119,14 @@ namespace Model
      * performed at the end of a task execution after all data and metadata have been
      * transferred. For more information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task.html">Configure
-     * task settings</a>. </p> <p>Default value: POINT_IN_TIME_CONSISTENT.</p>
-     * <p>ONLY_FILES_TRANSFERRED (recommended): Perform verification only on files that
-     * were transferred. </p> <p>POINT_IN_TIME_CONSISTENT: Scan the entire source and
-     * entire destination at the end of the transfer to verify that source and
-     * destination are fully synchronized. This option isn't supported when
-     * transferring to S3 Glacier Flexible Retrieval or S3 Glacier Deep Archive storage
-     * classes.</p> <p>NONE: No additional verification is done at the end of the
+     * task settings</a>. </p> <p>Default value: <code>POINT_IN_TIME_CONSISTENT</code>
+     * </p> <p> <code>ONLY_FILES_TRANSFERRED</code> (recommended): Perform verification
+     * only on files that were transferred. </p> <p>
+     * <code>POINT_IN_TIME_CONSISTENT</code>: Scan the entire source and entire
+     * destination at the end of the transfer to verify that source and destination are
+     * fully synchronized. This option isn't supported when transferring to S3 Glacier
+     * Flexible Retrieval or S3 Glacier Deep Archive storage classes.</p> <p>
+     * <code>NONE</code>: No additional verification is done at the end of the
      * transfer, but all data transmissions are integrity-checked with checksum
      * verification during the transfer.</p>
      */
@@ -133,13 +137,14 @@ namespace Model
      * performed at the end of a task execution after all data and metadata have been
      * transferred. For more information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task.html">Configure
-     * task settings</a>. </p> <p>Default value: POINT_IN_TIME_CONSISTENT.</p>
-     * <p>ONLY_FILES_TRANSFERRED (recommended): Perform verification only on files that
-     * were transferred. </p> <p>POINT_IN_TIME_CONSISTENT: Scan the entire source and
-     * entire destination at the end of the transfer to verify that source and
-     * destination are fully synchronized. This option isn't supported when
-     * transferring to S3 Glacier Flexible Retrieval or S3 Glacier Deep Archive storage
-     * classes.</p> <p>NONE: No additional verification is done at the end of the
+     * task settings</a>. </p> <p>Default value: <code>POINT_IN_TIME_CONSISTENT</code>
+     * </p> <p> <code>ONLY_FILES_TRANSFERRED</code> (recommended): Perform verification
+     * only on files that were transferred. </p> <p>
+     * <code>POINT_IN_TIME_CONSISTENT</code>: Scan the entire source and entire
+     * destination at the end of the transfer to verify that source and destination are
+     * fully synchronized. This option isn't supported when transferring to S3 Glacier
+     * Flexible Retrieval or S3 Glacier Deep Archive storage classes.</p> <p>
+     * <code>NONE</code>: No additional verification is done at the end of the
      * transfer, but all data transmissions are integrity-checked with checksum
      * verification during the transfer.</p>
      */
@@ -150,13 +155,14 @@ namespace Model
      * performed at the end of a task execution after all data and metadata have been
      * transferred. For more information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task.html">Configure
-     * task settings</a>. </p> <p>Default value: POINT_IN_TIME_CONSISTENT.</p>
-     * <p>ONLY_FILES_TRANSFERRED (recommended): Perform verification only on files that
-     * were transferred. </p> <p>POINT_IN_TIME_CONSISTENT: Scan the entire source and
-     * entire destination at the end of the transfer to verify that source and
-     * destination are fully synchronized. This option isn't supported when
-     * transferring to S3 Glacier Flexible Retrieval or S3 Glacier Deep Archive storage
-     * classes.</p> <p>NONE: No additional verification is done at the end of the
+     * task settings</a>. </p> <p>Default value: <code>POINT_IN_TIME_CONSISTENT</code>
+     * </p> <p> <code>ONLY_FILES_TRANSFERRED</code> (recommended): Perform verification
+     * only on files that were transferred. </p> <p>
+     * <code>POINT_IN_TIME_CONSISTENT</code>: Scan the entire source and entire
+     * destination at the end of the transfer to verify that source and destination are
+     * fully synchronized. This option isn't supported when transferring to S3 Glacier
+     * Flexible Retrieval or S3 Glacier Deep Archive storage classes.</p> <p>
+     * <code>NONE</code>: No additional verification is done at the end of the
      * transfer, but all data transmissions are integrity-checked with checksum
      * verification during the transfer.</p>
      */
@@ -251,297 +257,321 @@ namespace Model
     /**
      * <p>A file metadata value that shows the last time a file was accessed (that is,
      * when the file was read or written to). If you set <code>Atime</code> to
-     * BEST_EFFORT, DataSync attempts to preserve the original <code>Atime</code>
-     * attribute on all source files (that is, the version before the PREPARING phase).
-     * However, <code>Atime</code>'s behavior is not fully standard across platforms,
-     * so DataSync can only do this on a best-effort basis. </p> <p>Default value:
-     * BEST_EFFORT.</p> <p>BEST_EFFORT: Attempt to preserve the per-file
-     * <code>Atime</code> value (recommended).</p> <p>NONE: Ignore
-     * <code>Atime</code>.</p>  <p>If <code>Atime</code> is set to BEST_EFFORT,
-     * <code>Mtime</code> must be set to PRESERVE. </p> <p>If <code>Atime</code> is set
-     * to NONE, <code>Mtime</code> must also be NONE. </p> 
+     * <code>BEST_EFFORT</code>, DataSync attempts to preserve the original
+     * <code>Atime</code> attribute on all source files (that is, the version before
+     * the <code>PREPARING</code> phase). However, <code>Atime</code>'s behavior is not
+     * fully standard across platforms, so DataSync can only do this on a best-effort
+     * basis. </p> <p>Default value: <code>BEST_EFFORT</code> </p> <p>
+     * <code>BEST_EFFORT</code>: Attempt to preserve the per-file <code>Atime</code>
+     * value (recommended).</p> <p> <code>NONE</code>: Ignore <code>Atime</code>.</p>
+     *  <p>If <code>Atime</code> is set to <code>BEST_EFFORT</code>,
+     * <code>Mtime</code> must be set to <code>PRESERVE</code>. </p> <p>If
+     * <code>Atime</code> is set to <code>NONE</code>, <code>Mtime</code> must also be
+     * <code>NONE</code>. </p> 
      */
     inline const Atime& GetAtime() const{ return m_atime; }
 
     /**
      * <p>A file metadata value that shows the last time a file was accessed (that is,
      * when the file was read or written to). If you set <code>Atime</code> to
-     * BEST_EFFORT, DataSync attempts to preserve the original <code>Atime</code>
-     * attribute on all source files (that is, the version before the PREPARING phase).
-     * However, <code>Atime</code>'s behavior is not fully standard across platforms,
-     * so DataSync can only do this on a best-effort basis. </p> <p>Default value:
-     * BEST_EFFORT.</p> <p>BEST_EFFORT: Attempt to preserve the per-file
-     * <code>Atime</code> value (recommended).</p> <p>NONE: Ignore
-     * <code>Atime</code>.</p>  <p>If <code>Atime</code> is set to BEST_EFFORT,
-     * <code>Mtime</code> must be set to PRESERVE. </p> <p>If <code>Atime</code> is set
-     * to NONE, <code>Mtime</code> must also be NONE. </p> 
+     * <code>BEST_EFFORT</code>, DataSync attempts to preserve the original
+     * <code>Atime</code> attribute on all source files (that is, the version before
+     * the <code>PREPARING</code> phase). However, <code>Atime</code>'s behavior is not
+     * fully standard across platforms, so DataSync can only do this on a best-effort
+     * basis. </p> <p>Default value: <code>BEST_EFFORT</code> </p> <p>
+     * <code>BEST_EFFORT</code>: Attempt to preserve the per-file <code>Atime</code>
+     * value (recommended).</p> <p> <code>NONE</code>: Ignore <code>Atime</code>.</p>
+     *  <p>If <code>Atime</code> is set to <code>BEST_EFFORT</code>,
+     * <code>Mtime</code> must be set to <code>PRESERVE</code>. </p> <p>If
+     * <code>Atime</code> is set to <code>NONE</code>, <code>Mtime</code> must also be
+     * <code>NONE</code>. </p> 
      */
     inline bool AtimeHasBeenSet() const { return m_atimeHasBeenSet; }
 
     /**
      * <p>A file metadata value that shows the last time a file was accessed (that is,
      * when the file was read or written to). If you set <code>Atime</code> to
-     * BEST_EFFORT, DataSync attempts to preserve the original <code>Atime</code>
-     * attribute on all source files (that is, the version before the PREPARING phase).
-     * However, <code>Atime</code>'s behavior is not fully standard across platforms,
-     * so DataSync can only do this on a best-effort basis. </p> <p>Default value:
-     * BEST_EFFORT.</p> <p>BEST_EFFORT: Attempt to preserve the per-file
-     * <code>Atime</code> value (recommended).</p> <p>NONE: Ignore
-     * <code>Atime</code>.</p>  <p>If <code>Atime</code> is set to BEST_EFFORT,
-     * <code>Mtime</code> must be set to PRESERVE. </p> <p>If <code>Atime</code> is set
-     * to NONE, <code>Mtime</code> must also be NONE. </p> 
+     * <code>BEST_EFFORT</code>, DataSync attempts to preserve the original
+     * <code>Atime</code> attribute on all source files (that is, the version before
+     * the <code>PREPARING</code> phase). However, <code>Atime</code>'s behavior is not
+     * fully standard across platforms, so DataSync can only do this on a best-effort
+     * basis. </p> <p>Default value: <code>BEST_EFFORT</code> </p> <p>
+     * <code>BEST_EFFORT</code>: Attempt to preserve the per-file <code>Atime</code>
+     * value (recommended).</p> <p> <code>NONE</code>: Ignore <code>Atime</code>.</p>
+     *  <p>If <code>Atime</code> is set to <code>BEST_EFFORT</code>,
+     * <code>Mtime</code> must be set to <code>PRESERVE</code>. </p> <p>If
+     * <code>Atime</code> is set to <code>NONE</code>, <code>Mtime</code> must also be
+     * <code>NONE</code>. </p> 
      */
     inline void SetAtime(const Atime& value) { m_atimeHasBeenSet = true; m_atime = value; }
 
     /**
      * <p>A file metadata value that shows the last time a file was accessed (that is,
      * when the file was read or written to). If you set <code>Atime</code> to
-     * BEST_EFFORT, DataSync attempts to preserve the original <code>Atime</code>
-     * attribute on all source files (that is, the version before the PREPARING phase).
-     * However, <code>Atime</code>'s behavior is not fully standard across platforms,
-     * so DataSync can only do this on a best-effort basis. </p> <p>Default value:
-     * BEST_EFFORT.</p> <p>BEST_EFFORT: Attempt to preserve the per-file
-     * <code>Atime</code> value (recommended).</p> <p>NONE: Ignore
-     * <code>Atime</code>.</p>  <p>If <code>Atime</code> is set to BEST_EFFORT,
-     * <code>Mtime</code> must be set to PRESERVE. </p> <p>If <code>Atime</code> is set
-     * to NONE, <code>Mtime</code> must also be NONE. </p> 
+     * <code>BEST_EFFORT</code>, DataSync attempts to preserve the original
+     * <code>Atime</code> attribute on all source files (that is, the version before
+     * the <code>PREPARING</code> phase). However, <code>Atime</code>'s behavior is not
+     * fully standard across platforms, so DataSync can only do this on a best-effort
+     * basis. </p> <p>Default value: <code>BEST_EFFORT</code> </p> <p>
+     * <code>BEST_EFFORT</code>: Attempt to preserve the per-file <code>Atime</code>
+     * value (recommended).</p> <p> <code>NONE</code>: Ignore <code>Atime</code>.</p>
+     *  <p>If <code>Atime</code> is set to <code>BEST_EFFORT</code>,
+     * <code>Mtime</code> must be set to <code>PRESERVE</code>. </p> <p>If
+     * <code>Atime</code> is set to <code>NONE</code>, <code>Mtime</code> must also be
+     * <code>NONE</code>. </p> 
      */
     inline void SetAtime(Atime&& value) { m_atimeHasBeenSet = true; m_atime = std::move(value); }
 
     /**
      * <p>A file metadata value that shows the last time a file was accessed (that is,
      * when the file was read or written to). If you set <code>Atime</code> to
-     * BEST_EFFORT, DataSync attempts to preserve the original <code>Atime</code>
-     * attribute on all source files (that is, the version before the PREPARING phase).
-     * However, <code>Atime</code>'s behavior is not fully standard across platforms,
-     * so DataSync can only do this on a best-effort basis. </p> <p>Default value:
-     * BEST_EFFORT.</p> <p>BEST_EFFORT: Attempt to preserve the per-file
-     * <code>Atime</code> value (recommended).</p> <p>NONE: Ignore
-     * <code>Atime</code>.</p>  <p>If <code>Atime</code> is set to BEST_EFFORT,
-     * <code>Mtime</code> must be set to PRESERVE. </p> <p>If <code>Atime</code> is set
-     * to NONE, <code>Mtime</code> must also be NONE. </p> 
+     * <code>BEST_EFFORT</code>, DataSync attempts to preserve the original
+     * <code>Atime</code> attribute on all source files (that is, the version before
+     * the <code>PREPARING</code> phase). However, <code>Atime</code>'s behavior is not
+     * fully standard across platforms, so DataSync can only do this on a best-effort
+     * basis. </p> <p>Default value: <code>BEST_EFFORT</code> </p> <p>
+     * <code>BEST_EFFORT</code>: Attempt to preserve the per-file <code>Atime</code>
+     * value (recommended).</p> <p> <code>NONE</code>: Ignore <code>Atime</code>.</p>
+     *  <p>If <code>Atime</code> is set to <code>BEST_EFFORT</code>,
+     * <code>Mtime</code> must be set to <code>PRESERVE</code>. </p> <p>If
+     * <code>Atime</code> is set to <code>NONE</code>, <code>Mtime</code> must also be
+     * <code>NONE</code>. </p> 
      */
     inline Options& WithAtime(const Atime& value) { SetAtime(value); return *this;}
 
     /**
      * <p>A file metadata value that shows the last time a file was accessed (that is,
      * when the file was read or written to). If you set <code>Atime</code> to
-     * BEST_EFFORT, DataSync attempts to preserve the original <code>Atime</code>
-     * attribute on all source files (that is, the version before the PREPARING phase).
-     * However, <code>Atime</code>'s behavior is not fully standard across platforms,
-     * so DataSync can only do this on a best-effort basis. </p> <p>Default value:
-     * BEST_EFFORT.</p> <p>BEST_EFFORT: Attempt to preserve the per-file
-     * <code>Atime</code> value (recommended).</p> <p>NONE: Ignore
-     * <code>Atime</code>.</p>  <p>If <code>Atime</code> is set to BEST_EFFORT,
-     * <code>Mtime</code> must be set to PRESERVE. </p> <p>If <code>Atime</code> is set
-     * to NONE, <code>Mtime</code> must also be NONE. </p> 
+     * <code>BEST_EFFORT</code>, DataSync attempts to preserve the original
+     * <code>Atime</code> attribute on all source files (that is, the version before
+     * the <code>PREPARING</code> phase). However, <code>Atime</code>'s behavior is not
+     * fully standard across platforms, so DataSync can only do this on a best-effort
+     * basis. </p> <p>Default value: <code>BEST_EFFORT</code> </p> <p>
+     * <code>BEST_EFFORT</code>: Attempt to preserve the per-file <code>Atime</code>
+     * value (recommended).</p> <p> <code>NONE</code>: Ignore <code>Atime</code>.</p>
+     *  <p>If <code>Atime</code> is set to <code>BEST_EFFORT</code>,
+     * <code>Mtime</code> must be set to <code>PRESERVE</code>. </p> <p>If
+     * <code>Atime</code> is set to <code>NONE</code>, <code>Mtime</code> must also be
+     * <code>NONE</code>. </p> 
      */
     inline Options& WithAtime(Atime&& value) { SetAtime(std::move(value)); return *this;}
 
 
     /**
      * <p>A value that indicates the last time that a file was modified (that is, a
-     * file was written to) before the PREPARING phase. This option is required for
-     * cases when you need to run the same task more than one time. </p> <p>Default
-     * Value: <code>PRESERVE</code> </p> <p>PRESERVE: Preserve original
-     * <code>Mtime</code> (recommended)</p> <p> NONE: Ignore <code>Mtime</code>. </p>
-     *  <p>If <code>Mtime</code> is set to PRESERVE, <code>Atime</code> must be
-     * set to BEST_EFFORT.</p> <p>If <code>Mtime</code> is set to NONE,
-     * <code>Atime</code> must also be set to NONE. </p> 
+     * file was written to) before the <code>PREPARING</code> phase. This option is
+     * required for cases when you need to run the same task more than one time. </p>
+     * <p>Default Value: <code>PRESERVE</code> </p> <p> <code>PRESERVE</code>: Preserve
+     * original <code>Mtime</code> (recommended)</p> <p> <code>NONE</code>: Ignore
+     * <code>Mtime</code>. </p>  <p>If <code>Mtime</code> is set to
+     * <code>PRESERVE</code>, <code>Atime</code> must be set to
+     * <code>BEST_EFFORT</code>.</p> <p>If <code>Mtime</code> is set to
+     * <code>NONE</code>, <code>Atime</code> must also be set to <code>NONE</code>.
+     * </p> 
      */
     inline const Mtime& GetMtime() const{ return m_mtime; }
 
     /**
      * <p>A value that indicates the last time that a file was modified (that is, a
-     * file was written to) before the PREPARING phase. This option is required for
-     * cases when you need to run the same task more than one time. </p> <p>Default
-     * Value: <code>PRESERVE</code> </p> <p>PRESERVE: Preserve original
-     * <code>Mtime</code> (recommended)</p> <p> NONE: Ignore <code>Mtime</code>. </p>
-     *  <p>If <code>Mtime</code> is set to PRESERVE, <code>Atime</code> must be
-     * set to BEST_EFFORT.</p> <p>If <code>Mtime</code> is set to NONE,
-     * <code>Atime</code> must also be set to NONE. </p> 
+     * file was written to) before the <code>PREPARING</code> phase. This option is
+     * required for cases when you need to run the same task more than one time. </p>
+     * <p>Default Value: <code>PRESERVE</code> </p> <p> <code>PRESERVE</code>: Preserve
+     * original <code>Mtime</code> (recommended)</p> <p> <code>NONE</code>: Ignore
+     * <code>Mtime</code>. </p>  <p>If <code>Mtime</code> is set to
+     * <code>PRESERVE</code>, <code>Atime</code> must be set to
+     * <code>BEST_EFFORT</code>.</p> <p>If <code>Mtime</code> is set to
+     * <code>NONE</code>, <code>Atime</code> must also be set to <code>NONE</code>.
+     * </p> 
      */
     inline bool MtimeHasBeenSet() const { return m_mtimeHasBeenSet; }
 
     /**
      * <p>A value that indicates the last time that a file was modified (that is, a
-     * file was written to) before the PREPARING phase. This option is required for
-     * cases when you need to run the same task more than one time. </p> <p>Default
-     * Value: <code>PRESERVE</code> </p> <p>PRESERVE: Preserve original
-     * <code>Mtime</code> (recommended)</p> <p> NONE: Ignore <code>Mtime</code>. </p>
-     *  <p>If <code>Mtime</code> is set to PRESERVE, <code>Atime</code> must be
-     * set to BEST_EFFORT.</p> <p>If <code>Mtime</code> is set to NONE,
-     * <code>Atime</code> must also be set to NONE. </p> 
+     * file was written to) before the <code>PREPARING</code> phase. This option is
+     * required for cases when you need to run the same task more than one time. </p>
+     * <p>Default Value: <code>PRESERVE</code> </p> <p> <code>PRESERVE</code>: Preserve
+     * original <code>Mtime</code> (recommended)</p> <p> <code>NONE</code>: Ignore
+     * <code>Mtime</code>. </p>  <p>If <code>Mtime</code> is set to
+     * <code>PRESERVE</code>, <code>Atime</code> must be set to
+     * <code>BEST_EFFORT</code>.</p> <p>If <code>Mtime</code> is set to
+     * <code>NONE</code>, <code>Atime</code> must also be set to <code>NONE</code>.
+     * </p> 
      */
     inline void SetMtime(const Mtime& value) { m_mtimeHasBeenSet = true; m_mtime = value; }
 
     /**
      * <p>A value that indicates the last time that a file was modified (that is, a
-     * file was written to) before the PREPARING phase. This option is required for
-     * cases when you need to run the same task more than one time. </p> <p>Default
-     * Value: <code>PRESERVE</code> </p> <p>PRESERVE: Preserve original
-     * <code>Mtime</code> (recommended)</p> <p> NONE: Ignore <code>Mtime</code>. </p>
-     *  <p>If <code>Mtime</code> is set to PRESERVE, <code>Atime</code> must be
-     * set to BEST_EFFORT.</p> <p>If <code>Mtime</code> is set to NONE,
-     * <code>Atime</code> must also be set to NONE. </p> 
+     * file was written to) before the <code>PREPARING</code> phase. This option is
+     * required for cases when you need to run the same task more than one time. </p>
+     * <p>Default Value: <code>PRESERVE</code> </p> <p> <code>PRESERVE</code>: Preserve
+     * original <code>Mtime</code> (recommended)</p> <p> <code>NONE</code>: Ignore
+     * <code>Mtime</code>. </p>  <p>If <code>Mtime</code> is set to
+     * <code>PRESERVE</code>, <code>Atime</code> must be set to
+     * <code>BEST_EFFORT</code>.</p> <p>If <code>Mtime</code> is set to
+     * <code>NONE</code>, <code>Atime</code> must also be set to <code>NONE</code>.
+     * </p> 
      */
     inline void SetMtime(Mtime&& value) { m_mtimeHasBeenSet = true; m_mtime = std::move(value); }
 
     /**
      * <p>A value that indicates the last time that a file was modified (that is, a
-     * file was written to) before the PREPARING phase. This option is required for
-     * cases when you need to run the same task more than one time. </p> <p>Default
-     * Value: <code>PRESERVE</code> </p> <p>PRESERVE: Preserve original
-     * <code>Mtime</code> (recommended)</p> <p> NONE: Ignore <code>Mtime</code>. </p>
-     *  <p>If <code>Mtime</code> is set to PRESERVE, <code>Atime</code> must be
-     * set to BEST_EFFORT.</p> <p>If <code>Mtime</code> is set to NONE,
-     * <code>Atime</code> must also be set to NONE. </p> 
+     * file was written to) before the <code>PREPARING</code> phase. This option is
+     * required for cases when you need to run the same task more than one time. </p>
+     * <p>Default Value: <code>PRESERVE</code> </p> <p> <code>PRESERVE</code>: Preserve
+     * original <code>Mtime</code> (recommended)</p> <p> <code>NONE</code>: Ignore
+     * <code>Mtime</code>. </p>  <p>If <code>Mtime</code> is set to
+     * <code>PRESERVE</code>, <code>Atime</code> must be set to
+     * <code>BEST_EFFORT</code>.</p> <p>If <code>Mtime</code> is set to
+     * <code>NONE</code>, <code>Atime</code> must also be set to <code>NONE</code>.
+     * </p> 
      */
     inline Options& WithMtime(const Mtime& value) { SetMtime(value); return *this;}
 
     /**
      * <p>A value that indicates the last time that a file was modified (that is, a
-     * file was written to) before the PREPARING phase. This option is required for
-     * cases when you need to run the same task more than one time. </p> <p>Default
-     * Value: <code>PRESERVE</code> </p> <p>PRESERVE: Preserve original
-     * <code>Mtime</code> (recommended)</p> <p> NONE: Ignore <code>Mtime</code>. </p>
-     *  <p>If <code>Mtime</code> is set to PRESERVE, <code>Atime</code> must be
-     * set to BEST_EFFORT.</p> <p>If <code>Mtime</code> is set to NONE,
-     * <code>Atime</code> must also be set to NONE. </p> 
+     * file was written to) before the <code>PREPARING</code> phase. This option is
+     * required for cases when you need to run the same task more than one time. </p>
+     * <p>Default Value: <code>PRESERVE</code> </p> <p> <code>PRESERVE</code>: Preserve
+     * original <code>Mtime</code> (recommended)</p> <p> <code>NONE</code>: Ignore
+     * <code>Mtime</code>. </p>  <p>If <code>Mtime</code> is set to
+     * <code>PRESERVE</code>, <code>Atime</code> must be set to
+     * <code>BEST_EFFORT</code>.</p> <p>If <code>Mtime</code> is set to
+     * <code>NONE</code>, <code>Atime</code> must also be set to <code>NONE</code>.
+     * </p> 
      */
     inline Options& WithMtime(Mtime&& value) { SetMtime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The POSIX user ID (UID) of the file's owner. This option should only be set
-     * for NFS, EFS, and S3 locations. To learn more about what metadata is copied by
-     * DataSync, see <a
+     * <p>The POSIX user ID (UID) of the file's owner.</p> <p>For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata
-     * Copied by DataSync</a>.</p> <p>Default value: INT_VALUE. This preserves the
-     * integer value of the ID.</p> <p>INT_VALUE: Preserve the integer value of UID and
-     * group ID (GID) (recommended).</p> <p>NONE: Ignore UID and GID. </p>
+     * copied by DataSync</a>.</p> <p>Default value: <code>INT_VALUE</code>. This
+     * preserves the integer value of the ID.</p> <p> <code>INT_VALUE</code>: Preserve
+     * the integer value of UID and group ID (GID) (recommended).</p> <p>
+     * <code>NONE</code>: Ignore UID and GID. </p>
      */
     inline const Uid& GetUid() const{ return m_uid; }
 
     /**
-     * <p>The POSIX user ID (UID) of the file's owner. This option should only be set
-     * for NFS, EFS, and S3 locations. To learn more about what metadata is copied by
-     * DataSync, see <a
+     * <p>The POSIX user ID (UID) of the file's owner.</p> <p>For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata
-     * Copied by DataSync</a>.</p> <p>Default value: INT_VALUE. This preserves the
-     * integer value of the ID.</p> <p>INT_VALUE: Preserve the integer value of UID and
-     * group ID (GID) (recommended).</p> <p>NONE: Ignore UID and GID. </p>
+     * copied by DataSync</a>.</p> <p>Default value: <code>INT_VALUE</code>. This
+     * preserves the integer value of the ID.</p> <p> <code>INT_VALUE</code>: Preserve
+     * the integer value of UID and group ID (GID) (recommended).</p> <p>
+     * <code>NONE</code>: Ignore UID and GID. </p>
      */
     inline bool UidHasBeenSet() const { return m_uidHasBeenSet; }
 
     /**
-     * <p>The POSIX user ID (UID) of the file's owner. This option should only be set
-     * for NFS, EFS, and S3 locations. To learn more about what metadata is copied by
-     * DataSync, see <a
+     * <p>The POSIX user ID (UID) of the file's owner.</p> <p>For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata
-     * Copied by DataSync</a>.</p> <p>Default value: INT_VALUE. This preserves the
-     * integer value of the ID.</p> <p>INT_VALUE: Preserve the integer value of UID and
-     * group ID (GID) (recommended).</p> <p>NONE: Ignore UID and GID. </p>
+     * copied by DataSync</a>.</p> <p>Default value: <code>INT_VALUE</code>. This
+     * preserves the integer value of the ID.</p> <p> <code>INT_VALUE</code>: Preserve
+     * the integer value of UID and group ID (GID) (recommended).</p> <p>
+     * <code>NONE</code>: Ignore UID and GID. </p>
      */
     inline void SetUid(const Uid& value) { m_uidHasBeenSet = true; m_uid = value; }
 
     /**
-     * <p>The POSIX user ID (UID) of the file's owner. This option should only be set
-     * for NFS, EFS, and S3 locations. To learn more about what metadata is copied by
-     * DataSync, see <a
+     * <p>The POSIX user ID (UID) of the file's owner.</p> <p>For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata
-     * Copied by DataSync</a>.</p> <p>Default value: INT_VALUE. This preserves the
-     * integer value of the ID.</p> <p>INT_VALUE: Preserve the integer value of UID and
-     * group ID (GID) (recommended).</p> <p>NONE: Ignore UID and GID. </p>
+     * copied by DataSync</a>.</p> <p>Default value: <code>INT_VALUE</code>. This
+     * preserves the integer value of the ID.</p> <p> <code>INT_VALUE</code>: Preserve
+     * the integer value of UID and group ID (GID) (recommended).</p> <p>
+     * <code>NONE</code>: Ignore UID and GID. </p>
      */
     inline void SetUid(Uid&& value) { m_uidHasBeenSet = true; m_uid = std::move(value); }
 
     /**
-     * <p>The POSIX user ID (UID) of the file's owner. This option should only be set
-     * for NFS, EFS, and S3 locations. To learn more about what metadata is copied by
-     * DataSync, see <a
+     * <p>The POSIX user ID (UID) of the file's owner.</p> <p>For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata
-     * Copied by DataSync</a>.</p> <p>Default value: INT_VALUE. This preserves the
-     * integer value of the ID.</p> <p>INT_VALUE: Preserve the integer value of UID and
-     * group ID (GID) (recommended).</p> <p>NONE: Ignore UID and GID. </p>
+     * copied by DataSync</a>.</p> <p>Default value: <code>INT_VALUE</code>. This
+     * preserves the integer value of the ID.</p> <p> <code>INT_VALUE</code>: Preserve
+     * the integer value of UID and group ID (GID) (recommended).</p> <p>
+     * <code>NONE</code>: Ignore UID and GID. </p>
      */
     inline Options& WithUid(const Uid& value) { SetUid(value); return *this;}
 
     /**
-     * <p>The POSIX user ID (UID) of the file's owner. This option should only be set
-     * for NFS, EFS, and S3 locations. To learn more about what metadata is copied by
-     * DataSync, see <a
+     * <p>The POSIX user ID (UID) of the file's owner.</p> <p>For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata
-     * Copied by DataSync</a>.</p> <p>Default value: INT_VALUE. This preserves the
-     * integer value of the ID.</p> <p>INT_VALUE: Preserve the integer value of UID and
-     * group ID (GID) (recommended).</p> <p>NONE: Ignore UID and GID. </p>
+     * copied by DataSync</a>.</p> <p>Default value: <code>INT_VALUE</code>. This
+     * preserves the integer value of the ID.</p> <p> <code>INT_VALUE</code>: Preserve
+     * the integer value of UID and group ID (GID) (recommended).</p> <p>
+     * <code>NONE</code>: Ignore UID and GID. </p>
      */
     inline Options& WithUid(Uid&& value) { SetUid(std::move(value)); return *this;}
 
 
     /**
-     * <p>The POSIX group ID (GID) of the file's owners. This option should only be set
-     * for NFS, EFS, and S3 locations. For more information about what metadata is
-     * copied by DataSync, see <a
+     * <p>The POSIX group ID (GID) of the file's owners.</p> <p>For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata
-     * Copied by DataSync</a>. </p> <p>Default value: INT_VALUE. This preserves the
-     * integer value of the ID.</p> <p>INT_VALUE: Preserve the integer value of user ID
-     * (UID) and GID (recommended).</p> <p>NONE: Ignore UID and GID. </p>
+     * copied by DataSync</a>.</p> <p>Default value: <code>INT_VALUE</code>. This
+     * preserves the integer value of the ID.</p> <p> <code>INT_VALUE</code>: Preserve
+     * the integer value of user ID (UID) and GID (recommended).</p> <p>
+     * <code>NONE</code>: Ignore UID and GID.</p>
      */
     inline const Gid& GetGid() const{ return m_gid; }
 
     /**
-     * <p>The POSIX group ID (GID) of the file's owners. This option should only be set
-     * for NFS, EFS, and S3 locations. For more information about what metadata is
-     * copied by DataSync, see <a
+     * <p>The POSIX group ID (GID) of the file's owners.</p> <p>For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata
-     * Copied by DataSync</a>. </p> <p>Default value: INT_VALUE. This preserves the
-     * integer value of the ID.</p> <p>INT_VALUE: Preserve the integer value of user ID
-     * (UID) and GID (recommended).</p> <p>NONE: Ignore UID and GID. </p>
+     * copied by DataSync</a>.</p> <p>Default value: <code>INT_VALUE</code>. This
+     * preserves the integer value of the ID.</p> <p> <code>INT_VALUE</code>: Preserve
+     * the integer value of user ID (UID) and GID (recommended).</p> <p>
+     * <code>NONE</code>: Ignore UID and GID.</p>
      */
     inline bool GidHasBeenSet() const { return m_gidHasBeenSet; }
 
     /**
-     * <p>The POSIX group ID (GID) of the file's owners. This option should only be set
-     * for NFS, EFS, and S3 locations. For more information about what metadata is
-     * copied by DataSync, see <a
+     * <p>The POSIX group ID (GID) of the file's owners.</p> <p>For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata
-     * Copied by DataSync</a>. </p> <p>Default value: INT_VALUE. This preserves the
-     * integer value of the ID.</p> <p>INT_VALUE: Preserve the integer value of user ID
-     * (UID) and GID (recommended).</p> <p>NONE: Ignore UID and GID. </p>
+     * copied by DataSync</a>.</p> <p>Default value: <code>INT_VALUE</code>. This
+     * preserves the integer value of the ID.</p> <p> <code>INT_VALUE</code>: Preserve
+     * the integer value of user ID (UID) and GID (recommended).</p> <p>
+     * <code>NONE</code>: Ignore UID and GID.</p>
      */
     inline void SetGid(const Gid& value) { m_gidHasBeenSet = true; m_gid = value; }
 
     /**
-     * <p>The POSIX group ID (GID) of the file's owners. This option should only be set
-     * for NFS, EFS, and S3 locations. For more information about what metadata is
-     * copied by DataSync, see <a
+     * <p>The POSIX group ID (GID) of the file's owners.</p> <p>For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata
-     * Copied by DataSync</a>. </p> <p>Default value: INT_VALUE. This preserves the
-     * integer value of the ID.</p> <p>INT_VALUE: Preserve the integer value of user ID
-     * (UID) and GID (recommended).</p> <p>NONE: Ignore UID and GID. </p>
+     * copied by DataSync</a>.</p> <p>Default value: <code>INT_VALUE</code>. This
+     * preserves the integer value of the ID.</p> <p> <code>INT_VALUE</code>: Preserve
+     * the integer value of user ID (UID) and GID (recommended).</p> <p>
+     * <code>NONE</code>: Ignore UID and GID.</p>
      */
     inline void SetGid(Gid&& value) { m_gidHasBeenSet = true; m_gid = std::move(value); }
 
     /**
-     * <p>The POSIX group ID (GID) of the file's owners. This option should only be set
-     * for NFS, EFS, and S3 locations. For more information about what metadata is
-     * copied by DataSync, see <a
+     * <p>The POSIX group ID (GID) of the file's owners.</p> <p>For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata
-     * Copied by DataSync</a>. </p> <p>Default value: INT_VALUE. This preserves the
-     * integer value of the ID.</p> <p>INT_VALUE: Preserve the integer value of user ID
-     * (UID) and GID (recommended).</p> <p>NONE: Ignore UID and GID. </p>
+     * copied by DataSync</a>.</p> <p>Default value: <code>INT_VALUE</code>. This
+     * preserves the integer value of the ID.</p> <p> <code>INT_VALUE</code>: Preserve
+     * the integer value of user ID (UID) and GID (recommended).</p> <p>
+     * <code>NONE</code>: Ignore UID and GID.</p>
      */
     inline Options& WithGid(const Gid& value) { SetGid(value); return *this;}
 
     /**
-     * <p>The POSIX group ID (GID) of the file's owners. This option should only be set
-     * for NFS, EFS, and S3 locations. For more information about what metadata is
-     * copied by DataSync, see <a
+     * <p>The POSIX group ID (GID) of the file's owners.</p> <p>For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata
-     * Copied by DataSync</a>. </p> <p>Default value: INT_VALUE. This preserves the
-     * integer value of the ID.</p> <p>INT_VALUE: Preserve the integer value of user ID
-     * (UID) and GID (recommended).</p> <p>NONE: Ignore UID and GID. </p>
+     * copied by DataSync</a>.</p> <p>Default value: <code>INT_VALUE</code>. This
+     * preserves the integer value of the ID.</p> <p> <code>INT_VALUE</code>: Preserve
+     * the integer value of user ID (UID) and GID (recommended).</p> <p>
+     * <code>NONE</code>: Ignore UID and GID.</p>
      */
     inline Options& WithGid(Gid&& value) { SetGid(std::move(value)); return *this;}
 
@@ -553,9 +583,10 @@ namespace Model
      * charges for certain storage classes. For detailed information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations
      * when working with Amazon S3 storage classes in DataSync </a> in the <i>DataSync
-     * User Guide</i>.</p> <p>Default value: PRESERVE.</p> <p>PRESERVE: Ignore such
-     * destination files (recommended). </p> <p>REMOVE: Delete destination files that
-     * aren’t present in the source.</p>
+     * User Guide</i>.</p> <p>Default value: <code>PRESERVE</code> </p> <p>
+     * <code>PRESERVE</code>: Ignore such destination files (recommended). </p> <p>
+     * <code>REMOVE</code>: Delete destination files that aren’t present in the
+     * source.</p>
      */
     inline const PreserveDeletedFiles& GetPreserveDeletedFiles() const{ return m_preserveDeletedFiles; }
 
@@ -566,9 +597,10 @@ namespace Model
      * charges for certain storage classes. For detailed information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations
      * when working with Amazon S3 storage classes in DataSync </a> in the <i>DataSync
-     * User Guide</i>.</p> <p>Default value: PRESERVE.</p> <p>PRESERVE: Ignore such
-     * destination files (recommended). </p> <p>REMOVE: Delete destination files that
-     * aren’t present in the source.</p>
+     * User Guide</i>.</p> <p>Default value: <code>PRESERVE</code> </p> <p>
+     * <code>PRESERVE</code>: Ignore such destination files (recommended). </p> <p>
+     * <code>REMOVE</code>: Delete destination files that aren’t present in the
+     * source.</p>
      */
     inline bool PreserveDeletedFilesHasBeenSet() const { return m_preserveDeletedFilesHasBeenSet; }
 
@@ -579,9 +611,10 @@ namespace Model
      * charges for certain storage classes. For detailed information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations
      * when working with Amazon S3 storage classes in DataSync </a> in the <i>DataSync
-     * User Guide</i>.</p> <p>Default value: PRESERVE.</p> <p>PRESERVE: Ignore such
-     * destination files (recommended). </p> <p>REMOVE: Delete destination files that
-     * aren’t present in the source.</p>
+     * User Guide</i>.</p> <p>Default value: <code>PRESERVE</code> </p> <p>
+     * <code>PRESERVE</code>: Ignore such destination files (recommended). </p> <p>
+     * <code>REMOVE</code>: Delete destination files that aren’t present in the
+     * source.</p>
      */
     inline void SetPreserveDeletedFiles(const PreserveDeletedFiles& value) { m_preserveDeletedFilesHasBeenSet = true; m_preserveDeletedFiles = value; }
 
@@ -592,9 +625,10 @@ namespace Model
      * charges for certain storage classes. For detailed information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations
      * when working with Amazon S3 storage classes in DataSync </a> in the <i>DataSync
-     * User Guide</i>.</p> <p>Default value: PRESERVE.</p> <p>PRESERVE: Ignore such
-     * destination files (recommended). </p> <p>REMOVE: Delete destination files that
-     * aren’t present in the source.</p>
+     * User Guide</i>.</p> <p>Default value: <code>PRESERVE</code> </p> <p>
+     * <code>PRESERVE</code>: Ignore such destination files (recommended). </p> <p>
+     * <code>REMOVE</code>: Delete destination files that aren’t present in the
+     * source.</p>
      */
     inline void SetPreserveDeletedFiles(PreserveDeletedFiles&& value) { m_preserveDeletedFilesHasBeenSet = true; m_preserveDeletedFiles = std::move(value); }
 
@@ -605,9 +639,10 @@ namespace Model
      * charges for certain storage classes. For detailed information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations
      * when working with Amazon S3 storage classes in DataSync </a> in the <i>DataSync
-     * User Guide</i>.</p> <p>Default value: PRESERVE.</p> <p>PRESERVE: Ignore such
-     * destination files (recommended). </p> <p>REMOVE: Delete destination files that
-     * aren’t present in the source.</p>
+     * User Guide</i>.</p> <p>Default value: <code>PRESERVE</code> </p> <p>
+     * <code>PRESERVE</code>: Ignore such destination files (recommended). </p> <p>
+     * <code>REMOVE</code>: Delete destination files that aren’t present in the
+     * source.</p>
      */
     inline Options& WithPreserveDeletedFiles(const PreserveDeletedFiles& value) { SetPreserveDeletedFiles(value); return *this;}
 
@@ -618,9 +653,10 @@ namespace Model
      * charges for certain storage classes. For detailed information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations
      * when working with Amazon S3 storage classes in DataSync </a> in the <i>DataSync
-     * User Guide</i>.</p> <p>Default value: PRESERVE.</p> <p>PRESERVE: Ignore such
-     * destination files (recommended). </p> <p>REMOVE: Delete destination files that
-     * aren’t present in the source.</p>
+     * User Guide</i>.</p> <p>Default value: <code>PRESERVE</code> </p> <p>
+     * <code>PRESERVE</code>: Ignore such destination files (recommended). </p> <p>
+     * <code>REMOVE</code>: Delete destination files that aren’t present in the
+     * source.</p>
      */
     inline Options& WithPreserveDeletedFiles(PreserveDeletedFiles&& value) { SetPreserveDeletedFiles(std::move(value)); return *this;}
 
@@ -632,9 +668,9 @@ namespace Model
      * the contents of such devices, only the name and metadata. </p> 
      * <p>DataSync can't sync the actual contents of such devices, because they are
      * nonterminal and don't return an end-of-file (EOF) marker.</p>  <p>Default
-     * value: NONE.</p> <p>NONE: Ignore special devices (recommended). </p>
-     * <p>PRESERVE: Preserve character and block device metadata. This option isn't
-     * currently supported for Amazon EFS. </p>
+     * value: <code>NONE</code> </p> <p> <code>NONE</code>: Ignore special devices
+     * (recommended). </p> <p> <code>PRESERVE</code>: Preserve character and block
+     * device metadata. This option isn't currently supported for Amazon EFS. </p>
      */
     inline const PreserveDevices& GetPreserveDevices() const{ return m_preserveDevices; }
 
@@ -645,9 +681,9 @@ namespace Model
      * the contents of such devices, only the name and metadata. </p> 
      * <p>DataSync can't sync the actual contents of such devices, because they are
      * nonterminal and don't return an end-of-file (EOF) marker.</p>  <p>Default
-     * value: NONE.</p> <p>NONE: Ignore special devices (recommended). </p>
-     * <p>PRESERVE: Preserve character and block device metadata. This option isn't
-     * currently supported for Amazon EFS. </p>
+     * value: <code>NONE</code> </p> <p> <code>NONE</code>: Ignore special devices
+     * (recommended). </p> <p> <code>PRESERVE</code>: Preserve character and block
+     * device metadata. This option isn't currently supported for Amazon EFS. </p>
      */
     inline bool PreserveDevicesHasBeenSet() const { return m_preserveDevicesHasBeenSet; }
 
@@ -658,9 +694,9 @@ namespace Model
      * the contents of such devices, only the name and metadata. </p> 
      * <p>DataSync can't sync the actual contents of such devices, because they are
      * nonterminal and don't return an end-of-file (EOF) marker.</p>  <p>Default
-     * value: NONE.</p> <p>NONE: Ignore special devices (recommended). </p>
-     * <p>PRESERVE: Preserve character and block device metadata. This option isn't
-     * currently supported for Amazon EFS. </p>
+     * value: <code>NONE</code> </p> <p> <code>NONE</code>: Ignore special devices
+     * (recommended). </p> <p> <code>PRESERVE</code>: Preserve character and block
+     * device metadata. This option isn't currently supported for Amazon EFS. </p>
      */
     inline void SetPreserveDevices(const PreserveDevices& value) { m_preserveDevicesHasBeenSet = true; m_preserveDevices = value; }
 
@@ -671,9 +707,9 @@ namespace Model
      * the contents of such devices, only the name and metadata. </p> 
      * <p>DataSync can't sync the actual contents of such devices, because they are
      * nonterminal and don't return an end-of-file (EOF) marker.</p>  <p>Default
-     * value: NONE.</p> <p>NONE: Ignore special devices (recommended). </p>
-     * <p>PRESERVE: Preserve character and block device metadata. This option isn't
-     * currently supported for Amazon EFS. </p>
+     * value: <code>NONE</code> </p> <p> <code>NONE</code>: Ignore special devices
+     * (recommended). </p> <p> <code>PRESERVE</code>: Preserve character and block
+     * device metadata. This option isn't currently supported for Amazon EFS. </p>
      */
     inline void SetPreserveDevices(PreserveDevices&& value) { m_preserveDevicesHasBeenSet = true; m_preserveDevices = std::move(value); }
 
@@ -684,9 +720,9 @@ namespace Model
      * the contents of such devices, only the name and metadata. </p> 
      * <p>DataSync can't sync the actual contents of such devices, because they are
      * nonterminal and don't return an end-of-file (EOF) marker.</p>  <p>Default
-     * value: NONE.</p> <p>NONE: Ignore special devices (recommended). </p>
-     * <p>PRESERVE: Preserve character and block device metadata. This option isn't
-     * currently supported for Amazon EFS. </p>
+     * value: <code>NONE</code> </p> <p> <code>NONE</code>: Ignore special devices
+     * (recommended). </p> <p> <code>PRESERVE</code>: Preserve character and block
+     * device metadata. This option isn't currently supported for Amazon EFS. </p>
      */
     inline Options& WithPreserveDevices(const PreserveDevices& value) { SetPreserveDevices(value); return *this;}
 
@@ -697,88 +733,82 @@ namespace Model
      * the contents of such devices, only the name and metadata. </p> 
      * <p>DataSync can't sync the actual contents of such devices, because they are
      * nonterminal and don't return an end-of-file (EOF) marker.</p>  <p>Default
-     * value: NONE.</p> <p>NONE: Ignore special devices (recommended). </p>
-     * <p>PRESERVE: Preserve character and block device metadata. This option isn't
-     * currently supported for Amazon EFS. </p>
+     * value: <code>NONE</code> </p> <p> <code>NONE</code>: Ignore special devices
+     * (recommended). </p> <p> <code>PRESERVE</code>: Preserve character and block
+     * device metadata. This option isn't currently supported for Amazon EFS. </p>
      */
     inline Options& WithPreserveDevices(PreserveDevices&& value) { SetPreserveDevices(std::move(value)); return *this;}
 
 
     /**
      * <p>A value that determines which users or groups can access a file for a
-     * specific purpose such as reading, writing, or execution of the file. This option
-     * should only be set for NFS, EFS, and S3 locations. For more information about
-     * what metadata is copied by DataSync, see <a
+     * specific purpose such as reading, writing, or execution of the file.</p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata
-     * Copied by DataSync</a>. </p> <p>Default value: PRESERVE.</p> <p>PRESERVE:
-     * Preserve POSIX-style permissions (recommended).</p> <p>NONE: Ignore permissions.
-     * </p>  <p>DataSync can preserve extant permissions of a source
-     * location.</p> 
+     * copied by DataSync</a>.</p> <p>Default value: <code>PRESERVE</code> </p> <p>
+     * <code>PRESERVE</code>: Preserve POSIX-style permissions (recommended).</p> <p>
+     * <code>NONE</code>: Ignore permissions. </p>  <p>DataSync can preserve
+     * extant permissions of a source location.</p> 
      */
     inline const PosixPermissions& GetPosixPermissions() const{ return m_posixPermissions; }
 
     /**
      * <p>A value that determines which users or groups can access a file for a
-     * specific purpose such as reading, writing, or execution of the file. This option
-     * should only be set for NFS, EFS, and S3 locations. For more information about
-     * what metadata is copied by DataSync, see <a
+     * specific purpose such as reading, writing, or execution of the file.</p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata
-     * Copied by DataSync</a>. </p> <p>Default value: PRESERVE.</p> <p>PRESERVE:
-     * Preserve POSIX-style permissions (recommended).</p> <p>NONE: Ignore permissions.
-     * </p>  <p>DataSync can preserve extant permissions of a source
-     * location.</p> 
+     * copied by DataSync</a>.</p> <p>Default value: <code>PRESERVE</code> </p> <p>
+     * <code>PRESERVE</code>: Preserve POSIX-style permissions (recommended).</p> <p>
+     * <code>NONE</code>: Ignore permissions. </p>  <p>DataSync can preserve
+     * extant permissions of a source location.</p> 
      */
     inline bool PosixPermissionsHasBeenSet() const { return m_posixPermissionsHasBeenSet; }
 
     /**
      * <p>A value that determines which users or groups can access a file for a
-     * specific purpose such as reading, writing, or execution of the file. This option
-     * should only be set for NFS, EFS, and S3 locations. For more information about
-     * what metadata is copied by DataSync, see <a
+     * specific purpose such as reading, writing, or execution of the file.</p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata
-     * Copied by DataSync</a>. </p> <p>Default value: PRESERVE.</p> <p>PRESERVE:
-     * Preserve POSIX-style permissions (recommended).</p> <p>NONE: Ignore permissions.
-     * </p>  <p>DataSync can preserve extant permissions of a source
-     * location.</p> 
+     * copied by DataSync</a>.</p> <p>Default value: <code>PRESERVE</code> </p> <p>
+     * <code>PRESERVE</code>: Preserve POSIX-style permissions (recommended).</p> <p>
+     * <code>NONE</code>: Ignore permissions. </p>  <p>DataSync can preserve
+     * extant permissions of a source location.</p> 
      */
     inline void SetPosixPermissions(const PosixPermissions& value) { m_posixPermissionsHasBeenSet = true; m_posixPermissions = value; }
 
     /**
      * <p>A value that determines which users or groups can access a file for a
-     * specific purpose such as reading, writing, or execution of the file. This option
-     * should only be set for NFS, EFS, and S3 locations. For more information about
-     * what metadata is copied by DataSync, see <a
+     * specific purpose such as reading, writing, or execution of the file.</p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata
-     * Copied by DataSync</a>. </p> <p>Default value: PRESERVE.</p> <p>PRESERVE:
-     * Preserve POSIX-style permissions (recommended).</p> <p>NONE: Ignore permissions.
-     * </p>  <p>DataSync can preserve extant permissions of a source
-     * location.</p> 
+     * copied by DataSync</a>.</p> <p>Default value: <code>PRESERVE</code> </p> <p>
+     * <code>PRESERVE</code>: Preserve POSIX-style permissions (recommended).</p> <p>
+     * <code>NONE</code>: Ignore permissions. </p>  <p>DataSync can preserve
+     * extant permissions of a source location.</p> 
      */
     inline void SetPosixPermissions(PosixPermissions&& value) { m_posixPermissionsHasBeenSet = true; m_posixPermissions = std::move(value); }
 
     /**
      * <p>A value that determines which users or groups can access a file for a
-     * specific purpose such as reading, writing, or execution of the file. This option
-     * should only be set for NFS, EFS, and S3 locations. For more information about
-     * what metadata is copied by DataSync, see <a
+     * specific purpose such as reading, writing, or execution of the file.</p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata
-     * Copied by DataSync</a>. </p> <p>Default value: PRESERVE.</p> <p>PRESERVE:
-     * Preserve POSIX-style permissions (recommended).</p> <p>NONE: Ignore permissions.
-     * </p>  <p>DataSync can preserve extant permissions of a source
-     * location.</p> 
+     * copied by DataSync</a>.</p> <p>Default value: <code>PRESERVE</code> </p> <p>
+     * <code>PRESERVE</code>: Preserve POSIX-style permissions (recommended).</p> <p>
+     * <code>NONE</code>: Ignore permissions. </p>  <p>DataSync can preserve
+     * extant permissions of a source location.</p> 
      */
     inline Options& WithPosixPermissions(const PosixPermissions& value) { SetPosixPermissions(value); return *this;}
 
     /**
      * <p>A value that determines which users or groups can access a file for a
-     * specific purpose such as reading, writing, or execution of the file. This option
-     * should only be set for NFS, EFS, and S3 locations. For more information about
-     * what metadata is copied by DataSync, see <a
+     * specific purpose such as reading, writing, or execution of the file.</p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata
-     * Copied by DataSync</a>. </p> <p>Default value: PRESERVE.</p> <p>PRESERVE:
-     * Preserve POSIX-style permissions (recommended).</p> <p>NONE: Ignore permissions.
-     * </p>  <p>DataSync can preserve extant permissions of a source
-     * location.</p> 
+     * copied by DataSync</a>.</p> <p>Default value: <code>PRESERVE</code> </p> <p>
+     * <code>PRESERVE</code>: Preserve POSIX-style permissions (recommended).</p> <p>
+     * <code>NONE</code>: Ignore permissions. </p>  <p>DataSync can preserve
+     * extant permissions of a source location.</p> 
      */
     inline Options& WithPosixPermissions(PosixPermissions&& value) { SetPosixPermissions(std::move(value)); return *this;}
 
@@ -950,10 +980,11 @@ namespace Model
      * <p>A value that determines whether DataSync transfers only the data and metadata
      * that differ between the source and the destination location, or whether DataSync
      * transfers all the content from the source, without comparing to the destination
-     * location. </p> <p>CHANGED: DataSync copies only data or metadata that is new or
-     * different content from the source location to the destination location.</p>
-     * <p>ALL: DataSync copies all source location content to the destination, without
-     * comparing to existing content on the destination.</p>
+     * location. </p> <p> <code>CHANGED</code>: DataSync copies only data or metadata
+     * that is new or different content from the source location to the destination
+     * location.</p> <p> <code>ALL</code>: DataSync copies all source location content
+     * to the destination, without comparing to existing content on the
+     * destination.</p>
      */
     inline const TransferMode& GetTransferMode() const{ return m_transferMode; }
 
@@ -961,10 +992,11 @@ namespace Model
      * <p>A value that determines whether DataSync transfers only the data and metadata
      * that differ between the source and the destination location, or whether DataSync
      * transfers all the content from the source, without comparing to the destination
-     * location. </p> <p>CHANGED: DataSync copies only data or metadata that is new or
-     * different content from the source location to the destination location.</p>
-     * <p>ALL: DataSync copies all source location content to the destination, without
-     * comparing to existing content on the destination.</p>
+     * location. </p> <p> <code>CHANGED</code>: DataSync copies only data or metadata
+     * that is new or different content from the source location to the destination
+     * location.</p> <p> <code>ALL</code>: DataSync copies all source location content
+     * to the destination, without comparing to existing content on the
+     * destination.</p>
      */
     inline bool TransferModeHasBeenSet() const { return m_transferModeHasBeenSet; }
 
@@ -972,10 +1004,11 @@ namespace Model
      * <p>A value that determines whether DataSync transfers only the data and metadata
      * that differ between the source and the destination location, or whether DataSync
      * transfers all the content from the source, without comparing to the destination
-     * location. </p> <p>CHANGED: DataSync copies only data or metadata that is new or
-     * different content from the source location to the destination location.</p>
-     * <p>ALL: DataSync copies all source location content to the destination, without
-     * comparing to existing content on the destination.</p>
+     * location. </p> <p> <code>CHANGED</code>: DataSync copies only data or metadata
+     * that is new or different content from the source location to the destination
+     * location.</p> <p> <code>ALL</code>: DataSync copies all source location content
+     * to the destination, without comparing to existing content on the
+     * destination.</p>
      */
     inline void SetTransferMode(const TransferMode& value) { m_transferModeHasBeenSet = true; m_transferMode = value; }
 
@@ -983,10 +1016,11 @@ namespace Model
      * <p>A value that determines whether DataSync transfers only the data and metadata
      * that differ between the source and the destination location, or whether DataSync
      * transfers all the content from the source, without comparing to the destination
-     * location. </p> <p>CHANGED: DataSync copies only data or metadata that is new or
-     * different content from the source location to the destination location.</p>
-     * <p>ALL: DataSync copies all source location content to the destination, without
-     * comparing to existing content on the destination.</p>
+     * location. </p> <p> <code>CHANGED</code>: DataSync copies only data or metadata
+     * that is new or different content from the source location to the destination
+     * location.</p> <p> <code>ALL</code>: DataSync copies all source location content
+     * to the destination, without comparing to existing content on the
+     * destination.</p>
      */
     inline void SetTransferMode(TransferMode&& value) { m_transferModeHasBeenSet = true; m_transferMode = std::move(value); }
 
@@ -994,10 +1028,11 @@ namespace Model
      * <p>A value that determines whether DataSync transfers only the data and metadata
      * that differ between the source and the destination location, or whether DataSync
      * transfers all the content from the source, without comparing to the destination
-     * location. </p> <p>CHANGED: DataSync copies only data or metadata that is new or
-     * different content from the source location to the destination location.</p>
-     * <p>ALL: DataSync copies all source location content to the destination, without
-     * comparing to existing content on the destination.</p>
+     * location. </p> <p> <code>CHANGED</code>: DataSync copies only data or metadata
+     * that is new or different content from the source location to the destination
+     * location.</p> <p> <code>ALL</code>: DataSync copies all source location content
+     * to the destination, without comparing to existing content on the
+     * destination.</p>
      */
     inline Options& WithTransferMode(const TransferMode& value) { SetTransferMode(value); return *this;}
 
@@ -1005,10 +1040,11 @@ namespace Model
      * <p>A value that determines whether DataSync transfers only the data and metadata
      * that differ between the source and the destination location, or whether DataSync
      * transfers all the content from the source, without comparing to the destination
-     * location. </p> <p>CHANGED: DataSync copies only data or metadata that is new or
-     * different content from the source location to the destination location.</p>
-     * <p>ALL: DataSync copies all source location content to the destination, without
-     * comparing to existing content on the destination.</p>
+     * location. </p> <p> <code>CHANGED</code>: DataSync copies only data or metadata
+     * that is new or different content from the source location to the destination
+     * location.</p> <p> <code>ALL</code>: DataSync copies all source location content
+     * to the destination, without comparing to existing content on the
+     * destination.</p>
      */
     inline Options& WithTransferMode(TransferMode&& value) { SetTransferMode(std::move(value)); return *this;}
 
@@ -1021,25 +1057,25 @@ namespace Model
      * about how DataSync handles metadata, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html">How
      * DataSync Handles Metadata and Special Files</a>. </p> <p>Default value:
-     * OWNER_DACL.</p> <p> <b>OWNER_DACL</b>: For each copied object, DataSync copies
-     * the following metadata:</p> <ul> <li> <p>Object owner.</p> </li> <li> <p>NTFS
-     * discretionary access control lists (DACLs), which determine whether to grant
-     * access to an object.</p> </li> </ul> <p>When choosing this option, DataSync does
-     * NOT copy the NTFS system access control lists (SACLs), which are used by
-     * administrators to log attempts to access a secured object.</p> <p>
-     * <b>OWNER_DACL_SACL</b>: For each copied object, DataSync copies the following
-     * metadata:</p> <ul> <li> <p>Object owner.</p> </li> <li> <p>NTFS discretionary
-     * access control lists (DACLs), which determine whether to grant access to an
-     * object.</p> </li> <li> <p>NTFS system access control lists (SACLs), which are
-     * used by administrators to log attempts to access a secured object.</p> </li>
-     * </ul> <p>Copying SACLs requires granting additional permissions to the Windows
-     * user that DataSync uses to access your SMB location. For information about
-     * choosing a user that ensures sufficient permissions to files, folders, and
-     * metadata, see <a href="create-smb-location.html#SMBuser">user</a>.</p> <p>
-     * <b>NONE</b>: None of the SMB security descriptor components are copied.
-     * Destination objects are owned by the user that was provided for accessing the
-     * destination location. DACLs and SACLs are set based on the destination server’s
-     * configuration. </p>
+     * <code>OWNER_DACL</code> </p> <p> <code>OWNER_DACL</code>: For each copied
+     * object, DataSync copies the following metadata:</p> <ul> <li> <p>Object
+     * owner.</p> </li> <li> <p>NTFS discretionary access control lists (DACLs), which
+     * determine whether to grant access to an object.</p> </li> </ul> <p>When choosing
+     * this option, DataSync does NOT copy the NTFS system access control lists
+     * (SACLs), which are used by administrators to log attempts to access a secured
+     * object.</p> <p> <code>OWNER_DACL_SACL</code>: For each copied object, DataSync
+     * copies the following metadata:</p> <ul> <li> <p>Object owner.</p> </li> <li>
+     * <p>NTFS discretionary access control lists (DACLs), which determine whether to
+     * grant access to an object.</p> </li> <li> <p>NTFS system access control lists
+     * (SACLs), which are used by administrators to log attempts to access a secured
+     * object.</p> </li> </ul> <p>Copying SACLs requires granting additional
+     * permissions to the Windows user that DataSync uses to access your SMB location.
+     * For information about choosing a user that ensures sufficient permissions to
+     * files, folders, and metadata, see <a
+     * href="create-smb-location.html#SMBuser">user</a>.</p> <p> <code>NONE</code>:
+     * None of the SMB security descriptor components are copied. Destination objects
+     * are owned by the user that was provided for accessing the destination location.
+     * DACLs and SACLs are set based on the destination server’s configuration. </p>
      */
     inline const SmbSecurityDescriptorCopyFlags& GetSecurityDescriptorCopyFlags() const{ return m_securityDescriptorCopyFlags; }
 
@@ -1051,25 +1087,25 @@ namespace Model
      * about how DataSync handles metadata, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html">How
      * DataSync Handles Metadata and Special Files</a>. </p> <p>Default value:
-     * OWNER_DACL.</p> <p> <b>OWNER_DACL</b>: For each copied object, DataSync copies
-     * the following metadata:</p> <ul> <li> <p>Object owner.</p> </li> <li> <p>NTFS
-     * discretionary access control lists (DACLs), which determine whether to grant
-     * access to an object.</p> </li> </ul> <p>When choosing this option, DataSync does
-     * NOT copy the NTFS system access control lists (SACLs), which are used by
-     * administrators to log attempts to access a secured object.</p> <p>
-     * <b>OWNER_DACL_SACL</b>: For each copied object, DataSync copies the following
-     * metadata:</p> <ul> <li> <p>Object owner.</p> </li> <li> <p>NTFS discretionary
-     * access control lists (DACLs), which determine whether to grant access to an
-     * object.</p> </li> <li> <p>NTFS system access control lists (SACLs), which are
-     * used by administrators to log attempts to access a secured object.</p> </li>
-     * </ul> <p>Copying SACLs requires granting additional permissions to the Windows
-     * user that DataSync uses to access your SMB location. For information about
-     * choosing a user that ensures sufficient permissions to files, folders, and
-     * metadata, see <a href="create-smb-location.html#SMBuser">user</a>.</p> <p>
-     * <b>NONE</b>: None of the SMB security descriptor components are copied.
-     * Destination objects are owned by the user that was provided for accessing the
-     * destination location. DACLs and SACLs are set based on the destination server’s
-     * configuration. </p>
+     * <code>OWNER_DACL</code> </p> <p> <code>OWNER_DACL</code>: For each copied
+     * object, DataSync copies the following metadata:</p> <ul> <li> <p>Object
+     * owner.</p> </li> <li> <p>NTFS discretionary access control lists (DACLs), which
+     * determine whether to grant access to an object.</p> </li> </ul> <p>When choosing
+     * this option, DataSync does NOT copy the NTFS system access control lists
+     * (SACLs), which are used by administrators to log attempts to access a secured
+     * object.</p> <p> <code>OWNER_DACL_SACL</code>: For each copied object, DataSync
+     * copies the following metadata:</p> <ul> <li> <p>Object owner.</p> </li> <li>
+     * <p>NTFS discretionary access control lists (DACLs), which determine whether to
+     * grant access to an object.</p> </li> <li> <p>NTFS system access control lists
+     * (SACLs), which are used by administrators to log attempts to access a secured
+     * object.</p> </li> </ul> <p>Copying SACLs requires granting additional
+     * permissions to the Windows user that DataSync uses to access your SMB location.
+     * For information about choosing a user that ensures sufficient permissions to
+     * files, folders, and metadata, see <a
+     * href="create-smb-location.html#SMBuser">user</a>.</p> <p> <code>NONE</code>:
+     * None of the SMB security descriptor components are copied. Destination objects
+     * are owned by the user that was provided for accessing the destination location.
+     * DACLs and SACLs are set based on the destination server’s configuration. </p>
      */
     inline bool SecurityDescriptorCopyFlagsHasBeenSet() const { return m_securityDescriptorCopyFlagsHasBeenSet; }
 
@@ -1081,25 +1117,25 @@ namespace Model
      * about how DataSync handles metadata, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html">How
      * DataSync Handles Metadata and Special Files</a>. </p> <p>Default value:
-     * OWNER_DACL.</p> <p> <b>OWNER_DACL</b>: For each copied object, DataSync copies
-     * the following metadata:</p> <ul> <li> <p>Object owner.</p> </li> <li> <p>NTFS
-     * discretionary access control lists (DACLs), which determine whether to grant
-     * access to an object.</p> </li> </ul> <p>When choosing this option, DataSync does
-     * NOT copy the NTFS system access control lists (SACLs), which are used by
-     * administrators to log attempts to access a secured object.</p> <p>
-     * <b>OWNER_DACL_SACL</b>: For each copied object, DataSync copies the following
-     * metadata:</p> <ul> <li> <p>Object owner.</p> </li> <li> <p>NTFS discretionary
-     * access control lists (DACLs), which determine whether to grant access to an
-     * object.</p> </li> <li> <p>NTFS system access control lists (SACLs), which are
-     * used by administrators to log attempts to access a secured object.</p> </li>
-     * </ul> <p>Copying SACLs requires granting additional permissions to the Windows
-     * user that DataSync uses to access your SMB location. For information about
-     * choosing a user that ensures sufficient permissions to files, folders, and
-     * metadata, see <a href="create-smb-location.html#SMBuser">user</a>.</p> <p>
-     * <b>NONE</b>: None of the SMB security descriptor components are copied.
-     * Destination objects are owned by the user that was provided for accessing the
-     * destination location. DACLs and SACLs are set based on the destination server’s
-     * configuration. </p>
+     * <code>OWNER_DACL</code> </p> <p> <code>OWNER_DACL</code>: For each copied
+     * object, DataSync copies the following metadata:</p> <ul> <li> <p>Object
+     * owner.</p> </li> <li> <p>NTFS discretionary access control lists (DACLs), which
+     * determine whether to grant access to an object.</p> </li> </ul> <p>When choosing
+     * this option, DataSync does NOT copy the NTFS system access control lists
+     * (SACLs), which are used by administrators to log attempts to access a secured
+     * object.</p> <p> <code>OWNER_DACL_SACL</code>: For each copied object, DataSync
+     * copies the following metadata:</p> <ul> <li> <p>Object owner.</p> </li> <li>
+     * <p>NTFS discretionary access control lists (DACLs), which determine whether to
+     * grant access to an object.</p> </li> <li> <p>NTFS system access control lists
+     * (SACLs), which are used by administrators to log attempts to access a secured
+     * object.</p> </li> </ul> <p>Copying SACLs requires granting additional
+     * permissions to the Windows user that DataSync uses to access your SMB location.
+     * For information about choosing a user that ensures sufficient permissions to
+     * files, folders, and metadata, see <a
+     * href="create-smb-location.html#SMBuser">user</a>.</p> <p> <code>NONE</code>:
+     * None of the SMB security descriptor components are copied. Destination objects
+     * are owned by the user that was provided for accessing the destination location.
+     * DACLs and SACLs are set based on the destination server’s configuration. </p>
      */
     inline void SetSecurityDescriptorCopyFlags(const SmbSecurityDescriptorCopyFlags& value) { m_securityDescriptorCopyFlagsHasBeenSet = true; m_securityDescriptorCopyFlags = value; }
 
@@ -1111,25 +1147,25 @@ namespace Model
      * about how DataSync handles metadata, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html">How
      * DataSync Handles Metadata and Special Files</a>. </p> <p>Default value:
-     * OWNER_DACL.</p> <p> <b>OWNER_DACL</b>: For each copied object, DataSync copies
-     * the following metadata:</p> <ul> <li> <p>Object owner.</p> </li> <li> <p>NTFS
-     * discretionary access control lists (DACLs), which determine whether to grant
-     * access to an object.</p> </li> </ul> <p>When choosing this option, DataSync does
-     * NOT copy the NTFS system access control lists (SACLs), which are used by
-     * administrators to log attempts to access a secured object.</p> <p>
-     * <b>OWNER_DACL_SACL</b>: For each copied object, DataSync copies the following
-     * metadata:</p> <ul> <li> <p>Object owner.</p> </li> <li> <p>NTFS discretionary
-     * access control lists (DACLs), which determine whether to grant access to an
-     * object.</p> </li> <li> <p>NTFS system access control lists (SACLs), which are
-     * used by administrators to log attempts to access a secured object.</p> </li>
-     * </ul> <p>Copying SACLs requires granting additional permissions to the Windows
-     * user that DataSync uses to access your SMB location. For information about
-     * choosing a user that ensures sufficient permissions to files, folders, and
-     * metadata, see <a href="create-smb-location.html#SMBuser">user</a>.</p> <p>
-     * <b>NONE</b>: None of the SMB security descriptor components are copied.
-     * Destination objects are owned by the user that was provided for accessing the
-     * destination location. DACLs and SACLs are set based on the destination server’s
-     * configuration. </p>
+     * <code>OWNER_DACL</code> </p> <p> <code>OWNER_DACL</code>: For each copied
+     * object, DataSync copies the following metadata:</p> <ul> <li> <p>Object
+     * owner.</p> </li> <li> <p>NTFS discretionary access control lists (DACLs), which
+     * determine whether to grant access to an object.</p> </li> </ul> <p>When choosing
+     * this option, DataSync does NOT copy the NTFS system access control lists
+     * (SACLs), which are used by administrators to log attempts to access a secured
+     * object.</p> <p> <code>OWNER_DACL_SACL</code>: For each copied object, DataSync
+     * copies the following metadata:</p> <ul> <li> <p>Object owner.</p> </li> <li>
+     * <p>NTFS discretionary access control lists (DACLs), which determine whether to
+     * grant access to an object.</p> </li> <li> <p>NTFS system access control lists
+     * (SACLs), which are used by administrators to log attempts to access a secured
+     * object.</p> </li> </ul> <p>Copying SACLs requires granting additional
+     * permissions to the Windows user that DataSync uses to access your SMB location.
+     * For information about choosing a user that ensures sufficient permissions to
+     * files, folders, and metadata, see <a
+     * href="create-smb-location.html#SMBuser">user</a>.</p> <p> <code>NONE</code>:
+     * None of the SMB security descriptor components are copied. Destination objects
+     * are owned by the user that was provided for accessing the destination location.
+     * DACLs and SACLs are set based on the destination server’s configuration. </p>
      */
     inline void SetSecurityDescriptorCopyFlags(SmbSecurityDescriptorCopyFlags&& value) { m_securityDescriptorCopyFlagsHasBeenSet = true; m_securityDescriptorCopyFlags = std::move(value); }
 
@@ -1141,25 +1177,25 @@ namespace Model
      * about how DataSync handles metadata, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html">How
      * DataSync Handles Metadata and Special Files</a>. </p> <p>Default value:
-     * OWNER_DACL.</p> <p> <b>OWNER_DACL</b>: For each copied object, DataSync copies
-     * the following metadata:</p> <ul> <li> <p>Object owner.</p> </li> <li> <p>NTFS
-     * discretionary access control lists (DACLs), which determine whether to grant
-     * access to an object.</p> </li> </ul> <p>When choosing this option, DataSync does
-     * NOT copy the NTFS system access control lists (SACLs), which are used by
-     * administrators to log attempts to access a secured object.</p> <p>
-     * <b>OWNER_DACL_SACL</b>: For each copied object, DataSync copies the following
-     * metadata:</p> <ul> <li> <p>Object owner.</p> </li> <li> <p>NTFS discretionary
-     * access control lists (DACLs), which determine whether to grant access to an
-     * object.</p> </li> <li> <p>NTFS system access control lists (SACLs), which are
-     * used by administrators to log attempts to access a secured object.</p> </li>
-     * </ul> <p>Copying SACLs requires granting additional permissions to the Windows
-     * user that DataSync uses to access your SMB location. For information about
-     * choosing a user that ensures sufficient permissions to files, folders, and
-     * metadata, see <a href="create-smb-location.html#SMBuser">user</a>.</p> <p>
-     * <b>NONE</b>: None of the SMB security descriptor components are copied.
-     * Destination objects are owned by the user that was provided for accessing the
-     * destination location. DACLs and SACLs are set based on the destination server’s
-     * configuration. </p>
+     * <code>OWNER_DACL</code> </p> <p> <code>OWNER_DACL</code>: For each copied
+     * object, DataSync copies the following metadata:</p> <ul> <li> <p>Object
+     * owner.</p> </li> <li> <p>NTFS discretionary access control lists (DACLs), which
+     * determine whether to grant access to an object.</p> </li> </ul> <p>When choosing
+     * this option, DataSync does NOT copy the NTFS system access control lists
+     * (SACLs), which are used by administrators to log attempts to access a secured
+     * object.</p> <p> <code>OWNER_DACL_SACL</code>: For each copied object, DataSync
+     * copies the following metadata:</p> <ul> <li> <p>Object owner.</p> </li> <li>
+     * <p>NTFS discretionary access control lists (DACLs), which determine whether to
+     * grant access to an object.</p> </li> <li> <p>NTFS system access control lists
+     * (SACLs), which are used by administrators to log attempts to access a secured
+     * object.</p> </li> </ul> <p>Copying SACLs requires granting additional
+     * permissions to the Windows user that DataSync uses to access your SMB location.
+     * For information about choosing a user that ensures sufficient permissions to
+     * files, folders, and metadata, see <a
+     * href="create-smb-location.html#SMBuser">user</a>.</p> <p> <code>NONE</code>:
+     * None of the SMB security descriptor components are copied. Destination objects
+     * are owned by the user that was provided for accessing the destination location.
+     * DACLs and SACLs are set based on the destination server’s configuration. </p>
      */
     inline Options& WithSecurityDescriptorCopyFlags(const SmbSecurityDescriptorCopyFlags& value) { SetSecurityDescriptorCopyFlags(value); return *this;}
 
@@ -1171,25 +1207,25 @@ namespace Model
      * about how DataSync handles metadata, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html">How
      * DataSync Handles Metadata and Special Files</a>. </p> <p>Default value:
-     * OWNER_DACL.</p> <p> <b>OWNER_DACL</b>: For each copied object, DataSync copies
-     * the following metadata:</p> <ul> <li> <p>Object owner.</p> </li> <li> <p>NTFS
-     * discretionary access control lists (DACLs), which determine whether to grant
-     * access to an object.</p> </li> </ul> <p>When choosing this option, DataSync does
-     * NOT copy the NTFS system access control lists (SACLs), which are used by
-     * administrators to log attempts to access a secured object.</p> <p>
-     * <b>OWNER_DACL_SACL</b>: For each copied object, DataSync copies the following
-     * metadata:</p> <ul> <li> <p>Object owner.</p> </li> <li> <p>NTFS discretionary
-     * access control lists (DACLs), which determine whether to grant access to an
-     * object.</p> </li> <li> <p>NTFS system access control lists (SACLs), which are
-     * used by administrators to log attempts to access a secured object.</p> </li>
-     * </ul> <p>Copying SACLs requires granting additional permissions to the Windows
-     * user that DataSync uses to access your SMB location. For information about
-     * choosing a user that ensures sufficient permissions to files, folders, and
-     * metadata, see <a href="create-smb-location.html#SMBuser">user</a>.</p> <p>
-     * <b>NONE</b>: None of the SMB security descriptor components are copied.
-     * Destination objects are owned by the user that was provided for accessing the
-     * destination location. DACLs and SACLs are set based on the destination server’s
-     * configuration. </p>
+     * <code>OWNER_DACL</code> </p> <p> <code>OWNER_DACL</code>: For each copied
+     * object, DataSync copies the following metadata:</p> <ul> <li> <p>Object
+     * owner.</p> </li> <li> <p>NTFS discretionary access control lists (DACLs), which
+     * determine whether to grant access to an object.</p> </li> </ul> <p>When choosing
+     * this option, DataSync does NOT copy the NTFS system access control lists
+     * (SACLs), which are used by administrators to log attempts to access a secured
+     * object.</p> <p> <code>OWNER_DACL_SACL</code>: For each copied object, DataSync
+     * copies the following metadata:</p> <ul> <li> <p>Object owner.</p> </li> <li>
+     * <p>NTFS discretionary access control lists (DACLs), which determine whether to
+     * grant access to an object.</p> </li> <li> <p>NTFS system access control lists
+     * (SACLs), which are used by administrators to log attempts to access a secured
+     * object.</p> </li> </ul> <p>Copying SACLs requires granting additional
+     * permissions to the Windows user that DataSync uses to access your SMB location.
+     * For information about choosing a user that ensures sufficient permissions to
+     * files, folders, and metadata, see <a
+     * href="create-smb-location.html#SMBuser">user</a>.</p> <p> <code>NONE</code>:
+     * None of the SMB security descriptor components are copied. Destination objects
+     * are owned by the user that was provided for accessing the destination location.
+     * DACLs and SACLs are set based on the destination server’s configuration. </p>
      */
     inline Options& WithSecurityDescriptorCopyFlags(SmbSecurityDescriptorCopyFlags&& value) { SetSecurityDescriptorCopyFlags(std::move(value)); return *this;}
 

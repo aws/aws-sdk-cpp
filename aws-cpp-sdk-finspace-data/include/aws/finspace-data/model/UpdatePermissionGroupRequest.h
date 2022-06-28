@@ -160,121 +160,177 @@ namespace Model
 
     /**
      * <p>The permissions that are granted to a specific group for accessing the
-     * FinSpace application.</p> <ul> <li> <p> <code>CreateDataset</code> – Group
-     * members can create new datasets.</p> </li> <li> <p> <code>ManageClusters</code>
-     * – Group members can manage Apache Spark clusters from FinSpace notebooks.</p>
-     * </li> <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage
-     * users and permission groups.</p> </li> <li> <p> <code>ManageAttributeSets</code>
-     * – Group members can manage attribute sets.</p> </li> <li> <p>
-     * <code>ViewAuditData</code> – Group members can view audit data.</p> </li> <li>
-     * <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace
-     * notebooks.</p> </li> <li> <p> <code>GetTemporaryCredentials</code> – Group
-     * members can get temporary API credentials.</p> </li> </ul>
+     * FinSpace application.</p>  <p>When assigning application permissions,
+     * be aware that the permission <code>ManageUsersAndGroups</code> allows users to
+     * grant themselves or others access to any functionality in their FinSpace
+     * environment's application. It should only be granted to trusted users.</p>
+     *  <ul> <li> <p> <code>CreateDataset</code> – Group members can create
+     * new datasets.</p> </li> <li> <p> <code>ManageClusters</code> – Group members can
+     * manage Apache Spark clusters from FinSpace notebooks.</p> </li> <li> <p>
+     * <code>ManageUsersAndGroups</code> – Group members can manage users and
+     * permission groups. This is a privileged permission that allows users to grant
+     * themselves or others access to any functionality in the application. It should
+     * only be granted to trusted users.</p> </li> <li> <p>
+     * <code>ManageAttributeSets</code> – Group members can manage attribute sets.</p>
+     * </li> <li> <p> <code>ViewAuditData</code> – Group members can view audit
+     * data.</p> </li> <li> <p> <code>AccessNotebooks</code> – Group members will have
+     * access to FinSpace notebooks.</p> </li> <li> <p>
+     * <code>GetTemporaryCredentials</code> – Group members can get temporary API
+     * credentials.</p> </li> </ul>
      */
     inline const Aws::Vector<ApplicationPermission>& GetApplicationPermissions() const{ return m_applicationPermissions; }
 
     /**
      * <p>The permissions that are granted to a specific group for accessing the
-     * FinSpace application.</p> <ul> <li> <p> <code>CreateDataset</code> – Group
-     * members can create new datasets.</p> </li> <li> <p> <code>ManageClusters</code>
-     * – Group members can manage Apache Spark clusters from FinSpace notebooks.</p>
-     * </li> <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage
-     * users and permission groups.</p> </li> <li> <p> <code>ManageAttributeSets</code>
-     * – Group members can manage attribute sets.</p> </li> <li> <p>
-     * <code>ViewAuditData</code> – Group members can view audit data.</p> </li> <li>
-     * <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace
-     * notebooks.</p> </li> <li> <p> <code>GetTemporaryCredentials</code> – Group
-     * members can get temporary API credentials.</p> </li> </ul>
+     * FinSpace application.</p>  <p>When assigning application permissions,
+     * be aware that the permission <code>ManageUsersAndGroups</code> allows users to
+     * grant themselves or others access to any functionality in their FinSpace
+     * environment's application. It should only be granted to trusted users.</p>
+     *  <ul> <li> <p> <code>CreateDataset</code> – Group members can create
+     * new datasets.</p> </li> <li> <p> <code>ManageClusters</code> – Group members can
+     * manage Apache Spark clusters from FinSpace notebooks.</p> </li> <li> <p>
+     * <code>ManageUsersAndGroups</code> – Group members can manage users and
+     * permission groups. This is a privileged permission that allows users to grant
+     * themselves or others access to any functionality in the application. It should
+     * only be granted to trusted users.</p> </li> <li> <p>
+     * <code>ManageAttributeSets</code> – Group members can manage attribute sets.</p>
+     * </li> <li> <p> <code>ViewAuditData</code> – Group members can view audit
+     * data.</p> </li> <li> <p> <code>AccessNotebooks</code> – Group members will have
+     * access to FinSpace notebooks.</p> </li> <li> <p>
+     * <code>GetTemporaryCredentials</code> – Group members can get temporary API
+     * credentials.</p> </li> </ul>
      */
     inline bool ApplicationPermissionsHasBeenSet() const { return m_applicationPermissionsHasBeenSet; }
 
     /**
      * <p>The permissions that are granted to a specific group for accessing the
-     * FinSpace application.</p> <ul> <li> <p> <code>CreateDataset</code> – Group
-     * members can create new datasets.</p> </li> <li> <p> <code>ManageClusters</code>
-     * – Group members can manage Apache Spark clusters from FinSpace notebooks.</p>
-     * </li> <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage
-     * users and permission groups.</p> </li> <li> <p> <code>ManageAttributeSets</code>
-     * – Group members can manage attribute sets.</p> </li> <li> <p>
-     * <code>ViewAuditData</code> – Group members can view audit data.</p> </li> <li>
-     * <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace
-     * notebooks.</p> </li> <li> <p> <code>GetTemporaryCredentials</code> – Group
-     * members can get temporary API credentials.</p> </li> </ul>
+     * FinSpace application.</p>  <p>When assigning application permissions,
+     * be aware that the permission <code>ManageUsersAndGroups</code> allows users to
+     * grant themselves or others access to any functionality in their FinSpace
+     * environment's application. It should only be granted to trusted users.</p>
+     *  <ul> <li> <p> <code>CreateDataset</code> – Group members can create
+     * new datasets.</p> </li> <li> <p> <code>ManageClusters</code> – Group members can
+     * manage Apache Spark clusters from FinSpace notebooks.</p> </li> <li> <p>
+     * <code>ManageUsersAndGroups</code> – Group members can manage users and
+     * permission groups. This is a privileged permission that allows users to grant
+     * themselves or others access to any functionality in the application. It should
+     * only be granted to trusted users.</p> </li> <li> <p>
+     * <code>ManageAttributeSets</code> – Group members can manage attribute sets.</p>
+     * </li> <li> <p> <code>ViewAuditData</code> – Group members can view audit
+     * data.</p> </li> <li> <p> <code>AccessNotebooks</code> – Group members will have
+     * access to FinSpace notebooks.</p> </li> <li> <p>
+     * <code>GetTemporaryCredentials</code> – Group members can get temporary API
+     * credentials.</p> </li> </ul>
      */
     inline void SetApplicationPermissions(const Aws::Vector<ApplicationPermission>& value) { m_applicationPermissionsHasBeenSet = true; m_applicationPermissions = value; }
 
     /**
      * <p>The permissions that are granted to a specific group for accessing the
-     * FinSpace application.</p> <ul> <li> <p> <code>CreateDataset</code> – Group
-     * members can create new datasets.</p> </li> <li> <p> <code>ManageClusters</code>
-     * – Group members can manage Apache Spark clusters from FinSpace notebooks.</p>
-     * </li> <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage
-     * users and permission groups.</p> </li> <li> <p> <code>ManageAttributeSets</code>
-     * – Group members can manage attribute sets.</p> </li> <li> <p>
-     * <code>ViewAuditData</code> – Group members can view audit data.</p> </li> <li>
-     * <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace
-     * notebooks.</p> </li> <li> <p> <code>GetTemporaryCredentials</code> – Group
-     * members can get temporary API credentials.</p> </li> </ul>
+     * FinSpace application.</p>  <p>When assigning application permissions,
+     * be aware that the permission <code>ManageUsersAndGroups</code> allows users to
+     * grant themselves or others access to any functionality in their FinSpace
+     * environment's application. It should only be granted to trusted users.</p>
+     *  <ul> <li> <p> <code>CreateDataset</code> – Group members can create
+     * new datasets.</p> </li> <li> <p> <code>ManageClusters</code> – Group members can
+     * manage Apache Spark clusters from FinSpace notebooks.</p> </li> <li> <p>
+     * <code>ManageUsersAndGroups</code> – Group members can manage users and
+     * permission groups. This is a privileged permission that allows users to grant
+     * themselves or others access to any functionality in the application. It should
+     * only be granted to trusted users.</p> </li> <li> <p>
+     * <code>ManageAttributeSets</code> – Group members can manage attribute sets.</p>
+     * </li> <li> <p> <code>ViewAuditData</code> – Group members can view audit
+     * data.</p> </li> <li> <p> <code>AccessNotebooks</code> – Group members will have
+     * access to FinSpace notebooks.</p> </li> <li> <p>
+     * <code>GetTemporaryCredentials</code> – Group members can get temporary API
+     * credentials.</p> </li> </ul>
      */
     inline void SetApplicationPermissions(Aws::Vector<ApplicationPermission>&& value) { m_applicationPermissionsHasBeenSet = true; m_applicationPermissions = std::move(value); }
 
     /**
      * <p>The permissions that are granted to a specific group for accessing the
-     * FinSpace application.</p> <ul> <li> <p> <code>CreateDataset</code> – Group
-     * members can create new datasets.</p> </li> <li> <p> <code>ManageClusters</code>
-     * – Group members can manage Apache Spark clusters from FinSpace notebooks.</p>
-     * </li> <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage
-     * users and permission groups.</p> </li> <li> <p> <code>ManageAttributeSets</code>
-     * – Group members can manage attribute sets.</p> </li> <li> <p>
-     * <code>ViewAuditData</code> – Group members can view audit data.</p> </li> <li>
-     * <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace
-     * notebooks.</p> </li> <li> <p> <code>GetTemporaryCredentials</code> – Group
-     * members can get temporary API credentials.</p> </li> </ul>
+     * FinSpace application.</p>  <p>When assigning application permissions,
+     * be aware that the permission <code>ManageUsersAndGroups</code> allows users to
+     * grant themselves or others access to any functionality in their FinSpace
+     * environment's application. It should only be granted to trusted users.</p>
+     *  <ul> <li> <p> <code>CreateDataset</code> – Group members can create
+     * new datasets.</p> </li> <li> <p> <code>ManageClusters</code> – Group members can
+     * manage Apache Spark clusters from FinSpace notebooks.</p> </li> <li> <p>
+     * <code>ManageUsersAndGroups</code> – Group members can manage users and
+     * permission groups. This is a privileged permission that allows users to grant
+     * themselves or others access to any functionality in the application. It should
+     * only be granted to trusted users.</p> </li> <li> <p>
+     * <code>ManageAttributeSets</code> – Group members can manage attribute sets.</p>
+     * </li> <li> <p> <code>ViewAuditData</code> – Group members can view audit
+     * data.</p> </li> <li> <p> <code>AccessNotebooks</code> – Group members will have
+     * access to FinSpace notebooks.</p> </li> <li> <p>
+     * <code>GetTemporaryCredentials</code> – Group members can get temporary API
+     * credentials.</p> </li> </ul>
      */
     inline UpdatePermissionGroupRequest& WithApplicationPermissions(const Aws::Vector<ApplicationPermission>& value) { SetApplicationPermissions(value); return *this;}
 
     /**
      * <p>The permissions that are granted to a specific group for accessing the
-     * FinSpace application.</p> <ul> <li> <p> <code>CreateDataset</code> – Group
-     * members can create new datasets.</p> </li> <li> <p> <code>ManageClusters</code>
-     * – Group members can manage Apache Spark clusters from FinSpace notebooks.</p>
-     * </li> <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage
-     * users and permission groups.</p> </li> <li> <p> <code>ManageAttributeSets</code>
-     * – Group members can manage attribute sets.</p> </li> <li> <p>
-     * <code>ViewAuditData</code> – Group members can view audit data.</p> </li> <li>
-     * <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace
-     * notebooks.</p> </li> <li> <p> <code>GetTemporaryCredentials</code> – Group
-     * members can get temporary API credentials.</p> </li> </ul>
+     * FinSpace application.</p>  <p>When assigning application permissions,
+     * be aware that the permission <code>ManageUsersAndGroups</code> allows users to
+     * grant themselves or others access to any functionality in their FinSpace
+     * environment's application. It should only be granted to trusted users.</p>
+     *  <ul> <li> <p> <code>CreateDataset</code> – Group members can create
+     * new datasets.</p> </li> <li> <p> <code>ManageClusters</code> – Group members can
+     * manage Apache Spark clusters from FinSpace notebooks.</p> </li> <li> <p>
+     * <code>ManageUsersAndGroups</code> – Group members can manage users and
+     * permission groups. This is a privileged permission that allows users to grant
+     * themselves or others access to any functionality in the application. It should
+     * only be granted to trusted users.</p> </li> <li> <p>
+     * <code>ManageAttributeSets</code> – Group members can manage attribute sets.</p>
+     * </li> <li> <p> <code>ViewAuditData</code> – Group members can view audit
+     * data.</p> </li> <li> <p> <code>AccessNotebooks</code> – Group members will have
+     * access to FinSpace notebooks.</p> </li> <li> <p>
+     * <code>GetTemporaryCredentials</code> – Group members can get temporary API
+     * credentials.</p> </li> </ul>
      */
     inline UpdatePermissionGroupRequest& WithApplicationPermissions(Aws::Vector<ApplicationPermission>&& value) { SetApplicationPermissions(std::move(value)); return *this;}
 
     /**
      * <p>The permissions that are granted to a specific group for accessing the
-     * FinSpace application.</p> <ul> <li> <p> <code>CreateDataset</code> – Group
-     * members can create new datasets.</p> </li> <li> <p> <code>ManageClusters</code>
-     * – Group members can manage Apache Spark clusters from FinSpace notebooks.</p>
-     * </li> <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage
-     * users and permission groups.</p> </li> <li> <p> <code>ManageAttributeSets</code>
-     * – Group members can manage attribute sets.</p> </li> <li> <p>
-     * <code>ViewAuditData</code> – Group members can view audit data.</p> </li> <li>
-     * <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace
-     * notebooks.</p> </li> <li> <p> <code>GetTemporaryCredentials</code> – Group
-     * members can get temporary API credentials.</p> </li> </ul>
+     * FinSpace application.</p>  <p>When assigning application permissions,
+     * be aware that the permission <code>ManageUsersAndGroups</code> allows users to
+     * grant themselves or others access to any functionality in their FinSpace
+     * environment's application. It should only be granted to trusted users.</p>
+     *  <ul> <li> <p> <code>CreateDataset</code> – Group members can create
+     * new datasets.</p> </li> <li> <p> <code>ManageClusters</code> – Group members can
+     * manage Apache Spark clusters from FinSpace notebooks.</p> </li> <li> <p>
+     * <code>ManageUsersAndGroups</code> – Group members can manage users and
+     * permission groups. This is a privileged permission that allows users to grant
+     * themselves or others access to any functionality in the application. It should
+     * only be granted to trusted users.</p> </li> <li> <p>
+     * <code>ManageAttributeSets</code> – Group members can manage attribute sets.</p>
+     * </li> <li> <p> <code>ViewAuditData</code> – Group members can view audit
+     * data.</p> </li> <li> <p> <code>AccessNotebooks</code> – Group members will have
+     * access to FinSpace notebooks.</p> </li> <li> <p>
+     * <code>GetTemporaryCredentials</code> – Group members can get temporary API
+     * credentials.</p> </li> </ul>
      */
     inline UpdatePermissionGroupRequest& AddApplicationPermissions(const ApplicationPermission& value) { m_applicationPermissionsHasBeenSet = true; m_applicationPermissions.push_back(value); return *this; }
 
     /**
      * <p>The permissions that are granted to a specific group for accessing the
-     * FinSpace application.</p> <ul> <li> <p> <code>CreateDataset</code> – Group
-     * members can create new datasets.</p> </li> <li> <p> <code>ManageClusters</code>
-     * – Group members can manage Apache Spark clusters from FinSpace notebooks.</p>
-     * </li> <li> <p> <code>ManageUsersAndGroups</code> – Group members can manage
-     * users and permission groups.</p> </li> <li> <p> <code>ManageAttributeSets</code>
-     * – Group members can manage attribute sets.</p> </li> <li> <p>
-     * <code>ViewAuditData</code> – Group members can view audit data.</p> </li> <li>
-     * <p> <code>AccessNotebooks</code> – Group members will have access to FinSpace
-     * notebooks.</p> </li> <li> <p> <code>GetTemporaryCredentials</code> – Group
-     * members can get temporary API credentials.</p> </li> </ul>
+     * FinSpace application.</p>  <p>When assigning application permissions,
+     * be aware that the permission <code>ManageUsersAndGroups</code> allows users to
+     * grant themselves or others access to any functionality in their FinSpace
+     * environment's application. It should only be granted to trusted users.</p>
+     *  <ul> <li> <p> <code>CreateDataset</code> – Group members can create
+     * new datasets.</p> </li> <li> <p> <code>ManageClusters</code> – Group members can
+     * manage Apache Spark clusters from FinSpace notebooks.</p> </li> <li> <p>
+     * <code>ManageUsersAndGroups</code> – Group members can manage users and
+     * permission groups. This is a privileged permission that allows users to grant
+     * themselves or others access to any functionality in the application. It should
+     * only be granted to trusted users.</p> </li> <li> <p>
+     * <code>ManageAttributeSets</code> – Group members can manage attribute sets.</p>
+     * </li> <li> <p> <code>ViewAuditData</code> – Group members can view audit
+     * data.</p> </li> <li> <p> <code>AccessNotebooks</code> – Group members will have
+     * access to FinSpace notebooks.</p> </li> <li> <p>
+     * <code>GetTemporaryCredentials</code> – Group members can get temporary API
+     * credentials.</p> </li> </ul>
      */
     inline UpdatePermissionGroupRequest& AddApplicationPermissions(ApplicationPermission&& value) { m_applicationPermissionsHasBeenSet = true; m_applicationPermissions.push_back(std::move(value)); return *this; }
 

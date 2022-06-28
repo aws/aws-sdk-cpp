@@ -24,6 +24,7 @@
 #include <aws/datasync/model/CreateAgentRequest.h>
 #include <aws/datasync/model/CreateLocationEfsRequest.h>
 #include <aws/datasync/model/CreateLocationFsxLustreRequest.h>
+#include <aws/datasync/model/CreateLocationFsxOntapRequest.h>
 #include <aws/datasync/model/CreateLocationFsxOpenZfsRequest.h>
 #include <aws/datasync/model/CreateLocationFsxWindowsRequest.h>
 #include <aws/datasync/model/CreateLocationHdfsRequest.h>
@@ -38,6 +39,7 @@
 #include <aws/datasync/model/DescribeAgentRequest.h>
 #include <aws/datasync/model/DescribeLocationEfsRequest.h>
 #include <aws/datasync/model/DescribeLocationFsxLustreRequest.h>
+#include <aws/datasync/model/DescribeLocationFsxOntapRequest.h>
 #include <aws/datasync/model/DescribeLocationFsxOpenZfsRequest.h>
 #include <aws/datasync/model/DescribeLocationFsxWindowsRequest.h>
 #include <aws/datasync/model/DescribeLocationHdfsRequest.h>
@@ -230,6 +232,30 @@ void DataSyncClient::CreateLocationFsxLustreAsync(const CreateLocationFsxLustreR
 void DataSyncClient::CreateLocationFsxLustreAsyncHelper(const CreateLocationFsxLustreRequest& request, const CreateLocationFsxLustreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateLocationFsxLustre(request), context);
+}
+
+CreateLocationFsxOntapOutcome DataSyncClient::CreateLocationFsxOntap(const CreateLocationFsxOntapRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateLocationFsxOntapOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateLocationFsxOntapOutcomeCallable DataSyncClient::CreateLocationFsxOntapCallable(const CreateLocationFsxOntapRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateLocationFsxOntapOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLocationFsxOntap(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DataSyncClient::CreateLocationFsxOntapAsync(const CreateLocationFsxOntapRequest& request, const CreateLocationFsxOntapResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateLocationFsxOntapAsyncHelper( request, handler, context ); } );
+}
+
+void DataSyncClient::CreateLocationFsxOntapAsyncHelper(const CreateLocationFsxOntapRequest& request, const CreateLocationFsxOntapResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateLocationFsxOntap(request), context);
 }
 
 CreateLocationFsxOpenZfsOutcome DataSyncClient::CreateLocationFsxOpenZfs(const CreateLocationFsxOpenZfsRequest& request) const
@@ -566,6 +592,30 @@ void DataSyncClient::DescribeLocationFsxLustreAsync(const DescribeLocationFsxLus
 void DataSyncClient::DescribeLocationFsxLustreAsyncHelper(const DescribeLocationFsxLustreRequest& request, const DescribeLocationFsxLustreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeLocationFsxLustre(request), context);
+}
+
+DescribeLocationFsxOntapOutcome DataSyncClient::DescribeLocationFsxOntap(const DescribeLocationFsxOntapRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeLocationFsxOntapOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeLocationFsxOntapOutcomeCallable DataSyncClient::DescribeLocationFsxOntapCallable(const DescribeLocationFsxOntapRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeLocationFsxOntapOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeLocationFsxOntap(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DataSyncClient::DescribeLocationFsxOntapAsync(const DescribeLocationFsxOntapRequest& request, const DescribeLocationFsxOntapResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeLocationFsxOntapAsyncHelper( request, handler, context ); } );
+}
+
+void DataSyncClient::DescribeLocationFsxOntapAsyncHelper(const DescribeLocationFsxOntapRequest& request, const DescribeLocationFsxOntapResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeLocationFsxOntap(request), context);
 }
 
 DescribeLocationFsxOpenZfsOutcome DataSyncClient::DescribeLocationFsxOpenZfs(const DescribeLocationFsxOpenZfsRequest& request) const

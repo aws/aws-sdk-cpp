@@ -926,72 +926,72 @@ namespace Model
     /**
      * <p>The type of local storage that is required.</p> <ul> <li> <p>For instance
      * types with hard disk drive (HDD) storage, specify <code>hdd</code>.</p> </li>
-     * <li> <p>For instance types with solid state drive (SDD) storage, specify
-     * <code>sdd</code>.</p> </li> </ul> <p>Default: <code>hdd</code> and
-     * <code>sdd</code> </p>
+     * <li> <p>For instance types with solid state drive (SSD) storage, specify
+     * <code>ssd</code>.</p> </li> </ul> <p>Default: <code>hdd</code> and
+     * <code>ssd</code> </p>
      */
     inline const Aws::Vector<LocalStorageType>& GetLocalStorageTypes() const{ return m_localStorageTypes; }
 
     /**
      * <p>The type of local storage that is required.</p> <ul> <li> <p>For instance
      * types with hard disk drive (HDD) storage, specify <code>hdd</code>.</p> </li>
-     * <li> <p>For instance types with solid state drive (SDD) storage, specify
-     * <code>sdd</code>.</p> </li> </ul> <p>Default: <code>hdd</code> and
-     * <code>sdd</code> </p>
+     * <li> <p>For instance types with solid state drive (SSD) storage, specify
+     * <code>ssd</code>.</p> </li> </ul> <p>Default: <code>hdd</code> and
+     * <code>ssd</code> </p>
      */
     inline bool LocalStorageTypesHasBeenSet() const { return m_localStorageTypesHasBeenSet; }
 
     /**
      * <p>The type of local storage that is required.</p> <ul> <li> <p>For instance
      * types with hard disk drive (HDD) storage, specify <code>hdd</code>.</p> </li>
-     * <li> <p>For instance types with solid state drive (SDD) storage, specify
-     * <code>sdd</code>.</p> </li> </ul> <p>Default: <code>hdd</code> and
-     * <code>sdd</code> </p>
+     * <li> <p>For instance types with solid state drive (SSD) storage, specify
+     * <code>ssd</code>.</p> </li> </ul> <p>Default: <code>hdd</code> and
+     * <code>ssd</code> </p>
      */
     inline void SetLocalStorageTypes(const Aws::Vector<LocalStorageType>& value) { m_localStorageTypesHasBeenSet = true; m_localStorageTypes = value; }
 
     /**
      * <p>The type of local storage that is required.</p> <ul> <li> <p>For instance
      * types with hard disk drive (HDD) storage, specify <code>hdd</code>.</p> </li>
-     * <li> <p>For instance types with solid state drive (SDD) storage, specify
-     * <code>sdd</code>.</p> </li> </ul> <p>Default: <code>hdd</code> and
-     * <code>sdd</code> </p>
+     * <li> <p>For instance types with solid state drive (SSD) storage, specify
+     * <code>ssd</code>.</p> </li> </ul> <p>Default: <code>hdd</code> and
+     * <code>ssd</code> </p>
      */
     inline void SetLocalStorageTypes(Aws::Vector<LocalStorageType>&& value) { m_localStorageTypesHasBeenSet = true; m_localStorageTypes = std::move(value); }
 
     /**
      * <p>The type of local storage that is required.</p> <ul> <li> <p>For instance
      * types with hard disk drive (HDD) storage, specify <code>hdd</code>.</p> </li>
-     * <li> <p>For instance types with solid state drive (SDD) storage, specify
-     * <code>sdd</code>.</p> </li> </ul> <p>Default: <code>hdd</code> and
-     * <code>sdd</code> </p>
+     * <li> <p>For instance types with solid state drive (SSD) storage, specify
+     * <code>ssd</code>.</p> </li> </ul> <p>Default: <code>hdd</code> and
+     * <code>ssd</code> </p>
      */
     inline InstanceRequirementsRequest& WithLocalStorageTypes(const Aws::Vector<LocalStorageType>& value) { SetLocalStorageTypes(value); return *this;}
 
     /**
      * <p>The type of local storage that is required.</p> <ul> <li> <p>For instance
      * types with hard disk drive (HDD) storage, specify <code>hdd</code>.</p> </li>
-     * <li> <p>For instance types with solid state drive (SDD) storage, specify
-     * <code>sdd</code>.</p> </li> </ul> <p>Default: <code>hdd</code> and
-     * <code>sdd</code> </p>
+     * <li> <p>For instance types with solid state drive (SSD) storage, specify
+     * <code>ssd</code>.</p> </li> </ul> <p>Default: <code>hdd</code> and
+     * <code>ssd</code> </p>
      */
     inline InstanceRequirementsRequest& WithLocalStorageTypes(Aws::Vector<LocalStorageType>&& value) { SetLocalStorageTypes(std::move(value)); return *this;}
 
     /**
      * <p>The type of local storage that is required.</p> <ul> <li> <p>For instance
      * types with hard disk drive (HDD) storage, specify <code>hdd</code>.</p> </li>
-     * <li> <p>For instance types with solid state drive (SDD) storage, specify
-     * <code>sdd</code>.</p> </li> </ul> <p>Default: <code>hdd</code> and
-     * <code>sdd</code> </p>
+     * <li> <p>For instance types with solid state drive (SSD) storage, specify
+     * <code>ssd</code>.</p> </li> </ul> <p>Default: <code>hdd</code> and
+     * <code>ssd</code> </p>
      */
     inline InstanceRequirementsRequest& AddLocalStorageTypes(const LocalStorageType& value) { m_localStorageTypesHasBeenSet = true; m_localStorageTypes.push_back(value); return *this; }
 
     /**
      * <p>The type of local storage that is required.</p> <ul> <li> <p>For instance
      * types with hard disk drive (HDD) storage, specify <code>hdd</code>.</p> </li>
-     * <li> <p>For instance types with solid state drive (SDD) storage, specify
-     * <code>sdd</code>.</p> </li> </ul> <p>Default: <code>hdd</code> and
-     * <code>sdd</code> </p>
+     * <li> <p>For instance types with solid state drive (SSD) storage, specify
+     * <code>ssd</code>.</p> </li> </ul> <p>Default: <code>hdd</code> and
+     * <code>ssd</code> </p>
      */
     inline InstanceRequirementsRequest& AddLocalStorageTypes(LocalStorageType&& value) { m_localStorageTypesHasBeenSet = true; m_localStorageTypes.push_back(std::move(value)); return *this; }
 

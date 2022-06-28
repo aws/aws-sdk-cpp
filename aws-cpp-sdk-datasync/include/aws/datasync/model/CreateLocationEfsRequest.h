@@ -356,55 +356,55 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether you want DataSync to use TLS encryption when transferring
-     * data to or from your Amazon EFS file system.</p> <p>If you specify an access
-     * point using <code>AccessPointArn</code> or an IAM role using
-     * <code>FileSystemAccessRoleArn</code>, you must set this parameter to
+     * <p>Specifies whether you want DataSync to use Transport Layer Security (TLS) 1.2
+     * encryption when it copies data to or from the Amazon EFS file system.</p> <p>If
+     * you specify an access point using <code>AccessPointArn</code> or an IAM role
+     * using <code>FileSystemAccessRoleArn</code>, you must set this parameter to
      * <code>TLS1_2</code>.</p>
      */
     inline const EfsInTransitEncryption& GetInTransitEncryption() const{ return m_inTransitEncryption; }
 
     /**
-     * <p>Specifies whether you want DataSync to use TLS encryption when transferring
-     * data to or from your Amazon EFS file system.</p> <p>If you specify an access
-     * point using <code>AccessPointArn</code> or an IAM role using
-     * <code>FileSystemAccessRoleArn</code>, you must set this parameter to
+     * <p>Specifies whether you want DataSync to use Transport Layer Security (TLS) 1.2
+     * encryption when it copies data to or from the Amazon EFS file system.</p> <p>If
+     * you specify an access point using <code>AccessPointArn</code> or an IAM role
+     * using <code>FileSystemAccessRoleArn</code>, you must set this parameter to
      * <code>TLS1_2</code>.</p>
      */
     inline bool InTransitEncryptionHasBeenSet() const { return m_inTransitEncryptionHasBeenSet; }
 
     /**
-     * <p>Specifies whether you want DataSync to use TLS encryption when transferring
-     * data to or from your Amazon EFS file system.</p> <p>If you specify an access
-     * point using <code>AccessPointArn</code> or an IAM role using
-     * <code>FileSystemAccessRoleArn</code>, you must set this parameter to
+     * <p>Specifies whether you want DataSync to use Transport Layer Security (TLS) 1.2
+     * encryption when it copies data to or from the Amazon EFS file system.</p> <p>If
+     * you specify an access point using <code>AccessPointArn</code> or an IAM role
+     * using <code>FileSystemAccessRoleArn</code>, you must set this parameter to
      * <code>TLS1_2</code>.</p>
      */
     inline void SetInTransitEncryption(const EfsInTransitEncryption& value) { m_inTransitEncryptionHasBeenSet = true; m_inTransitEncryption = value; }
 
     /**
-     * <p>Specifies whether you want DataSync to use TLS encryption when transferring
-     * data to or from your Amazon EFS file system.</p> <p>If you specify an access
-     * point using <code>AccessPointArn</code> or an IAM role using
-     * <code>FileSystemAccessRoleArn</code>, you must set this parameter to
+     * <p>Specifies whether you want DataSync to use Transport Layer Security (TLS) 1.2
+     * encryption when it copies data to or from the Amazon EFS file system.</p> <p>If
+     * you specify an access point using <code>AccessPointArn</code> or an IAM role
+     * using <code>FileSystemAccessRoleArn</code>, you must set this parameter to
      * <code>TLS1_2</code>.</p>
      */
     inline void SetInTransitEncryption(EfsInTransitEncryption&& value) { m_inTransitEncryptionHasBeenSet = true; m_inTransitEncryption = std::move(value); }
 
     /**
-     * <p>Specifies whether you want DataSync to use TLS encryption when transferring
-     * data to or from your Amazon EFS file system.</p> <p>If you specify an access
-     * point using <code>AccessPointArn</code> or an IAM role using
-     * <code>FileSystemAccessRoleArn</code>, you must set this parameter to
+     * <p>Specifies whether you want DataSync to use Transport Layer Security (TLS) 1.2
+     * encryption when it copies data to or from the Amazon EFS file system.</p> <p>If
+     * you specify an access point using <code>AccessPointArn</code> or an IAM role
+     * using <code>FileSystemAccessRoleArn</code>, you must set this parameter to
      * <code>TLS1_2</code>.</p>
      */
     inline CreateLocationEfsRequest& WithInTransitEncryption(const EfsInTransitEncryption& value) { SetInTransitEncryption(value); return *this;}
 
     /**
-     * <p>Specifies whether you want DataSync to use TLS encryption when transferring
-     * data to or from your Amazon EFS file system.</p> <p>If you specify an access
-     * point using <code>AccessPointArn</code> or an IAM role using
-     * <code>FileSystemAccessRoleArn</code>, you must set this parameter to
+     * <p>Specifies whether you want DataSync to use Transport Layer Security (TLS) 1.2
+     * encryption when it copies data to or from the Amazon EFS file system.</p> <p>If
+     * you specify an access point using <code>AccessPointArn</code> or an IAM role
+     * using <code>FileSystemAccessRoleArn</code>, you must set this parameter to
      * <code>TLS1_2</code>.</p>
      */
     inline CreateLocationEfsRequest& WithInTransitEncryption(EfsInTransitEncryption&& value) { SetInTransitEncryption(std::move(value)); return *this;}
