@@ -83,10 +83,10 @@ namespace Aws
                 Aws::Vector<unsigned char> outputBits;
 
                 aws_event_stream_message encoded;
-                if (Encode(&encoded, msg))
+                if (InitEncodedStruct(msg, &encoded))
                 {
                     aws_event_stream_message signedMessage;
-                    if (Sign(&signedMessage, &encoded))
+                    if (InitSignedStruct(&encoded, &signedMessage))
                     {
                         // success!
                         const auto signedMessageBuffer = aws_event_stream_message_buffer(&signedMessage);
@@ -102,19 +102,14 @@ namespace Aws
                 return outputBits;
             }
 
-            bool EventStreamEncoder::Encode(aws_event_stream_message* encoded, const Aws::Utils::Event::Message& msg)
+            bool EventStreamEncoder::InitEncodedStruct(const Aws::Utils::Event::Message& msg, aws_event_stream_message* encoded)
             {
                 bool success = false;
 
                 aws_array_list headers;
                 EncodeHeaders(msg, &headers);
 
-                aws_byte_buf payload;
-                payload.len = msg.GetEventPayload().size();
-                // this const_cast is OK because aws_byte_buf will only be "read from" by the following functions.
-                payload.buffer = const_cast<uint8_t*>(msg.GetEventPayload().data());
-                payload.capacity = 0;
-                payload.allocator = nullptr;
+                aws_byte_buf payload = aws_byte_buf_from_array(msg.GetEventPayload().data(), msg.GetEventPayload().size());
 
                 if(aws_event_stream_message_init(encoded, get_aws_allocator(), &headers, &payload) == AWS_OP_SUCCESS)
                 {
@@ -129,7 +124,7 @@ namespace Aws
                 return success;
             }
 
-            bool EventStreamEncoder::Sign(aws_event_stream_message* signedmsg, const aws_event_stream_message* msg)
+            bool EventStreamEncoder::InitSignedStruct(const aws_event_stream_message* msg, aws_event_stream_message* signedmsg)
             {
                 bool success = false;
 
@@ -144,11 +139,7 @@ namespace Aws
                     aws_array_list headers;
                     EncodeHeaders(signedMessage, &headers);
 
-                    aws_byte_buf payload;
-                    payload.len = signedMessage.GetEventPayload().size();
-                    payload.buffer = signedMessage.GetEventPayload().data();
-                    payload.capacity = 0;
-                    payload.allocator = nullptr;
+                    aws_byte_buf payload = aws_byte_buf_from_array(signedMessage.GetEventPayload().data(), signedMessage.GetEventPayload().size());
 
                     if(aws_event_stream_message_init(signedmsg, get_aws_allocator(), &headers, &payload) == AWS_OP_SUCCESS)
                     {
