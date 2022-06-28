@@ -4,7 +4,7 @@
  */
 
 
-#include <aws/external/gtest.h>
+#include <gtest/gtest.h>
 #include <aws/core/client/AWSErrorMarshaller.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>

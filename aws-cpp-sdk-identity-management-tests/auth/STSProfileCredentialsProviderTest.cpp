@@ -12,7 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/testing/platform/PlatformTesting.h>
 #include <aws/core/platform/FileSystem.h>
-#include <aws/external/gtest.h>
+#include <gtest/gtest.h>
 
 #include <fstream>
 #include <cassert>

@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #define AWS_DISABLE_DEPRECATION
-#include <aws/external/gtest.h>
+#include <gtest/gtest.h>
 #include <aws/s3-encryption/materials/SimpleEncryptionMaterials.h>
 #include <aws/s3-encryption/materials/KMSEncryptionMaterials.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>

@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/external/gtest.h>
+#include <gtest/gtest.h>
 #include <aws/testing/mocks/http/MockHttpClient.h>
 
 #include <aws/core/auth/AWSCredentials.h>
