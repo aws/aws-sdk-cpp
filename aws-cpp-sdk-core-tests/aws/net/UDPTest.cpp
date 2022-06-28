@@ -4,7 +4,7 @@
  */
 
 
-#include <aws/external/gtest.h>
+#include <gtest/gtest.h>
 #include <aws/core/utils/threading/Executor.h>
 #include <aws/core/utils/threading/Semaphore.h>
 #include <aws/core/net/SimpleUDP.h>

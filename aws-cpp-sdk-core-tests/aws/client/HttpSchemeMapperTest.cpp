@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/external/gtest.h>
+#include <gtest/gtest.h>
 #include <aws/core/http/Scheme.h>
 
 using namespace Aws::Http;

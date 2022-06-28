@@ -6,7 +6,7 @@
 #include <aws/core/platform/FileSystem.h>
 #include <aws/core/utils/FileSystemUtils.h>
 #include <aws/core/utils/memory/stl/AWSSet.h>
-#include <aws/external/gtest.h>
+#include <gtest/gtest.h>
 #include <fstream>
 #if defined(HAS_PATHCONF)
 #include <unistd.h>

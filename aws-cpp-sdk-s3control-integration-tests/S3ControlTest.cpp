@@ -4,7 +4,7 @@
  */
 
 
-#include <aws/external/gtest.h>
+#include <gtest/gtest.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/DefaultRetryStrategy.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>

@@ -5,7 +5,7 @@
 
 #ifndef NO_SYMMETRIC_ENCRYPTION
 
-#include <aws/external/gtest.h>
+#include <gtest/gtest.h>
 #include <aws/core/utils/crypto/CryptoStream.h>
 #include <aws/core/utils/memory/stl/AWSQueue.h>
 #include <aws/core/utils/memory/stl/AWSString.h>

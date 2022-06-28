@@ -6,7 +6,7 @@
 // Temporarily disable the test on Widnows
 #if defined(HAVE_H2_CLIENT) && !defined(_WIN32)
 
-#include <aws/external/gtest.h>
+#include <gtest/gtest.h>
 #include <aws/core/Aws.h>
 #include <aws/core/internal/AWSHttpResourceClient.h>
 #include <aws/core/client/ClientConfiguration.h>

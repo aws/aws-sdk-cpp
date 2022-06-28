@@ -4,7 +4,7 @@
  */
 #include <fstream>
 
-#include <aws/external/gtest.h>
+#include <gtest/gtest.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/redshift/RedshiftClient.h>
 #include <aws/redshift/model/DeleteClusterRequest.h>

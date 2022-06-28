@@ -6,7 +6,7 @@
 
 #include <aws/testing/MemoryTesting.h>
 
-#include <aws/external/gtest.h>
+#include <gtest/gtest.h>
 
 #include <aws/core/utils/UnreferencedParam.h>
 

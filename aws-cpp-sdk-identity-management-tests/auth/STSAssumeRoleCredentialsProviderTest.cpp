@@ -9,7 +9,7 @@
 #include <aws/sts/model/AssumeRoleRequest.h>
 #include <aws/sts/STSClient.h>
 #include <aws/core/utils/DateTime.h>
-#include <aws/external/gtest.h>
+#include <gtest/gtest.h>
 #include <aws/core/utils/memory/stl/AWSSet.h>
 
 #include <cmath>

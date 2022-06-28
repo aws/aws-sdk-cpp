@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/external/gtest.h>
+#include <gtest/gtest.h>
 #include <aws/testing/MemoryTesting.h>
 #include <aws/identity-management/auth/PersistentCognitoIdentityProvider.h>
 #include <aws/core/platform/FileSystem.h>

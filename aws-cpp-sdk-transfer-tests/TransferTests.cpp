@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/external/gtest.h>
+#include <gtest/gtest.h>
 #include <aws/testing/ProxyConfig.h>
 #include <aws/s3/S3Client.h>
 #include <aws/s3/model/DeleteObjectsRequest.h>

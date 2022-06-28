@@ -4,7 +4,7 @@
  */
 
 
-#include <aws/external/gtest.h>
+#include <gtest/gtest.h>
 #include <aws/core/client/AdaptiveRetryStrategy.h>
 #include <aws/core/utils/Outcome.h>
 
