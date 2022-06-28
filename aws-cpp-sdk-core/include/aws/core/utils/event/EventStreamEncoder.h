@@ -41,8 +41,8 @@ namespace Aws
                  */
                 Aws::Vector<unsigned char> EncodeAndSign(const Aws::Utils::Event::Message& msg);
             private:
-                aws_event_stream_message Encode(const Aws::Utils::Event::Message& msg);
-                aws_event_stream_message Sign(aws_event_stream_message* msg);
+                bool Encode(aws_event_stream_message* dstMsg, const Aws::Utils::Event::Message& srcMsg);
+                bool Sign(aws_event_stream_message* dstMsg, const aws_event_stream_message* srcMsg);
                 Aws::Client::AWSAuthSigner* m_signer;
                 Aws::String m_signatureSeed;
             };
