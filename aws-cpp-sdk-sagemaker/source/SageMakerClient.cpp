@@ -127,6 +127,7 @@
 #include <aws/sagemaker/model/DescribeEndpointConfigRequest.h>
 #include <aws/sagemaker/model/DescribeExperimentRequest.h>
 #include <aws/sagemaker/model/DescribeFeatureGroupRequest.h>
+#include <aws/sagemaker/model/DescribeFeatureMetadataRequest.h>
 #include <aws/sagemaker/model/DescribeFlowDefinitionRequest.h>
 #include <aws/sagemaker/model/DescribeHumanTaskUiRequest.h>
 #include <aws/sagemaker/model/DescribeHyperParameterTuningJobRequest.h>
@@ -257,6 +258,8 @@
 #include <aws/sagemaker/model/UpdateEndpointRequest.h>
 #include <aws/sagemaker/model/UpdateEndpointWeightsAndCapacitiesRequest.h>
 #include <aws/sagemaker/model/UpdateExperimentRequest.h>
+#include <aws/sagemaker/model/UpdateFeatureGroupRequest.h>
+#include <aws/sagemaker/model/UpdateFeatureMetadataRequest.h>
 #include <aws/sagemaker/model/UpdateImageRequest.h>
 #include <aws/sagemaker/model/UpdateModelPackageRequest.h>
 #include <aws/sagemaker/model/UpdateMonitoringScheduleRequest.h>
@@ -2911,6 +2914,30 @@ void SageMakerClient::DescribeFeatureGroupAsync(const DescribeFeatureGroupReques
 void SageMakerClient::DescribeFeatureGroupAsyncHelper(const DescribeFeatureGroupRequest& request, const DescribeFeatureGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeFeatureGroup(request), context);
+}
+
+DescribeFeatureMetadataOutcome SageMakerClient::DescribeFeatureMetadata(const DescribeFeatureMetadataRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeFeatureMetadataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeFeatureMetadataOutcomeCallable SageMakerClient::DescribeFeatureMetadataCallable(const DescribeFeatureMetadataRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeFeatureMetadataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeFeatureMetadata(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::DescribeFeatureMetadataAsync(const DescribeFeatureMetadataRequest& request, const DescribeFeatureMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeFeatureMetadataAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::DescribeFeatureMetadataAsyncHelper(const DescribeFeatureMetadataRequest& request, const DescribeFeatureMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeFeatureMetadata(request), context);
 }
 
 DescribeFlowDefinitionOutcome SageMakerClient::DescribeFlowDefinition(const DescribeFlowDefinitionRequest& request) const
@@ -6031,6 +6058,54 @@ void SageMakerClient::UpdateExperimentAsync(const UpdateExperimentRequest& reque
 void SageMakerClient::UpdateExperimentAsyncHelper(const UpdateExperimentRequest& request, const UpdateExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateExperiment(request), context);
+}
+
+UpdateFeatureGroupOutcome SageMakerClient::UpdateFeatureGroup(const UpdateFeatureGroupRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateFeatureGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateFeatureGroupOutcomeCallable SageMakerClient::UpdateFeatureGroupCallable(const UpdateFeatureGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateFeatureGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateFeatureGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::UpdateFeatureGroupAsync(const UpdateFeatureGroupRequest& request, const UpdateFeatureGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateFeatureGroupAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::UpdateFeatureGroupAsyncHelper(const UpdateFeatureGroupRequest& request, const UpdateFeatureGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateFeatureGroup(request), context);
+}
+
+UpdateFeatureMetadataOutcome SageMakerClient::UpdateFeatureMetadata(const UpdateFeatureMetadataRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateFeatureMetadataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateFeatureMetadataOutcomeCallable SageMakerClient::UpdateFeatureMetadataCallable(const UpdateFeatureMetadataRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateFeatureMetadataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateFeatureMetadata(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::UpdateFeatureMetadataAsync(const UpdateFeatureMetadataRequest& request, const UpdateFeatureMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateFeatureMetadataAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::UpdateFeatureMetadataAsyncHelper(const UpdateFeatureMetadataRequest& request, const UpdateFeatureMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateFeatureMetadata(request), context);
 }
 
 UpdateImageOutcome SageMakerClient::UpdateImage(const UpdateImageRequest& request) const

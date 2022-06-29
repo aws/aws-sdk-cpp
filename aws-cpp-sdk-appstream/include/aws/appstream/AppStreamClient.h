@@ -1606,10 +1606,10 @@ namespace Model
          * <code>DisconnectTimeoutInSeconds</code> attributes.</p> </li> <li> <p>Elastic
          * fleet type</p> <p>You can update the <code>DisplayName</code>,
          * <code>IdleDisconnectTimeoutInSeconds</code>,
-         * <code>DisconnectTimeoutInSeconds</code>, <code>MaxConcurrentSessions</code>, and
-         * <code>UsbDeviceFilterStrings</code> attributes.</p> </li> </ul> <p>If the fleet
-         * is in the <code>STARTING</code> or <code>STOPPED</code> state, you can't update
-         * it.</p><p><h3>See Also:</h3>   <a
+         * <code>DisconnectTimeoutInSeconds</code>, <code>MaxConcurrentSessions</code>,
+         * <code>SessionScriptS3Location</code> and <code>UsbDeviceFilterStrings</code>
+         * attributes.</p> </li> </ul> <p>If the fleet is in the <code>STARTING</code> or
+         * <code>STOPPED</code> state, you can't update it.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateFleet">AWS
          * API Reference</a></p>
          */

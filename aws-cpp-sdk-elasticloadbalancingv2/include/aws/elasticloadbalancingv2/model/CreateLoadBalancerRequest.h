@@ -109,12 +109,13 @@ namespace Model
 
     /**
      * <p>The IDs of the public subnets. You can specify only one subnet per
-     * Availability Zone. You must specify either subnets or subnet mappings.</p>
-     * <p>[Application Load Balancers] You must specify subnets from at least two
-     * Availability Zones.</p> <p>[Application Load Balancers on Outposts] You must
-     * specify one Outpost subnet.</p> <p>[Application Load Balancers on Local Zones]
-     * You can specify subnets from one or more Local Zones.</p> <p>[Network Load
-     * Balancers] You can specify subnets from one or more Availability Zones.</p>
+     * Availability Zone. You must specify either subnets or subnet mappings, but not
+     * both. To specify an Elastic IP address, specify subnet mappings instead of
+     * subnets.</p> <p>[Application Load Balancers] You must specify subnets from at
+     * least two Availability Zones.</p> <p>[Application Load Balancers on Outposts]
+     * You must specify one Outpost subnet.</p> <p>[Application Load Balancers on Local
+     * Zones] You can specify subnets from one or more Local Zones.</p> <p>[Network
+     * Load Balancers] You can specify subnets from one or more Availability Zones.</p>
      * <p>[Gateway Load Balancers] You can specify subnets from one or more
      * Availability Zones.</p>
      */
@@ -122,12 +123,13 @@ namespace Model
 
     /**
      * <p>The IDs of the public subnets. You can specify only one subnet per
-     * Availability Zone. You must specify either subnets or subnet mappings.</p>
-     * <p>[Application Load Balancers] You must specify subnets from at least two
-     * Availability Zones.</p> <p>[Application Load Balancers on Outposts] You must
-     * specify one Outpost subnet.</p> <p>[Application Load Balancers on Local Zones]
-     * You can specify subnets from one or more Local Zones.</p> <p>[Network Load
-     * Balancers] You can specify subnets from one or more Availability Zones.</p>
+     * Availability Zone. You must specify either subnets or subnet mappings, but not
+     * both. To specify an Elastic IP address, specify subnet mappings instead of
+     * subnets.</p> <p>[Application Load Balancers] You must specify subnets from at
+     * least two Availability Zones.</p> <p>[Application Load Balancers on Outposts]
+     * You must specify one Outpost subnet.</p> <p>[Application Load Balancers on Local
+     * Zones] You can specify subnets from one or more Local Zones.</p> <p>[Network
+     * Load Balancers] You can specify subnets from one or more Availability Zones.</p>
      * <p>[Gateway Load Balancers] You can specify subnets from one or more
      * Availability Zones.</p>
      */
@@ -135,12 +137,13 @@ namespace Model
 
     /**
      * <p>The IDs of the public subnets. You can specify only one subnet per
-     * Availability Zone. You must specify either subnets or subnet mappings.</p>
-     * <p>[Application Load Balancers] You must specify subnets from at least two
-     * Availability Zones.</p> <p>[Application Load Balancers on Outposts] You must
-     * specify one Outpost subnet.</p> <p>[Application Load Balancers on Local Zones]
-     * You can specify subnets from one or more Local Zones.</p> <p>[Network Load
-     * Balancers] You can specify subnets from one or more Availability Zones.</p>
+     * Availability Zone. You must specify either subnets or subnet mappings, but not
+     * both. To specify an Elastic IP address, specify subnet mappings instead of
+     * subnets.</p> <p>[Application Load Balancers] You must specify subnets from at
+     * least two Availability Zones.</p> <p>[Application Load Balancers on Outposts]
+     * You must specify one Outpost subnet.</p> <p>[Application Load Balancers on Local
+     * Zones] You can specify subnets from one or more Local Zones.</p> <p>[Network
+     * Load Balancers] You can specify subnets from one or more Availability Zones.</p>
      * <p>[Gateway Load Balancers] You can specify subnets from one or more
      * Availability Zones.</p>
      */
@@ -148,12 +151,13 @@ namespace Model
 
     /**
      * <p>The IDs of the public subnets. You can specify only one subnet per
-     * Availability Zone. You must specify either subnets or subnet mappings.</p>
-     * <p>[Application Load Balancers] You must specify subnets from at least two
-     * Availability Zones.</p> <p>[Application Load Balancers on Outposts] You must
-     * specify one Outpost subnet.</p> <p>[Application Load Balancers on Local Zones]
-     * You can specify subnets from one or more Local Zones.</p> <p>[Network Load
-     * Balancers] You can specify subnets from one or more Availability Zones.</p>
+     * Availability Zone. You must specify either subnets or subnet mappings, but not
+     * both. To specify an Elastic IP address, specify subnet mappings instead of
+     * subnets.</p> <p>[Application Load Balancers] You must specify subnets from at
+     * least two Availability Zones.</p> <p>[Application Load Balancers on Outposts]
+     * You must specify one Outpost subnet.</p> <p>[Application Load Balancers on Local
+     * Zones] You can specify subnets from one or more Local Zones.</p> <p>[Network
+     * Load Balancers] You can specify subnets from one or more Availability Zones.</p>
      * <p>[Gateway Load Balancers] You can specify subnets from one or more
      * Availability Zones.</p>
      */
@@ -161,12 +165,13 @@ namespace Model
 
     /**
      * <p>The IDs of the public subnets. You can specify only one subnet per
-     * Availability Zone. You must specify either subnets or subnet mappings.</p>
-     * <p>[Application Load Balancers] You must specify subnets from at least two
-     * Availability Zones.</p> <p>[Application Load Balancers on Outposts] You must
-     * specify one Outpost subnet.</p> <p>[Application Load Balancers on Local Zones]
-     * You can specify subnets from one or more Local Zones.</p> <p>[Network Load
-     * Balancers] You can specify subnets from one or more Availability Zones.</p>
+     * Availability Zone. You must specify either subnets or subnet mappings, but not
+     * both. To specify an Elastic IP address, specify subnet mappings instead of
+     * subnets.</p> <p>[Application Load Balancers] You must specify subnets from at
+     * least two Availability Zones.</p> <p>[Application Load Balancers on Outposts]
+     * You must specify one Outpost subnet.</p> <p>[Application Load Balancers on Local
+     * Zones] You can specify subnets from one or more Local Zones.</p> <p>[Network
+     * Load Balancers] You can specify subnets from one or more Availability Zones.</p>
      * <p>[Gateway Load Balancers] You can specify subnets from one or more
      * Availability Zones.</p>
      */
@@ -174,12 +179,13 @@ namespace Model
 
     /**
      * <p>The IDs of the public subnets. You can specify only one subnet per
-     * Availability Zone. You must specify either subnets or subnet mappings.</p>
-     * <p>[Application Load Balancers] You must specify subnets from at least two
-     * Availability Zones.</p> <p>[Application Load Balancers on Outposts] You must
-     * specify one Outpost subnet.</p> <p>[Application Load Balancers on Local Zones]
-     * You can specify subnets from one or more Local Zones.</p> <p>[Network Load
-     * Balancers] You can specify subnets from one or more Availability Zones.</p>
+     * Availability Zone. You must specify either subnets or subnet mappings, but not
+     * both. To specify an Elastic IP address, specify subnet mappings instead of
+     * subnets.</p> <p>[Application Load Balancers] You must specify subnets from at
+     * least two Availability Zones.</p> <p>[Application Load Balancers on Outposts]
+     * You must specify one Outpost subnet.</p> <p>[Application Load Balancers on Local
+     * Zones] You can specify subnets from one or more Local Zones.</p> <p>[Network
+     * Load Balancers] You can specify subnets from one or more Availability Zones.</p>
      * <p>[Gateway Load Balancers] You can specify subnets from one or more
      * Availability Zones.</p>
      */
@@ -187,12 +193,13 @@ namespace Model
 
     /**
      * <p>The IDs of the public subnets. You can specify only one subnet per
-     * Availability Zone. You must specify either subnets or subnet mappings.</p>
-     * <p>[Application Load Balancers] You must specify subnets from at least two
-     * Availability Zones.</p> <p>[Application Load Balancers on Outposts] You must
-     * specify one Outpost subnet.</p> <p>[Application Load Balancers on Local Zones]
-     * You can specify subnets from one or more Local Zones.</p> <p>[Network Load
-     * Balancers] You can specify subnets from one or more Availability Zones.</p>
+     * Availability Zone. You must specify either subnets or subnet mappings, but not
+     * both. To specify an Elastic IP address, specify subnet mappings instead of
+     * subnets.</p> <p>[Application Load Balancers] You must specify subnets from at
+     * least two Availability Zones.</p> <p>[Application Load Balancers on Outposts]
+     * You must specify one Outpost subnet.</p> <p>[Application Load Balancers on Local
+     * Zones] You can specify subnets from one or more Local Zones.</p> <p>[Network
+     * Load Balancers] You can specify subnets from one or more Availability Zones.</p>
      * <p>[Gateway Load Balancers] You can specify subnets from one or more
      * Availability Zones.</p>
      */
@@ -200,12 +207,13 @@ namespace Model
 
     /**
      * <p>The IDs of the public subnets. You can specify only one subnet per
-     * Availability Zone. You must specify either subnets or subnet mappings.</p>
-     * <p>[Application Load Balancers] You must specify subnets from at least two
-     * Availability Zones.</p> <p>[Application Load Balancers on Outposts] You must
-     * specify one Outpost subnet.</p> <p>[Application Load Balancers on Local Zones]
-     * You can specify subnets from one or more Local Zones.</p> <p>[Network Load
-     * Balancers] You can specify subnets from one or more Availability Zones.</p>
+     * Availability Zone. You must specify either subnets or subnet mappings, but not
+     * both. To specify an Elastic IP address, specify subnet mappings instead of
+     * subnets.</p> <p>[Application Load Balancers] You must specify subnets from at
+     * least two Availability Zones.</p> <p>[Application Load Balancers on Outposts]
+     * You must specify one Outpost subnet.</p> <p>[Application Load Balancers on Local
+     * Zones] You can specify subnets from one or more Local Zones.</p> <p>[Network
+     * Load Balancers] You can specify subnets from one or more Availability Zones.</p>
      * <p>[Gateway Load Balancers] You can specify subnets from one or more
      * Availability Zones.</p>
      */
@@ -213,12 +221,13 @@ namespace Model
 
     /**
      * <p>The IDs of the public subnets. You can specify only one subnet per
-     * Availability Zone. You must specify either subnets or subnet mappings.</p>
-     * <p>[Application Load Balancers] You must specify subnets from at least two
-     * Availability Zones.</p> <p>[Application Load Balancers on Outposts] You must
-     * specify one Outpost subnet.</p> <p>[Application Load Balancers on Local Zones]
-     * You can specify subnets from one or more Local Zones.</p> <p>[Network Load
-     * Balancers] You can specify subnets from one or more Availability Zones.</p>
+     * Availability Zone. You must specify either subnets or subnet mappings, but not
+     * both. To specify an Elastic IP address, specify subnet mappings instead of
+     * subnets.</p> <p>[Application Load Balancers] You must specify subnets from at
+     * least two Availability Zones.</p> <p>[Application Load Balancers on Outposts]
+     * You must specify one Outpost subnet.</p> <p>[Application Load Balancers on Local
+     * Zones] You can specify subnets from one or more Local Zones.</p> <p>[Network
+     * Load Balancers] You can specify subnets from one or more Availability Zones.</p>
      * <p>[Gateway Load Balancers] You can specify subnets from one or more
      * Availability Zones.</p>
      */
@@ -227,9 +236,9 @@ namespace Model
 
     /**
      * <p>The IDs of the public subnets. You can specify only one subnet per
-     * Availability Zone. You must specify either subnets or subnet mappings.</p>
-     * <p>[Application Load Balancers] You must specify subnets from at least two
-     * Availability Zones. You cannot specify Elastic IP addresses for your
+     * Availability Zone. You must specify either subnets or subnet mappings, but not
+     * both.</p> <p>[Application Load Balancers] You must specify subnets from at least
+     * two Availability Zones. You cannot specify Elastic IP addresses for your
      * subnets.</p> <p>[Application Load Balancers on Outposts] You must specify one
      * Outpost subnet.</p> <p>[Application Load Balancers on Local Zones] You can
      * specify subnets from one or more Local Zones.</p> <p>[Network Load Balancers]
@@ -246,9 +255,9 @@ namespace Model
 
     /**
      * <p>The IDs of the public subnets. You can specify only one subnet per
-     * Availability Zone. You must specify either subnets or subnet mappings.</p>
-     * <p>[Application Load Balancers] You must specify subnets from at least two
-     * Availability Zones. You cannot specify Elastic IP addresses for your
+     * Availability Zone. You must specify either subnets or subnet mappings, but not
+     * both.</p> <p>[Application Load Balancers] You must specify subnets from at least
+     * two Availability Zones. You cannot specify Elastic IP addresses for your
      * subnets.</p> <p>[Application Load Balancers on Outposts] You must specify one
      * Outpost subnet.</p> <p>[Application Load Balancers on Local Zones] You can
      * specify subnets from one or more Local Zones.</p> <p>[Network Load Balancers]
@@ -265,9 +274,9 @@ namespace Model
 
     /**
      * <p>The IDs of the public subnets. You can specify only one subnet per
-     * Availability Zone. You must specify either subnets or subnet mappings.</p>
-     * <p>[Application Load Balancers] You must specify subnets from at least two
-     * Availability Zones. You cannot specify Elastic IP addresses for your
+     * Availability Zone. You must specify either subnets or subnet mappings, but not
+     * both.</p> <p>[Application Load Balancers] You must specify subnets from at least
+     * two Availability Zones. You cannot specify Elastic IP addresses for your
      * subnets.</p> <p>[Application Load Balancers on Outposts] You must specify one
      * Outpost subnet.</p> <p>[Application Load Balancers on Local Zones] You can
      * specify subnets from one or more Local Zones.</p> <p>[Network Load Balancers]
@@ -284,9 +293,9 @@ namespace Model
 
     /**
      * <p>The IDs of the public subnets. You can specify only one subnet per
-     * Availability Zone. You must specify either subnets or subnet mappings.</p>
-     * <p>[Application Load Balancers] You must specify subnets from at least two
-     * Availability Zones. You cannot specify Elastic IP addresses for your
+     * Availability Zone. You must specify either subnets or subnet mappings, but not
+     * both.</p> <p>[Application Load Balancers] You must specify subnets from at least
+     * two Availability Zones. You cannot specify Elastic IP addresses for your
      * subnets.</p> <p>[Application Load Balancers on Outposts] You must specify one
      * Outpost subnet.</p> <p>[Application Load Balancers on Local Zones] You can
      * specify subnets from one or more Local Zones.</p> <p>[Network Load Balancers]
@@ -303,9 +312,9 @@ namespace Model
 
     /**
      * <p>The IDs of the public subnets. You can specify only one subnet per
-     * Availability Zone. You must specify either subnets or subnet mappings.</p>
-     * <p>[Application Load Balancers] You must specify subnets from at least two
-     * Availability Zones. You cannot specify Elastic IP addresses for your
+     * Availability Zone. You must specify either subnets or subnet mappings, but not
+     * both.</p> <p>[Application Load Balancers] You must specify subnets from at least
+     * two Availability Zones. You cannot specify Elastic IP addresses for your
      * subnets.</p> <p>[Application Load Balancers on Outposts] You must specify one
      * Outpost subnet.</p> <p>[Application Load Balancers on Local Zones] You can
      * specify subnets from one or more Local Zones.</p> <p>[Network Load Balancers]
@@ -322,9 +331,9 @@ namespace Model
 
     /**
      * <p>The IDs of the public subnets. You can specify only one subnet per
-     * Availability Zone. You must specify either subnets or subnet mappings.</p>
-     * <p>[Application Load Balancers] You must specify subnets from at least two
-     * Availability Zones. You cannot specify Elastic IP addresses for your
+     * Availability Zone. You must specify either subnets or subnet mappings, but not
+     * both.</p> <p>[Application Load Balancers] You must specify subnets from at least
+     * two Availability Zones. You cannot specify Elastic IP addresses for your
      * subnets.</p> <p>[Application Load Balancers on Outposts] You must specify one
      * Outpost subnet.</p> <p>[Application Load Balancers on Local Zones] You can
      * specify subnets from one or more Local Zones.</p> <p>[Network Load Balancers]
@@ -341,9 +350,9 @@ namespace Model
 
     /**
      * <p>The IDs of the public subnets. You can specify only one subnet per
-     * Availability Zone. You must specify either subnets or subnet mappings.</p>
-     * <p>[Application Load Balancers] You must specify subnets from at least two
-     * Availability Zones. You cannot specify Elastic IP addresses for your
+     * Availability Zone. You must specify either subnets or subnet mappings, but not
+     * both.</p> <p>[Application Load Balancers] You must specify subnets from at least
+     * two Availability Zones. You cannot specify Elastic IP addresses for your
      * subnets.</p> <p>[Application Load Balancers on Outposts] You must specify one
      * Outpost subnet.</p> <p>[Application Load Balancers on Local Zones] You can
      * specify subnets from one or more Local Zones.</p> <p>[Network Load Balancers]
@@ -360,9 +369,9 @@ namespace Model
 
     /**
      * <p>The IDs of the public subnets. You can specify only one subnet per
-     * Availability Zone. You must specify either subnets or subnet mappings.</p>
-     * <p>[Application Load Balancers] You must specify subnets from at least two
-     * Availability Zones. You cannot specify Elastic IP addresses for your
+     * Availability Zone. You must specify either subnets or subnet mappings, but not
+     * both.</p> <p>[Application Load Balancers] You must specify subnets from at least
+     * two Availability Zones. You cannot specify Elastic IP addresses for your
      * subnets.</p> <p>[Application Load Balancers on Outposts] You must specify one
      * Outpost subnet.</p> <p>[Application Load Balancers on Local Zones] You can
      * specify subnets from one or more Local Zones.</p> <p>[Network Load Balancers]

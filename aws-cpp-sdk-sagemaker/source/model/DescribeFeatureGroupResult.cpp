@@ -17,12 +17,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 DescribeFeatureGroupResult::DescribeFeatureGroupResult() : 
-    m_featureGroupStatus(FeatureGroupStatus::NOT_SET)
+    m_featureGroupStatus(FeatureGroupStatus::NOT_SET),
+    m_onlineStoreTotalSizeBytes(0)
 {
 }
 
 DescribeFeatureGroupResult::DescribeFeatureGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_featureGroupStatus(FeatureGroupStatus::NOT_SET)
+    m_featureGroupStatus(FeatureGroupStatus::NOT_SET),
+    m_onlineStoreTotalSizeBytes(0)
 {
   *this = result;
 }
@@ -69,6 +71,12 @@ DescribeFeatureGroupResult& DescribeFeatureGroupResult::operator =(const Aws::Am
 
   }
 
+  if(jsonValue.ValueExists("LastModifiedTime"))
+  {
+    m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
+
+  }
+
   if(jsonValue.ValueExists("OnlineStoreConfig"))
   {
     m_onlineStoreConfig = jsonValue.GetObject("OnlineStoreConfig");
@@ -99,6 +107,12 @@ DescribeFeatureGroupResult& DescribeFeatureGroupResult::operator =(const Aws::Am
 
   }
 
+  if(jsonValue.ValueExists("LastUpdateStatus"))
+  {
+    m_lastUpdateStatus = jsonValue.GetObject("LastUpdateStatus");
+
+  }
+
   if(jsonValue.ValueExists("FailureReason"))
   {
     m_failureReason = jsonValue.GetString("FailureReason");
@@ -114,6 +128,12 @@ DescribeFeatureGroupResult& DescribeFeatureGroupResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
+
+  }
+
+  if(jsonValue.ValueExists("OnlineStoreTotalSizeBytes"))
+  {
+    m_onlineStoreTotalSizeBytes = jsonValue.GetInt64("OnlineStoreTotalSizeBytes");
 
   }
 

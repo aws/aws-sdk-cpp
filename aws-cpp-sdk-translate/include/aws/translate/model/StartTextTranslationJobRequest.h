@@ -81,38 +81,38 @@ namespace Model
 
 
     /**
-     * <p>Specifies the format and S3 location of the input documents for the
-     * translation job.</p>
+     * <p>Specifies the format and location of the input documents for the translation
+     * job.</p>
      */
     inline const InputDataConfig& GetInputDataConfig() const{ return m_inputDataConfig; }
 
     /**
-     * <p>Specifies the format and S3 location of the input documents for the
-     * translation job.</p>
+     * <p>Specifies the format and location of the input documents for the translation
+     * job.</p>
      */
     inline bool InputDataConfigHasBeenSet() const { return m_inputDataConfigHasBeenSet; }
 
     /**
-     * <p>Specifies the format and S3 location of the input documents for the
-     * translation job.</p>
+     * <p>Specifies the format and location of the input documents for the translation
+     * job.</p>
      */
     inline void SetInputDataConfig(const InputDataConfig& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig = value; }
 
     /**
-     * <p>Specifies the format and S3 location of the input documents for the
-     * translation job.</p>
+     * <p>Specifies the format and location of the input documents for the translation
+     * job.</p>
      */
     inline void SetInputDataConfig(InputDataConfig&& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig = std::move(value); }
 
     /**
-     * <p>Specifies the format and S3 location of the input documents for the
-     * translation job.</p>
+     * <p>Specifies the format and location of the input documents for the translation
+     * job.</p>
      */
     inline StartTextTranslationJobRequest& WithInputDataConfig(const InputDataConfig& value) { SetInputDataConfig(value); return *this;}
 
     /**
-     * <p>Specifies the format and S3 location of the input documents for the
-     * translation job.</p>
+     * <p>Specifies the format and location of the input documents for the translation
+     * job.</p>
      */
     inline StartTextTranslationJobRequest& WithInputDataConfig(InputDataConfig&& value) { SetInputDataConfig(std::move(value)); return *this;}
 
@@ -527,87 +527,93 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier for the request. This token is auto-generated when using
-     * the Amazon Translate SDK.</p>
+     * <p>A unique identifier for the request. This token is generated for you when
+     * using the Amazon Translate SDK.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>A unique identifier for the request. This token is auto-generated when using
-     * the Amazon Translate SDK.</p>
+     * <p>A unique identifier for the request. This token is generated for you when
+     * using the Amazon Translate SDK.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
-     * <p>A unique identifier for the request. This token is auto-generated when using
-     * the Amazon Translate SDK.</p>
+     * <p>A unique identifier for the request. This token is generated for you when
+     * using the Amazon Translate SDK.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>A unique identifier for the request. This token is auto-generated when using
-     * the Amazon Translate SDK.</p>
+     * <p>A unique identifier for the request. This token is generated for you when
+     * using the Amazon Translate SDK.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>A unique identifier for the request. This token is auto-generated when using
-     * the Amazon Translate SDK.</p>
+     * <p>A unique identifier for the request. This token is generated for you when
+     * using the Amazon Translate SDK.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>A unique identifier for the request. This token is auto-generated when using
-     * the Amazon Translate SDK.</p>
+     * <p>A unique identifier for the request. This token is generated for you when
+     * using the Amazon Translate SDK.</p>
      */
     inline StartTextTranslationJobRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>A unique identifier for the request. This token is auto-generated when using
-     * the Amazon Translate SDK.</p>
+     * <p>A unique identifier for the request. This token is generated for you when
+     * using the Amazon Translate SDK.</p>
      */
     inline StartTextTranslationJobRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for the request. This token is auto-generated when using
-     * the Amazon Translate SDK.</p>
+     * <p>A unique identifier for the request. This token is generated for you when
+     * using the Amazon Translate SDK.</p>
      */
     inline StartTextTranslationJobRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
 
     /**
      * <p>Settings to configure your translation output, including the option to mask
-     * profane words and phrases.</p>
+     * profane words and phrases. <code>StartTextTranslationJob</code> does not support
+     * the formality setting.</p>
      */
     inline const TranslationSettings& GetSettings() const{ return m_settings; }
 
     /**
      * <p>Settings to configure your translation output, including the option to mask
-     * profane words and phrases.</p>
+     * profane words and phrases. <code>StartTextTranslationJob</code> does not support
+     * the formality setting.</p>
      */
     inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
 
     /**
      * <p>Settings to configure your translation output, including the option to mask
-     * profane words and phrases.</p>
+     * profane words and phrases. <code>StartTextTranslationJob</code> does not support
+     * the formality setting.</p>
      */
     inline void SetSettings(const TranslationSettings& value) { m_settingsHasBeenSet = true; m_settings = value; }
 
     /**
      * <p>Settings to configure your translation output, including the option to mask
-     * profane words and phrases.</p>
+     * profane words and phrases. <code>StartTextTranslationJob</code> does not support
+     * the formality setting.</p>
      */
     inline void SetSettings(TranslationSettings&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
 
     /**
      * <p>Settings to configure your translation output, including the option to mask
-     * profane words and phrases.</p>
+     * profane words and phrases. <code>StartTextTranslationJob</code> does not support
+     * the formality setting.</p>
      */
     inline StartTextTranslationJobRequest& WithSettings(const TranslationSettings& value) { SetSettings(value); return *this;}
 
     /**
      * <p>Settings to configure your translation output, including the option to mask
-     * profane words and phrases.</p>
+     * profane words and phrases. <code>StartTextTranslationJob</code> does not support
+     * the formality setting.</p>
      */
     inline StartTextTranslationJobRequest& WithSettings(TranslationSettings&& value) { SetSettings(std::move(value)); return *this;}
 

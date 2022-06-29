@@ -24,9 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>EBS volume specifications such as volume type, IOPS, and size (GiB) that will
-   * be requested for the EBS volume attached to an EC2 instance in the
-   * cluster.</p><p><h3>See Also:</h3>   <a
+   * <p>EBS volume specifications such as volume type, IOPS, size (GiB) and
+   * throughput (MiB/s) that are requested for the EBS volume attached to an EC2
+   * instance in the cluster.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/VolumeSpecification">AWS
    * API Reference</a></p>
    */
@@ -125,6 +125,31 @@ namespace Model
      */
     inline VolumeSpecification& WithSizeInGB(int value) { SetSizeInGB(value); return *this;}
 
+
+    /**
+     * <p>The throughput, in mebibyte per second (MiB/s). This optional parameter can
+     * be a number from 125 - 1000 and is valid only for gp3 volumes.</p>
+     */
+    inline int GetThroughput() const{ return m_throughput; }
+
+    /**
+     * <p>The throughput, in mebibyte per second (MiB/s). This optional parameter can
+     * be a number from 125 - 1000 and is valid only for gp3 volumes.</p>
+     */
+    inline bool ThroughputHasBeenSet() const { return m_throughputHasBeenSet; }
+
+    /**
+     * <p>The throughput, in mebibyte per second (MiB/s). This optional parameter can
+     * be a number from 125 - 1000 and is valid only for gp3 volumes.</p>
+     */
+    inline void SetThroughput(int value) { m_throughputHasBeenSet = true; m_throughput = value; }
+
+    /**
+     * <p>The throughput, in mebibyte per second (MiB/s). This optional parameter can
+     * be a number from 125 - 1000 and is valid only for gp3 volumes.</p>
+     */
+    inline VolumeSpecification& WithThroughput(int value) { SetThroughput(value); return *this;}
+
   private:
 
     Aws::String m_volumeType;
@@ -135,6 +160,9 @@ namespace Model
 
     int m_sizeInGB;
     bool m_sizeInGBHasBeenSet;
+
+    int m_throughput;
+    bool m_throughputHasBeenSet;
   };
 
 } // namespace Model

@@ -17,6 +17,7 @@ PurchaseOfferingRequest::PurchaseOfferingRequest() :
     m_countHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_offeringIdHasBeenSet(false),
+    m_renewalSettingsHasBeenSet(false),
     m_requestId(Aws::Utils::UUID::RandomUUID()),
     m_requestIdHasBeenSet(true),
     m_startHasBeenSet(false),
@@ -37,6 +38,12 @@ Aws::String PurchaseOfferingRequest::SerializePayload() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_renewalSettingsHasBeenSet)
+  {
+   payload.WithObject("renewalSettings", m_renewalSettings.Jsonize());
 
   }
 

@@ -25,12 +25,14 @@ FeatureGroup::FeatureGroup() :
     m_eventTimeFeatureNameHasBeenSet(false),
     m_featureDefinitionsHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
+    m_lastModifiedTimeHasBeenSet(false),
     m_onlineStoreConfigHasBeenSet(false),
     m_offlineStoreConfigHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_featureGroupStatus(FeatureGroupStatus::NOT_SET),
     m_featureGroupStatusHasBeenSet(false),
     m_offlineStoreStatusHasBeenSet(false),
+    m_lastUpdateStatusHasBeenSet(false),
     m_failureReasonHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_tagsHasBeenSet(false)
@@ -44,12 +46,14 @@ FeatureGroup::FeatureGroup(JsonView jsonValue) :
     m_eventTimeFeatureNameHasBeenSet(false),
     m_featureDefinitionsHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
+    m_lastModifiedTimeHasBeenSet(false),
     m_onlineStoreConfigHasBeenSet(false),
     m_offlineStoreConfigHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_featureGroupStatus(FeatureGroupStatus::NOT_SET),
     m_featureGroupStatusHasBeenSet(false),
     m_offlineStoreStatusHasBeenSet(false),
+    m_lastUpdateStatusHasBeenSet(false),
     m_failureReasonHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_tagsHasBeenSet(false)
@@ -104,6 +108,13 @@ FeatureGroup& FeatureGroup::operator =(JsonView jsonValue)
     m_creationTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LastModifiedTime"))
+  {
+    m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
+
+    m_lastModifiedTimeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("OnlineStoreConfig"))
   {
     m_onlineStoreConfig = jsonValue.GetObject("OnlineStoreConfig");
@@ -137,6 +148,13 @@ FeatureGroup& FeatureGroup::operator =(JsonView jsonValue)
     m_offlineStoreStatus = jsonValue.GetObject("OfflineStoreStatus");
 
     m_offlineStoreStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LastUpdateStatus"))
+  {
+    m_lastUpdateStatus = jsonValue.GetObject("LastUpdateStatus");
+
+    m_lastUpdateStatusHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("FailureReason"))
@@ -210,6 +228,11 @@ JsonValue FeatureGroup::Jsonize() const
    payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
   }
 
+  if(m_lastModifiedTimeHasBeenSet)
+  {
+   payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
+  }
+
   if(m_onlineStoreConfigHasBeenSet)
   {
    payload.WithObject("OnlineStoreConfig", m_onlineStoreConfig.Jsonize());
@@ -236,6 +259,12 @@ JsonValue FeatureGroup::Jsonize() const
   if(m_offlineStoreStatusHasBeenSet)
   {
    payload.WithObject("OfflineStoreStatus", m_offlineStoreStatus.Jsonize());
+
+  }
+
+  if(m_lastUpdateStatusHasBeenSet)
+  {
+   payload.WithObject("LastUpdateStatus", m_lastUpdateStatus.Jsonize());
 
   }
 

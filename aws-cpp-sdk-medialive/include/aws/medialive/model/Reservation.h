@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/medialive/model/OfferingDurationUnits.h>
 #include <aws/medialive/model/OfferingType.h>
+#include <aws/medialive/model/RenewalSettings.h>
 #include <aws/medialive/model/ReservationResourceSpecification.h>
 #include <aws/medialive/model/ReservationState.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -471,6 +472,37 @@ namespace Model
 
 
     /**
+     * Renewal settings for the reservation
+     */
+    inline const RenewalSettings& GetRenewalSettings() const{ return m_renewalSettings; }
+
+    /**
+     * Renewal settings for the reservation
+     */
+    inline bool RenewalSettingsHasBeenSet() const { return m_renewalSettingsHasBeenSet; }
+
+    /**
+     * Renewal settings for the reservation
+     */
+    inline void SetRenewalSettings(const RenewalSettings& value) { m_renewalSettingsHasBeenSet = true; m_renewalSettings = value; }
+
+    /**
+     * Renewal settings for the reservation
+     */
+    inline void SetRenewalSettings(RenewalSettings&& value) { m_renewalSettingsHasBeenSet = true; m_renewalSettings = std::move(value); }
+
+    /**
+     * Renewal settings for the reservation
+     */
+    inline Reservation& WithRenewalSettings(const RenewalSettings& value) { SetRenewalSettings(value); return *this;}
+
+    /**
+     * Renewal settings for the reservation
+     */
+    inline Reservation& WithRenewalSettings(RenewalSettings&& value) { SetRenewalSettings(std::move(value)); return *this;}
+
+
+    /**
      * Unique reservation ID, e.g. '1234567'
      */
     inline const Aws::String& GetReservationId() const{ return m_reservationId; }
@@ -745,6 +777,9 @@ namespace Model
 
     Aws::String m_region;
     bool m_regionHasBeenSet;
+
+    RenewalSettings m_renewalSettings;
+    bool m_renewalSettingsHasBeenSet;
 
     Aws::String m_reservationId;
     bool m_reservationIdHasBeenSet;
