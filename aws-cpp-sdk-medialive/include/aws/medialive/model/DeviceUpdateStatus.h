@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     UP_TO_DATE,
-    NOT_UP_TO_DATE
+    NOT_UP_TO_DATE,
+    UPDATING
   };
 
 namespace DeviceUpdateStatusMapper

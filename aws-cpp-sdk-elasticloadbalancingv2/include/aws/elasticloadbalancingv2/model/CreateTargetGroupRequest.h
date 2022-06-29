@@ -557,41 +557,41 @@ namespace Model
 
     /**
      * <p>The approximate amount of time, in seconds, between health checks of an
-     * individual target. If the target group protocol is TCP, TLS, UDP, or TCP_UDP,
-     * the supported values are 10 and 30 seconds. If the target group protocol is HTTP
-     * or HTTPS, the default is 30 seconds. If the target group protocol is GENEVE, the
-     * default is 10 seconds. If the target type is <code>lambda</code>, the default is
-     * 35 seconds.</p>
+     * individual target. If the target group protocol is HTTP or HTTPS, the default is
+     * 30 seconds. If the target group protocol is TCP, TLS, UDP, or TCP_UDP, the
+     * supported values are 10 and 30 seconds and the default is 30 seconds. If the
+     * target group protocol is GENEVE, the default is 10 seconds. If the target type
+     * is <code>lambda</code>, the default is 35 seconds.</p>
      */
     inline int GetHealthCheckIntervalSeconds() const{ return m_healthCheckIntervalSeconds; }
 
     /**
      * <p>The approximate amount of time, in seconds, between health checks of an
-     * individual target. If the target group protocol is TCP, TLS, UDP, or TCP_UDP,
-     * the supported values are 10 and 30 seconds. If the target group protocol is HTTP
-     * or HTTPS, the default is 30 seconds. If the target group protocol is GENEVE, the
-     * default is 10 seconds. If the target type is <code>lambda</code>, the default is
-     * 35 seconds.</p>
+     * individual target. If the target group protocol is HTTP or HTTPS, the default is
+     * 30 seconds. If the target group protocol is TCP, TLS, UDP, or TCP_UDP, the
+     * supported values are 10 and 30 seconds and the default is 30 seconds. If the
+     * target group protocol is GENEVE, the default is 10 seconds. If the target type
+     * is <code>lambda</code>, the default is 35 seconds.</p>
      */
     inline bool HealthCheckIntervalSecondsHasBeenSet() const { return m_healthCheckIntervalSecondsHasBeenSet; }
 
     /**
      * <p>The approximate amount of time, in seconds, between health checks of an
-     * individual target. If the target group protocol is TCP, TLS, UDP, or TCP_UDP,
-     * the supported values are 10 and 30 seconds. If the target group protocol is HTTP
-     * or HTTPS, the default is 30 seconds. If the target group protocol is GENEVE, the
-     * default is 10 seconds. If the target type is <code>lambda</code>, the default is
-     * 35 seconds.</p>
+     * individual target. If the target group protocol is HTTP or HTTPS, the default is
+     * 30 seconds. If the target group protocol is TCP, TLS, UDP, or TCP_UDP, the
+     * supported values are 10 and 30 seconds and the default is 30 seconds. If the
+     * target group protocol is GENEVE, the default is 10 seconds. If the target type
+     * is <code>lambda</code>, the default is 35 seconds.</p>
      */
     inline void SetHealthCheckIntervalSeconds(int value) { m_healthCheckIntervalSecondsHasBeenSet = true; m_healthCheckIntervalSeconds = value; }
 
     /**
      * <p>The approximate amount of time, in seconds, between health checks of an
-     * individual target. If the target group protocol is TCP, TLS, UDP, or TCP_UDP,
-     * the supported values are 10 and 30 seconds. If the target group protocol is HTTP
-     * or HTTPS, the default is 30 seconds. If the target group protocol is GENEVE, the
-     * default is 10 seconds. If the target type is <code>lambda</code>, the default is
-     * 35 seconds.</p>
+     * individual target. If the target group protocol is HTTP or HTTPS, the default is
+     * 30 seconds. If the target group protocol is TCP, TLS, UDP, or TCP_UDP, the
+     * supported values are 10 and 30 seconds and the default is 30 seconds. If the
+     * target group protocol is GENEVE, the default is 10 seconds. If the target type
+     * is <code>lambda</code>, the default is 35 seconds.</p>
      */
     inline CreateTargetGroupRequest& WithHealthCheckIntervalSeconds(int value) { SetHealthCheckIntervalSeconds(value); return *this;}
 

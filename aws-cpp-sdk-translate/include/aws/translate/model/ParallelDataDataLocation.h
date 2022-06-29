@@ -81,7 +81,7 @@ namespace Model
 
     /**
      * <p>The Amazon S3 location of the parallel data input file. The location is
-     * returned as a presigned URL to that has a 30 minute expiration.</p> 
+     * returned as a presigned URL to that has a 30-minute expiration.</p> 
      * <p>Amazon Translate doesn't scan all input files for the risk of CSV injection
      * attacks. </p> <p>CSV injection occurs when a .csv or .tsv file is altered so
      * that a record contains malicious code. The record begins with a special
@@ -94,7 +94,7 @@ namespace Model
 
     /**
      * <p>The Amazon S3 location of the parallel data input file. The location is
-     * returned as a presigned URL to that has a 30 minute expiration.</p> 
+     * returned as a presigned URL to that has a 30-minute expiration.</p> 
      * <p>Amazon Translate doesn't scan all input files for the risk of CSV injection
      * attacks. </p> <p>CSV injection occurs when a .csv or .tsv file is altered so
      * that a record contains malicious code. The record begins with a special
@@ -107,7 +107,7 @@ namespace Model
 
     /**
      * <p>The Amazon S3 location of the parallel data input file. The location is
-     * returned as a presigned URL to that has a 30 minute expiration.</p> 
+     * returned as a presigned URL to that has a 30-minute expiration.</p> 
      * <p>Amazon Translate doesn't scan all input files for the risk of CSV injection
      * attacks. </p> <p>CSV injection occurs when a .csv or .tsv file is altered so
      * that a record contains malicious code. The record begins with a special
@@ -120,7 +120,7 @@ namespace Model
 
     /**
      * <p>The Amazon S3 location of the parallel data input file. The location is
-     * returned as a presigned URL to that has a 30 minute expiration.</p> 
+     * returned as a presigned URL to that has a 30-minute expiration.</p> 
      * <p>Amazon Translate doesn't scan all input files for the risk of CSV injection
      * attacks. </p> <p>CSV injection occurs when a .csv or .tsv file is altered so
      * that a record contains malicious code. The record begins with a special
@@ -133,7 +133,7 @@ namespace Model
 
     /**
      * <p>The Amazon S3 location of the parallel data input file. The location is
-     * returned as a presigned URL to that has a 30 minute expiration.</p> 
+     * returned as a presigned URL to that has a 30-minute expiration.</p> 
      * <p>Amazon Translate doesn't scan all input files for the risk of CSV injection
      * attacks. </p> <p>CSV injection occurs when a .csv or .tsv file is altered so
      * that a record contains malicious code. The record begins with a special
@@ -146,7 +146,7 @@ namespace Model
 
     /**
      * <p>The Amazon S3 location of the parallel data input file. The location is
-     * returned as a presigned URL to that has a 30 minute expiration.</p> 
+     * returned as a presigned URL to that has a 30-minute expiration.</p> 
      * <p>Amazon Translate doesn't scan all input files for the risk of CSV injection
      * attacks. </p> <p>CSV injection occurs when a .csv or .tsv file is altered so
      * that a record contains malicious code. The record begins with a special
@@ -159,7 +159,7 @@ namespace Model
 
     /**
      * <p>The Amazon S3 location of the parallel data input file. The location is
-     * returned as a presigned URL to that has a 30 minute expiration.</p> 
+     * returned as a presigned URL to that has a 30-minute expiration.</p> 
      * <p>Amazon Translate doesn't scan all input files for the risk of CSV injection
      * attacks. </p> <p>CSV injection occurs when a .csv or .tsv file is altered so
      * that a record contains malicious code. The record begins with a special
@@ -172,7 +172,7 @@ namespace Model
 
     /**
      * <p>The Amazon S3 location of the parallel data input file. The location is
-     * returned as a presigned URL to that has a 30 minute expiration.</p> 
+     * returned as a presigned URL to that has a 30-minute expiration.</p> 
      * <p>Amazon Translate doesn't scan all input files for the risk of CSV injection
      * attacks. </p> <p>CSV injection occurs when a .csv or .tsv file is altered so
      * that a record contains malicious code. The record begins with a special

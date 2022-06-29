@@ -14,6 +14,7 @@ using namespace Aws::Utils;
 
 UpdateReservationRequest::UpdateReservationRequest() : 
     m_nameHasBeenSet(false),
+    m_renewalSettingsHasBeenSet(false),
     m_reservationIdHasBeenSet(false)
 {
 }
@@ -25,6 +26,12 @@ Aws::String UpdateReservationRequest::SerializePayload() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_renewalSettingsHasBeenSet)
+  {
+   payload.WithObject("renewalSettings", m_renewalSettings.Jsonize());
 
   }
 

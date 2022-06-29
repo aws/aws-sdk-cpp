@@ -26,7 +26,8 @@ namespace Model
     USER_SETTINGS,
     EMBED_HOST_DOMAINS,
     IAM_ROLE_ARN,
-    ACCESS_ENDPOINTS
+    ACCESS_ENDPOINTS,
+    STREAMING_EXPERIENCE_SETTINGS
   };
 
 namespace StackAttributeMapper

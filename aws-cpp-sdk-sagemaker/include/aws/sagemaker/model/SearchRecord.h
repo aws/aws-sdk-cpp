@@ -16,6 +16,7 @@
 #include <aws/sagemaker/model/PipelineExecution.h>
 #include <aws/sagemaker/model/FeatureGroup.h>
 #include <aws/sagemaker/model/Project.h>
+#include <aws/sagemaker/model/FeatureMetadata.h>
 #include <utility>
 
 namespace Aws
@@ -316,6 +317,37 @@ namespace Model
      */
     inline SearchRecord& WithProject(Project&& value) { SetProject(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The feature metadata used to search through the features.</p>
+     */
+    inline const FeatureMetadata& GetFeatureMetadata() const{ return m_featureMetadata; }
+
+    /**
+     * <p>The feature metadata used to search through the features.</p>
+     */
+    inline bool FeatureMetadataHasBeenSet() const { return m_featureMetadataHasBeenSet; }
+
+    /**
+     * <p>The feature metadata used to search through the features.</p>
+     */
+    inline void SetFeatureMetadata(const FeatureMetadata& value) { m_featureMetadataHasBeenSet = true; m_featureMetadata = value; }
+
+    /**
+     * <p>The feature metadata used to search through the features.</p>
+     */
+    inline void SetFeatureMetadata(FeatureMetadata&& value) { m_featureMetadataHasBeenSet = true; m_featureMetadata = std::move(value); }
+
+    /**
+     * <p>The feature metadata used to search through the features.</p>
+     */
+    inline SearchRecord& WithFeatureMetadata(const FeatureMetadata& value) { SetFeatureMetadata(value); return *this;}
+
+    /**
+     * <p>The feature metadata used to search through the features.</p>
+     */
+    inline SearchRecord& WithFeatureMetadata(FeatureMetadata&& value) { SetFeatureMetadata(std::move(value)); return *this;}
+
   private:
 
     TrainingJob m_trainingJob;
@@ -350,6 +382,9 @@ namespace Model
 
     Project m_project;
     bool m_projectHasBeenSet;
+
+    FeatureMetadata m_featureMetadata;
+    bool m_featureMetadataHasBeenSet;
   };
 
 } // namespace Model

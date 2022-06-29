@@ -62,7 +62,7 @@ namespace Model
     /**
      * <p>The Amazon S3 location of the most recent parallel data input file that was
      * successfully imported into Amazon Translate. The location is returned as a
-     * presigned URL that has a 30 minute expiration.</p>  <p>Amazon
+     * presigned URL that has a 30-minute expiration.</p>  <p>Amazon
      * Translate doesn't scan all input files for the risk of CSV injection attacks.
      * </p> <p>CSV injection occurs when a .csv or .tsv file is altered so that a
      * record contains malicious code. The record begins with a special character, such
@@ -76,7 +76,7 @@ namespace Model
     /**
      * <p>The Amazon S3 location of the most recent parallel data input file that was
      * successfully imported into Amazon Translate. The location is returned as a
-     * presigned URL that has a 30 minute expiration.</p>  <p>Amazon
+     * presigned URL that has a 30-minute expiration.</p>  <p>Amazon
      * Translate doesn't scan all input files for the risk of CSV injection attacks.
      * </p> <p>CSV injection occurs when a .csv or .tsv file is altered so that a
      * record contains malicious code. The record begins with a special character, such
@@ -90,7 +90,7 @@ namespace Model
     /**
      * <p>The Amazon S3 location of the most recent parallel data input file that was
      * successfully imported into Amazon Translate. The location is returned as a
-     * presigned URL that has a 30 minute expiration.</p>  <p>Amazon
+     * presigned URL that has a 30-minute expiration.</p>  <p>Amazon
      * Translate doesn't scan all input files for the risk of CSV injection attacks.
      * </p> <p>CSV injection occurs when a .csv or .tsv file is altered so that a
      * record contains malicious code. The record begins with a special character, such
@@ -104,7 +104,7 @@ namespace Model
     /**
      * <p>The Amazon S3 location of the most recent parallel data input file that was
      * successfully imported into Amazon Translate. The location is returned as a
-     * presigned URL that has a 30 minute expiration.</p>  <p>Amazon
+     * presigned URL that has a 30-minute expiration.</p>  <p>Amazon
      * Translate doesn't scan all input files for the risk of CSV injection attacks.
      * </p> <p>CSV injection occurs when a .csv or .tsv file is altered so that a
      * record contains malicious code. The record begins with a special character, such
@@ -118,7 +118,7 @@ namespace Model
     /**
      * <p>The Amazon S3 location of the most recent parallel data input file that was
      * successfully imported into Amazon Translate. The location is returned as a
-     * presigned URL that has a 30 minute expiration.</p>  <p>Amazon
+     * presigned URL that has a 30-minute expiration.</p>  <p>Amazon
      * Translate doesn't scan all input files for the risk of CSV injection attacks.
      * </p> <p>CSV injection occurs when a .csv or .tsv file is altered so that a
      * record contains malicious code. The record begins with a special character, such
@@ -134,7 +134,7 @@ namespace Model
      * <p>The Amazon S3 location of a file that provides any errors or warnings that
      * were produced by your input file. This file was created when Amazon Translate
      * attempted to create a parallel data resource. The location is returned as a
-     * presigned URL to that has a 30 minute expiration.</p>
+     * presigned URL to that has a 30-minute expiration.</p>
      */
     inline const ParallelDataDataLocation& GetAuxiliaryDataLocation() const{ return m_auxiliaryDataLocation; }
 
@@ -142,7 +142,7 @@ namespace Model
      * <p>The Amazon S3 location of a file that provides any errors or warnings that
      * were produced by your input file. This file was created when Amazon Translate
      * attempted to create a parallel data resource. The location is returned as a
-     * presigned URL to that has a 30 minute expiration.</p>
+     * presigned URL to that has a 30-minute expiration.</p>
      */
     inline void SetAuxiliaryDataLocation(const ParallelDataDataLocation& value) { m_auxiliaryDataLocation = value; }
 
@@ -150,7 +150,7 @@ namespace Model
      * <p>The Amazon S3 location of a file that provides any errors or warnings that
      * were produced by your input file. This file was created when Amazon Translate
      * attempted to create a parallel data resource. The location is returned as a
-     * presigned URL to that has a 30 minute expiration.</p>
+     * presigned URL to that has a 30-minute expiration.</p>
      */
     inline void SetAuxiliaryDataLocation(ParallelDataDataLocation&& value) { m_auxiliaryDataLocation = std::move(value); }
 
@@ -158,7 +158,7 @@ namespace Model
      * <p>The Amazon S3 location of a file that provides any errors or warnings that
      * were produced by your input file. This file was created when Amazon Translate
      * attempted to create a parallel data resource. The location is returned as a
-     * presigned URL to that has a 30 minute expiration.</p>
+     * presigned URL to that has a 30-minute expiration.</p>
      */
     inline GetParallelDataResult& WithAuxiliaryDataLocation(const ParallelDataDataLocation& value) { SetAuxiliaryDataLocation(value); return *this;}
 
@@ -166,7 +166,7 @@ namespace Model
      * <p>The Amazon S3 location of a file that provides any errors or warnings that
      * were produced by your input file. This file was created when Amazon Translate
      * attempted to create a parallel data resource. The location is returned as a
-     * presigned URL to that has a 30 minute expiration.</p>
+     * presigned URL to that has a 30-minute expiration.</p>
      */
     inline GetParallelDataResult& WithAuxiliaryDataLocation(ParallelDataDataLocation&& value) { SetAuxiliaryDataLocation(std::move(value)); return *this;}
 
@@ -175,7 +175,7 @@ namespace Model
      * <p>The Amazon S3 location of a file that provides any errors or warnings that
      * were produced by your input file. This file was created when Amazon Translate
      * attempted to update a parallel data resource. The location is returned as a
-     * presigned URL to that has a 30 minute expiration.</p>
+     * presigned URL to that has a 30-minute expiration.</p>
      */
     inline const ParallelDataDataLocation& GetLatestUpdateAttemptAuxiliaryDataLocation() const{ return m_latestUpdateAttemptAuxiliaryDataLocation; }
 
@@ -183,7 +183,7 @@ namespace Model
      * <p>The Amazon S3 location of a file that provides any errors or warnings that
      * were produced by your input file. This file was created when Amazon Translate
      * attempted to update a parallel data resource. The location is returned as a
-     * presigned URL to that has a 30 minute expiration.</p>
+     * presigned URL to that has a 30-minute expiration.</p>
      */
     inline void SetLatestUpdateAttemptAuxiliaryDataLocation(const ParallelDataDataLocation& value) { m_latestUpdateAttemptAuxiliaryDataLocation = value; }
 
@@ -191,7 +191,7 @@ namespace Model
      * <p>The Amazon S3 location of a file that provides any errors or warnings that
      * were produced by your input file. This file was created when Amazon Translate
      * attempted to update a parallel data resource. The location is returned as a
-     * presigned URL to that has a 30 minute expiration.</p>
+     * presigned URL to that has a 30-minute expiration.</p>
      */
     inline void SetLatestUpdateAttemptAuxiliaryDataLocation(ParallelDataDataLocation&& value) { m_latestUpdateAttemptAuxiliaryDataLocation = std::move(value); }
 
@@ -199,7 +199,7 @@ namespace Model
      * <p>The Amazon S3 location of a file that provides any errors or warnings that
      * were produced by your input file. This file was created when Amazon Translate
      * attempted to update a parallel data resource. The location is returned as a
-     * presigned URL to that has a 30 minute expiration.</p>
+     * presigned URL to that has a 30-minute expiration.</p>
      */
     inline GetParallelDataResult& WithLatestUpdateAttemptAuxiliaryDataLocation(const ParallelDataDataLocation& value) { SetLatestUpdateAttemptAuxiliaryDataLocation(value); return *this;}
 
@@ -207,7 +207,7 @@ namespace Model
      * <p>The Amazon S3 location of a file that provides any errors or warnings that
      * were produced by your input file. This file was created when Amazon Translate
      * attempted to update a parallel data resource. The location is returned as a
-     * presigned URL to that has a 30 minute expiration.</p>
+     * presigned URL to that has a 30-minute expiration.</p>
      */
     inline GetParallelDataResult& WithLatestUpdateAttemptAuxiliaryDataLocation(ParallelDataDataLocation&& value) { SetLatestUpdateAttemptAuxiliaryDataLocation(std::move(value)); return *this;}
 

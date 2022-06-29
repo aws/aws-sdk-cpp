@@ -269,60 +269,102 @@ namespace Model
     inline ModelPackage& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>Defines how to perform inference generation after a training job is run.</p>
+     */
     inline const InferenceSpecification& GetInferenceSpecification() const{ return m_inferenceSpecification; }
 
-    
+    /**
+     * <p>Defines how to perform inference generation after a training job is run.</p>
+     */
     inline bool InferenceSpecificationHasBeenSet() const { return m_inferenceSpecificationHasBeenSet; }
 
-    
+    /**
+     * <p>Defines how to perform inference generation after a training job is run.</p>
+     */
     inline void SetInferenceSpecification(const InferenceSpecification& value) { m_inferenceSpecificationHasBeenSet = true; m_inferenceSpecification = value; }
 
-    
+    /**
+     * <p>Defines how to perform inference generation after a training job is run.</p>
+     */
     inline void SetInferenceSpecification(InferenceSpecification&& value) { m_inferenceSpecificationHasBeenSet = true; m_inferenceSpecification = std::move(value); }
 
-    
+    /**
+     * <p>Defines how to perform inference generation after a training job is run.</p>
+     */
     inline ModelPackage& WithInferenceSpecification(const InferenceSpecification& value) { SetInferenceSpecification(value); return *this;}
 
-    
+    /**
+     * <p>Defines how to perform inference generation after a training job is run.</p>
+     */
     inline ModelPackage& WithInferenceSpecification(InferenceSpecification&& value) { SetInferenceSpecification(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>A list of algorithms that were used to create a model package.</p>
+     */
     inline const SourceAlgorithmSpecification& GetSourceAlgorithmSpecification() const{ return m_sourceAlgorithmSpecification; }
 
-    
+    /**
+     * <p>A list of algorithms that were used to create a model package.</p>
+     */
     inline bool SourceAlgorithmSpecificationHasBeenSet() const { return m_sourceAlgorithmSpecificationHasBeenSet; }
 
-    
+    /**
+     * <p>A list of algorithms that were used to create a model package.</p>
+     */
     inline void SetSourceAlgorithmSpecification(const SourceAlgorithmSpecification& value) { m_sourceAlgorithmSpecificationHasBeenSet = true; m_sourceAlgorithmSpecification = value; }
 
-    
+    /**
+     * <p>A list of algorithms that were used to create a model package.</p>
+     */
     inline void SetSourceAlgorithmSpecification(SourceAlgorithmSpecification&& value) { m_sourceAlgorithmSpecificationHasBeenSet = true; m_sourceAlgorithmSpecification = std::move(value); }
 
-    
+    /**
+     * <p>A list of algorithms that were used to create a model package.</p>
+     */
     inline ModelPackage& WithSourceAlgorithmSpecification(const SourceAlgorithmSpecification& value) { SetSourceAlgorithmSpecification(value); return *this;}
 
-    
+    /**
+     * <p>A list of algorithms that were used to create a model package.</p>
+     */
     inline ModelPackage& WithSourceAlgorithmSpecification(SourceAlgorithmSpecification&& value) { SetSourceAlgorithmSpecification(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>Specifies batch transform jobs that SageMaker runs to validate your model
+     * package.</p>
+     */
     inline const ModelPackageValidationSpecification& GetValidationSpecification() const{ return m_validationSpecification; }
 
-    
+    /**
+     * <p>Specifies batch transform jobs that SageMaker runs to validate your model
+     * package.</p>
+     */
     inline bool ValidationSpecificationHasBeenSet() const { return m_validationSpecificationHasBeenSet; }
 
-    
+    /**
+     * <p>Specifies batch transform jobs that SageMaker runs to validate your model
+     * package.</p>
+     */
     inline void SetValidationSpecification(const ModelPackageValidationSpecification& value) { m_validationSpecificationHasBeenSet = true; m_validationSpecification = value; }
 
-    
+    /**
+     * <p>Specifies batch transform jobs that SageMaker runs to validate your model
+     * package.</p>
+     */
     inline void SetValidationSpecification(ModelPackageValidationSpecification&& value) { m_validationSpecificationHasBeenSet = true; m_validationSpecification = std::move(value); }
 
-    
+    /**
+     * <p>Specifies batch transform jobs that SageMaker runs to validate your model
+     * package.</p>
+     */
     inline ModelPackage& WithValidationSpecification(const ModelPackageValidationSpecification& value) { SetValidationSpecification(value); return *this;}
 
-    
+    /**
+     * <p>Specifies batch transform jobs that SageMaker runs to validate your model
+     * package.</p>
+     */
     inline ModelPackage& WithValidationSpecification(ModelPackageValidationSpecification&& value) { SetValidationSpecification(std::move(value)); return *this;}
 
 
@@ -393,22 +435,34 @@ namespace Model
     inline ModelPackage& WithModelPackageStatus(ModelPackageStatus&& value) { SetModelPackageStatus(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>Specifies the validation and image scan statuses of the model package.</p>
+     */
     inline const ModelPackageStatusDetails& GetModelPackageStatusDetails() const{ return m_modelPackageStatusDetails; }
 
-    
+    /**
+     * <p>Specifies the validation and image scan statuses of the model package.</p>
+     */
     inline bool ModelPackageStatusDetailsHasBeenSet() const { return m_modelPackageStatusDetailsHasBeenSet; }
 
-    
+    /**
+     * <p>Specifies the validation and image scan statuses of the model package.</p>
+     */
     inline void SetModelPackageStatusDetails(const ModelPackageStatusDetails& value) { m_modelPackageStatusDetailsHasBeenSet = true; m_modelPackageStatusDetails = value; }
 
-    
+    /**
+     * <p>Specifies the validation and image scan statuses of the model package.</p>
+     */
     inline void SetModelPackageStatusDetails(ModelPackageStatusDetails&& value) { m_modelPackageStatusDetailsHasBeenSet = true; m_modelPackageStatusDetails = std::move(value); }
 
-    
+    /**
+     * <p>Specifies the validation and image scan statuses of the model package.</p>
+     */
     inline ModelPackage& WithModelPackageStatusDetails(const ModelPackageStatusDetails& value) { SetModelPackageStatusDetails(value); return *this;}
 
-    
+    /**
+     * <p>Specifies the validation and image scan statuses of the model package.</p>
+     */
     inline ModelPackage& WithModelPackageStatusDetails(ModelPackageStatusDetails&& value) { SetModelPackageStatusDetails(std::move(value)); return *this;}
 
 
@@ -504,41 +558,71 @@ namespace Model
     inline ModelPackage& WithModelApprovalStatus(ModelApprovalStatus&& value) { SetModelApprovalStatus(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>Information about the user who created or modified an experiment, trial,
+     * trial component, lineage group, or project.</p>
+     */
     inline const UserContext& GetCreatedBy() const{ return m_createdBy; }
 
-    
+    /**
+     * <p>Information about the user who created or modified an experiment, trial,
+     * trial component, lineage group, or project.</p>
+     */
     inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
 
-    
+    /**
+     * <p>Information about the user who created or modified an experiment, trial,
+     * trial component, lineage group, or project.</p>
+     */
     inline void SetCreatedBy(const UserContext& value) { m_createdByHasBeenSet = true; m_createdBy = value; }
 
-    
+    /**
+     * <p>Information about the user who created or modified an experiment, trial,
+     * trial component, lineage group, or project.</p>
+     */
     inline void SetCreatedBy(UserContext&& value) { m_createdByHasBeenSet = true; m_createdBy = std::move(value); }
 
-    
+    /**
+     * <p>Information about the user who created or modified an experiment, trial,
+     * trial component, lineage group, or project.</p>
+     */
     inline ModelPackage& WithCreatedBy(const UserContext& value) { SetCreatedBy(value); return *this;}
 
-    
+    /**
+     * <p>Information about the user who created or modified an experiment, trial,
+     * trial component, lineage group, or project.</p>
+     */
     inline ModelPackage& WithCreatedBy(UserContext&& value) { SetCreatedBy(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>Metadata properties of the tracking entity, trial, or trial component.</p>
+     */
     inline const MetadataProperties& GetMetadataProperties() const{ return m_metadataProperties; }
 
-    
+    /**
+     * <p>Metadata properties of the tracking entity, trial, or trial component.</p>
+     */
     inline bool MetadataPropertiesHasBeenSet() const { return m_metadataPropertiesHasBeenSet; }
 
-    
+    /**
+     * <p>Metadata properties of the tracking entity, trial, or trial component.</p>
+     */
     inline void SetMetadataProperties(const MetadataProperties& value) { m_metadataPropertiesHasBeenSet = true; m_metadataProperties = value; }
 
-    
+    /**
+     * <p>Metadata properties of the tracking entity, trial, or trial component.</p>
+     */
     inline void SetMetadataProperties(MetadataProperties&& value) { m_metadataPropertiesHasBeenSet = true; m_metadataProperties = std::move(value); }
 
-    
+    /**
+     * <p>Metadata properties of the tracking entity, trial, or trial component.</p>
+     */
     inline ModelPackage& WithMetadataProperties(const MetadataProperties& value) { SetMetadataProperties(value); return *this;}
 
-    
+    /**
+     * <p>Metadata properties of the tracking entity, trial, or trial component.</p>
+     */
     inline ModelPackage& WithMetadataProperties(MetadataProperties&& value) { SetMetadataProperties(std::move(value)); return *this;}
 
 
@@ -604,22 +688,40 @@ namespace Model
     inline ModelPackage& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>Information about the user who created or modified an experiment, trial,
+     * trial component, lineage group, or project.</p>
+     */
     inline const UserContext& GetLastModifiedBy() const{ return m_lastModifiedBy; }
 
-    
+    /**
+     * <p>Information about the user who created or modified an experiment, trial,
+     * trial component, lineage group, or project.</p>
+     */
     inline bool LastModifiedByHasBeenSet() const { return m_lastModifiedByHasBeenSet; }
 
-    
+    /**
+     * <p>Information about the user who created or modified an experiment, trial,
+     * trial component, lineage group, or project.</p>
+     */
     inline void SetLastModifiedBy(const UserContext& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = value; }
 
-    
+    /**
+     * <p>Information about the user who created or modified an experiment, trial,
+     * trial component, lineage group, or project.</p>
+     */
     inline void SetLastModifiedBy(UserContext&& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = std::move(value); }
 
-    
+    /**
+     * <p>Information about the user who created or modified an experiment, trial,
+     * trial component, lineage group, or project.</p>
+     */
     inline ModelPackage& WithLastModifiedBy(const UserContext& value) { SetLastModifiedBy(value); return *this;}
 
-    
+    /**
+     * <p>Information about the user who created or modified an experiment, trial,
+     * trial component, lineage group, or project.</p>
+     */
     inline ModelPackage& WithLastModifiedBy(UserContext&& value) { SetLastModifiedBy(std::move(value)); return *this;}
 
 

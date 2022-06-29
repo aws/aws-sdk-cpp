@@ -36,8 +36,8 @@ namespace Model
    * <code>http-request-method</code>, <code>host-header</code>,
    * <code>path-pattern</code>, and <code>source-ip</code>. Each rule can also
    * optionally include one or more of each of the following conditions:
-   * <code>http-header</code> and <code>query-string</code>.</p><p><h3>See Also:</h3>
-   * <a
+   * <code>http-header</code> and <code>query-string</code>. Note that the value for
+   * a condition cannot be empty.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RuleCondition">AWS
    * API Reference</a></p>
    */

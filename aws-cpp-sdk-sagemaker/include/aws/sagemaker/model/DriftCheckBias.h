@@ -70,41 +70,65 @@ namespace Model
     inline DriftCheckBias& WithConfigFile(FileSource&& value) { SetConfigFile(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The pre-training constraints.</p>
+     */
     inline const MetricsSource& GetPreTrainingConstraints() const{ return m_preTrainingConstraints; }
 
-    
+    /**
+     * <p>The pre-training constraints.</p>
+     */
     inline bool PreTrainingConstraintsHasBeenSet() const { return m_preTrainingConstraintsHasBeenSet; }
 
-    
+    /**
+     * <p>The pre-training constraints.</p>
+     */
     inline void SetPreTrainingConstraints(const MetricsSource& value) { m_preTrainingConstraintsHasBeenSet = true; m_preTrainingConstraints = value; }
 
-    
+    /**
+     * <p>The pre-training constraints.</p>
+     */
     inline void SetPreTrainingConstraints(MetricsSource&& value) { m_preTrainingConstraintsHasBeenSet = true; m_preTrainingConstraints = std::move(value); }
 
-    
+    /**
+     * <p>The pre-training constraints.</p>
+     */
     inline DriftCheckBias& WithPreTrainingConstraints(const MetricsSource& value) { SetPreTrainingConstraints(value); return *this;}
 
-    
+    /**
+     * <p>The pre-training constraints.</p>
+     */
     inline DriftCheckBias& WithPreTrainingConstraints(MetricsSource&& value) { SetPreTrainingConstraints(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The post-training constraints.</p>
+     */
     inline const MetricsSource& GetPostTrainingConstraints() const{ return m_postTrainingConstraints; }
 
-    
+    /**
+     * <p>The post-training constraints.</p>
+     */
     inline bool PostTrainingConstraintsHasBeenSet() const { return m_postTrainingConstraintsHasBeenSet; }
 
-    
+    /**
+     * <p>The post-training constraints.</p>
+     */
     inline void SetPostTrainingConstraints(const MetricsSource& value) { m_postTrainingConstraintsHasBeenSet = true; m_postTrainingConstraints = value; }
 
-    
+    /**
+     * <p>The post-training constraints.</p>
+     */
     inline void SetPostTrainingConstraints(MetricsSource&& value) { m_postTrainingConstraintsHasBeenSet = true; m_postTrainingConstraints = std::move(value); }
 
-    
+    /**
+     * <p>The post-training constraints.</p>
+     */
     inline DriftCheckBias& WithPostTrainingConstraints(const MetricsSource& value) { SetPostTrainingConstraints(value); return *this;}
 
-    
+    /**
+     * <p>The post-training constraints.</p>
+     */
     inline DriftCheckBias& WithPostTrainingConstraints(MetricsSource&& value) { SetPostTrainingConstraints(std::move(value)); return *this;}
 
   private:

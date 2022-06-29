@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/appstream/model/ApplicationSettings.h>
+#include <aws/appstream/model/StreamingExperienceSettings.h>
 #include <aws/appstream/model/StorageConnector.h>
 #include <aws/appstream/model/StackAttribute.h>
 #include <aws/appstream/model/UserSetting.h>
@@ -539,6 +540,43 @@ namespace Model
      */
     inline UpdateStackRequest& AddEmbedHostDomains(const char* value) { m_embedHostDomainsHasBeenSet = true; m_embedHostDomains.push_back(value); return *this; }
 
+
+    /**
+     * <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP.
+     * Currently, UDP is only supported in the Windows native client.</p>
+     */
+    inline const StreamingExperienceSettings& GetStreamingExperienceSettings() const{ return m_streamingExperienceSettings; }
+
+    /**
+     * <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP.
+     * Currently, UDP is only supported in the Windows native client.</p>
+     */
+    inline bool StreamingExperienceSettingsHasBeenSet() const { return m_streamingExperienceSettingsHasBeenSet; }
+
+    /**
+     * <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP.
+     * Currently, UDP is only supported in the Windows native client.</p>
+     */
+    inline void SetStreamingExperienceSettings(const StreamingExperienceSettings& value) { m_streamingExperienceSettingsHasBeenSet = true; m_streamingExperienceSettings = value; }
+
+    /**
+     * <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP.
+     * Currently, UDP is only supported in the Windows native client.</p>
+     */
+    inline void SetStreamingExperienceSettings(StreamingExperienceSettings&& value) { m_streamingExperienceSettingsHasBeenSet = true; m_streamingExperienceSettings = std::move(value); }
+
+    /**
+     * <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP.
+     * Currently, UDP is only supported in the Windows native client.</p>
+     */
+    inline UpdateStackRequest& WithStreamingExperienceSettings(const StreamingExperienceSettings& value) { SetStreamingExperienceSettings(value); return *this;}
+
+    /**
+     * <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP.
+     * Currently, UDP is only supported in the Windows native client.</p>
+     */
+    inline UpdateStackRequest& WithStreamingExperienceSettings(StreamingExperienceSettings&& value) { SetStreamingExperienceSettings(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_displayName;
@@ -573,6 +611,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_embedHostDomains;
     bool m_embedHostDomainsHasBeenSet;
+
+    StreamingExperienceSettings m_streamingExperienceSettings;
+    bool m_streamingExperienceSettingsHasBeenSet;
   };
 
 } // namespace Model

@@ -92,6 +92,7 @@
 #include <aws/sagemaker/model/DescribeEndpointConfigResult.h>
 #include <aws/sagemaker/model/DescribeExperimentResult.h>
 #include <aws/sagemaker/model/DescribeFeatureGroupResult.h>
+#include <aws/sagemaker/model/DescribeFeatureMetadataResult.h>
 #include <aws/sagemaker/model/DescribeFlowDefinitionResult.h>
 #include <aws/sagemaker/model/DescribeHumanTaskUiResult.h>
 #include <aws/sagemaker/model/DescribeHyperParameterTuningJobResult.h>
@@ -206,6 +207,7 @@
 #include <aws/sagemaker/model/UpdateEndpointResult.h>
 #include <aws/sagemaker/model/UpdateEndpointWeightsAndCapacitiesResult.h>
 #include <aws/sagemaker/model/UpdateExperimentResult.h>
+#include <aws/sagemaker/model/UpdateFeatureGroupResult.h>
 #include <aws/sagemaker/model/UpdateImageResult.h>
 #include <aws/sagemaker/model/UpdateModelPackageResult.h>
 #include <aws/sagemaker/model/UpdateMonitoringScheduleResult.h>
@@ -367,6 +369,7 @@ namespace Model
         class DescribeEndpointConfigRequest;
         class DescribeExperimentRequest;
         class DescribeFeatureGroupRequest;
+        class DescribeFeatureMetadataRequest;
         class DescribeFlowDefinitionRequest;
         class DescribeHumanTaskUiRequest;
         class DescribeHyperParameterTuningJobRequest;
@@ -497,6 +500,8 @@ namespace Model
         class UpdateEndpointRequest;
         class UpdateEndpointWeightsAndCapacitiesRequest;
         class UpdateExperimentRequest;
+        class UpdateFeatureGroupRequest;
+        class UpdateFeatureMetadataRequest;
         class UpdateImageRequest;
         class UpdateModelPackageRequest;
         class UpdateMonitoringScheduleRequest;
@@ -619,6 +624,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeEndpointConfigResult, SageMakerError> DescribeEndpointConfigOutcome;
         typedef Aws::Utils::Outcome<DescribeExperimentResult, SageMakerError> DescribeExperimentOutcome;
         typedef Aws::Utils::Outcome<DescribeFeatureGroupResult, SageMakerError> DescribeFeatureGroupOutcome;
+        typedef Aws::Utils::Outcome<DescribeFeatureMetadataResult, SageMakerError> DescribeFeatureMetadataOutcome;
         typedef Aws::Utils::Outcome<DescribeFlowDefinitionResult, SageMakerError> DescribeFlowDefinitionOutcome;
         typedef Aws::Utils::Outcome<DescribeHumanTaskUiResult, SageMakerError> DescribeHumanTaskUiOutcome;
         typedef Aws::Utils::Outcome<DescribeHyperParameterTuningJobResult, SageMakerError> DescribeHyperParameterTuningJobOutcome;
@@ -749,6 +755,8 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateEndpointResult, SageMakerError> UpdateEndpointOutcome;
         typedef Aws::Utils::Outcome<UpdateEndpointWeightsAndCapacitiesResult, SageMakerError> UpdateEndpointWeightsAndCapacitiesOutcome;
         typedef Aws::Utils::Outcome<UpdateExperimentResult, SageMakerError> UpdateExperimentOutcome;
+        typedef Aws::Utils::Outcome<UpdateFeatureGroupResult, SageMakerError> UpdateFeatureGroupOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> UpdateFeatureMetadataOutcome;
         typedef Aws::Utils::Outcome<UpdateImageResult, SageMakerError> UpdateImageOutcome;
         typedef Aws::Utils::Outcome<UpdateModelPackageResult, SageMakerError> UpdateModelPackageOutcome;
         typedef Aws::Utils::Outcome<UpdateMonitoringScheduleResult, SageMakerError> UpdateMonitoringScheduleOutcome;
@@ -871,6 +879,7 @@ namespace Model
         typedef std::future<DescribeEndpointConfigOutcome> DescribeEndpointConfigOutcomeCallable;
         typedef std::future<DescribeExperimentOutcome> DescribeExperimentOutcomeCallable;
         typedef std::future<DescribeFeatureGroupOutcome> DescribeFeatureGroupOutcomeCallable;
+        typedef std::future<DescribeFeatureMetadataOutcome> DescribeFeatureMetadataOutcomeCallable;
         typedef std::future<DescribeFlowDefinitionOutcome> DescribeFlowDefinitionOutcomeCallable;
         typedef std::future<DescribeHumanTaskUiOutcome> DescribeHumanTaskUiOutcomeCallable;
         typedef std::future<DescribeHyperParameterTuningJobOutcome> DescribeHyperParameterTuningJobOutcomeCallable;
@@ -1001,6 +1010,8 @@ namespace Model
         typedef std::future<UpdateEndpointOutcome> UpdateEndpointOutcomeCallable;
         typedef std::future<UpdateEndpointWeightsAndCapacitiesOutcome> UpdateEndpointWeightsAndCapacitiesOutcomeCallable;
         typedef std::future<UpdateExperimentOutcome> UpdateExperimentOutcomeCallable;
+        typedef std::future<UpdateFeatureGroupOutcome> UpdateFeatureGroupOutcomeCallable;
+        typedef std::future<UpdateFeatureMetadataOutcome> UpdateFeatureMetadataOutcomeCallable;
         typedef std::future<UpdateImageOutcome> UpdateImageOutcomeCallable;
         typedef std::future<UpdateModelPackageOutcome> UpdateModelPackageOutcomeCallable;
         typedef std::future<UpdateMonitoringScheduleOutcome> UpdateMonitoringScheduleOutcomeCallable;
@@ -1126,6 +1137,7 @@ namespace Model
     typedef std::function<void(const SageMakerClient*, const Model::DescribeEndpointConfigRequest&, const Model::DescribeEndpointConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEndpointConfigResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeExperimentRequest&, const Model::DescribeExperimentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeExperimentResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeFeatureGroupRequest&, const Model::DescribeFeatureGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFeatureGroupResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DescribeFeatureMetadataRequest&, const Model::DescribeFeatureMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFeatureMetadataResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeFlowDefinitionRequest&, const Model::DescribeFlowDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFlowDefinitionResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeHumanTaskUiRequest&, const Model::DescribeHumanTaskUiOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeHumanTaskUiResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeHyperParameterTuningJobRequest&, const Model::DescribeHyperParameterTuningJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeHyperParameterTuningJobResponseReceivedHandler;
@@ -1256,6 +1268,8 @@ namespace Model
     typedef std::function<void(const SageMakerClient*, const Model::UpdateEndpointRequest&, const Model::UpdateEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEndpointResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateEndpointWeightsAndCapacitiesRequest&, const Model::UpdateEndpointWeightsAndCapacitiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEndpointWeightsAndCapacitiesResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateExperimentRequest&, const Model::UpdateExperimentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateExperimentResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::UpdateFeatureGroupRequest&, const Model::UpdateFeatureGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFeatureGroupResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::UpdateFeatureMetadataRequest&, const Model::UpdateFeatureMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFeatureMetadataResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateImageRequest&, const Model::UpdateImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateImageResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateModelPackageRequest&, const Model::UpdateModelPackageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateModelPackageResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateMonitoringScheduleRequest&, const Model::UpdateMonitoringScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMonitoringScheduleResponseReceivedHandler;
@@ -3727,6 +3741,24 @@ namespace Model
         virtual void DescribeFeatureGroupAsync(const Model::DescribeFeatureGroupRequest& request, const DescribeFeatureGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Shows the metadata for a feature within a feature group.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeFeatureMetadata">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeFeatureMetadataOutcome DescribeFeatureMetadata(const Model::DescribeFeatureMetadataRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeFeatureMetadata that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeFeatureMetadataOutcomeCallable DescribeFeatureMetadataCallable(const Model::DescribeFeatureMetadataRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeFeatureMetadata that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeFeatureMetadataAsync(const Model::DescribeFeatureMetadataRequest& request, const DescribeFeatureMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns information about the specified flow definition.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeFlowDefinition">AWS
@@ -6165,6 +6197,41 @@ namespace Model
         virtual void UpdateExperimentAsync(const Model::UpdateExperimentRequest& request, const UpdateExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates the feature group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateFeatureGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateFeatureGroupOutcome UpdateFeatureGroup(const Model::UpdateFeatureGroupRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateFeatureGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateFeatureGroupOutcomeCallable UpdateFeatureGroupCallable(const Model::UpdateFeatureGroupRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateFeatureGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateFeatureGroupAsync(const Model::UpdateFeatureGroupRequest& request, const UpdateFeatureGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates the description and parameters of the feature group.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateFeatureMetadata">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateFeatureMetadataOutcome UpdateFeatureMetadata(const Model::UpdateFeatureMetadataRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateFeatureMetadata that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateFeatureMetadataOutcomeCallable UpdateFeatureMetadataCallable(const Model::UpdateFeatureMetadataRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateFeatureMetadata that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateFeatureMetadataAsync(const Model::UpdateFeatureMetadataRequest& request, const UpdateFeatureMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates the properties of a SageMaker image. To change the image's tags, use
          * the <a>AddTags</a> and <a>DeleteTags</a> APIs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateImage">AWS
@@ -6547,6 +6614,7 @@ namespace Model
         void DescribeEndpointConfigAsyncHelper(const Model::DescribeEndpointConfigRequest& request, const DescribeEndpointConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeExperimentAsyncHelper(const Model::DescribeExperimentRequest& request, const DescribeExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeFeatureGroupAsyncHelper(const Model::DescribeFeatureGroupRequest& request, const DescribeFeatureGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeFeatureMetadataAsyncHelper(const Model::DescribeFeatureMetadataRequest& request, const DescribeFeatureMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeFlowDefinitionAsyncHelper(const Model::DescribeFlowDefinitionRequest& request, const DescribeFlowDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeHumanTaskUiAsyncHelper(const Model::DescribeHumanTaskUiRequest& request, const DescribeHumanTaskUiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeHyperParameterTuningJobAsyncHelper(const Model::DescribeHyperParameterTuningJobRequest& request, const DescribeHyperParameterTuningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -6677,6 +6745,8 @@ namespace Model
         void UpdateEndpointAsyncHelper(const Model::UpdateEndpointRequest& request, const UpdateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateEndpointWeightsAndCapacitiesAsyncHelper(const Model::UpdateEndpointWeightsAndCapacitiesRequest& request, const UpdateEndpointWeightsAndCapacitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateExperimentAsyncHelper(const Model::UpdateExperimentRequest& request, const UpdateExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateFeatureGroupAsyncHelper(const Model::UpdateFeatureGroupRequest& request, const UpdateFeatureGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateFeatureMetadataAsyncHelper(const Model::UpdateFeatureMetadataRequest& request, const UpdateFeatureMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateImageAsyncHelper(const Model::UpdateImageRequest& request, const UpdateImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateModelPackageAsyncHelper(const Model::UpdateModelPackageRequest& request, const UpdateModelPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateMonitoringScheduleAsyncHelper(const Model::UpdateMonitoringScheduleRequest& request, const UpdateMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

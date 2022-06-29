@@ -39,50 +39,98 @@ namespace Model
 
 
     /**
-     * <p>The URI of the AWS S3 folder that contains the input file. The folder must be
-     * in the same Region as the API endpoint you are calling.</p>
+     * <p>The URI of the AWS S3 folder that contains the input files. Amazon Translate
+     * translates all the files in the folder. The folder must be in the same Region as
+     * the API endpoint you are calling.</p>  <p>The URI can also point to a
+     * single input document, or it can provide the prefix for a collection of input
+     * documents. For example. if you use the URI <code>S3://bucketName/prefix</code>
+     * and the prefix is a single file, Amazon Translate uses that files as input. If
+     * more than one file begins with the prefix, Amazon Translate uses all of them as
+     * input.</p> 
      */
     inline const Aws::String& GetS3Uri() const{ return m_s3Uri; }
 
     /**
-     * <p>The URI of the AWS S3 folder that contains the input file. The folder must be
-     * in the same Region as the API endpoint you are calling.</p>
+     * <p>The URI of the AWS S3 folder that contains the input files. Amazon Translate
+     * translates all the files in the folder. The folder must be in the same Region as
+     * the API endpoint you are calling.</p>  <p>The URI can also point to a
+     * single input document, or it can provide the prefix for a collection of input
+     * documents. For example. if you use the URI <code>S3://bucketName/prefix</code>
+     * and the prefix is a single file, Amazon Translate uses that files as input. If
+     * more than one file begins with the prefix, Amazon Translate uses all of them as
+     * input.</p> 
      */
     inline bool S3UriHasBeenSet() const { return m_s3UriHasBeenSet; }
 
     /**
-     * <p>The URI of the AWS S3 folder that contains the input file. The folder must be
-     * in the same Region as the API endpoint you are calling.</p>
+     * <p>The URI of the AWS S3 folder that contains the input files. Amazon Translate
+     * translates all the files in the folder. The folder must be in the same Region as
+     * the API endpoint you are calling.</p>  <p>The URI can also point to a
+     * single input document, or it can provide the prefix for a collection of input
+     * documents. For example. if you use the URI <code>S3://bucketName/prefix</code>
+     * and the prefix is a single file, Amazon Translate uses that files as input. If
+     * more than one file begins with the prefix, Amazon Translate uses all of them as
+     * input.</p> 
      */
     inline void SetS3Uri(const Aws::String& value) { m_s3UriHasBeenSet = true; m_s3Uri = value; }
 
     /**
-     * <p>The URI of the AWS S3 folder that contains the input file. The folder must be
-     * in the same Region as the API endpoint you are calling.</p>
+     * <p>The URI of the AWS S3 folder that contains the input files. Amazon Translate
+     * translates all the files in the folder. The folder must be in the same Region as
+     * the API endpoint you are calling.</p>  <p>The URI can also point to a
+     * single input document, or it can provide the prefix for a collection of input
+     * documents. For example. if you use the URI <code>S3://bucketName/prefix</code>
+     * and the prefix is a single file, Amazon Translate uses that files as input. If
+     * more than one file begins with the prefix, Amazon Translate uses all of them as
+     * input.</p> 
      */
     inline void SetS3Uri(Aws::String&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::move(value); }
 
     /**
-     * <p>The URI of the AWS S3 folder that contains the input file. The folder must be
-     * in the same Region as the API endpoint you are calling.</p>
+     * <p>The URI of the AWS S3 folder that contains the input files. Amazon Translate
+     * translates all the files in the folder. The folder must be in the same Region as
+     * the API endpoint you are calling.</p>  <p>The URI can also point to a
+     * single input document, or it can provide the prefix for a collection of input
+     * documents. For example. if you use the URI <code>S3://bucketName/prefix</code>
+     * and the prefix is a single file, Amazon Translate uses that files as input. If
+     * more than one file begins with the prefix, Amazon Translate uses all of them as
+     * input.</p> 
      */
     inline void SetS3Uri(const char* value) { m_s3UriHasBeenSet = true; m_s3Uri.assign(value); }
 
     /**
-     * <p>The URI of the AWS S3 folder that contains the input file. The folder must be
-     * in the same Region as the API endpoint you are calling.</p>
+     * <p>The URI of the AWS S3 folder that contains the input files. Amazon Translate
+     * translates all the files in the folder. The folder must be in the same Region as
+     * the API endpoint you are calling.</p>  <p>The URI can also point to a
+     * single input document, or it can provide the prefix for a collection of input
+     * documents. For example. if you use the URI <code>S3://bucketName/prefix</code>
+     * and the prefix is a single file, Amazon Translate uses that files as input. If
+     * more than one file begins with the prefix, Amazon Translate uses all of them as
+     * input.</p> 
      */
     inline InputDataConfig& WithS3Uri(const Aws::String& value) { SetS3Uri(value); return *this;}
 
     /**
-     * <p>The URI of the AWS S3 folder that contains the input file. The folder must be
-     * in the same Region as the API endpoint you are calling.</p>
+     * <p>The URI of the AWS S3 folder that contains the input files. Amazon Translate
+     * translates all the files in the folder. The folder must be in the same Region as
+     * the API endpoint you are calling.</p>  <p>The URI can also point to a
+     * single input document, or it can provide the prefix for a collection of input
+     * documents. For example. if you use the URI <code>S3://bucketName/prefix</code>
+     * and the prefix is a single file, Amazon Translate uses that files as input. If
+     * more than one file begins with the prefix, Amazon Translate uses all of them as
+     * input.</p> 
      */
     inline InputDataConfig& WithS3Uri(Aws::String&& value) { SetS3Uri(std::move(value)); return *this;}
 
     /**
-     * <p>The URI of the AWS S3 folder that contains the input file. The folder must be
-     * in the same Region as the API endpoint you are calling.</p>
+     * <p>The URI of the AWS S3 folder that contains the input files. Amazon Translate
+     * translates all the files in the folder. The folder must be in the same Region as
+     * the API endpoint you are calling.</p>  <p>The URI can also point to a
+     * single input document, or it can provide the prefix for a collection of input
+     * documents. For example. if you use the URI <code>S3://bucketName/prefix</code>
+     * and the prefix is a single file, Amazon Translate uses that files as input. If
+     * more than one file begins with the prefix, Amazon Translate uses all of them as
+     * input.</p> 
      */
     inline InputDataConfig& WithS3Uri(const char* value) { SetS3Uri(value); return *this;}
 

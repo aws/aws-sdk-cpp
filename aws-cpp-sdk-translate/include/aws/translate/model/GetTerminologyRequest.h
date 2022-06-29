@@ -78,61 +78,61 @@ namespace Model
 
     /**
      * <p>The data format of the custom terminology being retrieved.</p> <p>If you
-     * don't specify this parameter, Amazon Translate returns a file that has the same
+     * don't specify this parameter, Amazon Translate returns a file with the same
      * format as the file that was imported to create the terminology. </p> <p>If you
      * specify this parameter when you retrieve a multi-directional terminology
-     * resource, you must specify the same format as that of the input file that was
-     * imported to create it. Otherwise, Amazon Translate throws an error.</p>
+     * resource, you must specify the same format as the input file that was imported
+     * to create it. Otherwise, Amazon Translate throws an error.</p>
      */
     inline const TerminologyDataFormat& GetTerminologyDataFormat() const{ return m_terminologyDataFormat; }
 
     /**
      * <p>The data format of the custom terminology being retrieved.</p> <p>If you
-     * don't specify this parameter, Amazon Translate returns a file that has the same
+     * don't specify this parameter, Amazon Translate returns a file with the same
      * format as the file that was imported to create the terminology. </p> <p>If you
      * specify this parameter when you retrieve a multi-directional terminology
-     * resource, you must specify the same format as that of the input file that was
-     * imported to create it. Otherwise, Amazon Translate throws an error.</p>
+     * resource, you must specify the same format as the input file that was imported
+     * to create it. Otherwise, Amazon Translate throws an error.</p>
      */
     inline bool TerminologyDataFormatHasBeenSet() const { return m_terminologyDataFormatHasBeenSet; }
 
     /**
      * <p>The data format of the custom terminology being retrieved.</p> <p>If you
-     * don't specify this parameter, Amazon Translate returns a file that has the same
+     * don't specify this parameter, Amazon Translate returns a file with the same
      * format as the file that was imported to create the terminology. </p> <p>If you
      * specify this parameter when you retrieve a multi-directional terminology
-     * resource, you must specify the same format as that of the input file that was
-     * imported to create it. Otherwise, Amazon Translate throws an error.</p>
+     * resource, you must specify the same format as the input file that was imported
+     * to create it. Otherwise, Amazon Translate throws an error.</p>
      */
     inline void SetTerminologyDataFormat(const TerminologyDataFormat& value) { m_terminologyDataFormatHasBeenSet = true; m_terminologyDataFormat = value; }
 
     /**
      * <p>The data format of the custom terminology being retrieved.</p> <p>If you
-     * don't specify this parameter, Amazon Translate returns a file that has the same
+     * don't specify this parameter, Amazon Translate returns a file with the same
      * format as the file that was imported to create the terminology. </p> <p>If you
      * specify this parameter when you retrieve a multi-directional terminology
-     * resource, you must specify the same format as that of the input file that was
-     * imported to create it. Otherwise, Amazon Translate throws an error.</p>
+     * resource, you must specify the same format as the input file that was imported
+     * to create it. Otherwise, Amazon Translate throws an error.</p>
      */
     inline void SetTerminologyDataFormat(TerminologyDataFormat&& value) { m_terminologyDataFormatHasBeenSet = true; m_terminologyDataFormat = std::move(value); }
 
     /**
      * <p>The data format of the custom terminology being retrieved.</p> <p>If you
-     * don't specify this parameter, Amazon Translate returns a file that has the same
+     * don't specify this parameter, Amazon Translate returns a file with the same
      * format as the file that was imported to create the terminology. </p> <p>If you
      * specify this parameter when you retrieve a multi-directional terminology
-     * resource, you must specify the same format as that of the input file that was
-     * imported to create it. Otherwise, Amazon Translate throws an error.</p>
+     * resource, you must specify the same format as the input file that was imported
+     * to create it. Otherwise, Amazon Translate throws an error.</p>
      */
     inline GetTerminologyRequest& WithTerminologyDataFormat(const TerminologyDataFormat& value) { SetTerminologyDataFormat(value); return *this;}
 
     /**
      * <p>The data format of the custom terminology being retrieved.</p> <p>If you
-     * don't specify this parameter, Amazon Translate returns a file that has the same
+     * don't specify this parameter, Amazon Translate returns a file with the same
      * format as the file that was imported to create the terminology. </p> <p>If you
      * specify this parameter when you retrieve a multi-directional terminology
-     * resource, you must specify the same format as that of the input file that was
-     * imported to create it. Otherwise, Amazon Translate throws an error.</p>
+     * resource, you must specify the same format as the input file that was imported
+     * to create it. Otherwise, Amazon Translate throws an error.</p>
      */
     inline GetTerminologyRequest& WithTerminologyDataFormat(TerminologyDataFormat&& value) { SetTerminologyDataFormat(std::move(value)); return *this;}
 

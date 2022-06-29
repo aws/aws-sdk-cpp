@@ -27,6 +27,7 @@
 #include <aws/translate/model/GetParallelDataRequest.h>
 #include <aws/translate/model/GetTerminologyRequest.h>
 #include <aws/translate/model/ImportTerminologyRequest.h>
+#include <aws/translate/model/ListLanguagesRequest.h>
 #include <aws/translate/model/ListParallelDataRequest.h>
 #include <aws/translate/model/ListTerminologiesRequest.h>
 #include <aws/translate/model/ListTextTranslationJobsRequest.h>
@@ -274,6 +275,30 @@ void TranslateClient::ImportTerminologyAsync(const ImportTerminologyRequest& req
 void TranslateClient::ImportTerminologyAsyncHelper(const ImportTerminologyRequest& request, const ImportTerminologyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ImportTerminology(request), context);
+}
+
+ListLanguagesOutcome TranslateClient::ListLanguages(const ListLanguagesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListLanguagesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListLanguagesOutcomeCallable TranslateClient::ListLanguagesCallable(const ListLanguagesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListLanguagesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListLanguages(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TranslateClient::ListLanguagesAsync(const ListLanguagesRequest& request, const ListLanguagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListLanguagesAsyncHelper( request, handler, context ); } );
+}
+
+void TranslateClient::ListLanguagesAsyncHelper(const ListLanguagesRequest& request, const ListLanguagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListLanguages(request), context);
 }
 
 ListParallelDataOutcome TranslateClient::ListParallelData(const ListParallelDataRequest& request) const

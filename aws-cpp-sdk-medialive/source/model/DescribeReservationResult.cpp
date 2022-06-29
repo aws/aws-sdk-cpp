@@ -114,6 +114,12 @@ DescribeReservationResult& DescribeReservationResult::operator =(const Aws::Amaz
 
   }
 
+  if(jsonValue.ValueExists("renewalSettings"))
+  {
+    m_renewalSettings = jsonValue.GetObject("renewalSettings");
+
+  }
+
   if(jsonValue.ValueExists("reservationId"))
   {
     m_reservationId = jsonValue.GetString("reservationId");
