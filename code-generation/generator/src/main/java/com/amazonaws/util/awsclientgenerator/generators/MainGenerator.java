@@ -25,7 +25,9 @@ import java.util.zip.ZipOutputStream;
 
 public class MainGenerator {
 
-    public File generateSourceFromC2jModel(C2jServiceModel c2jModel, String serviceName, String languageBinding, String namespace, String licenseText, boolean generateStandalonePackage, boolean enableVirtualOperations) throws Exception {
+    public ByteArrayOutputStream generateSourceFromC2jModel(C2jServiceModel c2jModel, String serviceName, String languageBinding,
+                                           String namespace, String licenseText, boolean generateStandalonePackage,
+                                           boolean enableVirtualOperations) throws Exception {
 
         SdkSpec spec = new SdkSpec(languageBinding, serviceName, null);
         // Transform to ServiceModel
@@ -46,14 +48,12 @@ public class MainGenerator {
         //use serviceName and version to convert the json over.
         SdkFileEntry[] apiFiles = clientGenerator.generateSourceFiles(serviceModel);
         String sdkOutputName = String.format("aws-%s-sdk-%s", spec.getLanguageBinding(), serviceModel.getMetadata().getProjectName());
-        File finalOutputFile = File.createTempFile(sdkOutputName, ".zip");
 
         //we need to add a BOM to accommodate MSFT compilers.
         //as specified here https://blogs.msdn.microsoft.com/vcblog/2016/02/22/new-options-for-managing-character-sets-in-the-microsoft-cc-compiler/
         byte[] bom = {(byte)0xEF,(byte)0xBB,(byte)0xBF};
-        FileOutputStream fileOutputStream = new FileOutputStream(finalOutputFile);
-        try (ZipOutputStream zipOutputStream = new ZipOutputStream(fileOutputStream, StandardCharsets.UTF_8)) {
-
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        try (ZipOutputStream zipOutputStream = new ZipOutputStream(outputStream, StandardCharsets.UTF_8)) {
             for (SdkFileEntry apiFile : apiFiles) {
                 if (apiFile != null && apiFile.getPathRelativeToRoot() != null) {
                     ZipEntry zipEntry = new ZipEntry(String.format("%s/%s", sdkOutputName, apiFile.getPathRelativeToRoot()));
@@ -69,10 +69,10 @@ public class MainGenerator {
             }
         }
 
-        return finalOutputFile;
+        return outputStream;
     }
 
-    public File generateDefaultsSourceFromModel(final DefaultClientConfigs model,
+    public ByteArrayOutputStream generateDefaultsSourceFromModel(final DefaultClientConfigs model,
                                                 String languageBinding,
                                                 String namespace,
                                                 String licenseText) throws Exception {
@@ -83,13 +83,12 @@ public class MainGenerator {
         CppDefaultsGenerator cppDefaultsGenerator = new CppDefaultsGenerator();
         SdkFileEntry[] apiFiles = cppDefaultsGenerator.generateSourceFiles(processedModel);
         String componentOutputName = String.format("aws-cpp-sdk-core");
-        File finalOutputFile = File.createTempFile(componentOutputName, ".zip");
 
         //we need to add a BOM to accommodate MSFT compilers.
         //as specified here https://blogs.msdn.microsoft.com/vcblog/2016/02/22/new-options-for-managing-character-sets-in-the-microsoft-cc-compiler/
         byte[] bom = {(byte)0xEF,(byte)0xBB,(byte)0xBF};
-        FileOutputStream fileOutputStream = new FileOutputStream(finalOutputFile);
-        try (ZipOutputStream zipOutputStream = new ZipOutputStream(fileOutputStream, StandardCharsets.UTF_8)) {
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        try (ZipOutputStream zipOutputStream = new ZipOutputStream(outputStream, StandardCharsets.UTF_8)) {
 
             for (SdkFileEntry apiFile : apiFiles) {
                 if (apiFile != null && apiFile.getPathRelativeToRoot() != null) {
@@ -106,7 +105,7 @@ public class MainGenerator {
             }
         }
 
-        return finalOutputFile;
+        return outputStream;
     }
 
     /**

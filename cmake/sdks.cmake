@@ -69,63 +69,52 @@ else()
     endforeach()
 endif()
 
-# SDK_BUILD_LIST is now a list of present SDKs that can be processed unconditionally
-if(ADD_CUSTOM_CLIENTS OR REGENERATE_CLIENTS OR REGENERATE_DEFAULTS)
-    execute_process(
-        COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --prepareTools
-            WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-    )
-endif()
-
 
 if(ENABLE_VIRTUAL_OPERATIONS) # it could be set to 0/1 or ON/OFF
-    set(ENABLE_VIRTUAL_OPERATIONS_ARG "--enableVirtualOperations")
+    set(ENABLE_VIRTUAL_OPERATIONS_ARG "--enable-virtual-operations")
 else()
     set(ENABLE_VIRTUAL_OPERATIONS_ARG "")
 endif()
 
-if(REGENERATE_CLIENTS)
-    message(STATUS "Regenerating clients that have been selected for build.")
-    set(MERGED_BUILD_LIST ${SDK_BUILD_LIST})
-    list(APPEND MERGED_BUILD_LIST ${SDK_DEPENDENCY_BUILD_LIST})
-    LIST(REMOVE_DUPLICATES MERGED_BUILD_LIST)
-
-    foreach(SDK IN LISTS MERGED_BUILD_LIST)
-        get_c2j_date_for_service(${SDK} C2J_DATE)
-        get_c2j_name_for_service(${SDK} C2J_NAME)
-        set(SDK_C2J_FILE "${CMAKE_CURRENT_SOURCE_DIR}/code-generation/api-descriptions/${C2J_NAME}-${C2J_DATE}.normal.json")
-
-        if(EXISTS ${SDK_C2J_FILE})
-            message(STATUS "Clearing existing directory for ${SDK} to prepare for generation.")
-            file(REMOVE_RECURSE "${CMAKE_CURRENT_SOURCE_DIR}/aws-cpp-sdk-${SDK}")
-
-            execute_process(
-                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName ${SDK} --apiVersion ${C2J_DATE} ${ENABLE_VIRTUAL_OPERATIONS_ARG} --outputLocation ./
-                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-            )
-            message(STATUS "Generated service: ${SDK}, version: ${C2J_DATE}")
-        else()
-           message(STATUS "Directory for ${SDK} is either missing a service definition, is a custom client, or it is not a generated client. Skipping.")
-        endif()
-    endforeach()
-endif()
-
-if(REGENERATE_DEFAULTS)
-    message(STATUS "Regenerating default client configurations.")
-
-    if(TRUE )#EXISTS ${SDK_C2J_FILE})
-        execute_process(
-                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --clientConfigDefaults "${CMAKE_CURRENT_SOURCE_DIR}/code-generation/defaults/sdk-default-configuration.json" --outputLocation ./
-                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-        )
-        message(STATUS "Generated defaults into ${CMAKE_CURRENT_SOURCE_DIR}")
-    else()
-        message(STATUS "Defaults configuration missing")
+if(REGENERATE_CLIENTS OR REGENERATE_DEFAULTS)
+    message(STATUS "Regenerating clients/defaults that have been selected for build.")
+    set(NON_GENERATED_CLIENT_LIST access-management text-to-speech core queues s3-encryption identity-management transfer)  ## Manually generated code with a name mimicking client name
+    if(REGENERATE_CLIENTS AND BUILD_ONLY)
+        foreach(build_only ${BUILD_ONLY})
+            list (FIND BUILD_ONLY ${build_only} _index)
+            if (${_index} GREATER -1) # old cmake search in a list syntax
+                message(FATAL_ERROR "Explicitly requested to regenerate non-regeneratable component: ${build_only}")
+            endif()
+        endforeach()
     endif()
 
     set(MERGED_BUILD_LIST ${SDK_BUILD_LIST})
-    list(APPEND MERGED_BUILD_LIST ${SDK_DEPENDENCY_BUILD_LIST})
     LIST(REMOVE_DUPLICATES MERGED_BUILD_LIST)
+    list(REMOVE_ITEM MERGED_BUILD_LIST ${NON_GENERATED_CLIENT_LIST})
+
+    if(REGENERATE_CLIENTS)
+        set(MERGED_BUILD_LIST_STR "${MERGED_BUILD_LIST}")
+        STRING(REPLACE ";" "," MERGED_BUILD_LIST_STR "${MERGED_BUILD_LIST_STR}")
+        set(REGENERATE_CLIENTS_ARG "--client_list")
+    else()
+        set(REGENERATE_CLIENTS_ARG "")
+    endif()
+
+    if(REGENERATE_DEFAULTS)
+        set(REGENERATE_DEFAULTS_ARG "--defaults")
+    else()
+        set(REGENERATE_DEFAULTS_ARG "")
+    endif()
+
+    execute_process(
+        COMMAND ${PYTHON3_CMD} scripts/run_code_generation.py ${REGENERATE_CLIENTS_ARG} ${MERGED_BUILD_LIST_STR} ${REGENERATE_DEFAULTS_ARG} ${ENABLE_VIRTUAL_OPERATIONS_ARG} --output_location ./
+        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+        RESULT_VARIABLE ret
+    )
+
+    if(ret AND NOT ret EQUAL 0)
+        message(FATAL_ERROR "Failed to regenerate code")
+    endif()
 endif()
 
 
