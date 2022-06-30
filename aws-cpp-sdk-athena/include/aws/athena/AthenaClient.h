@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/athena/model/BatchGetNamedQueryResult.h>
+#include <aws/athena/model/BatchGetPreparedStatementResult.h>
 #include <aws/athena/model/BatchGetQueryExecutionResult.h>
 #include <aws/athena/model/CreateDataCatalogResult.h>
 #include <aws/athena/model/CreateNamedQueryResult.h>
@@ -86,6 +87,7 @@ namespace Athena
 namespace Model
 {
         class BatchGetNamedQueryRequest;
+        class BatchGetPreparedStatementRequest;
         class BatchGetQueryExecutionRequest;
         class CreateDataCatalogRequest;
         class CreateNamedQueryRequest;
@@ -122,6 +124,7 @@ namespace Model
         class UpdateWorkGroupRequest;
 
         typedef Aws::Utils::Outcome<BatchGetNamedQueryResult, AthenaError> BatchGetNamedQueryOutcome;
+        typedef Aws::Utils::Outcome<BatchGetPreparedStatementResult, AthenaError> BatchGetPreparedStatementOutcome;
         typedef Aws::Utils::Outcome<BatchGetQueryExecutionResult, AthenaError> BatchGetQueryExecutionOutcome;
         typedef Aws::Utils::Outcome<CreateDataCatalogResult, AthenaError> CreateDataCatalogOutcome;
         typedef Aws::Utils::Outcome<CreateNamedQueryResult, AthenaError> CreateNamedQueryOutcome;
@@ -158,6 +161,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateWorkGroupResult, AthenaError> UpdateWorkGroupOutcome;
 
         typedef std::future<BatchGetNamedQueryOutcome> BatchGetNamedQueryOutcomeCallable;
+        typedef std::future<BatchGetPreparedStatementOutcome> BatchGetPreparedStatementOutcomeCallable;
         typedef std::future<BatchGetQueryExecutionOutcome> BatchGetQueryExecutionOutcomeCallable;
         typedef std::future<CreateDataCatalogOutcome> CreateDataCatalogOutcomeCallable;
         typedef std::future<CreateNamedQueryOutcome> CreateNamedQueryOutcomeCallable;
@@ -197,6 +201,7 @@ namespace Model
   class AthenaClient;
 
     typedef std::function<void(const AthenaClient*, const Model::BatchGetNamedQueryRequest&, const Model::BatchGetNamedQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetNamedQueryResponseReceivedHandler;
+    typedef std::function<void(const AthenaClient*, const Model::BatchGetPreparedStatementRequest&, const Model::BatchGetPreparedStatementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetPreparedStatementResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::BatchGetQueryExecutionRequest&, const Model::BatchGetQueryExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetQueryExecutionResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::CreateDataCatalogRequest&, const Model::CreateDataCatalogOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataCatalogResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::CreateNamedQueryRequest&, const Model::CreateNamedQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateNamedQueryResponseReceivedHandler;
@@ -303,6 +308,28 @@ namespace Model
          * An Async wrapper for BatchGetNamedQuery that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void BatchGetNamedQueryAsync(const Model::BatchGetNamedQueryRequest& request, const BatchGetNamedQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the details of a single prepared statement or a list of up to 256
+         * prepared statements for the array of prepared statement names that you provide.
+         * Requires you to have access to the workgroup to which the prepared statements
+         * belong. If a prepared statement cannot be retrieved for the name specified, the
+         * statement is listed in
+         * <code>UnprocessedPreparedStatementNames</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/BatchGetPreparedStatement">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchGetPreparedStatementOutcome BatchGetPreparedStatement(const Model::BatchGetPreparedStatementRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchGetPreparedStatement that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchGetPreparedStatementOutcomeCallable BatchGetPreparedStatementCallable(const Model::BatchGetPreparedStatementRequest& request) const;
+
+        /**
+         * An Async wrapper for BatchGetPreparedStatement that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchGetPreparedStatementAsync(const Model::BatchGetPreparedStatementRequest& request, const BatchGetPreparedStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the details of a single query execution or a list of up to 50 query
@@ -715,7 +742,7 @@ namespace Model
         virtual void ListNamedQueriesAsync(const Model::ListNamedQueriesRequest& request, const ListNamedQueriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the prepared statements in the specfied workgroup.</p><p><h3>See
+         * <p>Lists the prepared statements in the specified workgroup.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListPreparedStatements">AWS
          * API Reference</a></p>
@@ -978,6 +1005,7 @@ namespace Model
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void BatchGetNamedQueryAsyncHelper(const Model::BatchGetNamedQueryRequest& request, const BatchGetNamedQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void BatchGetPreparedStatementAsyncHelper(const Model::BatchGetPreparedStatementRequest& request, const BatchGetPreparedStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchGetQueryExecutionAsyncHelper(const Model::BatchGetQueryExecutionRequest& request, const BatchGetQueryExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDataCatalogAsyncHelper(const Model::CreateDataCatalogRequest& request, const CreateDataCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateNamedQueryAsyncHelper(const Model::CreateNamedQueryRequest& request, const CreateNamedQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

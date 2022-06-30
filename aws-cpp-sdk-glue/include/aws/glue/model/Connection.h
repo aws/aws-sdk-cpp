@@ -244,22 +244,22 @@ namespace Model
      * in Microsoft SQL Server, this is used as the
      * <code>hostNameInCertificate</code>.</p> </li> <li> <p>
      * <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC)
-     * data source.</p> </li> <li> <p> <code>KAFKA_BOOTSTRAP_SERVERS</code> - A
-     * comma-separated list of host and port pairs that are the addresses of the Apache
-     * Kafka brokers in a Kafka cluster to which a Kafka client will connect to and
-     * bootstrap itself.</p> </li> <li> <p> <code>KAFKA_SSL_ENABLED</code> - Whether to
-     * enable or disable SSL on an Apache Kafka connection. Default value is
-     * "true".</p> </li> <li> <p> <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL
-     * for the private CA cert file (.pem format). The default is an empty string.</p>
-     * </li> <li> <p> <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip
-     * the validation of the CA cert file or not. Glue validates for three algorithms:
-     * SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is "false".</p>
-     * </li> <li> <p> <code>SECRET_ID</code> - The secret ID used for the secret
-     * manager of credentials.</p> </li> <li> <p> <code>CONNECTOR_URL</code> - The
-     * connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * data source.</p> </li> <li> <p> <code>SECRET_ID</code> - The secret ID used for
+     * the secret manager of credentials.</p> </li> <li> <p> <code>CONNECTOR_URL</code>
+     * - The connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
      * <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM
      * connection.</p> </li> <li> <p> <code>CONNECTOR_CLASS_NAME</code> - The connector
      * class name for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>KAFKA_BOOTSTRAP_SERVERS</code> - A comma-separated list of host and port
+     * pairs that are the addresses of the Apache Kafka brokers in a Kafka cluster to
+     * which a Kafka client will connect to and bootstrap itself.</p> </li> <li> <p>
+     * <code>KAFKA_SSL_ENABLED</code> - Whether to enable or disable SSL on an Apache
+     * Kafka connection. Default value is "true".</p> </li> <li> <p>
+     * <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL for the private CA cert file
+     * (.pem format). The default is an empty string.</p> </li> <li> <p>
+     * <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip the validation
+     * of the CA cert file or not. Glue validates for three algorithms: SHA256withRSA,
+     * SHA384withRSA and SHA512withRSA. Default value is "false".</p> </li> <li> <p>
      * <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client
      * keystore file for Kafka client side authentication (Optional).</p> </li> <li>
      * <p> <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the
@@ -272,7 +272,34 @@ namespace Model
      * setting selected).</p> </li> <li> <p>
      * <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the
      * Kafka client key password (if the user has the Glue encrypt passwords setting
-     * selected).</p> </li> </ul>
+     * selected).</p> </li> <li> <p> <code>KAFKA_SASL_MECHANISM</code> -
+     * <code>"SCRAM-SHA-512"</code> or <code>"GSSAPI"</code>. These are the two
+     * supported <a
+     * href="https://www.iana.org/assignments/sasl-mechanisms/sasl-mechanisms.xhtml">SASL
+     * Mechanisms</a>.</p> </li> <li> <p> <code>KAFKA_SASL_SCRAM_USERNAME</code> - A
+     * plaintext username used to authenticate with the "SCRAM-SHA-512" mechanism.</p>
+     * </li> <li> <p> <code>KAFKA_SASL_SCRAM_PASSWORD</code> - A plaintext password
+     * used to authenticate with the "SCRAM-SHA-512" mechanism.</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_SASL_SCRAM_PASSWORD</code> - The encrypted version of the
+     * Kafka SASL SCRAM password (if the user has the Glue encrypt passwords setting
+     * selected).</p> </li> <li> <p> <code>KAFKA_SASL_GSSAPI_KEYTAB</code> - The S3
+     * location of a Kerberos <code>keytab</code> file. A keytab stores long-term keys
+     * for one or more principals. For more information, see <a
+     * href="https://web.mit.edu/kerberos/krb5-latest/doc/basic/keytab_def.html">MIT
+     * Kerberos Documentation: Keytab</a>.</p> </li> <li> <p>
+     * <code>KAFKA_SASL_GSSAPI_KRB5_CONF</code> - The S3 location of a Kerberos
+     * <code>krb5.conf</code> file. A krb5.conf stores Kerberos configuration
+     * information, such as the location of the KDC server. For more information, see
+     * <a
+     * href="https://web.mit.edu/kerberos/krb5-1.12/doc/admin/conf_files/krb5_conf.html">MIT
+     * Kerberos Documentation: krb5.conf</a>.</p> </li> <li> <p>
+     * <code>KAFKA_SASL_GSSAPI_SERVICE</code> - The Kerberos service name, as set with
+     * <code>sasl.kerberos.service.name</code> in your <a
+     * href="https://kafka.apache.org/documentation/#brokerconfigs_sasl.kerberos.service.name">Kafka
+     * Configuration</a>.</p> </li> <li> <p> <code>KAFKA_SASL_GSSAPI_PRINCIPAL</code> -
+     * The name of the Kerberos princial used by Glue. For more information, see <a
+     * href="https://kafka.apache.org/documentation/#security_sasl_kerberos_clientconfig">Kafka
+     * Documentation: Configuring Kafka Brokers</a>.</p> </li> </ul>
      */
     inline const Aws::Map<ConnectionPropertyKey, Aws::String>& GetConnectionProperties() const{ return m_connectionProperties; }
 
@@ -318,22 +345,22 @@ namespace Model
      * in Microsoft SQL Server, this is used as the
      * <code>hostNameInCertificate</code>.</p> </li> <li> <p>
      * <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC)
-     * data source.</p> </li> <li> <p> <code>KAFKA_BOOTSTRAP_SERVERS</code> - A
-     * comma-separated list of host and port pairs that are the addresses of the Apache
-     * Kafka brokers in a Kafka cluster to which a Kafka client will connect to and
-     * bootstrap itself.</p> </li> <li> <p> <code>KAFKA_SSL_ENABLED</code> - Whether to
-     * enable or disable SSL on an Apache Kafka connection. Default value is
-     * "true".</p> </li> <li> <p> <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL
-     * for the private CA cert file (.pem format). The default is an empty string.</p>
-     * </li> <li> <p> <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip
-     * the validation of the CA cert file or not. Glue validates for three algorithms:
-     * SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is "false".</p>
-     * </li> <li> <p> <code>SECRET_ID</code> - The secret ID used for the secret
-     * manager of credentials.</p> </li> <li> <p> <code>CONNECTOR_URL</code> - The
-     * connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * data source.</p> </li> <li> <p> <code>SECRET_ID</code> - The secret ID used for
+     * the secret manager of credentials.</p> </li> <li> <p> <code>CONNECTOR_URL</code>
+     * - The connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
      * <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM
      * connection.</p> </li> <li> <p> <code>CONNECTOR_CLASS_NAME</code> - The connector
      * class name for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>KAFKA_BOOTSTRAP_SERVERS</code> - A comma-separated list of host and port
+     * pairs that are the addresses of the Apache Kafka brokers in a Kafka cluster to
+     * which a Kafka client will connect to and bootstrap itself.</p> </li> <li> <p>
+     * <code>KAFKA_SSL_ENABLED</code> - Whether to enable or disable SSL on an Apache
+     * Kafka connection. Default value is "true".</p> </li> <li> <p>
+     * <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL for the private CA cert file
+     * (.pem format). The default is an empty string.</p> </li> <li> <p>
+     * <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip the validation
+     * of the CA cert file or not. Glue validates for three algorithms: SHA256withRSA,
+     * SHA384withRSA and SHA512withRSA. Default value is "false".</p> </li> <li> <p>
      * <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client
      * keystore file for Kafka client side authentication (Optional).</p> </li> <li>
      * <p> <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the
@@ -346,7 +373,34 @@ namespace Model
      * setting selected).</p> </li> <li> <p>
      * <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the
      * Kafka client key password (if the user has the Glue encrypt passwords setting
-     * selected).</p> </li> </ul>
+     * selected).</p> </li> <li> <p> <code>KAFKA_SASL_MECHANISM</code> -
+     * <code>"SCRAM-SHA-512"</code> or <code>"GSSAPI"</code>. These are the two
+     * supported <a
+     * href="https://www.iana.org/assignments/sasl-mechanisms/sasl-mechanisms.xhtml">SASL
+     * Mechanisms</a>.</p> </li> <li> <p> <code>KAFKA_SASL_SCRAM_USERNAME</code> - A
+     * plaintext username used to authenticate with the "SCRAM-SHA-512" mechanism.</p>
+     * </li> <li> <p> <code>KAFKA_SASL_SCRAM_PASSWORD</code> - A plaintext password
+     * used to authenticate with the "SCRAM-SHA-512" mechanism.</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_SASL_SCRAM_PASSWORD</code> - The encrypted version of the
+     * Kafka SASL SCRAM password (if the user has the Glue encrypt passwords setting
+     * selected).</p> </li> <li> <p> <code>KAFKA_SASL_GSSAPI_KEYTAB</code> - The S3
+     * location of a Kerberos <code>keytab</code> file. A keytab stores long-term keys
+     * for one or more principals. For more information, see <a
+     * href="https://web.mit.edu/kerberos/krb5-latest/doc/basic/keytab_def.html">MIT
+     * Kerberos Documentation: Keytab</a>.</p> </li> <li> <p>
+     * <code>KAFKA_SASL_GSSAPI_KRB5_CONF</code> - The S3 location of a Kerberos
+     * <code>krb5.conf</code> file. A krb5.conf stores Kerberos configuration
+     * information, such as the location of the KDC server. For more information, see
+     * <a
+     * href="https://web.mit.edu/kerberos/krb5-1.12/doc/admin/conf_files/krb5_conf.html">MIT
+     * Kerberos Documentation: krb5.conf</a>.</p> </li> <li> <p>
+     * <code>KAFKA_SASL_GSSAPI_SERVICE</code> - The Kerberos service name, as set with
+     * <code>sasl.kerberos.service.name</code> in your <a
+     * href="https://kafka.apache.org/documentation/#brokerconfigs_sasl.kerberos.service.name">Kafka
+     * Configuration</a>.</p> </li> <li> <p> <code>KAFKA_SASL_GSSAPI_PRINCIPAL</code> -
+     * The name of the Kerberos princial used by Glue. For more information, see <a
+     * href="https://kafka.apache.org/documentation/#security_sasl_kerberos_clientconfig">Kafka
+     * Documentation: Configuring Kafka Brokers</a>.</p> </li> </ul>
      */
     inline bool ConnectionPropertiesHasBeenSet() const { return m_connectionPropertiesHasBeenSet; }
 
@@ -392,22 +446,22 @@ namespace Model
      * in Microsoft SQL Server, this is used as the
      * <code>hostNameInCertificate</code>.</p> </li> <li> <p>
      * <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC)
-     * data source.</p> </li> <li> <p> <code>KAFKA_BOOTSTRAP_SERVERS</code> - A
-     * comma-separated list of host and port pairs that are the addresses of the Apache
-     * Kafka brokers in a Kafka cluster to which a Kafka client will connect to and
-     * bootstrap itself.</p> </li> <li> <p> <code>KAFKA_SSL_ENABLED</code> - Whether to
-     * enable or disable SSL on an Apache Kafka connection. Default value is
-     * "true".</p> </li> <li> <p> <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL
-     * for the private CA cert file (.pem format). The default is an empty string.</p>
-     * </li> <li> <p> <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip
-     * the validation of the CA cert file or not. Glue validates for three algorithms:
-     * SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is "false".</p>
-     * </li> <li> <p> <code>SECRET_ID</code> - The secret ID used for the secret
-     * manager of credentials.</p> </li> <li> <p> <code>CONNECTOR_URL</code> - The
-     * connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * data source.</p> </li> <li> <p> <code>SECRET_ID</code> - The secret ID used for
+     * the secret manager of credentials.</p> </li> <li> <p> <code>CONNECTOR_URL</code>
+     * - The connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
      * <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM
      * connection.</p> </li> <li> <p> <code>CONNECTOR_CLASS_NAME</code> - The connector
      * class name for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>KAFKA_BOOTSTRAP_SERVERS</code> - A comma-separated list of host and port
+     * pairs that are the addresses of the Apache Kafka brokers in a Kafka cluster to
+     * which a Kafka client will connect to and bootstrap itself.</p> </li> <li> <p>
+     * <code>KAFKA_SSL_ENABLED</code> - Whether to enable or disable SSL on an Apache
+     * Kafka connection. Default value is "true".</p> </li> <li> <p>
+     * <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL for the private CA cert file
+     * (.pem format). The default is an empty string.</p> </li> <li> <p>
+     * <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip the validation
+     * of the CA cert file or not. Glue validates for three algorithms: SHA256withRSA,
+     * SHA384withRSA and SHA512withRSA. Default value is "false".</p> </li> <li> <p>
      * <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client
      * keystore file for Kafka client side authentication (Optional).</p> </li> <li>
      * <p> <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the
@@ -420,7 +474,34 @@ namespace Model
      * setting selected).</p> </li> <li> <p>
      * <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the
      * Kafka client key password (if the user has the Glue encrypt passwords setting
-     * selected).</p> </li> </ul>
+     * selected).</p> </li> <li> <p> <code>KAFKA_SASL_MECHANISM</code> -
+     * <code>"SCRAM-SHA-512"</code> or <code>"GSSAPI"</code>. These are the two
+     * supported <a
+     * href="https://www.iana.org/assignments/sasl-mechanisms/sasl-mechanisms.xhtml">SASL
+     * Mechanisms</a>.</p> </li> <li> <p> <code>KAFKA_SASL_SCRAM_USERNAME</code> - A
+     * plaintext username used to authenticate with the "SCRAM-SHA-512" mechanism.</p>
+     * </li> <li> <p> <code>KAFKA_SASL_SCRAM_PASSWORD</code> - A plaintext password
+     * used to authenticate with the "SCRAM-SHA-512" mechanism.</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_SASL_SCRAM_PASSWORD</code> - The encrypted version of the
+     * Kafka SASL SCRAM password (if the user has the Glue encrypt passwords setting
+     * selected).</p> </li> <li> <p> <code>KAFKA_SASL_GSSAPI_KEYTAB</code> - The S3
+     * location of a Kerberos <code>keytab</code> file. A keytab stores long-term keys
+     * for one or more principals. For more information, see <a
+     * href="https://web.mit.edu/kerberos/krb5-latest/doc/basic/keytab_def.html">MIT
+     * Kerberos Documentation: Keytab</a>.</p> </li> <li> <p>
+     * <code>KAFKA_SASL_GSSAPI_KRB5_CONF</code> - The S3 location of a Kerberos
+     * <code>krb5.conf</code> file. A krb5.conf stores Kerberos configuration
+     * information, such as the location of the KDC server. For more information, see
+     * <a
+     * href="https://web.mit.edu/kerberos/krb5-1.12/doc/admin/conf_files/krb5_conf.html">MIT
+     * Kerberos Documentation: krb5.conf</a>.</p> </li> <li> <p>
+     * <code>KAFKA_SASL_GSSAPI_SERVICE</code> - The Kerberos service name, as set with
+     * <code>sasl.kerberos.service.name</code> in your <a
+     * href="https://kafka.apache.org/documentation/#brokerconfigs_sasl.kerberos.service.name">Kafka
+     * Configuration</a>.</p> </li> <li> <p> <code>KAFKA_SASL_GSSAPI_PRINCIPAL</code> -
+     * The name of the Kerberos princial used by Glue. For more information, see <a
+     * href="https://kafka.apache.org/documentation/#security_sasl_kerberos_clientconfig">Kafka
+     * Documentation: Configuring Kafka Brokers</a>.</p> </li> </ul>
      */
     inline void SetConnectionProperties(const Aws::Map<ConnectionPropertyKey, Aws::String>& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties = value; }
 
@@ -466,22 +547,22 @@ namespace Model
      * in Microsoft SQL Server, this is used as the
      * <code>hostNameInCertificate</code>.</p> </li> <li> <p>
      * <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC)
-     * data source.</p> </li> <li> <p> <code>KAFKA_BOOTSTRAP_SERVERS</code> - A
-     * comma-separated list of host and port pairs that are the addresses of the Apache
-     * Kafka brokers in a Kafka cluster to which a Kafka client will connect to and
-     * bootstrap itself.</p> </li> <li> <p> <code>KAFKA_SSL_ENABLED</code> - Whether to
-     * enable or disable SSL on an Apache Kafka connection. Default value is
-     * "true".</p> </li> <li> <p> <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL
-     * for the private CA cert file (.pem format). The default is an empty string.</p>
-     * </li> <li> <p> <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip
-     * the validation of the CA cert file or not. Glue validates for three algorithms:
-     * SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is "false".</p>
-     * </li> <li> <p> <code>SECRET_ID</code> - The secret ID used for the secret
-     * manager of credentials.</p> </li> <li> <p> <code>CONNECTOR_URL</code> - The
-     * connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * data source.</p> </li> <li> <p> <code>SECRET_ID</code> - The secret ID used for
+     * the secret manager of credentials.</p> </li> <li> <p> <code>CONNECTOR_URL</code>
+     * - The connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
      * <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM
      * connection.</p> </li> <li> <p> <code>CONNECTOR_CLASS_NAME</code> - The connector
      * class name for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>KAFKA_BOOTSTRAP_SERVERS</code> - A comma-separated list of host and port
+     * pairs that are the addresses of the Apache Kafka brokers in a Kafka cluster to
+     * which a Kafka client will connect to and bootstrap itself.</p> </li> <li> <p>
+     * <code>KAFKA_SSL_ENABLED</code> - Whether to enable or disable SSL on an Apache
+     * Kafka connection. Default value is "true".</p> </li> <li> <p>
+     * <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL for the private CA cert file
+     * (.pem format). The default is an empty string.</p> </li> <li> <p>
+     * <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip the validation
+     * of the CA cert file or not. Glue validates for three algorithms: SHA256withRSA,
+     * SHA384withRSA and SHA512withRSA. Default value is "false".</p> </li> <li> <p>
      * <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client
      * keystore file for Kafka client side authentication (Optional).</p> </li> <li>
      * <p> <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the
@@ -494,7 +575,34 @@ namespace Model
      * setting selected).</p> </li> <li> <p>
      * <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the
      * Kafka client key password (if the user has the Glue encrypt passwords setting
-     * selected).</p> </li> </ul>
+     * selected).</p> </li> <li> <p> <code>KAFKA_SASL_MECHANISM</code> -
+     * <code>"SCRAM-SHA-512"</code> or <code>"GSSAPI"</code>. These are the two
+     * supported <a
+     * href="https://www.iana.org/assignments/sasl-mechanisms/sasl-mechanisms.xhtml">SASL
+     * Mechanisms</a>.</p> </li> <li> <p> <code>KAFKA_SASL_SCRAM_USERNAME</code> - A
+     * plaintext username used to authenticate with the "SCRAM-SHA-512" mechanism.</p>
+     * </li> <li> <p> <code>KAFKA_SASL_SCRAM_PASSWORD</code> - A plaintext password
+     * used to authenticate with the "SCRAM-SHA-512" mechanism.</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_SASL_SCRAM_PASSWORD</code> - The encrypted version of the
+     * Kafka SASL SCRAM password (if the user has the Glue encrypt passwords setting
+     * selected).</p> </li> <li> <p> <code>KAFKA_SASL_GSSAPI_KEYTAB</code> - The S3
+     * location of a Kerberos <code>keytab</code> file. A keytab stores long-term keys
+     * for one or more principals. For more information, see <a
+     * href="https://web.mit.edu/kerberos/krb5-latest/doc/basic/keytab_def.html">MIT
+     * Kerberos Documentation: Keytab</a>.</p> </li> <li> <p>
+     * <code>KAFKA_SASL_GSSAPI_KRB5_CONF</code> - The S3 location of a Kerberos
+     * <code>krb5.conf</code> file. A krb5.conf stores Kerberos configuration
+     * information, such as the location of the KDC server. For more information, see
+     * <a
+     * href="https://web.mit.edu/kerberos/krb5-1.12/doc/admin/conf_files/krb5_conf.html">MIT
+     * Kerberos Documentation: krb5.conf</a>.</p> </li> <li> <p>
+     * <code>KAFKA_SASL_GSSAPI_SERVICE</code> - The Kerberos service name, as set with
+     * <code>sasl.kerberos.service.name</code> in your <a
+     * href="https://kafka.apache.org/documentation/#brokerconfigs_sasl.kerberos.service.name">Kafka
+     * Configuration</a>.</p> </li> <li> <p> <code>KAFKA_SASL_GSSAPI_PRINCIPAL</code> -
+     * The name of the Kerberos princial used by Glue. For more information, see <a
+     * href="https://kafka.apache.org/documentation/#security_sasl_kerberos_clientconfig">Kafka
+     * Documentation: Configuring Kafka Brokers</a>.</p> </li> </ul>
      */
     inline void SetConnectionProperties(Aws::Map<ConnectionPropertyKey, Aws::String>&& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties = std::move(value); }
 
@@ -540,22 +648,22 @@ namespace Model
      * in Microsoft SQL Server, this is used as the
      * <code>hostNameInCertificate</code>.</p> </li> <li> <p>
      * <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC)
-     * data source.</p> </li> <li> <p> <code>KAFKA_BOOTSTRAP_SERVERS</code> - A
-     * comma-separated list of host and port pairs that are the addresses of the Apache
-     * Kafka brokers in a Kafka cluster to which a Kafka client will connect to and
-     * bootstrap itself.</p> </li> <li> <p> <code>KAFKA_SSL_ENABLED</code> - Whether to
-     * enable or disable SSL on an Apache Kafka connection. Default value is
-     * "true".</p> </li> <li> <p> <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL
-     * for the private CA cert file (.pem format). The default is an empty string.</p>
-     * </li> <li> <p> <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip
-     * the validation of the CA cert file or not. Glue validates for three algorithms:
-     * SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is "false".</p>
-     * </li> <li> <p> <code>SECRET_ID</code> - The secret ID used for the secret
-     * manager of credentials.</p> </li> <li> <p> <code>CONNECTOR_URL</code> - The
-     * connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * data source.</p> </li> <li> <p> <code>SECRET_ID</code> - The secret ID used for
+     * the secret manager of credentials.</p> </li> <li> <p> <code>CONNECTOR_URL</code>
+     * - The connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
      * <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM
      * connection.</p> </li> <li> <p> <code>CONNECTOR_CLASS_NAME</code> - The connector
      * class name for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>KAFKA_BOOTSTRAP_SERVERS</code> - A comma-separated list of host and port
+     * pairs that are the addresses of the Apache Kafka brokers in a Kafka cluster to
+     * which a Kafka client will connect to and bootstrap itself.</p> </li> <li> <p>
+     * <code>KAFKA_SSL_ENABLED</code> - Whether to enable or disable SSL on an Apache
+     * Kafka connection. Default value is "true".</p> </li> <li> <p>
+     * <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL for the private CA cert file
+     * (.pem format). The default is an empty string.</p> </li> <li> <p>
+     * <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip the validation
+     * of the CA cert file or not. Glue validates for three algorithms: SHA256withRSA,
+     * SHA384withRSA and SHA512withRSA. Default value is "false".</p> </li> <li> <p>
      * <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client
      * keystore file for Kafka client side authentication (Optional).</p> </li> <li>
      * <p> <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the
@@ -568,7 +676,34 @@ namespace Model
      * setting selected).</p> </li> <li> <p>
      * <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the
      * Kafka client key password (if the user has the Glue encrypt passwords setting
-     * selected).</p> </li> </ul>
+     * selected).</p> </li> <li> <p> <code>KAFKA_SASL_MECHANISM</code> -
+     * <code>"SCRAM-SHA-512"</code> or <code>"GSSAPI"</code>. These are the two
+     * supported <a
+     * href="https://www.iana.org/assignments/sasl-mechanisms/sasl-mechanisms.xhtml">SASL
+     * Mechanisms</a>.</p> </li> <li> <p> <code>KAFKA_SASL_SCRAM_USERNAME</code> - A
+     * plaintext username used to authenticate with the "SCRAM-SHA-512" mechanism.</p>
+     * </li> <li> <p> <code>KAFKA_SASL_SCRAM_PASSWORD</code> - A plaintext password
+     * used to authenticate with the "SCRAM-SHA-512" mechanism.</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_SASL_SCRAM_PASSWORD</code> - The encrypted version of the
+     * Kafka SASL SCRAM password (if the user has the Glue encrypt passwords setting
+     * selected).</p> </li> <li> <p> <code>KAFKA_SASL_GSSAPI_KEYTAB</code> - The S3
+     * location of a Kerberos <code>keytab</code> file. A keytab stores long-term keys
+     * for one or more principals. For more information, see <a
+     * href="https://web.mit.edu/kerberos/krb5-latest/doc/basic/keytab_def.html">MIT
+     * Kerberos Documentation: Keytab</a>.</p> </li> <li> <p>
+     * <code>KAFKA_SASL_GSSAPI_KRB5_CONF</code> - The S3 location of a Kerberos
+     * <code>krb5.conf</code> file. A krb5.conf stores Kerberos configuration
+     * information, such as the location of the KDC server. For more information, see
+     * <a
+     * href="https://web.mit.edu/kerberos/krb5-1.12/doc/admin/conf_files/krb5_conf.html">MIT
+     * Kerberos Documentation: krb5.conf</a>.</p> </li> <li> <p>
+     * <code>KAFKA_SASL_GSSAPI_SERVICE</code> - The Kerberos service name, as set with
+     * <code>sasl.kerberos.service.name</code> in your <a
+     * href="https://kafka.apache.org/documentation/#brokerconfigs_sasl.kerberos.service.name">Kafka
+     * Configuration</a>.</p> </li> <li> <p> <code>KAFKA_SASL_GSSAPI_PRINCIPAL</code> -
+     * The name of the Kerberos princial used by Glue. For more information, see <a
+     * href="https://kafka.apache.org/documentation/#security_sasl_kerberos_clientconfig">Kafka
+     * Documentation: Configuring Kafka Brokers</a>.</p> </li> </ul>
      */
     inline Connection& WithConnectionProperties(const Aws::Map<ConnectionPropertyKey, Aws::String>& value) { SetConnectionProperties(value); return *this;}
 
@@ -614,22 +749,22 @@ namespace Model
      * in Microsoft SQL Server, this is used as the
      * <code>hostNameInCertificate</code>.</p> </li> <li> <p>
      * <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC)
-     * data source.</p> </li> <li> <p> <code>KAFKA_BOOTSTRAP_SERVERS</code> - A
-     * comma-separated list of host and port pairs that are the addresses of the Apache
-     * Kafka brokers in a Kafka cluster to which a Kafka client will connect to and
-     * bootstrap itself.</p> </li> <li> <p> <code>KAFKA_SSL_ENABLED</code> - Whether to
-     * enable or disable SSL on an Apache Kafka connection. Default value is
-     * "true".</p> </li> <li> <p> <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL
-     * for the private CA cert file (.pem format). The default is an empty string.</p>
-     * </li> <li> <p> <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip
-     * the validation of the CA cert file or not. Glue validates for three algorithms:
-     * SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is "false".</p>
-     * </li> <li> <p> <code>SECRET_ID</code> - The secret ID used for the secret
-     * manager of credentials.</p> </li> <li> <p> <code>CONNECTOR_URL</code> - The
-     * connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * data source.</p> </li> <li> <p> <code>SECRET_ID</code> - The secret ID used for
+     * the secret manager of credentials.</p> </li> <li> <p> <code>CONNECTOR_URL</code>
+     * - The connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
      * <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM
      * connection.</p> </li> <li> <p> <code>CONNECTOR_CLASS_NAME</code> - The connector
      * class name for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>KAFKA_BOOTSTRAP_SERVERS</code> - A comma-separated list of host and port
+     * pairs that are the addresses of the Apache Kafka brokers in a Kafka cluster to
+     * which a Kafka client will connect to and bootstrap itself.</p> </li> <li> <p>
+     * <code>KAFKA_SSL_ENABLED</code> - Whether to enable or disable SSL on an Apache
+     * Kafka connection. Default value is "true".</p> </li> <li> <p>
+     * <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL for the private CA cert file
+     * (.pem format). The default is an empty string.</p> </li> <li> <p>
+     * <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip the validation
+     * of the CA cert file or not. Glue validates for three algorithms: SHA256withRSA,
+     * SHA384withRSA and SHA512withRSA. Default value is "false".</p> </li> <li> <p>
      * <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client
      * keystore file for Kafka client side authentication (Optional).</p> </li> <li>
      * <p> <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the
@@ -642,7 +777,34 @@ namespace Model
      * setting selected).</p> </li> <li> <p>
      * <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the
      * Kafka client key password (if the user has the Glue encrypt passwords setting
-     * selected).</p> </li> </ul>
+     * selected).</p> </li> <li> <p> <code>KAFKA_SASL_MECHANISM</code> -
+     * <code>"SCRAM-SHA-512"</code> or <code>"GSSAPI"</code>. These are the two
+     * supported <a
+     * href="https://www.iana.org/assignments/sasl-mechanisms/sasl-mechanisms.xhtml">SASL
+     * Mechanisms</a>.</p> </li> <li> <p> <code>KAFKA_SASL_SCRAM_USERNAME</code> - A
+     * plaintext username used to authenticate with the "SCRAM-SHA-512" mechanism.</p>
+     * </li> <li> <p> <code>KAFKA_SASL_SCRAM_PASSWORD</code> - A plaintext password
+     * used to authenticate with the "SCRAM-SHA-512" mechanism.</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_SASL_SCRAM_PASSWORD</code> - The encrypted version of the
+     * Kafka SASL SCRAM password (if the user has the Glue encrypt passwords setting
+     * selected).</p> </li> <li> <p> <code>KAFKA_SASL_GSSAPI_KEYTAB</code> - The S3
+     * location of a Kerberos <code>keytab</code> file. A keytab stores long-term keys
+     * for one or more principals. For more information, see <a
+     * href="https://web.mit.edu/kerberos/krb5-latest/doc/basic/keytab_def.html">MIT
+     * Kerberos Documentation: Keytab</a>.</p> </li> <li> <p>
+     * <code>KAFKA_SASL_GSSAPI_KRB5_CONF</code> - The S3 location of a Kerberos
+     * <code>krb5.conf</code> file. A krb5.conf stores Kerberos configuration
+     * information, such as the location of the KDC server. For more information, see
+     * <a
+     * href="https://web.mit.edu/kerberos/krb5-1.12/doc/admin/conf_files/krb5_conf.html">MIT
+     * Kerberos Documentation: krb5.conf</a>.</p> </li> <li> <p>
+     * <code>KAFKA_SASL_GSSAPI_SERVICE</code> - The Kerberos service name, as set with
+     * <code>sasl.kerberos.service.name</code> in your <a
+     * href="https://kafka.apache.org/documentation/#brokerconfigs_sasl.kerberos.service.name">Kafka
+     * Configuration</a>.</p> </li> <li> <p> <code>KAFKA_SASL_GSSAPI_PRINCIPAL</code> -
+     * The name of the Kerberos princial used by Glue. For more information, see <a
+     * href="https://kafka.apache.org/documentation/#security_sasl_kerberos_clientconfig">Kafka
+     * Documentation: Configuring Kafka Brokers</a>.</p> </li> </ul>
      */
     inline Connection& WithConnectionProperties(Aws::Map<ConnectionPropertyKey, Aws::String>&& value) { SetConnectionProperties(std::move(value)); return *this;}
 
@@ -688,22 +850,22 @@ namespace Model
      * in Microsoft SQL Server, this is used as the
      * <code>hostNameInCertificate</code>.</p> </li> <li> <p>
      * <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC)
-     * data source.</p> </li> <li> <p> <code>KAFKA_BOOTSTRAP_SERVERS</code> - A
-     * comma-separated list of host and port pairs that are the addresses of the Apache
-     * Kafka brokers in a Kafka cluster to which a Kafka client will connect to and
-     * bootstrap itself.</p> </li> <li> <p> <code>KAFKA_SSL_ENABLED</code> - Whether to
-     * enable or disable SSL on an Apache Kafka connection. Default value is
-     * "true".</p> </li> <li> <p> <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL
-     * for the private CA cert file (.pem format). The default is an empty string.</p>
-     * </li> <li> <p> <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip
-     * the validation of the CA cert file or not. Glue validates for three algorithms:
-     * SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is "false".</p>
-     * </li> <li> <p> <code>SECRET_ID</code> - The secret ID used for the secret
-     * manager of credentials.</p> </li> <li> <p> <code>CONNECTOR_URL</code> - The
-     * connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * data source.</p> </li> <li> <p> <code>SECRET_ID</code> - The secret ID used for
+     * the secret manager of credentials.</p> </li> <li> <p> <code>CONNECTOR_URL</code>
+     * - The connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
      * <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM
      * connection.</p> </li> <li> <p> <code>CONNECTOR_CLASS_NAME</code> - The connector
      * class name for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>KAFKA_BOOTSTRAP_SERVERS</code> - A comma-separated list of host and port
+     * pairs that are the addresses of the Apache Kafka brokers in a Kafka cluster to
+     * which a Kafka client will connect to and bootstrap itself.</p> </li> <li> <p>
+     * <code>KAFKA_SSL_ENABLED</code> - Whether to enable or disable SSL on an Apache
+     * Kafka connection. Default value is "true".</p> </li> <li> <p>
+     * <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL for the private CA cert file
+     * (.pem format). The default is an empty string.</p> </li> <li> <p>
+     * <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip the validation
+     * of the CA cert file or not. Glue validates for three algorithms: SHA256withRSA,
+     * SHA384withRSA and SHA512withRSA. Default value is "false".</p> </li> <li> <p>
      * <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client
      * keystore file for Kafka client side authentication (Optional).</p> </li> <li>
      * <p> <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the
@@ -716,7 +878,34 @@ namespace Model
      * setting selected).</p> </li> <li> <p>
      * <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the
      * Kafka client key password (if the user has the Glue encrypt passwords setting
-     * selected).</p> </li> </ul>
+     * selected).</p> </li> <li> <p> <code>KAFKA_SASL_MECHANISM</code> -
+     * <code>"SCRAM-SHA-512"</code> or <code>"GSSAPI"</code>. These are the two
+     * supported <a
+     * href="https://www.iana.org/assignments/sasl-mechanisms/sasl-mechanisms.xhtml">SASL
+     * Mechanisms</a>.</p> </li> <li> <p> <code>KAFKA_SASL_SCRAM_USERNAME</code> - A
+     * plaintext username used to authenticate with the "SCRAM-SHA-512" mechanism.</p>
+     * </li> <li> <p> <code>KAFKA_SASL_SCRAM_PASSWORD</code> - A plaintext password
+     * used to authenticate with the "SCRAM-SHA-512" mechanism.</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_SASL_SCRAM_PASSWORD</code> - The encrypted version of the
+     * Kafka SASL SCRAM password (if the user has the Glue encrypt passwords setting
+     * selected).</p> </li> <li> <p> <code>KAFKA_SASL_GSSAPI_KEYTAB</code> - The S3
+     * location of a Kerberos <code>keytab</code> file. A keytab stores long-term keys
+     * for one or more principals. For more information, see <a
+     * href="https://web.mit.edu/kerberos/krb5-latest/doc/basic/keytab_def.html">MIT
+     * Kerberos Documentation: Keytab</a>.</p> </li> <li> <p>
+     * <code>KAFKA_SASL_GSSAPI_KRB5_CONF</code> - The S3 location of a Kerberos
+     * <code>krb5.conf</code> file. A krb5.conf stores Kerberos configuration
+     * information, such as the location of the KDC server. For more information, see
+     * <a
+     * href="https://web.mit.edu/kerberos/krb5-1.12/doc/admin/conf_files/krb5_conf.html">MIT
+     * Kerberos Documentation: krb5.conf</a>.</p> </li> <li> <p>
+     * <code>KAFKA_SASL_GSSAPI_SERVICE</code> - The Kerberos service name, as set with
+     * <code>sasl.kerberos.service.name</code> in your <a
+     * href="https://kafka.apache.org/documentation/#brokerconfigs_sasl.kerberos.service.name">Kafka
+     * Configuration</a>.</p> </li> <li> <p> <code>KAFKA_SASL_GSSAPI_PRINCIPAL</code> -
+     * The name of the Kerberos princial used by Glue. For more information, see <a
+     * href="https://kafka.apache.org/documentation/#security_sasl_kerberos_clientconfig">Kafka
+     * Documentation: Configuring Kafka Brokers</a>.</p> </li> </ul>
      */
     inline Connection& AddConnectionProperties(const ConnectionPropertyKey& key, const Aws::String& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(key, value); return *this; }
 
@@ -762,22 +951,22 @@ namespace Model
      * in Microsoft SQL Server, this is used as the
      * <code>hostNameInCertificate</code>.</p> </li> <li> <p>
      * <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC)
-     * data source.</p> </li> <li> <p> <code>KAFKA_BOOTSTRAP_SERVERS</code> - A
-     * comma-separated list of host and port pairs that are the addresses of the Apache
-     * Kafka brokers in a Kafka cluster to which a Kafka client will connect to and
-     * bootstrap itself.</p> </li> <li> <p> <code>KAFKA_SSL_ENABLED</code> - Whether to
-     * enable or disable SSL on an Apache Kafka connection. Default value is
-     * "true".</p> </li> <li> <p> <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL
-     * for the private CA cert file (.pem format). The default is an empty string.</p>
-     * </li> <li> <p> <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip
-     * the validation of the CA cert file or not. Glue validates for three algorithms:
-     * SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is "false".</p>
-     * </li> <li> <p> <code>SECRET_ID</code> - The secret ID used for the secret
-     * manager of credentials.</p> </li> <li> <p> <code>CONNECTOR_URL</code> - The
-     * connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * data source.</p> </li> <li> <p> <code>SECRET_ID</code> - The secret ID used for
+     * the secret manager of credentials.</p> </li> <li> <p> <code>CONNECTOR_URL</code>
+     * - The connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
      * <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM
      * connection.</p> </li> <li> <p> <code>CONNECTOR_CLASS_NAME</code> - The connector
      * class name for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>KAFKA_BOOTSTRAP_SERVERS</code> - A comma-separated list of host and port
+     * pairs that are the addresses of the Apache Kafka brokers in a Kafka cluster to
+     * which a Kafka client will connect to and bootstrap itself.</p> </li> <li> <p>
+     * <code>KAFKA_SSL_ENABLED</code> - Whether to enable or disable SSL on an Apache
+     * Kafka connection. Default value is "true".</p> </li> <li> <p>
+     * <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL for the private CA cert file
+     * (.pem format). The default is an empty string.</p> </li> <li> <p>
+     * <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip the validation
+     * of the CA cert file or not. Glue validates for three algorithms: SHA256withRSA,
+     * SHA384withRSA and SHA512withRSA. Default value is "false".</p> </li> <li> <p>
      * <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client
      * keystore file for Kafka client side authentication (Optional).</p> </li> <li>
      * <p> <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the
@@ -790,7 +979,34 @@ namespace Model
      * setting selected).</p> </li> <li> <p>
      * <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the
      * Kafka client key password (if the user has the Glue encrypt passwords setting
-     * selected).</p> </li> </ul>
+     * selected).</p> </li> <li> <p> <code>KAFKA_SASL_MECHANISM</code> -
+     * <code>"SCRAM-SHA-512"</code> or <code>"GSSAPI"</code>. These are the two
+     * supported <a
+     * href="https://www.iana.org/assignments/sasl-mechanisms/sasl-mechanisms.xhtml">SASL
+     * Mechanisms</a>.</p> </li> <li> <p> <code>KAFKA_SASL_SCRAM_USERNAME</code> - A
+     * plaintext username used to authenticate with the "SCRAM-SHA-512" mechanism.</p>
+     * </li> <li> <p> <code>KAFKA_SASL_SCRAM_PASSWORD</code> - A plaintext password
+     * used to authenticate with the "SCRAM-SHA-512" mechanism.</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_SASL_SCRAM_PASSWORD</code> - The encrypted version of the
+     * Kafka SASL SCRAM password (if the user has the Glue encrypt passwords setting
+     * selected).</p> </li> <li> <p> <code>KAFKA_SASL_GSSAPI_KEYTAB</code> - The S3
+     * location of a Kerberos <code>keytab</code> file. A keytab stores long-term keys
+     * for one or more principals. For more information, see <a
+     * href="https://web.mit.edu/kerberos/krb5-latest/doc/basic/keytab_def.html">MIT
+     * Kerberos Documentation: Keytab</a>.</p> </li> <li> <p>
+     * <code>KAFKA_SASL_GSSAPI_KRB5_CONF</code> - The S3 location of a Kerberos
+     * <code>krb5.conf</code> file. A krb5.conf stores Kerberos configuration
+     * information, such as the location of the KDC server. For more information, see
+     * <a
+     * href="https://web.mit.edu/kerberos/krb5-1.12/doc/admin/conf_files/krb5_conf.html">MIT
+     * Kerberos Documentation: krb5.conf</a>.</p> </li> <li> <p>
+     * <code>KAFKA_SASL_GSSAPI_SERVICE</code> - The Kerberos service name, as set with
+     * <code>sasl.kerberos.service.name</code> in your <a
+     * href="https://kafka.apache.org/documentation/#brokerconfigs_sasl.kerberos.service.name">Kafka
+     * Configuration</a>.</p> </li> <li> <p> <code>KAFKA_SASL_GSSAPI_PRINCIPAL</code> -
+     * The name of the Kerberos princial used by Glue. For more information, see <a
+     * href="https://kafka.apache.org/documentation/#security_sasl_kerberos_clientconfig">Kafka
+     * Documentation: Configuring Kafka Brokers</a>.</p> </li> </ul>
      */
     inline Connection& AddConnectionProperties(ConnectionPropertyKey&& key, const Aws::String& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(std::move(key), value); return *this; }
 
@@ -836,22 +1052,22 @@ namespace Model
      * in Microsoft SQL Server, this is used as the
      * <code>hostNameInCertificate</code>.</p> </li> <li> <p>
      * <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC)
-     * data source.</p> </li> <li> <p> <code>KAFKA_BOOTSTRAP_SERVERS</code> - A
-     * comma-separated list of host and port pairs that are the addresses of the Apache
-     * Kafka brokers in a Kafka cluster to which a Kafka client will connect to and
-     * bootstrap itself.</p> </li> <li> <p> <code>KAFKA_SSL_ENABLED</code> - Whether to
-     * enable or disable SSL on an Apache Kafka connection. Default value is
-     * "true".</p> </li> <li> <p> <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL
-     * for the private CA cert file (.pem format). The default is an empty string.</p>
-     * </li> <li> <p> <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip
-     * the validation of the CA cert file or not. Glue validates for three algorithms:
-     * SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is "false".</p>
-     * </li> <li> <p> <code>SECRET_ID</code> - The secret ID used for the secret
-     * manager of credentials.</p> </li> <li> <p> <code>CONNECTOR_URL</code> - The
-     * connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * data source.</p> </li> <li> <p> <code>SECRET_ID</code> - The secret ID used for
+     * the secret manager of credentials.</p> </li> <li> <p> <code>CONNECTOR_URL</code>
+     * - The connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
      * <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM
      * connection.</p> </li> <li> <p> <code>CONNECTOR_CLASS_NAME</code> - The connector
      * class name for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>KAFKA_BOOTSTRAP_SERVERS</code> - A comma-separated list of host and port
+     * pairs that are the addresses of the Apache Kafka brokers in a Kafka cluster to
+     * which a Kafka client will connect to and bootstrap itself.</p> </li> <li> <p>
+     * <code>KAFKA_SSL_ENABLED</code> - Whether to enable or disable SSL on an Apache
+     * Kafka connection. Default value is "true".</p> </li> <li> <p>
+     * <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL for the private CA cert file
+     * (.pem format). The default is an empty string.</p> </li> <li> <p>
+     * <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip the validation
+     * of the CA cert file or not. Glue validates for three algorithms: SHA256withRSA,
+     * SHA384withRSA and SHA512withRSA. Default value is "false".</p> </li> <li> <p>
      * <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client
      * keystore file for Kafka client side authentication (Optional).</p> </li> <li>
      * <p> <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the
@@ -864,7 +1080,34 @@ namespace Model
      * setting selected).</p> </li> <li> <p>
      * <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the
      * Kafka client key password (if the user has the Glue encrypt passwords setting
-     * selected).</p> </li> </ul>
+     * selected).</p> </li> <li> <p> <code>KAFKA_SASL_MECHANISM</code> -
+     * <code>"SCRAM-SHA-512"</code> or <code>"GSSAPI"</code>. These are the two
+     * supported <a
+     * href="https://www.iana.org/assignments/sasl-mechanisms/sasl-mechanisms.xhtml">SASL
+     * Mechanisms</a>.</p> </li> <li> <p> <code>KAFKA_SASL_SCRAM_USERNAME</code> - A
+     * plaintext username used to authenticate with the "SCRAM-SHA-512" mechanism.</p>
+     * </li> <li> <p> <code>KAFKA_SASL_SCRAM_PASSWORD</code> - A plaintext password
+     * used to authenticate with the "SCRAM-SHA-512" mechanism.</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_SASL_SCRAM_PASSWORD</code> - The encrypted version of the
+     * Kafka SASL SCRAM password (if the user has the Glue encrypt passwords setting
+     * selected).</p> </li> <li> <p> <code>KAFKA_SASL_GSSAPI_KEYTAB</code> - The S3
+     * location of a Kerberos <code>keytab</code> file. A keytab stores long-term keys
+     * for one or more principals. For more information, see <a
+     * href="https://web.mit.edu/kerberos/krb5-latest/doc/basic/keytab_def.html">MIT
+     * Kerberos Documentation: Keytab</a>.</p> </li> <li> <p>
+     * <code>KAFKA_SASL_GSSAPI_KRB5_CONF</code> - The S3 location of a Kerberos
+     * <code>krb5.conf</code> file. A krb5.conf stores Kerberos configuration
+     * information, such as the location of the KDC server. For more information, see
+     * <a
+     * href="https://web.mit.edu/kerberos/krb5-1.12/doc/admin/conf_files/krb5_conf.html">MIT
+     * Kerberos Documentation: krb5.conf</a>.</p> </li> <li> <p>
+     * <code>KAFKA_SASL_GSSAPI_SERVICE</code> - The Kerberos service name, as set with
+     * <code>sasl.kerberos.service.name</code> in your <a
+     * href="https://kafka.apache.org/documentation/#brokerconfigs_sasl.kerberos.service.name">Kafka
+     * Configuration</a>.</p> </li> <li> <p> <code>KAFKA_SASL_GSSAPI_PRINCIPAL</code> -
+     * The name of the Kerberos princial used by Glue. For more information, see <a
+     * href="https://kafka.apache.org/documentation/#security_sasl_kerberos_clientconfig">Kafka
+     * Documentation: Configuring Kafka Brokers</a>.</p> </li> </ul>
      */
     inline Connection& AddConnectionProperties(const ConnectionPropertyKey& key, Aws::String&& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(key, std::move(value)); return *this; }
 
@@ -910,22 +1153,22 @@ namespace Model
      * in Microsoft SQL Server, this is used as the
      * <code>hostNameInCertificate</code>.</p> </li> <li> <p>
      * <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC)
-     * data source.</p> </li> <li> <p> <code>KAFKA_BOOTSTRAP_SERVERS</code> - A
-     * comma-separated list of host and port pairs that are the addresses of the Apache
-     * Kafka brokers in a Kafka cluster to which a Kafka client will connect to and
-     * bootstrap itself.</p> </li> <li> <p> <code>KAFKA_SSL_ENABLED</code> - Whether to
-     * enable or disable SSL on an Apache Kafka connection. Default value is
-     * "true".</p> </li> <li> <p> <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL
-     * for the private CA cert file (.pem format). The default is an empty string.</p>
-     * </li> <li> <p> <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip
-     * the validation of the CA cert file or not. Glue validates for three algorithms:
-     * SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is "false".</p>
-     * </li> <li> <p> <code>SECRET_ID</code> - The secret ID used for the secret
-     * manager of credentials.</p> </li> <li> <p> <code>CONNECTOR_URL</code> - The
-     * connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * data source.</p> </li> <li> <p> <code>SECRET_ID</code> - The secret ID used for
+     * the secret manager of credentials.</p> </li> <li> <p> <code>CONNECTOR_URL</code>
+     * - The connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
      * <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM
      * connection.</p> </li> <li> <p> <code>CONNECTOR_CLASS_NAME</code> - The connector
      * class name for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>KAFKA_BOOTSTRAP_SERVERS</code> - A comma-separated list of host and port
+     * pairs that are the addresses of the Apache Kafka brokers in a Kafka cluster to
+     * which a Kafka client will connect to and bootstrap itself.</p> </li> <li> <p>
+     * <code>KAFKA_SSL_ENABLED</code> - Whether to enable or disable SSL on an Apache
+     * Kafka connection. Default value is "true".</p> </li> <li> <p>
+     * <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL for the private CA cert file
+     * (.pem format). The default is an empty string.</p> </li> <li> <p>
+     * <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip the validation
+     * of the CA cert file or not. Glue validates for three algorithms: SHA256withRSA,
+     * SHA384withRSA and SHA512withRSA. Default value is "false".</p> </li> <li> <p>
      * <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client
      * keystore file for Kafka client side authentication (Optional).</p> </li> <li>
      * <p> <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the
@@ -938,7 +1181,34 @@ namespace Model
      * setting selected).</p> </li> <li> <p>
      * <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the
      * Kafka client key password (if the user has the Glue encrypt passwords setting
-     * selected).</p> </li> </ul>
+     * selected).</p> </li> <li> <p> <code>KAFKA_SASL_MECHANISM</code> -
+     * <code>"SCRAM-SHA-512"</code> or <code>"GSSAPI"</code>. These are the two
+     * supported <a
+     * href="https://www.iana.org/assignments/sasl-mechanisms/sasl-mechanisms.xhtml">SASL
+     * Mechanisms</a>.</p> </li> <li> <p> <code>KAFKA_SASL_SCRAM_USERNAME</code> - A
+     * plaintext username used to authenticate with the "SCRAM-SHA-512" mechanism.</p>
+     * </li> <li> <p> <code>KAFKA_SASL_SCRAM_PASSWORD</code> - A plaintext password
+     * used to authenticate with the "SCRAM-SHA-512" mechanism.</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_SASL_SCRAM_PASSWORD</code> - The encrypted version of the
+     * Kafka SASL SCRAM password (if the user has the Glue encrypt passwords setting
+     * selected).</p> </li> <li> <p> <code>KAFKA_SASL_GSSAPI_KEYTAB</code> - The S3
+     * location of a Kerberos <code>keytab</code> file. A keytab stores long-term keys
+     * for one or more principals. For more information, see <a
+     * href="https://web.mit.edu/kerberos/krb5-latest/doc/basic/keytab_def.html">MIT
+     * Kerberos Documentation: Keytab</a>.</p> </li> <li> <p>
+     * <code>KAFKA_SASL_GSSAPI_KRB5_CONF</code> - The S3 location of a Kerberos
+     * <code>krb5.conf</code> file. A krb5.conf stores Kerberos configuration
+     * information, such as the location of the KDC server. For more information, see
+     * <a
+     * href="https://web.mit.edu/kerberos/krb5-1.12/doc/admin/conf_files/krb5_conf.html">MIT
+     * Kerberos Documentation: krb5.conf</a>.</p> </li> <li> <p>
+     * <code>KAFKA_SASL_GSSAPI_SERVICE</code> - The Kerberos service name, as set with
+     * <code>sasl.kerberos.service.name</code> in your <a
+     * href="https://kafka.apache.org/documentation/#brokerconfigs_sasl.kerberos.service.name">Kafka
+     * Configuration</a>.</p> </li> <li> <p> <code>KAFKA_SASL_GSSAPI_PRINCIPAL</code> -
+     * The name of the Kerberos princial used by Glue. For more information, see <a
+     * href="https://kafka.apache.org/documentation/#security_sasl_kerberos_clientconfig">Kafka
+     * Documentation: Configuring Kafka Brokers</a>.</p> </li> </ul>
      */
     inline Connection& AddConnectionProperties(ConnectionPropertyKey&& key, Aws::String&& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -984,22 +1254,22 @@ namespace Model
      * in Microsoft SQL Server, this is used as the
      * <code>hostNameInCertificate</code>.</p> </li> <li> <p>
      * <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC)
-     * data source.</p> </li> <li> <p> <code>KAFKA_BOOTSTRAP_SERVERS</code> - A
-     * comma-separated list of host and port pairs that are the addresses of the Apache
-     * Kafka brokers in a Kafka cluster to which a Kafka client will connect to and
-     * bootstrap itself.</p> </li> <li> <p> <code>KAFKA_SSL_ENABLED</code> - Whether to
-     * enable or disable SSL on an Apache Kafka connection. Default value is
-     * "true".</p> </li> <li> <p> <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL
-     * for the private CA cert file (.pem format). The default is an empty string.</p>
-     * </li> <li> <p> <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip
-     * the validation of the CA cert file or not. Glue validates for three algorithms:
-     * SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is "false".</p>
-     * </li> <li> <p> <code>SECRET_ID</code> - The secret ID used for the secret
-     * manager of credentials.</p> </li> <li> <p> <code>CONNECTOR_URL</code> - The
-     * connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * data source.</p> </li> <li> <p> <code>SECRET_ID</code> - The secret ID used for
+     * the secret manager of credentials.</p> </li> <li> <p> <code>CONNECTOR_URL</code>
+     * - The connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
      * <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM
      * connection.</p> </li> <li> <p> <code>CONNECTOR_CLASS_NAME</code> - The connector
      * class name for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>KAFKA_BOOTSTRAP_SERVERS</code> - A comma-separated list of host and port
+     * pairs that are the addresses of the Apache Kafka brokers in a Kafka cluster to
+     * which a Kafka client will connect to and bootstrap itself.</p> </li> <li> <p>
+     * <code>KAFKA_SSL_ENABLED</code> - Whether to enable or disable SSL on an Apache
+     * Kafka connection. Default value is "true".</p> </li> <li> <p>
+     * <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL for the private CA cert file
+     * (.pem format). The default is an empty string.</p> </li> <li> <p>
+     * <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip the validation
+     * of the CA cert file or not. Glue validates for three algorithms: SHA256withRSA,
+     * SHA384withRSA and SHA512withRSA. Default value is "false".</p> </li> <li> <p>
      * <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client
      * keystore file for Kafka client side authentication (Optional).</p> </li> <li>
      * <p> <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the
@@ -1012,7 +1282,34 @@ namespace Model
      * setting selected).</p> </li> <li> <p>
      * <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the
      * Kafka client key password (if the user has the Glue encrypt passwords setting
-     * selected).</p> </li> </ul>
+     * selected).</p> </li> <li> <p> <code>KAFKA_SASL_MECHANISM</code> -
+     * <code>"SCRAM-SHA-512"</code> or <code>"GSSAPI"</code>. These are the two
+     * supported <a
+     * href="https://www.iana.org/assignments/sasl-mechanisms/sasl-mechanisms.xhtml">SASL
+     * Mechanisms</a>.</p> </li> <li> <p> <code>KAFKA_SASL_SCRAM_USERNAME</code> - A
+     * plaintext username used to authenticate with the "SCRAM-SHA-512" mechanism.</p>
+     * </li> <li> <p> <code>KAFKA_SASL_SCRAM_PASSWORD</code> - A plaintext password
+     * used to authenticate with the "SCRAM-SHA-512" mechanism.</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_SASL_SCRAM_PASSWORD</code> - The encrypted version of the
+     * Kafka SASL SCRAM password (if the user has the Glue encrypt passwords setting
+     * selected).</p> </li> <li> <p> <code>KAFKA_SASL_GSSAPI_KEYTAB</code> - The S3
+     * location of a Kerberos <code>keytab</code> file. A keytab stores long-term keys
+     * for one or more principals. For more information, see <a
+     * href="https://web.mit.edu/kerberos/krb5-latest/doc/basic/keytab_def.html">MIT
+     * Kerberos Documentation: Keytab</a>.</p> </li> <li> <p>
+     * <code>KAFKA_SASL_GSSAPI_KRB5_CONF</code> - The S3 location of a Kerberos
+     * <code>krb5.conf</code> file. A krb5.conf stores Kerberos configuration
+     * information, such as the location of the KDC server. For more information, see
+     * <a
+     * href="https://web.mit.edu/kerberos/krb5-1.12/doc/admin/conf_files/krb5_conf.html">MIT
+     * Kerberos Documentation: krb5.conf</a>.</p> </li> <li> <p>
+     * <code>KAFKA_SASL_GSSAPI_SERVICE</code> - The Kerberos service name, as set with
+     * <code>sasl.kerberos.service.name</code> in your <a
+     * href="https://kafka.apache.org/documentation/#brokerconfigs_sasl.kerberos.service.name">Kafka
+     * Configuration</a>.</p> </li> <li> <p> <code>KAFKA_SASL_GSSAPI_PRINCIPAL</code> -
+     * The name of the Kerberos princial used by Glue. For more information, see <a
+     * href="https://kafka.apache.org/documentation/#security_sasl_kerberos_clientconfig">Kafka
+     * Documentation: Configuring Kafka Brokers</a>.</p> </li> </ul>
      */
     inline Connection& AddConnectionProperties(ConnectionPropertyKey&& key, const char* value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(std::move(key), value); return *this; }
 
@@ -1058,22 +1355,22 @@ namespace Model
      * in Microsoft SQL Server, this is used as the
      * <code>hostNameInCertificate</code>.</p> </li> <li> <p>
      * <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC)
-     * data source.</p> </li> <li> <p> <code>KAFKA_BOOTSTRAP_SERVERS</code> - A
-     * comma-separated list of host and port pairs that are the addresses of the Apache
-     * Kafka brokers in a Kafka cluster to which a Kafka client will connect to and
-     * bootstrap itself.</p> </li> <li> <p> <code>KAFKA_SSL_ENABLED</code> - Whether to
-     * enable or disable SSL on an Apache Kafka connection. Default value is
-     * "true".</p> </li> <li> <p> <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL
-     * for the private CA cert file (.pem format). The default is an empty string.</p>
-     * </li> <li> <p> <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip
-     * the validation of the CA cert file or not. Glue validates for three algorithms:
-     * SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is "false".</p>
-     * </li> <li> <p> <code>SECRET_ID</code> - The secret ID used for the secret
-     * manager of credentials.</p> </li> <li> <p> <code>CONNECTOR_URL</code> - The
-     * connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * data source.</p> </li> <li> <p> <code>SECRET_ID</code> - The secret ID used for
+     * the secret manager of credentials.</p> </li> <li> <p> <code>CONNECTOR_URL</code>
+     * - The connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
      * <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM
      * connection.</p> </li> <li> <p> <code>CONNECTOR_CLASS_NAME</code> - The connector
      * class name for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>KAFKA_BOOTSTRAP_SERVERS</code> - A comma-separated list of host and port
+     * pairs that are the addresses of the Apache Kafka brokers in a Kafka cluster to
+     * which a Kafka client will connect to and bootstrap itself.</p> </li> <li> <p>
+     * <code>KAFKA_SSL_ENABLED</code> - Whether to enable or disable SSL on an Apache
+     * Kafka connection. Default value is "true".</p> </li> <li> <p>
+     * <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL for the private CA cert file
+     * (.pem format). The default is an empty string.</p> </li> <li> <p>
+     * <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip the validation
+     * of the CA cert file or not. Glue validates for three algorithms: SHA256withRSA,
+     * SHA384withRSA and SHA512withRSA. Default value is "false".</p> </li> <li> <p>
      * <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client
      * keystore file for Kafka client side authentication (Optional).</p> </li> <li>
      * <p> <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the
@@ -1086,7 +1383,34 @@ namespace Model
      * setting selected).</p> </li> <li> <p>
      * <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the
      * Kafka client key password (if the user has the Glue encrypt passwords setting
-     * selected).</p> </li> </ul>
+     * selected).</p> </li> <li> <p> <code>KAFKA_SASL_MECHANISM</code> -
+     * <code>"SCRAM-SHA-512"</code> or <code>"GSSAPI"</code>. These are the two
+     * supported <a
+     * href="https://www.iana.org/assignments/sasl-mechanisms/sasl-mechanisms.xhtml">SASL
+     * Mechanisms</a>.</p> </li> <li> <p> <code>KAFKA_SASL_SCRAM_USERNAME</code> - A
+     * plaintext username used to authenticate with the "SCRAM-SHA-512" mechanism.</p>
+     * </li> <li> <p> <code>KAFKA_SASL_SCRAM_PASSWORD</code> - A plaintext password
+     * used to authenticate with the "SCRAM-SHA-512" mechanism.</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_SASL_SCRAM_PASSWORD</code> - The encrypted version of the
+     * Kafka SASL SCRAM password (if the user has the Glue encrypt passwords setting
+     * selected).</p> </li> <li> <p> <code>KAFKA_SASL_GSSAPI_KEYTAB</code> - The S3
+     * location of a Kerberos <code>keytab</code> file. A keytab stores long-term keys
+     * for one or more principals. For more information, see <a
+     * href="https://web.mit.edu/kerberos/krb5-latest/doc/basic/keytab_def.html">MIT
+     * Kerberos Documentation: Keytab</a>.</p> </li> <li> <p>
+     * <code>KAFKA_SASL_GSSAPI_KRB5_CONF</code> - The S3 location of a Kerberos
+     * <code>krb5.conf</code> file. A krb5.conf stores Kerberos configuration
+     * information, such as the location of the KDC server. For more information, see
+     * <a
+     * href="https://web.mit.edu/kerberos/krb5-1.12/doc/admin/conf_files/krb5_conf.html">MIT
+     * Kerberos Documentation: krb5.conf</a>.</p> </li> <li> <p>
+     * <code>KAFKA_SASL_GSSAPI_SERVICE</code> - The Kerberos service name, as set with
+     * <code>sasl.kerberos.service.name</code> in your <a
+     * href="https://kafka.apache.org/documentation/#brokerconfigs_sasl.kerberos.service.name">Kafka
+     * Configuration</a>.</p> </li> <li> <p> <code>KAFKA_SASL_GSSAPI_PRINCIPAL</code> -
+     * The name of the Kerberos princial used by Glue. For more information, see <a
+     * href="https://kafka.apache.org/documentation/#security_sasl_kerberos_clientconfig">Kafka
+     * Documentation: Configuring Kafka Brokers</a>.</p> </li> </ul>
      */
     inline Connection& AddConnectionProperties(const ConnectionPropertyKey& key, const char* value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(key, value); return *this; }
 

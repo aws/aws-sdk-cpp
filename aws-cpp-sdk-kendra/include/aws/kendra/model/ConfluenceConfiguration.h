@@ -104,118 +104,112 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
-     * key-value pairs required to connect to your Confluence server. The secret must
-     * contain a JSON structure with the following keys:</p> <ul> <li> <p>username—The
-     * user name or email address of a user with administrative privileges for the
-     * Confluence server.</p> </li> <li> <p>password—The password associated with the
-     * user logging in to the Confluence server.</p> </li> </ul>
+     * user name and password required to connect to the Confluence instance. If you
+     * use Confluence cloud, you use a generated API token as the password. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using
+     * a Confluemce data source</a>.</p>
      */
     inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
-     * key-value pairs required to connect to your Confluence server. The secret must
-     * contain a JSON structure with the following keys:</p> <ul> <li> <p>username—The
-     * user name or email address of a user with administrative privileges for the
-     * Confluence server.</p> </li> <li> <p>password—The password associated with the
-     * user logging in to the Confluence server.</p> </li> </ul>
+     * user name and password required to connect to the Confluence instance. If you
+     * use Confluence cloud, you use a generated API token as the password. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using
+     * a Confluemce data source</a>.</p>
      */
     inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
-     * key-value pairs required to connect to your Confluence server. The secret must
-     * contain a JSON structure with the following keys:</p> <ul> <li> <p>username—The
-     * user name or email address of a user with administrative privileges for the
-     * Confluence server.</p> </li> <li> <p>password—The password associated with the
-     * user logging in to the Confluence server.</p> </li> </ul>
+     * user name and password required to connect to the Confluence instance. If you
+     * use Confluence cloud, you use a generated API token as the password. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using
+     * a Confluemce data source</a>.</p>
      */
     inline void SetSecretArn(const Aws::String& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
-     * key-value pairs required to connect to your Confluence server. The secret must
-     * contain a JSON structure with the following keys:</p> <ul> <li> <p>username—The
-     * user name or email address of a user with administrative privileges for the
-     * Confluence server.</p> </li> <li> <p>password—The password associated with the
-     * user logging in to the Confluence server.</p> </li> </ul>
+     * user name and password required to connect to the Confluence instance. If you
+     * use Confluence cloud, you use a generated API token as the password. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using
+     * a Confluemce data source</a>.</p>
      */
     inline void SetSecretArn(Aws::String&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
-     * key-value pairs required to connect to your Confluence server. The secret must
-     * contain a JSON structure with the following keys:</p> <ul> <li> <p>username—The
-     * user name or email address of a user with administrative privileges for the
-     * Confluence server.</p> </li> <li> <p>password—The password associated with the
-     * user logging in to the Confluence server.</p> </li> </ul>
+     * user name and password required to connect to the Confluence instance. If you
+     * use Confluence cloud, you use a generated API token as the password. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using
+     * a Confluemce data source</a>.</p>
      */
     inline void SetSecretArn(const char* value) { m_secretArnHasBeenSet = true; m_secretArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
-     * key-value pairs required to connect to your Confluence server. The secret must
-     * contain a JSON structure with the following keys:</p> <ul> <li> <p>username—The
-     * user name or email address of a user with administrative privileges for the
-     * Confluence server.</p> </li> <li> <p>password—The password associated with the
-     * user logging in to the Confluence server.</p> </li> </ul>
+     * user name and password required to connect to the Confluence instance. If you
+     * use Confluence cloud, you use a generated API token as the password. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using
+     * a Confluemce data source</a>.</p>
      */
     inline ConfluenceConfiguration& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
-     * key-value pairs required to connect to your Confluence server. The secret must
-     * contain a JSON structure with the following keys:</p> <ul> <li> <p>username—The
-     * user name or email address of a user with administrative privileges for the
-     * Confluence server.</p> </li> <li> <p>password—The password associated with the
-     * user logging in to the Confluence server.</p> </li> </ul>
+     * user name and password required to connect to the Confluence instance. If you
+     * use Confluence cloud, you use a generated API token as the password. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using
+     * a Confluemce data source</a>.</p>
      */
     inline ConfluenceConfiguration& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
-     * key-value pairs required to connect to your Confluence server. The secret must
-     * contain a JSON structure with the following keys:</p> <ul> <li> <p>username—The
-     * user name or email address of a user with administrative privileges for the
-     * Confluence server.</p> </li> <li> <p>password—The password associated with the
-     * user logging in to the Confluence server.</p> </li> </ul>
+     * user name and password required to connect to the Confluence instance. If you
+     * use Confluence cloud, you use a generated API token as the password. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using
+     * a Confluemce data source</a>.</p>
      */
     inline ConfluenceConfiguration& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}
 
 
     /**
-     * <p>Specifies the version of the Confluence installation that you are connecting
-     * to.</p>
+     * <p>The version or the type of the Confluence installation to connect to.</p>
      */
     inline const ConfluenceVersion& GetVersion() const{ return m_version; }
 
     /**
-     * <p>Specifies the version of the Confluence installation that you are connecting
-     * to.</p>
+     * <p>The version or the type of the Confluence installation to connect to.</p>
      */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
-     * <p>Specifies the version of the Confluence installation that you are connecting
-     * to.</p>
+     * <p>The version or the type of the Confluence installation to connect to.</p>
      */
     inline void SetVersion(const ConfluenceVersion& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * <p>Specifies the version of the Confluence installation that you are connecting
-     * to.</p>
+     * <p>The version or the type of the Confluence installation to connect to.</p>
      */
     inline void SetVersion(ConfluenceVersion&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
-     * <p>Specifies the version of the Confluence installation that you are connecting
-     * to.</p>
+     * <p>The version or the type of the Confluence installation to connect to.</p>
      */
     inline ConfluenceConfiguration& WithVersion(const ConfluenceVersion& value) { SetVersion(value); return *this;}
 
     /**
-     * <p>Specifies the version of the Confluence installation that you are connecting
-     * to.</p>
+     * <p>The version or the type of the Confluence installation to connect to.</p>
      */
     inline ConfluenceConfiguration& WithVersion(ConfluenceVersion&& value) { SetVersion(std::move(value)); return *this;}
 
@@ -491,92 +485,92 @@ namespace Model
 
 
     /**
-     * <p>&gt;A list of regular expression patterns to exclude certain blog posts,
-     * pages, spaces, or attachments in your Confluence. Content that matches the
-     * patterns are excluded from the index. Content that doesn't match the patterns is
-     * included in the index. If content matches both an inclusion and exclusion
-     * pattern, the exclusion pattern takes precedence and the content isn't included
-     * in the index.</p>
+     * <p>A list of regular expression patterns to exclude certain blog posts, pages,
+     * spaces, or attachments in your Confluence. Content that matches the patterns are
+     * excluded from the index. Content that doesn't match the patterns is included in
+     * the index. If content matches both an inclusion and exclusion pattern, the
+     * exclusion pattern takes precedence and the content isn't included in the
+     * index.</p>
      */
     inline const Aws::Vector<Aws::String>& GetExclusionPatterns() const{ return m_exclusionPatterns; }
 
     /**
-     * <p>&gt;A list of regular expression patterns to exclude certain blog posts,
-     * pages, spaces, or attachments in your Confluence. Content that matches the
-     * patterns are excluded from the index. Content that doesn't match the patterns is
-     * included in the index. If content matches both an inclusion and exclusion
-     * pattern, the exclusion pattern takes precedence and the content isn't included
-     * in the index.</p>
+     * <p>A list of regular expression patterns to exclude certain blog posts, pages,
+     * spaces, or attachments in your Confluence. Content that matches the patterns are
+     * excluded from the index. Content that doesn't match the patterns is included in
+     * the index. If content matches both an inclusion and exclusion pattern, the
+     * exclusion pattern takes precedence and the content isn't included in the
+     * index.</p>
      */
     inline bool ExclusionPatternsHasBeenSet() const { return m_exclusionPatternsHasBeenSet; }
 
     /**
-     * <p>&gt;A list of regular expression patterns to exclude certain blog posts,
-     * pages, spaces, or attachments in your Confluence. Content that matches the
-     * patterns are excluded from the index. Content that doesn't match the patterns is
-     * included in the index. If content matches both an inclusion and exclusion
-     * pattern, the exclusion pattern takes precedence and the content isn't included
-     * in the index.</p>
+     * <p>A list of regular expression patterns to exclude certain blog posts, pages,
+     * spaces, or attachments in your Confluence. Content that matches the patterns are
+     * excluded from the index. Content that doesn't match the patterns is included in
+     * the index. If content matches both an inclusion and exclusion pattern, the
+     * exclusion pattern takes precedence and the content isn't included in the
+     * index.</p>
      */
     inline void SetExclusionPatterns(const Aws::Vector<Aws::String>& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns = value; }
 
     /**
-     * <p>&gt;A list of regular expression patterns to exclude certain blog posts,
-     * pages, spaces, or attachments in your Confluence. Content that matches the
-     * patterns are excluded from the index. Content that doesn't match the patterns is
-     * included in the index. If content matches both an inclusion and exclusion
-     * pattern, the exclusion pattern takes precedence and the content isn't included
-     * in the index.</p>
+     * <p>A list of regular expression patterns to exclude certain blog posts, pages,
+     * spaces, or attachments in your Confluence. Content that matches the patterns are
+     * excluded from the index. Content that doesn't match the patterns is included in
+     * the index. If content matches both an inclusion and exclusion pattern, the
+     * exclusion pattern takes precedence and the content isn't included in the
+     * index.</p>
      */
     inline void SetExclusionPatterns(Aws::Vector<Aws::String>&& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns = std::move(value); }
 
     /**
-     * <p>&gt;A list of regular expression patterns to exclude certain blog posts,
-     * pages, spaces, or attachments in your Confluence. Content that matches the
-     * patterns are excluded from the index. Content that doesn't match the patterns is
-     * included in the index. If content matches both an inclusion and exclusion
-     * pattern, the exclusion pattern takes precedence and the content isn't included
-     * in the index.</p>
+     * <p>A list of regular expression patterns to exclude certain blog posts, pages,
+     * spaces, or attachments in your Confluence. Content that matches the patterns are
+     * excluded from the index. Content that doesn't match the patterns is included in
+     * the index. If content matches both an inclusion and exclusion pattern, the
+     * exclusion pattern takes precedence and the content isn't included in the
+     * index.</p>
      */
     inline ConfluenceConfiguration& WithExclusionPatterns(const Aws::Vector<Aws::String>& value) { SetExclusionPatterns(value); return *this;}
 
     /**
-     * <p>&gt;A list of regular expression patterns to exclude certain blog posts,
-     * pages, spaces, or attachments in your Confluence. Content that matches the
-     * patterns are excluded from the index. Content that doesn't match the patterns is
-     * included in the index. If content matches both an inclusion and exclusion
-     * pattern, the exclusion pattern takes precedence and the content isn't included
-     * in the index.</p>
+     * <p>A list of regular expression patterns to exclude certain blog posts, pages,
+     * spaces, or attachments in your Confluence. Content that matches the patterns are
+     * excluded from the index. Content that doesn't match the patterns is included in
+     * the index. If content matches both an inclusion and exclusion pattern, the
+     * exclusion pattern takes precedence and the content isn't included in the
+     * index.</p>
      */
     inline ConfluenceConfiguration& WithExclusionPatterns(Aws::Vector<Aws::String>&& value) { SetExclusionPatterns(std::move(value)); return *this;}
 
     /**
-     * <p>&gt;A list of regular expression patterns to exclude certain blog posts,
-     * pages, spaces, or attachments in your Confluence. Content that matches the
-     * patterns are excluded from the index. Content that doesn't match the patterns is
-     * included in the index. If content matches both an inclusion and exclusion
-     * pattern, the exclusion pattern takes precedence and the content isn't included
-     * in the index.</p>
+     * <p>A list of regular expression patterns to exclude certain blog posts, pages,
+     * spaces, or attachments in your Confluence. Content that matches the patterns are
+     * excluded from the index. Content that doesn't match the patterns is included in
+     * the index. If content matches both an inclusion and exclusion pattern, the
+     * exclusion pattern takes precedence and the content isn't included in the
+     * index.</p>
      */
     inline ConfluenceConfiguration& AddExclusionPatterns(const Aws::String& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns.push_back(value); return *this; }
 
     /**
-     * <p>&gt;A list of regular expression patterns to exclude certain blog posts,
-     * pages, spaces, or attachments in your Confluence. Content that matches the
-     * patterns are excluded from the index. Content that doesn't match the patterns is
-     * included in the index. If content matches both an inclusion and exclusion
-     * pattern, the exclusion pattern takes precedence and the content isn't included
-     * in the index.</p>
+     * <p>A list of regular expression patterns to exclude certain blog posts, pages,
+     * spaces, or attachments in your Confluence. Content that matches the patterns are
+     * excluded from the index. Content that doesn't match the patterns is included in
+     * the index. If content matches both an inclusion and exclusion pattern, the
+     * exclusion pattern takes precedence and the content isn't included in the
+     * index.</p>
      */
     inline ConfluenceConfiguration& AddExclusionPatterns(Aws::String&& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>&gt;A list of regular expression patterns to exclude certain blog posts,
-     * pages, spaces, or attachments in your Confluence. Content that matches the
-     * patterns are excluded from the index. Content that doesn't match the patterns is
-     * included in the index. If content matches both an inclusion and exclusion
-     * pattern, the exclusion pattern takes precedence and the content isn't included
-     * in the index.</p>
+     * <p>A list of regular expression patterns to exclude certain blog posts, pages,
+     * spaces, or attachments in your Confluence. Content that matches the patterns are
+     * excluded from the index. Content that doesn't match the patterns is included in
+     * the index. If content matches both an inclusion and exclusion pattern, the
+     * exclusion pattern takes precedence and the content isn't included in the
+     * index.</p>
      */
     inline ConfluenceConfiguration& AddExclusionPatterns(const char* value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns.push_back(value); return *this; }
 

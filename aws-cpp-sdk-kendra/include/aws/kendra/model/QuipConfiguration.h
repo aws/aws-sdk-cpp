@@ -164,122 +164,110 @@ namespace Model
 
 
     /**
-     * <p>Specify whether to crawl file comments in Quip. You can specify one or more
-     * of these options.</p>
+     * <p> <code>TRUE</code> to index file comments.</p>
      */
     inline bool GetCrawlFileComments() const{ return m_crawlFileComments; }
 
     /**
-     * <p>Specify whether to crawl file comments in Quip. You can specify one or more
-     * of these options.</p>
+     * <p> <code>TRUE</code> to index file comments.</p>
      */
     inline bool CrawlFileCommentsHasBeenSet() const { return m_crawlFileCommentsHasBeenSet; }
 
     /**
-     * <p>Specify whether to crawl file comments in Quip. You can specify one or more
-     * of these options.</p>
+     * <p> <code>TRUE</code> to index file comments.</p>
      */
     inline void SetCrawlFileComments(bool value) { m_crawlFileCommentsHasBeenSet = true; m_crawlFileComments = value; }
 
     /**
-     * <p>Specify whether to crawl file comments in Quip. You can specify one or more
-     * of these options.</p>
+     * <p> <code>TRUE</code> to index file comments.</p>
      */
     inline QuipConfiguration& WithCrawlFileComments(bool value) { SetCrawlFileComments(value); return *this;}
 
 
     /**
-     * <p>Specify whether to crawl chat rooms in Quip. You can specify one or more of
-     * these options.</p>
+     * <p> <code>TRUE</code> to index the contents of chat rooms.</p>
      */
     inline bool GetCrawlChatRooms() const{ return m_crawlChatRooms; }
 
     /**
-     * <p>Specify whether to crawl chat rooms in Quip. You can specify one or more of
-     * these options.</p>
+     * <p> <code>TRUE</code> to index the contents of chat rooms.</p>
      */
     inline bool CrawlChatRoomsHasBeenSet() const { return m_crawlChatRoomsHasBeenSet; }
 
     /**
-     * <p>Specify whether to crawl chat rooms in Quip. You can specify one or more of
-     * these options.</p>
+     * <p> <code>TRUE</code> to index the contents of chat rooms.</p>
      */
     inline void SetCrawlChatRooms(bool value) { m_crawlChatRoomsHasBeenSet = true; m_crawlChatRooms = value; }
 
     /**
-     * <p>Specify whether to crawl chat rooms in Quip. You can specify one or more of
-     * these options.</p>
+     * <p> <code>TRUE</code> to index the contents of chat rooms.</p>
      */
     inline QuipConfiguration& WithCrawlChatRooms(bool value) { SetCrawlChatRooms(value); return *this;}
 
 
     /**
-     * <p>Specify whether to crawl attachments in Quip. You can specify one or more of
-     * these options.</p>
+     * <p> <code>TRUE</code> to index attachments.</p>
      */
     inline bool GetCrawlAttachments() const{ return m_crawlAttachments; }
 
     /**
-     * <p>Specify whether to crawl attachments in Quip. You can specify one or more of
-     * these options.</p>
+     * <p> <code>TRUE</code> to index attachments.</p>
      */
     inline bool CrawlAttachmentsHasBeenSet() const { return m_crawlAttachmentsHasBeenSet; }
 
     /**
-     * <p>Specify whether to crawl attachments in Quip. You can specify one or more of
-     * these options.</p>
+     * <p> <code>TRUE</code> to index attachments.</p>
      */
     inline void SetCrawlAttachments(bool value) { m_crawlAttachmentsHasBeenSet = true; m_crawlAttachments = value; }
 
     /**
-     * <p>Specify whether to crawl attachments in Quip. You can specify one or more of
-     * these options.</p>
+     * <p> <code>TRUE</code> to index attachments.</p>
      */
     inline QuipConfiguration& WithCrawlAttachments(bool value) { SetCrawlAttachments(value); return *this;}
 
 
     /**
-     * <p>The identifier of the Quip folder IDs to index.</p>
+     * <p>The identifier of the Quip folders you want to index.</p>
      */
     inline const Aws::Vector<Aws::String>& GetFolderIds() const{ return m_folderIds; }
 
     /**
-     * <p>The identifier of the Quip folder IDs to index.</p>
+     * <p>The identifier of the Quip folders you want to index.</p>
      */
     inline bool FolderIdsHasBeenSet() const { return m_folderIdsHasBeenSet; }
 
     /**
-     * <p>The identifier of the Quip folder IDs to index.</p>
+     * <p>The identifier of the Quip folders you want to index.</p>
      */
     inline void SetFolderIds(const Aws::Vector<Aws::String>& value) { m_folderIdsHasBeenSet = true; m_folderIds = value; }
 
     /**
-     * <p>The identifier of the Quip folder IDs to index.</p>
+     * <p>The identifier of the Quip folders you want to index.</p>
      */
     inline void SetFolderIds(Aws::Vector<Aws::String>&& value) { m_folderIdsHasBeenSet = true; m_folderIds = std::move(value); }
 
     /**
-     * <p>The identifier of the Quip folder IDs to index.</p>
+     * <p>The identifier of the Quip folders you want to index.</p>
      */
     inline QuipConfiguration& WithFolderIds(const Aws::Vector<Aws::String>& value) { SetFolderIds(value); return *this;}
 
     /**
-     * <p>The identifier of the Quip folder IDs to index.</p>
+     * <p>The identifier of the Quip folders you want to index.</p>
      */
     inline QuipConfiguration& WithFolderIds(Aws::Vector<Aws::String>&& value) { SetFolderIds(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the Quip folder IDs to index.</p>
+     * <p>The identifier of the Quip folders you want to index.</p>
      */
     inline QuipConfiguration& AddFolderIds(const Aws::String& value) { m_folderIdsHasBeenSet = true; m_folderIds.push_back(value); return *this; }
 
     /**
-     * <p>The identifier of the Quip folder IDs to index.</p>
+     * <p>The identifier of the Quip folders you want to index.</p>
      */
     inline QuipConfiguration& AddFolderIds(Aws::String&& value) { m_folderIdsHasBeenSet = true; m_folderIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The identifier of the Quip folder IDs to index.</p>
+     * <p>The identifier of the Quip folders you want to index.</p>
      */
     inline QuipConfiguration& AddFolderIds(const char* value) { m_folderIdsHasBeenSet = true; m_folderIds.push_back(value); return *this; }
 

@@ -830,28 +830,44 @@ namespace Model
     inline Table& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
 
 
-    
+    /**
+     * <p>The ID of the table version.</p>
+     */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
 
-    
+    /**
+     * <p>The ID of the table version.</p>
+     */
     inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
 
-    
+    /**
+     * <p>The ID of the table version.</p>
+     */
     inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
 
-    
+    /**
+     * <p>The ID of the table version.</p>
+     */
     inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = std::move(value); }
 
-    
+    /**
+     * <p>The ID of the table version.</p>
+     */
     inline void SetVersionId(const char* value) { m_versionIdHasBeenSet = true; m_versionId.assign(value); }
 
-    
+    /**
+     * <p>The ID of the table version.</p>
+     */
     inline Table& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
 
-    
+    /**
+     * <p>The ID of the table version.</p>
+     */
     inline Table& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The ID of the table version.</p>
+     */
     inline Table& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 
   private:

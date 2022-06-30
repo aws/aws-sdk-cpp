@@ -21,6 +21,7 @@
 #include <aws/athena/AthenaEndpoint.h>
 #include <aws/athena/AthenaErrorMarshaller.h>
 #include <aws/athena/model/BatchGetNamedQueryRequest.h>
+#include <aws/athena/model/BatchGetPreparedStatementRequest.h>
 #include <aws/athena/model/BatchGetQueryExecutionRequest.h>
 #include <aws/athena/model/CreateDataCatalogRequest.h>
 #include <aws/athena/model/CreateNamedQueryRequest.h>
@@ -151,6 +152,30 @@ void AthenaClient::BatchGetNamedQueryAsync(const BatchGetNamedQueryRequest& requ
 void AthenaClient::BatchGetNamedQueryAsyncHelper(const BatchGetNamedQueryRequest& request, const BatchGetNamedQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, BatchGetNamedQuery(request), context);
+}
+
+BatchGetPreparedStatementOutcome AthenaClient::BatchGetPreparedStatement(const BatchGetPreparedStatementRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return BatchGetPreparedStatementOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+BatchGetPreparedStatementOutcomeCallable AthenaClient::BatchGetPreparedStatementCallable(const BatchGetPreparedStatementRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchGetPreparedStatementOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchGetPreparedStatement(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AthenaClient::BatchGetPreparedStatementAsync(const BatchGetPreparedStatementRequest& request, const BatchGetPreparedStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->BatchGetPreparedStatementAsyncHelper( request, handler, context ); } );
+}
+
+void AthenaClient::BatchGetPreparedStatementAsyncHelper(const BatchGetPreparedStatementRequest& request, const BatchGetPreparedStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, BatchGetPreparedStatement(request), context);
 }
 
 BatchGetQueryExecutionOutcome AthenaClient::BatchGetQueryExecution(const BatchGetQueryExecutionRequest& request) const

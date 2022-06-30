@@ -32,7 +32,8 @@ namespace Model
     BOX,
     QUIP,
     JIRA,
-    GITHUB
+    GITHUB,
+    ALFRESCO
   };
 
 namespace DataSourceTypeMapper

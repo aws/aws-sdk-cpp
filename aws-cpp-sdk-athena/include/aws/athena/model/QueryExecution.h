@@ -12,6 +12,7 @@
 #include <aws/athena/model/QueryExecutionStatus.h>
 #include <aws/athena/model/QueryExecutionStatistics.h>
 #include <aws/athena/model/EngineVersion.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -412,6 +413,70 @@ namespace Model
      */
     inline QueryExecution& WithEngineVersion(EngineVersion&& value) { SetEngineVersion(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A list of values for the parameters in a query. The values are applied
+     * sequentially to the parameters in the query in the order in which the parameters
+     * occur.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetExecutionParameters() const{ return m_executionParameters; }
+
+    /**
+     * <p>A list of values for the parameters in a query. The values are applied
+     * sequentially to the parameters in the query in the order in which the parameters
+     * occur.</p>
+     */
+    inline bool ExecutionParametersHasBeenSet() const { return m_executionParametersHasBeenSet; }
+
+    /**
+     * <p>A list of values for the parameters in a query. The values are applied
+     * sequentially to the parameters in the query in the order in which the parameters
+     * occur.</p>
+     */
+    inline void SetExecutionParameters(const Aws::Vector<Aws::String>& value) { m_executionParametersHasBeenSet = true; m_executionParameters = value; }
+
+    /**
+     * <p>A list of values for the parameters in a query. The values are applied
+     * sequentially to the parameters in the query in the order in which the parameters
+     * occur.</p>
+     */
+    inline void SetExecutionParameters(Aws::Vector<Aws::String>&& value) { m_executionParametersHasBeenSet = true; m_executionParameters = std::move(value); }
+
+    /**
+     * <p>A list of values for the parameters in a query. The values are applied
+     * sequentially to the parameters in the query in the order in which the parameters
+     * occur.</p>
+     */
+    inline QueryExecution& WithExecutionParameters(const Aws::Vector<Aws::String>& value) { SetExecutionParameters(value); return *this;}
+
+    /**
+     * <p>A list of values for the parameters in a query. The values are applied
+     * sequentially to the parameters in the query in the order in which the parameters
+     * occur.</p>
+     */
+    inline QueryExecution& WithExecutionParameters(Aws::Vector<Aws::String>&& value) { SetExecutionParameters(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of values for the parameters in a query. The values are applied
+     * sequentially to the parameters in the query in the order in which the parameters
+     * occur.</p>
+     */
+    inline QueryExecution& AddExecutionParameters(const Aws::String& value) { m_executionParametersHasBeenSet = true; m_executionParameters.push_back(value); return *this; }
+
+    /**
+     * <p>A list of values for the parameters in a query. The values are applied
+     * sequentially to the parameters in the query in the order in which the parameters
+     * occur.</p>
+     */
+    inline QueryExecution& AddExecutionParameters(Aws::String&& value) { m_executionParametersHasBeenSet = true; m_executionParameters.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>A list of values for the parameters in a query. The values are applied
+     * sequentially to the parameters in the query in the order in which the parameters
+     * occur.</p>
+     */
+    inline QueryExecution& AddExecutionParameters(const char* value) { m_executionParametersHasBeenSet = true; m_executionParameters.push_back(value); return *this; }
+
   private:
 
     Aws::String m_queryExecutionId;
@@ -440,6 +505,9 @@ namespace Model
 
     EngineVersion m_engineVersion;
     bool m_engineVersionHasBeenSet;
+
+    Aws::Vector<Aws::String> m_executionParameters;
+    bool m_executionParametersHasBeenSet;
   };
 
 } // namespace Model

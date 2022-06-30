@@ -152,49 +152,49 @@ namespace Model
 
     /**
      * <p>The Apache Airflow version on your environment. Valid values:
-     * <code>1.10.12</code>, <code>2.0.2</code>.</p>
+     * <code>1.10.12</code>, <code>2.0.2</code>, and <code>2.2.2</code>.</p>
      */
     inline const Aws::String& GetAirflowVersion() const{ return m_airflowVersion; }
 
     /**
      * <p>The Apache Airflow version on your environment. Valid values:
-     * <code>1.10.12</code>, <code>2.0.2</code>.</p>
+     * <code>1.10.12</code>, <code>2.0.2</code>, and <code>2.2.2</code>.</p>
      */
     inline bool AirflowVersionHasBeenSet() const { return m_airflowVersionHasBeenSet; }
 
     /**
      * <p>The Apache Airflow version on your environment. Valid values:
-     * <code>1.10.12</code>, <code>2.0.2</code>.</p>
+     * <code>1.10.12</code>, <code>2.0.2</code>, and <code>2.2.2</code>.</p>
      */
     inline void SetAirflowVersion(const Aws::String& value) { m_airflowVersionHasBeenSet = true; m_airflowVersion = value; }
 
     /**
      * <p>The Apache Airflow version on your environment. Valid values:
-     * <code>1.10.12</code>, <code>2.0.2</code>.</p>
+     * <code>1.10.12</code>, <code>2.0.2</code>, and <code>2.2.2</code>.</p>
      */
     inline void SetAirflowVersion(Aws::String&& value) { m_airflowVersionHasBeenSet = true; m_airflowVersion = std::move(value); }
 
     /**
      * <p>The Apache Airflow version on your environment. Valid values:
-     * <code>1.10.12</code>, <code>2.0.2</code>.</p>
+     * <code>1.10.12</code>, <code>2.0.2</code>, and <code>2.2.2</code>.</p>
      */
     inline void SetAirflowVersion(const char* value) { m_airflowVersionHasBeenSet = true; m_airflowVersion.assign(value); }
 
     /**
      * <p>The Apache Airflow version on your environment. Valid values:
-     * <code>1.10.12</code>, <code>2.0.2</code>.</p>
+     * <code>1.10.12</code>, <code>2.0.2</code>, and <code>2.2.2</code>.</p>
      */
     inline Environment& WithAirflowVersion(const Aws::String& value) { SetAirflowVersion(value); return *this;}
 
     /**
      * <p>The Apache Airflow version on your environment. Valid values:
-     * <code>1.10.12</code>, <code>2.0.2</code>.</p>
+     * <code>1.10.12</code>, <code>2.0.2</code>, and <code>2.2.2</code>.</p>
      */
     inline Environment& WithAirflowVersion(Aws::String&& value) { SetAirflowVersion(std::move(value)); return *this;}
 
     /**
      * <p>The Apache Airflow version on your environment. Valid values:
-     * <code>1.10.12</code>, <code>2.0.2</code>.</p>
+     * <code>1.10.12</code>, <code>2.0.2</code>, and <code>2.2.2</code>.</p>
      */
     inline Environment& WithAirflowVersion(const char* value) { SetAirflowVersion(value); return *this;}
 

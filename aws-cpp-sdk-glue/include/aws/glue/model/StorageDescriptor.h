@@ -142,31 +142,58 @@ namespace Model
     inline StorageDescriptor& WithLocation(const char* value) { SetLocation(value); return *this;}
 
 
-    
+    /**
+     * <p>A list of locations that point to the path where a Delta table is
+     * located.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetAdditionalLocations() const{ return m_additionalLocations; }
 
-    
+    /**
+     * <p>A list of locations that point to the path where a Delta table is
+     * located.</p>
+     */
     inline bool AdditionalLocationsHasBeenSet() const { return m_additionalLocationsHasBeenSet; }
 
-    
+    /**
+     * <p>A list of locations that point to the path where a Delta table is
+     * located.</p>
+     */
     inline void SetAdditionalLocations(const Aws::Vector<Aws::String>& value) { m_additionalLocationsHasBeenSet = true; m_additionalLocations = value; }
 
-    
+    /**
+     * <p>A list of locations that point to the path where a Delta table is
+     * located.</p>
+     */
     inline void SetAdditionalLocations(Aws::Vector<Aws::String>&& value) { m_additionalLocationsHasBeenSet = true; m_additionalLocations = std::move(value); }
 
-    
+    /**
+     * <p>A list of locations that point to the path where a Delta table is
+     * located.</p>
+     */
     inline StorageDescriptor& WithAdditionalLocations(const Aws::Vector<Aws::String>& value) { SetAdditionalLocations(value); return *this;}
 
-    
+    /**
+     * <p>A list of locations that point to the path where a Delta table is
+     * located.</p>
+     */
     inline StorageDescriptor& WithAdditionalLocations(Aws::Vector<Aws::String>&& value) { SetAdditionalLocations(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>A list of locations that point to the path where a Delta table is
+     * located.</p>
+     */
     inline StorageDescriptor& AddAdditionalLocations(const Aws::String& value) { m_additionalLocationsHasBeenSet = true; m_additionalLocations.push_back(value); return *this; }
 
-    
+    /**
+     * <p>A list of locations that point to the path where a Delta table is
+     * located.</p>
+     */
     inline StorageDescriptor& AddAdditionalLocations(Aws::String&& value) { m_additionalLocationsHasBeenSet = true; m_additionalLocations.push_back(std::move(value)); return *this; }
 
-    
+    /**
+     * <p>A list of locations that point to the path where a Delta table is
+     * located.</p>
+     */
     inline StorageDescriptor& AddAdditionalLocations(const char* value) { m_additionalLocationsHasBeenSet = true; m_additionalLocations.push_back(value); return *this; }
 
 

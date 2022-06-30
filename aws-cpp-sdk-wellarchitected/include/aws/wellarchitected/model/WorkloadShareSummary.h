@@ -126,6 +126,47 @@ namespace Model
     
     inline WorkloadShareSummary& WithStatus(ShareStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Optional message to compliment the Status field.</p>
+     */
+    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+
+    /**
+     * <p>Optional message to compliment the Status field.</p>
+     */
+    inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
+
+    /**
+     * <p>Optional message to compliment the Status field.</p>
+     */
+    inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
+
+    /**
+     * <p>Optional message to compliment the Status field.</p>
+     */
+    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
+
+    /**
+     * <p>Optional message to compliment the Status field.</p>
+     */
+    inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
+
+    /**
+     * <p>Optional message to compliment the Status field.</p>
+     */
+    inline WorkloadShareSummary& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
+
+    /**
+     * <p>Optional message to compliment the Status field.</p>
+     */
+    inline WorkloadShareSummary& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
+
+    /**
+     * <p>Optional message to compliment the Status field.</p>
+     */
+    inline WorkloadShareSummary& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+
   private:
 
     Aws::String m_shareId;
@@ -139,6 +180,9 @@ namespace Model
 
     ShareStatus m_status;
     bool m_statusHasBeenSet;
+
+    Aws::String m_statusMessage;
+    bool m_statusMessageHasBeenSet;
   };
 
 } // namespace Model
