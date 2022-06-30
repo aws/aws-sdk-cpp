@@ -106,6 +106,10 @@ endif()
 
 set(PYTHON_CMD "python")
 
+set(Python_ADDITIONAL_VERSIONS 3.7 3.8 3.9 3.10)
+find_package(PythonInterp)
+set(PYTHON3_CMD ${PYTHON_EXECUTABLE})
+
 # CMAKE_MODULE_PATH is a CMAKE variable. It contains a list of paths
 # which could be used to search CMAKE modules by "include()" or "find_package()", but the default value is empty.
 # Add ${CMAKE_INSTALL_LIBDIR}/cmake and ${CMAKE_PREFIX_PATH}/lib/cmake to search list

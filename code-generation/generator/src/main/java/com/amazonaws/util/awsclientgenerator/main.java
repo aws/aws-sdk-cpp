@@ -9,8 +9,10 @@ import com.amazonaws.util.awsclientgenerator.config.exceptions.GeneratorNotImple
 import com.amazonaws.util.awsclientgenerator.generators.DirectFromC2jGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.MainGenerator;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -21,7 +23,8 @@ import java.util.Map;
 
 public class main {
 
-    static final String FILE_NAME = "inputfile";
+    static final String INPUT_FILE_NAME = "inputfile";
+    static final String OUTPUT_FILE_NAME = "outputfile";
     static final String ARBITRARY_OPTION = "arbitrary";
     static final String LANGUAGE_BINDING_OPTION = "language-binding";
     static final String SERVICE_OPTION = "service";
@@ -45,7 +48,7 @@ public class main {
         //At this point we want to read the c2j from std in.
         //e.g. cat /home/henso/someC2jFile.normal.json | AWSClientGenerator --service myService --language-binding cpp or
         //AWSClientGenerator --service myService --language-binding cpp < /home/henso/someC2jFile.normal.json
-        if (argPairs.containsKey(ARBITRARY_OPTION) || argPairs.containsKey(FILE_NAME)) {
+        if (argPairs.containsKey(ARBITRARY_OPTION) || argPairs.containsKey(INPUT_FILE_NAME)) {
             if (!argPairs.containsKey(LANGUAGE_BINDING_OPTION) || argPairs.get(LANGUAGE_BINDING_OPTION).isEmpty()) {
                 System.out.println("Error: A language binding must be specified with the --arbitrary option.");
                 return;
@@ -81,19 +84,45 @@ public class main {
                 arbitraryJson = stringBuilder.toString();
             }
 
+            String outputFileName = null;
+            if (argPairs.containsKey(OUTPUT_FILE_NAME) && !argPairs.get(OUTPUT_FILE_NAME).isEmpty()) {
+                outputFileName = argPairs.get(OUTPUT_FILE_NAME);
+            }
+
             if (arbitraryJson != null && arbitraryJson.length() > 0) {
                 try {
-                    File generated;
+                    ByteArrayOutputStream generated;
 
+                    String componentOutputName;
                     if (serviceName != null && !serviceName.isEmpty()) {
                         generated = generateService(arbitraryJson, languageBinding, serviceName, namespace,
                                 licenseText, generateStandalonePakckage, enableVirtualOperations);
+
+                        componentOutputName = String.format("aws-cpp-sdk-%s", serviceName);
                     } else {
                         generated = generateDefaults(arbitraryJson, languageBinding, serviceName, namespace,
                                 licenseText, generateStandalonePakckage, enableVirtualOperations);
+
+                        componentOutputName = String.format("aws-cpp-sdk-core");
                     }
 
-                    System.out.println(generated.getAbsolutePath());
+                    if (outputFileName != null && outputFileName.equals("STDOUT")) {
+                        generated.writeTo(System.out);
+                    } else {
+                        File finalOutputFile;
+                        if (outputFileName != null) {
+                            finalOutputFile = new File(outputFileName);
+                        } else {
+                            finalOutputFile = File.createTempFile(componentOutputName, ".zip");
+                        }
+                        FileOutputStream fileOutputStream = new FileOutputStream(finalOutputFile);
+                        generated.writeTo(fileOutputStream);
+
+                        System.out.println(finalOutputFile.getAbsolutePath());
+                    }
+
+
+
                 } catch (GeneratorNotImplementedException e) {
                     e.printStackTrace();
                 } catch (Exception e) {
@@ -108,41 +137,41 @@ public class main {
         printHelp();
     }
 
-    private static File generateService(String arbitraryJson, String languageBinding, String serviceName,
+    private static ByteArrayOutputStream generateService(String arbitraryJson, String languageBinding, String serviceName,
                                         String namespace, String licenseText,
                                         boolean generateStandalonePakckage, boolean enableVirtualOperations) throws Exception {
         MainGenerator generator = new MainGenerator();
         DirectFromC2jGenerator directFromC2jGenerator = new DirectFromC2jGenerator(generator);
 
-        File outputLib = directFromC2jGenerator.generateServiceSourceFromJson(arbitraryJson,
+        ByteArrayOutputStream outputStream = directFromC2jGenerator.generateServiceSourceFromJson(arbitraryJson,
                 languageBinding,
                 serviceName,
                 namespace,
                 licenseText,
                 generateStandalonePakckage,
                 enableVirtualOperations);
-        return outputLib;
+        return outputStream;
     }
 
-    private static File generateDefaults(String arbitraryJson, String languageBinding, String serviceName,
+    private static ByteArrayOutputStream generateDefaults(String arbitraryJson, String languageBinding, String serviceName,
                                          String namespace, String licenseText,
                                          boolean generateStandalonePakckage, boolean enableVirtualOperations) throws Exception {
         MainGenerator generator = new MainGenerator();
         DirectFromC2jGenerator defaultsGenerator = new DirectFromC2jGenerator(generator);
 
-        File outputLib = defaultsGenerator.generateDefaultsSourceFromJson(arbitraryJson,
+        ByteArrayOutputStream outputStream = defaultsGenerator.generateDefaultsSourceFromJson(arbitraryJson,
                 languageBinding,
                 serviceName,
                 namespace,
                 licenseText,
                 generateStandalonePakckage,
                 enableVirtualOperations);
-        return outputLib;
+        return outputStream;
     }
 
     private static InputStream getInputStreamReader(Map<String, String> argsMap) throws FileNotFoundException, UnsupportedEncodingException {
-        if (argsMap.containsKey(FILE_NAME)) {
-            return new FileInputStream(argsMap.get(FILE_NAME));
+        if (argsMap.containsKey(INPUT_FILE_NAME)) {
+            return new FileInputStream(argsMap.get(INPUT_FILE_NAME));
         }
         return System.in;
     }
@@ -157,6 +186,10 @@ public class main {
         System.out.println("\t\t--service service to generate service for. If this is specified, you must specify version and language-binding");
         System.out.println("\t\t--version version of service to generate sdk for. If this is specified, you must specify language-binding and service.");
         System.out.println("\t\t  If you generate a specific SDK, the output will be the file where the sdk is stored in zip format");
+
+        System.out.println("\t\t--inputfile Reads the c2j model from the file.");
+        System.out.println("\t\t--outputfile Writes the generated zip archive to the file.");
+
     }
 
     private static String getOptionName(String optionStr) {
