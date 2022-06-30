@@ -13,7 +13,6 @@ import re
 import shutil
 import subprocess
 import sys
-import tempfile
 import zipfile
 from concurrent.futures import wait, FIRST_COMPLETED, ALL_COMPLETED
 from pathlib import Path
@@ -71,14 +70,50 @@ def collect_available_models(models_dir: str):
         if key == "s3":
             service_name_to_model_filename["s3-crt"] = model_file_date[0]
 
-    # for key, val in service_name_to_model_filename.items():
-    #     print(f"Service = {key} fname = {val}")
     return service_name_to_model_filename
 
 
 def build_generator(generator_dir: str):
     process = subprocess.run(["mvn", "package"], cwd=generator_dir, timeout=5*60, check=True)
     process.check_returncode()
+
+
+def run_generator_once(service_name: str, run_command: list, output_filename: str):
+    process = subprocess.run(run_command, timeout=5 * 60, check=True, capture_output=True)
+    process.check_returncode()
+
+    if output_filename != "STDOUT":
+        if not os.path.exists(output_filename) or os.path.getsize(output_filename) < 4:
+            raise RuntimeError(f"Code of {service_name} generation failure: "
+                               f"Code generator did not generate an output archive (and did not report failure!)")
+
+    if output_filename != "STDOUT":
+        output_zip_file = output_filename
+    else:
+        output_zip_file = process.stdout
+        if not output_zip_file or len(output_zip_file) < 4:
+            raise RuntimeError(f"Cdde of {service_name} generation failure: "
+                               f"Code generator did not generate an output in stdout")
+        output_zip_file = io.BytesIO(output_zip_file)
+
+    return output_zip_file
+
+
+def extract_zip(zip_bytes: io.BytesIO, service_name, output_dir: str, dir_to_delete: str):
+    with zipfile.ZipFile(zip_bytes, 'r') as zip_ref:
+        if zip_ref.testzip() is not None:
+            raise RuntimeError(f"Service {service_name} generation failure: "
+                               f"Code generator generated an invalid archive")
+        try:
+            if dir_to_delete:
+                shutil.rmtree(dir_to_delete)
+        except Exception as exc:
+            print(f"Non-blocking failure to remove dir {dir_to_delete}: {exc}")
+
+        zip_ref.extractall(output_dir)
+        print(f"Generated {service_name}")
+
+    return service_name, 0
 
 
 def generate_defaults(models_filepath: str,
@@ -108,35 +143,9 @@ def generate_defaults(models_filepath: str,
     for key, val in kwargs.items():
         run_command += [f"--{key}", val]
 
-    process = subprocess.run(run_command, timeout=5 * 60, check=True, capture_output=True)
-    process.check_returncode()
+    output_zip_file = run_generator_once("Defaults", run_command, output_filename)
 
-    if output_filename != "STDOUT":
-        if not os.path.exists(output_filename) or os.path.getsize(output_filename) < 4:
-            raise RuntimeError(f"Defaults generation failure: "
-                               f"Code generator did not generate an output archive (and did not report failure!)")
-
-    if output_filename != "STDOUT":
-        output_zip_file = output_filename
-    else:
-        output_zip_file = process.stdout
-        if not output_zip_file or len(output_zip_file) < 4:
-            raise RuntimeError(f"Defaults generation failure: "
-                               f"Code generator did not generate an output in stdout")
-        output_zip_file = io.BytesIO(output_zip_file)
-
-    with zipfile.ZipFile(output_zip_file, 'r') as zip_ref:
-        if zip_ref.testzip() is not None:
-            raise RuntimeError(f"Defaults generation failure: "
-                               f"Code generator generated an invalid archive")
-
-        zip_ref.extractall(output_dir)
-        print(f"Generated defaults")
-
-        return "Defaults", 0
-
-    print(f"Unreachable code generation state for Defaults generation")
-    return "Defaults", -1
+    return extract_zip(output_zip_file, "Defaults", output_dir, None)
 
 
 def generate_single_client(service_name: str,
@@ -170,41 +179,10 @@ def generate_single_client(service_name: str,
     for key, val in kwargs.items():
         run_command += [f"--{key}", val]
 
-    process = subprocess.run(run_command, timeout=5 * 60, check=True, capture_output=True)
-    process.check_returncode()
+    output_zip_file = run_generator_once(service_name, run_command, output_filename)
+    dir_to_delete_before_extract = f"{output_dir}/aws-cpp-sdk-{service_name}"
 
-    if output_filename != "STDOUT":
-        if not os.path.exists(output_filename) or os.path.getsize(output_filename) < 4:
-            raise RuntimeError(f"Service {service_name} generation failure: "
-                               f"Code generator did not generate an output archive (and did not report failure!)")
-
-    if output_filename != "STDOUT":
-        output_zip_file = output_filename
-    else:
-        output_zip_file = process.stdout
-        if not output_zip_file or len(output_zip_file) < 4:
-            raise RuntimeError(f"Service {service_name} generation failure: "
-                               f"Code generator did not generate an output in stdout")
-        output_zip_file = io.BytesIO(output_zip_file)
-
-    with zipfile.ZipFile(output_zip_file, 'r') as zip_ref:
-        generated_code_dir_name = f"{output_dir}/aws-cpp-sdk-{service_name}"
-        if zip_ref.testzip() is not None:
-            raise RuntimeError(f"Service {service_name} generation failure: "
-                               f"Code generator generated an invalid archive")
-
-        try:
-            shutil.rmtree(generated_code_dir_name)
-        except Exception as exc:
-            print(f"Non-blocking failure to remove dir {generated_code_dir_name}: {exc}")
-
-        zip_ref.extractall(output_dir)
-        print(f"Generated {service_name}")
-
-        return service_name, 0
-
-    print(f"Unreachable code generation state for client {service_name}")
-    return service_name, -1
+    return extract_zip(output_zip_file, service_name, output_dir, dir_to_delete_before_extract)
 
 
 def parse_arguments():
@@ -272,7 +250,7 @@ def parse_arguments():
             raise RuntimeError("Provided path_to_generator does not exist!")
         generator_location = str(Path(sys.path[0] + "/../" + DEFAULT_GENERATOR_LOCATION).absolute())
         if not os.path.exists(generator_location):
-            raise RuntimeError("Could not find api definitions location!")
+            raise RuntimeError("Could not find generator location!")
     arg_map["path_to_generator"] = generator_location
 
     arg_map["prepare_tools"] = args["prepare_tools"] or False
