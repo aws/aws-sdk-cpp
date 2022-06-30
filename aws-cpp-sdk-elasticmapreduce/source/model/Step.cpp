@@ -24,7 +24,8 @@ Step::Step() :
     m_configHasBeenSet(false),
     m_actionOnFailure(ActionOnFailure::NOT_SET),
     m_actionOnFailureHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_executionRoleArnHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ Step::Step(JsonView jsonValue) :
     m_configHasBeenSet(false),
     m_actionOnFailure(ActionOnFailure::NOT_SET),
     m_actionOnFailureHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_executionRoleArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -76,6 +78,13 @@ Step& Step::operator =(JsonView jsonValue)
     m_statusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ExecutionRoleArn"))
+  {
+    m_executionRoleArn = jsonValue.GetString("ExecutionRoleArn");
+
+    m_executionRoleArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -109,6 +118,12 @@ JsonValue Step::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithObject("Status", m_status.Jsonize());
+
+  }
+
+  if(m_executionRoleArnHasBeenSet)
+  {
+   payload.WithString("ExecutionRoleArn", m_executionRoleArn);
 
   }
 

@@ -44,217 +44,180 @@ namespace Model
 
 
     /**
-     * <p>The version of Microsoft SharePoint that you are using as a data source.</p>
+     * <p>The version of Microsoft SharePoint that you use.</p>
      */
     inline const SharePointVersion& GetSharePointVersion() const{ return m_sharePointVersion; }
 
     /**
-     * <p>The version of Microsoft SharePoint that you are using as a data source.</p>
+     * <p>The version of Microsoft SharePoint that you use.</p>
      */
     inline bool SharePointVersionHasBeenSet() const { return m_sharePointVersionHasBeenSet; }
 
     /**
-     * <p>The version of Microsoft SharePoint that you are using as a data source.</p>
+     * <p>The version of Microsoft SharePoint that you use.</p>
      */
     inline void SetSharePointVersion(const SharePointVersion& value) { m_sharePointVersionHasBeenSet = true; m_sharePointVersion = value; }
 
     /**
-     * <p>The version of Microsoft SharePoint that you are using as a data source.</p>
+     * <p>The version of Microsoft SharePoint that you use.</p>
      */
     inline void SetSharePointVersion(SharePointVersion&& value) { m_sharePointVersionHasBeenSet = true; m_sharePointVersion = std::move(value); }
 
     /**
-     * <p>The version of Microsoft SharePoint that you are using as a data source.</p>
+     * <p>The version of Microsoft SharePoint that you use.</p>
      */
     inline SharePointConfiguration& WithSharePointVersion(const SharePointVersion& value) { SetSharePointVersion(value); return *this;}
 
     /**
-     * <p>The version of Microsoft SharePoint that you are using as a data source.</p>
+     * <p>The version of Microsoft SharePoint that you use.</p>
      */
     inline SharePointConfiguration& WithSharePointVersion(SharePointVersion&& value) { SetSharePointVersion(std::move(value)); return *this;}
 
 
     /**
-     * <p>The URLs of the Microsoft SharePoint site that contains the documents that
-     * should be indexed.</p>
+     * <p>The Microsoft SharePoint site URLs for the documents you want to indext.</p>
      */
     inline const Aws::Vector<Aws::String>& GetUrls() const{ return m_urls; }
 
     /**
-     * <p>The URLs of the Microsoft SharePoint site that contains the documents that
-     * should be indexed.</p>
+     * <p>The Microsoft SharePoint site URLs for the documents you want to indext.</p>
      */
     inline bool UrlsHasBeenSet() const { return m_urlsHasBeenSet; }
 
     /**
-     * <p>The URLs of the Microsoft SharePoint site that contains the documents that
-     * should be indexed.</p>
+     * <p>The Microsoft SharePoint site URLs for the documents you want to indext.</p>
      */
     inline void SetUrls(const Aws::Vector<Aws::String>& value) { m_urlsHasBeenSet = true; m_urls = value; }
 
     /**
-     * <p>The URLs of the Microsoft SharePoint site that contains the documents that
-     * should be indexed.</p>
+     * <p>The Microsoft SharePoint site URLs for the documents you want to indext.</p>
      */
     inline void SetUrls(Aws::Vector<Aws::String>&& value) { m_urlsHasBeenSet = true; m_urls = std::move(value); }
 
     /**
-     * <p>The URLs of the Microsoft SharePoint site that contains the documents that
-     * should be indexed.</p>
+     * <p>The Microsoft SharePoint site URLs for the documents you want to indext.</p>
      */
     inline SharePointConfiguration& WithUrls(const Aws::Vector<Aws::String>& value) { SetUrls(value); return *this;}
 
     /**
-     * <p>The URLs of the Microsoft SharePoint site that contains the documents that
-     * should be indexed.</p>
+     * <p>The Microsoft SharePoint site URLs for the documents you want to indext.</p>
      */
     inline SharePointConfiguration& WithUrls(Aws::Vector<Aws::String>&& value) { SetUrls(std::move(value)); return *this;}
 
     /**
-     * <p>The URLs of the Microsoft SharePoint site that contains the documents that
-     * should be indexed.</p>
+     * <p>The Microsoft SharePoint site URLs for the documents you want to indext.</p>
      */
     inline SharePointConfiguration& AddUrls(const Aws::String& value) { m_urlsHasBeenSet = true; m_urls.push_back(value); return *this; }
 
     /**
-     * <p>The URLs of the Microsoft SharePoint site that contains the documents that
-     * should be indexed.</p>
+     * <p>The Microsoft SharePoint site URLs for the documents you want to indext.</p>
      */
     inline SharePointConfiguration& AddUrls(Aws::String&& value) { m_urlsHasBeenSet = true; m_urls.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The URLs of the Microsoft SharePoint site that contains the documents that
-     * should be indexed.</p>
+     * <p>The Microsoft SharePoint site URLs for the documents you want to indext.</p>
      */
     inline SharePointConfiguration& AddUrls(const char* value) { m_urlsHasBeenSet = true; m_urls.push_back(value); return *this; }
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of credentials stored in Secrets Manager. The
-     * credentials should be a user/password pair. If you use SharePoint Server, you
-     * also need to provide the sever domain name as part of the credentials. For more
-     * information, see <a
+     * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
+     * user name and password required to connect to the SharePoint instance. If you
+     * use SharePoint Server, you also need to provide the sever domain name as part of
+     * the credentials. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
-     * a Microsoft SharePoint Data Source</a>. For more information about Secrets
-     * Manager see <a
-     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">
-     * What Is Secrets Manager</a> in the <i>Secrets Manager </i> user guide.</p>
+     * a Microsoft SharePoint Data Source</a>.</p>
      */
     inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of credentials stored in Secrets Manager. The
-     * credentials should be a user/password pair. If you use SharePoint Server, you
-     * also need to provide the sever domain name as part of the credentials. For more
-     * information, see <a
+     * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
+     * user name and password required to connect to the SharePoint instance. If you
+     * use SharePoint Server, you also need to provide the sever domain name as part of
+     * the credentials. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
-     * a Microsoft SharePoint Data Source</a>. For more information about Secrets
-     * Manager see <a
-     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">
-     * What Is Secrets Manager</a> in the <i>Secrets Manager </i> user guide.</p>
+     * a Microsoft SharePoint Data Source</a>.</p>
      */
     inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of credentials stored in Secrets Manager. The
-     * credentials should be a user/password pair. If you use SharePoint Server, you
-     * also need to provide the sever domain name as part of the credentials. For more
-     * information, see <a
+     * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
+     * user name and password required to connect to the SharePoint instance. If you
+     * use SharePoint Server, you also need to provide the sever domain name as part of
+     * the credentials. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
-     * a Microsoft SharePoint Data Source</a>. For more information about Secrets
-     * Manager see <a
-     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">
-     * What Is Secrets Manager</a> in the <i>Secrets Manager </i> user guide.</p>
+     * a Microsoft SharePoint Data Source</a>.</p>
      */
     inline void SetSecretArn(const Aws::String& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of credentials stored in Secrets Manager. The
-     * credentials should be a user/password pair. If you use SharePoint Server, you
-     * also need to provide the sever domain name as part of the credentials. For more
-     * information, see <a
+     * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
+     * user name and password required to connect to the SharePoint instance. If you
+     * use SharePoint Server, you also need to provide the sever domain name as part of
+     * the credentials. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
-     * a Microsoft SharePoint Data Source</a>. For more information about Secrets
-     * Manager see <a
-     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">
-     * What Is Secrets Manager</a> in the <i>Secrets Manager </i> user guide.</p>
+     * a Microsoft SharePoint Data Source</a>.</p>
      */
     inline void SetSecretArn(Aws::String&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of credentials stored in Secrets Manager. The
-     * credentials should be a user/password pair. If you use SharePoint Server, you
-     * also need to provide the sever domain name as part of the credentials. For more
-     * information, see <a
+     * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
+     * user name and password required to connect to the SharePoint instance. If you
+     * use SharePoint Server, you also need to provide the sever domain name as part of
+     * the credentials. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
-     * a Microsoft SharePoint Data Source</a>. For more information about Secrets
-     * Manager see <a
-     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">
-     * What Is Secrets Manager</a> in the <i>Secrets Manager </i> user guide.</p>
+     * a Microsoft SharePoint Data Source</a>.</p>
      */
     inline void SetSecretArn(const char* value) { m_secretArnHasBeenSet = true; m_secretArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of credentials stored in Secrets Manager. The
-     * credentials should be a user/password pair. If you use SharePoint Server, you
-     * also need to provide the sever domain name as part of the credentials. For more
-     * information, see <a
+     * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
+     * user name and password required to connect to the SharePoint instance. If you
+     * use SharePoint Server, you also need to provide the sever domain name as part of
+     * the credentials. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
-     * a Microsoft SharePoint Data Source</a>. For more information about Secrets
-     * Manager see <a
-     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">
-     * What Is Secrets Manager</a> in the <i>Secrets Manager </i> user guide.</p>
+     * a Microsoft SharePoint Data Source</a>.</p>
      */
     inline SharePointConfiguration& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of credentials stored in Secrets Manager. The
-     * credentials should be a user/password pair. If you use SharePoint Server, you
-     * also need to provide the sever domain name as part of the credentials. For more
-     * information, see <a
+     * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
+     * user name and password required to connect to the SharePoint instance. If you
+     * use SharePoint Server, you also need to provide the sever domain name as part of
+     * the credentials. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
-     * a Microsoft SharePoint Data Source</a>. For more information about Secrets
-     * Manager see <a
-     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">
-     * What Is Secrets Manager</a> in the <i>Secrets Manager </i> user guide.</p>
+     * a Microsoft SharePoint Data Source</a>.</p>
      */
     inline SharePointConfiguration& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of credentials stored in Secrets Manager. The
-     * credentials should be a user/password pair. If you use SharePoint Server, you
-     * also need to provide the sever domain name as part of the credentials. For more
-     * information, see <a
+     * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
+     * user name and password required to connect to the SharePoint instance. If you
+     * use SharePoint Server, you also need to provide the sever domain name as part of
+     * the credentials. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
-     * a Microsoft SharePoint Data Source</a>. For more information about Secrets
-     * Manager see <a
-     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">
-     * What Is Secrets Manager</a> in the <i>Secrets Manager </i> user guide.</p>
+     * a Microsoft SharePoint Data Source</a>.</p>
      */
     inline SharePointConfiguration& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}
 
 
     /**
-     * <p> <code>TRUE</code> to include attachments to documents stored in your
-     * Microsoft SharePoint site in the index; otherwise, <code>FALSE</code>.</p>
+     * <p> <code>TRUE</code> to index document attachments.</p>
      */
     inline bool GetCrawlAttachments() const{ return m_crawlAttachments; }
 
     /**
-     * <p> <code>TRUE</code> to include attachments to documents stored in your
-     * Microsoft SharePoint site in the index; otherwise, <code>FALSE</code>.</p>
+     * <p> <code>TRUE</code> to index document attachments.</p>
      */
     inline bool CrawlAttachmentsHasBeenSet() const { return m_crawlAttachmentsHasBeenSet; }
 
     /**
-     * <p> <code>TRUE</code> to include attachments to documents stored in your
-     * Microsoft SharePoint site in the index; otherwise, <code>FALSE</code>.</p>
+     * <p> <code>TRUE</code> to index document attachments.</p>
      */
     inline void SetCrawlAttachments(bool value) { m_crawlAttachmentsHasBeenSet = true; m_crawlAttachments = value; }
 
     /**
-     * <p> <code>TRUE</code> to include attachments to documents stored in your
-     * Microsoft SharePoint site in the index; otherwise, <code>FALSE</code>.</p>
+     * <p> <code>TRUE</code> to index document attachments.</p>
      */
     inline SharePointConfiguration& WithCrawlAttachments(bool value) { SetCrawlAttachments(value); return *this;}
 
@@ -298,7 +261,7 @@ namespace Model
      * Documents that don't match the patterns are excluded from the index. If a
      * document matches both an inclusion and exclusion pattern, the exclusion pattern
      * takes precedence and the document isn't included in the index.</p> <p>The regex
-     * is applied to the display URL of the SharePoint document.</p>
+     * applies to the display URL of the SharePoint document.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInclusionPatterns() const{ return m_inclusionPatterns; }
 
@@ -308,7 +271,7 @@ namespace Model
      * Documents that don't match the patterns are excluded from the index. If a
      * document matches both an inclusion and exclusion pattern, the exclusion pattern
      * takes precedence and the document isn't included in the index.</p> <p>The regex
-     * is applied to the display URL of the SharePoint document.</p>
+     * applies to the display URL of the SharePoint document.</p>
      */
     inline bool InclusionPatternsHasBeenSet() const { return m_inclusionPatternsHasBeenSet; }
 
@@ -318,7 +281,7 @@ namespace Model
      * Documents that don't match the patterns are excluded from the index. If a
      * document matches both an inclusion and exclusion pattern, the exclusion pattern
      * takes precedence and the document isn't included in the index.</p> <p>The regex
-     * is applied to the display URL of the SharePoint document.</p>
+     * applies to the display URL of the SharePoint document.</p>
      */
     inline void SetInclusionPatterns(const Aws::Vector<Aws::String>& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns = value; }
 
@@ -328,7 +291,7 @@ namespace Model
      * Documents that don't match the patterns are excluded from the index. If a
      * document matches both an inclusion and exclusion pattern, the exclusion pattern
      * takes precedence and the document isn't included in the index.</p> <p>The regex
-     * is applied to the display URL of the SharePoint document.</p>
+     * applies to the display URL of the SharePoint document.</p>
      */
     inline void SetInclusionPatterns(Aws::Vector<Aws::String>&& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns = std::move(value); }
 
@@ -338,7 +301,7 @@ namespace Model
      * Documents that don't match the patterns are excluded from the index. If a
      * document matches both an inclusion and exclusion pattern, the exclusion pattern
      * takes precedence and the document isn't included in the index.</p> <p>The regex
-     * is applied to the display URL of the SharePoint document.</p>
+     * applies to the display URL of the SharePoint document.</p>
      */
     inline SharePointConfiguration& WithInclusionPatterns(const Aws::Vector<Aws::String>& value) { SetInclusionPatterns(value); return *this;}
 
@@ -348,7 +311,7 @@ namespace Model
      * Documents that don't match the patterns are excluded from the index. If a
      * document matches both an inclusion and exclusion pattern, the exclusion pattern
      * takes precedence and the document isn't included in the index.</p> <p>The regex
-     * is applied to the display URL of the SharePoint document.</p>
+     * applies to the display URL of the SharePoint document.</p>
      */
     inline SharePointConfiguration& WithInclusionPatterns(Aws::Vector<Aws::String>&& value) { SetInclusionPatterns(std::move(value)); return *this;}
 
@@ -358,7 +321,7 @@ namespace Model
      * Documents that don't match the patterns are excluded from the index. If a
      * document matches both an inclusion and exclusion pattern, the exclusion pattern
      * takes precedence and the document isn't included in the index.</p> <p>The regex
-     * is applied to the display URL of the SharePoint document.</p>
+     * applies to the display URL of the SharePoint document.</p>
      */
     inline SharePointConfiguration& AddInclusionPatterns(const Aws::String& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns.push_back(value); return *this; }
 
@@ -368,7 +331,7 @@ namespace Model
      * Documents that don't match the patterns are excluded from the index. If a
      * document matches both an inclusion and exclusion pattern, the exclusion pattern
      * takes precedence and the document isn't included in the index.</p> <p>The regex
-     * is applied to the display URL of the SharePoint document.</p>
+     * applies to the display URL of the SharePoint document.</p>
      */
     inline SharePointConfiguration& AddInclusionPatterns(Aws::String&& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns.push_back(std::move(value)); return *this; }
 
@@ -378,7 +341,7 @@ namespace Model
      * Documents that don't match the patterns are excluded from the index. If a
      * document matches both an inclusion and exclusion pattern, the exclusion pattern
      * takes precedence and the document isn't included in the index.</p> <p>The regex
-     * is applied to the display URL of the SharePoint document.</p>
+     * applies to the display URL of the SharePoint document.</p>
      */
     inline SharePointConfiguration& AddInclusionPatterns(const char* value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns.push_back(value); return *this; }
 
@@ -388,8 +351,8 @@ namespace Model
      * SharePoint. Documents that match the patterns are excluded from the index.
      * Documents that don't match the patterns are included in the index. If a document
      * matches both an inclusion and exclusion pattern, the exclusion pattern takes
-     * precedence and the document isn't included in the index.</p> <p>The regex is
-     * applied to the display URL of the SharePoint document.</p>
+     * precedence and the document isn't included in the index.</p> <p>The regex
+     * applies to the display URL of the SharePoint document.</p>
      */
     inline const Aws::Vector<Aws::String>& GetExclusionPatterns() const{ return m_exclusionPatterns; }
 
@@ -398,8 +361,8 @@ namespace Model
      * SharePoint. Documents that match the patterns are excluded from the index.
      * Documents that don't match the patterns are included in the index. If a document
      * matches both an inclusion and exclusion pattern, the exclusion pattern takes
-     * precedence and the document isn't included in the index.</p> <p>The regex is
-     * applied to the display URL of the SharePoint document.</p>
+     * precedence and the document isn't included in the index.</p> <p>The regex
+     * applies to the display URL of the SharePoint document.</p>
      */
     inline bool ExclusionPatternsHasBeenSet() const { return m_exclusionPatternsHasBeenSet; }
 
@@ -408,8 +371,8 @@ namespace Model
      * SharePoint. Documents that match the patterns are excluded from the index.
      * Documents that don't match the patterns are included in the index. If a document
      * matches both an inclusion and exclusion pattern, the exclusion pattern takes
-     * precedence and the document isn't included in the index.</p> <p>The regex is
-     * applied to the display URL of the SharePoint document.</p>
+     * precedence and the document isn't included in the index.</p> <p>The regex
+     * applies to the display URL of the SharePoint document.</p>
      */
     inline void SetExclusionPatterns(const Aws::Vector<Aws::String>& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns = value; }
 
@@ -418,8 +381,8 @@ namespace Model
      * SharePoint. Documents that match the patterns are excluded from the index.
      * Documents that don't match the patterns are included in the index. If a document
      * matches both an inclusion and exclusion pattern, the exclusion pattern takes
-     * precedence and the document isn't included in the index.</p> <p>The regex is
-     * applied to the display URL of the SharePoint document.</p>
+     * precedence and the document isn't included in the index.</p> <p>The regex
+     * applies to the display URL of the SharePoint document.</p>
      */
     inline void SetExclusionPatterns(Aws::Vector<Aws::String>&& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns = std::move(value); }
 
@@ -428,8 +391,8 @@ namespace Model
      * SharePoint. Documents that match the patterns are excluded from the index.
      * Documents that don't match the patterns are included in the index. If a document
      * matches both an inclusion and exclusion pattern, the exclusion pattern takes
-     * precedence and the document isn't included in the index.</p> <p>The regex is
-     * applied to the display URL of the SharePoint document.</p>
+     * precedence and the document isn't included in the index.</p> <p>The regex
+     * applies to the display URL of the SharePoint document.</p>
      */
     inline SharePointConfiguration& WithExclusionPatterns(const Aws::Vector<Aws::String>& value) { SetExclusionPatterns(value); return *this;}
 
@@ -438,8 +401,8 @@ namespace Model
      * SharePoint. Documents that match the patterns are excluded from the index.
      * Documents that don't match the patterns are included in the index. If a document
      * matches both an inclusion and exclusion pattern, the exclusion pattern takes
-     * precedence and the document isn't included in the index.</p> <p>The regex is
-     * applied to the display URL of the SharePoint document.</p>
+     * precedence and the document isn't included in the index.</p> <p>The regex
+     * applies to the display URL of the SharePoint document.</p>
      */
     inline SharePointConfiguration& WithExclusionPatterns(Aws::Vector<Aws::String>&& value) { SetExclusionPatterns(std::move(value)); return *this;}
 
@@ -448,8 +411,8 @@ namespace Model
      * SharePoint. Documents that match the patterns are excluded from the index.
      * Documents that don't match the patterns are included in the index. If a document
      * matches both an inclusion and exclusion pattern, the exclusion pattern takes
-     * precedence and the document isn't included in the index.</p> <p>The regex is
-     * applied to the display URL of the SharePoint document.</p>
+     * precedence and the document isn't included in the index.</p> <p>The regex
+     * applies to the display URL of the SharePoint document.</p>
      */
     inline SharePointConfiguration& AddExclusionPatterns(const Aws::String& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns.push_back(value); return *this; }
 
@@ -458,8 +421,8 @@ namespace Model
      * SharePoint. Documents that match the patterns are excluded from the index.
      * Documents that don't match the patterns are included in the index. If a document
      * matches both an inclusion and exclusion pattern, the exclusion pattern takes
-     * precedence and the document isn't included in the index.</p> <p>The regex is
-     * applied to the display URL of the SharePoint document.</p>
+     * precedence and the document isn't included in the index.</p> <p>The regex
+     * applies to the display URL of the SharePoint document.</p>
      */
     inline SharePointConfiguration& AddExclusionPatterns(Aws::String&& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns.push_back(std::move(value)); return *this; }
 
@@ -468,28 +431,58 @@ namespace Model
      * SharePoint. Documents that match the patterns are excluded from the index.
      * Documents that don't match the patterns are included in the index. If a document
      * matches both an inclusion and exclusion pattern, the exclusion pattern takes
-     * precedence and the document isn't included in the index.</p> <p>The regex is
-     * applied to the display URL of the SharePoint document.</p>
+     * precedence and the document isn't included in the index.</p> <p>The regex
+     * applies to the display URL of the SharePoint document.</p>
      */
     inline SharePointConfiguration& AddExclusionPatterns(const char* value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns.push_back(value); return *this; }
 
 
-    
+    /**
+     * <p>Configuration information for an Amazon Virtual Private Cloud to connect to
+     * your Microsoft SharePoint. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring
+     * a VPC</a>.</p>
+     */
     inline const DataSourceVpcConfiguration& GetVpcConfiguration() const{ return m_vpcConfiguration; }
 
-    
+    /**
+     * <p>Configuration information for an Amazon Virtual Private Cloud to connect to
+     * your Microsoft SharePoint. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring
+     * a VPC</a>.</p>
+     */
     inline bool VpcConfigurationHasBeenSet() const { return m_vpcConfigurationHasBeenSet; }
 
-    
+    /**
+     * <p>Configuration information for an Amazon Virtual Private Cloud to connect to
+     * your Microsoft SharePoint. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring
+     * a VPC</a>.</p>
+     */
     inline void SetVpcConfiguration(const DataSourceVpcConfiguration& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = value; }
 
-    
+    /**
+     * <p>Configuration information for an Amazon Virtual Private Cloud to connect to
+     * your Microsoft SharePoint. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring
+     * a VPC</a>.</p>
+     */
     inline void SetVpcConfiguration(DataSourceVpcConfiguration&& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = std::move(value); }
 
-    
+    /**
+     * <p>Configuration information for an Amazon Virtual Private Cloud to connect to
+     * your Microsoft SharePoint. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring
+     * a VPC</a>.</p>
+     */
     inline SharePointConfiguration& WithVpcConfiguration(const DataSourceVpcConfiguration& value) { SetVpcConfiguration(value); return *this;}
 
-    
+    /**
+     * <p>Configuration information for an Amazon Virtual Private Cloud to connect to
+     * your Microsoft SharePoint. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring
+     * a VPC</a>.</p>
+     */
     inline SharePointConfiguration& WithVpcConfiguration(DataSourceVpcConfiguration&& value) { SetVpcConfiguration(std::move(value)); return *this;}
 
 
@@ -632,46 +625,60 @@ namespace Model
 
 
     /**
-     * <p>A Boolean value that specifies whether local groups are disabled
-     * (<code>True</code>) or enabled (<code>False</code>). </p>
+     * <p> <code>TRUE</code> to disable local groups information.</p>
      */
     inline bool GetDisableLocalGroups() const{ return m_disableLocalGroups; }
 
     /**
-     * <p>A Boolean value that specifies whether local groups are disabled
-     * (<code>True</code>) or enabled (<code>False</code>). </p>
+     * <p> <code>TRUE</code> to disable local groups information.</p>
      */
     inline bool DisableLocalGroupsHasBeenSet() const { return m_disableLocalGroupsHasBeenSet; }
 
     /**
-     * <p>A Boolean value that specifies whether local groups are disabled
-     * (<code>True</code>) or enabled (<code>False</code>). </p>
+     * <p> <code>TRUE</code> to disable local groups information.</p>
      */
     inline void SetDisableLocalGroups(bool value) { m_disableLocalGroupsHasBeenSet = true; m_disableLocalGroups = value; }
 
     /**
-     * <p>A Boolean value that specifies whether local groups are disabled
-     * (<code>True</code>) or enabled (<code>False</code>). </p>
+     * <p> <code>TRUE</code> to disable local groups information.</p>
      */
     inline SharePointConfiguration& WithDisableLocalGroups(bool value) { SetDisableLocalGroups(value); return *this;}
 
 
-    
+    /**
+     * <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this
+     * to connect to SharePoint.</p>
+     */
     inline const S3Path& GetSslCertificateS3Path() const{ return m_sslCertificateS3Path; }
 
-    
+    /**
+     * <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this
+     * to connect to SharePoint.</p>
+     */
     inline bool SslCertificateS3PathHasBeenSet() const { return m_sslCertificateS3PathHasBeenSet; }
 
-    
+    /**
+     * <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this
+     * to connect to SharePoint.</p>
+     */
     inline void SetSslCertificateS3Path(const S3Path& value) { m_sslCertificateS3PathHasBeenSet = true; m_sslCertificateS3Path = value; }
 
-    
+    /**
+     * <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this
+     * to connect to SharePoint.</p>
+     */
     inline void SetSslCertificateS3Path(S3Path&& value) { m_sslCertificateS3PathHasBeenSet = true; m_sslCertificateS3Path = std::move(value); }
 
-    
+    /**
+     * <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this
+     * to connect to SharePoint.</p>
+     */
     inline SharePointConfiguration& WithSslCertificateS3Path(const S3Path& value) { SetSslCertificateS3Path(value); return *this;}
 
-    
+    /**
+     * <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this
+     * to connect to SharePoint.</p>
+     */
     inline SharePointConfiguration& WithSslCertificateS3Path(S3Path&& value) { SetSslCertificateS3Path(std::move(value)); return *this;}
 
   private:

@@ -21,6 +21,7 @@
 #include <aws/kendra/model/QuipConfiguration.h>
 #include <aws/kendra/model/JiraConfiguration.h>
 #include <aws/kendra/model/GitHubConfiguration.h>
+#include <aws/kendra/model/AlfrescoConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -626,6 +627,43 @@ namespace Model
      */
     inline DataSourceConfiguration& WithGitHubConfiguration(GitHubConfiguration&& value) { SetGitHubConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Provides the configuration information to connect to Alfresco as your data
+     * source.</p>
+     */
+    inline const AlfrescoConfiguration& GetAlfrescoConfiguration() const{ return m_alfrescoConfiguration; }
+
+    /**
+     * <p>Provides the configuration information to connect to Alfresco as your data
+     * source.</p>
+     */
+    inline bool AlfrescoConfigurationHasBeenSet() const { return m_alfrescoConfigurationHasBeenSet; }
+
+    /**
+     * <p>Provides the configuration information to connect to Alfresco as your data
+     * source.</p>
+     */
+    inline void SetAlfrescoConfiguration(const AlfrescoConfiguration& value) { m_alfrescoConfigurationHasBeenSet = true; m_alfrescoConfiguration = value; }
+
+    /**
+     * <p>Provides the configuration information to connect to Alfresco as your data
+     * source.</p>
+     */
+    inline void SetAlfrescoConfiguration(AlfrescoConfiguration&& value) { m_alfrescoConfigurationHasBeenSet = true; m_alfrescoConfiguration = std::move(value); }
+
+    /**
+     * <p>Provides the configuration information to connect to Alfresco as your data
+     * source.</p>
+     */
+    inline DataSourceConfiguration& WithAlfrescoConfiguration(const AlfrescoConfiguration& value) { SetAlfrescoConfiguration(value); return *this;}
+
+    /**
+     * <p>Provides the configuration information to connect to Alfresco as your data
+     * source.</p>
+     */
+    inline DataSourceConfiguration& WithAlfrescoConfiguration(AlfrescoConfiguration&& value) { SetAlfrescoConfiguration(std::move(value)); return *this;}
+
   private:
 
     S3DataSourceConfiguration m_s3Configuration;
@@ -675,6 +713,9 @@ namespace Model
 
     GitHubConfiguration m_gitHubConfiguration;
     bool m_gitHubConfigurationHasBeenSet;
+
+    AlfrescoConfiguration m_alfrescoConfiguration;
+    bool m_alfrescoConfigurationHasBeenSet;
   };
 
 } // namespace Model

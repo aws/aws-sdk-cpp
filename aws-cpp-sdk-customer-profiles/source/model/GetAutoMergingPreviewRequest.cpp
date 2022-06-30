@@ -15,7 +15,9 @@ using namespace Aws::Utils;
 GetAutoMergingPreviewRequest::GetAutoMergingPreviewRequest() : 
     m_domainNameHasBeenSet(false),
     m_consolidationHasBeenSet(false),
-    m_conflictResolutionHasBeenSet(false)
+    m_conflictResolutionHasBeenSet(false),
+    m_minAllowedConfidenceScoreForMerging(0.0),
+    m_minAllowedConfidenceScoreForMergingHasBeenSet(false)
 {
 }
 
@@ -32,6 +34,12 @@ Aws::String GetAutoMergingPreviewRequest::SerializePayload() const
   if(m_conflictResolutionHasBeenSet)
   {
    payload.WithObject("ConflictResolution", m_conflictResolution.Jsonize());
+
+  }
+
+  if(m_minAllowedConfidenceScoreForMergingHasBeenSet)
+  {
+   payload.WithDouble("MinAllowedConfidenceScoreForMerging", m_minAllowedConfidenceScoreForMerging);
 
   }
 

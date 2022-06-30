@@ -54,6 +54,7 @@
 #include <aws/wellarchitected/model/TagResourceRequest.h>
 #include <aws/wellarchitected/model/UntagResourceRequest.h>
 #include <aws/wellarchitected/model/UpdateAnswerRequest.h>
+#include <aws/wellarchitected/model/UpdateGlobalSettingsRequest.h>
 #include <aws/wellarchitected/model/UpdateLensReviewRequest.h>
 #include <aws/wellarchitected/model/UpdateShareInvitationRequest.h>
 #include <aws/wellarchitected/model/UpdateWorkloadRequest.h>
@@ -1271,6 +1272,31 @@ void WellArchitectedClient::UpdateAnswerAsync(const UpdateAnswerRequest& request
 void WellArchitectedClient::UpdateAnswerAsyncHelper(const UpdateAnswerRequest& request, const UpdateAnswerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateAnswer(request), context);
+}
+
+UpdateGlobalSettingsOutcome WellArchitectedClient::UpdateGlobalSettings(const UpdateGlobalSettingsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/global-settings");
+  return UpdateGlobalSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateGlobalSettingsOutcomeCallable WellArchitectedClient::UpdateGlobalSettingsCallable(const UpdateGlobalSettingsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateGlobalSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateGlobalSettings(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WellArchitectedClient::UpdateGlobalSettingsAsync(const UpdateGlobalSettingsRequest& request, const UpdateGlobalSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateGlobalSettingsAsyncHelper( request, handler, context ); } );
+}
+
+void WellArchitectedClient::UpdateGlobalSettingsAsyncHelper(const UpdateGlobalSettingsRequest& request, const UpdateGlobalSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateGlobalSettings(request), context);
 }
 
 UpdateLensReviewOutcome WellArchitectedClient::UpdateLensReview(const UpdateLensReviewRequest& request) const

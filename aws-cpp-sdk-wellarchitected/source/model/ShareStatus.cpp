@@ -25,6 +25,9 @@ namespace Aws
         static const int PENDING_HASH = HashingUtils::HashString("PENDING");
         static const int REVOKED_HASH = HashingUtils::HashString("REVOKED");
         static const int EXPIRED_HASH = HashingUtils::HashString("EXPIRED");
+        static const int ASSOCIATING_HASH = HashingUtils::HashString("ASSOCIATING");
+        static const int ASSOCIATED_HASH = HashingUtils::HashString("ASSOCIATED");
+        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
 
 
         ShareStatus GetShareStatusForName(const Aws::String& name)
@@ -50,6 +53,18 @@ namespace Aws
           {
             return ShareStatus::EXPIRED;
           }
+          else if (hashCode == ASSOCIATING_HASH)
+          {
+            return ShareStatus::ASSOCIATING;
+          }
+          else if (hashCode == ASSOCIATED_HASH)
+          {
+            return ShareStatus::ASSOCIATED;
+          }
+          else if (hashCode == FAILED_HASH)
+          {
+            return ShareStatus::FAILED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -74,6 +89,12 @@ namespace Aws
             return "REVOKED";
           case ShareStatus::EXPIRED:
             return "EXPIRED";
+          case ShareStatus::ASSOCIATING:
+            return "ASSOCIATING";
+          case ShareStatus::ASSOCIATED:
+            return "ASSOCIATED";
+          case ShareStatus::FAILED:
+            return "FAILED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -24,7 +24,8 @@ WorkloadShareSummary::WorkloadShareSummary() :
     m_permissionType(PermissionType::NOT_SET),
     m_permissionTypeHasBeenSet(false),
     m_status(ShareStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_statusMessageHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ WorkloadShareSummary::WorkloadShareSummary(JsonView jsonValue) :
     m_permissionType(PermissionType::NOT_SET),
     m_permissionTypeHasBeenSet(false),
     m_status(ShareStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_statusMessageHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -69,6 +71,13 @@ WorkloadShareSummary& WorkloadShareSummary::operator =(JsonView jsonValue)
     m_statusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("StatusMessage"))
+  {
+    m_statusMessage = jsonValue.GetString("StatusMessage");
+
+    m_statusMessageHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -96,6 +105,12 @@ JsonValue WorkloadShareSummary::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("Status", ShareStatusMapper::GetNameForShareStatus(m_status));
+  }
+
+  if(m_statusMessageHasBeenSet)
+  {
+   payload.WithString("StatusMessage", m_statusMessage);
+
   }
 
   return payload;

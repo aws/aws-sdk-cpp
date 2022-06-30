@@ -450,26 +450,22 @@ namespace Model
 
 
     /**
-     * <p>A Boolean value that specifies whether local groups are disabled
-     * (<code>True</code>) or enabled (<code>False</code>). </p>
+     * <p> <code>TRUE</code> to disable local groups information.</p>
      */
     inline bool GetDisableLocalGroups() const{ return m_disableLocalGroups; }
 
     /**
-     * <p>A Boolean value that specifies whether local groups are disabled
-     * (<code>True</code>) or enabled (<code>False</code>). </p>
+     * <p> <code>TRUE</code> to disable local groups information.</p>
      */
     inline bool DisableLocalGroupsHasBeenSet() const { return m_disableLocalGroupsHasBeenSet; }
 
     /**
-     * <p>A Boolean value that specifies whether local groups are disabled
-     * (<code>True</code>) or enabled (<code>False</code>). </p>
+     * <p> <code>TRUE</code> to disable local groups information.</p>
      */
     inline void SetDisableLocalGroups(bool value) { m_disableLocalGroupsHasBeenSet = true; m_disableLocalGroups = value; }
 
     /**
-     * <p>A Boolean value that specifies whether local groups are disabled
-     * (<code>True</code>) or enabled (<code>False</code>). </p>
+     * <p> <code>TRUE</code> to disable local groups information.</p>
      */
     inline OneDriveConfiguration& WithDisableLocalGroups(bool value) { SetDisableLocalGroups(value); return *this;}
 

@@ -154,32 +154,38 @@ namespace Model
 
 
     /**
-     * <p>Information required to find a specific file in an Amazon S3 bucket.</p>
+     * <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this
+     * to connect to GitHub. </p>
      */
     inline const S3Path& GetSslCertificateS3Path() const{ return m_sslCertificateS3Path; }
 
     /**
-     * <p>Information required to find a specific file in an Amazon S3 bucket.</p>
+     * <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this
+     * to connect to GitHub. </p>
      */
     inline bool SslCertificateS3PathHasBeenSet() const { return m_sslCertificateS3PathHasBeenSet; }
 
     /**
-     * <p>Information required to find a specific file in an Amazon S3 bucket.</p>
+     * <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this
+     * to connect to GitHub. </p>
      */
     inline void SetSslCertificateS3Path(const S3Path& value) { m_sslCertificateS3PathHasBeenSet = true; m_sslCertificateS3Path = value; }
 
     /**
-     * <p>Information required to find a specific file in an Amazon S3 bucket.</p>
+     * <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this
+     * to connect to GitHub. </p>
      */
     inline void SetSslCertificateS3Path(S3Path&& value) { m_sslCertificateS3PathHasBeenSet = true; m_sslCertificateS3Path = std::move(value); }
 
     /**
-     * <p>Information required to find a specific file in an Amazon S3 bucket.</p>
+     * <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this
+     * to connect to GitHub. </p>
      */
     inline OnPremiseConfiguration& WithSslCertificateS3Path(const S3Path& value) { SetSslCertificateS3Path(value); return *this;}
 
     /**
-     * <p>Information required to find a specific file in an Amazon S3 bucket.</p>
+     * <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this
+     * to connect to GitHub. </p>
      */
     inline OnPremiseConfiguration& WithSslCertificateS3Path(S3Path&& value) { SetSslCertificateS3Path(std::move(value)); return *this;}
 

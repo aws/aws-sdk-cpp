@@ -22,7 +22,8 @@ LensShareSummary::LensShareSummary() :
     m_shareIdHasBeenSet(false),
     m_sharedWithHasBeenSet(false),
     m_status(ShareStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_statusMessageHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ LensShareSummary::LensShareSummary(JsonView jsonValue) :
     m_shareIdHasBeenSet(false),
     m_sharedWithHasBeenSet(false),
     m_status(ShareStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_statusMessageHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -58,6 +60,13 @@ LensShareSummary& LensShareSummary::operator =(JsonView jsonValue)
     m_statusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("StatusMessage"))
+  {
+    m_statusMessage = jsonValue.GetString("StatusMessage");
+
+    m_statusMessageHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -80,6 +89,12 @@ JsonValue LensShareSummary::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("Status", ShareStatusMapper::GetNameForShareStatus(m_status));
+  }
+
+  if(m_statusMessageHasBeenSet)
+  {
+   payload.WithString("StatusMessage", m_statusMessage);
+
   }
 
   return payload;

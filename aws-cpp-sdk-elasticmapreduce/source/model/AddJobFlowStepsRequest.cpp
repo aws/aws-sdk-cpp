@@ -14,7 +14,8 @@ using namespace Aws::Utils;
 
 AddJobFlowStepsRequest::AddJobFlowStepsRequest() : 
     m_jobFlowIdHasBeenSet(false),
-    m_stepsHasBeenSet(false)
+    m_stepsHasBeenSet(false),
+    m_executionRoleArnHasBeenSet(false)
 {
 }
 
@@ -36,6 +37,12 @@ Aws::String AddJobFlowStepsRequest::SerializePayload() const
      stepsJsonList[stepsIndex].AsObject(m_steps[stepsIndex].Jsonize());
    }
    payload.WithArray("Steps", std::move(stepsJsonList));
+
+  }
+
+  if(m_executionRoleArnHasBeenSet)
+  {
+   payload.WithString("ExecutionRoleArn", m_executionRoleArn);
 
   }
 
