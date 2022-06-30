@@ -14,7 +14,7 @@
 #include <aws/core/platform/Platform.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/HashingUtils.h>
-#include <aws/auth/private/aws_signing.h>
+#include <aws/auth/signing.h>
 #include <aws/cal/ecc.h>
 #include <aws/common/encoding.h>
 #include <fstream>
