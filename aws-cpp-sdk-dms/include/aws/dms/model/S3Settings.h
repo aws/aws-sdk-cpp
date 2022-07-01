@@ -2594,6 +2594,104 @@ namespace Model
      */
     inline S3Settings& WithDatePartitionTimezone(const char* value) { SetDatePartitionTimezone(value); return *this;}
 
+
+    /**
+     * <p>Use the S3 target endpoint setting <code>AddTrailingPaddingCharacter</code>
+     * to add padding on string data. The default value is <code>false</code>.</p>
+     */
+    inline bool GetAddTrailingPaddingCharacter() const{ return m_addTrailingPaddingCharacter; }
+
+    /**
+     * <p>Use the S3 target endpoint setting <code>AddTrailingPaddingCharacter</code>
+     * to add padding on string data. The default value is <code>false</code>.</p>
+     */
+    inline bool AddTrailingPaddingCharacterHasBeenSet() const { return m_addTrailingPaddingCharacterHasBeenSet; }
+
+    /**
+     * <p>Use the S3 target endpoint setting <code>AddTrailingPaddingCharacter</code>
+     * to add padding on string data. The default value is <code>false</code>.</p>
+     */
+    inline void SetAddTrailingPaddingCharacter(bool value) { m_addTrailingPaddingCharacterHasBeenSet = true; m_addTrailingPaddingCharacter = value; }
+
+    /**
+     * <p>Use the S3 target endpoint setting <code>AddTrailingPaddingCharacter</code>
+     * to add padding on string data. The default value is <code>false</code>.</p>
+     */
+    inline S3Settings& WithAddTrailingPaddingCharacter(bool value) { SetAddTrailingPaddingCharacter(value); return *this;}
+
+
+    /**
+     * <p>To specify a bucket owner and prevent sniping, you can use the
+     * <code>ExpectedBucketOwner</code> endpoint setting. </p> <p>Example:
+     * <code>--s3-settings='{"ExpectedBucketOwner": "<i>AWS_Account_ID</i>"}'</code>
+     * </p> <p>When you make a request to test a connection or perform a migration, S3
+     * checks the account ID of the bucket owner against the specified parameter.</p>
+     */
+    inline const Aws::String& GetExpectedBucketOwner() const{ return m_expectedBucketOwner; }
+
+    /**
+     * <p>To specify a bucket owner and prevent sniping, you can use the
+     * <code>ExpectedBucketOwner</code> endpoint setting. </p> <p>Example:
+     * <code>--s3-settings='{"ExpectedBucketOwner": "<i>AWS_Account_ID</i>"}'</code>
+     * </p> <p>When you make a request to test a connection or perform a migration, S3
+     * checks the account ID of the bucket owner against the specified parameter.</p>
+     */
+    inline bool ExpectedBucketOwnerHasBeenSet() const { return m_expectedBucketOwnerHasBeenSet; }
+
+    /**
+     * <p>To specify a bucket owner and prevent sniping, you can use the
+     * <code>ExpectedBucketOwner</code> endpoint setting. </p> <p>Example:
+     * <code>--s3-settings='{"ExpectedBucketOwner": "<i>AWS_Account_ID</i>"}'</code>
+     * </p> <p>When you make a request to test a connection or perform a migration, S3
+     * checks the account ID of the bucket owner against the specified parameter.</p>
+     */
+    inline void SetExpectedBucketOwner(const Aws::String& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = value; }
+
+    /**
+     * <p>To specify a bucket owner and prevent sniping, you can use the
+     * <code>ExpectedBucketOwner</code> endpoint setting. </p> <p>Example:
+     * <code>--s3-settings='{"ExpectedBucketOwner": "<i>AWS_Account_ID</i>"}'</code>
+     * </p> <p>When you make a request to test a connection or perform a migration, S3
+     * checks the account ID of the bucket owner against the specified parameter.</p>
+     */
+    inline void SetExpectedBucketOwner(Aws::String&& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = std::move(value); }
+
+    /**
+     * <p>To specify a bucket owner and prevent sniping, you can use the
+     * <code>ExpectedBucketOwner</code> endpoint setting. </p> <p>Example:
+     * <code>--s3-settings='{"ExpectedBucketOwner": "<i>AWS_Account_ID</i>"}'</code>
+     * </p> <p>When you make a request to test a connection or perform a migration, S3
+     * checks the account ID of the bucket owner against the specified parameter.</p>
+     */
+    inline void SetExpectedBucketOwner(const char* value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner.assign(value); }
+
+    /**
+     * <p>To specify a bucket owner and prevent sniping, you can use the
+     * <code>ExpectedBucketOwner</code> endpoint setting. </p> <p>Example:
+     * <code>--s3-settings='{"ExpectedBucketOwner": "<i>AWS_Account_ID</i>"}'</code>
+     * </p> <p>When you make a request to test a connection or perform a migration, S3
+     * checks the account ID of the bucket owner against the specified parameter.</p>
+     */
+    inline S3Settings& WithExpectedBucketOwner(const Aws::String& value) { SetExpectedBucketOwner(value); return *this;}
+
+    /**
+     * <p>To specify a bucket owner and prevent sniping, you can use the
+     * <code>ExpectedBucketOwner</code> endpoint setting. </p> <p>Example:
+     * <code>--s3-settings='{"ExpectedBucketOwner": "<i>AWS_Account_ID</i>"}'</code>
+     * </p> <p>When you make a request to test a connection or perform a migration, S3
+     * checks the account ID of the bucket owner against the specified parameter.</p>
+     */
+    inline S3Settings& WithExpectedBucketOwner(Aws::String&& value) { SetExpectedBucketOwner(std::move(value)); return *this;}
+
+    /**
+     * <p>To specify a bucket owner and prevent sniping, you can use the
+     * <code>ExpectedBucketOwner</code> endpoint setting. </p> <p>Example:
+     * <code>--s3-settings='{"ExpectedBucketOwner": "<i>AWS_Account_ID</i>"}'</code>
+     * </p> <p>When you make a request to test a connection or perform a migration, S3
+     * checks the account ID of the bucket owner against the specified parameter.</p>
+     */
+    inline S3Settings& WithExpectedBucketOwner(const char* value) { SetExpectedBucketOwner(value); return *this;}
+
   private:
 
     Aws::String m_serviceAccessRoleArn;
@@ -2709,6 +2807,12 @@ namespace Model
 
     Aws::String m_datePartitionTimezone;
     bool m_datePartitionTimezoneHasBeenSet;
+
+    bool m_addTrailingPaddingCharacter;
+    bool m_addTrailingPaddingCharacterHasBeenSet;
+
+    Aws::String m_expectedBucketOwner;
+    bool m_expectedBucketOwnerHasBeenSet;
   };
 
 } // namespace Model

@@ -986,6 +986,35 @@ namespace Model
      */
     inline PostgreSQLSettings& WithSecretsManagerSecretId(const char* value) { SetSecretsManagerSecretId(value); return *this;}
 
+
+    /**
+     * <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on
+     * CHAR and NCHAR data types during migration. The default value is
+     * <code>true</code>.</p>
+     */
+    inline bool GetTrimSpaceInChar() const{ return m_trimSpaceInChar; }
+
+    /**
+     * <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on
+     * CHAR and NCHAR data types during migration. The default value is
+     * <code>true</code>.</p>
+     */
+    inline bool TrimSpaceInCharHasBeenSet() const { return m_trimSpaceInCharHasBeenSet; }
+
+    /**
+     * <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on
+     * CHAR and NCHAR data types during migration. The default value is
+     * <code>true</code>.</p>
+     */
+    inline void SetTrimSpaceInChar(bool value) { m_trimSpaceInCharHasBeenSet = true; m_trimSpaceInChar = value; }
+
+    /**
+     * <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on
+     * CHAR and NCHAR data types during migration. The default value is
+     * <code>true</code>.</p>
+     */
+    inline PostgreSQLSettings& WithTrimSpaceInChar(bool value) { SetTrimSpaceInChar(value); return *this;}
+
   private:
 
     Aws::String m_afterConnectScript;
@@ -1041,6 +1070,9 @@ namespace Model
 
     Aws::String m_secretsManagerSecretId;
     bool m_secretsManagerSecretIdHasBeenSet;
+
+    bool m_trimSpaceInChar;
+    bool m_trimSpaceInCharHasBeenSet;
   };
 
 } // namespace Model

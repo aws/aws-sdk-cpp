@@ -2284,6 +2284,35 @@ namespace Model
      */
     inline OracleSettings& WithSecretsManagerOracleAsmSecretId(const char* value) { SetSecretsManagerOracleAsmSecretId(value); return *this;}
 
+
+    /**
+     * <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on
+     * CHAR and NCHAR data types during migration. The default value is
+     * <code>true</code>.</p>
+     */
+    inline bool GetTrimSpaceInChar() const{ return m_trimSpaceInChar; }
+
+    /**
+     * <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on
+     * CHAR and NCHAR data types during migration. The default value is
+     * <code>true</code>.</p>
+     */
+    inline bool TrimSpaceInCharHasBeenSet() const { return m_trimSpaceInCharHasBeenSet; }
+
+    /**
+     * <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on
+     * CHAR and NCHAR data types during migration. The default value is
+     * <code>true</code>.</p>
+     */
+    inline void SetTrimSpaceInChar(bool value) { m_trimSpaceInCharHasBeenSet = true; m_trimSpaceInChar = value; }
+
+    /**
+     * <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on
+     * CHAR and NCHAR data types during migration. The default value is
+     * <code>true</code>.</p>
+     */
+    inline OracleSettings& WithTrimSpaceInChar(bool value) { SetTrimSpaceInChar(value); return *this;}
+
   private:
 
     bool m_addSupplementalLogging;
@@ -2405,6 +2434,9 @@ namespace Model
 
     Aws::String m_secretsManagerOracleAsmSecretId;
     bool m_secretsManagerOracleAsmSecretIdHasBeenSet;
+
+    bool m_trimSpaceInChar;
+    bool m_trimSpaceInCharHasBeenSet;
   };
 
 } // namespace Model
