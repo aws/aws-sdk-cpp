@@ -81,7 +81,9 @@ OracleSettings::OracleSettings() :
     m_secretsManagerAccessRoleArnHasBeenSet(false),
     m_secretsManagerSecretIdHasBeenSet(false),
     m_secretsManagerOracleAsmAccessRoleArnHasBeenSet(false),
-    m_secretsManagerOracleAsmSecretIdHasBeenSet(false)
+    m_secretsManagerOracleAsmSecretIdHasBeenSet(false),
+    m_trimSpaceInChar(false),
+    m_trimSpaceInCharHasBeenSet(false)
 {
 }
 
@@ -148,7 +150,9 @@ OracleSettings::OracleSettings(JsonView jsonValue) :
     m_secretsManagerAccessRoleArnHasBeenSet(false),
     m_secretsManagerSecretIdHasBeenSet(false),
     m_secretsManagerOracleAsmAccessRoleArnHasBeenSet(false),
-    m_secretsManagerOracleAsmSecretIdHasBeenSet(false)
+    m_secretsManagerOracleAsmSecretIdHasBeenSet(false),
+    m_trimSpaceInChar(false),
+    m_trimSpaceInCharHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -438,6 +442,13 @@ OracleSettings& OracleSettings::operator =(JsonView jsonValue)
     m_secretsManagerOracleAsmSecretIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TrimSpaceInChar"))
+  {
+    m_trimSpaceInChar = jsonValue.GetBool("TrimSpaceInChar");
+
+    m_trimSpaceInCharHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -686,6 +697,12 @@ JsonValue OracleSettings::Jsonize() const
   if(m_secretsManagerOracleAsmSecretIdHasBeenSet)
   {
    payload.WithString("SecretsManagerOracleAsmSecretId", m_secretsManagerOracleAsmSecretId);
+
+  }
+
+  if(m_trimSpaceInCharHasBeenSet)
+  {
+   payload.WithBool("TrimSpaceInChar", m_trimSpaceInChar);
 
   }
 

@@ -82,7 +82,10 @@ S3Settings::S3Settings() :
     m_maxFileSizeHasBeenSet(false),
     m_rfc4180(false),
     m_rfc4180HasBeenSet(false),
-    m_datePartitionTimezoneHasBeenSet(false)
+    m_datePartitionTimezoneHasBeenSet(false),
+    m_addTrailingPaddingCharacter(false),
+    m_addTrailingPaddingCharacterHasBeenSet(false),
+    m_expectedBucketOwnerHasBeenSet(false)
 {
 }
 
@@ -150,7 +153,10 @@ S3Settings::S3Settings(JsonView jsonValue) :
     m_maxFileSizeHasBeenSet(false),
     m_rfc4180(false),
     m_rfc4180HasBeenSet(false),
-    m_datePartitionTimezoneHasBeenSet(false)
+    m_datePartitionTimezoneHasBeenSet(false),
+    m_addTrailingPaddingCharacter(false),
+    m_addTrailingPaddingCharacterHasBeenSet(false),
+    m_expectedBucketOwnerHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -423,6 +429,20 @@ S3Settings& S3Settings::operator =(JsonView jsonValue)
     m_datePartitionTimezoneHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AddTrailingPaddingCharacter"))
+  {
+    m_addTrailingPaddingCharacter = jsonValue.GetBool("AddTrailingPaddingCharacter");
+
+    m_addTrailingPaddingCharacterHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ExpectedBucketOwner"))
+  {
+    m_expectedBucketOwner = jsonValue.GetString("ExpectedBucketOwner");
+
+    m_expectedBucketOwnerHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -647,6 +667,18 @@ JsonValue S3Settings::Jsonize() const
   if(m_datePartitionTimezoneHasBeenSet)
   {
    payload.WithString("DatePartitionTimezone", m_datePartitionTimezone);
+
+  }
+
+  if(m_addTrailingPaddingCharacterHasBeenSet)
+  {
+   payload.WithBool("AddTrailingPaddingCharacter", m_addTrailingPaddingCharacter);
+
+  }
+
+  if(m_expectedBucketOwnerHasBeenSet)
+  {
+   payload.WithString("ExpectedBucketOwner", m_expectedBucketOwner);
 
   }
 

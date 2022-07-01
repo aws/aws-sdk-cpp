@@ -39,8 +39,7 @@ namespace Model
     /**
      * <p> If you specify any of the following filters, the output includes information
      * for only those databases that meet the filter criteria: </p> <ul> <li> <p>
-     * <code>database-id</code> – The ID of the database, for example
-     * <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p> </li> <li> <p>
+     * <code>database-id</code> – The ID of the database.</p> </li> <li> <p>
      * <code>database-name</code> – The name of the database.</p> </li> <li> <p>
      * <code>database-engine</code> – The name of the database engine.</p> </li> <li>
      * <p> <code>server-ip-address</code> – The IP address of the database server.</p>
@@ -48,15 +47,14 @@ namespace Model
      * database.</p> </li> <li> <p> <code>collector-name</code> – The name of the
      * associated Fleet Advisor collector.</p> </li> </ul> <p>An example is:
      * <code>describe-fleet-advisor-databases --filter
-     * Name="database-id",Values="d4610ac5-e323-4ad9-bc50-eaf7249dfe9d"</code> </p>
+     * Name="database-id",Values="45"</code> </p>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
      * <p> If you specify any of the following filters, the output includes information
      * for only those databases that meet the filter criteria: </p> <ul> <li> <p>
-     * <code>database-id</code> – The ID of the database, for example
-     * <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p> </li> <li> <p>
+     * <code>database-id</code> – The ID of the database.</p> </li> <li> <p>
      * <code>database-name</code> – The name of the database.</p> </li> <li> <p>
      * <code>database-engine</code> – The name of the database engine.</p> </li> <li>
      * <p> <code>server-ip-address</code> – The IP address of the database server.</p>
@@ -64,15 +62,14 @@ namespace Model
      * database.</p> </li> <li> <p> <code>collector-name</code> – The name of the
      * associated Fleet Advisor collector.</p> </li> </ul> <p>An example is:
      * <code>describe-fleet-advisor-databases --filter
-     * Name="database-id",Values="d4610ac5-e323-4ad9-bc50-eaf7249dfe9d"</code> </p>
+     * Name="database-id",Values="45"</code> </p>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p> If you specify any of the following filters, the output includes information
      * for only those databases that meet the filter criteria: </p> <ul> <li> <p>
-     * <code>database-id</code> – The ID of the database, for example
-     * <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p> </li> <li> <p>
+     * <code>database-id</code> – The ID of the database.</p> </li> <li> <p>
      * <code>database-name</code> – The name of the database.</p> </li> <li> <p>
      * <code>database-engine</code> – The name of the database engine.</p> </li> <li>
      * <p> <code>server-ip-address</code> – The IP address of the database server.</p>
@@ -80,15 +77,14 @@ namespace Model
      * database.</p> </li> <li> <p> <code>collector-name</code> – The name of the
      * associated Fleet Advisor collector.</p> </li> </ul> <p>An example is:
      * <code>describe-fleet-advisor-databases --filter
-     * Name="database-id",Values="d4610ac5-e323-4ad9-bc50-eaf7249dfe9d"</code> </p>
+     * Name="database-id",Values="45"</code> </p>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
      * <p> If you specify any of the following filters, the output includes information
      * for only those databases that meet the filter criteria: </p> <ul> <li> <p>
-     * <code>database-id</code> – The ID of the database, for example
-     * <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p> </li> <li> <p>
+     * <code>database-id</code> – The ID of the database.</p> </li> <li> <p>
      * <code>database-name</code> – The name of the database.</p> </li> <li> <p>
      * <code>database-engine</code> – The name of the database engine.</p> </li> <li>
      * <p> <code>server-ip-address</code> – The IP address of the database server.</p>
@@ -96,15 +92,14 @@ namespace Model
      * database.</p> </li> <li> <p> <code>collector-name</code> – The name of the
      * associated Fleet Advisor collector.</p> </li> </ul> <p>An example is:
      * <code>describe-fleet-advisor-databases --filter
-     * Name="database-id",Values="d4610ac5-e323-4ad9-bc50-eaf7249dfe9d"</code> </p>
+     * Name="database-id",Values="45"</code> </p>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p> If you specify any of the following filters, the output includes information
      * for only those databases that meet the filter criteria: </p> <ul> <li> <p>
-     * <code>database-id</code> – The ID of the database, for example
-     * <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p> </li> <li> <p>
+     * <code>database-id</code> – The ID of the database.</p> </li> <li> <p>
      * <code>database-name</code> – The name of the database.</p> </li> <li> <p>
      * <code>database-engine</code> – The name of the database engine.</p> </li> <li>
      * <p> <code>server-ip-address</code> – The IP address of the database server.</p>
@@ -112,15 +107,14 @@ namespace Model
      * database.</p> </li> <li> <p> <code>collector-name</code> – The name of the
      * associated Fleet Advisor collector.</p> </li> </ul> <p>An example is:
      * <code>describe-fleet-advisor-databases --filter
-     * Name="database-id",Values="d4610ac5-e323-4ad9-bc50-eaf7249dfe9d"</code> </p>
+     * Name="database-id",Values="45"</code> </p>
      */
     inline DescribeFleetAdvisorDatabasesRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
      * <p> If you specify any of the following filters, the output includes information
      * for only those databases that meet the filter criteria: </p> <ul> <li> <p>
-     * <code>database-id</code> – The ID of the database, for example
-     * <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p> </li> <li> <p>
+     * <code>database-id</code> – The ID of the database.</p> </li> <li> <p>
      * <code>database-name</code> – The name of the database.</p> </li> <li> <p>
      * <code>database-engine</code> – The name of the database engine.</p> </li> <li>
      * <p> <code>server-ip-address</code> – The IP address of the database server.</p>
@@ -128,15 +122,14 @@ namespace Model
      * database.</p> </li> <li> <p> <code>collector-name</code> – The name of the
      * associated Fleet Advisor collector.</p> </li> </ul> <p>An example is:
      * <code>describe-fleet-advisor-databases --filter
-     * Name="database-id",Values="d4610ac5-e323-4ad9-bc50-eaf7249dfe9d"</code> </p>
+     * Name="database-id",Values="45"</code> </p>
      */
     inline DescribeFleetAdvisorDatabasesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p> If you specify any of the following filters, the output includes information
      * for only those databases that meet the filter criteria: </p> <ul> <li> <p>
-     * <code>database-id</code> – The ID of the database, for example
-     * <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p> </li> <li> <p>
+     * <code>database-id</code> – The ID of the database.</p> </li> <li> <p>
      * <code>database-name</code> – The name of the database.</p> </li> <li> <p>
      * <code>database-engine</code> – The name of the database engine.</p> </li> <li>
      * <p> <code>server-ip-address</code> – The IP address of the database server.</p>
@@ -144,15 +137,14 @@ namespace Model
      * database.</p> </li> <li> <p> <code>collector-name</code> – The name of the
      * associated Fleet Advisor collector.</p> </li> </ul> <p>An example is:
      * <code>describe-fleet-advisor-databases --filter
-     * Name="database-id",Values="d4610ac5-e323-4ad9-bc50-eaf7249dfe9d"</code> </p>
+     * Name="database-id",Values="45"</code> </p>
      */
     inline DescribeFleetAdvisorDatabasesRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
      * <p> If you specify any of the following filters, the output includes information
      * for only those databases that meet the filter criteria: </p> <ul> <li> <p>
-     * <code>database-id</code> – The ID of the database, for example
-     * <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p> </li> <li> <p>
+     * <code>database-id</code> – The ID of the database.</p> </li> <li> <p>
      * <code>database-name</code> – The name of the database.</p> </li> <li> <p>
      * <code>database-engine</code> – The name of the database engine.</p> </li> <li>
      * <p> <code>server-ip-address</code> – The IP address of the database server.</p>
@@ -160,7 +152,7 @@ namespace Model
      * database.</p> </li> <li> <p> <code>collector-name</code> – The name of the
      * associated Fleet Advisor collector.</p> </li> </ul> <p>An example is:
      * <code>describe-fleet-advisor-databases --filter
-     * Name="database-id",Values="d4610ac5-e323-4ad9-bc50-eaf7249dfe9d"</code> </p>
+     * Name="database-id",Values="45"</code> </p>
      */
     inline DescribeFleetAdvisorDatabasesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

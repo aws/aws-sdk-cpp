@@ -938,105 +938,177 @@ namespace Model
 
     /**
      * <p>The reason the replication task was stopped. This response parameter can
-     * return one of the following values:</p> <ul> <li> <p>
-     * <code>"STOP_REASON_FULL_LOAD_COMPLETED"</code> – Full-load migration
-     * completed.</p> </li> <li> <p> <code>"STOP_REASON_CACHED_CHANGES_APPLIED"</code>
-     * – Change data capture (CDC) load completed.</p> </li> <li> <p>
-     * <code>"STOP_REASON_CACHED_CHANGES_NOT_APPLIED"</code> – In a full-load and CDC
-     * migration, the full load stopped as specified before starting the CDC
-     * migration.</p> </li> <li> <p> <code>"STOP_REASON_SERVER_TIME"</code> – The
-     * migration stopped at the specified server time.</p> </li> </ul>
+     * return one of the following values:</p> <ul> <li> <p> <code>"Stop Reason
+     * NORMAL"</code> </p> </li> <li> <p> <code>"Stop Reason RECOVERABLE_ERROR"</code>
+     * </p> </li> <li> <p> <code>"Stop Reason FATAL_ERROR"</code> </p> </li> <li> <p>
+     * <code>"Stop Reason FULL_LOAD_ONLY_FINISHED"</code> </p> </li> <li> <p>
+     * <code>"Stop Reason STOPPED_AFTER_FULL_LOAD"</code> – Full load completed, with
+     * cached changes not applied</p> </li> <li> <p> <code>"Stop Reason
+     * STOPPED_AFTER_CACHED_EVENTS"</code> – Full load completed, with cached changes
+     * applied</p> </li> <li> <p> <code>"Stop Reason
+     * EXPRESS_LICENSE_LIMITS_REACHED"</code> </p> </li> <li> <p> <code>"Stop Reason
+     * STOPPED_AFTER_DDL_APPLY"</code> – User-defined stop task after DDL applied</p>
+     * </li> <li> <p> <code>"Stop Reason STOPPED_DUE_TO_LOW_MEMORY"</code> </p> </li>
+     * <li> <p> <code>"Stop Reason STOPPED_DUE_TO_LOW_DISK"</code> </p> </li> <li> <p>
+     * <code>"Stop Reason STOPPED_AT_SERVER_TIME"</code> – User-defined server time for
+     * stopping task</p> </li> <li> <p> <code>"Stop Reason
+     * STOPPED_AT_COMMIT_TIME"</code> – User-defined commit time for stopping task</p>
+     * </li> <li> <p> <code>"Stop Reason RECONFIGURATION_RESTART"</code> </p> </li>
+     * <li> <p> <code>"Stop Reason RECYCLE_TASK"</code> </p> </li> </ul>
      */
     inline const Aws::String& GetStopReason() const{ return m_stopReason; }
 
     /**
      * <p>The reason the replication task was stopped. This response parameter can
-     * return one of the following values:</p> <ul> <li> <p>
-     * <code>"STOP_REASON_FULL_LOAD_COMPLETED"</code> – Full-load migration
-     * completed.</p> </li> <li> <p> <code>"STOP_REASON_CACHED_CHANGES_APPLIED"</code>
-     * – Change data capture (CDC) load completed.</p> </li> <li> <p>
-     * <code>"STOP_REASON_CACHED_CHANGES_NOT_APPLIED"</code> – In a full-load and CDC
-     * migration, the full load stopped as specified before starting the CDC
-     * migration.</p> </li> <li> <p> <code>"STOP_REASON_SERVER_TIME"</code> – The
-     * migration stopped at the specified server time.</p> </li> </ul>
+     * return one of the following values:</p> <ul> <li> <p> <code>"Stop Reason
+     * NORMAL"</code> </p> </li> <li> <p> <code>"Stop Reason RECOVERABLE_ERROR"</code>
+     * </p> </li> <li> <p> <code>"Stop Reason FATAL_ERROR"</code> </p> </li> <li> <p>
+     * <code>"Stop Reason FULL_LOAD_ONLY_FINISHED"</code> </p> </li> <li> <p>
+     * <code>"Stop Reason STOPPED_AFTER_FULL_LOAD"</code> – Full load completed, with
+     * cached changes not applied</p> </li> <li> <p> <code>"Stop Reason
+     * STOPPED_AFTER_CACHED_EVENTS"</code> – Full load completed, with cached changes
+     * applied</p> </li> <li> <p> <code>"Stop Reason
+     * EXPRESS_LICENSE_LIMITS_REACHED"</code> </p> </li> <li> <p> <code>"Stop Reason
+     * STOPPED_AFTER_DDL_APPLY"</code> – User-defined stop task after DDL applied</p>
+     * </li> <li> <p> <code>"Stop Reason STOPPED_DUE_TO_LOW_MEMORY"</code> </p> </li>
+     * <li> <p> <code>"Stop Reason STOPPED_DUE_TO_LOW_DISK"</code> </p> </li> <li> <p>
+     * <code>"Stop Reason STOPPED_AT_SERVER_TIME"</code> – User-defined server time for
+     * stopping task</p> </li> <li> <p> <code>"Stop Reason
+     * STOPPED_AT_COMMIT_TIME"</code> – User-defined commit time for stopping task</p>
+     * </li> <li> <p> <code>"Stop Reason RECONFIGURATION_RESTART"</code> </p> </li>
+     * <li> <p> <code>"Stop Reason RECYCLE_TASK"</code> </p> </li> </ul>
      */
     inline bool StopReasonHasBeenSet() const { return m_stopReasonHasBeenSet; }
 
     /**
      * <p>The reason the replication task was stopped. This response parameter can
-     * return one of the following values:</p> <ul> <li> <p>
-     * <code>"STOP_REASON_FULL_LOAD_COMPLETED"</code> – Full-load migration
-     * completed.</p> </li> <li> <p> <code>"STOP_REASON_CACHED_CHANGES_APPLIED"</code>
-     * – Change data capture (CDC) load completed.</p> </li> <li> <p>
-     * <code>"STOP_REASON_CACHED_CHANGES_NOT_APPLIED"</code> – In a full-load and CDC
-     * migration, the full load stopped as specified before starting the CDC
-     * migration.</p> </li> <li> <p> <code>"STOP_REASON_SERVER_TIME"</code> – The
-     * migration stopped at the specified server time.</p> </li> </ul>
+     * return one of the following values:</p> <ul> <li> <p> <code>"Stop Reason
+     * NORMAL"</code> </p> </li> <li> <p> <code>"Stop Reason RECOVERABLE_ERROR"</code>
+     * </p> </li> <li> <p> <code>"Stop Reason FATAL_ERROR"</code> </p> </li> <li> <p>
+     * <code>"Stop Reason FULL_LOAD_ONLY_FINISHED"</code> </p> </li> <li> <p>
+     * <code>"Stop Reason STOPPED_AFTER_FULL_LOAD"</code> – Full load completed, with
+     * cached changes not applied</p> </li> <li> <p> <code>"Stop Reason
+     * STOPPED_AFTER_CACHED_EVENTS"</code> – Full load completed, with cached changes
+     * applied</p> </li> <li> <p> <code>"Stop Reason
+     * EXPRESS_LICENSE_LIMITS_REACHED"</code> </p> </li> <li> <p> <code>"Stop Reason
+     * STOPPED_AFTER_DDL_APPLY"</code> – User-defined stop task after DDL applied</p>
+     * </li> <li> <p> <code>"Stop Reason STOPPED_DUE_TO_LOW_MEMORY"</code> </p> </li>
+     * <li> <p> <code>"Stop Reason STOPPED_DUE_TO_LOW_DISK"</code> </p> </li> <li> <p>
+     * <code>"Stop Reason STOPPED_AT_SERVER_TIME"</code> – User-defined server time for
+     * stopping task</p> </li> <li> <p> <code>"Stop Reason
+     * STOPPED_AT_COMMIT_TIME"</code> – User-defined commit time for stopping task</p>
+     * </li> <li> <p> <code>"Stop Reason RECONFIGURATION_RESTART"</code> </p> </li>
+     * <li> <p> <code>"Stop Reason RECYCLE_TASK"</code> </p> </li> </ul>
      */
     inline void SetStopReason(const Aws::String& value) { m_stopReasonHasBeenSet = true; m_stopReason = value; }
 
     /**
      * <p>The reason the replication task was stopped. This response parameter can
-     * return one of the following values:</p> <ul> <li> <p>
-     * <code>"STOP_REASON_FULL_LOAD_COMPLETED"</code> – Full-load migration
-     * completed.</p> </li> <li> <p> <code>"STOP_REASON_CACHED_CHANGES_APPLIED"</code>
-     * – Change data capture (CDC) load completed.</p> </li> <li> <p>
-     * <code>"STOP_REASON_CACHED_CHANGES_NOT_APPLIED"</code> – In a full-load and CDC
-     * migration, the full load stopped as specified before starting the CDC
-     * migration.</p> </li> <li> <p> <code>"STOP_REASON_SERVER_TIME"</code> – The
-     * migration stopped at the specified server time.</p> </li> </ul>
+     * return one of the following values:</p> <ul> <li> <p> <code>"Stop Reason
+     * NORMAL"</code> </p> </li> <li> <p> <code>"Stop Reason RECOVERABLE_ERROR"</code>
+     * </p> </li> <li> <p> <code>"Stop Reason FATAL_ERROR"</code> </p> </li> <li> <p>
+     * <code>"Stop Reason FULL_LOAD_ONLY_FINISHED"</code> </p> </li> <li> <p>
+     * <code>"Stop Reason STOPPED_AFTER_FULL_LOAD"</code> – Full load completed, with
+     * cached changes not applied</p> </li> <li> <p> <code>"Stop Reason
+     * STOPPED_AFTER_CACHED_EVENTS"</code> – Full load completed, with cached changes
+     * applied</p> </li> <li> <p> <code>"Stop Reason
+     * EXPRESS_LICENSE_LIMITS_REACHED"</code> </p> </li> <li> <p> <code>"Stop Reason
+     * STOPPED_AFTER_DDL_APPLY"</code> – User-defined stop task after DDL applied</p>
+     * </li> <li> <p> <code>"Stop Reason STOPPED_DUE_TO_LOW_MEMORY"</code> </p> </li>
+     * <li> <p> <code>"Stop Reason STOPPED_DUE_TO_LOW_DISK"</code> </p> </li> <li> <p>
+     * <code>"Stop Reason STOPPED_AT_SERVER_TIME"</code> – User-defined server time for
+     * stopping task</p> </li> <li> <p> <code>"Stop Reason
+     * STOPPED_AT_COMMIT_TIME"</code> – User-defined commit time for stopping task</p>
+     * </li> <li> <p> <code>"Stop Reason RECONFIGURATION_RESTART"</code> </p> </li>
+     * <li> <p> <code>"Stop Reason RECYCLE_TASK"</code> </p> </li> </ul>
      */
     inline void SetStopReason(Aws::String&& value) { m_stopReasonHasBeenSet = true; m_stopReason = std::move(value); }
 
     /**
      * <p>The reason the replication task was stopped. This response parameter can
-     * return one of the following values:</p> <ul> <li> <p>
-     * <code>"STOP_REASON_FULL_LOAD_COMPLETED"</code> – Full-load migration
-     * completed.</p> </li> <li> <p> <code>"STOP_REASON_CACHED_CHANGES_APPLIED"</code>
-     * – Change data capture (CDC) load completed.</p> </li> <li> <p>
-     * <code>"STOP_REASON_CACHED_CHANGES_NOT_APPLIED"</code> – In a full-load and CDC
-     * migration, the full load stopped as specified before starting the CDC
-     * migration.</p> </li> <li> <p> <code>"STOP_REASON_SERVER_TIME"</code> – The
-     * migration stopped at the specified server time.</p> </li> </ul>
+     * return one of the following values:</p> <ul> <li> <p> <code>"Stop Reason
+     * NORMAL"</code> </p> </li> <li> <p> <code>"Stop Reason RECOVERABLE_ERROR"</code>
+     * </p> </li> <li> <p> <code>"Stop Reason FATAL_ERROR"</code> </p> </li> <li> <p>
+     * <code>"Stop Reason FULL_LOAD_ONLY_FINISHED"</code> </p> </li> <li> <p>
+     * <code>"Stop Reason STOPPED_AFTER_FULL_LOAD"</code> – Full load completed, with
+     * cached changes not applied</p> </li> <li> <p> <code>"Stop Reason
+     * STOPPED_AFTER_CACHED_EVENTS"</code> – Full load completed, with cached changes
+     * applied</p> </li> <li> <p> <code>"Stop Reason
+     * EXPRESS_LICENSE_LIMITS_REACHED"</code> </p> </li> <li> <p> <code>"Stop Reason
+     * STOPPED_AFTER_DDL_APPLY"</code> – User-defined stop task after DDL applied</p>
+     * </li> <li> <p> <code>"Stop Reason STOPPED_DUE_TO_LOW_MEMORY"</code> </p> </li>
+     * <li> <p> <code>"Stop Reason STOPPED_DUE_TO_LOW_DISK"</code> </p> </li> <li> <p>
+     * <code>"Stop Reason STOPPED_AT_SERVER_TIME"</code> – User-defined server time for
+     * stopping task</p> </li> <li> <p> <code>"Stop Reason
+     * STOPPED_AT_COMMIT_TIME"</code> – User-defined commit time for stopping task</p>
+     * </li> <li> <p> <code>"Stop Reason RECONFIGURATION_RESTART"</code> </p> </li>
+     * <li> <p> <code>"Stop Reason RECYCLE_TASK"</code> </p> </li> </ul>
      */
     inline void SetStopReason(const char* value) { m_stopReasonHasBeenSet = true; m_stopReason.assign(value); }
 
     /**
      * <p>The reason the replication task was stopped. This response parameter can
-     * return one of the following values:</p> <ul> <li> <p>
-     * <code>"STOP_REASON_FULL_LOAD_COMPLETED"</code> – Full-load migration
-     * completed.</p> </li> <li> <p> <code>"STOP_REASON_CACHED_CHANGES_APPLIED"</code>
-     * – Change data capture (CDC) load completed.</p> </li> <li> <p>
-     * <code>"STOP_REASON_CACHED_CHANGES_NOT_APPLIED"</code> – In a full-load and CDC
-     * migration, the full load stopped as specified before starting the CDC
-     * migration.</p> </li> <li> <p> <code>"STOP_REASON_SERVER_TIME"</code> – The
-     * migration stopped at the specified server time.</p> </li> </ul>
+     * return one of the following values:</p> <ul> <li> <p> <code>"Stop Reason
+     * NORMAL"</code> </p> </li> <li> <p> <code>"Stop Reason RECOVERABLE_ERROR"</code>
+     * </p> </li> <li> <p> <code>"Stop Reason FATAL_ERROR"</code> </p> </li> <li> <p>
+     * <code>"Stop Reason FULL_LOAD_ONLY_FINISHED"</code> </p> </li> <li> <p>
+     * <code>"Stop Reason STOPPED_AFTER_FULL_LOAD"</code> – Full load completed, with
+     * cached changes not applied</p> </li> <li> <p> <code>"Stop Reason
+     * STOPPED_AFTER_CACHED_EVENTS"</code> – Full load completed, with cached changes
+     * applied</p> </li> <li> <p> <code>"Stop Reason
+     * EXPRESS_LICENSE_LIMITS_REACHED"</code> </p> </li> <li> <p> <code>"Stop Reason
+     * STOPPED_AFTER_DDL_APPLY"</code> – User-defined stop task after DDL applied</p>
+     * </li> <li> <p> <code>"Stop Reason STOPPED_DUE_TO_LOW_MEMORY"</code> </p> </li>
+     * <li> <p> <code>"Stop Reason STOPPED_DUE_TO_LOW_DISK"</code> </p> </li> <li> <p>
+     * <code>"Stop Reason STOPPED_AT_SERVER_TIME"</code> – User-defined server time for
+     * stopping task</p> </li> <li> <p> <code>"Stop Reason
+     * STOPPED_AT_COMMIT_TIME"</code> – User-defined commit time for stopping task</p>
+     * </li> <li> <p> <code>"Stop Reason RECONFIGURATION_RESTART"</code> </p> </li>
+     * <li> <p> <code>"Stop Reason RECYCLE_TASK"</code> </p> </li> </ul>
      */
     inline ReplicationTask& WithStopReason(const Aws::String& value) { SetStopReason(value); return *this;}
 
     /**
      * <p>The reason the replication task was stopped. This response parameter can
-     * return one of the following values:</p> <ul> <li> <p>
-     * <code>"STOP_REASON_FULL_LOAD_COMPLETED"</code> – Full-load migration
-     * completed.</p> </li> <li> <p> <code>"STOP_REASON_CACHED_CHANGES_APPLIED"</code>
-     * – Change data capture (CDC) load completed.</p> </li> <li> <p>
-     * <code>"STOP_REASON_CACHED_CHANGES_NOT_APPLIED"</code> – In a full-load and CDC
-     * migration, the full load stopped as specified before starting the CDC
-     * migration.</p> </li> <li> <p> <code>"STOP_REASON_SERVER_TIME"</code> – The
-     * migration stopped at the specified server time.</p> </li> </ul>
+     * return one of the following values:</p> <ul> <li> <p> <code>"Stop Reason
+     * NORMAL"</code> </p> </li> <li> <p> <code>"Stop Reason RECOVERABLE_ERROR"</code>
+     * </p> </li> <li> <p> <code>"Stop Reason FATAL_ERROR"</code> </p> </li> <li> <p>
+     * <code>"Stop Reason FULL_LOAD_ONLY_FINISHED"</code> </p> </li> <li> <p>
+     * <code>"Stop Reason STOPPED_AFTER_FULL_LOAD"</code> – Full load completed, with
+     * cached changes not applied</p> </li> <li> <p> <code>"Stop Reason
+     * STOPPED_AFTER_CACHED_EVENTS"</code> – Full load completed, with cached changes
+     * applied</p> </li> <li> <p> <code>"Stop Reason
+     * EXPRESS_LICENSE_LIMITS_REACHED"</code> </p> </li> <li> <p> <code>"Stop Reason
+     * STOPPED_AFTER_DDL_APPLY"</code> – User-defined stop task after DDL applied</p>
+     * </li> <li> <p> <code>"Stop Reason STOPPED_DUE_TO_LOW_MEMORY"</code> </p> </li>
+     * <li> <p> <code>"Stop Reason STOPPED_DUE_TO_LOW_DISK"</code> </p> </li> <li> <p>
+     * <code>"Stop Reason STOPPED_AT_SERVER_TIME"</code> – User-defined server time for
+     * stopping task</p> </li> <li> <p> <code>"Stop Reason
+     * STOPPED_AT_COMMIT_TIME"</code> – User-defined commit time for stopping task</p>
+     * </li> <li> <p> <code>"Stop Reason RECONFIGURATION_RESTART"</code> </p> </li>
+     * <li> <p> <code>"Stop Reason RECYCLE_TASK"</code> </p> </li> </ul>
      */
     inline ReplicationTask& WithStopReason(Aws::String&& value) { SetStopReason(std::move(value)); return *this;}
 
     /**
      * <p>The reason the replication task was stopped. This response parameter can
-     * return one of the following values:</p> <ul> <li> <p>
-     * <code>"STOP_REASON_FULL_LOAD_COMPLETED"</code> – Full-load migration
-     * completed.</p> </li> <li> <p> <code>"STOP_REASON_CACHED_CHANGES_APPLIED"</code>
-     * – Change data capture (CDC) load completed.</p> </li> <li> <p>
-     * <code>"STOP_REASON_CACHED_CHANGES_NOT_APPLIED"</code> – In a full-load and CDC
-     * migration, the full load stopped as specified before starting the CDC
-     * migration.</p> </li> <li> <p> <code>"STOP_REASON_SERVER_TIME"</code> – The
-     * migration stopped at the specified server time.</p> </li> </ul>
+     * return one of the following values:</p> <ul> <li> <p> <code>"Stop Reason
+     * NORMAL"</code> </p> </li> <li> <p> <code>"Stop Reason RECOVERABLE_ERROR"</code>
+     * </p> </li> <li> <p> <code>"Stop Reason FATAL_ERROR"</code> </p> </li> <li> <p>
+     * <code>"Stop Reason FULL_LOAD_ONLY_FINISHED"</code> </p> </li> <li> <p>
+     * <code>"Stop Reason STOPPED_AFTER_FULL_LOAD"</code> – Full load completed, with
+     * cached changes not applied</p> </li> <li> <p> <code>"Stop Reason
+     * STOPPED_AFTER_CACHED_EVENTS"</code> – Full load completed, with cached changes
+     * applied</p> </li> <li> <p> <code>"Stop Reason
+     * EXPRESS_LICENSE_LIMITS_REACHED"</code> </p> </li> <li> <p> <code>"Stop Reason
+     * STOPPED_AFTER_DDL_APPLY"</code> – User-defined stop task after DDL applied</p>
+     * </li> <li> <p> <code>"Stop Reason STOPPED_DUE_TO_LOW_MEMORY"</code> </p> </li>
+     * <li> <p> <code>"Stop Reason STOPPED_DUE_TO_LOW_DISK"</code> </p> </li> <li> <p>
+     * <code>"Stop Reason STOPPED_AT_SERVER_TIME"</code> – User-defined server time for
+     * stopping task</p> </li> <li> <p> <code>"Stop Reason
+     * STOPPED_AT_COMMIT_TIME"</code> – User-defined commit time for stopping task</p>
+     * </li> <li> <p> <code>"Stop Reason RECONFIGURATION_RESTART"</code> </p> </li>
+     * <li> <p> <code>"Stop Reason RECYCLE_TASK"</code> </p> </li> </ul>
      */
     inline ReplicationTask& WithStopReason(const char* value) { SetStopReason(value); return *this;}
 

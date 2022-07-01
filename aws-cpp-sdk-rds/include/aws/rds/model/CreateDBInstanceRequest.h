@@ -698,82 +698,98 @@ namespace Model
 
 
     /**
-     * <p>The compute and memory capacity of the DB instance, for example db.m4.large.
+     * <p>The compute and memory capacity of the DB instance, for example db.m5.large.
      * Not all DB instance classes are available in all Amazon Web Services Regions, or
      * for all database engines. For the full list of DB instance classes, and
      * availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * instance classes</a> in the <i>Amazon RDS User Guide</i> or <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora
+     * DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
     inline const Aws::String& GetDBInstanceClass() const{ return m_dBInstanceClass; }
 
     /**
-     * <p>The compute and memory capacity of the DB instance, for example db.m4.large.
+     * <p>The compute and memory capacity of the DB instance, for example db.m5.large.
      * Not all DB instance classes are available in all Amazon Web Services Regions, or
      * for all database engines. For the full list of DB instance classes, and
      * availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * instance classes</a> in the <i>Amazon RDS User Guide</i> or <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora
+     * DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
     inline bool DBInstanceClassHasBeenSet() const { return m_dBInstanceClassHasBeenSet; }
 
     /**
-     * <p>The compute and memory capacity of the DB instance, for example db.m4.large.
+     * <p>The compute and memory capacity of the DB instance, for example db.m5.large.
      * Not all DB instance classes are available in all Amazon Web Services Regions, or
      * for all database engines. For the full list of DB instance classes, and
      * availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * instance classes</a> in the <i>Amazon RDS User Guide</i> or <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora
+     * DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
     inline void SetDBInstanceClass(const Aws::String& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
 
     /**
-     * <p>The compute and memory capacity of the DB instance, for example db.m4.large.
+     * <p>The compute and memory capacity of the DB instance, for example db.m5.large.
      * Not all DB instance classes are available in all Amazon Web Services Regions, or
      * for all database engines. For the full list of DB instance classes, and
      * availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * instance classes</a> in the <i>Amazon RDS User Guide</i> or <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora
+     * DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
     inline void SetDBInstanceClass(Aws::String&& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = std::move(value); }
 
     /**
-     * <p>The compute and memory capacity of the DB instance, for example db.m4.large.
+     * <p>The compute and memory capacity of the DB instance, for example db.m5.large.
      * Not all DB instance classes are available in all Amazon Web Services Regions, or
      * for all database engines. For the full list of DB instance classes, and
      * availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * instance classes</a> in the <i>Amazon RDS User Guide</i> or <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora
+     * DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
     inline void SetDBInstanceClass(const char* value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass.assign(value); }
 
     /**
-     * <p>The compute and memory capacity of the DB instance, for example db.m4.large.
+     * <p>The compute and memory capacity of the DB instance, for example db.m5.large.
      * Not all DB instance classes are available in all Amazon Web Services Regions, or
      * for all database engines. For the full list of DB instance classes, and
      * availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * instance classes</a> in the <i>Amazon RDS User Guide</i> or <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora
+     * DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
     inline CreateDBInstanceRequest& WithDBInstanceClass(const Aws::String& value) { SetDBInstanceClass(value); return *this;}
 
     /**
-     * <p>The compute and memory capacity of the DB instance, for example db.m4.large.
+     * <p>The compute and memory capacity of the DB instance, for example db.m5.large.
      * Not all DB instance classes are available in all Amazon Web Services Regions, or
      * for all database engines. For the full list of DB instance classes, and
      * availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * instance classes</a> in the <i>Amazon RDS User Guide</i> or <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora
+     * DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
     inline CreateDBInstanceRequest& WithDBInstanceClass(Aws::String&& value) { SetDBInstanceClass(std::move(value)); return *this;}
 
     /**
-     * <p>The compute and memory capacity of the DB instance, for example db.m4.large.
+     * <p>The compute and memory capacity of the DB instance, for example db.m5.large.
      * Not all DB instance classes are available in all Amazon Web Services Regions, or
      * for all database engines. For the full list of DB instance classes, and
      * availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * instance classes</a> in the <i>Amazon RDS User Guide</i> or <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora
+     * DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
     inline CreateDBInstanceRequest& WithDBInstanceClass(const char* value) { SetDBInstanceClass(value); return *this;}
 
@@ -1142,56 +1158,74 @@ namespace Model
 
 
     /**
-     * <p>A list of DB security groups to associate with this DB instance.</p>
-     * <p>Default: The default DB security group for the database engine.</p>
+     * <p>A list of DB security groups to associate with this DB instance.</p> <p>This
+     * setting applies to the legacy EC2-Classic platform, which is no longer used to
+     * create new DB instances. Use the <code>VpcSecurityGroupIds</code> setting
+     * instead.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDBSecurityGroups() const{ return m_dBSecurityGroups; }
 
     /**
-     * <p>A list of DB security groups to associate with this DB instance.</p>
-     * <p>Default: The default DB security group for the database engine.</p>
+     * <p>A list of DB security groups to associate with this DB instance.</p> <p>This
+     * setting applies to the legacy EC2-Classic platform, which is no longer used to
+     * create new DB instances. Use the <code>VpcSecurityGroupIds</code> setting
+     * instead.</p>
      */
     inline bool DBSecurityGroupsHasBeenSet() const { return m_dBSecurityGroupsHasBeenSet; }
 
     /**
-     * <p>A list of DB security groups to associate with this DB instance.</p>
-     * <p>Default: The default DB security group for the database engine.</p>
+     * <p>A list of DB security groups to associate with this DB instance.</p> <p>This
+     * setting applies to the legacy EC2-Classic platform, which is no longer used to
+     * create new DB instances. Use the <code>VpcSecurityGroupIds</code> setting
+     * instead.</p>
      */
     inline void SetDBSecurityGroups(const Aws::Vector<Aws::String>& value) { m_dBSecurityGroupsHasBeenSet = true; m_dBSecurityGroups = value; }
 
     /**
-     * <p>A list of DB security groups to associate with this DB instance.</p>
-     * <p>Default: The default DB security group for the database engine.</p>
+     * <p>A list of DB security groups to associate with this DB instance.</p> <p>This
+     * setting applies to the legacy EC2-Classic platform, which is no longer used to
+     * create new DB instances. Use the <code>VpcSecurityGroupIds</code> setting
+     * instead.</p>
      */
     inline void SetDBSecurityGroups(Aws::Vector<Aws::String>&& value) { m_dBSecurityGroupsHasBeenSet = true; m_dBSecurityGroups = std::move(value); }
 
     /**
-     * <p>A list of DB security groups to associate with this DB instance.</p>
-     * <p>Default: The default DB security group for the database engine.</p>
+     * <p>A list of DB security groups to associate with this DB instance.</p> <p>This
+     * setting applies to the legacy EC2-Classic platform, which is no longer used to
+     * create new DB instances. Use the <code>VpcSecurityGroupIds</code> setting
+     * instead.</p>
      */
     inline CreateDBInstanceRequest& WithDBSecurityGroups(const Aws::Vector<Aws::String>& value) { SetDBSecurityGroups(value); return *this;}
 
     /**
-     * <p>A list of DB security groups to associate with this DB instance.</p>
-     * <p>Default: The default DB security group for the database engine.</p>
+     * <p>A list of DB security groups to associate with this DB instance.</p> <p>This
+     * setting applies to the legacy EC2-Classic platform, which is no longer used to
+     * create new DB instances. Use the <code>VpcSecurityGroupIds</code> setting
+     * instead.</p>
      */
     inline CreateDBInstanceRequest& WithDBSecurityGroups(Aws::Vector<Aws::String>&& value) { SetDBSecurityGroups(std::move(value)); return *this;}
 
     /**
-     * <p>A list of DB security groups to associate with this DB instance.</p>
-     * <p>Default: The default DB security group for the database engine.</p>
+     * <p>A list of DB security groups to associate with this DB instance.</p> <p>This
+     * setting applies to the legacy EC2-Classic platform, which is no longer used to
+     * create new DB instances. Use the <code>VpcSecurityGroupIds</code> setting
+     * instead.</p>
      */
     inline CreateDBInstanceRequest& AddDBSecurityGroups(const Aws::String& value) { m_dBSecurityGroupsHasBeenSet = true; m_dBSecurityGroups.push_back(value); return *this; }
 
     /**
-     * <p>A list of DB security groups to associate with this DB instance.</p>
-     * <p>Default: The default DB security group for the database engine.</p>
+     * <p>A list of DB security groups to associate with this DB instance.</p> <p>This
+     * setting applies to the legacy EC2-Classic platform, which is no longer used to
+     * create new DB instances. Use the <code>VpcSecurityGroupIds</code> setting
+     * instead.</p>
      */
     inline CreateDBInstanceRequest& AddDBSecurityGroups(Aws::String&& value) { m_dBSecurityGroupsHasBeenSet = true; m_dBSecurityGroups.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of DB security groups to associate with this DB instance.</p>
-     * <p>Default: The default DB security group for the database engine.</p>
+     * <p>A list of DB security groups to associate with this DB instance.</p> <p>This
+     * setting applies to the legacy EC2-Classic platform, which is no longer used to
+     * create new DB instances. Use the <code>VpcSecurityGroupIds</code> setting
+     * instead.</p>
      */
     inline CreateDBInstanceRequest& AddDBSecurityGroups(const char* value) { m_dBSecurityGroupsHasBeenSet = true; m_dBSecurityGroups.push_back(value); return *this; }
 
@@ -1640,8 +1674,8 @@ namespace Model
      * The retention period for automated backups is managed by the DB cluster.</p>
      * <p>Default: 1</p> <p>Constraints:</p> <ul> <li> <p>Must be a value from 0 to
      * 35</p> </li> <li> <p>Can't be set to 0 if the DB instance is a source to read
-     * replicas</p> </li> <li> <p>Can't be set to 0 or 35 for an RDS Custom for Oracle
-     * DB instance</p> </li> </ul>
+     * replicas</p> </li> <li> <p>Can't be set to 0 for an RDS Custom for Oracle DB
+     * instance</p> </li> </ul>
      */
     inline int GetBackupRetentionPeriod() const{ return m_backupRetentionPeriod; }
 
@@ -1652,8 +1686,8 @@ namespace Model
      * The retention period for automated backups is managed by the DB cluster.</p>
      * <p>Default: 1</p> <p>Constraints:</p> <ul> <li> <p>Must be a value from 0 to
      * 35</p> </li> <li> <p>Can't be set to 0 if the DB instance is a source to read
-     * replicas</p> </li> <li> <p>Can't be set to 0 or 35 for an RDS Custom for Oracle
-     * DB instance</p> </li> </ul>
+     * replicas</p> </li> <li> <p>Can't be set to 0 for an RDS Custom for Oracle DB
+     * instance</p> </li> </ul>
      */
     inline bool BackupRetentionPeriodHasBeenSet() const { return m_backupRetentionPeriodHasBeenSet; }
 
@@ -1664,8 +1698,8 @@ namespace Model
      * The retention period for automated backups is managed by the DB cluster.</p>
      * <p>Default: 1</p> <p>Constraints:</p> <ul> <li> <p>Must be a value from 0 to
      * 35</p> </li> <li> <p>Can't be set to 0 if the DB instance is a source to read
-     * replicas</p> </li> <li> <p>Can't be set to 0 or 35 for an RDS Custom for Oracle
-     * DB instance</p> </li> </ul>
+     * replicas</p> </li> <li> <p>Can't be set to 0 for an RDS Custom for Oracle DB
+     * instance</p> </li> </ul>
      */
     inline void SetBackupRetentionPeriod(int value) { m_backupRetentionPeriodHasBeenSet = true; m_backupRetentionPeriod = value; }
 
@@ -1676,8 +1710,8 @@ namespace Model
      * The retention period for automated backups is managed by the DB cluster.</p>
      * <p>Default: 1</p> <p>Constraints:</p> <ul> <li> <p>Must be a value from 0 to
      * 35</p> </li> <li> <p>Can't be set to 0 if the DB instance is a source to read
-     * replicas</p> </li> <li> <p>Can't be set to 0 or 35 for an RDS Custom for Oracle
-     * DB instance</p> </li> </ul>
+     * replicas</p> </li> <li> <p>Can't be set to 0 for an RDS Custom for Oracle DB
+     * instance</p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithBackupRetentionPeriod(int value) { SetBackupRetentionPeriod(value); return *this;}
 
@@ -1883,35 +1917,43 @@ namespace Model
     /**
      * <p>A value that indicates whether the DB instance is a Multi-AZ deployment. You
      * can't set the <code>AvailabilityZone</code> parameter if the DB instance is a
-     * Multi-AZ deployment.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * Multi-AZ deployment.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>
+     * <b>Amazon Aurora</b> </p> <p>Not applicable. DB instance Availability Zones
+     * (AZs) are managed by the DB cluster.</p>
      */
     inline bool GetMultiAZ() const{ return m_multiAZ; }
 
     /**
      * <p>A value that indicates whether the DB instance is a Multi-AZ deployment. You
      * can't set the <code>AvailabilityZone</code> parameter if the DB instance is a
-     * Multi-AZ deployment.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * Multi-AZ deployment.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>
+     * <b>Amazon Aurora</b> </p> <p>Not applicable. DB instance Availability Zones
+     * (AZs) are managed by the DB cluster.</p>
      */
     inline bool MultiAZHasBeenSet() const { return m_multiAZHasBeenSet; }
 
     /**
      * <p>A value that indicates whether the DB instance is a Multi-AZ deployment. You
      * can't set the <code>AvailabilityZone</code> parameter if the DB instance is a
-     * Multi-AZ deployment.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * Multi-AZ deployment.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>
+     * <b>Amazon Aurora</b> </p> <p>Not applicable. DB instance Availability Zones
+     * (AZs) are managed by the DB cluster.</p>
      */
     inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
 
     /**
      * <p>A value that indicates whether the DB instance is a Multi-AZ deployment. You
      * can't set the <code>AvailabilityZone</code> parameter if the DB instance is a
-     * Multi-AZ deployment.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * Multi-AZ deployment.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>
+     * <b>Amazon Aurora</b> </p> <p>Not applicable. DB instance Availability Zones
+     * (AZs) are managed by the DB cluster.</p>
      */
     inline CreateDBInstanceRequest& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
 
 
     /**
      * <p>The version number of the database engine to use.</p> <p>For a list of valid
-     * engine versions, use the <code>DescribeDBEngineVersions</code> action.</p>
+     * engine versions, use the <code>DescribeDBEngineVersions</code> operation.</p>
      * <p>The following are the database engines and links to information about the
      * major and minor versions that are available with Amazon RDS. Not every database
      * engine is available for every Amazon Web Services Region.</p> <p> <b>Amazon
@@ -1947,7 +1989,7 @@ namespace Model
 
     /**
      * <p>The version number of the database engine to use.</p> <p>For a list of valid
-     * engine versions, use the <code>DescribeDBEngineVersions</code> action.</p>
+     * engine versions, use the <code>DescribeDBEngineVersions</code> operation.</p>
      * <p>The following are the database engines and links to information about the
      * major and minor versions that are available with Amazon RDS. Not every database
      * engine is available for every Amazon Web Services Region.</p> <p> <b>Amazon
@@ -1983,7 +2025,7 @@ namespace Model
 
     /**
      * <p>The version number of the database engine to use.</p> <p>For a list of valid
-     * engine versions, use the <code>DescribeDBEngineVersions</code> action.</p>
+     * engine versions, use the <code>DescribeDBEngineVersions</code> operation.</p>
      * <p>The following are the database engines and links to information about the
      * major and minor versions that are available with Amazon RDS. Not every database
      * engine is available for every Amazon Web Services Region.</p> <p> <b>Amazon
@@ -2019,7 +2061,7 @@ namespace Model
 
     /**
      * <p>The version number of the database engine to use.</p> <p>For a list of valid
-     * engine versions, use the <code>DescribeDBEngineVersions</code> action.</p>
+     * engine versions, use the <code>DescribeDBEngineVersions</code> operation.</p>
      * <p>The following are the database engines and links to information about the
      * major and minor versions that are available with Amazon RDS. Not every database
      * engine is available for every Amazon Web Services Region.</p> <p> <b>Amazon
@@ -2055,7 +2097,7 @@ namespace Model
 
     /**
      * <p>The version number of the database engine to use.</p> <p>For a list of valid
-     * engine versions, use the <code>DescribeDBEngineVersions</code> action.</p>
+     * engine versions, use the <code>DescribeDBEngineVersions</code> operation.</p>
      * <p>The following are the database engines and links to information about the
      * major and minor versions that are available with Amazon RDS. Not every database
      * engine is available for every Amazon Web Services Region.</p> <p> <b>Amazon
@@ -2091,7 +2133,7 @@ namespace Model
 
     /**
      * <p>The version number of the database engine to use.</p> <p>For a list of valid
-     * engine versions, use the <code>DescribeDBEngineVersions</code> action.</p>
+     * engine versions, use the <code>DescribeDBEngineVersions</code> operation.</p>
      * <p>The following are the database engines and links to information about the
      * major and minor versions that are available with Amazon RDS. Not every database
      * engine is available for every Amazon Web Services Region.</p> <p> <b>Amazon
@@ -2127,7 +2169,7 @@ namespace Model
 
     /**
      * <p>The version number of the database engine to use.</p> <p>For a list of valid
-     * engine versions, use the <code>DescribeDBEngineVersions</code> action.</p>
+     * engine versions, use the <code>DescribeDBEngineVersions</code> operation.</p>
      * <p>The following are the database engines and links to information about the
      * major and minor versions that are available with Amazon RDS. Not every database
      * engine is available for every Amazon Web Services Region.</p> <p> <b>Amazon
@@ -2163,7 +2205,7 @@ namespace Model
 
     /**
      * <p>The version number of the database engine to use.</p> <p>For a list of valid
-     * engine versions, use the <code>DescribeDBEngineVersions</code> action.</p>
+     * engine versions, use the <code>DescribeDBEngineVersions</code> operation.</p>
      * <p>The following are the database engines and links to information about the
      * major and minor versions that are available with Amazon RDS. Not every database
      * engine is available for every Amazon Web Services Region.</p> <p> <b>Amazon
@@ -2239,7 +2281,7 @@ namespace Model
      * <p>License model information for this DB instance.</p> <p>Valid values:
      * <code>license-included</code> | <code>bring-your-own-license</code> |
      * <code>general-public-license</code> </p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * Custom.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable.</p>
      */
     inline const Aws::String& GetLicenseModel() const{ return m_licenseModel; }
 
@@ -2247,7 +2289,7 @@ namespace Model
      * <p>License model information for this DB instance.</p> <p>Valid values:
      * <code>license-included</code> | <code>bring-your-own-license</code> |
      * <code>general-public-license</code> </p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * Custom.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable.</p>
      */
     inline bool LicenseModelHasBeenSet() const { return m_licenseModelHasBeenSet; }
 
@@ -2255,7 +2297,7 @@ namespace Model
      * <p>License model information for this DB instance.</p> <p>Valid values:
      * <code>license-included</code> | <code>bring-your-own-license</code> |
      * <code>general-public-license</code> </p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * Custom.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable.</p>
      */
     inline void SetLicenseModel(const Aws::String& value) { m_licenseModelHasBeenSet = true; m_licenseModel = value; }
 
@@ -2263,7 +2305,7 @@ namespace Model
      * <p>License model information for this DB instance.</p> <p>Valid values:
      * <code>license-included</code> | <code>bring-your-own-license</code> |
      * <code>general-public-license</code> </p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * Custom.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable.</p>
      */
     inline void SetLicenseModel(Aws::String&& value) { m_licenseModelHasBeenSet = true; m_licenseModel = std::move(value); }
 
@@ -2271,7 +2313,7 @@ namespace Model
      * <p>License model information for this DB instance.</p> <p>Valid values:
      * <code>license-included</code> | <code>bring-your-own-license</code> |
      * <code>general-public-license</code> </p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * Custom.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable.</p>
      */
     inline void SetLicenseModel(const char* value) { m_licenseModelHasBeenSet = true; m_licenseModel.assign(value); }
 
@@ -2279,7 +2321,7 @@ namespace Model
      * <p>License model information for this DB instance.</p> <p>Valid values:
      * <code>license-included</code> | <code>bring-your-own-license</code> |
      * <code>general-public-license</code> </p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * Custom.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable.</p>
      */
     inline CreateDBInstanceRequest& WithLicenseModel(const Aws::String& value) { SetLicenseModel(value); return *this;}
 
@@ -2287,7 +2329,7 @@ namespace Model
      * <p>License model information for this DB instance.</p> <p>Valid values:
      * <code>license-included</code> | <code>bring-your-own-license</code> |
      * <code>general-public-license</code> </p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * Custom.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable.</p>
      */
     inline CreateDBInstanceRequest& WithLicenseModel(Aws::String&& value) { SetLicenseModel(std::move(value)); return *this;}
 
@@ -2295,7 +2337,7 @@ namespace Model
      * <p>License model information for this DB instance.</p> <p>Valid values:
      * <code>license-included</code> | <code>bring-your-own-license</code> |
      * <code>general-public-license</code> </p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * Custom.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable.</p>
      */
     inline CreateDBInstanceRequest& WithLicenseModel(const char* value) { SetLicenseModel(value); return *this;}
 
@@ -2309,7 +2351,8 @@ namespace Model
      * User Guide</i>.</p> <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL
      * DB instances, must be a multiple between .5 and 50 of the storage amount for the
      * DB instance. For SQL Server DB instances, must be a multiple between 1 and 50 of
-     * the storage amount for the DB instance.</p>
+     * the storage amount for the DB instance.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
+     * applicable. Storage is managed by the DB cluster.</p>
      */
     inline int GetIops() const{ return m_iops; }
 
@@ -2322,7 +2365,8 @@ namespace Model
      * User Guide</i>.</p> <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL
      * DB instances, must be a multiple between .5 and 50 of the storage amount for the
      * DB instance. For SQL Server DB instances, must be a multiple between 1 and 50 of
-     * the storage amount for the DB instance.</p>
+     * the storage amount for the DB instance.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
+     * applicable. Storage is managed by the DB cluster.</p>
      */
     inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
 
@@ -2335,7 +2379,8 @@ namespace Model
      * User Guide</i>.</p> <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL
      * DB instances, must be a multiple between .5 and 50 of the storage amount for the
      * DB instance. For SQL Server DB instances, must be a multiple between 1 and 50 of
-     * the storage amount for the DB instance.</p>
+     * the storage amount for the DB instance.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
+     * applicable. Storage is managed by the DB cluster.</p>
      */
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
@@ -2348,7 +2393,8 @@ namespace Model
      * User Guide</i>.</p> <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL
      * DB instances, must be a multiple between .5 and 50 of the storage amount for the
      * DB instance. For SQL Server DB instances, must be a multiple between 1 and 50 of
-     * the storage amount for the DB instance.</p>
+     * the storage amount for the DB instance.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
+     * applicable. Storage is managed by the DB cluster.</p>
      */
     inline CreateDBInstanceRequest& WithIops(int value) { SetIops(value); return *this;}
 
@@ -2358,7 +2404,8 @@ namespace Model
      * specified option group.</p> <p>Permanent options, such as the TDE option for
      * Oracle Advanced Security TDE, can't be removed from an option group. Also, that
      * option group can't be removed from a DB instance after it is associated with a
-     * DB instance.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * DB instance.</p> <p>This setting doesn't apply to RDS Custom.</p> <p> <b>Amazon
+     * Aurora</b> </p> <p>Not applicable.</p>
      */
     inline const Aws::String& GetOptionGroupName() const{ return m_optionGroupName; }
 
@@ -2367,7 +2414,8 @@ namespace Model
      * specified option group.</p> <p>Permanent options, such as the TDE option for
      * Oracle Advanced Security TDE, can't be removed from an option group. Also, that
      * option group can't be removed from a DB instance after it is associated with a
-     * DB instance.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * DB instance.</p> <p>This setting doesn't apply to RDS Custom.</p> <p> <b>Amazon
+     * Aurora</b> </p> <p>Not applicable.</p>
      */
     inline bool OptionGroupNameHasBeenSet() const { return m_optionGroupNameHasBeenSet; }
 
@@ -2376,7 +2424,8 @@ namespace Model
      * specified option group.</p> <p>Permanent options, such as the TDE option for
      * Oracle Advanced Security TDE, can't be removed from an option group. Also, that
      * option group can't be removed from a DB instance after it is associated with a
-     * DB instance.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * DB instance.</p> <p>This setting doesn't apply to RDS Custom.</p> <p> <b>Amazon
+     * Aurora</b> </p> <p>Not applicable.</p>
      */
     inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
 
@@ -2385,7 +2434,8 @@ namespace Model
      * specified option group.</p> <p>Permanent options, such as the TDE option for
      * Oracle Advanced Security TDE, can't be removed from an option group. Also, that
      * option group can't be removed from a DB instance after it is associated with a
-     * DB instance.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * DB instance.</p> <p>This setting doesn't apply to RDS Custom.</p> <p> <b>Amazon
+     * Aurora</b> </p> <p>Not applicable.</p>
      */
     inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = std::move(value); }
 
@@ -2394,7 +2444,8 @@ namespace Model
      * specified option group.</p> <p>Permanent options, such as the TDE option for
      * Oracle Advanced Security TDE, can't be removed from an option group. Also, that
      * option group can't be removed from a DB instance after it is associated with a
-     * DB instance.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * DB instance.</p> <p>This setting doesn't apply to RDS Custom.</p> <p> <b>Amazon
+     * Aurora</b> </p> <p>Not applicable.</p>
      */
     inline void SetOptionGroupName(const char* value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName.assign(value); }
 
@@ -2403,7 +2454,8 @@ namespace Model
      * specified option group.</p> <p>Permanent options, such as the TDE option for
      * Oracle Advanced Security TDE, can't be removed from an option group. Also, that
      * option group can't be removed from a DB instance after it is associated with a
-     * DB instance.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * DB instance.</p> <p>This setting doesn't apply to RDS Custom.</p> <p> <b>Amazon
+     * Aurora</b> </p> <p>Not applicable.</p>
      */
     inline CreateDBInstanceRequest& WithOptionGroupName(const Aws::String& value) { SetOptionGroupName(value); return *this;}
 
@@ -2412,7 +2464,8 @@ namespace Model
      * specified option group.</p> <p>Permanent options, such as the TDE option for
      * Oracle Advanced Security TDE, can't be removed from an option group. Also, that
      * option group can't be removed from a DB instance after it is associated with a
-     * DB instance.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * DB instance.</p> <p>This setting doesn't apply to RDS Custom.</p> <p> <b>Amazon
+     * Aurora</b> </p> <p>Not applicable.</p>
      */
     inline CreateDBInstanceRequest& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(std::move(value)); return *this;}
 
@@ -2421,7 +2474,8 @@ namespace Model
      * specified option group.</p> <p>Permanent options, such as the TDE option for
      * Oracle Advanced Security TDE, can't be removed from an option group. Also, that
      * option group can't be removed from a DB instance after it is associated with a
-     * DB instance.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * DB instance.</p> <p>This setting doesn't apply to RDS Custom.</p> <p> <b>Amazon
+     * Aurora</b> </p> <p>Not applicable.</p>
      */
     inline CreateDBInstanceRequest& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
 
@@ -2752,7 +2806,8 @@ namespace Model
      * <p>Valid values: <code>standard | gp2 | io1</code> </p> <p>If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
      * parameter.</p> <p>Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified, otherwise <code>gp2</code> </p>
+     * is specified, otherwise <code>gp2</code> </p> <p> <b>Amazon Aurora</b> </p>
+     * <p>Not applicable. Storage is managed by the DB cluster.</p>
      */
     inline const Aws::String& GetStorageType() const{ return m_storageType; }
 
@@ -2761,7 +2816,8 @@ namespace Model
      * <p>Valid values: <code>standard | gp2 | io1</code> </p> <p>If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
      * parameter.</p> <p>Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified, otherwise <code>gp2</code> </p>
+     * is specified, otherwise <code>gp2</code> </p> <p> <b>Amazon Aurora</b> </p>
+     * <p>Not applicable. Storage is managed by the DB cluster.</p>
      */
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
 
@@ -2770,7 +2826,8 @@ namespace Model
      * <p>Valid values: <code>standard | gp2 | io1</code> </p> <p>If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
      * parameter.</p> <p>Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified, otherwise <code>gp2</code> </p>
+     * is specified, otherwise <code>gp2</code> </p> <p> <b>Amazon Aurora</b> </p>
+     * <p>Not applicable. Storage is managed by the DB cluster.</p>
      */
     inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
 
@@ -2779,7 +2836,8 @@ namespace Model
      * <p>Valid values: <code>standard | gp2 | io1</code> </p> <p>If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
      * parameter.</p> <p>Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified, otherwise <code>gp2</code> </p>
+     * is specified, otherwise <code>gp2</code> </p> <p> <b>Amazon Aurora</b> </p>
+     * <p>Not applicable. Storage is managed by the DB cluster.</p>
      */
     inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
 
@@ -2788,7 +2846,8 @@ namespace Model
      * <p>Valid values: <code>standard | gp2 | io1</code> </p> <p>If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
      * parameter.</p> <p>Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified, otherwise <code>gp2</code> </p>
+     * is specified, otherwise <code>gp2</code> </p> <p> <b>Amazon Aurora</b> </p>
+     * <p>Not applicable. Storage is managed by the DB cluster.</p>
      */
     inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
 
@@ -2797,7 +2856,8 @@ namespace Model
      * <p>Valid values: <code>standard | gp2 | io1</code> </p> <p>If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
      * parameter.</p> <p>Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified, otherwise <code>gp2</code> </p>
+     * is specified, otherwise <code>gp2</code> </p> <p> <b>Amazon Aurora</b> </p>
+     * <p>Not applicable. Storage is managed by the DB cluster.</p>
      */
     inline CreateDBInstanceRequest& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
 
@@ -2806,7 +2866,8 @@ namespace Model
      * <p>Valid values: <code>standard | gp2 | io1</code> </p> <p>If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
      * parameter.</p> <p>Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified, otherwise <code>gp2</code> </p>
+     * is specified, otherwise <code>gp2</code> </p> <p> <b>Amazon Aurora</b> </p>
+     * <p>Not applicable. Storage is managed by the DB cluster.</p>
      */
     inline CreateDBInstanceRequest& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
 
@@ -2815,56 +2876,65 @@ namespace Model
      * <p>Valid values: <code>standard | gp2 | io1</code> </p> <p>If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
      * parameter.</p> <p>Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified, otherwise <code>gp2</code> </p>
+     * is specified, otherwise <code>gp2</code> </p> <p> <b>Amazon Aurora</b> </p>
+     * <p>Not applicable. Storage is managed by the DB cluster.</p>
      */
     inline CreateDBInstanceRequest& WithStorageType(const char* value) { SetStorageType(value); return *this;}
 
 
     /**
      * <p>The ARN from the key store with which to associate the instance for TDE
-     * encryption.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * encryption.</p> <p>This setting doesn't apply to RDS Custom.</p> <p> <b>Amazon
+     * Aurora</b> </p> <p>Not applicable.</p>
      */
     inline const Aws::String& GetTdeCredentialArn() const{ return m_tdeCredentialArn; }
 
     /**
      * <p>The ARN from the key store with which to associate the instance for TDE
-     * encryption.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * encryption.</p> <p>This setting doesn't apply to RDS Custom.</p> <p> <b>Amazon
+     * Aurora</b> </p> <p>Not applicable.</p>
      */
     inline bool TdeCredentialArnHasBeenSet() const { return m_tdeCredentialArnHasBeenSet; }
 
     /**
      * <p>The ARN from the key store with which to associate the instance for TDE
-     * encryption.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * encryption.</p> <p>This setting doesn't apply to RDS Custom.</p> <p> <b>Amazon
+     * Aurora</b> </p> <p>Not applicable.</p>
      */
     inline void SetTdeCredentialArn(const Aws::String& value) { m_tdeCredentialArnHasBeenSet = true; m_tdeCredentialArn = value; }
 
     /**
      * <p>The ARN from the key store with which to associate the instance for TDE
-     * encryption.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * encryption.</p> <p>This setting doesn't apply to RDS Custom.</p> <p> <b>Amazon
+     * Aurora</b> </p> <p>Not applicable.</p>
      */
     inline void SetTdeCredentialArn(Aws::String&& value) { m_tdeCredentialArnHasBeenSet = true; m_tdeCredentialArn = std::move(value); }
 
     /**
      * <p>The ARN from the key store with which to associate the instance for TDE
-     * encryption.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * encryption.</p> <p>This setting doesn't apply to RDS Custom.</p> <p> <b>Amazon
+     * Aurora</b> </p> <p>Not applicable.</p>
      */
     inline void SetTdeCredentialArn(const char* value) { m_tdeCredentialArnHasBeenSet = true; m_tdeCredentialArn.assign(value); }
 
     /**
      * <p>The ARN from the key store with which to associate the instance for TDE
-     * encryption.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * encryption.</p> <p>This setting doesn't apply to RDS Custom.</p> <p> <b>Amazon
+     * Aurora</b> </p> <p>Not applicable.</p>
      */
     inline CreateDBInstanceRequest& WithTdeCredentialArn(const Aws::String& value) { SetTdeCredentialArn(value); return *this;}
 
     /**
      * <p>The ARN from the key store with which to associate the instance for TDE
-     * encryption.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * encryption.</p> <p>This setting doesn't apply to RDS Custom.</p> <p> <b>Amazon
+     * Aurora</b> </p> <p>Not applicable.</p>
      */
     inline CreateDBInstanceRequest& WithTdeCredentialArn(Aws::String&& value) { SetTdeCredentialArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN from the key store with which to associate the instance for TDE
-     * encryption.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * encryption.</p> <p>This setting doesn't apply to RDS Custom.</p> <p> <b>Amazon
+     * Aurora</b> </p> <p>Not applicable.</p>
      */
     inline CreateDBInstanceRequest& WithTdeCredentialArn(const char* value) { SetTdeCredentialArn(value); return *this;}
 
@@ -3118,7 +3188,8 @@ namespace Model
      * created in an Active Directory Domain.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
      * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
-     * setting doesn't apply to RDS Custom.</p>
+     * setting doesn't apply to RDS Custom.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
+     * applicable. The domain is managed by the DB cluster.</p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
 
@@ -3128,7 +3199,8 @@ namespace Model
      * created in an Active Directory Domain.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
      * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
-     * setting doesn't apply to RDS Custom.</p>
+     * setting doesn't apply to RDS Custom.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
+     * applicable. The domain is managed by the DB cluster.</p>
      */
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
 
@@ -3138,7 +3210,8 @@ namespace Model
      * created in an Active Directory Domain.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
      * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
-     * setting doesn't apply to RDS Custom.</p>
+     * setting doesn't apply to RDS Custom.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
+     * applicable. The domain is managed by the DB cluster.</p>
      */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
@@ -3148,7 +3221,8 @@ namespace Model
      * created in an Active Directory Domain.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
      * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
-     * setting doesn't apply to RDS Custom.</p>
+     * setting doesn't apply to RDS Custom.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
+     * applicable. The domain is managed by the DB cluster.</p>
      */
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
@@ -3158,7 +3232,8 @@ namespace Model
      * created in an Active Directory Domain.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
      * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
-     * setting doesn't apply to RDS Custom.</p>
+     * setting doesn't apply to RDS Custom.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
+     * applicable. The domain is managed by the DB cluster.</p>
      */
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
 
@@ -3168,7 +3243,8 @@ namespace Model
      * created in an Active Directory Domain.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
      * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
-     * setting doesn't apply to RDS Custom.</p>
+     * setting doesn't apply to RDS Custom.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
+     * applicable. The domain is managed by the DB cluster.</p>
      */
     inline CreateDBInstanceRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
 
@@ -3178,7 +3254,8 @@ namespace Model
      * created in an Active Directory Domain.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
      * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
-     * setting doesn't apply to RDS Custom.</p>
+     * setting doesn't apply to RDS Custom.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
+     * applicable. The domain is managed by the DB cluster.</p>
      */
     inline CreateDBInstanceRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
@@ -3188,7 +3265,8 @@ namespace Model
      * created in an Active Directory Domain.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
      * Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
-     * setting doesn't apply to RDS Custom.</p>
+     * setting doesn't apply to RDS Custom.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
+     * applicable. The domain is managed by the DB cluster.</p>
      */
     inline CreateDBInstanceRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
 
@@ -3378,49 +3456,65 @@ namespace Model
 
     /**
      * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * Directory Service.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>
+     * <b>Amazon Aurora</b> </p> <p>Not applicable. The domain is managed by the DB
+     * cluster.</p>
      */
     inline const Aws::String& GetDomainIAMRoleName() const{ return m_domainIAMRoleName; }
 
     /**
      * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * Directory Service.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>
+     * <b>Amazon Aurora</b> </p> <p>Not applicable. The domain is managed by the DB
+     * cluster.</p>
      */
     inline bool DomainIAMRoleNameHasBeenSet() const { return m_domainIAMRoleNameHasBeenSet; }
 
     /**
      * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * Directory Service.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>
+     * <b>Amazon Aurora</b> </p> <p>Not applicable. The domain is managed by the DB
+     * cluster.</p>
      */
     inline void SetDomainIAMRoleName(const Aws::String& value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName = value; }
 
     /**
      * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * Directory Service.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>
+     * <b>Amazon Aurora</b> </p> <p>Not applicable. The domain is managed by the DB
+     * cluster.</p>
      */
     inline void SetDomainIAMRoleName(Aws::String&& value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName = std::move(value); }
 
     /**
      * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * Directory Service.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>
+     * <b>Amazon Aurora</b> </p> <p>Not applicable. The domain is managed by the DB
+     * cluster.</p>
      */
     inline void SetDomainIAMRoleName(const char* value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName.assign(value); }
 
     /**
      * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * Directory Service.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>
+     * <b>Amazon Aurora</b> </p> <p>Not applicable. The domain is managed by the DB
+     * cluster.</p>
      */
     inline CreateDBInstanceRequest& WithDomainIAMRoleName(const Aws::String& value) { SetDomainIAMRoleName(value); return *this;}
 
     /**
      * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * Directory Service.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>
+     * <b>Amazon Aurora</b> </p> <p>Not applicable. The domain is managed by the DB
+     * cluster.</p>
      */
     inline CreateDBInstanceRequest& WithDomainIAMRoleName(Aws::String&& value) { SetDomainIAMRoleName(std::move(value)); return *this;}
 
     /**
      * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * Directory Service.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>
+     * <b>Amazon Aurora</b> </p> <p>Not applicable. The domain is managed by the DB
+     * cluster.</p>
      */
     inline CreateDBInstanceRequest& WithDomainIAMRoleName(const char* value) { SetDomainIAMRoleName(value); return *this;}
 
@@ -3538,48 +3632,48 @@ namespace Model
     /**
      * <p>A value that indicates whether to enable mapping of Amazon Web Services
      * Identity and Access Management (IAM) accounts to database accounts. By default,
-     * mapping isn't enabled.</p> <p>This setting doesn't apply to RDS Custom or Amazon
-     * Aurora. In Aurora, mapping Amazon Web Services IAM accounts to database accounts
-     * is managed by the DB cluster.</p> <p>For more information, see <a
+     * mapping isn't enabled.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
-     * User Guide</i>.</p>
+     * User Guide</i>.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>
+     * <b>Amazon Aurora</b> </p> <p>Not applicable. Mapping Amazon Web Services IAM
+     * accounts to database accounts is managed by the DB cluster.</p>
      */
     inline bool GetEnableIAMDatabaseAuthentication() const{ return m_enableIAMDatabaseAuthentication; }
 
     /**
      * <p>A value that indicates whether to enable mapping of Amazon Web Services
      * Identity and Access Management (IAM) accounts to database accounts. By default,
-     * mapping isn't enabled.</p> <p>This setting doesn't apply to RDS Custom or Amazon
-     * Aurora. In Aurora, mapping Amazon Web Services IAM accounts to database accounts
-     * is managed by the DB cluster.</p> <p>For more information, see <a
+     * mapping isn't enabled.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
-     * User Guide</i>.</p>
+     * User Guide</i>.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>
+     * <b>Amazon Aurora</b> </p> <p>Not applicable. Mapping Amazon Web Services IAM
+     * accounts to database accounts is managed by the DB cluster.</p>
      */
     inline bool EnableIAMDatabaseAuthenticationHasBeenSet() const { return m_enableIAMDatabaseAuthenticationHasBeenSet; }
 
     /**
      * <p>A value that indicates whether to enable mapping of Amazon Web Services
      * Identity and Access Management (IAM) accounts to database accounts. By default,
-     * mapping isn't enabled.</p> <p>This setting doesn't apply to RDS Custom or Amazon
-     * Aurora. In Aurora, mapping Amazon Web Services IAM accounts to database accounts
-     * is managed by the DB cluster.</p> <p>For more information, see <a
+     * mapping isn't enabled.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
-     * User Guide</i>.</p>
+     * User Guide</i>.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>
+     * <b>Amazon Aurora</b> </p> <p>Not applicable. Mapping Amazon Web Services IAM
+     * accounts to database accounts is managed by the DB cluster.</p>
      */
     inline void SetEnableIAMDatabaseAuthentication(bool value) { m_enableIAMDatabaseAuthenticationHasBeenSet = true; m_enableIAMDatabaseAuthentication = value; }
 
     /**
      * <p>A value that indicates whether to enable mapping of Amazon Web Services
      * Identity and Access Management (IAM) accounts to database accounts. By default,
-     * mapping isn't enabled.</p> <p>This setting doesn't apply to RDS Custom or Amazon
-     * Aurora. In Aurora, mapping Amazon Web Services IAM accounts to database accounts
-     * is managed by the DB cluster.</p> <p>For more information, see <a
+     * mapping isn't enabled.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
-     * User Guide</i>.</p>
+     * User Guide</i>.</p> <p>This setting doesn't apply to RDS Custom.</p> <p>
+     * <b>Amazon Aurora</b> </p> <p>Not applicable. Mapping Amazon Web Services IAM
+     * accounts to database accounts is managed by the DB cluster.</p>
      */
     inline CreateDBInstanceRequest& WithEnableIAMDatabaseAuthentication(bool value) { SetEnableIAMDatabaseAuthentication(value); return *this;}
 
@@ -3719,30 +3813,50 @@ namespace Model
 
 
     /**
-     * <p>The amount of time, in days, to retain Performance Insights data. Valid
-     * values are 7 or 731 (2 years).</p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * <p>The number of days to retain Performance Insights data. The default is 7
+     * days. The following values are valid:</p> <ul> <li> <p>7</p> </li> <li> <p>
+     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
+     * <li> <p>731</p> </li> </ul> <p>For example, the following values are valid:</p>
+     * <ul> <li> <p>93 (3 months * 31)</p> </li> <li> <p>341 (11 months * 31)</p> </li>
+     * <li> <p>589 (19 months * 31)</p> </li> <li> <p>731</p> </li> </ul> <p>If you
+     * specify a retention period such as 94, which isn't a valid value, RDS issues an
+     * error.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline int GetPerformanceInsightsRetentionPeriod() const{ return m_performanceInsightsRetentionPeriod; }
 
     /**
-     * <p>The amount of time, in days, to retain Performance Insights data. Valid
-     * values are 7 or 731 (2 years).</p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * <p>The number of days to retain Performance Insights data. The default is 7
+     * days. The following values are valid:</p> <ul> <li> <p>7</p> </li> <li> <p>
+     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
+     * <li> <p>731</p> </li> </ul> <p>For example, the following values are valid:</p>
+     * <ul> <li> <p>93 (3 months * 31)</p> </li> <li> <p>341 (11 months * 31)</p> </li>
+     * <li> <p>589 (19 months * 31)</p> </li> <li> <p>731</p> </li> </ul> <p>If you
+     * specify a retention period such as 94, which isn't a valid value, RDS issues an
+     * error.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline bool PerformanceInsightsRetentionPeriodHasBeenSet() const { return m_performanceInsightsRetentionPeriodHasBeenSet; }
 
     /**
-     * <p>The amount of time, in days, to retain Performance Insights data. Valid
-     * values are 7 or 731 (2 years).</p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * <p>The number of days to retain Performance Insights data. The default is 7
+     * days. The following values are valid:</p> <ul> <li> <p>7</p> </li> <li> <p>
+     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
+     * <li> <p>731</p> </li> </ul> <p>For example, the following values are valid:</p>
+     * <ul> <li> <p>93 (3 months * 31)</p> </li> <li> <p>341 (11 months * 31)</p> </li>
+     * <li> <p>589 (19 months * 31)</p> </li> <li> <p>731</p> </li> </ul> <p>If you
+     * specify a retention period such as 94, which isn't a valid value, RDS issues an
+     * error.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline void SetPerformanceInsightsRetentionPeriod(int value) { m_performanceInsightsRetentionPeriodHasBeenSet = true; m_performanceInsightsRetentionPeriod = value; }
 
     /**
-     * <p>The amount of time, in days, to retain Performance Insights data. Valid
-     * values are 7 or 731 (2 years).</p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * <p>The number of days to retain Performance Insights data. The default is 7
+     * days. The following values are valid:</p> <ul> <li> <p>7</p> </li> <li> <p>
+     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
+     * <li> <p>731</p> </li> </ul> <p>For example, the following values are valid:</p>
+     * <ul> <li> <p>93 (3 months * 31)</p> </li> <li> <p>341 (11 months * 31)</p> </li>
+     * <li> <p>589 (19 months * 31)</p> </li> <li> <p>731</p> </li> </ul> <p>If you
+     * specify a retention period such as 94, which isn't a valid value, RDS issues an
+     * error.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline CreateDBInstanceRequest& WithPerformanceInsightsRetentionPeriod(int value) { SetPerformanceInsightsRetentionPeriod(value); return *this;}
 
@@ -3940,56 +4054,56 @@ namespace Model
     /**
      * <p>The number of CPU cores and the number of threads per core for the DB
      * instance class of the DB instance.</p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * Custom.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable.</p>
      */
     inline const Aws::Vector<ProcessorFeature>& GetProcessorFeatures() const{ return m_processorFeatures; }
 
     /**
      * <p>The number of CPU cores and the number of threads per core for the DB
      * instance class of the DB instance.</p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * Custom.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable.</p>
      */
     inline bool ProcessorFeaturesHasBeenSet() const { return m_processorFeaturesHasBeenSet; }
 
     /**
      * <p>The number of CPU cores and the number of threads per core for the DB
      * instance class of the DB instance.</p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * Custom.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable.</p>
      */
     inline void SetProcessorFeatures(const Aws::Vector<ProcessorFeature>& value) { m_processorFeaturesHasBeenSet = true; m_processorFeatures = value; }
 
     /**
      * <p>The number of CPU cores and the number of threads per core for the DB
      * instance class of the DB instance.</p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * Custom.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable.</p>
      */
     inline void SetProcessorFeatures(Aws::Vector<ProcessorFeature>&& value) { m_processorFeaturesHasBeenSet = true; m_processorFeatures = std::move(value); }
 
     /**
      * <p>The number of CPU cores and the number of threads per core for the DB
      * instance class of the DB instance.</p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * Custom.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable.</p>
      */
     inline CreateDBInstanceRequest& WithProcessorFeatures(const Aws::Vector<ProcessorFeature>& value) { SetProcessorFeatures(value); return *this;}
 
     /**
      * <p>The number of CPU cores and the number of threads per core for the DB
      * instance class of the DB instance.</p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * Custom.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable.</p>
      */
     inline CreateDBInstanceRequest& WithProcessorFeatures(Aws::Vector<ProcessorFeature>&& value) { SetProcessorFeatures(std::move(value)); return *this;}
 
     /**
      * <p>The number of CPU cores and the number of threads per core for the DB
      * instance class of the DB instance.</p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * Custom.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable.</p>
      */
     inline CreateDBInstanceRequest& AddProcessorFeatures(const ProcessorFeature& value) { m_processorFeaturesHasBeenSet = true; m_processorFeatures.push_back(value); return *this; }
 
     /**
      * <p>The number of CPU cores and the number of threads per core for the DB
      * instance class of the DB instance.</p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * Custom.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable.</p>
      */
     inline CreateDBInstanceRequest& AddProcessorFeatures(ProcessorFeature&& value) { m_processorFeaturesHasBeenSet = true; m_processorFeatures.push_back(std::move(value)); return *this; }
 
@@ -4050,7 +4164,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
      * Managing capacity automatically with Amazon RDS storage autoscaling</a> in the
      * <i>Amazon RDS User Guide</i>.</p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * Custom.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. Storage is managed
+     * by the DB cluster.</p>
      */
     inline int GetMaxAllocatedStorage() const{ return m_maxAllocatedStorage; }
 
@@ -4061,7 +4176,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
      * Managing capacity automatically with Amazon RDS storage autoscaling</a> in the
      * <i>Amazon RDS User Guide</i>.</p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * Custom.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. Storage is managed
+     * by the DB cluster.</p>
      */
     inline bool MaxAllocatedStorageHasBeenSet() const { return m_maxAllocatedStorageHasBeenSet; }
 
@@ -4072,7 +4188,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
      * Managing capacity automatically with Amazon RDS storage autoscaling</a> in the
      * <i>Amazon RDS User Guide</i>.</p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * Custom.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. Storage is managed
+     * by the DB cluster.</p>
      */
     inline void SetMaxAllocatedStorage(int value) { m_maxAllocatedStorageHasBeenSet = true; m_maxAllocatedStorage = value; }
 
@@ -4083,7 +4200,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
      * Managing capacity automatically with Amazon RDS storage autoscaling</a> in the
      * <i>Amazon RDS User Guide</i>.</p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * Custom.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. Storage is managed
+     * by the DB cluster.</p>
      */
     inline CreateDBInstanceRequest& WithMaxAllocatedStorage(int value) { SetMaxAllocatedStorage(value); return *this;}
 

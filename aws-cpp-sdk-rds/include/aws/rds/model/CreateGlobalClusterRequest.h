@@ -234,58 +234,58 @@ namespace Model
 
 
     /**
-     * <p>The name for your database of up to 64 alpha-numeric characters. If you do
-     * not provide a name, Amazon Aurora will not create a database in the global
-     * database cluster you are creating.</p>
+     * <p>The name for your database of up to 64 alphanumeric characters. If you do not
+     * provide a name, Amazon Aurora will not create a database in the global database
+     * cluster you are creating.</p>
      */
     inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
 
     /**
-     * <p>The name for your database of up to 64 alpha-numeric characters. If you do
-     * not provide a name, Amazon Aurora will not create a database in the global
-     * database cluster you are creating.</p>
+     * <p>The name for your database of up to 64 alphanumeric characters. If you do not
+     * provide a name, Amazon Aurora will not create a database in the global database
+     * cluster you are creating.</p>
      */
     inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
 
     /**
-     * <p>The name for your database of up to 64 alpha-numeric characters. If you do
-     * not provide a name, Amazon Aurora will not create a database in the global
-     * database cluster you are creating.</p>
+     * <p>The name for your database of up to 64 alphanumeric characters. If you do not
+     * provide a name, Amazon Aurora will not create a database in the global database
+     * cluster you are creating.</p>
      */
     inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
 
     /**
-     * <p>The name for your database of up to 64 alpha-numeric characters. If you do
-     * not provide a name, Amazon Aurora will not create a database in the global
-     * database cluster you are creating.</p>
+     * <p>The name for your database of up to 64 alphanumeric characters. If you do not
+     * provide a name, Amazon Aurora will not create a database in the global database
+     * cluster you are creating.</p>
      */
     inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
 
     /**
-     * <p>The name for your database of up to 64 alpha-numeric characters. If you do
-     * not provide a name, Amazon Aurora will not create a database in the global
-     * database cluster you are creating.</p>
+     * <p>The name for your database of up to 64 alphanumeric characters. If you do not
+     * provide a name, Amazon Aurora will not create a database in the global database
+     * cluster you are creating.</p>
      */
     inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
 
     /**
-     * <p>The name for your database of up to 64 alpha-numeric characters. If you do
-     * not provide a name, Amazon Aurora will not create a database in the global
-     * database cluster you are creating.</p>
+     * <p>The name for your database of up to 64 alphanumeric characters. If you do not
+     * provide a name, Amazon Aurora will not create a database in the global database
+     * cluster you are creating.</p>
      */
     inline CreateGlobalClusterRequest& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
 
     /**
-     * <p>The name for your database of up to 64 alpha-numeric characters. If you do
-     * not provide a name, Amazon Aurora will not create a database in the global
-     * database cluster you are creating.</p>
+     * <p>The name for your database of up to 64 alphanumeric characters. If you do not
+     * provide a name, Amazon Aurora will not create a database in the global database
+     * cluster you are creating.</p>
      */
     inline CreateGlobalClusterRequest& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
 
     /**
-     * <p>The name for your database of up to 64 alpha-numeric characters. If you do
-     * not provide a name, Amazon Aurora will not create a database in the global
-     * database cluster you are creating.</p>
+     * <p>The name for your database of up to 64 alphanumeric characters. If you do not
+     * provide a name, Amazon Aurora will not create a database in the global database
+     * cluster you are creating.</p>
      */
     inline CreateGlobalClusterRequest& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
 
