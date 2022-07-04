@@ -2,9 +2,14 @@
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
+ 
+#include <aws/core/auth/signer-provider/DefaultAuthSignerProvider.h>
+
+#include <aws/core/auth/signer/AWSAuthEventStreamV4Signer.h>
+#include <aws/core/auth/signer/AWSNullSigner.h>
+
 
 #include <aws/core/utils/logging/LogMacros.h>
-#include <aws/core/auth/AWSAuthSignerProvider.h>
 #include <aws/core/auth/AWSCredentialsProvider.h>
 #include <aws/core/utils/memory/stl/AWSAllocator.h>
 
