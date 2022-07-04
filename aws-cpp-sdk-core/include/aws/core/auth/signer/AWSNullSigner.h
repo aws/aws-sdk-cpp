@@ -5,7 +5,7 @@
 
 #pragma once
 
-#include "aws/core/auth/signer/AWSAuthSignerInterface.h"
+#include "aws/core/auth/signer/AWSAuthSignerBase.h"
 
 namespace Aws
 {
