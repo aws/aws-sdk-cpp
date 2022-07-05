@@ -1,5 +1,26 @@
 if (NOT LEGACY_BUILD)
-    message(WARNING "Building core with new cmake scripts not yet implemented")
+    add_library(aws-sdk-cpp-test-resources)
+    add_library(aws-sdk-cpp::test-resources ALIAS aws-sdk-cpp-test-resources)
+    target_link_libraries(
+            aws-sdk-cpp-test-resources
+            aws-sdk-cpp::core
+    )
+    add_subdirectory(testing-resources)
+
+    add_executable(
+            aws-core-version
+            ${CMAKE_CURRENT_LIST_DIR}/VersionTests.cpp
+            ${CMAKE_CURRENT_LIST_DIR}/RunTests.cpp
+    )
+    target_link_libraries(
+            aws-core-version
+            PRIVATE GTest::GTest
+            PRIVATE aws-sdk-cpp::core
+            PRIVATE aws-sdk-cpp::test-resources
+    )
+
+    #    add_subdirectory(monitoring)
+    message(WARNING "Not testing everything yet...")
 else ()
     add_project(aws-cpp-sdk-core-tests
             "Tests for the AWS Core C++ Library"
