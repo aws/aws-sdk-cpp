@@ -2890,46 +2890,30 @@ namespace Model
 
 
     /**
-     * <p>The number of days to retain Performance Insights data. The default is 7
-     * days. The following values are valid:</p> <ul> <li> <p>7</p> </li> <li> <p>
-     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
-     * <li> <p>731</p> </li> </ul> <p>For example, the following values are valid:</p>
-     * <ul> <li> <p>93 (3 months * 31)</p> </li> <li> <p>341 (11 months * 31)</p> </li>
-     * <li> <p>589 (19 months * 31)</p> </li> <li> <p>731</p> </li> </ul> <p>This
-     * setting is only for non-Aurora Multi-AZ DB clusters.</p>
+     * <p>The amount of time, in days, to retain Performance Insights data. Valid
+     * values are 7 or 731 (2 years).</p> <p>This setting is only for non-Aurora
+     * Multi-AZ DB clusters.</p>
      */
     inline int GetPerformanceInsightsRetentionPeriod() const{ return m_performanceInsightsRetentionPeriod; }
 
     /**
-     * <p>The number of days to retain Performance Insights data. The default is 7
-     * days. The following values are valid:</p> <ul> <li> <p>7</p> </li> <li> <p>
-     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
-     * <li> <p>731</p> </li> </ul> <p>For example, the following values are valid:</p>
-     * <ul> <li> <p>93 (3 months * 31)</p> </li> <li> <p>341 (11 months * 31)</p> </li>
-     * <li> <p>589 (19 months * 31)</p> </li> <li> <p>731</p> </li> </ul> <p>This
-     * setting is only for non-Aurora Multi-AZ DB clusters.</p>
+     * <p>The amount of time, in days, to retain Performance Insights data. Valid
+     * values are 7 or 731 (2 years).</p> <p>This setting is only for non-Aurora
+     * Multi-AZ DB clusters.</p>
      */
     inline bool PerformanceInsightsRetentionPeriodHasBeenSet() const { return m_performanceInsightsRetentionPeriodHasBeenSet; }
 
     /**
-     * <p>The number of days to retain Performance Insights data. The default is 7
-     * days. The following values are valid:</p> <ul> <li> <p>7</p> </li> <li> <p>
-     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
-     * <li> <p>731</p> </li> </ul> <p>For example, the following values are valid:</p>
-     * <ul> <li> <p>93 (3 months * 31)</p> </li> <li> <p>341 (11 months * 31)</p> </li>
-     * <li> <p>589 (19 months * 31)</p> </li> <li> <p>731</p> </li> </ul> <p>This
-     * setting is only for non-Aurora Multi-AZ DB clusters.</p>
+     * <p>The amount of time, in days, to retain Performance Insights data. Valid
+     * values are 7 or 731 (2 years).</p> <p>This setting is only for non-Aurora
+     * Multi-AZ DB clusters.</p>
      */
     inline void SetPerformanceInsightsRetentionPeriod(int value) { m_performanceInsightsRetentionPeriodHasBeenSet = true; m_performanceInsightsRetentionPeriod = value; }
 
     /**
-     * <p>The number of days to retain Performance Insights data. The default is 7
-     * days. The following values are valid:</p> <ul> <li> <p>7</p> </li> <li> <p>
-     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
-     * <li> <p>731</p> </li> </ul> <p>For example, the following values are valid:</p>
-     * <ul> <li> <p>93 (3 months * 31)</p> </li> <li> <p>341 (11 months * 31)</p> </li>
-     * <li> <p>589 (19 months * 31)</p> </li> <li> <p>731</p> </li> </ul> <p>This
-     * setting is only for non-Aurora Multi-AZ DB clusters.</p>
+     * <p>The amount of time, in days, to retain Performance Insights data. Valid
+     * values are 7 or 731 (2 years).</p> <p>This setting is only for non-Aurora
+     * Multi-AZ DB clusters.</p>
      */
     inline DBCluster& WithPerformanceInsightsRetentionPeriod(int value) { SetPerformanceInsightsRetentionPeriod(value); return *this;}
 

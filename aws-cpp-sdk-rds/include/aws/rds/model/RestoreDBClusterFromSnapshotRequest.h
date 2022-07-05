@@ -1118,7 +1118,7 @@ namespace Model
      * CloudWatch Logs for Amazon RDS, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
-     * Guide</i>.</p> <p>For more information about exporting CloudWatch Logs for
+     * Guide.</i>.</p> <p>For more information about exporting CloudWatch Logs for
      * Amazon Aurora, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
@@ -1139,7 +1139,7 @@ namespace Model
      * CloudWatch Logs for Amazon RDS, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
-     * Guide</i>.</p> <p>For more information about exporting CloudWatch Logs for
+     * Guide.</i>.</p> <p>For more information about exporting CloudWatch Logs for
      * Amazon Aurora, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
@@ -1160,7 +1160,7 @@ namespace Model
      * CloudWatch Logs for Amazon RDS, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
-     * Guide</i>.</p> <p>For more information about exporting CloudWatch Logs for
+     * Guide.</i>.</p> <p>For more information about exporting CloudWatch Logs for
      * Amazon Aurora, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
@@ -1181,7 +1181,7 @@ namespace Model
      * CloudWatch Logs for Amazon RDS, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
-     * Guide</i>.</p> <p>For more information about exporting CloudWatch Logs for
+     * Guide.</i>.</p> <p>For more information about exporting CloudWatch Logs for
      * Amazon Aurora, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
@@ -1202,7 +1202,7 @@ namespace Model
      * CloudWatch Logs for Amazon RDS, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
-     * Guide</i>.</p> <p>For more information about exporting CloudWatch Logs for
+     * Guide.</i>.</p> <p>For more information about exporting CloudWatch Logs for
      * Amazon Aurora, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
@@ -1223,7 +1223,7 @@ namespace Model
      * CloudWatch Logs for Amazon RDS, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
-     * Guide</i>.</p> <p>For more information about exporting CloudWatch Logs for
+     * Guide.</i>.</p> <p>For more information about exporting CloudWatch Logs for
      * Amazon Aurora, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
@@ -1244,7 +1244,7 @@ namespace Model
      * CloudWatch Logs for Amazon RDS, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
-     * Guide</i>.</p> <p>For more information about exporting CloudWatch Logs for
+     * Guide.</i>.</p> <p>For more information about exporting CloudWatch Logs for
      * Amazon Aurora, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
@@ -1265,7 +1265,7 @@ namespace Model
      * CloudWatch Logs for Amazon RDS, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
-     * Guide</i>.</p> <p>For more information about exporting CloudWatch Logs for
+     * Guide.</i>.</p> <p>For more information about exporting CloudWatch Logs for
      * Amazon Aurora, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
@@ -1286,7 +1286,7 @@ namespace Model
      * CloudWatch Logs for Amazon RDS, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
-     * Guide</i>.</p> <p>For more information about exporting CloudWatch Logs for
+     * Guide.</i>.</p> <p>For more information about exporting CloudWatch Logs for
      * Amazon Aurora, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User

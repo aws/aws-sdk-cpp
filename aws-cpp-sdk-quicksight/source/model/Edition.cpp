@@ -22,6 +22,7 @@ namespace Aws
 
         static const int STANDARD_HASH = HashingUtils::HashString("STANDARD");
         static const int ENTERPRISE_HASH = HashingUtils::HashString("ENTERPRISE");
+        static const int ENTERPRISE_AND_Q_HASH = HashingUtils::HashString("ENTERPRISE_AND_Q");
 
 
         Edition GetEditionForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == ENTERPRISE_HASH)
           {
             return Edition::ENTERPRISE;
+          }
+          else if (hashCode == ENTERPRISE_AND_Q_HASH)
+          {
+            return Edition::ENTERPRISE_AND_Q;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "STANDARD";
           case Edition::ENTERPRISE:
             return "ENTERPRISE";
+          case Edition::ENTERPRISE_AND_Q:
+            return "ENTERPRISE_AND_Q";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

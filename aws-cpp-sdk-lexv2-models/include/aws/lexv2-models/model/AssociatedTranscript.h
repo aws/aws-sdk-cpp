@@ -41,7 +41,7 @@ namespace Model
     /**
      * <p>The content of the transcript that meets the search filter criteria. For the
      * JSON format of the transcript, see <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/designing-output-format.html">Output
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/designing-output-format.html">Output
      * transcript format</a>.</p>
      */
     inline const Aws::String& GetTranscript() const{ return m_transcript; }
@@ -49,7 +49,7 @@ namespace Model
     /**
      * <p>The content of the transcript that meets the search filter criteria. For the
      * JSON format of the transcript, see <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/designing-output-format.html">Output
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/designing-output-format.html">Output
      * transcript format</a>.</p>
      */
     inline bool TranscriptHasBeenSet() const { return m_transcriptHasBeenSet; }
@@ -57,7 +57,7 @@ namespace Model
     /**
      * <p>The content of the transcript that meets the search filter criteria. For the
      * JSON format of the transcript, see <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/designing-output-format.html">Output
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/designing-output-format.html">Output
      * transcript format</a>.</p>
      */
     inline void SetTranscript(const Aws::String& value) { m_transcriptHasBeenSet = true; m_transcript = value; }
@@ -65,7 +65,7 @@ namespace Model
     /**
      * <p>The content of the transcript that meets the search filter criteria. For the
      * JSON format of the transcript, see <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/designing-output-format.html">Output
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/designing-output-format.html">Output
      * transcript format</a>.</p>
      */
     inline void SetTranscript(Aws::String&& value) { m_transcriptHasBeenSet = true; m_transcript = std::move(value); }
@@ -73,7 +73,7 @@ namespace Model
     /**
      * <p>The content of the transcript that meets the search filter criteria. For the
      * JSON format of the transcript, see <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/designing-output-format.html">Output
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/designing-output-format.html">Output
      * transcript format</a>.</p>
      */
     inline void SetTranscript(const char* value) { m_transcriptHasBeenSet = true; m_transcript.assign(value); }
@@ -81,7 +81,7 @@ namespace Model
     /**
      * <p>The content of the transcript that meets the search filter criteria. For the
      * JSON format of the transcript, see <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/designing-output-format.html">Output
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/designing-output-format.html">Output
      * transcript format</a>.</p>
      */
     inline AssociatedTranscript& WithTranscript(const Aws::String& value) { SetTranscript(value); return *this;}
@@ -89,7 +89,7 @@ namespace Model
     /**
      * <p>The content of the transcript that meets the search filter criteria. For the
      * JSON format of the transcript, see <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/designing-output-format.html">Output
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/designing-output-format.html">Output
      * transcript format</a>.</p>
      */
     inline AssociatedTranscript& WithTranscript(Aws::String&& value) { SetTranscript(std::move(value)); return *this;}
@@ -97,7 +97,7 @@ namespace Model
     /**
      * <p>The content of the transcript that meets the search filter criteria. For the
      * JSON format of the transcript, see <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/designing-output-format.html">Output
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/designing-output-format.html">Output
      * transcript format</a>.</p>
      */
     inline AssociatedTranscript& WithTranscript(const char* value) { SetTranscript(value); return *this;}

@@ -22,6 +22,7 @@ IncidentTemplate::IncidentTemplate() :
     m_dedupeStringHasBeenSet(false),
     m_impact(0),
     m_impactHasBeenSet(false),
+    m_incidentTagsHasBeenSet(false),
     m_notificationTargetsHasBeenSet(false),
     m_summaryHasBeenSet(false),
     m_titleHasBeenSet(false)
@@ -32,6 +33,7 @@ IncidentTemplate::IncidentTemplate(JsonView jsonValue) :
     m_dedupeStringHasBeenSet(false),
     m_impact(0),
     m_impactHasBeenSet(false),
+    m_incidentTagsHasBeenSet(false),
     m_notificationTargetsHasBeenSet(false),
     m_summaryHasBeenSet(false),
     m_titleHasBeenSet(false)
@@ -53,6 +55,16 @@ IncidentTemplate& IncidentTemplate::operator =(JsonView jsonValue)
     m_impact = jsonValue.GetInteger("impact");
 
     m_impactHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("incidentTags"))
+  {
+    Aws::Map<Aws::String, JsonView> incidentTagsJsonMap = jsonValue.GetObject("incidentTags").GetAllObjects();
+    for(auto& incidentTagsItem : incidentTagsJsonMap)
+    {
+      m_incidentTags[incidentTagsItem.first] = incidentTagsItem.second.AsString();
+    }
+    m_incidentTagsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("notificationTargets"))
@@ -95,6 +107,17 @@ JsonValue IncidentTemplate::Jsonize() const
   if(m_impactHasBeenSet)
   {
    payload.WithInteger("impact", m_impact);
+
+  }
+
+  if(m_incidentTagsHasBeenSet)
+  {
+   JsonValue incidentTagsJsonMap;
+   for(auto& incidentTagsItem : m_incidentTags)
+   {
+     incidentTagsJsonMap.WithString(incidentTagsItem.first, incidentTagsItem.second);
+   }
+   payload.WithObject("incidentTags", std::move(incidentTagsJsonMap));
 
   }
 

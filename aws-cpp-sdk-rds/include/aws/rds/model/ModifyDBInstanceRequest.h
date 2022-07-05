@@ -144,128 +144,112 @@ namespace Model
 
     /**
      * <p>The new compute and memory capacity of the DB instance, for example
-     * db.m5.large. Not all DB instance classes are available in all Amazon Web
+     * db.m4.large. Not all DB instance classes are available in all Amazon Web
      * Services Regions, or for all database engines. For the full list of DB instance
      * classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * instance classes</a> in the <i>Amazon RDS User Guide</i> or <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora
-     * DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>If you
-     * modify the DB instance class, an outage occurs during the change. The change is
-     * applied during the next maintenance window, unless <code>ApplyImmediately</code>
-     * is enabled for this request.</p> <p>This setting doesn't apply to RDS Custom for
+     * Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>If you modify the
+     * DB instance class, an outage occurs during the change. The change is applied
+     * during the next maintenance window, unless <code>ApplyImmediately</code> is
+     * enabled for this request.</p> <p>This setting doesn't apply to RDS Custom for
      * Oracle.</p> <p>Default: Uses existing setting</p>
      */
     inline const Aws::String& GetDBInstanceClass() const{ return m_dBInstanceClass; }
 
     /**
      * <p>The new compute and memory capacity of the DB instance, for example
-     * db.m5.large. Not all DB instance classes are available in all Amazon Web
+     * db.m4.large. Not all DB instance classes are available in all Amazon Web
      * Services Regions, or for all database engines. For the full list of DB instance
      * classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * instance classes</a> in the <i>Amazon RDS User Guide</i> or <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora
-     * DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>If you
-     * modify the DB instance class, an outage occurs during the change. The change is
-     * applied during the next maintenance window, unless <code>ApplyImmediately</code>
-     * is enabled for this request.</p> <p>This setting doesn't apply to RDS Custom for
+     * Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>If you modify the
+     * DB instance class, an outage occurs during the change. The change is applied
+     * during the next maintenance window, unless <code>ApplyImmediately</code> is
+     * enabled for this request.</p> <p>This setting doesn't apply to RDS Custom for
      * Oracle.</p> <p>Default: Uses existing setting</p>
      */
     inline bool DBInstanceClassHasBeenSet() const { return m_dBInstanceClassHasBeenSet; }
 
     /**
      * <p>The new compute and memory capacity of the DB instance, for example
-     * db.m5.large. Not all DB instance classes are available in all Amazon Web
+     * db.m4.large. Not all DB instance classes are available in all Amazon Web
      * Services Regions, or for all database engines. For the full list of DB instance
      * classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * instance classes</a> in the <i>Amazon RDS User Guide</i> or <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora
-     * DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>If you
-     * modify the DB instance class, an outage occurs during the change. The change is
-     * applied during the next maintenance window, unless <code>ApplyImmediately</code>
-     * is enabled for this request.</p> <p>This setting doesn't apply to RDS Custom for
+     * Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>If you modify the
+     * DB instance class, an outage occurs during the change. The change is applied
+     * during the next maintenance window, unless <code>ApplyImmediately</code> is
+     * enabled for this request.</p> <p>This setting doesn't apply to RDS Custom for
      * Oracle.</p> <p>Default: Uses existing setting</p>
      */
     inline void SetDBInstanceClass(const Aws::String& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
 
     /**
      * <p>The new compute and memory capacity of the DB instance, for example
-     * db.m5.large. Not all DB instance classes are available in all Amazon Web
+     * db.m4.large. Not all DB instance classes are available in all Amazon Web
      * Services Regions, or for all database engines. For the full list of DB instance
      * classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * instance classes</a> in the <i>Amazon RDS User Guide</i> or <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora
-     * DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>If you
-     * modify the DB instance class, an outage occurs during the change. The change is
-     * applied during the next maintenance window, unless <code>ApplyImmediately</code>
-     * is enabled for this request.</p> <p>This setting doesn't apply to RDS Custom for
+     * Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>If you modify the
+     * DB instance class, an outage occurs during the change. The change is applied
+     * during the next maintenance window, unless <code>ApplyImmediately</code> is
+     * enabled for this request.</p> <p>This setting doesn't apply to RDS Custom for
      * Oracle.</p> <p>Default: Uses existing setting</p>
      */
     inline void SetDBInstanceClass(Aws::String&& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = std::move(value); }
 
     /**
      * <p>The new compute and memory capacity of the DB instance, for example
-     * db.m5.large. Not all DB instance classes are available in all Amazon Web
+     * db.m4.large. Not all DB instance classes are available in all Amazon Web
      * Services Regions, or for all database engines. For the full list of DB instance
      * classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * instance classes</a> in the <i>Amazon RDS User Guide</i> or <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora
-     * DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>If you
-     * modify the DB instance class, an outage occurs during the change. The change is
-     * applied during the next maintenance window, unless <code>ApplyImmediately</code>
-     * is enabled for this request.</p> <p>This setting doesn't apply to RDS Custom for
+     * Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>If you modify the
+     * DB instance class, an outage occurs during the change. The change is applied
+     * during the next maintenance window, unless <code>ApplyImmediately</code> is
+     * enabled for this request.</p> <p>This setting doesn't apply to RDS Custom for
      * Oracle.</p> <p>Default: Uses existing setting</p>
      */
     inline void SetDBInstanceClass(const char* value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass.assign(value); }
 
     /**
      * <p>The new compute and memory capacity of the DB instance, for example
-     * db.m5.large. Not all DB instance classes are available in all Amazon Web
+     * db.m4.large. Not all DB instance classes are available in all Amazon Web
      * Services Regions, or for all database engines. For the full list of DB instance
      * classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * instance classes</a> in the <i>Amazon RDS User Guide</i> or <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora
-     * DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>If you
-     * modify the DB instance class, an outage occurs during the change. The change is
-     * applied during the next maintenance window, unless <code>ApplyImmediately</code>
-     * is enabled for this request.</p> <p>This setting doesn't apply to RDS Custom for
+     * Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>If you modify the
+     * DB instance class, an outage occurs during the change. The change is applied
+     * during the next maintenance window, unless <code>ApplyImmediately</code> is
+     * enabled for this request.</p> <p>This setting doesn't apply to RDS Custom for
      * Oracle.</p> <p>Default: Uses existing setting</p>
      */
     inline ModifyDBInstanceRequest& WithDBInstanceClass(const Aws::String& value) { SetDBInstanceClass(value); return *this;}
 
     /**
      * <p>The new compute and memory capacity of the DB instance, for example
-     * db.m5.large. Not all DB instance classes are available in all Amazon Web
+     * db.m4.large. Not all DB instance classes are available in all Amazon Web
      * Services Regions, or for all database engines. For the full list of DB instance
      * classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * instance classes</a> in the <i>Amazon RDS User Guide</i> or <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora
-     * DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>If you
-     * modify the DB instance class, an outage occurs during the change. The change is
-     * applied during the next maintenance window, unless <code>ApplyImmediately</code>
-     * is enabled for this request.</p> <p>This setting doesn't apply to RDS Custom for
+     * Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>If you modify the
+     * DB instance class, an outage occurs during the change. The change is applied
+     * during the next maintenance window, unless <code>ApplyImmediately</code> is
+     * enabled for this request.</p> <p>This setting doesn't apply to RDS Custom for
      * Oracle.</p> <p>Default: Uses existing setting</p>
      */
     inline ModifyDBInstanceRequest& WithDBInstanceClass(Aws::String&& value) { SetDBInstanceClass(std::move(value)); return *this;}
 
     /**
      * <p>The new compute and memory capacity of the DB instance, for example
-     * db.m5.large. Not all DB instance classes are available in all Amazon Web
+     * db.m4.large. Not all DB instance classes are available in all Amazon Web
      * Services Regions, or for all database engines. For the full list of DB instance
      * classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * instance classes</a> in the <i>Amazon RDS User Guide</i> or <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora
-     * DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>If you
-     * modify the DB instance class, an outage occurs during the change. The change is
-     * applied during the next maintenance window, unless <code>ApplyImmediately</code>
-     * is enabled for this request.</p> <p>This setting doesn't apply to RDS Custom for
+     * Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>If you modify the
+     * DB instance class, an outage occurs during the change. The change is applied
+     * during the next maintenance window, unless <code>ApplyImmediately</code> is
+     * enabled for this request.</p> <p>This setting doesn't apply to RDS Custom for
      * Oracle.</p> <p>Default: Uses existing setting</p>
      */
     inline ModifyDBInstanceRequest& WithDBInstanceClass(const char* value) { SetDBInstanceClass(value); return *this;}
@@ -655,7 +639,7 @@ namespace Model
      * <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>Oracle</b> </p>
      * <p>Constraints: Must contain from 8 to 30 characters.</p> <p> <b>PostgreSQL</b>
      * </p> <p>Constraints: Must contain from 8 to 128 characters.</p>  <p>Amazon
-     * RDS API operations never return the password, so this action provides a way to
+     * RDS API actions never return the password, so this action provides a way to
      * regain access to a primary instance user if the password is lost. This includes
      * restoring privileges that might have been accidentally revoked.</p> 
      */
@@ -677,7 +661,7 @@ namespace Model
      * <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>Oracle</b> </p>
      * <p>Constraints: Must contain from 8 to 30 characters.</p> <p> <b>PostgreSQL</b>
      * </p> <p>Constraints: Must contain from 8 to 128 characters.</p>  <p>Amazon
-     * RDS API operations never return the password, so this action provides a way to
+     * RDS API actions never return the password, so this action provides a way to
      * regain access to a primary instance user if the password is lost. This includes
      * restoring privileges that might have been accidentally revoked.</p> 
      */
@@ -699,7 +683,7 @@ namespace Model
      * <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>Oracle</b> </p>
      * <p>Constraints: Must contain from 8 to 30 characters.</p> <p> <b>PostgreSQL</b>
      * </p> <p>Constraints: Must contain from 8 to 128 characters.</p>  <p>Amazon
-     * RDS API operations never return the password, so this action provides a way to
+     * RDS API actions never return the password, so this action provides a way to
      * regain access to a primary instance user if the password is lost. This includes
      * restoring privileges that might have been accidentally revoked.</p> 
      */
@@ -721,7 +705,7 @@ namespace Model
      * <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>Oracle</b> </p>
      * <p>Constraints: Must contain from 8 to 30 characters.</p> <p> <b>PostgreSQL</b>
      * </p> <p>Constraints: Must contain from 8 to 128 characters.</p>  <p>Amazon
-     * RDS API operations never return the password, so this action provides a way to
+     * RDS API actions never return the password, so this action provides a way to
      * regain access to a primary instance user if the password is lost. This includes
      * restoring privileges that might have been accidentally revoked.</p> 
      */
@@ -743,7 +727,7 @@ namespace Model
      * <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>Oracle</b> </p>
      * <p>Constraints: Must contain from 8 to 30 characters.</p> <p> <b>PostgreSQL</b>
      * </p> <p>Constraints: Must contain from 8 to 128 characters.</p>  <p>Amazon
-     * RDS API operations never return the password, so this action provides a way to
+     * RDS API actions never return the password, so this action provides a way to
      * regain access to a primary instance user if the password is lost. This includes
      * restoring privileges that might have been accidentally revoked.</p> 
      */
@@ -765,7 +749,7 @@ namespace Model
      * <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>Oracle</b> </p>
      * <p>Constraints: Must contain from 8 to 30 characters.</p> <p> <b>PostgreSQL</b>
      * </p> <p>Constraints: Must contain from 8 to 128 characters.</p>  <p>Amazon
-     * RDS API operations never return the password, so this action provides a way to
+     * RDS API actions never return the password, so this action provides a way to
      * regain access to a primary instance user if the password is lost. This includes
      * restoring privileges that might have been accidentally revoked.</p> 
      */
@@ -787,7 +771,7 @@ namespace Model
      * <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>Oracle</b> </p>
      * <p>Constraints: Must contain from 8 to 30 characters.</p> <p> <b>PostgreSQL</b>
      * </p> <p>Constraints: Must contain from 8 to 128 characters.</p>  <p>Amazon
-     * RDS API operations never return the password, so this action provides a way to
+     * RDS API actions never return the password, so this action provides a way to
      * regain access to a primary instance user if the password is lost. This includes
      * restoring privileges that might have been accidentally revoked.</p> 
      */
@@ -809,7 +793,7 @@ namespace Model
      * <p>Constraints: Must contain from 8 to 41 characters.</p> <p> <b>Oracle</b> </p>
      * <p>Constraints: Must contain from 8 to 30 characters.</p> <p> <b>PostgreSQL</b>
      * </p> <p>Constraints: Must contain from 8 to 128 characters.</p>  <p>Amazon
-     * RDS API operations never return the password, so this action provides a way to
+     * RDS API actions never return the password, so this action provides a way to
      * regain access to a primary instance user if the password is lost. This includes
      * restoring privileges that might have been accidentally revoked.</p> 
      */
@@ -943,10 +927,10 @@ namespace Model
      * see <code>ModifyDBCluster</code>.</p> <p>Default: Uses existing setting</p>
      * <p>Constraints:</p> <ul> <li> <p>It must be a value from 0 to 35. It can't be
      * set to 0 if the DB instance is a source to read replicas. It can't be set to 0
-     * for an RDS Custom for Oracle DB instance.</p> </li> <li> <p>It can be specified
-     * for a MySQL read replica only if the source is running MySQL 5.6 or later.</p>
-     * </li> <li> <p>It can be specified for a PostgreSQL read replica only if the
-     * source is running PostgreSQL 9.3.5.</p> </li> </ul>
+     * or 35 for an RDS Custom for Oracle DB instance.</p> </li> <li> <p>It can be
+     * specified for a MySQL read replica only if the source is running MySQL 5.6 or
+     * later.</p> </li> <li> <p>It can be specified for a PostgreSQL read replica only
+     * if the source is running PostgreSQL 9.3.5.</p> </li> </ul>
      */
     inline int GetBackupRetentionPeriod() const{ return m_backupRetentionPeriod; }
 
@@ -964,10 +948,10 @@ namespace Model
      * see <code>ModifyDBCluster</code>.</p> <p>Default: Uses existing setting</p>
      * <p>Constraints:</p> <ul> <li> <p>It must be a value from 0 to 35. It can't be
      * set to 0 if the DB instance is a source to read replicas. It can't be set to 0
-     * for an RDS Custom for Oracle DB instance.</p> </li> <li> <p>It can be specified
-     * for a MySQL read replica only if the source is running MySQL 5.6 or later.</p>
-     * </li> <li> <p>It can be specified for a PostgreSQL read replica only if the
-     * source is running PostgreSQL 9.3.5.</p> </li> </ul>
+     * or 35 for an RDS Custom for Oracle DB instance.</p> </li> <li> <p>It can be
+     * specified for a MySQL read replica only if the source is running MySQL 5.6 or
+     * later.</p> </li> <li> <p>It can be specified for a PostgreSQL read replica only
+     * if the source is running PostgreSQL 9.3.5.</p> </li> </ul>
      */
     inline bool BackupRetentionPeriodHasBeenSet() const { return m_backupRetentionPeriodHasBeenSet; }
 
@@ -985,10 +969,10 @@ namespace Model
      * see <code>ModifyDBCluster</code>.</p> <p>Default: Uses existing setting</p>
      * <p>Constraints:</p> <ul> <li> <p>It must be a value from 0 to 35. It can't be
      * set to 0 if the DB instance is a source to read replicas. It can't be set to 0
-     * for an RDS Custom for Oracle DB instance.</p> </li> <li> <p>It can be specified
-     * for a MySQL read replica only if the source is running MySQL 5.6 or later.</p>
-     * </li> <li> <p>It can be specified for a PostgreSQL read replica only if the
-     * source is running PostgreSQL 9.3.5.</p> </li> </ul>
+     * or 35 for an RDS Custom for Oracle DB instance.</p> </li> <li> <p>It can be
+     * specified for a MySQL read replica only if the source is running MySQL 5.6 or
+     * later.</p> </li> <li> <p>It can be specified for a PostgreSQL read replica only
+     * if the source is running PostgreSQL 9.3.5.</p> </li> </ul>
      */
     inline void SetBackupRetentionPeriod(int value) { m_backupRetentionPeriodHasBeenSet = true; m_backupRetentionPeriod = value; }
 
@@ -1006,10 +990,10 @@ namespace Model
      * see <code>ModifyDBCluster</code>.</p> <p>Default: Uses existing setting</p>
      * <p>Constraints:</p> <ul> <li> <p>It must be a value from 0 to 35. It can't be
      * set to 0 if the DB instance is a source to read replicas. It can't be set to 0
-     * for an RDS Custom for Oracle DB instance.</p> </li> <li> <p>It can be specified
-     * for a MySQL read replica only if the source is running MySQL 5.6 or later.</p>
-     * </li> <li> <p>It can be specified for a PostgreSQL read replica only if the
-     * source is running PostgreSQL 9.3.5.</p> </li> </ul>
+     * or 35 for an RDS Custom for Oracle DB instance.</p> </li> <li> <p>It can be
+     * specified for a MySQL read replica only if the source is running MySQL 5.6 or
+     * later.</p> </li> <li> <p>It can be specified for a PostgreSQL read replica only
+     * if the source is running PostgreSQL 9.3.5.</p> </li> </ul>
      */
     inline ModifyDBInstanceRequest& WithBackupRetentionPeriod(int value) { SetBackupRetentionPeriod(value); return *this;}
 
@@ -2869,8 +2853,8 @@ namespace Model
      * <p>A value that indicates whether to enable Performance Insights for the DB
      * instance.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
-     * Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
-     * setting doesn't apply to RDS Custom.</p>
+     * Amazon Performance Insights</a> in the <i>Amazon RDS User Guide.</i>.</p>
+     * <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline bool GetEnablePerformanceInsights() const{ return m_enablePerformanceInsights; }
 
@@ -2878,8 +2862,8 @@ namespace Model
      * <p>A value that indicates whether to enable Performance Insights for the DB
      * instance.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
-     * Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
-     * setting doesn't apply to RDS Custom.</p>
+     * Amazon Performance Insights</a> in the <i>Amazon RDS User Guide.</i>.</p>
+     * <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline bool EnablePerformanceInsightsHasBeenSet() const { return m_enablePerformanceInsightsHasBeenSet; }
 
@@ -2887,8 +2871,8 @@ namespace Model
      * <p>A value that indicates whether to enable Performance Insights for the DB
      * instance.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
-     * Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
-     * setting doesn't apply to RDS Custom.</p>
+     * Amazon Performance Insights</a> in the <i>Amazon RDS User Guide.</i>.</p>
+     * <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline void SetEnablePerformanceInsights(bool value) { m_enablePerformanceInsightsHasBeenSet = true; m_enablePerformanceInsights = value; }
 
@@ -2896,8 +2880,8 @@ namespace Model
      * <p>A value that indicates whether to enable Performance Insights for the DB
      * instance.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
-     * Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
-     * setting doesn't apply to RDS Custom.</p>
+     * Amazon Performance Insights</a> in the <i>Amazon RDS User Guide.</i>.</p>
+     * <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline ModifyDBInstanceRequest& WithEnablePerformanceInsights(bool value) { SetEnablePerformanceInsights(value); return *this;}
 
@@ -3000,50 +2984,30 @@ namespace Model
 
 
     /**
-     * <p>The number of days to retain Performance Insights data. The default is 7
-     * days. The following values are valid:</p> <ul> <li> <p>7</p> </li> <li> <p>
-     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
-     * <li> <p>731</p> </li> </ul> <p>For example, the following values are valid:</p>
-     * <ul> <li> <p>93 (3 months * 31)</p> </li> <li> <p>341 (11 months * 31)</p> </li>
-     * <li> <p>589 (19 months * 31)</p> </li> <li> <p>731</p> </li> </ul> <p>If you
-     * specify a retention period such as 94, which isn't a valid value, RDS issues an
-     * error.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>The amount of time, in days, to retain Performance Insights data. Valid
+     * values are 7 or 731 (2 years).</p> <p>This setting doesn't apply to RDS
+     * Custom.</p>
      */
     inline int GetPerformanceInsightsRetentionPeriod() const{ return m_performanceInsightsRetentionPeriod; }
 
     /**
-     * <p>The number of days to retain Performance Insights data. The default is 7
-     * days. The following values are valid:</p> <ul> <li> <p>7</p> </li> <li> <p>
-     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
-     * <li> <p>731</p> </li> </ul> <p>For example, the following values are valid:</p>
-     * <ul> <li> <p>93 (3 months * 31)</p> </li> <li> <p>341 (11 months * 31)</p> </li>
-     * <li> <p>589 (19 months * 31)</p> </li> <li> <p>731</p> </li> </ul> <p>If you
-     * specify a retention period such as 94, which isn't a valid value, RDS issues an
-     * error.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>The amount of time, in days, to retain Performance Insights data. Valid
+     * values are 7 or 731 (2 years).</p> <p>This setting doesn't apply to RDS
+     * Custom.</p>
      */
     inline bool PerformanceInsightsRetentionPeriodHasBeenSet() const { return m_performanceInsightsRetentionPeriodHasBeenSet; }
 
     /**
-     * <p>The number of days to retain Performance Insights data. The default is 7
-     * days. The following values are valid:</p> <ul> <li> <p>7</p> </li> <li> <p>
-     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
-     * <li> <p>731</p> </li> </ul> <p>For example, the following values are valid:</p>
-     * <ul> <li> <p>93 (3 months * 31)</p> </li> <li> <p>341 (11 months * 31)</p> </li>
-     * <li> <p>589 (19 months * 31)</p> </li> <li> <p>731</p> </li> </ul> <p>If you
-     * specify a retention period such as 94, which isn't a valid value, RDS issues an
-     * error.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>The amount of time, in days, to retain Performance Insights data. Valid
+     * values are 7 or 731 (2 years).</p> <p>This setting doesn't apply to RDS
+     * Custom.</p>
      */
     inline void SetPerformanceInsightsRetentionPeriod(int value) { m_performanceInsightsRetentionPeriodHasBeenSet = true; m_performanceInsightsRetentionPeriod = value; }
 
     /**
-     * <p>The number of days to retain Performance Insights data. The default is 7
-     * days. The following values are valid:</p> <ul> <li> <p>7</p> </li> <li> <p>
-     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
-     * <li> <p>731</p> </li> </ul> <p>For example, the following values are valid:</p>
-     * <ul> <li> <p>93 (3 months * 31)</p> </li> <li> <p>341 (11 months * 31)</p> </li>
-     * <li> <p>589 (19 months * 31)</p> </li> <li> <p>731</p> </li> </ul> <p>If you
-     * specify a retention period such as 94, which isn't a valid value, RDS issues an
-     * error.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>The amount of time, in days, to retain Performance Insights data. Valid
+     * values are 7 or 731 (2 years).</p> <p>This setting doesn't apply to RDS
+     * Custom.</p>
      */
     inline ModifyDBInstanceRequest& WithPerformanceInsightsRetentionPeriod(int value) { SetPerformanceInsightsRetentionPeriod(value); return *this;}
 

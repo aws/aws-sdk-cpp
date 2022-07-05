@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     STANDARD,
-    ENTERPRISE
+    ENTERPRISE,
+    ENTERPRISE_AND_Q
   };
 
 namespace EditionMapper

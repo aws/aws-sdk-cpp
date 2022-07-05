@@ -26,7 +26,7 @@ namespace Model
 
   /**
    * <p>The object representing the URL of the bot definition, the URL of the
-   * associated transcript and a statistical summary of the bot recommendation
+   * associated transcript, and a statistical summary of the bot recommendation
    * results.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/BotRecommendationResults">AWS
    * API Reference</a></p>

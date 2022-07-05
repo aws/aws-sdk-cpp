@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/lexv2-models/LexModelsV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/lexv2-models/model/MessageSelectionStrategy.h>
 #include <aws/lexv2-models/model/MessageGroup.h>
 #include <utility>
 
@@ -133,6 +134,37 @@ namespace Model
      */
     inline PromptSpecification& WithAllowInterrupt(bool value) { SetAllowInterrupt(value); return *this;}
 
+
+    /**
+     * <p>Indicates how a message is selected from a message group among retries.</p>
+     */
+    inline const MessageSelectionStrategy& GetMessageSelectionStrategy() const{ return m_messageSelectionStrategy; }
+
+    /**
+     * <p>Indicates how a message is selected from a message group among retries.</p>
+     */
+    inline bool MessageSelectionStrategyHasBeenSet() const { return m_messageSelectionStrategyHasBeenSet; }
+
+    /**
+     * <p>Indicates how a message is selected from a message group among retries.</p>
+     */
+    inline void SetMessageSelectionStrategy(const MessageSelectionStrategy& value) { m_messageSelectionStrategyHasBeenSet = true; m_messageSelectionStrategy = value; }
+
+    /**
+     * <p>Indicates how a message is selected from a message group among retries.</p>
+     */
+    inline void SetMessageSelectionStrategy(MessageSelectionStrategy&& value) { m_messageSelectionStrategyHasBeenSet = true; m_messageSelectionStrategy = std::move(value); }
+
+    /**
+     * <p>Indicates how a message is selected from a message group among retries.</p>
+     */
+    inline PromptSpecification& WithMessageSelectionStrategy(const MessageSelectionStrategy& value) { SetMessageSelectionStrategy(value); return *this;}
+
+    /**
+     * <p>Indicates how a message is selected from a message group among retries.</p>
+     */
+    inline PromptSpecification& WithMessageSelectionStrategy(MessageSelectionStrategy&& value) { SetMessageSelectionStrategy(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<MessageGroup> m_messageGroups;
@@ -143,6 +175,9 @@ namespace Model
 
     bool m_allowInterrupt;
     bool m_allowInterruptHasBeenSet;
+
+    MessageSelectionStrategy m_messageSelectionStrategy;
+    bool m_messageSelectionStrategyHasBeenSet;
   };
 
 } // namespace Model

@@ -2082,7 +2082,7 @@ namespace Model
      * <p>A value that indicates whether to enable Performance Insights for the DB
      * instance.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
-     * Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * Amazon Performance Insights</a> in the <i>Amazon RDS User Guide.</i>.</p>
      */
     inline bool GetEnablePerformanceInsights() const{ return m_enablePerformanceInsights; }
 
@@ -2090,7 +2090,7 @@ namespace Model
      * <p>A value that indicates whether to enable Performance Insights for the DB
      * instance.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
-     * Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * Amazon Performance Insights</a> in the <i>Amazon RDS User Guide.</i>.</p>
      */
     inline bool EnablePerformanceInsightsHasBeenSet() const { return m_enablePerformanceInsightsHasBeenSet; }
 
@@ -2098,7 +2098,7 @@ namespace Model
      * <p>A value that indicates whether to enable Performance Insights for the DB
      * instance.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
-     * Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * Amazon Performance Insights</a> in the <i>Amazon RDS User Guide.</i>.</p>
      */
     inline void SetEnablePerformanceInsights(bool value) { m_enablePerformanceInsightsHasBeenSet = true; m_enablePerformanceInsights = value; }
 
@@ -2106,7 +2106,7 @@ namespace Model
      * <p>A value that indicates whether to enable Performance Insights for the DB
      * instance.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
-     * Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * Amazon Performance Insights</a> in the <i>Amazon RDS User Guide.</i>.</p>
      */
     inline RestoreDBInstanceFromS3Request& WithEnablePerformanceInsights(bool value) { SetEnablePerformanceInsights(value); return *this;}
 
@@ -2201,50 +2201,26 @@ namespace Model
 
 
     /**
-     * <p>The number of days to retain Performance Insights data. The default is 7
-     * days. The following values are valid:</p> <ul> <li> <p>7</p> </li> <li> <p>
-     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
-     * <li> <p>731</p> </li> </ul> <p>For example, the following values are valid:</p>
-     * <ul> <li> <p>93 (3 months * 31)</p> </li> <li> <p>341 (11 months * 31)</p> </li>
-     * <li> <p>589 (19 months * 31)</p> </li> <li> <p>731</p> </li> </ul> <p>If you
-     * specify a retention period such as 94, which isn't a valid value, RDS issues an
-     * error.</p>
+     * <p>The amount of time, in days, to retain Performance Insights data. Valid
+     * values are 7 or 731 (2 years).</p>
      */
     inline int GetPerformanceInsightsRetentionPeriod() const{ return m_performanceInsightsRetentionPeriod; }
 
     /**
-     * <p>The number of days to retain Performance Insights data. The default is 7
-     * days. The following values are valid:</p> <ul> <li> <p>7</p> </li> <li> <p>
-     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
-     * <li> <p>731</p> </li> </ul> <p>For example, the following values are valid:</p>
-     * <ul> <li> <p>93 (3 months * 31)</p> </li> <li> <p>341 (11 months * 31)</p> </li>
-     * <li> <p>589 (19 months * 31)</p> </li> <li> <p>731</p> </li> </ul> <p>If you
-     * specify a retention period such as 94, which isn't a valid value, RDS issues an
-     * error.</p>
+     * <p>The amount of time, in days, to retain Performance Insights data. Valid
+     * values are 7 or 731 (2 years).</p>
      */
     inline bool PerformanceInsightsRetentionPeriodHasBeenSet() const { return m_performanceInsightsRetentionPeriodHasBeenSet; }
 
     /**
-     * <p>The number of days to retain Performance Insights data. The default is 7
-     * days. The following values are valid:</p> <ul> <li> <p>7</p> </li> <li> <p>
-     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
-     * <li> <p>731</p> </li> </ul> <p>For example, the following values are valid:</p>
-     * <ul> <li> <p>93 (3 months * 31)</p> </li> <li> <p>341 (11 months * 31)</p> </li>
-     * <li> <p>589 (19 months * 31)</p> </li> <li> <p>731</p> </li> </ul> <p>If you
-     * specify a retention period such as 94, which isn't a valid value, RDS issues an
-     * error.</p>
+     * <p>The amount of time, in days, to retain Performance Insights data. Valid
+     * values are 7 or 731 (2 years).</p>
      */
     inline void SetPerformanceInsightsRetentionPeriod(int value) { m_performanceInsightsRetentionPeriodHasBeenSet = true; m_performanceInsightsRetentionPeriod = value; }
 
     /**
-     * <p>The number of days to retain Performance Insights data. The default is 7
-     * days. The following values are valid:</p> <ul> <li> <p>7</p> </li> <li> <p>
-     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
-     * <li> <p>731</p> </li> </ul> <p>For example, the following values are valid:</p>
-     * <ul> <li> <p>93 (3 months * 31)</p> </li> <li> <p>341 (11 months * 31)</p> </li>
-     * <li> <p>589 (19 months * 31)</p> </li> <li> <p>731</p> </li> </ul> <p>If you
-     * specify a retention period such as 94, which isn't a valid value, RDS issues an
-     * error.</p>
+     * <p>The amount of time, in days, to retain Performance Insights data. Valid
+     * values are 7 or 731 (2 years).</p>
      */
     inline RestoreDBInstanceFromS3Request& WithPerformanceInsightsRetentionPeriod(int value) { SetPerformanceInsightsRetentionPeriod(value); return *this;}
 

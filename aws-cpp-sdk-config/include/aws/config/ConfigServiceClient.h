@@ -1277,10 +1277,21 @@ namespace Model
 
         /**
          * <p>Returns a list of organization Config rules. </p>  <p>When you specify
-         * the limit and the next token, you receive a paginated response. Limit and next
-         * token are not applicable if you specify organization Config rule names. It is
-         * only applicable, when you request all the organization Config rules.</p>
-         * <p><h3>See Also:</h3>   <a
+         * the limit and the next token, you receive a paginated response.</p> <p>Limit and
+         * next token are not applicable if you specify organization Config rule names. It
+         * is only applicable, when you request all the organization Config rules.</p> <p>
+         * <i>For accounts within an organzation</i> </p> <p>If you deploy an
+         * organizational rule or conformance pack in an organization administrator
+         * account, and then establish a delegated administrator and deploy an
+         * organizational rule or conformance pack in the delegated administrator account,
+         * you won't be able to see the organizational rule or conformance pack in the
+         * organization administrator account from the delegated administrator account or
+         * see the organizational rule or conformance pack in the delegated administrator
+         * account from organization administrator account. The
+         * <code>DescribeOrganizationConfigRules</code> and
+         * <code>DescribeOrganizationConformancePacks</code> APIs can only see and interact
+         * with the organization-related resource that were deployed from within the
+         * account calling those APIs.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRules">AWS
          * API Reference</a></p>
          */
@@ -1325,7 +1336,18 @@ namespace Model
          * specify the limit and the next token, you receive a paginated response. </p>
          * <p>Limit and next token are not applicable if you specify organization
          * conformance packs names. They are only applicable, when you request all the
-         * organization conformance packs. </p> <p><h3>See Also:</h3>   <a
+         * organization conformance packs. </p> <p> <i>For accounts within an
+         * organzation</i> </p> <p>If you deploy an organizational rule or conformance pack
+         * in an organization administrator account, and then establish a delegated
+         * administrator and deploy an organizational rule or conformance pack in the
+         * delegated administrator account, you won't be able to see the organizational
+         * rule or conformance pack in the organization administrator account from the
+         * delegated administrator account or see the organizational rule or conformance
+         * pack in the delegated administrator account from organization administrator
+         * account. The <code>DescribeOrganizationConfigRules</code> and
+         * <code>DescribeOrganizationConformancePacks</code> APIs can only see and interact
+         * with the organization-related resource that were deployed from within the
+         * account calling those APIs.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConformancePacks">AWS
          * API Reference</a></p>
          */
@@ -2172,12 +2194,16 @@ namespace Model
 
         /**
          * <p>Deploys conformance packs across member accounts in an Amazon Web Services
-         * Organization.</p> <p>Only a master account and a delegated administrator can
-         * call this API. When calling this API with a delegated administrator, you must
-         * ensure Organizations <code>ListDelegatedAdministrator</code> permissions are
-         * added.</p> <p>This API enables organization service access for
-         * <code>config-multiaccountsetup.amazonaws.com</code> through the
-         * <code>EnableAWSServiceAccess</code> action and creates a service linked role
+         * Organization. For information on how many organization conformance packs and how
+         * many Config rules you can have per account, see <a
+         * href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
+         * <b>Service Limits</b> </a> in the Config Developer Guide.</p> <p>Only a master
+         * account and a delegated administrator can call this API. When calling this API
+         * with a delegated administrator, you must ensure Organizations
+         * <code>ListDelegatedAdministrator</code> permissions are added. An organization
+         * can have up to 3 delegated administrators.</p> <p>This API enables organization
+         * service access for <code>config-multiaccountsetup.amazonaws.com</code> through
+         * the <code>EnableAWSServiceAccess</code> action and creates a service linked role
          * <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master or delegated
          * administrator account of your organization. The service linked role is created
          * only when the role does not exist in the caller account. To use this API with
@@ -2191,9 +2217,7 @@ namespace Model
          * <code>TemplateBody</code> parameter.</p> <p>Config sets the state of a
          * conformance pack to CREATE_IN_PROGRESS and UPDATE_IN_PROGRESS until the
          * conformance pack is created or updated. You cannot update a conformance pack
-         * while it is in this state.</p> <p>You can create 50 conformance packs with 25
-         * Config rules in each pack and 3 delegated administrator per organization. </p>
-         * <p><h3>See Also:</h3>   <a
+         * while it is in this state.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutOrganizationConformancePack">AWS
          * API Reference</a></p>
          */
@@ -2219,8 +2243,15 @@ namespace Model
          * this again to ensure the remediations can run.</p> <p>This API does not support
          * adding remediation configurations for service-linked Config Rules such as
          * Organization Config rules, the rules deployed by conformance packs, and rules
-         * deployed by Amazon Web Services Security Hub.</p> <p><h3>See Also:</h3>  
-         * <a
+         * deployed by Amazon Web Services Security Hub.</p>   <p>For manual
+         * remediation configuration, you need to provide a value for
+         * <code>automationAssumeRole</code> or use a value in the
+         * <code>assumeRole</code>field to remediate your resources. The SSM automation
+         * document can use either as long as it maps to a valid parameter.</p> <p>However,
+         * for automatic remediation configuration, the only valid <code>assumeRole</code>
+         * field value is <code>AutomationAssumeRole</code> and you need to provide a value
+         * for <code>AutomationAssumeRole</code> to remediate your resources.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutRemediationConfigurations">AWS
          * API Reference</a></p>
          */

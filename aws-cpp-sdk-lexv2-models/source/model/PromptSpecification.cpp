@@ -23,7 +23,9 @@ PromptSpecification::PromptSpecification() :
     m_maxRetries(0),
     m_maxRetriesHasBeenSet(false),
     m_allowInterrupt(false),
-    m_allowInterruptHasBeenSet(false)
+    m_allowInterruptHasBeenSet(false),
+    m_messageSelectionStrategy(MessageSelectionStrategy::NOT_SET),
+    m_messageSelectionStrategyHasBeenSet(false)
 {
 }
 
@@ -32,7 +34,9 @@ PromptSpecification::PromptSpecification(JsonView jsonValue) :
     m_maxRetries(0),
     m_maxRetriesHasBeenSet(false),
     m_allowInterrupt(false),
-    m_allowInterruptHasBeenSet(false)
+    m_allowInterruptHasBeenSet(false),
+    m_messageSelectionStrategy(MessageSelectionStrategy::NOT_SET),
+    m_messageSelectionStrategyHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -63,6 +67,13 @@ PromptSpecification& PromptSpecification::operator =(JsonView jsonValue)
     m_allowInterruptHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("messageSelectionStrategy"))
+  {
+    m_messageSelectionStrategy = MessageSelectionStrategyMapper::GetMessageSelectionStrategyForName(jsonValue.GetString("messageSelectionStrategy"));
+
+    m_messageSelectionStrategyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -91,6 +102,11 @@ JsonValue PromptSpecification::Jsonize() const
   {
    payload.WithBool("allowInterrupt", m_allowInterrupt);
 
+  }
+
+  if(m_messageSelectionStrategyHasBeenSet)
+  {
+   payload.WithString("messageSelectionStrategy", MessageSelectionStrategyMapper::GetNameForMessageSelectionStrategy(m_messageSelectionStrategy));
   }
 
   return payload;

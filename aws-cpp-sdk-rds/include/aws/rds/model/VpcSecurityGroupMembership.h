@@ -82,50 +82,42 @@ namespace Model
 
 
     /**
-     * <p>The membership status of the VPC security group.</p> <p>Currently, the only
-     * valid status is <code>active</code>.</p>
+     * <p>The status of the VPC security group.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The membership status of the VPC security group.</p> <p>Currently, the only
-     * valid status is <code>active</code>.</p>
+     * <p>The status of the VPC security group.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The membership status of the VPC security group.</p> <p>Currently, the only
-     * valid status is <code>active</code>.</p>
+     * <p>The status of the VPC security group.</p>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The membership status of the VPC security group.</p> <p>Currently, the only
-     * valid status is <code>active</code>.</p>
+     * <p>The status of the VPC security group.</p>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The membership status of the VPC security group.</p> <p>Currently, the only
-     * valid status is <code>active</code>.</p>
+     * <p>The status of the VPC security group.</p>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
-     * <p>The membership status of the VPC security group.</p> <p>Currently, the only
-     * valid status is <code>active</code>.</p>
+     * <p>The status of the VPC security group.</p>
      */
     inline VpcSecurityGroupMembership& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The membership status of the VPC security group.</p> <p>Currently, the only
-     * valid status is <code>active</code>.</p>
+     * <p>The status of the VPC security group.</p>
      */
     inline VpcSecurityGroupMembership& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The membership status of the VPC security group.</p> <p>Currently, the only
-     * valid status is <code>active</code>.</p>
+     * <p>The status of the VPC security group.</p>
      */
     inline VpcSecurityGroupMembership& WithStatus(const char* value) { SetStatus(value); return *this;}
 

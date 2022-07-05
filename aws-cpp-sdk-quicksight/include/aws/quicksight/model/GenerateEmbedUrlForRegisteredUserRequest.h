@@ -8,6 +8,7 @@
 #include <aws/quicksight/QuickSightRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/quicksight/model/RegisteredUserEmbeddingExperienceConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -184,6 +185,124 @@ namespace Model
      */
     inline GenerateEmbedUrlForRegisteredUserRequest& WithExperienceConfiguration(RegisteredUserEmbeddingExperienceConfiguration&& value) { SetExperienceConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The domains that you want to add to the allow list for access to the
+     * generated URL that is then embedded. This optional parameter overrides the
+     * static domains that are configured in the Manage QuickSight menu in the Amazon
+     * QuickSight console and instead allows only the domains that you include in this
+     * parameter. You can list up to three domains or subdomains in each API call.</p>
+     * <p>To include a subdomain, use <code>*</code> to include all subdomains under a
+     * specific domain to the allow list. For example,
+     * <code>https:// *.sapp.amazon.com,</code> includes all subdomains under
+     * <code>https://sapp.amazon.com</code>.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAllowedDomains() const{ return m_allowedDomains; }
+
+    /**
+     * <p>The domains that you want to add to the allow list for access to the
+     * generated URL that is then embedded. This optional parameter overrides the
+     * static domains that are configured in the Manage QuickSight menu in the Amazon
+     * QuickSight console and instead allows only the domains that you include in this
+     * parameter. You can list up to three domains or subdomains in each API call.</p>
+     * <p>To include a subdomain, use <code>*</code> to include all subdomains under a
+     * specific domain to the allow list. For example,
+     * <code>https:// *.sapp.amazon.com,</code> includes all subdomains under
+     * <code>https://sapp.amazon.com</code>.</p>
+     */
+    inline bool AllowedDomainsHasBeenSet() const { return m_allowedDomainsHasBeenSet; }
+
+    /**
+     * <p>The domains that you want to add to the allow list for access to the
+     * generated URL that is then embedded. This optional parameter overrides the
+     * static domains that are configured in the Manage QuickSight menu in the Amazon
+     * QuickSight console and instead allows only the domains that you include in this
+     * parameter. You can list up to three domains or subdomains in each API call.</p>
+     * <p>To include a subdomain, use <code>*</code> to include all subdomains under a
+     * specific domain to the allow list. For example,
+     * <code>https:// *.sapp.amazon.com,</code> includes all subdomains under
+     * <code>https://sapp.amazon.com</code>.</p>
+     */
+    inline void SetAllowedDomains(const Aws::Vector<Aws::String>& value) { m_allowedDomainsHasBeenSet = true; m_allowedDomains = value; }
+
+    /**
+     * <p>The domains that you want to add to the allow list for access to the
+     * generated URL that is then embedded. This optional parameter overrides the
+     * static domains that are configured in the Manage QuickSight menu in the Amazon
+     * QuickSight console and instead allows only the domains that you include in this
+     * parameter. You can list up to three domains or subdomains in each API call.</p>
+     * <p>To include a subdomain, use <code>*</code> to include all subdomains under a
+     * specific domain to the allow list. For example,
+     * <code>https:// *.sapp.amazon.com,</code> includes all subdomains under
+     * <code>https://sapp.amazon.com</code>.</p>
+     */
+    inline void SetAllowedDomains(Aws::Vector<Aws::String>&& value) { m_allowedDomainsHasBeenSet = true; m_allowedDomains = std::move(value); }
+
+    /**
+     * <p>The domains that you want to add to the allow list for access to the
+     * generated URL that is then embedded. This optional parameter overrides the
+     * static domains that are configured in the Manage QuickSight menu in the Amazon
+     * QuickSight console and instead allows only the domains that you include in this
+     * parameter. You can list up to three domains or subdomains in each API call.</p>
+     * <p>To include a subdomain, use <code>*</code> to include all subdomains under a
+     * specific domain to the allow list. For example,
+     * <code>https:// *.sapp.amazon.com,</code> includes all subdomains under
+     * <code>https://sapp.amazon.com</code>.</p>
+     */
+    inline GenerateEmbedUrlForRegisteredUserRequest& WithAllowedDomains(const Aws::Vector<Aws::String>& value) { SetAllowedDomains(value); return *this;}
+
+    /**
+     * <p>The domains that you want to add to the allow list for access to the
+     * generated URL that is then embedded. This optional parameter overrides the
+     * static domains that are configured in the Manage QuickSight menu in the Amazon
+     * QuickSight console and instead allows only the domains that you include in this
+     * parameter. You can list up to three domains or subdomains in each API call.</p>
+     * <p>To include a subdomain, use <code>*</code> to include all subdomains under a
+     * specific domain to the allow list. For example,
+     * <code>https:// *.sapp.amazon.com,</code> includes all subdomains under
+     * <code>https://sapp.amazon.com</code>.</p>
+     */
+    inline GenerateEmbedUrlForRegisteredUserRequest& WithAllowedDomains(Aws::Vector<Aws::String>&& value) { SetAllowedDomains(std::move(value)); return *this;}
+
+    /**
+     * <p>The domains that you want to add to the allow list for access to the
+     * generated URL that is then embedded. This optional parameter overrides the
+     * static domains that are configured in the Manage QuickSight menu in the Amazon
+     * QuickSight console and instead allows only the domains that you include in this
+     * parameter. You can list up to three domains or subdomains in each API call.</p>
+     * <p>To include a subdomain, use <code>*</code> to include all subdomains under a
+     * specific domain to the allow list. For example,
+     * <code>https:// *.sapp.amazon.com,</code> includes all subdomains under
+     * <code>https://sapp.amazon.com</code>.</p>
+     */
+    inline GenerateEmbedUrlForRegisteredUserRequest& AddAllowedDomains(const Aws::String& value) { m_allowedDomainsHasBeenSet = true; m_allowedDomains.push_back(value); return *this; }
+
+    /**
+     * <p>The domains that you want to add to the allow list for access to the
+     * generated URL that is then embedded. This optional parameter overrides the
+     * static domains that are configured in the Manage QuickSight menu in the Amazon
+     * QuickSight console and instead allows only the domains that you include in this
+     * parameter. You can list up to three domains or subdomains in each API call.</p>
+     * <p>To include a subdomain, use <code>*</code> to include all subdomains under a
+     * specific domain to the allow list. For example,
+     * <code>https:// *.sapp.amazon.com,</code> includes all subdomains under
+     * <code>https://sapp.amazon.com</code>.</p>
+     */
+    inline GenerateEmbedUrlForRegisteredUserRequest& AddAllowedDomains(Aws::String&& value) { m_allowedDomainsHasBeenSet = true; m_allowedDomains.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The domains that you want to add to the allow list for access to the
+     * generated URL that is then embedded. This optional parameter overrides the
+     * static domains that are configured in the Manage QuickSight menu in the Amazon
+     * QuickSight console and instead allows only the domains that you include in this
+     * parameter. You can list up to three domains or subdomains in each API call.</p>
+     * <p>To include a subdomain, use <code>*</code> to include all subdomains under a
+     * specific domain to the allow list. For example,
+     * <code>https:// *.sapp.amazon.com,</code> includes all subdomains under
+     * <code>https://sapp.amazon.com</code>.</p>
+     */
+    inline GenerateEmbedUrlForRegisteredUserRequest& AddAllowedDomains(const char* value) { m_allowedDomainsHasBeenSet = true; m_allowedDomains.push_back(value); return *this; }
+
   private:
 
     Aws::String m_awsAccountId;
@@ -197,6 +316,9 @@ namespace Model
 
     RegisteredUserEmbeddingExperienceConfiguration m_experienceConfiguration;
     bool m_experienceConfigurationHasBeenSet;
+
+    Aws::Vector<Aws::String> m_allowedDomains;
+    bool m_allowedDomainsHasBeenSet;
   };
 
 } // namespace Model

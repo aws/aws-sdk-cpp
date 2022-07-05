@@ -17,7 +17,8 @@ GenerateEmbedUrlForRegisteredUserRequest::GenerateEmbedUrlForRegisteredUserReque
     m_sessionLifetimeInMinutes(0),
     m_sessionLifetimeInMinutesHasBeenSet(false),
     m_userArnHasBeenSet(false),
-    m_experienceConfigurationHasBeenSet(false)
+    m_experienceConfigurationHasBeenSet(false),
+    m_allowedDomainsHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,17 @@ Aws::String GenerateEmbedUrlForRegisteredUserRequest::SerializePayload() const
   if(m_experienceConfigurationHasBeenSet)
   {
    payload.WithObject("ExperienceConfiguration", m_experienceConfiguration.Jsonize());
+
+  }
+
+  if(m_allowedDomainsHasBeenSet)
+  {
+   Array<JsonValue> allowedDomainsJsonList(m_allowedDomains.size());
+   for(unsigned allowedDomainsIndex = 0; allowedDomainsIndex < allowedDomainsJsonList.GetLength(); ++allowedDomainsIndex)
+   {
+     allowedDomainsJsonList[allowedDomainsIndex].AsString(m_allowedDomains[allowedDomainsIndex]);
+   }
+   payload.WithArray("AllowedDomains", std::move(allowedDomainsJsonList));
 
   }
 

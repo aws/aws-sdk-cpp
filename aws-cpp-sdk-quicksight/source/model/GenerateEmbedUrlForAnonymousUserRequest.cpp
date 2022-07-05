@@ -19,7 +19,8 @@ GenerateEmbedUrlForAnonymousUserRequest::GenerateEmbedUrlForAnonymousUserRequest
     m_namespaceHasBeenSet(false),
     m_sessionTagsHasBeenSet(false),
     m_authorizedResourceArnsHasBeenSet(false),
-    m_experienceConfigurationHasBeenSet(false)
+    m_experienceConfigurationHasBeenSet(false),
+    m_allowedDomainsHasBeenSet(false)
 {
 }
 
@@ -64,6 +65,17 @@ Aws::String GenerateEmbedUrlForAnonymousUserRequest::SerializePayload() const
   if(m_experienceConfigurationHasBeenSet)
   {
    payload.WithObject("ExperienceConfiguration", m_experienceConfiguration.Jsonize());
+
+  }
+
+  if(m_allowedDomainsHasBeenSet)
+  {
+   Array<JsonValue> allowedDomainsJsonList(m_allowedDomains.size());
+   for(unsigned allowedDomainsIndex = 0; allowedDomainsIndex < allowedDomainsJsonList.GetLength(); ++allowedDomainsIndex)
+   {
+     allowedDomainsJsonList[allowedDomainsIndex].AsString(m_allowedDomains[allowedDomainsIndex]);
+   }
+   payload.WithArray("AllowedDomains", std::move(allowedDomainsJsonList));
 
   }
 

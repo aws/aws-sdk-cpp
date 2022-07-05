@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/ssm-incidents/SSMIncidents_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ssm-incidents/model/NotificationTargetItem.h>
 #include <utility>
@@ -108,6 +109,85 @@ namespace Model
      * <p>The impact of the incident on your customers and applications. </p>
      */
     inline IncidentTemplate& WithImpact(int value) { SetImpact(value); return *this;}
+
+
+    /**
+     * <p>Tags to apply to an incident when calling the <code>StartIncident</code> API
+     * action.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetIncidentTags() const{ return m_incidentTags; }
+
+    /**
+     * <p>Tags to apply to an incident when calling the <code>StartIncident</code> API
+     * action.</p>
+     */
+    inline bool IncidentTagsHasBeenSet() const { return m_incidentTagsHasBeenSet; }
+
+    /**
+     * <p>Tags to apply to an incident when calling the <code>StartIncident</code> API
+     * action.</p>
+     */
+    inline void SetIncidentTags(const Aws::Map<Aws::String, Aws::String>& value) { m_incidentTagsHasBeenSet = true; m_incidentTags = value; }
+
+    /**
+     * <p>Tags to apply to an incident when calling the <code>StartIncident</code> API
+     * action.</p>
+     */
+    inline void SetIncidentTags(Aws::Map<Aws::String, Aws::String>&& value) { m_incidentTagsHasBeenSet = true; m_incidentTags = std::move(value); }
+
+    /**
+     * <p>Tags to apply to an incident when calling the <code>StartIncident</code> API
+     * action.</p>
+     */
+    inline IncidentTemplate& WithIncidentTags(const Aws::Map<Aws::String, Aws::String>& value) { SetIncidentTags(value); return *this;}
+
+    /**
+     * <p>Tags to apply to an incident when calling the <code>StartIncident</code> API
+     * action.</p>
+     */
+    inline IncidentTemplate& WithIncidentTags(Aws::Map<Aws::String, Aws::String>&& value) { SetIncidentTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Tags to apply to an incident when calling the <code>StartIncident</code> API
+     * action.</p>
+     */
+    inline IncidentTemplate& AddIncidentTags(const Aws::String& key, const Aws::String& value) { m_incidentTagsHasBeenSet = true; m_incidentTags.emplace(key, value); return *this; }
+
+    /**
+     * <p>Tags to apply to an incident when calling the <code>StartIncident</code> API
+     * action.</p>
+     */
+    inline IncidentTemplate& AddIncidentTags(Aws::String&& key, const Aws::String& value) { m_incidentTagsHasBeenSet = true; m_incidentTags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Tags to apply to an incident when calling the <code>StartIncident</code> API
+     * action.</p>
+     */
+    inline IncidentTemplate& AddIncidentTags(const Aws::String& key, Aws::String&& value) { m_incidentTagsHasBeenSet = true; m_incidentTags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Tags to apply to an incident when calling the <code>StartIncident</code> API
+     * action.</p>
+     */
+    inline IncidentTemplate& AddIncidentTags(Aws::String&& key, Aws::String&& value) { m_incidentTagsHasBeenSet = true; m_incidentTags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>Tags to apply to an incident when calling the <code>StartIncident</code> API
+     * action.</p>
+     */
+    inline IncidentTemplate& AddIncidentTags(const char* key, Aws::String&& value) { m_incidentTagsHasBeenSet = true; m_incidentTags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Tags to apply to an incident when calling the <code>StartIncident</code> API
+     * action.</p>
+     */
+    inline IncidentTemplate& AddIncidentTags(Aws::String&& key, const char* value) { m_incidentTagsHasBeenSet = true; m_incidentTags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Tags to apply to an incident when calling the <code>StartIncident</code> API
+     * action.</p>
+     */
+    inline IncidentTemplate& AddIncidentTags(const char* key, const char* value) { m_incidentTagsHasBeenSet = true; m_incidentTags.emplace(key, value); return *this; }
 
 
     /**
@@ -255,6 +335,9 @@ namespace Model
 
     int m_impact;
     bool m_impactHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_incidentTags;
+    bool m_incidentTagsHasBeenSet;
 
     Aws::Vector<NotificationTargetItem> m_notificationTargets;
     bool m_notificationTargetsHasBeenSet;

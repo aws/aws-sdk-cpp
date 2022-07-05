@@ -174,7 +174,8 @@ namespace Model
      * tags used for the Amazon Web Services resource tagging feature. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using
-     * Row-Level Security (RLS) with Tags</a>.</p>
+     * Row-Level Security (RLS) with Tags</a>in the <i>Amazon QuickSight User
+     * Guide</i>.</p>
      */
     inline const Aws::Vector<SessionTag>& GetSessionTags() const{ return m_sessionTags; }
 
@@ -186,7 +187,8 @@ namespace Model
      * tags used for the Amazon Web Services resource tagging feature. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using
-     * Row-Level Security (RLS) with Tags</a>.</p>
+     * Row-Level Security (RLS) with Tags</a>in the <i>Amazon QuickSight User
+     * Guide</i>.</p>
      */
     inline bool SessionTagsHasBeenSet() const { return m_sessionTagsHasBeenSet; }
 
@@ -198,7 +200,8 @@ namespace Model
      * tags used for the Amazon Web Services resource tagging feature. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using
-     * Row-Level Security (RLS) with Tags</a>.</p>
+     * Row-Level Security (RLS) with Tags</a>in the <i>Amazon QuickSight User
+     * Guide</i>.</p>
      */
     inline void SetSessionTags(const Aws::Vector<SessionTag>& value) { m_sessionTagsHasBeenSet = true; m_sessionTags = value; }
 
@@ -210,7 +213,8 @@ namespace Model
      * tags used for the Amazon Web Services resource tagging feature. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using
-     * Row-Level Security (RLS) with Tags</a>.</p>
+     * Row-Level Security (RLS) with Tags</a>in the <i>Amazon QuickSight User
+     * Guide</i>.</p>
      */
     inline void SetSessionTags(Aws::Vector<SessionTag>&& value) { m_sessionTagsHasBeenSet = true; m_sessionTags = std::move(value); }
 
@@ -222,7 +226,8 @@ namespace Model
      * tags used for the Amazon Web Services resource tagging feature. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using
-     * Row-Level Security (RLS) with Tags</a>.</p>
+     * Row-Level Security (RLS) with Tags</a>in the <i>Amazon QuickSight User
+     * Guide</i>.</p>
      */
     inline GenerateEmbedUrlForAnonymousUserRequest& WithSessionTags(const Aws::Vector<SessionTag>& value) { SetSessionTags(value); return *this;}
 
@@ -234,7 +239,8 @@ namespace Model
      * tags used for the Amazon Web Services resource tagging feature. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using
-     * Row-Level Security (RLS) with Tags</a>.</p>
+     * Row-Level Security (RLS) with Tags</a>in the <i>Amazon QuickSight User
+     * Guide</i>.</p>
      */
     inline GenerateEmbedUrlForAnonymousUserRequest& WithSessionTags(Aws::Vector<SessionTag>&& value) { SetSessionTags(std::move(value)); return *this;}
 
@@ -246,7 +252,8 @@ namespace Model
      * tags used for the Amazon Web Services resource tagging feature. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using
-     * Row-Level Security (RLS) with Tags</a>.</p>
+     * Row-Level Security (RLS) with Tags</a>in the <i>Amazon QuickSight User
+     * Guide</i>.</p>
      */
     inline GenerateEmbedUrlForAnonymousUserRequest& AddSessionTags(const SessionTag& value) { m_sessionTagsHasBeenSet = true; m_sessionTags.push_back(value); return *this; }
 
@@ -258,14 +265,15 @@ namespace Model
      * tags used for the Amazon Web Services resource tagging feature. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using
-     * Row-Level Security (RLS) with Tags</a>.</p>
+     * Row-Level Security (RLS) with Tags</a>in the <i>Amazon QuickSight User
+     * Guide</i>.</p>
      */
     inline GenerateEmbedUrlForAnonymousUserRequest& AddSessionTags(SessionTag&& value) { m_sessionTagsHasBeenSet = true; m_sessionTags.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The Amazon Resource Names for the Amazon QuickSight resources that the user
-     * is authorized to access during the lifetime of the session. If you choose
+     * <p>The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the
+     * user is authorized to access during the lifetime of the session. If you choose
      * <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in
      * the account that you want the user to be able to view. Currently, you can pass
      * up to 25 dashboard ARNs in each API call.</p>
@@ -273,8 +281,8 @@ namespace Model
     inline const Aws::Vector<Aws::String>& GetAuthorizedResourceArns() const{ return m_authorizedResourceArns; }
 
     /**
-     * <p>The Amazon Resource Names for the Amazon QuickSight resources that the user
-     * is authorized to access during the lifetime of the session. If you choose
+     * <p>The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the
+     * user is authorized to access during the lifetime of the session. If you choose
      * <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in
      * the account that you want the user to be able to view. Currently, you can pass
      * up to 25 dashboard ARNs in each API call.</p>
@@ -282,8 +290,8 @@ namespace Model
     inline bool AuthorizedResourceArnsHasBeenSet() const { return m_authorizedResourceArnsHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Names for the Amazon QuickSight resources that the user
-     * is authorized to access during the lifetime of the session. If you choose
+     * <p>The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the
+     * user is authorized to access during the lifetime of the session. If you choose
      * <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in
      * the account that you want the user to be able to view. Currently, you can pass
      * up to 25 dashboard ARNs in each API call.</p>
@@ -291,8 +299,8 @@ namespace Model
     inline void SetAuthorizedResourceArns(const Aws::Vector<Aws::String>& value) { m_authorizedResourceArnsHasBeenSet = true; m_authorizedResourceArns = value; }
 
     /**
-     * <p>The Amazon Resource Names for the Amazon QuickSight resources that the user
-     * is authorized to access during the lifetime of the session. If you choose
+     * <p>The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the
+     * user is authorized to access during the lifetime of the session. If you choose
      * <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in
      * the account that you want the user to be able to view. Currently, you can pass
      * up to 25 dashboard ARNs in each API call.</p>
@@ -300,8 +308,8 @@ namespace Model
     inline void SetAuthorizedResourceArns(Aws::Vector<Aws::String>&& value) { m_authorizedResourceArnsHasBeenSet = true; m_authorizedResourceArns = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Names for the Amazon QuickSight resources that the user
-     * is authorized to access during the lifetime of the session. If you choose
+     * <p>The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the
+     * user is authorized to access during the lifetime of the session. If you choose
      * <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in
      * the account that you want the user to be able to view. Currently, you can pass
      * up to 25 dashboard ARNs in each API call.</p>
@@ -309,8 +317,8 @@ namespace Model
     inline GenerateEmbedUrlForAnonymousUserRequest& WithAuthorizedResourceArns(const Aws::Vector<Aws::String>& value) { SetAuthorizedResourceArns(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Names for the Amazon QuickSight resources that the user
-     * is authorized to access during the lifetime of the session. If you choose
+     * <p>The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the
+     * user is authorized to access during the lifetime of the session. If you choose
      * <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in
      * the account that you want the user to be able to view. Currently, you can pass
      * up to 25 dashboard ARNs in each API call.</p>
@@ -318,8 +326,8 @@ namespace Model
     inline GenerateEmbedUrlForAnonymousUserRequest& WithAuthorizedResourceArns(Aws::Vector<Aws::String>&& value) { SetAuthorizedResourceArns(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Names for the Amazon QuickSight resources that the user
-     * is authorized to access during the lifetime of the session. If you choose
+     * <p>The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the
+     * user is authorized to access during the lifetime of the session. If you choose
      * <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in
      * the account that you want the user to be able to view. Currently, you can pass
      * up to 25 dashboard ARNs in each API call.</p>
@@ -327,8 +335,8 @@ namespace Model
     inline GenerateEmbedUrlForAnonymousUserRequest& AddAuthorizedResourceArns(const Aws::String& value) { m_authorizedResourceArnsHasBeenSet = true; m_authorizedResourceArns.push_back(value); return *this; }
 
     /**
-     * <p>The Amazon Resource Names for the Amazon QuickSight resources that the user
-     * is authorized to access during the lifetime of the session. If you choose
+     * <p>The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the
+     * user is authorized to access during the lifetime of the session. If you choose
      * <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in
      * the account that you want the user to be able to view. Currently, you can pass
      * up to 25 dashboard ARNs in each API call.</p>
@@ -336,8 +344,8 @@ namespace Model
     inline GenerateEmbedUrlForAnonymousUserRequest& AddAuthorizedResourceArns(Aws::String&& value) { m_authorizedResourceArnsHasBeenSet = true; m_authorizedResourceArns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The Amazon Resource Names for the Amazon QuickSight resources that the user
-     * is authorized to access during the lifetime of the session. If you choose
+     * <p>The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the
+     * user is authorized to access during the lifetime of the session. If you choose
      * <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in
      * the account that you want the user to be able to view. Currently, you can pass
      * up to 25 dashboard ARNs in each API call.</p>
@@ -346,34 +354,152 @@ namespace Model
 
 
     /**
-     * <p>The configuration of the experience you are embedding.</p>
+     * <p>The configuration of the experience that you are embedding.</p>
      */
     inline const AnonymousUserEmbeddingExperienceConfiguration& GetExperienceConfiguration() const{ return m_experienceConfiguration; }
 
     /**
-     * <p>The configuration of the experience you are embedding.</p>
+     * <p>The configuration of the experience that you are embedding.</p>
      */
     inline bool ExperienceConfigurationHasBeenSet() const { return m_experienceConfigurationHasBeenSet; }
 
     /**
-     * <p>The configuration of the experience you are embedding.</p>
+     * <p>The configuration of the experience that you are embedding.</p>
      */
     inline void SetExperienceConfiguration(const AnonymousUserEmbeddingExperienceConfiguration& value) { m_experienceConfigurationHasBeenSet = true; m_experienceConfiguration = value; }
 
     /**
-     * <p>The configuration of the experience you are embedding.</p>
+     * <p>The configuration of the experience that you are embedding.</p>
      */
     inline void SetExperienceConfiguration(AnonymousUserEmbeddingExperienceConfiguration&& value) { m_experienceConfigurationHasBeenSet = true; m_experienceConfiguration = std::move(value); }
 
     /**
-     * <p>The configuration of the experience you are embedding.</p>
+     * <p>The configuration of the experience that you are embedding.</p>
      */
     inline GenerateEmbedUrlForAnonymousUserRequest& WithExperienceConfiguration(const AnonymousUserEmbeddingExperienceConfiguration& value) { SetExperienceConfiguration(value); return *this;}
 
     /**
-     * <p>The configuration of the experience you are embedding.</p>
+     * <p>The configuration of the experience that you are embedding.</p>
      */
     inline GenerateEmbedUrlForAnonymousUserRequest& WithExperienceConfiguration(AnonymousUserEmbeddingExperienceConfiguration&& value) { SetExperienceConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The domains that you want to add to the allow list for access to the
+     * generated URL that is then embedded. This optional parameter overrides the
+     * static domains that are configured in the Manage QuickSight menu in the Amazon
+     * QuickSight console and instead allows only the domains that you include in this
+     * parameter. You can list up to three domains or subdomains in each API call.</p>
+     * <p>To include a subdomain, use <code>*</code> to include all subdomains under a
+     * specific domain to the allow list. For example,
+     * <code>https:// *.sapp.amazon.com,</code> includes all subdomains under
+     * <code>https://sapp.amazon.com</code>.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAllowedDomains() const{ return m_allowedDomains; }
+
+    /**
+     * <p>The domains that you want to add to the allow list for access to the
+     * generated URL that is then embedded. This optional parameter overrides the
+     * static domains that are configured in the Manage QuickSight menu in the Amazon
+     * QuickSight console and instead allows only the domains that you include in this
+     * parameter. You can list up to three domains or subdomains in each API call.</p>
+     * <p>To include a subdomain, use <code>*</code> to include all subdomains under a
+     * specific domain to the allow list. For example,
+     * <code>https:// *.sapp.amazon.com,</code> includes all subdomains under
+     * <code>https://sapp.amazon.com</code>.</p>
+     */
+    inline bool AllowedDomainsHasBeenSet() const { return m_allowedDomainsHasBeenSet; }
+
+    /**
+     * <p>The domains that you want to add to the allow list for access to the
+     * generated URL that is then embedded. This optional parameter overrides the
+     * static domains that are configured in the Manage QuickSight menu in the Amazon
+     * QuickSight console and instead allows only the domains that you include in this
+     * parameter. You can list up to three domains or subdomains in each API call.</p>
+     * <p>To include a subdomain, use <code>*</code> to include all subdomains under a
+     * specific domain to the allow list. For example,
+     * <code>https:// *.sapp.amazon.com,</code> includes all subdomains under
+     * <code>https://sapp.amazon.com</code>.</p>
+     */
+    inline void SetAllowedDomains(const Aws::Vector<Aws::String>& value) { m_allowedDomainsHasBeenSet = true; m_allowedDomains = value; }
+
+    /**
+     * <p>The domains that you want to add to the allow list for access to the
+     * generated URL that is then embedded. This optional parameter overrides the
+     * static domains that are configured in the Manage QuickSight menu in the Amazon
+     * QuickSight console and instead allows only the domains that you include in this
+     * parameter. You can list up to three domains or subdomains in each API call.</p>
+     * <p>To include a subdomain, use <code>*</code> to include all subdomains under a
+     * specific domain to the allow list. For example,
+     * <code>https:// *.sapp.amazon.com,</code> includes all subdomains under
+     * <code>https://sapp.amazon.com</code>.</p>
+     */
+    inline void SetAllowedDomains(Aws::Vector<Aws::String>&& value) { m_allowedDomainsHasBeenSet = true; m_allowedDomains = std::move(value); }
+
+    /**
+     * <p>The domains that you want to add to the allow list for access to the
+     * generated URL that is then embedded. This optional parameter overrides the
+     * static domains that are configured in the Manage QuickSight menu in the Amazon
+     * QuickSight console and instead allows only the domains that you include in this
+     * parameter. You can list up to three domains or subdomains in each API call.</p>
+     * <p>To include a subdomain, use <code>*</code> to include all subdomains under a
+     * specific domain to the allow list. For example,
+     * <code>https:// *.sapp.amazon.com,</code> includes all subdomains under
+     * <code>https://sapp.amazon.com</code>.</p>
+     */
+    inline GenerateEmbedUrlForAnonymousUserRequest& WithAllowedDomains(const Aws::Vector<Aws::String>& value) { SetAllowedDomains(value); return *this;}
+
+    /**
+     * <p>The domains that you want to add to the allow list for access to the
+     * generated URL that is then embedded. This optional parameter overrides the
+     * static domains that are configured in the Manage QuickSight menu in the Amazon
+     * QuickSight console and instead allows only the domains that you include in this
+     * parameter. You can list up to three domains or subdomains in each API call.</p>
+     * <p>To include a subdomain, use <code>*</code> to include all subdomains under a
+     * specific domain to the allow list. For example,
+     * <code>https:// *.sapp.amazon.com,</code> includes all subdomains under
+     * <code>https://sapp.amazon.com</code>.</p>
+     */
+    inline GenerateEmbedUrlForAnonymousUserRequest& WithAllowedDomains(Aws::Vector<Aws::String>&& value) { SetAllowedDomains(std::move(value)); return *this;}
+
+    /**
+     * <p>The domains that you want to add to the allow list for access to the
+     * generated URL that is then embedded. This optional parameter overrides the
+     * static domains that are configured in the Manage QuickSight menu in the Amazon
+     * QuickSight console and instead allows only the domains that you include in this
+     * parameter. You can list up to three domains or subdomains in each API call.</p>
+     * <p>To include a subdomain, use <code>*</code> to include all subdomains under a
+     * specific domain to the allow list. For example,
+     * <code>https:// *.sapp.amazon.com,</code> includes all subdomains under
+     * <code>https://sapp.amazon.com</code>.</p>
+     */
+    inline GenerateEmbedUrlForAnonymousUserRequest& AddAllowedDomains(const Aws::String& value) { m_allowedDomainsHasBeenSet = true; m_allowedDomains.push_back(value); return *this; }
+
+    /**
+     * <p>The domains that you want to add to the allow list for access to the
+     * generated URL that is then embedded. This optional parameter overrides the
+     * static domains that are configured in the Manage QuickSight menu in the Amazon
+     * QuickSight console and instead allows only the domains that you include in this
+     * parameter. You can list up to three domains or subdomains in each API call.</p>
+     * <p>To include a subdomain, use <code>*</code> to include all subdomains under a
+     * specific domain to the allow list. For example,
+     * <code>https:// *.sapp.amazon.com,</code> includes all subdomains under
+     * <code>https://sapp.amazon.com</code>.</p>
+     */
+    inline GenerateEmbedUrlForAnonymousUserRequest& AddAllowedDomains(Aws::String&& value) { m_allowedDomainsHasBeenSet = true; m_allowedDomains.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The domains that you want to add to the allow list for access to the
+     * generated URL that is then embedded. This optional parameter overrides the
+     * static domains that are configured in the Manage QuickSight menu in the Amazon
+     * QuickSight console and instead allows only the domains that you include in this
+     * parameter. You can list up to three domains or subdomains in each API call.</p>
+     * <p>To include a subdomain, use <code>*</code> to include all subdomains under a
+     * specific domain to the allow list. For example,
+     * <code>https:// *.sapp.amazon.com,</code> includes all subdomains under
+     * <code>https://sapp.amazon.com</code>.</p>
+     */
+    inline GenerateEmbedUrlForAnonymousUserRequest& AddAllowedDomains(const char* value) { m_allowedDomainsHasBeenSet = true; m_allowedDomains.push_back(value); return *this; }
 
   private:
 
@@ -394,6 +520,9 @@ namespace Model
 
     AnonymousUserEmbeddingExperienceConfiguration m_experienceConfiguration;
     bool m_experienceConfigurationHasBeenSet;
+
+    Aws::Vector<Aws::String> m_allowedDomains;
+    bool m_allowedDomainsHasBeenSet;
   };
 
 } // namespace Model
