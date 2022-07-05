@@ -51,6 +51,11 @@ namespace Aws
 #define OPENSSL_VERSION_NUMBER 0x1000107fL
 #endif
 #define OPENSSL_VERSION_LESS_1_1 (OPENSSL_VERSION_NUMBER < 0x10100003L)
+#define OPENSSL_VERSION_LESS_3_0 (OPENSSL_VERSION_NUMBER < 0x30000000L)
+
+#if !OPENSSL_VERSION_LESS_3_0
+#include <openssl/core_names.h>
+#endif
 
 #if OPENSSL_VERSION_LESS_1_1
                 static const char* OPENSSL_INTERNALS_TAG = "OpenSSLCallbackState";
@@ -412,8 +417,11 @@ namespace Aws
                 HMACRAIIGuard() {
 #if OPENSSL_VERSION_LESS_1_1
                     m_ctx = Aws::New<HMAC_CTX>("AllocSha256HAMCOpenSSLContext");
-#else
+#elif OPENSSL_VERSION_LESS_3_0
                     m_ctx = HMAC_CTX_new();
+#else
+                    mac = EVP_MAC_fetch(NULL, "HMAC", NULL);
+                    m_ctx = EVP_MAC_CTX_new(mac);
 #endif
                     assert(m_ctx != nullptr);
                 }
@@ -421,17 +429,28 @@ namespace Aws
                 ~HMACRAIIGuard() {
 #if OPENSSL_VERSION_LESS_1_1
                     Aws::Delete<HMAC_CTX>(m_ctx);
-#else
+#elif OPENSSL_VERSION_LESS_3_0
                     HMAC_CTX_free(m_ctx);
+#else
+                    EVP_MAC_CTX_free(m_ctx);
 #endif
                     m_ctx = nullptr;
                 }
 
+#if OPENSSL_VERSION_LESS_3_0
                 HMAC_CTX* getResource() {
+#else
+                EVP_MAC_CTX* getResource() {
+#endif
                     return m_ctx;
                 }
             private:
+#if OPENSSL_VERSION_LESS_3_0
                 HMAC_CTX *m_ctx;
+#else
+                EVP_MAC *mac;
+                EVP_MAC_CTX *m_ctx;
+#endif
             };
 
             HashResult Sha256HMACOpenSSLImpl::Calculate(const ByteBuffer& toSign, const ByteBuffer& secret)
@@ -441,20 +460,36 @@ namespace Aws
                 memset(digest.GetUnderlyingData(), 0, length);
 
                 HMACRAIIGuard guard;
+#if OPENSSL_VERSION_LESS_3_0
                 HMAC_CTX* m_ctx = guard.getResource();
+#else
+                EVP_MAC_CTX* m_ctx = guard.getResource();
+#endif
 
 #if OPENSSL_VERSION_LESS_1_1
                 HMAC_CTX_init(m_ctx);
 #endif
 
+#if OPENSSL_VERSION_LESS_3_0
                 HMAC_Init_ex(m_ctx, secret.GetUnderlyingData(), static_cast<int>(secret.GetLength()), EVP_sha256(),
                              NULL);
                 HMAC_Update(m_ctx, toSign.GetUnderlyingData(), toSign.GetLength());
                 HMAC_Final(m_ctx, digest.GetUnderlyingData(), &length);
+#else
+                char sha256[] {"SHA256"};
+                OSSL_PARAM ossl_params[2];
+                ossl_params[0] =
+                  OSSL_PARAM_construct_utf8_string(OSSL_MAC_PARAM_DIGEST, sha256, 0);
+                ossl_params[1] = OSSL_PARAM_construct_end();
+                EVP_MAC_init(m_ctx, secret.GetUnderlyingData(),
+                             static_cast<int>(secret.GetLength()), ossl_params);
+                EVP_MAC_update(m_ctx, toSign.GetUnderlyingData(), toSign.GetLength());
+                EVP_MAC_final(m_ctx, digest.GetUnderlyingData(), NULL, length);
+#endif
 
 #if OPENSSL_VERSION_LESS_1_1
                 HMAC_CTX_cleanup(m_ctx);
-#else
+#elif OPENSSL_VERSION_LESS_3_0
                 HMAC_CTX_reset(m_ctx);
 #endif
                 return HashResult(std::move(digest));
