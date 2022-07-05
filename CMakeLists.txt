@@ -42,6 +42,9 @@ else ()
     set(CMAKE_CXX_EXTENSIONS OFF)
     set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+    # Setting flags for telling compiler this is a non-legacy build
+    add_definitions(-DNON_LEGACY_BUILD)
+
     # Setting build to hide symbols in targets by default
     set(CMAKE_CXX_VISIBILITY_PRESET hidden)
     set(CMAKE_VISIBILITY_INLINES_HIDDEN YES)
@@ -53,6 +56,13 @@ else ()
     configure_file(
             VersionConfig.h.in
             src/aws-cpp-sdk-core/include/aws/core/VersionConfig.h
+            @ONLY
+    )
+
+    message(STATUS "Generating source file SDKConfig.h for setting memory management options")
+    configure_file(
+            SDKConfig.h.in
+            src/aws-cpp-sdk-core/include/aws/core/SDKConfig.h
             @ONLY
     )
 
@@ -86,13 +96,25 @@ else ()
 
     # -- Dependencies --
     add_subdirectory(dependencies)
+    if (CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
+        # Testing Dependencies
+        if (BUILD_TESTING)
+            message(STATUS "Building tests")
+            # Testing dependency
+            find_package(GTest 1.11 REQUIRED)
+            include(GoogleTest) # for gtest_discover_tests()
+        endif ()
+    endif ()
 
     # -- main build targets --
     add_subdirectory(src)
 
     # -- Tests and packaging if running this as top project --
     if (CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
-        add_subdirectory(tests)
+        # Testing Dependencies
+        if (BUILD_TESTING)
+            add_subdirectory(tests)
+        endif ()
         add_subdirectory(packaging)
     endif ()
     message(WARNING "The dependencies are currently checked only for a basic Linux build, new ones need to be added for other platforms yet")

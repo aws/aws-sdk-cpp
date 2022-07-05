@@ -2,8 +2,11 @@
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
-
+#ifdef NON_LEGACY_BUILD
+#include <gtest/gtest.h>
+#else
 #include <aws/external/gtest.h>
+#endif
 #include <aws/testing/mocks/aws/client/MockAWSClient.h>
 #include <aws/core/monitoring/CoreMetrics.h>
 #include <aws/core/monitoring/MonitoringInterface.h>

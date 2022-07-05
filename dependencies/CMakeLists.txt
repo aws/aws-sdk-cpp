@@ -1,11 +1,3 @@
-# Testing Dependencies
-if (BUILD_TESTING)
-    message(STATUS "Building tests")
-    # Testing dependency
-    find_package(GTest 1.11 REQUIRED)
-    include(GoogleTest) # for gtest_discover_tests()
-endif ()
-
 # Project dependencies http library (curl or OS), tinyxml2, cJSON, ssl (open or other), CRT
 find_package(CURL REQUIRED)
 find_package(ZLIB REQUIRED)
