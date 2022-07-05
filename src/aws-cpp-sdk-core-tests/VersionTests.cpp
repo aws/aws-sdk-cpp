@@ -3,7 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#ifdef NON_LEGACY_BUILD
+#include <gtest/gtest.h>
+#else
 #include <aws/external/gtest.h>
+#endif
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/Version.h>
 
