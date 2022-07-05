@@ -98,49 +98,65 @@ namespace Model
 
     /**
      * <p>Amazon Resource Name (ARN) of the IAM role used to describe the Amazon Web
-     * Services resources associated with the account.</p>
+     * Services resources associated with the account.</p>  <p>While the API
+     * model does not require this field, the server will reject a request without a
+     * defined roleARN for the configuration recorder.</p> 
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
 
     /**
      * <p>Amazon Resource Name (ARN) of the IAM role used to describe the Amazon Web
-     * Services resources associated with the account.</p>
+     * Services resources associated with the account.</p>  <p>While the API
+     * model does not require this field, the server will reject a request without a
+     * defined roleARN for the configuration recorder.</p> 
      */
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
 
     /**
      * <p>Amazon Resource Name (ARN) of the IAM role used to describe the Amazon Web
-     * Services resources associated with the account.</p>
+     * Services resources associated with the account.</p>  <p>While the API
+     * model does not require this field, the server will reject a request without a
+     * defined roleARN for the configuration recorder.</p> 
      */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
     /**
      * <p>Amazon Resource Name (ARN) of the IAM role used to describe the Amazon Web
-     * Services resources associated with the account.</p>
+     * Services resources associated with the account.</p>  <p>While the API
+     * model does not require this field, the server will reject a request without a
+     * defined roleARN for the configuration recorder.</p> 
      */
     inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
     /**
      * <p>Amazon Resource Name (ARN) of the IAM role used to describe the Amazon Web
-     * Services resources associated with the account.</p>
+     * Services resources associated with the account.</p>  <p>While the API
+     * model does not require this field, the server will reject a request without a
+     * defined roleARN for the configuration recorder.</p> 
      */
     inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
 
     /**
      * <p>Amazon Resource Name (ARN) of the IAM role used to describe the Amazon Web
-     * Services resources associated with the account.</p>
+     * Services resources associated with the account.</p>  <p>While the API
+     * model does not require this field, the server will reject a request without a
+     * defined roleARN for the configuration recorder.</p> 
      */
     inline ConfigurationRecorder& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
 
     /**
      * <p>Amazon Resource Name (ARN) of the IAM role used to describe the Amazon Web
-     * Services resources associated with the account.</p>
+     * Services resources associated with the account.</p>  <p>While the API
+     * model does not require this field, the server will reject a request without a
+     * defined roleARN for the configuration recorder.</p> 
      */
     inline ConfigurationRecorder& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
     /**
      * <p>Amazon Resource Name (ARN) of the IAM role used to describe the Amazon Web
-     * Services resources associated with the account.</p>
+     * Services resources associated with the account.</p>  <p>While the API
+     * model does not require this field, the server will reject a request without a
+     * defined roleARN for the configuration recorder.</p> 
      */
     inline ConfigurationRecorder& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 

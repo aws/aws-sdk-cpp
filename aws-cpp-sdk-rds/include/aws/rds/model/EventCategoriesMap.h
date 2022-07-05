@@ -25,9 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains the results of a successful invocation of the <a
-   * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeEventCategories.html">DescribeEventCategories</a>
-   * operation.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains the results of a successful invocation of the
+   * <code>DescribeEventCategories</code> operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/EventCategoriesMap">AWS
    * API Reference</a></p>
    */

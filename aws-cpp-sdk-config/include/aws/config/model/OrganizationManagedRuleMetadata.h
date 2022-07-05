@@ -206,55 +206,55 @@ namespace Model
 
 
     /**
-     * <p>The maximum frequency with which Config runs evaluations for a rule. You are
-     * using an Config managed rule that is triggered at a periodic frequency.</p>
-     *  <p>By default, rules with a periodic trigger are evaluated every 24
-     * hours. To change the frequency, specify a valid value for the
+     * <p>The maximum frequency with which Config runs evaluations for a rule. This is
+     * for an Config managed rule that is triggered at a periodic frequency.</p> 
+     * <p>By default, rules with a periodic trigger are evaluated every 24 hours. To
+     * change the frequency, specify a valid value for the
      * <code>MaximumExecutionFrequency</code> parameter.</p> 
      */
     inline const MaximumExecutionFrequency& GetMaximumExecutionFrequency() const{ return m_maximumExecutionFrequency; }
 
     /**
-     * <p>The maximum frequency with which Config runs evaluations for a rule. You are
-     * using an Config managed rule that is triggered at a periodic frequency.</p>
-     *  <p>By default, rules with a periodic trigger are evaluated every 24
-     * hours. To change the frequency, specify a valid value for the
+     * <p>The maximum frequency with which Config runs evaluations for a rule. This is
+     * for an Config managed rule that is triggered at a periodic frequency.</p> 
+     * <p>By default, rules with a periodic trigger are evaluated every 24 hours. To
+     * change the frequency, specify a valid value for the
      * <code>MaximumExecutionFrequency</code> parameter.</p> 
      */
     inline bool MaximumExecutionFrequencyHasBeenSet() const { return m_maximumExecutionFrequencyHasBeenSet; }
 
     /**
-     * <p>The maximum frequency with which Config runs evaluations for a rule. You are
-     * using an Config managed rule that is triggered at a periodic frequency.</p>
-     *  <p>By default, rules with a periodic trigger are evaluated every 24
-     * hours. To change the frequency, specify a valid value for the
+     * <p>The maximum frequency with which Config runs evaluations for a rule. This is
+     * for an Config managed rule that is triggered at a periodic frequency.</p> 
+     * <p>By default, rules with a periodic trigger are evaluated every 24 hours. To
+     * change the frequency, specify a valid value for the
      * <code>MaximumExecutionFrequency</code> parameter.</p> 
      */
     inline void SetMaximumExecutionFrequency(const MaximumExecutionFrequency& value) { m_maximumExecutionFrequencyHasBeenSet = true; m_maximumExecutionFrequency = value; }
 
     /**
-     * <p>The maximum frequency with which Config runs evaluations for a rule. You are
-     * using an Config managed rule that is triggered at a periodic frequency.</p>
-     *  <p>By default, rules with a periodic trigger are evaluated every 24
-     * hours. To change the frequency, specify a valid value for the
+     * <p>The maximum frequency with which Config runs evaluations for a rule. This is
+     * for an Config managed rule that is triggered at a periodic frequency.</p> 
+     * <p>By default, rules with a periodic trigger are evaluated every 24 hours. To
+     * change the frequency, specify a valid value for the
      * <code>MaximumExecutionFrequency</code> parameter.</p> 
      */
     inline void SetMaximumExecutionFrequency(MaximumExecutionFrequency&& value) { m_maximumExecutionFrequencyHasBeenSet = true; m_maximumExecutionFrequency = std::move(value); }
 
     /**
-     * <p>The maximum frequency with which Config runs evaluations for a rule. You are
-     * using an Config managed rule that is triggered at a periodic frequency.</p>
-     *  <p>By default, rules with a periodic trigger are evaluated every 24
-     * hours. To change the frequency, specify a valid value for the
+     * <p>The maximum frequency with which Config runs evaluations for a rule. This is
+     * for an Config managed rule that is triggered at a periodic frequency.</p> 
+     * <p>By default, rules with a periodic trigger are evaluated every 24 hours. To
+     * change the frequency, specify a valid value for the
      * <code>MaximumExecutionFrequency</code> parameter.</p> 
      */
     inline OrganizationManagedRuleMetadata& WithMaximumExecutionFrequency(const MaximumExecutionFrequency& value) { SetMaximumExecutionFrequency(value); return *this;}
 
     /**
-     * <p>The maximum frequency with which Config runs evaluations for a rule. You are
-     * using an Config managed rule that is triggered at a periodic frequency.</p>
-     *  <p>By default, rules with a periodic trigger are evaluated every 24
-     * hours. To change the frequency, specify a valid value for the
+     * <p>The maximum frequency with which Config runs evaluations for a rule. This is
+     * for an Config managed rule that is triggered at a periodic frequency.</p> 
+     * <p>By default, rules with a periodic trigger are evaluated every 24 hours. To
+     * change the frequency, specify a valid value for the
      * <code>MaximumExecutionFrequency</code> parameter.</p> 
      */
     inline OrganizationManagedRuleMetadata& WithMaximumExecutionFrequency(MaximumExecutionFrequency&& value) { SetMaximumExecutionFrequency(std::move(value)); return *this;}

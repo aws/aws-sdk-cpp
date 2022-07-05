@@ -13,6 +13,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/quicksight/model/CancelIngestionResult.h>
 #include <aws/quicksight/model/CreateAccountCustomizationResult.h>
+#include <aws/quicksight/model/CreateAccountSubscriptionResult.h>
 #include <aws/quicksight/model/CreateAnalysisResult.h>
 #include <aws/quicksight/model/CreateDashboardResult.h>
 #include <aws/quicksight/model/CreateDataSetResult.h>
@@ -47,6 +48,7 @@
 #include <aws/quicksight/model/DeleteUserByPrincipalIdResult.h>
 #include <aws/quicksight/model/DescribeAccountCustomizationResult.h>
 #include <aws/quicksight/model/DescribeAccountSettingsResult.h>
+#include <aws/quicksight/model/DescribeAccountSubscriptionResult.h>
 #include <aws/quicksight/model/DescribeAnalysisResult.h>
 #include <aws/quicksight/model/DescribeAnalysisPermissionsResult.h>
 #include <aws/quicksight/model/DescribeDashboardResult.h>
@@ -170,6 +172,7 @@ namespace Model
 {
         class CancelIngestionRequest;
         class CreateAccountCustomizationRequest;
+        class CreateAccountSubscriptionRequest;
         class CreateAnalysisRequest;
         class CreateDashboardRequest;
         class CreateDataSetRequest;
@@ -204,6 +207,7 @@ namespace Model
         class DeleteUserByPrincipalIdRequest;
         class DescribeAccountCustomizationRequest;
         class DescribeAccountSettingsRequest;
+        class DescribeAccountSubscriptionRequest;
         class DescribeAnalysisRequest;
         class DescribeAnalysisPermissionsRequest;
         class DescribeDashboardRequest;
@@ -289,6 +293,7 @@ namespace Model
 
         typedef Aws::Utils::Outcome<CancelIngestionResult, QuickSightError> CancelIngestionOutcome;
         typedef Aws::Utils::Outcome<CreateAccountCustomizationResult, QuickSightError> CreateAccountCustomizationOutcome;
+        typedef Aws::Utils::Outcome<CreateAccountSubscriptionResult, QuickSightError> CreateAccountSubscriptionOutcome;
         typedef Aws::Utils::Outcome<CreateAnalysisResult, QuickSightError> CreateAnalysisOutcome;
         typedef Aws::Utils::Outcome<CreateDashboardResult, QuickSightError> CreateDashboardOutcome;
         typedef Aws::Utils::Outcome<CreateDataSetResult, QuickSightError> CreateDataSetOutcome;
@@ -323,6 +328,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteUserByPrincipalIdResult, QuickSightError> DeleteUserByPrincipalIdOutcome;
         typedef Aws::Utils::Outcome<DescribeAccountCustomizationResult, QuickSightError> DescribeAccountCustomizationOutcome;
         typedef Aws::Utils::Outcome<DescribeAccountSettingsResult, QuickSightError> DescribeAccountSettingsOutcome;
+        typedef Aws::Utils::Outcome<DescribeAccountSubscriptionResult, QuickSightError> DescribeAccountSubscriptionOutcome;
         typedef Aws::Utils::Outcome<DescribeAnalysisResult, QuickSightError> DescribeAnalysisOutcome;
         typedef Aws::Utils::Outcome<DescribeAnalysisPermissionsResult, QuickSightError> DescribeAnalysisPermissionsOutcome;
         typedef Aws::Utils::Outcome<DescribeDashboardResult, QuickSightError> DescribeDashboardOutcome;
@@ -408,6 +414,7 @@ namespace Model
 
         typedef std::future<CancelIngestionOutcome> CancelIngestionOutcomeCallable;
         typedef std::future<CreateAccountCustomizationOutcome> CreateAccountCustomizationOutcomeCallable;
+        typedef std::future<CreateAccountSubscriptionOutcome> CreateAccountSubscriptionOutcomeCallable;
         typedef std::future<CreateAnalysisOutcome> CreateAnalysisOutcomeCallable;
         typedef std::future<CreateDashboardOutcome> CreateDashboardOutcomeCallable;
         typedef std::future<CreateDataSetOutcome> CreateDataSetOutcomeCallable;
@@ -442,6 +449,7 @@ namespace Model
         typedef std::future<DeleteUserByPrincipalIdOutcome> DeleteUserByPrincipalIdOutcomeCallable;
         typedef std::future<DescribeAccountCustomizationOutcome> DescribeAccountCustomizationOutcomeCallable;
         typedef std::future<DescribeAccountSettingsOutcome> DescribeAccountSettingsOutcomeCallable;
+        typedef std::future<DescribeAccountSubscriptionOutcome> DescribeAccountSubscriptionOutcomeCallable;
         typedef std::future<DescribeAnalysisOutcome> DescribeAnalysisOutcomeCallable;
         typedef std::future<DescribeAnalysisPermissionsOutcome> DescribeAnalysisPermissionsOutcomeCallable;
         typedef std::future<DescribeDashboardOutcome> DescribeDashboardOutcomeCallable;
@@ -530,6 +538,7 @@ namespace Model
 
     typedef std::function<void(const QuickSightClient*, const Model::CancelIngestionRequest&, const Model::CancelIngestionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelIngestionResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::CreateAccountCustomizationRequest&, const Model::CreateAccountCustomizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAccountCustomizationResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::CreateAccountSubscriptionRequest&, const Model::CreateAccountSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAccountSubscriptionResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::CreateAnalysisRequest&, const Model::CreateAnalysisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAnalysisResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::CreateDashboardRequest&, const Model::CreateDashboardOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDashboardResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::CreateDataSetRequest&, const Model::CreateDataSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataSetResponseReceivedHandler;
@@ -564,6 +573,7 @@ namespace Model
     typedef std::function<void(const QuickSightClient*, const Model::DeleteUserByPrincipalIdRequest&, const Model::DeleteUserByPrincipalIdOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserByPrincipalIdResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeAccountCustomizationRequest&, const Model::DescribeAccountCustomizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountCustomizationResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeAccountSettingsRequest&, const Model::DescribeAccountSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountSettingsResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::DescribeAccountSubscriptionRequest&, const Model::DescribeAccountSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountSubscriptionResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeAnalysisRequest&, const Model::DescribeAnalysisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAnalysisResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeAnalysisPermissionsRequest&, const Model::DescribeAnalysisPermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAnalysisPermissionsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeDashboardRequest&, const Model::DescribeDashboardOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDashboardResponseReceivedHandler;
@@ -700,7 +710,7 @@ namespace Model
         virtual void CancelIngestionAsync(const Model::CancelIngestionRequest& request, const CancelIngestionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates Amazon QuickSight customizations the current Amazon Web Services
+         * <p>Creates Amazon QuickSight customizations for the current Amazon Web Services
          * Region. Currently, you can add a custom default theme by using the
          * <code>CreateAccountCustomization</code> or
          * <code>UpdateAccountCustomization</code> API operation. To further customize
@@ -737,6 +747,50 @@ namespace Model
          * An Async wrapper for CreateAccountCustomization that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateAccountCustomizationAsync(const Model::CreateAccountCustomizationRequest& request, const CreateAccountCustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates an Amazon QuickSight account, or subscribes to Amazon QuickSight
+         * Q.</p> <p>The Amazon Web Services Region for the account is derived from what is
+         * configured in the CLI or SDK. This operation isn't supported in the US East
+         * (Ohio) Region, South America (Sao Paulo) Region, or Asia Pacific (Singapore)
+         * Region. </p> <p>Before you use this operation, make sure that you can connect to
+         * an existing Amazon Web Services account. If you don't have an Amazon Web
+         * Services account, see <a
+         * href="https://docs.aws.amazon.com/quicksight/latest/user/setting-up-aws-sign-up.html">Sign
+         * up for Amazon Web Services</a> in the <i>Amazon QuickSight User Guide</i>. The
+         * person who signs up for Amazon QuickSight needs to have the correct Identity and
+         * Access Management (IAM) permissions. For more information, see <a
+         * href="https://docs.aws.amazon.com/quicksight/latest/user/iam-policy-examples.html">IAM
+         * Policy Examples for Amazon QuickSight</a> in the <i>Amazon QuickSight User
+         * Guide</i>.</p> <p>If your IAM policy includes both the <code>Subscribe</code>
+         * and <code>CreateAccountSubscription</code> actions, make sure that both actions
+         * are set to <code>Allow</code>. If either action is set to <code>Deny</code>, the
+         * <code>Deny</code> action prevails and your API call fails.</p> <p>You can't pass
+         * an existing IAM role to access other Amazon Web Services services using this API
+         * operation. To pass your existing IAM role to Amazon QuickSight, see <a
+         * href="https://docs.aws.amazon.com/quicksight/latest/user/security_iam_service-with-iam.html#security-create-iam-role">Passing
+         * IAM roles to Amazon QuickSight</a> in the <i>Amazon QuickSight User
+         * Guide</i>.</p> <p>You can't set default resource access on the new account from
+         * the Amazon QuickSight API. Instead, add default resource access from the Amazon
+         * QuickSight console. For more information about setting default resource access
+         * to Amazon Web Services services, see <a
+         * href="https://docs.aws.amazon.com/quicksight/latest/user/scoping-policies-defaults.html">Setting
+         * default resource access to Amazon Web Services services</a> in the <i>Amazon
+         * QuickSight User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateAccountSubscription">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateAccountSubscriptionOutcome CreateAccountSubscription(const Model::CreateAccountSubscriptionRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateAccountSubscription that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateAccountSubscriptionOutcomeCallable CreateAccountSubscriptionCallable(const Model::CreateAccountSubscriptionRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateAccountSubscription that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateAccountSubscriptionAsync(const Model::CreateAccountSubscriptionRequest& request, const CreateAccountSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an analysis in Amazon QuickSight.</p><p><h3>See Also:</h3>   <a
@@ -1436,6 +1490,27 @@ namespace Model
         virtual void DescribeAccountSettingsAsync(const Model::DescribeAccountSettingsRequest& request, const DescribeAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Use the DescribeAccountSubscription operation to receive a description of a
+         * Amazon QuickSight account's subscription. A successful API call returns an
+         * <code>AccountInfo</code> object that includes an account's name, subscription
+         * status, authentication type, edition, and notification email
+         * address.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAccountSubscription">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeAccountSubscriptionOutcome DescribeAccountSubscription(const Model::DescribeAccountSubscriptionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeAccountSubscription that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeAccountSubscriptionOutcomeCallable DescribeAccountSubscriptionCallable(const Model::DescribeAccountSubscriptionRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeAccountSubscription that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeAccountSubscriptionAsync(const Model::DescribeAccountSubscriptionRequest& request, const DescribeAccountSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Provides a summary of the metadata for an analysis.</p><p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAnalysis">AWS
@@ -1870,10 +1945,10 @@ namespace Model
          * </li> <li> <p>The URL validity period should not be confused with the actual
          * session lifetime that can be customized using the <code> <a
          * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForAnonymousUser.html#QS-GenerateEmbedUrlForAnonymousUser-request-SessionLifetimeInMinutes">SessionLifetimeInMinutes</a>
-         * </code> parameter.</p> <p>The resulting user session is valid for 15 minutes
-         * (minimum) to 10 hours (maximum). The default session duration is 10 hours. </p>
-         * </li> <li> <p>You are charged only when the URL is used or there is interaction
-         * with Amazon QuickSight.</p> </li> </ul> <p>For more information, see <a
+         * </code> parameter. The resulting user session is valid for 15 minutes (minimum)
+         * to 10 hours (maximum). The default session duration is 10 hours.</p> </li> <li>
+         * <p>You are charged only when the URL is used or there is interaction with Amazon
+         * QuickSight.</p> </li> </ul> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedded
          * Analytics</a> in the <i>Amazon QuickSight User Guide</i>.</p> <p>For more
          * information about the high-level steps for embedding and for an interactive demo
@@ -1932,16 +2007,18 @@ namespace Model
         virtual void GenerateEmbedUrlForRegisteredUserAsync(const Model::GenerateEmbedUrlForRegisteredUserRequest& request, const GenerateEmbedUrlForRegisteredUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Generates a session URL and authorization code that you can use to embed an
-         * Amazon Amazon QuickSight read-only dashboard in your web server code. Before you
-         * use this command, make sure that you have configured the dashboards and
-         * permissions. </p> <p>Currently, you can use <code>GetDashboardEmbedURL</code>
-         * only from the server, not from the user's browser. The following rules apply to
-         * the combination of URL and authorization code:</p> <ul> <li> <p>They must be
-         * used together.</p> </li> <li> <p>They can be used one time only.</p> </li> <li>
-         * <p>They are valid for 5 minutes after you run this command.</p> </li> <li>
-         * <p>The resulting user session is valid for 10 hours.</p> </li> </ul> <p>For more
-         * information, see <a
+         * <p>Generates a temporary session URL and authorization code that you can use to
+         * embed an Amazon QuickSight read-only dashboard in your website or application.
+         * Before you use this command, make sure that you have configured the dashboards
+         * and permissions. </p> <p>Currently, you can use
+         * <code>GetDashboardEmbedURL</code> only from the server, not from the user's
+         * browser. The following rules apply to the generated URL:</p> <ul> <li> <p>They
+         * must be used together.</p> </li> <li> <p>They can be used one time only.</p>
+         * </li> <li> <p>They are valid for 5 minutes after you run this command.</p> </li>
+         * <li> <p>The resulting user session is valid for 15 minutes (default) up to 10
+         * hours (maximum). You can use the optional <code>SessionLifetimeInMinutes</code>
+         * parameter to customi session duration.</p> </li> </ul> <p>For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics-deprecated.html">Embedding
          * Analytics Using GetDashboardEmbedUrl</a> in the <i>Amazon QuickSight User
          * Guide</i>.</p> <p>For more information about the high-level steps for embedding
@@ -2554,12 +2631,12 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates Amazon QuickSight customizations the current Amazon Web Services
-         * Region. Currently, the only customization you can use is a theme.</p> <p>You can
-         * use customizations for your Amazon Web Services account or, if you specify a
-         * namespace, for a Amazon QuickSight namespace instead. Customizations that apply
-         * to a namespace override customizations that apply to an Amazon Web Services
-         * account. To find out which customizations apply, use the
+         * <p>Updates Amazon QuickSight customizations for the current Amazon Web Services
+         * Region. Currently, the only customization that you can use is a theme.</p>
+         * <p>You can use customizations for your Amazon Web Services account or, if you
+         * specify a namespace, for a Amazon QuickSight namespace instead. Customizations
+         * that apply to a namespace override customizations that apply to an Amazon Web
+         * Services account. To find out which customizations apply, use the
          * <code>DescribeAccountCustomization</code> API operation. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateAccountCustomization">AWS
@@ -2850,14 +2927,16 @@ namespace Model
         virtual void UpdateIpRestrictionAsync(const Model::UpdateIpRestrictionRequest& request, const UpdateIpRestrictionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Use the UpdatePublicSharingSettings operation to enable or disable the public
-         * sharing settings of an Amazon QuickSight dashboard.</p> <p>To use this
-         * operation, enable session capacity pricing on your Amazon QuickSight
-         * account.</p> <p>Before you can enable public sharing on your account, you need
-         * to allow public sharing permissions to an administrative user in the IAM
-         * console. For more information on using IAM with Amazon QuickSight, see <a
+         * <p>Use the <code>UpdatePublicSharingSettings</code> operation to turn on or turn
+         * off the public sharing settings of an Amazon QuickSight dashboard.</p> <p>To use
+         * this operation, turn on session capacity pricing for your Amazon QuickSight
+         * account.</p> <p>Before you can turn on public sharing on your account, make sure
+         * to give public sharing permissions to an administrative user in the Identity and
+         * Access Management (IAM) console. For more information on using IAM with Amazon
+         * QuickSight, see <a
          * href="https://docs.aws.amazon.com/quicksight/latest/user/security_iam_service-with-iam.html">Using
-         * Amazon QuickSight with IAM</a>.</p><p><h3>See Also:</h3>   <a
+         * Amazon QuickSight with IAM</a> in the <i>Amazon QuickSight User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdatePublicSharingSettings">AWS
          * API Reference</a></p>
          */
@@ -3021,6 +3100,7 @@ namespace Model
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void CancelIngestionAsyncHelper(const Model::CancelIngestionRequest& request, const CancelIngestionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateAccountCustomizationAsyncHelper(const Model::CreateAccountCustomizationRequest& request, const CreateAccountCustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateAccountSubscriptionAsyncHelper(const Model::CreateAccountSubscriptionRequest& request, const CreateAccountSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateAnalysisAsyncHelper(const Model::CreateAnalysisRequest& request, const CreateAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDashboardAsyncHelper(const Model::CreateDashboardRequest& request, const CreateDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDataSetAsyncHelper(const Model::CreateDataSetRequest& request, const CreateDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3055,6 +3135,7 @@ namespace Model
         void DeleteUserByPrincipalIdAsyncHelper(const Model::DeleteUserByPrincipalIdRequest& request, const DeleteUserByPrincipalIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAccountCustomizationAsyncHelper(const Model::DescribeAccountCustomizationRequest& request, const DescribeAccountCustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAccountSettingsAsyncHelper(const Model::DescribeAccountSettingsRequest& request, const DescribeAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeAccountSubscriptionAsyncHelper(const Model::DescribeAccountSubscriptionRequest& request, const DescribeAccountSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAnalysisAsyncHelper(const Model::DescribeAnalysisRequest& request, const DescribeAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAnalysisPermissionsAsyncHelper(const Model::DescribeAnalysisPermissionsRequest& request, const DescribeAnalysisPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDashboardAsyncHelper(const Model::DescribeDashboardRequest& request, const DescribeDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

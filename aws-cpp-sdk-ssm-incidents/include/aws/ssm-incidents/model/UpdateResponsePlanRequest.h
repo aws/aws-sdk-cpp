@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm-incidents/model/ChatChannel.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/ssm-incidents/model/Action.h>
 #include <aws/ssm-incidents/model/NotificationTargetItem.h>
 #include <utility>
@@ -512,6 +513,98 @@ namespace Model
 
 
     /**
+     * <p>Tags to apply to an incident when calling the <code>StartIncident</code> API
+     * action. To call this action, you must also have permission to call the
+     * <code>TagResource</code> API action for the incident record resource.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetIncidentTemplateTags() const{ return m_incidentTemplateTags; }
+
+    /**
+     * <p>Tags to apply to an incident when calling the <code>StartIncident</code> API
+     * action. To call this action, you must also have permission to call the
+     * <code>TagResource</code> API action for the incident record resource.</p>
+     */
+    inline bool IncidentTemplateTagsHasBeenSet() const { return m_incidentTemplateTagsHasBeenSet; }
+
+    /**
+     * <p>Tags to apply to an incident when calling the <code>StartIncident</code> API
+     * action. To call this action, you must also have permission to call the
+     * <code>TagResource</code> API action for the incident record resource.</p>
+     */
+    inline void SetIncidentTemplateTags(const Aws::Map<Aws::String, Aws::String>& value) { m_incidentTemplateTagsHasBeenSet = true; m_incidentTemplateTags = value; }
+
+    /**
+     * <p>Tags to apply to an incident when calling the <code>StartIncident</code> API
+     * action. To call this action, you must also have permission to call the
+     * <code>TagResource</code> API action for the incident record resource.</p>
+     */
+    inline void SetIncidentTemplateTags(Aws::Map<Aws::String, Aws::String>&& value) { m_incidentTemplateTagsHasBeenSet = true; m_incidentTemplateTags = std::move(value); }
+
+    /**
+     * <p>Tags to apply to an incident when calling the <code>StartIncident</code> API
+     * action. To call this action, you must also have permission to call the
+     * <code>TagResource</code> API action for the incident record resource.</p>
+     */
+    inline UpdateResponsePlanRequest& WithIncidentTemplateTags(const Aws::Map<Aws::String, Aws::String>& value) { SetIncidentTemplateTags(value); return *this;}
+
+    /**
+     * <p>Tags to apply to an incident when calling the <code>StartIncident</code> API
+     * action. To call this action, you must also have permission to call the
+     * <code>TagResource</code> API action for the incident record resource.</p>
+     */
+    inline UpdateResponsePlanRequest& WithIncidentTemplateTags(Aws::Map<Aws::String, Aws::String>&& value) { SetIncidentTemplateTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Tags to apply to an incident when calling the <code>StartIncident</code> API
+     * action. To call this action, you must also have permission to call the
+     * <code>TagResource</code> API action for the incident record resource.</p>
+     */
+    inline UpdateResponsePlanRequest& AddIncidentTemplateTags(const Aws::String& key, const Aws::String& value) { m_incidentTemplateTagsHasBeenSet = true; m_incidentTemplateTags.emplace(key, value); return *this; }
+
+    /**
+     * <p>Tags to apply to an incident when calling the <code>StartIncident</code> API
+     * action. To call this action, you must also have permission to call the
+     * <code>TagResource</code> API action for the incident record resource.</p>
+     */
+    inline UpdateResponsePlanRequest& AddIncidentTemplateTags(Aws::String&& key, const Aws::String& value) { m_incidentTemplateTagsHasBeenSet = true; m_incidentTemplateTags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Tags to apply to an incident when calling the <code>StartIncident</code> API
+     * action. To call this action, you must also have permission to call the
+     * <code>TagResource</code> API action for the incident record resource.</p>
+     */
+    inline UpdateResponsePlanRequest& AddIncidentTemplateTags(const Aws::String& key, Aws::String&& value) { m_incidentTemplateTagsHasBeenSet = true; m_incidentTemplateTags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Tags to apply to an incident when calling the <code>StartIncident</code> API
+     * action. To call this action, you must also have permission to call the
+     * <code>TagResource</code> API action for the incident record resource.</p>
+     */
+    inline UpdateResponsePlanRequest& AddIncidentTemplateTags(Aws::String&& key, Aws::String&& value) { m_incidentTemplateTagsHasBeenSet = true; m_incidentTemplateTags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>Tags to apply to an incident when calling the <code>StartIncident</code> API
+     * action. To call this action, you must also have permission to call the
+     * <code>TagResource</code> API action for the incident record resource.</p>
+     */
+    inline UpdateResponsePlanRequest& AddIncidentTemplateTags(const char* key, Aws::String&& value) { m_incidentTemplateTagsHasBeenSet = true; m_incidentTemplateTags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Tags to apply to an incident when calling the <code>StartIncident</code> API
+     * action. To call this action, you must also have permission to call the
+     * <code>TagResource</code> API action for the incident record resource.</p>
+     */
+    inline UpdateResponsePlanRequest& AddIncidentTemplateTags(Aws::String&& key, const char* value) { m_incidentTemplateTagsHasBeenSet = true; m_incidentTemplateTags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Tags to apply to an incident when calling the <code>StartIncident</code> API
+     * action. To call this action, you must also have permission to call the
+     * <code>TagResource</code> API action for the incident record resource.</p>
+     */
+    inline UpdateResponsePlanRequest& AddIncidentTemplateTags(const char* key, const char* value) { m_incidentTemplateTagsHasBeenSet = true; m_incidentTemplateTags.emplace(key, value); return *this; }
+
+
+    /**
      * <p>The short format name of the incident. The title can't contain spaces.</p>
      */
     inline const Aws::String& GetIncidentTemplateTitle() const{ return m_incidentTemplateTitle; }
@@ -582,6 +675,9 @@ namespace Model
 
     Aws::String m_incidentTemplateSummary;
     bool m_incidentTemplateSummaryHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_incidentTemplateTags;
+    bool m_incidentTemplateTagsHasBeenSet;
 
     Aws::String m_incidentTemplateTitle;
     bool m_incidentTemplateTitleHasBeenSet;

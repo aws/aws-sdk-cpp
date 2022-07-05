@@ -382,7 +382,7 @@ namespace Model
     /**
      * <p>The maximum frequency with which Config runs evaluations for a rule. You can
      * specify a value for <code>MaximumExecutionFrequency</code> when:</p> <ul> <li>
-     * <p>You are using an Config managed rule that is triggered at a periodic
+     * <p>This is for an Config managed rule that is triggered at a periodic
      * frequency.</p> </li> <li> <p>Your custom rule is triggered when Config delivers
      * the configuration snapshot. For more information, see
      * <a>ConfigSnapshotDeliveryProperties</a>.</p> </li> </ul>  <p>By default,
@@ -395,7 +395,7 @@ namespace Model
     /**
      * <p>The maximum frequency with which Config runs evaluations for a rule. You can
      * specify a value for <code>MaximumExecutionFrequency</code> when:</p> <ul> <li>
-     * <p>You are using an Config managed rule that is triggered at a periodic
+     * <p>This is for an Config managed rule that is triggered at a periodic
      * frequency.</p> </li> <li> <p>Your custom rule is triggered when Config delivers
      * the configuration snapshot. For more information, see
      * <a>ConfigSnapshotDeliveryProperties</a>.</p> </li> </ul>  <p>By default,
@@ -408,7 +408,7 @@ namespace Model
     /**
      * <p>The maximum frequency with which Config runs evaluations for a rule. You can
      * specify a value for <code>MaximumExecutionFrequency</code> when:</p> <ul> <li>
-     * <p>You are using an Config managed rule that is triggered at a periodic
+     * <p>This is for an Config managed rule that is triggered at a periodic
      * frequency.</p> </li> <li> <p>Your custom rule is triggered when Config delivers
      * the configuration snapshot. For more information, see
      * <a>ConfigSnapshotDeliveryProperties</a>.</p> </li> </ul>  <p>By default,
@@ -421,7 +421,7 @@ namespace Model
     /**
      * <p>The maximum frequency with which Config runs evaluations for a rule. You can
      * specify a value for <code>MaximumExecutionFrequency</code> when:</p> <ul> <li>
-     * <p>You are using an Config managed rule that is triggered at a periodic
+     * <p>This is for an Config managed rule that is triggered at a periodic
      * frequency.</p> </li> <li> <p>Your custom rule is triggered when Config delivers
      * the configuration snapshot. For more information, see
      * <a>ConfigSnapshotDeliveryProperties</a>.</p> </li> </ul>  <p>By default,
@@ -434,7 +434,7 @@ namespace Model
     /**
      * <p>The maximum frequency with which Config runs evaluations for a rule. You can
      * specify a value for <code>MaximumExecutionFrequency</code> when:</p> <ul> <li>
-     * <p>You are using an Config managed rule that is triggered at a periodic
+     * <p>This is for an Config managed rule that is triggered at a periodic
      * frequency.</p> </li> <li> <p>Your custom rule is triggered when Config delivers
      * the configuration snapshot. For more information, see
      * <a>ConfigSnapshotDeliveryProperties</a>.</p> </li> </ul>  <p>By default,
@@ -447,7 +447,7 @@ namespace Model
     /**
      * <p>The maximum frequency with which Config runs evaluations for a rule. You can
      * specify a value for <code>MaximumExecutionFrequency</code> when:</p> <ul> <li>
-     * <p>You are using an Config managed rule that is triggered at a periodic
+     * <p>This is for an Config managed rule that is triggered at a periodic
      * frequency.</p> </li> <li> <p>Your custom rule is triggered when Config delivers
      * the configuration snapshot. For more information, see
      * <a>ConfigSnapshotDeliveryProperties</a>.</p> </li> </ul>  <p>By default,

@@ -265,7 +265,7 @@ namespace Model
      * <p>The configuration details for embedding the Q search bar.</p> <p>For more
      * information about embedding the Q search bar, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding
-     * Overview</a>.</p>
+     * Overview</a> in the <i>Amazon QuickSight User Guide</i>.</p>
      */
     inline const RegisteredUserQSearchBarEmbeddingConfiguration& GetQSearchBar() const{ return m_qSearchBar; }
 
@@ -273,7 +273,7 @@ namespace Model
      * <p>The configuration details for embedding the Q search bar.</p> <p>For more
      * information about embedding the Q search bar, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding
-     * Overview</a>.</p>
+     * Overview</a> in the <i>Amazon QuickSight User Guide</i>.</p>
      */
     inline bool QSearchBarHasBeenSet() const { return m_qSearchBarHasBeenSet; }
 
@@ -281,7 +281,7 @@ namespace Model
      * <p>The configuration details for embedding the Q search bar.</p> <p>For more
      * information about embedding the Q search bar, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding
-     * Overview</a>.</p>
+     * Overview</a> in the <i>Amazon QuickSight User Guide</i>.</p>
      */
     inline void SetQSearchBar(const RegisteredUserQSearchBarEmbeddingConfiguration& value) { m_qSearchBarHasBeenSet = true; m_qSearchBar = value; }
 
@@ -289,7 +289,7 @@ namespace Model
      * <p>The configuration details for embedding the Q search bar.</p> <p>For more
      * information about embedding the Q search bar, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding
-     * Overview</a>.</p>
+     * Overview</a> in the <i>Amazon QuickSight User Guide</i>.</p>
      */
     inline void SetQSearchBar(RegisteredUserQSearchBarEmbeddingConfiguration&& value) { m_qSearchBarHasBeenSet = true; m_qSearchBar = std::move(value); }
 
@@ -297,7 +297,7 @@ namespace Model
      * <p>The configuration details for embedding the Q search bar.</p> <p>For more
      * information about embedding the Q search bar, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding
-     * Overview</a>.</p>
+     * Overview</a> in the <i>Amazon QuickSight User Guide</i>.</p>
      */
     inline RegisteredUserEmbeddingExperienceConfiguration& WithQSearchBar(const RegisteredUserQSearchBarEmbeddingConfiguration& value) { SetQSearchBar(value); return *this;}
 
@@ -305,7 +305,7 @@ namespace Model
      * <p>The configuration details for embedding the Q search bar.</p> <p>For more
      * information about embedding the Q search bar, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding
-     * Overview</a>.</p>
+     * Overview</a> in the <i>Amazon QuickSight User Guide</i>.</p>
      */
     inline RegisteredUserEmbeddingExperienceConfiguration& WithQSearchBar(RegisteredUserQSearchBarEmbeddingConfiguration&& value) { SetQSearchBar(std::move(value)); return *this;}
 

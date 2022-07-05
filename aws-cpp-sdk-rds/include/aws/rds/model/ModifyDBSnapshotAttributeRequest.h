@@ -86,7 +86,7 @@ namespace Model
      * authorization for other Amazon Web Services accounts to copy or restore a manual
      * DB snapshot, set this value to <code>restore</code>.</p>  <p>To view the
      * list of attributes available to modify, use the
-     * <a>DescribeDBSnapshotAttributes</a> API operation.</p> 
+     * <a>DescribeDBSnapshotAttributes</a> API action.</p> 
      */
     inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
 
@@ -95,7 +95,7 @@ namespace Model
      * authorization for other Amazon Web Services accounts to copy or restore a manual
      * DB snapshot, set this value to <code>restore</code>.</p>  <p>To view the
      * list of attributes available to modify, use the
-     * <a>DescribeDBSnapshotAttributes</a> API operation.</p> 
+     * <a>DescribeDBSnapshotAttributes</a> API action.</p> 
      */
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
 
@@ -104,7 +104,7 @@ namespace Model
      * authorization for other Amazon Web Services accounts to copy or restore a manual
      * DB snapshot, set this value to <code>restore</code>.</p>  <p>To view the
      * list of attributes available to modify, use the
-     * <a>DescribeDBSnapshotAttributes</a> API operation.</p> 
+     * <a>DescribeDBSnapshotAttributes</a> API action.</p> 
      */
     inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
 
@@ -113,7 +113,7 @@ namespace Model
      * authorization for other Amazon Web Services accounts to copy or restore a manual
      * DB snapshot, set this value to <code>restore</code>.</p>  <p>To view the
      * list of attributes available to modify, use the
-     * <a>DescribeDBSnapshotAttributes</a> API operation.</p> 
+     * <a>DescribeDBSnapshotAttributes</a> API action.</p> 
      */
     inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
 
@@ -122,7 +122,7 @@ namespace Model
      * authorization for other Amazon Web Services accounts to copy or restore a manual
      * DB snapshot, set this value to <code>restore</code>.</p>  <p>To view the
      * list of attributes available to modify, use the
-     * <a>DescribeDBSnapshotAttributes</a> API operation.</p> 
+     * <a>DescribeDBSnapshotAttributes</a> API action.</p> 
      */
     inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
 
@@ -131,7 +131,7 @@ namespace Model
      * authorization for other Amazon Web Services accounts to copy or restore a manual
      * DB snapshot, set this value to <code>restore</code>.</p>  <p>To view the
      * list of attributes available to modify, use the
-     * <a>DescribeDBSnapshotAttributes</a> API operation.</p> 
+     * <a>DescribeDBSnapshotAttributes</a> API action.</p> 
      */
     inline ModifyDBSnapshotAttributeRequest& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
 
@@ -140,7 +140,7 @@ namespace Model
      * authorization for other Amazon Web Services accounts to copy or restore a manual
      * DB snapshot, set this value to <code>restore</code>.</p>  <p>To view the
      * list of attributes available to modify, use the
-     * <a>DescribeDBSnapshotAttributes</a> API operation.</p> 
+     * <a>DescribeDBSnapshotAttributes</a> API action.</p> 
      */
     inline ModifyDBSnapshotAttributeRequest& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
 
@@ -149,7 +149,7 @@ namespace Model
      * authorization for other Amazon Web Services accounts to copy or restore a manual
      * DB snapshot, set this value to <code>restore</code>.</p>  <p>To view the
      * list of attributes available to modify, use the
-     * <a>DescribeDBSnapshotAttributes</a> API operation.</p> 
+     * <a>DescribeDBSnapshotAttributes</a> API action.</p> 
      */
     inline ModifyDBSnapshotAttributeRequest& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
 
