@@ -379,37 +379,49 @@ namespace Model
 
     /**
      * <p>A structure that contains the configuration for individual canary runs, such
-     * as timeout value.</p>
+     * as timeout value and environment variables.</p>  <p>The environment
+     * variables keys and values are not encrypted. Do not store sensitive information
+     * in this field.</p> 
      */
     inline const CanaryRunConfigInput& GetRunConfig() const{ return m_runConfig; }
 
     /**
      * <p>A structure that contains the configuration for individual canary runs, such
-     * as timeout value.</p>
+     * as timeout value and environment variables.</p>  <p>The environment
+     * variables keys and values are not encrypted. Do not store sensitive information
+     * in this field.</p> 
      */
     inline bool RunConfigHasBeenSet() const { return m_runConfigHasBeenSet; }
 
     /**
      * <p>A structure that contains the configuration for individual canary runs, such
-     * as timeout value.</p>
+     * as timeout value and environment variables.</p>  <p>The environment
+     * variables keys and values are not encrypted. Do not store sensitive information
+     * in this field.</p> 
      */
     inline void SetRunConfig(const CanaryRunConfigInput& value) { m_runConfigHasBeenSet = true; m_runConfig = value; }
 
     /**
      * <p>A structure that contains the configuration for individual canary runs, such
-     * as timeout value.</p>
+     * as timeout value and environment variables.</p>  <p>The environment
+     * variables keys and values are not encrypted. Do not store sensitive information
+     * in this field.</p> 
      */
     inline void SetRunConfig(CanaryRunConfigInput&& value) { m_runConfigHasBeenSet = true; m_runConfig = std::move(value); }
 
     /**
      * <p>A structure that contains the configuration for individual canary runs, such
-     * as timeout value.</p>
+     * as timeout value and environment variables.</p>  <p>The environment
+     * variables keys and values are not encrypted. Do not store sensitive information
+     * in this field.</p> 
      */
     inline CreateCanaryRequest& WithRunConfig(const CanaryRunConfigInput& value) { SetRunConfig(value); return *this;}
 
     /**
      * <p>A structure that contains the configuration for individual canary runs, such
-     * as timeout value.</p>
+     * as timeout value and environment variables.</p>  <p>The environment
+     * variables keys and values are not encrypted. Do not store sensitive information
+     * in this field.</p> 
      */
     inline CreateCanaryRequest& WithRunConfig(CanaryRunConfigInput&& value) { SetRunConfig(std::move(value)); return *this;}
 

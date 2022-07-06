@@ -35,57 +35,57 @@ namespace Model
 
     /**
      * <p>A token that indicates that there is more data available. You can use this
-     * token in a subsequent <code>DescribeCanaries</code> operation to retrieve the
-     * next set of results.</p>
+     * token in a subsequent <code>DescribeCanariesLastRun</code> operation to retrieve
+     * the next set of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
      * <p>A token that indicates that there is more data available. You can use this
-     * token in a subsequent <code>DescribeCanaries</code> operation to retrieve the
-     * next set of results.</p>
+     * token in a subsequent <code>DescribeCanariesLastRun</code> operation to retrieve
+     * the next set of results.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>A token that indicates that there is more data available. You can use this
-     * token in a subsequent <code>DescribeCanaries</code> operation to retrieve the
-     * next set of results.</p>
+     * token in a subsequent <code>DescribeCanariesLastRun</code> operation to retrieve
+     * the next set of results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
      * <p>A token that indicates that there is more data available. You can use this
-     * token in a subsequent <code>DescribeCanaries</code> operation to retrieve the
-     * next set of results.</p>
+     * token in a subsequent <code>DescribeCanariesLastRun</code> operation to retrieve
+     * the next set of results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>A token that indicates that there is more data available. You can use this
-     * token in a subsequent <code>DescribeCanaries</code> operation to retrieve the
-     * next set of results.</p>
+     * token in a subsequent <code>DescribeCanariesLastRun</code> operation to retrieve
+     * the next set of results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
      * <p>A token that indicates that there is more data available. You can use this
-     * token in a subsequent <code>DescribeCanaries</code> operation to retrieve the
-     * next set of results.</p>
+     * token in a subsequent <code>DescribeCanariesLastRun</code> operation to retrieve
+     * the next set of results.</p>
      */
     inline DescribeCanariesLastRunRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>A token that indicates that there is more data available. You can use this
-     * token in a subsequent <code>DescribeCanaries</code> operation to retrieve the
-     * next set of results.</p>
+     * token in a subsequent <code>DescribeCanariesLastRun</code> operation to retrieve
+     * the next set of results.</p>
      */
     inline DescribeCanariesLastRunRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>A token that indicates that there is more data available. You can use this
-     * token in a subsequent <code>DescribeCanaries</code> operation to retrieve the
-     * next set of results.</p>
+     * token in a subsequent <code>DescribeCanariesLastRun</code> operation to retrieve
+     * the next set of results.</p>
      */
     inline DescribeCanariesLastRunRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

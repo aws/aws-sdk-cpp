@@ -94,58 +94,50 @@ namespace Model
 
 
     /**
-     * <p>The ID of the canary run that produced the screenshots that are used as the
-     * baseline for visual monitoring comparisons during future runs of this
-     * canary.</p>
+     * <p>The ID of the canary run that produced the baseline screenshots that are used
+     * for visual monitoring comparisons by this canary.</p>
      */
     inline const Aws::String& GetBaseCanaryRunId() const{ return m_baseCanaryRunId; }
 
     /**
-     * <p>The ID of the canary run that produced the screenshots that are used as the
-     * baseline for visual monitoring comparisons during future runs of this
-     * canary.</p>
+     * <p>The ID of the canary run that produced the baseline screenshots that are used
+     * for visual monitoring comparisons by this canary.</p>
      */
     inline bool BaseCanaryRunIdHasBeenSet() const { return m_baseCanaryRunIdHasBeenSet; }
 
     /**
-     * <p>The ID of the canary run that produced the screenshots that are used as the
-     * baseline for visual monitoring comparisons during future runs of this
-     * canary.</p>
+     * <p>The ID of the canary run that produced the baseline screenshots that are used
+     * for visual monitoring comparisons by this canary.</p>
      */
     inline void SetBaseCanaryRunId(const Aws::String& value) { m_baseCanaryRunIdHasBeenSet = true; m_baseCanaryRunId = value; }
 
     /**
-     * <p>The ID of the canary run that produced the screenshots that are used as the
-     * baseline for visual monitoring comparisons during future runs of this
-     * canary.</p>
+     * <p>The ID of the canary run that produced the baseline screenshots that are used
+     * for visual monitoring comparisons by this canary.</p>
      */
     inline void SetBaseCanaryRunId(Aws::String&& value) { m_baseCanaryRunIdHasBeenSet = true; m_baseCanaryRunId = std::move(value); }
 
     /**
-     * <p>The ID of the canary run that produced the screenshots that are used as the
-     * baseline for visual monitoring comparisons during future runs of this
-     * canary.</p>
+     * <p>The ID of the canary run that produced the baseline screenshots that are used
+     * for visual monitoring comparisons by this canary.</p>
      */
     inline void SetBaseCanaryRunId(const char* value) { m_baseCanaryRunIdHasBeenSet = true; m_baseCanaryRunId.assign(value); }
 
     /**
-     * <p>The ID of the canary run that produced the screenshots that are used as the
-     * baseline for visual monitoring comparisons during future runs of this
-     * canary.</p>
+     * <p>The ID of the canary run that produced the baseline screenshots that are used
+     * for visual monitoring comparisons by this canary.</p>
      */
     inline VisualReferenceOutput& WithBaseCanaryRunId(const Aws::String& value) { SetBaseCanaryRunId(value); return *this;}
 
     /**
-     * <p>The ID of the canary run that produced the screenshots that are used as the
-     * baseline for visual monitoring comparisons during future runs of this
-     * canary.</p>
+     * <p>The ID of the canary run that produced the baseline screenshots that are used
+     * for visual monitoring comparisons by this canary.</p>
      */
     inline VisualReferenceOutput& WithBaseCanaryRunId(Aws::String&& value) { SetBaseCanaryRunId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the canary run that produced the screenshots that are used as the
-     * baseline for visual monitoring comparisons during future runs of this
-     * canary.</p>
+     * <p>The ID of the canary run that produced the baseline screenshots that are used
+     * for visual monitoring comparisons by this canary.</p>
      */
     inline VisualReferenceOutput& WithBaseCanaryRunId(const char* value) { SetBaseCanaryRunId(value); return *this;}
 

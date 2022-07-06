@@ -20,13 +20,21 @@
 #include <aws/synthetics/SyntheticsClient.h>
 #include <aws/synthetics/SyntheticsEndpoint.h>
 #include <aws/synthetics/SyntheticsErrorMarshaller.h>
+#include <aws/synthetics/model/AssociateResourceRequest.h>
 #include <aws/synthetics/model/CreateCanaryRequest.h>
+#include <aws/synthetics/model/CreateGroupRequest.h>
 #include <aws/synthetics/model/DeleteCanaryRequest.h>
+#include <aws/synthetics/model/DeleteGroupRequest.h>
 #include <aws/synthetics/model/DescribeCanariesRequest.h>
 #include <aws/synthetics/model/DescribeCanariesLastRunRequest.h>
 #include <aws/synthetics/model/DescribeRuntimeVersionsRequest.h>
+#include <aws/synthetics/model/DisassociateResourceRequest.h>
 #include <aws/synthetics/model/GetCanaryRequest.h>
 #include <aws/synthetics/model/GetCanaryRunsRequest.h>
+#include <aws/synthetics/model/GetGroupRequest.h>
+#include <aws/synthetics/model/ListAssociatedGroupsRequest.h>
+#include <aws/synthetics/model/ListGroupResourcesRequest.h>
+#include <aws/synthetics/model/ListGroupsRequest.h>
 #include <aws/synthetics/model/ListTagsForResourceRequest.h>
 #include <aws/synthetics/model/StartCanaryRequest.h>
 #include <aws/synthetics/model/StopCanaryRequest.h>
@@ -107,6 +115,38 @@ void SyntheticsClient::OverrideEndpoint(const Aws::String& endpoint)
   }
 }
 
+AssociateResourceOutcome SyntheticsClient::AssociateResource(const AssociateResourceRequest& request) const
+{
+  if (!request.GroupIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociateResource", "Required field: GroupIdentifier, is not set");
+    return AssociateResourceOutcome(Aws::Client::AWSError<SyntheticsErrors>(SyntheticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupIdentifier]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/group/");
+  uri.AddPathSegment(request.GetGroupIdentifier());
+  uri.AddPathSegments("/associate");
+  return AssociateResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+}
+
+AssociateResourceOutcomeCallable SyntheticsClient::AssociateResourceCallable(const AssociateResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociateResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SyntheticsClient::AssociateResourceAsync(const AssociateResourceRequest& request, const AssociateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AssociateResourceAsyncHelper( request, handler, context ); } );
+}
+
+void SyntheticsClient::AssociateResourceAsyncHelper(const AssociateResourceRequest& request, const AssociateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AssociateResource(request), context);
+}
+
 CreateCanaryOutcome SyntheticsClient::CreateCanary(const CreateCanaryRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -130,6 +170,31 @@ void SyntheticsClient::CreateCanaryAsync(const CreateCanaryRequest& request, con
 void SyntheticsClient::CreateCanaryAsyncHelper(const CreateCanaryRequest& request, const CreateCanaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateCanary(request), context);
+}
+
+CreateGroupOutcome SyntheticsClient::CreateGroup(const CreateGroupRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/group");
+  return CreateGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateGroupOutcomeCallable SyntheticsClient::CreateGroupCallable(const CreateGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SyntheticsClient::CreateGroupAsync(const CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateGroupAsyncHelper( request, handler, context ); } );
+}
+
+void SyntheticsClient::CreateGroupAsyncHelper(const CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateGroup(request), context);
 }
 
 DeleteCanaryOutcome SyntheticsClient::DeleteCanary(const DeleteCanaryRequest& request) const
@@ -161,6 +226,37 @@ void SyntheticsClient::DeleteCanaryAsync(const DeleteCanaryRequest& request, con
 void SyntheticsClient::DeleteCanaryAsyncHelper(const DeleteCanaryRequest& request, const DeleteCanaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteCanary(request), context);
+}
+
+DeleteGroupOutcome SyntheticsClient::DeleteGroup(const DeleteGroupRequest& request) const
+{
+  if (!request.GroupIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteGroup", "Required field: GroupIdentifier, is not set");
+    return DeleteGroupOutcome(Aws::Client::AWSError<SyntheticsErrors>(SyntheticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupIdentifier]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/group/");
+  uri.AddPathSegment(request.GetGroupIdentifier());
+  return DeleteGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteGroupOutcomeCallable SyntheticsClient::DeleteGroupCallable(const DeleteGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SyntheticsClient::DeleteGroupAsync(const DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteGroupAsyncHelper( request, handler, context ); } );
+}
+
+void SyntheticsClient::DeleteGroupAsyncHelper(const DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteGroup(request), context);
 }
 
 DescribeCanariesOutcome SyntheticsClient::DescribeCanaries(const DescribeCanariesRequest& request) const
@@ -238,6 +334,38 @@ void SyntheticsClient::DescribeRuntimeVersionsAsyncHelper(const DescribeRuntimeV
   handler(this, request, DescribeRuntimeVersions(request), context);
 }
 
+DisassociateResourceOutcome SyntheticsClient::DisassociateResource(const DisassociateResourceRequest& request) const
+{
+  if (!request.GroupIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisassociateResource", "Required field: GroupIdentifier, is not set");
+    return DisassociateResourceOutcome(Aws::Client::AWSError<SyntheticsErrors>(SyntheticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupIdentifier]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/group/");
+  uri.AddPathSegment(request.GetGroupIdentifier());
+  uri.AddPathSegments("/disassociate");
+  return DisassociateResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+}
+
+DisassociateResourceOutcomeCallable SyntheticsClient::DisassociateResourceCallable(const DisassociateResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SyntheticsClient::DisassociateResourceAsync(const DisassociateResourceRequest& request, const DisassociateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisassociateResourceAsyncHelper( request, handler, context ); } );
+}
+
+void SyntheticsClient::DisassociateResourceAsyncHelper(const DisassociateResourceRequest& request, const DisassociateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisassociateResource(request), context);
+}
+
 GetCanaryOutcome SyntheticsClient::GetCanary(const GetCanaryRequest& request) const
 {
   if (!request.NameHasBeenSet())
@@ -299,6 +427,126 @@ void SyntheticsClient::GetCanaryRunsAsync(const GetCanaryRunsRequest& request, c
 void SyntheticsClient::GetCanaryRunsAsyncHelper(const GetCanaryRunsRequest& request, const GetCanaryRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetCanaryRuns(request), context);
+}
+
+GetGroupOutcome SyntheticsClient::GetGroup(const GetGroupRequest& request) const
+{
+  if (!request.GroupIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetGroup", "Required field: GroupIdentifier, is not set");
+    return GetGroupOutcome(Aws::Client::AWSError<SyntheticsErrors>(SyntheticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupIdentifier]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/group/");
+  uri.AddPathSegment(request.GetGroupIdentifier());
+  return GetGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetGroupOutcomeCallable SyntheticsClient::GetGroupCallable(const GetGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SyntheticsClient::GetGroupAsync(const GetGroupRequest& request, const GetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetGroupAsyncHelper( request, handler, context ); } );
+}
+
+void SyntheticsClient::GetGroupAsyncHelper(const GetGroupRequest& request, const GetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetGroup(request), context);
+}
+
+ListAssociatedGroupsOutcome SyntheticsClient::ListAssociatedGroups(const ListAssociatedGroupsRequest& request) const
+{
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListAssociatedGroups", "Required field: ResourceArn, is not set");
+    return ListAssociatedGroupsOutcome(Aws::Client::AWSError<SyntheticsErrors>(SyntheticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/resource/");
+  uri.AddPathSegment(request.GetResourceArn());
+  uri.AddPathSegments("/groups");
+  return ListAssociatedGroupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListAssociatedGroupsOutcomeCallable SyntheticsClient::ListAssociatedGroupsCallable(const ListAssociatedGroupsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListAssociatedGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAssociatedGroups(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SyntheticsClient::ListAssociatedGroupsAsync(const ListAssociatedGroupsRequest& request, const ListAssociatedGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListAssociatedGroupsAsyncHelper( request, handler, context ); } );
+}
+
+void SyntheticsClient::ListAssociatedGroupsAsyncHelper(const ListAssociatedGroupsRequest& request, const ListAssociatedGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListAssociatedGroups(request), context);
+}
+
+ListGroupResourcesOutcome SyntheticsClient::ListGroupResources(const ListGroupResourcesRequest& request) const
+{
+  if (!request.GroupIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListGroupResources", "Required field: GroupIdentifier, is not set");
+    return ListGroupResourcesOutcome(Aws::Client::AWSError<SyntheticsErrors>(SyntheticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupIdentifier]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/group/");
+  uri.AddPathSegment(request.GetGroupIdentifier());
+  uri.AddPathSegments("/resources");
+  return ListGroupResourcesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListGroupResourcesOutcomeCallable SyntheticsClient::ListGroupResourcesCallable(const ListGroupResourcesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListGroupResourcesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListGroupResources(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SyntheticsClient::ListGroupResourcesAsync(const ListGroupResourcesRequest& request, const ListGroupResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListGroupResourcesAsyncHelper( request, handler, context ); } );
+}
+
+void SyntheticsClient::ListGroupResourcesAsyncHelper(const ListGroupResourcesRequest& request, const ListGroupResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListGroupResources(request), context);
+}
+
+ListGroupsOutcome SyntheticsClient::ListGroups(const ListGroupsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/groups");
+  return ListGroupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListGroupsOutcomeCallable SyntheticsClient::ListGroupsCallable(const ListGroupsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListGroups(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SyntheticsClient::ListGroupsAsync(const ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListGroupsAsyncHelper( request, handler, context ); } );
+}
+
+void SyntheticsClient::ListGroupsAsyncHelper(const ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListGroups(request), context);
 }
 
 ListTagsForResourceOutcome SyntheticsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
