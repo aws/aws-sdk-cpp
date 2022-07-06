@@ -48,6 +48,7 @@
 #include "gtest/gtest-printers.h"
 #include "gtest/internal/gtest-internal.h"
 #include "gtest/internal/gtest-port.h"
+#include "gtest/gtest-aws-helper.h"
 
 // MSVC warning C5046 is new as of VS2017 version 15.8.
 #if defined(_MSC_VER) && _MSC_VER >= 1915
@@ -431,7 +432,7 @@ class MatcherBase : private MatcherDescriberInterface {
   template <typename M>
   static constexpr bool IsInlined() {
     return sizeof(M) <= sizeof(Buffer) && alignof(M) <= alignof(Buffer) &&
-           std::is_trivially_copy_constructible<M>::value &&
+           IS_TRIVIALLY_COPY_CONSTRUCTIBLE(M) &&
            std::is_trivially_destructible<M>::value;
   }
 
