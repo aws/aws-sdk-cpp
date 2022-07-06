@@ -9,13 +9,18 @@
 #end
 #end
 
+#if($serviceModel.shapes.containsKey("${metadata.classNamePrefix}Error"))
+#set($clientErrorType = "${rootNamespace}::$serviceNamespace::${metadata.classNamePrefix}Error")
+#else
+#set($clientErrorType = "${metadata.classNamePrefix}Error")
+#end
 #foreach($operation in $serviceModel.operations)
 #if($operation.result && !$operation.result.shape.hasEventStreamMembers())
-        typedef Aws::Utils::Outcome<${operation.result.shape.name}, ${metadata.classNamePrefix}Error> ${operation.name}Outcome;
-#else
-        typedef Aws::Utils::Outcome<Aws::NoResult, ${metadata.classNamePrefix}Error> ${operation.name}Outcome;
-#end
-#end
+        typedef Aws::Utils::Outcome<${operation.result.shape.name}, $clientErrorType> ${operation.name}Outcome;
+#else##--#if($operation.result && !$operation.result.shape.hasEventStreamMembers())
+        typedef Aws::Utils::Outcome<Aws::NoResult, $clientErrorType> ${operation.name}Outcome;
+#end##--#if($operation.result && !$operation.result.shape.hasEventStreamMembers())
+#end##--#foreach($operation in $serviceModel.operations)
 
 #foreach($operation in $serviceModel.operations)
 #if(!$operation.s3CrtSpecific)

@@ -81,7 +81,7 @@ if(REGENERATE_CLIENTS OR REGENERATE_DEFAULTS)
     set(NON_GENERATED_CLIENT_LIST access-management text-to-speech core queues s3-encryption identity-management transfer)  ## Manually generated code with a name mimicking client name
     if(REGENERATE_CLIENTS AND BUILD_ONLY)
         foreach(build_only ${BUILD_ONLY})
-            list (FIND BUILD_ONLY ${build_only} _index)
+            list (FIND NON_GENERATED_CLIENT_LIST ${build_only} _index)
             if (${_index} GREATER -1) # old cmake search in a list syntax
                 message(FATAL_ERROR "Explicitly requested to regenerate non-regeneratable component: ${build_only}")
             endif()
