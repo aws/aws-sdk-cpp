@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The number of requests exceeds the limit.</p><p><h3>See Also:</h3>   <a
+   * <p>The number of customer requests exceeds the request rate limit.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/ThrottlingException">AWS
    * API Reference</a></p>
    */

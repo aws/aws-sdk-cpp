@@ -24,7 +24,8 @@ S3DataSource::S3DataSource() :
     m_s3UriHasBeenSet(false),
     m_s3DataDistributionType(S3DataDistribution::NOT_SET),
     m_s3DataDistributionTypeHasBeenSet(false),
-    m_attributeNamesHasBeenSet(false)
+    m_attributeNamesHasBeenSet(false),
+    m_instanceGroupNamesHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ S3DataSource::S3DataSource(JsonView jsonValue) :
     m_s3UriHasBeenSet(false),
     m_s3DataDistributionType(S3DataDistribution::NOT_SET),
     m_s3DataDistributionTypeHasBeenSet(false),
-    m_attributeNamesHasBeenSet(false)
+    m_attributeNamesHasBeenSet(false),
+    m_instanceGroupNamesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -72,6 +74,16 @@ S3DataSource& S3DataSource::operator =(JsonView jsonValue)
     m_attributeNamesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("InstanceGroupNames"))
+  {
+    Array<JsonView> instanceGroupNamesJsonList = jsonValue.GetArray("InstanceGroupNames");
+    for(unsigned instanceGroupNamesIndex = 0; instanceGroupNamesIndex < instanceGroupNamesJsonList.GetLength(); ++instanceGroupNamesIndex)
+    {
+      m_instanceGroupNames.push_back(instanceGroupNamesJsonList[instanceGroupNamesIndex].AsString());
+    }
+    m_instanceGroupNamesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -103,6 +115,17 @@ JsonValue S3DataSource::Jsonize() const
      attributeNamesJsonList[attributeNamesIndex].AsString(m_attributeNames[attributeNamesIndex]);
    }
    payload.WithArray("AttributeNames", std::move(attributeNamesJsonList));
+
+  }
+
+  if(m_instanceGroupNamesHasBeenSet)
+  {
+   Array<JsonValue> instanceGroupNamesJsonList(m_instanceGroupNames.size());
+   for(unsigned instanceGroupNamesIndex = 0; instanceGroupNamesIndex < instanceGroupNamesJsonList.GetLength(); ++instanceGroupNamesIndex)
+   {
+     instanceGroupNamesJsonList[instanceGroupNamesIndex].AsString(m_instanceGroupNames[instanceGroupNamesIndex]);
+   }
+   payload.WithArray("InstanceGroupNames", std::move(instanceGroupNamesJsonList));
 
   }
 

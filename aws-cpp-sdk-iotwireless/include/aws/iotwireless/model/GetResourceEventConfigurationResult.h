@@ -36,53 +36,53 @@ namespace Model
 
 
     /**
-     * <p>Event configuration for the device registration state event</p>
+     * <p>Event configuration for the device registration state event.</p>
      */
     inline const DeviceRegistrationStateEventConfiguration& GetDeviceRegistrationState() const{ return m_deviceRegistrationState; }
 
     /**
-     * <p>Event configuration for the device registration state event</p>
+     * <p>Event configuration for the device registration state event.</p>
      */
     inline void SetDeviceRegistrationState(const DeviceRegistrationStateEventConfiguration& value) { m_deviceRegistrationState = value; }
 
     /**
-     * <p>Event configuration for the device registration state event</p>
+     * <p>Event configuration for the device registration state event.</p>
      */
     inline void SetDeviceRegistrationState(DeviceRegistrationStateEventConfiguration&& value) { m_deviceRegistrationState = std::move(value); }
 
     /**
-     * <p>Event configuration for the device registration state event</p>
+     * <p>Event configuration for the device registration state event.</p>
      */
     inline GetResourceEventConfigurationResult& WithDeviceRegistrationState(const DeviceRegistrationStateEventConfiguration& value) { SetDeviceRegistrationState(value); return *this;}
 
     /**
-     * <p>Event configuration for the device registration state event</p>
+     * <p>Event configuration for the device registration state event.</p>
      */
     inline GetResourceEventConfigurationResult& WithDeviceRegistrationState(DeviceRegistrationStateEventConfiguration&& value) { SetDeviceRegistrationState(std::move(value)); return *this;}
 
 
     /**
-     * <p>Event configuration for the Proximity event</p>
+     * <p>Event configuration for the proximity event.</p>
      */
     inline const ProximityEventConfiguration& GetProximity() const{ return m_proximity; }
 
     /**
-     * <p>Event configuration for the Proximity event</p>
+     * <p>Event configuration for the proximity event.</p>
      */
     inline void SetProximity(const ProximityEventConfiguration& value) { m_proximity = value; }
 
     /**
-     * <p>Event configuration for the Proximity event</p>
+     * <p>Event configuration for the proximity event.</p>
      */
     inline void SetProximity(ProximityEventConfiguration&& value) { m_proximity = std::move(value); }
 
     /**
-     * <p>Event configuration for the Proximity event</p>
+     * <p>Event configuration for the proximity event.</p>
      */
     inline GetResourceEventConfigurationResult& WithProximity(const ProximityEventConfiguration& value) { SetProximity(value); return *this;}
 
     /**
-     * <p>Event configuration for the Proximity event</p>
+     * <p>Event configuration for the proximity event.</p>
      */
     inline GetResourceEventConfigurationResult& WithProximity(ProximityEventConfiguration&& value) { SetProximity(std::move(value)); return *this;}
 

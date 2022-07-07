@@ -65,6 +65,8 @@
 #include <aws/iotwireless/model/GetMulticastGroupSessionRequest.h>
 #include <aws/iotwireless/model/GetNetworkAnalyzerConfigurationRequest.h>
 #include <aws/iotwireless/model/GetPartnerAccountRequest.h>
+#include <aws/iotwireless/model/GetPositionRequest.h>
+#include <aws/iotwireless/model/GetPositionConfigurationRequest.h>
 #include <aws/iotwireless/model/GetResourceEventConfigurationRequest.h>
 #include <aws/iotwireless/model/GetResourceLogLevelRequest.h>
 #include <aws/iotwireless/model/GetServiceEndpointRequest.h>
@@ -85,12 +87,14 @@
 #include <aws/iotwireless/model/ListMulticastGroupsByFuotaTaskRequest.h>
 #include <aws/iotwireless/model/ListNetworkAnalyzerConfigurationsRequest.h>
 #include <aws/iotwireless/model/ListPartnerAccountsRequest.h>
+#include <aws/iotwireless/model/ListPositionConfigurationsRequest.h>
 #include <aws/iotwireless/model/ListQueuedMessagesRequest.h>
 #include <aws/iotwireless/model/ListServiceProfilesRequest.h>
 #include <aws/iotwireless/model/ListTagsForResourceRequest.h>
 #include <aws/iotwireless/model/ListWirelessDevicesRequest.h>
 #include <aws/iotwireless/model/ListWirelessGatewayTaskDefinitionsRequest.h>
 #include <aws/iotwireless/model/ListWirelessGatewaysRequest.h>
+#include <aws/iotwireless/model/PutPositionConfigurationRequest.h>
 #include <aws/iotwireless/model/PutResourceLogLevelRequest.h>
 #include <aws/iotwireless/model/ResetAllResourceLogLevelsRequest.h>
 #include <aws/iotwireless/model/ResetResourceLogLevelRequest.h>
@@ -110,6 +114,7 @@
 #include <aws/iotwireless/model/UpdateMulticastGroupRequest.h>
 #include <aws/iotwireless/model/UpdateNetworkAnalyzerConfigurationRequest.h>
 #include <aws/iotwireless/model/UpdatePartnerAccountRequest.h>
+#include <aws/iotwireless/model/UpdatePositionRequest.h>
 #include <aws/iotwireless/model/UpdateResourceEventConfigurationRequest.h>
 #include <aws/iotwireless/model/UpdateWirelessDeviceRequest.h>
 #include <aws/iotwireless/model/UpdateWirelessGatewayRequest.h>
@@ -1560,6 +1565,78 @@ void IoTWirelessClient::GetPartnerAccountAsyncHelper(const GetPartnerAccountRequ
   handler(this, request, GetPartnerAccount(request), context);
 }
 
+GetPositionOutcome IoTWirelessClient::GetPosition(const GetPositionRequest& request) const
+{
+  if (!request.ResourceIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetPosition", "Required field: ResourceIdentifier, is not set");
+    return GetPositionOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceIdentifier]", false));
+  }
+  if (!request.ResourceTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetPosition", "Required field: ResourceType, is not set");
+    return GetPositionOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceType]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/positions/");
+  uri.AddPathSegment(request.GetResourceIdentifier());
+  return GetPositionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetPositionOutcomeCallable IoTWirelessClient::GetPositionCallable(const GetPositionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetPositionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPosition(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::GetPositionAsync(const GetPositionRequest& request, const GetPositionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetPositionAsyncHelper( request, handler, context ); } );
+}
+
+void IoTWirelessClient::GetPositionAsyncHelper(const GetPositionRequest& request, const GetPositionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetPosition(request), context);
+}
+
+GetPositionConfigurationOutcome IoTWirelessClient::GetPositionConfiguration(const GetPositionConfigurationRequest& request) const
+{
+  if (!request.ResourceIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetPositionConfiguration", "Required field: ResourceIdentifier, is not set");
+    return GetPositionConfigurationOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceIdentifier]", false));
+  }
+  if (!request.ResourceTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetPositionConfiguration", "Required field: ResourceType, is not set");
+    return GetPositionConfigurationOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceType]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/position-configurations/");
+  uri.AddPathSegment(request.GetResourceIdentifier());
+  return GetPositionConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetPositionConfigurationOutcomeCallable IoTWirelessClient::GetPositionConfigurationCallable(const GetPositionConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetPositionConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPositionConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::GetPositionConfigurationAsync(const GetPositionConfigurationRequest& request, const GetPositionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetPositionConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void IoTWirelessClient::GetPositionConfigurationAsyncHelper(const GetPositionConfigurationRequest& request, const GetPositionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetPositionConfiguration(request), context);
+}
+
 GetResourceEventConfigurationOutcome IoTWirelessClient::GetResourceEventConfiguration(const GetResourceEventConfigurationRequest& request) const
 {
   if (!request.IdentifierHasBeenSet())
@@ -2163,6 +2240,31 @@ void IoTWirelessClient::ListPartnerAccountsAsyncHelper(const ListPartnerAccounts
   handler(this, request, ListPartnerAccounts(request), context);
 }
 
+ListPositionConfigurationsOutcome IoTWirelessClient::ListPositionConfigurations(const ListPositionConfigurationsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/position-configurations");
+  return ListPositionConfigurationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListPositionConfigurationsOutcomeCallable IoTWirelessClient::ListPositionConfigurationsCallable(const ListPositionConfigurationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListPositionConfigurationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPositionConfigurations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::ListPositionConfigurationsAsync(const ListPositionConfigurationsRequest& request, const ListPositionConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListPositionConfigurationsAsyncHelper( request, handler, context ); } );
+}
+
+void IoTWirelessClient::ListPositionConfigurationsAsyncHelper(const ListPositionConfigurationsRequest& request, const ListPositionConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListPositionConfigurations(request), context);
+}
+
 ListQueuedMessagesOutcome IoTWirelessClient::ListQueuedMessages(const ListQueuedMessagesRequest& request) const
 {
   if (!request.IdHasBeenSet())
@@ -2323,6 +2425,42 @@ void IoTWirelessClient::ListWirelessGatewaysAsync(const ListWirelessGatewaysRequ
 void IoTWirelessClient::ListWirelessGatewaysAsyncHelper(const ListWirelessGatewaysRequest& request, const ListWirelessGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListWirelessGateways(request), context);
+}
+
+PutPositionConfigurationOutcome IoTWirelessClient::PutPositionConfiguration(const PutPositionConfigurationRequest& request) const
+{
+  if (!request.ResourceIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutPositionConfiguration", "Required field: ResourceIdentifier, is not set");
+    return PutPositionConfigurationOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceIdentifier]", false));
+  }
+  if (!request.ResourceTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutPositionConfiguration", "Required field: ResourceType, is not set");
+    return PutPositionConfigurationOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceType]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/position-configurations/");
+  uri.AddPathSegment(request.GetResourceIdentifier());
+  return PutPositionConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutPositionConfigurationOutcomeCallable IoTWirelessClient::PutPositionConfigurationCallable(const PutPositionConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutPositionConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutPositionConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::PutPositionConfigurationAsync(const PutPositionConfigurationRequest& request, const PutPositionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutPositionConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void IoTWirelessClient::PutPositionConfigurationAsyncHelper(const PutPositionConfigurationRequest& request, const PutPositionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutPositionConfiguration(request), context);
 }
 
 PutResourceLogLevelOutcome IoTWirelessClient::PutResourceLogLevel(const PutResourceLogLevelRequest& request) const
@@ -2918,6 +3056,42 @@ void IoTWirelessClient::UpdatePartnerAccountAsync(const UpdatePartnerAccountRequ
 void IoTWirelessClient::UpdatePartnerAccountAsyncHelper(const UpdatePartnerAccountRequest& request, const UpdatePartnerAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdatePartnerAccount(request), context);
+}
+
+UpdatePositionOutcome IoTWirelessClient::UpdatePosition(const UpdatePositionRequest& request) const
+{
+  if (!request.ResourceIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdatePosition", "Required field: ResourceIdentifier, is not set");
+    return UpdatePositionOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceIdentifier]", false));
+  }
+  if (!request.ResourceTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdatePosition", "Required field: ResourceType, is not set");
+    return UpdatePositionOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceType]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/positions/");
+  uri.AddPathSegment(request.GetResourceIdentifier());
+  return UpdatePositionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdatePositionOutcomeCallable IoTWirelessClient::UpdatePositionCallable(const UpdatePositionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdatePositionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdatePosition(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::UpdatePositionAsync(const UpdatePositionRequest& request, const UpdatePositionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdatePositionAsyncHelper( request, handler, context ); } );
+}
+
+void IoTWirelessClient::UpdatePositionAsyncHelper(const UpdatePositionRequest& request, const UpdatePositionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdatePosition(request), context);
 }
 
 UpdateResourceEventConfigurationOutcome IoTWirelessClient::UpdateResourceEventConfiguration(const UpdateResourceEventConfigurationRequest& request) const

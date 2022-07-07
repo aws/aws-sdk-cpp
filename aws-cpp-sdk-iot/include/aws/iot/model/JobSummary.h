@@ -366,16 +366,32 @@ namespace Model
     inline JobSummary& WithCompletedAt(Aws::Utils::DateTime&& value) { SetCompletedAt(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>Indicates whether a job is concurrent. Will be true when a job is rolling out
+     * new job executions or canceling previously created executions, otherwise
+     * false.</p>
+     */
     inline bool GetIsConcurrent() const{ return m_isConcurrent; }
 
-    
+    /**
+     * <p>Indicates whether a job is concurrent. Will be true when a job is rolling out
+     * new job executions or canceling previously created executions, otherwise
+     * false.</p>
+     */
     inline bool IsConcurrentHasBeenSet() const { return m_isConcurrentHasBeenSet; }
 
-    
+    /**
+     * <p>Indicates whether a job is concurrent. Will be true when a job is rolling out
+     * new job executions or canceling previously created executions, otherwise
+     * false.</p>
+     */
     inline void SetIsConcurrent(bool value) { m_isConcurrentHasBeenSet = true; m_isConcurrent = value; }
 
-    
+    /**
+     * <p>Indicates whether a job is concurrent. Will be true when a job is rolling out
+     * new job executions or canceling previously created executions, otherwise
+     * false.</p>
+     */
     inline JobSummary& WithIsConcurrent(bool value) { SetIsConcurrent(value); return *this;}
 
   private:

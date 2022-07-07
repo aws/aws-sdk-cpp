@@ -56,6 +56,8 @@
 #include <aws/iotwireless/model/GetMulticastGroupSessionResult.h>
 #include <aws/iotwireless/model/GetNetworkAnalyzerConfigurationResult.h>
 #include <aws/iotwireless/model/GetPartnerAccountResult.h>
+#include <aws/iotwireless/model/GetPositionResult.h>
+#include <aws/iotwireless/model/GetPositionConfigurationResult.h>
 #include <aws/iotwireless/model/GetResourceEventConfigurationResult.h>
 #include <aws/iotwireless/model/GetResourceLogLevelResult.h>
 #include <aws/iotwireless/model/GetServiceEndpointResult.h>
@@ -76,12 +78,14 @@
 #include <aws/iotwireless/model/ListMulticastGroupsByFuotaTaskResult.h>
 #include <aws/iotwireless/model/ListNetworkAnalyzerConfigurationsResult.h>
 #include <aws/iotwireless/model/ListPartnerAccountsResult.h>
+#include <aws/iotwireless/model/ListPositionConfigurationsResult.h>
 #include <aws/iotwireless/model/ListQueuedMessagesResult.h>
 #include <aws/iotwireless/model/ListServiceProfilesResult.h>
 #include <aws/iotwireless/model/ListTagsForResourceResult.h>
 #include <aws/iotwireless/model/ListWirelessDevicesResult.h>
 #include <aws/iotwireless/model/ListWirelessGatewayTaskDefinitionsResult.h>
 #include <aws/iotwireless/model/ListWirelessGatewaysResult.h>
+#include <aws/iotwireless/model/PutPositionConfigurationResult.h>
 #include <aws/iotwireless/model/PutResourceLogLevelResult.h>
 #include <aws/iotwireless/model/ResetAllResourceLogLevelsResult.h>
 #include <aws/iotwireless/model/ResetResourceLogLevelResult.h>
@@ -101,6 +105,7 @@
 #include <aws/iotwireless/model/UpdateMulticastGroupResult.h>
 #include <aws/iotwireless/model/UpdateNetworkAnalyzerConfigurationResult.h>
 #include <aws/iotwireless/model/UpdatePartnerAccountResult.h>
+#include <aws/iotwireless/model/UpdatePositionResult.h>
 #include <aws/iotwireless/model/UpdateResourceEventConfigurationResult.h>
 #include <aws/iotwireless/model/UpdateWirelessDeviceResult.h>
 #include <aws/iotwireless/model/UpdateWirelessGatewayResult.h>
@@ -188,6 +193,8 @@ namespace Model
         class GetMulticastGroupSessionRequest;
         class GetNetworkAnalyzerConfigurationRequest;
         class GetPartnerAccountRequest;
+        class GetPositionRequest;
+        class GetPositionConfigurationRequest;
         class GetResourceEventConfigurationRequest;
         class GetResourceLogLevelRequest;
         class GetServiceEndpointRequest;
@@ -208,12 +215,14 @@ namespace Model
         class ListMulticastGroupsByFuotaTaskRequest;
         class ListNetworkAnalyzerConfigurationsRequest;
         class ListPartnerAccountsRequest;
+        class ListPositionConfigurationsRequest;
         class ListQueuedMessagesRequest;
         class ListServiceProfilesRequest;
         class ListTagsForResourceRequest;
         class ListWirelessDevicesRequest;
         class ListWirelessGatewayTaskDefinitionsRequest;
         class ListWirelessGatewaysRequest;
+        class PutPositionConfigurationRequest;
         class PutResourceLogLevelRequest;
         class ResetAllResourceLogLevelsRequest;
         class ResetResourceLogLevelRequest;
@@ -233,6 +242,7 @@ namespace Model
         class UpdateMulticastGroupRequest;
         class UpdateNetworkAnalyzerConfigurationRequest;
         class UpdatePartnerAccountRequest;
+        class UpdatePositionRequest;
         class UpdateResourceEventConfigurationRequest;
         class UpdateWirelessDeviceRequest;
         class UpdateWirelessGatewayRequest;
@@ -282,6 +292,8 @@ namespace Model
         typedef Aws::Utils::Outcome<GetMulticastGroupSessionResult, IoTWirelessError> GetMulticastGroupSessionOutcome;
         typedef Aws::Utils::Outcome<GetNetworkAnalyzerConfigurationResult, IoTWirelessError> GetNetworkAnalyzerConfigurationOutcome;
         typedef Aws::Utils::Outcome<GetPartnerAccountResult, IoTWirelessError> GetPartnerAccountOutcome;
+        typedef Aws::Utils::Outcome<GetPositionResult, IoTWirelessError> GetPositionOutcome;
+        typedef Aws::Utils::Outcome<GetPositionConfigurationResult, IoTWirelessError> GetPositionConfigurationOutcome;
         typedef Aws::Utils::Outcome<GetResourceEventConfigurationResult, IoTWirelessError> GetResourceEventConfigurationOutcome;
         typedef Aws::Utils::Outcome<GetResourceLogLevelResult, IoTWirelessError> GetResourceLogLevelOutcome;
         typedef Aws::Utils::Outcome<GetServiceEndpointResult, IoTWirelessError> GetServiceEndpointOutcome;
@@ -302,12 +314,14 @@ namespace Model
         typedef Aws::Utils::Outcome<ListMulticastGroupsByFuotaTaskResult, IoTWirelessError> ListMulticastGroupsByFuotaTaskOutcome;
         typedef Aws::Utils::Outcome<ListNetworkAnalyzerConfigurationsResult, IoTWirelessError> ListNetworkAnalyzerConfigurationsOutcome;
         typedef Aws::Utils::Outcome<ListPartnerAccountsResult, IoTWirelessError> ListPartnerAccountsOutcome;
+        typedef Aws::Utils::Outcome<ListPositionConfigurationsResult, IoTWirelessError> ListPositionConfigurationsOutcome;
         typedef Aws::Utils::Outcome<ListQueuedMessagesResult, IoTWirelessError> ListQueuedMessagesOutcome;
         typedef Aws::Utils::Outcome<ListServiceProfilesResult, IoTWirelessError> ListServiceProfilesOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, IoTWirelessError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<ListWirelessDevicesResult, IoTWirelessError> ListWirelessDevicesOutcome;
         typedef Aws::Utils::Outcome<ListWirelessGatewayTaskDefinitionsResult, IoTWirelessError> ListWirelessGatewayTaskDefinitionsOutcome;
         typedef Aws::Utils::Outcome<ListWirelessGatewaysResult, IoTWirelessError> ListWirelessGatewaysOutcome;
+        typedef Aws::Utils::Outcome<PutPositionConfigurationResult, IoTWirelessError> PutPositionConfigurationOutcome;
         typedef Aws::Utils::Outcome<PutResourceLogLevelResult, IoTWirelessError> PutResourceLogLevelOutcome;
         typedef Aws::Utils::Outcome<ResetAllResourceLogLevelsResult, IoTWirelessError> ResetAllResourceLogLevelsOutcome;
         typedef Aws::Utils::Outcome<ResetResourceLogLevelResult, IoTWirelessError> ResetResourceLogLevelOutcome;
@@ -327,6 +341,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateMulticastGroupResult, IoTWirelessError> UpdateMulticastGroupOutcome;
         typedef Aws::Utils::Outcome<UpdateNetworkAnalyzerConfigurationResult, IoTWirelessError> UpdateNetworkAnalyzerConfigurationOutcome;
         typedef Aws::Utils::Outcome<UpdatePartnerAccountResult, IoTWirelessError> UpdatePartnerAccountOutcome;
+        typedef Aws::Utils::Outcome<UpdatePositionResult, IoTWirelessError> UpdatePositionOutcome;
         typedef Aws::Utils::Outcome<UpdateResourceEventConfigurationResult, IoTWirelessError> UpdateResourceEventConfigurationOutcome;
         typedef Aws::Utils::Outcome<UpdateWirelessDeviceResult, IoTWirelessError> UpdateWirelessDeviceOutcome;
         typedef Aws::Utils::Outcome<UpdateWirelessGatewayResult, IoTWirelessError> UpdateWirelessGatewayOutcome;
@@ -376,6 +391,8 @@ namespace Model
         typedef std::future<GetMulticastGroupSessionOutcome> GetMulticastGroupSessionOutcomeCallable;
         typedef std::future<GetNetworkAnalyzerConfigurationOutcome> GetNetworkAnalyzerConfigurationOutcomeCallable;
         typedef std::future<GetPartnerAccountOutcome> GetPartnerAccountOutcomeCallable;
+        typedef std::future<GetPositionOutcome> GetPositionOutcomeCallable;
+        typedef std::future<GetPositionConfigurationOutcome> GetPositionConfigurationOutcomeCallable;
         typedef std::future<GetResourceEventConfigurationOutcome> GetResourceEventConfigurationOutcomeCallable;
         typedef std::future<GetResourceLogLevelOutcome> GetResourceLogLevelOutcomeCallable;
         typedef std::future<GetServiceEndpointOutcome> GetServiceEndpointOutcomeCallable;
@@ -396,12 +413,14 @@ namespace Model
         typedef std::future<ListMulticastGroupsByFuotaTaskOutcome> ListMulticastGroupsByFuotaTaskOutcomeCallable;
         typedef std::future<ListNetworkAnalyzerConfigurationsOutcome> ListNetworkAnalyzerConfigurationsOutcomeCallable;
         typedef std::future<ListPartnerAccountsOutcome> ListPartnerAccountsOutcomeCallable;
+        typedef std::future<ListPositionConfigurationsOutcome> ListPositionConfigurationsOutcomeCallable;
         typedef std::future<ListQueuedMessagesOutcome> ListQueuedMessagesOutcomeCallable;
         typedef std::future<ListServiceProfilesOutcome> ListServiceProfilesOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<ListWirelessDevicesOutcome> ListWirelessDevicesOutcomeCallable;
         typedef std::future<ListWirelessGatewayTaskDefinitionsOutcome> ListWirelessGatewayTaskDefinitionsOutcomeCallable;
         typedef std::future<ListWirelessGatewaysOutcome> ListWirelessGatewaysOutcomeCallable;
+        typedef std::future<PutPositionConfigurationOutcome> PutPositionConfigurationOutcomeCallable;
         typedef std::future<PutResourceLogLevelOutcome> PutResourceLogLevelOutcomeCallable;
         typedef std::future<ResetAllResourceLogLevelsOutcome> ResetAllResourceLogLevelsOutcomeCallable;
         typedef std::future<ResetResourceLogLevelOutcome> ResetResourceLogLevelOutcomeCallable;
@@ -421,6 +440,7 @@ namespace Model
         typedef std::future<UpdateMulticastGroupOutcome> UpdateMulticastGroupOutcomeCallable;
         typedef std::future<UpdateNetworkAnalyzerConfigurationOutcome> UpdateNetworkAnalyzerConfigurationOutcomeCallable;
         typedef std::future<UpdatePartnerAccountOutcome> UpdatePartnerAccountOutcomeCallable;
+        typedef std::future<UpdatePositionOutcome> UpdatePositionOutcomeCallable;
         typedef std::future<UpdateResourceEventConfigurationOutcome> UpdateResourceEventConfigurationOutcomeCallable;
         typedef std::future<UpdateWirelessDeviceOutcome> UpdateWirelessDeviceOutcomeCallable;
         typedef std::future<UpdateWirelessGatewayOutcome> UpdateWirelessGatewayOutcomeCallable;
@@ -473,6 +493,8 @@ namespace Model
     typedef std::function<void(const IoTWirelessClient*, const Model::GetMulticastGroupSessionRequest&, const Model::GetMulticastGroupSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMulticastGroupSessionResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::GetNetworkAnalyzerConfigurationRequest&, const Model::GetNetworkAnalyzerConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetNetworkAnalyzerConfigurationResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::GetPartnerAccountRequest&, const Model::GetPartnerAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPartnerAccountResponseReceivedHandler;
+    typedef std::function<void(const IoTWirelessClient*, const Model::GetPositionRequest&, const Model::GetPositionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPositionResponseReceivedHandler;
+    typedef std::function<void(const IoTWirelessClient*, const Model::GetPositionConfigurationRequest&, const Model::GetPositionConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPositionConfigurationResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::GetResourceEventConfigurationRequest&, const Model::GetResourceEventConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourceEventConfigurationResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::GetResourceLogLevelRequest&, const Model::GetResourceLogLevelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourceLogLevelResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::GetServiceEndpointRequest&, const Model::GetServiceEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetServiceEndpointResponseReceivedHandler;
@@ -493,12 +515,14 @@ namespace Model
     typedef std::function<void(const IoTWirelessClient*, const Model::ListMulticastGroupsByFuotaTaskRequest&, const Model::ListMulticastGroupsByFuotaTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMulticastGroupsByFuotaTaskResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::ListNetworkAnalyzerConfigurationsRequest&, const Model::ListNetworkAnalyzerConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListNetworkAnalyzerConfigurationsResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::ListPartnerAccountsRequest&, const Model::ListPartnerAccountsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPartnerAccountsResponseReceivedHandler;
+    typedef std::function<void(const IoTWirelessClient*, const Model::ListPositionConfigurationsRequest&, const Model::ListPositionConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPositionConfigurationsResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::ListQueuedMessagesRequest&, const Model::ListQueuedMessagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListQueuedMessagesResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::ListServiceProfilesRequest&, const Model::ListServiceProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListServiceProfilesResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::ListWirelessDevicesRequest&, const Model::ListWirelessDevicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWirelessDevicesResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::ListWirelessGatewayTaskDefinitionsRequest&, const Model::ListWirelessGatewayTaskDefinitionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWirelessGatewayTaskDefinitionsResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::ListWirelessGatewaysRequest&, const Model::ListWirelessGatewaysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWirelessGatewaysResponseReceivedHandler;
+    typedef std::function<void(const IoTWirelessClient*, const Model::PutPositionConfigurationRequest&, const Model::PutPositionConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutPositionConfigurationResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::PutResourceLogLevelRequest&, const Model::PutResourceLogLevelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutResourceLogLevelResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::ResetAllResourceLogLevelsRequest&, const Model::ResetAllResourceLogLevelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResetAllResourceLogLevelsResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::ResetResourceLogLevelRequest&, const Model::ResetResourceLogLevelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResetResourceLogLevelResponseReceivedHandler;
@@ -518,6 +542,7 @@ namespace Model
     typedef std::function<void(const IoTWirelessClient*, const Model::UpdateMulticastGroupRequest&, const Model::UpdateMulticastGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMulticastGroupResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::UpdateNetworkAnalyzerConfigurationRequest&, const Model::UpdateNetworkAnalyzerConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateNetworkAnalyzerConfigurationResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::UpdatePartnerAccountRequest&, const Model::UpdatePartnerAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePartnerAccountResponseReceivedHandler;
+    typedef std::function<void(const IoTWirelessClient*, const Model::UpdatePositionRequest&, const Model::UpdatePositionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePositionResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::UpdateResourceEventConfigurationRequest&, const Model::UpdateResourceEventConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateResourceEventConfigurationResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::UpdateWirelessDeviceRequest&, const Model::UpdateWirelessDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateWirelessDeviceResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::UpdateWirelessGatewayRequest&, const Model::UpdateWirelessGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateWirelessGatewayResponseReceivedHandler;
@@ -1227,7 +1252,8 @@ namespace Model
         virtual void GetDeviceProfileAsync(const Model::GetDeviceProfileRequest& request, const GetDeviceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Get the event configuration by resource types.</p><p><h3>See Also:</h3>   <a
+         * <p>Get the event configuration based on resource types.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetEventConfigurationByResourceTypes">AWS
          * API Reference</a></p>
          */
@@ -1349,6 +1375,42 @@ namespace Model
          * An Async wrapper for GetPartnerAccount that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetPartnerAccountAsync(const Model::GetPartnerAccountRequest& request, const GetPartnerAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Get the position information for a given resource.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetPosition">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetPositionOutcome GetPosition(const Model::GetPositionRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetPosition that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetPositionOutcomeCallable GetPositionCallable(const Model::GetPositionRequest& request) const;
+
+        /**
+         * An Async wrapper for GetPosition that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetPositionAsync(const Model::GetPositionRequest& request, const GetPositionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Get position configuration for a given resource.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetPositionConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetPositionConfigurationOutcome GetPositionConfiguration(const Model::GetPositionConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetPositionConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetPositionConfigurationOutcomeCallable GetPositionConfigurationCallable(const Model::GetPositionConfigurationRequest& request) const;
+
+        /**
+         * An Async wrapper for GetPositionConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetPositionConfigurationAsync(const Model::GetPositionConfigurationRequest& request, const GetPositionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get the event configuration for a particular resource
@@ -1708,6 +1770,24 @@ namespace Model
         virtual void ListPartnerAccountsAsync(const Model::ListPartnerAccountsRequest& request, const ListPartnerAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>List position configurations for a given resource, such as positioning
+         * solvers.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListPositionConfigurations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListPositionConfigurationsOutcome ListPositionConfigurations(const Model::ListPositionConfigurationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListPositionConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListPositionConfigurationsOutcomeCallable ListPositionConfigurationsCallable(const Model::ListPositionConfigurationsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListPositionConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListPositionConfigurationsAsync(const Model::ListPositionConfigurationsRequest& request, const ListPositionConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>List queued messages in the downlink queue.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListQueuedMessages">AWS
          * API Reference</a></p>
@@ -1813,6 +1893,24 @@ namespace Model
          * An Async wrapper for ListWirelessGateways that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListWirelessGatewaysAsync(const Model::ListWirelessGatewaysRequest& request, const ListWirelessGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Put position configuration for a given resource.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/PutPositionConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutPositionConfigurationOutcome PutPositionConfiguration(const Model::PutPositionConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutPositionConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutPositionConfigurationOutcomeCallable PutPositionConfigurationCallable(const Model::PutPositionConfigurationRequest& request) const;
+
+        /**
+         * An Async wrapper for PutPositionConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutPositionConfigurationAsync(const Model::PutPositionConfigurationRequest& request, const PutPositionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sets the log-level override for a resource-ID and resource-type. This option
@@ -2045,8 +2143,8 @@ namespace Model
         virtual void UpdateDestinationAsync(const Model::UpdateDestinationRequest& request, const UpdateDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Update the event configuration by resource types.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Update the event configuration based on resource types.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateEventConfigurationByResourceTypes">AWS
          * API Reference</a></p>
          */
@@ -2152,6 +2250,23 @@ namespace Model
         virtual void UpdatePartnerAccountAsync(const Model::UpdatePartnerAccountRequest& request, const UpdatePartnerAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Update the position information of a resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdatePosition">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdatePositionOutcome UpdatePosition(const Model::UpdatePositionRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdatePosition that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdatePositionOutcomeCallable UpdatePositionCallable(const Model::UpdatePositionRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdatePosition that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdatePositionAsync(const Model::UpdatePositionRequest& request, const UpdatePositionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Update the event configuration for a particular resource
          * identifier.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateResourceEventConfiguration">AWS
@@ -2252,6 +2367,8 @@ namespace Model
         void GetMulticastGroupSessionAsyncHelper(const Model::GetMulticastGroupSessionRequest& request, const GetMulticastGroupSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetNetworkAnalyzerConfigurationAsyncHelper(const Model::GetNetworkAnalyzerConfigurationRequest& request, const GetNetworkAnalyzerConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPartnerAccountAsyncHelper(const Model::GetPartnerAccountRequest& request, const GetPartnerAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetPositionAsyncHelper(const Model::GetPositionRequest& request, const GetPositionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetPositionConfigurationAsyncHelper(const Model::GetPositionConfigurationRequest& request, const GetPositionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetResourceEventConfigurationAsyncHelper(const Model::GetResourceEventConfigurationRequest& request, const GetResourceEventConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetResourceLogLevelAsyncHelper(const Model::GetResourceLogLevelRequest& request, const GetResourceLogLevelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetServiceEndpointAsyncHelper(const Model::GetServiceEndpointRequest& request, const GetServiceEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2272,12 +2389,14 @@ namespace Model
         void ListMulticastGroupsByFuotaTaskAsyncHelper(const Model::ListMulticastGroupsByFuotaTaskRequest& request, const ListMulticastGroupsByFuotaTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListNetworkAnalyzerConfigurationsAsyncHelper(const Model::ListNetworkAnalyzerConfigurationsRequest& request, const ListNetworkAnalyzerConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPartnerAccountsAsyncHelper(const Model::ListPartnerAccountsRequest& request, const ListPartnerAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListPositionConfigurationsAsyncHelper(const Model::ListPositionConfigurationsRequest& request, const ListPositionConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListQueuedMessagesAsyncHelper(const Model::ListQueuedMessagesRequest& request, const ListQueuedMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListServiceProfilesAsyncHelper(const Model::ListServiceProfilesRequest& request, const ListServiceProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListWirelessDevicesAsyncHelper(const Model::ListWirelessDevicesRequest& request, const ListWirelessDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListWirelessGatewayTaskDefinitionsAsyncHelper(const Model::ListWirelessGatewayTaskDefinitionsRequest& request, const ListWirelessGatewayTaskDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListWirelessGatewaysAsyncHelper(const Model::ListWirelessGatewaysRequest& request, const ListWirelessGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutPositionConfigurationAsyncHelper(const Model::PutPositionConfigurationRequest& request, const PutPositionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutResourceLogLevelAsyncHelper(const Model::PutResourceLogLevelRequest& request, const PutResourceLogLevelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ResetAllResourceLogLevelsAsyncHelper(const Model::ResetAllResourceLogLevelsRequest& request, const ResetAllResourceLogLevelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ResetResourceLogLevelAsyncHelper(const Model::ResetResourceLogLevelRequest& request, const ResetResourceLogLevelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2297,6 +2416,7 @@ namespace Model
         void UpdateMulticastGroupAsyncHelper(const Model::UpdateMulticastGroupRequest& request, const UpdateMulticastGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateNetworkAnalyzerConfigurationAsyncHelper(const Model::UpdateNetworkAnalyzerConfigurationRequest& request, const UpdateNetworkAnalyzerConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdatePartnerAccountAsyncHelper(const Model::UpdatePartnerAccountRequest& request, const UpdatePartnerAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdatePositionAsyncHelper(const Model::UpdatePositionRequest& request, const UpdatePositionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateResourceEventConfigurationAsyncHelper(const Model::UpdateResourceEventConfigurationRequest& request, const UpdateResourceEventConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateWirelessDeviceAsyncHelper(const Model::UpdateWirelessDeviceRequest& request, const UpdateWirelessDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateWirelessGatewayAsyncHelper(const Model::UpdateWirelessGatewayRequest& request, const UpdateWirelessGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

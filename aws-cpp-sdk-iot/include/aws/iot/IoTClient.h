@@ -5000,13 +5000,10 @@ namespace Model
         virtual void PutVerificationStateOnViolationAsync(const Model::PutVerificationStateOnViolationRequest& request, const PutVerificationStateOnViolationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Registers a CA certificate with IoT. This CA certificate can then be used to
-         * sign device certificates, which can be then registered with IoT. You can
-         * register up to 10 CA certificates per Amazon Web Services account that have the
-         * same subject field. This enables you to have up to 10 certificate authorities
-         * sign your device certificates. If you have more than one CA certificate
-         * registered, make sure you pass the CA certificate when you register your device
-         * certificates with the <a>RegisterCertificate</a> action.</p> <p>Requires
+         * <p>Registers a CA certificate with Amazon Web Services IoT Core. There is no
+         * limit to the number of CA certificates you can register in your Amazon Web
+         * Services account. You can register up to 10 CA certificates with the same
+         * <code>CA subject field</code> per Amazon Web Services account.</p> <p>Requires
          * permission to access the <a
          * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">RegisterCACertificate</a>
          * action.</p><p><h3>See Also:</h3>   <a
@@ -5026,10 +5023,12 @@ namespace Model
         virtual void RegisterCACertificateAsync(const Model::RegisterCACertificateRequest& request, const RegisterCACertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Registers a device certificate with IoT. If you have more than one CA
-         * certificate that has the same subject field, you must specify the CA certificate
-         * that was used to sign the device certificate being registered.</p> <p>Requires
-         * permission to access the <a
+         * <p>Registers a device certificate with IoT in the same <a
+         * href="https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode">certificate
+         * mode</a> as the signing CA. If you have more than one CA certificate that has
+         * the same subject field, you must specify the CA certificate that was used to
+         * sign the device certificate being registered.</p> <p>Requires permission to
+         * access the <a
          * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">RegisterCertificate</a>
          * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RegisterCertificate">AWS

@@ -24,7 +24,8 @@ FPorts::FPorts() :
     m_multicast(0),
     m_multicastHasBeenSet(false),
     m_clockSync(0),
-    m_clockSyncHasBeenSet(false)
+    m_clockSyncHasBeenSet(false),
+    m_positioningHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ FPorts::FPorts(JsonView jsonValue) :
     m_multicast(0),
     m_multicastHasBeenSet(false),
     m_clockSync(0),
-    m_clockSyncHasBeenSet(false)
+    m_clockSyncHasBeenSet(false),
+    m_positioningHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -62,6 +64,13 @@ FPorts& FPorts::operator =(JsonView jsonValue)
     m_clockSyncHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Positioning"))
+  {
+    m_positioning = jsonValue.GetObject("Positioning");
+
+    m_positioningHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -84,6 +93,12 @@ JsonValue FPorts::Jsonize() const
   if(m_clockSyncHasBeenSet)
   {
    payload.WithInteger("ClockSync", m_clockSync);
+
+  }
+
+  if(m_positioningHasBeenSet)
+  {
+   payload.WithObject("Positioning", m_positioning.Jsonize());
 
   }
 

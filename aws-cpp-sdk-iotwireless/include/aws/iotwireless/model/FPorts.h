@@ -5,6 +5,8 @@
 
 #pragma once
 #include <aws/iotwireless/IoTWireless_EXPORTS.h>
+#include <aws/iotwireless/model/Positioning.h>
+#include <utility>
 
 namespace Aws
 {
@@ -74,6 +76,43 @@ namespace Model
     
     inline FPorts& WithClockSync(int value) { SetClockSync(value); return *this;}
 
+
+    /**
+     * <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning
+     * information.</p>
+     */
+    inline const Positioning& GetPositioning() const{ return m_positioning; }
+
+    /**
+     * <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning
+     * information.</p>
+     */
+    inline bool PositioningHasBeenSet() const { return m_positioningHasBeenSet; }
+
+    /**
+     * <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning
+     * information.</p>
+     */
+    inline void SetPositioning(const Positioning& value) { m_positioningHasBeenSet = true; m_positioning = value; }
+
+    /**
+     * <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning
+     * information.</p>
+     */
+    inline void SetPositioning(Positioning&& value) { m_positioningHasBeenSet = true; m_positioning = std::move(value); }
+
+    /**
+     * <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning
+     * information.</p>
+     */
+    inline FPorts& WithPositioning(const Positioning& value) { SetPositioning(value); return *this;}
+
+    /**
+     * <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning
+     * information.</p>
+     */
+    inline FPorts& WithPositioning(Positioning&& value) { SetPositioning(std::move(value)); return *this;}
+
   private:
 
     int m_fuota;
@@ -84,6 +123,9 @@ namespace Model
 
     int m_clockSync;
     bool m_clockSyncHasBeenSet;
+
+    Positioning m_positioning;
+    bool m_positioningHasBeenSet;
   };
 
 } // namespace Model

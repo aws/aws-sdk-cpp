@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/chime-sdk-meetings/model/MediaPlacement.h>
 #include <aws/chime-sdk-meetings/model/MeetingFeaturesConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -385,6 +386,52 @@ namespace Model
      */
     inline Meeting& WithPrimaryMeetingId(const char* value) { SetPrimaryMeetingId(value); return *this;}
 
+
+    /**
+     * <p>Array of strings.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetTenantIds() const{ return m_tenantIds; }
+
+    /**
+     * <p>Array of strings.</p>
+     */
+    inline bool TenantIdsHasBeenSet() const { return m_tenantIdsHasBeenSet; }
+
+    /**
+     * <p>Array of strings.</p>
+     */
+    inline void SetTenantIds(const Aws::Vector<Aws::String>& value) { m_tenantIdsHasBeenSet = true; m_tenantIds = value; }
+
+    /**
+     * <p>Array of strings.</p>
+     */
+    inline void SetTenantIds(Aws::Vector<Aws::String>&& value) { m_tenantIdsHasBeenSet = true; m_tenantIds = std::move(value); }
+
+    /**
+     * <p>Array of strings.</p>
+     */
+    inline Meeting& WithTenantIds(const Aws::Vector<Aws::String>& value) { SetTenantIds(value); return *this;}
+
+    /**
+     * <p>Array of strings.</p>
+     */
+    inline Meeting& WithTenantIds(Aws::Vector<Aws::String>&& value) { SetTenantIds(std::move(value)); return *this;}
+
+    /**
+     * <p>Array of strings.</p>
+     */
+    inline Meeting& AddTenantIds(const Aws::String& value) { m_tenantIdsHasBeenSet = true; m_tenantIds.push_back(value); return *this; }
+
+    /**
+     * <p>Array of strings.</p>
+     */
+    inline Meeting& AddTenantIds(Aws::String&& value) { m_tenantIdsHasBeenSet = true; m_tenantIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Array of strings.</p>
+     */
+    inline Meeting& AddTenantIds(const char* value) { m_tenantIdsHasBeenSet = true; m_tenantIds.push_back(value); return *this; }
+
   private:
 
     Aws::String m_meetingId;
@@ -407,6 +454,9 @@ namespace Model
 
     Aws::String m_primaryMeetingId;
     bool m_primaryMeetingIdHasBeenSet;
+
+    Aws::Vector<Aws::String> m_tenantIds;
+    bool m_tenantIdsHasBeenSet;
   };
 
 } // namespace Model

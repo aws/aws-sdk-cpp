@@ -444,6 +444,61 @@ namespace Model
      */
     inline CreateMeetingWithAttendeesRequest& WithPrimaryMeetingId(const char* value) { SetPrimaryMeetingId(value); return *this;}
 
+
+    /**
+     * <p>A consistent and opaque identifier, created and maintained by the builder to
+     * represent a segment of their users.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetTenantIds() const{ return m_tenantIds; }
+
+    /**
+     * <p>A consistent and opaque identifier, created and maintained by the builder to
+     * represent a segment of their users.</p>
+     */
+    inline bool TenantIdsHasBeenSet() const { return m_tenantIdsHasBeenSet; }
+
+    /**
+     * <p>A consistent and opaque identifier, created and maintained by the builder to
+     * represent a segment of their users.</p>
+     */
+    inline void SetTenantIds(const Aws::Vector<Aws::String>& value) { m_tenantIdsHasBeenSet = true; m_tenantIds = value; }
+
+    /**
+     * <p>A consistent and opaque identifier, created and maintained by the builder to
+     * represent a segment of their users.</p>
+     */
+    inline void SetTenantIds(Aws::Vector<Aws::String>&& value) { m_tenantIdsHasBeenSet = true; m_tenantIds = std::move(value); }
+
+    /**
+     * <p>A consistent and opaque identifier, created and maintained by the builder to
+     * represent a segment of their users.</p>
+     */
+    inline CreateMeetingWithAttendeesRequest& WithTenantIds(const Aws::Vector<Aws::String>& value) { SetTenantIds(value); return *this;}
+
+    /**
+     * <p>A consistent and opaque identifier, created and maintained by the builder to
+     * represent a segment of their users.</p>
+     */
+    inline CreateMeetingWithAttendeesRequest& WithTenantIds(Aws::Vector<Aws::String>&& value) { SetTenantIds(std::move(value)); return *this;}
+
+    /**
+     * <p>A consistent and opaque identifier, created and maintained by the builder to
+     * represent a segment of their users.</p>
+     */
+    inline CreateMeetingWithAttendeesRequest& AddTenantIds(const Aws::String& value) { m_tenantIdsHasBeenSet = true; m_tenantIds.push_back(value); return *this; }
+
+    /**
+     * <p>A consistent and opaque identifier, created and maintained by the builder to
+     * represent a segment of their users.</p>
+     */
+    inline CreateMeetingWithAttendeesRequest& AddTenantIds(Aws::String&& value) { m_tenantIdsHasBeenSet = true; m_tenantIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>A consistent and opaque identifier, created and maintained by the builder to
+     * represent a segment of their users.</p>
+     */
+    inline CreateMeetingWithAttendeesRequest& AddTenantIds(const char* value) { m_tenantIdsHasBeenSet = true; m_tenantIds.push_back(value); return *this; }
+
   private:
 
     Aws::String m_clientRequestToken;
@@ -469,6 +524,9 @@ namespace Model
 
     Aws::String m_primaryMeetingId;
     bool m_primaryMeetingIdHasBeenSet;
+
+    Aws::Vector<Aws::String> m_tenantIds;
+    bool m_tenantIdsHasBeenSet;
   };
 
 } // namespace Model

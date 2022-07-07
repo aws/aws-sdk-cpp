@@ -74,6 +74,7 @@
 #include <aws/dms/model/StartReplicationTaskAssessmentRunResult.h>
 #include <aws/dms/model/StopReplicationTaskResult.h>
 #include <aws/dms/model/TestConnectionResult.h>
+#include <aws/dms/model/UpdateSubscriptionsToEventBridgeResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -177,6 +178,7 @@ namespace Model
         class StartReplicationTaskAssessmentRunRequest;
         class StopReplicationTaskRequest;
         class TestConnectionRequest;
+        class UpdateSubscriptionsToEventBridgeRequest;
 
         typedef Aws::Utils::Outcome<AddTagsToResourceResult, DatabaseMigrationServiceError> AddTagsToResourceOutcome;
         typedef Aws::Utils::Outcome<ApplyPendingMaintenanceActionResult, DatabaseMigrationServiceError> ApplyPendingMaintenanceActionOutcome;
@@ -242,6 +244,7 @@ namespace Model
         typedef Aws::Utils::Outcome<StartReplicationTaskAssessmentRunResult, DatabaseMigrationServiceError> StartReplicationTaskAssessmentRunOutcome;
         typedef Aws::Utils::Outcome<StopReplicationTaskResult, DatabaseMigrationServiceError> StopReplicationTaskOutcome;
         typedef Aws::Utils::Outcome<TestConnectionResult, DatabaseMigrationServiceError> TestConnectionOutcome;
+        typedef Aws::Utils::Outcome<UpdateSubscriptionsToEventBridgeResult, DatabaseMigrationServiceError> UpdateSubscriptionsToEventBridgeOutcome;
 
         typedef std::future<AddTagsToResourceOutcome> AddTagsToResourceOutcomeCallable;
         typedef std::future<ApplyPendingMaintenanceActionOutcome> ApplyPendingMaintenanceActionOutcomeCallable;
@@ -307,6 +310,7 @@ namespace Model
         typedef std::future<StartReplicationTaskAssessmentRunOutcome> StartReplicationTaskAssessmentRunOutcomeCallable;
         typedef std::future<StopReplicationTaskOutcome> StopReplicationTaskOutcomeCallable;
         typedef std::future<TestConnectionOutcome> TestConnectionOutcomeCallable;
+        typedef std::future<UpdateSubscriptionsToEventBridgeOutcome> UpdateSubscriptionsToEventBridgeOutcomeCallable;
 } // namespace Model
 
   class DatabaseMigrationServiceClient;
@@ -375,6 +379,7 @@ namespace Model
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::StartReplicationTaskAssessmentRunRequest&, const Model::StartReplicationTaskAssessmentRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartReplicationTaskAssessmentRunResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::StopReplicationTaskRequest&, const Model::StopReplicationTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopReplicationTaskResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::TestConnectionRequest&, const Model::TestConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TestConnectionResponseReceivedHandler;
+    typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::UpdateSubscriptionsToEventBridgeRequest&, const Model::UpdateSubscriptionsToEventBridgeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSubscriptionsToEventBridgeResponseReceivedHandler;
 
   /**
    * <fullname>Database Migration Service</fullname> <p>Database Migration Service
@@ -1684,6 +1689,36 @@ namespace Model
          */
         virtual void TestConnectionAsync(const Model::TestConnectionRequest& request, const TestConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Migrates 10 active and enabled Amazon SNS subscriptions at a time and
+         * converts them to corresponding Amazon EventBridge rules. By default, this
+         * operation migrates subscriptions only when all your replication instance
+         * versions are 3.4.6 or higher. If any replication instances are from versions
+         * earlier than 3.4.6, the operation raises an error and tells you to upgrade these
+         * instances to version 3.4.6 or higher. To enable migration regardless of version,
+         * set the <code>Force</code> option to true. However, if you don't upgrade
+         * instances earlier than version 3.4.6, some types of events might not be
+         * available when you use Amazon EventBridge.</p> <p>To call this operation, make
+         * sure that you have certain permissions added to your user account. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html#CHAP_Events-migrate-to-eventbridge">Migrating
+         * event subscriptions to Amazon EventBridge</a> in the <i>Amazon Web Services
+         * Database Migration Service User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/UpdateSubscriptionsToEventBridge">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateSubscriptionsToEventBridgeOutcome UpdateSubscriptionsToEventBridge(const Model::UpdateSubscriptionsToEventBridgeRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateSubscriptionsToEventBridge that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateSubscriptionsToEventBridgeOutcomeCallable UpdateSubscriptionsToEventBridgeCallable(const Model::UpdateSubscriptionsToEventBridgeRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateSubscriptionsToEventBridge that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateSubscriptionsToEventBridgeAsync(const Model::UpdateSubscriptionsToEventBridgeRequest& request, const UpdateSubscriptionsToEventBridgeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
@@ -1752,6 +1787,7 @@ namespace Model
         void StartReplicationTaskAssessmentRunAsyncHelper(const Model::StartReplicationTaskAssessmentRunRequest& request, const StartReplicationTaskAssessmentRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopReplicationTaskAsyncHelper(const Model::StopReplicationTaskRequest& request, const StopReplicationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TestConnectionAsyncHelper(const Model::TestConnectionRequest& request, const TestConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateSubscriptionsToEventBridgeAsyncHelper(const Model::UpdateSubscriptionsToEventBridgeRequest& request, const UpdateSubscriptionsToEventBridgeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

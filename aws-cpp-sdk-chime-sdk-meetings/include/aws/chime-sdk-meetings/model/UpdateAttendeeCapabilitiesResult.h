@@ -32,19 +32,29 @@ namespace Model
     UpdateAttendeeCapabilitiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>The updated attendee data.</p>
+     */
     inline const Attendee& GetAttendee() const{ return m_attendee; }
 
-    
+    /**
+     * <p>The updated attendee data.</p>
+     */
     inline void SetAttendee(const Attendee& value) { m_attendee = value; }
 
-    
+    /**
+     * <p>The updated attendee data.</p>
+     */
     inline void SetAttendee(Attendee&& value) { m_attendee = std::move(value); }
 
-    
+    /**
+     * <p>The updated attendee data.</p>
+     */
     inline UpdateAttendeeCapabilitiesResult& WithAttendee(const Attendee& value) { SetAttendee(value); return *this;}
 
-    
+    /**
+     * <p>The updated attendee data.</p>
+     */
     inline UpdateAttendeeCapabilitiesResult& WithAttendee(Attendee&& value) { SetAttendee(std::move(value)); return *this;}
 
   private:
