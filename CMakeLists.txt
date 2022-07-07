@@ -282,6 +282,10 @@ if (HAS_UMASK)
     add_definitions(-DHAS_UMASK)
 endif()
 
+if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU" AND CMAKE_CXX_COMPILER_VERSION VERSION_LESS 5.0)
+    add_definitions(-DLEGACY_GCC)
+endif()
+
 add_sdks()
 
 # for user friendly cmake usage

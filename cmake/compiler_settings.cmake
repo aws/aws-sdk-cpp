@@ -67,6 +67,10 @@ macro(set_gcc_warnings)
             endif()
         endif()
     endif()
+    # when using gcc we need to ignore warnings for missing initalizers as it was identified as a bug in gcc
+    if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU" AND CMAKE_CXX_COMPILER_VERSION VERSION_LESS 5.0)
+        list(APPEND AWS_COMPILER_WARNINGS "-Wno-missing-field-initializers")
+    endif()
 endmacro()
 
 macro(set_msvc_flags)
