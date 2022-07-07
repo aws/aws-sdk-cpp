@@ -101,10 +101,6 @@ if(PLATFORM_WINDOWS)
     add_definitions("-DDISABLE_HOME_DIR_REDIRECT")
 endif()
 
-if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU" AND CMAKE_CXX_COMPILER_VERSION VERSION_LESS 5.0)
-    add_definitions("-DUSE_INTERNAL_TRIVIAL_COPY")
-endif()
-
 add_library(${PROJECT_NAME} ${TestingResources_SRC})
 add_library(AWS::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 
