@@ -50,12 +50,12 @@ public class main {
         //AWSClientGenerator --service myService --language-binding cpp < /home/henso/someC2jFile.normal.json
         if (argPairs.containsKey(ARBITRARY_OPTION) || argPairs.containsKey(INPUT_FILE_NAME)) {
             if (!argPairs.containsKey(LANGUAGE_BINDING_OPTION) || argPairs.get(LANGUAGE_BINDING_OPTION).isEmpty()) {
-                System.out.println("Error: A language binding must be specified with the --arbitrary option.");
+                System.err.println("Error: A language binding must be specified with the --arbitrary option.");
                 return;
             }
             if ((!argPairs.containsKey(SERVICE_OPTION) || argPairs.get(SERVICE_OPTION).isEmpty()) &&
                 (!argPairs.containsKey(DEFAULTS_OPTION) || argPairs.get(DEFAULTS_OPTION).isEmpty())) {
-                System.out.println("Error: A service name or defaults must be specified with the --arbitrary option.");
+                System.err.println("Error: A service name or defaults must be specified with the --arbitrary option.");
                 return;
             }
             String namespace = "Aws";
@@ -124,12 +124,14 @@ public class main {
 
 
                 } catch (GeneratorNotImplementedException e) {
+                    System.err.println(e.getMessage());
                     e.printStackTrace();
                 } catch (Exception e) {
+                    System.err.println(e.getMessage());
                     e.printStackTrace();
                 }
             } else {
-                System.out.println("You must supply standard input if you specify the --arbitrary option.");
+                System.err.println("You must supply standard input if you specify the --arbitrary option.");
             }
             return;
         }

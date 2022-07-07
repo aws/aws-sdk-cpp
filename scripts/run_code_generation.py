@@ -114,7 +114,8 @@ def run_generator_once(service_name: str, run_command: list, output_filename: st
         output_zip_file = process.stdout
         if not output_zip_file or len(output_zip_file) < 4:
             raise RuntimeError(f"Code of {service_name} generation failure: "
-                               f"Code generator did not generate an output in stdout")
+                               f"Code generator did not generate an output.\n"
+                               f"Error details: {process.stderr.decode()}")
         output_zip_file = io.BytesIO(output_zip_file)
 
     return output_zip_file
